@@ -52,10 +52,10 @@ export namespace ListVirtualBucketsResponse {
 }
 
 export class CreateVirtualBucketRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): CreateVirtualBucketRequest;
-  hasItem(): boolean;
-  clearItem(): CreateVirtualBucketRequest;
+  getVirtualbucket(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
+  setVirtualbucket(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): CreateVirtualBucketRequest;
+  hasVirtualbucket(): boolean;
+  clearVirtualbucket(): CreateVirtualBucketRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateVirtualBucketRequest.AsObject;
@@ -67,7 +67,7 @@ export class CreateVirtualBucketRequest extends jspb.Message {
 
 export namespace CreateVirtualBucketRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
+    virtualbucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
   }
 }
 
@@ -86,10 +86,10 @@ export namespace CreateVirtualBucketResponse {
 }
 
 export class UpdateVirtualBucketRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): UpdateVirtualBucketRequest;
-  hasItem(): boolean;
-  clearItem(): UpdateVirtualBucketRequest;
+  getVirtualbucket(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
+  setVirtualbucket(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): UpdateVirtualBucketRequest;
+  hasVirtualbucket(): boolean;
+  clearVirtualbucket(): UpdateVirtualBucketRequest;
 
   getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
   setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): UpdateVirtualBucketRequest;
@@ -106,7 +106,7 @@ export class UpdateVirtualBucketRequest extends jspb.Message {
 
 export namespace UpdateVirtualBucketRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
+    virtualbucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
     fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }

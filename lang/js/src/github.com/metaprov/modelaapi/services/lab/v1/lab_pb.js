@@ -1134,7 +1134,7 @@ proto.github.com.metaprov.modelaapi.services.lab.v1.UpdateLabRequest.prototype.t
  */
 proto.github.com.metaprov.modelaapi.services.lab.v1.UpdateLabRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Lab.toObject(includeInstance, f),
+    lab: (f = msg.getLab()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Lab.toObject(includeInstance, f),
     fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
@@ -1175,7 +1175,7 @@ proto.github.com.metaprov.modelaapi.services.lab.v1.UpdateLabRequest.deserialize
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Lab;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Lab.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setLab(value);
       break;
     case 2:
       var value = new google_protobuf_field_mask_pb.FieldMask;
@@ -1211,7 +1211,7 @@ proto.github.com.metaprov.modelaapi.services.lab.v1.UpdateLabRequest.prototype.s
  */
 proto.github.com.metaprov.modelaapi.services.lab.v1.UpdateLabRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getLab();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1231,10 +1231,10 @@ proto.github.com.metaprov.modelaapi.services.lab.v1.UpdateLabRequest.serializeBi
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Lab item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Lab lab = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Lab}
  */
-proto.github.com.metaprov.modelaapi.services.lab.v1.UpdateLabRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.lab.v1.UpdateLabRequest.prototype.getLab = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Lab} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Lab, 1));
 };
@@ -1244,7 +1244,7 @@ proto.github.com.metaprov.modelaapi.services.lab.v1.UpdateLabRequest.prototype.g
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Lab|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.lab.v1.UpdateLabRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.lab.v1.UpdateLabRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.lab.v1.UpdateLabRequest.prototype.setLab = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1253,8 +1253,8 @@ proto.github.com.metaprov.modelaapi.services.lab.v1.UpdateLabRequest.prototype.s
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.lab.v1.UpdateLabRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.lab.v1.UpdateLabRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.lab.v1.UpdateLabRequest.prototype.clearLab = function() {
+  return this.setLab(undefined);
 };
 
 
@@ -1262,7 +1262,7 @@ proto.github.com.metaprov.modelaapi.services.lab.v1.UpdateLabRequest.prototype.c
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.lab.v1.UpdateLabRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.lab.v1.UpdateLabRequest.prototype.hasLab = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -1597,7 +1597,7 @@ proto.github.com.metaprov.modelaapi.services.lab.v1.GetLabResponse.prototype.toO
  */
 proto.github.com.metaprov.modelaapi.services.lab.v1.GetLabResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Lab.toObject(includeInstance, f),
+    lab: (f = msg.getLab()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Lab.toObject(includeInstance, f),
     yaml: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -1638,7 +1638,7 @@ proto.github.com.metaprov.modelaapi.services.lab.v1.GetLabResponse.deserializeBi
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Lab;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Lab.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setLab(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -1673,7 +1673,7 @@ proto.github.com.metaprov.modelaapi.services.lab.v1.GetLabResponse.prototype.ser
  */
 proto.github.com.metaprov.modelaapi.services.lab.v1.GetLabResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getLab();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1692,10 +1692,10 @@ proto.github.com.metaprov.modelaapi.services.lab.v1.GetLabResponse.serializeBina
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Lab item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Lab lab = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Lab}
  */
-proto.github.com.metaprov.modelaapi.services.lab.v1.GetLabResponse.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.lab.v1.GetLabResponse.prototype.getLab = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Lab} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Lab, 1));
 };
@@ -1705,7 +1705,7 @@ proto.github.com.metaprov.modelaapi.services.lab.v1.GetLabResponse.prototype.get
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Lab|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.lab.v1.GetLabResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.lab.v1.GetLabResponse.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.lab.v1.GetLabResponse.prototype.setLab = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1714,8 +1714,8 @@ proto.github.com.metaprov.modelaapi.services.lab.v1.GetLabResponse.prototype.set
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.lab.v1.GetLabResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.lab.v1.GetLabResponse.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.lab.v1.GetLabResponse.prototype.clearLab = function() {
+  return this.setLab(undefined);
 };
 
 
@@ -1723,7 +1723,7 @@ proto.github.com.metaprov.modelaapi.services.lab.v1.GetLabResponse.prototype.cle
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.lab.v1.GetLabResponse.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.lab.v1.GetLabResponse.prototype.hasLab = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

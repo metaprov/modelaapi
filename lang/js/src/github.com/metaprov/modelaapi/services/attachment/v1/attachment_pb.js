@@ -904,7 +904,7 @@ proto.github.com.metaprov.modelaapi.services.attachment.v1.CreateAttachmentReque
  */
 proto.github.com.metaprov.modelaapi.services.attachment.v1.CreateAttachmentRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment.toObject(includeInstance, f)
+    attachment: (f = msg.getAttachment()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -944,7 +944,7 @@ proto.github.com.metaprov.modelaapi.services.attachment.v1.CreateAttachmentReque
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setAttachment(value);
       break;
     default:
       reader.skipField();
@@ -975,7 +975,7 @@ proto.github.com.metaprov.modelaapi.services.attachment.v1.CreateAttachmentReque
  */
 proto.github.com.metaprov.modelaapi.services.attachment.v1.CreateAttachmentRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getAttachment();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -987,10 +987,10 @@ proto.github.com.metaprov.modelaapi.services.attachment.v1.CreateAttachmentReque
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Attachment item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Attachment attachment = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Attachment}
  */
-proto.github.com.metaprov.modelaapi.services.attachment.v1.CreateAttachmentRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.attachment.v1.CreateAttachmentRequest.prototype.getAttachment = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Attachment} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment, 1));
 };
@@ -1000,7 +1000,7 @@ proto.github.com.metaprov.modelaapi.services.attachment.v1.CreateAttachmentReque
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Attachment|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.attachment.v1.CreateAttachmentRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.attachment.v1.CreateAttachmentRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.attachment.v1.CreateAttachmentRequest.prototype.setAttachment = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1009,8 +1009,8 @@ proto.github.com.metaprov.modelaapi.services.attachment.v1.CreateAttachmentReque
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.attachment.v1.CreateAttachmentRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.attachment.v1.CreateAttachmentRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.attachment.v1.CreateAttachmentRequest.prototype.clearAttachment = function() {
+  return this.setAttachment(undefined);
 };
 
 
@@ -1018,7 +1018,7 @@ proto.github.com.metaprov.modelaapi.services.attachment.v1.CreateAttachmentReque
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.attachment.v1.CreateAttachmentRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.attachment.v1.CreateAttachmentRequest.prototype.hasAttachment = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -1156,7 +1156,7 @@ proto.github.com.metaprov.modelaapi.services.attachment.v1.UpdateAttachmentReque
  */
 proto.github.com.metaprov.modelaapi.services.attachment.v1.UpdateAttachmentRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment.toObject(includeInstance, f),
+    attachment: (f = msg.getAttachment()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment.toObject(includeInstance, f),
     fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
@@ -1197,7 +1197,7 @@ proto.github.com.metaprov.modelaapi.services.attachment.v1.UpdateAttachmentReque
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setAttachment(value);
       break;
     case 2:
       var value = new google_protobuf_field_mask_pb.FieldMask;
@@ -1233,7 +1233,7 @@ proto.github.com.metaprov.modelaapi.services.attachment.v1.UpdateAttachmentReque
  */
 proto.github.com.metaprov.modelaapi.services.attachment.v1.UpdateAttachmentRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getAttachment();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1253,10 +1253,10 @@ proto.github.com.metaprov.modelaapi.services.attachment.v1.UpdateAttachmentReque
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Attachment item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Attachment attachment = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Attachment}
  */
-proto.github.com.metaprov.modelaapi.services.attachment.v1.UpdateAttachmentRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.attachment.v1.UpdateAttachmentRequest.prototype.getAttachment = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Attachment} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment, 1));
 };
@@ -1266,7 +1266,7 @@ proto.github.com.metaprov.modelaapi.services.attachment.v1.UpdateAttachmentReque
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Attachment|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.attachment.v1.UpdateAttachmentRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.attachment.v1.UpdateAttachmentRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.attachment.v1.UpdateAttachmentRequest.prototype.setAttachment = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1275,8 +1275,8 @@ proto.github.com.metaprov.modelaapi.services.attachment.v1.UpdateAttachmentReque
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.attachment.v1.UpdateAttachmentRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.attachment.v1.UpdateAttachmentRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.attachment.v1.UpdateAttachmentRequest.prototype.clearAttachment = function() {
+  return this.setAttachment(undefined);
 };
 
 
@@ -1284,7 +1284,7 @@ proto.github.com.metaprov.modelaapi.services.attachment.v1.UpdateAttachmentReque
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.attachment.v1.UpdateAttachmentRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.attachment.v1.UpdateAttachmentRequest.prototype.hasAttachment = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -1619,7 +1619,7 @@ proto.github.com.metaprov.modelaapi.services.attachment.v1.GetAttachmentResponse
  */
 proto.github.com.metaprov.modelaapi.services.attachment.v1.GetAttachmentResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment.toObject(includeInstance, f),
+    attachment: (f = msg.getAttachment()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment.toObject(includeInstance, f),
     yaml: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -1660,7 +1660,7 @@ proto.github.com.metaprov.modelaapi.services.attachment.v1.GetAttachmentResponse
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setAttachment(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -1695,7 +1695,7 @@ proto.github.com.metaprov.modelaapi.services.attachment.v1.GetAttachmentResponse
  */
 proto.github.com.metaprov.modelaapi.services.attachment.v1.GetAttachmentResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getAttachment();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1714,10 +1714,10 @@ proto.github.com.metaprov.modelaapi.services.attachment.v1.GetAttachmentResponse
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Attachment item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Attachment attachment = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Attachment}
  */
-proto.github.com.metaprov.modelaapi.services.attachment.v1.GetAttachmentResponse.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.attachment.v1.GetAttachmentResponse.prototype.getAttachment = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Attachment} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment, 1));
 };
@@ -1727,7 +1727,7 @@ proto.github.com.metaprov.modelaapi.services.attachment.v1.GetAttachmentResponse
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Attachment|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.attachment.v1.GetAttachmentResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.attachment.v1.GetAttachmentResponse.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.attachment.v1.GetAttachmentResponse.prototype.setAttachment = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1736,8 +1736,8 @@ proto.github.com.metaprov.modelaapi.services.attachment.v1.GetAttachmentResponse
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.attachment.v1.GetAttachmentResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.attachment.v1.GetAttachmentResponse.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.attachment.v1.GetAttachmentResponse.prototype.clearAttachment = function() {
+  return this.setAttachment(undefined);
 };
 
 
@@ -1745,7 +1745,7 @@ proto.github.com.metaprov.modelaapi.services.attachment.v1.GetAttachmentResponse
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.attachment.v1.GetAttachmentResponse.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.attachment.v1.GetAttachmentResponse.prototype.hasAttachment = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

@@ -946,7 +946,7 @@ proto.github.com.metaprov.modelaapi.services.cronreport.v1.CreateCronReportReque
  */
 proto.github.com.metaprov.modelaapi.services.cronreport.v1.CreateCronReportRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.CronReport.toObject(includeInstance, f)
+    cronreport: (f = msg.getCronreport()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.CronReport.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -986,7 +986,7 @@ proto.github.com.metaprov.modelaapi.services.cronreport.v1.CreateCronReportReque
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.CronReport;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.CronReport.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setCronreport(value);
       break;
     default:
       reader.skipField();
@@ -1017,7 +1017,7 @@ proto.github.com.metaprov.modelaapi.services.cronreport.v1.CreateCronReportReque
  */
 proto.github.com.metaprov.modelaapi.services.cronreport.v1.CreateCronReportRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getCronreport();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1029,10 +1029,10 @@ proto.github.com.metaprov.modelaapi.services.cronreport.v1.CreateCronReportReque
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport cronReport = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport}
  */
-proto.github.com.metaprov.modelaapi.services.cronreport.v1.CreateCronReportRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.cronreport.v1.CreateCronReportRequest.prototype.getCronreport = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.CronReport, 1));
 };
@@ -1042,7 +1042,7 @@ proto.github.com.metaprov.modelaapi.services.cronreport.v1.CreateCronReportReque
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.cronreport.v1.CreateCronReportRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.cronreport.v1.CreateCronReportRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.cronreport.v1.CreateCronReportRequest.prototype.setCronreport = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1051,8 +1051,8 @@ proto.github.com.metaprov.modelaapi.services.cronreport.v1.CreateCronReportReque
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.cronreport.v1.CreateCronReportRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.cronreport.v1.CreateCronReportRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.cronreport.v1.CreateCronReportRequest.prototype.clearCronreport = function() {
+  return this.setCronreport(undefined);
 };
 
 
@@ -1060,7 +1060,7 @@ proto.github.com.metaprov.modelaapi.services.cronreport.v1.CreateCronReportReque
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.cronreport.v1.CreateCronReportRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.cronreport.v1.CreateCronReportRequest.prototype.hasCronreport = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -1097,7 +1097,7 @@ proto.github.com.metaprov.modelaapi.services.cronreport.v1.UpdateCronReportReque
  */
 proto.github.com.metaprov.modelaapi.services.cronreport.v1.UpdateCronReportRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.CronReport.toObject(includeInstance, f),
+    cronreport: (f = msg.getCronreport()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.CronReport.toObject(includeInstance, f),
     fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
@@ -1138,7 +1138,7 @@ proto.github.com.metaprov.modelaapi.services.cronreport.v1.UpdateCronReportReque
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.CronReport;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.CronReport.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setCronreport(value);
       break;
     case 2:
       var value = new google_protobuf_field_mask_pb.FieldMask;
@@ -1174,7 +1174,7 @@ proto.github.com.metaprov.modelaapi.services.cronreport.v1.UpdateCronReportReque
  */
 proto.github.com.metaprov.modelaapi.services.cronreport.v1.UpdateCronReportRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getCronreport();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1194,10 +1194,10 @@ proto.github.com.metaprov.modelaapi.services.cronreport.v1.UpdateCronReportReque
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport cronReport = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport}
  */
-proto.github.com.metaprov.modelaapi.services.cronreport.v1.UpdateCronReportRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.cronreport.v1.UpdateCronReportRequest.prototype.getCronreport = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.CronReport, 1));
 };
@@ -1207,7 +1207,7 @@ proto.github.com.metaprov.modelaapi.services.cronreport.v1.UpdateCronReportReque
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.cronreport.v1.UpdateCronReportRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.cronreport.v1.UpdateCronReportRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.cronreport.v1.UpdateCronReportRequest.prototype.setCronreport = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1216,8 +1216,8 @@ proto.github.com.metaprov.modelaapi.services.cronreport.v1.UpdateCronReportReque
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.cronreport.v1.UpdateCronReportRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.cronreport.v1.UpdateCronReportRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.cronreport.v1.UpdateCronReportRequest.prototype.clearCronreport = function() {
+  return this.setCronreport(undefined);
 };
 
 
@@ -1225,7 +1225,7 @@ proto.github.com.metaprov.modelaapi.services.cronreport.v1.UpdateCronReportReque
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.cronreport.v1.UpdateCronReportRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.cronreport.v1.UpdateCronReportRequest.prototype.hasCronreport = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -1560,7 +1560,7 @@ proto.github.com.metaprov.modelaapi.services.cronreport.v1.GetCronReportResponse
  */
 proto.github.com.metaprov.modelaapi.services.cronreport.v1.GetCronReportResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.CronReport.toObject(includeInstance, f),
+    cronreport: (f = msg.getCronreport()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.CronReport.toObject(includeInstance, f),
     yaml: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -1601,7 +1601,7 @@ proto.github.com.metaprov.modelaapi.services.cronreport.v1.GetCronReportResponse
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.CronReport;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.CronReport.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setCronreport(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -1636,7 +1636,7 @@ proto.github.com.metaprov.modelaapi.services.cronreport.v1.GetCronReportResponse
  */
 proto.github.com.metaprov.modelaapi.services.cronreport.v1.GetCronReportResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getCronreport();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1655,10 +1655,10 @@ proto.github.com.metaprov.modelaapi.services.cronreport.v1.GetCronReportResponse
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport cronReport = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport}
  */
-proto.github.com.metaprov.modelaapi.services.cronreport.v1.GetCronReportResponse.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.cronreport.v1.GetCronReportResponse.prototype.getCronreport = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.CronReport, 1));
 };
@@ -1668,7 +1668,7 @@ proto.github.com.metaprov.modelaapi.services.cronreport.v1.GetCronReportResponse
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.cronreport.v1.GetCronReportResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.cronreport.v1.GetCronReportResponse.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.cronreport.v1.GetCronReportResponse.prototype.setCronreport = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1677,8 +1677,8 @@ proto.github.com.metaprov.modelaapi.services.cronreport.v1.GetCronReportResponse
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.cronreport.v1.GetCronReportResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.cronreport.v1.GetCronReportResponse.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.cronreport.v1.GetCronReportResponse.prototype.clearCronreport = function() {
+  return this.setCronreport(undefined);
 };
 
 
@@ -1686,7 +1686,7 @@ proto.github.com.metaprov.modelaapi.services.cronreport.v1.GetCronReportResponse
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.cronreport.v1.GetCronReportResponse.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.cronreport.v1.GetCronReportResponse.prototype.hasCronreport = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -2524,7 +2524,7 @@ proto.github.com.metaprov.modelaapi.services.cronreport.v1.RunCronReportRequest.
  */
 proto.github.com.metaprov.modelaapi.services.cronreport.v1.RunCronReportRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.CronReport.toObject(includeInstance, f)
+    cronreport: (f = msg.getCronreport()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.CronReport.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2564,7 +2564,7 @@ proto.github.com.metaprov.modelaapi.services.cronreport.v1.RunCronReportRequest.
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.CronReport;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.CronReport.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setCronreport(value);
       break;
     default:
       reader.skipField();
@@ -2595,7 +2595,7 @@ proto.github.com.metaprov.modelaapi.services.cronreport.v1.RunCronReportRequest.
  */
 proto.github.com.metaprov.modelaapi.services.cronreport.v1.RunCronReportRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getCronreport();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -2607,10 +2607,10 @@ proto.github.com.metaprov.modelaapi.services.cronreport.v1.RunCronReportRequest.
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport cronReport = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport}
  */
-proto.github.com.metaprov.modelaapi.services.cronreport.v1.RunCronReportRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.cronreport.v1.RunCronReportRequest.prototype.getCronreport = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.CronReport, 1));
 };
@@ -2620,7 +2620,7 @@ proto.github.com.metaprov.modelaapi.services.cronreport.v1.RunCronReportRequest.
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.cronreport.v1.RunCronReportRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.cronreport.v1.RunCronReportRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.cronreport.v1.RunCronReportRequest.prototype.setCronreport = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -2629,8 +2629,8 @@ proto.github.com.metaprov.modelaapi.services.cronreport.v1.RunCronReportRequest.
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.cronreport.v1.RunCronReportRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.cronreport.v1.RunCronReportRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.cronreport.v1.RunCronReportRequest.prototype.clearCronreport = function() {
+  return this.setCronreport(undefined);
 };
 
 
@@ -2638,7 +2638,7 @@ proto.github.com.metaprov.modelaapi.services.cronreport.v1.RunCronReportRequest.
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.cronreport.v1.RunCronReportRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.cronreport.v1.RunCronReportRequest.prototype.hasCronreport = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

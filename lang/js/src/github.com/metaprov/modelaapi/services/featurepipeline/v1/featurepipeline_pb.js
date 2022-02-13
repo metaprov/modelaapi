@@ -1053,7 +1053,7 @@ proto.github.com.metaprov.modelaapi.services.featurepipeline.v1.UpdateFeaturePip
  */
 proto.github.com.metaprov.modelaapi.services.featurepipeline.v1.UpdateFeaturePipelineRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline.toObject(includeInstance, f),
+    featurepipeline: (f = msg.getFeaturepipeline()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline.toObject(includeInstance, f),
     fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
@@ -1094,7 +1094,7 @@ proto.github.com.metaprov.modelaapi.services.featurepipeline.v1.UpdateFeaturePip
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setFeaturepipeline(value);
       break;
     case 2:
       var value = new google_protobuf_field_mask_pb.FieldMask;
@@ -1130,7 +1130,7 @@ proto.github.com.metaprov.modelaapi.services.featurepipeline.v1.UpdateFeaturePip
  */
 proto.github.com.metaprov.modelaapi.services.featurepipeline.v1.UpdateFeaturePipelineRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getFeaturepipeline();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1150,10 +1150,10 @@ proto.github.com.metaprov.modelaapi.services.featurepipeline.v1.UpdateFeaturePip
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipeline item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipeline featurepipeline = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipeline}
  */
-proto.github.com.metaprov.modelaapi.services.featurepipeline.v1.UpdateFeaturePipelineRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.featurepipeline.v1.UpdateFeaturePipelineRequest.prototype.getFeaturepipeline = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipeline} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline, 1));
 };
@@ -1163,7 +1163,7 @@ proto.github.com.metaprov.modelaapi.services.featurepipeline.v1.UpdateFeaturePip
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipeline|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.featurepipeline.v1.UpdateFeaturePipelineRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.featurepipeline.v1.UpdateFeaturePipelineRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.featurepipeline.v1.UpdateFeaturePipelineRequest.prototype.setFeaturepipeline = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1172,8 +1172,8 @@ proto.github.com.metaprov.modelaapi.services.featurepipeline.v1.UpdateFeaturePip
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.featurepipeline.v1.UpdateFeaturePipelineRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.featurepipeline.v1.UpdateFeaturePipelineRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.featurepipeline.v1.UpdateFeaturePipelineRequest.prototype.clearFeaturepipeline = function() {
+  return this.setFeaturepipeline(undefined);
 };
 
 
@@ -1181,7 +1181,7 @@ proto.github.com.metaprov.modelaapi.services.featurepipeline.v1.UpdateFeaturePip
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.featurepipeline.v1.UpdateFeaturePipelineRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.featurepipeline.v1.UpdateFeaturePipelineRequest.prototype.hasFeaturepipeline = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -1516,7 +1516,7 @@ proto.github.com.metaprov.modelaapi.services.featurepipeline.v1.GetFeaturePipeli
  */
 proto.github.com.metaprov.modelaapi.services.featurepipeline.v1.GetFeaturePipelineResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline.toObject(includeInstance, f),
+    featurepipeline: (f = msg.getFeaturepipeline()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline.toObject(includeInstance, f),
     yaml: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -1557,7 +1557,7 @@ proto.github.com.metaprov.modelaapi.services.featurepipeline.v1.GetFeaturePipeli
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setFeaturepipeline(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -1592,7 +1592,7 @@ proto.github.com.metaprov.modelaapi.services.featurepipeline.v1.GetFeaturePipeli
  */
 proto.github.com.metaprov.modelaapi.services.featurepipeline.v1.GetFeaturePipelineResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getFeaturepipeline();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1611,10 +1611,10 @@ proto.github.com.metaprov.modelaapi.services.featurepipeline.v1.GetFeaturePipeli
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipeline item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipeline featurepipeline = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipeline}
  */
-proto.github.com.metaprov.modelaapi.services.featurepipeline.v1.GetFeaturePipelineResponse.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.featurepipeline.v1.GetFeaturePipelineResponse.prototype.getFeaturepipeline = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipeline} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline, 1));
 };
@@ -1624,7 +1624,7 @@ proto.github.com.metaprov.modelaapi.services.featurepipeline.v1.GetFeaturePipeli
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipeline|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.featurepipeline.v1.GetFeaturePipelineResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.featurepipeline.v1.GetFeaturePipelineResponse.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.featurepipeline.v1.GetFeaturePipelineResponse.prototype.setFeaturepipeline = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1633,8 +1633,8 @@ proto.github.com.metaprov.modelaapi.services.featurepipeline.v1.GetFeaturePipeli
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.featurepipeline.v1.GetFeaturePipelineResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.featurepipeline.v1.GetFeaturePipelineResponse.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.featurepipeline.v1.GetFeaturePipelineResponse.prototype.clearFeaturepipeline = function() {
+  return this.setFeaturepipeline(undefined);
 };
 
 
@@ -1642,7 +1642,7 @@ proto.github.com.metaprov.modelaapi.services.featurepipeline.v1.GetFeaturePipeli
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.featurepipeline.v1.GetFeaturePipelineResponse.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.featurepipeline.v1.GetFeaturePipelineResponse.prototype.hasFeaturepipeline = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

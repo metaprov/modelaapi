@@ -28,7 +28,7 @@ message CreateFeatureResponse {
 }
 
 message UpdateFeatureRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature feature = 1;
     google.protobuf.FieldMask field_mask = 2;
 }
 
@@ -44,7 +44,7 @@ message GetFeatureRequest {
 
 
 message GetFeatureResponse {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature feature = 1;
     string yaml = 2;
 }
 

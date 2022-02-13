@@ -113,10 +113,10 @@ export namespace CreateCommitResponse {
 }
 
 export class UpdateCommitRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Commit | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Commit): UpdateCommitRequest;
-  hasItem(): boolean;
-  clearItem(): UpdateCommitRequest;
+  getCommit(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Commit | undefined;
+  setCommit(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Commit): UpdateCommitRequest;
+  hasCommit(): boolean;
+  clearCommit(): UpdateCommitRequest;
 
   getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
   setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): UpdateCommitRequest;
@@ -133,7 +133,7 @@ export class UpdateCommitRequest extends jspb.Message {
 
 export namespace UpdateCommitRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Commit.AsObject,
+    commit?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Commit.AsObject,
     fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
@@ -175,10 +175,10 @@ export namespace GetCommitRequest {
 }
 
 export class GetCommitResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Commit | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Commit): GetCommitResponse;
-  hasItem(): boolean;
-  clearItem(): GetCommitResponse;
+  getCommit(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Commit | undefined;
+  setCommit(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Commit): GetCommitResponse;
+  hasCommit(): boolean;
+  clearCommit(): GetCommitResponse;
 
   getYaml(): string;
   setYaml(value: string): GetCommitResponse;
@@ -193,7 +193,7 @@ export class GetCommitResponse extends jspb.Message {
 
 export namespace GetCommitResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Commit.AsObject,
+    commit?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Commit.AsObject,
     yaml: string,
   }
 }

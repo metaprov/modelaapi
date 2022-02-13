@@ -14,7 +14,7 @@ message GetReviewRequest {
 }
 
 message GetReviewResponse {
-    github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Review reviews = 1;
+    github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Review review = 1;
     string yaml = 2;
 }
 
@@ -51,7 +51,7 @@ message ListReviewRequest {
 }
 
 message ListReviewResponse {
-    github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.ReviewList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.ReviewList reviewes = 1;
     string next_page_token = 2;
 }
 

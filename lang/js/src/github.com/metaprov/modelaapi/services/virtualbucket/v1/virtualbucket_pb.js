@@ -623,7 +623,7 @@ proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.CreateVirtualBucke
  */
 proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.CreateVirtualBucketRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.toObject(includeInstance, f)
+    virtualbucket: (f = msg.getVirtualbucket()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -663,7 +663,7 @@ proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.CreateVirtualBucke
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setVirtualbucket(value);
       break;
     default:
       reader.skipField();
@@ -694,7 +694,7 @@ proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.CreateVirtualBucke
  */
 proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.CreateVirtualBucketRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getVirtualbucket();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -706,10 +706,10 @@ proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.CreateVirtualBucke
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket virtualbucket = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket}
  */
-proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.CreateVirtualBucketRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.CreateVirtualBucketRequest.prototype.getVirtualbucket = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket, 1));
 };
@@ -719,7 +719,7 @@ proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.CreateVirtualBucke
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.CreateVirtualBucketRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.CreateVirtualBucketRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.CreateVirtualBucketRequest.prototype.setVirtualbucket = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -728,8 +728,8 @@ proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.CreateVirtualBucke
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.CreateVirtualBucketRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.CreateVirtualBucketRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.CreateVirtualBucketRequest.prototype.clearVirtualbucket = function() {
+  return this.setVirtualbucket(undefined);
 };
 
 
@@ -737,7 +737,7 @@ proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.CreateVirtualBucke
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.CreateVirtualBucketRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.CreateVirtualBucketRequest.prototype.hasVirtualbucket = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -875,7 +875,7 @@ proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.UpdateVirtualBucke
  */
 proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.UpdateVirtualBucketRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.toObject(includeInstance, f),
+    virtualbucket: (f = msg.getVirtualbucket()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.toObject(includeInstance, f),
     fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
@@ -916,7 +916,7 @@ proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.UpdateVirtualBucke
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setVirtualbucket(value);
       break;
     case 2:
       var value = new google_protobuf_field_mask_pb.FieldMask;
@@ -952,7 +952,7 @@ proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.UpdateVirtualBucke
  */
 proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.UpdateVirtualBucketRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getVirtualbucket();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -972,10 +972,10 @@ proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.UpdateVirtualBucke
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket virtualbucket = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket}
  */
-proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.UpdateVirtualBucketRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.UpdateVirtualBucketRequest.prototype.getVirtualbucket = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket, 1));
 };
@@ -985,7 +985,7 @@ proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.UpdateVirtualBucke
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.UpdateVirtualBucketRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.UpdateVirtualBucketRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.UpdateVirtualBucketRequest.prototype.setVirtualbucket = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -994,8 +994,8 @@ proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.UpdateVirtualBucke
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.UpdateVirtualBucketRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.UpdateVirtualBucketRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.UpdateVirtualBucketRequest.prototype.clearVirtualbucket = function() {
+  return this.setVirtualbucket(undefined);
 };
 
 
@@ -1003,7 +1003,7 @@ proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.UpdateVirtualBucke
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.UpdateVirtualBucketRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.UpdateVirtualBucketRequest.prototype.hasVirtualbucket = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

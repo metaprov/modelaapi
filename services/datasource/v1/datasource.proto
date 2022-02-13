@@ -30,13 +30,13 @@ message GetDataSourceRequest {
 }
 
 message GetDataSourceResponse {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 1;
     string yaml = 2;
 }
 
 
 message UpdateDataSourceRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 1;
     google.protobuf.FieldMask field_mask = 2;
 }
 
@@ -44,7 +44,7 @@ message UpdateDataSourceResponse {}
 
 
 message CreateDataSourceRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 1;
 }
 
 message CreateDataSourceResponse {}

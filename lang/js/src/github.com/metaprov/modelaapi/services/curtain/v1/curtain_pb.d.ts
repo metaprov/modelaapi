@@ -78,10 +78,10 @@ export namespace CreateCurtainResponse {
 }
 
 export class CreateCurtainRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain): CreateCurtainRequest;
-  hasItem(): boolean;
-  clearItem(): CreateCurtainRequest;
+  getCurtain(): github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain | undefined;
+  setCurtain(value?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain): CreateCurtainRequest;
+  hasCurtain(): boolean;
+  clearCurtain(): CreateCurtainRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateCurtainRequest.AsObject;
@@ -93,15 +93,15 @@ export class CreateCurtainRequest extends jspb.Message {
 
 export namespace CreateCurtainRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain.AsObject,
+    curtain?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain.AsObject,
   }
 }
 
 export class UpdateCurtainRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain): UpdateCurtainRequest;
-  hasItem(): boolean;
-  clearItem(): UpdateCurtainRequest;
+  getCurtain(): github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain | undefined;
+  setCurtain(value?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain): UpdateCurtainRequest;
+  hasCurtain(): boolean;
+  clearCurtain(): UpdateCurtainRequest;
 
   getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
   setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): UpdateCurtainRequest;
@@ -118,7 +118,7 @@ export class UpdateCurtainRequest extends jspb.Message {
 
 export namespace UpdateCurtainRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain.AsObject,
+    curtain?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain.AsObject,
     fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
@@ -160,10 +160,10 @@ export namespace GetCurtainRequest {
 }
 
 export class GetCurtainResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain): GetCurtainResponse;
-  hasItem(): boolean;
-  clearItem(): GetCurtainResponse;
+  getCurtain(): github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain | undefined;
+  setCurtain(value?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain): GetCurtainResponse;
+  hasCurtain(): boolean;
+  clearCurtain(): GetCurtainResponse;
 
   getYaml(): string;
   setYaml(value: string): GetCurtainResponse;
@@ -178,7 +178,7 @@ export class GetCurtainResponse extends jspb.Message {
 
 export namespace GetCurtainResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain.AsObject,
+    curtain?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain.AsObject,
     yaml: string,
   }
 }

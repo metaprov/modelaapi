@@ -1212,7 +1212,7 @@ proto.github.com.metaprov.modelaapi.services.account.v1.CreateAccountRequest.pro
  */
 proto.github.com.metaprov.modelaapi.services.account.v1.CreateAccountRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Account.toObject(includeInstance, f),
+    account: (f = msg.getAccount()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Account.toObject(includeInstance, f),
     password: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -1253,7 +1253,7 @@ proto.github.com.metaprov.modelaapi.services.account.v1.CreateAccountRequest.des
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Account;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Account.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setAccount(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -1288,7 +1288,7 @@ proto.github.com.metaprov.modelaapi.services.account.v1.CreateAccountRequest.pro
  */
 proto.github.com.metaprov.modelaapi.services.account.v1.CreateAccountRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getAccount();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1307,10 +1307,10 @@ proto.github.com.metaprov.modelaapi.services.account.v1.CreateAccountRequest.ser
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Account item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Account account = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Account}
  */
-proto.github.com.metaprov.modelaapi.services.account.v1.CreateAccountRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.account.v1.CreateAccountRequest.prototype.getAccount = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Account} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Account, 1));
 };
@@ -1320,7 +1320,7 @@ proto.github.com.metaprov.modelaapi.services.account.v1.CreateAccountRequest.pro
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Account|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.account.v1.CreateAccountRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.account.v1.CreateAccountRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.account.v1.CreateAccountRequest.prototype.setAccount = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1329,8 +1329,8 @@ proto.github.com.metaprov.modelaapi.services.account.v1.CreateAccountRequest.pro
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.account.v1.CreateAccountRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.account.v1.CreateAccountRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.account.v1.CreateAccountRequest.prototype.clearAccount = function() {
+  return this.setAccount(undefined);
 };
 
 
@@ -1338,7 +1338,7 @@ proto.github.com.metaprov.modelaapi.services.account.v1.CreateAccountRequest.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.account.v1.CreateAccountRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.account.v1.CreateAccountRequest.prototype.hasAccount = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -1494,8 +1494,8 @@ proto.github.com.metaprov.modelaapi.services.account.v1.UpdateAccountRequest.pro
  */
 proto.github.com.metaprov.modelaapi.services.account.v1.UpdateAccountRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Account.toObject(includeInstance, f),
-    fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+    account: (f = msg.getAccount()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Account.toObject(includeInstance, f),
+    updateMask: (f = msg.getUpdateMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1535,12 +1535,12 @@ proto.github.com.metaprov.modelaapi.services.account.v1.UpdateAccountRequest.des
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Account;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Account.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setAccount(value);
       break;
     case 2:
       var value = new google_protobuf_field_mask_pb.FieldMask;
       reader.readMessage(value,google_protobuf_field_mask_pb.FieldMask.deserializeBinaryFromReader);
-      msg.setFieldMask(value);
+      msg.setUpdateMask(value);
       break;
     default:
       reader.skipField();
@@ -1571,7 +1571,7 @@ proto.github.com.metaprov.modelaapi.services.account.v1.UpdateAccountRequest.pro
  */
 proto.github.com.metaprov.modelaapi.services.account.v1.UpdateAccountRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getAccount();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1579,7 +1579,7 @@ proto.github.com.metaprov.modelaapi.services.account.v1.UpdateAccountRequest.ser
       github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Account.serializeBinaryToWriter
     );
   }
-  f = message.getFieldMask();
+  f = message.getUpdateMask();
   if (f != null) {
     writer.writeMessage(
       2,
@@ -1591,10 +1591,10 @@ proto.github.com.metaprov.modelaapi.services.account.v1.UpdateAccountRequest.ser
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Account item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Account account = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Account}
  */
-proto.github.com.metaprov.modelaapi.services.account.v1.UpdateAccountRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.account.v1.UpdateAccountRequest.prototype.getAccount = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Account} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Account, 1));
 };
@@ -1604,7 +1604,7 @@ proto.github.com.metaprov.modelaapi.services.account.v1.UpdateAccountRequest.pro
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Account|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.account.v1.UpdateAccountRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.account.v1.UpdateAccountRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.account.v1.UpdateAccountRequest.prototype.setAccount = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1613,8 +1613,8 @@ proto.github.com.metaprov.modelaapi.services.account.v1.UpdateAccountRequest.pro
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.account.v1.UpdateAccountRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.account.v1.UpdateAccountRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.account.v1.UpdateAccountRequest.prototype.clearAccount = function() {
+  return this.setAccount(undefined);
 };
 
 
@@ -1622,16 +1622,16 @@ proto.github.com.metaprov.modelaapi.services.account.v1.UpdateAccountRequest.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.account.v1.UpdateAccountRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.account.v1.UpdateAccountRequest.prototype.hasAccount = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
- * optional google.protobuf.FieldMask field_mask = 2;
+ * optional google.protobuf.FieldMask update_mask = 2;
  * @return {?proto.google.protobuf.FieldMask}
  */
-proto.github.com.metaprov.modelaapi.services.account.v1.UpdateAccountRequest.prototype.getFieldMask = function() {
+proto.github.com.metaprov.modelaapi.services.account.v1.UpdateAccountRequest.prototype.getUpdateMask = function() {
   return /** @type{?proto.google.protobuf.FieldMask} */ (
     jspb.Message.getWrapperField(this, google_protobuf_field_mask_pb.FieldMask, 2));
 };
@@ -1641,7 +1641,7 @@ proto.github.com.metaprov.modelaapi.services.account.v1.UpdateAccountRequest.pro
  * @param {?proto.google.protobuf.FieldMask|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.account.v1.UpdateAccountRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.account.v1.UpdateAccountRequest.prototype.setFieldMask = function(value) {
+proto.github.com.metaprov.modelaapi.services.account.v1.UpdateAccountRequest.prototype.setUpdateMask = function(value) {
   return jspb.Message.setWrapperField(this, 2, value);
 };
 
@@ -1650,8 +1650,8 @@ proto.github.com.metaprov.modelaapi.services.account.v1.UpdateAccountRequest.pro
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.account.v1.UpdateAccountRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.account.v1.UpdateAccountRequest.prototype.clearFieldMask = function() {
-  return this.setFieldMask(undefined);
+proto.github.com.metaprov.modelaapi.services.account.v1.UpdateAccountRequest.prototype.clearUpdateMask = function() {
+  return this.setUpdateMask(undefined);
 };
 
 
@@ -1659,7 +1659,7 @@ proto.github.com.metaprov.modelaapi.services.account.v1.UpdateAccountRequest.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.account.v1.UpdateAccountRequest.prototype.hasFieldMask = function() {
+proto.github.com.metaprov.modelaapi.services.account.v1.UpdateAccountRequest.prototype.hasUpdateMask = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 

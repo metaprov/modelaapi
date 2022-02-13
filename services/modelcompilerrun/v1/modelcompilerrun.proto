@@ -32,7 +32,7 @@ message CreateModelCompilerRunResponse {
 }
 
 message UpdateModelCompilerRunRequest {
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRun item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRun modelCompilerRun = 1;
     google.protobuf.FieldMask field_mask = 2;
 }
 
@@ -47,7 +47,7 @@ message GetModelCompilerRunRequest {
 
 
 message GetModelCompilerRunResponse {
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRun item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRun modelCompilerRun = 1;
     string yaml = 2;
 }
 

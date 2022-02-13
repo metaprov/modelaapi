@@ -91,10 +91,10 @@ export namespace GetDatasetRequest {
 }
 
 export class GetDatasetResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): GetDatasetResponse;
-  hasItem(): boolean;
-  clearItem(): GetDatasetResponse;
+  getDataset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
+  setDataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): GetDatasetResponse;
+  hasDataset(): boolean;
+  clearDataset(): GetDatasetResponse;
 
   getYaml(): string;
   setYaml(value: string): GetDatasetResponse;
@@ -109,7 +109,7 @@ export class GetDatasetResponse extends jspb.Message {
 
 export namespace GetDatasetResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
+    dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
     yaml: string,
   }
 }
@@ -149,10 +149,10 @@ export namespace CreateDatasetResponse {
 }
 
 export class UpdateDatasetRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): UpdateDatasetRequest;
-  hasItem(): boolean;
-  clearItem(): UpdateDatasetRequest;
+  getDataset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
+  setDataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): UpdateDatasetRequest;
+  hasDataset(): boolean;
+  clearDataset(): UpdateDatasetRequest;
 
   getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
   setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): UpdateDatasetRequest;
@@ -169,7 +169,7 @@ export class UpdateDatasetRequest extends jspb.Message {
 
 export namespace UpdateDatasetRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
+    dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
     fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }

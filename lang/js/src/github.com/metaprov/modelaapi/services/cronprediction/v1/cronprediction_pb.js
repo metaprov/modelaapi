@@ -946,7 +946,7 @@ proto.github.com.metaprov.modelaapi.services.cronprediction.v1.CreateCronPredict
  */
 proto.github.com.metaprov.modelaapi.services.cronprediction.v1.CreateCronPredictionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction.toObject(includeInstance, f)
+    cronprediction: (f = msg.getCronprediction()) && github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -986,7 +986,7 @@ proto.github.com.metaprov.modelaapi.services.cronprediction.v1.CreateCronPredict
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setCronprediction(value);
       break;
     default:
       reader.skipField();
@@ -1017,7 +1017,7 @@ proto.github.com.metaprov.modelaapi.services.cronprediction.v1.CreateCronPredict
  */
 proto.github.com.metaprov.modelaapi.services.cronprediction.v1.CreateCronPredictionRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getCronprediction();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1029,10 +1029,10 @@ proto.github.com.metaprov.modelaapi.services.cronprediction.v1.CreateCronPredict
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPrediction item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPrediction cronPrediction = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPrediction}
  */
-proto.github.com.metaprov.modelaapi.services.cronprediction.v1.CreateCronPredictionRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.cronprediction.v1.CreateCronPredictionRequest.prototype.getCronprediction = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPrediction} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction, 1));
 };
@@ -1042,7 +1042,7 @@ proto.github.com.metaprov.modelaapi.services.cronprediction.v1.CreateCronPredict
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPrediction|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.cronprediction.v1.CreateCronPredictionRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.cronprediction.v1.CreateCronPredictionRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.cronprediction.v1.CreateCronPredictionRequest.prototype.setCronprediction = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1051,8 +1051,8 @@ proto.github.com.metaprov.modelaapi.services.cronprediction.v1.CreateCronPredict
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.cronprediction.v1.CreateCronPredictionRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.cronprediction.v1.CreateCronPredictionRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.cronprediction.v1.CreateCronPredictionRequest.prototype.clearCronprediction = function() {
+  return this.setCronprediction(undefined);
 };
 
 
@@ -1060,7 +1060,7 @@ proto.github.com.metaprov.modelaapi.services.cronprediction.v1.CreateCronPredict
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.cronprediction.v1.CreateCronPredictionRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.cronprediction.v1.CreateCronPredictionRequest.prototype.hasCronprediction = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -1097,7 +1097,7 @@ proto.github.com.metaprov.modelaapi.services.cronprediction.v1.UpdateCronPredict
  */
 proto.github.com.metaprov.modelaapi.services.cronprediction.v1.UpdateCronPredictionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction.toObject(includeInstance, f),
+    cronprediction: (f = msg.getCronprediction()) && github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction.toObject(includeInstance, f),
     fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
@@ -1138,7 +1138,7 @@ proto.github.com.metaprov.modelaapi.services.cronprediction.v1.UpdateCronPredict
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setCronprediction(value);
       break;
     case 2:
       var value = new google_protobuf_field_mask_pb.FieldMask;
@@ -1174,7 +1174,7 @@ proto.github.com.metaprov.modelaapi.services.cronprediction.v1.UpdateCronPredict
  */
 proto.github.com.metaprov.modelaapi.services.cronprediction.v1.UpdateCronPredictionRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getCronprediction();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1194,10 +1194,10 @@ proto.github.com.metaprov.modelaapi.services.cronprediction.v1.UpdateCronPredict
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPrediction item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPrediction cronPrediction = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPrediction}
  */
-proto.github.com.metaprov.modelaapi.services.cronprediction.v1.UpdateCronPredictionRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.cronprediction.v1.UpdateCronPredictionRequest.prototype.getCronprediction = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPrediction} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction, 1));
 };
@@ -1207,7 +1207,7 @@ proto.github.com.metaprov.modelaapi.services.cronprediction.v1.UpdateCronPredict
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPrediction|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.cronprediction.v1.UpdateCronPredictionRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.cronprediction.v1.UpdateCronPredictionRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.cronprediction.v1.UpdateCronPredictionRequest.prototype.setCronprediction = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1216,8 +1216,8 @@ proto.github.com.metaprov.modelaapi.services.cronprediction.v1.UpdateCronPredict
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.cronprediction.v1.UpdateCronPredictionRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.cronprediction.v1.UpdateCronPredictionRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.cronprediction.v1.UpdateCronPredictionRequest.prototype.clearCronprediction = function() {
+  return this.setCronprediction(undefined);
 };
 
 
@@ -1225,7 +1225,7 @@ proto.github.com.metaprov.modelaapi.services.cronprediction.v1.UpdateCronPredict
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.cronprediction.v1.UpdateCronPredictionRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.cronprediction.v1.UpdateCronPredictionRequest.prototype.hasCronprediction = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -1560,7 +1560,7 @@ proto.github.com.metaprov.modelaapi.services.cronprediction.v1.GetCronPrediction
  */
 proto.github.com.metaprov.modelaapi.services.cronprediction.v1.GetCronPredictionResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction.toObject(includeInstance, f),
+    cronprediction: (f = msg.getCronprediction()) && github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction.toObject(includeInstance, f),
     yaml: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -1601,7 +1601,7 @@ proto.github.com.metaprov.modelaapi.services.cronprediction.v1.GetCronPrediction
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setCronprediction(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -1636,7 +1636,7 @@ proto.github.com.metaprov.modelaapi.services.cronprediction.v1.GetCronPrediction
  */
 proto.github.com.metaprov.modelaapi.services.cronprediction.v1.GetCronPredictionResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getCronprediction();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1655,10 +1655,10 @@ proto.github.com.metaprov.modelaapi.services.cronprediction.v1.GetCronPrediction
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPrediction item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPrediction cronPrediction = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPrediction}
  */
-proto.github.com.metaprov.modelaapi.services.cronprediction.v1.GetCronPredictionResponse.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.cronprediction.v1.GetCronPredictionResponse.prototype.getCronprediction = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPrediction} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction, 1));
 };
@@ -1668,7 +1668,7 @@ proto.github.com.metaprov.modelaapi.services.cronprediction.v1.GetCronPrediction
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPrediction|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.cronprediction.v1.GetCronPredictionResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.cronprediction.v1.GetCronPredictionResponse.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.cronprediction.v1.GetCronPredictionResponse.prototype.setCronprediction = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1677,8 +1677,8 @@ proto.github.com.metaprov.modelaapi.services.cronprediction.v1.GetCronPrediction
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.cronprediction.v1.GetCronPredictionResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.cronprediction.v1.GetCronPredictionResponse.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.cronprediction.v1.GetCronPredictionResponse.prototype.clearCronprediction = function() {
+  return this.setCronprediction(undefined);
 };
 
 
@@ -1686,7 +1686,7 @@ proto.github.com.metaprov.modelaapi.services.cronprediction.v1.GetCronPrediction
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.cronprediction.v1.GetCronPredictionResponse.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.cronprediction.v1.GetCronPredictionResponse.prototype.hasCronprediction = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -2524,7 +2524,7 @@ proto.github.com.metaprov.modelaapi.services.cronprediction.v1.RunCronPrediction
  */
 proto.github.com.metaprov.modelaapi.services.cronprediction.v1.RunCronPredictionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction.toObject(includeInstance, f)
+    cronprediction: (f = msg.getCronprediction()) && github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2564,7 +2564,7 @@ proto.github.com.metaprov.modelaapi.services.cronprediction.v1.RunCronPrediction
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setCronprediction(value);
       break;
     default:
       reader.skipField();
@@ -2595,7 +2595,7 @@ proto.github.com.metaprov.modelaapi.services.cronprediction.v1.RunCronPrediction
  */
 proto.github.com.metaprov.modelaapi.services.cronprediction.v1.RunCronPredictionRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getCronprediction();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -2607,10 +2607,10 @@ proto.github.com.metaprov.modelaapi.services.cronprediction.v1.RunCronPrediction
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPrediction item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPrediction cronPrediction = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPrediction}
  */
-proto.github.com.metaprov.modelaapi.services.cronprediction.v1.RunCronPredictionRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.cronprediction.v1.RunCronPredictionRequest.prototype.getCronprediction = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPrediction} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction, 1));
 };
@@ -2620,7 +2620,7 @@ proto.github.com.metaprov.modelaapi.services.cronprediction.v1.RunCronPrediction
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPrediction|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.cronprediction.v1.RunCronPredictionRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.cronprediction.v1.RunCronPredictionRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.cronprediction.v1.RunCronPredictionRequest.prototype.setCronprediction = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -2629,8 +2629,8 @@ proto.github.com.metaprov.modelaapi.services.cronprediction.v1.RunCronPrediction
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.cronprediction.v1.RunCronPredictionRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.cronprediction.v1.RunCronPredictionRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.cronprediction.v1.RunCronPredictionRequest.prototype.clearCronprediction = function() {
+  return this.setCronprediction(undefined);
 };
 
 
@@ -2638,7 +2638,7 @@ proto.github.com.metaprov.modelaapi.services.cronprediction.v1.RunCronPrediction
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.cronprediction.v1.RunCronPredictionRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.cronprediction.v1.RunCronPredictionRequest.prototype.hasCronprediction = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

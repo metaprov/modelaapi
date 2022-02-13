@@ -98,10 +98,10 @@ export namespace CreateEntityResponse {
 }
 
 export class UpdateEntityRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity): UpdateEntityRequest;
-  hasItem(): boolean;
-  clearItem(): UpdateEntityRequest;
+  getEntity(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity | undefined;
+  setEntity(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity): UpdateEntityRequest;
+  hasEntity(): boolean;
+  clearEntity(): UpdateEntityRequest;
 
   getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
   setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): UpdateEntityRequest;
@@ -118,7 +118,7 @@ export class UpdateEntityRequest extends jspb.Message {
 
 export namespace UpdateEntityRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity.AsObject,
+    entity?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity.AsObject,
     fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
@@ -166,10 +166,10 @@ export namespace GetEntityRequest {
 }
 
 export class GetEntityResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity): GetEntityResponse;
-  hasItem(): boolean;
-  clearItem(): GetEntityResponse;
+  getEntity(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity | undefined;
+  setEntity(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity): GetEntityResponse;
+  hasEntity(): boolean;
+  clearEntity(): GetEntityResponse;
 
   getYaml(): string;
   setYaml(value: string): GetEntityResponse;
@@ -184,7 +184,7 @@ export class GetEntityResponse extends jspb.Message {
 
 export namespace GetEntityResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity.AsObject,
+    entity?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity.AsObject,
     yaml: string,
   }
 }

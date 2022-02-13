@@ -113,10 +113,10 @@ export namespace CreateNotebookResponse {
 }
 
 export class UpdateNotebookRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Notebook | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Notebook): UpdateNotebookRequest;
-  hasItem(): boolean;
-  clearItem(): UpdateNotebookRequest;
+  getNotebook(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Notebook | undefined;
+  setNotebook(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Notebook): UpdateNotebookRequest;
+  hasNotebook(): boolean;
+  clearNotebook(): UpdateNotebookRequest;
 
   getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
   setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): UpdateNotebookRequest;
@@ -133,7 +133,7 @@ export class UpdateNotebookRequest extends jspb.Message {
 
 export namespace UpdateNotebookRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Notebook.AsObject,
+    notebook?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Notebook.AsObject,
     fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
@@ -175,10 +175,10 @@ export namespace GetNotebookRequest {
 }
 
 export class GetNotebookResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Notebook | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Notebook): GetNotebookResponse;
-  hasItem(): boolean;
-  clearItem(): GetNotebookResponse;
+  getNotebook(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Notebook | undefined;
+  setNotebook(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Notebook): GetNotebookResponse;
+  hasNotebook(): boolean;
+  clearNotebook(): GetNotebookResponse;
 
   getYaml(): string;
   setYaml(value: string): GetNotebookResponse;
@@ -193,7 +193,7 @@ export class GetNotebookResponse extends jspb.Message {
 
 export namespace GetNotebookResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Notebook.AsObject,
+    notebook?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Notebook.AsObject,
     yaml: string,
   }
 }

@@ -98,10 +98,10 @@ export namespace CreateFeaturePipelineRunResponse {
 }
 
 export class UpdateFeaturePipelineRunRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRun | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRun): UpdateFeaturePipelineRunRequest;
-  hasItem(): boolean;
-  clearItem(): UpdateFeaturePipelineRunRequest;
+  getFeaturepipelinerun(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRun | undefined;
+  setFeaturepipelinerun(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRun): UpdateFeaturePipelineRunRequest;
+  hasFeaturepipelinerun(): boolean;
+  clearFeaturepipelinerun(): UpdateFeaturePipelineRunRequest;
 
   getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
   setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): UpdateFeaturePipelineRunRequest;
@@ -118,7 +118,7 @@ export class UpdateFeaturePipelineRunRequest extends jspb.Message {
 
 export namespace UpdateFeaturePipelineRunRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRun.AsObject,
+    featurepipelinerun?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRun.AsObject,
     fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
@@ -160,10 +160,10 @@ export namespace GetFeaturePipelineRunRequest {
 }
 
 export class GetFeaturePipelineRunResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRun | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRun): GetFeaturePipelineRunResponse;
-  hasItem(): boolean;
-  clearItem(): GetFeaturePipelineRunResponse;
+  getFeaturepipelinerun(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRun | undefined;
+  setFeaturepipelinerun(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRun): GetFeaturePipelineRunResponse;
+  hasFeaturepipelinerun(): boolean;
+  clearFeaturepipelinerun(): GetFeaturePipelineRunResponse;
 
   getYaml(): string;
   setYaml(value: string): GetFeaturePipelineRunResponse;
@@ -178,7 +178,7 @@ export class GetFeaturePipelineRunResponse extends jspb.Message {
 
 export namespace GetFeaturePipelineRunResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRun.AsObject,
+    featurepipelinerun?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRun.AsObject,
     yaml: string,
   }
 }

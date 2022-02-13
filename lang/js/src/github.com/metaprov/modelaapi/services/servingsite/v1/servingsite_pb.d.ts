@@ -98,10 +98,10 @@ export namespace CreateServingSiteResponse {
 }
 
 export class UpdateServingSiteRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite): UpdateServingSiteRequest;
-  hasItem(): boolean;
-  clearItem(): UpdateServingSiteRequest;
+  getServingsite(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite | undefined;
+  setServingsite(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite): UpdateServingSiteRequest;
+  hasServingsite(): boolean;
+  clearServingsite(): UpdateServingSiteRequest;
 
   getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
   setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): UpdateServingSiteRequest;
@@ -118,7 +118,7 @@ export class UpdateServingSiteRequest extends jspb.Message {
 
 export namespace UpdateServingSiteRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite.AsObject,
+    servingsite?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite.AsObject,
     fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }

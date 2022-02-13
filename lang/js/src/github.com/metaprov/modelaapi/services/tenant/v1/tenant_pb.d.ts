@@ -89,10 +89,10 @@ export namespace CreateTenantResponse {
 }
 
 export class UpdateTenantRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant): UpdateTenantRequest;
-  hasItem(): boolean;
-  clearItem(): UpdateTenantRequest;
+  getTenant(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant | undefined;
+  setTenant(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant): UpdateTenantRequest;
+  hasTenant(): boolean;
+  clearTenant(): UpdateTenantRequest;
 
   getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
   setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): UpdateTenantRequest;
@@ -109,7 +109,7 @@ export class UpdateTenantRequest extends jspb.Message {
 
 export namespace UpdateTenantRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant.AsObject,
+    tenant?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant.AsObject,
     fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }

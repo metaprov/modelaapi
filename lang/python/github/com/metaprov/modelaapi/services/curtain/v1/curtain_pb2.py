@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z1github.com/metaprov/modelaapi/services/curtain/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n?github.com/metaprov/modelaapi/services/curtain/v1/curtain.proto\x12\x31github.com.metaprov.modelaapi.services.curtain.v1\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/api/annotations.proto\x1aIgithub.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1/generated.proto\"\xf4\x01\n\x13ListCurtainsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x62\n\x06labels\x18\x02 \x03(\x0b\x32R.github.com.metaprov.modelaapi.services.curtain.v1.ListCurtainsRequest.LabelsEntry\x12\x11\n\tpage_size\x18\x03 \x01(\x05\x12\x12\n\npage_token\x18\x04 \x01(\t\x12\x10\n\x08order_by\x18\x05 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x89\x01\n\x14ListCurtainsResponse\x12X\n\x08\x63urtains\x18\x01 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CurtainList\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x17\n\x15\x43reateCurtainResponse\"h\n\x14\x43reateCurtainRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Curtain\"\x98\x01\n\x14UpdateCurtainRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Curtain\x12.\n\nfield_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"\x17\n\x15UpdateCurtainResponse\"4\n\x11GetCurtainRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"t\n\x12GetCurtainResponse\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Curtain\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"7\n\x14\x44\x65leteCurtainRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x17\n\x15\x44\x65leteCurtainResponse2\x92\x08\n\x0e\x43urtainService\x12\xc1\x01\n\x0cListCurtains\x12\x46.github.com.metaprov.modelaapi.services.curtain.v1.ListCurtainsRequest\x1aG.github.com.metaprov.modelaapi.services.curtain.v1.ListCurtainsResponse\" \x82\xd3\xe4\x93\x02\x1a\x12\x18/v1/curtains/{namespace}\x12\xbb\x01\n\rCreateCurtain\x12G.github.com.metaprov.modelaapi.services.curtain.v1.CreateCurtainRequest\x1aH.github.com.metaprov.modelaapi.services.curtain.v1.CreateCurtainResponse\"\x17\x82\xd3\xe4\x93\x02\x11\"\x0c/v1/curtains:\x01*\x12\xc2\x01\n\nGetCurtain\x12\x44.github.com.metaprov.modelaapi.services.curtain.v1.GetCurtainRequest\x1a\x45.github.com.metaprov.modelaapi.services.curtain.v1.GetCurtainResponse\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/v1/curtains/{namespace}/{name}\x12\xea\x01\n\rUpdateCurtain\x12G.github.com.metaprov.modelaapi.services.curtain.v1.UpdateCurtainRequest\x1aH.github.com.metaprov.modelaapi.services.curtain.v1.UpdateCurtainResponse\"F\x82\xd3\xe4\x93\x02@\x1a;/v1/curtains/{item.metadata.namespace}/{item.metadata.name}:\x01*\x12\xcb\x01\n\rDeleteCurtain\x12G.github.com.metaprov.modelaapi.services.curtain.v1.DeleteCurtainRequest\x1aH.github.com.metaprov.modelaapi.services.curtain.v1.DeleteCurtainResponse\"\'\x82\xd3\xe4\x93\x02!*\x1f/v1/curtains/{namespace}/{name}B3Z1github.com/metaprov/modelaapi/services/curtain/v1b\x06proto3'
+  serialized_pb=b'\n?github.com/metaprov/modelaapi/services/curtain/v1/curtain.proto\x12\x31github.com.metaprov.modelaapi.services.curtain.v1\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/api/annotations.proto\x1aIgithub.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1/generated.proto\"\xf4\x01\n\x13ListCurtainsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x62\n\x06labels\x18\x02 \x03(\x0b\x32R.github.com.metaprov.modelaapi.services.curtain.v1.ListCurtainsRequest.LabelsEntry\x12\x11\n\tpage_size\x18\x03 \x01(\x05\x12\x12\n\npage_token\x18\x04 \x01(\t\x12\x10\n\x08order_by\x18\x05 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x89\x01\n\x14ListCurtainsResponse\x12X\n\x08\x63urtains\x18\x01 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CurtainList\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x17\n\x15\x43reateCurtainResponse\"k\n\x14\x43reateCurtainRequest\x12S\n\x07\x63urtain\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Curtain\"\x9b\x01\n\x14UpdateCurtainRequest\x12S\n\x07\x63urtain\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Curtain\x12.\n\nfield_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"\x17\n\x15UpdateCurtainResponse\"4\n\x11GetCurtainRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"w\n\x12GetCurtainResponse\x12S\n\x07\x63urtain\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Curtain\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"7\n\x14\x44\x65leteCurtainRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x17\n\x15\x44\x65leteCurtainResponse2\x92\x08\n\x0e\x43urtainService\x12\xc1\x01\n\x0cListCurtains\x12\x46.github.com.metaprov.modelaapi.services.curtain.v1.ListCurtainsRequest\x1aG.github.com.metaprov.modelaapi.services.curtain.v1.ListCurtainsResponse\" \x82\xd3\xe4\x93\x02\x1a\x12\x18/v1/curtains/{namespace}\x12\xbb\x01\n\rCreateCurtain\x12G.github.com.metaprov.modelaapi.services.curtain.v1.CreateCurtainRequest\x1aH.github.com.metaprov.modelaapi.services.curtain.v1.CreateCurtainResponse\"\x17\x82\xd3\xe4\x93\x02\x11\"\x0c/v1/curtains:\x01*\x12\xc2\x01\n\nGetCurtain\x12\x44.github.com.metaprov.modelaapi.services.curtain.v1.GetCurtainRequest\x1a\x45.github.com.metaprov.modelaapi.services.curtain.v1.GetCurtainResponse\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/v1/curtains/{namespace}/{name}\x12\xea\x01\n\rUpdateCurtain\x12G.github.com.metaprov.modelaapi.services.curtain.v1.UpdateCurtainRequest\x1aH.github.com.metaprov.modelaapi.services.curtain.v1.UpdateCurtainResponse\"F\x82\xd3\xe4\x93\x02@\x1a;/v1/curtains/{item.metadata.namespace}/{item.metadata.name}:\x01*\x12\xcb\x01\n\rDeleteCurtain\x12G.github.com.metaprov.modelaapi.services.curtain.v1.DeleteCurtainRequest\x1aH.github.com.metaprov.modelaapi.services.curtain.v1.DeleteCurtainResponse\"\'\x82\xd3\xe4\x93\x02!*\x1f/v1/curtains/{namespace}/{name}B3Z1github.com/metaprov/modelaapi/services/curtain/v1b\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
 
@@ -200,7 +200,7 @@ _CREATECURTAINREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='item', full_name='github.com.metaprov.modelaapi.services.curtain.v1.CreateCurtainRequest.item', index=0,
+      name='curtain', full_name='github.com.metaprov.modelaapi.services.curtain.v1.CreateCurtainRequest.curtain', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -219,7 +219,7 @@ _CREATECURTAINREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=669,
-  serialized_end=773,
+  serialized_end=776,
 )
 
 
@@ -232,7 +232,7 @@ _UPDATECURTAINREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='item', full_name='github.com.metaprov.modelaapi.services.curtain.v1.UpdateCurtainRequest.item', index=0,
+      name='curtain', full_name='github.com.metaprov.modelaapi.services.curtain.v1.UpdateCurtainRequest.curtain', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -257,8 +257,8 @@ _UPDATECURTAINREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=776,
-  serialized_end=928,
+  serialized_start=779,
+  serialized_end=934,
 )
 
 
@@ -282,8 +282,8 @@ _UPDATECURTAINRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=930,
-  serialized_end=953,
+  serialized_start=936,
+  serialized_end=959,
 )
 
 
@@ -321,8 +321,8 @@ _GETCURTAINREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=955,
-  serialized_end=1007,
+  serialized_start=961,
+  serialized_end=1013,
 )
 
 
@@ -335,7 +335,7 @@ _GETCURTAINRESPONSE = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='item', full_name='github.com.metaprov.modelaapi.services.curtain.v1.GetCurtainResponse.item', index=0,
+      name='curtain', full_name='github.com.metaprov.modelaapi.services.curtain.v1.GetCurtainResponse.curtain', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -360,8 +360,8 @@ _GETCURTAINRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1009,
-  serialized_end=1125,
+  serialized_start=1015,
+  serialized_end=1134,
 )
 
 
@@ -399,8 +399,8 @@ _DELETECURTAINREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1127,
-  serialized_end=1182,
+  serialized_start=1136,
+  serialized_end=1191,
 )
 
 
@@ -424,17 +424,17 @@ _DELETECURTAINRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1184,
-  serialized_end=1207,
+  serialized_start=1193,
+  serialized_end=1216,
 )
 
 _LISTCURTAINSREQUEST_LABELSENTRY.containing_type = _LISTCURTAINSREQUEST
 _LISTCURTAINSREQUEST.fields_by_name['labels'].message_type = _LISTCURTAINSREQUEST_LABELSENTRY
 _LISTCURTAINSRESPONSE.fields_by_name['curtains'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2._CURTAINLIST
-_CREATECURTAINREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2._CURTAIN
-_UPDATECURTAINREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2._CURTAIN
+_CREATECURTAINREQUEST.fields_by_name['curtain'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2._CURTAIN
+_UPDATECURTAINREQUEST.fields_by_name['curtain'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2._CURTAIN
 _UPDATECURTAINREQUEST.fields_by_name['field_mask'].message_type = google_dot_protobuf_dot_field__mask__pb2._FIELDMASK
-_GETCURTAINRESPONSE.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2._CURTAIN
+_GETCURTAINRESPONSE.fields_by_name['curtain'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2._CURTAIN
 DESCRIPTOR.message_types_by_name['ListCurtainsRequest'] = _LISTCURTAINSREQUEST
 DESCRIPTOR.message_types_by_name['ListCurtainsResponse'] = _LISTCURTAINSRESPONSE
 DESCRIPTOR.message_types_by_name['CreateCurtainResponse'] = _CREATECURTAINRESPONSE
@@ -536,8 +536,8 @@ _CURTAINSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1210,
-  serialized_end=2252,
+  serialized_start=1219,
+  serialized_end=2261,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListCurtains',

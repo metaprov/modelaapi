@@ -1156,7 +1156,7 @@ proto.github.com.metaprov.modelaapi.services.commit.v1.UpdateCommitRequest.proto
  */
 proto.github.com.metaprov.modelaapi.services.commit.v1.UpdateCommitRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Commit.toObject(includeInstance, f),
+    commit: (f = msg.getCommit()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Commit.toObject(includeInstance, f),
     fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
@@ -1197,7 +1197,7 @@ proto.github.com.metaprov.modelaapi.services.commit.v1.UpdateCommitRequest.deser
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Commit;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Commit.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setCommit(value);
       break;
     case 2:
       var value = new google_protobuf_field_mask_pb.FieldMask;
@@ -1233,7 +1233,7 @@ proto.github.com.metaprov.modelaapi.services.commit.v1.UpdateCommitRequest.proto
  */
 proto.github.com.metaprov.modelaapi.services.commit.v1.UpdateCommitRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getCommit();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1253,10 +1253,10 @@ proto.github.com.metaprov.modelaapi.services.commit.v1.UpdateCommitRequest.seria
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Commit item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Commit commit = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Commit}
  */
-proto.github.com.metaprov.modelaapi.services.commit.v1.UpdateCommitRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.commit.v1.UpdateCommitRequest.prototype.getCommit = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Commit} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Commit, 1));
 };
@@ -1266,7 +1266,7 @@ proto.github.com.metaprov.modelaapi.services.commit.v1.UpdateCommitRequest.proto
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Commit|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.commit.v1.UpdateCommitRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.commit.v1.UpdateCommitRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.commit.v1.UpdateCommitRequest.prototype.setCommit = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1275,8 +1275,8 @@ proto.github.com.metaprov.modelaapi.services.commit.v1.UpdateCommitRequest.proto
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.commit.v1.UpdateCommitRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.commit.v1.UpdateCommitRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.commit.v1.UpdateCommitRequest.prototype.clearCommit = function() {
+  return this.setCommit(undefined);
 };
 
 
@@ -1284,7 +1284,7 @@ proto.github.com.metaprov.modelaapi.services.commit.v1.UpdateCommitRequest.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.commit.v1.UpdateCommitRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.commit.v1.UpdateCommitRequest.prototype.hasCommit = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -1619,7 +1619,7 @@ proto.github.com.metaprov.modelaapi.services.commit.v1.GetCommitResponse.prototy
  */
 proto.github.com.metaprov.modelaapi.services.commit.v1.GetCommitResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Commit.toObject(includeInstance, f),
+    commit: (f = msg.getCommit()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Commit.toObject(includeInstance, f),
     yaml: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -1660,7 +1660,7 @@ proto.github.com.metaprov.modelaapi.services.commit.v1.GetCommitResponse.deseria
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Commit;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Commit.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setCommit(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -1695,7 +1695,7 @@ proto.github.com.metaprov.modelaapi.services.commit.v1.GetCommitResponse.prototy
  */
 proto.github.com.metaprov.modelaapi.services.commit.v1.GetCommitResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getCommit();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1714,10 +1714,10 @@ proto.github.com.metaprov.modelaapi.services.commit.v1.GetCommitResponse.seriali
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Commit item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Commit commit = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Commit}
  */
-proto.github.com.metaprov.modelaapi.services.commit.v1.GetCommitResponse.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.commit.v1.GetCommitResponse.prototype.getCommit = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Commit} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Commit, 1));
 };
@@ -1727,7 +1727,7 @@ proto.github.com.metaprov.modelaapi.services.commit.v1.GetCommitResponse.prototy
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Commit|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.commit.v1.GetCommitResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.commit.v1.GetCommitResponse.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.commit.v1.GetCommitResponse.prototype.setCommit = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1736,8 +1736,8 @@ proto.github.com.metaprov.modelaapi.services.commit.v1.GetCommitResponse.prototy
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.commit.v1.GetCommitResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.commit.v1.GetCommitResponse.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.commit.v1.GetCommitResponse.prototype.clearCommit = function() {
+  return this.setCommit(undefined);
 };
 
 
@@ -1745,7 +1745,7 @@ proto.github.com.metaprov.modelaapi.services.commit.v1.GetCommitResponse.prototy
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.commit.v1.GetCommitResponse.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.commit.v1.GetCommitResponse.prototype.hasCommit = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

@@ -98,10 +98,10 @@ export namespace CreateLabelingPipelineRunResponse {
 }
 
 export class UpdateLabelingPipelineRunRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineRun | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineRun): UpdateLabelingPipelineRunRequest;
-  hasItem(): boolean;
-  clearItem(): UpdateLabelingPipelineRunRequest;
+  getLabelingpipelinerun(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineRun | undefined;
+  setLabelingpipelinerun(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineRun): UpdateLabelingPipelineRunRequest;
+  hasLabelingpipelinerun(): boolean;
+  clearLabelingpipelinerun(): UpdateLabelingPipelineRunRequest;
 
   getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
   setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): UpdateLabelingPipelineRunRequest;
@@ -118,7 +118,7 @@ export class UpdateLabelingPipelineRunRequest extends jspb.Message {
 
 export namespace UpdateLabelingPipelineRunRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineRun.AsObject,
+    labelingpipelinerun?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineRun.AsObject,
     fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
@@ -160,10 +160,10 @@ export namespace GetLabelingPipelineRunRequest {
 }
 
 export class GetLabelingPipelineRunResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineRun | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineRun): GetLabelingPipelineRunResponse;
-  hasItem(): boolean;
-  clearItem(): GetLabelingPipelineRunResponse;
+  getLabelingpipelinerun(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineRun | undefined;
+  setLabelingpipelinerun(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineRun): GetLabelingPipelineRunResponse;
+  hasLabelingpipelinerun(): boolean;
+  clearLabelingpipelinerun(): GetLabelingPipelineRunResponse;
 
   getYaml(): string;
   setYaml(value: string): GetLabelingPipelineRunResponse;
@@ -178,7 +178,7 @@ export class GetLabelingPipelineRunResponse extends jspb.Message {
 
 export namespace GetLabelingPipelineRunResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineRun.AsObject,
+    labelingpipelinerun?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineRun.AsObject,
     yaml: string,
   }
 }

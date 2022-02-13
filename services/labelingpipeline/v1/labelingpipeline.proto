@@ -29,7 +29,7 @@ message CreateLabelingPipelineResponse {
 }
 
 message UpdateLabelingPipelineRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipeline item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipeline labelingpipeline = 1;
     google.protobuf.FieldMask field_mask = 2;
 }
 
@@ -44,7 +44,7 @@ message GetLabelingPipelineRequest {
 
 
 message GetLabelingPipelineResponse {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipeline item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipeline labelingpipeline = 1;
     string yaml = 2;
 }
 

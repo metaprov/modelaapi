@@ -34,7 +34,7 @@ message GetDatasetRequest {
 }
 
 message GetDatasetResponse {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset dataset = 1;
     string yaml = 2;
 }
 
@@ -49,7 +49,7 @@ message CreateDatasetResponse {
 
 // update dataset
 message UpdateDatasetRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset dataset = 1;
     google.protobuf.FieldMask field_mask = 2;
 }
 

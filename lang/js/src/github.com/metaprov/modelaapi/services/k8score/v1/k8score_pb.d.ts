@@ -31,10 +31,10 @@ export namespace GetSecretRequest {
 }
 
 export class GetSecretResponse extends jspb.Message {
-  getItem(): SecretInfo | undefined;
-  setItem(value?: SecretInfo): GetSecretResponse;
-  hasItem(): boolean;
-  clearItem(): GetSecretResponse;
+  getSecret(): SecretInfo | undefined;
+  setSecret(value?: SecretInfo): GetSecretResponse;
+  hasSecret(): boolean;
+  clearSecret(): GetSecretResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetSecretResponse.AsObject;
@@ -46,7 +46,7 @@ export class GetSecretResponse extends jspb.Message {
 
 export namespace GetSecretResponse {
   export type AsObject = {
-    item?: SecretInfo.AsObject,
+    secret?: SecretInfo.AsObject,
   }
 }
 
@@ -73,10 +73,10 @@ export namespace ListSecretsRequest {
 }
 
 export class ListSecretResponse extends jspb.Message {
-  getItemsList(): Array<SecretInfo>;
-  setItemsList(value: Array<SecretInfo>): ListSecretResponse;
-  clearItemsList(): ListSecretResponse;
-  addItems(value?: SecretInfo, index?: number): SecretInfo;
+  getSecretsList(): Array<SecretInfo>;
+  setSecretsList(value: Array<SecretInfo>): ListSecretResponse;
+  clearSecretsList(): ListSecretResponse;
+  addSecrets(value?: SecretInfo, index?: number): SecretInfo;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListSecretResponse.AsObject;
@@ -88,7 +88,7 @@ export class ListSecretResponse extends jspb.Message {
 
 export namespace ListSecretResponse {
   export type AsObject = {
-    itemsList: Array<SecretInfo.AsObject>,
+    secretsList: Array<SecretInfo.AsObject>,
   }
 }
 
@@ -119,10 +119,10 @@ export namespace GetDeploymentRequest {
 }
 
 export class GetDeploymentResponse extends jspb.Message {
-  getItem(): DeploymentInfo | undefined;
-  setItem(value?: DeploymentInfo): GetDeploymentResponse;
-  hasItem(): boolean;
-  clearItem(): GetDeploymentResponse;
+  getDeployment(): DeploymentInfo | undefined;
+  setDeployment(value?: DeploymentInfo): GetDeploymentResponse;
+  hasDeployment(): boolean;
+  clearDeployment(): GetDeploymentResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetDeploymentResponse.AsObject;
@@ -134,7 +134,7 @@ export class GetDeploymentResponse extends jspb.Message {
 
 export namespace GetDeploymentResponse {
   export type AsObject = {
-    item?: DeploymentInfo.AsObject,
+    deployment?: DeploymentInfo.AsObject,
   }
 }
 
@@ -161,10 +161,10 @@ export namespace ListDeploymentsRequest {
 }
 
 export class ListDeploymentsResponse extends jspb.Message {
-  getItemsList(): Array<DeploymentInfo>;
-  setItemsList(value: Array<DeploymentInfo>): ListDeploymentsResponse;
-  clearItemsList(): ListDeploymentsResponse;
-  addItems(value?: DeploymentInfo, index?: number): DeploymentInfo;
+  getDeploymentsList(): Array<DeploymentInfo>;
+  setDeploymentsList(value: Array<DeploymentInfo>): ListDeploymentsResponse;
+  clearDeploymentsList(): ListDeploymentsResponse;
+  addDeployments(value?: DeploymentInfo, index?: number): DeploymentInfo;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListDeploymentsResponse.AsObject;
@@ -176,7 +176,7 @@ export class ListDeploymentsResponse extends jspb.Message {
 
 export namespace ListDeploymentsResponse {
   export type AsObject = {
-    itemsList: Array<DeploymentInfo.AsObject>,
+    deploymentsList: Array<DeploymentInfo.AsObject>,
   }
 }
 
@@ -207,10 +207,10 @@ export namespace GetServiceRequest {
 }
 
 export class GetServiceResponse extends jspb.Message {
-  getItem(): ServiceInfo | undefined;
-  setItem(value?: ServiceInfo): GetServiceResponse;
-  hasItem(): boolean;
-  clearItem(): GetServiceResponse;
+  getService(): ServiceInfo | undefined;
+  setService(value?: ServiceInfo): GetServiceResponse;
+  hasService(): boolean;
+  clearService(): GetServiceResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetServiceResponse.AsObject;
@@ -222,7 +222,7 @@ export class GetServiceResponse extends jspb.Message {
 
 export namespace GetServiceResponse {
   export type AsObject = {
-    item?: ServiceInfo.AsObject,
+    service?: ServiceInfo.AsObject,
   }
 }
 
@@ -249,10 +249,10 @@ export namespace ListServicesRequest {
 }
 
 export class ListServicesResponse extends jspb.Message {
-  getItemsList(): Array<ServiceInfo>;
-  setItemsList(value: Array<ServiceInfo>): ListServicesResponse;
-  clearItemsList(): ListServicesResponse;
-  addItems(value?: ServiceInfo, index?: number): ServiceInfo;
+  getServicesList(): Array<ServiceInfo>;
+  setServicesList(value: Array<ServiceInfo>): ListServicesResponse;
+  clearServicesList(): ListServicesResponse;
+  addServices(value?: ServiceInfo, index?: number): ServiceInfo;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListServicesResponse.AsObject;
@@ -264,7 +264,7 @@ export class ListServicesResponse extends jspb.Message {
 
 export namespace ListServicesResponse {
   export type AsObject = {
-    itemsList: Array<ServiceInfo.AsObject>,
+    servicesList: Array<ServiceInfo.AsObject>,
   }
 }
 
@@ -295,10 +295,10 @@ export namespace GetPodRequest {
 }
 
 export class GetPodResponse extends jspb.Message {
-  getItem(): PodInfo | undefined;
-  setItem(value?: PodInfo): GetPodResponse;
-  hasItem(): boolean;
-  clearItem(): GetPodResponse;
+  getPod(): PodInfo | undefined;
+  setPod(value?: PodInfo): GetPodResponse;
+  hasPod(): boolean;
+  clearPod(): GetPodResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetPodResponse.AsObject;
@@ -310,7 +310,7 @@ export class GetPodResponse extends jspb.Message {
 
 export namespace GetPodResponse {
   export type AsObject = {
-    item?: PodInfo.AsObject,
+    pod?: PodInfo.AsObject,
   }
 }
 
@@ -337,10 +337,10 @@ export namespace ListPodsRequest {
 }
 
 export class ListPodsResponse extends jspb.Message {
-  getItemsList(): Array<PodInfo>;
-  setItemsList(value: Array<PodInfo>): ListPodsResponse;
-  clearItemsList(): ListPodsResponse;
-  addItems(value?: PodInfo, index?: number): PodInfo;
+  getPodsList(): Array<PodInfo>;
+  setPodsList(value: Array<PodInfo>): ListPodsResponse;
+  clearPodsList(): ListPodsResponse;
+  addPods(value?: PodInfo, index?: number): PodInfo;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListPodsResponse.AsObject;
@@ -352,7 +352,7 @@ export class ListPodsResponse extends jspb.Message {
 
 export namespace ListPodsResponse {
   export type AsObject = {
-    itemsList: Array<PodInfo.AsObject>,
+    podsList: Array<PodInfo.AsObject>,
   }
 }
 
@@ -383,10 +383,10 @@ export namespace GetJobRequest {
 }
 
 export class GetJobResponse extends jspb.Message {
-  getItem(): JobInfo | undefined;
-  setItem(value?: JobInfo): GetJobResponse;
-  hasItem(): boolean;
-  clearItem(): GetJobResponse;
+  getJob(): JobInfo | undefined;
+  setJob(value?: JobInfo): GetJobResponse;
+  hasJob(): boolean;
+  clearJob(): GetJobResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetJobResponse.AsObject;
@@ -398,7 +398,7 @@ export class GetJobResponse extends jspb.Message {
 
 export namespace GetJobResponse {
   export type AsObject = {
-    item?: JobInfo.AsObject,
+    job?: JobInfo.AsObject,
   }
 }
 
@@ -425,10 +425,10 @@ export namespace ListJobsRequest {
 }
 
 export class ListJobsResponse extends jspb.Message {
-  getItemsList(): Array<JobInfo>;
-  setItemsList(value: Array<JobInfo>): ListJobsResponse;
-  clearItemsList(): ListJobsResponse;
-  addItems(value?: JobInfo, index?: number): JobInfo;
+  getJobsList(): Array<JobInfo>;
+  setJobsList(value: Array<JobInfo>): ListJobsResponse;
+  clearJobsList(): ListJobsResponse;
+  addJobs(value?: JobInfo, index?: number): JobInfo;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListJobsResponse.AsObject;
@@ -440,7 +440,7 @@ export class ListJobsResponse extends jspb.Message {
 
 export namespace ListJobsResponse {
   export type AsObject = {
-    itemsList: Array<JobInfo.AsObject>,
+    jobsList: Array<JobInfo.AsObject>,
   }
 }
 

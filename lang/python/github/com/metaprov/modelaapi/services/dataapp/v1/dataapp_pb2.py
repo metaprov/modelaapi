@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z1github.com/metaprov/modelaapi/services/dataapp/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n?github.com/metaprov/modelaapi/services/dataapp/v1/dataapp.proto\x12\x31github.com.metaprov.modelaapi.services.dataapp.v1\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/api/annotations.proto\x1aIgithub.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1/generated.proto\"\xf4\x01\n\x13ListDataAppsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x62\n\x06labels\x18\x02 \x03(\x0b\x32R.github.com.metaprov.modelaapi.services.dataapp.v1.ListDataAppsRequest.LabelsEntry\x12\x11\n\tpage_size\x18\x03 \x01(\x05\x12\x12\n\npage_token\x18\x04 \x01(\t\x12\x10\n\x08order_by\x18\x05 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x89\x01\n\x14ListDataAppsResponse\x12X\n\x08\x64\x61taapps\x18\x01 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppList\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x17\n\x15\x43reateDataAppResponse\"k\n\x14\x43reateDataAppRequest\x12S\n\x07\x64\x61taapp\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp\"\x98\x01\n\x14UpdateDataAppRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp\x12.\n\nfield_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"\x17\n\x15UpdateDataAppResponse\"4\n\x11GetDataAppRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"t\n\x12GetDataAppResponse\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"7\n\x14\x44\x65leteDataAppRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x17\n\x15\x44\x65leteDataAppResponse\"6\n\x13PauseDataAppRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x16\n\x14PauseDataAppResponse\"7\n\x14ResumeDataAppRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x17\n\x15ResumeDataAppResponse\"e\n\x11RunDataAppRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp\"\x14\n\x12RunDataAppResponse2\x9d\r\n\x0e\x44\x61taAppService\x12\xc1\x01\n\x0cListDataApps\x12\x46.github.com.metaprov.modelaapi.services.dataapp.v1.ListDataAppsRequest\x1aG.github.com.metaprov.modelaapi.services.dataapp.v1.ListDataAppsResponse\" \x82\xd3\xe4\x93\x02\x1a\x12\x18/v1/dataapps/{namespace}\x12\xbb\x01\n\rCreateDataApp\x12G.github.com.metaprov.modelaapi.services.dataapp.v1.CreateDataAppRequest\x1aH.github.com.metaprov.modelaapi.services.dataapp.v1.CreateDataAppResponse\"\x17\x82\xd3\xe4\x93\x02\x11\"\x0c/v1/dataapps:\x01*\x12\xc2\x01\n\nGetDataApp\x12\x44.github.com.metaprov.modelaapi.services.dataapp.v1.GetDataAppRequest\x1a\x45.github.com.metaprov.modelaapi.services.dataapp.v1.GetDataAppResponse\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/v1/dataapps/{namespace}/{name}\x12\xea\x01\n\rUpdateDataApp\x12G.github.com.metaprov.modelaapi.services.dataapp.v1.UpdateDataAppRequest\x1aH.github.com.metaprov.modelaapi.services.dataapp.v1.UpdateDataAppResponse\"F\x82\xd3\xe4\x93\x02@\x1a;/v1/dataapps/{item.metadata.namespace}/{item.metadata.name}:\x01*\x12\xcb\x01\n\rDeleteDataApp\x12G.github.com.metaprov.modelaapi.services.dataapp.v1.DeleteDataAppRequest\x1aH.github.com.metaprov.modelaapi.services.dataapp.v1.DeleteDataAppResponse\"\'\x82\xd3\xe4\x93\x02!*\x1f/v1/dataapps/{namespace}/{name}\x12\xce\x01\n\x0cPauseDataApp\x12\x46.github.com.metaprov.modelaapi.services.dataapp.v1.PauseDataAppRequest\x1aG.github.com.metaprov.modelaapi.services.dataapp.v1.PauseDataAppResponse\"-\x82\xd3\xe4\x93\x02\'\"%/v1/dataapps/{namespace}/{name}:pause\x12\xe2\x01\n\nRunDataApp\x12\x44.github.com.metaprov.modelaapi.services.dataapp.v1.RunDataAppRequest\x1a\x45.github.com.metaprov.modelaapi.services.dataapp.v1.RunDataAppResponse\"G\x82\xd3\xe4\x93\x02\x41\"?/v1/dataapps/{item.metadata.namespace}/{item.metadata.name}:run\x12\xd2\x01\n\rResumeDataApp\x12G.github.com.metaprov.modelaapi.services.dataapp.v1.ResumeDataAppRequest\x1aH.github.com.metaprov.modelaapi.services.dataapp.v1.ResumeDataAppResponse\".\x82\xd3\xe4\x93\x02(\"&/v1/dataapps/{namespace}/{name}:resumeB3Z1github.com/metaprov/modelaapi/services/dataapp/v1b\x06proto3'
+  serialized_pb=b'\n?github.com/metaprov/modelaapi/services/dataapp/v1/dataapp.proto\x12\x31github.com.metaprov.modelaapi.services.dataapp.v1\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/api/annotations.proto\x1aIgithub.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1/generated.proto\"\xf4\x01\n\x13ListDataAppsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x62\n\x06labels\x18\x02 \x03(\x0b\x32R.github.com.metaprov.modelaapi.services.dataapp.v1.ListDataAppsRequest.LabelsEntry\x12\x11\n\tpage_size\x18\x03 \x01(\x05\x12\x12\n\npage_token\x18\x04 \x01(\t\x12\x10\n\x08order_by\x18\x05 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x89\x01\n\x14ListDataAppsResponse\x12X\n\x08\x64\x61taapps\x18\x01 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppList\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x17\n\x15\x43reateDataAppResponse\"k\n\x14\x43reateDataAppRequest\x12S\n\x07\x64\x61taapp\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp\"\x9b\x01\n\x14UpdateDataAppRequest\x12S\n\x07\x64\x61taapp\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp\x12.\n\nfield_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"\x17\n\x15UpdateDataAppResponse\"4\n\x11GetDataAppRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"w\n\x12GetDataAppResponse\x12S\n\x07\x64\x61taapp\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"7\n\x14\x44\x65leteDataAppRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x17\n\x15\x44\x65leteDataAppResponse\"6\n\x13PauseDataAppRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x16\n\x14PauseDataAppResponse\"7\n\x14ResumeDataAppRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x17\n\x15ResumeDataAppResponse\"h\n\x11RunDataAppRequest\x12S\n\x07\x64\x61taapp\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp\"\x14\n\x12RunDataAppResponse2\x9d\r\n\x0e\x44\x61taAppService\x12\xc1\x01\n\x0cListDataApps\x12\x46.github.com.metaprov.modelaapi.services.dataapp.v1.ListDataAppsRequest\x1aG.github.com.metaprov.modelaapi.services.dataapp.v1.ListDataAppsResponse\" \x82\xd3\xe4\x93\x02\x1a\x12\x18/v1/dataapps/{namespace}\x12\xbb\x01\n\rCreateDataApp\x12G.github.com.metaprov.modelaapi.services.dataapp.v1.CreateDataAppRequest\x1aH.github.com.metaprov.modelaapi.services.dataapp.v1.CreateDataAppResponse\"\x17\x82\xd3\xe4\x93\x02\x11\"\x0c/v1/dataapps:\x01*\x12\xc2\x01\n\nGetDataApp\x12\x44.github.com.metaprov.modelaapi.services.dataapp.v1.GetDataAppRequest\x1a\x45.github.com.metaprov.modelaapi.services.dataapp.v1.GetDataAppResponse\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/v1/dataapps/{namespace}/{name}\x12\xea\x01\n\rUpdateDataApp\x12G.github.com.metaprov.modelaapi.services.dataapp.v1.UpdateDataAppRequest\x1aH.github.com.metaprov.modelaapi.services.dataapp.v1.UpdateDataAppResponse\"F\x82\xd3\xe4\x93\x02@\x1a;/v1/dataapps/{item.metadata.namespace}/{item.metadata.name}:\x01*\x12\xcb\x01\n\rDeleteDataApp\x12G.github.com.metaprov.modelaapi.services.dataapp.v1.DeleteDataAppRequest\x1aH.github.com.metaprov.modelaapi.services.dataapp.v1.DeleteDataAppResponse\"\'\x82\xd3\xe4\x93\x02!*\x1f/v1/dataapps/{namespace}/{name}\x12\xce\x01\n\x0cPauseDataApp\x12\x46.github.com.metaprov.modelaapi.services.dataapp.v1.PauseDataAppRequest\x1aG.github.com.metaprov.modelaapi.services.dataapp.v1.PauseDataAppResponse\"-\x82\xd3\xe4\x93\x02\'\"%/v1/dataapps/{namespace}/{name}:pause\x12\xe2\x01\n\nRunDataApp\x12\x44.github.com.metaprov.modelaapi.services.dataapp.v1.RunDataAppRequest\x1a\x45.github.com.metaprov.modelaapi.services.dataapp.v1.RunDataAppResponse\"G\x82\xd3\xe4\x93\x02\x41\"?/v1/dataapps/{item.metadata.namespace}/{item.metadata.name}:run\x12\xd2\x01\n\rResumeDataApp\x12G.github.com.metaprov.modelaapi.services.dataapp.v1.ResumeDataAppRequest\x1aH.github.com.metaprov.modelaapi.services.dataapp.v1.ResumeDataAppResponse\".\x82\xd3\xe4\x93\x02(\"&/v1/dataapps/{namespace}/{name}:resumeB3Z1github.com/metaprov/modelaapi/services/dataapp/v1b\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
 
@@ -232,7 +232,7 @@ _UPDATEDATAAPPREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='item', full_name='github.com.metaprov.modelaapi.services.dataapp.v1.UpdateDataAppRequest.item', index=0,
+      name='dataapp', full_name='github.com.metaprov.modelaapi.services.dataapp.v1.UpdateDataAppRequest.dataapp', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -258,7 +258,7 @@ _UPDATEDATAAPPREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=779,
-  serialized_end=931,
+  serialized_end=934,
 )
 
 
@@ -282,8 +282,8 @@ _UPDATEDATAAPPRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=933,
-  serialized_end=956,
+  serialized_start=936,
+  serialized_end=959,
 )
 
 
@@ -321,8 +321,8 @@ _GETDATAAPPREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=958,
-  serialized_end=1010,
+  serialized_start=961,
+  serialized_end=1013,
 )
 
 
@@ -335,7 +335,7 @@ _GETDATAAPPRESPONSE = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='item', full_name='github.com.metaprov.modelaapi.services.dataapp.v1.GetDataAppResponse.item', index=0,
+      name='dataapp', full_name='github.com.metaprov.modelaapi.services.dataapp.v1.GetDataAppResponse.dataapp', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -360,8 +360,8 @@ _GETDATAAPPRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1012,
-  serialized_end=1128,
+  serialized_start=1015,
+  serialized_end=1134,
 )
 
 
@@ -399,8 +399,8 @@ _DELETEDATAAPPREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1130,
-  serialized_end=1185,
+  serialized_start=1136,
+  serialized_end=1191,
 )
 
 
@@ -424,8 +424,8 @@ _DELETEDATAAPPRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1187,
-  serialized_end=1210,
+  serialized_start=1193,
+  serialized_end=1216,
 )
 
 
@@ -463,8 +463,8 @@ _PAUSEDATAAPPREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1212,
-  serialized_end=1266,
+  serialized_start=1218,
+  serialized_end=1272,
 )
 
 
@@ -488,8 +488,8 @@ _PAUSEDATAAPPRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1268,
-  serialized_end=1290,
+  serialized_start=1274,
+  serialized_end=1296,
 )
 
 
@@ -527,8 +527,8 @@ _RESUMEDATAAPPREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1292,
-  serialized_end=1347,
+  serialized_start=1298,
+  serialized_end=1353,
 )
 
 
@@ -552,8 +552,8 @@ _RESUMEDATAAPPRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1349,
-  serialized_end=1372,
+  serialized_start=1355,
+  serialized_end=1378,
 )
 
 
@@ -566,7 +566,7 @@ _RUNDATAAPPREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='item', full_name='github.com.metaprov.modelaapi.services.dataapp.v1.RunDataAppRequest.item', index=0,
+      name='dataapp', full_name='github.com.metaprov.modelaapi.services.dataapp.v1.RunDataAppRequest.dataapp', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -584,8 +584,8 @@ _RUNDATAAPPREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1374,
-  serialized_end=1475,
+  serialized_start=1380,
+  serialized_end=1484,
 )
 
 
@@ -609,18 +609,18 @@ _RUNDATAAPPRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1477,
-  serialized_end=1497,
+  serialized_start=1486,
+  serialized_end=1506,
 )
 
 _LISTDATAAPPSREQUEST_LABELSENTRY.containing_type = _LISTDATAAPPSREQUEST
 _LISTDATAAPPSREQUEST.fields_by_name['labels'].message_type = _LISTDATAAPPSREQUEST_LABELSENTRY
 _LISTDATAAPPSRESPONSE.fields_by_name['dataapps'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2._DATAAPPLIST
 _CREATEDATAAPPREQUEST.fields_by_name['dataapp'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2._DATAAPP
-_UPDATEDATAAPPREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2._DATAAPP
+_UPDATEDATAAPPREQUEST.fields_by_name['dataapp'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2._DATAAPP
 _UPDATEDATAAPPREQUEST.fields_by_name['field_mask'].message_type = google_dot_protobuf_dot_field__mask__pb2._FIELDMASK
-_GETDATAAPPRESPONSE.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2._DATAAPP
-_RUNDATAAPPREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2._DATAAPP
+_GETDATAAPPRESPONSE.fields_by_name['dataapp'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2._DATAAPP
+_RUNDATAAPPREQUEST.fields_by_name['dataapp'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2._DATAAPP
 DESCRIPTOR.message_types_by_name['ListDataAppsRequest'] = _LISTDATAAPPSREQUEST
 DESCRIPTOR.message_types_by_name['ListDataAppsResponse'] = _LISTDATAAPPSRESPONSE
 DESCRIPTOR.message_types_by_name['CreateDataAppResponse'] = _CREATEDATAAPPRESPONSE
@@ -770,8 +770,8 @@ _DATAAPPSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1500,
-  serialized_end=3193,
+  serialized_start=1509,
+  serialized_end=3202,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListDataApps',

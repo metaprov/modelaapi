@@ -23,7 +23,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z/github.com/metaprov/modelaapi/services/alert/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n;github.com/metaprov/modelaapi/services/alert/v1/alert.proto\x12/github.com.metaprov.modelaapi.services.alert.v1\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x45github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto\x1a=github.com/metaprov/modelaapi/services/common/v1/common.proto\"\xee\x01\n\x11ListAlertsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12^\n\x06labels\x18\x02 \x03(\x0b\x32N.github.com.metaprov.modelaapi.services.alert.v1.ListAlertsRequest.LabelsEntry\x12\x11\n\tpage_size\x18\x03 \x01(\x05\x12\x12\n\npage_token\x18\x04 \x01(\t\x12\x10\n\x08order_by\x18\x05 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x7f\n\x12ListAlertsResponse\x12P\n\x06\x61lerts\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertList\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x0f\n\rAlertResponse\"`\n\x12\x43reateAlertRequest\x12J\n\x04item\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert\"\x15\n\x13\x43reateAlertResponse\"\x90\x01\n\x12UpdateAlertRequest\x12J\n\x04item\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert\x12.\n\nfield_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"\x15\n\x13UpdateAlertResponse\"2\n\x0fGetAlertRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"l\n\x10GetAlertResponse\x12J\n\x04item\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"<\n\x19GetAlertNamespacesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"q\n\x1aGetAlertNamespacesResponse\x12S\n\nnamespaces\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo\"5\n\x12\x44\x65leteAlertRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x15\n\x13\x44\x65leteAlertResponse2\xd4\x07\n\x0c\x41lertService\x12\xb5\x01\n\nListAlerts\x12\x42.github.com.metaprov.modelaapi.services.alert.v1.ListAlertsRequest\x1a\x43.github.com.metaprov.modelaapi.services.alert.v1.ListAlertsResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/v1/alerts/{namespace}\x12\xaf\x01\n\x0b\x43reateAlert\x12\x43.github.com.metaprov.modelaapi.services.alert.v1.CreateAlertRequest\x1a\x44.github.com.metaprov.modelaapi.services.alert.v1.CreateAlertResponse\"\x15\x82\xd3\xe4\x93\x02\x0f\"\n/v1/alerts:\x01*\x12\xb6\x01\n\x08GetAlert\x12@.github.com.metaprov.modelaapi.services.alert.v1.GetAlertRequest\x1a\x41.github.com.metaprov.modelaapi.services.alert.v1.GetAlertResponse\"%\x82\xd3\xe4\x93\x02\x1f\x12\x1d/v1/alerts/{namespace}/{name}\x12\xde\x01\n\x0bUpdateAlert\x12\x43.github.com.metaprov.modelaapi.services.alert.v1.UpdateAlertRequest\x1a\x44.github.com.metaprov.modelaapi.services.alert.v1.UpdateAlertResponse\"D\x82\xd3\xe4\x93\x02>\x1a\x39/v1/alerts/{item.metadata.namespace}/{item.metadata.name}:\x01*\x12\xbf\x01\n\x0b\x44\x65leteAlert\x12\x43.github.com.metaprov.modelaapi.services.alert.v1.DeleteAlertRequest\x1a\x44.github.com.metaprov.modelaapi.services.alert.v1.DeleteAlertResponse\"%\x82\xd3\xe4\x93\x02\x1f*\x1d/v1/alerts/{namespace}/{name}B1Z/github.com/metaprov/modelaapi/services/alert/v1b\x06proto3'
+  serialized_pb=b'\n;github.com/metaprov/modelaapi/services/alert/v1/alert.proto\x12/github.com.metaprov.modelaapi.services.alert.v1\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x45github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto\x1a=github.com/metaprov/modelaapi/services/common/v1/common.proto\"\xee\x01\n\x11ListAlertsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12^\n\x06labels\x18\x02 \x03(\x0b\x32N.github.com.metaprov.modelaapi.services.alert.v1.ListAlertsRequest.LabelsEntry\x12\x11\n\tpage_size\x18\x03 \x01(\x05\x12\x12\n\npage_token\x18\x04 \x01(\t\x12\x10\n\x08order_by\x18\x05 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x7f\n\x12ListAlertsResponse\x12P\n\x06\x61lerts\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertList\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x0f\n\rAlertResponse\"a\n\x12\x43reateAlertRequest\x12K\n\x05\x61lert\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert\"\x15\n\x13\x43reateAlertResponse\"\x92\x01\n\x12UpdateAlertRequest\x12K\n\x05\x61lert\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"\x15\n\x13UpdateAlertResponse\"2\n\x0fGetAlertRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"m\n\x10GetAlertResponse\x12K\n\x05\x61lert\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"<\n\x19GetAlertNamespacesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"q\n\x1aGetAlertNamespacesResponse\x12S\n\nnamespaces\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo\"5\n\x12\x44\x65leteAlertRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x15\n\x13\x44\x65leteAlertResponse2\xd4\x07\n\x0c\x41lertService\x12\xb5\x01\n\nListAlerts\x12\x42.github.com.metaprov.modelaapi.services.alert.v1.ListAlertsRequest\x1a\x43.github.com.metaprov.modelaapi.services.alert.v1.ListAlertsResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/v1/alerts/{namespace}\x12\xaf\x01\n\x0b\x43reateAlert\x12\x43.github.com.metaprov.modelaapi.services.alert.v1.CreateAlertRequest\x1a\x44.github.com.metaprov.modelaapi.services.alert.v1.CreateAlertResponse\"\x15\x82\xd3\xe4\x93\x02\x0f\"\n/v1/alerts:\x01*\x12\xb6\x01\n\x08GetAlert\x12@.github.com.metaprov.modelaapi.services.alert.v1.GetAlertRequest\x1a\x41.github.com.metaprov.modelaapi.services.alert.v1.GetAlertResponse\"%\x82\xd3\xe4\x93\x02\x1f\x12\x1d/v1/alerts/{namespace}/{name}\x12\xde\x01\n\x0bUpdateAlert\x12\x43.github.com.metaprov.modelaapi.services.alert.v1.UpdateAlertRequest\x1a\x44.github.com.metaprov.modelaapi.services.alert.v1.UpdateAlertResponse\"D\x82\xd3\xe4\x93\x02>\x1a\x39/v1/alerts/{item.metadata.namespace}/{item.metadata.name}:\x01*\x12\xbf\x01\n\x0b\x44\x65leteAlert\x12\x43.github.com.metaprov.modelaapi.services.alert.v1.DeleteAlertRequest\x1a\x44.github.com.metaprov.modelaapi.services.alert.v1.DeleteAlertResponse\"%\x82\xd3\xe4\x93\x02\x1f*\x1d/v1/alerts/{namespace}/{name}B1Z/github.com/metaprov/modelaapi/services/alert/v1b\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_common_dot_v1_dot_common__pb2.DESCRIPTOR,])
 
@@ -201,7 +201,7 @@ _CREATEALERTREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='item', full_name='github.com.metaprov.modelaapi.services.alert.v1.CreateAlertRequest.item', index=0,
+      name='alert', full_name='github.com.metaprov.modelaapi.services.alert.v1.CreateAlertRequest.alert', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -220,7 +220,7 @@ _CREATEALERTREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=697,
-  serialized_end=793,
+  serialized_end=794,
 )
 
 
@@ -244,8 +244,8 @@ _CREATEALERTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=795,
-  serialized_end=816,
+  serialized_start=796,
+  serialized_end=817,
 )
 
 
@@ -258,14 +258,14 @@ _UPDATEALERTREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='item', full_name='github.com.metaprov.modelaapi.services.alert.v1.UpdateAlertRequest.item', index=0,
+      name='alert', full_name='github.com.metaprov.modelaapi.services.alert.v1.UpdateAlertRequest.alert', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='field_mask', full_name='github.com.metaprov.modelaapi.services.alert.v1.UpdateAlertRequest.field_mask', index=1,
+      name='update_mask', full_name='github.com.metaprov.modelaapi.services.alert.v1.UpdateAlertRequest.update_mask', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -283,8 +283,8 @@ _UPDATEALERTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=819,
-  serialized_end=963,
+  serialized_start=820,
+  serialized_end=966,
 )
 
 
@@ -308,8 +308,8 @@ _UPDATEALERTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=965,
-  serialized_end=986,
+  serialized_start=968,
+  serialized_end=989,
 )
 
 
@@ -347,8 +347,8 @@ _GETALERTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=988,
-  serialized_end=1038,
+  serialized_start=991,
+  serialized_end=1041,
 )
 
 
@@ -361,7 +361,7 @@ _GETALERTRESPONSE = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='item', full_name='github.com.metaprov.modelaapi.services.alert.v1.GetAlertResponse.item', index=0,
+      name='alert', full_name='github.com.metaprov.modelaapi.services.alert.v1.GetAlertResponse.alert', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -386,8 +386,8 @@ _GETALERTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1040,
-  serialized_end=1148,
+  serialized_start=1043,
+  serialized_end=1152,
 )
 
 
@@ -425,8 +425,8 @@ _GETALERTNAMESPACESREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1150,
-  serialized_end=1210,
+  serialized_start=1154,
+  serialized_end=1214,
 )
 
 
@@ -457,8 +457,8 @@ _GETALERTNAMESPACESRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1212,
-  serialized_end=1325,
+  serialized_start=1216,
+  serialized_end=1329,
 )
 
 
@@ -496,8 +496,8 @@ _DELETEALERTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1327,
-  serialized_end=1380,
+  serialized_start=1331,
+  serialized_end=1384,
 )
 
 
@@ -521,17 +521,17 @@ _DELETEALERTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1382,
-  serialized_end=1403,
+  serialized_start=1386,
+  serialized_end=1407,
 )
 
 _LISTALERTSREQUEST_LABELSENTRY.containing_type = _LISTALERTSREQUEST
 _LISTALERTSREQUEST.fields_by_name['labels'].message_type = _LISTALERTSREQUEST_LABELSENTRY
 _LISTALERTSRESPONSE.fields_by_name['alerts'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._ALERTLIST
-_CREATEALERTREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._ALERT
-_UPDATEALERTREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._ALERT
-_UPDATEALERTREQUEST.fields_by_name['field_mask'].message_type = google_dot_protobuf_dot_field__mask__pb2._FIELDMASK
-_GETALERTRESPONSE.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._ALERT
+_CREATEALERTREQUEST.fields_by_name['alert'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._ALERT
+_UPDATEALERTREQUEST.fields_by_name['alert'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._ALERT
+_UPDATEALERTREQUEST.fields_by_name['update_mask'].message_type = google_dot_protobuf_dot_field__mask__pb2._FIELDMASK
+_GETALERTRESPONSE.fields_by_name['alert'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._ALERT
 _GETALERTNAMESPACESRESPONSE.fields_by_name['namespaces'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_common_dot_v1_dot_common__pb2._NAMESPACEINFO
 DESCRIPTOR.message_types_by_name['ListAlertsRequest'] = _LISTALERTSREQUEST
 DESCRIPTOR.message_types_by_name['ListAlertsResponse'] = _LISTALERTSRESPONSE
@@ -658,8 +658,8 @@ _ALERTSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1406,
-  serialized_end=2386,
+  serialized_start=1410,
+  serialized_end=2390,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListAlerts',

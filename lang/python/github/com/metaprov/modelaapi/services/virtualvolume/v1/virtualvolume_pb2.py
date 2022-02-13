@@ -23,7 +23,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z7github.com/metaprov/modelaapi/services/virtualvolume/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nKgithub.com/metaprov/modelaapi/services/virtualvolume/v1/virtualvolume.proto\x12\x37github.com.metaprov.modelaapi.services.virtualvolume.v1\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x45github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto\x1a=github.com/metaprov/modelaapi/services/common/v1/common.proto\"\xcd\x01\n\x19ListVirtualVolumesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12n\n\x06labels\x18\x03 \x03(\x0b\x32^.github.com.metaprov.modelaapi.services.virtualvolume.v1.ListVirtualVolumesRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x97\x01\n\x1aListVirtualVolumesResponse\x12`\n\x0evirtualvolumes\x18\x01 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualVolumeList\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x17\n\x15VirtualVolumeResponse\"y\n\x1a\x43reateVirtualVolumeRequest\x12[\n\rvirtualvolume\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualVolume\"\x1d\n\x1b\x43reateVirtualVolumeResponse\"\xa0\x01\n\x1aUpdateVirtualVolumeRequest\x12R\n\x04item\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualVolume\x12.\n\nfield_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"\x1d\n\x1bUpdateVirtualVolumeResponse\":\n\x17GetVirtualVolumeRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x85\x01\n\x18GetVirtualVolumeResponse\x12[\n\rvirtualvolume\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualVolume\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"=\n\x1a\x44\x65leteVirtualVolumeRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1d\n\x1b\x44\x65leteVirtualVolumeResponse2\xcc\t\n\x14VirtualVolumeService\x12\xe5\x01\n\x12ListVirtualVolumes\x12R.github.com.metaprov.modelaapi.services.virtualvolume.v1.ListVirtualVolumesRequest\x1aS.github.com.metaprov.modelaapi.services.virtualvolume.v1.ListVirtualVolumesResponse\"&\x82\xd3\xe4\x93\x02 \x12\x1e/v1/virtualvolumes/{namespace}\x12\xdf\x01\n\x13\x43reateVirtualVolume\x12S.github.com.metaprov.modelaapi.services.virtualvolume.v1.CreateVirtualVolumeRequest\x1aT.github.com.metaprov.modelaapi.services.virtualvolume.v1.CreateVirtualVolumeResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\"\x12/v1/virtualvolumes:\x01*\x12\xe6\x01\n\x10GetVirtualVolume\x12P.github.com.metaprov.modelaapi.services.virtualvolume.v1.GetVirtualVolumeRequest\x1aQ.github.com.metaprov.modelaapi.services.virtualvolume.v1.GetVirtualVolumeResponse\"-\x82\xd3\xe4\x93\x02\'\x12%/v1/virtualvolumes/{namespace}/{name}\x12\x8e\x02\n\x13UpdateVirtualVolume\x12S.github.com.metaprov.modelaapi.services.virtualvolume.v1.UpdateVirtualVolumeRequest\x1aT.github.com.metaprov.modelaapi.services.virtualvolume.v1.UpdateVirtualVolumeResponse\"L\x82\xd3\xe4\x93\x02\x46\x1a\x41/v1/virtualvolumes/{item.metadata.namespace}/{item.metadata.name}:\x01*\x12\xef\x01\n\x13\x44\x65leteVirtualVolume\x12S.github.com.metaprov.modelaapi.services.virtualvolume.v1.DeleteVirtualVolumeRequest\x1aT.github.com.metaprov.modelaapi.services.virtualvolume.v1.DeleteVirtualVolumeResponse\"-\x82\xd3\xe4\x93\x02\'*%/v1/virtualvolumes/{namespace}/{name}B9Z7github.com/metaprov/modelaapi/services/virtualvolume/v1b\x06proto3'
+  serialized_pb=b'\nKgithub.com/metaprov/modelaapi/services/virtualvolume/v1/virtualvolume.proto\x12\x37github.com.metaprov.modelaapi.services.virtualvolume.v1\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x45github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto\x1a=github.com/metaprov/modelaapi/services/common/v1/common.proto\"\xcd\x01\n\x19ListVirtualVolumesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12n\n\x06labels\x18\x03 \x03(\x0b\x32^.github.com.metaprov.modelaapi.services.virtualvolume.v1.ListVirtualVolumesRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x97\x01\n\x1aListVirtualVolumesResponse\x12`\n\x0evirtualvolumes\x18\x01 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualVolumeList\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x17\n\x15VirtualVolumeResponse\"y\n\x1a\x43reateVirtualVolumeRequest\x12[\n\rvirtualvolume\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualVolume\"\x1d\n\x1b\x43reateVirtualVolumeResponse\"\xa9\x01\n\x1aUpdateVirtualVolumeRequest\x12[\n\rvirtualvolume\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualVolume\x12.\n\nfield_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"\x1d\n\x1bUpdateVirtualVolumeResponse\":\n\x17GetVirtualVolumeRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x85\x01\n\x18GetVirtualVolumeResponse\x12[\n\rvirtualvolume\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualVolume\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"=\n\x1a\x44\x65leteVirtualVolumeRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1d\n\x1b\x44\x65leteVirtualVolumeResponse2\xcc\t\n\x14VirtualVolumeService\x12\xe5\x01\n\x12ListVirtualVolumes\x12R.github.com.metaprov.modelaapi.services.virtualvolume.v1.ListVirtualVolumesRequest\x1aS.github.com.metaprov.modelaapi.services.virtualvolume.v1.ListVirtualVolumesResponse\"&\x82\xd3\xe4\x93\x02 \x12\x1e/v1/virtualvolumes/{namespace}\x12\xdf\x01\n\x13\x43reateVirtualVolume\x12S.github.com.metaprov.modelaapi.services.virtualvolume.v1.CreateVirtualVolumeRequest\x1aT.github.com.metaprov.modelaapi.services.virtualvolume.v1.CreateVirtualVolumeResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\"\x12/v1/virtualvolumes:\x01*\x12\xe6\x01\n\x10GetVirtualVolume\x12P.github.com.metaprov.modelaapi.services.virtualvolume.v1.GetVirtualVolumeRequest\x1aQ.github.com.metaprov.modelaapi.services.virtualvolume.v1.GetVirtualVolumeResponse\"-\x82\xd3\xe4\x93\x02\'\x12%/v1/virtualvolumes/{namespace}/{name}\x12\x8e\x02\n\x13UpdateVirtualVolume\x12S.github.com.metaprov.modelaapi.services.virtualvolume.v1.UpdateVirtualVolumeRequest\x1aT.github.com.metaprov.modelaapi.services.virtualvolume.v1.UpdateVirtualVolumeResponse\"L\x82\xd3\xe4\x93\x02\x46\x1a\x41/v1/virtualvolumes/{item.metadata.namespace}/{item.metadata.name}:\x01*\x12\xef\x01\n\x13\x44\x65leteVirtualVolume\x12S.github.com.metaprov.modelaapi.services.virtualvolume.v1.DeleteVirtualVolumeRequest\x1aT.github.com.metaprov.modelaapi.services.virtualvolume.v1.DeleteVirtualVolumeResponse\"-\x82\xd3\xe4\x93\x02\'*%/v1/virtualvolumes/{namespace}/{name}B9Z7github.com/metaprov/modelaapi/services/virtualvolume/v1b\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_common_dot_v1_dot_common__pb2.DESCRIPTOR,])
 
@@ -237,7 +237,7 @@ _UPDATEVIRTUALVOLUMEREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='item', full_name='github.com.metaprov.modelaapi.services.virtualvolume.v1.UpdateVirtualVolumeRequest.item', index=0,
+      name='virtualvolume', full_name='github.com.metaprov.modelaapi.services.virtualvolume.v1.UpdateVirtualVolumeRequest.virtualvolume', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -263,7 +263,7 @@ _UPDATEVIRTUALVOLUMEREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=876,
-  serialized_end=1036,
+  serialized_end=1045,
 )
 
 
@@ -287,8 +287,8 @@ _UPDATEVIRTUALVOLUMERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1038,
-  serialized_end=1067,
+  serialized_start=1047,
+  serialized_end=1076,
 )
 
 
@@ -326,8 +326,8 @@ _GETVIRTUALVOLUMEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1069,
-  serialized_end=1127,
+  serialized_start=1078,
+  serialized_end=1136,
 )
 
 
@@ -365,8 +365,8 @@ _GETVIRTUALVOLUMERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1130,
-  serialized_end=1263,
+  serialized_start=1139,
+  serialized_end=1272,
 )
 
 
@@ -404,8 +404,8 @@ _DELETEVIRTUALVOLUMEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1265,
-  serialized_end=1326,
+  serialized_start=1274,
+  serialized_end=1335,
 )
 
 
@@ -429,15 +429,15 @@ _DELETEVIRTUALVOLUMERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1328,
-  serialized_end=1357,
+  serialized_start=1337,
+  serialized_end=1366,
 )
 
 _LISTVIRTUALVOLUMESREQUEST_LABELSENTRY.containing_type = _LISTVIRTUALVOLUMESREQUEST
 _LISTVIRTUALVOLUMESREQUEST.fields_by_name['labels'].message_type = _LISTVIRTUALVOLUMESREQUEST_LABELSENTRY
 _LISTVIRTUALVOLUMESRESPONSE.fields_by_name['virtualvolumes'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._VIRTUALVOLUMELIST
 _CREATEVIRTUALVOLUMEREQUEST.fields_by_name['virtualvolume'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._VIRTUALVOLUME
-_UPDATEVIRTUALVOLUMEREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._VIRTUALVOLUME
+_UPDATEVIRTUALVOLUMEREQUEST.fields_by_name['virtualvolume'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._VIRTUALVOLUME
 _UPDATEVIRTUALVOLUMEREQUEST.fields_by_name['field_mask'].message_type = google_dot_protobuf_dot_field__mask__pb2._FIELDMASK
 _GETVIRTUALVOLUMERESPONSE.fields_by_name['virtualvolume'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._VIRTUALVOLUME
 DESCRIPTOR.message_types_by_name['ListVirtualVolumesRequest'] = _LISTVIRTUALVOLUMESREQUEST
@@ -549,8 +549,8 @@ _VIRTUALVOLUMESERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1360,
-  serialized_end=2588,
+  serialized_start=1369,
+  serialized_end=2597,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListVirtualVolumes',

@@ -70,10 +70,10 @@ export namespace CreateWebRequestRunResponse {
 }
 
 export class CreateWebRequestRunRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequestRun | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequestRun): CreateWebRequestRunRequest;
-  hasItem(): boolean;
-  clearItem(): CreateWebRequestRunRequest;
+  getWebrequestrun(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequestRun | undefined;
+  setWebrequestrun(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequestRun): CreateWebRequestRunRequest;
+  hasWebrequestrun(): boolean;
+  clearWebrequestrun(): CreateWebRequestRunRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateWebRequestRunRequest.AsObject;
@@ -85,7 +85,7 @@ export class CreateWebRequestRunRequest extends jspb.Message {
 
 export namespace CreateWebRequestRunRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequestRun.AsObject,
+    webrequestrun?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequestRun.AsObject,
   }
 }
 
@@ -152,10 +152,10 @@ export namespace GetWebRequestRunRequest {
 }
 
 export class GetWebRequestRunResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequestRun | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequestRun): GetWebRequestRunResponse;
-  hasItem(): boolean;
-  clearItem(): GetWebRequestRunResponse;
+  getWebrequestrun(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequestRun | undefined;
+  setWebrequestrun(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequestRun): GetWebRequestRunResponse;
+  hasWebrequestrun(): boolean;
+  clearWebrequestrun(): GetWebRequestRunResponse;
 
   getYaml(): string;
   setYaml(value: string): GetWebRequestRunResponse;
@@ -170,7 +170,7 @@ export class GetWebRequestRunResponse extends jspb.Message {
 
 export namespace GetWebRequestRunResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequestRun.AsObject,
+    webrequestrun?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequestRun.AsObject,
     yaml: string,
   }
 }

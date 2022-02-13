@@ -45,19 +45,19 @@ message GetModelLogsRequest {
 
 
 message CreateModelRequest {
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model model = 1;
 }
 
 message CreateModelResponse {}
 
 message UpdateModelRequest {
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model item = 5;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model model = 5;
 }
 
 message UpdateModelResponse {}
 
 message GetModelResponse {
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model model = 1;
     string yaml = 2;
 
 }

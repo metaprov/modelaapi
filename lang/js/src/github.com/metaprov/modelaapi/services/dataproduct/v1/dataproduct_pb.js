@@ -971,7 +971,7 @@ proto.github.com.metaprov.modelaapi.services.dataproduct.v1.UpdateDataProductReq
  */
 proto.github.com.metaprov.modelaapi.services.dataproduct.v1.UpdateDataProductRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.toObject(includeInstance, f),
+    dataproduct: (f = msg.getDataproduct()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.toObject(includeInstance, f),
     fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
@@ -1012,7 +1012,7 @@ proto.github.com.metaprov.modelaapi.services.dataproduct.v1.UpdateDataProductReq
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setDataproduct(value);
       break;
     case 2:
       var value = new google_protobuf_field_mask_pb.FieldMask;
@@ -1048,7 +1048,7 @@ proto.github.com.metaprov.modelaapi.services.dataproduct.v1.UpdateDataProductReq
  */
 proto.github.com.metaprov.modelaapi.services.dataproduct.v1.UpdateDataProductRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getDataproduct();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1068,10 +1068,10 @@ proto.github.com.metaprov.modelaapi.services.dataproduct.v1.UpdateDataProductReq
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct dataproduct = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct}
  */
-proto.github.com.metaprov.modelaapi.services.dataproduct.v1.UpdateDataProductRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.dataproduct.v1.UpdateDataProductRequest.prototype.getDataproduct = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct, 1));
 };
@@ -1081,7 +1081,7 @@ proto.github.com.metaprov.modelaapi.services.dataproduct.v1.UpdateDataProductReq
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.dataproduct.v1.UpdateDataProductRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.dataproduct.v1.UpdateDataProductRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.dataproduct.v1.UpdateDataProductRequest.prototype.setDataproduct = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1090,8 +1090,8 @@ proto.github.com.metaprov.modelaapi.services.dataproduct.v1.UpdateDataProductReq
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.dataproduct.v1.UpdateDataProductRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.dataproduct.v1.UpdateDataProductRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.dataproduct.v1.UpdateDataProductRequest.prototype.clearDataproduct = function() {
+  return this.setDataproduct(undefined);
 };
 
 
@@ -1099,7 +1099,7 @@ proto.github.com.metaprov.modelaapi.services.dataproduct.v1.UpdateDataProductReq
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.dataproduct.v1.UpdateDataProductRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.dataproduct.v1.UpdateDataProductRequest.prototype.hasDataproduct = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

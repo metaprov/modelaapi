@@ -32,7 +32,7 @@ message CreateModelPipelineRunResponse {
 }
 
 message UpdateModelPipelineRunRequest {
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRun item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRun modelPipelineRun = 1;
     google.protobuf.FieldMask field_mask = 2;
 }
 
@@ -47,7 +47,7 @@ message GetModelPipelineRunRequest {
 
 
 message GetModelPipelineRunResponse {
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRun item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRun modelPipelineRun = 1;
     string yaml = 2;
 }
 

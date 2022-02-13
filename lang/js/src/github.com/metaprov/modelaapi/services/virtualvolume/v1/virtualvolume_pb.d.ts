@@ -101,10 +101,10 @@ export namespace CreateVirtualVolumeResponse {
 }
 
 export class UpdateVirtualVolumeRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume): UpdateVirtualVolumeRequest;
-  hasItem(): boolean;
-  clearItem(): UpdateVirtualVolumeRequest;
+  getVirtualvolume(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume | undefined;
+  setVirtualvolume(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume): UpdateVirtualVolumeRequest;
+  hasVirtualvolume(): boolean;
+  clearVirtualvolume(): UpdateVirtualVolumeRequest;
 
   getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
   setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): UpdateVirtualVolumeRequest;
@@ -121,7 +121,7 @@ export class UpdateVirtualVolumeRequest extends jspb.Message {
 
 export namespace UpdateVirtualVolumeRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume.AsObject,
+    virtualvolume?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume.AsObject,
     fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }

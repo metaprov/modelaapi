@@ -79,10 +79,10 @@ export namespace AttachmentResponse {
 }
 
 export class CreateAttachmentRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment): CreateAttachmentRequest;
-  hasItem(): boolean;
-  clearItem(): CreateAttachmentRequest;
+  getAttachment(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment | undefined;
+  setAttachment(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment): CreateAttachmentRequest;
+  hasAttachment(): boolean;
+  clearAttachment(): CreateAttachmentRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateAttachmentRequest.AsObject;
@@ -94,7 +94,7 @@ export class CreateAttachmentRequest extends jspb.Message {
 
 export namespace CreateAttachmentRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment.AsObject,
+    attachment?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment.AsObject,
   }
 }
 
@@ -113,10 +113,10 @@ export namespace CreateAttachmentResponse {
 }
 
 export class UpdateAttachmentRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment): UpdateAttachmentRequest;
-  hasItem(): boolean;
-  clearItem(): UpdateAttachmentRequest;
+  getAttachment(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment | undefined;
+  setAttachment(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment): UpdateAttachmentRequest;
+  hasAttachment(): boolean;
+  clearAttachment(): UpdateAttachmentRequest;
 
   getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
   setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): UpdateAttachmentRequest;
@@ -133,7 +133,7 @@ export class UpdateAttachmentRequest extends jspb.Message {
 
 export namespace UpdateAttachmentRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment.AsObject,
+    attachment?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment.AsObject,
     fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
@@ -175,10 +175,10 @@ export namespace GetAttachmentRequest {
 }
 
 export class GetAttachmentResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment): GetAttachmentResponse;
-  hasItem(): boolean;
-  clearItem(): GetAttachmentResponse;
+  getAttachment(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment | undefined;
+  setAttachment(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment): GetAttachmentResponse;
+  hasAttachment(): boolean;
+  clearAttachment(): GetAttachmentResponse;
 
   getYaml(): string;
   setYaml(value: string): GetAttachmentResponse;
@@ -193,7 +193,7 @@ export class GetAttachmentResponse extends jspb.Message {
 
 export namespace GetAttachmentResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment.AsObject,
+    attachment?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment.AsObject,
     yaml: string,
   }
 }

@@ -970,7 +970,7 @@ proto.github.com.metaprov.modelaapi.services.virtualcluster.v1.UpdateVirtualClus
  */
 proto.github.com.metaprov.modelaapi.services.virtualcluster.v1.UpdateVirtualClusterRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster.toObject(includeInstance, f),
+    virtualcluster: (f = msg.getVirtualcluster()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster.toObject(includeInstance, f),
     fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
@@ -1011,7 +1011,7 @@ proto.github.com.metaprov.modelaapi.services.virtualcluster.v1.UpdateVirtualClus
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setVirtualcluster(value);
       break;
     case 2:
       var value = new google_protobuf_field_mask_pb.FieldMask;
@@ -1047,7 +1047,7 @@ proto.github.com.metaprov.modelaapi.services.virtualcluster.v1.UpdateVirtualClus
  */
 proto.github.com.metaprov.modelaapi.services.virtualcluster.v1.UpdateVirtualClusterRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getVirtualcluster();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1067,10 +1067,10 @@ proto.github.com.metaprov.modelaapi.services.virtualcluster.v1.UpdateVirtualClus
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualCluster item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualCluster virtualcluster = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualCluster}
  */
-proto.github.com.metaprov.modelaapi.services.virtualcluster.v1.UpdateVirtualClusterRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.virtualcluster.v1.UpdateVirtualClusterRequest.prototype.getVirtualcluster = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualCluster} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster, 1));
 };
@@ -1080,7 +1080,7 @@ proto.github.com.metaprov.modelaapi.services.virtualcluster.v1.UpdateVirtualClus
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualCluster|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.virtualcluster.v1.UpdateVirtualClusterRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.virtualcluster.v1.UpdateVirtualClusterRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.virtualcluster.v1.UpdateVirtualClusterRequest.prototype.setVirtualcluster = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1089,8 +1089,8 @@ proto.github.com.metaprov.modelaapi.services.virtualcluster.v1.UpdateVirtualClus
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.virtualcluster.v1.UpdateVirtualClusterRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.virtualcluster.v1.UpdateVirtualClusterRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.virtualcluster.v1.UpdateVirtualClusterRequest.prototype.clearVirtualcluster = function() {
+  return this.setVirtualcluster(undefined);
 };
 
 
@@ -1098,7 +1098,7 @@ proto.github.com.metaprov.modelaapi.services.virtualcluster.v1.UpdateVirtualClus
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.virtualcluster.v1.UpdateVirtualClusterRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.virtualcluster.v1.UpdateVirtualClusterRequest.prototype.hasVirtualcluster = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

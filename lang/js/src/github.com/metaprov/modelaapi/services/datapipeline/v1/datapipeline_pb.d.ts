@@ -98,10 +98,10 @@ export namespace CreateDataPipelineResponse {
 }
 
 export class UpdateDataPipelineRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline): UpdateDataPipelineRequest;
-  hasItem(): boolean;
-  clearItem(): UpdateDataPipelineRequest;
+  getPipeline(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline | undefined;
+  setPipeline(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline): UpdateDataPipelineRequest;
+  hasPipeline(): boolean;
+  clearPipeline(): UpdateDataPipelineRequest;
 
   getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
   setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): UpdateDataPipelineRequest;
@@ -118,7 +118,7 @@ export class UpdateDataPipelineRequest extends jspb.Message {
 
 export namespace UpdateDataPipelineRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline.AsObject,
+    pipeline?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline.AsObject,
     fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
@@ -160,10 +160,10 @@ export namespace GetDataPipelineRequest {
 }
 
 export class GetDataPipelineResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline): GetDataPipelineResponse;
-  hasItem(): boolean;
-  clearItem(): GetDataPipelineResponse;
+  getPipeline(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline | undefined;
+  setPipeline(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline): GetDataPipelineResponse;
+  hasPipeline(): boolean;
+  clearPipeline(): GetDataPipelineResponse;
 
   getYaml(): string;
   setYaml(value: string): GetDataPipelineResponse;
@@ -178,7 +178,7 @@ export class GetDataPipelineResponse extends jspb.Message {
 
 export namespace GetDataPipelineResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline.AsObject,
+    pipeline?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline.AsObject,
     yaml: string,
   }
 }

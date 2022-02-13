@@ -23,7 +23,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z/github.com/metaprov/modelaapi/services/study/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n;github.com/metaprov/modelaapi/services/study/v1/study.proto\x12/github.com.metaprov.modelaapi.services.study.v1\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/api/annotations.proto\x1aHgithub.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated.proto\x1a=github.com/metaprov/modelaapi/services/common/v1/common.proto\"2\n\x0fGetStudyRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"p\n\x10GetStudyResponse\x12N\n\x05study\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"\xb3\x01\n\x10ListStudyRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12]\n\x06labels\x18\x03 \x03(\x0b\x32M.github.com.metaprov.modelaapi.services.study.v1.ListStudyRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x82\x01\n\x11ListStudyResponse\x12T\n\x07studies\x18\x01 \x01(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyList\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"c\n\x12\x43reateStudyRequest\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study\"\x15\n\x13\x43reateStudyResponse\"\x93\x01\n\x12UpdateStudyRequest\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study\x12.\n\nfield_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"\x8d\x01\n\x19\x43reateStudyProfileRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12O\n\x06models\x18\x03 \x03(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model\"J\n\x1a\x43reateStudyProfileResponse\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0b\n\x03uri\x18\x03 \x01(\t\"I\n\x16GetStudyProfileRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0e\n\x06models\x18\x03 \x01(\x05\"\xc1\x01\n\x17GetStudyProfileResponse\x12O\n\x07profile\x18\x01 \x01(\x0b\x32>.github.com.metaprov.modelaapi.services.common.v1.StudyProfile\x12U\n\rmodelsProfile\x18\x02 \x03(\x0b\x32>.github.com.metaprov.modelaapi.services.common.v1.ModelProfile\"4\n\x11\x41\x62ortStudyRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x14\n\x12\x41\x62ortStudyResponse\"4\n\x11PauseStudyRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x14\n\x12PauseStudyResponse\"5\n\x12ResumeStudyRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x15\n\x13ResumeStudyResponse\"5\n\x12\x44\x65leteStudyRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x15\n\x13\x44\x65leteStudyResponse\"\x15\n\x13UpdateStudyResponse2\xe5\x0f\n\x0cStudyService\x12\xb5\x01\n\x0bListStudies\x12\x41.github.com.metaprov.modelaapi.services.study.v1.ListStudyRequest\x1a\x42.github.com.metaprov.modelaapi.services.study.v1.ListStudyResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/v1/studies/{namespace}\x12\xb0\x01\n\x0b\x43reateStudy\x12\x43.github.com.metaprov.modelaapi.services.study.v1.CreateStudyRequest\x1a\x44.github.com.metaprov.modelaapi.services.study.v1.CreateStudyResponse\"\x16\x82\xd3\xe4\x93\x02\x10\"\x0b/v1/studies:\x01*\x12\xb7\x01\n\x08GetStudy\x12@.github.com.metaprov.modelaapi.services.study.v1.GetStudyRequest\x1a\x41.github.com.metaprov.modelaapi.services.study.v1.GetStudyResponse\"&\x82\xd3\xe4\x93\x02 \x12\x1e/v1/studies/{namespace}/{name}\x12\xdf\x01\n\x0bUpdateStudy\x12\x43.github.com.metaprov.modelaapi.services.study.v1.UpdateStudyRequest\x1a\x44.github.com.metaprov.modelaapi.services.study.v1.UpdateStudyResponse\"E\x82\xd3\xe4\x93\x02?\x1a:/v1/studies/{item.metadata.namespace}/{item.metadata.name}:\x01*\x12\xc0\x01\n\x0b\x44\x65leteStudy\x12\x43.github.com.metaprov.modelaapi.services.study.v1.DeleteStudyRequest\x1a\x44.github.com.metaprov.modelaapi.services.study.v1.DeleteStudyResponse\"&\x82\xd3\xe4\x93\x02 *\x1e/v1/studies/{namespace}/{name}\x12\xdd\x01\n\x12\x43reateStudyProfile\x12J.github.com.metaprov.modelaapi.services.study.v1.CreateStudyProfileRequest\x1aK.github.com.metaprov.modelaapi.services.study.v1.CreateStudyProfileResponse\".\x82\xd3\xe4\x93\x02(\"&/v1/studies/{namespace}/{name}/profile\x12\xd4\x01\n\x0fGetStudyProfile\x12G.github.com.metaprov.modelaapi.services.study.v1.GetStudyProfileRequest\x1aH.github.com.metaprov.modelaapi.services.study.v1.GetStudyProfileResponse\".\x82\xd3\xe4\x93\x02(\x12&/v1/studies/{namespace}/{name}/profile\x12\xc3\x01\n\nAbortStudy\x12\x42.github.com.metaprov.modelaapi.services.study.v1.AbortStudyRequest\x1a\x43.github.com.metaprov.modelaapi.services.study.v1.AbortStudyResponse\",\x82\xd3\xe4\x93\x02&\"$/v1/studies/{namespace}/{name}:abort\x12\xc3\x01\n\nPauseStudy\x12\x42.github.com.metaprov.modelaapi.services.study.v1.PauseStudyRequest\x1a\x43.github.com.metaprov.modelaapi.services.study.v1.PauseStudyResponse\",\x82\xd3\xe4\x93\x02&\"$/v1/studies/{namespace}/{name}:pause\x12\xc7\x01\n\x0bResumeStudy\x12\x43.github.com.metaprov.modelaapi.services.study.v1.ResumeStudyRequest\x1a\x44.github.com.metaprov.modelaapi.services.study.v1.ResumeStudyResponse\"-\x82\xd3\xe4\x93\x02\'\"%/v1/studies/{namespace}/{name}:resumeB1Z/github.com/metaprov/modelaapi/services/study/v1b\x06proto3'
+  serialized_pb=b'\n;github.com/metaprov/modelaapi/services/study/v1/study.proto\x12/github.com.metaprov.modelaapi.services.study.v1\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/api/annotations.proto\x1aHgithub.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated.proto\x1a=github.com/metaprov/modelaapi/services/common/v1/common.proto\"2\n\x0fGetStudyRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"p\n\x10GetStudyResponse\x12N\n\x05study\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"\xb3\x01\n\x10ListStudyRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12]\n\x06labels\x18\x03 \x03(\x0b\x32M.github.com.metaprov.modelaapi.services.study.v1.ListStudyRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x82\x01\n\x11ListStudyResponse\x12T\n\x07studies\x18\x01 \x01(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyList\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"d\n\x12\x43reateStudyRequest\x12N\n\x05study\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study\"\x15\n\x13\x43reateStudyResponse\"\x94\x01\n\x12UpdateStudyRequest\x12N\n\x05study\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study\x12.\n\nfield_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"\x8d\x01\n\x19\x43reateStudyProfileRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12O\n\x06models\x18\x03 \x03(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model\"J\n\x1a\x43reateStudyProfileResponse\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0b\n\x03uri\x18\x03 \x01(\t\"I\n\x16GetStudyProfileRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0e\n\x06models\x18\x03 \x01(\x05\"\xc1\x01\n\x17GetStudyProfileResponse\x12O\n\x07profile\x18\x01 \x01(\x0b\x32>.github.com.metaprov.modelaapi.services.common.v1.StudyProfile\x12U\n\rmodelsProfile\x18\x02 \x03(\x0b\x32>.github.com.metaprov.modelaapi.services.common.v1.ModelProfile\"4\n\x11\x41\x62ortStudyRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x14\n\x12\x41\x62ortStudyResponse\"4\n\x11PauseStudyRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x14\n\x12PauseStudyResponse\"5\n\x12ResumeStudyRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x15\n\x13ResumeStudyResponse\"5\n\x12\x44\x65leteStudyRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x15\n\x13\x44\x65leteStudyResponse\"\x15\n\x13UpdateStudyResponse2\xe5\x0f\n\x0cStudyService\x12\xb5\x01\n\x0bListStudies\x12\x41.github.com.metaprov.modelaapi.services.study.v1.ListStudyRequest\x1a\x42.github.com.metaprov.modelaapi.services.study.v1.ListStudyResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/v1/studies/{namespace}\x12\xb0\x01\n\x0b\x43reateStudy\x12\x43.github.com.metaprov.modelaapi.services.study.v1.CreateStudyRequest\x1a\x44.github.com.metaprov.modelaapi.services.study.v1.CreateStudyResponse\"\x16\x82\xd3\xe4\x93\x02\x10\"\x0b/v1/studies:\x01*\x12\xb7\x01\n\x08GetStudy\x12@.github.com.metaprov.modelaapi.services.study.v1.GetStudyRequest\x1a\x41.github.com.metaprov.modelaapi.services.study.v1.GetStudyResponse\"&\x82\xd3\xe4\x93\x02 \x12\x1e/v1/studies/{namespace}/{name}\x12\xdf\x01\n\x0bUpdateStudy\x12\x43.github.com.metaprov.modelaapi.services.study.v1.UpdateStudyRequest\x1a\x44.github.com.metaprov.modelaapi.services.study.v1.UpdateStudyResponse\"E\x82\xd3\xe4\x93\x02?\x1a:/v1/studies/{item.metadata.namespace}/{item.metadata.name}:\x01*\x12\xc0\x01\n\x0b\x44\x65leteStudy\x12\x43.github.com.metaprov.modelaapi.services.study.v1.DeleteStudyRequest\x1a\x44.github.com.metaprov.modelaapi.services.study.v1.DeleteStudyResponse\"&\x82\xd3\xe4\x93\x02 *\x1e/v1/studies/{namespace}/{name}\x12\xdd\x01\n\x12\x43reateStudyProfile\x12J.github.com.metaprov.modelaapi.services.study.v1.CreateStudyProfileRequest\x1aK.github.com.metaprov.modelaapi.services.study.v1.CreateStudyProfileResponse\".\x82\xd3\xe4\x93\x02(\"&/v1/studies/{namespace}/{name}/profile\x12\xd4\x01\n\x0fGetStudyProfile\x12G.github.com.metaprov.modelaapi.services.study.v1.GetStudyProfileRequest\x1aH.github.com.metaprov.modelaapi.services.study.v1.GetStudyProfileResponse\".\x82\xd3\xe4\x93\x02(\x12&/v1/studies/{namespace}/{name}/profile\x12\xc3\x01\n\nAbortStudy\x12\x42.github.com.metaprov.modelaapi.services.study.v1.AbortStudyRequest\x1a\x43.github.com.metaprov.modelaapi.services.study.v1.AbortStudyResponse\",\x82\xd3\xe4\x93\x02&\"$/v1/studies/{namespace}/{name}:abort\x12\xc3\x01\n\nPauseStudy\x12\x42.github.com.metaprov.modelaapi.services.study.v1.PauseStudyRequest\x1a\x43.github.com.metaprov.modelaapi.services.study.v1.PauseStudyResponse\",\x82\xd3\xe4\x93\x02&\"$/v1/studies/{namespace}/{name}:pause\x12\xc7\x01\n\x0bResumeStudy\x12\x43.github.com.metaprov.modelaapi.services.study.v1.ResumeStudyRequest\x1a\x44.github.com.metaprov.modelaapi.services.study.v1.ResumeStudyResponse\"-\x82\xd3\xe4\x93\x02\'\"%/v1/studies/{namespace}/{name}:resumeB1Z/github.com/metaprov/modelaapi/services/study/v1b\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_common_dot_v1_dot_common__pb2.DESCRIPTOR,])
 
@@ -233,7 +233,7 @@ _CREATESTUDYREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='item', full_name='github.com.metaprov.modelaapi.services.study.v1.CreateStudyRequest.item', index=0,
+      name='study', full_name='github.com.metaprov.modelaapi.services.study.v1.CreateStudyRequest.study', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -252,7 +252,7 @@ _CREATESTUDYREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=794,
-  serialized_end=893,
+  serialized_end=894,
 )
 
 
@@ -276,8 +276,8 @@ _CREATESTUDYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=895,
-  serialized_end=916,
+  serialized_start=896,
+  serialized_end=917,
 )
 
 
@@ -290,7 +290,7 @@ _UPDATESTUDYREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='item', full_name='github.com.metaprov.modelaapi.services.study.v1.UpdateStudyRequest.item', index=0,
+      name='study', full_name='github.com.metaprov.modelaapi.services.study.v1.UpdateStudyRequest.study', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -315,8 +315,8 @@ _UPDATESTUDYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=919,
-  serialized_end=1066,
+  serialized_start=920,
+  serialized_end=1068,
 )
 
 
@@ -361,8 +361,8 @@ _CREATESTUDYPROFILEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1069,
-  serialized_end=1210,
+  serialized_start=1071,
+  serialized_end=1212,
 )
 
 
@@ -407,8 +407,8 @@ _CREATESTUDYPROFILERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1212,
-  serialized_end=1286,
+  serialized_start=1214,
+  serialized_end=1288,
 )
 
 
@@ -453,8 +453,8 @@ _GETSTUDYPROFILEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1288,
-  serialized_end=1361,
+  serialized_start=1290,
+  serialized_end=1363,
 )
 
 
@@ -492,8 +492,8 @@ _GETSTUDYPROFILERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1364,
-  serialized_end=1557,
+  serialized_start=1366,
+  serialized_end=1559,
 )
 
 
@@ -531,8 +531,8 @@ _ABORTSTUDYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1559,
-  serialized_end=1611,
+  serialized_start=1561,
+  serialized_end=1613,
 )
 
 
@@ -556,8 +556,8 @@ _ABORTSTUDYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1613,
-  serialized_end=1633,
+  serialized_start=1615,
+  serialized_end=1635,
 )
 
 
@@ -595,8 +595,8 @@ _PAUSESTUDYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1635,
-  serialized_end=1687,
+  serialized_start=1637,
+  serialized_end=1689,
 )
 
 
@@ -620,8 +620,8 @@ _PAUSESTUDYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1689,
-  serialized_end=1709,
+  serialized_start=1691,
+  serialized_end=1711,
 )
 
 
@@ -659,8 +659,8 @@ _RESUMESTUDYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1711,
-  serialized_end=1764,
+  serialized_start=1713,
+  serialized_end=1766,
 )
 
 
@@ -684,8 +684,8 @@ _RESUMESTUDYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1766,
-  serialized_end=1787,
+  serialized_start=1768,
+  serialized_end=1789,
 )
 
 
@@ -723,8 +723,8 @@ _DELETESTUDYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1789,
-  serialized_end=1842,
+  serialized_start=1791,
+  serialized_end=1844,
 )
 
 
@@ -748,8 +748,8 @@ _DELETESTUDYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1844,
-  serialized_end=1865,
+  serialized_start=1846,
+  serialized_end=1867,
 )
 
 
@@ -773,16 +773,16 @@ _UPDATESTUDYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1867,
-  serialized_end=1888,
+  serialized_start=1869,
+  serialized_end=1890,
 )
 
 _GETSTUDYRESPONSE.fields_by_name['study'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._STUDY
 _LISTSTUDYREQUEST_LABELSENTRY.containing_type = _LISTSTUDYREQUEST
 _LISTSTUDYREQUEST.fields_by_name['labels'].message_type = _LISTSTUDYREQUEST_LABELSENTRY
 _LISTSTUDYRESPONSE.fields_by_name['studies'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._STUDYLIST
-_CREATESTUDYREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._STUDY
-_UPDATESTUDYREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._STUDY
+_CREATESTUDYREQUEST.fields_by_name['study'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._STUDY
+_UPDATESTUDYREQUEST.fields_by_name['study'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._STUDY
 _UPDATESTUDYREQUEST.fields_by_name['field_mask'].message_type = google_dot_protobuf_dot_field__mask__pb2._FIELDMASK
 _CREATESTUDYPROFILEREQUEST.fields_by_name['models'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._MODEL
 _GETSTUDYPROFILERESPONSE.fields_by_name['profile'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_common_dot_v1_dot_common__pb2._STUDYPROFILE
@@ -968,8 +968,8 @@ _STUDYSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1891,
-  serialized_end=3912,
+  serialized_start=1893,
+  serialized_end=3914,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListStudies',

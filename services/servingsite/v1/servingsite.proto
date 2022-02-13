@@ -28,7 +28,7 @@ message CreateServingSiteResponse {
 }
 
 message UpdateServingSiteRequest {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSite item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSite servingsite = 1;
     google.protobuf.FieldMask field_mask = 2;
 }
 

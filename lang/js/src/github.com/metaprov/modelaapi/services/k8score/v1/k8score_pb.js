@@ -844,7 +844,7 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.GetSecretResponse.protot
  */
 proto.github.com.metaprov.modelaapi.services.k8score.v1.GetSecretResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && proto.github.com.metaprov.modelaapi.services.k8score.v1.SecretInfo.toObject(includeInstance, f)
+    secret: (f = msg.getSecret()) && proto.github.com.metaprov.modelaapi.services.k8score.v1.SecretInfo.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -884,7 +884,7 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.GetSecretResponse.deseri
     case 1:
       var value = new proto.github.com.metaprov.modelaapi.services.k8score.v1.SecretInfo;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.services.k8score.v1.SecretInfo.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setSecret(value);
       break;
     default:
       reader.skipField();
@@ -915,7 +915,7 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.GetSecretResponse.protot
  */
 proto.github.com.metaprov.modelaapi.services.k8score.v1.GetSecretResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getSecret();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -927,10 +927,10 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.GetSecretResponse.serial
 
 
 /**
- * optional SecretInfo item = 1;
+ * optional SecretInfo secret = 1;
  * @return {?proto.github.com.metaprov.modelaapi.services.k8score.v1.SecretInfo}
  */
-proto.github.com.metaprov.modelaapi.services.k8score.v1.GetSecretResponse.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.k8score.v1.GetSecretResponse.prototype.getSecret = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.services.k8score.v1.SecretInfo} */ (
     jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.services.k8score.v1.SecretInfo, 1));
 };
@@ -940,7 +940,7 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.GetSecretResponse.protot
  * @param {?proto.github.com.metaprov.modelaapi.services.k8score.v1.SecretInfo|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.k8score.v1.GetSecretResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.k8score.v1.GetSecretResponse.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.k8score.v1.GetSecretResponse.prototype.setSecret = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -949,8 +949,8 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.GetSecretResponse.protot
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.k8score.v1.GetSecretResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.k8score.v1.GetSecretResponse.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.k8score.v1.GetSecretResponse.prototype.clearSecret = function() {
+  return this.setSecret(undefined);
 };
 
 
@@ -958,7 +958,7 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.GetSecretResponse.protot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.k8score.v1.GetSecretResponse.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.k8score.v1.GetSecretResponse.prototype.hasSecret = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -1165,7 +1165,7 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.ListSecretResponse.proto
  */
 proto.github.com.metaprov.modelaapi.services.k8score.v1.ListSecretResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    itemsList: jspb.Message.toObjectList(msg.getItemsList(),
+    secretsList: jspb.Message.toObjectList(msg.getSecretsList(),
     proto.github.com.metaprov.modelaapi.services.k8score.v1.SecretInfo.toObject, includeInstance)
   };
 
@@ -1206,7 +1206,7 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.ListSecretResponse.deser
     case 1:
       var value = new proto.github.com.metaprov.modelaapi.services.k8score.v1.SecretInfo;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.services.k8score.v1.SecretInfo.deserializeBinaryFromReader);
-      msg.addItems(value);
+      msg.addSecrets(value);
       break;
     default:
       reader.skipField();
@@ -1237,7 +1237,7 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.ListSecretResponse.proto
  */
 proto.github.com.metaprov.modelaapi.services.k8score.v1.ListSecretResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItemsList();
+  f = message.getSecretsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       1,
@@ -1249,10 +1249,10 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.ListSecretResponse.seria
 
 
 /**
- * repeated SecretInfo items = 1;
+ * repeated SecretInfo secrets = 1;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.services.k8score.v1.SecretInfo>}
  */
-proto.github.com.metaprov.modelaapi.services.k8score.v1.ListSecretResponse.prototype.getItemsList = function() {
+proto.github.com.metaprov.modelaapi.services.k8score.v1.ListSecretResponse.prototype.getSecretsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.services.k8score.v1.SecretInfo>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.services.k8score.v1.SecretInfo, 1));
 };
@@ -1262,7 +1262,7 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.ListSecretResponse.proto
  * @param {!Array<!proto.github.com.metaprov.modelaapi.services.k8score.v1.SecretInfo>} value
  * @return {!proto.github.com.metaprov.modelaapi.services.k8score.v1.ListSecretResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.k8score.v1.ListSecretResponse.prototype.setItemsList = function(value) {
+proto.github.com.metaprov.modelaapi.services.k8score.v1.ListSecretResponse.prototype.setSecretsList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
@@ -1272,7 +1272,7 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.ListSecretResponse.proto
  * @param {number=} opt_index
  * @return {!proto.github.com.metaprov.modelaapi.services.k8score.v1.SecretInfo}
  */
-proto.github.com.metaprov.modelaapi.services.k8score.v1.ListSecretResponse.prototype.addItems = function(opt_value, opt_index) {
+proto.github.com.metaprov.modelaapi.services.k8score.v1.ListSecretResponse.prototype.addSecrets = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modelaapi.services.k8score.v1.SecretInfo, opt_index);
 };
 
@@ -1281,8 +1281,8 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.ListSecretResponse.proto
  * Clears the list making it empty but non-null.
  * @return {!proto.github.com.metaprov.modelaapi.services.k8score.v1.ListSecretResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.k8score.v1.ListSecretResponse.prototype.clearItemsList = function() {
-  return this.setItemsList([]);
+proto.github.com.metaprov.modelaapi.services.k8score.v1.ListSecretResponse.prototype.clearSecretsList = function() {
+  return this.setSecretsList([]);
 };
 
 
@@ -1511,7 +1511,7 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.GetDeploymentResponse.pr
  */
 proto.github.com.metaprov.modelaapi.services.k8score.v1.GetDeploymentResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && proto.github.com.metaprov.modelaapi.services.k8score.v1.DeploymentInfo.toObject(includeInstance, f)
+    deployment: (f = msg.getDeployment()) && proto.github.com.metaprov.modelaapi.services.k8score.v1.DeploymentInfo.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1551,7 +1551,7 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.GetDeploymentResponse.de
     case 1:
       var value = new proto.github.com.metaprov.modelaapi.services.k8score.v1.DeploymentInfo;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.services.k8score.v1.DeploymentInfo.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setDeployment(value);
       break;
     default:
       reader.skipField();
@@ -1582,7 +1582,7 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.GetDeploymentResponse.pr
  */
 proto.github.com.metaprov.modelaapi.services.k8score.v1.GetDeploymentResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getDeployment();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1594,10 +1594,10 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.GetDeploymentResponse.se
 
 
 /**
- * optional DeploymentInfo item = 1;
+ * optional DeploymentInfo deployment = 1;
  * @return {?proto.github.com.metaprov.modelaapi.services.k8score.v1.DeploymentInfo}
  */
-proto.github.com.metaprov.modelaapi.services.k8score.v1.GetDeploymentResponse.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.k8score.v1.GetDeploymentResponse.prototype.getDeployment = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.services.k8score.v1.DeploymentInfo} */ (
     jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.services.k8score.v1.DeploymentInfo, 1));
 };
@@ -1607,7 +1607,7 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.GetDeploymentResponse.pr
  * @param {?proto.github.com.metaprov.modelaapi.services.k8score.v1.DeploymentInfo|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.k8score.v1.GetDeploymentResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.k8score.v1.GetDeploymentResponse.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.k8score.v1.GetDeploymentResponse.prototype.setDeployment = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1616,8 +1616,8 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.GetDeploymentResponse.pr
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.k8score.v1.GetDeploymentResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.k8score.v1.GetDeploymentResponse.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.k8score.v1.GetDeploymentResponse.prototype.clearDeployment = function() {
+  return this.setDeployment(undefined);
 };
 
 
@@ -1625,7 +1625,7 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.GetDeploymentResponse.pr
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.k8score.v1.GetDeploymentResponse.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.k8score.v1.GetDeploymentResponse.prototype.hasDeployment = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -1832,7 +1832,7 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.ListDeploymentsResponse.
  */
 proto.github.com.metaprov.modelaapi.services.k8score.v1.ListDeploymentsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    itemsList: jspb.Message.toObjectList(msg.getItemsList(),
+    deploymentsList: jspb.Message.toObjectList(msg.getDeploymentsList(),
     proto.github.com.metaprov.modelaapi.services.k8score.v1.DeploymentInfo.toObject, includeInstance)
   };
 
@@ -1873,7 +1873,7 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.ListDeploymentsResponse.
     case 1:
       var value = new proto.github.com.metaprov.modelaapi.services.k8score.v1.DeploymentInfo;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.services.k8score.v1.DeploymentInfo.deserializeBinaryFromReader);
-      msg.addItems(value);
+      msg.addDeployments(value);
       break;
     default:
       reader.skipField();
@@ -1904,7 +1904,7 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.ListDeploymentsResponse.
  */
 proto.github.com.metaprov.modelaapi.services.k8score.v1.ListDeploymentsResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItemsList();
+  f = message.getDeploymentsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       1,
@@ -1916,10 +1916,10 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.ListDeploymentsResponse.
 
 
 /**
- * repeated DeploymentInfo items = 1;
+ * repeated DeploymentInfo deployments = 1;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.services.k8score.v1.DeploymentInfo>}
  */
-proto.github.com.metaprov.modelaapi.services.k8score.v1.ListDeploymentsResponse.prototype.getItemsList = function() {
+proto.github.com.metaprov.modelaapi.services.k8score.v1.ListDeploymentsResponse.prototype.getDeploymentsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.services.k8score.v1.DeploymentInfo>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.services.k8score.v1.DeploymentInfo, 1));
 };
@@ -1929,7 +1929,7 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.ListDeploymentsResponse.
  * @param {!Array<!proto.github.com.metaprov.modelaapi.services.k8score.v1.DeploymentInfo>} value
  * @return {!proto.github.com.metaprov.modelaapi.services.k8score.v1.ListDeploymentsResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.k8score.v1.ListDeploymentsResponse.prototype.setItemsList = function(value) {
+proto.github.com.metaprov.modelaapi.services.k8score.v1.ListDeploymentsResponse.prototype.setDeploymentsList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
@@ -1939,7 +1939,7 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.ListDeploymentsResponse.
  * @param {number=} opt_index
  * @return {!proto.github.com.metaprov.modelaapi.services.k8score.v1.DeploymentInfo}
  */
-proto.github.com.metaprov.modelaapi.services.k8score.v1.ListDeploymentsResponse.prototype.addItems = function(opt_value, opt_index) {
+proto.github.com.metaprov.modelaapi.services.k8score.v1.ListDeploymentsResponse.prototype.addDeployments = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modelaapi.services.k8score.v1.DeploymentInfo, opt_index);
 };
 
@@ -1948,8 +1948,8 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.ListDeploymentsResponse.
  * Clears the list making it empty but non-null.
  * @return {!proto.github.com.metaprov.modelaapi.services.k8score.v1.ListDeploymentsResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.k8score.v1.ListDeploymentsResponse.prototype.clearItemsList = function() {
-  return this.setItemsList([]);
+proto.github.com.metaprov.modelaapi.services.k8score.v1.ListDeploymentsResponse.prototype.clearDeploymentsList = function() {
+  return this.setDeploymentsList([]);
 };
 
 
@@ -2178,7 +2178,7 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.GetServiceResponse.proto
  */
 proto.github.com.metaprov.modelaapi.services.k8score.v1.GetServiceResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && proto.github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo.toObject(includeInstance, f)
+    service: (f = msg.getService()) && proto.github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2218,7 +2218,7 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.GetServiceResponse.deser
     case 1:
       var value = new proto.github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setService(value);
       break;
     default:
       reader.skipField();
@@ -2249,7 +2249,7 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.GetServiceResponse.proto
  */
 proto.github.com.metaprov.modelaapi.services.k8score.v1.GetServiceResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getService();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -2261,10 +2261,10 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.GetServiceResponse.seria
 
 
 /**
- * optional ServiceInfo item = 1;
+ * optional ServiceInfo service = 1;
  * @return {?proto.github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo}
  */
-proto.github.com.metaprov.modelaapi.services.k8score.v1.GetServiceResponse.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.k8score.v1.GetServiceResponse.prototype.getService = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo} */ (
     jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo, 1));
 };
@@ -2274,7 +2274,7 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.GetServiceResponse.proto
  * @param {?proto.github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.k8score.v1.GetServiceResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.k8score.v1.GetServiceResponse.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.k8score.v1.GetServiceResponse.prototype.setService = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -2283,8 +2283,8 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.GetServiceResponse.proto
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.k8score.v1.GetServiceResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.k8score.v1.GetServiceResponse.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.k8score.v1.GetServiceResponse.prototype.clearService = function() {
+  return this.setService(undefined);
 };
 
 
@@ -2292,7 +2292,7 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.GetServiceResponse.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.k8score.v1.GetServiceResponse.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.k8score.v1.GetServiceResponse.prototype.hasService = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -2499,7 +2499,7 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.ListServicesResponse.pro
  */
 proto.github.com.metaprov.modelaapi.services.k8score.v1.ListServicesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    itemsList: jspb.Message.toObjectList(msg.getItemsList(),
+    servicesList: jspb.Message.toObjectList(msg.getServicesList(),
     proto.github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo.toObject, includeInstance)
   };
 
@@ -2540,7 +2540,7 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.ListServicesResponse.des
     case 1:
       var value = new proto.github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo.deserializeBinaryFromReader);
-      msg.addItems(value);
+      msg.addServices(value);
       break;
     default:
       reader.skipField();
@@ -2571,7 +2571,7 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.ListServicesResponse.pro
  */
 proto.github.com.metaprov.modelaapi.services.k8score.v1.ListServicesResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItemsList();
+  f = message.getServicesList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       1,
@@ -2583,10 +2583,10 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.ListServicesResponse.ser
 
 
 /**
- * repeated ServiceInfo items = 1;
+ * repeated ServiceInfo services = 1;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo>}
  */
-proto.github.com.metaprov.modelaapi.services.k8score.v1.ListServicesResponse.prototype.getItemsList = function() {
+proto.github.com.metaprov.modelaapi.services.k8score.v1.ListServicesResponse.prototype.getServicesList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo, 1));
 };
@@ -2596,7 +2596,7 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.ListServicesResponse.pro
  * @param {!Array<!proto.github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo>} value
  * @return {!proto.github.com.metaprov.modelaapi.services.k8score.v1.ListServicesResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.k8score.v1.ListServicesResponse.prototype.setItemsList = function(value) {
+proto.github.com.metaprov.modelaapi.services.k8score.v1.ListServicesResponse.prototype.setServicesList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
@@ -2606,7 +2606,7 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.ListServicesResponse.pro
  * @param {number=} opt_index
  * @return {!proto.github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo}
  */
-proto.github.com.metaprov.modelaapi.services.k8score.v1.ListServicesResponse.prototype.addItems = function(opt_value, opt_index) {
+proto.github.com.metaprov.modelaapi.services.k8score.v1.ListServicesResponse.prototype.addServices = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo, opt_index);
 };
 
@@ -2615,8 +2615,8 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.ListServicesResponse.pro
  * Clears the list making it empty but non-null.
  * @return {!proto.github.com.metaprov.modelaapi.services.k8score.v1.ListServicesResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.k8score.v1.ListServicesResponse.prototype.clearItemsList = function() {
-  return this.setItemsList([]);
+proto.github.com.metaprov.modelaapi.services.k8score.v1.ListServicesResponse.prototype.clearServicesList = function() {
+  return this.setServicesList([]);
 };
 
 
@@ -2845,7 +2845,7 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.GetPodResponse.prototype
  */
 proto.github.com.metaprov.modelaapi.services.k8score.v1.GetPodResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo.toObject(includeInstance, f)
+    pod: (f = msg.getPod()) && proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2885,7 +2885,7 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.GetPodResponse.deseriali
     case 1:
       var value = new proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setPod(value);
       break;
     default:
       reader.skipField();
@@ -2916,7 +2916,7 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.GetPodResponse.prototype
  */
 proto.github.com.metaprov.modelaapi.services.k8score.v1.GetPodResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getPod();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -2928,10 +2928,10 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.GetPodResponse.serialize
 
 
 /**
- * optional PodInfo item = 1;
+ * optional PodInfo pod = 1;
  * @return {?proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo}
  */
-proto.github.com.metaprov.modelaapi.services.k8score.v1.GetPodResponse.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.k8score.v1.GetPodResponse.prototype.getPod = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo} */ (
     jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo, 1));
 };
@@ -2941,7 +2941,7 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.GetPodResponse.prototype
  * @param {?proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.k8score.v1.GetPodResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.k8score.v1.GetPodResponse.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.k8score.v1.GetPodResponse.prototype.setPod = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -2950,8 +2950,8 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.GetPodResponse.prototype
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.k8score.v1.GetPodResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.k8score.v1.GetPodResponse.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.k8score.v1.GetPodResponse.prototype.clearPod = function() {
+  return this.setPod(undefined);
 };
 
 
@@ -2959,7 +2959,7 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.GetPodResponse.prototype
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.k8score.v1.GetPodResponse.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.k8score.v1.GetPodResponse.prototype.hasPod = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -3166,7 +3166,7 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.ListPodsResponse.prototy
  */
 proto.github.com.metaprov.modelaapi.services.k8score.v1.ListPodsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    itemsList: jspb.Message.toObjectList(msg.getItemsList(),
+    podsList: jspb.Message.toObjectList(msg.getPodsList(),
     proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo.toObject, includeInstance)
   };
 
@@ -3207,7 +3207,7 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.ListPodsResponse.deseria
     case 1:
       var value = new proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo.deserializeBinaryFromReader);
-      msg.addItems(value);
+      msg.addPods(value);
       break;
     default:
       reader.skipField();
@@ -3238,7 +3238,7 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.ListPodsResponse.prototy
  */
 proto.github.com.metaprov.modelaapi.services.k8score.v1.ListPodsResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItemsList();
+  f = message.getPodsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       1,
@@ -3250,10 +3250,10 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.ListPodsResponse.seriali
 
 
 /**
- * repeated PodInfo items = 1;
+ * repeated PodInfo pods = 1;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo>}
  */
-proto.github.com.metaprov.modelaapi.services.k8score.v1.ListPodsResponse.prototype.getItemsList = function() {
+proto.github.com.metaprov.modelaapi.services.k8score.v1.ListPodsResponse.prototype.getPodsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo, 1));
 };
@@ -3263,7 +3263,7 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.ListPodsResponse.prototy
  * @param {!Array<!proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo>} value
  * @return {!proto.github.com.metaprov.modelaapi.services.k8score.v1.ListPodsResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.k8score.v1.ListPodsResponse.prototype.setItemsList = function(value) {
+proto.github.com.metaprov.modelaapi.services.k8score.v1.ListPodsResponse.prototype.setPodsList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
@@ -3273,7 +3273,7 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.ListPodsResponse.prototy
  * @param {number=} opt_index
  * @return {!proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo}
  */
-proto.github.com.metaprov.modelaapi.services.k8score.v1.ListPodsResponse.prototype.addItems = function(opt_value, opt_index) {
+proto.github.com.metaprov.modelaapi.services.k8score.v1.ListPodsResponse.prototype.addPods = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo, opt_index);
 };
 
@@ -3282,8 +3282,8 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.ListPodsResponse.prototy
  * Clears the list making it empty but non-null.
  * @return {!proto.github.com.metaprov.modelaapi.services.k8score.v1.ListPodsResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.k8score.v1.ListPodsResponse.prototype.clearItemsList = function() {
-  return this.setItemsList([]);
+proto.github.com.metaprov.modelaapi.services.k8score.v1.ListPodsResponse.prototype.clearPodsList = function() {
+  return this.setPodsList([]);
 };
 
 
@@ -3512,7 +3512,7 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.GetJobResponse.prototype
  */
 proto.github.com.metaprov.modelaapi.services.k8score.v1.GetJobResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo.toObject(includeInstance, f)
+    job: (f = msg.getJob()) && proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3552,7 +3552,7 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.GetJobResponse.deseriali
     case 1:
       var value = new proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setJob(value);
       break;
     default:
       reader.skipField();
@@ -3583,7 +3583,7 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.GetJobResponse.prototype
  */
 proto.github.com.metaprov.modelaapi.services.k8score.v1.GetJobResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getJob();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -3595,10 +3595,10 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.GetJobResponse.serialize
 
 
 /**
- * optional JobInfo item = 1;
+ * optional JobInfo job = 1;
  * @return {?proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo}
  */
-proto.github.com.metaprov.modelaapi.services.k8score.v1.GetJobResponse.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.k8score.v1.GetJobResponse.prototype.getJob = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo} */ (
     jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo, 1));
 };
@@ -3608,7 +3608,7 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.GetJobResponse.prototype
  * @param {?proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.k8score.v1.GetJobResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.k8score.v1.GetJobResponse.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.k8score.v1.GetJobResponse.prototype.setJob = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -3617,8 +3617,8 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.GetJobResponse.prototype
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.k8score.v1.GetJobResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.k8score.v1.GetJobResponse.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.k8score.v1.GetJobResponse.prototype.clearJob = function() {
+  return this.setJob(undefined);
 };
 
 
@@ -3626,7 +3626,7 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.GetJobResponse.prototype
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.k8score.v1.GetJobResponse.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.k8score.v1.GetJobResponse.prototype.hasJob = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -3833,7 +3833,7 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.ListJobsResponse.prototy
  */
 proto.github.com.metaprov.modelaapi.services.k8score.v1.ListJobsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    itemsList: jspb.Message.toObjectList(msg.getItemsList(),
+    jobsList: jspb.Message.toObjectList(msg.getJobsList(),
     proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo.toObject, includeInstance)
   };
 
@@ -3874,7 +3874,7 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.ListJobsResponse.deseria
     case 1:
       var value = new proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo.deserializeBinaryFromReader);
-      msg.addItems(value);
+      msg.addJobs(value);
       break;
     default:
       reader.skipField();
@@ -3905,7 +3905,7 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.ListJobsResponse.prototy
  */
 proto.github.com.metaprov.modelaapi.services.k8score.v1.ListJobsResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItemsList();
+  f = message.getJobsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       1,
@@ -3917,10 +3917,10 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.ListJobsResponse.seriali
 
 
 /**
- * repeated JobInfo items = 1;
+ * repeated JobInfo jobs = 1;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo>}
  */
-proto.github.com.metaprov.modelaapi.services.k8score.v1.ListJobsResponse.prototype.getItemsList = function() {
+proto.github.com.metaprov.modelaapi.services.k8score.v1.ListJobsResponse.prototype.getJobsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo, 1));
 };
@@ -3930,7 +3930,7 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.ListJobsResponse.prototy
  * @param {!Array<!proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo>} value
  * @return {!proto.github.com.metaprov.modelaapi.services.k8score.v1.ListJobsResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.k8score.v1.ListJobsResponse.prototype.setItemsList = function(value) {
+proto.github.com.metaprov.modelaapi.services.k8score.v1.ListJobsResponse.prototype.setJobsList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
@@ -3940,7 +3940,7 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.ListJobsResponse.prototy
  * @param {number=} opt_index
  * @return {!proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo}
  */
-proto.github.com.metaprov.modelaapi.services.k8score.v1.ListJobsResponse.prototype.addItems = function(opt_value, opt_index) {
+proto.github.com.metaprov.modelaapi.services.k8score.v1.ListJobsResponse.prototype.addJobs = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo, opt_index);
 };
 
@@ -3949,8 +3949,8 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.ListJobsResponse.prototy
  * Clears the list making it empty but non-null.
  * @return {!proto.github.com.metaprov.modelaapi.services.k8score.v1.ListJobsResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.k8score.v1.ListJobsResponse.prototype.clearItemsList = function() {
-  return this.setItemsList([]);
+proto.github.com.metaprov.modelaapi.services.k8score.v1.ListJobsResponse.prototype.clearJobsList = function() {
+  return this.setJobsList([]);
 };
 
 

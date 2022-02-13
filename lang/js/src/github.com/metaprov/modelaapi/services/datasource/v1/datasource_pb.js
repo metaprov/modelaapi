@@ -965,7 +965,7 @@ proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceResponse
  */
 proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.toObject(includeInstance, f),
+    datasource: (f = msg.getDatasource()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.toObject(includeInstance, f),
     yaml: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -1006,7 +1006,7 @@ proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceResponse
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setDatasource(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -1041,7 +1041,7 @@ proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceResponse
  */
 proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getDatasource();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1060,10 +1060,10 @@ proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceResponse
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource}
  */
-proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceResponse.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceResponse.prototype.getDatasource = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource, 1));
 };
@@ -1073,7 +1073,7 @@ proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceResponse
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceResponse.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceResponse.prototype.setDatasource = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1082,8 +1082,8 @@ proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceResponse
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceResponse.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceResponse.prototype.clearDatasource = function() {
+  return this.setDatasource(undefined);
 };
 
 
@@ -1091,7 +1091,7 @@ proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceResponse
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceResponse.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceResponse.prototype.hasDatasource = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -1146,7 +1146,7 @@ proto.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceReque
  */
 proto.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.toObject(includeInstance, f),
+    datasource: (f = msg.getDatasource()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.toObject(includeInstance, f),
     fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
@@ -1187,7 +1187,7 @@ proto.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceReque
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setDatasource(value);
       break;
     case 2:
       var value = new google_protobuf_field_mask_pb.FieldMask;
@@ -1223,7 +1223,7 @@ proto.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceReque
  */
 proto.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getDatasource();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1243,10 +1243,10 @@ proto.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceReque
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource}
  */
-proto.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceRequest.prototype.getDatasource = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource, 1));
 };
@@ -1256,7 +1256,7 @@ proto.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceReque
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceRequest.prototype.setDatasource = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1265,8 +1265,8 @@ proto.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceReque
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceRequest.prototype.clearDatasource = function() {
+  return this.setDatasource(undefined);
 };
 
 
@@ -1274,7 +1274,7 @@ proto.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceReque
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceRequest.prototype.hasDatasource = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -1449,7 +1449,7 @@ proto.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceReque
  */
 proto.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.toObject(includeInstance, f)
+    datasource: (f = msg.getDatasource()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1489,7 +1489,7 @@ proto.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceReque
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setDatasource(value);
       break;
     default:
       reader.skipField();
@@ -1520,7 +1520,7 @@ proto.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceReque
  */
 proto.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getDatasource();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1532,10 +1532,10 @@ proto.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceReque
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource}
  */
-proto.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceRequest.prototype.getDatasource = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource, 1));
 };
@@ -1545,7 +1545,7 @@ proto.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceReque
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceRequest.prototype.setDatasource = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1554,8 +1554,8 @@ proto.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceReque
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceRequest.prototype.clearDatasource = function() {
+  return this.setDatasource(undefined);
 };
 
 
@@ -1563,7 +1563,7 @@ proto.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceReque
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceRequest.prototype.hasDatasource = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

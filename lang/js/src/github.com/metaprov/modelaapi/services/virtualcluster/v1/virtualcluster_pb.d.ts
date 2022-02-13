@@ -97,10 +97,10 @@ export namespace CreateVirtualClusterResponse {
 }
 
 export class UpdateVirtualClusterRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster): UpdateVirtualClusterRequest;
-  hasItem(): boolean;
-  clearItem(): UpdateVirtualClusterRequest;
+  getVirtualcluster(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster | undefined;
+  setVirtualcluster(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster): UpdateVirtualClusterRequest;
+  hasVirtualcluster(): boolean;
+  clearVirtualcluster(): UpdateVirtualClusterRequest;
 
   getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
   setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): UpdateVirtualClusterRequest;
@@ -117,7 +117,7 @@ export class UpdateVirtualClusterRequest extends jspb.Message {
 
 export namespace UpdateVirtualClusterRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster.AsObject,
+    virtualcluster?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster.AsObject,
     fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }

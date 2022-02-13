@@ -98,10 +98,10 @@ export namespace CreateDataAppRequest {
 }
 
 export class UpdateDataAppRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp): UpdateDataAppRequest;
-  hasItem(): boolean;
-  clearItem(): UpdateDataAppRequest;
+  getDataapp(): github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp | undefined;
+  setDataapp(value?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp): UpdateDataAppRequest;
+  hasDataapp(): boolean;
+  clearDataapp(): UpdateDataAppRequest;
 
   getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
   setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): UpdateDataAppRequest;
@@ -118,7 +118,7 @@ export class UpdateDataAppRequest extends jspb.Message {
 
 export namespace UpdateDataAppRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp.AsObject,
+    dataapp?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp.AsObject,
     fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
@@ -160,10 +160,10 @@ export namespace GetDataAppRequest {
 }
 
 export class GetDataAppResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp): GetDataAppResponse;
-  hasItem(): boolean;
-  clearItem(): GetDataAppResponse;
+  getDataapp(): github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp | undefined;
+  setDataapp(value?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp): GetDataAppResponse;
+  hasDataapp(): boolean;
+  clearDataapp(): GetDataAppResponse;
 
   getYaml(): string;
   setYaml(value: string): GetDataAppResponse;
@@ -178,7 +178,7 @@ export class GetDataAppResponse extends jspb.Message {
 
 export namespace GetDataAppResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp.AsObject,
+    dataapp?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp.AsObject,
     yaml: string,
   }
 }
@@ -292,10 +292,10 @@ export namespace ResumeDataAppResponse {
 }
 
 export class RunDataAppRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp): RunDataAppRequest;
-  hasItem(): boolean;
-  clearItem(): RunDataAppRequest;
+  getDataapp(): github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp | undefined;
+  setDataapp(value?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp): RunDataAppRequest;
+  hasDataapp(): boolean;
+  clearDataapp(): RunDataAppRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RunDataAppRequest.AsObject;
@@ -307,7 +307,7 @@ export class RunDataAppRequest extends jspb.Message {
 
 export namespace RunDataAppRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp.AsObject,
+    dataapp?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp.AsObject,
   }
 }
 

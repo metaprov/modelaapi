@@ -98,10 +98,10 @@ export namespace CreateModelAutobuilderResponse {
 }
 
 export class UpdateModelAutobuilderRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder): UpdateModelAutobuilderRequest;
-  hasItem(): boolean;
-  clearItem(): UpdateModelAutobuilderRequest;
+  getModelautobuilder(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder | undefined;
+  setModelautobuilder(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder): UpdateModelAutobuilderRequest;
+  hasModelautobuilder(): boolean;
+  clearModelautobuilder(): UpdateModelAutobuilderRequest;
 
   getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
   setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): UpdateModelAutobuilderRequest;
@@ -118,7 +118,7 @@ export class UpdateModelAutobuilderRequest extends jspb.Message {
 
 export namespace UpdateModelAutobuilderRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder.AsObject,
+    modelautobuilder?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder.AsObject,
     fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
@@ -160,10 +160,10 @@ export namespace GetModelAutobuilderRequest {
 }
 
 export class GetModelAutobuilderResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder): GetModelAutobuilderResponse;
-  hasItem(): boolean;
-  clearItem(): GetModelAutobuilderResponse;
+  getModelautobuilder(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder | undefined;
+  setModelautobuilder(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder): GetModelAutobuilderResponse;
+  hasModelautobuilder(): boolean;
+  clearModelautobuilder(): GetModelAutobuilderResponse;
 
   getYaml(): string;
   setYaml(value: string): GetModelAutobuilderResponse;
@@ -178,7 +178,7 @@ export class GetModelAutobuilderResponse extends jspb.Message {
 
 export namespace GetModelAutobuilderResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder.AsObject,
+    modelautobuilder?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder.AsObject,
     yaml: string,
   }
 }

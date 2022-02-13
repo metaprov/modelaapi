@@ -2025,7 +2025,7 @@ proto.github.com.metaprov.modelaapi.services.model.v1.CreateModelRequest.prototy
  */
 proto.github.com.metaprov.modelaapi.services.model.v1.CreateModelRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.toObject(includeInstance, f)
+    model: (f = msg.getModel()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2065,7 +2065,7 @@ proto.github.com.metaprov.modelaapi.services.model.v1.CreateModelRequest.deseria
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setModel(value);
       break;
     default:
       reader.skipField();
@@ -2096,7 +2096,7 @@ proto.github.com.metaprov.modelaapi.services.model.v1.CreateModelRequest.prototy
  */
 proto.github.com.metaprov.modelaapi.services.model.v1.CreateModelRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getModel();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -2108,10 +2108,10 @@ proto.github.com.metaprov.modelaapi.services.model.v1.CreateModelRequest.seriali
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model model = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model}
  */
-proto.github.com.metaprov.modelaapi.services.model.v1.CreateModelRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.model.v1.CreateModelRequest.prototype.getModel = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model, 1));
 };
@@ -2121,7 +2121,7 @@ proto.github.com.metaprov.modelaapi.services.model.v1.CreateModelRequest.prototy
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.model.v1.CreateModelRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.model.v1.CreateModelRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.model.v1.CreateModelRequest.prototype.setModel = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -2130,8 +2130,8 @@ proto.github.com.metaprov.modelaapi.services.model.v1.CreateModelRequest.prototy
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.model.v1.CreateModelRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.model.v1.CreateModelRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.model.v1.CreateModelRequest.prototype.clearModel = function() {
+  return this.setModel(undefined);
 };
 
 
@@ -2139,7 +2139,7 @@ proto.github.com.metaprov.modelaapi.services.model.v1.CreateModelRequest.prototy
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.model.v1.CreateModelRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.model.v1.CreateModelRequest.prototype.hasModel = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -2277,7 +2277,7 @@ proto.github.com.metaprov.modelaapi.services.model.v1.UpdateModelRequest.prototy
  */
 proto.github.com.metaprov.modelaapi.services.model.v1.UpdateModelRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.toObject(includeInstance, f)
+    model: (f = msg.getModel()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2317,7 +2317,7 @@ proto.github.com.metaprov.modelaapi.services.model.v1.UpdateModelRequest.deseria
     case 5:
       var value = new github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setModel(value);
       break;
     default:
       reader.skipField();
@@ -2348,7 +2348,7 @@ proto.github.com.metaprov.modelaapi.services.model.v1.UpdateModelRequest.prototy
  */
 proto.github.com.metaprov.modelaapi.services.model.v1.UpdateModelRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getModel();
   if (f != null) {
     writer.writeMessage(
       5,
@@ -2360,10 +2360,10 @@ proto.github.com.metaprov.modelaapi.services.model.v1.UpdateModelRequest.seriali
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model item = 5;
+ * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model model = 5;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model}
  */
-proto.github.com.metaprov.modelaapi.services.model.v1.UpdateModelRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.model.v1.UpdateModelRequest.prototype.getModel = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model, 5));
 };
@@ -2373,7 +2373,7 @@ proto.github.com.metaprov.modelaapi.services.model.v1.UpdateModelRequest.prototy
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.model.v1.UpdateModelRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.model.v1.UpdateModelRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.model.v1.UpdateModelRequest.prototype.setModel = function(value) {
   return jspb.Message.setWrapperField(this, 5, value);
 };
 
@@ -2382,8 +2382,8 @@ proto.github.com.metaprov.modelaapi.services.model.v1.UpdateModelRequest.prototy
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.model.v1.UpdateModelRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.model.v1.UpdateModelRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.model.v1.UpdateModelRequest.prototype.clearModel = function() {
+  return this.setModel(undefined);
 };
 
 
@@ -2391,7 +2391,7 @@ proto.github.com.metaprov.modelaapi.services.model.v1.UpdateModelRequest.prototy
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.model.v1.UpdateModelRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.model.v1.UpdateModelRequest.prototype.hasModel = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 
@@ -2529,7 +2529,7 @@ proto.github.com.metaprov.modelaapi.services.model.v1.GetModelResponse.prototype
  */
 proto.github.com.metaprov.modelaapi.services.model.v1.GetModelResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.toObject(includeInstance, f),
+    model: (f = msg.getModel()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.toObject(includeInstance, f),
     yaml: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -2570,7 +2570,7 @@ proto.github.com.metaprov.modelaapi.services.model.v1.GetModelResponse.deseriali
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setModel(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -2605,7 +2605,7 @@ proto.github.com.metaprov.modelaapi.services.model.v1.GetModelResponse.prototype
  */
 proto.github.com.metaprov.modelaapi.services.model.v1.GetModelResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getModel();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -2624,10 +2624,10 @@ proto.github.com.metaprov.modelaapi.services.model.v1.GetModelResponse.serialize
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model model = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model}
  */
-proto.github.com.metaprov.modelaapi.services.model.v1.GetModelResponse.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.model.v1.GetModelResponse.prototype.getModel = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model, 1));
 };
@@ -2637,7 +2637,7 @@ proto.github.com.metaprov.modelaapi.services.model.v1.GetModelResponse.prototype
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.model.v1.GetModelResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.model.v1.GetModelResponse.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.model.v1.GetModelResponse.prototype.setModel = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -2646,8 +2646,8 @@ proto.github.com.metaprov.modelaapi.services.model.v1.GetModelResponse.prototype
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.model.v1.GetModelResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.model.v1.GetModelResponse.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.model.v1.GetModelResponse.prototype.clearModel = function() {
+  return this.setModel(undefined);
 };
 
 
@@ -2655,7 +2655,7 @@ proto.github.com.metaprov.modelaapi.services.model.v1.GetModelResponse.prototype
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.model.v1.GetModelResponse.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.model.v1.GetModelResponse.prototype.hasModel = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

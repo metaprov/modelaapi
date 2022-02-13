@@ -1053,7 +1053,7 @@ proto.github.com.metaprov.modelaapi.services.labelingpipeline.v1.UpdateLabelingP
  */
 proto.github.com.metaprov.modelaapi.services.labelingpipeline.v1.UpdateLabelingPipelineRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline.toObject(includeInstance, f),
+    labelingpipeline: (f = msg.getLabelingpipeline()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline.toObject(includeInstance, f),
     fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
@@ -1094,7 +1094,7 @@ proto.github.com.metaprov.modelaapi.services.labelingpipeline.v1.UpdateLabelingP
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setLabelingpipeline(value);
       break;
     case 2:
       var value = new google_protobuf_field_mask_pb.FieldMask;
@@ -1130,7 +1130,7 @@ proto.github.com.metaprov.modelaapi.services.labelingpipeline.v1.UpdateLabelingP
  */
 proto.github.com.metaprov.modelaapi.services.labelingpipeline.v1.UpdateLabelingPipelineRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getLabelingpipeline();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1150,10 +1150,10 @@ proto.github.com.metaprov.modelaapi.services.labelingpipeline.v1.UpdateLabelingP
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipeline item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipeline labelingpipeline = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipeline}
  */
-proto.github.com.metaprov.modelaapi.services.labelingpipeline.v1.UpdateLabelingPipelineRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.labelingpipeline.v1.UpdateLabelingPipelineRequest.prototype.getLabelingpipeline = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipeline} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline, 1));
 };
@@ -1163,7 +1163,7 @@ proto.github.com.metaprov.modelaapi.services.labelingpipeline.v1.UpdateLabelingP
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipeline|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.labelingpipeline.v1.UpdateLabelingPipelineRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.labelingpipeline.v1.UpdateLabelingPipelineRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.labelingpipeline.v1.UpdateLabelingPipelineRequest.prototype.setLabelingpipeline = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1172,8 +1172,8 @@ proto.github.com.metaprov.modelaapi.services.labelingpipeline.v1.UpdateLabelingP
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.labelingpipeline.v1.UpdateLabelingPipelineRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.labelingpipeline.v1.UpdateLabelingPipelineRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.labelingpipeline.v1.UpdateLabelingPipelineRequest.prototype.clearLabelingpipeline = function() {
+  return this.setLabelingpipeline(undefined);
 };
 
 
@@ -1181,7 +1181,7 @@ proto.github.com.metaprov.modelaapi.services.labelingpipeline.v1.UpdateLabelingP
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.labelingpipeline.v1.UpdateLabelingPipelineRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.labelingpipeline.v1.UpdateLabelingPipelineRequest.prototype.hasLabelingpipeline = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -1516,7 +1516,7 @@ proto.github.com.metaprov.modelaapi.services.labelingpipeline.v1.GetLabelingPipe
  */
 proto.github.com.metaprov.modelaapi.services.labelingpipeline.v1.GetLabelingPipelineResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline.toObject(includeInstance, f),
+    labelingpipeline: (f = msg.getLabelingpipeline()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline.toObject(includeInstance, f),
     yaml: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -1557,7 +1557,7 @@ proto.github.com.metaprov.modelaapi.services.labelingpipeline.v1.GetLabelingPipe
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setLabelingpipeline(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -1592,7 +1592,7 @@ proto.github.com.metaprov.modelaapi.services.labelingpipeline.v1.GetLabelingPipe
  */
 proto.github.com.metaprov.modelaapi.services.labelingpipeline.v1.GetLabelingPipelineResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getLabelingpipeline();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1611,10 +1611,10 @@ proto.github.com.metaprov.modelaapi.services.labelingpipeline.v1.GetLabelingPipe
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipeline item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipeline labelingpipeline = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipeline}
  */
-proto.github.com.metaprov.modelaapi.services.labelingpipeline.v1.GetLabelingPipelineResponse.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.labelingpipeline.v1.GetLabelingPipelineResponse.prototype.getLabelingpipeline = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipeline} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline, 1));
 };
@@ -1624,7 +1624,7 @@ proto.github.com.metaprov.modelaapi.services.labelingpipeline.v1.GetLabelingPipe
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipeline|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.labelingpipeline.v1.GetLabelingPipelineResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.labelingpipeline.v1.GetLabelingPipelineResponse.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.labelingpipeline.v1.GetLabelingPipelineResponse.prototype.setLabelingpipeline = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1633,8 +1633,8 @@ proto.github.com.metaprov.modelaapi.services.labelingpipeline.v1.GetLabelingPipe
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.labelingpipeline.v1.GetLabelingPipelineResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.labelingpipeline.v1.GetLabelingPipelineResponse.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.labelingpipeline.v1.GetLabelingPipelineResponse.prototype.clearLabelingpipeline = function() {
+  return this.setLabelingpipeline(undefined);
 };
 
 
@@ -1642,7 +1642,7 @@ proto.github.com.metaprov.modelaapi.services.labelingpipeline.v1.GetLabelingPipe
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.labelingpipeline.v1.GetLabelingPipelineResponse.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.labelingpipeline.v1.GetLabelingPipelineResponse.prototype.hasLabelingpipeline = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

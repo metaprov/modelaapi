@@ -22,11 +22,11 @@ message ListWebRequestsResponse {
 message CreateWebRequestResponse {}
 
 message CreateWebRequestRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequest item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequest webrequest = 1;
 }
 
 message UpdateWebRequestRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequest item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequest webrequest = 1;
     google.protobuf.FieldMask field_mask = 2;
 }
 

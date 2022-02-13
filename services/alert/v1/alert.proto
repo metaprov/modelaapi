@@ -23,7 +23,7 @@ message ListAlertsResponse {
 message AlertResponse {}
 
 message CreateAlertRequest {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert alert = 1;
 }
 
 message CreateAlertResponse {
@@ -31,8 +31,8 @@ message CreateAlertResponse {
 }
 
 message UpdateAlertRequest {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert item = 1;
-    google.protobuf.FieldMask field_mask = 2;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert alert = 1;
+    google.protobuf.FieldMask update_mask = 2;
 }
 
 message UpdateAlertResponse {
@@ -46,7 +46,7 @@ message GetAlertRequest {
 
 
 message GetAlertResponse {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert alert = 1;
     string yaml = 2;
 }
 

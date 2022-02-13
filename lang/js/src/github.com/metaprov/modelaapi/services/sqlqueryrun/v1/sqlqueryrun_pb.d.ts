@@ -70,10 +70,10 @@ export namespace CreateSqlQueryRunResponse {
 }
 
 export class CreateSqlQueryRunRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQueryRun | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQueryRun): CreateSqlQueryRunRequest;
-  hasItem(): boolean;
-  clearItem(): CreateSqlQueryRunRequest;
+  getSqlqueryrun(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQueryRun | undefined;
+  setSqlqueryrun(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQueryRun): CreateSqlQueryRunRequest;
+  hasSqlqueryrun(): boolean;
+  clearSqlqueryrun(): CreateSqlQueryRunRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateSqlQueryRunRequest.AsObject;
@@ -85,15 +85,15 @@ export class CreateSqlQueryRunRequest extends jspb.Message {
 
 export namespace CreateSqlQueryRunRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQueryRun.AsObject,
+    sqlqueryrun?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQueryRun.AsObject,
   }
 }
 
 export class UpdateSqlQueryRunRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQueryRun | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQueryRun): UpdateSqlQueryRunRequest;
-  hasItem(): boolean;
-  clearItem(): UpdateSqlQueryRunRequest;
+  getSqlqueryrun(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQueryRun | undefined;
+  setSqlqueryrun(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQueryRun): UpdateSqlQueryRunRequest;
+  hasSqlqueryrun(): boolean;
+  clearSqlqueryrun(): UpdateSqlQueryRunRequest;
 
   getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
   setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): UpdateSqlQueryRunRequest;
@@ -110,7 +110,7 @@ export class UpdateSqlQueryRunRequest extends jspb.Message {
 
 export namespace UpdateSqlQueryRunRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQueryRun.AsObject,
+    sqlqueryrun?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQueryRun.AsObject,
     fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }

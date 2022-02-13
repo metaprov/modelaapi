@@ -1516,7 +1516,7 @@ proto.github.com.metaprov.modelaapi.services.predictor.v1.GetPredictorResponse.p
  */
 proto.github.com.metaprov.modelaapi.services.predictor.v1.GetPredictorResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor.toObject(includeInstance, f),
+    predictor: (f = msg.getPredictor()) && github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor.toObject(includeInstance, f),
     yaml: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -1557,7 +1557,7 @@ proto.github.com.metaprov.modelaapi.services.predictor.v1.GetPredictorResponse.d
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setPredictor(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -1592,7 +1592,7 @@ proto.github.com.metaprov.modelaapi.services.predictor.v1.GetPredictorResponse.p
  */
 proto.github.com.metaprov.modelaapi.services.predictor.v1.GetPredictorResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getPredictor();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1611,10 +1611,10 @@ proto.github.com.metaprov.modelaapi.services.predictor.v1.GetPredictorResponse.s
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor predictor = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor}
  */
-proto.github.com.metaprov.modelaapi.services.predictor.v1.GetPredictorResponse.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.predictor.v1.GetPredictorResponse.prototype.getPredictor = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor, 1));
 };
@@ -1624,7 +1624,7 @@ proto.github.com.metaprov.modelaapi.services.predictor.v1.GetPredictorResponse.p
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.predictor.v1.GetPredictorResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.predictor.v1.GetPredictorResponse.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.predictor.v1.GetPredictorResponse.prototype.setPredictor = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1633,8 +1633,8 @@ proto.github.com.metaprov.modelaapi.services.predictor.v1.GetPredictorResponse.p
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.predictor.v1.GetPredictorResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.predictor.v1.GetPredictorResponse.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.predictor.v1.GetPredictorResponse.prototype.clearPredictor = function() {
+  return this.setPredictor(undefined);
 };
 
 
@@ -1642,7 +1642,7 @@ proto.github.com.metaprov.modelaapi.services.predictor.v1.GetPredictorResponse.p
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.predictor.v1.GetPredictorResponse.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.predictor.v1.GetPredictorResponse.prototype.hasPredictor = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

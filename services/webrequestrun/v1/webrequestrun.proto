@@ -22,7 +22,7 @@ message ListWebRequestRunsResponse {
 message CreateWebRequestRunResponse {}
 
 message CreateWebRequestRunRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRun item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRun webrequestrun = 1;
 }
 
 message UpdateWebRequestRunRequest {
@@ -40,7 +40,7 @@ message GetWebRequestRunRequest {
 }
 
 message GetWebRequestRunResponse {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRun item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRun webrequestrun = 1;
     string yaml = 2;
 
 }

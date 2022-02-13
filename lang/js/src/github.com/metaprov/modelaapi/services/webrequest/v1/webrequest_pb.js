@@ -798,7 +798,7 @@ proto.github.com.metaprov.modelaapi.services.webrequest.v1.CreateWebRequestReque
  */
 proto.github.com.metaprov.modelaapi.services.webrequest.v1.CreateWebRequestRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequest.toObject(includeInstance, f)
+    webrequest: (f = msg.getWebrequest()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequest.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -838,7 +838,7 @@ proto.github.com.metaprov.modelaapi.services.webrequest.v1.CreateWebRequestReque
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequest;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequest.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setWebrequest(value);
       break;
     default:
       reader.skipField();
@@ -869,7 +869,7 @@ proto.github.com.metaprov.modelaapi.services.webrequest.v1.CreateWebRequestReque
  */
 proto.github.com.metaprov.modelaapi.services.webrequest.v1.CreateWebRequestRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getWebrequest();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -881,10 +881,10 @@ proto.github.com.metaprov.modelaapi.services.webrequest.v1.CreateWebRequestReque
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequest item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequest webrequest = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequest}
  */
-proto.github.com.metaprov.modelaapi.services.webrequest.v1.CreateWebRequestRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.webrequest.v1.CreateWebRequestRequest.prototype.getWebrequest = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequest} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequest, 1));
 };
@@ -894,7 +894,7 @@ proto.github.com.metaprov.modelaapi.services.webrequest.v1.CreateWebRequestReque
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequest|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.webrequest.v1.CreateWebRequestRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.webrequest.v1.CreateWebRequestRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.webrequest.v1.CreateWebRequestRequest.prototype.setWebrequest = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -903,8 +903,8 @@ proto.github.com.metaprov.modelaapi.services.webrequest.v1.CreateWebRequestReque
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.webrequest.v1.CreateWebRequestRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.webrequest.v1.CreateWebRequestRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.webrequest.v1.CreateWebRequestRequest.prototype.clearWebrequest = function() {
+  return this.setWebrequest(undefined);
 };
 
 
@@ -912,7 +912,7 @@ proto.github.com.metaprov.modelaapi.services.webrequest.v1.CreateWebRequestReque
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.webrequest.v1.CreateWebRequestRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.webrequest.v1.CreateWebRequestRequest.prototype.hasWebrequest = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -949,7 +949,7 @@ proto.github.com.metaprov.modelaapi.services.webrequest.v1.UpdateWebRequestReque
  */
 proto.github.com.metaprov.modelaapi.services.webrequest.v1.UpdateWebRequestRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequest.toObject(includeInstance, f),
+    webrequest: (f = msg.getWebrequest()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequest.toObject(includeInstance, f),
     fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
@@ -990,7 +990,7 @@ proto.github.com.metaprov.modelaapi.services.webrequest.v1.UpdateWebRequestReque
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequest;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequest.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setWebrequest(value);
       break;
     case 2:
       var value = new google_protobuf_field_mask_pb.FieldMask;
@@ -1026,7 +1026,7 @@ proto.github.com.metaprov.modelaapi.services.webrequest.v1.UpdateWebRequestReque
  */
 proto.github.com.metaprov.modelaapi.services.webrequest.v1.UpdateWebRequestRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getWebrequest();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1046,10 +1046,10 @@ proto.github.com.metaprov.modelaapi.services.webrequest.v1.UpdateWebRequestReque
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequest item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequest webrequest = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequest}
  */
-proto.github.com.metaprov.modelaapi.services.webrequest.v1.UpdateWebRequestRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.webrequest.v1.UpdateWebRequestRequest.prototype.getWebrequest = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequest} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequest, 1));
 };
@@ -1059,7 +1059,7 @@ proto.github.com.metaprov.modelaapi.services.webrequest.v1.UpdateWebRequestReque
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequest|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.webrequest.v1.UpdateWebRequestRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.webrequest.v1.UpdateWebRequestRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.webrequest.v1.UpdateWebRequestRequest.prototype.setWebrequest = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1068,8 +1068,8 @@ proto.github.com.metaprov.modelaapi.services.webrequest.v1.UpdateWebRequestReque
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.webrequest.v1.UpdateWebRequestRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.webrequest.v1.UpdateWebRequestRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.webrequest.v1.UpdateWebRequestRequest.prototype.clearWebrequest = function() {
+  return this.setWebrequest(undefined);
 };
 
 
@@ -1077,7 +1077,7 @@ proto.github.com.metaprov.modelaapi.services.webrequest.v1.UpdateWebRequestReque
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.webrequest.v1.UpdateWebRequestRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.webrequest.v1.UpdateWebRequestRequest.prototype.hasWebrequest = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

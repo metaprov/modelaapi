@@ -79,10 +79,10 @@ export namespace AccountResponse {
 }
 
 export class CreateAccountRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Account | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Account): CreateAccountRequest;
-  hasItem(): boolean;
-  clearItem(): CreateAccountRequest;
+  getAccount(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Account | undefined;
+  setAccount(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Account): CreateAccountRequest;
+  hasAccount(): boolean;
+  clearAccount(): CreateAccountRequest;
 
   getPassword(): string;
   setPassword(value: string): CreateAccountRequest;
@@ -97,7 +97,7 @@ export class CreateAccountRequest extends jspb.Message {
 
 export namespace CreateAccountRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Account.AsObject,
+    account?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Account.AsObject,
     password: string,
   }
 }
@@ -117,15 +117,15 @@ export namespace CreateAccountResponse {
 }
 
 export class UpdateAccountRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Account | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Account): UpdateAccountRequest;
-  hasItem(): boolean;
-  clearItem(): UpdateAccountRequest;
+  getAccount(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Account | undefined;
+  setAccount(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Account): UpdateAccountRequest;
+  hasAccount(): boolean;
+  clearAccount(): UpdateAccountRequest;
 
-  getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
-  setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): UpdateAccountRequest;
-  hasFieldMask(): boolean;
-  clearFieldMask(): UpdateAccountRequest;
+  getUpdateMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setUpdateMask(value?: google_protobuf_field_mask_pb.FieldMask): UpdateAccountRequest;
+  hasUpdateMask(): boolean;
+  clearUpdateMask(): UpdateAccountRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateAccountRequest.AsObject;
@@ -137,8 +137,8 @@ export class UpdateAccountRequest extends jspb.Message {
 
 export namespace UpdateAccountRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Account.AsObject,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
+    account?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Account.AsObject,
+    updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
 

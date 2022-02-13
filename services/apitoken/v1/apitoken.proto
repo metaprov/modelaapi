@@ -23,7 +23,7 @@ message ListApiTokensResponse {
 message ApiTokenResponse {}
 
 message CreateApiTokenRequest {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiToken item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiToken apitoken = 1;
     string password = 2;    
 }
 
@@ -32,8 +32,8 @@ message CreateApiTokenResponse {
 }
 
 message UpdateApiTokenRequest {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiToken item = 1;
-    google.protobuf.FieldMask field_mask = 2;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiToken apitoken = 1;
+    google.protobuf.FieldMask update_mask = 2;
 }
 
 message UpdateApiTokenResponse {
@@ -47,7 +47,7 @@ message GetApiTokenRequest {
 
 
 message GetApiTokenResponse {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiToken item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiToken apitoken = 1;
     string yaml = 2;
 }
 

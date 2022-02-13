@@ -28,7 +28,7 @@ message CreateRunBookResponse {
 }
 
 message UpdateRunBookRequest {
-    github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBook item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBook runbook = 1;
     google.protobuf.FieldMask field_mask = 2;
 }
 

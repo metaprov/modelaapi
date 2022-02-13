@@ -23,7 +23,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z4github.com/metaprov/modelaapi/services/attachment/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nEgithub.com/metaprov/modelaapi/services/attachment/v1/attachment.proto\x12\x34github.com.metaprov.modelaapi.services.attachment.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x45github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto\x1a=github.com/metaprov/modelaapi/services/common/v1/common.proto\x1a google/protobuf/field_mask.proto\"\xfd\x01\n\x16ListAttachmentsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12h\n\x06labels\x18\x02 \x03(\x0b\x32X.github.com.metaprov.modelaapi.services.attachment.v1.ListAttachmentsRequest.LabelsEntry\x12\x11\n\tpage_size\x18\x03 \x01(\x05\x12\x12\n\npage_token\x18\x04 \x01(\t\x12\x10\n\x08order_by\x18\x05 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x8e\x01\n\x17ListAttachmentsResponse\x12Z\n\x0b\x61ttachments\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentList\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x14\n\x12\x41ttachmentResponse\"j\n\x17\x43reateAttachmentRequest\x12O\n\x04item\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Attachment\"\x1a\n\x18\x43reateAttachmentResponse\"\x9a\x01\n\x17UpdateAttachmentRequest\x12O\n\x04item\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Attachment\x12.\n\nfield_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"\x1a\n\x18UpdateAttachmentResponse\"7\n\x14GetAttachmentRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"v\n\x15GetAttachmentResponse\x12O\n\x04item\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Attachment\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"A\n\x1eGetAttachmentNamespacesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"v\n\x1fGetAttachmentNamespacesResponse\x12S\n\nnamespaces\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo\":\n\x17\x44\x65leteAttachmentRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1a\n\x18\x44\x65leteAttachmentResponse\"\x1a\n\x18\x41ttachmentCreateResponse2\xef\x08\n\x11\x41ttachmentService\x12\xd3\x01\n\x0fListAttachments\x12L.github.com.metaprov.modelaapi.services.attachment.v1.ListAttachmentsRequest\x1aM.github.com.metaprov.modelaapi.services.attachment.v1.ListAttachmentsResponse\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/v1/attachments/{namespace}\x12\xcd\x01\n\x10\x43reateAttachment\x12M.github.com.metaprov.modelaapi.services.attachment.v1.CreateAttachmentRequest\x1aN.github.com.metaprov.modelaapi.services.attachment.v1.CreateAttachmentResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\"\x0f/v1/attachments:\x01*\x12\xd4\x01\n\rGetAttachment\x12J.github.com.metaprov.modelaapi.services.attachment.v1.GetAttachmentRequest\x1aK.github.com.metaprov.modelaapi.services.attachment.v1.GetAttachmentResponse\"*\x82\xd3\xe4\x93\x02$\x12\"/v1/attachments/{namespace}/{name}\x12\xfc\x01\n\x10UpdateAttachment\x12M.github.com.metaprov.modelaapi.services.attachment.v1.UpdateAttachmentRequest\x1aN.github.com.metaprov.modelaapi.services.attachment.v1.UpdateAttachmentResponse\"I\x82\xd3\xe4\x93\x02\x43\x1a>/v1/attachments/{item.metadata.namespace}/{item.metadata.name}:\x01*\x12\xdd\x01\n\x10\x44\x65leteAttachment\x12M.github.com.metaprov.modelaapi.services.attachment.v1.DeleteAttachmentRequest\x1aN.github.com.metaprov.modelaapi.services.attachment.v1.DeleteAttachmentResponse\"*\x82\xd3\xe4\x93\x02$*\"/v1/attachments/{namespace}/{name}B6Z4github.com/metaprov/modelaapi/services/attachment/v1b\x06proto3'
+  serialized_pb=b'\nEgithub.com/metaprov/modelaapi/services/attachment/v1/attachment.proto\x12\x34github.com.metaprov.modelaapi.services.attachment.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x45github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto\x1a=github.com/metaprov/modelaapi/services/common/v1/common.proto\x1a google/protobuf/field_mask.proto\"\xfd\x01\n\x16ListAttachmentsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12h\n\x06labels\x18\x02 \x03(\x0b\x32X.github.com.metaprov.modelaapi.services.attachment.v1.ListAttachmentsRequest.LabelsEntry\x12\x11\n\tpage_size\x18\x03 \x01(\x05\x12\x12\n\npage_token\x18\x04 \x01(\t\x12\x10\n\x08order_by\x18\x05 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x8e\x01\n\x17ListAttachmentsResponse\x12Z\n\x0b\x61ttachments\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentList\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x14\n\x12\x41ttachmentResponse\"p\n\x17\x43reateAttachmentRequest\x12U\n\nattachment\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Attachment\"\x1a\n\x18\x43reateAttachmentResponse\"\xa0\x01\n\x17UpdateAttachmentRequest\x12U\n\nattachment\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Attachment\x12.\n\nfield_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"\x1a\n\x18UpdateAttachmentResponse\"7\n\x14GetAttachmentRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"|\n\x15GetAttachmentResponse\x12U\n\nattachment\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Attachment\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"A\n\x1eGetAttachmentNamespacesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"v\n\x1fGetAttachmentNamespacesResponse\x12S\n\nnamespaces\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo\":\n\x17\x44\x65leteAttachmentRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1a\n\x18\x44\x65leteAttachmentResponse\"\x1a\n\x18\x41ttachmentCreateResponse2\xef\x08\n\x11\x41ttachmentService\x12\xd3\x01\n\x0fListAttachments\x12L.github.com.metaprov.modelaapi.services.attachment.v1.ListAttachmentsRequest\x1aM.github.com.metaprov.modelaapi.services.attachment.v1.ListAttachmentsResponse\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/v1/attachments/{namespace}\x12\xcd\x01\n\x10\x43reateAttachment\x12M.github.com.metaprov.modelaapi.services.attachment.v1.CreateAttachmentRequest\x1aN.github.com.metaprov.modelaapi.services.attachment.v1.CreateAttachmentResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\"\x0f/v1/attachments:\x01*\x12\xd4\x01\n\rGetAttachment\x12J.github.com.metaprov.modelaapi.services.attachment.v1.GetAttachmentRequest\x1aK.github.com.metaprov.modelaapi.services.attachment.v1.GetAttachmentResponse\"*\x82\xd3\xe4\x93\x02$\x12\"/v1/attachments/{namespace}/{name}\x12\xfc\x01\n\x10UpdateAttachment\x12M.github.com.metaprov.modelaapi.services.attachment.v1.UpdateAttachmentRequest\x1aN.github.com.metaprov.modelaapi.services.attachment.v1.UpdateAttachmentResponse\"I\x82\xd3\xe4\x93\x02\x43\x1a>/v1/attachments/{item.metadata.namespace}/{item.metadata.name}:\x01*\x12\xdd\x01\n\x10\x44\x65leteAttachment\x12M.github.com.metaprov.modelaapi.services.attachment.v1.DeleteAttachmentRequest\x1aN.github.com.metaprov.modelaapi.services.attachment.v1.DeleteAttachmentResponse\"*\x82\xd3\xe4\x93\x02$*\"/v1/attachments/{namespace}/{name}B6Z4github.com/metaprov/modelaapi/services/attachment/v1b\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_common_dot_v1_dot_common__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,])
 
@@ -201,7 +201,7 @@ _CREATEATTACHMENTREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='item', full_name='github.com.metaprov.modelaapi.services.attachment.v1.CreateAttachmentRequest.item', index=0,
+      name='attachment', full_name='github.com.metaprov.modelaapi.services.attachment.v1.CreateAttachmentRequest.attachment', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -220,7 +220,7 @@ _CREATEATTACHMENTREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=748,
-  serialized_end=854,
+  serialized_end=860,
 )
 
 
@@ -244,8 +244,8 @@ _CREATEATTACHMENTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=856,
-  serialized_end=882,
+  serialized_start=862,
+  serialized_end=888,
 )
 
 
@@ -258,7 +258,7 @@ _UPDATEATTACHMENTREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='item', full_name='github.com.metaprov.modelaapi.services.attachment.v1.UpdateAttachmentRequest.item', index=0,
+      name='attachment', full_name='github.com.metaprov.modelaapi.services.attachment.v1.UpdateAttachmentRequest.attachment', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -283,8 +283,8 @@ _UPDATEATTACHMENTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=885,
-  serialized_end=1039,
+  serialized_start=891,
+  serialized_end=1051,
 )
 
 
@@ -308,8 +308,8 @@ _UPDATEATTACHMENTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1041,
-  serialized_end=1067,
+  serialized_start=1053,
+  serialized_end=1079,
 )
 
 
@@ -347,8 +347,8 @@ _GETATTACHMENTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1069,
-  serialized_end=1124,
+  serialized_start=1081,
+  serialized_end=1136,
 )
 
 
@@ -361,7 +361,7 @@ _GETATTACHMENTRESPONSE = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='item', full_name='github.com.metaprov.modelaapi.services.attachment.v1.GetAttachmentResponse.item', index=0,
+      name='attachment', full_name='github.com.metaprov.modelaapi.services.attachment.v1.GetAttachmentResponse.attachment', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -386,8 +386,8 @@ _GETATTACHMENTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1126,
-  serialized_end=1244,
+  serialized_start=1138,
+  serialized_end=1262,
 )
 
 
@@ -425,8 +425,8 @@ _GETATTACHMENTNAMESPACESREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1246,
-  serialized_end=1311,
+  serialized_start=1264,
+  serialized_end=1329,
 )
 
 
@@ -457,8 +457,8 @@ _GETATTACHMENTNAMESPACESRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1313,
-  serialized_end=1431,
+  serialized_start=1331,
+  serialized_end=1449,
 )
 
 
@@ -496,8 +496,8 @@ _DELETEATTACHMENTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1433,
-  serialized_end=1491,
+  serialized_start=1451,
+  serialized_end=1509,
 )
 
 
@@ -521,8 +521,8 @@ _DELETEATTACHMENTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1493,
-  serialized_end=1519,
+  serialized_start=1511,
+  serialized_end=1537,
 )
 
 
@@ -546,17 +546,17 @@ _ATTACHMENTCREATERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1521,
-  serialized_end=1547,
+  serialized_start=1539,
+  serialized_end=1565,
 )
 
 _LISTATTACHMENTSREQUEST_LABELSENTRY.containing_type = _LISTATTACHMENTSREQUEST
 _LISTATTACHMENTSREQUEST.fields_by_name['labels'].message_type = _LISTATTACHMENTSREQUEST_LABELSENTRY
 _LISTATTACHMENTSRESPONSE.fields_by_name['attachments'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._ATTACHMENTLIST
-_CREATEATTACHMENTREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._ATTACHMENT
-_UPDATEATTACHMENTREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._ATTACHMENT
+_CREATEATTACHMENTREQUEST.fields_by_name['attachment'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._ATTACHMENT
+_UPDATEATTACHMENTREQUEST.fields_by_name['attachment'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._ATTACHMENT
 _UPDATEATTACHMENTREQUEST.fields_by_name['field_mask'].message_type = google_dot_protobuf_dot_field__mask__pb2._FIELDMASK
-_GETATTACHMENTRESPONSE.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._ATTACHMENT
+_GETATTACHMENTRESPONSE.fields_by_name['attachment'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._ATTACHMENT
 _GETATTACHMENTNAMESPACESRESPONSE.fields_by_name['namespaces'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_common_dot_v1_dot_common__pb2._NAMESPACEINFO
 DESCRIPTOR.message_types_by_name['ListAttachmentsRequest'] = _LISTATTACHMENTSREQUEST
 DESCRIPTOR.message_types_by_name['ListAttachmentsResponse'] = _LISTATTACHMENTSRESPONSE
@@ -691,8 +691,8 @@ _ATTACHMENTSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1550,
-  serialized_end=2685,
+  serialized_start=1568,
+  serialized_end=2703,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListAttachments',

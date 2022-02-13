@@ -948,7 +948,7 @@ proto.github.com.metaprov.modelaapi.services.apitoken.v1.CreateApiTokenRequest.p
  */
 proto.github.com.metaprov.modelaapi.services.apitoken.v1.CreateApiTokenRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ApiToken.toObject(includeInstance, f),
+    apitoken: (f = msg.getApitoken()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ApiToken.toObject(includeInstance, f),
     password: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -989,7 +989,7 @@ proto.github.com.metaprov.modelaapi.services.apitoken.v1.CreateApiTokenRequest.d
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ApiToken;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ApiToken.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setApitoken(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -1024,7 +1024,7 @@ proto.github.com.metaprov.modelaapi.services.apitoken.v1.CreateApiTokenRequest.p
  */
 proto.github.com.metaprov.modelaapi.services.apitoken.v1.CreateApiTokenRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getApitoken();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1043,10 +1043,10 @@ proto.github.com.metaprov.modelaapi.services.apitoken.v1.CreateApiTokenRequest.s
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiToken item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiToken apitoken = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiToken}
  */
-proto.github.com.metaprov.modelaapi.services.apitoken.v1.CreateApiTokenRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.apitoken.v1.CreateApiTokenRequest.prototype.getApitoken = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiToken} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ApiToken, 1));
 };
@@ -1056,7 +1056,7 @@ proto.github.com.metaprov.modelaapi.services.apitoken.v1.CreateApiTokenRequest.p
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiToken|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.apitoken.v1.CreateApiTokenRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.apitoken.v1.CreateApiTokenRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.apitoken.v1.CreateApiTokenRequest.prototype.setApitoken = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1065,8 +1065,8 @@ proto.github.com.metaprov.modelaapi.services.apitoken.v1.CreateApiTokenRequest.p
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.apitoken.v1.CreateApiTokenRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.apitoken.v1.CreateApiTokenRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.apitoken.v1.CreateApiTokenRequest.prototype.clearApitoken = function() {
+  return this.setApitoken(undefined);
 };
 
 
@@ -1074,7 +1074,7 @@ proto.github.com.metaprov.modelaapi.services.apitoken.v1.CreateApiTokenRequest.p
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.apitoken.v1.CreateApiTokenRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.apitoken.v1.CreateApiTokenRequest.prototype.hasApitoken = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -1230,8 +1230,8 @@ proto.github.com.metaprov.modelaapi.services.apitoken.v1.UpdateApiTokenRequest.p
  */
 proto.github.com.metaprov.modelaapi.services.apitoken.v1.UpdateApiTokenRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ApiToken.toObject(includeInstance, f),
-    fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+    apitoken: (f = msg.getApitoken()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ApiToken.toObject(includeInstance, f),
+    updateMask: (f = msg.getUpdateMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1271,12 +1271,12 @@ proto.github.com.metaprov.modelaapi.services.apitoken.v1.UpdateApiTokenRequest.d
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ApiToken;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ApiToken.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setApitoken(value);
       break;
     case 2:
       var value = new google_protobuf_field_mask_pb.FieldMask;
       reader.readMessage(value,google_protobuf_field_mask_pb.FieldMask.deserializeBinaryFromReader);
-      msg.setFieldMask(value);
+      msg.setUpdateMask(value);
       break;
     default:
       reader.skipField();
@@ -1307,7 +1307,7 @@ proto.github.com.metaprov.modelaapi.services.apitoken.v1.UpdateApiTokenRequest.p
  */
 proto.github.com.metaprov.modelaapi.services.apitoken.v1.UpdateApiTokenRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getApitoken();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1315,7 +1315,7 @@ proto.github.com.metaprov.modelaapi.services.apitoken.v1.UpdateApiTokenRequest.s
       github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ApiToken.serializeBinaryToWriter
     );
   }
-  f = message.getFieldMask();
+  f = message.getUpdateMask();
   if (f != null) {
     writer.writeMessage(
       2,
@@ -1327,10 +1327,10 @@ proto.github.com.metaprov.modelaapi.services.apitoken.v1.UpdateApiTokenRequest.s
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiToken item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiToken apitoken = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiToken}
  */
-proto.github.com.metaprov.modelaapi.services.apitoken.v1.UpdateApiTokenRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.apitoken.v1.UpdateApiTokenRequest.prototype.getApitoken = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiToken} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ApiToken, 1));
 };
@@ -1340,7 +1340,7 @@ proto.github.com.metaprov.modelaapi.services.apitoken.v1.UpdateApiTokenRequest.p
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiToken|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.apitoken.v1.UpdateApiTokenRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.apitoken.v1.UpdateApiTokenRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.apitoken.v1.UpdateApiTokenRequest.prototype.setApitoken = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1349,8 +1349,8 @@ proto.github.com.metaprov.modelaapi.services.apitoken.v1.UpdateApiTokenRequest.p
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.apitoken.v1.UpdateApiTokenRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.apitoken.v1.UpdateApiTokenRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.apitoken.v1.UpdateApiTokenRequest.prototype.clearApitoken = function() {
+  return this.setApitoken(undefined);
 };
 
 
@@ -1358,16 +1358,16 @@ proto.github.com.metaprov.modelaapi.services.apitoken.v1.UpdateApiTokenRequest.p
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.apitoken.v1.UpdateApiTokenRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.apitoken.v1.UpdateApiTokenRequest.prototype.hasApitoken = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
- * optional google.protobuf.FieldMask field_mask = 2;
+ * optional google.protobuf.FieldMask update_mask = 2;
  * @return {?proto.google.protobuf.FieldMask}
  */
-proto.github.com.metaprov.modelaapi.services.apitoken.v1.UpdateApiTokenRequest.prototype.getFieldMask = function() {
+proto.github.com.metaprov.modelaapi.services.apitoken.v1.UpdateApiTokenRequest.prototype.getUpdateMask = function() {
   return /** @type{?proto.google.protobuf.FieldMask} */ (
     jspb.Message.getWrapperField(this, google_protobuf_field_mask_pb.FieldMask, 2));
 };
@@ -1377,7 +1377,7 @@ proto.github.com.metaprov.modelaapi.services.apitoken.v1.UpdateApiTokenRequest.p
  * @param {?proto.google.protobuf.FieldMask|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.apitoken.v1.UpdateApiTokenRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.apitoken.v1.UpdateApiTokenRequest.prototype.setFieldMask = function(value) {
+proto.github.com.metaprov.modelaapi.services.apitoken.v1.UpdateApiTokenRequest.prototype.setUpdateMask = function(value) {
   return jspb.Message.setWrapperField(this, 2, value);
 };
 
@@ -1386,8 +1386,8 @@ proto.github.com.metaprov.modelaapi.services.apitoken.v1.UpdateApiTokenRequest.p
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.apitoken.v1.UpdateApiTokenRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.apitoken.v1.UpdateApiTokenRequest.prototype.clearFieldMask = function() {
-  return this.setFieldMask(undefined);
+proto.github.com.metaprov.modelaapi.services.apitoken.v1.UpdateApiTokenRequest.prototype.clearUpdateMask = function() {
+  return this.setUpdateMask(undefined);
 };
 
 
@@ -1395,7 +1395,7 @@ proto.github.com.metaprov.modelaapi.services.apitoken.v1.UpdateApiTokenRequest.p
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.apitoken.v1.UpdateApiTokenRequest.prototype.hasFieldMask = function() {
+proto.github.com.metaprov.modelaapi.services.apitoken.v1.UpdateApiTokenRequest.prototype.hasUpdateMask = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
@@ -1693,7 +1693,7 @@ proto.github.com.metaprov.modelaapi.services.apitoken.v1.GetApiTokenResponse.pro
  */
 proto.github.com.metaprov.modelaapi.services.apitoken.v1.GetApiTokenResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ApiToken.toObject(includeInstance, f),
+    apitoken: (f = msg.getApitoken()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ApiToken.toObject(includeInstance, f),
     yaml: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -1734,7 +1734,7 @@ proto.github.com.metaprov.modelaapi.services.apitoken.v1.GetApiTokenResponse.des
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ApiToken;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ApiToken.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setApitoken(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -1769,7 +1769,7 @@ proto.github.com.metaprov.modelaapi.services.apitoken.v1.GetApiTokenResponse.pro
  */
 proto.github.com.metaprov.modelaapi.services.apitoken.v1.GetApiTokenResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getApitoken();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1788,10 +1788,10 @@ proto.github.com.metaprov.modelaapi.services.apitoken.v1.GetApiTokenResponse.ser
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiToken item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiToken apitoken = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiToken}
  */
-proto.github.com.metaprov.modelaapi.services.apitoken.v1.GetApiTokenResponse.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.apitoken.v1.GetApiTokenResponse.prototype.getApitoken = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiToken} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ApiToken, 1));
 };
@@ -1801,7 +1801,7 @@ proto.github.com.metaprov.modelaapi.services.apitoken.v1.GetApiTokenResponse.pro
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiToken|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.apitoken.v1.GetApiTokenResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.apitoken.v1.GetApiTokenResponse.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.apitoken.v1.GetApiTokenResponse.prototype.setApitoken = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1810,8 +1810,8 @@ proto.github.com.metaprov.modelaapi.services.apitoken.v1.GetApiTokenResponse.pro
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.apitoken.v1.GetApiTokenResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.apitoken.v1.GetApiTokenResponse.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.apitoken.v1.GetApiTokenResponse.prototype.clearApitoken = function() {
+  return this.setApitoken(undefined);
 };
 
 
@@ -1819,7 +1819,7 @@ proto.github.com.metaprov.modelaapi.services.apitoken.v1.GetApiTokenResponse.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.apitoken.v1.GetApiTokenResponse.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.apitoken.v1.GetApiTokenResponse.prototype.hasApitoken = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

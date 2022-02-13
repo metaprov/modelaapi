@@ -28,7 +28,7 @@ message CreateFeaturePipelineResponse {
 }
 
 message UpdateFeaturePipelineRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipeline item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipeline featurepipeline = 1;
     google.protobuf.FieldMask field_mask = 2;
 }
 
@@ -44,7 +44,7 @@ message GetFeaturePipelineRequest {
 
 
 message GetFeaturePipelineResponse {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipeline item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipeline featurepipeline = 1;
     string yaml = 2;
 }
 

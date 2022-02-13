@@ -995,7 +995,7 @@ proto.github.com.metaprov.modelaapi.services.featurehistogram.v1.UpdateFeatureHi
  */
 proto.github.com.metaprov.modelaapi.services.featurehistogram.v1.UpdateFeatureHistogramRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.toObject(includeInstance, f),
+    histogram: (f = msg.getHistogram()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.toObject(includeInstance, f),
     fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
@@ -1036,7 +1036,7 @@ proto.github.com.metaprov.modelaapi.services.featurehistogram.v1.UpdateFeatureHi
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setHistogram(value);
       break;
     case 2:
       var value = new google_protobuf_field_mask_pb.FieldMask;
@@ -1072,7 +1072,7 @@ proto.github.com.metaprov.modelaapi.services.featurehistogram.v1.UpdateFeatureHi
  */
 proto.github.com.metaprov.modelaapi.services.featurehistogram.v1.UpdateFeatureHistogramRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getHistogram();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1092,10 +1092,10 @@ proto.github.com.metaprov.modelaapi.services.featurehistogram.v1.UpdateFeatureHi
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram histogram = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram}
  */
-proto.github.com.metaprov.modelaapi.services.featurehistogram.v1.UpdateFeatureHistogramRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.featurehistogram.v1.UpdateFeatureHistogramRequest.prototype.getHistogram = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram, 1));
 };
@@ -1105,7 +1105,7 @@ proto.github.com.metaprov.modelaapi.services.featurehistogram.v1.UpdateFeatureHi
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.featurehistogram.v1.UpdateFeatureHistogramRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.featurehistogram.v1.UpdateFeatureHistogramRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.featurehistogram.v1.UpdateFeatureHistogramRequest.prototype.setHistogram = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1114,8 +1114,8 @@ proto.github.com.metaprov.modelaapi.services.featurehistogram.v1.UpdateFeatureHi
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.featurehistogram.v1.UpdateFeatureHistogramRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.featurehistogram.v1.UpdateFeatureHistogramRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.featurehistogram.v1.UpdateFeatureHistogramRequest.prototype.clearHistogram = function() {
+  return this.setHistogram(undefined);
 };
 
 
@@ -1123,7 +1123,7 @@ proto.github.com.metaprov.modelaapi.services.featurehistogram.v1.UpdateFeatureHi
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.featurehistogram.v1.UpdateFeatureHistogramRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.featurehistogram.v1.UpdateFeatureHistogramRequest.prototype.hasHistogram = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -1458,7 +1458,7 @@ proto.github.com.metaprov.modelaapi.services.featurehistogram.v1.GetFeatureHisto
  */
 proto.github.com.metaprov.modelaapi.services.featurehistogram.v1.GetFeatureHistogramResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.toObject(includeInstance, f),
+    histogram: (f = msg.getHistogram()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.toObject(includeInstance, f),
     yaml: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -1499,7 +1499,7 @@ proto.github.com.metaprov.modelaapi.services.featurehistogram.v1.GetFeatureHisto
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setHistogram(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -1534,7 +1534,7 @@ proto.github.com.metaprov.modelaapi.services.featurehistogram.v1.GetFeatureHisto
  */
 proto.github.com.metaprov.modelaapi.services.featurehistogram.v1.GetFeatureHistogramResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getHistogram();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1553,10 +1553,10 @@ proto.github.com.metaprov.modelaapi.services.featurehistogram.v1.GetFeatureHisto
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram histogram = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram}
  */
-proto.github.com.metaprov.modelaapi.services.featurehistogram.v1.GetFeatureHistogramResponse.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.featurehistogram.v1.GetFeatureHistogramResponse.prototype.getHistogram = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram, 1));
 };
@@ -1566,7 +1566,7 @@ proto.github.com.metaprov.modelaapi.services.featurehistogram.v1.GetFeatureHisto
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.featurehistogram.v1.GetFeatureHistogramResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.featurehistogram.v1.GetFeatureHistogramResponse.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.featurehistogram.v1.GetFeatureHistogramResponse.prototype.setHistogram = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1575,8 +1575,8 @@ proto.github.com.metaprov.modelaapi.services.featurehistogram.v1.GetFeatureHisto
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.featurehistogram.v1.GetFeatureHistogramResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.featurehistogram.v1.GetFeatureHistogramResponse.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.featurehistogram.v1.GetFeatureHistogramResponse.prototype.clearHistogram = function() {
+  return this.setHistogram(undefined);
 };
 
 
@@ -1584,7 +1584,7 @@ proto.github.com.metaprov.modelaapi.services.featurehistogram.v1.GetFeatureHisto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.featurehistogram.v1.GetFeatureHistogramResponse.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.featurehistogram.v1.GetFeatureHistogramResponse.prototype.hasHistogram = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

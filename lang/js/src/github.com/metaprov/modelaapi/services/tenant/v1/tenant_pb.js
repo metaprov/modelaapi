@@ -881,7 +881,7 @@ proto.github.com.metaprov.modelaapi.services.tenant.v1.UpdateTenantRequest.proto
  */
 proto.github.com.metaprov.modelaapi.services.tenant.v1.UpdateTenantRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant.toObject(includeInstance, f),
+    tenant: (f = msg.getTenant()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant.toObject(includeInstance, f),
     fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
@@ -922,7 +922,7 @@ proto.github.com.metaprov.modelaapi.services.tenant.v1.UpdateTenantRequest.deser
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setTenant(value);
       break;
     case 2:
       var value = new google_protobuf_field_mask_pb.FieldMask;
@@ -958,7 +958,7 @@ proto.github.com.metaprov.modelaapi.services.tenant.v1.UpdateTenantRequest.proto
  */
 proto.github.com.metaprov.modelaapi.services.tenant.v1.UpdateTenantRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getTenant();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -978,10 +978,10 @@ proto.github.com.metaprov.modelaapi.services.tenant.v1.UpdateTenantRequest.seria
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Tenant item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Tenant tenant = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Tenant}
  */
-proto.github.com.metaprov.modelaapi.services.tenant.v1.UpdateTenantRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.tenant.v1.UpdateTenantRequest.prototype.getTenant = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Tenant} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant, 1));
 };
@@ -991,7 +991,7 @@ proto.github.com.metaprov.modelaapi.services.tenant.v1.UpdateTenantRequest.proto
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Tenant|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.tenant.v1.UpdateTenantRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.tenant.v1.UpdateTenantRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.tenant.v1.UpdateTenantRequest.prototype.setTenant = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1000,8 +1000,8 @@ proto.github.com.metaprov.modelaapi.services.tenant.v1.UpdateTenantRequest.proto
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.tenant.v1.UpdateTenantRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.tenant.v1.UpdateTenantRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.tenant.v1.UpdateTenantRequest.prototype.clearTenant = function() {
+  return this.setTenant(undefined);
 };
 
 
@@ -1009,7 +1009,7 @@ proto.github.com.metaprov.modelaapi.services.tenant.v1.UpdateTenantRequest.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.tenant.v1.UpdateTenantRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.tenant.v1.UpdateTenantRequest.prototype.hasTenant = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

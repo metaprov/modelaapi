@@ -814,7 +814,7 @@ proto.github.com.metaprov.modelaapi.services.curtain.v1.CreateCurtainRequest.pro
  */
 proto.github.com.metaprov.modelaapi.services.curtain.v1.CreateCurtainRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain.toObject(includeInstance, f)
+    curtain: (f = msg.getCurtain()) && github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -854,7 +854,7 @@ proto.github.com.metaprov.modelaapi.services.curtain.v1.CreateCurtainRequest.des
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setCurtain(value);
       break;
     default:
       reader.skipField();
@@ -885,7 +885,7 @@ proto.github.com.metaprov.modelaapi.services.curtain.v1.CreateCurtainRequest.pro
  */
 proto.github.com.metaprov.modelaapi.services.curtain.v1.CreateCurtainRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getCurtain();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -897,10 +897,10 @@ proto.github.com.metaprov.modelaapi.services.curtain.v1.CreateCurtainRequest.ser
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Curtain item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Curtain curtain = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Curtain}
  */
-proto.github.com.metaprov.modelaapi.services.curtain.v1.CreateCurtainRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.curtain.v1.CreateCurtainRequest.prototype.getCurtain = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Curtain} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain, 1));
 };
@@ -910,7 +910,7 @@ proto.github.com.metaprov.modelaapi.services.curtain.v1.CreateCurtainRequest.pro
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Curtain|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.curtain.v1.CreateCurtainRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.curtain.v1.CreateCurtainRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.curtain.v1.CreateCurtainRequest.prototype.setCurtain = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -919,8 +919,8 @@ proto.github.com.metaprov.modelaapi.services.curtain.v1.CreateCurtainRequest.pro
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.curtain.v1.CreateCurtainRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.curtain.v1.CreateCurtainRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.curtain.v1.CreateCurtainRequest.prototype.clearCurtain = function() {
+  return this.setCurtain(undefined);
 };
 
 
@@ -928,7 +928,7 @@ proto.github.com.metaprov.modelaapi.services.curtain.v1.CreateCurtainRequest.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.curtain.v1.CreateCurtainRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.curtain.v1.CreateCurtainRequest.prototype.hasCurtain = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -965,7 +965,7 @@ proto.github.com.metaprov.modelaapi.services.curtain.v1.UpdateCurtainRequest.pro
  */
 proto.github.com.metaprov.modelaapi.services.curtain.v1.UpdateCurtainRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain.toObject(includeInstance, f),
+    curtain: (f = msg.getCurtain()) && github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain.toObject(includeInstance, f),
     fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
@@ -1006,7 +1006,7 @@ proto.github.com.metaprov.modelaapi.services.curtain.v1.UpdateCurtainRequest.des
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setCurtain(value);
       break;
     case 2:
       var value = new google_protobuf_field_mask_pb.FieldMask;
@@ -1042,7 +1042,7 @@ proto.github.com.metaprov.modelaapi.services.curtain.v1.UpdateCurtainRequest.pro
  */
 proto.github.com.metaprov.modelaapi.services.curtain.v1.UpdateCurtainRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getCurtain();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1062,10 +1062,10 @@ proto.github.com.metaprov.modelaapi.services.curtain.v1.UpdateCurtainRequest.ser
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Curtain item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Curtain curtain = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Curtain}
  */
-proto.github.com.metaprov.modelaapi.services.curtain.v1.UpdateCurtainRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.curtain.v1.UpdateCurtainRequest.prototype.getCurtain = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Curtain} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain, 1));
 };
@@ -1075,7 +1075,7 @@ proto.github.com.metaprov.modelaapi.services.curtain.v1.UpdateCurtainRequest.pro
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Curtain|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.curtain.v1.UpdateCurtainRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.curtain.v1.UpdateCurtainRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.curtain.v1.UpdateCurtainRequest.prototype.setCurtain = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1084,8 +1084,8 @@ proto.github.com.metaprov.modelaapi.services.curtain.v1.UpdateCurtainRequest.pro
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.curtain.v1.UpdateCurtainRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.curtain.v1.UpdateCurtainRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.curtain.v1.UpdateCurtainRequest.prototype.clearCurtain = function() {
+  return this.setCurtain(undefined);
 };
 
 
@@ -1093,7 +1093,7 @@ proto.github.com.metaprov.modelaapi.services.curtain.v1.UpdateCurtainRequest.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.curtain.v1.UpdateCurtainRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.curtain.v1.UpdateCurtainRequest.prototype.hasCurtain = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -1428,7 +1428,7 @@ proto.github.com.metaprov.modelaapi.services.curtain.v1.GetCurtainResponse.proto
  */
 proto.github.com.metaprov.modelaapi.services.curtain.v1.GetCurtainResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain.toObject(includeInstance, f),
+    curtain: (f = msg.getCurtain()) && github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain.toObject(includeInstance, f),
     yaml: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -1469,7 +1469,7 @@ proto.github.com.metaprov.modelaapi.services.curtain.v1.GetCurtainResponse.deser
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setCurtain(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -1504,7 +1504,7 @@ proto.github.com.metaprov.modelaapi.services.curtain.v1.GetCurtainResponse.proto
  */
 proto.github.com.metaprov.modelaapi.services.curtain.v1.GetCurtainResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getCurtain();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1523,10 +1523,10 @@ proto.github.com.metaprov.modelaapi.services.curtain.v1.GetCurtainResponse.seria
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Curtain item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Curtain curtain = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Curtain}
  */
-proto.github.com.metaprov.modelaapi.services.curtain.v1.GetCurtainResponse.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.curtain.v1.GetCurtainResponse.prototype.getCurtain = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Curtain} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain, 1));
 };
@@ -1536,7 +1536,7 @@ proto.github.com.metaprov.modelaapi.services.curtain.v1.GetCurtainResponse.proto
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Curtain|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.curtain.v1.GetCurtainResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.curtain.v1.GetCurtainResponse.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.curtain.v1.GetCurtainResponse.prototype.setCurtain = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1545,8 +1545,8 @@ proto.github.com.metaprov.modelaapi.services.curtain.v1.GetCurtainResponse.proto
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.curtain.v1.GetCurtainResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.curtain.v1.GetCurtainResponse.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.curtain.v1.GetCurtainResponse.prototype.clearCurtain = function() {
+  return this.setCurtain(undefined);
 };
 
 
@@ -1554,7 +1554,7 @@ proto.github.com.metaprov.modelaapi.services.curtain.v1.GetCurtainResponse.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.curtain.v1.GetCurtainResponse.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.curtain.v1.GetCurtainResponse.prototype.hasCurtain = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

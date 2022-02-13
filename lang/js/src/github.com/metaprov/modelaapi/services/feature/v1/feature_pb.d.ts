@@ -98,10 +98,10 @@ export namespace CreateFeatureResponse {
 }
 
 export class UpdateFeatureRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature): UpdateFeatureRequest;
-  hasItem(): boolean;
-  clearItem(): UpdateFeatureRequest;
+  getFeature(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature | undefined;
+  setFeature(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature): UpdateFeatureRequest;
+  hasFeature(): boolean;
+  clearFeature(): UpdateFeatureRequest;
 
   getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
   setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): UpdateFeatureRequest;
@@ -118,7 +118,7 @@ export class UpdateFeatureRequest extends jspb.Message {
 
 export namespace UpdateFeatureRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature.AsObject,
+    feature?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature.AsObject,
     fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
@@ -160,10 +160,10 @@ export namespace GetFeatureRequest {
 }
 
 export class GetFeatureResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature): GetFeatureResponse;
-  hasItem(): boolean;
-  clearItem(): GetFeatureResponse;
+  getFeature(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature | undefined;
+  setFeature(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature): GetFeatureResponse;
+  hasFeature(): boolean;
+  clearFeature(): GetFeatureResponse;
 
   getYaml(): string;
   setYaml(value: string): GetFeatureResponse;
@@ -178,7 +178,7 @@ export class GetFeatureResponse extends jspb.Message {
 
 export namespace GetFeatureResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature.AsObject,
+    feature?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature.AsObject,
     yaml: string,
   }
 }

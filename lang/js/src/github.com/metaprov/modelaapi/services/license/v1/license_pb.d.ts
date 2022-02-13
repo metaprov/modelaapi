@@ -135,10 +135,10 @@ export namespace CreateLicenseResponse {
 }
 
 export class UpdateLicenseRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.License | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.License): UpdateLicenseRequest;
-  hasItem(): boolean;
-  clearItem(): UpdateLicenseRequest;
+  getLicense(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.License | undefined;
+  setLicense(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.License): UpdateLicenseRequest;
+  hasLicense(): boolean;
+  clearLicense(): UpdateLicenseRequest;
 
   getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
   setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): UpdateLicenseRequest;
@@ -155,7 +155,7 @@ export class UpdateLicenseRequest extends jspb.Message {
 
 export namespace UpdateLicenseRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.License.AsObject,
+    license?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.License.AsObject,
     fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }

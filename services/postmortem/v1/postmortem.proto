@@ -43,7 +43,7 @@ message GetPostMortemRequest {
 
 
 message GetPostMortemResponse {
-    github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortem item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortem postmortem = 1;
     string yaml = 2;
 }
 

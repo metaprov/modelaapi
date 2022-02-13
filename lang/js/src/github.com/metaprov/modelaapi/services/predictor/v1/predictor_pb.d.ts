@@ -160,10 +160,10 @@ export namespace GetPredictorRequest {
 }
 
 export class GetPredictorResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor): GetPredictorResponse;
-  hasItem(): boolean;
-  clearItem(): GetPredictorResponse;
+  getPredictor(): github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor | undefined;
+  setPredictor(value?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor): GetPredictorResponse;
+  hasPredictor(): boolean;
+  clearPredictor(): GetPredictorResponse;
 
   getYaml(): string;
   setYaml(value: string): GetPredictorResponse;
@@ -178,7 +178,7 @@ export class GetPredictorResponse extends jspb.Message {
 
 export namespace GetPredictorResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor.AsObject,
+    predictor?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor.AsObject,
     yaml: string,
   }
 }

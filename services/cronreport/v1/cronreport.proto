@@ -24,11 +24,11 @@ message ListCronReportsResponse {
 message CreateCronReportResponse {}
 
 message CreateCronReportRequest {
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport cronReport = 1;
 }
 
 message UpdateCronReportRequest {
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport cronReport = 1;
     google.protobuf.FieldMask field_mask = 2;
 }
 
@@ -43,7 +43,7 @@ message GetCronReportRequest {
 }
 
 message GetCronReportResponse {
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport cronReport = 1;
     string yaml = 2;
 
 }
@@ -78,7 +78,7 @@ message ResumeCronReportResponse {
 
 
 message RunCronReportRequest {
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport cronReport = 1;
 }
 
 

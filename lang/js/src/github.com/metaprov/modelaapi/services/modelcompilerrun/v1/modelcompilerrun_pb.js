@@ -1088,7 +1088,7 @@ proto.github.com.metaprov.modelaapi.services.modelcompilerrun.v1.UpdateModelComp
  */
 proto.github.com.metaprov.modelaapi.services.modelcompilerrun.v1.UpdateModelCompilerRunRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelCompilerRun.toObject(includeInstance, f),
+    modelcompilerrun: (f = msg.getModelcompilerrun()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelCompilerRun.toObject(includeInstance, f),
     fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
@@ -1129,7 +1129,7 @@ proto.github.com.metaprov.modelaapi.services.modelcompilerrun.v1.UpdateModelComp
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelCompilerRun;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelCompilerRun.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setModelcompilerrun(value);
       break;
     case 2:
       var value = new google_protobuf_field_mask_pb.FieldMask;
@@ -1165,7 +1165,7 @@ proto.github.com.metaprov.modelaapi.services.modelcompilerrun.v1.UpdateModelComp
  */
 proto.github.com.metaprov.modelaapi.services.modelcompilerrun.v1.UpdateModelCompilerRunRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getModelcompilerrun();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1185,10 +1185,10 @@ proto.github.com.metaprov.modelaapi.services.modelcompilerrun.v1.UpdateModelComp
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRun item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRun modelCompilerRun = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRun}
  */
-proto.github.com.metaprov.modelaapi.services.modelcompilerrun.v1.UpdateModelCompilerRunRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.modelcompilerrun.v1.UpdateModelCompilerRunRequest.prototype.getModelcompilerrun = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRun} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelCompilerRun, 1));
 };
@@ -1198,7 +1198,7 @@ proto.github.com.metaprov.modelaapi.services.modelcompilerrun.v1.UpdateModelComp
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRun|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.modelcompilerrun.v1.UpdateModelCompilerRunRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.modelcompilerrun.v1.UpdateModelCompilerRunRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.modelcompilerrun.v1.UpdateModelCompilerRunRequest.prototype.setModelcompilerrun = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1207,8 +1207,8 @@ proto.github.com.metaprov.modelaapi.services.modelcompilerrun.v1.UpdateModelComp
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.modelcompilerrun.v1.UpdateModelCompilerRunRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.modelcompilerrun.v1.UpdateModelCompilerRunRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.modelcompilerrun.v1.UpdateModelCompilerRunRequest.prototype.clearModelcompilerrun = function() {
+  return this.setModelcompilerrun(undefined);
 };
 
 
@@ -1216,7 +1216,7 @@ proto.github.com.metaprov.modelaapi.services.modelcompilerrun.v1.UpdateModelComp
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.modelcompilerrun.v1.UpdateModelCompilerRunRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.modelcompilerrun.v1.UpdateModelCompilerRunRequest.prototype.hasModelcompilerrun = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -1551,7 +1551,7 @@ proto.github.com.metaprov.modelaapi.services.modelcompilerrun.v1.GetModelCompile
  */
 proto.github.com.metaprov.modelaapi.services.modelcompilerrun.v1.GetModelCompilerRunResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelCompilerRun.toObject(includeInstance, f),
+    modelcompilerrun: (f = msg.getModelcompilerrun()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelCompilerRun.toObject(includeInstance, f),
     yaml: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -1592,7 +1592,7 @@ proto.github.com.metaprov.modelaapi.services.modelcompilerrun.v1.GetModelCompile
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelCompilerRun;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelCompilerRun.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setModelcompilerrun(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -1627,7 +1627,7 @@ proto.github.com.metaprov.modelaapi.services.modelcompilerrun.v1.GetModelCompile
  */
 proto.github.com.metaprov.modelaapi.services.modelcompilerrun.v1.GetModelCompilerRunResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getModelcompilerrun();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1646,10 +1646,10 @@ proto.github.com.metaprov.modelaapi.services.modelcompilerrun.v1.GetModelCompile
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRun item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRun modelCompilerRun = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRun}
  */
-proto.github.com.metaprov.modelaapi.services.modelcompilerrun.v1.GetModelCompilerRunResponse.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.modelcompilerrun.v1.GetModelCompilerRunResponse.prototype.getModelcompilerrun = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRun} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelCompilerRun, 1));
 };
@@ -1659,7 +1659,7 @@ proto.github.com.metaprov.modelaapi.services.modelcompilerrun.v1.GetModelCompile
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRun|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.modelcompilerrun.v1.GetModelCompilerRunResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.modelcompilerrun.v1.GetModelCompilerRunResponse.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.modelcompilerrun.v1.GetModelCompilerRunResponse.prototype.setModelcompilerrun = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1668,8 +1668,8 @@ proto.github.com.metaprov.modelaapi.services.modelcompilerrun.v1.GetModelCompile
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.modelcompilerrun.v1.GetModelCompilerRunResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.modelcompilerrun.v1.GetModelCompilerRunResponse.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.modelcompilerrun.v1.GetModelCompilerRunResponse.prototype.clearModelcompilerrun = function() {
+  return this.setModelcompilerrun(undefined);
 };
 
 
@@ -1677,7 +1677,7 @@ proto.github.com.metaprov.modelaapi.services.modelcompilerrun.v1.GetModelCompile
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.modelcompilerrun.v1.GetModelCompilerRunResponse.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.modelcompilerrun.v1.GetModelCompilerRunResponse.prototype.hasModelcompilerrun = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

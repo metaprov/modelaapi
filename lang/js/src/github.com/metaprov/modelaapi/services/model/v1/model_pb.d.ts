@@ -155,10 +155,10 @@ export namespace GetModelLogsRequest {
 }
 
 export class CreateModelRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model): CreateModelRequest;
-  hasItem(): boolean;
-  clearItem(): CreateModelRequest;
+  getModel(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model | undefined;
+  setModel(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model): CreateModelRequest;
+  hasModel(): boolean;
+  clearModel(): CreateModelRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateModelRequest.AsObject;
@@ -170,7 +170,7 @@ export class CreateModelRequest extends jspb.Message {
 
 export namespace CreateModelRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject,
+    model?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject,
   }
 }
 
@@ -189,10 +189,10 @@ export namespace CreateModelResponse {
 }
 
 export class UpdateModelRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model): UpdateModelRequest;
-  hasItem(): boolean;
-  clearItem(): UpdateModelRequest;
+  getModel(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model | undefined;
+  setModel(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model): UpdateModelRequest;
+  hasModel(): boolean;
+  clearModel(): UpdateModelRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateModelRequest.AsObject;
@@ -204,7 +204,7 @@ export class UpdateModelRequest extends jspb.Message {
 
 export namespace UpdateModelRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject,
+    model?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject,
   }
 }
 
@@ -223,10 +223,10 @@ export namespace UpdateModelResponse {
 }
 
 export class GetModelResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model): GetModelResponse;
-  hasItem(): boolean;
-  clearItem(): GetModelResponse;
+  getModel(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model | undefined;
+  setModel(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model): GetModelResponse;
+  hasModel(): boolean;
+  clearModel(): GetModelResponse;
 
   getYaml(): string;
   setYaml(value: string): GetModelResponse;
@@ -241,7 +241,7 @@ export class GetModelResponse extends jspb.Message {
 
 export namespace GetModelResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject,
+    model?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject,
     yaml: string,
   }
 }

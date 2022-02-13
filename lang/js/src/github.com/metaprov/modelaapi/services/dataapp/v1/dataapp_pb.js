@@ -1097,7 +1097,7 @@ proto.github.com.metaprov.modelaapi.services.dataapp.v1.UpdateDataAppRequest.pro
  */
 proto.github.com.metaprov.modelaapi.services.dataapp.v1.UpdateDataAppRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp.toObject(includeInstance, f),
+    dataapp: (f = msg.getDataapp()) && github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp.toObject(includeInstance, f),
     fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
@@ -1138,7 +1138,7 @@ proto.github.com.metaprov.modelaapi.services.dataapp.v1.UpdateDataAppRequest.des
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setDataapp(value);
       break;
     case 2:
       var value = new google_protobuf_field_mask_pb.FieldMask;
@@ -1174,7 +1174,7 @@ proto.github.com.metaprov.modelaapi.services.dataapp.v1.UpdateDataAppRequest.pro
  */
 proto.github.com.metaprov.modelaapi.services.dataapp.v1.UpdateDataAppRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getDataapp();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1194,10 +1194,10 @@ proto.github.com.metaprov.modelaapi.services.dataapp.v1.UpdateDataAppRequest.ser
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp dataapp = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp}
  */
-proto.github.com.metaprov.modelaapi.services.dataapp.v1.UpdateDataAppRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.dataapp.v1.UpdateDataAppRequest.prototype.getDataapp = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp, 1));
 };
@@ -1207,7 +1207,7 @@ proto.github.com.metaprov.modelaapi.services.dataapp.v1.UpdateDataAppRequest.pro
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.dataapp.v1.UpdateDataAppRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.dataapp.v1.UpdateDataAppRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.dataapp.v1.UpdateDataAppRequest.prototype.setDataapp = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1216,8 +1216,8 @@ proto.github.com.metaprov.modelaapi.services.dataapp.v1.UpdateDataAppRequest.pro
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.dataapp.v1.UpdateDataAppRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.dataapp.v1.UpdateDataAppRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.dataapp.v1.UpdateDataAppRequest.prototype.clearDataapp = function() {
+  return this.setDataapp(undefined);
 };
 
 
@@ -1225,7 +1225,7 @@ proto.github.com.metaprov.modelaapi.services.dataapp.v1.UpdateDataAppRequest.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.dataapp.v1.UpdateDataAppRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.dataapp.v1.UpdateDataAppRequest.prototype.hasDataapp = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -1560,7 +1560,7 @@ proto.github.com.metaprov.modelaapi.services.dataapp.v1.GetDataAppResponse.proto
  */
 proto.github.com.metaprov.modelaapi.services.dataapp.v1.GetDataAppResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp.toObject(includeInstance, f),
+    dataapp: (f = msg.getDataapp()) && github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp.toObject(includeInstance, f),
     yaml: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -1601,7 +1601,7 @@ proto.github.com.metaprov.modelaapi.services.dataapp.v1.GetDataAppResponse.deser
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setDataapp(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -1636,7 +1636,7 @@ proto.github.com.metaprov.modelaapi.services.dataapp.v1.GetDataAppResponse.proto
  */
 proto.github.com.metaprov.modelaapi.services.dataapp.v1.GetDataAppResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getDataapp();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1655,10 +1655,10 @@ proto.github.com.metaprov.modelaapi.services.dataapp.v1.GetDataAppResponse.seria
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp dataapp = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp}
  */
-proto.github.com.metaprov.modelaapi.services.dataapp.v1.GetDataAppResponse.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.dataapp.v1.GetDataAppResponse.prototype.getDataapp = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp, 1));
 };
@@ -1668,7 +1668,7 @@ proto.github.com.metaprov.modelaapi.services.dataapp.v1.GetDataAppResponse.proto
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.dataapp.v1.GetDataAppResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.dataapp.v1.GetDataAppResponse.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.dataapp.v1.GetDataAppResponse.prototype.setDataapp = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1677,8 +1677,8 @@ proto.github.com.metaprov.modelaapi.services.dataapp.v1.GetDataAppResponse.proto
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.dataapp.v1.GetDataAppResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.dataapp.v1.GetDataAppResponse.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.dataapp.v1.GetDataAppResponse.prototype.clearDataapp = function() {
+  return this.setDataapp(undefined);
 };
 
 
@@ -1686,7 +1686,7 @@ proto.github.com.metaprov.modelaapi.services.dataapp.v1.GetDataAppResponse.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.dataapp.v1.GetDataAppResponse.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.dataapp.v1.GetDataAppResponse.prototype.hasDataapp = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -2524,7 +2524,7 @@ proto.github.com.metaprov.modelaapi.services.dataapp.v1.RunDataAppRequest.protot
  */
 proto.github.com.metaprov.modelaapi.services.dataapp.v1.RunDataAppRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp.toObject(includeInstance, f)
+    dataapp: (f = msg.getDataapp()) && github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2564,7 +2564,7 @@ proto.github.com.metaprov.modelaapi.services.dataapp.v1.RunDataAppRequest.deseri
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setDataapp(value);
       break;
     default:
       reader.skipField();
@@ -2595,7 +2595,7 @@ proto.github.com.metaprov.modelaapi.services.dataapp.v1.RunDataAppRequest.protot
  */
 proto.github.com.metaprov.modelaapi.services.dataapp.v1.RunDataAppRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getDataapp();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -2607,10 +2607,10 @@ proto.github.com.metaprov.modelaapi.services.dataapp.v1.RunDataAppRequest.serial
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp dataapp = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp}
  */
-proto.github.com.metaprov.modelaapi.services.dataapp.v1.RunDataAppRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.dataapp.v1.RunDataAppRequest.prototype.getDataapp = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp, 1));
 };
@@ -2620,7 +2620,7 @@ proto.github.com.metaprov.modelaapi.services.dataapp.v1.RunDataAppRequest.protot
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.dataapp.v1.RunDataAppRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.dataapp.v1.RunDataAppRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.dataapp.v1.RunDataAppRequest.prototype.setDataapp = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -2629,8 +2629,8 @@ proto.github.com.metaprov.modelaapi.services.dataapp.v1.RunDataAppRequest.protot
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.dataapp.v1.RunDataAppRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.dataapp.v1.RunDataAppRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.dataapp.v1.RunDataAppRequest.prototype.clearDataapp = function() {
+  return this.setDataapp(undefined);
 };
 
 
@@ -2638,7 +2638,7 @@ proto.github.com.metaprov.modelaapi.services.dataapp.v1.RunDataAppRequest.protot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.dataapp.v1.RunDataAppRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.dataapp.v1.RunDataAppRequest.prototype.hasDataapp = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

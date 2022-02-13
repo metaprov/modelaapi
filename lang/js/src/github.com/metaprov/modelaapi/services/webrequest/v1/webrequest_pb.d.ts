@@ -70,10 +70,10 @@ export namespace CreateWebRequestResponse {
 }
 
 export class CreateWebRequestRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequest | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequest): CreateWebRequestRequest;
-  hasItem(): boolean;
-  clearItem(): CreateWebRequestRequest;
+  getWebrequest(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequest | undefined;
+  setWebrequest(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequest): CreateWebRequestRequest;
+  hasWebrequest(): boolean;
+  clearWebrequest(): CreateWebRequestRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateWebRequestRequest.AsObject;
@@ -85,15 +85,15 @@ export class CreateWebRequestRequest extends jspb.Message {
 
 export namespace CreateWebRequestRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequest.AsObject,
+    webrequest?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequest.AsObject,
   }
 }
 
 export class UpdateWebRequestRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequest | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequest): UpdateWebRequestRequest;
-  hasItem(): boolean;
-  clearItem(): UpdateWebRequestRequest;
+  getWebrequest(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequest | undefined;
+  setWebrequest(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequest): UpdateWebRequestRequest;
+  hasWebrequest(): boolean;
+  clearWebrequest(): UpdateWebRequestRequest;
 
   getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
   setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): UpdateWebRequestRequest;
@@ -110,7 +110,7 @@ export class UpdateWebRequestRequest extends jspb.Message {
 
 export namespace UpdateWebRequestRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequest.AsObject,
+    webrequest?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequest.AsObject,
     fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }

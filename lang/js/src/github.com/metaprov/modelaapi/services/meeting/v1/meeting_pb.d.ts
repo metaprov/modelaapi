@@ -79,10 +79,10 @@ export namespace MeetingResponse {
 }
 
 export class CreateMeetingRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting): CreateMeetingRequest;
-  hasItem(): boolean;
-  clearItem(): CreateMeetingRequest;
+  getMeeting(): github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting | undefined;
+  setMeeting(value?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting): CreateMeetingRequest;
+  hasMeeting(): boolean;
+  clearMeeting(): CreateMeetingRequest;
 
   getPassword(): string;
   setPassword(value: string): CreateMeetingRequest;
@@ -97,7 +97,7 @@ export class CreateMeetingRequest extends jspb.Message {
 
 export namespace CreateMeetingRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting.AsObject,
+    meeting?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting.AsObject,
     password: string,
   }
 }
@@ -117,10 +117,10 @@ export namespace CreateMeetingResponse {
 }
 
 export class UpdateMeetingRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting): UpdateMeetingRequest;
-  hasItem(): boolean;
-  clearItem(): UpdateMeetingRequest;
+  getMeeting(): github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting | undefined;
+  setMeeting(value?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting): UpdateMeetingRequest;
+  hasMeeting(): boolean;
+  clearMeeting(): UpdateMeetingRequest;
 
   getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
   setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): UpdateMeetingRequest;
@@ -137,7 +137,7 @@ export class UpdateMeetingRequest extends jspb.Message {
 
 export namespace UpdateMeetingRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting.AsObject,
+    meeting?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting.AsObject,
     fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
@@ -179,10 +179,10 @@ export namespace GetMeetingRequest {
 }
 
 export class GetMeetingResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting): GetMeetingResponse;
-  hasItem(): boolean;
-  clearItem(): GetMeetingResponse;
+  getMeeting(): github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting | undefined;
+  setMeeting(value?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting): GetMeetingResponse;
+  hasMeeting(): boolean;
+  clearMeeting(): GetMeetingResponse;
 
   getYaml(): string;
   setYaml(value: string): GetMeetingResponse;
@@ -197,7 +197,7 @@ export class GetMeetingResponse extends jspb.Message {
 
 export namespace GetMeetingResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting.AsObject,
+    meeting?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting.AsObject,
     yaml: string,
   }
 }

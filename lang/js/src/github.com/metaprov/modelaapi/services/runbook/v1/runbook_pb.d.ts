@@ -98,10 +98,10 @@ export namespace CreateRunBookResponse {
 }
 
 export class UpdateRunBookRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.RunBook | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.RunBook): UpdateRunBookRequest;
-  hasItem(): boolean;
-  clearItem(): UpdateRunBookRequest;
+  getRunbook(): github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.RunBook | undefined;
+  setRunbook(value?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.RunBook): UpdateRunBookRequest;
+  hasRunbook(): boolean;
+  clearRunbook(): UpdateRunBookRequest;
 
   getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
   setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): UpdateRunBookRequest;
@@ -118,7 +118,7 @@ export class UpdateRunBookRequest extends jspb.Message {
 
 export namespace UpdateRunBookRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.RunBook.AsObject,
+    runbook?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.RunBook.AsObject,
     fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }

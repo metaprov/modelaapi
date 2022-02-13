@@ -949,7 +949,7 @@ proto.github.com.metaprov.modelaapi.services.sqlquery.v1.UpdateSqlQueryRequest.p
  */
 proto.github.com.metaprov.modelaapi.services.sqlquery.v1.UpdateSqlQueryRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQuery.toObject(includeInstance, f),
+    sqlquery: (f = msg.getSqlquery()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQuery.toObject(includeInstance, f),
     fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
@@ -990,7 +990,7 @@ proto.github.com.metaprov.modelaapi.services.sqlquery.v1.UpdateSqlQueryRequest.d
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQuery;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQuery.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setSqlquery(value);
       break;
     case 2:
       var value = new google_protobuf_field_mask_pb.FieldMask;
@@ -1026,7 +1026,7 @@ proto.github.com.metaprov.modelaapi.services.sqlquery.v1.UpdateSqlQueryRequest.p
  */
 proto.github.com.metaprov.modelaapi.services.sqlquery.v1.UpdateSqlQueryRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getSqlquery();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1046,10 +1046,10 @@ proto.github.com.metaprov.modelaapi.services.sqlquery.v1.UpdateSqlQueryRequest.s
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuery item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuery sqlquery = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuery}
  */
-proto.github.com.metaprov.modelaapi.services.sqlquery.v1.UpdateSqlQueryRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.sqlquery.v1.UpdateSqlQueryRequest.prototype.getSqlquery = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuery} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQuery, 1));
 };
@@ -1059,7 +1059,7 @@ proto.github.com.metaprov.modelaapi.services.sqlquery.v1.UpdateSqlQueryRequest.p
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuery|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.sqlquery.v1.UpdateSqlQueryRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.sqlquery.v1.UpdateSqlQueryRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.sqlquery.v1.UpdateSqlQueryRequest.prototype.setSqlquery = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1068,8 +1068,8 @@ proto.github.com.metaprov.modelaapi.services.sqlquery.v1.UpdateSqlQueryRequest.p
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.sqlquery.v1.UpdateSqlQueryRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.sqlquery.v1.UpdateSqlQueryRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.sqlquery.v1.UpdateSqlQueryRequest.prototype.clearSqlquery = function() {
+  return this.setSqlquery(undefined);
 };
 
 
@@ -1077,7 +1077,7 @@ proto.github.com.metaprov.modelaapi.services.sqlquery.v1.UpdateSqlQueryRequest.p
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.sqlquery.v1.UpdateSqlQueryRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.sqlquery.v1.UpdateSqlQueryRequest.prototype.hasSqlquery = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -1854,7 +1854,7 @@ proto.github.com.metaprov.modelaapi.services.sqlquery.v1.RunSqlQueryRequest.prot
  */
 proto.github.com.metaprov.modelaapi.services.sqlquery.v1.RunSqlQueryRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQuery.toObject(includeInstance, f)
+    sqlquery: (f = msg.getSqlquery()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQuery.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1894,7 +1894,7 @@ proto.github.com.metaprov.modelaapi.services.sqlquery.v1.RunSqlQueryRequest.dese
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQuery;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQuery.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setSqlquery(value);
       break;
     default:
       reader.skipField();
@@ -1925,7 +1925,7 @@ proto.github.com.metaprov.modelaapi.services.sqlquery.v1.RunSqlQueryRequest.prot
  */
 proto.github.com.metaprov.modelaapi.services.sqlquery.v1.RunSqlQueryRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getSqlquery();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1937,10 +1937,10 @@ proto.github.com.metaprov.modelaapi.services.sqlquery.v1.RunSqlQueryRequest.seri
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuery item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuery sqlquery = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuery}
  */
-proto.github.com.metaprov.modelaapi.services.sqlquery.v1.RunSqlQueryRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.sqlquery.v1.RunSqlQueryRequest.prototype.getSqlquery = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuery} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQuery, 1));
 };
@@ -1950,7 +1950,7 @@ proto.github.com.metaprov.modelaapi.services.sqlquery.v1.RunSqlQueryRequest.prot
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuery|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.sqlquery.v1.RunSqlQueryRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.sqlquery.v1.RunSqlQueryRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.sqlquery.v1.RunSqlQueryRequest.prototype.setSqlquery = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1959,8 +1959,8 @@ proto.github.com.metaprov.modelaapi.services.sqlquery.v1.RunSqlQueryRequest.prot
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.sqlquery.v1.RunSqlQueryRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.sqlquery.v1.RunSqlQueryRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.sqlquery.v1.RunSqlQueryRequest.prototype.clearSqlquery = function() {
+  return this.setSqlquery(undefined);
 };
 
 
@@ -1968,7 +1968,7 @@ proto.github.com.metaprov.modelaapi.services.sqlquery.v1.RunSqlQueryRequest.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.sqlquery.v1.RunSqlQueryRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.sqlquery.v1.RunSqlQueryRequest.prototype.hasSqlquery = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

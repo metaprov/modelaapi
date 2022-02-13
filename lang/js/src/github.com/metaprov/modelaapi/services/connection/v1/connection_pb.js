@@ -1042,7 +1042,7 @@ proto.github.com.metaprov.modelaapi.services.connection.v1.UpdateConnectionReque
  */
 proto.github.com.metaprov.modelaapi.services.connection.v1.UpdateConnectionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
+    connection: (f = msg.getConnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
     secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : [],
     fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
@@ -1084,7 +1084,7 @@ proto.github.com.metaprov.modelaapi.services.connection.v1.UpdateConnectionReque
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setConnection(value);
       break;
     case 2:
       var value = msg.getSecretMap();
@@ -1126,7 +1126,7 @@ proto.github.com.metaprov.modelaapi.services.connection.v1.UpdateConnectionReque
  */
 proto.github.com.metaprov.modelaapi.services.connection.v1.UpdateConnectionRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getConnection();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1150,10 +1150,10 @@ proto.github.com.metaprov.modelaapi.services.connection.v1.UpdateConnectionReque
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection}
  */
-proto.github.com.metaprov.modelaapi.services.connection.v1.UpdateConnectionRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.connection.v1.UpdateConnectionRequest.prototype.getConnection = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection, 1));
 };
@@ -1163,7 +1163,7 @@ proto.github.com.metaprov.modelaapi.services.connection.v1.UpdateConnectionReque
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.connection.v1.UpdateConnectionRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.connection.v1.UpdateConnectionRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.connection.v1.UpdateConnectionRequest.prototype.setConnection = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1172,8 +1172,8 @@ proto.github.com.metaprov.modelaapi.services.connection.v1.UpdateConnectionReque
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.connection.v1.UpdateConnectionRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.connection.v1.UpdateConnectionRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.connection.v1.UpdateConnectionRequest.prototype.clearConnection = function() {
+  return this.setConnection(undefined);
 };
 
 
@@ -1181,7 +1181,7 @@ proto.github.com.metaprov.modelaapi.services.connection.v1.UpdateConnectionReque
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.connection.v1.UpdateConnectionRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.connection.v1.UpdateConnectionRequest.prototype.hasConnection = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -1538,7 +1538,7 @@ proto.github.com.metaprov.modelaapi.services.connection.v1.GetConnectionResponse
  */
 proto.github.com.metaprov.modelaapi.services.connection.v1.GetConnectionResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
+    connection: (f = msg.getConnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
     yaml: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -1579,7 +1579,7 @@ proto.github.com.metaprov.modelaapi.services.connection.v1.GetConnectionResponse
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setConnection(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -1614,7 +1614,7 @@ proto.github.com.metaprov.modelaapi.services.connection.v1.GetConnectionResponse
  */
 proto.github.com.metaprov.modelaapi.services.connection.v1.GetConnectionResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getConnection();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1633,10 +1633,10 @@ proto.github.com.metaprov.modelaapi.services.connection.v1.GetConnectionResponse
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection}
  */
-proto.github.com.metaprov.modelaapi.services.connection.v1.GetConnectionResponse.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.connection.v1.GetConnectionResponse.prototype.getConnection = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection, 1));
 };
@@ -1646,7 +1646,7 @@ proto.github.com.metaprov.modelaapi.services.connection.v1.GetConnectionResponse
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.connection.v1.GetConnectionResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.connection.v1.GetConnectionResponse.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.connection.v1.GetConnectionResponse.prototype.setConnection = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1655,8 +1655,8 @@ proto.github.com.metaprov.modelaapi.services.connection.v1.GetConnectionResponse
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.connection.v1.GetConnectionResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.connection.v1.GetConnectionResponse.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.connection.v1.GetConnectionResponse.prototype.clearConnection = function() {
+  return this.setConnection(undefined);
 };
 
 
@@ -1664,7 +1664,7 @@ proto.github.com.metaprov.modelaapi.services.connection.v1.GetConnectionResponse
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.connection.v1.GetConnectionResponse.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.connection.v1.GetConnectionResponse.prototype.hasConnection = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

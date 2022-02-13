@@ -838,7 +838,7 @@ proto.github.com.metaprov.modelaapi.services.meeting.v1.CreateMeetingRequest.pro
  */
 proto.github.com.metaprov.modelaapi.services.meeting.v1.CreateMeetingRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting.toObject(includeInstance, f),
+    meeting: (f = msg.getMeeting()) && github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting.toObject(includeInstance, f),
     password: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -879,7 +879,7 @@ proto.github.com.metaprov.modelaapi.services.meeting.v1.CreateMeetingRequest.des
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setMeeting(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -914,7 +914,7 @@ proto.github.com.metaprov.modelaapi.services.meeting.v1.CreateMeetingRequest.pro
  */
 proto.github.com.metaprov.modelaapi.services.meeting.v1.CreateMeetingRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getMeeting();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -933,10 +933,10 @@ proto.github.com.metaprov.modelaapi.services.meeting.v1.CreateMeetingRequest.ser
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Meeting item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Meeting meeting = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Meeting}
  */
-proto.github.com.metaprov.modelaapi.services.meeting.v1.CreateMeetingRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.meeting.v1.CreateMeetingRequest.prototype.getMeeting = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Meeting} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting, 1));
 };
@@ -946,7 +946,7 @@ proto.github.com.metaprov.modelaapi.services.meeting.v1.CreateMeetingRequest.pro
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Meeting|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.meeting.v1.CreateMeetingRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.meeting.v1.CreateMeetingRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.meeting.v1.CreateMeetingRequest.prototype.setMeeting = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -955,8 +955,8 @@ proto.github.com.metaprov.modelaapi.services.meeting.v1.CreateMeetingRequest.pro
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.meeting.v1.CreateMeetingRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.meeting.v1.CreateMeetingRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.meeting.v1.CreateMeetingRequest.prototype.clearMeeting = function() {
+  return this.setMeeting(undefined);
 };
 
 
@@ -964,7 +964,7 @@ proto.github.com.metaprov.modelaapi.services.meeting.v1.CreateMeetingRequest.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.meeting.v1.CreateMeetingRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.meeting.v1.CreateMeetingRequest.prototype.hasMeeting = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -1120,7 +1120,7 @@ proto.github.com.metaprov.modelaapi.services.meeting.v1.UpdateMeetingRequest.pro
  */
 proto.github.com.metaprov.modelaapi.services.meeting.v1.UpdateMeetingRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting.toObject(includeInstance, f),
+    meeting: (f = msg.getMeeting()) && github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting.toObject(includeInstance, f),
     fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
@@ -1161,7 +1161,7 @@ proto.github.com.metaprov.modelaapi.services.meeting.v1.UpdateMeetingRequest.des
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setMeeting(value);
       break;
     case 2:
       var value = new google_protobuf_field_mask_pb.FieldMask;
@@ -1197,7 +1197,7 @@ proto.github.com.metaprov.modelaapi.services.meeting.v1.UpdateMeetingRequest.pro
  */
 proto.github.com.metaprov.modelaapi.services.meeting.v1.UpdateMeetingRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getMeeting();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1217,10 +1217,10 @@ proto.github.com.metaprov.modelaapi.services.meeting.v1.UpdateMeetingRequest.ser
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Meeting item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Meeting meeting = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Meeting}
  */
-proto.github.com.metaprov.modelaapi.services.meeting.v1.UpdateMeetingRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.meeting.v1.UpdateMeetingRequest.prototype.getMeeting = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Meeting} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting, 1));
 };
@@ -1230,7 +1230,7 @@ proto.github.com.metaprov.modelaapi.services.meeting.v1.UpdateMeetingRequest.pro
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Meeting|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.meeting.v1.UpdateMeetingRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.meeting.v1.UpdateMeetingRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.meeting.v1.UpdateMeetingRequest.prototype.setMeeting = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1239,8 +1239,8 @@ proto.github.com.metaprov.modelaapi.services.meeting.v1.UpdateMeetingRequest.pro
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.meeting.v1.UpdateMeetingRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.meeting.v1.UpdateMeetingRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.meeting.v1.UpdateMeetingRequest.prototype.clearMeeting = function() {
+  return this.setMeeting(undefined);
 };
 
 
@@ -1248,7 +1248,7 @@ proto.github.com.metaprov.modelaapi.services.meeting.v1.UpdateMeetingRequest.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.meeting.v1.UpdateMeetingRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.meeting.v1.UpdateMeetingRequest.prototype.hasMeeting = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -1583,7 +1583,7 @@ proto.github.com.metaprov.modelaapi.services.meeting.v1.GetMeetingResponse.proto
  */
 proto.github.com.metaprov.modelaapi.services.meeting.v1.GetMeetingResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting.toObject(includeInstance, f),
+    meeting: (f = msg.getMeeting()) && github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting.toObject(includeInstance, f),
     yaml: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -1624,7 +1624,7 @@ proto.github.com.metaprov.modelaapi.services.meeting.v1.GetMeetingResponse.deser
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setMeeting(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -1659,7 +1659,7 @@ proto.github.com.metaprov.modelaapi.services.meeting.v1.GetMeetingResponse.proto
  */
 proto.github.com.metaprov.modelaapi.services.meeting.v1.GetMeetingResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getMeeting();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1678,10 +1678,10 @@ proto.github.com.metaprov.modelaapi.services.meeting.v1.GetMeetingResponse.seria
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Meeting item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Meeting meeting = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Meeting}
  */
-proto.github.com.metaprov.modelaapi.services.meeting.v1.GetMeetingResponse.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.meeting.v1.GetMeetingResponse.prototype.getMeeting = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Meeting} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting, 1));
 };
@@ -1691,7 +1691,7 @@ proto.github.com.metaprov.modelaapi.services.meeting.v1.GetMeetingResponse.proto
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Meeting|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.meeting.v1.GetMeetingResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.meeting.v1.GetMeetingResponse.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.meeting.v1.GetMeetingResponse.prototype.setMeeting = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1700,8 +1700,8 @@ proto.github.com.metaprov.modelaapi.services.meeting.v1.GetMeetingResponse.proto
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.meeting.v1.GetMeetingResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.meeting.v1.GetMeetingResponse.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.meeting.v1.GetMeetingResponse.prototype.clearMeeting = function() {
+  return this.setMeeting(undefined);
 };
 
 
@@ -1709,7 +1709,7 @@ proto.github.com.metaprov.modelaapi.services.meeting.v1.GetMeetingResponse.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.meeting.v1.GetMeetingResponse.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.meeting.v1.GetMeetingResponse.prototype.hasMeeting = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

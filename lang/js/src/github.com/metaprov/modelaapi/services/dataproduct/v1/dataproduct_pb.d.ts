@@ -101,10 +101,10 @@ export namespace CreateDataProductResponse {
 }
 
 export class UpdateDataProductRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): UpdateDataProductRequest;
-  hasItem(): boolean;
-  clearItem(): UpdateDataProductRequest;
+  getDataproduct(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct | undefined;
+  setDataproduct(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): UpdateDataProductRequest;
+  hasDataproduct(): boolean;
+  clearDataproduct(): UpdateDataProductRequest;
 
   getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
   setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): UpdateDataProductRequest;
@@ -121,7 +121,7 @@ export class UpdateDataProductRequest extends jspb.Message {
 
 export namespace UpdateDataProductRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
+    dataproduct?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
     fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }

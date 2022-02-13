@@ -102,10 +102,10 @@ export namespace CreateFeatureHistogramResponse {
 }
 
 export class UpdateFeatureHistogramRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram): UpdateFeatureHistogramRequest;
-  hasItem(): boolean;
-  clearItem(): UpdateFeatureHistogramRequest;
+  getHistogram(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram | undefined;
+  setHistogram(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram): UpdateFeatureHistogramRequest;
+  hasHistogram(): boolean;
+  clearHistogram(): UpdateFeatureHistogramRequest;
 
   getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
   setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): UpdateFeatureHistogramRequest;
@@ -122,7 +122,7 @@ export class UpdateFeatureHistogramRequest extends jspb.Message {
 
 export namespace UpdateFeatureHistogramRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.AsObject,
+    histogram?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.AsObject,
     fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
@@ -164,10 +164,10 @@ export namespace GetFeatureHistogramRequest {
 }
 
 export class GetFeatureHistogramResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram): GetFeatureHistogramResponse;
-  hasItem(): boolean;
-  clearItem(): GetFeatureHistogramResponse;
+  getHistogram(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram | undefined;
+  setHistogram(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram): GetFeatureHistogramResponse;
+  hasHistogram(): boolean;
+  clearHistogram(): GetFeatureHistogramResponse;
 
   getYaml(): string;
   setYaml(value: string): GetFeatureHistogramResponse;
@@ -182,7 +182,7 @@ export class GetFeatureHistogramResponse extends jspb.Message {
 
 export namespace GetFeatureHistogramResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.AsObject,
+    histogram?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.AsObject,
     yaml: string,
   }
 }

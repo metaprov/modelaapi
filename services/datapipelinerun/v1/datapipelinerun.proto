@@ -27,7 +27,7 @@ message CreateDataPipelineRunResponse {
 }
 
 message UpdateDataPipelineRunRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRun item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRun dataPipelineRun = 1;
     google.protobuf.FieldMask field_mask = 2;
 
 }
@@ -43,7 +43,7 @@ message GetDataPipelineRunRequest {
 
 
 message GetDataPipelineRunResponse {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRun item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRun dataPipelineRun = 1;
     string yaml = 2;
 }
 

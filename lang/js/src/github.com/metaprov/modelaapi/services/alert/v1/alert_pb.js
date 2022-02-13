@@ -882,7 +882,7 @@ proto.github.com.metaprov.modelaapi.services.alert.v1.CreateAlertRequest.prototy
  */
 proto.github.com.metaprov.modelaapi.services.alert.v1.CreateAlertRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert.toObject(includeInstance, f)
+    alert: (f = msg.getAlert()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -922,7 +922,7 @@ proto.github.com.metaprov.modelaapi.services.alert.v1.CreateAlertRequest.deseria
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setAlert(value);
       break;
     default:
       reader.skipField();
@@ -953,7 +953,7 @@ proto.github.com.metaprov.modelaapi.services.alert.v1.CreateAlertRequest.prototy
  */
 proto.github.com.metaprov.modelaapi.services.alert.v1.CreateAlertRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getAlert();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -965,10 +965,10 @@ proto.github.com.metaprov.modelaapi.services.alert.v1.CreateAlertRequest.seriali
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert alert = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert}
  */
-proto.github.com.metaprov.modelaapi.services.alert.v1.CreateAlertRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.alert.v1.CreateAlertRequest.prototype.getAlert = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert, 1));
 };
@@ -978,7 +978,7 @@ proto.github.com.metaprov.modelaapi.services.alert.v1.CreateAlertRequest.prototy
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.alert.v1.CreateAlertRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.alert.v1.CreateAlertRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.alert.v1.CreateAlertRequest.prototype.setAlert = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -987,8 +987,8 @@ proto.github.com.metaprov.modelaapi.services.alert.v1.CreateAlertRequest.prototy
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.alert.v1.CreateAlertRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.alert.v1.CreateAlertRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.alert.v1.CreateAlertRequest.prototype.clearAlert = function() {
+  return this.setAlert(undefined);
 };
 
 
@@ -996,7 +996,7 @@ proto.github.com.metaprov.modelaapi.services.alert.v1.CreateAlertRequest.prototy
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.alert.v1.CreateAlertRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.alert.v1.CreateAlertRequest.prototype.hasAlert = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -1134,8 +1134,8 @@ proto.github.com.metaprov.modelaapi.services.alert.v1.UpdateAlertRequest.prototy
  */
 proto.github.com.metaprov.modelaapi.services.alert.v1.UpdateAlertRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert.toObject(includeInstance, f),
-    fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+    alert: (f = msg.getAlert()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert.toObject(includeInstance, f),
+    updateMask: (f = msg.getUpdateMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1175,12 +1175,12 @@ proto.github.com.metaprov.modelaapi.services.alert.v1.UpdateAlertRequest.deseria
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setAlert(value);
       break;
     case 2:
       var value = new google_protobuf_field_mask_pb.FieldMask;
       reader.readMessage(value,google_protobuf_field_mask_pb.FieldMask.deserializeBinaryFromReader);
-      msg.setFieldMask(value);
+      msg.setUpdateMask(value);
       break;
     default:
       reader.skipField();
@@ -1211,7 +1211,7 @@ proto.github.com.metaprov.modelaapi.services.alert.v1.UpdateAlertRequest.prototy
  */
 proto.github.com.metaprov.modelaapi.services.alert.v1.UpdateAlertRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getAlert();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1219,7 +1219,7 @@ proto.github.com.metaprov.modelaapi.services.alert.v1.UpdateAlertRequest.seriali
       github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert.serializeBinaryToWriter
     );
   }
-  f = message.getFieldMask();
+  f = message.getUpdateMask();
   if (f != null) {
     writer.writeMessage(
       2,
@@ -1231,10 +1231,10 @@ proto.github.com.metaprov.modelaapi.services.alert.v1.UpdateAlertRequest.seriali
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert alert = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert}
  */
-proto.github.com.metaprov.modelaapi.services.alert.v1.UpdateAlertRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.alert.v1.UpdateAlertRequest.prototype.getAlert = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert, 1));
 };
@@ -1244,7 +1244,7 @@ proto.github.com.metaprov.modelaapi.services.alert.v1.UpdateAlertRequest.prototy
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.alert.v1.UpdateAlertRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.alert.v1.UpdateAlertRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.alert.v1.UpdateAlertRequest.prototype.setAlert = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1253,8 +1253,8 @@ proto.github.com.metaprov.modelaapi.services.alert.v1.UpdateAlertRequest.prototy
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.alert.v1.UpdateAlertRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.alert.v1.UpdateAlertRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.alert.v1.UpdateAlertRequest.prototype.clearAlert = function() {
+  return this.setAlert(undefined);
 };
 
 
@@ -1262,16 +1262,16 @@ proto.github.com.metaprov.modelaapi.services.alert.v1.UpdateAlertRequest.prototy
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.alert.v1.UpdateAlertRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.alert.v1.UpdateAlertRequest.prototype.hasAlert = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
- * optional google.protobuf.FieldMask field_mask = 2;
+ * optional google.protobuf.FieldMask update_mask = 2;
  * @return {?proto.google.protobuf.FieldMask}
  */
-proto.github.com.metaprov.modelaapi.services.alert.v1.UpdateAlertRequest.prototype.getFieldMask = function() {
+proto.github.com.metaprov.modelaapi.services.alert.v1.UpdateAlertRequest.prototype.getUpdateMask = function() {
   return /** @type{?proto.google.protobuf.FieldMask} */ (
     jspb.Message.getWrapperField(this, google_protobuf_field_mask_pb.FieldMask, 2));
 };
@@ -1281,7 +1281,7 @@ proto.github.com.metaprov.modelaapi.services.alert.v1.UpdateAlertRequest.prototy
  * @param {?proto.google.protobuf.FieldMask|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.alert.v1.UpdateAlertRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.alert.v1.UpdateAlertRequest.prototype.setFieldMask = function(value) {
+proto.github.com.metaprov.modelaapi.services.alert.v1.UpdateAlertRequest.prototype.setUpdateMask = function(value) {
   return jspb.Message.setWrapperField(this, 2, value);
 };
 
@@ -1290,8 +1290,8 @@ proto.github.com.metaprov.modelaapi.services.alert.v1.UpdateAlertRequest.prototy
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.alert.v1.UpdateAlertRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.alert.v1.UpdateAlertRequest.prototype.clearFieldMask = function() {
-  return this.setFieldMask(undefined);
+proto.github.com.metaprov.modelaapi.services.alert.v1.UpdateAlertRequest.prototype.clearUpdateMask = function() {
+  return this.setUpdateMask(undefined);
 };
 
 
@@ -1299,7 +1299,7 @@ proto.github.com.metaprov.modelaapi.services.alert.v1.UpdateAlertRequest.prototy
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.alert.v1.UpdateAlertRequest.prototype.hasFieldMask = function() {
+proto.github.com.metaprov.modelaapi.services.alert.v1.UpdateAlertRequest.prototype.hasUpdateMask = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
@@ -1597,7 +1597,7 @@ proto.github.com.metaprov.modelaapi.services.alert.v1.GetAlertResponse.prototype
  */
 proto.github.com.metaprov.modelaapi.services.alert.v1.GetAlertResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert.toObject(includeInstance, f),
+    alert: (f = msg.getAlert()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert.toObject(includeInstance, f),
     yaml: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -1638,7 +1638,7 @@ proto.github.com.metaprov.modelaapi.services.alert.v1.GetAlertResponse.deseriali
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setAlert(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -1673,7 +1673,7 @@ proto.github.com.metaprov.modelaapi.services.alert.v1.GetAlertResponse.prototype
  */
 proto.github.com.metaprov.modelaapi.services.alert.v1.GetAlertResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getAlert();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1692,10 +1692,10 @@ proto.github.com.metaprov.modelaapi.services.alert.v1.GetAlertResponse.serialize
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert alert = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert}
  */
-proto.github.com.metaprov.modelaapi.services.alert.v1.GetAlertResponse.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.alert.v1.GetAlertResponse.prototype.getAlert = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert, 1));
 };
@@ -1705,7 +1705,7 @@ proto.github.com.metaprov.modelaapi.services.alert.v1.GetAlertResponse.prototype
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.alert.v1.GetAlertResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.alert.v1.GetAlertResponse.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.alert.v1.GetAlertResponse.prototype.setAlert = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1714,8 +1714,8 @@ proto.github.com.metaprov.modelaapi.services.alert.v1.GetAlertResponse.prototype
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.alert.v1.GetAlertResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.alert.v1.GetAlertResponse.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.alert.v1.GetAlertResponse.prototype.clearAlert = function() {
+  return this.setAlert(undefined);
 };
 
 
@@ -1723,7 +1723,7 @@ proto.github.com.metaprov.modelaapi.services.alert.v1.GetAlertResponse.prototype
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.alert.v1.GetAlertResponse.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.alert.v1.GetAlertResponse.prototype.hasAlert = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

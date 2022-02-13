@@ -102,10 +102,10 @@ export namespace CreateConnectionResponse {
 }
 
 export class UpdateConnectionRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): UpdateConnectionRequest;
-  hasItem(): boolean;
-  clearItem(): UpdateConnectionRequest;
+  getConnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setConnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): UpdateConnectionRequest;
+  hasConnection(): boolean;
+  clearConnection(): UpdateConnectionRequest;
 
   getSecretMap(): jspb.Map<string, string>;
   clearSecretMap(): UpdateConnectionRequest;
@@ -125,7 +125,7 @@ export class UpdateConnectionRequest extends jspb.Message {
 
 export namespace UpdateConnectionRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     secretMap: Array<[string, string]>,
     fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
@@ -168,10 +168,10 @@ export namespace GetConnectionRequest {
 }
 
 export class GetConnectionResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): GetConnectionResponse;
-  hasItem(): boolean;
-  clearItem(): GetConnectionResponse;
+  getConnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setConnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): GetConnectionResponse;
+  hasConnection(): boolean;
+  clearConnection(): GetConnectionResponse;
 
   getYaml(): string;
   setYaml(value: string): GetConnectionResponse;
@@ -186,7 +186,7 @@ export class GetConnectionResponse extends jspb.Message {
 
 export namespace GetConnectionResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     yaml: string,
   }
 }

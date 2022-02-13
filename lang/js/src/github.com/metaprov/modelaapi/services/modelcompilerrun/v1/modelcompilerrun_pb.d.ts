@@ -112,10 +112,10 @@ export namespace CreateModelCompilerRunResponse {
 }
 
 export class UpdateModelCompilerRunRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelCompilerRun | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelCompilerRun): UpdateModelCompilerRunRequest;
-  hasItem(): boolean;
-  clearItem(): UpdateModelCompilerRunRequest;
+  getModelcompilerrun(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelCompilerRun | undefined;
+  setModelcompilerrun(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelCompilerRun): UpdateModelCompilerRunRequest;
+  hasModelcompilerrun(): boolean;
+  clearModelcompilerrun(): UpdateModelCompilerRunRequest;
 
   getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
   setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): UpdateModelCompilerRunRequest;
@@ -132,7 +132,7 @@ export class UpdateModelCompilerRunRequest extends jspb.Message {
 
 export namespace UpdateModelCompilerRunRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelCompilerRun.AsObject,
+    modelcompilerrun?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelCompilerRun.AsObject,
     fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
@@ -174,10 +174,10 @@ export namespace GetModelCompilerRunRequest {
 }
 
 export class GetModelCompilerRunResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelCompilerRun | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelCompilerRun): GetModelCompilerRunResponse;
-  hasItem(): boolean;
-  clearItem(): GetModelCompilerRunResponse;
+  getModelcompilerrun(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelCompilerRun | undefined;
+  setModelcompilerrun(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelCompilerRun): GetModelCompilerRunResponse;
+  hasModelcompilerrun(): boolean;
+  clearModelcompilerrun(): GetModelCompilerRunResponse;
 
   getYaml(): string;
   setYaml(value: string): GetModelCompilerRunResponse;
@@ -192,7 +192,7 @@ export class GetModelCompilerRunResponse extends jspb.Message {
 
 export namespace GetModelCompilerRunResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelCompilerRun.AsObject,
+    modelcompilerrun?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelCompilerRun.AsObject,
     yaml: string,
   }
 }

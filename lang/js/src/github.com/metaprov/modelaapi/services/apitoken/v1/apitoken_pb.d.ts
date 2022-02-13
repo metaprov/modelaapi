@@ -79,10 +79,10 @@ export namespace ApiTokenResponse {
 }
 
 export class CreateApiTokenRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ApiToken | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ApiToken): CreateApiTokenRequest;
-  hasItem(): boolean;
-  clearItem(): CreateApiTokenRequest;
+  getApitoken(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ApiToken | undefined;
+  setApitoken(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ApiToken): CreateApiTokenRequest;
+  hasApitoken(): boolean;
+  clearApitoken(): CreateApiTokenRequest;
 
   getPassword(): string;
   setPassword(value: string): CreateApiTokenRequest;
@@ -97,7 +97,7 @@ export class CreateApiTokenRequest extends jspb.Message {
 
 export namespace CreateApiTokenRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ApiToken.AsObject,
+    apitoken?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ApiToken.AsObject,
     password: string,
   }
 }
@@ -117,15 +117,15 @@ export namespace CreateApiTokenResponse {
 }
 
 export class UpdateApiTokenRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ApiToken | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ApiToken): UpdateApiTokenRequest;
-  hasItem(): boolean;
-  clearItem(): UpdateApiTokenRequest;
+  getApitoken(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ApiToken | undefined;
+  setApitoken(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ApiToken): UpdateApiTokenRequest;
+  hasApitoken(): boolean;
+  clearApitoken(): UpdateApiTokenRequest;
 
-  getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
-  setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): UpdateApiTokenRequest;
-  hasFieldMask(): boolean;
-  clearFieldMask(): UpdateApiTokenRequest;
+  getUpdateMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setUpdateMask(value?: google_protobuf_field_mask_pb.FieldMask): UpdateApiTokenRequest;
+  hasUpdateMask(): boolean;
+  clearUpdateMask(): UpdateApiTokenRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateApiTokenRequest.AsObject;
@@ -137,8 +137,8 @@ export class UpdateApiTokenRequest extends jspb.Message {
 
 export namespace UpdateApiTokenRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ApiToken.AsObject,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
+    apitoken?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ApiToken.AsObject,
+    updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
 
@@ -179,10 +179,10 @@ export namespace GetApiTokenRequest {
 }
 
 export class GetApiTokenResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ApiToken | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ApiToken): GetApiTokenResponse;
-  hasItem(): boolean;
-  clearItem(): GetApiTokenResponse;
+  getApitoken(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ApiToken | undefined;
+  setApitoken(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ApiToken): GetApiTokenResponse;
+  hasApitoken(): boolean;
+  clearApitoken(): GetApiTokenResponse;
 
   getYaml(): string;
   setYaml(value: string): GetApiTokenResponse;
@@ -197,7 +197,7 @@ export class GetApiTokenResponse extends jspb.Message {
 
 export namespace GetApiTokenResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ApiToken.AsObject,
+    apitoken?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ApiToken.AsObject,
     yaml: string,
   }
 }

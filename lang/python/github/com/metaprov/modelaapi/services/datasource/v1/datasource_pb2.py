@@ -24,7 +24,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z4github.com/metaprov/modelaapi/services/datasource/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nEgithub.com/metaprov/modelaapi/services/datasource/v1/datasource.proto\x12\x34github.com.metaprov.modelaapi.services.datasource.v1\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x44github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto\x1a\x45github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto\x1a=github.com/metaprov/modelaapi/services/common/v1/common.proto\"\xfb\x01\n\x15ListDataSourceRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12g\n\x06labels\x18\x02 \x03(\x0b\x32W.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceRequest.LabelsEntry\x12\x11\n\tpage_size\x18\x03 \x01(\x05\x12\x12\n\npage_token\x18\x04 \x01(\t\x12\x10\n\x08order_by\x18\x05 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x8c\x01\n\x16ListDataSourceResponse\x12Y\n\x0b\x64\x61tasources\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceList\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"7\n\x14GetDataSourceRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"u\n\x15GetDataSourceResponse\x12N\n\x04item\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"\x99\x01\n\x17UpdateDataSourceRequest\x12N\n\x04item\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12.\n\nfield_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"\x1a\n\x18UpdateDataSourceResponse\"i\n\x17\x43reateDataSourceRequest\x12N\n\x04item\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\"\x1a\n\x18\x43reateDataSourceResponse\":\n\x17\x44\x65leteDataSourceRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1a\n\x18\x44\x65leteDataSourceResponse\"\xe1\x01\n\x12InferSchemaRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12T\n\ndatasource\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12T\n\x08location\x18\x04 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation\"g\n\x13InferSchemaResponse\x12P\n\x07\x63olumns\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile\"\xd4\x01\n\x13GetTableViewRequest\x12\x0e\n\x06tenant\x18\x01 \x01(\t\x12W\n\x0c\x66latfilespec\x18\x02 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec\x12T\n\x08location\x18\x03 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation\"b\n\x14GetTableViewResponse\x12J\n\x05table\x18\x01 \x01(\x0b\x32;.github.com.metaprov.modelaapi.services.common.v1.TableView2\xee\x0b\n\x11\x44\x61taSourceService\x12\xd1\x01\n\x0fListDataSources\x12K.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceRequest\x1aL.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceResponse\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/v1/datasources/{namespace}\x12\xcd\x01\n\x10\x43reateDataSource\x12M.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceRequest\x1aN.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\"\x0f/v1/datasources:\x01*\x12\xd4\x01\n\rGetDataSource\x12J.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceRequest\x1aK.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceResponse\"*\x82\xd3\xe4\x93\x02$\x12\"/v1/datasources/{namespace}/{name}\x12\xfc\x01\n\x10UpdateDataSource\x12M.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceRequest\x1aN.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceResponse\"I\x82\xd3\xe4\x93\x02\x43\x1a>/v1/datasources/{item.metadata.namespace}/{item.metadata.name}:\x01*\x12\xdd\x01\n\x10\x44\x65leteDataSource\x12M.github.com.metaprov.modelaapi.services.datasource.v1.DeleteDataSourceRequest\x1aN.github.com.metaprov.modelaapi.services.datasource.v1.DeleteDataSourceResponse\"*\x82\xd3\xe4\x93\x02$*\"/v1/datasources/{namespace}/{name}\x12\xd4\x01\n\x0bInferSchema\x12H.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest\x1aI.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaResponse\"0\x82\xd3\xe4\x93\x02*\"(/v1/datasources/{namespace}/{name}:infer\x12\xa7\x01\n\x0cGetTableView\x12I.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest\x1aJ.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewResponse\"\x00\x42\x36Z4github.com/metaprov/modelaapi/services/datasource/v1b\x06proto3'
+  serialized_pb=b'\nEgithub.com/metaprov/modelaapi/services/datasource/v1/datasource.proto\x12\x34github.com.metaprov.modelaapi.services.datasource.v1\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x44github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto\x1a\x45github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto\x1a=github.com/metaprov/modelaapi/services/common/v1/common.proto\"\xfb\x01\n\x15ListDataSourceRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12g\n\x06labels\x18\x02 \x03(\x0b\x32W.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceRequest.LabelsEntry\x12\x11\n\tpage_size\x18\x03 \x01(\x05\x12\x12\n\npage_token\x18\x04 \x01(\t\x12\x10\n\x08order_by\x18\x05 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x8c\x01\n\x16ListDataSourceResponse\x12Y\n\x0b\x64\x61tasources\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceList\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"7\n\x14GetDataSourceRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"{\n\x15GetDataSourceResponse\x12T\n\ndatasource\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"\x9f\x01\n\x17UpdateDataSourceRequest\x12T\n\ndatasource\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12.\n\nfield_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"\x1a\n\x18UpdateDataSourceResponse\"o\n\x17\x43reateDataSourceRequest\x12T\n\ndatasource\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\"\x1a\n\x18\x43reateDataSourceResponse\":\n\x17\x44\x65leteDataSourceRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1a\n\x18\x44\x65leteDataSourceResponse\"\xe1\x01\n\x12InferSchemaRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12T\n\ndatasource\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12T\n\x08location\x18\x04 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation\"g\n\x13InferSchemaResponse\x12P\n\x07\x63olumns\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile\"\xd4\x01\n\x13GetTableViewRequest\x12\x0e\n\x06tenant\x18\x01 \x01(\t\x12W\n\x0c\x66latfilespec\x18\x02 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec\x12T\n\x08location\x18\x03 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation\"b\n\x14GetTableViewResponse\x12J\n\x05table\x18\x01 \x01(\x0b\x32;.github.com.metaprov.modelaapi.services.common.v1.TableView2\xee\x0b\n\x11\x44\x61taSourceService\x12\xd1\x01\n\x0fListDataSources\x12K.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceRequest\x1aL.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceResponse\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/v1/datasources/{namespace}\x12\xcd\x01\n\x10\x43reateDataSource\x12M.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceRequest\x1aN.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\"\x0f/v1/datasources:\x01*\x12\xd4\x01\n\rGetDataSource\x12J.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceRequest\x1aK.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceResponse\"*\x82\xd3\xe4\x93\x02$\x12\"/v1/datasources/{namespace}/{name}\x12\xfc\x01\n\x10UpdateDataSource\x12M.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceRequest\x1aN.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceResponse\"I\x82\xd3\xe4\x93\x02\x43\x1a>/v1/datasources/{item.metadata.namespace}/{item.metadata.name}:\x01*\x12\xdd\x01\n\x10\x44\x65leteDataSource\x12M.github.com.metaprov.modelaapi.services.datasource.v1.DeleteDataSourceRequest\x1aN.github.com.metaprov.modelaapi.services.datasource.v1.DeleteDataSourceResponse\"*\x82\xd3\xe4\x93\x02$*\"/v1/datasources/{namespace}/{name}\x12\xd4\x01\n\x0bInferSchema\x12H.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest\x1aI.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaResponse\"0\x82\xd3\xe4\x93\x02*\"(/v1/datasources/{namespace}/{name}:infer\x12\xa7\x01\n\x0cGetTableView\x12I.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest\x1aJ.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewResponse\"\x00\x42\x36Z4github.com/metaprov/modelaapi/services/datasource/v1b\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_common_dot_v1_dot_common__pb2.DESCRIPTOR,])
 
@@ -216,7 +216,7 @@ _GETDATASOURCERESPONSE = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='item', full_name='github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceResponse.item', index=0,
+      name='datasource', full_name='github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceResponse.datasource', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -242,7 +242,7 @@ _GETDATASOURCERESPONSE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=849,
-  serialized_end=966,
+  serialized_end=972,
 )
 
 
@@ -255,7 +255,7 @@ _UPDATEDATASOURCEREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='item', full_name='github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceRequest.item', index=0,
+      name='datasource', full_name='github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceRequest.datasource', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -280,8 +280,8 @@ _UPDATEDATASOURCEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=969,
-  serialized_end=1122,
+  serialized_start=975,
+  serialized_end=1134,
 )
 
 
@@ -305,8 +305,8 @@ _UPDATEDATASOURCERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1124,
-  serialized_end=1150,
+  serialized_start=1136,
+  serialized_end=1162,
 )
 
 
@@ -319,7 +319,7 @@ _CREATEDATASOURCEREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='item', full_name='github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceRequest.item', index=0,
+      name='datasource', full_name='github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceRequest.datasource', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -337,8 +337,8 @@ _CREATEDATASOURCEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1152,
-  serialized_end=1257,
+  serialized_start=1164,
+  serialized_end=1275,
 )
 
 
@@ -362,8 +362,8 @@ _CREATEDATASOURCERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1259,
-  serialized_end=1285,
+  serialized_start=1277,
+  serialized_end=1303,
 )
 
 
@@ -401,8 +401,8 @@ _DELETEDATASOURCEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1287,
-  serialized_end=1345,
+  serialized_start=1305,
+  serialized_end=1363,
 )
 
 
@@ -426,8 +426,8 @@ _DELETEDATASOURCERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1347,
-  serialized_end=1373,
+  serialized_start=1365,
+  serialized_end=1391,
 )
 
 
@@ -479,8 +479,8 @@ _INFERSCHEMAREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1376,
-  serialized_end=1601,
+  serialized_start=1394,
+  serialized_end=1619,
 )
 
 
@@ -511,8 +511,8 @@ _INFERSCHEMARESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1603,
-  serialized_end=1706,
+  serialized_start=1621,
+  serialized_end=1724,
 )
 
 
@@ -557,8 +557,8 @@ _GETTABLEVIEWREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1709,
-  serialized_end=1921,
+  serialized_start=1727,
+  serialized_end=1939,
 )
 
 
@@ -589,17 +589,17 @@ _GETTABLEVIEWRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1923,
-  serialized_end=2021,
+  serialized_start=1941,
+  serialized_end=2039,
 )
 
 _LISTDATASOURCEREQUEST_LABELSENTRY.containing_type = _LISTDATASOURCEREQUEST
 _LISTDATASOURCEREQUEST.fields_by_name['labels'].message_type = _LISTDATASOURCEREQUEST_LABELSENTRY
 _LISTDATASOURCERESPONSE.fields_by_name['datasources'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATASOURCELIST
-_GETDATASOURCERESPONSE.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATASOURCE
-_UPDATEDATASOURCEREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATASOURCE
+_GETDATASOURCERESPONSE.fields_by_name['datasource'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATASOURCE
+_UPDATEDATASOURCEREQUEST.fields_by_name['datasource'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATASOURCE
 _UPDATEDATASOURCEREQUEST.fields_by_name['field_mask'].message_type = google_dot_protobuf_dot_field__mask__pb2._FIELDMASK
-_CREATEDATASOURCEREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATASOURCE
+_CREATEDATASOURCEREQUEST.fields_by_name['datasource'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATASOURCE
 _INFERSCHEMAREQUEST.fields_by_name['datasource'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATASOURCE
 _INFERSCHEMAREQUEST.fields_by_name['location'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATALOCATION
 _INFERSCHEMARESPONSE.fields_by_name['columns'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_common_dot_v1_dot_common__pb2._COLUMNPROFILE
@@ -739,8 +739,8 @@ _DATASOURCESERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=2024,
-  serialized_end=3542,
+  serialized_start=2042,
+  serialized_end=3560,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListDataSources',

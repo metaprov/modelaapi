@@ -32,7 +32,7 @@ message CreateLabResponse {
 }
 
 message UpdateLabRequest {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Lab item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Lab lab = 1;
     google.protobuf.FieldMask field_mask = 2;
 }
 
@@ -48,7 +48,7 @@ message GetLabRequest {
 
 
 message GetLabResponse {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Lab item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Lab lab = 1;
     string yaml = 2;
 }
 

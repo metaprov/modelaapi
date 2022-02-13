@@ -79,10 +79,10 @@ export namespace AlertResponse {
 }
 
 export class CreateAlertRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert): CreateAlertRequest;
-  hasItem(): boolean;
-  clearItem(): CreateAlertRequest;
+  getAlert(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert | undefined;
+  setAlert(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert): CreateAlertRequest;
+  hasAlert(): boolean;
+  clearAlert(): CreateAlertRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateAlertRequest.AsObject;
@@ -94,7 +94,7 @@ export class CreateAlertRequest extends jspb.Message {
 
 export namespace CreateAlertRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert.AsObject,
+    alert?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert.AsObject,
   }
 }
 
@@ -113,15 +113,15 @@ export namespace CreateAlertResponse {
 }
 
 export class UpdateAlertRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert): UpdateAlertRequest;
-  hasItem(): boolean;
-  clearItem(): UpdateAlertRequest;
+  getAlert(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert | undefined;
+  setAlert(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert): UpdateAlertRequest;
+  hasAlert(): boolean;
+  clearAlert(): UpdateAlertRequest;
 
-  getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
-  setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): UpdateAlertRequest;
-  hasFieldMask(): boolean;
-  clearFieldMask(): UpdateAlertRequest;
+  getUpdateMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setUpdateMask(value?: google_protobuf_field_mask_pb.FieldMask): UpdateAlertRequest;
+  hasUpdateMask(): boolean;
+  clearUpdateMask(): UpdateAlertRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateAlertRequest.AsObject;
@@ -133,8 +133,8 @@ export class UpdateAlertRequest extends jspb.Message {
 
 export namespace UpdateAlertRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert.AsObject,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
+    alert?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert.AsObject,
+    updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
 
@@ -175,10 +175,10 @@ export namespace GetAlertRequest {
 }
 
 export class GetAlertResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert): GetAlertResponse;
-  hasItem(): boolean;
-  clearItem(): GetAlertResponse;
+  getAlert(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert | undefined;
+  setAlert(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert): GetAlertResponse;
+  hasAlert(): boolean;
+  clearAlert(): GetAlertResponse;
 
   getYaml(): string;
   setYaml(value: string): GetAlertResponse;
@@ -193,7 +193,7 @@ export class GetAlertResponse extends jspb.Message {
 
 export namespace GetAlertResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert.AsObject,
+    alert?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert.AsObject,
     yaml: string,
   }
 }

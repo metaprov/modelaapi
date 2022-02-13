@@ -29,7 +29,7 @@ message CreateFeatureHistogramResponse {
 }
 
 message UpdateFeatureHistogramRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram histogram = 1;
     google.protobuf.FieldMask field_mask = 2;
 }
 
@@ -45,7 +45,7 @@ message GetFeatureHistogramRequest {
 
 
 message GetFeatureHistogramResponse {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram histogram = 1;
     string yaml = 2;
 }
 

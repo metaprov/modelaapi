@@ -578,10 +578,10 @@ export namespace ListPretrainedModelsRequest {
 }
 
 export class ListPretrainedModelsResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PretrainedModelList | undefined;
-  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PretrainedModelList): ListPretrainedModelsResponse;
-  hasItems(): boolean;
-  clearItems(): ListPretrainedModelsResponse;
+  getPretrainedmodels(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PretrainedModelList | undefined;
+  setPretrainedmodels(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PretrainedModelList): ListPretrainedModelsResponse;
+  hasPretrainedmodels(): boolean;
+  clearPretrainedmodels(): ListPretrainedModelsResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListPretrainedModelsResponse.AsObject;
@@ -593,7 +593,7 @@ export class ListPretrainedModelsResponse extends jspb.Message {
 
 export namespace ListPretrainedModelsResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PretrainedModelList.AsObject,
+    pretrainedmodels?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PretrainedModelList.AsObject,
   }
 }
 
@@ -620,10 +620,10 @@ export namespace GetPretrainedModelRequest {
 }
 
 export class GetPretrainedModelResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PretrainedModel | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PretrainedModel): GetPretrainedModelResponse;
-  hasItem(): boolean;
-  clearItem(): GetPretrainedModelResponse;
+  getPretrainedmodel(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PretrainedModel | undefined;
+  setPretrainedmodel(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PretrainedModel): GetPretrainedModelResponse;
+  hasPretrainedmodel(): boolean;
+  clearPretrainedmodel(): GetPretrainedModelResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetPretrainedModelResponse.AsObject;
@@ -635,7 +635,7 @@ export class GetPretrainedModelResponse extends jspb.Message {
 
 export namespace GetPretrainedModelResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PretrainedModel.AsObject,
+    pretrainedmodel?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PretrainedModel.AsObject,
   }
 }
 
@@ -704,10 +704,10 @@ export namespace GetWorkloadClassRequest {
 }
 
 export class GetWorkloadClassResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkloadClass | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkloadClass): GetWorkloadClassResponse;
-  hasItem(): boolean;
-  clearItem(): GetWorkloadClassResponse;
+  getWorkload(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkloadClass | undefined;
+  setWorkload(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkloadClass): GetWorkloadClassResponse;
+  hasWorkload(): boolean;
+  clearWorkload(): GetWorkloadClassResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetWorkloadClassResponse.AsObject;
@@ -719,7 +719,7 @@ export class GetWorkloadClassResponse extends jspb.Message {
 
 export namespace GetWorkloadClassResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkloadClass.AsObject,
+    workload?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkloadClass.AsObject,
   }
 }
 
@@ -746,10 +746,10 @@ export namespace ListUserRoleClassesRequest {
 }
 
 export class ListUserRoleClassesResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.UserRoleClassList | undefined;
-  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.UserRoleClassList): ListUserRoleClassesResponse;
-  hasItems(): boolean;
-  clearItems(): ListUserRoleClassesResponse;
+  getUserroleclasses(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.UserRoleClassList | undefined;
+  setUserroleclasses(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.UserRoleClassList): ListUserRoleClassesResponse;
+  hasUserroleclasses(): boolean;
+  clearUserroleclasses(): ListUserRoleClassesResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListUserRoleClassesResponse.AsObject;
@@ -761,7 +761,7 @@ export class ListUserRoleClassesResponse extends jspb.Message {
 
 export namespace ListUserRoleClassesResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.UserRoleClassList.AsObject,
+    userroleclasses?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.UserRoleClassList.AsObject,
   }
 }
 
@@ -788,10 +788,10 @@ export namespace GetUserRoleClassRequest {
 }
 
 export class GetUserRoleClassResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.UserRoleClass | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.UserRoleClass): GetUserRoleClassResponse;
-  hasItem(): boolean;
-  clearItem(): GetUserRoleClassResponse;
+  getUserroleclass(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.UserRoleClass | undefined;
+  setUserroleclass(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.UserRoleClass): GetUserRoleClassResponse;
+  hasUserroleclass(): boolean;
+  clearUserroleclass(): GetUserRoleClassResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetUserRoleClassResponse.AsObject;
@@ -803,7 +803,7 @@ export class GetUserRoleClassResponse extends jspb.Message {
 
 export namespace GetUserRoleClassResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.UserRoleClass.AsObject,
+    userroleclass?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.UserRoleClass.AsObject,
   }
 }
 

@@ -26,7 +26,7 @@ message CreateSqlQueryRequest {
 }
 
 message UpdateSqlQueryRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuery item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuery sqlquery = 1;
     google.protobuf.FieldMask field_mask = 2;
 }
 
@@ -55,7 +55,7 @@ message DeleteSqlQueryResponse {
 }
 
 message RunSqlQueryRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuery item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuery sqlquery = 1;
 }
 
 

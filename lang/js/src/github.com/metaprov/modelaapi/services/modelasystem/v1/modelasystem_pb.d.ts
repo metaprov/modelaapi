@@ -28,10 +28,10 @@ export namespace ListModelaSystemsRequest {
 }
 
 export class ListModelaSystemsResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ModelaSystemList | undefined;
-  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ModelaSystemList): ListModelaSystemsResponse;
-  hasItems(): boolean;
-  clearItems(): ListModelaSystemsResponse;
+  getModelasystems(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ModelaSystemList | undefined;
+  setModelasystems(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ModelaSystemList): ListModelaSystemsResponse;
+  hasModelasystems(): boolean;
+  clearModelasystems(): ListModelaSystemsResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListModelaSystemsResponse.AsObject;
@@ -43,7 +43,7 @@ export class ListModelaSystemsResponse extends jspb.Message {
 
 export namespace ListModelaSystemsResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ModelaSystemList.AsObject,
+    modelasystems?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ModelaSystemList.AsObject,
   }
 }
 
@@ -62,10 +62,10 @@ export namespace ModelaSystemResponse {
 }
 
 export class CreateModelaSystemRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ModelaSystem | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ModelaSystem): CreateModelaSystemRequest;
-  hasItem(): boolean;
-  clearItem(): CreateModelaSystemRequest;
+  getModelasystem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ModelaSystem | undefined;
+  setModelasystem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ModelaSystem): CreateModelaSystemRequest;
+  hasModelasystem(): boolean;
+  clearModelasystem(): CreateModelaSystemRequest;
 
   getPassword(): string;
   setPassword(value: string): CreateModelaSystemRequest;
@@ -80,7 +80,7 @@ export class CreateModelaSystemRequest extends jspb.Message {
 
 export namespace CreateModelaSystemRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ModelaSystem.AsObject,
+    modelasystem?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ModelaSystem.AsObject,
     password: string,
   }
 }
@@ -100,10 +100,10 @@ export namespace CreateModelaSystemResponse {
 }
 
 export class UpdateModelaSystemRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ModelaSystem | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ModelaSystem): UpdateModelaSystemRequest;
-  hasItem(): boolean;
-  clearItem(): UpdateModelaSystemRequest;
+  getModelasystem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ModelaSystem | undefined;
+  setModelasystem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ModelaSystem): UpdateModelaSystemRequest;
+  hasModelasystem(): boolean;
+  clearModelasystem(): UpdateModelaSystemRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateModelaSystemRequest.AsObject;
@@ -115,7 +115,7 @@ export class UpdateModelaSystemRequest extends jspb.Message {
 
 export namespace UpdateModelaSystemRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ModelaSystem.AsObject,
+    modelasystem?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ModelaSystem.AsObject,
   }
 }
 
@@ -156,10 +156,10 @@ export namespace GetModelaSystemRequest {
 }
 
 export class GetModelaSystemResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ModelaSystem | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ModelaSystem): GetModelaSystemResponse;
-  hasItem(): boolean;
-  clearItem(): GetModelaSystemResponse;
+  getModelasystem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ModelaSystem | undefined;
+  setModelasystem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ModelaSystem): GetModelaSystemResponse;
+  hasModelasystem(): boolean;
+  clearModelasystem(): GetModelaSystemResponse;
 
   getYaml(): string;
   setYaml(value: string): GetModelaSystemResponse;
@@ -174,7 +174,7 @@ export class GetModelaSystemResponse extends jspb.Message {
 
 export namespace GetModelaSystemResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ModelaSystem.AsObject,
+    modelasystem?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ModelaSystem.AsObject,
     yaml: string,
   }
 }

@@ -88,10 +88,10 @@ export namespace GetDataSourceRequest {
 }
 
 export class GetDataSourceResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource): GetDataSourceResponse;
-  hasItem(): boolean;
-  clearItem(): GetDataSourceResponse;
+  getDatasource(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource | undefined;
+  setDatasource(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource): GetDataSourceResponse;
+  hasDatasource(): boolean;
+  clearDatasource(): GetDataSourceResponse;
 
   getYaml(): string;
   setYaml(value: string): GetDataSourceResponse;
@@ -106,16 +106,16 @@ export class GetDataSourceResponse extends jspb.Message {
 
 export namespace GetDataSourceResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
+    datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
     yaml: string,
   }
 }
 
 export class UpdateDataSourceRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource): UpdateDataSourceRequest;
-  hasItem(): boolean;
-  clearItem(): UpdateDataSourceRequest;
+  getDatasource(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource | undefined;
+  setDatasource(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource): UpdateDataSourceRequest;
+  hasDatasource(): boolean;
+  clearDatasource(): UpdateDataSourceRequest;
 
   getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
   setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): UpdateDataSourceRequest;
@@ -132,7 +132,7 @@ export class UpdateDataSourceRequest extends jspb.Message {
 
 export namespace UpdateDataSourceRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
+    datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
     fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
@@ -152,10 +152,10 @@ export namespace UpdateDataSourceResponse {
 }
 
 export class CreateDataSourceRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource): CreateDataSourceRequest;
-  hasItem(): boolean;
-  clearItem(): CreateDataSourceRequest;
+  getDatasource(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource | undefined;
+  setDatasource(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource): CreateDataSourceRequest;
+  hasDatasource(): boolean;
+  clearDatasource(): CreateDataSourceRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateDataSourceRequest.AsObject;
@@ -167,7 +167,7 @@ export class CreateDataSourceRequest extends jspb.Message {
 
 export namespace CreateDataSourceRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
+    datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
   }
 }
 

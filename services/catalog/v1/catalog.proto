@@ -161,7 +161,7 @@ message ListPretrainedModelsRequest {
 }
 
 message ListPretrainedModelsResponse {
-    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PretrainedModelList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PretrainedModelList pretrainedModels = 1;
 }
 
 message GetPretrainedModelRequest {
@@ -171,7 +171,7 @@ message GetPretrainedModelRequest {
 }
 
 message GetPretrainedModelResponse {
-    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PretrainedModel item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PretrainedModel pretrainedModel = 1;
 }
 
 
@@ -193,7 +193,7 @@ message GetWorkloadClassRequest {
 }
 
 message GetWorkloadClassResponse {
-    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkloadClass item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkloadClass workload = 1;
 }
 
 //////////////////////////////////////////////////// UserRoleClass ///////////////////////////////////
@@ -204,7 +204,7 @@ message ListUserRoleClassesRequest {
 }
 
 message ListUserRoleClassesResponse {
-    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.UserRoleClassList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.UserRoleClassList userRoleClasses = 1;
 }
 
 message GetUserRoleClassRequest {
@@ -214,7 +214,7 @@ message GetUserRoleClassRequest {
 }
 
 message GetUserRoleClassResponse {
-    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.UserRoleClass item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.UserRoleClass userRoleClass = 1;
 }
 
 //////////////////////////////////////////////////// Service ///////////////////////////////////

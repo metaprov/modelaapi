@@ -112,10 +112,10 @@ export namespace CreateModelPipelineResponse {
 }
 
 export class UpdateModelPipelineRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipeline | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipeline): UpdateModelPipelineRequest;
-  hasItem(): boolean;
-  clearItem(): UpdateModelPipelineRequest;
+  getModelpipeline(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipeline | undefined;
+  setModelpipeline(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipeline): UpdateModelPipelineRequest;
+  hasModelpipeline(): boolean;
+  clearModelpipeline(): UpdateModelPipelineRequest;
 
   getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
   setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): UpdateModelPipelineRequest;
@@ -132,7 +132,7 @@ export class UpdateModelPipelineRequest extends jspb.Message {
 
 export namespace UpdateModelPipelineRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipeline.AsObject,
+    modelpipeline?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipeline.AsObject,
     fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
@@ -174,10 +174,10 @@ export namespace GetModelPipelineRequest {
 }
 
 export class GetModelPipelineResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipeline | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipeline): GetModelPipelineResponse;
-  hasItem(): boolean;
-  clearItem(): GetModelPipelineResponse;
+  getModelpipeline(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipeline | undefined;
+  setModelpipeline(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipeline): GetModelPipelineResponse;
+  hasModelpipeline(): boolean;
+  clearModelpipeline(): GetModelPipelineResponse;
 
   getYaml(): string;
   setYaml(value: string): GetModelPipelineResponse;
@@ -192,7 +192,7 @@ export class GetModelPipelineResponse extends jspb.Message {
 
 export namespace GetModelPipelineResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipeline.AsObject,
+    modelpipeline?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipeline.AsObject,
     yaml: string,
   }
 }
@@ -234,10 +234,10 @@ export namespace DeleteModelPipelineResponse {
 }
 
 export class RunModelPipelineRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipeline | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipeline): RunModelPipelineRequest;
-  hasItem(): boolean;
-  clearItem(): RunModelPipelineRequest;
+  getModelpipeline(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipeline | undefined;
+  setModelpipeline(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipeline): RunModelPipelineRequest;
+  hasModelpipeline(): boolean;
+  clearModelpipeline(): RunModelPipelineRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RunModelPipelineRequest.AsObject;
@@ -249,7 +249,7 @@ export class RunModelPipelineRequest extends jspb.Message {
 
 export namespace RunModelPipelineRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipeline.AsObject,
+    modelpipeline?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipeline.AsObject,
   }
 }
 

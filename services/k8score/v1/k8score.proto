@@ -15,7 +15,7 @@ message GetSecretRequest {
 }
 
 message GetSecretResponse {
-    SecretInfo item = 1;
+    SecretInfo secret = 1;
 }
 
 message ListSecretsRequest {
@@ -24,7 +24,7 @@ message ListSecretsRequest {
 }
 
 message ListSecretResponse {
-    repeated SecretInfo items = 1;
+    repeated SecretInfo secrets = 1;
 }
 
 
@@ -37,7 +37,7 @@ message GetDeploymentRequest {
 }
 
 message GetDeploymentResponse {
-    DeploymentInfo item = 1;
+    DeploymentInfo deployment = 1;
 }
 
 message ListDeploymentsRequest {
@@ -46,7 +46,7 @@ message ListDeploymentsRequest {
 }
 
 message ListDeploymentsResponse {
-    repeated DeploymentInfo items = 1;
+    repeated DeploymentInfo deployments = 1;
 }
 
 /////////////////////////////// Services
@@ -58,7 +58,7 @@ message GetServiceRequest {
 }
 
 message GetServiceResponse {
-    ServiceInfo item = 1;
+    ServiceInfo service = 1;
 }
 
 message ListServicesRequest {
@@ -67,7 +67,7 @@ message ListServicesRequest {
 }
 
 message ListServicesResponse {
-    repeated ServiceInfo items = 1;
+    repeated ServiceInfo services = 1;
 }
 
 
@@ -80,7 +80,7 @@ message GetPodRequest {
 }
 
 message GetPodResponse {
-    PodInfo item = 1;
+    PodInfo pod = 1;
 }
 
 message ListPodsRequest {
@@ -89,7 +89,7 @@ message ListPodsRequest {
 }
 
 message ListPodsResponse {
-    repeated PodInfo items = 1;
+    repeated PodInfo pods = 1;
 }
 
 /////////////////////////////// Jobs
@@ -101,7 +101,7 @@ message GetJobRequest {
 }
 
 message GetJobResponse {
-    JobInfo item = 1;
+    JobInfo job = 1;
 }
 
 message ListJobsRequest {
@@ -110,7 +110,7 @@ message ListJobsRequest {
 }
 
 message ListJobsResponse {
-    repeated JobInfo items = 1;
+    repeated JobInfo jobs = 1;
 }
 
 //////////////////////////////////// Events

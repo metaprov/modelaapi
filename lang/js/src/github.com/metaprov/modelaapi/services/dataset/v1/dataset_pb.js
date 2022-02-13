@@ -1436,7 +1436,7 @@ proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetResponse.proto
  */
 proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.toObject(includeInstance, f),
+    dataset: (f = msg.getDataset()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.toObject(includeInstance, f),
     yaml: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -1477,7 +1477,7 @@ proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetResponse.deser
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setDataset(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -1512,7 +1512,7 @@ proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetResponse.proto
  */
 proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getDataset();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1531,10 +1531,10 @@ proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetResponse.seria
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset dataset = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset}
  */
-proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetResponse.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetResponse.prototype.getDataset = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset, 1));
 };
@@ -1544,7 +1544,7 @@ proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetResponse.proto
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetResponse.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetResponse.prototype.setDataset = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1553,8 +1553,8 @@ proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetResponse.proto
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetResponse.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetResponse.prototype.clearDataset = function() {
+  return this.setDataset(undefined);
 };
 
 
@@ -1562,7 +1562,7 @@ proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetResponse.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetResponse.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetResponse.prototype.hasDataset = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -1869,7 +1869,7 @@ proto.github.com.metaprov.modelaapi.services.dataset.v1.UpdateDatasetRequest.pro
  */
 proto.github.com.metaprov.modelaapi.services.dataset.v1.UpdateDatasetRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.toObject(includeInstance, f),
+    dataset: (f = msg.getDataset()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.toObject(includeInstance, f),
     fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
@@ -1910,7 +1910,7 @@ proto.github.com.metaprov.modelaapi.services.dataset.v1.UpdateDatasetRequest.des
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setDataset(value);
       break;
     case 2:
       var value = new google_protobuf_field_mask_pb.FieldMask;
@@ -1946,7 +1946,7 @@ proto.github.com.metaprov.modelaapi.services.dataset.v1.UpdateDatasetRequest.pro
  */
 proto.github.com.metaprov.modelaapi.services.dataset.v1.UpdateDatasetRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getDataset();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1966,10 +1966,10 @@ proto.github.com.metaprov.modelaapi.services.dataset.v1.UpdateDatasetRequest.ser
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset dataset = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset}
  */
-proto.github.com.metaprov.modelaapi.services.dataset.v1.UpdateDatasetRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.dataset.v1.UpdateDatasetRequest.prototype.getDataset = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset, 1));
 };
@@ -1979,7 +1979,7 @@ proto.github.com.metaprov.modelaapi.services.dataset.v1.UpdateDatasetRequest.pro
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.dataset.v1.UpdateDatasetRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.dataset.v1.UpdateDatasetRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.dataset.v1.UpdateDatasetRequest.prototype.setDataset = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1988,8 +1988,8 @@ proto.github.com.metaprov.modelaapi.services.dataset.v1.UpdateDatasetRequest.pro
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.dataset.v1.UpdateDatasetRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.dataset.v1.UpdateDatasetRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.dataset.v1.UpdateDatasetRequest.prototype.clearDataset = function() {
+  return this.setDataset(undefined);
 };
 
 
@@ -1997,7 +1997,7 @@ proto.github.com.metaprov.modelaapi.services.dataset.v1.UpdateDatasetRequest.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.dataset.v1.UpdateDatasetRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.dataset.v1.UpdateDatasetRequest.prototype.hasDataset = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

@@ -1000,7 +1000,7 @@ proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.UpdateVirtualVolum
  */
 proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.UpdateVirtualVolumeRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume.toObject(includeInstance, f),
+    virtualvolume: (f = msg.getVirtualvolume()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume.toObject(includeInstance, f),
     fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
@@ -1041,7 +1041,7 @@ proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.UpdateVirtualVolum
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setVirtualvolume(value);
       break;
     case 2:
       var value = new google_protobuf_field_mask_pb.FieldMask;
@@ -1077,7 +1077,7 @@ proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.UpdateVirtualVolum
  */
 proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.UpdateVirtualVolumeRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getVirtualvolume();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1097,10 +1097,10 @@ proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.UpdateVirtualVolum
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualVolume item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualVolume virtualvolume = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualVolume}
  */
-proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.UpdateVirtualVolumeRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.UpdateVirtualVolumeRequest.prototype.getVirtualvolume = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualVolume} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume, 1));
 };
@@ -1110,7 +1110,7 @@ proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.UpdateVirtualVolum
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualVolume|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.UpdateVirtualVolumeRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.UpdateVirtualVolumeRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.UpdateVirtualVolumeRequest.prototype.setVirtualvolume = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1119,8 +1119,8 @@ proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.UpdateVirtualVolum
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.UpdateVirtualVolumeRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.UpdateVirtualVolumeRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.UpdateVirtualVolumeRequest.prototype.clearVirtualvolume = function() {
+  return this.setVirtualvolume(undefined);
 };
 
 
@@ -1128,7 +1128,7 @@ proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.UpdateVirtualVolum
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.UpdateVirtualVolumeRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.UpdateVirtualVolumeRequest.prototype.hasVirtualvolume = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

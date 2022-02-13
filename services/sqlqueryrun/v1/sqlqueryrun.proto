@@ -22,11 +22,11 @@ message ListSqlQueryRunsResponse {
 message CreateSqlQueryRunResponse {}
 
 message CreateSqlQueryRunRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRun item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRun sqlqueryrun = 1;
 }
 
 message UpdateSqlQueryRunRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRun item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRun sqlqueryrun = 1;
     google.protobuf.FieldMask field_mask = 2;
 }
 

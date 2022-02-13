@@ -1009,7 +1009,7 @@ proto.github.com.metaprov.modelaapi.services.datapipeline.v1.UpdateDataPipelineR
  */
 proto.github.com.metaprov.modelaapi.services.datapipeline.v1.UpdateDataPipelineRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline.toObject(includeInstance, f),
+    pipeline: (f = msg.getPipeline()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline.toObject(includeInstance, f),
     fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
@@ -1050,7 +1050,7 @@ proto.github.com.metaprov.modelaapi.services.datapipeline.v1.UpdateDataPipelineR
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setPipeline(value);
       break;
     case 2:
       var value = new google_protobuf_field_mask_pb.FieldMask;
@@ -1086,7 +1086,7 @@ proto.github.com.metaprov.modelaapi.services.datapipeline.v1.UpdateDataPipelineR
  */
 proto.github.com.metaprov.modelaapi.services.datapipeline.v1.UpdateDataPipelineRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getPipeline();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1106,10 +1106,10 @@ proto.github.com.metaprov.modelaapi.services.datapipeline.v1.UpdateDataPipelineR
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipeline item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipeline pipeline = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipeline}
  */
-proto.github.com.metaprov.modelaapi.services.datapipeline.v1.UpdateDataPipelineRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.datapipeline.v1.UpdateDataPipelineRequest.prototype.getPipeline = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipeline} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline, 1));
 };
@@ -1119,7 +1119,7 @@ proto.github.com.metaprov.modelaapi.services.datapipeline.v1.UpdateDataPipelineR
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipeline|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.datapipeline.v1.UpdateDataPipelineRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.datapipeline.v1.UpdateDataPipelineRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.datapipeline.v1.UpdateDataPipelineRequest.prototype.setPipeline = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1128,8 +1128,8 @@ proto.github.com.metaprov.modelaapi.services.datapipeline.v1.UpdateDataPipelineR
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.datapipeline.v1.UpdateDataPipelineRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.datapipeline.v1.UpdateDataPipelineRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.datapipeline.v1.UpdateDataPipelineRequest.prototype.clearPipeline = function() {
+  return this.setPipeline(undefined);
 };
 
 
@@ -1137,7 +1137,7 @@ proto.github.com.metaprov.modelaapi.services.datapipeline.v1.UpdateDataPipelineR
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.datapipeline.v1.UpdateDataPipelineRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.datapipeline.v1.UpdateDataPipelineRequest.prototype.hasPipeline = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -1472,7 +1472,7 @@ proto.github.com.metaprov.modelaapi.services.datapipeline.v1.GetDataPipelineResp
  */
 proto.github.com.metaprov.modelaapi.services.datapipeline.v1.GetDataPipelineResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline.toObject(includeInstance, f),
+    pipeline: (f = msg.getPipeline()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline.toObject(includeInstance, f),
     yaml: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -1513,7 +1513,7 @@ proto.github.com.metaprov.modelaapi.services.datapipeline.v1.GetDataPipelineResp
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setPipeline(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -1548,7 +1548,7 @@ proto.github.com.metaprov.modelaapi.services.datapipeline.v1.GetDataPipelineResp
  */
 proto.github.com.metaprov.modelaapi.services.datapipeline.v1.GetDataPipelineResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getPipeline();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1567,10 +1567,10 @@ proto.github.com.metaprov.modelaapi.services.datapipeline.v1.GetDataPipelineResp
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipeline item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipeline pipeline = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipeline}
  */
-proto.github.com.metaprov.modelaapi.services.datapipeline.v1.GetDataPipelineResponse.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.datapipeline.v1.GetDataPipelineResponse.prototype.getPipeline = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipeline} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline, 1));
 };
@@ -1580,7 +1580,7 @@ proto.github.com.metaprov.modelaapi.services.datapipeline.v1.GetDataPipelineResp
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipeline|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.datapipeline.v1.GetDataPipelineResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.datapipeline.v1.GetDataPipelineResponse.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.datapipeline.v1.GetDataPipelineResponse.prototype.setPipeline = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1589,8 +1589,8 @@ proto.github.com.metaprov.modelaapi.services.datapipeline.v1.GetDataPipelineResp
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.datapipeline.v1.GetDataPipelineResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.datapipeline.v1.GetDataPipelineResponse.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.datapipeline.v1.GetDataPipelineResponse.prototype.clearPipeline = function() {
+  return this.setPipeline(undefined);
 };
 
 
@@ -1598,7 +1598,7 @@ proto.github.com.metaprov.modelaapi.services.datapipeline.v1.GetDataPipelineResp
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.datapipeline.v1.GetDataPipelineResponse.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.datapipeline.v1.GetDataPipelineResponse.prototype.hasPipeline = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

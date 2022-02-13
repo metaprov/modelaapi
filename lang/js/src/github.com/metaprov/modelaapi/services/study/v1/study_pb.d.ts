@@ -99,10 +99,10 @@ export namespace ListStudyResponse {
 }
 
 export class CreateStudyRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study): CreateStudyRequest;
-  hasItem(): boolean;
-  clearItem(): CreateStudyRequest;
+  getStudy(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study | undefined;
+  setStudy(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study): CreateStudyRequest;
+  hasStudy(): boolean;
+  clearStudy(): CreateStudyRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateStudyRequest.AsObject;
@@ -114,7 +114,7 @@ export class CreateStudyRequest extends jspb.Message {
 
 export namespace CreateStudyRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
+    study?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
   }
 }
 
@@ -133,10 +133,10 @@ export namespace CreateStudyResponse {
 }
 
 export class UpdateStudyRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study): UpdateStudyRequest;
-  hasItem(): boolean;
-  clearItem(): UpdateStudyRequest;
+  getStudy(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study | undefined;
+  setStudy(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study): UpdateStudyRequest;
+  hasStudy(): boolean;
+  clearStudy(): UpdateStudyRequest;
 
   getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
   setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): UpdateStudyRequest;
@@ -153,7 +153,7 @@ export class UpdateStudyRequest extends jspb.Message {
 
 export namespace UpdateStudyRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
+    study?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
     fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }

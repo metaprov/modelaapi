@@ -965,7 +965,7 @@ proto.github.com.metaprov.modelaapi.services.feature.v1.UpdateFeatureRequest.pro
  */
 proto.github.com.metaprov.modelaapi.services.feature.v1.UpdateFeatureRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature.toObject(includeInstance, f),
+    feature: (f = msg.getFeature()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature.toObject(includeInstance, f),
     fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
@@ -1006,7 +1006,7 @@ proto.github.com.metaprov.modelaapi.services.feature.v1.UpdateFeatureRequest.des
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setFeature(value);
       break;
     case 2:
       var value = new google_protobuf_field_mask_pb.FieldMask;
@@ -1042,7 +1042,7 @@ proto.github.com.metaprov.modelaapi.services.feature.v1.UpdateFeatureRequest.pro
  */
 proto.github.com.metaprov.modelaapi.services.feature.v1.UpdateFeatureRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getFeature();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1062,10 +1062,10 @@ proto.github.com.metaprov.modelaapi.services.feature.v1.UpdateFeatureRequest.ser
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature feature = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature}
  */
-proto.github.com.metaprov.modelaapi.services.feature.v1.UpdateFeatureRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.feature.v1.UpdateFeatureRequest.prototype.getFeature = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature, 1));
 };
@@ -1075,7 +1075,7 @@ proto.github.com.metaprov.modelaapi.services.feature.v1.UpdateFeatureRequest.pro
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.feature.v1.UpdateFeatureRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.feature.v1.UpdateFeatureRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.feature.v1.UpdateFeatureRequest.prototype.setFeature = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1084,8 +1084,8 @@ proto.github.com.metaprov.modelaapi.services.feature.v1.UpdateFeatureRequest.pro
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.feature.v1.UpdateFeatureRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.feature.v1.UpdateFeatureRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.feature.v1.UpdateFeatureRequest.prototype.clearFeature = function() {
+  return this.setFeature(undefined);
 };
 
 
@@ -1093,7 +1093,7 @@ proto.github.com.metaprov.modelaapi.services.feature.v1.UpdateFeatureRequest.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.feature.v1.UpdateFeatureRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.feature.v1.UpdateFeatureRequest.prototype.hasFeature = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -1428,7 +1428,7 @@ proto.github.com.metaprov.modelaapi.services.feature.v1.GetFeatureResponse.proto
  */
 proto.github.com.metaprov.modelaapi.services.feature.v1.GetFeatureResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature.toObject(includeInstance, f),
+    feature: (f = msg.getFeature()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature.toObject(includeInstance, f),
     yaml: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -1469,7 +1469,7 @@ proto.github.com.metaprov.modelaapi.services.feature.v1.GetFeatureResponse.deser
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setFeature(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -1504,7 +1504,7 @@ proto.github.com.metaprov.modelaapi.services.feature.v1.GetFeatureResponse.proto
  */
 proto.github.com.metaprov.modelaapi.services.feature.v1.GetFeatureResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getFeature();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1523,10 +1523,10 @@ proto.github.com.metaprov.modelaapi.services.feature.v1.GetFeatureResponse.seria
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature feature = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature}
  */
-proto.github.com.metaprov.modelaapi.services.feature.v1.GetFeatureResponse.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.feature.v1.GetFeatureResponse.prototype.getFeature = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature, 1));
 };
@@ -1536,7 +1536,7 @@ proto.github.com.metaprov.modelaapi.services.feature.v1.GetFeatureResponse.proto
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.feature.v1.GetFeatureResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.feature.v1.GetFeatureResponse.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.feature.v1.GetFeatureResponse.prototype.setFeature = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1545,8 +1545,8 @@ proto.github.com.metaprov.modelaapi.services.feature.v1.GetFeatureResponse.proto
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.feature.v1.GetFeatureResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.feature.v1.GetFeatureResponse.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.feature.v1.GetFeatureResponse.prototype.clearFeature = function() {
+  return this.setFeature(undefined);
 };
 
 
@@ -1554,7 +1554,7 @@ proto.github.com.metaprov.modelaapi.services.feature.v1.GetFeatureResponse.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.feature.v1.GetFeatureResponse.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.feature.v1.GetFeatureResponse.prototype.hasFeature = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

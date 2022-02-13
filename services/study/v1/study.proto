@@ -30,14 +30,14 @@ message ListStudyResponse {
 
 
 message CreateStudyRequest {
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study study = 1;
 }
 
 message CreateStudyResponse {}
 
 
 message UpdateStudyRequest {
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study study = 1;
     google.protobuf.FieldMask field_mask = 2;
 }
 

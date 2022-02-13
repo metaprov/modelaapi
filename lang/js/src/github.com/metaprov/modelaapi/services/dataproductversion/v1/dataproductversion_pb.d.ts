@@ -99,10 +99,10 @@ export namespace CreateDataProductVersionResponse {
 }
 
 export class UpdateDataProductVersionRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion): UpdateDataProductVersionRequest;
-  hasItem(): boolean;
-  clearItem(): UpdateDataProductVersionRequest;
+  getDataproductversion(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion | undefined;
+  setDataproductversion(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion): UpdateDataProductVersionRequest;
+  hasDataproductversion(): boolean;
+  clearDataproductversion(): UpdateDataProductVersionRequest;
 
   getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
   setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): UpdateDataProductVersionRequest;
@@ -119,7 +119,7 @@ export class UpdateDataProductVersionRequest extends jspb.Message {
 
 export namespace UpdateDataProductVersionRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.AsObject,
+    dataproductversion?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.AsObject,
     fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
@@ -161,10 +161,10 @@ export namespace GetDataProductVersionRequest {
 }
 
 export class GetDataProductVersionResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion): GetDataProductVersionResponse;
-  hasItem(): boolean;
-  clearItem(): GetDataProductVersionResponse;
+  getDataproductversion(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion | undefined;
+  setDataproductversion(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion): GetDataProductVersionResponse;
+  hasDataproductversion(): boolean;
+  clearDataproductversion(): GetDataProductVersionResponse;
 
   getYaml(): string;
   setYaml(value: string): GetDataProductVersionResponse;
@@ -179,7 +179,7 @@ export class GetDataProductVersionResponse extends jspb.Message {
 
 export namespace GetDataProductVersionResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.AsObject,
+    dataproductversion?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.AsObject,
     yaml: string,
   }
 }

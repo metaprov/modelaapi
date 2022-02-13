@@ -30,7 +30,7 @@ message CreateModelPipelineResponse {
 }
 
 message UpdateModelPipelineRequest {
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipeline item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipeline modelPipeline = 1;
     google.protobuf.FieldMask field_mask = 2;
 }
 
@@ -45,7 +45,7 @@ message GetModelPipelineRequest {
 
 
 message GetModelPipelineResponse {
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipeline item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipeline modelPipeline = 1;
     string yaml = 2;
 }
 
@@ -60,7 +60,7 @@ message DeleteModelPipelineResponse {
 }
 
 message RunModelPipelineRequest {
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipeline item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipeline modelPipeline = 1;
 }
 
 message RunModelPipelineResponse {

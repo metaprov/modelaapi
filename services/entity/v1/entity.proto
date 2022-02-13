@@ -28,7 +28,7 @@ message CreateEntityResponse {
 }
 
 message UpdateEntityRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity entity = 1;
     google.protobuf.FieldMask field_mask = 2;
 
 }
@@ -45,7 +45,7 @@ message GetEntityRequest {
 
 
 message GetEntityResponse {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity entity = 1;
     string yaml = 2;
 }
 

@@ -113,10 +113,10 @@ export namespace CreateLabResponse {
 }
 
 export class UpdateLabRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Lab | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Lab): UpdateLabRequest;
-  hasItem(): boolean;
-  clearItem(): UpdateLabRequest;
+  getLab(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Lab | undefined;
+  setLab(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Lab): UpdateLabRequest;
+  hasLab(): boolean;
+  clearLab(): UpdateLabRequest;
 
   getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
   setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): UpdateLabRequest;
@@ -133,7 +133,7 @@ export class UpdateLabRequest extends jspb.Message {
 
 export namespace UpdateLabRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Lab.AsObject,
+    lab?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Lab.AsObject,
     fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
@@ -175,10 +175,10 @@ export namespace GetLabRequest {
 }
 
 export class GetLabResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Lab | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Lab): GetLabResponse;
-  hasItem(): boolean;
-  clearItem(): GetLabResponse;
+  getLab(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Lab | undefined;
+  setLab(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Lab): GetLabResponse;
+  hasLab(): boolean;
+  clearLab(): GetLabResponse;
 
   getYaml(): string;
   setYaml(value: string): GetLabResponse;
@@ -193,7 +193,7 @@ export class GetLabResponse extends jspb.Message {
 
 export namespace GetLabResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Lab.AsObject,
+    lab?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Lab.AsObject,
     yaml: string,
   }
 }

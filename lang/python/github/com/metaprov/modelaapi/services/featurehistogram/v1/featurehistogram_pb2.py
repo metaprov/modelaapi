@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z:github.com/metaprov/modelaapi/services/featurehistogram/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nQgithub.com/metaprov/modelaapi/services/featurehistogram/v1/featurehistogram.proto\x12:github.com.metaprov.modelaapi.services.featurehistogram.v1\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x44github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto\"\x8f\x02\n\x1cListFeatureHistogramsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12t\n\x06labels\x18\x02 \x03(\x0b\x32\x64.github.com.metaprov.modelaapi.services.featurehistogram.v1.ListFeatureHistogramsRequest.LabelsEntry\x12\x11\n\tpage_size\x18\x03 \x01(\x05\x12\x12\n\npage_token\x18\x04 \x01(\t\x12\x10\n\x08order_by\x18\x05 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x98\x01\n\x1dListFeatureHistogramsResponse\x12^\n\nhistograms\x18\x01 \x01(\x0b\x32J.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramList\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x93\x01\n\x1d\x43reateFeatureHistogramRequest\x12Y\n\thistogram\x18\x01 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\" \n\x1e\x43reateFeatureHistogramResponse\"\xa5\x01\n\x1dUpdateFeatureHistogramRequest\x12T\n\x04item\x18\x01 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram\x12.\n\nfield_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\" \n\x1eUpdateFeatureHistogramResponse\"=\n\x1aGetFeatureHistogramRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x81\x01\n\x1bGetFeatureHistogramResponse\x12T\n\x04item\x18\x01 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"@\n\x1d\x44\x65leteFeatureHistogramRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\" \n\x1e\x44\x65leteFeatureHistogramResponse2\xa9\n\n\x17\x46\x65\x61tureHistogramService\x12\xf7\x01\n\x15ListFeatureHistograms\x12X.github.com.metaprov.modelaapi.services.featurehistogram.v1.ListFeatureHistogramsRequest\x1aY.github.com.metaprov.modelaapi.services.featurehistogram.v1.ListFeatureHistogramsResponse\")\x82\xd3\xe4\x93\x02#\x12!/v1/featurehistograms/{namespace}\x12\xf1\x01\n\x16\x43reateFeatureHistogram\x12Y.github.com.metaprov.modelaapi.services.featurehistogram.v1.CreateFeatureHistogramRequest\x1aZ.github.com.metaprov.modelaapi.services.featurehistogram.v1.CreateFeatureHistogramResponse\" \x82\xd3\xe4\x93\x02\x1a\"\x15/v1/featurehistograms:\x01*\x12\xf8\x01\n\x13GetFeatureHistogram\x12V.github.com.metaprov.modelaapi.services.featurehistogram.v1.GetFeatureHistogramRequest\x1aW.github.com.metaprov.modelaapi.services.featurehistogram.v1.GetFeatureHistogramResponse\"0\x82\xd3\xe4\x93\x02*\x12(/v1/featurehistograms/{namespace}/{name}\x12\xa0\x02\n\x16UpdateFeatureHistogram\x12Y.github.com.metaprov.modelaapi.services.featurehistogram.v1.UpdateFeatureHistogramRequest\x1aZ.github.com.metaprov.modelaapi.services.featurehistogram.v1.UpdateFeatureHistogramResponse\"O\x82\xd3\xe4\x93\x02I\x1a\x44/v1/featurehistograms/{item.metadata.namespace}/{item.metadata.name}:\x01*\x12\x81\x02\n\x16\x44\x65leteFeatureHistogram\x12Y.github.com.metaprov.modelaapi.services.featurehistogram.v1.DeleteFeatureHistogramRequest\x1aZ.github.com.metaprov.modelaapi.services.featurehistogram.v1.DeleteFeatureHistogramResponse\"0\x82\xd3\xe4\x93\x02**(/v1/featurehistograms/{namespace}/{name}B<Z:github.com/metaprov/modelaapi/services/featurehistogram/v1b\x06proto3'
+  serialized_pb=b'\nQgithub.com/metaprov/modelaapi/services/featurehistogram/v1/featurehistogram.proto\x12:github.com.metaprov.modelaapi.services.featurehistogram.v1\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x44github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto\"\x8f\x02\n\x1cListFeatureHistogramsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12t\n\x06labels\x18\x02 \x03(\x0b\x32\x64.github.com.metaprov.modelaapi.services.featurehistogram.v1.ListFeatureHistogramsRequest.LabelsEntry\x12\x11\n\tpage_size\x18\x03 \x01(\x05\x12\x12\n\npage_token\x18\x04 \x01(\t\x12\x10\n\x08order_by\x18\x05 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x98\x01\n\x1dListFeatureHistogramsResponse\x12^\n\nhistograms\x18\x01 \x01(\x0b\x32J.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramList\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x93\x01\n\x1d\x43reateFeatureHistogramRequest\x12Y\n\thistogram\x18\x01 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\" \n\x1e\x43reateFeatureHistogramResponse\"\xaa\x01\n\x1dUpdateFeatureHistogramRequest\x12Y\n\thistogram\x18\x01 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram\x12.\n\nfield_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\" \n\x1eUpdateFeatureHistogramResponse\"=\n\x1aGetFeatureHistogramRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x86\x01\n\x1bGetFeatureHistogramResponse\x12Y\n\thistogram\x18\x01 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"@\n\x1d\x44\x65leteFeatureHistogramRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\" \n\x1e\x44\x65leteFeatureHistogramResponse2\xa9\n\n\x17\x46\x65\x61tureHistogramService\x12\xf7\x01\n\x15ListFeatureHistograms\x12X.github.com.metaprov.modelaapi.services.featurehistogram.v1.ListFeatureHistogramsRequest\x1aY.github.com.metaprov.modelaapi.services.featurehistogram.v1.ListFeatureHistogramsResponse\")\x82\xd3\xe4\x93\x02#\x12!/v1/featurehistograms/{namespace}\x12\xf1\x01\n\x16\x43reateFeatureHistogram\x12Y.github.com.metaprov.modelaapi.services.featurehistogram.v1.CreateFeatureHistogramRequest\x1aZ.github.com.metaprov.modelaapi.services.featurehistogram.v1.CreateFeatureHistogramResponse\" \x82\xd3\xe4\x93\x02\x1a\"\x15/v1/featurehistograms:\x01*\x12\xf8\x01\n\x13GetFeatureHistogram\x12V.github.com.metaprov.modelaapi.services.featurehistogram.v1.GetFeatureHistogramRequest\x1aW.github.com.metaprov.modelaapi.services.featurehistogram.v1.GetFeatureHistogramResponse\"0\x82\xd3\xe4\x93\x02*\x12(/v1/featurehistograms/{namespace}/{name}\x12\xa0\x02\n\x16UpdateFeatureHistogram\x12Y.github.com.metaprov.modelaapi.services.featurehistogram.v1.UpdateFeatureHistogramRequest\x1aZ.github.com.metaprov.modelaapi.services.featurehistogram.v1.UpdateFeatureHistogramResponse\"O\x82\xd3\xe4\x93\x02I\x1a\x44/v1/featurehistograms/{item.metadata.namespace}/{item.metadata.name}:\x01*\x12\x81\x02\n\x16\x44\x65leteFeatureHistogram\x12Y.github.com.metaprov.modelaapi.services.featurehistogram.v1.DeleteFeatureHistogramRequest\x1aZ.github.com.metaprov.modelaapi.services.featurehistogram.v1.DeleteFeatureHistogramResponse\"0\x82\xd3\xe4\x93\x02**(/v1/featurehistograms/{namespace}/{name}B<Z:github.com/metaprov/modelaapi/services/featurehistogram/v1b\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
 
@@ -239,7 +239,7 @@ _UPDATEFEATUREHISTOGRAMREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='item', full_name='github.com.metaprov.modelaapi.services.featurehistogram.v1.UpdateFeatureHistogramRequest.item', index=0,
+      name='histogram', full_name='github.com.metaprov.modelaapi.services.featurehistogram.v1.UpdateFeatureHistogramRequest.histogram', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -265,7 +265,7 @@ _UPDATEFEATUREHISTOGRAMREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=893,
-  serialized_end=1058,
+  serialized_end=1063,
 )
 
 
@@ -289,8 +289,8 @@ _UPDATEFEATUREHISTOGRAMRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1060,
-  serialized_end=1092,
+  serialized_start=1065,
+  serialized_end=1097,
 )
 
 
@@ -328,8 +328,8 @@ _GETFEATUREHISTOGRAMREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1094,
-  serialized_end=1155,
+  serialized_start=1099,
+  serialized_end=1160,
 )
 
 
@@ -342,7 +342,7 @@ _GETFEATUREHISTOGRAMRESPONSE = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='item', full_name='github.com.metaprov.modelaapi.services.featurehistogram.v1.GetFeatureHistogramResponse.item', index=0,
+      name='histogram', full_name='github.com.metaprov.modelaapi.services.featurehistogram.v1.GetFeatureHistogramResponse.histogram', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -367,8 +367,8 @@ _GETFEATUREHISTOGRAMRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1158,
-  serialized_end=1287,
+  serialized_start=1163,
+  serialized_end=1297,
 )
 
 
@@ -406,8 +406,8 @@ _DELETEFEATUREHISTOGRAMREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1289,
-  serialized_end=1353,
+  serialized_start=1299,
+  serialized_end=1363,
 )
 
 
@@ -431,17 +431,17 @@ _DELETEFEATUREHISTOGRAMRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1355,
-  serialized_end=1387,
+  serialized_start=1365,
+  serialized_end=1397,
 )
 
 _LISTFEATUREHISTOGRAMSREQUEST_LABELSENTRY.containing_type = _LISTFEATUREHISTOGRAMSREQUEST
 _LISTFEATUREHISTOGRAMSREQUEST.fields_by_name['labels'].message_type = _LISTFEATUREHISTOGRAMSREQUEST_LABELSENTRY
 _LISTFEATUREHISTOGRAMSRESPONSE.fields_by_name['histograms'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._FEATUREHISTOGRAMLIST
 _CREATEFEATUREHISTOGRAMREQUEST.fields_by_name['histogram'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._FEATUREHISTOGRAM
-_UPDATEFEATUREHISTOGRAMREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._FEATUREHISTOGRAM
+_UPDATEFEATUREHISTOGRAMREQUEST.fields_by_name['histogram'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._FEATUREHISTOGRAM
 _UPDATEFEATUREHISTOGRAMREQUEST.fields_by_name['field_mask'].message_type = google_dot_protobuf_dot_field__mask__pb2._FIELDMASK
-_GETFEATUREHISTOGRAMRESPONSE.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._FEATUREHISTOGRAM
+_GETFEATUREHISTOGRAMRESPONSE.fields_by_name['histogram'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._FEATUREHISTOGRAM
 DESCRIPTOR.message_types_by_name['ListFeatureHistogramsRequest'] = _LISTFEATUREHISTOGRAMSREQUEST
 DESCRIPTOR.message_types_by_name['ListFeatureHistogramsResponse'] = _LISTFEATUREHISTOGRAMSRESPONSE
 DESCRIPTOR.message_types_by_name['CreateFeatureHistogramRequest'] = _CREATEFEATUREHISTOGRAMREQUEST
@@ -543,8 +543,8 @@ _FEATUREHISTOGRAMSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1390,
-  serialized_end=2711,
+  serialized_start=1400,
+  serialized_end=2721,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListFeatureHistograms',

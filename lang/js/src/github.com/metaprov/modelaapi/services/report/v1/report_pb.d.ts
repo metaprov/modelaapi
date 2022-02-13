@@ -98,10 +98,10 @@ export namespace CreateReportResponse {
 }
 
 export class UpdateReportRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report): UpdateReportRequest;
-  hasItem(): boolean;
-  clearItem(): UpdateReportRequest;
+  getReport(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report | undefined;
+  setReport(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report): UpdateReportRequest;
+  hasReport(): boolean;
+  clearReport(): UpdateReportRequest;
 
   getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
   setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): UpdateReportRequest;
@@ -118,7 +118,7 @@ export class UpdateReportRequest extends jspb.Message {
 
 export namespace UpdateReportRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report.AsObject,
+    report?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report.AsObject,
     fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
@@ -160,10 +160,10 @@ export namespace GetReportRequest {
 }
 
 export class GetReportResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report): GetReportResponse;
-  hasItem(): boolean;
-  clearItem(): GetReportResponse;
+  getReport(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report | undefined;
+  setReport(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report): GetReportResponse;
+  hasReport(): boolean;
+  clearReport(): GetReportResponse;
 
   getYaml(): string;
   setYaml(value: string): GetReportResponse;
@@ -178,7 +178,7 @@ export class GetReportResponse extends jspb.Message {
 
 export namespace GetReportResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report.AsObject,
+    report?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report.AsObject,
     yaml: string,
   }
 }

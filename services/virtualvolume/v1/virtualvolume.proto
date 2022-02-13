@@ -28,7 +28,7 @@ message CreateVirtualVolumeResponse {
 }
 
 message UpdateVirtualVolumeRequest {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualVolume item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualVolume virtualvolume = 1;
     google.protobuf.FieldMask field_mask = 2;
 }
 

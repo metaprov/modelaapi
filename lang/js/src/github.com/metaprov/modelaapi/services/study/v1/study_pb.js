@@ -1186,7 +1186,7 @@ proto.github.com.metaprov.modelaapi.services.study.v1.CreateStudyRequest.prototy
  */
 proto.github.com.metaprov.modelaapi.services.study.v1.CreateStudyRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.toObject(includeInstance, f)
+    study: (f = msg.getStudy()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1226,7 +1226,7 @@ proto.github.com.metaprov.modelaapi.services.study.v1.CreateStudyRequest.deseria
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setStudy(value);
       break;
     default:
       reader.skipField();
@@ -1257,7 +1257,7 @@ proto.github.com.metaprov.modelaapi.services.study.v1.CreateStudyRequest.prototy
  */
 proto.github.com.metaprov.modelaapi.services.study.v1.CreateStudyRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getStudy();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1269,10 +1269,10 @@ proto.github.com.metaprov.modelaapi.services.study.v1.CreateStudyRequest.seriali
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study study = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study}
  */
-proto.github.com.metaprov.modelaapi.services.study.v1.CreateStudyRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.study.v1.CreateStudyRequest.prototype.getStudy = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study, 1));
 };
@@ -1282,7 +1282,7 @@ proto.github.com.metaprov.modelaapi.services.study.v1.CreateStudyRequest.prototy
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.study.v1.CreateStudyRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.study.v1.CreateStudyRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.study.v1.CreateStudyRequest.prototype.setStudy = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1291,8 +1291,8 @@ proto.github.com.metaprov.modelaapi.services.study.v1.CreateStudyRequest.prototy
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.study.v1.CreateStudyRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.study.v1.CreateStudyRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.study.v1.CreateStudyRequest.prototype.clearStudy = function() {
+  return this.setStudy(undefined);
 };
 
 
@@ -1300,7 +1300,7 @@ proto.github.com.metaprov.modelaapi.services.study.v1.CreateStudyRequest.prototy
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.study.v1.CreateStudyRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.study.v1.CreateStudyRequest.prototype.hasStudy = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -1438,7 +1438,7 @@ proto.github.com.metaprov.modelaapi.services.study.v1.UpdateStudyRequest.prototy
  */
 proto.github.com.metaprov.modelaapi.services.study.v1.UpdateStudyRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.toObject(includeInstance, f),
+    study: (f = msg.getStudy()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.toObject(includeInstance, f),
     fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
@@ -1479,7 +1479,7 @@ proto.github.com.metaprov.modelaapi.services.study.v1.UpdateStudyRequest.deseria
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setStudy(value);
       break;
     case 2:
       var value = new google_protobuf_field_mask_pb.FieldMask;
@@ -1515,7 +1515,7 @@ proto.github.com.metaprov.modelaapi.services.study.v1.UpdateStudyRequest.prototy
  */
 proto.github.com.metaprov.modelaapi.services.study.v1.UpdateStudyRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getStudy();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1535,10 +1535,10 @@ proto.github.com.metaprov.modelaapi.services.study.v1.UpdateStudyRequest.seriali
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study study = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study}
  */
-proto.github.com.metaprov.modelaapi.services.study.v1.UpdateStudyRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.study.v1.UpdateStudyRequest.prototype.getStudy = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study, 1));
 };
@@ -1548,7 +1548,7 @@ proto.github.com.metaprov.modelaapi.services.study.v1.UpdateStudyRequest.prototy
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.study.v1.UpdateStudyRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.study.v1.UpdateStudyRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.study.v1.UpdateStudyRequest.prototype.setStudy = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1557,8 +1557,8 @@ proto.github.com.metaprov.modelaapi.services.study.v1.UpdateStudyRequest.prototy
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.study.v1.UpdateStudyRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.study.v1.UpdateStudyRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.study.v1.UpdateStudyRequest.prototype.clearStudy = function() {
+  return this.setStudy(undefined);
 };
 
 
@@ -1566,7 +1566,7 @@ proto.github.com.metaprov.modelaapi.services.study.v1.UpdateStudyRequest.prototy
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.study.v1.UpdateStudyRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.study.v1.UpdateStudyRequest.prototype.hasStudy = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

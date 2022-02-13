@@ -98,10 +98,10 @@ export namespace CreateFeaturesetResponse {
 }
 
 export class UpdateFeaturesetRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Featureset | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Featureset): UpdateFeaturesetRequest;
-  hasItem(): boolean;
-  clearItem(): UpdateFeaturesetRequest;
+  getFeatureset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Featureset | undefined;
+  setFeatureset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Featureset): UpdateFeaturesetRequest;
+  hasFeatureset(): boolean;
+  clearFeatureset(): UpdateFeaturesetRequest;
 
   getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
   setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): UpdateFeaturesetRequest;
@@ -118,7 +118,7 @@ export class UpdateFeaturesetRequest extends jspb.Message {
 
 export namespace UpdateFeaturesetRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Featureset.AsObject,
+    featureset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Featureset.AsObject,
     fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }

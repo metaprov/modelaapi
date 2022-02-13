@@ -754,7 +754,7 @@ proto.github.com.metaprov.modelaapi.services.webrequestrun.v1.CreateWebRequestRu
  */
 proto.github.com.metaprov.modelaapi.services.webrequestrun.v1.CreateWebRequestRunRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequestRun.toObject(includeInstance, f)
+    webrequestrun: (f = msg.getWebrequestrun()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequestRun.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -794,7 +794,7 @@ proto.github.com.metaprov.modelaapi.services.webrequestrun.v1.CreateWebRequestRu
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequestRun;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequestRun.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setWebrequestrun(value);
       break;
     default:
       reader.skipField();
@@ -825,7 +825,7 @@ proto.github.com.metaprov.modelaapi.services.webrequestrun.v1.CreateWebRequestRu
  */
 proto.github.com.metaprov.modelaapi.services.webrequestrun.v1.CreateWebRequestRunRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getWebrequestrun();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -837,10 +837,10 @@ proto.github.com.metaprov.modelaapi.services.webrequestrun.v1.CreateWebRequestRu
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRun item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRun webrequestrun = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRun}
  */
-proto.github.com.metaprov.modelaapi.services.webrequestrun.v1.CreateWebRequestRunRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.webrequestrun.v1.CreateWebRequestRunRequest.prototype.getWebrequestrun = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRun} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequestRun, 1));
 };
@@ -850,7 +850,7 @@ proto.github.com.metaprov.modelaapi.services.webrequestrun.v1.CreateWebRequestRu
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRun|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.webrequestrun.v1.CreateWebRequestRunRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.webrequestrun.v1.CreateWebRequestRunRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.webrequestrun.v1.CreateWebRequestRunRequest.prototype.setWebrequestrun = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -859,8 +859,8 @@ proto.github.com.metaprov.modelaapi.services.webrequestrun.v1.CreateWebRequestRu
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.webrequestrun.v1.CreateWebRequestRunRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.webrequestrun.v1.CreateWebRequestRunRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.webrequestrun.v1.CreateWebRequestRunRequest.prototype.clearWebrequestrun = function() {
+  return this.setWebrequestrun(undefined);
 };
 
 
@@ -868,7 +868,7 @@ proto.github.com.metaprov.modelaapi.services.webrequestrun.v1.CreateWebRequestRu
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.webrequestrun.v1.CreateWebRequestRunRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.webrequestrun.v1.CreateWebRequestRunRequest.prototype.hasWebrequestrun = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -1368,7 +1368,7 @@ proto.github.com.metaprov.modelaapi.services.webrequestrun.v1.GetWebRequestRunRe
  */
 proto.github.com.metaprov.modelaapi.services.webrequestrun.v1.GetWebRequestRunResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequestRun.toObject(includeInstance, f),
+    webrequestrun: (f = msg.getWebrequestrun()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequestRun.toObject(includeInstance, f),
     yaml: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -1409,7 +1409,7 @@ proto.github.com.metaprov.modelaapi.services.webrequestrun.v1.GetWebRequestRunRe
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequestRun;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequestRun.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setWebrequestrun(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -1444,7 +1444,7 @@ proto.github.com.metaprov.modelaapi.services.webrequestrun.v1.GetWebRequestRunRe
  */
 proto.github.com.metaprov.modelaapi.services.webrequestrun.v1.GetWebRequestRunResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getWebrequestrun();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1463,10 +1463,10 @@ proto.github.com.metaprov.modelaapi.services.webrequestrun.v1.GetWebRequestRunRe
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRun item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRun webrequestrun = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRun}
  */
-proto.github.com.metaprov.modelaapi.services.webrequestrun.v1.GetWebRequestRunResponse.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.webrequestrun.v1.GetWebRequestRunResponse.prototype.getWebrequestrun = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRun} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequestRun, 1));
 };
@@ -1476,7 +1476,7 @@ proto.github.com.metaprov.modelaapi.services.webrequestrun.v1.GetWebRequestRunRe
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRun|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.webrequestrun.v1.GetWebRequestRunResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.webrequestrun.v1.GetWebRequestRunResponse.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.webrequestrun.v1.GetWebRequestRunResponse.prototype.setWebrequestrun = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1485,8 +1485,8 @@ proto.github.com.metaprov.modelaapi.services.webrequestrun.v1.GetWebRequestRunRe
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.webrequestrun.v1.GetWebRequestRunResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.webrequestrun.v1.GetWebRequestRunResponse.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.webrequestrun.v1.GetWebRequestRunResponse.prototype.clearWebrequestrun = function() {
+  return this.setWebrequestrun(undefined);
 };
 
 
@@ -1494,7 +1494,7 @@ proto.github.com.metaprov.modelaapi.services.webrequestrun.v1.GetWebRequestRunRe
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.webrequestrun.v1.GetWebRequestRunResponse.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.webrequestrun.v1.GetWebRequestRunResponse.prototype.hasWebrequestrun = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

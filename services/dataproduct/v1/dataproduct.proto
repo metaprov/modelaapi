@@ -32,7 +32,7 @@ message CreateDataProductResponse {
 }
 
 message UpdateDataProductRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct dataproduct = 1;
     google.protobuf.FieldMask field_mask = 2;
 }
 

@@ -23,7 +23,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z2github.com/metaprov/modelaapi/services/apitoken/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nAgithub.com/metaprov/modelaapi/services/apitoken/v1/apitoken.proto\x12\x32github.com.metaprov.modelaapi.services.apitoken.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x45github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto\x1a=github.com/metaprov/modelaapi/services/common/v1/common.proto\x1a google/protobuf/field_mask.proto\"\xf7\x01\n\x14ListApiTokensRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x64\n\x06labels\x18\x02 \x03(\x0b\x32T.github.com.metaprov.modelaapi.services.apitoken.v1.ListApiTokensRequest.LabelsEntry\x12\x11\n\tpage_size\x18\x03 \x01(\x05\x12\x12\n\npage_token\x18\x04 \x01(\t\x12\x10\n\x08order_by\x18\x05 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x88\x01\n\x15ListApiTokensResponse\x12V\n\tapitokens\x18\x01 \x01(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiTokenList\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x12\n\x10\x41piTokenResponse\"x\n\x15\x43reateApiTokenRequest\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiToken\x12\x10\n\x08password\x18\x02 \x01(\t\"\x18\n\x16\x43reateApiTokenResponse\"\x96\x01\n\x15UpdateApiTokenRequest\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiToken\x12.\n\nfield_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"\x18\n\x16UpdateApiTokenResponse\"5\n\x12GetApiTokenRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"r\n\x13GetApiTokenResponse\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiToken\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"?\n\x1cGetApiTokenNamespacesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"t\n\x1dGetApiTokenNamespacesResponse\x12S\n\nnamespaces\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo\"8\n\x15\x44\x65leteApiTokenRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x18\n\x16\x44\x65leteApiTokenResponse\"\x18\n\x16\x41piTokenCreateResponse\"I\n\x14\x41piTokenLoginRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x10\n\x08password\x18\x03 \x01(\t\"&\n\x15\x41piTokenLoginResponse\x12\r\n\x05token\x18\x01 \x01(\t2\xb1\x08\n\x0f\x41piTokenService\x12\xc7\x01\n\rListApiTokens\x12H.github.com.metaprov.modelaapi.services.apitoken.v1.ListApiTokensRequest\x1aI.github.com.metaprov.modelaapi.services.apitoken.v1.ListApiTokensResponse\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/v1/apitokens/{namespace}\x12\xc1\x01\n\x0e\x43reateApiToken\x12I.github.com.metaprov.modelaapi.services.apitoken.v1.CreateApiTokenRequest\x1aJ.github.com.metaprov.modelaapi.services.apitoken.v1.CreateApiTokenResponse\"\x18\x82\xd3\xe4\x93\x02\x12\"\r/v1/apitokens:\x01*\x12\xc8\x01\n\x0bGetApiToken\x12\x46.github.com.metaprov.modelaapi.services.apitoken.v1.GetApiTokenRequest\x1aG.github.com.metaprov.modelaapi.services.apitoken.v1.GetApiTokenResponse\"(\x82\xd3\xe4\x93\x02\"\x12 /v1/apitokens/{namespace}/{name}\x12\xf0\x01\n\x0eUpdateApiToken\x12I.github.com.metaprov.modelaapi.services.apitoken.v1.UpdateApiTokenRequest\x1aJ.github.com.metaprov.modelaapi.services.apitoken.v1.UpdateApiTokenResponse\"G\x82\xd3\xe4\x93\x02\x41\x1a</v1/apitokens/{item.metadata.namespace}/{item.metadata.name}:\x01*\x12\xd1\x01\n\x0e\x44\x65leteApiToken\x12I.github.com.metaprov.modelaapi.services.apitoken.v1.DeleteApiTokenRequest\x1aJ.github.com.metaprov.modelaapi.services.apitoken.v1.DeleteApiTokenResponse\"(\x82\xd3\xe4\x93\x02\"* /v1/apitokens/{namespace}/{name}B4Z2github.com/metaprov/modelaapi/services/apitoken/v1b\x06proto3'
+  serialized_pb=b'\nAgithub.com/metaprov/modelaapi/services/apitoken/v1/apitoken.proto\x12\x32github.com.metaprov.modelaapi.services.apitoken.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x45github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto\x1a=github.com/metaprov/modelaapi/services/common/v1/common.proto\x1a google/protobuf/field_mask.proto\"\xf7\x01\n\x14ListApiTokensRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x64\n\x06labels\x18\x02 \x03(\x0b\x32T.github.com.metaprov.modelaapi.services.apitoken.v1.ListApiTokensRequest.LabelsEntry\x12\x11\n\tpage_size\x18\x03 \x01(\x05\x12\x12\n\npage_token\x18\x04 \x01(\t\x12\x10\n\x08order_by\x18\x05 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x88\x01\n\x15ListApiTokensResponse\x12V\n\tapitokens\x18\x01 \x01(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiTokenList\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x12\n\x10\x41piTokenResponse\"|\n\x15\x43reateApiTokenRequest\x12Q\n\x08\x61pitoken\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiToken\x12\x10\n\x08password\x18\x02 \x01(\t\"\x18\n\x16\x43reateApiTokenResponse\"\x9b\x01\n\x15UpdateApiTokenRequest\x12Q\n\x08\x61pitoken\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiToken\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"\x18\n\x16UpdateApiTokenResponse\"5\n\x12GetApiTokenRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"v\n\x13GetApiTokenResponse\x12Q\n\x08\x61pitoken\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiToken\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"?\n\x1cGetApiTokenNamespacesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"t\n\x1dGetApiTokenNamespacesResponse\x12S\n\nnamespaces\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo\"8\n\x15\x44\x65leteApiTokenRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x18\n\x16\x44\x65leteApiTokenResponse\"\x18\n\x16\x41piTokenCreateResponse\"I\n\x14\x41piTokenLoginRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x10\n\x08password\x18\x03 \x01(\t\"&\n\x15\x41piTokenLoginResponse\x12\r\n\x05token\x18\x01 \x01(\t2\xb1\x08\n\x0f\x41piTokenService\x12\xc7\x01\n\rListApiTokens\x12H.github.com.metaprov.modelaapi.services.apitoken.v1.ListApiTokensRequest\x1aI.github.com.metaprov.modelaapi.services.apitoken.v1.ListApiTokensResponse\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/v1/apitokens/{namespace}\x12\xc1\x01\n\x0e\x43reateApiToken\x12I.github.com.metaprov.modelaapi.services.apitoken.v1.CreateApiTokenRequest\x1aJ.github.com.metaprov.modelaapi.services.apitoken.v1.CreateApiTokenResponse\"\x18\x82\xd3\xe4\x93\x02\x12\"\r/v1/apitokens:\x01*\x12\xc8\x01\n\x0bGetApiToken\x12\x46.github.com.metaprov.modelaapi.services.apitoken.v1.GetApiTokenRequest\x1aG.github.com.metaprov.modelaapi.services.apitoken.v1.GetApiTokenResponse\"(\x82\xd3\xe4\x93\x02\"\x12 /v1/apitokens/{namespace}/{name}\x12\xf0\x01\n\x0eUpdateApiToken\x12I.github.com.metaprov.modelaapi.services.apitoken.v1.UpdateApiTokenRequest\x1aJ.github.com.metaprov.modelaapi.services.apitoken.v1.UpdateApiTokenResponse\"G\x82\xd3\xe4\x93\x02\x41\x1a</v1/apitokens/{item.metadata.namespace}/{item.metadata.name}:\x01*\x12\xd1\x01\n\x0e\x44\x65leteApiToken\x12I.github.com.metaprov.modelaapi.services.apitoken.v1.DeleteApiTokenRequest\x1aJ.github.com.metaprov.modelaapi.services.apitoken.v1.DeleteApiTokenResponse\"(\x82\xd3\xe4\x93\x02\"* /v1/apitokens/{namespace}/{name}B4Z2github.com/metaprov/modelaapi/services/apitoken/v1b\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_common_dot_v1_dot_common__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,])
 
@@ -201,7 +201,7 @@ _CREATEAPITOKENREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='item', full_name='github.com.metaprov.modelaapi.services.apitoken.v1.CreateApiTokenRequest.item', index=0,
+      name='apitoken', full_name='github.com.metaprov.modelaapi.services.apitoken.v1.CreateApiTokenRequest.apitoken', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -227,7 +227,7 @@ _CREATEAPITOKENREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=728,
-  serialized_end=848,
+  serialized_end=852,
 )
 
 
@@ -251,8 +251,8 @@ _CREATEAPITOKENRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=850,
-  serialized_end=874,
+  serialized_start=854,
+  serialized_end=878,
 )
 
 
@@ -265,14 +265,14 @@ _UPDATEAPITOKENREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='item', full_name='github.com.metaprov.modelaapi.services.apitoken.v1.UpdateApiTokenRequest.item', index=0,
+      name='apitoken', full_name='github.com.metaprov.modelaapi.services.apitoken.v1.UpdateApiTokenRequest.apitoken', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='field_mask', full_name='github.com.metaprov.modelaapi.services.apitoken.v1.UpdateApiTokenRequest.field_mask', index=1,
+      name='update_mask', full_name='github.com.metaprov.modelaapi.services.apitoken.v1.UpdateApiTokenRequest.update_mask', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -290,8 +290,8 @@ _UPDATEAPITOKENREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=877,
-  serialized_end=1027,
+  serialized_start=881,
+  serialized_end=1036,
 )
 
 
@@ -315,8 +315,8 @@ _UPDATEAPITOKENRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1029,
-  serialized_end=1053,
+  serialized_start=1038,
+  serialized_end=1062,
 )
 
 
@@ -354,8 +354,8 @@ _GETAPITOKENREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1055,
-  serialized_end=1108,
+  serialized_start=1064,
+  serialized_end=1117,
 )
 
 
@@ -368,7 +368,7 @@ _GETAPITOKENRESPONSE = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='item', full_name='github.com.metaprov.modelaapi.services.apitoken.v1.GetApiTokenResponse.item', index=0,
+      name='apitoken', full_name='github.com.metaprov.modelaapi.services.apitoken.v1.GetApiTokenResponse.apitoken', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -393,8 +393,8 @@ _GETAPITOKENRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1110,
-  serialized_end=1224,
+  serialized_start=1119,
+  serialized_end=1237,
 )
 
 
@@ -432,8 +432,8 @@ _GETAPITOKENNAMESPACESREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1226,
-  serialized_end=1289,
+  serialized_start=1239,
+  serialized_end=1302,
 )
 
 
@@ -464,8 +464,8 @@ _GETAPITOKENNAMESPACESRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1291,
-  serialized_end=1407,
+  serialized_start=1304,
+  serialized_end=1420,
 )
 
 
@@ -503,8 +503,8 @@ _DELETEAPITOKENREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1409,
-  serialized_end=1465,
+  serialized_start=1422,
+  serialized_end=1478,
 )
 
 
@@ -528,8 +528,8 @@ _DELETEAPITOKENRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1467,
-  serialized_end=1491,
+  serialized_start=1480,
+  serialized_end=1504,
 )
 
 
@@ -553,8 +553,8 @@ _APITOKENCREATERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1493,
-  serialized_end=1517,
+  serialized_start=1506,
+  serialized_end=1530,
 )
 
 
@@ -599,8 +599,8 @@ _APITOKENLOGINREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1519,
-  serialized_end=1592,
+  serialized_start=1532,
+  serialized_end=1605,
 )
 
 
@@ -631,17 +631,17 @@ _APITOKENLOGINRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1594,
-  serialized_end=1632,
+  serialized_start=1607,
+  serialized_end=1645,
 )
 
 _LISTAPITOKENSREQUEST_LABELSENTRY.containing_type = _LISTAPITOKENSREQUEST
 _LISTAPITOKENSREQUEST.fields_by_name['labels'].message_type = _LISTAPITOKENSREQUEST_LABELSENTRY
 _LISTAPITOKENSRESPONSE.fields_by_name['apitokens'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._APITOKENLIST
-_CREATEAPITOKENREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._APITOKEN
-_UPDATEAPITOKENREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._APITOKEN
-_UPDATEAPITOKENREQUEST.fields_by_name['field_mask'].message_type = google_dot_protobuf_dot_field__mask__pb2._FIELDMASK
-_GETAPITOKENRESPONSE.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._APITOKEN
+_CREATEAPITOKENREQUEST.fields_by_name['apitoken'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._APITOKEN
+_UPDATEAPITOKENREQUEST.fields_by_name['apitoken'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._APITOKEN
+_UPDATEAPITOKENREQUEST.fields_by_name['update_mask'].message_type = google_dot_protobuf_dot_field__mask__pb2._FIELDMASK
+_GETAPITOKENRESPONSE.fields_by_name['apitoken'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._APITOKEN
 _GETAPITOKENNAMESPACESRESPONSE.fields_by_name['namespaces'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_common_dot_v1_dot_common__pb2._NAMESPACEINFO
 DESCRIPTOR.message_types_by_name['ListApiTokensRequest'] = _LISTAPITOKENSREQUEST
 DESCRIPTOR.message_types_by_name['ListApiTokensResponse'] = _LISTAPITOKENSRESPONSE
@@ -792,8 +792,8 @@ _APITOKENSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1635,
-  serialized_end=2708,
+  serialized_start=1648,
+  serialized_end=2721,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListApiTokens',

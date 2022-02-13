@@ -907,7 +907,7 @@ proto.github.com.metaprov.modelaapi.services.todo.v1.UpdateTodoRequest.prototype
  */
 proto.github.com.metaprov.modelaapi.services.todo.v1.UpdateTodoRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Todo.toObject(includeInstance, f),
+    todo: (f = msg.getTodo()) && github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Todo.toObject(includeInstance, f),
     fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
@@ -948,7 +948,7 @@ proto.github.com.metaprov.modelaapi.services.todo.v1.UpdateTodoRequest.deseriali
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Todo;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Todo.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setTodo(value);
       break;
     case 2:
       var value = new google_protobuf_field_mask_pb.FieldMask;
@@ -984,7 +984,7 @@ proto.github.com.metaprov.modelaapi.services.todo.v1.UpdateTodoRequest.prototype
  */
 proto.github.com.metaprov.modelaapi.services.todo.v1.UpdateTodoRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getTodo();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1004,10 +1004,10 @@ proto.github.com.metaprov.modelaapi.services.todo.v1.UpdateTodoRequest.serialize
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Todo item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Todo todo = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Todo}
  */
-proto.github.com.metaprov.modelaapi.services.todo.v1.UpdateTodoRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.todo.v1.UpdateTodoRequest.prototype.getTodo = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Todo} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Todo, 1));
 };
@@ -1017,7 +1017,7 @@ proto.github.com.metaprov.modelaapi.services.todo.v1.UpdateTodoRequest.prototype
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Todo|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.todo.v1.UpdateTodoRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.todo.v1.UpdateTodoRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.todo.v1.UpdateTodoRequest.prototype.setTodo = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1026,8 +1026,8 @@ proto.github.com.metaprov.modelaapi.services.todo.v1.UpdateTodoRequest.prototype
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.todo.v1.UpdateTodoRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.todo.v1.UpdateTodoRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.todo.v1.UpdateTodoRequest.prototype.clearTodo = function() {
+  return this.setTodo(undefined);
 };
 
 
@@ -1035,7 +1035,7 @@ proto.github.com.metaprov.modelaapi.services.todo.v1.UpdateTodoRequest.prototype
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.todo.v1.UpdateTodoRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.todo.v1.UpdateTodoRequest.prototype.hasTodo = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

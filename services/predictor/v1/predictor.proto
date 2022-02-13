@@ -42,7 +42,7 @@ message GetPredictorRequest {
 }
 
 message GetPredictorResponse {
-    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor predictor = 1;
     string yaml = 2;
 
 }

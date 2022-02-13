@@ -29,7 +29,7 @@ message CreateModelAutobuilderResponse {
 }
 
 message UpdateModelAutobuilderRequest {
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilder item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilder modelautobuilder = 1;
     google.protobuf.FieldMask field_mask = 2;
 }
 
@@ -45,7 +45,7 @@ message GetModelAutobuilderRequest {
 
 
 message GetModelAutobuilderResponse {
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilder item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilder modelautobuilder = 1;
     string yaml = 2;
 }
 

@@ -965,7 +965,7 @@ proto.github.com.metaprov.modelaapi.services.servingsite.v1.UpdateServingSiteReq
  */
 proto.github.com.metaprov.modelaapi.services.servingsite.v1.UpdateServingSiteRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite.toObject(includeInstance, f),
+    servingsite: (f = msg.getServingsite()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite.toObject(includeInstance, f),
     fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
@@ -1006,7 +1006,7 @@ proto.github.com.metaprov.modelaapi.services.servingsite.v1.UpdateServingSiteReq
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setServingsite(value);
       break;
     case 2:
       var value = new google_protobuf_field_mask_pb.FieldMask;
@@ -1042,7 +1042,7 @@ proto.github.com.metaprov.modelaapi.services.servingsite.v1.UpdateServingSiteReq
  */
 proto.github.com.metaprov.modelaapi.services.servingsite.v1.UpdateServingSiteRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getServingsite();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1062,10 +1062,10 @@ proto.github.com.metaprov.modelaapi.services.servingsite.v1.UpdateServingSiteReq
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSite item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSite servingsite = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSite}
  */
-proto.github.com.metaprov.modelaapi.services.servingsite.v1.UpdateServingSiteRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.servingsite.v1.UpdateServingSiteRequest.prototype.getServingsite = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSite} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite, 1));
 };
@@ -1075,7 +1075,7 @@ proto.github.com.metaprov.modelaapi.services.servingsite.v1.UpdateServingSiteReq
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSite|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.servingsite.v1.UpdateServingSiteRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.servingsite.v1.UpdateServingSiteRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.servingsite.v1.UpdateServingSiteRequest.prototype.setServingsite = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1084,8 +1084,8 @@ proto.github.com.metaprov.modelaapi.services.servingsite.v1.UpdateServingSiteReq
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.servingsite.v1.UpdateServingSiteRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.servingsite.v1.UpdateServingSiteRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.servingsite.v1.UpdateServingSiteRequest.prototype.clearServingsite = function() {
+  return this.setServingsite(undefined);
 };
 
 
@@ -1093,7 +1093,7 @@ proto.github.com.metaprov.modelaapi.services.servingsite.v1.UpdateServingSiteReq
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.servingsite.v1.UpdateServingSiteRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.servingsite.v1.UpdateServingSiteRequest.prototype.hasServingsite = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

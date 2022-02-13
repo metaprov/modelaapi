@@ -33,10 +33,10 @@ export namespace GetReviewRequest {
 }
 
 export class GetReviewResponse extends jspb.Message {
-  getReviews(): github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Review | undefined;
-  setReviews(value?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Review): GetReviewResponse;
-  hasReviews(): boolean;
-  clearReviews(): GetReviewResponse;
+  getReview(): github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Review | undefined;
+  setReview(value?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Review): GetReviewResponse;
+  hasReview(): boolean;
+  clearReview(): GetReviewResponse;
 
   getYaml(): string;
   setYaml(value: string): GetReviewResponse;
@@ -51,7 +51,7 @@ export class GetReviewResponse extends jspb.Message {
 
 export namespace GetReviewResponse {
   export type AsObject = {
-    reviews?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Review.AsObject,
+    review?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Review.AsObject,
     yaml: string,
   }
 }
@@ -201,10 +201,10 @@ export namespace ListReviewRequest {
 }
 
 export class ListReviewResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.ReviewList | undefined;
-  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.ReviewList): ListReviewResponse;
-  hasItems(): boolean;
-  clearItems(): ListReviewResponse;
+  getReviewes(): github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.ReviewList | undefined;
+  setReviewes(value?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.ReviewList): ListReviewResponse;
+  hasReviewes(): boolean;
+  clearReviewes(): ListReviewResponse;
 
   getNextPageToken(): string;
   setNextPageToken(value: string): ListReviewResponse;
@@ -219,7 +219,7 @@ export class ListReviewResponse extends jspb.Message {
 
 export namespace ListReviewResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.ReviewList.AsObject,
+    reviewes?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.ReviewList.AsObject,
     nextPageToken: string,
   }
 }

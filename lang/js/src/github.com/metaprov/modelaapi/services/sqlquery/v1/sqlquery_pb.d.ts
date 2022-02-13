@@ -90,10 +90,10 @@ export namespace CreateSqlQueryRequest {
 }
 
 export class UpdateSqlQueryRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQuery | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQuery): UpdateSqlQueryRequest;
-  hasItem(): boolean;
-  clearItem(): UpdateSqlQueryRequest;
+  getSqlquery(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQuery | undefined;
+  setSqlquery(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQuery): UpdateSqlQueryRequest;
+  hasSqlquery(): boolean;
+  clearSqlquery(): UpdateSqlQueryRequest;
 
   getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
   setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): UpdateSqlQueryRequest;
@@ -110,7 +110,7 @@ export class UpdateSqlQueryRequest extends jspb.Message {
 
 export namespace UpdateSqlQueryRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQuery.AsObject,
+    sqlquery?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQuery.AsObject,
     fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
@@ -212,10 +212,10 @@ export namespace DeleteSqlQueryResponse {
 }
 
 export class RunSqlQueryRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQuery | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQuery): RunSqlQueryRequest;
-  hasItem(): boolean;
-  clearItem(): RunSqlQueryRequest;
+  getSqlquery(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQuery | undefined;
+  setSqlquery(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQuery): RunSqlQueryRequest;
+  hasSqlquery(): boolean;
+  clearSqlquery(): RunSqlQueryRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RunSqlQueryRequest.AsObject;
@@ -227,7 +227,7 @@ export class RunSqlQueryRequest extends jspb.Message {
 
 export namespace RunSqlQueryRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQuery.AsObject,
+    sqlquery?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQuery.AsObject,
   }
 }
 

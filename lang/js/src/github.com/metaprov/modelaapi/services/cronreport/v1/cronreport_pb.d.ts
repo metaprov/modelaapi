@@ -78,10 +78,10 @@ export namespace CreateCronReportResponse {
 }
 
 export class CreateCronReportRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.CronReport | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.CronReport): CreateCronReportRequest;
-  hasItem(): boolean;
-  clearItem(): CreateCronReportRequest;
+  getCronreport(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.CronReport | undefined;
+  setCronreport(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.CronReport): CreateCronReportRequest;
+  hasCronreport(): boolean;
+  clearCronreport(): CreateCronReportRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateCronReportRequest.AsObject;
@@ -93,15 +93,15 @@ export class CreateCronReportRequest extends jspb.Message {
 
 export namespace CreateCronReportRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.CronReport.AsObject,
+    cronreport?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.CronReport.AsObject,
   }
 }
 
 export class UpdateCronReportRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.CronReport | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.CronReport): UpdateCronReportRequest;
-  hasItem(): boolean;
-  clearItem(): UpdateCronReportRequest;
+  getCronreport(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.CronReport | undefined;
+  setCronreport(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.CronReport): UpdateCronReportRequest;
+  hasCronreport(): boolean;
+  clearCronreport(): UpdateCronReportRequest;
 
   getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
   setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): UpdateCronReportRequest;
@@ -118,7 +118,7 @@ export class UpdateCronReportRequest extends jspb.Message {
 
 export namespace UpdateCronReportRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.CronReport.AsObject,
+    cronreport?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.CronReport.AsObject,
     fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
@@ -160,10 +160,10 @@ export namespace GetCronReportRequest {
 }
 
 export class GetCronReportResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.CronReport | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.CronReport): GetCronReportResponse;
-  hasItem(): boolean;
-  clearItem(): GetCronReportResponse;
+  getCronreport(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.CronReport | undefined;
+  setCronreport(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.CronReport): GetCronReportResponse;
+  hasCronreport(): boolean;
+  clearCronreport(): GetCronReportResponse;
 
   getYaml(): string;
   setYaml(value: string): GetCronReportResponse;
@@ -178,7 +178,7 @@ export class GetCronReportResponse extends jspb.Message {
 
 export namespace GetCronReportResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.CronReport.AsObject,
+    cronreport?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.CronReport.AsObject,
     yaml: string,
   }
 }
@@ -292,10 +292,10 @@ export namespace ResumeCronReportResponse {
 }
 
 export class RunCronReportRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.CronReport | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.CronReport): RunCronReportRequest;
-  hasItem(): boolean;
-  clearItem(): RunCronReportRequest;
+  getCronreport(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.CronReport | undefined;
+  setCronreport(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.CronReport): RunCronReportRequest;
+  hasCronreport(): boolean;
+  clearCronreport(): RunCronReportRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RunCronReportRequest.AsObject;
@@ -307,7 +307,7 @@ export class RunCronReportRequest extends jspb.Message {
 
 export namespace RunCronReportRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.CronReport.AsObject,
+    cronreport?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.CronReport.AsObject,
   }
 }
 
