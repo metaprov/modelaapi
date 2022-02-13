@@ -12,13 +12,13 @@ message ListModelaSystemsRequest {
 }
 
 message ListModelaSystemsResponse {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemList modelaSystems = 1;   
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemList modelasystems = 1;   
 }
 
 message ModelaSystemResponse {}
 
 message CreateModelaSystemRequest {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystem  modelaSystem = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystem  modelasystem = 1;
     string password = 2;    
 }
 
@@ -27,7 +27,7 @@ message CreateModelaSystemResponse {
 }
 
 message UpdateModelaSystemRequest {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystem modelaSystem = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystem modelasystem = 1;
 }
 
 message UpdateModelaSystemResponse {
@@ -41,7 +41,7 @@ message GetModelaSystemRequest {
 
 
 message GetModelaSystemResponse {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystem modelaSystem = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystem modelasystem = 1;
     string yaml = 2;
 }
 

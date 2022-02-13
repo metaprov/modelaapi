@@ -17,18 +17,18 @@ message ListCronReportsRequest {
 }
 
 message ListCronReportsResponse {
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReportList cronReports = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReportList cronreports = 1;
     string next_page_token = 2;
 }
 
 message CreateCronReportResponse {}
 
 message CreateCronReportRequest {
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport cronReport = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport cronreport = 1;
 }
 
 message UpdateCronReportRequest {
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport cronReport = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport cronreport = 1;
     google.protobuf.FieldMask field_mask = 2;
 }
 
@@ -43,7 +43,7 @@ message GetCronReportRequest {
 }
 
 message GetCronReportResponse {
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport cronReport = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport cronreport = 1;
     string yaml = 2;
 
 }
@@ -75,10 +75,8 @@ message ResumeCronReportResponse {
 
 }
 
-
-
 message RunCronReportRequest {
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport cronReport = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport cronreport = 1;
 }
 
 

@@ -759,7 +759,7 @@ proto.github.com.metaprov.modelaapi.services.cronreport.v1.ListCronReportsRespon
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReportList cronReports = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReportList cronreports = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReportList}
  */
 proto.github.com.metaprov.modelaapi.services.cronreport.v1.ListCronReportsResponse.prototype.getCronreports = function() {
@@ -1029,7 +1029,7 @@ proto.github.com.metaprov.modelaapi.services.cronreport.v1.CreateCronReportReque
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport cronReport = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport cronreport = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport}
  */
 proto.github.com.metaprov.modelaapi.services.cronreport.v1.CreateCronReportRequest.prototype.getCronreport = function() {
@@ -1194,7 +1194,7 @@ proto.github.com.metaprov.modelaapi.services.cronreport.v1.UpdateCronReportReque
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport cronReport = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport cronreport = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport}
  */
 proto.github.com.metaprov.modelaapi.services.cronreport.v1.UpdateCronReportRequest.prototype.getCronreport = function() {
@@ -1655,7 +1655,7 @@ proto.github.com.metaprov.modelaapi.services.cronreport.v1.GetCronReportResponse
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport cronReport = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport cronreport = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport}
  */
 proto.github.com.metaprov.modelaapi.services.cronreport.v1.GetCronReportResponse.prototype.getCronreport = function() {
@@ -2607,7 +2607,7 @@ proto.github.com.metaprov.modelaapi.services.cronreport.v1.RunCronReportRequest.
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport cronReport = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport cronreport = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport}
  */
 proto.github.com.metaprov.modelaapi.services.cronreport.v1.RunCronReportRequest.prototype.getCronreport = function() {

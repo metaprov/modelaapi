@@ -833,7 +833,7 @@ proto.github.com.metaprov.modelaapi.services.modelasystem.v1.ListModelaSystemsRe
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemList modelaSystems = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemList modelasystems = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemList}
  */
 proto.github.com.metaprov.modelaapi.services.modelasystem.v1.ListModelaSystemsResponse.prototype.getModelasystems = function() {
@@ -1097,7 +1097,7 @@ proto.github.com.metaprov.modelaapi.services.modelasystem.v1.CreateModelaSystemR
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystem modelaSystem = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystem modelasystem = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystem}
  */
 proto.github.com.metaprov.modelaapi.services.modelasystem.v1.CreateModelaSystemRequest.prototype.getModelasystem = function() {
@@ -1367,7 +1367,7 @@ proto.github.com.metaprov.modelaapi.services.modelasystem.v1.UpdateModelaSystemR
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystem modelaSystem = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystem modelasystem = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystem}
  */
 proto.github.com.metaprov.modelaapi.services.modelasystem.v1.UpdateModelaSystemRequest.prototype.getModelasystem = function() {
@@ -1791,7 +1791,7 @@ proto.github.com.metaprov.modelaapi.services.modelasystem.v1.GetModelaSystemResp
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystem modelaSystem = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystem modelasystem = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystem}
  */
 proto.github.com.metaprov.modelaapi.services.modelasystem.v1.GetModelaSystemResponse.prototype.getModelasystem = function() {

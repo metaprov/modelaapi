@@ -569,10 +569,10 @@ export namespace ListModelsRequest {
 }
 
 export class ListModelsResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelList | undefined;
-  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelList): ListModelsResponse;
-  hasItems(): boolean;
-  clearItems(): ListModelsResponse;
+  getModels(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelList | undefined;
+  setModels(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelList): ListModelsResponse;
+  hasModels(): boolean;
+  clearModels(): ListModelsResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListModelsResponse.AsObject;
@@ -584,7 +584,7 @@ export class ListModelsResponse extends jspb.Message {
 
 export namespace ListModelsResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelList.AsObject,
+    models?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelList.AsObject,
   }
 }
 

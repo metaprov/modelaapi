@@ -759,7 +759,7 @@ proto.github.com.metaprov.modelaapi.services.cronprediction.v1.ListCronPredictio
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionList cronPredictions = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionList cronpredictions = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionList}
  */
 proto.github.com.metaprov.modelaapi.services.cronprediction.v1.ListCronPredictionsResponse.prototype.getCronpredictions = function() {
@@ -1029,7 +1029,7 @@ proto.github.com.metaprov.modelaapi.services.cronprediction.v1.CreateCronPredict
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPrediction cronPrediction = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPrediction cronprediction = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPrediction}
  */
 proto.github.com.metaprov.modelaapi.services.cronprediction.v1.CreateCronPredictionRequest.prototype.getCronprediction = function() {
@@ -1194,7 +1194,7 @@ proto.github.com.metaprov.modelaapi.services.cronprediction.v1.UpdateCronPredict
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPrediction cronPrediction = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPrediction cronprediction = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPrediction}
  */
 proto.github.com.metaprov.modelaapi.services.cronprediction.v1.UpdateCronPredictionRequest.prototype.getCronprediction = function() {
@@ -1655,7 +1655,7 @@ proto.github.com.metaprov.modelaapi.services.cronprediction.v1.GetCronPrediction
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPrediction cronPrediction = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPrediction cronprediction = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPrediction}
  */
 proto.github.com.metaprov.modelaapi.services.cronprediction.v1.GetCronPredictionResponse.prototype.getCronprediction = function() {
@@ -2607,7 +2607,7 @@ proto.github.com.metaprov.modelaapi.services.cronprediction.v1.RunCronPrediction
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPrediction cronPrediction = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPrediction cronprediction = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPrediction}
  */
 proto.github.com.metaprov.modelaapi.services.cronprediction.v1.RunCronPredictionRequest.prototype.getCronprediction = function() {

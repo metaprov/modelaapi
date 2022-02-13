@@ -141,7 +141,7 @@ message ListModelsRequest {
 }
 
 message ListModelsResponse {
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelList models = 1;
 }
 
 

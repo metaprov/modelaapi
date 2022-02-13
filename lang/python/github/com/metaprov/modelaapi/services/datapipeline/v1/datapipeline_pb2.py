@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z6github.com/metaprov/modelaapi/services/datapipeline/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nIgithub.com/metaprov/modelaapi/services/datapipeline/v1/datapipeline.proto\x12\x36github.com.metaprov.modelaapi.services.datapipeline.v1\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x44github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto\"\x83\x02\n\x18ListDataPipelinesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12l\n\x06labels\x18\x02 \x03(\x0b\x32\\.github.com.metaprov.modelaapi.services.datapipeline.v1.ListDataPipelinesRequest.LabelsEntry\x12\x11\n\tpage_size\x18\x03 \x01(\x05\x12\x12\n\npage_token\x18\x04 \x01(\t\x12\x10\n\x08order_by\x18\x05 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x8f\x01\n\x19ListDataPipelinesResponse\x12Y\n\tpipelines\x18\x01 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineList\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"q\n\x19\x43reateDataPipelineRequest\x12T\n\x08pipeline\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipeline\"\x1c\n\x1a\x43reateDataPipelineResponse\"\xa1\x01\n\x19UpdateDataPipelineRequest\x12T\n\x08pipeline\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipeline\x12.\n\nfield_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"\x1c\n\x1aUpdateDataPipelineResponse\"9\n\x16GetDataPipelineRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"}\n\x17GetDataPipelineResponse\x12T\n\x08pipeline\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipeline\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"9\n\x16RunDataPipelineRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"}\n\x17RunDataPipelineResponse\x12T\n\x08pipeline\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipeline\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"<\n\x19\x44\x65leteDataPipelineRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1c\n\x1a\x44\x65leteDataPipelineResponse2\xa4\x0b\n\x13\x44\x61taPipelineService\x12\xdf\x01\n\x11ListDataPipelines\x12P.github.com.metaprov.modelaapi.services.datapipeline.v1.ListDataPipelinesRequest\x1aQ.github.com.metaprov.modelaapi.services.datapipeline.v1.ListDataPipelinesResponse\"%\x82\xd3\xe4\x93\x02\x1f\x12\x1d/v1/datapipelines/{namespace}\x12\xd9\x01\n\x12\x43reateDataPipeline\x12Q.github.com.metaprov.modelaapi.services.datapipeline.v1.CreateDataPipelineRequest\x1aR.github.com.metaprov.modelaapi.services.datapipeline.v1.CreateDataPipelineResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\"\x11/v1/datapipelines:\x01*\x12\xe0\x01\n\x0fGetDataPipeline\x12N.github.com.metaprov.modelaapi.services.datapipeline.v1.GetDataPipelineRequest\x1aO.github.com.metaprov.modelaapi.services.datapipeline.v1.GetDataPipelineResponse\",\x82\xd3\xe4\x93\x02&\x12$/v1/datapipelines/{namespace}/{name}\x12\x98\x02\n\x12UpdateDataPipeline\x12Q.github.com.metaprov.modelaapi.services.datapipeline.v1.UpdateDataPipelineRequest\x1aR.github.com.metaprov.modelaapi.services.datapipeline.v1.UpdateDataPipelineResponse\"[\x82\xd3\xe4\x93\x02U\x1aP/v1/datapipelines/{datapipeline.metadata.namespace}/{datapipeline.metadata.name}:\x01*\x12\xe9\x01\n\x12\x44\x65leteDataPipeline\x12Q.github.com.metaprov.modelaapi.services.datapipeline.v1.DeleteDataPipelineRequest\x1aR.github.com.metaprov.modelaapi.services.datapipeline.v1.DeleteDataPipelineResponse\",\x82\xd3\xe4\x93\x02&*$/v1/datapipelines/{namespace}/{name}\x12\xe4\x01\n\x0fRunDataPipeline\x12N.github.com.metaprov.modelaapi.services.datapipeline.v1.RunDataPipelineRequest\x1aO.github.com.metaprov.modelaapi.services.datapipeline.v1.RunDataPipelineResponse\"0\x82\xd3\xe4\x93\x02*\"(/v1/datapipelines/{namespace}/{name}:runB8Z6github.com/metaprov/modelaapi/services/datapipeline/v1b\x06proto3'
+  serialized_pb=b'\nIgithub.com/metaprov/modelaapi/services/datapipeline/v1/datapipeline.proto\x12\x36github.com.metaprov.modelaapi.services.datapipeline.v1\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x44github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto\"\x83\x02\n\x18ListDataPipelinesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12l\n\x06labels\x18\x02 \x03(\x0b\x32\\.github.com.metaprov.modelaapi.services.datapipeline.v1.ListDataPipelinesRequest.LabelsEntry\x12\x11\n\tpage_size\x18\x03 \x01(\x05\x12\x12\n\npage_token\x18\x04 \x01(\t\x12\x10\n\x08order_by\x18\x05 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x93\x01\n\x19ListDataPipelinesResponse\x12]\n\rdatapipelines\x18\x01 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineList\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"u\n\x19\x43reateDataPipelineRequest\x12X\n\x0c\x64\x61tapipeline\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipeline\"\x1c\n\x1a\x43reateDataPipelineResponse\"\xa5\x01\n\x19UpdateDataPipelineRequest\x12X\n\x0c\x64\x61tapipeline\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipeline\x12.\n\nfield_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"\x1c\n\x1aUpdateDataPipelineResponse\"9\n\x16GetDataPipelineRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x81\x01\n\x17GetDataPipelineResponse\x12X\n\x0c\x64\x61tapipeline\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipeline\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"9\n\x16RunDataPipelineRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"}\n\x17RunDataPipelineResponse\x12T\n\x08pipeline\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipeline\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"<\n\x19\x44\x65leteDataPipelineRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1c\n\x1a\x44\x65leteDataPipelineResponse2\xa4\x0b\n\x13\x44\x61taPipelineService\x12\xdf\x01\n\x11ListDataPipelines\x12P.github.com.metaprov.modelaapi.services.datapipeline.v1.ListDataPipelinesRequest\x1aQ.github.com.metaprov.modelaapi.services.datapipeline.v1.ListDataPipelinesResponse\"%\x82\xd3\xe4\x93\x02\x1f\x12\x1d/v1/datapipelines/{namespace}\x12\xd9\x01\n\x12\x43reateDataPipeline\x12Q.github.com.metaprov.modelaapi.services.datapipeline.v1.CreateDataPipelineRequest\x1aR.github.com.metaprov.modelaapi.services.datapipeline.v1.CreateDataPipelineResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\"\x11/v1/datapipelines:\x01*\x12\xe0\x01\n\x0fGetDataPipeline\x12N.github.com.metaprov.modelaapi.services.datapipeline.v1.GetDataPipelineRequest\x1aO.github.com.metaprov.modelaapi.services.datapipeline.v1.GetDataPipelineResponse\",\x82\xd3\xe4\x93\x02&\x12$/v1/datapipelines/{namespace}/{name}\x12\x98\x02\n\x12UpdateDataPipeline\x12Q.github.com.metaprov.modelaapi.services.datapipeline.v1.UpdateDataPipelineRequest\x1aR.github.com.metaprov.modelaapi.services.datapipeline.v1.UpdateDataPipelineResponse\"[\x82\xd3\xe4\x93\x02U\x1aP/v1/datapipelines/{datapipeline.metadata.namespace}/{datapipeline.metadata.name}:\x01*\x12\xe9\x01\n\x12\x44\x65leteDataPipeline\x12Q.github.com.metaprov.modelaapi.services.datapipeline.v1.DeleteDataPipelineRequest\x1aR.github.com.metaprov.modelaapi.services.datapipeline.v1.DeleteDataPipelineResponse\",\x82\xd3\xe4\x93\x02&*$/v1/datapipelines/{namespace}/{name}\x12\xe4\x01\n\x0fRunDataPipeline\x12N.github.com.metaprov.modelaapi.services.datapipeline.v1.RunDataPipelineRequest\x1aO.github.com.metaprov.modelaapi.services.datapipeline.v1.RunDataPipelineResponse\"0\x82\xd3\xe4\x93\x02*\"(/v1/datapipelines/{namespace}/{name}:runB8Z6github.com/metaprov/modelaapi/services/datapipeline/v1b\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
 
@@ -136,7 +136,7 @@ _LISTDATAPIPELINESRESPONSE = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='pipelines', full_name='github.com.metaprov.modelaapi.services.datapipeline.v1.ListDataPipelinesResponse.pipelines', index=0,
+      name='datapipelines', full_name='github.com.metaprov.modelaapi.services.datapipeline.v1.ListDataPipelinesResponse.datapipelines', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -162,7 +162,7 @@ _LISTDATAPIPELINESRESPONSE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=530,
-  serialized_end=673,
+  serialized_end=677,
 )
 
 
@@ -175,7 +175,7 @@ _CREATEDATAPIPELINEREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='pipeline', full_name='github.com.metaprov.modelaapi.services.datapipeline.v1.CreateDataPipelineRequest.pipeline', index=0,
+      name='datapipeline', full_name='github.com.metaprov.modelaapi.services.datapipeline.v1.CreateDataPipelineRequest.datapipeline', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -193,8 +193,8 @@ _CREATEDATAPIPELINEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=675,
-  serialized_end=788,
+  serialized_start=679,
+  serialized_end=796,
 )
 
 
@@ -218,8 +218,8 @@ _CREATEDATAPIPELINERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=790,
-  serialized_end=818,
+  serialized_start=798,
+  serialized_end=826,
 )
 
 
@@ -232,7 +232,7 @@ _UPDATEDATAPIPELINEREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='pipeline', full_name='github.com.metaprov.modelaapi.services.datapipeline.v1.UpdateDataPipelineRequest.pipeline', index=0,
+      name='datapipeline', full_name='github.com.metaprov.modelaapi.services.datapipeline.v1.UpdateDataPipelineRequest.datapipeline', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -257,8 +257,8 @@ _UPDATEDATAPIPELINEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=821,
-  serialized_end=982,
+  serialized_start=829,
+  serialized_end=994,
 )
 
 
@@ -282,8 +282,8 @@ _UPDATEDATAPIPELINERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=984,
-  serialized_end=1012,
+  serialized_start=996,
+  serialized_end=1024,
 )
 
 
@@ -321,8 +321,8 @@ _GETDATAPIPELINEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1014,
-  serialized_end=1071,
+  serialized_start=1026,
+  serialized_end=1083,
 )
 
 
@@ -335,7 +335,7 @@ _GETDATAPIPELINERESPONSE = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='pipeline', full_name='github.com.metaprov.modelaapi.services.datapipeline.v1.GetDataPipelineResponse.pipeline', index=0,
+      name='datapipeline', full_name='github.com.metaprov.modelaapi.services.datapipeline.v1.GetDataPipelineResponse.datapipeline', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -360,8 +360,8 @@ _GETDATAPIPELINERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1073,
-  serialized_end=1198,
+  serialized_start=1086,
+  serialized_end=1215,
 )
 
 
@@ -399,8 +399,8 @@ _RUNDATAPIPELINEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1200,
-  serialized_end=1257,
+  serialized_start=1217,
+  serialized_end=1274,
 )
 
 
@@ -438,8 +438,8 @@ _RUNDATAPIPELINERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1259,
-  serialized_end=1384,
+  serialized_start=1276,
+  serialized_end=1401,
 )
 
 
@@ -477,8 +477,8 @@ _DELETEDATAPIPELINEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1386,
-  serialized_end=1446,
+  serialized_start=1403,
+  serialized_end=1463,
 )
 
 
@@ -502,17 +502,17 @@ _DELETEDATAPIPELINERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1448,
-  serialized_end=1476,
+  serialized_start=1465,
+  serialized_end=1493,
 )
 
 _LISTDATAPIPELINESREQUEST_LABELSENTRY.containing_type = _LISTDATAPIPELINESREQUEST
 _LISTDATAPIPELINESREQUEST.fields_by_name['labels'].message_type = _LISTDATAPIPELINESREQUEST_LABELSENTRY
-_LISTDATAPIPELINESRESPONSE.fields_by_name['pipelines'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATAPIPELINELIST
-_CREATEDATAPIPELINEREQUEST.fields_by_name['pipeline'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATAPIPELINE
-_UPDATEDATAPIPELINEREQUEST.fields_by_name['pipeline'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATAPIPELINE
+_LISTDATAPIPELINESRESPONSE.fields_by_name['datapipelines'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATAPIPELINELIST
+_CREATEDATAPIPELINEREQUEST.fields_by_name['datapipeline'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATAPIPELINE
+_UPDATEDATAPIPELINEREQUEST.fields_by_name['datapipeline'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATAPIPELINE
 _UPDATEDATAPIPELINEREQUEST.fields_by_name['field_mask'].message_type = google_dot_protobuf_dot_field__mask__pb2._FIELDMASK
-_GETDATAPIPELINERESPONSE.fields_by_name['pipeline'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATAPIPELINE
+_GETDATAPIPELINERESPONSE.fields_by_name['datapipeline'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATAPIPELINE
 _RUNDATAPIPELINERESPONSE.fields_by_name['pipeline'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATAPIPELINE
 DESCRIPTOR.message_types_by_name['ListDataPipelinesRequest'] = _LISTDATAPIPELINESREQUEST
 DESCRIPTOR.message_types_by_name['ListDataPipelinesResponse'] = _LISTDATAPIPELINESRESPONSE
@@ -631,8 +631,8 @@ _DATAPIPELINESERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1479,
-  serialized_end=2923,
+  serialized_start=1496,
+  serialized_end=2940,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListDataPipelines',

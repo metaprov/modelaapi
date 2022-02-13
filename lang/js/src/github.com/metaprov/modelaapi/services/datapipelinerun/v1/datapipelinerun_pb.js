@@ -759,7 +759,7 @@ proto.github.com.metaprov.modelaapi.services.datapipelinerun.v1.ListDataPipeline
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRunList dataPipelineRuns = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRunList datapipelineruns = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRunList}
  */
 proto.github.com.metaprov.modelaapi.services.datapipelinerun.v1.ListDataPipelineRunResponse.prototype.getDatapipelineruns = function() {
@@ -928,7 +928,7 @@ proto.github.com.metaprov.modelaapi.services.datapipelinerun.v1.CreateDataPipeli
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRun dataPipelineRun = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRun datapipelinerun = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRun}
  */
 proto.github.com.metaprov.modelaapi.services.datapipelinerun.v1.CreateDataPipelineRunRequest.prototype.getDatapipelinerun = function() {
@@ -1194,7 +1194,7 @@ proto.github.com.metaprov.modelaapi.services.datapipelinerun.v1.UpdateDataPipeli
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRun dataPipelineRun = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRun datapipelinerun = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRun}
  */
 proto.github.com.metaprov.modelaapi.services.datapipelinerun.v1.UpdateDataPipelineRunRequest.prototype.getDatapipelinerun = function() {
@@ -1655,7 +1655,7 @@ proto.github.com.metaprov.modelaapi.services.datapipelinerun.v1.GetDataPipelineR
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRun dataPipelineRun = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRun datapipelinerun = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRun}
  */
 proto.github.com.metaprov.modelaapi.services.datapipelinerun.v1.GetDataPipelineRunResponse.prototype.getDatapipelinerun = function() {

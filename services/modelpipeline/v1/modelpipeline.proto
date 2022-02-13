@@ -45,7 +45,7 @@ message GetModelPipelineRequest {
 
 
 message GetModelPipelineResponse {
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipeline modelPipeline = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipeline modelpipeline = 1;
     string yaml = 2;
 }
 
@@ -60,7 +60,7 @@ message DeleteModelPipelineResponse {
 }
 
 message RunModelPipelineRequest {
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipeline modelPipeline = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipeline modelpipeline = 1;
 }
 
 message RunModelPipelineResponse {

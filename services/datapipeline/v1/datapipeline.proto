@@ -15,19 +15,19 @@ message ListDataPipelinesRequest {
 }
 
 message ListDataPipelinesResponse {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineList pipelines = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineList datapipelines = 1;
     string next_page_token = 2;
 }
 
 message CreateDataPipelineRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipeline pipeline = 1;    
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipeline datapipeline = 1;    
 }
 
 message CreateDataPipelineResponse {
 }
 
 message UpdateDataPipelineRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipeline pipeline = 1;  
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipeline datapipeline = 1;  
     google.protobuf.FieldMask field_mask = 2;  
 }
 
@@ -42,7 +42,7 @@ message GetDataPipelineRequest {
 
 
 message GetDataPipelineResponse {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipeline pipeline = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipeline datapipeline = 1;
     string yaml = 2;
 }
 

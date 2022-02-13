@@ -627,7 +627,7 @@ proto.github.com.metaprov.modelaapi.services.reciperun.v1.ListRecipeRunsResponse
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRunList recipeRuns = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRunList reciperuns = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRunList}
  */
 proto.github.com.metaprov.modelaapi.services.reciperun.v1.ListRecipeRunsResponse.prototype.getReciperuns = function() {
@@ -796,7 +796,7 @@ proto.github.com.metaprov.modelaapi.services.reciperun.v1.CreateRecipeRunRequest
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRun recipeRun = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRun reciperun = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRun}
  */
 proto.github.com.metaprov.modelaapi.services.reciperun.v1.CreateRecipeRunRequest.prototype.getReciperun = function() {
@@ -1062,7 +1062,7 @@ proto.github.com.metaprov.modelaapi.services.reciperun.v1.UpdateRecipeRunRequest
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRun recipeRun = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRun reciperun = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRun}
  */
 proto.github.com.metaprov.modelaapi.services.reciperun.v1.UpdateRecipeRunRequest.prototype.getReciperun = function() {
@@ -1523,7 +1523,7 @@ proto.github.com.metaprov.modelaapi.services.reciperun.v1.GetRecipeRunResponse.s
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRun recipeRun = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRun reciperun = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRun}
  */
 proto.github.com.metaprov.modelaapi.services.reciperun.v1.GetRecipeRunResponse.prototype.getReciperun = function() {

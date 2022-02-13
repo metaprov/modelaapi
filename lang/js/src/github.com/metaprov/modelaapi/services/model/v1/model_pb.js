@@ -5092,7 +5092,7 @@ proto.github.com.metaprov.modelaapi.services.model.v1.ListModelsResponse.prototy
  */
 proto.github.com.metaprov.modelaapi.services.model.v1.ListModelsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    items: (f = msg.getItems()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelList.toObject(includeInstance, f)
+    models: (f = msg.getModels()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelList.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -5132,7 +5132,7 @@ proto.github.com.metaprov.modelaapi.services.model.v1.ListModelsResponse.deseria
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelList;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelList.deserializeBinaryFromReader);
-      msg.setItems(value);
+      msg.setModels(value);
       break;
     default:
       reader.skipField();
@@ -5163,7 +5163,7 @@ proto.github.com.metaprov.modelaapi.services.model.v1.ListModelsResponse.prototy
  */
 proto.github.com.metaprov.modelaapi.services.model.v1.ListModelsResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItems();
+  f = message.getModels();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -5175,10 +5175,10 @@ proto.github.com.metaprov.modelaapi.services.model.v1.ListModelsResponse.seriali
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelList items = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelList models = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelList}
  */
-proto.github.com.metaprov.modelaapi.services.model.v1.ListModelsResponse.prototype.getItems = function() {
+proto.github.com.metaprov.modelaapi.services.model.v1.ListModelsResponse.prototype.getModels = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelList} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelList, 1));
 };
@@ -5188,7 +5188,7 @@ proto.github.com.metaprov.modelaapi.services.model.v1.ListModelsResponse.prototy
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelList|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.model.v1.ListModelsResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.model.v1.ListModelsResponse.prototype.setItems = function(value) {
+proto.github.com.metaprov.modelaapi.services.model.v1.ListModelsResponse.prototype.setModels = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -5197,8 +5197,8 @@ proto.github.com.metaprov.modelaapi.services.model.v1.ListModelsResponse.prototy
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.model.v1.ListModelsResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.model.v1.ListModelsResponse.prototype.clearItems = function() {
-  return this.setItems(undefined);
+proto.github.com.metaprov.modelaapi.services.model.v1.ListModelsResponse.prototype.clearModels = function() {
+  return this.setModels(undefined);
 };
 
 
@@ -5206,7 +5206,7 @@ proto.github.com.metaprov.modelaapi.services.model.v1.ListModelsResponse.prototy
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.model.v1.ListModelsResponse.prototype.hasItems = function() {
+proto.github.com.metaprov.modelaapi.services.model.v1.ListModelsResponse.prototype.hasModels = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

@@ -1778,7 +1778,7 @@ proto.github.com.metaprov.modelaapi.services.modelpipeline.v1.GetModelPipelineRe
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipeline modelPipeline = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipeline modelpipeline = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipeline}
  */
 proto.github.com.metaprov.modelaapi.services.modelpipeline.v1.GetModelPipelineResponse.prototype.getModelpipeline = function() {
@@ -2208,7 +2208,7 @@ proto.github.com.metaprov.modelaapi.services.modelpipeline.v1.RunModelPipelineRe
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipeline modelPipeline = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipeline modelpipeline = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipeline}
  */
 proto.github.com.metaprov.modelaapi.services.modelpipeline.v1.RunModelPipelineRequest.prototype.getModelpipeline = function() {

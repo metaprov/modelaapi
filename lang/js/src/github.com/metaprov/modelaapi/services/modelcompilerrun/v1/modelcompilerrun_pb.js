@@ -649,7 +649,7 @@ proto.github.com.metaprov.modelaapi.services.modelcompilerrun.v1.ListModelCompil
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunList modelCompilerRuns = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunList modelcompilerruns = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunList}
  */
 proto.github.com.metaprov.modelaapi.services.modelcompilerrun.v1.ListModelCompilerRunsResponse.prototype.getModelcompilerruns = function() {
@@ -919,7 +919,7 @@ proto.github.com.metaprov.modelaapi.services.modelcompilerrun.v1.CreateModelComp
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRun modelCompilerRun = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRun modelcompilerrun = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRun}
  */
 proto.github.com.metaprov.modelaapi.services.modelcompilerrun.v1.CreateModelCompilerRunRequest.prototype.getModelcompilerrun = function() {
@@ -1185,7 +1185,7 @@ proto.github.com.metaprov.modelaapi.services.modelcompilerrun.v1.UpdateModelComp
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRun modelCompilerRun = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRun modelcompilerrun = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRun}
  */
 proto.github.com.metaprov.modelaapi.services.modelcompilerrun.v1.UpdateModelCompilerRunRequest.prototype.getModelcompilerrun = function() {
@@ -1646,7 +1646,7 @@ proto.github.com.metaprov.modelaapi.services.modelcompilerrun.v1.GetModelCompile
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRun modelCompilerRun = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRun modelcompilerrun = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRun}
  */
 proto.github.com.metaprov.modelaapi.services.modelcompilerrun.v1.GetModelCompilerRunResponse.prototype.getModelcompilerrun = function() {
