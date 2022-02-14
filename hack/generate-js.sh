@@ -32,6 +32,7 @@ protoc \
     k8s.io/apimachinery/pkg/apis/meta/v1/generated.proto \
     k8s.io/apimachinery/pkg/util/intstr/generated.proto \
     k8s.io/api/core/v1/generated.proto \
+    k8s.io/api/apps/v1/generated.proto \
     k8s.io/api/rbac/v1/generated.proto \
     k8s.io/apimachinery/pkg/api/resource/generated.proto \
     k8s.io/apimachinery/pkg/runtime/schema/generated.proto \
