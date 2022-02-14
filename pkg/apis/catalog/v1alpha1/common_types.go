@@ -1917,9 +1917,13 @@ type ResourceSpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Custom *bool `json:"enable,omitempty" protobuf:"bytes,2,opt,name=enable"`
+	// Reference to the managed gpu trainer image
+	CpuImage v1.ObjectReference `json:"cpuImage,omitempty" protobuf:"bytes,3,opt,name=cpuImage"`
+	// Reference to the managed gpu trainer image
+	GpuImage v1.ObjectReference `json:"gpuImage,omitempty" protobuf:"bytes,4,opt,name=gpuImage"`
 	// Custom resource requirments
 	// +kubebuilder:validation:Optional
-	Requirements *v1.ResourceRequirements `json:"requirements,omitempty" protobuf:"bytes,3,opt,name=requirements"`
+	Requirements *v1.ResourceRequirements `json:"requirements,omitempty" protobuf:"bytes,5,opt,name=requirements"`
 }
 
 // +kubebuilder:validation:Enum="random";"split-column";"time";"random-stratified";

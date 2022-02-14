@@ -419,8 +419,73 @@ message ManagedImageList {
 
 // ManagedImageSpec is the desired state of the pretrained model
 message ManagedImageSpec {
-  // Image is the docker image of the pretrained model
-  optional string image = 1;
+  optional string description = 1;
+
+  // The image registry, by default use docker.io
+  // +kubebuilder:default ="docker.io"
+  // +kubebuilder:validation:Optional
+  optional string registry = 2;
+
+  // The image repository. This is a required field
+  // +kubebuilder:validation:Required
+  optional string repository = 3;
+
+  // The image tag. by default this is latest
+  // +kubebuilder:default ="latest"
+  // +kubebuilder:validation:Optional
+  optional string tag = 4;
+
+  // The environment variables to use when the image start
+  repeated k8s.io.api.core.v1.EnvVar env = 5;
+
+  // Is this a gpu image
+  // +kubebuilder:default ="false"
+  // +kubebuilder:validation:Optional
+  optional bool gpu = 6;
+
+  // Is this a trainer image
+  // +kubebuilder:default ="false"
+  // +kubebuilder:validation:Optional
+  optional bool trainer = 7;
+
+  // If true this is an active image that should be used for new training.
+  // +kubebuilder:default ="false"
+  // +kubebuilder:validation:Optional
+  optional bool active = 8;
+
+  // The base image for this image.
+  // +kubebuilder:default =""
+  // +kubebuilder:validation:Optional
+  optional string base = 9;
+
+  // The base image for this image.
+  // +kubebuilder:default =""
+  // +kubebuilder:validation:Optional
+  optional bool system = 10;
+
+  // The organization maintaining this image
+  // +kubebuilder:default ="metaprov"
+  // +kubebuilder:validation:Optional
+  // Who maintain this image.
+  optional string mantainedBy = 11;
+
+  // The Image home page in the registry
+  // +kubebuilder:default =""
+  // +kubebuilder:validation:Optional
+  // Who maintain this image.
+  optional string uri = 12;
+
+  // List of ml frameworks supported by the data container
+  repeated string frameworks = 13;
+
+  // Libs is the list of python library supported by the data container
+  repeated Lib libs = 14;
+
+  // OS is the name of the os
+  optional string os = 15;
+
+  // OSVersion is the version of the os
+  optional string osVersion = 16;
 }
 
 // Measurement is a value for a specific metric
@@ -734,9 +799,15 @@ message ResourceSpec {
   // +kubebuilder:validation:Optional
   optional bool enable = 2;
 
+  // Reference to the managed gpu trainer image
+  optional k8s.io.api.core.v1.ObjectReference cpuImage = 3;
+
+  // Reference to the managed gpu trainer image
+  optional k8s.io.api.core.v1.ObjectReference gpuImage = 4;
+
   // Custom resource requirments
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ResourceRequirements requirements = 3;
+  optional k8s.io.api.core.v1.ResourceRequirements requirements = 5;
 }
 
 message RocAucCurve {
@@ -830,16 +901,10 @@ message WorkloadClassList {
 message WorkloadClassSpec {
   optional ResourceSpec resourcesTemplate = 1;
 
-  // List of ml frameworks supported by the data container
-  repeated string frameworks = 3;
+  // Reference to the managed image
+  optional k8s.io.api.core.v1.LocalObjectReference cpuImage = 2;
 
-  // Libs is the list of python library supported by the data container
-  repeated Lib libs = 4;
-
-  // OS is the name of the os
-  optional string os = 5;
-
-  // OSVersion is the version of the os
-  optional string osVersion = 6;
+  // Reference to the managed image
+  optional k8s.io.api.core.v1.LocalObjectReference gpuImage = 3;
 }
 

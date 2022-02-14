@@ -1,6 +1,7 @@
 package v1alpha1
 
 import (
+	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
@@ -17,14 +18,10 @@ type WorkloadClass struct {
 //WorkloadClassSpec defines the specification of  a workload class.
 type WorkloadClassSpec struct {
 	ResourcesTemplate *ResourceSpec `json:"resourcesTemplate,omitempty" protobuf:"bytes,1,opt,name=resourcesTemplate"`
-	// List of ml frameworks supported by the data container
-	Frameworks []string `json:"frameworks,omitempty" protobuf:"bytes,3,rep,name=frameworks"`
-	// Libs is the list of python library supported by the data container
-	Libs []Lib `json:"libs,omitempty" protobuf:"bytes,4,rep,name=libs"`
-	// OS is the name of the os
-	OS string `json:"os,omitempty" protobuf:"bytes,5,opt,name=os"`
-	// OSVersion is the version of the os
-	OSVersion string `json:"osVersion,omitempty" protobuf:"bytes,6,opt,name=osVersion"`
+	// Reference to the managed image
+	CpuImage v1.LocalObjectReference `json:"cpuImage,omitempty" protobuf:"bytes,2,opt,name=cpuImage"`
+	// Reference to the managed image
+	GpuImage v1.LocalObjectReference `json:"gpuImage,omitempty" protobuf:"bytes,3,opt,name=gpuImage"`
 }
 
 //==============================================================================

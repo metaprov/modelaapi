@@ -843,8 +843,59 @@ export namespace ManagedImageList {
 }
 
 export class ManagedImageSpec extends jspb.Message {
-  getImage(): string;
-  setImage(value: string): ManagedImageSpec;
+  getDescription(): string;
+  setDescription(value: string): ManagedImageSpec;
+
+  getRegistry(): string;
+  setRegistry(value: string): ManagedImageSpec;
+
+  getRepository(): string;
+  setRepository(value: string): ManagedImageSpec;
+
+  getTag(): string;
+  setTag(value: string): ManagedImageSpec;
+
+  getEnvList(): Array<k8s_io_api_core_v1_generated_pb.EnvVar>;
+  setEnvList(value: Array<k8s_io_api_core_v1_generated_pb.EnvVar>): ManagedImageSpec;
+  clearEnvList(): ManagedImageSpec;
+  addEnv(value?: k8s_io_api_core_v1_generated_pb.EnvVar, index?: number): k8s_io_api_core_v1_generated_pb.EnvVar;
+
+  getGpu(): boolean;
+  setGpu(value: boolean): ManagedImageSpec;
+
+  getTrainer(): boolean;
+  setTrainer(value: boolean): ManagedImageSpec;
+
+  getActive(): boolean;
+  setActive(value: boolean): ManagedImageSpec;
+
+  getBase(): string;
+  setBase(value: string): ManagedImageSpec;
+
+  getSystem(): boolean;
+  setSystem(value: boolean): ManagedImageSpec;
+
+  getMantainedby(): string;
+  setMantainedby(value: string): ManagedImageSpec;
+
+  getUri(): string;
+  setUri(value: string): ManagedImageSpec;
+
+  getFrameworksList(): Array<string>;
+  setFrameworksList(value: Array<string>): ManagedImageSpec;
+  clearFrameworksList(): ManagedImageSpec;
+  addFrameworks(value: string, index?: number): ManagedImageSpec;
+
+  getLibsList(): Array<Lib>;
+  setLibsList(value: Array<Lib>): ManagedImageSpec;
+  clearLibsList(): ManagedImageSpec;
+  addLibs(value?: Lib, index?: number): Lib;
+
+  getOs(): string;
+  setOs(value: string): ManagedImageSpec;
+
+  getOsversion(): string;
+  setOsversion(value: string): ManagedImageSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ManagedImageSpec.AsObject;
@@ -856,7 +907,22 @@ export class ManagedImageSpec extends jspb.Message {
 
 export namespace ManagedImageSpec {
   export type AsObject = {
-    image: string,
+    description: string,
+    registry: string,
+    repository: string,
+    tag: string,
+    envList: Array<k8s_io_api_core_v1_generated_pb.EnvVar.AsObject>,
+    gpu: boolean,
+    trainer: boolean,
+    active: boolean,
+    base: string,
+    system: boolean,
+    mantainedby: string,
+    uri: string,
+    frameworksList: Array<string>,
+    libsList: Array<Lib.AsObject>,
+    os: string,
+    osversion: string,
   }
 }
 
@@ -1329,6 +1395,16 @@ export class ResourceSpec extends jspb.Message {
   getEnable(): boolean;
   setEnable(value: boolean): ResourceSpec;
 
+  getCpuimage(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setCpuimage(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ResourceSpec;
+  hasCpuimage(): boolean;
+  clearCpuimage(): ResourceSpec;
+
+  getGpuimage(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setGpuimage(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ResourceSpec;
+  hasGpuimage(): boolean;
+  clearGpuimage(): ResourceSpec;
+
   getRequirements(): k8s_io_api_core_v1_generated_pb.ResourceRequirements | undefined;
   setRequirements(value?: k8s_io_api_core_v1_generated_pb.ResourceRequirements): ResourceSpec;
   hasRequirements(): boolean;
@@ -1346,6 +1422,8 @@ export namespace ResourceSpec {
   export type AsObject = {
     workloadclassname: string,
     enable: boolean,
+    cpuimage?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    gpuimage?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     requirements?: k8s_io_api_core_v1_generated_pb.ResourceRequirements.AsObject,
   }
 }
@@ -1584,21 +1662,15 @@ export class WorkloadClassSpec extends jspb.Message {
   hasResourcestemplate(): boolean;
   clearResourcestemplate(): WorkloadClassSpec;
 
-  getFrameworksList(): Array<string>;
-  setFrameworksList(value: Array<string>): WorkloadClassSpec;
-  clearFrameworksList(): WorkloadClassSpec;
-  addFrameworks(value: string, index?: number): WorkloadClassSpec;
+  getCpuimage(): k8s_io_api_core_v1_generated_pb.LocalObjectReference | undefined;
+  setCpuimage(value?: k8s_io_api_core_v1_generated_pb.LocalObjectReference): WorkloadClassSpec;
+  hasCpuimage(): boolean;
+  clearCpuimage(): WorkloadClassSpec;
 
-  getLibsList(): Array<Lib>;
-  setLibsList(value: Array<Lib>): WorkloadClassSpec;
-  clearLibsList(): WorkloadClassSpec;
-  addLibs(value?: Lib, index?: number): Lib;
-
-  getOs(): string;
-  setOs(value: string): WorkloadClassSpec;
-
-  getOsversion(): string;
-  setOsversion(value: string): WorkloadClassSpec;
+  getGpuimage(): k8s_io_api_core_v1_generated_pb.LocalObjectReference | undefined;
+  setGpuimage(value?: k8s_io_api_core_v1_generated_pb.LocalObjectReference): WorkloadClassSpec;
+  hasGpuimage(): boolean;
+  clearGpuimage(): WorkloadClassSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): WorkloadClassSpec.AsObject;
@@ -1611,10 +1683,8 @@ export class WorkloadClassSpec extends jspb.Message {
 export namespace WorkloadClassSpec {
   export type AsObject = {
     resourcestemplate?: ResourceSpec.AsObject,
-    frameworksList: Array<string>,
-    libsList: Array<Lib.AsObject>,
-    os: string,
-    osversion: string,
+    cpuimage?: k8s_io_api_core_v1_generated_pb.LocalObjectReference.AsObject,
+    gpuimage?: k8s_io_api_core_v1_generated_pb.LocalObjectReference.AsObject,
   }
 }
 
