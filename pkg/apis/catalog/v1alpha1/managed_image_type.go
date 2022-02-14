@@ -110,6 +110,5 @@ func NewManagedImage(ns string, name string, image string) *ManagedImage {
 	result.ObjectMeta.Namespace = ns
 	result.Kind = "ManagedImage"
 	result.Default()
-	result.Spec.Image = image
 	return result
 }
