@@ -1090,7 +1090,7 @@ proto.github.com.metaprov.modelaapi.services.notebookrun.v1.UpdateNotebookRunReq
  */
 proto.github.com.metaprov.modelaapi.services.notebookrun.v1.UpdateNotebookRunRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    notbookrun: (f = msg.getNotbookrun()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun.toObject(includeInstance, f),
+    notebookrun: (f = msg.getNotebookrun()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun.toObject(includeInstance, f),
     fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
@@ -1131,7 +1131,7 @@ proto.github.com.metaprov.modelaapi.services.notebookrun.v1.UpdateNotebookRunReq
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun.deserializeBinaryFromReader);
-      msg.setNotbookrun(value);
+      msg.setNotebookrun(value);
       break;
     case 2:
       var value = new google_protobuf_field_mask_pb.FieldMask;
@@ -1167,7 +1167,7 @@ proto.github.com.metaprov.modelaapi.services.notebookrun.v1.UpdateNotebookRunReq
  */
 proto.github.com.metaprov.modelaapi.services.notebookrun.v1.UpdateNotebookRunRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getNotbookrun();
+  f = message.getNotebookrun();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1187,10 +1187,10 @@ proto.github.com.metaprov.modelaapi.services.notebookrun.v1.UpdateNotebookRunReq
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRun notbookrun = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRun notebookrun = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRun}
  */
-proto.github.com.metaprov.modelaapi.services.notebookrun.v1.UpdateNotebookRunRequest.prototype.getNotbookrun = function() {
+proto.github.com.metaprov.modelaapi.services.notebookrun.v1.UpdateNotebookRunRequest.prototype.getNotebookrun = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRun} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun, 1));
 };
@@ -1200,7 +1200,7 @@ proto.github.com.metaprov.modelaapi.services.notebookrun.v1.UpdateNotebookRunReq
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRun|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.notebookrun.v1.UpdateNotebookRunRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.notebookrun.v1.UpdateNotebookRunRequest.prototype.setNotbookrun = function(value) {
+proto.github.com.metaprov.modelaapi.services.notebookrun.v1.UpdateNotebookRunRequest.prototype.setNotebookrun = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1209,8 +1209,8 @@ proto.github.com.metaprov.modelaapi.services.notebookrun.v1.UpdateNotebookRunReq
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.notebookrun.v1.UpdateNotebookRunRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.notebookrun.v1.UpdateNotebookRunRequest.prototype.clearNotbookrun = function() {
-  return this.setNotbookrun(undefined);
+proto.github.com.metaprov.modelaapi.services.notebookrun.v1.UpdateNotebookRunRequest.prototype.clearNotebookrun = function() {
+  return this.setNotebookrun(undefined);
 };
 
 
@@ -1218,7 +1218,7 @@ proto.github.com.metaprov.modelaapi.services.notebookrun.v1.UpdateNotebookRunReq
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.notebookrun.v1.UpdateNotebookRunRequest.prototype.hasNotbookrun = function() {
+proto.github.com.metaprov.modelaapi.services.notebookrun.v1.UpdateNotebookRunRequest.prototype.hasNotebookrun = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

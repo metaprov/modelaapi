@@ -113,10 +113,10 @@ export namespace CreateNotebookRunResponse {
 }
 
 export class UpdateNotebookRunRequest extends jspb.Message {
-  getNotbookrun(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun | undefined;
-  setNotbookrun(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun): UpdateNotebookRunRequest;
-  hasNotbookrun(): boolean;
-  clearNotbookrun(): UpdateNotebookRunRequest;
+  getNotebookrun(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun | undefined;
+  setNotebookrun(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun): UpdateNotebookRunRequest;
+  hasNotebookrun(): boolean;
+  clearNotebookrun(): UpdateNotebookRunRequest;
 
   getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
   setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): UpdateNotebookRunRequest;
@@ -133,7 +133,7 @@ export class UpdateNotebookRunRequest extends jspb.Message {
 
 export namespace UpdateNotebookRunRequest {
   export type AsObject = {
-    notbookrun?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun.AsObject,
+    notebookrun?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun.AsObject,
     fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }

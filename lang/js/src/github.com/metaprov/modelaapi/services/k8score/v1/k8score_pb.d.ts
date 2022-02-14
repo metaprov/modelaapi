@@ -1,7 +1,10 @@
 import * as jspb from 'google-protobuf'
 
-import * as google_api_annotations_pb from '../../../../../../google/api/annotations_pb';
+import * as k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb from '../../../../../../k8s.io/apimachinery/pkg/apis/meta/v1/generated_pb';
 import * as k8s_io_api_core_v1_generated_pb from '../../../../../../k8s.io/api/core/v1/generated_pb';
+import * as k8s_io_api_apps_v1_generated_pb from '../../../../../../k8s.io/api/apps/v1/generated_pb';
+import * as k8s_io_api_rbac_v1_generated_pb from '../../../../../../k8s.io/api/rbac/v1/generated_pb';
+import * as google_api_annotations_pb from '../../../../../../google/api/annotations_pb';
 
 
 export class GetSecretRequest extends jspb.Message {
@@ -553,8 +556,20 @@ export class DeploymentInfo extends jspb.Message {
   getNamespace(): string;
   setNamespace(value: string): DeploymentInfo;
 
-  getStatus(): string;
-  setStatus(value: string): DeploymentInfo;
+  getStatus(): k8s_io_api_apps_v1_generated_pb.DeploymentStatus | undefined;
+  setStatus(value?: k8s_io_api_apps_v1_generated_pb.DeploymentStatus): DeploymentInfo;
+  hasStatus(): boolean;
+  clearStatus(): DeploymentInfo;
+
+  getLog(): Uint8Array | string;
+  getLog_asU8(): Uint8Array;
+  getLog_asB64(): string;
+  setLog(value: Uint8Array | string): DeploymentInfo;
+
+  getPodsList(): Array<PodInfo>;
+  setPodsList(value: Array<PodInfo>): DeploymentInfo;
+  clearPodsList(): DeploymentInfo;
+  addPods(value?: PodInfo, index?: number): PodInfo;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeploymentInfo.AsObject;
@@ -568,7 +583,9 @@ export namespace DeploymentInfo {
   export type AsObject = {
     name: string,
     namespace: string,
-    status: string,
+    status?: k8s_io_api_apps_v1_generated_pb.DeploymentStatus.AsObject,
+    log: Uint8Array | string,
+    podsList: Array<PodInfo.AsObject>,
   }
 }
 
@@ -579,8 +596,13 @@ export class PodInfo extends jspb.Message {
   getNamespace(): string;
   setNamespace(value: string): PodInfo;
 
-  getStatus(): string;
-  setStatus(value: string): PodInfo;
+  getStatus(): k8s_io_api_core_v1_generated_pb.PodStatus | undefined;
+  setStatus(value?: k8s_io_api_core_v1_generated_pb.PodStatus): PodInfo;
+  hasStatus(): boolean;
+  clearStatus(): PodInfo;
+
+  getLogsMap(): jspb.Map<string, Uint8Array | string>;
+  clearLogsMap(): PodInfo;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PodInfo.AsObject;
@@ -594,7 +616,8 @@ export namespace PodInfo {
   export type AsObject = {
     name: string,
     namespace: string,
-    status: string,
+    status?: k8s_io_api_core_v1_generated_pb.PodStatus.AsObject,
+    logsMap: Array<[string, Uint8Array | string]>,
   }
 }
 
@@ -605,8 +628,29 @@ export class JobInfo extends jspb.Message {
   getNamespace(): string;
   setNamespace(value: string): JobInfo;
 
-  getStatus(): string;
-  setStatus(value: string): JobInfo;
+  getStartedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setStartedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): JobInfo;
+  hasStartedat(): boolean;
+  clearStartedat(): JobInfo;
+
+  getCompletedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setCompletedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): JobInfo;
+  hasCompletedat(): boolean;
+  clearCompletedat(): JobInfo;
+
+  getFailed(): number;
+  setFailed(value: number): JobInfo;
+
+  getSucceeded(): number;
+  setSucceeded(value: number): JobInfo;
+
+  getActive(): number;
+  setActive(value: number): JobInfo;
+
+  getPodsList(): Array<PodInfo>;
+  setPodsList(value: Array<PodInfo>): JobInfo;
+  clearPodsList(): JobInfo;
+  addPods(value?: PodInfo, index?: number): PodInfo;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): JobInfo.AsObject;
@@ -620,7 +664,12 @@ export namespace JobInfo {
   export type AsObject = {
     name: string,
     namespace: string,
-    status: string,
+    startedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    completedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    failed: number,
+    succeeded: number,
+    active: number,
+    podsList: Array<PodInfo.AsObject>,
   }
 }
 

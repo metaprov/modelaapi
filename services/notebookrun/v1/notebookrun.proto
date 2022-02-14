@@ -32,7 +32,7 @@ message CreateNotebookRunResponse {
 }
 
 message UpdateNotebookRunRequest {
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRun notbookrun = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRun notebookrun = 1;
     google.protobuf.FieldMask field_mask = 2;
 }
 

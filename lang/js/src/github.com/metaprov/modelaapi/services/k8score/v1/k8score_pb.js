@@ -21,10 +21,16 @@ var global = (function() {
   return Function('return this')();
 }.call(null));
 
-var google_api_annotations_pb = require('../../../../../../google/api/annotations_pb.js');
-goog.object.extend(proto, google_api_annotations_pb);
+var k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb = require('../../../../../../k8s.io/apimachinery/pkg/apis/meta/v1/generated_pb.js');
+goog.object.extend(proto, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb);
 var k8s_io_api_core_v1_generated_pb = require('../../../../../../k8s.io/api/core/v1/generated_pb.js');
 goog.object.extend(proto, k8s_io_api_core_v1_generated_pb);
+var k8s_io_api_apps_v1_generated_pb = require('../../../../../../k8s.io/api/apps/v1/generated_pb.js');
+goog.object.extend(proto, k8s_io_api_apps_v1_generated_pb);
+var k8s_io_api_rbac_v1_generated_pb = require('../../../../../../k8s.io/api/rbac/v1/generated_pb.js');
+goog.object.extend(proto, k8s_io_api_rbac_v1_generated_pb);
+var google_api_annotations_pb = require('../../../../../../google/api/annotations_pb.js');
+goog.object.extend(proto, google_api_annotations_pb);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.k8score.v1.DeploymentInfo', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.k8score.v1.GetDeploymentRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.k8score.v1.GetDeploymentResponse', null, global);
@@ -567,7 +573,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.github.com.metaprov.modelaapi.services.k8score.v1.DeploymentInfo = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.services.k8score.v1.DeploymentInfo.repeatedFields_, null);
 };
 goog.inherits(proto.github.com.metaprov.modelaapi.services.k8score.v1.DeploymentInfo, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -609,7 +615,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo.repeatedFields_, null);
 };
 goog.inherits(proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -4709,6 +4715,13 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo.prototype.se
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.github.com.metaprov.modelaapi.services.k8score.v1.DeploymentInfo.repeatedFields_ = [5];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -4742,7 +4755,10 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.DeploymentInfo.toObject 
   var f, obj = {
     name: jspb.Message.getFieldWithDefault(msg, 1, ""),
     namespace: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    status: jspb.Message.getFieldWithDefault(msg, 3, "")
+    status: (f = msg.getStatus()) && k8s_io_api_apps_v1_generated_pb.DeploymentStatus.toObject(includeInstance, f),
+    log: msg.getLog_asB64(),
+    podsList: jspb.Message.toObjectList(msg.getPodsList(),
+    proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -4788,8 +4804,18 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.DeploymentInfo.deseriali
       msg.setNamespace(value);
       break;
     case 3:
-      var value = /** @type {string} */ (reader.readString());
+      var value = new k8s_io_api_apps_v1_generated_pb.DeploymentStatus;
+      reader.readMessage(value,k8s_io_api_apps_v1_generated_pb.DeploymentStatus.deserializeBinaryFromReader);
       msg.setStatus(value);
+      break;
+    case 4:
+      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+      msg.setLog(value);
+      break;
+    case 5:
+      var value = new proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo.deserializeBinaryFromReader);
+      msg.addPods(value);
       break;
     default:
       reader.skipField();
@@ -4835,10 +4861,26 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.DeploymentInfo.serialize
     );
   }
   f = message.getStatus();
-  if (f.length > 0) {
-    writer.writeString(
+  if (f != null) {
+    writer.writeMessage(
       3,
+      f,
+      k8s_io_api_apps_v1_generated_pb.DeploymentStatus.serializeBinaryToWriter
+    );
+  }
+  f = message.getLog_asU8();
+  if (f.length > 0) {
+    writer.writeBytes(
+      4,
       f
+    );
+  }
+  f = message.getPodsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      5,
+      f,
+      proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo.serializeBinaryToWriter
     );
   }
 };
@@ -4881,20 +4923,119 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.DeploymentInfo.prototype
 
 
 /**
- * optional string status = 3;
- * @return {string}
+ * optional k8s.io.api.apps.v1.DeploymentStatus status = 3;
+ * @return {?proto.k8s.io.api.apps.v1.DeploymentStatus}
  */
 proto.github.com.metaprov.modelaapi.services.k8score.v1.DeploymentInfo.prototype.getStatus = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+  return /** @type{?proto.k8s.io.api.apps.v1.DeploymentStatus} */ (
+    jspb.Message.getWrapperField(this, k8s_io_api_apps_v1_generated_pb.DeploymentStatus, 3));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.k8s.io.api.apps.v1.DeploymentStatus|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.k8score.v1.DeploymentInfo} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.k8score.v1.DeploymentInfo.prototype.setStatus = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.k8score.v1.DeploymentInfo} returns this
  */
-proto.github.com.metaprov.modelaapi.services.k8score.v1.DeploymentInfo.prototype.setStatus = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
+proto.github.com.metaprov.modelaapi.services.k8score.v1.DeploymentInfo.prototype.clearStatus = function() {
+  return this.setStatus(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.k8score.v1.DeploymentInfo.prototype.hasStatus = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional bytes log = 4;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.k8score.v1.DeploymentInfo.prototype.getLog = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * optional bytes log = 4;
+ * This is a type-conversion wrapper around `getLog()`
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.k8score.v1.DeploymentInfo.prototype.getLog_asB64 = function() {
+  return /** @type {string} */ (jspb.Message.bytesAsB64(
+      this.getLog()));
+};
+
+
+/**
+ * optional bytes log = 4;
+ * Note that Uint8Array is not supported on all browsers.
+ * @see http://caniuse.com/Uint8Array
+ * This is a type-conversion wrapper around `getLog()`
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modelaapi.services.k8score.v1.DeploymentInfo.prototype.getLog_asU8 = function() {
+  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+      this.getLog()));
+};
+
+
+/**
+ * @param {!(string|Uint8Array)} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.k8score.v1.DeploymentInfo} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.k8score.v1.DeploymentInfo.prototype.setLog = function(value) {
+  return jspb.Message.setProto3BytesField(this, 4, value);
+};
+
+
+/**
+ * repeated PodInfo pods = 5;
+ * @return {!Array<!proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo>}
+ */
+proto.github.com.metaprov.modelaapi.services.k8score.v1.DeploymentInfo.prototype.getPodsList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo, 5));
+};
+
+
+/**
+ * @param {!Array<!proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo>} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.k8score.v1.DeploymentInfo} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.k8score.v1.DeploymentInfo.prototype.setPodsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 5, value);
+};
+
+
+/**
+ * @param {!proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo}
+ */
+proto.github.com.metaprov.modelaapi.services.k8score.v1.DeploymentInfo.prototype.addPods = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.services.k8score.v1.DeploymentInfo} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.k8score.v1.DeploymentInfo.prototype.clearPodsList = function() {
+  return this.setPodsList([]);
 };
 
 
@@ -4932,7 +5073,8 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo.toObject = funct
   var f, obj = {
     name: jspb.Message.getFieldWithDefault(msg, 1, ""),
     namespace: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    status: jspb.Message.getFieldWithDefault(msg, 3, "")
+    status: (f = msg.getStatus()) && k8s_io_api_core_v1_generated_pb.PodStatus.toObject(includeInstance, f),
+    logsMap: (f = msg.getLogsMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
   if (includeInstance) {
@@ -4978,8 +5120,15 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo.deserializeBinar
       msg.setNamespace(value);
       break;
     case 3:
-      var value = /** @type {string} */ (reader.readString());
+      var value = new k8s_io_api_core_v1_generated_pb.PodStatus;
+      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.PodStatus.deserializeBinaryFromReader);
       msg.setStatus(value);
+      break;
+    case 4:
+      var value = msg.getLogsMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBytes, null, "", "");
+         });
       break;
     default:
       reader.skipField();
@@ -5025,11 +5174,16 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo.serializeBinaryT
     );
   }
   f = message.getStatus();
-  if (f.length > 0) {
-    writer.writeString(
+  if (f != null) {
+    writer.writeMessage(
       3,
-      f
+      f,
+      k8s_io_api_core_v1_generated_pb.PodStatus.serializeBinaryToWriter
     );
+  }
+  f = message.getLogsMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(4, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
   }
 };
 
@@ -5071,23 +5225,71 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo.prototype.setNam
 
 
 /**
- * optional string status = 3;
- * @return {string}
+ * optional k8s.io.api.core.v1.PodStatus status = 3;
+ * @return {?proto.k8s.io.api.core.v1.PodStatus}
  */
 proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo.prototype.getStatus = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+  return /** @type{?proto.k8s.io.api.core.v1.PodStatus} */ (
+    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.PodStatus, 3));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.k8s.io.api.core.v1.PodStatus|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo} returns this
- */
+*/
 proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo.prototype.setStatus = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
+  return jspb.Message.setWrapperField(this, 3, value);
 };
 
 
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo.prototype.clearStatus = function() {
+  return this.setStatus(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo.prototype.hasStatus = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * map<string, bytes> logs = 4;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,!(string|Uint8Array)>}
+ */
+proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo.prototype.getLogsMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,!(string|Uint8Array)>} */ (
+      jspb.Message.getMapField(this, 4, opt_noLazyCreate,
+      null));
+};
+
+
+/**
+ * Clears values from the map. The map will be non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo.prototype.clearLogsMap = function() {
+  this.getLogsMap().clear();
+  return this;};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo.repeatedFields_ = [8];
 
 
 
@@ -5122,7 +5324,13 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo.toObject = funct
   var f, obj = {
     name: jspb.Message.getFieldWithDefault(msg, 1, ""),
     namespace: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    status: jspb.Message.getFieldWithDefault(msg, 3, "")
+    startedat: (f = msg.getStartedat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    completedat: (f = msg.getCompletedat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    failed: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    succeeded: jspb.Message.getFieldWithDefault(msg, 6, 0),
+    active: jspb.Message.getFieldWithDefault(msg, 7, 0),
+    podsList: jspb.Message.toObjectList(msg.getPodsList(),
+    proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -5168,8 +5376,31 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo.deserializeBinar
       msg.setNamespace(value);
       break;
     case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setStatus(value);
+      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
+      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
+      msg.setStartedat(value);
+      break;
+    case 4:
+      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
+      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
+      msg.setCompletedat(value);
+      break;
+    case 5:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setFailed(value);
+      break;
+    case 6:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setSucceeded(value);
+      break;
+    case 7:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setActive(value);
+      break;
+    case 8:
+      var value = new proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo.deserializeBinaryFromReader);
+      msg.addPods(value);
       break;
     default:
       reader.skipField();
@@ -5214,11 +5445,49 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo.serializeBinaryT
       f
     );
   }
-  f = message.getStatus();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getStartedat();
+  if (f != null) {
+    writer.writeMessage(
       3,
+      f,
+      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
+    );
+  }
+  f = message.getCompletedat();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
+    );
+  }
+  f = message.getFailed();
+  if (f !== 0) {
+    writer.writeInt32(
+      5,
       f
+    );
+  }
+  f = message.getSucceeded();
+  if (f !== 0) {
+    writer.writeInt32(
+      6,
+      f
+    );
+  }
+  f = message.getActive();
+  if (f !== 0) {
+    writer.writeInt32(
+      7,
+      f
+    );
+  }
+  f = message.getPodsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      8,
+      f,
+      proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo.serializeBinaryToWriter
     );
   }
 };
@@ -5261,20 +5530,168 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo.prototype.setNam
 
 
 /**
- * optional string status = 3;
- * @return {string}
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startedAt = 3;
+ * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
-proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo.prototype.getStatus = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo.prototype.getStartedat = function() {
+  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 3));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo.prototype.setStartedat = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo} returns this
  */
-proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo.prototype.setStatus = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
+proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo.prototype.clearStartedat = function() {
+  return this.setStartedat(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo.prototype.hasStartedat = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completedAt = 4;
+ * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
+ */
+proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo.prototype.getCompletedat = function() {
+  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 4));
+};
+
+
+/**
+ * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo.prototype.setCompletedat = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo.prototype.clearCompletedat = function() {
+  return this.setCompletedat(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo.prototype.hasCompletedat = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional int32 failed = 5;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo.prototype.getFailed = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo.prototype.setFailed = function(value) {
+  return jspb.Message.setProto3IntField(this, 5, value);
+};
+
+
+/**
+ * optional int32 succeeded = 6;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo.prototype.getSucceeded = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo.prototype.setSucceeded = function(value) {
+  return jspb.Message.setProto3IntField(this, 6, value);
+};
+
+
+/**
+ * optional int32 active = 7;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo.prototype.getActive = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo.prototype.setActive = function(value) {
+  return jspb.Message.setProto3IntField(this, 7, value);
+};
+
+
+/**
+ * repeated PodInfo pods = 8;
+ * @return {!Array<!proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo>}
+ */
+proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo.prototype.getPodsList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo, 8));
+};
+
+
+/**
+ * @param {!Array<!proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo>} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo.prototype.setPodsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 8, value);
+};
+
+
+/**
+ * @param {!proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo}
+ */
+proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo.prototype.addPods = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 8, opt_value, proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo.prototype.clearPodsList = function() {
+  return this.setPodsList([]);
 };
 
 

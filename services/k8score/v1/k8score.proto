@@ -2,9 +2,12 @@ syntax = "proto3";
 
 option go_package = "github.com/metaprov/modelaapi/services/k8score/v1";
 package github.com.metaprov.modelaapi.services.k8score.v1;
+import "k8s.io/apimachinery/pkg/apis/meta/v1/generated.proto";
 
-import "google/api/annotations.proto";
 import "k8s.io/api/core/v1/generated.proto";
+import "k8s.io/api/apps/v1/generated.proto";
+import "k8s.io/api/rbac/v1/generated.proto";
+import "google/api/annotations.proto";
 
 /////////////////////////////// Secrets
 
@@ -139,24 +142,36 @@ message ServiceInfo {
     string status    = 3;
     string ip        = 4;
     string port      = 5;
+
 }
 
 message DeploymentInfo {
-    string name      = 1;
-    string namespace = 2;
-    string status     = 3;
+    string name       = 1;
+    string namespace  = 2;
+    k8s.io.api.apps.v1.DeploymentStatus status = 3;    
+    bytes log    = 4;
+    repeated PodInfo pods = 5; // return info about each pod in the job
 }
 
 message PodInfo {
     string name      = 1;
-    string namespace = 2;
-    string status    = 3;
+    string namespace = 2;    
+    k8s.io.api.core.v1.PodStatus status = 3;    
+    map<string,bytes> logs    = 4; // get the log per container
 }
 
 message JobInfo {
     string name      = 1;
-    string namespace = 2;
-    string status    = 3;
+    string namespace = 2;    
+    k8s.io.apimachinery.pkg.apis.meta.v1.Time startedAt = 3;
+    k8s.io.apimachinery.pkg.apis.meta.v1.Time completedAt = 4;
+    int32 failed = 5;     // active pods
+    int32 succeeded = 6;  
+    int32 active = 7;
+    repeated PodInfo pods = 8; // return info about each pod in the job
+
+
+    
 }
 
 
