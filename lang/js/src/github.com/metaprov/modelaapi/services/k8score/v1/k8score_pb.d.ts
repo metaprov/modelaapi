@@ -702,6 +702,9 @@ export class JobInfo extends jspb.Message {
   getActive(): number;
   setActive(value: number): JobInfo;
 
+  getReady(): number;
+  setReady(value: number): JobInfo;
+
   getPodsList(): Array<PodInfo>;
   setPodsList(value: Array<PodInfo>): JobInfo;
   clearPodsList(): JobInfo;
@@ -725,6 +728,7 @@ export namespace JobInfo {
     failed: number,
     succeeded: number,
     active: number,
+    ready: number,
     podsList: Array<PodInfo.AsObject>,
   }
 }

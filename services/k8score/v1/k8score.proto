@@ -178,7 +178,8 @@ message JobInfo {
     int32 failed = 6;     // active pods
     int32 succeeded = 7;  
     int32 active = 8;
-    repeated PodInfo pods = 9; // return info about each pod in the job    
+    int32 ready = 9;
+    repeated PodInfo pods = 10; // return info about each pod in the job    
 }
 
 

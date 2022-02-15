@@ -5741,7 +5741,7 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo.prototype.clearC
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo.repeatedFields_ = [9];
+proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo.repeatedFields_ = [10];
 
 
 
@@ -5782,6 +5782,7 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo.toObject = funct
     failed: jspb.Message.getFieldWithDefault(msg, 6, 0),
     succeeded: jspb.Message.getFieldWithDefault(msg, 7, 0),
     active: jspb.Message.getFieldWithDefault(msg, 8, 0),
+    ready: jspb.Message.getFieldWithDefault(msg, 9, 0),
     podsList: jspb.Message.toObjectList(msg.getPodsList(),
     proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo.toObject, includeInstance)
   };
@@ -5857,6 +5858,10 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo.deserializeBinar
       msg.setActive(value);
       break;
     case 9:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setReady(value);
+      break;
+    case 10:
       var value = new proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo.deserializeBinaryFromReader);
       msg.addPods(value);
@@ -5945,10 +5950,17 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo.serializeBinaryT
       f
     );
   }
+  f = message.getReady();
+  if (f !== 0) {
+    writer.writeInt32(
+      9,
+      f
+    );
+  }
   f = message.getPodsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      9,
+      10,
       f,
       proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo.serializeBinaryToWriter
     );
@@ -6143,12 +6155,30 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo.prototype.setAct
 
 
 /**
- * repeated PodInfo pods = 9;
+ * optional int32 ready = 9;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo.prototype.getReady = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo.prototype.setReady = function(value) {
+  return jspb.Message.setProto3IntField(this, 9, value);
+};
+
+
+/**
+ * repeated PodInfo pods = 10;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo>}
  */
 proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo.prototype.getPodsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo, 9));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo, 10));
 };
 
 
@@ -6157,7 +6187,7 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo.prototype.getPod
  * @return {!proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo} returns this
 */
 proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo.prototype.setPodsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 9, value);
+  return jspb.Message.setRepeatedWrapperField(this, 10, value);
 };
 
 
@@ -6167,7 +6197,7 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo.prototype.setPod
  * @return {!proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo}
  */
 proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo.prototype.addPods = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 9, opt_value, proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 10, opt_value, proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo, opt_index);
 };
 
 
