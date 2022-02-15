@@ -4873,7 +4873,8 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.ContainerInfo.prototype.
  */
 proto.github.com.metaprov.modelaapi.services.k8score.v1.ContainerInfo.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    image: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
     log: msg.getLog_asB64()
   };
 
@@ -4913,9 +4914,13 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.ContainerInfo.deserializ
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
+      msg.setImage(value);
       break;
     case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setName(value);
+      break;
+    case 3:
       var value = /** @type {!Uint8Array} */ (reader.readBytes());
       msg.setLog(value);
       break;
@@ -4948,17 +4953,24 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.ContainerInfo.prototype.
  */
 proto.github.com.metaprov.modelaapi.services.k8score.v1.ContainerInfo.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getName();
+  f = message.getImage();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
+  f = message.getName();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
   f = message.getLog_asU8();
   if (f.length > 0) {
     writer.writeBytes(
-      2,
+      3,
       f
     );
   }
@@ -4966,10 +4978,10 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.ContainerInfo.serializeB
 
 
 /**
- * optional string name = 1;
+ * optional string image = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.services.k8score.v1.ContainerInfo.prototype.getName = function() {
+proto.github.com.metaprov.modelaapi.services.k8score.v1.ContainerInfo.prototype.getImage = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -4978,22 +4990,40 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.ContainerInfo.prototype.
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.services.k8score.v1.ContainerInfo} returns this
  */
-proto.github.com.metaprov.modelaapi.services.k8score.v1.ContainerInfo.prototype.setName = function(value) {
+proto.github.com.metaprov.modelaapi.services.k8score.v1.ContainerInfo.prototype.setImage = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional bytes log = 2;
+ * optional string name = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.services.k8score.v1.ContainerInfo.prototype.getLog = function() {
+proto.github.com.metaprov.modelaapi.services.k8score.v1.ContainerInfo.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
- * optional bytes log = 2;
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.k8score.v1.ContainerInfo} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.k8score.v1.ContainerInfo.prototype.setName = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional bytes log = 3;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.k8score.v1.ContainerInfo.prototype.getLog = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * optional bytes log = 3;
  * This is a type-conversion wrapper around `getLog()`
  * @return {string}
  */
@@ -5004,7 +5034,7 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.ContainerInfo.prototype.
 
 
 /**
- * optional bytes log = 2;
+ * optional bytes log = 3;
  * Note that Uint8Array is not supported on all browsers.
  * @see http://caniuse.com/Uint8Array
  * This is a type-conversion wrapper around `getLog()`
@@ -5021,7 +5051,7 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.ContainerInfo.prototype.
  * @return {!proto.github.com.metaprov.modelaapi.services.k8score.v1.ContainerInfo} returns this
  */
 proto.github.com.metaprov.modelaapi.services.k8score.v1.ContainerInfo.prototype.setLog = function(value) {
-  return jspb.Message.setProto3BytesField(this, 2, value);
+  return jspb.Message.setProto3BytesField(this, 3, value);
 };
 
 

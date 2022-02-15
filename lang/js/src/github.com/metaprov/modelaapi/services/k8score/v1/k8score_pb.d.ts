@@ -562,6 +562,9 @@ export namespace ServiceInfo {
 }
 
 export class ContainerInfo extends jspb.Message {
+  getImage(): string;
+  setImage(value: string): ContainerInfo;
+
   getName(): string;
   setName(value: string): ContainerInfo;
 
@@ -580,6 +583,7 @@ export class ContainerInfo extends jspb.Message {
 
 export namespace ContainerInfo {
   export type AsObject = {
+    image: string,
     name: string,
     log: Uint8Array | string,
   }

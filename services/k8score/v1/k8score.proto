@@ -147,8 +147,9 @@ message ServiceInfo {
 }
 
 message ContainerInfo {
-    string name      = 1;
-    bytes log        = 2;
+    string image     = 1;
+    string name      = 2;
+    bytes log        = 3;
 }
 
 message DeploymentInfo {
