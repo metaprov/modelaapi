@@ -24,7 +24,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z1github.com/metaprov/modelaapi/services/k8score/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n?github.com/metaprov/modelaapi/services/k8score/v1/k8score.proto\x12\x31github.com.metaprov.modelaapi.services.k8score.v1\x1a\x34k8s.io/apimachinery/pkg/apis/meta/v1/generated.proto\x1a\"k8s.io/api/core/v1/generated.proto\x1a\"k8s.io/api/apps/v1/generated.proto\x1a\"k8s.io/api/rbac/v1/generated.proto\x1a\x1cgoogle/api/annotations.proto\"\xc3\x01\n\x10GetSecretRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12_\n\x06labels\x18\x03 \x03(\x0b\x32O.github.com.metaprov.modelaapi.services.k8score.v1.GetSecretRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"b\n\x11GetSecretResponse\x12M\n\x06secret\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modelaapi.services.k8score.v1.SecretInfo\"\xb9\x01\n\x12ListSecretsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x61\n\x06labels\x18\x03 \x03(\x0b\x32Q.github.com.metaprov.modelaapi.services.k8score.v1.ListSecretsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"d\n\x12ListSecretResponse\x12N\n\x07secrets\x18\x01 \x03(\x0b\x32=.github.com.metaprov.modelaapi.services.k8score.v1.SecretInfo\"\xcb\x01\n\x14GetDeploymentRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x63\n\x06labels\x18\x03 \x03(\x0b\x32S.github.com.metaprov.modelaapi.services.k8score.v1.GetDeploymentRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"n\n\x15GetDeploymentResponse\x12U\n\ndeployment\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.services.k8score.v1.DeploymentInfo\"\xc1\x01\n\x16ListDeploymentsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x65\n\x06labels\x18\x03 \x03(\x0b\x32U.github.com.metaprov.modelaapi.services.k8score.v1.ListDeploymentsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"q\n\x17ListDeploymentsResponse\x12V\n\x0b\x64\x65ployments\x18\x01 \x03(\x0b\x32\x41.github.com.metaprov.modelaapi.services.k8score.v1.DeploymentInfo\"\xc5\x01\n\x11GetServiceRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12`\n\x06labels\x18\x03 \x03(\x0b\x32P.github.com.metaprov.modelaapi.services.k8score.v1.GetServiceRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"e\n\x12GetServiceResponse\x12O\n\x07service\x18\x01 \x01(\x0b\x32>.github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo\"\xbb\x01\n\x13ListServicesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x62\n\x06labels\x18\x03 \x03(\x0b\x32R.github.com.metaprov.modelaapi.services.k8score.v1.ListServicesRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"h\n\x14ListServicesResponse\x12P\n\x08services\x18\x01 \x03(\x0b\x32>.github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo\"\xbd\x01\n\rGetPodRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\\\n\x06labels\x18\x03 \x03(\x0b\x32L.github.com.metaprov.modelaapi.services.k8score.v1.GetPodRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"Y\n\x0eGetPodResponse\x12G\n\x03pod\x18\x01 \x01(\x0b\x32:.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo\"\xb3\x01\n\x0fListPodsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12^\n\x06labels\x18\x02 \x03(\x0b\x32N.github.com.metaprov.modelaapi.services.k8score.v1.ListPodsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\\\n\x10ListPodsResponse\x12H\n\x04pods\x18\x01 \x03(\x0b\x32:.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo\"\xbd\x01\n\rGetJobRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\\\n\x06labels\x18\x03 \x03(\x0b\x32L.github.com.metaprov.modelaapi.services.k8score.v1.GetJobRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"Y\n\x0eGetJobResponse\x12G\n\x03job\x18\x01 \x01(\x0b\x32:.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo\"\xb3\x01\n\x0fListJobsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12^\n\x06labels\x18\x02 \x03(\x0b\x32N.github.com.metaprov.modelaapi.services.k8score.v1.ListJobsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\\\n\x10ListJobsResponse\x12H\n\x04jobs\x18\x01 \x03(\x0b\x32:.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo\"\xc5\x01\n\x11ListEventsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12`\n\x06labels\x18\x03 \x03(\x0b\x32P.github.com.metaprov.modelaapi.services.k8score.v1.ListEventsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"B\n\x12ListEventsResponse\x12,\n\x05items\x18\x01 \x01(\x0b\x32\x1d.k8s.io.api.core.v1.EventList\"-\n\nSecretInfo\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x11\n\tnamespace\x18\x02 \x01(\t\"X\n\x0bServiceInfo\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x11\n\tnamespace\x18\x02 \x01(\t\x12\x0e\n\x06status\x18\x03 \x01(\t\x12\n\n\x02ip\x18\x04 \x01(\t\x12\x0c\n\x04port\x18\x05 \x01(\t\"*\n\rContainerInfo\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0b\n\x03log\x18\x02 \x01(\x0c\"\xfe\x02\n\x0e\x44\x65ploymentInfo\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x11\n\tnamespace\x18\x02 \x01(\t\x12]\n\x06labels\x18\x03 \x03(\x0b\x32M.github.com.metaprov.modelaapi.services.k8score.v1.DeploymentInfo.LabelsEntry\x12=\n\tcreatedAt\x18\x04 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x34\n\x06status\x18\x05 \x01(\x0b\x32$.k8s.io.api.apps.v1.DeploymentStatus\x12H\n\x04pods\x18\x06 \x03(\x0b\x32:.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xf6\x02\n\x07PodInfo\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x11\n\tnamespace\x18\x02 \x01(\t\x12V\n\x06labels\x18\x03 \x03(\x0b\x32\x46.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo.LabelsEntry\x12=\n\tcreatedAt\x18\x04 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12-\n\x06status\x18\x05 \x01(\x0b\x32\x1d.k8s.io.api.core.v1.PodStatus\x12U\n\x0b\x63ontrainers\x18\x06 \x03(\x0b\x32@.github.com.metaprov.modelaapi.services.k8score.v1.ContainerInfo\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xae\x03\n\x07JobInfo\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x11\n\tnamespace\x18\x02 \x01(\t\x12V\n\x06labels\x18\x03 \x03(\x0b\x32\x46.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo.LabelsEntry\x12=\n\tstartedAt\x18\x04 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12?\n\x0b\x63ompletedAt\x18\x05 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06\x66\x61iled\x18\x06 \x01(\x05\x12\x11\n\tsucceeded\x18\x07 \x01(\x05\x12\x0e\n\x06\x61\x63tive\x18\x08 \x01(\x05\x12H\n\x04pods\x18\t \x03(\x0b\x32:.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x32\xe6\x10\n\x0e\x43oreK8sService\x12\xbf\x01\n\x0eListK8sSecrets\x12\x45.github.com.metaprov.modelaapi.services.k8score.v1.ListSecretsRequest\x1a\x45.github.com.metaprov.modelaapi.services.k8score.v1.ListSecretResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/v1/secrets/{namespace}\x12\xc1\x01\n\x0cGetK8sSecret\x12\x43.github.com.metaprov.modelaapi.services.k8score.v1.GetSecretRequest\x1a\x44.github.com.metaprov.modelaapi.services.k8score.v1.GetSecretResponse\"&\x82\xd3\xe4\x93\x02 \x12\x1e/v1/secrets/{namespace}/{name}\x12\xc4\x01\n\x0fListK8sServices\x12\x46.github.com.metaprov.modelaapi.services.k8score.v1.ListServicesRequest\x1aG.github.com.metaprov.modelaapi.services.k8score.v1.ListServicesResponse\" \x82\xd3\xe4\x93\x02\x1a\x12\x18/v1/services/{namespace}\x12\xc5\x01\n\rGetK8sService\x12\x44.github.com.metaprov.modelaapi.services.k8score.v1.GetServiceRequest\x1a\x45.github.com.metaprov.modelaapi.services.k8score.v1.GetServiceResponse\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/v1/services/{namespace}/{name}\x12\xd0\x01\n\x12ListK8sDeployments\x12I.github.com.metaprov.modelaapi.services.k8score.v1.ListDeploymentsRequest\x1aJ.github.com.metaprov.modelaapi.services.k8score.v1.ListDeploymentsResponse\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/v1/deployments/{namespace}\x12\xd1\x01\n\x10GetK8sDeployment\x12G.github.com.metaprov.modelaapi.services.k8score.v1.GetDeploymentRequest\x1aH.github.com.metaprov.modelaapi.services.k8score.v1.GetDeploymentResponse\"*\x82\xd3\xe4\x93\x02$\x12\"/v1/deployments/{namespace}/{name}\x12\xb4\x01\n\x0bListK8sPods\x12\x42.github.com.metaprov.modelaapi.services.k8score.v1.ListPodsRequest\x1a\x43.github.com.metaprov.modelaapi.services.k8score.v1.ListPodsResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\x12\x14/v1/pods/{namespace}\x12\xb5\x01\n\tGetK8sPod\x12@.github.com.metaprov.modelaapi.services.k8score.v1.GetPodRequest\x1a\x41.github.com.metaprov.modelaapi.services.k8score.v1.GetPodResponse\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/v1/pods/{namespace}/{name}\x12\xb4\x01\n\x0bListK8sJobs\x12\x42.github.com.metaprov.modelaapi.services.k8score.v1.ListJobsRequest\x1a\x43.github.com.metaprov.modelaapi.services.k8score.v1.ListJobsResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\x12\x14/v1/jobs/{namespace}\x12\xb5\x01\n\tGetK8sJob\x12@.github.com.metaprov.modelaapi.services.k8score.v1.GetJobRequest\x1a\x41.github.com.metaprov.modelaapi.services.k8score.v1.GetJobResponse\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/v1/jobs/{namespace}/{name}\x12\xb9\x01\n\nListEvents\x12\x44.github.com.metaprov.modelaapi.services.k8score.v1.ListEventsRequest\x1a\x45.github.com.metaprov.modelaapi.services.k8score.v1.ListEventsResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/v1/events/{namespace}B3Z1github.com/metaprov/modelaapi/services/k8score/v1b\x06proto3'
+  serialized_pb=b'\n?github.com/metaprov/modelaapi/services/k8score/v1/k8score.proto\x12\x31github.com.metaprov.modelaapi.services.k8score.v1\x1a\x34k8s.io/apimachinery/pkg/apis/meta/v1/generated.proto\x1a\"k8s.io/api/core/v1/generated.proto\x1a\"k8s.io/api/apps/v1/generated.proto\x1a\"k8s.io/api/rbac/v1/generated.proto\x1a\x1cgoogle/api/annotations.proto\"\xc3\x01\n\x10GetSecretRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12_\n\x06labels\x18\x03 \x03(\x0b\x32O.github.com.metaprov.modelaapi.services.k8score.v1.GetSecretRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"b\n\x11GetSecretResponse\x12M\n\x06secret\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modelaapi.services.k8score.v1.SecretInfo\"\xb9\x01\n\x12ListSecretsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x61\n\x06labels\x18\x03 \x03(\x0b\x32Q.github.com.metaprov.modelaapi.services.k8score.v1.ListSecretsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"d\n\x12ListSecretResponse\x12N\n\x07secrets\x18\x01 \x03(\x0b\x32=.github.com.metaprov.modelaapi.services.k8score.v1.SecretInfo\"\xcb\x01\n\x14GetDeploymentRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x63\n\x06labels\x18\x03 \x03(\x0b\x32S.github.com.metaprov.modelaapi.services.k8score.v1.GetDeploymentRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"n\n\x15GetDeploymentResponse\x12U\n\ndeployment\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.services.k8score.v1.DeploymentInfo\"\xc1\x01\n\x16ListDeploymentsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x65\n\x06labels\x18\x03 \x03(\x0b\x32U.github.com.metaprov.modelaapi.services.k8score.v1.ListDeploymentsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"q\n\x17ListDeploymentsResponse\x12V\n\x0b\x64\x65ployments\x18\x01 \x03(\x0b\x32\x41.github.com.metaprov.modelaapi.services.k8score.v1.DeploymentInfo\"\xc5\x01\n\x11GetServiceRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12`\n\x06labels\x18\x03 \x03(\x0b\x32P.github.com.metaprov.modelaapi.services.k8score.v1.GetServiceRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"e\n\x12GetServiceResponse\x12O\n\x07service\x18\x01 \x01(\x0b\x32>.github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo\"\xbb\x01\n\x13ListServicesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x62\n\x06labels\x18\x03 \x03(\x0b\x32R.github.com.metaprov.modelaapi.services.k8score.v1.ListServicesRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"h\n\x14ListServicesResponse\x12P\n\x08services\x18\x01 \x03(\x0b\x32>.github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo\"\xbd\x01\n\rGetPodRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\\\n\x06labels\x18\x03 \x03(\x0b\x32L.github.com.metaprov.modelaapi.services.k8score.v1.GetPodRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"Y\n\x0eGetPodResponse\x12G\n\x03pod\x18\x01 \x01(\x0b\x32:.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo\"\xb3\x01\n\x0fListPodsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12^\n\x06labels\x18\x02 \x03(\x0b\x32N.github.com.metaprov.modelaapi.services.k8score.v1.ListPodsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\\\n\x10ListPodsResponse\x12H\n\x04pods\x18\x01 \x03(\x0b\x32:.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo\"\xbd\x01\n\rGetJobRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\\\n\x06labels\x18\x03 \x03(\x0b\x32L.github.com.metaprov.modelaapi.services.k8score.v1.GetJobRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"Y\n\x0eGetJobResponse\x12G\n\x03job\x18\x01 \x01(\x0b\x32:.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo\"\xb3\x01\n\x0fListJobsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12^\n\x06labels\x18\x02 \x03(\x0b\x32N.github.com.metaprov.modelaapi.services.k8score.v1.ListJobsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\\\n\x10ListJobsResponse\x12H\n\x04jobs\x18\x01 \x03(\x0b\x32:.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo\"\xc5\x01\n\x11ListEventsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12`\n\x06labels\x18\x03 \x03(\x0b\x32P.github.com.metaprov.modelaapi.services.k8score.v1.ListEventsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"B\n\x12ListEventsResponse\x12,\n\x05items\x18\x01 \x01(\x0b\x32\x1d.k8s.io.api.core.v1.EventList\"-\n\nSecretInfo\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x11\n\tnamespace\x18\x02 \x01(\t\"\xc5\x02\n\x0bServiceInfo\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x11\n\tnamespace\x18\x02 \x01(\t\x12Z\n\x06labels\x18\x03 \x03(\x0b\x32J.github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo.LabelsEntry\x12\n\n\x02ip\x18\x04 \x01(\t\x12\x0c\n\x04port\x18\x05 \x01(\t\x12=\n\tcreatedAt\x18\x06 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x31\n\x06status\x18\x07 \x01(\x0b\x32!.k8s.io.api.core.v1.ServiceStatus\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"*\n\rContainerInfo\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0b\n\x03log\x18\x02 \x01(\x0c\"\xfe\x02\n\x0e\x44\x65ploymentInfo\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x11\n\tnamespace\x18\x02 \x01(\t\x12]\n\x06labels\x18\x03 \x03(\x0b\x32M.github.com.metaprov.modelaapi.services.k8score.v1.DeploymentInfo.LabelsEntry\x12=\n\tcreatedAt\x18\x04 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x34\n\x06status\x18\x05 \x01(\x0b\x32$.k8s.io.api.apps.v1.DeploymentStatus\x12H\n\x04pods\x18\x06 \x03(\x0b\x32:.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xf6\x02\n\x07PodInfo\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x11\n\tnamespace\x18\x02 \x01(\t\x12V\n\x06labels\x18\x03 \x03(\x0b\x32\x46.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo.LabelsEntry\x12=\n\tcreatedAt\x18\x04 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12-\n\x06status\x18\x05 \x01(\x0b\x32\x1d.k8s.io.api.core.v1.PodStatus\x12U\n\x0b\x63ontrainers\x18\x06 \x03(\x0b\x32@.github.com.metaprov.modelaapi.services.k8score.v1.ContainerInfo\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xae\x03\n\x07JobInfo\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x11\n\tnamespace\x18\x02 \x01(\t\x12V\n\x06labels\x18\x03 \x03(\x0b\x32\x46.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo.LabelsEntry\x12=\n\tstartedAt\x18\x04 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12?\n\x0b\x63ompletedAt\x18\x05 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06\x66\x61iled\x18\x06 \x01(\x05\x12\x11\n\tsucceeded\x18\x07 \x01(\x05\x12\x0e\n\x06\x61\x63tive\x18\x08 \x01(\x05\x12H\n\x04pods\x18\t \x03(\x0b\x32:.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x32\xe6\x10\n\x0e\x43oreK8sService\x12\xbf\x01\n\x0eListK8sSecrets\x12\x45.github.com.metaprov.modelaapi.services.k8score.v1.ListSecretsRequest\x1a\x45.github.com.metaprov.modelaapi.services.k8score.v1.ListSecretResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/v1/secrets/{namespace}\x12\xc1\x01\n\x0cGetK8sSecret\x12\x43.github.com.metaprov.modelaapi.services.k8score.v1.GetSecretRequest\x1a\x44.github.com.metaprov.modelaapi.services.k8score.v1.GetSecretResponse\"&\x82\xd3\xe4\x93\x02 \x12\x1e/v1/secrets/{namespace}/{name}\x12\xc4\x01\n\x0fListK8sServices\x12\x46.github.com.metaprov.modelaapi.services.k8score.v1.ListServicesRequest\x1aG.github.com.metaprov.modelaapi.services.k8score.v1.ListServicesResponse\" \x82\xd3\xe4\x93\x02\x1a\x12\x18/v1/services/{namespace}\x12\xc5\x01\n\rGetK8sService\x12\x44.github.com.metaprov.modelaapi.services.k8score.v1.GetServiceRequest\x1a\x45.github.com.metaprov.modelaapi.services.k8score.v1.GetServiceResponse\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/v1/services/{namespace}/{name}\x12\xd0\x01\n\x12ListK8sDeployments\x12I.github.com.metaprov.modelaapi.services.k8score.v1.ListDeploymentsRequest\x1aJ.github.com.metaprov.modelaapi.services.k8score.v1.ListDeploymentsResponse\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/v1/deployments/{namespace}\x12\xd1\x01\n\x10GetK8sDeployment\x12G.github.com.metaprov.modelaapi.services.k8score.v1.GetDeploymentRequest\x1aH.github.com.metaprov.modelaapi.services.k8score.v1.GetDeploymentResponse\"*\x82\xd3\xe4\x93\x02$\x12\"/v1/deployments/{namespace}/{name}\x12\xb4\x01\n\x0bListK8sPods\x12\x42.github.com.metaprov.modelaapi.services.k8score.v1.ListPodsRequest\x1a\x43.github.com.metaprov.modelaapi.services.k8score.v1.ListPodsResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\x12\x14/v1/pods/{namespace}\x12\xb5\x01\n\tGetK8sPod\x12@.github.com.metaprov.modelaapi.services.k8score.v1.GetPodRequest\x1a\x41.github.com.metaprov.modelaapi.services.k8score.v1.GetPodResponse\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/v1/pods/{namespace}/{name}\x12\xb4\x01\n\x0bListK8sJobs\x12\x42.github.com.metaprov.modelaapi.services.k8score.v1.ListJobsRequest\x1a\x43.github.com.metaprov.modelaapi.services.k8score.v1.ListJobsResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\x12\x14/v1/jobs/{namespace}\x12\xb5\x01\n\tGetK8sJob\x12@.github.com.metaprov.modelaapi.services.k8score.v1.GetJobRequest\x1a\x41.github.com.metaprov.modelaapi.services.k8score.v1.GetJobResponse\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/v1/jobs/{namespace}/{name}\x12\xb9\x01\n\nListEvents\x12\x44.github.com.metaprov.modelaapi.services.k8score.v1.ListEventsRequest\x1a\x45.github.com.metaprov.modelaapi.services.k8score.v1.ListEventsResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/v1/events/{namespace}B3Z1github.com/metaprov/modelaapi/services/k8score/v1b\x06proto3'
   ,
   dependencies=[k8s_dot_io_dot_apimachinery_dot_pkg_dot_apis_dot_meta_dot_v1_dot_generated__pb2.DESCRIPTOR,k8s_dot_io_dot_api_dot_core_dot_v1_dot_generated__pb2.DESCRIPTOR,k8s_dot_io_dot_api_dot_apps_dot_v1_dot_generated__pb2.DESCRIPTOR,k8s_dot_io_dot_api_dot_rbac_dot_v1_dot_generated__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,])
 
@@ -1311,6 +1311,44 @@ _SECRETINFO = _descriptor.Descriptor(
 )
 
 
+_SERVICEINFO_LABELSENTRY = _descriptor.Descriptor(
+  name='LabelsEntry',
+  full_name='github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo.LabelsEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo.LabelsEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo.LabelsEntry.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=461,
+  serialized_end=506,
+)
+
 _SERVICEINFO = _descriptor.Descriptor(
   name='ServiceInfo',
   full_name='github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo',
@@ -1334,9 +1372,9 @@ _SERVICEINFO = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='status', full_name='github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo.status', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
+      name='labels', full_name='github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo.labels', index=2,
+      number=3, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -1354,10 +1392,24 @@ _SERVICEINFO = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='createdAt', full_name='github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo.createdAt', index=5,
+      number=6, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='status', full_name='github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo.status', index=6,
+      number=7, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
-  nested_types=[],
+  nested_types=[_SERVICEINFO_LABELSENTRY, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -1366,8 +1418,8 @@ _SERVICEINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3559,
-  serialized_end=3647,
+  serialized_start=3560,
+  serialized_end=3885,
 )
 
 
@@ -1405,8 +1457,8 @@ _CONTAINERINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3649,
-  serialized_end=3691,
+  serialized_start=3887,
+  serialized_end=3929,
 )
 
 
@@ -1510,8 +1562,8 @@ _DEPLOYMENTINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3694,
-  serialized_end=4076,
+  serialized_start=3932,
+  serialized_end=4314,
 )
 
 
@@ -1615,8 +1667,8 @@ _PODINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4079,
-  serialized_end=4453,
+  serialized_start=4317,
+  serialized_end=4691,
 )
 
 
@@ -1741,8 +1793,8 @@ _JOBINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4456,
-  serialized_end=4886,
+  serialized_start=4694,
+  serialized_end=5124,
 )
 
 _GETSECRETREQUEST_LABELSENTRY.containing_type = _GETSECRETREQUEST
@@ -1778,6 +1830,10 @@ _LISTJOBSRESPONSE.fields_by_name['jobs'].message_type = _JOBINFO
 _LISTEVENTSREQUEST_LABELSENTRY.containing_type = _LISTEVENTSREQUEST
 _LISTEVENTSREQUEST.fields_by_name['labels'].message_type = _LISTEVENTSREQUEST_LABELSENTRY
 _LISTEVENTSRESPONSE.fields_by_name['items'].message_type = k8s_dot_io_dot_api_dot_core_dot_v1_dot_generated__pb2._EVENTLIST
+_SERVICEINFO_LABELSENTRY.containing_type = _SERVICEINFO
+_SERVICEINFO.fields_by_name['labels'].message_type = _SERVICEINFO_LABELSENTRY
+_SERVICEINFO.fields_by_name['createdAt'].message_type = k8s_dot_io_dot_apimachinery_dot_pkg_dot_apis_dot_meta_dot_v1_dot_generated__pb2._TIME
+_SERVICEINFO.fields_by_name['status'].message_type = k8s_dot_io_dot_api_dot_core_dot_v1_dot_generated__pb2._SERVICESTATUS
 _DEPLOYMENTINFO_LABELSENTRY.containing_type = _DEPLOYMENTINFO
 _DEPLOYMENTINFO.fields_by_name['labels'].message_type = _DEPLOYMENTINFO_LABELSENTRY
 _DEPLOYMENTINFO.fields_by_name['createdAt'].message_type = k8s_dot_io_dot_apimachinery_dot_pkg_dot_apis_dot_meta_dot_v1_dot_generated__pb2._TIME
@@ -2073,11 +2129,19 @@ SecretInfo = _reflection.GeneratedProtocolMessageType('SecretInfo', (_message.Me
 _sym_db.RegisterMessage(SecretInfo)
 
 ServiceInfo = _reflection.GeneratedProtocolMessageType('ServiceInfo', (_message.Message,), {
+
+  'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
+    'DESCRIPTOR' : _SERVICEINFO_LABELSENTRY,
+    '__module__' : 'github.com.metaprov.modelaapi.services.k8score.v1.k8score_pb2'
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo.LabelsEntry)
+    })
+  ,
   'DESCRIPTOR' : _SERVICEINFO,
   '__module__' : 'github.com.metaprov.modelaapi.services.k8score.v1.k8score_pb2'
   # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo)
   })
 _sym_db.RegisterMessage(ServiceInfo)
+_sym_db.RegisterMessage(ServiceInfo.LabelsEntry)
 
 ContainerInfo = _reflection.GeneratedProtocolMessageType('ContainerInfo', (_message.Message,), {
   'DESCRIPTOR' : _CONTAINERINFO,
@@ -2144,6 +2208,7 @@ _LISTPODSREQUEST_LABELSENTRY._options = None
 _GETJOBREQUEST_LABELSENTRY._options = None
 _LISTJOBSREQUEST_LABELSENTRY._options = None
 _LISTEVENTSREQUEST_LABELSENTRY._options = None
+_SERVICEINFO_LABELSENTRY._options = None
 _DEPLOYMENTINFO_LABELSENTRY._options = None
 _PODINFO_LABELSENTRY._options = None
 _JOBINFO_LABELSENTRY._options = None
@@ -2155,8 +2220,8 @@ _COREK8SSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=4889,
-  serialized_end=7039,
+  serialized_start=5127,
+  serialized_end=7277,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListK8sSecrets',

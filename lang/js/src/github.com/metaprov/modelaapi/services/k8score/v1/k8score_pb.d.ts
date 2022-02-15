@@ -522,14 +522,24 @@ export class ServiceInfo extends jspb.Message {
   getNamespace(): string;
   setNamespace(value: string): ServiceInfo;
 
-  getStatus(): string;
-  setStatus(value: string): ServiceInfo;
+  getLabelsMap(): jspb.Map<string, string>;
+  clearLabelsMap(): ServiceInfo;
 
   getIp(): string;
   setIp(value: string): ServiceInfo;
 
   getPort(): string;
   setPort(value: string): ServiceInfo;
+
+  getCreatedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setCreatedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ServiceInfo;
+  hasCreatedat(): boolean;
+  clearCreatedat(): ServiceInfo;
+
+  getStatus(): k8s_io_api_core_v1_generated_pb.ServiceStatus | undefined;
+  setStatus(value?: k8s_io_api_core_v1_generated_pb.ServiceStatus): ServiceInfo;
+  hasStatus(): boolean;
+  clearStatus(): ServiceInfo;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ServiceInfo.AsObject;
@@ -543,9 +553,11 @@ export namespace ServiceInfo {
   export type AsObject = {
     name: string,
     namespace: string,
-    status: string,
+    labelsMap: Array<[string, string]>,
     ip: string,
     port: string,
+    createdat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    status?: k8s_io_api_core_v1_generated_pb.ServiceStatus.AsObject,
   }
 }
 

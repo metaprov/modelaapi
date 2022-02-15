@@ -4520,9 +4520,11 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo.toObject = f
   var f, obj = {
     name: jspb.Message.getFieldWithDefault(msg, 1, ""),
     namespace: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    status: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    labelsMap: (f = msg.getLabelsMap()) ? f.toObject(includeInstance, undefined) : [],
     ip: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    port: jspb.Message.getFieldWithDefault(msg, 5, "")
+    port: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    createdat: (f = msg.getCreatedat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    status: (f = msg.getStatus()) && k8s_io_api_core_v1_generated_pb.ServiceStatus.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4568,8 +4570,10 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo.deserializeB
       msg.setNamespace(value);
       break;
     case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setStatus(value);
+      var value = msg.getLabelsMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
+         });
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
@@ -4578,6 +4582,16 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo.deserializeB
     case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setPort(value);
+      break;
+    case 6:
+      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
+      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
+      msg.setCreatedat(value);
+      break;
+    case 7:
+      var value = new k8s_io_api_core_v1_generated_pb.ServiceStatus;
+      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ServiceStatus.deserializeBinaryFromReader);
+      msg.setStatus(value);
       break;
     default:
       reader.skipField();
@@ -4622,12 +4636,9 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo.serializeBin
       f
     );
   }
-  f = message.getStatus();
-  if (f.length > 0) {
-    writer.writeString(
-      3,
-      f
-    );
+  f = message.getLabelsMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(3, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
   f = message.getIp();
   if (f.length > 0) {
@@ -4641,6 +4652,22 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo.serializeBin
     writer.writeString(
       5,
       f
+    );
+  }
+  f = message.getCreatedat();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
+    );
+  }
+  f = message.getStatus();
+  if (f != null) {
+    writer.writeMessage(
+      7,
+      f,
+      k8s_io_api_core_v1_generated_pb.ServiceStatus.serializeBinaryToWriter
     );
   }
 };
@@ -4683,21 +4710,25 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo.prototype.se
 
 
 /**
- * optional string status = 3;
- * @return {string}
+ * map<string, string> labels = 3;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,string>}
  */
-proto.github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo.prototype.getStatus = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+proto.github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo.prototype.getLabelsMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,string>} */ (
+      jspb.Message.getMapField(this, 3, opt_noLazyCreate,
+      null));
 };
 
 
 /**
- * @param {string} value
+ * Clears values from the map. The map will be non-null.
  * @return {!proto.github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo} returns this
  */
-proto.github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo.prototype.setStatus = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
-};
+proto.github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo.prototype.clearLabelsMap = function() {
+  this.getLabelsMap().clear();
+  return this;};
 
 
 /**
@@ -4733,6 +4764,80 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo.prototype.ge
  */
 proto.github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo.prototype.setPort = function(value) {
   return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time createdAt = 6;
+ * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
+ */
+proto.github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo.prototype.getCreatedat = function() {
+  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 6));
+};
+
+
+/**
+ * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo.prototype.setCreatedat = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo.prototype.clearCreatedat = function() {
+  return this.setCreatedat(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo.prototype.hasCreatedat = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional k8s.io.api.core.v1.ServiceStatus status = 7;
+ * @return {?proto.k8s.io.api.core.v1.ServiceStatus}
+ */
+proto.github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo.prototype.getStatus = function() {
+  return /** @type{?proto.k8s.io.api.core.v1.ServiceStatus} */ (
+    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ServiceStatus, 7));
+};
+
+
+/**
+ * @param {?proto.k8s.io.api.core.v1.ServiceStatus|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo.prototype.setStatus = function(value) {
+  return jspb.Message.setWrapperField(this, 7, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo.prototype.clearStatus = function() {
+  return this.setStatus(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo.prototype.hasStatus = function() {
+  return jspb.Message.getField(this, 7) != null;
 };
 
 
