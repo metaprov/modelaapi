@@ -88,7 +88,7 @@ message GetPodResponse {
 
 message ListPodsRequest {
     string namespace = 1;
-    map<string,string> labels =3;
+    map<string,string> labels =2;
 }
 
 message ListPodsResponse {
@@ -109,7 +109,7 @@ message GetJobResponse {
 
 message ListJobsRequest {
     string namespace = 1;
-    map<string,string> labels =3;
+    map<string,string> labels =2;
 }
 
 message ListJobsResponse {
@@ -142,36 +142,41 @@ message ServiceInfo {
     string status    = 3;
     string ip        = 4;
     string port      = 5;
+}
 
+message ContainerInfo {
+    string name      = 1;
+    bytes log        = 2;
 }
 
 message DeploymentInfo {
     string name       = 1;
     string namespace  = 2;
-    k8s.io.api.apps.v1.DeploymentStatus status = 3;    
-    bytes log    = 4;
-    repeated PodInfo pods = 5; // return info about each pod in the job
+    map<string,string> labels = 3;
+    k8s.io.apimachinery.pkg.apis.meta.v1.Time createdAt = 4;
+    k8s.io.api.apps.v1.DeploymentStatus status = 5;    
+    repeated PodInfo pods = 6; // return info about each pod in the job
 }
 
 message PodInfo {
     string name      = 1;
     string namespace = 2;    
-    k8s.io.api.core.v1.PodStatus status = 3;    
-    map<string,bytes> logs    = 4; // get the log per container
+    map<string,string> labels = 3;
+    k8s.io.apimachinery.pkg.apis.meta.v1.Time createdAt = 4;
+    k8s.io.api.core.v1.PodStatus status    = 5;    
+    repeated ContainerInfo contrainers    = 6; // get the log per container
 }
 
 message JobInfo {
     string name      = 1;
     string namespace = 2;    
-    k8s.io.apimachinery.pkg.apis.meta.v1.Time startedAt = 3;
-    k8s.io.apimachinery.pkg.apis.meta.v1.Time completedAt = 4;
-    int32 failed = 5;     // active pods
-    int32 succeeded = 6;  
-    int32 active = 7;
-    repeated PodInfo pods = 8; // return info about each pod in the job
-
-
-    
+    map<string,string> labels = 3;
+    k8s.io.apimachinery.pkg.apis.meta.v1.Time startedAt = 4;
+    k8s.io.apimachinery.pkg.apis.meta.v1.Time completedAt = 5;
+    int32 failed = 6;     // active pods
+    int32 succeeded = 7;  
+    int32 active = 8;
+    repeated PodInfo pods = 9; // return info about each pod in the job    
 }
 
 

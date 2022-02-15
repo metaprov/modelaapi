@@ -549,6 +549,30 @@ export namespace ServiceInfo {
   }
 }
 
+export class ContainerInfo extends jspb.Message {
+  getName(): string;
+  setName(value: string): ContainerInfo;
+
+  getLog(): Uint8Array | string;
+  getLog_asU8(): Uint8Array;
+  getLog_asB64(): string;
+  setLog(value: Uint8Array | string): ContainerInfo;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ContainerInfo.AsObject;
+  static toObject(includeInstance: boolean, msg: ContainerInfo): ContainerInfo.AsObject;
+  static serializeBinaryToWriter(message: ContainerInfo, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ContainerInfo;
+  static deserializeBinaryFromReader(message: ContainerInfo, reader: jspb.BinaryReader): ContainerInfo;
+}
+
+export namespace ContainerInfo {
+  export type AsObject = {
+    name: string,
+    log: Uint8Array | string,
+  }
+}
+
 export class DeploymentInfo extends jspb.Message {
   getName(): string;
   setName(value: string): DeploymentInfo;
@@ -556,15 +580,18 @@ export class DeploymentInfo extends jspb.Message {
   getNamespace(): string;
   setNamespace(value: string): DeploymentInfo;
 
+  getLabelsMap(): jspb.Map<string, string>;
+  clearLabelsMap(): DeploymentInfo;
+
+  getCreatedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setCreatedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DeploymentInfo;
+  hasCreatedat(): boolean;
+  clearCreatedat(): DeploymentInfo;
+
   getStatus(): k8s_io_api_apps_v1_generated_pb.DeploymentStatus | undefined;
   setStatus(value?: k8s_io_api_apps_v1_generated_pb.DeploymentStatus): DeploymentInfo;
   hasStatus(): boolean;
   clearStatus(): DeploymentInfo;
-
-  getLog(): Uint8Array | string;
-  getLog_asU8(): Uint8Array;
-  getLog_asB64(): string;
-  setLog(value: Uint8Array | string): DeploymentInfo;
 
   getPodsList(): Array<PodInfo>;
   setPodsList(value: Array<PodInfo>): DeploymentInfo;
@@ -583,8 +610,9 @@ export namespace DeploymentInfo {
   export type AsObject = {
     name: string,
     namespace: string,
+    labelsMap: Array<[string, string]>,
+    createdat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     status?: k8s_io_api_apps_v1_generated_pb.DeploymentStatus.AsObject,
-    log: Uint8Array | string,
     podsList: Array<PodInfo.AsObject>,
   }
 }
@@ -596,13 +624,23 @@ export class PodInfo extends jspb.Message {
   getNamespace(): string;
   setNamespace(value: string): PodInfo;
 
+  getLabelsMap(): jspb.Map<string, string>;
+  clearLabelsMap(): PodInfo;
+
+  getCreatedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setCreatedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): PodInfo;
+  hasCreatedat(): boolean;
+  clearCreatedat(): PodInfo;
+
   getStatus(): k8s_io_api_core_v1_generated_pb.PodStatus | undefined;
   setStatus(value?: k8s_io_api_core_v1_generated_pb.PodStatus): PodInfo;
   hasStatus(): boolean;
   clearStatus(): PodInfo;
 
-  getLogsMap(): jspb.Map<string, Uint8Array | string>;
-  clearLogsMap(): PodInfo;
+  getContrainersList(): Array<ContainerInfo>;
+  setContrainersList(value: Array<ContainerInfo>): PodInfo;
+  clearContrainersList(): PodInfo;
+  addContrainers(value?: ContainerInfo, index?: number): ContainerInfo;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PodInfo.AsObject;
@@ -616,8 +654,10 @@ export namespace PodInfo {
   export type AsObject = {
     name: string,
     namespace: string,
+    labelsMap: Array<[string, string]>,
+    createdat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     status?: k8s_io_api_core_v1_generated_pb.PodStatus.AsObject,
-    logsMap: Array<[string, Uint8Array | string]>,
+    contrainersList: Array<ContainerInfo.AsObject>,
   }
 }
 
@@ -627,6 +667,9 @@ export class JobInfo extends jspb.Message {
 
   getNamespace(): string;
   setNamespace(value: string): JobInfo;
+
+  getLabelsMap(): jspb.Map<string, string>;
+  clearLabelsMap(): JobInfo;
 
   getStartedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setStartedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): JobInfo;
@@ -664,6 +707,7 @@ export namespace JobInfo {
   export type AsObject = {
     name: string,
     namespace: string,
+    labelsMap: Array<[string, string]>,
     startedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     completedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     failed: number,

@@ -5,6 +5,7 @@ package github.com.metaprov.modelaapi.services.modelasystem.v1;
 import "google/api/annotations.proto";
 import "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto";
 import "github.com/metaprov/modelaapi/services/common/v1/common.proto";
+import "google/protobuf/field_mask.proto";
 
 message ListModelaSystemsRequest {
     string             namespace = 1;
@@ -28,6 +29,7 @@ message CreateModelaSystemResponse {
 
 message UpdateModelaSystemRequest {
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystem modelasystem = 1;
+    google.protobuf.FieldMask field_mask = 2;
 }
 
 message UpdateModelaSystemResponse {

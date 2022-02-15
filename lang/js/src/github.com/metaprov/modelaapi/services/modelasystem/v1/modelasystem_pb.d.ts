@@ -3,6 +3,7 @@ import * as jspb from 'google-protobuf'
 import * as google_api_annotations_pb from '../../../../../../google/api/annotations_pb';
 import * as github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated_pb';
 import * as github_com_metaprov_modelaapi_services_common_v1_common_pb from '../../../../../../github.com/metaprov/modelaapi/services/common/v1/common_pb';
+import * as google_protobuf_field_mask_pb from 'google-protobuf/google/protobuf/field_mask_pb';
 
 
 export class ListModelaSystemsRequest extends jspb.Message {
@@ -105,6 +106,11 @@ export class UpdateModelaSystemRequest extends jspb.Message {
   hasModelasystem(): boolean;
   clearModelasystem(): UpdateModelaSystemRequest;
 
+  getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): UpdateModelaSystemRequest;
+  hasFieldMask(): boolean;
+  clearFieldMask(): UpdateModelaSystemRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateModelaSystemRequest.AsObject;
   static toObject(includeInstance: boolean, msg: UpdateModelaSystemRequest): UpdateModelaSystemRequest.AsObject;
@@ -116,6 +122,7 @@ export class UpdateModelaSystemRequest extends jspb.Message {
 export namespace UpdateModelaSystemRequest {
   export type AsObject = {
     modelasystem?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ModelaSystem.AsObject,
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
 
