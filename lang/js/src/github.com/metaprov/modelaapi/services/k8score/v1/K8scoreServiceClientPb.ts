@@ -508,5 +508,48 @@ export class CoreK8sServiceClient {
     this.methodInfoListEvents);
   }
 
+  methodInfoGetContainerLog = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.k8score.v1.CoreK8sService/GetContainerLog',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_k8score_v1_k8score_pb.GetContainerLogRequest,
+    github_com_metaprov_modelaapi_services_k8score_v1_k8score_pb.GetContainerLogResponse,
+    (request: github_com_metaprov_modelaapi_services_k8score_v1_k8score_pb.GetContainerLogRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_k8score_v1_k8score_pb.GetContainerLogResponse.deserializeBinary
+  );
+
+  getContainerLog(
+    request: github_com_metaprov_modelaapi_services_k8score_v1_k8score_pb.GetContainerLogRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_k8score_v1_k8score_pb.GetContainerLogResponse>;
+
+  getContainerLog(
+    request: github_com_metaprov_modelaapi_services_k8score_v1_k8score_pb.GetContainerLogRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_k8score_v1_k8score_pb.GetContainerLogResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_k8score_v1_k8score_pb.GetContainerLogResponse>;
+
+  getContainerLog(
+    request: github_com_metaprov_modelaapi_services_k8score_v1_k8score_pb.GetContainerLogRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_k8score_v1_k8score_pb.GetContainerLogResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.k8score.v1.CoreK8sService/GetContainerLog',
+        request,
+        metadata || {},
+        this.methodInfoGetContainerLog,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.k8score.v1.CoreK8sService/GetContainerLog',
+    request,
+    metadata || {},
+    this.methodInfoGetContainerLog);
+  }
+
 }
 

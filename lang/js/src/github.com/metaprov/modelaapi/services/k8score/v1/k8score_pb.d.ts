@@ -447,6 +447,52 @@ export namespace ListJobsResponse {
   }
 }
 
+export class GetContainerLogRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): GetContainerLogRequest;
+
+  getName(): string;
+  setName(value: string): GetContainerLogRequest;
+
+  getContainername(): string;
+  setContainername(value: string): GetContainerLogRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetContainerLogRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetContainerLogRequest): GetContainerLogRequest.AsObject;
+  static serializeBinaryToWriter(message: GetContainerLogRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetContainerLogRequest;
+  static deserializeBinaryFromReader(message: GetContainerLogRequest, reader: jspb.BinaryReader): GetContainerLogRequest;
+}
+
+export namespace GetContainerLogRequest {
+  export type AsObject = {
+    namespace: string,
+    name: string,
+    containername: string,
+  }
+}
+
+export class GetContainerLogResponse extends jspb.Message {
+  getLog(): Uint8Array | string;
+  getLog_asU8(): Uint8Array;
+  getLog_asB64(): string;
+  setLog(value: Uint8Array | string): GetContainerLogResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetContainerLogResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetContainerLogResponse): GetContainerLogResponse.AsObject;
+  static serializeBinaryToWriter(message: GetContainerLogResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetContainerLogResponse;
+  static deserializeBinaryFromReader(message: GetContainerLogResponse, reader: jspb.BinaryReader): GetContainerLogResponse;
+}
+
+export namespace GetContainerLogResponse {
+  export type AsObject = {
+    log: Uint8Array | string,
+  }
+}
+
 export class ListEventsRequest extends jspb.Message {
   getNamespace(): string;
   setNamespace(value: string): ListEventsRequest;

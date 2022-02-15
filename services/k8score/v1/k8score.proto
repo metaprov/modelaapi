@@ -116,6 +116,18 @@ message ListJobsResponse {
     repeated JobInfo jobs = 1;
 }
 
+// Container
+message GetContainerLogRequest {
+    string namespace          = 1;
+    string name               = 2;
+    string containername      = 3;    
+}
+
+message GetContainerLogResponse {
+    bytes log = 1;
+}
+
+
 //////////////////////////////////// Events
 
 message ListEventsRequest {
@@ -239,6 +251,12 @@ service CoreK8sService {
     rpc ListEvents(ListEventsRequest) returns (ListEventsResponse) {
         option (google.api.http).get = "/v1/events/{namespace}";
     }
+
+    ////////////////////////////// container log
+    rpc GetContainerLog(GetContainerLogRequest) returns (GetContainerLogResponse) {
+        option (google.api.http).get = "/v1/pods/{namespace}";
+    }
+
 
 
 }

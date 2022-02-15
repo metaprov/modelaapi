@@ -72,6 +72,11 @@ class CoreK8sServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.ListEventsRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.ListEventsResponse.FromString,
                 )
+        self.GetContainerLog = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.k8score.v1.CoreK8sService/GetContainerLog',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.GetContainerLogRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.GetContainerLogResponse.FromString,
+                )
 
 
 class CoreK8sServiceServicer(object):
@@ -153,6 +158,13 @@ class CoreK8sServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetContainerLog(self, request, context):
+        """//////////////////////////// container log
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_CoreK8sServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -210,6 +222,11 @@ def add_CoreK8sServiceServicer_to_server(servicer, server):
                     servicer.ListEvents,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.ListEventsRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.ListEventsResponse.SerializeToString,
+            ),
+            'GetContainerLog': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetContainerLog,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.GetContainerLogRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.GetContainerLogResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -408,5 +425,22 @@ class CoreK8sService(object):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.k8score.v1.CoreK8sService/ListEvents',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.ListEventsRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.ListEventsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetContainerLog(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.k8score.v1.CoreK8sService/GetContainerLog',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.GetContainerLogRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.GetContainerLogResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
