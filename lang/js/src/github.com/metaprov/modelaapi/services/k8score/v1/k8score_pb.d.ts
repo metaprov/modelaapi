@@ -406,6 +406,9 @@ export namespace GetJobResponse {
 }
 
 export class ListJobsRequest extends jspb.Message {
+  getTenant(): string;
+  setTenant(value: string): ListJobsRequest;
+
   getNamespace(): string;
   setNamespace(value: string): ListJobsRequest;
 
@@ -422,6 +425,7 @@ export class ListJobsRequest extends jspb.Message {
 
 export namespace ListJobsRequest {
   export type AsObject = {
+    tenant: string,
     namespace: string,
     labelsMap: Array<[string, string]>,
   }
@@ -760,6 +764,15 @@ export class JobInfo extends jspb.Message {
   clearPodsList(): JobInfo;
   addPods(value?: PodInfo, index?: number): PodInfo;
 
+  getModel(): string;
+  setModel(value: string): JobInfo;
+
+  getStudy(): string;
+  setStudy(value: string): JobInfo;
+
+  getDataset(): string;
+  setDataset(value: string): JobInfo;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): JobInfo.AsObject;
   static toObject(includeInstance: boolean, msg: JobInfo): JobInfo.AsObject;
@@ -780,6 +793,9 @@ export namespace JobInfo {
     active: number,
     ready: number,
     podsList: Array<PodInfo.AsObject>,
+    model: string,
+    study: string,
+    dataset: string,
   }
 }
 

@@ -3735,7 +3735,8 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.ListJobsRequest.prototyp
  */
 proto.github.com.metaprov.modelaapi.services.k8score.v1.ListJobsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    tenant: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    namespace: jspb.Message.getFieldWithDefault(msg, 2, ""),
     labelsMap: (f = msg.getLabelsMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
@@ -3775,9 +3776,13 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.ListJobsRequest.deserial
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setNamespace(value);
+      msg.setTenant(value);
       break;
     case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNamespace(value);
+      break;
+    case 3:
       var value = msg.getLabelsMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
@@ -3812,25 +3817,32 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.ListJobsRequest.prototyp
  */
 proto.github.com.metaprov.modelaapi.services.k8score.v1.ListJobsRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getNamespace();
+  f = message.getTenant();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
+  f = message.getNamespace();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
   f = message.getLabelsMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(2, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+    f.serializeBinary(3, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
 };
 
 
 /**
- * optional string namespace = 1;
+ * optional string tenant = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.services.k8score.v1.ListJobsRequest.prototype.getNamespace = function() {
+proto.github.com.metaprov.modelaapi.services.k8score.v1.ListJobsRequest.prototype.getTenant = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -3839,20 +3851,38 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.ListJobsRequest.prototyp
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.services.k8score.v1.ListJobsRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.k8score.v1.ListJobsRequest.prototype.setNamespace = function(value) {
+proto.github.com.metaprov.modelaapi.services.k8score.v1.ListJobsRequest.prototype.setTenant = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * map<string, string> labels = 2;
+ * optional string namespace = 2;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.k8score.v1.ListJobsRequest.prototype.getNamespace = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.k8score.v1.ListJobsRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.k8score.v1.ListJobsRequest.prototype.setNamespace = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * map<string, string> labels = 3;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
 proto.github.com.metaprov.modelaapi.services.k8score.v1.ListJobsRequest.prototype.getLabelsMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 2, opt_noLazyCreate,
+      jspb.Message.getMapField(this, 3, opt_noLazyCreate,
       null));
 };
 
@@ -6202,7 +6232,10 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo.toObject = funct
     active: jspb.Message.getFieldWithDefault(msg, 8, 0),
     ready: jspb.Message.getFieldWithDefault(msg, 9, 0),
     podsList: jspb.Message.toObjectList(msg.getPodsList(),
-    proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo.toObject, includeInstance)
+    proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo.toObject, includeInstance),
+    model: jspb.Message.getFieldWithDefault(msg, 11, ""),
+    study: jspb.Message.getFieldWithDefault(msg, 12, ""),
+    dataset: jspb.Message.getFieldWithDefault(msg, 13, "")
   };
 
   if (includeInstance) {
@@ -6283,6 +6316,18 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo.deserializeBinar
       var value = new proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo.deserializeBinaryFromReader);
       msg.addPods(value);
+      break;
+    case 11:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setModel(value);
+      break;
+    case 12:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setStudy(value);
+      break;
+    case 13:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDataset(value);
       break;
     default:
       reader.skipField();
@@ -6381,6 +6426,27 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo.serializeBinaryT
       10,
       f,
       proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo.serializeBinaryToWriter
+    );
+  }
+  f = message.getModel();
+  if (f.length > 0) {
+    writer.writeString(
+      11,
+      f
+    );
+  }
+  f = message.getStudy();
+  if (f.length > 0) {
+    writer.writeString(
+      12,
+      f
+    );
+  }
+  f = message.getDataset();
+  if (f.length > 0) {
+    writer.writeString(
+      13,
+      f
     );
   }
 };
@@ -6625,6 +6691,60 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo.prototype.addPod
  */
 proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo.prototype.clearPodsList = function() {
   return this.setPodsList([]);
+};
+
+
+/**
+ * optional string model = 11;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo.prototype.getModel = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo.prototype.setModel = function(value) {
+  return jspb.Message.setProto3StringField(this, 11, value);
+};
+
+
+/**
+ * optional string study = 12;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo.prototype.getStudy = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo.prototype.setStudy = function(value) {
+  return jspb.Message.setProto3StringField(this, 12, value);
+};
+
+
+/**
+ * optional string dataset = 13;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo.prototype.getDataset = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo.prototype.setDataset = function(value) {
+  return jspb.Message.setProto3StringField(this, 13, value);
 };
 
 

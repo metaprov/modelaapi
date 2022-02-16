@@ -108,8 +108,9 @@ message GetJobResponse {
 }
 
 message ListJobsRequest {
-    string namespace = 1;
-    map<string,string> labels =2;
+    string tenant    = 1;
+    string namespace = 2;
+    map<string,string> labels =3;
 }
 
 message ListJobsResponse {
@@ -193,6 +194,10 @@ message JobInfo {
     int32 active = 8;
     int32 ready = 9;
     repeated PodInfo pods = 10; // return info about each pod in the job    
+    // needed if possible
+    string model = 11;
+    string study = 12;
+    string dataset = 13;
 }
 
 
