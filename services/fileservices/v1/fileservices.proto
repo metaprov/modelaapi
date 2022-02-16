@@ -13,9 +13,15 @@ import "github.com/metaprov/modelaapi/services/common/v1/common.proto";
 
 
 message DataBlock {
-    string name       = 1;
-    bytes  data       = 2;
-    string md5_hash   = 3;    
+    string name               = 1;
+    bytes  data               = 2;
+    string md5_hash           = 3;  
+    string tenant             = 4;  
+    string dataProductName    = 5;
+    string dataProductVersion = 6;
+    string bucket             = 7;
+    string resourceType       = 8;
+    string resourceName       = 9; 
 }
 
 service FileServicesService {

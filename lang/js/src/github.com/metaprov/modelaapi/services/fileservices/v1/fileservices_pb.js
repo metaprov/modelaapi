@@ -87,7 +87,13 @@ proto.github.com.metaprov.modelaapi.services.fileservices.v1.DataBlock.toObject 
   var f, obj = {
     name: jspb.Message.getFieldWithDefault(msg, 1, ""),
     data: msg.getData_asB64(),
-    md5Hash: jspb.Message.getFieldWithDefault(msg, 3, "")
+    md5Hash: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    tenant: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    dataproductname: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    dataproductversion: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    bucket: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    resourcetype: jspb.Message.getFieldWithDefault(msg, 8, ""),
+    resourcename: jspb.Message.getFieldWithDefault(msg, 9, "")
   };
 
   if (includeInstance) {
@@ -136,6 +142,30 @@ proto.github.com.metaprov.modelaapi.services.fileservices.v1.DataBlock.deseriali
       var value = /** @type {string} */ (reader.readString());
       msg.setMd5Hash(value);
       break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTenant(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDataproductname(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDataproductversion(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setBucket(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setResourcetype(value);
+      break;
+    case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setResourcename(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -183,6 +213,48 @@ proto.github.com.metaprov.modelaapi.services.fileservices.v1.DataBlock.serialize
   if (f.length > 0) {
     writer.writeString(
       3,
+      f
+    );
+  }
+  f = message.getTenant();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = message.getDataproductname();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
+  f = message.getDataproductversion();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
+      f
+    );
+  }
+  f = message.getBucket();
+  if (f.length > 0) {
+    writer.writeString(
+      7,
+      f
+    );
+  }
+  f = message.getResourcetype();
+  if (f.length > 0) {
+    writer.writeString(
+      8,
+      f
+    );
+  }
+  f = message.getResourcename();
+  if (f.length > 0) {
+    writer.writeString(
+      9,
       f
     );
   }
@@ -264,6 +336,114 @@ proto.github.com.metaprov.modelaapi.services.fileservices.v1.DataBlock.prototype
  */
 proto.github.com.metaprov.modelaapi.services.fileservices.v1.DataBlock.prototype.setMd5Hash = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional string tenant = 4;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.fileservices.v1.DataBlock.prototype.getTenant = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.fileservices.v1.DataBlock} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.fileservices.v1.DataBlock.prototype.setTenant = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional string dataProductName = 5;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.fileservices.v1.DataBlock.prototype.getDataproductname = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.fileservices.v1.DataBlock} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.fileservices.v1.DataBlock.prototype.setDataproductname = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * optional string dataProductVersion = 6;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.fileservices.v1.DataBlock.prototype.getDataproductversion = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.fileservices.v1.DataBlock} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.fileservices.v1.DataBlock.prototype.setDataproductversion = function(value) {
+  return jspb.Message.setProto3StringField(this, 6, value);
+};
+
+
+/**
+ * optional string bucket = 7;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.fileservices.v1.DataBlock.prototype.getBucket = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.fileservices.v1.DataBlock} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.fileservices.v1.DataBlock.prototype.setBucket = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
+};
+
+
+/**
+ * optional string resourceType = 8;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.fileservices.v1.DataBlock.prototype.getResourcetype = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.fileservices.v1.DataBlock} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.fileservices.v1.DataBlock.prototype.setResourcetype = function(value) {
+  return jspb.Message.setProto3StringField(this, 8, value);
+};
+
+
+/**
+ * optional string resourceName = 9;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.fileservices.v1.DataBlock.prototype.getResourcename = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.fileservices.v1.DataBlock} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.fileservices.v1.DataBlock.prototype.setResourcename = function(value) {
+  return jspb.Message.setProto3StringField(this, 9, value);
 };
 
 

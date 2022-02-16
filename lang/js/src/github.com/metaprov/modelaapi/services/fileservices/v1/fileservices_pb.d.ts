@@ -19,6 +19,24 @@ export class DataBlock extends jspb.Message {
   getMd5Hash(): string;
   setMd5Hash(value: string): DataBlock;
 
+  getTenant(): string;
+  setTenant(value: string): DataBlock;
+
+  getDataproductname(): string;
+  setDataproductname(value: string): DataBlock;
+
+  getDataproductversion(): string;
+  setDataproductversion(value: string): DataBlock;
+
+  getBucket(): string;
+  setBucket(value: string): DataBlock;
+
+  getResourcetype(): string;
+  setResourcetype(value: string): DataBlock;
+
+  getResourcename(): string;
+  setResourcename(value: string): DataBlock;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataBlock.AsObject;
   static toObject(includeInstance: boolean, msg: DataBlock): DataBlock.AsObject;
@@ -32,6 +50,12 @@ export namespace DataBlock {
     name: string,
     data: Uint8Array | string,
     md5Hash: string,
+    tenant: string,
+    dataproductname: string,
+    dataproductversion: string,
+    bucket: string,
+    resourcetype: string,
+    resourcename: string,
   }
 }
 
