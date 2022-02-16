@@ -835,35 +835,3 @@ export namespace SnapshotResponse {
   }
 }
 
-export class DatasetDataBlock extends jspb.Message {
-  getName(): string;
-  setName(value: string): DatasetDataBlock;
-
-  getDataBlock(): Uint8Array | string;
-  getDataBlock_asU8(): Uint8Array;
-  getDataBlock_asB64(): string;
-  setDataBlock(value: Uint8Array | string): DatasetDataBlock;
-
-  getDataBlockHash(): string;
-  setDataBlockHash(value: string): DatasetDataBlock;
-
-  getDataHash(): string;
-  setDataHash(value: string): DatasetDataBlock;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DatasetDataBlock.AsObject;
-  static toObject(includeInstance: boolean, msg: DatasetDataBlock): DatasetDataBlock.AsObject;
-  static serializeBinaryToWriter(message: DatasetDataBlock, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DatasetDataBlock;
-  static deserializeBinaryFromReader(message: DatasetDataBlock, reader: jspb.BinaryReader): DatasetDataBlock;
-}
-
-export namespace DatasetDataBlock {
-  export type AsObject = {
-    name: string,
-    dataBlock: Uint8Array | string,
-    dataBlockHash: string,
-    dataHash: string,
-  }
-}
-

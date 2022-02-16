@@ -14,7 +14,6 @@
 import * as grpcWeb from 'grpc-web';
 
 import * as github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb from '../../../../../../github.com/metaprov/modelaapi/services/dataset/v1/dataset_pb';
-import * as google_protobuf_empty_pb from 'google-protobuf/google/protobuf/empty_pb';
 
 
 export class DatasetServiceClient {

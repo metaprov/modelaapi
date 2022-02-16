@@ -219,14 +219,6 @@ message SnapshotResponse {
 }
 
 
-message DatasetDataBlock {
-    string name            = 1;
-    bytes data_block       = 3;
-    string data_block_hash = 4;
-    string data_hash = 5;
-}
-
-
 
 
 
@@ -286,10 +278,7 @@ service DatasetService {
         option (google.api.http).post = "/v1/datasets/{namespace}/{names}:validate";
     }
 
-    rpc UploadChunk(stream DatasetDataBlock) returns (google.protobuf.Empty) {
-    //    option (google.api.http).post = "/v1/datasets/{namespace}/{name}:upload";
-    }
-
+ 
     rpc DownloadDataset(DownloadDatasetRequest) returns (DownloadDatasetResponse) {
         option (google.api.http).post = "/v1/datasets/{namespace}/{name}:download";
     }
