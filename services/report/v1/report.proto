@@ -99,6 +99,6 @@ service ReportService {
     }
 
     rpc Download(DownloadReportRequest) returns (DownloadReportResponse) {
-        option (google.api.http).delete = "/v1/reports/{name}";
+        option (google.api.http).get = "/v1/reports/{namespace}/{name}:download";
     }
 }
