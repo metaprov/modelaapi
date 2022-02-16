@@ -5,6 +5,7 @@ package github.com.metaprov.modelaapi.services.dataset.v1;
 
 import "google/protobuf/field_mask.proto";
 import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
 import "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto";
 import "github.com/metaprov/modelaapi/services/common/v1/common.proto";
 
@@ -218,6 +219,14 @@ message SnapshotResponse {
 }
 
 
+message DatasetDataBlock {
+    string name            = 1;
+    bytes data_block       = 3;
+    string data_block_hash = 4;
+    string data_hash = 5;
+}
+
+
 
 
 
@@ -277,7 +286,7 @@ service DatasetService {
         option (google.api.http).post = "/v1/datasets/{namespace}/{names}:validate";
     }
 
-    rpc UploadChunk(UploadChunkRequest) returns (UploadChunkResponse) {
+    rpc UploadChunk(stream DatasetDataBlock) returns (google.protobuf.Empty) {
     //    option (google.api.http).post = "/v1/datasets/{namespace}/{name}:upload";
     }
 

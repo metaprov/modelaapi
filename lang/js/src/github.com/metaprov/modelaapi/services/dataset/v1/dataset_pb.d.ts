@@ -2,6 +2,7 @@ import * as jspb from 'google-protobuf'
 
 import * as google_protobuf_field_mask_pb from 'google-protobuf/google/protobuf/field_mask_pb';
 import * as google_api_annotations_pb from '../../../../../../google/api/annotations_pb';
+import * as google_protobuf_empty_pb from 'google-protobuf/google/protobuf/empty_pb';
 import * as github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated_pb';
 import * as github_com_metaprov_modelaapi_services_common_v1_common_pb from '../../../../../../github.com/metaprov/modelaapi/services/common/v1/common_pb';
 
@@ -831,6 +832,38 @@ export namespace SnapshotResponse {
   export type AsObject = {
     bucket: string,
     path: string,
+  }
+}
+
+export class DatasetDataBlock extends jspb.Message {
+  getName(): string;
+  setName(value: string): DatasetDataBlock;
+
+  getDataBlock(): Uint8Array | string;
+  getDataBlock_asU8(): Uint8Array;
+  getDataBlock_asB64(): string;
+  setDataBlock(value: Uint8Array | string): DatasetDataBlock;
+
+  getDataBlockHash(): string;
+  setDataBlockHash(value: string): DatasetDataBlock;
+
+  getDataHash(): string;
+  setDataHash(value: string): DatasetDataBlock;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DatasetDataBlock.AsObject;
+  static toObject(includeInstance: boolean, msg: DatasetDataBlock): DatasetDataBlock.AsObject;
+  static serializeBinaryToWriter(message: DatasetDataBlock, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DatasetDataBlock;
+  static deserializeBinaryFromReader(message: DatasetDataBlock, reader: jspb.BinaryReader): DatasetDataBlock;
+}
+
+export namespace DatasetDataBlock {
+  export type AsObject = {
+    name: string,
+    dataBlock: Uint8Array | string,
+    dataBlockHash: string,
+    dataHash: string,
   }
 }
 

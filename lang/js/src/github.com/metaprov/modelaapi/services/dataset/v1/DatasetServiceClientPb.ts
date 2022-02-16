@@ -14,6 +14,7 @@
 import * as grpcWeb from 'grpc-web';
 
 import * as github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb from '../../../../../../github.com/metaprov/modelaapi/services/dataset/v1/dataset_pb';
+import * as google_protobuf_empty_pb from 'google-protobuf/google/protobuf/empty_pb';
 
 
 export class DatasetServiceClient {
@@ -506,49 +507,6 @@ export class DatasetServiceClient {
     request,
     metadata || {},
     this.methodInfoValidateDataset);
-  }
-
-  methodInfoUploadChunk = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/UploadChunk',
-    grpcWeb.MethodType.UNARY,
-    github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.UploadChunkRequest,
-    github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.UploadChunkResponse,
-    (request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.UploadChunkRequest) => {
-      return request.serializeBinary();
-    },
-    github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.UploadChunkResponse.deserializeBinary
-  );
-
-  uploadChunk(
-    request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.UploadChunkRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.UploadChunkResponse>;
-
-  uploadChunk(
-    request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.UploadChunkRequest,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.UploadChunkResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.UploadChunkResponse>;
-
-  uploadChunk(
-    request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.UploadChunkRequest,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.UploadChunkResponse) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/UploadChunk',
-        request,
-        metadata || {},
-        this.methodInfoUploadChunk,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/UploadChunk',
-    request,
-    metadata || {},
-    this.methodInfoUploadChunk);
   }
 
   methodInfoDownloadDataset = new grpcWeb.MethodDescriptor(

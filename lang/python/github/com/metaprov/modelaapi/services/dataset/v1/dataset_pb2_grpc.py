@@ -3,6 +3,7 @@
 import grpc
 
 from github.com.metaprov.modelaapi.services.dataset.v1 import dataset_pb2 as github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2
+from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 
 
 class DatasetServiceStub(object):
@@ -69,10 +70,10 @@ class DatasetServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.ValidateDatasetRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.ValidateDatasetResponse.FromString,
                 )
-        self.UploadChunk = channel.unary_unary(
+        self.UploadChunk = channel.stream_unary(
                 '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/UploadChunk',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.UploadChunkRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.UploadChunkResponse.FromString,
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.DatasetDataBlock.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.DownloadDataset = channel.unary_unary(
                 '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/DownloadDataset',
@@ -169,7 +170,7 @@ class DatasetServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def UploadChunk(self, request, context):
+    def UploadChunk(self, request_iterator, context):
         """option (google.api.http).post = "/v1/datasets/{namespace}/{name}:upload";
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -258,10 +259,10 @@ def add_DatasetServiceServicer_to_server(servicer, server):
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.ValidateDatasetRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.ValidateDatasetResponse.SerializeToString,
             ),
-            'UploadChunk': grpc.unary_unary_rpc_method_handler(
+            'UploadChunk': grpc.stream_unary_rpc_method_handler(
                     servicer.UploadChunk,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.UploadChunkRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.UploadChunkResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.DatasetDataBlock.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'DownloadDataset': grpc.unary_unary_rpc_method_handler(
                     servicer.DownloadDataset,
@@ -481,7 +482,7 @@ class DatasetService(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def UploadChunk(request,
+    def UploadChunk(request_iterator,
             target,
             options=(),
             channel_credentials=None,
@@ -491,9 +492,9 @@ class DatasetService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/UploadChunk',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.UploadChunkRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.UploadChunkResponse.FromString,
+        return grpc.experimental.stream_unary(request_iterator, target, '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/UploadChunk',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.DatasetDataBlock.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
