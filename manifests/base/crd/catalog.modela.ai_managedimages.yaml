@@ -213,7 +213,6 @@ spec:
                 type: string
             required:
             - description
-            - env
             - repository
             type: object
         required:

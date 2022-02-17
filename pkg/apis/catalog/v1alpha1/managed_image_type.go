@@ -50,6 +50,7 @@ type ManagedImageSpec struct {
 	// +kubebuilder:validation:Optional
 	Tag *string `json:"tag,optional" protobuf:"bytes,4,opt,name=tag"`
 	// The environment variables to use when the image start
+	// +kubebuilder:validation:Optional
 	Env []v1.EnvVar `json:"env,optional" protobuf:"bytes,5,rep,name=env"`
 	// Is this a gpu image
 	// +kubebuilder:default ="false"
