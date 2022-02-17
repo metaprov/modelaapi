@@ -228,11 +228,11 @@ func (connection *Connection) CreateSecret() *v1.Secret {
 		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.Couchbase.Password
 		fields[string(catalog.ApiKeyNameURL)] = *connection.Spec.Couchbase.URL
 	case catalog.Dermio:
-		fields[string(catalog.ApiKeyNameHost)] = *connection.Spec.Dermio.Host
-		fields[string(catalog.ApiKeyNamePort)] = strconv.Itoa(int(*connection.Spec.Dermio.Port))
-		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.Dermio.Username
-		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.Dermio.Password
-		fields[string(catalog.ApiKeyNameURL)] = *connection.Spec.Dermio.URL
+		fields[string(catalog.ApiKeyNameHost)] = *connection.Spec.Dremio.Host
+		fields[string(catalog.ApiKeyNamePort)] = strconv.Itoa(int(*connection.Spec.Dremio.Port))
+		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.Dremio.Username
+		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.Dremio.Password
+		fields[string(catalog.ApiKeyNameURL)] = *connection.Spec.Dremio.URL
 	case catalog.DB2:
 		fields[string(catalog.ApiKeyNameHost)] = *connection.Spec.DB2.Host
 		fields[string(catalog.ApiKeyNamePort)] = strconv.Itoa(int(*connection.Spec.DB2.Port))
