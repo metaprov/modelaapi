@@ -1648,10 +1648,10 @@ export class ConnectionSpec extends jspb.Message {
   hasRedshift(): boolean;
   clearRedshift(): ConnectionSpec;
 
-  getDermio(): DermioSpec | undefined;
-  setDermio(value?: DermioSpec): ConnectionSpec;
-  hasDermio(): boolean;
-  clearDermio(): ConnectionSpec;
+  getDremio(): DremioSpec | undefined;
+  setDremio(value?: DremioSpec): ConnectionSpec;
+  hasDremio(): boolean;
+  clearDremio(): ConnectionSpec;
 
   getDb2(): DB2Spec | undefined;
   setDb2(value?: DB2Spec): ConnectionSpec;
@@ -1980,7 +1980,7 @@ export namespace ConnectionSpec {
     druid?: ApacheDruidSpec.AsObject,
     hive?: ApacheHiveSpec.AsObject,
     redshift?: AmazonRedShiftSpec.AsObject,
-    dermio?: DermioSpec.AsObject,
+    dremio?: DremioSpec.AsObject,
     db2?: DB2Spec.AsObject,
     bigquery?: GcpBigQuerySpec.AsObject,
     cassandra?: ApacheCassandraSpec.AsObject,
@@ -2164,44 +2164,6 @@ export namespace DB2Spec {
   }
 }
 
-export class DermioSpec extends jspb.Message {
-  getHost(): string;
-  setHost(value: string): DermioSpec;
-
-  getPort(): number;
-  setPort(value: number): DermioSpec;
-
-  getKeyspace(): string;
-  setKeyspace(value: string): DermioSpec;
-
-  getUsername(): string;
-  setUsername(value: string): DermioSpec;
-
-  getPassword(): string;
-  setPassword(value: string): DermioSpec;
-
-  getUrl(): string;
-  setUrl(value: string): DermioSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DermioSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: DermioSpec): DermioSpec.AsObject;
-  static serializeBinaryToWriter(message: DermioSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DermioSpec;
-  static deserializeBinaryFromReader(message: DermioSpec, reader: jspb.BinaryReader): DermioSpec;
-}
-
-export namespace DermioSpec {
-  export type AsObject = {
-    host: string,
-    port: number,
-    keyspace: string,
-    username: string,
-    password: string,
-    url: string,
-  }
-}
-
 export class DigitalOceanSpec extends jspb.Message {
   getToken(): string;
   setToken(value: string): DigitalOceanSpec;
@@ -2233,6 +2195,44 @@ export namespace DigitalOceanSpec {
     secretkey: string,
     defaultregion: string,
     host: string,
+  }
+}
+
+export class DremioSpec extends jspb.Message {
+  getHost(): string;
+  setHost(value: string): DremioSpec;
+
+  getPort(): number;
+  setPort(value: number): DremioSpec;
+
+  getKeyspace(): string;
+  setKeyspace(value: string): DremioSpec;
+
+  getUsername(): string;
+  setUsername(value: string): DremioSpec;
+
+  getPassword(): string;
+  setPassword(value: string): DremioSpec;
+
+  getUrl(): string;
+  setUrl(value: string): DremioSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DremioSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: DremioSpec): DremioSpec.AsObject;
+  static serializeBinaryToWriter(message: DremioSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DremioSpec;
+  static deserializeBinaryFromReader(message: DremioSpec, reader: jspb.BinaryReader): DremioSpec;
+}
+
+export namespace DremioSpec {
+  export type AsObject = {
+    host: string,
+    port: number,
+    keyspace: string,
+    username: string,
+    password: string,
+    url: string,
   }
 }
 

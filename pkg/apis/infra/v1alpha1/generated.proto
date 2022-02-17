@@ -970,7 +970,7 @@ message ConnectionSpec {
   optional AmazonRedShiftSpec redshift = 9;
 
   // +kubebuilder:validation:Optional
-  optional DermioSpec dermio = 10;
+  optional DremioSpec dremio = 10;
 
   // +kubebuilder:validation:Optional
   optional DB2Spec db2 = 11;
@@ -1236,7 +1236,29 @@ message DB2Spec {
   optional string url = 6;
 }
 
-message DermioSpec {
+message DigitalOceanSpec {
+  // Token for digital ocean
+  // +kubebuilder:default:=""
+  optional string token = 1;
+
+  // Access Key for digital ocean spaces
+  // +kubebuilder:default:=""
+  optional string accessKey = 2;
+
+  // StorageSecret Key for digital ocean spaces
+  // +kubebuilder:default:=""
+  optional string secretKey = 3;
+
+  // Default digital ocean
+  // +kubebuilder:default:=""
+  optional string defaultRegion = 4;
+
+  // url or connection string
+  // +kubebuilder:default:=""
+  optional string host = 5;
+}
+
+message DremioSpec {
   // +kubebuilder:default:=""
   optional string host = 1;
 
@@ -1258,28 +1280,6 @@ message DermioSpec {
   // URL override the other settings
   // +kubebuilder:default:=""
   optional string url = 6;
-}
-
-message DigitalOceanSpec {
-  // Token for digital ocean
-  // +kubebuilder:default:=""
-  optional string token = 1;
-
-  // Access Key for digital ocean spaces
-  // +kubebuilder:default:=""
-  optional string accessKey = 2;
-
-  // StorageSecret Key for digital ocean spaces
-  // +kubebuilder:default:=""
-  optional string secretKey = 3;
-
-  // Default digital ocean
-  // +kubebuilder:default:=""
-  optional string defaultRegion = 4;
-
-  // url or connection string
-  // +kubebuilder:default:=""
-  optional string host = 5;
 }
 
 message DropboxSpec {

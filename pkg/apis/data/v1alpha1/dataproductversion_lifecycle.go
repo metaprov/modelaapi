@@ -80,11 +80,11 @@ func (version *DataProductVersion) IsReady() bool {
 }
 
 func (version *DataProductVersion) YamlUri() string {
-	return fmt.Sprintf("dataproducts/%s/versions/%s/%s-dataproductversion.yaml", version.Namespace, version.Name, version.Name)
+	return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/%s-dataproductversion.yaml", version.Namespace, version.Name, version.Name)
 }
 
 func (version *DataProductVersion) MessageUri() string {
-	return fmt.Sprintf("dataproducts/%s/versions/%s/dataproductversion.json", version.Namespace, version.Name)
+	return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/dataproductversion.json", version.Namespace, version.Name)
 }
 
 func ParseDataProductVersionYaml(content []byte) (*DataProductVersion, error) {

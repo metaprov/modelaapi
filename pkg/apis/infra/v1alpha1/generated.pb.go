@@ -1438,38 +1438,10 @@ func (m *DB2Spec) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_DB2Spec proto.InternalMessageInfo
 
-func (m *DermioSpec) Reset()      { *m = DermioSpec{} }
-func (*DermioSpec) ProtoMessage() {}
-func (*DermioSpec) Descriptor() ([]byte, []int) {
-	return fileDescriptor_737e1eae4c5a77fc, []int{50}
-}
-func (m *DermioSpec) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
-func (m *DermioSpec) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
-	if err != nil {
-		return nil, err
-	}
-	return b[:n], nil
-}
-func (m *DermioSpec) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_DermioSpec.Merge(m, src)
-}
-func (m *DermioSpec) XXX_Size() int {
-	return m.Size()
-}
-func (m *DermioSpec) XXX_DiscardUnknown() {
-	xxx_messageInfo_DermioSpec.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_DermioSpec proto.InternalMessageInfo
-
 func (m *DigitalOceanSpec) Reset()      { *m = DigitalOceanSpec{} }
 func (*DigitalOceanSpec) ProtoMessage() {}
 func (*DigitalOceanSpec) Descriptor() ([]byte, []int) {
-	return fileDescriptor_737e1eae4c5a77fc, []int{51}
+	return fileDescriptor_737e1eae4c5a77fc, []int{50}
 }
 func (m *DigitalOceanSpec) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1493,6 +1465,34 @@ func (m *DigitalOceanSpec) XXX_DiscardUnknown() {
 }
 
 var xxx_messageInfo_DigitalOceanSpec proto.InternalMessageInfo
+
+func (m *DremioSpec) Reset()      { *m = DremioSpec{} }
+func (*DremioSpec) ProtoMessage() {}
+func (*DremioSpec) Descriptor() ([]byte, []int) {
+	return fileDescriptor_737e1eae4c5a77fc, []int{51}
+}
+func (m *DremioSpec) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *DremioSpec) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	b = b[:cap(b)]
+	n, err := m.MarshalToSizedBuffer(b)
+	if err != nil {
+		return nil, err
+	}
+	return b[:n], nil
+}
+func (m *DremioSpec) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_DremioSpec.Merge(m, src)
+}
+func (m *DremioSpec) XXX_Size() int {
+	return m.Size()
+}
+func (m *DremioSpec) XXX_DiscardUnknown() {
+	xxx_messageInfo_DremioSpec.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_DremioSpec proto.InternalMessageInfo
 
 func (m *DropboxSpec) Reset()      { *m = DropboxSpec{} }
 func (*DropboxSpec) ProtoMessage() {}
@@ -4290,8 +4290,8 @@ func init() {
 	proto.RegisterType((*ConnectionStatus)(nil), "github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionStatus")
 	proto.RegisterType((*CouchbaseSpec)(nil), "github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.CouchbaseSpec")
 	proto.RegisterType((*DB2Spec)(nil), "github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.DB2Spec")
-	proto.RegisterType((*DermioSpec)(nil), "github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.DermioSpec")
 	proto.RegisterType((*DigitalOceanSpec)(nil), "github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.DigitalOceanSpec")
+	proto.RegisterType((*DremioSpec)(nil), "github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.DremioSpec")
 	proto.RegisterType((*DropboxSpec)(nil), "github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.DropboxSpec")
 	proto.RegisterType((*ElasticSearchSpec)(nil), "github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ElasticSearchSpec")
 	proto.RegisterType((*ExasolSpec)(nil), "github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ExasolSpec")
@@ -4581,7 +4581,7 @@ var fileDescriptor_737e1eae4c5a77fc = []byte{
 	0x73, 0xd1, 0x4c, 0xc8, 0x37, 0xcd, 0x6d, 0x5e, 0xae, 0x94, 0xe6, 0x9b, 0xb7, 0x9a, 0xd2, 0xc1,
 	0x83, 0x61, 0x12, 0x86, 0x18, 0x0b, 0xcd, 0x87, 0x09, 0x8f, 0xd4, 0xfd, 0xa6, 0xb9, 0x19, 0x88,
 	0xf4, 0xd0, 0x95, 0x54, 0x6f, 0x4f, 0x4d, 0xf8, 0xe2, 0xbe, 0x65, 0x08, 0x41, 0x11, 0x23, 0x8d,
-	0xc0, 0x58, 0x9d, 0x78, 0x2d, 0xd3, 0x61, 0xf5, 0x54, 0x83, 0xab, 0x8f, 0x45, 0x46, 0x84, 0xb1,
+	0xc0, 0x58, 0xdd, 0x23, 0x2d, 0xd3, 0x61, 0xf5, 0x54, 0x83, 0xab, 0x8f, 0x45, 0x46, 0x84, 0xb1,
 	0x62, 0x19, 0x18, 0xfc, 0x3f, 0x12, 0xc4, 0xb5, 0x5f, 0x81, 0x5c, 0xbd, 0x76, 0x83, 0x55, 0x64,
 	0x0d, 0x5e, 0x2f, 0xb8, 0x58, 0xb9, 0xc1, 0x18, 0x30, 0x17, 0x78, 0xb1, 0x72, 0x03, 0x51, 0x9a,
 	0x74, 0xda, 0x6a, 0x66, 0xe3, 0x61, 0x9b, 0x78, 0x3b, 0xac, 0x84, 0x6b, 0x70, 0x99, 0xb8, 0x65,
@@ -4674,12 +4674,12 @@ var fileDescriptor_737e1eae4c5a77fc = []byte{
 	0x5a, 0x41, 0xff, 0x79, 0x3f, 0x7f, 0x3f, 0x0b, 0xd3, 0xb1, 0xb0, 0xce, 0x31, 0xce, 0xdd, 0x95,
 	0xf5, 0x0a, 0x3c, 0x29, 0x5c, 0xe4, 0x8f, 0xa8, 0xf5, 0x0a, 0x22, 0x5b, 0x3c, 0x8e, 0x17, 0x26,
 	0xfd, 0x8e, 0x77, 0x48, 0xfa, 0xdd, 0xcd, 0xc0, 0xb8, 0xf8, 0x16, 0x7a, 0x32, 0x4f, 0x41, 0xf8,
-	0x2c, 0x03, 0x20, 0x3f, 0x28, 0x9f, 0xcc, 0x31, 0xfe, 0xd7, 0x0c, 0xcc, 0x26, 0x03, 0x33, 0x07,
-	0x97, 0x33, 0x1c, 0x59, 0x15, 0xcb, 0xfe, 0xc2, 0x9a, 0x7c, 0x9f, 0x85, 0x35, 0xe1, 0xdb, 0x29,
-	0x74, 0x3c, 0x51, 0xa7, 0x0c, 0x93, 0x8a, 0x53, 0x78, 0x70, 0xf9, 0xc4, 0x5e, 0x06, 0xce, 0xee,
-	0xfb, 0xa6, 0x93, 0xf6, 0x80, 0x08, 0xd7, 0x23, 0x9b, 0xe6, 0x63, 0xf5, 0x80, 0x88, 0x75, 0x06,
-	0x41, 0xa2, 0x65, 0xd4, 0xef, 0xfe, 0x5f, 0x66, 0x00, 0x64, 0x1c, 0x79, 0x68, 0x75, 0x42, 0x43,
-	0xee, 0x79, 0x37, 0xd5, 0xb3, 0xbc, 0xb1, 0x7e, 0x72, 0x97, 0xe5, 0x75, 0x98, 0x52, 0x0d, 0xcc,
+	0xaf, 0x19, 0x98, 0x4d, 0x06, 0x2d, 0x0e, 0x4e, 0xf5, 0x3f, 0xb2, 0x0a, 0x8f, 0xfd, 0x45, 0x27,
+	0xf9, 0x3e, 0x8b, 0x4e, 0xc2, 0xb7, 0x53, 0xe8, 0x78, 0xda, 0xcc, 0x67, 0x19, 0x00, 0xf9, 0xdd,
+	0xfc, 0x64, 0xbe, 0xca, 0x32, 0x4c, 0x2a, 0x4e, 0xe1, 0xc1, 0xe5, 0x13, 0x7b, 0x19, 0x38, 0xbb,
+	0xef, 0x9b, 0x4e, 0xda, 0x03, 0x22, 0x5c, 0x8f, 0x6c, 0x9a, 0x8f, 0xd5, 0x03, 0x22, 0xd6, 0x19,
+	0x04, 0x89, 0x96, 0x51, 0x4f, 0xca, 0xbf, 0xcc, 0x00, 0xc8, 0x38, 0xf2, 0xd0, 0xea, 0x84, 0x86,
+	0xdc, 0xf3, 0x6e, 0xaa, 0x67, 0x79, 0x63, 0xfd, 0xe4, 0xca, 0xeb, 0x75, 0x98, 0x52, 0x0d, 0xcc,
 	0x83, 0x05, 0xf6, 0xf7, 0xe8, 0x8c, 0xf0, 0xb8, 0xca, 0x57, 0xad, 0xe0, 0xab, 0xf4, 0xc3, 0x2c,
 	0x9c, 0x49, 0x24, 0xb5, 0x7c, 0xe5, 0x8a, 0xd2, 0xae, 0x41, 0xd1, 0xf5, 0x9c, 0x0f, 0x88, 0x11,
 	0xac, 0x2c, 0xaa, 0x07, 0x51, 0xaf, 0x87, 0x40, 0x24, 0xdb, 0x29, 0xb2, 0x83, 0xdb, 0x41, 0x73,
@@ -4694,7 +4694,7 @@ var fileDescriptor_737e1eae4c5a77fc = []byte{
 	0x98, 0xa7, 0xa0, 0x94, 0xed, 0x40, 0xe9, 0x23, 0x98, 0x4d, 0x7e, 0xe8, 0xe2, 0x87, 0x16, 0xb1,
 	0xd3, 0x45, 0x32, 0xea, 0xa1, 0x45, 0xb1, 0xb3, 0x41, 0x2e, 0x42, 0xd6, 0xac, 0x0b, 0x8a, 0xac,
 	0xf0, 0x61, 0x65, 0x11, 0x65, 0xcd, 0xba, 0x56, 0x06, 0xa0, 0x2f, 0x65, 0xc3, 0x59, 0x6f, 0x5b,
-	0xe1, 0xc1, 0x9d, 0x2c, 0x20, 0xb4, 0x18, 0x41, 0x91, 0x82, 0x41, 0x0d, 0x8d, 0xe9, 0xd8, 0x77,
+	0xe1, 0xc1, 0x9d, 0x2c, 0x20, 0xb4, 0x18, 0x41, 0x91, 0x82, 0x41, 0x8d, 0xa9, 0xe9, 0xd8, 0x77,
 	0xd9, 0x93, 0x59, 0x09, 0xb7, 0x02, 0x93, 0xca, 0xd7, 0xa6, 0x54, 0x6f, 0xac, 0x01, 0x93, 0x4a,
 	0xf0, 0x2b, 0x64, 0x9a, 0x51, 0x98, 0x7a, 0x16, 0x63, 0x2a, 0xb9, 0x64, 0xbb, 0x70, 0xb9, 0x04,
 	0x79, 0xcf, 0x71, 0x5a, 0x62, 0xaa, 0x26, 0xf8, 0x0d, 0x04, 0x4e, 0x0b, 0x31, 0x68, 0xe9, 0x6f,
@@ -4726,7 +4726,7 @@ var fileDescriptor_737e1eae4c5a77fc = []byte{
 	0x42, 0x30, 0x52, 0x71, 0xb4, 0x32, 0x40, 0x0b, 0x3f, 0xe6, 0x99, 0xe4, 0x3e, 0x2b, 0x19, 0x2c,
 	0x84, 0xa9, 0x21, 0x21, 0x14, 0x29, 0x18, 0xec, 0x6e, 0x34, 0xfc, 0x98, 0xba, 0x1f, 0x3e, 0xab,
 	0xf6, 0x2b, 0x88, 0xbb, 0xd1, 0x04, 0x0c, 0x45, 0xad, 0xda, 0x6b, 0x30, 0xdd, 0xc2, 0x8f, 0xa9,
-	0xcb, 0xb6, 0x6e, 0x61, 0x9b, 0xf8, 0xac, 0x70, 0xaf, 0xc0, 0x3f, 0x06, 0xac, 0xa9, 0x0d, 0x28,
+	0xcb, 0xb6, 0x6e, 0x61, 0x9b, 0xf8, 0xac, 0x70, 0xaf, 0xc0, 0x3f, 0x78, 0xac, 0xa9, 0x0d, 0x28,
 	0x8e, 0x47, 0x59, 0x6c, 0x3a, 0x1e, 0x31, 0xb0, 0x1f, 0x88, 0xfb, 0xd4, 0xf8, 0x17, 0x7a, 0x01,
 	0x43, 0x51, 0x2b, 0x75, 0x64, 0x6c, 0xcb, 0x15, 0x77, 0xa7, 0x31, 0x47, 0xe6, 0xde, 0xea, 0x3a,
 	0xa2, 0x30, 0xad, 0x04, 0x63, 0xdb, 0xa6, 0x4f, 0xb7, 0xde, 0x19, 0xd6, 0xca, 0xa2, 0x23, 0x0f,
@@ -4741,7 +4741,7 @@ var fileDescriptor_737e1eae4c5a77fc = []byte{
 	0x6f, 0x5a, 0x5f, 0x07, 0x90, 0xa9, 0x7c, 0x54, 0xb1, 0x84, 0x39, 0x51, 0x4a, 0xe8, 0x3a, 0x99,
 	0xcf, 0x54, 0xfa, 0x4d, 0x98, 0x89, 0x27, 0xe5, 0xf5, 0x0a, 0x13, 0x2a, 0xf1, 0xa2, 0x6c, 0x9f,
 	0xf1, 0xa2, 0x9e, 0x01, 0xfe, 0xd2, 0xef, 0x64, 0xa0, 0x18, 0x25, 0x85, 0x1f, 0xe1, 0x8d, 0x2a,
-	0xa1, 0x64, 0xe4, 0x3a, 0x7e, 0xdb, 0xfd, 0xb3, 0x2c, 0x4c, 0xad, 0x31, 0x89, 0xae, 0xee, 0xf8,
+	0xa1, 0x64, 0xe4, 0x3a, 0x7e, 0xbf, 0xfe, 0xb3, 0x2c, 0x4c, 0xad, 0x31, 0x89, 0xae, 0xee, 0xf8,
 	0x01, 0x69, 0x8d, 0xc0, 0x1f, 0x30, 0x63, 0xfe, 0xc0, 0xad, 0x81, 0x6b, 0x8d, 0x65, 0xa7, 0xbb,
 	0x3a, 0x05, 0x0f, 0x13, 0x4e, 0xc1, 0xca, 0x30, 0x98, 0xf5, 0xf6, 0x0c, 0x7e, 0x9c, 0x85, 0x0b,
 	0x2a, 0xba, 0x74, 0x0f, 0xbe, 0x15, 0x73, 0x0f, 0x5e, 0x4c, 0xb8, 0x07, 0xcf, 0x74, 0x7c, 0xe8,
@@ -4805,7 +4805,7 @@ var fileDescriptor_737e1eae4c5a77fc = []byte{
 	0xe9, 0x99, 0xd3, 0x88, 0x51, 0xef, 0x88, 0xd1, 0xf7, 0x32, 0x70, 0x46, 0x99, 0xb7, 0x11, 0x04,
 	0x8d, 0x1a, 0xf1, 0xa0, 0x51, 0x25, 0xbd, 0x38, 0x75, 0x89, 0x1b, 0xfd, 0x41, 0x3e, 0x36, 0xb4,
 	0x9f, 0xf1, 0x34, 0x71, 0xd3, 0xa6, 0xbe, 0x82, 0x9f, 0x4c, 0x13, 0x5f, 0x91, 0x60, 0xa4, 0xe2,
-	0xb0, 0x38, 0x56, 0xfd, 0xa1, 0xad, 0x96, 0x90, 0x2f, 0x2f, 0xbe, 0x73, 0x0f, 0x31, 0x68, 0x32,
+	0xb0, 0x38, 0x56, 0xfd, 0xa1, 0xad, 0x96, 0xc9, 0x2f, 0x2f, 0xbe, 0x73, 0x0f, 0x31, 0x68, 0x32,
 	0xef, 0x7c, 0xec, 0x30, 0x79, 0xe7, 0xe3, 0x7d, 0xe6, 0x9d, 0x4f, 0x8c, 0x38, 0xef, 0xfc, 0xf7,
 	0x26, 0xe0, 0xec, 0x3e, 0x25, 0x75, 0x9c, 0xf2, 0xcf, 0x17, 0x61, 0x96, 0x7f, 0x05, 0x5e, 0xf7,
 	0x48, 0x9d, 0x1d, 0xd0, 0xc4, 0x25, 0xac, 0x50, 0xd1, 0x45, 0x47, 0x67, 0xe7, 0x13, 0xed, 0x68,
@@ -4826,7 +4826,7 @@ var fileDescriptor_737e1eae4c5a77fc = []byte{
 	0x05, 0xc7, 0xf8, 0x52, 0x61, 0x19, 0xec, 0x1a, 0xeb, 0x1a, 0xec, 0xba, 0x06, 0xc5, 0x47, 0xd8,
 	0x23, 0xfc, 0x04, 0xf4, 0x71, 0x99, 0x9d, 0xf8, 0x5e, 0x08, 0x44, 0xb2, 0xbd, 0xd7, 0x79, 0x0c,
 	0xaf, 0x02, 0xc8, 0x13, 0xb4, 0x59, 0x56, 0xba, 0x69, 0x91, 0xe4, 0x47, 0x82, 0x65, 0xd3, 0x22,
-	0x7c, 0xdc, 0x61, 0x2b, 0x3b, 0x79, 0x48, 0xde, 0xd3, 0x70, 0x32, 0x43, 0x03, 0x9f, 0x8c, 0xc3,
+	0x7c, 0xdc, 0x61, 0x2b, 0x3b, 0x92, 0x47, 0xde, 0xd3, 0x70, 0x32, 0x43, 0x03, 0x9f, 0x8c, 0xc3,
 	0x6c, 0x32, 0xe5, 0x4a, 0xbb, 0x01, 0x80, 0x5d, 0xf3, 0x16, 0x0e, 0xc8, 0x23, 0x1c, 0x26, 0x91,
 	0x46, 0x8a, 0x6a, 0x3e, 0x6a, 0x41, 0x0a, 0x96, 0xf6, 0x3a, 0x4c, 0x19, 0x8e, 0x1d, 0x78, 0x8e,
 	0xc5, 0xb2, 0xff, 0xc5, 0x82, 0x8d, 0xcc, 0x9f, 0x05, 0xa5, 0x0d, 0xc5, 0x30, 0xb5, 0x6b, 0x7c,
@@ -4850,8 +4850,8 @@ var fileDescriptor_737e1eae4c5a77fc = []byte{
 	0x81, 0x64, 0x11, 0x0f, 0x75, 0x7a, 0x98, 0x5d, 0xff, 0xcc, 0xdd, 0xbe, 0x63, 0x73, 0xfd, 0x33,
 	0xef, 0xee, 0x91, 0x5f, 0xff, 0x2c, 0xd8, 0x1c, 0x7c, 0xfd, 0x33, 0x47, 0xec, 0xfb, 0xfa, 0xe7,
 	0x04, 0xfa, 0x69, 0xc8, 0xe7, 0xe0, 0xeb, 0x9f, 0xf9, 0x94, 0x1d, 0x9f, 0xeb, 0x9f, 0x79, 0x7f,
-	0xbb, 0x04, 0x7a, 0xfe, 0x30, 0x1b, 0x0e, 0x88, 0x6d, 0x9b, 0x0f, 0x00, 0xc4, 0x69, 0x78, 0xab,
-	0xb8, 0x76, 0x98, 0xfc, 0x20, 0xf5, 0x5c, 0xbd, 0x55, 0x5c, 0x43, 0x64, 0x13, 0x29, 0x94, 0xb4,
+	0xbb, 0x04, 0x7a, 0xfe, 0x30, 0x1b, 0x0e, 0x88, 0x6d, 0x9b, 0x0f, 0x00, 0xc4, 0x89, 0x7f, 0xab,
+	0xb8, 0x76, 0x98, 0xfc, 0x20, 0xf5, 0xec, 0xc0, 0x55, 0x5c, 0x43, 0x64, 0x13, 0x29, 0x94, 0xb4,
 	0x00, 0x2e, 0x88, 0x7f, 0x8a, 0x0b, 0x71, 0xc8, 0xa0, 0x10, 0x3b, 0xe0, 0x6a, 0xb1, 0x13, 0x15,
 	0xd4, 0x99, 0x78, 0x32, 0x62, 0x95, 0xeb, 0x23, 0x62, 0x15, 0x45, 0x5a, 0xf2, 0x5d, 0x12, 0x85,
 	0xfe, 0x67, 0x0e, 0xa6, 0xd4, 0xc5, 0x78, 0x7a, 0x88, 0xeb, 0x68, 0x8a, 0xd2, 0x3e, 0xec, 0x50,
@@ -4896,7 +4896,7 @@ var fileDescriptor_737e1eae4c5a77fc = []byte{
 	0x95, 0x3b, 0x33, 0x7b, 0x9c, 0x1d, 0x57, 0x29, 0x7f, 0xf2, 0xd9, 0xe5, 0xa7, 0xbe, 0xfb, 0xd9,
 	0xe5, 0xa7, 0xbe, 0xf7, 0xd9, 0xe5, 0xa7, 0x3e, 0xde, 0xbb, 0x9c, 0xf9, 0x64, 0xef, 0x72, 0xe6,
 	0xbb, 0x7b, 0x97, 0x33, 0xdf, 0xdb, 0xbb, 0x9c, 0xf9, 0x74, 0xef, 0x72, 0xe6, 0x77, 0x3f, 0xbf,
-	0xfc, 0xd4, 0xfb, 0x13, 0x61, 0x87, 0xfe, 0x32, 0x00, 0x00, 0xff, 0xff, 0x30, 0xb6, 0xce, 0x7d,
+	0xfc, 0xd4, 0xfb, 0x13, 0x61, 0x87, 0xfe, 0x32, 0x00, 0x00, 0xff, 0xff, 0x0e, 0x15, 0x68, 0xa7,
 	0x9f, 0xc8, 0x00, 0x00,
 }
 
@@ -8504,9 +8504,9 @@ func (m *ConnectionSpec) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i--
 		dAtA[i] = 0x5a
 	}
-	if m.Dermio != nil {
+	if m.Dremio != nil {
 		{
-			size, err := m.Dermio.MarshalToSizedBuffer(dAtA[:i])
+			size, err := m.Dremio.MarshalToSizedBuffer(dAtA[:i])
 			if err != nil {
 				return 0, err
 			}
@@ -8814,69 +8814,6 @@ func (m *DB2Spec) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	return len(dAtA) - i, nil
 }
 
-func (m *DermioSpec) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
-}
-
-func (m *DermioSpec) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *DermioSpec) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.URL != nil {
-		i -= len(*m.URL)
-		copy(dAtA[i:], *m.URL)
-		i = encodeVarintGenerated(dAtA, i, uint64(len(*m.URL)))
-		i--
-		dAtA[i] = 0x32
-	}
-	if m.Password != nil {
-		i -= len(*m.Password)
-		copy(dAtA[i:], *m.Password)
-		i = encodeVarintGenerated(dAtA, i, uint64(len(*m.Password)))
-		i--
-		dAtA[i] = 0x2a
-	}
-	if m.Username != nil {
-		i -= len(*m.Username)
-		copy(dAtA[i:], *m.Username)
-		i = encodeVarintGenerated(dAtA, i, uint64(len(*m.Username)))
-		i--
-		dAtA[i] = 0x22
-	}
-	if m.KeySpace != nil {
-		i -= len(*m.KeySpace)
-		copy(dAtA[i:], *m.KeySpace)
-		i = encodeVarintGenerated(dAtA, i, uint64(len(*m.KeySpace)))
-		i--
-		dAtA[i] = 0x1a
-	}
-	if m.Port != nil {
-		i = encodeVarintGenerated(dAtA, i, uint64(*m.Port))
-		i--
-		dAtA[i] = 0x10
-	}
-	if m.Host != nil {
-		i -= len(*m.Host)
-		copy(dAtA[i:], *m.Host)
-		i = encodeVarintGenerated(dAtA, i, uint64(len(*m.Host)))
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
-}
-
 func (m *DigitalOceanSpec) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
@@ -8929,6 +8866,69 @@ func (m *DigitalOceanSpec) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i -= len(*m.Token)
 		copy(dAtA[i:], *m.Token)
 		i = encodeVarintGenerated(dAtA, i, uint64(len(*m.Token)))
+		i--
+		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *DremioSpec) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *DremioSpec) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *DremioSpec) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.URL != nil {
+		i -= len(*m.URL)
+		copy(dAtA[i:], *m.URL)
+		i = encodeVarintGenerated(dAtA, i, uint64(len(*m.URL)))
+		i--
+		dAtA[i] = 0x32
+	}
+	if m.Password != nil {
+		i -= len(*m.Password)
+		copy(dAtA[i:], *m.Password)
+		i = encodeVarintGenerated(dAtA, i, uint64(len(*m.Password)))
+		i--
+		dAtA[i] = 0x2a
+	}
+	if m.Username != nil {
+		i -= len(*m.Username)
+		copy(dAtA[i:], *m.Username)
+		i = encodeVarintGenerated(dAtA, i, uint64(len(*m.Username)))
+		i--
+		dAtA[i] = 0x22
+	}
+	if m.KeySpace != nil {
+		i -= len(*m.KeySpace)
+		copy(dAtA[i:], *m.KeySpace)
+		i = encodeVarintGenerated(dAtA, i, uint64(len(*m.KeySpace)))
+		i--
+		dAtA[i] = 0x1a
+	}
+	if m.Port != nil {
+		i = encodeVarintGenerated(dAtA, i, uint64(*m.Port))
+		i--
+		dAtA[i] = 0x10
+	}
+	if m.Host != nil {
+		i -= len(*m.Host)
+		copy(dAtA[i:], *m.Host)
+		i = encodeVarintGenerated(dAtA, i, uint64(len(*m.Host)))
 		i--
 		dAtA[i] = 0xa
 	}
@@ -15731,8 +15731,8 @@ func (m *ConnectionSpec) Size() (n int) {
 		l = m.RedShift.Size()
 		n += 1 + l + sovGenerated(uint64(l))
 	}
-	if m.Dermio != nil {
-		l = m.Dermio.Size()
+	if m.Dremio != nil {
+		l = m.Dremio.Size()
 		n += 1 + l + sovGenerated(uint64(l))
 	}
 	if m.DB2 != nil {
@@ -16082,7 +16082,36 @@ func (m *DB2Spec) Size() (n int) {
 	return n
 }
 
-func (m *DermioSpec) Size() (n int) {
+func (m *DigitalOceanSpec) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if m.Token != nil {
+		l = len(*m.Token)
+		n += 1 + l + sovGenerated(uint64(l))
+	}
+	if m.AccessKey != nil {
+		l = len(*m.AccessKey)
+		n += 1 + l + sovGenerated(uint64(l))
+	}
+	if m.SecretKey != nil {
+		l = len(*m.SecretKey)
+		n += 1 + l + sovGenerated(uint64(l))
+	}
+	if m.DefaultRegion != nil {
+		l = len(*m.DefaultRegion)
+		n += 1 + l + sovGenerated(uint64(l))
+	}
+	if m.Host != nil {
+		l = len(*m.Host)
+		n += 1 + l + sovGenerated(uint64(l))
+	}
+	return n
+}
+
+func (m *DremioSpec) Size() (n int) {
 	if m == nil {
 		return 0
 	}
@@ -16109,35 +16138,6 @@ func (m *DermioSpec) Size() (n int) {
 	}
 	if m.URL != nil {
 		l = len(*m.URL)
-		n += 1 + l + sovGenerated(uint64(l))
-	}
-	return n
-}
-
-func (m *DigitalOceanSpec) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Token != nil {
-		l = len(*m.Token)
-		n += 1 + l + sovGenerated(uint64(l))
-	}
-	if m.AccessKey != nil {
-		l = len(*m.AccessKey)
-		n += 1 + l + sovGenerated(uint64(l))
-	}
-	if m.SecretKey != nil {
-		l = len(*m.SecretKey)
-		n += 1 + l + sovGenerated(uint64(l))
-	}
-	if m.DefaultRegion != nil {
-		l = len(*m.DefaultRegion)
-		n += 1 + l + sovGenerated(uint64(l))
-	}
-	if m.Host != nil {
-		l = len(*m.Host)
 		n += 1 + l + sovGenerated(uint64(l))
 	}
 	return n
@@ -19299,7 +19299,7 @@ func (this *ConnectionSpec) String() string {
 		`ApacheDruid:` + strings.Replace(this.ApacheDruid.String(), "ApacheDruidSpec", "ApacheDruidSpec", 1) + `,`,
 		`ApacheHive:` + strings.Replace(this.ApacheHive.String(), "ApacheHiveSpec", "ApacheHiveSpec", 1) + `,`,
 		`RedShift:` + strings.Replace(this.RedShift.String(), "AmazonRedShiftSpec", "AmazonRedShiftSpec", 1) + `,`,
-		`Dermio:` + strings.Replace(this.Dermio.String(), "DermioSpec", "DermioSpec", 1) + `,`,
+		`Dremio:` + strings.Replace(this.Dremio.String(), "DremioSpec", "DremioSpec", 1) + `,`,
 		`DB2:` + strings.Replace(this.DB2.String(), "DB2Spec", "DB2Spec", 1) + `,`,
 		`GcpBigQuery:` + strings.Replace(this.GcpBigQuery.String(), "GcpBigQuerySpec", "GcpBigQuerySpec", 1) + `,`,
 		`Cassandra:` + strings.Replace(this.Cassandra.String(), "ApacheCassandraSpec", "ApacheCassandraSpec", 1) + `,`,
@@ -19416,21 +19416,6 @@ func (this *DB2Spec) String() string {
 	}, "")
 	return s
 }
-func (this *DermioSpec) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&DermioSpec{`,
-		`Host:` + valueToStringGenerated(this.Host) + `,`,
-		`Port:` + valueToStringGenerated(this.Port) + `,`,
-		`KeySpace:` + valueToStringGenerated(this.KeySpace) + `,`,
-		`Username:` + valueToStringGenerated(this.Username) + `,`,
-		`Password:` + valueToStringGenerated(this.Password) + `,`,
-		`URL:` + valueToStringGenerated(this.URL) + `,`,
-		`}`,
-	}, "")
-	return s
-}
 func (this *DigitalOceanSpec) String() string {
 	if this == nil {
 		return "nil"
@@ -19441,6 +19426,21 @@ func (this *DigitalOceanSpec) String() string {
 		`SecretKey:` + valueToStringGenerated(this.SecretKey) + `,`,
 		`DefaultRegion:` + valueToStringGenerated(this.DefaultRegion) + `,`,
 		`Host:` + valueToStringGenerated(this.Host) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *DremioSpec) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&DremioSpec{`,
+		`Host:` + valueToStringGenerated(this.Host) + `,`,
+		`Port:` + valueToStringGenerated(this.Port) + `,`,
+		`KeySpace:` + valueToStringGenerated(this.KeySpace) + `,`,
+		`Username:` + valueToStringGenerated(this.Username) + `,`,
+		`Password:` + valueToStringGenerated(this.Password) + `,`,
+		`URL:` + valueToStringGenerated(this.URL) + `,`,
 		`}`,
 	}, "")
 	return s
@@ -30232,7 +30232,7 @@ func (m *ConnectionSpec) Unmarshal(dAtA []byte) error {
 			iNdEx = postIndex
 		case 10:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Dermio", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field Dremio", wireType)
 			}
 			var msglen int
 			for shift := uint(0); ; shift += 7 {
@@ -30259,10 +30259,10 @@ func (m *ConnectionSpec) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if m.Dermio == nil {
-				m.Dermio = &DermioSpec{}
+			if m.Dremio == nil {
+				m.Dremio = &DremioSpec{}
 			}
-			if err := m.Dermio.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			if err := m.Dremio.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -33224,241 +33224,6 @@ func (m *DB2Spec) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-func (m *DermioSpec) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowGenerated
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: DermioSpec: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: DermioSpec: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Host", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowGenerated
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			s := string(dAtA[iNdEx:postIndex])
-			m.Host = &s
-			iNdEx = postIndex
-		case 2:
-			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Port", wireType)
-			}
-			var v int32
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowGenerated
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				v |= int32(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			m.Port = &v
-		case 3:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field KeySpace", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowGenerated
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			s := string(dAtA[iNdEx:postIndex])
-			m.KeySpace = &s
-			iNdEx = postIndex
-		case 4:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Username", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowGenerated
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			s := string(dAtA[iNdEx:postIndex])
-			m.Username = &s
-			iNdEx = postIndex
-		case 5:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Password", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowGenerated
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			s := string(dAtA[iNdEx:postIndex])
-			m.Password = &s
-			iNdEx = postIndex
-		case 6:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field URL", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowGenerated
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			s := string(dAtA[iNdEx:postIndex])
-			m.URL = &s
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipGenerated(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
 func (m *DigitalOceanSpec) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
@@ -33652,6 +33417,241 @@ func (m *DigitalOceanSpec) Unmarshal(dAtA []byte) error {
 			}
 			s := string(dAtA[iNdEx:postIndex])
 			m.Host = &s
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipGenerated(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *DremioSpec) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowGenerated
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: DremioSpec: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: DremioSpec: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Host", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowGenerated
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			s := string(dAtA[iNdEx:postIndex])
+			m.Host = &s
+			iNdEx = postIndex
+		case 2:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Port", wireType)
+			}
+			var v int32
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowGenerated
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				v |= int32(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			m.Port = &v
+		case 3:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field KeySpace", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowGenerated
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			s := string(dAtA[iNdEx:postIndex])
+			m.KeySpace = &s
+			iNdEx = postIndex
+		case 4:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Username", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowGenerated
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			s := string(dAtA[iNdEx:postIndex])
+			m.Username = &s
+			iNdEx = postIndex
+		case 5:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Password", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowGenerated
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			s := string(dAtA[iNdEx:postIndex])
+			m.Password = &s
+			iNdEx = postIndex
+		case 6:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field URL", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowGenerated
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			s := string(dAtA[iNdEx:postIndex])
+			m.URL = &s
 			iNdEx = postIndex
 		default:
 			iNdEx = preIndex

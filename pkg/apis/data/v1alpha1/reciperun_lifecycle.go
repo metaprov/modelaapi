@@ -89,7 +89,7 @@ func (r *RecipeRun) StatusString() string {
 }
 
 func (r *RecipeRun) RootUri() string {
-	return fmt.Sprintf("dataproducts/%s/versions/%s/reciperuns/%s", r.Namespace, *r.Spec.VersionName, r.Name)
+	return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/reciperuns/%s", r.Namespace, *r.Spec.VersionName, r.Name)
 }
 
 func (r *RecipeRun) ManifestUri() string {

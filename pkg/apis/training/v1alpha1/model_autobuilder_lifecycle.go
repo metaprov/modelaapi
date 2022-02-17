@@ -464,7 +464,7 @@ func (b *ModelAutobuilder) FileName() string {
 
 func (b *ModelAutobuilder) CreateDataset() *data.Dataset {
 	fname := filepath.Base(b.FileName())
-	rawPath := fmt.Sprintf("modela/live/tenants/default-tenant/dataproducts/%s/versions/%s/datasets/%s/data/raw/%s",
+	rawPath := fmt.Sprintf("modela/live/tenants/default-tenant/dataproducts/%s/dataproductversions/%s/datasets/%s/data/raw/%s",
 		b.DataProductName(),
 		b.DataProductVersionName(),
 		b.DatasetName(),

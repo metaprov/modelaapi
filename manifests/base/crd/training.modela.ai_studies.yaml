@@ -368,13 +368,13 @@ spec:
                           - drop-constant-features
                           - drop-deplicated-features
                           - drop-correlated-features
-                          - mutal-information-feature-selection
-                          - chisquare-fearture-selection
-                          - anova-feature-selection
-                          - step-forward-feature-selection
-                          - step-backward-feature-selection
-                          - lasso-regression-feature-selection
-                          - tree-importance-feature-selection
+                          - mutal-information
+                          - chisquare
+                          - anova
+                          - step-forward
+                          - step-backward
+                          - lasso-regression
+                          - tree-importance
                           - recursive-feature-elimination
                           - recursive-feature-addition
                           - select-percentile
@@ -2418,13 +2418,13 @@ spec:
                           - drop-constant-features
                           - drop-deplicated-features
                           - drop-correlated-features
-                          - mutal-information-feature-selection
-                          - chisquare-fearture-selection
-                          - anova-feature-selection
-                          - step-forward-feature-selection
-                          - step-backward-feature-selection
-                          - lasso-regression-feature-selection
-                          - tree-importance-feature-selection
+                          - mutal-information
+                          - chisquare
+                          - anova
+                          - step-forward
+                          - step-backward
+                          - lasso-regression
+                          - tree-importance
                           - recursive-feature-elimination
                           - recursive-feature-addition
                           - select-percentile

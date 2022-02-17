@@ -164,7 +164,7 @@ func (study *Study) Phase() StudyPhase {
 }
 
 func (study *Study) RootUri() string {
-	return fmt.Sprintf("dataproducts/%s/versions/%s/studies/%s", study.Namespace, *study.Spec.VersionName, study.Name)
+	return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/studies/%s", study.Namespace, *study.Spec.VersionName, study.Name)
 }
 
 func (study *Study) ManifestUri() string {

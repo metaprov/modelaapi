@@ -67,7 +67,7 @@ func (cur *Curtain) DeploymentName() string {
 }
 
 func (cur *Curtain) RootUri() string {
-	return fmt.Sprintf("dataproducts/%s/versions/%s/curtains/%s", cur.Namespace, *cur.Spec.VersionName, cur.Name)
+	return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/curtains/%s", cur.Namespace, *cur.Spec.VersionName, cur.Name)
 }
 
 func (cur *Curtain) ManifestUri() string {

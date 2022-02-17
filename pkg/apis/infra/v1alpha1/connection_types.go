@@ -91,7 +91,7 @@ type ConnectionSpec struct {
 	RedShift *AmazonRedShiftSpec `json:"redshift,omitempty" protobuf:"bytes,9,opt,name=redshift"`
 
 	// +kubebuilder:validation:Optional
-	Dermio *DermioSpec `json:"dermio,omitempty" protobuf:"bytes,10,opt,name=dermio"`
+	Dremio *DremioSpec `json:"dremio,omitempty" protobuf:"bytes,10,opt,name=dremio"`
 
 	// +kubebuilder:validation:Optional
 	DB2 *DB2Spec `json:"db2,omitempty" protobuf:"bytes,11,opt,name=db2"`
@@ -1185,7 +1185,7 @@ type DB2Spec struct {
 	URL *string `json:"url,omitempty" protobuf:"bytes,6,opt,name=url"`
 }
 
-type DermioSpec struct {
+type DremioSpec struct {
 	// +kubebuilder:default:=""
 	Host *string `json:"host,omitempty" protobuf:"bytes,1,opt,name=host"`
 	// +kubebuilder:default:= 9042

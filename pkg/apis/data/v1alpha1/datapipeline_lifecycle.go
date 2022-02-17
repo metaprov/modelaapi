@@ -81,7 +81,7 @@ func (wr *DataPipeline) GetCond(t DataPipelineConditionType) DataPipelineConditi
 }
 
 func (wr *DataPipeline) RootUri() string {
-	return fmt.Sprintf("dataproducts/%s/versions/%s/datapipelines/%s", wr.Namespace, *wr.Spec.VersionName, wr.Name)
+	return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/datapipelines/%s", wr.Namespace, *wr.Spec.VersionName, wr.Name)
 }
 
 func (wr *DataPipeline) ManifestUri() string {

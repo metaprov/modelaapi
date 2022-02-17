@@ -84,7 +84,7 @@ func (run *DataPipelineRun) StatusString() string {
 }
 
 func (run *DataPipelineRun) RootUri() string {
-	return fmt.Sprintf("dataproducts/%s/versions/%s/wranglings/%s", run.Namespace, *run.Spec.VersionName, run.Name)
+	return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/wranglings/%s", run.Namespace, *run.Spec.VersionName, run.Name)
 }
 
 func (run *DataPipelineRun) ManifestUri() string {

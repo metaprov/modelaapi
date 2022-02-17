@@ -47,7 +47,7 @@ func (notebook *Notebook) GenImageName() string {
 }
 
 func (model *Notebook) RootUri() string {
-	return fmt.Sprintf("dataproducts/%s/versions/%s/notebooks/%s", model.Namespace, *model.Spec.VersionName, model.Name)
+	return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/notebooks/%s", model.Namespace, *model.Spec.VersionName, model.Name)
 }
 
 //    dataproducts/*/notebooks/*/notebook-<name>.yaml

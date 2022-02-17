@@ -336,7 +336,30 @@ spec:
                     default: ""
                     type: string
                 type: object
-              dermio:
+              digitalocean:
+                properties:
+                  accessKey:
+                    default: ""
+                    description: Access Key for digital ocean spaces
+                    type: string
+                  defaultRegion:
+                    default: ""
+                    description: Default digital ocean
+                    type: string
+                  host:
+                    default: ""
+                    description: url or connection string
+                    type: string
+                  secretKey:
+                    default: ""
+                    description: StorageSecret Key for digital ocean spaces
+                    type: string
+                  token:
+                    default: ""
+                    description: Token for digital ocean
+                    type: string
+                type: object
+              dremio:
                 properties:
                   host:
                     default: ""
@@ -359,29 +382,6 @@ spec:
                     type: string
                   username:
                     default: ""
-                    type: string
-                type: object
-              digitalocean:
-                properties:
-                  accessKey:
-                    default: ""
-                    description: Access Key for digital ocean spaces
-                    type: string
-                  defaultRegion:
-                    default: ""
-                    description: Default digital ocean
-                    type: string
-                  host:
-                    default: ""
-                    description: url or connection string
-                    type: string
-                  secretKey:
-                    default: ""
-                    description: StorageSecret Key for digital ocean spaces
-                    type: string
-                  token:
-                    default: ""
-                    description: Token for digital ocean
                     type: string
                 type: object
               drill:

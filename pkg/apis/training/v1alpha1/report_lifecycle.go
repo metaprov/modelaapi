@@ -144,7 +144,7 @@ func (report *Report) Age() string {
 
 func (report *Report) RootUri() string {
 	if report.IsModelReport() {
-		return fmt.Sprintf("dataproducts/%s/versions/%s/studies/%s/models/%s",
+		return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/studies/%s/models/%s",
 			report.Namespace,
 			*report.Spec.VersionName,
 			report.Labels["study"],
@@ -152,16 +152,16 @@ func (report *Report) RootUri() string {
 
 	}
 	if report.IsDatasetReport() {
-		return fmt.Sprintf("dataproducts/%s/versions/%s/datasets/%s",
+		return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/datasets/%s",
 			report.Namespace,
 			*report.Spec.VersionName,
 			report.Spec.EntityRef.Name)
 	}
 	if report.IsStudyReport() {
-		return fmt.Sprintf("dataproducts/%s/versions/%s/studies/%s", report.Namespace, *report.Spec.VersionName, report.Spec.EntityRef.Name)
+		return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/studies/%s", report.Namespace, *report.Spec.VersionName, report.Spec.EntityRef.Name)
 	}
 
-	return fmt.Sprintf("dataproducts/%s/versions/%s/reports", report.Namespace, *report.Spec.VersionName)
+	return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/reports", report.Namespace, *report.Spec.VersionName)
 }
 
 func (report *Report) ManifestUri() string {

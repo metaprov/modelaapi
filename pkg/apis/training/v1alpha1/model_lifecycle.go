@@ -146,7 +146,7 @@ func (model *Model) ToYamlFile() ([]byte, error) {
 }
 
 func (model *Model) RootUri() string {
-	return fmt.Sprintf("dataproducts/%s/versions/%s/studies/%s/models/%s",
+	return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/studies/%s/models/%s",
 		model.Namespace,
 		*model.Spec.VersionName,
 		*model.Spec.StudyName,
