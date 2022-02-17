@@ -539,40 +539,43 @@ type ModelStatus struct {
 	// The image used during training
 	// +kubebuilder:validation:Optional
 	TrainerImage string `json:"trainerImage,omitempty" protobuf:"bytes,54,opt,name=trainerImage"`
+	// The image used during training for data operations.
+	// +kubebuilder:validation:Optional
+	DataImage string `json:"dataImage,omitempty" protobuf:"bytes,55,opt,name=dataImage"`
 	// If the model is deployed, this points to the end point.
 	// +kubebuilder:validation:Optional
-	EndPoint string `json:"endpoint,omitempty" protobuf:"bytes,55,opt,name=endpoint"`
+	EndPoint string `json:"endpoint,omitempty" protobuf:"bytes,56,opt,name=endpoint"`
 	// Holds the location of log paths
 	//+kubebuilder:validation:Optional
-	Logs catalog.Logs `json:"logs,omitempty" protobuf:"bytes,56,opt,name=logs"`
+	Logs catalog.Logs `json:"logs,omitempty" protobuf:"bytes,57,opt,name=logs"`
 	// Roc curve
 	// +kubebuilder:validation:Optional
-	RocAucCurve catalog.RocAucCurve `json:"rocauccurve,omitempty" protobuf:"varint,57,opt,name=rocauccurve"`
+	RocAucCurve catalog.RocAucCurve `json:"rocauccurve,omitempty" protobuf:"varint,58,opt,name=rocauccurve"`
 	// PR curve
 	// +kubebuilder:validation:Optional
-	PRCurve catalog.PRCurve `json:"prcurve,omitempty" protobuf:"varint,58,opt,name=prcurve"`
+	PRCurve catalog.PRCurve `json:"prcurve,omitempty" protobuf:"varint,59,opt,name=prcurve"`
 	// Confusion matrix
 	// +kubebuilder:validation:Optional
-	ConfusionMatrix catalog.ConfusionMatrix `json:"confusionMatrix,omitempty" protobuf:"varint,59,opt,name=confusionMatrix"`
+	ConfusionMatrix catalog.ConfusionMatrix `json:"confusionMatrix,omitempty" protobuf:"varint,60,opt,name=confusionMatrix"`
 	// Holds the top correlation with target
 	// +kubebuilder:validation:Optional
-	CorrelationsWithTarget []data.Correlation `json:"correlationsWithTarget,omitempty" protobuf:"bytes,60,rep,name=correlationsWithTarget"`
+	CorrelationsWithTarget []data.Correlation `json:"correlationsWithTarget,omitempty" protobuf:"bytes,61,rep,name=correlationsWithTarget"`
 	// Holds the top feature correlation
 	// +kubebuilder:validation:Optional
-	TopCorrelations []data.Correlation `json:"topCorrelations,omitempty" protobuf:"bytes,61,rep,name=topCorrelations"`
+	TopCorrelations []data.Correlation `json:"topCorrelations,omitempty" protobuf:"bytes,62,rep,name=topCorrelations"`
 	// Last time the object was updated
 	//+kubebuilder:validation:Optional
-	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,62,opt,name=lastUpdated"`
+	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,63,opt,name=lastUpdated"`
 	// The Governance status for this model
 	// +kubebuilder:validation:Optional
-	Governance data.GovernanceStatus `json:"governance,omitempty" protobuf:"bytes,63,opt,name=governanceStatus"`
+	Governance data.GovernanceStatus `json:"governance,omitempty" protobuf:"bytes,64,opt,name=governanceStatus"`
 	// The Interpretability status for this model
 	// +kubebuilder:validation:Optional
-	Interpretability InterpretabilityStatus `json:"interpretability,omitempty" protobuf:"bytes,64,opt,name=interpretability"`
+	Interpretability InterpretabilityStatus `json:"interpretability,omitempty" protobuf:"bytes,65,opt,name=interpretability"`
 	// +kubebuilder:validation:Optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
-	Conditions []ModelCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,65,rep,name=conditions"`
+	Conditions []ModelCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,66,rep,name=conditions"`
 }
 
 // HyperParameterValue represent a specific value of

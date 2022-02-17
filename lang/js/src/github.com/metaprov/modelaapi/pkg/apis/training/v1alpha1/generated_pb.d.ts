@@ -3120,6 +3120,9 @@ export class ModelStatus extends jspb.Message {
   getTrainerimage(): string;
   setTrainerimage(value: string): ModelStatus;
 
+  getDataimage(): string;
+  setDataimage(value: string): ModelStatus;
+
   getEndpoint(): string;
   setEndpoint(value: string): ModelStatus;
 
@@ -3236,6 +3239,7 @@ export namespace ModelStatus {
     trainedby: string,
     team: string,
     trainerimage: string,
+    dataimage: string,
     endpoint: string,
     logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
     rocauccurve?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RocAucCurve.AsObject,

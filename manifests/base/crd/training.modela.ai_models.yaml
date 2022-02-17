@@ -2053,6 +2053,9 @@ spec:
               cvScore:
                 description: CVScrore is the score using on the training set.
                 type: number
+              dataImage:
+                description: The image used during training for data operations.
+                type: string
               endTime:
                 description: CompletionTime represent the time that the model is marked
                   as ready
