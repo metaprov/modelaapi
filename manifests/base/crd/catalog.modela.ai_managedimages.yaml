@@ -208,11 +208,9 @@ spec:
                 description: Is this a trainer image
                 type: boolean
               uri:
-                description: The Image home page in the registry Who maintain this
-                  image.
+                description: The Image home page in the registry
                 type: string
             required:
-            - description
             - repository
             type: object
         required:

@@ -419,6 +419,7 @@ message ManagedImageList {
 
 // ManagedImageSpec is the desired state of the pretrained model
 message ManagedImageSpec {
+  // +kubebuilder:validation:Optional
   optional string description = 1;
 
   // The image registry, by default use docker.io
@@ -473,19 +474,22 @@ message ManagedImageSpec {
   // The Image home page in the registry
   // +kubebuilder:default =""
   // +kubebuilder:validation:Optional
-  // Who maintain this image.
   optional string uri = 12;
 
   // List of ml frameworks supported by the data container
+  // +kubebuilder:validation:Optional
   repeated string frameworks = 13;
 
   // Libs is the list of python library supported by the data container
+  // +kubebuilder:validation:Optional
   repeated Lib libs = 14;
 
   // OS is the name of the os
+  // +kubebuilder:validation:Optional
   optional string os = 15;
 
   // OSVersion is the version of the os
+  // +kubebuilder:validation:Optional
   optional string osVersion = 16;
 }
 

@@ -37,6 +37,7 @@ type ManagedImageList struct {
 
 // ManagedImageSpec is the desired state of the pretrained model
 type ManagedImageSpec struct {
+	// +kubebuilder:validation:Optional
 	Description *string `json:"description,optional" protobuf:"bytes,1,opt,name=description"`
 	// The image registry, by default use docker.io
 	// +kubebuilder:default ="docker.io"
@@ -80,15 +81,18 @@ type ManagedImageSpec struct {
 	// The Image home page in the registry
 	// +kubebuilder:default =""
 	// +kubebuilder:validation:Optional
-	// Who maintain this image.
 	URI *string `json:"uri,optional" protobuf:"bytes,12,opt,name=uri"`
 	// List of ml frameworks supported by the data container
+	// +kubebuilder:validation:Optional
 	Frameworks []string `json:"frameworks,omitempty" protobuf:"bytes,13,rep,name=frameworks"`
 	// Libs is the list of python library supported by the data container
+	// +kubebuilder:validation:Optional
 	Libs []Lib `json:"libs,omitempty" protobuf:"bytes,14,rep,name=libs"`
 	// OS is the name of the os
+	// +kubebuilder:validation:Optional
 	OS string `json:"os,omitempty" protobuf:"bytes,15,opt,name=os"`
 	// OSVersion is the version of the os
+	// +kubebuilder:validation:Optional
 	OSVersion string `json:"osVersion,omitempty" protobuf:"bytes,16,opt,name=osVersion"`
 }
 
