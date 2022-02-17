@@ -242,21 +242,22 @@ func (study *Study) MarkSplitted() {
 	// set the training location
 	trainingLocation := data.DataLocation{}
 	trainingLocation.BucketName = study.Spec.Location.BucketName
-	trainingLocation.Path = util.StrPtr(path.Join(*study.Spec.Location.Path, "data", "training.csv"))
+	trainingLocation.Path = util.StrPtr(path.Join(*study.Spec.Location.Path, "data", "training.parquet"))
 	study.Status.TrainDatasetLocation = trainingLocation
 
 	// set the testing location
 	testingLocation := data.DataLocation{}
 	testingLocation.BucketName = study.Spec.Location.BucketName
-	testingLocation.Path = util.StrPtr(path.Join(*study.Spec.Location.Path, "data", "testing.csv"))
+	testingLocation.Path = util.StrPtr(path.Join(*study.Spec.Location.Path, "data", "testing.parquet"))
 	study.Status.TestDatasetLocation = testingLocation
 
 	if *study.Spec.TrainingTemplate.Split.Validation > 0 {
 		valLocation := data.DataLocation{}
 		valLocation.BucketName = study.Spec.Location.BucketName
-		valLocation.Path = util.StrPtr(path.Join(*study.Spec.Location.Path, "data", "validation.csv"))
+		valLocation.Path = util.StrPtr(path.Join(*study.Spec.Location.Path, "data", "validation.parquet"))
 		study.Status.ValidationDataset = valLocation
 	}
+	study.Status.Phase = StudyPhaseSplitted
 	study.RefreshProgress()
 
 }
@@ -457,6 +458,11 @@ func (study *Study) MarkEnsembleFailed(err string) {
 		Reason:  ReasonFailed,
 		Message: err,
 	})
+	now := metav1.Now()
+	if study.Status.EnsembleStatus.EndTime == nil {
+		study.Status.EnsembleStatus.EndTime = &now
+	}
+
 	study.Status.Phase = StudyPhaseFailed
 	study.Status.FailureMessage = util.StrPtr("Failed to ensemble models." + err)
 	study.RefreshProgress()
@@ -501,6 +507,8 @@ func (study *Study) MarkTestingFailed(err string) {
 		Message: err,
 	})
 	study.Status.Phase = StudyPhaseFailed
+	now := metav1.Now()
+	study.Status.TestStatus.EndTime = &now
 	study.Status.FailureMessage = util.StrPtr("Failed to test model." + err)
 	study.RefreshProgress()
 }
@@ -524,6 +532,18 @@ func (study *Study) MarkProfiling() {
 		Status: v1.ConditionFalse,
 		Reason: ReasonProfiling,
 	})
+}
+
+func (study *Study) MarkProfiled(url string) {
+	study.Status.Phase = StudyPhaseProfiled
+	study.Status.ProfileUri = url
+	// update the condition
+	study.CreateOrUpdateCond(StudyCondition{
+		Type:   StudyProfiled,
+		Status: v1.ConditionTrue,
+	})
+	study.RefreshProgress()
+
 }
 
 func (study *Study) MarkProfileFailed(err string) {
@@ -654,18 +674,6 @@ func (study *Study) MarkPaused() {
 }
 
 //////////////////////// Profile
-
-func (study *Study) MarkProfiled(url string) {
-	study.Status.Phase = StudyPhaseProfiled
-	study.Status.ProfileUri = url
-	// update the condition
-	study.CreateOrUpdateCond(StudyCondition{
-		Type:   StudyProfiled,
-		Status: v1.ConditionTrue,
-	})
-	study.RefreshProgress()
-
-}
 
 // This is the operation name for the study.
 func (study *Study) OpName() string {
