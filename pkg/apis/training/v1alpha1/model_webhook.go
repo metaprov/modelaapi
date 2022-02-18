@@ -82,7 +82,7 @@ func (model *Model) Default() {
 	if model.ObjectMeta.Labels == nil {
 		model.ObjectMeta.Labels = make(map[string]string)
 		if model.Spec.ModelVersion != nil {
-			model.ObjectMeta.Labels["version"] = *model.Spec.ModelVersion
+			model.ObjectMeta.Labels["modelVersion"] = *model.Spec.ModelVersion
 		}
 		if model.Spec.StudyName != nil {
 			model.ObjectMeta.Labels["study"] = *model.Spec.StudyName

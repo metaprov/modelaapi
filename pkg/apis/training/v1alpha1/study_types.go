@@ -13,12 +13,12 @@ type StudyPhase string
 
 const (
 	StudyPhaseModelPending       StudyPhase = "Pending"
-	StudyPhaseSpliting           StudyPhase = "Spliting"
+	StudyPhaseSplitting          StudyPhase = "Splitting"
 	StudyPhaseSplitted           StudyPhase = "Splitted"
 	StudyPhaseEngineeringFeature StudyPhase = "EngineeringFeatures"
 	StudyPhaseFeatureEngineered  StudyPhase = "FeaturesEngineered"
 	StudyPhaseBaeline            StudyPhase = "Baselining"
-	StudyPhaseBaelined           StudyPhase = "Baselined"
+	StudyPhaseBaselined          StudyPhase = "Baselined"
 	StudyPhaseSearching          StudyPhase = "Searching"
 	StudyPhaseSearched           StudyPhase = "Searched"
 	StudyPhaseCreatingEnsembles  StudyPhase = "CreatingEnsembles"
@@ -69,13 +69,13 @@ const (
 type PrunerName string
 
 const (
-	NonePruner      PrunerName = "none"
-	PatientPruner   PrunerName = "patient"
-	MedianPruner    PrunerName = "median"
-	PrcentilePruner PrunerName = "percentile"
-	SHPruner        PrunerName = "sh"
-	HyperbandPruner PrunerName = "hyperband"
-	thresholdPruner PrunerName = "threshold"
+	NonePruner       PrunerName = "none"
+	PatientPruner    PrunerName = "patient"
+	MedianPruner     PrunerName = "median"
+	PercentilePruner PrunerName = "percentile"
+	SHPruner         PrunerName = "sh"
+	HyperbandPruner  PrunerName = "hyperband"
+	thresholdPruner  PrunerName = "threshold"
 )
 
 // StudyConditionType is the condition on the study

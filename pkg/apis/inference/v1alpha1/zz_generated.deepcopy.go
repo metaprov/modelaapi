@@ -1196,8 +1196,8 @@ func (in *PredictorSpec) DeepCopyInto(out *PredictorSpec) {
 		*out = new(OnlineFeaturestoreSpec)
 		(*in).DeepCopyInto(*out)
 	}
-	if in.ForewardCurtainName != nil {
-		in, out := &in.ForewardCurtainName, &out.ForewardCurtainName
+	if in.ForwardCurtainName != nil {
+		in, out := &in.ForwardCurtainName, &out.ForwardCurtainName
 		*out = new(string)
 		**out = **in
 	}

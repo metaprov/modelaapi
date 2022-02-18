@@ -351,7 +351,7 @@ func (study *Study) MarkBaselined() {
 	if study.Status.BaselineStatus.EndTime == nil {
 		study.Status.BaselineStatus.EndTime = &now
 	}
-	study.Status.Phase = StudyPhaseBaelined
+	study.Status.Phase = StudyPhaseBaselined
 	study.RefreshProgress()
 }
 

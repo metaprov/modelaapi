@@ -162,7 +162,7 @@ type PredictorSpec struct {
 	// The forward curtain receive the prediction request before the prediction.
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	ForewardCurtainName *string `json:"forwardCurtain,omitempty" protobuf:"bytes,18,opt,name=forewardCurtain"`
+	ForwardCurtainName *string `json:"forwardCurtain,omitempty" protobuf:"bytes,18,opt,name=forwardCurtain"`
 	// The backward curtain receive the curtain after the prediction.
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional

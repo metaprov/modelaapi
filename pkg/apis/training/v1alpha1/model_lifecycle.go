@@ -74,8 +74,8 @@ func NewModel(
 	result.Spec.StudyName = &study
 	result.Spec.Task = &task
 	result.ObjectMeta.Labels = map[string]string{
-		"study":  study,
-		"schema": schema,
+		"study":      study,
+		"datasource": schema,
 	}
 	return result
 }

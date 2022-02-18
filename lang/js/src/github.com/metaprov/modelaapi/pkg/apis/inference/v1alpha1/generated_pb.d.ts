@@ -1347,8 +1347,8 @@ export class PredictorSpec extends jspb.Message {
   hasStore(): boolean;
   clearStore(): PredictorSpec;
 
-  getForewardcurtain(): string;
-  setForewardcurtain(value: string): PredictorSpec;
+  getForwardcurtain(): string;
+  setForwardcurtain(value: string): PredictorSpec;
 
   getBackwardcurtain(): string;
   setBackwardcurtain(value: string): PredictorSpec;
@@ -1399,7 +1399,7 @@ export namespace PredictorSpec {
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     cache?: PredictionCacheSpec.AsObject,
     store?: OnlineFeaturestoreSpec.AsObject,
-    forewardcurtain: string,
+    forwardcurtain: string,
     backwardcurtain: string,
     type: string,
     task: string,

@@ -859,7 +859,7 @@ message PredictorSpec {
   // The forward curtain receive the prediction request before the prediction.
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string forewardCurtain = 18;
+  optional string forwardCurtain = 18;
 
   // The backward curtain receive the curtain after the prediction.
   // +kubebuilder:default:=""
