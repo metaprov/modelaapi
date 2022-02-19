@@ -368,7 +368,7 @@ spec:
                           - drop-constant-features
                           - drop-deplicated-features
                           - drop-correlated-features
-                          - mutal-information
+                          - mutual-information
                           - chisquare
                           - anova
                           - step-forward
@@ -2418,7 +2418,7 @@ spec:
                           - drop-constant-features
                           - drop-deplicated-features
                           - drop-correlated-features
-                          - mutal-information
+                          - mutual-information
                           - chisquare
                           - anova
                           - step-forward

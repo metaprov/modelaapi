@@ -367,6 +367,30 @@ func (study *Study) MarkBaselineFailed(err string) {
 	study.RefreshProgress()
 }
 
+func (study *Study) MarkReadyFailed(err string) {
+	study.CreateOrUpdateCond(StudyCondition{
+		Type:    StudyCompleted,
+		Status:  v1.ConditionFalse,
+		Reason:  ReasonFailed,
+		Message: err,
+	})
+	study.Status.Phase = StudyPhaseFailed
+	study.Status.FailureMessage = util.StrPtr("Failed to mark study as ready." + err)
+	study.RefreshProgress()
+}
+
+func (study *Study) MarkGCFailed(err string) {
+	study.CreateOrUpdateCond(StudyCondition{
+		Type:    StudyCompleted,
+		Status:  v1.ConditionFalse,
+		Reason:  ReasonFailed,
+		Message: err,
+	})
+	study.Status.Phase = StudyPhaseFailed
+	study.Status.FailureMessage = util.StrPtr("Failed to gc study." + err)
+	study.RefreshProgress()
+}
+
 ///////////////////////////////////////////////////////////////
 // Searched
 ///////////////////////////////////////////////////////////////
