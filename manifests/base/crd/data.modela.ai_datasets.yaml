@@ -78,7 +78,7 @@ spec:
               correlation:
                 description: Specification for the correlation spec
                 properties:
-                  float64:
+                  cutoff:
                     default: 50
                     description: Specify the minimum value of the corr
                     type: number

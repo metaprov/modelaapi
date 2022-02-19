@@ -354,27 +354,33 @@ message DataAppSpec {
   // +kubebuilder:validation:Optional
   optional int32 port = 8;
 
+  // The value of the node port
+  // +kubebuilder:validation:Minimum=1
+  // +kubebuilder:validation:Maximum=65535
+  // +kubebuilder:validation:Optional
+  optional int32 nodePort = 9;
+
   // Resource define the hardware resources req.
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 9;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 10;
 
   // The access method specified how external clients will access the predictor
   // Default: ClusterPort
   // +kubebuilder:default:="cluster-port"
   // +kubebuilder:validation:Optional
-  optional string accessType = 10;
+  optional string accessType = 11;
 
   // The product that this predictor serve.
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference productRef = 11;
+  optional k8s.io.api.core.v1.ObjectReference productRef = 12;
 
   // The serving site that hosts this predictor and the models
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference servingsiteRef = 12;
+  optional k8s.io.api.core.v1.ObjectReference servingsiteRef = 13;
 
   // Custom application
   // +kubebuilder:validation:Optional
-  optional CustomAppSpec custom = 13;
+  optional CustomAppSpec custom = 14;
 }
 
 // DataAppStatus defines the observed state of DataApp
@@ -817,72 +823,78 @@ message PredictorSpec {
   // +kubebuilder:default:=8080
   optional int32 port = 9;
 
+  // The value of the node port
+  // +kubebuilder:validation:Minimum=1
+  // +kubebuilder:validation:Maximum=65535
+  // +kubebuilder:validation:Optional
+  optional int32 nodePort = 10;
+
   // This is the path relative to the ingress path
   // +kubebuilder:validation:MaxLength=256
   // +kubebuilder:validation:Optional
   // +kubebuilder:default:=""
-  optional string path = 10;
+  optional string path = 11;
 
   // The access method specified how external clients will access the predictor
   // Default: ClusterPort
   // +kubebuilder:validation:Optional
-  optional string accessType = 11;
+  optional string accessType = 12;
 
   // Replicas defines the number of replicas when auto scaling is disabled.
   // +kubebuilder:validation:Optional
   // +kubebuilder:validation:Maximum=10
   // +kubebuilder:validation:Minimum=1
   // +kubebuilder:default:=1
-  optional int32 replicas = 12;
+  optional int32 replicas = 13;
 
   // AutoScaling defines the auto scaling policy
   // +kubebuilder:validation:Optional
-  optional AutoScaling autoScaling = 13;
+  optional AutoScaling autoScaling = 14;
 
   // The owner account name
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
-  optional string owner = 14;
+  optional string owner = 15;
 
   // Resources is the hardware resource req.
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 15;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 16;
 
   // Cache is the specification of prediction cache
   // +kubebuilder:validation:Optional
-  optional PredictionCacheSpec cache = 16;
+  optional PredictionCacheSpec cache = 17;
 
   // Store is the specification of the online data store.
   // +kubebuilder:validation:Optional
-  optional OnlineFeaturestoreSpec store = 17;
+  optional OnlineFeaturestoreSpec store = 18;
 
   // The forward curtain receive the prediction request before the prediction.
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string forwardCurtain = 18;
+  optional string forwardCurtain = 19;
 
   // The backward curtain receive the curtain after the prediction.
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string backwardCurtain = 19;
+  optional string backwardCurtain = 20;
 
   // Type is the type of predictor
   // +kubebuilder:default:="online"
   // +kubebuilder:validation:Optional
-  optional string type = 20;
+  optional string type = 21;
 
   // Task is the task of the predictor
   // +kubebuilder:default:="unknown"
   // +kubebuilder:validation:Optional
-  optional string task = 21;
+  optional string task = 22;
 
   // The prediction threshold
   // +kubebuilder:validation:Optional
-  optional double predictionThreshold = 22;
+  optional double predictionThreshold = 23;
 
   // Monitor spec specify the monitor for this predictor.
   // +kubebuilder:validation:Optional
-  optional MonitorSpec monitor = 23;
+  optional MonitorSpec monitor = 24;
 
   // specify the predictor authentication
   // +kubebuilder:validation:Optional

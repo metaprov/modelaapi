@@ -203,7 +203,7 @@ spec:
                   they need to run
                 items:
                   properties:
-                    Dependents:
+                    dependents:
                       description: Dependents is the list of recipe that need to run
                         after this recipe.
                       items:

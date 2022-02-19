@@ -168,5 +168,5 @@ type RecipePartSpec struct {
 	// +kubebuilder:validation:Optional
 	RecipeName *string `json:"recipeName,omitempty" protobuf:"bytes,1,opt,name=recipeName"`
 	// Dependents is the list of recipe that need to run after this recipe.
-	Dependents []string `json:"Dependents,omitempty" protobuf:"bytes,2,rep,name=Dependents"`
+	Dependents []string `json:"dependents,omitempty" protobuf:"bytes,2,rep,name=dependents"`
 }

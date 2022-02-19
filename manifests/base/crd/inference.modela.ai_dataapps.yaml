@@ -244,6 +244,12 @@ spec:
                 description: The name of the predictive app model. The model will
                   be used
                 type: string
+              nodePort:
+                description: The value of the node port
+                format: int32
+                maximum: 65535
+                minimum: 1
+                type: integer
               owner:
                 default: no-one
                 description: The webrequest owner

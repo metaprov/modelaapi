@@ -539,6 +539,11 @@ func (in *DataAppSpec) DeepCopyInto(out *DataAppSpec) {
 		*out = new(int32)
 		**out = **in
 	}
+	if in.NodePort != nil {
+		in, out := &in.NodePort, &out.NodePort
+		*out = new(int32)
+		**out = **in
+	}
 	in.Resources.DeepCopyInto(&out.Resources)
 	if in.AccessType != nil {
 		in, out := &in.AccessType, &out.AccessType
@@ -1161,6 +1166,11 @@ func (in *PredictorSpec) DeepCopyInto(out *PredictorSpec) {
 	}
 	if in.Port != nil {
 		in, out := &in.Port, &out.Port
+		*out = new(int32)
+		**out = **in
+	}
+	if in.NodePort != nil {
+		in, out := &in.NodePort, &out.NodePort
 		*out = new(int32)
 		**out = **in
 	}

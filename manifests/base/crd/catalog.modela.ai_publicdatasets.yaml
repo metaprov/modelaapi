@@ -94,7 +94,7 @@ spec:
               industry:
                 description: The target column name
                 type: string
-              openmlID:
+              openMLID:
                 description: The open ml id of the dataset
                 type: string
               rows:

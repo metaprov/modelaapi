@@ -652,8 +652,8 @@ export namespace Correlation {
 }
 
 export class CorrelationSpec extends jspb.Message {
-  getFloat64(): number;
-  setFloat64(value: number): CorrelationSpec;
+  getCutoff(): number;
+  setCutoff(value: number): CorrelationSpec;
 
   getMethod(): string;
   setMethod(value: string): CorrelationSpec;
@@ -671,7 +671,7 @@ export class CorrelationSpec extends jspb.Message {
 
 export namespace CorrelationSpec {
   export type AsObject = {
-    float64: number,
+    cutoff: number,
     method: string,
     top: number,
   }

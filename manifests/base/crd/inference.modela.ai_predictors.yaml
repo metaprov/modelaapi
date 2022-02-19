@@ -418,6 +418,12 @@ spec:
                       type: object
                     type: array
                 type: object
+              nodePort:
+                description: The value of the node port
+                format: int32
+                maximum: 65535
+                minimum: 1
+                type: integer
               owner:
                 default: no-one
                 description: The owner account name

@@ -43,13 +43,13 @@ type CloudSpec struct {
 	DefaultGpuClassName string `json:"defaultGpuClassName,omitempty" protobuf:"bytes,3,opt,name=defaultGpuClassName"`
 	// MachineClasses defines the types of machines in this provider
 	// +kubebuilder:validation:Optional
-	MachineClasses []MachineClass `json:"machineClasses,omitempty" protobuf:"bytes,4,rep,name=machineClasses,casttype=MachineClass"`
+	MachineClasses []MachineClass `json:"machineClasses,omitempty" protobuf:"bytes,4,rep,name=machineClasses,casttype=machineClasses"`
 	// GPUClasses define the type of GPUs offered by this provider
 	// +kubebuilder:validation:Optional
-	GpuClasses []GpuClass `json:"gpuClasses,omitempty" protobuf:"bytes,5,rep,name=gpuClasses,casttype=GpuClass"`
+	GpuClasses []GpuClass `json:"gpuClasses,omitempty" protobuf:"bytes,5,rep,name=gpuClasses,casttype=gpuClasses"`
 	// Regions define the type of regions offered by this provider
 	// +kubebuilder:validation:Optional
-	Regions []Region `json:"regions,omitempty" protobuf:"bytes,6,rep,name=regions,casttype=Region"`
+	Regions []Region `json:"regions,omitempty" protobuf:"bytes,6,rep,name=regions,casttype=regions"`
 }
 
 // MachineClass define the specific for a machine type of a cloud provider

@@ -477,7 +477,7 @@ type CorrelationSpec struct {
 	// Specify the minimum value of the corr
 	// +kubebuilder:default:=50
 	// +kubebuilder:validation:Optional
-	Cutoff *float64 `json:"float64,omitempty" protobuf:"bytes,1,opt,name=float64"`
+	Cutoff *float64 `json:"cutoff,omitempty" protobuf:"bytes,1,opt,name=cutoff"`
 	// Specify the method to use when computing the correlation.
 	// +kubebuilder:default:="pearson"
 	// +kubebuilder:validation:Optional

@@ -565,6 +565,9 @@ export class DataAppSpec extends jspb.Message {
   getPort(): number;
   setPort(value: number): DataAppSpec;
 
+  getNodeport(): number;
+  setNodeport(value: number): DataAppSpec;
+
   getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
   setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): DataAppSpec;
   hasResources(): boolean;
@@ -605,6 +608,7 @@ export namespace DataAppSpec {
     modelname: string,
     replicas: number,
     port: number,
+    nodeport: number,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     accesstype: string,
     productref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
@@ -1315,6 +1319,9 @@ export class PredictorSpec extends jspb.Message {
   getPort(): number;
   setPort(value: number): PredictorSpec;
 
+  getNodeport(): number;
+  setNodeport(value: number): PredictorSpec;
+
   getPath(): string;
   setPath(value: string): PredictorSpec;
 
@@ -1391,6 +1398,7 @@ export namespace PredictorSpec {
     progressive?: ProgressiveSpec.AsObject,
     artifactsfolder: string,
     port: number,
+    nodeport: number,
     path: string,
     accesstype: string,
     replicas: number,

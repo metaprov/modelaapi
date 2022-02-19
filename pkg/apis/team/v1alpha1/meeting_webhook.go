@@ -64,12 +64,6 @@ func (alert *Meeting) validateName(fldPath *field.Path) field.ErrorList {
 
 func (alert *Meeting) validateSpec(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
-	//Smtp.To   []string
-	//Smtp.Origin string
-	//Smtp.Host string
-	//Smtp.Port int32
-
-	//Slack.WebHook
 
 	return allErrs
 }

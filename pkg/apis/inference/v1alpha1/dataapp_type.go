@@ -92,23 +92,30 @@ type DataAppSpec struct {
 	// +kubebuilder:validation:Maximum=65535
 	// +kubebuilder:validation:Optional
 	Port *int32 `json:"port,omitempty" protobuf:"varint,8,opt,name=port"`
+
+	// The value of the node port
+	// +kubebuilder:validation:Minimum=1
+	// +kubebuilder:validation:Maximum=65535
+	// +kubebuilder:validation:Optional
+	NodePort *int32 `json:"nodePort,omitempty" protobuf:"varint,9,opt,name=nodePort"`
+
 	// Resource define the hardware resources req.
 	// +kubebuilder:validation:Optional
-	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,9,opt,name=resources"`
+	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,10,opt,name=resources"`
 	// The access method specified how external clients will access the predictor
 	// Default: ClusterPort
 	// +kubebuilder:default:="cluster-port"
 	// +kubebuilder:validation:Optional
-	AccessType *catalog.AccessType `json:"accessType,omitempty" protobuf:"bytes,10,opt,name=accessType"`
+	AccessType *catalog.AccessType `json:"accessType,omitempty" protobuf:"bytes,11,opt,name=accessType"`
 	// The product that this predictor serve.
 	// +kubebuilder:validation:Optional
-	ProductRef *v1.ObjectReference `json:"productRef,omitempty" protobuf:"bytes,11,opt,name=productRef"`
+	ProductRef *v1.ObjectReference `json:"productRef,omitempty" protobuf:"bytes,12,opt,name=productRef"`
 	// The serving site that hosts this predictor and the models
 	// +kubebuilder:validation:Optional
-	ServingSiteRef *v1.ObjectReference `json:"servingsiteRef" protobuf:"bytes,12,opt,name=servingsiteRef"`
+	ServingSiteRef *v1.ObjectReference `json:"servingsiteRef" protobuf:"bytes,13,opt,name=servingsiteRef"`
 	// Custom application
 	// +kubebuilder:validation:Optional
-	Custom CustomAppSpec `json:"custom" protobuf:"bytes,13,opt,name=custom"`
+	Custom CustomAppSpec `json:"custom" protobuf:"bytes,14,opt,name=custom"`
 }
 
 // Define the custom pages on the app

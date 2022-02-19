@@ -567,7 +567,7 @@ message CorrelationSpec {
   // Specify the minimum value of the corr
   // +kubebuilder:default:=50
   // +kubebuilder:validation:Optional
-  optional double float64 = 1;
+  optional double cutoff = 1;
 
   // Specify the method to use when computing the correlation.
   // +kubebuilder:default:="pearson"
@@ -3020,7 +3020,7 @@ message RecipePartSpec {
   optional string recipeName = 1;
 
   // Dependents is the list of recipe that need to run after this recipe.
-  repeated string Dependents = 2;
+  repeated string dependents = 2;
 }
 
 // RecipeRun represent one execution of the recipe.

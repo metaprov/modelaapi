@@ -48,13 +48,13 @@ type AlgorithmSpec struct {
 	Sparse *bool `json:"sparse,omitempty" protobuf:"bytes,5,opt,name=sparse"`
 	// IntegerParameters is the list of integer hyper parameter ranges.
 	// +kubebuilder:validation:Optional
-	IntegerParameters []IntParameter `json:"integerParameters,omitempty" protobuf:"bytes,6,rep,name=integerParameters,casttype=IntParameter"`
+	IntegerParameters []IntParameter `json:"integerParameters,omitempty" protobuf:"bytes,6,rep,name=integerParameters,casttype=integerParameters"`
 	// FloatParameters is the list of float hyper parameters ranges
 	// +kubebuilder:validation:Optional
-	FloatParameters []FloatParameter `json:"floatParameters,omitempty" protobuf:"bytes,7,rep,name=floatParameters,casttype=FloatParameter"`
+	FloatParameters []FloatParameter `json:"floatParameters,omitempty" protobuf:"bytes,7,rep,name=floatParameters,casttype=floatParameters"`
 	// CategoricalParameters is the list of categorical hyper parameters ranges
 	// +kubebuilder:validation:Optional
-	CategoricalParameters []CategoricalParameter `json:"categoricalParameters,omitempty" protobuf:"bytes,8,rep,name=categoricalParameters,casttype=CategoricalParameter"`
+	CategoricalParameters []CategoricalParameter `json:"categoricalParameters,omitempty" protobuf:"bytes,8,rep,name=categoricalParameters,casttype=categoricalParameters"`
 }
 
 // IntParameter contain the specification of an integer hyper parameter

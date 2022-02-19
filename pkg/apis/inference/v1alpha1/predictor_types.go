@@ -128,59 +128,64 @@ type PredictorSpec struct {
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:=8080
 	Port *int32 `json:"port,omitempty" protobuf:"varint,9,opt,name=port"`
+	// The value of the node port
+	// +kubebuilder:validation:Minimum=1
+	// +kubebuilder:validation:Maximum=65535
+	// +kubebuilder:validation:Optional
+	NodePort *int32 `json:"nodePort,omitempty" protobuf:"varint,10,opt,name=nodePort"`
 	// This is the path relative to the ingress path
 	// +kubebuilder:validation:MaxLength=256
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:=""
-	Path *string `json:"path,omitempty" protobuf:"bytes,10,opt,name=path"`
+	Path *string `json:"path,omitempty" protobuf:"bytes,11,opt,name=path"`
 	// The access method specified how external clients will access the predictor
 	// Default: ClusterPort
 	// +kubebuilder:validation:Optional
-	AccessType *catalog.AccessType `json:"accessType,omitempty" protobuf:"bytes,11,opt,name=accessType"`
+	AccessType *catalog.AccessType `json:"accessType,omitempty" protobuf:"bytes,12,opt,name=accessType"`
 	// Replicas defines the number of replicas when auto scaling is disabled.
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:Maximum=10
 	// +kubebuilder:validation:Minimum=1
 	// +kubebuilder:default:=1
-	Replicas *int32 `json:"replicas,omitempty" protobuf:"varint,12,opt,name=replicas"`
+	Replicas *int32 `json:"replicas,omitempty" protobuf:"varint,13,opt,name=replicas"`
 	// AutoScaling defines the auto scaling policy
 	// +kubebuilder:validation:Optional
-	AutoScaling AutoScaling `json:"autoScaling,omitempty" protobuf:"bytes,13,opt,name=autoScaling"`
+	AutoScaling AutoScaling `json:"autoScaling,omitempty" protobuf:"bytes,14,opt,name=autoScaling"`
 	// The owner account name
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
-	Owner *string `json:"owner,omitempty" protobuf:"bytes,14,opt,name=owner"`
+	Owner *string `json:"owner,omitempty" protobuf:"bytes,15,opt,name=owner"`
 	// Resources is the hardware resource req.
 	// +kubebuilder:validation:Optional
-	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,15,opt,name=resources"`
+	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,16,opt,name=resources"`
 	// Cache is the specification of prediction cache
 	// +kubebuilder:validation:Optional
-	Cache *PredictionCacheSpec `json:"cache,omitempty" protobuf:"bytes,16,opt,name=cache"`
+	Cache *PredictionCacheSpec `json:"cache,omitempty" protobuf:"bytes,17,opt,name=cache"`
 	// Store is the specification of the online data store.
 	// +kubebuilder:validation:Optional
-	Store *OnlineFeaturestoreSpec `json:"store,omitempty" protobuf:"bytes,17,opt,name=store"`
+	Store *OnlineFeaturestoreSpec `json:"store,omitempty" protobuf:"bytes,18,opt,name=store"`
 	// The forward curtain receive the prediction request before the prediction.
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	ForwardCurtainName *string `json:"forwardCurtain,omitempty" protobuf:"bytes,18,opt,name=forwardCurtain"`
+	ForwardCurtainName *string `json:"forwardCurtain,omitempty" protobuf:"bytes,19,opt,name=forwardCurtain"`
 	// The backward curtain receive the curtain after the prediction.
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	BackwardCurtainName *string `json:"backwardCurtain,omitempty" protobuf:"bytes,19,opt,name=backwardCurtain"`
+	BackwardCurtainName *string `json:"backwardCurtain,omitempty" protobuf:"bytes,20,opt,name=backwardCurtain"`
 	// Type is the type of predictor
 	// +kubebuilder:default:="online"
 	// +kubebuilder:validation:Optional
-	Type *PredictorType `json:"type,omitempty" protobuf:"bytes,20,opt,name=type"`
+	Type *PredictorType `json:"type,omitempty" protobuf:"bytes,21,opt,name=type"`
 	// Task is the task of the predictor
 	// +kubebuilder:default:="unknown"
 	// +kubebuilder:validation:Optional
-	Task *catalog.MLTask `json:"task,omitempty" protobuf:"bytes,21,opt,name=task"`
+	Task *catalog.MLTask `json:"task,omitempty" protobuf:"bytes,22,opt,name=task"`
 	// The prediction threshold
 	// +kubebuilder:validation:Optional
-	PredictionThreshold *float64 `json:"predictionThreshold,omitempty" protobuf:"bytes,22,opt,name=predictionThreshold"`
+	PredictionThreshold *float64 `json:"predictionThreshold,omitempty" protobuf:"bytes,23,opt,name=predictionThreshold"`
 	// Monitor spec specify the monitor for this predictor.
 	// +kubebuilder:validation:Optional
-	Monitor MonitorSpec `json:"monitor,omitempty" protobuf:"bytes,23,opt,name=monitor"`
+	Monitor MonitorSpec `json:"monitor,omitempty" protobuf:"bytes,24,opt,name=monitor"`
 	// specify the predictor authentication
 	// +kubebuilder:validation:Optional
 	Auth PredictorAuthSpec `json:"auth,omitempty" protobuf:"bytes,25,opt,name=auth"`

@@ -10203,7 +10203,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CorrelationSpec.proto
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CorrelationSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
-    float64: (f = jspb.Message.getOptionalFloatingPointField(msg, 1)) == null ? undefined : f,
+    cutoff: (f = jspb.Message.getOptionalFloatingPointField(msg, 1)) == null ? undefined : f,
     method: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     top: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
   };
@@ -10244,7 +10244,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CorrelationSpec.deser
     switch (field) {
     case 1:
       var value = /** @type {number} */ (reader.readDouble());
-      msg.setFloat64(value);
+      msg.setCutoff(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -10308,10 +10308,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CorrelationSpec.seria
 
 
 /**
- * optional double float64 = 1;
+ * optional double cutoff = 1;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CorrelationSpec.prototype.getFloat64 = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CorrelationSpec.prototype.getCutoff = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 1, 0.0));
 };
 
@@ -10320,7 +10320,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CorrelationSpec.proto
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CorrelationSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CorrelationSpec.prototype.setFloat64 = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CorrelationSpec.prototype.setCutoff = function(value) {
   return jspb.Message.setField(this, 1, value);
 };
 
@@ -10329,7 +10329,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CorrelationSpec.proto
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CorrelationSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CorrelationSpec.prototype.clearFloat64 = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CorrelationSpec.prototype.clearCutoff = function() {
   return jspb.Message.setField(this, 1, undefined);
 };
 
@@ -10338,7 +10338,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CorrelationSpec.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CorrelationSpec.prototype.hasFloat64 = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CorrelationSpec.prototype.hasCutoff = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -47124,7 +47124,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipePartSpec.protot
 
 
 /**
- * repeated string Dependents = 2;
+ * repeated string dependents = 2;
  * @return {!Array<string>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipePartSpec.prototype.getDependentsList = function() {

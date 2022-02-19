@@ -13033,7 +13033,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.
 
 
 /**
- * optional string openmlID = 4;
+ * optional string openMLID = 4;
  * @return {string}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.getOpenmlid = function() {

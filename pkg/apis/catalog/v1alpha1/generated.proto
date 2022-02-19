@@ -719,7 +719,7 @@ message PublicDatasetSpec {
   // The open ml id of the dataset
   // +kubebuilder:validation:Optional
   // +kubebuilder:default =""
-  optional string openmlID = 4;
+  optional string openMLID = 4;
 
   // The URL to the actual data file or folder
   // +kubebuilder:validation:Optional
