@@ -532,18 +532,25 @@ message ComponentSpec {
 
 // Represent the view part of a component. Only one part should be specified per component
 message ComponentView {
+  // +kubebuilder:validation:Optional
   optional MetricSpec metric = 1;
 
+  // +kubebuilder:validation:Optional
   optional GaugeSpec gauge = 2;
 
+  // +kubebuilder:validation:Optional
   optional HistogramSpec histogram = 3;
 
+  // +kubebuilder:validation:Optional
   optional TableSpec table = 4;
 
+  // +kubebuilder:validation:Optional
   optional LineChartSpec lineChart = 5;
 
+  // +kubebuilder:validation:Optional
   optional BarChartSpec barChart = 6;
 
+  // +kubebuilder:validation:Optional
   optional ScatterPlotSpec scatterPlot = 7;
 }
 

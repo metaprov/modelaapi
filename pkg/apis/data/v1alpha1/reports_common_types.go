@@ -33,12 +33,19 @@ type ComponentSpec struct {
 
 // Represent the view part of a component. Only one part should be specified per component
 type ComponentView struct {
-	Metric       *MetricSpec      `json:"metric,omitempty" protobuf:"bytes,1,opt,name=metric"`
-	Gauge        *GaugeSpec       `json:"gauge,omitempty" protobuf:"bytes,2,opt,name=gauge"`
-	Histogram    *HistogramSpec   `json:"histogram,omitempty" protobuf:"bytes,3,opt,name=histogram"`
-	Table        *TableSpec       `json:"table,omitempty" protobuf:"bytes,4,opt,name=table"`
-	LineChart    *LineChartSpec   `json:"lineChart,omitempty" protobuf:"bytes,5,opt,name=lineChart"`
-	BarChart     *BarChartSpec    `json:"barChart,omitempty" protobuf:"bytes,6,opt,name=barChart"`
+	// +kubebuilder:validation:Optional
+	Metric *MetricSpec `json:"metric,omitempty" protobuf:"bytes,1,opt,name=metric"`
+	// +kubebuilder:validation:Optional
+	Gauge *GaugeSpec `json:"gauge,omitempty" protobuf:"bytes,2,opt,name=gauge"`
+	// +kubebuilder:validation:Optional
+	Histogram *HistogramSpec `json:"histogram,omitempty" protobuf:"bytes,3,opt,name=histogram"`
+	// +kubebuilder:validation:Optional
+	Table *TableSpec `json:"table,omitempty" protobuf:"bytes,4,opt,name=table"`
+	// +kubebuilder:validation:Optional
+	LineChart *LineChartSpec `json:"lineChart,omitempty" protobuf:"bytes,5,opt,name=lineChart"`
+	// +kubebuilder:validation:Optional
+	BarChart *BarChartSpec `json:"barChart,omitempty" protobuf:"bytes,6,opt,name=barChart"`
+	// +kubebuilder:validation:Optional
 	ScatterChart *ScatterPlotSpec `json:"scatterPlot,omitempty" protobuf:"bytes,7,opt,name=scatterPlot"`
 }
 
