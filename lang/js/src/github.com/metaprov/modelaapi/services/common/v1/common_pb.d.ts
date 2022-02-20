@@ -107,6 +107,12 @@ export namespace ModelProfile {
 }
 
 export class ROCCurve extends jspb.Message {
+  getClassname(): string;
+  setClassname(value: string): ROCCurve;
+
+  getClassid(): number;
+  setClassid(value: number): ROCCurve;
+
   getFprList(): Array<number>;
   setFprList(value: Array<number>): ROCCurve;
   clearFprList(): ROCCurve;
@@ -132,6 +138,8 @@ export class ROCCurve extends jspb.Message {
 
 export namespace ROCCurve {
   export type AsObject = {
+    classname: string,
+    classid: number,
     fprList: Array<number>,
     tprList: Array<number>,
     thresholdsList: Array<number>,
@@ -139,6 +147,12 @@ export namespace ROCCurve {
 }
 
 export class PrecisionRecallCurve extends jspb.Message {
+  getClassname(): string;
+  setClassname(value: string): PrecisionRecallCurve;
+
+  getClassid(): number;
+  setClassid(value: number): PrecisionRecallCurve;
+
   getPrecisionList(): Array<number>;
   setPrecisionList(value: Array<number>): PrecisionRecallCurve;
   clearPrecisionList(): PrecisionRecallCurve;
@@ -164,6 +178,8 @@ export class PrecisionRecallCurve extends jspb.Message {
 
 export namespace PrecisionRecallCurve {
   export type AsObject = {
+    classname: string,
+    classid: number,
     precisionList: Array<number>,
     recallList: Array<number>,
     thresholdsList: Array<number>,

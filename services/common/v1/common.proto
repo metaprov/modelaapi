@@ -28,15 +28,19 @@ message ModelProfile {
 }
 
 message ROCCurve {
-    repeated double fpr         = 1;
-    repeated double tpr         = 2;
-    repeated double thresholds   = 3;    
+    string classname            = 1;
+    int32  classid              = 2;
+    repeated double fpr         = 3;
+    repeated double tpr         = 4;
+    repeated double thresholds  = 5;    
 }
 
 message PrecisionRecallCurve {
-    repeated double precision   = 1;
-    repeated double recall      = 2;
-    repeated double thresholds   = 3;    
+    string classname             = 1;
+    int32  classid               = 2;
+    repeated double precision    = 3;
+    repeated double recall       = 4;
+    repeated double thresholds   = 5;    
 }
 
 
