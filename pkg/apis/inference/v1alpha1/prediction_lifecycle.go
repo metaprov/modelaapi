@@ -165,6 +165,13 @@ func (prediction *Prediction) MarkCompleted() {
 	}
 }
 
+func (prediction *Prediction) MarkArchived() {
+	prediction.CreateOrUpdateCond(PredictionCondition{
+		Type:   PredictionArchived,
+		Status: v1.ConditionTrue,
+	})
+}
+
 func (prediction *Prediction) OpName() string {
 	return prediction.Namespace + "-" + prediction.Name
 }
