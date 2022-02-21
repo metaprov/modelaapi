@@ -186,6 +186,26 @@ export namespace ChatbotEstimatorSpec {
   }
 }
 
+export class CheckpointSpec extends jspb.Message {
+  getLocation(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
+  setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): CheckpointSpec;
+  hasLocation(): boolean;
+  clearLocation(): CheckpointSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CheckpointSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: CheckpointSpec): CheckpointSpec.AsObject;
+  static serializeBinaryToWriter(message: CheckpointSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CheckpointSpec;
+  static deserializeBinaryFromReader(message: CheckpointSpec, reader: jspb.BinaryReader): CheckpointSpec;
+}
+
+export namespace CheckpointSpec {
+  export type AsObject = {
+    location?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
+  }
+}
+
 export class ClassicalEstimatorSpec extends jspb.Message {
   getAlgorithmname(): string;
   setAlgorithmname(value: string): ClassicalEstimatorSpec;
@@ -5226,6 +5246,11 @@ export class TrainingSpec extends jspb.Message {
   getSamplepct(): number;
   setSamplepct(value: number): TrainingSpec;
 
+  getCheckpoint(): CheckpointSpec | undefined;
+  setCheckpoint(value?: CheckpointSpec): TrainingSpec;
+  hasCheckpoint(): boolean;
+  clearCheckpoint(): TrainingSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TrainingSpec.AsObject;
   static toObject(includeInstance: boolean, msg: TrainingSpec): TrainingSpec.AsObject;
@@ -5251,6 +5276,7 @@ export namespace TrainingSpec {
     distributed: boolean,
     nodecount: number,
     samplepct: number,
+    checkpoint?: CheckpointSpec.AsObject,
   }
 }
 

@@ -127,6 +127,12 @@ message ChatbotEstimatorSpec {
   optional string base = 1;
 }
 
+message CheckpointSpec {
+  // the Location of the checkpoint spec.
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation location = 1;
+}
+
 // ClassicalEstimatorSpec is the specification for an algorithm and the actual value fof the hyper parameters
 message ClassicalEstimatorSpec {
   // AlgorithmName is a reference to the algorithm in the catalog
@@ -3571,7 +3577,7 @@ message TrainingSpec {
   // If true, this is a cross validation using folds. If False, use the validation set.
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
-  optional bool cV = 16;
+  optional bool cV = 3;
 
   // The number of folds during cross validation.
   // +kubebuilder:default:=5
@@ -3634,6 +3640,10 @@ message TrainingSpec {
   // +kubebuilder:default:=100
   // +kubebuilder:validation:Optional
   optional int32 samplePct = 15;
+
+  // For modeling checkpoint
+  // +kubebuilder:validation:Optional
+  optional CheckpointSpec checkpoint = 16;
 }
 
 // TrainingStageSpec is the desired state of the training step of the pipeline

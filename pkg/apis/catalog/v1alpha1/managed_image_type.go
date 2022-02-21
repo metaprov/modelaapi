@@ -14,6 +14,19 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
+//==============================================================================
+// ManagedImageRole
+//==============================================================================
+
+// +kubebuilder:validation:Enum="system";"trainer";"serving";
+type ManagedImageRole string
+
+const (
+	SystemImageRole  ManagedImageRole = "system"
+	TrainerImageRole ManagedImageRole = "trainer"
+	ServingImageRole ManagedImageRole = "serving"
+)
+
 // MLFramework define the metadata about a machine learning framework
 // +kubebuilder:object:root=true
 // +kubebuilder:printcolumn:name="URL",type="string",JSONPath=".spec.url"
@@ -56,44 +69,52 @@ type ManagedImageSpec struct {
 	// Is this a gpu image
 	// +kubebuilder:default ="false"
 	// +kubebuilder:validation:Optional
-	Gpu *bool `json:"gpu,optional" protobuf:"bytes,6,opt,name=gpu"`
-	// Is this a trainer image
-	// +kubebuilder:default ="false"
-	// +kubebuilder:validation:Optional
-	Trainer *bool `json:"trainer,optional" protobuf:"bytes,7,opt,name=trainer"`
+	Gpu *bool `json:"gpu,optional" protobuf:"varint,6,opt,name=gpu"`
 	// If true this is an active image that should be used for new training.
 	// +kubebuilder:default ="false"
 	// +kubebuilder:validation:Optional
-	Active *bool `json:"active,optional" protobuf:"bytes,8,opt,name=active"`
+	Active *bool `json:"active,optional" protobuf:"varint,7,opt,name=active"`
+	// Preload the image to the cluster.
+	// +kubebuilder:default ="false"
+	// +kubebuilder:validation:Optional
+	Preload *bool `json:"preload,optional" protobuf:"varint,8,opt,name=preload"`
+	// Preload the image to the cluster.
+	// +kubebuilder:default ="false"
+	// +kubebuilder:validation:Optional
+	ConnectionRef *v1.ObjectReference `json:"connectionRef,optional" protobuf:"bytes,9,opt,name=connectionRef"`
 	// The base image for this image.
 	// +kubebuilder:default =""
 	// +kubebuilder:validation:Optional
-	Base *string `json:"base,optional" protobuf:"bytes,9,opt,name=base"`
+	Base *string `json:"base,optional" protobuf:"bytes,10,opt,name=base"`
 	// The base image for this image.
 	// +kubebuilder:default =""
 	// +kubebuilder:validation:Optional
-	System *bool `json:"system,optional" protobuf:"bytes,10,opt,name=system"`
+	Role *ManagedImageRole `json:"role,optional" protobuf:"bytes,11,opt,name=role"`
 	// The organization maintaining this image
 	// +kubebuilder:default ="metaprov"
 	// +kubebuilder:validation:Optional
 	// Who maintain this image.
-	MaintainedBy *string `json:"maintainedBy,optional" protobuf:"bytes,11,opt,name=mantainedBy"`
+	MaintainedBy *string `json:"maintainedBy,optional" protobuf:"bytes,12,opt,name=mantainedBy"`
 	// The Image home page in the registry
 	// +kubebuilder:default =""
 	// +kubebuilder:validation:Optional
-	URI *string `json:"uri,optional" protobuf:"bytes,12,opt,name=uri"`
+	URI *string `json:"uri,optional" protobuf:"bytes,13,opt,name=uri"`
 	// List of ml frameworks supported by the data container
 	// +kubebuilder:validation:Optional
-	Frameworks []string `json:"frameworks,omitempty" protobuf:"bytes,13,rep,name=frameworks"`
+	Frameworks []string `json:"frameworks,omitempty" protobuf:"bytes,14,rep,name=frameworks"`
 	// Libs is the list of python library supported by the data container
 	// +kubebuilder:validation:Optional
-	Libs []Lib `json:"libs,omitempty" protobuf:"bytes,14,rep,name=libs"`
+	Libs []Lib `json:"libs,omitempty" protobuf:"bytes,15,rep,name=libs"`
 	// OS is the name of the os
 	// +kubebuilder:validation:Optional
-	OS string `json:"os,omitempty" protobuf:"bytes,15,opt,name=os"`
+	OS string `json:"os,omitempty" protobuf:"bytes,16,opt,name=os"`
 	// OSVersion is the version of the os
 	// +kubebuilder:validation:Optional
-	OSVersion string `json:"osVersion,omitempty" protobuf:"bytes,16,opt,name=osVersion"`
+	OSVersion string `json:"osVersion,omitempty" protobuf:"bytes,17,opt,name=osVersion"`
+	// If true this is an active image that should be used for new training.
+	// +kubebuilder:default ="false"
+	// +kubebuilder:validation:Optional
+	Private *bool `json:"private,optional" protobuf:"varint,18,opt,name=private"`
 }
 
 func (p *ManagedImage) Default() {

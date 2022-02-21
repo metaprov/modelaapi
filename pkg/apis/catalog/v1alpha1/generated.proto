@@ -445,52 +445,62 @@ message ManagedImageSpec {
   // +kubebuilder:validation:Optional
   optional bool gpu = 6;
 
-  // Is this a trainer image
-  // +kubebuilder:default ="false"
-  // +kubebuilder:validation:Optional
-  optional bool trainer = 7;
-
   // If true this is an active image that should be used for new training.
   // +kubebuilder:default ="false"
   // +kubebuilder:validation:Optional
-  optional bool active = 8;
+  optional bool active = 7;
+
+  // Preload the image to the cluster.
+  // +kubebuilder:default ="false"
+  // +kubebuilder:validation:Optional
+  optional bool preload = 8;
+
+  // Preload the image to the cluster.
+  // +kubebuilder:default ="false"
+  // +kubebuilder:validation:Optional
+  optional k8s.io.api.core.v1.ObjectReference connectionRef = 9;
 
   // The base image for this image.
   // +kubebuilder:default =""
   // +kubebuilder:validation:Optional
-  optional string base = 9;
+  optional string base = 10;
 
   // The base image for this image.
   // +kubebuilder:default =""
   // +kubebuilder:validation:Optional
-  optional bool system = 10;
+  optional string role = 11;
 
   // The organization maintaining this image
   // +kubebuilder:default ="metaprov"
   // +kubebuilder:validation:Optional
   // Who maintain this image.
-  optional string mantainedBy = 11;
+  optional string mantainedBy = 12;
 
   // The Image home page in the registry
   // +kubebuilder:default =""
   // +kubebuilder:validation:Optional
-  optional string uri = 12;
+  optional string uri = 13;
 
   // List of ml frameworks supported by the data container
   // +kubebuilder:validation:Optional
-  repeated string frameworks = 13;
+  repeated string frameworks = 14;
 
   // Libs is the list of python library supported by the data container
   // +kubebuilder:validation:Optional
-  repeated Lib libs = 14;
+  repeated Lib libs = 15;
 
   // OS is the name of the os
   // +kubebuilder:validation:Optional
-  optional string os = 15;
+  optional string os = 16;
 
   // OSVersion is the version of the os
   // +kubebuilder:validation:Optional
-  optional string osVersion = 16;
+  optional string osVersion = 17;
+
+  // If true this is an active image that should be used for new training.
+  // +kubebuilder:default ="false"
+  // +kubebuilder:validation:Optional
+  optional bool private = 18;
 }
 
 // Measurement is a value for a specific metric

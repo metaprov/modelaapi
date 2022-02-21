@@ -776,7 +776,7 @@ type TrainingSpec struct {
 	// If true, this is a cross validation using folds. If False, use the validation set.
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	CV *bool `json:"cv,omitempty" protobuf:"varint,16,opt,name=cV"`
+	CV *bool `json:"cv,omitempty" protobuf:"varint,3,opt,name=cV"`
 	// The number of folds during cross validation.
 	// +kubebuilder:default:=5
 	// +kubebuilder:validation:Optional
@@ -827,6 +827,15 @@ type TrainingSpec struct {
 	// +kubebuilder:default:=100
 	// +kubebuilder:validation:Optional
 	SamplePct *int32 `json:"samplePct,omitempty" protobuf:"bytes,15,opt,name=samplePct"`
+	// For modeling checkpoint
+	// +kubebuilder:validation:Optional
+	Checkpoint CheckpointSpec `json:"checkpoint,omitempty" protobuf:"bytes,16,opt,name=checkpoint"`
+}
+
+type CheckpointSpec struct {
+	// the Location of the checkpoint spec.
+	// +kubebuilder:validation:Optional
+	Location data.DataLocation `json:"location,omitempty" protobuf:"bytes,1,opt,name=location"`
 }
 
 // Specification for serving this model

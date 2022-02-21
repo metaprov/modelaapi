@@ -1587,6 +1587,50 @@ spec:
                 description: Training template contain the desired training parameter
                   for the models.
                 properties:
+                  checkpoint:
+                    description: For modeling checkpoint
+                    properties:
+                      location:
+                        description: the Location of the checkpoint spec.
+                        properties:
+                          bucketName:
+                            default: ""
+                            description: Bucketname is the name of the bucket
+                            type: string
+                          connectionName:
+                            default: ""
+                            description: ConnectionName is the name of the connection
+                              to access the database
+                            type: string
+                          database:
+                            default: ""
+                            description: Database , the database.
+                            type: string
+                          path:
+                            default: ""
+                            description: Path to the full data file (e.g. csv file).
+                            type: string
+                          sql:
+                            default: ""
+                            description: SQL statement, in case we choose the view
+                              type
+                            type: string
+                          table:
+                            default: ""
+                            description: Sql or table or topic name.
+                            type: string
+                          topic:
+                            default: ""
+                            description: Topic is the name of the topic in case of
+                              streaming
+                            type: string
+                          type:
+                            default: object
+                            description: data location type is the type of the data
+                              location
+                            type: string
+                        type: object
+                    type: object
                   checkpointInterval:
                     default: 10
                     description: Add snapshot interval for long training time in minutes.

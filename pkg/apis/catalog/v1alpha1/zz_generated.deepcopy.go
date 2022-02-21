@@ -768,14 +768,19 @@ func (in *ManagedImageSpec) DeepCopyInto(out *ManagedImageSpec) {
 		*out = new(bool)
 		**out = **in
 	}
-	if in.Trainer != nil {
-		in, out := &in.Trainer, &out.Trainer
-		*out = new(bool)
-		**out = **in
-	}
 	if in.Active != nil {
 		in, out := &in.Active, &out.Active
 		*out = new(bool)
+		**out = **in
+	}
+	if in.Preload != nil {
+		in, out := &in.Preload, &out.Preload
+		*out = new(bool)
+		**out = **in
+	}
+	if in.ConnectionRef != nil {
+		in, out := &in.ConnectionRef, &out.ConnectionRef
+		*out = new(corev1.ObjectReference)
 		**out = **in
 	}
 	if in.Base != nil {
@@ -783,9 +788,9 @@ func (in *ManagedImageSpec) DeepCopyInto(out *ManagedImageSpec) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.System != nil {
-		in, out := &in.System, &out.System
-		*out = new(bool)
+	if in.Role != nil {
+		in, out := &in.Role, &out.Role
+		*out = new(ManagedImageRole)
 		**out = **in
 	}
 	if in.MaintainedBy != nil {
@@ -807,6 +812,11 @@ func (in *ManagedImageSpec) DeepCopyInto(out *ManagedImageSpec) {
 		in, out := &in.Libs, &out.Libs
 		*out = make([]Lib, len(*in))
 		copy(*out, *in)
+	}
+	if in.Private != nil {
+		in, out := &in.Private, &out.Private
+		*out = new(bool)
+		**out = **in
 	}
 }
 

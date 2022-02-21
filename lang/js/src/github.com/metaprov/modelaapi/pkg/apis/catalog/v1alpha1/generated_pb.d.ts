@@ -863,17 +863,22 @@ export class ManagedImageSpec extends jspb.Message {
   getGpu(): boolean;
   setGpu(value: boolean): ManagedImageSpec;
 
-  getTrainer(): boolean;
-  setTrainer(value: boolean): ManagedImageSpec;
-
   getActive(): boolean;
   setActive(value: boolean): ManagedImageSpec;
+
+  getPreload(): boolean;
+  setPreload(value: boolean): ManagedImageSpec;
+
+  getConnectionref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setConnectionref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ManagedImageSpec;
+  hasConnectionref(): boolean;
+  clearConnectionref(): ManagedImageSpec;
 
   getBase(): string;
   setBase(value: string): ManagedImageSpec;
 
-  getSystem(): boolean;
-  setSystem(value: boolean): ManagedImageSpec;
+  getRole(): string;
+  setRole(value: string): ManagedImageSpec;
 
   getMantainedby(): string;
   setMantainedby(value: string): ManagedImageSpec;
@@ -897,6 +902,9 @@ export class ManagedImageSpec extends jspb.Message {
   getOsversion(): string;
   setOsversion(value: string): ManagedImageSpec;
 
+  getPrivate(): boolean;
+  setPrivate(value: boolean): ManagedImageSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ManagedImageSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ManagedImageSpec): ManagedImageSpec.AsObject;
@@ -913,16 +921,18 @@ export namespace ManagedImageSpec {
     tag: string,
     envList: Array<k8s_io_api_core_v1_generated_pb.EnvVar.AsObject>,
     gpu: boolean,
-    trainer: boolean,
     active: boolean,
+    preload: boolean,
+    connectionref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     base: string,
-    system: boolean,
+    role: string,
     mantainedby: string,
     uri: string,
     frameworksList: Array<string>,
     libsList: Array<Lib.AsObject>,
     os: string,
     osversion: string,
+    pb_private: boolean,
   }
 }
 
