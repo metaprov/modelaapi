@@ -3402,7 +3402,7 @@ message SuccessiveHalvingOptions {
   optional int32 eliminationRate = 2;
 
   // The modality type. The default modality is based on the type of models
-  // For deep models - we use epocs.
+  // For deep models - we use epochs.
   // For classical models - we use data
   // +kubebuilder:default:=epochs
   // +kubebuilder:validation:Optional
@@ -3436,7 +3436,7 @@ message SuccessiveHalvingSpec {
   optional int32 confID = 4;
 
   // The modality type. The default modality is based on the type of models
-  // For deep models - we use epocs.
+  // For deep models - we use epochs.
   // For classical models - we use data
   // +kubebuilder:validation:Optional
   optional string modality = 26;

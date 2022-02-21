@@ -336,6 +336,11 @@ export class CurtainSpec extends jspb.Message {
   getDatasetname(): string;
   setDatasetname(value: string): CurtainSpec;
 
+  getWizardsList(): Array<string>;
+  setWizardsList(value: Array<string>): CurtainSpec;
+  clearWizardsList(): CurtainSpec;
+  addWizards(value: string, index?: number): CurtainSpec;
+
   getQuestion(): string;
   setQuestion(value: string): CurtainSpec;
 
@@ -359,6 +364,7 @@ export namespace CurtainSpec {
     versionname: string,
     servingsitename: string,
     datasetname: string,
+    wizardsList: Array<string>,
     question: string,
     notifiername: string,
     owner: string,

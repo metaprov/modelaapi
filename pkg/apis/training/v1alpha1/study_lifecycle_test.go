@@ -19,7 +19,7 @@ func TestTimeConstraints_Ended(t *testing.T) {
 	study := DefaultStudy()
 	study.SetStartTime() // set the start time to now.
 	// Act
-	study.Spec.Search.MaxTime = util.Int32Ptr(0) // do for one minues
+	study.Spec.Search.MaxTime = util.Int32Ptr(0) // do for one minutes
 	time.Sleep(1 * time.Second)
 
 	ended := study.ReachedMaxTime()
@@ -52,7 +52,7 @@ func TestMaxModel_Ended(t *testing.T) {
 	study := DefaultStudy()
 	study.SetStartTime() // set the start time to now.
 	// Act
-	study.Spec.Search.MaxTime = util.Int32Ptr(0) // do for one minues
+	study.Spec.Search.MaxTime = util.Int32Ptr(0) // do for one minutes
 	time.Sleep(1 * time.Second)
 
 	ended := study.ReachedMaxTime()
@@ -72,7 +72,7 @@ func TestTrainTestValidation_CV_Less_Than_1000_(t *testing.T) {
 	assert.Equal(t, *study.Spec.TrainingTemplate.Split.Test, int32(20))
 	assert.Equal(t, *study.Spec.TrainingTemplate.Split.Validation, int32(0))
 
-	study.SetupCv(200)
+	study.AutoSplit(200)
 
 	assert.Equal(t, *study.Spec.TrainingTemplate.Folds, int32(10))
 
@@ -82,7 +82,7 @@ func TestTrainTestValidation_CV_Less_Than_10000_(t *testing.T) {
 
 	study := Study{}
 	study.Default()
-	study.SetupCv(1200)
+	study.AutoSplit(1200)
 
 	assert.Equal(t, *study.Spec.TrainingTemplate.Folds, int32(5))
 }
@@ -91,7 +91,7 @@ func TestTrainTestValidation_CV_Less_Than_20000_(t *testing.T) {
 
 	study := Study{}
 	study.Default()
-	study.SetupCv(1200)
+	study.AutoSplit(1200)
 
 	assert.Equal(t, *study.Spec.TrainingTemplate.Folds, int32(5))
 }
@@ -99,7 +99,7 @@ func TestTrainTestValidation_CV_Less_Than_20000_(t *testing.T) {
 func TestTrainTestValidation_CV_More_Than_20000_(t *testing.T) {
 	study := Study{}
 	study.Default()
-	study.SetupCv(20010)
+	study.AutoSplit(20010)
 
 	assert.Equal(t, *study.Spec.TrainingTemplate.Folds, int32(0))
 
@@ -142,16 +142,16 @@ func Test_MarkModelAborted(t *testing.T) {
 }
 
 func Test_One_Parent_Levels(t *testing.T) {
-	hierarcy := Hierarchy{}
-	hierarcy.GroupLevels = make([]Level, 0)
-	hierarcy.GroupLevels = append(hierarcy.GroupLevels, Level{
+	hierarchy := Hierarchy{}
+	hierarchy.GroupLevels = make([]Level, 0)
+	hierarchy.GroupLevels = append(hierarchy.GroupLevels, Level{
 		Name:      util.StrPtr("parent"), // column name
 		Horizon:   util.Int32Ptr(10),
 		Freq:      nil,
 		Aggregate: nil,
 		Values:    []string{"p1", "p2"},
 	})
-	hierarcy.ItemLevel = &Level{
+	hierarchy.ItemLevel = &Level{
 		Name:      util.StrPtr("child"), //column name
 		Horizon:   util.Int32Ptr(10),
 		Freq:      nil,
@@ -160,7 +160,7 @@ func Test_One_Parent_Levels(t *testing.T) {
 	}
 
 	// Act,
-	forecasts := hierarcy.Explode()
+	forecasts := hierarchy.Explode()
 
 	// When we explode we should have two items at level 0 , with keys p1 and p2 and four items at level 1
 	assert.Equal(t, 6, len(forecasts))
@@ -173,16 +173,16 @@ func Test_One_Parent_Levels(t *testing.T) {
 }
 
 func Test_Only_Item_Levels(t *testing.T) {
-	hierarcy := Hierarchy{}
-	hierarcy.GroupLevels = make([]Level, 0)
-	hierarcy.ItemLevel = &Level{
+	hierarchy := Hierarchy{}
+	hierarchy.GroupLevels = make([]Level, 0)
+	hierarchy.ItemLevel = &Level{
 		Name:      util.StrPtr("child"), //column name
 		Horizon:   util.Int32Ptr(10),
 		Freq:      nil,
 		Aggregate: nil,
 		Values:    []string{"c1", "c2"},
 	}
-	forecasts := hierarcy.Explode()
+	forecasts := hierarchy.Explode()
 	assert.Equal(t, 2, len(forecasts))
 	assert.Equal(t, int32(0), forecasts[0].LevelIndex)
 	assert.Equal(t, "c1/", forecasts[0].Key)

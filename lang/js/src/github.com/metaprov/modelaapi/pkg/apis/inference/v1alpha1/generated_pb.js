@@ -273,7 +273,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CurtainSpec = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CurtainSpec.repeatedFields_, null);
 };
 goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CurtainSpec, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -3677,6 +3677,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CurtainList.prot
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CurtainSpec.repeatedFields_ = [5];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -3712,6 +3719,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CurtainSpec.toOb
     versionname: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     servingsitename: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     datasetname: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    wizardsList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
     question: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
     notifiername: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
     owner: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f
@@ -3766,6 +3774,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CurtainSpec.dese
     case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setDatasetname(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addWizards(value);
       break;
     case 6:
       var value = /** @type {string} */ (reader.readString());
@@ -3833,6 +3845,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CurtainSpec.seri
   if (f != null) {
     writer.writeString(
       4,
+      f
+    );
+  }
+  f = message.getWizardsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      5,
       f
     );
   }
@@ -4001,6 +4020,43 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CurtainSpec.prot
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CurtainSpec.prototype.hasDatasetname = function() {
   return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * repeated string wizards = 5;
+ * @return {!Array<string>}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CurtainSpec.prototype.getWizardsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 5));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CurtainSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CurtainSpec.prototype.setWizardsList = function(value) {
+  return jspb.Message.setField(this, 5, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CurtainSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CurtainSpec.prototype.addWizards = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 5, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CurtainSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CurtainSpec.prototype.clearWizardsList = function() {
+  return this.setWizardsList([]);
 };
 
 

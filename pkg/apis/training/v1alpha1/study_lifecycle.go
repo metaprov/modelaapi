@@ -208,19 +208,52 @@ func (study *Study) IsInCond(ct StudyConditionType) bool {
 }
 
 // use to sort the model by score
-func (study *Study) SetupCv(rows int32) {
+func (study *Study) AutoSplit(rows int32) {
 	if rows < 1000 {
 		study.Spec.TrainingTemplate.Folds = util.Int32Ptr(10)
+		study.Spec.TrainingTemplate.CV = util.BoolPtr(true)
+		study.Spec.TrainingTemplate.Split.Test = util.Int32Ptr(20)
+		study.Spec.TrainingTemplate.Split.Train = util.Int32Ptr(80)
+		study.Spec.TrainingTemplate.Split.Validation = util.Int32Ptr(0)
 	}
 	if rows > 1000 && rows < 10000 {
 		study.Spec.TrainingTemplate.Folds = util.Int32Ptr(5)
+		study.Spec.TrainingTemplate.CV = util.BoolPtr(true)
+		study.Spec.TrainingTemplate.Split.Test = util.Int32Ptr(20)
+		study.Spec.TrainingTemplate.Split.Train = util.Int32Ptr(80)
+		study.Spec.TrainingTemplate.Split.Validation = util.Int32Ptr(0)
 	}
 	if rows >= 10000 && rows < 20000 {
 		study.Spec.TrainingTemplate.Folds = util.Int32Ptr(3)
+		study.Spec.TrainingTemplate.CV = util.BoolPtr(true)
+		study.Spec.TrainingTemplate.Split.Test = util.Int32Ptr(20)
+		study.Spec.TrainingTemplate.Split.Train = util.Int32Ptr(80)
+		study.Spec.TrainingTemplate.Split.Validation = util.Int32Ptr(0)
 	}
 	// at this point we woud use validation set
 	if rows >= 20000 {
 		study.Spec.TrainingTemplate.Folds = util.Int32Ptr(0)
+		study.Spec.TrainingTemplate.CV = util.BoolPtr(false)
+		study.Spec.TrainingTemplate.Split.Test = util.Int32Ptr(10)
+		study.Spec.TrainingTemplate.Split.Train = util.Int32Ptr(80)
+		study.Spec.TrainingTemplate.Split.Validation = util.Int32Ptr(10)
+	}
+
+	// Set the split method based on the task
+	if *study.Spec.Task == catalog.Regression {
+		study.Spec.TrainingTemplate.Split.Method = catalog.DataSplitMethodRandom
+	}
+
+	if *study.Spec.Task == catalog.BinaryClassification {
+		study.Spec.TrainingTemplate.Split.Method = catalog.DataSplitMethodRandomStratified
+	}
+
+	if *study.Spec.Task == catalog.MultiClassification {
+		study.Spec.TrainingTemplate.Split.Method = catalog.DataSplitMethodRandomStratified
+	}
+
+	if *study.Spec.Task == catalog.Forecasting {
+		study.Spec.TrainingTemplate.Split.Method = catalog.DataSplitMethodTime
 	}
 
 }

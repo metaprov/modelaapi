@@ -176,7 +176,7 @@ type SuccessiveHalvingOptions struct {
 	// +kubebuilder:validation:Optional
 	EliminationRate *int32 `json:"eliminationRate,omitempty" protobuf:"varint,2,opt,name=eliminationRate"`
 	// The modality type. The default modality is based on the type of models
-	// For deep models - we use epocs.
+	// For deep models - we use epochs.
 	// For classical models - we use data
 	// +kubebuilder:default:=epochs
 	// +kubebuilder:validation:Optional

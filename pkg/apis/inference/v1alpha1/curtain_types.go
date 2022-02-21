@@ -82,7 +82,7 @@ type CurtainSpec struct {
 	// +kubebuilder:validation:Optional
 	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,4,opt,name=datasetName"`
 	// The accounts of the human which can answer the prediction.
-	wizards []string `json:"wizards,omitempty" protobuf:"bytes,5,rep,name=wizards"`
+	Wizards []string `json:"wizards,omitempty" protobuf:"bytes,5,rep,name=wizards"`
 	// Question to ask the human.
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:MaxLength=256

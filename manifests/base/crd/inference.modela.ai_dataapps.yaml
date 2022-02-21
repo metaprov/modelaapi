@@ -68,9 +68,8 @@ spec:
                 description: Custom application
                 properties:
                   owner:
-                    default: ""
-                    description: The app title
-                    type: string
+                    default: false
+                    type: boolean
                   pages:
                     description: The app pages
                     items:
@@ -234,6 +233,10 @@ spec:
                           type: array
                       type: object
                     type: array
+                  title:
+                    default: ""
+                    description: The app title
+                    type: string
                 type: object
               description:
                 default: ""

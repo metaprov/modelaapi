@@ -1825,7 +1825,7 @@ spec:
                         type: integer
                       modality:
                         description: The modality type. The default modality is based
-                          on the type of models For deep models - we use epocs. For
+                          on the type of models For deep models - we use epochs. For
                           classical models - we use data
                         enum:
                         - data

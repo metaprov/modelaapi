@@ -126,7 +126,7 @@ type CustomAppSpec struct {
 	// The app title
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	Title *string `json:"owner,omitempty" protobuf:"bytes,2,opt,name=title"`
+	Title *string `json:"title,omitempty" protobuf:"bytes,2,opt,name=title"`
 	// The app pages
 	// +kubebuilder:validation:Optional
 	Pages []data.PageSpec `json:"pages,omitempty" protobuf:"bytes,3,opt,name=pages"`

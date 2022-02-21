@@ -24,7 +24,7 @@ import (
 // EntityRef
 //==============================================================================
 
-func (feature *FeatureHistogram) AddConfiditions() {
+func (feature *FeatureHistogram) AddConditions() {
 	feature.Status.Conditions = make([]FeatureHistogramCondition, 1)
 	feature.Status.Conditions[0] = FeatureHistogramCondition{
 		Type:   FeatureHistogramReady,

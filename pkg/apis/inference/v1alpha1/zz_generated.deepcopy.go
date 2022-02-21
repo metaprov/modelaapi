@@ -316,8 +316,8 @@ func (in *CurtainSpec) DeepCopyInto(out *CurtainSpec) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.wizards != nil {
-		in, out := &in.wizards, &out.wizards
+	if in.Wizards != nil {
+		in, out := &in.Wizards, &out.Wizards
 		*out = make([]string, len(*in))
 		copy(*out, *in)
 	}

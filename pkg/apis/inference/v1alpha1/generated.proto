@@ -215,6 +215,9 @@ message CurtainSpec {
   // +kubebuilder:validation:Optional
   optional string datasetName = 4;
 
+  // The accounts of the human which can answer the prediction.
+  repeated string wizards = 5;
+
   // Question to ask the human.
   // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=256

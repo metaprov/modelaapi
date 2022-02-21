@@ -11,7 +11,7 @@ import (
 type ModelValidationName string
 
 const (
-	// ModelTest measure the preformance of the model against test data
+	// ModelTest measure the performance of the model against test data
 	ModelTest ModelValidationName = "model-test"
 	// compare the prediction count in time T to time T-1
 	PredictionCountDrift ModelValidationName = "prediction-count-drift"
@@ -19,9 +19,9 @@ const (
 	PredictionLatencyDrift ModelValidationName = "prediction-latency-drift"
 	// Compare latency in training to latency in serving
 	PredictionLatencySkew ModelValidationName = "prediction-latency-skew"
-	// Compare model preformance in training to latency in serving
+	// Compare model performance in training to latency in serving
 	ModelPrefSkew ModelValidationName = "model-pref-skew"
-	// Compare model preformance in training in time T to perofrmance in training in time T-1
+	// Compare model performance in training in time T to performance in training in time T-1
 	ModelPrefDrift ModelValidationName = "model-pref-drift"
 	// Compare column distribution in training to latency in serving
 	CategoricalColumnSkew ModelValidationName = "cat-column-skew"
@@ -143,7 +143,7 @@ const (
 	ModelLive ModelConditionType = "Live"
 	// The model is stale
 	ModelStale ModelConditionType = "Stale"
-	// The model is in maintance
+	// The model is in maintenance
 	ModelMaintenance ModelConditionType = "Maintenance"
 	// The model is in retired
 	ModelRetired ModelConditionType = "Retired"
@@ -722,7 +722,7 @@ type SuccessiveHalvingSpec struct {
 	// +kubebuilder:validation:Optional
 	ConfID *int32 `json:"confID,omitempty" protobuf:"varint,4,opt,name=confID"`
 	// The modality type. The default modality is based on the type of models
-	// For deep models - we use epocs.
+	// For deep models - we use epochs.
 	// For classical models - we use data
 	// +kubebuilder:validation:Optional
 	Modality *catalog.ModalityType `json:"modality,omitempty" protobuf:"bytes,26,opt,name=modality"`
