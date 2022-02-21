@@ -27,6 +27,7 @@ type PredictionConditionType string
 const (
 	PredictionCompleted PredictionConditionType = "Completed"
 	PredictionSaved     PredictionConditionType = "Saved"
+	PredictionArchived  PredictionConditionType = "Archived"
 )
 
 // PredictionCondition describes the state of PredictionTemplate

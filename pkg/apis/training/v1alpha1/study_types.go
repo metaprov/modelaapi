@@ -113,6 +113,8 @@ const (
 	StudyCompleted StudyConditionType = "Completed"
 	// Study is partitioned based on the partition key
 	StudyPartitioned StudyConditionType = "Partitioned"
+
+	StudyArchived StudyConditionType = "Archived"
 )
 
 // StudyCondition describes the state of a StudyName.
