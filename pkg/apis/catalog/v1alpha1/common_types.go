@@ -1542,12 +1542,12 @@ const (
 )
 
 // AccessType define how client reach the predictor
-// +kubebuilder:validation:Enum="cluster-port";"node-port";"load-balancer";"ingress";"mesh";"none"
+// +kubebuilder:validation:Enum="cluster-ip";"node-port";"load-balancer";"ingress";"mesh";"none"
 type AccessType string
 
 const (
 	// Use cluster port if the predictor is an internal micro service
-	ClusterPortAccessType AccessType = "cluster-port"
+	ClusterIPAccessType AccessType = "cluster-ip"
 	// Use node port if the predictor can be accessed from outside the cluster
 	NodePortAccessType AccessType = "node-port"
 	// Use load balancer if the predictor can be accessed from outside the cluster

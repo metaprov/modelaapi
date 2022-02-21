@@ -137,8 +137,8 @@ type ModelAutobuilderSpec struct {
 	// +kubebuilder:validation:Optional
 	MaxModels *int32 `json:"maxModels,omitempty" protobuf:"varint,10,opt,name=maxModels"`
 	// Access method specify the predictor access method.
-	// Default: ClusterPort
-	// +kubebuilder:default:=cluster-port
+	// Default: ClusterIP
+	// +kubebuilder:default:=cluster-ip
 	// +kubebuilder:validation:Optional
 	AccessMethod *catalog.AccessType `json:"accessMethod,omitempty" protobuf:"bytes,11,opt,name=accessMethod"`
 	// Specify if the predictor should autoscale.

@@ -368,8 +368,8 @@ message DataAppSpec {
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 10;
 
   // The access method specified how external clients will access the predictor
-  // Default: ClusterPort
-  // +kubebuilder:default:="cluster-port"
+  // Default: ClusterIP
+  // +kubebuilder:default:="cluster-ip"
   // +kubebuilder:validation:Optional
   optional string accessType = 11;
 
@@ -839,7 +839,8 @@ message PredictorSpec {
   optional string path = 11;
 
   // The access method specified how external clients will access the predictor
-  // Default: ClusterPort
+  // Default: ClusterIP
+  // +kubebuilder:default:="cluster-ip"
   // +kubebuilder:validation:Optional
   optional string accessType = 12;
 

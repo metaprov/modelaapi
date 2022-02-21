@@ -1086,8 +1086,8 @@ message ModelAutobuilderSpec {
   optional int32 maxModels = 10;
 
   // Access method specify the predictor access method.
-  // Default: ClusterPort
-  // +kubebuilder:default:=cluster-port
+  // Default: ClusterIP
+  // +kubebuilder:default:=cluster-ip
   // +kubebuilder:validation:Optional
   optional string accessMethod = 11;
 

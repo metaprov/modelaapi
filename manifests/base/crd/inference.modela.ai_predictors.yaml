@@ -67,10 +67,11 @@ spec:
             description: PredictorSpec define the desired state of the predictor
             properties:
               accessType:
+                default: cluster-ip
                 description: 'The access method specified how external clients will
-                  access the predictor Default: ClusterPort'
+                  access the predictor Default: ClusterIP'
                 enum:
-                - cluster-port
+                - cluster-ip
                 - node-port
                 - load-balancer
                 - ingress

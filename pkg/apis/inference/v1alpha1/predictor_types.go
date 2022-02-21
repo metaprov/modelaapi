@@ -139,7 +139,8 @@ type PredictorSpec struct {
 	// +kubebuilder:default:=""
 	Path *string `json:"path,omitempty" protobuf:"bytes,11,opt,name=path"`
 	// The access method specified how external clients will access the predictor
-	// Default: ClusterPort
+	// Default: ClusterIP
+	// +kubebuilder:default:="cluster-ip"
 	// +kubebuilder:validation:Optional
 	AccessType *catalog.AccessType `json:"accessType,omitempty" protobuf:"bytes,12,opt,name=accessType"`
 	// Replicas defines the number of replicas when auto scaling is disabled.

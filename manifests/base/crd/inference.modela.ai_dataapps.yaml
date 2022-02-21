@@ -53,11 +53,11 @@ spec:
             description: DataAppSpec contain the desired state of a DataApp
             properties:
               accessType:
-                default: cluster-port
+                default: cluster-ip
                 description: 'The access method specified how external clients will
-                  access the predictor Default: ClusterPort'
+                  access the predictor Default: ClusterIP'
                 enum:
-                - cluster-port
+                - cluster-ip
                 - node-port
                 - load-balancer
                 - ingress

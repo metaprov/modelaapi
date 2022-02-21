@@ -103,8 +103,8 @@ type DataAppSpec struct {
 	// +kubebuilder:validation:Optional
 	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,10,opt,name=resources"`
 	// The access method specified how external clients will access the predictor
-	// Default: ClusterPort
-	// +kubebuilder:default:="cluster-port"
+	// Default: ClusterIP
+	// +kubebuilder:default:="cluster-ip"
 	// +kubebuilder:validation:Optional
 	AccessType *catalog.AccessType `json:"accessType,omitempty" protobuf:"bytes,11,opt,name=accessType"`
 	// The product that this predictor serve.

@@ -78,11 +78,11 @@ spec:
                 description: Set the true to abort the model auto builder
                 type: boolean
               accessMethod:
-                default: cluster-port
+                default: cluster-ip
                 description: 'Access method specify the predictor access method. Default:
-                  ClusterPort'
+                  ClusterIP'
                 enum:
-                - cluster-port
+                - cluster-ip
                 - node-port
                 - load-balancer
                 - ingress
