@@ -9,6 +9,7 @@ package v1alpha1
 import (
 	"fmt"
 	"path"
+	strings "strings"
 	"time"
 
 	data "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1"
@@ -86,6 +87,14 @@ func (study *Study) ReachedMaxTime() bool {
 // Tru if there are models waiting for test
 func (s *Study) ModelsWaiting() bool {
 	return s.Status.TestStatus.Waiting > 0
+}
+
+func (study *Study) LiveKey() string {
+	return *study.Spec.Location.Path
+}
+
+func (study *Study) ArchiveKey() string {
+	return strings.Replace(*study.Spec.Location.Path, "/live/", "/archive/", -1)
 }
 
 // Enabled if we reached max candidates

@@ -2,6 +2,7 @@ package v1alpha1
 
 import (
 	"fmt"
+	"strings"
 
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/apis/inference"
@@ -120,6 +121,14 @@ func (prediction *Prediction) IsCompleted() bool {
 
 func (prediction *Prediction) Key() string {
 	return fmt.Sprintf("dataproducts/%s/predictions/%s", prediction.Namespace, prediction.Name)
+}
+
+func (prediction *Prediction) LiveKey() string {
+	return *prediction.Spec.Input.Path
+}
+
+func (prediction *Prediction) ArchiveKey() string {
+	return strings.Replace(*prediction.Spec.Input.Path, "/live/", "/archive/", -1)
 }
 
 func ParsePredictionYaml(content []byte) (*Prediction, error) {
