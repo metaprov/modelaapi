@@ -942,7 +942,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GarbageCollectionStatus = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GarbageCollectionStatus.repeatedFields_, null);
 };
 goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GarbageCollectionStatus, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -13798,6 +13798,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GarbageCollection
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GarbageCollectionStatus.repeatedFields_ = [2];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -13829,7 +13836,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GarbageCollection
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GarbageCollectionStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
-    collected: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f
+    collected: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    modelsList: jspb.Message.toObjectList(msg.getModelsList(),
+    proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelResult.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -13870,6 +13879,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GarbageCollection
       var value = /** @type {number} */ (reader.readInt32());
       msg.setCollected(value);
       break;
+    case 2:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelResult;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelResult.deserializeBinaryFromReader);
+      msg.addModels(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -13904,6 +13918,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GarbageCollection
     writer.writeInt32(
       1,
       f
+    );
+  }
+  f = message.getModelsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      2,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelResult.serializeBinaryToWriter
     );
   }
 };
@@ -13942,6 +13964,44 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GarbageCollection
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GarbageCollectionStatus.prototype.hasCollected = function() {
   return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * repeated ModelResult models = 2;
+ * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelResult>}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GarbageCollectionStatus.prototype.getModelsList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelResult>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelResult, 2));
+};
+
+
+/**
+ * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelResult>} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GarbageCollectionStatus} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GarbageCollectionStatus.prototype.setModelsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelResult=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelResult}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GarbageCollectionStatus.prototype.addModels = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelResult, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GarbageCollectionStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GarbageCollectionStatus.prototype.clearModelsList = function() {
+  return this.setModelsList([]);
 };
 
 

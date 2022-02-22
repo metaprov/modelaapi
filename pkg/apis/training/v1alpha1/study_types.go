@@ -758,11 +758,13 @@ type GarbageCollectionSpec struct {
 	// +kubebuilder:default:=true
 	CollectAtStudyEnd *bool `json:"collectAtStudyEnd,omitempty" protobuf:"varint,1,opt,name=collectAtStudyEnd"`
 	// +kubebuilder:validation:Optional
-	// +kubebuilder:default:=true
 	KeepOnlyBestModelPerAlgorithm *bool `json:"keepOnlyBestModelPerAlgorithm,omitempty" protobuf:"varint,2,opt,name=keepOnlyBestModelPerAlgorithm"`
 }
 
 type GarbageCollectionStatus struct {
 	// +kubebuilder:validation:Optional
 	Collected int32 `json:"collected,omitempty" protobuf:"varint,1,opt,name=collected"`
+	// List of models, collected.
+	// +kubebuilder:validation:Optional
+	Models []ModelResult `json:"models,omitempty" protobuf:"bytes,2,opt,name=models"`
 }

@@ -1214,6 +1214,11 @@ export class GarbageCollectionStatus extends jspb.Message {
   getCollected(): number;
   setCollected(value: number): GarbageCollectionStatus;
 
+  getModelsList(): Array<ModelResult>;
+  setModelsList(value: Array<ModelResult>): GarbageCollectionStatus;
+  clearModelsList(): GarbageCollectionStatus;
+  addModels(value?: ModelResult, index?: number): ModelResult;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GarbageCollectionStatus.AsObject;
   static toObject(includeInstance: boolean, msg: GarbageCollectionStatus): GarbageCollectionStatus.AsObject;
@@ -1225,6 +1230,7 @@ export class GarbageCollectionStatus extends jspb.Message {
 export namespace GarbageCollectionStatus {
   export type AsObject = {
     collected: number,
+    modelsList: Array<ModelResult.AsObject>,
   }
 }
 

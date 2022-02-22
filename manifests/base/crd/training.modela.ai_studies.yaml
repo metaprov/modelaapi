@@ -883,7 +883,6 @@ spec:
                     default: true
                     type: boolean
                   keepOnlyBestModelPerAlgorithm:
-                    default: true
                     type: boolean
                 type: object
               interpretability:
@@ -2643,6 +2642,21 @@ spec:
                   collected:
                     format: int32
                     type: integer
+                  models:
+                    description: List of models, collected.
+                    items:
+                      description: model cv results
+                      properties:
+                        alg:
+                          type: string
+                        error:
+                          type: boolean
+                        name:
+                          type: string
+                        score:
+                          type: number
+                      type: object
+                    type: array
                 type: object
               lastModelID:
                 description: the last model id generated for this study

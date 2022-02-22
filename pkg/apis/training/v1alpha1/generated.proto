@@ -775,13 +775,16 @@ message GarbageCollectionSpec {
   optional bool collectAtStudyEnd = 1;
 
   // +kubebuilder:validation:Optional
-  // +kubebuilder:default:=true
   optional bool keepOnlyBestModelPerAlgorithm = 2;
 }
 
 message GarbageCollectionStatus {
   // +kubebuilder:validation:Optional
   optional int32 collected = 1;
+
+  // List of models, collected.
+  // +kubebuilder:validation:Optional
+  repeated ModelResult models = 2;
 }
 
 message GeneratedColumnSpec {
