@@ -24,7 +24,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z6github.com/metaprov/modelaapi/services/fileservices/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nIgithub.com/metaprov/modelaapi/services/fileservices/v1/fileservices.proto\x12\x36github.com.metaprov.modelaapi.services.fileservices.v1\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x44github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto\x1a=github.com/metaprov/modelaapi/services/common/v1/common.proto\"\xba\x01\n\tDataBlock\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\x0c\x12\x10\n\x08md5_hash\x18\x03 \x01(\t\x12\x0e\n\x06tenant\x18\x04 \x01(\t\x12\x17\n\x0f\x64\x61taProductName\x18\x05 \x01(\t\x12\x1a\n\x12\x64\x61taProductVersion\x18\x06 \x01(\t\x12\x0e\n\x06\x62ucket\x18\x07 \x01(\t\x12\x14\n\x0cresourceType\x18\x08 \x01(\t\x12\x14\n\x0cresourceName\x18\t \x01(\t2\x83\x01\n\x13\x46ileServicesService\x12l\n\x0bUploadChunk\x12\x41.github.com.metaprov.modelaapi.services.fileservices.v1.DataBlock\x1a\x16.google.protobuf.Empty\"\x00(\x01\x42\x38Z6github.com/metaprov/modelaapi/services/fileservices/v1b\x06proto3'
+  serialized_pb=b'\nIgithub.com/metaprov/modelaapi/services/fileservices/v1/fileservices.proto\x12\x36github.com.metaprov.modelaapi.services.fileservices.v1\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x44github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto\x1a=github.com/metaprov/modelaapi/services/common/v1/common.proto\"\xba\x01\n\tDataBlock\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\x0c\x12\x10\n\x08md5_hash\x18\x03 \x01(\t\x12\x0e\n\x06tenant\x18\x04 \x01(\t\x12\x17\n\x0f\x64\x61taProductName\x18\x05 \x01(\t\x12\x1a\n\x12\x64\x61taProductVersion\x18\x06 \x01(\t\x12\x0e\n\x06\x62ucket\x18\x07 \x01(\t\x12\x14\n\x0cresourceType\x18\x08 \x01(\t\x12\x14\n\x0cresourceName\x18\t \x01(\t\";\n\x0cUploadResult\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x0c\n\x04size\x18\x02 \x01(\x05\x12\x10\n\x08\x64uration\x18\x03 \x01(\x05\x32\xb2\x01\n\x13\x46ileServicesService\x12\x9a\x01\n\x0bUploadChunk\x12\x41.github.com.metaprov.modelaapi.services.fileservices.v1.DataBlock\x1a\x44.github.com.metaprov.modelaapi.services.fileservices.v1.UploadResult\"\x00(\x01\x42\x38Z6github.com/metaprov/modelaapi/services/fileservices/v1b\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_common_dot_v1_dot_common__pb2.DESCRIPTOR,])
 
@@ -118,7 +118,54 @@ _DATABLOCK = _descriptor.Descriptor(
   serialized_end=546,
 )
 
+
+_UPLOADRESULT = _descriptor.Descriptor(
+  name='UploadResult',
+  full_name='github.com.metaprov.modelaapi.services.fileservices.v1.UploadResult',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='github.com.metaprov.modelaapi.services.fileservices.v1.UploadResult.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='size', full_name='github.com.metaprov.modelaapi.services.fileservices.v1.UploadResult.size', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='duration', full_name='github.com.metaprov.modelaapi.services.fileservices.v1.UploadResult.duration', index=2,
+      number=3, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=548,
+  serialized_end=607,
+)
+
 DESCRIPTOR.message_types_by_name['DataBlock'] = _DATABLOCK
+DESCRIPTOR.message_types_by_name['UploadResult'] = _UPLOADRESULT
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 DataBlock = _reflection.GeneratedProtocolMessageType('DataBlock', (_message.Message,), {
@@ -127,6 +174,13 @@ DataBlock = _reflection.GeneratedProtocolMessageType('DataBlock', (_message.Mess
   # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.fileservices.v1.DataBlock)
   })
 _sym_db.RegisterMessage(DataBlock)
+
+UploadResult = _reflection.GeneratedProtocolMessageType('UploadResult', (_message.Message,), {
+  'DESCRIPTOR' : _UPLOADRESULT,
+  '__module__' : 'github.com.metaprov.modelaapi.services.fileservices.v1.fileservices_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.fileservices.v1.UploadResult)
+  })
+_sym_db.RegisterMessage(UploadResult)
 
 
 DESCRIPTOR._options = None
@@ -138,8 +192,8 @@ _FILESERVICESSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=549,
-  serialized_end=680,
+  serialized_start=610,
+  serialized_end=788,
   methods=[
   _descriptor.MethodDescriptor(
     name='UploadChunk',
@@ -147,7 +201,7 @@ _FILESERVICESSERVICE = _descriptor.ServiceDescriptor(
     index=0,
     containing_service=None,
     input_type=_DATABLOCK,
-    output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
+    output_type=_UPLOADRESULT,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),

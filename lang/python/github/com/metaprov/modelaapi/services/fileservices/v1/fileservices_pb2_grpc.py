@@ -3,7 +3,6 @@
 import grpc
 
 from github.com.metaprov.modelaapi.services.fileservices.v1 import fileservices_pb2 as github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_fileservices_dot_v1_dot_fileservices__pb2
-from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 
 
 class FileServicesServiceStub(object):
@@ -18,7 +17,7 @@ class FileServicesServiceStub(object):
         self.UploadChunk = channel.stream_unary(
                 '/github.com.metaprov.modelaapi.services.fileservices.v1.FileServicesService/UploadChunk',
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_fileservices_dot_v1_dot_fileservices__pb2.DataBlock.SerializeToString,
-                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_fileservices_dot_v1_dot_fileservices__pb2.UploadResult.FromString,
                 )
 
 
@@ -38,7 +37,7 @@ def add_FileServicesServiceServicer_to_server(servicer, server):
             'UploadChunk': grpc.stream_unary_rpc_method_handler(
                     servicer.UploadChunk,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_fileservices_dot_v1_dot_fileservices__pb2.DataBlock.FromString,
-                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_fileservices_dot_v1_dot_fileservices__pb2.UploadResult.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -63,6 +62,6 @@ class FileServicesService(object):
             metadata=None):
         return grpc.experimental.stream_unary(request_iterator, target, '/github.com.metaprov.modelaapi.services.fileservices.v1.FileServicesService/UploadChunk',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_fileservices_dot_v1_dot_fileservices__pb2.DataBlock.SerializeToString,
-            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_fileservices_dot_v1_dot_fileservices__pb2.UploadResult.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

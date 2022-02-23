@@ -24,9 +24,15 @@ message DataBlock {
     string resourceName       = 9; 
 }
 
+message UploadResult {
+    string key                = 1; // the key at the destination.
+    int32  size               = 2; // the total file size uploaded
+    int32  duration           = 3; // the time it took to upload.
+}
+
 service FileServicesService {
 
-    rpc UploadChunk(stream DataBlock) returns (google.protobuf.Empty) {
+    rpc UploadChunk(stream DataBlock) returns (UploadResult) {
         //    option (google.api.http).post = "/v1/datasets/{namespace}/{name}:upload";
     }
 }

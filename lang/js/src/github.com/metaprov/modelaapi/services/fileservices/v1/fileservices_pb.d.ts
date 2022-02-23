@@ -59,3 +59,29 @@ export namespace DataBlock {
   }
 }
 
+export class UploadResult extends jspb.Message {
+  getKey(): string;
+  setKey(value: string): UploadResult;
+
+  getSize(): number;
+  setSize(value: number): UploadResult;
+
+  getDuration(): number;
+  setDuration(value: number): UploadResult;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UploadResult.AsObject;
+  static toObject(includeInstance: boolean, msg: UploadResult): UploadResult.AsObject;
+  static serializeBinaryToWriter(message: UploadResult, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UploadResult;
+  static deserializeBinaryFromReader(message: UploadResult, reader: jspb.BinaryReader): UploadResult;
+}
+
+export namespace UploadResult {
+  export type AsObject = {
+    key: string,
+    size: number,
+    duration: number,
+  }
+}
+
