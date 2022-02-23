@@ -2735,6 +2735,9 @@ export class ModelResult extends jspb.Message {
   getError(): boolean;
   setError(value: boolean): ModelResult;
 
+  getTrialid(): number;
+  setTrialid(value: number): ModelResult;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelResult.AsObject;
   static toObject(includeInstance: boolean, msg: ModelResult): ModelResult.AsObject;
@@ -2749,6 +2752,7 @@ export namespace ModelResult {
     alg: string,
     score: number,
     error: boolean,
+    trialid: number,
   }
 }
 

@@ -652,6 +652,8 @@ type ModelResult struct {
 	Score float64 `json:"score,omitempty" protobuf:"bytes,3,opt,name=score"`
 	// +kubebuilder:validation:Optional
 	Error bool `json:"error,omitempty" protobuf:"varint,4,opt,name=error"`
+	// +kubebuilder:validation:Optional
+	TrialID int32 `json:"trialID,omitempty" protobuf:"varint,5,opt,name=trialID"`
 }
 
 //==============================================================================

@@ -28011,7 +28011,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelResult.toObj
     name: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     alg: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     score: (f = jspb.Message.getOptionalFloatingPointField(msg, 3)) == null ? undefined : f,
-    error: (f = jspb.Message.getBooleanField(msg, 4)) == null ? undefined : f
+    error: (f = jspb.Message.getBooleanField(msg, 4)) == null ? undefined : f,
+    trialid: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -28063,6 +28064,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelResult.deser
     case 4:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setError(value);
+      break;
+    case 5:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setTrialid(value);
       break;
     default:
       reader.skipField();
@@ -28118,6 +28123,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelResult.seria
   if (f != null) {
     writer.writeBool(
       4,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 5));
+  if (f != null) {
+    writer.writeInt32(
+      5,
       f
     );
   }
@@ -28265,6 +28277,42 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelResult.proto
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelResult.prototype.hasError = function() {
   return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional int32 trialID = 5;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelResult.prototype.getTrialid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelResult} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelResult.prototype.setTrialid = function(value) {
+  return jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelResult} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelResult.prototype.clearTrialid = function() {
+  return jspb.Message.setField(this, 5, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelResult.prototype.hasTrialid = function() {
+  return jspb.Message.getField(this, 5) != null;
 };
 
 

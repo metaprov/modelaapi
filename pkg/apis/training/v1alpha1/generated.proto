@@ -1782,6 +1782,9 @@ message ModelResult {
 
   // +kubebuilder:validation:Optional
   optional bool error = 4;
+
+  // +kubebuilder:validation:Optional
+  optional int32 trialID = 5;
 }
 
 // ModelSpec defines the desired state of the Model resource
