@@ -17,14 +17,14 @@ message ListModelPipelineRunsRequest {
 }
 
 message ListModelPipelineRunsResponse {
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunList modelPipelineRuns = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunList modelpipelineruns = 1;
     string next_page_token = 2;
 }
 
 message ModelPipelineRunResponse {}
 
 message CreateModelPipelineRunRequest {
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRun modelPipelineRun = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRun modelpipelinerun = 1;
 }
 
 message CreateModelPipelineRunResponse {
@@ -32,7 +32,7 @@ message CreateModelPipelineRunResponse {
 }
 
 message UpdateModelPipelineRunRequest {
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRun modelPipelineRun = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRun modelpipelinerun = 1;
     google.protobuf.FieldMask field_mask = 2;
 }
 
@@ -47,7 +47,7 @@ message GetModelPipelineRunRequest {
 
 
 message GetModelPipelineRunResponse {
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRun modelPipelineRun = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRun modelpipelinerun = 1;
     string yaml = 2;
 }
 
@@ -137,23 +137,23 @@ service ModelPipelineRunService {
     }
 
     rpc ApproveModelPipelineRun(ApproveModelPipelineRunRequest) returns (ApproveModelPipelineRunResponse) {
-        option (google.api.http).delete = "/v1/modelpipelineruns/{namespace}/{name}:approve";
+        option (google.api.http).put = "/v1/modelpipelineruns/{namespace}/{name}:approve";
     }
 
     rpc DenyModelPipelineRun(DenyModelPipelineRunRequest) returns (DenyModelPipelineRunResponse) {
-        option (google.api.http).delete = "/v1/modelpipelineruns/{namespace}/{name}:approve";
+        option (google.api.http).put = "/v1/modelpipelineruns/{namespace}/{name}:deny";
     }
 
     rpc AbortModelPipelineRun(AbortModelPipelineRunRequest) returns (AbortModelPipelineRunResponse) {
-        option (google.api.http).post = "/v1/modelpipelineruns/{namespace}/{name}:abort";
+        option (google.api.http).put = "/v1/modelpipelineruns/{namespace}/{name}:abort";
     }
  
     rpc PauseModelPipelineRun(PauseModelPipelineRunRequest) returns (PauseModelPipelineRunResponse) {
-        option (google.api.http).post = "/v1/modelpipelineruns/{namespace}/{name}:pause";
+        option (google.api.http).put = "/v1/modelpipelineruns/{namespace}/{name}:pause";
     }
 
     rpc ResumeModelPipelineRun(ResumeModelPipelineRunRequest) returns (ResumeModelPipelineRunResponse) {
-        option (google.api.http).post = "/v1/modelpipelineruns/{namespace}/{name}:resume";
+        option (google.api.http).put = "/v1/modelpipelineruns/{namespace}/{name}:resume";
     }
 
 }
