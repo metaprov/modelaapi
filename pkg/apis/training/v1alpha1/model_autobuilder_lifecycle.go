@@ -522,10 +522,6 @@ func (b *ModelAutobuilder) CreateStudy() *Study {
 		Spec: StudySpec{
 			VersionName: util.StrPtr(b.DataProductVersionName()),
 			Description: util.StrPtr(""),
-			LabRef: &v1.ObjectReference{
-				Namespace: "default-tenant",
-				Name:      "default-lab",
-			},
 			DatasetName: util.StrPtr(b.DatasetName()),
 			Task:        b.Spec.Task,
 

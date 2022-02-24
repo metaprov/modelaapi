@@ -12,7 +12,6 @@ import (
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/util"
 	"github.com/stretchr/testify/assert"
-	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
@@ -26,10 +25,6 @@ func DefaultStudy() *Study {
 		Spec: StudySpec{
 			VersionName: util.StrPtr("iris"),
 			Task:        &task,
-			LabRef: &corev1.ObjectReference{
-				Namespace: "modela-infra",
-				Name:      "lab",
-			},
 			DatasetName: util.StrPtr("iris"),
 		},
 	}
