@@ -4651,11 +4651,6 @@ export class StudySpec extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): StudySpec;
 
-  getLabref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setLabref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): StudySpec;
-  hasLabref(): boolean;
-  clearLabref(): StudySpec;
-
   getDatasetname(): string;
   setDatasetname(value: string): StudySpec;
 
@@ -4778,7 +4773,6 @@ export namespace StudySpec {
   export type AsObject = {
     versionname: string,
     description: string,
-    labref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     datasetname: string,
     task: string,
     fesearch?: FeatureEngineeringSearchSpec.AsObject,
@@ -5203,6 +5197,11 @@ export namespace TimeSeriesDataSpec {
 }
 
 export class TrainingSpec extends jspb.Message {
+  getLabref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setLabref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): TrainingSpec;
+  hasLabref(): boolean;
+  clearLabref(): TrainingSpec;
+
   getPriority(): string;
   setPriority(value: string): TrainingSpec;
 
@@ -5271,6 +5270,7 @@ export class TrainingSpec extends jspb.Message {
 
 export namespace TrainingSpec {
   export type AsObject = {
+    labref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     priority: string,
     cvtype: string,
     cv: boolean,

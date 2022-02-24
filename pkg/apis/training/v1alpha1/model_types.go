@@ -764,72 +764,74 @@ type DataSplitSpec struct {
 
 // TrainingSpec is the specification of the training process
 type TrainingSpec struct {
+	// The lab where the model should be trained
+	LabRef v1.ObjectReference `json:"labRef,omitempty" protobuf:"bytes,1,opt,name=labRef"`
 	// Priority specify the priority of the model in the training queue.
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:="medium"
-	Priority *catalog.PriorityLevel `json:"priority,omitempty" protobuf:"bytes,1,opt,name=priority"`
+	Priority *catalog.PriorityLevel `json:"priority,omitempty" protobuf:"bytes,2,opt,name=priority"`
 	// The  type of cross validation.
 	// if we have a validation set, we do not do cv.
 	// +kubebuilder:default:=kfold
 	// +kubebuilder:validation:Optional
-	CvType *catalog.CvType `json:"cvtype,omitempty" protobuf:"bytes,2,opt,name=cvtype"`
+	CvType *catalog.CvType `json:"cvtype,omitempty" protobuf:"bytes,3,opt,name=cvtype"`
 	// If true, this is a cross validation using folds. If False, use the validation set.
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	CV *bool `json:"cv,omitempty" protobuf:"varint,3,opt,name=cV"`
+	CV *bool `json:"cv,omitempty" protobuf:"varint,4,opt,name=cV"`
 	// The number of folds during cross validation.
 	// +kubebuilder:default:=5
 	// +kubebuilder:validation:Optional
-	Folds *int32 `json:"folds,omitempty" protobuf:"varint,4,opt,name=folds"`
+	Folds *int32 `json:"folds,omitempty" protobuf:"varint,5,opt,name=folds"`
 	// Data Split define how to split the data into test and train.
 	// +kubebuilder:validation:Optional
-	Split DataSplitSpec `json:"split,omitempty" protobuf:"bytes,5,opt,name=split"`
+	Split DataSplitSpec `json:"split,omitempty" protobuf:"bytes,6,opt,name=split"`
 	// Evaluation metrics are the scores
 	// +kubebuilder:validation:Optional
-	EvalMetrics []catalog.Metric `json:"evalMetrics,omitempty" protobuf:"bytes,6,rep,name=evalMetrics"`
+	EvalMetrics []catalog.Metric `json:"evalMetrics,omitempty" protobuf:"bytes,7,rep,name=evalMetrics"`
 	// Early stopping, stop the training after X models with no improvement.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	EarlyStop *bool `json:"earlyStop,omitempty" protobuf:"varint,7,opt,name=earlyStop"`
+	EarlyStop *bool `json:"earlyStop,omitempty" protobuf:"varint,8,opt,name=earlyStop"`
 	// Add snapshot interval for long training time in minutes.
 	// This is used to checkpoint training model.
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:=10
 	// +kubebuilder:validation:Minimum=0
-	CheckpointInterval *int32 `json:"checkpointInterval,omitempty" protobuf:"varint,8,opt,name=checkpointInterval"`
+	CheckpointInterval *int32 `json:"checkpointInterval,omitempty" protobuf:"varint,9,opt,name=checkpointInterval"`
 	// Successive halving represent the configuration for the model training, when running
 	// the SuccessiveHalvingSpec model search algorithm
 	// The metrics are evaluated using the final model, both on the training set
 	// and on the test set
 	// +kubebuilder:validation:Optional
-	SH *SuccessiveHalvingSpec `json:"sh,omitempty" protobuf:"bytes,9,opt,name=sh"`
+	SH *SuccessiveHalvingSpec `json:"sh,omitempty" protobuf:"bytes,10,opt,name=sh"`
 	// Used as the random state for an estimator if needed (for example, in RandomForestClassifier)
 	// +kubebuilder:default:=42
 	// +kubebuilder:validation:Optional
-	Seed *float64 `json:"seed,omitempty" protobuf:"bytes,10,opt,name=seed"`
+	Seed *float64 `json:"seed,omitempty" protobuf:"bytes,11,opt,name=seed"`
 	// Resource define the hardware resources req.
 	// +kubebuilder:validation:Optional
-	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,11,opt,name=resources"`
+	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,12,opt,name=resources"`
 	// Gpu indicate that training should be done on a gpu.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Gpu *bool `json:"gpu,omitempty" protobuf:"varint,12,opt,name=gpu"`
+	Gpu *bool `json:"gpu,omitempty" protobuf:"varint,13,opt,name=gpu"`
 	// Dist indicate the training should be be distributed
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Distributed *bool `json:"distributed,omitempty" protobuf:"varint,13,opt,name=distributed"`
+	Distributed *bool `json:"distributed,omitempty" protobuf:"varint,14,opt,name=distributed"`
 	// In case of dist node, how many nodes to use.
 	// +kubebuilder:default:=1
 	// +kubebuilder:validation:Optional
-	NodeCount *int32 `json:"nodeCount,omitempty" protobuf:"varint,14,opt,name=nodeCount"`
+	NodeCount *int32 `json:"nodeCount,omitempty" protobuf:"varint,15,opt,name=nodeCount"`
 	// Set the percent of dataset to use during training. This is usually assigned
 	// by the optimizer.
 	// +kubebuilder:default:=100
 	// +kubebuilder:validation:Optional
-	SamplePct *int32 `json:"samplePct,omitempty" protobuf:"bytes,15,opt,name=samplePct"`
+	SamplePct *int32 `json:"samplePct,omitempty" protobuf:"bytes,16,opt,name=samplePct"`
 	// For modeling checkpoint
 	// +kubebuilder:validation:Optional
-	Checkpoint CheckpointSpec `json:"checkpoint,omitempty" protobuf:"bytes,16,opt,name=checkpoint"`
+	Checkpoint CheckpointSpec `json:"checkpoint,omitempty" protobuf:"bytes,17,opt,name=checkpoint"`
 }
 
 type CheckpointSpec struct {
