@@ -78,7 +78,7 @@ service FeatureHistogramService {
 
     rpc UpdateFeatureHistogram(UpdateFeatureHistogramRequest) returns (UpdateFeatureHistogramResponse) {
         option (google.api.http) = {
-			put: "/v1/featurehistograms/{featurehistogram.metadata.namespace}/{featurehistogram.metadata.name}"
+			put: "/v1/featurehistograms/{histogram.metadata.namespace}/{histogram.metadata.name}"
 			body: "*"
 		};
     }
