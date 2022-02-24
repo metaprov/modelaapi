@@ -891,6 +891,7 @@ func (model *Model) InitModelFromStudy(study *Study) {
 	model.ObjectMeta.Labels["study"] = study.Name
 	model.Spec.Pushed = study.Spec.ModelImagePushed
 	model.Spec.Published = study.Spec.ModelPublished
+	model.Spec.Training.LabRef = study.Spec.LabRef
 	model.Spec.Location = &data.DataLocation{
 		BucketName: study.Spec.Location.BucketName,
 		Path:       util.StrPtr(path.Join(*study.Spec.Location.Path, "models", model.Name)),
