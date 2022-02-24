@@ -426,6 +426,8 @@ type StudySpec struct {
 	// +kubebuilder:validation:MaxLength=512
 	// +kubebuilder:validation:Optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
+	// The lab where the model should be trained
+	LabRef v1.ObjectReference `json:"labRef,omitempty" protobuf:"bytes,3,opt,name=labRef"`
 	// DatasetName refer to the dataset object for which the study is for.
 	// +kubebuilder:validation:Required
 	// +required

@@ -3914,6 +3914,7 @@ func (in *StudySpec) DeepCopyInto(out *StudySpec) {
 		*out = new(string)
 		**out = **in
 	}
+	out.LabRef = in.LabRef
 	if in.DatasetName != nil {
 		in, out := &in.DatasetName, &out.DatasetName
 		*out = new(string)
