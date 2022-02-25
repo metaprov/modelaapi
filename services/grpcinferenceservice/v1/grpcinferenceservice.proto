@@ -86,19 +86,19 @@ service GRPCInferenceService
   // Extention to the api specific to modela
   rpc GetPredictor(GetPredictorRequest) returns (GetPredictorResponse) {
     option (google.api.http) = {
-      get: "/v1/predictors/{namespace}/{name}"
+      get: "/v1/predictor"
     };
   }
 
   rpc GetModel(GetModelRequest) returns (GetModelResponse) {
     option (google.api.http) = {
-      get: "/v1/predictors/{predictorNamespace}/{predictorName}/models/{name}"
+      get: "/v1/models/{name}"
     };
   }
 
   rpc Predict(PredictRequest) returns (PredictResponse) {
     option (google.api.http) = {
-      post: "/v1/predictors/{namespace}/{name}"
+      post: "/v1/models/{name}"
       body: "*"
     };
   }
@@ -434,8 +434,6 @@ message ColumnInfo {
 
 /// request / response
 message GetPredictorRequest {
-    string namespace = 1;
-    string name      = 2;
 }
 
 message GetPredictorResponse {
@@ -443,8 +441,6 @@ message GetPredictorResponse {
 }
 
 message GetModelRequest {
-    string predictorNamespace = 1;
-    string predictorName      = 2;
     string name               = 3;
 }
 
@@ -453,7 +449,6 @@ message GetModelResponse {
 }
 
 message PredictRequest {
-    string             namespace        = 1;
     string             name             = 2;  // model name
     bool               validate         = 3;  // use the schema to validate the request
     bool               explain          = 4;  // if true, explain the prediction using shap.
