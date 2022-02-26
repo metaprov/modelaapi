@@ -7,7 +7,6 @@
 package v1alpha1
 
 import (
-	"github.com/metaprov/modelaapi/pkg/apis/common"
 	corev1 "k8s.io/api/core/v1"
 	apierrors "k8s.io/apimachinery/pkg/api/errors"
 	"k8s.io/apimachinery/pkg/runtime"
@@ -42,40 +41,11 @@ func (notifier *Notifier) ValidateUpdate(old runtime.Object) error {
 
 func (notifier *Notifier) validate() error {
 	var allErrs field.ErrorList
-	allErrs = append(allErrs, notifier.validateMeta(field.NewPath("metadata"))...)
-	allErrs = append(allErrs, notifier.validateSpec(field.NewPath("spec"))...)
 	if len(allErrs) == 0 {
 		return nil
 	}
 
 	return apierrors.NewInvalid(schema.GroupKind{Group: "infra.modela.ai", Kind: "Notifier"}, notifier.Name, allErrs)
-}
-
-func (notifier *Notifier) validateMeta(fldPath *field.Path) field.ErrorList {
-	var allErrs field.ErrorList
-	allErrs = append(allErrs, notifier.validateName(fldPath.Child("name"))...)
-	return allErrs
-}
-
-func (notifier *Notifier) validateName(fldPath *field.Path) field.ErrorList {
-	var allErrs field.ErrorList
-	err := common.ValidateResourceName(notifier.Name)
-	if err != nil {
-		allErrs = append(allErrs, field.Invalid(fldPath.Child("FileName"), notifier.Name, err.Error()))
-	}
-	return allErrs
-}
-
-func (notifier *Notifier) validateSpec(fldPath *field.Path) field.ErrorList {
-	var allErrs field.ErrorList
-	//Smtp.To   []string
-	//Smtp.Origin string
-	//Smtp.Host string
-	//Smtp.Port int32
-
-	//Slack.WebHook
-
-	return allErrs
 }
 
 func (notifier *Notifier) ValidateDelete() error {
