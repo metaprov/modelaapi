@@ -3,6 +3,7 @@
 # source: github.com/metaprov/modelaapi/services/sqlqueryrun/v1/sqlqueryrun.proto
 """Generated protocol buffer code."""
 from google.protobuf import descriptor as _descriptor
+from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
@@ -16,483 +17,23 @@ from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1 import generated_pb2 as github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2
 
 
-DESCRIPTOR = _descriptor.FileDescriptor(
-  name='github.com/metaprov/modelaapi/services/sqlqueryrun/v1/sqlqueryrun.proto',
-  package='github.com.metaprov.modelaapi.services.sqlqueryrun.v1',
-  syntax='proto3',
-  serialized_options=b'Z5github.com/metaprov/modelaapi/services/sqlqueryrun/v1',
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nGgithub.com/metaprov/modelaapi/services/sqlqueryrun/v1/sqlqueryrun.proto\x12\x35github.com.metaprov.modelaapi.services.sqlqueryrun.v1\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x44github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto\"\xd5\x01\n\x17ListSqlQueryRunsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12j\n\x06labels\x18\x03 \x03(\x0b\x32Z.github.com.metaprov.modelaapi.services.sqlqueryrun.v1.ListSqlQueryRunsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x90\x01\n\x18ListSqlQueryRunsResponse\x12[\n\x0csqlqueryruns\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunList\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x1b\n\x19\x43reateSqlQueryRunResponse\"r\n\x18\x43reateSqlQueryRunRequest\x12V\n\x0bsqlqueryrun\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRun\"\xa2\x01\n\x18UpdateSqlQueryRunRequest\x12V\n\x0bsqlqueryrun\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRun\x12.\n\nfield_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"\x1b\n\x19UpdateSqlQueryRunResponse\"8\n\x15GetSqlQueryRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"~\n\x16GetSqlQueryRunResponse\x12V\n\x0bsqlqueryrun\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRun\x12\x0c\n\x04yaml\x18\x02 \x01(\t\";\n\x18\x44\x65leteSqlQueryRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1b\n\x19\x44\x65leteSqlQueryRunResponse\"o\n\x15RunSqlQueryRunRequest\x12V\n\x0bsqlqueryrun\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRun\"\x18\n\x16RunSqlQueryRunResponse2\xa8\x0b\n\x12SqlQueryRunService\x12\xda\x01\n\x11ListSqlQuerieRuns\x12N.github.com.metaprov.modelaapi.services.sqlqueryrun.v1.ListSqlQueryRunsRequest\x1aO.github.com.metaprov.modelaapi.services.sqlqueryrun.v1.ListSqlQueryRunsResponse\"$\x82\xd3\xe4\x93\x02\x1e\x12\x1c/v1/sqlqueryruns/{namespace}\x12\xd3\x01\n\x11\x43reateSqlQueryRun\x12O.github.com.metaprov.modelaapi.services.sqlqueryrun.v1.CreateSqlQueryRunRequest\x1aP.github.com.metaprov.modelaapi.services.sqlqueryrun.v1.CreateSqlQueryRunResponse\"\x1b\x82\xd3\xe4\x93\x02\x15\"\x10/v1/sqlqueryruns:\x01*\x12\xda\x01\n\x0eGetSqlQueryRun\x12L.github.com.metaprov.modelaapi.services.sqlqueryrun.v1.GetSqlQueryRunRequest\x1aM.github.com.metaprov.modelaapi.services.sqlqueryrun.v1.GetSqlQueryRunResponse\"+\x82\xd3\xe4\x93\x02%\x12#/v1/sqlqueryruns/{namespace}/{name}\x12\x90\x02\n\x11UpdateSqlQueryRun\x12O.github.com.metaprov.modelaapi.services.sqlqueryrun.v1.UpdateSqlQueryRunRequest\x1aP.github.com.metaprov.modelaapi.services.sqlqueryrun.v1.UpdateSqlQueryRunResponse\"X\x82\xd3\xe4\x93\x02R\x1aM/v1/sqlqueryruns/{sqlqueryrun.metadata.namespace}/{sqlqueryrun.metadata.name}:\x01*\x12\xe3\x01\n\x11\x44\x65leteSqlQueryRun\x12O.github.com.metaprov.modelaapi.services.sqlqueryrun.v1.DeleteSqlQueryRunRequest\x1aP.github.com.metaprov.modelaapi.services.sqlqueryrun.v1.DeleteSqlQueryRunResponse\"+\x82\xd3\xe4\x93\x02%*#/v1/sqlqueryruns/{namespace}/{name}\x12\x88\x02\n\x0eRunSqlQueryRun\x12L.github.com.metaprov.modelaapi.services.sqlqueryrun.v1.RunSqlQueryRunRequest\x1aM.github.com.metaprov.modelaapi.services.sqlqueryrun.v1.RunSqlQueryRunResponse\"Y\x82\xd3\xe4\x93\x02S\"Q/v1/sqlqueryruns/{sqlqueryrun.metadata.namespace}/{sqlqueryrun.metadata.name}:runB7Z5github.com/metaprov/modelaapi/services/sqlqueryrun/v1b\x06proto3'
-  ,
-  dependencies=[google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nGgithub.com/metaprov/modelaapi/services/sqlqueryrun/v1/sqlqueryrun.proto\x12\x35github.com.metaprov.modelaapi.services.sqlqueryrun.v1\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x44github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto\"\xd5\x01\n\x17ListSqlQueryRunsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12j\n\x06labels\x18\x03 \x03(\x0b\x32Z.github.com.metaprov.modelaapi.services.sqlqueryrun.v1.ListSqlQueryRunsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x90\x01\n\x18ListSqlQueryRunsResponse\x12[\n\x0csqlqueryruns\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunList\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x1b\n\x19\x43reateSqlQueryRunResponse\"r\n\x18\x43reateSqlQueryRunRequest\x12V\n\x0bsqlqueryrun\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRun\"\xa2\x01\n\x18UpdateSqlQueryRunRequest\x12V\n\x0bsqlqueryrun\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRun\x12.\n\nfield_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"\x1b\n\x19UpdateSqlQueryRunResponse\"8\n\x15GetSqlQueryRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"~\n\x16GetSqlQueryRunResponse\x12V\n\x0bsqlqueryrun\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRun\x12\x0c\n\x04yaml\x18\x02 \x01(\t\";\n\x18\x44\x65leteSqlQueryRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1b\n\x19\x44\x65leteSqlQueryRunResponse\"o\n\x15RunSqlQueryRunRequest\x12V\n\x0bsqlqueryrun\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRun\"\x18\n\x16RunSqlQueryRunResponse2\xa8\x0b\n\x12SqlQueryRunService\x12\xda\x01\n\x11ListSqlQuerieRuns\x12N.github.com.metaprov.modelaapi.services.sqlqueryrun.v1.ListSqlQueryRunsRequest\x1aO.github.com.metaprov.modelaapi.services.sqlqueryrun.v1.ListSqlQueryRunsResponse\"$\x82\xd3\xe4\x93\x02\x1e\x12\x1c/v1/sqlqueryruns/{namespace}\x12\xd3\x01\n\x11\x43reateSqlQueryRun\x12O.github.com.metaprov.modelaapi.services.sqlqueryrun.v1.CreateSqlQueryRunRequest\x1aP.github.com.metaprov.modelaapi.services.sqlqueryrun.v1.CreateSqlQueryRunResponse\"\x1b\x82\xd3\xe4\x93\x02\x15\"\x10/v1/sqlqueryruns:\x01*\x12\xda\x01\n\x0eGetSqlQueryRun\x12L.github.com.metaprov.modelaapi.services.sqlqueryrun.v1.GetSqlQueryRunRequest\x1aM.github.com.metaprov.modelaapi.services.sqlqueryrun.v1.GetSqlQueryRunResponse\"+\x82\xd3\xe4\x93\x02%\x12#/v1/sqlqueryruns/{namespace}/{name}\x12\x90\x02\n\x11UpdateSqlQueryRun\x12O.github.com.metaprov.modelaapi.services.sqlqueryrun.v1.UpdateSqlQueryRunRequest\x1aP.github.com.metaprov.modelaapi.services.sqlqueryrun.v1.UpdateSqlQueryRunResponse\"X\x82\xd3\xe4\x93\x02R\x1aM/v1/sqlqueryruns/{sqlqueryrun.metadata.namespace}/{sqlqueryrun.metadata.name}:\x01*\x12\xe3\x01\n\x11\x44\x65leteSqlQueryRun\x12O.github.com.metaprov.modelaapi.services.sqlqueryrun.v1.DeleteSqlQueryRunRequest\x1aP.github.com.metaprov.modelaapi.services.sqlqueryrun.v1.DeleteSqlQueryRunResponse\"+\x82\xd3\xe4\x93\x02%*#/v1/sqlqueryruns/{namespace}/{name}\x12\x88\x02\n\x0eRunSqlQueryRun\x12L.github.com.metaprov.modelaapi.services.sqlqueryrun.v1.RunSqlQueryRunRequest\x1aM.github.com.metaprov.modelaapi.services.sqlqueryrun.v1.RunSqlQueryRunResponse\"Y\x82\xd3\xe4\x93\x02S\"Q/v1/sqlqueryruns/{sqlqueryrun.metadata.namespace}/{sqlqueryrun.metadata.name}:runB7Z5github.com/metaprov/modelaapi/services/sqlqueryrun/v1b\x06proto3')
 
 
 
-
-_LISTSQLQUERYRUNSREQUEST_LABELSENTRY = _descriptor.Descriptor(
-  name='LabelsEntry',
-  full_name='github.com.metaprov.modelaapi.services.sqlqueryrun.v1.ListSqlQueryRunsRequest.LabelsEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modelaapi.services.sqlqueryrun.v1.ListSqlQueryRunsRequest.LabelsEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modelaapi.services.sqlqueryrun.v1.ListSqlQueryRunsRequest.LabelsEntry.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=433,
-  serialized_end=478,
-)
-
-_LISTSQLQUERYRUNSREQUEST = _descriptor.Descriptor(
-  name='ListSqlQueryRunsRequest',
-  full_name='github.com.metaprov.modelaapi.services.sqlqueryrun.v1.ListSqlQueryRunsRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modelaapi.services.sqlqueryrun.v1.ListSqlQueryRunsRequest.namespace', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modelaapi.services.sqlqueryrun.v1.ListSqlQueryRunsRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modelaapi.services.sqlqueryrun.v1.ListSqlQueryRunsRequest.labels', index=2,
-      number=3, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[_LISTSQLQUERYRUNSREQUEST_LABELSENTRY, ],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=265,
-  serialized_end=478,
-)
-
-
-_LISTSQLQUERYRUNSRESPONSE = _descriptor.Descriptor(
-  name='ListSqlQueryRunsResponse',
-  full_name='github.com.metaprov.modelaapi.services.sqlqueryrun.v1.ListSqlQueryRunsResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='sqlqueryruns', full_name='github.com.metaprov.modelaapi.services.sqlqueryrun.v1.ListSqlQueryRunsResponse.sqlqueryruns', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='next_page_token', full_name='github.com.metaprov.modelaapi.services.sqlqueryrun.v1.ListSqlQueryRunsResponse.next_page_token', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=481,
-  serialized_end=625,
-)
-
-
-_CREATESQLQUERYRUNRESPONSE = _descriptor.Descriptor(
-  name='CreateSqlQueryRunResponse',
-  full_name='github.com.metaprov.modelaapi.services.sqlqueryrun.v1.CreateSqlQueryRunResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=627,
-  serialized_end=654,
-)
-
-
-_CREATESQLQUERYRUNREQUEST = _descriptor.Descriptor(
-  name='CreateSqlQueryRunRequest',
-  full_name='github.com.metaprov.modelaapi.services.sqlqueryrun.v1.CreateSqlQueryRunRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='sqlqueryrun', full_name='github.com.metaprov.modelaapi.services.sqlqueryrun.v1.CreateSqlQueryRunRequest.sqlqueryrun', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=656,
-  serialized_end=770,
-)
-
-
-_UPDATESQLQUERYRUNREQUEST = _descriptor.Descriptor(
-  name='UpdateSqlQueryRunRequest',
-  full_name='github.com.metaprov.modelaapi.services.sqlqueryrun.v1.UpdateSqlQueryRunRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='sqlqueryrun', full_name='github.com.metaprov.modelaapi.services.sqlqueryrun.v1.UpdateSqlQueryRunRequest.sqlqueryrun', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='field_mask', full_name='github.com.metaprov.modelaapi.services.sqlqueryrun.v1.UpdateSqlQueryRunRequest.field_mask', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=773,
-  serialized_end=935,
-)
-
-
-_UPDATESQLQUERYRUNRESPONSE = _descriptor.Descriptor(
-  name='UpdateSqlQueryRunResponse',
-  full_name='github.com.metaprov.modelaapi.services.sqlqueryrun.v1.UpdateSqlQueryRunResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=937,
-  serialized_end=964,
-)
-
-
-_GETSQLQUERYRUNREQUEST = _descriptor.Descriptor(
-  name='GetSqlQueryRunRequest',
-  full_name='github.com.metaprov.modelaapi.services.sqlqueryrun.v1.GetSqlQueryRunRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modelaapi.services.sqlqueryrun.v1.GetSqlQueryRunRequest.namespace', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modelaapi.services.sqlqueryrun.v1.GetSqlQueryRunRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=966,
-  serialized_end=1022,
-)
-
-
-_GETSQLQUERYRUNRESPONSE = _descriptor.Descriptor(
-  name='GetSqlQueryRunResponse',
-  full_name='github.com.metaprov.modelaapi.services.sqlqueryrun.v1.GetSqlQueryRunResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='sqlqueryrun', full_name='github.com.metaprov.modelaapi.services.sqlqueryrun.v1.GetSqlQueryRunResponse.sqlqueryrun', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='yaml', full_name='github.com.metaprov.modelaapi.services.sqlqueryrun.v1.GetSqlQueryRunResponse.yaml', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1024,
-  serialized_end=1150,
-)
-
-
-_DELETESQLQUERYRUNREQUEST = _descriptor.Descriptor(
-  name='DeleteSqlQueryRunRequest',
-  full_name='github.com.metaprov.modelaapi.services.sqlqueryrun.v1.DeleteSqlQueryRunRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modelaapi.services.sqlqueryrun.v1.DeleteSqlQueryRunRequest.namespace', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modelaapi.services.sqlqueryrun.v1.DeleteSqlQueryRunRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1152,
-  serialized_end=1211,
-)
-
-
-_DELETESQLQUERYRUNRESPONSE = _descriptor.Descriptor(
-  name='DeleteSqlQueryRunResponse',
-  full_name='github.com.metaprov.modelaapi.services.sqlqueryrun.v1.DeleteSqlQueryRunResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1213,
-  serialized_end=1240,
-)
-
-
-_RUNSQLQUERYRUNREQUEST = _descriptor.Descriptor(
-  name='RunSqlQueryRunRequest',
-  full_name='github.com.metaprov.modelaapi.services.sqlqueryrun.v1.RunSqlQueryRunRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='sqlqueryrun', full_name='github.com.metaprov.modelaapi.services.sqlqueryrun.v1.RunSqlQueryRunRequest.sqlqueryrun', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1242,
-  serialized_end=1353,
-)
-
-
-_RUNSQLQUERYRUNRESPONSE = _descriptor.Descriptor(
-  name='RunSqlQueryRunResponse',
-  full_name='github.com.metaprov.modelaapi.services.sqlqueryrun.v1.RunSqlQueryRunResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1355,
-  serialized_end=1379,
-)
-
-_LISTSQLQUERYRUNSREQUEST_LABELSENTRY.containing_type = _LISTSQLQUERYRUNSREQUEST
-_LISTSQLQUERYRUNSREQUEST.fields_by_name['labels'].message_type = _LISTSQLQUERYRUNSREQUEST_LABELSENTRY
-_LISTSQLQUERYRUNSRESPONSE.fields_by_name['sqlqueryruns'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._SQLQUERYRUNLIST
-_CREATESQLQUERYRUNREQUEST.fields_by_name['sqlqueryrun'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._SQLQUERYRUN
-_UPDATESQLQUERYRUNREQUEST.fields_by_name['sqlqueryrun'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._SQLQUERYRUN
-_UPDATESQLQUERYRUNREQUEST.fields_by_name['field_mask'].message_type = google_dot_protobuf_dot_field__mask__pb2._FIELDMASK
-_GETSQLQUERYRUNRESPONSE.fields_by_name['sqlqueryrun'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._SQLQUERYRUN
-_RUNSQLQUERYRUNREQUEST.fields_by_name['sqlqueryrun'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._SQLQUERYRUN
-DESCRIPTOR.message_types_by_name['ListSqlQueryRunsRequest'] = _LISTSQLQUERYRUNSREQUEST
-DESCRIPTOR.message_types_by_name['ListSqlQueryRunsResponse'] = _LISTSQLQUERYRUNSRESPONSE
-DESCRIPTOR.message_types_by_name['CreateSqlQueryRunResponse'] = _CREATESQLQUERYRUNRESPONSE
-DESCRIPTOR.message_types_by_name['CreateSqlQueryRunRequest'] = _CREATESQLQUERYRUNREQUEST
-DESCRIPTOR.message_types_by_name['UpdateSqlQueryRunRequest'] = _UPDATESQLQUERYRUNREQUEST
-DESCRIPTOR.message_types_by_name['UpdateSqlQueryRunResponse'] = _UPDATESQLQUERYRUNRESPONSE
-DESCRIPTOR.message_types_by_name['GetSqlQueryRunRequest'] = _GETSQLQUERYRUNREQUEST
-DESCRIPTOR.message_types_by_name['GetSqlQueryRunResponse'] = _GETSQLQUERYRUNRESPONSE
-DESCRIPTOR.message_types_by_name['DeleteSqlQueryRunRequest'] = _DELETESQLQUERYRUNREQUEST
-DESCRIPTOR.message_types_by_name['DeleteSqlQueryRunResponse'] = _DELETESQLQUERYRUNRESPONSE
-DESCRIPTOR.message_types_by_name['RunSqlQueryRunRequest'] = _RUNSQLQUERYRUNREQUEST
-DESCRIPTOR.message_types_by_name['RunSqlQueryRunResponse'] = _RUNSQLQUERYRUNRESPONSE
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
+_LISTSQLQUERYRUNSREQUEST = DESCRIPTOR.message_types_by_name['ListSqlQueryRunsRequest']
+_LISTSQLQUERYRUNSREQUEST_LABELSENTRY = _LISTSQLQUERYRUNSREQUEST.nested_types_by_name['LabelsEntry']
+_LISTSQLQUERYRUNSRESPONSE = DESCRIPTOR.message_types_by_name['ListSqlQueryRunsResponse']
+_CREATESQLQUERYRUNRESPONSE = DESCRIPTOR.message_types_by_name['CreateSqlQueryRunResponse']
+_CREATESQLQUERYRUNREQUEST = DESCRIPTOR.message_types_by_name['CreateSqlQueryRunRequest']
+_UPDATESQLQUERYRUNREQUEST = DESCRIPTOR.message_types_by_name['UpdateSqlQueryRunRequest']
+_UPDATESQLQUERYRUNRESPONSE = DESCRIPTOR.message_types_by_name['UpdateSqlQueryRunResponse']
+_GETSQLQUERYRUNREQUEST = DESCRIPTOR.message_types_by_name['GetSqlQueryRunRequest']
+_GETSQLQUERYRUNRESPONSE = DESCRIPTOR.message_types_by_name['GetSqlQueryRunResponse']
+_DELETESQLQUERYRUNREQUEST = DESCRIPTOR.message_types_by_name['DeleteSqlQueryRunRequest']
+_DELETESQLQUERYRUNRESPONSE = DESCRIPTOR.message_types_by_name['DeleteSqlQueryRunResponse']
+_RUNSQLQUERYRUNREQUEST = DESCRIPTOR.message_types_by_name['RunSqlQueryRunRequest']
+_RUNSQLQUERYRUNRESPONSE = DESCRIPTOR.message_types_by_name['RunSqlQueryRunResponse']
 ListSqlQueryRunsRequest = _reflection.GeneratedProtocolMessageType('ListSqlQueryRunsRequest', (_message.Message,), {
 
   'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
@@ -585,83 +126,51 @@ RunSqlQueryRunResponse = _reflection.GeneratedProtocolMessageType('RunSqlQueryRu
   })
 _sym_db.RegisterMessage(RunSqlQueryRunResponse)
 
+_SQLQUERYRUNSERVICE = DESCRIPTOR.services_by_name['SqlQueryRunService']
+if _descriptor._USE_C_DESCRIPTORS == False:
 
-DESCRIPTOR._options = None
-_LISTSQLQUERYRUNSREQUEST_LABELSENTRY._options = None
-
-_SQLQUERYRUNSERVICE = _descriptor.ServiceDescriptor(
-  name='SqlQueryRunService',
-  full_name='github.com.metaprov.modelaapi.services.sqlqueryrun.v1.SqlQueryRunService',
-  file=DESCRIPTOR,
-  index=0,
-  serialized_options=None,
-  create_key=_descriptor._internal_create_key,
-  serialized_start=1382,
-  serialized_end=2830,
-  methods=[
-  _descriptor.MethodDescriptor(
-    name='ListSqlQuerieRuns',
-    full_name='github.com.metaprov.modelaapi.services.sqlqueryrun.v1.SqlQueryRunService.ListSqlQuerieRuns',
-    index=0,
-    containing_service=None,
-    input_type=_LISTSQLQUERYRUNSREQUEST,
-    output_type=_LISTSQLQUERYRUNSRESPONSE,
-    serialized_options=b'\202\323\344\223\002\036\022\034/v1/sqlqueryruns/{namespace}',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='CreateSqlQueryRun',
-    full_name='github.com.metaprov.modelaapi.services.sqlqueryrun.v1.SqlQueryRunService.CreateSqlQueryRun',
-    index=1,
-    containing_service=None,
-    input_type=_CREATESQLQUERYRUNREQUEST,
-    output_type=_CREATESQLQUERYRUNRESPONSE,
-    serialized_options=b'\202\323\344\223\002\025\"\020/v1/sqlqueryruns:\001*',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='GetSqlQueryRun',
-    full_name='github.com.metaprov.modelaapi.services.sqlqueryrun.v1.SqlQueryRunService.GetSqlQueryRun',
-    index=2,
-    containing_service=None,
-    input_type=_GETSQLQUERYRUNREQUEST,
-    output_type=_GETSQLQUERYRUNRESPONSE,
-    serialized_options=b'\202\323\344\223\002%\022#/v1/sqlqueryruns/{namespace}/{name}',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='UpdateSqlQueryRun',
-    full_name='github.com.metaprov.modelaapi.services.sqlqueryrun.v1.SqlQueryRunService.UpdateSqlQueryRun',
-    index=3,
-    containing_service=None,
-    input_type=_UPDATESQLQUERYRUNREQUEST,
-    output_type=_UPDATESQLQUERYRUNRESPONSE,
-    serialized_options=b'\202\323\344\223\002R\032M/v1/sqlqueryruns/{sqlqueryrun.metadata.namespace}/{sqlqueryrun.metadata.name}:\001*',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='DeleteSqlQueryRun',
-    full_name='github.com.metaprov.modelaapi.services.sqlqueryrun.v1.SqlQueryRunService.DeleteSqlQueryRun',
-    index=4,
-    containing_service=None,
-    input_type=_DELETESQLQUERYRUNREQUEST,
-    output_type=_DELETESQLQUERYRUNRESPONSE,
-    serialized_options=b'\202\323\344\223\002%*#/v1/sqlqueryruns/{namespace}/{name}',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='RunSqlQueryRun',
-    full_name='github.com.metaprov.modelaapi.services.sqlqueryrun.v1.SqlQueryRunService.RunSqlQueryRun',
-    index=5,
-    containing_service=None,
-    input_type=_RUNSQLQUERYRUNREQUEST,
-    output_type=_RUNSQLQUERYRUNRESPONSE,
-    serialized_options=b'\202\323\344\223\002S\"Q/v1/sqlqueryruns/{sqlqueryrun.metadata.namespace}/{sqlqueryrun.metadata.name}:run',
-    create_key=_descriptor._internal_create_key,
-  ),
-])
-_sym_db.RegisterServiceDescriptor(_SQLQUERYRUNSERVICE)
-
-DESCRIPTOR.services_by_name['SqlQueryRunService'] = _SQLQUERYRUNSERVICE
-
+  DESCRIPTOR._options = None
+  DESCRIPTOR._serialized_options = b'Z5github.com/metaprov/modelaapi/services/sqlqueryrun/v1'
+  _LISTSQLQUERYRUNSREQUEST_LABELSENTRY._options = None
+  _LISTSQLQUERYRUNSREQUEST_LABELSENTRY._serialized_options = b'8\001'
+  _SQLQUERYRUNSERVICE.methods_by_name['ListSqlQuerieRuns']._options = None
+  _SQLQUERYRUNSERVICE.methods_by_name['ListSqlQuerieRuns']._serialized_options = b'\202\323\344\223\002\036\022\034/v1/sqlqueryruns/{namespace}'
+  _SQLQUERYRUNSERVICE.methods_by_name['CreateSqlQueryRun']._options = None
+  _SQLQUERYRUNSERVICE.methods_by_name['CreateSqlQueryRun']._serialized_options = b'\202\323\344\223\002\025\"\020/v1/sqlqueryruns:\001*'
+  _SQLQUERYRUNSERVICE.methods_by_name['GetSqlQueryRun']._options = None
+  _SQLQUERYRUNSERVICE.methods_by_name['GetSqlQueryRun']._serialized_options = b'\202\323\344\223\002%\022#/v1/sqlqueryruns/{namespace}/{name}'
+  _SQLQUERYRUNSERVICE.methods_by_name['UpdateSqlQueryRun']._options = None
+  _SQLQUERYRUNSERVICE.methods_by_name['UpdateSqlQueryRun']._serialized_options = b'\202\323\344\223\002R\032M/v1/sqlqueryruns/{sqlqueryrun.metadata.namespace}/{sqlqueryrun.metadata.name}:\001*'
+  _SQLQUERYRUNSERVICE.methods_by_name['DeleteSqlQueryRun']._options = None
+  _SQLQUERYRUNSERVICE.methods_by_name['DeleteSqlQueryRun']._serialized_options = b'\202\323\344\223\002%*#/v1/sqlqueryruns/{namespace}/{name}'
+  _SQLQUERYRUNSERVICE.methods_by_name['RunSqlQueryRun']._options = None
+  _SQLQUERYRUNSERVICE.methods_by_name['RunSqlQueryRun']._serialized_options = b'\202\323\344\223\002S\"Q/v1/sqlqueryruns/{sqlqueryrun.metadata.namespace}/{sqlqueryrun.metadata.name}:run'
+  _LISTSQLQUERYRUNSREQUEST._serialized_start=265
+  _LISTSQLQUERYRUNSREQUEST._serialized_end=478
+  _LISTSQLQUERYRUNSREQUEST_LABELSENTRY._serialized_start=433
+  _LISTSQLQUERYRUNSREQUEST_LABELSENTRY._serialized_end=478
+  _LISTSQLQUERYRUNSRESPONSE._serialized_start=481
+  _LISTSQLQUERYRUNSRESPONSE._serialized_end=625
+  _CREATESQLQUERYRUNRESPONSE._serialized_start=627
+  _CREATESQLQUERYRUNRESPONSE._serialized_end=654
+  _CREATESQLQUERYRUNREQUEST._serialized_start=656
+  _CREATESQLQUERYRUNREQUEST._serialized_end=770
+  _UPDATESQLQUERYRUNREQUEST._serialized_start=773
+  _UPDATESQLQUERYRUNREQUEST._serialized_end=935
+  _UPDATESQLQUERYRUNRESPONSE._serialized_start=937
+  _UPDATESQLQUERYRUNRESPONSE._serialized_end=964
+  _GETSQLQUERYRUNREQUEST._serialized_start=966
+  _GETSQLQUERYRUNREQUEST._serialized_end=1022
+  _GETSQLQUERYRUNRESPONSE._serialized_start=1024
+  _GETSQLQUERYRUNRESPONSE._serialized_end=1150
+  _DELETESQLQUERYRUNREQUEST._serialized_start=1152
+  _DELETESQLQUERYRUNREQUEST._serialized_end=1211
+  _DELETESQLQUERYRUNRESPONSE._serialized_start=1213
+  _DELETESQLQUERYRUNRESPONSE._serialized_end=1240
+  _RUNSQLQUERYRUNREQUEST._serialized_start=1242
+  _RUNSQLQUERYRUNREQUEST._serialized_end=1353
+  _RUNSQLQUERYRUNRESPONSE._serialized_start=1355
+  _RUNSQLQUERYRUNRESPONSE._serialized_end=1379
+  _SQLQUERYRUNSERVICE._serialized_start=1382
+  _SQLQUERYRUNSERVICE._serialized_end=2830
 # @@protoc_insertion_point(module_scope)

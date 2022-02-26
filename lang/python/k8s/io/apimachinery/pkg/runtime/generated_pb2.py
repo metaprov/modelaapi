@@ -3,6 +3,7 @@
 # source: k8s.io/apimachinery/pkg/runtime/generated.proto
 """Generated protocol buffer code."""
 from google.protobuf import descriptor as _descriptor
+from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
@@ -13,147 +14,13 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor.FileDescriptor(
-  name='k8s.io/apimachinery/pkg/runtime/generated.proto',
-  package='k8s.io.apimachinery.pkg.runtime',
-  syntax='proto2',
-  serialized_options=b'Z\037k8s.io/apimachinery/pkg/runtime',
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n/k8s.io/apimachinery/pkg/runtime/generated.proto\x12\x1fk8s.io.apimachinery.pkg.runtime\"\x1b\n\x0cRawExtension\x12\x0b\n\x03raw\x18\x01 \x01(\x0c\",\n\x08TypeMeta\x12\x12\n\napiVersion\x18\x01 \x01(\t\x12\x0c\n\x04kind\x18\x02 \x01(\t\"\x81\x01\n\x07Unknown\x12;\n\x08typeMeta\x18\x01 \x01(\x0b\x32).k8s.io.apimachinery.pkg.runtime.TypeMeta\x12\x0b\n\x03raw\x18\x02 \x01(\x0c\x12\x17\n\x0f\x63ontentEncoding\x18\x03 \x01(\t\x12\x13\n\x0b\x63ontentType\x18\x04 \x01(\tB!Z\x1fk8s.io/apimachinery/pkg/runtime'
-)
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n/k8s.io/apimachinery/pkg/runtime/generated.proto\x12\x1fk8s.io.apimachinery.pkg.runtime\"\x1b\n\x0cRawExtension\x12\x0b\n\x03raw\x18\x01 \x01(\x0c\",\n\x08TypeMeta\x12\x12\n\napiVersion\x18\x01 \x01(\t\x12\x0c\n\x04kind\x18\x02 \x01(\t\"\x81\x01\n\x07Unknown\x12;\n\x08typeMeta\x18\x01 \x01(\x0b\x32).k8s.io.apimachinery.pkg.runtime.TypeMeta\x12\x0b\n\x03raw\x18\x02 \x01(\x0c\x12\x17\n\x0f\x63ontentEncoding\x18\x03 \x01(\t\x12\x13\n\x0b\x63ontentType\x18\x04 \x01(\tB!Z\x1fk8s.io/apimachinery/pkg/runtime')
 
 
 
-
-_RAWEXTENSION = _descriptor.Descriptor(
-  name='RawExtension',
-  full_name='k8s.io.apimachinery.pkg.runtime.RawExtension',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='raw', full_name='k8s.io.apimachinery.pkg.runtime.RawExtension.raw', index=0,
-      number=1, type=12, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"",
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto2',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=84,
-  serialized_end=111,
-)
-
-
-_TYPEMETA = _descriptor.Descriptor(
-  name='TypeMeta',
-  full_name='k8s.io.apimachinery.pkg.runtime.TypeMeta',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='apiVersion', full_name='k8s.io.apimachinery.pkg.runtime.TypeMeta.apiVersion', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='kind', full_name='k8s.io.apimachinery.pkg.runtime.TypeMeta.kind', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto2',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=113,
-  serialized_end=157,
-)
-
-
-_UNKNOWN = _descriptor.Descriptor(
-  name='Unknown',
-  full_name='k8s.io.apimachinery.pkg.runtime.Unknown',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='typeMeta', full_name='k8s.io.apimachinery.pkg.runtime.Unknown.typeMeta', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='raw', full_name='k8s.io.apimachinery.pkg.runtime.Unknown.raw', index=1,
-      number=2, type=12, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"",
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='contentEncoding', full_name='k8s.io.apimachinery.pkg.runtime.Unknown.contentEncoding', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='contentType', full_name='k8s.io.apimachinery.pkg.runtime.Unknown.contentType', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto2',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=160,
-  serialized_end=289,
-)
-
-_UNKNOWN.fields_by_name['typeMeta'].message_type = _TYPEMETA
-DESCRIPTOR.message_types_by_name['RawExtension'] = _RAWEXTENSION
-DESCRIPTOR.message_types_by_name['TypeMeta'] = _TYPEMETA
-DESCRIPTOR.message_types_by_name['Unknown'] = _UNKNOWN
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
+_RAWEXTENSION = DESCRIPTOR.message_types_by_name['RawExtension']
+_TYPEMETA = DESCRIPTOR.message_types_by_name['TypeMeta']
+_UNKNOWN = DESCRIPTOR.message_types_by_name['Unknown']
 RawExtension = _reflection.GeneratedProtocolMessageType('RawExtension', (_message.Message,), {
   'DESCRIPTOR' : _RAWEXTENSION,
   '__module__' : 'k8s.io.apimachinery.pkg.runtime.generated_pb2'
@@ -175,6 +42,14 @@ Unknown = _reflection.GeneratedProtocolMessageType('Unknown', (_message.Message,
   })
 _sym_db.RegisterMessage(Unknown)
 
+if _descriptor._USE_C_DESCRIPTORS == False:
 
-DESCRIPTOR._options = None
+  DESCRIPTOR._options = None
+  DESCRIPTOR._serialized_options = b'Z\037k8s.io/apimachinery/pkg/runtime'
+  _RAWEXTENSION._serialized_start=84
+  _RAWEXTENSION._serialized_end=111
+  _TYPEMETA._serialized_start=113
+  _TYPEMETA._serialized_end=157
+  _UNKNOWN._serialized_start=160
+  _UNKNOWN._serialized_end=289
 # @@protoc_insertion_point(module_scope)

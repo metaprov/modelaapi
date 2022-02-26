@@ -1100,6 +1100,15 @@ type OpsgenieSpec struct {
 type WebhookSpec struct {
 	// +kubebuilder:default:=""
 	Url *string `json:"url,omitempty" protobuf:"bytes,1,opt,name=url"`
+	// Content type
+	// +kubebuilder:default:="application/json"
+	ContentType *string `json:"contentType,omitempty" protobuf:"bytes,2,opt,name=contentType"`
+	// The webhook secret token
+	Token *string `json:"token,omitempty" protobuf:"bytes,3,opt,name=token"`
+	// custom headers to send
+	Headers map[string]string `json:"headers,omitempty" protobuf:"bytes,4,opt,name=headers"`
+
+	SSL *bool `json:"ssl,omitempty" protobuf:"bytes,5,opt,name=ssl"`
 }
 
 type GoogleSheetsSpec struct {

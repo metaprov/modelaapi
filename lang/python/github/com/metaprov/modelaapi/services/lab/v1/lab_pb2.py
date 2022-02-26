@@ -3,6 +3,7 @@
 # source: github.com/metaprov/modelaapi/services/lab/v1/lab.proto
 """Generated protocol buffer code."""
 from google.protobuf import descriptor as _descriptor
+from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
@@ -17,537 +18,24 @@ from github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1 import generated_pb2 
 from github.com.metaprov.modelaapi.services.common.v1 import common_pb2 as github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_common_dot_v1_dot_common__pb2
 
 
-DESCRIPTOR = _descriptor.FileDescriptor(
-  name='github.com/metaprov/modelaapi/services/lab/v1/lab.proto',
-  package='github.com.metaprov.modelaapi.services.lab.v1',
-  syntax='proto3',
-  serialized_options=b'Z-github.com/metaprov/modelaapi/services/lab/v1',
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n7github.com/metaprov/modelaapi/services/lab/v1/lab.proto\x12-github.com.metaprov.modelaapi.services.lab.v1\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x45github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto\x1a=github.com/metaprov/modelaapi/services/common/v1/common.proto\"\xe8\x01\n\x0fListLabsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12Z\n\x06labels\x18\x02 \x03(\x0b\x32J.github.com.metaprov.modelaapi.services.lab.v1.ListLabsRequest.LabelsEntry\x12\x11\n\tpage_size\x18\x03 \x01(\x05\x12\x12\n\npage_token\x18\x04 \x01(\t\x12\x10\n\x08order_by\x18\x05 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"y\n\x10ListLabsResponse\x12L\n\x04labs\x18\x01 \x01(\x0b\x32>.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabList\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\r\n\x0bLabResponse\"[\n\x10\x43reateLabRequest\x12G\n\x03lab\x18\x01 \x01(\x0b\x32:.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Lab\"\x13\n\x11\x43reateLabResponse\"\x8b\x01\n\x10UpdateLabRequest\x12G\n\x03lab\x18\x01 \x01(\x0b\x32:.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Lab\x12.\n\nfield_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"\x13\n\x11UpdateLabResponse\"0\n\rGetLabRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"g\n\x0eGetLabResponse\x12G\n\x03lab\x18\x01 \x01(\x0b\x32:.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Lab\x12\x0c\n\x04yaml\x18\x02 \x01(\t\":\n\x17GetLabNamespacesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"o\n\x18GetLabNamespacesResponse\x12S\n\nnamespaces\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo\"3\n\x10\x44\x65leteLabRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x13\n\x11\x44\x65leteLabResponse2\x94\x07\n\nLabService\x12\xa9\x01\n\x08ListLabs\x12>.github.com.metaprov.modelaapi.services.lab.v1.ListLabsRequest\x1a?.github.com.metaprov.modelaapi.services.lab.v1.ListLabsResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\x12\x14/v1/labs/{namespace}\x12\xa3\x01\n\tCreateLab\x12?.github.com.metaprov.modelaapi.services.lab.v1.CreateLabRequest\x1a@.github.com.metaprov.modelaapi.services.lab.v1.CreateLabResponse\"\x13\x82\xd3\xe4\x93\x02\r\"\x08/v1/labs:\x01*\x12\xaa\x01\n\x06GetLab\x12<.github.com.metaprov.modelaapi.services.lab.v1.GetLabRequest\x1a=.github.com.metaprov.modelaapi.services.lab.v1.GetLabResponse\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/v1/labs/{namespace}/{name}\x12\xd0\x01\n\tUpdateLab\x12?.github.com.metaprov.modelaapi.services.lab.v1.UpdateLabRequest\x1a@.github.com.metaprov.modelaapi.services.lab.v1.UpdateLabResponse\"@\x82\xd3\xe4\x93\x02:\x1a\x35/v1/labs/{lab.metadata.namespace}/{lab.metadata.name}:\x01*\x12\xb3\x01\n\tDeleteLab\x12?.github.com.metaprov.modelaapi.services.lab.v1.DeleteLabRequest\x1a@.github.com.metaprov.modelaapi.services.lab.v1.DeleteLabResponse\"#\x82\xd3\xe4\x93\x02\x1d*\x1b/v1/labs/{namespace}/{name}B/Z-github.com/metaprov/modelaapi/services/lab/v1b\x06proto3'
-  ,
-  dependencies=[google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_common_dot_v1_dot_common__pb2.DESCRIPTOR,])
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n7github.com/metaprov/modelaapi/services/lab/v1/lab.proto\x12-github.com.metaprov.modelaapi.services.lab.v1\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x45github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto\x1a=github.com/metaprov/modelaapi/services/common/v1/common.proto\"\xe8\x01\n\x0fListLabsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12Z\n\x06labels\x18\x02 \x03(\x0b\x32J.github.com.metaprov.modelaapi.services.lab.v1.ListLabsRequest.LabelsEntry\x12\x11\n\tpage_size\x18\x03 \x01(\x05\x12\x12\n\npage_token\x18\x04 \x01(\t\x12\x10\n\x08order_by\x18\x05 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"y\n\x10ListLabsResponse\x12L\n\x04labs\x18\x01 \x01(\x0b\x32>.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabList\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\r\n\x0bLabResponse\"[\n\x10\x43reateLabRequest\x12G\n\x03lab\x18\x01 \x01(\x0b\x32:.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Lab\"\x13\n\x11\x43reateLabResponse\"\x8b\x01\n\x10UpdateLabRequest\x12G\n\x03lab\x18\x01 \x01(\x0b\x32:.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Lab\x12.\n\nfield_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"\x13\n\x11UpdateLabResponse\"0\n\rGetLabRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"g\n\x0eGetLabResponse\x12G\n\x03lab\x18\x01 \x01(\x0b\x32:.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Lab\x12\x0c\n\x04yaml\x18\x02 \x01(\t\":\n\x17GetLabNamespacesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"o\n\x18GetLabNamespacesResponse\x12S\n\nnamespaces\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo\"3\n\x10\x44\x65leteLabRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x13\n\x11\x44\x65leteLabResponse2\x94\x07\n\nLabService\x12\xa9\x01\n\x08ListLabs\x12>.github.com.metaprov.modelaapi.services.lab.v1.ListLabsRequest\x1a?.github.com.metaprov.modelaapi.services.lab.v1.ListLabsResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\x12\x14/v1/labs/{namespace}\x12\xa3\x01\n\tCreateLab\x12?.github.com.metaprov.modelaapi.services.lab.v1.CreateLabRequest\x1a@.github.com.metaprov.modelaapi.services.lab.v1.CreateLabResponse\"\x13\x82\xd3\xe4\x93\x02\r\"\x08/v1/labs:\x01*\x12\xaa\x01\n\x06GetLab\x12<.github.com.metaprov.modelaapi.services.lab.v1.GetLabRequest\x1a=.github.com.metaprov.modelaapi.services.lab.v1.GetLabResponse\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/v1/labs/{namespace}/{name}\x12\xd0\x01\n\tUpdateLab\x12?.github.com.metaprov.modelaapi.services.lab.v1.UpdateLabRequest\x1a@.github.com.metaprov.modelaapi.services.lab.v1.UpdateLabResponse\"@\x82\xd3\xe4\x93\x02:\x1a\x35/v1/labs/{lab.metadata.namespace}/{lab.metadata.name}:\x01*\x12\xb3\x01\n\tDeleteLab\x12?.github.com.metaprov.modelaapi.services.lab.v1.DeleteLabRequest\x1a@.github.com.metaprov.modelaapi.services.lab.v1.DeleteLabResponse\"#\x82\xd3\xe4\x93\x02\x1d*\x1b/v1/labs/{namespace}/{name}B/Z-github.com/metaprov/modelaapi/services/lab/v1b\x06proto3')
 
 
 
-
-_LISTLABSREQUEST_LABELSENTRY = _descriptor.Descriptor(
-  name='LabelsEntry',
-  full_name='github.com.metaprov.modelaapi.services.lab.v1.ListLabsRequest.LabelsEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modelaapi.services.lab.v1.ListLabsRequest.LabelsEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modelaapi.services.lab.v1.ListLabsRequest.LabelsEntry.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=492,
-  serialized_end=537,
-)
-
-_LISTLABSREQUEST = _descriptor.Descriptor(
-  name='ListLabsRequest',
-  full_name='github.com.metaprov.modelaapi.services.lab.v1.ListLabsRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modelaapi.services.lab.v1.ListLabsRequest.namespace', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modelaapi.services.lab.v1.ListLabsRequest.labels', index=1,
-      number=2, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_size', full_name='github.com.metaprov.modelaapi.services.lab.v1.ListLabsRequest.page_size', index=2,
-      number=3, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_token', full_name='github.com.metaprov.modelaapi.services.lab.v1.ListLabsRequest.page_token', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='order_by', full_name='github.com.metaprov.modelaapi.services.lab.v1.ListLabsRequest.order_by', index=4,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[_LISTLABSREQUEST_LABELSENTRY, ],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=305,
-  serialized_end=537,
-)
-
-
-_LISTLABSRESPONSE = _descriptor.Descriptor(
-  name='ListLabsResponse',
-  full_name='github.com.metaprov.modelaapi.services.lab.v1.ListLabsResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='labs', full_name='github.com.metaprov.modelaapi.services.lab.v1.ListLabsResponse.labs', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='next_page_token', full_name='github.com.metaprov.modelaapi.services.lab.v1.ListLabsResponse.next_page_token', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=539,
-  serialized_end=660,
-)
-
-
-_LABRESPONSE = _descriptor.Descriptor(
-  name='LabResponse',
-  full_name='github.com.metaprov.modelaapi.services.lab.v1.LabResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=662,
-  serialized_end=675,
-)
-
-
-_CREATELABREQUEST = _descriptor.Descriptor(
-  name='CreateLabRequest',
-  full_name='github.com.metaprov.modelaapi.services.lab.v1.CreateLabRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='lab', full_name='github.com.metaprov.modelaapi.services.lab.v1.CreateLabRequest.lab', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=677,
-  serialized_end=768,
-)
-
-
-_CREATELABRESPONSE = _descriptor.Descriptor(
-  name='CreateLabResponse',
-  full_name='github.com.metaprov.modelaapi.services.lab.v1.CreateLabResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=770,
-  serialized_end=789,
-)
-
-
-_UPDATELABREQUEST = _descriptor.Descriptor(
-  name='UpdateLabRequest',
-  full_name='github.com.metaprov.modelaapi.services.lab.v1.UpdateLabRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='lab', full_name='github.com.metaprov.modelaapi.services.lab.v1.UpdateLabRequest.lab', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='field_mask', full_name='github.com.metaprov.modelaapi.services.lab.v1.UpdateLabRequest.field_mask', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=792,
-  serialized_end=931,
-)
-
-
-_UPDATELABRESPONSE = _descriptor.Descriptor(
-  name='UpdateLabResponse',
-  full_name='github.com.metaprov.modelaapi.services.lab.v1.UpdateLabResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=933,
-  serialized_end=952,
-)
-
-
-_GETLABREQUEST = _descriptor.Descriptor(
-  name='GetLabRequest',
-  full_name='github.com.metaprov.modelaapi.services.lab.v1.GetLabRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modelaapi.services.lab.v1.GetLabRequest.namespace', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modelaapi.services.lab.v1.GetLabRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=954,
-  serialized_end=1002,
-)
-
-
-_GETLABRESPONSE = _descriptor.Descriptor(
-  name='GetLabResponse',
-  full_name='github.com.metaprov.modelaapi.services.lab.v1.GetLabResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='lab', full_name='github.com.metaprov.modelaapi.services.lab.v1.GetLabResponse.lab', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='yaml', full_name='github.com.metaprov.modelaapi.services.lab.v1.GetLabResponse.yaml', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1004,
-  serialized_end=1107,
-)
-
-
-_GETLABNAMESPACESREQUEST = _descriptor.Descriptor(
-  name='GetLabNamespacesRequest',
-  full_name='github.com.metaprov.modelaapi.services.lab.v1.GetLabNamespacesRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modelaapi.services.lab.v1.GetLabNamespacesRequest.namespace', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modelaapi.services.lab.v1.GetLabNamespacesRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1109,
-  serialized_end=1167,
-)
-
-
-_GETLABNAMESPACESRESPONSE = _descriptor.Descriptor(
-  name='GetLabNamespacesResponse',
-  full_name='github.com.metaprov.modelaapi.services.lab.v1.GetLabNamespacesResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='namespaces', full_name='github.com.metaprov.modelaapi.services.lab.v1.GetLabNamespacesResponse.namespaces', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1169,
-  serialized_end=1280,
-)
-
-
-_DELETELABREQUEST = _descriptor.Descriptor(
-  name='DeleteLabRequest',
-  full_name='github.com.metaprov.modelaapi.services.lab.v1.DeleteLabRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modelaapi.services.lab.v1.DeleteLabRequest.namespace', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modelaapi.services.lab.v1.DeleteLabRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1282,
-  serialized_end=1333,
-)
-
-
-_DELETELABRESPONSE = _descriptor.Descriptor(
-  name='DeleteLabResponse',
-  full_name='github.com.metaprov.modelaapi.services.lab.v1.DeleteLabResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1335,
-  serialized_end=1354,
-)
-
-_LISTLABSREQUEST_LABELSENTRY.containing_type = _LISTLABSREQUEST
-_LISTLABSREQUEST.fields_by_name['labels'].message_type = _LISTLABSREQUEST_LABELSENTRY
-_LISTLABSRESPONSE.fields_by_name['labs'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._LABLIST
-_CREATELABREQUEST.fields_by_name['lab'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._LAB
-_UPDATELABREQUEST.fields_by_name['lab'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._LAB
-_UPDATELABREQUEST.fields_by_name['field_mask'].message_type = google_dot_protobuf_dot_field__mask__pb2._FIELDMASK
-_GETLABRESPONSE.fields_by_name['lab'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._LAB
-_GETLABNAMESPACESRESPONSE.fields_by_name['namespaces'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_common_dot_v1_dot_common__pb2._NAMESPACEINFO
-DESCRIPTOR.message_types_by_name['ListLabsRequest'] = _LISTLABSREQUEST
-DESCRIPTOR.message_types_by_name['ListLabsResponse'] = _LISTLABSRESPONSE
-DESCRIPTOR.message_types_by_name['LabResponse'] = _LABRESPONSE
-DESCRIPTOR.message_types_by_name['CreateLabRequest'] = _CREATELABREQUEST
-DESCRIPTOR.message_types_by_name['CreateLabResponse'] = _CREATELABRESPONSE
-DESCRIPTOR.message_types_by_name['UpdateLabRequest'] = _UPDATELABREQUEST
-DESCRIPTOR.message_types_by_name['UpdateLabResponse'] = _UPDATELABRESPONSE
-DESCRIPTOR.message_types_by_name['GetLabRequest'] = _GETLABREQUEST
-DESCRIPTOR.message_types_by_name['GetLabResponse'] = _GETLABRESPONSE
-DESCRIPTOR.message_types_by_name['GetLabNamespacesRequest'] = _GETLABNAMESPACESREQUEST
-DESCRIPTOR.message_types_by_name['GetLabNamespacesResponse'] = _GETLABNAMESPACESRESPONSE
-DESCRIPTOR.message_types_by_name['DeleteLabRequest'] = _DELETELABREQUEST
-DESCRIPTOR.message_types_by_name['DeleteLabResponse'] = _DELETELABRESPONSE
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
+_LISTLABSREQUEST = DESCRIPTOR.message_types_by_name['ListLabsRequest']
+_LISTLABSREQUEST_LABELSENTRY = _LISTLABSREQUEST.nested_types_by_name['LabelsEntry']
+_LISTLABSRESPONSE = DESCRIPTOR.message_types_by_name['ListLabsResponse']
+_LABRESPONSE = DESCRIPTOR.message_types_by_name['LabResponse']
+_CREATELABREQUEST = DESCRIPTOR.message_types_by_name['CreateLabRequest']
+_CREATELABRESPONSE = DESCRIPTOR.message_types_by_name['CreateLabResponse']
+_UPDATELABREQUEST = DESCRIPTOR.message_types_by_name['UpdateLabRequest']
+_UPDATELABRESPONSE = DESCRIPTOR.message_types_by_name['UpdateLabResponse']
+_GETLABREQUEST = DESCRIPTOR.message_types_by_name['GetLabRequest']
+_GETLABRESPONSE = DESCRIPTOR.message_types_by_name['GetLabResponse']
+_GETLABNAMESPACESREQUEST = DESCRIPTOR.message_types_by_name['GetLabNamespacesRequest']
+_GETLABNAMESPACESRESPONSE = DESCRIPTOR.message_types_by_name['GetLabNamespacesResponse']
+_DELETELABREQUEST = DESCRIPTOR.message_types_by_name['DeleteLabRequest']
+_DELETELABRESPONSE = DESCRIPTOR.message_types_by_name['DeleteLabResponse']
 ListLabsRequest = _reflection.GeneratedProtocolMessageType('ListLabsRequest', (_message.Message,), {
 
   'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
@@ -647,73 +135,51 @@ DeleteLabResponse = _reflection.GeneratedProtocolMessageType('DeleteLabResponse'
   })
 _sym_db.RegisterMessage(DeleteLabResponse)
 
+_LABSERVICE = DESCRIPTOR.services_by_name['LabService']
+if _descriptor._USE_C_DESCRIPTORS == False:
 
-DESCRIPTOR._options = None
-_LISTLABSREQUEST_LABELSENTRY._options = None
-
-_LABSERVICE = _descriptor.ServiceDescriptor(
-  name='LabService',
-  full_name='github.com.metaprov.modelaapi.services.lab.v1.LabService',
-  file=DESCRIPTOR,
-  index=0,
-  serialized_options=None,
-  create_key=_descriptor._internal_create_key,
-  serialized_start=1357,
-  serialized_end=2273,
-  methods=[
-  _descriptor.MethodDescriptor(
-    name='ListLabs',
-    full_name='github.com.metaprov.modelaapi.services.lab.v1.LabService.ListLabs',
-    index=0,
-    containing_service=None,
-    input_type=_LISTLABSREQUEST,
-    output_type=_LISTLABSRESPONSE,
-    serialized_options=b'\202\323\344\223\002\026\022\024/v1/labs/{namespace}',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='CreateLab',
-    full_name='github.com.metaprov.modelaapi.services.lab.v1.LabService.CreateLab',
-    index=1,
-    containing_service=None,
-    input_type=_CREATELABREQUEST,
-    output_type=_CREATELABRESPONSE,
-    serialized_options=b'\202\323\344\223\002\r\"\010/v1/labs:\001*',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='GetLab',
-    full_name='github.com.metaprov.modelaapi.services.lab.v1.LabService.GetLab',
-    index=2,
-    containing_service=None,
-    input_type=_GETLABREQUEST,
-    output_type=_GETLABRESPONSE,
-    serialized_options=b'\202\323\344\223\002\035\022\033/v1/labs/{namespace}/{name}',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='UpdateLab',
-    full_name='github.com.metaprov.modelaapi.services.lab.v1.LabService.UpdateLab',
-    index=3,
-    containing_service=None,
-    input_type=_UPDATELABREQUEST,
-    output_type=_UPDATELABRESPONSE,
-    serialized_options=b'\202\323\344\223\002:\0325/v1/labs/{lab.metadata.namespace}/{lab.metadata.name}:\001*',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='DeleteLab',
-    full_name='github.com.metaprov.modelaapi.services.lab.v1.LabService.DeleteLab',
-    index=4,
-    containing_service=None,
-    input_type=_DELETELABREQUEST,
-    output_type=_DELETELABRESPONSE,
-    serialized_options=b'\202\323\344\223\002\035*\033/v1/labs/{namespace}/{name}',
-    create_key=_descriptor._internal_create_key,
-  ),
-])
-_sym_db.RegisterServiceDescriptor(_LABSERVICE)
-
-DESCRIPTOR.services_by_name['LabService'] = _LABSERVICE
-
+  DESCRIPTOR._options = None
+  DESCRIPTOR._serialized_options = b'Z-github.com/metaprov/modelaapi/services/lab/v1'
+  _LISTLABSREQUEST_LABELSENTRY._options = None
+  _LISTLABSREQUEST_LABELSENTRY._serialized_options = b'8\001'
+  _LABSERVICE.methods_by_name['ListLabs']._options = None
+  _LABSERVICE.methods_by_name['ListLabs']._serialized_options = b'\202\323\344\223\002\026\022\024/v1/labs/{namespace}'
+  _LABSERVICE.methods_by_name['CreateLab']._options = None
+  _LABSERVICE.methods_by_name['CreateLab']._serialized_options = b'\202\323\344\223\002\r\"\010/v1/labs:\001*'
+  _LABSERVICE.methods_by_name['GetLab']._options = None
+  _LABSERVICE.methods_by_name['GetLab']._serialized_options = b'\202\323\344\223\002\035\022\033/v1/labs/{namespace}/{name}'
+  _LABSERVICE.methods_by_name['UpdateLab']._options = None
+  _LABSERVICE.methods_by_name['UpdateLab']._serialized_options = b'\202\323\344\223\002:\0325/v1/labs/{lab.metadata.namespace}/{lab.metadata.name}:\001*'
+  _LABSERVICE.methods_by_name['DeleteLab']._options = None
+  _LABSERVICE.methods_by_name['DeleteLab']._serialized_options = b'\202\323\344\223\002\035*\033/v1/labs/{namespace}/{name}'
+  _LISTLABSREQUEST._serialized_start=305
+  _LISTLABSREQUEST._serialized_end=537
+  _LISTLABSREQUEST_LABELSENTRY._serialized_start=492
+  _LISTLABSREQUEST_LABELSENTRY._serialized_end=537
+  _LISTLABSRESPONSE._serialized_start=539
+  _LISTLABSRESPONSE._serialized_end=660
+  _LABRESPONSE._serialized_start=662
+  _LABRESPONSE._serialized_end=675
+  _CREATELABREQUEST._serialized_start=677
+  _CREATELABREQUEST._serialized_end=768
+  _CREATELABRESPONSE._serialized_start=770
+  _CREATELABRESPONSE._serialized_end=789
+  _UPDATELABREQUEST._serialized_start=792
+  _UPDATELABREQUEST._serialized_end=931
+  _UPDATELABRESPONSE._serialized_start=933
+  _UPDATELABRESPONSE._serialized_end=952
+  _GETLABREQUEST._serialized_start=954
+  _GETLABREQUEST._serialized_end=1002
+  _GETLABRESPONSE._serialized_start=1004
+  _GETLABRESPONSE._serialized_end=1107
+  _GETLABNAMESPACESREQUEST._serialized_start=1109
+  _GETLABNAMESPACESREQUEST._serialized_end=1167
+  _GETLABNAMESPACESRESPONSE._serialized_start=1169
+  _GETLABNAMESPACESRESPONSE._serialized_end=1280
+  _DELETELABREQUEST._serialized_start=1282
+  _DELETELABREQUEST._serialized_end=1333
+  _DELETELABRESPONSE._serialized_start=1335
+  _DELETELABRESPONSE._serialized_end=1354
+  _LABSERVICE._serialized_start=1357
+  _LABSERVICE._serialized_end=2273
 # @@protoc_insertion_point(module_scope)

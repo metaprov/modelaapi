@@ -1345,6 +1345,20 @@ spec:
                 type: object
               webhook:
                 properties:
+                  contentType:
+                    default: application/json
+                    description: Content type
+                    type: string
+                  headers:
+                    additionalProperties:
+                      type: string
+                    description: custom headers to send
+                    type: object
+                  ssl:
+                    type: boolean
+                  token:
+                    description: The webhook secret token
+                    type: string
                   url:
                     default: ""
                     type: string

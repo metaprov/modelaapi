@@ -3681,6 +3681,9 @@ export namespace NotifierList {
 }
 
 export class NotifierSpec extends jspb.Message {
+  getType(): string;
+  setType(value: string): NotifierSpec;
+
   getTenantref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setTenantref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): NotifierSpec;
   hasTenantref(): boolean;
@@ -3689,17 +3692,14 @@ export class NotifierSpec extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): NotifierSpec;
 
-  getTo(): string;
-  setTo(value: string): NotifierSpec;
-
-  getFrom(): string;
-  setFrom(value: string): NotifierSpec;
-
   getConnectionname(): string;
   setConnectionname(value: string): NotifierSpec;
 
   getOwner(): string;
   setOwner(value: string): NotifierSpec;
+
+  getEmail(): string;
+  setEmail(value: string): NotifierSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): NotifierSpec.AsObject;
@@ -3711,12 +3711,12 @@ export class NotifierSpec extends jspb.Message {
 
 export namespace NotifierSpec {
   export type AsObject = {
+    type: string,
     tenantref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     description: string,
-    to: string,
-    from: string,
     connectionname: string,
     owner: string,
+    email: string,
   }
 }
 
@@ -5576,6 +5576,18 @@ export class WebhookSpec extends jspb.Message {
   getUrl(): string;
   setUrl(value: string): WebhookSpec;
 
+  getContenttype(): string;
+  setContenttype(value: string): WebhookSpec;
+
+  getToken(): string;
+  setToken(value: string): WebhookSpec;
+
+  getHeadersMap(): jspb.Map<string, string>;
+  clearHeadersMap(): WebhookSpec;
+
+  getSsl(): boolean;
+  setSsl(value: boolean): WebhookSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): WebhookSpec.AsObject;
   static toObject(includeInstance: boolean, msg: WebhookSpec): WebhookSpec.AsObject;
@@ -5587,6 +5599,10 @@ export class WebhookSpec extends jspb.Message {
 export namespace WebhookSpec {
   export type AsObject = {
     url: string,
+    contenttype: string,
+    token: string,
+    headersMap: Array<[string, string]>,
+    ssl: boolean,
   }
 }
 

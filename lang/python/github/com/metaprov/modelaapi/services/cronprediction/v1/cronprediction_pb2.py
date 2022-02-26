@@ -3,6 +3,7 @@
 # source: github.com/metaprov/modelaapi/services/cronprediction/v1/cronprediction.proto
 """Generated protocol buffer code."""
 from google.protobuf import descriptor as _descriptor
+from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
@@ -16,629 +17,27 @@ from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1 import generated_pb2 as github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2
 
 
-DESCRIPTOR = _descriptor.FileDescriptor(
-  name='github.com/metaprov/modelaapi/services/cronprediction/v1/cronprediction.proto',
-  package='github.com.metaprov.modelaapi.services.cronprediction.v1',
-  syntax='proto3',
-  serialized_options=b'Z8github.com/metaprov/modelaapi/services/cronprediction/v1',
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nMgithub.com/metaprov/modelaapi/services/cronprediction/v1/cronprediction.proto\x12\x38github.com.metaprov.modelaapi.services.cronprediction.v1\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/api/annotations.proto\x1aIgithub.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1/generated.proto\"\x89\x02\n\x1aListCronPredictionsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12p\n\x06labels\x18\x02 \x03(\x0b\x32`.github.com.metaprov.modelaapi.services.cronprediction.v1.ListCronPredictionsRequest.LabelsEntry\x12\x11\n\tpage_size\x18\x03 \x01(\x05\x12\x12\n\npage_token\x18\x04 \x01(\t\x12\x10\n\x08order_by\x18\x05 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x9e\x01\n\x1bListCronPredictionsResponse\x12\x66\n\x0f\x63ronpredictions\x18\x01 \x01(\x0b\x32M.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionList\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x1e\n\x1c\x43reateCronPredictionResponse\"\x80\x01\n\x1b\x43reateCronPredictionRequest\x12\x61\n\x0e\x63ronprediction\x18\x01 \x01(\x0b\x32I.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPrediction\"\xb0\x01\n\x1bUpdateCronPredictionRequest\x12\x61\n\x0e\x63ronprediction\x18\x01 \x01(\x0b\x32I.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPrediction\x12.\n\nfield_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"\x1e\n\x1cUpdateCronPredictionResponse\";\n\x18GetCronPredictionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x8c\x01\n\x19GetCronPredictionResponse\x12\x61\n\x0e\x63ronprediction\x18\x01 \x01(\x0b\x32I.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPrediction\x12\x0c\n\x04yaml\x18\x02 \x01(\t\">\n\x1b\x44\x65leteCronPredictionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1e\n\x1c\x44\x65leteCronPredictionResponse\"=\n\x1aPauseCronPredictionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1d\n\x1bPauseCronPredictionResponse\">\n\x1bResumeCronPredictionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1e\n\x1cResumeCronPredictionResponse\"}\n\x18RunCronPredictionRequest\x12\x61\n\x0e\x63ronprediction\x18\x01 \x01(\x0b\x32I.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPrediction\"\x1b\n\x19RunCronPredictionResponse2\xa0\x0f\n\x15\x43ronPredictionService\x12\xeb\x01\n\x13ListCronPredictions\x12T.github.com.metaprov.modelaapi.services.cronprediction.v1.ListCronPredictionsRequest\x1aU.github.com.metaprov.modelaapi.services.cronprediction.v1.ListCronPredictionsResponse\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/v1/cronpredictions/{namespace}\x12\xe5\x01\n\x14\x43reateCronPrediction\x12U.github.com.metaprov.modelaapi.services.cronprediction.v1.CreateCronPredictionRequest\x1aV.github.com.metaprov.modelaapi.services.cronprediction.v1.CreateCronPredictionResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\"\x13/v1/cronpredictions:\x01*\x12\xe0\x01\n\x11GetCronPrediction\x12R.github.com.metaprov.modelaapi.services.cronprediction.v1.GetCronPredictionRequest\x1aS.github.com.metaprov.modelaapi.services.cronprediction.v1.GetCronPredictionResponse\"\"\x82\xd3\xe4\x93\x02\x1c\x12\x1a/v1/cronpredictions/{name}\x12\x84\x02\n\x14UpdateCronPrediction\x12U.github.com.metaprov.modelaapi.services.cronprediction.v1.UpdateCronPredictionRequest\x1aV.github.com.metaprov.modelaapi.services.cronprediction.v1.UpdateCronPredictionResponse\"=\x82\xd3\xe4\x93\x02\x37\x1a\x32/v1/cronpredictions/{cronprediction.metadata.name}:\x01*\x12\xe9\x01\n\x14\x44\x65leteCronPrediction\x12U.github.com.metaprov.modelaapi.services.cronprediction.v1.DeleteCronPredictionRequest\x1aV.github.com.metaprov.modelaapi.services.cronprediction.v1.DeleteCronPredictionResponse\"\"\x82\xd3\xe4\x93\x02\x1c*\x1a/v1/cronpredictions/{name}\x12\xec\x01\n\x13PauseCronPrediction\x12T.github.com.metaprov.modelaapi.services.cronprediction.v1.PauseCronPredictionRequest\x1aU.github.com.metaprov.modelaapi.services.cronprediction.v1.PauseCronPredictionResponse\"(\x82\xd3\xe4\x93\x02\"\" /v1/cronpredictions/{name}:pause\x12\xf0\x01\n\x14ResumeCronPrediction\x12U.github.com.metaprov.modelaapi.services.cronprediction.v1.ResumeCronPredictionRequest\x1aV.github.com.metaprov.modelaapi.services.cronprediction.v1.ResumeCronPredictionResponse\")\x82\xd3\xe4\x93\x02#\"!/v1/cronpredictions/{name}:resume\x12\xf8\x01\n\rRunPrediction\x12R.github.com.metaprov.modelaapi.services.cronprediction.v1.RunCronPredictionRequest\x1aS.github.com.metaprov.modelaapi.services.cronprediction.v1.RunCronPredictionResponse\">\x82\xd3\xe4\x93\x02\x38\"6/v1/cronpredictions/{cronprediction.metadata.name}:runB:Z8github.com/metaprov/modelaapi/services/cronprediction/v1b\x06proto3'
-  ,
-  dependencies=[google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nMgithub.com/metaprov/modelaapi/services/cronprediction/v1/cronprediction.proto\x12\x38github.com.metaprov.modelaapi.services.cronprediction.v1\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/api/annotations.proto\x1aIgithub.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1/generated.proto\"\x89\x02\n\x1aListCronPredictionsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12p\n\x06labels\x18\x02 \x03(\x0b\x32`.github.com.metaprov.modelaapi.services.cronprediction.v1.ListCronPredictionsRequest.LabelsEntry\x12\x11\n\tpage_size\x18\x03 \x01(\x05\x12\x12\n\npage_token\x18\x04 \x01(\t\x12\x10\n\x08order_by\x18\x05 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x9e\x01\n\x1bListCronPredictionsResponse\x12\x66\n\x0f\x63ronpredictions\x18\x01 \x01(\x0b\x32M.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionList\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x1e\n\x1c\x43reateCronPredictionResponse\"\x80\x01\n\x1b\x43reateCronPredictionRequest\x12\x61\n\x0e\x63ronprediction\x18\x01 \x01(\x0b\x32I.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPrediction\"\xb0\x01\n\x1bUpdateCronPredictionRequest\x12\x61\n\x0e\x63ronprediction\x18\x01 \x01(\x0b\x32I.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPrediction\x12.\n\nfield_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"\x1e\n\x1cUpdateCronPredictionResponse\";\n\x18GetCronPredictionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x8c\x01\n\x19GetCronPredictionResponse\x12\x61\n\x0e\x63ronprediction\x18\x01 \x01(\x0b\x32I.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPrediction\x12\x0c\n\x04yaml\x18\x02 \x01(\t\">\n\x1b\x44\x65leteCronPredictionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1e\n\x1c\x44\x65leteCronPredictionResponse\"=\n\x1aPauseCronPredictionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1d\n\x1bPauseCronPredictionResponse\">\n\x1bResumeCronPredictionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1e\n\x1cResumeCronPredictionResponse\"}\n\x18RunCronPredictionRequest\x12\x61\n\x0e\x63ronprediction\x18\x01 \x01(\x0b\x32I.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPrediction\"\x1b\n\x19RunCronPredictionResponse2\xa0\x0f\n\x15\x43ronPredictionService\x12\xeb\x01\n\x13ListCronPredictions\x12T.github.com.metaprov.modelaapi.services.cronprediction.v1.ListCronPredictionsRequest\x1aU.github.com.metaprov.modelaapi.services.cronprediction.v1.ListCronPredictionsResponse\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/v1/cronpredictions/{namespace}\x12\xe5\x01\n\x14\x43reateCronPrediction\x12U.github.com.metaprov.modelaapi.services.cronprediction.v1.CreateCronPredictionRequest\x1aV.github.com.metaprov.modelaapi.services.cronprediction.v1.CreateCronPredictionResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\"\x13/v1/cronpredictions:\x01*\x12\xe0\x01\n\x11GetCronPrediction\x12R.github.com.metaprov.modelaapi.services.cronprediction.v1.GetCronPredictionRequest\x1aS.github.com.metaprov.modelaapi.services.cronprediction.v1.GetCronPredictionResponse\"\"\x82\xd3\xe4\x93\x02\x1c\x12\x1a/v1/cronpredictions/{name}\x12\x84\x02\n\x14UpdateCronPrediction\x12U.github.com.metaprov.modelaapi.services.cronprediction.v1.UpdateCronPredictionRequest\x1aV.github.com.metaprov.modelaapi.services.cronprediction.v1.UpdateCronPredictionResponse\"=\x82\xd3\xe4\x93\x02\x37\x1a\x32/v1/cronpredictions/{cronprediction.metadata.name}:\x01*\x12\xe9\x01\n\x14\x44\x65leteCronPrediction\x12U.github.com.metaprov.modelaapi.services.cronprediction.v1.DeleteCronPredictionRequest\x1aV.github.com.metaprov.modelaapi.services.cronprediction.v1.DeleteCronPredictionResponse\"\"\x82\xd3\xe4\x93\x02\x1c*\x1a/v1/cronpredictions/{name}\x12\xec\x01\n\x13PauseCronPrediction\x12T.github.com.metaprov.modelaapi.services.cronprediction.v1.PauseCronPredictionRequest\x1aU.github.com.metaprov.modelaapi.services.cronprediction.v1.PauseCronPredictionResponse\"(\x82\xd3\xe4\x93\x02\"\" /v1/cronpredictions/{name}:pause\x12\xf0\x01\n\x14ResumeCronPrediction\x12U.github.com.metaprov.modelaapi.services.cronprediction.v1.ResumeCronPredictionRequest\x1aV.github.com.metaprov.modelaapi.services.cronprediction.v1.ResumeCronPredictionResponse\")\x82\xd3\xe4\x93\x02#\"!/v1/cronpredictions/{name}:resume\x12\xf8\x01\n\rRunPrediction\x12R.github.com.metaprov.modelaapi.services.cronprediction.v1.RunCronPredictionRequest\x1aS.github.com.metaprov.modelaapi.services.cronprediction.v1.RunCronPredictionResponse\">\x82\xd3\xe4\x93\x02\x38\"6/v1/cronpredictions/{cronprediction.metadata.name}:runB:Z8github.com/metaprov/modelaapi/services/cronprediction/v1b\x06proto3')
 
 
 
-
-_LISTCRONPREDICTIONSREQUEST_LABELSENTRY = _descriptor.Descriptor(
-  name='LabelsEntry',
-  full_name='github.com.metaprov.modelaapi.services.cronprediction.v1.ListCronPredictionsRequest.LabelsEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modelaapi.services.cronprediction.v1.ListCronPredictionsRequest.LabelsEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modelaapi.services.cronprediction.v1.ListCronPredictionsRequest.LabelsEntry.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=499,
-  serialized_end=544,
-)
-
-_LISTCRONPREDICTIONSREQUEST = _descriptor.Descriptor(
-  name='ListCronPredictionsRequest',
-  full_name='github.com.metaprov.modelaapi.services.cronprediction.v1.ListCronPredictionsRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modelaapi.services.cronprediction.v1.ListCronPredictionsRequest.namespace', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modelaapi.services.cronprediction.v1.ListCronPredictionsRequest.labels', index=1,
-      number=2, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_size', full_name='github.com.metaprov.modelaapi.services.cronprediction.v1.ListCronPredictionsRequest.page_size', index=2,
-      number=3, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_token', full_name='github.com.metaprov.modelaapi.services.cronprediction.v1.ListCronPredictionsRequest.page_token', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='order_by', full_name='github.com.metaprov.modelaapi.services.cronprediction.v1.ListCronPredictionsRequest.order_by', index=4,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[_LISTCRONPREDICTIONSREQUEST_LABELSENTRY, ],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=279,
-  serialized_end=544,
-)
-
-
-_LISTCRONPREDICTIONSRESPONSE = _descriptor.Descriptor(
-  name='ListCronPredictionsResponse',
-  full_name='github.com.metaprov.modelaapi.services.cronprediction.v1.ListCronPredictionsResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='cronpredictions', full_name='github.com.metaprov.modelaapi.services.cronprediction.v1.ListCronPredictionsResponse.cronpredictions', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='next_page_token', full_name='github.com.metaprov.modelaapi.services.cronprediction.v1.ListCronPredictionsResponse.next_page_token', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=547,
-  serialized_end=705,
-)
-
-
-_CREATECRONPREDICTIONRESPONSE = _descriptor.Descriptor(
-  name='CreateCronPredictionResponse',
-  full_name='github.com.metaprov.modelaapi.services.cronprediction.v1.CreateCronPredictionResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=707,
-  serialized_end=737,
-)
-
-
-_CREATECRONPREDICTIONREQUEST = _descriptor.Descriptor(
-  name='CreateCronPredictionRequest',
-  full_name='github.com.metaprov.modelaapi.services.cronprediction.v1.CreateCronPredictionRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='cronprediction', full_name='github.com.metaprov.modelaapi.services.cronprediction.v1.CreateCronPredictionRequest.cronprediction', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=740,
-  serialized_end=868,
-)
-
-
-_UPDATECRONPREDICTIONREQUEST = _descriptor.Descriptor(
-  name='UpdateCronPredictionRequest',
-  full_name='github.com.metaprov.modelaapi.services.cronprediction.v1.UpdateCronPredictionRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='cronprediction', full_name='github.com.metaprov.modelaapi.services.cronprediction.v1.UpdateCronPredictionRequest.cronprediction', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='field_mask', full_name='github.com.metaprov.modelaapi.services.cronprediction.v1.UpdateCronPredictionRequest.field_mask', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=871,
-  serialized_end=1047,
-)
-
-
-_UPDATECRONPREDICTIONRESPONSE = _descriptor.Descriptor(
-  name='UpdateCronPredictionResponse',
-  full_name='github.com.metaprov.modelaapi.services.cronprediction.v1.UpdateCronPredictionResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1049,
-  serialized_end=1079,
-)
-
-
-_GETCRONPREDICTIONREQUEST = _descriptor.Descriptor(
-  name='GetCronPredictionRequest',
-  full_name='github.com.metaprov.modelaapi.services.cronprediction.v1.GetCronPredictionRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modelaapi.services.cronprediction.v1.GetCronPredictionRequest.namespace', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modelaapi.services.cronprediction.v1.GetCronPredictionRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1081,
-  serialized_end=1140,
-)
-
-
-_GETCRONPREDICTIONRESPONSE = _descriptor.Descriptor(
-  name='GetCronPredictionResponse',
-  full_name='github.com.metaprov.modelaapi.services.cronprediction.v1.GetCronPredictionResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='cronprediction', full_name='github.com.metaprov.modelaapi.services.cronprediction.v1.GetCronPredictionResponse.cronprediction', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='yaml', full_name='github.com.metaprov.modelaapi.services.cronprediction.v1.GetCronPredictionResponse.yaml', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1143,
-  serialized_end=1283,
-)
-
-
-_DELETECRONPREDICTIONREQUEST = _descriptor.Descriptor(
-  name='DeleteCronPredictionRequest',
-  full_name='github.com.metaprov.modelaapi.services.cronprediction.v1.DeleteCronPredictionRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modelaapi.services.cronprediction.v1.DeleteCronPredictionRequest.namespace', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modelaapi.services.cronprediction.v1.DeleteCronPredictionRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1285,
-  serialized_end=1347,
-)
-
-
-_DELETECRONPREDICTIONRESPONSE = _descriptor.Descriptor(
-  name='DeleteCronPredictionResponse',
-  full_name='github.com.metaprov.modelaapi.services.cronprediction.v1.DeleteCronPredictionResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1349,
-  serialized_end=1379,
-)
-
-
-_PAUSECRONPREDICTIONREQUEST = _descriptor.Descriptor(
-  name='PauseCronPredictionRequest',
-  full_name='github.com.metaprov.modelaapi.services.cronprediction.v1.PauseCronPredictionRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modelaapi.services.cronprediction.v1.PauseCronPredictionRequest.namespace', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modelaapi.services.cronprediction.v1.PauseCronPredictionRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1381,
-  serialized_end=1442,
-)
-
-
-_PAUSECRONPREDICTIONRESPONSE = _descriptor.Descriptor(
-  name='PauseCronPredictionResponse',
-  full_name='github.com.metaprov.modelaapi.services.cronprediction.v1.PauseCronPredictionResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1444,
-  serialized_end=1473,
-)
-
-
-_RESUMECRONPREDICTIONREQUEST = _descriptor.Descriptor(
-  name='ResumeCronPredictionRequest',
-  full_name='github.com.metaprov.modelaapi.services.cronprediction.v1.ResumeCronPredictionRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modelaapi.services.cronprediction.v1.ResumeCronPredictionRequest.namespace', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modelaapi.services.cronprediction.v1.ResumeCronPredictionRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1475,
-  serialized_end=1537,
-)
-
-
-_RESUMECRONPREDICTIONRESPONSE = _descriptor.Descriptor(
-  name='ResumeCronPredictionResponse',
-  full_name='github.com.metaprov.modelaapi.services.cronprediction.v1.ResumeCronPredictionResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1539,
-  serialized_end=1569,
-)
-
-
-_RUNCRONPREDICTIONREQUEST = _descriptor.Descriptor(
-  name='RunCronPredictionRequest',
-  full_name='github.com.metaprov.modelaapi.services.cronprediction.v1.RunCronPredictionRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='cronprediction', full_name='github.com.metaprov.modelaapi.services.cronprediction.v1.RunCronPredictionRequest.cronprediction', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1571,
-  serialized_end=1696,
-)
-
-
-_RUNCRONPREDICTIONRESPONSE = _descriptor.Descriptor(
-  name='RunCronPredictionResponse',
-  full_name='github.com.metaprov.modelaapi.services.cronprediction.v1.RunCronPredictionResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1698,
-  serialized_end=1725,
-)
-
-_LISTCRONPREDICTIONSREQUEST_LABELSENTRY.containing_type = _LISTCRONPREDICTIONSREQUEST
-_LISTCRONPREDICTIONSREQUEST.fields_by_name['labels'].message_type = _LISTCRONPREDICTIONSREQUEST_LABELSENTRY
-_LISTCRONPREDICTIONSRESPONSE.fields_by_name['cronpredictions'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2._CRONPREDICTIONLIST
-_CREATECRONPREDICTIONREQUEST.fields_by_name['cronprediction'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2._CRONPREDICTION
-_UPDATECRONPREDICTIONREQUEST.fields_by_name['cronprediction'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2._CRONPREDICTION
-_UPDATECRONPREDICTIONREQUEST.fields_by_name['field_mask'].message_type = google_dot_protobuf_dot_field__mask__pb2._FIELDMASK
-_GETCRONPREDICTIONRESPONSE.fields_by_name['cronprediction'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2._CRONPREDICTION
-_RUNCRONPREDICTIONREQUEST.fields_by_name['cronprediction'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2._CRONPREDICTION
-DESCRIPTOR.message_types_by_name['ListCronPredictionsRequest'] = _LISTCRONPREDICTIONSREQUEST
-DESCRIPTOR.message_types_by_name['ListCronPredictionsResponse'] = _LISTCRONPREDICTIONSRESPONSE
-DESCRIPTOR.message_types_by_name['CreateCronPredictionResponse'] = _CREATECRONPREDICTIONRESPONSE
-DESCRIPTOR.message_types_by_name['CreateCronPredictionRequest'] = _CREATECRONPREDICTIONREQUEST
-DESCRIPTOR.message_types_by_name['UpdateCronPredictionRequest'] = _UPDATECRONPREDICTIONREQUEST
-DESCRIPTOR.message_types_by_name['UpdateCronPredictionResponse'] = _UPDATECRONPREDICTIONRESPONSE
-DESCRIPTOR.message_types_by_name['GetCronPredictionRequest'] = _GETCRONPREDICTIONREQUEST
-DESCRIPTOR.message_types_by_name['GetCronPredictionResponse'] = _GETCRONPREDICTIONRESPONSE
-DESCRIPTOR.message_types_by_name['DeleteCronPredictionRequest'] = _DELETECRONPREDICTIONREQUEST
-DESCRIPTOR.message_types_by_name['DeleteCronPredictionResponse'] = _DELETECRONPREDICTIONRESPONSE
-DESCRIPTOR.message_types_by_name['PauseCronPredictionRequest'] = _PAUSECRONPREDICTIONREQUEST
-DESCRIPTOR.message_types_by_name['PauseCronPredictionResponse'] = _PAUSECRONPREDICTIONRESPONSE
-DESCRIPTOR.message_types_by_name['ResumeCronPredictionRequest'] = _RESUMECRONPREDICTIONREQUEST
-DESCRIPTOR.message_types_by_name['ResumeCronPredictionResponse'] = _RESUMECRONPREDICTIONRESPONSE
-DESCRIPTOR.message_types_by_name['RunCronPredictionRequest'] = _RUNCRONPREDICTIONREQUEST
-DESCRIPTOR.message_types_by_name['RunCronPredictionResponse'] = _RUNCRONPREDICTIONRESPONSE
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
+_LISTCRONPREDICTIONSREQUEST = DESCRIPTOR.message_types_by_name['ListCronPredictionsRequest']
+_LISTCRONPREDICTIONSREQUEST_LABELSENTRY = _LISTCRONPREDICTIONSREQUEST.nested_types_by_name['LabelsEntry']
+_LISTCRONPREDICTIONSRESPONSE = DESCRIPTOR.message_types_by_name['ListCronPredictionsResponse']
+_CREATECRONPREDICTIONRESPONSE = DESCRIPTOR.message_types_by_name['CreateCronPredictionResponse']
+_CREATECRONPREDICTIONREQUEST = DESCRIPTOR.message_types_by_name['CreateCronPredictionRequest']
+_UPDATECRONPREDICTIONREQUEST = DESCRIPTOR.message_types_by_name['UpdateCronPredictionRequest']
+_UPDATECRONPREDICTIONRESPONSE = DESCRIPTOR.message_types_by_name['UpdateCronPredictionResponse']
+_GETCRONPREDICTIONREQUEST = DESCRIPTOR.message_types_by_name['GetCronPredictionRequest']
+_GETCRONPREDICTIONRESPONSE = DESCRIPTOR.message_types_by_name['GetCronPredictionResponse']
+_DELETECRONPREDICTIONREQUEST = DESCRIPTOR.message_types_by_name['DeleteCronPredictionRequest']
+_DELETECRONPREDICTIONRESPONSE = DESCRIPTOR.message_types_by_name['DeleteCronPredictionResponse']
+_PAUSECRONPREDICTIONREQUEST = DESCRIPTOR.message_types_by_name['PauseCronPredictionRequest']
+_PAUSECRONPREDICTIONRESPONSE = DESCRIPTOR.message_types_by_name['PauseCronPredictionResponse']
+_RESUMECRONPREDICTIONREQUEST = DESCRIPTOR.message_types_by_name['ResumeCronPredictionRequest']
+_RESUMECRONPREDICTIONRESPONSE = DESCRIPTOR.message_types_by_name['ResumeCronPredictionResponse']
+_RUNCRONPREDICTIONREQUEST = DESCRIPTOR.message_types_by_name['RunCronPredictionRequest']
+_RUNCRONPREDICTIONRESPONSE = DESCRIPTOR.message_types_by_name['RunCronPredictionResponse']
 ListCronPredictionsRequest = _reflection.GeneratedProtocolMessageType('ListCronPredictionsRequest', (_message.Message,), {
 
   'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
@@ -759,103 +158,63 @@ RunCronPredictionResponse = _reflection.GeneratedProtocolMessageType('RunCronPre
   })
 _sym_db.RegisterMessage(RunCronPredictionResponse)
 
+_CRONPREDICTIONSERVICE = DESCRIPTOR.services_by_name['CronPredictionService']
+if _descriptor._USE_C_DESCRIPTORS == False:
 
-DESCRIPTOR._options = None
-_LISTCRONPREDICTIONSREQUEST_LABELSENTRY._options = None
-
-_CRONPREDICTIONSERVICE = _descriptor.ServiceDescriptor(
-  name='CronPredictionService',
-  full_name='github.com.metaprov.modelaapi.services.cronprediction.v1.CronPredictionService',
-  file=DESCRIPTOR,
-  index=0,
-  serialized_options=None,
-  create_key=_descriptor._internal_create_key,
-  serialized_start=1728,
-  serialized_end=3680,
-  methods=[
-  _descriptor.MethodDescriptor(
-    name='ListCronPredictions',
-    full_name='github.com.metaprov.modelaapi.services.cronprediction.v1.CronPredictionService.ListCronPredictions',
-    index=0,
-    containing_service=None,
-    input_type=_LISTCRONPREDICTIONSREQUEST,
-    output_type=_LISTCRONPREDICTIONSRESPONSE,
-    serialized_options=b'\202\323\344\223\002!\022\037/v1/cronpredictions/{namespace}',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='CreateCronPrediction',
-    full_name='github.com.metaprov.modelaapi.services.cronprediction.v1.CronPredictionService.CreateCronPrediction',
-    index=1,
-    containing_service=None,
-    input_type=_CREATECRONPREDICTIONREQUEST,
-    output_type=_CREATECRONPREDICTIONRESPONSE,
-    serialized_options=b'\202\323\344\223\002\030\"\023/v1/cronpredictions:\001*',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='GetCronPrediction',
-    full_name='github.com.metaprov.modelaapi.services.cronprediction.v1.CronPredictionService.GetCronPrediction',
-    index=2,
-    containing_service=None,
-    input_type=_GETCRONPREDICTIONREQUEST,
-    output_type=_GETCRONPREDICTIONRESPONSE,
-    serialized_options=b'\202\323\344\223\002\034\022\032/v1/cronpredictions/{name}',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='UpdateCronPrediction',
-    full_name='github.com.metaprov.modelaapi.services.cronprediction.v1.CronPredictionService.UpdateCronPrediction',
-    index=3,
-    containing_service=None,
-    input_type=_UPDATECRONPREDICTIONREQUEST,
-    output_type=_UPDATECRONPREDICTIONRESPONSE,
-    serialized_options=b'\202\323\344\223\0027\0322/v1/cronpredictions/{cronprediction.metadata.name}:\001*',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='DeleteCronPrediction',
-    full_name='github.com.metaprov.modelaapi.services.cronprediction.v1.CronPredictionService.DeleteCronPrediction',
-    index=4,
-    containing_service=None,
-    input_type=_DELETECRONPREDICTIONREQUEST,
-    output_type=_DELETECRONPREDICTIONRESPONSE,
-    serialized_options=b'\202\323\344\223\002\034*\032/v1/cronpredictions/{name}',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='PauseCronPrediction',
-    full_name='github.com.metaprov.modelaapi.services.cronprediction.v1.CronPredictionService.PauseCronPrediction',
-    index=5,
-    containing_service=None,
-    input_type=_PAUSECRONPREDICTIONREQUEST,
-    output_type=_PAUSECRONPREDICTIONRESPONSE,
-    serialized_options=b'\202\323\344\223\002\"\" /v1/cronpredictions/{name}:pause',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='ResumeCronPrediction',
-    full_name='github.com.metaprov.modelaapi.services.cronprediction.v1.CronPredictionService.ResumeCronPrediction',
-    index=6,
-    containing_service=None,
-    input_type=_RESUMECRONPREDICTIONREQUEST,
-    output_type=_RESUMECRONPREDICTIONRESPONSE,
-    serialized_options=b'\202\323\344\223\002#\"!/v1/cronpredictions/{name}:resume',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='RunPrediction',
-    full_name='github.com.metaprov.modelaapi.services.cronprediction.v1.CronPredictionService.RunPrediction',
-    index=7,
-    containing_service=None,
-    input_type=_RUNCRONPREDICTIONREQUEST,
-    output_type=_RUNCRONPREDICTIONRESPONSE,
-    serialized_options=b'\202\323\344\223\0028\"6/v1/cronpredictions/{cronprediction.metadata.name}:run',
-    create_key=_descriptor._internal_create_key,
-  ),
-])
-_sym_db.RegisterServiceDescriptor(_CRONPREDICTIONSERVICE)
-
-DESCRIPTOR.services_by_name['CronPredictionService'] = _CRONPREDICTIONSERVICE
-
+  DESCRIPTOR._options = None
+  DESCRIPTOR._serialized_options = b'Z8github.com/metaprov/modelaapi/services/cronprediction/v1'
+  _LISTCRONPREDICTIONSREQUEST_LABELSENTRY._options = None
+  _LISTCRONPREDICTIONSREQUEST_LABELSENTRY._serialized_options = b'8\001'
+  _CRONPREDICTIONSERVICE.methods_by_name['ListCronPredictions']._options = None
+  _CRONPREDICTIONSERVICE.methods_by_name['ListCronPredictions']._serialized_options = b'\202\323\344\223\002!\022\037/v1/cronpredictions/{namespace}'
+  _CRONPREDICTIONSERVICE.methods_by_name['CreateCronPrediction']._options = None
+  _CRONPREDICTIONSERVICE.methods_by_name['CreateCronPrediction']._serialized_options = b'\202\323\344\223\002\030\"\023/v1/cronpredictions:\001*'
+  _CRONPREDICTIONSERVICE.methods_by_name['GetCronPrediction']._options = None
+  _CRONPREDICTIONSERVICE.methods_by_name['GetCronPrediction']._serialized_options = b'\202\323\344\223\002\034\022\032/v1/cronpredictions/{name}'
+  _CRONPREDICTIONSERVICE.methods_by_name['UpdateCronPrediction']._options = None
+  _CRONPREDICTIONSERVICE.methods_by_name['UpdateCronPrediction']._serialized_options = b'\202\323\344\223\0027\0322/v1/cronpredictions/{cronprediction.metadata.name}:\001*'
+  _CRONPREDICTIONSERVICE.methods_by_name['DeleteCronPrediction']._options = None
+  _CRONPREDICTIONSERVICE.methods_by_name['DeleteCronPrediction']._serialized_options = b'\202\323\344\223\002\034*\032/v1/cronpredictions/{name}'
+  _CRONPREDICTIONSERVICE.methods_by_name['PauseCronPrediction']._options = None
+  _CRONPREDICTIONSERVICE.methods_by_name['PauseCronPrediction']._serialized_options = b'\202\323\344\223\002\"\" /v1/cronpredictions/{name}:pause'
+  _CRONPREDICTIONSERVICE.methods_by_name['ResumeCronPrediction']._options = None
+  _CRONPREDICTIONSERVICE.methods_by_name['ResumeCronPrediction']._serialized_options = b'\202\323\344\223\002#\"!/v1/cronpredictions/{name}:resume'
+  _CRONPREDICTIONSERVICE.methods_by_name['RunPrediction']._options = None
+  _CRONPREDICTIONSERVICE.methods_by_name['RunPrediction']._serialized_options = b'\202\323\344\223\0028\"6/v1/cronpredictions/{cronprediction.metadata.name}:run'
+  _LISTCRONPREDICTIONSREQUEST._serialized_start=279
+  _LISTCRONPREDICTIONSREQUEST._serialized_end=544
+  _LISTCRONPREDICTIONSREQUEST_LABELSENTRY._serialized_start=499
+  _LISTCRONPREDICTIONSREQUEST_LABELSENTRY._serialized_end=544
+  _LISTCRONPREDICTIONSRESPONSE._serialized_start=547
+  _LISTCRONPREDICTIONSRESPONSE._serialized_end=705
+  _CREATECRONPREDICTIONRESPONSE._serialized_start=707
+  _CREATECRONPREDICTIONRESPONSE._serialized_end=737
+  _CREATECRONPREDICTIONREQUEST._serialized_start=740
+  _CREATECRONPREDICTIONREQUEST._serialized_end=868
+  _UPDATECRONPREDICTIONREQUEST._serialized_start=871
+  _UPDATECRONPREDICTIONREQUEST._serialized_end=1047
+  _UPDATECRONPREDICTIONRESPONSE._serialized_start=1049
+  _UPDATECRONPREDICTIONRESPONSE._serialized_end=1079
+  _GETCRONPREDICTIONREQUEST._serialized_start=1081
+  _GETCRONPREDICTIONREQUEST._serialized_end=1140
+  _GETCRONPREDICTIONRESPONSE._serialized_start=1143
+  _GETCRONPREDICTIONRESPONSE._serialized_end=1283
+  _DELETECRONPREDICTIONREQUEST._serialized_start=1285
+  _DELETECRONPREDICTIONREQUEST._serialized_end=1347
+  _DELETECRONPREDICTIONRESPONSE._serialized_start=1349
+  _DELETECRONPREDICTIONRESPONSE._serialized_end=1379
+  _PAUSECRONPREDICTIONREQUEST._serialized_start=1381
+  _PAUSECRONPREDICTIONREQUEST._serialized_end=1442
+  _PAUSECRONPREDICTIONRESPONSE._serialized_start=1444
+  _PAUSECRONPREDICTIONRESPONSE._serialized_end=1473
+  _RESUMECRONPREDICTIONREQUEST._serialized_start=1475
+  _RESUMECRONPREDICTIONREQUEST._serialized_end=1537
+  _RESUMECRONPREDICTIONRESPONSE._serialized_start=1539
+  _RESUMECRONPREDICTIONRESPONSE._serialized_end=1569
+  _RUNCRONPREDICTIONREQUEST._serialized_start=1571
+  _RUNCRONPREDICTIONREQUEST._serialized_end=1696
+  _RUNCRONPREDICTIONRESPONSE._serialized_start=1698
+  _RUNCRONPREDICTIONRESPONSE._serialized_end=1725
+  _CRONPREDICTIONSERVICE._serialized_start=1728
+  _CRONPREDICTIONSERVICE._serialized_end=3680
 # @@protoc_insertion_point(module_scope)

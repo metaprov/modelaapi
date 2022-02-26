@@ -37432,12 +37432,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec.prototy
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
+    type: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     tenantref: (f = msg.getTenantref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
-    description: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    to: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-    from: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    connectionname: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
-    owner: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f
+    description: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    connectionname: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    owner: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    email: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -37475,29 +37475,29 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec.deseria
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setType(value);
+      break;
+    case 2:
       var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
       reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
       msg.setTenantref(value);
       break;
-    case 2:
+    case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.setDescription(value);
       break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setTo(value);
-      break;
     case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setFrom(value);
-      break;
-    case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setConnectionname(value);
       break;
-    case 6:
+    case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setOwner(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setEmail(value);
       break;
     default:
       reader.skipField();
@@ -37528,19 +37528,19 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec.prototy
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
   f = message.getTenantref();
   if (f != null) {
     writer.writeMessage(
-      1,
+      2,
       f,
       k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 2));
-  if (f != null) {
-    writer.writeString(
-      2,
-      f
     );
   }
   f = /** @type {string} */ (jspb.Message.getField(message, 3));
@@ -37575,12 +37575,48 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec.seriali
 
 
 /**
- * optional k8s.io.api.core.v1.ObjectReference tenantRef = 1;
+ * optional string type = 1;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec.prototype.getType = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec.prototype.setType = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec.prototype.clearType = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec.prototype.hasType = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional k8s.io.api.core.v1.ObjectReference tenantRef = 2;
  * @return {?proto.k8s.io.api.core.v1.ObjectReference}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec.prototype.getTenantref = function() {
   return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
-    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 1));
+    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 2));
 };
 
 
@@ -37589,7 +37625,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec.prototy
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec.prototype.setTenantref = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
+  return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
@@ -37607,51 +37643,15 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec.prototy
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec.prototype.hasTenantref = function() {
-  return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional string description = 2;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec.prototype.getDescription = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec.prototype.setDescription = function(value) {
-  return jspb.Message.setField(this, 2, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec.prototype.clearDescription = function() {
-  return jspb.Message.setField(this, 2, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec.prototype.hasDescription = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional string to = 3;
+ * optional string description = 3;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec.prototype.getTo = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec.prototype.getDescription = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -37660,7 +37660,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec.prototy
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec.prototype.setTo = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec.prototype.setDescription = function(value) {
   return jspb.Message.setField(this, 3, value);
 };
 
@@ -37669,7 +37669,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec.prototy
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec.prototype.clearTo = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec.prototype.clearDescription = function() {
   return jspb.Message.setField(this, 3, undefined);
 };
 
@@ -37678,16 +37678,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec.prototy
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec.prototype.hasTo = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec.prototype.hasDescription = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional string from = 4;
+ * optional string connectionName = 4;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec.prototype.getFrom = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec.prototype.getConnectionname = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
@@ -37696,7 +37696,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec.prototy
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec.prototype.setFrom = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec.prototype.setConnectionname = function(value) {
   return jspb.Message.setField(this, 4, value);
 };
 
@@ -37705,7 +37705,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec.prototy
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec.prototype.clearFrom = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec.prototype.clearConnectionname = function() {
   return jspb.Message.setField(this, 4, undefined);
 };
 
@@ -37714,16 +37714,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec.prototy
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec.prototype.hasFrom = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec.prototype.hasConnectionname = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * optional string connectionName = 5;
+ * optional string owner = 5;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec.prototype.getConnectionname = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec.prototype.getOwner = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
@@ -37732,7 +37732,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec.prototy
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec.prototype.setConnectionname = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec.prototype.setOwner = function(value) {
   return jspb.Message.setField(this, 5, value);
 };
 
@@ -37741,7 +37741,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec.prototy
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec.prototype.clearConnectionname = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec.prototype.clearOwner = function() {
   return jspb.Message.setField(this, 5, undefined);
 };
 
@@ -37750,16 +37750,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec.prototy
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec.prototype.hasConnectionname = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec.prototype.hasOwner = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 
 
 /**
- * optional string owner = 6;
+ * optional string email = 6;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec.prototype.getOwner = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec.prototype.getEmail = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
@@ -37768,7 +37768,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec.prototy
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec.prototype.setOwner = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec.prototype.setEmail = function(value) {
   return jspb.Message.setField(this, 6, value);
 };
 
@@ -37777,7 +37777,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec.prototy
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec.prototype.clearOwner = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec.prototype.clearEmail = function() {
   return jspb.Message.setField(this, 6, undefined);
 };
 
@@ -37786,7 +37786,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec.prototy
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec.prototype.hasOwner = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec.prototype.hasEmail = function() {
   return jspb.Message.getField(this, 6) != null;
 };
 
@@ -55406,7 +55406,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.WebhookSpec.prototyp
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.WebhookSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
-    url: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f
+    url: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    contenttype: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    token: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    headersMap: (f = msg.getHeadersMap()) ? f.toObject(includeInstance, undefined) : [],
+    ssl: (f = jspb.Message.getBooleanField(msg, 5)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -55447,6 +55451,24 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.WebhookSpec.deserial
       var value = /** @type {string} */ (reader.readString());
       msg.setUrl(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setContenttype(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setToken(value);
+      break;
+    case 4:
+      var value = msg.getHeadersMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
+         });
+      break;
+    case 5:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setSsl(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -55480,6 +55502,31 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.WebhookSpec.serializ
   if (f != null) {
     writer.writeString(
       1,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getHeadersMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(4, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 5));
+  if (f != null) {
+    writer.writeBool(
+      5,
       f
     );
   }
@@ -55519,6 +55566,136 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.WebhookSpec.prototyp
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.WebhookSpec.prototype.hasUrl = function() {
   return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string contentType = 2;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.WebhookSpec.prototype.getContenttype = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.WebhookSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.WebhookSpec.prototype.setContenttype = function(value) {
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.WebhookSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.WebhookSpec.prototype.clearContenttype = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.WebhookSpec.prototype.hasContenttype = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional string token = 3;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.WebhookSpec.prototype.getToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.WebhookSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.WebhookSpec.prototype.setToken = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.WebhookSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.WebhookSpec.prototype.clearToken = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.WebhookSpec.prototype.hasToken = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * map<string, string> headers = 4;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,string>}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.WebhookSpec.prototype.getHeadersMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,string>} */ (
+      jspb.Message.getMapField(this, 4, opt_noLazyCreate,
+      null));
+};
+
+
+/**
+ * Clears values from the map. The map will be non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.WebhookSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.WebhookSpec.prototype.clearHeadersMap = function() {
+  this.getHeadersMap().clear();
+  return this;};
+
+
+/**
+ * optional bool ssl = 5;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.WebhookSpec.prototype.getSsl = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 5, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.WebhookSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.WebhookSpec.prototype.setSsl = function(value) {
+  return jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.WebhookSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.WebhookSpec.prototype.clearSsl = function() {
+  return jspb.Message.setField(this, 5, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.WebhookSpec.prototype.hasSsl = function() {
+  return jspb.Message.getField(this, 5) != null;
 };
 
 

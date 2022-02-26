@@ -3,6 +3,7 @@
 # source: github.com/metaprov/modelaapi/services/apitoken/v1/apitoken.proto
 """Generated protocol buffer code."""
 from google.protobuf import descriptor as _descriptor
+from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
@@ -17,650 +18,27 @@ from github.com.metaprov.modelaapi.services.common.v1 import common_pb2 as githu
 from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
 
 
-DESCRIPTOR = _descriptor.FileDescriptor(
-  name='github.com/metaprov/modelaapi/services/apitoken/v1/apitoken.proto',
-  package='github.com.metaprov.modelaapi.services.apitoken.v1',
-  syntax='proto3',
-  serialized_options=b'Z2github.com/metaprov/modelaapi/services/apitoken/v1',
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nAgithub.com/metaprov/modelaapi/services/apitoken/v1/apitoken.proto\x12\x32github.com.metaprov.modelaapi.services.apitoken.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x45github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto\x1a=github.com/metaprov/modelaapi/services/common/v1/common.proto\x1a google/protobuf/field_mask.proto\"\xf7\x01\n\x14ListApiTokensRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x64\n\x06labels\x18\x02 \x03(\x0b\x32T.github.com.metaprov.modelaapi.services.apitoken.v1.ListApiTokensRequest.LabelsEntry\x12\x11\n\tpage_size\x18\x03 \x01(\x05\x12\x12\n\npage_token\x18\x04 \x01(\t\x12\x10\n\x08order_by\x18\x05 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x88\x01\n\x15ListApiTokensResponse\x12V\n\tapitokens\x18\x01 \x01(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiTokenList\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x12\n\x10\x41piTokenResponse\"|\n\x15\x43reateApiTokenRequest\x12Q\n\x08\x61pitoken\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiToken\x12\x10\n\x08password\x18\x02 \x01(\t\"\x18\n\x16\x43reateApiTokenResponse\"\x9b\x01\n\x15UpdateApiTokenRequest\x12Q\n\x08\x61pitoken\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiToken\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"\x18\n\x16UpdateApiTokenResponse\"5\n\x12GetApiTokenRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"v\n\x13GetApiTokenResponse\x12Q\n\x08\x61pitoken\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiToken\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"?\n\x1cGetApiTokenNamespacesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"t\n\x1dGetApiTokenNamespacesResponse\x12S\n\nnamespaces\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo\"8\n\x15\x44\x65leteApiTokenRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x18\n\x16\x44\x65leteApiTokenResponse\"\x18\n\x16\x41piTokenCreateResponse\"I\n\x14\x41piTokenLoginRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x10\n\x08password\x18\x03 \x01(\t\"&\n\x15\x41piTokenLoginResponse\x12\r\n\x05token\x18\x01 \x01(\t2\xb9\x08\n\x0f\x41piTokenService\x12\xc7\x01\n\rListApiTokens\x12H.github.com.metaprov.modelaapi.services.apitoken.v1.ListApiTokensRequest\x1aI.github.com.metaprov.modelaapi.services.apitoken.v1.ListApiTokensResponse\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/v1/apitokens/{namespace}\x12\xc1\x01\n\x0e\x43reateApiToken\x12I.github.com.metaprov.modelaapi.services.apitoken.v1.CreateApiTokenRequest\x1aJ.github.com.metaprov.modelaapi.services.apitoken.v1.CreateApiTokenResponse\"\x18\x82\xd3\xe4\x93\x02\x12\"\r/v1/apitokens:\x01*\x12\xc8\x01\n\x0bGetApiToken\x12\x46.github.com.metaprov.modelaapi.services.apitoken.v1.GetApiTokenRequest\x1aG.github.com.metaprov.modelaapi.services.apitoken.v1.GetApiTokenResponse\"(\x82\xd3\xe4\x93\x02\"\x12 /v1/apitokens/{namespace}/{name}\x12\xf8\x01\n\x0eUpdateApiToken\x12I.github.com.metaprov.modelaapi.services.apitoken.v1.UpdateApiTokenRequest\x1aJ.github.com.metaprov.modelaapi.services.apitoken.v1.UpdateApiTokenResponse\"O\x82\xd3\xe4\x93\x02I\x1a\x44/v1/apitokens/{apitoken.metadata.namespace}/{apitoken.metadata.name}:\x01*\x12\xd1\x01\n\x0e\x44\x65leteApiToken\x12I.github.com.metaprov.modelaapi.services.apitoken.v1.DeleteApiTokenRequest\x1aJ.github.com.metaprov.modelaapi.services.apitoken.v1.DeleteApiTokenResponse\"(\x82\xd3\xe4\x93\x02\"* /v1/apitokens/{namespace}/{name}B4Z2github.com/metaprov/modelaapi/services/apitoken/v1b\x06proto3'
-  ,
-  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_common_dot_v1_dot_common__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,])
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nAgithub.com/metaprov/modelaapi/services/apitoken/v1/apitoken.proto\x12\x32github.com.metaprov.modelaapi.services.apitoken.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x45github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto\x1a=github.com/metaprov/modelaapi/services/common/v1/common.proto\x1a google/protobuf/field_mask.proto\"\xf7\x01\n\x14ListApiTokensRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x64\n\x06labels\x18\x02 \x03(\x0b\x32T.github.com.metaprov.modelaapi.services.apitoken.v1.ListApiTokensRequest.LabelsEntry\x12\x11\n\tpage_size\x18\x03 \x01(\x05\x12\x12\n\npage_token\x18\x04 \x01(\t\x12\x10\n\x08order_by\x18\x05 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x88\x01\n\x15ListApiTokensResponse\x12V\n\tapitokens\x18\x01 \x01(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiTokenList\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x12\n\x10\x41piTokenResponse\"|\n\x15\x43reateApiTokenRequest\x12Q\n\x08\x61pitoken\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiToken\x12\x10\n\x08password\x18\x02 \x01(\t\"\x18\n\x16\x43reateApiTokenResponse\"\x9b\x01\n\x15UpdateApiTokenRequest\x12Q\n\x08\x61pitoken\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiToken\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"\x18\n\x16UpdateApiTokenResponse\"5\n\x12GetApiTokenRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"v\n\x13GetApiTokenResponse\x12Q\n\x08\x61pitoken\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiToken\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"?\n\x1cGetApiTokenNamespacesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"t\n\x1dGetApiTokenNamespacesResponse\x12S\n\nnamespaces\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo\"8\n\x15\x44\x65leteApiTokenRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x18\n\x16\x44\x65leteApiTokenResponse\"\x18\n\x16\x41piTokenCreateResponse\"I\n\x14\x41piTokenLoginRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x10\n\x08password\x18\x03 \x01(\t\"&\n\x15\x41piTokenLoginResponse\x12\r\n\x05token\x18\x01 \x01(\t2\xb9\x08\n\x0f\x41piTokenService\x12\xc7\x01\n\rListApiTokens\x12H.github.com.metaprov.modelaapi.services.apitoken.v1.ListApiTokensRequest\x1aI.github.com.metaprov.modelaapi.services.apitoken.v1.ListApiTokensResponse\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/v1/apitokens/{namespace}\x12\xc1\x01\n\x0e\x43reateApiToken\x12I.github.com.metaprov.modelaapi.services.apitoken.v1.CreateApiTokenRequest\x1aJ.github.com.metaprov.modelaapi.services.apitoken.v1.CreateApiTokenResponse\"\x18\x82\xd3\xe4\x93\x02\x12\"\r/v1/apitokens:\x01*\x12\xc8\x01\n\x0bGetApiToken\x12\x46.github.com.metaprov.modelaapi.services.apitoken.v1.GetApiTokenRequest\x1aG.github.com.metaprov.modelaapi.services.apitoken.v1.GetApiTokenResponse\"(\x82\xd3\xe4\x93\x02\"\x12 /v1/apitokens/{namespace}/{name}\x12\xf8\x01\n\x0eUpdateApiToken\x12I.github.com.metaprov.modelaapi.services.apitoken.v1.UpdateApiTokenRequest\x1aJ.github.com.metaprov.modelaapi.services.apitoken.v1.UpdateApiTokenResponse\"O\x82\xd3\xe4\x93\x02I\x1a\x44/v1/apitokens/{apitoken.metadata.namespace}/{apitoken.metadata.name}:\x01*\x12\xd1\x01\n\x0e\x44\x65leteApiToken\x12I.github.com.metaprov.modelaapi.services.apitoken.v1.DeleteApiTokenRequest\x1aJ.github.com.metaprov.modelaapi.services.apitoken.v1.DeleteApiTokenResponse\"(\x82\xd3\xe4\x93\x02\"* /v1/apitokens/{namespace}/{name}B4Z2github.com/metaprov/modelaapi/services/apitoken/v1b\x06proto3')
 
 
 
-
-_LISTAPITOKENSREQUEST_LABELSENTRY = _descriptor.Descriptor(
-  name='LabelsEntry',
-  full_name='github.com.metaprov.modelaapi.services.apitoken.v1.ListApiTokensRequest.LabelsEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modelaapi.services.apitoken.v1.ListApiTokensRequest.LabelsEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modelaapi.services.apitoken.v1.ListApiTokensRequest.LabelsEntry.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=522,
-  serialized_end=567,
-)
-
-_LISTAPITOKENSREQUEST = _descriptor.Descriptor(
-  name='ListApiTokensRequest',
-  full_name='github.com.metaprov.modelaapi.services.apitoken.v1.ListApiTokensRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modelaapi.services.apitoken.v1.ListApiTokensRequest.namespace', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modelaapi.services.apitoken.v1.ListApiTokensRequest.labels', index=1,
-      number=2, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_size', full_name='github.com.metaprov.modelaapi.services.apitoken.v1.ListApiTokensRequest.page_size', index=2,
-      number=3, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_token', full_name='github.com.metaprov.modelaapi.services.apitoken.v1.ListApiTokensRequest.page_token', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='order_by', full_name='github.com.metaprov.modelaapi.services.apitoken.v1.ListApiTokensRequest.order_by', index=4,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[_LISTAPITOKENSREQUEST_LABELSENTRY, ],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=320,
-  serialized_end=567,
-)
-
-
-_LISTAPITOKENSRESPONSE = _descriptor.Descriptor(
-  name='ListApiTokensResponse',
-  full_name='github.com.metaprov.modelaapi.services.apitoken.v1.ListApiTokensResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='apitokens', full_name='github.com.metaprov.modelaapi.services.apitoken.v1.ListApiTokensResponse.apitokens', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='next_page_token', full_name='github.com.metaprov.modelaapi.services.apitoken.v1.ListApiTokensResponse.next_page_token', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=570,
-  serialized_end=706,
-)
-
-
-_APITOKENRESPONSE = _descriptor.Descriptor(
-  name='ApiTokenResponse',
-  full_name='github.com.metaprov.modelaapi.services.apitoken.v1.ApiTokenResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=708,
-  serialized_end=726,
-)
-
-
-_CREATEAPITOKENREQUEST = _descriptor.Descriptor(
-  name='CreateApiTokenRequest',
-  full_name='github.com.metaprov.modelaapi.services.apitoken.v1.CreateApiTokenRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='apitoken', full_name='github.com.metaprov.modelaapi.services.apitoken.v1.CreateApiTokenRequest.apitoken', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='password', full_name='github.com.metaprov.modelaapi.services.apitoken.v1.CreateApiTokenRequest.password', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=728,
-  serialized_end=852,
-)
-
-
-_CREATEAPITOKENRESPONSE = _descriptor.Descriptor(
-  name='CreateApiTokenResponse',
-  full_name='github.com.metaprov.modelaapi.services.apitoken.v1.CreateApiTokenResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=854,
-  serialized_end=878,
-)
-
-
-_UPDATEAPITOKENREQUEST = _descriptor.Descriptor(
-  name='UpdateApiTokenRequest',
-  full_name='github.com.metaprov.modelaapi.services.apitoken.v1.UpdateApiTokenRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='apitoken', full_name='github.com.metaprov.modelaapi.services.apitoken.v1.UpdateApiTokenRequest.apitoken', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='update_mask', full_name='github.com.metaprov.modelaapi.services.apitoken.v1.UpdateApiTokenRequest.update_mask', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=881,
-  serialized_end=1036,
-)
-
-
-_UPDATEAPITOKENRESPONSE = _descriptor.Descriptor(
-  name='UpdateApiTokenResponse',
-  full_name='github.com.metaprov.modelaapi.services.apitoken.v1.UpdateApiTokenResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1038,
-  serialized_end=1062,
-)
-
-
-_GETAPITOKENREQUEST = _descriptor.Descriptor(
-  name='GetApiTokenRequest',
-  full_name='github.com.metaprov.modelaapi.services.apitoken.v1.GetApiTokenRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modelaapi.services.apitoken.v1.GetApiTokenRequest.namespace', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modelaapi.services.apitoken.v1.GetApiTokenRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1064,
-  serialized_end=1117,
-)
-
-
-_GETAPITOKENRESPONSE = _descriptor.Descriptor(
-  name='GetApiTokenResponse',
-  full_name='github.com.metaprov.modelaapi.services.apitoken.v1.GetApiTokenResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='apitoken', full_name='github.com.metaprov.modelaapi.services.apitoken.v1.GetApiTokenResponse.apitoken', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='yaml', full_name='github.com.metaprov.modelaapi.services.apitoken.v1.GetApiTokenResponse.yaml', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1119,
-  serialized_end=1237,
-)
-
-
-_GETAPITOKENNAMESPACESREQUEST = _descriptor.Descriptor(
-  name='GetApiTokenNamespacesRequest',
-  full_name='github.com.metaprov.modelaapi.services.apitoken.v1.GetApiTokenNamespacesRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modelaapi.services.apitoken.v1.GetApiTokenNamespacesRequest.namespace', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modelaapi.services.apitoken.v1.GetApiTokenNamespacesRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1239,
-  serialized_end=1302,
-)
-
-
-_GETAPITOKENNAMESPACESRESPONSE = _descriptor.Descriptor(
-  name='GetApiTokenNamespacesResponse',
-  full_name='github.com.metaprov.modelaapi.services.apitoken.v1.GetApiTokenNamespacesResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='namespaces', full_name='github.com.metaprov.modelaapi.services.apitoken.v1.GetApiTokenNamespacesResponse.namespaces', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1304,
-  serialized_end=1420,
-)
-
-
-_DELETEAPITOKENREQUEST = _descriptor.Descriptor(
-  name='DeleteApiTokenRequest',
-  full_name='github.com.metaprov.modelaapi.services.apitoken.v1.DeleteApiTokenRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modelaapi.services.apitoken.v1.DeleteApiTokenRequest.namespace', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modelaapi.services.apitoken.v1.DeleteApiTokenRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1422,
-  serialized_end=1478,
-)
-
-
-_DELETEAPITOKENRESPONSE = _descriptor.Descriptor(
-  name='DeleteApiTokenResponse',
-  full_name='github.com.metaprov.modelaapi.services.apitoken.v1.DeleteApiTokenResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1480,
-  serialized_end=1504,
-)
-
-
-_APITOKENCREATERESPONSE = _descriptor.Descriptor(
-  name='ApiTokenCreateResponse',
-  full_name='github.com.metaprov.modelaapi.services.apitoken.v1.ApiTokenCreateResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1506,
-  serialized_end=1530,
-)
-
-
-_APITOKENLOGINREQUEST = _descriptor.Descriptor(
-  name='ApiTokenLoginRequest',
-  full_name='github.com.metaprov.modelaapi.services.apitoken.v1.ApiTokenLoginRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modelaapi.services.apitoken.v1.ApiTokenLoginRequest.namespace', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modelaapi.services.apitoken.v1.ApiTokenLoginRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='password', full_name='github.com.metaprov.modelaapi.services.apitoken.v1.ApiTokenLoginRequest.password', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1532,
-  serialized_end=1605,
-)
-
-
-_APITOKENLOGINRESPONSE = _descriptor.Descriptor(
-  name='ApiTokenLoginResponse',
-  full_name='github.com.metaprov.modelaapi.services.apitoken.v1.ApiTokenLoginResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='token', full_name='github.com.metaprov.modelaapi.services.apitoken.v1.ApiTokenLoginResponse.token', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1607,
-  serialized_end=1645,
-)
-
-_LISTAPITOKENSREQUEST_LABELSENTRY.containing_type = _LISTAPITOKENSREQUEST
-_LISTAPITOKENSREQUEST.fields_by_name['labels'].message_type = _LISTAPITOKENSREQUEST_LABELSENTRY
-_LISTAPITOKENSRESPONSE.fields_by_name['apitokens'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._APITOKENLIST
-_CREATEAPITOKENREQUEST.fields_by_name['apitoken'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._APITOKEN
-_UPDATEAPITOKENREQUEST.fields_by_name['apitoken'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._APITOKEN
-_UPDATEAPITOKENREQUEST.fields_by_name['update_mask'].message_type = google_dot_protobuf_dot_field__mask__pb2._FIELDMASK
-_GETAPITOKENRESPONSE.fields_by_name['apitoken'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._APITOKEN
-_GETAPITOKENNAMESPACESRESPONSE.fields_by_name['namespaces'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_common_dot_v1_dot_common__pb2._NAMESPACEINFO
-DESCRIPTOR.message_types_by_name['ListApiTokensRequest'] = _LISTAPITOKENSREQUEST
-DESCRIPTOR.message_types_by_name['ListApiTokensResponse'] = _LISTAPITOKENSRESPONSE
-DESCRIPTOR.message_types_by_name['ApiTokenResponse'] = _APITOKENRESPONSE
-DESCRIPTOR.message_types_by_name['CreateApiTokenRequest'] = _CREATEAPITOKENREQUEST
-DESCRIPTOR.message_types_by_name['CreateApiTokenResponse'] = _CREATEAPITOKENRESPONSE
-DESCRIPTOR.message_types_by_name['UpdateApiTokenRequest'] = _UPDATEAPITOKENREQUEST
-DESCRIPTOR.message_types_by_name['UpdateApiTokenResponse'] = _UPDATEAPITOKENRESPONSE
-DESCRIPTOR.message_types_by_name['GetApiTokenRequest'] = _GETAPITOKENREQUEST
-DESCRIPTOR.message_types_by_name['GetApiTokenResponse'] = _GETAPITOKENRESPONSE
-DESCRIPTOR.message_types_by_name['GetApiTokenNamespacesRequest'] = _GETAPITOKENNAMESPACESREQUEST
-DESCRIPTOR.message_types_by_name['GetApiTokenNamespacesResponse'] = _GETAPITOKENNAMESPACESRESPONSE
-DESCRIPTOR.message_types_by_name['DeleteApiTokenRequest'] = _DELETEAPITOKENREQUEST
-DESCRIPTOR.message_types_by_name['DeleteApiTokenResponse'] = _DELETEAPITOKENRESPONSE
-DESCRIPTOR.message_types_by_name['ApiTokenCreateResponse'] = _APITOKENCREATERESPONSE
-DESCRIPTOR.message_types_by_name['ApiTokenLoginRequest'] = _APITOKENLOGINREQUEST
-DESCRIPTOR.message_types_by_name['ApiTokenLoginResponse'] = _APITOKENLOGINRESPONSE
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
+_LISTAPITOKENSREQUEST = DESCRIPTOR.message_types_by_name['ListApiTokensRequest']
+_LISTAPITOKENSREQUEST_LABELSENTRY = _LISTAPITOKENSREQUEST.nested_types_by_name['LabelsEntry']
+_LISTAPITOKENSRESPONSE = DESCRIPTOR.message_types_by_name['ListApiTokensResponse']
+_APITOKENRESPONSE = DESCRIPTOR.message_types_by_name['ApiTokenResponse']
+_CREATEAPITOKENREQUEST = DESCRIPTOR.message_types_by_name['CreateApiTokenRequest']
+_CREATEAPITOKENRESPONSE = DESCRIPTOR.message_types_by_name['CreateApiTokenResponse']
+_UPDATEAPITOKENREQUEST = DESCRIPTOR.message_types_by_name['UpdateApiTokenRequest']
+_UPDATEAPITOKENRESPONSE = DESCRIPTOR.message_types_by_name['UpdateApiTokenResponse']
+_GETAPITOKENREQUEST = DESCRIPTOR.message_types_by_name['GetApiTokenRequest']
+_GETAPITOKENRESPONSE = DESCRIPTOR.message_types_by_name['GetApiTokenResponse']
+_GETAPITOKENNAMESPACESREQUEST = DESCRIPTOR.message_types_by_name['GetApiTokenNamespacesRequest']
+_GETAPITOKENNAMESPACESRESPONSE = DESCRIPTOR.message_types_by_name['GetApiTokenNamespacesResponse']
+_DELETEAPITOKENREQUEST = DESCRIPTOR.message_types_by_name['DeleteApiTokenRequest']
+_DELETEAPITOKENRESPONSE = DESCRIPTOR.message_types_by_name['DeleteApiTokenResponse']
+_APITOKENCREATERESPONSE = DESCRIPTOR.message_types_by_name['ApiTokenCreateResponse']
+_APITOKENLOGINREQUEST = DESCRIPTOR.message_types_by_name['ApiTokenLoginRequest']
+_APITOKENLOGINRESPONSE = DESCRIPTOR.message_types_by_name['ApiTokenLoginResponse']
 ListApiTokensRequest = _reflection.GeneratedProtocolMessageType('ListApiTokensRequest', (_message.Message,), {
 
   'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
@@ -781,73 +159,57 @@ ApiTokenLoginResponse = _reflection.GeneratedProtocolMessageType('ApiTokenLoginR
   })
 _sym_db.RegisterMessage(ApiTokenLoginResponse)
 
+_APITOKENSERVICE = DESCRIPTOR.services_by_name['ApiTokenService']
+if _descriptor._USE_C_DESCRIPTORS == False:
 
-DESCRIPTOR._options = None
-_LISTAPITOKENSREQUEST_LABELSENTRY._options = None
-
-_APITOKENSERVICE = _descriptor.ServiceDescriptor(
-  name='ApiTokenService',
-  full_name='github.com.metaprov.modelaapi.services.apitoken.v1.ApiTokenService',
-  file=DESCRIPTOR,
-  index=0,
-  serialized_options=None,
-  create_key=_descriptor._internal_create_key,
-  serialized_start=1648,
-  serialized_end=2729,
-  methods=[
-  _descriptor.MethodDescriptor(
-    name='ListApiTokens',
-    full_name='github.com.metaprov.modelaapi.services.apitoken.v1.ApiTokenService.ListApiTokens',
-    index=0,
-    containing_service=None,
-    input_type=_LISTAPITOKENSREQUEST,
-    output_type=_LISTAPITOKENSRESPONSE,
-    serialized_options=b'\202\323\344\223\002\033\022\031/v1/apitokens/{namespace}',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='CreateApiToken',
-    full_name='github.com.metaprov.modelaapi.services.apitoken.v1.ApiTokenService.CreateApiToken',
-    index=1,
-    containing_service=None,
-    input_type=_CREATEAPITOKENREQUEST,
-    output_type=_CREATEAPITOKENRESPONSE,
-    serialized_options=b'\202\323\344\223\002\022\"\r/v1/apitokens:\001*',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='GetApiToken',
-    full_name='github.com.metaprov.modelaapi.services.apitoken.v1.ApiTokenService.GetApiToken',
-    index=2,
-    containing_service=None,
-    input_type=_GETAPITOKENREQUEST,
-    output_type=_GETAPITOKENRESPONSE,
-    serialized_options=b'\202\323\344\223\002\"\022 /v1/apitokens/{namespace}/{name}',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='UpdateApiToken',
-    full_name='github.com.metaprov.modelaapi.services.apitoken.v1.ApiTokenService.UpdateApiToken',
-    index=3,
-    containing_service=None,
-    input_type=_UPDATEAPITOKENREQUEST,
-    output_type=_UPDATEAPITOKENRESPONSE,
-    serialized_options=b'\202\323\344\223\002I\032D/v1/apitokens/{apitoken.metadata.namespace}/{apitoken.metadata.name}:\001*',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='DeleteApiToken',
-    full_name='github.com.metaprov.modelaapi.services.apitoken.v1.ApiTokenService.DeleteApiToken',
-    index=4,
-    containing_service=None,
-    input_type=_DELETEAPITOKENREQUEST,
-    output_type=_DELETEAPITOKENRESPONSE,
-    serialized_options=b'\202\323\344\223\002\"* /v1/apitokens/{namespace}/{name}',
-    create_key=_descriptor._internal_create_key,
-  ),
-])
-_sym_db.RegisterServiceDescriptor(_APITOKENSERVICE)
-
-DESCRIPTOR.services_by_name['ApiTokenService'] = _APITOKENSERVICE
-
+  DESCRIPTOR._options = None
+  DESCRIPTOR._serialized_options = b'Z2github.com/metaprov/modelaapi/services/apitoken/v1'
+  _LISTAPITOKENSREQUEST_LABELSENTRY._options = None
+  _LISTAPITOKENSREQUEST_LABELSENTRY._serialized_options = b'8\001'
+  _APITOKENSERVICE.methods_by_name['ListApiTokens']._options = None
+  _APITOKENSERVICE.methods_by_name['ListApiTokens']._serialized_options = b'\202\323\344\223\002\033\022\031/v1/apitokens/{namespace}'
+  _APITOKENSERVICE.methods_by_name['CreateApiToken']._options = None
+  _APITOKENSERVICE.methods_by_name['CreateApiToken']._serialized_options = b'\202\323\344\223\002\022\"\r/v1/apitokens:\001*'
+  _APITOKENSERVICE.methods_by_name['GetApiToken']._options = None
+  _APITOKENSERVICE.methods_by_name['GetApiToken']._serialized_options = b'\202\323\344\223\002\"\022 /v1/apitokens/{namespace}/{name}'
+  _APITOKENSERVICE.methods_by_name['UpdateApiToken']._options = None
+  _APITOKENSERVICE.methods_by_name['UpdateApiToken']._serialized_options = b'\202\323\344\223\002I\032D/v1/apitokens/{apitoken.metadata.namespace}/{apitoken.metadata.name}:\001*'
+  _APITOKENSERVICE.methods_by_name['DeleteApiToken']._options = None
+  _APITOKENSERVICE.methods_by_name['DeleteApiToken']._serialized_options = b'\202\323\344\223\002\"* /v1/apitokens/{namespace}/{name}'
+  _LISTAPITOKENSREQUEST._serialized_start=320
+  _LISTAPITOKENSREQUEST._serialized_end=567
+  _LISTAPITOKENSREQUEST_LABELSENTRY._serialized_start=522
+  _LISTAPITOKENSREQUEST_LABELSENTRY._serialized_end=567
+  _LISTAPITOKENSRESPONSE._serialized_start=570
+  _LISTAPITOKENSRESPONSE._serialized_end=706
+  _APITOKENRESPONSE._serialized_start=708
+  _APITOKENRESPONSE._serialized_end=726
+  _CREATEAPITOKENREQUEST._serialized_start=728
+  _CREATEAPITOKENREQUEST._serialized_end=852
+  _CREATEAPITOKENRESPONSE._serialized_start=854
+  _CREATEAPITOKENRESPONSE._serialized_end=878
+  _UPDATEAPITOKENREQUEST._serialized_start=881
+  _UPDATEAPITOKENREQUEST._serialized_end=1036
+  _UPDATEAPITOKENRESPONSE._serialized_start=1038
+  _UPDATEAPITOKENRESPONSE._serialized_end=1062
+  _GETAPITOKENREQUEST._serialized_start=1064
+  _GETAPITOKENREQUEST._serialized_end=1117
+  _GETAPITOKENRESPONSE._serialized_start=1119
+  _GETAPITOKENRESPONSE._serialized_end=1237
+  _GETAPITOKENNAMESPACESREQUEST._serialized_start=1239
+  _GETAPITOKENNAMESPACESREQUEST._serialized_end=1302
+  _GETAPITOKENNAMESPACESRESPONSE._serialized_start=1304
+  _GETAPITOKENNAMESPACESRESPONSE._serialized_end=1420
+  _DELETEAPITOKENREQUEST._serialized_start=1422
+  _DELETEAPITOKENREQUEST._serialized_end=1478
+  _DELETEAPITOKENRESPONSE._serialized_start=1480
+  _DELETEAPITOKENRESPONSE._serialized_end=1504
+  _APITOKENCREATERESPONSE._serialized_start=1506
+  _APITOKENCREATERESPONSE._serialized_end=1530
+  _APITOKENLOGINREQUEST._serialized_start=1532
+  _APITOKENLOGINREQUEST._serialized_end=1605
+  _APITOKENLOGINRESPONSE._serialized_start=1607
+  _APITOKENLOGINRESPONSE._serialized_end=1645
+  _APITOKENSERVICE._serialized_start=1648
+  _APITOKENSERVICE._serialized_end=2729
 # @@protoc_insertion_point(module_scope)

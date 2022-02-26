@@ -2063,34 +2063,34 @@ message NotifierList {
 
 // NotifierSpec defines the desired state of Notifier
 message NotifierSpec {
+  // Notifier type
+  // +kubebuilder:default:="webhook"
+  // +kubebuilder:validation:Optional
+  optional string type = 1;
+
   // The tenant that own the notifier
   // Default to default tenant.
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference tenantRef = 1;
+  optional k8s.io.api.core.v1.ObjectReference tenantRef = 2;
 
   // User provided description
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string description = 2;
-
-  // Address within the provider to send the notifiaction to.
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:Optional
-  optional string to = 3;
-
-  // The sender address. For example, from email.
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:Optional
-  optional string from = 4;
+  optional string description = 3;
 
   // +kubebuilder:validation:Required
   // +kubebuilder:default:=""
-  optional string connectionName = 5;
+  optional string connectionName = 4;
 
   // The owner account name
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
-  optional string owner = 6;
+  optional string owner = 5;
+
+  // The email to use when choosing a email notifier
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string email = 6;
 }
 
 // NotifierStatus is the observed state of a Notifier
@@ -3187,5 +3187,17 @@ message VirtualVolumeStatus {
 message WebhookSpec {
   // +kubebuilder:default:=""
   optional string url = 1;
+
+  // Content type
+  // +kubebuilder:default:="application/json"
+  optional string contentType = 2;
+
+  // The webhook secret token
+  optional string token = 3;
+
+  // custom headers to send
+  map<string, string> headers = 4;
+
+  optional bool ssl = 5;
 }
 

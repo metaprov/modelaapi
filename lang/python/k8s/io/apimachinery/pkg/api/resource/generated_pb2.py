@@ -3,6 +3,7 @@
 # source: k8s.io/apimachinery/pkg/api/resource/generated.proto
 """Generated protocol buffer code."""
 from google.protobuf import descriptor as _descriptor
+from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
@@ -13,85 +14,12 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor.FileDescriptor(
-  name='k8s.io/apimachinery/pkg/api/resource/generated.proto',
-  package='k8s.io.apimachinery.pkg.api.resource',
-  syntax='proto2',
-  serialized_options=b'Z$k8s.io/apimachinery/pkg/api/resource',
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n4k8s.io/apimachinery/pkg/api/resource/generated.proto\x12$k8s.io.apimachinery.pkg.api.resource\"\x1a\n\x08Quantity\x12\x0e\n\x06string\x18\x01 \x01(\t\"\x1f\n\rQuantityValue\x12\x0e\n\x06string\x18\x01 \x01(\tB&Z$k8s.io/apimachinery/pkg/api/resource'
-)
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n4k8s.io/apimachinery/pkg/api/resource/generated.proto\x12$k8s.io.apimachinery.pkg.api.resource\"\x1a\n\x08Quantity\x12\x0e\n\x06string\x18\x01 \x01(\t\"\x1f\n\rQuantityValue\x12\x0e\n\x06string\x18\x01 \x01(\tB&Z$k8s.io/apimachinery/pkg/api/resource')
 
 
 
-
-_QUANTITY = _descriptor.Descriptor(
-  name='Quantity',
-  full_name='k8s.io.apimachinery.pkg.api.resource.Quantity',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='string', full_name='k8s.io.apimachinery.pkg.api.resource.Quantity.string', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto2',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=94,
-  serialized_end=120,
-)
-
-
-_QUANTITYVALUE = _descriptor.Descriptor(
-  name='QuantityValue',
-  full_name='k8s.io.apimachinery.pkg.api.resource.QuantityValue',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='string', full_name='k8s.io.apimachinery.pkg.api.resource.QuantityValue.string', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto2',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=122,
-  serialized_end=153,
-)
-
-DESCRIPTOR.message_types_by_name['Quantity'] = _QUANTITY
-DESCRIPTOR.message_types_by_name['QuantityValue'] = _QUANTITYVALUE
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
+_QUANTITY = DESCRIPTOR.message_types_by_name['Quantity']
+_QUANTITYVALUE = DESCRIPTOR.message_types_by_name['QuantityValue']
 Quantity = _reflection.GeneratedProtocolMessageType('Quantity', (_message.Message,), {
   'DESCRIPTOR' : _QUANTITY,
   '__module__' : 'k8s.io.apimachinery.pkg.api.resource.generated_pb2'
@@ -106,6 +34,12 @@ QuantityValue = _reflection.GeneratedProtocolMessageType('QuantityValue', (_mess
   })
 _sym_db.RegisterMessage(QuantityValue)
 
+if _descriptor._USE_C_DESCRIPTORS == False:
 
-DESCRIPTOR._options = None
+  DESCRIPTOR._options = None
+  DESCRIPTOR._serialized_options = b'Z$k8s.io/apimachinery/pkg/api/resource'
+  _QUANTITY._serialized_start=94
+  _QUANTITY._serialized_end=120
+  _QUANTITYVALUE._serialized_start=122
+  _QUANTITYVALUE._serialized_end=153
 # @@protoc_insertion_point(module_scope)

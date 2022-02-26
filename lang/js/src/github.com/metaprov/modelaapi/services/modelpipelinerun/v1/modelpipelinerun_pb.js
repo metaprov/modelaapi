@@ -869,7 +869,7 @@ proto.github.com.metaprov.modelaapi.services.modelpipelinerun.v1.ListModelPipeli
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunList modelPipelineRuns = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunList modelpipelineruns = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunList}
  */
 proto.github.com.metaprov.modelaapi.services.modelpipelinerun.v1.ListModelPipelineRunsResponse.prototype.getModelpipelineruns = function() {
@@ -1139,7 +1139,7 @@ proto.github.com.metaprov.modelaapi.services.modelpipelinerun.v1.CreateModelPipe
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRun modelPipelineRun = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRun modelpipelinerun = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRun}
  */
 proto.github.com.metaprov.modelaapi.services.modelpipelinerun.v1.CreateModelPipelineRunRequest.prototype.getModelpipelinerun = function() {
@@ -1405,7 +1405,7 @@ proto.github.com.metaprov.modelaapi.services.modelpipelinerun.v1.UpdateModelPipe
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRun modelPipelineRun = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRun modelpipelinerun = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRun}
  */
 proto.github.com.metaprov.modelaapi.services.modelpipelinerun.v1.UpdateModelPipelineRunRequest.prototype.getModelpipelinerun = function() {
@@ -1866,7 +1866,7 @@ proto.github.com.metaprov.modelaapi.services.modelpipelinerun.v1.GetModelPipelin
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRun modelPipelineRun = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRun modelpipelinerun = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRun}
  */
 proto.github.com.metaprov.modelaapi.services.modelpipelinerun.v1.GetModelPipelineRunResponse.prototype.getModelpipelinerun = function() {

@@ -3,6 +3,7 @@
 # source: github.com/metaprov/modelaapi/services/dataapp/v1/dataapp.proto
 """Generated protocol buffer code."""
 from google.protobuf import descriptor as _descriptor
+from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
@@ -16,629 +17,27 @@ from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1 import generated_pb2 as github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2
 
 
-DESCRIPTOR = _descriptor.FileDescriptor(
-  name='github.com/metaprov/modelaapi/services/dataapp/v1/dataapp.proto',
-  package='github.com.metaprov.modelaapi.services.dataapp.v1',
-  syntax='proto3',
-  serialized_options=b'Z1github.com/metaprov/modelaapi/services/dataapp/v1',
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n?github.com/metaprov/modelaapi/services/dataapp/v1/dataapp.proto\x12\x31github.com.metaprov.modelaapi.services.dataapp.v1\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/api/annotations.proto\x1aIgithub.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1/generated.proto\"\xf4\x01\n\x13ListDataAppsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x62\n\x06labels\x18\x02 \x03(\x0b\x32R.github.com.metaprov.modelaapi.services.dataapp.v1.ListDataAppsRequest.LabelsEntry\x12\x11\n\tpage_size\x18\x03 \x01(\x05\x12\x12\n\npage_token\x18\x04 \x01(\t\x12\x10\n\x08order_by\x18\x05 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x89\x01\n\x14ListDataAppsResponse\x12X\n\x08\x64\x61taapps\x18\x01 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppList\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x17\n\x15\x43reateDataAppResponse\"k\n\x14\x43reateDataAppRequest\x12S\n\x07\x64\x61taapp\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp\"\x9b\x01\n\x14UpdateDataAppRequest\x12S\n\x07\x64\x61taapp\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp\x12.\n\nfield_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"\x17\n\x15UpdateDataAppResponse\"4\n\x11GetDataAppRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"w\n\x12GetDataAppResponse\x12S\n\x07\x64\x61taapp\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"7\n\x14\x44\x65leteDataAppRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x17\n\x15\x44\x65leteDataAppResponse\"6\n\x13PauseDataAppRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x16\n\x14PauseDataAppResponse\"7\n\x14ResumeDataAppRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x17\n\x15ResumeDataAppResponse\"h\n\x11RunDataAppRequest\x12S\n\x07\x64\x61taapp\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp\"\x14\n\x12RunDataAppResponse2\xa9\r\n\x0e\x44\x61taAppService\x12\xc1\x01\n\x0cListDataApps\x12\x46.github.com.metaprov.modelaapi.services.dataapp.v1.ListDataAppsRequest\x1aG.github.com.metaprov.modelaapi.services.dataapp.v1.ListDataAppsResponse\" \x82\xd3\xe4\x93\x02\x1a\x12\x18/v1/dataapps/{namespace}\x12\xbb\x01\n\rCreateDataApp\x12G.github.com.metaprov.modelaapi.services.dataapp.v1.CreateDataAppRequest\x1aH.github.com.metaprov.modelaapi.services.dataapp.v1.CreateDataAppResponse\"\x17\x82\xd3\xe4\x93\x02\x11\"\x0c/v1/dataapps:\x01*\x12\xc2\x01\n\nGetDataApp\x12\x44.github.com.metaprov.modelaapi.services.dataapp.v1.GetDataAppRequest\x1a\x45.github.com.metaprov.modelaapi.services.dataapp.v1.GetDataAppResponse\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/v1/dataapps/{namespace}/{name}\x12\xf0\x01\n\rUpdateDataApp\x12G.github.com.metaprov.modelaapi.services.dataapp.v1.UpdateDataAppRequest\x1aH.github.com.metaprov.modelaapi.services.dataapp.v1.UpdateDataAppResponse\"L\x82\xd3\xe4\x93\x02\x46\x1a\x41/v1/dataapps/{dataapp.metadata.namespace}/{dataapp.metadata.name}:\x01*\x12\xcb\x01\n\rDeleteDataApp\x12G.github.com.metaprov.modelaapi.services.dataapp.v1.DeleteDataAppRequest\x1aH.github.com.metaprov.modelaapi.services.dataapp.v1.DeleteDataAppResponse\"\'\x82\xd3\xe4\x93\x02!*\x1f/v1/dataapps/{namespace}/{name}\x12\xce\x01\n\x0cPauseDataApp\x12\x46.github.com.metaprov.modelaapi.services.dataapp.v1.PauseDataAppRequest\x1aG.github.com.metaprov.modelaapi.services.dataapp.v1.PauseDataAppResponse\"-\x82\xd3\xe4\x93\x02\'\"%/v1/dataapps/{namespace}/{name}:pause\x12\xe8\x01\n\nRunDataApp\x12\x44.github.com.metaprov.modelaapi.services.dataapp.v1.RunDataAppRequest\x1a\x45.github.com.metaprov.modelaapi.services.dataapp.v1.RunDataAppResponse\"M\x82\xd3\xe4\x93\x02G\"E/v1/dataapps/{dataapp.metadata.namespace}/{dataapp.metadata.name}:run\x12\xd2\x01\n\rResumeDataApp\x12G.github.com.metaprov.modelaapi.services.dataapp.v1.ResumeDataAppRequest\x1aH.github.com.metaprov.modelaapi.services.dataapp.v1.ResumeDataAppResponse\".\x82\xd3\xe4\x93\x02(\"&/v1/dataapps/{namespace}/{name}:resumeB3Z1github.com/metaprov/modelaapi/services/dataapp/v1b\x06proto3'
-  ,
-  dependencies=[google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n?github.com/metaprov/modelaapi/services/dataapp/v1/dataapp.proto\x12\x31github.com.metaprov.modelaapi.services.dataapp.v1\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/api/annotations.proto\x1aIgithub.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1/generated.proto\"\xf4\x01\n\x13ListDataAppsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x62\n\x06labels\x18\x02 \x03(\x0b\x32R.github.com.metaprov.modelaapi.services.dataapp.v1.ListDataAppsRequest.LabelsEntry\x12\x11\n\tpage_size\x18\x03 \x01(\x05\x12\x12\n\npage_token\x18\x04 \x01(\t\x12\x10\n\x08order_by\x18\x05 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x89\x01\n\x14ListDataAppsResponse\x12X\n\x08\x64\x61taapps\x18\x01 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppList\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x17\n\x15\x43reateDataAppResponse\"k\n\x14\x43reateDataAppRequest\x12S\n\x07\x64\x61taapp\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp\"\x9b\x01\n\x14UpdateDataAppRequest\x12S\n\x07\x64\x61taapp\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp\x12.\n\nfield_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"\x17\n\x15UpdateDataAppResponse\"4\n\x11GetDataAppRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"w\n\x12GetDataAppResponse\x12S\n\x07\x64\x61taapp\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"7\n\x14\x44\x65leteDataAppRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x17\n\x15\x44\x65leteDataAppResponse\"6\n\x13PauseDataAppRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x16\n\x14PauseDataAppResponse\"7\n\x14ResumeDataAppRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x17\n\x15ResumeDataAppResponse\"h\n\x11RunDataAppRequest\x12S\n\x07\x64\x61taapp\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp\"\x14\n\x12RunDataAppResponse2\xa9\r\n\x0e\x44\x61taAppService\x12\xc1\x01\n\x0cListDataApps\x12\x46.github.com.metaprov.modelaapi.services.dataapp.v1.ListDataAppsRequest\x1aG.github.com.metaprov.modelaapi.services.dataapp.v1.ListDataAppsResponse\" \x82\xd3\xe4\x93\x02\x1a\x12\x18/v1/dataapps/{namespace}\x12\xbb\x01\n\rCreateDataApp\x12G.github.com.metaprov.modelaapi.services.dataapp.v1.CreateDataAppRequest\x1aH.github.com.metaprov.modelaapi.services.dataapp.v1.CreateDataAppResponse\"\x17\x82\xd3\xe4\x93\x02\x11\"\x0c/v1/dataapps:\x01*\x12\xc2\x01\n\nGetDataApp\x12\x44.github.com.metaprov.modelaapi.services.dataapp.v1.GetDataAppRequest\x1a\x45.github.com.metaprov.modelaapi.services.dataapp.v1.GetDataAppResponse\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/v1/dataapps/{namespace}/{name}\x12\xf0\x01\n\rUpdateDataApp\x12G.github.com.metaprov.modelaapi.services.dataapp.v1.UpdateDataAppRequest\x1aH.github.com.metaprov.modelaapi.services.dataapp.v1.UpdateDataAppResponse\"L\x82\xd3\xe4\x93\x02\x46\x1a\x41/v1/dataapps/{dataapp.metadata.namespace}/{dataapp.metadata.name}:\x01*\x12\xcb\x01\n\rDeleteDataApp\x12G.github.com.metaprov.modelaapi.services.dataapp.v1.DeleteDataAppRequest\x1aH.github.com.metaprov.modelaapi.services.dataapp.v1.DeleteDataAppResponse\"\'\x82\xd3\xe4\x93\x02!*\x1f/v1/dataapps/{namespace}/{name}\x12\xce\x01\n\x0cPauseDataApp\x12\x46.github.com.metaprov.modelaapi.services.dataapp.v1.PauseDataAppRequest\x1aG.github.com.metaprov.modelaapi.services.dataapp.v1.PauseDataAppResponse\"-\x82\xd3\xe4\x93\x02\'\"%/v1/dataapps/{namespace}/{name}:pause\x12\xe8\x01\n\nRunDataApp\x12\x44.github.com.metaprov.modelaapi.services.dataapp.v1.RunDataAppRequest\x1a\x45.github.com.metaprov.modelaapi.services.dataapp.v1.RunDataAppResponse\"M\x82\xd3\xe4\x93\x02G\"E/v1/dataapps/{dataapp.metadata.namespace}/{dataapp.metadata.name}:run\x12\xd2\x01\n\rResumeDataApp\x12G.github.com.metaprov.modelaapi.services.dataapp.v1.ResumeDataAppRequest\x1aH.github.com.metaprov.modelaapi.services.dataapp.v1.ResumeDataAppResponse\".\x82\xd3\xe4\x93\x02(\"&/v1/dataapps/{namespace}/{name}:resumeB3Z1github.com/metaprov/modelaapi/services/dataapp/v1b\x06proto3')
 
 
 
-
-_LISTDATAAPPSREQUEST_LABELSENTRY = _descriptor.Descriptor(
-  name='LabelsEntry',
-  full_name='github.com.metaprov.modelaapi.services.dataapp.v1.ListDataAppsRequest.LabelsEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modelaapi.services.dataapp.v1.ListDataAppsRequest.LabelsEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modelaapi.services.dataapp.v1.ListDataAppsRequest.LabelsEntry.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=457,
-  serialized_end=502,
-)
-
-_LISTDATAAPPSREQUEST = _descriptor.Descriptor(
-  name='ListDataAppsRequest',
-  full_name='github.com.metaprov.modelaapi.services.dataapp.v1.ListDataAppsRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modelaapi.services.dataapp.v1.ListDataAppsRequest.namespace', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modelaapi.services.dataapp.v1.ListDataAppsRequest.labels', index=1,
-      number=2, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_size', full_name='github.com.metaprov.modelaapi.services.dataapp.v1.ListDataAppsRequest.page_size', index=2,
-      number=3, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_token', full_name='github.com.metaprov.modelaapi.services.dataapp.v1.ListDataAppsRequest.page_token', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='order_by', full_name='github.com.metaprov.modelaapi.services.dataapp.v1.ListDataAppsRequest.order_by', index=4,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[_LISTDATAAPPSREQUEST_LABELSENTRY, ],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=258,
-  serialized_end=502,
-)
-
-
-_LISTDATAAPPSRESPONSE = _descriptor.Descriptor(
-  name='ListDataAppsResponse',
-  full_name='github.com.metaprov.modelaapi.services.dataapp.v1.ListDataAppsResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='dataapps', full_name='github.com.metaprov.modelaapi.services.dataapp.v1.ListDataAppsResponse.dataapps', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='next_page_token', full_name='github.com.metaprov.modelaapi.services.dataapp.v1.ListDataAppsResponse.next_page_token', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=505,
-  serialized_end=642,
-)
-
-
-_CREATEDATAAPPRESPONSE = _descriptor.Descriptor(
-  name='CreateDataAppResponse',
-  full_name='github.com.metaprov.modelaapi.services.dataapp.v1.CreateDataAppResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=644,
-  serialized_end=667,
-)
-
-
-_CREATEDATAAPPREQUEST = _descriptor.Descriptor(
-  name='CreateDataAppRequest',
-  full_name='github.com.metaprov.modelaapi.services.dataapp.v1.CreateDataAppRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='dataapp', full_name='github.com.metaprov.modelaapi.services.dataapp.v1.CreateDataAppRequest.dataapp', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=669,
-  serialized_end=776,
-)
-
-
-_UPDATEDATAAPPREQUEST = _descriptor.Descriptor(
-  name='UpdateDataAppRequest',
-  full_name='github.com.metaprov.modelaapi.services.dataapp.v1.UpdateDataAppRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='dataapp', full_name='github.com.metaprov.modelaapi.services.dataapp.v1.UpdateDataAppRequest.dataapp', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='field_mask', full_name='github.com.metaprov.modelaapi.services.dataapp.v1.UpdateDataAppRequest.field_mask', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=779,
-  serialized_end=934,
-)
-
-
-_UPDATEDATAAPPRESPONSE = _descriptor.Descriptor(
-  name='UpdateDataAppResponse',
-  full_name='github.com.metaprov.modelaapi.services.dataapp.v1.UpdateDataAppResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=936,
-  serialized_end=959,
-)
-
-
-_GETDATAAPPREQUEST = _descriptor.Descriptor(
-  name='GetDataAppRequest',
-  full_name='github.com.metaprov.modelaapi.services.dataapp.v1.GetDataAppRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modelaapi.services.dataapp.v1.GetDataAppRequest.namespace', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modelaapi.services.dataapp.v1.GetDataAppRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=961,
-  serialized_end=1013,
-)
-
-
-_GETDATAAPPRESPONSE = _descriptor.Descriptor(
-  name='GetDataAppResponse',
-  full_name='github.com.metaprov.modelaapi.services.dataapp.v1.GetDataAppResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='dataapp', full_name='github.com.metaprov.modelaapi.services.dataapp.v1.GetDataAppResponse.dataapp', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='yaml', full_name='github.com.metaprov.modelaapi.services.dataapp.v1.GetDataAppResponse.yaml', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1015,
-  serialized_end=1134,
-)
-
-
-_DELETEDATAAPPREQUEST = _descriptor.Descriptor(
-  name='DeleteDataAppRequest',
-  full_name='github.com.metaprov.modelaapi.services.dataapp.v1.DeleteDataAppRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modelaapi.services.dataapp.v1.DeleteDataAppRequest.namespace', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modelaapi.services.dataapp.v1.DeleteDataAppRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1136,
-  serialized_end=1191,
-)
-
-
-_DELETEDATAAPPRESPONSE = _descriptor.Descriptor(
-  name='DeleteDataAppResponse',
-  full_name='github.com.metaprov.modelaapi.services.dataapp.v1.DeleteDataAppResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1193,
-  serialized_end=1216,
-)
-
-
-_PAUSEDATAAPPREQUEST = _descriptor.Descriptor(
-  name='PauseDataAppRequest',
-  full_name='github.com.metaprov.modelaapi.services.dataapp.v1.PauseDataAppRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modelaapi.services.dataapp.v1.PauseDataAppRequest.namespace', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modelaapi.services.dataapp.v1.PauseDataAppRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1218,
-  serialized_end=1272,
-)
-
-
-_PAUSEDATAAPPRESPONSE = _descriptor.Descriptor(
-  name='PauseDataAppResponse',
-  full_name='github.com.metaprov.modelaapi.services.dataapp.v1.PauseDataAppResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1274,
-  serialized_end=1296,
-)
-
-
-_RESUMEDATAAPPREQUEST = _descriptor.Descriptor(
-  name='ResumeDataAppRequest',
-  full_name='github.com.metaprov.modelaapi.services.dataapp.v1.ResumeDataAppRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modelaapi.services.dataapp.v1.ResumeDataAppRequest.namespace', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modelaapi.services.dataapp.v1.ResumeDataAppRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1298,
-  serialized_end=1353,
-)
-
-
-_RESUMEDATAAPPRESPONSE = _descriptor.Descriptor(
-  name='ResumeDataAppResponse',
-  full_name='github.com.metaprov.modelaapi.services.dataapp.v1.ResumeDataAppResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1355,
-  serialized_end=1378,
-)
-
-
-_RUNDATAAPPREQUEST = _descriptor.Descriptor(
-  name='RunDataAppRequest',
-  full_name='github.com.metaprov.modelaapi.services.dataapp.v1.RunDataAppRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='dataapp', full_name='github.com.metaprov.modelaapi.services.dataapp.v1.RunDataAppRequest.dataapp', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1380,
-  serialized_end=1484,
-)
-
-
-_RUNDATAAPPRESPONSE = _descriptor.Descriptor(
-  name='RunDataAppResponse',
-  full_name='github.com.metaprov.modelaapi.services.dataapp.v1.RunDataAppResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1486,
-  serialized_end=1506,
-)
-
-_LISTDATAAPPSREQUEST_LABELSENTRY.containing_type = _LISTDATAAPPSREQUEST
-_LISTDATAAPPSREQUEST.fields_by_name['labels'].message_type = _LISTDATAAPPSREQUEST_LABELSENTRY
-_LISTDATAAPPSRESPONSE.fields_by_name['dataapps'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2._DATAAPPLIST
-_CREATEDATAAPPREQUEST.fields_by_name['dataapp'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2._DATAAPP
-_UPDATEDATAAPPREQUEST.fields_by_name['dataapp'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2._DATAAPP
-_UPDATEDATAAPPREQUEST.fields_by_name['field_mask'].message_type = google_dot_protobuf_dot_field__mask__pb2._FIELDMASK
-_GETDATAAPPRESPONSE.fields_by_name['dataapp'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2._DATAAPP
-_RUNDATAAPPREQUEST.fields_by_name['dataapp'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2._DATAAPP
-DESCRIPTOR.message_types_by_name['ListDataAppsRequest'] = _LISTDATAAPPSREQUEST
-DESCRIPTOR.message_types_by_name['ListDataAppsResponse'] = _LISTDATAAPPSRESPONSE
-DESCRIPTOR.message_types_by_name['CreateDataAppResponse'] = _CREATEDATAAPPRESPONSE
-DESCRIPTOR.message_types_by_name['CreateDataAppRequest'] = _CREATEDATAAPPREQUEST
-DESCRIPTOR.message_types_by_name['UpdateDataAppRequest'] = _UPDATEDATAAPPREQUEST
-DESCRIPTOR.message_types_by_name['UpdateDataAppResponse'] = _UPDATEDATAAPPRESPONSE
-DESCRIPTOR.message_types_by_name['GetDataAppRequest'] = _GETDATAAPPREQUEST
-DESCRIPTOR.message_types_by_name['GetDataAppResponse'] = _GETDATAAPPRESPONSE
-DESCRIPTOR.message_types_by_name['DeleteDataAppRequest'] = _DELETEDATAAPPREQUEST
-DESCRIPTOR.message_types_by_name['DeleteDataAppResponse'] = _DELETEDATAAPPRESPONSE
-DESCRIPTOR.message_types_by_name['PauseDataAppRequest'] = _PAUSEDATAAPPREQUEST
-DESCRIPTOR.message_types_by_name['PauseDataAppResponse'] = _PAUSEDATAAPPRESPONSE
-DESCRIPTOR.message_types_by_name['ResumeDataAppRequest'] = _RESUMEDATAAPPREQUEST
-DESCRIPTOR.message_types_by_name['ResumeDataAppResponse'] = _RESUMEDATAAPPRESPONSE
-DESCRIPTOR.message_types_by_name['RunDataAppRequest'] = _RUNDATAAPPREQUEST
-DESCRIPTOR.message_types_by_name['RunDataAppResponse'] = _RUNDATAAPPRESPONSE
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
+_LISTDATAAPPSREQUEST = DESCRIPTOR.message_types_by_name['ListDataAppsRequest']
+_LISTDATAAPPSREQUEST_LABELSENTRY = _LISTDATAAPPSREQUEST.nested_types_by_name['LabelsEntry']
+_LISTDATAAPPSRESPONSE = DESCRIPTOR.message_types_by_name['ListDataAppsResponse']
+_CREATEDATAAPPRESPONSE = DESCRIPTOR.message_types_by_name['CreateDataAppResponse']
+_CREATEDATAAPPREQUEST = DESCRIPTOR.message_types_by_name['CreateDataAppRequest']
+_UPDATEDATAAPPREQUEST = DESCRIPTOR.message_types_by_name['UpdateDataAppRequest']
+_UPDATEDATAAPPRESPONSE = DESCRIPTOR.message_types_by_name['UpdateDataAppResponse']
+_GETDATAAPPREQUEST = DESCRIPTOR.message_types_by_name['GetDataAppRequest']
+_GETDATAAPPRESPONSE = DESCRIPTOR.message_types_by_name['GetDataAppResponse']
+_DELETEDATAAPPREQUEST = DESCRIPTOR.message_types_by_name['DeleteDataAppRequest']
+_DELETEDATAAPPRESPONSE = DESCRIPTOR.message_types_by_name['DeleteDataAppResponse']
+_PAUSEDATAAPPREQUEST = DESCRIPTOR.message_types_by_name['PauseDataAppRequest']
+_PAUSEDATAAPPRESPONSE = DESCRIPTOR.message_types_by_name['PauseDataAppResponse']
+_RESUMEDATAAPPREQUEST = DESCRIPTOR.message_types_by_name['ResumeDataAppRequest']
+_RESUMEDATAAPPRESPONSE = DESCRIPTOR.message_types_by_name['ResumeDataAppResponse']
+_RUNDATAAPPREQUEST = DESCRIPTOR.message_types_by_name['RunDataAppRequest']
+_RUNDATAAPPRESPONSE = DESCRIPTOR.message_types_by_name['RunDataAppResponse']
 ListDataAppsRequest = _reflection.GeneratedProtocolMessageType('ListDataAppsRequest', (_message.Message,), {
 
   'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
@@ -759,103 +158,63 @@ RunDataAppResponse = _reflection.GeneratedProtocolMessageType('RunDataAppRespons
   })
 _sym_db.RegisterMessage(RunDataAppResponse)
 
+_DATAAPPSERVICE = DESCRIPTOR.services_by_name['DataAppService']
+if _descriptor._USE_C_DESCRIPTORS == False:
 
-DESCRIPTOR._options = None
-_LISTDATAAPPSREQUEST_LABELSENTRY._options = None
-
-_DATAAPPSERVICE = _descriptor.ServiceDescriptor(
-  name='DataAppService',
-  full_name='github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService',
-  file=DESCRIPTOR,
-  index=0,
-  serialized_options=None,
-  create_key=_descriptor._internal_create_key,
-  serialized_start=1509,
-  serialized_end=3214,
-  methods=[
-  _descriptor.MethodDescriptor(
-    name='ListDataApps',
-    full_name='github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService.ListDataApps',
-    index=0,
-    containing_service=None,
-    input_type=_LISTDATAAPPSREQUEST,
-    output_type=_LISTDATAAPPSRESPONSE,
-    serialized_options=b'\202\323\344\223\002\032\022\030/v1/dataapps/{namespace}',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='CreateDataApp',
-    full_name='github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService.CreateDataApp',
-    index=1,
-    containing_service=None,
-    input_type=_CREATEDATAAPPREQUEST,
-    output_type=_CREATEDATAAPPRESPONSE,
-    serialized_options=b'\202\323\344\223\002\021\"\014/v1/dataapps:\001*',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='GetDataApp',
-    full_name='github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService.GetDataApp',
-    index=2,
-    containing_service=None,
-    input_type=_GETDATAAPPREQUEST,
-    output_type=_GETDATAAPPRESPONSE,
-    serialized_options=b'\202\323\344\223\002!\022\037/v1/dataapps/{namespace}/{name}',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='UpdateDataApp',
-    full_name='github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService.UpdateDataApp',
-    index=3,
-    containing_service=None,
-    input_type=_UPDATEDATAAPPREQUEST,
-    output_type=_UPDATEDATAAPPRESPONSE,
-    serialized_options=b'\202\323\344\223\002F\032A/v1/dataapps/{dataapp.metadata.namespace}/{dataapp.metadata.name}:\001*',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='DeleteDataApp',
-    full_name='github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService.DeleteDataApp',
-    index=4,
-    containing_service=None,
-    input_type=_DELETEDATAAPPREQUEST,
-    output_type=_DELETEDATAAPPRESPONSE,
-    serialized_options=b'\202\323\344\223\002!*\037/v1/dataapps/{namespace}/{name}',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='PauseDataApp',
-    full_name='github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService.PauseDataApp',
-    index=5,
-    containing_service=None,
-    input_type=_PAUSEDATAAPPREQUEST,
-    output_type=_PAUSEDATAAPPRESPONSE,
-    serialized_options=b'\202\323\344\223\002\'\"%/v1/dataapps/{namespace}/{name}:pause',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='RunDataApp',
-    full_name='github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService.RunDataApp',
-    index=6,
-    containing_service=None,
-    input_type=_RUNDATAAPPREQUEST,
-    output_type=_RUNDATAAPPRESPONSE,
-    serialized_options=b'\202\323\344\223\002G\"E/v1/dataapps/{dataapp.metadata.namespace}/{dataapp.metadata.name}:run',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='ResumeDataApp',
-    full_name='github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService.ResumeDataApp',
-    index=7,
-    containing_service=None,
-    input_type=_RESUMEDATAAPPREQUEST,
-    output_type=_RESUMEDATAAPPRESPONSE,
-    serialized_options=b'\202\323\344\223\002(\"&/v1/dataapps/{namespace}/{name}:resume',
-    create_key=_descriptor._internal_create_key,
-  ),
-])
-_sym_db.RegisterServiceDescriptor(_DATAAPPSERVICE)
-
-DESCRIPTOR.services_by_name['DataAppService'] = _DATAAPPSERVICE
-
+  DESCRIPTOR._options = None
+  DESCRIPTOR._serialized_options = b'Z1github.com/metaprov/modelaapi/services/dataapp/v1'
+  _LISTDATAAPPSREQUEST_LABELSENTRY._options = None
+  _LISTDATAAPPSREQUEST_LABELSENTRY._serialized_options = b'8\001'
+  _DATAAPPSERVICE.methods_by_name['ListDataApps']._options = None
+  _DATAAPPSERVICE.methods_by_name['ListDataApps']._serialized_options = b'\202\323\344\223\002\032\022\030/v1/dataapps/{namespace}'
+  _DATAAPPSERVICE.methods_by_name['CreateDataApp']._options = None
+  _DATAAPPSERVICE.methods_by_name['CreateDataApp']._serialized_options = b'\202\323\344\223\002\021\"\014/v1/dataapps:\001*'
+  _DATAAPPSERVICE.methods_by_name['GetDataApp']._options = None
+  _DATAAPPSERVICE.methods_by_name['GetDataApp']._serialized_options = b'\202\323\344\223\002!\022\037/v1/dataapps/{namespace}/{name}'
+  _DATAAPPSERVICE.methods_by_name['UpdateDataApp']._options = None
+  _DATAAPPSERVICE.methods_by_name['UpdateDataApp']._serialized_options = b'\202\323\344\223\002F\032A/v1/dataapps/{dataapp.metadata.namespace}/{dataapp.metadata.name}:\001*'
+  _DATAAPPSERVICE.methods_by_name['DeleteDataApp']._options = None
+  _DATAAPPSERVICE.methods_by_name['DeleteDataApp']._serialized_options = b'\202\323\344\223\002!*\037/v1/dataapps/{namespace}/{name}'
+  _DATAAPPSERVICE.methods_by_name['PauseDataApp']._options = None
+  _DATAAPPSERVICE.methods_by_name['PauseDataApp']._serialized_options = b'\202\323\344\223\002\'\"%/v1/dataapps/{namespace}/{name}:pause'
+  _DATAAPPSERVICE.methods_by_name['RunDataApp']._options = None
+  _DATAAPPSERVICE.methods_by_name['RunDataApp']._serialized_options = b'\202\323\344\223\002G\"E/v1/dataapps/{dataapp.metadata.namespace}/{dataapp.metadata.name}:run'
+  _DATAAPPSERVICE.methods_by_name['ResumeDataApp']._options = None
+  _DATAAPPSERVICE.methods_by_name['ResumeDataApp']._serialized_options = b'\202\323\344\223\002(\"&/v1/dataapps/{namespace}/{name}:resume'
+  _LISTDATAAPPSREQUEST._serialized_start=258
+  _LISTDATAAPPSREQUEST._serialized_end=502
+  _LISTDATAAPPSREQUEST_LABELSENTRY._serialized_start=457
+  _LISTDATAAPPSREQUEST_LABELSENTRY._serialized_end=502
+  _LISTDATAAPPSRESPONSE._serialized_start=505
+  _LISTDATAAPPSRESPONSE._serialized_end=642
+  _CREATEDATAAPPRESPONSE._serialized_start=644
+  _CREATEDATAAPPRESPONSE._serialized_end=667
+  _CREATEDATAAPPREQUEST._serialized_start=669
+  _CREATEDATAAPPREQUEST._serialized_end=776
+  _UPDATEDATAAPPREQUEST._serialized_start=779
+  _UPDATEDATAAPPREQUEST._serialized_end=934
+  _UPDATEDATAAPPRESPONSE._serialized_start=936
+  _UPDATEDATAAPPRESPONSE._serialized_end=959
+  _GETDATAAPPREQUEST._serialized_start=961
+  _GETDATAAPPREQUEST._serialized_end=1013
+  _GETDATAAPPRESPONSE._serialized_start=1015
+  _GETDATAAPPRESPONSE._serialized_end=1134
+  _DELETEDATAAPPREQUEST._serialized_start=1136
+  _DELETEDATAAPPREQUEST._serialized_end=1191
+  _DELETEDATAAPPRESPONSE._serialized_start=1193
+  _DELETEDATAAPPRESPONSE._serialized_end=1216
+  _PAUSEDATAAPPREQUEST._serialized_start=1218
+  _PAUSEDATAAPPREQUEST._serialized_end=1272
+  _PAUSEDATAAPPRESPONSE._serialized_start=1274
+  _PAUSEDATAAPPRESPONSE._serialized_end=1296
+  _RESUMEDATAAPPREQUEST._serialized_start=1298
+  _RESUMEDATAAPPREQUEST._serialized_end=1353
+  _RESUMEDATAAPPRESPONSE._serialized_start=1355
+  _RESUMEDATAAPPRESPONSE._serialized_end=1378
+  _RUNDATAAPPREQUEST._serialized_start=1380
+  _RUNDATAAPPREQUEST._serialized_end=1484
+  _RUNDATAAPPRESPONSE._serialized_start=1486
+  _RUNDATAAPPRESPONSE._serialized_end=1506
+  _DATAAPPSERVICE._serialized_start=1509
+  _DATAAPPSERVICE._serialized_end=3214
 # @@protoc_insertion_point(module_scope)

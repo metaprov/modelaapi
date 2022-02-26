@@ -3,6 +3,7 @@
 # source: github.com/metaprov/modelaapi/services/cloudproxyd/v1/cloudproxyd.proto
 """Generated protocol buffer code."""
 from google.protobuf import descriptor as _descriptor
+from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
@@ -14,736 +15,28 @@ _sym_db = _symbol_database.Default()
 from github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1 import generated_pb2 as github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2
 
 
-DESCRIPTOR = _descriptor.FileDescriptor(
-  name='github.com/metaprov/modelaapi/services/cloudproxyd/v1/cloudproxyd.proto',
-  package='github.com.metaprov.modelaapi.services.cloudproxyd.v1',
-  syntax='proto3',
-  serialized_options=b'Z5github.com/metaprov/modelaapi/services/cloudproxyd/v1',
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nGgithub.com/metaprov/modelaapi/services/cloudproxyd/v1/cloudproxyd.proto\x12\x35github.com.metaprov.modelaapi.services.cloudproxyd.v1\x1a\x45github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto\"\x11\n\x0fShutdownRequest\"\x12\n\x10ShutdownResponse\"\xe5\x02\n\x19VirtualBucketExistRequest\x12T\n\x06\x62ucket\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12U\n\nconnection\x18\x02 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12l\n\x06secret\x18\x03 \x03(\x0b\x32\\.github.com.metaprov.modelaapi.services.cloudproxyd.v1.VirtualBucketExistRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"+\n\x1aVirtualBucketExistResponse\x12\r\n\x05\x65xist\x18\x01 \x01(\x08\"\x8c\x03\n\x1eKeyExistInVirtualBucketRequest\x12\x0e\n\x06region\x18\x01 \x01(\t\x12T\n\x06\x62ucket\x18\x02 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12\x0b\n\x03key\x18\x03 \x01(\t\x12U\n\nconnection\x18\x04 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12q\n\x06secret\x18\x05 \x03(\x0b\x32\x61.github.com.metaprov.modelaapi.services.cloudproxyd.v1.KeyExistInVirtualBucketRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"0\n\x1fKeyExistInVirtualBucketResponse\x12\r\n\x05\x65xist\x18\x01 \x01(\x08\"\x1c\n\x1a\x43loudVirtualBucketResponse\"\x84\x03\n\x13\x46ileDownloadRequest\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\x02 \x01(\t\x12T\n\x06\x62ucket\x18\x03 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12U\n\nconnection\x18\x04 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12\x66\n\x06secret\x18\x05 \x03(\x0b\x32V.github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileDownloadRequest.SecretEntry\x12\x0e\n\x06tenant\x18\x06 \x01(\t\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\x16\n\x14\x46ileDownloadResponse\"\xf0\x02\n\x11\x46ileUploadRequest\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\x02 \x01(\t\x12T\n\x06\x62ucket\x18\x03 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12U\n\nconnection\x18\x04 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12\x64\n\x06secret\x18\x05 \x03(\x0b\x32T.github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileUploadRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\x14\n\x12\x46ileUploadResponse\"\xe7\x02\n\x1a\x43reateVirtualBucketRequest\x12T\n\x06\x62ucket\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12U\n\nconnection\x18\x02 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12m\n\x06secret\x18\x03 \x03(\x0b\x32].github.com.metaprov.modelaapi.services.cloudproxyd.v1.CreateVirtualBucketRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\x1d\n\x1b\x43reateVirtualBucketResponse2\xd3\x08\n\x11\x43loudProxyService\x12\xa5\x01\n\x08\x44ownload\x12J.github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileDownloadRequest\x1aK.github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileDownloadResponse\"\x00\x12\x9f\x01\n\x06Upload\x12H.github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileUploadRequest\x1aI.github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileUploadResponse\"\x00\x12\xca\x01\n\x17KeyExistInVirtualBucket\x12U.github.com.metaprov.modelaapi.services.cloudproxyd.v1.KeyExistInVirtualBucketRequest\x1aV.github.com.metaprov.modelaapi.services.cloudproxyd.v1.KeyExistInVirtualBucketResponse\"\x00\x12\xbb\x01\n\x12VirtualBucketExist\x12P.github.com.metaprov.modelaapi.services.cloudproxyd.v1.VirtualBucketExistRequest\x1aQ.github.com.metaprov.modelaapi.services.cloudproxyd.v1.VirtualBucketExistResponse\"\x00\x12\xc8\x01\n\x1d\x43reateVirtualBucketIfNotExist\x12Q.github.com.metaprov.modelaapi.services.cloudproxyd.v1.CreateVirtualBucketRequest\x1aR.github.com.metaprov.modelaapi.services.cloudproxyd.v1.CreateVirtualBucketResponse\"\x00\x12\x9d\x01\n\x08Shutdown\x12\x46.github.com.metaprov.modelaapi.services.cloudproxyd.v1.ShutdownRequest\x1aG.github.com.metaprov.modelaapi.services.cloudproxyd.v1.ShutdownResponse\"\x00\x42\x37Z5github.com/metaprov/modelaapi/services/cloudproxyd/v1b\x06proto3'
-  ,
-  dependencies=[github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nGgithub.com/metaprov/modelaapi/services/cloudproxyd/v1/cloudproxyd.proto\x12\x35github.com.metaprov.modelaapi.services.cloudproxyd.v1\x1a\x45github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto\"\x11\n\x0fShutdownRequest\"\x12\n\x10ShutdownResponse\"\xe5\x02\n\x19VirtualBucketExistRequest\x12T\n\x06\x62ucket\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12U\n\nconnection\x18\x02 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12l\n\x06secret\x18\x03 \x03(\x0b\x32\\.github.com.metaprov.modelaapi.services.cloudproxyd.v1.VirtualBucketExistRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"+\n\x1aVirtualBucketExistResponse\x12\r\n\x05\x65xist\x18\x01 \x01(\x08\"\x8c\x03\n\x1eKeyExistInVirtualBucketRequest\x12\x0e\n\x06region\x18\x01 \x01(\t\x12T\n\x06\x62ucket\x18\x02 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12\x0b\n\x03key\x18\x03 \x01(\t\x12U\n\nconnection\x18\x04 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12q\n\x06secret\x18\x05 \x03(\x0b\x32\x61.github.com.metaprov.modelaapi.services.cloudproxyd.v1.KeyExistInVirtualBucketRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"0\n\x1fKeyExistInVirtualBucketResponse\x12\r\n\x05\x65xist\x18\x01 \x01(\x08\"\x1c\n\x1a\x43loudVirtualBucketResponse\"\x84\x03\n\x13\x46ileDownloadRequest\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\x02 \x01(\t\x12T\n\x06\x62ucket\x18\x03 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12U\n\nconnection\x18\x04 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12\x66\n\x06secret\x18\x05 \x03(\x0b\x32V.github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileDownloadRequest.SecretEntry\x12\x0e\n\x06tenant\x18\x06 \x01(\t\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\x16\n\x14\x46ileDownloadResponse\"\xf0\x02\n\x11\x46ileUploadRequest\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\x02 \x01(\t\x12T\n\x06\x62ucket\x18\x03 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12U\n\nconnection\x18\x04 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12\x64\n\x06secret\x18\x05 \x03(\x0b\x32T.github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileUploadRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\x14\n\x12\x46ileUploadResponse\"\xe7\x02\n\x1a\x43reateVirtualBucketRequest\x12T\n\x06\x62ucket\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12U\n\nconnection\x18\x02 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12m\n\x06secret\x18\x03 \x03(\x0b\x32].github.com.metaprov.modelaapi.services.cloudproxyd.v1.CreateVirtualBucketRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\x1d\n\x1b\x43reateVirtualBucketResponse2\xd3\x08\n\x11\x43loudProxyService\x12\xa5\x01\n\x08\x44ownload\x12J.github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileDownloadRequest\x1aK.github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileDownloadResponse\"\x00\x12\x9f\x01\n\x06Upload\x12H.github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileUploadRequest\x1aI.github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileUploadResponse\"\x00\x12\xca\x01\n\x17KeyExistInVirtualBucket\x12U.github.com.metaprov.modelaapi.services.cloudproxyd.v1.KeyExistInVirtualBucketRequest\x1aV.github.com.metaprov.modelaapi.services.cloudproxyd.v1.KeyExistInVirtualBucketResponse\"\x00\x12\xbb\x01\n\x12VirtualBucketExist\x12P.github.com.metaprov.modelaapi.services.cloudproxyd.v1.VirtualBucketExistRequest\x1aQ.github.com.metaprov.modelaapi.services.cloudproxyd.v1.VirtualBucketExistResponse\"\x00\x12\xc8\x01\n\x1d\x43reateVirtualBucketIfNotExist\x12Q.github.com.metaprov.modelaapi.services.cloudproxyd.v1.CreateVirtualBucketRequest\x1aR.github.com.metaprov.modelaapi.services.cloudproxyd.v1.CreateVirtualBucketResponse\"\x00\x12\x9d\x01\n\x08Shutdown\x12\x46.github.com.metaprov.modelaapi.services.cloudproxyd.v1.ShutdownRequest\x1aG.github.com.metaprov.modelaapi.services.cloudproxyd.v1.ShutdownResponse\"\x00\x42\x37Z5github.com/metaprov/modelaapi/services/cloudproxyd/v1b\x06proto3')
 
 
 
-
-_SHUTDOWNREQUEST = _descriptor.Descriptor(
-  name='ShutdownRequest',
-  full_name='github.com.metaprov.modelaapi.services.cloudproxyd.v1.ShutdownRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=201,
-  serialized_end=218,
-)
-
-
-_SHUTDOWNRESPONSE = _descriptor.Descriptor(
-  name='ShutdownResponse',
-  full_name='github.com.metaprov.modelaapi.services.cloudproxyd.v1.ShutdownResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=220,
-  serialized_end=238,
-)
-
-
-_VIRTUALBUCKETEXISTREQUEST_SECRETENTRY = _descriptor.Descriptor(
-  name='SecretEntry',
-  full_name='github.com.metaprov.modelaapi.services.cloudproxyd.v1.VirtualBucketExistRequest.SecretEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modelaapi.services.cloudproxyd.v1.VirtualBucketExistRequest.SecretEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modelaapi.services.cloudproxyd.v1.VirtualBucketExistRequest.SecretEntry.value', index=1,
-      number=2, type=12, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"",
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=553,
-  serialized_end=598,
-)
-
-_VIRTUALBUCKETEXISTREQUEST = _descriptor.Descriptor(
-  name='VirtualBucketExistRequest',
-  full_name='github.com.metaprov.modelaapi.services.cloudproxyd.v1.VirtualBucketExistRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='bucket', full_name='github.com.metaprov.modelaapi.services.cloudproxyd.v1.VirtualBucketExistRequest.bucket', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='connection', full_name='github.com.metaprov.modelaapi.services.cloudproxyd.v1.VirtualBucketExistRequest.connection', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='secret', full_name='github.com.metaprov.modelaapi.services.cloudproxyd.v1.VirtualBucketExistRequest.secret', index=2,
-      number=3, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[_VIRTUALBUCKETEXISTREQUEST_SECRETENTRY, ],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=241,
-  serialized_end=598,
-)
-
-
-_VIRTUALBUCKETEXISTRESPONSE = _descriptor.Descriptor(
-  name='VirtualBucketExistResponse',
-  full_name='github.com.metaprov.modelaapi.services.cloudproxyd.v1.VirtualBucketExistResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='exist', full_name='github.com.metaprov.modelaapi.services.cloudproxyd.v1.VirtualBucketExistResponse.exist', index=0,
-      number=1, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=600,
-  serialized_end=643,
-)
-
-
-_KEYEXISTINVIRTUALBUCKETREQUEST_SECRETENTRY = _descriptor.Descriptor(
-  name='SecretEntry',
-  full_name='github.com.metaprov.modelaapi.services.cloudproxyd.v1.KeyExistInVirtualBucketRequest.SecretEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modelaapi.services.cloudproxyd.v1.KeyExistInVirtualBucketRequest.SecretEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modelaapi.services.cloudproxyd.v1.KeyExistInVirtualBucketRequest.SecretEntry.value', index=1,
-      number=2, type=12, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"",
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=553,
-  serialized_end=598,
-)
-
-_KEYEXISTINVIRTUALBUCKETREQUEST = _descriptor.Descriptor(
-  name='KeyExistInVirtualBucketRequest',
-  full_name='github.com.metaprov.modelaapi.services.cloudproxyd.v1.KeyExistInVirtualBucketRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='region', full_name='github.com.metaprov.modelaapi.services.cloudproxyd.v1.KeyExistInVirtualBucketRequest.region', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='bucket', full_name='github.com.metaprov.modelaapi.services.cloudproxyd.v1.KeyExistInVirtualBucketRequest.bucket', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modelaapi.services.cloudproxyd.v1.KeyExistInVirtualBucketRequest.key', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='connection', full_name='github.com.metaprov.modelaapi.services.cloudproxyd.v1.KeyExistInVirtualBucketRequest.connection', index=3,
-      number=4, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='secret', full_name='github.com.metaprov.modelaapi.services.cloudproxyd.v1.KeyExistInVirtualBucketRequest.secret', index=4,
-      number=5, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[_KEYEXISTINVIRTUALBUCKETREQUEST_SECRETENTRY, ],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=646,
-  serialized_end=1042,
-)
-
-
-_KEYEXISTINVIRTUALBUCKETRESPONSE = _descriptor.Descriptor(
-  name='KeyExistInVirtualBucketResponse',
-  full_name='github.com.metaprov.modelaapi.services.cloudproxyd.v1.KeyExistInVirtualBucketResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='exist', full_name='github.com.metaprov.modelaapi.services.cloudproxyd.v1.KeyExistInVirtualBucketResponse.exist', index=0,
-      number=1, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1044,
-  serialized_end=1092,
-)
-
-
-_CLOUDVIRTUALBUCKETRESPONSE = _descriptor.Descriptor(
-  name='CloudVirtualBucketResponse',
-  full_name='github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudVirtualBucketResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1094,
-  serialized_end=1122,
-)
-
-
-_FILEDOWNLOADREQUEST_SECRETENTRY = _descriptor.Descriptor(
-  name='SecretEntry',
-  full_name='github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileDownloadRequest.SecretEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileDownloadRequest.SecretEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileDownloadRequest.SecretEntry.value', index=1,
-      number=2, type=12, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"",
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=553,
-  serialized_end=598,
-)
-
-_FILEDOWNLOADREQUEST = _descriptor.Descriptor(
-  name='FileDownloadRequest',
-  full_name='github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileDownloadRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileDownloadRequest.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='path', full_name='github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileDownloadRequest.path', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='bucket', full_name='github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileDownloadRequest.bucket', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='connection', full_name='github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileDownloadRequest.connection', index=3,
-      number=4, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='secret', full_name='github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileDownloadRequest.secret', index=4,
-      number=5, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='tenant', full_name='github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileDownloadRequest.tenant', index=5,
-      number=6, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[_FILEDOWNLOADREQUEST_SECRETENTRY, ],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1125,
-  serialized_end=1513,
-)
-
-
-_FILEDOWNLOADRESPONSE = _descriptor.Descriptor(
-  name='FileDownloadResponse',
-  full_name='github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileDownloadResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1515,
-  serialized_end=1537,
-)
-
-
-_FILEUPLOADREQUEST_SECRETENTRY = _descriptor.Descriptor(
-  name='SecretEntry',
-  full_name='github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileUploadRequest.SecretEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileUploadRequest.SecretEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileUploadRequest.SecretEntry.value', index=1,
-      number=2, type=12, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"",
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=553,
-  serialized_end=598,
-)
-
-_FILEUPLOADREQUEST = _descriptor.Descriptor(
-  name='FileUploadRequest',
-  full_name='github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileUploadRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileUploadRequest.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='path', full_name='github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileUploadRequest.path', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='bucket', full_name='github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileUploadRequest.bucket', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='connection', full_name='github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileUploadRequest.connection', index=3,
-      number=4, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='secret', full_name='github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileUploadRequest.secret', index=4,
-      number=5, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[_FILEUPLOADREQUEST_SECRETENTRY, ],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1540,
-  serialized_end=1908,
-)
-
-
-_FILEUPLOADRESPONSE = _descriptor.Descriptor(
-  name='FileUploadResponse',
-  full_name='github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileUploadResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1910,
-  serialized_end=1930,
-)
-
-
-_CREATEVIRTUALBUCKETREQUEST_SECRETENTRY = _descriptor.Descriptor(
-  name='SecretEntry',
-  full_name='github.com.metaprov.modelaapi.services.cloudproxyd.v1.CreateVirtualBucketRequest.SecretEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modelaapi.services.cloudproxyd.v1.CreateVirtualBucketRequest.SecretEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modelaapi.services.cloudproxyd.v1.CreateVirtualBucketRequest.SecretEntry.value', index=1,
-      number=2, type=12, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"",
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=553,
-  serialized_end=598,
-)
-
-_CREATEVIRTUALBUCKETREQUEST = _descriptor.Descriptor(
-  name='CreateVirtualBucketRequest',
-  full_name='github.com.metaprov.modelaapi.services.cloudproxyd.v1.CreateVirtualBucketRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='bucket', full_name='github.com.metaprov.modelaapi.services.cloudproxyd.v1.CreateVirtualBucketRequest.bucket', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='connection', full_name='github.com.metaprov.modelaapi.services.cloudproxyd.v1.CreateVirtualBucketRequest.connection', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='secret', full_name='github.com.metaprov.modelaapi.services.cloudproxyd.v1.CreateVirtualBucketRequest.secret', index=2,
-      number=3, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[_CREATEVIRTUALBUCKETREQUEST_SECRETENTRY, ],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1933,
-  serialized_end=2292,
-)
-
-
-_CREATEVIRTUALBUCKETRESPONSE = _descriptor.Descriptor(
-  name='CreateVirtualBucketResponse',
-  full_name='github.com.metaprov.modelaapi.services.cloudproxyd.v1.CreateVirtualBucketResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2294,
-  serialized_end=2323,
-)
-
-_VIRTUALBUCKETEXISTREQUEST_SECRETENTRY.containing_type = _VIRTUALBUCKETEXISTREQUEST
-_VIRTUALBUCKETEXISTREQUEST.fields_by_name['bucket'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._VIRTUALBUCKET
-_VIRTUALBUCKETEXISTREQUEST.fields_by_name['connection'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._CONNECTION
-_VIRTUALBUCKETEXISTREQUEST.fields_by_name['secret'].message_type = _VIRTUALBUCKETEXISTREQUEST_SECRETENTRY
-_KEYEXISTINVIRTUALBUCKETREQUEST_SECRETENTRY.containing_type = _KEYEXISTINVIRTUALBUCKETREQUEST
-_KEYEXISTINVIRTUALBUCKETREQUEST.fields_by_name['bucket'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._VIRTUALBUCKET
-_KEYEXISTINVIRTUALBUCKETREQUEST.fields_by_name['connection'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._CONNECTION
-_KEYEXISTINVIRTUALBUCKETREQUEST.fields_by_name['secret'].message_type = _KEYEXISTINVIRTUALBUCKETREQUEST_SECRETENTRY
-_FILEDOWNLOADREQUEST_SECRETENTRY.containing_type = _FILEDOWNLOADREQUEST
-_FILEDOWNLOADREQUEST.fields_by_name['bucket'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._VIRTUALBUCKET
-_FILEDOWNLOADREQUEST.fields_by_name['connection'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._CONNECTION
-_FILEDOWNLOADREQUEST.fields_by_name['secret'].message_type = _FILEDOWNLOADREQUEST_SECRETENTRY
-_FILEUPLOADREQUEST_SECRETENTRY.containing_type = _FILEUPLOADREQUEST
-_FILEUPLOADREQUEST.fields_by_name['bucket'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._VIRTUALBUCKET
-_FILEUPLOADREQUEST.fields_by_name['connection'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._CONNECTION
-_FILEUPLOADREQUEST.fields_by_name['secret'].message_type = _FILEUPLOADREQUEST_SECRETENTRY
-_CREATEVIRTUALBUCKETREQUEST_SECRETENTRY.containing_type = _CREATEVIRTUALBUCKETREQUEST
-_CREATEVIRTUALBUCKETREQUEST.fields_by_name['bucket'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._VIRTUALBUCKET
-_CREATEVIRTUALBUCKETREQUEST.fields_by_name['connection'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._CONNECTION
-_CREATEVIRTUALBUCKETREQUEST.fields_by_name['secret'].message_type = _CREATEVIRTUALBUCKETREQUEST_SECRETENTRY
-DESCRIPTOR.message_types_by_name['ShutdownRequest'] = _SHUTDOWNREQUEST
-DESCRIPTOR.message_types_by_name['ShutdownResponse'] = _SHUTDOWNRESPONSE
-DESCRIPTOR.message_types_by_name['VirtualBucketExistRequest'] = _VIRTUALBUCKETEXISTREQUEST
-DESCRIPTOR.message_types_by_name['VirtualBucketExistResponse'] = _VIRTUALBUCKETEXISTRESPONSE
-DESCRIPTOR.message_types_by_name['KeyExistInVirtualBucketRequest'] = _KEYEXISTINVIRTUALBUCKETREQUEST
-DESCRIPTOR.message_types_by_name['KeyExistInVirtualBucketResponse'] = _KEYEXISTINVIRTUALBUCKETRESPONSE
-DESCRIPTOR.message_types_by_name['CloudVirtualBucketResponse'] = _CLOUDVIRTUALBUCKETRESPONSE
-DESCRIPTOR.message_types_by_name['FileDownloadRequest'] = _FILEDOWNLOADREQUEST
-DESCRIPTOR.message_types_by_name['FileDownloadResponse'] = _FILEDOWNLOADRESPONSE
-DESCRIPTOR.message_types_by_name['FileUploadRequest'] = _FILEUPLOADREQUEST
-DESCRIPTOR.message_types_by_name['FileUploadResponse'] = _FILEUPLOADRESPONSE
-DESCRIPTOR.message_types_by_name['CreateVirtualBucketRequest'] = _CREATEVIRTUALBUCKETREQUEST
-DESCRIPTOR.message_types_by_name['CreateVirtualBucketResponse'] = _CREATEVIRTUALBUCKETRESPONSE
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
+_SHUTDOWNREQUEST = DESCRIPTOR.message_types_by_name['ShutdownRequest']
+_SHUTDOWNRESPONSE = DESCRIPTOR.message_types_by_name['ShutdownResponse']
+_VIRTUALBUCKETEXISTREQUEST = DESCRIPTOR.message_types_by_name['VirtualBucketExistRequest']
+_VIRTUALBUCKETEXISTREQUEST_SECRETENTRY = _VIRTUALBUCKETEXISTREQUEST.nested_types_by_name['SecretEntry']
+_VIRTUALBUCKETEXISTRESPONSE = DESCRIPTOR.message_types_by_name['VirtualBucketExistResponse']
+_KEYEXISTINVIRTUALBUCKETREQUEST = DESCRIPTOR.message_types_by_name['KeyExistInVirtualBucketRequest']
+_KEYEXISTINVIRTUALBUCKETREQUEST_SECRETENTRY = _KEYEXISTINVIRTUALBUCKETREQUEST.nested_types_by_name['SecretEntry']
+_KEYEXISTINVIRTUALBUCKETRESPONSE = DESCRIPTOR.message_types_by_name['KeyExistInVirtualBucketResponse']
+_CLOUDVIRTUALBUCKETRESPONSE = DESCRIPTOR.message_types_by_name['CloudVirtualBucketResponse']
+_FILEDOWNLOADREQUEST = DESCRIPTOR.message_types_by_name['FileDownloadRequest']
+_FILEDOWNLOADREQUEST_SECRETENTRY = _FILEDOWNLOADREQUEST.nested_types_by_name['SecretEntry']
+_FILEDOWNLOADRESPONSE = DESCRIPTOR.message_types_by_name['FileDownloadResponse']
+_FILEUPLOADREQUEST = DESCRIPTOR.message_types_by_name['FileUploadRequest']
+_FILEUPLOADREQUEST_SECRETENTRY = _FILEUPLOADREQUEST.nested_types_by_name['SecretEntry']
+_FILEUPLOADRESPONSE = DESCRIPTOR.message_types_by_name['FileUploadResponse']
+_CREATEVIRTUALBUCKETREQUEST = DESCRIPTOR.message_types_by_name['CreateVirtualBucketRequest']
+_CREATEVIRTUALBUCKETREQUEST_SECRETENTRY = _CREATEVIRTUALBUCKETREQUEST.nested_types_by_name['SecretEntry']
+_CREATEVIRTUALBUCKETRESPONSE = DESCRIPTOR.message_types_by_name['CreateVirtualBucketResponse']
 ShutdownRequest = _reflection.GeneratedProtocolMessageType('ShutdownRequest', (_message.Message,), {
   'DESCRIPTOR' : _SHUTDOWNREQUEST,
   '__module__' : 'github.com.metaprov.modelaapi.services.cloudproxyd.v1.cloudproxyd_pb2'
@@ -875,87 +168,57 @@ CreateVirtualBucketResponse = _reflection.GeneratedProtocolMessageType('CreateVi
   })
 _sym_db.RegisterMessage(CreateVirtualBucketResponse)
 
+_CLOUDPROXYSERVICE = DESCRIPTOR.services_by_name['CloudProxyService']
+if _descriptor._USE_C_DESCRIPTORS == False:
 
-DESCRIPTOR._options = None
-_VIRTUALBUCKETEXISTREQUEST_SECRETENTRY._options = None
-_KEYEXISTINVIRTUALBUCKETREQUEST_SECRETENTRY._options = None
-_FILEDOWNLOADREQUEST_SECRETENTRY._options = None
-_FILEUPLOADREQUEST_SECRETENTRY._options = None
-_CREATEVIRTUALBUCKETREQUEST_SECRETENTRY._options = None
-
-_CLOUDPROXYSERVICE = _descriptor.ServiceDescriptor(
-  name='CloudProxyService',
-  full_name='github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService',
-  file=DESCRIPTOR,
-  index=0,
-  serialized_options=None,
-  create_key=_descriptor._internal_create_key,
-  serialized_start=2326,
-  serialized_end=3433,
-  methods=[
-  _descriptor.MethodDescriptor(
-    name='Download',
-    full_name='github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService.Download',
-    index=0,
-    containing_service=None,
-    input_type=_FILEDOWNLOADREQUEST,
-    output_type=_FILEDOWNLOADRESPONSE,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Upload',
-    full_name='github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService.Upload',
-    index=1,
-    containing_service=None,
-    input_type=_FILEUPLOADREQUEST,
-    output_type=_FILEUPLOADRESPONSE,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='KeyExistInVirtualBucket',
-    full_name='github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService.KeyExistInVirtualBucket',
-    index=2,
-    containing_service=None,
-    input_type=_KEYEXISTINVIRTUALBUCKETREQUEST,
-    output_type=_KEYEXISTINVIRTUALBUCKETRESPONSE,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='VirtualBucketExist',
-    full_name='github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService.VirtualBucketExist',
-    index=3,
-    containing_service=None,
-    input_type=_VIRTUALBUCKETEXISTREQUEST,
-    output_type=_VIRTUALBUCKETEXISTRESPONSE,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='CreateVirtualBucketIfNotExist',
-    full_name='github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService.CreateVirtualBucketIfNotExist',
-    index=4,
-    containing_service=None,
-    input_type=_CREATEVIRTUALBUCKETREQUEST,
-    output_type=_CREATEVIRTUALBUCKETRESPONSE,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Shutdown',
-    full_name='github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService.Shutdown',
-    index=5,
-    containing_service=None,
-    input_type=_SHUTDOWNREQUEST,
-    output_type=_SHUTDOWNRESPONSE,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-])
-_sym_db.RegisterServiceDescriptor(_CLOUDPROXYSERVICE)
-
-DESCRIPTOR.services_by_name['CloudProxyService'] = _CLOUDPROXYSERVICE
-
+  DESCRIPTOR._options = None
+  DESCRIPTOR._serialized_options = b'Z5github.com/metaprov/modelaapi/services/cloudproxyd/v1'
+  _VIRTUALBUCKETEXISTREQUEST_SECRETENTRY._options = None
+  _VIRTUALBUCKETEXISTREQUEST_SECRETENTRY._serialized_options = b'8\001'
+  _KEYEXISTINVIRTUALBUCKETREQUEST_SECRETENTRY._options = None
+  _KEYEXISTINVIRTUALBUCKETREQUEST_SECRETENTRY._serialized_options = b'8\001'
+  _FILEDOWNLOADREQUEST_SECRETENTRY._options = None
+  _FILEDOWNLOADREQUEST_SECRETENTRY._serialized_options = b'8\001'
+  _FILEUPLOADREQUEST_SECRETENTRY._options = None
+  _FILEUPLOADREQUEST_SECRETENTRY._serialized_options = b'8\001'
+  _CREATEVIRTUALBUCKETREQUEST_SECRETENTRY._options = None
+  _CREATEVIRTUALBUCKETREQUEST_SECRETENTRY._serialized_options = b'8\001'
+  _SHUTDOWNREQUEST._serialized_start=201
+  _SHUTDOWNREQUEST._serialized_end=218
+  _SHUTDOWNRESPONSE._serialized_start=220
+  _SHUTDOWNRESPONSE._serialized_end=238
+  _VIRTUALBUCKETEXISTREQUEST._serialized_start=241
+  _VIRTUALBUCKETEXISTREQUEST._serialized_end=598
+  _VIRTUALBUCKETEXISTREQUEST_SECRETENTRY._serialized_start=553
+  _VIRTUALBUCKETEXISTREQUEST_SECRETENTRY._serialized_end=598
+  _VIRTUALBUCKETEXISTRESPONSE._serialized_start=600
+  _VIRTUALBUCKETEXISTRESPONSE._serialized_end=643
+  _KEYEXISTINVIRTUALBUCKETREQUEST._serialized_start=646
+  _KEYEXISTINVIRTUALBUCKETREQUEST._serialized_end=1042
+  _KEYEXISTINVIRTUALBUCKETREQUEST_SECRETENTRY._serialized_start=553
+  _KEYEXISTINVIRTUALBUCKETREQUEST_SECRETENTRY._serialized_end=598
+  _KEYEXISTINVIRTUALBUCKETRESPONSE._serialized_start=1044
+  _KEYEXISTINVIRTUALBUCKETRESPONSE._serialized_end=1092
+  _CLOUDVIRTUALBUCKETRESPONSE._serialized_start=1094
+  _CLOUDVIRTUALBUCKETRESPONSE._serialized_end=1122
+  _FILEDOWNLOADREQUEST._serialized_start=1125
+  _FILEDOWNLOADREQUEST._serialized_end=1513
+  _FILEDOWNLOADREQUEST_SECRETENTRY._serialized_start=553
+  _FILEDOWNLOADREQUEST_SECRETENTRY._serialized_end=598
+  _FILEDOWNLOADRESPONSE._serialized_start=1515
+  _FILEDOWNLOADRESPONSE._serialized_end=1537
+  _FILEUPLOADREQUEST._serialized_start=1540
+  _FILEUPLOADREQUEST._serialized_end=1908
+  _FILEUPLOADREQUEST_SECRETENTRY._serialized_start=553
+  _FILEUPLOADREQUEST_SECRETENTRY._serialized_end=598
+  _FILEUPLOADRESPONSE._serialized_start=1910
+  _FILEUPLOADRESPONSE._serialized_end=1930
+  _CREATEVIRTUALBUCKETREQUEST._serialized_start=1933
+  _CREATEVIRTUALBUCKETREQUEST._serialized_end=2292
+  _CREATEVIRTUALBUCKETREQUEST_SECRETENTRY._serialized_start=553
+  _CREATEVIRTUALBUCKETREQUEST_SECRETENTRY._serialized_end=598
+  _CREATEVIRTUALBUCKETRESPONSE._serialized_start=2294
+  _CREATEVIRTUALBUCKETRESPONSE._serialized_end=2323
+  _CLOUDPROXYSERVICE._serialized_start=2326
+  _CLOUDPROXYSERVICE._serialized_end=3433
 # @@protoc_insertion_point(module_scope)

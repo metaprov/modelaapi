@@ -3,6 +3,7 @@
 # source: k8s.io/apimachinery/pkg/runtime/schema/generated.proto
 """Generated protocol buffer code."""
 from google.protobuf import descriptor as _descriptor
+from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
@@ -13,19 +14,12 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor.FileDescriptor(
-  name='k8s.io/apimachinery/pkg/runtime/schema/generated.proto',
-  package='k8s.io.apimachinery.pkg.runtime.schema',
-  syntax='proto2',
-  serialized_options=b'Z&k8s.io/apimachinery/pkg/runtime/schema',
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n6k8s.io/apimachinery/pkg/runtime/schema/generated.proto\x12&k8s.io.apimachinery.pkg.runtime.schemaB(Z&k8s.io/apimachinery/pkg/runtime/schema'
-)
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n6k8s.io/apimachinery/pkg/runtime/schema/generated.proto\x12&k8s.io.apimachinery.pkg.runtime.schemaB(Z&k8s.io/apimachinery/pkg/runtime/schema')
 
 
 
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
+if _descriptor._USE_C_DESCRIPTORS == False:
 
-
-DESCRIPTOR._options = None
+  DESCRIPTOR._options = None
+  DESCRIPTOR._serialized_options = b'Z&k8s.io/apimachinery/pkg/runtime/schema'
 # @@protoc_insertion_point(module_scope)
