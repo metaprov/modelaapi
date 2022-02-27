@@ -18287,7 +18287,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec.toObj
     rabbitmq: (f = msg.getRabbitmq()) && proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.RabbitMQSpec.toObject(includeInstance, f),
     kafka: (f = msg.getKafka()) && proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.KafkaSpec.toObject(includeInstance, f),
     neo4j: (f = msg.getNeo4j()) && proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Neo4JSpec.toObject(includeInstance, f),
-    owner: (f = jspb.Message.getField(msg, 74)) == null ? undefined : f
+    discord: (f = msg.getDiscord()) && proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.DiscordSpec.toObject(includeInstance, f),
+    owner: (f = jspb.Message.getField(msg, 80)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -18678,6 +18679,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec.deser
       msg.setNeo4j(value);
       break;
     case 74:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.DiscordSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.DiscordSpec.deserializeBinaryFromReader);
+      msg.setDiscord(value);
+      break;
+    case 80:
       var value = /** @type {string} */ (reader.readString());
       msg.setOwner(value);
       break;
@@ -19276,10 +19282,18 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec.seria
       proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Neo4JSpec.serializeBinaryToWriter
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 74));
+  f = message.getDiscord();
+  if (f != null) {
+    writer.writeMessage(
+      74,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.DiscordSpec.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 80));
   if (f != null) {
     writer.writeString(
-      74,
+      80,
       f
     );
   }
@@ -21912,11 +21926,48 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
 
 
 /**
- * optional string owner = 74;
+ * optional DiscordSpec discord = 74;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.DiscordSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getDiscord = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.DiscordSpec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.DiscordSpec, 74));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.DiscordSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setDiscord = function(value) {
+  return jspb.Message.setWrapperField(this, 74, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.clearDiscord = function() {
+  return this.setDiscord(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasDiscord = function() {
+  return jspb.Message.getField(this, 74) != null;
+};
+
+
+/**
+ * optional string owner = 80;
  * @return {string}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getOwner = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 74, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 80, ""));
 };
 
 
@@ -21925,7 +21976,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setOwner = function(value) {
-  return jspb.Message.setField(this, 74, value);
+  return jspb.Message.setField(this, 80, value);
 };
 
 
@@ -21934,7 +21985,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.clearOwner = function() {
-  return jspb.Message.setField(this, 74, undefined);
+  return jspb.Message.setField(this, 80, undefined);
 };
 
 
@@ -21943,7 +21994,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasOwner = function() {
-  return jspb.Message.getField(this, 74) != null;
+  return jspb.Message.getField(this, 80) != null;
 };
 
 

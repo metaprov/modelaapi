@@ -280,9 +280,12 @@ type ConnectionSpec struct {
 	// +kubebuilder:validation:Optional
 	Neo4j *Neo4JSpec `json:"neo4j,omitempty" protobuf:"bytes,73,opt,name=neo4j"`
 
+	// +kubebuilder:validation:Optional
+	Discord *DiscordSpec `json:"discrod,omitempty" protobuf:"bytes,74,opt,name=discord"`
+
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
-	Owner *string `json:"owner,omitempty" protobuf:"bytes,74,opt,name=owner"`
+	Owner *string `json:"owner,omitempty" protobuf:"bytes,80,opt,name=owner"`
 }
 
 // ConnectionStatus is the observed state of a Connection

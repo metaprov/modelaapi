@@ -1157,9 +1157,12 @@ message ConnectionSpec {
   // +kubebuilder:validation:Optional
   optional Neo4JSpec neo4j = 73;
 
+  // +kubebuilder:validation:Optional
+  optional DiscordSpec discord = 74;
+
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
-  optional string owner = 74;
+  optional string owner = 80;
 }
 
 // ConnectionStatus is the observed state of a Connection

@@ -1958,6 +1958,11 @@ export class ConnectionSpec extends jspb.Message {
   hasNeo4j(): boolean;
   clearNeo4j(): ConnectionSpec;
 
+  getDiscord(): DiscordSpec | undefined;
+  setDiscord(value?: DiscordSpec): ConnectionSpec;
+  hasDiscord(): boolean;
+  clearDiscord(): ConnectionSpec;
+
   getOwner(): string;
   setOwner(value: string): ConnectionSpec;
 
@@ -2042,6 +2047,7 @@ export namespace ConnectionSpec {
     rabbitmq?: RabbitMQSpec.AsObject,
     kafka?: KafkaSpec.AsObject,
     neo4j?: Neo4JSpec.AsObject,
+    discord?: DiscordSpec.AsObject,
     owner: string,
   }
 }

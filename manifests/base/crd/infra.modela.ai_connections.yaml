@@ -359,6 +359,27 @@ spec:
                     description: Token for digital ocean
                     type: string
                 type: object
+              discrod:
+                properties:
+                  contentType:
+                    default: application/json
+                    description: Content type
+                    type: string
+                  headers:
+                    additionalProperties:
+                      type: string
+                    description: custom headers to send
+                    type: object
+                  ssl:
+                    type: boolean
+                  token:
+                    description: The webhook secret token
+                    type: string
+                  url:
+                    default: ""
+                    description: Discrod webhook
+                    type: string
+                type: object
               dremio:
                 properties:
                   host:

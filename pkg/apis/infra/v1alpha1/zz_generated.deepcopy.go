@@ -1924,6 +1924,11 @@ func (in *ConnectionSpec) DeepCopyInto(out *ConnectionSpec) {
 		*out = new(Neo4JSpec)
 		(*in).DeepCopyInto(*out)
 	}
+	if in.Discord != nil {
+		in, out := &in.Discord, &out.Discord
+		*out = new(DiscordSpec)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.Owner != nil {
 		in, out := &in.Owner, &out.Owner
 		*out = new(string)
