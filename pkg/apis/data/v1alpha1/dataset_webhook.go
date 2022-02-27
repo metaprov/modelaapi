@@ -7,6 +7,8 @@
 package v1alpha1
 
 import (
+	"strings"
+
 	"github.com/metaprov/modelaapi/pkg/util"
 	"k8s.io/apimachinery/pkg/runtime"
 	"sigs.k8s.io/controller-runtime/pkg/webhook"
@@ -27,15 +29,21 @@ func (dataset *Dataset) Default() {
 	if dataset.ObjectMeta.Labels == nil {
 		dataset.ObjectMeta.Labels = make(map[string]string)
 		if dataset.Spec.DataSourceName != nil {
-			dataset.ObjectMeta.Labels["source"] = *dataset.Spec.DataSourceName
+			dataset.ObjectMeta.Labels["modela.ai/datasource"] = *dataset.Spec.DataSourceName
 		}
 		if dataset.Spec.VersionName != nil {
-			dataset.ObjectMeta.Labels["version"] = *dataset.Spec.VersionName
+			dataset.ObjectMeta.Labels["modela.ai/version"] = *dataset.Spec.VersionName
 		}
 		if dataset.Spec.Owner != nil {
-			dataset.ObjectMeta.Labels["owner"] = *dataset.Spec.Owner
+			dataset.ObjectMeta.Labels["modela.ai/owner"] = *dataset.Spec.Owner
 		}
 
+	}
+
+	// If the live path is empty, copy it from the depot path
+	if *dataset.Spec.Origin.Type == DataLocationObjectStorage {
+		dataset.Spec.Location = dataset.Spec.Origin
+		dataset.Spec.Location.Path = util.StrPtr(strings.Replace(*dataset.Spec.Location.Path, "/depot/", "/live/", -1))
 	}
 
 	dataset.Status.Statistics.Columns = make([]ColumnStatistics, 0)
