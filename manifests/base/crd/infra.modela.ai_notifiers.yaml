@@ -65,8 +65,21 @@ spec:
                 type: string
               email:
                 default: ""
-                description: The email to use when choosing a email notifier
+                description: The email to send messages to. This is only relvent when
+                  using email notifier.
                 type: string
+              enabled:
+                default: true
+                description: Is this notifier can send notification
+                type: boolean
+              error:
+                default: true
+                description: Send error messages
+                type: boolean
+              info:
+                default: false
+                description: Send info messages
+                type: boolean
               owner:
                 default: no-one
                 description: The owner account name

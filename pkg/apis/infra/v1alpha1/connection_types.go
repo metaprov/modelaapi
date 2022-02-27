@@ -954,16 +954,34 @@ type SlackSpec struct {
 }
 
 type SmtpSpec struct {
+	// SMTP server Host
 	// +kubebuilder:default:=""
 	Host *string `json:"host,omitempty" protobuf:"bytes,1,opt,name=host"`
+	// SMTP Server Port
 	// +kubebuilder:default:=25
 	// +kubebuilder:validation:Minimum=1
 	// +kubebuilder:validation:Maximum=65535
 	Port *int32 `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
+	// The SMTP domain name
 	// +kubebuilder:default:=""
-	Username *string `json:"userName,omitempty" protobuf:"bytes,3,opt,name=userName"`
+	Helo *string `json:"helo,omitempty" protobuf:"bytes,3,opt,name=helo"`
+	// The smtp email
+	Email *string `json:"email,omitempty" protobuf:"bytes,4,opt,name=email"`
+	// Use SSL when connecting to SMTP server
+	// +kubebuilder:default:=false
+	SSL *bool `json:"ssl,omitempty" protobuf:"bytes,5,opt,name=ssl"`
+	// +kubebuilder:default:=false
+	VerifyPeer *bool `json:"verifyPeer,omitempty" protobuf:"bytes,6,opt,name=verifyPeer"`
+	// +kubebuilder:default:=false
+	VerifyHost *bool `json:"verifyHost,omitempty" protobuf:"bytes,7,opt,name=verifyHost"`
+	// Use user name password auth
+	// +kubebuilder:default:=true
+	PasswordAuth *bool `json:"passwordAuth,omitempty" protobuf:"bytes,8,opt,name=passwordAuth"`
+	// User name when using user name and password
+	UserName *string `json:"username,omitempty" protobuf:"bytes,9,opt,name=username"`
+	// Password when using user name and password
 	// +kubebuilder:default:=""
-	Password *string `json:"password,omitempty" protobuf:"bytes,4,opt,name=password"`
+	Password *string `json:"password,omitempty" protobuf:"bytes,10,opt,name=password"`
 }
 
 type GithubSpec struct {
@@ -1098,6 +1116,21 @@ type OpsgenieSpec struct {
 }
 
 type WebhookSpec struct {
+	// +kubebuilder:default:=""
+	Url *string `json:"url,omitempty" protobuf:"bytes,1,opt,name=url"`
+	// Content type
+	// +kubebuilder:default:="application/json"
+	ContentType *string `json:"contentType,omitempty" protobuf:"bytes,2,opt,name=contentType"`
+	// The webhook secret token
+	Token *string `json:"token,omitempty" protobuf:"bytes,3,opt,name=token"`
+	// custom headers to send
+	Headers map[string]string `json:"headers,omitempty" protobuf:"bytes,4,opt,name=headers"`
+
+	SSL *bool `json:"ssl,omitempty" protobuf:"bytes,5,opt,name=ssl"`
+}
+
+type DiscordSpec struct {
+	// Discrod webhook
 	// +kubebuilder:default:=""
 	Url *string `json:"url,omitempty" protobuf:"bytes,1,opt,name=url"`
 	// Content type

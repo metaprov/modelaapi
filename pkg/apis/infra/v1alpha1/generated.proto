@@ -1258,6 +1258,24 @@ message DigitalOceanSpec {
   optional string host = 5;
 }
 
+message DiscordSpec {
+  // Discrod webhook
+  // +kubebuilder:default:=""
+  optional string url = 1;
+
+  // Content type
+  // +kubebuilder:default:="application/json"
+  optional string contentType = 2;
+
+  // The webhook secret token
+  optional string token = 3;
+
+  // custom headers to send
+  map<string, string> headers = 4;
+
+  optional bool ssl = 5;
+}
+
 message DremioSpec {
   // +kubebuilder:default:=""
   optional string host = 1;
@@ -2063,10 +2081,10 @@ message NotifierList {
 
 // NotifierSpec defines the desired state of Notifier
 message NotifierSpec {
-  // Notifier type
-  // +kubebuilder:default:="webhook"
+  // Is this notifier can send notification
+  // +kubebuilder:default:= true
   // +kubebuilder:validation:Optional
-  optional string type = 1;
+  optional bool enabled = 1;
 
   // The tenant that own the notifier
   // Default to default tenant.
@@ -2078,19 +2096,34 @@ message NotifierSpec {
   // +kubebuilder:validation:Optional
   optional string description = 3;
 
+  // Notifier type
+  // +kubebuilder:default:="webhook"
+  // +kubebuilder:validation:Optional
+  optional string type = 4;
+
   // +kubebuilder:validation:Required
   // +kubebuilder:default:=""
-  optional string connectionName = 4;
+  optional string connectionName = 5;
+
+  // Send info messages
+  // +kubebuilder:default:= false
+  // +kubebuilder:validation:Optional
+  optional bool info = 6;
+
+  // Send error messages
+  // +kubebuilder:default:= true
+  // +kubebuilder:validation:Optional
+  optional bool error = 7;
 
   // The owner account name
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
-  optional string owner = 5;
+  optional string owner = 8;
 
-  // The email to use when choosing a email notifier
+  // The email to send messages to. This is only relvent when using email notifier.
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string email = 6;
+  optional string email = 9;
 }
 
 // NotifierStatus is the observed state of a Notifier
@@ -2543,19 +2576,43 @@ message SlackSpec {
 }
 
 message SmtpSpec {
+  // SMTP server Host
   // +kubebuilder:default:=""
   optional string host = 1;
 
+  // SMTP Server Port
   // +kubebuilder:default:=25
   // +kubebuilder:validation:Minimum=1
   // +kubebuilder:validation:Maximum=65535
   optional int32 port = 2;
 
+  // The SMTP domain name
   // +kubebuilder:default:=""
-  optional string userName = 3;
+  optional string helo = 3;
 
+  // The smtp email
+  optional string email = 4;
+
+  // Use SSL when connecting to SMTP server
+  // +kubebuilder:default:=false
+  optional bool ssl = 5;
+
+  // +kubebuilder:default:=false
+  optional bool verifyPeer = 6;
+
+  // +kubebuilder:default:=false
+  optional bool verifyHost = 7;
+
+  // Use user name password auth
+  // +kubebuilder:default:=true
+  optional bool passwordAuth = 8;
+
+  // User name when using user name and password
+  optional string username = 9;
+
+  // Password when using user name and password
   // +kubebuilder:default:=""
-  optional string password = 4;
+  optional string password = 10;
 }
 
 message SnowflakeSpec {

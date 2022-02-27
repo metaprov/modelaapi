@@ -2198,6 +2198,40 @@ export namespace DigitalOceanSpec {
   }
 }
 
+export class DiscordSpec extends jspb.Message {
+  getUrl(): string;
+  setUrl(value: string): DiscordSpec;
+
+  getContenttype(): string;
+  setContenttype(value: string): DiscordSpec;
+
+  getToken(): string;
+  setToken(value: string): DiscordSpec;
+
+  getHeadersMap(): jspb.Map<string, string>;
+  clearHeadersMap(): DiscordSpec;
+
+  getSsl(): boolean;
+  setSsl(value: boolean): DiscordSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DiscordSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: DiscordSpec): DiscordSpec.AsObject;
+  static serializeBinaryToWriter(message: DiscordSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DiscordSpec;
+  static deserializeBinaryFromReader(message: DiscordSpec, reader: jspb.BinaryReader): DiscordSpec;
+}
+
+export namespace DiscordSpec {
+  export type AsObject = {
+    url: string,
+    contenttype: string,
+    token: string,
+    headersMap: Array<[string, string]>,
+    ssl: boolean,
+  }
+}
+
 export class DremioSpec extends jspb.Message {
   getHost(): string;
   setHost(value: string): DremioSpec;
@@ -3681,8 +3715,8 @@ export namespace NotifierList {
 }
 
 export class NotifierSpec extends jspb.Message {
-  getType(): string;
-  setType(value: string): NotifierSpec;
+  getEnabled(): boolean;
+  setEnabled(value: boolean): NotifierSpec;
 
   getTenantref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setTenantref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): NotifierSpec;
@@ -3692,8 +3726,17 @@ export class NotifierSpec extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): NotifierSpec;
 
+  getType(): string;
+  setType(value: string): NotifierSpec;
+
   getConnectionname(): string;
   setConnectionname(value: string): NotifierSpec;
+
+  getInfo(): boolean;
+  setInfo(value: boolean): NotifierSpec;
+
+  getError(): boolean;
+  setError(value: boolean): NotifierSpec;
 
   getOwner(): string;
   setOwner(value: string): NotifierSpec;
@@ -3711,10 +3754,13 @@ export class NotifierSpec extends jspb.Message {
 
 export namespace NotifierSpec {
   export type AsObject = {
-    type: string,
+    enabled: boolean,
     tenantref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     description: string,
+    type: string,
     connectionname: string,
+    info: boolean,
+    error: boolean,
     owner: string,
     email: string,
   }
@@ -4535,6 +4581,24 @@ export class SmtpSpec extends jspb.Message {
   getPort(): number;
   setPort(value: number): SmtpSpec;
 
+  getHelo(): string;
+  setHelo(value: string): SmtpSpec;
+
+  getEmail(): string;
+  setEmail(value: string): SmtpSpec;
+
+  getSsl(): boolean;
+  setSsl(value: boolean): SmtpSpec;
+
+  getVerifypeer(): boolean;
+  setVerifypeer(value: boolean): SmtpSpec;
+
+  getVerifyhost(): boolean;
+  setVerifyhost(value: boolean): SmtpSpec;
+
+  getPasswordauth(): boolean;
+  setPasswordauth(value: boolean): SmtpSpec;
+
   getUsername(): string;
   setUsername(value: string): SmtpSpec;
 
@@ -4553,6 +4617,12 @@ export namespace SmtpSpec {
   export type AsObject = {
     host: string,
     port: number,
+    helo: string,
+    email: string,
+    ssl: boolean,
+    verifypeer: boolean,
+    verifyhost: boolean,
+    passwordauth: boolean,
     username: string,
     password: string,
   }

@@ -64,10 +64,10 @@ type NotifierList struct {
 
 // NotifierSpec defines the desired state of Notifier
 type NotifierSpec struct {
-	// Notifier type
-	// +kubebuilder:default:="webhook"
+	// Is this notifier can send notification
+	// +kubebuilder:default:= true
 	// +kubebuilder:validation:Optional
-	Type *NotifierType `json:"type" protobuf:"bytes,1,opt,name=type"`
+	Enabled *bool `json:"enabled,omitempty" protobuf:"bytes,1,opt,name=enabled"`
 	// The tenant that own the notifier
 	// Default to default tenant.
 	// +kubebuilder:validation:Optional
@@ -76,17 +76,29 @@ type NotifierSpec struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
+	// Notifier type
+	// +kubebuilder:default:="webhook"
+	// +kubebuilder:validation:Optional
+	Type *NotifierType `json:"type" protobuf:"bytes,4,opt,name=type"`
 	// +kubebuilder:validation:Required
 	// +kubebuilder:default:=""
-	ConnectionName *string `json:"connectionName" protobuf:"bytes,4,opt,name=connectionName"`
+	ConnectionName *string `json:"connectionName" protobuf:"bytes,5,opt,name=connectionName"`
+	// Send info messages
+	// +kubebuilder:default:= false
+	// +kubebuilder:validation:Optional
+	Info *bool `json:"info,omitempty" protobuf:"bytes,6,opt,name=info"`
+	// Send error messages
+	// +kubebuilder:default:= true
+	// +kubebuilder:validation:Optional
+	Error *bool `json:"error,omitempty" protobuf:"bytes,7,opt,name=error"`
 	// The owner account name
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
-	Owner *string `json:"owner,omitempty" protobuf:"bytes,5,opt,name=owner"`
-	// The email to use when choosing a email notifier
+	Owner *string `json:"owner,omitempty" protobuf:"bytes,8,opt,name=owner"`
+	// The email to send messages to. This is only relvent when using email notifier.
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	Email *string `json:"email,omitempty" protobuf:"bytes,6,opt,name=email"`
+	Email *string `json:"email,omitempty" protobuf:"bytes,9,opt,name=email"`
 }
 
 // NotifierStatus is the observed state of a Notifier
