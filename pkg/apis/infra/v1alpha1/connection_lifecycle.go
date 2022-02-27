@@ -412,7 +412,7 @@ func (connection *Connection) CreateSecret() *v1.Secret {
 	case catalog.SmtpProvider:
 		fields[string(catalog.ApiKeyNameHost)] = *connection.Spec.Smtp.Host
 		fields[string(catalog.ApiKeyNamePort)] = util.ItoA(connection.Spec.Smtp.Port)
-		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.Smtp.Username
+		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.Smtp.UserName
 		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.Smtp.Password
 	case catalog.Slack:
 		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.Slack.Username
