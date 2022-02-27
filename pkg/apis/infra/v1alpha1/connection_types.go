@@ -978,7 +978,7 @@ type SmtpSpec struct {
 	// +kubebuilder:default:=true
 	PasswordAuth *bool `json:"passwordAuth,omitempty" protobuf:"bytes,8,opt,name=passwordAuth"`
 	// User name when using user name and password
-	UserName *string `json:"username,omitempty" protobuf:"bytes,9,opt,name=username"`
+	Username *string `json:"username,omitempty" protobuf:"bytes,9,opt,name=username"`
 	// Password when using user name and password
 	// +kubebuilder:default:=""
 	Password *string `json:"password,omitempty" protobuf:"bytes,10,opt,name=password"`

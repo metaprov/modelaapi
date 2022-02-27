@@ -123,8 +123,8 @@ func (in *AccountSpec) DeepCopyInto(out *AccountSpec) {
 		*out = new(AccountType)
 		**out = **in
 	}
-	if in.UserName != nil {
-		in, out := &in.UserName, &out.UserName
+	if in.Username != nil {
+		in, out := &in.Username, &out.Username
 		*out = new(string)
 		**out = **in
 	}
@@ -4648,8 +4648,8 @@ func (in *SmtpSpec) DeepCopyInto(out *SmtpSpec) {
 		*out = new(bool)
 		**out = **in
 	}
-	if in.UserName != nil {
-		in, out := &in.UserName, &out.UserName
+	if in.Username != nil {
+		in, out := &in.Username, &out.Username
 		*out = new(string)
 		**out = **in
 	}
