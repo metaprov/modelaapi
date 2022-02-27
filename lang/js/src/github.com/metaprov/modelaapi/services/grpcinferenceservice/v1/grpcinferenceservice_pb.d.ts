@@ -709,12 +709,6 @@ export namespace ColumnInfo {
 }
 
 export class GetPredictorRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): GetPredictorRequest;
-
-  getName(): string;
-  setName(value: string): GetPredictorRequest;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetPredictorRequest.AsObject;
   static toObject(includeInstance: boolean, msg: GetPredictorRequest): GetPredictorRequest.AsObject;
@@ -725,8 +719,6 @@ export class GetPredictorRequest extends jspb.Message {
 
 export namespace GetPredictorRequest {
   export type AsObject = {
-    namespace: string,
-    name: string,
   }
 }
 
@@ -751,12 +743,6 @@ export namespace GetPredictorResponse {
 }
 
 export class GetModelRequest extends jspb.Message {
-  getPredictornamespace(): string;
-  setPredictornamespace(value: string): GetModelRequest;
-
-  getPredictorname(): string;
-  setPredictorname(value: string): GetModelRequest;
-
   getName(): string;
   setName(value: string): GetModelRequest;
 
@@ -770,8 +756,6 @@ export class GetModelRequest extends jspb.Message {
 
 export namespace GetModelRequest {
   export type AsObject = {
-    predictornamespace: string,
-    predictorname: string,
     name: string,
   }
 }
@@ -797,9 +781,6 @@ export namespace GetModelResponse {
 }
 
 export class PredictRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): PredictRequest;
-
   getName(): string;
   setName(value: string): PredictRequest;
 
@@ -833,7 +814,6 @@ export class PredictRequest extends jspb.Message {
 
 export namespace PredictRequest {
   export type AsObject = {
-    namespace: string,
     name: string,
     validate: boolean,
     explain: boolean,

@@ -6202,8 +6202,7 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetPredicto
  */
 proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetPredictorRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 2, "")
+
   };
 
   if (includeInstance) {
@@ -6240,14 +6239,6 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetPredicto
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setNamespace(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -6277,56 +6268,6 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetPredicto
  */
 proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetPredictorRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getNamespace();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-  f = message.getName();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
-};
-
-
-/**
- * optional string namespace = 1;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetPredictorRequest.prototype.getNamespace = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetPredictorRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetPredictorRequest.prototype.setNamespace = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional string name = 2;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetPredictorRequest.prototype.getName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetPredictorRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetPredictorRequest.prototype.setName = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -6513,8 +6454,6 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetModelReq
  */
 proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetModelRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    predictornamespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    predictorname: jspb.Message.getFieldWithDefault(msg, 2, ""),
     name: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
@@ -6552,14 +6491,6 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetModelReq
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setPredictornamespace(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setPredictorname(value);
-      break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.setName(value);
@@ -6593,20 +6524,6 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetModelReq
  */
 proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetModelRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getPredictornamespace();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-  f = message.getPredictorname();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
   f = message.getName();
   if (f.length > 0) {
     writer.writeString(
@@ -6614,42 +6531,6 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetModelReq
       f
     );
   }
-};
-
-
-/**
- * optional string predictorNamespace = 1;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetModelRequest.prototype.getPredictornamespace = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetModelRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetModelRequest.prototype.setPredictornamespace = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional string predictorName = 2;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetModelRequest.prototype.getPredictorname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetModelRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetModelRequest.prototype.setPredictorname = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -6861,7 +6742,6 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictRequ
  */
 proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
     validate: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
     explain: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
@@ -6905,10 +6785,6 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictRequ
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setNamespace(value);
-      break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setName(value);
@@ -6966,13 +6842,6 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictRequ
  */
 proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getNamespace();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
   f = message.getName();
   if (f.length > 0) {
     writer.writeString(
@@ -7022,24 +6891,6 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictRequ
       f
     );
   }
-};
-
-
-/**
- * optional string namespace = 1;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictRequest.prototype.getNamespace = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictRequest.prototype.setNamespace = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
