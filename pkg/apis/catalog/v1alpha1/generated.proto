@@ -635,20 +635,10 @@ message ModelDeploymentStatus {
 }
 
 message NotificationSpec {
-  // Fire when error occur
-  // +kubebuilder:default:=true
-  // +kubebuilder:validation:Optional
-  optional bool onError = 1;
-
   // TTL for error msgs. In seconds
   // +kubebuilder:default:=3600
   // +kubebuilder:validation:Optional
   optional int32 errorTTL = 2;
-
-  // Fire when success occur.
-  // +kubebuilder:default:=false
-  // +kubebuilder:validation:Optional
-  optional bool onSuccess = 3;
 
   // TTL for success msgs. In seconds
   // +kubebuilder:default:=3600

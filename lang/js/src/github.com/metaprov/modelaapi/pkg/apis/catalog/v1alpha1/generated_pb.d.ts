@@ -1105,14 +1105,8 @@ export namespace ModelDeploymentStatus {
 }
 
 export class NotificationSpec extends jspb.Message {
-  getOnerror(): boolean;
-  setOnerror(value: boolean): NotificationSpec;
-
   getErrorttl(): number;
   setErrorttl(value: number): NotificationSpec;
-
-  getOnsuccess(): boolean;
-  setOnsuccess(value: boolean): NotificationSpec;
 
   getSuccessttl(): number;
   setSuccessttl(value: number): NotificationSpec;
@@ -1133,9 +1127,7 @@ export class NotificationSpec extends jspb.Message {
 
 export namespace NotificationSpec {
   export type AsObject = {
-    onerror: boolean,
     errorttl: number,
-    onsuccess: boolean,
     successttl: number,
     notifiername: string,
     selectorMap: Array<[string, string]>,

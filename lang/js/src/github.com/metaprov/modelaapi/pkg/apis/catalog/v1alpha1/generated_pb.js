@@ -11256,9 +11256,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.p
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
-    onerror: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
     errorttl: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    onsuccess: (f = jspb.Message.getBooleanField(msg, 3)) == null ? undefined : f,
     successttl: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     notifiername: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     selectorMap: (f = msg.getSelectorMap()) ? f.toObject(includeInstance, undefined) : []
@@ -11298,17 +11296,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.d
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setOnerror(value);
-      break;
     case 2:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setErrorttl(value);
-      break;
-    case 3:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setOnsuccess(value);
       break;
     case 4:
       var value = /** @type {number} */ (reader.readInt32());
@@ -11353,24 +11343,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.p
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 1));
-  if (f != null) {
-    writer.writeBool(
-      1,
-      f
-    );
-  }
   f = /** @type {number} */ (jspb.Message.getField(message, 2));
   if (f != null) {
     writer.writeInt32(
       2,
-      f
-    );
-  }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 3));
-  if (f != null) {
-    writer.writeBool(
-      3,
       f
     );
   }
@@ -11392,42 +11368,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.s
   if (f && f.getLength() > 0) {
     f.serializeBinary(6, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
-};
-
-
-/**
- * optional bool onError = 1;
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.prototype.getOnerror = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 1, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.prototype.setOnerror = function(value) {
-  return jspb.Message.setField(this, 1, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.prototype.clearOnerror = function() {
-  return jspb.Message.setField(this, 1, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.prototype.hasOnerror = function() {
-  return jspb.Message.getField(this, 1) != null;
 };
 
 
@@ -11464,42 +11404,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.p
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.prototype.hasErrorttl = function() {
   return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional bool onSuccess = 3;
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.prototype.getOnsuccess = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.prototype.setOnsuccess = function(value) {
-  return jspb.Message.setField(this, 3, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.prototype.clearOnsuccess = function() {
-  return jspb.Message.setField(this, 3, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.prototype.hasOnsuccess = function() {
-  return jspb.Message.getField(this, 3) != null;
 };
 
 

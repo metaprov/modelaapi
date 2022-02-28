@@ -1671,18 +1671,10 @@ const (
 )
 
 type NotificationSpec struct {
-	// Fire when error occur
-	// +kubebuilder:default:=true
-	// +kubebuilder:validation:Optional
-	OnError *bool `json:"onError,omitempty" protobuf:"varint,1,opt,name=onError"`
 	// TTL for error msgs. In seconds
 	// +kubebuilder:default:=3600
 	// +kubebuilder:validation:Optional
 	ErrorTTL *int32 `json:"errorTTL,omitempty" protobuf:"varint,2,opt,name=errorTTL"`
-	// Fire when success occur.
-	// +kubebuilder:default:=false
-	// +kubebuilder:validation:Optional
-	OnSuccess *bool `json:"onSuccess,omitempty" protobuf:"varint,3,opt,name=onSuccess"`
 	// TTL for success msgs. In seconds
 	// +kubebuilder:default:=3600
 	// +kubebuilder:validation:Optional

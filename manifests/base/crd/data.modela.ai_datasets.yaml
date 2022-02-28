@@ -162,14 +162,6 @@ spec:
                     default: ""
                     description: The name of the notifier.
                     type: string
-                  onError:
-                    default: true
-                    description: Fire when error occur
-                    type: boolean
-                  onSuccess:
-                    default: false
-                    description: Fire when success occur.
-                    type: boolean
                   selector:
                     additionalProperties:
                       type: string
