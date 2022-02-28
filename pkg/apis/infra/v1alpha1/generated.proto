@@ -2421,7 +2421,7 @@ message Scope {
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",description="owner"
-// +kubebuilder:printcolumn:name="FDQN",type="string",JSONPath=".spec.fdqn",description=""
+// +kubebuilder:printcolumn:name="FQDN",type="string",JSONPath=".spec.fqdn",description=""
 // +kubebuilder:printcolumn:name="Ingress",type="string",JSONPath=".spec.ingressName",description=""
 // +kubebuilder:printcolumn:name="Predictors",type="number",JSONPath=".status.activePredictors",description=""
 // +kubebuilder:printcolumn:name="Cluster",type="string",JSONPath=".spec.clusterName",description=""
@@ -2482,10 +2482,10 @@ message ServingSiteSpec {
   // +kubebuilder:validation:Optional
   optional string ingressName = 4;
 
-  // The FDQN for this site. This will register with ingress.
+  // The FQDN for this site. This will register with ingress.
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string fdqn = 5;
+  optional string fqdn = 5;
 
   // ClusterName is  the virtual cluster name in case that the lab is not on the same cluster
   // +kubebuilder:default:=""

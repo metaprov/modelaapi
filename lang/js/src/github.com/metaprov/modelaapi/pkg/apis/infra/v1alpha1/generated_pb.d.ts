@@ -4417,8 +4417,8 @@ export class ServingSiteSpec extends jspb.Message {
   getIngressname(): string;
   setIngressname(value: string): ServingSiteSpec;
 
-  getFdqn(): string;
-  setFdqn(value: string): ServingSiteSpec;
+  getFqdn(): string;
+  setFqdn(value: string): ServingSiteSpec;
 
   getClustername(): string;
   setClustername(value: string): ServingSiteSpec;
@@ -4445,7 +4445,7 @@ export namespace ServingSiteSpec {
     tenantref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     limits?: ResourceLimitSpec.AsObject,
     ingressname: string,
-    fdqn: string,
+    fqdn: string,
     clustername: string,
     owner: string,
     stakeholdersList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StakeHolder.AsObject>,

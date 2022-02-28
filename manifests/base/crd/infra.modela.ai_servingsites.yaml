@@ -26,8 +26,8 @@ spec:
       jsonPath: .spec.owner
       name: Owner
       type: string
-    - jsonPath: .spec.fdqn
-      name: FDQN
+    - jsonPath: .spec.fqdn
+      name: FQDN
       type: string
     - jsonPath: .spec.ingressName
       name: Ingress
@@ -69,9 +69,9 @@ spec:
                 default: ""
                 description: Description is user provided description
                 type: string
-              fdqn:
+              fqdn:
                 default: ""
-                description: The FDQN for this site. This will register with ingress.
+                description: The FQDN for this site. This will register with ingress.
                 type: string
               ingressName:
                 default: ""

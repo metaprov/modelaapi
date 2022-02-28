@@ -4460,8 +4460,8 @@ func (in *ServingSiteSpec) DeepCopyInto(out *ServingSiteSpec) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.FDQN != nil {
-		in, out := &in.FDQN, &out.FDQN
+	if in.FQDN != nil {
+		in, out := &in.FQDN, &out.FQDN
 		*out = new(string)
 		**out = **in
 	}

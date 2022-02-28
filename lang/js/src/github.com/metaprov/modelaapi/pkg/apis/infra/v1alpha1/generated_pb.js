@@ -44370,7 +44370,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec.toOb
     tenantref: (f = msg.getTenantref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     limits: (f = msg.getLimits()) && proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ResourceLimitSpec.toObject(includeInstance, f),
     ingressname: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    fdqn: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    fqdn: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     clustername: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
     owner: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
     stakeholdersList: jspb.Message.toObjectList(msg.getStakeholdersList(),
@@ -44431,7 +44431,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec.dese
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
-      msg.setFdqn(value);
+      msg.setFqdn(value);
       break;
     case 6:
       var value = /** @type {string} */ (reader.readString());
@@ -44684,10 +44684,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec.prot
 
 
 /**
- * optional string fdqn = 5;
+ * optional string fqdn = 5;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec.prototype.getFdqn = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec.prototype.getFqdn = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
@@ -44696,7 +44696,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec.prot
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec.prototype.setFdqn = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec.prototype.setFqdn = function(value) {
   return jspb.Message.setField(this, 5, value);
 };
 
@@ -44705,7 +44705,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec.prot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec.prototype.clearFdqn = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec.prototype.clearFqdn = function() {
   return jspb.Message.setField(this, 5, undefined);
 };
 
@@ -44714,7 +44714,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec.prototype.hasFdqn = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec.prototype.hasFqdn = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 

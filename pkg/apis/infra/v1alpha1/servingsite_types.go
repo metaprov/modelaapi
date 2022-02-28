@@ -38,7 +38,7 @@ type ServingSiteCondition struct {
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",description="owner"
-// +kubebuilder:printcolumn:name="FDQN",type="string",JSONPath=".spec.fdqn",description=""
+// +kubebuilder:printcolumn:name="FQDN",type="string",JSONPath=".spec.fqdn",description=""
 // +kubebuilder:printcolumn:name="Ingress",type="string",JSONPath=".spec.ingressName",description=""
 // +kubebuilder:printcolumn:name="Predictors",type="number",JSONPath=".status.activePredictors",description=""
 // +kubebuilder:printcolumn:name="Cluster",type="string",JSONPath=".spec.clusterName",description=""
@@ -77,10 +77,10 @@ type ServingSiteSpec struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	IngressName *string `json:"ingressName,omitempty" protobuf:"bytes,4,opt,name=ingressName"`
-	// The FDQN for this site. This will register with ingress.
+	// The FQDN for this site. This will register with ingress.
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	FDQN *string `json:"fdqn,omitempty" protobuf:"bytes,5,opt,name=fdqn"`
+	FQDN *string `json:"fqdn,omitempty" protobuf:"bytes,5,opt,name=fqdn"`
 	// ClusterName is  the virtual cluster name in case that the lab is not on the same cluster
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
