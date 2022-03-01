@@ -6001,6 +6001,11 @@ export class WebRequestRunStatus extends jspb.Message {
   getFailuremessage(): string;
   setFailuremessage(value: string): WebRequestRunStatus;
 
+  getLogs(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs | undefined;
+  setLogs(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs): WebRequestRunStatus;
+  hasLogs(): boolean;
+  clearLogs(): WebRequestRunStatus;
+
   getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): WebRequestRunStatus;
   hasLastupdated(): boolean;
@@ -6032,6 +6037,7 @@ export namespace WebRequestRunStatus {
     reportname: string,
     failurereason: string,
     failuremessage: string,
+    logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<WebRequestRunCondition.AsObject>,
   }
