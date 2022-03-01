@@ -5169,6 +5169,7 @@ func (in *WebRequestRunStatus) DeepCopyInto(out *WebRequestRunStatus) {
 		*out = new(string)
 		**out = **in
 	}
+	in.Logs.DeepCopyInto(&out.Logs)
 	if in.LastUpdated != nil {
 		in, out := &in.LastUpdated, &out.LastUpdated
 		*out = (*in).DeepCopy()

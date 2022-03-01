@@ -262,6 +262,29 @@ spec:
                 description: Last time the object was updated
                 format: date-time
                 type: string
+              logs:
+                description: Holds the location of log paths
+                properties:
+                  bucketName:
+                    description: The bucket logs.
+                    type: string
+                  containers:
+                    description: Jobs per containers
+                    items:
+                      description: Define log for one container
+                      properties:
+                        container:
+                          description: The container name
+                          type: string
+                        job:
+                          description: The Job name
+                          type: string
+                        key:
+                          description: The key load
+                          type: string
+                      type: object
+                    type: array
+                type: object
               observedGeneration:
                 description: ObservedGeneration is the Last generation that was acted
                   on

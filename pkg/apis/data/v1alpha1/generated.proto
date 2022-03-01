@@ -3873,14 +3873,18 @@ message WebRequestRunStatus {
   // +kubebuilder:validation:Optional
   optional string failureMessage = 11;
 
+  // Holds the location of log paths
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 12;
+
   // Last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 12;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 13;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated WebRequestRunCondition conditions = 13;
+  repeated WebRequestRunCondition conditions = 14;
 }
 
 // WebRequestSpec contain the desired state of a WebRequest
