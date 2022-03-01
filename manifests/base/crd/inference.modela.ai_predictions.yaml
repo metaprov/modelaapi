@@ -527,11 +527,23 @@ spec:
                 description: Holds the location of log paths
                 properties:
                   bucketName:
+                    description: The bucket logs.
                     type: string
-                  paths:
-                    description: Paths is the log paths
+                  containers:
+                    description: Jobs per containers
                     items:
-                      type: string
+                      description: Define log for one container
+                      properties:
+                        container:
+                          description: The container name
+                          type: string
+                        job:
+                          description: The Job name
+                          type: string
+                        key:
+                          description: The key load
+                          type: string
+                      type: object
                     type: array
                 type: object
               observedGeneration:

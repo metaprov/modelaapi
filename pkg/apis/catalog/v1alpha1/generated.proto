@@ -182,6 +182,18 @@ message ConfusionMatrixRow {
   optional double pct = 4;
 }
 
+// Define log for one container
+message ContainerLog {
+  // The Job name
+  optional string job = 1;
+
+  // The container name
+  optional string container = 2;
+
+  // The key load
+  optional string key = 3;
+}
+
 message CurvePoint {
   optional double x = 1;
 
@@ -311,12 +323,13 @@ message Lib {
 
 // type to represent the logs for a given object. This type should be part of any objects that create logs (e.g. job logs)
 message Logs {
+  // The bucket logs.
   // +kubebuilder:validation:Optional
   optional string bucketName = 1;
 
-  // Paths is the log paths
+  // Jobs per containers
   // +kubebuilder:validation:Optional
-  repeated string paths = 2;
+  repeated ContainerLog containers = 2;
 }
 
 // MLFramework define the metadata about a machine learning framework

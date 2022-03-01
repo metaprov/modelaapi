@@ -346,6 +346,32 @@ export namespace ConfusionMatrixRow {
   }
 }
 
+export class ContainerLog extends jspb.Message {
+  getJob(): string;
+  setJob(value: string): ContainerLog;
+
+  getContainer(): string;
+  setContainer(value: string): ContainerLog;
+
+  getKey(): string;
+  setKey(value: string): ContainerLog;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ContainerLog.AsObject;
+  static toObject(includeInstance: boolean, msg: ContainerLog): ContainerLog.AsObject;
+  static serializeBinaryToWriter(message: ContainerLog, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ContainerLog;
+  static deserializeBinaryFromReader(message: ContainerLog, reader: jspb.BinaryReader): ContainerLog;
+}
+
+export namespace ContainerLog {
+  export type AsObject = {
+    job: string,
+    container: string,
+    key: string,
+  }
+}
+
 export class CurvePoint extends jspb.Message {
   getX(): number;
   setX(value: number): CurvePoint;
@@ -618,10 +644,10 @@ export class Logs extends jspb.Message {
   getBucketname(): string;
   setBucketname(value: string): Logs;
 
-  getPathsList(): Array<string>;
-  setPathsList(value: Array<string>): Logs;
-  clearPathsList(): Logs;
-  addPaths(value: string, index?: number): Logs;
+  getContainersList(): Array<ContainerLog>;
+  setContainersList(value: Array<ContainerLog>): Logs;
+  clearContainersList(): Logs;
+  addContainers(value?: ContainerLog, index?: number): ContainerLog;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Logs.AsObject;
@@ -634,7 +660,7 @@ export class Logs extends jspb.Message {
 export namespace Logs {
   export type AsObject = {
     bucketname: string,
-    pathsList: Array<string>,
+    containersList: Array<ContainerLog.AsObject>,
   }
 }
 

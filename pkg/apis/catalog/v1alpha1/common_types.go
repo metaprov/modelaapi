@@ -1690,11 +1690,22 @@ type NotificationSpec struct {
 
 // type to represent the logs for a given object. This type should be part of any objects that create logs (e.g. job logs)
 type Logs struct {
+	// The bucket logs.
 	// +kubebuilder:validation:Optional
 	BucketName string `json:"bucketName,omitempty" protobuf:"bytes,1,opt,name=bucketName"`
-	// Paths is the log paths
+	// Jobs per containers
 	// +kubebuilder:validation:Optional
-	Paths []string `json:"paths,omitempty" protobuf:"bytes,2,rep,name=paths"`
+	Containers []ContainerLog `json:"containers,omitempty" protobuf:"bytes,2,rep,name=containers"`
+}
+
+// Define log for one container
+type ContainerLog struct {
+	// The Job name
+	Job string `json:"job,omitempty" protobuf:"bytes,1,rep,name=job"`
+	// The container name
+	Container string `json:"container,omitempty" protobuf:"bytes,2,rep,name=container"`
+	// The key load
+	Key string `json:"key,omitempty" protobuf:"bytes,3,rep,name=key"`
 }
 
 // +kubebuilder:validation:Enum="multipicative";"additive";"auto";"none"
