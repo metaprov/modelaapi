@@ -11,6 +11,7 @@ import (
 
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/apis/data"
+	infra "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/util"
 	"gopkg.in/yaml.v2"
 	v1 "k8s.io/api/core/v1"
@@ -249,4 +250,16 @@ func (in *DataProduct) MarkReady() {
 		Type:   DataProductReady,
 		Status: v1.ConditionTrue,
 	})
+}
+
+func (in *DataProduct) GetRolesForAccount(account *infra.Account) []string {
+	result := make([]string, 0)
+	for _, v := range in.Spec.Premissions.Stakeholders {
+		if v.AccountName == account.Name {
+			for _, x := range v.Roles {
+				result = append(result, x.Name)
+			}
+		}
+	}
+	return result
 }
