@@ -1368,11 +1368,6 @@ export class DataProductSpec extends jspb.Message {
   hasTenantref(): boolean;
   clearTenantref(): DataProductSpec;
 
-  getStakeholdersList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StakeHolder>;
-  setStakeholdersList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StakeHolder>): DataProductSpec;
-  clearStakeholdersList(): DataProductSpec;
-  addStakeholders(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StakeHolder, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StakeHolder;
-
   getGitlocation(): GitLocation | undefined;
   setGitlocation(value?: GitLocation): DataProductSpec;
   hasGitlocation(): boolean;
@@ -1440,6 +1435,11 @@ export class DataProductSpec extends jspb.Message {
   hasGovernance(): boolean;
   clearGovernance(): DataProductSpec;
 
+  getPremissions(): PremissionsSpec | undefined;
+  setPremissions(value?: PremissionsSpec): DataProductSpec;
+  hasPremissions(): boolean;
+  clearPremissions(): DataProductSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataProductSpec.AsObject;
   static toObject(includeInstance: boolean, msg: DataProductSpec): DataProductSpec.AsObject;
@@ -1452,7 +1452,6 @@ export namespace DataProductSpec {
   export type AsObject = {
     owner: string,
     tenantref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    stakeholdersList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StakeHolder.AsObject>,
     gitlocation?: GitLocation.AsObject,
     imagelocation?: ImageLocation.AsObject,
     labname: string,
@@ -1470,6 +1469,7 @@ export namespace DataProductSpec {
     priority: string,
     color: string,
     governance?: GovernanceSpec.AsObject,
+    premissions?: PremissionsSpec.AsObject,
   }
 }
 
@@ -4467,6 +4467,26 @@ export namespace PageSpec {
   }
 }
 
+export class PremissionsSpec extends jspb.Message {
+  getStakeholderList(): Array<Stakeholder>;
+  setStakeholderList(value: Array<Stakeholder>): PremissionsSpec;
+  clearStakeholderList(): PremissionsSpec;
+  addStakeholder(value?: Stakeholder, index?: number): Stakeholder;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PremissionsSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: PremissionsSpec): PremissionsSpec.AsObject;
+  static serializeBinaryToWriter(message: PremissionsSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PremissionsSpec;
+  static deserializeBinaryFromReader(message: PremissionsSpec, reader: jspb.BinaryReader): PremissionsSpec;
+}
+
+export namespace PremissionsSpec {
+  export type AsObject = {
+    stakeholderList: Array<Stakeholder.AsObject>,
+  }
+}
+
 export class Recipe extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): Recipe;
@@ -5592,6 +5612,30 @@ export namespace SqlQueryStatus {
     failurereason: string,
     failuremessage: string,
     conditionsList: Array<SqlQueryCondition.AsObject>,
+  }
+}
+
+export class Stakeholder extends jspb.Message {
+  getAccount(): string;
+  setAccount(value: string): Stakeholder;
+
+  getRolesList(): Array<k8s_io_api_core_v1_generated_pb.ObjectReference>;
+  setRolesList(value: Array<k8s_io_api_core_v1_generated_pb.ObjectReference>): Stakeholder;
+  clearRolesList(): Stakeholder;
+  addRoles(value?: k8s_io_api_core_v1_generated_pb.ObjectReference, index?: number): k8s_io_api_core_v1_generated_pb.ObjectReference;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Stakeholder.AsObject;
+  static toObject(includeInstance: boolean, msg: Stakeholder): Stakeholder.AsObject;
+  static serializeBinaryToWriter(message: Stakeholder, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Stakeholder;
+  static deserializeBinaryFromReader(message: Stakeholder, reader: jspb.BinaryReader): Stakeholder;
+}
+
+export namespace Stakeholder {
+  export type AsObject = {
+    account: string,
+    rolesList: Array<k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject>,
   }
 }
 

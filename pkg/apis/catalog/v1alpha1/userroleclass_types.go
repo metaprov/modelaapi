@@ -7,8 +7,24 @@
 package v1alpha1
 
 import (
-	rbacv1 "k8s.io/api/rbac/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+)
+
+type ResourceName string
+
+const (
+	AccountResourceName string = "account"
+)
+
+type ActionName string
+
+const (
+	CreateActionName ActionName = "create"
+	DeleteActionName ActionName = "delete"
+	GetActionName    ActionName = "get"
+	UpdateActionName ActionName = "update"
+	ListActionName   ActionName = "list"
+	AllActionName    ActionName = "*"
 )
 
 // +kubebuilder:validation:Enum="administrator";"business-stakeholder";"data-scientist";"data-engineer";"ml-engineer";"sre"
@@ -38,11 +54,19 @@ type UserRoleClass struct {
 type UserRoleClassList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
-	Items           []UserRoleClass `json:"items" protobuf:"bytes,2,rep,name=items"`
+	Items           []UserRoleClassSpec `json:"items" protobuf:"bytes,2,rep,name=items"`
 }
 
 // UserRoleClassSpec is the spec for UserRoleClass
 type UserRoleClassSpec struct {
+	Description string `json:"description,omitempty" protobuf:"bytes,1,opt,name=description"`
 	// +kubebuilder:validation:Optional
-	Rules []rbacv1.PolicyRule `json:"rules,omitempty" protobuf:"bytes,1,rep,name=rules"`
+	Permissions []PermissionSpec `json:"rules,omitempty" protobuf:"bytes,2,rep,name=rules"`
+}
+
+type PermissionSpec struct {
+	// The name of the resource
+	Resource ResourceName `json:"resource,omitempty" protobuf:"bytes,1,opt,name=resource"`
+	// List of allowed actions on the resource
+	Actions []ActionName `json:"actions,omitempty" protobuf:"bytes,2,rep,name=actions"`
 }

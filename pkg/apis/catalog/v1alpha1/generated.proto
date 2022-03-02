@@ -10,7 +10,6 @@ syntax = "proto2";
 package github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1;
 
 import "k8s.io/api/core/v1/generated.proto";
-import "k8s.io/api/rbac/v1/generated.proto";
 import "k8s.io/apimachinery/pkg/api/resource/generated.proto";
 import "k8s.io/apimachinery/pkg/apis/meta/v1/generated.proto";
 import "k8s.io/apimachinery/pkg/runtime/generated.proto";
@@ -672,6 +671,14 @@ message PRCurve {
   repeated CurvePoint values = 1;
 }
 
+message PermissionSpec {
+  // The name of the resource
+  optional string resource = 1;
+
+  // List of allowed actions on the resource
+  repeated string actions = 2;
+}
+
 // Pretrained model contain the metadata about a pretrained model
 // +kubebuilder:object:root=true
 message PretrainedModel {
@@ -882,13 +889,15 @@ message UserRoleClass {
 message UserRoleClassList {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
 
-  repeated UserRoleClass items = 2;
+  repeated UserRoleClassSpec items = 2;
 }
 
 // UserRoleClassSpec is the spec for UserRoleClass
 message UserRoleClassSpec {
+  optional string description = 1;
+
   // +kubebuilder:validation:Optional
-  repeated k8s.io.api.rbac.v1.PolicyRule rules = 1;
+  repeated PermissionSpec rules = 2;
 }
 
 message VizUri {

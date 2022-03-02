@@ -1063,10 +1063,6 @@ message DataProductSpec {
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference tenantRef = 2;
 
-  // Stake holders refer to a list of stackholders, which have interest in the product.
-  // +kubebuilder:validation:Optional
-  repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.StakeHolder stakeholders = 3;
-
   // GitLocation is the github repository for all the artifacts for this product
   // +kubebuilder:validation:Optional
   optional GitLocation gitLocation = 4;
@@ -1146,6 +1142,10 @@ message DataProductSpec {
   // The Governance requirements.
   // +kubebuilder:validation:Optional
   optional GovernanceSpec governance = 23;
+
+  // The premissions for this product
+  // +kubebuilder:validation:Optional
+  optional PremissionsSpec premissions = 24;
 }
 
 // DataProductStatus defines the observed state of DataProduct
@@ -2951,6 +2951,10 @@ message PageSpec {
   repeated RowSpec rows = 1;
 }
 
+message PremissionsSpec {
+  repeated Stakeholder stakeholder = 1;
+}
+
 message Recipe {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
@@ -3615,6 +3619,13 @@ message SqlQueryStatus {
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
   repeated SqlQueryCondition conditions = 6;
+}
+
+message Stakeholder {
+  optional string account = 1;
+
+  // assign roles to account
+  repeated k8s.io.api.core.v1.ObjectReference roles = 2;
 }
 
 message TableSpec {

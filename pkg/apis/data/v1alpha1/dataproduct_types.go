@@ -95,9 +95,6 @@ type DataProductSpec struct {
 	// Default to default tenant.
 	// +kubebuilder:validation:Optional
 	TenantRef *v1.ObjectReference `json:"tenantRef,omitempty" protobuf:"bytes,2,opt,name=tenantRef"`
-	// Stake holders refer to a list of stackholders, which have interest in the product.
-	// +kubebuilder:validation:Optional
-	StakeHolders []catalog.StakeHolder `json:"stakeholders,omitempty" protobuf:"bytes,3,rep,name=stakeholders"`
 	// GitLocation is the github repository for all the artifacts for this product
 	// +kubebuilder:validation:Optional
 	GitLocation GitLocation `json:"gitLocation,omitempty" protobuf:"bytes,4,opt,name=gitLocation"`
@@ -161,6 +158,9 @@ type DataProductSpec struct {
 	// The Governance requirements.
 	// +kubebuilder:validation:Optional
 	Governance GovernanceSpec `json:"governance,omitempty" protobuf:"bytes,23,opt,name=governance"`
+	// The premissions for this product
+	// +kubebuilder:validation:Optional
+	Premissions PremissionsSpec `json:"premissions,omitempty" protobuf:"bytes,24,opt,name=premissions"`
 }
 
 // DataProductStatus defines the observed state of DataProduct
@@ -257,4 +257,14 @@ type GovernanceStatus struct {
 	// The business review status
 	// +kubebuilder:validation:Optional
 	BusinessReviewStatus GovernanceReviewStatus `json:"businessReviewStatus,omitempty" protobuf:"bytes,3,opt,name=businessReviewStatus"`
+}
+
+type PremissionsSpec struct {
+	Stakeholders []Stakeholder `json:"stakeholder,omitempty" protobuf:"bytes,1,opt,name=stakeholder"`
+}
+
+type Stakeholder struct {
+	AccountName string `json:"account,omitempty" protobuf:"bytes,1,opt,name=account"`
+	// assign roles to account
+	Roles []v1.ObjectReference `json:"roles,omitempty" protobuf:"bytes,2,opt,name=roles"`
 }

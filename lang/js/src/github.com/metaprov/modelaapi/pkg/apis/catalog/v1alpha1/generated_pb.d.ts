@@ -1,7 +1,6 @@
 import * as jspb from 'google-protobuf'
 
 import * as k8s_io_api_core_v1_generated_pb from '../../../../../../../k8s.io/api/core/v1/generated_pb';
-import * as k8s_io_api_rbac_v1_generated_pb from '../../../../../../../k8s.io/api/rbac/v1/generated_pb';
 import * as k8s_io_apimachinery_pkg_api_resource_generated_pb from '../../../../../../../k8s.io/apimachinery/pkg/api/resource/generated_pb';
 import * as k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb from '../../../../../../../k8s.io/apimachinery/pkg/apis/meta/v1/generated_pb';
 import * as k8s_io_apimachinery_pkg_runtime_generated_pb from '../../../../../../../k8s.io/apimachinery/pkg/runtime/generated_pb';
@@ -1180,6 +1179,30 @@ export namespace PRCurve {
   }
 }
 
+export class PermissionSpec extends jspb.Message {
+  getResource(): string;
+  setResource(value: string): PermissionSpec;
+
+  getActionsList(): Array<string>;
+  setActionsList(value: Array<string>): PermissionSpec;
+  clearActionsList(): PermissionSpec;
+  addActions(value: string, index?: number): PermissionSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PermissionSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: PermissionSpec): PermissionSpec.AsObject;
+  static serializeBinaryToWriter(message: PermissionSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PermissionSpec;
+  static deserializeBinaryFromReader(message: PermissionSpec, reader: jspb.BinaryReader): PermissionSpec;
+}
+
+export namespace PermissionSpec {
+  export type AsObject = {
+    resource: string,
+    actionsList: Array<string>,
+  }
+}
+
 export class PretrainedModel extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): PretrainedModel;
@@ -1570,10 +1593,10 @@ export class UserRoleClassList extends jspb.Message {
   hasMetadata(): boolean;
   clearMetadata(): UserRoleClassList;
 
-  getItemsList(): Array<UserRoleClass>;
-  setItemsList(value: Array<UserRoleClass>): UserRoleClassList;
+  getItemsList(): Array<UserRoleClassSpec>;
+  setItemsList(value: Array<UserRoleClassSpec>): UserRoleClassList;
   clearItemsList(): UserRoleClassList;
-  addItems(value?: UserRoleClass, index?: number): UserRoleClass;
+  addItems(value?: UserRoleClassSpec, index?: number): UserRoleClassSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UserRoleClassList.AsObject;
@@ -1586,15 +1609,18 @@ export class UserRoleClassList extends jspb.Message {
 export namespace UserRoleClassList {
   export type AsObject = {
     metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta.AsObject,
-    itemsList: Array<UserRoleClass.AsObject>,
+    itemsList: Array<UserRoleClassSpec.AsObject>,
   }
 }
 
 export class UserRoleClassSpec extends jspb.Message {
-  getRulesList(): Array<k8s_io_api_rbac_v1_generated_pb.PolicyRule>;
-  setRulesList(value: Array<k8s_io_api_rbac_v1_generated_pb.PolicyRule>): UserRoleClassSpec;
+  getDescription(): string;
+  setDescription(value: string): UserRoleClassSpec;
+
+  getRulesList(): Array<PermissionSpec>;
+  setRulesList(value: Array<PermissionSpec>): UserRoleClassSpec;
   clearRulesList(): UserRoleClassSpec;
-  addRules(value?: k8s_io_api_rbac_v1_generated_pb.PolicyRule, index?: number): k8s_io_api_rbac_v1_generated_pb.PolicyRule;
+  addRules(value?: PermissionSpec, index?: number): PermissionSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UserRoleClassSpec.AsObject;
@@ -1606,7 +1632,8 @@ export class UserRoleClassSpec extends jspb.Message {
 
 export namespace UserRoleClassSpec {
   export type AsObject = {
-    rulesList: Array<k8s_io_api_rbac_v1_generated_pb.PolicyRule.AsObject>,
+    description: string,
+    rulesList: Array<PermissionSpec.AsObject>,
   }
 }
 
