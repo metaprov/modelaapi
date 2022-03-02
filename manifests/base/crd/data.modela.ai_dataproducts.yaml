@@ -266,7 +266,7 @@ spec:
               premissions:
                 description: The premissions for this product
                 properties:
-                  stakeholder:
+                  stakeholders:
                     items:
                       properties:
                         account:

@@ -109,27 +109,6 @@ spec:
                 description: First FileName is the user first name
                 maxLength: 64
                 type: string
-              labBindings:
-                description: LabBinding is the RBAC roles that the user have within
-                  each lab
-                items:
-                  properties:
-                    entity:
-                      description: Entity is the name of the entity, can be a product
-                        name,lab name or serving site name
-                      type: string
-                    role:
-                      description: The role in relation to the entity.
-                      enum:
-                      - administrator
-                      - business-stakeholder
-                      - data-scientist
-                      - data-engineer
-                      - ml-engineer
-                      - sre
-                      type: string
-                  type: object
-                type: array
               lastName:
                 default: ""
                 description: LastName is the user last name
@@ -145,52 +124,10 @@ spec:
                 description: Phone specify the phone of the user
                 maxLength: 64
                 type: string
-              productBindings:
-                description: ProductBinding is the premission that the user have for
-                  each product
-                items:
-                  properties:
-                    entity:
-                      description: Entity is the name of the entity, can be a product
-                        name,lab name or serving site name
-                      type: string
-                    role:
-                      description: The role in relation to the entity.
-                      enum:
-                      - administrator
-                      - business-stakeholder
-                      - data-scientist
-                      - data-engineer
-                      - ml-engineer
-                      - sre
-                      type: string
-                  type: object
-                type: array
               resetPassword:
                 default: false
                 description: User need to reset password upon login
                 type: boolean
-              siteBindings:
-                description: SiteBindings is the RBAC roles that the user have within
-                  each serving site.
-                items:
-                  properties:
-                    entity:
-                      description: Entity is the name of the entity, can be a product
-                        name,lab name or serving site name
-                      type: string
-                    role:
-                      description: The role in relation to the entity.
-                      enum:
-                      - administrator
-                      - business-stakeholder
-                      - data-scientist
-                      - data-engineer
-                      - ml-engineer
-                      - sre
-                      type: string
-                  type: object
-                type: array
               team:
                 default: false
                 description: Team indicates if this a team account.

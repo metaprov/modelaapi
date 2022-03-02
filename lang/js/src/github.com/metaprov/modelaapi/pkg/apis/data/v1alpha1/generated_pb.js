@@ -45736,7 +45736,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.PremissionsSpec.proto
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.PremissionsSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
-    stakeholderList: jspb.Message.toObjectList(msg.getStakeholderList(),
+    stakeholdersList: jspb.Message.toObjectList(msg.getStakeholdersList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Stakeholder.toObject, includeInstance)
   };
 
@@ -45777,7 +45777,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.PremissionsSpec.deser
     case 1:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Stakeholder;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Stakeholder.deserializeBinaryFromReader);
-      msg.addStakeholder(value);
+      msg.addStakeholders(value);
       break;
     default:
       reader.skipField();
@@ -45808,7 +45808,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.PremissionsSpec.proto
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.PremissionsSpec.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getStakeholderList();
+  f = message.getStakeholdersList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       1,
@@ -45820,10 +45820,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.PremissionsSpec.seria
 
 
 /**
- * repeated Stakeholder stakeholder = 1;
+ * repeated Stakeholder stakeholders = 1;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Stakeholder>}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.PremissionsSpec.prototype.getStakeholderList = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.PremissionsSpec.prototype.getStakeholdersList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Stakeholder>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Stakeholder, 1));
 };
@@ -45833,7 +45833,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.PremissionsSpec.proto
  * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Stakeholder>} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.PremissionsSpec} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.PremissionsSpec.prototype.setStakeholderList = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.PremissionsSpec.prototype.setStakeholdersList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
@@ -45843,7 +45843,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.PremissionsSpec.proto
  * @param {number=} opt_index
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Stakeholder}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.PremissionsSpec.prototype.addStakeholder = function(opt_value, opt_index) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.PremissionsSpec.prototype.addStakeholders = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Stakeholder, opt_index);
 };
 
@@ -45852,8 +45852,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.PremissionsSpec.proto
  * Clears the list making it empty but non-null.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.PremissionsSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.PremissionsSpec.prototype.clearStakeholderList = function() {
-  return this.setStakeholderList([]);
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.PremissionsSpec.prototype.clearStakeholdersList = function() {
+  return this.setStakeholdersList([]);
 };
 
 

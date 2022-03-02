@@ -102,28 +102,6 @@ export namespace AccountList {
   }
 }
 
-export class AccountRoleBinding extends jspb.Message {
-  getEntity(): string;
-  setEntity(value: string): AccountRoleBinding;
-
-  getRole(): string;
-  setRole(value: string): AccountRoleBinding;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): AccountRoleBinding.AsObject;
-  static toObject(includeInstance: boolean, msg: AccountRoleBinding): AccountRoleBinding.AsObject;
-  static serializeBinaryToWriter(message: AccountRoleBinding, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): AccountRoleBinding;
-  static deserializeBinaryFromReader(message: AccountRoleBinding, reader: jspb.BinaryReader): AccountRoleBinding;
-}
-
-export namespace AccountRoleBinding {
-  export type AsObject = {
-    entity: string,
-    role: string,
-  }
-}
-
 export class AccountSpec extends jspb.Message {
   getTenantref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setTenantref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): AccountSpec;
@@ -163,21 +141,6 @@ export class AccountSpec extends jspb.Message {
   getResetpassword(): boolean;
   setResetpassword(value: boolean): AccountSpec;
 
-  getProductbindingsList(): Array<AccountRoleBinding>;
-  setProductbindingsList(value: Array<AccountRoleBinding>): AccountSpec;
-  clearProductbindingsList(): AccountSpec;
-  addProductbindings(value?: AccountRoleBinding, index?: number): AccountRoleBinding;
-
-  getLabbindingsList(): Array<AccountRoleBinding>;
-  setLabbindingsList(value: Array<AccountRoleBinding>): AccountSpec;
-  clearLabbindingsList(): AccountSpec;
-  addLabbindings(value?: AccountRoleBinding, index?: number): AccountRoleBinding;
-
-  getSitebindingsList(): Array<AccountRoleBinding>;
-  setSitebindingsList(value: Array<AccountRoleBinding>): AccountSpec;
-  clearSitebindingsList(): AccountSpec;
-  addSitebindings(value?: AccountRoleBinding, index?: number): AccountRoleBinding;
-
   getClearencelevel(): string;
   setClearencelevel(value: string): AccountSpec;
 
@@ -213,9 +176,6 @@ export namespace AccountSpec {
     memberof: string,
     emailpassword: boolean,
     resetpassword: boolean,
-    productbindingsList: Array<AccountRoleBinding.AsObject>,
-    labbindingsList: Array<AccountRoleBinding.AsObject>,
-    sitebindingsList: Array<AccountRoleBinding.AsObject>,
     clearencelevel: string,
     avatar?: AvatarSpec.AsObject,
     favoriteproductsList: Array<string>,

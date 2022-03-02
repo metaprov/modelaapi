@@ -2952,7 +2952,7 @@ message PageSpec {
 }
 
 message PremissionsSpec {
-  repeated Stakeholder stakeholder = 1;
+  repeated Stakeholder stakeholders = 1;
 }
 
 message Recipe {

@@ -260,7 +260,7 @@ type GovernanceStatus struct {
 }
 
 type PremissionsSpec struct {
-	Stakeholders []Stakeholder `json:"stakeholder,omitempty" protobuf:"bytes,1,opt,name=stakeholder"`
+	Stakeholders []Stakeholder `json:"stakeholders,omitempty" protobuf:"bytes,1,opt,name=stakeholders"`
 }
 
 type Stakeholder struct {

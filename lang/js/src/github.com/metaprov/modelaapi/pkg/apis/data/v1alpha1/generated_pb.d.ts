@@ -4468,10 +4468,10 @@ export namespace PageSpec {
 }
 
 export class PremissionsSpec extends jspb.Message {
-  getStakeholderList(): Array<Stakeholder>;
-  setStakeholderList(value: Array<Stakeholder>): PremissionsSpec;
-  clearStakeholderList(): PremissionsSpec;
-  addStakeholder(value?: Stakeholder, index?: number): Stakeholder;
+  getStakeholdersList(): Array<Stakeholder>;
+  setStakeholdersList(value: Array<Stakeholder>): PremissionsSpec;
+  clearStakeholdersList(): PremissionsSpec;
+  addStakeholders(value?: Stakeholder, index?: number): Stakeholder;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PremissionsSpec.AsObject;
@@ -4483,7 +4483,7 @@ export class PremissionsSpec extends jspb.Message {
 
 export namespace PremissionsSpec {
   export type AsObject = {
-    stakeholderList: Array<Stakeholder.AsObject>,
+    stakeholdersList: Array<Stakeholder.AsObject>,
   }
 }
 

@@ -64,14 +64,6 @@ message AccountList {
   repeated Account items = 2;
 }
 
-message AccountRoleBinding {
-  // Entity is the name of the entity, can be a product name,lab name or serving site name
-  optional string entity = 1;
-
-  // The role in relation to the entity.
-  optional string role = 2;
-}
-
 // AccountSpec defines the desired state of Account
 message AccountSpec {
   // TenantRef is the account tenant
@@ -139,18 +131,6 @@ message AccountSpec {
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool resetPassword = 13;
-
-  // ProductBinding is the premission that the user have for each product
-  // +kubebuilder:validation:Optional
-  repeated AccountRoleBinding productBindings = 14;
-
-  // LabBinding is the RBAC roles that the user have within each lab
-  // +kubebuilder:validation:Optional
-  repeated AccountRoleBinding labBindings = 15;
-
-  // SiteBindings is the RBAC roles that the user have within each serving site.
-  // +kubebuilder:validation:Optional
-  repeated AccountRoleBinding siteBindings = 16;
 
   // The clearence level of this account. The clearence level override user premissions.
   // +kubebuilder:default:=unclassified

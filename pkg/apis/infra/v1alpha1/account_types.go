@@ -7,13 +7,6 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-type AccountRoleBinding struct {
-	// Entity is the name of the entity, can be a product name,lab name or serving site name
-	Entity string `json:"entity,omitempty" protobuf:"bytes,1,opt,name=entity"`
-	// The role in relation to the entity.
-	Role catalog.RoleName `json:"role,omitempty" protobuf:"bytes,2,opt,name=role"`
-}
-
 //=======
 // Account
 //========
@@ -130,15 +123,6 @@ type AccountSpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	ResetPassword *bool `json:"resetPassword,omitempty" protobuf:"varint,13,opt,name=resetPassword"`
-	// ProductBinding is the premission that the user have for each product
-	// +kubebuilder:validation:Optional
-	ProductBindings []AccountRoleBinding `json:"productBindings,omitempty" protobuf:"bytes,14,rep,name=productBindings"`
-	// LabBinding is the RBAC roles that the user have within each lab
-	// +kubebuilder:validation:Optional
-	LabBindings []AccountRoleBinding `json:"labBindings,omitempty" protobuf:"bytes,15,rep,name=labBindings"`
-	// SiteBindings is the RBAC roles that the user have within each serving site.
-	// +kubebuilder:validation:Optional
-	SiteBindings []AccountRoleBinding `json:"siteBindings,omitempty" protobuf:"bytes,16,rep,name=siteBindings"`
 	// The clearence level of this account. The clearence level override user premissions.
 	// +kubebuilder:default:=unclassified
 	// +kubebuilder:validation:Optional
