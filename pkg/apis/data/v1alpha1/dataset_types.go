@@ -392,7 +392,7 @@ type ColumnStatistics struct {
 	IndexOfPeculiarity float64 `json:"indexOfPeculiarity,omitempty" protobuf:"bytes,40,opt,name=indexOfPeculiarity"`
 	// The column histogram
 	// +kubebuilder:validation:Optional
-	Histogram catalog.HistogramData `json:"historgram,omitempty" protobuf:"bytes,41,opt,name=histogram"`
+	Histogram catalog.HistogramData `json:"histogram,omitempty" protobuf:"bytes,41,opt,name=histogram"`
 	// Correlation to target
 	// +kubebuilder:validation:Optional
 	CorrToTarget float64 `json:"corrToTarget,omitempty" protobuf:"bytes,42,opt,name=corrToTarget"`

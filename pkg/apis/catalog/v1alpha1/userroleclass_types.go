@@ -37,7 +37,7 @@ const (
 	DatasetResourceName             string = "dataset"
 	DatasourceResourceName          string = "datasource"
 	EntityResourceName              string = "entity"
-	FeatureHistorgramResourceName   string = "featurehistorgram"
+	FeatureHistogramResourceName    string = "featurehistogram"
 	FeatureResourceName             string = "feature"
 	FeaturePipelineResourceName     string = "featurepipeline"
 	FeaturePipelineRunResourceName  string = "featurepipelinerun"

@@ -623,7 +623,7 @@ spec:
                             and should be removed from consideration. The value is
                             set during the profile process.
                           type: boolean
-                        historgram:
+                        histogram:
                           description: The column histogram
                           properties:
                             bins:
