@@ -10,9 +10,11 @@ import (
 	"fmt"
 
 	"github.com/dustin/go-humanize"
+	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/apis/infra"
 	"github.com/metaprov/modelaapi/pkg/util"
 	"gopkg.in/yaml.v2"
+	corev1 "k8s.io/api/core/v1"
 	v1 "k8s.io/api/core/v1"
 	nwv1beta1 "k8s.io/api/networking/v1beta1"
 	rbacv1 "k8s.io/api/rbac/v1"
@@ -226,4 +228,61 @@ func (r *ServingSite) MarkArchived() {
 
 func (r *ServingSite) Archived() bool {
 	return r.GetCond(ServingSiteSaved).Status == v1.ConditionTrue
+}
+
+func (servingsite *ServingSite) JobRole() *rbacv1.Role {
+	return &rbacv1.Role{
+		ObjectMeta: metav1.ObjectMeta{
+			Name:      catalog.LabJobRunnerRole,
+			Namespace: servingsite.Name,
+		},
+		Rules: []rbacv1.PolicyRule{
+			{
+				Verbs:           []string{"*"},
+				APIGroups:       []string{""},
+				Resources:       []string{"pods", "pods/log"},
+				ResourceNames:   []string{},
+				NonResourceURLs: []string{},
+			},
+			{
+				Verbs:           []string{"*"},
+				APIGroups:       []string{"batch"},
+				Resources:       []string{"jobs"},
+				ResourceNames:   []string{},
+				NonResourceURLs: []string{},
+			},
+		},
+	}
+}
+
+// Create a role binding for a job
+func (servingsite *ServingSite) JobRoleBinding() *rbacv1.RoleBinding {
+	return &rbacv1.RoleBinding{
+		ObjectMeta: metav1.ObjectMeta{
+			Name:      catalog.LabJobRunnerRoleBinding,
+			Namespace: servingsite.Name,
+		},
+		Subjects: []rbacv1.Subject{
+			{
+				Kind:      "ServiceAccount",
+				APIGroup:  "",
+				Name:      catalog.LabJobRunnerSa,
+				Namespace: servingsite.Name,
+			},
+		},
+		RoleRef: rbacv1.RoleRef{
+			APIGroup: "rbac.authorization.k8s.io",
+			Kind:     "Role",
+			Name:     catalog.LabJobRunnerRole,
+		},
+	}
+}
+
+func (servingsite *ServingSite) ServiceAccount() *corev1.ServiceAccount {
+	return &corev1.ServiceAccount{
+		ObjectMeta: metav1.ObjectMeta{
+			Name:      catalog.LabJobRunnerSa,
+			Namespace: servingsite.Name,
+		},
+	}
 }
