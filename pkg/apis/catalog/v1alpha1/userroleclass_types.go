@@ -118,7 +118,7 @@ type UserRoleClass struct {
 type UserRoleClassList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
-	Items           []UserRoleClassSpec `json:"items" protobuf:"bytes,2,rep,name=items"`
+	Items           []UserRoleClass `json:"items" protobuf:"bytes,2,rep,name=items"`
 }
 
 // UserRoleClassSpec is the spec for UserRoleClass

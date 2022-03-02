@@ -889,7 +889,7 @@ message UserRoleClass {
 message UserRoleClassList {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
 
-  repeated UserRoleClassSpec items = 2;
+  repeated UserRoleClass items = 2;
 }
 
 // UserRoleClassSpec is the spec for UserRoleClass

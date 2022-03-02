@@ -1593,10 +1593,10 @@ export class UserRoleClassList extends jspb.Message {
   hasMetadata(): boolean;
   clearMetadata(): UserRoleClassList;
 
-  getItemsList(): Array<UserRoleClassSpec>;
-  setItemsList(value: Array<UserRoleClassSpec>): UserRoleClassList;
+  getItemsList(): Array<UserRoleClass>;
+  setItemsList(value: Array<UserRoleClass>): UserRoleClassList;
   clearItemsList(): UserRoleClassList;
-  addItems(value?: UserRoleClassSpec, index?: number): UserRoleClassSpec;
+  addItems(value?: UserRoleClass, index?: number): UserRoleClass;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UserRoleClassList.AsObject;
@@ -1609,7 +1609,7 @@ export class UserRoleClassList extends jspb.Message {
 export namespace UserRoleClassList {
   export type AsObject = {
     metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta.AsObject,
-    itemsList: Array<UserRoleClassSpec.AsObject>,
+    itemsList: Array<UserRoleClass.AsObject>,
   }
 }
 

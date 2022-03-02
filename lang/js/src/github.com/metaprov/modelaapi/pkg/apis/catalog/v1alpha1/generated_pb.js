@@ -15651,7 +15651,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.UserRoleClassList.
   var f, obj = {
     metadata: (f = msg.getMetadata()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta.toObject(includeInstance, f),
     itemsList: jspb.Message.toObjectList(msg.getItemsList(),
-    proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.UserRoleClassSpec.toObject, includeInstance)
+    proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.UserRoleClass.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -15694,8 +15694,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.UserRoleClassList.
       msg.setMetadata(value);
       break;
     case 2:
-      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.UserRoleClassSpec;
-      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.UserRoleClassSpec.deserializeBinaryFromReader);
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.UserRoleClass;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.UserRoleClass.deserializeBinaryFromReader);
       msg.addItems(value);
       break;
     default:
@@ -15740,7 +15740,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.UserRoleClassList.
     writer.writeRepeatedMessage(
       2,
       f,
-      proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.UserRoleClassSpec.serializeBinaryToWriter
+      proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.UserRoleClass.serializeBinaryToWriter
     );
   }
 };
@@ -15784,17 +15784,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.UserRoleClassList.
 
 
 /**
- * repeated UserRoleClassSpec items = 2;
- * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.UserRoleClassSpec>}
+ * repeated UserRoleClass items = 2;
+ * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.UserRoleClass>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.UserRoleClassList.prototype.getItemsList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.UserRoleClassSpec>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.UserRoleClassSpec, 2));
+  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.UserRoleClass>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.UserRoleClass, 2));
 };
 
 
 /**
- * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.UserRoleClassSpec>} value
+ * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.UserRoleClass>} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.UserRoleClassList} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.UserRoleClassList.prototype.setItemsList = function(value) {
@@ -15803,12 +15803,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.UserRoleClassList.
 
 
 /**
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.UserRoleClassSpec=} opt_value
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.UserRoleClass=} opt_value
  * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.UserRoleClassSpec}
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.UserRoleClass}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.UserRoleClassList.prototype.addItems = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.UserRoleClassSpec, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.UserRoleClass, opt_index);
 };
 
 

@@ -1429,7 +1429,7 @@ func (in *UserRoleClassList) DeepCopyInto(out *UserRoleClassList) {
 	in.ListMeta.DeepCopyInto(&out.ListMeta)
 	if in.Items != nil {
 		in, out := &in.Items, &out.Items
-		*out = make([]UserRoleClassSpec, len(*in))
+		*out = make([]UserRoleClass, len(*in))
 		for i := range *in {
 			(*in)[i].DeepCopyInto(&(*out)[i])
 		}
