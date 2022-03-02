@@ -354,7 +354,6 @@ func (b *ModelAutobuilder) CreateDataProduct() *data.DataProduct {
 				Namespace: "modela-system",
 				Name:      "default-tenant",
 			},
-			StakeHolders: nil,
 			DataLocation: data.DataLocation{
 				BucketName: util.StrPtr("default-digitalocean-bucket"),
 				Path:       util.StrPtr("modela/live/tenants/default-tenant/dataproducts/" + b.DataProductName()),
