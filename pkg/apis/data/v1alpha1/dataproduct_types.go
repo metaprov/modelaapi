@@ -160,7 +160,7 @@ type DataProductSpec struct {
 	Governance GovernanceSpec `json:"governance,omitempty" protobuf:"bytes,23,opt,name=governance"`
 	// The premissions for this product
 	// +kubebuilder:validation:Optional
-	Premissions PremissionsSpec `json:"premissions,omitempty" protobuf:"bytes,24,opt,name=premissions"`
+	Premissions PermissionsSpec `json:"permissions,omitempty" protobuf:"bytes,24,opt,name=permissions"`
 }
 
 // DataProductStatus defines the observed state of DataProduct
@@ -259,7 +259,7 @@ type GovernanceStatus struct {
 	BusinessReviewStatus GovernanceReviewStatus `json:"businessReviewStatus,omitempty" protobuf:"bytes,3,opt,name=businessReviewStatus"`
 }
 
-type PremissionsSpec struct {
+type PermissionsSpec struct {
 	Stakeholders []Stakeholder `json:"stakeholders,omitempty" protobuf:"bytes,1,opt,name=stakeholders"`
 }
 

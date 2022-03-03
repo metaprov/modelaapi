@@ -1145,7 +1145,7 @@ message DataProductSpec {
 
   // The premissions for this product
   // +kubebuilder:validation:Optional
-  optional PremissionsSpec premissions = 24;
+  optional PermissionsSpec permissions = 24;
 }
 
 // DataProductStatus defines the observed state of DataProduct
@@ -2951,7 +2951,7 @@ message PageSpec {
   repeated RowSpec rows = 1;
 }
 
-message PremissionsSpec {
+message PermissionsSpec {
   repeated Stakeholder stakeholders = 1;
 }
 

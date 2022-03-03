@@ -1435,10 +1435,10 @@ export class DataProductSpec extends jspb.Message {
   hasGovernance(): boolean;
   clearGovernance(): DataProductSpec;
 
-  getPremissions(): PremissionsSpec | undefined;
-  setPremissions(value?: PremissionsSpec): DataProductSpec;
-  hasPremissions(): boolean;
-  clearPremissions(): DataProductSpec;
+  getPermissions(): PermissionsSpec | undefined;
+  setPermissions(value?: PermissionsSpec): DataProductSpec;
+  hasPermissions(): boolean;
+  clearPermissions(): DataProductSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataProductSpec.AsObject;
@@ -1469,7 +1469,7 @@ export namespace DataProductSpec {
     priority: string,
     color: string,
     governance?: GovernanceSpec.AsObject,
-    premissions?: PremissionsSpec.AsObject,
+    permissions?: PermissionsSpec.AsObject,
   }
 }
 
@@ -4467,21 +4467,21 @@ export namespace PageSpec {
   }
 }
 
-export class PremissionsSpec extends jspb.Message {
+export class PermissionsSpec extends jspb.Message {
   getStakeholdersList(): Array<Stakeholder>;
-  setStakeholdersList(value: Array<Stakeholder>): PremissionsSpec;
-  clearStakeholdersList(): PremissionsSpec;
+  setStakeholdersList(value: Array<Stakeholder>): PermissionsSpec;
+  clearStakeholdersList(): PermissionsSpec;
   addStakeholders(value?: Stakeholder, index?: number): Stakeholder;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PremissionsSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: PremissionsSpec): PremissionsSpec.AsObject;
-  static serializeBinaryToWriter(message: PremissionsSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PremissionsSpec;
-  static deserializeBinaryFromReader(message: PremissionsSpec, reader: jspb.BinaryReader): PremissionsSpec;
+  toObject(includeInstance?: boolean): PermissionsSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: PermissionsSpec): PermissionsSpec.AsObject;
+  static serializeBinaryToWriter(message: PermissionsSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PermissionsSpec;
+  static deserializeBinaryFromReader(message: PermissionsSpec, reader: jspb.BinaryReader): PermissionsSpec;
 }
 
-export namespace PremissionsSpec {
+export namespace PermissionsSpec {
   export type AsObject = {
     stakeholdersList: Array<Stakeholder.AsObject>,
   }

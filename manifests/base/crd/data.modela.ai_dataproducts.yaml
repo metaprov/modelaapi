@@ -263,7 +263,7 @@ spec:
                 default: no-one
                 description: The data product owner
                 type: string
-              premissions:
+              permissions:
                 description: The premissions for this product
                 properties:
                   stakeholders:
