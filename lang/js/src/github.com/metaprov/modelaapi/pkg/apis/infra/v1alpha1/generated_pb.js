@@ -49040,7 +49040,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.toObject 
     defaultlab: (f = msg.getDefaultlab()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     defaultservingsiteref: (f = msg.getDefaultservingsiteref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     description: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-    owner: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
+    owner: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    permissions: (f = msg.getPermissions()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PermissionsSpec.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -49094,6 +49095,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.deseriali
     case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setOwner(value);
+      break;
+    case 5:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PermissionsSpec;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PermissionsSpec.deserializeBinaryFromReader);
+      msg.setPermissions(value);
       break;
     default:
       reader.skipField();
@@ -49152,6 +49158,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.serialize
     writer.writeString(
       4,
       f
+    );
+  }
+  f = message.getPermissions();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PermissionsSpec.serializeBinaryToWriter
     );
   }
 };
@@ -49300,6 +49314,43 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.prototype
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.prototype.hasOwner = function() {
   return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PermissionsSpec permissions = 5;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PermissionsSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.prototype.getPermissions = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PermissionsSpec} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PermissionsSpec, 5));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PermissionsSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.prototype.setPermissions = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.prototype.clearPermissions = function() {
+  return this.setPermissions(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.prototype.hasPermissions = function() {
+  return jspb.Message.getField(this, 5) != null;
 };
 
 

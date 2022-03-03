@@ -1203,6 +1203,26 @@ export namespace PermissionSpec {
   }
 }
 
+export class PermissionsSpec extends jspb.Message {
+  getStakeholdersList(): Array<Stakeholder>;
+  setStakeholdersList(value: Array<Stakeholder>): PermissionsSpec;
+  clearStakeholdersList(): PermissionsSpec;
+  addStakeholders(value?: Stakeholder, index?: number): Stakeholder;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PermissionsSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: PermissionsSpec): PermissionsSpec.AsObject;
+  static serializeBinaryToWriter(message: PermissionsSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PermissionsSpec;
+  static deserializeBinaryFromReader(message: PermissionsSpec, reader: jspb.BinaryReader): PermissionsSpec;
+}
+
+export namespace PermissionsSpec {
+  export type AsObject = {
+    stakeholdersList: Array<Stakeholder.AsObject>,
+  }
+}
+
 export class PretrainedModel extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): PretrainedModel;
@@ -1558,6 +1578,30 @@ export namespace StakeHolder {
   export type AsObject = {
     accountname: string,
     rolesList: Array<string>,
+  }
+}
+
+export class Stakeholder extends jspb.Message {
+  getAccount(): string;
+  setAccount(value: string): Stakeholder;
+
+  getRolesList(): Array<k8s_io_api_core_v1_generated_pb.ObjectReference>;
+  setRolesList(value: Array<k8s_io_api_core_v1_generated_pb.ObjectReference>): Stakeholder;
+  clearRolesList(): Stakeholder;
+  addRoles(value?: k8s_io_api_core_v1_generated_pb.ObjectReference, index?: number): k8s_io_api_core_v1_generated_pb.ObjectReference;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Stakeholder.AsObject;
+  static toObject(includeInstance: boolean, msg: Stakeholder): Stakeholder.AsObject;
+  static serializeBinaryToWriter(message: Stakeholder, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Stakeholder;
+  static deserializeBinaryFromReader(message: Stakeholder, reader: jspb.BinaryReader): Stakeholder;
+}
+
+export namespace Stakeholder {
+  export type AsObject = {
+    account: string,
+    rolesList: Array<k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject>,
   }
 }
 

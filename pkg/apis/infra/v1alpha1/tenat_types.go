@@ -79,6 +79,9 @@ type TenantSpec struct {
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,4,opt,name=owner"`
+	// The premissions at the tenant level for the tenent objects.
+	// +kubebuilder:validation:Optional
+	Premissions catalog.PermissionsSpec `json:"permissions,omitempty" protobuf:"bytes,5,opt,name=permissions"`
 }
 
 // TenantStatus defines the actual state of a Tenant

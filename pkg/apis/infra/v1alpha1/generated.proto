@@ -2798,6 +2798,10 @@ message TenantSpec {
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
   optional string owner = 4;
+
+  // The premissions at the tenant level for the tenent objects.
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PermissionsSpec permissions = 5;
 }
 
 // TenantStatus defines the actual state of a Tenant

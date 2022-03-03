@@ -1951,3 +1951,15 @@ type HistogramData struct {
 	// Empty is this is not a categorical variable.
 	Categories []string `json:"categories,omitempty" protobuf:"bytes,3,rep,name=categories"`
 }
+
+// Define the premissions
+
+type PermissionsSpec struct {
+	Stakeholders []Stakeholder `json:"stakeholders,omitempty" protobuf:"bytes,1,opt,name=stakeholders"`
+}
+
+type Stakeholder struct {
+	AccountName string `json:"account,omitempty" protobuf:"bytes,1,opt,name=account"`
+	// assign roles to account
+	Roles []v1.ObjectReference `json:"roles,omitempty" protobuf:"bytes,2,opt,name=roles"`
+}

@@ -1435,8 +1435,8 @@ export class DataProductSpec extends jspb.Message {
   hasGovernance(): boolean;
   clearGovernance(): DataProductSpec;
 
-  getPermissions(): PermissionsSpec | undefined;
-  setPermissions(value?: PermissionsSpec): DataProductSpec;
+  getPermissions(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PermissionsSpec | undefined;
+  setPermissions(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PermissionsSpec): DataProductSpec;
   hasPermissions(): boolean;
   clearPermissions(): DataProductSpec;
 
@@ -1469,7 +1469,7 @@ export namespace DataProductSpec {
     priority: string,
     color: string,
     governance?: GovernanceSpec.AsObject,
-    permissions?: PermissionsSpec.AsObject,
+    permissions?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PermissionsSpec.AsObject,
   }
 }
 
@@ -4467,26 +4467,6 @@ export namespace PageSpec {
   }
 }
 
-export class PermissionsSpec extends jspb.Message {
-  getStakeholdersList(): Array<Stakeholder>;
-  setStakeholdersList(value: Array<Stakeholder>): PermissionsSpec;
-  clearStakeholdersList(): PermissionsSpec;
-  addStakeholders(value?: Stakeholder, index?: number): Stakeholder;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PermissionsSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: PermissionsSpec): PermissionsSpec.AsObject;
-  static serializeBinaryToWriter(message: PermissionsSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PermissionsSpec;
-  static deserializeBinaryFromReader(message: PermissionsSpec, reader: jspb.BinaryReader): PermissionsSpec;
-}
-
-export namespace PermissionsSpec {
-  export type AsObject = {
-    stakeholdersList: Array<Stakeholder.AsObject>,
-  }
-}
-
 export class Recipe extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): Recipe;
@@ -5612,30 +5592,6 @@ export namespace SqlQueryStatus {
     failurereason: string,
     failuremessage: string,
     conditionsList: Array<SqlQueryCondition.AsObject>,
-  }
-}
-
-export class Stakeholder extends jspb.Message {
-  getAccount(): string;
-  setAccount(value: string): Stakeholder;
-
-  getRolesList(): Array<k8s_io_api_core_v1_generated_pb.ObjectReference>;
-  setRolesList(value: Array<k8s_io_api_core_v1_generated_pb.ObjectReference>): Stakeholder;
-  clearRolesList(): Stakeholder;
-  addRoles(value?: k8s_io_api_core_v1_generated_pb.ObjectReference, index?: number): k8s_io_api_core_v1_generated_pb.ObjectReference;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): Stakeholder.AsObject;
-  static toObject(includeInstance: boolean, msg: Stakeholder): Stakeholder.AsObject;
-  static serializeBinaryToWriter(message: Stakeholder, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): Stakeholder;
-  static deserializeBinaryFromReader(message: Stakeholder, reader: jspb.BinaryReader): Stakeholder;
-}
-
-export namespace Stakeholder {
-  export type AsObject = {
-    account: string,
-    rolesList: Array<k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject>,
   }
 }
 

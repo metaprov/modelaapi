@@ -1145,7 +1145,7 @@ message DataProductSpec {
 
   // The premissions for this product
   // +kubebuilder:validation:Optional
-  optional PermissionsSpec permissions = 24;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PermissionsSpec permissions = 24;
 }
 
 // DataProductStatus defines the observed state of DataProduct
@@ -2951,10 +2951,6 @@ message PageSpec {
   repeated RowSpec rows = 1;
 }
 
-message PermissionsSpec {
-  repeated Stakeholder stakeholders = 1;
-}
-
 message Recipe {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
@@ -3619,13 +3615,6 @@ message SqlQueryStatus {
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
   repeated SqlQueryCondition conditions = 6;
-}
-
-message Stakeholder {
-  optional string account = 1;
-
-  // assign roles to account
-  repeated k8s.io.api.core.v1.ObjectReference roles = 2;
 }
 
 message TableSpec {

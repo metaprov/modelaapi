@@ -679,6 +679,10 @@ message PermissionSpec {
   repeated string actions = 2;
 }
 
+message PermissionsSpec {
+  repeated Stakeholder stakeholders = 1;
+}
+
 // Pretrained model contain the metadata about a pretrained model
 // +kubebuilder:object:root=true
 message PretrainedModel {
@@ -873,6 +877,13 @@ message StakeHolder {
 
   // The roles assigned to the stake holder
   repeated string roles = 2;
+}
+
+message Stakeholder {
+  optional string account = 1;
+
+  // assign roles to account
+  repeated k8s.io.api.core.v1.ObjectReference roles = 2;
 }
 
 // UserRoleClass specify the RBAC premission for a specific user role.

@@ -4885,6 +4885,11 @@ export class TenantSpec extends jspb.Message {
   getOwner(): string;
   setOwner(value: string): TenantSpec;
 
+  getPermissions(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PermissionsSpec | undefined;
+  setPermissions(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PermissionsSpec): TenantSpec;
+  hasPermissions(): boolean;
+  clearPermissions(): TenantSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TenantSpec.AsObject;
   static toObject(includeInstance: boolean, msg: TenantSpec): TenantSpec.AsObject;
@@ -4899,6 +4904,7 @@ export namespace TenantSpec {
     defaultservingsiteref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     description: string,
     owner: string,
+    permissions?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PermissionsSpec.AsObject,
   }
 }
 
