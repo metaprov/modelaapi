@@ -40,11 +40,14 @@ type DataProductCondition struct {
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status"
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
-// +kubebuilder:printcolumn:name="Bucket",type="string",JSONPath=".spec.dataLocation.bucketName"
-// +kubebuilder:printcolumn:name="Lab",type="string",JSONPath=".spec.labName"
-// +kubebuilder:printcolumn:name="Serving Site",type="string",JSONPath=".spec.servingSiteName"
-// +kubebuilder:printcolumn:name="Image Repo",type="string",JSONPath=".spec.imageLocation.name"
 // +kubebuilder:printcolumn:name="Task",type="string",JSONPath=".spec.task"
+// +kubebuilder:printcolumn:name="Public",type="boolean",JSONPath=".spec.public"
+// +kubebuilder:printcolumn:name="Datasources",type="integer",JSONPath=".status.totalDatasources"
+// +kubebuilder:printcolumn:name="Datasets",type="integer",JSONPath=".status.datasets"
+// +kubebuilder:printcolumn:name="Studies",type="integer",JSONPath=".status.studies"
+// +kubebuilder:printcolumn:name="Models",type="integer",JSONPath=".status.models"
+// +kubebuilder:printcolumn:name="Predictors",type="integer",JSONPath=".status.predictors"
+// +kubebuilder:printcolumn:name="Apps",type="integer",JSONPath=".status.apps"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=dataproducts,shortName=prod,singular=dataproduct,shortName="prod",categories={data,modela,all}
 type DataProduct struct {
@@ -91,10 +94,14 @@ type DataProductSpec struct {
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,1,opt,name=owner"`
+	// If true, the data product is public.
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Public *bool `json:"public,omitempty" protobuf:"bytes,2,opt,name=public"`
 	// The tenant that own the data product.
 	// Default to default tenant.
 	// +kubebuilder:validation:Optional
-	TenantRef *v1.ObjectReference `json:"tenantRef,omitempty" protobuf:"bytes,2,opt,name=tenantRef"`
+	TenantRef *v1.ObjectReference `json:"tenantRef,omitempty" protobuf:"bytes,3,opt,name=tenantRef"`
 	// GitLocation is the github repository for all the artifacts for this product
 	// +kubebuilder:validation:Optional
 	GitLocation GitLocation `json:"gitLocation,omitempty" protobuf:"bytes,4,opt,name=gitLocation"`
@@ -171,26 +178,52 @@ type DataProductStatus struct {
 	// Last time the object was updated
 	//+kubebuilder:validation:Optional
 	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,2,opt,name=lastUpdated"`
-	// Last time the study was updated
+	// Stats
+
 	//+kubebuilder:validation:Optional
-	LastStudy *metav1.Time `json:"lastStudy,omitempty" protobuf:"bytes,3,opt,name=lastStudy"`
-	// Last time the dataset was created
+	TotalDatasources int32 `json:"totalDatasources,omitempty" protobuf:"bytes,3,opt,name=totalDatasources"`
+
 	//+kubebuilder:validation:Optional
-	LastDataset *metav1.Time `json:"lastDataset,omitempty" protobuf:"bytes,4,opt,name=lastDataset"`
-	// Last time prediction
+	TotalDatasets int32 `json:"totalDatasets,omitempty" protobuf:"bytes,4,opt,name=totalDatasets"`
+
 	//+kubebuilder:validation:Optional
-	LastPrediction *metav1.Time `json:"lastPrediction,omitempty" protobuf:"bytes,5,opt,name=lastPrediction"`
+	TotalDataPipelines int32 `json:"totalDataPipelines,omitempty" protobuf:"bytes,5,opt,name=totalDataPipelines"`
+
+	//+kubebuilder:validation:Optional
+	TotalDataPipelineRuns int32 `json:"totalDataPipelineRuns,omitempty" protobuf:"bytes,6,opt,name=totalDataPipelineRuns"`
+
+	//+kubebuilder:validation:Optional
+	TotalStudies int32 `json:"totalStudies,omitempty" protobuf:"bytes,7,opt,name=totalStudies"`
+
+	//+kubebuilder:validation:Optional
+	TotalModels int32 `json:"totalModels,omitempty" protobuf:"bytes,8,opt,name=totalModels"`
+
+	//+kubebuilder:validation:Optional
+	TotalModelPipelines int32 `json:"totalModelPipelines,omitempty" protobuf:"bytes,9,opt,name=totalModelPipelines"`
+
+	//+kubebuilder:validation:Optional
+	TotalModelPipelineRuns int32 `json:"totalModelPipelineRuns,omitempty" protobuf:"bytes,10,opt,name=totalModelPipelineRuns"`
+
+	//+kubebuilder:validation:Optional
+	TotalPredictors int32 `json:"totalPredictors,omitempty" protobuf:"bytes,11,opt,name=totalPredictors"`
+
+	//+kubebuilder:validation:Optional
+	TotalBuilders int32 `json:"totalBuilders,omitempty" protobuf:"bytes,12,opt,name=totalBuilders"`
+
+	//+kubebuilder:validation:Optional
+	TotalApps int32 `json:"totalApps,omitempty" protobuf:"bytes,13,opt,name=totalApps"`
+
 	// Update in case of terminal failure
 	// Borrowed from cluster api controller
-	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,6,opt,name=failureReason"`
+	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,14,opt,name=failureReason"`
 
 	// Update in case of terminal failure message
-	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,7,opt,name=failureMessage"`
+	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,15,opt,name=failureMessage"`
 
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []DataProductCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,8,rep,name=conditions"`
+	Conditions []DataProductCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,16,rep,name=conditions"`
 }
 
 // +kubebuilder:object:root=true

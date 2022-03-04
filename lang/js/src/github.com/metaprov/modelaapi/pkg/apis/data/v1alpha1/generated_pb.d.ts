@@ -1363,6 +1363,9 @@ export class DataProductSpec extends jspb.Message {
   getOwner(): string;
   setOwner(value: string): DataProductSpec;
 
+  getPublic(): boolean;
+  setPublic(value: boolean): DataProductSpec;
+
   getTenantref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setTenantref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): DataProductSpec;
   hasTenantref(): boolean;
@@ -1451,6 +1454,7 @@ export class DataProductSpec extends jspb.Message {
 export namespace DataProductSpec {
   export type AsObject = {
     owner: string,
+    pb_public: boolean,
     tenantref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     gitlocation?: GitLocation.AsObject,
     imagelocation?: ImageLocation.AsObject,
@@ -1482,20 +1486,38 @@ export class DataProductStatus extends jspb.Message {
   hasLastupdated(): boolean;
   clearLastupdated(): DataProductStatus;
 
-  getLaststudy(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLaststudy(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DataProductStatus;
-  hasLaststudy(): boolean;
-  clearLaststudy(): DataProductStatus;
+  getTotaldatasources(): number;
+  setTotaldatasources(value: number): DataProductStatus;
 
-  getLastdataset(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLastdataset(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DataProductStatus;
-  hasLastdataset(): boolean;
-  clearLastdataset(): DataProductStatus;
+  getTotaldatasets(): number;
+  setTotaldatasets(value: number): DataProductStatus;
 
-  getLastprediction(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLastprediction(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DataProductStatus;
-  hasLastprediction(): boolean;
-  clearLastprediction(): DataProductStatus;
+  getTotaldatapipelines(): number;
+  setTotaldatapipelines(value: number): DataProductStatus;
+
+  getTotaldatapipelineruns(): number;
+  setTotaldatapipelineruns(value: number): DataProductStatus;
+
+  getTotalstudies(): number;
+  setTotalstudies(value: number): DataProductStatus;
+
+  getTotalmodels(): number;
+  setTotalmodels(value: number): DataProductStatus;
+
+  getTotalmodelpipelines(): number;
+  setTotalmodelpipelines(value: number): DataProductStatus;
+
+  getTotalmodelpipelineruns(): number;
+  setTotalmodelpipelineruns(value: number): DataProductStatus;
+
+  getTotalpredictors(): number;
+  setTotalpredictors(value: number): DataProductStatus;
+
+  getTotalbuilders(): number;
+  setTotalbuilders(value: number): DataProductStatus;
+
+  getTotalapps(): number;
+  setTotalapps(value: number): DataProductStatus;
 
   getFailurereason(): string;
   setFailurereason(value: string): DataProductStatus;
@@ -1520,9 +1542,17 @@ export namespace DataProductStatus {
   export type AsObject = {
     observedgeneration: number,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    laststudy?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    lastdataset?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    lastprediction?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    totaldatasources: number,
+    totaldatasets: number,
+    totaldatapipelines: number,
+    totaldatapipelineruns: number,
+    totalstudies: number,
+    totalmodels: number,
+    totalmodelpipelines: number,
+    totalmodelpipelineruns: number,
+    totalpredictors: number,
+    totalbuilders: number,
+    totalapps: number,
     failurereason: string,
     failuremessage: string,
     conditionsList: Array<DataProductCondition.AsObject>,

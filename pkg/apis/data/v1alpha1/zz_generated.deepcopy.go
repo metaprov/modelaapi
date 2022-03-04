@@ -1164,6 +1164,11 @@ func (in *DataProductSpec) DeepCopyInto(out *DataProductSpec) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.Public != nil {
+		in, out := &in.Public, &out.Public
+		*out = new(bool)
+		**out = **in
+	}
 	if in.TenantRef != nil {
 		in, out := &in.TenantRef, &out.TenantRef
 		*out = new(v1.ObjectReference)
@@ -1245,18 +1250,6 @@ func (in *DataProductStatus) DeepCopyInto(out *DataProductStatus) {
 	*out = *in
 	if in.LastUpdated != nil {
 		in, out := &in.LastUpdated, &out.LastUpdated
-		*out = (*in).DeepCopy()
-	}
-	if in.LastStudy != nil {
-		in, out := &in.LastStudy, &out.LastStudy
-		*out = (*in).DeepCopy()
-	}
-	if in.LastDataset != nil {
-		in, out := &in.LastDataset, &out.LastDataset
-		*out = (*in).DeepCopy()
-	}
-	if in.LastPrediction != nil {
-		in, out := &in.LastPrediction, &out.LastPrediction
 		*out = (*in).DeepCopy()
 	}
 	if in.FailureReason != nil {

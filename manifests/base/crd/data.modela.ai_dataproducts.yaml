@@ -28,21 +28,30 @@ spec:
     - jsonPath: .spec.owner
       name: Owner
       type: string
-    - jsonPath: .spec.dataLocation.bucketName
-      name: Bucket
-      type: string
-    - jsonPath: .spec.labName
-      name: Lab
-      type: string
-    - jsonPath: .spec.servingSiteName
-      name: Serving Site
-      type: string
-    - jsonPath: .spec.imageLocation.name
-      name: Image Repo
-      type: string
     - jsonPath: .spec.task
       name: Task
       type: string
+    - jsonPath: .spec.public
+      name: Public
+      type: boolean
+    - jsonPath: .status.totalDatasources
+      name: Datasources
+      type: integer
+    - jsonPath: .status.datasets
+      name: Datasets
+      type: integer
+    - jsonPath: .status.studies
+      name: Studies
+      type: integer
+    - jsonPath: .status.models
+      name: Models
+      type: integer
+    - jsonPath: .status.predictors
+      name: Predictors
+      type: integer
+    - jsonPath: .status.apps
+      name: Apps
+      type: integer
     - jsonPath: .metadata.creationTimestamp
       name: Age
       type: date
@@ -353,6 +362,10 @@ spec:
                 - high
                 - urgent
                 type: string
+              public:
+                default: false
+                description: If true, the data product is public.
+                type: boolean
               resources:
                 description: DefaultResource will be used if the resources are not
                   specified.
@@ -593,18 +606,6 @@ spec:
                 description: Update in case of terminal failure Borrowed from cluster
                   api controller
                 type: string
-              lastDataset:
-                description: Last time the dataset was created
-                format: date-time
-                type: string
-              lastPrediction:
-                description: Last time prediction
-                format: date-time
-                type: string
-              lastStudy:
-                description: Last time the study was updated
-                format: date-time
-                type: string
               lastUpdated:
                 description: Last time the object was updated
                 format: date-time
@@ -613,6 +614,39 @@ spec:
                 description: ObservedGeneration is the Last generation that was acted
                   on
                 format: int64
+                type: integer
+              totalApps:
+                format: int32
+                type: integer
+              totalBuilders:
+                format: int32
+                type: integer
+              totalDataPipelineRuns:
+                format: int32
+                type: integer
+              totalDataPipelines:
+                format: int32
+                type: integer
+              totalDatasets:
+                format: int32
+                type: integer
+              totalDatasources:
+                format: int32
+                type: integer
+              totalModelPipelineRuns:
+                format: int32
+                type: integer
+              totalModelPipelines:
+                format: int32
+                type: integer
+              totalModels:
+                format: int32
+                type: integer
+              totalPredictors:
+                format: int32
+                type: integer
+              totalStudies:
+                format: int32
                 type: integer
             type: object
         required:

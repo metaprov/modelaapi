@@ -1010,11 +1010,14 @@ message DataPipelineStatus {
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status"
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
-// +kubebuilder:printcolumn:name="Bucket",type="string",JSONPath=".spec.dataLocation.bucketName"
-// +kubebuilder:printcolumn:name="Lab",type="string",JSONPath=".spec.labName"
-// +kubebuilder:printcolumn:name="Serving Site",type="string",JSONPath=".spec.servingSiteName"
-// +kubebuilder:printcolumn:name="Image Repo",type="string",JSONPath=".spec.imageLocation.name"
 // +kubebuilder:printcolumn:name="Task",type="string",JSONPath=".spec.task"
+// +kubebuilder:printcolumn:name="Public",type="boolean",JSONPath=".spec.public"
+// +kubebuilder:printcolumn:name="Datasources",type="integer",JSONPath=".status.totalDatasources"
+// +kubebuilder:printcolumn:name="Datasets",type="integer",JSONPath=".status.datasets"
+// +kubebuilder:printcolumn:name="Studies",type="integer",JSONPath=".status.studies"
+// +kubebuilder:printcolumn:name="Models",type="integer",JSONPath=".status.models"
+// +kubebuilder:printcolumn:name="Predictors",type="integer",JSONPath=".status.predictors"
+// +kubebuilder:printcolumn:name="Apps",type="integer",JSONPath=".status.apps"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=dataproducts,shortName=prod,singular=dataproduct,shortName="prod",categories={data,modela,all}
 message DataProduct {
@@ -1058,10 +1061,15 @@ message DataProductSpec {
   // +kubebuilder:validation:Optional
   optional string owner = 1;
 
+  // If true, the data product is public.
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool public = 2;
+
   // The tenant that own the data product.
   // Default to default tenant.
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference tenantRef = 2;
+  optional k8s.io.api.core.v1.ObjectReference tenantRef = 3;
 
   // GitLocation is the github repository for all the artifacts for this product
   // +kubebuilder:validation:Optional
@@ -1158,29 +1166,50 @@ message DataProductStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2;
 
-  // Last time the study was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastStudy = 3;
+  optional int32 totalDatasources = 3;
 
-  // Last time the dataset was created
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastDataset = 4;
+  optional int32 totalDatasets = 4;
 
-  // Last time prediction
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastPrediction = 5;
+  optional int32 totalDataPipelines = 5;
+
+  // +kubebuilder:validation:Optional
+  optional int32 totalDataPipelineRuns = 6;
+
+  // +kubebuilder:validation:Optional
+  optional int32 totalStudies = 7;
+
+  // +kubebuilder:validation:Optional
+  optional int32 totalModels = 8;
+
+  // +kubebuilder:validation:Optional
+  optional int32 totalModelPipelines = 9;
+
+  // +kubebuilder:validation:Optional
+  optional int32 totalModelPipelineRuns = 10;
+
+  // +kubebuilder:validation:Optional
+  optional int32 totalPredictors = 11;
+
+  // +kubebuilder:validation:Optional
+  optional int32 totalBuilders = 12;
+
+  // +kubebuilder:validation:Optional
+  optional int32 totalApps = 13;
 
   // Update in case of terminal failure
   // Borrowed from cluster api controller
-  optional string failureReason = 6;
+  optional string failureReason = 14;
 
   // Update in case of terminal failure message
-  optional string failureMessage = 7;
+  optional string failureMessage = 15;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated DataProductCondition conditions = 8;
+  repeated DataProductCondition conditions = 16;
 }
 
 // +kubebuilder:object:root=true
