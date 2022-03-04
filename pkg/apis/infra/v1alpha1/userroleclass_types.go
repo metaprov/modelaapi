@@ -60,7 +60,7 @@ func (role *UserRoleClass) Allow(
 	resource common.KindName,
 	subject string,
 	ns string,
-	name string) {
+	name string) bool {
 	for _, v := range role.Spec.Permissions {
 		if resource == v.Resource {
 			for _, a := range v.Actions {
