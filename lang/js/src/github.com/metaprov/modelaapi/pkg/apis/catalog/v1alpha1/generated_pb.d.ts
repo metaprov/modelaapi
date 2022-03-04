@@ -1179,30 +1179,6 @@ export namespace PRCurve {
   }
 }
 
-export class PermissionSpec extends jspb.Message {
-  getResource(): string;
-  setResource(value: string): PermissionSpec;
-
-  getActionsList(): Array<string>;
-  setActionsList(value: Array<string>): PermissionSpec;
-  clearActionsList(): PermissionSpec;
-  addActions(value: string, index?: number): PermissionSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PermissionSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: PermissionSpec): PermissionSpec.AsObject;
-  static serializeBinaryToWriter(message: PermissionSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PermissionSpec;
-  static deserializeBinaryFromReader(message: PermissionSpec, reader: jspb.BinaryReader): PermissionSpec;
-}
-
-export namespace PermissionSpec {
-  export type AsObject = {
-    resource: string,
-    actionsList: Array<string>,
-  }
-}
-
 export class PermissionsSpec extends jspb.Message {
   getStakeholdersList(): Array<Stakeholder>;
   setStakeholdersList(value: Array<Stakeholder>): PermissionsSpec;
@@ -1602,82 +1578,6 @@ export namespace Stakeholder {
   export type AsObject = {
     account: string,
     rolesList: Array<k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject>,
-  }
-}
-
-export class UserRoleClass extends jspb.Message {
-  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
-  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): UserRoleClass;
-  hasMetadata(): boolean;
-  clearMetadata(): UserRoleClass;
-
-  getSpec(): UserRoleClassSpec | undefined;
-  setSpec(value?: UserRoleClassSpec): UserRoleClass;
-  hasSpec(): boolean;
-  clearSpec(): UserRoleClass;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): UserRoleClass.AsObject;
-  static toObject(includeInstance: boolean, msg: UserRoleClass): UserRoleClass.AsObject;
-  static serializeBinaryToWriter(message: UserRoleClass, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): UserRoleClass;
-  static deserializeBinaryFromReader(message: UserRoleClass, reader: jspb.BinaryReader): UserRoleClass;
-}
-
-export namespace UserRoleClass {
-  export type AsObject = {
-    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.AsObject,
-    spec?: UserRoleClassSpec.AsObject,
-  }
-}
-
-export class UserRoleClassList extends jspb.Message {
-  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta | undefined;
-  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta): UserRoleClassList;
-  hasMetadata(): boolean;
-  clearMetadata(): UserRoleClassList;
-
-  getItemsList(): Array<UserRoleClass>;
-  setItemsList(value: Array<UserRoleClass>): UserRoleClassList;
-  clearItemsList(): UserRoleClassList;
-  addItems(value?: UserRoleClass, index?: number): UserRoleClass;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): UserRoleClassList.AsObject;
-  static toObject(includeInstance: boolean, msg: UserRoleClassList): UserRoleClassList.AsObject;
-  static serializeBinaryToWriter(message: UserRoleClassList, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): UserRoleClassList;
-  static deserializeBinaryFromReader(message: UserRoleClassList, reader: jspb.BinaryReader): UserRoleClassList;
-}
-
-export namespace UserRoleClassList {
-  export type AsObject = {
-    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta.AsObject,
-    itemsList: Array<UserRoleClass.AsObject>,
-  }
-}
-
-export class UserRoleClassSpec extends jspb.Message {
-  getDescription(): string;
-  setDescription(value: string): UserRoleClassSpec;
-
-  getRulesList(): Array<PermissionSpec>;
-  setRulesList(value: Array<PermissionSpec>): UserRoleClassSpec;
-  clearRulesList(): UserRoleClassSpec;
-  addRules(value?: PermissionSpec, index?: number): PermissionSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): UserRoleClassSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: UserRoleClassSpec): UserRoleClassSpec.AsObject;
-  static serializeBinaryToWriter(message: UserRoleClassSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): UserRoleClassSpec;
-  static deserializeBinaryFromReader(message: UserRoleClassSpec, reader: jspb.BinaryReader): UserRoleClassSpec;
-}
-
-export namespace UserRoleClassSpec {
-  export type AsObject = {
-    description: string,
-    rulesList: Array<PermissionSpec.AsObject>,
   }
 }
 

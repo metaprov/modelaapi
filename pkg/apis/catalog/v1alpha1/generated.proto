@@ -671,14 +671,6 @@ message PRCurve {
   repeated CurvePoint values = 1;
 }
 
-message PermissionSpec {
-  // The name of the resource
-  optional string resource = 1;
-
-  // List of allowed actions on the resource
-  repeated string actions = 2;
-}
-
 message PermissionsSpec {
   repeated Stakeholder stakeholders = 1;
 }
@@ -884,31 +876,6 @@ message Stakeholder {
 
   // assign roles to account
   repeated k8s.io.api.core.v1.ObjectReference roles = 2;
-}
-
-// UserRoleClass specify the RBAC premission for a specific user role.
-// +kubebuilder:resource:path=userroleclasses,singular=userroleclass,categories={catalog,modela,all}
-// +kubebuilder:object:root=true
-message UserRoleClass {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
-
-  optional UserRoleClassSpec spec = 2;
-}
-
-// +kubebuilder:object:root=true
-// UserRoleClassList contains a list of UserRoleClass
-message UserRoleClassList {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
-
-  repeated UserRoleClass items = 2;
-}
-
-// UserRoleClassSpec is the spec for UserRoleClass
-message UserRoleClassSpec {
-  optional string description = 1;
-
-  // +kubebuilder:validation:Optional
-  repeated PermissionSpec rules = 2;
 }
 
 message VizUri {

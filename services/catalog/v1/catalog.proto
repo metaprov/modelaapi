@@ -196,26 +196,6 @@ message GetWorkloadClassResponse {
     github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkloadClass workload = 1;
 }
 
-//////////////////////////////////////////////////// UserRoleClass ///////////////////////////////////
-
-message ListUserRoleClassesRequest {
-    string namespace   = 1;
-    map<string,string> labels =2;
-}
-
-message ListUserRoleClassesResponse {
-    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.UserRoleClassList userRoleClasses = 1;
-}
-
-message GetUserRoleClassRequest {
-    string name        = 1;
-    string namespace   = 2;
-    
-}
-
-message GetUserRoleClassResponse {
-    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.UserRoleClass userRoleClass = 1;
-}
 
 //////////////////////////////////////////////////// Service ///////////////////////////////////
 
@@ -260,14 +240,6 @@ service CatalogService {
 
     rpc GetWorkloadClass(GetWorkloadClassRequest) returns (GetWorkloadClassResponse) {
         option (google.api.http).get = "/v1/workloadclasses/{name}";
-    }
-
-    rpc ListUserRoleClasses(ListUserRoleClassesRequest) returns (ListUserRoleClassesResponse) {
-        option (google.api.http).get = "/v1/userroleclasses";
-    }
-
-    rpc GetUserRoleClass(GetUserRoleClassRequest) returns (GetUserRoleClassResponse) {
-        option (google.api.http).get = "/v1/userroleclasses/{name}";
     }
 
     rpc ListPublicDataset(ListPublicDatasetsRequest) returns (ListPublicDatasetsResponse) {

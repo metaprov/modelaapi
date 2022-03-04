@@ -1,0 +1,254 @@
+/**
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modelaapi.services.apitoken.v1
+ * @enhanceable
+ * @public
+ */
+
+// GENERATED CODE -- DO NOT EDIT!
+
+
+/* eslint-disable */
+// @ts-nocheck
+
+
+import * as grpcWeb from 'grpc-web';
+
+import * as github_com_metaprov_modelaapi_services_userroleclass_v1_userroleclass_pb from '../../../../../../github.com/metaprov/modelaapi/services/userroleclass/v1/userroleclass_pb';
+
+
+export class UserRoleClassServiceClient {
+  client_: grpcWeb.AbstractClientBase;
+  hostname_: string;
+  credentials_: null | { [index: string]: string; };
+  options_: null | { [index: string]: any; };
+
+  constructor (hostname: string,
+               credentials?: null | { [index: string]: string; },
+               options?: null | { [index: string]: any; }) {
+    if (!options) options = {};
+    if (!credentials) credentials = {};
+    options['format'] = 'text';
+
+    this.client_ = new grpcWeb.GrpcWebClientBase(options);
+    this.hostname_ = hostname;
+    this.credentials_ = credentials;
+    this.options_ = options;
+  }
+
+  methodInfoListUserRoleClasss = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.apitoken.v1.UserRoleClassService/ListUserRoleClasss',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_userroleclass_v1_userroleclass_pb.ListUserRoleClasssRequest,
+    github_com_metaprov_modelaapi_services_userroleclass_v1_userroleclass_pb.ListUserRoleClasssResponse,
+    (request: github_com_metaprov_modelaapi_services_userroleclass_v1_userroleclass_pb.ListUserRoleClasssRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_userroleclass_v1_userroleclass_pb.ListUserRoleClasssResponse.deserializeBinary
+  );
+
+  listUserRoleClasss(
+    request: github_com_metaprov_modelaapi_services_userroleclass_v1_userroleclass_pb.ListUserRoleClasssRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_userroleclass_v1_userroleclass_pb.ListUserRoleClasssResponse>;
+
+  listUserRoleClasss(
+    request: github_com_metaprov_modelaapi_services_userroleclass_v1_userroleclass_pb.ListUserRoleClasssRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_userroleclass_v1_userroleclass_pb.ListUserRoleClasssResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_userroleclass_v1_userroleclass_pb.ListUserRoleClasssResponse>;
+
+  listUserRoleClasss(
+    request: github_com_metaprov_modelaapi_services_userroleclass_v1_userroleclass_pb.ListUserRoleClasssRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_userroleclass_v1_userroleclass_pb.ListUserRoleClasssResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.apitoken.v1.UserRoleClassService/ListUserRoleClasss',
+        request,
+        metadata || {},
+        this.methodInfoListUserRoleClasss,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.apitoken.v1.UserRoleClassService/ListUserRoleClasss',
+    request,
+    metadata || {},
+    this.methodInfoListUserRoleClasss);
+  }
+
+  methodInfoCreateUserRoleClass = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.apitoken.v1.UserRoleClassService/CreateUserRoleClass',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_userroleclass_v1_userroleclass_pb.CreateUserRoleClassRequest,
+    github_com_metaprov_modelaapi_services_userroleclass_v1_userroleclass_pb.CreateUserRoleClassResponse,
+    (request: github_com_metaprov_modelaapi_services_userroleclass_v1_userroleclass_pb.CreateUserRoleClassRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_userroleclass_v1_userroleclass_pb.CreateUserRoleClassResponse.deserializeBinary
+  );
+
+  createUserRoleClass(
+    request: github_com_metaprov_modelaapi_services_userroleclass_v1_userroleclass_pb.CreateUserRoleClassRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_userroleclass_v1_userroleclass_pb.CreateUserRoleClassResponse>;
+
+  createUserRoleClass(
+    request: github_com_metaprov_modelaapi_services_userroleclass_v1_userroleclass_pb.CreateUserRoleClassRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_userroleclass_v1_userroleclass_pb.CreateUserRoleClassResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_userroleclass_v1_userroleclass_pb.CreateUserRoleClassResponse>;
+
+  createUserRoleClass(
+    request: github_com_metaprov_modelaapi_services_userroleclass_v1_userroleclass_pb.CreateUserRoleClassRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_userroleclass_v1_userroleclass_pb.CreateUserRoleClassResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.apitoken.v1.UserRoleClassService/CreateUserRoleClass',
+        request,
+        metadata || {},
+        this.methodInfoCreateUserRoleClass,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.apitoken.v1.UserRoleClassService/CreateUserRoleClass',
+    request,
+    metadata || {},
+    this.methodInfoCreateUserRoleClass);
+  }
+
+  methodInfoGetUserRoleClass = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.apitoken.v1.UserRoleClassService/GetUserRoleClass',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_userroleclass_v1_userroleclass_pb.GetUserRoleClassRequest,
+    github_com_metaprov_modelaapi_services_userroleclass_v1_userroleclass_pb.GetUserRoleClassResponse,
+    (request: github_com_metaprov_modelaapi_services_userroleclass_v1_userroleclass_pb.GetUserRoleClassRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_userroleclass_v1_userroleclass_pb.GetUserRoleClassResponse.deserializeBinary
+  );
+
+  getUserRoleClass(
+    request: github_com_metaprov_modelaapi_services_userroleclass_v1_userroleclass_pb.GetUserRoleClassRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_userroleclass_v1_userroleclass_pb.GetUserRoleClassResponse>;
+
+  getUserRoleClass(
+    request: github_com_metaprov_modelaapi_services_userroleclass_v1_userroleclass_pb.GetUserRoleClassRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_userroleclass_v1_userroleclass_pb.GetUserRoleClassResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_userroleclass_v1_userroleclass_pb.GetUserRoleClassResponse>;
+
+  getUserRoleClass(
+    request: github_com_metaprov_modelaapi_services_userroleclass_v1_userroleclass_pb.GetUserRoleClassRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_userroleclass_v1_userroleclass_pb.GetUserRoleClassResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.apitoken.v1.UserRoleClassService/GetUserRoleClass',
+        request,
+        metadata || {},
+        this.methodInfoGetUserRoleClass,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.apitoken.v1.UserRoleClassService/GetUserRoleClass',
+    request,
+    metadata || {},
+    this.methodInfoGetUserRoleClass);
+  }
+
+  methodInfoUpdateUserRoleClass = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.apitoken.v1.UserRoleClassService/UpdateUserRoleClass',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_userroleclass_v1_userroleclass_pb.UpdateUserRoleClassRequest,
+    github_com_metaprov_modelaapi_services_userroleclass_v1_userroleclass_pb.UpdateUserRoleClassResponse,
+    (request: github_com_metaprov_modelaapi_services_userroleclass_v1_userroleclass_pb.UpdateUserRoleClassRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_userroleclass_v1_userroleclass_pb.UpdateUserRoleClassResponse.deserializeBinary
+  );
+
+  updateUserRoleClass(
+    request: github_com_metaprov_modelaapi_services_userroleclass_v1_userroleclass_pb.UpdateUserRoleClassRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_userroleclass_v1_userroleclass_pb.UpdateUserRoleClassResponse>;
+
+  updateUserRoleClass(
+    request: github_com_metaprov_modelaapi_services_userroleclass_v1_userroleclass_pb.UpdateUserRoleClassRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_userroleclass_v1_userroleclass_pb.UpdateUserRoleClassResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_userroleclass_v1_userroleclass_pb.UpdateUserRoleClassResponse>;
+
+  updateUserRoleClass(
+    request: github_com_metaprov_modelaapi_services_userroleclass_v1_userroleclass_pb.UpdateUserRoleClassRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_userroleclass_v1_userroleclass_pb.UpdateUserRoleClassResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.apitoken.v1.UserRoleClassService/UpdateUserRoleClass',
+        request,
+        metadata || {},
+        this.methodInfoUpdateUserRoleClass,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.apitoken.v1.UserRoleClassService/UpdateUserRoleClass',
+    request,
+    metadata || {},
+    this.methodInfoUpdateUserRoleClass);
+  }
+
+  methodInfoDeleteUserRoleClass = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.apitoken.v1.UserRoleClassService/DeleteUserRoleClass',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_userroleclass_v1_userroleclass_pb.DeleteUserRoleClassRequest,
+    github_com_metaprov_modelaapi_services_userroleclass_v1_userroleclass_pb.DeleteUserRoleClassResponse,
+    (request: github_com_metaprov_modelaapi_services_userroleclass_v1_userroleclass_pb.DeleteUserRoleClassRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_userroleclass_v1_userroleclass_pb.DeleteUserRoleClassResponse.deserializeBinary
+  );
+
+  deleteUserRoleClass(
+    request: github_com_metaprov_modelaapi_services_userroleclass_v1_userroleclass_pb.DeleteUserRoleClassRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_userroleclass_v1_userroleclass_pb.DeleteUserRoleClassResponse>;
+
+  deleteUserRoleClass(
+    request: github_com_metaprov_modelaapi_services_userroleclass_v1_userroleclass_pb.DeleteUserRoleClassRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_userroleclass_v1_userroleclass_pb.DeleteUserRoleClassResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_userroleclass_v1_userroleclass_pb.DeleteUserRoleClassResponse>;
+
+  deleteUserRoleClass(
+    request: github_com_metaprov_modelaapi_services_userroleclass_v1_userroleclass_pb.DeleteUserRoleClassRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_userroleclass_v1_userroleclass_pb.DeleteUserRoleClassResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.apitoken.v1.UserRoleClassService/DeleteUserRoleClass',
+        request,
+        metadata || {},
+        this.methodInfoDeleteUserRoleClass,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.apitoken.v1.UserRoleClassService/DeleteUserRoleClass',
+    request,
+    metadata || {},
+    this.methodInfoDeleteUserRoleClass);
+  }
+
+}
+

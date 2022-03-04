@@ -265,14 +265,6 @@ spec:
                     roles:
                       description: The roles assigned to the stake holder
                       items:
-                        description: RoleName is the type of role a user can have
-                        enum:
-                        - administrator
-                        - business-stakeholder
-                        - data-scientist
-                        - data-engineer
-                        - ml-engineer
-                        - sre
                         type: string
                       type: array
                   type: object

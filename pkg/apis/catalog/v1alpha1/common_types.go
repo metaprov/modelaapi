@@ -1727,7 +1727,7 @@ type StakeHolder struct {
 	// +kubebuilder:validation:Optional
 	AccountName *string `json:"accountName,omitempty" protobuf:"bytes,1,opt,name=accountName"`
 	// The roles assigned to the stake holder
-	Roles []RoleName `json:"roles,omitempty" protobuf:"bytes,2,rep,name=roles"`
+	Roles []string `json:"roles,omitempty" protobuf:"bytes,2,rep,name=roles"`
 }
 
 // Use for color attribute

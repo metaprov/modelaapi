@@ -71,6 +71,8 @@ func AddKnownTypes(scheme *k8sruntime.Scheme) error {
 		&ModelaSystemList{},
 		&Tenant{},
 		&TenantList{},
+		&UserRoleClass{},
+		&UserRoleClassList{},
 	)
 	metav1.AddToGroupVersion(scheme, SchemeGroupVersion)
 	return nil

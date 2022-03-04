@@ -1,0 +1,102 @@
+syntax = "proto3";
+option go_package = "github.com/metaprov/modelaapi/services/apitoken/v1";
+
+package github.com.metaprov.modelaapi.services.apitoken.v1;
+import "google/api/annotations.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto";
+import "github.com/metaprov/modelaapi/services/common/v1/common.proto";
+import "google/protobuf/field_mask.proto";
+
+message ListUserRoleClasssRequest {
+    string             namespace  = 1;
+    map<string,string> labels     = 2;   
+    int32              page_size  = 3;
+    string             page_token = 4;
+    string             order_by   = 5;
+}
+
+message ListUserRoleClasssResponse {
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.UserRoleClassList roles = 1;   
+    string next_page_token = 2;
+}
+
+message UserRoleClassResponse {}
+
+message CreateUserRoleClassRequest {
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.UserRoleClass role = 1;    
+}
+
+message CreateUserRoleClassResponse {
+
+}
+
+message UpdateUserRoleClassRequest {
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.UserRoleClass role = 1;
+    google.protobuf.FieldMask update_mask = 2;
+}
+
+message UpdateUserRoleClassResponse {
+
+}
+
+message GetUserRoleClassRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+
+message GetUserRoleClassResponse {
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.UserRoleClass role = 1;
+    string yaml = 2;
+}
+
+
+
+
+message DeleteUserRoleClassRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message DeleteUserRoleClassResponse {}
+message UserRoleClassCreateResponse {}
+
+message UserRoleClassLoginRequest {
+    string namespace = 1;
+    string name      = 2;
+    string password  = 3;
+}
+
+message UserRoleClassLoginResponse {
+    string token = 1; // jwt token
+}
+
+
+service UserRoleClassService {
+    rpc ListUserRoleClasss(ListUserRoleClasssRequest) returns (ListUserRoleClasssResponse) {
+        option (google.api.http).get = "/v1/userroleclasses/{namespace}";
+    }
+
+    rpc CreateUserRoleClass(CreateUserRoleClassRequest) returns (CreateUserRoleClassResponse) {
+        option (google.api.http) = {
+			post: "/v1/userroleclasses"
+			body: "*"
+		};
+    }
+
+    rpc GetUserRoleClass(GetUserRoleClassRequest) returns (GetUserRoleClassResponse) {
+        option (google.api.http).get = "/v1/userroleclasses/{namespace}/{name}";
+    }
+
+    rpc UpdateUserRoleClass(UpdateUserRoleClassRequest) returns (UpdateUserRoleClassResponse) {
+        option (google.api.http) = {
+			put: "/v1/userroleclasses/{userroleclass.metadata.namespace}/{userroleclass.metadata.name}"
+			body: "*"
+		};
+    }
+
+    rpc DeleteUserRoleClass(DeleteUserRoleClassRequest) returns (DeleteUserRoleClassResponse) {
+        option (google.api.http).delete = "/v1/userroleclasses/{namespace}/{name}";
+    }
+
+}

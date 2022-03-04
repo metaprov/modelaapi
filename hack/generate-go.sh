@@ -52,6 +52,7 @@ GOGO_PROTOBUF_PATH=${PROJECT_ROOT}/common-protos/github.com/gogo/protobuf
          github.com/metaprov/modelaapi/services/common/v1/common.proto \
          github.com/metaprov/modelaapi/services/account/v1/account.proto \
          github.com/metaprov/modelaapi/services/apitoken/v1/apitoken.proto \
+         github.com/metaprov/modelaapi/services/userroleclass/v1/userroleclass.proto \
          github.com/metaprov/modelaapi/services/alert/v1/alert.proto \
          github.com/metaprov/modelaapi/services/attachment/v1/attachment.proto \
          github.com/metaprov/modelaapi/services/todo/v1/todo.proto \

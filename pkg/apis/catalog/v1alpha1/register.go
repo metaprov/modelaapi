@@ -38,8 +38,6 @@ func AddKnownTypes(scheme *k8sruntime.Scheme) error {
 		&MLFrameworkList{},
 		&WorkloadClass{},
 		&WorkloadClassList{},
-		&UserRoleClass{},
-		&UserRoleClassList{},
 		&Cloud{},
 		&CloudList{},
 		&PublicDataset{},
