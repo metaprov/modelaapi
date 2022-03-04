@@ -144,3 +144,15 @@ func (tenant *Tenant) MarkArchived() {
 func (tenant *Tenant) Archived() bool {
 	return tenant.GetCond(TenantSaved).Status == v1.ConditionTrue
 }
+
+func (tenant *Tenant) GetRolesForAccount(account *Account) []string {
+	result := make([]string, 0)
+	for _, v := range tenant.Spec.Premissions.Stakeholders {
+		if v.AccountName == account.Name {
+			for _, x := range v.Roles {
+				result = append(result, x.Name)
+			}
+		}
+	}
+	return result
+}
