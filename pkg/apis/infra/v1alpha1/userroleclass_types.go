@@ -46,14 +46,15 @@ type UserRoleClassList struct {
 type UserRoleClassSpec struct {
 	Description string `json:"description,omitempty" protobuf:"bytes,1,opt,name=description"`
 	// +kubebuilder:validation:Optional
-	Permissions []PermissionSpec `json:"rules,omitempty" protobuf:"bytes,2,rep,name=rules"`
+	Rules []RuleSpec `json:"rules,omitempty" protobuf:"bytes,2,rep,name=rules"`
 }
 
-type PermissionSpec struct {
+// RuleSpec define the relation between a resource and the actions on the resource.
+type RuleSpec struct {
 	// The name of the resource
 	Resource common.KindName `json:"resource,omitempty" protobuf:"bytes,1,opt,name=resource"`
 	// List of allowed actions on the resource
-	Actions []common.VerbName `json:"actions,omitempty" protobuf:"bytes,2,rep,name=actions"`
+	Verbs []common.VerbName `json:"verbs,omitempty" protobuf:"bytes,2,rep,name=verbs"`
 }
 
 func (role *UserRoleClass) ToYamlFile() ([]byte, error) {
@@ -66,9 +67,9 @@ func (role *UserRoleClass) Allow(
 	subject string,
 	ns string,
 	name string) bool {
-	for _, v := range role.Spec.Permissions {
+	for _, v := range role.Spec.Rules {
 		if resource == v.Resource {
-			for _, a := range v.Actions {
+			for _, a := range v.Verbs {
 				if action == a {
 					return true
 				}

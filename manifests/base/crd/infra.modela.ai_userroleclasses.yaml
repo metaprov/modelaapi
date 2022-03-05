@@ -44,15 +44,17 @@ spec:
                 type: string
               rules:
                 items:
+                  description: RuleSpec define the relation between a resource and
+                    the actions on the resource.
                   properties:
-                    actions:
+                    resource:
+                      description: The name of the resource
+                      type: string
+                    verbs:
                       description: List of allowed actions on the resource
                       items:
                         type: string
                       type: array
-                    resource:
-                      description: The name of the resource
-                      type: string
                   type: object
                 type: array
             type: object

@@ -3950,30 +3950,6 @@ export namespace PagerDutySpec {
   }
 }
 
-export class PermissionSpec extends jspb.Message {
-  getResource(): string;
-  setResource(value: string): PermissionSpec;
-
-  getActionsList(): Array<string>;
-  setActionsList(value: Array<string>): PermissionSpec;
-  clearActionsList(): PermissionSpec;
-  addActions(value: string, index?: number): PermissionSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PermissionSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: PermissionSpec): PermissionSpec.AsObject;
-  static serializeBinaryToWriter(message: PermissionSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PermissionSpec;
-  static deserializeBinaryFromReader(message: PermissionSpec, reader: jspb.BinaryReader): PermissionSpec;
-}
-
-export namespace PermissionSpec {
-  export type AsObject = {
-    resource: string,
-    actionsList: Array<string>,
-  }
-}
-
 export class PostgresSQLSpec extends jspb.Message {
   getHost(): string;
   setHost(value: string): PostgresSQLSpec;
@@ -4157,6 +4133,30 @@ export namespace ResourceLimitSpec {
     maxpvc: number,
     quota?: k8s_io_api_core_v1_generated_pb.ResourceQuotaSpec.AsObject,
     limitrange?: k8s_io_api_core_v1_generated_pb.LimitRangeSpec.AsObject,
+  }
+}
+
+export class RuleSpec extends jspb.Message {
+  getResource(): string;
+  setResource(value: string): RuleSpec;
+
+  getVerbsList(): Array<string>;
+  setVerbsList(value: Array<string>): RuleSpec;
+  clearVerbsList(): RuleSpec;
+  addVerbs(value: string, index?: number): RuleSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RuleSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: RuleSpec): RuleSpec.AsObject;
+  static serializeBinaryToWriter(message: RuleSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RuleSpec;
+  static deserializeBinaryFromReader(message: RuleSpec, reader: jspb.BinaryReader): RuleSpec;
+}
+
+export namespace RuleSpec {
+  export type AsObject = {
+    resource: string,
+    verbsList: Array<string>,
   }
 }
 
@@ -5082,10 +5082,10 @@ export class UserRoleClassSpec extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): UserRoleClassSpec;
 
-  getRulesList(): Array<PermissionSpec>;
-  setRulesList(value: Array<PermissionSpec>): UserRoleClassSpec;
+  getRulesList(): Array<RuleSpec>;
+  setRulesList(value: Array<RuleSpec>): UserRoleClassSpec;
   clearRulesList(): UserRoleClassSpec;
-  addRules(value?: PermissionSpec, index?: number): PermissionSpec;
+  addRules(value?: RuleSpec, index?: number): RuleSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UserRoleClassSpec.AsObject;
@@ -5098,7 +5098,7 @@ export class UserRoleClassSpec extends jspb.Message {
 export namespace UserRoleClassSpec {
   export type AsObject = {
     description: string,
-    rulesList: Array<PermissionSpec.AsObject>,
+    rulesList: Array<RuleSpec.AsObject>,
   }
 }
 
