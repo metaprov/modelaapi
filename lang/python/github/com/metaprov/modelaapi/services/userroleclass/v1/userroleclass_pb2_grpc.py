@@ -15,27 +15,27 @@ class UserRoleClassServiceStub(object):
             channel: A grpc.Channel.
         """
         self.ListUserRoleClasss = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.apitoken.v1.UserRoleClassService/ListUserRoleClasss',
+                '/github.com.metaprov.modelaapi.services.userroleclass.v1.UserRoleClassService/ListUserRoleClasss',
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_userroleclass_dot_v1_dot_userroleclass__pb2.ListUserRoleClasssRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_userroleclass_dot_v1_dot_userroleclass__pb2.ListUserRoleClasssResponse.FromString,
                 )
         self.CreateUserRoleClass = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.apitoken.v1.UserRoleClassService/CreateUserRoleClass',
+                '/github.com.metaprov.modelaapi.services.userroleclass.v1.UserRoleClassService/CreateUserRoleClass',
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_userroleclass_dot_v1_dot_userroleclass__pb2.CreateUserRoleClassRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_userroleclass_dot_v1_dot_userroleclass__pb2.CreateUserRoleClassResponse.FromString,
                 )
         self.GetUserRoleClass = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.apitoken.v1.UserRoleClassService/GetUserRoleClass',
+                '/github.com.metaprov.modelaapi.services.userroleclass.v1.UserRoleClassService/GetUserRoleClass',
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_userroleclass_dot_v1_dot_userroleclass__pb2.GetUserRoleClassRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_userroleclass_dot_v1_dot_userroleclass__pb2.GetUserRoleClassResponse.FromString,
                 )
         self.UpdateUserRoleClass = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.apitoken.v1.UserRoleClassService/UpdateUserRoleClass',
+                '/github.com.metaprov.modelaapi.services.userroleclass.v1.UserRoleClassService/UpdateUserRoleClass',
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_userroleclass_dot_v1_dot_userroleclass__pb2.UpdateUserRoleClassRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_userroleclass_dot_v1_dot_userroleclass__pb2.UpdateUserRoleClassResponse.FromString,
                 )
         self.DeleteUserRoleClass = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.apitoken.v1.UserRoleClassService/DeleteUserRoleClass',
+                '/github.com.metaprov.modelaapi.services.userroleclass.v1.UserRoleClassService/DeleteUserRoleClass',
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_userroleclass_dot_v1_dot_userroleclass__pb2.DeleteUserRoleClassRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_userroleclass_dot_v1_dot_userroleclass__pb2.DeleteUserRoleClassResponse.FromString,
                 )
@@ -104,7 +104,7 @@ def add_UserRoleClassServiceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'github.com.metaprov.modelaapi.services.apitoken.v1.UserRoleClassService', rpc_method_handlers)
+            'github.com.metaprov.modelaapi.services.userroleclass.v1.UserRoleClassService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -123,7 +123,7 @@ class UserRoleClassService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.apitoken.v1.UserRoleClassService/ListUserRoleClasss',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.userroleclass.v1.UserRoleClassService/ListUserRoleClasss',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_userroleclass_dot_v1_dot_userroleclass__pb2.ListUserRoleClasssRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_userroleclass_dot_v1_dot_userroleclass__pb2.ListUserRoleClasssResponse.FromString,
             options, channel_credentials,
@@ -140,7 +140,7 @@ class UserRoleClassService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.apitoken.v1.UserRoleClassService/CreateUserRoleClass',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.userroleclass.v1.UserRoleClassService/CreateUserRoleClass',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_userroleclass_dot_v1_dot_userroleclass__pb2.CreateUserRoleClassRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_userroleclass_dot_v1_dot_userroleclass__pb2.CreateUserRoleClassResponse.FromString,
             options, channel_credentials,
@@ -157,7 +157,7 @@ class UserRoleClassService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.apitoken.v1.UserRoleClassService/GetUserRoleClass',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.userroleclass.v1.UserRoleClassService/GetUserRoleClass',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_userroleclass_dot_v1_dot_userroleclass__pb2.GetUserRoleClassRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_userroleclass_dot_v1_dot_userroleclass__pb2.GetUserRoleClassResponse.FromString,
             options, channel_credentials,
@@ -174,7 +174,7 @@ class UserRoleClassService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.apitoken.v1.UserRoleClassService/UpdateUserRoleClass',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.userroleclass.v1.UserRoleClassService/UpdateUserRoleClass',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_userroleclass_dot_v1_dot_userroleclass__pb2.UpdateUserRoleClassRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_userroleclass_dot_v1_dot_userroleclass__pb2.UpdateUserRoleClassResponse.FromString,
             options, channel_credentials,
@@ -191,7 +191,7 @@ class UserRoleClassService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.apitoken.v1.UserRoleClassService/DeleteUserRoleClass',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.userroleclass.v1.UserRoleClassService/DeleteUserRoleClass',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_userroleclass_dot_v1_dot_userroleclass__pb2.DeleteUserRoleClassRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_userroleclass_dot_v1_dot_userroleclass__pb2.DeleteUserRoleClassResponse.FromString,
             options, channel_credentials,

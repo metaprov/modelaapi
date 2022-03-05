@@ -1,7 +1,7 @@
 syntax = "proto3";
-option go_package = "github.com/metaprov/modelaapi/services/apitoken/v1";
+option go_package = "github.com/metaprov/modelaapi/services/userroleclass/v1";
 
-package github.com.metaprov.modelaapi.services.apitoken.v1;
+package github.com.metaprov.modelaapi.services.userroleclass.v1;
 import "google/api/annotations.proto";
 import "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto";
 import "github.com/metaprov/modelaapi/services/common/v1/common.proto";
