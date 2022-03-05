@@ -10,7 +10,7 @@ spec:
   group: infra.modela.ai
   names:
     categories:
-    - catalog
+    - infra
     - modela
     - all
     kind: UserRoleClass

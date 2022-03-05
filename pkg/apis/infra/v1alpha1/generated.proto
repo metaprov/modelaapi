@@ -2865,7 +2865,7 @@ message TwitterSpec {
 }
 
 // UserRoleClass specify the RBAC premission for a specific user role.
-// +kubebuilder:resource:path=userroleclasses,singular=userroleclass,categories={catalog,modela,all}
+// +kubebuilder:resource:path=userroleclasses,singular=userroleclass,categories={infra,modela,all}
 // +kubebuilder:object:root=true
 message UserRoleClass {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
