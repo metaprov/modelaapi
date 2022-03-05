@@ -8,6 +8,7 @@ package v1alpha1
 
 import (
 	"github.com/metaprov/modelaapi/pkg/apis/common"
+	"gopkg.in/yaml.v2"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
@@ -53,6 +54,10 @@ type PermissionSpec struct {
 	Resource common.KindName `json:"resource,omitempty" protobuf:"bytes,1,opt,name=resource"`
 	// List of allowed actions on the resource
 	Actions []common.VerbName `json:"actions,omitempty" protobuf:"bytes,2,rep,name=actions"`
+}
+
+func (role *UserRoleClass) ToYamlFile() ([]byte, error) {
+	return yaml.Marshal(role)
 }
 
 func (role *UserRoleClass) Allow(
