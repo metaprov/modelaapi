@@ -608,3 +608,220 @@ func (connection *Connection) MaskSecretFields() {
 	}
 
 }
+
+// Place the values back in the connection string from the secret
+func (connection *Connection) UnmaskSecretFields(secret v1.Secret) {
+	token := util.StrPtr(string(secret.Data[string(catalog.ApiKeyNameToken)]))
+	apikey := util.StrPtr(string(secret.Data[string(catalog.ApiKeyNameApiKey)]))
+	accessKey := util.StrPtr(string(secret.Data[string(catalog.ApiKeyNameAccessKey)]))
+	secretKey := util.StrPtr(string(secret.Data[string(catalog.ApiKeyNameSecretKey)]))
+	database := util.StrPtr(string(secret.Data[string(catalog.ApiKeyNameDatabase)]))
+	username := util.StrPtr(string(secret.Data[string(catalog.ApiKeyNameUsername)]))
+	password := util.StrPtr(string(secret.Data[string(catalog.ApiKeyNamePassword)]))
+	url := util.StrPtr(string(secret.Data[string(catalog.ApiKeyNameURL)]))
+	keyfile := util.StrPtr(string(secret.Data[string(catalog.ApiKeyNameKeyFile)]))
+	webhook := util.StrPtr(string(secret.Data[string(catalog.ApiKeyNameURL)]))
+	switch *connection.Spec.Provider {
+
+	case catalog.AmazonAthena:
+		connection.Spec.AmazonAthena.Database = database
+		connection.Spec.AmazonAthena.Username = username
+		connection.Spec.AmazonAthena.Password = password
+		connection.Spec.AmazonAthena.URL = url
+	case catalog.AmazonRedshift:
+		connection.Spec.RedShift.Database = database
+		connection.Spec.RedShift.Username = username
+		connection.Spec.RedShift.Password = password
+		connection.Spec.RedShift.URL = url
+	case catalog.ApacheDrill:
+		connection.Spec.ApacheDrill.Username = username
+		connection.Spec.ApacheDrill.Password = password
+		connection.Spec.ApacheDrill.URL = url
+	case catalog.ApacheDruid:
+		connection.Spec.ApacheDruid.Username = username
+		connection.Spec.ApacheDruid.Password = password
+		connection.Spec.ApacheDruid.URL = url
+	case catalog.ApacheHive:
+		connection.Spec.ApacheHive.Username = username
+		connection.Spec.ApacheHive.Password = password
+		connection.Spec.ApacheHive.URL = url
+	case catalog.AzureSqlDatabase:
+		connection.Spec.AzureSQLDatabase.Database = database
+		connection.Spec.AzureSQLDatabase.Username = username
+		connection.Spec.AzureSQLDatabase.Password = password
+		connection.Spec.AzureSQLDatabase.URL = url
+	case catalog.GcpBigQuery:
+		connection.Spec.GcpBigQuery.Username = username
+		connection.Spec.GcpBigQuery.Password = password
+		connection.Spec.GcpBigQuery.URL = url
+	case catalog.ApacheCassandra:
+		connection.Spec.Cassandra.Username = username
+		connection.Spec.Cassandra.Password = password
+		connection.Spec.Cassandra.URL = url
+	case catalog.CockrouchDB:
+		connection.Spec.CockroachDB.Username = username
+		connection.Spec.CockroachDB.Password = password
+		connection.Spec.CockroachDB.URL = url
+		connection.Spec.CockroachDB.Database = database
+	case catalog.Clickhouse:
+		connection.Spec.Clickhouse.Username = username
+		connection.Spec.Clickhouse.Password = password
+		connection.Spec.Clickhouse.URL = url
+		connection.Spec.Clickhouse.Database = database
+	case catalog.Couchbase:
+		connection.Spec.Couchbase.Username = username
+		connection.Spec.Couchbase.Password = password
+		connection.Spec.Couchbase.URL = url
+		connection.Spec.Couchbase.Database = database
+	case catalog.Dermio:
+		connection.Spec.Dremio.Username = username
+		connection.Spec.Dremio.Password = password
+		connection.Spec.Dremio.URL = url
+	case catalog.DB2:
+		connection.Spec.DB2.Username = username
+		connection.Spec.DB2.Password = password
+		connection.Spec.DB2.URL = url
+	case catalog.ElasticSearch:
+		connection.Spec.ElasticSearch.Username = username
+		connection.Spec.ElasticSearch.Password = password
+		connection.Spec.ElasticSearch.URL = url
+	case catalog.Exasol:
+		connection.Spec.Exasol.Username = username
+		connection.Spec.Exasol.Password = password
+		connection.Spec.Exasol.URL = url
+	case catalog.Greenplum:
+		connection.Spec.Greenplum.Username = username
+		connection.Spec.Greenplum.Password = password
+		connection.Spec.Greenplum.URL = url
+		connection.Spec.Greenplum.Database = database
+	case catalog.MongoDb:
+		connection.Spec.Greenplum.Username = username
+		connection.Spec.Greenplum.Password = password
+		connection.Spec.Greenplum.URL = url
+		connection.Spec.Greenplum.Database = database
+	case catalog.MySql:
+		connection.Spec.MySql.Username = username
+		connection.Spec.MySql.Password = password
+		connection.Spec.MySql.URL = url
+		connection.Spec.MySql.Database = database
+	case catalog.Odbc:
+		connection.Spec.Odbc.ConnectionString = url
+	case catalog.Oracle:
+		connection.Spec.Oracle.Username = username
+		connection.Spec.Oracle.Password = password
+		connection.Spec.Oracle.URL = url
+	case catalog.PostgresSQL:
+		connection.Spec.PostgresSQL.Username = username
+		connection.Spec.PostgresSQL.Password = password
+		connection.Spec.PostgresSQL.URL = url
+		connection.Spec.PostgresSQL.Database = database
+	case catalog.Presto:
+		connection.Spec.Presto.Username = username
+		connection.Spec.Presto.Password = password
+		connection.Spec.Presto.URL = url
+	case catalog.Snowflake:
+		connection.Spec.Snowflake.Username = username
+		connection.Spec.Snowflake.Password = password
+		connection.Spec.Snowflake.URL = url
+	case catalog.Sybase:
+		connection.Spec.Sybase.Username = username
+		connection.Spec.Sybase.Password = password
+		connection.Spec.Sybase.URL = url
+	case catalog.Vertica:
+		connection.Spec.Vertica.Username = username
+		connection.Spec.Vertica.Password = password
+		connection.Spec.Vertica.URL = url
+	case catalog.Informix:
+		connection.Spec.Vertica.Username = username
+		connection.Spec.Vertica.Password = password
+		connection.Spec.Vertica.URL = url
+	case catalog.SAPHana:
+		connection.Spec.SAPHana.Username = username
+		connection.Spec.SAPHana.Password = password
+		connection.Spec.SAPHana.URL = url
+	case catalog.Teradata:
+		connection.Spec.Teradata.Username = username
+		connection.Spec.Teradata.Password = password
+		connection.Spec.Teradata.URL = url
+	case catalog.GcpSpanner:
+		connection.Spec.GcpSpanner.Username = username
+		connection.Spec.GcpSpanner.Password = password
+		connection.Spec.GcpSpanner.URL = url
+	case catalog.ApacheSpark:
+		connection.Spec.Spark.Username = username
+		connection.Spec.Spark.Password = password
+		connection.Spec.Spark.URL = url
+	case catalog.MSSqlServer:
+		connection.Spec.MSSqlServer.Username = username
+		connection.Spec.MSSqlServer.Password = password
+		connection.Spec.MSSqlServer.URL = url
+	case catalog.AliCloud:
+		connection.Spec.AliCloud.AccessKey = accessKey
+		connection.Spec.AliCloud.SecretKey = secretKey
+	case catalog.Azure:
+		connection.Spec.AzureStorage.AccessKey = accessKey
+		connection.Spec.AzureStorage.StorageAccount = username
+	case catalog.DigitalOcean:
+		connection.Spec.DigitalOcean.AccessKey = accessKey
+		connection.Spec.DigitalOcean.SecretKey = password
+		connection.Spec.DigitalOcean.Token = token
+	case catalog.Hetzner:
+		connection.Spec.Hetzner.Token = token
+	case catalog.Linode:
+		connection.Spec.Linode.Token = token
+	case catalog.Gcp:
+		connection.Spec.GcpStorage.KeyFile = keyfile
+	case catalog.Minio:
+		connection.Spec.Minio.AccessKey = accessKey
+		connection.Spec.Minio.SecretKey = secretKey
+	case catalog.Ovh:
+		connection.Spec.Ovh.ConsumerKey = secretKey
+	case catalog.Aws:
+		connection.Spec.Aws.AccessKey = accessKey
+		connection.Spec.Aws.SecretKey = secretKey
+	case catalog.FTP:
+		connection.Spec.FTP.Password = password
+		connection.Spec.FTP.Username = username
+	case catalog.SFTP:
+		connection.Spec.SFTP.Password = password
+		connection.Spec.SFTP.Username = username
+	case catalog.Dropbox:
+		connection.Spec.Dropbox.Token = token
+	case catalog.Box:
+		connection.Spec.Box.Token = token
+	case catalog.Dockerhub:
+		connection.Spec.ImageRegistry.Password = password
+		connection.Spec.ImageRegistry.Username = username
+	// Git Repository
+	case catalog.GitHub:
+		connection.Spec.Github.Username = username
+		connection.Spec.Github.Token = token
+	case catalog.Bitbucket:
+		connection.Spec.Bitbucket.Username = username
+		connection.Spec.Bitbucket.Token = token
+	case catalog.Gitlab:
+		connection.Spec.Gitlab.Token = token
+	// Messaging
+	case catalog.SmtpProvider:
+		connection.Spec.Smtp.Password = password
+		connection.Spec.Smtp.Username = username
+	case catalog.Slack:
+		connection.Spec.Slack.Token = token
+		connection.Spec.Slack.Username = username
+	case catalog.Hipchat:
+		connection.Spec.Hipchat.Token = token
+	case catalog.PageDuty:
+		connection.Spec.PagerDuty.ApiKey = apikey
+	case catalog.PushOver:
+		connection.Spec.Pushover.ApiKey = apikey
+	case catalog.OpsGenie:
+		connection.Spec.Opsgenie.ApiKey = apikey
+	case catalog.Webhook:
+		connection.Spec.Webhook.Token = token
+	case catalog.VictorOps:
+		connection.Spec.VictorOps.ApiKey = apikey
+	case catalog.MSTeam:
+		connection.Spec.MSTeam.Webhook = webhook
+	}
+
+}
