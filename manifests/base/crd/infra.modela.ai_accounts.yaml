@@ -27,7 +27,7 @@ spec:
     - jsonPath: .spec.type
       name: Type
       type: string
-    - jsonPath: .spec.userName
+    - jsonPath: .spec.username
       name: Username
       type: string
     - jsonPath: .spec.memberOf
@@ -176,7 +176,7 @@ spec:
                 - user
                 - group
                 type: string
-              userName:
+              username:
                 description: UserName specifies the name of the account
                 maxLength: 64
                 minLength: 4

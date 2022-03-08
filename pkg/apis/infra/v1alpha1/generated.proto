@@ -24,7 +24,7 @@ option go_package = "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1";
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Type",type="string",JSONPath=".spec.type",description=""
-// +kubebuilder:printcolumn:name="Username",type="string",JSONPath=".spec.userName",description=""
+// +kubebuilder:printcolumn:name="Username",type="string",JSONPath=".spec.username",description=""
 // +kubebuilder:printcolumn:name="Team",type="string",JSONPath=".spec.memberOf",description=""
 // +kubebuilder:printcolumn:name="Phone",type="string",JSONPath=".spec.phone",description=""
 // +kubebuilder:printcolumn:name="Email",type="string",JSONPath=".spec.email",description=""
@@ -707,7 +707,7 @@ message BitbucketSpec {
   optional string token = 1;
 
   // +kubebuilder:default:=""
-  optional string userName = 2;
+  optional string username = 2;
 
   // +kubebuilder:default:=""
   optional string ssh = 3;
@@ -2142,7 +2142,7 @@ message OdbcSpec {
 
 message OpenstackSpec {
   // +kubebuilder:default:=""
-  optional string userName = 1;
+  optional string username = 1;
 
   // +kubebuilder:default:=""
   optional string tenantName = 2;
@@ -2561,7 +2561,7 @@ message SlackSpec {
   optional string channel = 2;
 
   // +kubebuilder:default:=""
-  optional string userName = 3;
+  optional string username = 3;
 
   // +kubebuilder:default:=""
   optional string token = 4;

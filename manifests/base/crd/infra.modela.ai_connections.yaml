@@ -187,7 +187,7 @@ spec:
                   token:
                     default: ""
                     type: string
-                  userName:
+                  username:
                     default: ""
                     type: string
                 type: object
@@ -885,7 +885,7 @@ spec:
                   tenantName:
                     default: ""
                     type: string
-                  userName:
+                  username:
                     default: ""
                     type: string
                 type: object
@@ -1131,7 +1131,7 @@ spec:
                   token:
                     default: ""
                     type: string
-                  userName:
+                  username:
                     default: ""
                     type: string
                   webhookUrl:

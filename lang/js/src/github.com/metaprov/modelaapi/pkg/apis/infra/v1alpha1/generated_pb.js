@@ -14335,7 +14335,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.BitbucketSpec.protot
 
 
 /**
- * optional string userName = 2;
+ * optional string username = 2;
  * @return {string}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.BitbucketSpec.prototype.getUsername = function() {
@@ -38756,7 +38756,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.OpenstackSpec.serial
 
 
 /**
- * optional string userName = 1;
+ * optional string username = 1;
  * @return {string}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.OpenstackSpec.prototype.getUsername = function() {
@@ -45951,7 +45951,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SlackSpec.prototype.
 
 
 /**
- * optional string userName = 3;
+ * optional string username = 3;
  * @return {string}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SlackSpec.prototype.getUsername = function() {

@@ -951,7 +951,7 @@ type SlackSpec struct {
 	// +kubebuilder:default:=""
 	Channel *string `json:"channel,omitempty" protobuf:"bytes,2,opt,name=channel"`
 	// +kubebuilder:default:=""
-	Username *string `json:"userName,omitempty" protobuf:"bytes,3,opt,name=userName"`
+	Username *string `json:"username,omitempty" protobuf:"bytes,3,opt,name=username"`
 	// +kubebuilder:default:=""
 	Token *string `json:"token,omitempty" protobuf:"bytes,4,opt,name=token"`
 }
@@ -1000,7 +1000,7 @@ type BitbucketSpec struct {
 	// +kubebuilder:default:=""
 	Token *string `json:"token,omitempty" protobuf:"bytes,1,opt,name=token"`
 	// +kubebuilder:default:=""
-	Username *string `json:"userName,omitempty" protobuf:"bytes,2,opt,name=userName"`
+	Username *string `json:"username,omitempty" protobuf:"bytes,2,opt,name=username"`
 	// +kubebuilder:default:=""
 	SSH *string `json:"ssh,omitempty" protobuf:"bytes,3,opt,name=ssh"`
 }
@@ -1032,7 +1032,7 @@ type HetznerSpec struct {
 
 type OpenstackSpec struct {
 	// +kubebuilder:default:=""
-	Username *string `json:"userName,omitempty" protobuf:"bytes,1,opt,name=userName"`
+	Username *string `json:"username,omitempty" protobuf:"bytes,1,opt,name=username"`
 	// +kubebuilder:default:=""
 	Tenantname *string `json:"tenantName,omitempty" protobuf:"bytes,2,opt,name=tenantName"`
 	// +kubebuilder:default:=""

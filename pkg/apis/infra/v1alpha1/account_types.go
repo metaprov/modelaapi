@@ -46,7 +46,7 @@ type AccountCondition struct {
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Type",type="string",JSONPath=".spec.type",description=""
-// +kubebuilder:printcolumn:name="Username",type="string",JSONPath=".spec.userName",description=""
+// +kubebuilder:printcolumn:name="Username",type="string",JSONPath=".spec.username",description=""
 // +kubebuilder:printcolumn:name="Team",type="string",JSONPath=".spec.memberOf",description=""
 // +kubebuilder:printcolumn:name="Phone",type="string",JSONPath=".spec.phone",description=""
 // +kubebuilder:printcolumn:name="Email",type="string",JSONPath=".spec.email",description=""
@@ -81,7 +81,7 @@ type AccountSpec struct {
 	// +kubebuilder:validation:MaxLength=64
 	// +kubebuilder:validation:Required
 	// +required
-	Username *string `json:"userName,omitempty" protobuf:"bytes,4,opt,name=username"`
+	Username *string `json:"username,omitempty" protobuf:"bytes,4,opt,name=username"`
 	// First FileName is the user first name
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
