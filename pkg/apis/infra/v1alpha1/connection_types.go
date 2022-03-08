@@ -991,7 +991,7 @@ type GithubSpec struct {
 	// +kubebuilder:default:=""
 	Token *string `json:"token,omitempty" protobuf:"bytes,1,opt,name=token"`
 	// +kubebuilder:default:=""
-	Username *string `json:"userName,omitempty" protobuf:"bytes,2,opt,name=userName"`
+	Username *string `json:"username,omitempty" protobuf:"bytes,2,opt,name=username"`
 	// +kubebuilder:default:=""
 	SSH *string `json:"ssh,omitempty" protobuf:"bytes,3,opt,name=ssh"`
 }

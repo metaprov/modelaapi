@@ -26886,7 +26886,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.GithubSpec.prototype
 
 
 /**
- * optional string userName = 2;
+ * optional string username = 2;
  * @return {string}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.GithubSpec.prototype.getUsername = function() {

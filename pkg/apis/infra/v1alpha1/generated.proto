@@ -1436,7 +1436,7 @@ message GithubSpec {
   optional string token = 1;
 
   // +kubebuilder:default:=""
-  optional string userName = 2;
+  optional string username = 2;
 
   // +kubebuilder:default:=""
   optional string ssh = 3;

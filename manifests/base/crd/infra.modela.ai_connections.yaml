@@ -550,7 +550,7 @@ spec:
                   token:
                     default: ""
                     type: string
-                  userName:
+                  username:
                     default: ""
                     type: string
                 type: object
