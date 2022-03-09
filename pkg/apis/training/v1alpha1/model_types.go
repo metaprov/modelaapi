@@ -732,7 +732,7 @@ type DataSplitSpec struct {
 	// Define the split type.
 	// +kubebuilder:default:="auto"
 	// +kubebuilder:validation:Optional
-	Method catalog.DataSplitMethod `json:"method,omitempty" protobuf:"bytes,1,opt,name=method"`
+	Method *catalog.DataSplitMethod `json:"method,omitempty" protobuf:"bytes,1,opt,name=method"`
 	// Training is a percent number (0-100) which specify how much of
 	// the data will be used for training
 	// +kubebuilder:validation:Optional
