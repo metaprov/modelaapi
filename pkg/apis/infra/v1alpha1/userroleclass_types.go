@@ -70,7 +70,7 @@ func (role *UserRoleClass) Allow(
 	for _, v := range role.Spec.Rules {
 		if resource == v.Resource {
 			for _, a := range v.Verbs {
-				if action == a {
+				if action == a || action == "*" {
 					return true
 				}
 			}
