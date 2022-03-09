@@ -69,8 +69,8 @@ func (role *UserRoleClass) Allow(
 	name string) bool {
 	for _, v := range role.Spec.Rules {
 		if resource == v.Resource {
-			for _, a := range v.Verbs {
-				if action == a || action == "*" {
+			for _, verb := range v.Verbs {
+				if action == verb || verb == "*" {
 					return true
 				}
 			}
