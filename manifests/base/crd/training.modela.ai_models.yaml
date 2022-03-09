@@ -1879,6 +1879,7 @@ spec:
                       and train.
                     properties:
                       method:
+                        default: auto
                         description: Define the split type.
                         enum:
                         - random

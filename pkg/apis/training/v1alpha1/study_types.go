@@ -766,5 +766,5 @@ type GarbageCollectionStatus struct {
 	Collected int32 `json:"collected,omitempty" protobuf:"varint,1,opt,name=collected"`
 	// List of models, collected.
 	// +kubebuilder:validation:Optional
-	Models []ModelResult `json:"models,omitempty" protobuf:"bytes,2,opt,name=models"`
+	Models []ModelResult `json:"models,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,2,opt,name=models"`
 }

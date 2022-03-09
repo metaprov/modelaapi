@@ -280,6 +280,8 @@ message DataHashes {
 
 message DataSplitSpec {
   // Define the split type.
+  // +kubebuilder:default:="auto"
+  // +kubebuilder:validation:Optional
   optional string method = 1;
 
   // Training is a percent number (0-100) which specify how much of

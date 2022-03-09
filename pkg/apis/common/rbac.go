@@ -80,7 +80,7 @@ const (
 	// k8s core kinds
 	SecretKind     KindName = "secrets"
 	DeploymentKind KindName = "deployments"
-	ServiceKind    KindName = "Services"
+	ServiceKind    KindName = "services"
 	PodKind        KindName = "pods"
 	JobKind        KindName = "jobs"
 )
