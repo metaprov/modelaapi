@@ -36,11 +36,11 @@ const (
 	WebRequestRunKind       KindName = "webrequestruns"
 
 	// inference
-	CronPredictionKind KindName = "CronPrediction"
-	PredictionKind     KindName = "Prediction"
-	PredictorKind      KindName = "Predictor"
-	CurtainKind        KindName = "Curtain"
-	DataAppKind        KindName = "DataApp"
+	CronPredictionKind KindName = "cronpredictions"
+	PredictionKind     KindName = "predictions"
+	PredictorKind      KindName = "predictors"
+	CurtainKind        KindName = "curtains"
+	DataAppKind        KindName = "dataapps"
 
 	// infra
 	AccountKind        KindName = "accounts"
@@ -59,30 +59,30 @@ const (
 	AttachmentKind     KindName = "attachments"
 
 	// Training kind
-	ModelKind            KindName = "Model"
-	NotebookKind         KindName = "Notebook"
-	NotebookRunKind      KindName = "NotebookRun"
-	ModelPipelineKind    KindName = "ModelPipeline"
-	ModelPipelineRunKind KindName = "ModelPipelineRun"
-	ModelCompilerRunKind KindName = "ModelCompilerRun"
-	ModelAutobuilderKind KindName = "ModelAutobuilder"
-	ReportKind           KindName = "Report"
-	CronReportKind       KindName = "CronReport"
-	StudyKind            KindName = "Study"
+	ModelKind            KindName = "models"
+	NotebookKind         KindName = "notebooks"
+	NotebookRunKind      KindName = "notebookruns"
+	ModelPipelineKind    KindName = "modelpipelines"
+	ModelPipelineRunKind KindName = "modelpipelineruns"
+	ModelCompilerRunKind KindName = "modelcompilerruns"
+	ModelAutobuilderKind KindName = "modelautobuilders"
+	ReportKind           KindName = "reports"
+	CronReportKind       KindName = "cronreports"
+	StudyKind            KindName = "studies"
 
 	// team
-	ReviewKind     KindName = "Review"
-	PostMortemKind KindName = "PostMortem"
-	RunBookKind    KindName = "RunBook"
-	TodoKind       KindName = "Todo"
-	MeetingKind    KindName = "Meeting"
+	ReviewKind     KindName = "reviews"
+	PostMortemKind KindName = "postmortems"
+	RunBookKind    KindName = "runbooks"
+	TodoKind       KindName = "todos"
+	MeetingKind    KindName = "meetings"
 
 	// k8s core kinds
-	SecretKind     KindName = "Secret"
-	DeploymentKind KindName = "Deployment"
-	ServiceKind    KindName = "Service"
-	PodKind        KindName = "Pod"
-	JobKind        KindName = "Job"
+	SecretKind     KindName = "secrets"
+	DeploymentKind KindName = "deployments"
+	ServiceKind    KindName = "Services"
+	PodKind        KindName = "pods"
+	JobKind        KindName = "jobs"
 )
 
 type VerbName string
