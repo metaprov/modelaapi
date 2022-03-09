@@ -1929,7 +1929,7 @@ type ResourceSpec struct {
 	Requirements *v1.ResourceRequirements `json:"requirements,omitempty" protobuf:"bytes,5,opt,name=requirements"`
 }
 
-// +kubebuilder:validation:Enum="random";"split-column";"time";"random-stratified";
+// +kubebuilder:validation:Enum="random";"split-column";"time";"random-stratified";"auto";
 type DataSplitMethod string
 
 const (
