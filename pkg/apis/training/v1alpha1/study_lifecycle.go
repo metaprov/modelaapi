@@ -250,19 +250,23 @@ func (study *Study) AutoSplit(rows int32) {
 
 	// Set the split method based on the task
 	if *study.Spec.Task == catalog.Regression {
-		study.Spec.TrainingTemplate.Split.Method = catalog.DataSplitMethodRandom
+		method := catalog.DataSplitMethodRandom
+		study.Spec.TrainingTemplate.Split.Method = &method
 	}
 
 	if *study.Spec.Task == catalog.BinaryClassification {
-		study.Spec.TrainingTemplate.Split.Method = catalog.DataSplitMethodRandomStratified
+		method := catalog.DataSplitMethodRandomStratified
+		study.Spec.TrainingTemplate.Split.Method = &method
 	}
 
 	if *study.Spec.Task == catalog.MultiClassification {
-		study.Spec.TrainingTemplate.Split.Method = catalog.DataSplitMethodRandomStratified
+		method := catalog.DataSplitMethodRandomStratified
+		study.Spec.TrainingTemplate.Split.Method = &method
 	}
 
 	if *study.Spec.Task == catalog.Forecasting {
-		study.Spec.TrainingTemplate.Split.Method = catalog.DataSplitMethodTime
+		method := catalog.DataSplitMethodTime
+		study.Spec.TrainingTemplate.Split.Method = &method
 	}
 
 }
