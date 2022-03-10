@@ -881,6 +881,21 @@ message ImagePipelineSpec {
   optional string featurizer = 1;
 }
 
+// Store the images that were used during training, reporting and profiling
+message Images {
+  // The image used during training
+  // +kubebuilder:validation:Optional
+  optional string trainerImage = 1;
+
+  // The image used during training for data operations.
+  // +kubebuilder:validation:Optional
+  optional string dataImage = 2;
+
+  // The image used during training for data operations.
+  // +kubebuilder:validation:Optional
+  optional string publisherImage = 3;
+}
+
 message InterpretabilitySpec {
   // If true generate ice plots for each feature.
   // +kubebuilder:default:=true
@@ -2202,18 +2217,6 @@ message ModelStatus {
   // +kubebuilder:validation:Optional
   optional string team = 53;
 
-  // The image used during training
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ManagedImageSpec trainerImage = 54;
-
-  // The image used during training for data operations.
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ManagedImageSpec dataImage = 55;
-
-  // The image used during training for data operations.
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ManagedImageSpec publisherImage = 56;
-
   // If the model is deployed, this points to the end point.
   // +kubebuilder:validation:Optional
   optional string endpoint = 57;
@@ -2254,10 +2257,14 @@ message ModelStatus {
   // +kubebuilder:validation:Optional
   optional InterpretabilityStatus interpretability = 66;
 
+  // The team that trained this model
+  // +kubebuilder:validation:Optional
+  optional Images images = 67;
+
   // +kubebuilder:validation:Optional
   // +patchMergeKey=type
   // +patchStrategy=merge
-  repeated ModelCondition conditions = 67;
+  repeated ModelCondition conditions = 68;
 }
 
 message ModelValidation {

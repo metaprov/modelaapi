@@ -536,15 +536,6 @@ type ModelStatus struct {
 	// The team that trained this model
 	// +kubebuilder:validation:Optional
 	Team string `json:"team,omitempty" protobuf:"bytes,53,opt,name=team"`
-	// The image used during training
-	// +kubebuilder:validation:Optional
-	TrainerImage catalog.ManagedImageSpec `json:"trainerImage,omitempty" protobuf:"bytes,54,opt,name=trainerImage"`
-	// The image used during training for data operations.
-	// +kubebuilder:validation:Optional
-	DataImage catalog.ManagedImageSpec `json:"dataImage,omitempty" protobuf:"bytes,55,opt,name=dataImage"`
-	// The image used during training for data operations.
-	// +kubebuilder:validation:Optional
-	PublisherImage catalog.ManagedImageSpec `json:"publisherImage,omitempty" protobuf:"bytes,56,opt,name=publisherImage"`
 	// If the model is deployed, this points to the end point.
 	// +kubebuilder:validation:Optional
 	EndPoint string `json:"endpoint,omitempty" protobuf:"bytes,57,opt,name=endpoint"`
@@ -575,10 +566,13 @@ type ModelStatus struct {
 	// The Interpretability status for this model
 	// +kubebuilder:validation:Optional
 	Interpretability InterpretabilityStatus `json:"interpretability,omitempty" protobuf:"bytes,66,opt,name=interpretability"`
+	// The team that trained this model
+	// +kubebuilder:validation:Optional
+	Images Images `json:"images,omitempty" protobuf:"bytes,67,opt,name=images"`
 	// +kubebuilder:validation:Optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
-	Conditions []ModelCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,67,rep,name=conditions"`
+	Conditions []ModelCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,68,rep,name=conditions"`
 }
 
 // HyperParameterValue represent a specific value of
@@ -1057,4 +1051,17 @@ type InterpretabilityStatus struct {
 
 	// Shap based feature importance
 	Importance []FeatureImportance `json:"importance,omitempty" protobuf:"bytes,6,rep,name=importance"`
+}
+
+// Store the images that were used during training, reporting and profiling
+type Images struct {
+	// The image used during training
+	// +kubebuilder:validation:Optional
+	TrainerImage *string `json:"trainerImage,omitempty" protobuf:"bytes,1,opt,name=trainerImage"`
+	// The image used during training for data operations.
+	// +kubebuilder:validation:Optional
+	DataImage *string `json:"dataImage,omitempty" protobuf:"bytes,2,opt,name=dataImage"`
+	// The image used during training for data operations.
+	// +kubebuilder:validation:Optional
+	PublisherImage *string `json:"publisherImage,omitempty" protobuf:"bytes,3,opt,name=publisherImage"`
 }

@@ -1404,6 +1404,32 @@ export namespace ImagePipelineSpec {
   }
 }
 
+export class Images extends jspb.Message {
+  getTrainerimage(): string;
+  setTrainerimage(value: string): Images;
+
+  getDataimage(): string;
+  setDataimage(value: string): Images;
+
+  getPublisherimage(): string;
+  setPublisherimage(value: string): Images;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Images.AsObject;
+  static toObject(includeInstance: boolean, msg: Images): Images.AsObject;
+  static serializeBinaryToWriter(message: Images, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Images;
+  static deserializeBinaryFromReader(message: Images, reader: jspb.BinaryReader): Images;
+}
+
+export namespace Images {
+  export type AsObject = {
+    trainerimage: string,
+    dataimage: string,
+    publisherimage: string,
+  }
+}
+
 export class InterpretabilitySpec extends jspb.Message {
   getIce(): boolean;
   setIce(value: boolean): InterpretabilitySpec;
@@ -3147,21 +3173,6 @@ export class ModelStatus extends jspb.Message {
   getTeam(): string;
   setTeam(value: string): ModelStatus;
 
-  getTrainerimage(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ManagedImageSpec | undefined;
-  setTrainerimage(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ManagedImageSpec): ModelStatus;
-  hasTrainerimage(): boolean;
-  clearTrainerimage(): ModelStatus;
-
-  getDataimage(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ManagedImageSpec | undefined;
-  setDataimage(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ManagedImageSpec): ModelStatus;
-  hasDataimage(): boolean;
-  clearDataimage(): ModelStatus;
-
-  getPublisherimage(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ManagedImageSpec | undefined;
-  setPublisherimage(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ManagedImageSpec): ModelStatus;
-  hasPublisherimage(): boolean;
-  clearPublisherimage(): ModelStatus;
-
   getEndpoint(): string;
   setEndpoint(value: string): ModelStatus;
 
@@ -3209,6 +3220,11 @@ export class ModelStatus extends jspb.Message {
   setInterpretability(value?: InterpretabilityStatus): ModelStatus;
   hasInterpretability(): boolean;
   clearInterpretability(): ModelStatus;
+
+  getImages(): Images | undefined;
+  setImages(value?: Images): ModelStatus;
+  hasImages(): boolean;
+  clearImages(): ModelStatus;
 
   getConditionsList(): Array<ModelCondition>;
   setConditionsList(value: Array<ModelCondition>): ModelStatus;
@@ -3277,9 +3293,6 @@ export namespace ModelStatus {
     testingresources?: ResourceConsumption.AsObject,
     trainedby: string,
     team: string,
-    trainerimage?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ManagedImageSpec.AsObject,
-    dataimage?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ManagedImageSpec.AsObject,
-    publisherimage?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ManagedImageSpec.AsObject,
     endpoint: string,
     logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
     rocauccurve?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RocAucCurve.AsObject,
@@ -3290,6 +3303,7 @@ export namespace ModelStatus {
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     governancestatus?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.GovernanceStatus.AsObject,
     interpretability?: InterpretabilityStatus.AsObject,
+    images?: Images.AsObject,
     conditionsList: Array<ModelCondition.AsObject>,
   }
 }
