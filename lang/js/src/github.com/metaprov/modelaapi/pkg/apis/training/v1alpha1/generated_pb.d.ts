@@ -3147,11 +3147,20 @@ export class ModelStatus extends jspb.Message {
   getTeam(): string;
   setTeam(value: string): ModelStatus;
 
-  getTrainerimage(): string;
-  setTrainerimage(value: string): ModelStatus;
+  getTrainerimage(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ManagedImageSpec | undefined;
+  setTrainerimage(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ManagedImageSpec): ModelStatus;
+  hasTrainerimage(): boolean;
+  clearTrainerimage(): ModelStatus;
 
-  getDataimage(): string;
-  setDataimage(value: string): ModelStatus;
+  getDataimage(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ManagedImageSpec | undefined;
+  setDataimage(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ManagedImageSpec): ModelStatus;
+  hasDataimage(): boolean;
+  clearDataimage(): ModelStatus;
+
+  getPublisherimage(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ManagedImageSpec | undefined;
+  setPublisherimage(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ManagedImageSpec): ModelStatus;
+  hasPublisherimage(): boolean;
+  clearPublisherimage(): ModelStatus;
 
   getEndpoint(): string;
   setEndpoint(value: string): ModelStatus;
@@ -3268,8 +3277,9 @@ export namespace ModelStatus {
     testingresources?: ResourceConsumption.AsObject,
     trainedby: string,
     team: string,
-    trainerimage: string,
-    dataimage: string,
+    trainerimage?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ManagedImageSpec.AsObject,
+    dataimage?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ManagedImageSpec.AsObject,
+    publisherimage?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ManagedImageSpec.AsObject,
     endpoint: string,
     logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
     rocauccurve?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RocAucCurve.AsObject,

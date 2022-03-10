@@ -2204,56 +2204,60 @@ message ModelStatus {
 
   // The image used during training
   // +kubebuilder:validation:Optional
-  optional string trainerImage = 54;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ManagedImageSpec trainerImage = 54;
 
   // The image used during training for data operations.
   // +kubebuilder:validation:Optional
-  optional string dataImage = 55;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ManagedImageSpec dataImage = 55;
+
+  // The image used during training for data operations.
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ManagedImageSpec publisherImage = 56;
 
   // If the model is deployed, this points to the end point.
   // +kubebuilder:validation:Optional
-  optional string endpoint = 56;
+  optional string endpoint = 57;
 
   // Holds the location of log paths
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 57;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 58;
 
   // Roc curve
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RocAucCurve rocauccurve = 58;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RocAucCurve rocauccurve = 59;
 
   // PR curve
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PRCurve prcurve = 59;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PRCurve prcurve = 60;
 
   // Confusion matrix
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ConfusionMatrix confusionMatrix = 60;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ConfusionMatrix confusionMatrix = 61;
 
   // Holds the top correlation with target
   // +kubebuilder:validation:Optional
-  repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Correlation correlationsWithTarget = 61;
+  repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Correlation correlationsWithTarget = 62;
 
   // Holds the top feature correlation
   // +kubebuilder:validation:Optional
-  repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Correlation topCorrelations = 62;
+  repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Correlation topCorrelations = 63;
 
   // Last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 63;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 64;
 
   // The Governance status for this model
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceStatus governanceStatus = 64;
+  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceStatus governanceStatus = 65;
 
   // The Interpretability status for this model
   // +kubebuilder:validation:Optional
-  optional InterpretabilityStatus interpretability = 65;
+  optional InterpretabilityStatus interpretability = 66;
 
   // +kubebuilder:validation:Optional
   // +patchMergeKey=type
   // +patchStrategy=merge
-  repeated ModelCondition conditions = 66;
+  repeated ModelCondition conditions = 67;
 }
 
 message ModelValidation {

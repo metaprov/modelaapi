@@ -47,80 +47,6 @@ spec:
               active:
                 description: Set the release to active
                 type: boolean
-              images:
-                description: DataImage is the container image used to data tasks
-                properties:
-                  apiGateway:
-                    type: string
-                  apiproxy:
-                    description: TrainerImage is the container image used for control
-                    type: string
-                  batchPredictor:
-                    description: BatchPredictorImage is used when running batch prediction.
-                    type: string
-                  cloudproxy:
-                    description: TrainerImage is the container image used for control
-                    type: string
-                  controlPlane:
-                    description: ControlPlaneImage is the image of the main control
-                      plane. the control plane contain all the modela operators
-                    type: string
-                  databaseProxy:
-                    description: Database proxy image is a service the translate from
-                      kubernetes objects to data base tables.
-                    type: string
-                  datadock:
-                    description: Data dock image contain the data ingest service
-                    type: string
-                  dataplane:
-                    description: TrainerImage is the container image used for control
-                    type: string
-                  frontend:
-                    description: Frontend image is the image of the frontend web user
-                      interface
-                    type: string
-                  modelaDashboardServer:
-                    description: The image for the data app dashboard.
-                    type: string
-                  modelaPredictionServer:
-                    description: The image used for the prediction server.
-                    type: string
-                  modelaSystem:
-                    description: The image for the modela system controller.
-                    type: string
-                  modelaWorkerControl:
-                    description: The image for the data app dashboard.
-                    type: string
-                  predictionRouter:
-                    description: Prediction router image.
-                    type: string
-                  publisher:
-                    description: Publisher image defines the image of the publisher.
-                      The publisher service is used the package models to tar file
-                      or publish them as docker containers.
-                    type: string
-                  trainer:
-                    description: TrainerImage is the container image of the trainer
-                      service. The trainer is used to train and test models
-                    type: string
-                required:
-                - apiGateway
-                - apiproxy
-                - batchPredictor
-                - cloudproxy
-                - controlPlane
-                - databaseProxy
-                - datadock
-                - dataplane
-                - frontend
-                - modelaDashboardServer
-                - modelaPredictionServer
-                - modelaSystem
-                - modelaWorkerControl
-                - predictionRouter
-                - publisher
-                - trainer
-                type: object
               podTemplate:
                 description: PodTemplateSpec describes the data a pod should have
                   when created from a template
@@ -14205,7 +14131,6 @@ spec:
                 description: The current software version of modela
                 type: string
             required:
-            - images
             - release
             type: object
           status:
@@ -14245,6 +14170,8 @@ spec:
               failureReason:
                 description: Update in case of terminal failure Borrowed from cluster
                   api controller
+                type: string
+              lastRelease:
                 type: string
               observedGeneration:
                 description: ObservedGeneration is the Last generation that was acted

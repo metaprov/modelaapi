@@ -1921,18 +1921,13 @@ message ModelaSystemSpec {
   // +kubebuilder:validation:Optional
   optional bool active = 2;
 
-  // DataImage is the container image used to data tasks
-  // +kubebuilder:validation:Required
-  // +required
-  optional SystemImagesSpec images = 3;
+  // +kubebuilder:validation:Optional
+  // +optional
+  optional k8s.io.api.core.v1.PodTemplateSpec podTemplate = 3;
 
   // +kubebuilder:validation:Optional
   // +optional
-  optional k8s.io.api.core.v1.PodTemplateSpec podTemplate = 4;
-
-  // +kubebuilder:validation:Optional
-  // +optional
-  optional k8s.io.api.core.v1.PodTemplateSpec publisherTemplate = 5;
+  optional k8s.io.api.core.v1.PodTemplateSpec publisherTemplate = 4;
 }
 
 // ModelaSystemStatus is the observed state of a ModelaSystem
@@ -1950,10 +1945,13 @@ message ModelaSystemStatus {
   // +kubebuilder:validation:Optional
   optional string failureMessage = 3;
 
+  // +kubebuilder:validation:Optional
+  optional string lastRelease = 4;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated ModelaSystemCondition conditions = 4;
+  repeated ModelaSystemCondition conditions = 5;
 }
 
 message MongoDbSpec {
@@ -2660,88 +2658,6 @@ message SybaseSpec {
 
   // URL Override the other
   optional string url = 6;
-}
-
-message SystemImagesSpec {
-  optional string apiGateway = 1;
-
-  // ControlPlaneImage is the image of the main control plane. the control plane contain all the modela operators
-  // +kubebuilder:validation:Required
-  // +required
-  optional string controlPlane = 2;
-
-  // Data dock image contain the data ingest service
-  // +kubebuilder:validation:Required
-  // +required
-  optional string datadock = 3;
-
-  // Frontend image is the image of the frontend web user interface
-  // +kubebuilder:validation:Required
-  // +required
-  optional string frontend = 4;
-
-  // Publisher image defines the image of the publisher. The publisher service is used
-  // the package models to tar file or publish them as docker containers.
-  // +kubebuilder:validation:Required
-  // +required
-  optional string publisher = 5;
-
-  // TrainerImage is the container image of the trainer service. The trainer is used
-  // to train and test models
-  // +kubebuilder:validation:Required
-  // +required
-  optional string trainer = 6;
-
-  // BatchPredictorImage is used when running batch prediction.
-  // +kubebuilder:validation:Required
-  // +required
-  optional string batchPredictor = 7;
-
-  // TrainerImage is the container image used for control
-  // +kubebuilder:validation:Required
-  // +required
-  optional string apiproxy = 8;
-
-  // TrainerImage is the container image used for control
-  // +kubebuilder:validation:Required
-  // +required
-  optional string dataplane = 9;
-
-  // TrainerImage is the container image used for control
-  // +kubebuilder:validation:Required
-  // +required
-  optional string cloudproxy = 10;
-
-  // Database proxy image is a service the translate from kubernetes objects to
-  // data base tables.
-  // +kubebuilder:validation:Required
-  // +required
-  optional string databaseProxy = 11;
-
-  // Prediction router image.
-  // +kubebuilder:validation:Required
-  // +required
-  optional string predictionRouter = 12;
-
-  // The image for the modela system controller.
-  // +kubebuilder:validation:Required
-  // +required
-  optional string modelaSystem = 13;
-
-  // The image used for the prediction server.
-  // +kubebuilder:validation:Required
-  // +required
-  optional string modelaPredictionServer = 14;
-
-  // The image for the data app dashboard.
-  // +kubebuilder:validation:Required
-  // +required
-  optional string modelaDashboardServer = 15;
-
-  // The image for the data app dashboard.
-  // +kubebuilder:validation:Required
-  // +required
-  optional string modelaWorkerControl = 16;
 }
 
 // +kubebuilder:object:root=true

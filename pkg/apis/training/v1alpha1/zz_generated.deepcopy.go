@@ -2701,6 +2701,9 @@ func (in *ModelStatus) DeepCopyInto(out *ModelStatus) {
 	out.TrainingDataHash = in.TrainingDataHash
 	out.TrainingResources = in.TrainingResources
 	out.TestingResources = in.TestingResources
+	in.TrainerImage.DeepCopyInto(&out.TrainerImage)
+	in.DataImage.DeepCopyInto(&out.DataImage)
+	in.PublisherImage.DeepCopyInto(&out.PublisherImage)
 	in.Logs.DeepCopyInto(&out.Logs)
 	in.RocAucCurve.DeepCopyInto(&out.RocAucCurve)
 	in.PRCurve.DeepCopyInto(&out.PRCurve)

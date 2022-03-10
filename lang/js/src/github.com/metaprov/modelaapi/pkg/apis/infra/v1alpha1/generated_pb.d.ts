@@ -3411,11 +3411,6 @@ export class ModelaSystemSpec extends jspb.Message {
   getActive(): boolean;
   setActive(value: boolean): ModelaSystemSpec;
 
-  getImages(): SystemImagesSpec | undefined;
-  setImages(value?: SystemImagesSpec): ModelaSystemSpec;
-  hasImages(): boolean;
-  clearImages(): ModelaSystemSpec;
-
   getPodtemplate(): k8s_io_api_core_v1_generated_pb.PodTemplateSpec | undefined;
   setPodtemplate(value?: k8s_io_api_core_v1_generated_pb.PodTemplateSpec): ModelaSystemSpec;
   hasPodtemplate(): boolean;
@@ -3438,7 +3433,6 @@ export namespace ModelaSystemSpec {
   export type AsObject = {
     release: string,
     active: boolean,
-    images?: SystemImagesSpec.AsObject,
     podtemplate?: k8s_io_api_core_v1_generated_pb.PodTemplateSpec.AsObject,
     publishertemplate?: k8s_io_api_core_v1_generated_pb.PodTemplateSpec.AsObject,
   }
@@ -3453,6 +3447,9 @@ export class ModelaSystemStatus extends jspb.Message {
 
   getFailuremessage(): string;
   setFailuremessage(value: string): ModelaSystemStatus;
+
+  getLastrelease(): string;
+  setLastrelease(value: string): ModelaSystemStatus;
 
   getConditionsList(): Array<ModelaSystemCondition>;
   setConditionsList(value: Array<ModelaSystemCondition>): ModelaSystemStatus;
@@ -3472,6 +3469,7 @@ export namespace ModelaSystemStatus {
     observedgeneration: number,
     failurereason: string,
     failuremessage: string,
+    lastrelease: string,
     conditionsList: Array<ModelaSystemCondition.AsObject>,
   }
 }
@@ -4717,84 +4715,6 @@ export namespace SybaseSpec {
     username: string,
     password: string,
     url: string,
-  }
-}
-
-export class SystemImagesSpec extends jspb.Message {
-  getApigateway(): string;
-  setApigateway(value: string): SystemImagesSpec;
-
-  getControlplane(): string;
-  setControlplane(value: string): SystemImagesSpec;
-
-  getDatadock(): string;
-  setDatadock(value: string): SystemImagesSpec;
-
-  getFrontend(): string;
-  setFrontend(value: string): SystemImagesSpec;
-
-  getPublisher(): string;
-  setPublisher(value: string): SystemImagesSpec;
-
-  getTrainer(): string;
-  setTrainer(value: string): SystemImagesSpec;
-
-  getBatchpredictor(): string;
-  setBatchpredictor(value: string): SystemImagesSpec;
-
-  getApiproxy(): string;
-  setApiproxy(value: string): SystemImagesSpec;
-
-  getDataplane(): string;
-  setDataplane(value: string): SystemImagesSpec;
-
-  getCloudproxy(): string;
-  setCloudproxy(value: string): SystemImagesSpec;
-
-  getDatabaseproxy(): string;
-  setDatabaseproxy(value: string): SystemImagesSpec;
-
-  getPredictionrouter(): string;
-  setPredictionrouter(value: string): SystemImagesSpec;
-
-  getModelasystem(): string;
-  setModelasystem(value: string): SystemImagesSpec;
-
-  getModelapredictionserver(): string;
-  setModelapredictionserver(value: string): SystemImagesSpec;
-
-  getModeladashboardserver(): string;
-  setModeladashboardserver(value: string): SystemImagesSpec;
-
-  getModelaworkercontrol(): string;
-  setModelaworkercontrol(value: string): SystemImagesSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): SystemImagesSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: SystemImagesSpec): SystemImagesSpec.AsObject;
-  static serializeBinaryToWriter(message: SystemImagesSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): SystemImagesSpec;
-  static deserializeBinaryFromReader(message: SystemImagesSpec, reader: jspb.BinaryReader): SystemImagesSpec;
-}
-
-export namespace SystemImagesSpec {
-  export type AsObject = {
-    apigateway: string,
-    controlplane: string,
-    datadock: string,
-    frontend: string,
-    publisher: string,
-    trainer: string,
-    batchpredictor: string,
-    apiproxy: string,
-    dataplane: string,
-    cloudproxy: string,
-    databaseproxy: string,
-    predictionrouter: string,
-    modelasystem: string,
-    modelapredictionserver: string,
-    modeladashboardserver: string,
-    modelaworkercontrol: string,
   }
 }
 
