@@ -18,7 +18,7 @@ import (
 // ManagedImageRole
 //==============================================================================
 
-// +kubebuilder:validation:Enum="cloud-proxy";"trainer";"predictor";"dashboard";"workload";"prediction-router";"dataplane";"publisher"
+// +kubebuilder:validation:Enum="cloud-proxy";"trainer";"predictor";"dashboard";"workload";"prediction-router";"dataplane";"publisher";"system"
 type ManagedImageRole string
 
 const (
@@ -29,6 +29,7 @@ const (
 	WorkloadImageRole         ManagedImageRole = "workload"
 	DataplaneImageRole        ManagedImageRole = "dataplane"
 	PublisherImageRole        ManagedImageRole = "publisher"
+	SystemImageRole           ManagedImageRole = "system"
 	PredictionRouterImageRole ManagedImageRole = "prediction-router"
 )
 

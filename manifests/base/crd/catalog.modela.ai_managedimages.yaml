@@ -250,6 +250,9 @@ spec:
                 - dashboard
                 - workload
                 - prediction-router
+                - dataplane
+                - publisher
+                - system
                 type: string
               tag:
                 description: The image tag. by default this is latest
