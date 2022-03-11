@@ -244,9 +244,12 @@ spec:
               role:
                 description: The base image for this image.
                 enum:
-                - system
+                - cloud-proxy
                 - trainer
-                - serving
+                - predictor
+                - dashboard
+                - workload
+                - prediction-router
                 type: string
               tag:
                 description: The image tag. by default this is latest

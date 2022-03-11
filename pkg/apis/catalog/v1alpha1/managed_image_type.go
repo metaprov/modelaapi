@@ -18,13 +18,16 @@ import (
 // ManagedImageRole
 //==============================================================================
 
-// +kubebuilder:validation:Enum="system";"trainer";"serving";
+// +kubebuilder:validation:Enum="cloud-proxy";"trainer";"predictor";"dashboard";"workload";"prediction-router"
 type ManagedImageRole string
 
 const (
-	SystemImageRole  ManagedImageRole = "system"
-	TrainerImageRole ManagedImageRole = "trainer"
-	ServingImageRole ManagedImageRole = "serving"
+	CloudProxyImageRole       ManagedImageRole = "cloud-proxy"
+	TrainerImageRole          ManagedImageRole = "trainer"
+	PredictorImageRole        ManagedImageRole = "predictor"
+	DashboardImageRole        ManagedImageRole = "dashboard"
+	WorkloadImageRole         ManagedImageRole = "workload"
+	PredictionRouterImageRole ManagedImageRole = "prediction-router"
 )
 
 // MLFramework define the metadata about a machine learning framework
