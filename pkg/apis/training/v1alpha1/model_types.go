@@ -759,6 +759,14 @@ type DataSplitSpec struct {
 	// Apply the segments first
 	// +kubebuilder:validation:Optional
 	Segments []SegmentSpec `json:"segments,omitempty" protobuf:"bytes,6,rep,name=segments"`
+	// The name of the train dataset.
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
+	TrainDatasetName *string `json:"trainDataset,omitempty" protobuf:"bytes,7,rep,name=trainDataset"`
+	// The name of the test dataset. If a test dataset is specified
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
+	TestDatasetName *string `json:"testDataset,omitempty" protobuf:"bytes,8,rep,name=testDataset"`
 }
 
 // TrainingSpec is the specification of the training process

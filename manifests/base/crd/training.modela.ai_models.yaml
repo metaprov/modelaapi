@@ -1873,6 +1873,7 @@ spec:
                         - time
                         - random-stratified
                         - auto
+                        - test-dataset
                         type: string
                       segments:
                         description: Apply the segments first
@@ -1907,6 +1908,11 @@ spec:
                         maximum: 100
                         minimum: 0
                         type: integer
+                      testDataset:
+                        default: ""
+                        description: The name of the test dataset. If a test dataset
+                          is specified
+                        type: string
                       train:
                         default: 80
                         description: Training is a percent number (0-100) which specify
@@ -1915,6 +1921,10 @@ spec:
                         maximum: 100
                         minimum: 1
                         type: integer
+                      trainDataset:
+                        default: ""
+                        description: The name of the train dataset.
+                        type: string
                       validation:
                         default: 0
                         description: Validation is percent of dataset rows which would

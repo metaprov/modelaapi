@@ -1922,7 +1922,7 @@ type ResourceSpec struct {
 	Requirements *v1.ResourceRequirements `json:"requirements,omitempty" protobuf:"bytes,3,opt,name=requirements"`
 }
 
-// +kubebuilder:validation:Enum="random";"split-column";"time";"random-stratified";"auto";
+// +kubebuilder:validation:Enum="random";"split-column";"time";"random-stratified";"auto";"test-dataset";
 type DataSplitMethod string
 
 const (
@@ -1930,6 +1930,7 @@ const (
 	DataSplitMethodRandom           DataSplitMethod = "random"
 	DataSplitMethodSplitColumn      DataSplitMethod = "split-column"
 	DataSplitMethodTime             DataSplitMethod = "time"
+	DataSplitMethodUseTestDataset   DataSplitMethod = "test-dataset"
 	DataSplitAuto                   DataSplitMethod = "auto"
 )
 

@@ -509,6 +509,12 @@ export class DataSplitSpec extends jspb.Message {
   clearSegmentsList(): DataSplitSpec;
   addSegments(value?: SegmentSpec, index?: number): SegmentSpec;
 
+  getTraindataset(): string;
+  setTraindataset(value: string): DataSplitSpec;
+
+  getTestdataset(): string;
+  setTestdataset(value: string): DataSplitSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataSplitSpec.AsObject;
   static toObject(includeInstance: boolean, msg: DataSplitSpec): DataSplitSpec.AsObject;
@@ -525,6 +531,8 @@ export namespace DataSplitSpec {
     test: number,
     splitcolumn: string,
     segmentsList: Array<SegmentSpec.AsObject>,
+    traindataset: string,
+    testdataset: string,
   }
 }
 

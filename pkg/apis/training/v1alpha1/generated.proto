@@ -317,6 +317,16 @@ message DataSplitSpec {
   // Apply the segments first
   // +kubebuilder:validation:Optional
   repeated SegmentSpec segments = 6;
+
+  // The name of the train dataset.
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string trainDataset = 7;
+
+  // The name of the test dataset. If a test dataset is specified
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string testDataset = 8;
 }
 
 // DataStageSpec is the desired state of the data preprocessing step of the pipeline.
