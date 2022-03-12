@@ -1687,27 +1687,27 @@ message ModelPipelineSpec {
   // User provided description
   // +kubebuilder:default =""
   // +kubebuilder:validation:Optional
-  optional string description = 3;
+  optional string description = 2;
 
   // DatasetSelector is used to select dataset for training
   // +kubebuilder:validation:Optional
-  map<string, string> datasetSelector = 4;
+  map<string, string> datasetSelector = 3;
 
   // Datastage build new dataset from the data sources.
   // +kubebuilder:validation:Optional
-  optional DataStageSpec data = 5;
+  optional DataStageSpec data = 4;
 
   // TrainingSpec stage
   // +kubebuilder:validation:Optional
-  optional TrainingStageSpec training = 6;
+  optional TrainingStageSpec training = 5;
 
   // Acceptance stage is used for further testing
   // +kubebuilder:validation:Optional
-  optional UATStageSpec uat = 7;
+  optional UATStageSpec uat = 6;
 
   // Capacity stage for capacity
   // +kubebuilder:validation:Optional
-  optional CapacityStageSpec capacity = 8;
+  optional CapacityStageSpec capacity = 7;
 
   // Deployment stage define how to place the model into production.
   // +kubebuilder:validation:Optional
@@ -1720,41 +1720,45 @@ message ModelPipelineSpec {
   // Folder for the pipeline and pipeline run artifacts.
   // The folder contains all the study artifacts - metadata, reports, profile,models
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation location = 13;
+  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation location = 11;
 
   // Schedule for running the pipeline
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 14;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 12;
 
   // The owner of the run, set to the owner of the pipeline
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
   // +kubebuilder:validation:Optional
-  optional string owner = 15;
+  optional string owner = 13;
 
   // ApproverAccountName is the name of the approver for stages that need approvals.
   // +kubebuilder:default =""
   // +kubebuilder:validation:Optional
-  optional string approverAccountName = 16;
+  optional string approverAccountName = 14;
 
   // Notification specification.
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 17;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 15;
 
   // BaselineModelName is the name of the model which is used to compare with this pipeline results.
   // +kubebuilder:default =""
   // +kubebuilder:validation:Optional
-  optional string baselineModelName = 18;
+  optional string baselineModelName = 16;
 
   // The priority of this pipeline. The default is medium.
   // +kubebuilder:default:="medium"
   // +kubebuilder:validation:Optional
-  optional string priority = 30;
+  optional string priority = 17;
 
   // Pause the pipeline cron job.
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool paused = 31;
+  optional bool paused = 18;
+
+  // Resource define the hardware resources req.
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 19;
 }
 
 // ModelPipelineStatus define the observed state of the pipeline

@@ -2674,6 +2674,11 @@ export class ModelPipelineSpec extends jspb.Message {
   getPaused(): boolean;
   setPaused(value: boolean): ModelPipelineSpec;
 
+  getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
+  setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): ModelPipelineSpec;
+  hasResources(): boolean;
+  clearResources(): ModelPipelineSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelPipelineSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelPipelineSpec): ModelPipelineSpec.AsObject;
@@ -2701,6 +2706,7 @@ export namespace ModelPipelineSpec {
     baselinemodelname: string,
     priority: string,
     paused: boolean,
+    resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
   }
 }
 

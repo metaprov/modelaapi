@@ -26941,7 +26941,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
     versionname: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    description: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    description: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     datasetselectorMap: (f = msg.getDatasetselectorMap()) ? f.toObject(includeInstance, undefined) : [],
     data: (f = msg.getData()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataStageSpec.toObject(includeInstance, f),
     training: (f = msg.getTraining()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingStageSpec.toObject(includeInstance, f),
@@ -26951,12 +26951,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
     release: (f = msg.getRelease()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReleaseStageSpec.toObject(includeInstance, f),
     location: (f = msg.getLocation()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.toObject(includeInstance, f),
     schedule: (f = msg.getSchedule()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.toObject(includeInstance, f),
-    owner: (f = jspb.Message.getField(msg, 15)) == null ? undefined : f,
-    approveraccountname: (f = jspb.Message.getField(msg, 16)) == null ? undefined : f,
+    owner: (f = jspb.Message.getField(msg, 13)) == null ? undefined : f,
+    approveraccountname: (f = jspb.Message.getField(msg, 14)) == null ? undefined : f,
     notification: (f = msg.getNotification()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.toObject(includeInstance, f),
-    baselinemodelname: (f = jspb.Message.getField(msg, 18)) == null ? undefined : f,
-    priority: (f = jspb.Message.getField(msg, 30)) == null ? undefined : f,
-    paused: (f = jspb.Message.getBooleanField(msg, 31)) == null ? undefined : f
+    baselinemodelname: (f = jspb.Message.getField(msg, 16)) == null ? undefined : f,
+    priority: (f = jspb.Message.getField(msg, 17)) == null ? undefined : f,
+    paused: (f = jspb.Message.getBooleanField(msg, 18)) == null ? undefined : f,
+    resources: (f = msg.getResources()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -26997,32 +26998,32 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
       var value = /** @type {string} */ (reader.readString());
       msg.setVersionname(value);
       break;
-    case 3:
+    case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setDescription(value);
       break;
-    case 4:
+    case 3:
       var value = msg.getDatasetselectorMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
          });
       break;
-    case 5:
+    case 4:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataStageSpec;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataStageSpec.deserializeBinaryFromReader);
       msg.setData(value);
       break;
-    case 6:
+    case 5:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingStageSpec;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingStageSpec.deserializeBinaryFromReader);
       msg.setTraining(value);
       break;
-    case 7:
+    case 6:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UATStageSpec;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UATStageSpec.deserializeBinaryFromReader);
       msg.setUat(value);
       break;
-    case 8:
+    case 7:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CapacityStageSpec;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CapacityStageSpec.deserializeBinaryFromReader);
       msg.setCapacity(value);
@@ -27037,40 +27038,45 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReleaseStageSpec.deserializeBinaryFromReader);
       msg.setRelease(value);
       break;
-    case 13:
+    case 11:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.deserializeBinaryFromReader);
       msg.setLocation(value);
       break;
-    case 14:
+    case 12:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.deserializeBinaryFromReader);
       msg.setSchedule(value);
       break;
-    case 15:
+    case 13:
       var value = /** @type {string} */ (reader.readString());
       msg.setOwner(value);
       break;
-    case 16:
+    case 14:
       var value = /** @type {string} */ (reader.readString());
       msg.setApproveraccountname(value);
       break;
-    case 17:
+    case 15:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.deserializeBinaryFromReader);
       msg.setNotification(value);
       break;
-    case 18:
+    case 16:
       var value = /** @type {string} */ (reader.readString());
       msg.setBaselinemodelname(value);
       break;
-    case 30:
+    case 17:
       var value = /** @type {string} */ (reader.readString());
       msg.setPriority(value);
       break;
-    case 31:
+    case 18:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setPaused(value);
+      break;
+    case 19:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.deserializeBinaryFromReader);
+      msg.setResources(value);
       break;
     default:
       reader.skipField();
@@ -27108,21 +27114,21 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  f = /** @type {string} */ (jspb.Message.getField(message, 2));
   if (f != null) {
     writer.writeString(
-      3,
+      2,
       f
     );
   }
   f = message.getDatasetselectorMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(4, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+    f.serializeBinary(3, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
   f = message.getData();
   if (f != null) {
     writer.writeMessage(
-      5,
+      4,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataStageSpec.serializeBinaryToWriter
     );
@@ -27130,7 +27136,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
   f = message.getTraining();
   if (f != null) {
     writer.writeMessage(
-      6,
+      5,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingStageSpec.serializeBinaryToWriter
     );
@@ -27138,7 +27144,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
   f = message.getUat();
   if (f != null) {
     writer.writeMessage(
-      7,
+      6,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UATStageSpec.serializeBinaryToWriter
     );
@@ -27146,7 +27152,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
   f = message.getCapacity();
   if (f != null) {
     writer.writeMessage(
-      8,
+      7,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CapacityStageSpec.serializeBinaryToWriter
     );
@@ -27170,7 +27176,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
   f = message.getLocation();
   if (f != null) {
     writer.writeMessage(
-      13,
+      11,
       f,
       github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.serializeBinaryToWriter
     );
@@ -27178,16 +27184,31 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
   f = message.getSchedule();
   if (f != null) {
     writer.writeMessage(
-      14,
+      12,
       f,
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.serializeBinaryToWriter
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 15));
+  f = /** @type {string} */ (jspb.Message.getField(message, 13));
   if (f != null) {
     writer.writeString(
-      15,
+      13,
       f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 14));
+  if (f != null) {
+    writer.writeString(
+      14,
+      f
+    );
+  }
+  f = message.getNotification();
+  if (f != null) {
+    writer.writeMessage(
+      15,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.serializeBinaryToWriter
     );
   }
   f = /** @type {string} */ (jspb.Message.getField(message, 16));
@@ -27197,33 +27218,26 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
       f
     );
   }
-  f = message.getNotification();
-  if (f != null) {
-    writer.writeMessage(
-      17,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.serializeBinaryToWriter
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 18));
+  f = /** @type {string} */ (jspb.Message.getField(message, 17));
   if (f != null) {
     writer.writeString(
+      17,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 18));
+  if (f != null) {
+    writer.writeBool(
       18,
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 30));
+  f = message.getResources();
   if (f != null) {
-    writer.writeString(
-      30,
-      f
-    );
-  }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 31));
-  if (f != null) {
-    writer.writeBool(
-      31,
-      f
+    writer.writeMessage(
+      19,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.serializeBinaryToWriter
     );
   }
 };
@@ -27266,11 +27280,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
 
 
 /**
- * optional string description = 3;
+ * optional string description = 2;
  * @return {string}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.getDescription = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -27279,7 +27293,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.setDescription = function(value) {
-  return jspb.Message.setField(this, 3, value);
+  return jspb.Message.setField(this, 2, value);
 };
 
 
@@ -27288,7 +27302,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.clearDescription = function() {
-  return jspb.Message.setField(this, 3, undefined);
+  return jspb.Message.setField(this, 2, undefined);
 };
 
 
@@ -27297,19 +27311,19 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.hasDescription = function() {
-  return jspb.Message.getField(this, 3) != null;
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * map<string, string> datasetSelector = 4;
+ * map<string, string> datasetSelector = 3;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.getDatasetselectorMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 4, opt_noLazyCreate,
+      jspb.Message.getMapField(this, 3, opt_noLazyCreate,
       null));
 };
 
@@ -27324,12 +27338,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
 
 
 /**
- * optional DataStageSpec data = 5;
+ * optional DataStageSpec data = 4;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataStageSpec}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.getData = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataStageSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataStageSpec, 5));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataStageSpec, 4));
 };
 
 
@@ -27338,7 +27352,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.setData = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
+  return jspb.Message.setWrapperField(this, 4, value);
 };
 
 
@@ -27356,17 +27370,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.hasData = function() {
-  return jspb.Message.getField(this, 5) != null;
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * optional TrainingStageSpec training = 6;
+ * optional TrainingStageSpec training = 5;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingStageSpec}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.getTraining = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingStageSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingStageSpec, 6));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingStageSpec, 5));
 };
 
 
@@ -27375,7 +27389,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.setTraining = function(value) {
-  return jspb.Message.setWrapperField(this, 6, value);
+  return jspb.Message.setWrapperField(this, 5, value);
 };
 
 
@@ -27393,17 +27407,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.hasTraining = function() {
-  return jspb.Message.getField(this, 6) != null;
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
 /**
- * optional UATStageSpec uat = 7;
+ * optional UATStageSpec uat = 6;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UATStageSpec}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.getUat = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UATStageSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UATStageSpec, 7));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UATStageSpec, 6));
 };
 
 
@@ -27412,7 +27426,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.setUat = function(value) {
-  return jspb.Message.setWrapperField(this, 7, value);
+  return jspb.Message.setWrapperField(this, 6, value);
 };
 
 
@@ -27430,17 +27444,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.hasUat = function() {
-  return jspb.Message.getField(this, 7) != null;
+  return jspb.Message.getField(this, 6) != null;
 };
 
 
 /**
- * optional CapacityStageSpec capacity = 8;
+ * optional CapacityStageSpec capacity = 7;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CapacityStageSpec}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.getCapacity = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CapacityStageSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CapacityStageSpec, 8));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CapacityStageSpec, 7));
 };
 
 
@@ -27449,7 +27463,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.setCapacity = function(value) {
-  return jspb.Message.setWrapperField(this, 8, value);
+  return jspb.Message.setWrapperField(this, 7, value);
 };
 
 
@@ -27467,7 +27481,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.hasCapacity = function() {
-  return jspb.Message.getField(this, 8) != null;
+  return jspb.Message.getField(this, 7) != null;
 };
 
 
@@ -27546,12 +27560,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation location = 13;
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation location = 11;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.getLocation = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation, 13));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation, 11));
 };
 
 
@@ -27560,7 +27574,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.setLocation = function(value) {
-  return jspb.Message.setWrapperField(this, 13, value);
+  return jspb.Message.setWrapperField(this, 11, value);
 };
 
 
@@ -27578,17 +27592,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.hasLocation = function() {
-  return jspb.Message.getField(this, 13) != null;
+  return jspb.Message.getField(this, 11) != null;
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 14;
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 12;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.getSchedule = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule, 14));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule, 12));
 };
 
 
@@ -27597,7 +27611,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.setSchedule = function(value) {
-  return jspb.Message.setWrapperField(this, 14, value);
+  return jspb.Message.setWrapperField(this, 12, value);
 };
 
 
@@ -27615,16 +27629,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.hasSchedule = function() {
-  return jspb.Message.getField(this, 14) != null;
+  return jspb.Message.getField(this, 12) != null;
 };
 
 
 /**
- * optional string owner = 15;
+ * optional string owner = 13;
  * @return {string}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.getOwner = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 15, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
 };
 
 
@@ -27633,7 +27647,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.setOwner = function(value) {
-  return jspb.Message.setField(this, 15, value);
+  return jspb.Message.setField(this, 13, value);
 };
 
 
@@ -27642,7 +27656,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.clearOwner = function() {
-  return jspb.Message.setField(this, 15, undefined);
+  return jspb.Message.setField(this, 13, undefined);
 };
 
 
@@ -27651,16 +27665,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.hasOwner = function() {
-  return jspb.Message.getField(this, 15) != null;
+  return jspb.Message.getField(this, 13) != null;
 };
 
 
 /**
- * optional string approverAccountName = 16;
+ * optional string approverAccountName = 14;
  * @return {string}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.getApproveraccountname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 16, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 14, ""));
 };
 
 
@@ -27669,7 +27683,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.setApproveraccountname = function(value) {
-  return jspb.Message.setField(this, 16, value);
+  return jspb.Message.setField(this, 14, value);
 };
 
 
@@ -27678,7 +27692,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.clearApproveraccountname = function() {
-  return jspb.Message.setField(this, 16, undefined);
+  return jspb.Message.setField(this, 14, undefined);
 };
 
 
@@ -27687,17 +27701,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.hasApproveraccountname = function() {
-  return jspb.Message.getField(this, 16) != null;
+  return jspb.Message.getField(this, 14) != null;
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 17;
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 15;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.getNotification = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec, 17));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec, 15));
 };
 
 
@@ -27706,7 +27720,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.setNotification = function(value) {
-  return jspb.Message.setWrapperField(this, 17, value);
+  return jspb.Message.setWrapperField(this, 15, value);
 };
 
 
@@ -27724,16 +27738,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.hasNotification = function() {
-  return jspb.Message.getField(this, 17) != null;
+  return jspb.Message.getField(this, 15) != null;
 };
 
 
 /**
- * optional string baselineModelName = 18;
+ * optional string baselineModelName = 16;
  * @return {string}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.getBaselinemodelname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 18, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 16, ""));
 };
 
 
@@ -27742,7 +27756,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.setBaselinemodelname = function(value) {
-  return jspb.Message.setField(this, 18, value);
+  return jspb.Message.setField(this, 16, value);
 };
 
 
@@ -27751,7 +27765,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.clearBaselinemodelname = function() {
-  return jspb.Message.setField(this, 18, undefined);
+  return jspb.Message.setField(this, 16, undefined);
 };
 
 
@@ -27760,16 +27774,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.hasBaselinemodelname = function() {
-  return jspb.Message.getField(this, 18) != null;
+  return jspb.Message.getField(this, 16) != null;
 };
 
 
 /**
- * optional string priority = 30;
+ * optional string priority = 17;
  * @return {string}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.getPriority = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 30, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 17, ""));
 };
 
 
@@ -27778,7 +27792,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.setPriority = function(value) {
-  return jspb.Message.setField(this, 30, value);
+  return jspb.Message.setField(this, 17, value);
 };
 
 
@@ -27787,7 +27801,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.clearPriority = function() {
-  return jspb.Message.setField(this, 30, undefined);
+  return jspb.Message.setField(this, 17, undefined);
 };
 
 
@@ -27796,16 +27810,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.hasPriority = function() {
-  return jspb.Message.getField(this, 30) != null;
+  return jspb.Message.getField(this, 17) != null;
 };
 
 
 /**
- * optional bool paused = 31;
+ * optional bool paused = 18;
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.getPaused = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 31, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 18, false));
 };
 
 
@@ -27814,7 +27828,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.setPaused = function(value) {
-  return jspb.Message.setField(this, 31, value);
+  return jspb.Message.setField(this, 18, value);
 };
 
 
@@ -27823,7 +27837,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.clearPaused = function() {
-  return jspb.Message.setField(this, 31, undefined);
+  return jspb.Message.setField(this, 18, undefined);
 };
 
 
@@ -27832,7 +27846,44 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.hasPaused = function() {
-  return jspb.Message.getField(this, 31) != null;
+  return jspb.Message.getField(this, 18) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 19;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.getResources = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec, 19));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.setResources = function(value) {
+  return jspb.Message.setWrapperField(this, 19, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.clearResources = function() {
+  return this.setResources(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.hasResources = function() {
+  return jspb.Message.getField(this, 19) != null;
 };
 
 

@@ -60,22 +60,22 @@ type ModelPipelineSpec struct {
 	// User provided description
 	// +kubebuilder:default =""
 	// +kubebuilder:validation:Optional
-	Description *string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
+	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
 	// DatasetSelector is used to select dataset for training
 	// +kubebuilder:validation:Optional
-	DatasetSelector map[string]string `json:"datasetSelector,omitempty" protobuf:"bytes,4,opt,name=datasetSelector"`
+	DatasetSelector map[string]string `json:"datasetSelector,omitempty" protobuf:"bytes,3,opt,name=datasetSelector"`
 	// Datastage build new dataset from the data sources.
 	// +kubebuilder:validation:Optional
-	Data *DataStageSpec `json:"data,omitempty" protobuf:"bytes,5,opt,name=data"`
+	Data *DataStageSpec `json:"data,omitempty" protobuf:"bytes,4,opt,name=data"`
 	// TrainingSpec stage
 	// +kubebuilder:validation:Optional
-	Training TrainingStageSpec `json:"training,omitempty" protobuf:"bytes,6,opt,name=training"`
+	Training TrainingStageSpec `json:"training,omitempty" protobuf:"bytes,5,opt,name=training"`
 	// Acceptance stage is used for further testing
 	// +kubebuilder:validation:Optional
-	UAT *UATStageSpec `json:"uat,omitempty" protobuf:"bytes,7,opt,name=uat"`
+	UAT *UATStageSpec `json:"uat,omitempty" protobuf:"bytes,6,opt,name=uat"`
 	// Capacity stage for capacity
 	// +kubebuilder:validation:Optional
-	Capacity CapacityStageSpec `json:"capacity,omitempty" protobuf:"bytes,8,opt,name=capacity"`
+	Capacity CapacityStageSpec `json:"capacity,omitempty" protobuf:"bytes,7,opt,name=capacity"`
 	// Deployment stage define how to place the model into production.
 	// +kubebuilder:validation:Optional
 	Deployment DeploymentStageSpec `json:"deployment,omitempty" protobuf:"bytes,9,opt,name=deployment"`
@@ -85,34 +85,37 @@ type ModelPipelineSpec struct {
 	// Folder for the pipeline and pipeline run artifacts.
 	// The folder contains all the study artifacts - metadata, reports, profile,models
 	// +kubebuilder:validation:Optional
-	Location data.DataLocation `json:"location,omitempty" protobuf:"bytes,13,opt,name=location"`
+	Location data.DataLocation `json:"location,omitempty" protobuf:"bytes,11,opt,name=location"`
 	// Schedule for running the pipeline
 	// +kubebuilder:validation:Optional
-	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,14,opt,name=schedule"`
+	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,12,opt,name=schedule"`
 	// The owner of the run, set to the owner of the pipeline
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +kubebuilder:validation:Optional
-	Owner *string `json:"owner,omitempty" protobuf:"bytes,15,opt,name=owner"`
+	Owner *string `json:"owner,omitempty" protobuf:"bytes,13,opt,name=owner"`
 	// ApproverAccountName is the name of the approver for stages that need approvals.
 	// +kubebuilder:default =""
 	// +kubebuilder:validation:Optional
-	ApproverAccountName *string `json:"approverAccountName,omitempty" protobuf:"bytes,16,opt,name=approverAccountName"`
+	ApproverAccountName *string `json:"approverAccountName,omitempty" protobuf:"bytes,14,opt,name=approverAccountName"`
 	// Notification specification.
 	//+kubebuilder:validation:Optional
-	Notification catalog.NotificationSpec `json:"notification,omitempty" protobuf:"bytes,17,opt,name=notification"`
+	Notification catalog.NotificationSpec `json:"notification,omitempty" protobuf:"bytes,15,opt,name=notification"`
 	// BaselineModelName is the name of the model which is used to compare with this pipeline results.
 	// +kubebuilder:default =""
 	// +kubebuilder:validation:Optional
-	BaselineModelName *string `json:"baselineModelName,omitempty" protobuf:"bytes,18,opt,name=baselineModelName"`
+	BaselineModelName *string `json:"baselineModelName,omitempty" protobuf:"bytes,16,opt,name=baselineModelName"`
 	// The priority of this pipeline. The default is medium.
 	// +kubebuilder:default:="medium"
 	// +kubebuilder:validation:Optional
-	Priority *catalog.PriorityLevel `json:"priority,omitempty" protobuf:"bytes,30,opt,name=priority"`
+	Priority *catalog.PriorityLevel `json:"priority,omitempty" protobuf:"bytes,17,opt,name=priority"`
 	// Pause the pipeline cron job.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Paused *bool `json:"paused,omitempty" protobuf:"bytes,31,opt,name=paused"`
+	Paused *bool `json:"paused,omitempty" protobuf:"bytes,18,opt,name=paused"`
+	// Resource define the hardware resources req.
+	// +kubebuilder:validation:Optional
+	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,19,opt,name=resources"`
 }
 
 //DataStageSpec is the desired state of the data preprocessing step of the pipeline.
