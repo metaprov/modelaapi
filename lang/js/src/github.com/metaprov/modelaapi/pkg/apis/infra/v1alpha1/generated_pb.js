@@ -6242,6 +6242,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertSpec.toObject =
     owner: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
     ttl: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
     fieldsMap: (f = msg.getFieldsMap()) ? f.toObject(includeInstance, undefined) : [],
+    url: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
+    image: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
     tenantref: (f = msg.getTenantref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f)
   };
 
@@ -6315,6 +6317,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertSpec.deserializ
          });
       break;
     case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUrl(value);
+      break;
+    case 10:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setImage(value);
+      break;
+    case 11:
       var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
       reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
       msg.setTenantref(value);
@@ -6402,10 +6412,24 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertSpec.serializeB
   if (f && f.getLength() > 0) {
     f.serializeBinary(8, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
+  f = /** @type {string} */ (jspb.Message.getField(message, 9));
+  if (f != null) {
+    writer.writeString(
+      9,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 10));
+  if (f != null) {
+    writer.writeString(
+      10,
+      f
+    );
+  }
   f = message.getTenantref();
   if (f != null) {
     writer.writeMessage(
-      9,
+      11,
       f,
       k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
     );
@@ -6689,12 +6713,84 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertSpec.prototype.
 
 
 /**
- * optional k8s.io.api.core.v1.ObjectReference tenantRef = 9;
+ * optional string url = 9;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertSpec.prototype.getUrl = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertSpec.prototype.setUrl = function(value) {
+  return jspb.Message.setField(this, 9, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertSpec.prototype.clearUrl = function() {
+  return jspb.Message.setField(this, 9, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertSpec.prototype.hasUrl = function() {
+  return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
+ * optional string image = 10;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertSpec.prototype.getImage = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertSpec.prototype.setImage = function(value) {
+  return jspb.Message.setField(this, 10, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertSpec.prototype.clearImage = function() {
+  return jspb.Message.setField(this, 10, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertSpec.prototype.hasImage = function() {
+  return jspb.Message.getField(this, 10) != null;
+};
+
+
+/**
+ * optional k8s.io.api.core.v1.ObjectReference tenantRef = 11;
  * @return {?proto.k8s.io.api.core.v1.ObjectReference}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertSpec.prototype.getTenantref = function() {
   return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
-    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 9));
+    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 11));
 };
 
 
@@ -6703,7 +6799,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertSpec.prototype.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertSpec.prototype.setTenantref = function(value) {
-  return jspb.Message.setWrapperField(this, 9, value);
+  return jspb.Message.setWrapperField(this, 11, value);
 };
 
 
@@ -6721,7 +6817,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertSpec.prototype.
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertSpec.prototype.hasTenantref = function() {
-  return jspb.Message.getField(this, 9) != null;
+  return jspb.Message.getField(this, 11) != null;
 };
 
 

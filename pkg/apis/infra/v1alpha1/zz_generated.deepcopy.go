@@ -337,6 +337,16 @@ func (in *AlertSpec) DeepCopyInto(out *AlertSpec) {
 			(*out)[key] = val
 		}
 	}
+	if in.URL != nil {
+		in, out := &in.URL, &out.URL
+		*out = new(string)
+		**out = **in
+	}
+	if in.Image != nil {
+		in, out := &in.Image, &out.Image
+		*out = new(string)
+		**out = **in
+	}
 	if in.TenantRef != nil {
 		in, out := &in.TenantRef, &out.TenantRef
 		*out = new(v1.ObjectReference)

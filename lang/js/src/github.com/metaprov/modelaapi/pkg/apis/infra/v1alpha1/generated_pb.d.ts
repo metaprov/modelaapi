@@ -341,6 +341,12 @@ export class AlertSpec extends jspb.Message {
   getFieldsMap(): jspb.Map<string, string>;
   clearFieldsMap(): AlertSpec;
 
+  getUrl(): string;
+  setUrl(value: string): AlertSpec;
+
+  getImage(): string;
+  setImage(value: string): AlertSpec;
+
   getTenantref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setTenantref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): AlertSpec;
   hasTenantref(): boolean;
@@ -364,6 +370,8 @@ export namespace AlertSpec {
     owner: string,
     ttl: number,
     fieldsMap: Array<[string, string]>,
+    url: string,
+    image: string,
     tenantref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
   }
 }

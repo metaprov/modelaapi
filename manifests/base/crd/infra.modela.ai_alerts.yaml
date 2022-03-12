@@ -103,6 +103,10 @@ spec:
                   type: string
                 description: The actual information about the alerts
                 type: object
+              image:
+                default: ""
+                description: A URL for an image.
+                type: string
               level:
                 default: normal
                 description: Scopes is the list of scopes for this token.
@@ -164,6 +168,10 @@ spec:
                   default TTL is 1H.
                 format: int32
                 type: integer
+              url:
+                default: ""
+                description: The URL of the subject
+                type: string
             type: object
           status:
             description: AlertStatus is the observed state of a Alert

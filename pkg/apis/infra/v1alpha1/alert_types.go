@@ -103,9 +103,17 @@ type AlertSpec struct {
 	// The actual information about the alerts
 	// +kubebuilder:validation:Optional
 	Fields map[string]string `json:"fields,omitempty" protobuf:"bytes,8,opt,name=fields"`
+	// The URL of the subject
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
+	URL *string `json:"url,omitempty" protobuf:"bytes,9,opt,name=url"`
+	// A URL for an image.
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
+	Image *string `json:"image,omitempty" protobuf:"bytes,10,opt,name=image"`
 	// TenantRef is the commit tenant
 	// +kubebuilder:validation:Optional
-	TenantRef *v1.ObjectReference `json:"tenantRef,omitempty" protobuf:"bytes,9,opt,name=tenantRef"`
+	TenantRef *v1.ObjectReference `json:"tenantRef,omitempty" protobuf:"bytes,11,opt,name=tenantRef"`
 }
 
 // AlertStatus is the observed state of a Alert
