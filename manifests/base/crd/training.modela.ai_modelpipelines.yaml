@@ -110,10 +110,6 @@ spec:
                             description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                             type: string
                         type: object
-                      enable:
-                        default: false
-                        description: If true, use custom req
-                        type: boolean
                       gpuImage:
                         description: Reference to the managed gpu trainer image
                         properties:
@@ -178,9 +174,6 @@ spec:
                               More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/'
                             type: object
                         type: object
-                      workloadClassName:
-                        description: Workload class name. Predefined resources
-                        type: string
                     type: object
                   servingSiteName:
                     description: ServingSiteName is the serving site for the testing
@@ -403,10 +396,6 @@ spec:
                             description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                             type: string
                         type: object
-                      enable:
-                        default: false
-                        description: If true, use custom req
-                        type: boolean
                       gpuImage:
                         description: Reference to the managed gpu trainer image
                         properties:
@@ -471,9 +460,6 @@ spec:
                               More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/'
                             type: object
                         type: object
-                      workloadClassName:
-                        description: Workload class name. Predefined resources
-                        type: string
                     type: object
                   servingSiteName:
                     description: ServingSiteName is the serving site for the release,
@@ -750,10 +736,6 @@ spec:
                             description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                             type: string
                         type: object
-                      enable:
-                        default: false
-                        description: If true, use custom req
-                        type: boolean
                       gpuImage:
                         description: Reference to the managed gpu trainer image
                         properties:
@@ -818,9 +800,6 @@ spec:
                               More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/'
                             type: object
                         type: object
-                      workloadClassName:
-                        description: Workload class name. Predefined resources
-                        type: string
                     type: object
                   servingSiteName:
                     description: ServingSiteName is the serving site for the release,
@@ -1270,10 +1249,6 @@ spec:
                             description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                             type: string
                         type: object
-                      enable:
-                        default: false
-                        description: If true, use custom req
-                        type: boolean
                       gpuImage:
                         description: Reference to the managed gpu trainer image
                         properties:
@@ -1338,9 +1313,6 @@ spec:
                               More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/'
                             type: object
                         type: object
-                      workloadClassName:
-                        description: Workload class name. Predefined resources
-                        type: string
                     type: object
                   servingSiteName:
                     description: The serving site (name space) used for running the

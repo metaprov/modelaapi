@@ -811,24 +811,15 @@ message Region {
 
 // Specification for resource
 message ResourceSpec {
-  // Workload class name. Predefined resources
-  // +kubebuilder:validation:Optional
-  optional string workloadClassName = 1;
-
-  // If true, use custom req
-  // +kubebuilder:default:=false
-  // +kubebuilder:validation:Optional
-  optional bool enable = 2;
+  // Reference to the managed gpu trainer image
+  optional k8s.io.api.core.v1.ObjectReference cpuImage = 1;
 
   // Reference to the managed gpu trainer image
-  optional k8s.io.api.core.v1.ObjectReference cpuImage = 3;
-
-  // Reference to the managed gpu trainer image
-  optional k8s.io.api.core.v1.ObjectReference gpuImage = 4;
+  optional k8s.io.api.core.v1.ObjectReference gpuImage = 2;
 
   // Custom resource requirments
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ResourceRequirements requirements = 5;
+  optional k8s.io.api.core.v1.ResourceRequirements requirements = 3;
 }
 
 message RocAucCurve {
@@ -905,11 +896,5 @@ message WorkloadClassList {
 // WorkloadClassSpec defines the specification of  a workload class.
 message WorkloadClassSpec {
   optional ResourceSpec resourcesTemplate = 1;
-
-  // Reference to the managed image
-  optional k8s.io.api.core.v1.LocalObjectReference cpuImage = 2;
-
-  // Reference to the managed image
-  optional k8s.io.api.core.v1.LocalObjectReference gpuImage = 3;
 }
 

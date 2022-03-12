@@ -1436,12 +1436,6 @@ export namespace Region {
 }
 
 export class ResourceSpec extends jspb.Message {
-  getWorkloadclassname(): string;
-  setWorkloadclassname(value: string): ResourceSpec;
-
-  getEnable(): boolean;
-  setEnable(value: boolean): ResourceSpec;
-
   getCpuimage(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setCpuimage(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ResourceSpec;
   hasCpuimage(): boolean;
@@ -1467,8 +1461,6 @@ export class ResourceSpec extends jspb.Message {
 
 export namespace ResourceSpec {
   export type AsObject = {
-    workloadclassname: string,
-    enable: boolean,
     cpuimage?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     gpuimage?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     requirements?: k8s_io_api_core_v1_generated_pb.ResourceRequirements.AsObject,
@@ -1661,16 +1653,6 @@ export class WorkloadClassSpec extends jspb.Message {
   hasResourcestemplate(): boolean;
   clearResourcestemplate(): WorkloadClassSpec;
 
-  getCpuimage(): k8s_io_api_core_v1_generated_pb.LocalObjectReference | undefined;
-  setCpuimage(value?: k8s_io_api_core_v1_generated_pb.LocalObjectReference): WorkloadClassSpec;
-  hasCpuimage(): boolean;
-  clearCpuimage(): WorkloadClassSpec;
-
-  getGpuimage(): k8s_io_api_core_v1_generated_pb.LocalObjectReference | undefined;
-  setGpuimage(value?: k8s_io_api_core_v1_generated_pb.LocalObjectReference): WorkloadClassSpec;
-  hasGpuimage(): boolean;
-  clearGpuimage(): WorkloadClassSpec;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): WorkloadClassSpec.AsObject;
   static toObject(includeInstance: boolean, msg: WorkloadClassSpec): WorkloadClassSpec.AsObject;
@@ -1682,8 +1664,6 @@ export class WorkloadClassSpec extends jspb.Message {
 export namespace WorkloadClassSpec {
   export type AsObject = {
     resourcestemplate?: ResourceSpec.AsObject,
-    cpuimage?: k8s_io_api_core_v1_generated_pb.LocalObjectReference.AsObject,
-    gpuimage?: k8s_io_api_core_v1_generated_pb.LocalObjectReference.AsObject,
   }
 }
 
