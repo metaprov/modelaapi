@@ -258,6 +258,9 @@ message DsSplitDatasetRequest {
     github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study study   = 6;
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection = 7;
     map<string,bytes> secret = 8;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset trainingDataset = 9;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset testingDataset = 10;
+
 }
 
 message DsSplitDatasetToRungsRequest {

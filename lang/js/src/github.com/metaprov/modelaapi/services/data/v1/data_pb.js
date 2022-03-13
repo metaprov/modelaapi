@@ -10363,7 +10363,9 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetRequest.toObj
     dataset: (f = msg.getDataset()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.toObject(includeInstance, f),
     study: (f = msg.getStudy()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.toObject(includeInstance, f),
     connection: (f = msg.getConnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
-    secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : []
+    secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : [],
+    trainingdataset: (f = msg.getTrainingdataset()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.toObject(includeInstance, f),
+    testingdataset: (f = msg.getTestingdataset()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -10440,6 +10442,16 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetRequest.deser
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBytes, null, "", "");
          });
+      break;
+    case 9:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.deserializeBinaryFromReader);
+      msg.setTrainingdataset(value);
+      break;
+    case 10:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.deserializeBinaryFromReader);
+      msg.setTestingdataset(value);
       break;
     default:
       reader.skipField();
@@ -10529,6 +10541,22 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetRequest.seria
   f = message.getSecretMap(true);
   if (f && f.getLength() > 0) {
     f.serializeBinary(8, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
+  }
+  f = message.getTrainingdataset();
+  if (f != null) {
+    writer.writeMessage(
+      9,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.serializeBinaryToWriter
+    );
+  }
+  f = message.getTestingdataset();
+  if (f != null) {
+    writer.writeMessage(
+      10,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.serializeBinaryToWriter
+    );
   }
 };
 
@@ -10812,6 +10840,80 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetRequest.proto
 proto.github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetRequest.prototype.clearSecretMap = function() {
   this.getSecretMap().clear();
   return this;};
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset trainingDataset = 9;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetRequest.prototype.getTrainingdataset = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset, 9));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetRequest} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetRequest.prototype.setTrainingdataset = function(value) {
+  return jspb.Message.setWrapperField(this, 9, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetRequest.prototype.clearTrainingdataset = function() {
+  return this.setTrainingdataset(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetRequest.prototype.hasTrainingdataset = function() {
+  return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset testingDataset = 10;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetRequest.prototype.getTestingdataset = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset, 10));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetRequest} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetRequest.prototype.setTestingdataset = function(value) {
+  return jspb.Message.setWrapperField(this, 10, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetRequest.prototype.clearTestingdataset = function() {
+  return this.setTestingdataset(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetRequest.prototype.hasTestingdataset = function() {
+  return jspb.Message.getField(this, 10) != null;
+};
 
 
 

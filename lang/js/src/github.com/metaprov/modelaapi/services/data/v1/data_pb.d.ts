@@ -1124,6 +1124,16 @@ export class DsSplitDatasetRequest extends jspb.Message {
   getSecretMap(): jspb.Map<string, Uint8Array | string>;
   clearSecretMap(): DsSplitDatasetRequest;
 
+  getTrainingdataset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
+  setTrainingdataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): DsSplitDatasetRequest;
+  hasTrainingdataset(): boolean;
+  clearTrainingdataset(): DsSplitDatasetRequest;
+
+  getTestingdataset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
+  setTestingdataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): DsSplitDatasetRequest;
+  hasTestingdataset(): boolean;
+  clearTestingdataset(): DsSplitDatasetRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DsSplitDatasetRequest.AsObject;
   static toObject(includeInstance: boolean, msg: DsSplitDatasetRequest): DsSplitDatasetRequest.AsObject;
@@ -1142,6 +1152,8 @@ export namespace DsSplitDatasetRequest {
     study?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
     connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     secretMap: Array<[string, Uint8Array | string]>,
+    trainingdataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
+    testingdataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
   }
 }
 
