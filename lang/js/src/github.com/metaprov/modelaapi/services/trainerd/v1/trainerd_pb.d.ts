@@ -51,6 +51,16 @@ export class TrainRequest extends jspb.Message {
   getSecretMap(): jspb.Map<string, Uint8Array | string>;
   clearSecretMap(): TrainRequest;
 
+  getTestdataset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
+  setTestdataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): TrainRequest;
+  hasTestdataset(): boolean;
+  clearTestdataset(): TrainRequest;
+
+  getTraindataset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
+  setTraindataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): TrainRequest;
+  hasTraindataset(): boolean;
+  clearTraindataset(): TrainRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TrainRequest.AsObject;
   static toObject(includeInstance: boolean, msg: TrainRequest): TrainRequest.AsObject;
@@ -70,6 +80,8 @@ export namespace TrainRequest {
     dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
     connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     secretMap: Array<[string, Uint8Array | string]>,
+    testdataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
+    traindataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
   }
 }
 
@@ -249,6 +261,16 @@ export class TestRequest extends jspb.Message {
   getSecretMap(): jspb.Map<string, Uint8Array | string>;
   clearSecretMap(): TestRequest;
 
+  getTestdataset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
+  setTestdataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): TestRequest;
+  hasTestdataset(): boolean;
+  clearTestdataset(): TestRequest;
+
+  getTraindataset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
+  setTraindataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): TestRequest;
+  hasTraindataset(): boolean;
+  clearTraindataset(): TestRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TestRequest.AsObject;
   static toObject(includeInstance: boolean, msg: TestRequest): TestRequest.AsObject;
@@ -268,6 +290,8 @@ export namespace TestRequest {
     dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
     connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     secretMap: Array<[string, Uint8Array | string]>,
+    testdataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
+    traindataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
   }
 }
 
@@ -396,6 +420,16 @@ export class TrainEnsembleRequest extends jspb.Message {
   getSecretMap(): jspb.Map<string, Uint8Array | string>;
   clearSecretMap(): TrainEnsembleRequest;
 
+  getTestdataset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
+  setTestdataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): TrainEnsembleRequest;
+  hasTestdataset(): boolean;
+  clearTestdataset(): TrainEnsembleRequest;
+
+  getTraindataset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
+  setTraindataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): TrainEnsembleRequest;
+  hasTraindataset(): boolean;
+  clearTraindataset(): TrainEnsembleRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TrainEnsembleRequest.AsObject;
   static toObject(includeInstance: boolean, msg: TrainEnsembleRequest): TrainEnsembleRequest.AsObject;
@@ -416,6 +450,8 @@ export namespace TrainEnsembleRequest {
     dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
     connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     secretMap: Array<[string, Uint8Array | string]>,
+    testdataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
+    traindataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
   }
 }
 
@@ -468,6 +504,16 @@ export class TestEnsembleRequest extends jspb.Message {
   getSecretMap(): jspb.Map<string, Uint8Array | string>;
   clearSecretMap(): TestEnsembleRequest;
 
+  getTestdataset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
+  setTestdataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): TestEnsembleRequest;
+  hasTestdataset(): boolean;
+  clearTestdataset(): TestEnsembleRequest;
+
+  getTraindataset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
+  setTraindataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): TestEnsembleRequest;
+  hasTraindataset(): boolean;
+  clearTraindataset(): TestEnsembleRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TestEnsembleRequest.AsObject;
   static toObject(includeInstance: boolean, msg: TestEnsembleRequest): TestEnsembleRequest.AsObject;
@@ -488,6 +534,8 @@ export namespace TestEnsembleRequest {
     dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
     connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     secretMap: Array<[string, Uint8Array | string]>,
+    testdataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
+    traindataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
   }
 }
 
@@ -535,6 +583,16 @@ export class ForecastRequest extends jspb.Message {
   getSecretMap(): jspb.Map<string, Uint8Array | string>;
   clearSecretMap(): ForecastRequest;
 
+  getTestdataset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
+  setTestdataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): ForecastRequest;
+  hasTestdataset(): boolean;
+  clearTestdataset(): ForecastRequest;
+
+  getTraindataset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
+  setTraindataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): ForecastRequest;
+  hasTraindataset(): boolean;
+  clearTraindataset(): ForecastRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ForecastRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ForecastRequest): ForecastRequest.AsObject;
@@ -554,6 +612,8 @@ export namespace ForecastRequest {
     dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
     connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     secretMap: Array<[string, Uint8Array | string]>,
+    testdataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
+    traindataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
   }
 }
 
