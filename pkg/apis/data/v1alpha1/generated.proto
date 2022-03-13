@@ -1111,18 +1111,22 @@ message DataProductSpec {
 
   // DefaultResource will be used if the resources are not specified.
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 13;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec trainingResources = 13;
+
+  // DefaultResource will be used if the resources are not specified.
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec servingResources = 14;
 
   // Denote how many time a job is retry after failure
   // +kubebuilder:default:=3
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Maximum=10
   // +kubebuilder:validation:Optional
-  optional int32 retriesOnFailure = 14;
+  optional int32 retriesOnFailure = 15;
 
   // KPIs is the product kpi. This is for information porpose
   // +kubebuilder:validation:Optional
-  repeated KPI kpis = 15;
+  repeated KPI kpis = 16;
 
   // OnCallAccountName is the name of the account on call.
   // +kubebuilder:validation:Optional

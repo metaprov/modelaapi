@@ -1202,7 +1202,8 @@ func (in *DataProductSpec) DeepCopyInto(out *DataProductSpec) {
 	}
 	in.DataLocation.DeepCopyInto(&out.DataLocation)
 	in.Notification.DeepCopyInto(&out.Notification)
-	in.DefaultResources.DeepCopyInto(&out.DefaultResources)
+	in.DefaultTrainingResources.DeepCopyInto(&out.DefaultTrainingResources)
+	in.DefaultServingResources.DeepCopyInto(&out.DefaultServingResources)
 	if in.RetriesOnFailure != nil {
 		in, out := &in.RetriesOnFailure, &out.RetriesOnFailure
 		*out = new(int32)

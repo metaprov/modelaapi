@@ -1403,10 +1403,15 @@ export class DataProductSpec extends jspb.Message {
   hasNotification(): boolean;
   clearNotification(): DataProductSpec;
 
-  getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
-  setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): DataProductSpec;
-  hasResources(): boolean;
-  clearResources(): DataProductSpec;
+  getTrainingresources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
+  setTrainingresources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): DataProductSpec;
+  hasTrainingresources(): boolean;
+  clearTrainingresources(): DataProductSpec;
+
+  getServingresources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
+  setServingresources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): DataProductSpec;
+  hasServingresources(): boolean;
+  clearServingresources(): DataProductSpec;
 
   getRetriesonfailure(): number;
   setRetriesonfailure(value: number): DataProductSpec;
@@ -1464,7 +1469,8 @@ export namespace DataProductSpec {
     description: string,
     datalocation?: DataLocation.AsObject,
     notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
-    resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
+    trainingresources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
+    servingresources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     retriesonfailure: number,
     kpisList: Array<KPI.AsObject>,
     oncallaccountname: string,

@@ -134,16 +134,19 @@ type DataProductSpec struct {
 	Notification catalog.NotificationSpec `json:"notification,omitempty" protobuf:"bytes,12,opt,name=notification"`
 	// DefaultResource will be used if the resources are not specified.
 	// +kubebuilder:validation:Optional
-	DefaultResources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,13,opt,name=resources"`
+	DefaultTrainingResources catalog.ResourceSpec `json:"trainingResources,omitempty" protobuf:"bytes,13,opt,name=trainingResources"`
+	// DefaultResource will be used if the resources are not specified.
+	// +kubebuilder:validation:Optional
+	DefaultServingResources catalog.ResourceSpec `json:"servingResources,omitempty" protobuf:"bytes,14,opt,name=servingResources"`
 	// Denote how many time a job is retry after failure
 	// +kubebuilder:default:=3
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Maximum=10
 	// +kubebuilder:validation:Optional
-	RetriesOnFailure *int32 `json:"retriesOnFailure,omitempty" protobuf:"varint,14,opt,name=retriesOnFailure"`
+	RetriesOnFailure *int32 `json:"retriesOnFailure,omitempty" protobuf:"varint,15,opt,name=retriesOnFailure"`
 	// KPIs is the product kpi. This is for information porpose
 	//+kubebuilder:validation:Optional
-	KPIs []KPI `json:"kpis,omitempty" protobuf:"bytes,15,rep,name=kpis"`
+	KPIs []KPI `json:"kpis,omitempty" protobuf:"bytes,16,rep,name=kpis"`
 	// OnCallAccountName is the name of the account on call.
 	//+kubebuilder:validation:Optional
 	OnCallAccountName string `json:"onCallAccountName,omitempty" protobuf:"bytes,17,opt,name=onCallAccountName"`
