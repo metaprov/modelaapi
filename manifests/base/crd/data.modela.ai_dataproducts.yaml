@@ -34,22 +34,25 @@ spec:
     - jsonPath: .spec.public
       name: Public
       type: boolean
+    - jsonPath: .status.totalErrorAlerts
+      name: Errors
+      type: integer
     - jsonPath: .status.totalDatasources
       name: Datasources
       type: integer
-    - jsonPath: .status.datasets
+    - jsonPath: .status.totalDatasets
       name: Datasets
       type: integer
-    - jsonPath: .status.studies
+    - jsonPath: .status.totalStudies
       name: Studies
       type: integer
-    - jsonPath: .status.models
+    - jsonPath: .status.totalModels
       name: Models
       type: integer
-    - jsonPath: .status.predictors
+    - jsonPath: .status.totalPredictors
       name: Predictors
       type: integer
-    - jsonPath: .status.apps
+    - jsonPath: .status.totalApps
       name: Apps
       type: integer
     - jsonPath: .metadata.creationTimestamp

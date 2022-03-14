@@ -42,12 +42,13 @@ type DataProductCondition struct {
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
 // +kubebuilder:printcolumn:name="Task",type="string",JSONPath=".spec.task"
 // +kubebuilder:printcolumn:name="Public",type="boolean",JSONPath=".spec.public"
+// +kubebuilder:printcolumn:name="Errors",type="integer",JSONPath=".status.totalErrorAlerts"
 // +kubebuilder:printcolumn:name="Datasources",type="integer",JSONPath=".status.totalDatasources"
-// +kubebuilder:printcolumn:name="Datasets",type="integer",JSONPath=".status.datasets"
-// +kubebuilder:printcolumn:name="Studies",type="integer",JSONPath=".status.studies"
-// +kubebuilder:printcolumn:name="Models",type="integer",JSONPath=".status.models"
-// +kubebuilder:printcolumn:name="Predictors",type="integer",JSONPath=".status.predictors"
-// +kubebuilder:printcolumn:name="Apps",type="integer",JSONPath=".status.apps"
+// +kubebuilder:printcolumn:name="Datasets",type="integer",JSONPath=".status.totalDatasets"
+// +kubebuilder:printcolumn:name="Studies",type="integer",JSONPath=".status.totalStudies"
+// +kubebuilder:printcolumn:name="Models",type="integer",JSONPath=".status.totalModels"
+// +kubebuilder:printcolumn:name="Predictors",type="integer",JSONPath=".status.totalPredictors"
+// +kubebuilder:printcolumn:name="Apps",type="integer",JSONPath=".status.totalApps"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=dataproducts,shortName=prod,singular=dataproduct,shortName="prod",categories={data,modela,all}
 type DataProduct struct {
