@@ -95,9 +95,6 @@ message TestRequest {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset            dataset    = 8;
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection        connection = 9;
     map<string,bytes> secret = 10;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset            testDataset = 11;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset            trainDataset = 12;
-
 }
 
 message TestResponse {
@@ -147,9 +144,7 @@ message TrainEnsembleRequest  {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource         datasource     = 8;
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset            dataset    = 9;
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection        connection = 10;
-    map<string,bytes> secret = 11;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset            testDataset = 12;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset            trainDataset = 13;
+    map<string,bytes> secret = 11;    
 }
 
 
@@ -164,9 +159,7 @@ message TestEnsembleRequest  {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource         datasource = 8;
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset            dataset    = 9;
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection        connection = 10;
-    map<string,bytes> secret = 11;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset            testDataset = 12;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset            trainDataset = 13;
+    map<string,bytes> secret = 11;    
 }
 
 message ForecastRequest {
@@ -178,9 +171,7 @@ message ForecastRequest {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource         datasource  = 7;
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset            dataset = 8;
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection        connection    = 9;
-    map<string,bytes> secret = 10;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset            testDataset = 11;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset            trainDataset = 12;
+    map<string,bytes> secret = 10;    
 }
 
 message ForecastResponse {

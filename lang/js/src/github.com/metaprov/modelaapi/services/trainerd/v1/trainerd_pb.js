@@ -2069,9 +2069,7 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestRequest.toObject = 
     datasource: (f = msg.getDatasource()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.toObject(includeInstance, f),
     dataset: (f = msg.getDataset()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.toObject(includeInstance, f),
     connection: (f = msg.getConnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
-    secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : [],
-    testdataset: (f = msg.getTestdataset()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.toObject(includeInstance, f),
-    traindataset: (f = msg.getTraindataset()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.toObject(includeInstance, f)
+    secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
   if (includeInstance) {
@@ -2153,16 +2151,6 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestRequest.deserialize
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBytes, null, "", "");
          });
-      break;
-    case 11:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.deserializeBinaryFromReader);
-      msg.setTestdataset(value);
-      break;
-    case 12:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.deserializeBinaryFromReader);
-      msg.setTraindataset(value);
       break;
     default:
       reader.skipField();
@@ -2260,22 +2248,6 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestRequest.serializeBi
   f = message.getSecretMap(true);
   if (f && f.getLength() > 0) {
     f.serializeBinary(10, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
-  }
-  f = message.getTestdataset();
-  if (f != null) {
-    writer.writeMessage(
-      11,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.serializeBinaryToWriter
-    );
-  }
-  f = message.getTraindataset();
-  if (f != null) {
-    writer.writeMessage(
-      12,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.serializeBinaryToWriter
-    );
   }
 };
 
@@ -2596,80 +2568,6 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestRequest.prototype.g
 proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestRequest.prototype.clearSecretMap = function() {
   this.getSecretMap().clear();
   return this;};
-
-
-/**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset testDataset = 11;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset}
- */
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestRequest.prototype.getTestdataset = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset, 11));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestRequest} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestRequest.prototype.setTestdataset = function(value) {
-  return jspb.Message.setWrapperField(this, 11, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestRequest.prototype.clearTestdataset = function() {
-  return this.setTestdataset(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestRequest.prototype.hasTestdataset = function() {
-  return jspb.Message.getField(this, 11) != null;
-};
-
-
-/**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset trainDataset = 12;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset}
- */
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestRequest.prototype.getTraindataset = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset, 12));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestRequest} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestRequest.prototype.setTraindataset = function(value) {
-  return jspb.Message.setWrapperField(this, 12, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestRequest.prototype.clearTraindataset = function() {
-  return this.setTraindataset(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestRequest.prototype.hasTraindataset = function() {
-  return jspb.Message.getField(this, 12) != null;
-};
 
 
 
@@ -3323,9 +3221,7 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainEnsembleRequest.to
     datasource: (f = msg.getDatasource()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.toObject(includeInstance, f),
     dataset: (f = msg.getDataset()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.toObject(includeInstance, f),
     connection: (f = msg.getConnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
-    secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : [],
-    testdataset: (f = msg.getTestdataset()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.toObject(includeInstance, f),
-    traindataset: (f = msg.getTraindataset()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.toObject(includeInstance, f)
+    secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
   if (includeInstance) {
@@ -3412,16 +3308,6 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainEnsembleRequest.de
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBytes, null, "", "");
          });
-      break;
-    case 12:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.deserializeBinaryFromReader);
-      msg.setTestdataset(value);
-      break;
-    case 13:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.deserializeBinaryFromReader);
-      msg.setTraindataset(value);
       break;
     default:
       reader.skipField();
@@ -3527,22 +3413,6 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainEnsembleRequest.se
   f = message.getSecretMap(true);
   if (f && f.getLength() > 0) {
     f.serializeBinary(11, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
-  }
-  f = message.getTestdataset();
-  if (f != null) {
-    writer.writeMessage(
-      12,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.serializeBinaryToWriter
-    );
-  }
-  f = message.getTraindataset();
-  if (f != null) {
-    writer.writeMessage(
-      13,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.serializeBinaryToWriter
-    );
   }
 };
 
@@ -3903,80 +3773,6 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainEnsembleRequest.pr
   return this;};
 
 
-/**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset testDataset = 12;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset}
- */
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainEnsembleRequest.prototype.getTestdataset = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset, 12));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainEnsembleRequest} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainEnsembleRequest.prototype.setTestdataset = function(value) {
-  return jspb.Message.setWrapperField(this, 12, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainEnsembleRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainEnsembleRequest.prototype.clearTestdataset = function() {
-  return this.setTestdataset(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainEnsembleRequest.prototype.hasTestdataset = function() {
-  return jspb.Message.getField(this, 12) != null;
-};
-
-
-/**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset trainDataset = 13;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset}
- */
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainEnsembleRequest.prototype.getTraindataset = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset, 13));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainEnsembleRequest} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainEnsembleRequest.prototype.setTraindataset = function(value) {
-  return jspb.Message.setWrapperField(this, 13, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainEnsembleRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainEnsembleRequest.prototype.clearTraindataset = function() {
-  return this.setTraindataset(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainEnsembleRequest.prototype.hasTraindataset = function() {
-  return jspb.Message.getField(this, 13) != null;
-};
-
-
 
 /**
  * List of repeated fields within this message type.
@@ -4026,9 +3822,7 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestEnsembleRequest.toO
     datasource: (f = msg.getDatasource()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.toObject(includeInstance, f),
     dataset: (f = msg.getDataset()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.toObject(includeInstance, f),
     connection: (f = msg.getConnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
-    secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : [],
-    testdataset: (f = msg.getTestdataset()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.toObject(includeInstance, f),
-    traindataset: (f = msg.getTraindataset()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.toObject(includeInstance, f)
+    secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
   if (includeInstance) {
@@ -4115,16 +3909,6 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestEnsembleRequest.des
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBytes, null, "", "");
          });
-      break;
-    case 12:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.deserializeBinaryFromReader);
-      msg.setTestdataset(value);
-      break;
-    case 13:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.deserializeBinaryFromReader);
-      msg.setTraindataset(value);
       break;
     default:
       reader.skipField();
@@ -4230,22 +4014,6 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestEnsembleRequest.ser
   f = message.getSecretMap(true);
   if (f && f.getLength() > 0) {
     f.serializeBinary(11, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
-  }
-  f = message.getTestdataset();
-  if (f != null) {
-    writer.writeMessage(
-      12,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.serializeBinaryToWriter
-    );
-  }
-  f = message.getTraindataset();
-  if (f != null) {
-    writer.writeMessage(
-      13,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.serializeBinaryToWriter
-    );
   }
 };
 
@@ -4606,80 +4374,6 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestEnsembleRequest.pro
   return this;};
 
 
-/**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset testDataset = 12;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset}
- */
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestEnsembleRequest.prototype.getTestdataset = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset, 12));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestEnsembleRequest} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestEnsembleRequest.prototype.setTestdataset = function(value) {
-  return jspb.Message.setWrapperField(this, 12, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestEnsembleRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestEnsembleRequest.prototype.clearTestdataset = function() {
-  return this.setTestdataset(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestEnsembleRequest.prototype.hasTestdataset = function() {
-  return jspb.Message.getField(this, 12) != null;
-};
-
-
-/**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset trainDataset = 13;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset}
- */
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestEnsembleRequest.prototype.getTraindataset = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset, 13));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestEnsembleRequest} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestEnsembleRequest.prototype.setTraindataset = function(value) {
-  return jspb.Message.setWrapperField(this, 13, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestEnsembleRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestEnsembleRequest.prototype.clearTraindataset = function() {
-  return this.setTraindataset(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestEnsembleRequest.prototype.hasTraindataset = function() {
-  return jspb.Message.getField(this, 13) != null;
-};
-
-
 
 
 
@@ -4720,9 +4414,7 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.ForecastRequest.toObjec
     datasource: (f = msg.getDatasource()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.toObject(includeInstance, f),
     dataset: (f = msg.getDataset()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.toObject(includeInstance, f),
     connection: (f = msg.getConnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
-    secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : [],
-    testdataset: (f = msg.getTestdataset()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.toObject(includeInstance, f),
-    traindataset: (f = msg.getTraindataset()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.toObject(includeInstance, f)
+    secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
   if (includeInstance) {
@@ -4804,16 +4496,6 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.ForecastRequest.deseria
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBytes, null, "", "");
          });
-      break;
-    case 11:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.deserializeBinaryFromReader);
-      msg.setTestdataset(value);
-      break;
-    case 12:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.deserializeBinaryFromReader);
-      msg.setTraindataset(value);
       break;
     default:
       reader.skipField();
@@ -4911,22 +4593,6 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.ForecastRequest.seriali
   f = message.getSecretMap(true);
   if (f && f.getLength() > 0) {
     f.serializeBinary(10, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
-  }
-  f = message.getTestdataset();
-  if (f != null) {
-    writer.writeMessage(
-      11,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.serializeBinaryToWriter
-    );
-  }
-  f = message.getTraindataset();
-  if (f != null) {
-    writer.writeMessage(
-      12,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.serializeBinaryToWriter
-    );
   }
 };
 
@@ -5247,80 +4913,6 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.ForecastRequest.prototy
 proto.github.com.metaprov.modelaapi.services.trainerd.v1.ForecastRequest.prototype.clearSecretMap = function() {
   this.getSecretMap().clear();
   return this;};
-
-
-/**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset testDataset = 11;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset}
- */
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.ForecastRequest.prototype.getTestdataset = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset, 11));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.trainerd.v1.ForecastRequest} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.ForecastRequest.prototype.setTestdataset = function(value) {
-  return jspb.Message.setWrapperField(this, 11, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.trainerd.v1.ForecastRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.ForecastRequest.prototype.clearTestdataset = function() {
-  return this.setTestdataset(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.ForecastRequest.prototype.hasTestdataset = function() {
-  return jspb.Message.getField(this, 11) != null;
-};
-
-
-/**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset trainDataset = 12;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset}
- */
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.ForecastRequest.prototype.getTraindataset = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset, 12));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.trainerd.v1.ForecastRequest} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.ForecastRequest.prototype.setTraindataset = function(value) {
-  return jspb.Message.setWrapperField(this, 12, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.trainerd.v1.ForecastRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.ForecastRequest.prototype.clearTraindataset = function() {
-  return this.setTraindataset(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.ForecastRequest.prototype.hasTraindataset = function() {
-  return jspb.Message.getField(this, 12) != null;
-};
 
 
 
