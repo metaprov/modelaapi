@@ -729,6 +729,12 @@ spec:
               totalDatasources:
                 format: int32
                 type: integer
+              totalErrorAlerts:
+                format: int32
+                type: integer
+              totalInfoAlerts:
+                format: int32
+                type: integer
               totalModelPipelineRuns:
                 format: int32
                 type: integer
@@ -736,6 +742,9 @@ spec:
                 format: int32
                 type: integer
               totalModels:
+                format: int32
+                type: integer
+              totalPredictions:
                 format: int32
                 type: integer
               totalPredictors:

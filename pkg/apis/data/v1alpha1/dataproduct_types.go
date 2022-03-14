@@ -216,17 +216,26 @@ type DataProductStatus struct {
 	//+kubebuilder:validation:Optional
 	TotalApps int32 `json:"totalApps,omitempty" protobuf:"bytes,13,opt,name=totalApps"`
 
+	//+kubebuilder:validation:Optional
+	TotalPredictions int32 `json:"totalPredictions,omitempty" protobuf:"bytes,14,opt,name=totalPredictions"`
+
+	//+kubebuilder:validation:Optional
+	TotalInfoAlerts int32 `json:"totalInfoAlerts,omitempty" protobuf:"bytes,15,opt,name=totalInfoAlerts"`
+
+	//+kubebuilder:validation:Optional
+	TotalErrorsAlerts int32 `json:"totalErrorAlerts,omitempty" protobuf:"bytes,16,opt,name=totalErrorAlerts"`
+
 	// Update in case of terminal failure
 	// Borrowed from cluster api controller
-	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,14,opt,name=failureReason"`
+	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,17,opt,name=failureReason"`
 
 	// Update in case of terminal failure message
-	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,15,opt,name=failureMessage"`
+	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,18,opt,name=failureMessage"`
 
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []DataProductCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,16,rep,name=conditions"`
+	Conditions []DataProductCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,19,rep,name=conditions"`
 }
 
 // +kubebuilder:object:root=true

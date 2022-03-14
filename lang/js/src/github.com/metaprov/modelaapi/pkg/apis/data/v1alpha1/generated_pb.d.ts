@@ -1525,6 +1525,15 @@ export class DataProductStatus extends jspb.Message {
   getTotalapps(): number;
   setTotalapps(value: number): DataProductStatus;
 
+  getTotalpredictions(): number;
+  setTotalpredictions(value: number): DataProductStatus;
+
+  getTotalinfoalerts(): number;
+  setTotalinfoalerts(value: number): DataProductStatus;
+
+  getTotalerroralerts(): number;
+  setTotalerroralerts(value: number): DataProductStatus;
+
   getFailurereason(): string;
   setFailurereason(value: string): DataProductStatus;
 
@@ -1559,6 +1568,9 @@ export namespace DataProductStatus {
     totalpredictors: number,
     totalbuilders: number,
     totalapps: number,
+    totalpredictions: number,
+    totalinfoalerts: number,
+    totalerroralerts: number,
     failurereason: string,
     failuremessage: string,
     conditionsList: Array<DataProductCondition.AsObject>,

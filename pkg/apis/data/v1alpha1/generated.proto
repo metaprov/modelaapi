@@ -1203,17 +1203,26 @@ message DataProductStatus {
   // +kubebuilder:validation:Optional
   optional int32 totalApps = 13;
 
+  // +kubebuilder:validation:Optional
+  optional int32 totalPredictions = 14;
+
+  // +kubebuilder:validation:Optional
+  optional int32 totalInfoAlerts = 15;
+
+  // +kubebuilder:validation:Optional
+  optional int32 totalErrorAlerts = 16;
+
   // Update in case of terminal failure
   // Borrowed from cluster api controller
-  optional string failureReason = 14;
+  optional string failureReason = 17;
 
   // Update in case of terminal failure message
-  optional string failureMessage = 15;
+  optional string failureMessage = 18;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated DataProductCondition conditions = 16;
+  repeated DataProductCondition conditions = 19;
 }
 
 // +kubebuilder:object:root=true
