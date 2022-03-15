@@ -602,7 +602,8 @@ func (model *Model) MarkReportFailed(err string) {
 }
 
 func (model *Model) Reported() bool {
-	return model.Status.ReportName != ""
+	cond := model.GetCond(ModelReported)
+	return cond.Status == v1.ConditionTrue
 }
 
 // ------------------ Forecast
