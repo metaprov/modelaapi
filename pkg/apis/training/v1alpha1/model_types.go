@@ -318,44 +318,48 @@ type ModelSpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Baseline *bool `json:"baseline,omitempty" protobuf:"varint,30,opt,name=baseline"`
+	// Indicate a fast mode. If true, skip the validation/profiling/report
+	// +kubebuilder:default:="false"
+	// +kubebuilder:validation:Optional
+	Fast *bool `json:"fast,omitempty" protobuf:"varint,31,opt,name=fast"`
 	// Is this model flagged by the user.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Flagged *bool `json:"flagged,omitempty" protobuf:"varint,31,opt,name=flagged"`
+	Flagged *bool `json:"flagged,omitempty" protobuf:"varint,32,opt,name=flagged"`
 	// Location is the location of the model artifacts (metadata, reports and estimators).
 	// +kubebuilder:validation:Optional
-	Location *data.DataLocation `json:"location,omitempty" protobuf:"bytes,32,opt,name=location"`
+	Location *data.DataLocation `json:"location,omitempty" protobuf:"bytes,33,opt,name=location"`
 	// The specification for the forecasting algorithm if this model is part of a forecasting
 	// +kubebuilder:validation:Optional
-	Forecasting *ForecastSpec `json:"forecast,omitempty" protobuf:"bytes,33,opt,name=forecast"`
+	Forecasting *ForecastSpec `json:"forecast,omitempty" protobuf:"bytes,34,opt,name=forecast"`
 	// Compilation denotes how to compile the model. Not supported in the current release.
 	// +kubebuilder:validation:Optional
-	Compilation *catalog.CompilerSpec `json:"compilation,omitempty" protobuf:"bytes,34,opt,name=compilation"`
+	Compilation *catalog.CompilerSpec `json:"compilation,omitempty" protobuf:"bytes,35,opt,name=compilation"`
 	// ActiveDeadlineSeconds is the deadline of a job for this model.
 	// +kubebuilder:default:=600
 	// +kubebuilder:validation:Optional
-	ActiveDeadlineSeconds *int64 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,35,opt,name=activeDeadlineSeconds"`
+	ActiveDeadlineSeconds *int64 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,36,opt,name=activeDeadlineSeconds"`
 	// ModelType is the type of model for this estimator
 	// +kubebuilder:default:=classical
 	// +kubebuilder:validation:Optional
-	EstimatorType *catalog.ModelType `json:"estimatorType,omitempty" protobuf:"bytes,36,opt,name=estimatorType"`
+	EstimatorType *catalog.ModelType `json:"estimatorType,omitempty" protobuf:"bytes,37,opt,name=estimatorType"`
 	// TTL
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
-	TTL *int32 `json:"ttl,omitempty" protobuf:"varint,37,opt,name=ttl"`
+	TTL *int32 `json:"ttl,omitempty" protobuf:"varint,38,opt,name=ttl"`
 	// Mark the model class. The model class is the origin of the model
 	// +kubebuilder:validation:Optional
-	ModelClass catalog.ModelClassType `json:"modelClass,omitempty" protobuf:"bytes,38,opt,name=modelClass"`
+	ModelClass catalog.ModelClassType `json:"modelClass,omitempty" protobuf:"bytes,39,opt,name=modelClass"`
 	// Set the trial ID, by the optimizer.
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
-	TrialID *int32 `json:"trialID,omitempty" protobuf:"varint,39,opt,name=trialID"`
+	TrialID *int32 `json:"trialID,omitempty" protobuf:"varint,40,opt,name=trialID"`
 	// The Governance requirements.
 	// +kubebuilder:validation:Optional
-	Governance *data.GovernanceSpec `json:"governance,omitempty" protobuf:"bytes,40,opt,name=governance"`
+	Governance *data.GovernanceSpec `json:"governance,omitempty" protobuf:"bytes,41,opt,name=governance"`
 	// The Interpretability requirements.
 	// +kubebuilder:validation:Optional
-	Interpretability InterpretabilitySpec `json:"interpretability,omitempty" protobuf:"bytes,41,opt,name=interpretability"`
+	Interpretability InterpretabilitySpec `json:"interpretability,omitempty" protobuf:"bytes,42,opt,name=interpretability"`
 }
 
 type EnsembleSpec struct {

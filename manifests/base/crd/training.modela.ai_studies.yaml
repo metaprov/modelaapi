@@ -248,6 +248,10 @@ spec:
                       of the top 3 models.
                     type: boolean
                 type: object
+              fast:
+                default: "false"
+                description: Indicate a fast mode. If true, skip the model explenation.
+                type: boolean
               feSearch:
                 description: 'Specification for feature engineereing Default: all
                   preprocessing is set to auto.'

@@ -2156,6 +2156,9 @@ export class DatasetSpec extends jspb.Message {
   hasCorrelation(): boolean;
   clearCorrelation(): DatasetSpec;
 
+  getFast(): boolean;
+  setFast(value: boolean): DatasetSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DatasetSpec.AsObject;
   static toObject(includeInstance: boolean, msg: DatasetSpec): DatasetSpec.AsObject;
@@ -2186,6 +2189,7 @@ export namespace DatasetSpec {
     task: string,
     notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
     correlation?: CorrelationSpec.AsObject,
+    fast: boolean,
   }
 }
 

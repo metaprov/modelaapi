@@ -1608,6 +1608,11 @@ message DatasetSpec {
   // Specification for the correlation spec
   // +kubebuilder:validation:Optional
   optional CorrelationSpec correlation = 21;
+
+  // Indicate a fast mode. If true, skip the validation/profiling/report
+  // +kubebuilder:default:="false"
+  // +kubebuilder:validation:Optional
+  optional bool fast = 22;
 }
 
 // DatasetStatistics contains statistics about attributes and correltation between attributes

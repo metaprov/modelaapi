@@ -108,6 +108,10 @@ spec:
                 default: ""
                 description: The display name
                 type: string
+              fast:
+                default: "false"
+                description: Indicate a fast mode. If true, skip the validation/profiling/report
+                type: boolean
               labeled:
                 default: true
                 description: Labeled indicates if this dataset is labeled or not.

@@ -2900,6 +2900,9 @@ export class ModelSpec extends jspb.Message {
   getBaseline(): boolean;
   setBaseline(value: boolean): ModelSpec;
 
+  getFast(): boolean;
+  setFast(value: boolean): ModelSpec;
+
   getFlagged(): boolean;
   setFlagged(value: boolean): ModelSpec;
 
@@ -2982,6 +2985,7 @@ export namespace ModelSpec {
     benchmarked: boolean,
     explained: boolean,
     baseline: boolean,
+    fast: boolean,
     flagged: boolean,
     location?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     forecast?: ForecastSpec.AsObject,
@@ -4764,6 +4768,9 @@ export class StudySpec extends jspb.Message {
   getModelexplained(): boolean;
   setModelexplained(value: boolean): StudySpec;
 
+  getFast(): boolean;
+  setFast(value: boolean): StudySpec;
+
   getLocation(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
   setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): StudySpec;
   hasLocation(): boolean;
@@ -4835,6 +4842,7 @@ export namespace StudySpec {
     modelimagepushed: boolean,
     modelbenchmarked: boolean,
     modelexplained: boolean,
+    fast: boolean,
     location?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     owner: string,
     activedeadlineseconds: number,

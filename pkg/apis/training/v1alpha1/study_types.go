@@ -494,42 +494,46 @@ type StudySpec struct {
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
 	ModelExplained *bool `json:"modelExplained,omitempty" protobuf:"varint,21,opt,name=modelExplained"`
+	// Indicate a fast mode. If true, skip the model explenation.
+	// +kubebuilder:default:="false"
+	// +kubebuilder:validation:Optional
+	Fast *bool `json:"fast,omitempty" protobuf:"bytes,22,opt,name=fast"`
 	// The location of the study artifacts
 	// By default the bucket is the data product bucket.
 	// +kubebuilder:validation:Optional
-	Location data.DataLocation `json:"location,omitempty" protobuf:"bytes,22,opt,name=location"`
+	Location data.DataLocation `json:"location,omitempty" protobuf:"bytes,23,opt,name=location"`
 	// The owner account name
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
-	Owner *string `json:"owner,omitempty" protobuf:"bytes,23,opt,name=owner"`
+	Owner *string `json:"owner,omitempty" protobuf:"bytes,24,opt,name=owner"`
 	// ActiveDeadlineSeconds is the deadline of a job for this study.
 	// +kubebuilder:default:=600
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
-	ActiveDeadlineSeconds *int64 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,24,opt,name=activeDeadlineSeconds"`
+	ActiveDeadlineSeconds *int64 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,25,opt,name=activeDeadlineSeconds"`
 	// This is the compiler spec for models. This spec will act as a template for the models created by the study
 	//+kubebuilder:validation:Optional
-	Compilation catalog.CompilerSpec `json:"compilation,omitempty" protobuf:"bytes,25,opt,name=compilation"`
+	Compilation catalog.CompilerSpec `json:"compilation,omitempty" protobuf:"bytes,26,opt,name=compilation"`
 	// Set to true if this study is a template
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Template *bool `json:"template,omitempty" protobuf:"varint,26,opt,name=template"`
+	Template *bool `json:"template,omitempty" protobuf:"varint,27,opt,name=template"`
 	// Is this model flagged
 	// +kubebuilder:validation:Optional
-	Flagged *bool `json:"flagged,omitempty" protobuf:"varint,27,opt,name=flagged"`
+	Flagged *bool `json:"flagged,omitempty" protobuf:"varint,28,opt,name=flagged"`
 	// Notification specification.
 	//+kubebuilder:validation:Optional
-	Notification catalog.NotificationSpec `json:"notification,omitempty" protobuf:"bytes,28,opt,name=notification"`
+	Notification catalog.NotificationSpec `json:"notification,omitempty" protobuf:"bytes,29,opt,name=notification"`
 	// Model Image specification.
 	//+kubebuilder:validation:Optional
-	ModelImage ModelImageSpec `json:"modelImage,omitempty" protobuf:"bytes,29,opt,name=modelImage"`
+	ModelImage ModelImageSpec `json:"modelImage,omitempty" protobuf:"bytes,30,opt,name=modelImage"`
 	// Garbage Collection Spec
 	//+kubebuilder:validation:Optional
-	GC GarbageCollectionSpec `json:"gc,omitempty" protobuf:"bytes,30,opt,name=gc"`
+	GC GarbageCollectionSpec `json:"gc,omitempty" protobuf:"bytes,31,opt,name=gc"`
 	// TTL for models.
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
-	TTL *int32 `json:"ttl,omitempty" protobuf:"varint,31,opt,name=ttl"`
+	TTL *int32 `json:"ttl,omitempty" protobuf:"varint,32,opt,name=ttl"`
 }
 
 // StudyStatus defines the observed state of the Study

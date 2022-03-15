@@ -1966,54 +1966,59 @@ message ModelSpec {
   // +kubebuilder:validation:Optional
   optional bool baseline = 30;
 
+  // Indicate a fast mode. If true, skip the validation/profiling/report
+  // +kubebuilder:default:="false"
+  // +kubebuilder:validation:Optional
+  optional bool fast = 31;
+
   // Is this model flagged by the user.
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool flagged = 31;
+  optional bool flagged = 32;
 
   // Location is the location of the model artifacts (metadata, reports and estimators).
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation location = 32;
+  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation location = 33;
 
   // The specification for the forecasting algorithm if this model is part of a forecasting
   // +kubebuilder:validation:Optional
-  optional ForecastSpec forecast = 33;
+  optional ForecastSpec forecast = 34;
 
   // Compilation denotes how to compile the model. Not supported in the current release.
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.CompilerSpec compilation = 34;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.CompilerSpec compilation = 35;
 
   // ActiveDeadlineSeconds is the deadline of a job for this model.
   // +kubebuilder:default:=600
   // +kubebuilder:validation:Optional
-  optional int64 activeDeadlineSeconds = 35;
+  optional int64 activeDeadlineSeconds = 36;
 
   // ModelType is the type of model for this estimator
   // +kubebuilder:default:=classical
   // +kubebuilder:validation:Optional
-  optional string estimatorType = 36;
+  optional string estimatorType = 37;
 
   // TTL
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
-  optional int32 ttl = 37;
+  optional int32 ttl = 38;
 
   // Mark the model class. The model class is the origin of the model
   // +kubebuilder:validation:Optional
-  optional string modelClass = 38;
+  optional string modelClass = 39;
 
   // Set the trial ID, by the optimizer.
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
-  optional int32 trialID = 39;
+  optional int32 trialID = 40;
 
   // The Governance requirements.
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec governance = 40;
+  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec governance = 41;
 
   // The Interpretability requirements.
   // +kubebuilder:validation:Optional
-  optional InterpretabilitySpec interpretability = 41;
+  optional InterpretabilitySpec interpretability = 42;
 }
 
 // ModelStatus defines the observed state of the Model
@@ -3229,51 +3234,56 @@ message StudySpec {
   // +kubebuilder:validation:Optional
   optional bool modelExplained = 21;
 
+  // Indicate a fast mode. If true, skip the model explenation.
+  // +kubebuilder:default:="false"
+  // +kubebuilder:validation:Optional
+  optional bool fast = 22;
+
   // The location of the study artifacts
   // By default the bucket is the data product bucket.
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation location = 22;
+  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation location = 23;
 
   // The owner account name
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
-  optional string owner = 23;
+  optional string owner = 24;
 
   // ActiveDeadlineSeconds is the deadline of a job for this study.
   // +kubebuilder:default:=600
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
-  optional int64 activeDeadlineSeconds = 24;
+  optional int64 activeDeadlineSeconds = 25;
 
   // This is the compiler spec for models. This spec will act as a template for the models created by the study
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.CompilerSpec compilation = 25;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.CompilerSpec compilation = 26;
 
   // Set to true if this study is a template
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool template = 26;
+  optional bool template = 27;
 
   // Is this model flagged
   // +kubebuilder:validation:Optional
-  optional bool flagged = 27;
+  optional bool flagged = 28;
 
   // Notification specification.
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 28;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 29;
 
   // Model Image specification.
   // +kubebuilder:validation:Optional
-  optional ModelImageSpec modelImage = 29;
+  optional ModelImageSpec modelImage = 30;
 
   // Garbage Collection Spec
   // +kubebuilder:validation:Optional
-  optional GarbageCollectionSpec gc = 30;
+  optional GarbageCollectionSpec gc = 31;
 
   // TTL for models.
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
-  optional int32 ttl = 31;
+  optional int32 ttl = 32;
 }
 
 // StudyStatus defines the observed state of the Study
