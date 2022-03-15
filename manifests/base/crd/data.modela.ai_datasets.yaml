@@ -109,7 +109,7 @@ spec:
                 description: The display name
                 type: string
               fast:
-                default: "false"
+                default: false
                 description: Indicate a fast mode. If true, skip the validation/profiling/report
                 type: boolean
               labeled:

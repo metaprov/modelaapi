@@ -342,7 +342,7 @@ spec:
                 description: Explained indicate weather this model should be explained
                 type: boolean
               fast:
-                default: "false"
+                default: false
                 description: Indicate a fast mode. If true, skip the validation/profiling/report
                 type: boolean
               featureEngineering:

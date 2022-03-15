@@ -1967,7 +1967,7 @@ message ModelSpec {
   optional bool baseline = 30;
 
   // Indicate a fast mode. If true, skip the validation/profiling/report
-  // +kubebuilder:default:="false"
+  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool fast = 31;
 
@@ -3235,7 +3235,7 @@ message StudySpec {
   optional bool modelExplained = 21;
 
   // Indicate a fast mode. If true, skip the model explenation.
-  // +kubebuilder:default:="false"
+  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool fast = 22;
 

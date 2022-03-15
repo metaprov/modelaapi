@@ -249,7 +249,7 @@ spec:
                     type: boolean
                 type: object
               fast:
-                default: "false"
+                default: false
                 description: Indicate a fast mode. If true, skip the model explenation.
                 type: boolean
               feSearch:

@@ -319,7 +319,7 @@ type ModelSpec struct {
 	// +kubebuilder:validation:Optional
 	Baseline *bool `json:"baseline,omitempty" protobuf:"varint,30,opt,name=baseline"`
 	// Indicate a fast mode. If true, skip the validation/profiling/report
-	// +kubebuilder:default:="false"
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Fast *bool `json:"fast,omitempty" protobuf:"varint,31,opt,name=fast"`
 	// Is this model flagged by the user.

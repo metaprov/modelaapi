@@ -495,7 +495,7 @@ type StudySpec struct {
 	// +kubebuilder:validation:Optional
 	ModelExplained *bool `json:"modelExplained,omitempty" protobuf:"varint,21,opt,name=modelExplained"`
 	// Indicate a fast mode. If true, skip the model explenation.
-	// +kubebuilder:default:="false"
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Fast *bool `json:"fast,omitempty" protobuf:"bytes,22,opt,name=fast"`
 	// The location of the study artifacts

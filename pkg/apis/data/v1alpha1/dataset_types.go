@@ -172,7 +172,7 @@ type DatasetSpec struct {
 	// +kubebuilder:validation:Optional
 	Correlation CorrelationSpec `json:"correlation,omitempty" protobuf:"bytes,21,opt,name=correlation"`
 	// Indicate a fast mode. If true, skip the validation/profiling/report
-	// +kubebuilder:default:="false"
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Fast *bool `json:"fast,omitempty" protobuf:"bytes,22,opt,name=fast"`
 }
