@@ -896,6 +896,7 @@ func (model *Model) InitModelFromStudy(study *Study) {
 		BucketName: study.Spec.Location.BucketName,
 		Path:       util.StrPtr(path.Join(*study.Spec.Location.Path, "models", model.Name)),
 	}
+	model.Spec.Fast = util.BoolPtr(*study.Spec.Fast)
 	model.Status.TrainDatasetLocation = study.Status.TrainDatasetLocation
 	model.Status.TestDatasetLocation = study.Status.TestDatasetLocation
 	model.Status.ValidationDataset = study.Status.ValidationDataset
