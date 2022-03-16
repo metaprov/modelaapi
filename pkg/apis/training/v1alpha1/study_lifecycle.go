@@ -13,6 +13,7 @@ import (
 	"time"
 
 	data "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1"
+	infra "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
 
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/apis/training"
@@ -925,5 +926,52 @@ func (study *Study) RefreshProgress() {
 		study.Status.Progress = 20
 	} else if study.Splitted() {
 		study.Status.Progress = 10
+	}
+}
+
+////////////////////////////////////////////////////////////
+// Model Alerts
+
+func (run *Study) CompletionAlert() *infra.Alert {
+	level := infra.Info
+	return &infra.Alert{
+		ObjectMeta: metav1.ObjectMeta{
+			GenerateName: run.Name,
+			Namespace:    run.Namespace,
+		},
+		Spec: infra.AlertSpec{
+			Subject: util.StrPtr("Study Completed"),
+			Level:   &level,
+			EntityRef: v1.ObjectReference{
+				Name:      run.Name,
+				Namespace: run.Namespace,
+			},
+			Owner: run.Spec.Owner,
+			Fields: map[string]string{
+				"starttime": run.ObjectMeta.CreationTimestamp.Format("Mon Jan 2 15:04:05 MST 2006"),
+			},
+		},
+	}
+}
+
+func (run *Study) ErrorAlert(err error) *infra.Alert {
+	level := infra.Error
+	return &infra.Alert{
+		ObjectMeta: metav1.ObjectMeta{
+			GenerateName: run.Name,
+			Namespace:    run.Namespace,
+		},
+		Spec: infra.AlertSpec{
+			Subject: util.StrPtr("Study Error"),
+			Level:   &level,
+			EntityRef: v1.ObjectReference{
+				Name:      run.Name,
+				Namespace: run.Namespace,
+			},
+			Owner: run.Spec.Owner,
+			Fields: map[string]string{
+				"starttime": run.ObjectMeta.CreationTimestamp.Format("Mon Jan 2 15:04:05 MST 2006"),
+			},
+		},
 	}
 }

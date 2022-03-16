@@ -11,6 +11,7 @@ import (
 
 	"github.com/dustin/go-humanize"
 	data "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1"
+	infra "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/apis/training"
 	"github.com/metaprov/modelaapi/pkg/util"
 	"gopkg.in/yaml.v2"
@@ -231,4 +232,51 @@ func (report *Report) MarkReportReady(product *data.DataProduct) {
 	liveUri := product.PrefixLiveUri(report.PdfUri())
 	report.Status.URI = liveUri
 
+}
+
+////////////////////////////////////////////////////////////
+// Model Alerts
+
+func (report *Report) CompletionAlert() *infra.Alert {
+	level := infra.Info
+	return &infra.Alert{
+		ObjectMeta: metav1.ObjectMeta{
+			GenerateName: report.Name,
+			Namespace:    report.Namespace,
+		},
+		Spec: infra.AlertSpec{
+			Subject: util.StrPtr("Web Request Completed"),
+			Level:   &level,
+			EntityRef: v1.ObjectReference{
+				Name:      report.Name,
+				Namespace: report.Namespace,
+			},
+			Owner: report.Spec.Owner,
+			Fields: map[string]string{
+				"starttime": report.ObjectMeta.CreationTimestamp.Format("Mon Jan 2 15:04:05 MST 2006"),
+			},
+		},
+	}
+}
+
+func (report *Report) ErrorAlert(err error) *infra.Alert {
+	level := infra.Error
+	return &infra.Alert{
+		ObjectMeta: metav1.ObjectMeta{
+			GenerateName: report.Name,
+			Namespace:    report.Namespace,
+		},
+		Spec: infra.AlertSpec{
+			Subject: util.StrPtr("Report Error"),
+			Level:   &level,
+			EntityRef: v1.ObjectReference{
+				Name:      report.Name,
+				Namespace: report.Namespace,
+			},
+			Owner: report.Spec.Owner,
+			Fields: map[string]string{
+				"starttime": report.ObjectMeta.CreationTimestamp.Format("Mon Jan 2 15:04:05 MST 2006"),
+			},
+		},
+	}
 }

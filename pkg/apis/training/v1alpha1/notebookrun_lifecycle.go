@@ -10,10 +10,12 @@ import (
 	"fmt"
 
 	"github.com/dustin/go-humanize"
+	infra "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/apis/training"
 	"github.com/metaprov/modelaapi/pkg/util"
 	"gopkg.in/yaml.v2"
 	corev1 "k8s.io/api/core/v1"
+	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/client-go/kubernetes/scheme"
@@ -191,4 +193,51 @@ func (r *NotebookRun) MarkRunning() {
 		Status:  corev1.ConditionFalse,
 		Message: string(NotebookRunPhaseRunning),
 	})
+}
+
+////////////////////////////////////////////////////////////
+// NotebookRun Alerts
+
+func (run *NotebookRun) CompletionAlert() *infra.Alert {
+	level := infra.Info
+	return &infra.Alert{
+		ObjectMeta: metav1.ObjectMeta{
+			GenerateName: run.Name,
+			Namespace:    run.Namespace,
+		},
+		Spec: infra.AlertSpec{
+			Subject: util.StrPtr("Notebook Run Completed"),
+			Level:   &level,
+			EntityRef: v1.ObjectReference{
+				Name:      run.Name,
+				Namespace: run.Namespace,
+			},
+			Owner: run.Spec.Owner,
+			Fields: map[string]string{
+				"starttime": run.ObjectMeta.CreationTimestamp.Format("Mon Jan 2 15:04:05 MST 2006"),
+			},
+		},
+	}
+}
+
+func (run *NotebookRun) ErrorAlert(err error) *infra.Alert {
+	level := infra.Error
+	return &infra.Alert{
+		ObjectMeta: metav1.ObjectMeta{
+			GenerateName: run.Name,
+			Namespace:    run.Namespace,
+		},
+		Spec: infra.AlertSpec{
+			Subject: util.StrPtr("Notebook Run Error"),
+			Level:   &level,
+			EntityRef: v1.ObjectReference{
+				Name:      run.Name,
+				Namespace: run.Namespace,
+			},
+			Owner: run.Spec.Owner,
+			Fields: map[string]string{
+				"starttime": run.ObjectMeta.CreationTimestamp.Format("Mon Jan 2 15:04:05 MST 2006"),
+			},
+		},
+	}
 }

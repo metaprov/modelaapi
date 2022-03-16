@@ -1,9 +1,10 @@
 package v1alpha1
 
 import (
+	"testing"
+
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
-	"testing"
 )
 
 func TestInfraObjects(t *testing.T) {

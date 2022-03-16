@@ -6,6 +6,7 @@ import (
 
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/apis/inference"
+	infra "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/util"
 	"gopkg.in/yaml.v2"
 	v1 "k8s.io/api/core/v1"
@@ -196,5 +197,52 @@ func (run *Prediction) MarkRunning() {
 	now := metav1.Now()
 	if run.Status.StartTime == nil {
 		run.Status.EndTime = &now
+	}
+}
+
+////////////////////////////////////////////////////////////
+// Model Alerts
+
+func (prediction *Prediction) CompletionAlert() *infra.Alert {
+	level := infra.Info
+	return &infra.Alert{
+		ObjectMeta: metav1.ObjectMeta{
+			GenerateName: prediction.Name,
+			Namespace:    prediction.Namespace,
+		},
+		Spec: infra.AlertSpec{
+			Subject: util.StrPtr("Web Request Completed"),
+			Level:   &level,
+			EntityRef: v1.ObjectReference{
+				Name:      prediction.Name,
+				Namespace: prediction.Namespace,
+			},
+			Owner: prediction.Spec.Owner,
+			Fields: map[string]string{
+				"starttime": prediction.ObjectMeta.CreationTimestamp.Format("Mon Jan 2 15:04:05 MST 2006"),
+			},
+		},
+	}
+}
+
+func (prediction *Prediction) ErrorAlert(err error) *infra.Alert {
+	level := infra.Error
+	return &infra.Alert{
+		ObjectMeta: metav1.ObjectMeta{
+			GenerateName: prediction.Name,
+			Namespace:    prediction.Namespace,
+		},
+		Spec: infra.AlertSpec{
+			Subject: util.StrPtr("Model Auto Builder Error"),
+			Level:   &level,
+			EntityRef: v1.ObjectReference{
+				Name:      prediction.Name,
+				Namespace: prediction.Namespace,
+			},
+			Owner: prediction.Spec.Owner,
+			Fields: map[string]string{
+				"starttime": prediction.ObjectMeta.CreationTimestamp.Format("Mon Jan 2 15:04:05 MST 2006"),
+			},
+		},
 	}
 }

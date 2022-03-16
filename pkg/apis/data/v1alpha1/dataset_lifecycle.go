@@ -10,6 +10,7 @@ import (
 	"fmt"
 
 	"github.com/metaprov/modelaapi/pkg/apis/data"
+	infra "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/util"
 	"gopkg.in/yaml.v2"
 	v1 "k8s.io/api/core/v1"
@@ -436,4 +437,56 @@ func (dataset *Dataset) Saved() bool {
 
 func (dataset *Dataset) Deleted() bool {
 	return !dataset.ObjectMeta.DeletionTimestamp.IsZero()
+}
+
+// Generate a dataset completion alert
+func (dataset *Dataset) CompletionAlert() *infra.Alert {
+	level := infra.Info
+	return &infra.Alert{
+		ObjectMeta: metav1.ObjectMeta{
+			GenerateName: dataset.Name,
+			Namespace:    dataset.Namespace,
+		},
+		Spec: infra.AlertSpec{
+			Subject: util.StrPtr("Dataset Completed"),
+			Level:   &level,
+			EntityRef: v1.ObjectReference{
+				Name:      dataset.Name,
+				Namespace: dataset.Namespace,
+			},
+			Owner: dataset.Spec.Owner,
+			Fields: map[string]string{
+				"rows":      util.ItoA(&dataset.Status.Statistics.Rows),
+				"columns":   util.ItoA(&dataset.Status.Statistics.Cols),
+				"size":      util.ItoA(&dataset.Status.Statistics.FileSize),
+				"starttime": dataset.ObjectMeta.CreationTimestamp.Format("Mon Jan 2 15:04:05 MST 2006"),
+			},
+		},
+	}
+}
+
+func (dataset *Dataset) ErrorAlert(err error) *infra.Alert {
+	level := infra.Error
+	return &infra.Alert{
+		ObjectMeta: metav1.ObjectMeta{
+			GenerateName: dataset.Name,
+			Namespace:    dataset.Namespace,
+		},
+		Spec: infra.AlertSpec{
+			Subject: util.StrPtr("Dataset processing error"),
+			Message: util.StrPtr(err.Error()),
+			Level:   &level,
+			EntityRef: v1.ObjectReference{
+				Name:      dataset.Name,
+				Namespace: dataset.Namespace,
+			},
+			Owner: dataset.Spec.Owner,
+			Fields: map[string]string{
+				"rows":      util.ItoA(&dataset.Status.Statistics.Rows),
+				"columns":   util.ItoA(&dataset.Status.Statistics.Cols),
+				"size":      util.ItoA(&dataset.Status.Statistics.FileSize),
+				"starttime": dataset.ObjectMeta.CreationTimestamp.Format("Mon Jan 2 15:04:05 MST 2006"),
+			},
+		},
+	}
 }

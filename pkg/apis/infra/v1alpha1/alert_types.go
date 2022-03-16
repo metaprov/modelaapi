@@ -68,10 +68,9 @@ type AlertList struct {
 type AlertLevel string
 
 const (
-	Normal  AlertLevel = "normal"
+	Info    AlertLevel = "normal"
 	Warning AlertLevel = "warning "
 	Error   AlertLevel = "error"
-	Failure AlertLevel = "failure"
 )
 
 // AlertSpec defines the desired state of Alert

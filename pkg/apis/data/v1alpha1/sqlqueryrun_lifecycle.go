@@ -5,6 +5,7 @@ import (
 
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/apis/inference"
+	infra "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/util"
 	"gopkg.in/yaml.v2"
 	v1 "k8s.io/api/core/v1"
@@ -180,5 +181,50 @@ func (run *SqlQueryRun) MarkRunning() {
 	now := metav1.Now()
 	if run.Status.StartTime == nil {
 		run.Status.EndTime = &now
+	}
+}
+
+// Generate a dataset completion alert
+func (run *SqlQueryRun) CompletionAlert() *infra.Alert {
+	level := infra.Info
+	return &infra.Alert{
+		ObjectMeta: metav1.ObjectMeta{
+			GenerateName: run.Name,
+			Namespace:    run.Namespace,
+		},
+		Spec: infra.AlertSpec{
+			Subject: util.StrPtr("SQL Query Completed"),
+			Level:   &level,
+			EntityRef: v1.ObjectReference{
+				Name:      run.Name,
+				Namespace: run.Namespace,
+			},
+			Owner: run.Spec.Owner,
+			Fields: map[string]string{
+				"starttime": run.ObjectMeta.CreationTimestamp.Format("Mon Jan 2 15:04:05 MST 2006"),
+			},
+		},
+	}
+}
+
+func (run *SqlQueryRun) ErrorAlert(err error) *infra.Alert {
+	level := infra.Error
+	return &infra.Alert{
+		ObjectMeta: metav1.ObjectMeta{
+			GenerateName: run.Name,
+			Namespace:    run.Namespace,
+		},
+		Spec: infra.AlertSpec{
+			Subject: util.StrPtr("SQL Query Error"),
+			Level:   &level,
+			EntityRef: v1.ObjectReference{
+				Name:      run.Name,
+				Namespace: run.Namespace,
+			},
+			Owner: run.Spec.Owner,
+			Fields: map[string]string{
+				"starttime": run.ObjectMeta.CreationTimestamp.Format("Mon Jan 2 15:04:05 MST 2006"),
+			},
+		},
 	}
 }
