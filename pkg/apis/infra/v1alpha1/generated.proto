@@ -2810,10 +2810,22 @@ message UserRoleClassList {
 
 // UserRoleClassSpec is the spec for UserRoleClass
 message UserRoleClassSpec {
-  optional string description = 1;
+  // The owner of the user role class
+  // +kubebuilder:validation:Optional
+  optional k8s.io.api.core.v1.ObjectReference tenantRef = 1;
+
+  // The description of the user role class.
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string description = 2;
+
+  // Owner of the bucket
+  // +kubebuilder:default:="admin"
+  // +kubebuilder:validation:Optional
+  optional string owner = 3;
 
   // +kubebuilder:validation:Optional
-  repeated RuleSpec rules = 2;
+  repeated RuleSpec rules = 4;
 }
 
 message VerticaSpec {

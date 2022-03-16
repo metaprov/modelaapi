@@ -50159,7 +50159,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.UserRoleClassList.pr
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.UserRoleClassSpec.repeatedFields_ = [2];
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.UserRoleClassSpec.repeatedFields_ = [4];
 
 
 
@@ -50192,7 +50192,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.UserRoleClassSpec.pr
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.UserRoleClassSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
-    description: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    tenantref: (f = msg.getTenantref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
+    description: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    owner: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     rulesList: jspb.Message.toObjectList(msg.getRulesList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.RuleSpec.toObject, includeInstance)
   };
@@ -50232,10 +50234,19 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.UserRoleClassSpec.de
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
+      var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
+      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
+      msg.setTenantref(value);
+      break;
+    case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setDescription(value);
       break;
-    case 2:
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setOwner(value);
+      break;
+    case 4:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.RuleSpec;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.RuleSpec.deserializeBinaryFromReader);
       msg.addRules(value);
@@ -50269,17 +50280,32 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.UserRoleClassSpec.pr
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.UserRoleClassSpec.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = /** @type {string} */ (jspb.Message.getField(message, 1));
+  f = message.getTenantref();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 2));
   if (f != null) {
     writer.writeString(
-      1,
+      2,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeString(
+      3,
       f
     );
   }
   f = message.getRulesList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      2,
+      4,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.RuleSpec.serializeBinaryToWriter
     );
@@ -50288,11 +50314,48 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.UserRoleClassSpec.se
 
 
 /**
- * optional string description = 1;
+ * optional k8s.io.api.core.v1.ObjectReference tenantRef = 1;
+ * @return {?proto.k8s.io.api.core.v1.ObjectReference}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.UserRoleClassSpec.prototype.getTenantref = function() {
+  return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
+    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 1));
+};
+
+
+/**
+ * @param {?proto.k8s.io.api.core.v1.ObjectReference|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.UserRoleClassSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.UserRoleClassSpec.prototype.setTenantref = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.UserRoleClassSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.UserRoleClassSpec.prototype.clearTenantref = function() {
+  return this.setTenantref(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.UserRoleClassSpec.prototype.hasTenantref = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string description = 2;
  * @return {string}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.UserRoleClassSpec.prototype.getDescription = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -50301,7 +50364,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.UserRoleClassSpec.pr
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.UserRoleClassSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.UserRoleClassSpec.prototype.setDescription = function(value) {
-  return jspb.Message.setField(this, 1, value);
+  return jspb.Message.setField(this, 2, value);
 };
 
 
@@ -50310,7 +50373,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.UserRoleClassSpec.pr
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.UserRoleClassSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.UserRoleClassSpec.prototype.clearDescription = function() {
-  return jspb.Message.setField(this, 1, undefined);
+  return jspb.Message.setField(this, 2, undefined);
 };
 
 
@@ -50319,17 +50382,53 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.UserRoleClassSpec.pr
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.UserRoleClassSpec.prototype.hasDescription = function() {
-  return jspb.Message.getField(this, 1) != null;
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * repeated RuleSpec rules = 2;
+ * optional string owner = 3;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.UserRoleClassSpec.prototype.getOwner = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.UserRoleClassSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.UserRoleClassSpec.prototype.setOwner = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.UserRoleClassSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.UserRoleClassSpec.prototype.clearOwner = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.UserRoleClassSpec.prototype.hasOwner = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * repeated RuleSpec rules = 4;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.RuleSpec>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.UserRoleClassSpec.prototype.getRulesList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.RuleSpec>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.RuleSpec, 2));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.RuleSpec, 4));
 };
 
 
@@ -50338,7 +50437,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.UserRoleClassSpec.pr
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.UserRoleClassSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.UserRoleClassSpec.prototype.setRulesList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+  return jspb.Message.setRepeatedWrapperField(this, 4, value);
 };
 
 
@@ -50348,7 +50447,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.UserRoleClassSpec.pr
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.RuleSpec}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.UserRoleClassSpec.prototype.addRules = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.RuleSpec, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.RuleSpec, opt_index);
 };
 
 

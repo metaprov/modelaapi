@@ -9,6 +9,7 @@ package v1alpha1
 import (
 	"github.com/metaprov/modelaapi/pkg/apis/common"
 	"gopkg.in/yaml.v2"
+	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
@@ -44,9 +45,19 @@ type UserRoleClassList struct {
 
 // UserRoleClassSpec is the spec for UserRoleClass
 type UserRoleClassSpec struct {
-	Description string `json:"description,omitempty" protobuf:"bytes,1,opt,name=description"`
+	// The owner of the user role class
 	// +kubebuilder:validation:Optional
-	Rules []RuleSpec `json:"rules,omitempty" protobuf:"bytes,2,rep,name=rules"`
+	TenantRef *v1.ObjectReference `json:"tenantRef,omitempty" protobuf:"bytes,1,name=tenantRef"`
+	// The description of the user role class.
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
+	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
+	// Owner of the bucket
+	// +kubebuilder:default:="admin"
+	// +kubebuilder:validation:Optional
+	Owner *string `json:"owner,omitempty" protobuf:"bytes,3,opt,name=owner"`
+	// +kubebuilder:validation:Optional
+	Rules []RuleSpec `json:"rules,omitempty" protobuf:"bytes,4,rep,name=rules"`
 }
 
 // RuleSpec define the relation between a resource and the actions on the resource.

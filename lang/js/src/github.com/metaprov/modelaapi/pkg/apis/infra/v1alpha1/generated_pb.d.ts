@@ -5007,8 +5007,16 @@ export namespace UserRoleClassList {
 }
 
 export class UserRoleClassSpec extends jspb.Message {
+  getTenantref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setTenantref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): UserRoleClassSpec;
+  hasTenantref(): boolean;
+  clearTenantref(): UserRoleClassSpec;
+
   getDescription(): string;
   setDescription(value: string): UserRoleClassSpec;
+
+  getOwner(): string;
+  setOwner(value: string): UserRoleClassSpec;
 
   getRulesList(): Array<RuleSpec>;
   setRulesList(value: Array<RuleSpec>): UserRoleClassSpec;
@@ -5025,7 +5033,9 @@ export class UserRoleClassSpec extends jspb.Message {
 
 export namespace UserRoleClassSpec {
   export type AsObject = {
+    tenantref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     description: string,
+    owner: string,
     rulesList: Array<RuleSpec.AsObject>,
   }
 }
