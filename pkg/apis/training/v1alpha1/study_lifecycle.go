@@ -932,45 +932,53 @@ func (study *Study) RefreshProgress() {
 ////////////////////////////////////////////////////////////
 // Model Alerts
 
-func (run *Study) CompletionAlert() *infra.Alert {
+func (study *Study) CompletionAlert() *infra.Alert {
 	level := infra.Info
 	return &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
-			GenerateName: run.Name,
-			Namespace:    run.Namespace,
+			GenerateName: study.Name,
+			Namespace:    study.Namespace,
 		},
 		Spec: infra.AlertSpec{
 			Subject: util.StrPtr("Study Completed"),
 			Level:   &level,
 			EntityRef: v1.ObjectReference{
-				Name:      run.Name,
-				Namespace: run.Namespace,
+				Name:      study.Name,
+				Namespace: study.Namespace,
 			},
-			Owner: run.Spec.Owner,
+			Owner: study.Spec.Owner,
 			Fields: map[string]string{
-				"starttime": run.ObjectMeta.CreationTimestamp.Format("Mon Jan 2 15:04:05 MST 2006"),
+				"dataset":         *study.Spec.DatasetName,
+				"task":            string(*study.Spec.Task),
+				"phase":           string(study.Status.Phase),
+				"starttime":       study.ObjectMeta.CreationTimestamp.Format("Mon Jan 2 15:04:05 MST 2006"),
+				"completion time": study.Status.EndTime.Format("Mon Jan 2 15:04:05 MST 2006"),
 			},
 		},
 	}
 }
 
-func (run *Study) ErrorAlert(err error) *infra.Alert {
+func (study *Study) ErrorAlert(err error) *infra.Alert {
 	level := infra.Error
 	return &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
-			GenerateName: run.Name,
-			Namespace:    run.Namespace,
+			GenerateName: study.Name,
+			Namespace:    study.Namespace,
 		},
 		Spec: infra.AlertSpec{
 			Subject: util.StrPtr("Study Error"),
 			Level:   &level,
 			EntityRef: v1.ObjectReference{
-				Name:      run.Name,
-				Namespace: run.Namespace,
+				Name:      study.Name,
+				Namespace: study.Namespace,
 			},
-			Owner: run.Spec.Owner,
+			Owner: study.Spec.Owner,
 			Fields: map[string]string{
-				"starttime": run.ObjectMeta.CreationTimestamp.Format("Mon Jan 2 15:04:05 MST 2006"),
+				"dataset":         *study.Spec.DatasetName,
+				"task":            string(*study.Spec.Task),
+				"phase":           string(study.Status.Phase),
+				"starttime":       study.ObjectMeta.CreationTimestamp.Format("Mon Jan 2 15:04:05 MST 2006"),
+				"completion time": study.Status.EndTime.Format("Mon Jan 2 15:04:05 MST 2006"),
 			},
 		},
 	}

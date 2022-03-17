@@ -942,45 +942,61 @@ func (model Model) IsTest() bool {
 ////////////////////////////////////////////////////////////
 // Model Alerts
 
-func (run *Model) CompletionAlert() *infra.Alert {
+func (model *Model) CompletionAlert() *infra.Alert {
 	level := infra.Info
 	return &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
-			GenerateName: run.Name,
-			Namespace:    run.Namespace,
+			GenerateName: model.Name,
+			Namespace:    model.Namespace,
 		},
 		Spec: infra.AlertSpec{
 			Subject: util.StrPtr("Web Request Completed"),
 			Level:   &level,
 			EntityRef: v1.ObjectReference{
-				Name:      run.Name,
-				Namespace: run.Namespace,
+				Name:      model.Name,
+				Namespace: model.Namespace,
 			},
-			Owner: run.Spec.Owner,
+			Owner: model.Spec.Owner,
 			Fields: map[string]string{
-				"starttime": run.ObjectMeta.CreationTimestamp.Format("Mon Jan 2 15:04:05 MST 2006"),
+				"dataset":         *model.Spec.DatasetName,
+				"study":           *model.Spec.StudyName,
+				"task":            string(*model.Spec.Task),
+				"objective":       string(*model.Spec.Objective),
+				"algorithm":       model.Spec.Estimator.AlgorithmName,
+				"phase":           string(model.Status.Phase),
+				"score":           util.FtoA(&model.Status.CVScore),
+				"starttime":       model.ObjectMeta.CreationTimestamp.Format("Mon Jan 2 15:04:05 MST 2006"),
+				"completion time": model.Status.EndTime.Format("Mon Jan 2 15:04:05 MST 2006"),
 			},
 		},
 	}
 }
 
-func (run *Model) ErrorAlert(err error) *infra.Alert {
+func (model *Model) ErrorAlert(err error) *infra.Alert {
 	level := infra.Error
 	return &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
-			GenerateName: run.Name,
-			Namespace:    run.Namespace,
+			GenerateName: model.Name,
+			Namespace:    model.Namespace,
 		},
 		Spec: infra.AlertSpec{
-			Subject: util.StrPtr("Model Auto Builder Error"),
+			Subject: util.StrPtr("Model Error"),
 			Level:   &level,
 			EntityRef: v1.ObjectReference{
-				Name:      run.Name,
-				Namespace: run.Namespace,
+				Name:      model.Name,
+				Namespace: model.Namespace,
 			},
-			Owner: run.Spec.Owner,
+			Owner: model.Spec.Owner,
 			Fields: map[string]string{
-				"starttime": run.ObjectMeta.CreationTimestamp.Format("Mon Jan 2 15:04:05 MST 2006"),
+				"dataset":         *model.Spec.DatasetName,
+				"study":           *model.Spec.StudyName,
+				"task":            string(*model.Spec.Task),
+				"objective":       string(*model.Spec.Objective),
+				"algorithm":       model.Spec.Estimator.AlgorithmName,
+				"phase":           string(model.Status.Phase),
+				"score":           util.FtoA(&model.Status.CVScore),
+				"starttime":       model.ObjectMeta.CreationTimestamp.Format("Mon Jan 2 15:04:05 MST 2006"),
+				"completion time": model.Status.EndTime.Format("Mon Jan 2 15:04:05 MST 2006"),
 			},
 		},
 	}

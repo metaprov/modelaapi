@@ -245,7 +245,7 @@ func (report *Report) CompletionAlert() *infra.Alert {
 			Namespace:    report.Namespace,
 		},
 		Spec: infra.AlertSpec{
-			Subject: util.StrPtr("Web Request Completed"),
+			Subject: util.StrPtr("Report Completed"),
 			Level:   &level,
 			EntityRef: v1.ObjectReference{
 				Name:      report.Name,
@@ -254,6 +254,8 @@ func (report *Report) CompletionAlert() *infra.Alert {
 			Owner: report.Spec.Owner,
 			Fields: map[string]string{
 				"starttime": report.ObjectMeta.CreationTimestamp.Format("Mon Jan 2 15:04:05 MST 2006"),
+				"bucket":    *report.Spec.Location.BucketName,
+				"url":       *report.Spec.Location.Path,
 			},
 		},
 	}
@@ -276,6 +278,9 @@ func (report *Report) ErrorAlert(err error) *infra.Alert {
 			Owner: report.Spec.Owner,
 			Fields: map[string]string{
 				"starttime": report.ObjectMeta.CreationTimestamp.Format("Mon Jan 2 15:04:05 MST 2006"),
+				"bucket":    *report.Spec.Location.BucketName,
+				"url":       *report.Spec.Location.Path,
+				"type": string(*report.Spec.ReportType)
 			},
 		},
 	}
