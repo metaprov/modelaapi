@@ -237,7 +237,7 @@ func (report *Report) MarkReportReady(product *data.DataProduct) {
 ////////////////////////////////////////////////////////////
 // Model Alerts
 
-func (report *Report) CompletionAlert() *infra.Alert {
+func (report *Report) CompletionAlert(tenantRef v1.ObjectReference,notifierName string) *infra.Alert {
 	level := infra.Info
 	return &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
@@ -251,6 +251,8 @@ func (report *Report) CompletionAlert() *infra.Alert {
 				Name:      report.Name,
 				Namespace: report.Namespace,
 			},
+			TenantRef: tenantRef,
+			NotifierName: notifierName,
 			Owner: report.Spec.Owner,
 			Fields: map[string]string{
 				"starttime": report.ObjectMeta.CreationTimestamp.Format("Mon Jan 2 15:04:05 MST 2006"),
@@ -261,7 +263,7 @@ func (report *Report) CompletionAlert() *infra.Alert {
 	}
 }
 
-func (report *Report) ErrorAlert(err error) *infra.Alert {
+func (report *Report) ErrorAlert(tenantRef *v1.ObjectReference, notifierName string,err error) *infra.Alert {
 	level := infra.Error
 	return &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
@@ -275,6 +277,8 @@ func (report *Report) ErrorAlert(err error) *infra.Alert {
 				Name:      report.Name,
 				Namespace: report.Namespace,
 			},
+			TenantRef: tenantRef,
+			NotifierName: notifierName,
 			Owner: report.Spec.Owner,
 			Fields: map[string]string{
 				"starttime": report.ObjectMeta.CreationTimestamp.Format("Mon Jan 2 15:04:05 MST 2006"),

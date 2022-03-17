@@ -203,7 +203,7 @@ func (run *Prediction) MarkRunning() {
 ////////////////////////////////////////////////////////////
 // Model Alerts
 
-func (prediction *Prediction) CompletionAlert() *infra.Alert {
+func (prediction *Prediction) CompletionAlert(tenantRef *v1.ObjectReference, notifierName string) *infra.Alert {
 	level := infra.Info
 	return &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
@@ -217,6 +217,8 @@ func (prediction *Prediction) CompletionAlert() *infra.Alert {
 				Name:      prediction.Name,
 				Namespace: prediction.Namespace,
 			},
+			TenantRef:    tenantRef,
+			NotifierName: &notifierName,
 			Owner: prediction.Spec.Owner,
 			Fields: map[string]string{
 				"starttime": prediction.ObjectMeta.CreationTimestamp.Format("Mon Jan 2 15:04:05 MST 2006"),
@@ -225,7 +227,7 @@ func (prediction *Prediction) CompletionAlert() *infra.Alert {
 	}
 }
 
-func (prediction *Prediction) ErrorAlert(err error) *infra.Alert {
+func (prediction *Prediction) ErrorAlert(tenantRef *v1.ObjectReference, notifierName string,err error) *infra.Alert {
 	level := infra.Error
 	return &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
@@ -239,6 +241,8 @@ func (prediction *Prediction) ErrorAlert(err error) *infra.Alert {
 				Name:      prediction.Name,
 				Namespace: prediction.Namespace,
 			},
+			TenantRef:    tenantRef,
+			NotifierName: &notifierName,
 			Owner: prediction.Spec.Owner,
 			Fields: map[string]string{
 				"starttime": prediction.ObjectMeta.CreationTimestamp.Format("Mon Jan 2 15:04:05 MST 2006"),

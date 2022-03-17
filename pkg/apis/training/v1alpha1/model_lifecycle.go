@@ -942,7 +942,7 @@ func (model Model) IsTest() bool {
 ////////////////////////////////////////////////////////////
 // Model Alerts
 
-func (model *Model) CompletionAlert() *infra.Alert {
+func (model *Model) CompletionAlert(tenantRef *v1.ObjectReference, notifierName string) *infra.Alert {
 	level := infra.Info
 	return &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
@@ -956,6 +956,8 @@ func (model *Model) CompletionAlert() *infra.Alert {
 				Name:      model.Name,
 				Namespace: model.Namespace,
 			},
+			TenantRef:    tenantRef,
+			NotifierName: &notifierName,
 			Owner: model.Spec.Owner,
 			Fields: map[string]string{
 				"dataset":         *model.Spec.DatasetName,
@@ -972,7 +974,7 @@ func (model *Model) CompletionAlert() *infra.Alert {
 	}
 }
 
-func (model *Model) ErrorAlert(err error) *infra.Alert {
+func (model *Model) ErrorAlert(tenantRef *v1.ObjectReference, notifierName string,err error) *infra.Alert {
 	level := infra.Error
 	return &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
@@ -986,6 +988,8 @@ func (model *Model) ErrorAlert(err error) *infra.Alert {
 				Name:      model.Name,
 				Namespace: model.Namespace,
 			},
+			TenantRef:    tenantRef,
+			NotifierName: &notifierName,
 			Owner: model.Spec.Owner,
 			Fields: map[string]string{
 				"dataset":         *model.Spec.DatasetName,

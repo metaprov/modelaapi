@@ -198,7 +198,7 @@ func (r *NotebookRun) MarkRunning() {
 ////////////////////////////////////////////////////////////
 // NotebookRun Alerts
 
-func (run *NotebookRun) CompletionAlert() *infra.Alert {
+func (run *NotebookRun) CompletionAlert(tenantRef *v1.ObjectReference, notifierName string) *infra.Alert {
 	level := infra.Info
 	return &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
@@ -212,6 +212,8 @@ func (run *NotebookRun) CompletionAlert() *infra.Alert {
 				Name:      run.Name,
 				Namespace: run.Namespace,
 			},
+			TenantRef:    tenantRef,
+			NotifierName: &notifierName,
 			Owner: run.Spec.Owner,
 			Fields: map[string]string{
 				"starttime": run.ObjectMeta.CreationTimestamp.Format("Mon Jan 2 15:04:05 MST 2006"),
@@ -220,7 +222,7 @@ func (run *NotebookRun) CompletionAlert() *infra.Alert {
 	}
 }
 
-func (run *NotebookRun) ErrorAlert(err error) *infra.Alert {
+func (run *NotebookRun) ErrorAlert(tenantRef *v1.ObjectReference, notifierName string,err error) *infra.Alert {
 	level := infra.Error
 	return &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
@@ -234,6 +236,8 @@ func (run *NotebookRun) ErrorAlert(err error) *infra.Alert {
 				Name:      run.Name,
 				Namespace: run.Namespace,
 			},
+			TenantRef:    tenantRef,
+			NotifierName: &notifierName,
 			Owner: run.Spec.Owner,
 			Fields: map[string]string{
 				"starttime": run.ObjectMeta.CreationTimestamp.Format("Mon Jan 2 15:04:05 MST 2006"),
