@@ -942,7 +942,7 @@ func (model Model) IsTest() bool {
 ////////////////////////////////////////////////////////////
 // Model Alerts
 
-func (model *Model) CompletionAlert(tenantRef *v1.ObjectReference, notifierName string) *infra.Alert {
+func (model *Model) CompletionAlert(tenantRef *v1.ObjectReference, notifierName *string) *infra.Alert {
 	level := infra.Info
 	return &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
@@ -957,8 +957,8 @@ func (model *Model) CompletionAlert(tenantRef *v1.ObjectReference, notifierName 
 				Namespace: model.Namespace,
 			},
 			TenantRef:    tenantRef,
-			NotifierName: &notifierName,
-			Owner: model.Spec.Owner,
+			NotifierName: notifierName,
+			Owner:        model.Spec.Owner,
 			Fields: map[string]string{
 				"dataset":         *model.Spec.DatasetName,
 				"study":           *model.Spec.StudyName,
@@ -974,7 +974,7 @@ func (model *Model) CompletionAlert(tenantRef *v1.ObjectReference, notifierName 
 	}
 }
 
-func (model *Model) ErrorAlert(tenantRef *v1.ObjectReference, notifierName string,err error) *infra.Alert {
+func (model *Model) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *string, err error) *infra.Alert {
 	level := infra.Error
 	return &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
@@ -989,8 +989,8 @@ func (model *Model) ErrorAlert(tenantRef *v1.ObjectReference, notifierName strin
 				Namespace: model.Namespace,
 			},
 			TenantRef:    tenantRef,
-			NotifierName: &notifierName,
-			Owner: model.Spec.Owner,
+			NotifierName: notifierName,
+			Owner:        model.Spec.Owner,
 			Fields: map[string]string{
 				"dataset":         *model.Spec.DatasetName,
 				"study":           *model.Spec.StudyName,

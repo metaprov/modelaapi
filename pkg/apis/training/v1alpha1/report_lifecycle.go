@@ -237,7 +237,7 @@ func (report *Report) MarkReportReady(product *data.DataProduct) {
 ////////////////////////////////////////////////////////////
 // Model Alerts
 
-func (report *Report) CompletionAlert(tenantRef v1.ObjectReference,notifierName string) *infra.Alert {
+func (report *Report) CompletionAlert(tenantRef *v1.ObjectReference, notifierName *string) *infra.Alert {
 	level := infra.Info
 	return &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
@@ -251,9 +251,9 @@ func (report *Report) CompletionAlert(tenantRef v1.ObjectReference,notifierName 
 				Name:      report.Name,
 				Namespace: report.Namespace,
 			},
-			TenantRef: tenantRef,
+			TenantRef:    tenantRef,
 			NotifierName: notifierName,
-			Owner: report.Spec.Owner,
+			Owner:        report.Spec.Owner,
 			Fields: map[string]string{
 				"starttime": report.ObjectMeta.CreationTimestamp.Format("Mon Jan 2 15:04:05 MST 2006"),
 				"bucket":    *report.Spec.Location.BucketName,
@@ -263,7 +263,7 @@ func (report *Report) CompletionAlert(tenantRef v1.ObjectReference,notifierName 
 	}
 }
 
-func (report *Report) ErrorAlert(tenantRef *v1.ObjectReference, notifierName string,err error) *infra.Alert {
+func (report *Report) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *string, err error) *infra.Alert {
 	level := infra.Error
 	return &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
@@ -277,14 +277,14 @@ func (report *Report) ErrorAlert(tenantRef *v1.ObjectReference, notifierName str
 				Name:      report.Name,
 				Namespace: report.Namespace,
 			},
-			TenantRef: tenantRef,
+			TenantRef:    tenantRef,
 			NotifierName: notifierName,
-			Owner: report.Spec.Owner,
+			Owner:        report.Spec.Owner,
 			Fields: map[string]string{
 				"starttime": report.ObjectMeta.CreationTimestamp.Format("Mon Jan 2 15:04:05 MST 2006"),
 				"bucket":    *report.Spec.Location.BucketName,
 				"url":       *report.Spec.Location.Path,
-				"type": string(*report.Spec.ReportType)
+				"type":      string(*report.Spec.ReportType),
 			},
 		},
 	}

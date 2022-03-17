@@ -168,7 +168,7 @@ func (in *RecipeRun) IsSaved() bool {
 }
 
 // Generate a dataset completion alert
-func (run *RecipeRun) CompletionAlert(tenantRef *v1.ObjectReference, notifierName string) *infra.Alert {
+func (run *RecipeRun) CompletionAlert(tenantRef *v1.ObjectReference, notifierName *string) *infra.Alert {
 	level := infra.Info
 	return &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
@@ -183,7 +183,7 @@ func (run *RecipeRun) CompletionAlert(tenantRef *v1.ObjectReference, notifierNam
 				Namespace: run.Namespace,
 			},
 			TenantRef:    tenantRef,
-			NotifierName: &notifierName,
+			NotifierName: notifierName,
 			Fields: map[string]string{
 				"starttime": run.ObjectMeta.CreationTimestamp.Format("Mon Jan 2 15:04:05 MST 2006"),
 			},
@@ -191,7 +191,7 @@ func (run *RecipeRun) CompletionAlert(tenantRef *v1.ObjectReference, notifierNam
 	}
 }
 
-func (run *RecipeRun) ErrorAlert(tenantRef *v1.ObjectReference, notifierName string, err error) *infra.Alert {
+func (run *RecipeRun) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *string, err error) *infra.Alert {
 	level := infra.Error
 	return &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
@@ -206,7 +206,7 @@ func (run *RecipeRun) ErrorAlert(tenantRef *v1.ObjectReference, notifierName str
 				Namespace: run.Namespace,
 			},
 			TenantRef:    tenantRef,
-			NotifierName: &notifierName,
+			NotifierName: notifierName,
 			Fields: map[string]string{
 				"starttime": run.ObjectMeta.CreationTimestamp.Format("Mon Jan 2 15:04:05 MST 2006"),
 			},

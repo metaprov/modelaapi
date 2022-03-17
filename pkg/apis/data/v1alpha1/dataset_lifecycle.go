@@ -440,7 +440,7 @@ func (dataset *Dataset) Deleted() bool {
 }
 
 // Generate a dataset completion alert
-func (dataset *Dataset) CompletionAlert(tenantRef *v1.ObjectReference, notifierName string) *infra.Alert {
+func (dataset *Dataset) CompletionAlert(tenantRef *v1.ObjectReference, notifierName *string) *infra.Alert {
 	level := infra.Info
 	return &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
@@ -455,8 +455,8 @@ func (dataset *Dataset) CompletionAlert(tenantRef *v1.ObjectReference, notifierN
 				Namespace: dataset.Namespace,
 			},
 			TenantRef:    tenantRef,
-			NotifierName: &notifierName,
-			Owner: dataset.Spec.Owner,
+			NotifierName: notifierName,
+			Owner:        dataset.Spec.Owner,
 			Fields: map[string]string{
 				"rows":      util.ItoA(&dataset.Status.Statistics.Rows),
 				"columns":   util.ItoA(&dataset.Status.Statistics.Cols),
@@ -467,7 +467,7 @@ func (dataset *Dataset) CompletionAlert(tenantRef *v1.ObjectReference, notifierN
 	}
 }
 
-func (dataset *Dataset) ErrorAlert(tenantRef *v1.ObjectReference, notifierName string,err error) *infra.Alert {
+func (dataset *Dataset) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *string, err error) *infra.Alert {
 	level := infra.Error
 	return &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
@@ -475,11 +475,11 @@ func (dataset *Dataset) ErrorAlert(tenantRef *v1.ObjectReference, notifierName s
 			Namespace:    dataset.Namespace,
 		},
 		Spec: infra.AlertSpec{
-			Subject: util.StrPtr("Dataset processing error"),
-			Message: util.StrPtr(err.Error()),
-			Level:   &level,
+			Subject:      util.StrPtr("Dataset processing error"),
+			Message:      util.StrPtr(err.Error()),
+			Level:        &level,
 			TenantRef:    tenantRef,
-			NotifierName: &notifierName,
+			NotifierName: notifierName,
 			EntityRef: v1.ObjectReference{
 				Name:      dataset.Name,
 				Namespace: dataset.Namespace,

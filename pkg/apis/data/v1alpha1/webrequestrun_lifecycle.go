@@ -185,7 +185,7 @@ func (run *WebRequestRun) MarkRunning() {
 }
 
 // Generate a dataset completion alert
-func (run *WebRequestRun) CompletionAlert(tenantRef *v1.ObjectReference, notifierName string) *infra.Alert {
+func (run *WebRequestRun) CompletionAlert(tenantRef *v1.ObjectReference, notifierName *string) *infra.Alert {
 	level := infra.Info
 	return &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
@@ -200,8 +200,8 @@ func (run *WebRequestRun) CompletionAlert(tenantRef *v1.ObjectReference, notifie
 				Namespace: run.Namespace,
 			},
 			TenantRef:    tenantRef,
-			NotifierName: &notifierName,
-			Owner: run.Spec.Owner,
+			NotifierName: notifierName,
+			Owner:        run.Spec.Owner,
 			Fields: map[string]string{
 				"starttime": run.ObjectMeta.CreationTimestamp.Format("Mon Jan 2 15:04:05 MST 2006"),
 			},
@@ -209,7 +209,7 @@ func (run *WebRequestRun) CompletionAlert(tenantRef *v1.ObjectReference, notifie
 	}
 }
 
-func (run *WebRequestRun) ErrorAlert(tenantRef *v1.ObjectReference, notifierName string,err error) *infra.Alert {
+func (run *WebRequestRun) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *string, err error) *infra.Alert {
 	level := infra.Error
 	return &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
@@ -224,8 +224,8 @@ func (run *WebRequestRun) ErrorAlert(tenantRef *v1.ObjectReference, notifierName
 				Namespace: run.Namespace,
 			},
 			TenantRef:    tenantRef,
-			NotifierName: &notifierName,
-			Owner: run.Spec.Owner,
+			NotifierName: notifierName,
+			Owner:        run.Spec.Owner,
 			Fields: map[string]string{
 				"starttime": run.ObjectMeta.CreationTimestamp.Format("Mon Jan 2 15:04:05 MST 2006"),
 			},

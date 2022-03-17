@@ -932,7 +932,7 @@ func (study *Study) RefreshProgress() {
 ////////////////////////////////////////////////////////////
 // Model Alerts
 
-func (study *Study) CompletionAlert(tenantRef *v1.ObjectReference, notifierName string) *infra.Alert {
+func (study *Study) CompletionAlert(tenantRef *v1.ObjectReference, notifierName *string) *infra.Alert {
 	level := infra.Info
 	return &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
@@ -947,7 +947,7 @@ func (study *Study) CompletionAlert(tenantRef *v1.ObjectReference, notifierName 
 				Namespace: study.Namespace,
 			},
 			TenantRef:    tenantRef,
-			NotifierName: &notifierName,
+			NotifierName: notifierName,
 			Owner:        study.Spec.Owner,
 			Fields: map[string]string{
 				"dataset":         *study.Spec.DatasetName,
@@ -960,7 +960,7 @@ func (study *Study) CompletionAlert(tenantRef *v1.ObjectReference, notifierName 
 	}
 }
 
-func (study *Study) ErrorAlert(tenantRef *v1.ObjectReference, notifierName string, err error) *infra.Alert {
+func (study *Study) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *string, err error) *infra.Alert {
 	level := infra.Error
 	return &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
@@ -975,7 +975,7 @@ func (study *Study) ErrorAlert(tenantRef *v1.ObjectReference, notifierName strin
 				Namespace: study.Namespace,
 			},
 			TenantRef:    tenantRef,
-			NotifierName: &notifierName,
+			NotifierName: notifierName,
 			Owner:        study.Spec.Owner,
 			Fields: map[string]string{
 				"dataset":         *study.Spec.DatasetName,
