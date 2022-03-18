@@ -1864,6 +1864,7 @@ func (in *DatasetStatus) DeepCopyInto(out *DatasetStatus) {
 		in, out := &in.LastUpdated, &out.LastUpdated
 		*out = (*in).DeepCopy()
 	}
+	in.Images.DeepCopyInto(&out.Images)
 	if in.Conditions != nil {
 		in, out := &in.Conditions, &out.Conditions
 		*out = make([]DatasetCondition, len(*in))

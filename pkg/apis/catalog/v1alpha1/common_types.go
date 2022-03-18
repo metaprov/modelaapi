@@ -1957,3 +1957,16 @@ type Stakeholder struct {
 	// assign roles to account
 	Roles []v1.ObjectReference `json:"roles,omitempty" protobuf:"bytes,2,opt,name=roles"`
 }
+
+// Store the images that were used during training, reporting and profiling
+type Images struct {
+	// The image used during training
+	// +kubebuilder:validation:Optional
+	TrainerImage *string `json:"trainerImage,omitempty" protobuf:"bytes,1,opt,name=trainerImage"`
+	// The image used during training for data operations.
+	// +kubebuilder:validation:Optional
+	DataImage *string `json:"dataImage,omitempty" protobuf:"bytes,2,opt,name=dataImage"`
+	// The image used during training for data operations.
+	// +kubebuilder:validation:Optional
+	PublisherImage *string `json:"publisherImage,omitempty" protobuf:"bytes,3,opt,name=publisherImage"`
+}

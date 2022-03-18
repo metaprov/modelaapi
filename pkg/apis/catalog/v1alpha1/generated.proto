@@ -291,6 +291,21 @@ message HistogramData {
   repeated string categories = 3;
 }
 
+// Store the images that were used during training, reporting and profiling
+message Images {
+  // The image used during training
+  // +kubebuilder:validation:Optional
+  optional string trainerImage = 1;
+
+  // The image used during training for data operations.
+  // +kubebuilder:validation:Optional
+  optional string dataImage = 2;
+
+  // The image used during training for data operations.
+  // +kubebuilder:validation:Optional
+  optional string publisherImage = 3;
+}
+
 // IntParameter contain the specification of an integer hyper parameter
 message IntParameter {
   // Name is the name of the hyper parameter

@@ -486,6 +486,19 @@ spec:
                 default: ""
                 description: Sha256 signature of the dataset file.
                 type: string
+              images:
+                description: The actual images used during the analysis of the dataset
+                properties:
+                  dataImage:
+                    description: The image used during training for data operations.
+                    type: string
+                  publisherImage:
+                    description: The image used during training for data operations.
+                    type: string
+                  trainerImage:
+                    description: The image used during training
+                    type: string
+                type: object
               imbalanced:
                 description: Based on the actual data, treat this dataset as imbalanced.
                 type: boolean

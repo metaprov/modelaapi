@@ -583,6 +583,32 @@ export namespace HistogramData {
   }
 }
 
+export class Images extends jspb.Message {
+  getTrainerimage(): string;
+  setTrainerimage(value: string): Images;
+
+  getDataimage(): string;
+  setDataimage(value: string): Images;
+
+  getPublisherimage(): string;
+  setPublisherimage(value: string): Images;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Images.AsObject;
+  static toObject(includeInstance: boolean, msg: Images): Images.AsObject;
+  static serializeBinaryToWriter(message: Images, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Images;
+  static deserializeBinaryFromReader(message: Images, reader: jspb.BinaryReader): Images;
+}
+
+export namespace Images {
+  export type AsObject = {
+    trainerimage: string,
+    dataimage: string,
+    publisherimage: string,
+  }
+}
+
 export class IntParameter extends jspb.Message {
   getName(): string;
   setName(value: string): IntParameter;

@@ -572,7 +572,7 @@ type ModelStatus struct {
 	Interpretability InterpretabilityStatus `json:"interpretability,omitempty" protobuf:"bytes,66,opt,name=interpretability"`
 	// The team that trained this model
 	// +kubebuilder:validation:Optional
-	Images Images `json:"images,omitempty" protobuf:"bytes,67,opt,name=images"`
+	Images catalog.Images `json:"images,omitempty" protobuf:"bytes,67,opt,name=images"`
 	// +kubebuilder:validation:Optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
@@ -1063,17 +1063,4 @@ type InterpretabilityStatus struct {
 
 	// Shap based feature importance
 	Importance []FeatureImportance `json:"importance,omitempty" protobuf:"bytes,6,rep,name=importance"`
-}
-
-// Store the images that were used during training, reporting and profiling
-type Images struct {
-	// The image used during training
-	// +kubebuilder:validation:Optional
-	TrainerImage *string `json:"trainerImage,omitempty" protobuf:"bytes,1,opt,name=trainerImage"`
-	// The image used during training for data operations.
-	// +kubebuilder:validation:Optional
-	DataImage *string `json:"dataImage,omitempty" protobuf:"bytes,2,opt,name=dataImage"`
-	// The image used during training for data operations.
-	// +kubebuilder:validation:Optional
-	PublisherImage *string `json:"publisherImage,omitempty" protobuf:"bytes,3,opt,name=publisherImage"`
 }

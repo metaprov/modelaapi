@@ -1715,10 +1715,14 @@ message DatasetStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 18;
 
+  // The actual images used during the analysis of the dataset
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Images images = 19;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated DatasetCondition conditions = 19;
+  repeated DatasetCondition conditions = 20;
 }
 
 // DatasetTemplate is  used to generate new datasets

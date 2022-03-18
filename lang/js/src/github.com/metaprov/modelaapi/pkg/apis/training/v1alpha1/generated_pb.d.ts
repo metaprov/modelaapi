@@ -1412,32 +1412,6 @@ export namespace ImagePipelineSpec {
   }
 }
 
-export class Images extends jspb.Message {
-  getTrainerimage(): string;
-  setTrainerimage(value: string): Images;
-
-  getDataimage(): string;
-  setDataimage(value: string): Images;
-
-  getPublisherimage(): string;
-  setPublisherimage(value: string): Images;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): Images.AsObject;
-  static toObject(includeInstance: boolean, msg: Images): Images.AsObject;
-  static serializeBinaryToWriter(message: Images, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): Images;
-  static deserializeBinaryFromReader(message: Images, reader: jspb.BinaryReader): Images;
-}
-
-export namespace Images {
-  export type AsObject = {
-    trainerimage: string,
-    dataimage: string,
-    publisherimage: string,
-  }
-}
-
 export class InterpretabilitySpec extends jspb.Message {
   getIce(): boolean;
   setIce(value: boolean): InterpretabilitySpec;
@@ -3239,8 +3213,8 @@ export class ModelStatus extends jspb.Message {
   hasInterpretability(): boolean;
   clearInterpretability(): ModelStatus;
 
-  getImages(): Images | undefined;
-  setImages(value?: Images): ModelStatus;
+  getImages(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Images | undefined;
+  setImages(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Images): ModelStatus;
   hasImages(): boolean;
   clearImages(): ModelStatus;
 
@@ -3321,7 +3295,7 @@ export namespace ModelStatus {
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     governancestatus?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.GovernanceStatus.AsObject,
     interpretability?: InterpretabilityStatus.AsObject,
-    images?: Images.AsObject,
+    images?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Images.AsObject,
     conditionsList: Array<ModelCondition.AsObject>,
   }
 }

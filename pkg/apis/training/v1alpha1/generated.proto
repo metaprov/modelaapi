@@ -891,21 +891,6 @@ message ImagePipelineSpec {
   optional string featurizer = 1;
 }
 
-// Store the images that were used during training, reporting and profiling
-message Images {
-  // The image used during training
-  // +kubebuilder:validation:Optional
-  optional string trainerImage = 1;
-
-  // The image used during training for data operations.
-  // +kubebuilder:validation:Optional
-  optional string dataImage = 2;
-
-  // The image used during training for data operations.
-  // +kubebuilder:validation:Optional
-  optional string publisherImage = 3;
-}
-
 message InterpretabilitySpec {
   // If true generate ice plots for each feature.
   // +kubebuilder:default:=true
@@ -2278,7 +2263,7 @@ message ModelStatus {
 
   // The team that trained this model
   // +kubebuilder:validation:Optional
-  optional Images images = 67;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Images images = 67;
 
   // +kubebuilder:validation:Optional
   // +patchMergeKey=type

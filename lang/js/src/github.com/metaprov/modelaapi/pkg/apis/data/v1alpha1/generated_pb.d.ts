@@ -2301,6 +2301,11 @@ export class DatasetStatus extends jspb.Message {
   hasLastupdated(): boolean;
   clearLastupdated(): DatasetStatus;
 
+  getImages(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Images | undefined;
+  setImages(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Images): DatasetStatus;
+  hasImages(): boolean;
+  clearImages(): DatasetStatus;
+
   getConditionsList(): Array<DatasetCondition>;
   setConditionsList(value: Array<DatasetCondition>): DatasetStatus;
   clearConditionsList(): DatasetStatus;
@@ -2333,6 +2338,7 @@ export namespace DatasetStatus {
     logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
     derivedfromdataset: string,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    images?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Images.AsObject,
     conditionsList: Array<DatasetCondition.AsObject>,
   }
 }
