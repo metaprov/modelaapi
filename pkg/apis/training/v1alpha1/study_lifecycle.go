@@ -317,6 +317,7 @@ func (study *Study) MarkSplitFailed(err string) {
 		Message: err,
 	})
 	study.Status.Phase = StudyPhaseFailed
+	study.UpdateEndTime()
 	study.Status.FailureMessage = util.StrPtr("Failed to split." + err)
 	study.RefreshProgress()
 }
@@ -362,6 +363,7 @@ func (study *Study) MarkFeatureEngineeringFailed(err string) {
 		Message: err,
 	})
 	study.Status.Phase = StudyPhaseFailed
+	study.UpdateEndTime()
 	study.Status.FailureMessage = util.StrPtr("Failed to engineer features." + err)
 	study.RefreshProgress()
 }
@@ -411,6 +413,7 @@ func (study *Study) MarkBaselineFailed(err string) {
 	})
 	study.Status.Phase = StudyPhaseFailed
 	study.Status.FailureMessage = util.StrPtr("Failed to create baseline models." + err)
+	study.UpdateEndTime()
 	study.RefreshProgress()
 }
 
@@ -423,7 +426,13 @@ func (study *Study) MarkReadyFailed(err string) {
 	})
 	study.Status.Phase = StudyPhaseFailed
 	study.Status.FailureMessage = util.StrPtr("Failed to mark study as ready." + err)
+	study.UpdateEndTime()
 	study.RefreshProgress()
+}
+
+func (study *Study) UpdateEndTime() {
+	now := metav1.Now()
+	study.Status.EndTime = &now
 }
 
 func (study *Study) MarkGCFailed(err string) {
@@ -435,6 +444,7 @@ func (study *Study) MarkGCFailed(err string) {
 	})
 	study.Status.Phase = StudyPhaseFailed
 	study.Status.FailureMessage = util.StrPtr("Failed to gc study." + err)
+	study.UpdateEndTime()
 	study.RefreshProgress()
 }
 
@@ -483,6 +493,7 @@ func (study *Study) MarkSearchFailed(err string) {
 	})
 	study.Status.Phase = StudyPhaseFailed
 	study.Status.FailureMessage = util.StrPtr("Failed to search models." + err)
+	study.UpdateEndTime()
 	study.RefreshProgress()
 }
 
@@ -536,6 +547,7 @@ func (study *Study) MarkEnsembleFailed(err string) {
 
 	study.Status.Phase = StudyPhaseFailed
 	study.Status.FailureMessage = util.StrPtr("Failed to ensemble models." + err)
+	study.UpdateEndTime()
 	study.RefreshProgress()
 }
 
@@ -578,8 +590,7 @@ func (study *Study) MarkTestingFailed(err string) {
 		Message: err,
 	})
 	study.Status.Phase = StudyPhaseFailed
-	now := metav1.Now()
-	study.Status.TestStatus.EndTime = &now
+	study.UpdateEndTime()
 	study.Status.FailureMessage = util.StrPtr("Failed to test model." + err)
 	study.RefreshProgress()
 }
@@ -626,6 +637,7 @@ func (study *Study) MarkProfileFailed(err string) {
 	})
 	study.Status.Phase = StudyPhaseFailed
 	study.Status.FailureMessage = util.StrPtr("Failed to profile." + err)
+	study.UpdateEndTime()
 	study.RefreshProgress()
 }
 
@@ -803,6 +815,7 @@ func (study *Study) MarkReportFailed(err string) {
 		Message: err,
 	})
 	study.Status.Phase = StudyPhaseFailed
+	study.UpdateEndTime()
 	study.Status.FailureMessage = util.StrPtr("Failed to report." + err)
 	study.RefreshProgress()
 }
