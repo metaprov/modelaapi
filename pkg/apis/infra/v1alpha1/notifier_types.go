@@ -128,7 +128,7 @@ type NotificationChannelSpec struct {
 
 type NotificationChannelStatus struct {
 	// The last time a message was sent on this channel
-	LastMessage *metav1.Timestamp `json:"lastMessage,omitempty" protobuf:"bytes,1,opt,name=lastMessage"`
+	LastMessage *metav1.Time `json:"lastMessage,omitempty" protobuf:"bytes,1,opt,name=lastMessage"`
 	// In case of notification failure
 	// Borrowed from cluster api controller
 	//+kubebuilder:validation:Optional

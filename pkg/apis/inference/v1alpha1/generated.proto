@@ -912,7 +912,7 @@ message PredictorStatus {
   repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentStatus modelStatus = 1;
 
   // When was the last check attempt
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Timestamp monitorLastAttemptAt = 3;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time monitorLastAttemptAt = 3;
 
   // What was the last score
   optional double monitorLastScore = 4;

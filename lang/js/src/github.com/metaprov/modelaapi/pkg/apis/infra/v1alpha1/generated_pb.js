@@ -37243,7 +37243,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotificationChannelS
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotificationChannelStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
-    lastmessage: (f = msg.getLastmessage()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Timestamp.toObject(includeInstance, f),
+    lastmessage: (f = msg.getLastmessage()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     failurereason: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     failuremessage: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
   };
@@ -37283,8 +37283,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotificationChannelS
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Timestamp;
-      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Timestamp.deserializeBinaryFromReader);
+      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
+      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
       msg.setLastmessage(value);
       break;
     case 2:
@@ -37329,7 +37329,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotificationChannelS
     writer.writeMessage(
       1,
       f,
-      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Timestamp.serializeBinaryToWriter
+      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
   }
   f = /** @type {string} */ (jspb.Message.getField(message, 2));
@@ -37350,17 +37350,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotificationChannelS
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Timestamp lastMessage = 1;
- * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Timestamp}
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastMessage = 1;
+ * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotificationChannelStatus.prototype.getLastmessage = function() {
-  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Timestamp} */ (
-    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Timestamp, 1));
+  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 1));
 };
 
 
 /**
- * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Timestamp|undefined} value
+ * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotificationChannelStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotificationChannelStatus.prototype.setLastmessage = function(value) {

@@ -249,7 +249,7 @@ type PredictorStatus struct {
 	// +kubebuilder:validation:Optional
 	ModelStatuses []catalog.ModelDeploymentStatus `json:"modelStatus,omitempty" protobuf:"bytes,1,rep,name=modelStatus"`
 	// When was the last check attempt
-	MonitorLastAttemptAt metav1.Timestamp `json:"monitorLastAttemptAt,omitempty" protobuf:"bytes,3,opt,name=monitorLastAttemptAt"`
+	MonitorLastAttemptAt metav1.Time `json:"monitorLastAttemptAt,omitempty" protobuf:"bytes,3,opt,name=monitorLastAttemptAt"`
 	// What was the last score
 	MonitorLastScore float64 `json:"monitorLastScore,omitempty" protobuf:"bytes,4,opt,name=monitorLastScore"`
 	// What was the last latency

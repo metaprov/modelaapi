@@ -337,7 +337,7 @@ message LastRunStatus {
 
   // The last run time
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Timestamp at = 2;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time at = 2;
 
   // Last run duration in seconds
   // +kubebuilder:validation:Optional
@@ -876,7 +876,7 @@ message RunSchedule {
 
   // EndTime is the end time of the schedule
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Timestamp endTime = 3;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 3;
 
   // Cron string of the schedule.
   // +kubebuilder:validation:Optional

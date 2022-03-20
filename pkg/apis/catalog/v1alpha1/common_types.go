@@ -1403,7 +1403,7 @@ type RunSchedule struct {
 	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,2,opt,name=startTime"`
 	// EndTime is the end time of the schedule
 	// +kubebuilder:validation:Optional
-	EndTime *metav1.Timestamp `json:"endTime,omitempty" protobuf:"bytes,3,opt,name=endTime"`
+	EndTime *metav1.Time `json:"endTime,omitempty" protobuf:"bytes,3,opt,name=endTime"`
 	// Cron string of the schedule.
 	// +kubebuilder:validation:Optional
 	Cron *string `json:"cron,omitempty" protobuf:"bytes,4,opt,name=cron"`
@@ -1987,7 +1987,7 @@ type LastRunStatus struct {
 	Outcome RunOutcomeType `json:"outcome,omitempty" protobuf:"bytes,1,opt,name=outcome"`
 	// The last run time
 	// +kubebuilder:validation:Optional
-	At *metav1.Timestamp `json:"at,omitempty" protobuf:"bytes,2,opt,name=at"`
+	At *metav1.Time `json:"at,omitempty" protobuf:"bytes,2,opt,name=at"`
 	// Last run duration in seconds
 	// +kubebuilder:validation:Optional
 	Duration int32 `json:"duration,omitempty" protobuf:"bytes,3,opt,name=duration"`

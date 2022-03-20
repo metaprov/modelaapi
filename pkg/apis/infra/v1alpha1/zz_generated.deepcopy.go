@@ -15,7 +15,6 @@ import (
 	catalogv1alpha1 "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/apis/common"
 	"k8s.io/api/core/v1"
-	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 )
 
@@ -3653,8 +3652,7 @@ func (in *NotificationChannelStatus) DeepCopyInto(out *NotificationChannelStatus
 	*out = *in
 	if in.LastMessage != nil {
 		in, out := &in.LastMessage, &out.LastMessage
-		*out = new(metav1.Timestamp)
-		**out = **in
+		*out = (*in).DeepCopy()
 	}
 	if in.FailureReason != nil {
 		in, out := &in.FailureReason, &out.FailureReason

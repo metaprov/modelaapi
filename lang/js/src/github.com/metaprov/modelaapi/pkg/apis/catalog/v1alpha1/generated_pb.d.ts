@@ -647,8 +647,8 @@ export class LastRunStatus extends jspb.Message {
   getOutcome(): string;
   setOutcome(value: string): LastRunStatus;
 
-  getAt(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Timestamp | undefined;
-  setAt(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Timestamp): LastRunStatus;
+  getAt(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setAt(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): LastRunStatus;
   hasAt(): boolean;
   clearAt(): LastRunStatus;
 
@@ -672,7 +672,7 @@ export class LastRunStatus extends jspb.Message {
 export namespace LastRunStatus {
   export type AsObject = {
     outcome: string,
-    at?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Timestamp.AsObject,
+    at?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     duration: number,
     failurereason: string,
     failuremessage: string,
@@ -1558,8 +1558,8 @@ export class RunSchedule extends jspb.Message {
   hasStarttime(): boolean;
   clearStarttime(): RunSchedule;
 
-  getEndtime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Timestamp | undefined;
-  setEndtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Timestamp): RunSchedule;
+  getEndtime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setEndtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): RunSchedule;
   hasEndtime(): boolean;
   clearEndtime(): RunSchedule;
 
@@ -1581,7 +1581,7 @@ export namespace RunSchedule {
   export type AsObject = {
     enabled: boolean,
     starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Timestamp.AsObject,
+    endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     cron: string,
     type: string,
   }

@@ -12,8 +12,7 @@
 package v1alpha1
 
 import (
-	corev1 "k8s.io/api/core/v1"
-	"k8s.io/apimachinery/pkg/apis/meta/v1"
+	"k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 )
 
@@ -556,8 +555,7 @@ func (in *LastRunStatus) DeepCopyInto(out *LastRunStatus) {
 	*out = *in
 	if in.At != nil {
 		in, out := &in.At, &out.At
-		*out = new(v1.Timestamp)
-		**out = **in
+		*out = (*in).DeepCopy()
 	}
 	if in.FailureReason != nil {
 		in, out := &in.FailureReason, &out.FailureReason
@@ -832,7 +830,7 @@ func (in *ManagedImageSpec) DeepCopyInto(out *ManagedImageSpec) {
 	}
 	if in.Env != nil {
 		in, out := &in.Env, &out.Env
-		*out = make([]corev1.EnvVar, len(*in))
+		*out = make([]v1.EnvVar, len(*in))
 		for i := range *in {
 			(*in)[i].DeepCopyInto(&(*out)[i])
 		}
@@ -854,7 +852,7 @@ func (in *ManagedImageSpec) DeepCopyInto(out *ManagedImageSpec) {
 	}
 	if in.ConnectionRef != nil {
 		in, out := &in.ConnectionRef, &out.ConnectionRef
-		*out = new(corev1.ObjectReference)
+		*out = new(v1.ObjectReference)
 		**out = **in
 	}
 	if in.Base != nil {
@@ -1359,7 +1357,7 @@ func (in *ResourceSpec) DeepCopyInto(out *ResourceSpec) {
 	out.GpuImage = in.GpuImage
 	if in.Requirements != nil {
 		in, out := &in.Requirements, &out.Requirements
-		*out = new(corev1.ResourceRequirements)
+		*out = new(v1.ResourceRequirements)
 		(*in).DeepCopyInto(*out)
 	}
 }
@@ -1408,8 +1406,7 @@ func (in *RunSchedule) DeepCopyInto(out *RunSchedule) {
 	}
 	if in.EndTime != nil {
 		in, out := &in.EndTime, &out.EndTime
-		*out = new(v1.Timestamp)
-		**out = **in
+		*out = (*in).DeepCopy()
 	}
 	if in.Cron != nil {
 		in, out := &in.Cron, &out.Cron
@@ -1458,7 +1455,7 @@ func (in *Stakeholder) DeepCopyInto(out *Stakeholder) {
 	*out = *in
 	if in.Roles != nil {
 		in, out := &in.Roles, &out.Roles
-		*out = make([]corev1.ObjectReference, len(*in))
+		*out = make([]v1.ObjectReference, len(*in))
 		copy(*out, *in)
 	}
 }

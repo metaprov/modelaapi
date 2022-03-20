@@ -1429,8 +1429,8 @@ export class PredictorStatus extends jspb.Message {
   clearModelstatusList(): PredictorStatus;
   addModelstatus(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentStatus, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentStatus;
 
-  getMonitorlastattemptat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Timestamp | undefined;
-  setMonitorlastattemptat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Timestamp): PredictorStatus;
+  getMonitorlastattemptat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setMonitorlastattemptat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): PredictorStatus;
   hasMonitorlastattemptat(): boolean;
   clearMonitorlastattemptat(): PredictorStatus;
 
@@ -1507,7 +1507,7 @@ export class PredictorStatus extends jspb.Message {
 export namespace PredictorStatus {
   export type AsObject = {
     modelstatusList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentStatus.AsObject>,
-    monitorlastattemptat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Timestamp.AsObject,
+    monitorlastattemptat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     monitorlastscore: number,
     monitorlastlatency: number,
     health?: PredictorHealth.AsObject,

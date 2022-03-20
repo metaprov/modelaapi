@@ -6973,7 +6973,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prot
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
     outcome: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    at: (f = msg.getAt()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Timestamp.toObject(includeInstance, f),
+    at: (f = msg.getAt()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     duration: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     failurereason: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     failuremessage: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
@@ -7018,8 +7018,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.dese
       msg.setOutcome(value);
       break;
     case 2:
-      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Timestamp;
-      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Timestamp.deserializeBinaryFromReader);
+      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
+      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
       msg.setAt(value);
       break;
     case 3:
@@ -7075,7 +7075,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.seri
     writer.writeMessage(
       2,
       f,
-      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Timestamp.serializeBinaryToWriter
+      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 3));
@@ -7139,17 +7139,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prot
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Timestamp at = 2;
- * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Timestamp}
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time at = 2;
+ * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prototype.getAt = function() {
-  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Timestamp} */ (
-    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Timestamp, 2));
+  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 2));
 };
 
 
 /**
- * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Timestamp|undefined} value
+ * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prototype.setAt = function(value) {
@@ -15339,7 +15339,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule.toObje
   var f, obj = {
     enabled: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
     starttime: (f = msg.getStarttime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
-    endtime: (f = msg.getEndtime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Timestamp.toObject(includeInstance, f),
+    endtime: (f = msg.getEndtime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     cron: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     type: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
   };
@@ -15388,8 +15388,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule.deseri
       msg.setStarttime(value);
       break;
     case 3:
-      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Timestamp;
-      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Timestamp.deserializeBinaryFromReader);
+      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
+      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
       msg.setEndtime(value);
       break;
     case 4:
@@ -15449,7 +15449,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule.serial
     writer.writeMessage(
       3,
       f,
-      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Timestamp.serializeBinaryToWriter
+      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
   }
   f = /** @type {string} */ (jspb.Message.getField(message, 4));
@@ -15543,17 +15543,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule.protot
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Timestamp endTime = 3;
- * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Timestamp}
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 3;
+ * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule.prototype.getEndtime = function() {
-  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Timestamp} */ (
-    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Timestamp, 3));
+  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 3));
 };
 
 
 /**
- * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Timestamp|undefined} value
+ * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule.prototype.setEndtime = function(value) {

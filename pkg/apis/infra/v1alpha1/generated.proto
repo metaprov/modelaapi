@@ -2059,7 +2059,7 @@ message NotificationChannelSpec {
 
 message NotificationChannelStatus {
   // The last time a message was sent on this channel
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Timestamp lastMessage = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastMessage = 1;
 
   // In case of notification failure
   // Borrowed from cluster api controller
