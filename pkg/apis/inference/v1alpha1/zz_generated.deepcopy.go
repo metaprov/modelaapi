@@ -1252,7 +1252,10 @@ func (in *PredictorStatus) DeepCopyInto(out *PredictorStatus) {
 			(*in)[i].DeepCopyInto(&(*out)[i])
 		}
 	}
-	in.MonitorLastAttemptAt.DeepCopyInto(&out.MonitorLastAttemptAt)
+	if in.MonitorLastAttemptAt != nil {
+		in, out := &in.MonitorLastAttemptAt, &out.MonitorLastAttemptAt
+		*out = (*in).DeepCopy()
+	}
 	in.Health.DeepCopyInto(&out.Health)
 	if in.History != nil {
 		in, out := &in.History, &out.History
