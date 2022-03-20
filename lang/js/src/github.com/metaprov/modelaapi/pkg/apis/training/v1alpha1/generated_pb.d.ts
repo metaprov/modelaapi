@@ -373,8 +373,8 @@ export namespace CronReportSpec {
 }
 
 export class CronReportStatus extends jspb.Message {
-  getLastrun(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLastrun(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): CronReportStatus;
+  getLastrun(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus | undefined;
+  setLastrun(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus): CronReportStatus;
   hasLastrun(): boolean;
   clearLastrun(): CronReportStatus;
 
@@ -407,7 +407,7 @@ export class CronReportStatus extends jspb.Message {
 
 export namespace CronReportStatus {
   export type AsObject = {
-    lastrun?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    lastrun?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus.AsObject,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     observedgeneration: number,
     failurereason: string,
@@ -2693,8 +2693,8 @@ export namespace ModelPipelineSpec {
 }
 
 export class ModelPipelineStatus extends jspb.Message {
-  getLastrun(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLastrun(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelPipelineStatus;
+  getLastrun(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus | undefined;
+  setLastrun(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus): ModelPipelineStatus;
   hasLastrun(): boolean;
   clearLastrun(): ModelPipelineStatus;
 
@@ -2727,7 +2727,7 @@ export class ModelPipelineStatus extends jspb.Message {
 
 export namespace ModelPipelineStatus {
   export type AsObject = {
-    lastrun?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    lastrun?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus.AsObject,
     observedgeneration: number,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     failurereason: string,
@@ -3842,8 +3842,8 @@ export class NotebookStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): NotebookStatus;
 
-  getLastrun(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLastrun(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): NotebookStatus;
+  getLastrun(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus | undefined;
+  setLastrun(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus): NotebookStatus;
   hasLastrun(): boolean;
   clearLastrun(): NotebookStatus;
 
@@ -3876,7 +3876,7 @@ export namespace NotebookStatus {
     image: string,
     uri: string,
     observedgeneration: number,
-    lastrun?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    lastrun?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus.AsObject,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     failurereason: string,
     failuremessage: string,

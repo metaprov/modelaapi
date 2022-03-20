@@ -90,9 +90,9 @@ type CronPredictionSpec struct {
 
 // CronPredictionStatus is the observed state of a PredictionTemplate
 type CronPredictionStatus struct {
-	// Last run is the last time a run was created
+	// Last run is the last time a data pipeline run was created
 	//+kubebuilder:validation:Optional
-	LastRun *metav1.Time `json:"lastRun,omitempty" protobuf:"bytes,1,opt,name=lastRun"`
+	LastRun catalog.LastRunStatus `json:"lastRun,omitempty" protobuf:"bytes,1,opt,name=lastRun"`
 	// Last time the object was updated
 	//+kubebuilder:validation:Optional
 	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,2,opt,name=lastUpdated"`

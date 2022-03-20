@@ -273,6 +273,10 @@ func (b *ModelAutobuilder) MarkComplete() {
 		Type:   ModelAutobuilderReady,
 		Status: v1.ConditionTrue,
 	})
+	now := metav1.Now()
+	if b.Status.EndTime == nil {
+		b.Status.EndTime = &now
+	}
 }
 
 // IsFailed
@@ -316,6 +320,10 @@ func (b *ModelAutobuilder) MarkFailed(err error) {
 		Status:  v1.ConditionFalse,
 		Message: err.Error(),
 	})
+	now := metav1.Now()
+	if b.Status.EndTime == nil {
+		b.Status.EndTime = &now
+	}
 }
 
 func (b *ModelAutobuilder) MarkDatasetRunning() {
@@ -598,7 +606,7 @@ func (run *ModelAutobuilder) CompletionAlert(tenantRef *v1.ObjectReference, noti
 			Namespace:    run.Namespace,
 		},
 		Spec: infra.AlertSpec{
-			Subject: util.StrPtr("Web Request Completed"),
+			Subject: util.StrPtr("Model Auto Builder completed successfully "),
 			Level:   &level,
 			EntityRef: v1.ObjectReference{
 				Name:      run.Name,
@@ -608,7 +616,7 @@ func (run *ModelAutobuilder) CompletionAlert(tenantRef *v1.ObjectReference, noti
 			NotifierName: notifierName,
 			Owner:        run.Spec.Owner,
 			Fields: map[string]string{
-				"starttime": run.ObjectMeta.CreationTimestamp.Format("Mon Jan 2 15:04:05 MST 2006"),
+				"Start Time": run.ObjectMeta.CreationTimestamp.Format("MM/dd/yy HH:mm:ss ZZZZ"),
 			},
 		},
 	}
@@ -632,7 +640,8 @@ func (run *ModelAutobuilder) ErrorAlert(tenantRef *v1.ObjectReference, notifierN
 			NotifierName: notifierName,
 			Owner:        run.Spec.Owner,
 			Fields: map[string]string{
-				"starttime": run.ObjectMeta.CreationTimestamp.Format("Mon Jan 2 15:04:05 MST 2006"),
+				"Start Time": run.ObjectMeta.CreationTimestamp.Format("MM/dd/yy HH:mm:ss ZZZZ"),
+				"End Time":   run.Status.EndTime.Format("MM/dd/yy HH:mm:ss ZZZZ"),
 			},
 		},
 	}

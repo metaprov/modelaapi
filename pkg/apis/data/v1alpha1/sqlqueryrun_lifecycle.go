@@ -136,13 +136,17 @@ func (prediction *SqlQueryRun) ToYamlFile() ([]byte, error) {
 	return yaml.Marshal(prediction)
 }
 
-func (prediction *SqlQueryRun) MarkFailed(msg string) {
-	prediction.CreateOrUpdateCond(SqlQueryRunCondition{
+func (run *SqlQueryRun) MarkFailed(msg string) {
+	run.CreateOrUpdateCond(SqlQueryRunCondition{
 		Type:    SqlQueryRunCompleted,
 		Status:  v1.ConditionFalse,
 		Reason:  string(catalog.Failed),
 		Message: msg,
 	})
+	now := metav1.Now()
+	if run.Status.EndTime == nil {
+		run.Status.EndTime = &now
+	}
 }
 
 func (prediction *SqlQueryRun) MarkCompleted() {
@@ -203,7 +207,8 @@ func (run *SqlQueryRun) CompletionAlert(tenantRef *v1.ObjectReference, notifierN
 			NotifierName: notifierName,
 			Owner:        run.Spec.Owner,
 			Fields: map[string]string{
-				"starttime": run.ObjectMeta.CreationTimestamp.Format("Mon Jan 2 15:04:05 MST 2006"),
+				"Start Time": run.ObjectMeta.CreationTimestamp.Format("MM/dd/yy HH:mm:ss ZZZZ"),
+				"End Time":   run.Status.EndTime.Format("MM/dd/yy HH:mm:ss ZZZZ"),
 			},
 		},
 	}
@@ -227,7 +232,8 @@ func (run *SqlQueryRun) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *
 			NotifierName: notifierName,
 			Owner:        run.Spec.Owner,
 			Fields: map[string]string{
-				"starttime": run.ObjectMeta.CreationTimestamp.Format("Mon Jan 2 15:04:05 MST 2006"),
+				"Start Time": run.ObjectMeta.CreationTimestamp.Format("MM/dd/yy HH:mm:ss ZZZZ"),
+				"End Time":   run.Status.EndTime.Format("MM/dd/yy HH:mm:ss ZZZZ"),
 			},
 		},
 	}

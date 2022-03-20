@@ -475,6 +475,10 @@ spec:
                 description: If this dataset is derived, the name of the dataset that
                   this is derived from.
                 type: string
+              endTime:
+                description: The end time of processing this dataset
+                format: date-time
+                type: string
               failureMessage:
                 description: Update in case of terminal failure message
                 type: string
@@ -502,10 +506,6 @@ spec:
               imbalanced:
                 description: Based on the actual data, treat this dataset as imbalanced.
                 type: boolean
-              lastNotificationTime:
-                description: Notification sent
-                format: date-time
-                type: string
               lastStudyTime:
                 description: Last time a study was done on the dataset.
                 format: date-time
@@ -561,6 +561,10 @@ spec:
                 type: string
               reportUri:
                 description: ReportURI is the uri of dataset report
+                type: string
+              startTime:
+                description: The start time of processing this dataset
+                format: date-time
                 type: string
               statistics:
                 description: Statistics for the dataset. The statistics contain information

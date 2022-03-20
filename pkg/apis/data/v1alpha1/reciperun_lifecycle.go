@@ -118,6 +118,10 @@ func (r *RecipeRun) MarkCompleted() {
 		Type:   RecipeReady,
 		Status: v1.ConditionTrue,
 	})
+	now := metav1.Now()
+	if r.Status.EndTime == nil {
+		r.Status.EndTime = &now
+	}
 }
 
 func (r *RecipeRun) MarkSaved() {
@@ -135,6 +139,10 @@ func (r *RecipeRun) MarkFailed(error string) {
 		Reason:  error,
 		Message: error,
 	})
+	now := metav1.Now()
+	if r.Status.EndTime == nil {
+		r.Status.EndTime = &now
+	}
 }
 
 func (r *RecipeRun) MarkRunning() {
@@ -185,7 +193,8 @@ func (run *RecipeRun) CompletionAlert(tenantRef *v1.ObjectReference, notifierNam
 			TenantRef:    tenantRef,
 			NotifierName: notifierName,
 			Fields: map[string]string{
-				"starttime": run.ObjectMeta.CreationTimestamp.Format("Mon Jan 2 15:04:05 MST 2006"),
+				"Start Time":      run.ObjectMeta.CreationTimestamp.Format("MM/dd/yy HH:mm:ss ZZZZ"),
+				"Completion Time": run.Status.EndTime.Format("MM/dd/yy HH:mm:ss ZZZZ"),
 			},
 		},
 	}
@@ -208,7 +217,8 @@ func (run *RecipeRun) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *st
 			TenantRef:    tenantRef,
 			NotifierName: notifierName,
 			Fields: map[string]string{
-				"starttime": run.ObjectMeta.CreationTimestamp.Format("Mon Jan 2 15:04:05 MST 2006"),
+				"Start Time":      run.ObjectMeta.CreationTimestamp.Format("MM/dd/yy HH:mm:ss ZZZZ"),
+				"Completion Time": run.Status.EndTime.Format("MM/dd/yy HH:mm:ss ZZZZ"),
 			},
 		},
 	}

@@ -990,19 +990,12 @@ message DataPipelineStatus {
 
   // Last run is the last time a data pipeline run was created
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 3;
-
-  // Update in case of terminal failure
-  // Borrowed from cluster api controller
-  optional string failureReason = 4;
-
-  // Update in case of terminal failure message
-  optional string failureMessage = 5;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus lastRun = 3;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated DataPipelineCondition conditions = 6;
+  repeated DataPipelineCondition conditions = 4;
 }
 
 // DataProduct represent a single data product in the system
@@ -1681,10 +1674,6 @@ message DatasetStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastStudyTime = 10;
 
-  // Notification sent
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastNotificationTime = 11;
-
   // Update in case of terminal failure
   // Borrowed from cluster api controller
   // +kubebuilder:validation:Optional
@@ -1719,10 +1708,18 @@ message DatasetStatus {
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Images images = 19;
 
+  // The start time of processing this dataset
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 20;
+
+  // The end time of processing this dataset
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 21;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated DatasetCondition conditions = 20;
+  repeated DatasetCondition conditions = 22;
 }
 
 // DatasetTemplate is  used to generate new datasets
@@ -2274,9 +2271,9 @@ message FeaturePipelineSpec {
 
 // FeatureStatus defines the observed state of Feature
 message FeaturePipelineStatus {
-  // Last run is the last time a run was created
+  // Last run is the last time a data pipeline run was created
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 1;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus lastRun = 1;
 
   // Store the avg cost of running this pipeline
   optional double averageCost = 2;
@@ -2869,9 +2866,9 @@ message LabelingPipelineSpec {
 
 // LabelingPipelineStatus is the observed state of the LabelingPipeline object.
 message LabelingPipelineStatus {
-  // Last run is the last time a run was created
+  // Last run is the last time a data pipeline run was created
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 1;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus lastRun = 1;
 
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
@@ -3258,9 +3255,9 @@ message RecipeStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 1;
 
-  // Last run is the last time a run was created
+  // Last run is the last time a data pipeline run was created
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 2;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus lastRun = 2;
 
   // Last time the object was updated
   // +kubebuilder:validation:Optional
@@ -3650,9 +3647,9 @@ message SqlQueryStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 2;
 
-  // Last Time the query run
+  // Last run is the last time a data pipeline run was created
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 3;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus lastRun = 3;
 
   // Update in case of terminal failure
   // Borrowed from cluster api controller
@@ -3975,9 +3972,8 @@ message WebRequestStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 2;
 
-  // Last Time the query run
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 3;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus lastRun = 3;
 
   // Update in case of terminal failure
   // Borrowed from cluster api controller

@@ -152,6 +152,10 @@ func (prediction *Prediction) MarkFailed(msg string) {
 		Reason:  string(catalog.Failed),
 		Message: msg,
 	})
+	now := metav1.Now()
+	if prediction.Status.EndTime == nil {
+		prediction.Status.EndTime = &now
+	}
 }
 
 func (prediction *Prediction) MarkCompleted() {
@@ -194,10 +198,7 @@ func (run *Prediction) MarkRunning() {
 		Reason: string(catalog.Running),
 	})
 	run.Status.Phase = PredictionPhaseRunning
-	now := metav1.Now()
-	if run.Status.StartTime == nil {
-		run.Status.EndTime = &now
-	}
+
 }
 
 ////////////////////////////////////////////////////////////
@@ -221,7 +222,8 @@ func (prediction *Prediction) CompletionAlert(tenantRef *v1.ObjectReference, not
 			NotifierName: notifierName,
 			Owner:        prediction.Spec.Owner,
 			Fields: map[string]string{
-				"starttime": prediction.ObjectMeta.CreationTimestamp.Format("Mon Jan 2 15:04:05 MST 2006"),
+				"Start Time": prediction.ObjectMeta.CreationTimestamp.Format("MM/dd/yy HH:mm:ss ZZZZ"),
+				"End Time":   prediction.Status.EndTime.Format("MM/dd/yy HH:mm:ss ZZZZ"),
 			},
 		},
 	}
@@ -245,7 +247,8 @@ func (prediction *Prediction) ErrorAlert(tenantRef *v1.ObjectReference, notifier
 			NotifierName: notifierName,
 			Owner:        prediction.Spec.Owner,
 			Fields: map[string]string{
-				"starttime": prediction.ObjectMeta.CreationTimestamp.Format("Mon Jan 2 15:04:05 MST 2006"),
+				"Start Time": prediction.ObjectMeta.CreationTimestamp.Format("MM/dd/yy HH:mm:ss ZZZZ"),
+				"End Time":   prediction.Status.EndTime.Format("MM/dd/yy HH:mm:ss ZZZZ"),
 			},
 		},
 	}

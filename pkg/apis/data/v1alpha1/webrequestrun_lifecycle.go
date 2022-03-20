@@ -143,6 +143,10 @@ func (prediction *WebRequestRun) MarkFailed(msg string) {
 		Reason:  string(catalog.Failed),
 		Message: msg,
 	})
+	now := metav1.Now()
+	if prediction.Status.EndTime == nil {
+		prediction.Status.EndTime = &now
+	}
 }
 
 func (prediction *WebRequestRun) MarkCompleted() {
@@ -180,7 +184,7 @@ func (run *WebRequestRun) MarkRunning() {
 	run.Status.Phase = WebRequestRunPhaseRunning
 	now := metav1.Now()
 	if run.Status.StartTime == nil {
-		run.Status.EndTime = &now
+		run.Status.StartTime = &now
 	}
 }
 
@@ -203,7 +207,8 @@ func (run *WebRequestRun) CompletionAlert(tenantRef *v1.ObjectReference, notifie
 			NotifierName: notifierName,
 			Owner:        run.Spec.Owner,
 			Fields: map[string]string{
-				"starttime": run.ObjectMeta.CreationTimestamp.Format("Mon Jan 2 15:04:05 MST 2006"),
+				"Start Time": run.ObjectMeta.CreationTimestamp.Format("MM/dd/yy HH:mm:ss ZZZZ"),
+				"End Time":   run.Status.EndTime.Format("MM/dd/yy HH:mm:ss ZZZZ"),
 			},
 		},
 	}
@@ -227,7 +232,7 @@ func (run *WebRequestRun) ErrorAlert(tenantRef *v1.ObjectReference, notifierName
 			NotifierName: notifierName,
 			Owner:        run.Spec.Owner,
 			Fields: map[string]string{
-				"starttime": run.ObjectMeta.CreationTimestamp.Format("Mon Jan 2 15:04:05 MST 2006"),
+				"Start Time": run.ObjectMeta.CreationTimestamp.Format("MM/dd/yy HH:mm:ss ZZZZ"),
 			},
 		},
 	}

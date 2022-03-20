@@ -2027,6 +2027,50 @@ message Neo4JSpec {
   optional string url = 7;
 }
 
+// Define the a specific notification channel
+message NotificationChannelSpec {
+  // Is this notifier can send notification
+  // +kubebuilder:default:= true
+  // +kubebuilder:validation:Optional
+  optional bool enabled = 1;
+
+  // +kubebuilder:validation:Required
+  // +kubebuilder:default:=""
+  optional string connectionName = 2;
+
+  // Send info messages via this channel
+  // +kubebuilder:default:= false
+  // +kubebuilder:validation:Optional
+  optional bool info = 3;
+
+  // Send error messages via this channel
+  // +kubebuilder:default:= true
+  // +kubebuilder:validation:Optional
+  optional bool error = 4;
+
+  // This channel start time.
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time from = 5;
+
+  // This channel end time.
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time to = 6;
+}
+
+message NotificationChannelStatus {
+  // The last time a message was sent on this channel
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Timestamp lastMessage = 1;
+
+  // In case of notification failure
+  // Borrowed from cluster api controller
+  // +kubebuilder:validation:Optional
+  optional string failureReason = 2;
+
+  // Update in case of terminal failure message
+  // +kubebuilder:validation:Optional
+  optional string failureMessage = 3;
+}
+
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
@@ -2087,34 +2131,14 @@ message NotifierSpec {
   // +kubebuilder:validation:Optional
   optional string description = 3;
 
-  // Notifier type
-  // +kubebuilder:default:="webhook"
-  // +kubebuilder:validation:Optional
-  optional string type = 4;
-
-  // +kubebuilder:validation:Required
-  // +kubebuilder:default:=""
-  optional string connectionName = 5;
-
-  // Send info messages
-  // +kubebuilder:default:= false
-  // +kubebuilder:validation:Optional
-  optional bool info = 6;
-
-  // Send error messages
-  // +kubebuilder:default:= true
-  // +kubebuilder:validation:Optional
-  optional bool error = 7;
-
   // The owner account name
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
-  optional string owner = 8;
+  optional string owner = 4;
 
-  // The email to send messages to. This is only relvent when using email notifier.
-  // +kubebuilder:default:=""
+  // Specify the notifier channels
   // +kubebuilder:validation:Optional
-  optional string email = 9;
+  repeated NotificationChannelSpec channels = 5;
 }
 
 // NotifierStatus is the observed state of a Notifier
@@ -2130,17 +2154,11 @@ message NotifierStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 3;
 
-  // Update in case of terminal failure
-  // Borrowed from cluster api controller
-  // +kubebuilder:validation:Optional
-  optional string failureReason = 4;
-
-  // Update in case of terminal failure message
-  // +kubebuilder:validation:Optional
-  optional string failureMessage = 5;
+  // The last channel status
+  repeated NotificationChannelStatus channelsStatus = 4;
 
   // +kubebuilder:validation:Optional
-  repeated NotifierCondition conditions = 6;
+  repeated NotifierCondition conditions = 5;
 }
 
 message OdbcSpec {

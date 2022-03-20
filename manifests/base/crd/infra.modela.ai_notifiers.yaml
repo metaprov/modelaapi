@@ -56,29 +56,45 @@ spec:
           spec:
             description: NotifierSpec defines the desired state of Notifier
             properties:
-              connectionName:
-                default: ""
-                type: string
+              channels:
+                description: Specify the notifier channels
+                items:
+                  description: Define the a specific notification channel
+                  properties:
+                    connectionName:
+                      default: ""
+                      type: string
+                    enabled:
+                      default: true
+                      description: Is this notifier can send notification
+                      type: boolean
+                    error:
+                      default: true
+                      description: Send error messages via this channel
+                      type: boolean
+                    from:
+                      description: This channel start time.
+                      format: date-time
+                      type: string
+                    info:
+                      default: false
+                      description: Send info messages via this channel
+                      type: boolean
+                    to:
+                      description: This channel end time.
+                      format: date-time
+                      type: string
+                  required:
+                  - connectionName
+                  type: object
+                type: array
               description:
                 default: ""
                 description: User provided description
                 type: string
-              email:
-                default: ""
-                description: The email to send messages to. This is only relvent when
-                  using email notifier.
-                type: string
               enabled:
                 default: true
                 description: Is this notifier can send notification
-                type: boolean
-              error:
-                default: true
-                description: Send error messages
-                type: boolean
-              info:
-                default: false
-                description: Send info messages
                 type: boolean
               owner:
                 default: no-one
@@ -120,16 +136,44 @@ spec:
                     description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                     type: string
                 type: object
-              type:
-                default: webhook
-                description: Notifier type
-                type: string
-            required:
-            - connectionName
             type: object
           status:
             description: NotifierStatus is the observed state of a Notifier
             properties:
+              channelsStatus:
+                description: The last channel status
+                items:
+                  properties:
+                    failureMessage:
+                      description: Update in case of terminal failure message
+                      type: string
+                    failureReason:
+                      description: In case of notification failure Borrowed from cluster
+                        api controller
+                      type: string
+                    lastMessage:
+                      description: The last time a message was sent on this channel
+                      properties:
+                        nanos:
+                          description: Non-negative fractions of a second at nanosecond
+                            resolution. Negative second values with fractions must
+                            still have non-negative nanos values that count forward
+                            in time. Must be from 0 to 999,999,999 inclusive. This
+                            field may be limited in precision depending on context.
+                          format: int32
+                          type: integer
+                        seconds:
+                          description: Represents seconds of UTC time since Unix epoch
+                            1970-01-01T00:00:00Z. Must be from 0001-01-01T00:00:00Z
+                            to 9999-12-31T23:59:59Z inclusive.
+                          format: int64
+                          type: integer
+                      required:
+                      - nanos
+                      - seconds
+                      type: object
+                  type: object
+                type: array
               conditions:
                 items:
                   description: NotifierCondition describes the state of the license
@@ -158,13 +202,6 @@ spec:
                   - type
                   type: object
                 type: array
-              failureMessage:
-                description: Update in case of terminal failure message
-                type: string
-              failureReason:
-                description: Update in case of terminal failure Borrowed from cluster
-                  api controller
-                type: string
               lastUpdated:
                 description: Last time the object was updated
                 format: date-time

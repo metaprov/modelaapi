@@ -231,6 +231,10 @@ func (report *Report) MarkReportReady(product *data.DataProduct) {
 
 	liveUri := product.PrefixLiveUri(report.PdfUri())
 	report.Status.URI = liveUri
+	now := metav1.Now()
+	if report.Status.EndTime != nil {
+		report.Status.EndTime = &now
+	}
 
 }
 
@@ -255,9 +259,10 @@ func (report *Report) CompletionAlert(tenantRef *v1.ObjectReference, notifierNam
 			NotifierName: notifierName,
 			Owner:        report.Spec.Owner,
 			Fields: map[string]string{
-				"starttime": report.ObjectMeta.CreationTimestamp.Format("Mon Jan 2 15:04:05 MST 2006"),
-				"bucket":    *report.Spec.Location.BucketName,
-				"url":       *report.Spec.Location.Path,
+				"Start Time": report.ObjectMeta.CreationTimestamp.Format("MM/dd/yy HH:mm:ss ZZZZ"),
+				"End Time":   report.Status.EndTime.Format("MM/dd/yy HH:mm:ss ZZZZ"),
+				"Bucket":     *report.Spec.Location.BucketName,
+				"URL":        *report.Spec.Location.Path,
 			},
 		},
 	}
@@ -281,10 +286,11 @@ func (report *Report) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *st
 			NotifierName: notifierName,
 			Owner:        report.Spec.Owner,
 			Fields: map[string]string{
-				"starttime": report.ObjectMeta.CreationTimestamp.Format("Mon Jan 2 15:04:05 MST 2006"),
-				"bucket":    *report.Spec.Location.BucketName,
-				"url":       *report.Spec.Location.Path,
-				"type":      string(*report.Spec.ReportType),
+				"Start Time": report.ObjectMeta.CreationTimestamp.Format("MM/dd/yy HH:mm:ss ZZZZ"),
+				"End Time":   report.Status.EndTime.Format("MM/dd/yy HH:mm:ss ZZZZ"),
+				"Bucket":     *report.Spec.Location.BucketName,
+				"URL":        *report.Spec.Location.Path,
+				"Type":       string(*report.Spec.ReportType),
 			},
 		},
 	}

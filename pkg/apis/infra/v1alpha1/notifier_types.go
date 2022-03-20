@@ -76,29 +76,13 @@ type NotifierSpec struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
-	// Notifier type
-	// +kubebuilder:default:="webhook"
-	// +kubebuilder:validation:Optional
-	Type *NotifierType `json:"type" protobuf:"bytes,4,opt,name=type"`
-	// +kubebuilder:validation:Required
-	// +kubebuilder:default:=""
-	ConnectionName *string `json:"connectionName" protobuf:"bytes,5,opt,name=connectionName"`
-	// Send info messages
-	// +kubebuilder:default:= false
-	// +kubebuilder:validation:Optional
-	Info *bool `json:"info,omitempty" protobuf:"bytes,6,opt,name=info"`
-	// Send error messages
-	// +kubebuilder:default:= true
-	// +kubebuilder:validation:Optional
-	Error *bool `json:"error,omitempty" protobuf:"bytes,7,opt,name=error"`
 	// The owner account name
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
-	Owner *string `json:"owner,omitempty" protobuf:"bytes,8,opt,name=owner"`
-	// The email to send messages to. This is only relvent when using email notifier.
-	// +kubebuilder:default:=""
+	Owner *string `json:"owner,omitempty" protobuf:"bytes,4,opt,name=owner"`
+	// Specify the notifier channels
 	// +kubebuilder:validation:Optional
-	Email *string `json:"email,omitempty" protobuf:"bytes,9,opt,name=email"`
+	Channels []NotificationChannelSpec `json:"channels,omitempty" protobuf:"bytes,5,opt,name=channels"`
 }
 
 // NotifierStatus is the observed state of a Notifier
@@ -111,14 +95,45 @@ type NotifierStatus struct {
 	// Last time the object was updated
 	//+kubebuilder:validation:Optional
 	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,3,opt,name=lastUpdated"`
-	// Update in case of terminal failure
+	// The last channel status
+	ChannelsStatus []NotificationChannelStatus `json:"channelsStatus,omitempty" protobuf:"bytes,4,opt,name=channelsStatus"`
+	//+kubebuilder:validation:Optional
+	Conditions []NotifierCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,5,rep,name=conditions"`
+}
+
+// Define the a specific notification channel
+type NotificationChannelSpec struct {
+	// Is this notifier can send notification
+	// +kubebuilder:default:= true
+	// +kubebuilder:validation:Optional
+	Enabled *bool `json:"enabled,omitempty" protobuf:"bytes,1,opt,name=enabled"`
+	// +kubebuilder:validation:Required
+	// +kubebuilder:default:=""
+	ConnectionName *string `json:"connectionName" protobuf:"bytes,2,opt,name=connectionName"`
+	// Send info messages via this channel
+	// +kubebuilder:default:= false
+	// +kubebuilder:validation:Optional
+	Info *bool `json:"info,omitempty" protobuf:"bytes,3,opt,name=info"`
+	// Send error messages via this channel
+	// +kubebuilder:default:= true
+	// +kubebuilder:validation:Optional
+	Error *bool `json:"error,omitempty" protobuf:"bytes,4,opt,name=error"`
+	// This channel start time.
+	// +kubebuilder:validation:Optional
+	From *metav1.Time `json:"from,omitempty" protobuf:"bytes,5,opt,name=from"`
+	// This channel end time.
+	// +kubebuilder:validation:Optional
+	To *metav1.Time `json:"to,omitempty" protobuf:"bytes,6,opt,name=to"`
+}
+
+type NotificationChannelStatus struct {
+	// The last time a message was sent on this channel
+	LastMessage *metav1.Timestamp `json:"lastMessage,omitempty" protobuf:"bytes,1,opt,name=lastMessage"`
+	// In case of notification failure
 	// Borrowed from cluster api controller
 	//+kubebuilder:validation:Optional
-	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,4,opt,name=failureReason"`
+	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,2,opt,name=failureReason"`
 	// Update in case of terminal failure message
 	//+kubebuilder:validation:Optional
-	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,5,opt,name=failureMessage"`
-
-	//+kubebuilder:validation:Optional
-	Conditions []NotifierCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,6,rep,name=conditions"`
+	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,3,opt,name=failureMessage"`
 }

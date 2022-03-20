@@ -212,9 +212,9 @@ message CronReportSpec {
 
 // CronReportStatus is the observed state of a ReportTemplate
 message CronReportStatus {
-  // Last run is the last time a run was created
+  // Last run is the last time a data pipeline run was created
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 1;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus lastRun = 1;
 
   // Last time the object was updated
   // +kubebuilder:validation:Optional
@@ -1758,9 +1758,9 @@ message ModelPipelineSpec {
 
 // ModelPipelineStatus define the observed state of the pipeline
 message ModelPipelineStatus {
-  // Last run is the last time a run was created
+  // Last run is the last time a model pipeline run was created
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 1;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus lastRun = 1;
 
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
@@ -2596,9 +2596,9 @@ message NotebookStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 3;
 
-  // Last run is the last time a run was created
+  // Last run is the last time a data pipeline run was created
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 4;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus lastRun = 4;
 
   // Last time the object was updated
   // +kubebuilder:validation:Optional

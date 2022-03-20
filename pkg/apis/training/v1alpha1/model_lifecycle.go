@@ -435,6 +435,7 @@ func (model *Model) MarkFailedToTrain(err string) {
 	model.Status.Phase = ModelPhaseFailed
 	now := metav1.Now()
 	model.Status.TrainingEndTime = &now
+	model.Status.EndTime = &now
 	// set the scores to 0, since Nan is invalid value
 	model.Status.CVScore = 0 // we must put it at 0, since NaN is invalid value
 	model.Status.Train = make([]catalog.Measurement, 0)
@@ -498,6 +499,9 @@ func (model *Model) MarkTestingFailed(err string) {
 	model.Status.Phase = ModelPhaseFailed
 	model.Status.FailureMessage = util.StrPtr("Failed to test." + err)
 	model.Status.Progress = 100
+	now := metav1.Now()
+	model.Status.EndTime = &now
+
 }
 
 func (model *Model) MarkTested() {
@@ -561,6 +565,9 @@ func (model *Model) MarkProfiledFailed(err string) {
 	model.Status.Phase = ModelPhaseFailed
 	model.Status.FailureMessage = util.StrPtr("Failed to profile." + err)
 	model.Status.Progress = 100
+	now := metav1.Now()
+	model.Status.EndTime = &now
+
 }
 
 func (model *Model) Profiled() bool {
@@ -600,6 +607,9 @@ func (model *Model) MarkReportFailed(err string) {
 	model.Status.Phase = ModelPhaseFailed
 	model.Status.FailureMessage = util.StrPtr("Failed to report." + err)
 	model.Status.Progress = 100
+	now := metav1.Now()
+	model.Status.EndTime = &now
+
 }
 
 func (model *Model) Reported() bool {
@@ -634,6 +644,9 @@ func (model *Model) MarkForecastFailed(err string) {
 	model.Status.Phase = ModelPhaseFailed
 	model.Status.FailureMessage = util.StrPtr("Failed to forecast." + err)
 	model.Status.Progress = 100
+	now := metav1.Now()
+	model.Status.EndTime = &now
+
 }
 
 func (model *Model) MarkForecasting() {
@@ -683,6 +696,9 @@ func (model *Model) MarkPackgedFailed(err string) {
 	})
 	model.Status.Phase = ModelPhaseFailed
 	model.Status.FailureMessage = util.StrPtr("Failed to package." + err)
+	now := metav1.Now()
+	model.Status.EndTime = &now
+
 }
 
 // =========================================
@@ -722,6 +738,9 @@ func (model *Model) MarkExplainedFailed(err string) {
 	})
 	model.Status.Phase = ModelPhaseExplained
 	model.Status.FailureMessage = util.StrPtr("Failed to explain." + err)
+	now := metav1.Now()
+	model.Status.EndTime = &now
+
 }
 
 // ---------------------- baking
@@ -759,6 +778,9 @@ func (model *Model) MarkPublishFailed(err string) {
 	})
 	model.Status.Phase = ModelPhaseFailed
 	model.Status.FailureMessage = util.StrPtr("Failed to publish." + err)
+	now := metav1.Now()
+	model.Status.EndTime = &now
+
 }
 
 func (model *Model) MarkReleaseFailed(err string) {
@@ -771,6 +793,7 @@ func (model *Model) MarkReleaseFailed(err string) {
 	model.Status.Phase = ModelPhaseFailed
 	now := metav1.Now()
 	model.Status.TrainingEndTime = &now
+	model.Status.EndTime = &now
 	model.Status.FailureMessage = util.StrPtr("Failed to release." + err)
 	model.Status.Progress = 100
 
@@ -795,6 +818,10 @@ func (model *Model) MarkAborted() {
 		Type:   ModelAborted,
 		Status: v1.ConditionTrue,
 	})
+	now := metav1.Now()
+	if model.Status.EndTime == nil {
+		model.Status.EndTime = &now
+	}
 }
 
 func (model *Model) Aborted() bool {
@@ -960,15 +987,15 @@ func (model *Model) CompletionAlert(tenantRef *v1.ObjectReference, notifierName 
 			NotifierName: notifierName,
 			Owner:        model.Spec.Owner,
 			Fields: map[string]string{
-				"dataset":         *model.Spec.DatasetName,
-				"study":           *model.Spec.StudyName,
-				"task":            string(*model.Spec.Task),
-				"objective":       string(*model.Spec.Objective),
-				"algorithm":       model.Spec.Estimator.AlgorithmName,
-				"phase":           string(model.Status.Phase),
-				"score":           util.FtoA(&model.Status.CVScore),
-				"starttime":       model.ObjectMeta.CreationTimestamp.Format("Mon Jan 2 15:04:05 MST 2006"),
-				"completion time": model.Status.EndTime.Format("Mon Jan 2 15:04:05 MST 2006"),
+				"Dataset":         *model.Spec.DatasetName,
+				"Study":           *model.Spec.StudyName,
+				"Task":            string(*model.Spec.Task),
+				"Objective":       string(*model.Spec.Objective),
+				"Algorithm":       model.Spec.Estimator.AlgorithmName,
+				"Phase":           string(model.Status.Phase),
+				"Score":           util.FtoA(&model.Status.CVScore),
+				"Start Time":      model.ObjectMeta.CreationTimestamp.Format("MM/dd/yy HH:mm:ss ZZZZ"),
+				"Completion time": model.Status.EndTime.Format("MM/dd/yy HH:mm:ss ZZZZ"),
 			},
 		},
 	}
@@ -992,15 +1019,15 @@ func (model *Model) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *stri
 			NotifierName: notifierName,
 			Owner:        model.Spec.Owner,
 			Fields: map[string]string{
-				"dataset":         *model.Spec.DatasetName,
-				"study":           *model.Spec.StudyName,
-				"task":            string(*model.Spec.Task),
-				"objective":       string(*model.Spec.Objective),
-				"algorithm":       model.Spec.Estimator.AlgorithmName,
-				"phase":           string(model.Status.Phase),
-				"score":           util.FtoA(&model.Status.CVScore),
-				"starttime":       model.ObjectMeta.CreationTimestamp.Format("Mon Jan 2 15:04:05 MST 2006"),
-				"completion time": model.Status.EndTime.Format("Mon Jan 2 15:04:05 MST 2006"),
+				"Dataset":         *model.Spec.DatasetName,
+				"Study":           *model.Spec.StudyName,
+				"Task":            string(*model.Spec.Task),
+				"Objective":       string(*model.Spec.Objective),
+				"Algorithm":       model.Spec.Estimator.AlgorithmName,
+				"Phase":           string(model.Status.Phase),
+				"Score":           util.FtoA(&model.Status.CVScore),
+				"Start Time":      model.ObjectMeta.CreationTimestamp.Format("MM/dd/yy HH:mm:ss ZZZZ"),
+				"Completion Time": model.Status.EndTime.Format("MM/dd/yy HH:mm:ss ZZZZ"),
 			},
 		},
 	}

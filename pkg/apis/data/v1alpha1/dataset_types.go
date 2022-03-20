@@ -207,9 +207,6 @@ type DatasetStatus struct {
 	// Last time a study was done on the dataset.
 	//+kubebuilder:validation:Optional
 	LastStudyTime *metav1.Time `json:"lastStudyTime,omitempty" protobuf:"bytes,10,opt,name=lastStudyTime"`
-	// Notification sent
-	//+kubebuilder:validation:Optional
-	NotificationTime *metav1.Time `json:"lastNotificationTime,omitempty" protobuf:"bytes,11,opt,name=lastNotificationTime"`
 	// Update in case of terminal failure
 	// Borrowed from cluster api controller
 	//+kubebuilder:validation:Optional
@@ -236,10 +233,16 @@ type DatasetStatus struct {
 	// The actual images used during the analysis of the dataset
 	// +kubebuilder:validation:Optional
 	Images catalog.Images `json:"images,omitempty" protobuf:"bytes,19,opt,name=images"`
+	// The start time of processing this dataset
+	// +kubebuilder:validation:Optional
+	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,20,opt,name=startTime"`
+	// The end time of processing this dataset
+	// +kubebuilder:validation:Optional
+	EndTime *metav1.Time `json:"endTime,omitempty" protobuf:"bytes,21,opt,name=endTime"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []DatasetCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,20,rep,name=conditions"`
+	Conditions []DatasetCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,22,rep,name=conditions"`
 }
 
 // DatasetStatistics contains statistics about attributes and correltation between attributes

@@ -2502,7 +2502,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionSt
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
-    lastrun: (f = msg.getLastrun()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    lastrun: (f = msg.getLastrun()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus.toObject(includeInstance, f),
     lastupdated: (f = msg.getLastupdated()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     observedgeneration: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     failurereason: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
@@ -2546,8 +2546,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionSt
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
-      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus.deserializeBinaryFromReader);
       msg.setLastrun(value);
       break;
     case 2:
@@ -2606,7 +2606,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionSt
     writer.writeMessage(
       1,
       f,
-      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus.serializeBinaryToWriter
     );
   }
   f = message.getLastupdated();
@@ -2650,17 +2650,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionSt
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 1;
- * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus lastRun = 1;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionStatus.prototype.getLastrun = function() {
-  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
-    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 1));
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus, 1));
 };
 
 
 /**
- * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionStatus.prototype.setLastrun = function(value) {

@@ -1230,16 +1230,10 @@ export class DataPipelineStatus extends jspb.Message {
   hasLastupdated(): boolean;
   clearLastupdated(): DataPipelineStatus;
 
-  getLastrun(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLastrun(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DataPipelineStatus;
+  getLastrun(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus | undefined;
+  setLastrun(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus): DataPipelineStatus;
   hasLastrun(): boolean;
   clearLastrun(): DataPipelineStatus;
-
-  getFailurereason(): string;
-  setFailurereason(value: string): DataPipelineStatus;
-
-  getFailuremessage(): string;
-  setFailuremessage(value: string): DataPipelineStatus;
 
   getConditionsList(): Array<DataPipelineCondition>;
   setConditionsList(value: Array<DataPipelineCondition>): DataPipelineStatus;
@@ -1258,9 +1252,7 @@ export namespace DataPipelineStatus {
   export type AsObject = {
     observedgeneration: number,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    lastrun?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    failurereason: string,
-    failuremessage: string,
+    lastrun?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus.AsObject,
     conditionsList: Array<DataPipelineCondition.AsObject>,
   }
 }
@@ -2271,11 +2263,6 @@ export class DatasetStatus extends jspb.Message {
   hasLaststudytime(): boolean;
   clearLaststudytime(): DatasetStatus;
 
-  getLastnotificationtime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLastnotificationtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DatasetStatus;
-  hasLastnotificationtime(): boolean;
-  clearLastnotificationtime(): DatasetStatus;
-
   getFailurereason(): string;
   setFailurereason(value: string): DatasetStatus;
 
@@ -2306,6 +2293,16 @@ export class DatasetStatus extends jspb.Message {
   hasImages(): boolean;
   clearImages(): DatasetStatus;
 
+  getStarttime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setStarttime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DatasetStatus;
+  hasStarttime(): boolean;
+  clearStarttime(): DatasetStatus;
+
+  getEndtime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setEndtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DatasetStatus;
+  hasEndtime(): boolean;
+  clearEndtime(): DatasetStatus;
+
   getConditionsList(): Array<DatasetCondition>;
   setConditionsList(value: Array<DatasetCondition>): DatasetStatus;
   clearConditionsList(): DatasetStatus;
@@ -2330,7 +2327,6 @@ export namespace DatasetStatus {
     observedgeneration: number,
     validationresultsList: Array<DataValidationResult.AsObject>,
     laststudytime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    lastnotificationtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     failurereason: string,
     failuremessage: string,
     progress: number,
@@ -2339,6 +2335,8 @@ export namespace DatasetStatus {
     derivedfromdataset: string,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     images?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Images.AsObject,
+    starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<DatasetCondition.AsObject>,
   }
 }
@@ -3302,8 +3300,8 @@ export namespace FeaturePipelineSpec {
 }
 
 export class FeaturePipelineStatus extends jspb.Message {
-  getLastrun(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLastrun(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): FeaturePipelineStatus;
+  getLastrun(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus | undefined;
+  setLastrun(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus): FeaturePipelineStatus;
   hasLastrun(): boolean;
   clearLastrun(): FeaturePipelineStatus;
 
@@ -3333,7 +3331,7 @@ export class FeaturePipelineStatus extends jspb.Message {
 
 export namespace FeaturePipelineStatus {
   export type AsObject = {
-    lastrun?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    lastrun?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus.AsObject,
     averagecost: number,
     observedgeneration: number,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
@@ -4288,8 +4286,8 @@ export namespace LabelingPipelineSpec {
 }
 
 export class LabelingPipelineStatus extends jspb.Message {
-  getLastrun(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLastrun(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): LabelingPipelineStatus;
+  getLastrun(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus | undefined;
+  setLastrun(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus): LabelingPipelineStatus;
   hasLastrun(): boolean;
   clearLastrun(): LabelingPipelineStatus;
 
@@ -4316,7 +4314,7 @@ export class LabelingPipelineStatus extends jspb.Message {
 
 export namespace LabelingPipelineStatus {
   export type AsObject = {
-    lastrun?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    lastrun?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus.AsObject,
     observedgeneration: number,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<LabelingPipelineCondition.AsObject>,
@@ -4967,8 +4965,8 @@ export class RecipeStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): RecipeStatus;
 
-  getLastrun(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLastrun(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): RecipeStatus;
+  getLastrun(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus | undefined;
+  setLastrun(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus): RecipeStatus;
   hasLastrun(): boolean;
   clearLastrun(): RecipeStatus;
 
@@ -4999,7 +4997,7 @@ export class RecipeStatus extends jspb.Message {
 export namespace RecipeStatus {
   export type AsObject = {
     observedgeneration: number,
-    lastrun?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    lastrun?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus.AsObject,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     failurereason: string,
     failuremessage: string,
@@ -5618,8 +5616,8 @@ export class SqlQueryStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): SqlQueryStatus;
 
-  getLastrun(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLastrun(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): SqlQueryStatus;
+  getLastrun(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus | undefined;
+  setLastrun(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus): SqlQueryStatus;
   hasLastrun(): boolean;
   clearLastrun(): SqlQueryStatus;
 
@@ -5646,7 +5644,7 @@ export namespace SqlQueryStatus {
   export type AsObject = {
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     observedgeneration: number,
-    lastrun?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    lastrun?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus.AsObject,
     failurereason: string,
     failuremessage: string,
     conditionsList: Array<SqlQueryCondition.AsObject>,
@@ -6148,8 +6146,8 @@ export class WebRequestStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): WebRequestStatus;
 
-  getLastrun(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLastrun(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): WebRequestStatus;
+  getLastrun(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus | undefined;
+  setLastrun(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus): WebRequestStatus;
   hasLastrun(): boolean;
   clearLastrun(): WebRequestStatus;
 
@@ -6176,7 +6174,7 @@ export namespace WebRequestStatus {
   export type AsObject = {
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     observedgeneration: number,
-    lastrun?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    lastrun?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus.AsObject,
     failurereason: string,
     failuremessage: string,
     conditionsList: Array<WebRequestCondition.AsObject>,

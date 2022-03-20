@@ -643,6 +643,42 @@ export namespace IntParameter {
   }
 }
 
+export class LastRunStatus extends jspb.Message {
+  getOutcome(): string;
+  setOutcome(value: string): LastRunStatus;
+
+  getAt(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Timestamp | undefined;
+  setAt(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Timestamp): LastRunStatus;
+  hasAt(): boolean;
+  clearAt(): LastRunStatus;
+
+  getDuration(): number;
+  setDuration(value: number): LastRunStatus;
+
+  getFailurereason(): string;
+  setFailurereason(value: string): LastRunStatus;
+
+  getFailuremessage(): string;
+  setFailuremessage(value: string): LastRunStatus;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LastRunStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: LastRunStatus): LastRunStatus.AsObject;
+  static serializeBinaryToWriter(message: LastRunStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LastRunStatus;
+  static deserializeBinaryFromReader(message: LastRunStatus, reader: jspb.BinaryReader): LastRunStatus;
+}
+
+export namespace LastRunStatus {
+  export type AsObject = {
+    outcome: string,
+    at?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Timestamp.AsObject,
+    duration: number,
+    failurereason: string,
+    failuremessage: string,
+  }
+}
+
 export class Lib extends jspb.Message {
   getFrameworks(): string;
   setFrameworks(value: string): Lib;

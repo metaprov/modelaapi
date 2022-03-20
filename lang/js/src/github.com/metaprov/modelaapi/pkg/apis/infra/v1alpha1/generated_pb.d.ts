@@ -3592,6 +3592,76 @@ export namespace Neo4JSpec {
   }
 }
 
+export class NotificationChannelSpec extends jspb.Message {
+  getEnabled(): boolean;
+  setEnabled(value: boolean): NotificationChannelSpec;
+
+  getConnectionname(): string;
+  setConnectionname(value: string): NotificationChannelSpec;
+
+  getInfo(): boolean;
+  setInfo(value: boolean): NotificationChannelSpec;
+
+  getError(): boolean;
+  setError(value: boolean): NotificationChannelSpec;
+
+  getFrom(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setFrom(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): NotificationChannelSpec;
+  hasFrom(): boolean;
+  clearFrom(): NotificationChannelSpec;
+
+  getTo(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setTo(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): NotificationChannelSpec;
+  hasTo(): boolean;
+  clearTo(): NotificationChannelSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): NotificationChannelSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: NotificationChannelSpec): NotificationChannelSpec.AsObject;
+  static serializeBinaryToWriter(message: NotificationChannelSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): NotificationChannelSpec;
+  static deserializeBinaryFromReader(message: NotificationChannelSpec, reader: jspb.BinaryReader): NotificationChannelSpec;
+}
+
+export namespace NotificationChannelSpec {
+  export type AsObject = {
+    enabled: boolean,
+    connectionname: string,
+    info: boolean,
+    error: boolean,
+    from?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    to?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+  }
+}
+
+export class NotificationChannelStatus extends jspb.Message {
+  getLastmessage(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Timestamp | undefined;
+  setLastmessage(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Timestamp): NotificationChannelStatus;
+  hasLastmessage(): boolean;
+  clearLastmessage(): NotificationChannelStatus;
+
+  getFailurereason(): string;
+  setFailurereason(value: string): NotificationChannelStatus;
+
+  getFailuremessage(): string;
+  setFailuremessage(value: string): NotificationChannelStatus;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): NotificationChannelStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: NotificationChannelStatus): NotificationChannelStatus.AsObject;
+  static serializeBinaryToWriter(message: NotificationChannelStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): NotificationChannelStatus;
+  static deserializeBinaryFromReader(message: NotificationChannelStatus, reader: jspb.BinaryReader): NotificationChannelStatus;
+}
+
+export namespace NotificationChannelStatus {
+  export type AsObject = {
+    lastmessage?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Timestamp.AsObject,
+    failurereason: string,
+    failuremessage: string,
+  }
+}
+
 export class Notifier extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): Notifier;
@@ -3698,23 +3768,13 @@ export class NotifierSpec extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): NotifierSpec;
 
-  getType(): string;
-  setType(value: string): NotifierSpec;
-
-  getConnectionname(): string;
-  setConnectionname(value: string): NotifierSpec;
-
-  getInfo(): boolean;
-  setInfo(value: boolean): NotifierSpec;
-
-  getError(): boolean;
-  setError(value: boolean): NotifierSpec;
-
   getOwner(): string;
   setOwner(value: string): NotifierSpec;
 
-  getEmail(): string;
-  setEmail(value: string): NotifierSpec;
+  getChannelsList(): Array<NotificationChannelSpec>;
+  setChannelsList(value: Array<NotificationChannelSpec>): NotifierSpec;
+  clearChannelsList(): NotifierSpec;
+  addChannels(value?: NotificationChannelSpec, index?: number): NotificationChannelSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): NotifierSpec.AsObject;
@@ -3729,12 +3789,8 @@ export namespace NotifierSpec {
     enabled: boolean,
     tenantref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     description: string,
-    type: string,
-    connectionname: string,
-    info: boolean,
-    error: boolean,
     owner: string,
-    email: string,
+    channelsList: Array<NotificationChannelSpec.AsObject>,
   }
 }
 
@@ -3750,11 +3806,10 @@ export class NotifierStatus extends jspb.Message {
   hasLastupdated(): boolean;
   clearLastupdated(): NotifierStatus;
 
-  getFailurereason(): string;
-  setFailurereason(value: string): NotifierStatus;
-
-  getFailuremessage(): string;
-  setFailuremessage(value: string): NotifierStatus;
+  getChannelsstatusList(): Array<NotificationChannelStatus>;
+  setChannelsstatusList(value: Array<NotificationChannelStatus>): NotifierStatus;
+  clearChannelsstatusList(): NotifierStatus;
+  addChannelsstatus(value?: NotificationChannelStatus, index?: number): NotificationChannelStatus;
 
   getConditionsList(): Array<NotifierCondition>;
   setConditionsList(value: Array<NotifierCondition>): NotifierStatus;
@@ -3774,8 +3829,7 @@ export namespace NotifierStatus {
     provider: string,
     observedgeneration: number,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    failurereason: string,
-    failuremessage: string,
+    channelsstatusList: Array<NotificationChannelStatus.AsObject>,
     conditionsList: Array<NotifierCondition.AsObject>,
   }
 }

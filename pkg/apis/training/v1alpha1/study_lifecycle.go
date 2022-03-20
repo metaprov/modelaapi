@@ -739,6 +739,7 @@ func (study *Study) MarkReady() {
 	})
 	study.Status.Phase = StudyPhaseCompleted
 	study.RefreshProgress()
+
 }
 
 func (study *Study) MarkEnsembleTrained() {
@@ -818,6 +819,10 @@ func (study *Study) MarkReportFailed(err string) {
 	study.UpdateEndTime()
 	study.Status.FailureMessage = util.StrPtr("Failed to report." + err)
 	study.RefreshProgress()
+	now := metav1.Now()
+	if study.Status.EndTime != nil {
+		study.Status.EndTime = &now
+	}
 }
 
 func (study *Study) MarkAbortFailed(err string) {
@@ -830,6 +835,10 @@ func (study *Study) MarkAbortFailed(err string) {
 	study.Status.Phase = StudyPhaseFailed
 	study.Status.FailureMessage = util.StrPtr("Failed to abort." + err)
 	study.RefreshProgress()
+	now := metav1.Now()
+	if study.Status.EndTime != nil {
+		study.Status.EndTime = &now
+	}
 }
 
 func (study *Study) MarkPauseFailed(err string) {
@@ -842,6 +851,10 @@ func (study *Study) MarkPauseFailed(err string) {
 	study.Status.Phase = StudyPhaseFailed
 	study.Status.FailureMessage = util.StrPtr("Failed to paused." + err)
 	study.RefreshProgress()
+	now := metav1.Now()
+	if study.Status.EndTime != nil {
+		study.Status.EndTime = &now
+	}
 }
 
 func (study *Study) MarkPartitionedFailed(err string) {
@@ -853,6 +866,10 @@ func (study *Study) MarkPartitionedFailed(err string) {
 	})
 	study.Status.Phase = StudyPhaseFailed
 	study.Status.FailureMessage = util.StrPtr("Failed to partition." + err)
+	now := metav1.Now()
+	if study.Status.EndTime != nil {
+		study.Status.EndTime = &now
+	}
 	study.RefreshProgress()
 }
 
@@ -953,7 +970,7 @@ func (study *Study) CompletionAlert(tenantRef *v1.ObjectReference, notifierName 
 			Namespace:    study.Namespace,
 		},
 		Spec: infra.AlertSpec{
-			Subject: util.StrPtr("Study Completed"),
+			Subject: util.StrPtr("Study Completed Successfully"),
 			Level:   &level,
 			EntityRef: v1.ObjectReference{
 				Name:      study.Name,
@@ -963,11 +980,11 @@ func (study *Study) CompletionAlert(tenantRef *v1.ObjectReference, notifierName 
 			NotifierName: notifierName,
 			Owner:        study.Spec.Owner,
 			Fields: map[string]string{
-				"dataset":         *study.Spec.DatasetName,
-				"task":            string(*study.Spec.Task),
-				"phase":           string(study.Status.Phase),
-				"starttime":       study.ObjectMeta.CreationTimestamp.Format("Mon Jan 2 15:04:05 MST 2006"),
-				"completion time": study.Status.EndTime.Format("Mon Jan 2 15:04:05 MST 2006"),
+				"Dataset":         *study.Spec.DatasetName,
+				"Task":            string(*study.Spec.Task),
+				"Phase":           string(study.Status.Phase),
+				"Start Time":      study.ObjectMeta.CreationTimestamp.Format("MM/dd/yy HH:mm:ss ZZZZ"),
+				"Completion Time": study.Status.EndTime.Format("MM/dd/yy HH:mm:ss ZZZZ"),
 			},
 		},
 	}
@@ -991,11 +1008,11 @@ func (study *Study) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *stri
 			NotifierName: notifierName,
 			Owner:        study.Spec.Owner,
 			Fields: map[string]string{
-				"dataset":         *study.Spec.DatasetName,
-				"task":            string(*study.Spec.Task),
-				"phase":           string(study.Status.Phase),
-				"starttime":       study.ObjectMeta.CreationTimestamp.Format("Mon Jan 2 15:04:05 MST 2006"),
-				"completion time": study.Status.EndTime.Format("Mon Jan 2 15:04:05 MST 2006"),
+				"Dataset":         *study.Spec.DatasetName,
+				"Task":            string(*study.Spec.Task),
+				"Phase":           string(study.Status.Phase),
+				"Start Time":      study.ObjectMeta.CreationTimestamp.Format("MM/dd/yy HH:mm:ss ZZZZ"),
+				"Completion Time": study.Status.EndTime.Format("MM/dd/yy HH:mm:ss ZZZZ"),
 			},
 		},
 	}

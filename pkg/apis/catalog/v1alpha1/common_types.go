@@ -1970,3 +1970,30 @@ type Images struct {
 	// +kubebuilder:validation:Optional
 	PublisherImage *string `json:"publisherImage,omitempty" protobuf:"bytes,3,opt,name=publisherImage"`
 }
+
+// +kubebuilder:validation:Enum="random";"split-column";"time";"random-stratified";"auto";"test-dataset";
+type RunOutcomeType string
+
+const (
+	RunOutcomeSuccess RunOutcomeType = "success"
+	RunOutcomeError   RunOutcomeType = "error"
+	RunOutcomeAborted RunOutcomeType = "aborted"
+)
+
+// Describe the last run status for objects which have runs (e.g. model pipeline)
+type LastRunStatus struct {
+	// the outcome of the last run
+	// +kubebuilder:validation:Optional
+	Outcome RunOutcomeType `json:"outcome,omitempty" protobuf:"bytes,1,opt,name=outcome"`
+	// The last run time
+	// +kubebuilder:validation:Optional
+	At *metav1.Timestamp `json:"at,omitempty" protobuf:"bytes,2,opt,name=at"`
+	// Last run duration in seconds
+	// +kubebuilder:validation:Optional
+	Duration int32 `json:"duration,omitempty" protobuf:"bytes,3,opt,name=duration"`
+	// Update in case of terminal failure
+	// Borrowed from cluster api controller
+	FailureReason *StatusError `json:"failureReason,omitempty" protobuf:"bytes,4,opt,name=failureReason"`
+	// Update in case of terminal failure message
+	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,5,opt,name=failureMessage"`
+}

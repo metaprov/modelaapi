@@ -117,9 +117,9 @@ type FeaturePipelineSpec struct {
 
 // FeatureStatus defines the observed state of Feature
 type FeaturePipelineStatus struct {
-	// Last run is the last time a run was created
+	// Last run is the last time a data pipeline run was created
 	//+kubebuilder:validation:Optional
-	LastRun *metav1.Time `json:"lastRun,omitempty" protobuf:"bytes,1,opt,name=lastRun"`
+	LastRun catalog.LastRunStatus `json:"lastRun,omitempty" protobuf:"bytes,1,opt,name=lastRun"`
 	// Store the avg cost of running this pipeline
 	AverageCost float64 `json:"averageCost,omitempty" protobuf:"bytes,2,opt,name=averageCost"`
 	// ObservedGeneration is the Last generation that was acted on

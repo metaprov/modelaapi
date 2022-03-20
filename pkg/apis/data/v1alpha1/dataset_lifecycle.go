@@ -293,6 +293,10 @@ func (dataset *Dataset) MarkIngestFailed(msg string) {
 	dataset.Status.Phase = DatasetPhaseFailed
 	dataset.Status.FailureMessage = util.StrPtr(msg)
 	dataset.Status.Progress = 100
+	now := metav1.Now()
+	if dataset.Status.EndTime == nil {
+		dataset.Status.EndTime = &now
+	}
 }
 
 // -------------------- generating
@@ -328,6 +332,10 @@ func (dataset *Dataset) MarkGeneratedFailed(msg string) {
 	dataset.Status.Phase = DatasetPhaseFailed
 	dataset.Status.FailureMessage = util.StrPtr(msg)
 	dataset.Status.Progress = 100
+	now := metav1.Now()
+	if dataset.Status.EndTime == nil {
+		dataset.Status.EndTime = &now
+	}
 }
 
 // ------------------------- report
@@ -361,6 +369,10 @@ func (dataset *Dataset) MarkReportFailed(msg string) {
 	dataset.Status.Phase = DatasetPhaseFailed
 	dataset.Status.FailureMessage = util.StrPtr(msg)
 	dataset.Status.Progress = 100
+	now := metav1.Now()
+	if dataset.Status.EndTime == nil {
+		dataset.Status.EndTime = &now
+	}
 }
 
 // ----------------- profile
@@ -395,6 +407,10 @@ func (dataset *Dataset) MarkProfiledFailed(msg string) {
 	dataset.Status.Phase = DatasetPhaseFailed
 	dataset.Status.FailureMessage = util.StrPtr(msg)
 	dataset.Status.Progress = 100
+	now := metav1.Now()
+	if dataset.Status.EndTime == nil {
+		dataset.Status.EndTime = &now
+	}
 }
 
 func (r *Dataset) OpName() string {
@@ -409,6 +425,10 @@ func (dataset *Dataset) MarkReady() {
 	})
 	dataset.Status.Phase = DatasetPhaseReady
 	dataset.Status.Progress = 100
+	now := metav1.Now()
+	if dataset.Status.EndTime == nil {
+		dataset.Status.EndTime = &now
+	}
 }
 
 // --------------------- Archive
@@ -458,10 +478,11 @@ func (dataset *Dataset) CompletionAlert(tenantRef *v1.ObjectReference, notifierN
 			NotifierName: notifierName,
 			Owner:        dataset.Spec.Owner,
 			Fields: map[string]string{
-				"rows":      util.ItoA(&dataset.Status.Statistics.Rows),
-				"columns":   util.ItoA(&dataset.Status.Statistics.Cols),
-				"size":      util.ItoA(&dataset.Status.Statistics.FileSize),
-				"starttime": dataset.ObjectMeta.CreationTimestamp.Format("Mon Jan 2 15:04:05 MST 2006"),
+				"Rows":            util.ItoA(&dataset.Status.Statistics.Rows),
+				"Columns":         util.ItoA(&dataset.Status.Statistics.Cols),
+				"Size":            util.ItoA(&dataset.Status.Statistics.FileSize),
+				"Start Time":      dataset.ObjectMeta.CreationTimestamp.Format("MM/dd/yy HH:mm:ss ZZZZ"),
+				"Completion Time": dataset.Status.EndTime.Format("MM/dd/yy HH:mm:ss ZZZZ"),
 			},
 		},
 	}
@@ -486,10 +507,11 @@ func (dataset *Dataset) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *
 			},
 			Owner: dataset.Spec.Owner,
 			Fields: map[string]string{
-				"rows":      util.ItoA(&dataset.Status.Statistics.Rows),
-				"columns":   util.ItoA(&dataset.Status.Statistics.Cols),
-				"size":      util.ItoA(&dataset.Status.Statistics.FileSize),
-				"starttime": dataset.ObjectMeta.CreationTimestamp.Format("Mon Jan 2 15:04:05 MST 2006"),
+				"Rows":            util.ItoA(&dataset.Status.Statistics.Rows),
+				"Columns":         util.ItoA(&dataset.Status.Statistics.Cols),
+				"Size":            util.ItoA(&dataset.Status.Statistics.FileSize),
+				"Start Time":      dataset.ObjectMeta.CreationTimestamp.Format("MM/dd/yy HH:mm:ss ZZZZ"),
+				"Completion Time": dataset.Status.EndTime.Format("MM/dd/yy HH:mm:ss ZZZZ"),
 			},
 		},
 	}

@@ -158,7 +158,21 @@ func (in *DataPipelineRun) MarkFailed(err error) {
 	}
 	in.Status.Progress = util.Int32Ptr(100)
 	in.Status.FailureMessage = util.StrPtr(err.Error())
+}
 
+func (in *DataPipelineRun) MarkAborted(err error) {
+	in.Status.Phase = DataPipelineRunPhaseAborted
+	in.CreateOrUpdateCond(DataPipelineRunCondition{
+		Type:   DataPipelineRunConditionType(DataPipelineRunPhaseAborted),
+		Status: v1.ConditionTrue,
+		Reason: string(DataPipelineRunPhaseAborted),
+	})
+	now := metav1.Now()
+	if in.Status.EndTime == nil {
+		in.Status.EndTime = &now
+	}
+	in.Status.Progress = util.Int32Ptr(100)
+	in.Status.FailureMessage = util.StrPtr(err.Error())
 }
 
 func (run *DataPipelineRun) ToYamlFile() ([]byte, error) {
@@ -191,7 +205,8 @@ func (run *DataPipelineRun) CompletionAlert(tenantRef *v1.ObjectReference, notif
 			NotifierName: notifierName,
 			Owner:        run.Spec.Owner,
 			Fields: map[string]string{
-				"starttime": run.ObjectMeta.CreationTimestamp.Format("Mon Jan 2 15:04:05 MST 2006"),
+				"Start Time":      run.ObjectMeta.CreationTimestamp.Format("MM/dd/yy HH:mm:ss ZZZZ"),
+				"Completion Time": run.Status.EndTime.Format("MM/dd/yy HH:mm:ss ZZZZ"),
 			},
 		},
 	}
@@ -215,7 +230,8 @@ func (run *DataPipelineRun) ErrorAlert(tenantRef *v1.ObjectReference, notifierNa
 			},
 			Owner: run.Spec.Owner,
 			Fields: map[string]string{
-				"starttime": run.ObjectMeta.CreationTimestamp.Format("Mon Jan 2 15:04:05 MST 2006"),
+				"Start Time":      run.ObjectMeta.CreationTimestamp.Format("MM/dd/yy HH:mm:ss ZZZZ"),
+				"Completion Time": run.Status.EndTime.Format("MM/dd/yy HH:mm:ss ZZZZ"),
 			},
 		},
 	}
