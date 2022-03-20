@@ -128,3 +128,7 @@ func (r *Recipe) MarkSaved() {
 func (r *Recipe) IsSaved() bool {
 	return r.GetCond(RecipeSaved).Status == v1.ConditionTrue
 }
+
+func (in *Recipe) UpdateRunStatus(run RecipeRun) {
+
+}

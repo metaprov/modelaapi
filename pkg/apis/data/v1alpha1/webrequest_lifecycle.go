@@ -128,3 +128,7 @@ func (r *WebRequest) MarkSaved() {
 func (r *WebRequest) IsSaved() bool {
 	return r.GetCond(WebRequestSaved).Status == v1.ConditionTrue
 }
+
+func (in *WebRequest) UpdateRunStatus(run WebRequestRun) {
+
+}

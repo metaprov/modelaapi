@@ -46,3 +46,7 @@ func (in *LabelingPipeline) SetupWebhookWithManager(mgr ctrl.Manager) error {
 
 // No defaults in this current release
 func (feature *LabelingPipeline) Default() {}
+
+func (in *LabelingPipeline) UpdateRunStatus(run LabelingPipelineRun) {
+
+}

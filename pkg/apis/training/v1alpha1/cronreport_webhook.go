@@ -197,3 +197,7 @@ func (report *CronReport) validate() error {
 func (report *CronReport) ValidateDelete() error {
 	return nil
 }
+
+func (in *CronReport) UpdateRunStatus(run Report) {
+
+}

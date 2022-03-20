@@ -197,3 +197,7 @@ func (prediction *CronPrediction) validate() error {
 func (prediction *CronPrediction) ValidateDelete() error {
 	return nil
 }
+
+func (prediction *CronPrediction) UpdateRunStatus(run Prediction) {
+
+}

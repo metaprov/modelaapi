@@ -128,3 +128,7 @@ func (r *SqlQuery) MarkSaved() {
 func (r *SqlQuery) IsSaved() bool {
 	return r.GetCond(SqlQuerySaved).Status == v1.ConditionTrue
 }
+
+func (in *SqlQuery) UpdateRunStatus(run SqlQueryRun) {
+
+}

@@ -50,3 +50,7 @@ func (notebook *Notebook) validateSpec(fldPath *field.Path) field.ErrorList {
 func (notebook *Notebook) ValidateDelete() error {
 	panic("implement me")
 }
+
+func (in *Notebook) UpdateRunStatus(run NotebookRun) {
+
+}

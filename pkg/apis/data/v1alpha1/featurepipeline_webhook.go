@@ -46,3 +46,7 @@ func (in *FeaturePipeline) SetupWebhookWithManager(mgr ctrl.Manager) error {
 
 // No defaults in this current release
 func (feature *FeaturePipeline) Default() {}
+
+func (in *FeaturePipeline) UpdateRunStatus(run FeaturePipelineRun) {
+
+}

@@ -118,3 +118,7 @@ func (in *DataPipeline) MarkSaved() {
 func (w *DataPipeline) IsSaved() bool {
 	return w.GetCond(DataPipelineSaved).Status == corev1.ConditionTrue
 }
+
+func (in *DataPipeline) UpdateRunStatus(run DataPipelineRun) {
+
+}
