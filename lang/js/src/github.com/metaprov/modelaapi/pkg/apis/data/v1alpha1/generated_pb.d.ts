@@ -3197,6 +3197,12 @@ export class FeaturePipelineRunStatus extends jspb.Message {
   hasLastupdated(): boolean;
   clearLastupdated(): FeaturePipelineRunStatus;
 
+  getFailurereason(): string;
+  setFailurereason(value: string): FeaturePipelineRunStatus;
+
+  getFailuremessage(): string;
+  setFailuremessage(value: string): FeaturePipelineRunStatus;
+
   getConditionsList(): Array<FeaturePipelineRunCondition>;
   setConditionsList(value: Array<FeaturePipelineRunCondition>): FeaturePipelineRunStatus;
   clearConditionsList(): FeaturePipelineRunStatus;
@@ -3219,6 +3225,8 @@ export namespace FeaturePipelineRunStatus {
     triggeredby: string,
     logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    failurereason: string,
+    failuremessage: string,
     conditionsList: Array<FeaturePipelineRunCondition.AsObject>,
   }
 }
@@ -4194,6 +4202,12 @@ export class LabelingPipelineRunStatus extends jspb.Message {
   hasLastupdated(): boolean;
   clearLastupdated(): LabelingPipelineRunStatus;
 
+  getFailurereason(): string;
+  setFailurereason(value: string): LabelingPipelineRunStatus;
+
+  getFailuremessage(): string;
+  setFailuremessage(value: string): LabelingPipelineRunStatus;
+
   getConditionsList(): Array<LabelingPipelineRunCondition>;
   setConditionsList(value: Array<LabelingPipelineRunCondition>): LabelingPipelineRunStatus;
   clearConditionsList(): LabelingPipelineRunStatus;
@@ -4215,6 +4229,8 @@ export namespace LabelingPipelineRunStatus {
     observedgeneration: number,
     triggeredby: string,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    failurereason: string,
+    failuremessage: string,
     conditionsList: Array<LabelingPipelineRunCondition.AsObject>,
   }
 }

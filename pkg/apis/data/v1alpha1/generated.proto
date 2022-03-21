@@ -2199,10 +2199,17 @@ message FeaturePipelineRunStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 7;
 
+  // Update in case of terminal failure
+  // Borrowed from cluster api controller
+  optional string failureReason = 8;
+
+  // Update in case of terminal failure message
+  optional string failureMessage = 9;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated FeaturePipelineRunCondition conditions = 8;
+  repeated FeaturePipelineRunCondition conditions = 10;
 }
 
 // FeaturePipelineSpec contain the desired state of a FeaturePipeline
@@ -2810,10 +2817,17 @@ message LabelingPipelineRunStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 6;
 
+  // Update in case of terminal failure
+  // Borrowed from cluster api controller
+  optional string failureReason = 7;
+
+  // Update in case of terminal failure message
+  optional string failureMessage = 8;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated LabelingPipelineRunCondition conditions = 7;
+  repeated LabelingPipelineRunCondition conditions = 9;
 }
 
 // LabelingPipelineSpec defines the desired state of a LabelingPipeline

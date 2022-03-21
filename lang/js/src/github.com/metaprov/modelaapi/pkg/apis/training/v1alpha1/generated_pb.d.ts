@@ -2514,10 +2514,10 @@ export class ModelPipelineRunStatus extends jspb.Message {
   hasStarttime(): boolean;
   clearStarttime(): ModelPipelineRunStatus;
 
-  getCompletiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setCompletiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelPipelineRunStatus;
-  hasCompletiontime(): boolean;
-  clearCompletiontime(): ModelPipelineRunStatus;
+  getEndtime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setEndtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelPipelineRunStatus;
+  hasEndtime(): boolean;
+  clearEndtime(): ModelPipelineRunStatus;
 
   getPhase(): string;
   setPhase(value: string): ModelPipelineRunStatus;
@@ -2573,7 +2573,7 @@ export namespace ModelPipelineRunStatus {
     monitoringstatus?: ModelPipelineRunStageStatus.AsObject,
     labelingstatus?: ModelPipelineRunStageStatus.AsObject,
     starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    completiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     phase: string,
     observedgeneration: number,
     evalmetrics: string,

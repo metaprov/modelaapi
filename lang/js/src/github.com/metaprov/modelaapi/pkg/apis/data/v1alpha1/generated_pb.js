@@ -33511,7 +33511,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunSpe
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunStatus.repeatedFields_ = [8];
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunStatus.repeatedFields_ = [10];
 
 
 
@@ -33551,6 +33551,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunSta
     triggeredby: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     logs: (f = msg.getLogs()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.toObject(includeInstance, f),
     lastupdated: (f = msg.getLastupdated()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    failurereason: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
+    failuremessage: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunCondition.toObject, includeInstance)
   };
@@ -33622,6 +33624,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunSta
       msg.setLastupdated(value);
       break;
     case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFailurereason(value);
+      break;
+    case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFailuremessage(value);
+      break;
+    case 10:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunCondition;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunCondition.deserializeBinaryFromReader);
       msg.addConditions(value);
@@ -33708,10 +33718,24 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunSta
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
   }
+  f = /** @type {string} */ (jspb.Message.getField(message, 8));
+  if (f != null) {
+    writer.writeString(
+      8,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 9));
+  if (f != null) {
+    writer.writeString(
+      9,
+      f
+    );
+  }
   f = message.getConditionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      8,
+      10,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunCondition.serializeBinaryToWriter
     );
@@ -33976,12 +34000,84 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunSta
 
 
 /**
- * repeated FeaturePipelineRunCondition conditions = 8;
+ * optional string failureReason = 8;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunStatus.prototype.getFailurereason = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunStatus.prototype.setFailurereason = function(value) {
+  return jspb.Message.setField(this, 8, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunStatus.prototype.clearFailurereason = function() {
+  return jspb.Message.setField(this, 8, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunStatus.prototype.hasFailurereason = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional string failureMessage = 9;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunStatus.prototype.getFailuremessage = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunStatus.prototype.setFailuremessage = function(value) {
+  return jspb.Message.setField(this, 9, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunStatus.prototype.clearFailuremessage = function() {
+  return jspb.Message.setField(this, 9, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunStatus.prototype.hasFailuremessage = function() {
+  return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
+ * repeated FeaturePipelineRunCondition conditions = 10;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunCondition>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunStatus.prototype.getConditionsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunCondition, 8));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunCondition, 10));
 };
 
 
@@ -33990,7 +34086,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunSta
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunStatus.prototype.setConditionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 8, value);
+  return jspb.Message.setRepeatedWrapperField(this, 10, value);
 };
 
 
@@ -34000,7 +34096,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunSta
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunCondition}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 8, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 10, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunCondition, opt_index);
 };
 
 
@@ -42964,7 +43060,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineRunSp
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineRunStatus.repeatedFields_ = [7];
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineRunStatus.repeatedFields_ = [9];
 
 
 
@@ -43003,6 +43099,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineRunSt
     observedgeneration: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     triggeredby: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     lastupdated: (f = msg.getLastupdated()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    failurereason: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
+    failuremessage: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineRunCondition.toObject, includeInstance)
   };
@@ -43069,6 +43167,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineRunSt
       msg.setLastupdated(value);
       break;
     case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFailurereason(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFailuremessage(value);
+      break;
+    case 9:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineRunCondition;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineRunCondition.deserializeBinaryFromReader);
       msg.addConditions(value);
@@ -43147,10 +43253,24 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineRunSt
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
   }
+  f = /** @type {string} */ (jspb.Message.getField(message, 7));
+  if (f != null) {
+    writer.writeString(
+      7,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 8));
+  if (f != null) {
+    writer.writeString(
+      8,
+      f
+    );
+  }
   f = message.getConditionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      7,
+      9,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineRunCondition.serializeBinaryToWriter
     );
@@ -43378,12 +43498,84 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineRunSt
 
 
 /**
- * repeated LabelingPipelineRunCondition conditions = 7;
+ * optional string failureReason = 7;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineRunStatus.prototype.getFailurereason = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineRunStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineRunStatus.prototype.setFailurereason = function(value) {
+  return jspb.Message.setField(this, 7, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineRunStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineRunStatus.prototype.clearFailurereason = function() {
+  return jspb.Message.setField(this, 7, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineRunStatus.prototype.hasFailurereason = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
+ * optional string failureMessage = 8;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineRunStatus.prototype.getFailuremessage = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineRunStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineRunStatus.prototype.setFailuremessage = function(value) {
+  return jspb.Message.setField(this, 8, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineRunStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineRunStatus.prototype.clearFailuremessage = function() {
+  return jspb.Message.setField(this, 8, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineRunStatus.prototype.hasFailuremessage = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * repeated LabelingPipelineRunCondition conditions = 9;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineRunCondition>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineRunStatus.prototype.getConditionsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineRunCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineRunCondition, 7));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineRunCondition, 9));
 };
 
 
@@ -43392,7 +43584,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineRunSt
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineRunStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineRunStatus.prototype.setConditionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 7, value);
+  return jspb.Message.setRepeatedWrapperField(this, 9, value);
 };
 
 
@@ -43402,7 +43594,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineRunSt
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineRunCondition}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineRunStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 7, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineRunCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 9, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineRunCondition, opt_index);
 };
 
 

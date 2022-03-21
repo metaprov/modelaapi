@@ -237,3 +237,25 @@ func (run *WebRequestRun) ErrorAlert(tenantRef *v1.ObjectReference, notifierName
 		},
 	}
 }
+
+func (in *WebRequestRun) IsFailed() bool {
+	cond := in.GetCond(WebRequestRunCompleted)
+	return cond.Status == v1.ConditionFalse && cond.Reason == string(WebRequestRunCompleted)
+}
+
+// Return the state of the run as RunStatus
+func (run *WebRequestRun) RunStatus() *catalog.LastRunStatus {
+	result := &catalog.LastRunStatus{
+		At:             run.Status.StartTime,
+		Duration:       int32(run.Status.EndTime.Unix() - run.Status.StartTime.Unix()),
+		FailureReason:  run.Status.FailureReason,
+		FailureMessage: run.Status.FailureMessage,
+	}
+	if run.IsFailed() {
+		result.Outcome = catalog.RunOutcomeError
+	} else {
+		result.Outcome = catalog.RunOutcomeSuccess
+	}
+	return result
+
+}

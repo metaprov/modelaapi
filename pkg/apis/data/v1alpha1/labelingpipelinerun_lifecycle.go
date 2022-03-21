@@ -10,6 +10,7 @@ import (
 	"fmt"
 
 	"github.com/dustin/go-humanize"
+	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/apis/common"
 	"github.com/metaprov/modelaapi/pkg/apis/data"
 	"github.com/metaprov/modelaapi/pkg/util"
@@ -191,4 +192,26 @@ func (run *LabelingPipelineRun) MarkFailed(err error) {
 	if run.Status.EndTime == nil {
 		run.Status.EndTime = &now
 	}
+}
+
+func (in *LabelingPipelineRun) IsFailed() bool {
+	cond := in.GetCond(LabelingPipelineRunCompleted)
+	return cond.Status == v1.ConditionFalse && cond.Reason == string(LabelingPipelineRunPhaseFailed)
+}
+
+// Return the state of the run as RunStatus
+func (run *LabelingPipelineRun) RunStatus() *catalog.LastRunStatus {
+	result := &catalog.LastRunStatus{
+		At:             run.Status.StartTime,
+		Duration:       int32(run.Status.EndTime.Unix() - run.Status.StartTime.Unix()),
+		FailureReason:  run.Status.FailureReason,
+		FailureMessage: run.Status.FailureMessage,
+	}
+	if run.IsFailed() {
+		result.Outcome = catalog.RunOutcomeError
+	} else {
+		result.Outcome = catalog.RunOutcomeSuccess
+	}
+	return result
+
 }

@@ -25541,7 +25541,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
     monitoringstatus: (f = msg.getMonitoringstatus()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.toObject(includeInstance, f),
     labelingstatus: (f = msg.getLabelingstatus()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.toObject(includeInstance, f),
     starttime: (f = msg.getStarttime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
-    completiontime: (f = msg.getCompletiontime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    endtime: (f = msg.getEndtime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     phase: (f = jspb.Message.getField(msg, 15)) == null ? undefined : f,
     observedgeneration: (f = jspb.Message.getField(msg, 16)) == null ? undefined : f,
     evalmetrics: (f = jspb.Message.getField(msg, 17)) == null ? undefined : f,
@@ -25652,7 +25652,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
     case 14:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setCompletiontime(value);
+      msg.setEndtime(value);
       break;
     case 15:
       var value = /** @type {string} */ (reader.readString());
@@ -25821,7 +25821,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
   }
-  f = message.getCompletiontime();
+  f = message.getEndtime();
   if (f != null) {
     writer.writeMessage(
       14,
@@ -26375,10 +26375,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completionTime = 14;
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 14;
  * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.getCompletiontime = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.getEndtime = function() {
   return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
     jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 14));
 };
@@ -26388,7 +26388,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
  * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.setCompletiontime = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.setEndtime = function(value) {
   return jspb.Message.setWrapperField(this, 14, value);
 };
 
@@ -26397,8 +26397,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.clearCompletiontime = function() {
-  return this.setCompletiontime(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.clearEndtime = function() {
+  return this.setEndtime(undefined);
 };
 
 
@@ -26406,7 +26406,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.hasCompletiontime = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.hasEndtime = function() {
   return jspb.Message.getField(this, 14) != null;
 };
 

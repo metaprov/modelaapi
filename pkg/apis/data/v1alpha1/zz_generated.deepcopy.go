@@ -2623,6 +2623,16 @@ func (in *FeaturePipelineRunStatus) DeepCopyInto(out *FeaturePipelineRunStatus) 
 		in, out := &in.LastUpdated, &out.LastUpdated
 		*out = (*in).DeepCopy()
 	}
+	if in.FailureReason != nil {
+		in, out := &in.FailureReason, &out.FailureReason
+		*out = new(catalogv1alpha1.StatusError)
+		**out = **in
+	}
+	if in.FailureMessage != nil {
+		in, out := &in.FailureMessage, &out.FailureMessage
+		*out = new(string)
+		**out = **in
+	}
 	if in.Conditions != nil {
 		in, out := &in.Conditions, &out.Conditions
 		*out = make([]FeaturePipelineRunCondition, len(*in))
@@ -3456,6 +3466,16 @@ func (in *LabelingPipelineRunStatus) DeepCopyInto(out *LabelingPipelineRunStatus
 	if in.LastUpdated != nil {
 		in, out := &in.LastUpdated, &out.LastUpdated
 		*out = (*in).DeepCopy()
+	}
+	if in.FailureReason != nil {
+		in, out := &in.FailureReason, &out.FailureReason
+		*out = new(catalogv1alpha1.StatusError)
+		**out = **in
+	}
+	if in.FailureMessage != nil {
+		in, out := &in.FailureMessage, &out.FailureMessage
+		*out = new(string)
+		**out = **in
 	}
 	if in.Conditions != nil {
 		in, out := &in.Conditions, &out.Conditions

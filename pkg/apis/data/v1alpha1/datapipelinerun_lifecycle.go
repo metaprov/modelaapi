@@ -9,6 +9,7 @@ package v1alpha1
 import (
 	"fmt"
 
+	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/apis/data"
 	infra "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/util"
@@ -235,4 +236,21 @@ func (run *DataPipelineRun) ErrorAlert(tenantRef *v1.ObjectReference, notifierNa
 			},
 		},
 	}
+}
+
+// Return the state of the run as RunStatus
+func (run *DataPipelineRun) RunStatus() *catalog.LastRunStatus {
+	result := &catalog.LastRunStatus{
+		At:             run.Status.StartTime,
+		Duration:       int32(run.Status.EndTime.Unix() - run.Status.StartTime.Unix()),
+		FailureReason:  run.Status.FailureReason,
+		FailureMessage: run.Status.FailureMessage,
+	}
+	if run.IsFailed() {
+		result.Outcome = catalog.RunOutcomeError
+	} else {
+		result.Outcome = catalog.RunOutcomeSuccess
+	}
+	return result
+
 }

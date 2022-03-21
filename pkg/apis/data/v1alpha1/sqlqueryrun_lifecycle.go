@@ -149,6 +149,11 @@ func (run *SqlQueryRun) MarkFailed(msg string) {
 	}
 }
 
+func (in *SqlQueryRun) IsFailed() bool {
+	cond := in.GetCond(SqlQueryRunCompleted)
+	return cond.Status == v1.ConditionFalse && cond.Reason == string(SqlQueryRunPhaseFailed)
+}
+
 func (prediction *SqlQueryRun) MarkCompleted() {
 	prediction.CreateOrUpdateCond(SqlQueryRunCondition{
 		Type:   SqlQueryRunCompleted,
@@ -237,4 +242,21 @@ func (run *SqlQueryRun) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *
 			},
 		},
 	}
+}
+
+// Return the state of the run as RunStatus
+func (run *SqlQueryRun) RunStatus() *catalog.LastRunStatus {
+	result := &catalog.LastRunStatus{
+		At:             run.Status.StartTime,
+		Duration:       int32(run.Status.EndTime.Unix() - run.Status.StartTime.Unix()),
+		FailureReason:  run.Status.FailureReason,
+		FailureMessage: run.Status.FailureMessage,
+	}
+	if run.IsFailed() {
+		result.Outcome = catalog.RunOutcomeError
+	} else {
+		result.Outcome = catalog.RunOutcomeSuccess
+	}
+	return result
+
 }

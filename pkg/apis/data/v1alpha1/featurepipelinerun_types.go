@@ -120,9 +120,14 @@ type FeaturePipelineRunStatus struct {
 	// Last time the object was updated
 	//+kubebuilder:validation:Optional
 	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,7,opt,name=lastUpdated"`
+	// Update in case of terminal failure
+	// Borrowed from cluster api controller
+	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,8,opt,name=failureReason"`
+	// Update in case of terminal failure message
+	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,9,opt,name=failureMessage"`
 
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []FeaturePipelineRunCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,8,rep,name=conditions"`
+	Conditions []FeaturePipelineRunCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,10,rep,name=conditions"`
 }

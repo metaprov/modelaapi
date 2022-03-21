@@ -275,9 +275,6 @@ spec:
                     format: date-time
                     type: string
                 type: object
-              completionTime:
-                format: date-time
-                type: string
               conditions:
                 items:
                   description: ModelPipelineRunCondition describes the state of a
@@ -625,6 +622,9 @@ spec:
                     format: date-time
                     type: string
                 type: object
+              endTime:
+                format: date-time
+                type: string
               failureMessage:
                 description: Update in case of terminal failure message
                 type: string

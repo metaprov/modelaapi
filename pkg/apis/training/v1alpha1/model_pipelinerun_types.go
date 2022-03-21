@@ -257,7 +257,7 @@ type ModelPipelineRunStatus struct {
 	// +kubebuilder:validation:Optional
 	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,13,opt,name=startTime"`
 	// +kubebuilder:validation:Optional
-	CompletionTime *metav1.Time `json:"completionTime,omitempty" protobuf:"bytes,14,opt,name=completionTime"`
+	EndTime *metav1.Time `json:"endTime,omitempty" protobuf:"bytes,14,opt,name=endTime"`
 	// The phase of the pipeline run
 	// +kubebuilder:default:="Pending"
 	// +kubebuilder:validation:Optional

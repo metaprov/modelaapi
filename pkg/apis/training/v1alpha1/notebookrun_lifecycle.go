@@ -10,6 +10,7 @@ import (
 	"fmt"
 
 	"github.com/dustin/go-humanize"
+	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	infra "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/apis/training"
 	"github.com/metaprov/modelaapi/pkg/util"
@@ -246,4 +247,26 @@ func (run *NotebookRun) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *
 			},
 		},
 	}
+}
+
+func (in *NotebookRun) IsFailed() bool {
+	cond := in.GetCond(NotebookRunCompleted)
+	return cond.Status == v1.ConditionFalse && cond.Reason == string(NotebookRunCompleted)
+}
+
+// Return the state of the run as RunStatus
+func (run *NotebookRun) RunStatus() *catalog.LastRunStatus {
+	result := &catalog.LastRunStatus{
+		At:             run.Status.StartTime,
+		Duration:       int32(run.Status.EndTime.Unix() - run.Status.StartTime.Unix()),
+		FailureReason:  run.Status.FailureReason,
+		FailureMessage: run.Status.FailureMessage,
+	}
+	if run.IsFailed() {
+		result.Outcome = catalog.RunOutcomeError
+	} else {
+		result.Outcome = catalog.RunOutcomeSuccess
+	}
+	return result
+
 }
