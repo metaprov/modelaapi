@@ -2846,14 +2846,13 @@ export class FeatureHistogramSpec extends jspb.Message {
   getColumn(): string;
   setColumn(value: string): FeatureHistogramSpec;
 
-  getDatasetname(): string;
-  setDatasetname(value: string): FeatureHistogramSpec;
+  getDataset(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setDataset(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): FeatureHistogramSpec;
+  hasDataset(): boolean;
+  clearDataset(): FeatureHistogramSpec;
 
   getBins(): number;
   setBins(value: number): FeatureHistogramSpec;
-
-  getTtl(): number;
-  setTtl(value: number): FeatureHistogramSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FeatureHistogramSpec.AsObject;
@@ -2869,9 +2868,8 @@ export namespace FeatureHistogramSpec {
     versionname: string,
     description: string,
     column: string,
-    datasetname: string,
+    dataset?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     bins: number,
-    ttl: number,
   }
 }
 

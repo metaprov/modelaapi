@@ -43,6 +43,8 @@ type FeatureHistogramCondition struct {
 // +kubebuilder:printcolumn:name="Column",type="string",JSONPath=".spec.column"
 // +kubebuilder:printcolumn:name="Dataset",type="string",JSONPath=".spec.dataset"
 // +kubebuilder:printcolumn:name="Bins",type="number",JSONPath=".spec.bins"
+// +kubebuilder:printcolumn:name="Missing",type="number",JSONPath=".status.missing"
+// +kubebuilder:printcolumn:name="Invalid",type="number",JSONPath=".status.invalid"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=featurehistograms,singular=featurehistogram,categories={data,modela}
 // +kubebuilder:subresource:status
@@ -84,13 +86,10 @@ type FeatureHistogramSpec struct {
 	// The name of the dataset
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,6,opt,name=datasetName"`
+	Dataset *v1.ObjectReference `json:"dataset,omitempty" protobuf:"bytes,6,opt,name=dataset"`
 	// Bins is the number of bins in the histogram
-	Bins *int32 `json:"bins,omitempty" protobuf:"varint,7,opt,name=bins"`
-	// TTL for the data product run. Set to 0 if no garbage collected is needed.
-	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
-	TTL *int32 `json:"ttl,omitempty" protobuf:"varint,12,opt,name=ttl"`
+	Bins *int32 `json:"bins,omitempty" protobuf:"varint,7,opt,name=bins"`
 }
 
 // FeatureHistogramStatus defines the observed state of FeatureHistogram

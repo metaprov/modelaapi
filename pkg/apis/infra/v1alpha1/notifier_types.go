@@ -42,9 +42,7 @@ type NotifierCondition struct {
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",description=""
-// +kubebuilder:printcolumn:name="Connection",type="string",JSONPath=".spec.connectionName",description=""
-// +kubebuilder:printcolumn:name="From",type="string",JSONPath=".spec.from",description=""
-// +kubebuilder:printcolumn:name="To",type="string",JSONPath=".spec.to",description=""
+// +kubebuilder:printcolumn:name="Description",type="string",JSONPath=".spec.description",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=notifiers,singular=notifier,categories={infra,modela}
 type Notifier struct {

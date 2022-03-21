@@ -12841,7 +12841,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.pro
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
-    phase: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     at: (f = msg.getAt()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     observedgeneration: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     lastupdated: (f = msg.getLastupdated()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
@@ -12885,10 +12884,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.des
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setPhase(value);
-      break;
     case 2:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
@@ -12945,13 +12940,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.pro
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = /** @type {string} */ (jspb.Message.getField(message, 1));
-  if (f != null) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
   f = message.getAt();
   if (f != null) {
     writer.writeMessage(
@@ -12997,42 +12985,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.ser
       proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition.serializeBinaryToWriter
     );
   }
-};
-
-
-/**
- * optional string phase = 1;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.prototype.getPhase = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.prototype.setPhase = function(value) {
-  return jspb.Message.setField(this, 1, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.prototype.clearPhase = function() {
-  return jspb.Message.setField(this, 1, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.prototype.hasPhase = function() {
-  return jspb.Message.getField(this, 1) != null;
 };
 
 

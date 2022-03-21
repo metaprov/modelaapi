@@ -30576,9 +30576,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.
     versionname: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     description: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     column: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
-    datasetname: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
-    bins: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
-    ttl: (f = jspb.Message.getField(msg, 12)) == null ? undefined : f
+    dataset: (f = msg.getDataset()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
+    bins: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -30632,16 +30631,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.
       msg.setColumn(value);
       break;
     case 6:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setDatasetname(value);
+      var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
+      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
+      msg.setDataset(value);
       break;
     case 7:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setBins(value);
-      break;
-    case 12:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setTtl(value);
       break;
     default:
       reader.skipField();
@@ -30700,24 +30696,18 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 6));
+  f = message.getDataset();
   if (f != null) {
-    writer.writeString(
+    writer.writeMessage(
       6,
-      f
+      f,
+      k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
     );
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 7));
   if (f != null) {
     writer.writeInt32(
       7,
-      f
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 12));
-  if (f != null) {
-    writer.writeInt32(
-      12,
       f
     );
   }
@@ -30869,29 +30859,30 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.
 
 
 /**
- * optional string datasetName = 6;
- * @return {string}
+ * optional k8s.io.api.core.v1.ObjectReference dataset = 6;
+ * @return {?proto.k8s.io.api.core.v1.ObjectReference}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.getDatasetname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.getDataset = function() {
+  return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
+    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 6));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.k8s.io.api.core.v1.ObjectReference|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.setDatasetname = function(value) {
-  return jspb.Message.setField(this, 6, value);
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.setDataset = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
 };
 
 
 /**
- * Clears the field making it undefined.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.clearDatasetname = function() {
-  return jspb.Message.setField(this, 6, undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.clearDataset = function() {
+  return this.setDataset(undefined);
 };
 
 
@@ -30899,7 +30890,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.hasDatasetname = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.hasDataset = function() {
   return jspb.Message.getField(this, 6) != null;
 };
 
@@ -30937,42 +30928,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.hasBins = function() {
   return jspb.Message.getField(this, 7) != null;
-};
-
-
-/**
- * optional int32 ttl = 12;
- * @return {number}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.getTtl = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 12, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.setTtl = function(value) {
-  return jspb.Message.setField(this, 12, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.clearTtl = function() {
-  return jspb.Message.setField(this, 12, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.hasTtl = function() {
-  return jspb.Message.getField(this, 12) != null;
 };
 
 

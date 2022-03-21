@@ -35,9 +35,11 @@ spec:
       type: string
     - jsonPath: .spec.phone
       name: Phone
+      priority: 1
       type: string
     - jsonPath: .spec.email
       name: Email
+      priority: 1
       type: string
     - jsonPath: .metadata.creationTimestamp
       name: Age

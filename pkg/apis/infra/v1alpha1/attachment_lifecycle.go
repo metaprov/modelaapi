@@ -122,6 +122,5 @@ func (attachment *Attachment) MarkFailed(err string) {
 		Reason:  "Failed",
 		Message: err,
 	})
-	attachment.Status.Phase = AttachmentPhaseFailed
 
 }

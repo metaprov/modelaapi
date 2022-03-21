@@ -1005,9 +1005,6 @@ export namespace AttachmentSpec {
 }
 
 export class AttachmentStatus extends jspb.Message {
-  getPhase(): string;
-  setPhase(value: string): AttachmentStatus;
-
   getAt(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setAt(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): AttachmentStatus;
   hasAt(): boolean;
@@ -1042,7 +1039,6 @@ export class AttachmentStatus extends jspb.Message {
 
 export namespace AttachmentStatus {
   export type AsObject = {
-    phase: string,
     at?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     observedgeneration: number,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,

@@ -25,14 +25,8 @@ spec:
     - jsonPath: .spec.owner
       name: Owner
       type: string
-    - jsonPath: .spec.connectionName
-      name: Connection
-      type: string
-    - jsonPath: .spec.from
-      name: From
-      type: string
-    - jsonPath: .spec.to
-      name: To
+    - jsonPath: .spec.description
+      name: Description
       type: string
     - jsonPath: .metadata.creationTimestamp
       name: Age

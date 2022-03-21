@@ -746,8 +746,9 @@ message DataOutputSpec {
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
+// +kubebuilder:printcolumn:name="Description",type="string",JSONPath=".spec.description",description=""
 // +kubebuilder:printcolumn:name="Schedule",type="string",JSONPath=".spec.schedule",description=""
-// +kubebuilder:printcolumn:name="Last Run",type="date",JSONPath=".status.lastRun",description=""
+// +kubebuilder:printcolumn:name="Last Run",type="date",JSONPath=".status.lastRun.at",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=datapipelines,singular=datapipeline,shortName="dpl",categories={data,modela}
 // DataPipeline represents the ETL flow from the data sources to a processed dataset, ready for training.
@@ -1006,12 +1007,12 @@ message DataPipelineStatus {
 // +kubebuilder:printcolumn:name="Task",type="string",JSONPath=".spec.task"
 // +kubebuilder:printcolumn:name="Public",type="boolean",JSONPath=".spec.public"
 // +kubebuilder:printcolumn:name="Errors",type="integer",JSONPath=".status.totalErrorAlerts"
-// +kubebuilder:printcolumn:name="Datasources",type="integer",JSONPath=".status.totalDatasources"
-// +kubebuilder:printcolumn:name="Datasets",type="integer",JSONPath=".status.totalDatasets"
-// +kubebuilder:printcolumn:name="Studies",type="integer",JSONPath=".status.totalStudies"
-// +kubebuilder:printcolumn:name="Models",type="integer",JSONPath=".status.totalModels"
-// +kubebuilder:printcolumn:name="Predictors",type="integer",JSONPath=".status.totalPredictors"
-// +kubebuilder:printcolumn:name="Apps",type="integer",JSONPath=".status.totalApps"
+// +kubebuilder:printcolumn:name="Datasources",type="integer",JSONPath=".status.totalDatasources",priority=1
+// +kubebuilder:printcolumn:name="Datasets",type="integer",JSONPath=".status.totalDatasets",priority=1
+// +kubebuilder:printcolumn:name="Studies",type="integer",JSONPath=".status.totalStudies",priority=1
+// +kubebuilder:printcolumn:name="Models",type="integer",JSONPath=".status.totalModels",priority=1
+// +kubebuilder:printcolumn:name="Predictors",type="integer",JSONPath=".status.totalPredictors",priority=1
+// +kubebuilder:printcolumn:name="Apps",type="integer",JSONPath=".status.totalApps",priority=1
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=dataproducts,shortName=prod,singular=dataproduct,shortName="prod",categories={data,modela,all}
 message DataProduct {
@@ -1223,7 +1224,7 @@ message DataProductStatus {
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
-// +kubebuilder:printcolumn:name="Entity",type="string",JSONPath=".spec.productRef.name",description=""
+// +kubebuilder:printcolumn:name="Product",type="string",JSONPath=".spec.productRef.name",description=""
 // +kubebuilder:printcolumn:name="Base",type="boolean",JSONPath=".spec.baseline",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=dataproductversions,shortName=dpv,singular=dataproductversion,categories={data,modela,all}
@@ -1770,6 +1771,7 @@ message DatasetValidation {
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
+// +kubebuilder:printcolumn:name="Description",type="string",JSONPath=".spec.description"
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=entities,singular=entity,shortName=et,categories={data,modela}
@@ -1891,6 +1893,7 @@ message ExcelSheetArea {
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
+// +kubebuilder:printcolumn:name="Description",type="string",JSONPath=".spec.description"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=features,singular=feature,categories={data,modela}
 // +kubebuilder:subresource:status
@@ -1940,6 +1943,8 @@ message FeatureCondition {
 // +kubebuilder:printcolumn:name="Column",type="string",JSONPath=".spec.column"
 // +kubebuilder:printcolumn:name="Dataset",type="string",JSONPath=".spec.dataset"
 // +kubebuilder:printcolumn:name="Bins",type="number",JSONPath=".spec.bins"
+// +kubebuilder:printcolumn:name="Missing",type="number",JSONPath=".status.missing"
+// +kubebuilder:printcolumn:name="Invalid",type="number",JSONPath=".status.invalid"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=featurehistograms,singular=featurehistogram,categories={data,modela}
 // +kubebuilder:subresource:status
@@ -2004,15 +2009,11 @@ message FeatureHistogramSpec {
   // The name of the dataset
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string datasetName = 6;
+  optional k8s.io.api.core.v1.ObjectReference dataset = 6;
 
   // Bins is the number of bins in the histogram
-  optional int32 bins = 7;
-
-  // TTL for the data product run. Set to 0 if no garbage collected is needed.
-  // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
-  optional int32 ttl = 12;
+  optional int32 bins = 7;
 }
 
 // FeatureHistogramStatus defines the observed state of FeatureHistogram
@@ -2055,7 +2056,7 @@ message FeatureList {
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
 // +kubebuilder:printcolumn:name="Schedule",type="string",JSONPath=".spec.schedule",description=""
-// +kubebuilder:printcolumn:name="Last Run",type="date",JSONPath=".status.lastRun",description=""
+// +kubebuilder:printcolumn:name="Last Run",type="date",JSONPath=".status.lastRun.at",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=featurepipelines,singular=featurepipeline,shortName="fp",categories={data,modela}
 // +kubebuilder:subresource:status
@@ -2436,6 +2437,7 @@ message FeatureStatus {
 // +kubebuilder:object:root=true
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
+// +kubebuilder:printcolumn:name="Description",type="string",JSONPath=".spec.description"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=featuresets,singular=featureset,shortName=fset,categories={data,modela}
 // +kubebuilder:subresource:status
@@ -3402,6 +3404,7 @@ message Schema {
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
+// +kubebuilder:printcolumn:name="Description",type="string",JSONPath=".spec.description"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=sqlqueries,singular=sqlquery,categories={data,modela}
 // +kubebuilder:subresource:status

@@ -30,8 +30,9 @@ spec:
     - jsonPath: .spec.category
       name: Category
       type: string
-    - jsonPath: .spec.secretName
+    - jsonPath: .spec.secretRef.name
       name: Secret
+      priority: 1
       type: string
     - jsonPath: .metadata.creationTimestamp
       name: Age

@@ -6,16 +6,6 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-// ModelPhase is the current phase of a model
-type AttachmentPhase string
-
-const (
-	AttachmentPhasePending AttachmentPhase = "Pending"
-	AttachmentPhaseSending AttachmentPhase = "Sending"
-	AttachmentPhaseSent    AttachmentPhase = "Sent"
-	AttachmentPhaseFailed  AttachmentPhase = "Failed"
-)
-
 // Attachment condition
 type AttachmentConditionType string
 
@@ -41,7 +31,7 @@ type AttachmentCondition struct {
 
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
-// +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase",description=""
+// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Entity Namespace",type="string",JSONPath=".spec.entityRef.name",description=""
 // +kubebuilder:printcolumn:name="Entity Name",type="string",JSONPath=".spec.entityRef.namespace",description=""
 // +kubebuilder:printcolumn:name="Bucket",type="string",JSONPath=".spec.bucketName",description=""
@@ -87,10 +77,6 @@ type AttachmentSpec struct {
 
 // AttachmentStatus is the observed state of a Attachment
 type AttachmentStatus struct {
-	// Phase is the phase of the model
-	// +kubebuilder:default:="Pending"
-	// +kubebuilder:validation:Optional
-	Phase AttachmentPhase `json:"phase" protobuf:"bytes,1,opt,name=phase"`
 	// The time when the alert was fired
 	// +kubebuilder:validation:Optional
 	At *metav1.Time `json:"at" protobuf:"bytes,2,opt,name=at"`

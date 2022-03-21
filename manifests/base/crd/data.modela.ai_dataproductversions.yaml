@@ -29,7 +29,7 @@ spec:
       name: Owner
       type: string
     - jsonPath: .spec.productRef.name
-      name: Entity
+      name: Product
       type: string
     - jsonPath: .spec.baseline
       name: Base

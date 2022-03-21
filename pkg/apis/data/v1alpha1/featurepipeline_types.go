@@ -43,7 +43,7 @@ type FeaturePipelineCondition struct {
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
 // +kubebuilder:printcolumn:name="Schedule",type="string",JSONPath=".spec.schedule",description=""
-// +kubebuilder:printcolumn:name="Last Run",type="date",JSONPath=".status.lastRun",description=""
+// +kubebuilder:printcolumn:name="Last Run",type="date",JSONPath=".status.lastRun.at",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=featurepipelines,singular=featurepipeline,shortName="fp",categories={data,modela}
 // +kubebuilder:subresource:status

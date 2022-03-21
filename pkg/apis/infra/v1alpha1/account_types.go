@@ -48,8 +48,8 @@ type AccountCondition struct {
 // +kubebuilder:printcolumn:name="Type",type="string",JSONPath=".spec.type",description=""
 // +kubebuilder:printcolumn:name="Username",type="string",JSONPath=".spec.username",description=""
 // +kubebuilder:printcolumn:name="Team",type="string",JSONPath=".spec.memberOf",description=""
-// +kubebuilder:printcolumn:name="Phone",type="string",JSONPath=".spec.phone",description=""
-// +kubebuilder:printcolumn:name="Email",type="string",JSONPath=".spec.email",description=""
+// +kubebuilder:printcolumn:name="Phone",type="string",JSONPath=".spec.phone",description="",priority=1
+// +kubebuilder:printcolumn:name="Email",type="string",JSONPath=".spec.email",description="",priority=1
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=accounts,shortName=acct,singular=account,categories={infra,modela}
 type Account struct {

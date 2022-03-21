@@ -31,7 +31,10 @@ spec:
     - jsonPath: .spec.versionName
       name: Version
       type: string
-    - jsonPath: .status.lastRun
+    - jsonPath: .spec.description
+      name: Description
+      type: string
+    - jsonPath: .status.lastRun.at
       name: Last Run
       type: date
     - jsonPath: .metadata.creationTimestamp

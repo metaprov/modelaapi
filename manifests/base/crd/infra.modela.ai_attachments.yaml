@@ -19,8 +19,8 @@ spec:
   scope: Namespaced
   versions:
   - additionalPrinterColumns:
-    - jsonPath: .status.phase
-      name: Status
+    - jsonPath: .status.conditions[?(@.type=="Ready")].status
+      name: Ready
       type: string
     - jsonPath: .spec.entityRef.name
       name: Entity Namespace
@@ -193,10 +193,6 @@ spec:
                   on
                 format: int64
                 type: integer
-              phase:
-                default: Pending
-                description: Phase is the phase of the model
-                type: string
             type: object
         required:
         - spec

@@ -39,21 +39,27 @@ spec:
       type: integer
     - jsonPath: .status.totalDatasources
       name: Datasources
+      priority: 1
       type: integer
     - jsonPath: .status.totalDatasets
       name: Datasets
+      priority: 1
       type: integer
     - jsonPath: .status.totalStudies
       name: Studies
+      priority: 1
       type: integer
     - jsonPath: .status.totalModels
       name: Models
+      priority: 1
       type: integer
     - jsonPath: .status.totalPredictors
       name: Predictors
+      priority: 1
       type: integer
     - jsonPath: .status.totalApps
       name: Apps
+      priority: 1
       type: integer
     - jsonPath: .metadata.creationTimestamp
       name: Age

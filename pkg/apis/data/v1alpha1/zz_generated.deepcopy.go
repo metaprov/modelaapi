@@ -2334,18 +2334,13 @@ func (in *FeatureHistogramSpec) DeepCopyInto(out *FeatureHistogramSpec) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.DatasetName != nil {
-		in, out := &in.DatasetName, &out.DatasetName
-		*out = new(string)
+	if in.Dataset != nil {
+		in, out := &in.Dataset, &out.Dataset
+		*out = new(v1.ObjectReference)
 		**out = **in
 	}
 	if in.Bins != nil {
 		in, out := &in.Bins, &out.Bins
-		*out = new(int32)
-		**out = **in
-	}
-	if in.TTL != nil {
-		in, out := &in.TTL, &out.TTL
 		*out = new(int32)
 		**out = **in
 	}
