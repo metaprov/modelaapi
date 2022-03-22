@@ -979,8 +979,8 @@ func (study *Study) CompletionAlert(tenantRef *v1.ObjectReference, notifierName 
 				"Dataset":         *study.Spec.DatasetName,
 				"Task":            string(*study.Spec.Task),
 				"Phase":           string(study.Status.Phase),
-				"Start Time":      study.ObjectMeta.CreationTimestamp.Format("MM/dd/yy HH:mm:ss ZZZZ"),
-				"Completion Time": study.Status.EndTime.Format("MM/dd/yy HH:mm:ss ZZZZ"),
+				"Start Time":      study.ObjectMeta.CreationTimestamp.GoString(),
+				"Completion Time": study.Status.EndTime.GoString(),
 			},
 		},
 	}
@@ -1008,8 +1008,8 @@ func (study *Study) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *stri
 				"Dataset":         *study.Spec.DatasetName,
 				"Task":            string(*study.Spec.Task),
 				"Phase":           string(study.Status.Phase),
-				"Start Time":      study.ObjectMeta.CreationTimestamp.Format("MM/dd/yy HH:mm:ss ZZZZ"),
-				"Completion Time": study.Status.EndTime.Format("MM/dd/yy HH:mm:ss ZZZZ"),
+				"Start Time":      study.ObjectMeta.CreationTimestamp.GoString(),
+				"Completion Time": study.Status.EndTime.GoString(),
 			},
 		},
 	}

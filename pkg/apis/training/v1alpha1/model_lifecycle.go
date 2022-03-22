@@ -995,8 +995,8 @@ func (model *Model) CompletionAlert(tenantRef *v1.ObjectReference, notifierName 
 				"Algorithm":       model.Spec.Estimator.AlgorithmName,
 				"Phase":           string(model.Status.Phase),
 				"Score":           util.FtoA(&model.Status.CVScore),
-				"Start Time":      model.ObjectMeta.CreationTimestamp.Format("MM/dd/yy HH:mm:ss ZZZZ"),
-				"Completion time": model.Status.EndTime.Format("MM/dd/yy HH:mm:ss ZZZZ"),
+				"Start Time":      model.ObjectMeta.CreationTimestamp.GoString(),
+				"Completion time": model.Status.EndTime.GoString(),
 			},
 		},
 	}
@@ -1028,8 +1028,8 @@ func (model *Model) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *stri
 				"Algorithm":       model.Spec.Estimator.AlgorithmName,
 				"Phase":           string(model.Status.Phase),
 				"Score":           util.FtoA(&model.Status.CVScore),
-				"Start Time":      model.ObjectMeta.CreationTimestamp.Format("MM/dd/yy HH:mm:ss ZZZZ"),
-				"Completion Time": model.Status.EndTime.Format("MM/dd/yy HH:mm:ss ZZZZ"),
+				"Start Time":      model.ObjectMeta.CreationTimestamp.GoString(),
+				"Completion Time": model.Status.EndTime.GoString(),
 			},
 		},
 	}

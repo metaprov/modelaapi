@@ -617,7 +617,7 @@ func (run *ModelAutobuilder) CompletionAlert(tenantRef *v1.ObjectReference, noti
 			NotifierName: notifierName,
 			Owner:        run.Spec.Owner,
 			Fields: map[string]string{
-				"Start Time": run.ObjectMeta.CreationTimestamp.Format("MM/dd/yy HH:mm:ss ZZZZ"),
+				"Start Time": run.ObjectMeta.CreationTimestamp.GoString(),
 			},
 		},
 	}
@@ -642,8 +642,8 @@ func (run *ModelAutobuilder) ErrorAlert(tenantRef *v1.ObjectReference, notifierN
 			NotifierName: notifierName,
 			Owner:        run.Spec.Owner,
 			Fields: map[string]string{
-				"Start Time": run.ObjectMeta.CreationTimestamp.Format("MM/dd/yy HH:mm:ss ZZZZ"),
-				"End Time":   run.Status.EndTime.Format("MM/dd/yy HH:mm:ss ZZZZ"),
+				"Start Time": run.ObjectMeta.CreationTimestamp.GoString(),
+				"End Time":   run.Status.EndTime.GoString(),
 			},
 		},
 	}

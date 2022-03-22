@@ -262,8 +262,8 @@ func (report *Report) CompletionAlert(tenantRef *v1.ObjectReference, notifierNam
 			NotifierName: notifierName,
 			Owner:        report.Spec.Owner,
 			Fields: map[string]string{
-				"Start Time": report.ObjectMeta.CreationTimestamp.Format("MM/dd/yy HH:mm:ss ZZZZ"),
-				"End Time":   report.Status.EndTime.Format("MM/dd/yy HH:mm:ss ZZZZ"),
+				"Start Time": report.ObjectMeta.CreationTimestamp.GoString(),
+				"End Time":   report.Status.EndTime.GoString(),
 				"Bucket":     *report.Spec.Location.BucketName,
 				"URL":        *report.Spec.Location.Path,
 			},
@@ -290,8 +290,8 @@ func (report *Report) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *st
 			NotifierName: notifierName,
 			Owner:        report.Spec.Owner,
 			Fields: map[string]string{
-				"Start Time": report.ObjectMeta.CreationTimestamp.Format("MM/dd/yy HH:mm:ss ZZZZ"),
-				"End Time":   report.Status.EndTime.Format("MM/dd/yy HH:mm:ss ZZZZ"),
+				"Start Time": report.ObjectMeta.CreationTimestamp.GoString(),
+				"End Time":   report.Status.EndTime.GoString(),
 				"Bucket":     *report.Spec.Location.BucketName,
 				"URL":        *report.Spec.Location.Path,
 				"Type":       string(*report.Spec.ReportType),
