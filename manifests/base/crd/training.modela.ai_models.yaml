@@ -27,6 +27,7 @@ spec:
       type: string
     - jsonPath: .status.progress
       name: Progress
+      priority: 1
       type: string
     - jsonPath: .status.best
       name: Best
@@ -37,12 +38,14 @@ spec:
       type: string
     - jsonPath: .spec.versionName
       name: Version
+      priority: 1
       type: string
     - jsonPath: .spec.studyName
       name: Study
       type: string
     - jsonPath: .spec.task
       name: Task
+      priority: 1
       type: string
     - jsonPath: .spec.estimator.algorithmName
       name: Algorithm
@@ -55,12 +58,14 @@ spec:
       type: number
     - jsonPath: .status.trainScore
       name: Train Score
+      priority: 1
       type: number
     - jsonPath: .status.testScore
       name: Test Score
       type: number
     - jsonPath: .status.failureMessage
       name: Last Failure
+      priority: 1
       type: string
     - jsonPath: .metadata.creationTimestamp
       name: Age

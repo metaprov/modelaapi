@@ -33,12 +33,6 @@ spec:
     - jsonPath: .spec.reportType
       name: Type
       type: string
-    - jsonPath: .status.startTime
-      name: StartTime
-      type: date
-    - jsonPath: .status.endTime
-      name: CompletionTime
-      type: date
     - jsonPath: .metadata.creationTimestamp
       name: Age
       type: date

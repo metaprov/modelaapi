@@ -977,7 +977,7 @@ func (model *Model) CompletionAlert(tenantRef *v1.ObjectReference, notifierName 
 			Namespace:    model.Namespace,
 		},
 		Spec: infra.AlertSpec{
-			Subject: util.StrPtr("Web Request Completed"),
+			Subject: util.StrPtr("Model Completed"),
 			Level:   &level,
 			EntityRef: v1.ObjectReference{
 				Kind:      "Model",
