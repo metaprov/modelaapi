@@ -2469,7 +2469,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionSp
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionStatus.repeatedFields_ = [6];
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionStatus.repeatedFields_ = [7];
 
 
 
@@ -2503,10 +2503,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionSt
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
     lastrun: (f = msg.getLastrun()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus.toObject(includeInstance, f),
+    nextrun: (f = msg.getNextrun()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     lastupdated: (f = msg.getLastupdated()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
-    observedgeneration: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-    failurereason: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    failuremessage: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    observedgeneration: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    failurereason: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    failuremessage: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionCondition.toObject, includeInstance)
   };
@@ -2553,21 +2554,26 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionSt
     case 2:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setLastupdated(value);
+      msg.setNextrun(value);
       break;
     case 3:
+      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
+      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
+      msg.setLastupdated(value);
+      break;
+    case 4:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setObservedgeneration(value);
       break;
-    case 4:
+    case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setFailurereason(value);
       break;
-    case 5:
+    case 6:
       var value = /** @type {string} */ (reader.readString());
       msg.setFailuremessage(value);
       break;
-    case 6:
+    case 7:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionCondition;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionCondition.deserializeBinaryFromReader);
       msg.addConditions(value);
@@ -2609,7 +2615,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionSt
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus.serializeBinaryToWriter
     );
   }
-  f = message.getLastupdated();
+  f = message.getNextrun();
   if (f != null) {
     writer.writeMessage(
       2,
@@ -2617,16 +2623,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionSt
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 3));
+  f = message.getLastupdated();
   if (f != null) {
-    writer.writeInt64(
+    writer.writeMessage(
       3,
-      f
+      f,
+      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 4));
+  f = /** @type {number} */ (jspb.Message.getField(message, 4));
   if (f != null) {
-    writer.writeString(
+    writer.writeInt64(
       4,
       f
     );
@@ -2638,10 +2645,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionSt
       f
     );
   }
+  f = /** @type {string} */ (jspb.Message.getField(message, 6));
+  if (f != null) {
+    writer.writeString(
+      6,
+      f
+    );
+  }
   f = message.getConditionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      6,
+      7,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionCondition.serializeBinaryToWriter
     );
@@ -2687,10 +2701,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionSt
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2;
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time nextRun = 2;
  * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionStatus.prototype.getLastupdated = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionStatus.prototype.getNextrun = function() {
   return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
     jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 2));
 };
@@ -2700,8 +2714,45 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionSt
  * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionStatus} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionStatus.prototype.setLastupdated = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionStatus.prototype.setNextrun = function(value) {
   return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionStatus.prototype.clearNextrun = function() {
+  return this.setNextrun(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionStatus.prototype.hasNextrun = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 3;
+ * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionStatus.prototype.getLastupdated = function() {
+  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 3));
+};
+
+
+/**
+ * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionStatus} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionStatus.prototype.setLastupdated = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
 };
 
 
@@ -2719,16 +2770,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionSt
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionStatus.prototype.hasLastupdated = function() {
-  return jspb.Message.getField(this, 2) != null;
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional int64 observedGeneration = 3;
+ * optional int64 observedGeneration = 4;
  * @return {number}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionStatus.prototype.getObservedgeneration = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
 
@@ -2737,42 +2788,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionSt
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionStatus} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionStatus.prototype.setObservedgeneration = function(value) {
-  return jspb.Message.setField(this, 3, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionStatus.prototype.clearObservedgeneration = function() {
-  return jspb.Message.setField(this, 3, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionStatus.prototype.hasObservedgeneration = function() {
-  return jspb.Message.getField(this, 3) != null;
-};
-
-
-/**
- * optional string failureReason = 4;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionStatus.prototype.getFailurereason = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionStatus.prototype.setFailurereason = function(value) {
   return jspb.Message.setField(this, 4, value);
 };
 
@@ -2781,7 +2796,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionSt
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionStatus.prototype.clearFailurereason = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionStatus.prototype.clearObservedgeneration = function() {
   return jspb.Message.setField(this, 4, undefined);
 };
 
@@ -2790,16 +2805,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionSt
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionStatus.prototype.hasFailurereason = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionStatus.prototype.hasObservedgeneration = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * optional string failureMessage = 5;
+ * optional string failureReason = 5;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionStatus.prototype.getFailuremessage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionStatus.prototype.getFailurereason = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
@@ -2808,7 +2823,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionSt
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionStatus.prototype.setFailuremessage = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionStatus.prototype.setFailurereason = function(value) {
   return jspb.Message.setField(this, 5, value);
 };
 
@@ -2817,7 +2832,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionSt
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionStatus.prototype.clearFailuremessage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionStatus.prototype.clearFailurereason = function() {
   return jspb.Message.setField(this, 5, undefined);
 };
 
@@ -2826,18 +2841,54 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionSt
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionStatus.prototype.hasFailuremessage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionStatus.prototype.hasFailurereason = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 
 
 /**
- * repeated CronPredictionCondition conditions = 6;
+ * optional string failureMessage = 6;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionStatus.prototype.getFailuremessage = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionStatus.prototype.setFailuremessage = function(value) {
+  return jspb.Message.setField(this, 6, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionStatus.prototype.clearFailuremessage = function() {
+  return jspb.Message.setField(this, 6, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionStatus.prototype.hasFailuremessage = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * repeated CronPredictionCondition conditions = 7;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionCondition>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionStatus.prototype.getConditionsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionCondition, 6));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionCondition, 7));
 };
 
 
@@ -2846,7 +2897,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionSt
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionStatus.prototype.setConditionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 6, value);
+  return jspb.Message.setRepeatedWrapperField(this, 7, value);
 };
 
 
@@ -2856,7 +2907,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionSt
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionCondition}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 7, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionCondition, opt_index);
 };
 
 

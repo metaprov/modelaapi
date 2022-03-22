@@ -367,6 +367,10 @@ func (in *CronReportSpec) DeepCopy() *CronReportSpec {
 func (in *CronReportStatus) DeepCopyInto(out *CronReportStatus) {
 	*out = *in
 	in.LastRun.DeepCopyInto(&out.LastRun)
+	if in.NextRun != nil {
+		in, out := &in.NextRun, &out.NextRun
+		*out = (*in).DeepCopy()
+	}
 	if in.LastUpdated != nil {
 		in, out := &in.LastUpdated, &out.LastUpdated
 		*out = (*in).DeepCopy()
@@ -2388,6 +2392,10 @@ func (in *ModelPipelineSpec) DeepCopy() *ModelPipelineSpec {
 func (in *ModelPipelineStatus) DeepCopyInto(out *ModelPipelineStatus) {
 	*out = *in
 	in.LastRun.DeepCopyInto(&out.LastRun)
+	if in.NextRun != nil {
+		in, out := &in.NextRun, &out.NextRun
+		*out = (*in).DeepCopy()
+	}
 	if in.LastUpdated != nil {
 		in, out := &in.LastUpdated, &out.LastUpdated
 		*out = (*in).DeepCopy()
@@ -3203,6 +3211,10 @@ func (in *NotebookSpec) DeepCopy() *NotebookSpec {
 func (in *NotebookStatus) DeepCopyInto(out *NotebookStatus) {
 	*out = *in
 	in.LastRun.DeepCopyInto(&out.LastRun)
+	if in.NextRun != nil {
+		in, out := &in.NextRun, &out.NextRun
+		*out = (*in).DeepCopy()
+	}
 	if in.LastUpdated != nil {
 		in, out := &in.LastUpdated, &out.LastUpdated
 		*out = (*in).DeepCopy()

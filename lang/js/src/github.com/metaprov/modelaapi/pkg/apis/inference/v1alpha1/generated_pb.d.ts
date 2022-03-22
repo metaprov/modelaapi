@@ -191,6 +191,11 @@ export class CronPredictionStatus extends jspb.Message {
   hasLastrun(): boolean;
   clearLastrun(): CronPredictionStatus;
 
+  getNextrun(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setNextrun(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): CronPredictionStatus;
+  hasNextrun(): boolean;
+  clearNextrun(): CronPredictionStatus;
+
   getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): CronPredictionStatus;
   hasLastupdated(): boolean;
@@ -221,6 +226,7 @@ export class CronPredictionStatus extends jspb.Message {
 export namespace CronPredictionStatus {
   export type AsObject = {
     lastrun?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus.AsObject,
+    nextrun?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     observedgeneration: number,
     failurereason: string,

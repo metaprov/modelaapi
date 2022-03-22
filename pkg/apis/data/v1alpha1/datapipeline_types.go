@@ -116,10 +116,13 @@ type DataPipelineStatus struct {
 	// Last run is the last time a data pipeline run was created
 	//+kubebuilder:validation:Optional
 	LastRun catalog.LastRunStatus `json:"lastRun,omitempty" protobuf:"bytes,3,opt,name=lastRun"`
+	// The time of the next schedule run
+	//+kubebuilder:validation:Optional
+	NextRun *metav1.Time `json:"nextRun,omitempty" protobuf:"bytes,4,opt,name=nextRun"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []DataPipelineCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,4,rep,name=conditions"`
+	Conditions []DataPipelineCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,5,rep,name=conditions"`
 }
 
 // DataOutputSpec is the definition of the out file.

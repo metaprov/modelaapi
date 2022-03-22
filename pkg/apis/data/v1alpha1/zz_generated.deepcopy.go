@@ -1046,6 +1046,10 @@ func (in *DataPipelineStatus) DeepCopyInto(out *DataPipelineStatus) {
 		*out = (*in).DeepCopy()
 	}
 	in.LastRun.DeepCopyInto(&out.LastRun)
+	if in.NextRun != nil {
+		in, out := &in.NextRun, &out.NextRun
+		*out = (*in).DeepCopy()
+	}
 	if in.Conditions != nil {
 		in, out := &in.Conditions, &out.Conditions
 		*out = make([]DataPipelineCondition, len(*in))
@@ -2725,6 +2729,10 @@ func (in *FeaturePipelineSpec) DeepCopy() *FeaturePipelineSpec {
 func (in *FeaturePipelineStatus) DeepCopyInto(out *FeaturePipelineStatus) {
 	*out = *in
 	in.LastRun.DeepCopyInto(&out.LastRun)
+	if in.NextRun != nil {
+		in, out := &in.NextRun, &out.NextRun
+		*out = (*in).DeepCopy()
+	}
 	if in.LastUpdated != nil {
 		in, out := &in.LastUpdated, &out.LastUpdated
 		*out = (*in).DeepCopy()
@@ -3564,6 +3572,10 @@ func (in *LabelingPipelineSpec) DeepCopy() *LabelingPipelineSpec {
 func (in *LabelingPipelineStatus) DeepCopyInto(out *LabelingPipelineStatus) {
 	*out = *in
 	in.LastRun.DeepCopyInto(&out.LastRun)
+	if in.NextRun != nil {
+		in, out := &in.NextRun, &out.NextRun
+		*out = (*in).DeepCopy()
+	}
 	if in.LastUpdated != nil {
 		in, out := &in.LastUpdated, &out.LastUpdated
 		*out = (*in).DeepCopy()
@@ -4191,6 +4203,10 @@ func (in *RecipeSpec) DeepCopy() *RecipeSpec {
 func (in *RecipeStatus) DeepCopyInto(out *RecipeStatus) {
 	*out = *in
 	in.LastRun.DeepCopyInto(&out.LastRun)
+	if in.NextRun != nil {
+		in, out := &in.NextRun, &out.NextRun
+		*out = (*in).DeepCopy()
+	}
 	if in.LastUpdated != nil {
 		in, out := &in.LastUpdated, &out.LastUpdated
 		*out = (*in).DeepCopy()
@@ -4755,6 +4771,10 @@ func (in *SqlQueryStatus) DeepCopyInto(out *SqlQueryStatus) {
 		*out = (*in).DeepCopy()
 	}
 	in.LastRun.DeepCopyInto(&out.LastRun)
+	if in.NextRun != nil {
+		in, out := &in.NextRun, &out.NextRun
+		*out = (*in).DeepCopy()
+	}
 	if in.FailureReason != nil {
 		in, out := &in.FailureReason, &out.FailureReason
 		*out = new(catalogv1alpha1.StatusError)
@@ -5221,6 +5241,10 @@ func (in *WebRequestStatus) DeepCopyInto(out *WebRequestStatus) {
 		*out = (*in).DeepCopy()
 	}
 	in.LastRun.DeepCopyInto(&out.LastRun)
+	if in.NextRun != nil {
+		in, out := &in.NextRun, &out.NextRun
+		*out = (*in).DeepCopy()
+	}
 	if in.FailureReason != nil {
 		in, out := &in.FailureReason, &out.FailureReason
 		*out = new(catalogv1alpha1.StatusError)

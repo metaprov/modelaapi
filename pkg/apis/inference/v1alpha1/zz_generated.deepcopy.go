@@ -179,6 +179,10 @@ func (in *CronPredictionSpec) DeepCopy() *CronPredictionSpec {
 func (in *CronPredictionStatus) DeepCopyInto(out *CronPredictionStatus) {
 	*out = *in
 	in.LastRun.DeepCopyInto(&out.LastRun)
+	if in.NextRun != nil {
+		in, out := &in.NextRun, &out.NextRun
+		*out = (*in).DeepCopy()
+	}
 	if in.LastUpdated != nil {
 		in, out := &in.LastUpdated, &out.LastUpdated
 		*out = (*in).DeepCopy()

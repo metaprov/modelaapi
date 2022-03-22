@@ -1610,6 +1610,10 @@ spec:
                 description: Last time the object was updated
                 format: date-time
                 type: string
+              nextRun:
+                description: The time of the next schedule run
+                format: date-time
+                type: string
               observedGeneration:
                 description: ObservedGeneration is the Last generation that was acted
                   on

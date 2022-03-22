@@ -216,27 +216,31 @@ message CronReportStatus {
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus lastRun = 1;
 
+  // The time of the next schedule run
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time nextRun = 2;
+
   // Last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 3;
 
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 3;
+  optional int64 observedGeneration = 4;
 
   // Update in case of terminal failure
   // Borrowed from cluster api controller
   // +kubebuilder:validation:Optional
-  optional string failureReason = 4;
+  optional string failureReason = 5;
 
   // Update in case of terminal failure message
   // +kubebuilder:validation:Optional
-  optional string failureMessage = 5;
+  optional string failureMessage = 6;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated CronReportCondition conditions = 6;
+  repeated CronReportCondition conditions = 7;
 }
 
 message CustomReportSpec {
@@ -1762,27 +1766,31 @@ message ModelPipelineStatus {
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus lastRun = 1;
 
+  // The time of the next schedule run
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time nextRun = 2;
+
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 2;
+  optional int64 observedGeneration = 3;
 
   // Last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 3;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 4;
 
   // Update in case of terminal failure
   // Borrowed from cluster api controller
   // +kubebuilder:validation:Optional
-  optional string failureReason = 4;
+  optional string failureReason = 5;
 
   // Update in case of terminal failure message
   // +kubebuilder:validation:Optional
-  optional string failureMessage = 5;
+  optional string failureMessage = 6;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated ModelPipelineCondition conditions = 6;
+  repeated ModelPipelineCondition conditions = 7;
 }
 
 // model cv results
@@ -2600,23 +2608,27 @@ message NotebookStatus {
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus lastRun = 4;
 
+  // The time of the next schedule run
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time nextRun = 5;
+
   // Last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 5;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 6;
 
   // Update in case of terminal failure
   // Borrowed from cluster api controller
   // +kubebuilder:validation:Optional
-  optional string failureReason = 6;
+  optional string failureReason = 7;
 
   // Update in case of terminal failure message
   // +kubebuilder:validation:Optional
-  optional string failureMessage = 7;
+  optional string failureMessage = 8;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated NotebookCondition conditions = 8;
+  repeated NotebookCondition conditions = 9;
 }
 
 // NotebookVarValue is an assignment of value to the notebook var

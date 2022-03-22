@@ -1516,7 +1516,6 @@ type ModelDeploymentStatus struct {
 	// The time of approval
 	// +kubebuilder:validation:Optional
 	ApprovedAt *metav1.Time `json:"approvedAt,omitempty" protobuf:"bytes,15,opt,name=approvedAt"`
-	// Holds the actual deployment and service
 }
 
 type ModelDeploymentPhase string

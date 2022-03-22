@@ -15606,7 +15606,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prot
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineStatus.repeatedFields_ = [4];
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineStatus.repeatedFields_ = [5];
 
 
 
@@ -15642,6 +15642,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineStatus.to
     observedgeneration: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     lastupdated: (f = msg.getLastupdated()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     lastrun: (f = msg.getLastrun()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus.toObject(includeInstance, f),
+    nextrun: (f = msg.getNextrun()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineCondition.toObject, includeInstance)
   };
@@ -15695,6 +15696,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineStatus.de
       msg.setLastrun(value);
       break;
     case 4:
+      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
+      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
+      msg.setNextrun(value);
+      break;
+    case 5:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineCondition;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineCondition.deserializeBinaryFromReader);
       msg.addConditions(value);
@@ -15751,10 +15757,18 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineStatus.se
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus.serializeBinaryToWriter
     );
   }
+  f = message.getNextrun();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
+    );
+  }
   f = message.getConditionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      4,
+      5,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineCondition.serializeBinaryToWriter
     );
@@ -15873,12 +15887,49 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineStatus.pr
 
 
 /**
- * repeated DataPipelineCondition conditions = 4;
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time nextRun = 4;
+ * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineStatus.prototype.getNextrun = function() {
+  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 4));
+};
+
+
+/**
+ * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineStatus} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineStatus.prototype.setNextrun = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineStatus.prototype.clearNextrun = function() {
+  return this.setNextrun(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineStatus.prototype.hasNextrun = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * repeated DataPipelineCondition conditions = 5;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineCondition>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineStatus.prototype.getConditionsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineCondition, 4));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineCondition, 5));
 };
 
 
@@ -15887,7 +15938,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineStatus.pr
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineStatus.prototype.setConditionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 4, value);
+  return jspb.Message.setRepeatedWrapperField(this, 5, value);
 };
 
 
@@ -15897,7 +15948,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineStatus.pr
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineCondition}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineCondition, opt_index);
 };
 
 
@@ -34836,7 +34887,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.p
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineStatus.repeatedFields_ = [5];
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineStatus.repeatedFields_ = [6];
 
 
 
@@ -34870,8 +34921,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineStatus
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
     lastrun: (f = msg.getLastrun()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus.toObject(includeInstance, f),
-    averagecost: (f = jspb.Message.getOptionalFloatingPointField(msg, 2)) == null ? undefined : f,
-    observedgeneration: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    nextrun: (f = msg.getNextrun()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    averagecost: (f = jspb.Message.getOptionalFloatingPointField(msg, 3)) == null ? undefined : f,
+    observedgeneration: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     lastupdated: (f = msg.getLastupdated()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineCondition.toObject, includeInstance)
@@ -34917,19 +34969,24 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineStatus
       msg.setLastrun(value);
       break;
     case 2:
+      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
+      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
+      msg.setNextrun(value);
+      break;
+    case 3:
       var value = /** @type {number} */ (reader.readDouble());
       msg.setAveragecost(value);
       break;
-    case 3:
+    case 4:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setObservedgeneration(value);
       break;
-    case 4:
+    case 5:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
       msg.setLastupdated(value);
       break;
-    case 5:
+    case 6:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineCondition;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineCondition.deserializeBinaryFromReader);
       msg.addConditions(value);
@@ -34971,24 +35028,32 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineStatus
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus.serializeBinaryToWriter
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 2));
+  f = message.getNextrun();
   if (f != null) {
-    writer.writeDouble(
+    writer.writeMessage(
       2,
-      f
+      f,
+      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 3));
   if (f != null) {
-    writer.writeInt64(
+    writer.writeDouble(
       3,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeInt64(
+      4,
       f
     );
   }
   f = message.getLastupdated();
   if (f != null) {
     writer.writeMessage(
-      4,
+      5,
       f,
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
@@ -34996,7 +35061,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineStatus
   f = message.getConditionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      5,
+      6,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineCondition.serializeBinaryToWriter
     );
@@ -35042,11 +35107,48 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineStatus
 
 
 /**
- * optional double averageCost = 2;
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time nextRun = 2;
+ * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineStatus.prototype.getNextrun = function() {
+  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 2));
+};
+
+
+/**
+ * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineStatus} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineStatus.prototype.setNextrun = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineStatus.prototype.clearNextrun = function() {
+  return this.setNextrun(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineStatus.prototype.hasNextrun = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional double averageCost = 3;
  * @return {number}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineStatus.prototype.getAveragecost = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 2, 0.0));
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 3, 0.0));
 };
 
 
@@ -35055,42 +35157,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineStatus
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineStatus} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineStatus.prototype.setAveragecost = function(value) {
-  return jspb.Message.setField(this, 2, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineStatus.prototype.clearAveragecost = function() {
-  return jspb.Message.setField(this, 2, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineStatus.prototype.hasAveragecost = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional int64 observedGeneration = 3;
- * @return {number}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineStatus.prototype.getObservedgeneration = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineStatus.prototype.setObservedgeneration = function(value) {
   return jspb.Message.setField(this, 3, value);
 };
 
@@ -35099,7 +35165,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineStatus
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineStatus.prototype.clearObservedgeneration = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineStatus.prototype.clearAveragecost = function() {
   return jspb.Message.setField(this, 3, undefined);
 };
 
@@ -35108,18 +35174,54 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineStatus
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineStatus.prototype.hasObservedgeneration = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineStatus.prototype.hasAveragecost = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 4;
+ * optional int64 observedGeneration = 4;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineStatus.prototype.getObservedgeneration = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineStatus.prototype.setObservedgeneration = function(value) {
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineStatus.prototype.clearObservedgeneration = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineStatus.prototype.hasObservedgeneration = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 5;
  * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineStatus.prototype.getLastupdated = function() {
   return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
-    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 4));
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 5));
 };
 
 
@@ -35128,7 +35230,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineStatus
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineStatus.prototype.setLastupdated = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
+  return jspb.Message.setWrapperField(this, 5, value);
 };
 
 
@@ -35146,17 +35248,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineStatus
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineStatus.prototype.hasLastupdated = function() {
-  return jspb.Message.getField(this, 4) != null;
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
 /**
- * repeated FeaturePipelineCondition conditions = 5;
+ * repeated FeaturePipelineCondition conditions = 6;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineCondition>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineStatus.prototype.getConditionsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineCondition, 5));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineCondition, 6));
 };
 
 
@@ -35165,7 +35267,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineStatus
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineStatus.prototype.setConditionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 5, value);
+  return jspb.Message.setRepeatedWrapperField(this, 6, value);
 };
 
 
@@ -35175,7 +35277,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineStatus
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineCondition}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineCondition, opt_index);
 };
 
 
@@ -44240,7 +44342,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineSpec.
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineStatus.repeatedFields_ = [4];
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineStatus.repeatedFields_ = [5];
 
 
 
@@ -44274,7 +44376,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineStatu
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
     lastrun: (f = msg.getLastrun()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus.toObject(includeInstance, f),
-    observedgeneration: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    nextrun: (f = msg.getNextrun()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    observedgeneration: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     lastupdated: (f = msg.getLastupdated()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineCondition.toObject, includeInstance)
@@ -44320,15 +44423,20 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineStatu
       msg.setLastrun(value);
       break;
     case 2:
+      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
+      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
+      msg.setNextrun(value);
+      break;
+    case 3:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setObservedgeneration(value);
       break;
-    case 3:
+    case 4:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
       msg.setLastupdated(value);
       break;
-    case 4:
+    case 5:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineCondition;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineCondition.deserializeBinaryFromReader);
       msg.addConditions(value);
@@ -44370,17 +44478,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineStatu
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus.serializeBinaryToWriter
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 2));
+  f = message.getNextrun();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 3));
   if (f != null) {
     writer.writeInt64(
-      2,
+      3,
       f
     );
   }
   f = message.getLastupdated();
   if (f != null) {
     writer.writeMessage(
-      3,
+      4,
       f,
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
@@ -44388,7 +44504,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineStatu
   f = message.getConditionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      4,
+      5,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineCondition.serializeBinaryToWriter
     );
@@ -44434,11 +44550,48 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineStatu
 
 
 /**
- * optional int64 observedGeneration = 2;
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time nextRun = 2;
+ * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineStatus.prototype.getNextrun = function() {
+  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 2));
+};
+
+
+/**
+ * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineStatus} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineStatus.prototype.setNextrun = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineStatus.prototype.clearNextrun = function() {
+  return this.setNextrun(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineStatus.prototype.hasNextrun = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional int64 observedGeneration = 3;
  * @return {number}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineStatus.prototype.getObservedgeneration = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
 
@@ -44447,7 +44600,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineStatu
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineStatus} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineStatus.prototype.setObservedgeneration = function(value) {
-  return jspb.Message.setField(this, 2, value);
+  return jspb.Message.setField(this, 3, value);
 };
 
 
@@ -44456,7 +44609,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineStatu
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineStatus} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineStatus.prototype.clearObservedgeneration = function() {
-  return jspb.Message.setField(this, 2, undefined);
+  return jspb.Message.setField(this, 3, undefined);
 };
 
 
@@ -44465,17 +44618,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineStatu
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineStatus.prototype.hasObservedgeneration = function() {
-  return jspb.Message.getField(this, 2) != null;
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 3;
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 4;
  * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineStatus.prototype.getLastupdated = function() {
   return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
-    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 3));
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 4));
 };
 
 
@@ -44484,7 +44637,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineStatu
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineStatus.prototype.setLastupdated = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
+  return jspb.Message.setWrapperField(this, 4, value);
 };
 
 
@@ -44502,17 +44655,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineStatu
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineStatus.prototype.hasLastupdated = function() {
-  return jspb.Message.getField(this, 3) != null;
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * repeated LabelingPipelineCondition conditions = 4;
+ * repeated LabelingPipelineCondition conditions = 5;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineCondition>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineStatus.prototype.getConditionsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineCondition, 4));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineCondition, 5));
 };
 
 
@@ -44521,7 +44674,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineStatu
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineStatus.prototype.setConditionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 4, value);
+  return jspb.Message.setRepeatedWrapperField(this, 5, value);
 };
 
 
@@ -44531,7 +44684,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineStatu
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineCondition}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineCondition, opt_index);
 };
 
 
@@ -50392,7 +50545,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeSpec.prototype.
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeStatus.repeatedFields_ = [6];
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeStatus.repeatedFields_ = [7];
 
 
 
@@ -50427,9 +50580,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeStatus.toObject
   var f, obj = {
     observedgeneration: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     lastrun: (f = msg.getLastrun()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus.toObject(includeInstance, f),
+    nextrun: (f = msg.getNextrun()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     lastupdated: (f = msg.getLastupdated()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
-    failurereason: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    failuremessage: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    failurereason: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    failuremessage: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeCondition.toObject, includeInstance)
   };
@@ -50480,17 +50634,22 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeStatus.deserial
     case 3:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setLastupdated(value);
+      msg.setNextrun(value);
       break;
     case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setFailurereason(value);
+      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
+      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
+      msg.setLastupdated(value);
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
-      msg.setFailuremessage(value);
+      msg.setFailurereason(value);
       break;
     case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFailuremessage(value);
+      break;
+    case 7:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeCondition;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeCondition.deserializeBinaryFromReader);
       msg.addConditions(value);
@@ -50539,7 +50698,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeStatus.serializ
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus.serializeBinaryToWriter
     );
   }
-  f = message.getLastupdated();
+  f = message.getNextrun();
   if (f != null) {
     writer.writeMessage(
       3,
@@ -50547,11 +50706,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeStatus.serializ
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 4));
+  f = message.getLastupdated();
   if (f != null) {
-    writer.writeString(
+    writer.writeMessage(
       4,
-      f
+      f,
+      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
   }
   f = /** @type {string} */ (jspb.Message.getField(message, 5));
@@ -50561,10 +50721,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeStatus.serializ
       f
     );
   }
+  f = /** @type {string} */ (jspb.Message.getField(message, 6));
+  if (f != null) {
+    writer.writeString(
+      6,
+      f
+    );
+  }
   f = message.getConditionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      6,
+      7,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeCondition.serializeBinaryToWriter
     );
@@ -50646,10 +50813,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeStatus.prototyp
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 3;
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time nextRun = 3;
  * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeStatus.prototype.getLastupdated = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeStatus.prototype.getNextrun = function() {
   return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
     jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 3));
 };
@@ -50659,8 +50826,45 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeStatus.prototyp
  * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeStatus} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeStatus.prototype.setLastupdated = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeStatus.prototype.setNextrun = function(value) {
   return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeStatus.prototype.clearNextrun = function() {
+  return this.setNextrun(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeStatus.prototype.hasNextrun = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 4;
+ * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeStatus.prototype.getLastupdated = function() {
+  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 4));
+};
+
+
+/**
+ * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeStatus} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeStatus.prototype.setLastupdated = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
 };
 
 
@@ -50678,51 +50882,15 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeStatus.prototyp
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeStatus.prototype.hasLastupdated = function() {
-  return jspb.Message.getField(this, 3) != null;
-};
-
-
-/**
- * optional string failureReason = 4;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeStatus.prototype.getFailurereason = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeStatus.prototype.setFailurereason = function(value) {
-  return jspb.Message.setField(this, 4, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeStatus.prototype.clearFailurereason = function() {
-  return jspb.Message.setField(this, 4, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeStatus.prototype.hasFailurereason = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * optional string failureMessage = 5;
+ * optional string failureReason = 5;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeStatus.prototype.getFailuremessage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeStatus.prototype.getFailurereason = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
@@ -50731,7 +50899,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeStatus.prototyp
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeStatus.prototype.setFailuremessage = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeStatus.prototype.setFailurereason = function(value) {
   return jspb.Message.setField(this, 5, value);
 };
 
@@ -50740,7 +50908,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeStatus.prototyp
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeStatus.prototype.clearFailuremessage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeStatus.prototype.clearFailurereason = function() {
   return jspb.Message.setField(this, 5, undefined);
 };
 
@@ -50749,18 +50917,54 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeStatus.prototyp
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeStatus.prototype.hasFailuremessage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeStatus.prototype.hasFailurereason = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 
 
 /**
- * repeated RecipeCondition conditions = 6;
+ * optional string failureMessage = 6;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeStatus.prototype.getFailuremessage = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeStatus.prototype.setFailuremessage = function(value) {
+  return jspb.Message.setField(this, 6, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeStatus.prototype.clearFailuremessage = function() {
+  return jspb.Message.setField(this, 6, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeStatus.prototype.hasFailuremessage = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * repeated RecipeCondition conditions = 7;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeCondition>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeStatus.prototype.getConditionsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeCondition, 6));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeCondition, 7));
 };
 
 
@@ -50769,7 +50973,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeStatus.prototyp
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeStatus.prototype.setConditionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 6, value);
+  return jspb.Message.setRepeatedWrapperField(this, 7, value);
 };
 
 
@@ -50779,7 +50983,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeStatus.prototyp
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeCondition}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 7, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeCondition, opt_index);
 };
 
 
@@ -56334,7 +56538,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuerySpec.prototyp
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryStatus.repeatedFields_ = [6];
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryStatus.repeatedFields_ = [7];
 
 
 
@@ -56370,8 +56574,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryStatus.toObje
     lastupdated: (f = msg.getLastupdated()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     observedgeneration: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     lastrun: (f = msg.getLastrun()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus.toObject(includeInstance, f),
-    failurereason: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    failuremessage: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    nextrun: (f = msg.getNextrun()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    failurereason: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    failuremessage: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryCondition.toObject, includeInstance)
   };
@@ -56425,14 +56630,19 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryStatus.deseri
       msg.setLastrun(value);
       break;
     case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setFailurereason(value);
+      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
+      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
+      msg.setNextrun(value);
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
-      msg.setFailuremessage(value);
+      msg.setFailurereason(value);
       break;
     case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFailuremessage(value);
+      break;
+    case 7:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryCondition;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryCondition.deserializeBinaryFromReader);
       msg.addConditions(value);
@@ -56489,11 +56699,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryStatus.serial
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus.serializeBinaryToWriter
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 4));
+  f = message.getNextrun();
   if (f != null) {
-    writer.writeString(
+    writer.writeMessage(
       4,
-      f
+      f,
+      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
   }
   f = /** @type {string} */ (jspb.Message.getField(message, 5));
@@ -56503,10 +56714,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryStatus.serial
       f
     );
   }
+  f = /** @type {string} */ (jspb.Message.getField(message, 6));
+  if (f != null) {
+    writer.writeString(
+      6,
+      f
+    );
+  }
   f = message.getConditionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      6,
+      7,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryCondition.serializeBinaryToWriter
     );
@@ -56625,29 +56843,30 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryStatus.protot
 
 
 /**
- * optional string failureReason = 4;
- * @return {string}
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time nextRun = 4;
+ * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryStatus.prototype.getFailurereason = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryStatus.prototype.getNextrun = function() {
+  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 4));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryStatus.prototype.setFailurereason = function(value) {
-  return jspb.Message.setField(this, 4, value);
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryStatus.prototype.setNextrun = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
 };
 
 
 /**
- * Clears the field making it undefined.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryStatus.prototype.clearFailurereason = function() {
-  return jspb.Message.setField(this, 4, undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryStatus.prototype.clearNextrun = function() {
+  return this.setNextrun(undefined);
 };
 
 
@@ -56655,16 +56874,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryStatus.protot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryStatus.prototype.hasFailurereason = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryStatus.prototype.hasNextrun = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * optional string failureMessage = 5;
+ * optional string failureReason = 5;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryStatus.prototype.getFailuremessage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryStatus.prototype.getFailurereason = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
@@ -56673,7 +56892,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryStatus.protot
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryStatus.prototype.setFailuremessage = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryStatus.prototype.setFailurereason = function(value) {
   return jspb.Message.setField(this, 5, value);
 };
 
@@ -56682,7 +56901,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryStatus.protot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryStatus.prototype.clearFailuremessage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryStatus.prototype.clearFailurereason = function() {
   return jspb.Message.setField(this, 5, undefined);
 };
 
@@ -56691,18 +56910,54 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryStatus.protot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryStatus.prototype.hasFailuremessage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryStatus.prototype.hasFailurereason = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 
 
 /**
- * repeated SqlQueryCondition conditions = 6;
+ * optional string failureMessage = 6;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryStatus.prototype.getFailuremessage = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryStatus.prototype.setFailuremessage = function(value) {
+  return jspb.Message.setField(this, 6, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryStatus.prototype.clearFailuremessage = function() {
+  return jspb.Message.setField(this, 6, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryStatus.prototype.hasFailuremessage = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * repeated SqlQueryCondition conditions = 7;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryCondition>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryStatus.prototype.getConditionsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryCondition, 6));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryCondition, 7));
 };
 
 
@@ -56711,7 +56966,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryStatus.protot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryStatus.prototype.setConditionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 6, value);
+  return jspb.Message.setRepeatedWrapperField(this, 7, value);
 };
 
 
@@ -56721,7 +56976,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryStatus.protot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryCondition}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 7, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryCondition, opt_index);
 };
 
 
@@ -61162,7 +61417,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestSpec.protot
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestStatus.repeatedFields_ = [6];
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestStatus.repeatedFields_ = [7];
 
 
 
@@ -61198,8 +61453,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestStatus.toOb
     lastupdated: (f = msg.getLastupdated()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     observedgeneration: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     lastrun: (f = msg.getLastrun()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus.toObject(includeInstance, f),
-    failurereason: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    failuremessage: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    nextrun: (f = msg.getNextrun()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    failurereason: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    failuremessage: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestCondition.toObject, includeInstance)
   };
@@ -61253,14 +61509,19 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestStatus.dese
       msg.setLastrun(value);
       break;
     case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setFailurereason(value);
+      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
+      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
+      msg.setNextrun(value);
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
-      msg.setFailuremessage(value);
+      msg.setFailurereason(value);
       break;
     case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFailuremessage(value);
+      break;
+    case 7:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestCondition;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestCondition.deserializeBinaryFromReader);
       msg.addConditions(value);
@@ -61317,11 +61578,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestStatus.seri
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus.serializeBinaryToWriter
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 4));
+  f = message.getNextrun();
   if (f != null) {
-    writer.writeString(
+    writer.writeMessage(
       4,
-      f
+      f,
+      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
   }
   f = /** @type {string} */ (jspb.Message.getField(message, 5));
@@ -61331,10 +61593,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestStatus.seri
       f
     );
   }
+  f = /** @type {string} */ (jspb.Message.getField(message, 6));
+  if (f != null) {
+    writer.writeString(
+      6,
+      f
+    );
+  }
   f = message.getConditionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      6,
+      7,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestCondition.serializeBinaryToWriter
     );
@@ -61453,29 +61722,30 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestStatus.prot
 
 
 /**
- * optional string failureReason = 4;
- * @return {string}
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time nextRun = 4;
+ * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestStatus.prototype.getFailurereason = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestStatus.prototype.getNextrun = function() {
+  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 4));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestStatus.prototype.setFailurereason = function(value) {
-  return jspb.Message.setField(this, 4, value);
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestStatus.prototype.setNextrun = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
 };
 
 
 /**
- * Clears the field making it undefined.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestStatus.prototype.clearFailurereason = function() {
-  return jspb.Message.setField(this, 4, undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestStatus.prototype.clearNextrun = function() {
+  return this.setNextrun(undefined);
 };
 
 
@@ -61483,16 +61753,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestStatus.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestStatus.prototype.hasFailurereason = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestStatus.prototype.hasNextrun = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * optional string failureMessage = 5;
+ * optional string failureReason = 5;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestStatus.prototype.getFailuremessage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestStatus.prototype.getFailurereason = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
@@ -61501,7 +61771,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestStatus.prot
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestStatus.prototype.setFailuremessage = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestStatus.prototype.setFailurereason = function(value) {
   return jspb.Message.setField(this, 5, value);
 };
 
@@ -61510,7 +61780,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestStatus.prot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestStatus.prototype.clearFailuremessage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestStatus.prototype.clearFailurereason = function() {
   return jspb.Message.setField(this, 5, undefined);
 };
 
@@ -61519,18 +61789,54 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestStatus.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestStatus.prototype.hasFailuremessage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestStatus.prototype.hasFailurereason = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 
 
 /**
- * repeated WebRequestCondition conditions = 6;
+ * optional string failureMessage = 6;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestStatus.prototype.getFailuremessage = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestStatus.prototype.setFailuremessage = function(value) {
+  return jspb.Message.setField(this, 6, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestStatus.prototype.clearFailuremessage = function() {
+  return jspb.Message.setField(this, 6, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestStatus.prototype.hasFailuremessage = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * repeated WebRequestCondition conditions = 7;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestCondition>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestStatus.prototype.getConditionsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestCondition, 6));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestCondition, 7));
 };
 
 
@@ -61539,7 +61845,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestStatus.prot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestStatus.prototype.setConditionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 6, value);
+  return jspb.Message.setRepeatedWrapperField(this, 7, value);
 };
 
 
@@ -61549,7 +61855,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestStatus.prot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestCondition}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 7, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestCondition, opt_index);
 };
 
 
