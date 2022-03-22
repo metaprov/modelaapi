@@ -609,6 +609,7 @@ func (run *ModelAutobuilder) CompletionAlert(tenantRef *v1.ObjectReference, noti
 			Subject: util.StrPtr("Model Auto Builder completed successfully "),
 			Level:   &level,
 			EntityRef: v1.ObjectReference{
+				Kind:      "ModelAutoBuilder",
 				Name:      run.Name,
 				Namespace: run.Namespace,
 			},
@@ -633,6 +634,7 @@ func (run *ModelAutobuilder) ErrorAlert(tenantRef *v1.ObjectReference, notifierN
 			Subject: util.StrPtr("Model Auto Builder Error"),
 			Level:   &level,
 			EntityRef: v1.ObjectReference{
+				Kind:      "ModelAutoBuilder",
 				Name:      run.Name,
 				Namespace: run.Namespace,
 			},

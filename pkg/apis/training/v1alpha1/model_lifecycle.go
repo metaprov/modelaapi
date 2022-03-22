@@ -980,6 +980,7 @@ func (model *Model) CompletionAlert(tenantRef *v1.ObjectReference, notifierName 
 			Subject: util.StrPtr("Web Request Completed"),
 			Level:   &level,
 			EntityRef: v1.ObjectReference{
+				Kind:      "Model",
 				Name:      model.Name,
 				Namespace: model.Namespace,
 			},
@@ -1012,6 +1013,7 @@ func (model *Model) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *stri
 			Subject: util.StrPtr("Model Error"),
 			Level:   &level,
 			EntityRef: v1.ObjectReference{
+				Kind:      "Model",
 				Name:      model.Name,
 				Namespace: model.Namespace,
 			},

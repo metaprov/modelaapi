@@ -188,6 +188,7 @@ func (run *RecipeRun) CompletionAlert(tenantRef *v1.ObjectReference, notifierNam
 			Subject: util.StrPtr("Recipe Run Completed"),
 			Level:   &level,
 			EntityRef: v1.ObjectReference{
+				Kind:      "RecipeRun",
 				Name:      run.Name,
 				Namespace: run.Namespace,
 			},
@@ -212,6 +213,7 @@ func (run *RecipeRun) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *st
 			Subject: util.StrPtr("Recipe Run Error"),
 			Level:   &level,
 			EntityRef: v1.ObjectReference{
+				Kind:      "RecipeRun",
 				Name:      run.Name,
 				Namespace: run.Namespace,
 			},

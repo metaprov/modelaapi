@@ -215,6 +215,7 @@ func (prediction *Prediction) CompletionAlert(tenantRef *v1.ObjectReference, not
 			Subject: util.StrPtr("Web Request Completed"),
 			Level:   &level,
 			EntityRef: v1.ObjectReference{
+				Kind:      "Prediction",
 				Name:      prediction.Name,
 				Namespace: prediction.Namespace,
 			},
@@ -240,6 +241,7 @@ func (prediction *Prediction) ErrorAlert(tenantRef *v1.ObjectReference, notifier
 			Subject: util.StrPtr("Model Auto Builder Error"),
 			Level:   &level,
 			EntityRef: v1.ObjectReference{
+				Kind:      "Prediction",
 				Name:      prediction.Name,
 				Namespace: prediction.Namespace,
 			},

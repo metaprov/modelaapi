@@ -205,6 +205,7 @@ func (run *SqlQueryRun) CompletionAlert(tenantRef *v1.ObjectReference, notifierN
 			Subject: util.StrPtr("SQL Query Completed"),
 			Level:   &level,
 			EntityRef: v1.ObjectReference{
+				Kind:      "SqlQueryRun",
 				Name:      run.Name,
 				Namespace: run.Namespace,
 			},
@@ -230,6 +231,7 @@ func (run *SqlQueryRun) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *
 			Subject: util.StrPtr("SQL Query Error"),
 			Level:   &level,
 			EntityRef: v1.ObjectReference{
+				Kind:      "SqlQueryRun",
 				Name:      run.Name,
 				Namespace: run.Namespace,
 			},

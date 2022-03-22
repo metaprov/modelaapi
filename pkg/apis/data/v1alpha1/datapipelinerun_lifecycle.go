@@ -199,6 +199,7 @@ func (run *DataPipelineRun) CompletionAlert(tenantRef *v1.ObjectReference, notif
 			Subject: util.StrPtr("Web Request Completed"),
 			Level:   &level,
 			EntityRef: v1.ObjectReference{
+				Kind:      "DataPipelineRun",
 				Name:      run.Name,
 				Namespace: run.Namespace,
 			},
@@ -226,6 +227,7 @@ func (run *DataPipelineRun) ErrorAlert(tenantRef *v1.ObjectReference, notifierNa
 			TenantRef:    tenantRef,
 			NotifierName: notifierName,
 			EntityRef: v1.ObjectReference{
+				Kind:      "DataPipelineRun",
 				Name:      run.Name,
 				Namespace: run.Namespace,
 			},

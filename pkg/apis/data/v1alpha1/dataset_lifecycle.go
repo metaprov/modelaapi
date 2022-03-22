@@ -471,6 +471,7 @@ func (dataset *Dataset) CompletionAlert(tenantRef *v1.ObjectReference, notifierN
 			Subject: util.StrPtr("Dataset Completed"),
 			Level:   &level,
 			EntityRef: v1.ObjectReference{
+				Kind:      "Dataset",
 				Name:      dataset.Name,
 				Namespace: dataset.Namespace,
 			},
@@ -502,6 +503,7 @@ func (dataset *Dataset) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *
 			TenantRef:    tenantRef,
 			NotifierName: notifierName,
 			EntityRef: v1.ObjectReference{
+				Kind:      "Dataset",
 				Name:      dataset.Name,
 				Namespace: dataset.Namespace,
 			},

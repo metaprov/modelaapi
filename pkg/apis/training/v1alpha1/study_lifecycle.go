@@ -968,6 +968,7 @@ func (study *Study) CompletionAlert(tenantRef *v1.ObjectReference, notifierName 
 			Subject: util.StrPtr("Study Completed Successfully"),
 			Level:   &level,
 			EntityRef: v1.ObjectReference{
+				Kind:      "Study",
 				Name:      study.Name,
 				Namespace: study.Namespace,
 			},
@@ -996,6 +997,7 @@ func (study *Study) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *stri
 			Subject: util.StrPtr("Study Error"),
 			Level:   &level,
 			EntityRef: v1.ObjectReference{
+				Kind:      "Study",
 				Name:      study.Name,
 				Namespace: study.Namespace,
 			},

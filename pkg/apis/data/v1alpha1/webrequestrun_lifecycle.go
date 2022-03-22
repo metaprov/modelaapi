@@ -200,6 +200,7 @@ func (run *WebRequestRun) CompletionAlert(tenantRef *v1.ObjectReference, notifie
 			Subject: util.StrPtr("Web Request Completed"),
 			Level:   &level,
 			EntityRef: v1.ObjectReference{
+				Kind:      "WebRequestRun",
 				Name:      run.Name,
 				Namespace: run.Namespace,
 			},
@@ -225,6 +226,7 @@ func (run *WebRequestRun) ErrorAlert(tenantRef *v1.ObjectReference, notifierName
 			Subject: util.StrPtr("Web Request Run Error"),
 			Level:   &level,
 			EntityRef: v1.ObjectReference{
+				Kind:      "WebRequestRun",
 				Name:      run.Name,
 				Namespace: run.Namespace,
 			},

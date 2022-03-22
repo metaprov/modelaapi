@@ -206,6 +206,7 @@ func (run *NotebookRun) CompletionAlert(tenantRef *v1.ObjectReference, notifierN
 			Subject: util.StrPtr("Notebook Run Completed"),
 			Level:   &level,
 			EntityRef: v1.ObjectReference{
+				Kind:      "NotebookRun",
 				Name:      run.Name,
 				Namespace: run.Namespace,
 			},
@@ -231,6 +232,7 @@ func (run *NotebookRun) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *
 			Subject: util.StrPtr("Notebook Run Error"),
 			Level:   &level,
 			EntityRef: v1.ObjectReference{
+				Kind:      "NotebookRun",
 				Name:      run.Name,
 				Namespace: run.Namespace,
 			},

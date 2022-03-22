@@ -254,6 +254,7 @@ func (report *Report) CompletionAlert(tenantRef *v1.ObjectReference, notifierNam
 			Subject: util.StrPtr("Report Completed"),
 			Level:   &level,
 			EntityRef: v1.ObjectReference{
+				Kind:      "Report",
 				Name:      report.Name,
 				Namespace: report.Namespace,
 			},
@@ -281,6 +282,7 @@ func (report *Report) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *st
 			Subject: util.StrPtr("Report Error"),
 			Level:   &level,
 			EntityRef: v1.ObjectReference{
+				Kind:      "Report",
 				Name:      report.Name,
 				Namespace: report.Namespace,
 			},
