@@ -5497,6 +5497,9 @@ export class SqlQueryRunSpec extends jspb.Message {
   getReported(): boolean;
   setReported(value: boolean): SqlQueryRunSpec;
 
+  getSqlqueryname(): string;
+  setSqlqueryname(value: string): SqlQueryRunSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SqlQueryRunSpec.AsObject;
   static toObject(includeInstance: boolean, msg: SqlQueryRunSpec): SqlQueryRunSpec.AsObject;
@@ -5520,6 +5523,7 @@ export namespace SqlQueryRunSpec {
     aborted: boolean,
     materialized: boolean,
     reported: boolean,
+    sqlqueryname: string,
   }
 }
 
@@ -6036,6 +6040,9 @@ export class WebRequestRunSpec extends jspb.Message {
   hasResources(): boolean;
   clearResources(): WebRequestRunSpec;
 
+  getWebrequestname(): string;
+  setWebrequestname(value: string): WebRequestRunSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): WebRequestRunSpec.AsObject;
   static toObject(includeInstance: boolean, msg: WebRequestRunSpec): WebRequestRunSpec.AsObject;
@@ -6058,6 +6065,7 @@ export namespace WebRequestRunSpec {
     materialized: boolean,
     reported: boolean,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
+    webrequestname: string,
   }
 }
 

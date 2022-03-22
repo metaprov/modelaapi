@@ -169,6 +169,10 @@ type ReportSpec struct {
 	// If the report is custom report, this field holds the specification
 	// +kubebuilder:validation:Optional
 	Custom CustomReportSpec `json:"custom,omitempty" protobuf:"bytes,11,opt,name=custom"`
+	// the name of the cron report that generated this report
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
+	CronReportName *string `json:"cronReportName,omitempty" protobuf:"bytes,12,opt,name=cronReportName"`
 }
 
 // ReportStatus defines the observed state of the report.

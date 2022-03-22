@@ -1011,6 +1011,9 @@ export class PredictionSpec extends jspb.Message {
   hasForecastinfo(): boolean;
   clearForecastinfo(): PredictionSpec;
 
+  getCronpredictorname(): string;
+  setCronpredictorname(value: string): PredictionSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PredictionSpec.AsObject;
   static toObject(includeInstance: boolean, msg: PredictionSpec): PredictionSpec.AsObject;
@@ -1036,6 +1039,7 @@ export namespace PredictionSpec {
     aborted: boolean,
     ttl: number,
     forecastinfo?: ForecastSpec.AsObject,
+    cronpredictorname: string,
   }
 }
 

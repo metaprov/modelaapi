@@ -141,6 +141,11 @@ spec:
                           for this report.
                         format: int64
                         type: integer
+                      cronReportName:
+                        default: ""
+                        description: the name of the cron report that generated this
+                          report
+                        type: string
                       custom:
                         description: If the report is custom report, this field holds
                           the specification

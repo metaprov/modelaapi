@@ -248,6 +248,10 @@ spec:
                     default: ""
                     description: The product version for the webrequest.
                     type: string
+                  webRequestName:
+                    default: ""
+                    description: The source web request
+                    type: string
                 type: object
               versionName:
                 default: ""

@@ -88,6 +88,11 @@ spec:
                 format: int64
                 minimum: 0
                 type: integer
+              cronPredictorName:
+                default: ""
+                description: CronPredictionName refer to the cron prediction
+                maxLength: 63
+                type: string
               datasetName:
                 default: ""
                 type: string

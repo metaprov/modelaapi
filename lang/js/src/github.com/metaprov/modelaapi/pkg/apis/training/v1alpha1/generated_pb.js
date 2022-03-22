@@ -42268,7 +42268,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.toObje
     owner: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
     resources: (f = msg.getResources()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.toObject(includeInstance, f),
     activedeadlineseconds: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
-    custom: (f = msg.getCustom()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CustomReportSpec.toObject(includeInstance, f)
+    custom: (f = msg.getCustom()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CustomReportSpec.toObject(includeInstance, f),
+    cronreportname: (f = jspb.Message.getField(msg, 12)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -42348,6 +42349,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.deseri
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CustomReportSpec;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CustomReportSpec.deserializeBinaryFromReader);
       msg.setCustom(value);
+      break;
+    case 12:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCronreportname(value);
       break;
     default:
       reader.skipField();
@@ -42450,6 +42455,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.serial
       11,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CustomReportSpec.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 12));
+  if (f != null) {
+    writer.writeString(
+      12,
+      f
     );
   }
 };
@@ -42816,6 +42828,42 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.protot
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.prototype.hasCustom = function() {
   return jspb.Message.getField(this, 11) != null;
+};
+
+
+/**
+ * optional string cronReportName = 12;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.prototype.getCronreportname = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.prototype.setCronreportname = function(value) {
+  return jspb.Message.setField(this, 12, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.prototype.clearCronreportname = function() {
+  return jspb.Message.setField(this, 12, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.prototype.hasCronreportname = function() {
+  return jspb.Message.getField(this, 12) != null;
 };
 
 

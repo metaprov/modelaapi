@@ -118,6 +118,10 @@ type WebRequestRunSpec struct {
 	// Resources is the hardware resource req.
 	// +kubebuilder:validation:Optional
 	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,12,opt,name=resources"`
+	// The source web request
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
+	WebRequestName *string `json:"webRequestName,omitempty" protobuf:"bytes,13,opt,name=webRequestName"`
 }
 
 // WebRequestRunStatus defines the observed state of WebRequestRun

@@ -2862,6 +2862,11 @@ message ReportSpec {
   // If the report is custom report, this field holds the specification
   // +kubebuilder:validation:Optional
   optional CustomReportSpec custom = 11;
+
+  // the name of the cron report that generated this report
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string cronReportName = 12;
 }
 
 // ReportStatus defines the observed state of the report.

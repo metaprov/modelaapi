@@ -130,6 +130,11 @@ type PredictionSpec struct {
 	// If this is hierarchy forecast, holds the forecast details for each columns
 	// +kubebuilder:validation:Optional
 	ForecastInfo ForecastSpec `json:"forecastInfo,omitempty" protobuf:"varint,15,opt,name=forecastInfo"`
+	// CronPredictionName refer to the cron prediction
+	// +kubebuilder:validation:MaxLength=63
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
+	CronPredictionName *string `json:"cronPredictorName,omitempty" protobuf:"bytes,16,opt,name=cronPredictorName"`
 }
 
 // PredictionStatus is the observed state of a PredictionTemplate

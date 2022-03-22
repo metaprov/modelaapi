@@ -9428,7 +9428,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.t
     priority: (f = jspb.Message.getField(msg, 12)) == null ? undefined : f,
     aborted: (f = jspb.Message.getBooleanField(msg, 13)) == null ? undefined : f,
     ttl: (f = jspb.Message.getField(msg, 14)) == null ? undefined : f,
-    forecastinfo: (f = msg.getForecastinfo()) && proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ForecastSpec.toObject(includeInstance, f)
+    forecastinfo: (f = msg.getForecastinfo()) && proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ForecastSpec.toObject(includeInstance, f),
+    cronpredictorname: (f = jspb.Message.getField(msg, 16)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -9528,6 +9529,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.d
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ForecastSpec;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ForecastSpec.deserializeBinaryFromReader);
       msg.setForecastinfo(value);
+      break;
+    case 16:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCronpredictorname(value);
       break;
     default:
       reader.skipField();
@@ -9665,6 +9670,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.s
       15,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ForecastSpec.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 16));
+  if (f != null) {
+    writer.writeString(
+      16,
+      f
     );
   }
 };
@@ -10212,6 +10224,42 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.p
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.hasForecastinfo = function() {
   return jspb.Message.getField(this, 15) != null;
+};
+
+
+/**
+ * optional string cronPredictorName = 16;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.getCronpredictorname = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 16, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.setCronpredictorname = function(value) {
+  return jspb.Message.setField(this, 16, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.clearCronpredictorname = function() {
+  return jspb.Message.setField(this, 16, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.hasCronpredictorname = function() {
+  return jspb.Message.getField(this, 16) != null;
 };
 
 

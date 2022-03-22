@@ -4235,6 +4235,9 @@ export class ReportSpec extends jspb.Message {
   hasCustom(): boolean;
   clearCustom(): ReportSpec;
 
+  getCronreportname(): string;
+  setCronreportname(value: string): ReportSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ReportSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ReportSpec): ReportSpec.AsObject;
@@ -4255,6 +4258,7 @@ export namespace ReportSpec {
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     activedeadlineseconds: number,
     custom?: CustomReportSpec.AsObject,
+    cronreportname: string,
   }
 }
 

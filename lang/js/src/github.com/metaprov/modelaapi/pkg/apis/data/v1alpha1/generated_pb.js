@@ -54699,7 +54699,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunSpec.toObj
     priority: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
     aborted: (f = jspb.Message.getBooleanField(msg, 11)) == null ? undefined : f,
     materialized: (f = jspb.Message.getBooleanField(msg, 12)) == null ? undefined : f,
-    reported: (f = jspb.Message.getBooleanField(msg, 13)) == null ? undefined : f
+    reported: (f = jspb.Message.getBooleanField(msg, 13)) == null ? undefined : f,
+    sqlqueryname: (f = jspb.Message.getField(msg, 14)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -54788,6 +54789,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunSpec.deser
     case 13:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setReported(value);
+      break;
+    case 14:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setSqlqueryname(value);
       break;
     default:
       reader.skipField();
@@ -54907,6 +54912,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunSpec.seria
   if (f != null) {
     writer.writeBool(
       13,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 14));
+  if (f != null) {
+    writer.writeString(
+      14,
       f
     );
   }
@@ -55379,6 +55391,42 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunSpec.proto
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunSpec.prototype.hasReported = function() {
   return jspb.Message.getField(this, 13) != null;
+};
+
+
+/**
+ * optional string sqlQueryName = 14;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunSpec.prototype.getSqlqueryname = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 14, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunSpec.prototype.setSqlqueryname = function(value) {
+  return jspb.Message.setField(this, 14, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunSpec.prototype.clearSqlqueryname = function() {
+  return jspb.Message.setField(this, 14, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunSpec.prototype.hasSqlqueryname = function() {
+  return jspb.Message.getField(this, 14) != null;
 };
 
 
@@ -59660,7 +59708,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec.toO
     timeout: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
     materialized: (f = jspb.Message.getBooleanField(msg, 10)) == null ? undefined : f,
     reported: (f = jspb.Message.getBooleanField(msg, 11)) == null ? undefined : f,
-    resources: (f = msg.getResources()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.toObject(includeInstance, f)
+    resources: (f = msg.getResources()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.toObject(includeInstance, f),
+    webrequestname: (f = jspb.Message.getField(msg, 13)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -59749,6 +59798,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec.des
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.deserializeBinaryFromReader);
       msg.setResources(value);
+      break;
+    case 13:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setWebrequestname(value);
       break;
     default:
       reader.skipField();
@@ -59856,6 +59909,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec.ser
       12,
       f,
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 13));
+  if (f != null) {
+    writer.writeString(
+      13,
+      f
     );
   }
 };
@@ -60263,6 +60323,42 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec.pro
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec.prototype.hasResources = function() {
   return jspb.Message.getField(this, 12) != null;
+};
+
+
+/**
+ * optional string webRequestName = 13;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec.prototype.getWebrequestname = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec.prototype.setWebrequestname = function(value) {
+  return jspb.Message.setField(this, 13, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec.prototype.clearWebrequestname = function() {
+  return jspb.Message.setField(this, 13, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec.prototype.hasWebrequestname = function() {
+  return jspb.Message.getField(this, 13) != null;
 };
 
 

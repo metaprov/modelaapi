@@ -646,6 +646,12 @@ message PredictionSpec {
   // If this is hierarchy forecast, holds the forecast details for each columns
   // +kubebuilder:validation:Optional
   optional ForecastSpec forecastInfo = 15;
+
+  // CronPredictionName refer to the cron prediction
+  // +kubebuilder:validation:MaxLength=63
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string cronPredictorName = 16;
 }
 
 // PredictionStatus is the observed state of a PredictionTemplate

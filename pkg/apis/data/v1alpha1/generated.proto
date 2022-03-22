@@ -3583,6 +3583,11 @@ message SqlQueryRunSpec {
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool reported = 13;
+
+  // The source web request
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string sqlQueryName = 14;
 }
 
 // SqlQueryRunStatus defines the observed state of SqlQueryRun
@@ -3911,6 +3916,11 @@ message WebRequestRunSpec {
   // Resources is the hardware resource req.
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 12;
+
+  // The source web request
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string webRequestName = 13;
 }
 
 // WebRequestRunStatus defines the observed state of WebRequestRun
