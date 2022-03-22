@@ -820,9 +820,8 @@ func (study *Study) MarkReportFailed(err string) {
 	study.Status.FailureMessage = util.StrPtr("Failed to report." + err)
 	study.RefreshProgress()
 	now := metav1.Now()
-	if study.Status.EndTime != nil {
-		study.Status.EndTime = &now
-	}
+	study.Status.EndTime = &now
+
 }
 
 func (study *Study) MarkAbortFailed(err string) {
@@ -836,9 +835,8 @@ func (study *Study) MarkAbortFailed(err string) {
 	study.Status.FailureMessage = util.StrPtr("Failed to abort." + err)
 	study.RefreshProgress()
 	now := metav1.Now()
-	if study.Status.EndTime != nil {
-		study.Status.EndTime = &now
-	}
+	study.Status.EndTime = &now
+
 }
 
 func (study *Study) MarkPauseFailed(err string) {
@@ -852,9 +850,8 @@ func (study *Study) MarkPauseFailed(err string) {
 	study.Status.FailureMessage = util.StrPtr("Failed to paused." + err)
 	study.RefreshProgress()
 	now := metav1.Now()
-	if study.Status.EndTime != nil {
-		study.Status.EndTime = &now
-	}
+	study.Status.EndTime = &now
+
 }
 
 func (study *Study) MarkPartitionedFailed(err string) {
@@ -867,9 +864,7 @@ func (study *Study) MarkPartitionedFailed(err string) {
 	study.Status.Phase = StudyPhaseFailed
 	study.Status.FailureMessage = util.StrPtr("Failed to partition." + err)
 	now := metav1.Now()
-	if study.Status.EndTime != nil {
-		study.Status.EndTime = &now
-	}
+	study.Status.EndTime = &now
 	study.RefreshProgress()
 }
 

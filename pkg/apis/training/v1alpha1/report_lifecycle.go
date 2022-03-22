@@ -221,6 +221,9 @@ func (report *Report) MarkReportFailed(err string) {
 		Message: err,
 	})
 	report.Status.Phase = ReportPhaseFailed
+	now := metav1.Now()
+	report.Status.EndTime = &now
+
 }
 
 func (report *Report) MarkReportReady(product *data.DataProduct) {
@@ -233,9 +236,7 @@ func (report *Report) MarkReportReady(product *data.DataProduct) {
 	liveUri := product.PrefixLiveUri(report.PdfUri())
 	report.Status.URI = liveUri
 	now := metav1.Now()
-	if report.Status.EndTime != nil {
-		report.Status.EndTime = &now
-	}
+	report.Status.EndTime = &now
 
 }
 

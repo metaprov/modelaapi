@@ -154,9 +154,7 @@ func (r *NotebookRun) MarkCompleted() {
 		Status: corev1.ConditionTrue,
 	})
 	now := metav1.Now()
-	if r.Status.EndTime != nil {
-		r.Status.EndTime = &now
-	}
+	r.Status.EndTime = &now
 
 }
 
@@ -177,9 +175,7 @@ func (r *NotebookRun) MarkFailed(error string) {
 		Message: error,
 	})
 	now := metav1.Now()
-	if r.Status.EndTime != nil {
-		r.Status.EndTime = &now
-	}
+	r.Status.EndTime = &now
 
 }
 
