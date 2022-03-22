@@ -76,7 +76,6 @@ spec:
                   in the entity.
                 type: string
               dataset:
-                default: ""
                 description: The name of the dataset
                 properties:
                   apiVersion:

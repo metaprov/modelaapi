@@ -84,7 +84,6 @@ type FeatureHistogramSpec struct {
 	// +kubebuilder:validation:Optional
 	Column *string `json:"column,omitempty" protobuf:"bytes,5,opt,name=column"`
 	// The name of the dataset
-	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Dataset *v1.ObjectReference `json:"dataset,omitempty" protobuf:"bytes,6,opt,name=dataset"`
 	// Bins is the number of bins in the histogram
