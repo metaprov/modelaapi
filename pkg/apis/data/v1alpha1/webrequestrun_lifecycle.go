@@ -208,8 +208,8 @@ func (run *WebRequestRun) CompletionAlert(tenantRef *v1.ObjectReference, notifie
 			NotifierName: notifierName,
 			Owner:        run.Spec.Owner,
 			Fields: map[string]string{
-				"Start Time": run.ObjectMeta.CreationTimestamp.GoString(),
-				"End Time":   run.Status.EndTime.GoString(),
+				"Start Time": run.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
+				"End Time":   run.Status.EndTime.Format("01/2/2006 15:04:05"),
 			},
 		},
 	}
@@ -234,7 +234,8 @@ func (run *WebRequestRun) ErrorAlert(tenantRef *v1.ObjectReference, notifierName
 			NotifierName: notifierName,
 			Owner:        run.Spec.Owner,
 			Fields: map[string]string{
-				"Start Time": run.ObjectMeta.CreationTimestamp.GoString(),
+				"Start Time": run.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
+				"End Time":   run.Status.EndTime.Format("01/2/2006 15:04:05"),
 			},
 		},
 	}

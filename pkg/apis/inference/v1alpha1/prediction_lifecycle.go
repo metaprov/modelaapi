@@ -223,8 +223,8 @@ func (prediction *Prediction) CompletionAlert(tenantRef *v1.ObjectReference, not
 			NotifierName: notifierName,
 			Owner:        prediction.Spec.Owner,
 			Fields: map[string]string{
-				"Start Time": prediction.ObjectMeta.CreationTimestamp.GoString(),
-				"End Time":   prediction.Status.EndTime.GoString(),
+				"Start Time": prediction.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
+				"End Time":   prediction.Status.EndTime.Format("01/2/2006 15:04:05"),
 			},
 		},
 	}
@@ -249,8 +249,8 @@ func (prediction *Prediction) ErrorAlert(tenantRef *v1.ObjectReference, notifier
 			NotifierName: notifierName,
 			Owner:        prediction.Spec.Owner,
 			Fields: map[string]string{
-				"Start Time": prediction.ObjectMeta.CreationTimestamp.GoString(),
-				"End Time":   prediction.Status.EndTime.GoString(),
+				"Start Time": prediction.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
+				"End Time":   prediction.Status.EndTime.Format("01/2/2006 15:04:05"),
 			},
 		},
 	}

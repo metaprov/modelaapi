@@ -195,8 +195,8 @@ func (run *RecipeRun) CompletionAlert(tenantRef *v1.ObjectReference, notifierNam
 			TenantRef:    tenantRef,
 			NotifierName: notifierName,
 			Fields: map[string]string{
-				"Start Time":      run.ObjectMeta.CreationTimestamp.GoString(),
-				"Completion Time": run.Status.EndTime.GoString(),
+				"Start Time":      run.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
+				"Completion Time": run.Status.EndTime.Format("01/2/2006 15:04:05"),
 			},
 		},
 	}
@@ -220,8 +220,8 @@ func (run *RecipeRun) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *st
 			TenantRef:    tenantRef,
 			NotifierName: notifierName,
 			Fields: map[string]string{
-				"Start Time":      run.ObjectMeta.CreationTimestamp.GoString(),
-				"Completion Time": run.Status.EndTime.GoString(),
+				"Start Time":      run.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
+				"Completion Time": run.Status.EndTime.Format("01/2/2006 15:04:05"),
 			},
 		},
 	}

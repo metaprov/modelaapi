@@ -482,8 +482,8 @@ func (dataset *Dataset) CompletionAlert(tenantRef *v1.ObjectReference, notifierN
 				"Rows":            util.ItoA(&dataset.Status.Statistics.Rows),
 				"Columns":         util.ItoA(&dataset.Status.Statistics.Cols),
 				"Size":            util.ItoA(&dataset.Status.Statistics.FileSize),
-				"Start Time":      dataset.ObjectMeta.CreationTimestamp.GoString(),
-				"Completion Time": dataset.Status.EndTime.GoString(),
+				"Start Time":      dataset.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
+				"Completion Time": dataset.Status.EndTime.Format("01/2/2006 15:04:05"),
 			},
 		},
 	}
@@ -512,8 +512,8 @@ func (dataset *Dataset) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *
 				"Rows":            util.ItoA(&dataset.Status.Statistics.Rows),
 				"Columns":         util.ItoA(&dataset.Status.Statistics.Cols),
 				"Size":            util.ItoA(&dataset.Status.Statistics.FileSize),
-				"Start Time":      dataset.ObjectMeta.CreationTimestamp.GoString(),
-				"Completion Time": dataset.Status.EndTime.GoString(),
+				"Start Time":      dataset.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
+				"Completion Time": dataset.Status.EndTime.Format("01/2/2006 15:04:05"),
 			},
 		},
 	}

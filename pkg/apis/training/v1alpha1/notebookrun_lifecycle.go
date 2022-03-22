@@ -214,8 +214,8 @@ func (run *NotebookRun) CompletionAlert(tenantRef *v1.ObjectReference, notifierN
 			NotifierName: notifierName,
 			Owner:        run.Spec.Owner,
 			Fields: map[string]string{
-				"Start Time":      run.ObjectMeta.CreationTimestamp.GoString(),
-				"Completion Time": run.Status.EndTime.GoString(),
+				"Start Time":      run.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
+				"Completion Time": run.Status.EndTime.Format("01/2/2006 15:04:05"),
 			},
 		},
 	}
@@ -240,8 +240,8 @@ func (run *NotebookRun) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *
 			NotifierName: notifierName,
 			Owner:        run.Spec.Owner,
 			Fields: map[string]string{
-				"Start Time":      run.ObjectMeta.CreationTimestamp.GoString(),
-				"Completion Time": run.Status.EndTime.GoString(),
+				"Start Time":      run.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
+				"Completion Time": run.Status.EndTime.Format("01/2/2006 15:04:05"),
 			},
 		},
 	}
