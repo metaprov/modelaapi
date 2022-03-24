@@ -1156,6 +1156,10 @@ message ModelAutobuilderSpec {
   // If no value is provided, the lab is taken from the
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference labRef = 20;
+
+  // Dataset type is the type of the dataset (tabular / vision)
+  // +kubebuilder:validation:Optional
+  optional string datasetType = 21;
 }
 
 // ModelAutobuilderStatus define the observed state of the pipeline

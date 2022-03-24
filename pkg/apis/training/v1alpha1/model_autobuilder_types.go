@@ -180,6 +180,9 @@ type ModelAutobuilderSpec struct {
 	// If no value is provided, the lab is taken from the
 	// +kubebuilder:validation:Optional
 	LabRef *v1.ObjectReference `json:"labRef,omitempty" protobuf:"bytes,20,opt,name=labRef"`
+	// Dataset type is the type of the dataset (tabular / vision)
+	// +kubebuilder:validation:Optional
+	DatasetType catalog.DatasetType `json:"datasetType,omitempty" protobuf:"bytes,21,opt,name=datasetType"`
 }
 
 // ModelAutobuilderStatus define the observed state of the pipeline

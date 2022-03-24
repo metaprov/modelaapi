@@ -18046,7 +18046,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderS
     aborted: (f = jspb.Message.getBooleanField(msg, 17)) == null ? undefined : f,
     owner: (f = jspb.Message.getField(msg, 18)) == null ? undefined : f,
     resources: (f = msg.getResources()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.toObject(includeInstance, f),
-    labref: (f = msg.getLabref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f)
+    labref: (f = msg.getLabref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
+    datasettype: (f = jspb.Message.getField(msg, 21)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -18166,6 +18167,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderS
       var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
       reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
       msg.setLabref(value);
+      break;
+    case 21:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDatasettype(value);
       break;
     default:
       reader.skipField();
@@ -18338,6 +18343,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderS
       20,
       f,
       k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 21));
+  if (f != null) {
+    writer.writeString(
+      21,
+      f
     );
   }
 };
@@ -19064,6 +19076,42 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderS
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderSpec.prototype.hasLabref = function() {
   return jspb.Message.getField(this, 20) != null;
+};
+
+
+/**
+ * optional string datasetType = 21;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderSpec.prototype.getDatasettype = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 21, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderSpec.prototype.setDatasettype = function(value) {
+  return jspb.Message.setField(this, 21, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderSpec.prototype.clearDatasettype = function() {
+  return jspb.Message.setField(this, 21, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderSpec.prototype.hasDatasettype = function() {
+  return jspb.Message.getField(this, 21) != null;
 };
 
 

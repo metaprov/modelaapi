@@ -914,6 +914,15 @@ spec:
                 maxLength: 253
                 pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
                 type: string
+              datasetType:
+                description: Dataset type is the type of the dataset (tabular / vision)
+                enum:
+                - tabular
+                - image
+                - text
+                - video
+                - audio
+                type: string
               datasourceName:
                 description: DataSourceName is the name of existing datasource, if
                   empty the datasource parameters will be inferred from the file

@@ -150,6 +150,9 @@ func (b *ModelAutobuilder) MarkDatasourceFailed(err error) {
 		Reason:  "DataSourceFailed",
 		Message: err.Error(),
 	})
+	now := metav1.Now()
+	b.Status.EndTime = &now
+
 }
 
 func (b *ModelAutobuilder) DataSourceReady() bool {
@@ -176,6 +179,9 @@ func (b *ModelAutobuilder) MarkDataSetFailed(err error) {
 		Reason:  "DatasetFailed",
 		Message: err.Error(),
 	})
+	now := metav1.Now()
+	b.Status.EndTime = &now
+
 }
 
 // DatasetSuccess
@@ -210,6 +216,8 @@ func (b *ModelAutobuilder) MarkStudyFailed(err error) {
 		Message: err.Error(),
 		Reason:  "StudyFailed",
 	})
+	now := metav1.Now()
+	b.Status.EndTime = &now
 }
 
 // StudySuccess
@@ -255,6 +263,8 @@ func (b *ModelAutobuilder) MarkPredictorFailed(err error) {
 		Message: string(ModelAutobuilderPhasePredictorRunning),
 		Reason:  err.Error(),
 	})
+	now := metav1.Now()
+	b.Status.EndTime = &now
 }
 
 func (b *ModelAutobuilder) MarkPredictorReady() {
@@ -321,9 +331,7 @@ func (b *ModelAutobuilder) MarkFailed(err error) {
 		Message: err.Error(),
 	})
 	now := metav1.Now()
-	if b.Status.EndTime == nil {
-		b.Status.EndTime = &now
-	}
+	b.Status.EndTime = &now
 }
 
 func (b *ModelAutobuilder) MarkDatasetRunning() {
@@ -436,9 +444,15 @@ func (b *ModelAutobuilder) CreateDataSource(columns []data.Column) *data.DataSou
 		ObjectMeta: metav1.ObjectMeta{
 			Name:      b.DatasourceName(),
 			Namespace: b.Namespace,
+			Labels: map[string]string{
+				"modelautobuilder": b.Name,
+			},
 		},
+
 		Spec: data.DataSourceSpec{
-			Owner:       nil,
+			DatasetType: b.Spec.DatasetType,
+			Task:        b.Spec.Task,
+			Owner:       b.Spec.Owner,
 			VersionName: util.StrPtr(b.DataProductVersionName()),
 			Description: util.StrPtr(""),
 			Schema:      data.Schema{Columns: columns},
@@ -470,7 +484,7 @@ func (b *ModelAutobuilder) FileName() string {
 	return *b.Spec.Location.Path
 }
 
-func (b *ModelAutobuilder) CreateDataset() *data.Dataset {
+func (b *ModelAutobuilder) CreateDataset(notification catalog.NotificationSpec) *data.Dataset {
 	fname := filepath.Base(b.FileName())
 	rawPath := fmt.Sprintf("modela/live/tenants/default-tenant/dataproducts/%s/dataproductversions/%s/datasets/%s/data/raw/%s",
 		b.DataProductName(),
@@ -487,6 +501,8 @@ func (b *ModelAutobuilder) CreateDataset() *data.Dataset {
 			},
 		},
 		Spec: data.DatasetSpec{
+			Type:           b.Spec.DatasetType,
+			Notification:   notification,
 			Owner:          b.Spec.Owner,
 			VersionName:    util.StrPtr(b.DataProductVersionName()),
 			DataSourceName: util.StrPtr(b.DatasourceName()),
@@ -517,7 +533,7 @@ func (b *ModelAutobuilder) PrintConditions() {
 	}
 }
 
-func (b *ModelAutobuilder) CreateStudy() *Study {
+func (b *ModelAutobuilder) CreateStudy(notification catalog.NotificationSpec) *Study {
 	//random := RandomSearch
 	res := &Study{
 		ObjectMeta: metav1.ObjectMeta{
@@ -528,10 +544,13 @@ func (b *ModelAutobuilder) CreateStudy() *Study {
 			},
 		},
 		Spec: StudySpec{
-			VersionName: util.StrPtr(b.DataProductVersionName()),
-			Description: util.StrPtr(""),
-			DatasetName: util.StrPtr(b.DatasetName()),
-			Task:        b.Spec.Task,
+			Notification: notification,
+			Owner:        b.Spec.Owner,
+			LabRef:       *b.Spec.LabRef,
+			VersionName:  util.StrPtr(b.DataProductVersionName()),
+			Description:  util.StrPtr(""),
+			DatasetName:  util.StrPtr(b.DatasetName()),
+			Task:         b.Spec.Task,
 
 			Search: SearchSpec{
 				Sampler:   b.Spec.Sampler,
@@ -618,6 +637,7 @@ func (run *ModelAutobuilder) CompletionAlert(tenantRef *v1.ObjectReference, noti
 			Owner:        run.Spec.Owner,
 			Fields: map[string]string{
 				"Start Time": run.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
+				"End Time":   run.Status.EndTime.Format("01/2/2006 15:04:05"),
 			},
 		},
 	}
