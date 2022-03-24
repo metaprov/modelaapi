@@ -450,7 +450,7 @@ func (b *ModelAutobuilder) CreateDataSource(columns []data.Column) *data.DataSou
 		},
 
 		Spec: data.DataSourceSpec{
-			DatasetType: b.Spec.DatasetType,
+			DatasetType: &b.Spec.DatasetType,
 			Task:        b.Spec.Task,
 			Owner:       b.Spec.Owner,
 			VersionName: util.StrPtr(b.DataProductVersionName()),
@@ -501,7 +501,7 @@ func (b *ModelAutobuilder) CreateDataset(notification catalog.NotificationSpec) 
 			},
 		},
 		Spec: data.DatasetSpec{
-			Type:           b.Spec.DatasetType,
+			Type:           &b.Spec.DatasetType,
 			Notification:   notification,
 			Owner:          b.Spec.Owner,
 			VersionName:    util.StrPtr(b.DataProductVersionName()),
