@@ -285,7 +285,7 @@ type EnsemblesSpec struct {
 // Define the baseline phase spec
 type BaselineSpec struct {
 	// Set to true for baseline
-	// +kubebuilder:default:=true
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Enabled *bool `json:"enabled,omitempty" protobuf:"bytes,1,opt,name=enabled"`
 	// Baselines holds the name of the base line algorithms to try

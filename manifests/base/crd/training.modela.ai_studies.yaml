@@ -179,7 +179,7 @@ spec:
                       type: string
                     type: array
                   enabled:
-                    default: true
+                    default: false
                     description: Set to true for baseline
                     type: boolean
                 type: object

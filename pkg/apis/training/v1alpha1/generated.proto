@@ -72,7 +72,7 @@ message BacktestSpec {
 // Define the baseline phase spec
 message BaselineSpec {
   // Set to true for baseline
-  // +kubebuilder:default:=true
+  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool enabled = 1;
 

@@ -565,6 +565,9 @@ func (b *ModelAutobuilder) CreateStudy(notification catalog.NotificationSpec) *S
 				Trainers:  b.Spec.Trainers,
 				Objective: b.Spec.Objective,
 			},
+			Baseline: BaselineSpec{
+				Enabled: util.BoolPtr(false),
+			},
 			TrainingTemplate: TrainingSpec{
 				Priority:    nil,
 				CvType:      nil,
