@@ -85,7 +85,6 @@ type ManagedImageSpec struct {
 	// +kubebuilder:validation:Optional
 	Preload *bool `json:"preload,optional" protobuf:"varint,8,opt,name=preload"`
 	// Preload the image to the cluster.
-	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	ConnectionRef *v1.ObjectReference `json:"connectionRef,optional" protobuf:"bytes,9,opt,name=connectionRef"`
 	// The base image for this image.

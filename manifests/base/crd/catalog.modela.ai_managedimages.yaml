@@ -58,7 +58,6 @@ spec:
                 description: The base image for this image.
                 type: string
               connectionRef:
-                default: false
                 description: Preload the image to the cluster.
                 properties:
                   apiVersion:

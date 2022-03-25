@@ -505,7 +505,6 @@ message ManagedImageSpec {
   optional bool preload = 8;
 
   // Preload the image to the cluster.
-  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference connectionRef = 9;
 
