@@ -26,7 +26,7 @@ func (r *RecipeRun) SetupWebhookWithManager(mgr ctrl.Manager) error {
 }
 
 func (r *RecipeRun) ReportName() string {
-	return "report-" + r.Name
+	return "reciperun-report-" + r.Name
 }
 
 func (r *RecipeRun) HasFinalizer() bool { return util.HasFin(&r.ObjectMeta, data.GroupName) }

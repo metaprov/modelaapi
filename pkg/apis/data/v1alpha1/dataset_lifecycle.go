@@ -27,7 +27,7 @@ func (r *Dataset) SetupWebhookWithManager(mgr ctrl.Manager) error {
 }
 
 func (dataset *Dataset) ReportName() string {
-	return "report-" + dataset.Name
+	return "dataset-report-" + dataset.Name
 }
 
 func (dataset *Dataset) HasFinalizer() bool { return util.HasFin(&dataset.ObjectMeta, data.GroupName) }
