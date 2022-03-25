@@ -557,7 +557,7 @@ message TodoSpec {
   // +kubebuilder:validation:Optional
   optional string assignedTo = 5;
 
-  // Flagged donete that task was flagged
+  // Flagged donate that task was flagged
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool flagged = 6;

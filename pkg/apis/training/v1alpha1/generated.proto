@@ -749,7 +749,7 @@ message ForecastPostProcessingSpec {
 
   // Specify if we should generate a forecast using the model
   // If true, the system will perform a forecast and update the forecast connection.
-  // Default it true
+  // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
   optional bool forecast = 2;
 }
@@ -791,6 +791,7 @@ message GarbageCollectionSpec {
   optional bool collectAtStudyEnd = 1;
 
   // +kubebuilder:validation:Optional
+  // +kubebuilder:default:=false
   optional bool keepOnlyBestModelPerAlgorithm = 2;
 }
 
@@ -3269,6 +3270,7 @@ message StudySpec {
   optional bool template = 27;
 
   // Is this model flagged
+  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool flagged = 28;
 

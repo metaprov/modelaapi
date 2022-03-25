@@ -1444,20 +1444,20 @@ type ModelDeploymentSpec struct {
 	// +kubebuilder:validation:Optional
 	Traffic *int32 `json:"traffic,omitempty" protobuf:"varint,4,opt,name=traffic"`
 	// Canary denotes if this deployment is staged release. A staged release will serve traffic in incerements
-	// Default: false
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Canary *bool `json:"canary,omitempty" protobuf:"varint,5,opt,name=canary"`
 	// Shadow denotes if the model is running in shadow mode. a shadow model face the production traffic, however, the predictions are not
 	// served back to the client
-	// Default: false
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Shadow *bool `json:"shadow,omitempty" protobuf:"varint,6,opt,name=shadow"`
 	// A released model is a model that should serve production traffic.
-	// Default: false
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Released *bool `json:"released,omitempty" protobuf:"varint,7,opt,name=released"`
 	// a deployed model is a model whose containers are up, but does not serve production traffic.
-	// Default: false
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Deployed *bool `json:"deployed,omitempty" protobuf:"bytes,8,opt,name=deployed"`
 	// MountTar means that we would mount the model tar file. Else we would use baked image.

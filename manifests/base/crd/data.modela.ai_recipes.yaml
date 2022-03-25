@@ -136,6 +136,7 @@ spec:
                 description: Output is the desired output
                 properties:
                   createDataset:
+                    default: false
                     description: CreateDataset if true, create a new dataset when
                       the recipe is done.
                     type: boolean

@@ -1128,7 +1128,7 @@ type WebhookSpec struct {
 	Token *string `json:"token,omitempty" protobuf:"bytes,3,opt,name=token"`
 	// custom headers to send
 	Headers map[string]string `json:"headers,omitempty" protobuf:"bytes,4,opt,name=headers"`
-
+	// +kubebuilder:default:=false
 	SSL *bool `json:"ssl,omitempty" protobuf:"bytes,5,opt,name=ssl"`
 }
 
@@ -1143,7 +1143,7 @@ type DiscordSpec struct {
 	Token *string `json:"token,omitempty" protobuf:"bytes,3,opt,name=token"`
 	// custom headers to send
 	Headers map[string]string `json:"headers,omitempty" protobuf:"bytes,4,opt,name=headers"`
-
+	// +kubebuilder:default:=false
 	SSL *bool `json:"ssl,omitempty" protobuf:"bytes,5,opt,name=ssl"`
 }
 

@@ -184,6 +184,7 @@ spec:
                                           type: string
                                       type: object
                                     spacer:
+                                      default: false
                                       description: If true this column is an empty
                                         spacer
                                       type: boolean
@@ -192,6 +193,7 @@ spec:
                                     table:
                                       properties:
                                         border:
+                                          default: false
                                           description: Show borther
                                           type: boolean
                                         columns:
@@ -219,6 +221,7 @@ spec:
                                           format: int32
                                           type: integer
                                         showIndex:
+                                          default: false
                                           description: Show index column
                                           type: boolean
                                       type: object

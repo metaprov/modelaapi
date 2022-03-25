@@ -146,6 +146,7 @@ type DataOutputSpec struct {
 	// +kubebuilder:validation:Optional
 	CreateTableIfNotExist *bool `json:"createTableIfNotExist,omitempty" protobuf:"varint,5,opt,name=createTableIfNotExist"`
 	// Include the features in the results
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	IncludeFeatures *bool `json:"includeFeatures,omitempty" protobuf:"varint,6,opt,name=includeFeatures"`
 	// Generate XAI

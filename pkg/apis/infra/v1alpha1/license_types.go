@@ -115,15 +115,19 @@ type LicenseSpec struct {
 	// +kubebuilder:validation:Optional
 	MaxDataPlanes *int32 `json:"maxDataPlanes,omitempty" protobuf:"varint,11,opt,name=maxDataPlanes"`
 	// Forcast denote if forecast feature supported
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Forecast *bool `json:"forecast,omitempty" protobuf:"varint,12,opt,name=forecast"`
 	// NLP is nlp feature supported
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	NLP *bool `json:"nlp,omitempty" protobuf:"varint,13,opt,name=nlp"`
 	// Is vision feature supported
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Vision *bool `json:"vision,omitempty" protobuf:"varint,14,opt,name=vision"`
 	// Is chatbot feature supported
+	// +kubebuilder:default:=false
 	Chatbot *bool `json:"chatbot,omitempty" protobuf:"varint,15,opt,name=chatbot"`
 	// The product name
 	// +kubebuilder:default:=""

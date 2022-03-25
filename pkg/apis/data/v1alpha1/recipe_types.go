@@ -466,6 +466,7 @@ type RecipeInputSpec struct {
 // RecipeOutputSpec for the recipe output
 type RecipeOutputSpec struct {
 	// CreateDataset if true, create a new dataset when the recipe is done.
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	CreateDataset *bool `json:"createDataset,omitempty" protobuf:"varint,1,opt,name=createDataset"`
 	// DatasetName is the name of the dataset output to the recipe

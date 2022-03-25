@@ -284,6 +284,7 @@ spec:
                             - auto
                             type: string
                           includeFeatures:
+                            default: false
                             description: Include the features in the results
                             type: boolean
                           location:

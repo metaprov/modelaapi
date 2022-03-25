@@ -519,6 +519,7 @@ type StudySpec struct {
 	// +kubebuilder:validation:Optional
 	Template *bool `json:"template,omitempty" protobuf:"varint,27,opt,name=template"`
 	// Is this model flagged
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Flagged *bool `json:"flagged,omitempty" protobuf:"varint,28,opt,name=flagged"`
 	// Notification specification.
@@ -762,6 +763,7 @@ type GarbageCollectionSpec struct {
 	// +kubebuilder:default:=true
 	CollectAtStudyEnd *bool `json:"collectAtStudyEnd,omitempty" protobuf:"varint,1,opt,name=collectAtStudyEnd"`
 	// +kubebuilder:validation:Optional
+	// +kubebuilder:default:=false
 	KeepOnlyBestModelPerAlgorithm *bool `json:"keepOnlyBestModelPerAlgorithm,omitempty" protobuf:"varint,2,opt,name=keepOnlyBestModelPerAlgorithm"`
 }
 

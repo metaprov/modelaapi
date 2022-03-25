@@ -810,9 +810,9 @@ spec:
                       this model
                     properties:
                       canary:
-                        description: 'Canary denotes if this deployment is staged
-                          release. A staged release will serve traffic in incerements
-                          Default: false'
+                        default: false
+                        description: Canary denotes if this deployment is staged release.
+                          A staged release will serve traffic in incerements
                         type: boolean
                       canaryMetrics:
                         description: 'If the deployment is canary, the metric define
@@ -827,9 +827,9 @@ spec:
                           type: string
                         type: array
                       deployed:
-                        description: 'a deployed model is a model whose containers
-                          are up, but does not serve production traffic. Default:
-                          false'
+                        default: false
+                        description: a deployed model is a model whose containers
+                          are up, but does not serve production traffic.
                         type: boolean
                       maxTraffic:
                         description: 'How much traffic this deployment model should
@@ -851,14 +851,15 @@ spec:
                           tar file. Else we would use baked image. Default: true'
                         type: boolean
                       released:
-                        description: 'A released model is a model that should serve
-                          production traffic. Default: false'
+                        default: false
+                        description: A released model is a model that should serve
+                          production traffic.
                         type: boolean
                       shadow:
-                        description: 'Shadow denotes if the model is running in shadow
+                        default: false
+                        description: Shadow denotes if the model is running in shadow
                           mode. a shadow model face the production traffic, however,
-                          the predictions are not served back to the client Default:
-                          false'
+                          the predictions are not served back to the client
                         type: boolean
                       traffic:
                         description: 'Traffic is the current amount of production

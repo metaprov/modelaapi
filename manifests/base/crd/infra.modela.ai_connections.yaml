@@ -372,6 +372,7 @@ spec:
                     description: custom headers to send
                     type: object
                   ssl:
+                    default: false
                     type: boolean
                   token:
                     description: The webhook secret token
@@ -1401,6 +1402,7 @@ spec:
                     description: custom headers to send
                     type: object
                   ssl:
+                    default: false
                     type: boolean
                   token:
                     description: The webhook secret token

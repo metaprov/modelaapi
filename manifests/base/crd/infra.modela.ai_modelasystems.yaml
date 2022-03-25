@@ -45,6 +45,7 @@ spec:
             description: ModelaSystemSpec defines the desired state of ModelaSystem
             properties:
               active:
+                default: false
                 description: Set the release to active
                 type: boolean
               podTemplate:

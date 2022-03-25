@@ -1052,9 +1052,10 @@ spec:
                           forecast in the database.
                         type: string
                       forecast:
+                        default: true
                         description: Specify if we should generate a forecast using
                           the model If true, the system will perform a forecast and
-                          update the forecast connection. Default it true
+                          update the forecast connection.
                         type: boolean
                     type: object
                 type: object

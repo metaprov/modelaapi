@@ -73,19 +73,19 @@ type ManagedImageSpec struct {
 	// +kubebuilder:validation:Optional
 	Env []v1.EnvVar `json:"env,optional" protobuf:"bytes,5,rep,name=env"`
 	// Is this a gpu image
-	// +kubebuilder:default ="false"
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Gpu *bool `json:"gpu,optional" protobuf:"varint,6,opt,name=gpu"`
 	// If true this is an active image that should be used for new training.
-	// +kubebuilder:default ="false"
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Active *bool `json:"active,optional" protobuf:"varint,7,opt,name=active"`
 	// Preload the image to the cluster.
-	// +kubebuilder:default ="false"
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Preload *bool `json:"preload,optional" protobuf:"varint,8,opt,name=preload"`
 	// Preload the image to the cluster.
-	// +kubebuilder:default ="false"
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	ConnectionRef *v1.ObjectReference `json:"connectionRef,optional" protobuf:"bytes,9,opt,name=connectionRef"`
 	// The base image for this image.
@@ -118,7 +118,7 @@ type ManagedImageSpec struct {
 	// +kubebuilder:validation:Optional
 	OSVersion string `json:"osVersion,omitempty" protobuf:"bytes,17,opt,name=osVersion"`
 	// If true this is an active image that should be used for new training.
-	// +kubebuilder:default ="false"
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Private *bool `json:"private,optional" protobuf:"varint,18,opt,name=private"`
 }

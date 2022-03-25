@@ -22,6 +22,8 @@ option go_package = "github.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1";
 
 // AutoScaling defines the configuration for auto scaling
 message AutoScaling {
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
   optional bool enabled = 1;
 
   // Min num of replicates
@@ -463,6 +465,8 @@ message ModelRecord {
 // Specify the model monitor.
 message MonitorSpec {
   // If true monitoring is enabled.
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
   optional bool enabled = 1;
 
   // How many rows to sample from the live data for
@@ -732,6 +736,7 @@ message Predictor {
 
 message PredictorAuthSpec {
   // If true auth is enabled.
+  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool enabled = 1;
 }

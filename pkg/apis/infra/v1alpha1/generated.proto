@@ -1261,6 +1261,7 @@ message DiscordSpec {
   // custom headers to send
   map<string, string> headers = 4;
 
+  // +kubebuilder:default:=false
   optional bool ssl = 5;
 }
 
@@ -1759,18 +1760,22 @@ message LicenseSpec {
   optional int32 maxDataPlanes = 11;
 
   // Forcast denote if forecast feature supported
+  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool forecast = 12;
 
   // NLP is nlp feature supported
+  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool nlp = 13;
 
   // Is vision feature supported
+  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool vision = 14;
 
   // Is chatbot feature supported
+  // +kubebuilder:default:=false
   optional bool chatbot = 15;
 
   // The product name
@@ -1923,6 +1928,7 @@ message ModelaSystemSpec {
   optional string release = 1;
 
   // Set the release to active
+  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool active = 2;
 
@@ -3225,6 +3231,7 @@ message WebhookSpec {
   // custom headers to send
   map<string, string> headers = 4;
 
+  // +kubebuilder:default:=false
   optional bool ssl = 5;
 }
 

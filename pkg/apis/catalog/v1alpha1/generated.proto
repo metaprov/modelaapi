@@ -490,22 +490,22 @@ message ManagedImageSpec {
   repeated k8s.io.api.core.v1.EnvVar env = 5;
 
   // Is this a gpu image
-  // +kubebuilder:default ="false"
+  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool gpu = 6;
 
   // If true this is an active image that should be used for new training.
-  // +kubebuilder:default ="false"
+  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool active = 7;
 
   // Preload the image to the cluster.
-  // +kubebuilder:default ="false"
+  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool preload = 8;
 
   // Preload the image to the cluster.
-  // +kubebuilder:default ="false"
+  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference connectionRef = 9;
 
@@ -547,7 +547,7 @@ message ManagedImageSpec {
   optional string osVersion = 17;
 
   // If true this is an active image that should be used for new training.
-  // +kubebuilder:default ="false"
+  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool private = 18;
 }
@@ -589,23 +589,23 @@ message ModelDeploymentSpec {
   optional int32 traffic = 4;
 
   // Canary denotes if this deployment is staged release. A staged release will serve traffic in incerements
-  // Default: false
+  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool canary = 5;
 
   // Shadow denotes if the model is running in shadow mode. a shadow model face the production traffic, however, the predictions are not
   // served back to the client
-  // Default: false
+  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool shadow = 6;
 
   // A released model is a model that should serve production traffic.
-  // Default: false
+  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool released = 7;
 
   // a deployed model is a model whose containers are up, but does not serve production traffic.
-  // Default: false
+  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool deployed = 8;
 

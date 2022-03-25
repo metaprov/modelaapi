@@ -79,7 +79,7 @@ type TodoSpec struct {
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	AssignedTo *string `json:"assignedTo,omitempty" protobuf:"bytes,5,opt,name=assignedTo"`
-	// Flagged donete that task was flagged
+	// Flagged donate that task was flagged
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Flagged *bool `json:"flagged,omitempty" protobuf:"varint,6,opt,name=flagged"`

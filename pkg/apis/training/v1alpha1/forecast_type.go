@@ -177,7 +177,7 @@ type ForecastPostProcessingSpec struct {
 	ConnectionName *string `json:"connectionName,omitempty" protobuf:"bytes,1,opt,name=connectionName"`
 	// Specify if we should generate a forecast using the model
 	// If true, the system will perform a forecast and update the forecast connection.
-	// Default it true
+	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
 	Forecast *bool `json:"forecast,omitempty" protobuf:"varint,2,opt,name=forecast"`
 }

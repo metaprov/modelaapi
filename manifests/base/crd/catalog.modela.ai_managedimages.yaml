@@ -50,6 +50,7 @@ spec:
             description: ManagedImageSpec is the desired state of the pretrained model
             properties:
               active:
+                default: false
                 description: If true this is an active image that should be used for
                   new training.
                 type: boolean
@@ -57,6 +58,7 @@ spec:
                 description: The base image for this image.
                 type: string
               connectionRef:
+                default: false
                 description: Preload the image to the cluster.
                 properties:
                   apiVersion:
@@ -205,6 +207,7 @@ spec:
                   type: string
                 type: array
               gpu:
+                default: false
                 description: Is this a gpu image
                 type: boolean
               libs:
@@ -229,9 +232,11 @@ spec:
                 description: OSVersion is the version of the os
                 type: string
               preload:
+                default: false
                 description: Preload the image to the cluster.
                 type: boolean
               private:
+                default: false
                 description: If true this is an active image that should be used for
                   new training.
                 type: boolean

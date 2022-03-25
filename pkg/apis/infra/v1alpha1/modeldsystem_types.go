@@ -56,6 +56,7 @@ type ModelaSystemSpec struct {
 	// +required
 	Release string `json:"release" protobuf:"bytes,1,opt,name=release"`
 	// Set the release to active
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Active *bool `json:"active" protobuf:"bytes,2,opt,name=active"`
 	// +kubebuilder:validation:Optional

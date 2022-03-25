@@ -464,6 +464,7 @@ spec:
                     type: integer
                 type: object
               flagged:
+                default: false
                 description: Is this model flagged
                 type: boolean
               forecast:
@@ -873,9 +874,10 @@ spec:
                               insert the forecast in the database.
                             type: string
                           forecast:
+                            default: true
                             description: Specify if we should generate a forecast
                               using the model If true, the system will perform a forecast
-                              and update the forecast connection. Default it true
+                              and update the forecast connection.
                             type: boolean
                         type: object
                     type: object
@@ -887,6 +889,7 @@ spec:
                     default: true
                     type: boolean
                   keepOnlyBestModelPerAlgorithm:
+                    default: false
                     type: boolean
                 type: object
               interpretability:

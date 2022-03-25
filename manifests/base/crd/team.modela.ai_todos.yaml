@@ -102,7 +102,7 @@ spec:
                 type: object
               flagged:
                 default: false
-                description: Flagged donete that task was flagged
+                description: Flagged donate that task was flagged
                 type: boolean
               notifierName:
                 default: ""

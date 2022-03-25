@@ -188,6 +188,7 @@ spec:
                     description: Data is the definition of excel data.
                     properties:
                       entireSheet:
+                        default: false
                         description: If true, read the entire sheet.
                         type: boolean
                       fromColumn:
@@ -212,6 +213,7 @@ spec:
                         type: integer
                     type: object
                   firstSheetWithData:
+                    default: false
                     description: Use first sheet with data
                     type: boolean
                   sheetIndex:
@@ -357,6 +359,7 @@ spec:
                           description: Example
                           type: string
                         exclusiveMaximum:
+                          default: false
                           description: ExclusiveMaximum
                           type: boolean
                         exclusiveMinimum:
@@ -661,6 +664,7 @@ spec:
                             column:
                               type: string
                             generated:
+                              default: false
                               description: Generated indicate weather this validation
                                 rule was automatically generated
                               type: boolean
@@ -671,8 +675,10 @@ spec:
                               format: float
                               type: number
                             strictMax:
+                              default: false
                               type: boolean
                             strictMin:
+                              default: false
                               type: boolean
                             type:
                               type: string
@@ -691,6 +697,7 @@ spec:
                         items:
                           properties:
                             generated:
+                              default: false
                               description: Generated indicate weather this validation
                                 rule was automatically generated
                               type: boolean
@@ -701,8 +708,10 @@ spec:
                               format: float
                               type: number
                             strictMax:
+                              default: false
                               type: boolean
                             strictMin:
+                              default: false
                               type: boolean
                             type:
                               type: string
@@ -725,6 +734,7 @@ spec:
                             column:
                               type: string
                             generated:
+                              default: false
                               description: Generated indicate weather this validation
                                 rule was automatically generated
                               type: boolean
@@ -735,8 +745,10 @@ spec:
                               format: float
                               type: number
                             strictMax:
+                              default: false
                               type: boolean
                             strictMin:
+                              default: false
                               type: boolean
                             type:
                               type: string
@@ -793,6 +805,7 @@ spec:
                                 type: string
                               type: array
                             generated:
+                              default: false
                               description: Generated indicate weather this validation
                                 rule was automatically generated
                               type: boolean

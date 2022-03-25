@@ -187,6 +187,7 @@ spec:
                     description: GitConnectionName
                     type: string
                   private:
+                    default: true
                     description: Private is True if the repository is private.
                     type: boolean
                   url:

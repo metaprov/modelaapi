@@ -206,6 +206,8 @@ type PredictionCacheSpec struct {
 
 // AutoScaling defines the configuration for auto scaling
 type AutoScaling struct {
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
 	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
 	// Min num of replicates
 	// +kubebuilder:validation:Optional
@@ -321,6 +323,8 @@ type PredictorHealth struct {
 // Specify the model monitor.
 type MonitorSpec struct {
 	// If true monitoring is enabled.
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
 	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
 	// How many rows to sample from the live data for
 	// +kubebuilder:default:=0
@@ -377,6 +381,7 @@ type ModelRecord struct {
 
 type PredictorAuthSpec struct {
 	// If true auth is enabled.
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Enabled *bool `json:"enabled,omitempty" protobuf:"bytes,1,opt,name=enabled"`
 }

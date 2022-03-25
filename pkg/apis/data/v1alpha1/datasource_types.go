@@ -26,6 +26,7 @@ type MultiDatasetValidation struct {
 	// +kubebuilder:validation:Optional
 	Datasets []string `json:"datasets,omitempty" protobuf:"bytes,2,rep,name=datasets"`
 	// Generated indicate weather this validation rule was automatically generated
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Generated *bool `json:"generated,omitempty" protobuf:"varint,3,opt,name=generated"`
 }
@@ -59,10 +60,13 @@ type DatasetValidation struct {
 	// +kubebuilder:validation:Optional
 	ValueSet []string `json:"valueSet,omitempty" protobuf:"bytes,5,rep,name=valueSet"`
 	// +kubebuilder:validation:Optional
+	// +kubebuilder:default:=false
 	StrictMin *bool `json:"strictMin,omitempty" protobuf:"varint,6,opt,name=strictMin"`
 	// +kubebuilder:validation:Optional
+	// +kubebuilder:default:=false
 	StrictMax *bool `json:"strictMax,omitempty" protobuf:"varint,7,opt,name=strictMax"`
 	// Generated indicate weather this validation rule was automatically generated
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Generated *bool `json:"generated,omitempty" protobuf:"varint,8,opt,name=generated"`
 }
@@ -162,11 +166,14 @@ type ColumnValidation struct {
 	Max *float64 `json:"max,omitempty" protobuf:"bytes,5,opt,name=max"`
 	// +kubebuilder:validation:Optional
 	ValueSet []string `json:"valueSet,omitempty" protobuf:"bytes,6,rep,name=valueSet"`
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	StrictMin *bool `json:"strictMin,omitempty" protobuf:"varint,7,opt,name=strictMin"`
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	StrictMax *bool `json:"strictMax,omitempty" protobuf:"varint,8,opt,name=strictMax"`
 	// Generated indicate weather this validation rule was automatically generated
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Generated *bool `json:"generated,omitempty" protobuf:"varint,9,opt,name=generated"`
 }
@@ -192,11 +199,14 @@ type FileValidation struct {
 	// +kubebuilder:validation:Optional
 	ValueSet []string `json:"valueSet,omitempty" protobuf:"bytes,7,rep,name=valueSet"`
 	// +kubebuilder:validation:Optional
+	// +kubebuilder:default:=false
 	StrictMin *bool `json:"strictMin,omitempty" protobuf:"varint,8,opt,name=strictMin"`
 	// +kubebuilder:validation:Optional
+	// +kubebuilder:default:=false
 	StrictMax *bool `json:"strictMax,omitempty" protobuf:"varint,9,opt,name=strictMax"`
 	// Generated indicate weather this validation rule was automatically generated
 	// +kubebuilder:validation:Optional
+	// +kubebuilder:default:=false
 	Generated *bool `json:"generated,omitempty" protobuf:"varint,10,opt,name=generated"`
 }
 
@@ -367,6 +377,7 @@ type CsvFileSpec struct {
 
 type ExcelNotebookSpec struct {
 	// Use first sheet with data
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	FirstSheetWithData *bool `json:"firstSheetWithData,omitempty" protobuf:"varint,1,opt,name=firstSheetWithData"`
 	// Use sheet with name
@@ -385,6 +396,7 @@ type ExcelNotebookSpec struct {
 
 type ExcelSheetArea struct {
 	// If true, read the entire sheet.
+	// +kubebuilder:default:=false
 	EntireSheet *bool `json:"entireSheet,omitempty" protobuf:"bytes,1,opt,name=entireSheet"`
 	// If reading part of the excel sheet, start with this column
 	FromColumn *int32 `json:"fromColumn,omitempty" protobuf:"varint,2,opt,name=fromColumn"`
@@ -506,6 +518,7 @@ type Column struct {
 	// +kubebuilder:validation:Optional
 	Maximum *float64 `json:"maximum,omitempty" protobuf:"bytes,12,opt,name=maximum"`
 	// ExclusiveMaximum
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	ExclusiveMaximum *bool `json:"exclusiveMaximum,omitempty" protobuf:"varint,13,opt,name=exclusiveMaximum"`
 	// MinimumFloat

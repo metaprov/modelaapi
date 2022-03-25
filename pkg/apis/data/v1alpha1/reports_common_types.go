@@ -11,6 +11,7 @@ type RowSpec struct {
 // The spec for a column in the row. A column can span multiple grid based columns
 type ColumnSpec struct {
 	// If true this column is an empty spacer
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Spacer *bool `json:"spacer,omitempty" protobuf:"varint,1,opt,name=spacer"`
 	// The width in columns, each row is divided into 12 columns
@@ -96,9 +97,11 @@ type TableSpec struct {
 	// +kubebuilder:validation:Optional
 	Rows *int32 `json:"rows,omitempty" protobuf:"varint,5,opt,name=rows"`
 	// Show index column
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	ShowIndex *bool `json:"showIndex,omitempty" protobuf:"varint,6,opt,name=showIndex"`
 	// Show borther
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Border *bool `json:"border,omitempty" protobuf:"varint,7,opt,name=border"`
 }

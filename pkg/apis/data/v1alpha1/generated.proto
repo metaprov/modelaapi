@@ -114,6 +114,7 @@ message Column {
   optional double maximum = 12;
 
   // ExclusiveMaximum
+  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool exclusiveMaximum = 13;
 
@@ -289,6 +290,7 @@ message Column {
 // The spec for a column in the row. A column can span multiple grid based columns
 message ColumnSpec {
   // If true this column is an empty spacer
+  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool spacer = 1;
 
@@ -506,13 +508,16 @@ message ColumnValidation {
   // +kubebuilder:validation:Optional
   repeated string valueSet = 6;
 
+  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool strictMin = 7;
 
+  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool strictMax = 8;
 
   // Generated indicate weather this validation rule was automatically generated
+  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool generated = 9;
 }
@@ -729,6 +734,7 @@ message DataOutputSpec {
   optional bool createTableIfNotExist = 5;
 
   // Include the features in the results
+  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool includeFeatures = 6;
 
@@ -1760,12 +1766,15 @@ message DatasetValidation {
   repeated string valueSet = 5;
 
   // +kubebuilder:validation:Optional
+  // +kubebuilder:default:=false
   optional bool strictMin = 6;
 
   // +kubebuilder:validation:Optional
+  // +kubebuilder:default:=false
   optional bool strictMax = 7;
 
   // Generated indicate weather this validation rule was automatically generated
+  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool generated = 8;
 }
@@ -1855,6 +1864,7 @@ message EntityStatus {
 
 message ExcelNotebookSpec {
   // Use first sheet with data
+  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool firstSheetWithData = 1;
 
@@ -1877,6 +1887,7 @@ message ExcelNotebookSpec {
 
 message ExcelSheetArea {
   // If true, read the entire sheet.
+  // +kubebuilder:default:=false
   optional bool entireSheet = 1;
 
   // If reading part of the excel sheet, start with this column
@@ -2555,13 +2566,16 @@ message FileValidation {
   repeated string valueSet = 7;
 
   // +kubebuilder:validation:Optional
+  // +kubebuilder:default:=false
   optional bool strictMin = 8;
 
   // +kubebuilder:validation:Optional
+  // +kubebuilder:default:=false
   optional bool strictMax = 9;
 
   // Generated indicate weather this validation rule was automatically generated
   // +kubebuilder:validation:Optional
+  // +kubebuilder:default:=false
   optional bool generated = 10;
 }
 
@@ -2600,6 +2614,7 @@ message GitLocation {
   optional string branch = 3;
 
   // Private is True if the repository is private.
+  // +kubebuilder:default:=true
   optional bool private = 4;
 }
 
@@ -3019,6 +3034,7 @@ message MultiDatasetValidation {
   repeated string datasets = 2;
 
   // Generated indicate weather this validation rule was automatically generated
+  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool generated = 3;
 }
@@ -3082,6 +3098,7 @@ message RecipeList {
 // RecipeOutputSpec for the recipe output
 message RecipeOutputSpec {
   // CreateDataset if true, create a new dataset when the recipe is done.
+  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool createDataset = 1;
 
@@ -3729,10 +3746,12 @@ message TableSpec {
   optional int32 rows = 5;
 
   // Show index column
+  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool showIndex = 6;
 
   // Show borther
+  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool border = 7;
 }
