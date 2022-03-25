@@ -1407,10 +1407,10 @@ spec:
                         type: integer
                     type: object
                   retainTop:
-                    default: 10
+                    default: 1
                     description: Indicate the total number of full models that would
-                      be retain in etcd. All other models are garbage collected (archived).
-                      models are sorted by their objective score.
+                      be retain in etcd. All other models are garbage collected (archived)
+                      if gc is enabled. models are sorted by their objective score.
                     format: int32
                     maximum: 100
                     minimum: 0

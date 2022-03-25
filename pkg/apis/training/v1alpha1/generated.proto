@@ -3003,9 +3003,9 @@ message SearchSpec {
   optional int32 test = 8;
 
   // Indicate the total number of full models that would be retain in etcd.
-  // All other models are garbage collected (archived).
+  // All other models are garbage collected (archived) if gc is enabled.
   // models are sorted by their objective score.
-  // +kubebuilder:default:=10
+  // +kubebuilder:default:=1
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Maximum=100
   optional int32 retainTop = 9;

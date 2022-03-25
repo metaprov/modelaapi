@@ -232,9 +232,9 @@ type SearchSpec struct {
 	// +kubebuilder:validation:Maximum=5
 	Test *int32 `json:"test,omitempty" protobuf:"varint,8,opt,name=test"`
 	// Indicate the total number of full models that would be retain in etcd.
-	// All other models are garbage collected (archived).
+	// All other models are garbage collected (archived) if gc is enabled.
 	// models are sorted by their objective score.
-	// +kubebuilder:default:=10
+	// +kubebuilder:default:=1
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Maximum=100
 	RetainTop *int32 `json:"retainTop,omitempty" protobuf:"varint,9,opt,name=retainTop"`
