@@ -1655,6 +1655,16 @@ func (in *ModelAutobuilderSpec) DeepCopyInto(out *ModelAutobuilderSpec) {
 		*out = new(bool)
 		**out = **in
 	}
+	if in.FeatureEngineering != nil {
+		in, out := &in.FeatureEngineering, &out.FeatureEngineering
+		*out = new(bool)
+		**out = **in
+	}
+	if in.FeatureSelection != nil {
+		in, out := &in.FeatureSelection, &out.FeatureSelection
+		*out = new(bool)
+		**out = **in
+	}
 	if in.DataApp != nil {
 		in, out := &in.DataApp, &out.DataApp
 		*out = new(bool)
@@ -1684,6 +1694,11 @@ func (in *ModelAutobuilderSpec) DeepCopyInto(out *ModelAutobuilderSpec) {
 	in.Resources.DeepCopyInto(&out.Resources)
 	if in.LabRef != nil {
 		in, out := &in.LabRef, &out.LabRef
+		*out = new(v1.ObjectReference)
+		**out = **in
+	}
+	if in.ServingSiteRef != nil {
+		in, out := &in.ServingSiteRef, &out.ServingSiteRef
 		*out = new(v1.ObjectReference)
 		**out = **in
 	}

@@ -1106,61 +1106,74 @@ message ModelAutobuilderSpec {
   optional int32 maxModels = 10;
 
   // Access method specify the predictor access method.
-  // Default: ClusterIP
   // +kubebuilder:default:=cluster-ip
   // +kubebuilder:validation:Optional
   optional string accessMethod = 11;
 
   // Specify if the predictor should autoscale.
-  // Default : false
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool autoScale = 12;
+
+  // If true specify feature engineering
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool featureEngineering = 13;
+
+  // If true perform feature selection
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool featureSelection = 14;
 
   // Specify if we should create a data app as part of the autobuilder.
   // Default : false
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool dataapp = 13;
+  optional bool dataapp = 15;
 
   // The spec of the data source, if none, the runner will infer the schema, and will create a new schema with
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec dataSourceSpec = 14;
+  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec dataSourceSpec = 16;
 
   // Specify the number of trainers.
   // Default 1 trainer.
   // +kubebuilder:default:=1
   // +kubebuilder:validation:Optional
-  optional int32 trainers = 15;
+  optional int32 trainers = 17;
 
   // Specify the search method
   // +kubebuilder:default:="random"
   // +kubebuilder:validation:Optional
-  optional string sampler = 16;
+  optional string sampler = 18;
 
   // Set the true to abort the model auto builder
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool aborted = 17;
+  optional bool aborted = 19;
 
   // The owner account name
   // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
-  optional string owner = 18;
+  optional string owner = 20;
 
   // Resource spec specify the resources needed for running the model pipeline job
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 19;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 21;
 
   // LabRef is a reference to the lab where the trainers for this study run.
   // If no value is provided, the lab is taken from the
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference labRef = 20;
+  optional k8s.io.api.core.v1.ObjectReference labRef = 22;
+
+  // A reference to the serving site.
+  // If no value is provided, the lab is taken from the
+  // +kubebuilder:validation:Optional
+  optional k8s.io.api.core.v1.ObjectReference servingSiteRef = 23;
 
   // Dataset type is the type of the dataset (tabular / vision)
   // +kubebuilder:validation:Optional
-  optional string datasetType = 21;
+  optional string datasetType = 24;
 }
 
 // ModelAutobuilderStatus define the observed state of the pipeline

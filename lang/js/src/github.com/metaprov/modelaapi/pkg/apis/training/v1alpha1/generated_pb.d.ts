@@ -1709,6 +1709,12 @@ export class ModelAutobuilderSpec extends jspb.Message {
   getAutoscale(): boolean;
   setAutoscale(value: boolean): ModelAutobuilderSpec;
 
+  getFeatureengineering(): boolean;
+  setFeatureengineering(value: boolean): ModelAutobuilderSpec;
+
+  getFeatureselection(): boolean;
+  setFeatureselection(value: boolean): ModelAutobuilderSpec;
+
   getDataapp(): boolean;
   setDataapp(value: boolean): ModelAutobuilderSpec;
 
@@ -1739,6 +1745,11 @@ export class ModelAutobuilderSpec extends jspb.Message {
   hasLabref(): boolean;
   clearLabref(): ModelAutobuilderSpec;
 
+  getServingsiteref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setServingsiteref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ModelAutobuilderSpec;
+  hasServingsiteref(): boolean;
+  clearServingsiteref(): ModelAutobuilderSpec;
+
   getDatasettype(): string;
   setDatasettype(value: string): ModelAutobuilderSpec;
 
@@ -1764,6 +1775,8 @@ export namespace ModelAutobuilderSpec {
     maxmodels: number,
     accessmethod: string,
     autoscale: boolean,
+    featureengineering: boolean,
+    featureselection: boolean,
     dataapp: boolean,
     datasourcespec?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSourceSpec.AsObject,
     trainers: number,
@@ -1772,6 +1785,7 @@ export namespace ModelAutobuilderSpec {
     owner: string,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     labref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    servingsiteref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     datasettype: string,
   }
 }
