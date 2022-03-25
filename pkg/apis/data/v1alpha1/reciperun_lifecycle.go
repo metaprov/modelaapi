@@ -179,13 +179,14 @@ func (in *RecipeRun) IsSaved() bool {
 // Generate a dataset completion alert
 func (run *RecipeRun) CompletionAlert(tenantRef *v1.ObjectReference, notifierName *string) *infra.Alert {
 	level := infra.Info
+	subject := fmt.Sprintf("Recipe run %s completed successfully", run.Name)
 	return &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
 			GenerateName: run.Name,
 			Namespace:    run.Namespace,
 		},
 		Spec: infra.AlertSpec{
-			Subject: util.StrPtr("Recipe Run Completed"),
+			Subject: util.StrPtr(subject),
 			Level:   &level,
 			EntityRef: v1.ObjectReference{
 				Kind:      "RecipeRun",
@@ -204,13 +205,14 @@ func (run *RecipeRun) CompletionAlert(tenantRef *v1.ObjectReference, notifierNam
 
 func (run *RecipeRun) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *string, err error) *infra.Alert {
 	level := infra.Error
+	subject := fmt.Sprintf("Recipe run %s failed with error %v", run.Name, err.Error())
 	return &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
 			GenerateName: run.Name,
 			Namespace:    run.Namespace,
 		},
 		Spec: infra.AlertSpec{
-			Subject: util.StrPtr("Recipe Run Error"),
+			Subject: util.StrPtr(subject),
 			Level:   &level,
 			EntityRef: v1.ObjectReference{
 				Kind:      "RecipeRun",

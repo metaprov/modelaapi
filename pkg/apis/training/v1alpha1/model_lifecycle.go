@@ -971,13 +971,14 @@ func (model Model) IsTest() bool {
 
 func (model *Model) CompletionAlert(tenantRef *v1.ObjectReference, notifierName *string) *infra.Alert {
 	level := infra.Info
+	subject := fmt.Sprintf("Model %s completed successfully", model.Name)
 	return &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
 			GenerateName: model.Name,
 			Namespace:    model.Namespace,
 		},
 		Spec: infra.AlertSpec{
-			Subject: util.StrPtr("Model Completed"),
+			Subject: util.StrPtr(subject),
 			Level:   &level,
 			EntityRef: v1.ObjectReference{
 				Kind:      "Model",
@@ -1004,13 +1005,14 @@ func (model *Model) CompletionAlert(tenantRef *v1.ObjectReference, notifierName 
 
 func (model *Model) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *string, err error) *infra.Alert {
 	level := infra.Error
+	subject := fmt.Sprintf("Model %s failed with error %v", model.Name, err.Error())
 	return &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
 			GenerateName: model.Name,
 			Namespace:    model.Namespace,
 		},
 		Spec: infra.AlertSpec{
-			Subject: util.StrPtr("Model Error"),
+			Subject: util.StrPtr(subject),
 			Level:   &level,
 			EntityRef: v1.ObjectReference{
 				Kind:      "Model",

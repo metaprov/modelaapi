@@ -491,13 +491,14 @@ func (dataset *Dataset) CompletionAlert(tenantRef *v1.ObjectReference, notifierN
 
 func (dataset *Dataset) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *string, err error) *infra.Alert {
 	level := infra.Error
+	subject := fmt.Sprintf("Dataset %s failed with error %v", dataset.Name, err.Error())
 	return &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
 			GenerateName: dataset.Name,
 			Namespace:    dataset.Namespace,
 		},
 		Spec: infra.AlertSpec{
-			Subject:      util.StrPtr("Dataset processing error"),
+			Subject:      util.StrPtr(subject),
 			Message:      util.StrPtr(err.Error()),
 			Level:        &level,
 			TenantRef:    tenantRef,

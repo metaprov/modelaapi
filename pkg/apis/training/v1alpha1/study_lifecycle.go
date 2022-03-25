@@ -959,13 +959,14 @@ func (study *Study) RefreshProgress() {
 
 func (study *Study) CompletionAlert(tenantRef *v1.ObjectReference, notifierName *string) *infra.Alert {
 	level := infra.Info
+	subject := fmt.Sprintf("Study %s completed successfully", study.Name)
 	return &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
 			GenerateName: study.Name,
 			Namespace:    study.Namespace,
 		},
 		Spec: infra.AlertSpec{
-			Subject: util.StrPtr("Study Completed Successfully"),
+			Subject: util.StrPtr(subject),
 			Level:   &level,
 			EntityRef: v1.ObjectReference{
 				Kind:      "Study",
@@ -988,13 +989,14 @@ func (study *Study) CompletionAlert(tenantRef *v1.ObjectReference, notifierName 
 
 func (study *Study) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *string, err error) *infra.Alert {
 	level := infra.Error
+	subject := fmt.Sprintf("Study %s failed with error %v", study.Name, err.Error())
 	return &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
 			GenerateName: study.Name,
 			Namespace:    study.Namespace,
 		},
 		Spec: infra.AlertSpec{
-			Subject: util.StrPtr("Study Error"),
+			Subject: util.StrPtr(subject),
 			Level:   &level,
 			EntityRef: v1.ObjectReference{
 				Kind:      "Study",

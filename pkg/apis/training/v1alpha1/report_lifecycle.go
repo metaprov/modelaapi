@@ -245,13 +245,14 @@ func (report *Report) MarkReportReady(product *data.DataProduct) {
 
 func (report *Report) CompletionAlert(tenantRef *v1.ObjectReference, notifierName *string) *infra.Alert {
 	level := infra.Info
+	subject := fmt.Sprintf("Report %s completed successfully", report.Name)
 	return &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
 			GenerateName: report.Name,
 			Namespace:    report.Namespace,
 		},
 		Spec: infra.AlertSpec{
-			Subject: util.StrPtr("Report Completed"),
+			Subject: util.StrPtr(subject),
 			Level:   &level,
 			EntityRef: v1.ObjectReference{
 				Kind:      "Report",
@@ -263,7 +264,7 @@ func (report *Report) CompletionAlert(tenantRef *v1.ObjectReference, notifierNam
 			Owner:        report.Spec.Owner,
 			Fields: map[string]string{
 				"Start Time": report.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
-				"End Time":   report.Status.EndTime.Format("01/2/2006 15:04:05"),
+				"Completion Time":   report.Status.EndTime.Format("01/2/2006 15:04:05"),
 				"Bucket":     *report.Spec.Location.BucketName,
 				"URL":        *report.Spec.Location.Path,
 			},
@@ -273,13 +274,14 @@ func (report *Report) CompletionAlert(tenantRef *v1.ObjectReference, notifierNam
 
 func (report *Report) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *string, err error) *infra.Alert {
 	level := infra.Error
+	subject := fmt.Sprintf("Report %s failed with error %v", report.Name, err.Error())
 	return &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
 			GenerateName: report.Name,
 			Namespace:    report.Namespace,
 		},
 		Spec: infra.AlertSpec{
-			Subject: util.StrPtr("Report Error"),
+			Subject: util.StrPtr(subject),
 			Level:   &level,
 			EntityRef: v1.ObjectReference{
 				Kind:      "Report",
@@ -291,7 +293,7 @@ func (report *Report) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *st
 			Owner:        report.Spec.Owner,
 			Fields: map[string]string{
 				"Start Time": report.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
-				"End Time":   report.Status.EndTime.Format("01/2/2006 15:04:05"),
+				"Completion Time":   report.Status.EndTime.Format("01/2/2006 15:04:05"),
 				"Bucket":     *report.Spec.Location.BucketName,
 				"URL":        *report.Spec.Location.Path,
 				"Type":       string(*report.Spec.ReportType),

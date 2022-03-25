@@ -190,13 +190,14 @@ func (in *DataPipelineRun) MarkSaved() {
 // Generate a dataset completion alert
 func (run *DataPipelineRun) CompletionAlert(tenantRef *v1.ObjectReference, notifierName *string) *infra.Alert {
 	level := infra.Info
+	subject := fmt.Sprintf("Data pipeline run %s completed successfully", run.Name)
 	return &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
 			GenerateName: run.Name,
 			Namespace:    run.Namespace,
 		},
 		Spec: infra.AlertSpec{
-			Subject: util.StrPtr("Web Request Completed"),
+			Subject: util.StrPtr(subject),
 			Level:   &level,
 			EntityRef: v1.ObjectReference{
 				Kind:      "DataPipelineRun",
@@ -216,13 +217,14 @@ func (run *DataPipelineRun) CompletionAlert(tenantRef *v1.ObjectReference, notif
 
 func (run *DataPipelineRun) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *string, err error) *infra.Alert {
 	level := infra.Error
+	subject := fmt.Sprintf("Data pipeline run %s failed with error %v", run.Name, err.Error())
 	return &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
 			GenerateName: run.Name,
 			Namespace:    run.Namespace,
 		},
 		Spec: infra.AlertSpec{
-			Subject:      util.StrPtr("Web Request Run Error"),
+			Subject:      util.StrPtr(subject),
 			Level:        &level,
 			TenantRef:    tenantRef,
 			NotifierName: notifierName,

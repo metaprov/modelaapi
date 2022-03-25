@@ -206,13 +206,14 @@ func (run *Prediction) MarkRunning() {
 
 func (prediction *Prediction) CompletionAlert(tenantRef *v1.ObjectReference, notifierName *string) *infra.Alert {
 	level := infra.Info
+	subject := fmt.Sprintf("Prediction %s completed successfully", prediction.Name)
 	return &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
 			GenerateName: prediction.Name,
 			Namespace:    prediction.Namespace,
 		},
 		Spec: infra.AlertSpec{
-			Subject: util.StrPtr("Web Request Completed"),
+			Subject: util.StrPtr(subject),
 			Level:   &level,
 			EntityRef: v1.ObjectReference{
 				Kind:      "Prediction",
@@ -223,8 +224,8 @@ func (prediction *Prediction) CompletionAlert(tenantRef *v1.ObjectReference, not
 			NotifierName: notifierName,
 			Owner:        prediction.Spec.Owner,
 			Fields: map[string]string{
-				"Start Time": prediction.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
-				"End Time":   prediction.Status.EndTime.Format("01/2/2006 15:04:05"),
+				"Start Time":      prediction.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
+				"Completion Time": prediction.Status.EndTime.Format("01/2/2006 15:04:05"),
 			},
 		},
 	}
@@ -232,13 +233,14 @@ func (prediction *Prediction) CompletionAlert(tenantRef *v1.ObjectReference, not
 
 func (prediction *Prediction) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *string, err error) *infra.Alert {
 	level := infra.Error
+	subject := fmt.Sprintf("Prediction %s failed with error %v", run.Name, err.Error())
 	return &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
 			GenerateName: prediction.Name,
 			Namespace:    prediction.Namespace,
 		},
 		Spec: infra.AlertSpec{
-			Subject: util.StrPtr("Model Auto Builder Error"),
+			Subject: util.StrPtr(subject),
 			Level:   &level,
 			EntityRef: v1.ObjectReference{
 				Kind:      "Prediction",
@@ -249,8 +251,8 @@ func (prediction *Prediction) ErrorAlert(tenantRef *v1.ObjectReference, notifier
 			NotifierName: notifierName,
 			Owner:        prediction.Spec.Owner,
 			Fields: map[string]string{
-				"Start Time": prediction.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
-				"End Time":   prediction.Status.EndTime.Format("01/2/2006 15:04:05"),
+				"Start Time":      prediction.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
+				"Completion Time": prediction.Status.EndTime.Format("01/2/2006 15:04:05"),
 			},
 		},
 	}

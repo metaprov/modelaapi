@@ -191,13 +191,14 @@ func (run *WebRequestRun) MarkRunning() {
 // Generate a dataset completion alert
 func (run *WebRequestRun) CompletionAlert(tenantRef *v1.ObjectReference, notifierName *string) *infra.Alert {
 	level := infra.Info
+	subject := fmt.Sprintf("Web request run %s completed successfully", run.Name)
 	return &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
 			GenerateName: run.Name,
 			Namespace:    run.Namespace,
 		},
 		Spec: infra.AlertSpec{
-			Subject: util.StrPtr("Web Request Completed"),
+			Subject: util.StrPtr(subject),
 			Level:   &level,
 			EntityRef: v1.ObjectReference{
 				Kind:      "WebRequestRun",
@@ -208,8 +209,8 @@ func (run *WebRequestRun) CompletionAlert(tenantRef *v1.ObjectReference, notifie
 			NotifierName: notifierName,
 			Owner:        run.Spec.Owner,
 			Fields: map[string]string{
-				"Start Time": run.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
-				"End Time":   run.Status.EndTime.Format("01/2/2006 15:04:05"),
+				"Start Time":      run.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
+				"Completion Time": run.Status.EndTime.Format("01/2/2006 15:04:05"),
 			},
 		},
 	}
@@ -217,13 +218,14 @@ func (run *WebRequestRun) CompletionAlert(tenantRef *v1.ObjectReference, notifie
 
 func (run *WebRequestRun) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *string, err error) *infra.Alert {
 	level := infra.Error
+	subject := fmt.Sprintf("Web request run %s failed with error %v", run.Name, err.Error())
 	return &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
 			GenerateName: run.Name,
 			Namespace:    run.Namespace,
 		},
 		Spec: infra.AlertSpec{
-			Subject: util.StrPtr("Web Request Run Error"),
+			Subject: util.StrPtr(subject),
 			Level:   &level,
 			EntityRef: v1.ObjectReference{
 				Kind:      "WebRequestRun",
@@ -234,8 +236,8 @@ func (run *WebRequestRun) ErrorAlert(tenantRef *v1.ObjectReference, notifierName
 			NotifierName: notifierName,
 			Owner:        run.Spec.Owner,
 			Fields: map[string]string{
-				"Start Time": run.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
-				"End Time":   run.Status.EndTime.Format("01/2/2006 15:04:05"),
+				"Start Time":      run.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
+				"Completion Time": run.Status.EndTime.Format("01/2/2006 15:04:05"),
 			},
 		},
 	}

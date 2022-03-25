@@ -628,13 +628,14 @@ func (b *ModelAutobuilder) DataAppReady() bool {
 // Generate a dataset completion alert
 func (run *ModelAutobuilder) CompletionAlert(tenantRef *v1.ObjectReference, notifierName *string) *infra.Alert {
 	level := infra.Info
+	subject := fmt.Sprintf("Model auto builder %s completed successfully", run.Name)
 	return &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
 			GenerateName: run.Name,
 			Namespace:    run.Namespace,
 		},
 		Spec: infra.AlertSpec{
-			Subject: util.StrPtr("Model Auto Builder completed successfully "),
+			Subject: util.StrPtr(subject),
 			Level:   &level,
 			EntityRef: v1.ObjectReference{
 				Kind:      "ModelAutoBuilder",
@@ -646,7 +647,7 @@ func (run *ModelAutobuilder) CompletionAlert(tenantRef *v1.ObjectReference, noti
 			Owner:        run.Spec.Owner,
 			Fields: map[string]string{
 				"Start Time": run.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
-				"End Time":   run.Status.EndTime.Format("01/2/2006 15:04:05"),
+				"Completion Time":   run.Status.EndTime.Format("01/2/2006 15:04:05"),
 			},
 		},
 	}
@@ -654,13 +655,14 @@ func (run *ModelAutobuilder) CompletionAlert(tenantRef *v1.ObjectReference, noti
 
 func (run *ModelAutobuilder) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *string, err error) *infra.Alert {
 	level := infra.Error
+	subject := fmt.Sprintf("Model Auto Builder %s failed with error %v", run.Name, err.Error())
 	return &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
 			GenerateName: run.Name,
 			Namespace:    run.Namespace,
 		},
 		Spec: infra.AlertSpec{
-			Subject: util.StrPtr("Model Auto Builder Error"),
+			Subject: util.StrPtr(subject),
 			Level:   &level,
 			EntityRef: v1.ObjectReference{
 				Kind:      "ModelAutoBuilder",
@@ -672,7 +674,7 @@ func (run *ModelAutobuilder) ErrorAlert(tenantRef *v1.ObjectReference, notifierN
 			Owner:        run.Spec.Owner,
 			Fields: map[string]string{
 				"Start Time": run.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
-				"End Time":   run.Status.EndTime.Format("01/2/2006 15:04:05"),
+				"Completion Time":   run.Status.EndTime.Format("01/2/2006 15:04:05"),
 			},
 		},
 	}
