@@ -544,6 +544,12 @@ func (b *ModelAutobuilder) CreateStudy(notification catalog.NotificationSpec) *S
 			},
 		},
 		Spec: StudySpec{
+			FeatureEngineeringSearch: FeatureEngineeringSearchSpec{
+				Enabled: util.BoolPtr(false),
+				FeatureSelectionTemplate: FeatureSelectionSpec{
+					Enabled: util.BoolPtr(false),
+				},
+			},
 			Notification: notification,
 			Owner:        b.Spec.Owner,
 			LabRef:       *b.Spec.LabRef,
