@@ -270,7 +270,7 @@ func (b *ModelAutobuilder) MarkPredictorFailed(err error) {
 func (b *ModelAutobuilder) MarkPredictorReady() {
 	b.Status.Phase = ModelAutobuilderPhaseCompleted
 	b.CreateOrUpdateCond(ModelAutobuilderCondition{
-		Type:   ModelAutobuilderDataProductReady,
+		Type:   ModelAutobuilderPredictorReady,
 		Status: v1.ConditionTrue,
 	})
 }
@@ -646,8 +646,8 @@ func (run *ModelAutobuilder) CompletionAlert(tenantRef *v1.ObjectReference, noti
 			NotifierName: notifierName,
 			Owner:        run.Spec.Owner,
 			Fields: map[string]string{
-				"Start Time": run.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
-				"Completion Time":   run.Status.EndTime.Format("01/2/2006 15:04:05"),
+				"Start Time":      run.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
+				"Completion Time": run.Status.EndTime.Format("01/2/2006 15:04:05"),
 			},
 		},
 	}
@@ -673,8 +673,8 @@ func (run *ModelAutobuilder) ErrorAlert(tenantRef *v1.ObjectReference, notifierN
 			NotifierName: notifierName,
 			Owner:        run.Spec.Owner,
 			Fields: map[string]string{
-				"Start Time": run.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
-				"Completion Time":   run.Status.EndTime.Format("01/2/2006 15:04:05"),
+				"Start Time":      run.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
+				"Completion Time": run.Status.EndTime.Format("01/2/2006 15:04:05"),
 			},
 		},
 	}
