@@ -233,7 +233,7 @@ func (prediction *Prediction) CompletionAlert(tenantRef *v1.ObjectReference, not
 
 func (prediction *Prediction) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *string, err error) *infra.Alert {
 	level := infra.Error
-	subject := fmt.Sprintf("Prediction %s failed with error %v", run.Name, err.Error())
+	subject := fmt.Sprintf("Prediction %s failed with error %v", prediction.Name, err.Error())
 	return &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
 			GenerateName: prediction.Name,

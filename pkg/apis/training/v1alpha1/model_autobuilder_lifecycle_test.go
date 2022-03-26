@@ -75,30 +75,3 @@ func TestDataSource(t *testing.T) {
 	assert.Equal(t, file.Name, "iris")
 	assert.Equal(t, file.Spec.VersionName, "v0.0.1")
 }
-
-func TestDataset(t *testing.T) {
-	obj := autoBuilder()
-	assert.Equal(t, obj.DatasetName(), "iris")
-
-	dset := obj.CreateDataset()
-	assert.Equal(t, dset.Name, "iris")
-	assert.Equal(t, dset.Spec.VersionName, "v0.0.1")
-	assert.Equal(t, dset.Spec.DataSourceName, "iris")
-	assert.Equal(t, *dset.Spec.Labeled, true)
-	assert.Equal(t, dset.Spec.Location.Path, "modela/live/tenants/default-tenant/dataproducts/iris-product/versions/v0.0.1/datasets/iris/data/raw/iris.csv")
-	assert.Equal(t, dset.Spec.Origin.Path, "modela/depot/iris.csv")
-}
-
-func TestStudy(t *testing.T) {
-	obj := autoBuilder()
-	assert.Equal(t, obj.DatasetName(), "iris")
-
-	rand := RandomSearch
-	study := obj.CreateStudy()
-
-	assert.Equal(t, study.Name, "iris")
-	assert.Equal(t, study.Spec.VersionName, "v0.0.1")
-	assert.Equal(t, *study.Spec.Search.Sampler, rand)
-	assert.Equal(t, *study.Spec.Search.MaxModels, int32(10))
-	assert.Equal(t, *study.Spec.Search.MaxTime, int32(4))
-}
