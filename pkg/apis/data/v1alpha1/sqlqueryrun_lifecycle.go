@@ -147,6 +147,7 @@ func (run *SqlQueryRun) MarkFailed(msg string) {
 	if run.Status.EndTime == nil {
 		run.Status.EndTime = &now
 	}
+	run.Status.FailureMessage = util.StrPtr(msg)
 }
 
 func (in *SqlQueryRun) IsFailed() bool {

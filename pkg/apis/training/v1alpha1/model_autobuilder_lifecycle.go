@@ -152,6 +152,7 @@ func (b *ModelAutobuilder) MarkDatasourceFailed(err error) {
 	})
 	now := metav1.Now()
 	b.Status.EndTime = &now
+	b.Status.FailureMessage = util.StrPtr(err.Error())
 
 }
 
@@ -181,6 +182,7 @@ func (b *ModelAutobuilder) MarkDataSetFailed(err error) {
 	})
 	now := metav1.Now()
 	b.Status.EndTime = &now
+	b.Status.FailureMessage = util.StrPtr(err.Error())
 
 }
 
@@ -218,6 +220,7 @@ func (b *ModelAutobuilder) MarkStudyFailed(err error) {
 	})
 	now := metav1.Now()
 	b.Status.EndTime = &now
+	b.Status.FailureMessage = util.StrPtr(err.Error())
 }
 
 // StudySuccess
@@ -265,6 +268,7 @@ func (b *ModelAutobuilder) MarkPredictorFailed(err error) {
 	})
 	now := metav1.Now()
 	b.Status.EndTime = &now
+	b.Status.FailureMessage = util.StrPtr(err.Error())
 }
 
 func (b *ModelAutobuilder) MarkPredictorReady() {
@@ -332,6 +336,7 @@ func (b *ModelAutobuilder) MarkFailed(err error) {
 	})
 	now := metav1.Now()
 	b.Status.EndTime = &now
+	b.Status.FailureMessage = util.StrPtr(err.Error())
 }
 
 func (b *ModelAutobuilder) MarkDatasetRunning() {
@@ -611,6 +616,7 @@ func (b *ModelAutobuilder) MarkDataAppFailed(err error) {
 		Message: string(ModelAutobuilderPhaseFailed),
 		Reason:  err.Error(),
 	})
+	b.Status.FailureMessage = util.StrPtr(err.Error())
 }
 
 func (b *ModelAutobuilder) MarkDataAppReady() {

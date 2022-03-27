@@ -170,4 +170,5 @@ func (predictor *Predictor) MarkFailed(err string) {
 		Reason:  "Failed",
 		Message: err,
 	})
+	predictor.Status.FailureMessage = util.StrPtr(err)
 }

@@ -174,6 +174,7 @@ func (r *NotebookRun) MarkFailed(error string) {
 		Reason:  error,
 		Message: error,
 	})
+	r.Status.FailureMessage = util.StrPtr(error)
 	now := metav1.Now()
 	r.Status.EndTime = &now
 

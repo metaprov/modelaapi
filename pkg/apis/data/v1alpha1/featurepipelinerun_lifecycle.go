@@ -200,6 +200,8 @@ func (run *FeaturePipelineRun) MarkFailed(err error) {
 	if run.Status.EndTime == nil {
 		run.Status.EndTime = &now
 	}
+	run.Status.FailureMessage = util.StrPtr(err.Error())
+	
 }
 
 // Return the state of the run as RunStatus

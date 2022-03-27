@@ -144,6 +144,7 @@ func (r *RecipeRun) MarkFailed(error string) {
 	if r.Status.EndTime == nil {
 		r.Status.EndTime = &now
 	}
+	r.Status.FailureMessage = util.StrPtr(error)
 }
 
 func (r *RecipeRun) MarkRunning() {

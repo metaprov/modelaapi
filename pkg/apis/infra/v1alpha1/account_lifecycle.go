@@ -161,4 +161,5 @@ func (account *Account) MarkFailed(err string) {
 		Reason:  "Failed",
 		Message: err,
 	})
+	account.Status.FailureMessage = util.StrPtr(err)
 }

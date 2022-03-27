@@ -847,7 +847,7 @@ func (study *Study) MarkPauseFailed(err string) {
 		Message: err,
 	})
 	study.Status.Phase = StudyPhaseFailed
-	study.Status.FailureMessage = util.StrPtr("Failed to paused." + err)
+	study.Status.FailureMessage = util.StrPtr("Failed to pause." + err)
 	study.RefreshProgress()
 	now := metav1.Now()
 	study.Status.EndTime = &now

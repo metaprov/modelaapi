@@ -115,4 +115,5 @@ func (bucket *VirtualBucket) MarkFailed(err string) {
 		Status:  v1.ConditionFalse,
 		Message: err,
 	})
+	bucket.Status.FailureMessage = util.StrPtr(err)
 }

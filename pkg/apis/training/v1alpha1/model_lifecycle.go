@@ -609,6 +609,7 @@ func (model *Model) MarkReportFailed(err string) {
 	model.Status.Progress = 100
 	now := metav1.Now()
 	model.Status.EndTime = &now
+	model.Status.FailureMessage = util.StrPtr(err)
 
 }
 
@@ -646,6 +647,7 @@ func (model *Model) MarkForecastFailed(err string) {
 	model.Status.Progress = 100
 	now := metav1.Now()
 	model.Status.EndTime = &now
+	model.Status.FailureMessage = util.StrPtr(err)
 
 }
 

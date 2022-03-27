@@ -192,6 +192,7 @@ func (run *LabelingPipelineRun) MarkFailed(err error) {
 	if run.Status.EndTime == nil {
 		run.Status.EndTime = &now
 	}
+	run.Status.FailureMessage = util.StrPtr(err.Error())
 }
 
 func (in *LabelingPipelineRun) IsFailed() bool {

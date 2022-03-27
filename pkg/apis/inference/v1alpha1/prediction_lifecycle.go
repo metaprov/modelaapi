@@ -156,6 +156,7 @@ func (prediction *Prediction) MarkFailed(msg string) {
 	if prediction.Status.EndTime == nil {
 		prediction.Status.EndTime = &now
 	}
+	prediction.Status.FailureMessage = util.StrPtr(msg)
 }
 
 func (prediction *Prediction) MarkCompleted() {

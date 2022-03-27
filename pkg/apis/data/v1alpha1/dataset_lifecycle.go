@@ -204,6 +204,11 @@ func (dataset *Dataset) MarkSnapshotFailed(msg string) {
 	dataset.Status.Phase = DatasetPhaseFailed
 	dataset.Status.FailureMessage = util.StrPtr(msg)
 	dataset.Status.Progress = 100
+	now := metav1.Now()
+	if dataset.Status.EndTime == nil {
+		dataset.Status.EndTime = &now
+	}
+
 }
 
 func (dataset *Dataset) MarkSnapshotSuccess() {
@@ -238,6 +243,10 @@ func (dataset *Dataset) MarkValidationFailed(msg string) {
 	dataset.Status.Phase = DatasetPhaseFailed
 	dataset.Status.FailureMessage = util.StrPtr(msg)
 	dataset.Status.Progress = 100
+	now := metav1.Now()
+	if dataset.Status.EndTime == nil {
+		dataset.Status.EndTime = &now
+	}
 }
 
 func (dataset *Dataset) MarkValidated() {
