@@ -31,6 +31,7 @@ const (
 	PublisherImageRole        ManagedImageRole = "publisher"
 	SystemImageRole           ManagedImageRole = "system"
 	PredictionRouterImageRole ManagedImageRole = "prediction-router"
+	BatchPredictionImageRole  ManagedImageRole = "batch-prediction"
 )
 
 // MLFramework define the metadata about a machine learning framework
