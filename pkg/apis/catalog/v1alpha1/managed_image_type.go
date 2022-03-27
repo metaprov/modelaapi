@@ -18,7 +18,7 @@ import (
 // ManagedImageRole
 //==============================================================================
 
-// +kubebuilder:validation:Enum="cloud-proxy";"trainer";"predictor";"dashboard";"workload";"prediction-router";"dataplane";"publisher";"system"
+// +kubebuilder:validation:Enum="cloud-proxy";"trainer";"predictor";"dashboard";"workload";"prediction-router";"dataplane";"publisher";"system";"batch-prediction"
 type ManagedImageRole string
 
 const (

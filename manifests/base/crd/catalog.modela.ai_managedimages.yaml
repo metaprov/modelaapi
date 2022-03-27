@@ -257,6 +257,7 @@ spec:
                 - dataplane
                 - publisher
                 - system
+                - batch-prediction
                 type: string
               tag:
                 description: The image tag. by default this is latest
