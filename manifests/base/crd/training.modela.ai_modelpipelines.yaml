@@ -174,6 +174,10 @@ spec:
                               More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/'
                             type: object
                         type: object
+                      workloadName:
+                        description: If this resource is based on the workload, this
+                          field contain the name of the workload.
+                        type: string
                     type: object
                   servingSiteName:
                     description: ServingSiteName is the serving site for the testing
@@ -460,6 +464,10 @@ spec:
                               More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/'
                             type: object
                         type: object
+                      workloadName:
+                        description: If this resource is based on the workload, this
+                          field contain the name of the workload.
+                        type: string
                     type: object
                   servingSiteName:
                     description: ServingSiteName is the serving site for the release,
@@ -800,6 +808,10 @@ spec:
                               More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/'
                             type: object
                         type: object
+                      workloadName:
+                        description: If this resource is based on the workload, this
+                          field contain the name of the workload.
+                        type: string
                     type: object
                   servingSiteName:
                     description: ServingSiteName is the serving site for the release,
@@ -1105,6 +1117,10 @@ spec:
                           to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/'
                         type: object
                     type: object
+                  workloadName:
+                    description: If this resource is based on the workload, this field
+                      contain the name of the workload.
+                    type: string
                 type: object
               schedule:
                 description: Schedule for running the pipeline
@@ -1399,6 +1415,10 @@ spec:
                               More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/'
                             type: object
                         type: object
+                      workloadName:
+                        description: If this resource is based on the workload, this
+                          field contain the name of the workload.
+                        type: string
                     type: object
                   servingSiteName:
                     description: The serving site (name space) used for running the

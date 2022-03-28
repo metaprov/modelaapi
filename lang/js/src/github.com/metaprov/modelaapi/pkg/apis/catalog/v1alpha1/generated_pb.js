@@ -14924,6 +14924,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.proto
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
+    workloadname: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     cpuimage: (f = msg.getCpuimage()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     gpuimage: (f = msg.getGpuimage()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     requirements: (f = msg.getRequirements()) && k8s_io_api_core_v1_generated_pb.ResourceRequirements.toObject(includeInstance, f)
@@ -14964,16 +14965,20 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.deser
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
-      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
-      msg.setCpuimage(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setWorkloadname(value);
       break;
     case 2:
       var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
       reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
-      msg.setGpuimage(value);
+      msg.setCpuimage(value);
       break;
     case 3:
+      var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
+      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
+      msg.setGpuimage(value);
+      break;
+    case 4:
       var value = new k8s_io_api_core_v1_generated_pb.ResourceRequirements;
       reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ResourceRequirements.deserializeBinaryFromReader);
       msg.setRequirements(value);
@@ -15007,15 +15012,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.proto
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getCpuimage();
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
   if (f != null) {
-    writer.writeMessage(
+    writer.writeString(
       1,
-      f,
-      k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
+      f
     );
   }
-  f = message.getGpuimage();
+  f = message.getCpuimage();
   if (f != null) {
     writer.writeMessage(
       2,
@@ -15023,10 +15027,18 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.seria
       k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
     );
   }
-  f = message.getRequirements();
+  f = message.getGpuimage();
   if (f != null) {
     writer.writeMessage(
       3,
+      f,
+      k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
+    );
+  }
+  f = message.getRequirements();
+  if (f != null) {
+    writer.writeMessage(
+      4,
       f,
       k8s_io_api_core_v1_generated_pb.ResourceRequirements.serializeBinaryToWriter
     );
@@ -15035,12 +15047,48 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.seria
 
 
 /**
- * optional k8s.io.api.core.v1.ObjectReference cpuImage = 1;
+ * optional string workloadName = 1;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.prototype.getWorkloadname = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.prototype.setWorkloadname = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.prototype.clearWorkloadname = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.prototype.hasWorkloadname = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional k8s.io.api.core.v1.ObjectReference cpuImage = 2;
  * @return {?proto.k8s.io.api.core.v1.ObjectReference}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.prototype.getCpuimage = function() {
   return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
-    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 1));
+    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 2));
 };
 
 
@@ -15049,7 +15097,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.proto
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.prototype.setCpuimage = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
+  return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
@@ -15067,17 +15115,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.prototype.hasCpuimage = function() {
-  return jspb.Message.getField(this, 1) != null;
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional k8s.io.api.core.v1.ObjectReference gpuImage = 2;
+ * optional k8s.io.api.core.v1.ObjectReference gpuImage = 3;
  * @return {?proto.k8s.io.api.core.v1.ObjectReference}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.prototype.getGpuimage = function() {
   return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
-    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 2));
+    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 3));
 };
 
 
@@ -15086,7 +15134,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.proto
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.prototype.setGpuimage = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
+  return jspb.Message.setWrapperField(this, 3, value);
 };
 
 
@@ -15104,17 +15152,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.prototype.hasGpuimage = function() {
-  return jspb.Message.getField(this, 2) != null;
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional k8s.io.api.core.v1.ResourceRequirements requirements = 3;
+ * optional k8s.io.api.core.v1.ResourceRequirements requirements = 4;
  * @return {?proto.k8s.io.api.core.v1.ResourceRequirements}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.prototype.getRequirements = function() {
   return /** @type{?proto.k8s.io.api.core.v1.ResourceRequirements} */ (
-    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ResourceRequirements, 3));
+    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ResourceRequirements, 4));
 };
 
 
@@ -15123,7 +15171,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.proto
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.prototype.setRequirements = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
+  return jspb.Message.setWrapperField(this, 4, value);
 };
 
 
@@ -15141,7 +15189,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.prototype.hasRequirements = function() {
-  return jspb.Message.getField(this, 3) != null;
+  return jspb.Message.getField(this, 4) != null;
 };
 
 

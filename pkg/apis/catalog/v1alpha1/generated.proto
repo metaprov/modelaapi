@@ -847,15 +847,19 @@ message Region {
 
 // Specification for resource
 message ResourceSpec {
-  // Reference to the managed gpu trainer image
-  optional k8s.io.api.core.v1.ObjectReference cpuImage = 1;
+  // If this resource is based on the workload, this field contain the name of the workload.
+  // +kubebuilder:validation:Optional
+  optional string workloadName = 1;
 
   // Reference to the managed gpu trainer image
-  optional k8s.io.api.core.v1.ObjectReference gpuImage = 2;
+  optional k8s.io.api.core.v1.ObjectReference cpuImage = 2;
+
+  // Reference to the managed gpu trainer image
+  optional k8s.io.api.core.v1.ObjectReference gpuImage = 3;
 
   // Custom resource requirments
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ResourceRequirements requirements = 3;
+  optional k8s.io.api.core.v1.ResourceRequirements requirements = 4;
 }
 
 message RocAucCurve {

@@ -485,6 +485,10 @@ spec:
                           to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/'
                         type: object
                     type: object
+                  workloadName:
+                    description: If this resource is based on the workload, this field
+                      contain the name of the workload.
+                    type: string
                 type: object
               servingSiteName:
                 description: ServingSiteName is the serving site where predictors
@@ -672,6 +676,10 @@ spec:
                           to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/'
                         type: object
                     type: object
+                  workloadName:
+                    description: If this resource is based on the workload, this field
+                      contain the name of the workload.
+                    type: string
                 type: object
             type: object
           status:

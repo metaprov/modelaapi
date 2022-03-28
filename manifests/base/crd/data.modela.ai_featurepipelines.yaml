@@ -246,6 +246,10 @@ spec:
                           to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/'
                         type: object
                     type: object
+                  workloadName:
+                    description: If this resource is based on the workload, this field
+                      contain the name of the workload.
+                    type: string
                 type: object
               schedule:
                 description: Schedule for running the pipeline

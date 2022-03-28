@@ -1498,6 +1498,9 @@ export namespace Region {
 }
 
 export class ResourceSpec extends jspb.Message {
+  getWorkloadname(): string;
+  setWorkloadname(value: string): ResourceSpec;
+
   getCpuimage(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setCpuimage(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ResourceSpec;
   hasCpuimage(): boolean;
@@ -1523,6 +1526,7 @@ export class ResourceSpec extends jspb.Message {
 
 export namespace ResourceSpec {
   export type AsObject = {
+    workloadname: string,
     cpuimage?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     gpuimage?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     requirements?: k8s_io_api_core_v1_generated_pb.ResourceRequirements.AsObject,
