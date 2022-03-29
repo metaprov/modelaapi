@@ -471,13 +471,14 @@ func (dataset *Dataset) Deleted() bool {
 // Generate a dataset completion alert
 func (dataset *Dataset) CompletionAlert(tenantRef *v1.ObjectReference, notifierName *string) *infra.Alert {
 	level := infra.Info
+	subject := fmt.Sprintf("Dataset %s completed successfully ", dataset.Name)
 	return &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
 			GenerateName: dataset.Name,
 			Namespace:    dataset.Namespace,
 		},
 		Spec: infra.AlertSpec{
-			Subject: util.StrPtr("Dataset Completed"),
+			Subject: util.StrPtr(subject),
 			Level:   &level,
 			EntityRef: v1.ObjectReference{
 				Kind:      "Dataset",
