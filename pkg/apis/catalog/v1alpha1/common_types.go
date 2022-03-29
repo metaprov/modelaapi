@@ -12,12 +12,13 @@ import (
 // ===========================================================
 
 const (
-	ControlPort   int = 8080
-	StoragePort   int = 8090
-	DataPort      int = 8070
-	PublisherPort int = 8050
-	TrainerPort   int = 8060
-	PredictorPort int = 8040
+	ControlPort         int = 8080
+	StoragePort         int = 8090
+	DataPort            int = 8070
+	PublisherPort       int = 8050
+	TrainerPort         int = 8060
+	PredictorPort       int = 8040
+	BatchPredictionPort int = 8030
 )
 
 // ===========================================================
