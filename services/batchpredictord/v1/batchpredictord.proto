@@ -22,10 +22,15 @@ message BatchPredictResponse {
 
 }
 
+message ShutDownRequest {}
+message ShutdownResponse{}
+
+
+
 
 service Batch {
     // Ingest a new dataset to the store, the store creates a new layouts and set of keys
     // for the new dataset
     rpc BatchPredict(BatchPredictRequest) returns (BatchPredictResponse) {}
-    rpc Shutdown(google.protobuf.Empty) returns (google.protobuf.Empty) {}
+    rpc Shutdown(ShutDownRequest) returns (ShutDownRequest) {}
 }

@@ -2109,11 +2109,11 @@ export class DatasetSpec extends jspb.Message {
   getLabeled(): boolean;
   setLabeled(value: boolean): DatasetSpec;
 
-  getSyntactic(): boolean;
-  setSyntactic(value: boolean): DatasetSpec;
+  getSynthetic(): boolean;
+  setSynthetic(value: boolean): DatasetSpec;
 
-  getSyntacticrows(): number;
-  setSyntacticrows(value: number): DatasetSpec;
+  getSyntheticrows(): number;
+  setSyntheticrows(value: number): DatasetSpec;
 
   getOrigin(): DataLocation | undefined;
   setOrigin(value?: DataLocation): DatasetSpec;
@@ -2176,8 +2176,8 @@ export namespace DatasetSpec {
     snapshotted: boolean,
     validate: boolean,
     labeled: boolean,
-    syntactic: boolean,
-    syntacticrows: number,
+    synthetic: boolean,
+    syntheticrows: number,
     origin?: DataLocation.AsObject,
     location?: DataLocation.AsObject,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,

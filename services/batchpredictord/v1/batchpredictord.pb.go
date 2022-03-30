@@ -8,7 +8,7 @@ package v1
 
 import (
 	context "context"
-	empty "github.com/golang/protobuf/ptypes/empty"
+	_ "github.com/golang/protobuf/ptypes/empty"
 	v1alpha1 "github.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1"
 	v1alpha11 "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
 	grpc "google.golang.org/grpc"
@@ -161,6 +161,82 @@ func (*BatchPredictResponse) Descriptor() ([]byte, []int) {
 	return file_github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_proto_rawDescGZIP(), []int{1}
 }
 
+type ShutDownRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+}
+
+func (x *ShutDownRequest) Reset() {
+	*x = ShutDownRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_proto_msgTypes[2]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ShutDownRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ShutDownRequest) ProtoMessage() {}
+
+func (x *ShutDownRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_proto_msgTypes[2]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ShutDownRequest.ProtoReflect.Descriptor instead.
+func (*ShutDownRequest) Descriptor() ([]byte, []int) {
+	return file_github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_proto_rawDescGZIP(), []int{2}
+}
+
+type ShutdownResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+}
+
+func (x *ShutdownResponse) Reset() {
+	*x = ShutdownResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_proto_msgTypes[3]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ShutdownResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ShutdownResponse) ProtoMessage() {}
+
+func (x *ShutdownResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_proto_msgTypes[3]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ShutdownResponse.ProtoReflect.Descriptor instead.
+func (*ShutdownResponse) Descriptor() ([]byte, []int) {
+	return file_github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_proto_rawDescGZIP(), []int{3}
+}
+
 var File_github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_proto protoreflect.FileDescriptor
 
 var file_github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_proto_rawDesc = []byte{
@@ -242,23 +318,32 @@ var file_github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredicto
 	0x01, 0x28, 0x09, 0x52, 0x03, 0x6b, 0x65, 0x79, 0x12, 0x14, 0x0a, 0x05, 0x76, 0x61, 0x6c, 0x75,
 	0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0c, 0x52, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x3a, 0x02,
 	0x38, 0x01, 0x22, 0x16, 0x0a, 0x14, 0x42, 0x61, 0x74, 0x63, 0x68, 0x50, 0x72, 0x65, 0x64, 0x69,
-	0x63, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x32, 0xf9, 0x01, 0x0a, 0x05, 0x42,
-	0x61, 0x74, 0x63, 0x68, 0x12, 0xb1, 0x01, 0x0a, 0x0c, 0x42, 0x61, 0x74, 0x63, 0x68, 0x50, 0x72,
-	0x65, 0x64, 0x69, 0x63, 0x74, 0x12, 0x4e, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63,
-	0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65,
-	0x6c, 0x61, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x62,
-	0x61, 0x74, 0x63, 0x68, 0x70, 0x72, 0x65, 0x64, 0x69, 0x63, 0x74, 0x6f, 0x72, 0x64, 0x2e, 0x76,
-	0x31, 0x2e, 0x42, 0x61, 0x74, 0x63, 0x68, 0x50, 0x72, 0x65, 0x64, 0x69, 0x63, 0x74, 0x52, 0x65,
-	0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x4f, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63,
-	0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65,
-	0x6c, 0x61, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x62,
-	0x61, 0x74, 0x63, 0x68, 0x70, 0x72, 0x65, 0x64, 0x69, 0x63, 0x74, 0x6f, 0x72, 0x64, 0x2e, 0x76,
-	0x31, 0x2e, 0x42, 0x61, 0x74, 0x63, 0x68, 0x50, 0x72, 0x65, 0x64, 0x69, 0x63, 0x74, 0x52, 0x65,
-	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x3c, 0x0a, 0x08, 0x53, 0x68, 0x75, 0x74,
-	0x64, 0x6f, 0x77, 0x6e, 0x12, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72,
-	0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x1a, 0x16, 0x2e, 0x67,
-	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45,
-	0x6d, 0x70, 0x74, 0x79, 0x22, 0x00, 0x42, 0x3b, 0x5a, 0x39, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62,
+	0x63, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x11, 0x0a, 0x0f, 0x53, 0x68,
+	0x75, 0x74, 0x44, 0x6f, 0x77, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x22, 0x12, 0x0a,
+	0x10, 0x53, 0x68, 0x75, 0x74, 0x64, 0x6f, 0x77, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
+	0x65, 0x32, 0xe2, 0x02, 0x0a, 0x05, 0x42, 0x61, 0x74, 0x63, 0x68, 0x12, 0xb1, 0x01, 0x0a, 0x0c,
+	0x42, 0x61, 0x74, 0x63, 0x68, 0x50, 0x72, 0x65, 0x64, 0x69, 0x63, 0x74, 0x12, 0x4e, 0x2e, 0x67,
+	0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72,
+	0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x61, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72,
+	0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x62, 0x61, 0x74, 0x63, 0x68, 0x70, 0x72, 0x65, 0x64, 0x69,
+	0x63, 0x74, 0x6f, 0x72, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x42, 0x61, 0x74, 0x63, 0x68, 0x50, 0x72,
+	0x65, 0x64, 0x69, 0x63, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x4f, 0x2e, 0x67,
+	0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72,
+	0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x61, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72,
+	0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x62, 0x61, 0x74, 0x63, 0x68, 0x70, 0x72, 0x65, 0x64, 0x69,
+	0x63, 0x74, 0x6f, 0x72, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x42, 0x61, 0x74, 0x63, 0x68, 0x50, 0x72,
+	0x65, 0x64, 0x69, 0x63, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12,
+	0xa4, 0x01, 0x0a, 0x08, 0x53, 0x68, 0x75, 0x74, 0x64, 0x6f, 0x77, 0x6e, 0x12, 0x4a, 0x2e, 0x67,
+	0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72,
+	0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x61, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72,
+	0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x62, 0x61, 0x74, 0x63, 0x68, 0x70, 0x72, 0x65, 0x64, 0x69,
+	0x63, 0x74, 0x6f, 0x72, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x53, 0x68, 0x75, 0x74, 0x44, 0x6f, 0x77,
+	0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x4a, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75,
+	0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d,
+	0x6f, 0x64, 0x65, 0x6c, 0x61, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
+	0x73, 0x2e, 0x62, 0x61, 0x74, 0x63, 0x68, 0x70, 0x72, 0x65, 0x64, 0x69, 0x63, 0x74, 0x6f, 0x72,
+	0x64, 0x2e, 0x76, 0x31, 0x2e, 0x53, 0x68, 0x75, 0x74, 0x44, 0x6f, 0x77, 0x6e, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x22, 0x00, 0x42, 0x3b, 0x5a, 0x39, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62,
 	0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2f, 0x6d, 0x6f,
 	0x64, 0x65, 0x6c, 0x61, 0x61, 0x70, 0x69, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73,
 	0x2f, 0x62, 0x61, 0x74, 0x63, 0x68, 0x70, 0x72, 0x65, 0x64, 0x69, 0x63, 0x74, 0x6f, 0x72, 0x64,
@@ -277,29 +362,30 @@ func file_github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredict
 	return file_github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_proto_rawDescData
 }
 
-var file_github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
+var file_github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
 var file_github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_proto_goTypes = []interface{}{
 	(*BatchPredictRequest)(nil),     // 0: github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest
 	(*BatchPredictResponse)(nil),    // 1: github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictResponse
-	nil,                             // 2: github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest.FromSecretEntry
-	nil,                             // 3: github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest.ToSecretEntry
-	(*v1alpha1.Prediction)(nil),     // 4: github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction
-	(*v1alpha11.VirtualBucket)(nil), // 5: github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	(*v1alpha11.Connection)(nil),    // 6: github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
-	(*empty.Empty)(nil),             // 7: google.protobuf.Empty
+	(*ShutDownRequest)(nil),         // 2: github.com.metaprov.modelaapi.services.batchpredictord.v1.ShutDownRequest
+	(*ShutdownResponse)(nil),        // 3: github.com.metaprov.modelaapi.services.batchpredictord.v1.ShutdownResponse
+	nil,                             // 4: github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest.FromSecretEntry
+	nil,                             // 5: github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest.ToSecretEntry
+	(*v1alpha1.Prediction)(nil),     // 6: github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction
+	(*v1alpha11.VirtualBucket)(nil), // 7: github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	(*v1alpha11.Connection)(nil),    // 8: github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
 }
 var file_github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_proto_depIdxs = []int32{
-	4, // 0: github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest.prediction:type_name -> github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction
-	5, // 1: github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest.fromBucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	6, // 2: github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest.fromConnection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
-	2, // 3: github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest.fromSecret:type_name -> github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest.FromSecretEntry
-	5, // 4: github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest.targetBucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	6, // 5: github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest.toConnection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
-	3, // 6: github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest.toSecret:type_name -> github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest.ToSecretEntry
+	6, // 0: github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest.prediction:type_name -> github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction
+	7, // 1: github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest.fromBucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	8, // 2: github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest.fromConnection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	4, // 3: github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest.fromSecret:type_name -> github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest.FromSecretEntry
+	7, // 4: github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest.targetBucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	8, // 5: github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest.toConnection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	5, // 6: github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest.toSecret:type_name -> github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest.ToSecretEntry
 	0, // 7: github.com.metaprov.modelaapi.services.batchpredictord.v1.Batch.BatchPredict:input_type -> github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest
-	7, // 8: github.com.metaprov.modelaapi.services.batchpredictord.v1.Batch.Shutdown:input_type -> google.protobuf.Empty
+	2, // 8: github.com.metaprov.modelaapi.services.batchpredictord.v1.Batch.Shutdown:input_type -> github.com.metaprov.modelaapi.services.batchpredictord.v1.ShutDownRequest
 	1, // 9: github.com.metaprov.modelaapi.services.batchpredictord.v1.Batch.BatchPredict:output_type -> github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictResponse
-	7, // 10: github.com.metaprov.modelaapi.services.batchpredictord.v1.Batch.Shutdown:output_type -> google.protobuf.Empty
+	2, // 10: github.com.metaprov.modelaapi.services.batchpredictord.v1.Batch.Shutdown:output_type -> github.com.metaprov.modelaapi.services.batchpredictord.v1.ShutDownRequest
 	9, // [9:11] is the sub-list for method output_type
 	7, // [7:9] is the sub-list for method input_type
 	7, // [7:7] is the sub-list for extension type_name
@@ -339,6 +425,30 @@ func file_github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredict
 				return nil
 			}
 		}
+		file_github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ShutDownRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ShutdownResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -346,7 +456,7 @@ func file_github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredict
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   4,
+			NumMessages:   6,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
@@ -375,7 +485,7 @@ type BatchClient interface {
 	// Ingest a new dataset to the store, the store creates a new layouts and set of keys
 	// for the new dataset
 	BatchPredict(ctx context.Context, in *BatchPredictRequest, opts ...grpc.CallOption) (*BatchPredictResponse, error)
-	Shutdown(ctx context.Context, in *empty.Empty, opts ...grpc.CallOption) (*empty.Empty, error)
+	Shutdown(ctx context.Context, in *ShutDownRequest, opts ...grpc.CallOption) (*ShutDownRequest, error)
 }
 
 type batchClient struct {
@@ -395,8 +505,8 @@ func (c *batchClient) BatchPredict(ctx context.Context, in *BatchPredictRequest,
 	return out, nil
 }
 
-func (c *batchClient) Shutdown(ctx context.Context, in *empty.Empty, opts ...grpc.CallOption) (*empty.Empty, error) {
-	out := new(empty.Empty)
+func (c *batchClient) Shutdown(ctx context.Context, in *ShutDownRequest, opts ...grpc.CallOption) (*ShutDownRequest, error) {
+	out := new(ShutDownRequest)
 	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.batchpredictord.v1.Batch/Shutdown", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -409,7 +519,7 @@ type BatchServer interface {
 	// Ingest a new dataset to the store, the store creates a new layouts and set of keys
 	// for the new dataset
 	BatchPredict(context.Context, *BatchPredictRequest) (*BatchPredictResponse, error)
-	Shutdown(context.Context, *empty.Empty) (*empty.Empty, error)
+	Shutdown(context.Context, *ShutDownRequest) (*ShutDownRequest, error)
 }
 
 // UnimplementedBatchServer can be embedded to have forward compatible implementations.
@@ -419,7 +529,7 @@ type UnimplementedBatchServer struct {
 func (*UnimplementedBatchServer) BatchPredict(context.Context, *BatchPredictRequest) (*BatchPredictResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method BatchPredict not implemented")
 }
-func (*UnimplementedBatchServer) Shutdown(context.Context, *empty.Empty) (*empty.Empty, error) {
+func (*UnimplementedBatchServer) Shutdown(context.Context, *ShutDownRequest) (*ShutDownRequest, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Shutdown not implemented")
 }
 
@@ -446,7 +556,7 @@ func _Batch_BatchPredict_Handler(srv interface{}, ctx context.Context, dec func(
 }
 
 func _Batch_Shutdown_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(empty.Empty)
+	in := new(ShutDownRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -458,7 +568,7 @@ func _Batch_Shutdown_Handler(srv interface{}, ctx context.Context, dec func(inte
 		FullMethod: "/github.com.metaprov.modelaapi.services.batchpredictord.v1.Batch/Shutdown",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(BatchServer).Shutdown(ctx, req.(*empty.Empty))
+		return srv.(BatchServer).Shutdown(ctx, req.(*ShutDownRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }

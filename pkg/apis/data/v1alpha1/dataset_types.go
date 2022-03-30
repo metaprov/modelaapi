@@ -135,11 +135,11 @@ type DatasetSpec struct {
 	// Syntactic indicates if we want to generate this dataset based on the data source
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Syntactic *bool `json:"syntactic,omitempty" protobuf:"varint,11,opt,name=syntactic"`
+	Synthetic *bool `json:"synthetic,omitempty" protobuf:"varint,11,opt,name=synthetic"`
 	// If syntactic is true, indicates how many rows to generate
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
-	SyntacticRows *int32 `json:"syntacticRows" protobuf:"varint,12,opt,name=syntacticRows"`
+	SyntheticRows *int32 `json:"syntheticRows" protobuf:"varint,12,opt,name=syntheticRows"`
 	// Define the data location. The operator will copy the data from this location into the live location.
 	// The datafiles are initially uploaded to this location.
 	// +kubebuilder:validation:Optional

@@ -374,12 +374,12 @@ spec:
                 description: If true, we should take a snapshot of the databases in
                   order to create a dataset
                 type: boolean
-              syntactic:
+              synthetic:
                 default: false
                 description: Syntactic indicates if we want to generate this dataset
                   based on the data source
                 type: boolean
-              syntacticRows:
+              syntheticRows:
                 default: 0
                 description: If syntactic is true, indicates how many rows to generate
                 format: int32

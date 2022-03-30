@@ -1566,12 +1566,12 @@ message DatasetSpec {
   // Syntactic indicates if we want to generate this dataset based on the data source
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool syntactic = 11;
+  optional bool synthetic = 11;
 
   // If syntactic is true, indicates how many rows to generate
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
-  optional int32 syntacticRows = 12;
+  optional int32 syntheticRows = 12;
 
   // Define the data location. The operator will copy the data from this location into the live location.
   // The datafiles are initially uploaded to this location.

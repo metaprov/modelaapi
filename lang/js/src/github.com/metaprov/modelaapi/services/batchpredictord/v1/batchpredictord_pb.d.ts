@@ -71,3 +71,31 @@ export namespace BatchPredictResponse {
   }
 }
 
+export class ShutDownRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ShutDownRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ShutDownRequest): ShutDownRequest.AsObject;
+  static serializeBinaryToWriter(message: ShutDownRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ShutDownRequest;
+  static deserializeBinaryFromReader(message: ShutDownRequest, reader: jspb.BinaryReader): ShutDownRequest;
+}
+
+export namespace ShutDownRequest {
+  export type AsObject = {
+  }
+}
+
+export class ShutdownResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ShutdownResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ShutdownResponse): ShutdownResponse.AsObject;
+  static serializeBinaryToWriter(message: ShutdownResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ShutdownResponse;
+  static deserializeBinaryFromReader(message: ShutdownResponse, reader: jspb.BinaryReader): ShutdownResponse;
+}
+
+export namespace ShutdownResponse {
+  export type AsObject = {
+  }
+}
+

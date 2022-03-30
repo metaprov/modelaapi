@@ -1738,13 +1738,13 @@ func (in *DatasetSpec) DeepCopyInto(out *DatasetSpec) {
 		*out = new(bool)
 		**out = **in
 	}
-	if in.Syntactic != nil {
-		in, out := &in.Syntactic, &out.Syntactic
+	if in.Synthetic != nil {
+		in, out := &in.Synthetic, &out.Synthetic
 		*out = new(bool)
 		**out = **in
 	}
-	if in.SyntacticRows != nil {
-		in, out := &in.SyntacticRows, &out.SyntacticRows
+	if in.SyntheticRows != nil {
+		in, out := &in.SyntheticRows, &out.SyntheticRows
 		*out = new(int32)
 		**out = **in
 	}
