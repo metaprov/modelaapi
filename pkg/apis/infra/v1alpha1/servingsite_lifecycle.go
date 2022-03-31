@@ -233,7 +233,7 @@ func (r *ServingSite) Archived() bool {
 func (servingsite *ServingSite) JobRole() *rbacv1.Role {
 	return &rbacv1.Role{
 		ObjectMeta: metav1.ObjectMeta{
-			Name:      catalog.LabJobRunnerRole,
+			Name:      catalog.ServingSiteJobRunnerRole,
 			Namespace: servingsite.Name,
 		},
 		Rules: []rbacv1.PolicyRule{
@@ -259,14 +259,14 @@ func (servingsite *ServingSite) JobRole() *rbacv1.Role {
 func (servingsite *ServingSite) JobRoleBinding() *rbacv1.RoleBinding {
 	return &rbacv1.RoleBinding{
 		ObjectMeta: metav1.ObjectMeta{
-			Name:      catalog.LabJobRunnerRoleBinding,
+			Name:      catalog.ServingSiteJobRunnerRoleBinding,
 			Namespace: servingsite.Name,
 		},
 		Subjects: []rbacv1.Subject{
 			{
 				Kind:      "ServiceAccount",
 				APIGroup:  "",
-				Name:      catalog.LabJobRunnerSa,
+				Name:      catalog.ServingSiteJobRunnerSa,
 				Namespace: servingsite.Name,
 			},
 		},
@@ -281,7 +281,7 @@ func (servingsite *ServingSite) JobRoleBinding() *rbacv1.RoleBinding {
 func (servingsite *ServingSite) ServiceAccount() *corev1.ServiceAccount {
 	return &corev1.ServiceAccount{
 		ObjectMeta: metav1.ObjectMeta{
-			Name:      catalog.LabJobRunnerSa,
+			Name:      catalog.ServingSiteJobRunnerSa,
 			Namespace: servingsite.Name,
 		},
 	}

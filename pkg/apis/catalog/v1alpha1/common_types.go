@@ -31,7 +31,7 @@ const (
 	LabJobRunnerRoleBinding string = "lab-job-runner-binding"
 
 	ServingSiteJobRunnerRole        string = "servingsite-job-runner"
-	SerbingSiteJobRunnerSa          string = "servingsite-job-sa"
+	ServingSiteJobRunnerSa          string = "servingsite-job-sa"
 	ServingSiteJobRunnerRoleBinding string = "servingsite-job-runner-binding"
 )
 
