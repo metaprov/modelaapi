@@ -21,8 +21,8 @@ class BatchStub(object):
                 )
         self.Shutdown = channel.unary_unary(
                 '/github.com.metaprov.modelaapi.services.batchpredictord.v1.Batch/Shutdown',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_batchpredictord_dot_v1_dot_batchpredictord__pb2.ShutDownRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_batchpredictord_dot_v1_dot_batchpredictord__pb2.ShutDownRequest.FromString,
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_batchpredictord_dot_v1_dot_batchpredictord__pb2.ShutdownRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_batchpredictord_dot_v1_dot_batchpredictord__pb2.ShutdownResponse.FromString,
                 )
 
 
@@ -53,8 +53,8 @@ def add_BatchServicer_to_server(servicer, server):
             ),
             'Shutdown': grpc.unary_unary_rpc_method_handler(
                     servicer.Shutdown,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_batchpredictord_dot_v1_dot_batchpredictord__pb2.ShutDownRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_batchpredictord_dot_v1_dot_batchpredictord__pb2.ShutDownRequest.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_batchpredictord_dot_v1_dot_batchpredictord__pb2.ShutdownRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_batchpredictord_dot_v1_dot_batchpredictord__pb2.ShutdownResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -95,7 +95,7 @@ class Batch(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.batchpredictord.v1.Batch/Shutdown',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_batchpredictord_dot_v1_dot_batchpredictord__pb2.ShutDownRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_batchpredictord_dot_v1_dot_batchpredictord__pb2.ShutDownRequest.FromString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_batchpredictord_dot_v1_dot_batchpredictord__pb2.ShutdownRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_batchpredictord_dot_v1_dot_batchpredictord__pb2.ShutdownResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

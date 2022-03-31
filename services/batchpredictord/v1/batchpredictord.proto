@@ -22,7 +22,7 @@ message BatchPredictResponse {
 
 }
 
-message ShutDownRequest {}
+message ShutdownRequest {}
 message ShutdownResponse{}
 
 
@@ -32,5 +32,5 @@ service Batch {
     // Ingest a new dataset to the store, the store creates a new layouts and set of keys
     // for the new dataset
     rpc BatchPredict(BatchPredictRequest) returns (BatchPredictResponse) {}
-    rpc Shutdown(ShutDownRequest) returns (ShutDownRequest) {}
+    rpc Shutdown(ShutdownRequest) returns (ShutdownResponse) {}
 }

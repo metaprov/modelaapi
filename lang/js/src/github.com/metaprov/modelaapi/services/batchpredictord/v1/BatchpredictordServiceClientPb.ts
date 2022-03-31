@@ -81,29 +81,29 @@ export class BatchClient {
   methodInfoShutdown = new grpcWeb.MethodDescriptor(
     '/github.com.metaprov.modelaapi.services.batchpredictord.v1.Batch/Shutdown',
     grpcWeb.MethodType.UNARY,
-    github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_pb.ShutDownRequest,
-    github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_pb.ShutDownRequest,
-    (request: github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_pb.ShutDownRequest) => {
+    github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_pb.ShutdownRequest,
+    github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_pb.ShutdownResponse,
+    (request: github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_pb.ShutdownRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_pb.ShutDownRequest.deserializeBinary
+    github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_pb.ShutdownResponse.deserializeBinary
   );
 
   shutdown(
-    request: github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_pb.ShutDownRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_pb.ShutDownRequest>;
+    request: github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_pb.ShutdownRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_pb.ShutdownResponse>;
 
   shutdown(
-    request: github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_pb.ShutDownRequest,
+    request: github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_pb.ShutdownRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_pb.ShutDownRequest) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_pb.ShutDownRequest>;
+               response: github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_pb.ShutdownResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_pb.ShutdownResponse>;
 
   shutdown(
-    request: github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_pb.ShutDownRequest,
+    request: github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_pb.ShutdownRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_pb.ShutDownRequest) => void) {
+               response: github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_pb.ShutdownResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
