@@ -665,6 +665,18 @@ message CsvFileSpec {
   optional int32 indexColumn = 14;
 }
 
+// Spec for the data input for the prediction
+message DataInputSpec {
+  // Location of the generated data
+  // +kubebuilder:validation:Optional
+  optional DataLocation location = 2;
+
+  // Format is the format of the input data
+  // +kubebuilder:default:="csv"
+  // +kubebuilder:validation:Optional
+  optional string format = 3;
+}
+
 // data reference contain pointers to the actual data objects
 message DataLocation {
   // +kubebuilder:default:="object"

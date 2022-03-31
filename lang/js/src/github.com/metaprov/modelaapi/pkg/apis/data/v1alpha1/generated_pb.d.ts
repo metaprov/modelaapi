@@ -747,6 +747,30 @@ export namespace CsvFileSpec {
   }
 }
 
+export class DataInputSpec extends jspb.Message {
+  getLocation(): DataLocation | undefined;
+  setLocation(value?: DataLocation): DataInputSpec;
+  hasLocation(): boolean;
+  clearLocation(): DataInputSpec;
+
+  getFormat(): string;
+  setFormat(value: string): DataInputSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DataInputSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: DataInputSpec): DataInputSpec.AsObject;
+  static serializeBinaryToWriter(message: DataInputSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DataInputSpec;
+  static deserializeBinaryFromReader(message: DataInputSpec, reader: jspb.BinaryReader): DataInputSpec;
+}
+
+export namespace DataInputSpec {
+  export type AsObject = {
+    location?: DataLocation.AsObject,
+    format: string,
+  }
+}
+
 export class DataLocation extends jspb.Message {
   getType(): string;
   setType(value: string): DataLocation;

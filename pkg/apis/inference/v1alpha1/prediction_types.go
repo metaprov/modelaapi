@@ -97,7 +97,7 @@ type PredictionSpec struct {
 	// +kubebuilder:default:=""
 	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,5,opt,name=datasetName"`
 	// Input is the location of the input file if not using a dataset
-	Input data.DataLocation `json:"input,omitempty" protobuf:"bytes,6,opt,name=input"`
+	Input data.DataInputSpec `json:"input,omitempty" protobuf:"bytes,6,opt,name=input"`
 	// Output is the location of the output file.
 	// +kubebuilder:validation:Optional
 	Output data.DataOutputSpec `json:"output,omitempty" protobuf:"bytes,7,opt,name=output"`

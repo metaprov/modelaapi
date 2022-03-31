@@ -608,7 +608,7 @@ message PredictionSpec {
   optional string datasetName = 5;
 
   // Input is the location of the input file if not using a dataset
-  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation input = 6;
+  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec input = 6;
 
   // Output is the location of the output file.
   // +kubebuilder:validation:Optional

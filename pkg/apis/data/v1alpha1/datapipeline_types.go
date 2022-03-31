@@ -125,6 +125,17 @@ type DataPipelineStatus struct {
 	Conditions []DataPipelineCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,5,rep,name=conditions"`
 }
 
+// Spec for the data input for the prediction
+type DataInputSpec struct {
+	// Location of the generated data
+	// +kubebuilder:validation:Optional
+	Location *DataLocation `json:"location,omitempty" protobuf:"bytes,2,opt,name=location"`
+	// Format is the format of the input data
+	// +kubebuilder:default:="csv"
+	// +kubebuilder:validation:Optional
+	Format *catalog.DatastoreType `json:"format,omitempty" protobuf:"bytes,3,opt,name=format"`
+}
+
 // DataOutputSpec is the definition of the out file.
 type DataOutputSpec struct {
 	// DatasetName is the name of the dataset that will be created. if nil, the system will not create the dataset.

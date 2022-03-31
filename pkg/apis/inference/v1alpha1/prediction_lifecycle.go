@@ -125,11 +125,11 @@ func (prediction *Prediction) Key() string {
 }
 
 func (prediction *Prediction) LiveKey() string {
-	return *prediction.Spec.Input.Path
+	return *prediction.Spec.Input.Location.Path
 }
 
 func (prediction *Prediction) ArchiveKey() string {
-	return strings.Replace(*prediction.Spec.Input.Path, "/live/", "/archive/", -1)
+	return strings.Replace(*prediction.Spec.Input.Location.Path, "/live/", "/archive/", -1)
 }
 
 func ParsePredictionYaml(content []byte) (*Prediction, error) {
