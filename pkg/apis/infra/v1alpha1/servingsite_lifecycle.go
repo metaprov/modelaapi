@@ -273,7 +273,7 @@ func (servingsite *ServingSite) JobRoleBinding() *rbacv1.RoleBinding {
 		RoleRef: rbacv1.RoleRef{
 			APIGroup: "rbac.authorization.k8s.io",
 			Kind:     "Role",
-			Name:     catalog.LabJobRunnerRole,
+			Name:     catalog.ServingSiteJobRunnerRole,
 		},
 	}
 }
