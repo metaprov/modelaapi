@@ -422,5 +422,48 @@ export class GRPCInferenceServiceClient {
     this.methodInfoPredict);
   }
 
+  methodInfoShutdown = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService/Shutdown',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.ServerShutdownRequest,
+    github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.ServerShutdownResponse,
+    (request: github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.ServerShutdownRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.ServerShutdownResponse.deserializeBinary
+  );
+
+  shutdown(
+    request: github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.ServerShutdownRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.ServerShutdownResponse>;
+
+  shutdown(
+    request: github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.ServerShutdownRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.ServerShutdownResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.ServerShutdownResponse>;
+
+  shutdown(
+    request: github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.ServerShutdownRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.ServerShutdownResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService/Shutdown',
+        request,
+        metadata || {},
+        this.methodInfoShutdown,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService/Shutdown',
+    request,
+    metadata || {},
+    this.methodInfoShutdown);
+  }
+
 }
 

@@ -62,6 +62,11 @@ class GRPCInferenceServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.PredictRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.PredictResponse.FromString,
                 )
+        self.Shutdown = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService/Shutdown',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ServerShutdownRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ServerShutdownResponse.FromString,
+                )
 
 
 class GRPCInferenceServiceServicer(object):
@@ -138,6 +143,12 @@ class GRPCInferenceServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def Shutdown(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_GRPCInferenceServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -185,6 +196,11 @@ def add_GRPCInferenceServiceServicer_to_server(servicer, server):
                     servicer.Predict,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.PredictRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.PredictResponse.SerializeToString,
+            ),
+            'Shutdown': grpc.unary_unary_rpc_method_handler(
+                    servicer.Shutdown,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ServerShutdownRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ServerShutdownResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -349,5 +365,22 @@ class GRPCInferenceService(object):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService/Predict',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.PredictRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.PredictResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Shutdown(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService/Shutdown',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ServerShutdownRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ServerShutdownResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

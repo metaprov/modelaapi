@@ -5,6 +5,34 @@ import * as google_api_annotations_pb from '../../../../../../google/api/annotat
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 
 
+export class ServerShutdownRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ServerShutdownRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ServerShutdownRequest): ServerShutdownRequest.AsObject;
+  static serializeBinaryToWriter(message: ServerShutdownRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ServerShutdownRequest;
+  static deserializeBinaryFromReader(message: ServerShutdownRequest, reader: jspb.BinaryReader): ServerShutdownRequest;
+}
+
+export namespace ServerShutdownRequest {
+  export type AsObject = {
+  }
+}
+
+export class ServerShutdownResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ServerShutdownResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ServerShutdownResponse): ServerShutdownResponse.AsObject;
+  static serializeBinaryToWriter(message: ServerShutdownResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ServerShutdownResponse;
+  static deserializeBinaryFromReader(message: ServerShutdownResponse, reader: jspb.BinaryReader): ServerShutdownResponse;
+}
+
+export namespace ServerShutdownResponse {
+  export type AsObject = {
+  }
+}
+
 export class ServerLiveRequest extends jspb.Message {
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ServerLiveRequest.AsObject;

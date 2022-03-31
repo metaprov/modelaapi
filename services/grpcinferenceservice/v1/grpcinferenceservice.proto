@@ -102,7 +102,13 @@ service GRPCInferenceService
       body: "*"
     };
   }
+
+  rpc Shutdown(ServerShutdownRequest) returns (ServerShutdownResponse) {}
 }
+
+
+message ServerShutdownRequest {}
+message ServerShutdownResponse {}
 
 message ServerLiveRequest {}
 
