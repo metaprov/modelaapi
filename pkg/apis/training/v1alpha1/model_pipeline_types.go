@@ -2,7 +2,6 @@ package v1alpha1
 
 import (
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
-	data "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
@@ -82,10 +81,6 @@ type ModelPipelineSpec struct {
 	// Deployment stage define how to place the model into production.
 	// +kubebuilder:validation:Optional
 	Release ReleaseStageSpec `json:"release,omitempty" protobuf:"bytes,10,opt,name=release"`
-	// Folder for the pipeline and pipeline run artifacts.
-	// The folder contains all the study artifacts - metadata, reports, profile,models
-	// +kubebuilder:validation:Optional
-	Location data.DataLocation `json:"location,omitempty" protobuf:"bytes,11,opt,name=location"`
 	// Schedule for running the pipeline
 	// +kubebuilder:validation:Optional
 	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,12,opt,name=schedule"`
@@ -113,9 +108,6 @@ type ModelPipelineSpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Paused *bool `json:"paused,omitempty" protobuf:"bytes,18,opt,name=paused"`
-	// Resource define the hardware resources req.
-	// +kubebuilder:validation:Optional
-	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,19,opt,name=resources"`
 }
 
 //DataStageSpec is the desired state of the data preprocessing step of the pipeline.
@@ -132,16 +124,12 @@ type DataStageSpec struct {
 	// +kubebuilder:default =""
 	// +kubebuilder:validation:Optional
 	DataPipelineName *string `json:"dataPipelineName,omitempty" protobuf:"varint,3,opt,name=datapipelineName"`
-	// The data source name for the data in the location. The data source will be used to create a new dataset for this pipeline
-	// based on the file in the location.
-	// +kubebuilder:default =""
-	// +kubebuilder:validation:Optional
-	DatasourceName *string `json:"datasourceName,omitempty" protobuf:"bytes,4,opt,name=datasourceName"`
 	// If Not null, run a docker image is used in order to generate the data.
 	// The data must reside in location after the container run
+	// Not supported in first release.
 	// +kubebuilder:default =""
 	// +kubebuilder:validation:Optional
-	DockerImage *string `json:"dockerImage,omitempty" protobuf:"bytes,5,opt,name=dockerImage"`
+	DockerImage *string `json:"dockerImage,omitempty" protobuf:"bytes,4,opt,name=dockerImage"`
 }
 
 // TrainingStageSpec is the desired state of the training step of the pipeline

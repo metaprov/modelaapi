@@ -552,9 +552,6 @@ export class DataStageSpec extends jspb.Message {
   getDatapipelinename(): string;
   setDatapipelinename(value: string): DataStageSpec;
 
-  getDatasourcename(): string;
-  setDatasourcename(value: string): DataStageSpec;
-
   getDockerimage(): string;
   setDockerimage(value: string): DataStageSpec;
 
@@ -571,7 +568,6 @@ export namespace DataStageSpec {
     enabled: boolean,
     labname: string,
     datapipelinename: string,
-    datasourcename: string,
     dockerimage: string,
   }
 }
@@ -2650,11 +2646,6 @@ export class ModelPipelineSpec extends jspb.Message {
   hasRelease(): boolean;
   clearRelease(): ModelPipelineSpec;
 
-  getLocation(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
-  setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): ModelPipelineSpec;
-  hasLocation(): boolean;
-  clearLocation(): ModelPipelineSpec;
-
   getSchedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
   setSchedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): ModelPipelineSpec;
   hasSchedule(): boolean;
@@ -2680,11 +2671,6 @@ export class ModelPipelineSpec extends jspb.Message {
   getPaused(): boolean;
   setPaused(value: boolean): ModelPipelineSpec;
 
-  getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
-  setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): ModelPipelineSpec;
-  hasResources(): boolean;
-  clearResources(): ModelPipelineSpec;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelPipelineSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelPipelineSpec): ModelPipelineSpec.AsObject;
@@ -2704,7 +2690,6 @@ export namespace ModelPipelineSpec {
     capacity?: CapacityStageSpec.AsObject,
     deployment?: DeploymentStageSpec.AsObject,
     release?: ReleaseStageSpec.AsObject,
-    location?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     owner: string,
     approveraccountname: string,
@@ -2712,7 +2697,6 @@ export namespace ModelPipelineSpec {
     baselinemodelname: string,
     priority: string,
     paused: boolean,
-    resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
   }
 }
 

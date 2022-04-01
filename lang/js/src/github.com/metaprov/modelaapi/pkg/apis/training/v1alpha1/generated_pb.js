@@ -7537,8 +7537,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataStageSpec.toO
     enabled: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
     labname: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     datapipelinename: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-    datasourcename: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    dockerimage: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
+    dockerimage: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -7588,10 +7587,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataStageSpec.des
       msg.setDatapipelinename(value);
       break;
     case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setDatasourcename(value);
-      break;
-    case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setDockerimage(value);
       break;
@@ -7649,13 +7644,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataStageSpec.ser
   if (f != null) {
     writer.writeString(
       4,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 5));
-  if (f != null) {
-    writer.writeString(
-      5,
       f
     );
   }
@@ -7771,10 +7759,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataStageSpec.pro
 
 
 /**
- * optional string datasourceName = 4;
+ * optional string dockerImage = 4;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataStageSpec.prototype.getDatasourcename = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataStageSpec.prototype.getDockerimage = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
@@ -7783,7 +7771,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataStageSpec.pro
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataStageSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataStageSpec.prototype.setDatasourcename = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataStageSpec.prototype.setDockerimage = function(value) {
   return jspb.Message.setField(this, 4, value);
 };
 
@@ -7792,7 +7780,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataStageSpec.pro
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataStageSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataStageSpec.prototype.clearDatasourcename = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataStageSpec.prototype.clearDockerimage = function() {
   return jspb.Message.setField(this, 4, undefined);
 };
 
@@ -7801,44 +7789,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataStageSpec.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataStageSpec.prototype.hasDatasourcename = function() {
-  return jspb.Message.getField(this, 4) != null;
-};
-
-
-/**
- * optional string dockerImage = 5;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataStageSpec.prototype.getDockerimage = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataStageSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataStageSpec.prototype.setDockerimage = function(value) {
-  return jspb.Message.setField(this, 5, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataStageSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataStageSpec.prototype.clearDockerimage = function() {
-  return jspb.Message.setField(this, 5, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataStageSpec.prototype.hasDockerimage = function() {
-  return jspb.Message.getField(this, 5) != null;
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
@@ -27025,15 +26977,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
     capacity: (f = msg.getCapacity()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CapacityStageSpec.toObject(includeInstance, f),
     deployment: (f = msg.getDeployment()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DeploymentStageSpec.toObject(includeInstance, f),
     release: (f = msg.getRelease()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReleaseStageSpec.toObject(includeInstance, f),
-    location: (f = msg.getLocation()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.toObject(includeInstance, f),
     schedule: (f = msg.getSchedule()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.toObject(includeInstance, f),
     owner: (f = jspb.Message.getField(msg, 13)) == null ? undefined : f,
     approveraccountname: (f = jspb.Message.getField(msg, 14)) == null ? undefined : f,
     notification: (f = msg.getNotification()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.toObject(includeInstance, f),
     baselinemodelname: (f = jspb.Message.getField(msg, 16)) == null ? undefined : f,
     priority: (f = jspb.Message.getField(msg, 17)) == null ? undefined : f,
-    paused: (f = jspb.Message.getBooleanField(msg, 18)) == null ? undefined : f,
-    resources: (f = msg.getResources()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.toObject(includeInstance, f)
+    paused: (f = jspb.Message.getBooleanField(msg, 18)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -27114,11 +27064,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReleaseStageSpec.deserializeBinaryFromReader);
       msg.setRelease(value);
       break;
-    case 11:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.deserializeBinaryFromReader);
-      msg.setLocation(value);
-      break;
     case 12:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.deserializeBinaryFromReader);
@@ -27148,11 +27093,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
     case 18:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setPaused(value);
-      break;
-    case 19:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.deserializeBinaryFromReader);
-      msg.setResources(value);
       break;
     default:
       reader.skipField();
@@ -27249,14 +27189,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
       proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReleaseStageSpec.serializeBinaryToWriter
     );
   }
-  f = message.getLocation();
-  if (f != null) {
-    writer.writeMessage(
-      11,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.serializeBinaryToWriter
-    );
-  }
   f = message.getSchedule();
   if (f != null) {
     writer.writeMessage(
@@ -27306,14 +27238,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
     writer.writeBool(
       18,
       f
-    );
-  }
-  f = message.getResources();
-  if (f != null) {
-    writer.writeMessage(
-      19,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.serializeBinaryToWriter
     );
   }
 };
@@ -27636,43 +27560,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation location = 11;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.getLocation = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation, 11));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.setLocation = function(value) {
-  return jspb.Message.setWrapperField(this, 11, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.clearLocation = function() {
-  return this.setLocation(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.hasLocation = function() {
-  return jspb.Message.getField(this, 11) != null;
-};
-
-
-/**
  * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 12;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule}
  */
@@ -27923,43 +27810,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.hasPaused = function() {
   return jspb.Message.getField(this, 18) != null;
-};
-
-
-/**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 19;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.getResources = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec, 19));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.setResources = function(value) {
-  return jspb.Message.setWrapperField(this, 19, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.clearResources = function() {
-  return this.setResources(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.hasResources = function() {
-  return jspb.Message.getField(this, 19) != null;
 };
 
 

@@ -350,17 +350,12 @@ message DataStageSpec {
   // +kubebuilder:validation:Optional
   optional string datapipelineName = 3;
 
-  // The data source name for the data in the location. The data source will be used to create a new dataset for this pipeline
-  // based on the file in the location.
-  // +kubebuilder:default =""
-  // +kubebuilder:validation:Optional
-  optional string datasourceName = 4;
-
   // If Not null, run a docker image is used in order to generate the data.
   // The data must reside in location after the container run
+  // Not supported in first release.
   // +kubebuilder:default =""
   // +kubebuilder:validation:Optional
-  optional string dockerImage = 5;
+  optional string dockerImage = 4;
 }
 
 message DeepEstimatorLayer {
@@ -1734,11 +1729,6 @@ message ModelPipelineSpec {
   // +kubebuilder:validation:Optional
   optional ReleaseStageSpec release = 10;
 
-  // Folder for the pipeline and pipeline run artifacts.
-  // The folder contains all the study artifacts - metadata, reports, profile,models
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation location = 11;
-
   // Schedule for running the pipeline
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 12;
@@ -1772,10 +1762,6 @@ message ModelPipelineSpec {
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool paused = 18;
-
-  // Resource define the hardware resources req.
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 19;
 }
 
 // ModelPipelineStatus define the observed state of the pipeline
