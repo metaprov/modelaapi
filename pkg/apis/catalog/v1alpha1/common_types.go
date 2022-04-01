@@ -1974,29 +1974,21 @@ type Images struct {
 	PublisherImage *string `json:"publisherImage,omitempty" protobuf:"bytes,3,opt,name=publisherImage"`
 }
 
-// +kubebuilder:validation:Enum="random";"split-column";"time";"random-stratified";"auto";"test-dataset";
-type RunOutcomeType string
-
-const (
-	RunOutcomeSuccess RunOutcomeType = "success"
-	RunOutcomeError   RunOutcomeType = "error"
-	RunOutcomeAborted RunOutcomeType = "aborted"
-)
-
 // Describe the last run status for objects which have runs (e.g. model pipeline)
 type LastRunStatus struct {
-	// the outcome of the last run
+	Name string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
+	// the status of the last run
 	// +kubebuilder:validation:Optional
-	Outcome RunOutcomeType `json:"outcome,omitempty" protobuf:"bytes,1,opt,name=outcome"`
+	Status string `json:"status,omitempty" protobuf:"bytes,2,opt,name=status"`
 	// The last run time
 	// +kubebuilder:validation:Optional
-	At *metav1.Time `json:"at,omitempty" protobuf:"bytes,2,opt,name=at"`
+	CompletionTime *metav1.Time `json:"completionTime,omitempty" protobuf:"bytes,3,opt,name=completionTime"`
 	// Last run duration in seconds
 	// +kubebuilder:validation:Optional
-	Duration int32 `json:"duration,omitempty" protobuf:"bytes,3,opt,name=duration"`
+	Duration int32 `json:"duration,omitempty" protobuf:"bytes,4,opt,name=duration"`
 	// Update in case of terminal failure
 	// Borrowed from cluster api controller
-	FailureReason *StatusError `json:"failureReason,omitempty" protobuf:"bytes,4,opt,name=failureReason"`
+	FailureReason *StatusError `json:"failureReason,omitempty" protobuf:"bytes,5,opt,name=failureReason"`
 	// Update in case of terminal failure message
-	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,5,opt,name=failureMessage"`
+	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,6,opt,name=failureMessage"`
 }

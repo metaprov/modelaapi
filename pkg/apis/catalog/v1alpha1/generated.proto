@@ -331,24 +331,26 @@ message IntParameter {
 
 // Describe the last run status for objects which have runs (e.g. model pipeline)
 message LastRunStatus {
-  // the outcome of the last run
+  optional string name = 1;
+
+  // the status of the last run
   // +kubebuilder:validation:Optional
-  optional string outcome = 1;
+  optional string status = 2;
 
   // The last run time
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time at = 2;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completionTime = 3;
 
   // Last run duration in seconds
   // +kubebuilder:validation:Optional
-  optional int32 duration = 3;
+  optional int32 duration = 4;
 
   // Update in case of terminal failure
   // Borrowed from cluster api controller
-  optional string failureReason = 4;
+  optional string failureReason = 5;
 
   // Update in case of terminal failure message
-  optional string failureMessage = 5;
+  optional string failureMessage = 6;
 }
 
 message Lib {

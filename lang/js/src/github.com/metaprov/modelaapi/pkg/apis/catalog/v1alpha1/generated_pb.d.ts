@@ -644,13 +644,16 @@ export namespace IntParameter {
 }
 
 export class LastRunStatus extends jspb.Message {
-  getOutcome(): string;
-  setOutcome(value: string): LastRunStatus;
+  getName(): string;
+  setName(value: string): LastRunStatus;
 
-  getAt(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setAt(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): LastRunStatus;
-  hasAt(): boolean;
-  clearAt(): LastRunStatus;
+  getStatus(): string;
+  setStatus(value: string): LastRunStatus;
+
+  getCompletiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setCompletiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): LastRunStatus;
+  hasCompletiontime(): boolean;
+  clearCompletiontime(): LastRunStatus;
 
   getDuration(): number;
   setDuration(value: number): LastRunStatus;
@@ -671,8 +674,9 @@ export class LastRunStatus extends jspb.Message {
 
 export namespace LastRunStatus {
   export type AsObject = {
-    outcome: string,
-    at?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    name: string,
+    status: string,
+    completiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     duration: number,
     failurereason: string,
     failuremessage: string,

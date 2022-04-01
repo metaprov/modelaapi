@@ -311,16 +311,12 @@ func (in *Report) IsFailed() bool {
 // Return the state of the run as RunStatus
 func (run *Report) RunStatus() *catalog.LastRunStatus {
 	result := &catalog.LastRunStatus{
-		At:             run.Status.StartTime,
+		CompletionTime: run.Status.EndTime,
 		Duration:       int32(run.Status.EndTime.Unix() - run.Status.StartTime.Unix()),
 		FailureReason:  run.Status.FailureReason,
 		FailureMessage: run.Status.FailureMessage,
 	}
-	if run.IsFailed() {
-		result.Outcome = catalog.RunOutcomeError
-	} else {
-		result.Outcome = catalog.RunOutcomeSuccess
-	}
+	result.Status = string(run.Status.Phase)
 	return result
 
 }

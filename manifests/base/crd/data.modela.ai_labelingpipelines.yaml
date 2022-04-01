@@ -262,7 +262,7 @@ spec:
               lastRun:
                 description: Last run is the last time a data pipeline run was created
                 properties:
-                  at:
+                  completionTime:
                     description: The last run time
                     format: date-time
                     type: string
@@ -277,15 +277,10 @@ spec:
                     description: Update in case of terminal failure Borrowed from
                       cluster api controller
                     type: string
-                  outcome:
-                    description: the outcome of the last run
-                    enum:
-                    - random
-                    - split-column
-                    - time
-                    - random-stratified
-                    - auto
-                    - test-dataset
+                  name:
+                    type: string
+                  status:
+                    description: the status of the last run
                     type: string
                 type: object
               lastUpdated:

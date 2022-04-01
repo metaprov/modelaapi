@@ -6972,11 +6972,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prot
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
-    outcome: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    at: (f = msg.getAt()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
-    duration: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-    failurereason: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    failuremessage: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
+    name: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    status: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    completiontime: (f = msg.getCompletiontime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    duration: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    failurereason: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    failuremessage: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -7015,22 +7016,26 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.dese
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setOutcome(value);
+      msg.setName(value);
       break;
     case 2:
-      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
-      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setAt(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setStatus(value);
       break;
     case 3:
+      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
+      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
+      msg.setCompletiontime(value);
+      break;
+    case 4:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setDuration(value);
       break;
-    case 4:
+    case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setFailurereason(value);
       break;
-    case 5:
+    case 6:
       var value = /** @type {string} */ (reader.readString());
       msg.setFailuremessage(value);
       break;
@@ -7070,24 +7075,24 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.seri
       f
     );
   }
-  f = message.getAt();
+  f = /** @type {string} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getCompletiontime();
   if (f != null) {
     writer.writeMessage(
-      2,
+      3,
       f,
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 3));
+  f = /** @type {number} */ (jspb.Message.getField(message, 4));
   if (f != null) {
     writer.writeInt32(
-      3,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 4));
-  if (f != null) {
-    writer.writeString(
       4,
       f
     );
@@ -7099,14 +7104,21 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.seri
       f
     );
   }
+  f = /** @type {string} */ (jspb.Message.getField(message, 6));
+  if (f != null) {
+    writer.writeString(
+      6,
+      f
+    );
+  }
 };
 
 
 /**
- * optional string outcome = 1;
+ * optional string name = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prototype.getOutcome = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -7115,7 +7127,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prot
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prototype.setOutcome = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prototype.setName = function(value) {
   return jspb.Message.setField(this, 1, value);
 };
 
@@ -7124,7 +7136,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prototype.clearOutcome = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prototype.clearName = function() {
   return jspb.Message.setField(this, 1, undefined);
 };
 
@@ -7133,36 +7145,35 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prototype.hasOutcome = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prototype.hasName = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time at = 2;
- * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
+ * optional string status = 2;
+ * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prototype.getAt = function() {
-  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
-    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 2));
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prototype.getStatus = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
- * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
+ * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prototype.setAt = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prototype.setStatus = function(value) {
+  return jspb.Message.setField(this, 2, value);
 };
 
 
 /**
- * Clears the message field making it undefined.
+ * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prototype.clearAt = function() {
-  return this.setAt(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prototype.clearStatus = function() {
+  return jspb.Message.setField(this, 2, undefined);
 };
 
 
@@ -7170,17 +7181,54 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prototype.hasAt = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prototype.hasStatus = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional int32 duration = 3;
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completionTime = 3;
+ * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prototype.getCompletiontime = function() {
+  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 3));
+};
+
+
+/**
+ * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prototype.setCompletiontime = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prototype.clearCompletiontime = function() {
+  return this.setCompletiontime(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prototype.hasCompletiontime = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional int32 duration = 4;
  * @return {number}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prototype.getDuration = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
 
@@ -7189,42 +7237,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prototype.setDuration = function(value) {
-  return jspb.Message.setField(this, 3, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prototype.clearDuration = function() {
-  return jspb.Message.setField(this, 3, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prototype.hasDuration = function() {
-  return jspb.Message.getField(this, 3) != null;
-};
-
-
-/**
- * optional string failureReason = 4;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prototype.getFailurereason = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prototype.setFailurereason = function(value) {
   return jspb.Message.setField(this, 4, value);
 };
 
@@ -7233,7 +7245,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prototype.clearFailurereason = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prototype.clearDuration = function() {
   return jspb.Message.setField(this, 4, undefined);
 };
 
@@ -7242,16 +7254,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prototype.hasFailurereason = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prototype.hasDuration = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * optional string failureMessage = 5;
+ * optional string failureReason = 5;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prototype.getFailuremessage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prototype.getFailurereason = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
@@ -7260,7 +7272,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prot
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prototype.setFailuremessage = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prototype.setFailurereason = function(value) {
   return jspb.Message.setField(this, 5, value);
 };
 
@@ -7269,7 +7281,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prototype.clearFailuremessage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prototype.clearFailurereason = function() {
   return jspb.Message.setField(this, 5, undefined);
 };
 
@@ -7278,8 +7290,44 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prototype.hasFailuremessage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prototype.hasFailurereason = function() {
   return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional string failureMessage = 6;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prototype.getFailuremessage = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prototype.setFailuremessage = function(value) {
+  return jspb.Message.setField(this, 6, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prototype.clearFailuremessage = function() {
+  return jspb.Message.setField(this, 6, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prototype.hasFailuremessage = function() {
+  return jspb.Message.getField(this, 6) != null;
 };
 
 
