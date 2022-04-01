@@ -28,7 +28,7 @@ GIT_ROOT=$(cd $(dirname ${BASH_SOURCE})/../../../../; pwd)
 echo $PROJECT_ROOT
 echo $GIT_ROOT
 # Generate server/<service>/(<service>.pb.go|<service>.pb.gw.go)
-PROTO_FILES=$(find $PROJECT_ROOT \( -name "*.proto" -and -path '*/services/*' -or -path '*/pkg/apis/*' -and -name "*.proto" \))
+PROTO_FILES=$(find $PROJECT_ROOT \( -name "*.proto" -and -not -path */gen/* -and -path '*/services/*' -or -path '*/pkg/apis/*' -and -not -path */gen/* -and -name "*.proto" \))
 
 # generate the api objects
 GOOGLE_PROTO_API_PATH=${PROJECT_ROOT}/common-protos
@@ -39,12 +39,15 @@ for i in ${PROTO_FILES}; do
      protoc \
         -I${PROJECT_ROOT} \
         -I/usr/local/include \
-        -I$GOPATH/src \
+        -I${PROJECT_ROOT}/hack \
+        -I${PROJECT_ROOT}/hack/gen \
         -I${GOOGLE_PROTO_API_PATH} \
         -I${GOGO_PROTOBUF_PATH} \
-        --grpc-gateway_out=logtostderr=true,allow_delete_body=true:$GIT_ROOT \
+        --grpc-gateway_out=logtostderr=true,allow_delete_body=true:${PROJECT_ROOT} \
         $i
         #--go_out=plugins=grpc:$GOPATH/src \
 
 done
+
+rsync -av gateway/github.com/metaprov/modelaapi/services/* services/
 

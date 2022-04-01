@@ -1940,9 +1940,9 @@ const (
 // Define the histogram data
 
 type HistogramData struct {
-	// The bins if this histogram describe conitunous variables
+	// The bins if this histogram describe continous variables
 	Bins []float64 `json:"bins,omitempty" protobuf:"bytes,1,rep,name=bins"`
-	// The set of values per beans
+	// The set of values per bin
 	Values []float64 `json:"values,omitempty" protobuf:"bytes,2,rep,name=values"`
 	// The name of the categories, one per bin is this a categorical histogram
 	// Empty is this is not a categorical variable.

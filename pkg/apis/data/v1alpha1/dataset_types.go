@@ -72,7 +72,7 @@ type DatasetCondition struct {
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=datasets,shortName=dset,singular=dataset,categories={data,modela,all}
 
-// Dataset represents a single batch of data
+// The Dataset object represents a chunk of data that has been stored in the system.
 type Dataset struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata" protobuf:"bytes,1,opt,name=metadata"`
@@ -89,89 +89,97 @@ type DatasetList struct {
 	Items           []Dataset `json:"items" protobuf:"bytes,2,rep,name=items"`
 }
 
-//DatasetSpec defines the desired state of a dataset
+// DatasetSpec defines the desired state of the dataset
 type DatasetSpec struct {
-	// The account name of the owner of this dataset
+	// The reference to the Account in the same namespace as the resource which created the object.
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,1,opt,name=owner"`
-	// VersionName is the data product version of the dataset
+	// The reference to the DataProductVersion resource that describes the version of the object
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:validation:Required
 	// +required
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,2,opt,name=versionName"`
-	// DataSourceName is the name of the data source which created this dataset. For example flat file
+	// The reference to the Data Source resource which exists in the same Data Product namespace as the object.
+	// The Data Source must represent the columns and the task type of the Dataset. The validation rules associated with
+	// the Data Source will be validated against the raw data of the Dataset once it is created
 	// +kubebuilder:validation:Required
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:default:=""
 	// +required
 	DataSourceName *string `json:"datasourceName,omitempty" protobuf:"bytes,3,opt,name=datasourceName"`
-	// User provided description
+	// User-provided description of the object
 	// +kubebuilder:validation:MaxLength=512
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,4,opt,name=description"`
-	// The display name
+	// User-provided display name of the object
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	DisplayName *string `json:"displayName,omitempty" protobuf:"bytes,5,opt,name=displayName"`
-	// If true, a dataset report should be generated for this dataset.
+	// Indicates if a PDF report containing the Dataset's profile should be generated
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
 	Reported *bool `json:"reported,omitempty" protobuf:"varint,7,opt,name=reported"`
-	// If true, we should take a snapshot of the databases in order to create a dataset
+	// Indicates if the resource controller has created a snapshot of the data in the case that it is being read
+	// directly from a database, and must be converted to a flat-file type such as a CSV as a result
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Snapshotted *bool `json:"snapshotted,omitempty" protobuf:"varint,8,opt,name=snapshotted"`
-	// If true, we should validate the dataset
+	// Indicates if the Dataset should be checked against the validation rules of its Data Source
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
 	Validated *bool `json:"validate,omitempty" protobuf:"varint,9,opt,name=validate"`
-	// Labeled indicates if this dataset is labeled or not.
+	// Indicates if the data is labeled or not
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
 	Labeled *bool `json:"labeled,omitempty" protobuf:"varint,10,opt,name=labeled"`
-	// Syntactic indicates if we want to generate this dataset based on the data source
+	// Indicates if synthetic data should be generated (not implemented as of the current release)
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Synthetic *bool `json:"synthetic,omitempty" protobuf:"varint,11,opt,name=synthetic"`
-	// If syntactic is true, indicates how many rows to generate
+	Synthetic *bool `json:"syntactic,omitempty" protobuf:"varint,11,opt,name=syntactic"`
+	// If `Synthetic` is set to true, indicates how many synthetic rows should be generated
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
-	SyntheticRows *int32 `json:"syntheticRows" protobuf:"varint,12,opt,name=syntheticRows"`
-	// Define the data location. The operator will copy the data from this location into the live location.
-	// The datafiles are initially uploaded to this location.
+	SyntheticRows *int32 `json:"syntacticRows" protobuf:"varint,12,opt,name=syntacticRows"`
+	// The location of the data file or database query which holds the raw data of the Dataset. When the Dataset is
+	// created, the resource controller will retrieve the data from the location, validate it against its Data Source
+	// if applicable, and store it inside the `live` section of the Virtual Bucket resource specified by the location
 	// +kubebuilder:validation:Optional
 	Origin DataLocation `json:"origin,omitempty" protobuf:"bytes,13,opt,name=origin"`
-	// Folder of the actual data resides.
+	// The final location of the data which was copied from the `Origin` location during the ingestion phase.
+	// This field is set by the Dataset resource controller and should not be changed by any end-users
 	// +kubebuilder:validation:Required
 	// +required
 	Location DataLocation `json:"location,omitempty" protobuf:"bytes,14,opt,name=location"`
-	// Resources is the hardware resource req.
+	// The resource requirements which the Dataset will request when creating Jobs to process the uploaded data
 	// +kubebuilder:validation:Optional
 	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,15,opt,name=resources"`
-	// ActiveDeadlineSeconds is the deadline of a job for this dataset.
+	// The deadline in seconds for all Jobs created by the Dataset
 	// +kubebuilder:default:=600
 	// +kubebuilder:validation:Optional
 	ActiveDeadlineSeconds *int64 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,16,opt,name=activeDeadlineSeconds"`
-	// DatasetType is the type of dataset
+	// The type of dataset which was uploaded. `tabular` is the only supported type as of the current release
 	// +kubebuilder:default:="tabular"
 	// +kubebuilder:validation:Optional
 	Type *catalog.DatasetType `json:"type,omitempty" protobuf:"bytes,17,opt,name=type"`
-	// Sample spec defines how many rows to use for analysis
+	// The specification for how the data should be sampled, if applicable. Sampling may improve dataset and model creation
+	// time in the case of very large datasets that are being rapidly prototyped and iterated on
 	// +kubebuilder:validation:Optional
 	Sample SampleSpec `json:"sample,omitempty" protobuf:"bytes,18,opt,name=sample"`
-	// DatasetType is the type of dataset
-	// +kubebuilder:vali dation:Optional
+	// The machine learning task relevant to the Dataset. This field *must* be the same as the Data Source of the object
+	// +kubebuilder:validation:Optional
 	Task *catalog.MLTask `json:"task,omitempty" protobuf:"bytes,19,opt,name=task"`
-	// Specification for notification for events that occur during processing
+	// The notification specification that determines which notifiers will receive Alerts generated by the object
 	// +kubebuilder:validation:Optional
 	Notification catalog.NotificationSpec `json:"notification,omitempty" protobuf:"bytes,20,opt,name=notification"`
-	// Specification for the correlation spec
+	// The specification for how to find the correlations of the Dataset's features during the profiling phase.
+	// Based on the specification, the data plane will compute the correlation between each feature and will store the highest-scoring
 	// +kubebuilder:validation:Optional
 	Correlation CorrelationSpec `json:"correlation,omitempty" protobuf:"bytes,21,opt,name=correlation"`
-	// Indicate a fast mode. If true, skip the validation/profiling/report
+	// Indicates if the Dataset should be quickly processed. If enabled, the validation, profiling, and reporting phases
+	// will be skipped.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Fast *bool `json:"fast,omitempty" protobuf:"bytes,22,opt,name=fast"`
@@ -179,64 +187,64 @@ type DatasetSpec struct {
 
 // DatasetStatus defines the observed state of Dataset
 type DatasetStatus struct {
-	// Statistics for the dataset. The statistics contain information about each column.
+	// Statistics for each column of the Dataset, which are generated during the profiling phase.
 	// +kubebuilder:validation:Optional
 	Statistics DatasetStatistics `json:"statistics,omitempty" protobuf:"bytes,1,opt,name=statistics"`
-	// The phase of the dataset processing
+	// The current phase of the Dataset progress
 	// +kubebuilder:default:="Pending"
 	// +kubebuilder:validation:Optional
 	Phase DatasetPhase `json:"phase,omitempty" protobuf:"bytes,2,opt,name=phase"`
-	// Reference to the report object that was generated for the dataset
+	// Reference to the report object that was generated for the dataset, which exists in the same Data Product namespace
+	// as the object
 	// +kubebuilder:validation:Optional
 	ReportName string `json:"reportName,omitempty" protobuf:"bytes,3,opt,name=reportName"`
-	// ReportURI is the uri of dataset report
+	// The location of report generated during the reporting phase. This field is intended for internal use
 	// +kubebuilder:validation:Optional
 	ReportUri string `json:"reportUri,omitempty" protobuf:"bytes,4,opt,name=reportUri"`
-	// A reference to the visualization uri which were produce during processing
+	// The location of raw profile data. This field is intended for internal use
 	// +kubebuilder:validation:Optional
 	ProfileUri string `json:"profileUri" protobuf:"bytes,5,opt,name=profileUri"`
-	// Based on the actual data, treat this dataset as imbalanced.
+	// Whether or not the data was detected as imbalanced
 	//+kubebuilder:validation:Optional
 	Imbalanced bool `json:"imbalanced,omitempty" protobuf:"bytes,6,opt,name=imbalanced"`
-	// ObservedGeneration is the Last generation that was acted on
+	// ObservedGeneration is the last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,8,opt,name=observedGeneration"`
-	// List of data problems, as reported by the validation process
+	// List of validation results which are generated for every validation rule associated with the Dataset's Data Source
 	//+kubebuilder:validation:Optional
 	ValidationResults []DataValidationResult `json:"validationResults,omitempty" protobuf:"bytes,9,rep,name=validationResults"`
-	// Last time a study was done on the dataset.
+	// Last time the Dataset was used with a Study
 	//+kubebuilder:validation:Optional
 	LastStudyTime *metav1.Time `json:"lastStudyTime,omitempty" protobuf:"bytes,10,opt,name=lastStudyTime"`
-	// Update in case of terminal failure
-	// Borrowed from cluster api controller
+	// In the case of failure, the Dataset resource controller will set the field with a failure reason
 	//+kubebuilder:validation:Optional
 	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,12,opt,name=failureReason"`
-	// Update in case of terminal failure message
+	// In the case of failure, the Dataset resource controller will set the field with a failure message
 	//+kubebuilder:validation:Optional
 	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,13,opt,name=failureMessage"`
-	// Processing progress
-	// +kubebuilder:default:=0
+	// The current progress of the Dataset, with a maximum of 100, that is associated with the current phase
+	//+kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
 	Progress int32 `json:"progress,omitempty" protobuf:"varint,14,opt,name=progress"`
-	// Sha256 signature of the dataset file.
+	// Sha256 signature of the raw data. This field is intended for internal use
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Hash string `json:"hash,omitempty" protobuf:"bytes,15,opt,name=hash"`
-	// Holds the location of log paths
+	// The log file specification that determines the location of all logs produced by the object
 	Logs catalog.Logs `json:"logs" protobuf:"bytes,16,opt,name=logs"`
-	// If this dataset is derived, the name of the dataset that this is derived from.
+	// If the dataset is derived, the name of the Dataset that the object is derived from
 	// +kubebuilder:validation:Optional
 	DerivedFromDataset *string `json:"derivedFromDataset,omitempty" protobuf:"bytes,17,opt,name=derivedFromDataset"`
-	// Last time the object was updated
+	// The last time the object was updated
 	//+kubebuilder:validation:Optional
 	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,18,opt,name=lastUpdated"`
-	// The actual images used during the analysis of the dataset
+	// The Docker images used during the analysis of the Dataset
 	// +kubebuilder:validation:Optional
 	Images catalog.Images `json:"images,omitempty" protobuf:"bytes,19,opt,name=images"`
-	// The start time of processing this dataset
+	// The time that the system started processing the Dataset, usually after the creation of the object
 	// +kubebuilder:validation:Optional
 	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,20,opt,name=startTime"`
-	// The end time of processing this dataset
+	// The time that the Dataset finished processing, either due to completion or failure
 	// +kubebuilder:validation:Optional
 	EndTime *metav1.Time `json:"endTime,omitempty" protobuf:"bytes,21,opt,name=endTime"`
 	// +patchMergeKey=type
@@ -245,170 +253,164 @@ type DatasetStatus struct {
 	Conditions []DatasetCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,22,rep,name=conditions"`
 }
 
-// DatasetStatistics contains statistics about attributes and correltation between attributes
+// DatasetStatistics contains statistics about the Dataset's overall data, as well as every feature of the data. The
+// data structure is populated with information during the `Profiling` phase of the parent Dataset.
 type DatasetStatistics struct {
-	// Columns contain the collection of statistics for each attribute
+	// The collection of statistics for each feature
 	// +kubebuilder:validation:Optional
 	Columns []ColumnStatistics `json:"columns,omitempty" protobuf:"bytes,1,rep,name=columns"`
-	// number of rows in the dataset
+	// Number of rows observed from the data
 	// +kubebuilder:validation:Optional
 	Rows int32 `json:"rows,omitempty" protobuf:"varint,3,opt,name=rows"`
-	// number of columns, used mainly to show the columns in the kubectl
+	// Number of columns observed from the data
 	// +kubebuilder:validation:Optional
 	Cols int32 `json:"cols,omitempty" protobuf:"varint,4,opt,name=cols"`
-	// file size in bytes
+	// The file size of the data in bytes
 	// +kubebuilder:validation:Optional
 	FileSize int32 `json:"fileSize,omitempty" protobuf:"varint,5,opt,name=fileSize"`
-	// Holds the top correlation with target
+	// The top correlations between all features and the target feature
 	// +kubebuilder:validation:Optional
 	CorrelationsWithTarget []Correlation `json:"correlationsWithTarget,omitempty" protobuf:"bytes,6,opt,name=correlationsWithTarget"`
-	// Holds the top feature correlation
+	// The top correlations between features, computed per the CorrelationSpec of the parent Dataset
 	// +kubebuilder:validation:Optional
 	TopCorrelations []Correlation `json:"topCorrelations,omitempty" protobuf:"bytes,7,rep,name=topCorrelations"`
 }
 
-// Hold the statistical parameters about a single attribute
+// ColumnStatistics contains statistical parameters for a single feature from a dataset
 type ColumnStatistics struct {
-	// FileName is the name of the column
+	// The name of the column
 	// +kubebuilder:validation:Optional
 	Name string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
-	// DataType is the name of the column
+	// The data type of the column
 	// +kubebuilder:validation:Optional
 	DataType catalog.DataType `json:"datatype,omitempty" protobuf:"bytes,2,opt,name=datatype"`
-	// Number of rows
+	// Amount of rows which contain a value for the feature
 	// +kubebuilder:validation:Optional
 	Count float64 `json:"count,omitempty" protobuf:"bytes,3,opt,name=count"`
-	// Count of unique values.
+	// Amount of unique values present in the column
 	// +kubebuilder:validation:Optional
 	Distinct int32 `json:"distinct,omitempty" protobuf:"varint,4,opt,name=distinct"`
-	// The number of missing values
+	// Amount of missing values present in the column
 	// +kubebuilder:validation:Optional
 	Missing int32 `json:"missing,omitempty" protobuf:"varint,5,opt,name=missing"`
-	// Percent missing
+	// Percentage of missing values in the column
 	// +kubebuilder:validation:Optional
 	PercentMissing float64 `json:"percentMissing,omitempty" protobuf:"bytes,6,opt,name=percentMissing"`
-	// Mean is the mean value of the attribute
+	// The mean of all values in the column, if the column data type is a number
 	// +kubebuilder:validation:Optional
 	Mean float64 `json:"mean,omitempty" protobuf:"bytes,7,opt,name=mean"`
-	// StdDev is the standard deviation value of the attribute
+	// The standard deviation of the columns values
 	// +kubebuilder:validation:Optional
 	StdDev float64 `json:"stddev,omitempty" protobuf:"bytes,8,opt,name=stddev"`
-	// Variance
+	// The variability of the columns values from the columns mean
 	// +kubebuilder:validation:Optional
 	Variance float64 `json:"variance,omitempty" protobuf:"bytes,9,opt,name=variance"`
-	// Min is the minimum value of the attribute
+	// The minimum value of all values in the column
 	// +kubebuilder:validation:Optional
 	Min float64 `json:"min,omitempty" protobuf:"bytes,10,opt,name=min"`
-	// Max is the maximum value of the attribute
+	// The maximum value of all values in the column
 	// +kubebuilder:validation:Optional
 	Max float64 `json:"max,omitempty" protobuf:"bytes,11,opt,name=max"`
-	// Kurtosis is the standard deviation value of the attribute
+	// The computed kurtosis, which measures the peakedness of the distribution of values in the column
 	// +kubebuilder:validation:Optional
 	Kurtosis float64 `json:"kurtosis,omitempty" protobuf:"bytes,12,opt,name=kurtosis"`
-	// Skewness is the standard deviation value of the attribute
+	// The computed skewness, which measures the asymmetry of the distribution of values in the column
 	// +kubebuilder:validation:Optional
 	Skewness float64 `json:"skewness,omitempty" protobuf:"bytes,13,opt,name=skewness"`
 	// Skewness is the standard deviation value of the attribute
 	// +kubebuilder:validation:Optional
 	Sum float64 `json:"sum,omitempty" protobuf:"bytes,14,opt,name=sum"`
-	// Skewness is the standard deviation value of the attribute
+	// The sum of all values in the column
 	// +kubebuilder:validation:Optional
 	Mad float64 `json:"mad,omitempty" protobuf:"bytes,15,opt,name=mad"`
-	// Pct25 is the 25 percent point
+	// The 25% point of the ordered values of the column
 	// +kubebuilder:validation:Optional
 	P25 float64 `json:"p25,omitempty" protobuf:"bytes,16,opt,name=p25"`
-	// Pct50 is the median
+	// The 50% point of the ordered values of the column, also known as the median
 	// +kubebuilder:validation:Optional
 	P50 float64 `json:"p50,omitempty" protobuf:"bytes,17,opt,name=p50"`
-	// Pct75 is the 75% point
+	// The 75% point of the ordered values of the column
 	// +kubebuilder:validation:Optional
 	P75 float64 `json:"p75,omitempty" protobuf:"bytes,18,opt,name=p75"`
-	// Skewness is the standard deviation value of the attribute
+	// The interquartile range of the columns values
 	// +kubebuilder:validation:Optional
 	IQR float64 `json:"iqr,omitempty" protobuf:"bytes,19,opt,name=iqr"`
-	// Mode for categorical values, is the most common value
+	// The mode value of the column, also known as the most frequent value
 	// +kubebuilder:validation:Optional
 	Mode string `json:"mode,omitempty" protobuf:"bytes,20,opt,name=mode"`
-	// Zeros is the numbers of zeros in the feature
+	// The number of zero values in the column
 	// +kubebuilder:validation:Optional
 	Zeros float64 `json:"zeros,omitempty" protobuf:"bytes,21,opt,name=zeros"`
-	// The number of invalid values
+	// The number of invalid values in the column
 	// +kubebuilder:validation:Optional
 	Invalid int32 `json:"invalid,omitempty" protobuf:"varint,22,opt,name=invalid"`
-	// The feature importance
+	// The feature importance of the column
 	// +kubebuilder:validation:Optional
 	Importance float64 `json:"importance,omitempty" protobuf:"bytes,23,opt,name=importance"`
-	// Is this the target attribute, the value is derived from the data source
+	// Indicates if the feature is the target attribute for a Study; this value is derived from the Dataset's DataSource
 	// +kubebuilder:validation:Optional
 	Target bool `json:"target,omitempty" protobuf:"bytes,24,opt,name=target"`
-	// Should this column be ignored, as specified by the user
+	// Indicates if the column should be ignored, as specified by the user
 	// This value is derived from the datasource
 	// +kubebuilder:validation:Optional
 	Ignore bool `json:"ignore,omitempty" protobuf:"varint,25,opt,name=ignore"`
-	// Is this column is nullable.
+	// Indicates if the column may contain null values
 	// This value is derived from the schema.
 	// +kubebuilder:validation:Optional
 	Nullable bool `json:"nullable,omitempty" protobuf:"varint,26,opt,name=nullable"`
-	// This column has high cardinality and should use high cred encoder
-	// The value is set during the profile process.
+	// Indicates if the column has high cardinality and should use the high cardinality encoder during feature engineering
 	// +kubebuilder:validation:Optional
 	HighCardinality bool `json:"highCardinality,omitempty" protobuf:"varint,27,opt,name=highCardinality"`
-	// This column has high correlation with another feature and should be dropped.
-	// The value is set during the profile process.
+	// Indicates if the column has high correlation with another feature, and that it should be dropped
 	// +kubebuilder:validation:Optional
 	HighCorrWithOtherFeatures bool `json:"highCorrWithOtherFeatures,omitempty" protobuf:"varint,28,opt,name=highCorrWithOtherFeatures"`
-	// Indicate that this feature is not corrolated with target and should be dropped
+	// Indicate that the feature has low correlation with the target feature, and that it should be dropped
 	// +kubebuilder:validation:Optional
 	LowCorrWithTarget bool `json:"lowCorrWithTarget,omitempty" protobuf:"varint,29,opt,name=lowCorrWithTarget"`
-	// This column has high amount of missing pct, and should be removed from consideration.
-	// The value is set during the profile process.
+	// Indicates if the column has a high percentage of missing values, and that it should be dropped
 	// +kubebuilder:validation:Optional
 	HighMissingPct bool `json:"highMissingPct,omitempty" protobuf:"varint,30,opt,name=highMissingPct"`
-	// Mark that this column is skewed and would require a power transform
-	//If skewness is less than -1 or greater than 1, the distribution is highly skewed.
-	//If skewness is between -1 and -0.5 or between 0.5 and 1, the distribution is moderately skewed.
-	//If skewness is between -0.5 and 0.5, the distribution is approximately symmetric
+	// Marks that the column is skewed and would require a power transform
+	// If skewness is less than -1 or greater than 1, the distribution is highly skewed.
+	// If skewness is between -1 and -0.5 or between 0.5 and 1, the distribution is moderately skewed.
+	// If skewness is between -0.5 and 0.5, the distribution is approximately symmetric
 	// +kubebuilder:validation:Optional
 	Skewed bool `json:"skewed,omitempty" protobuf:"varint,31,opt,name=skewed"`
-	// This is updated from the data source. If true, the column is an id column
+	// Indicates if the column is an ID column, such as a primary key
 	// +kubebuilder:validation:Optional
 	Id bool `json:"id,omitempty" protobuf:"varint,32,opt,name=id"`
-	// This column has high correlation with another feature and should be dropped.
-	// The value is set during the profile process.
 	// +kubebuilder:validation:Optional
 	Constant bool `json:"constant,omitempty" protobuf:"varint,33,opt,name=constant"`
-	// This column is duplicate of other column
-	// The value is set during the profile process.
+	// Indicates if the column is a duplicate of another column
 	// +kubebuilder:validation:Optional
 	Duplicate bool `json:"duplicate,omitempty" protobuf:"varint,34,opt,name=duplicate"`
-	// The column is reserved and must be part of the features set for the task.
-	// The value is derived from the data source.
+	// Indicates if the column is reserved and must be a feature included in model training
 	// +kubebuilder:validation:Optional
 	Reserved bool `json:"reserved,omitempty" protobuf:"varint,35,opt,name=reserved"`
-	// Outliers count
+	// The amount of outliers detected in the columns values
 	// +kubebuilder:validation:Optional
 	Outliers int32 `json:"outliers,omitempty" protobuf:"varint,36,opt,name=outliers"`
-	// Completeness is the ratio between non null to null
+	// The ratio between non-null and null values in the column
 	// +kubebuilder:validation:Optional
 	Completeness float64 `json:"completeness,omitempty" protobuf:"bytes,37,opt,name=completeness"`
-	// The ratio between distinct count to total count
+	// The ratio between unique values and non-unique values in the column
 	// +kubebuilder:validation:Optional
 	DistinctValueCount float64 `json:"distinctValueCount,omitempty" protobuf:"bytes,38,opt,name=distinctValueCount"`
-	// The ratio between most freq value to total
+	// The ratio between most the most frequent value to the number of total values in the column
 	// +kubebuilder:validation:Optional
 	MostFreqValuesRatio float64 `json:"mostFreqValuesRatio,omitempty" protobuf:"bytes,39,opt,name=mostFreqValuesRatio"`
 	// Used for text attributes
 	// +kubebuilder:validation:Optional
 	IndexOfPeculiarity float64 `json:"indexOfPeculiarity,omitempty" protobuf:"bytes,40,opt,name=indexOfPeculiarity"`
-	// The column histogram
+	// Histogram data representing the distribution of the values in the column
 	// +kubebuilder:validation:Optional
 	Histogram catalog.HistogramData `json:"histogram,omitempty" protobuf:"bytes,41,opt,name=histogram"`
-	// Correlation to target
+	// Correlation to the target feature
 	// +kubebuilder:validation:Optional
 	CorrToTarget float64 `json:"corrToTarget,omitempty" protobuf:"bytes,42,opt,name=corrToTarget"`
 }
 
-// DatasetTemplate is  used to generate new datasets
+// DatasetTemplate is used to generate new datasets
 type DatasetTemplate struct {
 	// Standard object's metadata.
 	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
@@ -423,41 +425,50 @@ const (
 	DataLocationObjectStorage DataLocationType = "object"
 	DataLocationSQLTable      DataLocationType = "table"
 	DataLocationSQLView       DataLocationType = "view"
-	DataLocationStream        DataLocationType = "stream" // if the data reside in a stream
-	DataLocationWebApi        DataLocationType = "web"    // if the data reside in a stream
+	DataLocationStream        DataLocationType = "stream"
+	DataLocationWebApi        DataLocationType = "web"
 )
 
-// data reference contain pointers to the actual data objects
+// DataLocation describes the external location of raw data that will be pulled by the system, and additional
+// information on how to query the data if the location is a non flat-file source.
 type DataLocation struct {
+	// The type of location where the data resides, which can either be an object inside an object storage system (i.e. Minio), a SQL location
+	// like a table or a view, a data stream (i.e. Kafka, currently unsupported), or a web location (currently unsupported)
 	// +kubebuilder:default:="object"
-	// data location type is the type of the data location
 	// +kubebuilder:validation:Optional
 	Type *DataLocationType `json:"type" protobuf:"bytes,1,opt,name=type"`
-	// ConnectionName is the name of the connection to access the database
+	// In the case of the location type being a database, ConnectionName is the name of the Connection resource
+	// in the same tenant namespace as the resource which specifies the DataLocation. Modela will connect to the database
+	// specified by the Connection and execute the query specified by the `SQL` field
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	ConnectionName *string `json:"connectionName" protobuf:"bytes,2,opt,name=connectionName"`
+	// In the case of the location type being object storage, BucketName is the name of the VirtualBucket resource
+	// in the same tenant namespace as the resource. Modela will access the object storage system and will pull
+	// from the file path specified by the `Path` field
 	// +kubebuilder:default:=""
-	// Bucketname is the name of the bucket
 	// +kubebuilder:validation:Optional
 	BucketName *string `json:"bucketName" protobuf:"bytes,3,opt,name=bucketName"`
-	// Path to the full data file (e.g. csv file).
+	// The path to a flat-file in an object storage system. When using the Modela API to upload files (through the
+	// FileService API), Modela will upload the data to a predetermined path with the following format:
+	// "modela/depot/tenants/{tenant}/dataproducts/{dataproduct}/dataproductversions/{version}/{resource_type}/{resource_name}/data/raw/{file_name}
+	// Path does not need to adhere to this format; you can still pass the path of a file in a bucket not managed by Modela
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Path *string `json:"path" protobuf:"bytes,4,opt,name=path"`
-	// Sql or table or topic name.
+	// The name of a table inside a database, if applicable
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Table *string `json:"table" protobuf:"bytes,5,opt,name=table"`
-	// Database , the database.
+	// The name of a database that exists inside the database server connection specified by the `ConnectionName` field
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Database *string `json:"database" protobuf:"bytes,6,opt,name=database"`
-	// SQL statement, in case we choose the view type
+	// The SQL statement to query data from a database connection
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Sql *string `json:"sql" protobuf:"bytes,7,opt,name=sql"`
-	// Topic is the name of the topic in case of streaming
+	// The name of the topic in case of streaming (currently unsupported)
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Topic *string `json:"topic" protobuf:"bytes,8,opt,name=topic"`
@@ -470,29 +481,29 @@ type DataValidationResult struct {
 	Passed bool   `json:"passed" protobuf:"varint,4,opt,name=passed"`
 }
 
-// Feature corr is used to record a correlation between two features.
+// Correlation records the correlation between two features in a Dataset
 type Correlation struct {
 	// The first feature name
 	Feature1 string `json:"feature1" protobuf:"bytes,1,opt,name=feature1"`
 	// The second feature name
 	Feature2 string `json:"feature2" protobuf:"bytes,2,opt,name=feature2"`
-	// The corr value
+	// The correlation value
 	Value float64 `json:"value,omitempty" protobuf:"bytes,3,opt,name=value"`
 	// How the value was calculated
 	Method string `json:"method,omitempty" protobuf:"bytes,4,opt,name=method"`
 }
 
-// Specify how the correlation should be computed
+// CorrelationSpec specifies how the correlations between features in a Dataset should be computed
 type CorrelationSpec struct {
-	// Specify the minimum value of the corr
+	// The minimum value of a computed correlation to be stored as a result
 	// +kubebuilder:default:=50
 	// +kubebuilder:validation:Optional
 	Cutoff *float64 `json:"cutoff,omitempty" protobuf:"bytes,1,opt,name=cutoff"`
-	// Specify the method to use when computing the correlation.
+	// The method to be used when computing correlations
 	// +kubebuilder:default:="pearson"
 	// +kubebuilder:validation:Optional
 	Method *string `json:"method,omitempty" protobuf:"bytes,2,opt,name=method"`
-	// Specify the top number of correlation to include in the status.
+	// The top number of correlation to be included in the correlation results
 	// +kubebuilder:default:=10
 	// +kubebuilder:validation:Optional
 	Top *int32 `json:"top,omitempty" protobuf:"varint,3,opt,name=top"`

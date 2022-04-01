@@ -122,9 +122,10 @@ func getDefaultValue(name string, defval string) string {
 
 func generateClass(decl *ast.GenDecl) (out string, imports string) {
 	var name string = decl.Specs[0].(*ast.TypeSpec).Name.String()
-	if strings.Contains(name, "Status") || strings.Contains(name, "List") ||
-		strings.Contains(name, "Condition") {
-		return "", ""
+	if strings.Contains(name, "List") {
+		{
+			return "", ""
+		}
 	}
 	var outFields, postInit string
 	var tagReg = regexp.MustCompile(`name=(.*?)($|,|")`)
@@ -133,16 +134,16 @@ func generateClass(decl *ast.GenDecl) (out string, imports string) {
 			continue
 		}
 		name := strings.Title(tagReg.FindStringSubmatch(field.Tag.Value)[1])
-		optional, defval := parseComments(field.Doc)
+		_, defval := parseComments(field.Doc)
 		switch ty := field.Type.(type) {
 		case *ast.StarExpr:
 			switch expr := ty.X.(type) {
 			case *ast.SelectorExpr:
 				var defaultValue string
-				if optional {
-					defaultValue = getDefaultValue(expr.Sel.Name, defval)
+				//if optional {
+				defaultValue = getDefaultValue(expr.Sel.Name, defval)
 
-				}
+				//}
 				typ, ok := TypeMap[expr.Sel.Name]
 				if !ok {
 					typ = expr.Sel.Name
@@ -153,9 +154,9 @@ func generateClass(decl *ast.GenDecl) (out string, imports string) {
 
 			case *ast.Ident:
 				var defaultValue string
-				if optional {
-					defaultValue = getDefaultValue(expr.Name, defval)
-				}
+				//if optional {
+				defaultValue = getDefaultValue(expr.Name, defval)
+				//}
 				typ, ok := TypeMap[expr.Name]
 				if !ok {
 					typ = expr.Name
@@ -174,9 +175,9 @@ func generateClass(decl *ast.GenDecl) (out string, imports string) {
 				exprName = outType.Name
 			}
 			var init string
-			if optional {
-				init = " = field(default_factory=lambda: [])"
-			}
+			//if optional {
+			init = " = field(default_factory=lambda: [])"
+			//}
 			typ, ok := TypeMap[exprName]
 			if !ok {
 				typ = exprName
@@ -185,13 +186,13 @@ func generateClass(decl *ast.GenDecl) (out string, imports string) {
 
 			outFields += fmt.Sprintf("\t%s: List[%s]%s\n",
 				name, typ, init)
-			postInit += fmt.Sprintf("\t\tself.%s = TrackedList(self.%s, self, \"%s\")\n", name, name, name)
+			//postInit += fmt.Sprintf("\t\tself.%s = TrackedList(self.%s, self, \"%s\")\n", name, name, name)
 		case *ast.Ident:
 			var defaultValue string
-			if optional {
-				defaultValue = getDefaultValue(ty.Name, defval)
+			//if optional {
+			defaultValue = getDefaultValue(ty.Name, defval)
 
-			}
+			//}
 			typ, ok := TypeMap[ty.Name]
 			if !ok {
 				typ = ty.Name
@@ -202,10 +203,10 @@ func generateClass(decl *ast.GenDecl) (out string, imports string) {
 
 		case *ast.SelectorExpr:
 			var defaultValue string
-			if optional {
-				defaultValue = getDefaultValue(ty.Sel.Name, defval)
+			//if optional {
+			defaultValue = getDefaultValue(ty.Sel.Name, defval)
 
-			}
+			//}
 			typ, ok := TypeMap[ty.Sel.Name]
 			if !ok {
 				typ = ty.Sel.Name
@@ -216,7 +217,7 @@ func generateClass(decl *ast.GenDecl) (out string, imports string) {
 		}
 	}
 	if postInit != "" {
-		postInit = "\tdef __post_init__(self):\n" + postInit
+		//postInit = "\tdef __post_init__(self):\n" + postInit
 	}
 
 	return fmt.Sprintf(ClassTemplate, name, outFields, name, name, postInit), fmt.Sprintf(ImportTemplate, name, name)
@@ -262,6 +263,7 @@ func readFile(location string) {
 func main() {
 	readFile("C:\\Users\\liamm\\modelaapi\\modelaapi\\pkg\\apis\\catalog\\v1alpha1\\common_types.go")
 	readFile("C:\\Users\\liamm\\modelaapi\\modelaapi\\pkg\\apis\\data\\v1alpha1\\datasource_types.go")
+	//readFile("C:\\Users\\liamm\\modelaapi\\modelaapi\\pkg\\apis\\inference\\v1alpha1\\predictor_types.go")
 
 	for enum, _ := range enumUsed {
 		outEnums += enumOutput[enum] + "\n"
