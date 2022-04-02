@@ -21,21 +21,22 @@ const (
 	DataProductSaved DataProductConditionType = "Saved"
 )
 
-// DeploymentCondition describes the state of a deployment at a certain point.
+// DataProductCondition describes the state of a DataProduct at a certain point
 type DataProductCondition struct {
 	// Type of condition.
 	Type DataProductConditionType `json:"type" protobuf:"bytes,1,opt,name=type,casttype=DataProductConditionType"`
-	// Status of the condition, one of True, False, AutoScaler.
+	// Status of the condition, one of True, False, Unknown
 	Status v1.ConditionStatus `json:"status" protobuf:"bytes,2,opt,name=status,casttype=k8s.io/api/core/v1.ConditionStatus"`
-	// Last time the condition transitioned from one status to another.
+	// Last time the condition transitioned from one status to another
 	LastTransitionTime *metav1.Time `json:"lastTransitionTime,omitempty" protobuf:"bytes,4,opt,name=lastTransitionTime"`
-	// The reason for the condition's last transition.
+	// The reason for the condition's last transition
 	Reason string `json:"reason,omitempty" protobuf:"bytes,5,opt,name=reason"`
-	// A human readable message indicating details about the transition.
+	// A human readable message indicating details about the transition
 	Message string `json:"message,omitempty" protobuf:"bytes,6,opt,name=message"`
 }
 
-// DataProduct represent a single data product in the system
+// DataProduct represent a single DataProduct namespace, which contains all non-infrastructure resources. Additionally, it
+// specifies default parameters for resources to be created under the namespace
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status"
@@ -43,7 +44,7 @@ type DataProductCondition struct {
 // +kubebuilder:printcolumn:name="Task",type="string",JSONPath=".spec.task"
 // +kubebuilder:printcolumn:name="Public",type="boolean",JSONPath=".spec.public"
 // +kubebuilder:printcolumn:name="Errors",type="integer",JSONPath=".status.totalErrorAlerts"
-// +kubebuilder:printcolumn:name="Datasources",type="integer",JSONPath=".status.totalDatasources",priority=1
+// +kubebuilder:printcolumn:name="Data Sources",type="integer",JSONPath=".status.totalDatasources",priority=1
 // +kubebuilder:printcolumn:name="Datasets",type="integer",JSONPath=".status.totalDatasets",priority=1
 // +kubebuilder:printcolumn:name="Studies",type="integer",JSONPath=".status.totalStudies",priority=1
 // +kubebuilder:printcolumn:name="Models",type="integer",JSONPath=".status.totalModels",priority=1

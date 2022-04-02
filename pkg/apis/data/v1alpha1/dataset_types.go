@@ -11,7 +11,7 @@ type DatasetPhase string
 const (
 	DatasetPhasePending           DatasetPhase = "Pending"    // when generating
 	DatasetPhaseGenerating        DatasetPhase = "Generating" // when generating
-	DatasetPhaseGenSuccess        DatasetPhase = "GenSuccess" // when syntactic gen success
+	DatasetPhaseGenSuccess        DatasetPhase = "GenSuccess" // when synthetic gen success
 	DatasetPhaseIngestRunning     DatasetPhase = "Ingesting"
 	DatasetPhaseIngestSuccess     DatasetPhase = "Ingested"
 	DatasetPhaseReportRunning     DatasetPhase = "Reporting"
@@ -43,7 +43,7 @@ const (
 	DatasetReady       DatasetConditionType = "Ready"
 )
 
-// DatasetCondition describes the state of a dataset at a certain point.
+// DatasetCondition describes the state of a dataset at a certain point
 type DatasetCondition struct {
 	Type DatasetConditionType `json:"type" protobuf:"bytes,1,opt,name=type,casttype=DatasetConditionType"`
 	// Status of the condition, one of True, False, AutoScaler.
@@ -59,6 +59,7 @@ type DatasetCondition struct {
 	Message string `json:"message,omitempty" protobuf:"bytes,6,opt,name=message"`
 }
 
+// The Dataset object represents a chunk of data that has been stored in the system.
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
@@ -71,8 +72,6 @@ type DatasetCondition struct {
 // +kubebuilder:printcolumn:name="Size",type="integer",JSONPath=".status.statistics.fileSize"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=datasets,shortName=dset,singular=dataset,categories={data,modela,all}
-
-// The Dataset object represents a chunk of data that has been stored in the system.
 type Dataset struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata" protobuf:"bytes,1,opt,name=metadata"`
@@ -91,7 +90,7 @@ type DatasetList struct {
 
 // DatasetSpec defines the desired state of the dataset
 type DatasetSpec struct {
-	// The reference to the Account in the same namespace as the resource which created the object.
+	// The reference to the Account in the same namespace as the resource which created the object
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,1,opt,name=owner"`
@@ -138,11 +137,11 @@ type DatasetSpec struct {
 	// Indicates if synthetic data should be generated (not implemented as of the current release)
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Synthetic *bool `json:"syntactic,omitempty" protobuf:"varint,11,opt,name=syntactic"`
+	Synthetic *bool `json:"synthetic,omitempty" protobuf:"varint,11,opt,name=synthetic"`
 	// If `Synthetic` is set to true, indicates how many synthetic rows should be generated
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
-	SyntheticRows *int32 `json:"syntacticRows" protobuf:"varint,12,opt,name=syntacticRows"`
+	SyntheticRows *int32 `json:"syntheticRows" protobuf:"varint,12,opt,name=syntheticRows"`
 	// The location of the data file or database query which holds the raw data of the Dataset. When the Dataset is
 	// created, the resource controller will retrieve the data from the location, validate it against its Data Source
 	// if applicable, and store it inside the `live` section of the Virtual Bucket resource specified by the location
@@ -185,7 +184,7 @@ type DatasetSpec struct {
 	Fast *bool `json:"fast,omitempty" protobuf:"bytes,22,opt,name=fast"`
 }
 
-// DatasetStatus defines the observed state of Dataset
+// DatasetStatus defines the observed state of a Dataset object
 type DatasetStatus struct {
 	// Statistics for each column of the Dataset, which are generated during the profiling phase.
 	// +kubebuilder:validation:Optional
@@ -216,10 +215,10 @@ type DatasetStatus struct {
 	// Last time the Dataset was used with a Study
 	//+kubebuilder:validation:Optional
 	LastStudyTime *metav1.Time `json:"lastStudyTime,omitempty" protobuf:"bytes,10,opt,name=lastStudyTime"`
-	// In the case of failure, the Dataset resource controller will set the field with a failure reason
+	// In the case of failure, the Dataset resource controller will set this field with a failure reason
 	//+kubebuilder:validation:Optional
 	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,12,opt,name=failureReason"`
-	// In the case of failure, the Dataset resource controller will set the field with a failure message
+	// In the case of failure, the Dataset resource controller will set this field with a failure message
 	//+kubebuilder:validation:Optional
 	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,13,opt,name=failureMessage"`
 	// The current progress of the Dataset, with a maximum of 100, that is associated with the current phase
@@ -323,13 +322,13 @@ type ColumnStatistics struct {
 	// The sum of all values in the column
 	// +kubebuilder:validation:Optional
 	Mad float64 `json:"mad,omitempty" protobuf:"bytes,15,opt,name=mad"`
-	// The 25% point of the ordered values of the column
+	// The 25% point of all the values of the column in order
 	// +kubebuilder:validation:Optional
 	P25 float64 `json:"p25,omitempty" protobuf:"bytes,16,opt,name=p25"`
-	// The 50% point of the ordered values of the column, also known as the median
+	// The 50% point of all the values of the column in order, also known as the median
 	// +kubebuilder:validation:Optional
 	P50 float64 `json:"p50,omitempty" protobuf:"bytes,17,opt,name=p50"`
-	// The 75% point of the ordered values of the column
+	// The 75% point of all the values of the column in order
 	// +kubebuilder:validation:Optional
 	P75 float64 `json:"p75,omitempty" protobuf:"bytes,18,opt,name=p75"`
 	// The interquartile range of the columns values
@@ -347,15 +346,13 @@ type ColumnStatistics struct {
 	// The feature importance of the column
 	// +kubebuilder:validation:Optional
 	Importance float64 `json:"importance,omitempty" protobuf:"bytes,23,opt,name=importance"`
-	// Indicates if the feature is the target attribute for a Study; this value is derived from the Dataset's DataSource
+	// Indicates if the feature is the target attribute for a Study, as specified by the Dataset's DataSource
 	// +kubebuilder:validation:Optional
 	Target bool `json:"target,omitempty" protobuf:"bytes,24,opt,name=target"`
-	// Indicates if the column should be ignored, as specified by the user
-	// This value is derived from the datasource
+	// Indicates if the column should be ignored, as specified by the Dataset's DataSource
 	// +kubebuilder:validation:Optional
 	Ignore bool `json:"ignore,omitempty" protobuf:"varint,25,opt,name=ignore"`
-	// Indicates if the column may contain null values
-	// This value is derived from the schema.
+	// Indicates if the column may contain null values, as specified by the Dataset's DataSource
 	// +kubebuilder:validation:Optional
 	Nullable bool `json:"nullable,omitempty" protobuf:"varint,26,opt,name=nullable"`
 	// Indicates if the column has high cardinality and should use the high cardinality encoder during feature engineering
@@ -370,7 +367,8 @@ type ColumnStatistics struct {
 	// Indicates if the column has a high percentage of missing values, and that it should be dropped
 	// +kubebuilder:validation:Optional
 	HighMissingPct bool `json:"highMissingPct,omitempty" protobuf:"varint,30,opt,name=highMissingPct"`
-	// Marks that the column is skewed and would require a power transform
+	// Marks that the column is skewed and would require a power transform.
+	//
 	// If skewness is less than -1 or greater than 1, the distribution is highly skewed.
 	// If skewness is between -1 and -0.5 or between 0.5 and 1, the distribution is moderately skewed.
 	// If skewness is between -0.5 and 0.5, the distribution is approximately symmetric
@@ -452,7 +450,7 @@ type DataLocation struct {
 	// The path to a flat-file in an object storage system. When using the Modela API to upload files (through the
 	// FileService API), Modela will upload the data to a predetermined path with the following format:
 	// "modela/depot/tenants/{tenant}/dataproducts/{dataproduct}/dataproductversions/{version}/{resource_type}/{resource_name}/data/raw/{file_name}
-	// Path does not need to adhere to this format; you can still pass the path of a file in a bucket not managed by Modela
+	// The path does not need to adhere to this format; you can still pass the path of a file inside a bucket not managed by Modela
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Path *string `json:"path" protobuf:"bytes,4,opt,name=path"`
