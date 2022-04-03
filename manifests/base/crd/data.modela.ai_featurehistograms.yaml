@@ -1,0 +1,212 @@
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.8.0
+  creationTimestamp: null
+  name: featurehistograms.data.modela.ai
+spec:
+  group: data.modela.ai
+  names:
+    categories:
+    - data
+    - modela
+    kind: FeatureHistogram
+    listKind: FeatureHistogramList
+    plural: featurehistograms
+    singular: featurehistogram
+  scope: Namespaced
+  versions:
+  - additionalPrinterColumns:
+    - jsonPath: .status.conditions[?(@.type=="Ready")].status
+      name: Ready
+      type: string
+    - jsonPath: .spec.owner
+      name: Owner
+      type: string
+    - jsonPath: .spec.versionName
+      name: Version
+      type: string
+    - jsonPath: .spec.column
+      name: Column
+      type: string
+    - jsonPath: .spec.dataset
+      name: Dataset
+      type: string
+    - jsonPath: .spec.bins
+      name: Bins
+      type: number
+    - jsonPath: .status.missing
+      name: Missing
+      type: number
+    - jsonPath: .status.invalid
+      name: Invalid
+      type: number
+    - jsonPath: .metadata.creationTimestamp
+      name: Age
+      type: date
+    name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: FeatureHistogram represent a single feature in the feature store.
+        properties:
+          apiVersion:
+            description: 'APIVersion defines the versioned schema of this representation
+              of an object. Servers should convert recognized schemas to the latest
+              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            type: string
+          kind:
+            description: 'Kind is a string value representing the REST resource this
+              object represents. Servers may infer this from the endpoint the client
+              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: FeatureHistogramSpec contain the desired state of a FeatureHistogram
+            properties:
+              bins:
+                description: Bins is the number of bins in the histogram
+                format: int32
+                type: integer
+              column:
+                default: ""
+                description: Type name of the column key, this column is the key column
+                  in the entity.
+                type: string
+              dataset:
+                description: The name of the dataset
+                properties:
+                  apiVersion:
+                    description: API version of the referent.
+                    type: string
+                  fieldPath:
+                    description: 'If referring to a piece of an object instead of
+                      an entire object, this string should contain a valid JSON/Go
+                      field access statement, such as desiredState.manifest.containers[2].
+                      For example, if the object reference is to a container within
+                      a pod, this would take on a value like: "spec.containers{name}"
+                      (where "name" refers to the name of the container that triggered
+                      the event) or if no container name is specified "spec.containers[2]"
+                      (container with index 2 in this pod). This syntax is chosen
+                      only to have some well-defined way of referencing a part of
+                      an object. TODO: this design is not final and this field is
+                      subject to change in the future.'
+                    type: string
+                  kind:
+                    description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                    type: string
+                  name:
+                    description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                    type: string
+                  namespace:
+                    description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                    type: string
+                  resourceVersion:
+                    description: 'Specific resourceVersion to which this reference
+                      is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                    type: string
+                  uid:
+                    description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                    type: string
+                type: object
+              description:
+                default: ""
+                description: Comments is a description of the feature
+                maxLength: 512
+                type: string
+              owner:
+                default: no-one
+                description: The feature owner
+                type: string
+              versionName:
+                default: ""
+                description: The product version for the feature.
+                type: string
+            type: object
+          status:
+            description: FeatureHistogramStatus defines the observed state of FeatureHistogram
+            properties:
+              conditions:
+                items:
+                  description: FeatureHistogramCondition describes the state of a
+                    deployment at a certain point.
+                  properties:
+                    lastTransitionTime:
+                      description: Last time the condition transitioned from one status
+                        to another.
+                      format: date-time
+                      type: string
+                    message:
+                      description: A human readable message indicating details about
+                        the transition.
+                      type: string
+                    reason:
+                      description: The reason for the condition's last transition.
+                      type: string
+                    status:
+                      description: Status of the condition, one of True, False, AutoScaler.
+                      type: string
+                    type:
+                      description: Type of account condition.
+                      type: string
+                  required:
+                  - status
+                  - type
+                  type: object
+                type: array
+              data:
+                description: The histogram values
+                properties:
+                  bins:
+                    description: The bins if this histogram describe continous variables
+                    items:
+                      type: number
+                    type: array
+                  categories:
+                    description: The name of the categories, one per bin is this a
+                      categorical histogram Empty is this is not a categorical variable.
+                    items:
+                      type: string
+                    type: array
+                  values:
+                    description: The set of values per bin
+                    items:
+                      type: number
+                    type: array
+                type: object
+              invalid:
+                description: The number of invalid values
+                format: int32
+                minimum: 0
+                type: integer
+              lastUpdated:
+                description: Last time the object was updated
+                format: date-time
+                type: string
+              missing:
+                description: The number of missing values
+                format: int32
+                minimum: 0
+                type: integer
+              observedGeneration:
+                description: ObservedGeneration is the Last generation that was acted
+                  on
+                format: int64
+                type: integer
+            type: object
+        required:
+        - metadata
+        - spec
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}
+status:
+  acceptedNames:
+    kind: ""
+    plural: ""
+  conditions: []
+  storedVersions: []

@@ -1636,10 +1636,6 @@ message LabSpec {
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
   optional string owner = 5;
-
-  // Stake holders refer to a list of stackholders, which have interest in the product.
-  // +kubebuilder:validation:Optional
-  repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.StakeHolder stakeholders = 6;
 }
 
 // LabStatus is the observed state of a Lab
@@ -2056,6 +2052,10 @@ message NotificationChannelSpec {
   // This channel end time.
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time to = 6;
+
+  // The notification destination. Can be an email if using smtp connection
+  // or a slack channel.
+  optional string destination = 7;
 }
 
 message NotificationChannelStatus {
@@ -2510,10 +2510,6 @@ message ServingSiteSpec {
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
   optional string owner = 7;
-
-  // Stake holders refer to a list of stackholders, which have interest in this serving site.
-  // +kubebuilder:validation:Optional
-  repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.StakeHolder stakeholders = 8;
 }
 
 message ServingSiteStatus {
@@ -2579,15 +2575,6 @@ message SingleStoreSpec {
 }
 
 message SlackSpec {
-  // +kubebuilder:default:=""
-  optional string webhookUrl = 1;
-
-  // +kubebuilder:default:=""
-  optional string channel = 2;
-
-  // +kubebuilder:default:=""
-  optional string username = 3;
-
   // +kubebuilder:default:=""
   optional string token = 4;
 }

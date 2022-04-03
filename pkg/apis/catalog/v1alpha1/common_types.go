@@ -1719,17 +1719,6 @@ const (
 	None          SeasonalityMode = "none"
 )
 
-// Represent a stack holder in the product.
-// Each stake holder can hove one or more roles.
-type StakeHolder struct {
-	// The account name of the stake holder
-	// +kubebuilder:default:="no-one"
-	// +kubebuilder:validation:Optional
-	AccountName *string `json:"accountName,omitempty" protobuf:"bytes,1,opt,name=accountName"`
-	// The roles assigned to the stake holder
-	Roles []string `json:"roles,omitempty" protobuf:"bytes,2,rep,name=roles"`
-}
-
 // Use for color attribute
 // Based on this: https://pkg.go.dev/golang.org/x/image/colornames
 

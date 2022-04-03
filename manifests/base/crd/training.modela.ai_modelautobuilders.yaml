@@ -1,0 +1,1548 @@
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.8.0
+  creationTimestamp: null
+  name: modelautobuilders.training.modela.ai
+spec:
+  group: training.modela.ai
+  names:
+    categories:
+    - training
+    - modela
+    - all
+    kind: ModelAutobuilder
+    listKind: ModelAutobuilderList
+    plural: modelautobuilders
+    shortNames:
+    - ar
+    singular: modelautobuilder
+  scope: Namespaced
+  versions:
+  - additionalPrinterColumns:
+    - jsonPath: .status.phase
+      name: Status
+      type: string
+    - jsonPath: .spec.dataProductName
+      name: Location Product
+      type: string
+    - jsonPath: .spec.dataProductVersionName
+      name: Version
+      type: string
+    - jsonPath: .status.datasetName
+      name: Dataset
+      type: string
+    - jsonPath: .status.studyName
+      name: Study
+      type: string
+    - jsonPath: .status.predictorName
+      name: Predictor
+      type: string
+    - jsonPath: .status.startTime
+      name: StartTime
+      priority: 1
+      type: date
+    - jsonPath: .status.completionTime
+      name: CompletionTime
+      priority: 1
+      type: date
+    - jsonPath: .metadata.creationTimestamp
+      name: Age
+      type: date
+    name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: ModelAutobuilder represent an automatic run of all the phases
+          needed to create a model
+        properties:
+          apiVersion:
+            description: 'APIVersion defines the versioned schema of this representation
+              of an object. Servers should convert recognized schemas to the latest
+              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            type: string
+          kind:
+            description: 'Kind is a string value representing the REST resource this
+              object represents. Servers may infer this from the endpoint the client
+              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: ModelAutobuilderSpec define the desired state of the ModelAutobuilder
+              resource.
+            properties:
+              aborted:
+                default: false
+                description: Set the true to abort the model auto builder
+                type: boolean
+              accessMethod:
+                default: cluster-ip
+                description: Access method specify the predictor access method.
+                enum:
+                - cluster-ip
+                - node-port
+                - load-balancer
+                - ingress
+                - mesh
+                - none
+                type: string
+              autoScale:
+                default: false
+                description: Specify if the predictor should autoscale.
+                type: boolean
+              dataProductName:
+                description: DataProductName is the name of the data product
+                maxLength: 63
+                pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
+                type: string
+              dataProductVersionName:
+                description: DataProductVersionName is a reference to data product
+                  version
+                maxLength: 253
+                pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
+                type: string
+              dataSourceSpec:
+                description: The spec of the data source, if none, the runner will
+                  infer the schema, and will create a new schema with
+                properties:
+                  csvfile:
+                    description: The file format for CSV files, if applicable
+                    properties:
+                      columnDelimiter:
+                        default: comma
+                        description: The character used to separate fields (by default,
+                          a comma)
+                        enum:
+                        - crlf
+                        - cr
+                        - lf
+                        - semicolon
+                        - colon
+                        - comma
+                        - tab
+                        - space
+                        - pipe
+                        type: string
+                      commentChars:
+                        default: '#'
+                        description: 'The comment character used to split comments
+                          off the end of lines (by default, a hashtag #)'
+                        type: string
+                      compression:
+                        default: none
+                        description: The compression type, if the file is compressed
+                        type: string
+                      encoding:
+                        default: utf-8
+                        description: The unicode encoding of the file (e.g. 'utf-8'
+                          for UTF-8 encoded text)
+                        enum:
+                        - utf-8
+                        - latin-1
+                        - utf-16
+                        type: string
+                      escapeChar:
+                        default: none
+                        description: The character used to escape the delimiter
+                        enum:
+                        - single-quote
+                        - double-quote
+                        - tilda
+                        - none
+                        type: string
+                      hasIndexColumn:
+                        default: false
+                        description: Indicates if the file contains an index column
+                        type: boolean
+                      header:
+                        default: true
+                        description: Indicates if a header is present in the file
+                        type: boolean
+                      indexColumn:
+                        default: 0
+                        description: The position of the index column
+                        format: int32
+                        type: integer
+                      maxRows:
+                        description: The maximum number of rows to read
+                        format: int32
+                        minimum: 0
+                        type: integer
+                      nullValues:
+                        default: ""
+                        description: NullValues is a sequence of values to replace
+                          with NA.
+                        type: string
+                      quote:
+                        default: double-quote
+                        description: The charcter used for quotes (by default, a double
+                          quote ")
+                        enum:
+                        - double-quote
+                        - single-quote
+                        type: string
+                      rowDelimiter:
+                        default: crlf
+                        description: The character used to signal the end of a row
+                          (by default, a newline \n)
+                        enum:
+                        - crlf
+                        - cr
+                        - lf
+                        - semicolon
+                        - colon
+                        - comma
+                        - tab
+                        - space
+                        - pipe
+                        type: string
+                      skipRows:
+                        default: 0
+                        description: The number of rows to skip from the top of the
+                          file
+                        format: int32
+                        minimum: 0
+                        type: integer
+                      strict:
+                        default: true
+                        description: Indicates if the read of the CSV file should
+                          fail if there are any errors
+                        type: boolean
+                    type: object
+                  datasetType:
+                    default: tabular
+                    description: The type of dataset; currently, the only supported
+                      type is `tabular`
+                    enum:
+                    - tabular
+                    - image
+                    - text
+                    - video
+                    - audio
+                    type: string
+                  description:
+                    default: ""
+                    description: User-provided description of the object
+                    maxLength: 512
+                    type: string
+                  excelNotebook:
+                    description: The file format of excel files, if applicable
+                    properties:
+                      columnNameRow:
+                        description: The position of the row that contains the column
+                          names (i.e. the header)
+                        format: int32
+                        type: integer
+                      data:
+                        description: The specification for the bounds of the data
+                        properties:
+                          entireSheet:
+                            default: false
+                            description: Indicates if the excel reader should read
+                              the entire sheet; if false, it will read only within
+                              the bounds specified by the `To` and `From` fields of
+                              the ExcelSheetArea
+                            type: boolean
+                          fromColumn:
+                            description: If reading part of the excel sheet, start
+                              with the column in this position
+                            format: int32
+                            type: integer
+                          fromRow:
+                            description: If reading part of the excel sheet, start
+                              with the row in this position
+                            format: int32
+                            type: integer
+                          toColumn:
+                            description: If reading part of the excel sheet, end with
+                              the column in this position
+                            format: int32
+                            type: integer
+                          toRow:
+                            description: If reading part of the excel sheet, end with
+                              the row in this position
+                            format: int32
+                            type: integer
+                        type: object
+                      firstSheetWithData:
+                        default: false
+                        description: Indicates if the excel reader should use the
+                          first sheet that contains data
+                        type: boolean
+                      sheetIndex:
+                        description: The index of the sheet in the excel file to read
+                          data from
+                        format: int32
+                        type: integer
+                      sheetName:
+                        description: The name of the sheet that exists in the excel
+                          file to read data from
+                        type: string
+                    type: object
+                  fileType:
+                    default: csv
+                    description: The file type of incoming data which uses the DataSource
+                      (by default, a CSV file)
+                    enum:
+                    - csv
+                    - tsv
+                    - excel
+                    - fwf
+                    - hdf
+                    - html
+                    - json
+                    - pickle
+                    - sas
+                    - stata
+                    - feather
+                    type: string
+                  owner:
+                    default: no-one
+                    description: The reference to the Account in the same namespace
+                      as the resource which created the object
+                    type: string
+                  relationships:
+                    description: List of relationships to other data sources
+                    items:
+                      description: RelationSpec defines a relationship between two
+                        DataSource objects
+                      properties:
+                        arity:
+                          description: The relationship arity
+                          enum:
+                          - one-to-one
+                          - one-to-many
+                          - many-to-many
+                          type: string
+                        columns:
+                          description: The name of the columns that holds the foreign
+                            key
+                          type: string
+                        name:
+                          description: The name of the relationship
+                          type: string
+                        relatesTo:
+                          description: The name of the other DataSource object
+                          type: string
+                      type: object
+                    type: array
+                  sample:
+                    description: The specification for how incoming data should be
+                      sampled (i.e. how many rows should be used). Applicable primarily
+                      for very large datasets
+                    properties:
+                      column:
+                        default: ""
+                        description: Column is used for stratified sampling.
+                        type: string
+                      enabled:
+                        default: false
+                        description: Enabled specify if the sample is enabled
+                        type: boolean
+                      filter:
+                        default: ""
+                        description: Filter formula. Valid only if the sample is a
+                          filter.
+                        type: string
+                      percent:
+                        default: 100
+                        description: Pct is the percent of rows to use for analysis.
+                        format: int32
+                        minimum: 0
+                        type: integer
+                      rows:
+                        default: 500
+                        description: Rows is the number of rows. Default is 500
+                        format: int32
+                        minimum: 0
+                        type: integer
+                      type:
+                        default: random
+                        description: Type is the sampling type Default is random
+                        enum:
+                        - header
+                        - random
+                        - filter
+                        - anomaly
+                        - stratified
+                        type: string
+                    type: object
+                  schema:
+                    description: The schema which will be used during the ingestion
+                      process of any Dataset resources which specify the DataSource
+                    properties:
+                      columns:
+                        description: The collection of columns and their attributes
+                        items:
+                          description: Column specifies the attribute of a single
+                            column in a dataset. The fields of the Column align with
+                            the JSON schema standard; you can view detailed documentation
+                            at https://json-schema.org/draft/2020-12/json-schema-validation.html
+                          properties:
+                            DefaultValueNum:
+                              description: The default value for number types; used
+                                internally for synthetic data and validation
+                              type: number
+                            datatype:
+                              description: The data type of the feature (e.g. number,
+                                string, boolean, etc.)
+                              enum:
+                              - boolean
+                              - datetime
+                              - number
+                              - categorical
+                              - ordinal
+                              - text
+                              - json
+                              - number-list
+                              - categorical-list
+                              - text-list
+                              type: string
+                            description:
+                              default: ""
+                              description: The user-specified description of the feature
+                              maxLength: 63
+                              type: string
+                            displayName:
+                              default: ""
+                              description: The display name of the column, which is
+                                used in reports and other visual elements. If omitted,
+                                it will use the raw name
+                              maxLength: 63
+                              type: string
+                            driftThreshold:
+                              description: The threshold drift value for model drift
+                                detection.
+                              type: number
+                            enum:
+                              description: The collection of unique values for categorical
+                                features
+                              items:
+                                type: string
+                              type: array
+                            example:
+                              default: ""
+                              description: A user-specified example value
+                              type: string
+                            exclusiveMaximum:
+                              default: false
+                              description: The exclusive upper limit of all values
+                                in the column, which does not include the maximum
+                                value
+                              type: boolean
+                            exclusiveMinimum:
+                              default: false
+                              description: The exclusive lower limit of all values
+                                in the column, which does not include the minimum
+                                value
+                              type: boolean
+                            externalDocs:
+                              default: ""
+                              description: A link to user-specified external documentation
+                              type: string
+                            fk:
+                              default: false
+                              description: Denotes if the column specifies a foreign
+                                key of another database table
+                              type: boolean
+                            fold:
+                              default: false
+                              description: Indicates if the column holds fold values
+                              type: boolean
+                            format:
+                              description: The data domain of the feature, which constrains
+                                the contents of the feature to a specific set of values
+                              enum:
+                              - url
+                              - path
+                              - password
+                              - time
+                              - count
+                              - interval
+                              - nominal
+                              - email
+                              - creditcard
+                              - uuid
+                              - uuid5
+                              - uuid
+                              - base64
+                              - latitude
+                              - longtitude
+                              - dns
+                              - ip4
+                              - ip6
+                              - ssn
+                              - alpha
+                              - alphanumeric
+                              - unknown
+                              - color
+                              - currency
+                              - date
+                              - guid
+                              - hyperlink
+                              - image
+                              - media
+                              - file
+                              - embedding
+                              - record
+                              - useless
+                              - none
+                              type: string
+                            formula:
+                              description: The formula used to generate the column
+                              type: string
+                            generated:
+                              description: Indicates if the feature was automatically
+                                generated
+                              type: boolean
+                            id:
+                              description: Indicates if the column is an ID column
+                              type: boolean
+                            ignore:
+                              default: false
+                              description: Indicates if the feature should be ignored
+                                when building models
+                              type: boolean
+                            imputation:
+                              default: auto
+                              description: The recommended imputation method for the
+                                column
+                              enum:
+                              - remove-rows-with-missing-values
+                              - replace-with-mean
+                              - replace-with-median
+                              - replace-with-arbitrary-value
+                              - freq-category-imputation
+                              - add-missing-value-indicator
+                              - knn
+                              - iterative
+                              - mice
+                              - no-imputation
+                              - auto
+                              - none
+                              type: string
+                            index:
+                              default: false
+                              description: Indicates if the column is an index column
+                              type: boolean
+                            log:
+                              default: false
+                              description: Indicates if values from this column will
+                                be sampled on a logarithmic scale
+                              type: boolean
+                            maxItems:
+                              default: 0
+                              description: The maximum number of items if the column
+                                is a list of values
+                              format: int32
+                              minimum: 0
+                              type: integer
+                            maxLength:
+                              default: 0
+                              description: The maximum length of values in the column,
+                                if the column data type is a string
+                              format: int32
+                              minimum: 0
+                              type: integer
+                            maximum:
+                              default: 0
+                              description: The maximum value of values all values
+                                in the column
+                              type: number
+                            minItems:
+                              default: 0
+                              description: The minimum number of items if the column
+                                is a list of values
+                              format: int32
+                              minimum: 0
+                              type: integer
+                            minLength:
+                              default: 0
+                              description: The minimum length of values in the column,
+                                if the column data type is a string
+                              format: int32
+                              minimum: 0
+                              type: integer
+                            minimum:
+                              default: 0
+                              description: The minimum value of values all values
+                                in the column
+                              type: number
+                            mu:
+                              default: 0
+                              description: Mu is the mean of the normal distribution
+                              type: number
+                            multipleOf:
+                              default: 0
+                              description: The integer value which the values of the
+                                column should be a multiple of
+                              format: int32
+                              minimum: 0
+                              type: integer
+                            name:
+                              description: The name of the column
+                              maxLength: 63
+                              minLength: 1
+                              type: string
+                            nullable:
+                              default: false
+                              description: Indicates if the column can contain null
+                                values
+                              type: boolean
+                            ordinal:
+                              default: false
+                              description: Indicates if the feature is ordinal, in
+                                the case of categorical features
+                              type: boolean
+                            pattern:
+                              default: ""
+                              description: The regex pattern which values in the column
+                                must adhere to
+                              type: string
+                            personalData:
+                              default: false
+                              description: Indicates if the column contains any personal
+                                data
+                              type: boolean
+                            phi:
+                              default: false
+                              description: Indicates if the column contains personal
+                                health information
+                              type: boolean
+                            pii:
+                              default: false
+                              description: Indicates if the column contains personally
+                                identifiable information
+                              type: boolean
+                            pk:
+                              default: false
+                              description: Denotes if the column specifies a primary
+                                key of a database table (i.e. a users ID)
+                              type: boolean
+                            protected:
+                              default: false
+                              description: Protected means that this feature is important
+                                for ethical AI / Fairness
+                              type: boolean
+                            required:
+                              default: false
+                              description: Required
+                              type: boolean
+                            reserved:
+                              default: false
+                              description: Indicates that the feature should always
+                                be used in training
+                              type: boolean
+                            scaling:
+                              default: auto
+                              description: The recommended scaling method for the
+                                column
+                              enum:
+                              - standard-scaling
+                              - max-abs-scaling
+                              - min-max-scaling
+                              - normalizion-scaling
+                              - robust-scaling
+                              - scale-to-unit-norm
+                              - none
+                              - auto
+                              type: string
+                            sigma:
+                              default: 0
+                              description: Sigma is the standard deviation of the
+                                distribution
+                              type: number
+                            skewThreshold:
+                              description: The threshold skew for skew detection
+                              type: number
+                            step:
+                              default: 1
+                              description: The step value if the column values are
+                                a sequence of numbers
+                              type: number
+                            target:
+                              default: false
+                              description: Indicates if the feature is the target
+                                feature of the model, and the feature which predictions
+                                will be made on
+                              type: boolean
+                            timeColumn:
+                              default: false
+                              description: Indicates if the column is used as the
+                                time axis in time series forecasting Default is false.
+                              type: boolean
+                            uniqueItems:
+                              default: false
+                              description: Enforce that all the items in the list
+                                are unique
+                              type: boolean
+                            weight:
+                              default: false
+                              description: If True than this is a weight column
+                              type: boolean
+                          required:
+                          - datatype
+                          - name
+                          type: object
+                        type: array
+                      recommendationSchema:
+                        description: The recommendation schema, which is used for
+                          the recommendation ML task
+                        properties:
+                          itemIDColumn:
+                            default: item_id
+                            description: The name of the column that specifies item
+                              IDs
+                            type: string
+                          ratingColumn:
+                            default: rating
+                            description: The name of the column that specifies ratings
+                            type: string
+                          userIDColumn:
+                            default: user_id
+                            description: The name of the column that specifies user
+                              IDs (i.e. the primary key)
+                            type: string
+                        type: object
+                      timeSeriesSchema:
+                        description: The time-series schema, which sets time-series
+                          specific parameters
+                        properties:
+                          country:
+                            description: The holiday which should be taken into account
+                            enum:
+                            - US
+                            - BR
+                            - ID
+                            - IN
+                            - MY
+                            - VN
+                            - TH
+                            - PH
+                            - PK
+                            - BD
+                            - EG
+                            - CN
+                            - RU
+                            - KR
+                            - BY
+                            - AE
+                            - none
+                            type: string
+                          freq:
+                            description: The time series frequency
+                            enum:
+                            - second
+                            - minute
+                            - hour
+                            - day
+                            - week
+                            - month
+                            - quarter
+                            - year
+                            type: string
+                        type: object
+                      validation:
+                        description: The specification for validation rules which
+                          will be performed on new Datasets
+                        properties:
+                          columnValidations:
+                            description: ColumnValidations defines assertions for
+                              columns from the dataset
+                            items:
+                              description: ColumnValidation specifies a validation
+                                rule for a single column
+                              properties:
+                                column:
+                                  description: The name of the column to be validated
+                                  type: string
+                                generated:
+                                  default: false
+                                  description: Indicates if this validation rule was
+                                    automatically generated by the system
+                                  type: boolean
+                                max:
+                                  format: float
+                                  type: number
+                                min:
+                                  format: float
+                                  type: number
+                                strictMax:
+                                  default: false
+                                  type: boolean
+                                strictMin:
+                                  default: false
+                                  type: boolean
+                                type:
+                                  description: The type of validation rule
+                                  type: string
+                                value:
+                                  type: number
+                                valueSet:
+                                  items:
+                                    type: string
+                                  type: array
+                              type: object
+                            type: array
+                          datasetValidations:
+                            description: DatasetValidations contains validations for
+                              the whole dataset
+                            items:
+                              description: DatasetValidation specifies a validation
+                                rule which encompasses the contents of an entire dataset
+                              properties:
+                                generated:
+                                  default: false
+                                  description: Indicates if this validation rule was
+                                    automatically generated by the system
+                                  type: boolean
+                                max:
+                                  format: float
+                                  type: number
+                                min:
+                                  format: float
+                                  type: number
+                                strictMax:
+                                  default: false
+                                  type: boolean
+                                strictMin:
+                                  default: false
+                                  type: boolean
+                                type:
+                                  description: The type of validation rule
+                                  type: string
+                                value:
+                                  format: float
+                                  type: number
+                                valueSet:
+                                  items:
+                                    type: string
+                                  type: array
+                              type: object
+                            type: array
+                          fileValidations:
+                            description: FileValidations defines assertions for the
+                              contents of the data file
+                            items:
+                              properties:
+                                bucketName:
+                                  type: string
+                                column:
+                                  type: string
+                                generated:
+                                  default: false
+                                  description: Generated indicate weather this validation
+                                    rule was automatically generated
+                                  type: boolean
+                                max:
+                                  format: float
+                                  type: number
+                                min:
+                                  format: float
+                                  type: number
+                                strictMax:
+                                  default: false
+                                  type: boolean
+                                strictMin:
+                                  default: false
+                                  type: boolean
+                                type:
+                                  type: string
+                                value:
+                                  description: For validation that need a single value
+                                  type: number
+                                valueSet:
+                                  items:
+                                    type: string
+                                  type: array
+                              type: object
+                            type: array
+                          multiColumnValidations:
+                            description: MultiColumnValidations defines validations
+                              for multiple columns from the dataset
+                            items:
+                              description: MultiColumnValidation specifies a validation
+                                rule that encompasses multiple columns
+                              properties:
+                                columns:
+                                  description: The list of columns that will be checked
+                                  items:
+                                    type: string
+                                  type: array
+                                generated:
+                                  description: Indicates if this validation rule was
+                                    automatically generated by the system
+                                  type: boolean
+                                max:
+                                  format: float
+                                  type: number
+                                min:
+                                  format: float
+                                  type: number
+                                strictMax:
+                                  type: boolean
+                                strictMin:
+                                  type: boolean
+                                type:
+                                  description: The type of validation rule
+                                  type: string
+                                value:
+                                  type: number
+                                valueSet:
+                                  items:
+                                    type: string
+                                  type: array
+                              type: object
+                            type: array
+                          multiDatasetValidations:
+                            description: MultiDatasetValidation contains validations
+                              for multiple datasets
+                            items:
+                              description: MultiDatasetValidation specifies a validation
+                                rule between multiple datasets
+                              properties:
+                                datasets:
+                                  description: The list of datasets that will be checked
+                                  items:
+                                    type: string
+                                  type: array
+                                generated:
+                                  default: false
+                                  description: Indicates if this validation rule was
+                                    automatically generated by the system
+                                  type: boolean
+                                type:
+                                  description: The type of validation rule
+                                  type: string
+                              type: object
+                            type: array
+                        type: object
+                    type: object
+                  task:
+                    description: The default task for Dataset resources created from
+                      the DataSource. If null, this will be determined from the DataProduct
+                      which owns the DataSource
+                    enum:
+                    - binary-classification
+                    - multi-classification
+                    - multi-label-classification
+                    - forecasting
+                    - regression
+                    - clustering
+                    - recommendation
+                    - outlier-detection
+                    - novelty-detection
+                    - topic-modeling
+                    - video-action-recognition
+                    - video-classification
+                    - video-object-tracking
+                    - image-classification
+                    - image-multi-classification
+                    - image-object-detection
+                    - image-segmentation
+                    - auto
+                    - text-ner
+                    - text-classification
+                    - text-summarization
+                    - text-qa
+                    - text-sentiment-analysis
+                    - text-generation
+                    - text-code-generation
+                    - text-translation
+                    - text-lang-detection
+                    - text-grammer-correction
+                    - text-paraphrasing
+                    - text-intent-classification
+                    - text-semantic-similarity
+                    - text-keyword-extraction
+                    - text-pos
+                    - text-tokenization
+                    - text-lemma
+                    - unknown
+                    type: string
+                  versionName:
+                    default: ""
+                    description: The reference to the DataProductVersion resource
+                      that describes the version of the object
+                    maxLength: 63
+                    type: string
+                type: object
+              dataapp:
+                default: false
+                description: 'Specify if we should create a data app as part of the
+                  autobuilder. Default : false'
+                type: boolean
+              datasetName:
+                description: DatasetName is the name of existing dataset, if empty
+                  the dataset object will be created otherwise, a dataset will be
+                  created based on the file in the path section.
+                maxLength: 253
+                pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
+                type: string
+              datasetType:
+                description: Dataset type is the type of the dataset (tabular / vision)
+                enum:
+                - tabular
+                - image
+                - text
+                - video
+                - audio
+                type: string
+              datasourceName:
+                description: DataSourceName is the name of existing datasource, if
+                  empty the datasource parameters will be inferred from the file
+                maxLength: 253
+                pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
+                type: string
+              featureEngineering:
+                default: false
+                description: If true specify feature engineering
+                type: boolean
+              featureSelection:
+                default: false
+                description: If true perform feature selection
+                type: boolean
+              labRef:
+                description: LabRef is a reference to the lab where the trainers for
+                  this study run. If no value is provided, the lab is taken from the
+                properties:
+                  apiVersion:
+                    description: API version of the referent.
+                    type: string
+                  fieldPath:
+                    description: 'If referring to a piece of an object instead of
+                      an entire object, this string should contain a valid JSON/Go
+                      field access statement, such as desiredState.manifest.containers[2].
+                      For example, if the object reference is to a container within
+                      a pod, this would take on a value like: "spec.containers{name}"
+                      (where "name" refers to the name of the container that triggered
+                      the event) or if no container name is specified "spec.containers[2]"
+                      (container with index 2 in this pod). This syntax is chosen
+                      only to have some well-defined way of referencing a part of
+                      an object. TODO: this design is not final and this field is
+                      subject to change in the future.'
+                    type: string
+                  kind:
+                    description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                    type: string
+                  name:
+                    description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                    type: string
+                  namespace:
+                    description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                    type: string
+                  resourceVersion:
+                    description: 'Specific resourceVersion to which this reference
+                      is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                    type: string
+                  uid:
+                    description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                    type: string
+                type: object
+              location:
+                description: Location is the location of the data in the cloud
+                properties:
+                  bucketName:
+                    default: ""
+                    description: In the case of the location type being object storage,
+                      BucketName is the name of the VirtualBucket resource in the
+                      same tenant namespace as the resource. Modela will access the
+                      object storage system and will pull from the file path specified
+                      by the `Path` field
+                    type: string
+                  connectionName:
+                    default: ""
+                    description: In the case of the location type being a database,
+                      ConnectionName is the name of the Connection resource in the
+                      same tenant namespace as the resource which specifies the DataLocation.
+                      Modela will connect to the database specified by the Connection
+                      and execute the query specified by the `SQL` field
+                    type: string
+                  database:
+                    default: ""
+                    description: The name of a database that exists inside the database
+                      server connection specified by the `ConnectionName` field
+                    type: string
+                  path:
+                    default: ""
+                    description: 'The path to a flat-file in an object storage system.
+                      When using the Modela API to upload files (through the FileService
+                      API), Modela will upload the data to a predetermined path with
+                      the following format: "modela/depot/tenants/{tenant}/dataproducts/{dataproduct}/dataproductversions/{version}/{resource_type}/{resource_name}/data/raw/{file_name}
+                      The path does not need to adhere to this format; you can still
+                      pass the path of a file inside a bucket not managed by Modela'
+                    type: string
+                  sql:
+                    default: ""
+                    description: The SQL statement to query data from a database connection
+                    type: string
+                  table:
+                    default: ""
+                    description: The name of a table inside a database, if applicable
+                    type: string
+                  topic:
+                    default: ""
+                    description: The name of the topic in case of streaming (currently
+                      unsupported)
+                    type: string
+                  type:
+                    default: object
+                    description: The type of location where the data resides, which
+                      can either be an object inside an object storage system (i.e.
+                      Minio), a SQL location like a table or a view, a data stream
+                      (i.e. Kafka, currently unsupported), or a web location (currently
+                      unsupported)
+                    type: string
+                type: object
+              maxModels:
+                default: 10
+                description: Max model
+                format: int32
+                maximum: 512
+                minimum: 1
+                type: integer
+              maxTime:
+                default: 60
+                description: Max training time.
+                format: int32
+                maximum: 512
+                minimum: 1
+                type: integer
+              objective:
+                description: The task objective. this is how models will be scored.
+                  If not defined this will be set to the default objective for the
+                  task
+                enum:
+                - accuracy
+                - average-precision
+                - balanced-accuracy
+                - pr-auc
+                - pr-auc-micro
+                - pr-auc-macro
+                - pr-auc-weighted
+                - f1
+                - f1-micro
+                - f1-macro
+                - f1-weighted
+                - f1-samples
+                - precision
+                - precision-micro
+                - precision-macro
+                - precision-weighted
+                - precision-samples
+                - recall
+                - recall-macro
+                - recall-micro
+                - recall-weighted
+                - recall-samples
+                - log-loss
+                - auc
+                - auc-micro
+                - auc-macro
+                - auc-weighted
+                - zero-one
+                - hamming-loss
+                - hinge-loss
+                - jacquard-loss
+                - mcc
+                - fp
+                - fn
+                - tn
+                - tp
+                - tpr
+                - fpr
+                - tnr
+                - matthews-corr-coef
+                - explained-variance
+                - max-error
+                - mae
+                - mse
+                - msle
+                - rmse
+                - rmsle
+                - median-absolute-error
+                - r2
+                - adj-r2
+                - mean_poisson_deviance
+                - mean-gamma-deviance
+                - mean-tweedie-deviance
+                - mape
+                - maze
+                - mdape
+                - smape
+                - adjusted-mutual-info-score
+                - adjusted-rand-score
+                - completeness-score
+                - fowlkes-mallows-score
+                - homogeneity-score
+                - mutual-info-score
+                - normalized-mutual-info-score
+                - v-measure-score
+                - p50-latency
+                - p95-latency
+                - p99-latency
+                - cpu
+                - gpu
+                - mem
+                - gpu-mem
+                - req-per-sec
+                - uncertain-prediction-percent
+                - none
+                type: string
+              owner:
+                default: no-one
+                description: The owner account name
+                pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
+                type: string
+              resources:
+                description: Resource spec specify the resources needed for running
+                  the model pipeline job
+                properties:
+                  cpuImage:
+                    description: Reference to the managed gpu trainer image
+                    properties:
+                      apiVersion:
+                        description: API version of the referent.
+                        type: string
+                      fieldPath:
+                        description: 'If referring to a piece of an object instead
+                          of an entire object, this string should contain a valid
+                          JSON/Go field access statement, such as desiredState.manifest.containers[2].
+                          For example, if the object reference is to a container within
+                          a pod, this would take on a value like: "spec.containers{name}"
+                          (where "name" refers to the name of the container that triggered
+                          the event) or if no container name is specified "spec.containers[2]"
+                          (container with index 2 in this pod). This syntax is chosen
+                          only to have some well-defined way of referencing a part
+                          of an object. TODO: this design is not final and this field
+                          is subject to change in the future.'
+                        type: string
+                      kind:
+                        description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                        type: string
+                      name:
+                        description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                        type: string
+                      namespace:
+                        description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                        type: string
+                      resourceVersion:
+                        description: 'Specific resourceVersion to which this reference
+                          is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                        type: string
+                      uid:
+                        description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                        type: string
+                    type: object
+                  gpuImage:
+                    description: Reference to the managed gpu trainer image
+                    properties:
+                      apiVersion:
+                        description: API version of the referent.
+                        type: string
+                      fieldPath:
+                        description: 'If referring to a piece of an object instead
+                          of an entire object, this string should contain a valid
+                          JSON/Go field access statement, such as desiredState.manifest.containers[2].
+                          For example, if the object reference is to a container within
+                          a pod, this would take on a value like: "spec.containers{name}"
+                          (where "name" refers to the name of the container that triggered
+                          the event) or if no container name is specified "spec.containers[2]"
+                          (container with index 2 in this pod). This syntax is chosen
+                          only to have some well-defined way of referencing a part
+                          of an object. TODO: this design is not final and this field
+                          is subject to change in the future.'
+                        type: string
+                      kind:
+                        description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                        type: string
+                      name:
+                        description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                        type: string
+                      namespace:
+                        description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                        type: string
+                      resourceVersion:
+                        description: 'Specific resourceVersion to which this reference
+                          is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                        type: string
+                      uid:
+                        description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                        type: string
+                    type: object
+                  requirements:
+                    description: Custom resource requirments
+                    properties:
+                      limits:
+                        additionalProperties:
+                          anyOf:
+                          - type: integer
+                          - type: string
+                          pattern: ^(\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))(([KMGTPE]i)|[numkMGTPE]|([eE](\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))))?$
+                          x-kubernetes-int-or-string: true
+                        description: 'Limits describes the maximum amount of compute
+                          resources allowed. More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/'
+                        type: object
+                      requests:
+                        additionalProperties:
+                          anyOf:
+                          - type: integer
+                          - type: string
+                          pattern: ^(\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))(([KMGTPE]i)|[numkMGTPE]|([eE](\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))))?$
+                          x-kubernetes-int-or-string: true
+                        description: 'Requests describes the minimum amount of compute
+                          resources required. If Requests is omitted for a container,
+                          it defaults to Limits if that is explicitly specified, otherwise
+                          to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/'
+                        type: object
+                    type: object
+                  workloadName:
+                    description: If this resource is based on the workload, this field
+                      contain the name of the workload.
+                    type: string
+                type: object
+              sampler:
+                default: random
+                description: Specify the search method
+                enum:
+                - random
+                - grid
+                - bayesian
+                - tpe
+                - manual
+                - auto
+                type: string
+              servingSiteRef:
+                description: A reference to the serving site. If no value is provided,
+                  the lab is taken from the
+                properties:
+                  apiVersion:
+                    description: API version of the referent.
+                    type: string
+                  fieldPath:
+                    description: 'If referring to a piece of an object instead of
+                      an entire object, this string should contain a valid JSON/Go
+                      field access statement, such as desiredState.manifest.containers[2].
+                      For example, if the object reference is to a container within
+                      a pod, this would take on a value like: "spec.containers{name}"
+                      (where "name" refers to the name of the container that triggered
+                      the event) or if no container name is specified "spec.containers[2]"
+                      (container with index 2 in this pod). This syntax is chosen
+                      only to have some well-defined way of referencing a part of
+                      an object. TODO: this design is not final and this field is
+                      subject to change in the future.'
+                    type: string
+                  kind:
+                    description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                    type: string
+                  name:
+                    description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                    type: string
+                  namespace:
+                    description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                    type: string
+                  resourceVersion:
+                    description: 'Specific resourceVersion to which this reference
+                      is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                    type: string
+                  uid:
+                    description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                    type: string
+                type: object
+              targetColumn:
+                description: 'Target column. Default: last column in the schema.'
+                maxLength: 128
+                type: string
+              task:
+                description: Task is the machine learning task (regression/classification)
+                  required
+                enum:
+                - binary-classification
+                - multi-classification
+                - multi-label-classification
+                - forecasting
+                - regression
+                - clustering
+                - recommendation
+                - outlier-detection
+                - novelty-detection
+                - topic-modeling
+                - video-action-recognition
+                - video-classification
+                - video-object-tracking
+                - image-classification
+                - image-multi-classification
+                - image-object-detection
+                - image-segmentation
+                - auto
+                - text-ner
+                - text-classification
+                - text-summarization
+                - text-qa
+                - text-sentiment-analysis
+                - text-generation
+                - text-code-generation
+                - text-translation
+                - text-lang-detection
+                - text-grammer-correction
+                - text-paraphrasing
+                - text-intent-classification
+                - text-semantic-similarity
+                - text-keyword-extraction
+                - text-pos
+                - text-tokenization
+                - text-lemma
+                - unknown
+                type: string
+              trainers:
+                default: 1
+                description: Specify the number of trainers. Default 1 trainer.
+                format: int32
+                type: integer
+            type: object
+          status:
+            description: ModelAutobuilderStatus define the observed state of the pipeline
+            properties:
+              bestModelName:
+                description: The selected model name.
+                type: string
+              bestModelScore:
+                description: The Best model score, so far.
+                type: number
+              cols:
+                description: number of columns, used mainly to show the columns
+                format: int32
+                type: integer
+              conditions:
+                items:
+                  description: ModelAutobuilderCondition describes the state of a
+                    pipeline at a certain point.
+                  properties:
+                    lastTransitionTime:
+                      description: Last time the condition transitioned from one status
+                        to another.
+                      format: date-time
+                      type: string
+                    message:
+                      description: A human readable message indicating details about
+                        the transition.
+                      type: string
+                    reason:
+                      description: The reason for the condition's last transition.
+                      type: string
+                    status:
+                      description: Status of the condition, one of True, False, AutoScaler.
+                      type: string
+                    type:
+                      description: Type of account condition.
+                      type: string
+                  required:
+                  - status
+                  - type
+                  type: object
+                type: array
+              dataSourceName:
+                description: the generated schema name (if generated)
+                type: string
+              datasetName:
+                description: the generated dataset name (if generated)
+                type: string
+              endTime:
+                description: CompletionTime is the time that this prediction job finished
+                format: date-time
+                type: string
+              estimator:
+                description: The best estimator, taken from the best model
+                properties:
+                  algorithmName:
+                    description: AlgorithmName is a reference to the algorithm in
+                      the catalog
+                    type: string
+                  parameters:
+                    description: Parameters is a list of the algorithm hyper parameters
+                    items:
+                      description: HyperParameterValue represent a specific value
+                        of the learning algorithm hyper-parameter. The value is chosen
+                        by the planner
+                      properties:
+                        name:
+                          description: Reference to the name of the hyper parameter.
+                          type: string
+                        value:
+                          description: Value hold the value if  the hyper paramer
+                            type is string
+                          type: string
+                      required:
+                      - name
+                      - value
+                      type: object
+                    type: array
+                type: object
+              failureMessage:
+                description: Update in case of terminal failure message
+                type: string
+              failureReason:
+                description: Update in case of terminal failure Borrowed from cluster
+                  api controller
+                type: string
+              fileSize:
+                description: file size in bytes
+                format: int32
+                type: integer
+              flatFileName:
+                description: the generate flat file name
+                type: string
+              imageRepoName:
+                description: the name of the image repository
+                type: string
+              lastUpdated:
+                description: Last time the object was updated
+                format: date-time
+                type: string
+              models:
+                description: Total models created for the study
+                format: int32
+                type: integer
+              observedGeneration:
+                description: ObservedGeneration is the Last generation that was acted
+                  on
+                format: int64
+                type: integer
+              phase:
+                default: Pending
+                description: The phase of the auto ml run
+                type: string
+              predictorName:
+                description: the generated predictor name
+                type: string
+              rows:
+                description: number of rows in the dataset
+                format: int32
+                type: integer
+              startTime:
+                description: StartTime is the times that this prediction job started
+                format: date-time
+                type: string
+              studyName:
+                description: the generate study name
+                type: string
+              trainedModels:
+                description: models that were successful during training
+                format: int32
+                type: integer
+            type: object
+        required:
+        - spec
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}
+status:
+  acceptedNames:
+    kind: ""
+    plural: ""
+  conditions: []
+  storedVersions: []

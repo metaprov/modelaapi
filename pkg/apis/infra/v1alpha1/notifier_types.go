@@ -122,6 +122,9 @@ type NotificationChannelSpec struct {
 	// This channel end time.
 	// +kubebuilder:validation:Optional
 	To *metav1.Time `json:"to,omitempty" protobuf:"bytes,6,opt,name=to"`
+	// The notification destination. Can be an email if using smtp connection
+	// or a slack channel.
+	Destination string `json:"destination,omitempty" protobuf:"bytes,7,opt,name=destination"`
 }
 
 type NotificationChannelStatus struct {

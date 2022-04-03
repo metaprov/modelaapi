@@ -280,10 +280,10 @@ message GpuClassCost {
 }
 
 message HistogramData {
-  // The bins if this histogram describe conitunous variables
+  // The bins if this histogram describe continous variables
   repeated double bins = 1;
 
-  // The set of values per beans
+  // The set of values per bin
   repeated double values = 2;
 
   // The name of the categories, one per bin is this a categorical histogram
@@ -890,18 +890,6 @@ message RunSchedule {
   // +kubebuilder:validation:Optional
   // The type of schedule events.
   optional string type = 5;
-}
-
-// Represent a stack holder in the product.
-// Each stake holder can hove one or more roles.
-message StakeHolder {
-  // The account name of the stake holder
-  // +kubebuilder:default:="no-one"
-  // +kubebuilder:validation:Optional
-  optional string accountName = 1;
-
-  // The roles assigned to the stake holder
-  repeated string roles = 2;
 }
 
 message Stakeholder {

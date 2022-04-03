@@ -947,12 +947,6 @@ type ImageRegistrySpec struct {
 
 type SlackSpec struct {
 	// +kubebuilder:default:=""
-	WebHookUrl *string `json:"webhookUrl,omitempty" protobuf:"bytes,1,opt,name=webhookUrl"`
-	// +kubebuilder:default:=""
-	Channel *string `json:"channel,omitempty" protobuf:"bytes,2,opt,name=channel"`
-	// +kubebuilder:default:=""
-	Username *string `json:"username,omitempty" protobuf:"bytes,3,opt,name=username"`
-	// +kubebuilder:default:=""
 	Token *string `json:"token,omitempty" protobuf:"bytes,4,opt,name=token"`
 }
 

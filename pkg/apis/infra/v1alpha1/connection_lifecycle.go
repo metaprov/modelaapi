@@ -415,7 +415,6 @@ func (connection *Connection) CreateSecret() *v1.Secret {
 		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.Smtp.Username
 		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.Smtp.Password
 	case catalog.Slack:
-		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.Slack.Username
 		fields[string(catalog.ApiKeyNameToken)] = *connection.Spec.Slack.Token
 	case catalog.Hipchat:
 		fields[string(catalog.ApiKeyNameToken)] = *connection.Spec.Hipchat.Token
@@ -807,7 +806,6 @@ func (connection *Connection) UnmaskSecretFields(secret v1.Secret) {
 		connection.Spec.Smtp.Username = username
 	case catalog.Slack:
 		connection.Spec.Slack.Token = token
-		connection.Spec.Slack.Username = username
 	case catalog.Hipchat:
 		connection.Spec.Hipchat.Token = token
 	case catalog.PageDuty:

@@ -384,8 +384,6 @@ func (b *ModelAutobuilder) CreateDataProduct() *data.DataProduct {
 				Name:                   util.StrPtr(b.Name),
 				RegistryConnectionName: util.StrPtr("default-docker-registry"),
 			},
-			//StakeHolders: make([]data.StakeHolder,0) ,
-			//BucketName:       *b.Spec.BucketName,
 			LabName:         util.StrPtr("default-lab"),
 			ServingSiteName: util.StrPtr("default-serving-site"),
 			Task:            b.Spec.Task,

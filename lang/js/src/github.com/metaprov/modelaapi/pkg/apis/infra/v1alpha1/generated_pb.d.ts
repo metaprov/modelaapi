@@ -2898,11 +2898,6 @@ export class LabSpec extends jspb.Message {
   getOwner(): string;
   setOwner(value: string): LabSpec;
 
-  getStakeholdersList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StakeHolder>;
-  setStakeholdersList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StakeHolder>): LabSpec;
-  clearStakeholdersList(): LabSpec;
-  addStakeholders(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StakeHolder, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StakeHolder;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): LabSpec.AsObject;
   static toObject(includeInstance: boolean, msg: LabSpec): LabSpec.AsObject;
@@ -2918,7 +2913,6 @@ export namespace LabSpec {
     limits?: ResourceLimitSpec.AsObject,
     clustername: string,
     owner: string,
-    stakeholdersList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StakeHolder.AsObject>,
   }
 }
 
@@ -3611,6 +3605,9 @@ export class NotificationChannelSpec extends jspb.Message {
   hasTo(): boolean;
   clearTo(): NotificationChannelSpec;
 
+  getDestination(): string;
+  setDestination(value: string): NotificationChannelSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): NotificationChannelSpec.AsObject;
   static toObject(includeInstance: boolean, msg: NotificationChannelSpec): NotificationChannelSpec.AsObject;
@@ -3627,6 +3624,7 @@ export namespace NotificationChannelSpec {
     error: boolean,
     from?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     to?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    destination: string,
   }
 }
 
@@ -4466,11 +4464,6 @@ export class ServingSiteSpec extends jspb.Message {
   getOwner(): string;
   setOwner(value: string): ServingSiteSpec;
 
-  getStakeholdersList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StakeHolder>;
-  setStakeholdersList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StakeHolder>): ServingSiteSpec;
-  clearStakeholdersList(): ServingSiteSpec;
-  addStakeholders(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StakeHolder, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StakeHolder;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ServingSiteSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ServingSiteSpec): ServingSiteSpec.AsObject;
@@ -4488,7 +4481,6 @@ export namespace ServingSiteSpec {
     fqdn: string,
     clustername: string,
     owner: string,
-    stakeholdersList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StakeHolder.AsObject>,
   }
 }
 
@@ -4591,15 +4583,6 @@ export namespace SingleStoreSpec {
 }
 
 export class SlackSpec extends jspb.Message {
-  getWebhookurl(): string;
-  setWebhookurl(value: string): SlackSpec;
-
-  getChannel(): string;
-  setChannel(value: string): SlackSpec;
-
-  getUsername(): string;
-  setUsername(value: string): SlackSpec;
-
   getToken(): string;
   setToken(value: string): SlackSpec;
 
@@ -4613,9 +4596,6 @@ export class SlackSpec extends jspb.Message {
 
 export namespace SlackSpec {
   export type AsObject = {
-    webhookurl: string,
-    channel: string,
-    username: string,
     token: string,
   }
 }

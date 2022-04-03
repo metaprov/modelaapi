@@ -99,36 +99,58 @@ spec:
                     properties:
                       bucketName:
                         default: ""
-                        description: Bucketname is the name of the bucket
+                        description: In the case of the location type being object
+                          storage, BucketName is the name of the VirtualBucket resource
+                          in the same tenant namespace as the resource. Modela will
+                          access the object storage system and will pull from the
+                          file path specified by the `Path` field
                         type: string
                       connectionName:
                         default: ""
-                        description: ConnectionName is the name of the connection
-                          to access the database
+                        description: In the case of the location type being a database,
+                          ConnectionName is the name of the Connection resource in
+                          the same tenant namespace as the resource which specifies
+                          the DataLocation. Modela will connect to the database specified
+                          by the Connection and execute the query specified by the
+                          `SQL` field
                         type: string
                       database:
                         default: ""
-                        description: Database , the database.
+                        description: The name of a database that exists inside the
+                          database server connection specified by the `ConnectionName`
+                          field
                         type: string
                       path:
                         default: ""
-                        description: Path to the full data file (e.g. csv file).
+                        description: 'The path to a flat-file in an object storage
+                          system. When using the Modela API to upload files (through
+                          the FileService API), Modela will upload the data to a predetermined
+                          path with the following format: "modela/depot/tenants/{tenant}/dataproducts/{dataproduct}/dataproductversions/{version}/{resource_type}/{resource_name}/data/raw/{file_name}
+                          The path does not need to adhere to this format; you can
+                          still pass the path of a file inside a bucket not managed
+                          by Modela'
                         type: string
                       sql:
                         default: ""
-                        description: SQL statement, in case we choose the view type
+                        description: The SQL statement to query data from a database
+                          connection
                         type: string
                       table:
                         default: ""
-                        description: Sql or table or topic name.
+                        description: The name of a table inside a database, if applicable
                         type: string
                       topic:
                         default: ""
-                        description: Topic is the name of the topic in case of streaming
+                        description: The name of the topic in case of streaming (currently
+                          unsupported)
                         type: string
                       type:
                         default: object
-                        description: data location type is the type of the data location
+                        description: The type of location where the data resides,
+                          which can either be an object inside an object storage system
+                          (i.e. Minio), a SQL location like a table or a view, a data
+                          stream (i.e. Kafka, currently unsupported), or a web location
+                          (currently unsupported)
                         type: string
                     type: object
                 type: object
@@ -151,36 +173,58 @@ spec:
                     properties:
                       bucketName:
                         default: ""
-                        description: Bucketname is the name of the bucket
+                        description: In the case of the location type being object
+                          storage, BucketName is the name of the VirtualBucket resource
+                          in the same tenant namespace as the resource. Modela will
+                          access the object storage system and will pull from the
+                          file path specified by the `Path` field
                         type: string
                       connectionName:
                         default: ""
-                        description: ConnectionName is the name of the connection
-                          to access the database
+                        description: In the case of the location type being a database,
+                          ConnectionName is the name of the Connection resource in
+                          the same tenant namespace as the resource which specifies
+                          the DataLocation. Modela will connect to the database specified
+                          by the Connection and execute the query specified by the
+                          `SQL` field
                         type: string
                       database:
                         default: ""
-                        description: Database , the database.
+                        description: The name of a database that exists inside the
+                          database server connection specified by the `ConnectionName`
+                          field
                         type: string
                       path:
                         default: ""
-                        description: Path to the full data file (e.g. csv file).
+                        description: 'The path to a flat-file in an object storage
+                          system. When using the Modela API to upload files (through
+                          the FileService API), Modela will upload the data to a predetermined
+                          path with the following format: "modela/depot/tenants/{tenant}/dataproducts/{dataproduct}/dataproductversions/{version}/{resource_type}/{resource_name}/data/raw/{file_name}
+                          The path does not need to adhere to this format; you can
+                          still pass the path of a file inside a bucket not managed
+                          by Modela'
                         type: string
                       sql:
                         default: ""
-                        description: SQL statement, in case we choose the view type
+                        description: The SQL statement to query data from a database
+                          connection
                         type: string
                       table:
                         default: ""
-                        description: Sql or table or topic name.
+                        description: The name of a table inside a database, if applicable
                         type: string
                       topic:
                         default: ""
-                        description: Topic is the name of the topic in case of streaming
+                        description: The name of the topic in case of streaming (currently
+                          unsupported)
                         type: string
                       type:
                         default: object
-                        description: data location type is the type of the data location
+                        description: The type of location where the data resides,
+                          which can either be an object inside an object storage system
+                          (i.e. Minio), a SQL location like a table or a view, a data
+                          stream (i.e. Kafka, currently unsupported), or a web location
+                          (currently unsupported)
                         type: string
                     type: object
                 type: object

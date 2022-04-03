@@ -89,9 +89,6 @@ type ServingSiteSpec struct {
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,7,opt,name=owner"`
-	// Stake holders refer to a list of stackholders, which have interest in this serving site.
-	// +kubebuilder:validation:Optional
-	StakeHolders []catalog.StakeHolder `json:"stakeholders,omitempty" protobuf:"bytes,8,rep,name=stakeholders"`
 }
 
 type ServingSiteStatus struct {

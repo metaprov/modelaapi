@@ -48,100 +48,97 @@ message BarChartSpec {
   optional bool sort = 5;
 }
 
+// Column specifies the attribute of a single column in a dataset. The fields of the Column align with the
+// JSON schema standard; you can view detailed documentation at https://json-schema.org/draft/2020-12/json-schema-validation.html
 message Column {
-  // Name is the name of the raw feature.
+  // The name of the column
   // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:validation:MinLength=1
   optional string name = 1;
 
-  // Display Name specify the name of the feature that should be used in reports. If empty, use the raw name
+  // The display name of the column, which is used in reports and other visual elements. If omitted, it will use the raw name
   // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:validation:Optional
   optional string displayName = 2;
 
-  // Type specify the data type of the attribute
-  // required
+  // The data type of the feature (e.g. number, string, boolean, etc.)
   optional string datatype = 3;
 
-  // DataDomain is the domain of the column. A domain constrain the set of values.
+  // The data domain of the feature, which constrains the contents of the feature to a specific set of values
   // +kubebuilder:validation:Optional
   optional string format = 4;
 
-  // Description is a description of the feature
+  // The user-specified description of the feature
   // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:validation:Optional
   optional string description = 5;
 
-  // Ignore specify if the attribute should be ignored when building the model
-  // default is false
+  // Indicates if the feature should be ignored when building models
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool ignore = 6;
 
-  // Label should be true if this attribute is the predictable target
-  // Default is false
+  // Indicates if the feature is the target feature of the model, and the feature which predictions will be made on
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool target = 7;
 
-  // Nullable indicates if a column can contain string
-  // Default is false
+  // Indicates if the column can contain null values
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool nullable = 8;
 
-  // PrimaryKey denotes if this column is part of the table primary key
+  // Denotes if the column specifies a primary key of a database table (i.e. a users ID)
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool pk = 9;
 
-  // FK denotes if this column is part of a foreign  key to another table.
+  // Denotes if the column specifies a foreign key of another database table
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool fk = 10;
 
-  // MultipleOf
+  // The integer value which the values of the column should be a multiple of
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
   optional int32 multipleOf = 11;
 
-  // MaximumFloat
+  // The maximum value of values all values in the column
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
   optional double maximum = 12;
 
-  // ExclusiveMaximum
+  // The exclusive upper limit of all values in the column, which does not include the maximum value
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool exclusiveMaximum = 13;
 
-  // MinimumFloat
+  // The minimum value of values all values in the column
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
   optional double minimum = 14;
 
-  // ExclusiveMinimum
+  // The exclusive lower limit of all values in the column, which does not include the minimum value
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool exclusiveMinimum = 15;
 
-  // MaxLength
+  // The maximum length of values in the column, if the column data type is a string
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
   optional int32 maxLength = 16;
 
-  // MinLength
+  // The minimum length of values in the column, if the column data type is a string
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
   optional int32 minLength = 17;
 
-  // Pattern
-  // Default is empty
+  // The regex pattern which values in the column must adhere to
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string pattern = 18;
@@ -151,32 +148,32 @@ message Column {
   // +kubebuilder:validation:Optional
   optional bool required = 19;
 
-  // Example
+  // A user-specified example value
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string example = 20;
 
-  // External Docs
+  // A link to user-specified external documentation
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string externalDocs = 21;
 
-  // Enum contain the unique values for categorical feature.
+  // The collection of unique values for categorical features
   // +kubebuilder:validation:Optional
   repeated string enum = 22;
 
-  // For categorical feature , set to true if this is an ordinal feature.
+  // Indicates if the feature is ordinal, in the case of categorical features
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool ordinal = 23;
 
-  // Max Items in the data in case of a list
+  // The maximum number of items if the column is a list of values
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
   optional int32 maxItems = 24;
 
-  // Min Items in the data in case of a list.
+  // The minimum number of items if the column is a list of values
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
@@ -187,22 +184,23 @@ message Column {
   // +kubebuilder:validation:Optional
   optional bool uniqueItems = 26;
 
-  // TimeColumn is true if this column is used as the time axis in time series forecast
+  // Indicates if the column is used as the time axis in time series forecasting
   // Default is false.
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool timeColumn = 27;
 
-  // Personally Identifiable information
+  // Indicates if the column contains personally identifiable information
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool pii = 28;
 
-  // Personally Health information
+  // Indicates if the column contains personal health information
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool phi = 29;
 
+  // Indicates if the column contains any personal data
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool personalData = 30;
@@ -212,11 +210,10 @@ message Column {
   // +kubebuilder:validation:Optional
   optional bool protected = 31;
 
-  // The following attribute concern with syntatic data and validation
-  // DefaultValueNum is the default value for numbers
+  // The default value for number types; used internally for synthetic data and validation
   optional double defaultValueNum = 32;
 
-  // Log if true, values from this column will be sampled on logaritmic scale
+  // Indicates if values from this column will be sampled on a logarithmic scale
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool log = 33;
@@ -231,20 +228,20 @@ message Column {
   // +kubebuilder:validation:Optional
   optional double sigma = 35;
 
-  // Skew threshold is the threshold for skew detection.
+  // The threshold skew for skew detection
   // +kubebuilder:validation:Optional
   optional double skewThreshold = 36;
 
-  // Drift threshold is the threshold for drift detection.
+  // The threshold drift value for model drift detection.
   // +kubebuilder:validation:Optional
   optional double driftThreshold = 37;
 
-  // If True than this is an index column
+  // Indicates if the column is an index column
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool index = 38;
 
-  // If True than this columns holds folds values
+  // Indicates if the column holds fold values
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool fold = 39;
@@ -254,34 +251,34 @@ message Column {
   // +kubebuilder:validation:Optional
   optional bool weight = 40;
 
-  // If True indicate that this feature should always be used in training
+  // Indicates that the feature should always be used in training
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool reserved = 41;
 
-  // The recommended imputer for a column.
+  // The recommended imputation method for the column
   // +kubebuilder:default:=auto
   // +kubebuilder:validation:Optional
   optional string imputation = 42;
 
-  // The recommended scaler for a column.
+  // The recommended scaling method for the column
   // +kubebuilder:default:=auto
   // +kubebuilder:validation:Optional
   optional string scaling = 43;
 
-  // If true this feature is generate
-  // +kubebuilder:validation:Optionald.
+  // Indicates if the feature was automatically generated
+  // +kubebuilder:validation:Optional
   optional bool generated = 44;
 
-  // The formula used to generate  this column
-  // +kubebuilder:validation:Optionald.
+  // The formula used to generate the column
+  // +kubebuilder:validation:Optional
   optional string formula = 45;
 
-  // This is updated from the data source. If true, the column is an id column
+  // Indicates if the column is an ID column
   // +kubebuilder:validation:Optional
   optional bool id = 46;
 
-  // Used in the dashboard.
+  // The step value if the column values are a sequence of numbers
   // +kubebuilder:default:=1
   // +kubebuilder:validation:Optional
   optional double step = 47;
@@ -302,57 +299,57 @@ message ColumnSpec {
   optional ComponentSpec content = 3;
 }
 
-// Hold the statistical parameters about a single attribute
+// ColumnStatistics contains statistical parameters for a single feature from a dataset
 message ColumnStatistics {
-  // FileName is the name of the column
+  // The name of the column
   // +kubebuilder:validation:Optional
   optional string name = 1;
 
-  // DataType is the name of the column
+  // The data type of the column
   // +kubebuilder:validation:Optional
   optional string datatype = 2;
 
-  // Number of rows
+  // Amount of rows which contain a value for the feature
   // +kubebuilder:validation:Optional
   optional double count = 3;
 
-  // Count of unique values.
+  // Amount of unique values present in the column
   // +kubebuilder:validation:Optional
   optional int32 distinct = 4;
 
-  // The number of missing values
+  // Amount of missing values present in the column
   // +kubebuilder:validation:Optional
   optional int32 missing = 5;
 
-  // Percent missing
+  // Percentage of missing values in the column
   // +kubebuilder:validation:Optional
   optional double percentMissing = 6;
 
-  // Mean is the mean value of the attribute
+  // The mean of all values in the column, if the column data type is a number
   // +kubebuilder:validation:Optional
   optional double mean = 7;
 
-  // StdDev is the standard deviation value of the attribute
+  // The standard deviation of the columns values
   // +kubebuilder:validation:Optional
   optional double stddev = 8;
 
-  // Variance
+  // The variability of the columns values from the columns mean
   // +kubebuilder:validation:Optional
   optional double variance = 9;
 
-  // Min is the minimum value of the attribute
+  // The minimum value of all values in the column
   // +kubebuilder:validation:Optional
   optional double min = 10;
 
-  // Max is the maximum value of the attribute
+  // The maximum value of all values in the column
   // +kubebuilder:validation:Optional
   optional double max = 11;
 
-  // Kurtosis is the standard deviation value of the attribute
+  // The computed kurtosis, which measures the peakedness of the distribution of values in the column
   // +kubebuilder:validation:Optional
   optional double kurtosis = 12;
 
-  // Skewness is the standard deviation value of the attribute
+  // The computed skewness, which measures the asymmetry of the distribution of values in the column
   // +kubebuilder:validation:Optional
   optional double skewness = 13;
 
@@ -360,114 +357,106 @@ message ColumnStatistics {
   // +kubebuilder:validation:Optional
   optional double sum = 14;
 
-  // Skewness is the standard deviation value of the attribute
+  // The sum of all values in the column
   // +kubebuilder:validation:Optional
   optional double mad = 15;
 
-  // Pct25 is the 25 percent point
+  // The 25% point of all the values of the column in order
   // +kubebuilder:validation:Optional
   optional double p25 = 16;
 
-  // Pct50 is the median
+  // The 50% point of all the values of the column in order, also known as the median
   // +kubebuilder:validation:Optional
   optional double p50 = 17;
 
-  // Pct75 is the 75% point
+  // The 75% point of all the values of the column in order
   // +kubebuilder:validation:Optional
   optional double p75 = 18;
 
-  // Skewness is the standard deviation value of the attribute
+  // The interquartile range of the columns values
   // +kubebuilder:validation:Optional
   optional double iqr = 19;
 
-  // Mode for categorical values, is the most common value
+  // The mode value of the column, also known as the most frequent value
   // +kubebuilder:validation:Optional
   optional string mode = 20;
 
-  // Zeros is the numbers of zeros in the feature
+  // The number of zero values in the column
   // +kubebuilder:validation:Optional
   optional double zeros = 21;
 
-  // The number of invalid values
+  // The number of invalid values in the column
   // +kubebuilder:validation:Optional
   optional int32 invalid = 22;
 
-  // The feature importance
+  // The feature importance of the column
   // +kubebuilder:validation:Optional
   optional double importance = 23;
 
-  // Is this the target attribute, the value is derived from the data source
+  // Indicates if the feature is the target attribute for a Study, as specified by the Dataset's DataSource
   // +kubebuilder:validation:Optional
   optional bool target = 24;
 
-  // Should this column be ignored, as specified by the user
-  // This value is derived from the datasource
+  // Indicates if the column should be ignored, as specified by the Dataset's DataSource
   // +kubebuilder:validation:Optional
   optional bool ignore = 25;
 
-  // Is this column is nullable.
-  // This value is derived from the schema.
+  // Indicates if the column may contain null values, as specified by the Dataset's DataSource
   // +kubebuilder:validation:Optional
   optional bool nullable = 26;
 
-  // This column has high cardinality and should use high cred encoder
-  // The value is set during the profile process.
+  // Indicates if the column has high cardinality and should use the high cardinality encoder during feature engineering
   // +kubebuilder:validation:Optional
   optional bool highCardinality = 27;
 
-  // This column has high correlation with another feature and should be dropped.
-  // The value is set during the profile process.
+  // Indicates if the column has high correlation with another feature, and that it should be dropped
   // +kubebuilder:validation:Optional
   optional bool highCorrWithOtherFeatures = 28;
 
-  // Indicate that this feature is not corrolated with target and should be dropped
+  // Indicate that the feature has low correlation with the target feature, and that it should be dropped
   // +kubebuilder:validation:Optional
   optional bool lowCorrWithTarget = 29;
 
-  // This column has high amount of missing pct, and should be removed from consideration.
-  // The value is set during the profile process.
+  // Indicates if the column has a high percentage of missing values, and that it should be dropped
   // +kubebuilder:validation:Optional
   optional bool highMissingPct = 30;
 
-  // Mark that this column is skewed and would require a power transform
+  // Marks that the column is skewed and would require a power transform.
+  //
   // If skewness is less than -1 or greater than 1, the distribution is highly skewed.
   // If skewness is between -1 and -0.5 or between 0.5 and 1, the distribution is moderately skewed.
   // If skewness is between -0.5 and 0.5, the distribution is approximately symmetric
   // +kubebuilder:validation:Optional
   optional bool skewed = 31;
 
-  // This is updated from the data source. If true, the column is an id column
+  // Indicates if the column is an ID column, such as a primary key
   // +kubebuilder:validation:Optional
   optional bool id = 32;
 
-  // This column has high correlation with another feature and should be dropped.
-  // The value is set during the profile process.
   // +kubebuilder:validation:Optional
   optional bool constant = 33;
 
-  // This column is duplicate of other column
-  // The value is set during the profile process.
+  // Indicates if the column is a duplicate of another column
   // +kubebuilder:validation:Optional
   optional bool duplicate = 34;
 
-  // The column is reserved and must be part of the features set for the task.
-  // The value is derived from the data source.
+  // Indicates if the column is reserved and must be a feature included in model training
   // +kubebuilder:validation:Optional
   optional bool reserved = 35;
 
-  // Outliers count
+  // The amount of outliers detected in the columns values
   // +kubebuilder:validation:Optional
   optional int32 outliers = 36;
 
-  // Completeness is the ratio between non null to null
+  // The ratio between non-null and null values in the column
   // +kubebuilder:validation:Optional
   optional double completeness = 37;
 
-  // The ratio between distinct count to total count
+  // The ratio between unique values and non-unique values in the column
   // +kubebuilder:validation:Optional
   optional double distinctValueCount = 38;
 
-  // The ratio between most freq value to total
+  // The ratio between most the most frequent value to the number of total values in the column
   // +kubebuilder:validation:Optional
   optional double mostFreqValuesRatio = 39;
 
@@ -475,23 +464,25 @@ message ColumnStatistics {
   // +kubebuilder:validation:Optional
   optional double indexOfPeculiarity = 40;
 
-  // The column histogram
+  // Histogram data representing the distribution of the values in the column
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.HistogramData histogram = 41;
 
-  // Correlation to target
+  // Correlation to the target feature
   // +kubebuilder:validation:Optional
   optional double corrToTarget = 42;
 }
 
+// ColumnValidation specifies a validation rule for a single column
 message ColumnValidation {
+  // The type of validation rule
   // +kubebuilder:validation:Optional
   optional string type = 1;
 
+  // The name of the column to be validated
   // +kubebuilder:validation:Optional
   optional string column = 2;
 
-  // For validation that need a single value
   // +kubebuilder:validation:Optional
   optional double value = 3;
 
@@ -516,7 +507,7 @@ message ColumnValidation {
   // +kubebuilder:validation:Optional
   optional bool strictMax = 8;
 
-  // Generated indicate weather this validation rule was automatically generated
+  // Indicates if this validation rule was automatically generated by the system
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool generated = 9;
@@ -559,7 +550,7 @@ message ComponentView {
   optional ScatterPlotSpec scatterPlot = 7;
 }
 
-// Feature corr is used to record a correlation between two features.
+// Correlation records the correlation between two features in a Dataset
 message Correlation {
   // The first feature name
   optional string feature1 = 1;
@@ -567,84 +558,85 @@ message Correlation {
   // The second feature name
   optional string feature2 = 2;
 
-  // The corr value
+  // The correlation value
   optional double value = 3;
 
   // How the value was calculated
   optional string method = 4;
 }
 
-// Specify how the correlation should be computed
+// CorrelationSpec specifies how the correlations between features in a Dataset should be computed
 message CorrelationSpec {
-  // Specify the minimum value of the corr
+  // The minimum value of a computed correlation to be stored as a result
   // +kubebuilder:default:=50
   // +kubebuilder:validation:Optional
   optional double cutoff = 1;
 
-  // Specify the method to use when computing the correlation.
+  // The method to be used when computing correlations
   // +kubebuilder:default:="pearson"
   // +kubebuilder:validation:Optional
   optional string method = 2;
 
-  // Specify the top number of correlation to include in the status.
+  // The top number of correlation to be included in the correlation results
   // +kubebuilder:default:=10
   // +kubebuilder:validation:Optional
   optional int32 top = 3;
 }
 
+// CsvFileSpec specifies the format of a CSV (comma-separated values) file
 message CsvFileSpec {
-  // Refers to the character used to separate fields.
+  // The character used to separate fields (by default, a comma)
   // +kubebuilder:default:="comma"
   // +kubebuilder:validation:Optional
   optional string columnDelimiter = 1;
 
-  // The row delimiter
+  // The character used to signal the end of a row (by default, a newline \n)
   // +kubebuilder:default:="crlf"
   // +kubebuilder:validation:Optional
   optional string rowDelimiter = 2;
 
-  // The quote char.
+  // The charcter used for quotes (by default, a double quote ")
   // +kubebuilder:default:="double-quote"
   // +kubebuilder:validation:Optional
   optional string quote = 3;
 
-  // the char used to escape the delimiter when quoting
+  // The character used to escape the delimiter
   // +kubebuilder:default:="none"
   // +kubebuilder:validation:Optional
   optional string escapeChar = 4;
 
-  // CommentCharacter(s) to split comments off the end of lines.
+  // The comment character used to split comments off the end of lines (by default, a hashtag #)
   // +kubebuilder:default:="#"
   // +kubebuilder:validation:Optional
   optional string commentChars = 5;
 
-  // Check if there is an header
+  // Indicates if a header is present in the file
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
   optional bool header = 6;
 
-  // The number of rows to skip
+  // The number of rows to skip from the top of the file
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
   optional int32 skipRows = 7;
 
-  // NullValue is a sequence of values to replace with NA.
+  // NullValues is a sequence of values to replace with NA.
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string nullValues = 8;
 
-  // Encoding for Unicode (e.g., 'utf-8' for UTF-8 encoded text).
+  // The unicode encoding of the file (e.g. 'utf-8' for UTF-8 encoded text)
   // +kubebuilder:default:="utf-8"
   // +kubebuilder:validation:Optional
   optional string encoding = 9;
 
-  // The maximum number of rows to read.
+  // The maximum number of rows to read
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
   optional int32 maxRows = 10;
 
-  // If true, the import will fail if there is an error
+  // Indicates if the read of the CSV file should fail if there are any errors
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
   optional bool strict = 11;
@@ -654,12 +646,12 @@ message CsvFileSpec {
   // +kubebuilder:validation:Optional
   optional string compression = 12;
 
-  // If true, the file contain an index column
+  // Indicates if the file contains an index column
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool hasIndexColumn = 13;
 
-  // If has index column.
+  // The position of the index column
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
   optional int32 indexColumn = 14;
@@ -677,44 +669,53 @@ message DataInputSpec {
   optional string format = 3;
 }
 
-// data reference contain pointers to the actual data objects
+// DataLocation describes the external location of raw data that will be pulled by the system, and additional
+// information on how to query the data if the location is a non flat-file source.
 message DataLocation {
+  // The type of location where the data resides, which can either be an object inside an object storage system (i.e. Minio), a SQL location
+  // like a table or a view, a data stream (i.e. Kafka, currently unsupported), or a web location (currently unsupported)
   // +kubebuilder:default:="object"
-  // data location type is the type of the data location
   // +kubebuilder:validation:Optional
   optional string type = 1;
 
-  // ConnectionName is the name of the connection to access the database
+  // In the case of the location type being a database, ConnectionName is the name of the Connection resource
+  // in the same tenant namespace as the resource which specifies the DataLocation. Modela will connect to the database
+  // specified by the Connection and execute the query specified by the `SQL` field
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string connectionName = 2;
 
+  // In the case of the location type being object storage, BucketName is the name of the VirtualBucket resource
+  // in the same tenant namespace as the resource. Modela will access the object storage system and will pull
+  // from the file path specified by the `Path` field
   // +kubebuilder:default:=""
-  // Bucketname is the name of the bucket
   // +kubebuilder:validation:Optional
   optional string bucketName = 3;
 
-  // Path to the full data file (e.g. csv file).
+  // The path to a flat-file in an object storage system. When using the Modela API to upload files (through the
+  // FileService API), Modela will upload the data to a predetermined path with the following format:
+  // "modela/depot/tenants/{tenant}/dataproducts/{dataproduct}/dataproductversions/{version}/{resource_type}/{resource_name}/data/raw/{file_name}
+  // The path does not need to adhere to this format; you can still pass the path of a file inside a bucket not managed by Modela
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string path = 4;
 
-  // Sql or table or topic name.
+  // The name of a table inside a database, if applicable
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string table = 5;
 
-  // Database , the database.
+  // The name of a database that exists inside the database server connection specified by the `ConnectionName` field
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string database = 6;
 
-  // SQL statement, in case we choose the view type
+  // The SQL statement to query data from a database connection
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string sql = 7;
 
-  // Topic is the name of the topic in case of streaming
+  // The name of the topic in case of streaming (currently unsupported)
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string topic = 8;
@@ -1021,7 +1022,8 @@ message DataPipelineStatus {
   repeated DataPipelineCondition conditions = 5;
 }
 
-// DataProduct represent a single data product in the system
+// DataProduct represent a single DataProduct namespace, which contains all non-infrastructure resources. Additionally, it
+// specifies default parameters for resources to be created under the namespace
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status"
@@ -1029,7 +1031,7 @@ message DataPipelineStatus {
 // +kubebuilder:printcolumn:name="Task",type="string",JSONPath=".spec.task"
 // +kubebuilder:printcolumn:name="Public",type="boolean",JSONPath=".spec.public"
 // +kubebuilder:printcolumn:name="Errors",type="integer",JSONPath=".status.totalErrorAlerts"
-// +kubebuilder:printcolumn:name="Datasources",type="integer",JSONPath=".status.totalDatasources",priority=1
+// +kubebuilder:printcolumn:name="Data Sources",type="integer",JSONPath=".status.totalDatasources",priority=1
 // +kubebuilder:printcolumn:name="Datasets",type="integer",JSONPath=".status.totalDatasets",priority=1
 // +kubebuilder:printcolumn:name="Studies",type="integer",JSONPath=".status.totalStudies",priority=1
 // +kubebuilder:printcolumn:name="Models",type="integer",JSONPath=".status.totalModels",priority=1
@@ -1045,21 +1047,21 @@ message DataProduct {
   optional DataProductStatus status = 3;
 }
 
-// DeploymentCondition describes the state of a deployment at a certain point.
+// DataProductCondition describes the state of a DataProduct at a certain point
 message DataProductCondition {
   // Type of condition.
   optional string type = 1;
 
-  // Status of the condition, one of True, False, AutoScaler.
+  // Status of the condition, one of True, False, Unknown
   optional string status = 2;
 
-  // Last time the condition transitioned from one status to another.
+  // Last time the condition transitioned from one status to another
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 4;
 
-  // The reason for the condition's last transition.
+  // The reason for the condition's last transition
   optional string reason = 5;
 
-  // A human readable message indicating details about the transition.
+  // A human readable message indicating details about the transition
   optional string message = 6;
 }
 
@@ -1340,7 +1342,7 @@ message DataProductVersionStatus {
   repeated DataProductVersionCondition conditions = 5;
 }
 
-// DataSource represent source of the data in the system. The spec consist of schema
+// DataSource defines the specification for the file format and column-level schema of data to be used within Modela
 // +kubebuilder:object:root=true
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
@@ -1360,26 +1362,26 @@ message DataSource {
   optional DataSourceStatus status = 3;
 }
 
-// DataSourceCondition describes the state of a datasource at a certain point.
+// DataSourceCondition describes the state of a DataSource at a certain point
 message DataSourceCondition {
   // Type of condition.
   optional string type = 1;
 
-  // Status of the condition, one of True, False, Unknown.
+  // Status of the condition, one of True, False, or Unknown
   optional string status = 2;
 
-  // Last time the condition transitioned from one status to another.
+  // Last time the condition transitioned from one status to another
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 4;
 
   // The reason for the condition's last transition.
   optional string reason = 5;
 
-  // A human readable message indicating details about the transition.
+  // A human readable message indicating details about the transition
   optional string message = 6;
 }
 
+// DataSourceList contains a list of DataSource objects
 // +kubebuilder:object:root=true
-// DataSourceList contain a list of DataSource objects
 message DataSourceList {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
 
@@ -1387,49 +1389,50 @@ message DataSourceList {
 }
 
 message DataSourceSpec {
-  // The account name of the owner of this dataset
+  // The reference to the Account in the same namespace as the resource which created the object
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
   optional string owner = 1;
 
-  // The version of the flat file.
+  // The reference to the DataProductVersion resource that describes the version of the object
   // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string versionName = 2;
 
-  // User provided description of the data source
+  // User-provided description of the object
   // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=512
   // +kubebuilder:validation:Optional
   optional string description = 3;
 
-  // The data source schema
+  // The schema which will be used during the ingestion process of any Dataset resources which specify the DataSource
   optional Schema schema = 4;
 
-  // The text file type
-  // Default: csv
+  // The file type of incoming data which uses the DataSource (by default, a CSV file)
   // +kubebuilder:default:="csv"
   // +kubebuilder:validation:Optional
   optional string fileType = 5;
 
-  // FlatFile access specification
+  // The file format for CSV files, if applicable
   // +kubebuilder:validation:Optional
   optional CsvFileSpec csvfile = 6;
 
-  // Excel Notebook is a notebook in excel
+  // The file format of excel files, if applicable
   // +kubebuilder:validation:Optional
   optional ExcelNotebookSpec excelNotebook = 7;
 
-  // Type is the dataset type
+  // The type of dataset; currently, the only supported type is `tabular`
   // +kubebuilder:default:="tabular"
   // +kubebuilder:validation:Optional
   optional string datasetType = 8;
 
-  // Sample spec defines how many rows to use for analysis for datasets from this datasource.
+  // The specification for how incoming data should be sampled (i.e. how many rows should be used). Applicable
+  // primarily for very large datasets
   optional SampleSpec sample = 9;
 
-  // The default task for datasets from this data source. If null this will be setup to the data product task
+  // The default task for Dataset resources created from the DataSource. If null, this will be determined from
+  // the DataProduct which owns the DataSource
   // +kubebuilder:validation:Optional
   optional string task = 10;
 
@@ -1437,22 +1440,22 @@ message DataSourceSpec {
   repeated RelationshipSpec relationships = 11;
 }
 
-// FlatFileStatus defines the observed state of CsvFileSpec
+// DataSourceStatus defines the observed state of a DataSource object
 message DataSourceStatus {
-  // number of columns in the data source
+  // The number of columns determined to be present in the DataSource's schema
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
   optional int32 cols = 1;
 
-  // ObservedGeneration is the Last generation that was acted on
+  // ObservedGeneration is the last generation that was acted on
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 2;
 
-  // Last time an dataset from this datasource was created.
+  // Last time the DataSource was used to create a Dataset
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastDatasetCreated = 3;
 
-  // Last dataset name
+  // The name of the last Dataset created using the DataSource
   // +kubebuilder:validation:Optional
   optional string lastDatasetName = 4;
 
@@ -1460,12 +1463,11 @@ message DataSourceStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 5;
 
-  // Update in case of terminal failure
-  // Borrowed from cluster api controller
+  // In the case of failure, the DataSource resource controller will set this field with a failure reason
   // +kubebuilder:validation:Optional
   optional string failureReason = 6;
 
-  // Update in case of terminal failure message
+  // In the case of failure, the DataSource resource controller will set this field with a failure message
   // +kubebuilder:validation:Optional
   optional string failureMessage = 7;
 
@@ -1485,7 +1487,19 @@ message DataValidationResult {
   optional bool passed = 4;
 }
 
-// Dataset represents a single batch of data
+// The Dataset object represents a chunk of data that has been stored in the system.
+// +kubebuilder:object:root=true
+// +kubebuilder:subresource:status
+// +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
+// +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
+// +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
+// +kubebuilder:printcolumn:name="Data Source",type="string",JSONPath=".spec.datasourceName"
+// +kubebuilder:printcolumn:name="Type",type="string",JSONPath=".spec.type"
+// +kubebuilder:printcolumn:name="Rows",type="integer",JSONPath=".status.statistics.rows"
+// +kubebuilder:printcolumn:name="Columns",type="integer",JSONPath=".status.statistics.cols"
+// +kubebuilder:printcolumn:name="Size",type="integer",JSONPath=".status.statistics.fileSize"
+// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
+// +kubebuilder:resource:path=datasets,shortName=dset,singular=dataset,categories={data,modela,all}
 message Dataset {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
@@ -1495,7 +1509,7 @@ message Dataset {
   optional DatasetStatus status = 3;
 }
 
-// DatasetCondition describes the state of a dataset at a certain point.
+// DatasetCondition describes the state of a dataset at a certain point
 message DatasetCondition {
   optional string type = 1;
 
@@ -1523,219 +1537,228 @@ message DatasetList {
   repeated Dataset items = 2;
 }
 
-// DatasetSpec defines the desired state of a dataset
+// DatasetSpec defines the desired state of the dataset
 message DatasetSpec {
-  // The account name of the owner of this dataset
+  // The reference to the Account in the same namespace as the resource which created the object
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
   optional string owner = 1;
 
-  // VersionName is the data product version of the dataset
+  // The reference to the DataProductVersion resource that describes the version of the object
   // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:validation:Required
   // +required
   optional string versionName = 2;
 
-  // DataSourceName is the name of the data source which created this dataset. For example flat file
+  // The reference to the Data Source resource which exists in the same Data Product namespace as the object.
+  // The Data Source must represent the columns and the task type of the Dataset. The validation rules associated with
+  // the Data Source will be validated against the raw data of the Dataset once it is created
   // +kubebuilder:validation:Required
   // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:default:=""
   // +required
   optional string datasourceName = 3;
 
-  // User provided description
+  // User-provided description of the object
   // +kubebuilder:validation:MaxLength=512
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string description = 4;
 
-  // The display name
+  // User-provided display name of the object
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string displayName = 5;
 
-  // If true, a dataset report should be generated for this dataset.
+  // Indicates if a PDF report containing the Dataset's profile should be generated
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
   optional bool reported = 7;
 
-  // If true, we should take a snapshot of the databases in order to create a dataset
+  // Indicates if the resource controller has created a snapshot of the data in the case that it is being read
+  // directly from a database, and must be converted to a flat-file type such as a CSV as a result
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool snapshotted = 8;
 
-  // If true, we should validate the dataset
+  // Indicates if the Dataset should be checked against the validation rules of its Data Source
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
   optional bool validate = 9;
 
-  // Labeled indicates if this dataset is labeled or not.
+  // Indicates if the data is labeled or not
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
   optional bool labeled = 10;
 
-  // Syntactic indicates if we want to generate this dataset based on the data source
+  // Indicates if synthetic data should be generated (not implemented as of the current release)
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool synthetic = 11;
 
-  // If syntactic is true, indicates how many rows to generate
+  // If `Synthetic` is set to true, indicates how many synthetic rows should be generated
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
   optional int32 syntheticRows = 12;
 
-  // Define the data location. The operator will copy the data from this location into the live location.
-  // The datafiles are initially uploaded to this location.
+  // The location of the data file or database query which holds the raw data of the Dataset. When the Dataset is
+  // created, the resource controller will retrieve the data from the location, validate it against its Data Source
+  // if applicable, and store it inside the `live` section of the Virtual Bucket resource specified by the location
   // +kubebuilder:validation:Optional
   optional DataLocation origin = 13;
 
-  // Folder of the actual data resides.
+  // The final location of the data which was copied from the `Origin` location during the ingestion phase.
+  // This field is set by the Dataset resource controller and should not be changed by any end-users
   // +kubebuilder:validation:Required
   // +required
   optional DataLocation location = 14;
 
-  // Resources is the hardware resource req.
+  // The resource requirements which the Dataset will request when creating Jobs to process the uploaded data
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 15;
 
-  // ActiveDeadlineSeconds is the deadline of a job for this dataset.
+  // The deadline in seconds for all Jobs created by the Dataset
   // +kubebuilder:default:=600
   // +kubebuilder:validation:Optional
   optional int64 activeDeadlineSeconds = 16;
 
-  // DatasetType is the type of dataset
+  // The type of dataset which was uploaded. `tabular` is the only supported type as of the current release
   // +kubebuilder:default:="tabular"
   // +kubebuilder:validation:Optional
   optional string type = 17;
 
-  // Sample spec defines how many rows to use for analysis
+  // The specification for how the data should be sampled, if applicable. Sampling may improve dataset and model creation
+  // time in the case of very large datasets that are being rapidly prototyped and iterated on
   // +kubebuilder:validation:Optional
   optional SampleSpec sample = 18;
 
-  // DatasetType is the type of dataset
-  // +kubebuilder:vali dation:Optional
+  // The machine learning task relevant to the Dataset. This field *must* be the same as the Data Source of the object
+  // +kubebuilder:validation:Optional
   optional string task = 19;
 
-  // Specification for notification for events that occur during processing
+  // The notification specification that determines which notifiers will receive Alerts generated by the object
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 20;
 
-  // Specification for the correlation spec
+  // The specification for how to find the correlations of the Dataset's features during the profiling phase.
+  // Based on the specification, the data plane will compute the correlation between each feature and will store the highest-scoring
   // +kubebuilder:validation:Optional
   optional CorrelationSpec correlation = 21;
 
-  // Indicate a fast mode. If true, skip the validation/profiling/report
+  // Indicates if the Dataset should be quickly processed. If enabled, the validation, profiling, and reporting phases
+  // will be skipped.
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool fast = 22;
 }
 
-// DatasetStatistics contains statistics about attributes and correltation between attributes
+// DatasetStatistics contains statistics about the Dataset's overall data, as well as every feature of the data. The
+// data structure is populated with information during the `Profiling` phase of the parent Dataset.
 message DatasetStatistics {
-  // Columns contain the collection of statistics for each attribute
+  // The collection of statistics for each feature
   // +kubebuilder:validation:Optional
   repeated ColumnStatistics columns = 1;
 
-  // number of rows in the dataset
+  // Number of rows observed from the data
   // +kubebuilder:validation:Optional
   optional int32 rows = 3;
 
-  // number of columns, used mainly to show the columns in the kubectl
+  // Number of columns observed from the data
   // +kubebuilder:validation:Optional
   optional int32 cols = 4;
 
-  // file size in bytes
+  // The file size of the data in bytes
   // +kubebuilder:validation:Optional
   optional int32 fileSize = 5;
 
-  // Holds the top correlation with target
+  // The top correlations between all features and the target feature
   // +kubebuilder:validation:Optional
   repeated Correlation correlationsWithTarget = 6;
 
-  // Holds the top feature correlation
+  // The top correlations between features, computed per the CorrelationSpec of the parent Dataset
   // +kubebuilder:validation:Optional
   repeated Correlation topCorrelations = 7;
 }
 
-// DatasetStatus defines the observed state of Dataset
+// DatasetStatus defines the observed state of a Dataset object
 message DatasetStatus {
-  // Statistics for the dataset. The statistics contain information about each column.
+  // Statistics for each column of the Dataset, which are generated during the profiling phase.
   // +kubebuilder:validation:Optional
   optional DatasetStatistics statistics = 1;
 
-  // The phase of the dataset processing
+  // The current phase of the Dataset progress
   // +kubebuilder:default:="Pending"
   // +kubebuilder:validation:Optional
   optional string phase = 2;
 
-  // Reference to the report object that was generated for the dataset
+  // Reference to the report object that was generated for the dataset, which exists in the same Data Product namespace
+  // as the object
   // +kubebuilder:validation:Optional
   optional string reportName = 3;
 
-  // ReportURI is the uri of dataset report
+  // The location of report generated during the reporting phase. This field is intended for internal use
   // +kubebuilder:validation:Optional
   optional string reportUri = 4;
 
-  // A reference to the visualization uri which were produce during processing
+  // The location of raw profile data. This field is intended for internal use
   // +kubebuilder:validation:Optional
   optional string profileUri = 5;
 
-  // Based on the actual data, treat this dataset as imbalanced.
+  // Whether or not the data was detected as imbalanced
   // +kubebuilder:validation:Optional
   optional bool imbalanced = 6;
 
-  // ObservedGeneration is the Last generation that was acted on
+  // ObservedGeneration is the last generation that was acted on
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 8;
 
-  // List of data problems, as reported by the validation process
+  // List of validation results which are generated for every validation rule associated with the Dataset's Data Source
   // +kubebuilder:validation:Optional
   repeated DataValidationResult validationResults = 9;
 
-  // Last time a study was done on the dataset.
+  // Last time the Dataset was used with a Study
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastStudyTime = 10;
 
-  // Update in case of terminal failure
-  // Borrowed from cluster api controller
+  // In the case of failure, the Dataset resource controller will set this field with a failure reason
   // +kubebuilder:validation:Optional
   optional string failureReason = 12;
 
-  // Update in case of terminal failure message
+  // In the case of failure, the Dataset resource controller will set this field with a failure message
   // +kubebuilder:validation:Optional
   optional string failureMessage = 13;
 
-  // Processing progress
+  // The current progress of the Dataset, with a maximum of 100, that is associated with the current phase
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
   optional int32 progress = 14;
 
-  // Sha256 signature of the dataset file.
+  // Sha256 signature of the raw data. This field is intended for internal use
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string hash = 15;
 
-  // Holds the location of log paths
+  // The log file specification that determines the location of all logs produced by the object
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 16;
 
-  // If this dataset is derived, the name of the dataset that this is derived from.
+  // If the dataset is derived, the name of the Dataset that the object is derived from
   // +kubebuilder:validation:Optional
   optional string derivedFromDataset = 17;
 
-  // Last time the object was updated
+  // The last time the object was updated
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 18;
 
-  // The actual images used during the analysis of the dataset
+  // The Docker images used during the analysis of the Dataset
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Images images = 19;
 
-  // The start time of processing this dataset
+  // The time that the system started processing the Dataset, usually after the creation of the object
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 20;
 
-  // The end time of processing this dataset
+  // The time that the Dataset finished processing, either due to completion or failure
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 21;
 
@@ -1745,7 +1768,7 @@ message DatasetStatus {
   repeated DatasetCondition conditions = 22;
 }
 
-// DatasetTemplate is  used to generate new datasets
+// DatasetTemplate is used to generate new datasets
 message DatasetTemplate {
   // Standard object's metadata.
   // More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
@@ -1755,7 +1778,9 @@ message DatasetTemplate {
   optional DatasetSpec spec = 2;
 }
 
+// DatasetValidation specifies a validation rule which encompasses the contents of an entire dataset
 message DatasetValidation {
+  // The type of validation rule
   // +kubebuilder:validation:Optional
   optional string type = 1;
 
@@ -1785,7 +1810,7 @@ message DatasetValidation {
   // +kubebuilder:default:=false
   optional bool strictMax = 7;
 
-  // Generated indicate weather this validation rule was automatically generated
+  // Indicates if this validation rule was automatically generated by the system
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool generated = 8;
@@ -1874,44 +1899,47 @@ message EntityStatus {
   repeated EntityCondition conditions = 3;
 }
 
+// ExcelNotebookSpec specifies the format of an excel file
 message ExcelNotebookSpec {
-  // Use first sheet with data
+  // Indicates if the excel reader should use the first sheet that contains data
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool firstSheetWithData = 1;
 
-  // Use sheet with name
+  // The name of the sheet that exists in the excel file to read data from
   // +kubebuilder:validation:Optional
   optional string sheetName = 2;
 
-  // The index of the sheet with the data.
+  // The index of the sheet in the excel file to read data from
   // +kubebuilder:validation:Optional
   optional int32 sheetIndex = 3;
 
-  // The rows number that contain column name
+  // The position of the row that contains the column names (i.e. the header)
   // +kubebuilder:validation:Optional
   optional int32 columnNameRow = 4;
 
-  // Data is the definition of excel data.
+  // The specification for the bounds of the data
   // +kubebuilder:validation:Optional
   optional ExcelSheetArea data = 5;
 }
 
+// ExcelSheetArea specifies the bounds of the data within an excel sheet
 message ExcelSheetArea {
-  // If true, read the entire sheet.
+  // Indicates if the excel reader should read the entire sheet; if false, it will read only within the bounds
+  // specified by the `To` and `From` fields of the ExcelSheetArea
   // +kubebuilder:default:=false
   optional bool entireSheet = 1;
 
-  // If reading part of the excel sheet, start with this column
+  // If reading part of the excel sheet, start with the column in this position
   optional int32 fromColumn = 2;
 
-  // If reading part of the excel sheet, end with this column
+  // If reading part of the excel sheet, end with the column in this position
   optional int32 toColumn = 3;
 
-  // If reading part of the excel sheet, start with row
+  // If reading part of the excel sheet, start with the row in this position
   optional int32 fromRow = 4;
 
-  // If reading part of the excel sheet, end with this row
+  // If reading part of the excel sheet, end with the row in this position
   optional int32 toRow = 5;
 }
 
@@ -3003,14 +3031,16 @@ message MetricSpec {
   optional string scalar = 4;
 }
 
+// MultiColumnValidation specifies a validation rule that encompasses multiple columns
 message MultiColumnValidation {
+  // The type of validation rule
   // +kubebuilder:validation:Optional
   optional string type = 1;
 
+  // The list of columns that will be checked
   // +kubebuilder:validation:Optional
   repeated string columns = 2;
 
-  // For validation that need a single value
   // +kubebuilder:validation:Optional
   optional double value = 3;
 
@@ -3033,19 +3063,22 @@ message MultiColumnValidation {
   // +kubebuilder:validation:Optional
   optional bool strictMax = 8;
 
-  // Generated indicate weather this validation rule was automatically generated
+  // Indicates if this validation rule was automatically generated by the system
   // +kubebuilder:validation:Optional
   optional bool generated = 9;
 }
 
+// MultiDatasetValidation specifies a validation rule between multiple datasets
 message MultiDatasetValidation {
+  // The type of validation rule
   // +kubebuilder:validation:Optional
   optional string type = 1;
 
+  // The list of datasets that will be checked
   // +kubebuilder:validation:Optional
   repeated string datasets = 2;
 
-  // Generated indicate weather this validation rule was automatically generated
+  // Indicates if this validation rule was automatically generated by the system
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool generated = 3;
@@ -3353,35 +3386,36 @@ message RecipeStepParam {
 }
 
 message RecommendationSchema {
-  // The name of the user id column in the dataset
+  // The name of the column that specifies user IDs (i.e. the primary key)
   // +kubebuilder:default:="user_id"
   // +kubebuilder:validation:Optional
   optional string userIDColumn = 1;
 
-  // The name of the item id column in the dataset
+  // The name of the column that specifies item IDs
   // +kubebuilder:default:="item_id"
   // +kubebuilder:validation:Optional
   optional string itemIDColumn = 2;
 
-  // The rating column name
+  // The name of the column that specifies ratings
   // +kubebuilder:default:="rating"
   // +kubebuilder:validation:Optional
   optional string ratingColumn = 3;
 }
 
+// RelationSpec defines a relationship between two DataSource objects
 message RelationshipSpec {
   // The name of the relationship
   // +kubebuilder:validation:Required
   // +required
   optional string type = 1;
 
-  // Local columns the holds the fk.
+  // The name of the columns that holds the foreign key
   optional string column = 2;
 
   // The relationship arity
   optional string arity = 3;
 
-  // The name of the other datasource object
+  // The name of the other DataSource object
   // +kubebuilder:validation:Required
   // +required
   optional string relatesTo = 4;
@@ -3441,19 +3475,20 @@ message ScatterPlotSpec {
   optional string y = 3;
 }
 
+// Schema defines the column-level format and validation rules for data associated with the DataSource which uses the schema
 message Schema {
-  // Time series schema. Set time series specific parameters.
+  // The time-series schema, which sets time-series specific parameters
   // +kubebuilder:validation:Optional
   optional TimeSeriesSchema timeSeriesSchema = 1;
 
-  // Recommendation schema. Used for recommendation task
+  // The recommendation schema, which is used for the recommendation ML task
   // +kubebuilder:validation:Optional
   optional RecommendationSchema recommendationSchema = 2;
 
-  // Columns
+  // The collection of columns and their attributes
   repeated Column columns = 3;
 
-  // Validation spec define the validation to perform on new datasets
+  // The specification for validation rules which will be performed on new Datasets
   optional ValidationSpec validation = 4;
 }
 
@@ -3770,17 +3805,14 @@ message TableSpec {
 
 message TimeSeriesSchema {
   // The time series frequency
-  // required
   optional string freq = 1;
 
-  // take holiday into account
-  // required
-  // default is US
+  // The holiday which should be taken into account
   optional string country = 2;
 }
 
 message ValidationSpec {
-  // MultiDatasetValidation contains validations for multi datasets
+  // MultiDatasetValidation contains validations for multiple datasets
   // +kubebuilder:validation:Optional
   repeated MultiDatasetValidation multiDatasetValidations = 1;
 
@@ -3788,15 +3820,15 @@ message ValidationSpec {
   // +kubebuilder:validation:Optional
   repeated DatasetValidation datasetValidations = 2;
 
-  // MultiColumnValidations defines validations for combined columns from the dataset
+  // MultiColumnValidations defines validations for multiple columns from the dataset
   // +kubebuilder:validation:Optional
   repeated MultiColumnValidation multiColumnValidations = 3;
 
-  // Column Validations defines assertions for columns from the dataset
+  // ColumnValidations defines assertions for columns from the dataset
   // +kubebuilder:validation:Optional
   repeated ColumnValidation columnValidations = 4;
 
-  // File Validations defines assertions for actual files
+  // FileValidations defines assertions for the contents of the data file
   // +kubebuilder:validation:Optional
   repeated FileValidation fileValidations = 5;
 }

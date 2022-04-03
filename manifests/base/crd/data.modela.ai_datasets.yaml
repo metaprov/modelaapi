@@ -52,7 +52,8 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: Dataset represents a single batch of data
+        description: The Dataset object represents a chunk of data that has been stored
+          in the system.
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation
@@ -67,95 +68,124 @@ spec:
           metadata:
             type: object
           spec:
-            description: DatasetSpec defines the desired state of a dataset
+            description: DatasetSpec defines the desired state of the dataset
             properties:
               activeDeadlineSeconds:
                 default: 600
-                description: ActiveDeadlineSeconds is the deadline of a job for this
-                  dataset.
+                description: The deadline in seconds for all Jobs created by the Dataset
                 format: int64
                 type: integer
               correlation:
-                description: Specification for the correlation spec
+                description: The specification for how to find the correlations of
+                  the Dataset's features during the profiling phase. Based on the
+                  specification, the data plane will compute the correlation between
+                  each feature and will store the highest-scoring
                 properties:
                   cutoff:
                     default: 50
-                    description: Specify the minimum value of the corr
+                    description: The minimum value of a computed correlation to be
+                      stored as a result
                     type: number
                   method:
                     default: pearson
-                    description: Specify the method to use when computing the correlation.
+                    description: The method to be used when computing correlations
                     type: string
                   top:
                     default: 10
-                    description: Specify the top number of correlation to include
-                      in the status.
+                    description: The top number of correlation to be included in the
+                      correlation results
                     format: int32
                     type: integer
                 type: object
               datasourceName:
                 default: ""
-                description: DataSourceName is the name of the data source which created
-                  this dataset. For example flat file
+                description: The reference to the Data Source resource which exists
+                  in the same Data Product namespace as the object. The Data Source
+                  must represent the columns and the task type of the Dataset. The
+                  validation rules associated with the Data Source will be validated
+                  against the raw data of the Dataset once it is created
                 maxLength: 63
                 type: string
               description:
                 default: ""
-                description: User provided description
+                description: User-provided description of the object
                 maxLength: 512
                 type: string
               displayName:
                 default: ""
-                description: The display name
+                description: User-provided display name of the object
                 type: string
               fast:
                 default: false
-                description: Indicate a fast mode. If true, skip the validation/profiling/report
+                description: Indicates if the Dataset should be quickly processed.
+                  If enabled, the validation, profiling, and reporting phases will
+                  be skipped.
                 type: boolean
               labeled:
                 default: true
-                description: Labeled indicates if this dataset is labeled or not.
+                description: Indicates if the data is labeled or not
                 type: boolean
               location:
-                description: Folder of the actual data resides.
+                description: The final location of the data which was copied from
+                  the `Origin` location during the ingestion phase. This field is
+                  set by the Dataset resource controller and should not be changed
+                  by any end-users
                 properties:
                   bucketName:
                     default: ""
-                    description: Bucketname is the name of the bucket
+                    description: In the case of the location type being object storage,
+                      BucketName is the name of the VirtualBucket resource in the
+                      same tenant namespace as the resource. Modela will access the
+                      object storage system and will pull from the file path specified
+                      by the `Path` field
                     type: string
                   connectionName:
                     default: ""
-                    description: ConnectionName is the name of the connection to access
-                      the database
+                    description: In the case of the location type being a database,
+                      ConnectionName is the name of the Connection resource in the
+                      same tenant namespace as the resource which specifies the DataLocation.
+                      Modela will connect to the database specified by the Connection
+                      and execute the query specified by the `SQL` field
                     type: string
                   database:
                     default: ""
-                    description: Database , the database.
+                    description: The name of a database that exists inside the database
+                      server connection specified by the `ConnectionName` field
                     type: string
                   path:
                     default: ""
-                    description: Path to the full data file (e.g. csv file).
+                    description: 'The path to a flat-file in an object storage system.
+                      When using the Modela API to upload files (through the FileService
+                      API), Modela will upload the data to a predetermined path with
+                      the following format: "modela/depot/tenants/{tenant}/dataproducts/{dataproduct}/dataproductversions/{version}/{resource_type}/{resource_name}/data/raw/{file_name}
+                      The path does not need to adhere to this format; you can still
+                      pass the path of a file inside a bucket not managed by Modela'
                     type: string
                   sql:
                     default: ""
-                    description: SQL statement, in case we choose the view type
+                    description: The SQL statement to query data from a database connection
                     type: string
                   table:
                     default: ""
-                    description: Sql or table or topic name.
+                    description: The name of a table inside a database, if applicable
                     type: string
                   topic:
                     default: ""
-                    description: Topic is the name of the topic in case of streaming
+                    description: The name of the topic in case of streaming (currently
+                      unsupported)
                     type: string
                   type:
                     default: object
-                    description: data location type is the type of the data location
+                    description: The type of location where the data resides, which
+                      can either be an object inside an object storage system (i.e.
+                      Minio), a SQL location like a table or a view, a data stream
+                      (i.e. Kafka, currently unsupported), or a web location (currently
+                      unsupported)
                     type: string
                 type: object
               notification:
-                description: Specification for notification for events that occur
-                  during processing
+                description: The notification specification that determines which
+                  notifiers will receive Alerts generated by the object
                 properties:
                   errorTTL:
                     default: 3600
@@ -178,55 +208,78 @@ spec:
                     type: integer
                 type: object
               origin:
-                description: Define the data location. The operator will copy the
-                  data from this location into the live location. The datafiles are
-                  initially uploaded to this location.
+                description: The location of the data file or database query which
+                  holds the raw data of the Dataset. When the Dataset is created,
+                  the resource controller will retrieve the data from the location,
+                  validate it against its Data Source if applicable, and store it
+                  inside the `live` section of the Virtual Bucket resource specified
+                  by the location
                 properties:
                   bucketName:
                     default: ""
-                    description: Bucketname is the name of the bucket
+                    description: In the case of the location type being object storage,
+                      BucketName is the name of the VirtualBucket resource in the
+                      same tenant namespace as the resource. Modela will access the
+                      object storage system and will pull from the file path specified
+                      by the `Path` field
                     type: string
                   connectionName:
                     default: ""
-                    description: ConnectionName is the name of the connection to access
-                      the database
+                    description: In the case of the location type being a database,
+                      ConnectionName is the name of the Connection resource in the
+                      same tenant namespace as the resource which specifies the DataLocation.
+                      Modela will connect to the database specified by the Connection
+                      and execute the query specified by the `SQL` field
                     type: string
                   database:
                     default: ""
-                    description: Database , the database.
+                    description: The name of a database that exists inside the database
+                      server connection specified by the `ConnectionName` field
                     type: string
                   path:
                     default: ""
-                    description: Path to the full data file (e.g. csv file).
+                    description: 'The path to a flat-file in an object storage system.
+                      When using the Modela API to upload files (through the FileService
+                      API), Modela will upload the data to a predetermined path with
+                      the following format: "modela/depot/tenants/{tenant}/dataproducts/{dataproduct}/dataproductversions/{version}/{resource_type}/{resource_name}/data/raw/{file_name}
+                      The path does not need to adhere to this format; you can still
+                      pass the path of a file inside a bucket not managed by Modela'
                     type: string
                   sql:
                     default: ""
-                    description: SQL statement, in case we choose the view type
+                    description: The SQL statement to query data from a database connection
                     type: string
                   table:
                     default: ""
-                    description: Sql or table or topic name.
+                    description: The name of a table inside a database, if applicable
                     type: string
                   topic:
                     default: ""
-                    description: Topic is the name of the topic in case of streaming
+                    description: The name of the topic in case of streaming (currently
+                      unsupported)
                     type: string
                   type:
                     default: object
-                    description: data location type is the type of the data location
+                    description: The type of location where the data resides, which
+                      can either be an object inside an object storage system (i.e.
+                      Minio), a SQL location like a table or a view, a data stream
+                      (i.e. Kafka, currently unsupported), or a web location (currently
+                      unsupported)
                     type: string
                 type: object
               owner:
                 default: no-one
-                description: The account name of the owner of this dataset
+                description: The reference to the Account in the same namespace as
+                  the resource which created the object
                 type: string
               reported:
                 default: true
-                description: If true, a dataset report should be generated for this
-                  dataset.
+                description: Indicates if a PDF report containing the Dataset's profile
+                  should be generated
                 type: boolean
               resources:
-                description: Resources is the hardware resource req.
+                description: The resource requirements which the Dataset will request
+                  when creating Jobs to process the uploaded data
                 properties:
                   cpuImage:
                     description: Reference to the managed gpu trainer image
@@ -332,7 +385,10 @@ spec:
                     type: string
                 type: object
               sample:
-                description: Sample spec defines how many rows to use for analysis
+                description: The specification for how the data should be sampled,
+                  if applicable. Sampling may improve dataset and model creation time
+                  in the case of very large datasets that are being rapidly prototyped
+                  and iterated on
                 properties:
                   column:
                     default: ""
@@ -371,21 +427,24 @@ spec:
                 type: object
               snapshotted:
                 default: false
-                description: If true, we should take a snapshot of the databases in
-                  order to create a dataset
+                description: Indicates if the resource controller has created a snapshot
+                  of the data in the case that it is being read directly from a database,
+                  and must be converted to a flat-file type such as a CSV as a result
                 type: boolean
               synthetic:
                 default: false
-                description: Syntactic indicates if we want to generate this dataset
-                  based on the data source
+                description: Indicates if synthetic data should be generated (not
+                  implemented as of the current release)
                 type: boolean
               syntheticRows:
                 default: 0
-                description: If syntactic is true, indicates how many rows to generate
+                description: If `Synthetic` is set to true, indicates how many synthetic
+                  rows should be generated
                 format: int32
                 type: integer
               task:
-                description: DatasetType is the type of dataset
+                description: The machine learning task relevant to the Dataset. This
+                  field *must* be the same as the Data Source of the object
                 enum:
                 - binary-classification
                 - multi-classification
@@ -426,7 +485,8 @@ spec:
                 type: string
               type:
                 default: tabular
-                description: DatasetType is the type of dataset
+                description: The type of dataset which was uploaded. `tabular` is
+                  the only supported type as of the current release
                 enum:
                 - tabular
                 - image
@@ -436,21 +496,23 @@ spec:
                 type: string
               validate:
                 default: true
-                description: If true, we should validate the dataset
+                description: Indicates if the Dataset should be checked against the
+                  validation rules of its Data Source
                 type: boolean
               versionName:
                 default: ""
-                description: VersionName is the data product version of the dataset
+                description: The reference to the DataProductVersion resource that
+                  describes the version of the object
                 maxLength: 63
                 type: string
             type: object
           status:
-            description: DatasetStatus defines the observed state of Dataset
+            description: DatasetStatus defines the observed state of a Dataset object
             properties:
               conditions:
                 items:
                   description: DatasetCondition describes the state of a dataset at
-                    a certain point.
+                    a certain point
                   properties:
                     lastTransitionTime:
                       description: Last time the condition transitioned from one status
@@ -476,26 +538,29 @@ spec:
                   type: object
                 type: array
               derivedFromDataset:
-                description: If this dataset is derived, the name of the dataset that
-                  this is derived from.
+                description: If the dataset is derived, the name of the Dataset that
+                  the object is derived from
                 type: string
               endTime:
-                description: The end time of processing this dataset
+                description: The time that the Dataset finished processing, either
+                  due to completion or failure
                 format: date-time
                 type: string
               failureMessage:
-                description: Update in case of terminal failure message
+                description: In the case of failure, the Dataset resource controller
+                  will set this field with a failure message
                 type: string
               failureReason:
-                description: Update in case of terminal failure Borrowed from cluster
-                  api controller
+                description: In the case of failure, the Dataset resource controller
+                  will set this field with a failure reason
                 type: string
               hash:
                 default: ""
-                description: Sha256 signature of the dataset file.
+                description: Sha256 signature of the raw data. This field is intended
+                  for internal use
                 type: string
               images:
-                description: The actual images used during the analysis of the dataset
+                description: The Docker images used during the analysis of the Dataset
                 properties:
                   dataImage:
                     description: The image used during training for data operations.
@@ -508,18 +573,19 @@ spec:
                     type: string
                 type: object
               imbalanced:
-                description: Based on the actual data, treat this dataset as imbalanced.
+                description: Whether or not the data was detected as imbalanced
                 type: boolean
               lastStudyTime:
-                description: Last time a study was done on the dataset.
+                description: Last time the Dataset was used with a Study
                 format: date-time
                 type: string
               lastUpdated:
-                description: Last time the object was updated
+                description: The last time the object was updated
                 format: date-time
                 type: string
               logs:
-                description: Holds the location of log paths
+                description: The log file specification that determines the location
+                  of all logs produced by the object
                 properties:
                   bucketName:
                     description: The bucket logs.
@@ -542,67 +608,67 @@ spec:
                     type: array
                 type: object
               observedGeneration:
-                description: ObservedGeneration is the Last generation that was acted
+                description: ObservedGeneration is the last generation that was acted
                   on
                 format: int64
                 type: integer
               phase:
                 default: Pending
-                description: The phase of the dataset processing
+                description: The current phase of the Dataset progress
                 type: string
               profileUri:
-                description: A reference to the visualization uri which were produce
-                  during processing
+                description: The location of raw profile data. This field is intended
+                  for internal use
                 type: string
               progress:
                 default: 0
-                description: Processing progress
+                description: The current progress of the Dataset, with a maximum of
+                  100, that is associated with the current phase
                 format: int32
                 type: integer
               reportName:
                 description: Reference to the report object that was generated for
-                  the dataset
+                  the dataset, which exists in the same Data Product namespace as
+                  the object
                 type: string
               reportUri:
-                description: ReportURI is the uri of dataset report
+                description: The location of report generated during the reporting
+                  phase. This field is intended for internal use
                 type: string
               startTime:
-                description: The start time of processing this dataset
+                description: The time that the system started processing the Dataset,
+                  usually after the creation of the object
                 format: date-time
                 type: string
               statistics:
-                description: Statistics for the dataset. The statistics contain information
-                  about each column.
+                description: Statistics for each column of the Dataset, which are
+                  generated during the profiling phase.
                 properties:
                   cols:
-                    description: number of columns, used mainly to show the columns
-                      in the kubectl
+                    description: Number of columns observed from the data
                     format: int32
                     type: integer
                   columns:
-                    description: Columns contain the collection of statistics for
-                      each attribute
+                    description: The collection of statistics for each feature
                     items:
-                      description: Hold the statistical parameters about a single
-                        attribute
+                      description: ColumnStatistics contains statistical parameters
+                        for a single feature from a dataset
                       properties:
                         completeness:
-                          description: Completeness is the ratio between non null
-                            to null
+                          description: The ratio between non-null and null values
+                            in the column
                           type: number
                         constant:
-                          description: This column has high correlation with another
-                            feature and should be dropped. The value is set during
-                            the profile process.
                           type: boolean
                         corrToTarget:
-                          description: Correlation to target
+                          description: Correlation to the target feature
                           type: number
                         count:
-                          description: Number of rows
+                          description: Amount of rows which contain a value for the
+                            feature
                           type: number
                         datatype:
-                          description: DataType is the name of the column
+                          description: The data type of the column
                           enum:
                           - boolean
                           - datetime
@@ -616,36 +682,36 @@ spec:
                           - text-list
                           type: string
                         distinct:
-                          description: Count of unique values.
+                          description: Amount of unique values present in the column
                           format: int32
                           type: integer
                         distinctValueCount:
-                          description: The ratio between distinct count to total count
+                          description: The ratio between unique values and non-unique
+                            values in the column
                           type: number
                         duplicate:
-                          description: This column is duplicate of other column The
-                            value is set during the profile process.
+                          description: Indicates if the column is a duplicate of another
+                            column
                           type: boolean
                         highCardinality:
-                          description: This column has high cardinality and should
-                            use high cred encoder The value is set during the profile
-                            process.
+                          description: Indicates if the column has high cardinality
+                            and should use the high cardinality encoder during feature
+                            engineering
                           type: boolean
                         highCorrWithOtherFeatures:
-                          description: This column has high correlation with another
-                            feature and should be dropped. The value is set during
-                            the profile process.
+                          description: Indicates if the column has high correlation
+                            with another feature, and that it should be dropped
                           type: boolean
                         highMissingPct:
-                          description: This column has high amount of missing pct,
-                            and should be removed from consideration. The value is
-                            set during the profile process.
+                          description: Indicates if the column has a high percentage
+                            of missing values, and that it should be dropped
                           type: boolean
                         histogram:
-                          description: The column histogram
+                          description: Histogram data representing the distribution
+                            of the values in the column
                           properties:
                             bins:
-                              description: The bins if this histogram describe conitunous
+                              description: The bins if this histogram describe continous
                                 variables
                               items:
                                 type: number
@@ -658,130 +724,135 @@ spec:
                                 type: string
                               type: array
                             values:
-                              description: The set of values per beans
+                              description: The set of values per bin
                               items:
                                 type: number
                               type: array
                           type: object
                         id:
-                          description: This is updated from the data source. If true,
-                            the column is an id column
+                          description: Indicates if the column is an ID column, such
+                            as a primary key
                           type: boolean
                         ignore:
-                          description: Should this column be ignored, as specified
-                            by the user This value is derived from the datasource
+                          description: Indicates if the column should be ignored,
+                            as specified by the Dataset's DataSource
                           type: boolean
                         importance:
-                          description: The feature importance
+                          description: The feature importance of the column
                           type: number
                         indexOfPeculiarity:
                           description: Used for text attributes
                           type: number
                         invalid:
-                          description: The number of invalid values
+                          description: The number of invalid values in the column
                           format: int32
                           type: integer
                         iqr:
-                          description: Skewness is the standard deviation value of
-                            the attribute
+                          description: The interquartile range of the columns values
                           type: number
                         kurtosis:
-                          description: Kurtosis is the standard deviation value of
-                            the attribute
+                          description: The computed kurtosis, which measures the peakedness
+                            of the distribution of values in the column
                           type: number
                         lowCorrWithTarget:
-                          description: Indicate that this feature is not corrolated
-                            with target and should be dropped
+                          description: Indicate that the feature has low correlation
+                            with the target feature, and that it should be dropped
                           type: boolean
                         mad:
-                          description: Skewness is the standard deviation value of
-                            the attribute
+                          description: The sum of all values in the column
                           type: number
                         max:
-                          description: Max is the maximum value of the attribute
+                          description: The maximum value of all values in the column
                           type: number
                         mean:
-                          description: Mean is the mean value of the attribute
+                          description: The mean of all values in the column, if the
+                            column data type is a number
                           type: number
                         min:
-                          description: Min is the minimum value of the attribute
+                          description: The minimum value of all values in the column
                           type: number
                         missing:
-                          description: The number of missing values
+                          description: Amount of missing values present in the column
                           format: int32
                           type: integer
                         mode:
-                          description: Mode for categorical values, is the most common
-                            value
+                          description: The mode value of the column, also known as
+                            the most frequent value
                           type: string
                         mostFreqValuesRatio:
-                          description: The ratio between most freq value to total
+                          description: The ratio between most the most frequent value
+                            to the number of total values in the column
                           type: number
                         name:
-                          description: FileName is the name of the column
+                          description: The name of the column
                           type: string
                         nullable:
-                          description: Is this column is nullable. This value is derived
-                            from the schema.
+                          description: Indicates if the column may contain null values,
+                            as specified by the Dataset's DataSource
                           type: boolean
                         outliers:
-                          description: Outliers count
+                          description: The amount of outliers detected in the columns
+                            values
                           format: int32
                           type: integer
                         p25:
-                          description: Pct25 is the 25 percent point
+                          description: The 25% point of all the values of the column
+                            in order
                           type: number
                         p50:
-                          description: Pct50 is the median
+                          description: The 50% point of all the values of the column
+                            in order, also known as the median
                           type: number
                         p75:
-                          description: Pct75 is the 75% point
+                          description: The 75% point of all the values of the column
+                            in order
                           type: number
                         percentMissing:
-                          description: Percent missing
+                          description: Percentage of missing values in the column
                           type: number
                         reserved:
-                          description: The column is reserved and must be part of
-                            the features set for the task. The value is derived from
-                            the data source.
+                          description: Indicates if the column is reserved and must
+                            be a feature included in model training
                           type: boolean
                         skewed:
-                          description: Mark that this column is skewed and would require
-                            a power transform If skewness is less than -1 or greater
-                            than 1, the distribution is highly skewed. If skewness
-                            is between -1 and -0.5 or between 0.5 and 1, the distribution
-                            is moderately skewed. If skewness is between -0.5 and
-                            0.5, the distribution is approximately symmetric
+                          description: "Marks that the column is skewed and would
+                            require a power transform. \n If skewness is less than
+                            -1 or greater than 1, the distribution is highly skewed.
+                            If skewness is between -1 and -0.5 or between 0.5 and
+                            1, the distribution is moderately skewed. If skewness
+                            is between -0.5 and 0.5, the distribution is approximately
+                            symmetric"
                           type: boolean
                         skewness:
-                          description: Skewness is the standard deviation value of
-                            the attribute
+                          description: The computed skewness, which measures the asymmetry
+                            of the distribution of values in the column
                           type: number
                         stddev:
-                          description: StdDev is the standard deviation value of the
-                            attribute
+                          description: The standard deviation of the columns values
                           type: number
                         sum:
                           description: Skewness is the standard deviation value of
                             the attribute
                           type: number
                         target:
-                          description: Is this the target attribute, the value is
-                            derived from the data source
+                          description: Indicates if the feature is the target attribute
+                            for a Study, as specified by the Dataset's DataSource
                           type: boolean
                         variance:
-                          description: Variance
+                          description: The variability of the columns values from
+                            the columns mean
                           type: number
                         zeros:
-                          description: Zeros is the numbers of zeros in the feature
+                          description: The number of zero values in the column
                           type: number
                       type: object
                     type: array
                   correlationsWithTarget:
-                    description: Holds the top correlation with target
+                    description: The top correlations between all features and the
+                      target feature
                     items:
-                      description: Feature corr is used to record a correlation between
-                        two features.
+                      description: Correlation records the correlation between two
+                        features in a Dataset
                       properties:
                         feature1:
                           description: The first feature name
@@ -793,7 +864,7 @@ spec:
                           description: How the value was calculated
                           type: string
                         value:
-                          description: The corr value
+                          description: The correlation value
                           type: number
                       required:
                       - feature1
@@ -801,18 +872,19 @@ spec:
                       type: object
                     type: array
                   fileSize:
-                    description: file size in bytes
+                    description: The file size of the data in bytes
                     format: int32
                     type: integer
                   rows:
-                    description: number of rows in the dataset
+                    description: Number of rows observed from the data
                     format: int32
                     type: integer
                   topCorrelations:
-                    description: Holds the top feature correlation
+                    description: The top correlations between features, computed per
+                      the CorrelationSpec of the parent Dataset
                     items:
-                      description: Feature corr is used to record a correlation between
-                        two features.
+                      description: Correlation records the correlation between two
+                        features in a Dataset
                       properties:
                         feature1:
                           description: The first feature name
@@ -824,7 +896,7 @@ spec:
                           description: How the value was calculated
                           type: string
                         value:
-                          description: The corr value
+                          description: The correlation value
                           type: number
                       required:
                       - feature1
@@ -833,8 +905,8 @@ spec:
                     type: array
                 type: object
               validationResults:
-                description: List of data problems, as reported by the validation
-                  process
+                description: List of validation results which are generated for every
+                  validation rule associated with the Dataset's Data Source
                 items:
                   properties:
                     column:

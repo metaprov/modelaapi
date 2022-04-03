@@ -1732,7 +1732,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabSpec = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabSpec.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabSpec, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -2698,7 +2698,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -30123,13 +30123,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabList.prototype.cl
 
 
 
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabSpec.repeatedFields_ = [6];
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -30165,9 +30158,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabSpec.toObject = f
     tenantref: (f = msg.getTenantref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     limits: (f = msg.getLimits()) && proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ResourceLimitSpec.toObject(includeInstance, f),
     clustername: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    owner: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
-    stakeholdersList: jspb.Message.toObjectList(msg.getStakeholdersList(),
-    github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StakeHolder.toObject, includeInstance)
+    owner: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -30225,11 +30216,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabSpec.deserializeB
     case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setOwner(value);
-      break;
-    case 6:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StakeHolder;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StakeHolder.deserializeBinaryFromReader);
-      msg.addStakeholders(value);
       break;
     default:
       reader.skipField();
@@ -30295,14 +30281,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabSpec.serializeBin
     writer.writeString(
       5,
       f
-    );
-  }
-  f = message.getStakeholdersList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      6,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StakeHolder.serializeBinaryToWriter
     );
   }
 };
@@ -30487,44 +30465,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabSpec.prototype.cl
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabSpec.prototype.hasOwner = function() {
   return jspb.Message.getField(this, 5) != null;
-};
-
-
-/**
- * repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.StakeHolder stakeholders = 6;
- * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.StakeHolder>}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabSpec.prototype.getStakeholdersList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.StakeHolder>} */ (
-    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StakeHolder, 6));
-};
-
-
-/**
- * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.StakeHolder>} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabSpec} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabSpec.prototype.setStakeholdersList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 6, value);
-};
-
-
-/**
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.StakeHolder=} opt_value
- * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.StakeHolder}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabSpec.prototype.addStakeholders = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.StakeHolder, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabSpec.prototype.clearStakeholdersList = function() {
-  return this.setStakeholdersList([]);
 };
 
 
@@ -36806,7 +36746,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotificationChannelS
     info: (f = jspb.Message.getBooleanField(msg, 3)) == null ? undefined : f,
     error: (f = jspb.Message.getBooleanField(msg, 4)) == null ? undefined : f,
     from: (f = msg.getFrom()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
-    to: (f = msg.getTo()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f)
+    to: (f = msg.getTo()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    destination: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -36868,6 +36809,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotificationChannelS
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
       msg.setTo(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDestination(value);
       break;
     default:
       reader.skipField();
@@ -36940,6 +36885,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotificationChannelS
       6,
       f,
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 7));
+  if (f != null) {
+    writer.writeString(
+      7,
+      f
     );
   }
 };
@@ -37160,6 +37112,42 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotificationChannelS
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotificationChannelSpec.prototype.hasTo = function() {
   return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional string destination = 7;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotificationChannelSpec.prototype.getDestination = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotificationChannelSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotificationChannelSpec.prototype.setDestination = function(value) {
+  return jspb.Message.setField(this, 7, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotificationChannelSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotificationChannelSpec.prototype.clearDestination = function() {
+  return jspb.Message.setField(this, 7, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotificationChannelSpec.prototype.hasDestination = function() {
+  return jspb.Message.getField(this, 7) != null;
 };
 
 
@@ -44728,13 +44716,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteList.prot
 
 
 
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec.repeatedFields_ = [8];
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -44772,9 +44753,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec.toOb
     ingressname: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     fqdn: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     clustername: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
-    owner: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
-    stakeholdersList: jspb.Message.toObjectList(msg.getStakeholdersList(),
-    github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StakeHolder.toObject, includeInstance)
+    owner: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -44840,11 +44819,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec.dese
     case 7:
       var value = /** @type {string} */ (reader.readString());
       msg.setOwner(value);
-      break;
-    case 8:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StakeHolder;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StakeHolder.deserializeBinaryFromReader);
-      msg.addStakeholders(value);
       break;
     default:
       reader.skipField();
@@ -44924,14 +44898,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec.seri
     writer.writeString(
       7,
       f
-    );
-  }
-  f = message.getStakeholdersList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      8,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StakeHolder.serializeBinaryToWriter
     );
   }
 };
@@ -45188,44 +45154,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec.prot
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec.prototype.hasOwner = function() {
   return jspb.Message.getField(this, 7) != null;
-};
-
-
-/**
- * repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.StakeHolder stakeholders = 8;
- * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.StakeHolder>}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec.prototype.getStakeholdersList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.StakeHolder>} */ (
-    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StakeHolder, 8));
-};
-
-
-/**
- * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.StakeHolder>} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec.prototype.setStakeholdersList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 8, value);
-};
-
-
-/**
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.StakeHolder=} opt_value
- * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.StakeHolder}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec.prototype.addStakeholders = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 8, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.StakeHolder, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec.prototype.clearStakeholdersList = function() {
-  return this.setStakeholdersList([]);
 };
 
 
@@ -46247,9 +46175,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SlackSpec.prototype.
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SlackSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
-    webhookurl: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    channel: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    username: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     token: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
   };
 
@@ -46287,18 +46212,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SlackSpec.deserializ
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setWebhookurl(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setChannel(value);
-      break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setUsername(value);
-      break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setToken(value);
@@ -46332,27 +46245,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SlackSpec.prototype.
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SlackSpec.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = /** @type {string} */ (jspb.Message.getField(message, 1));
-  if (f != null) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 2));
-  if (f != null) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 3));
-  if (f != null) {
-    writer.writeString(
-      3,
-      f
-    );
-  }
   f = /** @type {string} */ (jspb.Message.getField(message, 4));
   if (f != null) {
     writer.writeString(
@@ -46360,114 +46252,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SlackSpec.serializeB
       f
     );
   }
-};
-
-
-/**
- * optional string webhookUrl = 1;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SlackSpec.prototype.getWebhookurl = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SlackSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SlackSpec.prototype.setWebhookurl = function(value) {
-  return jspb.Message.setField(this, 1, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SlackSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SlackSpec.prototype.clearWebhookurl = function() {
-  return jspb.Message.setField(this, 1, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SlackSpec.prototype.hasWebhookurl = function() {
-  return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional string channel = 2;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SlackSpec.prototype.getChannel = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SlackSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SlackSpec.prototype.setChannel = function(value) {
-  return jspb.Message.setField(this, 2, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SlackSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SlackSpec.prototype.clearChannel = function() {
-  return jspb.Message.setField(this, 2, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SlackSpec.prototype.hasChannel = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional string username = 3;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SlackSpec.prototype.getUsername = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SlackSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SlackSpec.prototype.setUsername = function(value) {
-  return jspb.Message.setField(this, 3, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SlackSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SlackSpec.prototype.clearUsername = function() {
-  return jspb.Message.setField(this, 3, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SlackSpec.prototype.hasUsername = function() {
-  return jspb.Message.getField(this, 3) != null;
 };
 
 

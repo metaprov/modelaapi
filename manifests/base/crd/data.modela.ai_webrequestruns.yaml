@@ -1,0 +1,388 @@
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.8.0
+  creationTimestamp: null
+  name: webrequestruns.data.modela.ai
+spec:
+  group: data.modela.ai
+  names:
+    categories:
+    - data
+    - modela
+    kind: WebRequestRun
+    listKind: WebRequestRunList
+    plural: webrequestruns
+    singular: webrequestrun
+  scope: Namespaced
+  versions:
+  - additionalPrinterColumns:
+    - jsonPath: .status.conditions[?(@.type=="Ready")].status
+      name: Ready
+      type: string
+    - jsonPath: .spec.owner
+      name: Owner
+      type: string
+    - jsonPath: .spec.versionName
+      name: Version
+      type: string
+    - jsonPath: .metadata.creationTimestamp
+      name: Age
+      type: date
+    name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: WebRequestRun represent a single webrequest in the webrequest
+          store.
+        properties:
+          apiVersion:
+            description: 'APIVersion defines the versioned schema of this representation
+              of an object. Servers should convert recognized schemas to the latest
+              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            type: string
+          kind:
+            description: 'Kind is a string value representing the REST resource this
+              object represents. Servers may infer this from the endpoint the client
+              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: WebRequestRunSpec contain the desired state of a WebRequestRun
+            properties:
+              connectionName:
+                default: ""
+                description: The name of the connection to the data source.
+                type: string
+              description:
+                default: ""
+                description: Comments is a description of the webrequest
+                maxLength: 512
+                type: string
+              headers:
+                additionalProperties:
+                  type: string
+                description: The Http headers to use
+                type: object
+              materialized:
+                default: false
+                description: If true save the query results
+                type: boolean
+              owner:
+                default: no-one
+                description: The webrequest owner
+                type: string
+              parameters:
+                additionalProperties:
+                  type: string
+                description: URL Parameters
+                type: object
+              reported:
+                default: false
+                description: If true generate a report each time the web request is
+                  executed
+                type: boolean
+              resources:
+                description: Resources is the hardware resource req.
+                properties:
+                  cpuImage:
+                    description: Reference to the managed gpu trainer image
+                    properties:
+                      apiVersion:
+                        description: API version of the referent.
+                        type: string
+                      fieldPath:
+                        description: 'If referring to a piece of an object instead
+                          of an entire object, this string should contain a valid
+                          JSON/Go field access statement, such as desiredState.manifest.containers[2].
+                          For example, if the object reference is to a container within
+                          a pod, this would take on a value like: "spec.containers{name}"
+                          (where "name" refers to the name of the container that triggered
+                          the event) or if no container name is specified "spec.containers[2]"
+                          (container with index 2 in this pod). This syntax is chosen
+                          only to have some well-defined way of referencing a part
+                          of an object. TODO: this design is not final and this field
+                          is subject to change in the future.'
+                        type: string
+                      kind:
+                        description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                        type: string
+                      name:
+                        description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                        type: string
+                      namespace:
+                        description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                        type: string
+                      resourceVersion:
+                        description: 'Specific resourceVersion to which this reference
+                          is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                        type: string
+                      uid:
+                        description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                        type: string
+                    type: object
+                  gpuImage:
+                    description: Reference to the managed gpu trainer image
+                    properties:
+                      apiVersion:
+                        description: API version of the referent.
+                        type: string
+                      fieldPath:
+                        description: 'If referring to a piece of an object instead
+                          of an entire object, this string should contain a valid
+                          JSON/Go field access statement, such as desiredState.manifest.containers[2].
+                          For example, if the object reference is to a container within
+                          a pod, this would take on a value like: "spec.containers{name}"
+                          (where "name" refers to the name of the container that triggered
+                          the event) or if no container name is specified "spec.containers[2]"
+                          (container with index 2 in this pod). This syntax is chosen
+                          only to have some well-defined way of referencing a part
+                          of an object. TODO: this design is not final and this field
+                          is subject to change in the future.'
+                        type: string
+                      kind:
+                        description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                        type: string
+                      name:
+                        description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                        type: string
+                      namespace:
+                        description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                        type: string
+                      resourceVersion:
+                        description: 'Specific resourceVersion to which this reference
+                          is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                        type: string
+                      uid:
+                        description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                        type: string
+                    type: object
+                  requirements:
+                    description: Custom resource requirments
+                    properties:
+                      limits:
+                        additionalProperties:
+                          anyOf:
+                          - type: integer
+                          - type: string
+                          pattern: ^(\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))(([KMGTPE]i)|[numkMGTPE]|([eE](\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))))?$
+                          x-kubernetes-int-or-string: true
+                        description: 'Limits describes the maximum amount of compute
+                          resources allowed. More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/'
+                        type: object
+                      requests:
+                        additionalProperties:
+                          anyOf:
+                          - type: integer
+                          - type: string
+                          pattern: ^(\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))(([KMGTPE]i)|[numkMGTPE]|([eE](\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))))?$
+                          x-kubernetes-int-or-string: true
+                        description: 'Requests describes the minimum amount of compute
+                          resources required. If Requests is omitted for a container,
+                          it defaults to Limits if that is explicitly specified, otherwise
+                          to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/'
+                        type: object
+                    type: object
+                  workloadName:
+                    description: If this resource is based on the workload, this field
+                      contain the name of the workload.
+                    type: string
+                type: object
+              text:
+                default: ""
+                description: Type name of the column key, this column is the key column
+                  in the entity.
+                type: string
+              timeout:
+                default: 3600
+                description: The WebRequest statement timeout
+                format: int32
+                type: integer
+              verb:
+                default: ""
+                description: HTTP Verb to use
+                type: string
+              versionName:
+                default: ""
+                description: The product version for the webrequest.
+                type: string
+              webRequestName:
+                default: ""
+                description: The source web request
+                type: string
+            type: object
+          status:
+            description: WebRequestRunStatus defines the observed state of WebRequestRun
+            properties:
+              conditions:
+                items:
+                  description: WebRequestRunCondition describes the state of a deployment
+                    at a certain point.
+                  properties:
+                    lastTransitionTime:
+                      description: Last time the condition transitioned from one status
+                        to another.
+                      format: date-time
+                      type: string
+                    message:
+                      description: A human readable message indicating details about
+                        the transition.
+                      type: string
+                    reason:
+                      description: The reason for the condition's last transition.
+                      type: string
+                    status:
+                      description: Status of the condition, one of True, False, AutoScaler.
+                      type: string
+                    type:
+                      description: Type of account condition.
+                      type: string
+                  required:
+                  - status
+                  - type
+                  type: object
+                type: array
+              endTime:
+                description: EndTime is the end time of the prediction.
+                format: date-time
+                type: string
+              failureMessage:
+                description: Update in case of terminal failure message
+                type: string
+              failureReason:
+                description: Update in case of terminal failure Borrowed from cluster
+                  api controller
+                type: string
+              httpResultCode:
+                description: The result of the HTTP execution
+                format: int32
+                type: integer
+              lastUpdated:
+                description: Last time the object was updated
+                format: date-time
+                type: string
+              logs:
+                description: Holds the location of log paths
+                properties:
+                  bucketName:
+                    description: The bucket logs.
+                    type: string
+                  containers:
+                    description: Jobs per containers
+                    items:
+                      description: Define log for one container
+                      properties:
+                        container:
+                          description: The container name
+                          type: string
+                        job:
+                          description: The Job name
+                          type: string
+                        key:
+                          description: The key load
+                          type: string
+                      type: object
+                    type: array
+                type: object
+              observedGeneration:
+                description: ObservedGeneration is the Last generation that was acted
+                  on
+                format: int64
+                type: integer
+              phase:
+                default: Pending
+                description: Phase is the current phase of the prediction
+                type: string
+              reportName:
+                description: The name of the report object.
+                type: string
+              resultLocation:
+                description: The location of the result
+                properties:
+                  bucketName:
+                    default: ""
+                    description: In the case of the location type being object storage,
+                      BucketName is the name of the VirtualBucket resource in the
+                      same tenant namespace as the resource. Modela will access the
+                      object storage system and will pull from the file path specified
+                      by the `Path` field
+                    type: string
+                  connectionName:
+                    default: ""
+                    description: In the case of the location type being a database,
+                      ConnectionName is the name of the Connection resource in the
+                      same tenant namespace as the resource which specifies the DataLocation.
+                      Modela will connect to the database specified by the Connection
+                      and execute the query specified by the `SQL` field
+                    type: string
+                  database:
+                    default: ""
+                    description: The name of a database that exists inside the database
+                      server connection specified by the `ConnectionName` field
+                    type: string
+                  path:
+                    default: ""
+                    description: 'The path to a flat-file in an object storage system.
+                      When using the Modela API to upload files (through the FileService
+                      API), Modela will upload the data to a predetermined path with
+                      the following format: "modela/depot/tenants/{tenant}/dataproducts/{dataproduct}/dataproductversions/{version}/{resource_type}/{resource_name}/data/raw/{file_name}
+                      The path does not need to adhere to this format; you can still
+                      pass the path of a file inside a bucket not managed by Modela'
+                    type: string
+                  sql:
+                    default: ""
+                    description: The SQL statement to query data from a database connection
+                    type: string
+                  table:
+                    default: ""
+                    description: The name of a table inside a database, if applicable
+                    type: string
+                  topic:
+                    default: ""
+                    description: The name of the topic in case of streaming (currently
+                      unsupported)
+                    type: string
+                  type:
+                    default: object
+                    description: The type of location where the data resides, which
+                      can either be an object inside an object storage system (i.e.
+                      Minio), a SQL location like a table or a view, a data stream
+                      (i.e. Kafka, currently unsupported), or a web location (currently
+                      unsupported)
+                    type: string
+                type: object
+              rows:
+                description: The number of rows in the result query
+                format: int32
+                type: integer
+              startTime:
+                description: StartTime is the start time of the prediction.
+                format: date-time
+                type: string
+              triggeredBy:
+                description: What triggered the run
+                enum:
+                - on-demand
+                - on-schedule
+                - on-new-data
+                - on-github-event
+                - on-concept-drift
+                - on-pref-degradation
+                type: string
+            type: object
+        required:
+        - metadata
+        - spec
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}
+status:
+  acceptedNames:
+    kind: ""
+    plural: ""
+  conditions: []
+  storedVersions: []
