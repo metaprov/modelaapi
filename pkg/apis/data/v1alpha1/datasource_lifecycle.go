@@ -277,3 +277,13 @@ func (sc *DataSource) MarkSaved() {
 func (sc *DataSource) Saved() bool {
 	return sc.GetCond(DatasourceSaved).Status == v1.ConditionTrue
 }
+
+// check if we have any validation rule,
+// if not, we can skip this step.
+func (sc *DataSource) HaveValidationRules() bool {
+	return len(sc.Spec.Schema.Validation.DatasetValidations) == 0 &&
+		len(sc.Spec.Schema.Validation.MultiDatasetValidations) == 0 &&
+		len(sc.Spec.Schema.Validation.ColumnValidations) == 0 &&
+		len(sc.Spec.Schema.Validation.FileValidations) == 0
+
+}
