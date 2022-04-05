@@ -46797,7 +46797,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.toObjec
     notification: (f = msg.getNotification()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.toObject(includeInstance, f),
     modelimage: (f = msg.getModelimage()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelImageSpec.toObject(includeInstance, f),
     gc: (f = msg.getGc()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GarbageCollectionSpec.toObject(includeInstance, f),
-    ttl: (f = jspb.Message.getField(msg, 32)) == null ? undefined : f
+    ttl: (f = jspb.Message.getField(msg, 32)) == null ? undefined : f,
+    modelversion: (f = jspb.Message.getField(msg, 33)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -46975,6 +46976,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.deseria
     case 32:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setTtl(value);
+      break;
+    case 33:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setModelversion(value);
       break;
     default:
       reader.skipField();
@@ -47240,6 +47245,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.seriali
   if (f != null) {
     writer.writeInt32(
       32,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 33));
+  if (f != null) {
+    writer.writeString(
+      33,
       f
     );
   }
@@ -48409,6 +48421,42 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototy
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.hasTtl = function() {
   return jspb.Message.getField(this, 32) != null;
+};
+
+
+/**
+ * optional string modelVersion = 33;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.getModelversion = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 33, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.setModelversion = function(value) {
+  return jspb.Message.setField(this, 33, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.clearModelversion = function() {
+  return jspb.Message.setField(this, 33, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.hasModelversion = function() {
+  return jspb.Message.getField(this, 33) != null;
 };
 
 

@@ -3289,6 +3289,11 @@ message StudySpec {
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
   optional int32 ttl = 32;
+
+  // Model Version is assigned to all the models from this study.
+  // +kubebuilder:default:=0
+  // +kubebuilder:validation:Optional
+  optional string modelVersion = 33;
 }
 
 // StudyStatus defines the observed state of the Study

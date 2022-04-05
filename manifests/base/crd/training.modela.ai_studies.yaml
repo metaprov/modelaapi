@@ -1082,6 +1082,11 @@ spec:
                 description: Set to true if you want the system to create a docker
                   model image, at the end of training.
                 type: boolean
+              modelVersion:
+                default: 0
+                description: Model Version is assigned to all the models from this
+                  study.
+                type: string
               notification:
                 description: Notification specification.
                 properties:

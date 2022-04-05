@@ -4809,6 +4809,9 @@ export class StudySpec extends jspb.Message {
   getTtl(): number;
   setTtl(value: number): StudySpec;
 
+  getModelversion(): string;
+  setModelversion(value: string): StudySpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): StudySpec.AsObject;
   static toObject(includeInstance: boolean, msg: StudySpec): StudySpec.AsObject;
@@ -4851,6 +4854,7 @@ export namespace StudySpec {
     modelimage?: ModelImageSpec.AsObject,
     gc?: GarbageCollectionSpec.AsObject,
     ttl: number,
+    modelversion: string,
   }
 }
 
