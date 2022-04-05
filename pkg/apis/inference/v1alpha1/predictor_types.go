@@ -190,6 +190,9 @@ type PredictorSpec struct {
 	// specify the predictor authentication
 	// +kubebuilder:validation:Optional
 	Auth PredictorAuthSpec `json:"auth,omitempty" protobuf:"bytes,25,opt,name=auth"`
+	// If true, set expose a REST service.
+	// +kubebuilder:validation:Optional
+	REST *bool `json:"rest,omitempty" protobuf:"varint,26,opt,name=rest"`
 }
 
 // A prediction cache specify the connection information to a cache (e.g. redis) that can store the prediction.
@@ -386,5 +389,5 @@ type PredictorAuthSpec struct {
 	// If true auth is enabled.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Enabled *bool `json:"enabled,omitempty" protobuf:"bytes,1,opt,name=enabled"`
+	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
 }

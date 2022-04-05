@@ -122,7 +122,7 @@ type DataAppSpec struct {
 type CustomAppSpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Enabled *bool `json:"owner,omitempty" protobuf:"bytes,1,opt,name=owner"`
+	Enabled *bool `json:"owner,omitempty" protobuf:"varint,1,opt,name=owner"`
 	// The app title
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional

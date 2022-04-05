@@ -65,7 +65,7 @@ type PublicDatasetSpec struct {
 	// +kubebuilder:default =""
 	Industry *string `json:"industry,omitempty" protobuf:"bytes,11,opt,name=industry"`
 	// +kubebuilder:default = false
-	Imbalanced *bool `json:"imbalanced,omitempty" protobuf:"bytes,12,opt,name=imbalanced"`
+	Imbalanced *bool `json:"imbalanced,omitempty" protobuf:"varint,12,opt,name=imbalanced"`
 	// URI of the datasource CR for this public dataset
 	// +kubebuilder:default =""
 	DatasourceCR *string `json:"datasourceCR,omitempty" protobuf:"bytes,13,opt,name=datasourceCR"`

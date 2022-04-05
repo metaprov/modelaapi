@@ -65,15 +65,15 @@ type NotifierSpec struct {
 	// Is this notifier can send notification
 	// +kubebuilder:default:= true
 	// +kubebuilder:validation:Optional
-	Enabled *bool `json:"enabled,omitempty" protobuf:"bytes,1,opt,name=enabled"`
+	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
 	// The tenant that own the notifier
 	// Default to default tenant.
 	// +kubebuilder:validation:Optional
-	TenantRef *v1.ObjectReference `json:"tenantRef" protobuf:"bytes,2,opt,name=tenantRef"`
+	TenantRef *v1.ObjectReference `json:"tenantRef" protobuf:"varint,2,opt,name=tenantRef"`
 	// User provided description
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	Description *string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
+	Description *string `json:"description,omitempty" protobuf:"varint,3,opt,name=description"`
 	// The owner account name
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
@@ -104,18 +104,18 @@ type NotificationChannelSpec struct {
 	// Is this notifier can send notification
 	// +kubebuilder:default:= true
 	// +kubebuilder:validation:Optional
-	Enabled *bool `json:"enabled,omitempty" protobuf:"bytes,1,opt,name=enabled"`
+	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
 	// +kubebuilder:validation:Required
 	// +kubebuilder:default:=""
 	ConnectionName *string `json:"connectionName" protobuf:"bytes,2,opt,name=connectionName"`
 	// Send info messages via this channel
 	// +kubebuilder:default:= false
 	// +kubebuilder:validation:Optional
-	Info *bool `json:"info,omitempty" protobuf:"bytes,3,opt,name=info"`
+	Info *bool `json:"info,omitempty" protobuf:"varint,3,opt,name=info"`
 	// Send error messages via this channel
 	// +kubebuilder:default:= true
 	// +kubebuilder:validation:Optional
-	Error *bool `json:"error,omitempty" protobuf:"bytes,4,opt,name=error"`
+	Error *bool `json:"error,omitempty" protobuf:"varint,4,opt,name=error"`
 	// This channel start time.
 	// +kubebuilder:validation:Optional
 	From *metav1.Time `json:"from,omitempty" protobuf:"bytes,5,opt,name=from"`

@@ -79,7 +79,7 @@ type VirtualBucketSpec struct {
 	// If true support versioning
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Versioning *bool `json:"versioning,omitempty" protobuf:"bytes,6,opt,name=versioning"`
+	Versioning *bool `json:"versioning,omitempty" protobuf:"varint,6,opt,name=versioning"`
 	// If true support versioning
 	// +kubebuilder:validation:Optional
 	Quotas BucketResourceQuotas `json:"quotas,omitempty" protobuf:"bytes,7,opt,name=quotas"`
@@ -89,7 +89,7 @@ type BucketResourceQuotas struct {
 	// If true enable quate
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Enabled *bool `json:"enabled,omitempty" protobuf:"bytes,1,opt,name=enabled"`
+	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
 	// +kubebuilder:validation:Optional
 	HardLimit *resource.Quantity `json:"hardLimit,omitempty" protobuf:"bytes,2,opt,name=hardLimit"`
 }

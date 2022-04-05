@@ -918,6 +918,10 @@ message PredictorSpec {
   // specify the predictor authentication
   // +kubebuilder:validation:Optional
   optional PredictorAuthSpec auth = 25;
+
+  // If true, set expose a REST service.
+  // +kubebuilder:validation:Optional
+  optional bool rest = 26;
 }
 
 // PredictorStatus contain the current state of the Predictor resource

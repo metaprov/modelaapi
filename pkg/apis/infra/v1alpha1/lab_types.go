@@ -97,7 +97,7 @@ type ResourceLimitSpec struct {
 	// Enabled, set to true if you want to
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:=false
-	Enabled *bool `json:"enabled,omitempty" protobuf:"bytes,1,opt,name=enabled"`
+	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
 	// High level max memory provider
 	// +kubebuilder:validation:Optional
 	MaxMem *resource.Quantity `json:"maxMem,omitempty" protobuf:"bytes,2,opt,name=maxMem"`

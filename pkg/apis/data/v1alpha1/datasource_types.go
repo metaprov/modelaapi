@@ -410,7 +410,7 @@ type ExcelSheetArea struct {
 	// Indicates if the excel reader should read the entire sheet; if false, it will read only within the bounds
 	// specified by the `To` and `From` fields of the ExcelSheetArea
 	// +kubebuilder:default:=false
-	EntireSheet *bool `json:"entireSheet,omitempty" protobuf:"bytes,1,opt,name=entireSheet"`
+	EntireSheet *bool `json:"entireSheet,omitempty" protobuf:"varint,1,opt,name=entireSheet"`
 	// If reading part of the excel sheet, start with the column in this position
 	FromColumn *int32 `json:"fromColumn,omitempty" protobuf:"varint,2,opt,name=fromColumn"`
 	// If reading part of the excel sheet, end with the column in this position
@@ -570,7 +570,7 @@ type Column struct {
 	// Indicates if the feature is ordinal, in the case of categorical features
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Ordinal *bool `json:"ordinal,omitempty" protobuf:"bytes,23,opt,name=ordinal"`
+	Ordinal *bool `json:"ordinal,omitempty" protobuf:"varint,23,opt,name=ordinal"`
 	// The maximum number of items if the column is a list of values
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Minimum=0
@@ -629,19 +629,19 @@ type Column struct {
 	// Indicates if the column is an index column
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Index *bool `json:"index,omitempty" protobuf:"bytes,38,opt,name=index"`
+	Index *bool `json:"index,omitempty" protobuf:"varint,38,opt,name=index"`
 	// Indicates if the column holds fold values
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Fold *bool `json:"fold,omitempty" protobuf:"bytes,39,opt,name=fold"`
+	Fold *bool `json:"fold,omitempty" protobuf:"varint,39,opt,name=fold"`
 	// If True than this is a weight column
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Weight *bool `json:"weight,omitempty" protobuf:"bytes,40,opt,name=weight"`
+	Weight *bool `json:"weight,omitempty" protobuf:"varint,40,opt,name=weight"`
 	// Indicates that the feature should always be used in training
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Reserved *bool `json:"reserved,omitempty" protobuf:"bytes,41,opt,name=reserved"`
+	Reserved *bool `json:"reserved,omitempty" protobuf:"varint,41,opt,name=reserved"`
 	// The recommended imputation method for the column
 	// +kubebuilder:default:=auto
 	// +kubebuilder:validation:Optional

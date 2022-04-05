@@ -181,7 +181,7 @@ type DatasetSpec struct {
 	// will be skipped.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Fast *bool `json:"fast,omitempty" protobuf:"bytes,22,opt,name=fast"`
+	Fast *bool `json:"fast,omitempty" protobuf:"varint,22,opt,name=fast"`
 }
 
 // DatasetStatus defines the observed state of a Dataset object

@@ -40,7 +40,7 @@ type CompilerSpec struct {
 	// Enable set the enable to
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Enable *bool `json:"enable,omitempty" protobuf:"bytes,1,opt,name=enable"`
+	Enable *bool `json:"enable,omitempty" protobuf:"varint,1,opt,name=enable"`
 	// Set one or more targets
 	// Enable set the enable to
 	// +kubebuilder:default:="none"
@@ -1398,7 +1398,7 @@ type RunSchedule struct {
 	// Indicates if the schedule is enabled and the Jobs associated it will be created at the specified time
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Enabled *bool `json:"enabled,omitempty" protobuf:"bytes,1,opt,name=enabled"`
+	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
 	// The time of the day when the schedule will be executed
 	// +kubebuilder:validation:Optional
 	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,2,opt,name=startTime"`
@@ -1460,10 +1460,10 @@ type ModelDeploymentSpec struct {
 	// A deployed model is a model whose containers are up, but does not serve production traffic
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Deployed *bool `json:"deployed,omitempty" protobuf:"bytes,8,opt,name=deployed"`
+	Deployed *bool `json:"deployed,omitempty" protobuf:"varint,8,opt,name=deployed"`
 	// MountTar means that we would mount the model tar file. Else we would use baked image.
 	// +kubebuilder:default:=true
-	MountTar *bool `json:"mountTar,omitempty" protobuf:"bytes,9,opt,name=mountTar"`
+	MountTar *bool `json:"mountTar,omitempty" protobuf:"varint,9,opt,name=mountTar"`
 	// TrafficSelector is a filter on the traffic to this model
 	// +kubebuilder:validation:Optional
 	TrafficSelector *string `json:"trafficSelector,omitempty" protobuf:"bytes,10,opt,name=trafficSelector"`

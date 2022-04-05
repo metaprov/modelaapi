@@ -1395,6 +1395,9 @@ export class PredictorSpec extends jspb.Message {
   hasAuth(): boolean;
   clearAuth(): PredictorSpec;
 
+  getRest(): boolean;
+  setRest(value: boolean): PredictorSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PredictorSpec.AsObject;
   static toObject(includeInstance: boolean, msg: PredictorSpec): PredictorSpec.AsObject;
@@ -1430,6 +1433,7 @@ export namespace PredictorSpec {
     predictionthreshold: number,
     monitor?: MonitorSpec.AsObject,
     auth?: PredictorAuthSpec.AsObject,
+    rest: boolean,
   }
 }
 

@@ -12632,7 +12632,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec.to
     task: (f = jspb.Message.getField(msg, 22)) == null ? undefined : f,
     predictionthreshold: (f = jspb.Message.getOptionalFloatingPointField(msg, 23)) == null ? undefined : f,
     monitor: (f = msg.getMonitor()) && proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec.toObject(includeInstance, f),
-    auth: (f = msg.getAuth()) && proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorAuthSpec.toObject(includeInstance, f)
+    auth: (f = msg.getAuth()) && proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorAuthSpec.toObject(includeInstance, f),
+    rest: (f = jspb.Message.getBooleanField(msg, 26)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -12779,6 +12780,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec.de
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorAuthSpec;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorAuthSpec.deserializeBinaryFromReader);
       msg.setAuth(value);
+      break;
+    case 26:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setRest(value);
       break;
     default:
       reader.skipField();
@@ -12993,6 +12998,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec.se
       25,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorAuthSpec.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 26));
+  if (f != null) {
+    writer.writeBool(
+      26,
+      f
     );
   }
 };
@@ -13907,6 +13919,42 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec.pr
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.hasAuth = function() {
   return jspb.Message.getField(this, 25) != null;
+};
+
+
+/**
+ * optional bool rest = 26;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.getRest = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 26, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.setRest = function(value) {
+  return jspb.Message.setField(this, 26, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.clearRest = function() {
+  return jspb.Message.setField(this, 26, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.hasRest = function() {
+  return jspb.Message.getField(this, 26) != null;
 };
 
 

@@ -98,7 +98,7 @@ type DataPipelineSpec struct {
 	// Set to true to pause the cron prediction
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Paused *bool `json:"paused,omitempty" protobuf:"bytes,11,opt,name=paused"`
+	Paused *bool `json:"paused,omitempty" protobuf:"varint,11,opt,name=paused"`
 	// TTL for the data product run. Set to 0 if no garbage collected is needed.
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional

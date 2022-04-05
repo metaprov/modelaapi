@@ -287,14 +287,14 @@ type BaselineSpec struct {
 	// Set to true for baseline
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Enabled *bool `json:"enabled,omitempty" protobuf:"bytes,1,opt,name=enabled"`
+	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
 	// Baselines holds the name of the base line algorithms to try
 	// +kubebuilder:validation:Optional
 	Baselines []catalog.ClassicEstimatorName `json:"baselines,omitempty" protobuf:"bytes,2,rep,name=baselines"`
 	// Indicate the all alg for the task
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	All *bool `json:"all,omitempty" protobuf:"bytes,3,opt,name=all"`
+	All *bool `json:"all,omitempty" protobuf:"varint,3,opt,name=all"`
 }
 
 type AlgorithmSearchSpaceSpec struct {
@@ -407,7 +407,7 @@ type FeatureEngineeringSearchSpec struct {
 	// successful study.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Reuse *bool `json:"reuse,omitempty" protobuf:"bytes,9,opt,name=reuse"`
+	Reuse *bool `json:"reuse,omitempty" protobuf:"varint,9,opt,name=reuse"`
 	// Specification for feature selection.
 	// successful study.
 	// +kubebuilder:validation:Optional
@@ -497,7 +497,7 @@ type StudySpec struct {
 	// Indicate a fast mode. If true, skip the model explenation.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Fast *bool `json:"fast,omitempty" protobuf:"bytes,22,opt,name=fast"`
+	Fast *bool `json:"fast,omitempty" protobuf:"varint,22,opt,name=fast"`
 	// The location of the study artifacts
 	// By default the bucket is the data product bucket.
 	// +kubebuilder:validation:Optional

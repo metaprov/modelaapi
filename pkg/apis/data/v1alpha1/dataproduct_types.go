@@ -99,7 +99,7 @@ type DataProductSpec struct {
 	// Indicates if the DataProduct is public and can be accessed without permissions
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Public *bool `json:"public,omitempty" protobuf:"bytes,2,opt,name=public"`
+	Public *bool `json:"public,omitempty" protobuf:"varint,2,opt,name=public"`
 	// The reference to the Tenant which owns the DataProduct. Defaults to `default-tenant`
 	// +kubebuilder:validation:Optional
 	TenantRef *v1.ObjectReference `json:"tenantRef,omitempty" protobuf:"bytes,3,opt,name=tenantRef"`

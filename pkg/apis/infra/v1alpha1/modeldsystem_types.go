@@ -58,7 +58,7 @@ type ModelaSystemSpec struct {
 	// Set the release to active
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Active *bool `json:"active" protobuf:"bytes,2,opt,name=active"`
+	Active *bool `json:"active" protobuf:"varint,2,opt,name=active"`
 	// +kubebuilder:validation:Optional
 	// +optional
 	Template *v1.PodTemplateSpec `json:"podTemplate,omitempty" protobuf:"bytes,3,opt,name=podTemplate"`

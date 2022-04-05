@@ -107,7 +107,7 @@ type ModelPipelineSpec struct {
 	// Pause the pipeline cron job.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Paused *bool `json:"paused,omitempty" protobuf:"bytes,18,opt,name=paused"`
+	Paused *bool `json:"paused,omitempty" protobuf:"varint,18,opt,name=paused"`
 }
 
 //DataStageSpec is the desired state of the data preprocessing step of the pipeline.

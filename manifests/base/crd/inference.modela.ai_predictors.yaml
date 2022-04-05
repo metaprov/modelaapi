@@ -628,6 +628,9 @@ spec:
                       WorkloadClass
                     type: string
                 type: object
+              rest:
+                description: If true, set expose a REST service.
+                type: boolean
               servingsiteRef:
                 description: The serving site that hosts this predictor and the models
                 properties:

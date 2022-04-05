@@ -108,7 +108,7 @@ type FeaturePipelineSpec struct {
 	// Set to true to pause the data pipeline
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Paused *bool `json:"paused,omitempty" protobuf:"bytes,12,opt,name=paused"`
+	Paused *bool `json:"paused,omitempty" protobuf:"varint,12,opt,name=paused"`
 	// TTL.
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional

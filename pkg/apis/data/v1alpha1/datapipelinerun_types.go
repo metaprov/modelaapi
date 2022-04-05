@@ -96,11 +96,11 @@ type DataPipelineRunSpec struct {
 	// Set to true to pause the pipeline run
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Paused *bool `json:"paused,omitempty" protobuf:"bytes,7,opt,name=paused"`
+	Paused *bool `json:"paused,omitempty" protobuf:"varint,7,opt,name=paused"`
 	// Set to true to abort the  pipeline run
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Aborted *bool `json:"aborted,omitempty" protobuf:"bytes,8,opt,name=aborted"`
+	Aborted *bool `json:"aborted,omitempty" protobuf:"varint,8,opt,name=aborted"`
 }
 
 // DataPipelineRunStatus defines the observed state of DataPipelineRun

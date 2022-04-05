@@ -117,7 +117,7 @@ type NotebookSpec struct {
 	// Set to true to pause the notebook
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Paused *bool `json:"paused,omitempty" protobuf:"bytes,14,opt,name=paused"`
+	Paused *bool `json:"paused,omitempty" protobuf:"varint,14,opt,name=paused"`
 }
 
 // NotebookStatus is the observed state of the notebook resource

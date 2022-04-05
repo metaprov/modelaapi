@@ -45,7 +45,7 @@ type AlgorithmSpec struct {
 	// Sparse indicate if this algorithm can deal with sparse data
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Sparse *bool `json:"sparse,omitempty" protobuf:"bytes,5,opt,name=sparse"`
+	Sparse *bool `json:"sparse,omitempty" protobuf:"varint,5,opt,name=sparse"`
 	// IntegerParameters is the list of integer hyper parameter ranges.
 	// +kubebuilder:validation:Optional
 	IntegerParameters []IntParameter `json:"integerParameters,omitempty" protobuf:"bytes,6,rep,name=integerParameters"`

@@ -966,14 +966,14 @@ type SmtpSpec struct {
 	Email *string `json:"email,omitempty" protobuf:"bytes,4,opt,name=email"`
 	// Use SSL when connecting to SMTP server
 	// +kubebuilder:default:=false
-	SSL *bool `json:"ssl,omitempty" protobuf:"bytes,5,opt,name=ssl"`
+	SSL *bool `json:"ssl,omitempty" protobuf:"varint,5,opt,name=ssl"`
 	// +kubebuilder:default:=false
-	VerifyPeer *bool `json:"verifyPeer,omitempty" protobuf:"bytes,6,opt,name=verifyPeer"`
+	VerifyPeer *bool `json:"verifyPeer,omitempty" protobuf:"varint,6,opt,name=verifyPeer"`
 	// +kubebuilder:default:=false
-	VerifyHost *bool `json:"verifyHost,omitempty" protobuf:"bytes,7,opt,name=verifyHost"`
+	VerifyHost *bool `json:"verifyHost,omitempty" protobuf:"varint,7,opt,name=verifyHost"`
 	// Use user name password auth
 	// +kubebuilder:default:=true
-	PasswordAuth *bool `json:"passwordAuth,omitempty" protobuf:"bytes,8,opt,name=passwordAuth"`
+	PasswordAuth *bool `json:"passwordAuth,omitempty" protobuf:"varint,8,opt,name=passwordAuth"`
 	// User name when using user name and password
 	Username *string `json:"username,omitempty" protobuf:"bytes,9,opt,name=username"`
 	// Password when using user name and password
@@ -1123,7 +1123,7 @@ type WebhookSpec struct {
 	// custom headers to send
 	Headers map[string]string `json:"headers,omitempty" protobuf:"bytes,4,opt,name=headers"`
 	// +kubebuilder:default:=false
-	SSL *bool `json:"ssl,omitempty" protobuf:"bytes,5,opt,name=ssl"`
+	SSL *bool `json:"ssl,omitempty" protobuf:"varint,5,opt,name=ssl"`
 }
 
 type DiscordSpec struct {
@@ -1138,7 +1138,7 @@ type DiscordSpec struct {
 	// custom headers to send
 	Headers map[string]string `json:"headers,omitempty" protobuf:"bytes,4,opt,name=headers"`
 	// +kubebuilder:default:=false
-	SSL *bool `json:"ssl,omitempty" protobuf:"bytes,5,opt,name=ssl"`
+	SSL *bool `json:"ssl,omitempty" protobuf:"varint,5,opt,name=ssl"`
 }
 
 type GoogleSheetsSpec struct {
