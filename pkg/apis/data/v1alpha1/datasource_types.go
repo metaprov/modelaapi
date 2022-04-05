@@ -684,8 +684,9 @@ type DataSource struct {
 	Status DataSourceStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
 }
 
+// DataSourceSpec defines the desired state of the DataSource
 type DataSourceSpec struct {
-	// The reference to the Account in the same namespace as the resource which created the object
+	// The name of the Account which created the object, which exists in the same tenant as the object
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,1,opt,name=owner"`
@@ -719,7 +720,7 @@ type DataSourceSpec struct {
 	// primarily for very large datasets
 	Sample SampleSpec `json:"sample,omitempty" protobuf:"bytes,9,opt,name=sample"`
 	// The default task for Dataset resources created from the DataSource. If null, this will be determined from
-	// the DataProduct which owns the DataSource
+	// the default task of the DataProduct which owns the DataSource
 	// +kubebuilder:validation:Optional
 	Task *catalog.MLTask `json:"task,omitempty" protobuf:"bytes,10,opt,name=task"`
 	// List of relationships to other data sources

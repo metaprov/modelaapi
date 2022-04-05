@@ -88,9 +88,9 @@ type DatasetList struct {
 	Items           []Dataset `json:"items" protobuf:"bytes,2,rep,name=items"`
 }
 
-// DatasetSpec defines the desired state of the dataset
+// DatasetSpec defines the desired state of the Dataset
 type DatasetSpec struct {
-	// The reference to the Account in the same namespace as the resource which created the object
+	// The name of the Account which created the object, which exists in the same tenant as the object
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,1,opt,name=owner"`
@@ -142,17 +142,17 @@ type DatasetSpec struct {
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
 	SyntheticRows *int32 `json:"syntheticRows" protobuf:"varint,12,opt,name=syntheticRows"`
-	// The location of the data file or database query which holds the raw data of the Dataset. When the Dataset is
+	// Origin is the location of the data file or database query which holds the raw data of the Dataset. When the Dataset is
 	// created, the resource controller will retrieve the data from the location, validate it against its Data Source
 	// if applicable, and store it inside the `live` section of the Virtual Bucket resource specified by the location
 	// +kubebuilder:validation:Optional
 	Origin DataLocation `json:"origin,omitempty" protobuf:"bytes,13,opt,name=origin"`
-	// The final location of the data which was copied from the `Origin` location during the ingestion phase.
+	// Location is the final location of the data which was copied from the `Origin` location during the ingestion phase.
 	// This field is set by the Dataset resource controller and should not be changed by any end-users
 	// +kubebuilder:validation:Required
 	// +required
 	Location DataLocation `json:"location,omitempty" protobuf:"bytes,14,opt,name=location"`
-	// The resource requirements which the Dataset will request when creating Jobs to process the uploaded data
+	// Resources specifies the resource requirements which the Dataset will request when creating Jobs to analyze the data
 	// +kubebuilder:validation:Optional
 	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,15,opt,name=resources"`
 	// The deadline in seconds for all Jobs created by the Dataset
@@ -255,7 +255,7 @@ type DatasetStatus struct {
 // DatasetStatistics contains statistics about the Dataset's overall data, as well as every feature of the data. The
 // data structure is populated with information during the `Profiling` phase of the parent Dataset.
 type DatasetStatistics struct {
-	// The collection of statistics for each feature
+	// Columns contains the collection of statistics for each feature
 	// +kubebuilder:validation:Optional
 	Columns []ColumnStatistics `json:"columns,omitempty" protobuf:"bytes,1,rep,name=columns"`
 	// Number of rows observed from the data
@@ -447,9 +447,11 @@ type DataLocation struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	BucketName *string `json:"bucketName" protobuf:"bytes,3,opt,name=bucketName"`
-	// The path to a flat-file in an object storage system. When using the Modela API to upload files (through the
+	// The path to a flat-file inside an object storage system. When using the Modela API to upload files (through the
 	// FileService API), Modela will upload the data to a predetermined path with the following format:
-	// "modela/depot/tenants/{tenant}/dataproducts/{dataproduct}/dataproductversions/{version}/{resource_type}/{resource_name}/data/raw/{file_name}
+	//
+	// `"modela/depot/tenants/{tenant}/dataproducts/{dataproduct}/dataproductversions/{version}/{resource_type}/{resource_name}/data/raw/{file_name}`
+	//
 	// The path does not need to adhere to this format; you can still pass the path of a file inside a bucket not managed by Modela
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
@@ -458,15 +460,15 @@ type DataLocation struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Table *string `json:"table" protobuf:"bytes,5,opt,name=table"`
-	// The name of a database that exists inside the database server connection specified by the `ConnectionName` field
+	// The name of a database that exists inside a database server that exists at the connection specified by the `ConnectionName` field
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Database *string `json:"database" protobuf:"bytes,6,opt,name=database"`
-	// The SQL statement to query data from a database connection
+	// The SQL statement to query data from a table
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Sql *string `json:"sql" protobuf:"bytes,7,opt,name=sql"`
-	// The name of the topic in case of streaming (currently unsupported)
+	// The name of the streaming topic (currently unsupported)
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Topic *string `json:"topic" protobuf:"bytes,8,opt,name=topic"`
@@ -501,7 +503,7 @@ type CorrelationSpec struct {
 	// +kubebuilder:default:="pearson"
 	// +kubebuilder:validation:Optional
 	Method *string `json:"method,omitempty" protobuf:"bytes,2,opt,name=method"`
-	// The top number of correlation to be included in the correlation results
+	// The number of top correlations to be included in the correlation results
 	// +kubebuilder:default:=10
 	// +kubebuilder:validation:Optional
 	Top *int32 `json:"top,omitempty" protobuf:"varint,3,opt,name=top"`

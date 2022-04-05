@@ -41,7 +41,6 @@ type RecipeCondition struct {
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:subresource:status
 // +kubebuilder:resource:path=recipes,shortName=rc,singular=recipe,categories={data,modela,all}
-
 type Recipe struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata" protobuf:"bytes,1,opt,name=metadata"`
@@ -49,8 +48,8 @@ type Recipe struct {
 	Status            RecipeStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
 }
 
-// +kubebuilder:object:root=true
 // RecipeList contains a list of Recipes
+// +kubebuilder:object:root=true
 type RecipeList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
@@ -418,32 +417,31 @@ const (
 	UnpivotStepOp      RecipeStepOperation = "unpivot"
 )
 
-// The sample spec define how to sample a dataset for analysis
+// SampleSpec specifies how the contents of a dataset should be sampled
 type SampleSpec struct {
-	// Enabled specify if the sample is enabled
+	// Indicates if sampling is enabled
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
-	//Type is the sampling type
-	//Default is random
+	// The type of sampling (random sampling, by default)
 	// +kubebuilder:default:="random"
 	// +kubebuilder:validation:Optional
 	Type catalog.SamplingType `json:"type,omitempty" protobuf:"bytes,2,opt,name=type"`
-	// Rows is the number of rows. Default is 500
+	// The number of rows to sample (by default, 500)
 	// +kubebuilder:default:=500
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
 	Rows *int32 `json:"rows,omitempty" protobuf:"varint,3,opt,name=rows"`
-	// Pct is the percent of rows to use for analysis.
+	// The percentage of rows to sample
 	// +kubebuilder:default:=100
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
 	Pct *int32 `json:"percent,omitempty" protobuf:"varint,4,opt,name=percent"`
-	// Filter formula. Valid only if the sample is a filter.
+	// The filter formula, valid only if the sample type is a filter
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Filter *string `json:"filter,omitempty" protobuf:"bytes,5,opt,name=filter"`
-	// Column is used for stratified sampling.
+	// The name of the column to be used for stratified sampling
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Column *string `json:"column,omitempty" protobuf:"bytes,6,opt,name=column"`

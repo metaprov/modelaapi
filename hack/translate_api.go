@@ -262,7 +262,7 @@ func readFile(location string) {
 
 func main() {
 	readFile("C:\\Users\\liamm\\modelaapi\\modelaapi\\pkg\\apis\\catalog\\v1alpha1\\common_types.go")
-	readFile("C:\\Users\\liamm\\modelaapi\\modelaapi\\pkg\\apis\\data\\v1alpha1\\datasource_types.go")
+	readFile("C:\\Users\\liamm\\modelaapi\\modelaapi\\pkg\\apis\\common\\rbac.go")
 	//readFile("C:\\Users\\liamm\\modelaapi\\modelaapi\\pkg\\apis\\inference\\v1alpha1\\predictor_types.go")
 
 	for enum, _ := range enumUsed {
