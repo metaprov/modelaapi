@@ -43,6 +43,7 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
+        description: Recipe represents a single batch of data
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation
@@ -116,24 +117,23 @@ spec:
                         type: string
                       database:
                         default: ""
-                        description: The name of a database that exists inside the
-                          database server connection specified by the `ConnectionName`
+                        description: The name of a database that exists inside a database
+                          server that exists at the connection specified by the `ConnectionName`
                           field
                         type: string
                       path:
                         default: ""
-                        description: 'The path to a flat-file in an object storage
+                        description: "The path to a flat-file inside an object storage
                           system. When using the Modela API to upload files (through
                           the FileService API), Modela will upload the data to a predetermined
-                          path with the following format: "modela/depot/tenants/{tenant}/dataproducts/{dataproduct}/dataproductversions/{version}/{resource_type}/{resource_name}/data/raw/{file_name}
-                          The path does not need to adhere to this format; you can
-                          still pass the path of a file inside a bucket not managed
-                          by Modela'
+                          path with the following format: \n `\"modela/depot/tenants/{tenant}/dataproducts/{dataproduct}/dataproductversions/{version}/{resource_type}/{resource_name}/data/raw/{file_name}`
+                          \n The path does not need to adhere to this format; you
+                          can still pass the path of a file inside a bucket not managed
+                          by Modela"
                         type: string
                       sql:
                         default: ""
-                        description: The SQL statement to query data from a database
-                          connection
+                        description: The SQL statement to query data from a table
                         type: string
                       table:
                         default: ""
@@ -141,8 +141,7 @@ spec:
                         type: string
                       topic:
                         default: ""
-                        description: The name of the topic in case of streaming (currently
-                          unsupported)
+                        description: The name of the streaming topic (currently unsupported)
                         type: string
                       type:
                         default: object
@@ -190,24 +189,23 @@ spec:
                         type: string
                       database:
                         default: ""
-                        description: The name of a database that exists inside the
-                          database server connection specified by the `ConnectionName`
+                        description: The name of a database that exists inside a database
+                          server that exists at the connection specified by the `ConnectionName`
                           field
                         type: string
                       path:
                         default: ""
-                        description: 'The path to a flat-file in an object storage
+                        description: "The path to a flat-file inside an object storage
                           system. When using the Modela API to upload files (through
                           the FileService API), Modela will upload the data to a predetermined
-                          path with the following format: "modela/depot/tenants/{tenant}/dataproducts/{dataproduct}/dataproductversions/{version}/{resource_type}/{resource_name}/data/raw/{file_name}
-                          The path does not need to adhere to this format; you can
-                          still pass the path of a file inside a bucket not managed
-                          by Modela'
+                          path with the following format: \n `\"modela/depot/tenants/{tenant}/dataproducts/{dataproduct}/dataproductversions/{version}/{resource_type}/{resource_name}/data/raw/{file_name}`
+                          \n The path does not need to adhere to this format; you
+                          can still pass the path of a file inside a bucket not managed
+                          by Modela"
                         type: string
                       sql:
                         default: ""
-                        description: The SQL statement to query data from a database
-                          connection
+                        description: The SQL statement to query data from a table
                         type: string
                       table:
                         default: ""
@@ -215,8 +213,7 @@ spec:
                         type: string
                       topic:
                         default: ""
-                        description: The name of the topic in case of streaming (currently
-                          unsupported)
+                        description: The name of the streaming topic (currently unsupported)
                         type: string
                       type:
                         default: object
@@ -237,7 +234,8 @@ spec:
                   recipe
                 properties:
                   cpuImage:
-                    description: Reference to the managed gpu trainer image
+                    description: Reference to the managed CPU trainer image, used
+                      internally
                     properties:
                       apiVersion:
                         description: API version of the referent.
@@ -273,7 +271,8 @@ spec:
                         type: string
                     type: object
                   gpuImage:
-                    description: Reference to the managed gpu trainer image
+                    description: Reference to the managed GPU trainer image, used
+                      internally
                     properties:
                       apiVersion:
                         description: API version of the referent.
@@ -309,7 +308,8 @@ spec:
                         type: string
                     type: object
                   requirements:
-                    description: Custom resource requirments
+                    description: The custom resource requirements for the workload,
+                      which are used if `WorkloadName` is not set
                     properties:
                       limits:
                         additionalProperties:
@@ -336,7 +336,9 @@ spec:
                     type: object
                   workloadName:
                     description: If this resource is based on the workload, this field
-                      contain the name of the workload.
+                      contain the name of the workload. The name of a WorkloadClass.
+                      The system will use the resource requirements described by the
+                      WorkloadClass
                     type: string
                 type: object
               sample:
@@ -345,31 +347,33 @@ spec:
                 properties:
                   column:
                     default: ""
-                    description: Column is used for stratified sampling.
+                    description: The name of the column to be used for stratified
+                      sampling
                     type: string
                   enabled:
                     default: false
-                    description: Enabled specify if the sample is enabled
+                    description: Indicates if sampling is enabled
                     type: boolean
                   filter:
                     default: ""
-                    description: Filter formula. Valid only if the sample is a filter.
+                    description: The filter formula, valid only if the sample type
+                      is a filter
                     type: string
                   percent:
                     default: 100
-                    description: Pct is the percent of rows to use for analysis.
+                    description: The percentage of rows to sample
                     format: int32
                     minimum: 0
                     type: integer
                   rows:
                     default: 500
-                    description: Rows is the number of rows. Default is 500
+                    description: The number of rows to sample (by default, 500)
                     format: int32
                     minimum: 0
                     type: integer
                   type:
                     default: random
-                    description: Type is the sampling type Default is random
+                    description: The type of sampling (random sampling, by default)
                     enum:
                     - header
                     - random
@@ -458,20 +462,21 @@ spec:
                     format: date-time
                     type: string
                   duration:
-                    description: Last run duration in seconds
+                    description: In the case of failure, the Dataset resource controller
+                      will set this field with a failure reason
                     format: int32
                     type: integer
                   failureMessage:
-                    description: Update in case of terminal failure message
+                    description: In the case of failure, the failure message
                     type: string
                   failureReason:
-                    description: Update in case of terminal failure Borrowed from
-                      cluster api controller
+                    description: In the case of failure, the failure reason Borrowed
+                      from cluster api controller
                     type: string
                   name:
                     type: string
                   status:
-                    description: the status of the last run
+                    description: The status of the last run
                     type: string
                 type: object
               lastUpdated:

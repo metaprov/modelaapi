@@ -74,7 +74,8 @@ spec:
                     description: Resource define the hardware resources req.
                     properties:
                       cpuImage:
-                        description: Reference to the managed gpu trainer image
+                        description: Reference to the managed CPU trainer image, used
+                          internally
                         properties:
                           apiVersion:
                             description: API version of the referent.
@@ -111,7 +112,8 @@ spec:
                             type: string
                         type: object
                       gpuImage:
-                        description: Reference to the managed gpu trainer image
+                        description: Reference to the managed GPU trainer image, used
+                          internally
                         properties:
                           apiVersion:
                             description: API version of the referent.
@@ -148,7 +150,8 @@ spec:
                             type: string
                         type: object
                       requirements:
-                        description: Custom resource requirments
+                        description: The custom resource requirements for the workload,
+                          which are used if `WorkloadName` is not set
                         properties:
                           limits:
                             additionalProperties:
@@ -176,7 +179,9 @@ spec:
                         type: object
                       workloadName:
                         description: If this resource is based on the workload, this
-                          field contain the name of the workload.
+                          field contain the name of the workload. The name of a WorkloadClass.
+                          The system will use the resource requirements described
+                          by the WorkloadClass
                         type: string
                     type: object
                   servingSiteName:
@@ -359,7 +364,8 @@ spec:
                     description: Resource define the hardware resources req.
                     properties:
                       cpuImage:
-                        description: Reference to the managed gpu trainer image
+                        description: Reference to the managed CPU trainer image, used
+                          internally
                         properties:
                           apiVersion:
                             description: API version of the referent.
@@ -396,7 +402,8 @@ spec:
                             type: string
                         type: object
                       gpuImage:
-                        description: Reference to the managed gpu trainer image
+                        description: Reference to the managed GPU trainer image, used
+                          internally
                         properties:
                           apiVersion:
                             description: API version of the referent.
@@ -433,7 +440,8 @@ spec:
                             type: string
                         type: object
                       requirements:
-                        description: Custom resource requirments
+                        description: The custom resource requirements for the workload,
+                          which are used if `WorkloadName` is not set
                         properties:
                           limits:
                             additionalProperties:
@@ -461,7 +469,9 @@ spec:
                         type: object
                       workloadName:
                         description: If this resource is based on the workload, this
-                          field contain the name of the workload.
+                          field contain the name of the workload. The name of a WorkloadClass.
+                          The system will use the resource requirements described
+                          by the WorkloadClass
                         type: string
                     type: object
                   servingSiteName:
@@ -607,21 +617,23 @@ spec:
                 properties:
                   errorTTL:
                     default: 3600
-                    description: TTL for error msgs. In seconds
+                    description: Time-to-live for error messages, in seconds
                     format: int32
                     type: integer
                   notifierName:
                     default: ""
-                    description: The name of the notifier.
+                    description: The name of the Notifier which exists in the same
+                      tenant as the resource specifying the NotificationSpec
                     type: string
                   selector:
                     additionalProperties:
                       type: string
-                    description: Select the target notifiers by a label.
+                    description: The labels which will be searched for in all Notifiers
+                      to determine the target Notifiers
                     type: object
                   successTTL:
                     default: 3600
-                    description: TTL for success msgs. In seconds
+                    description: Time-to-live for success messages. In seconds
                     format: int32
                     type: integer
                 type: object
@@ -665,7 +677,8 @@ spec:
                     description: Resource define the hardware resources req.
                     properties:
                       cpuImage:
-                        description: Reference to the managed gpu trainer image
+                        description: Reference to the managed CPU trainer image, used
+                          internally
                         properties:
                           apiVersion:
                             description: API version of the referent.
@@ -702,7 +715,8 @@ spec:
                             type: string
                         type: object
                       gpuImage:
-                        description: Reference to the managed gpu trainer image
+                        description: Reference to the managed GPU trainer image, used
+                          internally
                         properties:
                           apiVersion:
                             description: API version of the referent.
@@ -739,7 +753,8 @@ spec:
                             type: string
                         type: object
                       requirements:
-                        description: Custom resource requirments
+                        description: The custom resource requirements for the workload,
+                          which are used if `WorkloadName` is not set
                         properties:
                           limits:
                             additionalProperties:
@@ -767,7 +782,9 @@ spec:
                         type: object
                       workloadName:
                         description: If this resource is based on the workload, this
-                          field contain the name of the workload.
+                          field contain the name of the workload. The name of a WorkloadClass.
+                          The system will use the resource requirements described
+                          by the WorkloadClass
                         type: string
                     type: object
                   servingSiteName:
@@ -780,8 +797,8 @@ spec:
                     properties:
                       canary:
                         default: false
-                        description: Canary denotes if this deployment is staged release.
-                          A staged release will serve traffic in incerements
+                        description: Canary denotes if this deployment is a staged
+                          release. A staged release will serve traffic in increments
                         type: boolean
                       canaryMetrics:
                         description: 'If the deployment is canary, the metric define
@@ -797,42 +814,43 @@ spec:
                         type: array
                       deployed:
                         default: false
-                        description: a deployed model is a model whose containers
-                          are up, but does not serve production traffic.
+                        description: A deployed model is a model whose containers
+                          are up, but does not serve production traffic
                         type: boolean
                       maxTraffic:
-                        description: 'How much traffic this deployment model should
-                          serve. Default: 100.'
+                        description: The maximum percentage of traffic that will be
+                          served by the model
                         format: int32
                         maximum: 100
                         minimum: 0
                         type: integer
                       modelName:
-                        description: ModelName is the name of the model. The name
-                          must be unique within
+                        description: The name of a model, which is fully complete
+                          and packaged, that exists in the same DataProduct namespace
+                          as the resource which specifies the ModelDeploymentSpec
                         type: string
                       modelVersion:
-                        description: The version of the model. Note that a single
-                          predictor might serve different models
+                        description: The version of the model
                         type: string
                       mountTar:
-                        description: 'MountTar means that we would mount the model
-                          tar file. Else we would use baked image. Default: true'
+                        default: true
+                        description: MountTar means that we would mount the model
+                          tar file. Else we would use baked image.
                         type: boolean
                       released:
                         default: false
                         description: A released model is a model that should serve
-                          production traffic.
+                          production traffic
                         type: boolean
                       shadow:
                         default: false
                         description: Shadow denotes if the model is running in shadow
-                          mode. a shadow model face the production traffic, however,
+                          mode. A shadow model face the production traffic, however,
                           the predictions are not served back to the client
                         type: boolean
                       traffic:
-                        description: 'Traffic is the current amount of production
-                          traffic served by this model. Default: 100.'
+                        description: The minimum percentage of traffic that will be
+                          served by the model
                         format: int32
                         maximum: 100
                         minimum: 0
@@ -977,22 +995,26 @@ spec:
                 description: Schedule for running the pipeline
                 properties:
                   cron:
-                    description: Cron string of the schedule.
+                    description: The cron string of the schedule. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm
+                      for more information
                     type: string
                   enabled:
                     default: false
-                    description: Active denote that the schedule is enabled
+                    description: Indicates if the schedule is enabled and the Jobs
+                      associated it will be created at the specified time
                     type: boolean
                   endTime:
-                    description: EndTime is the end time of the schedule
+                    description: The time of the day when the schedule is expected
+                      to conclude
                     format: date-time
                     type: string
                   startTime:
-                    description: The start time of the schedule
+                    description: The time of the day when the schedule will be executed
                     format: date-time
                     type: string
                   type:
-                    description: The type of schedule events.
+                    description: The type of schedule, which can be a frequency interval
+                      or a cron expression
                     enum:
                     - now
                     - once
@@ -1166,7 +1188,8 @@ spec:
                     description: Resource define the hardware resources req.
                     properties:
                       cpuImage:
-                        description: Reference to the managed gpu trainer image
+                        description: Reference to the managed CPU trainer image, used
+                          internally
                         properties:
                           apiVersion:
                             description: API version of the referent.
@@ -1203,7 +1226,8 @@ spec:
                             type: string
                         type: object
                       gpuImage:
-                        description: Reference to the managed gpu trainer image
+                        description: Reference to the managed GPU trainer image, used
+                          internally
                         properties:
                           apiVersion:
                             description: API version of the referent.
@@ -1240,7 +1264,8 @@ spec:
                             type: string
                         type: object
                       requirements:
-                        description: Custom resource requirments
+                        description: The custom resource requirements for the workload,
+                          which are used if `WorkloadName` is not set
                         properties:
                           limits:
                             additionalProperties:
@@ -1268,7 +1293,9 @@ spec:
                         type: object
                       workloadName:
                         description: If this resource is based on the workload, this
-                          field contain the name of the workload.
+                          field contain the name of the workload. The name of a WorkloadClass.
+                          The system will use the resource requirements described
+                          by the WorkloadClass
                         type: string
                     type: object
                   servingSiteName:
@@ -1457,20 +1484,21 @@ spec:
                     format: date-time
                     type: string
                   duration:
-                    description: Last run duration in seconds
+                    description: In the case of failure, the Dataset resource controller
+                      will set this field with a failure reason
                     format: int32
                     type: integer
                   failureMessage:
-                    description: Update in case of terminal failure message
+                    description: In the case of failure, the failure message
                     type: string
                   failureReason:
-                    description: Update in case of terminal failure Borrowed from
-                      cluster api controller
+                    description: In the case of failure, the failure reason Borrowed
+                      from cluster api controller
                     type: string
                   name:
                     type: string
                   status:
-                    description: the status of the last run
+                    description: The status of the last run
                     type: string
                 type: object
               lastUpdated:

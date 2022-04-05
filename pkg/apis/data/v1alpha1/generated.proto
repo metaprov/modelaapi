@@ -577,7 +577,7 @@ message CorrelationSpec {
   // +kubebuilder:validation:Optional
   optional string method = 2;
 
-  // The top number of correlation to be included in the correlation results
+  // The number of top correlations to be included in the correlation results
   // +kubebuilder:default:=10
   // +kubebuilder:validation:Optional
   optional int32 top = 3;
@@ -692,9 +692,11 @@ message DataLocation {
   // +kubebuilder:validation:Optional
   optional string bucketName = 3;
 
-  // The path to a flat-file in an object storage system. When using the Modela API to upload files (through the
+  // The path to a flat-file inside an object storage system. When using the Modela API to upload files (through the
   // FileService API), Modela will upload the data to a predetermined path with the following format:
-  // "modela/depot/tenants/{tenant}/dataproducts/{dataproduct}/dataproductversions/{version}/{resource_type}/{resource_name}/data/raw/{file_name}
+  //
+  // `"modela/depot/tenants/{tenant}/dataproducts/{dataproduct}/dataproductversions/{version}/{resource_type}/{resource_name}/data/raw/{file_name}`
+  //
   // The path does not need to adhere to this format; you can still pass the path of a file inside a bucket not managed by Modela
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
@@ -705,17 +707,17 @@ message DataLocation {
   // +kubebuilder:validation:Optional
   optional string table = 5;
 
-  // The name of a database that exists inside the database server connection specified by the `ConnectionName` field
+  // The name of a database that exists inside a database server that exists at the connection specified by the `ConnectionName` field
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string database = 6;
 
-  // The SQL statement to query data from a database connection
+  // The SQL statement to query data from a table
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string sql = 7;
 
-  // The name of the topic in case of streaming (currently unsupported)
+  // The name of the streaming topic (currently unsupported)
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string topic = 8;
@@ -1022,8 +1024,8 @@ message DataPipelineStatus {
   repeated DataPipelineCondition conditions = 5;
 }
 
-// DataProduct represent a single DataProduct namespace, which contains all non-infrastructure resources. Additionally, it
-// specifies default parameters for resources to be created under the namespace
+// DataProduct represents a single DataProduct namespace, which contains all non-infrastructure resources. Additionally,
+// it specifies default parameters for resources to be created under the namespace, such as workload class and storage location
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status"
@@ -1073,38 +1075,37 @@ message DataProductList {
   repeated DataProduct items = 2;
 }
 
-// DataProductSpec defines the desired state of a data product
+// DataProductSpec defines the desired state of the DataProduct
 message DataProductSpec {
-  // The data product owner
+  // The name of the Account which created the object, which exists in the same tenant as the object
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
   optional string owner = 1;
 
-  // If true, the data product is public.
+  // Indicates if the DataProduct is public and can be accessed without permissions
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool public = 2;
 
-  // The tenant that own the data product.
-  // Default to default tenant.
+  // The reference to the Tenant which owns the DataProduct. Defaults to `default-tenant`
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference tenantRef = 3;
 
-  // GitLocation is the github repository for all the artifacts for this product
+  // GitLocation is the default Git location where all child resources will be tracked as YAML
   // +kubebuilder:validation:Optional
   optional GitLocation gitLocation = 4;
 
-  // ImageLocation is the image repository that stores the models images for the product versions
+  // ImageLocation is the default Docker image repository where model images produced under the DataProduct will be stored
   // +kubebuilder:validation:Optional
   optional ImageLocation imageLocation = 5;
 
-  // LabName is the Lab where models of this products are trained
+  // The name of the Lab that will be used by default with all compute-requiring child resources
   // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
   // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:validation:Optional
   optional string labName = 7;
 
-  // ServingSiteName is the serving site where predictors of this product are deployed
+  // The name of the Serving Site which will be used by default with all Predictor resources
   // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
   // +kubebuilder:validation:Optional
@@ -1114,67 +1115,68 @@ message DataProductSpec {
   // +kubebuilder:validation:Optional
   optional string task = 9;
 
-  // User provided description
+  // User-provided description of the object
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   // +kubebuilder:validation:MaxLength=512
   optional string description = 10;
 
-  // This folder contain the root location for all the artifacts from the product.
+  // The default location for all artifacts created under the DataProduct. All data-producing resources will
+  // use the VirtualBucket specified by the DataLocation by default
   // +kubebuilder:validation:Optional
   optional DataLocation dataLocation = 11;
 
-  // the notifier selector select the notifier for events that occur in the product life cycle.
+  // The default notification specification for all resources under the DataProduct
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 12;
 
-  // DefaultResource will be used if the resources are not specified.
+  // The default resource allocation for model training which takes place under the DataProduct
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec trainingResources = 13;
 
-  // DefaultResource will be used if the resources are not specified.
+  // The default resource allocation for model serving which takes place under the DataProduct
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec servingResources = 14;
 
-  // Denote how many time a job is retry after failure
+  // Denote how many times Jobs created under the DataProduct namespace will retry after failure
   // +kubebuilder:default:=3
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Maximum=10
   // +kubebuilder:validation:Optional
   optional int32 retriesOnFailure = 15;
 
-  // KPIs is the product kpi. This is for information porpose
+  // KPIs define key performance indicators for the DataProduct (not functional as of the current release)
   // +kubebuilder:validation:Optional
   repeated KPI kpis = 16;
 
-  // OnCallAccountName is the name of the account on call.
+  // The name of the Account which should be on-call for events that occur under the DataProduct
   // +kubebuilder:validation:Optional
   optional string onCallAccountName = 17;
 
-  // List of documents attached to the this data product
+  // The default compilation specification for Study resources created under the DataProduct
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.CompilerSpec compilation = 19;
 
-  // The clearance level of this data product
+  // The clearance level required to access the DataProduct
   // +kubebuilder:default:=unclassified
   // +kubebuilder:validation:Optional
   optional string clearanceLevel = 20;
 
-  // Default Priority level assigned to jobs for this data product (e.g. study, model pipeline,etc)
+  // The default priority level assigned to Jobs created under the DataProduct namespace
   // +kubebuilder:validation:Optional
   // +kubebuilder:default:="medium"
   optional string priority = 21;
 
-  // the color assigned to the product
+  // The color assigned to the product, for visual purposes only
   // +kubebuilder:default:="none"
   // +kubebuilder:validation:Optional
   optional string color = 22;
 
-  // The Governance requirements.
+  // The Governance requirements (not functional as of the current release)
   // +kubebuilder:validation:Optional
   optional GovernanceSpec governance = 23;
 
-  // The premissions for this product
+  // The permission specification which determines which Accounts can access the DataProduct and what actions they can perform
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PermissionsSpec permissions = 24;
 }
@@ -1244,6 +1246,7 @@ message DataProductStatus {
   repeated DataProductCondition conditions = 19;
 }
 
+// DataProductVersion represents a single version of a DataProduct, which should increment versions in response to changes in data
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
@@ -1252,8 +1255,6 @@ message DataProductStatus {
 // +kubebuilder:printcolumn:name="Base",type="boolean",JSONPath=".spec.baseline",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=dataproductversions,shortName=dpv,singular=dataproductversion,categories={data,modela,all}
-// DataProductVersion represent a version of the data product. A version is usually created when a new
-// data was gathered for the same product.
 message DataProductVersion {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
@@ -1263,7 +1264,7 @@ message DataProductVersion {
   optional DataProductVersionStatus status = 3;
 }
 
-// DataProductVersionCondition describes the state of a DataProductVersion at a certain point.
+// DataProductVersionCondition describes the state of a DataProductVersion at a certain point
 message DataProductVersionCondition {
   // Type of condition.
   optional string type = 1;
@@ -1289,51 +1290,51 @@ message DataProductVersionList {
   repeated DataProductVersion items = 2;
 }
 
-// DataProductVersionSpec defines the desired state of a data product version
+// DataProductVersionSpec defines the desired state of a DataProductVersion
 message DataProductVersionSpec {
-  // Reference to the product reference
+  // ProductRef contains the object reference to the DataProduct
+  // resource which the DataProductVersion describes the version of
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference productRef = 1;
 
-  // Description is user provided description
+  // User-provided description of the object
   // +kubebuilder:validation:Optional
   // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=512
   optional string description = 2;
 
-  // PrevVersionName is a pointer to the version that we derived from
+  // The name of the version which preceded the current version
   // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string prevVersionName = 3;
 
-  // Baseline denote if this product version a baseline. If a product version is a baseline, we can garbage
-  // collect all the parents' product versions
+  // Indicates if the version is a baseline, and if so will cause Modela to garbage collect the resources from previous versions
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool baseline = 4;
 
-  // The owner account name
+  // The name of the Account which created the object, which exists in the same tenant as the object
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
   optional string owner = 5;
 }
 
-// DataProductVersionStatus defines the observed state of DataProductVersion
+// DataProductVersionStatus defines the observed state of a DataProductVersion
 message DataProductVersionStatus {
-  // ObservedGeneration is the Last generation that was acted on
+  // ObservedGeneration is the last generation that was acted on
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 1;
 
-  // Last time the object was updated
+  // The last time the object was updated
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2;
 
-  // Update in case of terminal failure
+  // In the case of failure, the Dataset resource controller will set this field with a failure reason
   // Borrowed from cluster api controller
   optional string failureReason = 3;
 
-  // Update in case of terminal failure message
+  // In the case of failure, the Dataset resource controller will set this field with a failure message
   optional string failureMessage = 4;
 
   // +patchMergeKey=type
@@ -1388,8 +1389,9 @@ message DataSourceList {
   repeated DataSource items = 2;
 }
 
+// DataSourceSpec defines the desired state of the DataSource
 message DataSourceSpec {
-  // The reference to the Account in the same namespace as the resource which created the object
+  // The name of the Account which created the object, which exists in the same tenant as the object
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
   optional string owner = 1;
@@ -1432,7 +1434,7 @@ message DataSourceSpec {
   optional SampleSpec sample = 9;
 
   // The default task for Dataset resources created from the DataSource. If null, this will be determined from
-  // the DataProduct which owns the DataSource
+  // the default task of the DataProduct which owns the DataSource
   // +kubebuilder:validation:Optional
   optional string task = 10;
 
@@ -1537,9 +1539,9 @@ message DatasetList {
   repeated Dataset items = 2;
 }
 
-// DatasetSpec defines the desired state of the dataset
+// DatasetSpec defines the desired state of the Dataset
 message DatasetSpec {
-  // The reference to the Account in the same namespace as the resource which created the object
+  // The name of the Account which created the object, which exists in the same tenant as the object
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
   optional string owner = 1;
@@ -1602,19 +1604,19 @@ message DatasetSpec {
   // +kubebuilder:validation:Optional
   optional int32 syntheticRows = 12;
 
-  // The location of the data file or database query which holds the raw data of the Dataset. When the Dataset is
+  // Origin is the location of the data file or database query which holds the raw data of the Dataset. When the Dataset is
   // created, the resource controller will retrieve the data from the location, validate it against its Data Source
   // if applicable, and store it inside the `live` section of the Virtual Bucket resource specified by the location
   // +kubebuilder:validation:Optional
   optional DataLocation origin = 13;
 
-  // The final location of the data which was copied from the `Origin` location during the ingestion phase.
+  // Location is the final location of the data which was copied from the `Origin` location during the ingestion phase.
   // This field is set by the Dataset resource controller and should not be changed by any end-users
   // +kubebuilder:validation:Required
   // +required
   optional DataLocation location = 14;
 
-  // The resource requirements which the Dataset will request when creating Jobs to process the uploaded data
+  // Resources specifies the resource requirements which the Dataset will request when creating Jobs to analyze the data
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 15;
 
@@ -1656,7 +1658,7 @@ message DatasetSpec {
 // DatasetStatistics contains statistics about the Dataset's overall data, as well as every feature of the data. The
 // data structure is populated with information during the `Profiling` phase of the parent Dataset.
 message DatasetStatistics {
-  // The collection of statistics for each feature
+  // Columns contains the collection of statistics for each feature
   // +kubebuilder:validation:Optional
   repeated ColumnStatistics columns = 1;
 
@@ -2637,23 +2639,24 @@ message GaugeSpec {
   optional string scalar = 4;
 }
 
+// GitLocation specifies the Git location where Modela will track resources as YAML
 message GitLocation {
-  // GitConnectionName
+  // The Git Connection resource which exists in the same tenant as the parent DataProduct
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string gitConnectionName = 1;
 
-  // URL of the stakeholder
+  // The URL to the destination Git repository
   // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=256
   optional string url = 2;
 
-  // Branch in git repo
+  // The branch inside the Git repository
   // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=256
   optional string branch = 3;
 
-  // Private is True if the repository is private.
+  // Indicates if the repository is private
   // +kubebuilder:default:=true
   optional bool private = 4;
 }
@@ -2669,6 +2672,7 @@ message GovernanceReviewStatus {
   optional string notes = 3;
 }
 
+// GovernanceSpec define the governance for models produced in a DataProduct
 message GovernanceSpec {
   // Enabled specify if the sample is enabled
   // +kubebuilder:default:=false
@@ -2720,18 +2724,16 @@ message HistogramSpec {
   optional int32 bins = 3;
 }
 
+// ImageLocation specifies the destination for all model images produced under a DataProduct
 message ImageLocation {
-  // The canonical name of the image repo.
-  // The default value is docker/productname
+  // The canonical name of the image repository. If not set, it will default to docker/{dataproduct_name}
   // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=256
-  // optional
   optional string name = 1;
 
-  // The connection of the docker registry provider
+  // The image repository Connection resource which exists in the same tenant as the parent DataProduct. If the field
+  // is not set, Modela will ignore the image location and not push images
   // +kubebuilder:default:=""
-  // If the value is empty, the system will not push images.
-  // optional
   optional string registryConnectionName = 2;
 }
 
@@ -3088,6 +3090,16 @@ message PageSpec {
   repeated RowSpec rows = 1;
 }
 
+// Recipe represents a single batch of data
+// +kubebuilder:object:root=true
+// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status"
+// +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
+// +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
+// +kubebuilder:printcolumn:name="Description",type="string",JSONPath=".spec.description"
+// +kubebuilder:printcolumn:name="Last Run",type="date",JSONPath=".status.lastRun.at",description=""
+// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
+// +kubebuilder:subresource:status
+// +kubebuilder:resource:path=recipes,shortName=rc,singular=recipe,categories={data,modela,all}
 message Recipe {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
@@ -3132,8 +3144,8 @@ message RecipeInputSpec {
   optional string format = 3;
 }
 
-// +kubebuilder:object:root=true
 // RecipeList contains a list of Recipes
+// +kubebuilder:object:root=true
 message RecipeList {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
 
@@ -3425,37 +3437,36 @@ message RowSpec {
   repeated ColumnSpec cols = 1;
 }
 
-// The sample spec define how to sample a dataset for analysis
+// SampleSpec specifies how the contents of a dataset should be sampled
 message SampleSpec {
-  // Enabled specify if the sample is enabled
+  // Indicates if sampling is enabled
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool enabled = 1;
 
-  // Type is the sampling type
-  // Default is random
+  // The type of sampling (random sampling, by default)
   // +kubebuilder:default:="random"
   // +kubebuilder:validation:Optional
   optional string type = 2;
 
-  // Rows is the number of rows. Default is 500
+  // The number of rows to sample (by default, 500)
   // +kubebuilder:default:=500
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
   optional int32 rows = 3;
 
-  // Pct is the percent of rows to use for analysis.
+  // The percentage of rows to sample
   // +kubebuilder:default:=100
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
   optional int32 percent = 4;
 
-  // Filter formula. Valid only if the sample is a filter.
+  // The filter formula, valid only if the sample type is a filter
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string filter = 5;
 
-  // Column is used for stratified sampling.
+  // The name of the column to be used for stratified sampling
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string column = 6;

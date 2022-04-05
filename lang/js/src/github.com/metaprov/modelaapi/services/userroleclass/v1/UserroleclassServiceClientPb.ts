@@ -35,8 +35,8 @@ export class UserRoleClassServiceClient {
     this.options_ = options;
   }
 
-  methodInfoListUserRoleClasss = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.userroleclass.v1.UserRoleClassService/ListUserRoleClasss',
+  methodInfoListUserRoleClasses = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.userroleclass.v1.UserRoleClassService/ListUserRoleClasses',
     grpcWeb.MethodType.UNARY,
     github_com_metaprov_modelaapi_services_userroleclass_v1_userroleclass_pb.ListUserRoleClassesRequest,
     github_com_metaprov_modelaapi_services_userroleclass_v1_userroleclass_pb.ListUserRoleClassesResponse,
@@ -46,17 +46,17 @@ export class UserRoleClassServiceClient {
     github_com_metaprov_modelaapi_services_userroleclass_v1_userroleclass_pb.ListUserRoleClassesResponse.deserializeBinary
   );
 
-  listUserRoleClasss(
+  listUserRoleClasses(
     request: github_com_metaprov_modelaapi_services_userroleclass_v1_userroleclass_pb.ListUserRoleClassesRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_userroleclass_v1_userroleclass_pb.ListUserRoleClassesResponse>;
 
-  listUserRoleClasss(
+  listUserRoleClasses(
     request: github_com_metaprov_modelaapi_services_userroleclass_v1_userroleclass_pb.ListUserRoleClassesRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_userroleclass_v1_userroleclass_pb.ListUserRoleClassesResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_userroleclass_v1_userroleclass_pb.ListUserRoleClassesResponse>;
 
-  listUserRoleClasss(
+  listUserRoleClasses(
     request: github_com_metaprov_modelaapi_services_userroleclass_v1_userroleclass_pb.ListUserRoleClassesRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.RpcError,
@@ -64,18 +64,18 @@ export class UserRoleClassServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.userroleclass.v1.UserRoleClassService/ListUserRoleClasss',
+          '/github.com.metaprov.modelaapi.services.userroleclass.v1.UserRoleClassService/ListUserRoleClasses',
         request,
         metadata || {},
-        this.methodInfoListUserRoleClasss,
+        this.methodInfoListUserRoleClasses,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.userroleclass.v1.UserRoleClassService/ListUserRoleClasss',
+      '/github.com.metaprov.modelaapi.services.userroleclass.v1.UserRoleClassService/ListUserRoleClasses',
     request,
     metadata || {},
-    this.methodInfoListUserRoleClasss);
+    this.methodInfoListUserRoleClasses);
   }
 
   methodInfoCreateUserRoleClass = new grpcWeb.MethodDescriptor(

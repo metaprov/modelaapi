@@ -67,9 +67,10 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: DataProduct represent a single DataProduct namespace, which contains
-          all non-infrastructure resources. Additionally, it specifies default parameters
-          for resources to be created under the namespace
+        description: DataProduct represents a single DataProduct namespace, which
+          contains all non-infrastructure resources. Additionally, it specifies default
+          parameters for resources to be created under the namespace, such as workload
+          class and storage location
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation
@@ -84,11 +85,11 @@ spec:
           metadata:
             type: object
           spec:
-            description: DataProductSpec defines the desired state of a data product
+            description: DataProductSpec defines the desired state of the DataProduct
             properties:
               clearanceLevel:
                 default: unclassified
-                description: The clearance level of this data product
+                description: The clearance level required to access the DataProduct
                 enum:
                 - unclassified
                 - confidential
@@ -97,10 +98,12 @@ spec:
                 type: string
               color:
                 default: none
-                description: the color assigned to the product
+                description: The color assigned to the product, for visual purposes
+                  only
                 type: string
               compilation:
-                description: List of documents attached to the this data product
+                description: The default compilation specification for Study resources
+                  created under the DataProduct
                 properties:
                   compiler:
                     default: none
@@ -133,8 +136,9 @@ spec:
                     type: array
                 type: object
               dataLocation:
-                description: This folder contain the root location for all the artifacts
-                  from the product.
+                description: The default location for all artifacts created under
+                  the DataProduct. All data-producing resources will use the VirtualBucket
+                  specified by the DataLocation by default
                 properties:
                   bucketName:
                     default: ""
@@ -154,21 +158,23 @@ spec:
                     type: string
                   database:
                     default: ""
-                    description: The name of a database that exists inside the database
-                      server connection specified by the `ConnectionName` field
+                    description: The name of a database that exists inside a database
+                      server that exists at the connection specified by the `ConnectionName`
+                      field
                     type: string
                   path:
                     default: ""
-                    description: 'The path to a flat-file in an object storage system.
-                      When using the Modela API to upload files (through the FileService
-                      API), Modela will upload the data to a predetermined path with
-                      the following format: "modela/depot/tenants/{tenant}/dataproducts/{dataproduct}/dataproductversions/{version}/{resource_type}/{resource_name}/data/raw/{file_name}
-                      The path does not need to adhere to this format; you can still
-                      pass the path of a file inside a bucket not managed by Modela'
+                    description: "The path to a flat-file inside an object storage
+                      system. When using the Modela API to upload files (through the
+                      FileService API), Modela will upload the data to a predetermined
+                      path with the following format: \n `\"modela/depot/tenants/{tenant}/dataproducts/{dataproduct}/dataproductversions/{version}/{resource_type}/{resource_name}/data/raw/{file_name}`
+                      \n The path does not need to adhere to this format; you can
+                      still pass the path of a file inside a bucket not managed by
+                      Modela"
                     type: string
                   sql:
                     default: ""
-                    description: The SQL statement to query data from a database connection
+                    description: The SQL statement to query data from a table
                     type: string
                   table:
                     default: ""
@@ -176,8 +182,7 @@ spec:
                     type: string
                   topic:
                     default: ""
-                    description: The name of the topic in case of streaming (currently
-                      unsupported)
+                    description: The name of the streaming topic (currently unsupported)
                     type: string
                   type:
                     default: object
@@ -190,34 +195,36 @@ spec:
                 type: object
               description:
                 default: ""
-                description: User provided description
+                description: User-provided description of the object
                 maxLength: 512
                 type: string
               gitLocation:
-                description: GitLocation is the github repository for all the artifacts
-                  for this product
+                description: GitLocation is the default Git location where all child
+                  resources will be tracked as YAML
                 properties:
                   branch:
                     default: ""
-                    description: Branch in git repo
+                    description: The branch inside the Git repository
                     maxLength: 256
                     type: string
                   gitConnectionName:
                     default: ""
-                    description: GitConnectionName
+                    description: The Git Connection resource which exists in the same
+                      tenant as the parent DataProduct
                     type: string
                   private:
                     default: true
-                    description: Private is True if the repository is private.
+                    description: Indicates if the repository is private
                     type: boolean
                   url:
                     default: ""
-                    description: URL of the stakeholder
+                    description: The URL to the destination Git repository
                     maxLength: 256
                     type: string
                 type: object
               governance:
-                description: The Governance requirements.
+                description: The Governance requirements (not functional as of the
+                  current release)
                 properties:
                   businessReviewer:
                     description: The account name of the business reviewer
@@ -237,23 +244,26 @@ spec:
                     type: string
                 type: object
               imageLocation:
-                description: ImageLocation is the image repository that stores the
-                  models images for the product versions
+                description: ImageLocation is the default Docker image repository
+                  where model images produced under the DataProduct will be stored
                 properties:
                   name:
                     default: ""
-                    description: The canonical name of the image repo. The default
-                      value is docker/productname optional
+                    description: The canonical name of the image repository. If not
+                      set, it will default to docker/{dataproduct_name}
                     maxLength: 256
                     type: string
                   registryConnectionName:
                     default: ""
-                    description: The connection of the docker registry provider If
-                      the value is empty, the system will not push images. optional
+                    description: The image repository Connection resource which exists
+                      in the same tenant as the parent DataProduct. If the field is
+                      not set, Modela will ignore the image location and not push
+                      images
                     type: string
                 type: object
               kpis:
-                description: KPIs is the product kpi. This is for information porpose
+                description: KPIs define key performance indicators for the DataProduct
+                  (not functional as of the current release)
                 items:
                   properties:
                     name:
@@ -266,52 +276,61 @@ spec:
                   type: object
                 type: array
               labName:
-                description: LabName is the Lab where models of this products are
-                  trained
+                description: The name of the Lab that will be used by default with
+                  all compute-requiring child resources
                 maxLength: 63
                 pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
                 type: string
               notification:
-                description: the notifier selector select the notifier for events
-                  that occur in the product life cycle.
+                description: The default notification specification for all resources
+                  under the DataProduct
                 properties:
                   errorTTL:
                     default: 3600
-                    description: TTL for error msgs. In seconds
+                    description: Time-to-live for error messages, in seconds
                     format: int32
                     type: integer
                   notifierName:
                     default: ""
-                    description: The name of the notifier.
+                    description: The name of the Notifier which exists in the same
+                      tenant as the resource specifying the NotificationSpec
                     type: string
                   selector:
                     additionalProperties:
                       type: string
-                    description: Select the target notifiers by a label.
+                    description: The labels which will be searched for in all Notifiers
+                      to determine the target Notifiers
                     type: object
                   successTTL:
                     default: 3600
-                    description: TTL for success msgs. In seconds
+                    description: Time-to-live for success messages. In seconds
                     format: int32
                     type: integer
                 type: object
               onCallAccountName:
-                description: OnCallAccountName is the name of the account on call.
+                description: The name of the Account which should be on-call for events
+                  that occur under the DataProduct
                 type: string
               owner:
                 default: no-one
-                description: The data product owner
+                description: The name of the Account which created the object, which
+                  exists in the same tenant as the object
                 type: string
               permissions:
-                description: The premissions for this product
+                description: The permission specification which determines which Accounts
+                  can access the DataProduct and what actions they can perform
                 properties:
                   stakeholders:
                     items:
+                      description: Stakeholder specifies the User Role Classes of
+                        an individual Account
                       properties:
                         account:
+                          description: The name of an Account
                           type: string
                         roles:
-                          description: assign roles to account
+                          description: The object references to UserRoleClass resources
+                            which describe the actions the Account may perform
                           items:
                             description: 'ObjectReference contains enough information
                               to let you inspect or modify the referred object. ---
@@ -384,8 +403,8 @@ spec:
                 type: object
               priority:
                 default: medium
-                description: Default Priority level assigned to jobs for this data
-                  product (e.g. study, model pipeline,etc)
+                description: The default priority level assigned to Jobs created under
+                  the DataProduct namespace
                 enum:
                 - low
                 - medium
@@ -394,21 +413,24 @@ spec:
                 type: string
               public:
                 default: false
-                description: If true, the data product is public.
+                description: Indicates if the DataProduct is public and can be accessed
+                  without permissions
                 type: boolean
               retriesOnFailure:
                 default: 3
-                description: Denote how many time a job is retry after failure
+                description: Denote how many times Jobs created under the DataProduct
+                  namespace will retry after failure
                 format: int32
                 maximum: 10
                 minimum: 0
                 type: integer
               servingResources:
-                description: DefaultResource will be used if the resources are not
-                  specified.
+                description: The default resource allocation for model serving which
+                  takes place under the DataProduct
                 properties:
                   cpuImage:
-                    description: Reference to the managed gpu trainer image
+                    description: Reference to the managed CPU trainer image, used
+                      internally
                     properties:
                       apiVersion:
                         description: API version of the referent.
@@ -444,7 +466,8 @@ spec:
                         type: string
                     type: object
                   gpuImage:
-                    description: Reference to the managed gpu trainer image
+                    description: Reference to the managed GPU trainer image, used
+                      internally
                     properties:
                       apiVersion:
                         description: API version of the referent.
@@ -480,7 +503,8 @@ spec:
                         type: string
                     type: object
                   requirements:
-                    description: Custom resource requirments
+                    description: The custom resource requirements for the workload,
+                      which are used if `WorkloadName` is not set
                     properties:
                       limits:
                         additionalProperties:
@@ -507,12 +531,14 @@ spec:
                     type: object
                   workloadName:
                     description: If this resource is based on the workload, this field
-                      contain the name of the workload.
+                      contain the name of the workload. The name of a WorkloadClass.
+                      The system will use the resource requirements described by the
+                      WorkloadClass
                     type: string
                 type: object
               servingSiteName:
-                description: ServingSiteName is the serving site where predictors
-                  of this product are deployed
+                description: The name of the Serving Site which will be used by default
+                  with all Predictor resources
                 maxLength: 63
                 pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
                 type: string
@@ -558,8 +584,8 @@ spec:
                 - unknown
                 type: string
               tenantRef:
-                description: The tenant that own the data product. Default to default
-                  tenant.
+                description: The reference to the Tenant which owns the DataProduct.
+                  Defaults to `default-tenant`
                 properties:
                   apiVersion:
                     description: API version of the referent.
@@ -595,11 +621,12 @@ spec:
                     type: string
                 type: object
               trainingResources:
-                description: DefaultResource will be used if the resources are not
-                  specified.
+                description: The default resource allocation for model training which
+                  takes place under the DataProduct
                 properties:
                   cpuImage:
-                    description: Reference to the managed gpu trainer image
+                    description: Reference to the managed CPU trainer image, used
+                      internally
                     properties:
                       apiVersion:
                         description: API version of the referent.
@@ -635,7 +662,8 @@ spec:
                         type: string
                     type: object
                   gpuImage:
-                    description: Reference to the managed gpu trainer image
+                    description: Reference to the managed GPU trainer image, used
+                      internally
                     properties:
                       apiVersion:
                         description: API version of the referent.
@@ -671,7 +699,8 @@ spec:
                         type: string
                     type: object
                   requirements:
-                    description: Custom resource requirments
+                    description: The custom resource requirements for the workload,
+                      which are used if `WorkloadName` is not set
                     properties:
                       limits:
                         additionalProperties:
@@ -698,7 +727,9 @@ spec:
                     type: object
                   workloadName:
                     description: If this resource is based on the workload, this field
-                      contain the name of the workload.
+                      contain the name of the workload. The name of a WorkloadClass.
+                      The system will use the resource requirements described by the
+                      WorkloadClass
                     type: string
                 type: object
             type: object

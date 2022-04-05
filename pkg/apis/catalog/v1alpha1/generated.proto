@@ -181,15 +181,15 @@ message ConfusionMatrixRow {
   optional double pct = 4;
 }
 
-// Define log for one container
+// ContainerLog describes the location of logs for a single Job
 message ContainerLog {
-  // The Job name
+  // The name of the Job
   optional string job = 1;
 
   // The container name
   optional string container = 2;
 
-  // The key load
+  // The path to the log in the bucket
   optional string key = 3;
 }
 
@@ -279,29 +279,29 @@ message GpuClassCost {
   optional k8s.io.apimachinery.pkg.api.resource.Quantity costSpot = 4;
 }
 
+// HistogramData contains the data to construct a histogram image
 message HistogramData {
-  // The bins if this histogram describe continous variables
+  // The bins if the histogram describes continous variables
   repeated double bins = 1;
 
   // The set of values per bin
   repeated double values = 2;
 
-  // The name of the categories, one per bin is this a categorical histogram
-  // Empty is this is not a categorical variable.
+  // The name of the categories, one per bin if this is a categorical histogram
   repeated string categories = 3;
 }
 
-// Store the images that were used during training, reporting and profiling
+// Images describe the Docker images used internally to perform workloads
 message Images {
   // The image used during training
   // +kubebuilder:validation:Optional
   optional string trainerImage = 1;
 
-  // The image used during training for data operations.
+  // The image used for data operations
   // +kubebuilder:validation:Optional
   optional string dataImage = 2;
 
-  // The image used during training for data operations.
+  // The image used to deploy models
   // +kubebuilder:validation:Optional
   optional string publisherImage = 3;
 }
@@ -329,11 +329,11 @@ message IntParameter {
   optional int32 defaultValue = 6;
 }
 
-// Describe the last run status for objects which have runs (e.g. model pipeline)
+// LastRunStatus describes the status of a single run for a run-based resource (such as a pipeline)
 message LastRunStatus {
   optional string name = 1;
 
-  // the status of the last run
+  // The status of the last run
   // +kubebuilder:validation:Optional
   optional string status = 2;
 
@@ -341,15 +341,15 @@ message LastRunStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completionTime = 3;
 
-  // Last run duration in seconds
+  // In the case of failure, the Dataset resource controller will set this field with a failure reason
   // +kubebuilder:validation:Optional
   optional int32 duration = 4;
 
-  // Update in case of terminal failure
+  // In the case of failure, the failure reason
   // Borrowed from cluster api controller
   optional string failureReason = 5;
 
-  // Update in case of terminal failure message
+  // In the case of failure, the failure message
   optional string failureMessage = 6;
 }
 
@@ -359,13 +359,13 @@ message Lib {
   optional string version = 2;
 }
 
-// type to represent the logs for a given object. This type should be part of any objects that create logs (e.g. job logs)
+// Logs describes the location of logs produced by every workload of a resource
 message Logs {
-  // The bucket logs.
+  // The name of the VirtualBucket resource where the logs are stored
   // +kubebuilder:validation:Optional
   optional string bucketName = 1;
 
-  // Jobs per containers
+  // The collection of ContainerLog objects that describe the location of logs per container
   // +kubebuilder:validation:Optional
   repeated ContainerLog containers = 2;
 }
@@ -559,59 +559,59 @@ message Measurement {
   // +kubebuilder:validation:Required
   optional string metric = 1;
 
-  // The value for this model
+  // The value of the metric
   // +kubebuilder:validation:Required
   // +required
   optional double value = 2;
 }
 
-// The desired state of the model.
+// ModelDeploymentSpec describes how a single model should be deployed with a Predictor, and
+// how prediction traffic will be routed to the model
 message ModelDeploymentSpec {
-  // ModelName is the name of the model. The name must be unique within
+  // The name of a model, which is fully complete and packaged, that exists in the same DataProduct namespace
+  // as the resource which specifies the ModelDeploymentSpec
   // +kubebuilder:validation:Required
   // +required
   optional string modelName = 1;
 
-  // The version of the model. Note that a single predictor might serve different models
+  // The version of the model
   optional string modelVersion = 2;
 
-  // How much traffic this deployment model should serve.
-  // Default: 100.
+  // The maximum percentage of traffic that will be served by the model
   // +kubebuilder:validation:Optional
   // +kubebuilder:validation:Maximum=100
   // +kubebuilder:validation:Minimum=0
   optional int32 maxTraffic = 3;
 
-  // Traffic is the current amount of production traffic served by this model.
+  // The minimum percentage of traffic that will be served by the model
   // +kubebuilder:validation:Maximum=100
   // +kubebuilder:validation:Minimum=0
-  // Default: 100.
   // +kubebuilder:validation:Optional
   optional int32 traffic = 4;
 
-  // Canary denotes if this deployment is staged release. A staged release will serve traffic in incerements
+  // Canary denotes if this deployment is a staged release. A staged release will serve traffic in increments
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool canary = 5;
 
-  // Shadow denotes if the model is running in shadow mode. a shadow model face the production traffic, however, the predictions are not
+  // Shadow denotes if the model is running in shadow mode. A shadow model face the production traffic, however, the predictions are not
   // served back to the client
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool shadow = 6;
 
-  // A released model is a model that should serve production traffic.
+  // A released model is a model that should serve production traffic
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool released = 7;
 
-  // a deployed model is a model whose containers are up, but does not serve production traffic.
+  // A deployed model is a model whose containers are up, but does not serve production traffic
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool deployed = 8;
 
   // MountTar means that we would mount the model tar file. Else we would use baked image.
-  // Default: true
+  // +kubebuilder:default:=true
   optional bool mountTar = 9;
 
   // TrafficSelector is a filter on the traffic to this model
@@ -684,23 +684,24 @@ message ModelDeploymentStatus {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time approvedAt = 15;
 }
 
+// NotificationSpec specifies which Notifiers to forward Alert resources to
 message NotificationSpec {
-  // TTL for error msgs. In seconds
+  // Time-to-live for error messages, in seconds
   // +kubebuilder:default:=3600
   // +kubebuilder:validation:Optional
   optional int32 errorTTL = 2;
 
-  // TTL for success msgs. In seconds
+  // Time-to-live for success messages. In seconds
   // +kubebuilder:default:=3600
   // +kubebuilder:validation:Optional
   optional int32 successTTL = 4;
 
-  // The name of the notifier.
+  // The name of the Notifier which exists in the same tenant as the resource specifying the NotificationSpec
   // +kubebuilder:default:= ""
   // +kubebuilder:validation:Optional
   optional string notifierName = 5;
 
-  // Select the target notifiers by a label.
+  // The labels which will be searched for in all Notifiers to determine the target Notifiers
   // +kubebuilder:validation:Optional
   map<string, string> selector = 6;
 }
@@ -709,6 +710,7 @@ message PRCurve {
   repeated CurvePoint values = 1;
 }
 
+// PermissionsSpec specifies the Accounts that have access to a DataProduct or Tenant namespace
 message PermissionsSpec {
   repeated Stakeholder stakeholders = 1;
 }
@@ -847,19 +849,20 @@ message Region {
   repeated DataCenter datacenters = 5;
 }
 
-// Specification for resource
+// ResourceSpec specifies the amount of resources that will be allocated to a workload
 message ResourceSpec {
   // If this resource is based on the workload, this field contain the name of the workload.
+  // The name of a WorkloadClass. The system will use the resource requirements described by the WorkloadClass
   // +kubebuilder:validation:Optional
   optional string workloadName = 1;
 
-  // Reference to the managed gpu trainer image
+  // Reference to the managed CPU trainer image, used internally
   optional k8s.io.api.core.v1.ObjectReference cpuImage = 2;
 
-  // Reference to the managed gpu trainer image
+  // Reference to the managed GPU trainer image, used internally
   optional k8s.io.api.core.v1.ObjectReference gpuImage = 3;
 
-  // Custom resource requirments
+  // The custom resource requirements for the workload, which are used if `WorkloadName` is not set
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ResourceRequirements requirements = 4;
 }
@@ -868,34 +871,36 @@ message RocAucCurve {
   repeated CurvePoint values = 1;
 }
 
-// Run Schedule is a specification for job schedule
+// RunSchedule specifies the schedule for a Job to be executed
 message RunSchedule {
-  // Active denote that the schedule is enabled
+  // Indicates if the schedule is enabled and the Jobs associated it will be created at the specified time
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool enabled = 1;
 
-  // The start time of the schedule
+  // The time of the day when the schedule will be executed
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 2;
 
-  // EndTime is the end time of the schedule
+  // The time of the day when the schedule is expected to conclude
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 3;
 
-  // Cron string of the schedule.
+  // The cron string of the schedule. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm for more information
   // +kubebuilder:validation:Optional
   optional string cron = 4;
 
   // +kubebuilder:validation:Optional
-  // The type of schedule events.
+  // The type of schedule, which can be a frequency interval or a cron expression
   optional string type = 5;
 }
 
+// Stakeholder specifies the User Role Classes of an individual Account
 message Stakeholder {
+  // The name of an Account
   optional string account = 1;
 
-  // assign roles to account
+  // The object references to UserRoleClass resources which describe the actions the Account may perform
   repeated k8s.io.api.core.v1.ObjectReference roles = 2;
 }
 

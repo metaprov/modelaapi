@@ -79,7 +79,8 @@ spec:
                 description: A reference to the resource class.
                 properties:
                   cpuImage:
-                    description: Reference to the managed gpu trainer image
+                    description: Reference to the managed CPU trainer image, used
+                      internally
                     properties:
                       apiVersion:
                         description: API version of the referent.
@@ -115,7 +116,8 @@ spec:
                         type: string
                     type: object
                   gpuImage:
-                    description: Reference to the managed gpu trainer image
+                    description: Reference to the managed GPU trainer image, used
+                      internally
                     properties:
                       apiVersion:
                         description: API version of the referent.
@@ -151,7 +153,8 @@ spec:
                         type: string
                     type: object
                   requirements:
-                    description: Custom resource requirments
+                    description: The custom resource requirements for the workload,
+                      which are used if `WorkloadName` is not set
                     properties:
                       limits:
                         additionalProperties:
@@ -178,7 +181,9 @@ spec:
                     type: object
                   workloadName:
                     description: If this resource is based on the workload, this field
-                      contain the name of the workload.
+                      contain the name of the workload. The name of a WorkloadClass.
+                      The system will use the resource requirements described by the
+                      WorkloadClass
                     type: string
                 type: object
               ttl:
@@ -241,21 +246,24 @@ spec:
                 description: Holds the location of log paths
                 properties:
                   bucketName:
-                    description: The bucket logs.
+                    description: The name of the VirtualBucket resource where the
+                      logs are stored
                     type: string
                   containers:
-                    description: Jobs per containers
+                    description: The collection of ContainerLog objects that describe
+                      the location of logs per container
                     items:
-                      description: Define log for one container
+                      description: ContainerLog describes the location of logs for
+                        a single Job
                       properties:
                         container:
                           description: The container name
                           type: string
                         job:
-                          description: The Job name
+                          description: The name of the Job
                           type: string
                         key:
-                          description: The key load
+                          description: The path to the log in the bucket
                           type: string
                       type: object
                     type: array

@@ -73,7 +73,7 @@ message UserRoleClassLoginResponse {
 
 
 service UserRoleClassService {
-    rpc ListUserRoleClasss(ListUserRoleClassesRequest) returns (ListUserRoleClassesResponse) {
+    rpc ListUserRoleClasses(ListUserRoleClassesRequest) returns (ListUserRoleClassesResponse) {
         option (google.api.http).get = "/v1/userroleclasses/{namespace}";
     }
 

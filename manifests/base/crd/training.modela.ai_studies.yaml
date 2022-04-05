@@ -642,8 +642,6 @@ spec:
                                 type: boolean
                               mode:
                                 default: auto
-                                description: Predictor format represent the API implementation
-                                  of the model
                                 enum:
                                 - multipicative
                                 - additive
@@ -819,8 +817,6 @@ spec:
                                 type: boolean
                               mode:
                                 default: auto
-                                description: Predictor format represent the API implementation
-                                  of the model
                                 enum:
                                 - multipicative
                                 - additive
@@ -844,8 +840,6 @@ spec:
                                 type: boolean
                               mode:
                                 default: auto
-                                description: Predictor format represent the API implementation
-                                  of the model
                                 enum:
                                 - multipicative
                                 - additive
@@ -1011,21 +1005,23 @@ spec:
                     type: string
                   database:
                     default: ""
-                    description: The name of a database that exists inside the database
-                      server connection specified by the `ConnectionName` field
+                    description: The name of a database that exists inside a database
+                      server that exists at the connection specified by the `ConnectionName`
+                      field
                     type: string
                   path:
                     default: ""
-                    description: 'The path to a flat-file in an object storage system.
-                      When using the Modela API to upload files (through the FileService
-                      API), Modela will upload the data to a predetermined path with
-                      the following format: "modela/depot/tenants/{tenant}/dataproducts/{dataproduct}/dataproductversions/{version}/{resource_type}/{resource_name}/data/raw/{file_name}
-                      The path does not need to adhere to this format; you can still
-                      pass the path of a file inside a bucket not managed by Modela'
+                    description: "The path to a flat-file inside an object storage
+                      system. When using the Modela API to upload files (through the
+                      FileService API), Modela will upload the data to a predetermined
+                      path with the following format: \n `\"modela/depot/tenants/{tenant}/dataproducts/{dataproduct}/dataproductversions/{version}/{resource_type}/{resource_name}/data/raw/{file_name}`
+                      \n The path does not need to adhere to this format; you can
+                      still pass the path of a file inside a bucket not managed by
+                      Modela"
                     type: string
                   sql:
                     default: ""
-                    description: The SQL statement to query data from a database connection
+                    description: The SQL statement to query data from a table
                     type: string
                   table:
                     default: ""
@@ -1033,8 +1029,7 @@ spec:
                     type: string
                   topic:
                     default: ""
-                    description: The name of the topic in case of streaming (currently
-                      unsupported)
+                    description: The name of the streaming topic (currently unsupported)
                     type: string
                   type:
                     default: object
@@ -1092,21 +1087,23 @@ spec:
                 properties:
                   errorTTL:
                     default: 3600
-                    description: TTL for error msgs. In seconds
+                    description: Time-to-live for error messages, in seconds
                     format: int32
                     type: integer
                   notifierName:
                     default: ""
-                    description: The name of the notifier.
+                    description: The name of the Notifier which exists in the same
+                      tenant as the resource specifying the NotificationSpec
                     type: string
                   selector:
                     additionalProperties:
                       type: string
-                    description: Select the target notifiers by a label.
+                    description: The labels which will be searched for in all Notifiers
+                      to determine the target Notifiers
                     type: object
                   successTTL:
                     default: 3600
-                    description: TTL for success msgs. In seconds
+                    description: Time-to-live for success messages. In seconds
                     format: int32
                     type: integer
                 type: object
@@ -1633,23 +1630,23 @@ spec:
                           database:
                             default: ""
                             description: The name of a database that exists inside
-                              the database server connection specified by the `ConnectionName`
-                              field
+                              a database server that exists at the connection specified
+                              by the `ConnectionName` field
                             type: string
                           path:
                             default: ""
-                            description: 'The path to a flat-file in an object storage
-                              system. When using the Modela API to upload files (through
-                              the FileService API), Modela will upload the data to
-                              a predetermined path with the following format: "modela/depot/tenants/{tenant}/dataproducts/{dataproduct}/dataproductversions/{version}/{resource_type}/{resource_name}/data/raw/{file_name}
-                              The path does not need to adhere to this format; you
-                              can still pass the path of a file inside a bucket not
-                              managed by Modela'
+                            description: "The path to a flat-file inside an object
+                              storage system. When using the Modela API to upload
+                              files (through the FileService API), Modela will upload
+                              the data to a predetermined path with the following
+                              format: \n `\"modela/depot/tenants/{tenant}/dataproducts/{dataproduct}/dataproductversions/{version}/{resource_type}/{resource_name}/data/raw/{file_name}`
+                              \n The path does not need to adhere to this format;
+                              you can still pass the path of a file inside a bucket
+                              not managed by Modela"
                             type: string
                           sql:
                             default: ""
-                            description: The SQL statement to query data from a database
-                              connection
+                            description: The SQL statement to query data from a table
                             type: string
                           table:
                             default: ""
@@ -1658,8 +1655,8 @@ spec:
                             type: string
                           topic:
                             default: ""
-                            description: The name of the topic in case of streaming
-                              (currently unsupported)
+                            description: The name of the streaming topic (currently
+                              unsupported)
                             type: string
                           type:
                             default: object
@@ -1859,7 +1856,8 @@ spec:
                     description: Resource define the hardware resources req.
                     properties:
                       cpuImage:
-                        description: Reference to the managed gpu trainer image
+                        description: Reference to the managed CPU trainer image, used
+                          internally
                         properties:
                           apiVersion:
                             description: API version of the referent.
@@ -1896,7 +1894,8 @@ spec:
                             type: string
                         type: object
                       gpuImage:
-                        description: Reference to the managed gpu trainer image
+                        description: Reference to the managed GPU trainer image, used
+                          internally
                         properties:
                           apiVersion:
                             description: API version of the referent.
@@ -1933,7 +1932,8 @@ spec:
                             type: string
                         type: object
                       requirements:
-                        description: Custom resource requirments
+                        description: The custom resource requirements for the workload,
+                          which are used if `WorkloadName` is not set
                         properties:
                           limits:
                             additionalProperties:
@@ -1961,7 +1961,9 @@ spec:
                         type: object
                       workloadName:
                         description: If this resource is based on the workload, this
-                          field contain the name of the workload.
+                          field contain the name of the workload. The name of a WorkloadClass.
+                          The system will use the resource requirements described
+                          by the WorkloadClass
                         type: string
                     type: object
                   samplePct:
@@ -2759,21 +2761,24 @@ spec:
                 description: Holds the location of log paths
                 properties:
                   bucketName:
-                    description: The bucket logs.
+                    description: The name of the VirtualBucket resource where the
+                      logs are stored
                     type: string
                   containers:
-                    description: Jobs per containers
+                    description: The collection of ContainerLog objects that describe
+                      the location of logs per container
                     items:
-                      description: Define log for one container
+                      description: ContainerLog describes the location of logs for
+                        a single Job
                       properties:
                         container:
                           description: The container name
                           type: string
                         job:
-                          description: The Job name
+                          description: The name of the Job
                           type: string
                         key:
-                          description: The key load
+                          description: The path to the log in the bucket
                           type: string
                       type: object
                     type: array
@@ -2885,21 +2890,23 @@ spec:
                     type: string
                   database:
                     default: ""
-                    description: The name of a database that exists inside the database
-                      server connection specified by the `ConnectionName` field
+                    description: The name of a database that exists inside a database
+                      server that exists at the connection specified by the `ConnectionName`
+                      field
                     type: string
                   path:
                     default: ""
-                    description: 'The path to a flat-file in an object storage system.
-                      When using the Modela API to upload files (through the FileService
-                      API), Modela will upload the data to a predetermined path with
-                      the following format: "modela/depot/tenants/{tenant}/dataproducts/{dataproduct}/dataproductversions/{version}/{resource_type}/{resource_name}/data/raw/{file_name}
-                      The path does not need to adhere to this format; you can still
-                      pass the path of a file inside a bucket not managed by Modela'
+                    description: "The path to a flat-file inside an object storage
+                      system. When using the Modela API to upload files (through the
+                      FileService API), Modela will upload the data to a predetermined
+                      path with the following format: \n `\"modela/depot/tenants/{tenant}/dataproducts/{dataproduct}/dataproductversions/{version}/{resource_type}/{resource_name}/data/raw/{file_name}`
+                      \n The path does not need to adhere to this format; you can
+                      still pass the path of a file inside a bucket not managed by
+                      Modela"
                     type: string
                   sql:
                     default: ""
-                    description: The SQL statement to query data from a database connection
+                    description: The SQL statement to query data from a table
                     type: string
                   table:
                     default: ""
@@ -2907,8 +2914,7 @@ spec:
                     type: string
                   topic:
                     default: ""
-                    description: The name of the topic in case of streaming (currently
-                      unsupported)
+                    description: The name of the streaming topic (currently unsupported)
                     type: string
                   type:
                     default: object
@@ -2944,21 +2950,23 @@ spec:
                     type: string
                   database:
                     default: ""
-                    description: The name of a database that exists inside the database
-                      server connection specified by the `ConnectionName` field
+                    description: The name of a database that exists inside a database
+                      server that exists at the connection specified by the `ConnectionName`
+                      field
                     type: string
                   path:
                     default: ""
-                    description: 'The path to a flat-file in an object storage system.
-                      When using the Modela API to upload files (through the FileService
-                      API), Modela will upload the data to a predetermined path with
-                      the following format: "modela/depot/tenants/{tenant}/dataproducts/{dataproduct}/dataproductversions/{version}/{resource_type}/{resource_name}/data/raw/{file_name}
-                      The path does not need to adhere to this format; you can still
-                      pass the path of a file inside a bucket not managed by Modela'
+                    description: "The path to a flat-file inside an object storage
+                      system. When using the Modela API to upload files (through the
+                      FileService API), Modela will upload the data to a predetermined
+                      path with the following format: \n `\"modela/depot/tenants/{tenant}/dataproducts/{dataproduct}/dataproductversions/{version}/{resource_type}/{resource_name}/data/raw/{file_name}`
+                      \n The path does not need to adhere to this format; you can
+                      still pass the path of a file inside a bucket not managed by
+                      Modela"
                     type: string
                   sql:
                     default: ""
-                    description: The SQL statement to query data from a database connection
+                    description: The SQL statement to query data from a table
                     type: string
                   table:
                     default: ""
@@ -2966,8 +2974,7 @@ spec:
                     type: string
                   topic:
                     default: ""
-                    description: The name of the topic in case of streaming (currently
-                      unsupported)
+                    description: The name of the streaming topic (currently unsupported)
                     type: string
                   type:
                     default: object
@@ -3030,21 +3037,23 @@ spec:
                     type: string
                   database:
                     default: ""
-                    description: The name of a database that exists inside the database
-                      server connection specified by the `ConnectionName` field
+                    description: The name of a database that exists inside a database
+                      server that exists at the connection specified by the `ConnectionName`
+                      field
                     type: string
                   path:
                     default: ""
-                    description: 'The path to a flat-file in an object storage system.
-                      When using the Modela API to upload files (through the FileService
-                      API), Modela will upload the data to a predetermined path with
-                      the following format: "modela/depot/tenants/{tenant}/dataproducts/{dataproduct}/dataproductversions/{version}/{resource_type}/{resource_name}/data/raw/{file_name}
-                      The path does not need to adhere to this format; you can still
-                      pass the path of a file inside a bucket not managed by Modela'
+                    description: "The path to a flat-file inside an object storage
+                      system. When using the Modela API to upload files (through the
+                      FileService API), Modela will upload the data to a predetermined
+                      path with the following format: \n `\"modela/depot/tenants/{tenant}/dataproducts/{dataproduct}/dataproductversions/{version}/{resource_type}/{resource_name}/data/raw/{file_name}`
+                      \n The path does not need to adhere to this format; you can
+                      still pass the path of a file inside a bucket not managed by
+                      Modela"
                     type: string
                   sql:
                     default: ""
-                    description: The SQL statement to query data from a database connection
+                    description: The SQL statement to query data from a table
                     type: string
                   table:
                     default: ""
@@ -3052,8 +3061,7 @@ spec:
                     type: string
                   topic:
                     default: ""
-                    description: The name of the topic in case of streaming (currently
-                      unsupported)
+                    description: The name of the streaming topic (currently unsupported)
                     type: string
                   type:
                     default: object

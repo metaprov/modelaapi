@@ -154,12 +154,14 @@ spec:
               models:
                 description: Models is the list of models
                 items:
-                  description: The desired state of the model.
+                  description: ModelDeploymentSpec describes how a single model should
+                    be deployed with a Predictor, and how prediction traffic will
+                    be routed to the model
                   properties:
                     canary:
                       default: false
-                      description: Canary denotes if this deployment is staged release.
-                        A staged release will serve traffic in incerements
+                      description: Canary denotes if this deployment is a staged release.
+                        A staged release will serve traffic in increments
                       type: boolean
                     canaryMetrics:
                       description: 'If the deployment is canary, the metric define
@@ -175,42 +177,43 @@ spec:
                       type: array
                     deployed:
                       default: false
-                      description: a deployed model is a model whose containers are
-                        up, but does not serve production traffic.
+                      description: A deployed model is a model whose containers are
+                        up, but does not serve production traffic
                       type: boolean
                     maxTraffic:
-                      description: 'How much traffic this deployment model should
-                        serve. Default: 100.'
+                      description: The maximum percentage of traffic that will be
+                        served by the model
                       format: int32
                       maximum: 100
                       minimum: 0
                       type: integer
                     modelName:
-                      description: ModelName is the name of the model. The name must
-                        be unique within
+                      description: The name of a model, which is fully complete and
+                        packaged, that exists in the same DataProduct namespace as
+                        the resource which specifies the ModelDeploymentSpec
                       type: string
                     modelVersion:
-                      description: The version of the model. Note that a single predictor
-                        might serve different models
+                      description: The version of the model
                       type: string
                     mountTar:
-                      description: 'MountTar means that we would mount the model tar
-                        file. Else we would use baked image. Default: true'
+                      default: true
+                      description: MountTar means that we would mount the model tar
+                        file. Else we would use baked image.
                       type: boolean
                     released:
                       default: false
                       description: A released model is a model that should serve production
-                        traffic.
+                        traffic
                       type: boolean
                     shadow:
                       default: false
                       description: Shadow denotes if the model is running in shadow
-                        mode. a shadow model face the production traffic, however,
+                        mode. A shadow model face the production traffic, however,
                         the predictions are not served back to the client
                       type: boolean
                     traffic:
-                      description: 'Traffic is the current amount of production traffic
-                        served by this model. Default: 100.'
+                      description: The minimum percentage of traffic that will be
+                        served by the model
                       format: int32
                       maximum: 100
                       minimum: 0
@@ -250,22 +253,27 @@ spec:
                     description: Schedule for running the monitor
                     properties:
                       cron:
-                        description: Cron string of the schedule.
+                        description: The cron string of the schedule. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm
+                          for more information
                         type: string
                       enabled:
                         default: false
-                        description: Active denote that the schedule is enabled
+                        description: Indicates if the schedule is enabled and the
+                          Jobs associated it will be created at the specified time
                         type: boolean
                       endTime:
-                        description: EndTime is the end time of the schedule
+                        description: The time of the day when the schedule is expected
+                          to conclude
                         format: date-time
                         type: string
                       startTime:
-                        description: The start time of the schedule
+                        description: The time of the day when the schedule will be
+                          executed
                         format: date-time
                         type: string
                       type:
-                        description: The type of schedule events.
+                        description: The type of schedule, which can be a frequency
+                          interval or a cron expression
                         enum:
                         - now
                         - once
@@ -513,7 +521,8 @@ spec:
                 description: Resources is the hardware resource req.
                 properties:
                   cpuImage:
-                    description: Reference to the managed gpu trainer image
+                    description: Reference to the managed CPU trainer image, used
+                      internally
                     properties:
                       apiVersion:
                         description: API version of the referent.
@@ -549,7 +558,8 @@ spec:
                         type: string
                     type: object
                   gpuImage:
-                    description: Reference to the managed gpu trainer image
+                    description: Reference to the managed GPU trainer image, used
+                      internally
                     properties:
                       apiVersion:
                         description: API version of the referent.
@@ -585,7 +595,8 @@ spec:
                         type: string
                     type: object
                   requirements:
-                    description: Custom resource requirments
+                    description: The custom resource requirements for the workload,
+                      which are used if `WorkloadName` is not set
                     properties:
                       limits:
                         additionalProperties:
@@ -612,7 +623,9 @@ spec:
                     type: object
                   workloadName:
                     description: If this resource is based on the workload, this field
-                      contain the name of the workload.
+                      contain the name of the workload. The name of a WorkloadClass.
+                      The system will use the resource requirements described by the
+                      WorkloadClass
                     type: string
                 type: object
               servingsiteRef:

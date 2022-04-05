@@ -160,13 +160,13 @@ spec:
                 description: The histogram values
                 properties:
                   bins:
-                    description: The bins if this histogram describe continous variables
+                    description: The bins if the histogram describes continous variables
                     items:
                       type: number
                     type: array
                   categories:
-                    description: The name of the categories, one per bin is this a
-                      categorical histogram Empty is this is not a categorical variable.
+                    description: The name of the categories, one per bin if this is
+                      a categorical histogram
                     items:
                       type: string
                     type: array

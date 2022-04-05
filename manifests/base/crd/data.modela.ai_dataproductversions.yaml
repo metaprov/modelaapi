@@ -40,8 +40,8 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: DataProductVersion represent a version of the data product. A
-          version is usually created when a new data was gathered for the same product.
+        description: DataProductVersion represents a single version of a DataProduct,
+          which should increment versions in response to changes in data
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation
@@ -56,32 +56,31 @@ spec:
           metadata:
             type: object
           spec:
-            description: DataProductVersionSpec defines the desired state of a data
-              product version
+            description: DataProductVersionSpec defines the desired state of a DataProductVersion
             properties:
               baseline:
                 default: false
-                description: Baseline denote if this product version a baseline. If
-                  a product version is a baseline, we can garbage collect all the
-                  parents' product versions
+                description: Indicates if the version is a baseline, and if so will
+                  cause Modela to garbage collect the resources from previous versions
                 type: boolean
               description:
                 default: ""
-                description: Description is user provided description
+                description: User-provided description of the object
                 maxLength: 512
                 type: string
               owner:
                 default: no-one
-                description: The owner account name
+                description: The name of the Account which created the object, which
+                  exists in the same tenant as the object
                 type: string
               prevVersionName:
                 default: ""
-                description: PrevVersionName is a pointer to the version that we derived
-                  from
+                description: The name of the version which preceded the current version
                 maxLength: 63
                 type: string
               productRef:
-                description: Reference to the product reference
+                description: ProductRef contains the object reference to the DataProduct
+                  resource which the DataProductVersion describes the version of
                 properties:
                   apiVersion:
                     description: API version of the referent.
@@ -118,12 +117,13 @@ spec:
                 type: object
             type: object
           status:
-            description: DataProductVersionStatus defines the observed state of DataProductVersion
+            description: DataProductVersionStatus defines the observed state of a
+              DataProductVersion
             properties:
               conditions:
                 items:
                   description: DataProductVersionCondition describes the state of
-                    a DataProductVersion at a certain point.
+                    a DataProductVersion at a certain point
                   properties:
                     lastTransitionTime:
                       description: Last time the condition transitioned from one status
@@ -149,18 +149,20 @@ spec:
                   type: object
                 type: array
               failureMessage:
-                description: Update in case of terminal failure message
+                description: In the case of failure, the Dataset resource controller
+                  will set this field with a failure message
                 type: string
               failureReason:
-                description: Update in case of terminal failure Borrowed from cluster
+                description: In the case of failure, the Dataset resource controller
+                  will set this field with a failure reason Borrowed from cluster
                   api controller
                 type: string
               lastUpdated:
-                description: Last time the object was updated
+                description: The last time the object was updated
                 format: date-time
                 type: string
               observedGeneration:
-                description: ObservedGeneration is the Last generation that was acted
+                description: ObservedGeneration is the last generation that was acted
                   on
                 format: int64
                 type: integer

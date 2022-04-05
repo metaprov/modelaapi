@@ -149,7 +149,8 @@ spec:
                 description: Resources is the hardware resource req.
                 properties:
                   cpuImage:
-                    description: Reference to the managed gpu trainer image
+                    description: Reference to the managed CPU trainer image, used
+                      internally
                     properties:
                       apiVersion:
                         description: API version of the referent.
@@ -185,7 +186,8 @@ spec:
                         type: string
                     type: object
                   gpuImage:
-                    description: Reference to the managed gpu trainer image
+                    description: Reference to the managed GPU trainer image, used
+                      internally
                     properties:
                       apiVersion:
                         description: API version of the referent.
@@ -221,7 +223,8 @@ spec:
                         type: string
                     type: object
                   requirements:
-                    description: Custom resource requirments
+                    description: The custom resource requirements for the workload,
+                      which are used if `WorkloadName` is not set
                     properties:
                       limits:
                         additionalProperties:
@@ -248,29 +251,35 @@ spec:
                     type: object
                   workloadName:
                     description: If this resource is based on the workload, this field
-                      contain the name of the workload.
+                      contain the name of the workload. The name of a WorkloadClass.
+                      The system will use the resource requirements described by the
+                      WorkloadClass
                     type: string
                 type: object
               schedule:
                 description: Schedule for running the pipeline
                 properties:
                   cron:
-                    description: Cron string of the schedule.
+                    description: The cron string of the schedule. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm
+                      for more information
                     type: string
                   enabled:
                     default: false
-                    description: Active denote that the schedule is enabled
+                    description: Indicates if the schedule is enabled and the Jobs
+                      associated it will be created at the specified time
                     type: boolean
                   endTime:
-                    description: EndTime is the end time of the schedule
+                    description: The time of the day when the schedule is expected
+                      to conclude
                     format: date-time
                     type: string
                   startTime:
-                    description: The start time of the schedule
+                    description: The time of the day when the schedule will be executed
                     format: date-time
                     type: string
                   type:
-                    description: The type of schedule events.
+                    description: The type of schedule, which can be a frequency interval
+                      or a cron expression
                     enum:
                     - now
                     - once
@@ -334,20 +343,21 @@ spec:
                     format: date-time
                     type: string
                   duration:
-                    description: Last run duration in seconds
+                    description: In the case of failure, the Dataset resource controller
+                      will set this field with a failure reason
                     format: int32
                     type: integer
                   failureMessage:
-                    description: Update in case of terminal failure message
+                    description: In the case of failure, the failure message
                     type: string
                   failureReason:
-                    description: Update in case of terminal failure Borrowed from
-                      cluster api controller
+                    description: In the case of failure, the failure reason Borrowed
+                      from cluster api controller
                     type: string
                   name:
                     type: string
                   status:
-                    description: the status of the last run
+                    description: The status of the last run
                     type: string
                 type: object
               lastUpdated:

@@ -14,8 +14,8 @@ class UserRoleClassServiceStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.ListUserRoleClasss = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.userroleclass.v1.UserRoleClassService/ListUserRoleClasss',
+        self.ListUserRoleClasses = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.userroleclass.v1.UserRoleClassService/ListUserRoleClasses',
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_userroleclass_dot_v1_dot_userroleclass__pb2.ListUserRoleClassesRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_userroleclass_dot_v1_dot_userroleclass__pb2.ListUserRoleClassesResponse.FromString,
                 )
@@ -44,7 +44,7 @@ class UserRoleClassServiceStub(object):
 class UserRoleClassServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
-    def ListUserRoleClasss(self, request, context):
+    def ListUserRoleClasses(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -77,8 +77,8 @@ class UserRoleClassServiceServicer(object):
 
 def add_UserRoleClassServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'ListUserRoleClasss': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListUserRoleClasss,
+            'ListUserRoleClasses': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListUserRoleClasses,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_userroleclass_dot_v1_dot_userroleclass__pb2.ListUserRoleClassesRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_userroleclass_dot_v1_dot_userroleclass__pb2.ListUserRoleClassesResponse.SerializeToString,
             ),
@@ -113,7 +113,7 @@ class UserRoleClassService(object):
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
-    def ListUserRoleClasss(request,
+    def ListUserRoleClasses(request,
             target,
             options=(),
             channel_credentials=None,
@@ -123,7 +123,7 @@ class UserRoleClassService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.userroleclass.v1.UserRoleClassService/ListUserRoleClasss',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.userroleclass.v1.UserRoleClassService/ListUserRoleClasses',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_userroleclass_dot_v1_dot_userroleclass__pb2.ListUserRoleClassesRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_userroleclass_dot_v1_dot_userroleclass__pb2.ListUserRoleClassesResponse.FromString,
             options, channel_credentials,

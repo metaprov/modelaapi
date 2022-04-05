@@ -137,11 +137,15 @@ spec:
                 properties:
                   stakeholders:
                     items:
+                      description: Stakeholder specifies the User Role Classes of
+                        an individual Account
                       properties:
                         account:
+                          description: The name of an Account
                           type: string
                         roles:
-                          description: assign roles to account
+                          description: The object references to UserRoleClass resources
+                            which describe the actions the Account may perform
                           items:
                             description: 'ObjectReference contains enough information
                               to let you inspect or modify the referred object. ---

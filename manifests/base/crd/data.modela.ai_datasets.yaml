@@ -68,7 +68,7 @@ spec:
           metadata:
             type: object
           spec:
-            description: DatasetSpec defines the desired state of the dataset
+            description: DatasetSpec defines the desired state of the Dataset
             properties:
               activeDeadlineSeconds:
                 default: 600
@@ -92,8 +92,8 @@ spec:
                     type: string
                   top:
                     default: 10
-                    description: The top number of correlation to be included in the
-                      correlation results
+                    description: The number of top correlations to be included in
+                      the correlation results
                     format: int32
                     type: integer
                 type: object
@@ -126,10 +126,10 @@ spec:
                 description: Indicates if the data is labeled or not
                 type: boolean
               location:
-                description: The final location of the data which was copied from
-                  the `Origin` location during the ingestion phase. This field is
-                  set by the Dataset resource controller and should not be changed
-                  by any end-users
+                description: Location is the final location of the data which was
+                  copied from the `Origin` location during the ingestion phase. This
+                  field is set by the Dataset resource controller and should not be
+                  changed by any end-users
                 properties:
                   bucketName:
                     default: ""
@@ -149,21 +149,23 @@ spec:
                     type: string
                   database:
                     default: ""
-                    description: The name of a database that exists inside the database
-                      server connection specified by the `ConnectionName` field
+                    description: The name of a database that exists inside a database
+                      server that exists at the connection specified by the `ConnectionName`
+                      field
                     type: string
                   path:
                     default: ""
-                    description: 'The path to a flat-file in an object storage system.
-                      When using the Modela API to upload files (through the FileService
-                      API), Modela will upload the data to a predetermined path with
-                      the following format: "modela/depot/tenants/{tenant}/dataproducts/{dataproduct}/dataproductversions/{version}/{resource_type}/{resource_name}/data/raw/{file_name}
-                      The path does not need to adhere to this format; you can still
-                      pass the path of a file inside a bucket not managed by Modela'
+                    description: "The path to a flat-file inside an object storage
+                      system. When using the Modela API to upload files (through the
+                      FileService API), Modela will upload the data to a predetermined
+                      path with the following format: \n `\"modela/depot/tenants/{tenant}/dataproducts/{dataproduct}/dataproductversions/{version}/{resource_type}/{resource_name}/data/raw/{file_name}`
+                      \n The path does not need to adhere to this format; you can
+                      still pass the path of a file inside a bucket not managed by
+                      Modela"
                     type: string
                   sql:
                     default: ""
-                    description: The SQL statement to query data from a database connection
+                    description: The SQL statement to query data from a table
                     type: string
                   table:
                     default: ""
@@ -171,8 +173,7 @@ spec:
                     type: string
                   topic:
                     default: ""
-                    description: The name of the topic in case of streaming (currently
-                      unsupported)
+                    description: The name of the streaming topic (currently unsupported)
                     type: string
                   type:
                     default: object
@@ -189,27 +190,29 @@ spec:
                 properties:
                   errorTTL:
                     default: 3600
-                    description: TTL for error msgs. In seconds
+                    description: Time-to-live for error messages, in seconds
                     format: int32
                     type: integer
                   notifierName:
                     default: ""
-                    description: The name of the notifier.
+                    description: The name of the Notifier which exists in the same
+                      tenant as the resource specifying the NotificationSpec
                     type: string
                   selector:
                     additionalProperties:
                       type: string
-                    description: Select the target notifiers by a label.
+                    description: The labels which will be searched for in all Notifiers
+                      to determine the target Notifiers
                     type: object
                   successTTL:
                     default: 3600
-                    description: TTL for success msgs. In seconds
+                    description: Time-to-live for success messages. In seconds
                     format: int32
                     type: integer
                 type: object
               origin:
-                description: The location of the data file or database query which
-                  holds the raw data of the Dataset. When the Dataset is created,
+                description: Origin is the location of the data file or database query
+                  which holds the raw data of the Dataset. When the Dataset is created,
                   the resource controller will retrieve the data from the location,
                   validate it against its Data Source if applicable, and store it
                   inside the `live` section of the Virtual Bucket resource specified
@@ -233,21 +236,23 @@ spec:
                     type: string
                   database:
                     default: ""
-                    description: The name of a database that exists inside the database
-                      server connection specified by the `ConnectionName` field
+                    description: The name of a database that exists inside a database
+                      server that exists at the connection specified by the `ConnectionName`
+                      field
                     type: string
                   path:
                     default: ""
-                    description: 'The path to a flat-file in an object storage system.
-                      When using the Modela API to upload files (through the FileService
-                      API), Modela will upload the data to a predetermined path with
-                      the following format: "modela/depot/tenants/{tenant}/dataproducts/{dataproduct}/dataproductversions/{version}/{resource_type}/{resource_name}/data/raw/{file_name}
-                      The path does not need to adhere to this format; you can still
-                      pass the path of a file inside a bucket not managed by Modela'
+                    description: "The path to a flat-file inside an object storage
+                      system. When using the Modela API to upload files (through the
+                      FileService API), Modela will upload the data to a predetermined
+                      path with the following format: \n `\"modela/depot/tenants/{tenant}/dataproducts/{dataproduct}/dataproductversions/{version}/{resource_type}/{resource_name}/data/raw/{file_name}`
+                      \n The path does not need to adhere to this format; you can
+                      still pass the path of a file inside a bucket not managed by
+                      Modela"
                     type: string
                   sql:
                     default: ""
-                    description: The SQL statement to query data from a database connection
+                    description: The SQL statement to query data from a table
                     type: string
                   table:
                     default: ""
@@ -255,8 +260,7 @@ spec:
                     type: string
                   topic:
                     default: ""
-                    description: The name of the topic in case of streaming (currently
-                      unsupported)
+                    description: The name of the streaming topic (currently unsupported)
                     type: string
                   type:
                     default: object
@@ -269,8 +273,8 @@ spec:
                 type: object
               owner:
                 default: no-one
-                description: The reference to the Account in the same namespace as
-                  the resource which created the object
+                description: The name of the Account which created the object, which
+                  exists in the same tenant as the object
                 type: string
               reported:
                 default: true
@@ -278,11 +282,12 @@ spec:
                   should be generated
                 type: boolean
               resources:
-                description: The resource requirements which the Dataset will request
-                  when creating Jobs to process the uploaded data
+                description: Resources specifies the resource requirements which the
+                  Dataset will request when creating Jobs to analyze the data
                 properties:
                   cpuImage:
-                    description: Reference to the managed gpu trainer image
+                    description: Reference to the managed CPU trainer image, used
+                      internally
                     properties:
                       apiVersion:
                         description: API version of the referent.
@@ -318,7 +323,8 @@ spec:
                         type: string
                     type: object
                   gpuImage:
-                    description: Reference to the managed gpu trainer image
+                    description: Reference to the managed GPU trainer image, used
+                      internally
                     properties:
                       apiVersion:
                         description: API version of the referent.
@@ -354,7 +360,8 @@ spec:
                         type: string
                     type: object
                   requirements:
-                    description: Custom resource requirments
+                    description: The custom resource requirements for the workload,
+                      which are used if `WorkloadName` is not set
                     properties:
                       limits:
                         additionalProperties:
@@ -381,7 +388,9 @@ spec:
                     type: object
                   workloadName:
                     description: If this resource is based on the workload, this field
-                      contain the name of the workload.
+                      contain the name of the workload. The name of a WorkloadClass.
+                      The system will use the resource requirements described by the
+                      WorkloadClass
                     type: string
                 type: object
               sample:
@@ -392,31 +401,33 @@ spec:
                 properties:
                   column:
                     default: ""
-                    description: Column is used for stratified sampling.
+                    description: The name of the column to be used for stratified
+                      sampling
                     type: string
                   enabled:
                     default: false
-                    description: Enabled specify if the sample is enabled
+                    description: Indicates if sampling is enabled
                     type: boolean
                   filter:
                     default: ""
-                    description: Filter formula. Valid only if the sample is a filter.
+                    description: The filter formula, valid only if the sample type
+                      is a filter
                     type: string
                   percent:
                     default: 100
-                    description: Pct is the percent of rows to use for analysis.
+                    description: The percentage of rows to sample
                     format: int32
                     minimum: 0
                     type: integer
                   rows:
                     default: 500
-                    description: Rows is the number of rows. Default is 500
+                    description: The number of rows to sample (by default, 500)
                     format: int32
                     minimum: 0
                     type: integer
                   type:
                     default: random
-                    description: Type is the sampling type Default is random
+                    description: The type of sampling (random sampling, by default)
                     enum:
                     - header
                     - random
@@ -563,10 +574,10 @@ spec:
                 description: The Docker images used during the analysis of the Dataset
                 properties:
                   dataImage:
-                    description: The image used during training for data operations.
+                    description: The image used for data operations
                     type: string
                   publisherImage:
-                    description: The image used during training for data operations.
+                    description: The image used to deploy models
                     type: string
                   trainerImage:
                     description: The image used during training
@@ -588,21 +599,24 @@ spec:
                   of all logs produced by the object
                 properties:
                   bucketName:
-                    description: The bucket logs.
+                    description: The name of the VirtualBucket resource where the
+                      logs are stored
                     type: string
                   containers:
-                    description: Jobs per containers
+                    description: The collection of ContainerLog objects that describe
+                      the location of logs per container
                     items:
-                      description: Define log for one container
+                      description: ContainerLog describes the location of logs for
+                        a single Job
                       properties:
                         container:
                           description: The container name
                           type: string
                         job:
-                          description: The Job name
+                          description: The name of the Job
                           type: string
                         key:
-                          description: The key load
+                          description: The path to the log in the bucket
                           type: string
                       type: object
                     type: array
@@ -649,7 +663,8 @@ spec:
                     format: int32
                     type: integer
                   columns:
-                    description: The collection of statistics for each feature
+                    description: Columns contains the collection of statistics for
+                      each feature
                     items:
                       description: ColumnStatistics contains statistical parameters
                         for a single feature from a dataset
@@ -711,15 +726,14 @@ spec:
                             of the values in the column
                           properties:
                             bins:
-                              description: The bins if this histogram describe continous
+                              description: The bins if the histogram describes continous
                                 variables
                               items:
                                 type: number
                               type: array
                             categories:
                               description: The name of the categories, one per bin
-                                is this a categorical histogram Empty is this is not
-                                a categorical variable.
+                                if this is a categorical histogram
                               items:
                                 type: string
                               type: array

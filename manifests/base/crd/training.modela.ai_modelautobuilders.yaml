@@ -300,8 +300,8 @@ spec:
                     type: string
                   owner:
                     default: no-one
-                    description: The reference to the Account in the same namespace
-                      as the resource which created the object
+                    description: The name of the Account which created the object,
+                      which exists in the same tenant as the object
                     type: string
                   relationships:
                     description: List of relationships to other data sources
@@ -335,32 +335,33 @@ spec:
                     properties:
                       column:
                         default: ""
-                        description: Column is used for stratified sampling.
+                        description: The name of the column to be used for stratified
+                          sampling
                         type: string
                       enabled:
                         default: false
-                        description: Enabled specify if the sample is enabled
+                        description: Indicates if sampling is enabled
                         type: boolean
                       filter:
                         default: ""
-                        description: Filter formula. Valid only if the sample is a
-                          filter.
+                        description: The filter formula, valid only if the sample
+                          type is a filter
                         type: string
                       percent:
                         default: 100
-                        description: Pct is the percent of rows to use for analysis.
+                        description: The percentage of rows to sample
                         format: int32
                         minimum: 0
                         type: integer
                       rows:
                         default: 500
-                        description: Rows is the number of rows. Default is 500
+                        description: The number of rows to sample (by default, 500)
                         format: int32
                         minimum: 0
                         type: integer
                       type:
                         default: random
-                        description: Type is the sampling type Default is random
+                        description: The type of sampling (random sampling, by default)
                         enum:
                         - header
                         - random
@@ -922,8 +923,8 @@ spec:
                     type: object
                   task:
                     description: The default task for Dataset resources created from
-                      the DataSource. If null, this will be determined from the DataProduct
-                      which owns the DataSource
+                      the DataSource. If null, this will be determined from the default
+                      task of the DataProduct which owns the DataSource
                     enum:
                     - binary-classification
                     - multi-classification
@@ -1062,21 +1063,23 @@ spec:
                     type: string
                   database:
                     default: ""
-                    description: The name of a database that exists inside the database
-                      server connection specified by the `ConnectionName` field
+                    description: The name of a database that exists inside a database
+                      server that exists at the connection specified by the `ConnectionName`
+                      field
                     type: string
                   path:
                     default: ""
-                    description: 'The path to a flat-file in an object storage system.
-                      When using the Modela API to upload files (through the FileService
-                      API), Modela will upload the data to a predetermined path with
-                      the following format: "modela/depot/tenants/{tenant}/dataproducts/{dataproduct}/dataproductversions/{version}/{resource_type}/{resource_name}/data/raw/{file_name}
-                      The path does not need to adhere to this format; you can still
-                      pass the path of a file inside a bucket not managed by Modela'
+                    description: "The path to a flat-file inside an object storage
+                      system. When using the Modela API to upload files (through the
+                      FileService API), Modela will upload the data to a predetermined
+                      path with the following format: \n `\"modela/depot/tenants/{tenant}/dataproducts/{dataproduct}/dataproductversions/{version}/{resource_type}/{resource_name}/data/raw/{file_name}`
+                      \n The path does not need to adhere to this format; you can
+                      still pass the path of a file inside a bucket not managed by
+                      Modela"
                     type: string
                   sql:
                     default: ""
-                    description: The SQL statement to query data from a database connection
+                    description: The SQL statement to query data from a table
                     type: string
                   table:
                     default: ""
@@ -1084,8 +1087,7 @@ spec:
                     type: string
                   topic:
                     default: ""
-                    description: The name of the topic in case of streaming (currently
-                      unsupported)
+                    description: The name of the streaming topic (currently unsupported)
                     type: string
                   type:
                     default: object
@@ -1201,7 +1203,8 @@ spec:
                   the model pipeline job
                 properties:
                   cpuImage:
-                    description: Reference to the managed gpu trainer image
+                    description: Reference to the managed CPU trainer image, used
+                      internally
                     properties:
                       apiVersion:
                         description: API version of the referent.
@@ -1237,7 +1240,8 @@ spec:
                         type: string
                     type: object
                   gpuImage:
-                    description: Reference to the managed gpu trainer image
+                    description: Reference to the managed GPU trainer image, used
+                      internally
                     properties:
                       apiVersion:
                         description: API version of the referent.
@@ -1273,7 +1277,8 @@ spec:
                         type: string
                     type: object
                   requirements:
-                    description: Custom resource requirments
+                    description: The custom resource requirements for the workload,
+                      which are used if `WorkloadName` is not set
                     properties:
                       limits:
                         additionalProperties:
@@ -1300,7 +1305,9 @@ spec:
                     type: object
                   workloadName:
                     description: If this resource is based on the workload, this field
-                      contain the name of the workload.
+                      contain the name of the workload. The name of a WorkloadClass.
+                      The system will use the resource requirements described by the
+                      WorkloadClass
                     type: string
                 type: object
               sampler:

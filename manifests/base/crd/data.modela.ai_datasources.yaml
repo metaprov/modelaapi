@@ -62,6 +62,7 @@ spec:
           metadata:
             type: object
           spec:
+            description: DataSourceSpec defines the desired state of the DataSource
             properties:
               csvfile:
                 description: The file format for CSV files, if applicable
@@ -254,8 +255,8 @@ spec:
                 type: string
               owner:
                 default: no-one
-                description: The reference to the Account in the same namespace as
-                  the resource which created the object
+                description: The name of the Account which created the object, which
+                  exists in the same tenant as the object
                 type: string
               relationships:
                 description: List of relationships to other data sources
@@ -289,31 +290,33 @@ spec:
                 properties:
                   column:
                     default: ""
-                    description: Column is used for stratified sampling.
+                    description: The name of the column to be used for stratified
+                      sampling
                     type: string
                   enabled:
                     default: false
-                    description: Enabled specify if the sample is enabled
+                    description: Indicates if sampling is enabled
                     type: boolean
                   filter:
                     default: ""
-                    description: Filter formula. Valid only if the sample is a filter.
+                    description: The filter formula, valid only if the sample type
+                      is a filter
                     type: string
                   percent:
                     default: 100
-                    description: Pct is the percent of rows to use for analysis.
+                    description: The percentage of rows to sample
                     format: int32
                     minimum: 0
                     type: integer
                   rows:
                     default: 500
-                    description: Rows is the number of rows. Default is 500
+                    description: The number of rows to sample (by default, 500)
                     format: int32
                     minimum: 0
                     type: integer
                   type:
                     default: random
-                    description: Type is the sampling type Default is random
+                    description: The type of sampling (random sampling, by default)
                     enum:
                     - header
                     - random
@@ -866,8 +869,8 @@ spec:
                 type: object
               task:
                 description: The default task for Dataset resources created from the
-                  DataSource. If null, this will be determined from the DataProduct
-                  which owns the DataSource
+                  DataSource. If null, this will be determined from the default task
+                  of the DataProduct which owns the DataSource
                 enum:
                 - binary-classification
                 - multi-classification
