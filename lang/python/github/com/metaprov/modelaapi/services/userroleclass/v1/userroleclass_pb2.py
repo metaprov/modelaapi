@@ -18,13 +18,13 @@ from github.com.metaprov.modelaapi.services.common.v1 import common_pb2 as githu
 from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nKgithub.com/metaprov/modelaapi/services/userroleclass/v1/userroleclass.proto\x12\x37github.com.metaprov.modelaapi.services.userroleclass.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x45github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto\x1a=github.com/metaprov/modelaapi/services/common/v1/common.proto\x1a google/protobuf/field_mask.proto\"\x86\x02\n\x19ListUserRoleClasssRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12n\n\x06labels\x18\x02 \x03(\x0b\x32^.github.com.metaprov.modelaapi.services.userroleclass.v1.ListUserRoleClasssRequest.LabelsEntry\x12\x11\n\tpage_size\x18\x03 \x01(\x05\x12\x12\n\npage_token\x18\x04 \x01(\t\x12\x10\n\x08order_by\x18\x05 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x8e\x01\n\x1aListUserRoleClasssResponse\x12W\n\x05roles\x18\x01 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.UserRoleClassList\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x17\n\x15UserRoleClassResponse\"p\n\x1a\x43reateUserRoleClassRequest\x12R\n\x04role\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.UserRoleClass\"\x1d\n\x1b\x43reateUserRoleClassResponse\"\xa1\x01\n\x1aUpdateUserRoleClassRequest\x12R\n\x04role\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.UserRoleClass\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"\x1d\n\x1bUpdateUserRoleClassResponse\":\n\x17GetUserRoleClassRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"|\n\x18GetUserRoleClassResponse\x12R\n\x04role\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.UserRoleClass\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"=\n\x1a\x44\x65leteUserRoleClassRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1d\n\x1b\x44\x65leteUserRoleClassResponse\"\x1d\n\x1bUserRoleClassCreateResponse\"N\n\x19UserRoleClassLoginRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x10\n\x08password\x18\x03 \x01(\t\"+\n\x1aUserRoleClassLoginResponse\x12\r\n\x05token\x18\x01 \x01(\t2\xe3\t\n\x14UserRoleClassService\x12\xe6\x01\n\x12ListUserRoleClasss\x12R.github.com.metaprov.modelaapi.services.userroleclass.v1.ListUserRoleClasssRequest\x1aS.github.com.metaprov.modelaapi.services.userroleclass.v1.ListUserRoleClasssResponse\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/v1/userroleclasses/{namespace}\x12\xe0\x01\n\x13\x43reateUserRoleClass\x12S.github.com.metaprov.modelaapi.services.userroleclass.v1.CreateUserRoleClassRequest\x1aT.github.com.metaprov.modelaapi.services.userroleclass.v1.CreateUserRoleClassResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\"\x13/v1/userroleclasses:\x01*\x12\xe7\x01\n\x10GetUserRoleClass\x12P.github.com.metaprov.modelaapi.services.userroleclass.v1.GetUserRoleClassRequest\x1aQ.github.com.metaprov.modelaapi.services.userroleclass.v1.GetUserRoleClassResponse\".\x82\xd3\xe4\x93\x02(\x12&/v1/userroleclasses/{namespace}/{name}\x12\xa1\x02\n\x13UpdateUserRoleClass\x12S.github.com.metaprov.modelaapi.services.userroleclass.v1.UpdateUserRoleClassRequest\x1aT.github.com.metaprov.modelaapi.services.userroleclass.v1.UpdateUserRoleClassResponse\"_\x82\xd3\xe4\x93\x02Y\x1aT/v1/userroleclasses/{userroleclass.metadata.namespace}/{userroleclass.metadata.name}:\x01*\x12\xf0\x01\n\x13\x44\x65leteUserRoleClass\x12S.github.com.metaprov.modelaapi.services.userroleclass.v1.DeleteUserRoleClassRequest\x1aT.github.com.metaprov.modelaapi.services.userroleclass.v1.DeleteUserRoleClassResponse\".\x82\xd3\xe4\x93\x02(*&/v1/userroleclasses/{namespace}/{name}B9Z7github.com/metaprov/modelaapi/services/userroleclass/v1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nKgithub.com/metaprov/modelaapi/services/userroleclass/v1/userroleclass.proto\x12\x37github.com.metaprov.modelaapi.services.userroleclass.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x45github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto\x1a=github.com/metaprov/modelaapi/services/common/v1/common.proto\x1a google/protobuf/field_mask.proto\"\x88\x02\n\x1aListUserRoleClassesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12o\n\x06labels\x18\x02 \x03(\x0b\x32_.github.com.metaprov.modelaapi.services.userroleclass.v1.ListUserRoleClassesRequest.LabelsEntry\x12\x11\n\tpage_size\x18\x03 \x01(\x05\x12\x12\n\npage_token\x18\x04 \x01(\t\x12\x10\n\x08order_by\x18\x05 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x8f\x01\n\x1bListUserRoleClassesResponse\x12W\n\x05roles\x18\x01 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.UserRoleClassList\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x17\n\x15UserRoleClassResponse\"p\n\x1a\x43reateUserRoleClassRequest\x12R\n\x04role\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.UserRoleClass\"\x1d\n\x1b\x43reateUserRoleClassResponse\"\xa1\x01\n\x1aUpdateUserRoleClassRequest\x12R\n\x04role\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.UserRoleClass\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"\x1d\n\x1bUpdateUserRoleClassResponse\":\n\x17GetUserRoleClassRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"|\n\x18GetUserRoleClassResponse\x12R\n\x04role\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.UserRoleClass\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"=\n\x1a\x44\x65leteUserRoleClassRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1d\n\x1b\x44\x65leteUserRoleClassResponse\"\x1d\n\x1bUserRoleClassCreateResponse\"N\n\x19UserRoleClassLoginRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x10\n\x08password\x18\x03 \x01(\t\"+\n\x1aUserRoleClassLoginResponse\x12\r\n\x05token\x18\x01 \x01(\t2\xe5\t\n\x14UserRoleClassService\x12\xe8\x01\n\x12ListUserRoleClasss\x12S.github.com.metaprov.modelaapi.services.userroleclass.v1.ListUserRoleClassesRequest\x1aT.github.com.metaprov.modelaapi.services.userroleclass.v1.ListUserRoleClassesResponse\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/v1/userroleclasses/{namespace}\x12\xe0\x01\n\x13\x43reateUserRoleClass\x12S.github.com.metaprov.modelaapi.services.userroleclass.v1.CreateUserRoleClassRequest\x1aT.github.com.metaprov.modelaapi.services.userroleclass.v1.CreateUserRoleClassResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\"\x13/v1/userroleclasses:\x01*\x12\xe7\x01\n\x10GetUserRoleClass\x12P.github.com.metaprov.modelaapi.services.userroleclass.v1.GetUserRoleClassRequest\x1aQ.github.com.metaprov.modelaapi.services.userroleclass.v1.GetUserRoleClassResponse\".\x82\xd3\xe4\x93\x02(\x12&/v1/userroleclasses/{namespace}/{name}\x12\xa1\x02\n\x13UpdateUserRoleClass\x12S.github.com.metaprov.modelaapi.services.userroleclass.v1.UpdateUserRoleClassRequest\x1aT.github.com.metaprov.modelaapi.services.userroleclass.v1.UpdateUserRoleClassResponse\"_\x82\xd3\xe4\x93\x02Y\x1aT/v1/userroleclasses/{userroleclass.metadata.namespace}/{userroleclass.metadata.name}:\x01*\x12\xf0\x01\n\x13\x44\x65leteUserRoleClass\x12S.github.com.metaprov.modelaapi.services.userroleclass.v1.DeleteUserRoleClassRequest\x1aT.github.com.metaprov.modelaapi.services.userroleclass.v1.DeleteUserRoleClassResponse\".\x82\xd3\xe4\x93\x02(*&/v1/userroleclasses/{namespace}/{name}B9Z7github.com/metaprov/modelaapi/services/userroleclass/v1b\x06proto3')
 
 
 
-_LISTUSERROLECLASSSREQUEST = DESCRIPTOR.message_types_by_name['ListUserRoleClasssRequest']
-_LISTUSERROLECLASSSREQUEST_LABELSENTRY = _LISTUSERROLECLASSSREQUEST.nested_types_by_name['LabelsEntry']
-_LISTUSERROLECLASSSRESPONSE = DESCRIPTOR.message_types_by_name['ListUserRoleClasssResponse']
+_LISTUSERROLECLASSESREQUEST = DESCRIPTOR.message_types_by_name['ListUserRoleClassesRequest']
+_LISTUSERROLECLASSESREQUEST_LABELSENTRY = _LISTUSERROLECLASSESREQUEST.nested_types_by_name['LabelsEntry']
+_LISTUSERROLECLASSESRESPONSE = DESCRIPTOR.message_types_by_name['ListUserRoleClassesResponse']
 _USERROLECLASSRESPONSE = DESCRIPTOR.message_types_by_name['UserRoleClassResponse']
 _CREATEUSERROLECLASSREQUEST = DESCRIPTOR.message_types_by_name['CreateUserRoleClassRequest']
 _CREATEUSERROLECLASSRESPONSE = DESCRIPTOR.message_types_by_name['CreateUserRoleClassResponse']
@@ -37,27 +37,27 @@ _DELETEUSERROLECLASSRESPONSE = DESCRIPTOR.message_types_by_name['DeleteUserRoleC
 _USERROLECLASSCREATERESPONSE = DESCRIPTOR.message_types_by_name['UserRoleClassCreateResponse']
 _USERROLECLASSLOGINREQUEST = DESCRIPTOR.message_types_by_name['UserRoleClassLoginRequest']
 _USERROLECLASSLOGINRESPONSE = DESCRIPTOR.message_types_by_name['UserRoleClassLoginResponse']
-ListUserRoleClasssRequest = _reflection.GeneratedProtocolMessageType('ListUserRoleClasssRequest', (_message.Message,), {
+ListUserRoleClassesRequest = _reflection.GeneratedProtocolMessageType('ListUserRoleClassesRequest', (_message.Message,), {
 
   'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
-    'DESCRIPTOR' : _LISTUSERROLECLASSSREQUEST_LABELSENTRY,
+    'DESCRIPTOR' : _LISTUSERROLECLASSESREQUEST_LABELSENTRY,
     '__module__' : 'github.com.metaprov.modelaapi.services.userroleclass.v1.userroleclass_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.userroleclass.v1.ListUserRoleClasssRequest.LabelsEntry)
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.userroleclass.v1.ListUserRoleClassesRequest.LabelsEntry)
     })
   ,
-  'DESCRIPTOR' : _LISTUSERROLECLASSSREQUEST,
+  'DESCRIPTOR' : _LISTUSERROLECLASSESREQUEST,
   '__module__' : 'github.com.metaprov.modelaapi.services.userroleclass.v1.userroleclass_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.userroleclass.v1.ListUserRoleClasssRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.userroleclass.v1.ListUserRoleClassesRequest)
   })
-_sym_db.RegisterMessage(ListUserRoleClasssRequest)
-_sym_db.RegisterMessage(ListUserRoleClasssRequest.LabelsEntry)
+_sym_db.RegisterMessage(ListUserRoleClassesRequest)
+_sym_db.RegisterMessage(ListUserRoleClassesRequest.LabelsEntry)
 
-ListUserRoleClasssResponse = _reflection.GeneratedProtocolMessageType('ListUserRoleClasssResponse', (_message.Message,), {
-  'DESCRIPTOR' : _LISTUSERROLECLASSSRESPONSE,
+ListUserRoleClassesResponse = _reflection.GeneratedProtocolMessageType('ListUserRoleClassesResponse', (_message.Message,), {
+  'DESCRIPTOR' : _LISTUSERROLECLASSESRESPONSE,
   '__module__' : 'github.com.metaprov.modelaapi.services.userroleclass.v1.userroleclass_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.userroleclass.v1.ListUserRoleClasssResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.userroleclass.v1.ListUserRoleClassesResponse)
   })
-_sym_db.RegisterMessage(ListUserRoleClasssResponse)
+_sym_db.RegisterMessage(ListUserRoleClassesResponse)
 
 UserRoleClassResponse = _reflection.GeneratedProtocolMessageType('UserRoleClassResponse', (_message.Message,), {
   'DESCRIPTOR' : _USERROLECLASSRESPONSE,
@@ -148,8 +148,8 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z7github.com/metaprov/modelaapi/services/userroleclass/v1'
-  _LISTUSERROLECLASSSREQUEST_LABELSENTRY._options = None
-  _LISTUSERROLECLASSSREQUEST_LABELSENTRY._serialized_options = b'8\001'
+  _LISTUSERROLECLASSESREQUEST_LABELSENTRY._options = None
+  _LISTUSERROLECLASSESREQUEST_LABELSENTRY._serialized_options = b'8\001'
   _USERROLECLASSSERVICE.methods_by_name['ListUserRoleClasss']._options = None
   _USERROLECLASSSERVICE.methods_by_name['ListUserRoleClasss']._serialized_options = b'\202\323\344\223\002!\022\037/v1/userroleclasses/{namespace}'
   _USERROLECLASSSERVICE.methods_by_name['CreateUserRoleClass']._options = None
@@ -160,36 +160,36 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _USERROLECLASSSERVICE.methods_by_name['UpdateUserRoleClass']._serialized_options = b'\202\323\344\223\002Y\032T/v1/userroleclasses/{userroleclass.metadata.namespace}/{userroleclass.metadata.name}:\001*'
   _USERROLECLASSSERVICE.methods_by_name['DeleteUserRoleClass']._options = None
   _USERROLECLASSSERVICE.methods_by_name['DeleteUserRoleClass']._serialized_options = b'\202\323\344\223\002(*&/v1/userroleclasses/{namespace}/{name}'
-  _LISTUSERROLECLASSSREQUEST._serialized_start=335
-  _LISTUSERROLECLASSSREQUEST._serialized_end=597
-  _LISTUSERROLECLASSSREQUEST_LABELSENTRY._serialized_start=552
-  _LISTUSERROLECLASSSREQUEST_LABELSENTRY._serialized_end=597
-  _LISTUSERROLECLASSSRESPONSE._serialized_start=600
-  _LISTUSERROLECLASSSRESPONSE._serialized_end=742
-  _USERROLECLASSRESPONSE._serialized_start=744
-  _USERROLECLASSRESPONSE._serialized_end=767
-  _CREATEUSERROLECLASSREQUEST._serialized_start=769
-  _CREATEUSERROLECLASSREQUEST._serialized_end=881
-  _CREATEUSERROLECLASSRESPONSE._serialized_start=883
-  _CREATEUSERROLECLASSRESPONSE._serialized_end=912
-  _UPDATEUSERROLECLASSREQUEST._serialized_start=915
-  _UPDATEUSERROLECLASSREQUEST._serialized_end=1076
-  _UPDATEUSERROLECLASSRESPONSE._serialized_start=1078
-  _UPDATEUSERROLECLASSRESPONSE._serialized_end=1107
-  _GETUSERROLECLASSREQUEST._serialized_start=1109
-  _GETUSERROLECLASSREQUEST._serialized_end=1167
-  _GETUSERROLECLASSRESPONSE._serialized_start=1169
-  _GETUSERROLECLASSRESPONSE._serialized_end=1293
-  _DELETEUSERROLECLASSREQUEST._serialized_start=1295
-  _DELETEUSERROLECLASSREQUEST._serialized_end=1356
-  _DELETEUSERROLECLASSRESPONSE._serialized_start=1358
-  _DELETEUSERROLECLASSRESPONSE._serialized_end=1387
-  _USERROLECLASSCREATERESPONSE._serialized_start=1389
-  _USERROLECLASSCREATERESPONSE._serialized_end=1418
-  _USERROLECLASSLOGINREQUEST._serialized_start=1420
-  _USERROLECLASSLOGINREQUEST._serialized_end=1498
-  _USERROLECLASSLOGINRESPONSE._serialized_start=1500
-  _USERROLECLASSLOGINRESPONSE._serialized_end=1543
-  _USERROLECLASSSERVICE._serialized_start=1546
-  _USERROLECLASSSERVICE._serialized_end=2797
+  _LISTUSERROLECLASSESREQUEST._serialized_start=335
+  _LISTUSERROLECLASSESREQUEST._serialized_end=599
+  _LISTUSERROLECLASSESREQUEST_LABELSENTRY._serialized_start=554
+  _LISTUSERROLECLASSESREQUEST_LABELSENTRY._serialized_end=599
+  _LISTUSERROLECLASSESRESPONSE._serialized_start=602
+  _LISTUSERROLECLASSESRESPONSE._serialized_end=745
+  _USERROLECLASSRESPONSE._serialized_start=747
+  _USERROLECLASSRESPONSE._serialized_end=770
+  _CREATEUSERROLECLASSREQUEST._serialized_start=772
+  _CREATEUSERROLECLASSREQUEST._serialized_end=884
+  _CREATEUSERROLECLASSRESPONSE._serialized_start=886
+  _CREATEUSERROLECLASSRESPONSE._serialized_end=915
+  _UPDATEUSERROLECLASSREQUEST._serialized_start=918
+  _UPDATEUSERROLECLASSREQUEST._serialized_end=1079
+  _UPDATEUSERROLECLASSRESPONSE._serialized_start=1081
+  _UPDATEUSERROLECLASSRESPONSE._serialized_end=1110
+  _GETUSERROLECLASSREQUEST._serialized_start=1112
+  _GETUSERROLECLASSREQUEST._serialized_end=1170
+  _GETUSERROLECLASSRESPONSE._serialized_start=1172
+  _GETUSERROLECLASSRESPONSE._serialized_end=1296
+  _DELETEUSERROLECLASSREQUEST._serialized_start=1298
+  _DELETEUSERROLECLASSREQUEST._serialized_end=1359
+  _DELETEUSERROLECLASSRESPONSE._serialized_start=1361
+  _DELETEUSERROLECLASSRESPONSE._serialized_end=1390
+  _USERROLECLASSCREATERESPONSE._serialized_start=1392
+  _USERROLECLASSCREATERESPONSE._serialized_end=1421
+  _USERROLECLASSLOGINREQUEST._serialized_start=1423
+  _USERROLECLASSLOGINREQUEST._serialized_end=1501
+  _USERROLECLASSLOGINRESPONSE._serialized_start=1503
+  _USERROLECLASSLOGINRESPONSE._serialized_end=1546
+  _USERROLECLASSSERVICE._serialized_start=1549
+  _USERROLECLASSSERVICE._serialized_end=2802
 # @@protoc_insertion_point(module_scope)

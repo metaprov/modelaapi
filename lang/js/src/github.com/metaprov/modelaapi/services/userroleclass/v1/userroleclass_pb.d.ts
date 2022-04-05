@@ -6,31 +6,31 @@ import * as github_com_metaprov_modelaapi_services_common_v1_common_pb from '../
 import * as google_protobuf_field_mask_pb from 'google-protobuf/google/protobuf/field_mask_pb';
 
 
-export class ListUserRoleClasssRequest extends jspb.Message {
+export class ListUserRoleClassesRequest extends jspb.Message {
   getNamespace(): string;
-  setNamespace(value: string): ListUserRoleClasssRequest;
+  setNamespace(value: string): ListUserRoleClassesRequest;
 
   getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): ListUserRoleClasssRequest;
+  clearLabelsMap(): ListUserRoleClassesRequest;
 
   getPageSize(): number;
-  setPageSize(value: number): ListUserRoleClasssRequest;
+  setPageSize(value: number): ListUserRoleClassesRequest;
 
   getPageToken(): string;
-  setPageToken(value: string): ListUserRoleClasssRequest;
+  setPageToken(value: string): ListUserRoleClassesRequest;
 
   getOrderBy(): string;
-  setOrderBy(value: string): ListUserRoleClasssRequest;
+  setOrderBy(value: string): ListUserRoleClassesRequest;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListUserRoleClasssRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: ListUserRoleClasssRequest): ListUserRoleClasssRequest.AsObject;
-  static serializeBinaryToWriter(message: ListUserRoleClasssRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListUserRoleClasssRequest;
-  static deserializeBinaryFromReader(message: ListUserRoleClasssRequest, reader: jspb.BinaryReader): ListUserRoleClasssRequest;
+  toObject(includeInstance?: boolean): ListUserRoleClassesRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListUserRoleClassesRequest): ListUserRoleClassesRequest.AsObject;
+  static serializeBinaryToWriter(message: ListUserRoleClassesRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListUserRoleClassesRequest;
+  static deserializeBinaryFromReader(message: ListUserRoleClassesRequest, reader: jspb.BinaryReader): ListUserRoleClassesRequest;
 }
 
-export namespace ListUserRoleClasssRequest {
+export namespace ListUserRoleClassesRequest {
   export type AsObject = {
     namespace: string,
     labelsMap: Array<[string, string]>,
@@ -40,24 +40,24 @@ export namespace ListUserRoleClasssRequest {
   }
 }
 
-export class ListUserRoleClasssResponse extends jspb.Message {
+export class ListUserRoleClassesResponse extends jspb.Message {
   getRoles(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.UserRoleClassList | undefined;
-  setRoles(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.UserRoleClassList): ListUserRoleClasssResponse;
+  setRoles(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.UserRoleClassList): ListUserRoleClassesResponse;
   hasRoles(): boolean;
-  clearRoles(): ListUserRoleClasssResponse;
+  clearRoles(): ListUserRoleClassesResponse;
 
   getNextPageToken(): string;
-  setNextPageToken(value: string): ListUserRoleClasssResponse;
+  setNextPageToken(value: string): ListUserRoleClassesResponse;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListUserRoleClasssResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: ListUserRoleClasssResponse): ListUserRoleClasssResponse.AsObject;
-  static serializeBinaryToWriter(message: ListUserRoleClasssResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListUserRoleClasssResponse;
-  static deserializeBinaryFromReader(message: ListUserRoleClasssResponse, reader: jspb.BinaryReader): ListUserRoleClasssResponse;
+  toObject(includeInstance?: boolean): ListUserRoleClassesResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListUserRoleClassesResponse): ListUserRoleClassesResponse.AsObject;
+  static serializeBinaryToWriter(message: ListUserRoleClassesResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListUserRoleClassesResponse;
+  static deserializeBinaryFromReader(message: ListUserRoleClassesResponse, reader: jspb.BinaryReader): ListUserRoleClassesResponse;
 }
 
-export namespace ListUserRoleClasssResponse {
+export namespace ListUserRoleClassesResponse {
   export type AsObject = {
     roles?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.UserRoleClassList.AsObject,
     nextPageToken: string,
