@@ -254,7 +254,7 @@ func (in *DataProduct) MarkReady() {
 
 func (in *DataProduct) GetRolesForAccount(account *infra.Account) []string {
 	result := make([]string, 0)
-	for _, v := range in.Spec.Premissions.Stakeholders {
+	for _, v := range in.Spec.Permissions.Stakeholders {
 		if v.AccountName == account.Name {
 			for _, x := range v.Roles {
 				result = append(result, x.Name)
