@@ -173,7 +173,7 @@ type DataProductSpec struct {
 	Governance GovernanceSpec `json:"governance,omitempty" protobuf:"bytes,23,opt,name=governance"`
 	// The premissions for this product
 	// +kubebuilder:validation:Optional
-	Premissions catalog.PermissionsSpec `json:"permissions,omitempty" protobuf:"bytes,24,opt,name=permissions"`
+	Permissions catalog.PermissionsSpec `json:"permissions,omitempty" protobuf:"bytes,24,opt,name=permissions"`
 }
 
 // DataProductStatus defines the observed state of DataProduct

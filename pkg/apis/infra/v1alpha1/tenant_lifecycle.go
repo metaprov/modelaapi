@@ -147,7 +147,7 @@ func (tenant *Tenant) Archived() bool {
 
 func (tenant *Tenant) GetRolesForAccount(account *Account) []string {
 	result := make([]string, 0)
-	for _, v := range tenant.Spec.Premissions.Stakeholders {
+	for _, v := range tenant.Spec.Permissions.Stakeholders {
 		if v.AccountName == account.Name {
 			for _, x := range v.Roles {
 				result = append(result, x.Name)
