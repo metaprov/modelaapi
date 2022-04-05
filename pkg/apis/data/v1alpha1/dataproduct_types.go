@@ -35,8 +35,8 @@ type DataProductCondition struct {
 	Message string `json:"message,omitempty" protobuf:"bytes,6,opt,name=message"`
 }
 
-// DataProduct represent a single DataProduct namespace, which contains all non-infrastructure resources. Additionally, it
-// specifies default parameters for resources to be created under the namespace
+// DataProduct represents a single DataProduct namespace, which contains all non-infrastructure resources. Additionally,
+// it specifies default parameters for resources to be created under the namespace, such as workload class and storage location
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status"
@@ -59,64 +59,62 @@ type DataProduct struct {
 	Status            DataProductStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
 }
 
+// GitLocation specifies the Git location where Modela will track resources as YAML
 type GitLocation struct {
-	// GitConnectionName
+	// The Git Connection resource which exists in the same tenant as the parent DataProduct
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	GitConnectionName *string `json:"gitConnectionName,omitempty" protobuf:"bytes,1,opt,name=gitConnectionName"`
-	// URL of the stakeholder
+	// The URL to the destination Git repository
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:MaxLength=256
 	URL *string `json:"url,omitempty" protobuf:"bytes,2,opt,name=url"`
-	// Branch in git repo
+	// The branch inside the Git repository
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:MaxLength=256
 	Branch *string `json:"branch,omitempty" protobuf:"bytes,3,opt,name=branch"`
-	// Private is True if the repository is private.
+	// Indicates if the repository is private
 	// +kubebuilder:default:=true
 	Private *bool `json:"private,omitempty" protobuf:"varint,4,opt,name=private"`
 }
 
+// ImageLocation specifies the destination for all model images produced under a DataProduct
 type ImageLocation struct {
-	// The canonical name of the image repo.
-	// The default value is docker/productname
+	// The canonical name of the image repository. If not set, it will default to docker/{dataproduct_name}
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:MaxLength=256
-	// optional
 	Name *string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
-	// The connection of the docker registry provider
+	// The image repository Connection resource which exists in the same tenant as the parent DataProduct. If the field
+	// is not set, Modela will ignore the image location and not push images
 	// +kubebuilder:default:=""
-	// If the value is empty, the system will not push images.
-	// optional
 	RegistryConnectionName *string `json:"registryConnectionName,omitempty" protobuf:"bytes,2,opt,name=registryConnectionName"`
 }
 
-//DataProductSpec defines the desired state of a data product
+// DataProductSpec defines the desired state of the DataProduct
 type DataProductSpec struct {
-	// The data product owner
+	// The name of the Account which created the object, which exists in the same tenant as the object
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,1,opt,name=owner"`
-	// If true, the data product is public.
+	// Indicates if the DataProduct is public and can be accessed without permissions
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Public *bool `json:"public,omitempty" protobuf:"bytes,2,opt,name=public"`
-	// The tenant that own the data product.
-	// Default to default tenant.
+	// The reference to the Tenant which owns the DataProduct. Defaults to `default-tenant`
 	// +kubebuilder:validation:Optional
 	TenantRef *v1.ObjectReference `json:"tenantRef,omitempty" protobuf:"bytes,3,opt,name=tenantRef"`
-	// GitLocation is the github repository for all the artifacts for this product
+	// GitLocation is the default Git location where all child resources will be tracked as YAML
 	// +kubebuilder:validation:Optional
 	GitLocation GitLocation `json:"gitLocation,omitempty" protobuf:"bytes,4,opt,name=gitLocation"`
-	// ImageLocation is the image repository that stores the models images for the product versions
+	// ImageLocation is the default Docker image repository where model images produced under the DataProduct will be stored
 	// +kubebuilder:validation:Optional
 	ImageLocation *ImageLocation `json:"imageLocation,omitempty" protobuf:"bytes,5,opt,name=imageLocation"`
-	// LabName is the Lab where models of this products are trained
+	// The name of the Lab that will be used by default with all compute-requiring child resources
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:validation:Optional
 	LabName *string `json:"labName" protobuf:"bytes,7,opt,name=labName"`
-	// ServingSiteName is the serving site where predictors of this product are deployed
+	// The name of the Serving Site which will be used by default with all Predictor resources
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +kubebuilder:validation:Optional
@@ -124,54 +122,55 @@ type DataProductSpec struct {
 	// Task denote the machine learning task of the product (classification/regression,etc.)
 	// +kubebuilder:validation:Optional
 	Task *catalog.MLTask `json:"task,omitempty" protobuf:"bytes,9,opt,name=task"`
-	// User provided description
+	// User-provided description of the object
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:MaxLength=512
 	Description *string `json:"description,omitempty" protobuf:"bytes,10,opt,name=description"`
-	//This folder contain the root location for all the artifacts from the product.
+	// The default location for all artifacts created under the DataProduct. All data-producing resources will
+	// use the VirtualBucket specified by the DataLocation by default
 	// +kubebuilder:validation:Optional
 	DataLocation DataLocation `json:"dataLocation,omitempty" protobuf:"bytes,11,opt,name=dataLocation"`
-	// the notifier selector select the notifier for events that occur in the product life cycle.
+	// The default notification specification for all resources under the DataProduct
 	// +kubebuilder:validation:Optional
 	Notification catalog.NotificationSpec `json:"notification,omitempty" protobuf:"bytes,12,opt,name=notification"`
-	// DefaultResource will be used if the resources are not specified.
+	// The default resource allocation for model training which takes place under the DataProduct
 	// +kubebuilder:validation:Optional
 	DefaultTrainingResources catalog.ResourceSpec `json:"trainingResources,omitempty" protobuf:"bytes,13,opt,name=trainingResources"`
-	// DefaultResource will be used if the resources are not specified.
+	// The default resource allocation for model serving which takes place under the DataProduct
 	// +kubebuilder:validation:Optional
 	DefaultServingResources catalog.ResourceSpec `json:"servingResources,omitempty" protobuf:"bytes,14,opt,name=servingResources"`
-	// Denote how many time a job is retry after failure
+	// Denote how many times Jobs created under the DataProduct namespace will retry after failure
 	// +kubebuilder:default:=3
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Maximum=10
 	// +kubebuilder:validation:Optional
 	RetriesOnFailure *int32 `json:"retriesOnFailure,omitempty" protobuf:"varint,15,opt,name=retriesOnFailure"`
-	// KPIs is the product kpi. This is for information porpose
+	// KPIs define key performance indicators for the DataProduct (not functional as of the current release)
 	//+kubebuilder:validation:Optional
 	KPIs []KPI `json:"kpis,omitempty" protobuf:"bytes,16,rep,name=kpis"`
-	// OnCallAccountName is the name of the account on call.
+	// The name of the Account which should be on-call for events that occur under the DataProduct
 	//+kubebuilder:validation:Optional
 	OnCallAccountName string `json:"onCallAccountName,omitempty" protobuf:"bytes,17,opt,name=onCallAccountName"`
-	// List of documents attached to the this data product
+	// The default compilation specification for Study resources created under the DataProduct
 	//+kubebuilder:validation:Optional
 	Compilation catalog.CompilerSpec `json:"compilation,omitempty" protobuf:"bytes,19,opt,name=compilation"`
-	// The clearance level of this data product
+	// The clearance level required to access the DataProduct
 	// +kubebuilder:default:=unclassified
 	// +kubebuilder:validation:Optional
 	ClearanceLevel *catalog.SecurityClearanceLevel `json:"clearanceLevel,omitempty" protobuf:"bytes,20,opt,name=clearanceLevel"`
-	// Default Priority level assigned to jobs for this data product (e.g. study, model pipeline,etc)
+	// The default priority level assigned to Jobs created under the DataProduct namespace
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:="medium"
 	DefaultPriority *catalog.PriorityLevel `json:"priority,omitempty" protobuf:"bytes,21,opt,name=priority"`
-	// the color assigned to the product
+	// The color assigned to the product, for visual purposes only
 	// +kubebuilder:default:="none"
 	// +kubebuilder:validation:Optional
 	Color *catalog.Color `json:"color,omitempty" protobuf:"bytes,22,opt,name=color"`
-	// The Governance requirements.
+	// The Governance requirements (not functional as of the current release)
 	// +kubebuilder:validation:Optional
 	Governance GovernanceSpec `json:"governance,omitempty" protobuf:"bytes,23,opt,name=governance"`
-	// The premissions for this product
+	// The permission specification which determines which Accounts can access the DataProduct and what actions they can perform
 	// +kubebuilder:validation:Optional
 	Permissions catalog.PermissionsSpec `json:"permissions,omitempty" protobuf:"bytes,24,opt,name=permissions"`
 }
@@ -258,8 +257,7 @@ type KPI struct {
 	Value *float64 `json:"value,omitempty" protobuf:"varint,2,opt,name=value"`
 }
 
-// Governance Spec define the governance for models in this data product.
-
+// GovernanceSpec define the governance for models produced in a DataProduct
 type GovernanceSpec struct {
 	// Enabled specify if the sample is enabled
 	// +kubebuilder:default:=false

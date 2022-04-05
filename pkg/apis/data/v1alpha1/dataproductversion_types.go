@@ -21,7 +21,7 @@ const (
 	DataProductVersionSaved DataProductVersionConditionType = "Saved"
 )
 
-// DataProductVersionCondition describes the state of a DataProductVersion at a certain point.
+// DataProductVersionCondition describes the state of a DataProductVersion at a certain point
 type DataProductVersionCondition struct {
 	// Type of condition.
 	Type DataProductVersionConditionType `json:"type" protobuf:"bytes,1,opt,name=type,casttype=DataProductVersionConditionType"`
@@ -35,6 +35,7 @@ type DataProductVersionCondition struct {
 	Message string `json:"message,omitempty" protobuf:"bytes,6,opt,name=message"`
 }
 
+// DataProductVersion represents a single version of a DataProduct, which should increment versions in response to changes in data
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
@@ -43,8 +44,6 @@ type DataProductVersionCondition struct {
 // +kubebuilder:printcolumn:name="Base",type="boolean",JSONPath=".spec.baseline",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=dataproductversions,shortName=dpv,singular=dataproductversion,categories={data,modela,all}
-// DataProductVersion represent a version of the data product. A version is usually created when a new
-// data was gathered for the same product.
 type DataProductVersion struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata" protobuf:"bytes,1,opt,name=metadata"`
@@ -61,48 +60,45 @@ type DataProductVersionList struct {
 	Items           []DataProductVersion `json:"items" protobuf:"bytes,2,rep,name=items"`
 }
 
-//DataProductVersionSpec defines the desired state of a data product version
+// DataProductVersionSpec defines the desired state of a DataProductVersion
 type DataProductVersionSpec struct {
-	// Reference to the product reference
+	// ProductRef contains the object reference to the DataProduct
+	// resource which the DataProductVersion describes the version of
 	// +kubebuilder:validation:Optional
 	ProductRef v1.ObjectReference `json:"productRef,omitempty" protobuf:"bytes,1,opt,name=productRef"`
-	// Description is user provided description
+	// User-provided description of the object
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:MaxLength=512
 	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
-	// PrevVersionName is a pointer to the version that we derived from
+	// The name of the version which preceded the current version
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	PrevVersionName *string `json:"prevVersionName,omitempty" protobuf:"bytes,3,opt,name=prevVersionName"`
-	// Baseline denote if this product version a baseline. If a product version is a baseline, we can garbage
-	// collect all the parents' product versions
+	// Indicates if the version is a baseline, and if so will cause Modela to garbage collect the resources from previous versions
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Baseline *bool `json:"baseline,omitempty" protobuf:"varint,4,opt,name=baseline"`
-	// The owner account name
+	// The name of the Account which created the object, which exists in the same tenant as the object
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,5,opt,name=owner"`
 }
 
-// DataProductVersionStatus defines the observed state of DataProductVersion
+// DataProductVersionStatus defines the observed state of a DataProductVersion
 type DataProductVersionStatus struct {
-	//ObservedGeneration is the Last generation that was acted on
+	// ObservedGeneration is the last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,1,opt,name=observedGeneration"`
-	// Last time the object was updated
+	// The last time the object was updated
 	//+kubebuilder:validation:Optional
 	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,2,opt,name=lastUpdated"`
-
-	// Update in case of terminal failure
+	// In the case of failure, the Dataset resource controller will set this field with a failure reason
 	// Borrowed from cluster api controller
 	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,3,opt,name=failureReason"`
-
-	// Update in case of terminal failure message
+	// In the case of failure, the Dataset resource controller will set this field with a failure message
 	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,4,opt,name=failureMessage"`
-
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional

@@ -308,8 +308,8 @@ func NewProviderNameFromString(name string) ProviderName {
 	return UnknownProvider
 }
 
-func IsBinaryClassification(t MLTask) bool {
-	return (t == BinaryClassification)
+func IsBinaryClassification(task MLTask) bool {
+	return task == BinaryClassification
 }
 
 func IsMultiClass(task MLTask) bool {
@@ -1393,23 +1393,23 @@ type GithubEvents struct {
 	Events []string `json:"events,omitempty" protobuf:"bytes,5,rep,name=events"`
 }
 
-//Run Schedule is a specification for job schedule
+// RunSchedule specifies the schedule for a Job to be executed
 type RunSchedule struct {
-	// Active denote that the schedule is enabled
+	// Indicates if the schedule is enabled and the Jobs associated it will be created at the specified time
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Enabled *bool `json:"enabled,omitempty" protobuf:"bytes,1,opt,name=enabled"`
-	// The start time of the schedule
+	// The time of the day when the schedule will be executed
 	// +kubebuilder:validation:Optional
 	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,2,opt,name=startTime"`
-	// EndTime is the end time of the schedule
+	// The time of the day when the schedule is expected to conclude
 	// +kubebuilder:validation:Optional
 	EndTime *metav1.Time `json:"endTime,omitempty" protobuf:"bytes,3,opt,name=endTime"`
-	// Cron string of the schedule.
+	// The cron string of the schedule. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm for more information
 	// +kubebuilder:validation:Optional
 	Cron *string `json:"cron,omitempty" protobuf:"bytes,4,opt,name=cron"`
 	// +kubebuilder:validation:Optional
-	// The type of schedule events.
+	// The type of schedule, which can be a frequency interval or a cron expression
 	Type TriggerScheduleEventType `json:"type,omitempty" protobuf:"bytes,5,opt,name=type"`
 }
 
@@ -1418,51 +1418,51 @@ type Measurement struct {
 	// The metric type name (e.g. F1 / Accuracy)
 	// +kubebuilder:validation:Required
 	Metric *Metric `json:"metric" protobuf:"bytes,1,opt,name=metric"`
-	// The value for this model
+	// The value of the metric
 	// +kubebuilder:validation:Required
 	// +required
 	Value *float64 `json:"value" protobuf:"bytes,2,opt,name=value"`
 }
 
-// The desired state of the model.
+// ModelDeploymentSpec describes how a single model should be deployed with a Predictor, and
+// how prediction traffic will be routed to the model
 type ModelDeploymentSpec struct {
-	// ModelName is the name of the model. The name must be unique within
+	// The name of a model, which is fully complete and packaged, that exists in the same DataProduct namespace
+	// as the resource which specifies the ModelDeploymentSpec
 	// +kubebuilder:validation:Required
 	// +required
 	ModelName *string `json:"modelName,omitempty" protobuf:"bytes,1,opt,name=modelName"`
-	// The version of the model. Note that a single predictor might serve different models
+	// The version of the model
 	ModelVersion *string `json:"modelVersion,omitempty" protobuf:"bytes,2,opt,name=modelVersion"`
-	// How much traffic this deployment model should serve.
-	// Default: 100.
+	// The maximum percentage of traffic that will be served by the model
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:Maximum=100
 	// +kubebuilder:validation:Minimum=0
 	MaxTraffic *int32 `json:"maxTraffic,omitempty" protobuf:"varint,3,opt,name=maxTraffic"`
-	// Traffic is the current amount of production traffic served by this model.
+	// The minimum percentage of traffic that will be served by the model
 	// +kubebuilder:validation:Maximum=100
 	// +kubebuilder:validation:Minimum=0
-	// Default: 100.
 	// +kubebuilder:validation:Optional
 	Traffic *int32 `json:"traffic,omitempty" protobuf:"varint,4,opt,name=traffic"`
-	// Canary denotes if this deployment is staged release. A staged release will serve traffic in incerements
+	// Canary denotes if this deployment is a staged release. A staged release will serve traffic in increments
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Canary *bool `json:"canary,omitempty" protobuf:"varint,5,opt,name=canary"`
-	// Shadow denotes if the model is running in shadow mode. a shadow model face the production traffic, however, the predictions are not
+	// Shadow denotes if the model is running in shadow mode. A shadow model face the production traffic, however, the predictions are not
 	// served back to the client
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Shadow *bool `json:"shadow,omitempty" protobuf:"varint,6,opt,name=shadow"`
-	// A released model is a model that should serve production traffic.
+	// A released model is a model that should serve production traffic
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Released *bool `json:"released,omitempty" protobuf:"varint,7,opt,name=released"`
-	// a deployed model is a model whose containers are up, but does not serve production traffic.
+	// A deployed model is a model whose containers are up, but does not serve production traffic
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Deployed *bool `json:"deployed,omitempty" protobuf:"bytes,8,opt,name=deployed"`
 	// MountTar means that we would mount the model tar file. Else we would use baked image.
-	// Default: true
+	// +kubebuilder:default:=true
 	MountTar *bool `json:"mountTar,omitempty" protobuf:"bytes,9,opt,name=mountTar"`
 	// TrafficSelector is a filter on the traffic to this model
 	// +kubebuilder:validation:Optional
@@ -1670,53 +1670,53 @@ const (
 	ModalityTypeEpochs ModalityType = "epochs"
 )
 
+// NotificationSpec specifies which Notifiers to forward Alert resources to
 type NotificationSpec struct {
-	// TTL for error msgs. In seconds
+	// Time-to-live for error messages, in seconds
 	// +kubebuilder:default:=3600
 	// +kubebuilder:validation:Optional
 	ErrorTTL *int32 `json:"errorTTL,omitempty" protobuf:"varint,2,opt,name=errorTTL"`
-	// TTL for success msgs. In seconds
+	// Time-to-live for success messages. In seconds
 	// +kubebuilder:default:=3600
 	// +kubebuilder:validation:Optional
 	SuccessTTL *int32 `json:"successTTL,omitempty" protobuf:"varint,4,opt,name=successTTL"`
-	// The name of the notifier.
+	// The name of the Notifier which exists in the same tenant as the resource specifying the NotificationSpec
 	// +kubebuilder:default:= ""
 	// +kubebuilder:validation:Optional
 	NotifierName *string `json:"notifierName,omitempty" protobuf:"bytes,5,opt,name=notifierName"`
-	// Select the target notifiers by a label.
+	// The labels which will be searched for in all Notifiers to determine the target Notifiers
 	// +kubebuilder:validation:Optional
 	Selector map[string]string `json:"selector,omitempty" protobuf:"bytes,6,opt,name=selector"`
 }
 
-// type to represent the logs for a given object. This type should be part of any objects that create logs (e.g. job logs)
+// Logs describes the location of logs produced by every workload of a resource
 type Logs struct {
-	// The bucket logs.
+	// The name of the VirtualBucket resource where the logs are stored
 	// +kubebuilder:validation:Optional
 	BucketName string `json:"bucketName,omitempty" protobuf:"bytes,1,opt,name=bucketName"`
-	// Jobs per containers
+	// The collection of ContainerLog objects that describe the location of logs per container
 	// +kubebuilder:validation:Optional
 	Containers []ContainerLog `json:"containers,omitempty" protobuf:"bytes,2,rep,name=containers"`
 }
 
-// Define log for one container
+// ContainerLog describes the location of logs for a single Job
 type ContainerLog struct {
-	// The Job name
+	// The name of the Job
 	Job string `json:"job,omitempty" protobuf:"bytes,1,rep,name=job"`
 	// The container name
 	Container string `json:"container,omitempty" protobuf:"bytes,2,rep,name=container"`
-	// The key load
+	// The path to the log in the bucket
 	Key string `json:"key,omitempty" protobuf:"bytes,3,rep,name=key"`
 }
 
 // +kubebuilder:validation:Enum="multipicative";"additive";"auto";"none"
-// Predictor format represent the API implementation of the model
 type SeasonalityMode string
 
 const (
-	Multipicative SeasonalityMode = "multipicative"
-	Addadive      SeasonalityMode = "additive"
-	Auto          SeasonalityMode = "auto"
-	None          SeasonalityMode = "none"
+	Multiplicative SeasonalityMode = "multiplicative"
+	Additive       SeasonalityMode = "additive"
+	Auto           SeasonalityMode = "auto"
+	None           SeasonalityMode = "none"
 )
 
 // Use for color attribute
@@ -1900,16 +1900,17 @@ type ConfusionMatrix struct {
 	Rows []ConfusionMatrixRow `json:"rows,omitempty" protobuf:"bytes,1,opt,name=rows"`
 }
 
-// Specification for resource
+// ResourceSpec specifies the amount of resources that will be allocated to a workload
 type ResourceSpec struct {
 	// If this resource is based on the workload, this field contain the name of the workload.
+	// The name of a WorkloadClass. The system will use the resource requirements described by the WorkloadClass
 	// +kubebuilder:validation:Optional
 	WorkloadName *string `json:"workloadName,omitempty" protobuf:"bytes,1,opt,name=workloadName"`
-	// Reference to the managed gpu trainer image
+	// Reference to the managed CPU trainer image, used internally
 	CpuImage v1.ObjectReference `json:"cpuImage,omitempty" protobuf:"bytes,2,opt,name=cpuImage"`
-	// Reference to the managed gpu trainer image
+	// Reference to the managed GPU trainer image, used internally
 	GpuImage v1.ObjectReference `json:"gpuImage,omitempty" protobuf:"bytes,3,opt,name=gpuImage"`
-	// Custom resource requirments
+	// The custom resource requirements for the workload, which are used if `WorkloadName` is not set
 	// +kubebuilder:validation:Optional
 	Requirements *v1.ResourceRequirements `json:"requirements,omitempty" protobuf:"bytes,4,opt,name=requirements"`
 }
@@ -1926,58 +1927,57 @@ const (
 	DataSplitAuto                   DataSplitMethod = "auto"
 )
 
-// Define the histogram data
-
+// HistogramData contains the data to construct a histogram image
 type HistogramData struct {
-	// The bins if this histogram describe continous variables
+	// The bins if the histogram describes continous variables
 	Bins []float64 `json:"bins,omitempty" protobuf:"bytes,1,rep,name=bins"`
 	// The set of values per bin
 	Values []float64 `json:"values,omitempty" protobuf:"bytes,2,rep,name=values"`
-	// The name of the categories, one per bin is this a categorical histogram
-	// Empty is this is not a categorical variable.
+	// The name of the categories, one per bin if this is a categorical histogram
 	Categories []string `json:"categories,omitempty" protobuf:"bytes,3,rep,name=categories"`
 }
 
-// Define the premissions
-
+// PermissionsSpec specifies the Accounts that have access to a DataProduct or Tenant namespace
 type PermissionsSpec struct {
 	Stakeholders []Stakeholder `json:"stakeholders,omitempty" protobuf:"bytes,1,opt,name=stakeholders"`
 }
 
+// Stakeholder specifies the User Role Classes of an individual Account
 type Stakeholder struct {
+	// The name of an Account
 	AccountName string `json:"account,omitempty" protobuf:"bytes,1,opt,name=account"`
-	// assign roles to account
+	// The object references to UserRoleClass resources which describe the actions the Account may perform
 	Roles []v1.ObjectReference `json:"roles,omitempty" protobuf:"bytes,2,opt,name=roles"`
 }
 
-// Store the images that were used during training, reporting and profiling
+// Images describe the Docker images used internally to perform workloads
 type Images struct {
 	// The image used during training
 	// +kubebuilder:validation:Optional
 	TrainerImage *string `json:"trainerImage,omitempty" protobuf:"bytes,1,opt,name=trainerImage"`
-	// The image used during training for data operations.
+	// The image used for data operations
 	// +kubebuilder:validation:Optional
 	DataImage *string `json:"dataImage,omitempty" protobuf:"bytes,2,opt,name=dataImage"`
-	// The image used during training for data operations.
+	// The image used to deploy models
 	// +kubebuilder:validation:Optional
 	PublisherImage *string `json:"publisherImage,omitempty" protobuf:"bytes,3,opt,name=publisherImage"`
 }
 
-// Describe the last run status for objects which have runs (e.g. model pipeline)
+// LastRunStatus describes the status of a single run for a run-based resource (such as a pipeline)
 type LastRunStatus struct {
 	Name string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
-	// the status of the last run
+	// The status of the last run
 	// +kubebuilder:validation:Optional
 	Status string `json:"status,omitempty" protobuf:"bytes,2,opt,name=status"`
 	// The last run time
 	// +kubebuilder:validation:Optional
 	CompletionTime *metav1.Time `json:"completionTime,omitempty" protobuf:"bytes,3,opt,name=completionTime"`
-	// Last run duration in seconds
+	// In the case of failure, the Dataset resource controller will set this field with a failure reason
 	// +kubebuilder:validation:Optional
 	Duration int32 `json:"duration,omitempty" protobuf:"bytes,4,opt,name=duration"`
-	// Update in case of terminal failure
+	// In the case of failure, the failure reason
 	// Borrowed from cluster api controller
 	FailureReason *StatusError `json:"failureReason,omitempty" protobuf:"bytes,5,opt,name=failureReason"`
-	// Update in case of terminal failure message
+	// In the case of failure, the failure message
 	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,6,opt,name=failureMessage"`
 }
