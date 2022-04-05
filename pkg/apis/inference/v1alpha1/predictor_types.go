@@ -295,10 +295,13 @@ type PredictorStatus struct {
 	// Update in case of terminal failure message
 	//+kubebuilder:validation:Optional
 	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,20,opt,name=failureMessage"`
+	// The status of the load balancer, if the predictor uses load balancer
+	//+kubebuilder:validation:Optional
+	LoadBalancerStatus *v1.LoadBalancerStatus `json:"loadBalancerStatus,omitempty" protobuf:"bytes,21,opt,name=loadBalancerStatus"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []PredictorCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,21,rep,name=conditions"`
+	Conditions []PredictorCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,22,rep,name=conditions"`
 }
 
 type PredictorHealth struct {

@@ -13916,7 +13916,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec.pr
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.repeatedFields_ = [1,9,21];
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.repeatedFields_ = [1,9,22];
 
 
 
@@ -13968,6 +13968,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.
     proxyserviceref: (f = msg.getProxyserviceref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     failurereason: (f = jspb.Message.getField(msg, 19)) == null ? undefined : f,
     failuremessage: (f = jspb.Message.getField(msg, 20)) == null ? undefined : f,
+    loadbalancerstatus: (f = msg.getLoadbalancerstatus()) && k8s_io_api_core_v1_generated_pb.LoadBalancerStatus.toObject(includeInstance, f),
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorCondition.toObject, includeInstance)
   };
@@ -14083,6 +14084,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.
       msg.setFailuremessage(value);
       break;
     case 21:
+      var value = new k8s_io_api_core_v1_generated_pb.LoadBalancerStatus;
+      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.LoadBalancerStatus.deserializeBinaryFromReader);
+      msg.setLoadbalancerstatus(value);
+      break;
+    case 22:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorCondition;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorCondition.deserializeBinaryFromReader);
       msg.addConditions(value);
@@ -14243,10 +14249,18 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.
       f
     );
   }
+  f = message.getLoadbalancerstatus();
+  if (f != null) {
+    writer.writeMessage(
+      21,
+      f,
+      k8s_io_api_core_v1_generated_pb.LoadBalancerStatus.serializeBinaryToWriter
+    );
+  }
   f = message.getConditionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      21,
+      22,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorCondition.serializeBinaryToWriter
     );
@@ -14877,12 +14891,49 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.
 
 
 /**
- * repeated PredictorCondition conditions = 21;
+ * optional k8s.io.api.core.v1.LoadBalancerStatus loadBalancerStatus = 21;
+ * @return {?proto.k8s.io.api.core.v1.LoadBalancerStatus}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.getLoadbalancerstatus = function() {
+  return /** @type{?proto.k8s.io.api.core.v1.LoadBalancerStatus} */ (
+    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.LoadBalancerStatus, 21));
+};
+
+
+/**
+ * @param {?proto.k8s.io.api.core.v1.LoadBalancerStatus|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.setLoadbalancerstatus = function(value) {
+  return jspb.Message.setWrapperField(this, 21, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.clearLoadbalancerstatus = function() {
+  return this.setLoadbalancerstatus(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.hasLoadbalancerstatus = function() {
+  return jspb.Message.getField(this, 21) != null;
+};
+
+
+/**
+ * repeated PredictorCondition conditions = 22;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorCondition>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.getConditionsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorCondition, 21));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorCondition, 22));
 };
 
 
@@ -14891,7 +14942,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.setConditionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 21, value);
+  return jspb.Message.setRepeatedWrapperField(this, 22, value);
 };
 
 
@@ -14901,7 +14952,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorCondition}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 21, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 22, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorCondition, opt_index);
 };
 
 

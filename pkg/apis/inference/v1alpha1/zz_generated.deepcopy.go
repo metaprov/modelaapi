@@ -1290,6 +1290,11 @@ func (in *PredictorStatus) DeepCopyInto(out *PredictorStatus) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.LoadBalancerStatus != nil {
+		in, out := &in.LoadBalancerStatus, &out.LoadBalancerStatus
+		*out = new(v1.LoadBalancerStatus)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.Conditions != nil {
 		in, out := &in.Conditions, &out.Conditions
 		*out = make([]PredictorCondition, len(*in))

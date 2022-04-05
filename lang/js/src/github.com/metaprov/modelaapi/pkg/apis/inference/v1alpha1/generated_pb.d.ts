@@ -1501,6 +1501,11 @@ export class PredictorStatus extends jspb.Message {
   getFailuremessage(): string;
   setFailuremessage(value: string): PredictorStatus;
 
+  getLoadbalancerstatus(): k8s_io_api_core_v1_generated_pb.LoadBalancerStatus | undefined;
+  setLoadbalancerstatus(value?: k8s_io_api_core_v1_generated_pb.LoadBalancerStatus): PredictorStatus;
+  hasLoadbalancerstatus(): boolean;
+  clearLoadbalancerstatus(): PredictorStatus;
+
   getConditionsList(): Array<PredictorCondition>;
   setConditionsList(value: Array<PredictorCondition>): PredictorStatus;
   clearConditionsList(): PredictorStatus;
@@ -1533,6 +1538,7 @@ export namespace PredictorStatus {
     proxyserviceref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     failurereason: string,
     failuremessage: string,
+    loadbalancerstatus?: k8s_io_api_core_v1_generated_pb.LoadBalancerStatus.AsObject,
     conditionsList: Array<PredictorCondition.AsObject>,
   }
 }

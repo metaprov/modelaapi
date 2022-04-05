@@ -987,10 +987,14 @@ message PredictorStatus {
   // +kubebuilder:validation:Optional
   optional string failureMessage = 20;
 
+  // The status of the load balancer, if the predictor uses load balancer
+  // +kubebuilder:validation:Optional
+  optional k8s.io.api.core.v1.LoadBalancerStatus loadBalancerStatus = 21;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated PredictorCondition conditions = 21;
+  repeated PredictorCondition conditions = 22;
 }
 
 message ProgressiveSpec {
