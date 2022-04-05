@@ -536,7 +536,7 @@ type StudySpec struct {
 	// +kubebuilder:validation:Optional
 	TTL *int32 `json:"ttl,omitempty" protobuf:"varint,32,opt,name=ttl"`
 	// Model Version is assigned to all the models from this study.
-	// +kubebuilder:default:=0
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	ModelVersion *string `json:"modelVersion,omitempty" protobuf:"varint,33,opt,name=modelVersion"`
 }

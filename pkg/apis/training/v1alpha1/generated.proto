@@ -1830,8 +1830,7 @@ message ModelSpec {
   optional string versionName = 2;
 
   // ModelVersion is an assigned version to the model.
-  // +kubebuilder:validation:Required
-  // +required
+  // +kubebuilder:default:=""
   optional string modelVersion = 4;
 
   // StudyName reference the study for this model. IF empty, the model is stand alone
@@ -3291,7 +3290,7 @@ message StudySpec {
   optional int32 ttl = 32;
 
   // Model Version is assigned to all the models from this study.
-  // +kubebuilder:default:=0
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string modelVersion = 33;
 }

@@ -212,8 +212,7 @@ type ModelSpec struct {
 	// +required
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,2,opt,name=versionName"`
 	// ModelVersion is an assigned version to the model.
-	// +kubebuilder:validation:Required
-	// +required
+	// +kubebuilder:default:=""
 	ModelVersion *string `json:"modelVersion,omitempty" protobuf:"bytes,4,opt,name=modelVersion"`
 	// StudyName reference the study for this model. IF empty, the model is stand alone
 	// +kubebuilder:validation:Required

@@ -1083,7 +1083,7 @@ spec:
                   model image, at the end of training.
                 type: boolean
               modelVersion:
-                default: 0
+                default: ""
                 description: Model Version is assigned to all the models from this
                   study.
                 type: string

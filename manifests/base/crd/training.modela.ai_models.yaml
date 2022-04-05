@@ -1211,6 +1211,7 @@ spec:
                 - test
                 type: string
               modelVersion:
+                default: ""
                 description: ModelVersion is an assigned version to the model.
                 type: string
               nplEstimator:
