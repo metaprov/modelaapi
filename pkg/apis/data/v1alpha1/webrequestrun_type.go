@@ -122,6 +122,10 @@ type WebRequestRunSpec struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	WebRequestName *string `json:"webRequestName,omitempty" protobuf:"bytes,13,opt,name=webRequestName"`
+	// The execution env of this web request run.
+	// If none, use the default lab from the data product
+	// +kubebuilder:validation:Optional
+	LabRef v1.ObjectReference `json:"labRef,omitempty" protobuf:"bytes,14,opt,name=labRef"`
 }
 
 // WebRequestRunStatus defines the observed state of WebRequestRun

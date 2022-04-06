@@ -1562,6 +1562,9 @@ export class DataProductStatus extends jspb.Message {
   getFailuremessage(): string;
   setFailuremessage(value: string): DataProductStatus;
 
+  getBaselineversion(): string;
+  setBaselineversion(value: string): DataProductStatus;
+
   getConditionsList(): Array<DataProductCondition>;
   setConditionsList(value: Array<DataProductCondition>): DataProductStatus;
   clearConditionsList(): DataProductStatus;
@@ -1595,6 +1598,7 @@ export namespace DataProductStatus {
     totalerroralerts: number,
     failurereason: string,
     failuremessage: string,
+    baselineversion: string,
     conditionsList: Array<DataProductCondition.AsObject>,
   }
 }
@@ -2181,6 +2185,11 @@ export class DatasetSpec extends jspb.Message {
   getFast(): boolean;
   setFast(value: boolean): DatasetSpec;
 
+  getLabref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setLabref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): DatasetSpec;
+  hasLabref(): boolean;
+  clearLabref(): DatasetSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DatasetSpec.AsObject;
   static toObject(includeInstance: boolean, msg: DatasetSpec): DatasetSpec.AsObject;
@@ -2212,6 +2221,7 @@ export namespace DatasetSpec {
     notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
     correlation?: CorrelationSpec.AsObject,
     fast: boolean,
+    labref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
   }
 }
 
@@ -4854,8 +4864,10 @@ export class RecipeRunSpec extends jspb.Message {
   getRecipename(): string;
   setRecipename(value: string): RecipeRunSpec;
 
-  getLabname(): string;
-  setLabname(value: string): RecipeRunSpec;
+  getLabref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setLabref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): RecipeRunSpec;
+  hasLabref(): boolean;
+  clearLabref(): RecipeRunSpec;
 
   getOutput(): DataLocation | undefined;
   setOutput(value?: DataLocation): RecipeRunSpec;
@@ -4882,7 +4894,7 @@ export namespace RecipeRunSpec {
   export type AsObject = {
     versionname: string,
     recipename: string,
-    labname: string,
+    labref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     output?: DataLocation.AsObject,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     ttl: number,
@@ -5524,6 +5536,11 @@ export class SqlQueryRunSpec extends jspb.Message {
   getSqlqueryname(): string;
   setSqlqueryname(value: string): SqlQueryRunSpec;
 
+  getLabref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setLabref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): SqlQueryRunSpec;
+  hasLabref(): boolean;
+  clearLabref(): SqlQueryRunSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SqlQueryRunSpec.AsObject;
   static toObject(includeInstance: boolean, msg: SqlQueryRunSpec): SqlQueryRunSpec.AsObject;
@@ -5548,6 +5565,7 @@ export namespace SqlQueryRunSpec {
     materialized: boolean,
     reported: boolean,
     sqlqueryname: string,
+    labref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
   }
 }
 
@@ -6067,6 +6085,11 @@ export class WebRequestRunSpec extends jspb.Message {
   getWebrequestname(): string;
   setWebrequestname(value: string): WebRequestRunSpec;
 
+  getLabref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setLabref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): WebRequestRunSpec;
+  hasLabref(): boolean;
+  clearLabref(): WebRequestRunSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): WebRequestRunSpec.AsObject;
   static toObject(includeInstance: boolean, msg: WebRequestRunSpec): WebRequestRunSpec.AsObject;
@@ -6090,6 +6113,7 @@ export namespace WebRequestRunSpec {
     reported: boolean,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     webrequestname: string,
+    labref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
   }
 }
 

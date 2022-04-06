@@ -78,9 +78,8 @@ type RecipeRunSpec struct {
 	// +kubebuilder:validation:Optional
 	RecipeName *string `json:"recipeName,omitempty" protobuf:"bytes,2,opt,name=recipeName"`
 	// The execution env of this recipes
-	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	LabName *string `json:"labName,omitempty" protobuf:"bytes,3,opt,name=labName"`
+	LabRef v1.ObjectReference `json:"labRef,omitempty" protobuf:"bytes,3,opt,name=labRef"`
 	// The location of the data output.
 	// +required.
 	Output DataLocation `json:"output,omitempty" protobuf:"bytes,4,opt,name=output"`

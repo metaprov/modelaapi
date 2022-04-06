@@ -129,6 +129,9 @@ type SqlQueryRunSpec struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	SqlQueryName *string `json:"sqlQueryName,omitempty" protobuf:"bytes,14,opt,name=sqlQueryName"`
+	// The execution env of this recipes
+	// +kubebuilder:validation:Optional
+	LabRef v1.ObjectReference `json:"labRef,omitempty" protobuf:"bytes,15,opt,name=labRef"`
 }
 
 // SqlQueryRunStatus defines the observed state of SqlQueryRun

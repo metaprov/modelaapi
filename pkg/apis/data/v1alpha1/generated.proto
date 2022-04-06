@@ -1240,10 +1240,13 @@ message DataProductStatus {
   // Update in case of terminal failure message
   optional string failureMessage = 18;
 
+  // Update in case of terminal failure message
+  optional string baselineVersion = 19;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated DataProductCondition conditions = 19;
+  repeated DataProductCondition conditions = 20;
 }
 
 // DataProductVersion represents a single version of a DataProduct, which should increment versions in response to changes in data
@@ -1653,6 +1656,9 @@ message DatasetSpec {
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool fast = 22;
+
+  // +kubebuilder:validation:Optional
+  optional k8s.io.api.core.v1.ObjectReference labRef = 23;
 }
 
 // DatasetStatistics contains statistics about the Dataset's overall data, as well as every feature of the data. The
@@ -3240,9 +3246,8 @@ message RecipeRunSpec {
   optional string recipeName = 2;
 
   // The execution env of this recipes
-  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string labName = 3;
+  optional k8s.io.api.core.v1.ObjectReference labRef = 3;
 
   // The location of the data output.
   // +required.
@@ -3662,6 +3667,10 @@ message SqlQueryRunSpec {
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string sqlQueryName = 14;
+
+  // The execution env of this recipes
+  // +kubebuilder:validation:Optional
+  optional k8s.io.api.core.v1.ObjectReference labRef = 15;
 }
 
 // SqlQueryRunStatus defines the observed state of SqlQueryRun
@@ -3994,6 +4003,11 @@ message WebRequestRunSpec {
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string webRequestName = 13;
+
+  // The execution env of this web request run.
+  // If none, use the default lab from the data product
+  // +kubebuilder:validation:Optional
+  optional k8s.io.api.core.v1.ObjectReference labRef = 14;
 }
 
 // WebRequestRunStatus defines the observed state of WebRequestRun

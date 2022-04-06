@@ -35,6 +35,49 @@ export class TenantServiceClient {
     this.options_ = options;
   }
 
+  methodInfoListTenantAlerts = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.tenant.v1.TenantService/ListTenantAlerts',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.ListTenantAlertsRequest,
+    github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.ListTenantAlertsResponse,
+    (request: github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.ListTenantAlertsRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.ListTenantAlertsResponse.deserializeBinary
+  );
+
+  listTenantAlerts(
+    request: github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.ListTenantAlertsRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.ListTenantAlertsResponse>;
+
+  listTenantAlerts(
+    request: github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.ListTenantAlertsRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.ListTenantAlertsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.ListTenantAlertsResponse>;
+
+  listTenantAlerts(
+    request: github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.ListTenantAlertsRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.ListTenantAlertsResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.tenant.v1.TenantService/ListTenantAlerts',
+        request,
+        metadata || {},
+        this.methodInfoListTenantAlerts,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.tenant.v1.TenantService/ListTenantAlerts',
+    request,
+    metadata || {},
+    this.methodInfoListTenantAlerts);
+  }
+
   methodInfoListTenants = new grpcWeb.MethodDescriptor(
     '/github.com.metaprov.modelaapi.services.tenant.v1.TenantService/ListTenants',
     grpcWeb.MethodType.UNARY,

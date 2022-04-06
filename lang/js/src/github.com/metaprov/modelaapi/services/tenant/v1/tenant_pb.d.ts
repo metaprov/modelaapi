@@ -8,6 +8,64 @@ import * as github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_p
 import * as github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1/generated_pb';
 
 
+export class ListTenantAlertsRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): ListTenantAlertsRequest;
+
+  getLabelsMap(): jspb.Map<string, string>;
+  clearLabelsMap(): ListTenantAlertsRequest;
+
+  getPageSize(): number;
+  setPageSize(value: number): ListTenantAlertsRequest;
+
+  getPageToken(): string;
+  setPageToken(value: string): ListTenantAlertsRequest;
+
+  getOrderBy(): string;
+  setOrderBy(value: string): ListTenantAlertsRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListTenantAlertsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListTenantAlertsRequest): ListTenantAlertsRequest.AsObject;
+  static serializeBinaryToWriter(message: ListTenantAlertsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListTenantAlertsRequest;
+  static deserializeBinaryFromReader(message: ListTenantAlertsRequest, reader: jspb.BinaryReader): ListTenantAlertsRequest;
+}
+
+export namespace ListTenantAlertsRequest {
+  export type AsObject = {
+    namespace: string,
+    labelsMap: Array<[string, string]>,
+    pageSize: number,
+    pageToken: string,
+    orderBy: string,
+  }
+}
+
+export class ListTenantAlertsResponse extends jspb.Message {
+  getAlerts(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.AlertList | undefined;
+  setAlerts(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.AlertList): ListTenantAlertsResponse;
+  hasAlerts(): boolean;
+  clearAlerts(): ListTenantAlertsResponse;
+
+  getNextPageToken(): string;
+  setNextPageToken(value: string): ListTenantAlertsResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListTenantAlertsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListTenantAlertsResponse): ListTenantAlertsResponse.AsObject;
+  static serializeBinaryToWriter(message: ListTenantAlertsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListTenantAlertsResponse;
+  static deserializeBinaryFromReader(message: ListTenantAlertsResponse, reader: jspb.BinaryReader): ListTenantAlertsResponse;
+}
+
+export namespace ListTenantAlertsResponse {
+  export type AsObject = {
+    alerts?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.AlertList.AsObject,
+    nextPageToken: string,
+  }
+}
+
 export class ListTenantsRequest extends jspb.Message {
   getNamespace(): string;
   setNamespace(value: string): ListTenantsRequest;

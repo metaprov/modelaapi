@@ -3151,6 +3151,8 @@ message StudySpec {
   optional string description = 2;
 
   // The lab where the model should be trained
+  // If not lab specified, the default lab from the data product will be used.
+  // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference labRef = 3;
 
   // DatasetName refer to the dataset object for which the study is for.

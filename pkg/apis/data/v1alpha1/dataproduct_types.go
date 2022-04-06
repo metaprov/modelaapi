@@ -234,10 +234,12 @@ type DataProductStatus struct {
 	// Update in case of terminal failure message
 	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,18,opt,name=failureMessage"`
 
+	// Update in case of terminal failure message
+	BaselineVersion *string `json:"baselineVersion,omitempty" protobuf:"bytes,19,opt,name=baselineVersion"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []DataProductCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,19,rep,name=conditions"`
+	Conditions []DataProductCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,20,rep,name=conditions"`
 }
 
 // +kubebuilder:object:root=true

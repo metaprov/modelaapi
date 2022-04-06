@@ -427,6 +427,8 @@ type StudySpec struct {
 	// +kubebuilder:validation:Optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
 	// The lab where the model should be trained
+	// If not lab specified, the default lab from the data product will be used.
+	// +kubebuilder:validation:Optional
 	LabRef v1.ObjectReference `json:"labRef,omitempty" protobuf:"bytes,3,opt,name=labRef"`
 	// DatasetName refer to the dataset object for which the study is for.
 	// +kubebuilder:validation:Required
