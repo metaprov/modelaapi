@@ -504,6 +504,7 @@ func (b *ModelAutobuilder) CreateDataset(notification catalog.NotificationSpec) 
 			},
 		},
 		Spec: data.DatasetSpec{
+			Fast:           b.Spec.Fast,
 			Type:           &b.Spec.DatasetType,
 			Notification:   notification,
 			Owner:          b.Spec.Owner,
@@ -547,6 +548,7 @@ func (b *ModelAutobuilder) CreateStudy(notification catalog.NotificationSpec) *S
 			},
 		},
 		Spec: StudySpec{
+			Fast: b.Spec.Fast,
 			FeatureEngineeringSearch: FeatureEngineeringSearchSpec{
 				Enabled: util.BoolPtr(*b.Spec.FeatureEngineering),
 				FeatureSelectionTemplate: FeatureSelectionSpec{
