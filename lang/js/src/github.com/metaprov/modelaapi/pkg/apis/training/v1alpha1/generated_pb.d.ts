@@ -1749,6 +1749,9 @@ export class ModelAutobuilderSpec extends jspb.Message {
   getDatasettype(): string;
   setDatasettype(value: string): ModelAutobuilderSpec;
 
+  getFast(): boolean;
+  setFast(value: boolean): ModelAutobuilderSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelAutobuilderSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelAutobuilderSpec): ModelAutobuilderSpec.AsObject;
@@ -1783,6 +1786,7 @@ export namespace ModelAutobuilderSpec {
     labref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     servingsiteref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     datasettype: string,
+    fast: boolean,
   }
 }
 

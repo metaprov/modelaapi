@@ -18002,7 +18002,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderS
     resources: (f = msg.getResources()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.toObject(includeInstance, f),
     labref: (f = msg.getLabref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     servingsiteref: (f = msg.getServingsiteref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
-    datasettype: (f = jspb.Message.getField(msg, 24)) == null ? undefined : f
+    datasettype: (f = jspb.Message.getField(msg, 24)) == null ? undefined : f,
+    fast: (f = jspb.Message.getBooleanField(msg, 25)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -18139,6 +18140,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderS
     case 24:
       var value = /** @type {string} */ (reader.readString());
       msg.setDatasettype(value);
+      break;
+    case 25:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setFast(value);
       break;
     default:
       reader.skipField();
@@ -18339,6 +18344,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderS
   if (f != null) {
     writer.writeString(
       24,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 25));
+  if (f != null) {
+    writer.writeBool(
+      25,
       f
     );
   }
@@ -19211,6 +19223,42 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderS
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderSpec.prototype.hasDatasettype = function() {
   return jspb.Message.getField(this, 24) != null;
+};
+
+
+/**
+ * optional bool fast = 25;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderSpec.prototype.getFast = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 25, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderSpec.prototype.setFast = function(value) {
+  return jspb.Message.setField(this, 25, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderSpec.prototype.clearFast = function() {
+  return jspb.Message.setField(this, 25, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderSpec.prototype.hasFast = function() {
+  return jspb.Message.getField(this, 25) != null;
 };
 
 

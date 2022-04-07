@@ -196,6 +196,10 @@ type ModelAutobuilderSpec struct {
 	// Dataset type is the type of the dataset (tabular / vision)
 	// +kubebuilder:validation:Optional
 	DatasetType catalog.DatasetType `json:"datasetType,omitempty" protobuf:"bytes,24,opt,name=datasetType"`
+	// Specify fast mode for model auto builder.
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Fast *bool `json:"fast,omitempty" protobuf:"varint,25,opt,name=fast"`
 }
 
 // ModelAutobuilderStatus define the observed state of the pipeline

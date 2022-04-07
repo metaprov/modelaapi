@@ -997,6 +997,10 @@ spec:
                 maxLength: 253
                 pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
                 type: string
+              fast:
+                default: false
+                description: Specify fast mode for model auto builder.
+                type: boolean
               featureEngineering:
                 default: false
                 description: If true specify feature engineering
