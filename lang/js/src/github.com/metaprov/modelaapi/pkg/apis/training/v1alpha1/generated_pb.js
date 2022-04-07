@@ -42362,7 +42362,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.toObje
     resources: (f = msg.getResources()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.toObject(includeInstance, f),
     activedeadlineseconds: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
     custom: (f = msg.getCustom()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CustomReportSpec.toObject(includeInstance, f),
-    cronreportname: (f = jspb.Message.getField(msg, 12)) == null ? undefined : f
+    cronreportname: (f = jspb.Message.getField(msg, 12)) == null ? undefined : f,
+    labref: (f = msg.getLabref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -42446,6 +42447,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.deseri
     case 12:
       var value = /** @type {string} */ (reader.readString());
       msg.setCronreportname(value);
+      break;
+    case 13:
+      var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
+      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
+      msg.setLabref(value);
       break;
     default:
       reader.skipField();
@@ -42555,6 +42561,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.serial
     writer.writeString(
       12,
       f
+    );
+  }
+  f = message.getLabref();
+  if (f != null) {
+    writer.writeMessage(
+      13,
+      f,
+      k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
     );
   }
 };
@@ -42957,6 +42971,43 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.protot
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.prototype.hasCronreportname = function() {
   return jspb.Message.getField(this, 12) != null;
+};
+
+
+/**
+ * optional k8s.io.api.core.v1.ObjectReference labRef = 13;
+ * @return {?proto.k8s.io.api.core.v1.ObjectReference}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.prototype.getLabref = function() {
+  return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
+    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 13));
+};
+
+
+/**
+ * @param {?proto.k8s.io.api.core.v1.ObjectReference|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.prototype.setLabref = function(value) {
+  return jspb.Message.setWrapperField(this, 13, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.prototype.clearLabref = function() {
+  return this.setLabref(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.prototype.hasLabref = function() {
+  return jspb.Message.getField(this, 13) != null;
 };
 
 

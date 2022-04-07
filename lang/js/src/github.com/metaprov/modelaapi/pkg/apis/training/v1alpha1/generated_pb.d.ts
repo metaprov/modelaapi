@@ -4244,6 +4244,11 @@ export class ReportSpec extends jspb.Message {
   getCronreportname(): string;
   setCronreportname(value: string): ReportSpec;
 
+  getLabref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setLabref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ReportSpec;
+  hasLabref(): boolean;
+  clearLabref(): ReportSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ReportSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ReportSpec): ReportSpec.AsObject;
@@ -4265,6 +4270,7 @@ export namespace ReportSpec {
     activedeadlineseconds: number,
     custom?: CustomReportSpec.AsObject,
     cronreportname: string,
+    labref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
   }
 }
 

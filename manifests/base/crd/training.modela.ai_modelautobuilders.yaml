@@ -1106,10 +1106,10 @@ spec:
                 minimum: 1
                 type: integer
               maxTime:
-                default: 60
+                default: 3600
                 description: Max training time.
                 format: int32
-                maximum: 512
+                maximum: 36000
                 minimum: 1
                 type: integer
               objective:

@@ -125,9 +125,9 @@ type ModelAutobuilderSpec struct {
 	// +kubebuilder:validation:Optional
 	TargetColumn *string `json:"targetColumn,omitempty" protobuf:"bytes,8,opt,name=targetColumn"`
 	// Max training time.
-	// +kubebuilder:validation:Maximum=512
+	// +kubebuilder:validation:Maximum=36000
 	// +kubebuilder:validation:Minimum=1
-	// +kubebuilder:default:=60
+	// +kubebuilder:default:=3600
 	// +kubebuilder:validation:Optional
 	MaxTime *int32 `json:"maxTime,omitempty" protobuf:"varint,9,opt,name=maxTime"`
 	// Max model

@@ -171,6 +171,9 @@ type ReportSpec struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	CronReportName *string `json:"cronReportName,omitempty" protobuf:"bytes,12,opt,name=cronReportName"`
+	// The execution env of this report
+	// +kubebuilder:validation:Optional
+	LabRef v1.ObjectReference `json:"labRef,omitempty" protobuf:"bytes,13,opt,name=labRef"`
 }
 
 // ReportStatus defines the observed state of the report.

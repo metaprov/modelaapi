@@ -1087,9 +1087,9 @@ message ModelAutobuilderSpec {
   optional string targetColumn = 8;
 
   // Max training time.
-  // +kubebuilder:validation:Maximum=512
+  // +kubebuilder:validation:Maximum=36000
   // +kubebuilder:validation:Minimum=1
-  // +kubebuilder:default:=60
+  // +kubebuilder:default:=3600
   // +kubebuilder:validation:Optional
   optional int32 maxTime = 9;
 
@@ -2871,6 +2871,10 @@ message ReportSpec {
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string cronReportName = 12;
+
+  // The execution env of this report
+  // +kubebuilder:validation:Optional
+  optional k8s.io.api.core.v1.ObjectReference labRef = 13;
 }
 
 // ReportStatus defines the observed state of the report.
