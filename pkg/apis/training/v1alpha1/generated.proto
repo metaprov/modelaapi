@@ -1191,70 +1191,73 @@ message ModelAutobuilderStatus {
   // the generated predictor name
   optional string predictorName = 7;
 
+  // the generated predictor name
+  optional string dataappName = 8;
+
   // the name of the image repository
-  optional string imageRepoName = 8;
+  optional string imageRepoName = 9;
 
   // The phase of the auto ml run
   // +kubebuilder:default:="Pending"
   // +kubebuilder:validation:Optional
-  optional string phase = 9;
+  optional string phase = 10;
 
   // number of rows in the dataset
   // +kubebuilder:validation:Optional
-  optional int32 rows = 10;
+  optional int32 rows = 11;
 
   // number of columns, used mainly to show the columns
   // +kubebuilder:validation:Optional
-  optional int32 cols = 11;
+  optional int32 cols = 12;
 
   // file size in bytes
   // +kubebuilder:validation:Optional
-  optional int32 fileSize = 12;
+  optional int32 fileSize = 13;
 
   // Total models created for the study
   // +kubebuilder:validation:Optional
-  optional int32 models = 13;
+  optional int32 models = 14;
 
   // models that were successful during training
   // +kubebuilder:validation:Optional
-  optional int32 trainedModels = 14;
+  optional int32 trainedModels = 15;
 
   // The Best model score, so far.
   // +kubebuilder:validation:Optional
-  optional double bestModelScore = 15;
+  optional double bestModelScore = 16;
 
   // The best estimator, taken from the best model
-  optional ClassicalEstimatorSpec estimator = 16;
+  optional ClassicalEstimatorSpec estimator = 17;
 
   // StartTime is the times that this prediction job started
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 17;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 18;
 
   // CompletionTime is the time that this prediction job finished
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 18;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 19;
 
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 19;
+  optional int64 observedGeneration = 21;
 
   // Update in case of terminal failure
   // Borrowed from cluster api controller
   // +kubebuilder:validation:Optional
-  optional string failureReason = 20;
+  optional string failureReason = 22;
 
   // Update in case of terminal failure message
   // +kubebuilder:validation:Optional
-  optional string failureMessage = 21;
+  optional string failureMessage = 23;
 
   // Last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 22;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 24;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated ModelAutobuilderCondition conditions = 23;
+  repeated ModelAutobuilderCondition conditions = 25;
 }
 
 // ModelCompilerRun represent a single compilation of a model into a target hardware.

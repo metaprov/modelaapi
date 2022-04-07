@@ -1805,6 +1805,9 @@ export class ModelAutobuilderStatus extends jspb.Message {
   getPredictorname(): string;
   setPredictorname(value: string): ModelAutobuilderStatus;
 
+  getDataappname(): string;
+  setDataappname(value: string): ModelAutobuilderStatus;
+
   getImagereponame(): string;
   setImagereponame(value: string): ModelAutobuilderStatus;
 
@@ -1879,6 +1882,7 @@ export namespace ModelAutobuilderStatus {
     studyname: string,
     bestmodelname: string,
     predictorname: string,
+    dataappname: string,
     imagereponame: string,
     phase: string,
     rows: number,

@@ -212,53 +212,55 @@ type ModelAutobuilderStatus struct {
 	BestModelName string `json:"bestModelName,omitempty" protobuf:"bytes,6,opt,name=bestModelName"`
 	// the generated predictor name
 	PredictorName string `json:"predictorName,omitempty" protobuf:"bytes,7,opt,name=predictorName"`
+	// the generated predictor name
+	DataAppName string `json:"dataappName,omitempty" protobuf:"bytes,8,opt,name=dataappName"`
 	// the name of the image repository
-	ImageRepoName string `json:"imageRepoName,omitempty" protobuf:"bytes,8,opt,name=imageRepoName"`
+	ImageRepoName string `json:"imageRepoName,omitempty" protobuf:"bytes,9,opt,name=imageRepoName"`
 	// The phase of the auto ml run
 	// +kubebuilder:default:="Pending"
 	// +kubebuilder:validation:Optional
-	Phase ModelAutobuilderPhase `json:"phase,omitempty" protobuf:"bytes,9,opt,name=phase"`
+	Phase ModelAutobuilderPhase `json:"phase,omitempty" protobuf:"bytes,10,opt,name=phase"`
 	// number of rows in the dataset
 	// +kubebuilder:validation:Optional
-	Rows int32 `json:"rows,omitempty" protobuf:"varint,10,opt,name=rows"`
+	Rows int32 `json:"rows,omitempty" protobuf:"varint,11,opt,name=rows"`
 	// number of columns, used mainly to show the columns
 	// +kubebuilder:validation:Optional
-	Cols int32 `json:"cols,omitempty" protobuf:"varint,11,opt,name=cols"`
+	Cols int32 `json:"cols,omitempty" protobuf:"varint,12,opt,name=cols"`
 	// file size in bytes
 	// +kubebuilder:validation:Optional
-	FileSize int32 `json:"fileSize,omitempty" protobuf:"varint,12,opt,name=fileSize"`
+	FileSize int32 `json:"fileSize,omitempty" protobuf:"varint,13,opt,name=fileSize"`
 	// Total models created for the study
 	// +kubebuilder:validation:Optional
-	Models int32 `json:"models,omitempty" protobuf:"varint,13,opt,name=models"`
+	Models int32 `json:"models,omitempty" protobuf:"varint,14,opt,name=models"`
 	// models that were successful during training
 	// +kubebuilder:validation:Optional
-	TrainedModels int32 `json:"trainedModels,omitempty" protobuf:"varint,14,opt,name=trainedModels"`
+	TrainedModels int32 `json:"trainedModels,omitempty" protobuf:"varint,15,opt,name=trainedModels"`
 	// The Best model score, so far.
 	// +kubebuilder:validation:Optional
-	BestModelScore float64 `json:"bestModelScore,omitempty" protobuf:"bytes,15,opt,name=bestModelScore"`
+	BestModelScore float64 `json:"bestModelScore,omitempty" protobuf:"bytes,16,opt,name=bestModelScore"`
 	// The best estimator, taken from the best model
-	Estimator *ClassicalEstimatorSpec `json:"estimator,omitempty" protobuf:"bytes,16,opt,name=estimator"`
+	Estimator *ClassicalEstimatorSpec `json:"estimator,omitempty" protobuf:"bytes,17,opt,name=estimator"`
 	// StartTime is the times that this prediction job started
 	// +kubebuilder:validation:Optional
-	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,17,opt,name=startTime"`
+	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,18,opt,name=startTime"`
 	// CompletionTime is the time that this prediction job finished
 	// +kubebuilder:validation:Optional
-	EndTime *metav1.Time `json:"endTime,omitempty" protobuf:"bytes,18,opt,name=endTime"`
+	EndTime *metav1.Time `json:"endTime,omitempty" protobuf:"bytes,19,opt,name=endTime"`
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
-	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,19,opt,name=observedGeneration"`
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,21,opt,name=observedGeneration"`
 	// Update in case of terminal failure
 	// Borrowed from cluster api controller
 	//+kubebuilder:validation:Optional
-	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,20,opt,name=failureReason"`
+	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,22,opt,name=failureReason"`
 	// Update in case of terminal failure message
 	//+kubebuilder:validation:Optional
-	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,21,opt,name=failureMessage"`
+	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,23,opt,name=failureMessage"`
 	// Last time the object was updated
 	//+kubebuilder:validation:Optional
-	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,22,opt,name=lastUpdated"`
+	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,24,opt,name=lastUpdated"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []ModelAutobuilderCondition `json:"conditions,omitempty" protobuf:"bytes,23,rep,name=conditions"`
+	Conditions []ModelAutobuilderCondition `json:"conditions,omitempty" protobuf:"bytes,25,rep,name=conditions"`
 }

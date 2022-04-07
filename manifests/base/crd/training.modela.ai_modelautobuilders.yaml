@@ -1453,6 +1453,9 @@ spec:
               dataSourceName:
                 description: the generated schema name (if generated)
                 type: string
+              dataappName:
+                description: the generated predictor name
+                type: string
               datasetName:
                 description: the generated dataset name (if generated)
                 type: string
