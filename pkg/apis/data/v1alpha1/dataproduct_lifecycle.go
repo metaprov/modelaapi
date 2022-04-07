@@ -263,3 +263,11 @@ func (in *DataProduct) GetRolesForAccount(account *infra.Account) []string {
 	}
 	return result
 }
+
+func (in *DataProduct) UpdateBaselineVersion(versions DataProductVersionList) {
+	for _, v := range versions.Items {
+		if *v.Spec.Baseline {
+			in.Status.BaselineVersion = &v.Name
+		}
+	}
+}
