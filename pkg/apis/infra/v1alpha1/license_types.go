@@ -28,7 +28,7 @@ const (
 	LicenseSaved LicenseConditionType = "Saved"
 )
 
-// LicenseCondition describes the state of the license at a certain point.
+// LicenseCondition describes the state of the license at a certain point
 type LicenseCondition struct {
 	// Type of condition.
 	Type LicenseConditionType `json:"type" protobuf:"bytes,1,opt,name=type,casttype=LicenseConditionType"`
@@ -42,6 +42,7 @@ type LicenseCondition struct {
 	Message string `json:"message,omitempty" protobuf:"bytes,5,opt,name=message"`
 }
 
+// License represents the license key and limitations of a cluster-wide license obtained from Modela.ai
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Valid\")].status",description=""
@@ -55,8 +56,6 @@ type LicenseCondition struct {
 // +kubebuilder:printcolumn:name="Expire At",type="date",JSONPath=".spec.expireAt",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=licenses,singular=license,categories={infra,modela}
-// License is an abstraction that represent the cluster wide license
-// as obtained from Modela. The license is store inside a a secret
 type License struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
@@ -65,7 +64,7 @@ type License struct {
 }
 
 // +kubebuilder:object:root=true
-// LicenseList is a list of License
+// LicenseList is a list of Licenses
 type LicenseList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
@@ -73,93 +72,94 @@ type LicenseList struct {
 	Items []License `json:"items" protobuf:"bytes,2,rep,name=items"`
 }
 
-// LicenseSpec defines the desired state of License
+// LicenseSpec defines the details of a License. The contents of the specification are derived from
+// the actual license key, and changing the specification has no effect on the limitations of the license
 type LicenseSpec struct {
 	// Reference to the tenant owning this license
 	// +kubebuilder:validation:Optional
 	// Default to default tenant.
 	TenantRef *v1.ObjectReference `json:"tenantRef,omitempty" protobuf:"bytes,1,opt,name=tenantRef"`
-	// The secret containing the license token
+	// The reference to the secret containing the license token
 	// +kubebuilder:validation:Optional
 	SecretRef v1.SecretReference `json:"secretRef" protobuf:"bytes,2,opt,name=secretRef"`
-	// Owner is the account owning this license
+	// The name of the Account which created the object, which exists in the same tenant as the object
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:="no-one"
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,3,opt,name=owner"`
+	// The e-mail address of the Modela.ai account which owns the license
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:=""
 	Email *string `json:"email,omitempty" protobuf:"bytes,4,opt,name=email"`
-	// TrialStart is the start date for free trial
+	// TrialStart is the start date for of the free trial period, if active
 	// +kubebuilder:validation:Optional
 	TrialStart *metav1.Time `json:"trialStart,omitempty" protobuf:"bytes,5,opt,name=trialStart"`
-	// TrialEnd when free trial end
+	// TrialEnd specifies when the free trial expires, if active
 	// +kubebuilder:validation:Optional
 	TrialEnd *metav1.Time `json:"trialEnd,omitempty" protobuf:"bytes,6,opt,name=trialEnd"`
+	// MaxProducts specifies the maximum number of DataProduct across the cluster
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
 	MaxProducts *int32 `json:"maxProducts,omitempty" protobuf:"varint,7,opt,name=maxProducts"`
-	// MaxTrainers is max number of trainers
+	// MaxTrainers specifies the maximum number of parallel trainers that can be active at once
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
 	MaxTrainers *int32 `json:"maxTrainers,omitempty" protobuf:"varint,8,opt,name=maxTrainers"`
-	// MaxServers is the max number of worker nodes
+	// MaxServers specifies the maximum number of Kubernetes nodes that may be utilized at once
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
 	MaxServers *int32 `json:"maxServers,omitempty" protobuf:"varint,9,opt,name=maxServers"`
-	// MaxUsers is the max number of active accounts
+	// MaxUsers specifies the maximum number of Accounts that can be created across all tenants
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
 	MaxUsers *int32 `json:"maxUsers,omitempty" protobuf:"varint,10,opt,name=maxUsers"`
-	// max data planes
+	// MaxDataPlanes specifies the maximum number of data plane replicas that may exist at once
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
 	MaxDataPlanes *int32 `json:"maxDataPlanes,omitempty" protobuf:"varint,11,opt,name=maxDataPlanes"`
-	// Forcast denote if forecast feature supported
+	// Forecast indicates if Modela can generate forecasting models
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Forecast *bool `json:"forecast,omitempty" protobuf:"varint,12,opt,name=forecast"`
-	// NLP is nlp feature supported
+	// NLP indicates if natural language processing models are supported
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	NLP *bool `json:"nlp,omitempty" protobuf:"varint,13,opt,name=nlp"`
-	// Is vision feature supported
+	// Vision indicates if computer vision models are supported
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Vision *bool `json:"vision,omitempty" protobuf:"varint,14,opt,name=vision"`
-	// Is chatbot feature supported
+	// Chatbot indicates if chatbot models are supported
 	// +kubebuilder:default:=false
 	Chatbot *bool `json:"chatbot,omitempty" protobuf:"varint,15,opt,name=chatbot"`
-	// The product name
+	// The name of the license product, internal to Modela.ai
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	ProductName *string `json:"productName,omitempty" protobuf:"bytes,16,opt,name=productName"`
-	// The price name
+	// The name of the license price, internal to Modela.ai
 	// +kubebuilder:validation:Optional
 	PriceName *string `json:"priceName,omitempty" protobuf:"bytes,17,opt,name=priceName"`
-	// When the license expire
+	// The date at which the license expires
 	// +kubebuilder:validation:Optional
 	ExpireAt *metav1.Time `json:"expireAt,omitempty" protobuf:"bytes,18,opt,name=expireAt"`
-	// NotifierName is a reference to a notifier to receive the license expiration notification
+	// The reference to a Notifier resource that receives Alerts for license expiration
 	// +kubebuilder:validation:Optional
 	NotifierName *string `json:"notifierName,omitempty" protobuf:"bytes,19,opt,name=notifierName"`
 }
 
 // LicenseStatus is the observed state of a License
 type LicenseStatus struct {
-	// Last time the object was updated
+	// The last time the object was updated
 	//+kubebuilder:validation:Optional
 	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,1,opt,name=lastUpdated"`
-	// ObservedGeneration is the Last generation that was acted on
+	// ObservedGeneration is the last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,2,opt,name=observedGeneration"`
-	// Update in case of terminal failure
-	// Borrowed from cluster api controller
+	// In the case of failure, the License resource controller will set this field with a failure reason
 	//+kubebuilder:validation:Optional
 	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,3,opt,name=failureReason"`
-	// Update in case of terminal failure message
+	// In the case of failure, the License resource controller will set this field with a failure message
 	//+kubebuilder:validation:Optional
 	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,4,opt,name=failureMessage"`
-
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional

@@ -153,7 +153,7 @@ const (
 type ModelCondition struct {
 	// Type of account condition.
 	Type ModelConditionType `json:"type" protobuf:"bytes,1,opt,name=type,casttype=ModelConditionType"`
-	// Status of the condition, one of True, False, AutoScaler.
+	// Status of the condition, one of True, False, Unknown.
 	Status v1.ConditionStatus `json:"status" protobuf:"bytes,2,opt,name=status,casttype=k8s.io/api/core/v1.ConditionStatus"`
 	// Last time the condition transitioned from one status to another.
 	LastTransitionTime *metav1.Time `json:"lastTransitionTime,omitempty" protobuf:"bytes,4,opt,name=lastTransitionTime"`

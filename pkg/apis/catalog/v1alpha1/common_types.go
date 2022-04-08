@@ -1937,7 +1937,8 @@ type HistogramData struct {
 	Categories []string `json:"categories,omitempty" protobuf:"bytes,3,rep,name=categories"`
 }
 
-// PermissionsSpec specifies the Accounts that have access to a DataProduct or Tenant namespace
+// PermissionsSpec specifies the Accounts that have access to a DataProduct or Tenant namespace and what permissions
+// they possess for resources under the namespace
 type PermissionsSpec struct {
 	Stakeholders []Stakeholder `json:"stakeholders,omitempty" protobuf:"bytes,1,opt,name=stakeholders"`
 }

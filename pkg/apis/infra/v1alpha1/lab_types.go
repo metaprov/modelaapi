@@ -54,8 +54,7 @@ type LabSpec struct {
 	// +kubebuilder:validation:Optional
 	// The reference to the tenant which the object exists under
 	TenantRef *corev1.ObjectReference `json:"tenantRef,omitempty" protobuf:"bytes,2,opt,name=tenantRef"`
-	// Limits defines the specification for the hard resource limits
-	// that can be allocated for Jobs created under the Lab
+	// Limits specifies the hard resource limits that can be allocated for workloads created under the Lab
 	// +kubebuilder:validation:Optional
 	Limits ResourceLimitSpec `json:"limits,omitempty" protobuf:"bytes,3,opt,name=limits"`
 	// ClusterName is the name of a VirtualCluster that exists under the same tenant as the object. If specified, Jobs

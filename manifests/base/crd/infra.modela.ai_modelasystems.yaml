@@ -14139,8 +14139,8 @@ spec:
             properties:
               conditions:
                 items:
-                  description: ModelaSystemCondition describes the state of the license
-                    at a certain point.
+                  description: ModelaSystemCondition describes the state of the ModelaSystem
+                    at a certain point
                   properties:
                     lastTransitionTime:
                       description: Last time the condition transitioned from one status
@@ -14175,7 +14175,7 @@ spec:
               lastRelease:
                 type: string
               observedGeneration:
-                description: ObservedGeneration is the Last generation that was acted
+                description: ObservedGeneration is the last generation that was acted
                   on
                 format: int64
                 type: integer

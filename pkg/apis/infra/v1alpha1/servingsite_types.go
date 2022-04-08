@@ -60,64 +60,67 @@ type ServingSiteList struct {
 	Items []ServingSite `json:"items" protobuf:"bytes,2,rep,name=items"`
 }
 
+// ServingSiteSpec represents a namespace where model serving workloads are executed under
 type ServingSiteSpec struct {
-	// Description is user provided description
+	// The user-provided description of the object
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,1,opt,name=description"`
-	// Reference to the tenant owning this serving site.
-	// Default to default tenant.
+	// The reference to the tenant which the object exists under
 	// +kubebuilder:validation:Optional
 	TenantRef *v1.ObjectReference `json:"tenantRef,omitempty" protobuf:"bytes,2,opt,name=tenantRef"`
-	// Specify resource limits
+	// Limits specifies the hard resource limits that can be allocated for workloads created under the ServingSite
 	// +kubebuilder:validation:Optional
 	Limits ResourceLimitSpec `json:"limits,omitempty" protobuf:"bytes,3,opt,name=limits"`
-	// IngressName denote the name of the ingress object where the serving site
-	// places the external points used to access the predictors
+	// IngressName specifies the name of the Kubernetes Ingress resource which the ServingSite uses to define
+	// external access points for resources that accept traffic to their services (i.e. Predictors). This
+	// field is set automatically during the creation of the ServingSite and neither the contents of the
+	// Ingress nor the IngressName should be modified by an end-user
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	IngressName *string `json:"ingressName,omitempty" protobuf:"bytes,4,opt,name=ingressName"`
-	// The FQDN for this site. This will register with ingress.
-	// +kubebuilder:default:=""
+	// FQDN specifies the fully-qualified domain name that the ServingSite's Ingress will use as the base host for the
+	// endpoint of services deployed under the ServingSite. For example, setting the FQDN as `model-serving.modela.ai`
+	// will automatically serve Predictors using the REST API at `predictors.model-serving.modela.ai`
+	// +kubebuilder:default:="serving.vcap.me"
 	// +kubebuilder:validation:Optional
 	FQDN *string `json:"fqdn,omitempty" protobuf:"bytes,5,opt,name=fqdn"`
-	// ClusterName is  the virtual cluster name in case that the lab is not on the same cluster
+	// ClusterName is the name of a VirtualCluster that exists under the same tenant as the object. If specified, workloads
+	// executed under the ServingSite will be executed inside the cluster (currently not implemented)
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	ClusterName *string `json:"clusterName,omitempty" protobuf:"bytes,6,opt,name=clusterName"`
-	// Owner is the owner account name
+	// The name of the Account which created the object, which exists in the same tenant as the object
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,7,opt,name=owner"`
 }
 
 type ServingSiteStatus struct {
-	// ObservedGeneration is the Last generation that was acted on
+	// ObservedGeneration is the last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,1,opt,name=observedGeneration"`
-	// Last time the object was updated
+	// The last time the object was updated
 	//+kubebuilder:validation:Optional
 	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,2,opt,name=lastUpdated"`
-	// active predictors
+	// The number of active predictor services
 	ActivePredictors int32 `json:"activePredictors,omitempty" protobuf:"varint,3,opt,name=activePredictors"`
-	// inactive predictors
+	// The number of inactive (non-deployed) predictors
 	InactivePredictors int32 `json:"inactivePredictors,omitempty" protobuf:"varint,4,opt,name=inactivePredictors"`
-	// total predictors service failed
+	// The number of predictor services that have failed/errored
 	TotalPredictorServiceFailed int32 `json:"totalPredictorServiceFailed,omitempty" protobuf:"varint,5,opt,name=totalPredictorServiceFailed"`
-	// total predictors with data drift failed
+	// The number of predictors that have detected a data drift
 	TotalPredictorDataDriftFailed int32 `json:"totalPredictorDataDriftFailed,omitempty" protobuf:"varint,6,opt,name=totalPredictorDataDriftFailed"`
-	// total predictors accuracy failed
+	// The number of predictors that have detected average inaccurate results
 	TotalPredictorAccuracyFailed int32 `json:"totalPredictorAccuracyFailed,omitempty" protobuf:"varint,7,opt,name=totalPredictorAccuracyFailed"`
-	// Last 7 days predictions
+	// The collection of predictions from the last 7 days
 	LastDailyPredictions []int32 `json:"lastDailyPredictions,omitempty" protobuf:"bytes,8,rep,name=lastDailyPredictions"`
-	// Update in case of terminal failure
-	// Borrowed from cluster api controller
+	// In the case of failure, the ServingSite resource controller will set this field with a failure reason
 	//+kubebuilder:validation:Optional
 	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,9,opt,name=failureReason"`
-	// Update in case of terminal failure message
+	// In the case of failure, the ServingSite resource controller will set this field with a failure message
 	//+kubebuilder:validation:Optional
 	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,10,opt,name=failureMessage"`
-
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional

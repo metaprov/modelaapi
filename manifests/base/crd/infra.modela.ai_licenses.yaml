@@ -55,8 +55,8 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: License is an abstraction that represent the cluster wide license
-          as obtained from Modela. The license is store inside a a secret
+        description: License represents the license key and limitations of a cluster-wide
+          license obtained from Modela.ai
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation
@@ -71,68 +71,81 @@ spec:
           metadata:
             type: object
           spec:
-            description: LicenseSpec defines the desired state of License
+            description: LicenseSpec defines the details of a License. The contents
+              of the specification are derived from the actual license key, and changing
+              the specification has no effect on the limitations of the license
             properties:
               chatbot:
                 default: false
-                description: Is chatbot feature supported
+                description: Chatbot indicates if chatbot models are supported
                 type: boolean
               email:
                 default: ""
+                description: The e-mail address of the Modela.ai account which owns
+                  the license
                 type: string
               expireAt:
-                description: When the license expire
+                description: The date at which the license expires
                 format: date-time
                 type: string
               forecast:
                 default: false
-                description: Forcast denote if forecast feature supported
+                description: Forecast indicates if Modela can generate forecasting
+                  models
                 type: boolean
               maxDataPlanes:
-                description: max data planes
+                description: MaxDataPlanes specifies the maximum number of data plane
+                  replicas that may exist at once
                 format: int32
                 minimum: 0
                 type: integer
               maxProducts:
+                description: MaxProducts specifies the maximum number of DataProduct
+                  across the cluster
                 format: int32
                 minimum: 0
                 type: integer
               maxServers:
-                description: MaxServers is the max number of worker nodes
+                description: MaxServers specifies the maximum number of Kubernetes
+                  nodes that may be utilized at once
                 format: int32
                 minimum: 0
                 type: integer
               maxTrainers:
-                description: MaxTrainers is max number of trainers
+                description: MaxTrainers specifies the maximum number of parallel
+                  trainers that can be active at once
                 format: int32
                 minimum: 0
                 type: integer
               maxUsers:
-                description: MaxUsers is the max number of active accounts
+                description: MaxUsers specifies the maximum number of Accounts that
+                  can be created across all tenants
                 format: int32
                 minimum: 0
                 type: integer
               nlp:
                 default: false
-                description: NLP is nlp feature supported
+                description: NLP indicates if natural language processing models are
+                  supported
                 type: boolean
               notifierName:
-                description: NotifierName is a reference to a notifier to receive
-                  the license expiration notification
+                description: The reference to a Notifier resource that receives Alerts
+                  for license expiration
                 type: string
               owner:
                 default: no-one
-                description: Owner is the account owning this license
+                description: The name of the Account which created the object, which
+                  exists in the same tenant as the object
                 type: string
               priceName:
-                description: The price name
+                description: The name of the license price, internal to Modela.ai
                 type: string
               productName:
                 default: ""
-                description: The product name
+                description: The name of the license product, internal to Modela.ai
                 type: string
               secretRef:
-                description: The secret containing the license token
+                description: The reference to the secret containing the license token
                 properties:
                   name:
                     description: Name is unique within a namespace to reference a
@@ -181,16 +194,17 @@ spec:
                     type: string
                 type: object
               trialEnd:
-                description: TrialEnd when free trial end
+                description: TrialEnd specifies when the free trial expires, if active
                 format: date-time
                 type: string
               trialStart:
-                description: TrialStart is the start date for free trial
+                description: TrialStart is the start date for of the free trial period,
+                  if active
                 format: date-time
                 type: string
               vision:
                 default: false
-                description: Is vision feature supported
+                description: Vision indicates if computer vision models are supported
                 type: boolean
             type: object
           status:
@@ -199,7 +213,7 @@ spec:
               conditions:
                 items:
                   description: LicenseCondition describes the state of the license
-                    at a certain point.
+                    at a certain point
                   properties:
                     lastTransitionTime:
                       description: Last time the condition transitioned from one status
@@ -225,18 +239,19 @@ spec:
                   type: object
                 type: array
               failureMessage:
-                description: Update in case of terminal failure message
+                description: In the case of failure, the License resource controller
+                  will set this field with a failure message
                 type: string
               failureReason:
-                description: Update in case of terminal failure Borrowed from cluster
-                  api controller
+                description: In the case of failure, the License resource controller
+                  will set this field with a failure reason
                 type: string
               lastUpdated:
-                description: Last time the object was updated
+                description: The last time the object was updated
                 format: date-time
                 type: string
               observedGeneration:
-                description: ObservedGeneration is the Last generation that was acted
+                description: ObservedGeneration is the last generation that was acted
                   on
                 format: int64
                 type: integer

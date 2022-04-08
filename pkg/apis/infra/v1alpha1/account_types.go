@@ -41,7 +41,7 @@ type AccountCondition struct {
 	Message string `json:"message,omitempty" protobuf:"bytes,5,opt,name=message"`
 }
 
-// Account represents a user or team in the system
+// Account represents a single user on the system or a team that other Accounts can be grouped under
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
@@ -67,59 +67,61 @@ type AccountList struct {
 	Items           []Account `json:"items" protobuf:"bytes,2,rep,name=items"`
 }
 
-// AccountSpec defines the desired state of Account
+// AccountSpec defines the desired state of an Account
 type AccountSpec struct {
-	// TenantRef is the account tenant
+	// The reference to the tenant which the object exists under
 	// +kubebuilder:validation:Optional
 	TenantRef *v1.ObjectReference `json:"tenantRef,omitempty" protobuf:"bytes,1,opt,name=tenantRef"`
-	// Type is the type of account - user, group. default is user
+	// The type of Account, which can be a user or a group
 	// +kubebuilder:default:=user
 	// +kubebuilder:validation:Optional
 	Type *AccountType `json:"type,omitempty" protobuf:"bytes,3,opt,name=type,casttype=AccountType"`
-	// UserName specifies the name of the account
+	// The username of the account, which can be used to log into Modela
 	// +kubebuilder:validation:MinLength=4
 	// +kubebuilder:validation:MaxLength=64
 	// +kubebuilder:validation:Required
 	// +required
 	Username *string `json:"username,omitempty" protobuf:"bytes,4,opt,name=username"`
-	// First FileName is the user first name
+	// The first name of the person using the Account
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:MaxLength=64
 	FirstName *string `json:"firstName,omitempty" protobuf:"bytes,5,opt,name=firstName"`
-	// LastName is the user last name
+	// The last name of the person using the Account
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:MaxLength=64
 	// +kubebuilder:validation:Optional
 	LastName *string `json:"lastName,omitempty" protobuf:"bytes,6,opt,name=lastName"`
-	// Email specify the email of the user
+	// The e-mail address of the person using the Account
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:MaxLength=64
 	// +kubebuilder:validation:Required
 	// +required
 	Email *string `json:"email,omitempty" protobuf:"bytes,7,opt,name=email"`
-	// Phone specify the phone of the user
+	// The phone number of the person using the Account
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:MaxLength=64
 	Phone *string `json:"phone,omitempty" protobuf:"bytes,8,opt,name=phone"`
-	// User is admin. Admin have full control on other accounts.
+	// Indicates if the Account has admin permissions. Admin accounts have unrestricted access to all resources and
+	// full control to modify and create other Accounts
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Admin *bool `json:"admin,omitempty" protobuf:"varint,9,opt,name=admin"`
-	// Team indicates if this a team account.
+	// Indicates if the Account is a team account
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Team *bool `json:"team,omitempty" protobuf:"varint,10,opt,name=team"`
-	// MemberOf is the team name of this account. An account can belong to one team
+	// MemberOf specifies the name of the team that the Account belongs to. An account can belong to one other team Account
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	MemberOf *string `json:"memberOf,omitempty" protobuf:"bytes,11,opt,name=memberOf"`
-	// Email account creation event to user (using the user email)
+	// Indicates if an e-mail will be sent to the address specified by the Email field, that notifies the Account owner
+	// about the creation of the Account
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	EmailPassword *bool `json:"emailPassword,omitempty" protobuf:"varint,12,opt,name=emailPassword"`
-	// User need to reset password upon login
+	// Indicates if the Account owner will be prompted to reset their password upon login
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	ResetPassword *bool `json:"resetPassword,omitempty" protobuf:"varint,13,opt,name=resetPassword"`
@@ -137,18 +139,16 @@ type AccountSpec struct {
 
 // AccountStatus defines the actual state of the api object
 type AccountStatus struct {
-	// Last time the object was updated
+	// The last time the object was updated
 	//+kubebuilder:validation:Optional
 	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,1,opt,name=lastUpdated"`
-
-	// ObservedGeneration is the Last generation that was acted on
+	// ObservedGeneration is the last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,2,opt,name=observedGeneration"`
-	// Update in case of terminal failure
-	// Borrowed from cluster api controller
+	// In the case of failure, the Account resource controller will set this field with a failure reason
 	//+kubebuilder:validation:Optional
 	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,3,opt,name=failureReason"`
-	// Update in case of terminal failure message
+	// In the case of failure, the Account resource controller will set this field with a failure message
 	//+kubebuilder:validation:Optional
 	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,4,opt,name=failureMessage"`
 	// +patchMergeKey=type
@@ -157,12 +157,13 @@ type AccountStatus struct {
 	Conditions []AccountCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,5,rep,name=conditions"`
 }
 
+// AvatarSpec specifies the location of an avatar for an Account
 type AvatarSpec struct {
 	// +kubebuilder:default:=""
-	// Bucketname is the name of the bucket holding the bucket name
+	// BucketName is the name of the VirtualBucket resource that exists on the same tenant as the Account
 	// +kubebuilder:validation:Optional
 	BucketName *string `json:"bucketName,omitempty" protobuf:"bytes,1,opt,name=bucketName"`
-	// Path to the full data file (e.g. csv file).
+	// Path specifies the path to an image file on the VirtualBucket (e.g. a PNG file)
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Path *string `json:"path,omitempty" protobuf:"bytes,2,opt,name=path"`

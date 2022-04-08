@@ -15,11 +15,11 @@ const (
 	ModelaSystemSaved ModelaSystemConditionType = "Saved"
 )
 
-// ModelaSystemCondition describes the state of the license at a certain point.
+// ModelaSystemCondition describes the state of the ModelaSystem at a certain point
 type ModelaSystemCondition struct {
 	// Type of account condition.
 	Type ModelaSystemConditionType `json:"type" protobuf:"bytes,1,opt,name=type,casttype=ModelaSystemConditionType"`
-	// Status of the condition, one of True, False, AutoScaler.
+	// Status of the condition, one of True, False, Unknown.
 	Status v1.ConditionStatus `json:"status" protobuf:"bytes,2,opt,name=status,casttype=k8s.io/api/core/v1.ConditionStatus"`
 	// Last time the condition transitioned from one status to another.
 	LastTransitionTime *metav1.Time `json:"lastTransitionTime,omitempty" protobuf:"bytes,3,opt,name=lastTransitionTime"`
@@ -69,7 +69,7 @@ type ModelaSystemSpec struct {
 
 // ModelaSystemStatus is the observed state of a ModelaSystem
 type ModelaSystemStatus struct {
-	// ObservedGeneration is the Last generation that was acted on
+	// ObservedGeneration is the last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,1,opt,name=observedGeneration"`
 	// Update in case of terminal failure
