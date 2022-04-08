@@ -521,6 +521,7 @@ func (b *ModelAutobuilder) CreateDataset(notification catalog.NotificationSpec) 
 				BucketName: b.Spec.Location.BucketName,
 			},
 			Resources: *b.Spec.Resources.DeepCopy(),
+			LabRef:    *b.Spec.LabRef,
 		},
 	}
 	return dataset
