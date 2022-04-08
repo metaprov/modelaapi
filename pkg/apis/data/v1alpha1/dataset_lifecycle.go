@@ -468,6 +468,10 @@ func (dataset *Dataset) Deleted() bool {
 	return !dataset.ObjectMeta.DeletionTimestamp.IsZero()
 }
 
+func (dataset *Dataset) IsFailed() bool {
+	return dataset.Status.Phase == DatasetPhaseFailed
+}
+
 // Generate a dataset completion alert
 func (dataset *Dataset) CompletionAlert(tenantRef *v1.ObjectReference, notifierName *string) *infra.Alert {
 	level := infra.Info
