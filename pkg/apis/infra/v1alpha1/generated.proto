@@ -724,11 +724,12 @@ message BoxSpec {
 }
 
 message BucketResourceQuotas {
-  // If true enable quate
+  // Indicates if the resource quota is enabled
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool enabled = 1;
 
+  // The maximum amount of storage the bucket may use
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.api.resource.Quantity hardLimit = 2;
 }
@@ -917,14 +918,13 @@ message ConnectionList {
   repeated Connection items = 2;
 }
 
-// ConnectionSpec defines the desired state of Connection
+// ConnectionSpec defines the desired state of a Connection
 message ConnectionSpec {
-  // TenantRef is the tenant of the connection
-  // default to the default tenant
+  // The reference to the Tenant which owns the DataProduct. Defaults to `default-tenant`
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference tenantRef = 1;
 
-  // The connection category
+  // The type of external system which the connection references
   // +kubebuilder:default:="general"
   // +kubebuilder:validation:Optional
   optional string category = 2;
@@ -934,7 +934,7 @@ message ConnectionSpec {
   // +required
   optional string provider = 3;
 
-  // SecretName is a reference to a secret which holds the connection credentials
+  // The reference to the secret which stores the sensitive credentials required to connect to the external system
   // +kubebuilder:validation:Required
   // +required
   optional k8s.io.api.core.v1.SecretReference secretRef = 4;
@@ -1132,7 +1132,6 @@ message ConnectionSpec {
   // +kubebuilder:validation:Optional
   optional TwitterSpec twitter = 70;
 
-  // Message broker
   // +kubebuilder:validation:Optional
   optional RabbitMQSpec rabbitmq = 71;
 
@@ -1567,7 +1566,7 @@ message KafkaSpec {
   optional string url = 6;
 }
 
-// Lab is a namespace used for training and data analysis operations.
+// Lab represents a single namespace where data processing and model training Jobs take place
 // +kubebuilder:object:root=true
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
@@ -1583,7 +1582,7 @@ message Lab {
   optional LabStatus status = 3;
 }
 
-// LabCondition describes the state of a lab at a certain point.
+// LabCondition describes the state of a Lab at a certain point
 message LabCondition {
   // Type of account condition.
   optional string type = 1;
@@ -1602,7 +1601,7 @@ message LabCondition {
 }
 
 // +kubebuilder:object:root=true
-// LabList is a list of labs
+// LabList is the list of Labs
 message LabList {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
 
@@ -1611,28 +1610,28 @@ message LabList {
 
 // LabSpec defines the desired state of a Lab
 message LabSpec {
-  // Description is a user provided description
+  // The user-provided description of the Lab
   // +kubebuilder:validation:Optional
   // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=256
   optional string description = 1;
 
   // +kubebuilder:validation:Optional
-  // TenantRef is a reference to the tenant owning this lab
-  // Default to default tenant.
+  // The reference to the tenant which the object exists under
   optional k8s.io.api.core.v1.ObjectReference tenantRef = 2;
 
-  // Specify resource limits
+  // Limits defines the specification for the hard resource limits
+  // that can be allocated for Jobs created under the Lab
   // +kubebuilder:validation:Optional
   optional ResourceLimitSpec limits = 3;
 
-  // ClusterName is the name of a remote cluster that is used to execute jobs for this lab
-  // If not empty, jobs assigned to this lab should execute on remote cluster
+  // ClusterName is the name of a VirtualCluster that exists under the same tenant as the object. If specified, Jobs
+  // assigned to the Lab will be executed inside the cluster (currently not implemented)
   // +kubebuilder:validation:Optional
   // +kubebuilder:default:=""
   optional string clusterName = 4;
 
-  // The owner account name
+  // The name of the Account which created the object, which exists in the same tenant as the object
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
   optional string owner = 5;
@@ -1640,11 +1639,11 @@ message LabSpec {
 
 // LabStatus is the observed state of a Lab
 message LabStatus {
-  // ObservedGeneration is the Last generation that was acted on
+  // ObservedGeneration is the last generation that was acted on
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 1;
 
-  // Last time the object was updated
+  // The last time the object was updated
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2;
 
@@ -2320,31 +2319,30 @@ message RabbitMQSpec {
   optional string password = 4;
 }
 
-// Defines the resource limits for lab and serving site.
+// ResourceLimitSpec defines the resource limits for workloads created under Lab and ServingSite namespaces
 message ResourceLimitSpec {
-  // Enabled, set to true if you want to
+  // Indicates if the resource limit is enabled
   // +kubebuilder:validation:Optional
   // +kubebuilder:default:=false
   optional bool enabled = 1;
 
-  // High level max memory provider
+  // The maximum quantity of memory that can be consumed under the namespace
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.api.resource.Quantity maxMem = 2;
 
-  // High level req.
+  // The maximum amount of CPU that can be consumed under the namespace
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.api.resource.Quantity maxCpu = 3;
 
-  // Max number of pods
+  // The maximum number of pods that can be created under the namespace
   // +kubebuilder:validation:Optional
   optional int32 maxPods = 4;
 
-  // Max number of pvc
+  // The maximum number of persistent volume claims that can be created under the namespace
   // +kubebuilder:validation:Optional
   optional int32 maxPvc = 5;
 
-  // Low level spec.
-  // QuotaSpec is quoute specification for the lab namespace.
+  // QuotaSpec defines the resource quota specification for the namespace
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ResourceQuotaSpec quota = 6;
 
@@ -2674,6 +2672,7 @@ message SybaseSpec {
   optional string url = 6;
 }
 
+// Tenant represents a single root namespace for infrastructure resources and descendant DataProduct namespaces
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
@@ -2681,7 +2680,6 @@ message SybaseSpec {
 // +kubebuilder:printcolumn:name="Default Serving Site",type="string",JSONPath=".spec.defaultServingSiteRef.Name",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=tenants,singular=tenant,categories={infra,modela}
-// Tenant represents root tenant.
 message Tenant {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
@@ -2690,7 +2688,7 @@ message Tenant {
   optional TenantStatus status = 3;
 }
 
-// TenantCondition describes the state of a tenant at a certain point.
+// TenantCondition describes the state of a Tenant at a certain point
 message TenantCondition {
   // Type of tenant condition.
   optional string type = 1;
@@ -2708,37 +2706,38 @@ message TenantCondition {
   optional string message = 5;
 }
 
+// TenantList represent a list of Tenants
 // +kubebuilder:object:root=true
-// TenantList represent list of tenants.
 message TenantList {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
 
   repeated Tenant items = 2;
 }
 
-// TenantSpec defines the desired state of Tenant
+// TenantSpec defines the desired state of a Tenant
 message TenantSpec {
-  // the default lab for this account
+  // The reference to the Lab resource that will be used as a default when creating new DataProduct namespaces
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference defaultLab = 1;
 
-  // the default serving site for this account
+  // The reference to the ServingSite resource that will be used as a default when creating new DataProduct namespaces
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference defaultServingSiteRef = 2;
 
-  // Description is user provided description
+  // The user-provided description of the Tenant
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   // +kubebuilder:validation:MaxLength=512
   // +kubebuilder:validation:Optional
   optional string description = 3;
 
-  // Owner is the owner account name
+  // Owner indicates the name of the Account under the Tenant which created the Tenant (i.e. the Tenant administrator)
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
   optional string owner = 4;
 
-  // The premissions at the tenant level for the tenent objects.
+  // Permissions denotes the specification that determines which Accounts
+  // can access the resources under the Tenant namespace and what actions they can perform
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PermissionsSpec permissions = 5;
 }
@@ -2865,6 +2864,7 @@ message VictorOpSpec {
   optional string url = 3;
 }
 
+// VirtualBucket represents an abstract object storage system used to store flat-files
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
@@ -2872,7 +2872,6 @@ message VictorOpSpec {
 // +kubebuilder:printcolumn:name="Connection",type="string",JSONPath=".spec.connectionName",description="virtual bucket connections"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=virtualbuckets,shortName=vb,singular=virtualbucket,categories={infra,modela,all}
-// VirtualBucket represent a object storage location in the cloud or on-prem
 message VirtualBucket {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
@@ -2881,7 +2880,7 @@ message VirtualBucket {
   optional VirtualBucketStatus status = 3;
 }
 
-// VitualBucketCondition describes the state of a virtual bucket at a certain point.
+// VirtualBucketCondition describes the state of a VirtualBucket at a certain point
 message VirtualBucketCondition {
   // Type of bucket condition.
   optional string type = 1;
@@ -2899,53 +2898,56 @@ message VirtualBucketCondition {
   optional string message = 5;
 }
 
+// VirtualBucketList is a list of VirtualBuckets
 // +kubebuilder:object:root=true
-// VirtualBucketList is a list of VirtualBucket
 message VirtualBucketList {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
 
   repeated VirtualBucket items = 2;
 }
 
-// VirtualBucketSpec defines the desired state of Bucket
+// VirtualBucketSpec defines the desired state of VirtualBucket
 message VirtualBucketSpec {
-  // The owner of the virtual bucket
+  // The reference to the tenant which the object exists under
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference tenantRef = 1;
 
-  // ConnectionName specify the api connections of this bucket cloud provider.
+  // The name of the Connection resource which exists under the same tenant as the object. The Connection
+  // should represent the external location and access credentials of an object storage system
   // +kubebuilder:validation:Required
   // +kubebuilder:validation:MaxLength=64
   // +kubebuilder:default:=""
   optional string connectionName = 2;
 
-  // User provided description
+  // User-provided description of the object
   // +kubebuilder:validation:MaxLength=512
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string description = 3;
 
-  // Owner of the bucket
+  // The name of the Account which created the object, which exists in the same tenant as the object
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
   optional string owner = 4;
 
   // For cloud based bucket, this is the region of the bucket
+  // In the case of a cloud-based Connection, Region specifies the region of the bucket
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string region = 5;
 
-  // If true support versioning
+  // If true, the bucket supports versioning, which applies to the S3 API. See
+  // https://docs.aws.amazon.com/AmazonS3/latest/userguide/Versioning.html for more information
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool versioning = 6;
 
-  // If true support versioning
+  // The resource quotas of the bucket, which can restrict how much storage the bucket may use
   // +kubebuilder:validation:Optional
   optional BucketResourceQuotas quotas = 7;
 }
 
-// VirtualBucketStatus defines the actual state of a VirtualBucket
+// VirtualBucketStatus defines the observed state of a VirtualBucket
 message VirtualBucketStatus {
   // Last time the object was updated
   // +kubebuilder:validation:Optional
@@ -2955,12 +2957,11 @@ message VirtualBucketStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 3;
 
-  // Update in case of terminal failure
-  // Borrowed from cluster api controller
+  // In the case of failure, the VirtualBucket resource controller will set this field with a failure reason
   // +kubebuilder:validation:Optional
   optional string failureReason = 4;
 
-  // Update in case of terminal failure message
+  // In the case of failure, the VirtualBucket resource controller will set this field with a failure message
   // +kubebuilder:validation:Optional
   optional string failureMessage = 5;
 

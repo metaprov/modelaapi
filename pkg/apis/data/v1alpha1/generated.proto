@@ -1130,15 +1130,15 @@ message DataProductSpec {
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 12;
 
-  // The default resource allocation for model training which takes place under the DataProduct
+  // The default resource allocation for model training and data workloads that takes place under the DataProduct
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec trainingResources = 13;
 
-  // The default resource allocation for model serving which takes place under the DataProduct
+  // The default resource allocation for model serving workloads that takes place under the DataProduct
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec servingResources = 14;
 
-  // Denote how many times Jobs created under the DataProduct namespace will retry after failure
+  // Specifies how many times Jobs created under the DataProduct namespace will retry after failure
   // +kubebuilder:default:=3
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Maximum=10
@@ -1149,7 +1149,7 @@ message DataProductSpec {
   // +kubebuilder:validation:Optional
   repeated KPI kpis = 16;
 
-  // The name of the Account which should be on-call for events that occur under the DataProduct
+  // The name of the Account which should be responsible for events that occur under the DataProduct
   // +kubebuilder:validation:Optional
   optional string onCallAccountName = 17;
 
@@ -1157,7 +1157,8 @@ message DataProductSpec {
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.CompilerSpec compilation = 19;
 
-  // The clearance level required to access the DataProduct
+  // The clearance level required to access the DataProduct. Accounts which do not have a clearance level
+  // greater than or equal to ClearanceLevel will be denied access to the DataProduct namespace
   // +kubebuilder:default:=unclassified
   // +kubebuilder:validation:Optional
   optional string clearanceLevel = 20;
@@ -1176,71 +1177,86 @@ message DataProductSpec {
   // +kubebuilder:validation:Optional
   optional GovernanceSpec governance = 23;
 
-  // The permission specification which determines which Accounts can access the DataProduct and what actions they can perform
+  // Permissions denotes the specification that determines which Accounts
+  // can access the DataProduct and what actions they can perform
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PermissionsSpec permissions = 24;
 }
 
 // DataProductStatus defines the observed state of DataProduct
 message DataProductStatus {
-  // ObservedGeneration is the Last generation that was acted on
+  // ObservedGeneration is the last generation that was acted on
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 1;
 
-  // Last time the object was updated
+  // The last time the object was updated
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2;
 
+  // The number of DataSource resources that exist under the namespace
   // +kubebuilder:validation:Optional
   optional int32 totalDatasources = 3;
 
+  // The number of Dataset resources that exist under the namespace
   // +kubebuilder:validation:Optional
   optional int32 totalDatasets = 4;
 
+  // The number of DataPipeline resources that exist under the namespace
   // +kubebuilder:validation:Optional
   optional int32 totalDataPipelines = 5;
 
+  // The number of DataPipelineRun resources that exist under the namespace
   // +kubebuilder:validation:Optional
   optional int32 totalDataPipelineRuns = 6;
 
+  // The number of Study resources that exist under the namespace
   // +kubebuilder:validation:Optional
   optional int32 totalStudies = 7;
 
+  // The number of Model resources that exist under the namespace
   // +kubebuilder:validation:Optional
   optional int32 totalModels = 8;
 
+  // The number of ModelPipeline resources that exist under the namespace
   // +kubebuilder:validation:Optional
   optional int32 totalModelPipelines = 9;
 
+  // The number of ModelPipelineRun resources that exist under the namespace
   // +kubebuilder:validation:Optional
   optional int32 totalModelPipelineRuns = 10;
 
+  // The number of Predictor resources that exist under the namespace
   // +kubebuilder:validation:Optional
   optional int32 totalPredictors = 11;
 
+  // The number of ModelAutoBuilder resources that exist under the namespace
   // +kubebuilder:validation:Optional
   optional int32 totalBuilders = 12;
 
+  // The number of DataApp resources that exist under the namespace
   // +kubebuilder:validation:Optional
   optional int32 totalApps = 13;
 
+  // The number of Prediction resources that exist under the namespace
   // +kubebuilder:validation:Optional
   optional int32 totalPredictions = 14;
 
+  // The number of informative alerts produced under the namespace
   // +kubebuilder:validation:Optional
   optional int32 totalInfoAlerts = 15;
 
+  // The number of error alerts produced under the namespace
   // +kubebuilder:validation:Optional
   optional int32 totalErrorAlerts = 16;
 
-  // Update in case of terminal failure
-  // Borrowed from cluster api controller
+  // In the case of failure, the DataProduct resource controller will set this field with a failure reason
   optional string failureReason = 17;
 
-  // Update in case of terminal failure message
+  // In the case of failure, the DataProduct resource controller will set this field with a failure message
   optional string failureMessage = 18;
 
-  // Update in case of terminal failure message
+  // The name of the DataProductVersion which currently represents the latest version of the DataProduct.
+  // Newly-created resources will be instantiated with this version by default
   optional string baselineVersion = 19;
 
   // +patchMergeKey=type
@@ -2668,24 +2684,24 @@ message GitLocation {
 }
 
 message GovernanceReviewStatus {
-  // The approval status
+  // The approval status, which can be approved or rejected
   optional string result = 1;
 
-  // The date of approval
+  // The date of the approval
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time approvalDate = 2;
 
-  // Notes during the review.
+  // Notes taken during the review
   optional string notes = 3;
 }
 
-// GovernanceSpec define the governance for models produced in a DataProduct
+// GovernanceSpec describes the governance requirements for models produced under a DataProduct
 message GovernanceSpec {
-  // Enabled specify if the sample is enabled
+  // Indicates if governance is enabled
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool enabled = 1;
 
-  // The model country
+  // The country whose regulations are under consideration
   // +kubebuilder:validation:Optional
   optional string country = 2;
 
@@ -2693,7 +2709,7 @@ message GovernanceSpec {
   // +kubebuilder:validation:Optional
   optional string itReviewer = 3;
 
-  // The account name of the compliance reviewer.
+  // The account name of the compliance reviewer
   // +kubebuilder:validation:Optional
   optional string complianceReviewer = 4;
 
@@ -2702,16 +2718,17 @@ message GovernanceSpec {
   optional string businessReviewer = 5;
 }
 
+// GovernanceStatus describes the current state of a governance review for a model
 message GovernanceStatus {
   // The review status for IT department
   // +kubebuilder:validation:Optional
   optional GovernanceReviewStatus ITReviewStatus = 1;
 
-  // The review status for IT department
+  // The review status for the compliance department
   // +kubebuilder:validation:Optional
   optional GovernanceReviewStatus complianceReviewStatus = 2;
 
-  // The business review status
+  // The review status for the management department
   // +kubebuilder:validation:Optional
   optional GovernanceReviewStatus businessReviewStatus = 3;
 }
@@ -2743,13 +2760,14 @@ message ImageLocation {
   optional string registryConnectionName = 2;
 }
 
+// KPI specifies a key performance indicator for a DataProduct. Currently not implemented.
 message KPI {
-  // Name is the name of the kpi
+  // The name of the KPI
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string name = 1;
 
-  // Value is the desired value
+  // The value of the KPI
   optional double value = 2;
 }
 

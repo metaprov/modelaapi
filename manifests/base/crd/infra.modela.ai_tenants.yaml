@@ -34,7 +34,8 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: Tenant represents root tenant.
+        description: Tenant represents a single root namespace for infrastructure
+          resources and descendant DataProduct namespaces
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation
@@ -49,10 +50,11 @@ spec:
           metadata:
             type: object
           spec:
-            description: TenantSpec defines the desired state of Tenant
+            description: TenantSpec defines the desired state of a Tenant
             properties:
               defaultLabRef:
-                description: the default lab for this account
+                description: The reference to the Lab resource that will be used as
+                  a default when creating new DataProduct namespaces
                 properties:
                   apiVersion:
                     description: API version of the referent.
@@ -88,7 +90,8 @@ spec:
                     type: string
                 type: object
               defaultServingSiteRef:
-                description: the default serving site for this account
+                description: The reference to the ServingSite resource that will be
+                  used as a default when creating new DataProduct namespaces
                 properties:
                   apiVersion:
                     description: API version of the referent.
@@ -125,15 +128,18 @@ spec:
                 type: object
               description:
                 default: ""
-                description: Description is user provided description
+                description: The user-provided description of the Tenant
                 maxLength: 512
                 type: string
               owner:
                 default: no-one
-                description: Owner is the owner account name
+                description: Owner indicates the name of the Account under the Tenant
+                  which created the Tenant (i.e. the Tenant administrator)
                 type: string
               permissions:
-                description: The premissions at the tenant level for the tenent objects.
+                description: Permissions denotes the specification that determines
+                  which Accounts can access the resources under the Tenant namespace
+                  and what actions they can perform
                 properties:
                   stakeholders:
                     items:
@@ -222,8 +228,8 @@ spec:
             properties:
               conditions:
                 items:
-                  description: TenantCondition describes the state of a tenant at
-                    a certain point.
+                  description: TenantCondition describes the state of a Tenant at
+                    a certain point
                   properties:
                     lastTransitionTime:
                       description: Last time the condition transitioned from one status

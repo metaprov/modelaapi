@@ -90,7 +90,7 @@ spec:
                 properties:
                   enabled:
                     default: false
-                    description: Enabled, set to true if you want to
+                    description: Indicates if the resource limit is enabled
                     type: boolean
                   limitRange:
                     description: LimitRangeSpec defines a min/max usage limit for
@@ -172,27 +172,31 @@ spec:
                     anyOf:
                     - type: integer
                     - type: string
-                    description: High level req.
+                    description: The maximum amount of CPU that can be consumed under
+                      the namespace
                     pattern: ^(\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))(([KMGTPE]i)|[numkMGTPE]|([eE](\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))))?$
                     x-kubernetes-int-or-string: true
                   maxMem:
                     anyOf:
                     - type: integer
                     - type: string
-                    description: High level max memory provider
+                    description: The maximum quantity of memory that can be consumed
+                      under the namespace
                     pattern: ^(\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))(([KMGTPE]i)|[numkMGTPE]|([eE](\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))))?$
                     x-kubernetes-int-or-string: true
                   maxPods:
-                    description: Max number of pods
+                    description: The maximum number of pods that can be created under
+                      the namespace
                     format: int32
                     type: integer
                   maxPvc:
-                    description: Max number of pvc
+                    description: The maximum number of persistent volume claims that
+                      can be created under the namespace
                     format: int32
                     type: integer
                   quota:
-                    description: Low level spec. QuotaSpec is quoute specification
-                      for the lab namespace.
+                    description: QuotaSpec defines the resource quota specification
+                      for the namespace
                     properties:
                       hard:
                         additionalProperties:

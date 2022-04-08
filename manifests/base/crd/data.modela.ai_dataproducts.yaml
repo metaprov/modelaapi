@@ -89,7 +89,9 @@ spec:
             properties:
               clearanceLevel:
                 default: unclassified
-                description: The clearance level required to access the DataProduct
+                description: The clearance level required to access the DataProduct.
+                  Accounts which do not have a clearance level greater than or equal
+                  to ClearanceLevel will be denied access to the DataProduct namespace
                 enum:
                 - unclassified
                 - confidential
@@ -230,14 +232,14 @@ spec:
                     description: The account name of the business reviewer
                     type: string
                   complianceReviewer:
-                    description: The account name of the compliance reviewer.
+                    description: The account name of the compliance reviewer
                     type: string
                   country:
-                    description: The model country
+                    description: The country whose regulations are under consideration
                     type: string
                   enabled:
                     default: false
-                    description: Enabled specify if the sample is enabled
+                    description: Indicates if governance is enabled
                     type: boolean
                   itReviewer:
                     description: The account name of the IT reviewer
@@ -265,13 +267,15 @@ spec:
                 description: KPIs define key performance indicators for the DataProduct
                   (not functional as of the current release)
                 items:
+                  description: KPI specifies a key performance indicator for a DataProduct.
+                    Currently not implemented.
                   properties:
                     name:
                       default: ""
-                      description: Name is the name of the kpi
+                      description: The name of the KPI
                       type: string
                     value:
-                      description: Value is the desired value
+                      description: The value of the KPI
                       type: number
                   type: object
                 type: array
@@ -308,8 +312,8 @@ spec:
                     type: integer
                 type: object
               onCallAccountName:
-                description: The name of the Account which should be on-call for events
-                  that occur under the DataProduct
+                description: The name of the Account which should be responsible for
+                  events that occur under the DataProduct
                 type: string
               owner:
                 default: no-one
@@ -317,8 +321,9 @@ spec:
                   exists in the same tenant as the object
                 type: string
               permissions:
-                description: The permission specification which determines which Accounts
-                  can access the DataProduct and what actions they can perform
+                description: Permissions denotes the specification that determines
+                  which Accounts can access the DataProduct and what actions they
+                  can perform
                 properties:
                   stakeholders:
                     items:
@@ -418,15 +423,15 @@ spec:
                 type: boolean
               retriesOnFailure:
                 default: 3
-                description: Denote how many times Jobs created under the DataProduct
+                description: Specifies how many times Jobs created under the DataProduct
                   namespace will retry after failure
                 format: int32
                 maximum: 10
                 minimum: 0
                 type: integer
               servingResources:
-                description: The default resource allocation for model serving which
-                  takes place under the DataProduct
+                description: The default resource allocation for model serving workloads
+                  that takes place under the DataProduct
                 properties:
                   cpuImage:
                     description: Reference to the managed CPU trainer image, used
@@ -621,8 +626,8 @@ spec:
                     type: string
                 type: object
               trainingResources:
-                description: The default resource allocation for model training which
-                  takes place under the DataProduct
+                description: The default resource allocation for model training and
+                  data workloads that takes place under the DataProduct
                 properties:
                   cpuImage:
                     description: Reference to the managed CPU trainer image, used
@@ -737,7 +742,9 @@ spec:
             description: DataProductStatus defines the observed state of DataProduct
             properties:
               baselineVersion:
-                description: Update in case of terminal failure message
+                description: The name of the DataProductVersion which currently represents
+                  the latest version of the DataProduct. Newly-created resources will
+                  be instantiated with this version by default
                 type: string
               conditions:
                 items:
@@ -768,61 +775,86 @@ spec:
                   type: object
                 type: array
               failureMessage:
-                description: Update in case of terminal failure message
+                description: In the case of failure, the DataProduct resource controller
+                  will set this field with a failure message
                 type: string
               failureReason:
-                description: Update in case of terminal failure Borrowed from cluster
-                  api controller
+                description: In the case of failure, the DataProduct resource controller
+                  will set this field with a failure reason
                 type: string
               lastUpdated:
-                description: Last time the object was updated
+                description: The last time the object was updated
                 format: date-time
                 type: string
               observedGeneration:
-                description: ObservedGeneration is the Last generation that was acted
+                description: ObservedGeneration is the last generation that was acted
                   on
                 format: int64
                 type: integer
               totalApps:
+                description: The number of DataApp resources that exist under the
+                  namespace
                 format: int32
                 type: integer
               totalBuilders:
+                description: The number of ModelAutoBuilder resources that exist under
+                  the namespace
                 format: int32
                 type: integer
               totalDataPipelineRuns:
+                description: The number of DataPipelineRun resources that exist under
+                  the namespace
                 format: int32
                 type: integer
               totalDataPipelines:
+                description: The number of DataPipeline resources that exist under
+                  the namespace
                 format: int32
                 type: integer
               totalDatasets:
+                description: The number of Dataset resources that exist under the
+                  namespace
                 format: int32
                 type: integer
               totalDatasources:
+                description: The number of DataSource resources that exist under the
+                  namespace
                 format: int32
                 type: integer
               totalErrorAlerts:
+                description: The number of error alerts produced under the namespace
                 format: int32
                 type: integer
               totalInfoAlerts:
+                description: The number of informative alerts produced under the namespace
                 format: int32
                 type: integer
               totalModelPipelineRuns:
+                description: The number of ModelPipelineRun resources that exist under
+                  the namespace
                 format: int32
                 type: integer
               totalModelPipelines:
+                description: The number of ModelPipeline resources that exist under
+                  the namespace
                 format: int32
                 type: integer
               totalModels:
+                description: The number of Model resources that exist under the namespace
                 format: int32
                 type: integer
               totalPredictions:
+                description: The number of Prediction resources that exist under the
+                  namespace
                 format: int32
                 type: integer
               totalPredictors:
+                description: The number of Predictor resources that exist under the
+                  namespace
                 format: int32
                 type: integer
               totalStudies:
+                description: The number of Study resources that exist under the namespace
                 format: int32
                 type: integer
             type: object

@@ -1064,14 +1064,14 @@ spec:
                     description: The account name of the business reviewer
                     type: string
                   complianceReviewer:
-                    description: The account name of the compliance reviewer.
+                    description: The account name of the compliance reviewer
                     type: string
                   country:
-                    description: The model country
+                    description: The country whose regulations are under consideration
                     type: string
                   enabled:
                     default: false
-                    description: Enabled specify if the sample is enabled
+                    description: Indicates if governance is enabled
                     type: boolean
                   itReviewer:
                     description: The account name of the IT reviewer
@@ -2219,42 +2219,45 @@ spec:
                     description: The review status for IT department
                     properties:
                       approvalDate:
-                        description: The date of approval
+                        description: The date of the approval
                         format: date-time
                         type: string
                       notes:
-                        description: Notes during the review.
+                        description: Notes taken during the review
                         type: string
                       result:
-                        description: The approval status
+                        description: The approval status, which can be approved or
+                          rejected
                         type: string
                     type: object
                   businessReviewStatus:
-                    description: The business review status
+                    description: The review status for the management department
                     properties:
                       approvalDate:
-                        description: The date of approval
+                        description: The date of the approval
                         format: date-time
                         type: string
                       notes:
-                        description: Notes during the review.
+                        description: Notes taken during the review
                         type: string
                       result:
-                        description: The approval status
+                        description: The approval status, which can be approved or
+                          rejected
                         type: string
                     type: object
                   complianceReviewStatus:
-                    description: The review status for IT department
+                    description: The review status for the compliance department
                     properties:
                       approvalDate:
-                        description: The date of approval
+                        description: The date of the approval
                         format: date-time
                         type: string
                       notes:
-                        description: Notes during the review.
+                        description: Notes taken during the review
                         type: string
                       result:
-                        description: The approval status
+                        description: The approval status, which can be approved or
+                          rejected
                         type: string
                     type: object
                 type: object
