@@ -134,13 +134,13 @@ type DataProductSpec struct {
 	// The default notification specification for all resources under the DataProduct
 	// +kubebuilder:validation:Optional
 	Notification catalog.NotificationSpec `json:"notification,omitempty" protobuf:"bytes,12,opt,name=notification"`
-	// The default resource allocation for model training which takes place under the DataProduct
+	// The default resource allocation for model training and data workloads that takes place under the DataProduct
 	// +kubebuilder:validation:Optional
 	DefaultTrainingResources catalog.ResourceSpec `json:"trainingResources,omitempty" protobuf:"bytes,13,opt,name=trainingResources"`
-	// The default resource allocation for model serving which takes place under the DataProduct
+	// The default resource allocation for model serving workloads that takes place under the DataProduct
 	// +kubebuilder:validation:Optional
 	DefaultServingResources catalog.ResourceSpec `json:"servingResources,omitempty" protobuf:"bytes,14,opt,name=servingResources"`
-	// Denote how many times Jobs created under the DataProduct namespace will retry after failure
+	// Specifies how many times Jobs created under the DataProduct namespace will retry after failure
 	// +kubebuilder:default:=3
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Maximum=10
@@ -149,13 +149,14 @@ type DataProductSpec struct {
 	// KPIs define key performance indicators for the DataProduct (not functional as of the current release)
 	//+kubebuilder:validation:Optional
 	KPIs []KPI `json:"kpis,omitempty" protobuf:"bytes,16,rep,name=kpis"`
-	// The name of the Account which should be on-call for events that occur under the DataProduct
+	// The name of the Account which should be responsible for events that occur under the DataProduct
 	//+kubebuilder:validation:Optional
 	OnCallAccountName string `json:"onCallAccountName,omitempty" protobuf:"bytes,17,opt,name=onCallAccountName"`
 	// The default compilation specification for Study resources created under the DataProduct
 	//+kubebuilder:validation:Optional
 	Compilation catalog.CompilerSpec `json:"compilation,omitempty" protobuf:"bytes,19,opt,name=compilation"`
-	// The clearance level required to access the DataProduct
+	// The clearance level required to access the DataProduct. Accounts which do not have a clearance level
+	// greater than or equal to ClearanceLevel will be denied access to the DataProduct namespace
 	// +kubebuilder:default:=unclassified
 	// +kubebuilder:validation:Optional
 	ClearanceLevel *catalog.SecurityClearanceLevel `json:"clearanceLevel,omitempty" protobuf:"bytes,20,opt,name=clearanceLevel"`
@@ -170,71 +171,68 @@ type DataProductSpec struct {
 	// The Governance requirements (not functional as of the current release)
 	// +kubebuilder:validation:Optional
 	Governance GovernanceSpec `json:"governance,omitempty" protobuf:"bytes,23,opt,name=governance"`
-	// The permission specification which determines which Accounts can access the DataProduct and what actions they can perform
+	// Permissions denotes the specification that determines which Accounts
+	// can access the DataProduct and what actions they can perform
 	// +kubebuilder:validation:Optional
 	Permissions catalog.PermissionsSpec `json:"permissions,omitempty" protobuf:"bytes,24,opt,name=permissions"`
 }
 
 // DataProductStatus defines the observed state of DataProduct
 type DataProductStatus struct {
-	//ObservedGeneration is the Last generation that was acted on
+	// ObservedGeneration is the last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,1,opt,name=observedGeneration"`
-	// Last time the object was updated
+	// The last time the object was updated
 	//+kubebuilder:validation:Optional
 	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,2,opt,name=lastUpdated"`
-	// Stats
-
+	// The number of DataSource resources that exist under the namespace
 	//+kubebuilder:validation:Optional
 	TotalDatasources int32 `json:"totalDatasources,omitempty" protobuf:"bytes,3,opt,name=totalDatasources"`
-
+	// The number of Dataset resources that exist under the namespace
 	//+kubebuilder:validation:Optional
 	TotalDatasets int32 `json:"totalDatasets,omitempty" protobuf:"bytes,4,opt,name=totalDatasets"`
-
+	// The number of DataPipeline resources that exist under the namespace
 	//+kubebuilder:validation:Optional
 	TotalDataPipelines int32 `json:"totalDataPipelines,omitempty" protobuf:"bytes,5,opt,name=totalDataPipelines"`
-
+	// The number of DataPipelineRun resources that exist under the namespace
 	//+kubebuilder:validation:Optional
 	TotalDataPipelineRuns int32 `json:"totalDataPipelineRuns,omitempty" protobuf:"bytes,6,opt,name=totalDataPipelineRuns"`
-
+	// The number of Study resources that exist under the namespace
 	//+kubebuilder:validation:Optional
 	TotalStudies int32 `json:"totalStudies,omitempty" protobuf:"bytes,7,opt,name=totalStudies"`
-
+	// The number of Model resources that exist under the namespace
 	//+kubebuilder:validation:Optional
 	TotalModels int32 `json:"totalModels,omitempty" protobuf:"bytes,8,opt,name=totalModels"`
-
+	// The number of ModelPipeline resources that exist under the namespace
 	//+kubebuilder:validation:Optional
 	TotalModelPipelines int32 `json:"totalModelPipelines,omitempty" protobuf:"bytes,9,opt,name=totalModelPipelines"`
-
+	// The number of ModelPipelineRun resources that exist under the namespace
 	//+kubebuilder:validation:Optional
 	TotalModelPipelineRuns int32 `json:"totalModelPipelineRuns,omitempty" protobuf:"bytes,10,opt,name=totalModelPipelineRuns"`
-
+	// The number of Predictor resources that exist under the namespace
 	//+kubebuilder:validation:Optional
 	TotalPredictors int32 `json:"totalPredictors,omitempty" protobuf:"bytes,11,opt,name=totalPredictors"`
-
+	// The number of ModelAutoBuilder resources that exist under the namespace
 	//+kubebuilder:validation:Optional
 	TotalBuilders int32 `json:"totalBuilders,omitempty" protobuf:"bytes,12,opt,name=totalBuilders"`
-
+	// The number of DataApp resources that exist under the namespace
 	//+kubebuilder:validation:Optional
 	TotalApps int32 `json:"totalApps,omitempty" protobuf:"bytes,13,opt,name=totalApps"`
-
+	// The number of Prediction resources that exist under the namespace
 	//+kubebuilder:validation:Optional
 	TotalPredictions int32 `json:"totalPredictions,omitempty" protobuf:"bytes,14,opt,name=totalPredictions"`
-
+	// The number of informative alerts produced under the namespace
 	//+kubebuilder:validation:Optional
 	TotalInfoAlerts int32 `json:"totalInfoAlerts,omitempty" protobuf:"bytes,15,opt,name=totalInfoAlerts"`
-
+	// The number of error alerts produced under the namespace
 	//+kubebuilder:validation:Optional
 	TotalErrorsAlerts int32 `json:"totalErrorAlerts,omitempty" protobuf:"bytes,16,opt,name=totalErrorAlerts"`
-
-	// Update in case of terminal failure
-	// Borrowed from cluster api controller
+	// In the case of failure, the DataProduct resource controller will set this field with a failure reason
 	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,17,opt,name=failureReason"`
-
-	// Update in case of terminal failure message
+	// In the case of failure, the DataProduct resource controller will set this field with a failure message
 	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,18,opt,name=failureMessage"`
-
-	// Update in case of terminal failure message
+	// The name of the DataProductVersion which currently represents the latest version of the DataProduct.
+	// Newly-created resources will be instantiated with this version by default
 	BaselineVersion *string `json:"baselineVersion,omitempty" protobuf:"bytes,19,opt,name=baselineVersion"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
@@ -250,28 +248,29 @@ type DataProductList struct {
 	Items           []DataProduct `json:"items" protobuf:"bytes,2,rep,name=items"`
 }
 
+// KPI specifies a key performance indicator for a DataProduct. Currently not implemented.
 type KPI struct {
-	// Name is the name of the kpi
+	// The name of the KPI
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Name *string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
-	// Value is the desired value
+	// The value of the KPI
 	Value *float64 `json:"value,omitempty" protobuf:"varint,2,opt,name=value"`
 }
 
-// GovernanceSpec define the governance for models produced in a DataProduct
+// GovernanceSpec describes the governance requirements for models produced under a DataProduct
 type GovernanceSpec struct {
-	// Enabled specify if the sample is enabled
+	// Indicates if governance is enabled
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
-	// The model country
+	// The country whose regulations are under consideration
 	// +kubebuilder:validation:Optional
 	Country *string `json:"country,omitempty" protobuf:"bytes,2,opt,name=country"`
 	// The account name of the IT reviewer
 	// +kubebuilder:validation:Optional
 	ITReviewer *string `json:"itReviewer,omitempty" protobuf:"bytes,3,opt,name=itReviewer"`
-	// The account name of the compliance reviewer.
+	// The account name of the compliance reviewer
 	// +kubebuilder:validation:Optional
 	ComplianceReviewer *string `json:"complianceReviewer,omitempty" protobuf:"bytes,4,opt,name=complianceReviewer"`
 	// The account name of the business reviewer
@@ -287,22 +286,23 @@ const (
 )
 
 type GovernanceReviewStatus struct {
-	// The approval status
+	// The approval status, which can be approved or rejected
 	Result ApprovalType `json:"result,omitempty" protobuf:"bytes,1,opt,name=result"`
-	// The date of approval
+	// The date of the approval
 	ApprovalDate *metav1.Time `json:"approvalDate,omitempty" protobuf:"bytes,2,opt,name=approvalDate"`
-	// Notes during the review.
+	// Notes taken during the review
 	Notes string `json:"notes,omitempty" protobuf:"bytes,3,opt,name=notes"`
 }
 
+// GovernanceStatus describes the current state of a governance review for a model
 type GovernanceStatus struct {
 	// The review status for IT department
 	// +kubebuilder:validation:Optional
 	ITReviewStatus GovernanceReviewStatus `json:"ITReviewStatus,omitempty" protobuf:"bytes,1,opt,name=ITReviewStatus"`
-	// The review status for IT department
+	// The review status for the compliance department
 	// +kubebuilder:validation:Optional
 	ComplianceReviewStatus GovernanceReviewStatus `json:"complianceReviewStatus,omitempty" protobuf:"bytes,2,opt,name=complianceReviewStatus"`
-	// The business review status
+	// The review status for the management department
 	// +kubebuilder:validation:Optional
 	BusinessReviewStatus GovernanceReviewStatus `json:"businessReviewStatus,omitempty" protobuf:"bytes,3,opt,name=businessReviewStatus"`
 }
