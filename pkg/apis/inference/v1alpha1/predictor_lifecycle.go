@@ -92,6 +92,11 @@ func (predictor *Predictor) IsReady() bool {
 	return predictor.GetCond(PredictorReady).Status == v1.ConditionTrue
 }
 
+func (predictor *Predictor) IsFailed() bool {
+	return predictor.GetCond(PredictorReady).Status == v1.ConditionFalse &&
+		predictor.GetCond(PredictorReady).Reason == "Failed"
+}
+
 func ParsePredictorYaml(content []byte) (*Predictor, error) {
 	requiredObj, err := runtime.Decode(scheme.Codecs.UniversalDecoder(SchemeGroupVersion), content)
 	if err != nil {

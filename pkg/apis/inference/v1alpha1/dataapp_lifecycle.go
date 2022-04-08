@@ -80,6 +80,11 @@ func (r *DataApp) IsReady() bool {
 	return r.GetCond(DataAppReady).Status == v1.ConditionTrue
 }
 
+func (dataapp *DataApp) IsFailed() bool {
+	return dataapp.GetCond(DataAppReady).Status == v1.ConditionFalse &&
+		dataapp.GetCond(DataAppReady).Reason == "Failed"
+}
+
 func (r *DataApp) Populate(name string) {
 
 	r.ObjectMeta = metav1.ObjectMeta{
