@@ -2951,9 +2951,6 @@ message VirtualBucketStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 1;
 
-  // Provider is the name of the notifier provider. The name is derived from the connection
-  optional string provider = 2;
-
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 3;

@@ -5280,9 +5280,6 @@ export class VirtualBucketStatus extends jspb.Message {
   hasLastupdated(): boolean;
   clearLastupdated(): VirtualBucketStatus;
 
-  getProvider(): string;
-  setProvider(value: string): VirtualBucketStatus;
-
   getObservedgeneration(): number;
   setObservedgeneration(value: number): VirtualBucketStatus;
 
@@ -5308,7 +5305,6 @@ export class VirtualBucketStatus extends jspb.Message {
 export namespace VirtualBucketStatus {
   export type AsObject = {
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    provider: string,
     observedgeneration: number,
     failurereason: string,
     failuremessage: string,

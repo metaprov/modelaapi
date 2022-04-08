@@ -52579,7 +52579,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus.
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
     lastupdated: (f = msg.getLastupdated()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
-    provider: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     observedgeneration: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     failurereason: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     failuremessage: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
@@ -52625,10 +52624,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus.
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
       msg.setLastupdated(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setProvider(value);
       break;
     case 3:
       var value = /** @type {number} */ (reader.readInt64());
@@ -52682,13 +52677,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus.
       1,
       f,
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 2));
-  if (f != null) {
-    writer.writeString(
-      2,
-      f
     );
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 3));
@@ -52757,42 +52745,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus.
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus.prototype.hasLastupdated = function() {
   return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional string provider = 2;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus.prototype.getProvider = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus.prototype.setProvider = function(value) {
-  return jspb.Message.setField(this, 2, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus.prototype.clearProvider = function() {
-  return jspb.Message.setField(this, 2, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus.prototype.hasProvider = function() {
-  return jspb.Message.getField(this, 2) != null;
 };
 
 
