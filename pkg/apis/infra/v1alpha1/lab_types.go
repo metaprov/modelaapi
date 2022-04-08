@@ -15,7 +15,7 @@ const (
 	LabSaved LabConditionType = "Saved"
 )
 
-// LabCondition describes the state of a lab at a certain point.
+// LabCondition describes the state of a Lab at a certain point
 type LabCondition struct {
 	// Type of account condition.
 	Type LabConditionType `json:"type" protobuf:"bytes,1,opt,name=type,casttype=LabConditionType"`
@@ -29,7 +29,7 @@ type LabCondition struct {
 	Message string `json:"message,omitempty" protobuf:"bytes,5,opt,name=message"`
 }
 
-// Lab is a namespace used for training and data analysis operations.
+// Lab represents a single namespace where data processing and model training Jobs take place
 // +kubebuilder:object:root=true
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
@@ -46,31 +46,31 @@ type Lab struct {
 
 // LabSpec defines the desired state of a Lab
 type LabSpec struct {
-	// Description is a user provided description
+	// The user-provided description of the Lab
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:MaxLength=256
 	Description *string `json:"description,omitempty" protobuf:"bytes,1,opt,name=description"`
 	// +kubebuilder:validation:Optional
-	// TenantRef is a reference to the tenant owning this lab
-	// Default to default tenant.
+	// The reference to the tenant which the object exists under
 	TenantRef *corev1.ObjectReference `json:"tenantRef,omitempty" protobuf:"bytes,2,opt,name=tenantRef"`
-	// Specify resource limits
+	// Limits defines the specification for the hard resource limits
+	// that can be allocated for Jobs created under the Lab
 	// +kubebuilder:validation:Optional
 	Limits ResourceLimitSpec `json:"limits,omitempty" protobuf:"bytes,3,opt,name=limits"`
-	// ClusterName is the name of a remote cluster that is used to execute jobs for this lab
-	// If not empty, jobs assigned to this lab should execute on remote cluster
+	// ClusterName is the name of a VirtualCluster that exists under the same tenant as the object. If specified, Jobs
+	// assigned to the Lab will be executed inside the cluster (currently not implemented)
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:=""
 	ClusterName *string `json:"clusterName,omitempty" protobuf:"bytes,4,opt,name=clusterName"`
-	// The owner account name
+	// The name of the Account which created the object, which exists in the same tenant as the object
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,5,opt,name=owner"`
 }
 
 // +kubebuilder:object:root=true
-// LabList is a list of labs
+// LabList is the list of Labs
 type LabList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
@@ -80,10 +80,10 @@ type LabList struct {
 
 // LabStatus is the observed state of a Lab
 type LabStatus struct {
-	// ObservedGeneration is the Last generation that was acted on
+	// ObservedGeneration is the last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,1,opt,name=observedGeneration"`
-	// Last time the object was updated
+	// The last time the object was updated
 	//+kubebuilder:validation:Optional
 	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,2,opt,name=lastUpdated"`
 	// +patchMergeKey=type
@@ -92,26 +92,25 @@ type LabStatus struct {
 	Conditions []LabCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,3,rep,name=conditions"`
 }
 
-// Defines the resource limits for lab and serving site.
+// ResourceLimitSpec defines the resource limits for workloads created under Lab and ServingSite namespaces
 type ResourceLimitSpec struct {
-	// Enabled, set to true if you want to
+	// Indicates if the resource limit is enabled
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:=false
 	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
-	// High level max memory provider
+	// The maximum quantity of memory that can be consumed under the namespace
 	// +kubebuilder:validation:Optional
 	MaxMem *resource.Quantity `json:"maxMem,omitempty" protobuf:"bytes,2,opt,name=maxMem"`
-	// High level req.
+	// The maximum amount of CPU that can be consumed under the namespace
 	// +kubebuilder:validation:Optional
 	MaxCpu *resource.Quantity `json:"maxCpu,omitempty" protobuf:"bytes,3,opt,name=maxCpu"`
-	// Max number of pods
+	// The maximum number of pods that can be created under the namespace
 	// +kubebuilder:validation:Optional
 	MaxPods *int32 `json:"maxPods,omitempty" protobuf:"varint,4,opt,name=maxPods"`
-	// Max number of pvc
+	// The maximum number of persistent volume claims that can be created under the namespace
 	// +kubebuilder:validation:Optional
 	MaxPvc *int32 `json:"maxPvc,omitempty" protobuf:"varint,5,opt,name=maxPvc"`
-	// Low level spec.
-	// QuotaSpec is quoute specification for the lab namespace.
+	// QuotaSpec defines the resource quota specification for the namespace
 	// +kubebuilder:validation:Optional
 	QuotaSpec *corev1.ResourceQuotaSpec `json:"quota,omitempty" protobuf:"bytes,6,opt,name=quota"`
 	// +kubebuilder:validation:Optional

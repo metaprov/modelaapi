@@ -23,7 +23,7 @@ const (
 	TenantSaved TenantConditionType = "Saved"
 )
 
-// TenantCondition describes the state of a tenant at a certain point.
+// TenantCondition describes the state of a Tenant at a certain point
 type TenantCondition struct {
 	// Type of tenant condition.
 	Type TenantConditionType `json:"type" protobuf:"bytes,1,opt,name=type,casttype=TenantConditionType"`
@@ -37,6 +37,7 @@ type TenantCondition struct {
 	Message string `json:"message,omitempty" protobuf:"bytes,5,opt,name=message"`
 }
 
+// Tenant represents a single root namespace for infrastructure resources and descendant DataProduct namespaces
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
@@ -44,7 +45,6 @@ type TenantCondition struct {
 // +kubebuilder:printcolumn:name="Default Serving Site",type="string",JSONPath=".spec.defaultServingSiteRef.Name",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=tenants,singular=tenant,categories={infra,modela}
-// Tenant represents root tenant.
 type Tenant struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
@@ -52,8 +52,8 @@ type Tenant struct {
 	Status            TenantStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
 }
 
+// TenantList represent a list of Tenants
 // +kubebuilder:object:root=true
-// TenantList represent list of tenants.
 type TenantList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
@@ -61,25 +61,26 @@ type TenantList struct {
 	Items []Tenant `json:"items" protobuf:"bytes,2,rep,name=items"`
 }
 
-// TenantSpec defines the desired state of Tenant
+// TenantSpec defines the desired state of a Tenant
 type TenantSpec struct {
-	// the default lab for this account
+	// The reference to the Lab resource that will be used as a default when creating new DataProduct namespaces
 	// +kubebuilder:validation:Optional
 	DefaultLabRef *v1.ObjectReference `json:"defaultLabRef,omitempty" protobuf:"bytes,1,opt,name=defaultLab"`
-	// the default serving site for this account
+	// The reference to the ServingSite resource that will be used as a default when creating new DataProduct namespaces
 	// +kubebuilder:validation:Optional
 	DefaultServingSiteRef *v1.ObjectReference `json:"defaultServingSiteRef,omitempty" protobuf:"bytes,2,opt,name=defaultServingSiteRef"`
-	// Description is user provided description
+	// The user-provided description of the Tenant
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:MaxLength=512
 	// +kubebuilder:validation:Optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
-	// Owner is the owner account name
+	// Owner indicates the name of the Account under the Tenant which created the Tenant (i.e. the Tenant administrator)
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,4,opt,name=owner"`
-	// The premissions at the tenant level for the tenent objects.
+	// Permissions denotes the specification that determines which Accounts
+	// can access the resources under the Tenant namespace and what actions they can perform
 	// +kubebuilder:validation:Optional
 	Permissions catalog.PermissionsSpec `json:"permissions,omitempty" protobuf:"bytes,5,opt,name=permissions"`
 }

@@ -54,13 +54,12 @@ type ConnectionList struct {
 	Items           []Connection `json:"items" protobuf:"bytes,2,rep,name=items"`
 }
 
-// ConnectionSpec defines the desired state of Connection
+// ConnectionSpec defines the desired state of a Connection
 type ConnectionSpec struct {
-	// TenantRef is the tenant of the connection
-	// default to the default tenant
+	// The reference to the Tenant which owns the DataProduct. Defaults to `default-tenant`
 	// +kubebuilder:validation:Optional
 	TenantRef *corev1.ObjectReference `json:"tenantRef" protobuf:"bytes,1,opt,name=tenantRef"`
-	// The connection category
+	// The type of external system which the connection references
 	// +kubebuilder:default:="general"
 	// +kubebuilder:validation:Optional
 	Category *catalog.ConnectionCategory `json:"category" protobuf:"bytes,2,opt,name=category"`
@@ -68,12 +67,10 @@ type ConnectionSpec struct {
 	// +kubebuilder:validation:Required
 	// +required
 	Provider *catalog.ProviderName `json:"provider,omitempty" protobuf:"bytes,3,opt,name=provider"`
-	// SecretName is a reference to a secret which holds the connection credentials
+	// The reference to the secret which stores the sensitive credentials required to connect to the external system
 	// +kubebuilder:validation:Required
 	// +required
 	SecretRef v1.SecretReference `json:"secretRef,omitempty" protobuf:"bytes,4,opt,name=secretRef"`
-
-	// Databases
 
 	// +kubebuilder:validation:Optional
 	AmazonAthena *AmazonAthenaSpec `json:"athena,omitempty" protobuf:"bytes,5,opt,name=athena"`
@@ -176,8 +173,6 @@ type ConnectionSpec struct {
 
 	// +kubebuilder:validation:Optional
 	GoogleSheets *GoogleSheetsSpec `json:"gsheets,omitempty" protobuf:"bytes,39,opt,name=gsheets"`
-	//////////////////////////////////////
-	// Cloud storage
 
 	// +kubebuilder:validation:Optional
 	AzureStorage *AzureStorageSpec `json:"azurestorage,omitempty" protobuf:"bytes,40,opt,name=azurestorage"`
@@ -270,7 +265,6 @@ type ConnectionSpec struct {
 	// +kubebuilder:validation:Optional
 	Twitter *TwitterSpec `json:"twitter,omitempty" protobuf:"bytes,70,opt,name=twitter"`
 
-	// Message broker
 	// +kubebuilder:validation:Optional
 	RabbitMQ *RabbitMQSpec `json:"rabbitmq,omitempty" protobuf:"bytes,71,opt,name=rabbitmq"`
 
