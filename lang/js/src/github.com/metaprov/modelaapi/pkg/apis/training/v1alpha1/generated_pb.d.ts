@@ -3691,6 +3691,11 @@ export class NotebookRunSpec extends jspb.Message {
   getTtl(): number;
   setTtl(value: number): NotebookRunSpec;
 
+  getLabref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setLabref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): NotebookRunSpec;
+  hasLabref(): boolean;
+  clearLabref(): NotebookRunSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): NotebookRunSpec.AsObject;
   static toObject(includeInstance: boolean, msg: NotebookRunSpec): NotebookRunSpec.AsObject;
@@ -3707,6 +3712,7 @@ export namespace NotebookRunSpec {
     owner: string,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     ttl: number,
+    labref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
   }
 }
 

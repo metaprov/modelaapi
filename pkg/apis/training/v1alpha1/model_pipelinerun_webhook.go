@@ -15,11 +15,19 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/webhook"
 )
 
-func (pr *ModelPipelineRun) Default() {
-	pr.Status.Folder = "modela/live/tenants/default-tenant/dataproducts/" + pr.Namespace +
+func (run *ModelPipelineRun) Default() {
+	run.Status.Folder = "modela/live/tenants/default-tenant/dataproducts/" + run.Namespace +
 		"/dataproductversions/" +
-		*pr.Spec.VersionName +
-		"/pipelines/" + *pr.Spec.PipelineName + "/pipelineruns/" + pr.Name
+		*run.Spec.VersionName +
+		"/pipelines/" + *run.Spec.PipelineName + "/pipelineruns/" + run.Name
+
+	if run.ObjectMeta.Labels == nil {
+		run.ObjectMeta.Labels = make(map[string]string)
+	}
+	if run.Spec.VersionName != nil {
+		run.ObjectMeta.Labels["modela.ai/version"] = *run.Spec.VersionName
+	}
+
 }
 
 // validation

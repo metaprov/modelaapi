@@ -888,6 +888,10 @@ message DataPipelineRunSpec {
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool aborted = 8;
+
+  // The Lab where the data pipeline run.
+  // +kubebuilder:validation:Optional
+  optional k8s.io.api.core.v1.ObjectReference labRef = 9;
 }
 
 // DataPipelineRunStatus defines the observed state of DataPipelineRun

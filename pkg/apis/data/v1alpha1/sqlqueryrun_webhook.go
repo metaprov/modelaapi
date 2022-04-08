@@ -15,15 +15,27 @@ import (
 // defaulting
 var _ webhook.Defaulter = &SqlQueryRun{}
 
-func (r *SqlQueryRun) Default() {
+func (run *SqlQueryRun) Default() {
 
-	if r.Spec.Owner == nil {
-		r.Spec.Owner = util.StrPtr("")
+	if run.Spec.Owner == nil {
+		run.Spec.Owner = util.StrPtr("")
 	}
 
-	if r.Spec.Description == nil {
-		r.Spec.Description = util.StrPtr("")
+	if run.Spec.Description == nil {
+		run.Spec.Description = util.StrPtr("")
 	}
+
+	if run.ObjectMeta.Labels == nil {
+		run.ObjectMeta.Labels = make(map[string]string)
+	}
+	if run.Spec.SqlQueryName != nil {
+		run.ObjectMeta.Labels["modela.ai/sqlquery"] = *run.Spec.SqlQueryName
+	}
+	if run.Spec.VersionName != nil {
+		run.ObjectMeta.Labels["modela.ai/version"] = *run.Spec.VersionName
+	}
+	run.ObjectMeta.Labels["modela.ai/tenant"] = run.Spec.LabRef.Namespace
+	run.ObjectMeta.Labels["modela.ai/lab"] = run.Spec.LabRef.Name
 
 }
 

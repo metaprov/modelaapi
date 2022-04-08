@@ -1014,6 +1014,11 @@ export class PredictionSpec extends jspb.Message {
   getCronpredictorname(): string;
   setCronpredictorname(value: string): PredictionSpec;
 
+  getServingsiteref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setServingsiteref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): PredictionSpec;
+  hasServingsiteref(): boolean;
+  clearServingsiteref(): PredictionSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PredictionSpec.AsObject;
   static toObject(includeInstance: boolean, msg: PredictionSpec): PredictionSpec.AsObject;
@@ -1040,6 +1045,7 @@ export namespace PredictionSpec {
     ttl: number,
     forecastinfo?: ForecastSpec.AsObject,
     cronpredictorname: string,
+    servingsiteref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
   }
 }
 

@@ -656,6 +656,10 @@ message PredictionSpec {
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string cronPredictorName = 16;
+
+  // The serving site that hosts this predictor and the models
+  // +kubebuilder:validation:Optional
+  optional k8s.io.api.core.v1.ObjectReference servingsiteRef = 17;
 }
 
 // PredictionStatus is the observed state of a PredictionTemplate

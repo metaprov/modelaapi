@@ -14031,7 +14031,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.t
     resources: (f = msg.getResources()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.toObject(includeInstance, f),
     priority: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
     paused: (f = jspb.Message.getBooleanField(msg, 7)) == null ? undefined : f,
-    aborted: (f = jspb.Message.getBooleanField(msg, 8)) == null ? undefined : f
+    aborted: (f = jspb.Message.getBooleanField(msg, 8)) == null ? undefined : f,
+    labref: (f = msg.getLabref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -14096,6 +14097,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.d
     case 8:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setAborted(value);
+      break;
+    case 9:
+      var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
+      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
+      msg.setLabref(value);
       break;
     default:
       reader.skipField();
@@ -14174,6 +14180,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.s
     writer.writeBool(
       8,
       f
+    );
+  }
+  f = message.getLabref();
+  if (f != null) {
+    writer.writeMessage(
+      9,
+      f,
+      k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
     );
   }
 };
@@ -14429,6 +14443,43 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.p
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.prototype.hasAborted = function() {
   return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional k8s.io.api.core.v1.ObjectReference labRef = 9;
+ * @return {?proto.k8s.io.api.core.v1.ObjectReference}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.prototype.getLabref = function() {
+  return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
+    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 9));
+};
+
+
+/**
+ * @param {?proto.k8s.io.api.core.v1.ObjectReference|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.prototype.setLabref = function(value) {
+  return jspb.Message.setWrapperField(this, 9, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.prototype.clearLabref = function() {
+  return this.setLabref(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.prototype.hasLabref = function() {
+  return jspb.Message.getField(this, 9) != null;
 };
 
 

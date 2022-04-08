@@ -57,5 +57,19 @@ func (run *DataPipelineRun) Default() {
 	//		*run.Spec.VersionName +
 	//		"/datapipelines/" + *run.Spec.DataPipelineName + "/runs/" + run.Name
 	//}
+	if run.ObjectMeta.Labels == nil {
+		run.ObjectMeta.Labels = make(map[string]string)
+	}
+	if run.Spec.DataPipelineName != nil {
+		run.ObjectMeta.Labels["modela.ai/datapipeline"] = *run.Spec.DataPipelineName
+	}
+	if run.Spec.VersionName != nil {
+		run.ObjectMeta.Labels["modela.ai/version"] = *run.Spec.VersionName
+	}
+	if run.Spec.Owner != nil {
+		run.ObjectMeta.Labels["modela.ai/owner"] = *run.Spec.Owner
+	}
+	run.ObjectMeta.Labels["modela.ai/tenant"] = run.Spec.LabRef.Namespace
+	run.ObjectMeta.Labels["modela.ai/lab"] = run.Spec.LabRef.Name
 
 }

@@ -11,8 +11,13 @@ import (
 // defaulting
 var _ webhook.Defaulter = &Prediction{}
 
-func (pre *Prediction) Default() {
+func (prediction *Prediction) Default() {
 	// if no input bucket defined,
+	if prediction.ObjectMeta.Labels == nil {
+		prediction.ObjectMeta.Labels = make(map[string]string)
+	}
+	prediction.ObjectMeta.Labels["modela.ai/tenant"] = prediction.Spec.ServingSiteRef.Namespace
+	prediction.ObjectMeta.Labels["modela.ai/servingsite"] = prediction.Spec.ServingSiteRef.Name
 
 }
 

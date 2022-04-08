@@ -135,6 +135,9 @@ type PredictionSpec struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	CronPredictionName *string `json:"cronPredictorName,omitempty" protobuf:"bytes,16,opt,name=cronPredictorName"`
+	// The serving site that hosts this predictor and the models
+	// +kubebuilder:validation:Optional
+	ServingSiteRef v1.ObjectReference `json:"servingsiteRef" protobuf:"bytes,17,opt,name=servingsiteRef"`
 }
 
 // PredictionStatus is the observed state of a PredictionTemplate

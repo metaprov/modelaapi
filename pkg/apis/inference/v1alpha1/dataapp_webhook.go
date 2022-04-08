@@ -15,15 +15,21 @@ import (
 // defaulting
 var _ webhook.Defaulter = &DataApp{}
 
-func (r *DataApp) Default() {
+func (dataapp *DataApp) Default() {
 
-	if r.Spec.Owner == nil {
-		r.Spec.Owner = util.StrPtr("")
+	if dataapp.Spec.Owner == nil {
+		dataapp.Spec.Owner = util.StrPtr("")
 	}
 
-	if r.Spec.Description == nil {
-		r.Spec.Description = util.StrPtr("")
+	if dataapp.Spec.Description == nil {
+		dataapp.Spec.Description = util.StrPtr("")
 	}
+
+	if dataapp.ObjectMeta.Labels == nil {
+		dataapp.ObjectMeta.Labels = make(map[string]string)
+	}
+	dataapp.ObjectMeta.Labels["modela.ai/tenant"] = dataapp.Spec.ServingSiteRef.Namespace
+	dataapp.ObjectMeta.Labels["modela.ai/servingsite"] = dataapp.Spec.ServingSiteRef.Name
 
 }
 

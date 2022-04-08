@@ -2485,6 +2485,11 @@ message NotebookRunSpec {
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
   optional int32 ttl = 6;
+
+  // LabRef is a reference to the lab where the trainers for this study run.
+  // If no value is provided, the lab is taken from the
+  // +kubebuilder:validation:Optional
+  optional k8s.io.api.core.v1.ObjectReference labRef = 7;
 }
 
 // NotebookRunStatus define that observed state of NotebookRun resource

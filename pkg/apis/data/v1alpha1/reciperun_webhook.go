@@ -14,8 +14,18 @@ import (
 // defaulting
 var _ webhook.Defaulter = &RecipeRun{}
 
-func (r *RecipeRun) Default() {
-
+func (run *RecipeRun) Default() {
+	if run.ObjectMeta.Labels == nil {
+		run.ObjectMeta.Labels = make(map[string]string)
+	}
+	if run.Spec.RecipeName != nil {
+		run.ObjectMeta.Labels["modela.ai/recipe"] = *run.Spec.RecipeName
+	}
+	if run.Spec.VersionName != nil {
+		run.ObjectMeta.Labels["modela.ai/version"] = *run.Spec.VersionName
+	}
+	run.ObjectMeta.Labels["modela.ai/tenant"] = run.Spec.LabRef.Namespace
+	run.ObjectMeta.Labels["modela.ai/lab"] = run.Spec.LabRef.Name
 }
 
 // validation

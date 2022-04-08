@@ -15,6 +15,15 @@ import (
 func (report *Report) Default() {
 	f := Pdf
 	report.Spec.Format = &f
+
+	if report.ObjectMeta.Labels == nil {
+		report.ObjectMeta.Labels = make(map[string]string)
+	}
+	if report.Spec.VersionName != nil {
+		report.ObjectMeta.Labels["modela.ai/version"] = *report.Spec.VersionName
+	}
+	report.ObjectMeta.Labels["modela.ai/tenant"] = report.Spec.LabRef.Namespace
+	report.ObjectMeta.Labels["modela.ai/lab"] = report.Spec.LabRef.Name
 }
 
 // validation

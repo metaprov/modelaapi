@@ -137,13 +137,15 @@ func (study *Study) Default() {
 
 	if study.ObjectMeta.Labels == nil {
 		study.ObjectMeta.Labels = make(map[string]string)
-		if study.Spec.Owner != nil {
-			study.ObjectMeta.Labels["owner"] = *study.Spec.Owner
-		}
-		if study.Spec.DatasetName != nil {
-			study.ObjectMeta.Labels["dataset"] = *study.Spec.DatasetName
-		}
 	}
+	if study.Spec.Owner != nil {
+		study.ObjectMeta.Labels["owner"] = *study.Spec.Owner
+	}
+	if study.Spec.DatasetName != nil {
+		study.ObjectMeta.Labels["dataset"] = *study.Spec.DatasetName
+	}
+	study.ObjectMeta.Labels["modela.ai/tenant"] = study.Spec.LabRef.Namespace
+	study.ObjectMeta.Labels["modela.ai/lab"] = study.Spec.LabRef.Name
 
 }
 

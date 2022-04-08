@@ -1077,6 +1077,11 @@ export class DataPipelineRunSpec extends jspb.Message {
   getAborted(): boolean;
   setAborted(value: boolean): DataPipelineRunSpec;
 
+  getLabref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setLabref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): DataPipelineRunSpec;
+  hasLabref(): boolean;
+  clearLabref(): DataPipelineRunSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataPipelineRunSpec.AsObject;
   static toObject(includeInstance: boolean, msg: DataPipelineRunSpec): DataPipelineRunSpec.AsObject;
@@ -1094,6 +1099,7 @@ export namespace DataPipelineRunSpec {
     priority: string,
     paused: boolean,
     aborted: boolean,
+    labref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
   }
 }
 

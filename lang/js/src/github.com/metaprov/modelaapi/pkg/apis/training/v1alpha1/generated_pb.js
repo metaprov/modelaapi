@@ -37337,7 +37337,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunSpec.t
     proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookVarValue.toObject, includeInstance),
     owner: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     resources: (f = msg.getResources()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.toObject(includeInstance, f),
-    ttl: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f
+    ttl: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
+    labref: (f = msg.getLabref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -37399,6 +37400,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunSpec.d
     case 6:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setTtl(value);
+      break;
+    case 7:
+      var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
+      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
+      msg.setLabref(value);
       break;
     default:
       reader.skipField();
@@ -37471,6 +37477,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunSpec.s
     writer.writeInt32(
       6,
       f
+    );
+  }
+  f = message.getLabref();
+  if (f != null) {
+    writer.writeMessage(
+      7,
+      f,
+      k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
     );
   }
 };
@@ -37692,6 +37706,43 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunSpec.p
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunSpec.prototype.hasTtl = function() {
   return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional k8s.io.api.core.v1.ObjectReference labRef = 7;
+ * @return {?proto.k8s.io.api.core.v1.ObjectReference}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunSpec.prototype.getLabref = function() {
+  return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
+    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 7));
+};
+
+
+/**
+ * @param {?proto.k8s.io.api.core.v1.ObjectReference|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunSpec.prototype.setLabref = function(value) {
+  return jspb.Message.setWrapperField(this, 7, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunSpec.prototype.clearLabref = function() {
+  return this.setLabref(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunSpec.prototype.hasLabref = function() {
+  return jspb.Message.getField(this, 7) != null;
 };
 
 

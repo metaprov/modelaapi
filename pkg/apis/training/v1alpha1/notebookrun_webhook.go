@@ -16,6 +16,14 @@ import (
 )
 
 func (run *NotebookRun) Default() {
+	if run.ObjectMeta.Labels == nil {
+		run.ObjectMeta.Labels = make(map[string]string)
+	}
+	if run.Spec.VersionName != nil {
+		run.ObjectMeta.Labels["modela.ai/version"] = *run.Spec.VersionName
+	}
+	run.ObjectMeta.Labels["modela.ai/tenant"] = run.Spec.LabRef.Namespace
+	run.ObjectMeta.Labels["modela.ai/lab"] = run.Spec.LabRef.Name
 
 }
 

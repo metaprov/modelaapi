@@ -48,6 +48,16 @@ func (b *ModelAutobuilder) Default() {
 		b.Spec.Objective = &o
 	}
 
+	if b.ObjectMeta.Labels == nil {
+		b.ObjectMeta.Labels = make(map[string]string)
+	}
+	if b.Spec.DataProductVersionName != nil {
+		b.ObjectMeta.Labels["modela.ai/version"] = *b.Spec.DataProductVersionName
+	}
+	b.ObjectMeta.Labels["modela.ai/tenant"] = b.Spec.LabRef.Namespace
+	b.ObjectMeta.Labels["modela.ai/lab"] = b.Spec.LabRef.Name
+	b.ObjectMeta.Labels["modela.ai/servingsite"] = b.Spec.ServingSiteRef.Name
+
 }
 
 // validation

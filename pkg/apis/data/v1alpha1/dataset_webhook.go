@@ -28,17 +28,18 @@ func (dataset *Dataset) Default() {
 
 	if dataset.ObjectMeta.Labels == nil {
 		dataset.ObjectMeta.Labels = make(map[string]string)
-		if dataset.Spec.DataSourceName != nil {
-			dataset.ObjectMeta.Labels["modela.ai/datasource"] = *dataset.Spec.DataSourceName
-		}
-		if dataset.Spec.VersionName != nil {
-			dataset.ObjectMeta.Labels["modela.ai/version"] = *dataset.Spec.VersionName
-		}
-		if dataset.Spec.Owner != nil {
-			dataset.ObjectMeta.Labels["modela.ai/owner"] = *dataset.Spec.Owner
-		}
-
 	}
+	if dataset.Spec.DataSourceName != nil {
+		dataset.ObjectMeta.Labels["modela.ai/datasource"] = *dataset.Spec.DataSourceName
+	}
+	if dataset.Spec.VersionName != nil {
+		dataset.ObjectMeta.Labels["modela.ai/version"] = *dataset.Spec.VersionName
+	}
+	if dataset.Spec.Owner != nil {
+		dataset.ObjectMeta.Labels["modela.ai/owner"] = *dataset.Spec.Owner
+	}
+	dataset.ObjectMeta.Labels["modela.ai/tenant"] = dataset.Spec.LabRef.Namespace
+	dataset.ObjectMeta.Labels["modela.ai/lab"] = dataset.Spec.LabRef.Name
 
 	// If the live path is empty, copy it from the depot path
 	if *dataset.Spec.Origin.Type == DataLocationObjectStorage {

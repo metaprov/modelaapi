@@ -101,6 +101,9 @@ type DataPipelineRunSpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Aborted *bool `json:"aborted,omitempty" protobuf:"varint,8,opt,name=aborted"`
+	// The Lab where the data pipeline run.
+	// +kubebuilder:validation:Optional
+	LabRef v1.ObjectReference `json:"labRef,omitempty" protobuf:"bytes,9,opt,name=labRef"`
 }
 
 // DataPipelineRunStatus defines the observed state of DataPipelineRun

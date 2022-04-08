@@ -99,6 +99,10 @@ type NotebookRunSpec struct {
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
 	TTL *int32 `json:"ttl,omitempty" protobuf:"varint,6,opt,name=ttl"`
+	// LabRef is a reference to the lab where the trainers for this study run.
+	// If no value is provided, the lab is taken from the
+	// +kubebuilder:validation:Optional
+	LabRef v1.ObjectReference `json:"labRef,omitempty" protobuf:"bytes,7,opt,name=labRef"`
 }
 
 // NotebookRunStatus define that observed state of NotebookRun resource
