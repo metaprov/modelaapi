@@ -47,7 +47,8 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: Account represents a user or team in the system
+        description: Account represents a single user on the system or a team that
+          other Accounts can be grouped under
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation
@@ -62,23 +63,26 @@ spec:
           metadata:
             type: object
           spec:
-            description: AccountSpec defines the desired state of Account
+            description: AccountSpec defines the desired state of an Account
             properties:
               admin:
                 default: false
-                description: User is admin. Admin have full control on other accounts.
+                description: Indicates if the Account has admin permissions. Admin
+                  accounts have unrestricted access to all resources and full control
+                  to modify and create other Accounts
                 type: boolean
               avatar:
                 description: The avatar location
                 properties:
                   bucketName:
                     default: ""
-                    description: Bucketname is the name of the bucket holding the
-                      bucket name
+                    description: BucketName is the name of the VirtualBucket resource
+                      that exists on the same tenant as the Account
                     type: string
                   path:
                     default: ""
-                    description: Path to the full data file (e.g. csv file).
+                    description: Path specifies the path to an image file on the VirtualBucket
+                      (e.g. a PNG file)
                     type: string
                 type: object
               clearenceLevel:
@@ -93,13 +97,14 @@ spec:
                 type: string
               email:
                 default: ""
-                description: Email specify the email of the user
+                description: The e-mail address of the person using the Account
                 maxLength: 64
                 type: string
               emailPassword:
                 default: false
-                description: Email account creation event to user (using the user
-                  email)
+                description: Indicates if an e-mail will be sent to the address specified
+                  by the Email field, that notifies the Account owner about the creation
+                  of the Account
                 type: boolean
               favoriteProducts:
                 description: List of favorite data product
@@ -108,34 +113,35 @@ spec:
                 type: array
               firstName:
                 default: ""
-                description: First FileName is the user first name
+                description: The first name of the person using the Account
                 maxLength: 64
                 type: string
               lastName:
                 default: ""
-                description: LastName is the user last name
+                description: The last name of the person using the Account
                 maxLength: 64
                 type: string
               memberOf:
                 default: ""
-                description: MemberOf is the team name of this account. An account
-                  can belong to one team
+                description: MemberOf specifies the name of the team that the Account
+                  belongs to. An account can belong to one other team Account
                 type: string
               phone:
                 default: ""
-                description: Phone specify the phone of the user
+                description: The phone number of the person using the Account
                 maxLength: 64
                 type: string
               resetPassword:
                 default: false
-                description: User need to reset password upon login
+                description: Indicates if the Account owner will be prompted to reset
+                  their password upon login
                 type: boolean
               team:
                 default: false
-                description: Team indicates if this a team account.
+                description: Indicates if the Account is a team account
                 type: boolean
               tenantRef:
-                description: TenantRef is the account tenant
+                description: The reference to the tenant which the object exists under
                 properties:
                   apiVersion:
                     description: API version of the referent.
@@ -172,14 +178,14 @@ spec:
                 type: object
               type:
                 default: user
-                description: Type is the type of account - user, group. default is
-                  user
+                description: The type of Account, which can be a user or a group
                 enum:
                 - user
                 - group
                 type: string
               username:
-                description: UserName specifies the name of the account
+                description: The username of the account, which can be used to log
+                  into Modela
                 maxLength: 64
                 minLength: 4
                 type: string
@@ -216,18 +222,19 @@ spec:
                   type: object
                 type: array
               failureMessage:
-                description: Update in case of terminal failure message
+                description: In the case of failure, the Account resource controller
+                  will set this field with a failure message
                 type: string
               failureReason:
-                description: Update in case of terminal failure Borrowed from cluster
-                  api controller
+                description: In the case of failure, the Account resource controller
+                  will set this field with a failure reason
                 type: string
               lastUpdated:
-                description: Last time the object was updated
+                description: The last time the object was updated
                 format: date-time
                 type: string
               observedGeneration:
-                description: ObservedGeneration is the Last generation that was acted
+                description: ObservedGeneration is the last generation that was acted
                   on
                 format: int64
                 type: integer

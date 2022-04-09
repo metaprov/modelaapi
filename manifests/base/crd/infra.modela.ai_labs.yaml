@@ -65,8 +65,8 @@ spec:
                 maxLength: 256
                 type: string
               limits:
-                description: Limits defines the specification for the hard resource
-                  limits that can be allocated for Jobs created under the Lab
+                description: Limits specifies the hard resource limits that can be
+                  allocated for workloads created under the Lab
                 properties:
                   enabled:
                     default: false

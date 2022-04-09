@@ -46,6 +46,8 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
+        description: Alert represents temporal information about an event that occurred
+          with a Modela custom resource
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation
@@ -60,10 +62,11 @@ spec:
           metadata:
             type: object
           spec:
-            description: AlertSpec defines the desired state of Alert
+            description: AlertSpec defines the contents of an Alert. Alerts are generated
+              by Modela resource controllers and should not be created manually.
             properties:
               entityRef:
-                description: The subject entity
+                description: The entity which the Alert is in reference to
                 properties:
                   apiVersion:
                     description: API version of the referent.
@@ -101,33 +104,38 @@ spec:
               fields:
                 additionalProperties:
                   type: string
-                description: The actual information about the alerts
+                description: Additional key-value information about the event
                 type: object
               image:
                 default: ""
-                description: A URL for an image.
+                description: The URL of an image in reference to the Alert
                 type: string
               level:
                 default: normal
-                description: Scopes is the list of scopes for this token.
+                description: The significance of the Alert, which can be normal, warning,
+                  or error
                 type: string
               message:
                 default: ""
-                description: Alert Message
+                description: The message of the Alert
                 type: string
               notifierName:
                 default: ""
-                description: NotifierName is the name of the notifier used to fire
-                  the alert.
+                description: The name of the Notifier resource that exists in the
+                  same tenant as the Alert which the contents of the Alert will be
+                  forwarded to
                 type: string
               owner:
                 default: no-one
+                description: The name of the Account which owns the resource that
+                  the Alert references
                 type: string
               subject:
                 default: ""
+                description: The subject of the Alert
                 type: string
               tenantRef:
-                description: TenantRef is the commit tenant
+                description: The reference to the tenant which the object exists under
                 properties:
                   apiVersion:
                     description: API version of the referent.
@@ -164,8 +172,8 @@ spec:
                 type: object
               ttl:
                 default: 3600
-                description: the alert TTL. Measured from alert creation time. The
-                  default TTL is 1H.
+                description: The time-to-live of the Alert, after which the Alert
+                  will be archived
                 format: int32
                 type: integer
               url:
@@ -174,31 +182,31 @@ spec:
                 type: string
             type: object
           status:
-            description: AlertStatus is the observed state of a Alert
+            description: AlertStatus is the observed state of an Alert
             properties:
               at:
-                description: The time when the alert was fired
+                description: The time when the Alert was fired
                 format: date-time
                 type: string
               conditions:
                 items:
-                  description: AlertCondition describes the state of the license at
-                    a certain point.
+                  description: AlertCondition describes the state of an Alert at a
+                    certain point
                   properties:
                     lastTransitionTime:
                       description: Last time the condition transitioned from one status
-                        to another.
+                        to another
                       format: date-time
                       type: string
                     message:
-                      description: A human readable message indicating details about
-                        the transition.
+                      description: A human-readable message indicating details about
+                        the transition
                       type: string
                     reason:
-                      description: The reason for the condition's last transition.
+                      description: The reason for the condition's last transition
                       type: string
                     status:
-                      description: Status of the condition, one of True, False, AutoScaler.
+                      description: Status of the condition, one of True, False, Unknown.
                       type: string
                     type:
                       description: Type of account condition.
@@ -209,24 +217,25 @@ spec:
                   type: object
                 type: array
               failureMessage:
-                description: Update in case of terminal failure message
+                description: In the case of failure, the Alert resource controller
+                  will set this field with a failure message
                 type: string
               failureReason:
-                description: Update in case of terminal failure Borrowed from cluster
-                  api controller
+                description: In the case of failure, the Alert resource controller
+                  will set this field with a failure reason
                 type: string
               lastUpdated:
-                description: Last time the object was updated
+                description: The last time the object was updated
                 format: date-time
                 type: string
               observedGeneration:
-                description: ObservedGeneration is the Last generation that was acted
+                description: ObservedGeneration is the last generation that was acted
                   on
                 format: int64
                 type: integer
               phase:
                 default: Pending
-                description: Phase is the phase of the model
+                description: The current phase of the Alert
                 type: string
             type: object
         required:

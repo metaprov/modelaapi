@@ -710,7 +710,8 @@ message PRCurve {
   repeated CurvePoint values = 1;
 }
 
-// PermissionsSpec specifies the Accounts that have access to a DataProduct or Tenant namespace
+// PermissionsSpec specifies the Accounts that have access to a DataProduct or Tenant namespace and what permissions
+// they possess for resources under the namespace
 message PermissionsSpec {
   repeated Stakeholder stakeholders = 1;
 }

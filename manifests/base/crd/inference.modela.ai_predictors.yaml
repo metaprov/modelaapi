@@ -629,6 +629,7 @@ spec:
                     type: string
                 type: object
               rest:
+                default: false
                 description: If true, set expose a REST service.
                 type: boolean
               servingsiteRef:

@@ -191,6 +191,7 @@ type PredictorSpec struct {
 	// +kubebuilder:validation:Optional
 	Auth PredictorAuthSpec `json:"auth,omitempty" protobuf:"bytes,25,opt,name=auth"`
 	// If true, set expose a REST service.
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	REST *bool `json:"rest,omitempty" protobuf:"varint,26,opt,name=rest"`
 }

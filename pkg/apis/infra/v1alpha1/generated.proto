@@ -19,7 +19,7 @@ import "k8s.io/apimachinery/pkg/runtime/schema/generated.proto";
 // Package-wide variables from generator "generated".
 option go_package = "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1";
 
-// Account represents a user or team in the system
+// Account represents a single user on the system or a team that other Accounts can be grouped under
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
@@ -64,70 +64,72 @@ message AccountList {
   repeated Account items = 2;
 }
 
-// AccountSpec defines the desired state of Account
+// AccountSpec defines the desired state of an Account
 message AccountSpec {
-  // TenantRef is the account tenant
+  // The reference to the tenant which the object exists under
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference tenantRef = 1;
 
-  // Type is the type of account - user, group. default is user
+  // The type of Account, which can be a user or a group
   // +kubebuilder:default:=user
   // +kubebuilder:validation:Optional
   optional string type = 3;
 
-  // UserName specifies the name of the account
+  // The username of the account, which can be used to log into Modela
   // +kubebuilder:validation:MinLength=4
   // +kubebuilder:validation:MaxLength=64
   // +kubebuilder:validation:Required
   // +required
   optional string username = 4;
 
-  // First FileName is the user first name
+  // The first name of the person using the Account
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   // +kubebuilder:validation:MaxLength=64
   optional string firstName = 5;
 
-  // LastName is the user last name
+  // The last name of the person using the Account
   // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=64
   // +kubebuilder:validation:Optional
   optional string lastName = 6;
 
-  // Email specify the email of the user
+  // The e-mail address of the person using the Account
   // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=64
   // +kubebuilder:validation:Required
   // +required
   optional string email = 7;
 
-  // Phone specify the phone of the user
+  // The phone number of the person using the Account
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   // +kubebuilder:validation:MaxLength=64
   optional string phone = 8;
 
-  // User is admin. Admin have full control on other accounts.
+  // Indicates if the Account has admin permissions. Admin accounts have unrestricted access to all resources and
+  // full control to modify and create other Accounts
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool admin = 9;
 
-  // Team indicates if this a team account.
+  // Indicates if the Account is a team account
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool team = 10;
 
-  // MemberOf is the team name of this account. An account can belong to one team
+  // MemberOf specifies the name of the team that the Account belongs to. An account can belong to one other team Account
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string memberOf = 11;
 
-  // Email account creation event to user (using the user email)
+  // Indicates if an e-mail will be sent to the address specified by the Email field, that notifies the Account owner
+  // about the creation of the Account
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool emailPassword = 12;
 
-  // User need to reset password upon login
+  // Indicates if the Account owner will be prompted to reset their password upon login
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool resetPassword = 13;
@@ -148,20 +150,19 @@ message AccountSpec {
 
 // AccountStatus defines the actual state of the api object
 message AccountStatus {
-  // Last time the object was updated
+  // The last time the object was updated
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 1;
 
-  // ObservedGeneration is the Last generation that was acted on
+  // ObservedGeneration is the last generation that was acted on
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 2;
 
-  // Update in case of terminal failure
-  // Borrowed from cluster api controller
+  // In the case of failure, the Account resource controller will set this field with a failure reason
   // +kubebuilder:validation:Optional
   optional string failureReason = 3;
 
-  // Update in case of terminal failure message
+  // In the case of failure, the Account resource controller will set this field with a failure message
   // +kubebuilder:validation:Optional
   optional string failureMessage = 4;
 
@@ -171,6 +172,7 @@ message AccountStatus {
   repeated AccountCondition conditions = 5;
 }
 
+// Alert represents temporal information about an event that occurred with a Modela custom resource
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase",description=""
@@ -190,66 +192,70 @@ message Alert {
   optional AlertStatus status = 3;
 }
 
-// AlertCondition describes the state of the license at a certain point.
+// AlertCondition describes the state of an Alert at a certain point
 message AlertCondition {
   // Type of account condition.
   optional string type = 1;
 
-  // Status of the condition, one of True, False, AutoScaler.
+  // Status of the condition, one of True, False, Unknown.
   optional string status = 2;
 
-  // Last time the condition transitioned from one status to another.
+  // Last time the condition transitioned from one status to another
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
 
-  // The reason for the condition's last transition.
+  // The reason for the condition's last transition
   optional string reason = 4;
 
-  // A human readable message indicating details about the transition.
+  // A human-readable message indicating details about the transition
   optional string message = 5;
 }
 
-// +kubebuilder:object:root=true
 // AlertList is a list of Alerts
+// +kubebuilder:object:root=true
 message AlertList {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
 
   repeated Alert items = 2;
 }
 
-// AlertSpec defines the desired state of Alert
+// AlertSpec defines the contents of an Alert. Alerts are generated by Modela resource controllers and should
+// not be created manually.
 message AlertSpec {
+  // The subject of the Alert
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string subject = 1;
 
-  // Alert Message
+  // The message of the Alert
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string message = 2;
 
-  // Scopes is the list of scopes for this token.
+  // The significance of the Alert, which can be normal, warning, or error
   // +kubebuilder:default:="normal"
   // +kubebuilder:validation:Optional
   optional string level = 3;
 
-  // The subject entity
+  // The entity which the Alert is in reference to
   optional k8s.io.api.core.v1.ObjectReference entityRef = 4;
 
+  // The name of the Notifier resource that exists in the same tenant as the Alert which the contents of the
+  // Alert will be forwarded to
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Required
-  // NotifierName is the name of the notifier used to fire the alert.
   optional string notifierName = 5;
 
+  // The name of the Account which owns the resource that the Alert references
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
   optional string owner = 6;
 
-  // the alert TTL. Measured from alert creation time. The default TTL is 1H.
+  // The time-to-live of the Alert, after which the Alert will be archived
   // +kubebuilder:default:=3600
   // +kubebuilder:validation:Optional
   optional int32 ttl = 7;
 
-  // The actual information about the alerts
+  // Additional key-value information about the event
   // +kubebuilder:validation:Optional
   map<string, string> fields = 8;
 
@@ -258,41 +264,40 @@ message AlertSpec {
   // +kubebuilder:validation:Optional
   optional string url = 9;
 
-  // A URL for an image.
+  // The URL of an image in reference to the Alert
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string image = 10;
 
-  // TenantRef is the commit tenant
+  // The reference to the tenant which the object exists under
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference tenantRef = 11;
 }
 
-// AlertStatus is the observed state of a Alert
+// AlertStatus is the observed state of an Alert
 message AlertStatus {
-  // Phase is the phase of the model
+  // The current phase of the Alert
   // +kubebuilder:default:="Pending"
   // +kubebuilder:validation:Optional
   optional string phase = 1;
 
-  // The time when the alert was fired
+  // The time when the Alert was fired
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time at = 2;
 
-  // ObservedGeneration is the Last generation that was acted on
+  // ObservedGeneration is the last generation that was acted on
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 3;
 
-  // Last time the object was updated
+  // The last time the object was updated
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 4;
 
-  // Update in case of terminal failure
-  // Borrowed from cluster api controller
+  // In the case of failure, the Alert resource controller will set this field with a failure reason
   // +kubebuilder:validation:Optional
   optional string failureReason = 5;
 
-  // Update in case of terminal failure message
+  // In the case of failure, the Alert resource controller will set this field with a failure message
   // +kubebuilder:validation:Optional
   optional string failureMessage = 6;
 
@@ -494,7 +499,7 @@ message ApiTokenCondition {
   // Type of account condition.
   optional string type = 1;
 
-  // Status of the condition, one of True, False, AutoScaler.
+  // Status of the condition, one of True, False, Unknown.
   optional string status = 2;
 
   // Last time the condition transitioned from one status to another.
@@ -568,7 +573,7 @@ message AttachmentCondition {
   // Type of account condition.
   optional string type = 1;
 
-  // Status of the condition, one of True, False, AutoScaler.
+  // Status of the condition, one of True, False, Unknown
   optional string status = 2;
 
   // Last time the condition transitioned from one status to another.
@@ -645,13 +650,14 @@ message AttachmentStatus {
   repeated AttachmentCondition conditions = 7;
 }
 
+// AvatarSpec specifies the location of an avatar for an Account
 message AvatarSpec {
   // +kubebuilder:default:=""
-  // Bucketname is the name of the bucket holding the bucket name
+  // BucketName is the name of the VirtualBucket resource that exists on the same tenant as the Account
   // +kubebuilder:validation:Optional
   optional string bucketName = 1;
 
-  // Path to the full data file (e.g. csv file).
+  // Path specifies the path to an image file on the VirtualBucket (e.g. a PNG file)
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string path = 2;
@@ -801,7 +807,7 @@ message CommitCondition {
   // Type of account condition.
   optional string type = 1;
 
-  // Status of the condition, one of True, False, AutoScaler.
+  // Status of the condition, one of True, False, Unknown.
   optional string status = 2;
 
   // Last time the condition transitioned from one status to another.
@@ -897,7 +903,7 @@ message ConnectionCondition {
   // Type of account condition.
   optional string type = 1;
 
-  // Status of the condition, one of True, False, AutoScaler.
+  // Status of the condition, one of True, False, Unknown.
   optional string status = 2;
 
   // Last time the condition transitioned from one status to another.
@@ -1620,8 +1626,7 @@ message LabSpec {
   // The reference to the tenant which the object exists under
   optional k8s.io.api.core.v1.ObjectReference tenantRef = 2;
 
-  // Limits defines the specification for the hard resource limits
-  // that can be allocated for Jobs created under the Lab
+  // Limits specifies the hard resource limits that can be allocated for workloads created under the Lab
   // +kubebuilder:validation:Optional
   optional ResourceLimitSpec limits = 3;
 
@@ -1653,6 +1658,7 @@ message LabStatus {
   repeated LabCondition conditions = 3;
 }
 
+// License represents the license key and limitations of a cluster-wide license obtained from Modela.ai
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Valid\")].status",description=""
@@ -1666,8 +1672,6 @@ message LabStatus {
 // +kubebuilder:printcolumn:name="Expire At",type="date",JSONPath=".spec.expireAt",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=licenses,singular=license,categories={infra,modela}
-// License is an abstraction that represent the cluster wide license
-// as obtained from Modela. The license is store inside a a secret
 message License {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
@@ -1676,7 +1680,7 @@ message License {
   optional LicenseStatus status = 3;
 }
 
-// LicenseCondition describes the state of the license at a certain point.
+// LicenseCondition describes the state of the license at a certain point
 message LicenseCondition {
   // Type of condition.
   optional string type = 1;
@@ -1695,118 +1699,120 @@ message LicenseCondition {
 }
 
 // +kubebuilder:object:root=true
-// LicenseList is a list of License
+// LicenseList is a list of Licenses
 message LicenseList {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
 
   repeated License items = 2;
 }
 
-// LicenseSpec defines the desired state of License
+// LicenseSpec defines the details of a License. The contents of the specification are derived from
+// the actual license key, and changing the specification has no effect on the limitations of the license
 message LicenseSpec {
   // Reference to the tenant owning this license
   // +kubebuilder:validation:Optional
   // Default to default tenant.
   optional k8s.io.api.core.v1.ObjectReference tenantRef = 1;
 
-  // The secret containing the license token
+  // The reference to the secret containing the license token
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.SecretReference secretRef = 2;
 
-  // Owner is the account owning this license
+  // The name of the Account which created the object, which exists in the same tenant as the object
   // +kubebuilder:validation:Optional
   // +kubebuilder:default:="no-one"
   optional string owner = 3;
 
+  // The e-mail address of the Modela.ai account which owns the license
   // +kubebuilder:validation:Optional
   // +kubebuilder:default:=""
   optional string email = 4;
 
-  // TrialStart is the start date for free trial
+  // TrialStart is the start date for of the free trial period, if active
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time trialStart = 5;
 
-  // TrialEnd when free trial end
+  // TrialEnd specifies when the free trial expires, if active
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time trialEnd = 6;
 
+  // MaxProducts specifies the maximum number of DataProduct across the cluster
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
   optional int32 maxProducts = 7;
 
-  // MaxTrainers is max number of trainers
+  // MaxTrainers specifies the maximum number of parallel trainers that can be active at once
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
   optional int32 maxTrainers = 8;
 
-  // MaxServers is the max number of worker nodes
+  // MaxServers specifies the maximum number of Kubernetes nodes that may be utilized at once
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
   optional int32 maxServers = 9;
 
-  // MaxUsers is the max number of active accounts
+  // MaxUsers specifies the maximum number of Accounts that can be created across all tenants
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
   optional int32 maxUsers = 10;
 
-  // max data planes
+  // MaxDataPlanes specifies the maximum number of data plane replicas that may exist at once
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
   optional int32 maxDataPlanes = 11;
 
-  // Forcast denote if forecast feature supported
+  // Forecast indicates if Modela can generate forecasting models
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool forecast = 12;
 
-  // NLP is nlp feature supported
+  // NLP indicates if natural language processing models are supported
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool nlp = 13;
 
-  // Is vision feature supported
+  // Vision indicates if computer vision models are supported
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool vision = 14;
 
-  // Is chatbot feature supported
+  // Chatbot indicates if chatbot models are supported
   // +kubebuilder:default:=false
   optional bool chatbot = 15;
 
-  // The product name
+  // The name of the license product, internal to Modela.ai
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string productName = 16;
 
-  // The price name
+  // The name of the license price, internal to Modela.ai
   // +kubebuilder:validation:Optional
   optional string priceName = 17;
 
-  // When the license expire
+  // The date at which the license expires
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time expireAt = 18;
 
-  // NotifierName is a reference to a notifier to receive the license expiration notification
+  // The reference to a Notifier resource that receives Alerts for license expiration
   // +kubebuilder:validation:Optional
   optional string notifierName = 19;
 }
 
 // LicenseStatus is the observed state of a License
 message LicenseStatus {
-  // Last time the object was updated
+  // The last time the object was updated
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 1;
 
-  // ObservedGeneration is the Last generation that was acted on
+  // ObservedGeneration is the last generation that was acted on
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 2;
 
-  // Update in case of terminal failure
-  // Borrowed from cluster api controller
+  // In the case of failure, the License resource controller will set this field with a failure reason
   // +kubebuilder:validation:Optional
   optional string failureReason = 3;
 
-  // Update in case of terminal failure message
+  // In the case of failure, the License resource controller will set this field with a failure message
   // +kubebuilder:validation:Optional
   optional string failureMessage = 4;
 
@@ -1889,12 +1895,12 @@ message ModelaSystem {
   optional ModelaSystemStatus status = 3;
 }
 
-// ModelaSystemCondition describes the state of the license at a certain point.
+// ModelaSystemCondition describes the state of the ModelaSystem at a certain point
 message ModelaSystemCondition {
   // Type of account condition.
   optional string type = 1;
 
-  // Status of the condition, one of True, False, AutoScaler.
+  // Status of the condition, one of True, False, Unknown.
   optional string status = 2;
 
   // Last time the condition transitioned from one status to another.
@@ -1938,7 +1944,7 @@ message ModelaSystemSpec {
 
 // ModelaSystemStatus is the observed state of a ModelaSystem
 message ModelaSystemStatus {
-  // ObservedGeneration is the Last generation that was acted on
+  // ObservedGeneration is the last generation that was acted on
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 1;
 
@@ -2091,7 +2097,7 @@ message NotifierCondition {
   // Type of account condition.
   optional string type = 1;
 
-  // Status of the condition, one of True, False, AutoScaler.
+  // Status of the condition, one of True, False, Unknown.
   optional string status = 2;
 
   // Last time the condition transitioned from one status to another.
@@ -2473,76 +2479,80 @@ message ServingSiteList {
   repeated ServingSite items = 2;
 }
 
+// ServingSiteSpec represents a namespace where model serving workloads are executed under
 message ServingSiteSpec {
-  // Description is user provided description
+  // The user-provided description of the object
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string description = 1;
 
-  // Reference to the tenant owning this serving site.
-  // Default to default tenant.
+  // The reference to the tenant which the object exists under
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference tenantRef = 2;
 
-  // Specify resource limits
+  // Limits specifies the hard resource limits that can be allocated for workloads created under the ServingSite
   // +kubebuilder:validation:Optional
   optional ResourceLimitSpec limits = 3;
 
-  // IngressName denote the name of the ingress object where the serving site
-  // places the external points used to access the predictors
+  // IngressName specifies the name of the Kubernetes Ingress resource which the ServingSite uses to define
+  // external access points for resources that accept traffic to their services (i.e. Predictors). This
+  // field is set automatically during the creation of the ServingSite and neither the contents of the
+  // Ingress nor the IngressName should be modified by an end-user
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string ingressName = 4;
 
-  // The FQDN for this site. This will register with ingress.
-  // +kubebuilder:default:=""
+  // FQDN specifies the fully-qualified domain name that the ServingSite's Ingress will use as the base host for the
+  // endpoint of services deployed under the ServingSite. For example, setting the FQDN as `model-serving.modela.ai`
+  // will automatically serve Predictors using the REST API at `predictors.model-serving.modela.ai`
+  // +kubebuilder:default:="serving.vcap.me"
   // +kubebuilder:validation:Optional
   optional string fqdn = 5;
 
-  // ClusterName is  the virtual cluster name in case that the lab is not on the same cluster
+  // ClusterName is the name of a VirtualCluster that exists under the same tenant as the object. If specified, workloads
+  // executed under the ServingSite will be executed inside the cluster (currently not implemented)
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string clusterName = 6;
 
-  // Owner is the owner account name
+  // The name of the Account which created the object, which exists in the same tenant as the object
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
   optional string owner = 7;
 }
 
 message ServingSiteStatus {
-  // ObservedGeneration is the Last generation that was acted on
+  // ObservedGeneration is the last generation that was acted on
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 1;
 
-  // Last time the object was updated
+  // The last time the object was updated
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2;
 
-  // active predictors
+  // The number of active predictor services
   optional int32 activePredictors = 3;
 
-  // inactive predictors
+  // The number of inactive (non-deployed) predictors
   optional int32 inactivePredictors = 4;
 
-  // total predictors service failed
+  // The number of predictor services that have failed/errored
   optional int32 totalPredictorServiceFailed = 5;
 
-  // total predictors with data drift failed
+  // The number of predictors that have detected a data drift
   optional int32 totalPredictorDataDriftFailed = 6;
 
-  // total predictors accuracy failed
+  // The number of predictors that have detected average inaccurate results
   optional int32 totalPredictorAccuracyFailed = 7;
 
-  // Last 7 days predictions
+  // The collection of predictions from the last 7 days
   repeated int32 lastDailyPredictions = 8;
 
-  // Update in case of terminal failure
-  // Borrowed from cluster api controller
+  // In the case of failure, the ServingSite resource controller will set this field with a failure reason
   // +kubebuilder:validation:Optional
   optional string failureReason = 9;
 
-  // Update in case of terminal failure message
+  // In the case of failure, the ServingSite resource controller will set this field with a failure message
   // +kubebuilder:validation:Optional
   optional string failureMessage = 10;
 

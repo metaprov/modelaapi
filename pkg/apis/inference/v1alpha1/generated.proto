@@ -303,7 +303,7 @@ message DataAppCondition {
   // Type of account condition.
   optional string type = 1;
 
-  // Status of the condition, one of True, False, AutoScaler.
+  // Status of the condition, one of True, False, Unknown.
   optional string status = 2;
 
   // Last time the condition transitioned from one status to another.
@@ -924,6 +924,7 @@ message PredictorSpec {
   optional PredictorAuthSpec auth = 25;
 
   // If true, set expose a REST service.
+  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool rest = 26;
 }

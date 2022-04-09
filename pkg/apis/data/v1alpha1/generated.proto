@@ -1538,7 +1538,7 @@ message Dataset {
 message DatasetCondition {
   optional string type = 1;
 
-  // Status of the condition, one of True, False, AutoScaler.
+  // Status of the condition, one of True, False, Unknown
   optional string status = 2;
 
   // Last time the condition transitioned from one status to another.
@@ -2005,7 +2005,7 @@ message FeatureCondition {
   // Type of account condition.
   optional string type = 1;
 
-  // Status of the condition, one of True, False, AutoScaler.
+  // Status of the condition, one of True, False, Unknown
   optional string status = 2;
 
   // Last time the condition transitioned from one status to another.
@@ -2045,7 +2045,7 @@ message FeatureHistogramCondition {
   // Type of account condition.
   optional string type = 1;
 
-  // Status of the condition, one of True, False, AutoScaler.
+  // Status of the condition, one of True, False, Unknown
   optional string status = 2;
 
   // Last time the condition transitioned from one status to another.
@@ -2155,7 +2155,7 @@ message FeaturePipelineCondition {
   // Type of account condition.
   optional string type = 1;
 
-  // Status of the condition, one of True, False, AutoScaler.
+  // Status of the condition, one of True, False, Unknown
   optional string status = 2;
 
   // Last time the condition transitioned from one status to another.
@@ -2201,7 +2201,7 @@ message FeaturePipelineRunCondition {
   // Type of account condition.
   optional string type = 1;
 
-  // Status of the condition, one of True, False, AutoScaler.
+  // Status of the condition, one of True, False, Unknown
   optional string status = 2;
 
   // Last time the condition transitioned from one status to another.
@@ -2840,7 +2840,7 @@ message LabelingPipelineRunCondition {
   // Type of account condition.
   optional string type = 1;
 
-  // Status of the condition, one of True, False, AutoScaler.
+  // Status of the condition, one of True, False, Unknown.
   optional string status = 2;
 
   // Last time the condition transitioned from one status to another.
@@ -3232,7 +3232,7 @@ message RecipeRun {
 message RecipeRunCondition {
   optional string type = 1;
 
-  // Status of the condition, one of True, False, AutoScaler.
+  // Status of the condition, one of True, False, Unknown.
   optional string status = 2;
 
   // Last time the condition transitioned from one status to another.
@@ -3553,7 +3553,7 @@ message SqlQueryCondition {
   // Type of account condition.
   optional string type = 1;
 
-  // Status of the condition, one of True, False, AutoScaler.
+  // Status of the condition, one of True, False, Unknown.
   optional string status = 2;
 
   // Last time the condition transitioned from one status to another.
@@ -3596,7 +3596,7 @@ message SqlQueryRunCondition {
   // Type of account condition.
   optional string type = 1;
 
-  // Status of the condition, one of True, False, AutoScaler.
+  // Status of the condition, one of True, False, Unknown.
   optional string status = 2;
 
   // Last time the condition transitioned from one status to another.
@@ -3897,7 +3897,7 @@ message WebRequestCondition {
   // Type of account condition.
   optional string type = 1;
 
-  // Status of the condition, one of True, False, AutoScaler.
+  // Status of the condition, one of True, False, Unknown.
   optional string status = 2;
 
   // Last time the condition transitioned from one status to another.
@@ -3940,7 +3940,7 @@ message WebRequestRunCondition {
   // Type of account condition.
   optional string type = 1;
 
-  // Status of the condition, one of True, False, AutoScaler.
+  // Status of the condition, one of True, False, Unknown.
   optional string status = 2;
 
   // Last time the condition transitioned from one status to another.

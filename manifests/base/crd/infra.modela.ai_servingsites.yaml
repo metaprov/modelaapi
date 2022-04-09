@@ -59,27 +59,40 @@ spec:
           metadata:
             type: object
           spec:
+            description: ServingSiteSpec represents a namespace where model serving
+              workloads are executed under
             properties:
               clusterName:
                 default: ""
-                description: ClusterName is  the virtual cluster name in case that
-                  the lab is not on the same cluster
+                description: ClusterName is the name of a VirtualCluster that exists
+                  under the same tenant as the object. If specified, workloads executed
+                  under the ServingSite will be executed inside the cluster (currently
+                  not implemented)
                 type: string
               description:
                 default: ""
-                description: Description is user provided description
+                description: The user-provided description of the object
                 type: string
               fqdn:
-                default: ""
-                description: The FQDN for this site. This will register with ingress.
+                default: serving.vcap.me
+                description: FQDN specifies the fully-qualified domain name that the
+                  ServingSite's Ingress will use as the base host for the endpoint
+                  of services deployed under the ServingSite. For example, setting
+                  the FQDN as `model-serving.modela.ai` will automatically serve Predictors
+                  using the REST API at `predictors.model-serving.modela.ai`
                 type: string
               ingressName:
                 default: ""
-                description: IngressName denote the name of the ingress object where
-                  the serving site places the external points used to access the predictors
+                description: IngressName specifies the name of the Kubernetes Ingress
+                  resource which the ServingSite uses to define external access points
+                  for resources that accept traffic to their services (i.e. Predictors).
+                  This field is set automatically during the creation of the ServingSite
+                  and neither the contents of the Ingress nor the IngressName should
+                  be modified by an end-user
                 type: string
               limits:
-                description: Specify resource limits
+                description: Limits specifies the hard resource limits that can be
+                  allocated for workloads created under the ServingSite
                 properties:
                   enabled:
                     default: false
@@ -253,11 +266,11 @@ spec:
                 type: object
               owner:
                 default: no-one
-                description: Owner is the owner account name
+                description: The name of the Account which created the object, which
+                  exists in the same tenant as the object
                 type: string
               tenantRef:
-                description: Reference to the tenant owning this serving site. Default
-                  to default tenant.
+                description: The reference to the tenant which the object exists under
                 properties:
                   apiVersion:
                     description: API version of the referent.
@@ -296,7 +309,7 @@ spec:
           status:
             properties:
               activePredictors:
-                description: active predictors
+                description: The number of active predictor services
                 format: int32
                 type: integer
               conditions:
@@ -328,41 +341,43 @@ spec:
                   type: object
                 type: array
               failureMessage:
-                description: Update in case of terminal failure message
+                description: In the case of failure, the ServingSite resource controller
+                  will set this field with a failure message
                 type: string
               failureReason:
-                description: Update in case of terminal failure Borrowed from cluster
-                  api controller
+                description: In the case of failure, the ServingSite resource controller
+                  will set this field with a failure reason
                 type: string
               inactivePredictors:
-                description: inactive predictors
+                description: The number of inactive (non-deployed) predictors
                 format: int32
                 type: integer
               lastDailyPredictions:
-                description: Last 7 days predictions
+                description: The collection of predictions from the last 7 days
                 items:
                   format: int32
                   type: integer
                 type: array
               lastUpdated:
-                description: Last time the object was updated
+                description: The last time the object was updated
                 format: date-time
                 type: string
               observedGeneration:
-                description: ObservedGeneration is the Last generation that was acted
+                description: ObservedGeneration is the last generation that was acted
                   on
                 format: int64
                 type: integer
               totalPredictorAccuracyFailed:
-                description: total predictors accuracy failed
+                description: The number of predictors that have detected average inaccurate
+                  results
                 format: int32
                 type: integer
               totalPredictorDataDriftFailed:
-                description: total predictors with data drift failed
+                description: The number of predictors that have detected a data drift
                 format: int32
                 type: integer
               totalPredictorServiceFailed:
-                description: total predictors service failed
+                description: The number of predictor services that have failed/errored
                 format: int32
                 type: integer
             type: object
