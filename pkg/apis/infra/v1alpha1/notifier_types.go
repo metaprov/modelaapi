@@ -85,18 +85,16 @@ type NotifierSpec struct {
 
 // NotifierStatus is the observed state of a Notifier
 type NotifierStatus struct {
-	// provider is the name of the notifier provider. The name is derived from the connection
-	Provider string `json:"provider,omitempty" protobuf:"bytes,1,opt,name=provider"`
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
-	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,2,opt,name=observedGeneration"`
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,1,opt,name=observedGeneration"`
 	// Last time the object was updated
 	//+kubebuilder:validation:Optional
-	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,3,opt,name=lastUpdated"`
+	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,2,opt,name=lastUpdated"`
 	// The last channel status
-	ChannelsStatus []NotificationChannelStatus `json:"channelsStatus,omitempty" protobuf:"bytes,4,opt,name=channelsStatus"`
+	ChannelsStatus []NotificationChannelStatus `json:"channelsStatus,omitempty" protobuf:"bytes,3,opt,name=channelsStatus"`
 	//+kubebuilder:validation:Optional
-	Conditions []NotifierCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,5,rep,name=conditions"`
+	Conditions []NotifierCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,4,rep,name=conditions"`
 }
 
 // Define the a specific notification channel

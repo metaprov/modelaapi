@@ -3789,9 +3789,6 @@ export namespace NotifierSpec {
 }
 
 export class NotifierStatus extends jspb.Message {
-  getProvider(): string;
-  setProvider(value: string): NotifierStatus;
-
   getObservedgeneration(): number;
   setObservedgeneration(value: number): NotifierStatus;
 
@@ -3820,7 +3817,6 @@ export class NotifierStatus extends jspb.Message {
 
 export namespace NotifierStatus {
   export type AsObject = {
-    provider: string,
     observedgeneration: number,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     channelsstatusList: Array<NotificationChannelStatus.AsObject>,

@@ -2147,22 +2147,19 @@ message NotifierSpec {
 
 // NotifierStatus is the observed state of a Notifier
 message NotifierStatus {
-  // provider is the name of the notifier provider. The name is derived from the connection
-  optional string provider = 1;
-
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 2;
+  optional int64 observedGeneration = 1;
 
   // Last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 3;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2;
 
   // The last channel status
-  repeated NotificationChannelStatus channelsStatus = 4;
+  repeated NotificationChannelStatus channelsStatus = 3;
 
   // +kubebuilder:validation:Optional
-  repeated NotifierCondition conditions = 5;
+  repeated NotifierCondition conditions = 4;
 }
 
 message OdbcSpec {

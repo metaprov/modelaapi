@@ -38566,7 +38566,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec.prototy
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus.repeatedFields_ = [4,5];
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus.repeatedFields_ = [3,4];
 
 
 
@@ -38599,8 +38599,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus.proto
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
-    provider: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    observedgeneration: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    observedgeneration: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     lastupdated: (f = msg.getLastupdated()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     channelsstatusList: jspb.Message.toObjectList(msg.getChannelsstatusList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotificationChannelStatus.toObject, includeInstance),
@@ -38643,24 +38642,20 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus.deser
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setProvider(value);
-      break;
-    case 2:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setObservedgeneration(value);
       break;
-    case 3:
+    case 2:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
       msg.setLastupdated(value);
       break;
-    case 4:
+    case 3:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotificationChannelStatus;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotificationChannelStatus.deserializeBinaryFromReader);
       msg.addChannelsstatus(value);
       break;
-    case 5:
+    case 4:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition.deserializeBinaryFromReader);
       msg.addConditions(value);
@@ -38694,24 +38689,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus.proto
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = /** @type {string} */ (jspb.Message.getField(message, 1));
-  if (f != null) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 2));
+  f = /** @type {number} */ (jspb.Message.getField(message, 1));
   if (f != null) {
     writer.writeInt64(
-      2,
+      1,
       f
     );
   }
   f = message.getLastupdated();
   if (f != null) {
     writer.writeMessage(
-      3,
+      2,
       f,
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
@@ -38719,7 +38707,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus.seria
   f = message.getChannelsstatusList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      4,
+      3,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotificationChannelStatus.serializeBinaryToWriter
     );
@@ -38727,7 +38715,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus.seria
   f = message.getConditionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      5,
+      4,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition.serializeBinaryToWriter
     );
@@ -38736,47 +38724,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus.seria
 
 
 /**
- * optional string provider = 1;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus.prototype.getProvider = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus.prototype.setProvider = function(value) {
-  return jspb.Message.setField(this, 1, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus.prototype.clearProvider = function() {
-  return jspb.Message.setField(this, 1, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus.prototype.hasProvider = function() {
-  return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional int64 observedGeneration = 2;
+ * optional int64 observedGeneration = 1;
  * @return {number}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus.prototype.getObservedgeneration = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
@@ -38785,7 +38737,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus.proto
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus.prototype.setObservedgeneration = function(value) {
-  return jspb.Message.setField(this, 2, value);
+  return jspb.Message.setField(this, 1, value);
 };
 
 
@@ -38794,7 +38746,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus.proto
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus.prototype.clearObservedgeneration = function() {
-  return jspb.Message.setField(this, 2, undefined);
+  return jspb.Message.setField(this, 1, undefined);
 };
 
 
@@ -38803,17 +38755,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus.prototype.hasObservedgeneration = function() {
-  return jspb.Message.getField(this, 2) != null;
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 3;
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2;
  * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus.prototype.getLastupdated = function() {
   return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
-    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 3));
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 2));
 };
 
 
@@ -38822,7 +38774,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus.proto
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus.prototype.setLastupdated = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
+  return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
@@ -38840,17 +38792,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus.prototype.hasLastupdated = function() {
-  return jspb.Message.getField(this, 3) != null;
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * repeated NotificationChannelStatus channelsStatus = 4;
+ * repeated NotificationChannelStatus channelsStatus = 3;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotificationChannelStatus>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus.prototype.getChannelsstatusList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotificationChannelStatus>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotificationChannelStatus, 4));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotificationChannelStatus, 3));
 };
 
 
@@ -38859,7 +38811,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus.proto
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus.prototype.setChannelsstatusList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 4, value);
+  return jspb.Message.setRepeatedWrapperField(this, 3, value);
 };
 
 
@@ -38869,7 +38821,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus.proto
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotificationChannelStatus}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus.prototype.addChannelsstatus = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotificationChannelStatus, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotificationChannelStatus, opt_index);
 };
 
 
@@ -38883,12 +38835,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus.proto
 
 
 /**
- * repeated NotifierCondition conditions = 5;
+ * repeated NotifierCondition conditions = 4;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus.prototype.getConditionsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition, 5));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition, 4));
 };
 
 
@@ -38897,7 +38849,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus.proto
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus.prototype.setConditionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 5, value);
+  return jspb.Message.setRepeatedWrapperField(this, 4, value);
 };
 
 
@@ -38907,7 +38859,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus.proto
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition, opt_index);
 };
 
 

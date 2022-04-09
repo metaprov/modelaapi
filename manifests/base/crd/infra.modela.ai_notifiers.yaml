@@ -192,10 +192,6 @@ spec:
                   on
                 format: int64
                 type: integer
-              provider:
-                description: provider is the name of the notifier provider. The name
-                  is derived from the connection
-                type: string
             type: object
         required:
         - spec
