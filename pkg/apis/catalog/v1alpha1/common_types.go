@@ -1371,7 +1371,6 @@ const (
 type CanaryMetric string
 
 const (
-	// Use cluster port if the predictor is an internal micro service
 	CpuCanaryMetric     CanaryMetric = "cpu"
 	MemCanaryMetric     CanaryMetric = "mem"
 	LatencyCanaryMetric CanaryMetric = "latency"
