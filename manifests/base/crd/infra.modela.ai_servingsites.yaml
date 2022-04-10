@@ -81,15 +81,32 @@ spec:
                   the FQDN as `model-serving.modela.ai` will automatically serve Predictors
                   using the REST API at `predictors.model-serving.modela.ai`
                 type: string
-              ingressName:
+              ingress:
                 default: ""
-                description: IngressName specifies the name of the Kubernetes Ingress
-                  resource which the ServingSite uses to define external access points
-                  for resources that accept traffic to their services (i.e. Predictors).
+                description: Ingress specifies of the Kubernetes Ingress resource
+                  which the ServingSite uses to define external access points for
+                  resources that accept traffic to their services (i.e. Predictors).
                   This field is set automatically during the creation of the ServingSite
                   and neither the contents of the Ingress nor the IngressName should
                   be modified by an end-user
-                type: string
+                properties:
+                  enabled:
+                    default: false
+                    description: Indicates if the ingress is enabled
+                    type: boolean
+                  ingressClassName:
+                    description: IngressClassName is the name of the ingress class.
+                    type: string
+                  ingressName:
+                    default: ""
+                    description: IngressName specifies the name of the Kubernetes
+                      Ingress resource which the ServingSite uses to define external
+                      access points for resources that accept traffic to their services
+                      (i.e. Predictors). This field is set automatically during the
+                      creation of the ServingSite and neither the contents of the
+                      Ingress nor the IngressName should be modified by an end-user
+                    type: string
+                type: object
               limits:
                 description: Limits specifies the hard resource limits that can be
                   allocated for workloads created under the ServingSite

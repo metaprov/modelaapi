@@ -1549,6 +1549,25 @@ message InformixSpec {
   optional string url = 6;
 }
 
+// Specify the ingress configuration for the serving site.
+message IngressSpec {
+  // Indicates if the ingress is enabled
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool enabled = 1;
+
+  // IngressName specifies the name of the Kubernetes Ingress resource which the ServingSite uses to define
+  // external access points for resources that accept traffic to their services (i.e. Predictors). This
+  // field is set automatically during the creation of the ServingSite and neither the contents of the
+  // Ingress nor the IngressName should be modified by an end-user
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string ingressName = 2;
+
+  // IngressClassName is the name of the ingress class.
+  optional string ingressClassName = 3;
+}
+
 message KafkaSpec {
   // +kubebuilder:default:=""
   optional string host = 1;
@@ -2481,13 +2500,13 @@ message ServingSiteSpec {
   // +kubebuilder:validation:Optional
   optional ResourceLimitSpec limits = 3;
 
-  // IngressName specifies the name of the Kubernetes Ingress resource which the ServingSite uses to define
+  // Ingress specifies of the Kubernetes Ingress resource which the ServingSite uses to define
   // external access points for resources that accept traffic to their services (i.e. Predictors). This
   // field is set automatically during the creation of the ServingSite and neither the contents of the
   // Ingress nor the IngressName should be modified by an end-user
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string ingressName = 4;
+  optional IngressSpec ingress = 4;
 
   // FQDN specifies the fully-qualified domain name that the ServingSite's Ingress will use as the base host for the
   // endpoint of services deployed under the ServingSite. For example, setting the FQDN as `model-serving.modela.ai`

@@ -98,7 +98,14 @@ service GRPCInferenceService
 
   rpc Predict(PredictRequest) returns (PredictResponse) {
     option (google.api.http) = {
-      post: "/v1/models/{name}"
+      post: "/v1/predictors/{name}:predict"
+      body: "*"
+    };
+  }
+
+  rpc PredictVersion(PredictVersionRequest) returns (PredictResponse) {
+    option (google.api.http) = {
+      post: "/v1/predictors/{name}/models/{modelversion}:predict"
       body: "*"
     };
   }
@@ -455,20 +462,31 @@ message GetModelResponse {
 }
 
 message PredictRequest {
-    string             name             = 2;  // model name
-    bool               validate         = 3;  // use the schema to validate the request
-    bool               explain          = 4;  // if true, explain the prediction using shap.
-    string             format           = 5;  // can be csv,json.
-    string             payload          = 6;  // json or csv array of rows.
-    bool               labeled          = 7;  // indicate that this is labeled prediction
-    repeated  string    metrics         = 8;  // one or more metrics to use when evaluating labeled prediction
+    string             predictor        = 1;  
+    bool               validate         = 2;  // use the schema to validate the request
+    bool               explain          = 3;  // if true, explain the prediction using shap.
+    string             format           = 4;  // can be csv,json.
+    string             payload          = 5;  // json or csv array of rows.
+    bool               labeled          = 6;  // indicate that this is labeled prediction
+    repeated  string   metrics          = 7;  // one or more metrics to use when evaluating labeled prediction
 }
 
 message PredictResponse {
-     repeated PredictResultLineItem items = 1;
+     repeated PredictResultLineItem items  = 1;
      map<string,float>              scores = 2;
-
 }
+
+message PredictVersionRequest {
+  string             name             = 1;    
+  bool               validate         = 2;  // use the schema to validate the request
+  bool               explain          = 3;  // if true, explain the prediction using shap.
+  string             format           = 4;  // can be csv,json.
+  string             payload          = 5;  // json or csv array of rows.
+  bool               labeled          = 6;  // indicate that this is labeled prediction
+  repeated  string   metrics          = 7;  // one or more metrics to use when evaluating labeled prediction
+  string             modelversion     = 8;  // can be csv,json.
+}
+
 
 message PredictResultLineItem {
     bool                       success         = 1; // success or failure

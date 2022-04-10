@@ -809,8 +809,8 @@ export namespace GetModelResponse {
 }
 
 export class PredictRequest extends jspb.Message {
-  getName(): string;
-  setName(value: string): PredictRequest;
+  getPredictor(): string;
+  setPredictor(value: string): PredictRequest;
 
   getValidate(): boolean;
   setValidate(value: boolean): PredictRequest;
@@ -842,7 +842,7 @@ export class PredictRequest extends jspb.Message {
 
 export namespace PredictRequest {
   export type AsObject = {
-    name: string,
+    predictor: string,
     validate: boolean,
     explain: boolean,
     format: string,
@@ -873,6 +873,54 @@ export namespace PredictResponse {
   export type AsObject = {
     itemsList: Array<PredictResultLineItem.AsObject>,
     scoresMap: Array<[string, number]>,
+  }
+}
+
+export class PredictVersionRequest extends jspb.Message {
+  getName(): string;
+  setName(value: string): PredictVersionRequest;
+
+  getValidate(): boolean;
+  setValidate(value: boolean): PredictVersionRequest;
+
+  getExplain(): boolean;
+  setExplain(value: boolean): PredictVersionRequest;
+
+  getFormat(): string;
+  setFormat(value: string): PredictVersionRequest;
+
+  getPayload(): string;
+  setPayload(value: string): PredictVersionRequest;
+
+  getLabeled(): boolean;
+  setLabeled(value: boolean): PredictVersionRequest;
+
+  getMetricsList(): Array<string>;
+  setMetricsList(value: Array<string>): PredictVersionRequest;
+  clearMetricsList(): PredictVersionRequest;
+  addMetrics(value: string, index?: number): PredictVersionRequest;
+
+  getModelversion(): string;
+  setModelversion(value: string): PredictVersionRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PredictVersionRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PredictVersionRequest): PredictVersionRequest.AsObject;
+  static serializeBinaryToWriter(message: PredictVersionRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PredictVersionRequest;
+  static deserializeBinaryFromReader(message: PredictVersionRequest, reader: jspb.BinaryReader): PredictVersionRequest;
+}
+
+export namespace PredictVersionRequest {
+  export type AsObject = {
+    name: string,
+    validate: boolean,
+    explain: boolean,
+    format: string,
+    payload: string,
+    labeled: boolean,
+    metricsList: Array<string>,
+    modelversion: string,
   }
 }
 

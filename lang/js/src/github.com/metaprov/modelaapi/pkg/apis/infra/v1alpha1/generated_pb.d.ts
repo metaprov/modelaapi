@@ -2746,6 +2746,32 @@ export namespace InformixSpec {
   }
 }
 
+export class IngressSpec extends jspb.Message {
+  getEnabled(): boolean;
+  setEnabled(value: boolean): IngressSpec;
+
+  getIngressname(): string;
+  setIngressname(value: string): IngressSpec;
+
+  getIngressclassname(): string;
+  setIngressclassname(value: string): IngressSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): IngressSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: IngressSpec): IngressSpec.AsObject;
+  static serializeBinaryToWriter(message: IngressSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): IngressSpec;
+  static deserializeBinaryFromReader(message: IngressSpec, reader: jspb.BinaryReader): IngressSpec;
+}
+
+export namespace IngressSpec {
+  export type AsObject = {
+    enabled: boolean,
+    ingressname: string,
+    ingressclassname: string,
+  }
+}
+
 export class KafkaSpec extends jspb.Message {
   getHost(): string;
   setHost(value: string): KafkaSpec;
@@ -4438,8 +4464,10 @@ export class ServingSiteSpec extends jspb.Message {
   hasLimits(): boolean;
   clearLimits(): ServingSiteSpec;
 
-  getIngressname(): string;
-  setIngressname(value: string): ServingSiteSpec;
+  getIngress(): IngressSpec | undefined;
+  setIngress(value?: IngressSpec): ServingSiteSpec;
+  hasIngress(): boolean;
+  clearIngress(): ServingSiteSpec;
 
   getFqdn(): string;
   setFqdn(value: string): ServingSiteSpec;
@@ -4463,7 +4491,7 @@ export namespace ServingSiteSpec {
     description: string,
     tenantref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     limits?: ResourceLimitSpec.AsObject,
-    ingressname: string,
+    ingress?: IngressSpec.AsObject,
     fqdn: string,
     clustername: string,
     owner: string,

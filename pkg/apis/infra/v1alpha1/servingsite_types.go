@@ -72,13 +72,13 @@ type ServingSiteSpec struct {
 	// Limits specifies the hard resource limits that can be allocated for workloads created under the ServingSite
 	// +kubebuilder:validation:Optional
 	Limits ResourceLimitSpec `json:"limits,omitempty" protobuf:"bytes,3,opt,name=limits"`
-	// IngressName specifies the name of the Kubernetes Ingress resource which the ServingSite uses to define
+	// Ingress specifies of the Kubernetes Ingress resource which the ServingSite uses to define
 	// external access points for resources that accept traffic to their services (i.e. Predictors). This
 	// field is set automatically during the creation of the ServingSite and neither the contents of the
 	// Ingress nor the IngressName should be modified by an end-user
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	IngressName *string `json:"ingressName,omitempty" protobuf:"bytes,4,opt,name=ingressName"`
+	Ingress IngressSpec `json:"ingress,omitempty" protobuf:"bytes,4,opt,name=ingress"`
 	// FQDN specifies the fully-qualified domain name that the ServingSite's Ingress will use as the base host for the
 	// endpoint of services deployed under the ServingSite. For example, setting the FQDN as `model-serving.modela.ai`
 	// will automatically serve Predictors using the REST API at `predictors.model-serving.modela.ai`
@@ -125,4 +125,21 @@ type ServingSiteStatus struct {
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
 	Conditions []ServingSiteCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,11,rep,name=conditions"`
+}
+
+// Specify the ingress configuration for the serving site.
+type IngressSpec struct {
+	// Indicates if the ingress is enabled
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
+	// IngressName specifies the name of the Kubernetes Ingress resource which the ServingSite uses to define
+	// external access points for resources that accept traffic to their services (i.e. Predictors). This
+	// field is set automatically during the creation of the ServingSite and neither the contents of the
+	// Ingress nor the IngressName should be modified by an end-user
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
+	IngressName *string `json:"ingressName,omitempty" protobuf:"bytes,2,opt,name=ingressName"`
+	// IngressClassName is the name of the ingress class.
+	IngressClassName *string `json:"ingressClassName,omitempty" protobuf:"bytes,3,opt,name=ingressClassName"`
 }
