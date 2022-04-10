@@ -33,7 +33,7 @@ type ServingSiteCondition struct {
 	Message string `json:"message,omitempty" protobuf:"bytes,5,opt,name=message"`
 }
 
-// ServingSite is a namespace used for serving
+// ServingSite represents a namespace where model serving workloads are executed under
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
@@ -60,7 +60,7 @@ type ServingSiteList struct {
 	Items []ServingSite `json:"items" protobuf:"bytes,2,rep,name=items"`
 }
 
-// ServingSiteSpec represents a namespace where model serving workloads are executed under
+// ServingSiteSpec defines the desired state of a Lab
 type ServingSiteSpec struct {
 	// The user-provided description of the object
 	// +kubebuilder:default:=""

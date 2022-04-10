@@ -24,20 +24,21 @@ const (
 	NotifierSaved NotifierConditionType = "Saved"
 )
 
-// NotifierCondition describes the state of the license at a certain point.
+// NotifierCondition describes the state of a Notifier at a certain point
 type NotifierCondition struct {
 	// Type of account condition.
 	Type NotifierConditionType `json:"type" protobuf:"bytes,1,opt,name=type,casttype=NotifierConditionType"`
-	// Status of the condition, one of True, False, Unknown.
+	// Status of the condition, one of True, False, Unknown
 	Status v1.ConditionStatus `json:"status" protobuf:"bytes,2,opt,name=status,casttype=k8s.io/api/core/v1.ConditionStatus"`
-	// Last time the condition transitioned from one status to another.
+	// Last time the condition transitioned from one status to another
 	LastTransitionTime *metav1.Time `json:"lastTransitionTime,omitempty" protobuf:"bytes,3,opt,name=lastTransitionTime"`
-	// The reason for the condition's last transition.
+	// The reason for the condition's last transition
 	Reason string `json:"reason,omitempty" protobuf:"bytes,4,opt,name=reason"`
-	// A human readable message indicating details about the transition.
+	// A human readable message indicating details about the transition
 	Message string `json:"message,omitempty" protobuf:"bytes,5,opt,name=message"`
 }
 
+// The Notifier resource
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
@@ -60,79 +61,80 @@ type NotifierList struct {
 	Items           []Notifier `json:"items" protobuf:"bytes,2,rep,name=items"`
 }
 
-// NotifierSpec defines the desired state of Notifier
+// NotifierSpec defines the desired state of a Notifier
 type NotifierSpec struct {
-	// Is this notifier can send notification
+	// Indicates if the Notifier will send notifications
 	// +kubebuilder:default:= true
 	// +kubebuilder:validation:Optional
 	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
-	// The tenant that own the notifier
-	// Default to default tenant.
+	// The reference to the tenant which the object exists under
 	// +kubebuilder:validation:Optional
 	TenantRef *v1.ObjectReference `json:"tenantRef" protobuf:"varint,2,opt,name=tenantRef"`
-	// User provided description
+	// The user provided description of the object
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Description *string `json:"description,omitempty" protobuf:"varint,3,opt,name=description"`
-	// The owner account name
+	// The name of the Account which created the object, which exists in the same tenant as the object
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,4,opt,name=owner"`
-	// Specify the notifier channels
+	// Channels specifies the list of notification channels that the Notifier will forward the information from Alerts to.
+	// Each channel specifies a Connection resource for an external messaging system, and a destination channel within the system
+	// to forward the information from Alerts to
 	// +kubebuilder:validation:Optional
 	Channels []NotificationChannelSpec `json:"channels,omitempty" protobuf:"bytes,5,opt,name=channels"`
 }
 
 // NotifierStatus is the observed state of a Notifier
 type NotifierStatus struct {
-	// ObservedGeneration is the Last generation that was acted on
+	// ObservedGeneration is the last generation that was acted on
 	//+kubebuilder:validation:Optional
-	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,1,opt,name=observedGeneration"`
-	// Last time the object was updated
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,2,opt,name=observedGeneration"`
+	// The last time the object was updated
 	//+kubebuilder:validation:Optional
-	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,2,opt,name=lastUpdated"`
-	// The last channel status
-	ChannelsStatus []NotificationChannelStatus `json:"channelsStatus,omitempty" protobuf:"bytes,3,opt,name=channelsStatus"`
+	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,3,opt,name=lastUpdated"`
+	// The status of Notification Channels after Alerts have been forwarded to them
+	ChannelsStatus []NotificationChannelStatus `json:"channelsStatus,omitempty" protobuf:"bytes,4,opt,name=channelsStatus"`
 	//+kubebuilder:validation:Optional
-	Conditions []NotifierCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,4,rep,name=conditions"`
+	Conditions []NotifierCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,5,rep,name=conditions"`
 }
 
-// Define the a specific notification channel
+// NotificationChannelSpec describes a single Connection to an external messaging system and a destination channel within the system
 type NotificationChannelSpec struct {
-	// Is this notifier can send notification
+	// Indicates if the channel is enabled to send forwarded Alerts
 	// +kubebuilder:default:= true
 	// +kubebuilder:validation:Optional
 	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
+	// The name of the Connection resource which exists in the same tenant as the parent Notifier
 	// +kubebuilder:validation:Required
 	// +kubebuilder:default:=""
 	ConnectionName *string `json:"connectionName" protobuf:"bytes,2,opt,name=connectionName"`
-	// Send info messages via this channel
+	// Indicates if the channel will send Alerts with the `info` level
 	// +kubebuilder:default:= false
 	// +kubebuilder:validation:Optional
 	Info *bool `json:"info,omitempty" protobuf:"varint,3,opt,name=info"`
-	// Send error messages via this channel
+	// Indicates if the channel will send Alerts with the `error` level
 	// +kubebuilder:default:= true
 	// +kubebuilder:validation:Optional
 	Error *bool `json:"error,omitempty" protobuf:"varint,4,opt,name=error"`
-	// This channel start time.
+	// This channel start time
 	// +kubebuilder:validation:Optional
 	From *metav1.Time `json:"from,omitempty" protobuf:"bytes,5,opt,name=from"`
-	// This channel end time.
+	// This channel end time
 	// +kubebuilder:validation:Optional
 	To *metav1.Time `json:"to,omitempty" protobuf:"bytes,6,opt,name=to"`
-	// The notification destination. Can be an email if using smtp connection
-	// or a slack channel.
+	// The destination channel that exists in the external system that `ConnectionName` references. For example, a Slack
+	// channel name, a Discord channel ID, or an e-mail address
 	Destination string `json:"destination,omitempty" protobuf:"bytes,7,opt,name=destination"`
 }
 
 type NotificationChannelStatus struct {
 	// The last time a message was sent on this channel
 	LastMessage *metav1.Time `json:"lastMessage,omitempty" protobuf:"bytes,1,opt,name=lastMessage"`
-	// In case of notification failure
-	// Borrowed from cluster api controller
+	// In the case of failure, the Notifier resource controller will set this field with a failure reason
 	//+kubebuilder:validation:Optional
 	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,2,opt,name=failureReason"`
-	// Update in case of terminal failure message
+	// In the case of failure, the Notifier resource controller will set this field with a failure message
 	//+kubebuilder:validation:Optional
 	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,3,opt,name=failureMessage"`
 }

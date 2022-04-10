@@ -59,7 +59,7 @@ type DatasetCondition struct {
 	Message string `json:"message,omitempty" protobuf:"bytes,6,opt,name=message"`
 }
 
-// The Dataset object represents a chunk of data that has been stored in the system.
+// Dataset represents a chunk of data that has been analyzed and stored inside a managed bucket
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
@@ -227,7 +227,7 @@ type DatasetStatus struct {
 	//+kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
 	Progress int32 `json:"progress,omitempty" protobuf:"varint,14,opt,name=progress"`
-	// Sha256 signature of the raw data. This field is intended for internal use
+	// Sha256 signature of the raw data. Intended for internal use
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Hash string `json:"hash,omitempty" protobuf:"bytes,15,opt,name=hash"`
@@ -443,9 +443,9 @@ type DataLocation struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	ConnectionName *string `json:"connectionName" protobuf:"bytes,2,opt,name=connectionName"`
-	// In the case of the location type being object storage, BucketName is the name of the VirtualBucket resource
-	// in the same tenant namespace as the resource. Modela will access the object storage system and will pull
-	// from the file path specified by the `Path` field
+	// In the case of the location type being object storage, BucketName is the name of the VirtualBucket resource that
+	// exists in the same tenant as the resource specifying the DataLocation. Modela will connect to the external object storage system
+	// and pull the file from the path specified by the Path field
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	BucketName *string `json:"bucketName" protobuf:"bytes,3,opt,name=bucketName"`
@@ -466,7 +466,7 @@ type DataLocation struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Database *string `json:"database" protobuf:"bytes,6,opt,name=database"`
-	// The SQL statement to query data from a table
+	// The SQL statement which will be executed to query data from a table
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Sql *string `json:"sql" protobuf:"bytes,7,opt,name=sql"`

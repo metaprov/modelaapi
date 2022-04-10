@@ -304,7 +304,6 @@ type ConnectionStatus struct {
 	Conditions []ConnectionCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,5,rep,name=conditions"`
 }
 
-// =================== Definitions of spec files for each type
 // AthenaSpec defines the connection to Athena db
 type AmazonAthenaSpec struct {
 	// +kubebuilder:default:=""
@@ -320,7 +319,7 @@ type AmazonAthenaSpec struct {
 	URL *string `json:"url,omitempty" protobuf:"bytes,5,opt,name=url"`
 }
 
-// BigQuerySpec defines the connection to big query
+// BigQuerySpec defines the connection to Google BigQuery
 type GcpBigQuerySpec struct {
 	Host *string `json:"host,omitempty" protobuf:"bytes,1,opt,name=host"`
 	// +kubebuilder:default:= 9042
@@ -363,7 +362,7 @@ type ApacheCassandraSpec struct {
 	URL *string `json:"url,omitempty" protobuf:"bytes,6,opt,name=url"`
 }
 
-// ApacheDruid defines the connection to cassandra
+// ApacheDruid defines the connection to Apache Druid
 type ApacheDruidSpec struct {
 	// +kubebuilder:default:=""
 	Host *string `json:"host,omitempty" protobuf:"bytes,1,opt,name=host"`
