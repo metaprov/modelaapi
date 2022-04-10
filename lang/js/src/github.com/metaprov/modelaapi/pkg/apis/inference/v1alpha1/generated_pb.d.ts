@@ -1335,8 +1335,10 @@ export class PredictorSpec extends jspb.Message {
   hasProgressive(): boolean;
   clearProgressive(): PredictorSpec;
 
-  getArtifactsfolder(): string;
-  setArtifactsfolder(value: string): PredictorSpec;
+  getArtifactsfolder(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
+  setArtifactsfolder(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): PredictorSpec;
+  hasArtifactsfolder(): boolean;
+  clearArtifactsfolder(): PredictorSpec;
 
   getPort(): number;
   setPort(value: number): PredictorSpec;
@@ -1421,7 +1423,7 @@ export namespace PredictorSpec {
     template?: k8s_io_api_core_v1_generated_pb.PodTemplate.AsObject,
     modelsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec.AsObject>,
     progressive?: ProgressiveSpec.AsObject,
-    artifactsfolder: string,
+    artifactsfolder?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     port: number,
     nodeport: number,
     path: string,
