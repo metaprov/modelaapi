@@ -432,11 +432,11 @@ func (b *ModelAutobuilder) DatasourceName() string {
 }
 
 func (b *ModelAutobuilder) PredictorName() string {
-	return b.Name
+	return "predictor-" + b.Name
 }
 
 func (b *ModelAutobuilder) DataAppName() string {
-	return b.Name
+	return "datapp-" + b.Name
 }
 
 func (b *ModelAutobuilder) CreateDataSource(columns []data.Column) *data.DataSource {
