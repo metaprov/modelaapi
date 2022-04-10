@@ -31566,9 +31566,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec.prototyp
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
-    tenantref: (f = msg.getTenantref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     secretref: (f = msg.getSecretref()) && k8s_io_api_core_v1_generated_pb.SecretReference.toObject(includeInstance, f),
-    owner: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     email: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     trialstart: (f = msg.getTrialstart()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     trialend: (f = msg.getTrialend()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
@@ -31621,19 +31619,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec.deserial
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
-      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
-      msg.setTenantref(value);
-      break;
     case 2:
       var value = new k8s_io_api_core_v1_generated_pb.SecretReference;
       reader.readMessage(value,k8s_io_api_core_v1_generated_pb.SecretReference.deserializeBinaryFromReader);
       msg.setSecretref(value);
-      break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setOwner(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
@@ -31731,27 +31720,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec.prototyp
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getTenantref();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
-    );
-  }
   f = message.getSecretref();
   if (f != null) {
     writer.writeMessage(
       2,
       f,
       k8s_io_api_core_v1_generated_pb.SecretReference.serializeBinaryToWriter
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 3));
-  if (f != null) {
-    writer.writeString(
-      3,
-      f
     );
   }
   f = /** @type {string} */ (jspb.Message.getField(message, 4));
@@ -31873,43 +31847,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec.serializ
 
 
 /**
- * optional k8s.io.api.core.v1.ObjectReference tenantRef = 1;
- * @return {?proto.k8s.io.api.core.v1.ObjectReference}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec.prototype.getTenantref = function() {
-  return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
-    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 1));
-};
-
-
-/**
- * @param {?proto.k8s.io.api.core.v1.ObjectReference|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec.prototype.setTenantref = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec.prototype.clearTenantref = function() {
-  return this.setTenantref(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec.prototype.hasTenantref = function() {
-  return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
  * optional k8s.io.api.core.v1.SecretReference secretRef = 2;
  * @return {?proto.k8s.io.api.core.v1.SecretReference}
  */
@@ -31943,42 +31880,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec.prototyp
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec.prototype.hasSecretref = function() {
   return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional string owner = 3;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec.prototype.getOwner = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec.prototype.setOwner = function(value) {
-  return jspb.Message.setField(this, 3, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec.prototype.clearOwner = function() {
-  return jspb.Message.setField(this, 3, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec.prototype.hasOwner = function() {
-  return jspb.Message.getField(this, 3) != null;
 };
 
 

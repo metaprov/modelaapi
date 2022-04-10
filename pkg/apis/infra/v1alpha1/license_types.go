@@ -75,17 +75,9 @@ type LicenseList struct {
 // LicenseSpec defines the details of a License. The contents of the specification are derived from
 // the actual license key, and changing the specification has no effect on the limitations of the license
 type LicenseSpec struct {
-	// Reference to the tenant owning this license
-	// +kubebuilder:validation:Optional
-	// Default to default tenant.
-	TenantRef *v1.ObjectReference `json:"tenantRef,omitempty" protobuf:"bytes,1,opt,name=tenantRef"`
 	// The reference to the secret containing the license token
 	// +kubebuilder:validation:Optional
 	SecretRef v1.SecretReference `json:"secretRef" protobuf:"bytes,2,opt,name=secretRef"`
-	// The name of the Account which created the object, which exists in the same tenant as the object
-	// +kubebuilder:validation:Optional
-	// +kubebuilder:default:="no-one"
-	Owner *string `json:"owner,omitempty" protobuf:"bytes,3,opt,name=owner"`
 	// The e-mail address of the Modela.ai account which owns the license
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:=""

@@ -3041,18 +3041,10 @@ export namespace LicenseList {
 }
 
 export class LicenseSpec extends jspb.Message {
-  getTenantref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setTenantref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): LicenseSpec;
-  hasTenantref(): boolean;
-  clearTenantref(): LicenseSpec;
-
   getSecretref(): k8s_io_api_core_v1_generated_pb.SecretReference | undefined;
   setSecretref(value?: k8s_io_api_core_v1_generated_pb.SecretReference): LicenseSpec;
   hasSecretref(): boolean;
   clearSecretref(): LicenseSpec;
-
-  getOwner(): string;
-  setOwner(value: string): LicenseSpec;
 
   getEmail(): string;
   setEmail(value: string): LicenseSpec;
@@ -3118,9 +3110,7 @@ export class LicenseSpec extends jspb.Message {
 
 export namespace LicenseSpec {
   export type AsObject = {
-    tenantref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     secretref?: k8s_io_api_core_v1_generated_pb.SecretReference.AsObject,
-    owner: string,
     email: string,
     trialstart?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     trialend?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
