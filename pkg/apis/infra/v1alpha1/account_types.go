@@ -125,14 +125,15 @@ type AccountSpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	ResetPassword *bool `json:"resetPassword,omitempty" protobuf:"varint,13,opt,name=resetPassword"`
-	// The clearence level of this account. The clearence level override user premissions.
+	// The clearance level of the account. Accounts which do not have a clearance level greater than or equal to the
+	// clearance level of a DataProduct will not have access to their namespace
 	// +kubebuilder:default:=unclassified
 	// +kubebuilder:validation:Optional
 	ClearenceLevel *catalog.SecurityClearanceLevel `json:"clearenceLevel,omitempty" protobuf:"bytes,17,opt,name=clearenceLevel"`
-	// The avatar location
+	// The specification for the Account avatar image
 	// +kubebuilder:validation:Optional
 	Avatar AvatarSpec `json:"avatar,omitempty" protobuf:"bytes,18,opt,name=avatar"`
-	// List of favorite data product
+	// The collection of DataProduct names that will be displayed with priority on the tenant dashboard for the Account
 	// +kubebuilder:validation:Optional
 	FavoritesProducts []string `json:"favoriteProducts,omitempty" protobuf:"bytes,19,opt,name=favoriteProducts"`
 }

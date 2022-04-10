@@ -37,7 +37,7 @@ type TenantCondition struct {
 	Message string `json:"message,omitempty" protobuf:"bytes,5,opt,name=message"`
 }
 
-// Tenant represents a single root namespace for infrastructure resources and descendant DataProduct namespaces
+// Tenant represents a root namespace for tenant-level resources and child DataProduct namespaces
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""

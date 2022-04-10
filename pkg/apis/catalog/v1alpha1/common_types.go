@@ -1689,7 +1689,7 @@ type NotificationSpec struct {
 	Selector map[string]string `json:"selector,omitempty" protobuf:"bytes,6,opt,name=selector"`
 }
 
-// Logs describes the location of logs produced by every workload of a resource
+// Logs describes the location of logs produced by workloads associated with a resource
 type Logs struct {
 	// The name of the VirtualBucket resource where the logs are stored
 	// +kubebuilder:validation:Optional
