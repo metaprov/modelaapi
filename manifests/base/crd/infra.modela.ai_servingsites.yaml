@@ -44,7 +44,8 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: ServingSite is a namespace used for serving
+        description: ServingSite represents a namespace where model serving workloads
+          are executed under
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation
@@ -59,8 +60,7 @@ spec:
           metadata:
             type: object
           spec:
-            description: ServingSiteSpec represents a namespace where model serving
-              workloads are executed under
+            description: ServingSiteSpec defines the desired state of a Lab
             properties:
               clusterName:
                 default: ""

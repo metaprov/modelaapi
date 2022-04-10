@@ -685,9 +685,9 @@ message DataLocation {
   // +kubebuilder:validation:Optional
   optional string connectionName = 2;
 
-  // In the case of the location type being object storage, BucketName is the name of the VirtualBucket resource
-  // in the same tenant namespace as the resource. Modela will access the object storage system and will pull
-  // from the file path specified by the `Path` field
+  // In the case of the location type being object storage, BucketName is the name of the VirtualBucket resource that
+  // exists in the same tenant as the resource specifying the DataLocation. Modela will connect to the external object storage system
+  // and pull the file from the path specified by the Path field
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string bucketName = 3;
@@ -712,7 +712,7 @@ message DataLocation {
   // +kubebuilder:validation:Optional
   optional string database = 6;
 
-  // The SQL statement to query data from a table
+  // The SQL statement which will be executed to query data from a table
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string sql = 7;
@@ -1512,7 +1512,7 @@ message DataValidationResult {
   optional bool passed = 4;
 }
 
-// The Dataset object represents a chunk of data that has been stored in the system.
+// Dataset represents a chunk of data that has been analyzed and stored inside a managed bucket
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
@@ -1762,7 +1762,7 @@ message DatasetStatus {
   // +kubebuilder:validation:Optional
   optional int32 progress = 14;
 
-  // Sha256 signature of the raw data. This field is intended for internal use
+  // Sha256 signature of the raw data. Intended for internal use
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string hash = 15;

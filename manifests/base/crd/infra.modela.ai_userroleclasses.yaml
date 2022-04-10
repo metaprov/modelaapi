@@ -22,8 +22,8 @@ spec:
   - name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: UserRoleClass specify the RBAC premission for a specific user
-          role.
+        description: UserRoleClass specifies the permissions that can be performed
+          on a set of resources
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation
@@ -38,7 +38,7 @@ spec:
           metadata:
             type: object
           spec:
-            description: UserRoleClassSpec is the spec for UserRoleClass
+            description: UserRoleClassSpec contains the permissions for a UserRoleClass
             properties:
               description:
                 default: ""
@@ -46,15 +46,18 @@ spec:
                 type: string
               owner:
                 default: admin
-                description: Owner of the bucket
+                description: The name of the Account which created the object, which
+                  exists in the same tenant as the object
                 type: string
               rules:
+                description: The collection of rules, consisting of a resource and
+                  the actions that can be performed on the resource
                 items:
-                  description: RuleSpec define the relation between a resource and
-                    the actions on the resource.
+                  description: RuleSpec defines the relation between a resource and
+                    the actions that can be performed on the resource
                   properties:
                     resource:
-                      description: The name of the resource
+                      description: The kind of the resource
                       type: string
                     verbs:
                       description: List of allowed actions on the resource

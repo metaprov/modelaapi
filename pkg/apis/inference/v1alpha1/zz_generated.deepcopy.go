@@ -1166,11 +1166,7 @@ func (in *PredictorSpec) DeepCopyInto(out *PredictorSpec) {
 		*out = new(ProgressiveSpec)
 		(*in).DeepCopyInto(*out)
 	}
-	if in.ArtifactsFolder != nil {
-		in, out := &in.ArtifactsFolder, &out.ArtifactsFolder
-		*out = new(string)
-		**out = **in
-	}
+	in.ArtifactsFolder.DeepCopyInto(&out.ArtifactsFolder)
 	if in.Port != nil {
 		in, out := &in.Port, &out.Port
 		*out = new(int32)

@@ -74,8 +74,7 @@ spec:
                     type: string
                 type: object
               athena:
-                description: =================== Definitions of spec files for each
-                  type AthenaSpec defines the connection to Athena db
+                description: AthenaSpec defines the connection to Athena db
                 properties:
                   hostName:
                     default: ""
@@ -149,7 +148,7 @@ spec:
                     type: string
                 type: object
               bigquery:
-                description: BigQuerySpec defines the connection to big query
+                description: BigQuerySpec defines the connection to Google BigQuery
                 properties:
                   host:
                     type: string
@@ -440,7 +439,7 @@ spec:
                     type: string
                 type: object
               druid:
-                description: ApacheDruid defines the connection to cassandra
+                description: ApacheDruid defines the connection to Apache Druid
                 properties:
                   host:
                     default: ""

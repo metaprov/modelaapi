@@ -35,8 +35,8 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: Lab represents a single namespace where data processing and model
-          training Jobs take place
+        description: Lab represents a single namespace where data analysis and model
+          training workloads take place
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation

@@ -72,7 +72,7 @@ spec:
                   to modify and create other Accounts
                 type: boolean
               avatar:
-                description: The avatar location
+                description: The specification for the Account avatar image
                 properties:
                   bucketName:
                     default: ""
@@ -87,8 +87,9 @@ spec:
                 type: object
               clearenceLevel:
                 default: unclassified
-                description: The clearence level of this account. The clearence level
-                  override user premissions.
+                description: The clearance level of the account. Accounts which do
+                  not have a clearance level greater than or equal to the clearance
+                  level of a DataProduct will not have access to their namespace
                 enum:
                 - unclassified
                 - confidential
@@ -107,7 +108,8 @@ spec:
                   of the Account
                 type: boolean
               favoriteProducts:
-                description: List of favorite data product
+                description: The collection of DataProduct names that will be displayed
+                  with priority on the tenant dashboard for the Account
                 items:
                   type: string
                 type: array

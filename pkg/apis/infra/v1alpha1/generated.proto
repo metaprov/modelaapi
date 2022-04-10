@@ -134,16 +134,17 @@ message AccountSpec {
   // +kubebuilder:validation:Optional
   optional bool resetPassword = 13;
 
-  // The clearence level of this account. The clearence level override user premissions.
+  // The clearance level of the account. Accounts which do not have a clearance level greater than or equal to the
+  // clearance level of a DataProduct will not have access to their namespace
   // +kubebuilder:default:=unclassified
   // +kubebuilder:validation:Optional
   optional string clearenceLevel = 17;
 
-  // The avatar location
+  // The specification for the Account avatar image
   // +kubebuilder:validation:Optional
   optional AvatarSpec avatar = 18;
 
-  // List of favorite data product
+  // The collection of DataProduct names that will be displayed with priority on the tenant dashboard for the Account
   // +kubebuilder:validation:Optional
   repeated string favoriteProducts = 19;
 }
@@ -321,7 +322,6 @@ message AliCloudSpec {
   optional string host = 4;
 }
 
-// =================== Definitions of spec files for each type
 // AthenaSpec defines the connection to Athena db
 message AmazonAthenaSpec {
   // +kubebuilder:default:=""
@@ -413,7 +413,7 @@ message ApacheDrillSpec {
   optional string url = 6;
 }
 
-// ApacheDruid defines the connection to cassandra
+// ApacheDruid defines the connection to Apache Druid
 message ApacheDruidSpec {
   // +kubebuilder:default:=""
   optional string host = 1;
@@ -1384,7 +1384,7 @@ message FtpSpec {
   optional string password = 4;
 }
 
-// BigQuerySpec defines the connection to big query
+// BigQuerySpec defines the connection to Google BigQuery
 message GcpBigQuerySpec {
   optional string host = 1;
 
@@ -1591,7 +1591,7 @@ message KafkaSpec {
   optional string url = 6;
 }
 
-// Lab represents a single namespace where data processing and model training Jobs take place
+// Lab represents a single namespace where data analysis and model training workloads take place
 // +kubebuilder:object:root=true
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
@@ -2038,37 +2038,38 @@ message Neo4JSpec {
   optional string url = 7;
 }
 
-// Define the a specific notification channel
+// NotificationChannelSpec describes a single Connection to an external messaging system and a destination channel within the system
 message NotificationChannelSpec {
-  // Is this notifier can send notification
+  // Indicates if the channel is enabled to send forwarded Alerts
   // +kubebuilder:default:= true
   // +kubebuilder:validation:Optional
   optional bool enabled = 1;
 
+  // The name of the Connection resource which exists in the same tenant as the parent Notifier
   // +kubebuilder:validation:Required
   // +kubebuilder:default:=""
   optional string connectionName = 2;
 
-  // Send info messages via this channel
+  // Indicates if the channel will send Alerts with the `info` level
   // +kubebuilder:default:= false
   // +kubebuilder:validation:Optional
   optional bool info = 3;
 
-  // Send error messages via this channel
+  // Indicates if the channel will send Alerts with the `error` level
   // +kubebuilder:default:= true
   // +kubebuilder:validation:Optional
   optional bool error = 4;
 
-  // This channel start time.
+  // This channel start time
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time from = 5;
 
-  // This channel end time.
+  // This channel end time
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time to = 6;
 
-  // The notification destination. Can be an email if using smtp connection
-  // or a slack channel.
+  // The destination channel that exists in the external system that `ConnectionName` references. For example, a Slack
+  // channel name, a Discord channel ID, or an e-mail address
   optional string destination = 7;
 }
 
@@ -2076,16 +2077,16 @@ message NotificationChannelStatus {
   // The last time a message was sent on this channel
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastMessage = 1;
 
-  // In case of notification failure
-  // Borrowed from cluster api controller
+  // In the case of failure, the Notifier resource controller will set this field with a failure reason
   // +kubebuilder:validation:Optional
   optional string failureReason = 2;
 
-  // Update in case of terminal failure message
+  // In the case of failure, the Notifier resource controller will set this field with a failure message
   // +kubebuilder:validation:Optional
   optional string failureMessage = 3;
 }
 
+// The Notifier resource
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
@@ -2101,21 +2102,21 @@ message Notifier {
   optional NotifierStatus status = 3;
 }
 
-// NotifierCondition describes the state of the license at a certain point.
+// NotifierCondition describes the state of a Notifier at a certain point
 message NotifierCondition {
   // Type of account condition.
   optional string type = 1;
 
-  // Status of the condition, one of True, False, Unknown.
+  // Status of the condition, one of True, False, Unknown
   optional string status = 2;
 
-  // Last time the condition transitioned from one status to another.
+  // Last time the condition transitioned from one status to another
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
 
-  // The reason for the condition's last transition.
+  // The reason for the condition's last transition
   optional string reason = 4;
 
-  // A human readable message indicating details about the transition.
+  // A human readable message indicating details about the transition
   optional string message = 5;
 }
 
@@ -2127,48 +2128,49 @@ message NotifierList {
   repeated Notifier items = 2;
 }
 
-// NotifierSpec defines the desired state of Notifier
+// NotifierSpec defines the desired state of a Notifier
 message NotifierSpec {
-  // Is this notifier can send notification
+  // Indicates if the Notifier will send notifications
   // +kubebuilder:default:= true
   // +kubebuilder:validation:Optional
   optional bool enabled = 1;
 
-  // The tenant that own the notifier
-  // Default to default tenant.
+  // The reference to the tenant which the object exists under
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference tenantRef = 2;
 
-  // User provided description
+  // The user provided description of the object
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string description = 3;
 
-  // The owner account name
+  // The name of the Account which created the object, which exists in the same tenant as the object
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
   optional string owner = 4;
 
-  // Specify the notifier channels
+  // Channels specifies the list of notification channels that the Notifier will forward the information from Alerts to.
+  // Each channel specifies a Connection resource for an external messaging system, and a destination channel within the system
+  // to forward the information from Alerts to
   // +kubebuilder:validation:Optional
   repeated NotificationChannelSpec channels = 5;
 }
 
 // NotifierStatus is the observed state of a Notifier
 message NotifierStatus {
-  // ObservedGeneration is the Last generation that was acted on
+  // ObservedGeneration is the last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 1;
+  optional int64 observedGeneration = 2;
 
-  // Last time the object was updated
+  // The last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 3;
 
-  // The last channel status
-  repeated NotificationChannelStatus channelsStatus = 3;
+  // The status of Notification Channels after Alerts have been forwarded to them
+  repeated NotificationChannelStatus channelsStatus = 4;
 
   // +kubebuilder:validation:Optional
-  repeated NotifierCondition conditions = 4;
+  repeated NotifierCondition conditions = 5;
 }
 
 message OdbcSpec {
@@ -2362,9 +2364,9 @@ message ResourceLimitSpec {
   optional k8s.io.api.core.v1.LimitRangeSpec limitRange = 7;
 }
 
-// RuleSpec define the relation between a resource and the actions on the resource.
+// RuleSpec defines the relation between a resource and the actions that can be performed on the resource
 message RuleSpec {
-  // The name of the resource
+  // The kind of the resource
   optional string resource = 1;
 
   // List of allowed actions on the resource
@@ -2440,7 +2442,7 @@ message Scope {
   repeated string actions = 2;
 }
 
-// ServingSite is a namespace used for serving
+// ServingSite represents a namespace where model serving workloads are executed under
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
@@ -2485,7 +2487,7 @@ message ServingSiteList {
   repeated ServingSite items = 2;
 }
 
-// ServingSiteSpec represents a namespace where model serving workloads are executed under
+// ServingSiteSpec defines the desired state of a Lab
 message ServingSiteSpec {
   // The user-provided description of the object
   // +kubebuilder:default:=""
@@ -2688,7 +2690,7 @@ message SybaseSpec {
   optional string url = 6;
 }
 
-// Tenant represents a single root namespace for infrastructure resources and descendant DataProduct namespaces
+// Tenant represents a root namespace for tenant-level resources and child DataProduct namespaces
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
@@ -2810,7 +2812,7 @@ message TwitterSpec {
   optional string token = 1;
 }
 
-// UserRoleClass specify the RBAC premission for a specific user role.
+// UserRoleClass specifies the permissions that can be performed on a set of resources
 // +kubebuilder:resource:path=userroleclasses,singular=userroleclass,categories={infra,modela,all}
 // +kubebuilder:object:root=true
 message UserRoleClass {
@@ -2819,15 +2821,15 @@ message UserRoleClass {
   optional UserRoleClassSpec spec = 2;
 }
 
+// UserRoleClassList contains a list of UserRoleClasses
 // +kubebuilder:object:root=true
-// UserRoleClassList contains a list of UserRoleClass
 message UserRoleClassList {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
 
   repeated UserRoleClass items = 2;
 }
 
-// UserRoleClassSpec is the spec for UserRoleClass
+// UserRoleClassSpec contains the permissions for a UserRoleClass
 message UserRoleClassSpec {
   // The owner of the user role class
   // +kubebuilder:validation:Optional
@@ -2838,11 +2840,12 @@ message UserRoleClassSpec {
   // +kubebuilder:validation:Optional
   optional string description = 2;
 
-  // Owner of the bucket
+  // The name of the Account which created the object, which exists in the same tenant as the object
   // +kubebuilder:default:="admin"
   // +kubebuilder:validation:Optional
   optional string owner = 3;
 
+  // The collection of rules, consisting of a resource and the actions that can be performed on the resource
   // +kubebuilder:validation:Optional
   repeated RuleSpec rules = 4;
 }

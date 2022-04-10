@@ -359,7 +359,7 @@ message Lib {
   optional string version = 2;
 }
 
-// Logs describes the location of logs produced by every workload of a resource
+// Logs describes the location of logs produced by workloads associated with a resource
 message Logs {
   // The name of the VirtualBucket resource where the logs are stored
   // +kubebuilder:validation:Optional

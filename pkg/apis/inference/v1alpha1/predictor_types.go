@@ -2,6 +2,7 @@ package v1alpha1
 
 import (
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
+	data "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1"
 	training "github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
@@ -115,10 +116,8 @@ type PredictorSpec struct {
 	// +kubebuilder:validation:Optional
 	Progressive *ProgressiveSpec `json:"progressive,omitempty" protobuf:"bytes,7,opt,name=progressive"`
 	// The key in the bucket for storing all the predictor artifacts.
-	// +kubebuilder:default:=""
-	// +kubebuilder:validation:MaxLength=512
 	// +kubebuilder:validation:Optional
-	ArtifactsFolder *string `json:"artifactsFolder,omitempty" protobuf:"bytes,8,opt,name=artifactsFolder"`
+	ArtifactsFolder data.DataLocation `json:"artifactsFolder,omitempty" protobuf:"bytes,8,opt,name=artifactsFolder"`
 	// set of input channel, the predictor will watch those channels for predictions
 	// +kubebuilder:validation:Optional
 	// Service port specify the predictor port.

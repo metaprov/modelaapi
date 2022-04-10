@@ -52,8 +52,8 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: The Dataset object represents a chunk of data that has been stored
-          in the system.
+        description: Dataset represents a chunk of data that has been analyzed and
+          stored inside a managed bucket
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation
@@ -192,10 +192,10 @@ spec:
                   bucketName:
                     default: ""
                     description: In the case of the location type being object storage,
-                      BucketName is the name of the VirtualBucket resource in the
-                      same tenant namespace as the resource. Modela will access the
-                      object storage system and will pull from the file path specified
-                      by the `Path` field
+                      BucketName is the name of the VirtualBucket resource that exists
+                      in the same tenant as the resource specifying the DataLocation.
+                      Modela will connect to the external object storage system and
+                      pull the file from the path specified by the Path field
                     type: string
                   connectionName:
                     default: ""
@@ -223,7 +223,8 @@ spec:
                     type: string
                   sql:
                     default: ""
-                    description: The SQL statement to query data from a table
+                    description: The SQL statement which will be executed to query
+                      data from a table
                     type: string
                   table:
                     default: ""
@@ -279,10 +280,10 @@ spec:
                   bucketName:
                     default: ""
                     description: In the case of the location type being object storage,
-                      BucketName is the name of the VirtualBucket resource in the
-                      same tenant namespace as the resource. Modela will access the
-                      object storage system and will pull from the file path specified
-                      by the `Path` field
+                      BucketName is the name of the VirtualBucket resource that exists
+                      in the same tenant as the resource specifying the DataLocation.
+                      Modela will connect to the external object storage system and
+                      pull the file from the path specified by the Path field
                     type: string
                   connectionName:
                     default: ""
@@ -310,7 +311,8 @@ spec:
                     type: string
                   sql:
                     default: ""
-                    description: The SQL statement to query data from a table
+                    description: The SQL statement which will be executed to query
+                      data from a table
                     type: string
                   table:
                     default: ""
@@ -625,8 +627,8 @@ spec:
                 type: string
               hash:
                 default: ""
-                description: Sha256 signature of the raw data. This field is intended
-                  for internal use
+                description: Sha256 signature of the raw data. Intended for internal
+                  use
                 type: string
               images:
                 description: The Docker images used during the analysis of the Dataset

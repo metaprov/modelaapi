@@ -34,8 +34,8 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: Tenant represents a single root namespace for infrastructure
-          resources and descendant DataProduct namespaces
+        description: Tenant represents a root namespace for tenant-level resources
+          and child DataProduct namespaces
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation

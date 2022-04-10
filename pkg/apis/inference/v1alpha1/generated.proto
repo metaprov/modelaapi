@@ -830,10 +830,8 @@ message PredictorSpec {
   optional ProgressiveSpec progressive = 7;
 
   // The key in the bucket for storing all the predictor artifacts.
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:MaxLength=512
   // +kubebuilder:validation:Optional
-  optional string artifactsFolder = 8;
+  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation artifactsFolder = 8;
 
   // set of input channel, the predictor will watch those channels for predictions
   // +kubebuilder:validation:Optional

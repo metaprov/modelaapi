@@ -34,6 +34,7 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
+        description: The Notifier resource
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation
@@ -48,38 +49,50 @@ spec:
           metadata:
             type: object
           spec:
-            description: NotifierSpec defines the desired state of Notifier
+            description: NotifierSpec defines the desired state of a Notifier
             properties:
               channels:
-                description: Specify the notifier channels
+                description: Channels specifies the list of notification channels
+                  that the Notifier will forward the information from Alerts to. Each
+                  channel specifies a Connection resource for an external messaging
+                  system, and a destination channel within the system to forward the
+                  information from Alerts to
                 items:
-                  description: Define the a specific notification channel
+                  description: NotificationChannelSpec describes a single Connection
+                    to an external messaging system and a destination channel within
+                    the system
                   properties:
                     connectionName:
                       default: ""
+                      description: The name of the Connection resource which exists
+                        in the same tenant as the parent Notifier
                       type: string
                     destination:
-                      description: The notification destination. Can be an email if
-                        using smtp connection or a slack channel.
+                      description: The destination channel that exists in the external
+                        system that `ConnectionName` references. For example, a Slack
+                        channel name, a Discord channel ID, or an e-mail address
                       type: string
                     enabled:
                       default: true
-                      description: Is this notifier can send notification
+                      description: Indicates if the channel is enabled to send forwarded
+                        Alerts
                       type: boolean
                     error:
                       default: true
-                      description: Send error messages via this channel
+                      description: Indicates if the channel will send Alerts with
+                        the `error` level
                       type: boolean
                     from:
-                      description: This channel start time.
+                      description: This channel start time
                       format: date-time
                       type: string
                     info:
                       default: false
-                      description: Send info messages via this channel
+                      description: Indicates if the channel will send Alerts with
+                        the `info` level
                       type: boolean
                     to:
-                      description: This channel end time.
+                      description: This channel end time
                       format: date-time
                       type: string
                   required:
@@ -88,18 +101,19 @@ spec:
                 type: array
               description:
                 default: ""
-                description: User provided description
+                description: The user provided description of the object
                 type: string
               enabled:
                 default: true
-                description: Is this notifier can send notification
+                description: Indicates if the Notifier will send notifications
                 type: boolean
               owner:
                 default: no-one
-                description: The owner account name
+                description: The name of the Account which created the object, which
+                  exists in the same tenant as the object
                 type: string
               tenantRef:
-                description: The tenant that own the notifier Default to default tenant.
+                description: The reference to the tenant which the object exists under
                 properties:
                   apiVersion:
                     description: API version of the referent.
@@ -139,15 +153,17 @@ spec:
             description: NotifierStatus is the observed state of a Notifier
             properties:
               channelsStatus:
-                description: The last channel status
+                description: The status of Notification Channels after Alerts have
+                  been forwarded to them
                 items:
                   properties:
                     failureMessage:
-                      description: Update in case of terminal failure message
+                      description: In the case of failure, the Notifier resource controller
+                        will set this field with a failure message
                       type: string
                     failureReason:
-                      description: In case of notification failure Borrowed from cluster
-                        api controller
+                      description: In the case of failure, the Notifier resource controller
+                        will set this field with a failure reason
                       type: string
                     lastMessage:
                       description: The last time a message was sent on this channel
@@ -157,23 +173,23 @@ spec:
                 type: array
               conditions:
                 items:
-                  description: NotifierCondition describes the state of the license
-                    at a certain point.
+                  description: NotifierCondition describes the state of a Notifier
+                    at a certain point
                   properties:
                     lastTransitionTime:
                       description: Last time the condition transitioned from one status
-                        to another.
+                        to another
                       format: date-time
                       type: string
                     message:
                       description: A human readable message indicating details about
-                        the transition.
+                        the transition
                       type: string
                     reason:
-                      description: The reason for the condition's last transition.
+                      description: The reason for the condition's last transition
                       type: string
                     status:
-                      description: Status of the condition, one of True, False, Unknown.
+                      description: Status of the condition, one of True, False, Unknown
                       type: string
                     type:
                       description: Type of account condition.
@@ -184,11 +200,11 @@ spec:
                   type: object
                 type: array
               lastUpdated:
-                description: Last time the object was updated
+                description: The last time the object was updated
                 format: date-time
                 type: string
               observedGeneration:
-                description: ObservedGeneration is the Last generation that was acted
+                description: ObservedGeneration is the last generation that was acted
                   on
                 format: int64
                 type: integer

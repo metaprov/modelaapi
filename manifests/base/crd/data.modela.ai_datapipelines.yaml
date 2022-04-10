@@ -143,9 +143,10 @@ spec:
                         default: ""
                         description: In the case of the location type being object
                           storage, BucketName is the name of the VirtualBucket resource
-                          in the same tenant namespace as the resource. Modela will
-                          access the object storage system and will pull from the
-                          file path specified by the `Path` field
+                          that exists in the same tenant as the resource specifying
+                          the DataLocation. Modela will connect to the external object
+                          storage system and pull the file from the path specified
+                          by the Path field
                         type: string
                       connectionName:
                         default: ""
@@ -174,7 +175,8 @@ spec:
                         type: string
                       sql:
                         default: ""
-                        description: The SQL statement to query data from a table
+                        description: The SQL statement which will be executed to query
+                          data from a table
                         type: string
                       table:
                         default: ""
