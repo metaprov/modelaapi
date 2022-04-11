@@ -45,7 +45,7 @@ const (
 	DatasetValidationNameNameEmpty            DatasetValidationName = "dataset-empty"
 )
 
-// DatasetValidation specifies a validation rule which encompasses the contents of an entire dataset
+// DatasetValidation specifies a validation rule for the contents of an entire dataset
 type DatasetValidation struct {
 	// The type of validation rule
 	// +kubebuilder:validation:Optional
@@ -439,7 +439,7 @@ type ValidationSpec struct {
 	FileValidations []FileValidation `json:"fileValidations,omitempty" protobuf:"bytes,5,rep,name=fileValidations"`
 }
 
-// Schema defines the column-level format and validation rules for data associated with the DataSource which uses the schema
+// Schema defines the column-level format and validation rules for data associated with a DataSource
 type Schema struct {
 	// The time-series schema, which sets time-series specific parameters
 	// +kubebuilder:validation:Optional

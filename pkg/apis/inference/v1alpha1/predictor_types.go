@@ -31,21 +31,21 @@ const (
 	PredictorSaved PredictorConditionType = "Saved"
 )
 
-// PredictorCondition describes the state of a prediction at a certain point.
+// PredictorCondition describes the state of a Predictor at a certain point
 type PredictorCondition struct {
-	// Type of account condition.
+	// Type of account condition
 	Type PredictorConditionType `json:"type" protobuf:"bytes,1,opt,name=type,casttype=PredictorConditionType"`
-	// Status of the condition, one of True, False, Unknown.
+	// Status of the condition, one of True, False, Unknown
 	Status v1.ConditionStatus `json:"status" protobuf:"bytes,2,opt,name=status,casttype=k8s.io/api/core/v1.ConditionStatus"`
-	// Last time the condition transitioned from one status to another.
+	// Last time the condition transitioned from one status to another
 	LastTransitionTime *metav1.Time `json:"lastTransitionTime,omitempty" protobuf:"bytes,3,opt,name=lastTransitionTime"`
-	// The reason for the condition's last transition.
+	// The reason for the condition's last transition
 	Reason string `json:"reason,omitempty" protobuf:"bytes,4,opt,name=reason"`
-	// A human readable message indicating details about the transition.
+	// A human-readable message indicating details about the transition
 	Message string `json:"message,omitempty" protobuf:"bytes,5,opt,name=message"`
 }
 
-// Predictor represent an PredictorName API object
+// Predictor specifies the deployment of a service to serve predictions for a Model
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
@@ -65,118 +65,125 @@ type Predictor struct {
 }
 
 // +kubebuilder:object:root=true
-// PredictorList represent a list of predictors
+// PredictorList contains a list of Predictors
 type PredictorList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
 	Items           []Predictor `json:"items" protobuf:"bytes,2,rep,name=items"`
 }
 
+// ProgressiveSpec defines the specification to progressively deploy a model to production
 type ProgressiveSpec struct {
-	// How long in seconds does the warm up period started
-	// This is used only during progressive deployment
+	// The time, in seconds, for the warm-up period
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:Maximum=100
 	// +kubebuilder:validation:Minimum=0
 	Warmup *int32 `json:"warmup,omitempty" protobuf:"varint,1,opt,name=warmup"`
-	// How much do we increment the warm up traffic
+	// The percentage of traffic to increment
 	// +kubebuilder:validation:Maximum=10
 	// +kubebuilder:validation:Minimum=1
-	// Default : 10
 	// +kubebuilder:validation:Optional
 	TrafficIncrement *int32 `json:"trafficIncrement,omitempty" protobuf:"varint,2,opt,name=trafficIncrement"`
-	// What metric to use when comparing the candidate to the current
+	// What metric to use when comparing the candidate model to the current model
 	// +kubebuilder:validation:Optional
 	CanaryMetrics []catalog.CanaryMetric `json:"canaryMetrics,omitempty" protobuf:"bytes,3,rep,name=canaryMetrics"`
 }
 
-// PredictorSpec define the desired state of the predictor
+// PredictorSpec define the desired state of a Predictor
 type PredictorSpec struct {
-	// VersionName is the data product version of the data pipeline
+	// The name of the DataProductVersion that exists on the same DataProduct namespace as the Predictor
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
-	// User provided description
+	// The user-provided description of the Predictor
 	// +kubebuilder:validation:MaxLength=256
 	// +kubebuilder:default:=""
 	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
-	// The product that this predictor serve.
+	// The reference to the DataProduct resource that the Predictor exists under
 	ProductRef *v1.ObjectReference `json:"productRef,omitempty" protobuf:"bytes,3,opt,name=productRef"`
-	// The serving site that hosts this predictor and the models
+	// The reference to the ServingSite resource that hosts the Predictor
 	// +kubebuilder:validation:Optional
 	ServingSiteRef *v1.ObjectReference `json:"servingsiteRef" protobuf:"bytes,4,opt,name=servingsiteRef"`
-	// A template for the predictor pod. The system will create the deployment based on this template.
+	// The pod template for the prediction proxy service. The system will create a deployment for the service
+	// based on the template
 	// +kubebuilder:validation:Optional
 	Template *v1.PodTemplate `json:"template,omitempty" protobuf:"bytes,5,opt,name=template"`
-	// Models is the list of models
+	// The collection of model deployment specifications that define which Model resources will be deployed to the
+	// Predictor service and how they will be deployed. Each model should be associated with the same type of
+	// dataset and possess a unique version
 	// +kubebuilder:validation:Optional
 	Models []catalog.ModelDeploymentSpec `json:"models,omitempty" protobuf:"bytes,6,rep,name=models"`
-	// Denotes the progressive spec
-	// What metric to use when comparing the candidate to the current
+	// The specification to progressively deploy models. ModelDeploymentSpec specifications within Models that have the
+	// `Canary` field enabled will be progressively deployed according to the specification when they are applied to the Predictor
 	// +kubebuilder:validation:Optional
 	Progressive *ProgressiveSpec `json:"progressive,omitempty" protobuf:"bytes,7,opt,name=progressive"`
-	// The key in the bucket for storing all the predictor artifacts.
+	// The data location where artifacts generated by the Predictor will be stored
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:MaxLength=512
 	// +kubebuilder:validation:Optional
 	ArtifactsFolder data.DataLocation `json:"artifactsFolder,omitempty" protobuf:"bytes,8,opt,name=artifactsFolder"`
-	// set of input channel, the predictor will watch those channels for predictions
+	// The port number that will be exposed on the Predictor's Pods to serve prediction traffic through the GRPCInferenceService API.
+	// The Kubernetes Service created by the Predictor will expose the port and forward GRPC traffic to the backend pods
 	// +kubebuilder:validation:Optional
-	// Service port specify the predictor port.
-	// Default: 8080
 	// +kubebuilder:validation:Minimum=1
 	// +kubebuilder:validation:Maximum=65535
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:=8080
 	Port *int32 `json:"port,omitempty" protobuf:"varint,9,opt,name=port"`
-	// The value of the node port
+	// The port number that will be exposed on the external address of every node on the cluster, in the case of the
+	// Predictor's access type being NodePort. Traffic from the port will be forwarded to the Predictor's backend service
 	// +kubebuilder:validation:Minimum=1
 	// +kubebuilder:validation:Maximum=65535
 	// +kubebuilder:validation:Optional
 	NodePort *int32 `json:"nodePort,omitempty" protobuf:"varint,10,opt,name=nodePort"`
-	// This is the path relative to the ingress path
+	// The auto-generated DNS path where the Predictor service can be accessed. If the access type is ClusterIP, it will
+	// be a cluster-internal DNS name (i.e. predictor.default-serving-site.svc.cluster.local). In the case of the Ingress
+	// access type, it will be determined by the FQDN of the host ServingSite (i.e. predictor.default-serving-site.modela.ai).
 	// +kubebuilder:validation:MaxLength=256
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:=""
 	Path *string `json:"path,omitempty" protobuf:"bytes,11,opt,name=path"`
-	// The access method specified how external clients will access the predictor
-	// Default: ClusterIP
+	// The Kubernetes-native access method which specifies how the Kubernetes Service created by the Predictor will be exposed.
+	// See https://modela.ai/docs/docs/serving/production/#access-method for a detailed description of each access type
 	// +kubebuilder:default:="cluster-ip"
 	// +kubebuilder:validation:Optional
 	AccessType *catalog.AccessType `json:"accessType,omitempty" protobuf:"bytes,12,opt,name=accessType"`
-	// Replicas defines the number of replicas when auto scaling is disabled.
+	// The number of replicas (how many instances of the prediction service will be instantiated to handle prediction traffic)
+	// in the case that automatic scaling is disabled
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:Maximum=10
 	// +kubebuilder:validation:Minimum=1
 	// +kubebuilder:default:=1
 	Replicas *int32 `json:"replicas,omitempty" protobuf:"varint,13,opt,name=replicas"`
-	// AutoScaling defines the auto scaling policy
+	// AutoScaling specifies the auto-scaling policy
 	// +kubebuilder:validation:Optional
 	AutoScaling AutoScaling `json:"autoScaling,omitempty" protobuf:"bytes,14,opt,name=autoScaling"`
 	// The owner account name
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,15,opt,name=owner"`
-	// Resources is the hardware resource req.
+	// Resources specifies the resource requirements allocated to the prediction service
 	// +kubebuilder:validation:Optional
 	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,16,opt,name=resources"`
-	// Cache is the specification of prediction cache
+	// Cache is the specification of prediction cache (currently unimplemented)
 	// +kubebuilder:validation:Optional
 	Cache *PredictionCacheSpec `json:"cache,omitempty" protobuf:"bytes,17,opt,name=cache"`
-	// Store is the specification of the online data store.
+	// Store is the specification of the online data store (currently unimplemented)
 	// +kubebuilder:validation:Optional
 	Store *OnlineFeaturestoreSpec `json:"store,omitempty" protobuf:"bytes,18,opt,name=store"`
-	// The forward curtain receive the prediction request before the prediction.
+	// The forward curtain receives prediction requests before the prediction (currently unimplemented)
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	ForwardCurtainName *string `json:"forwardCurtain,omitempty" protobuf:"bytes,19,opt,name=forwardCurtain"`
-	// The backward curtain receive the curtain after the prediction.
+	// The backward curtain receives prediction requests after the prediction (currently unimplemented)
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	BackwardCurtainName *string `json:"backwardCurtain,omitempty" protobuf:"bytes,20,opt,name=backwardCurtain"`
-	// Type is the type of predictor
+	// The type of predictor (online, batch, or streaming). Online is the only supported type as of the current release
 	// +kubebuilder:default:="online"
 	// +kubebuilder:validation:Optional
 	Type *PredictorType `json:"type,omitempty" protobuf:"bytes,21,opt,name=type"`
-	// Task is the task of the predictor
+	// The task type of the Predictor, which should match the task type of the models being served
 	// +kubebuilder:default:="unknown"
 	// +kubebuilder:validation:Optional
 	Task *catalog.MLTask `json:"task,omitempty" protobuf:"bytes,22,opt,name=task"`
@@ -186,10 +193,11 @@ type PredictorSpec struct {
 	// Monitor spec specify the monitor for this predictor.
 	// +kubebuilder:validation:Optional
 	Monitor MonitorSpec `json:"monitor,omitempty" protobuf:"bytes,24,opt,name=monitor"`
-	// specify the predictor authentication
+	// The specification to authenticate requests to the prediction service
 	// +kubebuilder:validation:Optional
 	Auth PredictorAuthSpec `json:"auth,omitempty" protobuf:"bytes,25,opt,name=auth"`
-	// If true, set expose a REST service.
+	// Indicates if the prediction service should expose an additional port to serve the GRPCInferenceService API using REST.
+	// The port one digit above the number specified by the Port field will be exposed to accept HTTP/1.1 traffic
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	REST *bool `json:"rest,omitempty" protobuf:"varint,26,opt,name=rest"`
@@ -207,29 +215,32 @@ type PredictionCacheSpec struct {
 	ServiceName *string `json:"serviceName,omitempty" protobuf:"bytes,2,opt,name=serviceName"`
 }
 
-// AutoScaling defines the configuration for auto scaling
+// AutoScaling defines the configuration for the automatic scaling of a service
 type AutoScaling struct {
+	// Indicates if automatic scaling is enabled
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
-	// Min num of replicates
+	// The minimum number of replicas running the service
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:Minimum=1
 	// +kubebuilder:default:=1
 	MinReplicas *int32 `json:"minReplicas,omitempty" protobuf:"varint,2,opt,name=minReplicas"`
-	// Max num of replicates. Used during auto scaling
+	// The maximum number of replicas running the service
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:Minimum=1
 	// +kubebuilder:validation:Maximum=10
 	// +kubebuilder:default:=1
 	MaxReplicas *int32 `json:"maxReplicas,omitempty" protobuf:"varint,3,opt,name=maxReplicas"`
-	// Used with the horizontal auto builder
+	// The target average CPU utilization across all replicas. The HorizontalPodAutoscaler associated with the
+	// service will change the number of replicas to maintain this metric
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:Minimum=1
 	// +kubebuilder:validation:Maximum=100
 	// +kubebuilder:default:=80
 	CpuAvgUtilization *int32 `json:"cpuAvgUtilization,omitempty" protobuf:"varint,4,opt,name=cpuAvgUtilization"`
-	// Used with the horizontal auto builder
+	// The target average memory utilization across all replicas. The HorizontalPodAutoscaler associated with the
+	// service will change the number of replicas to maintain this metric
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:Minimum=1
 	// +kubebuilder:validation:Maximum=100
@@ -237,68 +248,65 @@ type AutoScaling struct {
 	MemAvgUtilization *int32 `json:"memAvgUtilization,omitempty" protobuf:"varint,5,opt,name=memAvgUtilization"`
 }
 
-// A OnlineFeaturestoreSpec speficy the connection information for an online feature store for this prediction.
+// A OnlineFeaturestoreSpec specifies the connection information for an online feature store
 type OnlineFeaturestoreSpec struct {
-	// Active indicate if the cache is active
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Active *bool `json:"active,omitempty" protobuf:"varint,1,opt,name=active"`
-	// the name of the cache service
 	// +kubebuilder:default:=""
 	ServiceName *string `json:"serviceName,omitempty" protobuf:"bytes,2,opt,name=serviceName"`
 }
 
 // PredictorStatus contain the current state of the Predictor resource
 type PredictorStatus struct {
-	// Model one status
+	// The collection of statuses for each model deployed with the Predictor
 	// +kubebuilder:validation:Optional
 	ModelStatuses []catalog.ModelDeploymentStatus `json:"modelStatus,omitempty" protobuf:"bytes,1,rep,name=modelStatus"`
-	// When was the last check attempt
+	// The last time when model monitoring was computed
 	MonitorLastAttemptAt *metav1.Time `json:"monitorLastAttemptAt,omitempty" protobuf:"bytes,3,opt,name=monitorLastAttemptAt"`
-	// What was the last score
+	// The score from the last time model monitoring was computed
 	MonitorLastScore float64 `json:"monitorLastScore,omitempty" protobuf:"bytes,4,opt,name=monitorLastScore"`
-	// What was the last latency
+	// The model latency from the last time model monitoring was computed
 	MonitorLastLatency float64 `json:"monitorLastLatency,omitempty" protobuf:"bytes,5,opt,name=monitorLastLatency"`
-	// The Health of the predictor
+	// The health and other statistics of the Predictor
 	Health PredictorHealth `json:"health,omitempty" protobuf:"bytes,6,opt,name=health"`
-	// ObservedGeneration is the Last generation that was acted on
+	// ObservedGeneration is the last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,7,opt,name=observedGeneration"`
-	// Prev model spec stores the prev working model, The field is used in case of a roll back
+	// The collection of historical records of models deployed to the Predictor, used internally to roll-back models
 	//+kubebuilder:validation:Optional
 	History []ModelRecord `json:"history,omitempty" protobuf:"bytes,9,opt,name=history"`
-	// Monitor status holds the status of the last monitor action.
+	// MonitorStatus contains the status of the last model monitoring that was computed
 	//+kubebuilder:validation:Optional
 	MonitorStatus MonitorStatus `json:"monitorStatus,omitempty" protobuf:"bytes,10,opt,name=monitorStatus"`
-	// Last time the object was updated
+	// The last time the object was updated
 	//+kubebuilder:validation:Optional
 	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,11,opt,name=lastUpdated"`
-	// The target column
+	// The target column of the Predictor
 	//+kubebuilder:validation:Optional
 	TargetColumn string `json:"targetColumn,omitempty" protobuf:"bytes,12,opt,name=targetColumn"`
-	// For binary classification, the name of the positive class
+	// For binary classification, the name of the positive class of the target feature
 	//+kubebuilder:validation:Optional
 	PositiveLabel string `json:"positiveLabel,omitempty" protobuf:"bytes,13,opt,name=positiveLabel"`
-	// For binary classification, the name of the negative class
+	// For binary classification, the name of the negative class of the target feature
 	//+kubebuilder:validation:Optional
 	NegativeLabel string `json:"negativeLabel,omitempty" protobuf:"bytes,14,opt,name=negativeLabel"`
-	// the end point url of the predictor
+	// The end-point URL of the Predictor
 	//+kubebuilder:validation:Optional
 	EndPoint string `json:"endPoint,omitempty" protobuf:"bytes,16,opt,name=endPoint"`
-	// The deployment name for the proxy
+	// The reference to the Kubernetes Deployment created for the Predictor's prediction proxy
 	// +kubebuilder:validation:Optional
 	ProxyDeploymentRef v1.ObjectReference `json:"proxyDeploymentRef,omitempty" protobuf:"bytes,17,opt,name=proxyDeploymentRef"`
-	// The service name that serves this model
+	// The reference to the Kubernetes Service created for the Predictor's prediction proxy
 	// +kubebuilder:validation:Optional
 	ProxyServiceRef v1.ObjectReference `json:"proxyServiceRef,omitempty" protobuf:"bytes,18,opt,name=proxyServiceRef"`
-	// Update in case of terminal failure
-	// Borrowed from cluster api controller
+	// In the case of failure, the Predictor resource controller will set this field with a failure reason
 	//+kubebuilder:validation:Optional
 	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,19,opt,name=failureReason"`
-	// Update in case of terminal failure message
+	// In the case of failure, the Predictor resource controller will set this field with a failure reason
 	//+kubebuilder:validation:Optional
 	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,20,opt,name=failureMessage"`
-	// The status of the load balancer, if the predictor uses load balancer
+	// The status of the load balancer, if the Predictor's access type is LoadBalancer
 	//+kubebuilder:validation:Optional
 	LoadBalancerStatus *v1.LoadBalancerStatus `json:"loadBalancerStatus,omitempty" protobuf:"bytes,21,opt,name=loadBalancerStatus"`
 	// +patchMergeKey=type
@@ -307,26 +315,28 @@ type PredictorStatus struct {
 	Conditions []PredictorCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,22,rep,name=conditions"`
 }
 
+// PredictorHealth describes the health of an active Predictor
 type PredictorHealth struct {
-	// True if there is system is a problem with the service
+	// True, if there is system is a problem with the service
+	// Indicates if there is a problem with the Predictor's service
 	Service bool `json:"service,omitempty" protobuf:"varint,1,opt,name=service"`
-	// True if there is a data drift
+	// Indicates if a data drift has been detected based on incoming prediction data
 	DataDrift bool `json:"dataDrift,omitempty" protobuf:"varint,2,opt,name=dataDrift"`
-	// True if there is a concept drift
+	// Indicates if a concept drift has been detected based on incoming prediction data
 	ConceptDrift bool `json:"conceptDrift,omitempty" protobuf:"varint,3,opt,name=conceptDrift"`
-	// Total prediction for this predictor
+	// The total number of predictions served by the Predictor
 	TotalPredictions int32 `json:"totalPredictions,omitempty" protobuf:"varint,4,opt,name=totalPredictions"`
-	// Daily Avg
+	// The daily average number of predictions served
 	DailyAvg int32 `json:"avg,omitempty" protobuf:"varint,5,opt,name="`
-	// P95 response time
+	// The response time for 95% of predictions served
 	P95ResponseTime int32 `json:"totalP95Requests,omitempty" protobuf:"varint,6,opt,name=totalP95Requests"`
-	// Median response time
+	// The median response time to serve predictions
 	MedianResponseTime int32 `json:"medianResponseTime,omitempty" protobuf:"varint,7,opt,name=medianResponseTime"`
-	// Last 7 days predictions
+	// The predictions from the last 7 days
 	LastDailyPredictions []int32 `json:"lastDailyPredictions,omitempty" protobuf:"bytes,8,rep,name=lastDailyPredictions"`
 }
 
-// Specify the model monitor.
+// MonitorSpec defines the specification to monitor a model in production
 type MonitorSpec struct {
 	// If true monitoring is enabled.
 	// +kubebuilder:default:=false
@@ -363,7 +373,7 @@ type MonitorStatus struct {
 	ValidationResult []training.ModelValidationResult `json:"validationResults,omitempty" protobuf:"bytes,2,opt,name=validationResults"`
 }
 
-// Model Record hold the state of a model that was in production. This support roll back of a model.
+// ModelRecord hold the state of a model that was in production
 type ModelRecord struct {
 	// Model Name is the name of the model
 	// +kubebuilder:validation:Optional
@@ -386,7 +396,7 @@ type ModelRecord struct {
 }
 
 type PredictorAuthSpec struct {
-	// If true auth is enabled.
+	// Indicates if authentication is enabled
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
