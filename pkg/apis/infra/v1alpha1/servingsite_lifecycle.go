@@ -16,7 +16,7 @@ import (
 	"gopkg.in/yaml.v2"
 	corev1 "k8s.io/api/core/v1"
 	v1 "k8s.io/api/core/v1"
-	nwv1beta1 "k8s.io/api/networking/v1beta1"
+	nwv1 "k8s.io/api/networking/v1"
 	rbacv1 "k8s.io/api/rbac/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
@@ -134,22 +134,58 @@ func (r *ServingSite) ToYamlFile() ([]byte, error) {
 	return yaml.Marshal(r)
 }
 
-func (r *ServingSite) ContructIngress() *nwv1beta1.Ingress {
-	return &nwv1beta1.Ingress{
+// Create the ingress for GRPC traffic
+func (r *ServingSite) ContructGrpcIngress() *nwv1.Ingress {
+	return &nwv1.Ingress{
 		ObjectMeta: metav1.ObjectMeta{
-			Namespace: r.Namespace,
-			Name:      *r.Spec.Ingress.IngressName,
+			Namespace: r.Name,
+			Name:      "modela-ingress",
 			Labels: map[string]string{
-				"kubernetes.io/ingress.class":                  "nginx",
-				"nginx.ingress.kubernetes.io/backend-protocol": "GRPC",
-				"nginx.ingress.kubernetes.io/grpc-backend":     "true",
-				"nginx.ingress.kubernetes.io/ssl-redirect":     "true",
+				"nginx.ingress.kubernetes.io/enable-cors":        "true",
+				"ingress.kubernetes.io/proxy-body-size":          "8m",
+				"nginx.org/proxy-connect-timeout":                "30s",
+				"nginx.org/proxy-read-timeout":                   "20s",
+				"nginx.org/client-max-body-size":                 "50m",
+				"kubernetes.io/ingress.allow-http":               "false",
+				"nginx.ingress.kubernetes.io/cors-allow-headers": "x-user-agent,x-grpc-web,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Authorization",
+				"nginx.ingress.kubernetes.io/add-base-url":       "false",
+				"kubernetes.io/ingress.class":                    "nginx",
+				"nginx.ingress.kubernetes.io/backend-protocol":   "GRPC",
+				"nginx.ingress.kubernetes.io/grpc-backend":       "true",
+				"nginx.ingress.kubernetes.io/ssl-redirect":       "true",
+				"modela.ai/servingsite":                          r.Name,
+				"modela.ai/tenant":                               r.Spec.TenantRef.Name,
 			},
 		},
-		Spec: nwv1beta1.IngressSpec{
-			Backend: nil,
-			TLS:     nil,
-			Rules:   []nwv1beta1.IngressRule{},
+		Spec: nwv1.IngressSpec{
+			TLS:   nil,
+			Rules: []nwv1.IngressRule{},
+		},
+	}
+}
+
+// Create the ingress for REST traffic
+func (r *ServingSite) ContructRestIngress() *nwv1.Ingress {
+	return &nwv1.Ingress{
+		ObjectMeta: metav1.ObjectMeta{
+			Namespace: r.Name,
+			Name:      *r.Spec.Ingress.IngressName + "-REST",
+			Labels: map[string]string{
+				"nginx.ingress.kubernetes.io/enable-cors":        "true",
+				"ingress.kubernetes.io/proxy-body-size":          "8m",
+				"nginx.org/proxy-connect-timeout":                "30s",
+				"nginx.org/proxy-read-timeout":                   "20s",
+				"nginx.org/client-max-body-size":                 "50m",
+				"kubernetes.io/ingress.allow-http":               "true",
+				"nginx.ingress.kubernetes.io/cors-allow-headers": "x-user-agent,x-grpc-web,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Authorization",
+				"cert-manager.io/cluster-issuer":                 "modela-ingress-issuer",
+				"modela.ai/servingsite":                          r.Name,
+				"modela.ai/tenant":                               r.Spec.TenantRef.Name,
+			},
+		},
+		Spec: nwv1.IngressSpec{
+			TLS:   nil,
+			Rules: []nwv1.IngressRule{},
 		},
 	}
 }
