@@ -33,7 +33,7 @@ const (
 
 // PredictorCondition describes the state of a Predictor at a certain point
 type PredictorCondition struct {
-	// Type of account condition
+	// Type of Predictor condition
 	Type PredictorConditionType `json:"type" protobuf:"bytes,1,opt,name=type,casttype=PredictorConditionType"`
 	// Status of the condition, one of True, False, Unknown
 	Status v1.ConditionStatus `json:"status" protobuf:"bytes,2,opt,name=status,casttype=k8s.io/api/core/v1.ConditionStatus"`
@@ -89,9 +89,10 @@ type ProgressiveSpec struct {
 	CanaryMetrics []catalog.CanaryMetric `json:"canaryMetrics,omitempty" protobuf:"bytes,3,rep,name=canaryMetrics"`
 }
 
-// PredictorSpec define the desired state of a Predictor
+// PredictorSpec defines the desired state of a Predictor
 type PredictorSpec struct {
-	// The name of the DataProductVersion that exists on the same DataProduct namespace as the Predictor
+	// The name of the DataProductVersion that exists in the same DataProduct namespace as the resource which
+	// describes the version of the resource
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
@@ -99,12 +100,13 @@ type PredictorSpec struct {
 	// +kubebuilder:validation:MaxLength=256
 	// +kubebuilder:default:=""
 	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
-	// The reference to the DataProduct resource that the Predictor exists under
+	// The name of the DataProductVersion that exists in the same DataProduct namespace as the resource which
+	// describes the version of the resource
 	ProductRef *v1.ObjectReference `json:"productRef,omitempty" protobuf:"bytes,3,opt,name=productRef"`
 	// The reference to the ServingSite resource that hosts the Predictor
 	// +kubebuilder:validation:Optional
 	ServingSiteRef *v1.ObjectReference `json:"servingsiteRef" protobuf:"bytes,4,opt,name=servingsiteRef"`
-	// The pod template for the prediction proxy service. The system will create a deployment for the service
+	// The pod template for the Predictor's proxy service. The system will create a deployment for the service
 	// based on the template
 	// +kubebuilder:validation:Optional
 	Template *v1.PodTemplate `json:"template,omitempty" protobuf:"bytes,5,opt,name=template"`
@@ -143,11 +145,12 @@ type PredictorSpec struct {
 	Path *string `json:"path,omitempty" protobuf:"bytes,11,opt,name=path"`
 	// The Kubernetes-native access method which specifies how the Kubernetes Service created by the Predictor will be exposed.
 	// See https://modela.ai/docs/docs/serving/production/#access-method for a detailed description of each access type
+	// (defaults to cluster-ip)
 	// +kubebuilder:default:="cluster-ip"
 	// +kubebuilder:validation:Optional
 	AccessType *catalog.AccessType `json:"accessType,omitempty" protobuf:"bytes,12,opt,name=accessType"`
-	// The number of replicas (how many instances of the prediction service will be instantiated to handle prediction traffic)
-	// in the case that automatic scaling is disabled
+	// The number of replicas for the Kubernetes Deployment associated with the Predictor, which will instantiate multiple
+	// copies of the service in the case that automatic scaling is disabled
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:Maximum=10
 	// +kubebuilder:validation:Minimum=1
@@ -156,7 +159,7 @@ type PredictorSpec struct {
 	// AutoScaling specifies the auto-scaling policy
 	// +kubebuilder:validation:Optional
 	AutoScaling AutoScaling `json:"autoScaling,omitempty" protobuf:"bytes,14,opt,name=autoScaling"`
-	// The owner account name
+	// The name of the Account which created the object, which exists in the same tenant as the object
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,15,opt,name=owner"`
@@ -315,7 +318,6 @@ type PredictorStatus struct {
 
 // PredictorHealth describes the health of an active Predictor
 type PredictorHealth struct {
-	// True, if there is system is a problem with the service
 	// Indicates if there is a problem with the Predictor's service
 	Service bool `json:"service,omitempty" protobuf:"varint,1,opt,name=service"`
 	// Indicates if a data drift has been detected based on incoming prediction data

@@ -94,7 +94,8 @@ type DatasetSpec struct {
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,1,opt,name=owner"`
-	// The reference to the DataProductVersion resource that describes the version of the object
+	// The name of the DataProductVersion that exists in the same DataProduct namespace as the resource which
+	// describes the version of the resource
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:validation:Required
