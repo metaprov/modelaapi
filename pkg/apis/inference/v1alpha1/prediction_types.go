@@ -30,21 +30,21 @@ const (
 	PredictionArchived  PredictionConditionType = "Archived"
 )
 
-// PredictionCondition describes the state of PredictionTemplate
+// PredictionCondition describes the state of a Prediction at a certain point
 type PredictionCondition struct {
-	// Type of  condition.
+	// Type of Prediction condition
 	Type PredictionConditionType `json:"type" protobuf:"bytes,1,opt,name=type,casttype=PredictionConditionType"`
-	// Status of the condition, one of True, False, Unknown.
+	// Status of the condition, one of True, False, Unknown
 	Status v1.ConditionStatus `json:"status" protobuf:"bytes,2,opt,name=status,casttype=k8s.io/api/core/v1.ConditionStatus"`
-	// Last time the condition transitioned from one status to another.
+	// Last time the condition transitioned from one status to another
 	LastTransitionTime *metav1.Time `json:"lastTransitionTime,omitempty" protobuf:"bytes,3,opt,name=lastTransitionTime"`
-	// The reason for the condition's last transition.
+	// The reason for the condition's last transition
 	Reason string `json:"reason,omitempty" protobuf:"bytes,4,opt,name=reason"`
-	// A human readable message indicating details about the transition.
+	// A human-readable message indicating details about the transition
 	Message string `json:"message,omitempty" protobuf:"bytes,5,opt,name=message"`
 }
 
-// PredictionTemplate represents a prediction object
+// Prediction represents a single batch prediction on a dataset
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status"
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",priority=1
 // +kubebuilder:printcolumn:name="Predictor",type="string",JSONPath=".spec.predictorName"
@@ -67,7 +67,7 @@ type Prediction struct {
 }
 
 // +kubebuilder:object:root=true
-// PredictionList is a list of Prediction
+// PredictionList is a list of Predictions
 type PredictionList struct {
 	metav1.TypeMeta `json:",inline" `
 	metav1.ListMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
