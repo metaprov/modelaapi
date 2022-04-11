@@ -18,8 +18,8 @@ import (
 var _ webhook.Defaulter = &ServingSite{}
 
 func (r *ServingSite) Default() {
-	if r.Spec.IngressName == nil {
-		r.Spec.IngressName = util.StrPtr(r.Name)
+	if r.Spec.Ingress.IngressName == nil {
+		r.Spec.Ingress.IngressName = util.StrPtr(r.Name)
 	}
 	if r.Spec.TenantRef == nil {
 		r.Spec.TenantRef = &v1.ObjectReference{

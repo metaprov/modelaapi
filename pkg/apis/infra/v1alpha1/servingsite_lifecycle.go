@@ -138,7 +138,7 @@ func (r *ServingSite) ContructIngress() *nwv1beta1.Ingress {
 	return &nwv1beta1.Ingress{
 		ObjectMeta: metav1.ObjectMeta{
 			Namespace: r.Namespace,
-			Name:      *r.Spec.IngressName,
+			Name:      *r.Spec.Ingress.IngressName,
 			Labels: map[string]string{
 				"kubernetes.io/ingress.class":                  "nginx",
 				"nginx.ingress.kubernetes.io/backend-protocol": "GRPC",
