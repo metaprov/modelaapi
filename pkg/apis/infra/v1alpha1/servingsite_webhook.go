@@ -18,9 +18,6 @@ import (
 var _ webhook.Defaulter = &ServingSite{}
 
 func (r *ServingSite) Default() {
-	if r.Spec.Ingress.IngressName == nil {
-		r.Spec.Ingress.IngressName = util.StrPtr(r.Name)
-	}
 	if r.Spec.TenantRef == nil {
 		r.Spec.TenantRef = &v1.ObjectReference{
 			Namespace: "default-tenant",
@@ -30,8 +27,8 @@ func (r *ServingSite) Default() {
 	if r.Spec.Description == nil {
 		r.Spec.Description = util.StrPtr("")
 	}
-	if r.Spec.FQDN == nil {
-		r.Spec.FQDN = util.StrPtr(r.Name + ".modela.ai")
+	if r.Spec.Ingress.FQDN == nil {
+		r.Spec.Ingress.FQDN = util.StrPtr(r.Name + ".modela.ai")
 	}
 }
 
@@ -54,7 +51,6 @@ func (r *ServingSite) ValidateUpdate(old runtime.Object) error {
 
 func (r *ServingSite) validate() error {
 	return nil
-
 }
 
 func (r *ServingSite) validateSpec(fldPath *field.Path) field.ErrorList {

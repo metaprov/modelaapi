@@ -169,7 +169,7 @@ func (r *ServingSite) ContructRestIngress() *nwv1.Ingress {
 	return &nwv1.Ingress{
 		ObjectMeta: metav1.ObjectMeta{
 			Namespace: r.Name,
-			Name:      *r.Spec.Ingress.IngressName + "-REST",
+			Name:      r.Name + "-REST",
 			Labels: map[string]string{
 				"nginx.ingress.kubernetes.io/enable-cors":        "true",
 				"ingress.kubernetes.io/proxy-body-size":          "8m",
