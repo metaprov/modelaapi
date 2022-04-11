@@ -1551,22 +1551,25 @@ message InformixSpec {
 
 // Specify the ingress configuration for the serving site.
 message IngressSpec {
+  // FQDN specifies the fully-qualified domain name that the ServingSite's Ingress will use as the base host for the
+  // endpoint of services deployed under the ServingSite. For example, setting the FQDN as `model-serving.modela.ai`
+  // will automatically serve Predictors using the REST API at `predictors.model-serving.modela.ai`
+  // +kubebuilder:default:="serving.vcap.me"
+  // +kubebuilder:validation:Optional
+  optional string fqdn = 1;
+
   // Indicates if the ingress is enabled
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool enabled = 1;
+  optional bool grpcIngress = 2;
 
-  // IngressName specifies the name of the Kubernetes Ingress resource which the ServingSite uses to define
-  // external access points for resources that accept traffic to their services (i.e. Predictors). This
-  // field is set automatically during the creation of the ServingSite and neither the contents of the
-  // Ingress nor the IngressName should be modified by an end-user
-  // +kubebuilder:default:=""
+  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional string ingressName = 2;
+  optional bool restIngress = 3;
 
   // IngressClassName is the name of the ingress class.
   // +kubebuilder:default:=""
-  optional string ingressClassName = 3;
+  optional string ingressClassName = 4;
 }
 
 message KafkaSpec {
@@ -2510,13 +2513,6 @@ message ServingSiteSpec {
   // +kubebuilder:validation:Optional
   optional IngressSpec ingress = 4;
 
-  // FQDN specifies the fully-qualified domain name that the ServingSite's Ingress will use as the base host for the
-  // endpoint of services deployed under the ServingSite. For example, setting the FQDN as `model-serving.modela.ai`
-  // will automatically serve Predictors using the REST API at `predictors.model-serving.modela.ai`
-  // +kubebuilder:default:="serving.vcap.me"
-  // +kubebuilder:validation:Optional
-  optional string fqdn = 5;
-
   // ClusterName is the name of a VirtualCluster that exists under the same tenant as the object. If specified, workloads
   // executed under the ServingSite will be executed inside the cluster (currently not implemented)
   // +kubebuilder:default:=""
@@ -2564,10 +2560,23 @@ message ServingSiteStatus {
   // +kubebuilder:validation:Optional
   optional string failureMessage = 10;
 
+  // GRPC IngressName specifies the name of the Kubernetes Ingress resource which the ServingSite uses to define
+  // external access points for resources that accept traffic to their services (i.e. Predictors). This
+  // field is set automatically during the creation of the ServingSite and neither the contents of the
+  // Ingress nor the IngressName should be modified by an end-user
+  // +kubebuilder:validation:Optional
+  optional string grpcIngressName = 11;
+
+  // Rest IngressName specifies the name of the Kubernetes Ingress resource which the ServingSite uses to define
+  // external access points for resources that accept traffic to their services (i.e. Predictors). This
+  // field is set automatically during the creation of the ServingSite and neither the contents of the
+  // Ingress nor the IngressName should be modified by an end-user
+  optional string restIngressName = 12;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated ServingSiteCondition conditions = 11;
+  repeated ServingSiteCondition conditions = 13;
 }
 
 message SingleStoreSpec {

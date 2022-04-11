@@ -78,12 +78,6 @@ type ServingSiteSpec struct {
 	// Ingress nor the IngressName should be modified by an end-user
 	// +kubebuilder:validation:Optional
 	Ingress IngressSpec `json:"ingress,omitempty" protobuf:"bytes,4,opt,name=ingress"`
-	// FQDN specifies the fully-qualified domain name that the ServingSite's Ingress will use as the base host for the
-	// endpoint of services deployed under the ServingSite. For example, setting the FQDN as `model-serving.modela.ai`
-	// will automatically serve Predictors using the REST API at `predictors.model-serving.modela.ai`
-	// +kubebuilder:default:="serving.vcap.me"
-	// +kubebuilder:validation:Optional
-	FQDN *string `json:"fqdn,omitempty" protobuf:"bytes,5,opt,name=fqdn"`
 	// ClusterName is the name of a VirtualCluster that exists under the same tenant as the object. If specified, workloads
 	// executed under the ServingSite will be executed inside the cluster (currently not implemented)
 	// +kubebuilder:default:=""
@@ -120,26 +114,39 @@ type ServingSiteStatus struct {
 	// In the case of failure, the ServingSite resource controller will set this field with a failure message
 	//+kubebuilder:validation:Optional
 	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,10,opt,name=failureMessage"`
+	// GRPC IngressName specifies the name of the Kubernetes Ingress resource which the ServingSite uses to define
+	// external access points for resources that accept traffic to their services (i.e. Predictors). This
+	// field is set automatically during the creation of the ServingSite and neither the contents of the
+	// Ingress nor the IngressName should be modified by an end-user
+	//+kubebuilder:validation:Optional
+	GrpcIngressName string `json:"grpcIngressName,omitempty" protobuf:"bytes,11,opt,name=grpcIngressName"`
+	// Rest IngressName specifies the name of the Kubernetes Ingress resource which the ServingSite uses to define
+	// external access points for resources that accept traffic to their services (i.e. Predictors). This
+	// field is set automatically during the creation of the ServingSite and neither the contents of the
+	// Ingress nor the IngressName should be modified by an end-user
+	RestIngressName string `json:"restIngressName,omitempty" protobuf:"bytes,12,opt,name=restIngressName"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []ServingSiteCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,11,rep,name=conditions"`
+	Conditions []ServingSiteCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,13,rep,name=conditions"`
 }
 
 // Specify the ingress configuration for the serving site.
 type IngressSpec struct {
+	// FQDN specifies the fully-qualified domain name that the ServingSite's Ingress will use as the base host for the
+	// endpoint of services deployed under the ServingSite. For example, setting the FQDN as `model-serving.modela.ai`
+	// will automatically serve Predictors using the REST API at `predictors.model-serving.modela.ai`
+	// +kubebuilder:default:="serving.vcap.me"
+	// +kubebuilder:validation:Optional
+	FQDN *string `json:"fqdn,omitempty" protobuf:"bytes,1,opt,name=fqdn"`
 	// Indicates if the ingress is enabled
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
-	// IngressName specifies the name of the Kubernetes Ingress resource which the ServingSite uses to define
-	// external access points for resources that accept traffic to their services (i.e. Predictors). This
-	// field is set automatically during the creation of the ServingSite and neither the contents of the
-	// Ingress nor the IngressName should be modified by an end-user
-	// +kubebuilder:default:=""
+	GrpcIngress *bool `json:"grpcIngress,omitempty" protobuf:"varint,2,opt,name=grpcIngress"`
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	IngressName *string `json:"ingressName,omitempty" protobuf:"bytes,2,opt,name=ingressName"`
+	RestIngress *bool `json:"restIngress,omitempty" protobuf:"varint,3,opt,name=restIngress"`
 	// IngressClassName is the name of the ingress class.
 	// +kubebuilder:default:=""
-	IngressClassName *string `json:"ingressClassName,omitempty" protobuf:"bytes,3,opt,name=ingressClassName"`
+	IngressClassName *string `json:"ingressClassName,omitempty" protobuf:"bytes,4,opt,name=ingressClassName"`
 }

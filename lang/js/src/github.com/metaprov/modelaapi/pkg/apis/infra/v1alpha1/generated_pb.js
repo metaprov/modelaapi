@@ -28981,9 +28981,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototyp
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
-    enabled: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
-    ingressname: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    ingressclassname: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
+    fqdn: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    grpcingress: (f = jspb.Message.getBooleanField(msg, 2)) == null ? undefined : f,
+    restingress: (f = jspb.Message.getBooleanField(msg, 3)) == null ? undefined : f,
+    ingressclassname: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -29021,14 +29022,18 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.deserial
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setEnabled(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFqdn(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setIngressname(value);
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setGrpcingress(value);
       break;
     case 3:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setRestingress(value);
+      break;
+    case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setIngressclassname(value);
       break;
@@ -29061,24 +29066,31 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototyp
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 1));
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
   if (f != null) {
-    writer.writeBool(
+    writer.writeString(
       1,
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 2));
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 2));
   if (f != null) {
-    writer.writeString(
+    writer.writeBool(
       2,
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeBool(
+      3,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 4));
   if (f != null) {
     writer.writeString(
-      3,
+      4,
       f
     );
   }
@@ -29086,19 +29098,19 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.serializ
 
 
 /**
- * optional bool enabled = 1;
- * @return {boolean}
+ * optional string fqdn = 1;
+ * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototype.getEnabled = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 1, false));
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototype.getFqdn = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {boolean} value
+ * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototype.setEnabled = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototype.setFqdn = function(value) {
   return jspb.Message.setField(this, 1, value);
 };
 
@@ -29107,7 +29119,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototyp
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototype.clearEnabled = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototype.clearFqdn = function() {
   return jspb.Message.setField(this, 1, undefined);
 };
 
@@ -29116,25 +29128,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototyp
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototype.hasEnabled = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototype.hasFqdn = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
- * optional string ingressName = 2;
- * @return {string}
+ * optional bool grpcIngress = 2;
+ * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototype.getIngressname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototype.getGrpcingress = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 2, false));
 };
 
 
 /**
- * @param {string} value
+ * @param {boolean} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototype.setIngressname = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototype.setGrpcingress = function(value) {
   return jspb.Message.setField(this, 2, value);
 };
 
@@ -29143,7 +29155,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototyp
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototype.clearIngressname = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototype.clearGrpcingress = function() {
   return jspb.Message.setField(this, 2, undefined);
 };
 
@@ -29152,25 +29164,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototyp
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototype.hasIngressname = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototype.hasGrpcingress = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional string ingressClassName = 3;
- * @return {string}
+ * optional bool restIngress = 3;
+ * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototype.getIngressclassname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototype.getRestingress = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
 };
 
 
 /**
- * @param {string} value
+ * @param {boolean} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototype.setIngressclassname = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototype.setRestingress = function(value) {
   return jspb.Message.setField(this, 3, value);
 };
 
@@ -29179,7 +29191,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototyp
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototype.clearIngressclassname = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototype.clearRestingress = function() {
   return jspb.Message.setField(this, 3, undefined);
 };
 
@@ -29188,8 +29200,44 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototyp
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototype.hasIngressclassname = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototype.hasRestingress = function() {
   return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional string ingressClassName = 4;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototype.getIngressclassname = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototype.setIngressclassname = function(value) {
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototype.clearIngressclassname = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototype.hasIngressclassname = function() {
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
@@ -44870,7 +44918,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec.toOb
     tenantref: (f = msg.getTenantref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     limits: (f = msg.getLimits()) && proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ResourceLimitSpec.toObject(includeInstance, f),
     ingress: (f = msg.getIngress()) && proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.toObject(includeInstance, f),
-    fqdn: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     clustername: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
     owner: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f
   };
@@ -44927,10 +44974,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec.dese
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.deserializeBinaryFromReader);
       msg.setIngress(value);
-      break;
-    case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setFqdn(value);
       break;
     case 6:
       var value = /** @type {string} */ (reader.readString());
@@ -44998,13 +45041,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec.seri
       4,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.serializeBinaryToWriter
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 5));
-  if (f != null) {
-    writer.writeString(
-      5,
-      f
     );
   }
   f = /** @type {string} */ (jspb.Message.getField(message, 6));
@@ -45172,42 +45208,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec.prot
 
 
 /**
- * optional string fqdn = 5;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec.prototype.getFqdn = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec.prototype.setFqdn = function(value) {
-  return jspb.Message.setField(this, 5, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec.prototype.clearFqdn = function() {
-  return jspb.Message.setField(this, 5, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec.prototype.hasFqdn = function() {
-  return jspb.Message.getField(this, 5) != null;
-};
-
-
-/**
  * optional string clusterName = 6;
  * @return {string}
  */
@@ -45285,7 +45285,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec.prot
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.repeatedFields_ = [8,11];
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.repeatedFields_ = [8,13];
 
 
 
@@ -45328,6 +45328,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.to
     lastdailypredictionsList: (f = jspb.Message.getRepeatedField(msg, 8)) == null ? undefined : f,
     failurereason: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
     failuremessage: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
+    grpcingressname: (f = jspb.Message.getField(msg, 11)) == null ? undefined : f,
+    restingressname: (f = jspb.Message.getField(msg, 12)) == null ? undefined : f,
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition.toObject, includeInstance)
   };
@@ -45410,6 +45412,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.de
       msg.setFailuremessage(value);
       break;
     case 11:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setGrpcingressname(value);
+      break;
+    case 12:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setRestingressname(value);
+      break;
+    case 13:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition.deserializeBinaryFromReader);
       msg.addConditions(value);
@@ -45514,10 +45524,24 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.se
       f
     );
   }
+  f = /** @type {string} */ (jspb.Message.getField(message, 11));
+  if (f != null) {
+    writer.writeString(
+      11,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 12));
+  if (f != null) {
+    writer.writeString(
+      12,
+      f
+    );
+  }
   f = message.getConditionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      11,
+      13,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition.serializeBinaryToWriter
     );
@@ -45888,12 +45912,84 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.pr
 
 
 /**
- * repeated ServingSiteCondition conditions = 11;
+ * optional string grpcIngressName = 11;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.getGrpcingressname = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.setGrpcingressname = function(value) {
+  return jspb.Message.setField(this, 11, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.clearGrpcingressname = function() {
+  return jspb.Message.setField(this, 11, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.hasGrpcingressname = function() {
+  return jspb.Message.getField(this, 11) != null;
+};
+
+
+/**
+ * optional string restIngressName = 12;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.getRestingressname = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.setRestingressname = function(value) {
+  return jspb.Message.setField(this, 12, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.clearRestingressname = function() {
+  return jspb.Message.setField(this, 12, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.hasRestingressname = function() {
+  return jspb.Message.getField(this, 12) != null;
+};
+
+
+/**
+ * repeated ServingSiteCondition conditions = 13;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.getConditionsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition, 11));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition, 13));
 };
 
 
@@ -45902,7 +45998,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.pr
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.setConditionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 11, value);
+  return jspb.Message.setRepeatedWrapperField(this, 13, value);
 };
 
 
@@ -45912,7 +46008,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.pr
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 11, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 13, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition, opt_index);
 };
 
 

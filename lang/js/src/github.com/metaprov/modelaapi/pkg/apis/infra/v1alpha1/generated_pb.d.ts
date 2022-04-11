@@ -2747,11 +2747,14 @@ export namespace InformixSpec {
 }
 
 export class IngressSpec extends jspb.Message {
-  getEnabled(): boolean;
-  setEnabled(value: boolean): IngressSpec;
+  getFqdn(): string;
+  setFqdn(value: string): IngressSpec;
 
-  getIngressname(): string;
-  setIngressname(value: string): IngressSpec;
+  getGrpcingress(): boolean;
+  setGrpcingress(value: boolean): IngressSpec;
+
+  getRestingress(): boolean;
+  setRestingress(value: boolean): IngressSpec;
 
   getIngressclassname(): string;
   setIngressclassname(value: string): IngressSpec;
@@ -2766,8 +2769,9 @@ export class IngressSpec extends jspb.Message {
 
 export namespace IngressSpec {
   export type AsObject = {
-    enabled: boolean,
-    ingressname: string,
+    fqdn: string,
+    grpcingress: boolean,
+    restingress: boolean,
     ingressclassname: string,
   }
 }
@@ -4469,9 +4473,6 @@ export class ServingSiteSpec extends jspb.Message {
   hasIngress(): boolean;
   clearIngress(): ServingSiteSpec;
 
-  getFqdn(): string;
-  setFqdn(value: string): ServingSiteSpec;
-
   getClustername(): string;
   setClustername(value: string): ServingSiteSpec;
 
@@ -4492,7 +4493,6 @@ export namespace ServingSiteSpec {
     tenantref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     limits?: ResourceLimitSpec.AsObject,
     ingress?: IngressSpec.AsObject,
-    fqdn: string,
     clustername: string,
     owner: string,
   }
@@ -4533,6 +4533,12 @@ export class ServingSiteStatus extends jspb.Message {
   getFailuremessage(): string;
   setFailuremessage(value: string): ServingSiteStatus;
 
+  getGrpcingressname(): string;
+  setGrpcingressname(value: string): ServingSiteStatus;
+
+  getRestingressname(): string;
+  setRestingressname(value: string): ServingSiteStatus;
+
   getConditionsList(): Array<ServingSiteCondition>;
   setConditionsList(value: Array<ServingSiteCondition>): ServingSiteStatus;
   clearConditionsList(): ServingSiteStatus;
@@ -4558,6 +4564,8 @@ export namespace ServingSiteStatus {
     lastdailypredictionsList: Array<number>,
     failurereason: string,
     failuremessage: string,
+    grpcingressname: string,
+    restingressname: string,
     conditionsList: Array<ServingSiteCondition.AsObject>,
   }
 }
