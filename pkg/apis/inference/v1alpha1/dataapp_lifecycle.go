@@ -13,6 +13,7 @@ import (
 	"github.com/metaprov/modelaapi/pkg/util"
 	"gopkg.in/yaml.v2"
 	v1 "k8s.io/api/core/v1"
+	nwv1 "k8s.io/api/networking/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	ctrl "sigs.k8s.io/controller-runtime"
 )
@@ -132,4 +133,54 @@ func (r *DataApp) MarkSaved() {
 
 func (r *DataApp) IsSaved() bool {
 	return r.GetCond(DataAppSaved).Status == v1.ConditionTrue
+}
+
+func (dataapp *DataApp) constructGrpcRule(fqdn string, serviceName string) *nwv1.IngressRule {
+	return &nwv1.IngressRule{
+		Host: dataapp.Name + "." + fqdn,
+		IngressRuleValue: nwv1.IngressRuleValue{
+			HTTP: &nwv1.HTTPIngressRuleValue{
+				Paths: []nwv1.HTTPIngressPath{
+					{
+						Path: "/",
+						Backend: nwv1.IngressBackend{
+							Service: &nwv1.IngressServiceBackend{
+								Name: serviceName,
+								Port: nwv1.ServiceBackendPort{
+									Name:   "grpc",
+									Number: *dataapp.Spec.Port,
+								},
+							},
+							Resource: nil,
+						},
+					},
+				},
+			},
+		},
+	}
+}
+
+func (dataapp *DataApp) constructRESTRule(fqdn string, serviceName string) *nwv1.IngressRule {
+	return &nwv1.IngressRule{
+		Host: "dataapps." + fqdn,
+		IngressRuleValue: nwv1.IngressRuleValue{
+			HTTP: &nwv1.HTTPIngressRuleValue{
+				Paths: []nwv1.HTTPIngressPath{
+					{
+						Path: "/v1/dataapps/" + dataapp.Name,
+						Backend: nwv1.IngressBackend{
+							Service: &nwv1.IngressServiceBackend{
+								Name: serviceName,
+								Port: nwv1.ServiceBackendPort{
+									Name:   "rest",
+									Number: *dataapp.Spec.Port + 1,
+								},
+							},
+							Resource: nil,
+						},
+					},
+				},
+			},
+		},
+	}
 }

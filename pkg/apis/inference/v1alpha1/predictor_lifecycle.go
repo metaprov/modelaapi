@@ -7,6 +7,7 @@ import (
 	"github.com/metaprov/modelaapi/pkg/util"
 	"gopkg.in/yaml.v2"
 	v1 "k8s.io/api/core/v1"
+	nwv1 "k8s.io/api/networking/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/client-go/kubernetes/scheme"
@@ -176,4 +177,54 @@ func (predictor *Predictor) MarkFailed(err string) {
 		Message: err,
 	})
 	predictor.Status.FailureMessage = util.StrPtr(err)
+}
+
+func (predictor *Predictor) constructGrpcRule(fqdn string, serviceName string) *nwv1.IngressRule {
+	return &nwv1.IngressRule{
+		Host: predictor.Name + "." + fqdn,
+		IngressRuleValue: nwv1.IngressRuleValue{
+			HTTP: &nwv1.HTTPIngressRuleValue{
+				Paths: []nwv1.HTTPIngressPath{
+					{
+						Path: "/",
+						Backend: nwv1.IngressBackend{
+							Service: &nwv1.IngressServiceBackend{
+								Name: serviceName,
+								Port: nwv1.ServiceBackendPort{
+									Name:   "grpc",
+									Number: *predictor.Spec.Port,
+								},
+							},
+							Resource: nil,
+						},
+					},
+				},
+			},
+		},
+	}
+}
+
+func (predictor *Predictor) constructRESTRule(fqdn string, serviceName string) *nwv1.IngressRule {
+	return &nwv1.IngressRule{
+		Host: "predictors." + fqdn,
+		IngressRuleValue: nwv1.IngressRuleValue{
+			HTTP: &nwv1.HTTPIngressRuleValue{
+				Paths: []nwv1.HTTPIngressPath{
+					{
+						Path: "/v1/predictors/" + predictor.Name,
+						Backend: nwv1.IngressBackend{
+							Service: &nwv1.IngressServiceBackend{
+								Name: serviceName,
+								Port: nwv1.ServiceBackendPort{
+									Name:   "rest",
+									Number: *predictor.Spec.Port + 1,
+								},
+							},
+							Resource: nil,
+						},
+					},
+				},
+			},
+		},
+	}
 }
