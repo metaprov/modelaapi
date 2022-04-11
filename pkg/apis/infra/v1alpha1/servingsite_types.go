@@ -76,7 +76,6 @@ type ServingSiteSpec struct {
 	// external access points for resources that accept traffic to their services (i.e. Predictors). This
 	// field is set automatically during the creation of the ServingSite and neither the contents of the
 	// Ingress nor the IngressName should be modified by an end-user
-	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Ingress IngressSpec `json:"ingress,omitempty" protobuf:"bytes,4,opt,name=ingress"`
 	// FQDN specifies the fully-qualified domain name that the ServingSite's Ingress will use as the base host for the
@@ -141,5 +140,6 @@ type IngressSpec struct {
 	// +kubebuilder:validation:Optional
 	IngressName *string `json:"ingressName,omitempty" protobuf:"bytes,2,opt,name=ingressName"`
 	// IngressClassName is the name of the ingress class.
+	// +kubebuilder:default:=""
 	IngressClassName *string `json:"ingressClassName,omitempty" protobuf:"bytes,3,opt,name=ingressClassName"`
 }

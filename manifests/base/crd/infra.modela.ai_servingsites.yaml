@@ -82,7 +82,6 @@ spec:
                   using the REST API at `predictors.model-serving.modela.ai`
                 type: string
               ingress:
-                default: ""
                 description: Ingress specifies of the Kubernetes Ingress resource
                   which the ServingSite uses to define external access points for
                   resources that accept traffic to their services (i.e. Predictors).
@@ -95,6 +94,7 @@ spec:
                     description: Indicates if the ingress is enabled
                     type: boolean
                   ingressClassName:
+                    default: ""
                     description: IngressClassName is the name of the ingress class.
                     type: string
                   ingressName:
