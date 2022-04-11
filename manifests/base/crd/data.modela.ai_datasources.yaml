@@ -738,7 +738,7 @@ spec:
                           whole dataset
                         items:
                           description: DatasetValidation specifies a validation rule
-                            which encompasses the contents of an entire dataset
+                            for the contents of an entire dataset
                           properties:
                             generated:
                               default: false

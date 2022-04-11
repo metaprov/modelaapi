@@ -7539,7 +7539,7 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictVers
  */
 proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictVersionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    predictor: jspb.Message.getFieldWithDefault(msg, 1, ""),
     validate: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
     explain: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
     format: jspb.Message.getFieldWithDefault(msg, 4, ""),
@@ -7585,7 +7585,7 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictVers
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
+      msg.setPredictor(value);
       break;
     case 2:
       var value = /** @type {boolean} */ (reader.readBool());
@@ -7644,7 +7644,7 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictVers
  */
 proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictVersionRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getName();
+  f = message.getPredictor();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -7704,10 +7704,10 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictVers
 
 
 /**
- * optional string name = 1;
+ * optional string predictor = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictVersionRequest.prototype.getName = function() {
+proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictVersionRequest.prototype.getPredictor = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -7716,7 +7716,7 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictVers
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictVersionRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictVersionRequest.prototype.setName = function(value) {
+proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictVersionRequest.prototype.setPredictor = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 

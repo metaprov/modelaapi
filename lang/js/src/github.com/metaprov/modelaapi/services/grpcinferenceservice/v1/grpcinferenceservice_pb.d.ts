@@ -877,8 +877,8 @@ export namespace PredictResponse {
 }
 
 export class PredictVersionRequest extends jspb.Message {
-  getName(): string;
-  setName(value: string): PredictVersionRequest;
+  getPredictor(): string;
+  setPredictor(value: string): PredictVersionRequest;
 
   getValidate(): boolean;
   setValidate(value: boolean): PredictVersionRequest;
@@ -913,7 +913,7 @@ export class PredictVersionRequest extends jspb.Message {
 
 export namespace PredictVersionRequest {
   export type AsObject = {
-    name: string,
+    predictor: string,
     validate: boolean,
     explain: boolean,
     format: string,

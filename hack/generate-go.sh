@@ -36,8 +36,10 @@ GOGO_PROTOBUF_PATH=${PROJECT_ROOT}/common-protos/github.com/gogo/protobuf
         -I${GOOGLE_PROTO_API_PATH} \
         -I$GOPATH/src \
         -I${GOGO_PROTOBUF_PATH} \
-        --go_opt=paths=source_relative \
-        --go_out=plugins=grpc:$GIT_ROOT \
+        --go_out=$GIT_ROOT \
+        --go_opt paths=source_relative \
+        --go-grpc_out=$GIT_ROOT \
+        --go-grpc_opt paths=source_relative \
          google/api/annotations.proto \
          google/api/http.proto \
          k8s.io/apimachinery/pkg/apis/meta/v1/generated.proto \

@@ -1806,7 +1806,7 @@ message DatasetTemplate {
   optional DatasetSpec spec = 2;
 }
 
-// DatasetValidation specifies a validation rule which encompasses the contents of an entire dataset
+// DatasetValidation specifies a validation rule for the contents of an entire dataset
 message DatasetValidation {
   // The type of validation rule
   // +kubebuilder:validation:Optional
@@ -3513,7 +3513,7 @@ message ScatterPlotSpec {
   optional string y = 3;
 }
 
-// Schema defines the column-level format and validation rules for data associated with the DataSource which uses the schema
+// Schema defines the column-level format and validation rules for data associated with a DataSource
 message Schema {
   // The time-series schema, which sets time-series specific parameters
   // +kubebuilder:validation:Optional
