@@ -90,7 +90,7 @@ service UserRoleClassService {
 
     rpc UpdateUserRoleClass(UpdateUserRoleClassRequest) returns (UpdateUserRoleClassResponse) {
         option (google.api.http) = {
-			put: "/v1/userroleclasses/{userroleclass.metadata.namespace}/{userroleclass.metadata.name}"
+			put: "/v1/userroleclasses/{role.metadata.namespace}/{role.metadata.name}"
 			body: "*"
 		};
     }

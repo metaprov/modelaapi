@@ -98,14 +98,14 @@ service GRPCInferenceService
 
   rpc Predict(PredictRequest) returns (PredictResponse) {
     option (google.api.http) = {
-      post: "/v1/predictors/{name}:predict"
+      post: "/v1/predictors/{predictor}:predict"
       body: "*"
     };
   }
 
   rpc PredictVersion(PredictVersionRequest) returns (PredictResponse) {
     option (google.api.http) = {
-      post: "/v1/predictors/{name}/models/{modelversion}:predict"
+      post: "/v1/predictors/{predictor}/models/{modelversion}:predict"
       body: "*"
     };
   }
@@ -477,7 +477,7 @@ message PredictResponse {
 }
 
 message PredictVersionRequest {
-  string             name             = 1;    
+  string             predictor        = 1;    
   bool               validate         = 2;  // use the schema to validate the request
   bool               explain          = 3;  // if true, explain the prediction using shap.
   string             format           = 4;  // can be csv,json.
