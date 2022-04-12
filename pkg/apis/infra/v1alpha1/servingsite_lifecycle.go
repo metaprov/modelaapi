@@ -139,7 +139,7 @@ func (r *ServingSite) ConstructGrpcIngress() *nwv1.Ingress {
 	return &nwv1.Ingress{
 		ObjectMeta: metav1.ObjectMeta{
 			Namespace: r.Name,
-			Name:      "modela-ingress",
+			Name:      r.Name + "-grpc",
 			Labels: map[string]string{
 				"modela.ai/servingsite": r.Name,
 				"modela.ai/tenant":      r.Spec.TenantRef.Name,
@@ -171,7 +171,7 @@ func (r *ServingSite) ConstructRestIngress() *nwv1.Ingress {
 	return &nwv1.Ingress{
 		ObjectMeta: metav1.ObjectMeta{
 			Namespace: r.Name,
-			Name:      r.Name + "-REST",
+			Name:      r.Name + "-rest",
 			Labels: map[string]string{
 				"modela.ai/servingsite": r.Name,
 				"modela.ai/tenant":      r.Spec.TenantRef.Name,
