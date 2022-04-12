@@ -444,7 +444,7 @@ spec:
                               storage system. When using the Modela API to upload
                               files (through the FileService API), Modela will upload
                               the data to a predetermined path with the following
-                              format: \n `\"modela/depot/tenants/{tenant}/dataproducts/{dataproduct}/dataproductversions/{version}/{resource_type}/{resource_name}/data/raw/{file_name}`
+                              format: \n `modela/depot/tenants/{tenant}/dataproducts/{dataproduct}/dataproductversions/{version}/{resource_type}/{resource_name}/data/raw/{file_name}`
                               \n The path does not need to adhere to this format;
                               you can still pass the path of a file inside a bucket
                               not managed by Modela"
@@ -677,22 +677,23 @@ spec:
                 description: Last run is the last time a data pipeline run was created
                 properties:
                   completionTime:
-                    description: The last run time
+                    description: The time at which the run concluded
                     format: date-time
                     type: string
                   duration:
-                    description: In the case of failure, the Dataset resource controller
-                      will set this field with a failure reason
+                    description: The duration of the run in seconds
                     format: int32
                     type: integer
                   failureMessage:
-                    description: In the case of failure, the failure message
+                    description: In the case of failure, the resource controller which
+                      created the run will set this field with a failure message
                     type: string
                   failureReason:
-                    description: In the case of failure, the failure reason Borrowed
-                      from cluster api controller
+                    description: In the case of failure, the resource controller which
+                      created the run will set this field with a failure reason
                     type: string
                   name:
+                    description: The name of the run
                     type: string
                   status:
                     description: The status of the last run

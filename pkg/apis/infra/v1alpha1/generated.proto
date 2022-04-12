@@ -1549,7 +1549,7 @@ message InformixSpec {
   optional string url = 6;
 }
 
-// Specify the ingress configuration for the serving site.
+// IngressSpec defines the configuration to for a ServingSite to create Ingress resources
 message IngressSpec {
   // FQDN specifies the fully-qualified domain name that the ServingSite's Ingress will use as the base host for the
   // endpoint of services deployed under the ServingSite. For example, setting the FQDN as `model-serving.modela.ai`
@@ -1558,17 +1558,23 @@ message IngressSpec {
   // +kubebuilder:validation:Optional
   optional string fqdn = 1;
 
-  // Indicates if the ingress is enabled
-  // +kubebuilder:default:=false
+  // Grpc indicates if the ServingSite will create an Ingress resource to serve GRPC prediction traffic.
+  // All Predictor resources created under the ServingSite will receive a unique host in the Ingress
+  // determined by the name of the Predictor and the FQDN of the ServingSite (i.e. my-predictor.model-serving.modela.ai)
+  // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
   optional bool grpc = 2;
 
-  // +kubebuilder:default:=false
+  // Rest indicates if the ServingSite will create an Ingress resource to serve REST prediction traffic.
+  // All REST traffic will be served under a single host determined by the FQDN of the ServingSite
+  // (i.e. predictors.model-serving.modela.ai). RestIngress must be enabled to serve DataApps over Ingress
+  // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
   optional bool rest = 3;
 
-  // IngressClassName is the name of the ingress class.
-  // +kubebuilder:default:=""
+  // IngressClassName is the name of the ingress class that will be applied to created Ingress resources
+  // (defaults to nginx)
+  // +kubebuilder:default:="nginx"
   optional string ingressClassName = 4;
 }
 

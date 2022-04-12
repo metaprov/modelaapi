@@ -351,22 +351,23 @@ spec:
                   a run-based resource (such as a pipeline)
                 properties:
                   completionTime:
-                    description: The last run time
+                    description: The time at which the run concluded
                     format: date-time
                     type: string
                   duration:
-                    description: In the case of failure, the Dataset resource controller
-                      will set this field with a failure reason
+                    description: The duration of the run in seconds
                     format: int32
                     type: integer
                   failureMessage:
-                    description: In the case of failure, the failure message
+                    description: In the case of failure, the resource controller which
+                      created the run will set this field with a failure message
                     type: string
                   failureReason:
-                    description: In the case of failure, the failure reason Borrowed
-                      from cluster api controller
+                    description: In the case of failure, the resource controller which
+                      created the run will set this field with a failure reason
                     type: string
                   name:
+                    description: The name of the run
                     type: string
                   status:
                     description: The status of the last run

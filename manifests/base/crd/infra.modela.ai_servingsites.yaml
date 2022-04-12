@@ -90,15 +90,26 @@ spec:
                       serve Predictors using the REST API at `predictors.model-serving.modela.ai`
                     type: string
                   grpc:
-                    default: false
-                    description: Indicates if the ingress is enabled
+                    default: true
+                    description: Grpc indicates if the ServingSite will create an
+                      Ingress resource to serve GRPC prediction traffic. All Predictor
+                      resources created under the ServingSite will receive a unique
+                      host in the Ingress determined by the name of the Predictor
+                      and the FQDN of the ServingSite (i.e. my-predictor.model-serving.modela.ai)
                     type: boolean
                   ingressClassName:
-                    default: ""
-                    description: IngressClassName is the name of the ingress class.
+                    default: nginx
+                    description: IngressClassName is the name of the ingress class
+                      that will be applied to created Ingress resources (defaults
+                      to nginx)
                     type: string
                   rest:
-                    default: false
+                    default: true
+                    description: Rest indicates if the ServingSite will create an
+                      Ingress resource to serve REST prediction traffic. All REST
+                      traffic will be served under a single host determined by the
+                      FQDN of the ServingSite (i.e. predictors.model-serving.modela.ai).
+                      RestIngress must be enabled to serve DataApps over Ingress
                     type: boolean
                 type: object
               limits:

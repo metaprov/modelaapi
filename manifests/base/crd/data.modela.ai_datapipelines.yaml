@@ -97,28 +97,36 @@ spec:
                 properties:
                   action:
                     default: upsert
-                    description: Action define how the new data will be created
+                    description: The update strategy for the dataset in the case that
+                      the output location already exists (i.e a database table) Upsert
+                      will insert new records and update existing ones; Insert will
+                      insert new records and not update existing ones; Update will
+                      not insert new records and only update existing ones
                     enum:
                     - upsert
                     - insert
                     - update
                     type: string
                   createTableIfNotExist:
-                    description: Create the data source table on the target, if not
-                      exist.
+                    description: If true, the database table specified by Location
+                      will be created if it does not exist
                     type: boolean
                   datasetName:
                     default: ""
-                    description: DatasetName is the name of the dataset that will
-                      be created. if nil, the system will not create the dataset.
+                    description: DatasetName is the name of a new Dataset resource
+                      that will be created. If empty, the system will save the dataset
+                      to a file
                     type: string
                   detectOutliers:
                     default: false
-                    description: Detect outlier in the prediction
+                    description: If true, an additional column will be added to the
+                      dataset which indicates if each predicted row was detected to
+                      be an outlier
                     type: boolean
                   format:
                     default: csv
-                    description: Format is the format of the output data
+                    description: The format of the dataset, applicable if the output
+                      location is a flat-file
                     enum:
                     - csv
                     - json
@@ -133,11 +141,13 @@ spec:
                     - auto
                     type: string
                   includeFeatures:
-                    default: false
-                    description: Include the features in the results
+                    default: true
+                    description: Indicates if the features (i.e. all the columns)
+                      of the input dataset, excluding the feature which was predicted
+                      on, will be included in the output dataset
                     type: boolean
                   location:
-                    description: Location of the generated data
+                    description: The location where the dataset will be stored
                     properties:
                       bucketName:
                         default: ""
@@ -168,7 +178,7 @@ spec:
                         description: "The path to a flat-file inside an object storage
                           system. When using the Modela API to upload files (through
                           the FileService API), Modela will upload the data to a predetermined
-                          path with the following format: \n `\"modela/depot/tenants/{tenant}/dataproducts/{dataproduct}/dataproductversions/{version}/{resource_type}/{resource_name}/data/raw/{file_name}`
+                          path with the following format: \n `modela/depot/tenants/{tenant}/dataproducts/{dataproduct}/dataproductversions/{version}/{resource_type}/{resource_name}/data/raw/{file_name}`
                           \n The path does not need to adhere to this format; you
                           can still pass the path of a file inside a bucket not managed
                           by Modela"
@@ -197,7 +207,8 @@ spec:
                     type: object
                   xai:
                     default: false
-                    description: Generate XAI
+                    description: If true, SHAP values for each predicted row will
+                      be included as JSON as an additional column of the dataset
                     type: boolean
                 type: object
               owner:
@@ -428,22 +439,23 @@ spec:
                 description: Last run is the last time a data pipeline run was created
                 properties:
                   completionTime:
-                    description: The last run time
+                    description: The time at which the run concluded
                     format: date-time
                     type: string
                   duration:
-                    description: In the case of failure, the Dataset resource controller
-                      will set this field with a failure reason
+                    description: The duration of the run in seconds
                     format: int32
                     type: integer
                   failureMessage:
-                    description: In the case of failure, the failure message
+                    description: In the case of failure, the resource controller which
+                      created the run will set this field with a failure message
                     type: string
                   failureReason:
-                    description: In the case of failure, the failure reason Borrowed
-                      from cluster api controller
+                    description: In the case of failure, the resource controller which
+                      created the run will set this field with a failure reason
                     type: string
                   name:
+                    description: The name of the run
                     type: string
                   status:
                     description: The status of the last run

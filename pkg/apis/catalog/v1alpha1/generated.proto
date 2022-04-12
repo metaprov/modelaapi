@@ -291,7 +291,7 @@ message HistogramData {
   repeated string categories = 3;
 }
 
-// Images describe the Docker images used internally to perform workloads
+// Images describes the Docker images used internally to perform workloads
 message Images {
   // The image used during training
   // +kubebuilder:validation:Optional
@@ -331,25 +331,25 @@ message IntParameter {
 
 // LastRunStatus describes the status of a single run for a run-based resource (such as a pipeline)
 message LastRunStatus {
+  // The name of the run
   optional string name = 1;
 
   // The status of the last run
   // +kubebuilder:validation:Optional
   optional string status = 2;
 
-  // The last run time
+  // The time at which the run concluded
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completionTime = 3;
 
-  // In the case of failure, the Dataset resource controller will set this field with a failure reason
+  // The duration of the run in seconds
   // +kubebuilder:validation:Optional
   optional int32 duration = 4;
 
-  // In the case of failure, the failure reason
-  // Borrowed from cluster api controller
+  // In the case of failure, the resource controller which created the run will set this field with a failure reason
   optional string failureReason = 5;
 
-  // In the case of failure, the failure message
+  // In the case of failure, the resource controller which created the run will set this field with a failure message
   optional string failureMessage = 6;
 }
 

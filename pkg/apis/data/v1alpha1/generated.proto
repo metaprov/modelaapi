@@ -657,19 +657,19 @@ message CsvFileSpec {
   optional int32 indexColumn = 14;
 }
 
-// Spec for the data input for the prediction
+// DataInputSpec specifies the format and location of an input dataset
 message DataInputSpec {
-  // Location of the generated data
+  // The physical location of the dataset
   // +kubebuilder:validation:Optional
   optional DataLocation location = 2;
 
-  // Format is the format of the input data
+  // The file format of the dataset, if applicable
   // +kubebuilder:default:="csv"
   // +kubebuilder:validation:Optional
   optional string format = 3;
 }
 
-// DataLocation describes the external location of raw data that will be pulled by the system, and additional
+// DataLocation describes the external location of data that will be accessed by Modela, and additional
 // information on how to query the data if the location is a non flat-file source.
 message DataLocation {
   // The type of location where the data resides, which can either be an object inside an object storage system (i.e. Minio), a SQL location
@@ -686,8 +686,8 @@ message DataLocation {
   optional string connectionName = 2;
 
   // In the case of the location type being object storage, BucketName is the name of the VirtualBucket resource that
-  // exists in the same tenant as the resource specifying the DataLocation. Modela will connect to the external object storage system
-  // and pull the file from the path specified by the Path field
+  // exists in the same tenant as the resource specifying the DataLocation. Modela will connect to the external
+  // object storage system and pull the file from the path specified by the Path field
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string bucketName = 3;
@@ -695,9 +695,10 @@ message DataLocation {
   // The path to a flat-file inside an object storage system. When using the Modela API to upload files (through the
   // FileService API), Modela will upload the data to a predetermined path with the following format:
   //
-  // `"modela/depot/tenants/{tenant}/dataproducts/{dataproduct}/dataproductversions/{version}/{resource_type}/{resource_name}/data/raw/{file_name}`
+  // `modela/depot/tenants/{tenant}/dataproducts/{dataproduct}/dataproductversions/{version}/{resource_type}/{resource_name}/data/raw/{file_name}`
   //
-  // The path does not need to adhere to this format; you can still pass the path of a file inside a bucket not managed by Modela
+  // The path does not need to adhere to this format;
+  // you can still pass the path of a file inside a bucket not managed by Modela
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string path = 4;
@@ -723,42 +724,48 @@ message DataLocation {
   optional string topic = 8;
 }
 
-// DataOutputSpec is the definition of the out file.
+// DataOutputSpec specifies the format, features, and output location of a transformed dataset
 message DataOutputSpec {
-  // DatasetName is the name of the dataset that will be created. if nil, the system will not create the dataset.
+  // DatasetName is the name of a new Dataset resource that will be created.
+  // If empty, the system will save the dataset to a file
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string datasetName = 1;
 
-  // Location of the generated data
+  // The location where the dataset will be stored
   // +kubebuilder:validation:Optional
   optional DataLocation location = 2;
 
-  // Format is the format of the output data
+  // The format of the dataset, applicable if the output location is a flat-file
   // +kubebuilder:default:="csv"
   // +kubebuilder:validation:Optional
   optional string format = 3;
 
-  // Action define how the new data will be created
+  // The update strategy for the dataset in the case that the output location already exists (i.e a database table)
+  // Upsert will insert new records and update existing ones;
+  // Insert will insert new records and not update existing ones;
+  // Update will not insert new records and only update existing ones
   // +kubebuilder:default:="upsert"
   // +kubebuilder:validation:Optional
   optional string action = 4;
 
-  // Create the data source table on the target, if not exist.
+  // If true, the database table specified by Location will be created if it does not exist
   // +kubebuilder:validation:Optional
   optional bool createTableIfNotExist = 5;
 
-  // Include the features in the results
-  // +kubebuilder:default:=false
+  // Indicates if the features (i.e. all the columns) of the input dataset, excluding the
+  // feature which was predicted on, will be included in the output dataset
+  // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
   optional bool includeFeatures = 6;
 
-  // Generate XAI
+  // If true, SHAP values for each predicted row will be included as JSON as an additional column of the dataset
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool xai = 7;
 
-  // Detect outlier in the prediction
+  // If true, an additional column will be added to the dataset which
+  // indicates if each predicted row was detected to be an outlier
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool detectOutliers = 8;
@@ -1419,8 +1426,8 @@ message DataSourceSpec {
   // +kubebuilder:validation:Optional
   optional string owner = 1;
 
-  // The name of the DataProductVersion that exists in the same DataProduct namespace as the resource which
-  // describes the version of the resource
+  // The name of the DataProductVersion which describes the version of the resource
+  // that exists in the same DataProduct namespace as the resource
   // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
@@ -1570,8 +1577,8 @@ message DatasetSpec {
   // +kubebuilder:validation:Optional
   optional string owner = 1;
 
-  // The name of the DataProductVersion that exists in the same DataProduct namespace as the resource which
-  // describes the version of the resource
+  // The name of the DataProductVersion which describes the version of the resource
+  // that exists in the same DataProduct namespace as the resource
   // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:validation:Required
@@ -1619,12 +1626,12 @@ message DatasetSpec {
   // +kubebuilder:validation:Optional
   optional bool labeled = 10;
 
-  // Indicates if synthetic data should be generated (not implemented as of the current release)
+  // Indicates if synthetic data should be generated (currently unimplemented)
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool synthetic = 11;
 
-  // If `Synthetic` is set to true, indicates how many synthetic rows should be generated
+  // If `Synthetic` is set to true, SyntheticRows indicates how many rows of synthetic data should be generated
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
   optional int32 syntheticRows = 12;
@@ -1673,8 +1680,8 @@ message DatasetSpec {
   // +kubebuilder:validation:Optional
   optional CorrelationSpec correlation = 21;
 
-  // Indicates if the Dataset should be quickly processed. If enabled, the validation, profiling, and reporting phases
-  // will be skipped.
+  // Indicates if the Dataset should be quickly processed.
+  // If enabled, the validation, profiling, and reporting phases will be skipped.
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool fast = 22;

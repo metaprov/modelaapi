@@ -965,9 +965,9 @@ spec:
                     type: string
                   versionName:
                     default: ""
-                    description: The name of the DataProductVersion that exists in
-                      the same DataProduct namespace as the resource which describes
-                      the version of the resource
+                    description: The name of the DataProductVersion which describes
+                      the version of the resource that exists in the same DataProduct
+                      namespace as the resource
                     maxLength: 63
                     type: string
                 type: object
@@ -1077,7 +1077,7 @@ spec:
                     description: "The path to a flat-file inside an object storage
                       system. When using the Modela API to upload files (through the
                       FileService API), Modela will upload the data to a predetermined
-                      path with the following format: \n `\"modela/depot/tenants/{tenant}/dataproducts/{dataproduct}/dataproductversions/{version}/{resource_type}/{resource_name}/data/raw/{file_name}`
+                      path with the following format: \n `modela/depot/tenants/{tenant}/dataproducts/{dataproduct}/dataproductversions/{version}/{resource_type}/{resource_name}/data/raw/{file_name}`
                       \n The path does not need to adhere to this format; you can
                       still pass the path of a file inside a bucket not managed by
                       Modela"

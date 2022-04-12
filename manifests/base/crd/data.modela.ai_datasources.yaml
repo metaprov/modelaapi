@@ -911,9 +911,9 @@ spec:
                 type: string
               versionName:
                 default: ""
-                description: The name of the DataProductVersion that exists in the
-                  same DataProduct namespace as the resource which describes the version
-                  of the resource
+                description: The name of the DataProductVersion which describes the
+                  version of the resource that exists in the same DataProduct namespace
+                  as the resource
                 maxLength: 63
                 type: string
             type: object

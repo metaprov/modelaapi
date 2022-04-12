@@ -286,9 +286,8 @@ spec:
                 minimum: 1
                 type: integer
               productRef:
-                description: The name of the DataProductVersion that exists in the
-                  same DataProduct namespace as the resource which describes the version
-                  of the resource
+                description: The reference to the DataProduct that the resource exists
+                  under
                 properties:
                   apiVersion:
                     description: API version of the referent.
@@ -481,9 +480,9 @@ spec:
                 type: object
               versionName:
                 default: ""
-                description: The name of the DataProductVersion that exists in the
-                  same DataProduct namespace as the resource which describes the version
-                  of the resource
+                description: The name of the DataProductVersion which describes the
+                  version of the resource that exists in the same DataProduct namespace
+                  as the resource
                 type: string
             type: object
           status:

@@ -139,24 +139,18 @@ type IngressSpec struct {
 	// +kubebuilder:default:="serving.vcap.me"
 	// +kubebuilder:validation:Optional
 	FQDN *string `json:"fqdn,omitempty" protobuf:"bytes,1,opt,name=fqdn"`
-	// GrpcIngress indicates if the ServingSite will create an Ingress resource to serve GRPC prediction traffic.
+	// Grpc indicates if the ServingSite will create an Ingress resource to serve GRPC prediction traffic.
 	// All Predictor resources created under the ServingSite will receive a unique host in the Ingress
 	// determined by the name of the Predictor and the FQDN of the ServingSite (i.e. my-predictor.model-serving.modela.ai)
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	Grpc *bool `json:"grpc,omitempty" protobuf:"varint,2,opt,name=grpc"`
-	// +kubebuilder:default:=false
-	// +kubebuilder:validation:Optional
-	REST *bool `json:"rest,omitempty" protobuf:"varint,3,opt,name=rest"`
-	// IngressClassName is the name of the ingress class.
-	// +kubebuilder:default:=""
-	GrpcIngress *bool `json:"grpcIngress,omitempty" protobuf:"varint,2,opt,name=grpcIngress"`
-	// RestIngress indicates if the ServingSite will create an Ingress resource to serve REST prediction traffic.
+	GRPC *bool `json:"grpc,omitempty" protobuf:"varint,2,opt,name=grpc"`
+	// Rest indicates if the ServingSite will create an Ingress resource to serve REST prediction traffic.
 	// All REST traffic will be served under a single host determined by the FQDN of the ServingSite
 	// (i.e. predictors.model-serving.modela.ai). RestIngress must be enabled to serve DataApps over Ingress
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	RestIngress *bool `json:"restIngress,omitempty" protobuf:"varint,3,opt,name=restIngress"`
+	REST *bool `json:"rest,omitempty" protobuf:"varint,3,opt,name=rest"`
 	// IngressClassName is the name of the ingress class that will be applied to created Ingress resources
 	// (defaults to nginx)
 	// +kubebuilder:default:="nginx"
