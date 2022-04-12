@@ -179,7 +179,7 @@ func (predictor *Predictor) MarkFailed(err string) {
 	predictor.Status.FailureMessage = util.StrPtr(err)
 }
 
-func (predictor *Predictor) constructGrpcRule(fqdn string, serviceName string) *nwv1.IngressRule {
+func (predictor *Predictor) ConstructGrpcRule(fqdn string, serviceName string) *nwv1.IngressRule {
 	return &nwv1.IngressRule{
 		Host: predictor.Name + "." + fqdn,
 		IngressRuleValue: nwv1.IngressRuleValue{
@@ -204,7 +204,7 @@ func (predictor *Predictor) constructGrpcRule(fqdn string, serviceName string) *
 	}
 }
 
-func (predictor *Predictor) constructRESTRule(fqdn string, serviceName string) *nwv1.IngressRule {
+func (predictor *Predictor) ConstructRESTRule(fqdn string, serviceName string) *nwv1.IngressRule {
 	return &nwv1.IngressRule{
 		Host: "predictors." + fqdn,
 		IngressRuleValue: nwv1.IngressRuleValue{

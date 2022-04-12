@@ -135,7 +135,7 @@ func (r *DataApp) IsSaved() bool {
 	return r.GetCond(DataAppSaved).Status == v1.ConditionTrue
 }
 
-func (dataapp *DataApp) constructGrpcRule(fqdn string, serviceName string) *nwv1.IngressRule {
+func (dataapp *DataApp) ConstructGrpcRule(fqdn string, serviceName string) *nwv1.IngressRule {
 	return &nwv1.IngressRule{
 		Host: dataapp.Name + "." + fqdn,
 		IngressRuleValue: nwv1.IngressRuleValue{
@@ -160,7 +160,7 @@ func (dataapp *DataApp) constructGrpcRule(fqdn string, serviceName string) *nwv1
 	}
 }
 
-func (dataapp *DataApp) constructRESTRule(fqdn string, serviceName string) *nwv1.IngressRule {
+func (dataapp *DataApp) ConstructRESTRule(fqdn string, serviceName string) *nwv1.IngressRule {
 	return &nwv1.IngressRule{
 		Host: "dataapps." + fqdn,
 		IngressRuleValue: nwv1.IngressRuleValue{
