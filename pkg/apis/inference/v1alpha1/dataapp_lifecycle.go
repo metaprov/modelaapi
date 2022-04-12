@@ -136,18 +136,19 @@ func (r *DataApp) IsSaved() bool {
 }
 
 func (dataapp *DataApp) ConstructGrpcRule(fqdn string, serviceName string) *nwv1.IngressRule {
+	prefix := nwv1.PathTypePrefix
 	return &nwv1.IngressRule{
 		Host: dataapp.Name + "." + fqdn,
 		IngressRuleValue: nwv1.IngressRuleValue{
 			HTTP: &nwv1.HTTPIngressRuleValue{
 				Paths: []nwv1.HTTPIngressPath{
 					{
-						Path: "/",
+						PathType: &prefix,
+						Path:     "/",
 						Backend: nwv1.IngressBackend{
 							Service: &nwv1.IngressServiceBackend{
 								Name: serviceName,
 								Port: nwv1.ServiceBackendPort{
-									Name:   "grpc",
 									Number: *dataapp.Spec.Port,
 								},
 							},
@@ -161,18 +162,19 @@ func (dataapp *DataApp) ConstructGrpcRule(fqdn string, serviceName string) *nwv1
 }
 
 func (dataapp *DataApp) ConstructRESTRule(fqdn string, serviceName string) *nwv1.IngressRule {
+	prefix := nwv1.PathTypePrefix
 	return &nwv1.IngressRule{
 		Host: "dataapps." + fqdn,
 		IngressRuleValue: nwv1.IngressRuleValue{
 			HTTP: &nwv1.HTTPIngressRuleValue{
 				Paths: []nwv1.HTTPIngressPath{
 					{
-						Path: "/v1/dataapps/" + dataapp.Name,
+						PathType: &prefix,
+						Path:     "/v1/dataapps/" + dataapp.Name,
 						Backend: nwv1.IngressBackend{
 							Service: &nwv1.IngressServiceBackend{
 								Name: serviceName,
 								Port: nwv1.ServiceBackendPort{
-									Name:   "rest",
 									Number: *dataapp.Spec.Port + 1,
 								},
 							},
