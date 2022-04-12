@@ -141,6 +141,10 @@ func (r *ServingSite) ContructGrpcIngress() *nwv1.Ingress {
 			Namespace: r.Name,
 			Name:      "modela-ingress",
 			Labels: map[string]string{
+				"modela.ai/servingsite": r.Name,
+				"modela.ai/tenant":      r.Spec.TenantRef.Name,
+			},
+			Annotations: map[string]string{
 				"nginx.ingress.kubernetes.io/enable-cors":        "true",
 				"ingress.kubernetes.io/proxy-body-size":          "8m",
 				"nginx.org/proxy-connect-timeout":                "30s",
@@ -153,8 +157,6 @@ func (r *ServingSite) ContructGrpcIngress() *nwv1.Ingress {
 				"nginx.ingress.kubernetes.io/backend-protocol":   "GRPC",
 				"nginx.ingress.kubernetes.io/grpc-backend":       "true",
 				"nginx.ingress.kubernetes.io/ssl-redirect":       "true",
-				"modela.ai/servingsite":                          r.Name,
-				"modela.ai/tenant":                               r.Spec.TenantRef.Name,
 			},
 		},
 		Spec: nwv1.IngressSpec{
@@ -171,6 +173,10 @@ func (r *ServingSite) ContructRestIngress() *nwv1.Ingress {
 			Namespace: r.Name,
 			Name:      r.Name + "-REST",
 			Labels: map[string]string{
+				"modela.ai/servingsite": r.Name,
+				"modela.ai/tenant":      r.Spec.TenantRef.Name,
+			},
+			Annotations: map[string]string{
 				"nginx.ingress.kubernetes.io/enable-cors":        "true",
 				"ingress.kubernetes.io/proxy-body-size":          "8m",
 				"nginx.org/proxy-connect-timeout":                "30s",
@@ -179,8 +185,6 @@ func (r *ServingSite) ContructRestIngress() *nwv1.Ingress {
 				"kubernetes.io/ingress.allow-http":               "true",
 				"nginx.ingress.kubernetes.io/cors-allow-headers": "x-user-agent,x-grpc-web,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Authorization",
 				"cert-manager.io/cluster-issuer":                 "modela-ingress-issuer",
-				"modela.ai/servingsite":                          r.Name,
-				"modela.ai/tenant":                               r.Spec.TenantRef.Name,
 			},
 		},
 		Spec: nwv1.IngressSpec{
