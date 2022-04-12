@@ -135,7 +135,7 @@ func (r *ServingSite) ToYamlFile() ([]byte, error) {
 }
 
 // Create the ingress for GRPC traffic
-func (r *ServingSite) ContructGrpcIngress() *nwv1.Ingress {
+func (r *ServingSite) ConstructGrpcIngress() *nwv1.Ingress {
 	return &nwv1.Ingress{
 		ObjectMeta: metav1.ObjectMeta{
 			Namespace: r.Name,
@@ -167,7 +167,7 @@ func (r *ServingSite) ContructGrpcIngress() *nwv1.Ingress {
 }
 
 // Create the ingress for REST traffic
-func (r *ServingSite) ContructRestIngress() *nwv1.Ingress {
+func (r *ServingSite) ConstructRestIngress() *nwv1.Ingress {
 	return &nwv1.Ingress{
 		ObjectMeta: metav1.ObjectMeta{
 			Namespace: r.Name,
