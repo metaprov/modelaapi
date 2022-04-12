@@ -180,13 +180,15 @@ func (predictor *Predictor) MarkFailed(err string) {
 }
 
 func (predictor *Predictor) ConstructGrpcRule(fqdn string, serviceName string) *nwv1.IngressRule {
+	prefix := nwv1.PathTypePrefix
 	return &nwv1.IngressRule{
 		Host: predictor.Name + "." + fqdn,
 		IngressRuleValue: nwv1.IngressRuleValue{
 			HTTP: &nwv1.HTTPIngressRuleValue{
 				Paths: []nwv1.HTTPIngressPath{
 					{
-						Path: "/",
+						Path:     "/",
+						PathType: &prefix,
 						Backend: nwv1.IngressBackend{
 							Service: &nwv1.IngressServiceBackend{
 								Name: serviceName,
@@ -205,13 +207,15 @@ func (predictor *Predictor) ConstructGrpcRule(fqdn string, serviceName string) *
 }
 
 func (predictor *Predictor) ConstructRESTRule(fqdn string, serviceName string) *nwv1.IngressRule {
+	prefix := nwv1.PathTypePrefix
 	return &nwv1.IngressRule{
 		Host: "predictors." + fqdn,
 		IngressRuleValue: nwv1.IngressRuleValue{
 			HTTP: &nwv1.HTTPIngressRuleValue{
 				Paths: []nwv1.HTTPIngressPath{
 					{
-						Path: "/v1/predictors/" + predictor.Name,
+						PathType: &prefix,
+						Path:     "/v1/predictors/" + predictor.Name,
 						Backend: nwv1.IngressBackend{
 							Service: &nwv1.IngressServiceBackend{
 								Name: serviceName,
