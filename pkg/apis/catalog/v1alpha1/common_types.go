@@ -1950,7 +1950,7 @@ type Stakeholder struct {
 	Roles []v1.ObjectReference `json:"roles,omitempty" protobuf:"bytes,2,opt,name=roles"`
 }
 
-// Images describe the Docker images used internally to perform workloads
+// Images describes the Docker images used internally to perform workloads
 type Images struct {
 	// The image used during training
 	// +kubebuilder:validation:Optional
@@ -1965,19 +1965,19 @@ type Images struct {
 
 // LastRunStatus describes the status of a single run for a run-based resource (such as a pipeline)
 type LastRunStatus struct {
+	// The name of the run
 	Name string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
 	// The status of the last run
 	// +kubebuilder:validation:Optional
 	Status string `json:"status,omitempty" protobuf:"bytes,2,opt,name=status"`
-	// The last run time
+	// The time at which the run concluded
 	// +kubebuilder:validation:Optional
 	CompletionTime *metav1.Time `json:"completionTime,omitempty" protobuf:"bytes,3,opt,name=completionTime"`
-	// In the case of failure, the Dataset resource controller will set this field with a failure reason
+	// The duration of the run in seconds
 	// +kubebuilder:validation:Optional
 	Duration int32 `json:"duration,omitempty" protobuf:"bytes,4,opt,name=duration"`
-	// In the case of failure, the failure reason
-	// Borrowed from cluster api controller
+	// In the case of failure, the resource controller which created the run will set this field with a failure reason
 	FailureReason *StatusError `json:"failureReason,omitempty" protobuf:"bytes,5,opt,name=failureReason"`
-	// In the case of failure, the failure message
+	// In the case of failure, the resource controller which created the run will set this field with a failure message
 	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,6,opt,name=failureMessage"`
 }

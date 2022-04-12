@@ -91,8 +91,8 @@ type ProgressiveSpec struct {
 
 // PredictorSpec defines the desired state of a Predictor
 type PredictorSpec struct {
-	// The name of the DataProductVersion that exists in the same DataProduct namespace as the resource which
-	// describes the version of the resource
+	// The name of the DataProductVersion which describes the version of the resource
+	// that exists in the same DataProduct namespace as the resource
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
@@ -100,9 +100,8 @@ type PredictorSpec struct {
 	// +kubebuilder:validation:MaxLength=256
 	// +kubebuilder:default:=""
 	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
-	// The name of the DataProductVersion that exists in the same DataProduct namespace as the resource which
-	// describes the version of the resource
-	ProductRef *v1.ObjectReference `json:"productRef,omitempty" protobuf:"bytes,3,opt,name=productRef"`
+	// The reference to the DataProduct that the resource exists under
+	ProductRef *v1.ObjectReference `json:"productRef" protobuf:"bytes,3,opt,name=productRef"`
 	// The reference to the ServingSite resource that hosts the Predictor
 	// +kubebuilder:validation:Optional
 	ServingSiteRef *v1.ObjectReference `json:"servingsiteRef" protobuf:"bytes,4,opt,name=servingsiteRef"`
@@ -204,8 +203,7 @@ type PredictorSpec struct {
 	REST *bool `json:"rest,omitempty" protobuf:"varint,26,opt,name=rest"`
 }
 
-// A prediction cache specify the connection information to a cache (e.g. redis) that can store the prediction.
-// A cache is a key value store.
+// PredictionCacheSpec specifies the connection information of a key-value cache to store predictions
 type PredictionCacheSpec struct {
 	// Active indicate if the cache is active
 	// +kubebuilder:default:=false
@@ -249,7 +247,7 @@ type AutoScaling struct {
 	MemAvgUtilization *int32 `json:"memAvgUtilization,omitempty" protobuf:"varint,5,opt,name=memAvgUtilization"`
 }
 
-// A OnlineFeaturestoreSpec specifies the connection information for an online feature store
+// OnlineFeaturestoreSpec specifies the connection information for an online feature store
 type OnlineFeaturestoreSpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional

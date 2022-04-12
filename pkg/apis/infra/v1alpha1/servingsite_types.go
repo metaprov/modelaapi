@@ -131,7 +131,7 @@ type ServingSiteStatus struct {
 	Conditions []ServingSiteCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,13,rep,name=conditions"`
 }
 
-// Specify the ingress configuration for the serving site.
+// IngressSpec defines the configuration to for a ServingSite to create Ingress resources
 type IngressSpec struct {
 	// FQDN specifies the fully-qualified domain name that the ServingSite's Ingress will use as the base host for the
 	// endpoint of services deployed under the ServingSite. For example, setting the FQDN as `model-serving.modela.ai`
@@ -139,14 +139,20 @@ type IngressSpec struct {
 	// +kubebuilder:default:="serving.vcap.me"
 	// +kubebuilder:validation:Optional
 	FQDN *string `json:"fqdn,omitempty" protobuf:"bytes,1,opt,name=fqdn"`
-	// Indicates if the ingress is enabled
-	// +kubebuilder:default:=false
+	// GrpcIngress indicates if the ServingSite will create an Ingress resource to serve GRPC prediction traffic.
+	// All Predictor resources created under the ServingSite will receive a unique host in the Ingress
+	// determined by the name of the Predictor and the FQDN of the ServingSite (i.e. my-predictor.model-serving.modela.ai)
+	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
 	GrpcIngress *bool `json:"grpcIngress,omitempty" protobuf:"varint,2,opt,name=grpcIngress"`
-	// +kubebuilder:default:=false
+	// RestIngress indicates if the ServingSite will create an Ingress resource to serve REST prediction traffic.
+	// All REST traffic will be served under a single host determined by the FQDN of the ServingSite
+	// (i.e. predictors.model-serving.modela.ai). RestIngress must be enabled to serve DataApps over Ingress
+	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
 	RestIngress *bool `json:"restIngress,omitempty" protobuf:"varint,3,opt,name=restIngress"`
-	// IngressClassName is the name of the ingress class.
-	// +kubebuilder:default:=""
+	// IngressClassName is the name of the ingress class that will be applied to created Ingress resources
+	// (defaults to nginx)
+	// +kubebuilder:default:="nginx"
 	IngressClassName *string `json:"ingressClassName,omitempty" protobuf:"bytes,4,opt,name=ingressClassName"`
 }

@@ -7,29 +7,29 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-// PredictionTemplate Condition
+// CronPrediction Condition
 type CronPredictionConditionType string
 
-/// PredictionTemplate Condition
 const (
 	CronPredictionReady CronPredictionConditionType = "Ready"
 	CronPredictionSaved CronPredictionConditionType = "Saved"
 )
 
-// PredictionCondition describes the state of PredictionTemplate
+// CronPredictionCondition describes the state of a CronPrediction at a certain point
 type CronPredictionCondition struct {
-	// Type of  condition.
+	// Type of condition
 	Type CronPredictionConditionType `json:"type" protobuf:"bytes,1,opt,name=type,casttype=CronPredictionConditionType"`
-	// Status of the condition, one of True, False, Unknown.
+	// Status of the condition, one of True, False, Unknown
 	Status v1.ConditionStatus `json:"status" protobuf:"bytes,2,opt,name=status,casttype=k8s.io/api/core/v1.ConditionStatus"`
-	// Last time the condition transitioned from one status to another.
+	// Last time the condition transitioned from one status to another
 	LastTransitionTime *metav1.Time `json:"lastTransitionTime,omitempty" protobuf:"bytes,3,opt,name=lastTransitionTime"`
-	// The reason for the condition's last transition.
+	// The reason for the condition's last transition
 	Reason string `json:"reason,omitempty" protobuf:"bytes,4,opt,name=reason"`
-	// A human readable message indicating details about the transition.
+	// A human-readable message indicating details about the transition
 	Message string `json:"message,omitempty" protobuf:"bytes,5,opt,name=message"`
 }
 
+// CronPrediction represents a Prediction which runs on a predefined schedule
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status"
@@ -39,8 +39,6 @@ type CronPredictionCondition struct {
 // +kubebuilder:printcolumn:name="Last Run",type="date",JSONPath=".status.lastRun",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:resource:path=cronpredictions,shortName=cpred,singular=cronprediction,categories={inference,modela}
-
-// CronPrediction represents a single run of the Prediction Pipeline
 type CronPrediction struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
@@ -48,65 +46,66 @@ type CronPrediction struct {
 	Status            CronPredictionStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
 }
 
+// CronPredictionList is a list of CronPredictions
 // +kubebuilder:object:root=true
-// CronPredictionList is a list of CronPrediction
 type CronPredictionList struct {
 	metav1.TypeMeta `json:",inline" `
 	metav1.ListMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
 	Items           []CronPrediction `json:"items" protobuf:"bytes,2,rep,name=items"`
 }
 
+// PredictionTemplate defines the specification for a Prediction resource to be created
 type PredictionTemplate struct {
 	Spec PredictionSpec `json:"spec" protobuf:"bytes,1,opt,name=spec"`
 }
 
-// CronPredictionSpec represent the desired state of CronPrediction
+// CronPredictionSpec represent the desired state of a CronPrediction
 type CronPredictionSpec struct {
-	// VersionName is the data product version of the data pipeline
+	// The name of the DataProductVersion which describes the version of the resource
+	// that exists in the same DataProduct namespace as the resource
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
-	// The owner account name
+	// The name of the Account which created the object, which exists in the same tenant as the object
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,2,opt,name=owner"`
-	// Schedule for running the pipeline
+	// The schedule at which new Prediction resources will be created
 	// +kubebuilder:validation:Optional
 	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,3,opt,name=schedule"`
-	// Template refer to the prediction template
+	// Template specifies the template to create new Prediction resources
 	Template PredictionTemplate `json:"template" protobuf:"bytes,4,opt,name=template"`
-	// The priority of this data pipeline. The default is medium.
+	// The priority of the CronPrediction to be executed (medium, by default)
 	// +kubebuilder:default:=medium
 	// +kubebuilder:validation:Optional
 	Priority *catalog.PriorityLevel `json:"priority,omitempty" protobuf:"bytes,5,opt,name=priority"`
-	// Set to true to pause the cron prediction
+	// Indicates if the CronPrediction is paused and will not create new Predictions
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Paused *bool `json:"paused,omitempty" protobuf:"varint,6,opt,name=paused"`
-	// Notification specification.
+	// The notification specification that determines which notifiers will receive Alerts generated by the object
 	//+kubebuilder:validation:Optional
 	Notification catalog.NotificationSpec `json:"notification,omitempty" protobuf:"bytes,7,opt,name=notification"`
 }
 
-// CronPredictionStatus is the observed state of a PredictionTemplate
+// CronPredictionStatus is the observed state of a CronPrediction
 type CronPredictionStatus struct {
-	// Last run is the last time a data pipeline run was created
+	// The time at which a run of the CronPrediction was last started
 	//+kubebuilder:validation:Optional
 	LastRun catalog.LastRunStatus `json:"lastRun,omitempty" protobuf:"bytes,1,opt,name=lastRun"`
-	// The time of the next schedule run
+	// The time at which the CronPrediction is next scheduled to be executed
 	//+kubebuilder:validation:Optional
 	NextRun *metav1.Time `json:"nextRun,omitempty" protobuf:"bytes,2,opt,name=nextRun"`
-	// Last time the object was updated
+	// The last time the object was updated
 	//+kubebuilder:validation:Optional
 	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,3,opt,name=lastUpdated"`
-	// ObservedGeneration is the Last generation that was acted on
+	// ObservedGeneration is the last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,4,opt,name=observedGeneration"`
-	// Update in case of terminal failure
-	// Borrowed from cluster api controller
+	// In the case of failure, the CronPrediction resource controller will set this field with a failure reason
 	//+kubebuilder:validation:Optional
 	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,5,opt,name=failureReason"`
-	// Update in case of terminal failure message
+	// In the case of failure, the CronPrediction resource controller will set this field with a failure message
 	//+kubebuilder:validation:Optional
 	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,6,opt,name=failureMessage"`
 	// +patchMergeKey=type

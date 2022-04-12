@@ -66,8 +66,8 @@ type DataAppSpec struct {
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:="no-one"
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,1,opt,name=owner"`
-	// The name of the DataProductVersion that exists in the same DataProduct namespace as the resource which
-	// describes the version of the resource
+	// The name of the DataProductVersion which describes the version of the resource
+	// that exists in the same DataProduct namespace as the resource
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,2,opt,name=versionName"`
@@ -113,8 +113,7 @@ type DataAppSpec struct {
 	// +kubebuilder:default:="cluster-ip"
 	// +kubebuilder:validation:Optional
 	AccessType *catalog.AccessType `json:"accessType,omitempty" protobuf:"bytes,11,opt,name=accessType"`
-	// The name of the DataProductVersion that exists in the same DataProduct namespace as the resource which
-	// describes the version of the resource
+	// The reference to the DataProduct that the resource exists under
 	// +kubebuilder:validation:Optional
 	ProductRef *v1.ObjectReference `json:"productRef,omitempty" protobuf:"bytes,12,opt,name=productRef"`
 	// The reference to the ServingSite resource that hosts the Predictor
