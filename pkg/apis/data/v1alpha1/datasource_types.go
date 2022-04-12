@@ -690,8 +690,8 @@ type DataSourceSpec struct {
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,1,opt,name=owner"`
-	// The name of the DataProductVersion that exists in the same DataProduct namespace as the resource which
-	// describes the version of the resource
+	// The name of the DataProductVersion which describes the version of the resource
+	// that exists in the same DataProduct namespace as the resource
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional

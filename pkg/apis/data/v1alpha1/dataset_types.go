@@ -94,8 +94,8 @@ type DatasetSpec struct {
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,1,opt,name=owner"`
-	// The name of the DataProductVersion that exists in the same DataProduct namespace as the resource which
-	// describes the version of the resource
+	// The name of the DataProductVersion which describes the version of the resource
+	// that exists in the same DataProduct namespace as the resource
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:validation:Required
@@ -135,14 +135,14 @@ type DatasetSpec struct {
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
 	Labeled *bool `json:"labeled,omitempty" protobuf:"varint,10,opt,name=labeled"`
-	// Indicates if synthetic data should be generated (not implemented as of the current release)
+	// Indicates if synthetic data should be generated (currently unimplemented)
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Synthetic *bool `json:"synthetic,omitempty" protobuf:"varint,11,opt,name=synthetic"`
-	// If `Synthetic` is set to true, indicates how many synthetic rows should be generated
+	// If `Synthetic` is set to true, SyntheticRows indicates how many rows of synthetic data should be generated
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
-	SyntheticRows *int32 `json:"syntheticRows" protobuf:"varint,12,opt,name=syntheticRows"`
+	SyntheticRows *int32 `json:"syntheticRows,omitempty" protobuf:"varint,12,opt,name=syntheticRows"`
 	// Origin is the location of the data file or database query which holds the raw data of the Dataset. When the Dataset is
 	// created, the resource controller will retrieve the data from the location, validate it against its Data Source
 	// if applicable, and store it inside the `live` section of the Virtual Bucket resource specified by the location
@@ -178,8 +178,8 @@ type DatasetSpec struct {
 	// Based on the specification, the data plane will compute the correlation between each feature and will store the highest-scoring
 	// +kubebuilder:validation:Optional
 	Correlation CorrelationSpec `json:"correlation,omitempty" protobuf:"bytes,21,opt,name=correlation"`
-	// Indicates if the Dataset should be quickly processed. If enabled, the validation, profiling, and reporting phases
-	// will be skipped.
+	// Indicates if the Dataset should be quickly processed.
+	// If enabled, the validation, profiling, and reporting phases will be skipped.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Fast *bool `json:"fast,omitempty" protobuf:"varint,22,opt,name=fast"`
@@ -430,7 +430,7 @@ const (
 	DataLocationWebApi        DataLocationType = "web"
 )
 
-// DataLocation describes the external location of raw data that will be pulled by the system, and additional
+// DataLocation describes the external location of data that will be accessed by Modela, and additional
 // information on how to query the data if the location is a non flat-file source.
 type DataLocation struct {
 	// The type of location where the data resides, which can either be an object inside an object storage system (i.e. Minio), a SQL location
@@ -445,17 +445,18 @@ type DataLocation struct {
 	// +kubebuilder:validation:Optional
 	ConnectionName *string `json:"connectionName" protobuf:"bytes,2,opt,name=connectionName"`
 	// In the case of the location type being object storage, BucketName is the name of the VirtualBucket resource that
-	// exists in the same tenant as the resource specifying the DataLocation. Modela will connect to the external object storage system
-	// and pull the file from the path specified by the Path field
+	// exists in the same tenant as the resource specifying the DataLocation. Modela will connect to the external
+	// object storage system and pull the file from the path specified by the Path field
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	BucketName *string `json:"bucketName" protobuf:"bytes,3,opt,name=bucketName"`
 	// The path to a flat-file inside an object storage system. When using the Modela API to upload files (through the
 	// FileService API), Modela will upload the data to a predetermined path with the following format:
 	//
-	// `"modela/depot/tenants/{tenant}/dataproducts/{dataproduct}/dataproductversions/{version}/{resource_type}/{resource_name}/data/raw/{file_name}`
+	// `modela/depot/tenants/{tenant}/dataproducts/{dataproduct}/dataproductversions/{version}/{resource_type}/{resource_name}/data/raw/{file_name}`
 	//
-	// The path does not need to adhere to this format; you can still pass the path of a file inside a bucket not managed by Modela
+	// The path does not need to adhere to this format;
+	// you can still pass the path of a file inside a bucket not managed by Modela
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Path *string `json:"path" protobuf:"bytes,4,opt,name=path"`

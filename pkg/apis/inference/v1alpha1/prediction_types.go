@@ -76,103 +76,109 @@ type PredictionList struct {
 
 // PredictionSpec represent the desired state of Prediction
 type PredictionSpec struct {
-	// VersionName is the data product version of the data pipeline
+	// The name of the DataProductVersion which describes the version of the resource
+	// that exists in the same DataProduct namespace as the resource
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
-	// PredictorName refer to the predictor which would predict the dataset of this prediction.
+	// PredictorName is the name of the Predictor resource that will be used to evaluate predictions for the
+	// unlabeled input dataset. The Predictor must exist in the same DataProduct namespace as the resource
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:validation:Required
 	// +required
 	PredictorName *string `json:"predictorName,omitempty" protobuf:"bytes,2,opt,name=predictorName"`
-	// Labeled , true if this is labeled prediction request.
+	// If true, measurements for the metrics specified by the `Tests` field will be computed for each prediction and
+	// stored in the Prediction's status with the average result of all predictions
 	// +kubebuilder:default:=false
 	// Used usually for unit testing
 	Labeled *bool `json:"labeled,omitempty" protobuf:"varint,3,opt,name=labeled"`
-	// If true, this prediction is a forecast
+	// Indicates if the prediction is a forecast
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Forecast *bool `json:"forecast,omitempty" protobuf:"varint,4,opt,name=forecast"`
+	// The name of the Dataset  which exists in the same DataProduct namespace as the Prediction
+	// that will be downloaded to make predictions on each row of its data
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:=""
 	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,5,opt,name=datasetName"`
-	// Input is the location of the input file if not using a dataset
+	// Input specifies the location of the input data, if not using a Dataset resource
 	Input data.DataInputSpec `json:"input,omitempty" protobuf:"bytes,6,opt,name=input"`
-	// Output is the location of the output file.
+	// Output specifies the location where the predicted dataset will be stored
 	// +kubebuilder:validation:Optional
 	Output data.DataOutputSpec `json:"output,omitempty" protobuf:"bytes,7,opt,name=output"`
-	// Tests is the list of metrics that we need to measure if we are running a labeled prediction
+	// Tests specifies a collection of metrics that will be computed for each prediction
+	// if the Labeled field of the Prediction is enabled
 	Tests []catalog.Metric `json:"tests,omitempty" protobuf:"bytes,8,rep,name=tests"`
-	// The owner account name
+	// The name of the Account which created the object, which exists in the same tenant as the object
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,9,opt,name=owner"`
-	// Resources is the hardware resource req.
+	// Resources specifies the resource requirements that will be allocated to the batch prediction Job
 	// +kubebuilder:validation:Optional
 	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,10,opt,name=resources"`
-	// ActiveDeadlineSeconds is the deadline of a job for this dataset.
+	// The deadline for the batch prediction Job to be completed in seconds
 	// +kubebuilder:default:=600
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
 	ActiveDeadlineSeconds *int64 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,11,opt,name=activeDeadlineSeconds"`
-	// The priority of this prediction. The default is medium.
+	// The priority of the Kubernetes Job created by the Prediction (medium, by default)
 	// +kubebuilder:default:=medium
 	// +kubebuilder:validation:Optional
 	Priority *catalog.PriorityLevel `json:"priority,omitempty" protobuf:"bytes,12,opt,name=priority"`
-	// Aborted is set when we want to abort the prediction
+	// Indicates if the Prediction was aborted and should stop execution
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Aborted *bool `json:"aborted,omitempty" protobuf:"varint,13,opt,name=aborted"`
-	// TTL.
+	// The time-to-live of the Prediction, after which the Prediction will be archived
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
 	TTL *int32 `json:"ttl,omitempty" protobuf:"varint,14,opt,name=ttl"`
-	// If this is hierarchy forecast, holds the forecast details for each columns
+	// The forecasting specification in the case that the predicted model is a hierarchical forecast
 	// +kubebuilder:validation:Optional
 	ForecastInfo ForecastSpec `json:"forecastInfo,omitempty" protobuf:"varint,15,opt,name=forecastInfo"`
-	// CronPredictionName refer to the cron prediction
+	// CronPredictionName specifies the name of the CronPrediction that created the Prediction, if applicable
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	CronPredictionName *string `json:"cronPredictorName,omitempty" protobuf:"bytes,16,opt,name=cronPredictorName"`
-	// The serving site that hosts this predictor and the models
+	// The reference to the ServingSite resource that hosts the Prediction
 	// +kubebuilder:validation:Optional
 	ServingSiteRef v1.ObjectReference `json:"servingsiteRef" protobuf:"bytes,17,opt,name=servingsiteRef"`
 }
 
-// PredictionStatus is the observed state of a PredictionTemplate
+// PredictionStatus is the observed state of a Prediction
 type PredictionStatus struct {
-	// StartTime is the start time of the prediction.
+	// StartTime denotes the time when the batch prediction Job started
 	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,1,opt,name=startTime"`
-	// EndTime is the end time of the prediction.
+	// EndTime denotes the time when the batch prediction Job completed or failed
 	EndTime *metav1.Time `json:"endTime,omitempty" protobuf:"bytes,2,opt,name=endTime"`
-	// Phase is the current phase of the prediction
+	// The current phase of the prediction
 	// +kubebuilder:default:="Pending"
 	// +kubebuilder:validation:Optional
 	Phase PredictionPhase `json:"phase,omitempty" protobuf:"bytes,3,opt,name=phase"`
-	// Results is the results of running the prediction with a labeled dataset
+	// The collection of metrics that represent the average measurement across all predictions for each
+	// metric specified by the Tests field of the Predictor
 	// +kubebuilder:validation:Optional
 	Results []catalog.Measurement `json:"results,omitempty" protobuf:"bytes,4,rep,name=results"`
-	// ObservedGeneration is the Last generation that was acted on
+	// ObservedGeneration is the last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,5,opt,name=observedGeneration"`
-	// The number of rows in the predictions
+	// The number of rows predicted
 	//+kubebuilder:validation:Optional
 	Rows int32 `json:"rows,omitempty" protobuf:"varint,6,opt,name=rows"`
-	// What triggered the run
+	// The trigger that started the batch prediction
 	//+kubebuilder:validation:Optional
 	TriggeredBy catalog.TriggerType `json:"triggeredBy,omitempty" protobuf:"bytes,7,opt,name=triggeredBy"`
-	// Holds the location of log paths
+	// The location of logs produced by the batch prediction Job
 	//+kubebuilder:validation:Optional
 	Logs catalog.Logs `json:"logs,,omitempty" protobuf:"bytes,8,opt,name=logs"`
-	// Last time the object was updated
+	// The last time the object was updated
 	//+kubebuilder:validation:Optional
 	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,9,opt,name=lastUpdated"`
-	// Update in case of terminal failure
-	// Borrowed from cluster api controller
+	// In the case of failure, the Prediction resource controller will set this field with a failure reason
 	//+kubebuilder:validation:Optional
 	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,10,opt,name=failureReason"`
-	// Update in case of terminal failure message
+	// In the case of failure, the Prediction resource controller will set this field with a failure message
 	//+kubebuilder:validation:Optional
 	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,11,opt,name=failureMessage"`
 	// +patchMergeKey=type
@@ -181,11 +187,11 @@ type PredictionStatus struct {
 	Conditions []PredictionCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,12,rep,name=conditions"`
 }
 
-// In case of forecast holds the forecast details
+// ForecastSpec specifies the details of a forecasting model
 type ForecastSpec struct {
-	// The Hierarchy spec, map from column to values
+	// The hierarchy specification, which maps columns to values
 	// +kubebuilder:validation:Optional
 	HierarchyValues map[string]string `json:"hierarchyValues,omitempty" protobuf:"bytes,1,opt,name=hierarchyValues"`
-	// Specify the interval for this forecast, we might need to downsample or upsample
+	// The interval of the forecast
 	Horizon training.PeriodSpec `json:"horizon,omitempty" protobuf:"bytes,2,opt,name=horizon"`
 }

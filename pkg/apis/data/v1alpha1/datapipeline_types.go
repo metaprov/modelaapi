@@ -125,46 +125,52 @@ type DataPipelineStatus struct {
 	Conditions []DataPipelineCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,5,rep,name=conditions"`
 }
 
-// Spec for the data input for the prediction
+// DataInputSpec specifies the format and location of an input dataset
 type DataInputSpec struct {
-	// Location of the generated data
+	// The physical location of the dataset
 	// +kubebuilder:validation:Optional
 	Location *DataLocation `json:"location,omitempty" protobuf:"bytes,2,opt,name=location"`
-	// Format is the format of the input data
+	// The file format of the dataset, if applicable
 	// +kubebuilder:default:="csv"
 	// +kubebuilder:validation:Optional
 	Format *catalog.DatastoreType `json:"format,omitempty" protobuf:"bytes,3,opt,name=format"`
 }
 
-// DataOutputSpec is the definition of the out file.
+// DataOutputSpec specifies the format, features, and output location of a transformed dataset
 type DataOutputSpec struct {
-	// DatasetName is the name of the dataset that will be created. if nil, the system will not create the dataset.
+	// DatasetName is the name of a new Dataset resource that will be created.
+	// If empty, the system will save the dataset to a file
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,1,opt,name=datasetName"`
-	// Location of the generated data
+	// The location where the dataset will be stored
 	// +kubebuilder:validation:Optional
 	Location *DataLocation `json:"location,omitempty" protobuf:"bytes,2,opt,name=location"`
-	// Format is the format of the output data
+	// The format of the dataset, applicable if the output location is a flat-file
 	// +kubebuilder:default:="csv"
 	// +kubebuilder:validation:Optional
 	Format *catalog.DatastoreType `json:"format,omitempty" protobuf:"bytes,3,opt,name=format"`
-	//Action define how the new data will be created
+	// The update strategy for the dataset in the case that the output location already exists (i.e a database table)
+	// Upsert will insert new records and update existing ones;
+	// Insert will insert new records and not update existing ones;
+	// Update will not insert new records and only update existing ones
 	// +kubebuilder:default:="upsert"
 	// +kubebuilder:validation:Optional
 	Action *catalog.UpdateStrategy `json:"action,omitempty" protobuf:"bytes,4,opt,name=action"`
-	// Create the data source table on the target, if not exist.
+	// If true, the database table specified by Location will be created if it does not exist
 	// +kubebuilder:validation:Optional
 	CreateTableIfNotExist *bool `json:"createTableIfNotExist,omitempty" protobuf:"varint,5,opt,name=createTableIfNotExist"`
-	// Include the features in the results
-	// +kubebuilder:default:=false
+	// Indicates if the features (i.e. all the columns) of the input dataset, excluding the
+	// feature which was predicted on, will be included in the output dataset
+	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
 	IncludeFeatures *bool `json:"includeFeatures,omitempty" protobuf:"varint,6,opt,name=includeFeatures"`
-	// Generate XAI
+	// If true, SHAP values for each predicted row will be included as JSON as an additional column of the dataset
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	XAI *bool `json:"xai,omitempty" protobuf:"varint,7,opt,name=xai"`
-	// Detect outlier in the prediction
+	// If true, an additional column will be added to the dataset which
+	// indicates if each predicted row was detected to be an outlier
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	DetectOutliers *bool `json:"detectOutliers,omitempty" protobuf:"varint,8,opt,name=detectOutliers"`
