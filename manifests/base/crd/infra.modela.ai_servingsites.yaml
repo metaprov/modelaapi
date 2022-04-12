@@ -89,7 +89,7 @@ spec:
                       setting the FQDN as `model-serving.modela.ai` will automatically
                       serve Predictors using the REST API at `predictors.model-serving.modela.ai`
                     type: string
-                  grpcIngress:
+                  grpc:
                     default: false
                     description: Indicates if the ingress is enabled
                     type: boolean
@@ -97,7 +97,7 @@ spec:
                     default: ""
                     description: IngressClassName is the name of the ingress class.
                     type: string
-                  restIngress:
+                  rest:
                     default: false
                     type: boolean
                 type: object

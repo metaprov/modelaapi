@@ -142,10 +142,10 @@ type IngressSpec struct {
 	// Indicates if the ingress is enabled
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	GrpcIngress *bool `json:"grpcIngress,omitempty" protobuf:"varint,2,opt,name=grpcIngress"`
+	Grpc *bool `json:"grpc,omitempty" protobuf:"varint,2,opt,name=grpc"`
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	RestIngress *bool `json:"restIngress,omitempty" protobuf:"varint,3,opt,name=restIngress"`
+	REST *bool `json:"rest,omitempty" protobuf:"varint,3,opt,name=rest"`
 	// IngressClassName is the name of the ingress class.
 	// +kubebuilder:default:=""
 	IngressClassName *string `json:"ingressClassName,omitempty" protobuf:"bytes,4,opt,name=ingressClassName"`

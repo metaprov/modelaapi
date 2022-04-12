@@ -60,7 +60,7 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: PredictionTemplate represents a prediction object
+        description: Prediction represents a single batch prediction on a dataset
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation
@@ -591,25 +591,26 @@ spec:
             properties:
               conditions:
                 items:
-                  description: PredictionCondition describes the state of PredictionTemplate
+                  description: PredictionCondition describes the state of a Prediction
+                    at a certain point
                   properties:
                     lastTransitionTime:
                       description: Last time the condition transitioned from one status
-                        to another.
+                        to another
                       format: date-time
                       type: string
                     message:
-                      description: A human readable message indicating details about
-                        the transition.
+                      description: A human-readable message indicating details about
+                        the transition
                       type: string
                     reason:
-                      description: The reason for the condition's last transition.
+                      description: The reason for the condition's last transition
                       type: string
                     status:
-                      description: Status of the condition, one of True, False, Unknown.
+                      description: Status of the condition, one of True, False, Unknown
                       type: string
                     type:
-                      description: Type of  condition.
+                      description: Type of Prediction condition
                       type: string
                   required:
                   - status

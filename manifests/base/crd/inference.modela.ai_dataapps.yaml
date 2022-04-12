@@ -34,8 +34,7 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: DataApp represent a dashboard for business users to use a single
-          model.
+        description: DataApp represents a live dashboard for a single model
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation
@@ -50,12 +49,14 @@ spec:
           metadata:
             type: object
           spec:
-            description: DataAppSpec contain the desired state of a DataApp
+            description: DataAppSpec defines the desired state of a DataApp
             properties:
               accessType:
                 default: cluster-ip
-                description: 'The access method specified how external clients will
-                  access the predictor Default: ClusterIP'
+                description: The Kubernetes-native access method which specifies how
+                  the Kubernetes Service created by the DataApp will be exposed. See
+                  https://modela.ai/docs/docs/serving/production/#access-method for
+                  a detailed description of each access type (defaults to cluster-ip)
                 enum:
                 - cluster-ip
                 - node-port
@@ -65,10 +66,12 @@ spec:
                 - none
                 type: string
               custom:
-                description: Custom application
+                description: The specification to create a custom data application
+                  (currently unimplemented)
                 properties:
                   owner:
                     default: false
+                    description: Indicates if custom pages are enabled
                     type: boolean
                   pages:
                     description: The app pages
@@ -243,7 +246,7 @@ spec:
                 type: object
               description:
                 default: ""
-                description: Comments is a description of the webrequest
+                description: The user-provided description of the DataApp
                 type: string
               modelName:
                 default: ""
@@ -251,28 +254,41 @@ spec:
                   be used
                 type: string
               nodePort:
-                description: The value of the node port
+                description: The port number that will be exposed on the external
+                  address of every node on the cluster, in the case of the DataApps's
+                  access type being NodePort. Traffic from the port will be served
+                  the DataApp's web application
                 format: int32
                 maximum: 65535
                 minimum: 1
                 type: integer
               owner:
                 default: no-one
-                description: The webrequest owner
+                description: The name of the Account which created the object, which
+                  exists in the same tenant as the object
                 type: string
               path:
                 default: ""
-                description: The path of the predictive path
+                description: The URL where the DataApp web application can be accessed.
+                  If the access type is ClusterIP, it will be a cluster-internal DNS
+                  name (i.e. data-app.default-serving-site.svc.cluster.local). In
+                  the case of the Ingress access type, the URL will be given its own
+                  path based on the FQDN of the host ServingSite (i.e. apps.default-serving-site.modela.ai/data-app).
                 type: string
               port:
                 default: 3000
-                description: The port for the app
+                description: The port number that will be exposed on the DataApp's
+                  Pods to serve the web-based dashboard application. The Kubernetes
+                  Service created by the DataApp will expose the port and forward
+                  HTTP traffic to the backend pods
                 format: int32
                 maximum: 65535
                 minimum: 1
                 type: integer
               productRef:
-                description: The product that this predictor serve.
+                description: The name of the DataProductVersion that exists in the
+                  same DataProduct namespace as the resource which describes the version
+                  of the resource
                 properties:
                   apiVersion:
                     description: API version of the referent.
@@ -309,11 +325,14 @@ spec:
                 type: object
               replicas:
                 default: 1
-                description: Number of replicates
+                description: The number of replicas for the Kubernetes Deployment
+                  associated with the DataApp, which will instantiate multiple copies
+                  of the service in the case that automatic scaling is disabled
                 format: int32
                 type: integer
               resources:
-                description: Resource define the hardware resources req.
+                description: Resources specifies the resource requirements allocated
+                  to the DataApp's web server
                 properties:
                   cpuImage:
                     description: Reference to the managed CPU trainer image, used
@@ -424,7 +443,8 @@ spec:
                     type: string
                 type: object
               servingsiteRef:
-                description: The serving site that hosts this predictor and the models
+                description: The reference to the ServingSite resource that hosts
+                  the Predictor
                 properties:
                   apiVersion:
                     description: API version of the referent.
@@ -461,7 +481,9 @@ spec:
                 type: object
               versionName:
                 default: ""
-                description: The product version for the webrequest.
+                description: The name of the DataProductVersion that exists in the
+                  same DataProduct namespace as the resource which describes the version
+                  of the resource
                 type: string
             type: object
           status:
@@ -469,26 +491,26 @@ spec:
             properties:
               conditions:
                 items:
-                  description: DataAppCondition describes the state of a deployment
-                    at a certain point.
+                  description: DataAppCondition describes the state of a DataApp at
+                    a certain point
                   properties:
                     lastTransitionTime:
                       description: Last time the condition transitioned from one status
-                        to another.
+                        to another
                       format: date-time
                       type: string
                     message:
                       description: A human readable message indicating details about
-                        the transition.
+                        the transition
                       type: string
                     reason:
-                      description: The reason for the condition's last transition.
+                      description: The reason for the condition's last transition
                       type: string
                     status:
-                      description: Status of the condition, one of True, False, Unknown.
+                      description: Status of the condition, one of True, False, Unknown
                       type: string
                     type:
-                      description: Type of account condition.
+                      description: Type of DataApp condition
                       type: string
                   required:
                   - status
@@ -496,7 +518,8 @@ spec:
                   type: object
                 type: array
               deploymentStatus:
-                description: The data app deployment status
+                description: The reference to the Kubernetes Deployment associated
+                  with the DataApp
                 properties:
                   apiVersion:
                     description: API version of the referent.
@@ -532,23 +555,25 @@ spec:
                     type: string
                 type: object
               failureMessage:
-                description: Update in case of terminal failure message
+                description: In the case of failure, the DataApp resource controller
+                  will set this field with a failure message
                 type: string
               failureReason:
-                description: Update in case of terminal failure Borrowed from cluster
-                  api controller
+                description: In the case of failure, the DataApp resource controller
+                  will set this field with a failure reason
                 type: string
               lastUpdated:
-                description: Last time the object was updated
+                description: The last time the object was updated
                 format: date-time
                 type: string
               observedGeneration:
-                description: ObservedGeneration is the Last generation that was acted
+                description: ObservedGeneration is the last generation that was acted
                   on
                 format: int64
                 type: integer
               serviceStatus:
-                description: The status of the data app service.
+                description: The status of the Kubernetes Service associated with
+                  the DataApp
                 properties:
                   conditions:
                     description: Current service state

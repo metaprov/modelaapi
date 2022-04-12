@@ -1561,11 +1561,11 @@ message IngressSpec {
   // Indicates if the ingress is enabled
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool grpcIngress = 2;
+  optional bool grpc = 2;
 
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool restIngress = 3;
+  optional bool rest = 3;
 
   // IngressClassName is the name of the ingress class.
   // +kubebuilder:default:=""

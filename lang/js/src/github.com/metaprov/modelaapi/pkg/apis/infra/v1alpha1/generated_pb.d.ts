@@ -2750,11 +2750,11 @@ export class IngressSpec extends jspb.Message {
   getFqdn(): string;
   setFqdn(value: string): IngressSpec;
 
-  getGrpcingress(): boolean;
-  setGrpcingress(value: boolean): IngressSpec;
+  getGrpc(): boolean;
+  setGrpc(value: boolean): IngressSpec;
 
-  getRestingress(): boolean;
-  setRestingress(value: boolean): IngressSpec;
+  getRest(): boolean;
+  setRest(value: boolean): IngressSpec;
 
   getIngressclassname(): string;
   setIngressclassname(value: string): IngressSpec;
@@ -2770,8 +2770,8 @@ export class IngressSpec extends jspb.Message {
 export namespace IngressSpec {
   export type AsObject = {
     fqdn: string,
-    grpcingress: boolean,
-    restingress: boolean,
+    grpc: boolean,
+    rest: boolean,
     ingressclassname: string,
   }
 }

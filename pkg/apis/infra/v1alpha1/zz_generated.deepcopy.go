@@ -2783,13 +2783,13 @@ func (in *IngressSpec) DeepCopyInto(out *IngressSpec) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.GrpcIngress != nil {
-		in, out := &in.GrpcIngress, &out.GrpcIngress
+	if in.Grpc != nil {
+		in, out := &in.Grpc, &out.Grpc
 		*out = new(bool)
 		**out = **in
 	}
-	if in.RestIngress != nil {
-		in, out := &in.RestIngress, &out.RestIngress
+	if in.REST != nil {
+		in, out := &in.REST, &out.REST
 		*out = new(bool)
 		**out = **in
 	}
