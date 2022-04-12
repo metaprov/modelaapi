@@ -797,6 +797,7 @@ const (
 	AutoFeatureEngineering DimensionReduction = "auto"
 )
 
+// +kubebuilder:validation:Enum="tfidf";"count-vec";"hasing-vec";"none";"auto"
 type TextEncoding string
 
 const (

@@ -60,7 +60,7 @@ type ServingSiteList struct {
 	Items []ServingSite `json:"items" protobuf:"bytes,2,rep,name=items"`
 }
 
-// ServingSiteSpec defines the desired state of a Lab
+// ServingSiteSpec defines the desired state of a ServingSite
 type ServingSiteSpec struct {
 	// The user-provided description of the object
 	// +kubebuilder:default:=""
@@ -72,10 +72,8 @@ type ServingSiteSpec struct {
 	// Limits specifies the hard resource limits that can be allocated for workloads created under the ServingSite
 	// +kubebuilder:validation:Optional
 	Limits ResourceLimitSpec `json:"limits,omitempty" protobuf:"bytes,3,opt,name=limits"`
-	// Ingress specifies of the Kubernetes Ingress resource which the ServingSite uses to define
-	// external access points for resources that accept traffic to their services (i.e. Predictors). This
-	// field is set automatically during the creation of the ServingSite and neither the contents of the
-	// Ingress nor the IngressName should be modified by an end-user
+	// Ingress defines the specification to create Ingress resources that can route traffic
+	// to the resources which exist under the ServingSite's namespace
 	// +kubebuilder:validation:Optional
 	Ingress IngressSpec `json:"ingress,omitempty" protobuf:"bytes,4,opt,name=ingress"`
 	// ClusterName is the name of a VirtualCluster that exists under the same tenant as the object. If specified, workloads
@@ -114,16 +112,16 @@ type ServingSiteStatus struct {
 	// In the case of failure, the ServingSite resource controller will set this field with a failure message
 	//+kubebuilder:validation:Optional
 	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,10,opt,name=failureMessage"`
-	// GRPC IngressName specifies the name of the Kubernetes Ingress resource which the ServingSite uses to define
-	// external access points for resources that accept traffic to their services (i.e. Predictors). This
-	// field is set automatically during the creation of the ServingSite and neither the contents of the
-	// Ingress nor the IngressName should be modified by an end-user
+	// GrpcIngressName specifies the name of the Kubernetes Ingress resource which the ServingSite uses to define
+	// external access points for resources that accept GRPC-based traffic to their services (i.e. Predictors).
+	// This field is set only after one or more resources are created which use the Ingress access method.
+	// If there are no Ingress rules to serve then the Ingress will be destroyed
 	//+kubebuilder:validation:Optional
 	GrpcIngressName string `json:"grpcIngressName,omitempty" protobuf:"bytes,11,opt,name=grpcIngressName"`
-	// Rest IngressName specifies the name of the Kubernetes Ingress resource which the ServingSite uses to define
-	// external access points for resources that accept traffic to their services (i.e. Predictors). This
-	// field is set automatically during the creation of the ServingSite and neither the contents of the
-	// Ingress nor the IngressName should be modified by an end-user
+	// RestIngressName specifies the name of the Kubernetes Ingress resource which the ServingSite uses to define
+	// external access points for resources that accept HTTP-based traffic to their services (i.e. DataApps).
+	// This field is set only after one or more resources are created which use the Ingress access method to serve REST traffic.
+	// If there are no Ingress rules to serve then the Ingress will be destroyed
 	RestIngressName string `json:"restIngressName,omitempty" protobuf:"bytes,12,opt,name=restIngressName"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge

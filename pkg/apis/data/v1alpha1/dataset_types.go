@@ -183,6 +183,7 @@ type DatasetSpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Fast *bool `json:"fast,omitempty" protobuf:"varint,22,opt,name=fast"`
+	// The reference to the Lab under which Jobs created by the Dataset will be executed
 	// +kubebuilder:validation:Optional
 	LabRef v1.ObjectReference `json:"labRef,omitempty" protobuf:"bytes,23,opt,name=labRef"`
 }
@@ -446,7 +447,7 @@ type DataLocation struct {
 	ConnectionName *string `json:"connectionName" protobuf:"bytes,2,opt,name=connectionName"`
 	// In the case of the location type being object storage, BucketName is the name of the VirtualBucket resource that
 	// exists in the same tenant as the resource specifying the DataLocation. Modela will connect to the external
-	// object storage system and pull the file from the path specified by the Path field
+	// object storage system to access the file from the path specified by the Path field
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	BucketName *string `json:"bucketName" protobuf:"bytes,3,opt,name=bucketName"`
