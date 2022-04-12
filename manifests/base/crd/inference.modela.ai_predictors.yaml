@@ -489,7 +489,7 @@ spec:
                   to the Predictor's backend service
                 format: int32
                 maximum: 65535
-                minimum: 1
+                minimum: 0
                 type: integer
               owner:
                 default: no-one
@@ -513,7 +513,7 @@ spec:
                   the port and forward GRPC traffic to the backend pods
                 format: int32
                 maximum: 65535
-                minimum: 1
+                minimum: 1024
                 type: integer
               predictionThreshold:
                 description: The prediction threshold

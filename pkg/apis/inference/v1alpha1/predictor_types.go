@@ -124,14 +124,14 @@ type PredictorSpec struct {
 	// The port number that will be exposed on the Predictor's Pods to serve prediction traffic through the GRPCInferenceService API.
 	// The Kubernetes Service created by the Predictor will expose the port and forward GRPC traffic to the backend pods
 	// +kubebuilder:validation:Optional
-	// +kubebuilder:validation:Minimum=1
+	// +kubebuilder:validation:Minimum=1024
 	// +kubebuilder:validation:Maximum=65535
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:=8080
 	Port *int32 `json:"port,omitempty" protobuf:"varint,9,opt,name=port"`
 	// The port number that will be exposed on the external address of every node on the cluster, in the case of the
 	// Predictor's access type being NodePort. Traffic from the port will be forwarded to the Predictor's backend service
-	// +kubebuilder:validation:Minimum=1
+	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Maximum=65535
 	// +kubebuilder:validation:Optional
 	NodePort *int32 `json:"nodePort,omitempty" protobuf:"varint,10,opt,name=nodePort"`
