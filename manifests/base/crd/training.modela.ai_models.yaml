@@ -2057,7 +2057,7 @@ spec:
                 default: latest
                 description: The name of the DataProductVersion which describes the
                   version of the resource that exists in the same DataProduct namespace
-                  as the resource
+                  as the resource, derived from the parent Study
                 maxLength: 63
                 type: string
             type: object

@@ -617,6 +617,11 @@ message FeatureEngineeringSearchSpec {
   optional FeatureSelectionSpec featureSelectionTemplate = 10;
 }
 
+message FeatureEngineeringSearchStatus {
+  // The recommended pipeline after feature engineering was done
+  optional FeatureEngineeringSpec best = 1;
+}
+
 // FeatureEngineeringSpec specifies the feature engineering and preprocessing to be performed on a dataset
 message FeatureEngineeringSpec {
   // Pipelines contains the collection of feature engineering pipelines that
@@ -1824,7 +1829,7 @@ message ModelSpec {
   optional string owner = 1;
 
   // The name of the DataProductVersion which describes the version of the resource
-  // that exists in the same DataProduct namespace as the resource
+  // that exists in the same DataProduct namespace as the resource, derived from the parent Study
   // +kubebuilder:validation:Required
   // +kubebuilder:default:="latest"
   // +kubebuilder:validation:MaxLength=63
@@ -3055,7 +3060,25 @@ message ServingSpec {
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 1;
 }
 
-// Study represent a search for the best machine learning model using automl.
+// Study represents an the search for the best machine learning model for a given dataset
+// +kubebuilder:subresource:status
+// +kubebuilder:object:root=true
+// +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
+// +kubebuilder:printcolumn:name="Progress",type="number",JSONPath=".status.progress"
+// +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",priority=1
+// +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName",priority=1
+// +kubebuilder:printcolumn:name="Dataset",type="string",JSONPath=".spec.datasetName"
+// +kubebuilder:printcolumn:name="Task",type="string",JSONPath=".spec.task"
+// +kubebuilder:printcolumn:name="Objective",type="string",JSONPath=".spec.search.objective"
+// +kubebuilder:printcolumn:name="Score",type="number",JSONPath=".status.bestModelScore"
+// +kubebuilder:printcolumn:name="Best model",type="string",JSONPath=".status.bestModel"
+// +kubebuilder:printcolumn:name="Trained",type="number",JSONPath=".status.search.completed"
+// +kubebuilder:printcolumn:name="Tested",type="number",JSONPath=".status.test.completed"
+// +kubebuilder:printcolumn:name="StartTime",type="date",JSONPath=".status.startTime",priority=1
+// +kubebuilder:printcolumn:name="CompletionTime",type="date",JSONPath=".status.completionTime",priority=1
+// +kubebuilder:printcolumn:name="Last Failure",type="string",JSONPath=".status.lastFailure"
+// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
+// +kubebuilder:resource:path=studies,singular=study,shortName=sd,categories={training,modela}
 message Study {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
@@ -3064,25 +3087,25 @@ message Study {
   optional StudyStatus status = 3;
 }
 
-// StudyCondition describes the state of a StudyName.
+// StudyCondition describes the state of a Study at a certain point
 message StudyCondition {
-  // Type of study condition.
+  // Type of study condition
   // +kubebuilder:validation:Optional
   optional string type = 1;
 
-  // Status of the condition, one of True, False, Unknown.
+  // Status of the condition, one of True, False, Unknown
   // +kubebuilder:validation:Optional
   optional string status = 2;
 
-  // Last time the condition transitioned from one status to another.
+  // Last time the condition transitioned from one status to another
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 4;
 
-  // The reason for the condition's last transition.
+  // The reason for the condition's last transition
   // +kubebuilder:validation:Optional
   optional string reason = 5;
 
-  // A human readable message indicating details about the transition.
+  // A human-readable message indicating details about the transition
   // +kubebuilder:validation:Optional
   optional string message = 6;
 }
@@ -3144,26 +3167,28 @@ message StudyScheduleSpec {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startAt = 2;
 }
 
-// StudySpec defines the desired state of the study
+// StudySpec defines the desired state of a Study and the parameters for a model search
 message StudySpec {
-  // VersionName is the data product version of the study
+  // The name of the DataProductVersion which describes the version of the resource
+  // that exists in the same DataProduct namespace as the resource
   // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string versionName = 1;
 
-  // Description is user provided description
+  // The user-provided description of the Study
   // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=512
   // +kubebuilder:validation:Optional
   optional string description = 2;
 
-  // The lab where the model should be trained
-  // If not lab specified, the default lab from the data product will be used.
+  // The reference to the Lab under which the Model resources created by the Study will be trained.
+  // If unspecified, the default Lab from the parent DataProduct will be used
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference labRef = 3;
 
-  // DatasetName refer to the dataset object for which the study is for.
+  // The name of the Dataset resource which will be split into training, testing, and
+  // validation datasets to be used in training
   // +kubebuilder:validation:Required
   // +required
   optional string datasetName = 4;
@@ -3445,25 +3470,25 @@ message StudyStatus {
   repeated StudyCondition conditions = 34;
 }
 
-// SuccessiveHalvingOptions define the parameters for the successive halving algorithm
+// SuccessiveHalvingOptions defines the parameters for a sucessive halving search
 message SuccessiveHalvingOptions {
-  // The maximum budget allocated to each model during SH search.
-  // The default max budget is 81
+  // The maximum budget allocated to models during the successive halving search. For classical models, this
+  // represents the number percentage (0 through 100) of data that can be allocated to the model for training
   // +kubebuilder:default:=81
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
   optional int32 maxBudget = 1;
 
-  // The rate of elimination during SH search, such that only 1/rate of models are promoted to the
-  // next half
+  // The denominator for the fraction of models that will be promoted to the next round
+  // (i.e. an EliminationRate of 3 will only promote 1/3rd models to the next round)
   // +kubebuilder:default:=3
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
   optional int32 eliminationRate = 2;
 
-  // The modality type. The default modality is based on the type of models
-  // For deep models - we use epochs.
-  // For classical models - we use data
+  // The type of modality, based on the type of model
+  // For classical models, it should be based on data percentage
+  // For deep models, it should be based on epochs
   // +kubebuilder:default:=epochs
   // +kubebuilder:validation:Optional
   optional string modality = 3;

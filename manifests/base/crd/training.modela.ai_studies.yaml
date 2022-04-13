@@ -73,8 +73,8 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: Study represent a search for the best machine learning model
-          using automl.
+        description: Study represents an the search for the best machine learning
+          model for a given dataset
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation
@@ -89,7 +89,8 @@ spec:
           metadata:
             type: object
           spec:
-            description: StudySpec defines the desired state of the study
+            description: StudySpec defines the desired state of a Study and the parameters
+              for a model search
             properties:
               aborted:
                 default: false
@@ -218,12 +219,12 @@ spec:
                     type: array
                 type: object
               datasetName:
-                description: DatasetName refer to the dataset object for which the
-                  study is for.
+                description: The name of the Dataset resource which will be split
+                  into training, testing, and validation datasets to be used in training
                 type: string
               description:
                 default: ""
-                description: Description is user provided description
+                description: The user-provided description of the Study
                 maxLength: 512
                 type: string
               ensembles:
@@ -950,8 +951,9 @@ spec:
                     type: array
                 type: object
               labRef:
-                description: The lab where the model should be trained If not lab
-                  specified, the default lab from the data product will be used.
+                description: The reference to the Lab under which the Model resources
+                  created by the Study will be trained. If unspecified, the default
+                  Lab from the parent DataProduct will be used
                 properties:
                   apiVersion:
                     description: API version of the referent.
@@ -1376,24 +1378,26 @@ spec:
                         properties:
                           eliminationRate:
                             default: 3
-                            description: The rate of elimination during SH search,
-                              such that only 1/rate of models are promoted to the
-                              next half
+                            description: The denominator for the fraction of models
+                              that will be promoted to the next round (i.e. an EliminationRate
+                              of 3 will only promote 1/3rd models to the next round)
                             format: int32
                             minimum: 0
                             type: integer
                           maxBudget:
                             default: 81
-                            description: The maximum budget allocated to each model
-                              during SH search. The default max budget is 81
+                            description: The maximum budget allocated to models during
+                              the successive halving search. For classical models,
+                              this represents the number percentage (0 through 100)
+                              of data that can be allocated to the model for training
                             format: int32
                             minimum: 0
                             type: integer
                           modality:
                             default: epochs
-                            description: The modality type. The default modality is
-                              based on the type of models For deep models - we use
-                              epochs. For classical models - we use data
+                            description: The type of modality, based on the type of
+                              model For classical models, it should be based on data
+                              percentage For deep models, it should be based on epochs
                             enum:
                             - data
                             - epochs
@@ -2116,7 +2120,9 @@ spec:
                 type: integer
               versionName:
                 default: ""
-                description: VersionName is the data product version of the study
+                description: The name of the DataProductVersion which describes the
+                  version of the resource that exists in the same DataProduct namespace
+                  as the resource
                 maxLength: 63
                 type: string
             required:
@@ -2639,25 +2645,26 @@ spec:
                 description: This is the set of partition levels Represents the latest
                   available observations of a study state.
                 items:
-                  description: StudyCondition describes the state of a StudyName.
+                  description: StudyCondition describes the state of a Study at a
+                    certain point
                   properties:
                     lastTransitionTime:
                       description: Last time the condition transitioned from one status
-                        to another.
+                        to another
                       format: date-time
                       type: string
                     message:
-                      description: A human readable message indicating details about
-                        the transition.
+                      description: A human-readable message indicating details about
+                        the transition
                       type: string
                     reason:
-                      description: The reason for the condition's last transition.
+                      description: The reason for the condition's last transition
                       type: string
                     status:
-                      description: Status of the condition, one of True, False, Unknown.
+                      description: Status of the condition, one of True, False, Unknown
                       type: string
                     type:
-                      description: Type of study condition.
+                      description: Type of study condition
                       type: string
                   type: object
                 type: array
