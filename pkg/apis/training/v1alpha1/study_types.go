@@ -8,7 +8,7 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-// StudyPhase is the current phase of the study
+// StudyPhase is the current phase of a Study
 type StudyPhase string
 
 const (
@@ -78,64 +78,60 @@ const (
 	thresholdPruner  PrunerName = "threshold"
 )
 
-// StudyConditionType is the condition on the study
+// StudyConditionType is the condition of a Study
 type StudyConditionType string
 
 /// Study Condition
 const (
-	// All the resources needed for training are allocated and ready.
+	// StudyInitialized states that the resources needed for training are allocated and ready
 	StudyInitialized StudyConditionType = "Initialized"
-	// The search the best preprocessor is completed.
+	// StudySplitted states that the training dataset has been split and is ready for use
 	StudySplitted StudyConditionType = "StudySplitted"
-	// The search the best preprocessor is completed.
+	// StudyFeatureEngineered states that the search for the best feature engineering pipeline is complete
 	StudyFeatureEngineered StudyConditionType = "StudyFeaturesEngineered"
-	// The search the best preprocessor is completed.
+	// StudyBaselined states that baseline models for each algorithm have been trained
 	StudyBaselined StudyConditionType = "StudyBaselined"
-	// The search for the best model candidates is completed.
+	// StudySearched states that the primary model search for algorithm and hyper-parameters is complete
 	StudySearched StudyConditionType = "StudySearched"
-	// true if we did ensamble training
+	// StudyEnsambleCreated states that ensemble models were trained
 	StudyEnsambleCreated StudyConditionType = "ModelsEnsembleCreated"
-	// The best model candidate was tested on the full dataset.
+	// StudyTested states that the best model has been tested against training and testing datasets
 	StudyTested StudyConditionType = "ModelTested"
-	// True when we generated the reports.
-	StudyReported StudyConditionType = "Reported"
-	// True after we profiled the study
-	StudyProfiled StudyConditionType = "Profiled"
-	// True after we profiled the study
+	// StudyReported states that a Report resource has been generated for the Study
+	StudyReported  StudyConditionType = "Reported"
+	StudyProfiled  StudyConditionType = "Profiled"
 	StudyExplained StudyConditionType = "Explained"
-	// True after we profiled the study
-	StudyAborted StudyConditionType = "Aborted"
-	// True after we profiled the study
+	StudyAborted   StudyConditionType = "Aborted"
+	// StudyPaused states that the execution of the Study is paused
 	StudyPaused StudyConditionType = "Paused"
-	// Study saved in database
+	// StudySaved states that the Study has been archived in a database
 	StudySaved StudyConditionType = "Saved"
-	// Study ready state
-	StudyCompleted StudyConditionType = "Completed"
-	// Study is partitioned based on the partition key
+	// StudyCompleted states that the Study has completed execution
+	StudyCompleted   StudyConditionType = "Completed"
 	StudyPartitioned StudyConditionType = "Partitioned"
-
-	StudyArchived StudyConditionType = "Archived"
+	StudyArchived    StudyConditionType = "Archived"
 )
 
-// StudyCondition describes the state of a StudyName.
+// StudyCondition describes the state of a Study at a certain point
 type StudyCondition struct {
-	// Type of study condition.
+	// Type of study condition
 	// +kubebuilder:validation:Optional
 	Type StudyConditionType `json:"type" protobuf:"bytes,1,opt,name=type,casttype=StudyConditionType"`
-	// Status of the condition, one of True, False, Unknown.
+	// Status of the condition, one of True, False, Unknown
 	// +kubebuilder:validation:Optional
 	Status v1.ConditionStatus `json:"status" protobuf:"bytes,2,opt,name=status,casttype=k8s.io/api/core/v1.ConditionStatus"`
-	// Last time the condition transitioned from one status to another.
+	// Last time the condition transitioned from one status to another
 	// +kubebuilder:validation:Optional
 	LastTransitionTime *metav1.Time `json:"lastTransitionTime,omitempty" protobuf:"bytes,4,opt,name=lastTransitionTime"`
-	// The reason for the condition's last transition.
+	// The reason for the condition's last transition
 	// +kubebuilder:validation:Optional
 	Reason string `json:"reason,omitempty" protobuf:"bytes,5,opt,name=reason"`
-	// A human readable message indicating details about the transition.
+	// A human-readable message indicating details about the transition
 	// +kubebuilder:validation:Optional
 	Message string `json:"message,omitempty" protobuf:"bytes,6,opt,name=message"`
 }
 
+// Study represents an the search for the best machine learning model for a given dataset
 // +kubebuilder:subresource:status
 // +kubebuilder:object:root=true
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
@@ -154,8 +150,6 @@ type StudyCondition struct {
 // +kubebuilder:printcolumn:name="Last Failure",type="string",JSONPath=".status.lastFailure"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:resource:path=studies,singular=study,shortName=sd,categories={training,modela}
-
-// Study represent a search for the best machine learning model using automl.
 type Study struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
@@ -163,23 +157,23 @@ type Study struct {
 	Status            StudyStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
 }
 
-//SuccessiveHalvingOptions define the parameters for the successive halving algorithm
+// SuccessiveHalvingOptions defines the parameters for a sucessive halving search
 type SuccessiveHalvingOptions struct {
-	// The maximum budget allocated to each model during SH search.
-	// The default max budget is 81
+	// The maximum budget allocated to models during the successive halving search. For classical models, this
+	// represents the number percentage (0 through 100) of data that can be allocated to the model for training
 	// +kubebuilder:default:=81
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
 	MaxBudget *int32 `json:"maxBudget,omitempty" protobuf:"varint,1,opt,name=maxBudget"`
-	// The rate of elimination during SH search, such that only 1/rate of models are promoted to the
-	// next half
+	// The denominator for the fraction of models that will be promoted to the next round
+	// (i.e. an EliminationRate of 3 will only promote 1/3rd models to the next round)
 	// +kubebuilder:default:=3
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
 	EliminationRate *int32 `json:"eliminationRate,omitempty" protobuf:"varint,2,opt,name=eliminationRate"`
-	// The modality type. The default modality is based on the type of models
-	// For deep models - we use epochs.
-	// For classical models - we use data
+	// The type of modality, based on the type of model
+	// For classical models, it should be based on data percentage
+	// For deep models, it should be based on epochs
 	// +kubebuilder:default:=epochs
 	// +kubebuilder:validation:Optional
 	Modality *catalog.ModalityType `json:"modality,omitempty" protobuf:"bytes,3,opt,name=modality"`
@@ -414,23 +408,25 @@ type FeatureEngineeringSearchSpec struct {
 	FeatureSelectionTemplate FeatureSelectionSpec `json:"featureSelectionTemplate,omitempty" protobuf:"bytes,10,opt,name=featureSelectionTemplate"`
 }
 
-// StudySpec defines the desired state of the study
+// StudySpec defines the desired state of a Study and the parameters for a model search
 type StudySpec struct {
-	// VersionName is the data product version of the study
+	// The name of the DataProductVersion which describes the version of the resource
+	// that exists in the same DataProduct namespace as the resource
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	VersionName *string `json:"versionName" protobuf:"bytes,1,opt,name=versionName"`
-	// Description is user provided description
+	// The user-provided description of the Study
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:MaxLength=512
 	// +kubebuilder:validation:Optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
-	// The lab where the model should be trained
-	// If not lab specified, the default lab from the data product will be used.
+	// The reference to the Lab under which the Model resources created by the Study will be trained.
+	// If unspecified, the default Lab from the parent DataProduct will be used
 	// +kubebuilder:validation:Optional
 	LabRef v1.ObjectReference `json:"labRef,omitempty" protobuf:"bytes,3,opt,name=labRef"`
-	// DatasetName refer to the dataset object for which the study is for.
+	// The name of the Dataset resource which will be split into training, testing, and
+	// validation datasets to be used in training
 	// +kubebuilder:validation:Required
 	// +required
 	DatasetName *string `json:"datasetName" protobuf:"bytes,4,opt,name=datasetName"`

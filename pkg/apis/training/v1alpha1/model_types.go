@@ -202,7 +202,7 @@ type ModelSpec struct {
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,1,opt,name=owner"`
 	// The name of the DataProductVersion which describes the version of the resource
-	// that exists in the same DataProduct namespace as the resource
+	// that exists in the same DataProduct namespace as the resource, derived from the parent Study
 	// +kubebuilder:validation:Required
 	// +kubebuilder:default:="latest"
 	// +kubebuilder:validation:MaxLength=63
@@ -925,6 +925,11 @@ type DataHashes struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	ValidationHash string `json:"validationHash,omitempty" protobuf:"bytes,3,opt,name=validationHash"`
+}
+
+type FeatureEngineeringSearchStatus struct {
+	// The recommended pipeline after feature engineering was done
+	Best FeatureEngineeringSpec `json:"best,omitempty" protobuf:"bytes,1,opt,name=best"`
 }
 
 // GeneratedColumnSpec describes a column to be generated and applied to a dataset
