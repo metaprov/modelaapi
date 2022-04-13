@@ -928,26 +928,6 @@ export namespace FeatureEngineeringSearchSpec {
   }
 }
 
-export class FeatureEngineeringSearchStatus extends jspb.Message {
-  getBest(): FeatureEngineeringSpec | undefined;
-  setBest(value?: FeatureEngineeringSpec): FeatureEngineeringSearchStatus;
-  hasBest(): boolean;
-  clearBest(): FeatureEngineeringSearchStatus;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): FeatureEngineeringSearchStatus.AsObject;
-  static toObject(includeInstance: boolean, msg: FeatureEngineeringSearchStatus): FeatureEngineeringSearchStatus.AsObject;
-  static serializeBinaryToWriter(message: FeatureEngineeringSearchStatus, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): FeatureEngineeringSearchStatus;
-  static deserializeBinaryFromReader(message: FeatureEngineeringSearchStatus, reader: jspb.BinaryReader): FeatureEngineeringSearchStatus;
-}
-
-export namespace FeatureEngineeringSearchStatus {
-  export type AsObject = {
-    best?: FeatureEngineeringSpec.AsObject,
-  }
-}
-
 export class FeatureEngineeringSpec extends jspb.Message {
   getPipelinesList(): Array<FeatureEngineeringPipeline>;
   setPipelinesList(value: Array<FeatureEngineeringPipeline>): FeatureEngineeringSpec;

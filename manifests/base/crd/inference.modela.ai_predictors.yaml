@@ -90,8 +90,8 @@ spec:
                     description: In the case of the location type being object storage,
                       BucketName is the name of the VirtualBucket resource that exists
                       in the same tenant as the resource specifying the DataLocation.
-                      Modela will connect to the external object storage system and
-                      pull the file from the path specified by the Path field
+                      Modela will connect to the external object storage system to
+                      access the file from the path specified by the Path field
                     type: string
                   connectionName:
                     default: ""
@@ -355,10 +355,12 @@ spec:
                   validations:
                     description: List of model validation
                     items:
+                      description: ModelValidation defines a single validation to
+                        be run against a model
                       properties:
                         agg:
-                          description: Agg is used when we measured aggregate performance,
-                            for example median or average
+                          description: Agg specifies the type of aggregate when measuring
+                            aggregate performance (e.g. median, average)
                           enum:
                           - min
                           - max
@@ -368,8 +370,8 @@ spec:
                         column:
                           type: string
                         datasetName:
-                          description: Labeled dataset used to test the model, when
-                            measuring a performance metric
+                          description: The name of a labeled dataset used to test
+                            the model, when measuring a performance metric
                           type: string
                         driftFreq:
                           description: / The Horizon unit
@@ -473,11 +475,11 @@ spec:
                         minPercent:
                           type: number
                         prevModel:
-                          description: PrevModel compare to model
+                          description: PrevModel specifies a previous model to compare
+                            against
                           type: string
                         type:
-                          description: ModelValidationName is the name of one model
-                            monitoring validation
+                          description: The type of model validation
                           type: string
                       type: object
                     type: array

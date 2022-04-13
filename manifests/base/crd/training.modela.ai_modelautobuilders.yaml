@@ -1055,8 +1055,8 @@ spec:
                     description: In the case of the location type being object storage,
                       BucketName is the name of the VirtualBucket resource that exists
                       in the same tenant as the resource specifying the DataLocation.
-                      Modela will connect to the external object storage system and
-                      pull the file from the path specified by the Path field
+                      Modela will connect to the external object storage system to
+                      access the file from the path specified by the Path field
                     type: string
                   connectionName:
                     default: ""
@@ -1479,16 +1479,14 @@ spec:
                   parameters:
                     description: Parameters is a list of the algorithm hyper parameters
                     items:
-                      description: HyperParameterValue represent a specific value
-                        of the learning algorithm hyper-parameter. The value is chosen
-                        by the planner
+                      description: HyperParameterValue represent an individual hyper-parameter
+                        of a machine earning algorithm
                       properties:
                         name:
-                          description: Reference to the name of the hyper parameter.
+                          description: The name of the hyper-parameter
                           type: string
                         value:
-                          description: Value hold the value if  the hyper paramer
-                            type is string
+                          description: The value of the hyper-parameter
                           type: string
                       required:
                       - name

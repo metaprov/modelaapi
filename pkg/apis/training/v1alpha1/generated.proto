@@ -31,7 +31,7 @@ message AlgorithmSearchSpaceSpec {
   optional string filter = 2;
 }
 
-// AudioPipelineSpec is the specification for preprocessing audio data
+// AudioPipelineSpec represents a single pipeline for preprocessing audio data
 message AudioPipelineSpec {
   // The date time imputer.
   // +kubebuilder:default:="auto"
@@ -120,15 +120,16 @@ message ChangePointSpec {
   optional double range = 2;
 }
 
-// ChatbotEstimatorSpec is an spec for chat bot. This is not implemented yet
+// ChatbotEstimatorSpec specifies the configuration for a chatbot model
 message ChatbotEstimatorSpec {
   // The name of the base model
   // +kubebuilder:validation:Optional
   optional string base = 1;
 }
 
+// CheckpointSpec specifies where to store model checkpoints
 message CheckpointSpec {
-  // the Location of the checkpoint spec.
+  // The location of the model checkpoint
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation location = 1;
 }
@@ -264,70 +265,66 @@ message CustomSeasonalitySpec {
   optional int32 fourierOrder = 3;
 }
 
-// List compiler spec
+// DataHashes contains the hashes for datasets used during model training
 message DataHashes {
-  // Training
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string trainHash = 1;
 
-  // Testing hash is a sha 256 of the testing data.
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string testingHash = 2;
 
-  // Pointer to the validation
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string validationHash = 3;
 }
 
+// DataSplitSpec specifies the configuration to split a dataset for use in training and evaluating a model
 message DataSplitSpec {
-  // Define the split type.
+  // The type of split method
   // +kubebuilder:default:="auto"
   // +kubebuilder:validation:Optional
   optional string method = 1;
 
-  // Training is a percent number (0-100) which specify how much of
-  // the data will be used for training
+  // The number percentage (0 through 100) of rows that will be allocated to the training dataset
   // +kubebuilder:validation:Optional
   // +kubebuilder:default:=80
   // +kubebuilder:validation:Minimum=1
   // +kubebuilder:validation:Maximum=100
   optional int32 train = 2;
 
-  // Validation is percent of dataset rows which would be used to compute the objective during
-  // hyper parameter search phase.
-  // Only used if we do not do cross validation.
-  // default is 10% of the data, if we do not have cross validation.
-  // default is 0% of the data, if we do cross validation.
+  // The number percentage (0 through 100) of rows that will be allocated to the validation dataset.
+  // If Validation is set to 0 the model will default to use cross-validation
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Maximum=50
   // +kubebuilder:validation:Optional
   optional int32 validation = 3;
 
-  // Test is percent of dataset rows which would be used to compute the objective during
+  // The number percentage (0 through 100) of rows that will be allocated to the training dataset
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Maximum=100
   // +kubebuilder:default:=20
   // +kubebuilder:validation:Optional
   optional int32 test = 4;
 
-  // The name of the column used to split
+  // The name of the column containing a binary value that indicates if the row should be split.
+  // The split type must use split-column in order for SplitColumn to have an effect
   // +kubebuilder:validation:Optional
   optional string splitColumn = 5;
 
-  // Apply the segments first
+  // The collection of segments
   // +kubebuilder:validation:Optional
   repeated SegmentSpec segments = 6;
 
-  // The name of the train dataset.
+  // The name of the Dataset resource which will be used as the training dataset
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string trainDataset = 7;
 
-  // The name of the test dataset. If a test dataset is specified
+  // The name of the Dataset resource which will be used as the testing dataset, applicable
+  // only if the split type uses test-dataset
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string testDataset = 8;
@@ -441,20 +438,21 @@ message DeploymentStageSpec {
 message EnsembleRules {
 }
 
+// EnsembleSpec specifies the parameters of an ensemble model
 message EnsembleSpec {
-  // Names of the models that were used for the estimators.
+  // The collection of models (by their name) to be used as estimators in the ensemble
   // +kubebuilder:validation:Optional
   repeated string models = 1;
 
-  // A list of estimators to ensemble. The ensemble method is represented as the algorithm name.
+  // The collection of estimators to be used in the ensemble, derived from Models
   // +kubebuilder:validation:Optional
   repeated ClassicalEstimatorSpec estimators = 2;
 
-  // The meta estimator (e.g. Voting classifier)
+  // The base estimator
   // +kubebuilder:validation:Optional
   optional ClassicalEstimatorSpec base = 3;
 
-  // The ensempling method type
+  // The ensembling method
   // +kubebuilder:validation:Optional
   optional string type = 4;
 }
@@ -481,87 +479,86 @@ message EnsemblesSpec {
   optional int32 top = 4;
 }
 
-// FeatureEngineeringPipeline represent a single pipeline for data transformation.
-// The pipeline includes the column names and the data type.
+// FeatureEngineeringPipeline represent a single pipeline to transform a dataset
 message FeatureEngineeringPipeline {
-  // The name of this feature engineering pipeline
+  // The name of the pipeline
   // +kubebuilder:validation:Required
   optional string name = 1;
 
-  // The Data type for the feature engineering.
+  // The type of data which the pipeline applies to
   // +kubebuilder:validation:Required
   // +required
   optional string datatype = 2;
 
-  // Columns is the name of the columns from the original file.
-  // All the columns must be from the same type
+  // The collection of columns which the pipeline applies to. Each column in the dataset with the
+  // data type of the pipeline should be added to the collection of columns
   // +kubebuilder:validation:Optional
   repeated string columns = 3;
 
-  // imputer
+  // The imputation method to use, which fills in missing values within the columns
   // +kubebuilder:default:=none
   // +kubebuilder:validation:Optional
   optional string imputation = 4;
 
-  // Encoder. Apply only to categorical variables
+  // The encoding method to use for categorical data types
   // +kubebuilder:default:=none
   // +kubebuilder:validation:Optional
   optional string encoding = 5;
 
-  // Numeric var scaler, valid only if the
+  // The scaling method to use for numerical data types
   // +kubebuilder:default:=none
   // +kubebuilder:validation:Optional
   optional string scaling = 6;
 
-  // Convert numerical datatypes to categories. Valid only if the number data types.
+  // The discretisation method, which converts numerical data types to discrete variables
   // +kubebuilder:default:=none
   // +kubebuilder:validation:Optional
   optional string discretisation = 7;
 
-  // For numerical data type.
+  // The transformation method to use for numerical data types
   // +kubebuilder:default:=none
   // +kubebuilder:validation:Optional
   optional string variableTransformation = 8;
 
-  // Specify how to handle outliers.
+  // The method to use when handling outliers
   // +kubebuilder:default:=none
   // Apply only to numeric datatypes.
   optional string outlierHandling = 9;
 
-  // Specify how For datetime data type,
+  // The method to use when handling the date-time data type
   // +kubebuilder:default:=none
   // +kubebuilder:validation:Optional
   optional string datetimeTransformation = 10;
 
-  // Text specify the column transformation for text columns
+  // Text specifies the pipeline to handle raw text
   // +kubebuilder:validation:Optional
   optional TextPipelineSpec text = 11;
 
-  // Image specify the pipeline for images. Not supported in this release
+  // Image specifies the pipeline to handle image data (currently unsupported)
   // +kubebuilder:validation:Optional
   optional ImagePipelineSpec image = 12;
 
-  // Audio specify the pipeline for audio. Not supported in this release
+  // Audio specifies the pipeline to handle audio data (currently unsupported)
   // +kubebuilder:validation:Optional
   optional AudioPipelineSpec audio = 13;
 
-  // Video specify the pipeline for video. Not supported in this release
+  // Video specifies the pipeline to handle video data (currently unsupported)
   // +kubebuilder:validation:Optional
   optional VideoPipelineSpec video = 14;
 
-  // Spec to generate one or more columns from existing columns in this pipeline
+  // Generated specifies a collection of columns to be generated
   // +kubebuilder:validation:Optional
   repeated GeneratedColumnSpec generated = 15;
 
-  // Specify custom columns. Custom Columns are specified by the user
+  // Custom specifies a collection of columns to be generated. Custom columns are specified by end-users
   repeated GeneratedColumnSpec custom = 16;
 
-  // If dropped, all the columns in this pipeline will be dropped.
+  // Indicates if all of all the columns specified by the Columns field should be dropped
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool drop = 17;
 
-  // If true, all the features in this pipeline will passthrough, without processing.
+  // Indicates if the pipeline should not be applied and the columns should remain unchanged
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool passthrough = 18;
@@ -620,29 +617,30 @@ message FeatureEngineeringSearchSpec {
   optional FeatureSelectionSpec featureSelectionTemplate = 10;
 }
 
-message FeatureEngineeringSearchStatus {
-  // The recommended pipeline after feature engineering was done
-  optional FeatureEngineeringSpec best = 1;
-}
-
+// FeatureEngineeringSpec specifies the feature engineering and preprocessing to be performed on a dataset
 message FeatureEngineeringSpec {
-  // List of processing pipelines
+  // Pipelines contains the collection of feature engineering pipelines that
+  // will be applied to a dataset prior to model training
   // +kubebuilder:validation:Optional
   repeated FeatureEngineeringPipeline pipelines = 1;
 
-  // Define how to handle imbalance
+  // The method which will be used to handle an imbalanced dataset
   // +kubebuilder:default:=auto
   // +kubebuilder:validation:Optional
   optional string imbalance = 2;
 
-  // Spec for feature selection
+  // FeatureSelection specifies the configuration to perform
+  // feature selection on a dataset prior to model training
   // +kubebuilder:validation:Optional
   optional FeatureSelectionSpec selection = 3;
 }
 
+// FeatureImportance records the computed importance of a single feature
 message FeatureImportance {
+  // The name of the feature
   optional string feature = 1;
 
+  // The importance of the feature
   // +kubebuilder:validation:Format=float
   // +kubebuilder:validation:Type=number
   optional double importance = 2;
@@ -663,66 +661,62 @@ message FeatureInfo {
 }
 
 message FeaturePair {
-  // The name of feature A
   optional string x = 1;
 
   optional string y = 2;
 }
 
-// Feature selection spec defines how to select feature
+// FeatureSelectionSpec specifies the configuration to run feature selection on a dataset
 message FeatureSelectionSpec {
-  // Enable the feature selection.
+  // Indicates if feature selection is enabled
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
   optional bool enabled = 1;
 
-  // Percent of data to sample while preforming the feature engineering search
+  // The number percentage (0 through 100) of the dataset to sample
   // +kubebuilder:default:=100
   // +kubebuilder:validation:Optional
   optional int32 samplePct = 2;
 
-  // If true, sample embedding methods as part of candidate algorithms for feature selection
-  // Example of embedded method are tree based selection
+  // Indicates if embedded methods will be tested as part of the candidate algorithms (e.g. tree-based selection)
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
   optional bool embedding = 3;
 
-  // If true, sample filter methods. Filter method are based on statistical tests.
-  // For example, chi square and anova tests.
+  // Indicates if filter methods will be tested as part of the candidate algorithms (e.g. chi-square or anova tests)
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
   optional bool filter = 4;
 
-  // If true, sample wrapper methods,
+  // Indicates if wrapper methods will be tested as part of the candidate algorithms
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
   optional bool wrapper = 5;
 
-  // the Feature selection pipeline.
-  // Steps are applied in the order of the pipeline
+  // The collection of feature selection methods that will be applied in order to the dataset
   repeated string pipeline = 6;
 
-  // Lowvar specify the filter to remove low variance features
+  // The threshold as a percentage to remove low variance features
   // +kubebuilder:default:=5
   // +kubebuilder:validation:Optional
   optional int32 varianceThresholdPct = 7;
 
-  // Remove Features with high correlations
+  // The threshold to remove features with high correlations
   // +kubebuilder:default:=95
   // +kubebuilder:validation:Optional
   optional int32 corrThreshold = 8;
 
-  // Select the Top N is the number of feature to select by importance. If 0, all the features are selected.
+  // The number of features that will be selected based on importance. If TopN is 0, all features will be selected
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
   optional int32 topN = 9;
 
-  // The cummulative importance of all the importance feature to include
+  // The cumulative importance threshold of features to be included
   // +kubebuilder:default:=95
   // +kubebuilder:validation:Optional
   optional int32 cumulativeImportancePercent = 10;
 
-  // List of feature names to consider when training , even after filtering
+  // List of features that are reserved and will always be included in the final feature selection
   // +kubebuilder:validation:Optional
   repeated string reserved = 11;
 }
@@ -799,6 +793,7 @@ message GarbageCollectionStatus {
   repeated ModelResult models = 2;
 }
 
+// GeneratedColumnSpec describes a column to be generated and applied to a dataset
 message GeneratedColumnSpec {
   // The name of the generated column
   optional string name = 1;
@@ -872,18 +867,16 @@ message HolidaySpec {
   optional string datasetName = 4;
 }
 
-// HyperParameterValue represent a specific value of
-// the learning algorithm hyper-parameter. The value is chosen
-// by the planner
+// HyperParameterValue represent an individual hyper-parameter of a machine earning algorithm
 message HyperParameterValue {
-  // Reference to the name of the hyper parameter.
+  // The name of the hyper-parameter
   optional string name = 1;
 
-  // Value hold the value if  the hyper paramer type is string
+  // The value of the hyper-parameter
   optional string value = 2;
 }
 
-// ImagePipelineSpec is the specification for preprocessing image data
+// ImagePipelineSpec represents a single pipeline for preprocessing image data
 message ImagePipelineSpec {
   // The date time imputer.
   // +kubebuilder:default:="auto"
@@ -891,60 +884,62 @@ message ImagePipelineSpec {
   optional string featurizer = 1;
 }
 
+// InterpretabilitySpec specifies the configuration to generate interpretability data and diagrams
 message InterpretabilitySpec {
-  // If true generate ice plots for each feature.
+  // Indicates if ICE (individual condition expectation) plots will be generated
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
   optional bool ice = 1;
 
-  // Define one or more feature pairs. The system will generate ice scatter diagram for each pair.
+  // The collection of feature pairs to generate ICE scatter diagrams for each
   repeated FeaturePair icepairs = 2;
 
-  // If true generate lime plot
+  // Indicates if LIME (local interpretable model-agnostic explanations) diagrams will be generated
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool lime = 3;
 
-  // Set the shap type. Set to none for not shap value. This is set automatically by the system based on the model type.
-  // Due to high compute time, currently only two types are supported : linear and tree.
+  // The type of SHAP values to be generated. Linear and tree values are the
+  // only recommended types due to the high compute times of other methods
   // +kubebuilder:default:=auto
   // +kubebuilder:validation:Optional
   optional string shap = 4;
 
-  // Generate scatter shap diagram for each pair.
+  // The collection of feature pairs to generate SHAP scatter diagrams for each
   // +kubebuilder:validation:Optional
   repeated FeaturePair shappairs = 5;
 
-  // If true generate counter factual
+  // Indicates if counter-factual diagrams will be generated
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool counterfactual = 6;
 
-  // If true generate anchor explentation.
+  // Indicates if anchor explanation diagrams will be generated
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool anchor = 7;
 }
 
+// InterpretabilityStatus represents the state of the explanation phase of a Model
 message InterpretabilityStatus {
-  // StartTime represents time when the model interpretability started
+  // StartTime represents the time when the model explanation phase started
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time trainingStartTime = 1;
 
-  // EndTime represents time when the model interpretability ended
+  // EndTime represents the time when the model explanation phase ended
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time trainingEndTime = 2;
 
-  // The URI for the explainer
+  // The URI for the generated explanation data
   optional string explainerURI = 3;
 
-  // The location of the train shap value uri
+  // The URI for the train SHAP values
   optional string trainShapValuesURI = 4;
 
-  // The location of the test shap value uri
+  // The URI for the test SHAP values
   optional string testShapValuesURI = 5;
 
-  // Shap based feature importance
+  // The collection of feature importances generated from the computed SHAP values
   repeated FeatureImportance importance = 6;
 }
 
@@ -965,6 +960,8 @@ message Level {
   repeated string distinc = 5;
 }
 
+// Model represents a machine learning model generated by the Modela data plane
+// that will be trained and deployed to serve predictions
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
@@ -982,10 +979,6 @@ message Level {
 // +kubebuilder:printcolumn:name="Last Failure",type="string",JSONPath=".status.failureMessage",priority=1
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:resource:path=models,singular=model,shortName=md,categories={training,modela,all}
-// Model represent a machine learning model.
-// models are automatically generated by the planner and trained by the trainer.
-// After training, models are packaged into a docker container and served
-// by predictor.
 message Model {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
@@ -1381,21 +1374,21 @@ message ModelCompilerRunStatus {
   repeated ModelCompilerRunCondition conditions = 10;
 }
 
-// ModelCondition describes the state of a model at a certain point.
+// ModelCondition describes the state of a Model at a certain point
 message ModelCondition {
-  // Type of account condition.
+  // Type of Model condition
   optional string type = 1;
 
-  // Status of the condition, one of True, False, Unknown.
+  // Status of the condition, one of True, False, Unknown
   optional string status = 2;
 
-  // Last time the condition transitioned from one status to another.
+  // Last time the condition transitioned from one status to another
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 4;
 
-  // The reason for the condition's last transition.
+  // The reason for the condition's last transition
   optional string reason = 5;
 
-  // A human readable message indicating details about the transition.
+  // A human-readable message indicating details about the transition
   optional string message = 6;
 }
 
@@ -1419,7 +1412,7 @@ message ModelImageSpec {
 }
 
 // +kubebuilder:object:root=true
-// ModelList is a list of models.
+// ModelList is a list of Models
 message ModelList {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
 
@@ -1825,174 +1818,173 @@ message ModelResult {
 
 // ModelSpec defines the desired state of the Model resource
 message ModelSpec {
-  // Owner is the account name of the owner of this model
+  // The owner of the Study that created the Model
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
   optional string owner = 1;
 
-  // VersionName is the product version name for this model
+  // The name of the DataProductVersion which describes the version of the resource
+  // that exists in the same DataProduct namespace as the resource
   // +kubebuilder:validation:Required
   // +kubebuilder:default:="latest"
   // +kubebuilder:validation:MaxLength=63
   // +required
   optional string versionName = 2;
 
-  // ModelVersion is an assigned version to the model.
+  // The user-assigned version of the Model, derived from the parent Study
   // +kubebuilder:default:=""
   optional string modelVersion = 4;
 
-  // StudyName reference the study for this model. IF empty, the model is stand alone
+  // The name of the Study which created the Model. If empty, the Model will be trained as a stand-alone model
   // +kubebuilder:validation:Required
   // +kubebuilder:validation:MaxLength=63
   // +required
   optional string studyName = 5;
 
-  // DatasetName refer to the dataset object for which the model is for.
+  // The name of the Dataset resource which the Model is being trained with
   // +kubebuilder:validation:Required
   // +kubebuilder:validation:MaxLength=63
   // +required
   optional string datasetName = 6;
 
-  // Task is the machine learning task (regression, classification).
-  // The task is generated from the study task
+  // The machine learning task type of the Model (i.e. regression, classification), derived from the parent Study
   // +kubebuilder:validation:Required
   // +required
   optional string task = 7;
 
-  // Objective is the metric by which the system compare models
-  // Default: based on the task. classification is logloss. Regression is rmse
+  // The objective metric that will be tested and used to evaluate the performance of the model against others
   // +kubebuilder:validation:Required
   // +required
   optional string objective = 8;
 
-  // Represent the preprocessing pipeline of the model. Provide a value if you want to customize the model.
-  // Default: All preprocessing will be created automatically
+  // FeatureEngineering specifies the preprocessing pipelines that will be applied to the model prior to training.
+  // By default, feature engineering is generated automatically by sampling different pipelines in competition
   // +kubebuilder:validation:Optional
   optional FeatureEngineeringSpec featureEngineering = 9;
 
-  // Estimator is a specification of the ML algorithm and its hyper parameters.
+  // Estimator specifies the machine learning algorithm and hyper-parameters of the Model
   // +kubebuilder:validation:Optional
   optional ClassicalEstimatorSpec estimator = 10;
 
-  // Estimator for DNN network, not implemented in this release.
+  // Dnn specifies the estimator for a neural network (currently unimplemented)
   // +kubebuilder:validation:Optional
   optional DeepEstimatorSpec dnn = 11;
 
-  // Estimator for chat bot specification. Not implemented for this release.
+  // Chatbot specifies the estimator for a chatbot model (currently unimplemented)
   // +kubebuilder:validation:Optional
   optional ChatbotEstimatorSpec chatbot = 12;
 
-  // Estimator for NLP model
+  // NLPEstimator specifies the estimator for a deep NLP model (currently unimplemented)
   // +kubebuilder:validation:Optional
   optional NLPEstimatorSpec nlpEstimator = 13;
 
-  // If this is an ensemble model, specify the ensemble
-  // Default: None
+  // Ensemble specifies the configuration to create an ensemble model
   // +kubebuilder:validation:Optional
   optional EnsembleSpec ensemble = 14;
 
-  // TrainingSpec is the desired training settings for the model.
+  // TrainingSpec specifies the configuration to prepare and train a model
   // +kubebuilder:validation:Optional
   optional TrainingSpec training = 15;
 
-  // Specification for serving the model
+  // ServingSpec defines the resource requirements that will be applied to a Predictor
+  // that will be created if the model is set to be released
   // +kubebuilder:validation:Optional
   optional ServingSpec serving = 16;
 
-  // Tested indicate if this model should be tested. Default is false.
-  // The study controller will set this to true if a model is the best model or part of the top models
+  // Tested indicates if a workload will be instantiated to test the model. The Study resource controller
+  // will automatically set this field if the Model was found to be the highest-performing
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool tested = 17;
 
-  // Aborted indicate the desire to abort the model training
+  // Aborted indicates if any workloads associated with the Model should stop execution
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool aborted = 18;
 
-  // Packaged the model into tar file
+  // Packaged indicates if the Model should be packaged into tarbell
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool packaged = 19;
 
-  // Published indicate that the system should create an docker image with the model binary.
+  // Published indicates that the Model should be baked into a Docker image
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool published = 20;
 
-  // Pushed indicate that the system should push the docker image into the docker registry
+  // Pushed indicates that the Model image should be pushed to a Docker image registry
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool pushed = 21;
 
-  // Reported is set when a report should be created for this model
+  // Reported indicates that a Report will be generated for the Model
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool reported = 22;
 
-  // Paused is set when we want to pause the training
+  // Paused indicates that the execution of new workloads associated with the Model should be paused
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool paused = 23;
 
-  // Set to true if you want to create model profile.
+  // Profiled indicates that the Model will be profiled
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool profiled = 24;
 
-  // Archived is true when the model should be archived
+  // Archived indicates that the Model should be archived in long-term storage
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool archived = 25;
 
-  // Forecasted is true when the model should perform a forecast
+  // Forecasted indicates that the Model should perform a forecast
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool forecasted = 26;
 
-  // Indicates that the model should be released to production
+  // Released indicates that the Model will be deployed within Predictor
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool released = 27;
 
-  // Set to true if this model is a benchmark model.
+  // Benchmarked indicates if the Model is a benchmark model
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool benchmarked = 28;
 
-  // Explained indicate weather this model should be explained
+  // Explained indicates if a workload to compute SHAP values/diagrams should be executed
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool explained = 29;
 
-  // Indicate that this model is a baseline
+  // Baseline indicates if the Model was produced by the baseline phase of a Study
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool baseline = 30;
 
-  // Indicate a fast mode. If true, skip the validation/profiling/report
+  // Fast indicates if the Model should skip profiling, explaining, and reporting
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool fast = 31;
 
-  // Is this model flagged by the user.
+  // Indicates if the model is flagged
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool flagged = 32;
 
-  // Location is the location of the model artifacts (metadata, reports and estimators).
+  // The data location where artifacts (metadata, reports, and estimators) generated by the Model will be stored
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation location = 33;
 
-  // The specification for the forecasting algorithm if this model is part of a forecasting
+  // Forecasting specifies the configuration to train a forecasting model
   // +kubebuilder:validation:Optional
   optional ForecastSpec forecast = 34;
 
-  // Compilation denotes how to compile the model. Not supported in the current release.
+  // Compilation specifies the configuration to compile a model to a binary (currently unimplemented)
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.CompilerSpec compilation = 35;
 
-  // ActiveDeadlineSeconds is the deadline of a job for this model.
+  // The deadline for any Jobs associated with the Model to be completed in seconds
   // +kubebuilder:default:=600
   // +kubebuilder:validation:Optional
   optional int64 activeDeadlineSeconds = 36;
@@ -2002,285 +1994,282 @@ message ModelSpec {
   // +kubebuilder:validation:Optional
   optional string estimatorType = 37;
 
-  // TTL
+  // The time-to-live of the Model, after which the Model will be archived
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
   optional int32 ttl = 38;
 
-  // Mark the model class. The model class is the origin of the model
+  // The model class, which is derived from the phase of the Study that the Model was created for
   // +kubebuilder:validation:Optional
   optional string modelClass = 39;
 
-  // Set the trial ID, by the optimizer.
+  // The trial ID, which is incremented for each Model produced by the data plane
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
   optional int32 trialID = 40;
 
-  // The Governance requirements.
+  // Governance specifies the model governance requirements (currently unimplemented)
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec governance = 41;
 
-  // The Interpretability requirements.
+  // Interpretability specifies the configuration to generate model interpretability visualizations
   // +kubebuilder:validation:Optional
   optional InterpretabilitySpec interpretability = 42;
 }
 
-// ModelStatus defines the observed state of the Model
+// ModelStatus defines the observed state of a Model
 message ModelStatus {
-  // StartTime represents time when the model is first handled by the model controller
+  // StartTime represents the time at which the execution of the Model completed
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 1;
 
-  // TrainStartTime represents time when the model started training.
+  // TrainStartTime represents the time at which the Model started training
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time trainingStartTime = 2;
 
-  // TrainCompletionTime represents time when the model ended training
+  // TrainCompletionTime represents the time at which the Model completed training
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time trainingEndTime = 3;
 
-  // TestingStartTime represents time when the model started test on a trainer
-  // It is not guaranteed to be set in happens-before order across separate operations.
-  // It is represented in RFC3339 form and is in UTC.
+  // TestingStartTime represents the time at which the Model started testing
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time testingStartTime = 4;
 
-  // TestingEndTime represents time when the model ended testing
-  // be set in happens-before order across separate operations.
-  // It is represented in RFC3339 form and is in UTC.
+  // TestingEndTime represents the time at which the Model completed testing
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time testingEndTime = 5;
 
-  // CompletionTime represent the time that the model is marked as ready
+  // EndTime represents the time at which the Model was marked as ready, failed, or aborted
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 6;
 
-  // CVScrore is the score using on the training set.
+  // The cross-validation score for the objective metric produced after training
   // +kubebuilder:validation:Optional
   optional double cvScore = 7;
 
-  // TrainingScore is the score on the full training set, Evaluating on the training set
+  // The score for the objective metric based on the training dataset
   // +kubebuilder:validation:Optional
   optional double trainingScore = 8;
 
-  // TestScore is the score
+  // The score for the objective metric based on the testing dataset
   // +kubebuilder:validation:Optional
   optional double testScore = 9;
 
-  // Cost is the cost of training the model
+  // Cost is the cost of training the model in the case of a deep-learning model
   // +kubebuilder:validation:Optional
   optional double cost = 10;
 
-  // Best is true if this is the best model
+  // Best indicates if the Model was found to be the best model produced by a Study
   // +kubebuilder:validation:Optional
   optional bool best = 11;
 
-  // CV results is the results of performing cross validation on the training set during search.
+  // CV contains the collection of measurements produced by cross-validation
+  // on the training dataset or validation on the validation dataset
   // +kubebuilder:validation:Optional
   repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement cv = 12;
 
-  // TrainResult is the results of training the model (pipeline) on the full training set
+  // Train contains the collection of measurements produced by validation on the training dataset
   // +kubebuilder:validation:Optional
   repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement train = 13;
 
-  // TestResult is the results of training the model (pipeline) on the full training set, and test it on the test set
+  // Train contains the collection of measurements produced by validation on the testing dataset
   // +kubebuilder:validation:Optional
   repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement test = 14;
 
-  // Phase is the phase of the model
+  // The phase of the Model
   // +kubebuilder:default:="Pending"
   // +kubebuilder:validation:Optional
   optional string phase = 15;
 
-  // ReportName is a reference to the model report
+  // The name of the Report resource produced by the Model
   // +kubebuilder:validation:Optional
   optional string reportName = 16;
 
-  // ReportURI is the uri of report
+  // The URI of the Report
   // +kubebuilder:validation:Optional
   optional string reportUri = 17;
 
-  // ManifestUri is the URI of the manifest in the product bucket.
+  // The URI of the Model manifest
   // +kubebuilder:validation:Optional
   optional string manifestUri = 18;
 
-  // WeightsUri is the URI of the model binary file.
+  // The URI of the model weights binary file
   // +kubebuilder:validation:Optional
   optional string weightsUri = 19;
 
-  // LabelEncoderUri is the URI of the label encoder binary file, if there is one.
+  // The URI of the label encoder binary file, if it exists
   // +kubebuilder:validation:Optional
   optional string labelEncoderUri = 20;
 
-  // LogsUri is the URI of the log file
+  // The URI of the logs file
   // +kubebuilder:validation:Optional
   optional string logsUri = 21;
 
-  // ProfileUri is a reference to the visualization uri which were produce during processing
+  // The URI of the model profile, which contains visualizations produced during the profiling phase
   // +kubebuilder:validation:Optional
   optional string profileUri = 22;
 
-  // MisclassUri is a reference to the mis-classification file which were produce during processing
+  // The URI to the misclassification file produced during the testing phase
   // +kubebuilder:validation:Optional
   optional string misclassUri = 23;
 
-  // TarUri is a reference to the model tar file.
+  // The URI to the model tarbell file
   // +kubebuilder:validation:Optional
   optional string tarUri = 24;
 
-  // AppUri is a reference to the model app file
+  // The URI to the model application file
   // +kubebuilder:validation:Optional
   optional string appUri = 25;
 
-  // ImageName is the image name of the model
+  // The name of the Docker image produced by the Model
   // +kubebuilder:validation:Optional
   optional string imageName = 26;
 
+  // The collection of features and their importance, sorted by the greatest importance first
   // +kubebuilder:validation:Optional
-  // Importance is list of feature importance based on the alg of this model, sorted by importance
   repeated FeatureImportance importance = 27;
 
-  // ForecastUri is the uri of the forecast
+  // The URI of the model forecast
   // +kubebuilder:validation:Optional
   optional string forecastUri = 29;
 
-  // Python version is the result of python version call.
+  // The Python version of the data plane used during training
   // +kubebuilder:validation:Optional
   optional string pythonVersion = 30;
 
-  // Python packages is the result of running pip freeze
+  // The Python packages used during training (which is the result of running pip freeze)
   // +kubebuilder:validation:Optional
   map<string, string> pythonPackages = 31;
 
-  // TrainDatasetLocation is the location of the train dataset
+  // TrainDatasetLocation specifies the location of the training dataset
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation trainDataset = 32;
 
-  // TestDatasetLocation is the location of the test dataset used to test this model
+  // TestDatasetLocation specifies the location of the testing dataset
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation testDataset = 33;
 
-  // ValidationDatasetLocation is the location of the dataset used for validation
+  // ValidationDataset specifies the location of the validation dataset
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation validationDataset = 34;
 
-  // ObservedGeneration is the Last generation that was acted on
+  // ObservedGeneration is the last generation that was acted on
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 35;
 
-  // TrainingRows is the amount of rows in training
+  // The number of rows in the training dataset
   // +kubebuilder:validation:Optional
   optional int32 trainingRows = 36;
 
-  // TestingRows is the amount of rows in testing
+  // The number of rows in the testing dataset
   // +kubebuilder:validation:Optional
   optional int32 testingRows = 37;
 
-  // Validation row contain the number of validation rows for cases that we have validation.
+  // The number of rows in the validation dataset, if applicable
   // +kubebuilder:validation:Optional
   optional int32 validationRows = 38;
 
-  // Update in case of terminal failure
-  // Borrowed from cluster api controller
+  // In the case of failure, the Model resource controller will set this field with a failure reason
   // +kubebuilder:validation:Optional
   optional string failureReason = 39;
 
-  // Update in case of terminal failure message
+  // In the case of failure, the Model resource controller will set this field with a failure message
   // +kubebuilder:validation:Optional
   optional string failureMessage = 40;
 
-  // Model Progress in percent, the progress takes into account the different stages of the model.
+  // The progress percentage of the Model, which is derived from the Model's current phase
   // +kubebuilder:validation:Optional
   optional int32 progress = 41;
 
-  // Size of the model size
+  // The size of the model binary in bytes
   // +kubebuilder:validation:Optional
   optional int32 sizeInBytes = 42;
 
-  // Prediction Latency
+  // The measured prediction latency
   // +kubebuilder:validation:Optional
   optional double latency = 43;
 
-  // The URL to the released version
+  // The URL to the released model
+  // +kubebuilder:validation:Optional
   optional string url = 44;
 
-  // If the model is released, this is the name of the predictor
+  // The name of the Predictor in the case that the Model has been released and deployed
   // +kubebuilder:validation:Optional
   optional string predictorName = 45;
 
-  // Released at the time when the model was released
+  // The time at which the Model was set to release
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time releasedAt = 46;
 
-  // Sha 256 of the model tar file
+  // Sha256 of the model tar file
   // +kubebuilder:validation:Optional
   optional string tarfileHash = 47;
 
-  // Sha 256 of the model tar file
+  // Sha256 of the model image
   // +kubebuilder:validation:Optional
   optional string imageHash = 48;
 
-  // Sha 256 of the data sig
+  // TrainingDataHash specifies the hashes for datasets used by the Model
   // +kubebuilder:validation:Optional
   optional DataHashes trainingDataHash = 49;
 
-  // ResourceConsumed during training
+  // TrainingResources details the resources that were consumed by the training workload
   // +kubebuilder:validation:Optional
   optional ResourceConsumption trainingResources = 50;
 
-  // ResourceConsumed during testing
+  // TestingResources details the resources that were consumed by the testing workload
   // +kubebuilder:validation:Optional
   optional ResourceConsumption testingResources = 51;
 
-  // The account that trained the model
+  // The Account which trained the model, derived from the parent Study
   // +kubebuilder:validation:Optional
   optional string trainedBy = 52;
 
-  // The team that trained this model
+  // The team of the Account which trained the model, derived from the parent Study
   // +kubebuilder:validation:Optional
   optional string team = 53;
 
-  // If the model is deployed, this points to the end point.
+  // The endpoint of the Model, which is set after it is deployed to a Predictor
   // +kubebuilder:validation:Optional
   optional string endpoint = 57;
 
-  // Holds the location of log paths
+  // Logs specifies the location of logs produced by workloads associated with the Model
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 58;
 
-  // Roc curve
+  // The Roc/Auc curve of the trained model
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RocAucCurve rocauccurve = 59;
 
-  // PR curve
+  // The Precision/Recall curve of the trained model
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PRCurve prcurve = 60;
 
-  // Confusion matrix
+  // The confusion matrix of the trained model
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ConfusionMatrix confusionMatrix = 61;
 
-  // Holds the top correlation with target
+  // The collection of correlations of the features of the training dataset and the target feature
   // +kubebuilder:validation:Optional
   repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Correlation correlationsWithTarget = 62;
 
-  // Holds the top feature correlation
+  // The top correlations between features of the training dataset
   // +kubebuilder:validation:Optional
   repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Correlation topCorrelations = 63;
 
-  // Last time the object was updated
+  // The last time the object was updated
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 64;
 
-  // The Governance status for this model
+  // Governance specifies the current governance status for the Model
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceStatus governanceStatus = 65;
 
-  // The Interpretability status for this model
+  // Interpretability contains results produced during the explaining phase of the Model
   // +kubebuilder:validation:Optional
   optional InterpretabilityStatus interpretability = 66;
 
-  // The team that trained this model
+  // Images specifies the container images used to train the model
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Images images = 67;
 
@@ -2290,15 +2279,17 @@ message ModelStatus {
   repeated ModelCondition conditions = 68;
 }
 
+// ModelValidation defines a single validation to be run against a model
 message ModelValidation {
+  // The type of model validation
   // +kubebuilder:validation:Optional
   optional string type = 1;
 
-  // PrevModel compare to model
+  // PrevModel specifies a previous model to compare against
   // +kubebuilder:validation:Optional
   optional string prevModel = 2;
 
-  // Labeled dataset used to test the model, when measuring a performance metric
+  // The name of a labeled dataset used to test the model, when measuring a performance metric
   // +kubebuilder:validation:Optional
   optional string datasetName = 3;
 
@@ -2326,7 +2317,7 @@ message ModelValidation {
   // +kubebuilder:validation:Optional
   optional double maxPercent = 11;
 
-  // Agg is used when we measured aggregate performance, for example median or average
+  // Agg specifies the type of aggregate when measuring aggregate performance (e.g. median, average)
   optional string agg = 12;
 }
 
@@ -2361,7 +2352,7 @@ message ModelValidationResult {
   optional int32 durationInSec = 10;
 }
 
-// TransformerEstimatorSpec is an transformer. This is not implemented yet.
+// NLPEstimatorSpec specifies the configuration for an NLP model
 message NLPEstimatorSpec {
   // The name of the base model
   // +kubebuilder:validation:Optional
@@ -2941,7 +2932,7 @@ message ReportTemplate {
   optional ReportSpec spec = 1;
 }
 
-// Represent the feature consumption.
+// ResourceConsumption represents the total resources consumed by a workload
 message ResourceConsumption {
   optional double cpu = 1;
 
@@ -3059,7 +3050,7 @@ message SegmentSpec {
   optional string value = 3;
 }
 
-// Specification for serving this model
+// ServingSpec specifies the requirements to serve a model
 message ServingSpec {
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 1;
 }
@@ -3478,17 +3469,16 @@ message SuccessiveHalvingOptions {
   optional string modality = 3;
 }
 
+// SuccessiveHalvingSpec records the position of a single model in a successive halving search
 message SuccessiveHalvingSpec {
-  // The budget is used in multi fidelity search.
-  // This is the percent of fidelity of the model. The meaning is based on the model configuration.
-  // For example fidelity is number of epochs in sgd alg
-  // Or can be percent of the data in non sgd algorithm.
+  // The budget to be used in a multi-fidelity search, for example the number of epochs
+  // or the percentage of data to train the model with
   // +kubebuilder:validation:Optional
   // +kubebuilder:validation:Maximum=128
   // +kubebuilder:validation:Minimum=0
   optional int32 budget = 1;
 
-  // The bracket of the model when running multi fidelity search.
+  // The bracket of the model
   // +kubebuilder:validation:Optional
   // +kubebuilder:validation:Maximum=128
   // +kubebuilder:validation:Minimum=0
@@ -3500,58 +3490,58 @@ message SuccessiveHalvingSpec {
   // +kubebuilder:validation:Minimum=0
   optional int32 rung = 3;
 
-  // The configuration id allocated to this model in rung 0
+  // The configuration ID allocated to the model
   // +kubebuilder:validation:Optional
   optional int32 confID = 4;
 
-  // The modality type. The default modality is based on the type of models
-  // For deep models - we use epochs.
-  // For classical models - we use data
+  // The type of modality, based on the type of model
+  // For classical models, it should be based on data percentage
+  // For deep models, it should be based on epochs
   // +kubebuilder:validation:Optional
   optional string modality = 26;
 }
 
-// TextPipelineSpec is the specification for preprocessing of text columns
+// TextPipelineSpec represents a single pipeline for transforming text data
 message TextPipelineSpec {
-  // The text encoder (e.g. tfidf)
+  // The text encoder (e.g. TFIDF)
   // +kubebuilder:default:=auto
   // +kubebuilder:validation:Optional
   optional string encoder = 1;
 
-  // Text tokenizer
+  // The text tokenizer character
   // +kubebuilder:validation:Optional
   optional string tokenizer = 2;
 
-  // If true, the controller will Add stop word handling to the text pipeline.
+  // Indicates if the pipeline will add stop word handling
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
   optional bool stopwords = 3;
 
-  // If true, the controller will Add part of speech handling to the text pipeline.
+  // Indicates if the pipeline will add part-of-speech handling
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
   optional bool pos = 4;
 
-  // If true, the controller will Add lemma handling to the text pipeline.
+  // Indicates if the pipeline will implement lemmatization
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
   optional bool lemma = 5;
 
-  // If true, the controller will Add stemmer handling to the text pipeline.
+  // Indicates if the pipeline will implement word stemming
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
   optional bool stem = 6;
 
-  // If true, the controller will Add word embedding handling to the text pipeline.
+  // Indicates if the pipeline will generate a word embedding
   // +kubebuilder:validation:Optional
   optional string embedding = 7;
 
-  // Use SVD
+  // Indicates if the pipeline will add singular value decomposition
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
   optional bool svd = 8;
 
-  // Max SVD Components to use
+  // The maximum number of SVD components to use, if applicable
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
   optional int32 maxSvdComponents = 9;
@@ -3630,90 +3620,85 @@ message TimeSeriesDataSpec {
   optional string seasonality = 19;
 }
 
-// TrainingSpec is the specification of the training process
+// TrainingSpec specifies the configuration of a model training workload
 message TrainingSpec {
-  // The lab where the model should be trained
+  // The reference to the Lab under which the model training Job will be created
   optional k8s.io.api.core.v1.ObjectReference labRef = 1;
 
-  // Priority specify the priority of the model in the training queue.
+  // The priority of the Kubernetes Job created by the Model (medium, by default)
   // +kubebuilder:validation:Optional
   // +kubebuilder:default:="medium"
   optional string priority = 2;
 
-  // The  type of cross validation.
-  // if we have a validation set, we do not do cv.
+  // The type of cross-validation to use, in the case that a validation dataset is not enabled
   // +kubebuilder:default:=kfold
   // +kubebuilder:validation:Optional
   optional string cvtype = 3;
 
-  // If true, this is a cross validation using folds. If False, use the validation set.
+  // Indicates if cross-validation should be used to score models
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
   optional bool cV = 4;
 
-  // The number of folds during cross validation.
+  // The number of folds to use during cross-validation
   // +kubebuilder:default:=5
   // +kubebuilder:validation:Optional
   optional int32 folds = 5;
 
-  // Data Split define how to split the data into test and train.
+  // Split specifies the configuration to generate training, testing, and validation datasets
   // +kubebuilder:validation:Optional
   optional DataSplitSpec split = 6;
 
-  // Evaluation metrics are the scores
+  // EvalMetrics specifies the collection of metrics that will be evaluated after model training is complete
   // +kubebuilder:validation:Optional
   repeated string evalMetrics = 7;
 
-  // Early stopping, stop the training after X models with no improvement.
+  // Indicates if the parent Study should stop sampling new models if there is no improvement in score
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool earlyStop = 8;
 
-  // Add snapshot interval for long training time in minutes.
-  // This is used to checkpoint training model.
+  // The interval, in minutes, at which a snapshot of a partially trained model will be saved.
+  // Applicable to models with long training times for resiliency if training is suddenly stopped
   // +kubebuilder:validation:Optional
   // +kubebuilder:default:=10
   // +kubebuilder:validation:Minimum=0
   optional int32 checkpointInterval = 9;
 
-  // Successive halving represent the configuration for the model training, when running
-  // the SuccessiveHalvingSpec model search algorithm
-  // The metrics are evaluated using the final model, both on the training set
-  // and on the test set
+  // SuccessiveHalving specifies the configuration for a Study to execute a model search using successive halving
   // +kubebuilder:validation:Optional
   optional SuccessiveHalvingSpec sh = 10;
 
-  // Used as the random state for an estimator if needed (for example, in RandomForestClassifier)
+  // The random state used for the model's estimator, if applicable (for example, in RandomForestClassifier)
   // +kubebuilder:default:=42
   // +kubebuilder:validation:Optional
   optional double seed = 11;
 
-  // Resource define the hardware resources req.
+  // Resources specifies the resource requirements allocated to the model training workload
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 12;
 
-  // Gpu indicate that training should be done on a gpu.
+  // Indicates if a GPU will be allocated for model training
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool gpu = 13;
 
-  // Dist indicate the training should be be distributed
+  // Indicates if model training will be distributed across multiple nodes (currently unimplemented)
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool distributed = 14;
 
-  // In case of dist node, how many nodes to use.
+  // The number of nodes to use, in the case of distributed training
   // +kubebuilder:default:=1
   // +kubebuilder:validation:Optional
   optional int32 nodeCount = 15;
 
-  // Set the percent of dataset to use during training. This is usually assigned
-  // by the optimizer.
+  // The number percentage (0 through 100) of rows to be used during training
   // +kubebuilder:default:=100
   // +kubebuilder:validation:Optional
   optional int32 samplePct = 16;
 
-  // For modeling checkpoint
+  // Checkpoint specifies the location to store model checkpoints
   // +kubebuilder:validation:Optional
   optional CheckpointSpec checkpoint = 17;
 }
@@ -3769,7 +3754,7 @@ message UATStageSpec {
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 4;
 }
 
-// VideoPipelineSpec is the specification for preprocessing video data
+// VideoPipelineSpec represents a single pipeline for preprocessing video data
 message VideoPipelineSpec {
   // The date time imputer.
   // +kubebuilder:default:="auto"

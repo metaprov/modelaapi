@@ -146,7 +146,7 @@ type IngressSpec struct {
 	// Rest indicates if the ServingSite will create an Ingress resource to serve REST prediction traffic.
 	// All REST traffic will be served under a single host determined by the FQDN of the ServingSite
 	// (i.e. predictors.model-serving.modela.ai). RestIngress must be enabled to serve DataApps over Ingress
-	// +kubebuilder:default:=true
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	REST *bool `json:"rest,omitempty" protobuf:"varint,3,opt,name=rest"`
 	// IngressClassName is the name of the ingress class that will be applied to created Ingress resources

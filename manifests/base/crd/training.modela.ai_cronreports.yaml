@@ -420,7 +420,7 @@ spec:
                               storage, BucketName is the name of the VirtualBucket
                               resource that exists in the same tenant as the resource
                               specifying the DataLocation. Modela will connect to
-                              the external object storage system and pull the file
+                              the external object storage system to access the file
                               from the path specified by the Path field
                             type: string
                           connectionName:

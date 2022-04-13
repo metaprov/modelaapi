@@ -1568,7 +1568,7 @@ message IngressSpec {
   // Rest indicates if the ServingSite will create an Ingress resource to serve REST prediction traffic.
   // All REST traffic will be served under a single host determined by the FQDN of the ServingSite
   // (i.e. predictors.model-serving.modela.ai). RestIngress must be enabled to serve DataApps over Ingress
-  // +kubebuilder:default:=true
+  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool rest = 3;
 
@@ -2497,7 +2497,7 @@ message ServingSiteList {
   repeated ServingSite items = 2;
 }
 
-// ServingSiteSpec defines the desired state of a Lab
+// ServingSiteSpec defines the desired state of a ServingSite
 message ServingSiteSpec {
   // The user-provided description of the object
   // +kubebuilder:default:=""
@@ -2512,10 +2512,8 @@ message ServingSiteSpec {
   // +kubebuilder:validation:Optional
   optional ResourceLimitSpec limits = 3;
 
-  // Ingress specifies of the Kubernetes Ingress resource which the ServingSite uses to define
-  // external access points for resources that accept traffic to their services (i.e. Predictors). This
-  // field is set automatically during the creation of the ServingSite and neither the contents of the
-  // Ingress nor the IngressName should be modified by an end-user
+  // Ingress defines the specification to create Ingress resources that can route traffic
+  // to the resources which exist under the ServingSite's namespace
   // +kubebuilder:validation:Optional
   optional IngressSpec ingress = 4;
 
@@ -2566,17 +2564,17 @@ message ServingSiteStatus {
   // +kubebuilder:validation:Optional
   optional string failureMessage = 10;
 
-  // GRPC IngressName specifies the name of the Kubernetes Ingress resource which the ServingSite uses to define
-  // external access points for resources that accept traffic to their services (i.e. Predictors). This
-  // field is set automatically during the creation of the ServingSite and neither the contents of the
-  // Ingress nor the IngressName should be modified by an end-user
+  // GrpcIngressName specifies the name of the Kubernetes Ingress resource which the ServingSite uses to define
+  // external access points for resources that accept GRPC-based traffic to their services (i.e. Predictors).
+  // This field is set only after one or more resources are created which use the Ingress access method.
+  // If there are no Ingress rules to serve then the Ingress will be destroyed
   // +kubebuilder:validation:Optional
   optional string grpcIngressName = 11;
 
-  // Rest IngressName specifies the name of the Kubernetes Ingress resource which the ServingSite uses to define
-  // external access points for resources that accept traffic to their services (i.e. Predictors). This
-  // field is set automatically during the creation of the ServingSite and neither the contents of the
-  // Ingress nor the IngressName should be modified by an end-user
+  // RestIngressName specifies the name of the Kubernetes Ingress resource which the ServingSite uses to define
+  // external access points for resources that accept HTTP-based traffic to their services (i.e. DataApps).
+  // This field is set only after one or more resources are created which use the Ingress access method to serve REST traffic.
+  // If there are no Ingress rules to serve then the Ingress will be destroyed
   optional string restIngressName = 12;
 
   // +patchMergeKey=type

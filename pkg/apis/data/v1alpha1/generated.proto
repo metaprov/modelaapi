@@ -687,7 +687,7 @@ message DataLocation {
 
   // In the case of the location type being object storage, BucketName is the name of the VirtualBucket resource that
   // exists in the same tenant as the resource specifying the DataLocation. Modela will connect to the external
-  // object storage system and pull the file from the path specified by the Path field
+  // object storage system to access the file from the path specified by the Path field
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string bucketName = 3;
@@ -1686,6 +1686,7 @@ message DatasetSpec {
   // +kubebuilder:validation:Optional
   optional bool fast = 22;
 
+  // The reference to the Lab under which Jobs created by the Dataset will be executed
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference labRef = 23;
 }

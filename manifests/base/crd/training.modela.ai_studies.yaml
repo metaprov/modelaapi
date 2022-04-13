@@ -338,34 +338,33 @@ spec:
                     properties:
                       corrThreshold:
                         default: 95
-                        description: Remove Features with high correlations
+                        description: The threshold to remove features with high correlations
                         format: int32
                         type: integer
                       cumulativeImportancePercent:
                         default: 95
-                        description: The cummulative importance of all the importance
-                          feature to include
+                        description: The cumulative importance threshold of features
+                          to be included
                         format: int32
                         type: integer
                       embedding:
                         default: true
-                        description: If true, sample embedding methods as part of
-                          candidate algorithms for feature selection Example of embedded
-                          method are tree based selection
+                        description: Indicates if embedded methods will be tested
+                          as part of the candidate algorithms (e.g. tree-based selection)
                         type: boolean
                       enabled:
                         default: true
-                        description: Enable the feature selection.
+                        description: Indicates if feature selection is enabled
                         type: boolean
                       filter:
                         default: true
-                        description: If true, sample filter methods. Filter method
-                          are based on statistical tests. For example, chi square
-                          and anova tests.
+                        description: Indicates if filter methods will be tested as
+                          part of the candidate algorithms (e.g. chi-square or anova
+                          tests)
                         type: boolean
                       pipeline:
-                        description: the Feature selection pipeline. Steps are applied
-                          in the order of the pipeline
+                        description: The collection of feature selection methods that
+                          will be applied in order to the dataset
                         items:
                           enum:
                           - drop-features
@@ -391,32 +390,34 @@ spec:
                           type: string
                         type: array
                       reserved:
-                        description: List of feature names to consider when training
-                          , even after filtering
+                        description: List of features that are reserved and will always
+                          be included in the final feature selection
                         items:
                           type: string
                         type: array
                       samplePct:
                         default: 100
-                        description: Percent of data to sample while preforming the
-                          feature engineering search
+                        description: The number percentage (0 through 100) of the
+                          dataset to sample
                         format: int32
                         type: integer
                       topN:
                         default: 0
-                        description: Select the Top N is the number of feature to
-                          select by importance. If 0, all the features are selected.
+                        description: The number of features that will be selected
+                          based on importance. If TopN is 0, all features will be
+                          selected
                         format: int32
                         type: integer
                       varianceThresholdPct:
                         default: 5
-                        description: Lowvar specify the filter to remove low variance
+                        description: The threshold as a percentage to remove low variance
                           features
                         format: int32
                         type: integer
                       wrapper:
                         default: true
-                        description: If true, sample wrapper methods,
+                        description: Indicates if wrapper methods will be tested as
+                          part of the candidate algorithms
                         type: boolean
                     type: object
                   imbalanceHandler:
@@ -891,23 +892,24 @@ spec:
                 properties:
                   anchor:
                     default: false
-                    description: If true generate anchor explentation.
+                    description: Indicates if anchor explanation diagrams will be
+                      generated
                     type: boolean
                   counterfactual:
                     default: false
-                    description: If true generate counter factual
+                    description: Indicates if counter-factual diagrams will be generated
                     type: boolean
                   ice:
                     default: true
-                    description: If true generate ice plots for each feature.
+                    description: Indicates if ICE (individual condition expectation)
+                      plots will be generated
                     type: boolean
                   icepairs:
-                    description: Define one or more feature pairs. The system will
-                      generate ice scatter diagram for each pair.
+                    description: The collection of feature pairs to generate ICE scatter
+                      diagrams for each
                     items:
                       properties:
                         x:
-                          description: The name of feature A
                           type: string
                         "y":
                           type: string
@@ -915,14 +917,14 @@ spec:
                     type: array
                   lime:
                     default: false
-                    description: If true generate lime plot
+                    description: Indicates if LIME (local interpretable model-agnostic
+                      explanations) diagrams will be generated
                     type: boolean
                   shap:
                     default: auto
-                    description: 'Set the shap type. Set to none for not shap value.
-                      This is set automatically by the system based on the model type.
-                      Due to high compute time, currently only two types are supported
-                      : linear and tree.'
+                    description: The type of SHAP values to be generated. Linear and
+                      tree values are the only recommended types due to the high compute
+                      times of other methods
                     enum:
                     - permutation
                     - partition
@@ -936,11 +938,11 @@ spec:
                     - none
                     type: string
                   shappairs:
-                    description: Generate scatter shap diagram for each pair.
+                    description: The collection of feature pairs to generate SHAP
+                      scatter diagrams for each
                     items:
                       properties:
                         x:
-                          description: The name of feature A
                           type: string
                         "y":
                           type: string
@@ -993,8 +995,8 @@ spec:
                     description: In the case of the location type being object storage,
                       BucketName is the name of the VirtualBucket resource that exists
                       in the same tenant as the resource specifying the DataLocation.
-                      Modela will connect to the external object storage system and
-                      pull the file from the path specified by the Path field
+                      Modela will connect to the external object storage system to
+                      access the file from the path specified by the Path field
                     type: string
                   connectionName:
                     default: ""
@@ -1607,10 +1609,11 @@ spec:
                   for the models.
                 properties:
                   checkpoint:
-                    description: For modeling checkpoint
+                    description: Checkpoint specifies the location to store model
+                      checkpoints
                     properties:
                       location:
-                        description: the Location of the checkpoint spec.
+                        description: The location of the model checkpoint
                         properties:
                           bucketName:
                             default: ""
@@ -1618,7 +1621,7 @@ spec:
                               storage, BucketName is the name of the VirtualBucket
                               resource that exists in the same tenant as the resource
                               specifying the DataLocation. Modela will connect to
-                              the external object storage system and pull the file
+                              the external object storage system to access the file
                               from the path specified by the Path field
                             type: string
                           connectionName:
@@ -1674,20 +1677,22 @@ spec:
                     type: object
                   checkpointInterval:
                     default: 10
-                    description: Add snapshot interval for long training time in minutes.
-                      This is used to checkpoint training model.
+                    description: The interval, in minutes, at which a snapshot of
+                      a partially trained model will be saved. Applicable to models
+                      with long training times for resiliency if training is suddenly
+                      stopped
                     format: int32
                     minimum: 0
                     type: integer
                   cv:
                     default: true
-                    description: If true, this is a cross validation using folds.
-                      If False, use the validation set.
+                    description: Indicates if cross-validation should be used to score
+                      models
                     type: boolean
                   cvtype:
                     default: kfold
-                    description: The  type of cross validation. if we have a validation
-                      set, we do not do cv.
+                    description: The type of cross-validation to use, in the case
+                      that a validation dataset is not enabled
                     enum:
                     - none
                     - group-kfold
@@ -1708,15 +1713,17 @@ spec:
                     type: string
                   distributed:
                     default: false
-                    description: Dist indicate the training should be be distributed
+                    description: Indicates if model training will be distributed across
+                      multiple nodes (currently unimplemented)
                     type: boolean
                   earlyStop:
                     default: false
-                    description: Early stopping, stop the training after X models
-                      with no improvement.
+                    description: Indicates if the parent Study should stop sampling
+                      new models if there is no improvement in score
                     type: boolean
                   evalMetrics:
-                    description: Evaluation metrics are the scores
+                    description: EvalMetrics specifies the collection of metrics that
+                      will be evaluated after model training is complete
                     items:
                       enum:
                       - accuracy
@@ -1798,15 +1805,16 @@ spec:
                     type: array
                   folds:
                     default: 5
-                    description: The number of folds during cross validation.
+                    description: The number of folds to use during cross-validation
                     format: int32
                     type: integer
                   gpu:
                     default: false
-                    description: Gpu indicate that training should be done on a gpu.
+                    description: Indicates if a GPU will be allocated for model training
                     type: boolean
                   labRef:
-                    description: The lab where the model should be trained
+                    description: The reference to the Lab under which the model training
+                      Job will be created
                     properties:
                       apiVersion:
                         description: API version of the referent.
@@ -1843,13 +1851,14 @@ spec:
                     type: object
                   nodeCount:
                     default: 1
-                    description: In case of dist node, how many nodes to use.
+                    description: The number of nodes to use, in the case of distributed
+                      training
                     format: int32
                     type: integer
                   priority:
                     default: medium
-                    description: Priority specify the priority of the model in the
-                      training queue.
+                    description: The priority of the Kubernetes Job created by the
+                      Model (medium, by default)
                     enum:
                     - low
                     - medium
@@ -1857,7 +1866,8 @@ spec:
                     - urgent
                     type: string
                   resources:
-                    description: Resource define the hardware resources req.
+                    description: Resources specifies the resource requirements allocated
+                      to the model training workload
                     properties:
                       cpuImage:
                         description: Reference to the managed CPU trainer image, used
@@ -1972,47 +1982,41 @@ spec:
                     type: object
                   samplePct:
                     default: 100
-                    description: Set the percent of dataset to use during training.
-                      This is usually assigned by the optimizer.
+                    description: The number percentage (0 through 100) of rows to
+                      be used during training
                     format: int32
                     type: integer
                   seed:
                     default: 42
-                    description: Used as the random state for an estimator if needed
-                      (for example, in RandomForestClassifier)
+                    description: The random state used for the model's estimator,
+                      if applicable (for example, in RandomForestClassifier)
                     type: number
                   sh:
-                    description: Successive halving represent the configuration for
-                      the model training, when running the SuccessiveHalvingSpec model
-                      search algorithm The metrics are evaluated using the final model,
-                      both on the training set and on the test set
+                    description: SuccessiveHalving specifies the configuration for
+                      a Study to execute a model search using successive halving
                     properties:
                       bracket:
-                        description: The bracket of the model when running multi fidelity
-                          search.
+                        description: The bracket of the model
                         format: int32
                         maximum: 128
                         minimum: 0
                         type: integer
                       budget:
-                        description: The budget is used in multi fidelity search.
-                          This is the percent of fidelity of the model. The meaning
-                          is based on the model configuration. For example fidelity
-                          is number of epochs in sgd alg Or can be percent of the
-                          data in non sgd algorithm.
+                        description: The budget to be used in a multi-fidelity search,
+                          for example the number of epochs or the percentage of data
+                          to train the model with
                         format: int32
                         maximum: 128
                         minimum: 0
                         type: integer
                       confID:
-                        description: The configuration id allocated to this model
-                          in rung 0
+                        description: The configuration ID allocated to the model
                         format: int32
                         type: integer
                       modality:
-                        description: The modality type. The default modality is based
-                          on the type of models For deep models - we use epochs. For
-                          classical models - we use data
+                        description: The type of modality, based on the type of model
+                          For classical models, it should be based on data percentage
+                          For deep models, it should be based on epochs
                         enum:
                         - data
                         - epochs
@@ -2025,12 +2029,12 @@ spec:
                         type: integer
                     type: object
                   split:
-                    description: Data Split define how to split the data into test
-                      and train.
+                    description: Split specifies the configuration to generate training,
+                      testing, and validation datasets
                     properties:
                       method:
                         default: auto
-                        description: Define the split type.
+                        description: The type of split method
                         enum:
                         - random
                         - split-column
@@ -2040,7 +2044,7 @@ spec:
                         - test-dataset
                         type: string
                       segments:
-                        description: Apply the segments first
+                        description: The collection of segments
                         items:
                           properties:
                             columnName:
@@ -2062,40 +2066,43 @@ spec:
                           type: object
                         type: array
                       splitColumn:
-                        description: The name of the column used to split
+                        description: The name of the column containing a binary value
+                          that indicates if the row should be split. The split type
+                          must use split-column in order for SplitColumn to have an
+                          effect
                         type: string
                       test:
                         default: 20
-                        description: Test is percent of dataset rows which would be
-                          used to compute the objective during
+                        description: The number percentage (0 through 100) of rows
+                          that will be allocated to the training dataset
                         format: int32
                         maximum: 100
                         minimum: 0
                         type: integer
                       testDataset:
                         default: ""
-                        description: The name of the test dataset. If a test dataset
-                          is specified
+                        description: The name of the Dataset resource which will be
+                          used as the testing dataset, applicable only if the split
+                          type uses test-dataset
                         type: string
                       train:
                         default: 80
-                        description: Training is a percent number (0-100) which specify
-                          how much of the data will be used for training
+                        description: The number percentage (0 through 100) of rows
+                          that will be allocated to the training dataset
                         format: int32
                         maximum: 100
                         minimum: 1
                         type: integer
                       trainDataset:
                         default: ""
-                        description: The name of the train dataset.
+                        description: The name of the Dataset resource which will be
+                          used as the training dataset
                         type: string
                       validation:
                         default: 0
-                        description: Validation is percent of dataset rows which would
-                          be used to compute the objective during hyper parameter
-                          search phase. Only used if we do not do cross validation.
-                          default is 10% of the data, if we do not have cross validation.
-                          default is 0% of the data, if we do cross validation.
+                        description: The number percentage (0 through 100) of rows
+                          that will be allocated to the validation dataset. If Validation
+                          is set to 0 the model will default to use cross-validation
                         format: int32
                         maximum: 50
                         minimum: 0
@@ -2221,7 +2228,8 @@ spec:
                 properties:
                   imbalance:
                     default: auto
-                    description: Define how to handle imbalance
+                    description: The method which will be used to handle an imbalanced
+                      dataset
                     enum:
                     - adasyn
                     - baseline-smote
@@ -2235,15 +2243,15 @@ spec:
                     - class-weights
                     type: string
                   pipelines:
-                    description: List of processing pipelines
+                    description: Pipelines contains the collection of feature engineering
+                      pipelines that will be applied to a dataset prior to model training
                     items:
                       description: FeatureEngineeringPipeline represent a single pipeline
-                        for data transformation. The pipeline includes the column
-                        names and the data type.
+                        to transform a dataset
                       properties:
                         audio:
-                          description: Audio specify the pipeline for audio. Not supported
-                            in this release
+                          description: Audio specifies the pipeline to handle audio
+                            data (currently unsupported)
                           properties:
                             featurizer:
                               default: auto
@@ -2251,15 +2259,18 @@ spec:
                               type: string
                           type: object
                         columns:
-                          description: Columns is the name of the columns from the
-                            original file. All the columns must be from the same type
+                          description: The collection of columns which the pipeline
+                            applies to. Each column in the dataset with the data type
+                            of the pipeline should be added to the collection of columns
                           items:
                             type: string
                           type: array
                         custom:
-                          description: Specify custom columns. Custom Columns are
-                            specified by the user
+                          description: Custom specifies a collection of columns to
+                            be generated. Custom columns are specified by end-users
                           items:
+                            description: GeneratedColumnSpec describes a column to
+                              be generated and applied to a dataset
                             properties:
                               datatype:
                                 description: The resulting data type
@@ -2292,7 +2303,8 @@ spec:
                             type: object
                           type: array
                         datatype:
-                          description: The Data type for the feature engineering.
+                          description: The type of data which the pipeline applies
+                            to
                           enum:
                           - boolean
                           - datetime
@@ -2307,7 +2319,8 @@ spec:
                           type: string
                         datetimeTransformation:
                           default: none
-                          description: Specify how For datetime data type,
+                          description: The method to use when handling the date-time
+                            data type
                           enum:
                           - extract-datetime-information
                           - none
@@ -2315,8 +2328,8 @@ spec:
                           type: string
                         discretisation:
                           default: none
-                          description: Convert numerical datatypes to categories.
-                            Valid only if the number data types.
+                          description: The discretisation method, which converts numerical
+                            data types to discrete variables
                           enum:
                           - equal-width-discretisation-
                           - equal-freq-discretisation
@@ -2329,12 +2342,13 @@ spec:
                           type: string
                         drop:
                           default: false
-                          description: If dropped, all the columns in this pipeline
-                            will be dropped.
+                          description: Indicates if all of all the columns specified
+                            by the Columns field should be dropped
                           type: boolean
                         encoding:
                           default: none
-                          description: Encoder. Apply only to categorical variables
+                          description: The encoding method to use for categorical
+                            data types
                           enum:
                           - one-hot-encoding
                           - one-hot-encoding-top-categories
@@ -2352,9 +2366,11 @@ spec:
                           - none
                           type: string
                         generated:
-                          description: Spec to generate one or more columns from existing
-                            columns in this pipeline
+                          description: Generated specifies a collection of columns
+                            to be generated
                           items:
+                            description: GeneratedColumnSpec describes a column to
+                              be generated and applied to a dataset
                             properties:
                               datatype:
                                 description: The resulting data type
@@ -2387,8 +2403,8 @@ spec:
                             type: object
                           type: array
                         image:
-                          description: Image specify the pipeline for images. Not
-                            supported in this release
+                          description: Image specifies the pipeline to handle image
+                            data (currently unsupported)
                           properties:
                             featurizer:
                               default: auto
@@ -2397,7 +2413,8 @@ spec:
                           type: object
                         imputation:
                           default: none
-                          description: imputer
+                          description: The imputation method to use, which fills in
+                            missing values within the columns
                           enum:
                           - remove-rows-with-missing-values
                           - replace-with-mean
@@ -2413,12 +2430,12 @@ spec:
                           - none
                           type: string
                         name:
-                          description: The name of this feature engineering pipeline
+                          description: The name of the pipeline
                           type: string
                         outlierHandling:
                           default: none
-                          description: Specify how to handle outliers. Apply only
-                            to numeric datatypes.
+                          description: The method to use when handling outliers Apply
+                            only to numeric datatypes.
                           enum:
                           - trim-outliers
                           - winsorizer-outliers
@@ -2429,12 +2446,13 @@ spec:
                           type: string
                         passthrough:
                           default: false
-                          description: If true, all the features in this pipeline
-                            will passthrough, without processing.
+                          description: Indicates if the pipeline should not be applied
+                            and the columns should remain unchanged
                           type: boolean
                         scaling:
                           default: none
-                          description: Numeric var scaler, valid only if the
+                          description: The scaling method to use for numerical data
+                            types
                           enum:
                           - standard-scaling
                           - max-abs-scaling
@@ -2446,53 +2464,61 @@ spec:
                           - auto
                           type: string
                         text:
-                          description: Text specify the column transformation for
-                            text columns
+                          description: Text specifies the pipeline to handle raw text
                           properties:
                             embedding:
-                              description: If true, the controller will Add word embedding
-                                handling to the text pipeline.
+                              description: Indicates if the pipeline will generate
+                                a word embedding
                               type: string
                             encoder:
                               default: auto
-                              description: The text encoder (e.g. tfidf)
+                              description: The text encoder (e.g. TFIDF)
+                              enum:
+                              - tfidf
+                              - count-vec
+                              - hasing-vec
+                              - none
+                              - auto
                               type: string
                             lemma:
                               default: true
-                              description: If true, the controller will Add lemma
-                                handling to the text pipeline.
+                              description: Indicates if the pipeline will implement
+                                lemmatization
                               type: boolean
                             maxSvdComponents:
                               default: 0
-                              description: Max SVD Components to use
+                              description: The maximum number of SVD components to
+                                use, if applicable
                               format: int32
                               type: integer
                             pos:
                               default: true
-                              description: If true, the controller will Add part of
-                                speech handling to the text pipeline.
+                              description: Indicates if the pipeline will add part-of-speech
+                                handling
                               type: boolean
                             stem:
                               default: true
-                              description: If true, the controller will Add stemmer
-                                handling to the text pipeline.
+                              description: Indicates if the pipeline will implement
+                                word stemming
                               type: boolean
                             stopwords:
                               default: true
-                              description: If true, the controller will Add stop word
-                                handling to the text pipeline.
+                              description: Indicates if the pipeline will add stop
+                                word handling
                               type: boolean
                             svd:
                               default: true
-                              description: Use SVD
+                              description: Indicates if the pipeline will add singular
+                                value decomposition
                               type: boolean
                             tokenizer:
-                              description: Text tokenizer
+                              description: The text tokenizer character
                               type: string
                           type: object
                         variableTransformation:
                           default: none
-                          description: For numerical data type.
+                          description: The transformation method to use for numerical
+                            data types
                           enum:
                           - log-transformation
                           - reciprocal-transformation
@@ -2504,8 +2530,8 @@ spec:
                           - auto
                           type: string
                         video:
-                          description: Video specify the pipeline for video. Not supported
-                            in this release
+                          description: Video specifies the pipeline to handle video
+                            data (currently unsupported)
                           properties:
                             featurizer:
                               default: auto
@@ -2515,38 +2541,38 @@ spec:
                       type: object
                     type: array
                   selection:
-                    description: Spec for feature selection
+                    description: FeatureSelection specifies the configuration to perform
+                      feature selection on a dataset prior to model training
                     properties:
                       corrThreshold:
                         default: 95
-                        description: Remove Features with high correlations
+                        description: The threshold to remove features with high correlations
                         format: int32
                         type: integer
                       cumulativeImportancePercent:
                         default: 95
-                        description: The cummulative importance of all the importance
-                          feature to include
+                        description: The cumulative importance threshold of features
+                          to be included
                         format: int32
                         type: integer
                       embedding:
                         default: true
-                        description: If true, sample embedding methods as part of
-                          candidate algorithms for feature selection Example of embedded
-                          method are tree based selection
+                        description: Indicates if embedded methods will be tested
+                          as part of the candidate algorithms (e.g. tree-based selection)
                         type: boolean
                       enabled:
                         default: true
-                        description: Enable the feature selection.
+                        description: Indicates if feature selection is enabled
                         type: boolean
                       filter:
                         default: true
-                        description: If true, sample filter methods. Filter method
-                          are based on statistical tests. For example, chi square
-                          and anova tests.
+                        description: Indicates if filter methods will be tested as
+                          part of the candidate algorithms (e.g. chi-square or anova
+                          tests)
                         type: boolean
                       pipeline:
-                        description: the Feature selection pipeline. Steps are applied
-                          in the order of the pipeline
+                        description: The collection of feature selection methods that
+                          will be applied in order to the dataset
                         items:
                           enum:
                           - drop-features
@@ -2572,32 +2598,34 @@ spec:
                           type: string
                         type: array
                       reserved:
-                        description: List of feature names to consider when training
-                          , even after filtering
+                        description: List of features that are reserved and will always
+                          be included in the final feature selection
                         items:
                           type: string
                         type: array
                       samplePct:
                         default: 100
-                        description: Percent of data to sample while preforming the
-                          feature engineering search
+                        description: The number percentage (0 through 100) of the
+                          dataset to sample
                         format: int32
                         type: integer
                       topN:
                         default: 0
-                        description: Select the Top N is the number of feature to
-                          select by importance. If 0, all the features are selected.
+                        description: The number of features that will be selected
+                          based on importance. If TopN is 0, all features will be
+                          selected
                         format: int32
                         type: integer
                       varianceThresholdPct:
                         default: 5
-                        description: Lowvar specify the filter to remove low variance
+                        description: The threshold as a percentage to remove low variance
                           features
                         format: int32
                         type: integer
                       wrapper:
                         default: true
-                        description: If true, sample wrapper methods,
+                        description: Indicates if wrapper methods will be tested as
+                          part of the candidate algorithms
                         type: boolean
                     type: object
                 type: object
@@ -2881,8 +2909,8 @@ spec:
                     description: In the case of the location type being object storage,
                       BucketName is the name of the VirtualBucket resource that exists
                       in the same tenant as the resource specifying the DataLocation.
-                      Modela will connect to the external object storage system and
-                      pull the file from the path specified by the Path field
+                      Modela will connect to the external object storage system to
+                      access the file from the path specified by the Path field
                     type: string
                   connectionName:
                     default: ""
@@ -2942,8 +2970,8 @@ spec:
                     description: In the case of the location type being object storage,
                       BucketName is the name of the VirtualBucket resource that exists
                       in the same tenant as the resource specifying the DataLocation.
-                      Modela will connect to the external object storage system and
-                      pull the file from the path specified by the Path field
+                      Modela will connect to the external object storage system to
+                      access the file from the path specified by the Path field
                     type: string
                   connectionName:
                     default: ""
@@ -2996,15 +3024,12 @@ spec:
                 properties:
                   testingHash:
                     default: ""
-                    description: Testing hash is a sha 256 of the testing data.
                     type: string
                   trainingHash:
                     default: ""
-                    description: Training
                     type: string
                   validationHash:
                     default: ""
-                    description: Pointer to the validation
                     type: string
                 type: object
               trainingRows:
@@ -3030,8 +3055,8 @@ spec:
                     description: In the case of the location type being object storage,
                       BucketName is the name of the VirtualBucket resource that exists
                       in the same tenant as the resource specifying the DataLocation.
-                      Modela will connect to the external object storage system and
-                      pull the file from the path specified by the Path field
+                      Modela will connect to the external object storage system to
+                      access the file from the path specified by the Path field
                     type: string
                   connectionName:
                     default: ""
