@@ -27,6 +27,7 @@ spec:
       type: string
     - jsonPath: .status.progress
       name: Progress
+      priority: 1
       type: number
     - jsonPath: .status.pipelineName
       name: Pipeline

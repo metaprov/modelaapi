@@ -42,7 +42,7 @@ type ModelCompilerRunCondition struct {
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
-// +kubebuilder:printcolumn:name="Progress",type="number",JSONPath=".status.progress"
+// +kubebuilder:printcolumn:name="Progress",type="number",JSONPath=".status.progress",priority=1
 // +kubebuilder:printcolumn:name="Model",type="string",JSONPath=".status.modelName"
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".status.versionName"
 // +kubebuilder:printcolumn:name="StartTime",type="date",JSONPath=".status.startTime",priority=1

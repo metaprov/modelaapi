@@ -26,6 +26,7 @@ spec:
       type: string
     - jsonPath: .status.progress
       name: Progress
+      priority: 1
       type: number
     - jsonPath: .spec.owner
       name: Owner

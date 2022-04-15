@@ -168,7 +168,7 @@ type ModelCondition struct {
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
 // +kubebuilder:printcolumn:name="Progress",type="string",JSONPath=".status.progress",priority=1
 // +kubebuilder:printcolumn:name="Best",type="boolean",JSONPath=".status.best"
-// +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",priority=1,priority=1
+// +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",priority=1
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName",priority=1
 // +kubebuilder:printcolumn:name="Study",type="string",JSONPath=".spec.studyName"
 // +kubebuilder:printcolumn:name="Task",type="string",JSONPath=".spec.task",priority=1

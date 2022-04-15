@@ -16,7 +16,7 @@ const (
 	ReportPhasePending   ReportPhase = "Pending"
 	ReportPhaseRunning   ReportPhase = "Running"
 	ReportPhaseCompleted ReportPhase = "Completed"
-	ReportPhaseFailed    ReportPhase = "IsFailed"
+	ReportPhaseFailed    ReportPhase = "Failed"
 )
 
 // ReportType is the type of report
