@@ -374,7 +374,7 @@ type EnsembleSpec struct {
 
 // ModelStatus defines the observed state of a Model
 type ModelStatus struct {
-	// StartTime represents the time at which the execution of the Model completed
+	// StartTime represents the time at which the execution of the Model started
 	// +kubebuilder:validation:Optional
 	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,1,opt,name=startTime"`
 	// TrainStartTime represents the time at which the Model started training
@@ -723,7 +723,7 @@ type SuccessiveHalvingSpec struct {
 	Modality *catalog.ModalityType `json:"modality,omitempty" protobuf:"bytes,26,opt,name=modality"`
 }
 
-// DataSplitSpec specifies the configuration to split a dataset for use in training and evaluating a model
+// DataSplitSpec specifies the configuration to split a dataset into training and testing datasets
 type DataSplitSpec struct {
 	// The type of split method
 	// +kubebuilder:default:="auto"
@@ -760,7 +760,7 @@ type DataSplitSpec struct {
 	// +kubebuilder:validation:Optional
 	TrainDatasetName *string `json:"trainDataset,omitempty" protobuf:"bytes,7,rep,name=trainDataset"`
 	// The name of the Dataset resource which will be used as the testing dataset, applicable
-	// only if the split type uses test-dataset
+	// if the split type uses test-dataset. If enabled, the training dataset will not be split and used as-is
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	TestDatasetName *string `json:"testDataset,omitempty" protobuf:"bytes,8,rep,name=testDataset"`

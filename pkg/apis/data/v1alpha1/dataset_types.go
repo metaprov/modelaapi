@@ -439,15 +439,15 @@ type DataLocation struct {
 	// +kubebuilder:default:="object"
 	// +kubebuilder:validation:Optional
 	Type *DataLocationType `json:"type" protobuf:"bytes,1,opt,name=type"`
-	// In the case of the location type being a database, ConnectionName is the name of the Connection resource
-	// in the same tenant namespace as the resource which specifies the DataLocation. Modela will connect to the database
-	// specified by the Connection and execute the query specified by the `SQL` field
+	// In the case of the type of location being a database, ConnectionName specifies the name of the Connection resource
+	// that exists in the same tenant as the resource specifying the DataLocation. Modela will attempt to connect
+	// to the database using the credentials specified in the Connection, and will execute the query specified by the SQL field
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	ConnectionName *string `json:"connectionName" protobuf:"bytes,2,opt,name=connectionName"`
-	// In the case of the location type being object storage, BucketName is the name of the VirtualBucket resource that
-	// exists in the same tenant as the resource specifying the DataLocation. Modela will connect to the external
-	// object storage system to access the file from the path specified by the Path field
+	// In the case of the location type being an object storage system, BucketName is the name of the VirtualBucket resource
+	// that exists in the same tenant as the resource specifying the DataLocation. Modela will connect to the external
+	// object storage system, and will access the file from the path specified by the Path field
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	BucketName *string `json:"bucketName" protobuf:"bytes,3,opt,name=bucketName"`
@@ -456,8 +456,7 @@ type DataLocation struct {
 	//
 	// `modela/depot/tenants/{tenant}/dataproducts/{dataproduct}/dataproductversions/{version}/{resource_type}/{resource_name}/data/raw/{file_name}`
 	//
-	// The path does not need to adhere to this format;
-	// you can still pass the path of a file inside a bucket not managed by Modela
+	// The path does not need to adhere to this format; you can still pass the path of a file inside a bucket not managed by Modela
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Path *string `json:"path" protobuf:"bytes,4,opt,name=path"`
@@ -465,11 +464,11 @@ type DataLocation struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Table *string `json:"table" protobuf:"bytes,5,opt,name=table"`
-	// The name of a database that exists inside a database server that exists at the connection specified by the `ConnectionName` field
+	// The name of a database inside the database system specified by the ConnectionName field
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Database *string `json:"database" protobuf:"bytes,6,opt,name=database"`
-	// The SQL statement which will be executed to query data from a table
+	// The SQL statement which will be executed to query data from the table specified by Table
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Sql *string `json:"sql" protobuf:"bytes,7,opt,name=sql"`
