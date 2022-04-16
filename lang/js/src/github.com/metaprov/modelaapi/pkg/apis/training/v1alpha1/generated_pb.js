@@ -2734,8 +2734,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AlgorithmSearchSp
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AlgorithmSearchSpaceSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
-    allowlistList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    filter: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f
+    allowlistList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -2776,10 +2775,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AlgorithmSearchSp
       var value = /** @type {string} */ (reader.readString());
       msg.addAllowlist(value);
       break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setFilter(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -2813,13 +2808,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AlgorithmSearchSp
   if (f.length > 0) {
     writer.writeRepeatedString(
       1,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 2));
-  if (f != null) {
-    writer.writeString(
-      2,
       f
     );
   }
@@ -2860,42 +2848,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AlgorithmSearchSp
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AlgorithmSearchSpaceSpec.prototype.clearAllowlistList = function() {
   return this.setAllowlistList([]);
-};
-
-
-/**
- * optional string filter = 2;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AlgorithmSearchSpaceSpec.prototype.getFilter = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AlgorithmSearchSpaceSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AlgorithmSearchSpaceSpec.prototype.setFilter = function(value) {
-  return jspb.Message.setField(this, 2, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AlgorithmSearchSpaceSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AlgorithmSearchSpaceSpec.prototype.clearFilter = function() {
-  return jspb.Message.setField(this, 2, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AlgorithmSearchSpaceSpec.prototype.hasFilter = function() {
-  return jspb.Message.getField(this, 2) != null;
 };
 
 
@@ -28764,7 +28716,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.toObjec
     archived: (f = jspb.Message.getBooleanField(msg, 25)) == null ? undefined : f,
     forecasted: (f = jspb.Message.getBooleanField(msg, 26)) == null ? undefined : f,
     released: (f = jspb.Message.getBooleanField(msg, 27)) == null ? undefined : f,
-    benchmarked: (f = jspb.Message.getBooleanField(msg, 28)) == null ? undefined : f,
     explained: (f = jspb.Message.getBooleanField(msg, 29)) == null ? undefined : f,
     baseline: (f = jspb.Message.getBooleanField(msg, 30)) == null ? undefined : f,
     fast: (f = jspb.Message.getBooleanField(msg, 31)) == null ? undefined : f,
@@ -28926,10 +28877,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.deseria
     case 27:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setReleased(value);
-      break;
-    case 28:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setBenchmarked(value);
       break;
     case 29:
       var value = /** @type {boolean} */ (reader.readBool());
@@ -29208,13 +29155,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.seriali
   if (f != null) {
     writer.writeBool(
       27,
-      f
-    );
-  }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 28));
-  if (f != null) {
-    writer.writeBool(
-      28,
       f
     );
   }
@@ -30265,42 +30205,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.hasReleased = function() {
   return jspb.Message.getField(this, 27) != null;
-};
-
-
-/**
- * optional bool benchmarked = 28;
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.getBenchmarked = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 28, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.setBenchmarked = function(value) {
-  return jspb.Message.setField(this, 28, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.clearBenchmarked = function() {
-  return jspb.Message.setField(this, 28, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.hasBenchmarked = function() {
-  return jspb.Message.getField(this, 28) != null;
 };
 
 
@@ -44153,7 +44057,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SearchSpec.toObje
     retainedfor: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
     searchspace: (f = msg.getSearchspace()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AlgorithmSearchSpaceSpec.toObject(includeInstance, f),
     earlystopafter: (f = jspb.Message.getField(msg, 12)) == null ? undefined : f,
-    keeponlytopmodel: (f = jspb.Message.getBooleanField(msg, 13)) == null ? undefined : f,
     objective: (f = jspb.Message.getField(msg, 14)) == null ? undefined : f,
     objective2: (f = jspb.Message.getField(msg, 15)) == null ? undefined : f
   };
@@ -44241,10 +44144,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SearchSpec.deseri
     case 12:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setEarlystopafter(value);
-      break;
-    case 13:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setKeeponlytopmodel(value);
       break;
     case 14:
       var value = /** @type {string} */ (reader.readString());
@@ -44366,13 +44265,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SearchSpec.serial
   if (f != null) {
     writer.writeInt32(
       12,
-      f
-    );
-  }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 13));
-  if (f != null) {
-    writer.writeBool(
-      13,
       f
     );
   }
@@ -44824,42 +44716,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SearchSpec.protot
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SearchSpec.prototype.hasEarlystopafter = function() {
   return jspb.Message.getField(this, 12) != null;
-};
-
-
-/**
- * optional bool keepOnlyTopModel = 13;
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SearchSpec.prototype.getKeeponlytopmodel = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 13, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SearchSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SearchSpec.prototype.setKeeponlytopmodel = function(value) {
-  return jspb.Message.setField(this, 13, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SearchSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SearchSpec.prototype.clearKeeponlytopmodel = function() {
-  return jspb.Message.setField(this, 13, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SearchSpec.prototype.hasKeeponlytopmodel = function() {
-  return jspb.Message.getField(this, 13) != null;
 };
 
 
@@ -46983,7 +46839,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.toObjec
     profiled: (f = jspb.Message.getBooleanField(msg, 17)) == null ? undefined : f,
     modelpublished: (f = jspb.Message.getBooleanField(msg, 18)) == null ? undefined : f,
     modelimagepushed: (f = jspb.Message.getBooleanField(msg, 19)) == null ? undefined : f,
-    modelbenchmarked: (f = jspb.Message.getBooleanField(msg, 20)) == null ? undefined : f,
     modelexplained: (f = jspb.Message.getBooleanField(msg, 21)) == null ? undefined : f,
     fast: (f = jspb.Message.getBooleanField(msg, 22)) == null ? undefined : f,
     location: (f = msg.getLocation()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.toObject(includeInstance, f),
@@ -47117,10 +46972,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.deseria
     case 19:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setModelimagepushed(value);
-      break;
-    case 20:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setModelbenchmarked(value);
       break;
     case 21:
       var value = /** @type {boolean} */ (reader.readBool());
@@ -47347,13 +47198,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.seriali
   if (f != null) {
     writer.writeBool(
       19,
-      f
-    );
-  }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 20));
-  if (f != null) {
-    writer.writeBool(
-      20,
       f
     );
   }
@@ -48150,42 +47994,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototy
 
 
 /**
- * optional bool modelBenchmarked = 20;
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.getModelbenchmarked = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 20, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.setModelbenchmarked = function(value) {
-  return jspb.Message.setField(this, 20, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.clearModelbenchmarked = function() {
-  return jspb.Message.setField(this, 20, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.hasModelbenchmarked = function() {
-  return jspb.Message.getField(this, 20) != null;
-};
-
-
-/**
  * optional bool modelExplained = 21;
  * @return {boolean}
  */
@@ -48716,7 +48524,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.toObj
     testingrows: (f = jspb.Message.getField(msg, 18)) == null ? undefined : f,
     validationrows: (f = jspb.Message.getField(msg, 19)) == null ? undefined : f,
     progress: (f = jspb.Message.getField(msg, 20)) == null ? undefined : f,
-    baselinemodel: (f = jspb.Message.getField(msg, 21)) == null ? undefined : f,
     trainingdatahash: (f = msg.getTrainingdatahash()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataHashes.toObject(includeInstance, f),
     triggeredby: (f = jspb.Message.getField(msg, 23)) == null ? undefined : f,
     logs: (f = msg.getLogs()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.toObject(includeInstance, f),
@@ -48847,10 +48654,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.deser
     case 20:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setProgress(value);
-      break;
-    case 21:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setBaselinemodel(value);
       break;
     case 22:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataHashes;
@@ -49080,13 +48883,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.seria
   if (f != null) {
     writer.writeInt32(
       20,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 21));
-  if (f != null) {
-    writer.writeString(
-      21,
       f
     );
   }
@@ -49882,42 +49678,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.hasProgress = function() {
   return jspb.Message.getField(this, 20) != null;
-};
-
-
-/**
- * optional string baselineModel = 21;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.getBaselinemodel = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 21, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.setBaselinemodel = function(value) {
-  return jspb.Message.setField(this, 21, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.clearBaselinemodel = function() {
-  return jspb.Message.setField(this, 21, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.hasBaselinemodel = function() {
-  return jspb.Message.getField(this, 21) != null;
 };
 
 

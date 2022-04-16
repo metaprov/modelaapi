@@ -248,7 +248,7 @@ type SearchSpec struct {
 	// +kubebuilder:validation:Optional
 	Objective *catalog.Metric `json:"objective,omitempty" protobuf:"bytes,14,opt,name=objective"`
 	// Objective2 is the second objective to consider during optimization.
-	// +kubebuilder:default:="none" 
+	// +kubebuilder:default:="none"
 	// +kubebuilder:validation:Optional
 	Objective2 *catalog.Metric `json:"objective2,omitempty" protobuf:"bytes,15,opt,name=objective2"`
 }
@@ -295,12 +295,6 @@ type AlgorithmSearchSpaceSpec struct {
 	// If AllowList is empty, all algorithms will be available for training
 	// +kubebuilder:validation:Optional
 	AllowList []catalog.ClassicEstimatorName `json:"allowlist,omitempty" protobuf:"bytes,1,rep,name=allowlist"`
-<<<<<<< HEAD
-=======
-	// +kubebuilder:default:="none"
-	// +kubebuilder:validation:Optional
-	AlgorithmFilter *AlgorithmFilterName `json:"filter,omitempty" protobuf:"bytes,2,opt,name=filter"`
->>>>>>> 6ba5015898ff8e72ba7ef359b8fe5fed230386b5
 }
 
 // Study Schedule is used for cases where the study is scheduled to start at future date time.
@@ -486,15 +480,8 @@ type StudySpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	ModelImagePushed *bool `json:"modelImagePushed,omitempty" protobuf:"varint,19,opt,name=modelImagePushed"`
-<<<<<<< HEAD
-	// Set to true if you want the system to create model explentation for the final models
-=======
-	// +kubebuilder:default:=true
-	// +kubebuilder:validation:Optional
-	ModelBenchmarked *bool `json:"modelBenchmarked,omitempty" protobuf:"varint,20,opt,name=modelBenchmarked"`
 	// ModelExplained indicates if interpretability diagrams, as specified
 	// by the Interpretability field, will be produced for the final model
->>>>>>> 6ba5015898ff8e72ba7ef359b8fe5fed230386b5
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
 	ModelExplained *bool `json:"modelExplained,omitempty" protobuf:"varint,21,opt,name=modelExplained"`
@@ -603,16 +590,10 @@ type StudyStatus struct {
 	// The progress percentage of the Study, which is derived from the Study's current phase
 	// +kubebuilder:validation:Optional
 	Progress int32 `json:"progress" protobuf:"varint,20,opt,name=progress"`
-<<<<<<< HEAD
 	// Sha 256 of the data sig
 	// +kubebuilder:validation:Optional
-=======
-	// +kubebuilder:default:="none"
-	// +kubebuilder:validation:Optional
-	BaselineModel catalog.ClassicEstimatorName `json:"baselineModel,omitempty" protobuf:"bytes,21,opt,name=baselineModel"`
 	// TrainingDataHash specifies the hashes for datasets used by the Study
 	//+kubebuilder:validation:Optional
->>>>>>> 6ba5015898ff8e72ba7ef359b8fe5fed230386b5
 	TrainingDataHash DataHashes `json:"trainingDataHash,omitempty" protobuf:"bytes,22,opt,name=trainingDataHash"`
 	// The type of trigger which started the Study
 	//+kubebuilder:validation:Optional

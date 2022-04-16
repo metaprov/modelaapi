@@ -14,9 +14,6 @@ export class AlgorithmSearchSpaceSpec extends jspb.Message {
   clearAllowlistList(): AlgorithmSearchSpaceSpec;
   addAllowlist(value: string, index?: number): AlgorithmSearchSpaceSpec;
 
-  getFilter(): string;
-  setFilter(value: string): AlgorithmSearchSpaceSpec;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AlgorithmSearchSpaceSpec.AsObject;
   static toObject(includeInstance: boolean, msg: AlgorithmSearchSpaceSpec): AlgorithmSearchSpaceSpec.AsObject;
@@ -28,7 +25,6 @@ export class AlgorithmSearchSpaceSpec extends jspb.Message {
 export namespace AlgorithmSearchSpaceSpec {
   export type AsObject = {
     allowlistList: Array<string>,
-    filter: string,
   }
 }
 
@@ -2887,9 +2883,6 @@ export class ModelSpec extends jspb.Message {
   getReleased(): boolean;
   setReleased(value: boolean): ModelSpec;
 
-  getBenchmarked(): boolean;
-  setBenchmarked(value: boolean): ModelSpec;
-
   getExplained(): boolean;
   setExplained(value: boolean): ModelSpec;
 
@@ -2978,7 +2971,6 @@ export namespace ModelSpec {
     archived: boolean,
     forecasted: boolean,
     released: boolean,
-    benchmarked: boolean,
     explained: boolean,
     baseline: boolean,
     fast: boolean,
@@ -4435,9 +4427,6 @@ export class SearchSpec extends jspb.Message {
   getEarlystopafter(): number;
   setEarlystopafter(value: number): SearchSpec;
 
-  getKeeponlytopmodel(): boolean;
-  setKeeponlytopmodel(value: boolean): SearchSpec;
-
   getObjective(): string;
   setObjective(value: string): SearchSpec;
 
@@ -4466,7 +4455,6 @@ export namespace SearchSpec {
     retainedfor: number,
     searchspace?: AlgorithmSearchSpaceSpec.AsObject,
     earlystopafter: number,
-    keeponlytopmodel: boolean,
     objective: string,
     objective2: string,
   }
@@ -4780,9 +4768,6 @@ export class StudySpec extends jspb.Message {
   getModelimagepushed(): boolean;
   setModelimagepushed(value: boolean): StudySpec;
 
-  getModelbenchmarked(): boolean;
-  setModelbenchmarked(value: boolean): StudySpec;
-
   getModelexplained(): boolean;
   setModelexplained(value: boolean): StudySpec;
 
@@ -4861,7 +4846,6 @@ export namespace StudySpec {
     profiled: boolean,
     modelpublished: boolean,
     modelimagepushed: boolean,
-    modelbenchmarked: boolean,
     modelexplained: boolean,
     fast: boolean,
     location?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
@@ -4945,9 +4929,6 @@ export class StudyStatus extends jspb.Message {
 
   getProgress(): number;
   setProgress(value: number): StudyStatus;
-
-  getBaselinemodel(): string;
-  setBaselinemodel(value: string): StudyStatus;
 
   getTrainingdatahash(): DataHashes | undefined;
   setTrainingdatahash(value?: DataHashes): StudyStatus;
@@ -5041,7 +5022,6 @@ export namespace StudyStatus {
     testingrows: number,
     validationrows: number,
     progress: number,
-    baselinemodel: string,
     trainingdatahash?: DataHashes.AsObject,
     triggeredby: string,
     logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,

@@ -112,10 +112,6 @@ spec:
                 description: Baseline indicates if the Model was produced by the baseline
                   phase of a Study
                 type: boolean
-              benchmarked:
-                default: false
-                description: Benchmarked indicates if the Model is a benchmark model
-                type: boolean
               chatbot:
                 description: Chatbot specifies the estimator for a chatbot model (currently
                   unimplemented)
@@ -1170,25 +1166,26 @@ spec:
                 properties:
                   bucketName:
                     default: ""
-                    description: In the case of the location type being object storage,
-                      BucketName is the name of the VirtualBucket resource that exists
-                      in the same tenant as the resource specifying the DataLocation.
-                      Modela will connect to the external object storage system to
-                      access the file from the path specified by the Path field
+                    description: In the case of the location type being an object
+                      storage system, BucketName is the name of the VirtualBucket
+                      resource that exists in the same tenant as the resource specifying
+                      the DataLocation. Modela will connect to the external object
+                      storage system, and will access the file from the path specified
+                      by the Path field
                     type: string
                   connectionName:
                     default: ""
-                    description: In the case of the location type being a database,
-                      ConnectionName is the name of the Connection resource in the
-                      same tenant namespace as the resource which specifies the DataLocation.
-                      Modela will connect to the database specified by the Connection
-                      and execute the query specified by the `SQL` field
+                    description: In the case of the type of location being a database,
+                      ConnectionName specifies the name of the Connection resource
+                      that exists in the same tenant as the resource specifying the
+                      DataLocation. Modela will attempt to connect to the database
+                      using the credentials specified in the Connection, and will
+                      execute the query specified by the SQL field
                     type: string
                   database:
                     default: ""
-                    description: The name of a database that exists inside a database
-                      server that exists at the connection specified by the `ConnectionName`
-                      field
+                    description: The name of a database inside the database system
+                      specified by the ConnectionName field
                     type: string
                   path:
                     default: ""
@@ -1203,7 +1200,7 @@ spec:
                   sql:
                     default: ""
                     description: The SQL statement which will be executed to query
-                      data from a table
+                      data from the table specified by Table
                     type: string
                   table:
                     default: ""
@@ -1549,27 +1546,28 @@ spec:
                         properties:
                           bucketName:
                             default: ""
-                            description: In the case of the location type being object
-                              storage, BucketName is the name of the VirtualBucket
-                              resource that exists in the same tenant as the resource
-                              specifying the DataLocation. Modela will connect to
-                              the external object storage system to access the file
-                              from the path specified by the Path field
+                            description: In the case of the location type being an
+                              object storage system, BucketName is the name of the
+                              VirtualBucket resource that exists in the same tenant
+                              as the resource specifying the DataLocation. Modela
+                              will connect to the external object storage system,
+                              and will access the file from the path specified by
+                              the Path field
                             type: string
                           connectionName:
                             default: ""
-                            description: In the case of the location type being a
-                              database, ConnectionName is the name of the Connection
-                              resource in the same tenant namespace as the resource
-                              which specifies the DataLocation. Modela will connect
-                              to the database specified by the Connection and execute
-                              the query specified by the `SQL` field
+                            description: In the case of the type of location being
+                              a database, ConnectionName specifies the name of the
+                              Connection resource that exists in the same tenant as
+                              the resource specifying the DataLocation. Modela will
+                              attempt to connect to the database using the credentials
+                              specified in the Connection, and will execute the query
+                              specified by the SQL field
                             type: string
                           database:
                             default: ""
-                            description: The name of a database that exists inside
-                              a database server that exists at the connection specified
-                              by the `ConnectionName` field
+                            description: The name of a database inside the database
+                              system specified by the ConnectionName field
                             type: string
                           path:
                             default: ""
@@ -1585,7 +1583,7 @@ spec:
                           sql:
                             default: ""
                             description: The SQL statement which will be executed
-                              to query data from a table
+                              to query data from the table specified by Table
                             type: string
                           table:
                             default: ""
@@ -2014,8 +2012,9 @@ spec:
                       testDataset:
                         default: ""
                         description: The name of the Dataset resource which will be
-                          used as the testing dataset, applicable only if the split
-                          type uses test-dataset
+                          used as the testing dataset, applicable if the split type
+                          uses test-dataset. If enabled, the training dataset will
+                          not be split and used as-is
                         type: string
                       train:
                         default: 80
@@ -2509,7 +2508,7 @@ spec:
                 type: integer
               startTime:
                 description: StartTime represents the time at which the execution
-                  of the Model completed
+                  of the Model started
                 format: date-time
                 type: string
               tarUri:
@@ -2621,25 +2620,26 @@ spec:
                 properties:
                   bucketName:
                     default: ""
-                    description: In the case of the location type being object storage,
-                      BucketName is the name of the VirtualBucket resource that exists
-                      in the same tenant as the resource specifying the DataLocation.
-                      Modela will connect to the external object storage system to
-                      access the file from the path specified by the Path field
+                    description: In the case of the location type being an object
+                      storage system, BucketName is the name of the VirtualBucket
+                      resource that exists in the same tenant as the resource specifying
+                      the DataLocation. Modela will connect to the external object
+                      storage system, and will access the file from the path specified
+                      by the Path field
                     type: string
                   connectionName:
                     default: ""
-                    description: In the case of the location type being a database,
-                      ConnectionName is the name of the Connection resource in the
-                      same tenant namespace as the resource which specifies the DataLocation.
-                      Modela will connect to the database specified by the Connection
-                      and execute the query specified by the `SQL` field
+                    description: In the case of the type of location being a database,
+                      ConnectionName specifies the name of the Connection resource
+                      that exists in the same tenant as the resource specifying the
+                      DataLocation. Modela will attempt to connect to the database
+                      using the credentials specified in the Connection, and will
+                      execute the query specified by the SQL field
                     type: string
                   database:
                     default: ""
-                    description: The name of a database that exists inside a database
-                      server that exists at the connection specified by the `ConnectionName`
-                      field
+                    description: The name of a database inside the database system
+                      specified by the ConnectionName field
                     type: string
                   path:
                     default: ""
@@ -2654,7 +2654,7 @@ spec:
                   sql:
                     default: ""
                     description: The SQL statement which will be executed to query
-                      data from a table
+                      data from the table specified by Table
                     type: string
                   table:
                     default: ""
@@ -2825,25 +2825,26 @@ spec:
                 properties:
                   bucketName:
                     default: ""
-                    description: In the case of the location type being object storage,
-                      BucketName is the name of the VirtualBucket resource that exists
-                      in the same tenant as the resource specifying the DataLocation.
-                      Modela will connect to the external object storage system to
-                      access the file from the path specified by the Path field
+                    description: In the case of the location type being an object
+                      storage system, BucketName is the name of the VirtualBucket
+                      resource that exists in the same tenant as the resource specifying
+                      the DataLocation. Modela will connect to the external object
+                      storage system, and will access the file from the path specified
+                      by the Path field
                     type: string
                   connectionName:
                     default: ""
-                    description: In the case of the location type being a database,
-                      ConnectionName is the name of the Connection resource in the
-                      same tenant namespace as the resource which specifies the DataLocation.
-                      Modela will connect to the database specified by the Connection
-                      and execute the query specified by the `SQL` field
+                    description: In the case of the type of location being a database,
+                      ConnectionName specifies the name of the Connection resource
+                      that exists in the same tenant as the resource specifying the
+                      DataLocation. Modela will attempt to connect to the database
+                      using the credentials specified in the Connection, and will
+                      execute the query specified by the SQL field
                     type: string
                   database:
                     default: ""
-                    description: The name of a database that exists inside a database
-                      server that exists at the connection specified by the `ConnectionName`
-                      field
+                    description: The name of a database inside the database system
+                      specified by the ConnectionName field
                     type: string
                   path:
                     default: ""
@@ -2858,7 +2859,7 @@ spec:
                   sql:
                     default: ""
                     description: The SQL statement which will be executed to query
-                      data from a table
+                      data from the table specified by Table
                     type: string
                   table:
                     default: ""
@@ -2933,25 +2934,26 @@ spec:
                 properties:
                   bucketName:
                     default: ""
-                    description: In the case of the location type being object storage,
-                      BucketName is the name of the VirtualBucket resource that exists
-                      in the same tenant as the resource specifying the DataLocation.
-                      Modela will connect to the external object storage system to
-                      access the file from the path specified by the Path field
+                    description: In the case of the location type being an object
+                      storage system, BucketName is the name of the VirtualBucket
+                      resource that exists in the same tenant as the resource specifying
+                      the DataLocation. Modela will connect to the external object
+                      storage system, and will access the file from the path specified
+                      by the Path field
                     type: string
                   connectionName:
                     default: ""
-                    description: In the case of the location type being a database,
-                      ConnectionName is the name of the Connection resource in the
-                      same tenant namespace as the resource which specifies the DataLocation.
-                      Modela will connect to the database specified by the Connection
-                      and execute the query specified by the `SQL` field
+                    description: In the case of the type of location being a database,
+                      ConnectionName specifies the name of the Connection resource
+                      that exists in the same tenant as the resource specifying the
+                      DataLocation. Modela will attempt to connect to the database
+                      using the credentials specified in the Connection, and will
+                      execute the query specified by the SQL field
                     type: string
                   database:
                     default: ""
-                    description: The name of a database that exists inside a database
-                      server that exists at the connection specified by the `ConnectionName`
-                      field
+                    description: The name of a database inside the database system
+                      specified by the ConnectionName field
                     type: string
                   path:
                     default: ""
@@ -2966,7 +2968,7 @@ spec:
                   sql:
                     default: ""
                     description: The SQL statement which will be executed to query
-                      data from a table
+                      data from the table specified by Table
                     type: string
                   table:
                     default: ""
