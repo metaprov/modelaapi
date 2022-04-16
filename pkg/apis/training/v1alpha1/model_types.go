@@ -300,10 +300,6 @@ type ModelSpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Released *bool `json:"released,omitempty" protobuf:"varint,27,opt,name=released"`
-	// Benchmarked indicates if the Model is a benchmark model
-	// +kubebuilder:default:=false
-	// +kubebuilder:validation:Optional
-	Benchmarked *bool `json:"benchmarked,omitempty" protobuf:"varint,28,opt,name=benchmarked"`
 	// Explained indicates if a workload to compute SHAP values/diagrams should be executed
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional

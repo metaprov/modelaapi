@@ -244,15 +244,11 @@ type SearchSpec struct {
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
 	EarlyStopAfter *int32 `json:"earlyStopAfter,omitempty" protobuf:"varint,12,opt,name=earlyStopAfter"`
-	// If true, keep only the top model from an algorithm
-	// +kubebuilder:default:=true
-	// +kubebuilder:validation:Optional
-	KeepOnlyTopModel *bool `json:"keepOnlyTopModel,omitempty" protobuf:"varint,13,opt,name=keepOnlyTopModel"`
 	// Objective is the objective defined how the study controller will compare model performance.
 	// +kubebuilder:validation:Optional
 	Objective *catalog.Metric `json:"objective,omitempty" protobuf:"bytes,14,opt,name=objective"`
 	// Objective2 is the second objective to consider during optimization.
-	// +kubebuilder:default:="none"
+	// +kubebuilder:default:="none" 
 	// +kubebuilder:validation:Optional
 	Objective2 *catalog.Metric `json:"objective2,omitempty" protobuf:"bytes,15,opt,name=objective2"`
 }
@@ -296,10 +292,6 @@ type AlgorithmSearchSpaceSpec struct {
 	// Use this to filter specific algorithm
 	// +kubebuilder:validation:Optional
 	AllowList []catalog.ClassicEstimatorName `json:"allowlist,omitempty" protobuf:"bytes,1,rep,name=allowlist"`
-	// set a general filter on the allowed algorithm
-	// +kubebuilder:default:="none"
-	// +kubebuilder:validation:Optional
-	AlgorithmFilter *AlgorithmFilterName `json:"filter,omitempty" protobuf:"bytes,2,opt,name=filter"`
 }
 
 // Study Schedule is used for cases where the study is scheduled to start at future date time.
@@ -484,10 +476,6 @@ type StudySpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	ModelImagePushed *bool `json:"modelImagePushed,omitempty" protobuf:"varint,19,opt,name=modelImagePushed"`
-	// Set to true if you want the system to push model image to remote docker registry
-	// +kubebuilder:default:=true
-	// +kubebuilder:validation:Optional
-	ModelBenchmarked *bool `json:"modelBenchmarked,omitempty" protobuf:"varint,20,opt,name=modelBenchmarked"`
 	// Set to true if you want the system to create model explentation for the final models
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
@@ -599,11 +587,6 @@ type StudyStatus struct {
 	// Study Progress in percent, the progress takes into account the different stages of the study.
 	// +kubebuilder:validation:Optional
 	Progress int32 `json:"progress" protobuf:"varint,20,opt,name=progress"`
-	// define a baseline model that will be the baseline for the search. If not none, the base line is the first model
-	// to be evaluated.
-	// +kubebuilder:default:="none"
-	// +kubebuilder:validation:Optional
-	BaselineModel catalog.ClassicEstimatorName `json:"baselineModel,omitempty" protobuf:"bytes,21,opt,name=baselineModel"`
 	// Sha 256 of the data sig
 	// +kubebuilder:validation:Optional
 	TrainingDataHash DataHashes `json:"trainingDataHash,omitempty" protobuf:"bytes,22,opt,name=trainingDataHash"`
