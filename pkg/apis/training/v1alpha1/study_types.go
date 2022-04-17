@@ -115,7 +115,7 @@ type StudyCondition struct {
 	Message string `json:"message,omitempty" protobuf:"bytes,6,opt,name=message"`
 }
 
-// Study represents an the search for the best machine learning model for a given dataset
+// Study represents an automatic search for the best machine learning model for a given dataset
 // +kubebuilder:subresource:status
 // +kubebuilder:object:root=true
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
@@ -228,10 +228,11 @@ type SearchSpec struct {
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
 	EarlyStopAfter *int32 `json:"earlyStopAfter,omitempty" protobuf:"varint,12,opt,name=earlyStopAfter"`
-	// Objective is the objective defined how the study controller will compare model performance.
+	// The objective metric that will be measured against all models to evaluate their performance
 	// +kubebuilder:validation:Optional
 	Objective *catalog.Metric `json:"objective,omitempty" protobuf:"bytes,14,opt,name=objective"`
-	// Objective2 is the second objective to consider during optimization.
+	// The second objective metric that will be measured and evaluated in tandem with the primary objective.
+	// The optimizer will attempt to optimize both metrics
 	// +kubebuilder:default:="none"
 	// +kubebuilder:validation:Optional
 	Objective2 *catalog.Metric `json:"objective2,omitempty" protobuf:"bytes,15,opt,name=objective2"`
