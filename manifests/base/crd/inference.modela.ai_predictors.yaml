@@ -110,13 +110,14 @@ spec:
                     type: string
                   path:
                     default: ""
-                    description: "The path to a flat-file inside an object storage
+                    description: The path to a flat-file inside an object storage
                       system. When using the Modela API to upload files (through the
                       FileService API), Modela will upload the data to a predetermined
-                      path with the following format: \n `modela/depot/tenants/{tenant}/dataproducts/{dataproduct}/dataproductversions/{version}/{resource_type}/{resource_name}/data/raw/{file_name}`
-                      \n The path does not need to adhere to this format; you can
-                      still pass the path of a file inside a bucket not managed by
-                      Modela"
+                      path based on the Tenant, DataProduct, DataProductVersion, and
+                      resource type of the resource in relation to the file being
+                      uploaded. The path does not need to adhere to this format; you
+                      can still pass the path of a file inside a bucket not managed
+                      by Modela
                     type: string
                   sql:
                     default: ""
@@ -219,7 +220,7 @@ spec:
               models:
                 description: The collection of model deployment specifications that
                   define which Model resources will be deployed to the Predictor service
-                  and how they will be deployed. Each model should be associated with
+                  and how they will be deployed. Each model should be trained with
                   the same type of dataset and possess a unique version
                 items:
                   description: ModelDeploymentSpec describes how a single model should
@@ -713,7 +714,7 @@ spec:
               rest:
                 default: false
                 description: Indicates if the prediction service should expose an
-                  additional port to serve the GRPCInferenceService API using REST.
+                  additional port to serve the GRPCInferenceService API through REST.
                   The port one digit above the number specified by the Port field
                   will be exposed to accept HTTP/1.1 traffic
                 type: boolean
@@ -8775,7 +8776,7 @@ spec:
                     type: string
                 type: object
               targetColumn:
-                description: The target column of the Predictor
+                description: The target feature of the model that the Predictor serves
                 type: string
             type: object
         required:
