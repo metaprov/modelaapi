@@ -110,7 +110,7 @@ type PredictorSpec struct {
 	// +kubebuilder:validation:Optional
 	Template *v1.PodTemplate `json:"template,omitempty" protobuf:"bytes,5,opt,name=template"`
 	// The collection of model deployment specifications that define which Model resources will be deployed to the
-	// Predictor service and how they will be deployed. Each model should be associated with the same type of
+	// Predictor service and how they will be deployed. Each model should be trained with the same type of
 	// dataset and possess a unique version
 	// +kubebuilder:validation:Optional
 	Models []catalog.ModelDeploymentSpec `json:"models,omitempty" protobuf:"bytes,6,rep,name=models"`
@@ -196,7 +196,7 @@ type PredictorSpec struct {
 	// The specification to authenticate requests to the prediction service
 	// +kubebuilder:validation:Optional
 	Auth PredictorAuthSpec `json:"auth,omitempty" protobuf:"bytes,25,opt,name=auth"`
-	// Indicates if the prediction service should expose an additional port to serve the GRPCInferenceService API using REST.
+	// Indicates if the prediction service should expose an additional port to serve the GRPCInferenceService API through REST.
 	// The port one digit above the number specified by the Port field will be exposed to accept HTTP/1.1 traffic
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
@@ -281,7 +281,7 @@ type PredictorStatus struct {
 	// The last time the object was updated
 	//+kubebuilder:validation:Optional
 	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,11,opt,name=lastUpdated"`
-	// The target column of the Predictor
+	// The target feature of the model that the Predictor serves
 	//+kubebuilder:validation:Optional
 	TargetColumn string `json:"targetColumn,omitempty" protobuf:"bytes,12,opt,name=targetColumn"`
 	// For binary classification, the name of the positive class of the target feature
