@@ -1576,6 +1576,10 @@ message IngressSpec {
   // (defaults to nginx)
   // +kubebuilder:default:="nginx"
   optional string ingressClassName = 4;
+
+  // ClusterIssuerName is a cert manager resource that provide TLS certificate to the ingress.
+  // +kubebuilder:default:=""
+  optional string clusterIssuerName = 5;
 }
 
 message KafkaSpec {

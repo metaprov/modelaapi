@@ -153,4 +153,7 @@ type IngressSpec struct {
 	// (defaults to nginx)
 	// +kubebuilder:default:="nginx"
 	IngressClassName *string `json:"ingressClassName,omitempty" protobuf:"bytes,4,opt,name=ingressClassName"`
+	// ClusterIssuerName is a cert manager resource that provide TLS certificate to the ingress.
+	// +kubebuilder:default:=""
+	ClusterIssuerName *string `json:"clusterIssuerName,omitempty" protobuf:"bytes,5,opt,name=clusterIssuerName"`
 }

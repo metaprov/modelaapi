@@ -2759,6 +2759,9 @@ export class IngressSpec extends jspb.Message {
   getIngressclassname(): string;
   setIngressclassname(value: string): IngressSpec;
 
+  getClusterissuername(): string;
+  setClusterissuername(value: string): IngressSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): IngressSpec.AsObject;
   static toObject(includeInstance: boolean, msg: IngressSpec): IngressSpec.AsObject;
@@ -2773,6 +2776,7 @@ export namespace IngressSpec {
     grpc: boolean,
     rest: boolean,
     ingressclassname: string,
+    clusterissuername: string,
   }
 }
 

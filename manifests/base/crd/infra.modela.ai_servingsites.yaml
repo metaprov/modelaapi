@@ -78,6 +78,11 @@ spec:
                   that can route traffic to the resources which exist under the ServingSite's
                   namespace
                 properties:
+                  clusterIssuerName:
+                    default: ""
+                    description: ClusterIssuerName is a cert manager resource that
+                      provide TLS certificate to the ingress.
+                    type: string
                   fqdn:
                     default: serving.vcap.me
                     description: FQDN specifies the fully-qualified domain name that

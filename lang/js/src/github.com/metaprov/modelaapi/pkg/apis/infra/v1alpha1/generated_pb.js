@@ -28984,7 +28984,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.toObject
     fqdn: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     grpc: (f = jspb.Message.getBooleanField(msg, 2)) == null ? undefined : f,
     rest: (f = jspb.Message.getBooleanField(msg, 3)) == null ? undefined : f,
-    ingressclassname: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
+    ingressclassname: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    clusterissuername: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -29036,6 +29037,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.deserial
     case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setIngressclassname(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setClusterissuername(value);
       break;
     default:
       reader.skipField();
@@ -29091,6 +29096,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.serializ
   if (f != null) {
     writer.writeString(
       4,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 5));
+  if (f != null) {
+    writer.writeString(
+      5,
       f
     );
   }
@@ -29238,6 +29250,42 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototyp
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototype.hasIngressclassname = function() {
   return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional string clusterIssuerName = 5;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototype.getClusterissuername = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototype.setClusterissuername = function(value) {
+  return jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototype.clearClusterissuername = function() {
+  return jspb.Message.setField(this, 5, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototype.hasClusterissuername = function() {
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
