@@ -136,7 +136,7 @@ func (r *ServingSite) ToYamlFile() ([]byte, error) {
 
 // Create the ingress for GRPC traffic
 func (r *ServingSite) ConstructGrpcIngress() *nwv1.Ingress {
-	return &nwv1.Ingress{
+	result := &nwv1.Ingress{
 		ObjectMeta: metav1.ObjectMeta{
 			Namespace: r.Name,
 			Name:      r.Name + "-grpc",
@@ -164,11 +164,18 @@ func (r *ServingSite) ConstructGrpcIngress() *nwv1.Ingress {
 			Rules: []nwv1.IngressRule{},
 		},
 	}
+
+	if r.Spec.Ingress.ClusterIssuerName != nil && *r.Spec.Ingress.ClusterIssuerName != "" {
+		result.ObjectMeta.Annotations["cert-manager.io/cluster-issuer"] = *r.Spec.Ingress.ClusterIssuerName
+	}
+
+	return result
+
 }
 
 // Create the ingress for REST traffic
 func (r *ServingSite) ConstructRestIngress() *nwv1.Ingress {
-	return &nwv1.Ingress{
+	result := &nwv1.Ingress{
 		ObjectMeta: metav1.ObjectMeta{
 			Namespace: r.Name,
 			Name:      r.Name + "-rest",
@@ -184,7 +191,6 @@ func (r *ServingSite) ConstructRestIngress() *nwv1.Ingress {
 				"nginx.org/client-max-body-size":                 "50m",
 				"kubernetes.io/ingress.allow-http":               "true",
 				"nginx.ingress.kubernetes.io/cors-allow-headers": "x-user-agent,x-grpc-web,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Authorization",
-				"cert-manager.io/cluster-issuer":                 "modela-ingress-issuer",
 			},
 		},
 		Spec: nwv1.IngressSpec{
@@ -192,6 +198,11 @@ func (r *ServingSite) ConstructRestIngress() *nwv1.Ingress {
 			Rules: []nwv1.IngressRule{},
 		},
 	}
+	if r.Spec.Ingress.ClusterIssuerName != nil && *r.Spec.Ingress.ClusterIssuerName != "" {
+		result.ObjectMeta.Annotations["cert-manager.io/cluster-issuer"] = *r.Spec.Ingress.ClusterIssuerName
+
+	}
+	return result
 }
 
 //////////////////////////////////////////
