@@ -102,7 +102,6 @@ spec:
                   the alert.
                 type: string
               task:
-                default: ""
                 items:
                   properties:
                     assignedTo:

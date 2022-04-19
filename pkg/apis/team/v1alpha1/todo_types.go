@@ -65,7 +65,6 @@ type TodoSpec struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,1,opt,name=description"`
-	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Tasks []TaskSpec `json:"task,omitempty" protobuf:"bytes,2,rep,name=tasks"`
 	// The modela entity that the task refer to.

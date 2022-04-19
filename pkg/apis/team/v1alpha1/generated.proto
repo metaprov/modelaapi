@@ -577,7 +577,6 @@ message TodoSpec {
   // +kubebuilder:validation:Optional
   optional string description = 1;
 
-  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   repeated TaskSpec tasks = 2;
 
