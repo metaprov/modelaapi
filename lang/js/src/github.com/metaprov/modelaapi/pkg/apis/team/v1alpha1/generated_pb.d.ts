@@ -6,6 +6,36 @@ import * as k8s_io_apimachinery_pkg_runtime_generated_pb from '../../../../../..
 import * as k8s_io_apimachinery_pkg_runtime_schema_generated_pb from '../../../../../../../k8s.io/apimachinery/pkg/runtime/schema/generated_pb';
 
 
+export class ActionItem extends jspb.Message {
+  getAction(): string;
+  setAction(value: string): ActionItem;
+
+  getDue(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setDue(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ActionItem;
+  hasDue(): boolean;
+  clearDue(): ActionItem;
+
+  getAssignedto(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setAssignedto(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ActionItem;
+  hasAssignedto(): boolean;
+  clearAssignedto(): ActionItem;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ActionItem.AsObject;
+  static toObject(includeInstance: boolean, msg: ActionItem): ActionItem.AsObject;
+  static serializeBinaryToWriter(message: ActionItem, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ActionItem;
+  static deserializeBinaryFromReader(message: ActionItem, reader: jspb.BinaryReader): ActionItem;
+}
+
+export namespace ActionItem {
+  export type AsObject = {
+    action: string,
+    due?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    assignedto?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+  }
+}
+
 export class CheckListItem extends jspb.Message {
   getInstruction(): string;
   setInstruction(value: string): CheckListItem;
@@ -220,6 +250,14 @@ export class MeetingSpec extends jspb.Message {
   hasReminder(): boolean;
   clearReminder(): MeetingSpec;
 
+  getNotes(): string;
+  setNotes(value: string): MeetingSpec;
+
+  getActionitemsList(): Array<ActionItem>;
+  setActionitemsList(value: Array<ActionItem>): MeetingSpec;
+  clearActionitemsList(): MeetingSpec;
+  addActionitems(value?: ActionItem, index?: number): ActionItem;
+
   getTenantref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setTenantref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): MeetingSpec;
   hasTenantref(): boolean;
@@ -242,6 +280,8 @@ export namespace MeetingSpec {
     participantsList: Array<string>,
     flagged: boolean,
     reminder?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    notes: string,
+    actionitemsList: Array<ActionItem.AsObject>,
     tenantref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
   }
 }
@@ -252,12 +292,6 @@ export class MeetingStatus extends jspb.Message {
 
   getObservedgeneration(): number;
   setObservedgeneration(value: number): MeetingStatus;
-
-  getNotes(): string;
-  setNotes(value: string): MeetingStatus;
-
-  getActionitems(): string;
-  setActionitems(value: string): MeetingStatus;
 
   getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): MeetingStatus;
@@ -281,8 +315,6 @@ export namespace MeetingStatus {
   export type AsObject = {
     phase: string,
     observedgeneration: number,
-    notes: string,
-    actionitems: string,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<MeetingCondition.AsObject>,
   }
@@ -401,10 +433,10 @@ export class PostMortemSpec extends jspb.Message {
   clearHandledbyList(): PostMortemSpec;
   addHandledby(value?: k8s_io_api_core_v1_generated_pb.ObjectReference, index?: number): k8s_io_api_core_v1_generated_pb.ObjectReference;
 
-  getAlertList(): Array<RaisedAlert>;
-  setAlertList(value: Array<RaisedAlert>): PostMortemSpec;
-  clearAlertList(): PostMortemSpec;
-  addAlert(value?: RaisedAlert, index?: number): RaisedAlert;
+  getAlertsList(): Array<RaisedAlert>;
+  setAlertsList(value: Array<RaisedAlert>): PostMortemSpec;
+  clearAlertsList(): PostMortemSpec;
+  addAlerts(value?: RaisedAlert, index?: number): RaisedAlert;
 
   getTimelineList(): Array<TimeLineEvent>;
   setTimelineList(value: Array<TimeLineEvent>): PostMortemSpec;
@@ -439,7 +471,7 @@ export namespace PostMortemSpec {
     entityref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     locationref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     handledbyList: Array<k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject>,
-    alertList: Array<RaisedAlert.AsObject>,
+    alertsList: Array<RaisedAlert.AsObject>,
     timelineList: Array<TimeLineEvent.AsObject>,
     rootcause: string,
     summary: string,
@@ -842,6 +874,48 @@ export namespace RunBookStatus {
   }
 }
 
+export class TaskSpec extends jspb.Message {
+  getId(): string;
+  setId(value: string): TaskSpec;
+
+  getDescription(): string;
+  setDescription(value: string): TaskSpec;
+
+  getAssignedto(): string;
+  setAssignedto(value: string): TaskSpec;
+
+  getDuedate(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setDuedate(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): TaskSpec;
+  hasDuedate(): boolean;
+  clearDuedate(): TaskSpec;
+
+  getReminder(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setReminder(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): TaskSpec;
+  hasReminder(): boolean;
+  clearReminder(): TaskSpec;
+
+  getParenttask(): string;
+  setParenttask(value: string): TaskSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TaskSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: TaskSpec): TaskSpec.AsObject;
+  static serializeBinaryToWriter(message: TaskSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TaskSpec;
+  static deserializeBinaryFromReader(message: TaskSpec, reader: jspb.BinaryReader): TaskSpec;
+}
+
+export namespace TaskSpec {
+  export type AsObject = {
+    id: string,
+    description: string,
+    assignedto: string,
+    duedate?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    reminder?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    parenttask: string,
+  }
+}
+
 export class TimeLineEvent extends jspb.Message {
   getContent(): string;
   setContent(value: string): TimeLineEvent;
@@ -961,11 +1035,13 @@ export namespace TodoList {
 }
 
 export class TodoSpec extends jspb.Message {
-  getTask(): string;
-  setTask(value: string): TodoSpec;
-
   getDescription(): string;
   setDescription(value: string): TodoSpec;
+
+  getTasksList(): Array<TaskSpec>;
+  setTasksList(value: Array<TaskSpec>): TodoSpec;
+  clearTasksList(): TodoSpec;
+  addTasks(value?: TaskSpec, index?: number): TaskSpec;
 
   getEntityref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setEntityref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): TodoSpec;
@@ -975,24 +1051,8 @@ export class TodoSpec extends jspb.Message {
   getNotifiername(): string;
   setNotifiername(value: string): TodoSpec;
 
-  getAssignedto(): string;
-  setAssignedto(value: string): TodoSpec;
-
   getFlagged(): boolean;
   setFlagged(value: boolean): TodoSpec;
-
-  getReminder(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setReminder(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): TodoSpec;
-  hasReminder(): boolean;
-  clearReminder(): TodoSpec;
-
-  getDuedate(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setDuedate(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): TodoSpec;
-  hasDuedate(): boolean;
-  clearDuedate(): TodoSpec;
-
-  getParenttask(): string;
-  setParenttask(value: string): TodoSpec;
 
   getTenantref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setTenantref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): TodoSpec;
@@ -1009,15 +1069,11 @@ export class TodoSpec extends jspb.Message {
 
 export namespace TodoSpec {
   export type AsObject = {
-    task: string,
     description: string,
+    tasksList: Array<TaskSpec.AsObject>,
     entityref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     notifiername: string,
-    assignedto: string,
     flagged: boolean,
-    reminder?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    duedate?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    parenttask: string,
     tenantref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
   }
 }
