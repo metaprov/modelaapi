@@ -138,26 +138,26 @@ spec:
                 description: Template refer to the prediction template
                 properties:
                   spec:
-                    description: ReportSpec specifies the desired state of the ReportName
-                      resource
+                    description: ReportSpec specifies the desired state of a Report
                     properties:
                       activeDeadlineSeconds:
                         default: 600
-                        description: ActiveDeadlineSeconds is the deadline of a job
-                          for this report.
+                        description: The deadline for any Jobs associated with the
+                          Report to be completed in seconds
                         format: int64
                         type: integer
                       cronReportName:
                         default: ""
-                        description: the name of the cron report that generated this
-                          report
+                        description: The name of the CronReport resource that generated
+                          the Report
                         type: string
                       custom:
-                        description: If the report is custom report, this field holds
-                          the specification
+                        description: Custom contains the specification to generate
+                          a custom report (currently unimplemented)
                         properties:
                           pages:
-                            description: The pages in the report
+                            description: Pages contains a collection of custom pages
+                              that will be appended to a Report
                             items:
                               properties:
                                 rows:
@@ -330,8 +330,9 @@ spec:
                             type: array
                         type: object
                       entityRef:
-                        description: EntityRef specify the entity being report. Currently
-                          entities can be dataset,model or study
+                        description: EntityRef specifies the entity which the Report
+                          references. The supported entities consist of Dataset, Model,
+                          and Study resources
                         properties:
                           apiVersion:
                             description: API version of the referent.
@@ -369,13 +370,15 @@ spec:
                         type: object
                       format:
                         default: pdf
-                        description: Format specify the report format. default is
-                          pdf
+                        description: The format of the Report. `pdf` is the only supported
+                          type as of the current release
                         enum:
                         - pdf
                         type: string
                       labRef:
-                        description: The execution env of this report
+                        description: The reference to the Lab namespace under which
+                          the report generation Job will be executed under. If unspecified,
+                          the default Lab from the parent DataProduct will be used
                         properties:
                           apiVersion:
                             description: API version of the referent.
@@ -412,7 +415,8 @@ spec:
                             type: string
                         type: object
                       location:
-                        description: Location is the report location in storage.
+                        description: The location of the flat-file containing the
+                          PDF report
                         properties:
                           bucketName:
                             default: ""
@@ -441,14 +445,15 @@ spec:
                             type: string
                           path:
                             default: ""
-                            description: "The path to a flat-file inside an object
+                            description: The path to a flat-file inside an object
                               storage system. When using the Modela API to upload
                               files (through the FileService API), Modela will upload
-                              the data to a predetermined path with the following
-                              format: \n `modela/depot/tenants/{tenant}/dataproducts/{dataproduct}/dataproductversions/{version}/{resource_type}/{resource_name}/data/raw/{file_name}`
-                              \n The path does not need to adhere to this format;
-                              you can still pass the path of a file inside a bucket
-                              not managed by Modela"
+                              the data to a predetermined path based on the Tenant,
+                              DataProduct, DataProductVersion, and resource type of
+                              the resource in relation to the file being uploaded.
+                              The path does not need to adhere to this format; you
+                              can still pass the path of a file inside a bucket not
+                              managed by Modela
                             type: string
                           sql:
                             default: ""
@@ -475,16 +480,17 @@ spec:
                             type: string
                         type: object
                       notifierName:
-                        description: NotifierName is a reference to the notifier that
-                          is used to send the report
+                        description: The name of the Notifier resource which Alerts
+                          created by the Report will be forwarded to
                         type: string
                       owner:
                         default: no-one
-                        description: The owner account name
+                        description: The name of the Account which created the object,
+                          which exists in the same tenant as the object
                         type: string
                       reportType:
-                        description: ReportType specify the report type (e.g. classification
-                          / regression)
+                        description: The type of report (e.g. classification model
+                          report, study report)
                         enum:
                         - binary-classification-model
                         - forecast-model
@@ -504,7 +510,8 @@ spec:
                         - summary-report
                         type: string
                       resources:
-                        description: Resources are hardware req.
+                        description: Resources specifies the resource requirements
+                          that will be allocated to the report generation workload
                         properties:
                           cpuImage:
                             description: Reference to the managed CPU trainer image,
@@ -623,8 +630,9 @@ spec:
                         type: object
                       versionName:
                         default: latest
-                        description: VersionName is the data product version name
-                          for this report.
+                        description: The name of the DataProductVersion which describes
+                          the version of the resource that exists in the same DataProduct
+                          namespace as the resource
                         type: string
                     type: object
                 required:

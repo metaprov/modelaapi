@@ -1039,13 +1039,14 @@ spec:
                     type: string
                   path:
                     default: ""
-                    description: "The path to a flat-file inside an object storage
+                    description: The path to a flat-file inside an object storage
                       system. When using the Modela API to upload files (through the
                       FileService API), Modela will upload the data to a predetermined
-                      path with the following format: \n `modela/depot/tenants/{tenant}/dataproducts/{dataproduct}/dataproductversions/{version}/{resource_type}/{resource_name}/data/raw/{file_name}`
-                      \n The path does not need to adhere to this format; you can
-                      still pass the path of a file inside a bucket not managed by
-                      Modela"
+                      path based on the Tenant, DataProduct, DataProductVersion, and
+                      resource type of the resource in relation to the file being
+                      uploaded. The path does not need to adhere to this format; you
+                      can still pass the path of a file inside a bucket not managed
+                      by Modela
                     type: string
                   sql:
                     default: ""
@@ -1667,14 +1668,15 @@ spec:
                             type: string
                           path:
                             default: ""
-                            description: "The path to a flat-file inside an object
+                            description: The path to a flat-file inside an object
                               storage system. When using the Modela API to upload
                               files (through the FileService API), Modela will upload
-                              the data to a predetermined path with the following
-                              format: \n `modela/depot/tenants/{tenant}/dataproducts/{dataproduct}/dataproductversions/{version}/{resource_type}/{resource_name}/data/raw/{file_name}`
-                              \n The path does not need to adhere to this format;
-                              you can still pass the path of a file inside a bucket
-                              not managed by Modela"
+                              the data to a predetermined path based on the Tenant,
+                              DataProduct, DataProductVersion, and resource type of
+                              the resource in relation to the file being uploaded.
+                              The path does not need to adhere to this format; you
+                              can still pass the path of a file inside a bucket not
+                              managed by Modela
                             type: string
                           sql:
                             default: ""
@@ -2920,13 +2922,14 @@ spec:
                     type: string
                   path:
                     default: ""
-                    description: "The path to a flat-file inside an object storage
+                    description: The path to a flat-file inside an object storage
                       system. When using the Modela API to upload files (through the
                       FileService API), Modela will upload the data to a predetermined
-                      path with the following format: \n `modela/depot/tenants/{tenant}/dataproducts/{dataproduct}/dataproductversions/{version}/{resource_type}/{resource_name}/data/raw/{file_name}`
-                      \n The path does not need to adhere to this format; you can
-                      still pass the path of a file inside a bucket not managed by
-                      Modela"
+                      path based on the Tenant, DataProduct, DataProductVersion, and
+                      resource type of the resource in relation to the file being
+                      uploaded. The path does not need to adhere to this format; you
+                      can still pass the path of a file inside a bucket not managed
+                      by Modela
                     type: string
                   sql:
                     default: ""
@@ -2983,13 +2986,14 @@ spec:
                     type: string
                   path:
                     default: ""
-                    description: "The path to a flat-file inside an object storage
+                    description: The path to a flat-file inside an object storage
                       system. When using the Modela API to upload files (through the
                       FileService API), Modela will upload the data to a predetermined
-                      path with the following format: \n `modela/depot/tenants/{tenant}/dataproducts/{dataproduct}/dataproductversions/{version}/{resource_type}/{resource_name}/data/raw/{file_name}`
-                      \n The path does not need to adhere to this format; you can
-                      still pass the path of a file inside a bucket not managed by
-                      Modela"
+                      path based on the Tenant, DataProduct, DataProductVersion, and
+                      resource type of the resource in relation to the file being
+                      uploaded. The path does not need to adhere to this format; you
+                      can still pass the path of a file inside a bucket not managed
+                      by Modela
                     type: string
                   sql:
                     default: ""
@@ -3070,13 +3074,14 @@ spec:
                     type: string
                   path:
                     default: ""
-                    description: "The path to a flat-file inside an object storage
+                    description: The path to a flat-file inside an object storage
                       system. When using the Modela API to upload files (through the
                       FileService API), Modela will upload the data to a predetermined
-                      path with the following format: \n `modela/depot/tenants/{tenant}/dataproducts/{dataproduct}/dataproductversions/{version}/{resource_type}/{resource_name}/data/raw/{file_name}`
-                      \n The path does not need to adhere to this format; you can
-                      still pass the path of a file inside a bucket not managed by
-                      Modela"
+                      path based on the Tenant, DataProduct, DataProductVersion, and
+                      resource type of the resource in relation to the file being
+                      uploaded. The path does not need to adhere to this format; you
+                      can still pass the path of a file inside a bucket not managed
+                      by Modela
                     type: string
                   sql:
                     default: ""
