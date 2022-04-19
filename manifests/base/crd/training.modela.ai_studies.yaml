@@ -74,7 +74,7 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: Study represents an the search for the best machine learning
+        description: Study represents an automatic search for the best machine learning
           model for a given dataset
         properties:
           apiVersion:
@@ -899,9 +899,14 @@ spec:
                 properties:
                   collectAtStudyEnd:
                     default: true
+                    description: Indicates if all models of the Study, excluding the
+                      highest-performing model, will be archived
                     type: boolean
                   keepOnlyBestModelPerAlgorithm:
                     default: false
+                    description: Indicates if multiple models with the same algorithm
+                      are produced by the Study, the model with the lowest score will
+                      be garbage-collected
                     type: boolean
                 type: object
               interpretability:
@@ -1072,20 +1077,19 @@ spec:
                 type: boolean
               modelImage:
                 description: ModelImage specifies the configuration to upload Docker
-                  images of models to a Docker image registry
+                  images of models to an image registry
                 properties:
                   exist:
                     default: false
-                    description: Is the release to
                     type: boolean
                   imageName:
                     default: ""
-                    description: Full image name to use
+                    description: The full name of the image to upload to
                     type: string
                   registryConnectionName:
                     default: ""
-                    description: The name of the connection object, the name must
-                      be provided in order to push the image.
+                    description: The name of the Connection resource to an external
+                      Docker image registry
                     type: string
                 type: object
               modelImagePushed:
@@ -1155,11 +1159,10 @@ spec:
                 properties:
                   enabled:
                     default: false
-                    description: Indicate the all models should be tests
+                    description: Indicates if the schedule is enabled
                     type: boolean
                   startAt:
-                    description: Set the start time, by default this is set to the
-                      start time of the study
+                    description: The time at which the Study will begin execution
                     format: date-time
                     type: string
                 type: object
@@ -1203,8 +1206,8 @@ spec:
                       the model search will forcibly stop
                     type: number
                   objective:
-                    description: Objective is the objective defined how the study
-                      controller will compare model performance.
+                    description: The objective metric that will be measured against
+                      all models to evaluate their performance
                     enum:
                     - accuracy
                     - average-precision
@@ -1284,8 +1287,9 @@ spec:
                     type: string
                   objective2:
                     default: none
-                    description: Objective2 is the second objective to consider during
-                      optimization.
+                    description: The second objective metric that will be measured
+                      and evaluated in tandem with the primary objective. The optimizer
+                      will attempt to optimize both metrics
                     enum:
                     - accuracy
                     - average-precision
@@ -1433,7 +1437,7 @@ spec:
                         type: integer
                       type:
                         default: median
-                        description: The pruner to use during model search.
+                        description: The type of pruner to use during model search
                         enum:
                         - none
                         - patient
@@ -2070,7 +2074,7 @@ spec:
                         items:
                           properties:
                             columnName:
-                              description: The dataset column name
+                              description: The name of the column
                               type: string
                             op:
                               description: The segment operation
@@ -2156,27 +2160,29 @@ spec:
                 description: BaselineStatus contains the status of the baseline phase
                 properties:
                   completed:
-                    description: models trained
+                    description: The number of models that have been successfully
+                      trained
                     format: int32
                     type: integer
                   endTime:
-                    description: End of the phase.
+                    description: The time at which the phase concluded
                     format: date-time
                     type: string
                   failed:
-                    description: models that failed
+                    description: The number of models that experienced an error whilst
+                      training
                     format: int32
                     type: integer
                   running:
-                    description: models in training
+                    description: The number of models currently being trained
                     format: int32
                     type: integer
                   startTime:
-                    description: Start of the training phase
+                    description: The time at which the phase started
                     format: date-time
                     type: string
                   waiting:
-                    description: models waiting for processing
+                    description: The number of models pending training
                     format: int32
                     type: integer
                 type: object
@@ -2629,27 +2635,29 @@ spec:
                 description: EnsembleStatus contains the status of the ensemble phase
                 properties:
                   completed:
-                    description: models trained
+                    description: The number of models that have been successfully
+                      trained
                     format: int32
                     type: integer
                   endTime:
-                    description: End of the phase.
+                    description: The time at which the phase concluded
                     format: date-time
                     type: string
                   failed:
-                    description: models that failed
+                    description: The number of models that experienced an error whilst
+                      training
                     format: int32
                     type: integer
                   running:
-                    description: models in training
+                    description: The number of models currently being trained
                     format: int32
                     type: integer
                   startTime:
-                    description: Start of the training phase
+                    description: The time at which the phase started
                     format: date-time
                     type: string
                   waiting:
-                    description: models waiting for processing
+                    description: The number of models pending training
                     format: int32
                     type: integer
                 type: object
@@ -2657,27 +2665,29 @@ spec:
                 description: ExplainStatus contains the status of the explaining phase
                 properties:
                   completed:
-                    description: models trained
+                    description: The number of models that have been successfully
+                      trained
                     format: int32
                     type: integer
                   endTime:
-                    description: End of the phase.
+                    description: The time at which the phase concluded
                     format: date-time
                     type: string
                   failed:
-                    description: models that failed
+                    description: The number of models that experienced an error whilst
+                      training
                     format: int32
                     type: integer
                   running:
-                    description: models in training
+                    description: The number of models currently being trained
                     format: int32
                     type: integer
                   startTime:
-                    description: Start of the training phase
+                    description: The time at which the phase started
                     format: date-time
                     type: string
                   waiting:
-                    description: models waiting for processing
+                    description: The number of models pending training
                     format: int32
                     type: integer
                 type: object
@@ -2694,27 +2704,29 @@ spec:
                   engineering phase
                 properties:
                   completed:
-                    description: models trained
+                    description: The number of models that have been successfully
+                      trained
                     format: int32
                     type: integer
                   endTime:
-                    description: End of the phase.
+                    description: The time at which the phase concluded
                     format: date-time
                     type: string
                   failed:
-                    description: models that failed
+                    description: The number of models that experienced an error whilst
+                      training
                     format: int32
                     type: integer
                   running:
-                    description: models in training
+                    description: The number of models currently being trained
                     format: int32
                     type: integer
                   startTime:
-                    description: Start of the training phase
+                    description: The time at which the phase started
                     format: date-time
                     type: string
                   waiting:
-                    description: models waiting for processing
+                    description: The number of models pending training
                     format: int32
                     type: integer
                 type: object
@@ -2723,22 +2735,31 @@ spec:
                   to the Study
                 properties:
                   collected:
+                    description: The number of models that were collected, equal to
+                      len(Models)
                     format: int32
                     type: integer
                   models:
-                    description: List of models, collected.
+                    description: The collection of models that were archived
                     items:
-                      description: model cv results
+                      description: ModelResult contains the records of a single garbage-collected
+                        model
                       properties:
                         alg:
+                          description: The type of estimator of the model
                           type: string
                         error:
+                          description: Indicates if the model experience an error
+                            whilst training
                           type: boolean
                         name:
+                          description: The name of the model
                           type: string
                         score:
+                          description: The objective score of the model
                           type: number
                         trialID:
+                          description: The optimizer trial ID of the model
                           format: int32
                           type: integer
                       type: object
@@ -2809,27 +2830,29 @@ spec:
                   phase
                 properties:
                   completed:
-                    description: models trained
+                    description: The number of models that have been successfully
+                      trained
                     format: int32
                     type: integer
                   endTime:
-                    description: End of the phase.
+                    description: The time at which the phase concluded
                     format: date-time
                     type: string
                   failed:
-                    description: models that failed
+                    description: The number of models that experienced an error whilst
+                      training
                     format: int32
                     type: integer
                   running:
-                    description: models in training
+                    description: The number of models currently being trained
                     format: int32
                     type: integer
                   startTime:
-                    description: Start of the training phase
+                    description: The time at which the phase started
                     format: date-time
                     type: string
                   waiting:
-                    description: models waiting for processing
+                    description: The number of models pending training
                     format: int32
                     type: integer
                 type: object
@@ -2842,27 +2865,29 @@ spec:
                 description: TestStatus contains the status of the testing phase
                 properties:
                   completed:
-                    description: models trained
+                    description: The number of models that have been successfully
+                      trained
                     format: int32
                     type: integer
                   endTime:
-                    description: End of the phase.
+                    description: The time at which the phase concluded
                     format: date-time
                     type: string
                   failed:
-                    description: models that failed
+                    description: The number of models that experienced an error whilst
+                      training
                     format: int32
                     type: integer
                   running:
-                    description: models in training
+                    description: The number of models currently being trained
                     format: int32
                     type: integer
                   startTime:
-                    description: Start of the training phase
+                    description: The time at which the phase started
                     format: date-time
                     type: string
                   waiting:
-                    description: models waiting for processing
+                    description: The number of models pending training
                     format: int32
                     type: integer
                 type: object

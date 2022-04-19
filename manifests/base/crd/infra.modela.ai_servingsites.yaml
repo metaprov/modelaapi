@@ -26,11 +26,14 @@ spec:
       jsonPath: .spec.owner
       name: Owner
       type: string
-    - jsonPath: .spec.fqdn
+    - jsonPath: .spec.ingress.fqdn
       name: FQDN
       type: string
-    - jsonPath: .spec.ingressName
-      name: Ingress
+    - jsonPath: .status.grpcIngressName
+      name: GRPC Ingress
+      type: string
+    - jsonPath: .status.restIngressName
+      name: REST Ingress
       type: string
     - jsonPath: .status.activePredictors
       name: Predictors

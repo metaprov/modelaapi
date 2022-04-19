@@ -93,7 +93,7 @@ type PostMortemSpec struct {
 	HandledBy []v1.ObjectReference `json:"handledBy" protobuf:"bytes,4,rep,name=handledBy"`
 	// Alerts
 	// +kubebuilder:validation:Optional
-	Alerts []RaisedAlert `json:"alerts" protobuf:"bytes,5,rep,name=alert"`
+	Alerts []RaisedAlert `json:"alerts" protobuf:"bytes,5,rep,name=alerts"`
 	// Timeline is the list of events that happed during the events
 	// +kubebuilder:validation:Optional
 	TimeLine []TimeLineEvent `json:"timeline" protobuf:"bytes,6,rep,name=timeline"`

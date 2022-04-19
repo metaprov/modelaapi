@@ -219,7 +219,7 @@ spec:
               models:
                 description: The collection of model deployment specifications that
                   define which Model resources will be deployed to the Predictor service
-                  and how they will be deployed. Each model should be associated with
+                  and how they will be deployed. Each model should be trained with
                   the same type of dataset and possess a unique version
                 items:
                   description: ModelDeploymentSpec describes how a single model should
@@ -713,7 +713,7 @@ spec:
               rest:
                 default: false
                 description: Indicates if the prediction service should expose an
-                  additional port to serve the GRPCInferenceService API using REST.
+                  additional port to serve the GRPCInferenceService API through REST.
                   The port one digit above the number specified by the Port field
                   will be exposed to accept HTTP/1.1 traffic
                 type: boolean
@@ -8775,7 +8775,7 @@ spec:
                     type: string
                 type: object
               targetColumn:
-                description: The target column of the Predictor
+                description: The target feature of the model that the Predictor serves
                 type: string
             type: object
         required:

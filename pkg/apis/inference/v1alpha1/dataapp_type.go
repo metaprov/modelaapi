@@ -41,6 +41,10 @@ type DataAppCondition struct {
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
+// +kubebuilder:printcolumn:name="Path",type="string",JSONPath=".spec.path"
+// +kubebuilder:printcolumn:name="Model",type="string",JSONPath=".spec.modelName"
+// +kubebuilder:printcolumn:name="Replicas",type="string",JSONPath=".spec.replicas"
+// +kubebuilder:printcolumn:name="Port",type="string",JSONPath=".spec.port"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=dataapps,singular=dataapp,categories={data,modela}
 // +kubebuilder:subresource:status

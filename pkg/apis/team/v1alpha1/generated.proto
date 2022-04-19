@@ -17,6 +17,20 @@ import "k8s.io/apimachinery/pkg/runtime/schema/generated.proto";
 // Package-wide variables from generator "generated".
 option go_package = "github.com/metaprov/modelaapi/pkg/apis/team/v1alpha1";
 
+message ActionItem {
+  // The action to take in this action time
+  // +kubebuilder:validation:Optional
+  optional string action = 1;
+
+  // action due date
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time due = 2;
+
+  // The account to which the action is assigned to
+  // +kubebuilder:validation:Optional
+  optional k8s.io.api.core.v1.ObjectReference assignedTo = 3;
+}
+
 message CheckListItem {
   // Instruction is the instruction to follow
   // +kubebuilder:default:=""
@@ -168,9 +182,17 @@ message MeetingSpec {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time reminder = 7;
 
+  // The meeting notes.
+  // +kubebuilder:validation:Optional
+  optional string notes = 8;
+
+  // the meeting action items
+  // +kubebuilder:validation:Optional
+  repeated ActionItem actionItems = 9;
+
   // TenantRef is the commit tenant
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference tenantRef = 8;
+  optional k8s.io.api.core.v1.ObjectReference tenantRef = 10;
 }
 
 // MeetingStatus is the observed state of a Meeting
@@ -183,14 +205,6 @@ message MeetingStatus {
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 2;
-
-  // The meeting notes.
-  // +kubebuilder:validation:Optional
-  optional string notes = 4;
-
-  // the meeting action items
-  // +kubebuilder:validation:Optional
-  optional string actionItems = 5;
 
   // Last time the object was updated
   // +kubebuilder:validation:Optional
@@ -263,7 +277,7 @@ message PostMortemSpec {
 
   // Alerts
   // +kubebuilder:validation:Optional
-  repeated RaisedAlert alert = 5;
+  repeated RaisedAlert alerts = 5;
 
   // Timeline is the list of events that happed during the events
   // +kubebuilder:validation:Optional
@@ -481,6 +495,30 @@ message RunBookStatus {
   repeated RunBookCondition conditions = 3;
 }
 
+message TaskSpec {
+  optional string id = 1;
+
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string description = 2;
+
+  // Assigned to is the user name assigned to this task
+  // +kubebuilder:default:="no-one"
+  // +kubebuilder:validation:Optional
+  optional string assignedTo = 3;
+
+  // Flagged donete that task was flagged
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time dueDate = 4;
+
+  // Reminder is the time to send a reminder
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time reminder = 5;
+
+  // If this task is a subtask, this is the name of the subtask
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string parentTask = 6;
+}
+
 // TimeLineEvent
 message TimeLineEvent {
   // +kubebuilder:validation:Optional
@@ -537,11 +575,11 @@ message TodoList {
 message TodoSpec {
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string task = 1;
+  optional string description = 1;
 
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string description = 2;
+  repeated TaskSpec tasks = 2;
 
   // The modela entity that the task refer to.
   // +kubebuilder:validation:Optional
@@ -552,30 +590,14 @@ message TodoSpec {
   // NotifierName is the name of the notifier used to fire the alert.
   optional string notifierName = 4;
 
-  // Assigned to is the user name assigned to this task
-  // +kubebuilder:default:="no-one"
-  // +kubebuilder:validation:Optional
-  optional string assignedTo = 5;
-
   // Flagged donate that task was flagged
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool flagged = 6;
-
-  // Reminder is the time to send a reminder
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time reminder = 7;
-
-  // Flagged donete that task was flagged
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time dueDate = 8;
-
-  // If this task is a subtask, this is the name of the subtask
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:Optional
-  optional string parentTask = 9;
+  optional bool flagged = 5;
 
   // TenantRef is the todo tenant
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference tenantRef = 10;
+  optional k8s.io.api.core.v1.ObjectReference tenantRef = 6;
 }
 
 // TodoStatus is the observed state of a Todo

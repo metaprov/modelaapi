@@ -1978,7 +1978,7 @@ spec:
                         items:
                           properties:
                             columnName:
-                              description: The dataset column name
+                              description: The name of the column
                               type: string
                             op:
                               description: The segment operation

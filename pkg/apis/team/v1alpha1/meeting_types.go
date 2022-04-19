@@ -1,6 +1,7 @@
 package v1alpha1
 
 import (
+	corev1 "k8s.io/api/core/v1"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
@@ -87,9 +88,15 @@ type MeetingSpec struct {
 	// Reminder is the time to send a reminder
 	// +kubebuilder:validation:Optional
 	Reminder *metav1.Time `json:"reminder,omitempty" protobuf:"bytes,7,opt,name=reminder"`
+	// The meeting notes.
+	// +kubebuilder:validation:Optional
+	Notes string `json:"notes,omitempty" protobuf:"bytes,8,opt,name=notes"`
+	// the meeting action items
+	// +kubebuilder:validation:Optional
+	ActionItems []ActionItem `json:"actionItems,omitempty" protobuf:"bytes,9,opt,name=actionItems"`
 	// TenantRef is the commit tenant
 	// +kubebuilder:validation:Optional
-	TenantRef *v1.ObjectReference `json:"tenantRef,omitempty" protobuf:"bytes,8,opt,name=tenantRef"`
+	TenantRef *v1.ObjectReference `json:"tenantRef,omitempty" protobuf:"bytes,10,opt,name=tenantRef"`
 }
 
 // MeetingStatus is the observed state of a Meeting
@@ -101,18 +108,25 @@ type MeetingStatus struct {
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,2,opt,name=observedGeneration"`
-	// The meeting notes.
-	// +kubebuilder:validation:Optional
-	Notes string `json:"notes,omitempty" protobuf:"bytes,4,opt,name=notes"`
-	// the meeting action items
-	// +kubebuilder:validation:Optional
-	ActionItems string `json:"actionItems,omitempty" protobuf:"bytes,5,opt,name=actionItems"`
 	// Last time the object was updated
 	//+kubebuilder:validation:Optional
 	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,6,opt,name=lastUpdated"`
-
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
 	Conditions []MeetingCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,7,rep,name=conditions"`
+}
+
+type ActionItem struct {
+	// The action to take in this action time
+	// +kubebuilder:validation:Optional
+	Action string `json:"action,omitempty" protobuf:"bytes,1,opt,name=action"`
+
+	// action due date
+	// +kubebuilder:validation:Optional
+	Due *metav1.Time `json:"due,omitempty" protobuf:"bytes,2,opt,name=due"`
+
+	// The account to which the action is assigned to
+	// +kubebuilder:validation:Optional
+	AssignedTo *corev1.ObjectReference `json:"assignedTo,omitempty" protobuf:"bytes,3,opt,name=assignedTo"`
 }

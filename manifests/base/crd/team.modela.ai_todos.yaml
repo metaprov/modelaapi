@@ -53,16 +53,8 @@ spec:
           spec:
             description: TodoSpec defines the desired state of Todo
             properties:
-              assignedTo:
-                default: no-one
-                description: Assigned to is the user name assigned to this task
-                type: string
               description:
                 default: ""
-                type: string
-              dueDate:
-                description: Flagged donete that task was flagged
-                format: date-time
                 type: string
               entityRef:
                 description: The modela entity that the task refer to.
@@ -109,17 +101,34 @@ spec:
                 description: NotifierName is the name of the notifier used to fire
                   the alert.
                 type: string
-              parentTask:
-                default: ""
-                description: If this task is a subtask, this is the name of the subtask
-                type: string
-              reminder:
-                description: Reminder is the time to send a reminder
-                format: date-time
-                type: string
               task:
                 default: ""
-                type: string
+                items:
+                  properties:
+                    assignedTo:
+                      default: no-one
+                      description: Assigned to is the user name assigned to this task
+                      type: string
+                    description:
+                      default: ""
+                      type: string
+                    dueDate:
+                      description: Flagged donete that task was flagged
+                      format: date-time
+                      type: string
+                    id:
+                      type: string
+                    parentTask:
+                      default: ""
+                      description: If this task is a subtask, this is the name of
+                        the subtask
+                      type: string
+                    reminder:
+                      description: Reminder is the time to send a reminder
+                      format: date-time
+                      type: string
+                  type: object
+                type: array
               tenantRef:
                 description: TenantRef is the todo tenant
                 properties:

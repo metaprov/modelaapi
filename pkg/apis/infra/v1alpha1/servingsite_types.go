@@ -38,8 +38,9 @@ type ServingSiteCondition struct {
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",description="owner"
-// +kubebuilder:printcolumn:name="FQDN",type="string",JSONPath=".spec.fqdn",description=""
-// +kubebuilder:printcolumn:name="Ingress",type="string",JSONPath=".spec.ingressName",description=""
+// +kubebuilder:printcolumn:name="FQDN",type="string",JSONPath=".spec.ingress.fqdn",description=""
+// +kubebuilder:printcolumn:name="GRPC Ingress",type="string",JSONPath=".status.grpcIngressName",description=""
+// +kubebuilder:printcolumn:name="REST Ingress",type="string",JSONPath=".status.restIngressName",description=""
 // +kubebuilder:printcolumn:name="Predictors",type="number",JSONPath=".status.activePredictors",description=""
 // +kubebuilder:printcolumn:name="Cluster",type="string",JSONPath=".spec.clusterName",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""

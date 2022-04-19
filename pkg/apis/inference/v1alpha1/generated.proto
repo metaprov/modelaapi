@@ -299,6 +299,10 @@ message CustomAppSpec {
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
+// +kubebuilder:printcolumn:name="Path",type="string",JSONPath=".spec.path"
+// +kubebuilder:printcolumn:name="Model",type="string",JSONPath=".spec.modelName"
+// +kubebuilder:printcolumn:name="Replicas",type="string",JSONPath=".spec.replicas"
+// +kubebuilder:printcolumn:name="Port",type="string",JSONPath=".spec.port"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=dataapps,singular=dataapp,categories={data,modela}
 // +kubebuilder:subresource:status
@@ -848,7 +852,7 @@ message PredictorSpec {
   optional k8s.io.api.core.v1.PodTemplate template = 5;
 
   // The collection of model deployment specifications that define which Model resources will be deployed to the
-  // Predictor service and how they will be deployed. Each model should be associated with the same type of
+  // Predictor service and how they will be deployed. Each model should be trained with the same type of
   // dataset and possess a unique version
   // +kubebuilder:validation:Optional
   repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec models = 6;
@@ -954,7 +958,7 @@ message PredictorSpec {
   // +kubebuilder:validation:Optional
   optional PredictorAuthSpec auth = 25;
 
-  // Indicates if the prediction service should expose an additional port to serve the GRPCInferenceService API using REST.
+  // Indicates if the prediction service should expose an additional port to serve the GRPCInferenceService API through REST.
   // The port one digit above the number specified by the Port field will be exposed to accept HTTP/1.1 traffic
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
@@ -995,7 +999,7 @@ message PredictorStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 11;
 
-  // The target column of the Predictor
+  // The target feature of the model that the Predictor serves
   // +kubebuilder:validation:Optional
   optional string targetColumn = 12;
 

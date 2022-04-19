@@ -64,10 +64,10 @@ type TodoList struct {
 type TodoSpec struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	Task *string `json:"task,omitempty" protobuf:"bytes,1,opt,name=task"`
+	Description *string `json:"description,omitempty" protobuf:"bytes,1,opt,name=description"`
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
+	Tasks []TaskSpec `json:"task,omitempty" protobuf:"bytes,2,rep,name=tasks"`
 	// The modela entity that the task refer to.
 	// +kubebuilder:validation:Optional
 	EntityRef v1.ObjectReference `json:"entityRef,omitempty" protobuf:"bytes,3,opt,name=entityRef"`
@@ -75,25 +75,13 @@ type TodoSpec struct {
 	// +kubebuilder:validation:Required
 	// NotifierName is the name of the notifier used to fire the alert.
 	NotifierName *string `json:"notifierName,omitempty" protobuf:"bytes,4,opt,name=notifierName"`
-	// Assigned to is the user name assigned to this task
-	// +kubebuilder:default:="no-one"
-	// +kubebuilder:validation:Optional
-	AssignedTo *string `json:"assignedTo,omitempty" protobuf:"bytes,5,opt,name=assignedTo"`
 	// Flagged donate that task was flagged
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Flagged *bool `json:"flagged,omitempty" protobuf:"varint,6,opt,name=flagged"`
-	// Reminder is the time to send a reminder
-	Reminder *metav1.Time `json:"reminder,omitempty" protobuf:"bytes,7,opt,name=reminder"`
-	// Flagged donete that task was flagged
-	DueDate *metav1.Time `json:"dueDate,omitempty" protobuf:"bytes,8,opt,name=dueDate"`
-	// If this task is a subtask, this is the name of the subtask
-	// +kubebuilder:default:=""
-	// +kubebuilder:validation:Optional
-	ParentTask *string `json:"parentTask,omitempty" protobuf:"bytes,9,opt,name=parentTask"`
+	Flagged *bool `json:"flagged,omitempty" protobuf:"varint,5,opt,name=flagged"`
 	// TenantRef is the todo tenant
 	// +kubebuilder:validation:Optional
-	TenantRef *v1.ObjectReference `json:"tenantRef,omitempty" protobuf:"bytes,10,opt,name=tenantRef"`
+	TenantRef *v1.ObjectReference `json:"tenantRef,omitempty" protobuf:"bytes,6,opt,name=tenantRef"`
 }
 
 // TodoStatus is the observed state of a Todo
@@ -112,4 +100,23 @@ type TodoStatus struct {
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
 	Conditions []TodoCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,3,rep,name=conditions"`
+}
+
+type TaskSpec struct {
+	ID *string `json:"id,omitempty" protobuf:"bytes,1,opt,name=id"`
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
+	Content *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
+	// Assigned to is the user name assigned to this task
+	// +kubebuilder:default:="no-one"
+	// +kubebuilder:validation:Optional
+	AssignedTo *string `json:"assignedTo,omitempty" protobuf:"bytes,3,opt,name=assignedTo"`
+	// Flagged donete that task was flagged
+	DueDate *metav1.Time `json:"dueDate,omitempty" protobuf:"bytes,4,opt,name=dueDate"`
+	// Reminder is the time to send a reminder
+	Reminder *metav1.Time `json:"reminder,omitempty" protobuf:"bytes,5,opt,name=reminder"`
+	// If this task is a subtask, this is the name of the subtask
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
+	ParentTask *string `json:"parentTask,omitempty" protobuf:"bytes,6,opt,name=parentTask"`
 }

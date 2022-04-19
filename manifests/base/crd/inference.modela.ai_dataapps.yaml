@@ -28,6 +28,18 @@ spec:
     - jsonPath: .spec.versionName
       name: Version
       type: string
+    - jsonPath: .spec.path
+      name: Path
+      type: string
+    - jsonPath: .spec.modelName
+      name: Model
+      type: string
+    - jsonPath: .spec.replicas
+      name: Replicas
+      type: string
+    - jsonPath: .spec.port
+      name: Port
+      type: string
     - jsonPath: .metadata.creationTimestamp
       name: Age
       type: date

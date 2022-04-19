@@ -26,7 +26,7 @@ spec:
       name: Status
       type: string
     - jsonPath: .spec.dataProductName
-      name: Location Product
+      name: Data Product
       type: string
     - jsonPath: .spec.dataProductVersionName
       name: Version
@@ -54,8 +54,9 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: ModelAutobuilder represent an automatic run of all the phases
-          needed to create a model
+        description: ModelAutobuilder represents an automated pipeline to train and
+          deploy a model based on a given dataset ModelAutobuilder represent an automatic
+          run of all the phases needed to create a model
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation
@@ -70,16 +71,19 @@ spec:
           metadata:
             type: object
           spec:
-            description: ModelAutobuilderSpec define the desired state of the ModelAutobuilder
-              resource.
+            description: ModelAutobuilderSpec define the desired state of a ModelAutobuilder
             properties:
               aborted:
                 default: false
-                description: Set the true to abort the model auto builder
+                description: Aborted indicates that the execution of the ModelAutobuilder
+                  and any associated workloads should be permanently stopped
                 type: boolean
               accessMethod:
                 default: cluster-ip
-                description: Access method specify the predictor access method.
+                description: The Kubernetes-native access method which specifies how
+                  the Predictor created by the ModelAutobuilder will be exposed. See
+                  https://modela.ai/docs/docs/serving/production/#access-method for
+                  a detailed description of each access type
                 enum:
                 - cluster-ip
                 - node-port
@@ -90,22 +94,27 @@ spec:
                 type: string
               autoScale:
                 default: false
-                description: Specify if the predictor should autoscale.
+                description: Indicates if the Predictor created by the ModelAutobuilder
+                  will automatically scale to traffic
                 type: boolean
               dataProductName:
-                description: DataProductName is the name of the data product
+                description: The name of the DataProduct namespace that the resource
+                  exists under
                 maxLength: 63
                 pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
                 type: string
               dataProductVersionName:
-                description: DataProductVersionName is a reference to data product
-                  version
+                description: The name of the DataProductVersion which describes the
+                  version of the resource that exists in the same DataProduct namespace
+                  as the resource
                 maxLength: 253
                 pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
                 type: string
               dataSourceSpec:
-                description: The spec of the data source, if none, the runner will
-                  infer the schema, and will create a new schema with
+                description: DataSourceSpec specifies the full specification of the
+                  DataSource resource that will be created by the ModelAutobuilder.
+                  If empty, the ModelAutobuilder will attempt to infer the schema
+                  of the data specified by the Location field
                 properties:
                   csvfile:
                     description: The file format for CSV files, if applicable
@@ -973,18 +982,19 @@ spec:
                 type: object
               dataapp:
                 default: false
-                description: 'Specify if we should create a data app as part of the
-                  autobuilder. Default : false'
+                description: Indicates if the ModelAutobuilder will create a DataApp
+                  resource to serve the highest-performing model that was trained
                 type: boolean
               datasetName:
-                description: DatasetName is the name of existing dataset, if empty
-                  the dataset object will be created otherwise, a dataset will be
-                  created based on the file in the path section.
+                description: The name of an existing Dataset resource, or the name
+                  of the Dataset resource that will be created based on the data specified
+                  by the Location field, which will be used to train models
                 maxLength: 253
                 pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
                 type: string
               datasetType:
-                description: Dataset type is the type of the dataset (tabular / vision)
+                description: The type of dataset which was uploaded. `tabular` is
+                  the only supported type as of the current release
                 enum:
                 - tabular
                 - image
@@ -993,26 +1003,34 @@ spec:
                 - audio
                 type: string
               datasourceName:
-                description: DataSourceName is the name of existing datasource, if
-                  empty the datasource parameters will be inferred from the file
+                description: DataSourceName is the name of an existing DataSource
+                  resource which will be used as the schema for the ModelAutoBuilder's
+                  Dataset. If empty, a DataSource will be automatically created based
+                  on the data specified by the Location field
                 maxLength: 253
                 pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
                 type: string
               fast:
                 default: false
-                description: Specify fast mode for model auto builder.
+                description: Fast indicates if Dataset and Study resources associated
+                  with the ModelAutobuilder should run in fast mode. Running in fast
+                  mode will skip unnecessary workloads such as profiling, reporting,
+                  explaining, etc.
                 type: boolean
               featureEngineering:
                 default: false
-                description: If true specify feature engineering
+                description: Indicates if feature engineering will be performed prior
+                  to the primary model search
                 type: boolean
               featureSelection:
                 default: false
-                description: If true perform feature selection
+                description: Indicates if feature selection will be performed prior
+                  to the primary model search
                 type: boolean
               labRef:
-                description: LabRef is a reference to the lab where the trainers for
-                  this study run. If no value is provided, the lab is taken from the
+                description: The reference to the Lab under which Dataset and Study
+                  resources created by the ModelAutobuilder will be trained. If unspecified,
+                  the default Lab from the parent DataProduct will be used
                 properties:
                   apiVersion:
                     description: API version of the referent.
@@ -1048,7 +1066,8 @@ spec:
                     type: string
                 type: object
               location:
-                description: Location is the location of the data in the cloud
+                description: The location for data that will be saved in a Dataset
+                  resource to train models with
                 properties:
                   bucketName:
                     default: ""
@@ -1107,22 +1126,22 @@ spec:
                 type: object
               maxModels:
                 default: 10
-                description: Max model
+                description: The number of candidate models that will be sampled and
+                  trained
                 format: int32
                 maximum: 512
                 minimum: 1
                 type: integer
               maxTime:
                 default: 3600
-                description: Max training time.
+                description: The deadline for models to complete training, in seconds
                 format: int32
                 maximum: 36000
                 minimum: 1
                 type: integer
               objective:
-                description: The task objective. this is how models will be scored.
-                  If not defined this will be set to the default objective for the
-                  task
+                description: The objective metric that will be measured against trained
+                  models to evaluate their performance
                 enum:
                 - accuracy
                 - average-precision
@@ -1202,12 +1221,13 @@ spec:
                 type: string
               owner:
                 default: no-one
-                description: The owner account name
+                description: The name of the Account which created the object, which
+                  exists in the same tenant as the object
                 pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
                 type: string
               resources:
-                description: Resource spec specify the resources needed for running
-                  the model pipeline job
+                description: Resources specifies the resource requirements that will
+                  be allocated to dataset and model training Jobs
                 properties:
                   cpuImage:
                     description: Reference to the managed CPU trainer image, used
@@ -1319,7 +1339,7 @@ spec:
                 type: object
               sampler:
                 default: random
-                description: Specify the search method
+                description: The hyper-parameter optimization search method
                 enum:
                 - random
                 - grid
@@ -1329,8 +1349,9 @@ spec:
                 - auto
                 type: string
               servingSiteRef:
-                description: A reference to the serving site. If no value is provided,
-                  the lab is taken from the
+                description: The reference to the ServingSite where the Predictor
+                  created by the ModelAutobuilder will be hosted. If unspecified,
+                  the default ServingSite from the parent DataProduct will be used
                 properties:
                   apiVersion:
                     description: API version of the referent.
@@ -1366,12 +1387,13 @@ spec:
                     type: string
                 type: object
               targetColumn:
-                description: 'Target column. Default: last column in the schema.'
+                description: The name of the column within the dataset that contains
+                  the label(s) to be predicted
                 maxLength: 128
                 type: string
               task:
-                description: Task is the machine learning task (regression/classification)
-                  required
+                description: The machine learning task type relevant to the dataset
+                  (i.e. regression, classification)
                 enum:
                 - binary-classification
                 - multi-classification
@@ -1412,45 +1434,50 @@ spec:
                 type: string
               trainers:
                 default: 1
-                description: Specify the number of trainers. Default 1 trainer.
+                description: The desired number of trainers that will train candidate
+                  models in parallel. The number of trainers is restricted based on
+                  the allowance provided by the active License
                 format: int32
                 type: integer
             type: object
           status:
-            description: ModelAutobuilderStatus define the observed state of the pipeline
+            description: ModelAutobuilderStatus define the observed state of a ModelAutobuilder
             properties:
               bestModelName:
-                description: The selected model name.
+                description: The name of the highest-performing Model resource produced
+                  as a result of the associated Study resource
                 type: string
               bestModelScore:
-                description: The Best model score, so far.
+                description: The highest score out of all Models created by the associated
+                  Study resource
                 type: number
               cols:
-                description: number of columns, used mainly to show the columns
+                description: The number of columns observed in the Dataset associated
+                  with the resource
                 format: int32
                 type: integer
               conditions:
                 items:
                   description: ModelAutobuilderCondition describes the state of a
-                    pipeline at a certain point.
+                    ModelAutobuilder at a certain point
                   properties:
                     lastTransitionTime:
                       description: Last time the condition transitioned from one status
-                        to another.
+                        to another
                       format: date-time
                       type: string
                     message:
-                      description: A human readable message indicating details about
-                        the transition.
+                      description: A human-readable message indicating details about
+                        the transition
                       type: string
                     reason:
-                      description: The reason for the condition's last transition.
+                      description: The reason for the condition's last transition
                       type: string
                     status:
-                      description: Status of the condition, one of True, False, Unknown.
+                      description: Status of the condition, one of True, False, Unknown
                       type: string
                     type:
-                      description: Type of account condition.
+                      description: Type of ModelAutobuilder condition
                       type: string
                   required:
                   - status
@@ -1458,20 +1485,22 @@ spec:
                   type: object
                 type: array
               dataSourceName:
-                description: the generated schema name (if generated)
+                description: The name of the DataSource associated with resource
                 type: string
               dataappName:
-                description: the generated predictor name
+                description: The name of the DataApp associated with the resource
                 type: string
               datasetName:
-                description: the generated dataset name (if generated)
+                description: The name of the Dataset associated with the resource
                 type: string
               endTime:
-                description: CompletionTime is the time that this prediction job finished
+                description: EndTime represents the time at which the ModelAutobuilder
+                  was marked as completed, failed, or aborted
                 format: date-time
                 type: string
               estimator:
-                description: The best estimator, taken from the best model
+                description: The estimator specification for the highest-performing
+                  Model resource
                 properties:
                   algorithmName:
                     description: AlgorithmName is a reference to the algorithm in
@@ -1496,55 +1525,61 @@ spec:
                     type: array
                 type: object
               failureMessage:
-                description: Update in case of terminal failure message
+                description: In the case of failure, the ModelAutobuilder resource
+                  controller will set this field with a failure message
                 type: string
               failureReason:
-                description: Update in case of terminal failure Borrowed from cluster
-                  api controller
+                description: In the case of failure, the ModelAutobuilder resource
+                  controller will set this field with a failure reason
                 type: string
               fileSize:
-                description: file size in bytes
+                description: The size of the raw data in the Dataset associated with
+                  the resource
                 format: int32
                 type: integer
               flatFileName:
-                description: the generate flat file name
+                description: The name of the flat-file generated for the associated
+                  Dataset
                 type: string
               imageRepoName:
-                description: the name of the image repository
                 type: string
               lastUpdated:
-                description: Last time the object was updated
+                description: The last time the object was updated
                 format: date-time
                 type: string
               models:
-                description: Total models created for the study
+                description: The number of total Model resources created by the associated
+                  Study resource
                 format: int32
                 type: integer
               observedGeneration:
-                description: ObservedGeneration is the Last generation that was acted
+                description: ObservedGeneration is the last generation that was acted
                   on
                 format: int64
                 type: integer
               phase:
                 default: Pending
-                description: The phase of the auto ml run
+                description: The phase of the ModelAutobuilder
                 type: string
               predictorName:
-                description: the generated predictor name
+                description: The name of the Predictor associated with the resource
                 type: string
               rows:
-                description: number of rows in the dataset
+                description: The number of rows observed in the Dataset associated
+                  with the resource
                 format: int32
                 type: integer
               startTime:
-                description: StartTime is the times that this prediction job started
+                description: StartTime represents the time at which the execution
+                  of the ModelAutobuilder started
                 format: date-time
                 type: string
               studyName:
-                description: the generate study name
+                description: The name of the Study associated with the resource
                 type: string
               trainedModels:
-                description: models that were successful during training
+                description: The number of successfully trained Model resources created
+                  by the associated Study resource
                 format: int32
                 type: integer
             type: object
