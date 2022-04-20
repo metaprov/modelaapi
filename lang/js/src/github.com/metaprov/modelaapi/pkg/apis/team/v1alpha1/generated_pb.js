@@ -993,11 +993,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem.prototy
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem.toObject = function(includeInstance, msg) {
   var f, obj = {
-    instruction: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    enabled: (f = jspb.Message.getBooleanField(msg, 2)) == null ? undefined : f,
-    location: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    id: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    instruction: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    enabled: (f = jspb.Message.getBooleanField(msg, 3)) == null ? undefined : f,
     condition: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    attachment: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
+    command: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    precondition: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
+    postcondition: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -1036,15 +1038,15 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem.deseria
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setInstruction(value);
+      msg.setId(value);
       break;
     case 2:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setEnabled(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setInstruction(value);
       break;
     case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setLocation(value);
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setEnabled(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
@@ -1052,7 +1054,15 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem.deseria
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
-      msg.setAttachment(value);
+      msg.setCommand(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPrecondition(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPostcondition(value);
       break;
     default:
       reader.skipField();
@@ -1090,16 +1100,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem.seriali
       f
     );
   }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 2));
+  f = /** @type {string} */ (jspb.Message.getField(message, 2));
   if (f != null) {
-    writer.writeBool(
+    writer.writeString(
       2,
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 3));
   if (f != null) {
-    writer.writeString(
+    writer.writeBool(
       3,
       f
     );
@@ -1118,14 +1128,28 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem.seriali
       f
     );
   }
+  f = /** @type {string} */ (jspb.Message.getField(message, 6));
+  if (f != null) {
+    writer.writeString(
+      6,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 7));
+  if (f != null) {
+    writer.writeString(
+      7,
+      f
+    );
+  }
 };
 
 
 /**
- * optional string instruction = 1;
+ * optional string id = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem.prototype.getInstruction = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem.prototype.getId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -1134,7 +1158,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem.prototy
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem.prototype.setInstruction = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem.prototype.setId = function(value) {
   return jspb.Message.setField(this, 1, value);
 };
 
@@ -1143,7 +1167,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem.prototy
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem.prototype.clearInstruction = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem.prototype.clearId = function() {
   return jspb.Message.setField(this, 1, undefined);
 };
 
@@ -1152,25 +1176,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem.prototy
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem.prototype.hasInstruction = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem.prototype.hasId = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
- * optional bool enabled = 2;
- * @return {boolean}
+ * optional string instruction = 2;
+ * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem.prototype.getEnabled = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 2, false));
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem.prototype.getInstruction = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
- * @param {boolean} value
+ * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem.prototype.setEnabled = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem.prototype.setInstruction = function(value) {
   return jspb.Message.setField(this, 2, value);
 };
 
@@ -1179,7 +1203,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem.prototy
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem.prototype.clearEnabled = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem.prototype.clearInstruction = function() {
   return jspb.Message.setField(this, 2, undefined);
 };
 
@@ -1188,25 +1212,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem.prototy
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem.prototype.hasEnabled = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem.prototype.hasInstruction = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional string location = 3;
- * @return {string}
+ * optional bool enabled = 3;
+ * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem.prototype.getLocation = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem.prototype.getEnabled = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
 };
 
 
 /**
- * @param {string} value
+ * @param {boolean} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem.prototype.setLocation = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem.prototype.setEnabled = function(value) {
   return jspb.Message.setField(this, 3, value);
 };
 
@@ -1215,7 +1239,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem.prototy
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem.prototype.clearLocation = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem.prototype.clearEnabled = function() {
   return jspb.Message.setField(this, 3, undefined);
 };
 
@@ -1224,7 +1248,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem.prototy
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem.prototype.hasLocation = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem.prototype.hasEnabled = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
@@ -1266,10 +1290,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem.prototy
 
 
 /**
- * optional string attachment = 5;
+ * optional string command = 5;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem.prototype.getAttachment = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem.prototype.getCommand = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
@@ -1278,7 +1302,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem.prototy
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem.prototype.setAttachment = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem.prototype.setCommand = function(value) {
   return jspb.Message.setField(this, 5, value);
 };
 
@@ -1287,7 +1311,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem.prototy
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem.prototype.clearAttachment = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem.prototype.clearCommand = function() {
   return jspb.Message.setField(this, 5, undefined);
 };
 
@@ -1296,8 +1320,80 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem.prototy
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem.prototype.hasAttachment = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem.prototype.hasCommand = function() {
   return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional string precondition = 6;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem.prototype.getPrecondition = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem.prototype.setPrecondition = function(value) {
+  return jspb.Message.setField(this, 6, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem.prototype.clearPrecondition = function() {
+  return jspb.Message.setField(this, 6, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem.prototype.hasPrecondition = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional string postcondition = 7;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem.prototype.getPostcondition = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem.prototype.setPostcondition = function(value) {
+  return jspb.Message.setField(this, 7, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem.prototype.clearPostcondition = function() {
+  return jspb.Message.setField(this, 7, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem.prototype.hasPostcondition = function() {
+  return jspb.Message.getField(this, 7) != null;
 };
 
 

@@ -32,30 +32,39 @@ message ActionItem {
 }
 
 message CheckListItem {
-  // Instruction is the instruction to follow
+  // The step ID
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string instruction = 1;
+  optional string id = 1;
+
+  // Instruction to follow.
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string instruction = 2;
 
   // Enabled indicate weather this item is enabled
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool enabled = 2;
-
-  // Condition is the condition to tune this checklist item
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:Optional
-  optional string location = 3;
+  optional bool enabled = 3;
 
   // Condition is the condition to use this checklist item
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string condition = 4;
 
-  // Attachment is a link to the documentation for this checklist item
+  // The command line to execute when running the step.
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string attachment = 5;
+  optional string command = 5;
+
+  // What must be true before the step
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string precondition = 6;
+
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string postcondition = 7;
 }
 
 // Commnet represents a single comment in the review

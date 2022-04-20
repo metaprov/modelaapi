@@ -37,20 +37,26 @@ export namespace ActionItem {
 }
 
 export class CheckListItem extends jspb.Message {
+  getId(): string;
+  setId(value: string): CheckListItem;
+
   getInstruction(): string;
   setInstruction(value: string): CheckListItem;
 
   getEnabled(): boolean;
   setEnabled(value: boolean): CheckListItem;
 
-  getLocation(): string;
-  setLocation(value: string): CheckListItem;
-
   getCondition(): string;
   setCondition(value: string): CheckListItem;
 
-  getAttachment(): string;
-  setAttachment(value: string): CheckListItem;
+  getCommand(): string;
+  setCommand(value: string): CheckListItem;
+
+  getPrecondition(): string;
+  setPrecondition(value: string): CheckListItem;
+
+  getPostcondition(): string;
+  setPostcondition(value: string): CheckListItem;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CheckListItem.AsObject;
@@ -62,11 +68,13 @@ export class CheckListItem extends jspb.Message {
 
 export namespace CheckListItem {
   export type AsObject = {
+    id: string,
     instruction: string,
     enabled: boolean,
-    location: string,
     condition: string,
-    attachment: string,
+    command: string,
+    precondition: string,
+    postcondition: string,
   }
 }
 

@@ -87,10 +87,9 @@ spec:
                 description: The checklist
                 items:
                   properties:
-                    attachment:
+                    command:
                       default: ""
-                      description: Attachment is a link to the documentation for this
-                        checklist item
+                      description: The command line to execute when running the step.
                       type: string
                     condition:
                       default: ""
@@ -101,14 +100,20 @@ spec:
                       default: false
                       description: Enabled indicate weather this item is enabled
                       type: boolean
+                    id:
+                      default: ""
+                      description: The step ID
+                      type: string
                     instruction:
                       default: ""
-                      description: Instruction is the instruction to follow
+                      description: Instruction to follow.
                       type: string
-                    location:
+                    postcondition:
                       default: ""
-                      description: Condition is the condition to tune this checklist
-                        item
+                      type: string
+                    precondition:
+                      default: ""
+                      description: What must be true before the step
                       type: string
                   type: object
                 type: array

@@ -98,24 +98,31 @@ type RunBookStatus struct {
 }
 
 type CheckListItem struct {
-	// Instruction is the instruction to follow
+	// The step ID
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	Instruction *string `json:"instruction,omitempty" protobuf:"bytes,1,opt,name=instruction"`
+	ID *string `json:"id,omitempty" protobuf:"bytes,1,opt,name=id"`
+	// Instruction to follow.
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
+	Instruction *string `json:"instruction,omitempty" protobuf:"bytes,2,opt,name=instruction"`
 	// Enabled indicate weather this item is enabled
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,2,opt,name=enabled"`
-	// Condition is the condition to tune this checklist item
-	// +kubebuilder:default:=""
-	// +kubebuilder:validation:Optional
-	Location *string `json:"location,omitempty" protobuf:"bytes,3,opt,name=location"`
+	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,3,opt,name=enabled"`
 	// Condition is the condition to use this checklist item
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Condition *string `json:"condition,omitempty" protobuf:"bytes,4,opt,name=condition"`
-	// Attachment is a link to the documentation for this checklist item
+	// The command line to execute when running the step.
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	Attachment *string `json:"attachment,omitempty" protobuf:"bytes,5,opt,name=attachment"`
+	Command *string `json:"command,omitempty" protobuf:"bytes,5,opt,name=command"`
+	// What must be true before the step
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
+	PreCondition *string `json:"precondition,omitempty" protobuf:"bytes,6,opt,name=precondition"`
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
+	PostCondition *string `json:"postcondition,omitempty" protobuf:"bytes,7,opt,name=postcondition"`
 }
