@@ -5,15 +5,6 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-// ModelPhase is the current phase of a model
-type TodoPhase string
-
-const (
-	TodoPhaseBacklog    TodoPhase = "Backlog"
-	TodoPhaseInProgress TodoPhase = "Inprogress"
-	TodoPhaseDone       TodoPhase = "Done"
-)
-
 // Todo condition
 type TodoConditionType string
 
@@ -40,11 +31,11 @@ type TodoCondition struct {
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase",description=""
-// +kubebuilder:printcolumn:name="Subject",type="string",JSONPath=".spec.task",description=""
+// +kubebuilder:printcolumn:name="Description",type="string",JSONPath=".spec.description",description=""
 // +kubebuilder:printcolumn:name="Entity Namespace",type="string",JSONPath=".spec.entityRef.namespace",description=""
 // +kubebuilder:printcolumn:name="Entity Name",type="string",JSONPath=".spec.entityRef.name",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=todos,singular=todo,categories={infra,modela}
+// +kubebuilder:resource:path=todos,singular=todo,categories={team,modela}
 type Todo struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
@@ -85,16 +76,12 @@ type TodoSpec struct {
 
 // TodoStatus is the observed state of a Todo
 type TodoStatus struct {
-	// Phase is the phase of the model
-	// +kubebuilder:default:="Pending"
-	// +kubebuilder:validation:Optional
-	Phase TodoPhase `json:"phase" protobuf:"bytes,1,opt,name=phase"`
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
-	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,2,opt,name=observedGeneration"`
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,1,opt,name=observedGeneration"`
 	// Last time the object was updated
 	//+kubebuilder:validation:Optional
-	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,6,opt,name=lastUpdated"`
+	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,2,opt,name=lastUpdated"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional

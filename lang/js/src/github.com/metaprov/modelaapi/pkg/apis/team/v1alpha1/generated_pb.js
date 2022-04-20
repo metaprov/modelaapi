@@ -10370,8 +10370,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoStatus.prototype.
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
-    phase: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    observedgeneration: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    observedgeneration: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     lastupdated: (f = msg.getLastupdated()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoCondition.toObject, includeInstance)
@@ -10412,14 +10411,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoStatus.deserializ
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setPhase(value);
-      break;
-    case 2:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setObservedgeneration(value);
       break;
-    case 6:
+    case 2:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
       msg.setLastupdated(value);
@@ -10458,24 +10453,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoStatus.prototype.
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoStatus.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = /** @type {string} */ (jspb.Message.getField(message, 1));
-  if (f != null) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 2));
+  f = /** @type {number} */ (jspb.Message.getField(message, 1));
   if (f != null) {
     writer.writeInt64(
-      2,
+      1,
       f
     );
   }
   f = message.getLastupdated();
   if (f != null) {
     writer.writeMessage(
-      6,
+      2,
       f,
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
@@ -10492,47 +10480,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoStatus.serializeB
 
 
 /**
- * optional string phase = 1;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoStatus.prototype.getPhase = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoStatus.prototype.setPhase = function(value) {
-  return jspb.Message.setField(this, 1, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoStatus.prototype.clearPhase = function() {
-  return jspb.Message.setField(this, 1, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoStatus.prototype.hasPhase = function() {
-  return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional int64 observedGeneration = 2;
+ * optional int64 observedGeneration = 1;
  * @return {number}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoStatus.prototype.getObservedgeneration = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
@@ -10541,7 +10493,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoStatus.prototype.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoStatus} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoStatus.prototype.setObservedgeneration = function(value) {
-  return jspb.Message.setField(this, 2, value);
+  return jspb.Message.setField(this, 1, value);
 };
 
 
@@ -10550,7 +10502,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoStatus.prototype.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoStatus} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoStatus.prototype.clearObservedgeneration = function() {
-  return jspb.Message.setField(this, 2, undefined);
+  return jspb.Message.setField(this, 1, undefined);
 };
 
 
@@ -10559,17 +10511,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoStatus.prototype.
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoStatus.prototype.hasObservedgeneration = function() {
-  return jspb.Message.getField(this, 2) != null;
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 6;
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2;
  * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoStatus.prototype.getLastupdated = function() {
   return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
-    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 6));
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 2));
 };
 
 
@@ -10578,7 +10530,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoStatus.prototype.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoStatus.prototype.setLastupdated = function(value) {
-  return jspb.Message.setWrapperField(this, 6, value);
+  return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
@@ -10596,7 +10548,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoStatus.prototype.
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoStatus.prototype.hasLastupdated = function() {
-  return jspb.Message.getField(this, 6) != null;
+  return jspb.Message.getField(this, 2) != null;
 };
 
 

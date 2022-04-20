@@ -1087,9 +1087,6 @@ export namespace TodoSpec {
 }
 
 export class TodoStatus extends jspb.Message {
-  getPhase(): string;
-  setPhase(value: string): TodoStatus;
-
   getObservedgeneration(): number;
   setObservedgeneration(value: number): TodoStatus;
 
@@ -1113,7 +1110,6 @@ export class TodoStatus extends jspb.Message {
 
 export namespace TodoStatus {
   export type AsObject = {
-    phase: string,
     observedgeneration: number,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<TodoCondition.AsObject>,

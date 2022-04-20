@@ -10,7 +10,7 @@ spec:
   group: team.modela.ai
   names:
     categories:
-    - infra
+    - team
     - modela
     kind: Todo
     listKind: TodoList
@@ -22,8 +22,8 @@ spec:
     - jsonPath: .status.phase
       name: Status
       type: string
-    - jsonPath: .spec.task
-      name: Subject
+    - jsonPath: .spec.description
+      name: Description
       type: string
     - jsonPath: .spec.entityRef.namespace
       name: Entity Namespace
@@ -205,10 +205,6 @@ spec:
                   on
                 format: int64
                 type: integer
-              phase:
-                default: Pending
-                description: Phase is the phase of the model
-                type: string
             type: object
         required:
         - spec
