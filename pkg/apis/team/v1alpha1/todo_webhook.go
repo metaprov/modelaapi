@@ -83,5 +83,4 @@ func (task *Todo) MarkDone() {
 		Type:   TodoDone,
 		Status: corev1.ConditionTrue,
 	})
-	task.Status.Phase = TodoPhaseDone
 }
