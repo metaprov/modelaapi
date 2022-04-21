@@ -120,7 +120,7 @@ message Comment {
 // +kubebuilder:printcolumn:name="Description",type="string",JSONPath=".spec.description",description=""
 // +kubebuilder:printcolumn:name="Entity Namespace",type="string",JSONPath=".spec.entityRef.name",description=""
 // +kubebuilder:printcolumn:name="Entity Name",type="string",JSONPath=".spec.entityRef.namespace",description=""
-// +kubebuilder:printcolumn:name="At",type="date",JSONPath=".status.at",description=""
+// +kubebuilder:printcolumn:name="Time",type="date",JSONPath=".spec.time",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=meetings,singular=meeting,categories={infra,modela}
 message Meeting {

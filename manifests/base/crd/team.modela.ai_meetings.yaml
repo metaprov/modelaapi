@@ -31,8 +31,8 @@ spec:
     - jsonPath: .spec.entityRef.namespace
       name: Entity Name
       type: string
-    - jsonPath: .status.at
-      name: At
+    - jsonPath: .spec.time
+      name: Time
       type: date
     - jsonPath: .metadata.creationTimestamp
       name: Age
