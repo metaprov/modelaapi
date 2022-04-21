@@ -271,6 +271,11 @@ export class MeetingSpec extends jspb.Message {
   hasTenantref(): boolean;
   clearTenantref(): MeetingSpec;
 
+  getTime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setTime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): MeetingSpec;
+  hasTime(): boolean;
+  clearTime(): MeetingSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MeetingSpec.AsObject;
   static toObject(includeInstance: boolean, msg: MeetingSpec): MeetingSpec.AsObject;
@@ -291,6 +296,7 @@ export namespace MeetingSpec {
     notes: string,
     actionitemsList: Array<ActionItem.AsObject>,
     tenantref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    time?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
   }
 }
 

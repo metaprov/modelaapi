@@ -207,6 +207,10 @@ spec:
                     description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                     type: string
                 type: object
+              time:
+                description: The meeting time
+                format: date-time
+                type: string
             type: object
           status:
             description: MeetingStatus is the observed state of a Meeting

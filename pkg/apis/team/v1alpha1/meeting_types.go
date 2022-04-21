@@ -97,6 +97,9 @@ type MeetingSpec struct {
 	// TenantRef is the commit tenant
 	// +kubebuilder:validation:Optional
 	TenantRef *v1.ObjectReference `json:"tenantRef,omitempty" protobuf:"bytes,10,opt,name=tenantRef"`
+	// The meeting time
+	// +kubebuilder:validation:Optional
+	Time *metav1.Time `json:"time,omitempty" protobuf:"bytes,11,opt,name=time"`
 }
 
 // MeetingStatus is the observed state of a Meeting
