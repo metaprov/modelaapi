@@ -1719,6 +1719,17 @@ const (
 	None           SeasonalityMode = "none"
 )
 
+// The Log level for modela jobs
+// +kubebuilder:validation:Enum="trace";"debug";"info";"error"
+type LogLevel string
+
+const (
+	LogLevelTrace LogLevel = "trace"
+	LogLevelDebug LogLevel = "debug"
+	LogLevelInfo  LogLevel = "info"
+	LogLevelError LogLevel = "error"
+)
+
 // Use for color attribute
 // Based on this: https://pkg.go.dev/golang.org/x/image/colornames
 

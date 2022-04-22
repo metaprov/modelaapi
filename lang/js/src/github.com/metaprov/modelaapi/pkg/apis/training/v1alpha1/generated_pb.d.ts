@@ -183,6 +183,12 @@ export namespace ChatbotEstimatorSpec {
 }
 
 export class CheckpointSpec extends jspb.Message {
+  getEnabled(): boolean;
+  setEnabled(value: boolean): CheckpointSpec;
+
+  getCheckpointinterval(): number;
+  setCheckpointinterval(value: number): CheckpointSpec;
+
   getLocation(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
   setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): CheckpointSpec;
   hasLocation(): boolean;
@@ -198,6 +204,8 @@ export class CheckpointSpec extends jspb.Message {
 
 export namespace CheckpointSpec {
   export type AsObject = {
+    enabled: boolean,
+    checkpointinterval: number,
     location?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
   }
 }
@@ -4782,9 +4790,6 @@ export class StudySpec extends jspb.Message {
   getOwner(): string;
   setOwner(value: string): StudySpec;
 
-  getActivedeadlineseconds(): number;
-  setActivedeadlineseconds(value: number): StudySpec;
-
   getCompilation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec | undefined;
   setCompilation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec): StudySpec;
   hasCompilation(): boolean;
@@ -4816,6 +4821,9 @@ export class StudySpec extends jspb.Message {
 
   getModelversion(): string;
   setModelversion(value: string): StudySpec;
+
+  getTimeoutinsecs(): number;
+  setTimeoutinsecs(value: number): StudySpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): StudySpec.AsObject;
@@ -4850,7 +4858,6 @@ export namespace StudySpec {
     fast: boolean,
     location?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     owner: string,
-    activedeadlineseconds: number,
     compilation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec.AsObject,
     template: boolean,
     flagged: boolean,
@@ -4859,6 +4866,7 @@ export namespace StudySpec {
     gc?: GarbageCollectionSpec.AsObject,
     ttl: number,
     modelversion: string,
+    timeoutinsecs: number,
   }
 }
 
@@ -5281,9 +5289,6 @@ export class TrainingSpec extends jspb.Message {
   getEarlystop(): boolean;
   setEarlystop(value: boolean): TrainingSpec;
 
-  getCheckpointinterval(): number;
-  setCheckpointinterval(value: number): TrainingSpec;
-
   getSh(): SuccessiveHalvingSpec | undefined;
   setSh(value?: SuccessiveHalvingSpec): TrainingSpec;
   hasSh(): boolean;
@@ -5314,6 +5319,12 @@ export class TrainingSpec extends jspb.Message {
   hasCheckpoint(): boolean;
   clearCheckpoint(): TrainingSpec;
 
+  getLoglevel(): string;
+  setLoglevel(value: string): TrainingSpec;
+
+  getTimeoutinsecs(): number;
+  setTimeoutinsecs(value: number): TrainingSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TrainingSpec.AsObject;
   static toObject(includeInstance: boolean, msg: TrainingSpec): TrainingSpec.AsObject;
@@ -5332,7 +5343,6 @@ export namespace TrainingSpec {
     split?: DataSplitSpec.AsObject,
     evalmetricsList: Array<string>,
     earlystop: boolean,
-    checkpointinterval: number,
     sh?: SuccessiveHalvingSpec.AsObject,
     seed: number,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
@@ -5341,6 +5351,8 @@ export namespace TrainingSpec {
     nodecount: number,
     samplepct: number,
     checkpoint?: CheckpointSpec.AsObject,
+    loglevel: string,
+    timeoutinsecs: number,
   }
 }
 

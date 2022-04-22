@@ -126,9 +126,21 @@ message ChatbotEstimatorSpec {
 
 // CheckpointSpec specifies where to store model checkpoints
 message CheckpointSpec {
+  // Indicates if checkpointing is enabled.
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool enabled = 1;
+
+  // The interval, in minutes, at which a snapshot of a partially trained model will be saved.
+  // Applicable to models with long training times for resiliency if training is suddenly stopped
+  // +kubebuilder:validation:Optional
+  // +kubebuilder:default:=10
+  // +kubebuilder:validation:Minimum=0
+  optional int32 checkpointInterval = 2;
+
   // The location of the model checkpoint
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation location = 1;
+  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation location = 3;
 }
 
 // ClassicalEstimatorSpec is the specification for an algorithm and the actual value fof the hyper parameters
@@ -3276,12 +3288,6 @@ message StudySpec {
   // +kubebuilder:validation:Optional
   optional string owner = 24;
 
-  // The deadline for any Jobs associated with the Study to be completed in seconds
-  // +kubebuilder:default:=600
-  // +kubebuilder:validation:Minimum=0
-  // +kubebuilder:validation:Optional
-  optional int64 activeDeadlineSeconds = 25;
-
   // CompilerSpec specifies the configuration to a compile the best model to a binary (currently unimplemented)
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.CompilerSpec compilation = 26;
@@ -3317,6 +3323,12 @@ message StudySpec {
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string modelVersion = 33;
+
+  // Overall study timeout. The study will be aborted if we reached this timeout.
+  // Default : 4H
+  // +kubebuilder:default:= 14400
+  // +kubebuilder:validation:Optional
+  optional int32 timeoutInSecs = 34;
 }
 
 // StudyStatus defines the observed state of a Study
@@ -3665,13 +3677,6 @@ message TrainingSpec {
   // +kubebuilder:validation:Optional
   optional bool earlyStop = 8;
 
-  // The interval, in minutes, at which a snapshot of a partially trained model will be saved.
-  // Applicable to models with long training times for resiliency if training is suddenly stopped
-  // +kubebuilder:validation:Optional
-  // +kubebuilder:default:=10
-  // +kubebuilder:validation:Minimum=0
-  optional int32 checkpointInterval = 9;
-
   // SuccessiveHalving specifies the configuration for a Study to execute a model search using successive halving
   // +kubebuilder:validation:Optional
   optional SuccessiveHalvingSpec sh = 10;
@@ -3708,6 +3713,15 @@ message TrainingSpec {
   // Checkpoint specifies the location to store model checkpoints
   // +kubebuilder:validation:Optional
   optional CheckpointSpec checkpoint = 17;
+
+  // The training log level
+  // +kubebuilder:default:=info
+  // +kubebuilder:validation:Optional
+  optional string loglevel = 18;
+
+  // Max time to train or test a single model (in sec)
+  // +kubebuilder:validation:Optional
+  optional int32 timeoutInSecs = 19;
 }
 
 // TrainingStageSpec is the desired state of the training step of the pipeline

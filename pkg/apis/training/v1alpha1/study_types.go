@@ -481,11 +481,6 @@ type StudySpec struct {
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,24,opt,name=owner"`
-	// The deadline for any Jobs associated with the Study to be completed in seconds
-	// +kubebuilder:default:=600
-	// +kubebuilder:validation:Minimum=0
-	// +kubebuilder:validation:Optional
-	ActiveDeadlineSeconds *int64 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,25,opt,name=activeDeadlineSeconds"`
 	// CompilerSpec specifies the configuration to a compile the best model to a binary (currently unimplemented)
 	//+kubebuilder:validation:Optional
 	Compilation catalog.CompilerSpec `json:"compilation,omitempty" protobuf:"bytes,26,opt,name=compilation"`
@@ -514,6 +509,11 @@ type StudySpec struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	ModelVersion *string `json:"modelVersion,omitempty" protobuf:"varint,33,opt,name=modelVersion"`
+	// Overall study timeout. The study will be aborted if we reached this timeout.
+	// Default : 4H
+	// +kubebuilder:default:= 14400
+	// +kubebuilder:validation:Optional
+	TimeoutInSecs *int32 `json:"timeoutInSecs,omitempty" protobuf:"bytes,34,opt,name=timeoutInSecs"`
 }
 
 // StudyStatus defines the observed state of a Study

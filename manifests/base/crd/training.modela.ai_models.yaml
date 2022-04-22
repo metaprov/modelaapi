@@ -1542,6 +1542,19 @@ spec:
                     description: Checkpoint specifies the location to store model
                       checkpoints
                     properties:
+                      checkpointInterval:
+                        default: 10
+                        description: The interval, in minutes, at which a snapshot
+                          of a partially trained model will be saved. Applicable to
+                          models with long training times for resiliency if training
+                          is suddenly stopped
+                        format: int32
+                        minimum: 0
+                        type: integer
+                      enabled:
+                        default: false
+                        description: Indicates if checkpointing is enabled.
+                        type: boolean
                       location:
                         description: The location of the model checkpoint
                         properties:
@@ -1607,15 +1620,6 @@ spec:
                             type: string
                         type: object
                     type: object
-                  checkpointInterval:
-                    default: 10
-                    description: The interval, in minutes, at which a snapshot of
-                      a partially trained model will be saved. Applicable to models
-                      with long training times for resiliency if training is suddenly
-                      stopped
-                    format: int32
-                    minimum: 0
-                    type: integer
                   cv:
                     default: true
                     description: Indicates if cross-validation should be used to score
@@ -1781,6 +1785,15 @@ spec:
                         description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                         type: string
                     type: object
+                  loglevel:
+                    default: info
+                    description: The training log level
+                    enum:
+                    - trace
+                    - debug
+                    - info
+                    - error
+                    type: string
                   nodeCount:
                     default: 1
                     description: The number of nodes to use, in the case of distributed
@@ -2041,6 +2054,10 @@ spec:
                         minimum: 0
                         type: integer
                     type: object
+                  timeoutInSecs:
+                    description: Max time to train or test a single model (in sec)
+                    format: int32
+                    type: integer
                 type: object
               trialID:
                 default: 0

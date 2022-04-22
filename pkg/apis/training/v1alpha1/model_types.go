@@ -792,12 +792,6 @@ type TrainingSpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	EarlyStop *bool `json:"earlyStop,omitempty" protobuf:"varint,8,opt,name=earlyStop"`
-	// The interval, in minutes, at which a snapshot of a partially trained model will be saved.
-	// Applicable to models with long training times for resiliency if training is suddenly stopped
-	// +kubebuilder:validation:Optional
-	// +kubebuilder:default:=10
-	// +kubebuilder:validation:Minimum=0
-	CheckpointInterval *int32 `json:"checkpointInterval,omitempty" protobuf:"varint,9,opt,name=checkpointInterval"`
 	// SuccessiveHalving specifies the configuration for a Study to execute a model search using successive halving
 	// +kubebuilder:validation:Optional
 	SH *SuccessiveHalvingSpec `json:"sh,omitempty" protobuf:"bytes,10,opt,name=sh"`
@@ -827,13 +821,30 @@ type TrainingSpec struct {
 	// Checkpoint specifies the location to store model checkpoints
 	// +kubebuilder:validation:Optional
 	Checkpoint CheckpointSpec `json:"checkpoint,omitempty" protobuf:"bytes,17,opt,name=checkpoint"`
+	// The training log level
+	// +kubebuilder:default:=info
+	// +kubebuilder:validation:Optional
+	LogLevel *catalog.LogLevel `json:"loglevel,omitempty" protobuf:"bytes,18,opt,name=loglevel"`
+	// Max time to train or test a single model (in sec)
+	// +kubebuilder:validation:Optional
+	TimeoutInSecs *int32 `json:"timeoutInSecs,omitempty" protobuf:"bytes,19,opt,name=timeoutInSecs"`
 }
 
 // CheckpointSpec specifies where to store model checkpoints
 type CheckpointSpec struct {
+	// Indicates if checkpointing is enabled.
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,rep,name=enabled"`
+	// The interval, in minutes, at which a snapshot of a partially trained model will be saved.
+	// Applicable to models with long training times for resiliency if training is suddenly stopped
+	// +kubebuilder:validation:Optional
+	// +kubebuilder:default:=10
+	// +kubebuilder:validation:Minimum=0
+	CheckpointInterval *int32 `json:"checkpointInterval,omitempty" protobuf:"varint,2,opt,name=checkpointInterval"`
 	// The location of the model checkpoint
 	// +kubebuilder:validation:Optional
-	Location data.DataLocation `json:"location,omitempty" protobuf:"bytes,1,opt,name=location"`
+	Location data.DataLocation `json:"location,omitempty" protobuf:"bytes,3,opt,name=location"`
 }
 
 // ServingSpec specifies the requirements to serve a model
