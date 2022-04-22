@@ -276,6 +276,9 @@ export class MeetingSpec extends jspb.Message {
   hasTime(): boolean;
   clearTime(): MeetingSpec;
 
+  getCalendarurl(): string;
+  setCalendarurl(value: string): MeetingSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MeetingSpec.AsObject;
   static toObject(includeInstance: boolean, msg: MeetingSpec): MeetingSpec.AsObject;
@@ -297,6 +300,7 @@ export namespace MeetingSpec {
     actionitemsList: Array<ActionItem.AsObject>,
     tenantref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     time?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    calendarurl: string,
   }
 }
 
@@ -471,6 +475,24 @@ export class PostMortemSpec extends jspb.Message {
   hasTenantref(): boolean;
   clearTenantref(): PostMortemSpec;
 
+  getStarttime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setStarttime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): PostMortemSpec;
+  hasStarttime(): boolean;
+  clearStarttime(): PostMortemSpec;
+
+  getDetectiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setDetectiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): PostMortemSpec;
+  hasDetectiontime(): boolean;
+  clearDetectiontime(): PostMortemSpec;
+
+  getEndtime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setEndtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): PostMortemSpec;
+  hasEndtime(): boolean;
+  clearEndtime(): PostMortemSpec;
+
+  getImageurl(): string;
+  setImageurl(value: string): PostMortemSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PostMortemSpec.AsObject;
   static toObject(includeInstance: boolean, msg: PostMortemSpec): PostMortemSpec.AsObject;
@@ -491,6 +513,10 @@ export namespace PostMortemSpec {
     summary: string,
     owner: string,
     tenantref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    detectiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    imageurl: string,
   }
 }
 

@@ -112,6 +112,19 @@ type PostMortemSpec struct {
 	// TenantRef is the commit tenant
 	// +kubebuilder:validation:Optional
 	TenantRef *v1.ObjectReference `json:"tenantRef,omitempty" protobuf:"bytes,10,opt,name=tenantRef"`
+	// The start time of the post mortem
+	// +kubebuilder:validation:Optional
+	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,11,opt,name=startTime"`
+	// The detection time of the post mortem
+	// +kubebuilder:validation:Optional
+	DetectionTime *metav1.Time `json:"detectionTime,omitempty" protobuf:"bytes,12,opt,name=detectionTime"`
+	// The end time of the post mortem.
+	// +kubebuilder:validation:Optional
+	EndTime *metav1.Time `json:"endTime,omitempty" protobuf:"bytes,13,opt,name=endTime"`
+	// Attach image to the post mortem.
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
+	ImageURL *string `json:"imageURL,omitempty" protobuf:"bytes,14,opt,name=imageURL"`
 }
 
 // PostMortemStatus defines the actual state of a PostMortem

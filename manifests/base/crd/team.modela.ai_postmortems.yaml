@@ -64,6 +64,14 @@ spec:
                 default: ""
                 description: Description of the meeting
                 type: string
+              detectionTime:
+                description: The detection time of the post mortem
+                format: date-time
+                type: string
+              endTime:
+                description: The end time of the post mortem.
+                format: date-time
+                type: string
               entityRef:
                 description: The target object of the post mortem for example a predictor.
                 properties:
@@ -163,6 +171,10 @@ spec:
                       type: string
                   type: object
                 type: array
+              imageURL:
+                default: ""
+                description: Attach image to the post mortem.
+                type: string
               locationRef:
                 description: The place of the events, can be lab or serving site.
                 properties:
@@ -206,6 +218,10 @@ spec:
               rootCause:
                 default: ""
                 description: Root cause
+                type: string
+              startTime:
+                description: The start time of the post mortem
+                format: date-time
                 type: string
               summary:
                 default: ""

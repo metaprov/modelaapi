@@ -206,6 +206,10 @@ message MeetingSpec {
   // The meeting time
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time time = 11;
+
+  // A link to calender URL
+  // +kubebuilder:validation:Optional
+  optional string calendarURL = 12;
 }
 
 // MeetingStatus is the observed state of a Meeting
@@ -314,6 +318,23 @@ message PostMortemSpec {
   // TenantRef is the commit tenant
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference tenantRef = 10;
+
+  // The start time of the post mortem
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 11;
+
+  // The detection time of the post mortem
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time detectionTime = 12;
+
+  // The end time of the post mortem.
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 13;
+
+  // Attach image to the post mortem.
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string imageURL = 14;
 }
 
 // PostMortemStatus defines the actual state of a PostMortem

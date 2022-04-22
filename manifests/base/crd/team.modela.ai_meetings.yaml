@@ -110,6 +110,9 @@ spec:
                 default: ""
                 description: Agenda of the meeting
                 type: string
+              calendarURL:
+                description: A link to calender URL
+                type: string
               description:
                 default: ""
                 description: Description of the meeting

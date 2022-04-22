@@ -2840,7 +2840,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingSpec.toObject 
     actionitemsList: jspb.Message.toObjectList(msg.getActionitemsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.ActionItem.toObject, includeInstance),
     tenantref: (f = msg.getTenantref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
-    time: (f = msg.getTime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f)
+    time: (f = msg.getTime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    calendarurl: (f = jspb.Message.getField(msg, 12)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -2925,6 +2926,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingSpec.deseriali
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
       msg.setTime(value);
+      break;
+    case 12:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCalendarurl(value);
       break;
     default:
       reader.skipField();
@@ -3035,6 +3040,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingSpec.serialize
       11,
       f,
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 12));
+  if (f != null) {
+    writer.writeString(
+      12,
+      f
     );
   }
 };
@@ -3440,6 +3452,42 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingSpec.prototype
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingSpec.prototype.hasTime = function() {
   return jspb.Message.getField(this, 11) != null;
+};
+
+
+/**
+ * optional string calendarURL = 12;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingSpec.prototype.getCalendarurl = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingSpec.prototype.setCalendarurl = function(value) {
+  return jspb.Message.setField(this, 12, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingSpec.prototype.clearCalendarurl = function() {
+  return jspb.Message.setField(this, 12, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingSpec.prototype.hasCalendarurl = function() {
+  return jspb.Message.getField(this, 12) != null;
 };
 
 
@@ -4608,7 +4656,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.toObje
     rootcause: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
     summary: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
     owner: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
-    tenantref: (f = msg.getTenantref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f)
+    tenantref: (f = msg.getTenantref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
+    starttime: (f = msg.getStarttime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    detectiontime: (f = msg.getDetectiontime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    endtime: (f = msg.getEndtime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    imageurl: (f = jspb.Message.getField(msg, 14)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -4690,6 +4742,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.deseri
       var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
       reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
       msg.setTenantref(value);
+      break;
+    case 11:
+      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
+      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
+      msg.setStarttime(value);
+      break;
+    case 12:
+      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
+      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
+      msg.setDetectiontime(value);
+      break;
+    case 13:
+      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
+      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
+      msg.setEndtime(value);
+      break;
+    case 14:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setImageurl(value);
       break;
     default:
       reader.skipField();
@@ -4794,6 +4865,37 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.serial
       10,
       f,
       k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
+    );
+  }
+  f = message.getStarttime();
+  if (f != null) {
+    writer.writeMessage(
+      11,
+      f,
+      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
+    );
+  }
+  f = message.getDetectiontime();
+  if (f != null) {
+    writer.writeMessage(
+      12,
+      f,
+      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
+    );
+  }
+  f = message.getEndtime();
+  if (f != null) {
+    writer.writeMessage(
+      13,
+      f,
+      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 14));
+  if (f != null) {
+    writer.writeString(
+      14,
+      f
     );
   }
 };
@@ -5165,6 +5267,153 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.protot
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.prototype.hasTenantref = function() {
   return jspb.Message.getField(this, 10) != null;
+};
+
+
+/**
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 11;
+ * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.prototype.getStarttime = function() {
+  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 11));
+};
+
+
+/**
+ * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.prototype.setStarttime = function(value) {
+  return jspb.Message.setWrapperField(this, 11, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.prototype.clearStarttime = function() {
+  return this.setStarttime(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.prototype.hasStarttime = function() {
+  return jspb.Message.getField(this, 11) != null;
+};
+
+
+/**
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time detectionTime = 12;
+ * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.prototype.getDetectiontime = function() {
+  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 12));
+};
+
+
+/**
+ * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.prototype.setDetectiontime = function(value) {
+  return jspb.Message.setWrapperField(this, 12, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.prototype.clearDetectiontime = function() {
+  return this.setDetectiontime(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.prototype.hasDetectiontime = function() {
+  return jspb.Message.getField(this, 12) != null;
+};
+
+
+/**
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 13;
+ * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.prototype.getEndtime = function() {
+  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 13));
+};
+
+
+/**
+ * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.prototype.setEndtime = function(value) {
+  return jspb.Message.setWrapperField(this, 13, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.prototype.clearEndtime = function() {
+  return this.setEndtime(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.prototype.hasEndtime = function() {
+  return jspb.Message.getField(this, 13) != null;
+};
+
+
+/**
+ * optional string imageURL = 14;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.prototype.getImageurl = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 14, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.prototype.setImageurl = function(value) {
+  return jspb.Message.setField(this, 14, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.prototype.clearImageurl = function() {
+  return jspb.Message.setField(this, 14, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.prototype.hasImageurl = function() {
+  return jspb.Message.getField(this, 14) != null;
 };
 
 

@@ -100,6 +100,9 @@ type MeetingSpec struct {
 	// The meeting time
 	// +kubebuilder:validation:Optional
 	Time *metav1.Time `json:"time,omitempty" protobuf:"bytes,11,opt,name=time"`
+	// A link to calender URL
+	// +kubebuilder:validation:Optional
+	CalendarURL *string `json:"calendarURL,omitempty" protobuf:"bytes,12,opt,name=calendarURL"`
 }
 
 // MeetingStatus is the observed state of a Meeting
