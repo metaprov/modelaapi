@@ -75,11 +75,6 @@ func (study *Study) Default() {
 		estimator := study.DefaultFESearchEstimator(*study.Spec.Task)
 		study.Spec.FeatureEngineeringSearch.Estimator = &estimator
 	}
-	// set default
-
-	if study.Spec.TrainingTemplate.CheckpointInterval == nil {
-		study.Spec.TrainingTemplate.CheckpointInterval = util.Int32Ptr(0)
-	}
 
 	study.Spec.Search.Default(study.Spec.DeepCopy().Task)
 
