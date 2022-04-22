@@ -104,12 +104,11 @@ spec:
                 properties:
                   all:
                     default: false
-                    description: Indicates if models will be created for all algorithms,
-                      ignoring the Baselines field
+                    description: Indicates if models will be created for every algorithm
                     type: boolean
                   baselines:
-                    description: Baselines contains the collection of algorithms to
-                      create models for
+                    description: Baselines contains the collection of algorithms that
+                      models will be created with
                     items:
                       enum:
                       - knn-regressor
@@ -184,8 +183,8 @@ spec:
                     type: boolean
                 type: object
               compilation:
-                description: CompilerSpec specifies the configuration to a compile
-                  the best model to a binary (currently unimplemented)
+                description: CompilerSpec specifies the configuration to compile the
+                  best-selected model to a binary (currently unimplemented)
                 properties:
                   compiler:
                     default: none
@@ -218,8 +217,9 @@ spec:
                     type: array
                 type: object
               datasetName:
-                description: The name of the Dataset resource which will be split
-                  into training, testing, and validation datasets to be used in training
+                description: The name of the Dataset resource that will be used to
+                  train models with. The dataset will be split into individual training,
+                  testing, and validation datasets
                 type: string
               description:
                 default: ""
@@ -1363,9 +1363,9 @@ spec:
                     type: string
                   pruner:
                     description: Pruner specifies the configuration to run a model
-                      search using a pruner algorithm. Using a pruning algorithm allows
-                      you to train a large number of candidate models with a subset
-                      of the dataset
+                      search using a pruning algorithm. Using a pruning algorithm
+                      allows you to train a large number of candidate models with
+                      a subset of the dataset
                     properties:
                       intervalTrials:
                         default: 1
@@ -1489,8 +1489,8 @@ spec:
                     properties:
                       allowlist:
                         description: AllowList contains the collection of algorithms
-                          available to the parent Study. If AllowList is empty, all
-                          algorithms will be available for training
+                          available to the Study specifying the AlgorithmSearchSpaceSpec.
+                          If empty, all algorithms will be available for training
                         items:
                           enum:
                           - knn-regressor
@@ -1578,8 +1578,7 @@ spec:
                     type: integer
                 type: object
               task:
-                description: The machine learning task type of the Study (i.e. regression,
-                  classification)
+                description: The machine learning task type (i.e. regression, classification)
                 enum:
                 - binary-classification
                 - multi-classification
@@ -2150,7 +2149,9 @@ spec:
                         type: integer
                     type: object
                   timeoutInSecs:
-                    description: Max time to train or test a single model (in sec)
+                    default: 600
+                    description: Max time to train or test a single model (in sec).
+                      Default is 10 mintues
                     format: int32
                     type: integer
                 type: object

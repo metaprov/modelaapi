@@ -825,7 +825,8 @@ type TrainingSpec struct {
 	// +kubebuilder:default:=info
 	// +kubebuilder:validation:Optional
 	LogLevel *catalog.LogLevel `json:"loglevel,omitempty" protobuf:"bytes,18,opt,name=loglevel"`
-	// Max time to train or test a single model (in sec)
+	// Max time to train or test a single model (in sec). Default is 10 mintues
+	// +kubebuilder:default:=600
 	// +kubebuilder:validation:Optional
 	TimeoutInSecs *int32 `json:"timeoutInSecs,omitempty" protobuf:"bytes,19,opt,name=timeoutInSecs"`
 }
