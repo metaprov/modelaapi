@@ -169,7 +169,7 @@ type SearchSpec struct {
 	// +kubebuilder:default:=tpe
 	// +kubebuilder:validation:Optional
 	Sampler *SamplerName `json:"sampler,omitempty" protobuf:"bytes,1,opt,name=sampler"`
-	// Pruner specifies the configuration to run a model search using a pruner algorithm. Using a pruning
+	// Pruner specifies the configuration to run a model search using a pruning algorithm. Using a pruning
 	// algorithm allows you to train a large number of candidate models with a subset of the dataset
 	// +kubebuilder:validation:Optional
 	Pruner PrunerSpec `json:"pruner,omitempty" protobuf:"bytes,2,opt,name=pruner"`
@@ -265,10 +265,10 @@ type BaselineSpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
-	// Baselines contains the collection of algorithms to create models for
+	// Baselines contains the collection of algorithms that models will be created with
 	// +kubebuilder:validation:Optional
 	Baselines []catalog.ClassicEstimatorName `json:"baselines,omitempty" protobuf:"bytes,2,rep,name=baselines"`
-	// Indicates if models will be created for all algorithms, ignoring the Baselines field
+	// Indicates if models will be created for every algorithm
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	All *bool `json:"all,omitempty" protobuf:"varint,3,opt,name=all"`
@@ -276,8 +276,8 @@ type BaselineSpec struct {
 
 // AlgorithmSearchSpaceSpec defines the algorithms available to models produced by a Study
 type AlgorithmSearchSpaceSpec struct {
-	// AllowList contains the collection of algorithms available to the parent Study.
-	// If AllowList is empty, all algorithms will be available for training
+	// AllowList contains the collection of algorithms available to the Study specifying the AlgorithmSearchSpaceSpec.
+	// If empty, all algorithms will be available for training
 	// +kubebuilder:validation:Optional
 	AllowList []catalog.ClassicEstimatorName `json:"allowlist,omitempty" protobuf:"bytes,1,rep,name=allowlist"`
 }
@@ -408,12 +408,12 @@ type StudySpec struct {
 	// If unspecified, the default Lab from the parent DataProduct will be used
 	// +kubebuilder:validation:Optional
 	LabRef v1.ObjectReference `json:"labRef,omitempty" protobuf:"bytes,3,opt,name=labRef"`
-	// The name of the Dataset resource which will be split into training, testing, and
-	// validation datasets to be used in training
+	// The name of the Dataset resource that will be used to train models with.
+	// The dataset will be split into individual training, testing, and validation datasets
 	// +kubebuilder:validation:Required
 	// +required
 	DatasetName *string `json:"datasetName" protobuf:"bytes,4,opt,name=datasetName"`
-	// The machine learning task type of the Study (i.e. regression, classification)
+	// The machine learning task type (i.e. regression, classification)
 	// +kubebuilder:validation:Required
 	// +required
 	Task *catalog.MLTask `json:"task" protobuf:"bytes,5,opt,name=task"`
@@ -481,7 +481,7 @@ type StudySpec struct {
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,24,opt,name=owner"`
-	// CompilerSpec specifies the configuration to a compile the best model to a binary (currently unimplemented)
+	// CompilerSpec specifies the configuration to compile the best-selected model to a binary (currently unimplemented)
 	//+kubebuilder:validation:Optional
 	Compilation catalog.CompilerSpec `json:"compilation,omitempty" protobuf:"bytes,26,opt,name=compilation"`
 	// Indicates if the Study is a template, in which case it will not be executed
