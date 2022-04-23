@@ -1917,13 +1917,17 @@ type ResourceSpec struct {
 	// The name of a WorkloadClass. The system will use the resource requirements described by the WorkloadClass
 	// +kubebuilder:validation:Optional
 	WorkloadName *string `json:"workloadName,omitempty" protobuf:"bytes,1,opt,name=workloadName"`
+	// If true, ignore the workload class name.
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Custom *bool `json:"custom,omitempty" protobuf:"varint,2,opt,name=custom"`
 	// Reference to the managed CPU trainer image, used internally
-	CpuImage v1.ObjectReference `json:"cpuImage,omitempty" protobuf:"bytes,2,opt,name=cpuImage"`
+	CpuImage v1.ObjectReference `json:"cpuImage,omitempty" protobuf:"bytes,3,opt,name=cpuImage"`
 	// Reference to the managed GPU trainer image, used internally
-	GpuImage v1.ObjectReference `json:"gpuImage,omitempty" protobuf:"bytes,3,opt,name=gpuImage"`
+	GpuImage v1.ObjectReference `json:"gpuImage,omitempty" protobuf:"bytes,4,opt,name=gpuImage"`
 	// The custom resource requirements for the workload, which are used if `WorkloadName` is not set
 	// +kubebuilder:validation:Optional
-	Requirements *v1.ResourceRequirements `json:"requirements,omitempty" protobuf:"bytes,4,opt,name=requirements"`
+	Requirements *v1.ResourceRequirements `json:"requirements,omitempty" protobuf:"bytes,5,opt,name=requirements"`
 }
 
 // +kubebuilder:validation:Enum="random";"split-column";"time";"random-stratified";"auto";"test-dataset";

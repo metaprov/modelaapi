@@ -1358,6 +1358,11 @@ func (in *ResourceSpec) DeepCopyInto(out *ResourceSpec) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.Custom != nil {
+		in, out := &in.Custom, &out.Custom
+		*out = new(bool)
+		**out = **in
+	}
 	out.CpuImage = in.CpuImage
 	out.GpuImage = in.GpuImage
 	if in.Requirements != nil {
