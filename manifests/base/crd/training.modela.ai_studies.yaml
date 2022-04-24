@@ -2868,6 +2868,15 @@ spec:
                 description: SearchStatus contains the status of the model search
                   phase
                 properties:
+                  actualIterationWithNoProgress:
+                    description: Actual number of models where no progress was made.
+                      This used to decide on early stop.
+                    format: int32
+                    type: integer
+                  bestScore:
+                    description: Best score so far in the search. The best score is
+                      the value of the objective.
+                    type: number
                   completed:
                     description: The number of models that have been successfully
                       trained

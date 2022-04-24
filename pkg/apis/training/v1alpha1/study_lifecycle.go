@@ -76,6 +76,14 @@ func (study *Study) ReachedMaxFEModels() bool {
 	return *study.Spec.FeatureEngineeringSearch.MaxModels == totalModels
 }
 
+func (study *Study) ShouldEarlyStop() bool {
+	if *study.Spec.Search.EarlyStop.Enabled {
+		return study.Status.SearchStatus.Failed+study.Status.SearchStatus.Completed >=
+			*study.Spec.Search.EarlyStop.Initial && study.Status.SearchStatus.ActualIterationWithNoProgress >= *study.Spec.Search.EarlyStop.N
+	}
+	return false
+}
+
 // Enabled if we reached max time
 func (study *Study) ReachedMaxTime() bool {
 	if study.Status.SearchStatus.StartTime == nil {

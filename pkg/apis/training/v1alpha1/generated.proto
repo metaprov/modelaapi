@@ -2974,6 +2974,40 @@ message ResourceConsumption {
   optional double gpu = 3;
 }
 
+message SearchPhaseStatus {
+  // The time at which the phase started
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 1;
+
+  // The time at which the phase concluded
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 2;
+
+  // The number of models pending training
+  // +kubebuilder:validation:Optional
+  optional int32 waiting = 3;
+
+  // The number of models currently being trained
+  // +kubebuilder:validation:Optional
+  optional int32 running = 4;
+
+  // The number of models that experienced an error whilst training
+  // +kubebuilder:validation:Optional
+  optional int32 failed = 5;
+
+  // The number of models that have been successfully trained
+  // +kubebuilder:validation:Optional
+  optional int32 completed = 6;
+
+  // Best score so far in the search. The best score is the value of the objective.
+  // +kubebuilder:validation:Optional
+  optional double bestScore = 7;
+
+  // Actual number of models where no progress was made. This used to decide on early stop.
+  // +kubebuilder:validation:Optional
+  optional int32 actualIterationWithNoProgress = 8;
+}
+
 // SearchSpec specifies the configuration for a distributed model search
 message SearchSpec {
   // The hyper-parameter optimization search method
@@ -3450,7 +3484,7 @@ message StudyStatus {
 
   // SearchStatus contains the status of the model search phase
   // +kubebuilder:validation:Optional
-  optional StudyPhaseStatus search = 27;
+  optional SearchPhaseStatus search = 27;
 
   // EnsembleStatus contains the status of the ensemble phase
   // +kubebuilder:validation:Optional
