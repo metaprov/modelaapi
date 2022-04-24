@@ -225,7 +225,6 @@ type SearchSpec struct {
 	SearchSpace AlgorithmSearchSpaceSpec `json:"searchSpace,omitempty" protobuf:"bytes,11,opt,name=searchSpace"`
 	// The number of new models produced by the search which, if there is no improvement
 	// in score, the model search will conclude
-	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
 	EarlyStop EarlyStopSpec `json:"earlyStop,omitempty" protobuf:"varint,12,opt,name=earlyStop"`
 	// The objective metric that will be measured against all models to evaluate their performance

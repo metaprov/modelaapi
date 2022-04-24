@@ -1165,7 +1165,6 @@ spec:
                   search for the best algorithm and hyper-parameters
                 properties:
                   earlyStop:
-                    default: 0
                     description: The number of new models produced by the search which,
                       if there is no improvement in score, the model search will conclude
                     properties:
