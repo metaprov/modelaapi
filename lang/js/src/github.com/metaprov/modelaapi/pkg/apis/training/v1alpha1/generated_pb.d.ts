@@ -696,6 +696,32 @@ export namespace DeploymentStageSpec {
   }
 }
 
+export class EarlyStopSpec extends jspb.Message {
+  getEnabled(): boolean;
+  setEnabled(value: boolean): EarlyStopSpec;
+
+  getInitial(): number;
+  setInitial(value: number): EarlyStopSpec;
+
+  getN(): number;
+  setN(value: number): EarlyStopSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): EarlyStopSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: EarlyStopSpec): EarlyStopSpec.AsObject;
+  static serializeBinaryToWriter(message: EarlyStopSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EarlyStopSpec;
+  static deserializeBinaryFromReader(message: EarlyStopSpec, reader: jspb.BinaryReader): EarlyStopSpec;
+}
+
+export namespace EarlyStopSpec {
+  export type AsObject = {
+    enabled: boolean,
+    initial: number,
+    n: number,
+  }
+}
+
 export class EnsembleRules extends jspb.Message {
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): EnsembleRules.AsObject;
@@ -4432,8 +4458,10 @@ export class SearchSpec extends jspb.Message {
   hasSearchspace(): boolean;
   clearSearchspace(): SearchSpec;
 
-  getEarlystopafter(): number;
-  setEarlystopafter(value: number): SearchSpec;
+  getEarlystop(): EarlyStopSpec | undefined;
+  setEarlystop(value?: EarlyStopSpec): SearchSpec;
+  hasEarlystop(): boolean;
+  clearEarlystop(): SearchSpec;
 
   getObjective(): string;
   setObjective(value: string): SearchSpec;
@@ -4462,7 +4490,7 @@ export namespace SearchSpec {
     retaintop: number,
     retainedfor: number,
     searchspace?: AlgorithmSearchSpaceSpec.AsObject,
-    earlystopafter: number,
+    earlystop?: EarlyStopSpec.AsObject,
     objective: string,
     objective2: string,
   }

@@ -227,7 +227,7 @@ type SearchSpec struct {
 	// in score, the model search will conclude
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
-	EarlyStopAfter *int32 `json:"earlyStopAfter,omitempty" protobuf:"varint,12,opt,name=earlyStopAfter"`
+	EarlyStop EarlyStopSpec `json:"earlyStop,omitempty" protobuf:"varint,12,opt,name=earlyStop"`
 	// The objective metric that will be measured against all models to evaluate their performance
 	// +kubebuilder:validation:Optional
 	Objective *catalog.Metric `json:"objective,omitempty" protobuf:"bytes,14,opt,name=objective"`
@@ -236,6 +236,21 @@ type SearchSpec struct {
 	// +kubebuilder:default:="none"
 	// +kubebuilder:validation:Optional
 	Objective2 *catalog.Metric `json:"objective2,omitempty" protobuf:"bytes,15,opt,name=objective2"`
+}
+
+type EarlyStopSpec struct {
+	// Indicates if ensemble models will be created
+	// +kubebuilder:default:=true
+	// +kubebuilder:validation:Optional
+	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
+	// The number of models before we start checking for early stopping.
+	// +kubebuilder:default:=20
+	// +kubebuilder:validation:Optional
+	Initial *int32 `json:"initial,omitempty" protobuf:"varint,2,opt,name=initial"`
+	// The number of iteration for which we check if there were no improvement.
+	// +kubebuilder:default:=5
+	// +kubebuilder:validation:Optional
+	N *int32 `json:"n,omitempty" protobuf:"varint,3,opt,name=n"`
 }
 
 // EnsemblesSpec specifies the configuration to produce ensemble models
