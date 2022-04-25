@@ -1915,6 +1915,7 @@ type ConfusionMatrix struct {
 type ResourceSpec struct {
 	// If this resource is based on the workload, this field contain the name of the workload.
 	// The name of a WorkloadClass. The system will use the resource requirements described by the WorkloadClass
+	// +kubebuilder:default:="general-large"
 	// +kubebuilder:validation:Optional
 	WorkloadName *string `json:"workloadName,omitempty" protobuf:"bytes,1,opt,name=workloadName"`
 	// If true, ignore the workload class name.

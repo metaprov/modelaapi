@@ -294,6 +294,7 @@ spec:
                             type: object
                         type: object
                       workloadName:
+                        default: general-large
                         description: If this resource is based on the workload, this
                           field contain the name of the workload. The name of a WorkloadClass.
                           The system will use the resource requirements described
