@@ -2849,6 +2849,13 @@ spec:
                   on
                 format: int64
                 type: integer
+              outlierDetection:
+                description: OutlierDetection is the status for outlier detection.
+                properties:
+                  enabled:
+                    description: The location of the prediction outlier detection
+                    type: string
+                type: object
               phase:
                 default: Pending
                 description: The phase of the Study

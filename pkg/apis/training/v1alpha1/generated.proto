@@ -2715,6 +2715,24 @@ message PeriodSpec {
   optional int32 length = 3;
 }
 
+// The spec for generting a density model for this study.
+message PredictionOutlierDetectionSpec {
+  // Indicates if density models should be created.
+  // +kubebuilder:default:=true
+  // +kubebuilder:validation:Optional
+  optional bool enabled = 1;
+
+  // The density model alg.
+  // +kubebuilder:default:="isolation-forest"
+  // +kubebuilder:validation:Optional
+  optional string outlierAlgorithm = 2;
+}
+
+message PredictionOutlierDetectionStatus {
+  // The location of the prediction outlier detection
+  optional string enabled = 1;
+}
+
 message PrunerSpec {
   // The type of pruner to use during model search
   // +kubebuilder:default:=median
@@ -3497,21 +3515,25 @@ message StudyStatus {
   // +kubebuilder:validation:Optional
   optional StudyPhaseStatus explain = 30;
 
+  // OutlierDetection is the status for outlier detection.
+  // +kubebuilder:validation:Optional
+  optional PredictionOutlierDetectionStatus outlierDetection = 31;
+
   // The last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 31;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 32;
 
   // BestFE specifies the best feature engineering pipeline produced by the Study
   // +kubebuilder:validation:Optional
-  optional FeatureEngineeringSpec bestFE = 32;
+  optional FeatureEngineeringSpec bestFE = 33;
 
   // GC specifies the status of garbage collection relevant to the Study
-  optional GarbageCollectionStatus gc = 33;
+  optional GarbageCollectionStatus gc = 34;
 
   // +optional
   // +patchMergeKey=type
   // +patchStrategy=merge
-  repeated StudyCondition conditions = 34;
+  repeated StudyCondition conditions = 35;
 }
 
 // SuccessiveHalvingOptions defines the parameters for a successive halving search

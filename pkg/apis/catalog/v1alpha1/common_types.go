@@ -1670,6 +1670,12 @@ const (
 	ModalityTypeEpochs ModalityType = "epochs"
 )
 
+type OutlierAlgorithmName string
+
+const (
+	OutlierAlgorithmNameIsolationForest OutlierAlgorithmName = "isolation-forest"
+)
+
 // NotificationSpec specifies which Notifiers to forward Alert resources to
 type NotificationSpec struct {
 	// Time-to-live for error messages, in seconds

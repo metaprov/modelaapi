@@ -4018,6 +4018,46 @@ export namespace PeriodSpec {
   }
 }
 
+export class PredictionOutlierDetectionSpec extends jspb.Message {
+  getEnabled(): boolean;
+  setEnabled(value: boolean): PredictionOutlierDetectionSpec;
+
+  getOutlieralgorithm(): string;
+  setOutlieralgorithm(value: string): PredictionOutlierDetectionSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PredictionOutlierDetectionSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: PredictionOutlierDetectionSpec): PredictionOutlierDetectionSpec.AsObject;
+  static serializeBinaryToWriter(message: PredictionOutlierDetectionSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PredictionOutlierDetectionSpec;
+  static deserializeBinaryFromReader(message: PredictionOutlierDetectionSpec, reader: jspb.BinaryReader): PredictionOutlierDetectionSpec;
+}
+
+export namespace PredictionOutlierDetectionSpec {
+  export type AsObject = {
+    enabled: boolean,
+    outlieralgorithm: string,
+  }
+}
+
+export class PredictionOutlierDetectionStatus extends jspb.Message {
+  getEnabled(): string;
+  setEnabled(value: string): PredictionOutlierDetectionStatus;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PredictionOutlierDetectionStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: PredictionOutlierDetectionStatus): PredictionOutlierDetectionStatus.AsObject;
+  static serializeBinaryToWriter(message: PredictionOutlierDetectionStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PredictionOutlierDetectionStatus;
+  static deserializeBinaryFromReader(message: PredictionOutlierDetectionStatus, reader: jspb.BinaryReader): PredictionOutlierDetectionStatus;
+}
+
+export namespace PredictionOutlierDetectionStatus {
+  export type AsObject = {
+    enabled: string,
+  }
+}
+
 export class PrunerSpec extends jspb.Message {
   getType(): string;
   setType(value: string): PrunerSpec;
@@ -5059,6 +5099,11 @@ export class StudyStatus extends jspb.Message {
   hasExplain(): boolean;
   clearExplain(): StudyStatus;
 
+  getOutlierdetection(): PredictionOutlierDetectionStatus | undefined;
+  setOutlierdetection(value?: PredictionOutlierDetectionStatus): StudyStatus;
+  hasOutlierdetection(): boolean;
+  clearOutlierdetection(): StudyStatus;
+
   getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): StudyStatus;
   hasLastupdated(): boolean;
@@ -5117,6 +5162,7 @@ export namespace StudyStatus {
     ensemble?: StudyPhaseStatus.AsObject,
     test?: StudyPhaseStatus.AsObject,
     explain?: StudyPhaseStatus.AsObject,
+    outlierdetection?: PredictionOutlierDetectionStatus.AsObject,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     bestfe?: FeatureEngineeringSpec.AsObject,
     gc?: GarbageCollectionStatus.AsObject,

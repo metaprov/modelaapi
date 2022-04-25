@@ -252,6 +252,18 @@ type EarlyStopSpec struct {
 	MinModelsWithNoProgress *int32 `json:"minModelsWithNoProgress,omitempty" protobuf:"varint,3,opt,name=minModelsWithNoProgress"`
 }
 
+// The spec for generting a density model for this study.
+type PredictionOutlierDetectionSpec struct {
+	// Indicates if density models should be created.
+	// +kubebuilder:default:=true
+	// +kubebuilder:validation:Optional
+	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
+	// The density model alg.
+	// +kubebuilder:default:="isolation-forest"
+	// +kubebuilder:validation:Optional
+	OutlierAlgorithm catalog.OutlierAlgorithmName `json:"outlierAlgorithm,omitempty" protobuf:"varint,2,opt,name=outlierAlgorithm"`
+}
+
 // EnsemblesSpec specifies the configuration to produce ensemble models
 type EnsemblesSpec struct {
 	// Indicates if ensemble models will be created
@@ -618,18 +630,21 @@ type StudyStatus struct {
 	// ExplainStatus contains the status of the explaining phase
 	//+kubebuilder:validation:Optional
 	ExplainStatus StudyPhaseStatus `json:"explain,omitempty" protobuf:"bytes,30,opt,name=explain"`
+	// OutlierDetection is the status for outlier detection.
+	//+kubebuilder:validation:Optional
+	OutlierDetection PredictionOutlierDetectionStatus `json:"outlierDetection,omitempty" protobuf:"bytes,31,opt,name=outlierDetection"`
 	// The last time the object was updated
 	//+kubebuilder:validation:Optional
-	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,31,opt,name=lastUpdated"`
+	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,32,opt,name=lastUpdated"`
 	// BestFE specifies the best feature engineering pipeline produced by the Study
 	//+kubebuilder:validation:Optional
-	BestFE *FeatureEngineeringSpec `json:"bestFE,omitempty" protobuf:"bytes,32,opt,name=bestFE"`
+	BestFE *FeatureEngineeringSpec `json:"bestFE,omitempty" protobuf:"bytes,33,opt,name=bestFE"`
 	// GC specifies the status of garbage collection relevant to the Study
-	GC GarbageCollectionStatus `json:"gc,omitempty" protobuf:"bytes,33,opt,name=gc"`
+	GC GarbageCollectionStatus `json:"gc,omitempty" protobuf:"bytes,34,opt,name=gc"`
 	// +optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
-	Conditions []StudyCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,34,rep,name=conditions"`
+	Conditions []StudyCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,35,rep,name=conditions"`
 }
 
 // ModelResult contains the records of a single garbage-collected model
@@ -791,4 +806,9 @@ type GarbageCollectionStatus struct {
 	// The collection of models that were archived
 	// +kubebuilder:validation:Optional
 	Models []ModelResult `json:"models,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,2,opt,name=models"`
+}
+
+type PredictionOutlierDetectionStatus struct {
+	// The location of the prediction outlier detection
+	URI string `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
 }
