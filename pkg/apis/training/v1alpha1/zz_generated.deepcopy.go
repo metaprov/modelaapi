@@ -686,8 +686,8 @@ func (in *EarlyStopSpec) DeepCopyInto(out *EarlyStopSpec) {
 		*out = new(int32)
 		**out = **in
 	}
-	if in.N != nil {
-		in, out := &in.N, &out.N
+	if in.MinModelsWithNoProgress != nil {
+		in, out := &in.MinModelsWithNoProgress, &out.MinModelsWithNoProgress
 		*out = new(int32)
 		**out = **in
 	}

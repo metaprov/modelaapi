@@ -9076,7 +9076,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EarlyStopSpec.toO
   var f, obj = {
     enabled: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
     initial: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    n: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
+    minmodelswithnoprogress: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -9123,7 +9123,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EarlyStopSpec.des
       break;
     case 3:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setN(value);
+      msg.setMinmodelswithnoprogress(value);
       break;
     default:
       reader.skipField();
@@ -9251,10 +9251,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EarlyStopSpec.pro
 
 
 /**
- * optional int32 n = 3;
+ * optional int32 minModelsWithNoProgress = 3;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EarlyStopSpec.prototype.getN = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EarlyStopSpec.prototype.getMinmodelswithnoprogress = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
@@ -9263,7 +9263,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EarlyStopSpec.pro
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EarlyStopSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EarlyStopSpec.prototype.setN = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EarlyStopSpec.prototype.setMinmodelswithnoprogress = function(value) {
   return jspb.Message.setField(this, 3, value);
 };
 
@@ -9272,7 +9272,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EarlyStopSpec.pro
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EarlyStopSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EarlyStopSpec.prototype.clearN = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EarlyStopSpec.prototype.clearMinmodelswithnoprogress = function() {
   return jspb.Message.setField(this, 3, undefined);
 };
 
@@ -9281,7 +9281,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EarlyStopSpec.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EarlyStopSpec.prototype.hasN = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EarlyStopSpec.prototype.hasMinmodelswithnoprogress = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
@@ -44436,7 +44436,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SearchPhaseStatus
     failed: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     completed: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
     bestscore: (f = jspb.Message.getOptionalFloatingPointField(msg, 7)) == null ? undefined : f,
-    actualiterationwithnoprogress: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f
+    modelswithnoprogress: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -44505,7 +44505,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SearchPhaseStatus
       break;
     case 8:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setActualiterationwithnoprogress(value);
+      msg.setModelswithnoprogress(value);
       break;
     default:
       reader.skipField();
@@ -44852,10 +44852,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SearchPhaseStatus
 
 
 /**
- * optional int32 actualIterationWithNoProgress = 8;
+ * optional int32 modelsWithNoProgress = 8;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SearchPhaseStatus.prototype.getActualiterationwithnoprogress = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SearchPhaseStatus.prototype.getModelswithnoprogress = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
 };
 
@@ -44864,7 +44864,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SearchPhaseStatus
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SearchPhaseStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SearchPhaseStatus.prototype.setActualiterationwithnoprogress = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SearchPhaseStatus.prototype.setModelswithnoprogress = function(value) {
   return jspb.Message.setField(this, 8, value);
 };
 
@@ -44873,7 +44873,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SearchPhaseStatus
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SearchPhaseStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SearchPhaseStatus.prototype.clearActualiterationwithnoprogress = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SearchPhaseStatus.prototype.clearModelswithnoprogress = function() {
   return jspb.Message.setField(this, 8, undefined);
 };
 
@@ -44882,7 +44882,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SearchPhaseStatus
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SearchPhaseStatus.prototype.hasActualiterationwithnoprogress = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SearchPhaseStatus.prototype.hasModelswithnoprogress = function() {
   return jspb.Message.getField(this, 8) != null;
 };
 

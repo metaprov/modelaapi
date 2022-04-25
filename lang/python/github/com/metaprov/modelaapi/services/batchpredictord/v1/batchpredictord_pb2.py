@@ -17,7 +17,7 @@ from github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1 import generated_
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nOgithub.com/metaprov/modelaapi/services/batchpredictord/v1/batchpredictord.proto\x12\x39github.com.metaprov.modelaapi.services.batchpredictord.v1\x1a\x45github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto\x1aIgithub.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1/generated.proto\x1a\x1bgoogle/protobuf/empty.proto\"\xa2\x06\n\x13\x42\x61tchPredictRequest\x12Y\n\nprediction\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction\x12X\n\nfromBucket\x18\x02 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12Y\n\x0e\x66romConnection\x18\x03 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12r\n\nfromSecret\x18\x04 \x03(\x0b\x32^.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest.FromSecretEntry\x12Z\n\x0ctargetBucket\x18\x05 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12W\n\x0ctoConnection\x18\x06 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12n\n\x08toSecret\x18\x07 \x03(\x0b\x32\\.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest.ToSecretEntry\x1a\x31\n\x0f\x46romSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\x1a/\n\rToSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\x16\n\x14\x42\x61tchPredictResponse\"\x11\n\x0fShutdownRequest\"\x12\n\x10ShutdownResponse2\xe3\x02\n\x05\x42\x61tch\x12\xb1\x01\n\x0c\x42\x61tchPredict\x12N.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest\x1aO.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictResponse\"\x00\x12\xa5\x01\n\x08Shutdown\x12J.github.com.metaprov.modelaapi.services.batchpredictord.v1.ShutdownRequest\x1aK.github.com.metaprov.modelaapi.services.batchpredictord.v1.ShutdownResponse\"\x00\x42;Z9github.com/metaprov/modelaapi/services/batchpredictord/v1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nOgithub.com/metaprov/modelaapi/services/batchpredictord/v1/batchpredictord.proto\x12\x39github.com.metaprov.modelaapi.services.batchpredictord.v1\x1a\x45github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto\x1aIgithub.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1/generated.proto\x1a\x1bgoogle/protobuf/empty.proto\"\xa2\x06\n\x13\x42\x61tchPredictRequest\x12Y\n\nprediction\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction\x12X\n\nfromBucket\x18\x02 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12Y\n\x0e\x66romConnection\x18\x03 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12r\n\nfromSecret\x18\x04 \x03(\x0b\x32^.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest.FromSecretEntry\x12Z\n\x0ctargetBucket\x18\x05 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12W\n\x0ctoConnection\x18\x06 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12n\n\x08toSecret\x18\x07 \x03(\x0b\x32\\.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest.ToSecretEntry\x1a\x31\n\x0f\x46romSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\x1a/\n\rToSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"$\n\x14\x42\x61tchPredictResponse\x12\x0c\n\x04rows\x18\x01 \x01(\x05\"\x11\n\x0fShutdownRequest\"\x12\n\x10ShutdownResponse2\xe3\x02\n\x05\x42\x61tch\x12\xb1\x01\n\x0c\x42\x61tchPredict\x12N.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest\x1aO.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictResponse\"\x00\x12\xa5\x01\n\x08Shutdown\x12J.github.com.metaprov.modelaapi.services.batchpredictord.v1.ShutdownRequest\x1aK.github.com.metaprov.modelaapi.services.batchpredictord.v1.ShutdownResponse\"\x00\x42;Z9github.com/metaprov/modelaapi/services/batchpredictord/v1b\x06proto3')
 
 
 
@@ -87,11 +87,11 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _BATCHPREDICTREQUEST_TOSECRETENTRY._serialized_start=1073
   _BATCHPREDICTREQUEST_TOSECRETENTRY._serialized_end=1120
   _BATCHPREDICTRESPONSE._serialized_start=1122
-  _BATCHPREDICTRESPONSE._serialized_end=1144
-  _SHUTDOWNREQUEST._serialized_start=1146
-  _SHUTDOWNREQUEST._serialized_end=1163
-  _SHUTDOWNRESPONSE._serialized_start=1165
-  _SHUTDOWNRESPONSE._serialized_end=1183
-  _BATCH._serialized_start=1186
-  _BATCH._serialized_end=1541
+  _BATCHPREDICTRESPONSE._serialized_end=1158
+  _SHUTDOWNREQUEST._serialized_start=1160
+  _SHUTDOWNREQUEST._serialized_end=1177
+  _SHUTDOWNRESPONSE._serialized_start=1179
+  _SHUTDOWNRESPONSE._serialized_end=1197
+  _BATCH._serialized_start=1200
+  _BATCH._serialized_end=1555
 # @@protoc_insertion_point(module_scope)

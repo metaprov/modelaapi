@@ -246,10 +246,10 @@ type EarlyStopSpec struct {
 	// +kubebuilder:default:=20
 	// +kubebuilder:validation:Optional
 	Initial *int32 `json:"initial,omitempty" protobuf:"varint,2,opt,name=initial"`
-	// The number of iteration for which we check if there were no improvement.
+	// The number of models for which we check if there were no improvement.
 	// +kubebuilder:default:=5
 	// +kubebuilder:validation:Optional
-	N *int32 `json:"n,omitempty" protobuf:"varint,3,opt,name=n"`
+	MinModelsWithNoProgress *int32 `json:"minModelsWithNoProgress,omitempty" protobuf:"varint,3,opt,name=minModelsWithNoProgress"`
 }
 
 // EnsemblesSpec specifies the configuration to produce ensemble models
@@ -752,7 +752,7 @@ type SearchPhaseStatus struct {
 	BestScore float64 `json:"bestScore,omitempty" protobuf:"varint,7,opt,name=bestScore"`
 	// Actual number of models where no progress was made. This used to decide on early stop.
 	// +kubebuilder:validation:Optional
-	ActualIterationWithNoProgress int32 `json:"actualIterationWithNoProgress,omitempty" protobuf:"varint,8,opt,name=actualIterationWithNoProgress"`
+	ModelsWithNoProgress int32 `json:"modelsWithNoProgress,omitempty" protobuf:"varint,8,opt,name=modelsWithNoProgress"`
 }
 
 type SegmentSpec struct {

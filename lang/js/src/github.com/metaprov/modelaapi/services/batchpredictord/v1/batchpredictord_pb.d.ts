@@ -58,6 +58,9 @@ export namespace BatchPredictRequest {
 }
 
 export class BatchPredictResponse extends jspb.Message {
+  getRows(): number;
+  setRows(value: number): BatchPredictResponse;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BatchPredictResponse.AsObject;
   static toObject(includeInstance: boolean, msg: BatchPredictResponse): BatchPredictResponse.AsObject;
@@ -68,6 +71,7 @@ export class BatchPredictResponse extends jspb.Message {
 
 export namespace BatchPredictResponse {
   export type AsObject = {
+    rows: number,
   }
 }
 

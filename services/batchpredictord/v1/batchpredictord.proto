@@ -19,7 +19,7 @@ message BatchPredictRequest {
 }
 
 message BatchPredictResponse {
-
+    int32 rows = 1; // number of predicted rows
 }
 
 message ShutdownRequest {}

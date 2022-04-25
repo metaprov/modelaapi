@@ -568,7 +568,7 @@ proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictResp
  */
 proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-
+    rows: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -605,6 +605,10 @@ proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictResp
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setRows(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -634,6 +638,31 @@ proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictResp
  */
 proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getRows();
+  if (f !== 0) {
+    writer.writeInt32(
+      1,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional int32 rows = 1;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictResponse.prototype.getRows = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictResponse} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictResponse.prototype.setRows = function(value) {
+  return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 

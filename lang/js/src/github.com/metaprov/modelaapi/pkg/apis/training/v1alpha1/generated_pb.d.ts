@@ -703,8 +703,8 @@ export class EarlyStopSpec extends jspb.Message {
   getInitial(): number;
   setInitial(value: number): EarlyStopSpec;
 
-  getN(): number;
-  setN(value: number): EarlyStopSpec;
+  getMinmodelswithnoprogress(): number;
+  setMinmodelswithnoprogress(value: number): EarlyStopSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): EarlyStopSpec.AsObject;
@@ -718,7 +718,7 @@ export namespace EarlyStopSpec {
   export type AsObject = {
     enabled: boolean,
     initial: number,
-    n: number,
+    minmodelswithnoprogress: number,
   }
 }
 
@@ -4446,8 +4446,8 @@ export class SearchPhaseStatus extends jspb.Message {
   getBestscore(): number;
   setBestscore(value: number): SearchPhaseStatus;
 
-  getActualiterationwithnoprogress(): number;
-  setActualiterationwithnoprogress(value: number): SearchPhaseStatus;
+  getModelswithnoprogress(): number;
+  setModelswithnoprogress(value: number): SearchPhaseStatus;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SearchPhaseStatus.AsObject;
@@ -4466,7 +4466,7 @@ export namespace SearchPhaseStatus {
     failed: number,
     completed: number,
     bestscore: number,
-    actualiterationwithnoprogress: number,
+    modelswithnoprogress: number,
   }
 }
 

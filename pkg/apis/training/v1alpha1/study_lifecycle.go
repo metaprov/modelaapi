@@ -79,7 +79,7 @@ func (study *Study) ReachedMaxFEModels() bool {
 func (study *Study) ShouldEarlyStop() bool {
 	if *study.Spec.Search.EarlyStop.Enabled {
 		return study.Status.SearchStatus.Failed+study.Status.SearchStatus.Completed >=
-			*study.Spec.Search.EarlyStop.Initial && study.Status.SearchStatus.ActualIterationWithNoProgress >= *study.Spec.Search.EarlyStop.N
+			*study.Spec.Search.EarlyStop.Initial && study.Status.SearchStatus.ModelsWithNoProgress >= *study.Spec.Search.EarlyStop.MinModelsWithNoProgress
 	}
 	return false
 }

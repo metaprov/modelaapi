@@ -454,10 +454,10 @@ message EarlyStopSpec {
   // +kubebuilder:validation:Optional
   optional int32 initial = 2;
 
-  // The number of iteration for which we check if there were no improvement.
+  // The number of models for which we check if there were no improvement.
   // +kubebuilder:default:=5
   // +kubebuilder:validation:Optional
-  optional int32 n = 3;
+  optional int32 minModelsWithNoProgress = 3;
 }
 
 // EnsembleRules is an algorithm class that decide
@@ -3005,7 +3005,7 @@ message SearchPhaseStatus {
 
   // Actual number of models where no progress was made. This used to decide on early stop.
   // +kubebuilder:validation:Optional
-  optional int32 actualIterationWithNoProgress = 8;
+  optional int32 modelsWithNoProgress = 8;
 }
 
 // SearchSpec specifies the configuration for a distributed model search
