@@ -774,7 +774,7 @@ func (model *Model) MarkExplainedFailed(err string) {
 
 }
 
-// ---------------------- baking
+// ---------------------- publishing
 
 func (model *Model) MarkPublishing() {
 	model.Status.Phase = ModelPhasePublishing
@@ -809,6 +809,47 @@ func (model *Model) MarkPublishFailed(err string) {
 	})
 	model.Status.Phase = ModelPhaseFailed
 	model.Status.FailureMessage = util.StrPtr("Failed to publish." + err)
+	if model.Status.EndTime == nil {
+		now := metav1.Now()
+		model.Status.EndTime = &now
+	}
+
+}
+
+// --------------------- Train Drift detector
+func (model *Model) MarkTrainingDriftDetector() {
+	model.Status.Phase = ModelPhaseTrainingDriftDetector
+	model.CreateOrUpdateCond(ModelCondition{
+		Type:   ModelTrainedDriftDetector,
+		Status: v1.ConditionFalse,
+		Reason: ReasonPublishing,
+	})
+
+}
+
+func (model *Model) TrainedDriftDetector() bool {
+	cond := model.GetCond(ModelTrainedDriftDetector)
+	return cond.Status == v1.ConditionTrue
+}
+
+func (model *Model) MarkTrainedDriftDetector(image string) {
+	model.Status.ImageName = image
+	model.Status.Phase = ModelPhaseTrainedDriftDetector
+	model.CreateOrUpdateCond(ModelCondition{
+		Type:   ModelTrainedDriftDetector,
+		Status: v1.ConditionTrue,
+	})
+}
+
+func (model *Model) MarkTrainedDriftDetectorFailed(err string) {
+	model.CreateOrUpdateCond(ModelCondition{
+		Type:    ModelTrainedDriftDetector,
+		Status:  v1.ConditionFalse,
+		Reason:  ReasonFailed,
+		Message: err,
+	})
+	model.Status.Phase = ModelPhaseFailed
+	model.Status.FailureMessage = util.StrPtr("Failed to train drift detector." + err)
 	if model.Status.EndTime == nil {
 		now := metav1.Now()
 		model.Status.EndTime = &now
