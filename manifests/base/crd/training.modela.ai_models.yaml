@@ -1077,6 +1077,11 @@ spec:
                 description: Forecasted indicates that the Model should perform a
                   forecast
                 type: boolean
+              genDriftDetector:
+                default: false
+                description: GenDriftDetector indicates if we should generate a drift
+                  detector model for this model
+                type: boolean
               governance:
                 description: Governance specifies the model governance requirements
                   (currently unimplemented)

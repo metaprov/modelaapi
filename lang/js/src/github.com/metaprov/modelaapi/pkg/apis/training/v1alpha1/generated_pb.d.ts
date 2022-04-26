@@ -2963,6 +2963,9 @@ export class ModelSpec extends jspb.Message {
   getBaseline(): boolean;
   setBaseline(value: boolean): ModelSpec;
 
+  getGendriftdetector(): boolean;
+  setGendriftdetector(value: boolean): ModelSpec;
+
   getFast(): boolean;
   setFast(value: boolean): ModelSpec;
 
@@ -3047,6 +3050,7 @@ export namespace ModelSpec {
     released: boolean,
     explained: boolean,
     baseline: boolean,
+    gendriftdetector: boolean,
     fast: boolean,
     flagged: boolean,
     location?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,

@@ -2654,6 +2654,11 @@ func (in *ModelSpec) DeepCopyInto(out *ModelSpec) {
 		*out = new(bool)
 		**out = **in
 	}
+	if in.GenDriftDetector != nil {
+		in, out := &in.GenDriftDetector, &out.GenDriftDetector
+		*out = new(bool)
+		**out = **in
+	}
 	if in.Fast != nil {
 		in, out := &in.Fast, &out.Fast
 		*out = new(bool)
