@@ -253,9 +253,9 @@ type EarlyStopSpec struct {
 }
 
 // The spec for generting a density model for this study.
-type PredictionOutlierDetectionSpec struct {
+type DriftDetectionSpec struct {
 	// Indicates if density models should be created.
-	// +kubebuilder:default:=true
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
 	// The density model alg.
@@ -467,30 +467,32 @@ type StudySpec struct {
 	// Interpretability specifies the parameters to create interpretability visualizations for the final model
 	// +kubebuilder:validation:Optional
 	Interpretability InterpretabilitySpec `json:"interpretability,omitempty" protobuf:"bytes,13,opt,name=interpretability"`
+	// +kubebuilder:validation:Optional
+	DriftDetector DriftDetectionSpec `json:"driftDetection,omitempty" protobuf:"bytes,14,opt,name=driftDetection"`
 	// Aborted indicates that the execution of the Study and associated Models should be permanently stopped
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Aborted *bool `json:"aborted,omitempty" protobuf:"varint,14,opt,name=aborted"`
+	Aborted *bool `json:"aborted,omitempty" protobuf:"varint,15,opt,name=aborted"`
 	// Reported indicates that a report will be generated for the Study
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	Reported *bool `json:"reported,omitempty" protobuf:"varint,15,opt,name=reported"`
+	Reported *bool `json:"reported,omitempty" protobuf:"varint,16,opt,name=reported"`
 	// Paused indicates that the execution of new workloads associated with the Study should be paused
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Paused *bool `json:"paused,omitempty" protobuf:"varint,16,opt,name=paused"`
+	Paused *bool `json:"paused,omitempty" protobuf:"varint,17,opt,name=paused"`
 	// Profiled indicates that the Study will be profiled after the conclusion of it's model search
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	Profiled *bool `json:"profiled,omitempty" protobuf:"varint,17,opt,name=profiled"`
+	Profiled *bool `json:"profiled,omitempty" protobuf:"varint,18,opt,name=profiled"`
 	// ModelPublished indicates that a Docker image will be created containing the best model produced by the Study
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	ModelPublished *bool `json:"modelPublished,omitempty" protobuf:"varint,18,opt,name=modelPublished"`
+	ModelPublished *bool `json:"modelPublished,omitempty" protobuf:"varint,19,opt,name=modelPublished"`
 	// ModelImagePushed indicates that if a Docker image of the best model will be pushed to a Docker image registry
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	ModelImagePushed *bool `json:"modelImagePushed,omitempty" protobuf:"varint,19,opt,name=modelImagePushed"`
+	ModelImagePushed *bool `json:"modelImagePushed,omitempty" protobuf:"varint,20,opt,name=modelImagePushed"`
 	// ModelExplained indicates if interpretability diagrams, as specified
 	// by the Interpretability field, will be produced for the final model
 	// +kubebuilder:default:=true
@@ -632,7 +634,7 @@ type StudyStatus struct {
 	ExplainStatus StudyPhaseStatus `json:"explain,omitempty" protobuf:"bytes,30,opt,name=explain"`
 	// OutlierDetection is the status for outlier detection.
 	//+kubebuilder:validation:Optional
-	OutlierDetection PredictionOutlierDetectionStatus `json:"outlierDetection,omitempty" protobuf:"bytes,31,opt,name=outlierDetection"`
+	DriftDetection DriftDetectorStatus `json:"outlierDetection,omitempty" protobuf:"bytes,31,opt,name=outlierDetection"`
 	// The last time the object was updated
 	//+kubebuilder:validation:Optional
 	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,32,opt,name=lastUpdated"`
@@ -808,7 +810,7 @@ type GarbageCollectionStatus struct {
 	Models []ModelResult `json:"models,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,2,opt,name=models"`
 }
 
-type PredictionOutlierDetectionStatus struct {
+type DriftDetectorStatus struct {
 	// The location of the prediction outlier detection
-	URI string `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
+	OutlierModelURI string `json:"outlierModelURI,omitempty" protobuf:"bytes,1,opt,name=outlierModelURI"`
 }

@@ -443,6 +443,24 @@ message DeploymentStageSpec {
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 5;
 }
 
+// The spec for generting a density model for this study.
+message DriftDetectionSpec {
+  // Indicates if density models should be created.
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool enabled = 1;
+
+  // The density model alg.
+  // +kubebuilder:default:="isolation-forest"
+  // +kubebuilder:validation:Optional
+  optional string outlierAlgorithm = 2;
+}
+
+message DriftDetectorStatus {
+  // The location of the prediction outlier detection
+  optional string outlierModelURI = 1;
+}
+
 message EarlyStopSpec {
   // Indicates if ensemble models will be created
   // +kubebuilder:default:=true
@@ -2715,24 +2733,6 @@ message PeriodSpec {
   optional int32 length = 3;
 }
 
-// The spec for generting a density model for this study.
-message PredictionOutlierDetectionSpec {
-  // Indicates if density models should be created.
-  // +kubebuilder:default:=true
-  // +kubebuilder:validation:Optional
-  optional bool enabled = 1;
-
-  // The density model alg.
-  // +kubebuilder:default:="isolation-forest"
-  // +kubebuilder:validation:Optional
-  optional string outlierAlgorithm = 2;
-}
-
-message PredictionOutlierDetectionStatus {
-  // The location of the prediction outlier detection
-  optional string enabled = 1;
-}
-
 message PrunerSpec {
   // The type of pruner to use during model search
   // +kubebuilder:default:=median
@@ -3306,35 +3306,38 @@ message StudySpec {
   // +kubebuilder:validation:Optional
   optional InterpretabilitySpec interpretability = 13;
 
+  // +kubebuilder:validation:Optional
+  optional DriftDetectionSpec driftDetection = 14;
+
   // Aborted indicates that the execution of the Study and associated Models should be permanently stopped
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool aborted = 14;
+  optional bool aborted = 15;
 
   // Reported indicates that a report will be generated for the Study
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
-  optional bool reported = 15;
+  optional bool reported = 16;
 
   // Paused indicates that the execution of new workloads associated with the Study should be paused
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool paused = 16;
+  optional bool paused = 17;
 
   // Profiled indicates that the Study will be profiled after the conclusion of it's model search
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
-  optional bool profiled = 17;
+  optional bool profiled = 18;
 
   // ModelPublished indicates that a Docker image will be created containing the best model produced by the Study
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool modelPublished = 18;
+  optional bool modelPublished = 19;
 
   // ModelImagePushed indicates that if a Docker image of the best model will be pushed to a Docker image registry
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool modelImagePushed = 19;
+  optional bool modelImagePushed = 20;
 
   // ModelExplained indicates if interpretability diagrams, as specified
   // by the Interpretability field, will be produced for the final model
@@ -3517,7 +3520,7 @@ message StudyStatus {
 
   // OutlierDetection is the status for outlier detection.
   // +kubebuilder:validation:Optional
-  optional PredictionOutlierDetectionStatus outlierDetection = 31;
+  optional DriftDetectorStatus outlierDetection = 31;
 
   // The last time the object was updated
   // +kubebuilder:validation:Optional

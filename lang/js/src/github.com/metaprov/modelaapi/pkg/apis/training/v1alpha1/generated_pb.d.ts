@@ -696,6 +696,46 @@ export namespace DeploymentStageSpec {
   }
 }
 
+export class DriftDetectionSpec extends jspb.Message {
+  getEnabled(): boolean;
+  setEnabled(value: boolean): DriftDetectionSpec;
+
+  getOutlieralgorithm(): string;
+  setOutlieralgorithm(value: string): DriftDetectionSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DriftDetectionSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: DriftDetectionSpec): DriftDetectionSpec.AsObject;
+  static serializeBinaryToWriter(message: DriftDetectionSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DriftDetectionSpec;
+  static deserializeBinaryFromReader(message: DriftDetectionSpec, reader: jspb.BinaryReader): DriftDetectionSpec;
+}
+
+export namespace DriftDetectionSpec {
+  export type AsObject = {
+    enabled: boolean,
+    outlieralgorithm: string,
+  }
+}
+
+export class DriftDetectorStatus extends jspb.Message {
+  getOutliermodeluri(): string;
+  setOutliermodeluri(value: string): DriftDetectorStatus;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DriftDetectorStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: DriftDetectorStatus): DriftDetectorStatus.AsObject;
+  static serializeBinaryToWriter(message: DriftDetectorStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DriftDetectorStatus;
+  static deserializeBinaryFromReader(message: DriftDetectorStatus, reader: jspb.BinaryReader): DriftDetectorStatus;
+}
+
+export namespace DriftDetectorStatus {
+  export type AsObject = {
+    outliermodeluri: string,
+  }
+}
+
 export class EarlyStopSpec extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): EarlyStopSpec;
@@ -4018,46 +4058,6 @@ export namespace PeriodSpec {
   }
 }
 
-export class PredictionOutlierDetectionSpec extends jspb.Message {
-  getEnabled(): boolean;
-  setEnabled(value: boolean): PredictionOutlierDetectionSpec;
-
-  getOutlieralgorithm(): string;
-  setOutlieralgorithm(value: string): PredictionOutlierDetectionSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PredictionOutlierDetectionSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: PredictionOutlierDetectionSpec): PredictionOutlierDetectionSpec.AsObject;
-  static serializeBinaryToWriter(message: PredictionOutlierDetectionSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PredictionOutlierDetectionSpec;
-  static deserializeBinaryFromReader(message: PredictionOutlierDetectionSpec, reader: jspb.BinaryReader): PredictionOutlierDetectionSpec;
-}
-
-export namespace PredictionOutlierDetectionSpec {
-  export type AsObject = {
-    enabled: boolean,
-    outlieralgorithm: string,
-  }
-}
-
-export class PredictionOutlierDetectionStatus extends jspb.Message {
-  getEnabled(): string;
-  setEnabled(value: string): PredictionOutlierDetectionStatus;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PredictionOutlierDetectionStatus.AsObject;
-  static toObject(includeInstance: boolean, msg: PredictionOutlierDetectionStatus): PredictionOutlierDetectionStatus.AsObject;
-  static serializeBinaryToWriter(message: PredictionOutlierDetectionStatus, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PredictionOutlierDetectionStatus;
-  static deserializeBinaryFromReader(message: PredictionOutlierDetectionStatus, reader: jspb.BinaryReader): PredictionOutlierDetectionStatus;
-}
-
-export namespace PredictionOutlierDetectionStatus {
-  export type AsObject = {
-    enabled: string,
-  }
-}
-
 export class PrunerSpec extends jspb.Message {
   getType(): string;
   setType(value: string): PrunerSpec;
@@ -4876,6 +4876,11 @@ export class StudySpec extends jspb.Message {
   hasInterpretability(): boolean;
   clearInterpretability(): StudySpec;
 
+  getDriftdetection(): DriftDetectionSpec | undefined;
+  setDriftdetection(value?: DriftDetectionSpec): StudySpec;
+  hasDriftdetection(): boolean;
+  clearDriftdetection(): StudySpec;
+
   getAborted(): boolean;
   setAborted(value: boolean): StudySpec;
 
@@ -4966,6 +4971,7 @@ export namespace StudySpec {
     forecast?: StudyForecastSpec.AsObject,
     schedule?: StudyScheduleSpec.AsObject,
     interpretability?: InterpretabilitySpec.AsObject,
+    driftdetection?: DriftDetectionSpec.AsObject,
     aborted: boolean,
     reported: boolean,
     paused: boolean,
@@ -5099,8 +5105,8 @@ export class StudyStatus extends jspb.Message {
   hasExplain(): boolean;
   clearExplain(): StudyStatus;
 
-  getOutlierdetection(): PredictionOutlierDetectionStatus | undefined;
-  setOutlierdetection(value?: PredictionOutlierDetectionStatus): StudyStatus;
+  getOutlierdetection(): DriftDetectorStatus | undefined;
+  setOutlierdetection(value?: DriftDetectorStatus): StudyStatus;
   hasOutlierdetection(): boolean;
   clearOutlierdetection(): StudyStatus;
 
@@ -5162,7 +5168,7 @@ export namespace StudyStatus {
     ensemble?: StudyPhaseStatus.AsObject,
     test?: StudyPhaseStatus.AsObject,
     explain?: StudyPhaseStatus.AsObject,
-    outlierdetection?: PredictionOutlierDetectionStatus.AsObject,
+    outlierdetection?: DriftDetectorStatus.AsObject,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     bestfe?: FeatureEngineeringSpec.AsObject,
     gc?: GarbageCollectionStatus.AsObject,

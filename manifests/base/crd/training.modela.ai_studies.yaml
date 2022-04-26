@@ -226,6 +226,18 @@ spec:
                 description: The user-provided description of the Study
                 maxLength: 512
                 type: string
+              driftDetection:
+                description: The spec for generting a density model for this study.
+                properties:
+                  enabled:
+                    default: false
+                    description: Indicates if density models should be created.
+                    type: boolean
+                  outlierAlgorithm:
+                    default: isolation-forest
+                    description: The density model alg.
+                    type: string
+                type: object
               ensembles:
                 description: Ensembles specifies to parameters to generate ensemble
                   models
@@ -2852,7 +2864,7 @@ spec:
               outlierDetection:
                 description: OutlierDetection is the status for outlier detection.
                 properties:
-                  enabled:
+                  outlierModelURI:
                     description: The location of the prediction outlier detection
                     type: string
                 type: object
