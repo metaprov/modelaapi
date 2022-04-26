@@ -39,6 +39,11 @@ class TrainerdServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_trainerd_dot_v1_dot_trainerd__pb2.TrainEnsembleRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_trainerd_dot_v1_dot_trainerd__pb2.TrainResponse.FromString,
                 )
+        self.TrainDriftDetector = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService/TrainDriftDetector',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_trainerd_dot_v1_dot_trainerd__pb2.TrainDriftDetectorRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_trainerd_dot_v1_dot_trainerd__pb2.TrainResponse.FromString,
+                )
         self.TestEnsemble = channel.unary_unary(
                 '/github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService/TestEnsemble',
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_trainerd_dot_v1_dot_trainerd__pb2.TestEnsembleRequest.SerializeToString,
@@ -84,6 +89,12 @@ class TrainerdServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def TrainDriftDetector(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def TestEnsemble(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -122,6 +133,11 @@ def add_TrainerdServiceServicer_to_server(servicer, server):
             'TrainEnsemble': grpc.unary_unary_rpc_method_handler(
                     servicer.TrainEnsemble,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_trainerd_dot_v1_dot_trainerd__pb2.TrainEnsembleRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_trainerd_dot_v1_dot_trainerd__pb2.TrainResponse.SerializeToString,
+            ),
+            'TrainDriftDetector': grpc.unary_unary_rpc_method_handler(
+                    servicer.TrainDriftDetector,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_trainerd_dot_v1_dot_trainerd__pb2.TrainDriftDetectorRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_trainerd_dot_v1_dot_trainerd__pb2.TrainResponse.SerializeToString,
             ),
             'TestEnsemble': grpc.unary_unary_rpc_method_handler(
@@ -225,6 +241,23 @@ class TrainerdService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService/TrainEnsemble',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_trainerd_dot_v1_dot_trainerd__pb2.TrainEnsembleRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_trainerd_dot_v1_dot_trainerd__pb2.TrainResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def TrainDriftDetector(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService/TrainDriftDetector',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_trainerd_dot_v1_dot_trainerd__pb2.TrainDriftDetectorRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_trainerd_dot_v1_dot_trainerd__pb2.TrainResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

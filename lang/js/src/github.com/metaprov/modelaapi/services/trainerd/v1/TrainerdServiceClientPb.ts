@@ -250,6 +250,49 @@ export class TrainerdServiceClient {
     this.methodInfoTrainEnsemble);
   }
 
+  methodInfoTrainDriftDetector = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService/TrainDriftDetector',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TrainDriftDetectorRequest,
+    github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TrainResponse,
+    (request: github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TrainDriftDetectorRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TrainResponse.deserializeBinary
+  );
+
+  trainDriftDetector(
+    request: github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TrainDriftDetectorRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TrainResponse>;
+
+  trainDriftDetector(
+    request: github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TrainDriftDetectorRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TrainResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TrainResponse>;
+
+  trainDriftDetector(
+    request: github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TrainDriftDetectorRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TrainResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService/TrainDriftDetector',
+        request,
+        metadata || {},
+        this.methodInfoTrainDriftDetector,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService/TrainDriftDetector',
+    request,
+    metadata || {},
+    this.methodInfoTrainDriftDetector);
+  }
+
   methodInfoTestEnsemble = new grpcWeb.MethodDescriptor(
     '/github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService/TestEnsemble',
     grpcWeb.MethodType.UNARY,

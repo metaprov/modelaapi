@@ -503,6 +503,78 @@ export namespace TestEnsembleRequest {
   }
 }
 
+export class TrainDriftDetectorRequest extends jspb.Message {
+  getProduct(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct | undefined;
+  setProduct(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): TrainDriftDetectorRequest;
+  hasProduct(): boolean;
+  clearProduct(): TrainDriftDetectorRequest;
+
+  getVersion(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion | undefined;
+  setVersion(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion): TrainDriftDetectorRequest;
+  hasVersion(): boolean;
+  clearVersion(): TrainDriftDetectorRequest;
+
+  getBucket(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
+  setBucket(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): TrainDriftDetectorRequest;
+  hasBucket(): boolean;
+  clearBucket(): TrainDriftDetectorRequest;
+
+  getBaseList(): Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model>;
+  setBaseList(value: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model>): TrainDriftDetectorRequest;
+  clearBaseList(): TrainDriftDetectorRequest;
+  addBase(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model, index?: number): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model;
+
+  getModel(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model | undefined;
+  setModel(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model): TrainDriftDetectorRequest;
+  hasModel(): boolean;
+  clearModel(): TrainDriftDetectorRequest;
+
+  getStudy(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study | undefined;
+  setStudy(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study): TrainDriftDetectorRequest;
+  hasStudy(): boolean;
+  clearStudy(): TrainDriftDetectorRequest;
+
+  getDatasource(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource | undefined;
+  setDatasource(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource): TrainDriftDetectorRequest;
+  hasDatasource(): boolean;
+  clearDatasource(): TrainDriftDetectorRequest;
+
+  getDataset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
+  setDataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): TrainDriftDetectorRequest;
+  hasDataset(): boolean;
+  clearDataset(): TrainDriftDetectorRequest;
+
+  getConnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setConnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): TrainDriftDetectorRequest;
+  hasConnection(): boolean;
+  clearConnection(): TrainDriftDetectorRequest;
+
+  getSecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearSecretMap(): TrainDriftDetectorRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TrainDriftDetectorRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: TrainDriftDetectorRequest): TrainDriftDetectorRequest.AsObject;
+  static serializeBinaryToWriter(message: TrainDriftDetectorRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TrainDriftDetectorRequest;
+  static deserializeBinaryFromReader(message: TrainDriftDetectorRequest, reader: jspb.BinaryReader): TrainDriftDetectorRequest;
+}
+
+export namespace TrainDriftDetectorRequest {
+  export type AsObject = {
+    product?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
+    version?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.AsObject,
+    bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
+    baseList: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject>,
+    model?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject,
+    study?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
+    datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
+    dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
+    connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    secretMap: Array<[string, Uint8Array | string]>,
+  }
+}
+
 export class ForecastRequest extends jspb.Message {
   getProduct(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct | undefined;
   setProduct(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): ForecastRequest;

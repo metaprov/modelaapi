@@ -17,6 +17,7 @@ service TrainerdService {
     rpc Forecast (ForecastRequest) returns (ForecastResponse) {}
     rpc Test (TestRequest) returns (TestResponse) {}
     rpc TrainEnsemble (TrainEnsembleRequest) returns (TrainResponse) {}
+    rpc TrainDriftDetector (TrainDriftDetectorRequest) returns (TrainResponse) {}
     rpc TestEnsemble (TestEnsembleRequest) returns (TestResponse) {}
     rpc Shutdown(ShutdownRequest) returns (ShutdownResponse) {}
 }
@@ -161,6 +162,21 @@ message TestEnsembleRequest  {
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection        connection = 10;
     map<string,bytes> secret = 11;    
 }
+
+message TrainDriftDetectorRequest  {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct        product    = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion version    = 2;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket     bucket     = 3;
+    // the spec for the base models
+    repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model base       = 5;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model          model      = 6;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study          study      = 7;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource         datasource = 8;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset            dataset    = 9;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection        connection = 10;
+    map<string,bytes> secret = 11;    
+}
+
 
 message ForecastRequest {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct        product   = 1;
