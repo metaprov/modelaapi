@@ -9817,7 +9817,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EnsembleSpec.toOb
     modelsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
     estimatorsList: jspb.Message.toObjectList(msg.getEstimatorsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ClassicalEstimatorSpec.toObject, includeInstance),
-    base: (f = msg.getBase()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ClassicalEstimatorSpec.toObject(includeInstance, f),
+    pb_final: (f = msg.getFinal()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ClassicalEstimatorSpec.toObject(includeInstance, f),
     type: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
   };
 
@@ -9867,7 +9867,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EnsembleSpec.dese
     case 3:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ClassicalEstimatorSpec;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ClassicalEstimatorSpec.deserializeBinaryFromReader);
-      msg.setBase(value);
+      msg.setFinal(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
@@ -9917,7 +9917,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EnsembleSpec.seri
       proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ClassicalEstimatorSpec.serializeBinaryToWriter
     );
   }
-  f = message.getBase();
+  f = message.getFinal();
   if (f != null) {
     writer.writeMessage(
       3,
@@ -10011,10 +10011,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EnsembleSpec.prot
 
 
 /**
- * optional ClassicalEstimatorSpec base = 3;
+ * optional ClassicalEstimatorSpec final = 3;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ClassicalEstimatorSpec}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EnsembleSpec.prototype.getBase = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EnsembleSpec.prototype.getFinal = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ClassicalEstimatorSpec} */ (
     jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ClassicalEstimatorSpec, 3));
 };
@@ -10024,7 +10024,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EnsembleSpec.prot
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ClassicalEstimatorSpec|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EnsembleSpec} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EnsembleSpec.prototype.setBase = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EnsembleSpec.prototype.setFinal = function(value) {
   return jspb.Message.setWrapperField(this, 3, value);
 };
 
@@ -10033,8 +10033,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EnsembleSpec.prot
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EnsembleSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EnsembleSpec.prototype.clearBase = function() {
-  return this.setBase(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EnsembleSpec.prototype.clearFinal = function() {
+  return this.setFinal(undefined);
 };
 
 
@@ -10042,7 +10042,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EnsembleSpec.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EnsembleSpec.prototype.hasBase = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EnsembleSpec.prototype.hasFinal = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 

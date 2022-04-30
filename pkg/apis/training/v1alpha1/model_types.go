@@ -369,7 +369,7 @@ type EnsembleSpec struct {
 	Estimators []ClassicalEstimatorSpec `json:"estimators,omitempty" protobuf:"bytes,2,rep,name=estimators"`
 	// The base estimator
 	// +kubebuilder:validation:Optional
-	BaseEstimator *ClassicalEstimatorSpec `json:"base,omitempty" protobuf:"bytes,3,rep,name=base"`
+	Final *ClassicalEstimatorSpec `json:"final,omitempty" protobuf:"bytes,3,rep,name=final"`
 	// The ensembling method
 	// +kubebuilder:validation:Optional
 	Type *catalog.EnsembleType `json:"type,omitempty" protobuf:"bytes,4,rep,name=type"`

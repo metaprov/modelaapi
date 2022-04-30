@@ -235,31 +235,6 @@ spec:
                 description: Ensemble specifies the configuration to create an ensemble
                   model
                 properties:
-                  base:
-                    description: The base estimator
-                    properties:
-                      algorithmName:
-                        description: AlgorithmName is a reference to the algorithm
-                          in the catalog
-                        type: string
-                      parameters:
-                        description: Parameters is a list of the algorithm hyper parameters
-                        items:
-                          description: HyperParameterValue represent an individual
-                            hyper-parameter of a machine earning algorithm
-                          properties:
-                            name:
-                              description: The name of the hyper-parameter
-                              type: string
-                            value:
-                              description: The value of the hyper-parameter
-                              type: string
-                          required:
-                          - name
-                          - value
-                          type: object
-                        type: array
-                    type: object
                   estimators:
                     description: The collection of estimators to be used in the ensemble,
                       derived from Models
@@ -291,6 +266,31 @@ spec:
                           type: array
                       type: object
                     type: array
+                  final:
+                    description: The base estimator
+                    properties:
+                      algorithmName:
+                        description: AlgorithmName is a reference to the algorithm
+                          in the catalog
+                        type: string
+                      parameters:
+                        description: Parameters is a list of the algorithm hyper parameters
+                        items:
+                          description: HyperParameterValue represent an individual
+                            hyper-parameter of a machine earning algorithm
+                          properties:
+                            name:
+                              description: The name of the hyper-parameter
+                              type: string
+                            value:
+                              description: The value of the hyper-parameter
+                              type: string
+                          required:
+                          - name
+                          - value
+                          type: object
+                        type: array
+                    type: object
                   models:
                     description: The collection of models (by their name) to be used
                       as estimators in the ensemble

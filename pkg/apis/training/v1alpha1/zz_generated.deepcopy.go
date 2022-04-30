@@ -782,8 +782,8 @@ func (in *EnsembleSpec) DeepCopyInto(out *EnsembleSpec) {
 			(*in)[i].DeepCopyInto(&(*out)[i])
 		}
 	}
-	if in.BaseEstimator != nil {
-		in, out := &in.BaseEstimator, &out.BaseEstimator
+	if in.Final != nil {
+		in, out := &in.Final, &out.Final
 		*out = new(ClassicalEstimatorSpec)
 		(*in).DeepCopyInto(*out)
 	}

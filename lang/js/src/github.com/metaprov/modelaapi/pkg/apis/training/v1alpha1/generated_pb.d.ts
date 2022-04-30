@@ -787,10 +787,10 @@ export class EnsembleSpec extends jspb.Message {
   clearEstimatorsList(): EnsembleSpec;
   addEstimators(value?: ClassicalEstimatorSpec, index?: number): ClassicalEstimatorSpec;
 
-  getBase(): ClassicalEstimatorSpec | undefined;
-  setBase(value?: ClassicalEstimatorSpec): EnsembleSpec;
-  hasBase(): boolean;
-  clearBase(): EnsembleSpec;
+  getFinal(): ClassicalEstimatorSpec | undefined;
+  setFinal(value?: ClassicalEstimatorSpec): EnsembleSpec;
+  hasFinal(): boolean;
+  clearFinal(): EnsembleSpec;
 
   getType(): string;
   setType(value: string): EnsembleSpec;
@@ -807,7 +807,7 @@ export namespace EnsembleSpec {
   export type AsObject = {
     modelsList: Array<string>,
     estimatorsList: Array<ClassicalEstimatorSpec.AsObject>,
-    base?: ClassicalEstimatorSpec.AsObject,
+    pb_final?: ClassicalEstimatorSpec.AsObject,
     type: string,
   }
 }

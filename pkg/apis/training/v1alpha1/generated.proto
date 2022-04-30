@@ -494,7 +494,7 @@ message EnsembleSpec {
 
   // The base estimator
   // +kubebuilder:validation:Optional
-  optional ClassicalEstimatorSpec base = 3;
+  optional ClassicalEstimatorSpec final = 3;
 
   // The ensembling method
   // +kubebuilder:validation:Optional
