@@ -1641,6 +1641,23 @@ const (
 	ModelTypeRL          ModelType = "rl"
 )
 
+// ModelType enamurate the model type
+// +kubebuilder:validation:Enum="protobuf";"pickle";"cloudpickle";"mlleap";"mlmodel";"h5";"onyx";"pmml";"pt";
+
+type ModelServingFormat string
+
+const (
+	ModelServingFormatProtobuf    ModelServingFormat = "protobuf"
+	ModelServingFormatPickle      ModelServingFormat = "pickle"
+	ModelServingFormatCloudPickle ModelServingFormat = "cloudpickle"
+	ModelServingFormatMLLeap      ModelServingFormat = "mlleap"
+	ModelServingFormatMLModel     ModelServingFormat = "mlmodel"
+	ModelServingFormatH5          ModelServingFormat = "h5"
+	ModelServingFormatOnyx        ModelServingFormat = "onyx"
+	ModelServingFormatPmml        ModelServingFormat = "pmml"
+	ModelServingFormatTorchScript ModelServingFormat = "pt"
+)
+
 // +kubebuilder:validation:Enum="flask";"grpc";"onyx";
 // Predictor format represent the API implementation of the model
 type PredictorFormat string

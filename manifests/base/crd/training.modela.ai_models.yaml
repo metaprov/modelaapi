@@ -1373,7 +1373,21 @@ spec:
                   be applied to a Predictor that will be created if the model is set
                   to be released
                 properties:
+                  format:
+                    default: cloudpickle
+                    enum:
+                    - protobuf
+                    - pickle
+                    - cloudpickle
+                    - mlleap
+                    - mlmodel
+                    - h5
+                    - onyx
+                    - pmml
+                    - pt
+                    type: string
                   resources:
+                    default: auto
                     description: ResourceSpec specifies the amount of resources that
                       will be allocated to a workload
                     properties:

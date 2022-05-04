@@ -4622,6 +4622,9 @@ export class ServingSpec extends jspb.Message {
   hasResources(): boolean;
   clearResources(): ServingSpec;
 
+  getFormat(): string;
+  setFormat(value: string): ServingSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ServingSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ServingSpec): ServingSpec.AsObject;
@@ -4633,6 +4636,7 @@ export class ServingSpec extends jspb.Message {
 export namespace ServingSpec {
   export type AsObject = {
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
+    format: string,
   }
 }
 
@@ -4865,6 +4869,11 @@ export class StudySpec extends jspb.Message {
   hasTrainingtemplate(): boolean;
   clearTrainingtemplate(): StudySpec;
 
+  getServingtemplate(): ServingSpec | undefined;
+  setServingtemplate(value?: ServingSpec): StudySpec;
+  hasServingtemplate(): boolean;
+  clearServingtemplate(): StudySpec;
+
   getForecast(): StudyForecastSpec | undefined;
   setForecast(value?: StudyForecastSpec): StudySpec;
   hasForecast(): boolean;
@@ -4972,6 +4981,7 @@ export namespace StudySpec {
     search?: SearchSpec.AsObject,
     ensembles?: EnsemblesSpec.AsObject,
     trainingtemplate?: TrainingSpec.AsObject,
+    servingtemplate?: ServingSpec.AsObject,
     forecast?: StudyForecastSpec.AsObject,
     schedule?: StudyScheduleSpec.AsObject,
     interpretability?: InterpretabilitySpec.AsObject,
