@@ -3137,11 +3137,10 @@ message SegmentSpec {
 
 // ServingSpec specifies the requirements to serve a model
 message ServingSpec {
-  // +kubebuilder:default:=auto
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 1;
 
-  // +kubebuilder:default:=cloudpickle
+  // +kubebuilder:default:="cloudpickle"
   // +kubebuilder:validation:Optional
   optional string format = 2;
 }

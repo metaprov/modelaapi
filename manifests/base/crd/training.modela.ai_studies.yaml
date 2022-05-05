@@ -1622,7 +1622,6 @@ spec:
                     - pt
                     type: string
                   resources:
-                    default: auto
                     description: ResourceSpec specifies the amount of resources that
                       will be allocated to a workload
                     properties:

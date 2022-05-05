@@ -857,10 +857,9 @@ type CheckpointSpec struct {
 
 // ServingSpec specifies the requirements to serve a model
 type ServingSpec struct {
-	// +kubebuilder:default:=auto
 	// +kubebuilder:validation:Optional
 	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,1,opt,name=resources"`
-	// +kubebuilder:default:=cloudpickle
+	// +kubebuilder:default:="cloudpickle"
 	// +kubebuilder:validation:Optional
 	Format *catalog.ModelServingFormat `json:"format,omitempty" protobuf:"bytes,2,opt,name=format"`
 }
