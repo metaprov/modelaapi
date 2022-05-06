@@ -173,6 +173,7 @@ spec:
                       - stacking-regressor
                       - hist-gradient-boosting-classifier
                       - hist-gradient-boosting-regressor
+                      - linear-regression
                       type: string
                     type: array
                   enabled:
@@ -347,6 +348,7 @@ spec:
                     - stacking-regressor
                     - hist-gradient-boosting-classifier
                     - hist-gradient-boosting-regressor
+                    - linear-regression
                     type: string
                   featureSelectionTemplate:
                     description: Specification for feature selection. successful study.
@@ -1582,6 +1584,7 @@ spec:
                           - stacking-regressor
                           - hist-gradient-boosting-classifier
                           - hist-gradient-boosting-regressor
+                          - linear-regression
                           type: string
                         type: array
                     type: object
