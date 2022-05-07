@@ -916,6 +916,30 @@ spec:
                       be garbage-collected
                     type: boolean
                 type: object
+              imbalanceHandler:
+                description: Set the imbalance dataset handling.
+                properties:
+                  enabled:
+                    default: true
+                    description: Indicates if ensemble models will be created
+                    type: boolean
+                  imbalance:
+                    default: auto
+                    description: set the imbalance handler. By default set to auto.
+                      The method which will be used to handle an imbalanced dataset
+                    enum:
+                    - adasyn
+                    - baseline-smote
+                    - kmean-smote
+                    - random-over-sampler
+                    - smote
+                    - smotenc
+                    - svmsmote
+                    - none
+                    - auto
+                    - class-weights
+                    type: string
+                type: object
               interpretability:
                 description: Interpretability specifies the parameters to create interpretability
                   visualizations for the final model

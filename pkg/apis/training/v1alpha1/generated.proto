@@ -941,6 +941,19 @@ message ImagePipelineSpec {
   optional string featurizer = 1;
 }
 
+message ImbalanceHandlingSpec {
+  // Indicates if ensemble models will be created
+  // +kubebuilder:default:=true
+  // +kubebuilder:validation:Optional
+  optional bool enabled = 1;
+
+  // set the imbalance handler. By default set to auto.
+  // The method which will be used to handle an imbalanced dataset
+  // +kubebuilder:default:=auto
+  // +kubebuilder:validation:Optional
+  optional string imbalance = 2;
+}
+
 // InterpretabilitySpec specifies the configuration to generate interpretability data and diagrams
 message InterpretabilitySpec {
   // Indicates if ICE (individual condition expectation) plots will be generated
@@ -3288,70 +3301,74 @@ message StudySpec {
   // +kubebuilder:validation:Optional
   optional FeatureEngineeringSearchSpec feSearch = 6;
 
+  // Set the imbalance dataset handling.
+  // +kubebuilder:validation:Optional
+  optional ImbalanceHandlingSpec imbalanceHandler = 7;
+
   // Baseline specifies the parameters to generate baseline (default hyper-parameters) models
   // +kubebuilder:validation:Optional
-  optional BaselineSpec baseline = 7;
+  optional BaselineSpec baseline = 8;
 
   // Search specifies the configuration to perform the model search for the best algorithm and hyper-parameters
   // +kubebuilder:validation:Optional
-  optional SearchSpec search = 8;
+  optional SearchSpec search = 9;
 
   // Ensembles specifies to parameters to generate ensemble models
   // +kubebuilder:validation:Optional
-  optional EnsemblesSpec ensembles = 9;
+  optional EnsemblesSpec ensembles = 10;
 
   // TrainingTemplate specifies the configuration to train and evaluate models
   // +kubebuilder:validation:Optional
-  optional TrainingSpec trainingTemplate = 10;
+  optional TrainingSpec trainingTemplate = 11;
 
   // Model serving template specifies the configuration to train and evaluate models
   // +kubebuilder:validation:Optional
-  optional ServingSpec servingTemplate = 11;
+  optional ServingSpec servingTemplate = 12;
 
   // ForecastSpec specifies the parameters required when generating a forecasting model
   // +kubebuilder:validation:Optional
-  optional StudyForecastSpec forecast = 12;
+  optional StudyForecastSpec forecast = 13;
 
   // Schedule specifies the configuration to execute the Study at a later date
   // +kubebuilder:validation:Optional
-  optional StudyScheduleSpec schedule = 13;
+  optional StudyScheduleSpec schedule = 14;
 
   // Interpretability specifies the parameters to create interpretability visualizations for the final model
   // +kubebuilder:validation:Optional
-  optional InterpretabilitySpec interpretability = 14;
+  optional InterpretabilitySpec interpretability = 15;
 
   // +kubebuilder:validation:Optional
-  optional DriftDetectionSpec driftDetection = 15;
+  optional DriftDetectionSpec driftDetection = 16;
 
   // Aborted indicates that the execution of the Study and associated Models should be permanently stopped
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool aborted = 16;
+  optional bool aborted = 17;
 
   // Reported indicates that a report will be generated for the Study
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
-  optional bool reported = 17;
+  optional bool reported = 18;
 
   // Paused indicates that the execution of new workloads associated with the Study should be paused
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool paused = 18;
+  optional bool paused = 19;
 
   // Profiled indicates that the Study will be profiled after the conclusion of it's model search
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
-  optional bool profiled = 19;
+  optional bool profiled = 20;
 
   // ModelPublished indicates that a Docker image will be created containing the best model produced by the Study
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool modelPublished = 20;
+  optional bool modelPublished = 21;
 
   // ModelImagePushed indicates that if a Docker image of the best model will be pushed to a Docker image registry
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool modelImagePushed = 21;
+  optional bool modelImagePushed = 22;
 
   // ModelExplained indicates if interpretability diagrams, as specified
   // by the Interpretability field, will be produced for the final model

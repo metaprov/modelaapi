@@ -1484,6 +1484,28 @@ export namespace ImagePipelineSpec {
   }
 }
 
+export class ImbalanceHandlingSpec extends jspb.Message {
+  getEnabled(): boolean;
+  setEnabled(value: boolean): ImbalanceHandlingSpec;
+
+  getImbalance(): string;
+  setImbalance(value: string): ImbalanceHandlingSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ImbalanceHandlingSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: ImbalanceHandlingSpec): ImbalanceHandlingSpec.AsObject;
+  static serializeBinaryToWriter(message: ImbalanceHandlingSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ImbalanceHandlingSpec;
+  static deserializeBinaryFromReader(message: ImbalanceHandlingSpec, reader: jspb.BinaryReader): ImbalanceHandlingSpec;
+}
+
+export namespace ImbalanceHandlingSpec {
+  export type AsObject = {
+    enabled: boolean,
+    imbalance: string,
+  }
+}
+
 export class InterpretabilitySpec extends jspb.Message {
   getIce(): boolean;
   setIce(value: boolean): InterpretabilitySpec;
@@ -4849,6 +4871,11 @@ export class StudySpec extends jspb.Message {
   hasFesearch(): boolean;
   clearFesearch(): StudySpec;
 
+  getImbalancehandler(): ImbalanceHandlingSpec | undefined;
+  setImbalancehandler(value?: ImbalanceHandlingSpec): StudySpec;
+  hasImbalancehandler(): boolean;
+  clearImbalancehandler(): StudySpec;
+
   getBaseline(): BaselineSpec | undefined;
   setBaseline(value?: BaselineSpec): StudySpec;
   hasBaseline(): boolean;
@@ -4977,6 +5004,7 @@ export namespace StudySpec {
     datasetname: string,
     task: string,
     fesearch?: FeatureEngineeringSearchSpec.AsObject,
+    imbalancehandler?: ImbalanceHandlingSpec.AsObject,
     baseline?: BaselineSpec.AsObject,
     search?: SearchSpec.AsObject,
     ensembles?: EnsemblesSpec.AsObject,

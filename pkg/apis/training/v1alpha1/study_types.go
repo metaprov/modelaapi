@@ -446,56 +446,59 @@ type StudySpec struct {
 	// FeatureEngineeringSearch specifies the parameters to perform a feature engineering search
 	// +kubebuilder:validation:Optional
 	FeatureEngineeringSearch FeatureEngineeringSearchSpec `json:"feSearch,omitempty" protobuf:"bytes,6,opt,name=feSearch"`
+	// Set the imbalance dataset handling.
+	// +kubebuilder:validation:Optional
+	ImbalanceHandler ImbalanceHandlingSpec `json:"imbalanceHandler,omitempty" protobuf:"bytes,7,opt,name=imbalanceHandler"`
 	// Baseline specifies the parameters to generate baseline (default hyper-parameters) models
 	// +kubebuilder:validation:Optional
-	Baseline BaselineSpec `json:"baseline,omitempty" protobuf:"bytes,7,opt,name=baseline"`
+	Baseline BaselineSpec `json:"baseline,omitempty" protobuf:"bytes,8,opt,name=baseline"`
 	// Search specifies the configuration to perform the model search for the best algorithm and hyper-parameters
 	// +kubebuilder:validation:Optional
-	Search SearchSpec `json:"search,omitempty" protobuf:"bytes,8,opt,name=search"`
+	Search SearchSpec `json:"search,omitempty" protobuf:"bytes,9,opt,name=search"`
 	// Ensembles specifies to parameters to generate ensemble models
 	// +kubebuilder:validation:Optional
-	Ensembles EnsemblesSpec `json:"ensembles,omitempty" protobuf:"bytes,9,opt,name=ensembles"`
+	Ensembles EnsemblesSpec `json:"ensembles,omitempty" protobuf:"bytes,10,opt,name=ensembles"`
 	// TrainingTemplate specifies the configuration to train and evaluate models
 	// +kubebuilder:validation:Optional
-	TrainingTemplate TrainingSpec `json:"trainingTemplate,omitempty" protobuf:"bytes,10,opt,name=trainingTemplate"`
+	TrainingTemplate TrainingSpec `json:"trainingTemplate,omitempty" protobuf:"bytes,11,opt,name=trainingTemplate"`
 	// Model serving template specifies the configuration to train and evaluate models
 	// +kubebuilder:validation:Optional
-	ServingTemplate ServingSpec `json:"servingTemplate,omitempty" protobuf:"bytes,11,opt,name=servingTemplate"`
+	ServingTemplate ServingSpec `json:"servingTemplate,omitempty" protobuf:"bytes,12,opt,name=servingTemplate"`
 	// ForecastSpec specifies the parameters required when generating a forecasting model
 	// +kubebuilder:validation:Optional
-	ForecastSpec StudyForecastSpec `json:"forecast,omitempty" protobuf:"bytes,12,opt,name=forecast"`
+	ForecastSpec StudyForecastSpec `json:"forecast,omitempty" protobuf:"bytes,13,opt,name=forecast"`
 	// Schedule specifies the configuration to execute the Study at a later date
 	// +kubebuilder:validation:Optional
-	Schedule StudyScheduleSpec `json:"schedule,omitempty" protobuf:"bytes,13,opt,name=schedule"`
+	Schedule StudyScheduleSpec `json:"schedule,omitempty" protobuf:"bytes,14,opt,name=schedule"`
 	// Interpretability specifies the parameters to create interpretability visualizations for the final model
 	// +kubebuilder:validation:Optional
-	Interpretability InterpretabilitySpec `json:"interpretability,omitempty" protobuf:"bytes,14,opt,name=interpretability"`
+	Interpretability InterpretabilitySpec `json:"interpretability,omitempty" protobuf:"bytes,15,opt,name=interpretability"`
 	// +kubebuilder:validation:Optional
-	DriftDetector DriftDetectionSpec `json:"driftDetection,omitempty" protobuf:"bytes,15,opt,name=driftDetection"`
+	DriftDetector DriftDetectionSpec `json:"driftDetection,omitempty" protobuf:"bytes,16,opt,name=driftDetection"`
 	// Aborted indicates that the execution of the Study and associated Models should be permanently stopped
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Aborted *bool `json:"aborted,omitempty" protobuf:"varint,16,opt,name=aborted"`
+	Aborted *bool `json:"aborted,omitempty" protobuf:"varint,17,opt,name=aborted"`
 	// Reported indicates that a report will be generated for the Study
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	Reported *bool `json:"reported,omitempty" protobuf:"varint,17,opt,name=reported"`
+	Reported *bool `json:"reported,omitempty" protobuf:"varint,18,opt,name=reported"`
 	// Paused indicates that the execution of new workloads associated with the Study should be paused
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Paused *bool `json:"paused,omitempty" protobuf:"varint,18,opt,name=paused"`
+	Paused *bool `json:"paused,omitempty" protobuf:"varint,19,opt,name=paused"`
 	// Profiled indicates that the Study will be profiled after the conclusion of it's model search
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	Profiled *bool `json:"profiled,omitempty" protobuf:"varint,19,opt,name=profiled"`
+	Profiled *bool `json:"profiled,omitempty" protobuf:"varint,20,opt,name=profiled"`
 	// ModelPublished indicates that a Docker image will be created containing the best model produced by the Study
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	ModelPublished *bool `json:"modelPublished,omitempty" protobuf:"varint,20,opt,name=modelPublished"`
+	ModelPublished *bool `json:"modelPublished,omitempty" protobuf:"varint,21,opt,name=modelPublished"`
 	// ModelImagePushed indicates that if a Docker image of the best model will be pushed to a Docker image registry
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	ModelImagePushed *bool `json:"modelImagePushed,omitempty" protobuf:"varint,21,opt,name=modelImagePushed"`
+	ModelImagePushed *bool `json:"modelImagePushed,omitempty" protobuf:"varint,22,opt,name=modelImagePushed"`
 	// ModelExplained indicates if interpretability diagrams, as specified
 	// by the Interpretability field, will be produced for the final model
 	// +kubebuilder:default:=true
@@ -816,4 +819,16 @@ type GarbageCollectionStatus struct {
 type DriftDetectorStatus struct {
 	// The location of the prediction outlier detection
 	OutlierModelURI string `json:"outlierModelURI,omitempty" protobuf:"bytes,1,opt,name=outlierModelURI"`
+}
+
+type ImbalanceHandlingSpec struct {
+	// Indicates if ensemble models will be created
+	// +kubebuilder:default:=true
+	// +kubebuilder:validation:Optional
+	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
+	// set the imbalance handler. By default set to auto.
+	// The method which will be used to handle an imbalanced dataset
+	// +kubebuilder:default:=auto
+	// +kubebuilder:validation:Optional
+	Imbalance *catalog.ImbalanceHandling `json:"imbalance,omitempty" protobuf:"bytes,2,opt,name=imbalance"`
 }
