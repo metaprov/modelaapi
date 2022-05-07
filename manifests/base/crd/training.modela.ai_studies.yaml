@@ -386,7 +386,7 @@ spec:
                           enum:
                           - drop-features
                           - drop-constant-features
-                          - drop-deplicated-features
+                          - drop-duplicated-features
                           - drop-correlated-features
                           - mutual-information
                           - chisquare
@@ -2757,7 +2757,7 @@ spec:
                           enum:
                           - drop-features
                           - drop-constant-features
-                          - drop-deplicated-features
+                          - drop-duplicated-features
                           - drop-correlated-features
                           - mutual-information
                           - chisquare

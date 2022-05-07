@@ -809,7 +809,7 @@ const (
 	AutoTextTransform TextEncoding = "auto"
 )
 
-// +kubebuilder:validation:Enum="drop-features";"drop-constant-features";"drop-deplicated-features";"drop-correlated-features";"mutual-information";"chisquare";"anova";"step-forward";"step-backward";"lasso-regression";"tree-importance";"recursive-feature-elimination";"recursive-feature-addition";"select-percentile";"select-kbest";"select-fpr";"select-fdr";"variance-threshold";"none";"auto"
+// +kubebuilder:validation:Enum="drop-features";"drop-constant-features";"drop-duplicated-features";"drop-correlated-features";"mutual-information";"chisquare";"anova";"step-forward";"step-backward";"lasso-regression";"tree-importance";"recursive-feature-elimination";"recursive-feature-addition";"select-percentile";"select-kbest";"select-fpr";"select-fdr";"variance-threshold";"none";"auto"
 type FeatureSelection string
 
 const (
