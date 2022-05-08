@@ -5370,6 +5370,32 @@ export namespace VirtualCluster {
   }
 }
 
+export class VirtualClusterAutoScaleSpec extends jspb.Message {
+  getEnabled(): boolean;
+  setEnabled(value: boolean): VirtualClusterAutoScaleSpec;
+
+  getMin(): number;
+  setMin(value: number): VirtualClusterAutoScaleSpec;
+
+  getMax(): number;
+  setMax(value: number): VirtualClusterAutoScaleSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): VirtualClusterAutoScaleSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: VirtualClusterAutoScaleSpec): VirtualClusterAutoScaleSpec.AsObject;
+  static serializeBinaryToWriter(message: VirtualClusterAutoScaleSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): VirtualClusterAutoScaleSpec;
+  static deserializeBinaryFromReader(message: VirtualClusterAutoScaleSpec, reader: jspb.BinaryReader): VirtualClusterAutoScaleSpec;
+}
+
+export namespace VirtualClusterAutoScaleSpec {
+  export type AsObject = {
+    enabled: boolean,
+    min: number,
+    max: number,
+  }
+}
+
 export class VirtualClusterCondition extends jspb.Message {
   getType(): string;
   setType(value: string): VirtualClusterCondition;
@@ -5470,6 +5496,20 @@ export class VirtualClusterSpec extends jspb.Message {
   hasLimits(): boolean;
   clearLimits(): VirtualClusterSpec;
 
+  getRegion(): string;
+  setRegion(value: string): VirtualClusterSpec;
+
+  getAz(): string;
+  setAz(value: string): VirtualClusterSpec;
+
+  getKubernetesversion(): string;
+  setKubernetesversion(value: string): VirtualClusterSpec;
+
+  getAutoscale(): VirtualClusterAutoScaleSpec | undefined;
+  setAutoscale(value?: VirtualClusterAutoScaleSpec): VirtualClusterSpec;
+  hasAutoscale(): boolean;
+  clearAutoscale(): VirtualClusterSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): VirtualClusterSpec.AsObject;
   static toObject(includeInstance: boolean, msg: VirtualClusterSpec): VirtualClusterSpec.AsObject;
@@ -5491,6 +5531,10 @@ export namespace VirtualClusterSpec {
     connectionname: string,
     owner: string,
     limits?: ResourceLimitSpec.AsObject,
+    region: string,
+    az: string,
+    kubernetesversion: string,
+    autoscale?: VirtualClusterAutoScaleSpec.AsObject,
   }
 }
 
