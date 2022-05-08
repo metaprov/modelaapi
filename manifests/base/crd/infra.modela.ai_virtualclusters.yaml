@@ -66,6 +66,28 @@ spec:
             type: object
           spec:
             properties:
+              autoScale:
+                description: Auto Scale specification
+                properties:
+                  enabled:
+                    default: false
+                    description: Is auto scaling enabled
+                    type: boolean
+                  max:
+                    default: 0
+                    description: Max number of nodes
+                    format: int32
+                    type: integer
+                  min:
+                    default: 0
+                    description: Min number of nodes
+                    format: int32
+                    type: integer
+                type: object
+              az:
+                description: The cloud AZ, if this cluster is created in a public
+                  cloud
+                type: string
               connectionName:
                 default: ""
                 description: ConnectionName refer to the name of the provider connection
@@ -85,6 +107,9 @@ spec:
                 maximum: 10
                 minimum: 0
                 type: integer
+              kubernetesVersion:
+                description: The cluster kubernetes version
+                type: string
               limits:
                 description: Specify resource limits for the virtual cluster
                 properties:
@@ -272,6 +297,10 @@ spec:
               owner:
                 default: no-one
                 description: Owner is the account name of the owner of this cluster
+                type: string
+              region:
+                description: The cloud region, if this cluster is created in a public
+                  cloud
                 type: string
               spot:
                 default: false

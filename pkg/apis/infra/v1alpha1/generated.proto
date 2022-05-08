@@ -3028,6 +3028,23 @@ message VirtualCluster {
   optional VirtualClusterStatus status = 3;
 }
 
+message VirtualClusterAutoScaleSpec {
+  // Is auto scaling enabled
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool enabled = 1;
+
+  // Min number of nodes
+  // +kubebuilder:default:=0
+  // +kubebuilder:validation:Optional
+  optional int32 min = 2;
+
+  // Max number of nodes
+  // +kubebuilder:default:=0
+  // +kubebuilder:validation:Optional
+  optional int32 max = 3;
+}
+
 // VirtualClusterCondition describes the state of a virtual cluster at a certain point.
 message VirtualClusterCondition {
   // Type of account condition.
@@ -3117,6 +3134,22 @@ message VirtualClusterSpec {
   // Specify resource limits for the virtual cluster
   // +kubebuilder:validation:Optional
   optional ResourceLimitSpec limits = 11;
+
+  // The cloud region, if this cluster is created in a public cloud
+  // +kubebuilder:validation:Optional
+  optional string region = 12;
+
+  // The cloud AZ, if this cluster is created in a public cloud
+  // +kubebuilder:validation:Optional
+  optional string az = 13;
+
+  // The cluster kubernetes version
+  // +kubebuilder:validation:Optional
+  optional string kubernetesVersion = 14;
+
+  // Auto Scale specification
+  // +kubebuilder:validation:Optional
+  optional VirtualClusterAutoScaleSpec autoScale = 15;
 }
 
 message VirtualClusterStatus {

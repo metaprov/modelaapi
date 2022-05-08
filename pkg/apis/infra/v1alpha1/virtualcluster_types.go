@@ -107,6 +107,18 @@ type VirtualClusterSpec struct {
 	// Specify resource limits for the virtual cluster
 	// +kubebuilder:validation:Optional
 	Limits *ResourceLimitSpec `json:"limits,omitempty" protobuf:"bytes,11,opt,name=limits"`
+	// The cloud region, if this cluster is created in a public cloud
+	// +kubebuilder:validation:Optional
+	Region *string `json:"region,omitempty" protobuf:"bytes,12,opt,name=region"`
+	// The cloud AZ, if this cluster is created in a public cloud
+	// +kubebuilder:validation:Optional
+	Az *string `json:"az,omitempty" protobuf:"bytes,13,opt,name=az"`
+	// The cluster kubernetes version
+	// +kubebuilder:validation:Optional
+	KubernetesVersion *string `json:"kubernetesVersion,omitempty" protobuf:"bytes,14,opt,name=kubernetesVersion"`
+	// Auto Scale specification
+	// +kubebuilder:validation:Optional
+	AutoScale VirtualClusterAutoScaleSpec `json:"autoScale,omitempty" protobuf:"bytes,15,opt,name=autoScale"`
 }
 
 type VirtualClusterStatus struct {
@@ -145,4 +157,19 @@ type VirtualClusterList struct {
 	metav1.ListMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
 
 	Items []VirtualCluster `json:"items" protobuf:"bytes,2,rep,name=items"`
+}
+
+type VirtualClusterAutoScaleSpec struct {
+	// Is auto scaling enabled
+	//+kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
+	// Min number of nodes
+	//+kubebuilder:default:=0
+	// +kubebuilder:validation:Optional
+	Min *int32 `json:"min,omitempty" protobuf:"varint,2,opt,name=min"`
+	// Max number of nodes
+	//+kubebuilder:default:=0
+	// +kubebuilder:validation:Optional
+	Max *int32 `json:"max,omitempty" protobuf:"varint,3,opt,name=max"`
 }
