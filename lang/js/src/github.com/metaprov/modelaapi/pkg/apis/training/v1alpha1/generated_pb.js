@@ -54064,7 +54064,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.toOb
     folds: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     split: (f = msg.getSplit()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec.toObject(includeInstance, f),
     evalmetricsList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f,
-    earlystop: (f = jspb.Message.getBooleanField(msg, 8)) == null ? undefined : f,
+    earlystop: (f = msg.getEarlystop()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EarlyStopSpec.toObject(includeInstance, f),
     sh: (f = msg.getSh()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SuccessiveHalvingSpec.toObject(includeInstance, f),
     seed: (f = jspb.Message.getOptionalFloatingPointField(msg, 11)) == null ? undefined : f,
     resources: (f = msg.getResources()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.toObject(includeInstance, f),
@@ -54142,7 +54142,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.dese
       msg.addEvalmetrics(value);
       break;
     case 8:
-      var value = /** @type {boolean} */ (reader.readBool());
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EarlyStopSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EarlyStopSpec.deserializeBinaryFromReader);
       msg.setEarlystop(value);
       break;
     case 10:
@@ -54268,11 +54269,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.seri
       f
     );
   }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 8));
+  f = message.getEarlystop();
   if (f != null) {
-    writer.writeBool(
+    writer.writeMessage(
       8,
-      f
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EarlyStopSpec.serializeBinaryToWriter
     );
   }
   f = message.getSh();
@@ -54607,29 +54609,30 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
 
 
 /**
- * optional bool earlyStop = 8;
- * @return {boolean}
+ * optional EarlyStopSpec earlyStop = 8;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EarlyStopSpec}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.getEarlystop = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 8, false));
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EarlyStopSpec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EarlyStopSpec, 8));
 };
 
 
 /**
- * @param {boolean} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EarlyStopSpec|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec} returns this
- */
+*/
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.setEarlystop = function(value) {
-  return jspb.Message.setField(this, 8, value);
+  return jspb.Message.setWrapperField(this, 8, value);
 };
 
 
 /**
- * Clears the field making it undefined.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.clearEarlystop = function() {
-  return jspb.Message.setField(this, 8, undefined);
+  return this.setEarlystop(undefined);
 };
 
 

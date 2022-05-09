@@ -1942,7 +1942,24 @@ spec:
                     default: false
                     description: Indicates if the parent Study should stop sampling
                       new models if there is no improvement in score
-                    type: boolean
+                    properties:
+                      enabled:
+                        default: true
+                        description: Indicates if ensemble models will be created
+                        type: boolean
+                      initial:
+                        default: 20
+                        description: The number of models before we start checking
+                          for early stopping.
+                        format: int32
+                        type: integer
+                      minModelsWithNoProgress:
+                        default: 5
+                        description: The number of models for which we check if there
+                          were no improvement.
+                        format: int32
+                        type: integer
+                    type: object
                   evalMetrics:
                     description: EvalMetrics specifies the collection of metrics that
                       will be evaluated after model training is complete

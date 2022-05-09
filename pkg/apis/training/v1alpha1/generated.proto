@@ -3781,7 +3781,7 @@ message TrainingSpec {
   // Indicates if the parent Study should stop sampling new models if there is no improvement in score
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool earlyStop = 8;
+  optional EarlyStopSpec earlyStop = 8;
 
   // SuccessiveHalving specifies the configuration for a Study to execute a model search using successive halving
   // +kubebuilder:validation:Optional
