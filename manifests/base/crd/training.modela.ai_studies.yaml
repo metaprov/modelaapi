@@ -1939,7 +1939,6 @@ spec:
                       multiple nodes (currently unimplemented)
                     type: boolean
                   earlyStop:
-                    default: false
                     description: Indicates if the parent Study should stop sampling
                       new models if there is no improvement in score
                     properties:

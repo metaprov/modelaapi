@@ -3779,7 +3779,6 @@ message TrainingSpec {
   repeated string evalMetrics = 7;
 
   // Indicates if the parent Study should stop sampling new models if there is no improvement in score
-  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional EarlyStopSpec earlyStop = 8;
 

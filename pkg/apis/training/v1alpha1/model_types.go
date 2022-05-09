@@ -796,7 +796,6 @@ type TrainingSpec struct {
 	// +kubebuilder:validation:Optional
 	EvalMetrics []catalog.Metric `json:"evalMetrics,omitempty" protobuf:"bytes,7,rep,name=evalMetrics"`
 	// Indicates if the parent Study should stop sampling new models if there is no improvement in score
-	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	EarlyStop EarlyStopSpec `json:"earlyStop,omitempty" protobuf:"bytes,8,opt,name=earlyStop"`
 	// SuccessiveHalving specifies the configuration for a Study to execute a model search using successive halving
