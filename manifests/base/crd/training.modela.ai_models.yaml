@@ -1683,18 +1683,18 @@ spec:
                     properties:
                       enabled:
                         default: true
-                        description: Indicates if ensemble models will be created
+                        description: Indicates if early stopping is enabled
                         type: boolean
                       initial:
                         default: 20
-                        description: The number of models before we start checking
-                          for early stopping.
+                        description: The number of models to train before model objective
+                          metrics will begin to be checked for early stopping
                         format: int32
                         type: integer
                       minModelsWithNoProgress:
                         default: 5
-                        description: The number of models for which we check if there
-                          were no improvement.
+                        description: The number of models with no improvement in score
+                          that are required to abort the model search
                         format: int32
                         type: integer
                     type: object
@@ -1782,9 +1782,9 @@ spec:
                     type: array
                   featureImportance:
                     default: true
-                    description: Compute feature importance as part of the training.
-                      Some alg (e.g. RandomForest) have build in support for feature
-                      importance.
+                    description: Indicates if feature importance for the model will
+                      be computed as part of training. Some algorithms (e.g. Random
+                      Forest) have built in support for feature importance
                     type: boolean
                   folds:
                     default: 5
@@ -1834,7 +1834,8 @@ spec:
                     type: object
                   loglevel:
                     default: info
-                    description: The training log level
+                    description: The maximum log level for logs produced by Jobs associated
+                      with the Model
                     enum:
                     - trace
                     - debug
@@ -2108,8 +2109,8 @@ spec:
                     type: object
                   timeoutInSecs:
                     default: 600
-                    description: Max time to train or test a single model (in sec).
-                      Default is 10 mintues
+                    description: The maximum time, in seconds, that Jobs associated
+                      with the Model can run for before being forcefully cancelled.
                     format: int32
                     type: integer
                 type: object

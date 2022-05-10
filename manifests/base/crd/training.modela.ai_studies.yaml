@@ -921,12 +921,12 @@ spec:
                 properties:
                   enabled:
                     default: true
-                    description: Indicates if ensemble models will be created
+                    description: Indicates if imbalance handling is enabled
                     type: boolean
                   imbalance:
                     default: auto
-                    description: set the imbalance handler. By default set to auto.
-                      The method which will be used to handle an imbalanced dataset
+                    description: The technique that will be used to handle the imbalanced
+                      dataset
                     enum:
                     - adasyn
                     - baseline-smote
@@ -1208,18 +1208,18 @@ spec:
                     properties:
                       enabled:
                         default: true
-                        description: Indicates if ensemble models will be created
+                        description: Indicates if early stopping is enabled
                         type: boolean
                       initial:
                         default: 20
-                        description: The number of models before we start checking
-                          for early stopping.
+                        description: The number of models to train before model objective
+                          metrics will begin to be checked for early stopping
                         format: int32
                         type: integer
                       minModelsWithNoProgress:
                         default: 5
-                        description: The number of models for which we check if there
-                          were no improvement.
+                        description: The number of models with no improvement in score
+                          that are required to abort the model search
                         format: int32
                         type: integer
                     type: object
@@ -1335,8 +1335,8 @@ spec:
                   objective2:
                     default: none
                     description: The second objective metric that will be measured
-                      and evaluated in tandem with the primary objective. The optimizer
-                      will attempt to optimize both metrics
+                      and evaluated in tandem with the primary objective. The model
+                      search optimizer will attempt to optimize both metrics
                     enum:
                     - accuracy
                     - average-precision
@@ -1632,8 +1632,9 @@ spec:
                     type: integer
                 type: object
               servingTemplate:
-                description: Model serving template specifies the configuration to
-                  train and evaluate models
+                description: ServingTemplate specifies the model format and resource
+                  requirements that will be applied to the Predictor created for the
+                  Model that will be selected by the Study
                 properties:
                   format:
                     default: cloudpickle
@@ -1816,8 +1817,8 @@ spec:
                 type: boolean
               timeoutInSecs:
                 default: 14400
-                description: 'Overall study timeout. The study will be aborted if
-                  we reached this timeout. Default : 4H'
+                description: The time, in seconds, after which the execution of the
+                  Study will be forcefully aborted (4 hours, by default)
                 format: int32
                 type: integer
               trainingTemplate:
@@ -1944,18 +1945,18 @@ spec:
                     properties:
                       enabled:
                         default: true
-                        description: Indicates if ensemble models will be created
+                        description: Indicates if early stopping is enabled
                         type: boolean
                       initial:
                         default: 20
-                        description: The number of models before we start checking
-                          for early stopping.
+                        description: The number of models to train before model objective
+                          metrics will begin to be checked for early stopping
                         format: int32
                         type: integer
                       minModelsWithNoProgress:
                         default: 5
-                        description: The number of models for which we check if there
-                          were no improvement.
+                        description: The number of models with no improvement in score
+                          that are required to abort the model search
                         format: int32
                         type: integer
                     type: object
@@ -2043,9 +2044,9 @@ spec:
                     type: array
                   featureImportance:
                     default: true
-                    description: Compute feature importance as part of the training.
-                      Some alg (e.g. RandomForest) have build in support for feature
-                      importance.
+                    description: Indicates if feature importance for the model will
+                      be computed as part of training. Some algorithms (e.g. Random
+                      Forest) have built in support for feature importance
                     type: boolean
                   folds:
                     default: 5
@@ -2095,7 +2096,8 @@ spec:
                     type: object
                   loglevel:
                     default: info
-                    description: The training log level
+                    description: The maximum log level for logs produced by Jobs associated
+                      with the Model
                     enum:
                     - trace
                     - debug
@@ -2369,8 +2371,8 @@ spec:
                     type: object
                   timeoutInSecs:
                     default: 600
-                    description: Max time to train or test a single model (in sec).
-                      Default is 10 mintues
+                    description: The maximum time, in seconds, that Jobs associated
+                      with the Model can run for before being forcefully cancelled.
                     format: int32
                     type: integer
                 type: object
@@ -3049,7 +3051,7 @@ spec:
                 format: int64
                 type: integer
               outlierDetection:
-                description: OutlierDetection is the status for outlier detection.
+                description: OutlierDetection is the status for outlier detection
                 properties:
                   outlierModelURI:
                     description: The location of the prediction outlier detection

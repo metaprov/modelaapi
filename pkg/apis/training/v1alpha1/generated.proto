@@ -461,18 +461,20 @@ message DriftDetectorStatus {
   optional string outlierModelURI = 1;
 }
 
+// EarlyStopSpec specifies the configuration to automatically abort a model search
+// if further improvements in model performance cannot be produced
 message EarlyStopSpec {
-  // Indicates if ensemble models will be created
+  // Indicates if early stopping is enabled
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
   optional bool enabled = 1;
 
-  // The number of models before we start checking for early stopping.
+  // The number of models to train before model objective metrics will begin to be checked for early stopping
   // +kubebuilder:default:=20
   // +kubebuilder:validation:Optional
   optional int32 initial = 2;
 
-  // The number of models for which we check if there were no improvement.
+  // The number of models with no improvement in score that are required to abort the model search
   // +kubebuilder:default:=5
   // +kubebuilder:validation:Optional
   optional int32 minModelsWithNoProgress = 3;
@@ -941,14 +943,14 @@ message ImagePipelineSpec {
   optional string featurizer = 1;
 }
 
+// ImbalanceHandlingSpec specifies the configuration to process an imbalanced dataset
 message ImbalanceHandlingSpec {
-  // Indicates if ensemble models will be created
+  // Indicates if imbalance handling is enabled
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
   optional bool enabled = 1;
 
-  // set the imbalance handler. By default set to auto.
-  // The method which will be used to handle an imbalanced dataset
+  // The technique that will be used to handle the imbalanced dataset
   // +kubebuilder:default:=auto
   // +kubebuilder:validation:Optional
   optional string imbalance = 2;
@@ -3125,7 +3127,7 @@ message SearchSpec {
   optional string objective = 14;
 
   // The second objective metric that will be measured and evaluated in tandem with the primary objective.
-  // The optimizer will attempt to optimize both metrics
+  // The model search optimizer will attempt to optimize both metrics
   // +kubebuilder:default:="none"
   // +kubebuilder:validation:Optional
   optional string objective2 = 15;
@@ -3321,7 +3323,8 @@ message StudySpec {
   // +kubebuilder:validation:Optional
   optional TrainingSpec trainingTemplate = 11;
 
-  // Model serving template specifies the configuration to train and evaluate models
+  // ServingTemplate specifies the model format and resource requirements that will be applied to
+  // the Predictor created for the Model that will be selected by the Study
   // +kubebuilder:validation:Optional
   optional ServingSpec servingTemplate = 12;
 
@@ -3426,8 +3429,7 @@ message StudySpec {
   // +kubebuilder:validation:Optional
   optional string modelVersion = 34;
 
-  // Overall study timeout. The study will be aborted if we reached this timeout.
-  // Default : 4H
+  // The time, in seconds, after which the execution of the Study will be forcefully aborted (4 hours, by default)
   // +kubebuilder:default:= 14400
   // +kubebuilder:validation:Optional
   optional int32 timeoutInSecs = 35;
@@ -3549,7 +3551,7 @@ message StudyStatus {
   // +kubebuilder:validation:Optional
   optional StudyPhaseStatus explain = 30;
 
-  // OutlierDetection is the status for outlier detection.
+  // OutlierDetection is the status for outlier detection
   // +kubebuilder:validation:Optional
   optional DriftDetectorStatus outlierDetection = 31;
 
@@ -3805,8 +3807,8 @@ message TrainingSpec {
   // +kubebuilder:validation:Optional
   optional bool distributed = 14;
 
-  // Compute feature importance as part of the training. Some alg (e.g. RandomForest) have build in support
-  // for feature importance.
+  // Indicates if feature importance for the model will be computed as part of training. Some algorithms
+  // (e.g. Random Forest) have built in support for feature importance
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
   optional bool featureImportance = 15;
@@ -3825,12 +3827,12 @@ message TrainingSpec {
   // +kubebuilder:validation:Optional
   optional CheckpointSpec checkpoint = 18;
 
-  // The training log level
+  // The maximum log level for logs produced by Jobs associated with the Model
   // +kubebuilder:default:=info
   // +kubebuilder:validation:Optional
   optional string loglevel = 19;
 
-  // Max time to train or test a single model (in sec). Default is 10 mintues
+  // The maximum time, in seconds, that Jobs associated with the Model can run for before being forcefully cancelled.
   // +kubebuilder:default:=600
   // +kubebuilder:validation:Optional
   optional int32 timeoutInSecs = 20;
