@@ -818,7 +818,7 @@ type TrainingSpec struct {
 	Distributed *bool `json:"distributed,omitempty" protobuf:"varint,14,opt,name=distributed"`
 	// Compute feature importance as part of the training. Some alg (e.g. RandomForest) have build in support
 	// for feature importance.
-	// +kubebuilder:default:=false
+	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
 	FeatureImportance *bool `json:"featureImportance,omitempty" protobuf:"varint,15,opt,name=featureImportance"`
 	// The number of nodes to use, in the case of distributed training

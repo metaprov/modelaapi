@@ -1781,7 +1781,7 @@ spec:
                       type: string
                     type: array
                   featureImportance:
-                    default: false
+                    default: true
                     description: Compute feature importance as part of the training.
                       Some alg (e.g. RandomForest) have build in support for feature
                       importance.

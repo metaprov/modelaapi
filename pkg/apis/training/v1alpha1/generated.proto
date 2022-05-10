@@ -3807,7 +3807,7 @@ message TrainingSpec {
 
   // Compute feature importance as part of the training. Some alg (e.g. RandomForest) have build in support
   // for feature importance.
-  // +kubebuilder:default:=false
+  // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
   optional bool featureImportance = 15;
 
