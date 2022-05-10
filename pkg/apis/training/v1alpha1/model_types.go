@@ -816,8 +816,8 @@ type TrainingSpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Distributed *bool `json:"distributed,omitempty" protobuf:"varint,14,opt,name=distributed"`
-	// Compute feature importance as part of the training. Some alg (e.g. RandomForest) have build in support
-	// for feature importance.
+	// Indicates if feature importance for the model will be computed as part of training. Some algorithms
+	// (e.g. Random Forest) have built in support for feature importance
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
 	FeatureImportance *bool `json:"featureImportance,omitempty" protobuf:"varint,15,opt,name=featureImportance"`
@@ -832,11 +832,11 @@ type TrainingSpec struct {
 	// Checkpoint specifies the location to store model checkpoints
 	// +kubebuilder:validation:Optional
 	Checkpoint CheckpointSpec `json:"checkpoint,omitempty" protobuf:"bytes,18,opt,name=checkpoint"`
-	// The training log level
+	// The maximum log level for logs produced by Jobs associated with the Model
 	// +kubebuilder:default:=info
 	// +kubebuilder:validation:Optional
 	LogLevel *catalog.LogLevel `json:"loglevel,omitempty" protobuf:"bytes,19,opt,name=loglevel"`
-	// Max time to train or test a single model (in sec). Default is 10 mintues
+	// The maximum time, in seconds, that Jobs associated with the Model can run for before being forcefully cancelled.
 	// +kubebuilder:default:=600
 	// +kubebuilder:validation:Optional
 	TimeoutInSecs *int32 `json:"timeoutInSecs,omitempty" protobuf:"bytes,20,opt,name=timeoutInSecs"`

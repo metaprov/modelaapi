@@ -231,22 +231,24 @@ type SearchSpec struct {
 	// +kubebuilder:validation:Optional
 	Objective *catalog.Metric `json:"objective,omitempty" protobuf:"bytes,14,opt,name=objective"`
 	// The second objective metric that will be measured and evaluated in tandem with the primary objective.
-	// The optimizer will attempt to optimize both metrics
+	// The model search optimizer will attempt to optimize both metrics
 	// +kubebuilder:default:="none"
 	// +kubebuilder:validation:Optional
 	Objective2 *catalog.Metric `json:"objective2,omitempty" protobuf:"bytes,15,opt,name=objective2"`
 }
 
+// EarlyStopSpec specifies the configuration to automatically abort a model search
+// if further improvements in model performance cannot be produced
 type EarlyStopSpec struct {
-	// Indicates if ensemble models will be created
+	// Indicates if early stopping is enabled
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
 	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
-	// The number of models before we start checking for early stopping.
+	// The number of models to train before model objective metrics will begin to be checked for early stopping
 	// +kubebuilder:default:=20
 	// +kubebuilder:validation:Optional
 	Initial *int32 `json:"initial,omitempty" protobuf:"varint,2,opt,name=initial"`
-	// The number of models for which we check if there were no improvement.
+	// The number of models with no improvement in score that are required to abort the model search
 	// +kubebuilder:default:=5
 	// +kubebuilder:validation:Optional
 	MinModelsWithNoProgress *int32 `json:"minModelsWithNoProgress,omitempty" protobuf:"varint,3,opt,name=minModelsWithNoProgress"`
@@ -461,7 +463,8 @@ type StudySpec struct {
 	// TrainingTemplate specifies the configuration to train and evaluate models
 	// +kubebuilder:validation:Optional
 	TrainingTemplate TrainingSpec `json:"trainingTemplate,omitempty" protobuf:"bytes,11,opt,name=trainingTemplate"`
-	// Model serving template specifies the configuration to train and evaluate models
+	// ServingTemplate specifies the model format and resource requirements that will be applied to
+	// the Predictor created for the Model that will be selected by the Study
 	// +kubebuilder:validation:Optional
 	ServingTemplate ServingSpec `json:"servingTemplate,omitempty" protobuf:"bytes,12,opt,name=servingTemplate"`
 	// ForecastSpec specifies the parameters required when generating a forecasting model
@@ -543,8 +546,7 @@ type StudySpec struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	ModelVersion *string `json:"modelVersion,omitempty" protobuf:"varint,34,opt,name=modelVersion"`
-	// Overall study timeout. The study will be aborted if we reached this timeout.
-	// Default : 4H
+	// The time, in seconds, after which the execution of the Study will be forcefully aborted (4 hours, by default)
 	// +kubebuilder:default:= 14400
 	// +kubebuilder:validation:Optional
 	TimeoutInSecs *int32 `json:"timeoutInSecs,omitempty" protobuf:"bytes,35,opt,name=timeoutInSecs"`
@@ -638,7 +640,7 @@ type StudyStatus struct {
 	// ExplainStatus contains the status of the explaining phase
 	//+kubebuilder:validation:Optional
 	ExplainStatus StudyPhaseStatus `json:"explain,omitempty" protobuf:"bytes,30,opt,name=explain"`
-	// OutlierDetection is the status for outlier detection.
+	// OutlierDetection is the status for outlier detection
 	//+kubebuilder:validation:Optional
 	DriftDetection DriftDetectorStatus `json:"outlierDetection,omitempty" protobuf:"bytes,31,opt,name=outlierDetection"`
 	// The last time the object was updated
@@ -821,13 +823,13 @@ type DriftDetectorStatus struct {
 	OutlierModelURI string `json:"outlierModelURI,omitempty" protobuf:"bytes,1,opt,name=outlierModelURI"`
 }
 
+// ImbalanceHandlingSpec specifies the configuration to process an imbalanced dataset
 type ImbalanceHandlingSpec struct {
-	// Indicates if ensemble models will be created
+	// Indicates if imbalance handling is enabled
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
 	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
-	// set the imbalance handler. By default set to auto.
-	// The method which will be used to handle an imbalanced dataset
+	// The technique that will be used to handle the imbalanced dataset
 	// +kubebuilder:default:=auto
 	// +kubebuilder:validation:Optional
 	Imbalance *catalog.ImbalanceHandling `json:"imbalance,omitempty" protobuf:"bytes,2,opt,name=imbalance"`
