@@ -5482,6 +5482,9 @@ export class TrainingSpec extends jspb.Message {
   getDistributed(): boolean;
   setDistributed(value: boolean): TrainingSpec;
 
+  getFeatureimportance(): boolean;
+  setFeatureimportance(value: boolean): TrainingSpec;
+
   getNodecount(): number;
   setNodecount(value: number): TrainingSpec;
 
@@ -5522,6 +5525,7 @@ export namespace TrainingSpec {
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     gpu: boolean,
     distributed: boolean,
+    featureimportance: boolean,
     nodecount: number,
     samplepct: number,
     checkpoint?: CheckpointSpec.AsObject,

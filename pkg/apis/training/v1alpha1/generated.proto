@@ -3805,29 +3805,35 @@ message TrainingSpec {
   // +kubebuilder:validation:Optional
   optional bool distributed = 14;
 
+  // Compute feature importance as part of the training. Some alg (e.g. RandomForest) have build in support
+  // for feature importance.
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool featureImportance = 15;
+
   // The number of nodes to use, in the case of distributed training
   // +kubebuilder:default:=1
   // +kubebuilder:validation:Optional
-  optional int32 nodeCount = 15;
+  optional int32 nodeCount = 16;
 
   // The number percentage (0 through 100) of rows to be used during training
   // +kubebuilder:default:=100
   // +kubebuilder:validation:Optional
-  optional int32 samplePct = 16;
+  optional int32 samplePct = 17;
 
   // Checkpoint specifies the location to store model checkpoints
   // +kubebuilder:validation:Optional
-  optional CheckpointSpec checkpoint = 17;
+  optional CheckpointSpec checkpoint = 18;
 
   // The training log level
   // +kubebuilder:default:=info
   // +kubebuilder:validation:Optional
-  optional string loglevel = 18;
+  optional string loglevel = 19;
 
   // Max time to train or test a single model (in sec). Default is 10 mintues
   // +kubebuilder:default:=600
   // +kubebuilder:validation:Optional
-  optional int32 timeoutInSecs = 19;
+  optional int32 timeoutInSecs = 20;
 }
 
 // TrainingStageSpec is the desired state of the training step of the pipeline

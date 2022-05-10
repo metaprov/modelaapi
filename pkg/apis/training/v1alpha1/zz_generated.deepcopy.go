@@ -4503,6 +4503,11 @@ func (in *TrainingSpec) DeepCopyInto(out *TrainingSpec) {
 		*out = new(bool)
 		**out = **in
 	}
+	if in.FeatureImportance != nil {
+		in, out := &in.FeatureImportance, &out.FeatureImportance
+		*out = new(bool)
+		**out = **in
+	}
 	if in.NodeCount != nil {
 		in, out := &in.NodeCount, &out.NodeCount
 		*out = new(int32)

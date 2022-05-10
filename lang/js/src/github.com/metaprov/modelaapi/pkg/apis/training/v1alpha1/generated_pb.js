@@ -54070,11 +54070,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.toOb
     resources: (f = msg.getResources()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.toObject(includeInstance, f),
     gpu: (f = jspb.Message.getBooleanField(msg, 13)) == null ? undefined : f,
     distributed: (f = jspb.Message.getBooleanField(msg, 14)) == null ? undefined : f,
-    nodecount: (f = jspb.Message.getField(msg, 15)) == null ? undefined : f,
-    samplepct: (f = jspb.Message.getField(msg, 16)) == null ? undefined : f,
+    featureimportance: (f = jspb.Message.getBooleanField(msg, 15)) == null ? undefined : f,
+    nodecount: (f = jspb.Message.getField(msg, 16)) == null ? undefined : f,
+    samplepct: (f = jspb.Message.getField(msg, 17)) == null ? undefined : f,
     checkpoint: (f = msg.getCheckpoint()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CheckpointSpec.toObject(includeInstance, f),
-    loglevel: (f = jspb.Message.getField(msg, 18)) == null ? undefined : f,
-    timeoutinsecs: (f = jspb.Message.getField(msg, 19)) == null ? undefined : f
+    loglevel: (f = jspb.Message.getField(msg, 19)) == null ? undefined : f,
+    timeoutinsecs: (f = jspb.Message.getField(msg, 20)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -54169,23 +54170,27 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.dese
       msg.setDistributed(value);
       break;
     case 15:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setNodecount(value);
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setFeatureimportance(value);
       break;
     case 16:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setSamplepct(value);
+      msg.setNodecount(value);
       break;
     case 17:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setSamplepct(value);
+      break;
+    case 18:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CheckpointSpec;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CheckpointSpec.deserializeBinaryFromReader);
       msg.setCheckpoint(value);
       break;
-    case 18:
+    case 19:
       var value = /** @type {string} */ (reader.readString());
       msg.setLoglevel(value);
       break;
-    case 19:
+    case 20:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setTimeoutinsecs(value);
       break;
@@ -54314,9 +54319,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.seri
       f
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 15));
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 15));
   if (f != null) {
-    writer.writeInt32(
+    writer.writeBool(
       15,
       f
     );
@@ -54328,25 +54333,32 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.seri
       f
     );
   }
+  f = /** @type {number} */ (jspb.Message.getField(message, 17));
+  if (f != null) {
+    writer.writeInt32(
+      17,
+      f
+    );
+  }
   f = message.getCheckpoint();
   if (f != null) {
     writer.writeMessage(
-      17,
+      18,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CheckpointSpec.serializeBinaryToWriter
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 18));
+  f = /** @type {string} */ (jspb.Message.getField(message, 19));
   if (f != null) {
     writer.writeString(
-      18,
+      19,
       f
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 19));
+  f = /** @type {number} */ (jspb.Message.getField(message, 20));
   if (f != null) {
     writer.writeInt32(
-      19,
+      20,
       f
     );
   }
@@ -54828,19 +54840,19 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
 
 
 /**
- * optional int32 nodeCount = 15;
- * @return {number}
+ * optional bool featureImportance = 15;
+ * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.getNodecount = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 15, 0));
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.getFeatureimportance = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 15, false));
 };
 
 
 /**
- * @param {number} value
+ * @param {boolean} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.setNodecount = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.setFeatureimportance = function(value) {
   return jspb.Message.setField(this, 15, value);
 };
 
@@ -54849,7 +54861,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.clearNodecount = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.clearFeatureimportance = function() {
   return jspb.Message.setField(this, 15, undefined);
 };
 
@@ -54858,16 +54870,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.hasNodecount = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.hasFeatureimportance = function() {
   return jspb.Message.getField(this, 15) != null;
 };
 
 
 /**
- * optional int32 samplePct = 16;
+ * optional int32 nodeCount = 16;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.getSamplepct = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.getNodecount = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 16, 0));
 };
 
@@ -54876,7 +54888,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.setSamplepct = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.setNodecount = function(value) {
   return jspb.Message.setField(this, 16, value);
 };
 
@@ -54885,7 +54897,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.clearSamplepct = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.clearNodecount = function() {
   return jspb.Message.setField(this, 16, undefined);
 };
 
@@ -54894,18 +54906,54 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.hasSamplepct = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.hasNodecount = function() {
   return jspb.Message.getField(this, 16) != null;
 };
 
 
 /**
- * optional CheckpointSpec checkpoint = 17;
+ * optional int32 samplePct = 17;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.getSamplepct = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 17, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.setSamplepct = function(value) {
+  return jspb.Message.setField(this, 17, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.clearSamplepct = function() {
+  return jspb.Message.setField(this, 17, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.hasSamplepct = function() {
+  return jspb.Message.getField(this, 17) != null;
+};
+
+
+/**
+ * optional CheckpointSpec checkpoint = 18;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CheckpointSpec}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.getCheckpoint = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CheckpointSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CheckpointSpec, 17));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CheckpointSpec, 18));
 };
 
 
@@ -54914,7 +54962,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.setCheckpoint = function(value) {
-  return jspb.Message.setWrapperField(this, 17, value);
+  return jspb.Message.setWrapperField(this, 18, value);
 };
 
 
@@ -54932,16 +54980,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.hasCheckpoint = function() {
-  return jspb.Message.getField(this, 17) != null;
+  return jspb.Message.getField(this, 18) != null;
 };
 
 
 /**
- * optional string loglevel = 18;
+ * optional string loglevel = 19;
  * @return {string}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.getLoglevel = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 18, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 19, ""));
 };
 
 
@@ -54950,42 +54998,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.setLoglevel = function(value) {
-  return jspb.Message.setField(this, 18, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.clearLoglevel = function() {
-  return jspb.Message.setField(this, 18, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.hasLoglevel = function() {
-  return jspb.Message.getField(this, 18) != null;
-};
-
-
-/**
- * optional int32 timeoutInSecs = 19;
- * @return {number}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.getTimeoutinsecs = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 19, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.setTimeoutinsecs = function(value) {
   return jspb.Message.setField(this, 19, value);
 };
 
@@ -54994,7 +55006,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.clearTimeoutinsecs = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.clearLoglevel = function() {
   return jspb.Message.setField(this, 19, undefined);
 };
 
@@ -55003,8 +55015,44 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.hasTimeoutinsecs = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.hasLoglevel = function() {
   return jspb.Message.getField(this, 19) != null;
+};
+
+
+/**
+ * optional int32 timeoutInSecs = 20;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.getTimeoutinsecs = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 20, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.setTimeoutinsecs = function(value) {
+  return jspb.Message.setField(this, 20, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.clearTimeoutinsecs = function() {
+  return jspb.Message.setField(this, 20, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.hasTimeoutinsecs = function() {
+  return jspb.Message.getField(this, 20) != null;
 };
 
 

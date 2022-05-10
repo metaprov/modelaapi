@@ -816,25 +816,30 @@ type TrainingSpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Distributed *bool `json:"distributed,omitempty" protobuf:"varint,14,opt,name=distributed"`
+	// Compute feature importance as part of the training. Some alg (e.g. RandomForest) have build in support
+	// for feature importance.
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	FeatureImportance *bool `json:"featureImportance,omitempty" protobuf:"varint,15,opt,name=featureImportance"`
 	// The number of nodes to use, in the case of distributed training
 	// +kubebuilder:default:=1
 	// +kubebuilder:validation:Optional
-	NodeCount *int32 `json:"nodeCount,omitempty" protobuf:"varint,15,opt,name=nodeCount"`
+	NodeCount *int32 `json:"nodeCount,omitempty" protobuf:"varint,16,opt,name=nodeCount"`
 	// The number percentage (0 through 100) of rows to be used during training
 	// +kubebuilder:default:=100
 	// +kubebuilder:validation:Optional
-	SamplePct *int32 `json:"samplePct,omitempty" protobuf:"bytes,16,opt,name=samplePct"`
+	SamplePct *int32 `json:"samplePct,omitempty" protobuf:"bytes,17,opt,name=samplePct"`
 	// Checkpoint specifies the location to store model checkpoints
 	// +kubebuilder:validation:Optional
-	Checkpoint CheckpointSpec `json:"checkpoint,omitempty" protobuf:"bytes,17,opt,name=checkpoint"`
+	Checkpoint CheckpointSpec `json:"checkpoint,omitempty" protobuf:"bytes,18,opt,name=checkpoint"`
 	// The training log level
 	// +kubebuilder:default:=info
 	// +kubebuilder:validation:Optional
-	LogLevel *catalog.LogLevel `json:"loglevel,omitempty" protobuf:"bytes,18,opt,name=loglevel"`
+	LogLevel *catalog.LogLevel `json:"loglevel,omitempty" protobuf:"bytes,19,opt,name=loglevel"`
 	// Max time to train or test a single model (in sec). Default is 10 mintues
 	// +kubebuilder:default:=600
 	// +kubebuilder:validation:Optional
-	TimeoutInSecs *int32 `json:"timeoutInSecs,omitempty" protobuf:"bytes,19,opt,name=timeoutInSecs"`
+	TimeoutInSecs *int32 `json:"timeoutInSecs,omitempty" protobuf:"bytes,20,opt,name=timeoutInSecs"`
 }
 
 // CheckpointSpec specifies where to store model checkpoints

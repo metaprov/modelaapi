@@ -2041,6 +2041,12 @@ spec:
                       - none
                       type: string
                     type: array
+                  featureImportance:
+                    default: false
+                    description: Compute feature importance as part of the training.
+                      Some alg (e.g. RandomForest) have build in support for feature
+                      importance.
+                    type: boolean
                   folds:
                     default: 5
                     description: The number of folds to use during cross-validation
