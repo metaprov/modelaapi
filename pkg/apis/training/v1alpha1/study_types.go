@@ -575,16 +575,20 @@ type StudyStatus struct {
 	// The name of the Report resource produced by the Study
 	// +kubebuilder:validation:Optional
 	ReportUri string `json:"reportUri,omitempty" protobuf:"bytes,7,opt,name=reportUri"`
+	// Reference to the report object that was generated for the dataset, which exists in the same Data Product namespace
+	// as the object
+	// +kubebuilder:validation:Optional
+	ReportName string `json:"reportName,omitempty" protobuf:"bytes,8,opt,name=reportName"`
 	// The phase of the Study
 	// +kubebuilder:default:="Pending"
 	// +kubebuilder:validation:Optional
-	Phase StudyPhase `json:"phase" protobuf:"bytes,8,opt,name=phase"`
+	Phase StudyPhase `json:"phase" protobuf:"bytes,9,opt,name=phase"`
 	// ObservedGeneration is the last generation that was acted on
 	//+kubebuilder:validation:Optional
-	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,9,opt,name=observedGeneration"`
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,10,opt,name=observedGeneration"`
 	// TrainDatasetLocation specifies the location of the training dataset
 	// +kubebuilder:validation:Optional
-	TrainDatasetLocation data.DataLocation `json:"trainDataset,omitempty" protobuf:"bytes,10,opt,name=trainDataset"`
+	TrainDatasetLocation data.DataLocation `json:"trainDataset,omitempty" protobuf:"bytes,11,opt,name=trainDataset"`
 	// TestDatasetLocation specifies the location of the testing dataset
 	// +kubebuilder:validation:Optional
 	TestDatasetLocation data.DataLocation `json:"testDataset,omitempty" protobuf:"bytes,12,opt,name=testDataset"`

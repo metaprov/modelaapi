@@ -5062,6 +5062,9 @@ export class StudyStatus extends jspb.Message {
   getReporturi(): string;
   setReporturi(value: string): StudyStatus;
 
+  getReportname(): string;
+  setReportname(value: string): StudyStatus;
+
   getPhase(): string;
   setPhase(value: string): StudyStatus;
 
@@ -5189,6 +5192,7 @@ export namespace StudyStatus {
     bestmodelscore: number,
     profileuri: string,
     reporturi: string,
+    reportname: string,
     phase: string,
     observedgeneration: number,
     traindataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,

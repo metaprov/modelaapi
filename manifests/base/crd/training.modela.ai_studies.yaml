@@ -3069,6 +3069,11 @@ spec:
                   from the Study's current phase
                 format: int32
                 type: integer
+              reportName:
+                description: Reference to the report object that was generated for
+                  the dataset, which exists in the same Data Product namespace as
+                  the object
+                type: string
               reportUri:
                 description: The name of the Report resource produced by the Study
                 type: string
