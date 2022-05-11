@@ -667,8 +667,8 @@ func (study *Study) Reported() bool {
 	return study.GetCond(StudyReported).Status == v1.ConditionTrue
 }
 
-func (study *Study) MarkReported(uri string) {
-	study.Status.ReportUri = uri
+func (study *Study) MarkReported(name string) {
+	study.Status.ReportName = name
 	study.CreateOrUpdateCond(StudyCondition{
 		Type:   StudyReported,
 		Status: v1.ConditionTrue,
