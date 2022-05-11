@@ -4481,7 +4481,6 @@ func (in *TrainingSpec) DeepCopyInto(out *TrainingSpec) {
 		*out = make([]catalogv1alpha1.Metric, len(*in))
 		copy(*out, *in)
 	}
-	in.EarlyStop.DeepCopyInto(&out.EarlyStop)
 	if in.SH != nil {
 		in, out := &in.SH, &out.SH
 		*out = new(SuccessiveHalvingSpec)

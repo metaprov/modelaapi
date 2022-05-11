@@ -5462,11 +5462,6 @@ export class TrainingSpec extends jspb.Message {
   clearEvalmetricsList(): TrainingSpec;
   addEvalmetrics(value: string, index?: number): TrainingSpec;
 
-  getEarlystop(): EarlyStopSpec | undefined;
-  setEarlystop(value?: EarlyStopSpec): TrainingSpec;
-  hasEarlystop(): boolean;
-  clearEarlystop(): TrainingSpec;
-
   getSh(): SuccessiveHalvingSpec | undefined;
   setSh(value?: SuccessiveHalvingSpec): TrainingSpec;
   hasSh(): boolean;
@@ -5523,7 +5518,6 @@ export namespace TrainingSpec {
     folds: number,
     split?: DataSplitSpec.AsObject,
     evalmetricsList: Array<string>,
-    earlystop?: EarlyStopSpec.AsObject,
     sh?: SuccessiveHalvingSpec.AsObject,
     seed: number,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,

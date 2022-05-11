@@ -795,9 +795,6 @@ type TrainingSpec struct {
 	// EvalMetrics specifies the collection of metrics that will be evaluated after model training is complete
 	// +kubebuilder:validation:Optional
 	EvalMetrics []catalog.Metric `json:"evalMetrics,omitempty" protobuf:"bytes,7,rep,name=evalMetrics"`
-	// Indicates if the parent Study should stop sampling new models if there is no improvement in score
-	// +kubebuilder:validation:Optional
-	EarlyStop EarlyStopSpec `json:"earlyStop,omitempty" protobuf:"bytes,8,opt,name=earlyStop"`
 	// SuccessiveHalving specifies the configuration for a Study to execute a model search using successive halving
 	// +kubebuilder:validation:Optional
 	SH *SuccessiveHalvingSpec `json:"sh,omitempty" protobuf:"bytes,10,opt,name=sh"`

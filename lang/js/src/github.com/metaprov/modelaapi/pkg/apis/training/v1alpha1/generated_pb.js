@@ -54112,7 +54112,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.toOb
     folds: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     split: (f = msg.getSplit()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec.toObject(includeInstance, f),
     evalmetricsList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f,
-    earlystop: (f = msg.getEarlystop()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EarlyStopSpec.toObject(includeInstance, f),
     sh: (f = msg.getSh()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SuccessiveHalvingSpec.toObject(includeInstance, f),
     seed: (f = jspb.Message.getOptionalFloatingPointField(msg, 11)) == null ? undefined : f,
     resources: (f = msg.getResources()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.toObject(includeInstance, f),
@@ -54189,11 +54188,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.dese
     case 7:
       var value = /** @type {string} */ (reader.readString());
       msg.addEvalmetrics(value);
-      break;
-    case 8:
-      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EarlyStopSpec;
-      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EarlyStopSpec.deserializeBinaryFromReader);
-      msg.setEarlystop(value);
       break;
     case 10:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SuccessiveHalvingSpec;
@@ -54320,14 +54314,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.seri
     writer.writeRepeatedString(
       7,
       f
-    );
-  }
-  f = message.getEarlystop();
-  if (f != null) {
-    writer.writeMessage(
-      8,
-      f,
-      proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EarlyStopSpec.serializeBinaryToWriter
     );
   }
   f = message.getSh();
@@ -54665,43 +54651,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.clearEvalmetricsList = function() {
   return this.setEvalmetricsList([]);
-};
-
-
-/**
- * optional EarlyStopSpec earlyStop = 8;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EarlyStopSpec}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.getEarlystop = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EarlyStopSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EarlyStopSpec, 8));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EarlyStopSpec|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.setEarlystop = function(value) {
-  return jspb.Message.setWrapperField(this, 8, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.clearEarlystop = function() {
-  return this.setEarlystop(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.hasEarlystop = function() {
-  return jspb.Message.getField(this, 8) != null;
 };
 
 
