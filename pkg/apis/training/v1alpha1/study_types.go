@@ -574,7 +574,7 @@ type StudyStatus struct {
 	ProfileUri string `json:"profileUri" protobuf:"bytes,6,opt,name=profileUri"`
 	// The name of the Report resource produced by the Study
 	// +kubebuilder:validation:Optional
-	ReportName string `json:"reportName,omitempty" protobuf:"bytes,7,opt,name=reportName"`
+	ReportUri string `json:"reportUri,omitempty" protobuf:"bytes,7,opt,name=reportUri"`
 	// The phase of the Study
 	// +kubebuilder:default:="Pending"
 	// +kubebuilder:validation:Optional
@@ -642,7 +642,7 @@ type StudyStatus struct {
 	ExplainStatus StudyPhaseStatus `json:"explain,omitempty" protobuf:"bytes,30,opt,name=explain"`
 	// OutlierDetection is the status for outlier detection
 	//+kubebuilder:validation:Optional
-	DriftDetection DriftDetectorStatus `json:"outlierDetection,omitempty" protobuf:"bytes,31,opt,name=outlierDetection"`
+	DriftDetection DriftDetectorStatus `json:"driftDetection,omitempty" protobuf:"bytes,31,opt,name=driftDetection"`
 	// The last time the object was updated
 	//+kubebuilder:validation:Optional
 	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,32,opt,name=lastUpdated"`

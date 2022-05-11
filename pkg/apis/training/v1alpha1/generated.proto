@@ -3463,7 +3463,7 @@ message StudyStatus {
 
   // The name of the Report resource produced by the Study
   // +kubebuilder:validation:Optional
-  optional string reportName = 7;
+  optional string reportUri = 7;
 
   // The phase of the Study
   // +kubebuilder:default:="Pending"
@@ -3553,7 +3553,7 @@ message StudyStatus {
 
   // OutlierDetection is the status for outlier detection
   // +kubebuilder:validation:Optional
-  optional DriftDetectorStatus outlierDetection = 31;
+  optional DriftDetectorStatus driftDetection = 31;
 
   // The last time the object was updated
   // +kubebuilder:validation:Optional

@@ -5059,8 +5059,8 @@ export class StudyStatus extends jspb.Message {
   getProfileuri(): string;
   setProfileuri(value: string): StudyStatus;
 
-  getReportname(): string;
-  setReportname(value: string): StudyStatus;
+  getReporturi(): string;
+  setReporturi(value: string): StudyStatus;
 
   getPhase(): string;
   setPhase(value: string): StudyStatus;
@@ -5147,10 +5147,10 @@ export class StudyStatus extends jspb.Message {
   hasExplain(): boolean;
   clearExplain(): StudyStatus;
 
-  getOutlierdetection(): DriftDetectorStatus | undefined;
-  setOutlierdetection(value?: DriftDetectorStatus): StudyStatus;
-  hasOutlierdetection(): boolean;
-  clearOutlierdetection(): StudyStatus;
+  getDriftdetection(): DriftDetectorStatus | undefined;
+  setDriftdetection(value?: DriftDetectorStatus): StudyStatus;
+  hasDriftdetection(): boolean;
+  clearDriftdetection(): StudyStatus;
 
   getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): StudyStatus;
@@ -5188,7 +5188,7 @@ export namespace StudyStatus {
     bestmodel: string,
     bestmodelscore: number,
     profileuri: string,
-    reportname: string,
+    reporturi: string,
     phase: string,
     observedgeneration: number,
     traindataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
@@ -5210,7 +5210,7 @@ export namespace StudyStatus {
     ensemble?: StudyPhaseStatus.AsObject,
     test?: StudyPhaseStatus.AsObject,
     explain?: StudyPhaseStatus.AsObject,
-    outlierdetection?: DriftDetectorStatus.AsObject,
+    driftdetection?: DriftDetectorStatus.AsObject,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     bestfe?: FeatureEngineeringSpec.AsObject,
     gc?: GarbageCollectionStatus.AsObject,

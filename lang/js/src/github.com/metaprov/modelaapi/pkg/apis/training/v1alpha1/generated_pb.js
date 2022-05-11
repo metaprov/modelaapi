@@ -50243,7 +50243,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.toObj
     bestmodel: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     bestmodelscore: (f = jspb.Message.getOptionalFloatingPointField(msg, 5)) == null ? undefined : f,
     profileuri: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
-    reportname: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
+    reporturi: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
     phase: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
     observedgeneration: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
     traindataset: (f = msg.getTraindataset()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.toObject(includeInstance, f),
@@ -50265,7 +50265,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.toObj
     ensemble: (f = msg.getEnsemble()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus.toObject(includeInstance, f),
     test: (f = msg.getTest()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus.toObject(includeInstance, f),
     explain: (f = msg.getExplain()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus.toObject(includeInstance, f),
-    outlierdetection: (f = msg.getOutlierdetection()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DriftDetectorStatus.toObject(includeInstance, f),
+    driftdetection: (f = msg.getDriftdetection()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DriftDetectorStatus.toObject(includeInstance, f),
     lastupdated: (f = msg.getLastupdated()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     bestfe: (f = msg.getBestfe()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.toObject(includeInstance, f),
     gc: (f = msg.getGc()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GarbageCollectionStatus.toObject(includeInstance, f),
@@ -50335,7 +50335,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.deser
       break;
     case 7:
       var value = /** @type {string} */ (reader.readString());
-      msg.setReportname(value);
+      msg.setReporturi(value);
       break;
     case 8:
       var value = /** @type {string} */ (reader.readString());
@@ -50435,7 +50435,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.deser
     case 31:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DriftDetectorStatus;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DriftDetectorStatus.deserializeBinaryFromReader);
-      msg.setOutlierdetection(value);
+      msg.setDriftdetection(value);
       break;
     case 32:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
@@ -50695,7 +50695,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.seria
       proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus.serializeBinaryToWriter
     );
   }
-  f = message.getOutlierdetection();
+  f = message.getDriftdetection();
   if (f != null) {
     writer.writeMessage(
       31,
@@ -50957,10 +50957,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.proto
 
 
 /**
- * optional string reportName = 7;
+ * optional string reportUri = 7;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.getReportname = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.getReporturi = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
 };
 
@@ -50969,7 +50969,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.setReportname = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.setReporturi = function(value) {
   return jspb.Message.setField(this, 7, value);
 };
 
@@ -50978,7 +50978,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.clearReportname = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.clearReporturi = function() {
   return jspb.Message.setField(this, 7, undefined);
 };
 
@@ -50987,7 +50987,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.hasReportname = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.hasReporturi = function() {
   return jspb.Message.getField(this, 7) != null;
 };
 
@@ -51760,10 +51760,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.proto
 
 
 /**
- * optional DriftDetectorStatus outlierDetection = 31;
+ * optional DriftDetectorStatus driftDetection = 31;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DriftDetectorStatus}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.getOutlierdetection = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.getDriftdetection = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DriftDetectorStatus} */ (
     jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DriftDetectorStatus, 31));
 };
@@ -51773,7 +51773,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DriftDetectorStatus|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.setOutlierdetection = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.setDriftdetection = function(value) {
   return jspb.Message.setWrapperField(this, 31, value);
 };
 
@@ -51782,8 +51782,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.clearOutlierdetection = function() {
-  return this.setOutlierdetection(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.clearDriftdetection = function() {
+  return this.setDriftdetection(undefined);
 };
 
 
@@ -51791,7 +51791,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.hasOutlierdetection = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.hasDriftdetection = function() {
   return jspb.Message.getField(this, 31) != null;
 };
 
