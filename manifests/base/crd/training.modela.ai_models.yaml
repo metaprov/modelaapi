@@ -2061,7 +2061,8 @@ spec:
                         description: The name of the Dataset resource which will be
                           used as the testing dataset, applicable if the split type
                           uses test-dataset. If enabled, the training dataset will
-                          not be split and used as-is
+                          not be split and used as-is If empty, we will not use test
+                          dataset
                         type: string
                       train:
                         default: 80
@@ -2085,6 +2086,13 @@ spec:
                         maximum: 50
                         minimum: 0
                         type: integer
+                      validationDataset:
+                        default: ""
+                        description: The name of the Dataset resource which will be
+                          used as the validation dataset, applicable if the split
+                          type uses test-dataset. If enabled, the training dataset
+                          will not be split and used as-is
+                        type: string
                     type: object
                   timeoutInSecs:
                     default: 600

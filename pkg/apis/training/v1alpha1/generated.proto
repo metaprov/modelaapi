@@ -334,9 +334,16 @@ message DataSplitSpec {
 
   // The name of the Dataset resource which will be used as the testing dataset, applicable
   // if the split type uses test-dataset. If enabled, the training dataset will not be split and used as-is
+  // If empty, we will not use test dataset
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string testDataset = 8;
+
+  // The name of the Dataset resource which will be used as the validation dataset, applicable
+  // if the split type uses test-dataset. If enabled, the training dataset will not be split and used as-is
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string validationDataset = 9;
 }
 
 // DataStageSpec is the desired state of the data preprocessing step of the pipeline.

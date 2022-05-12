@@ -764,9 +764,15 @@ type DataSplitSpec struct {
 	TrainDatasetName *string `json:"trainDataset,omitempty" protobuf:"bytes,7,rep,name=trainDataset"`
 	// The name of the Dataset resource which will be used as the testing dataset, applicable
 	// if the split type uses test-dataset. If enabled, the training dataset will not be split and used as-is
+	// If empty, we will not use test dataset
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	TestDatasetName *string `json:"testDataset,omitempty" protobuf:"bytes,8,rep,name=testDataset"`
+	// The name of the Dataset resource which will be used as the validation dataset, applicable
+	// if the split type uses test-dataset. If enabled, the training dataset will not be split and used as-is
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
+	ValidationDatasetName *string `json:"validationDataset,omitempty" protobuf:"bytes,9,rep,name=validationDataset"`
 }
 
 // TrainingSpec specifies the configuration of a model training workload
