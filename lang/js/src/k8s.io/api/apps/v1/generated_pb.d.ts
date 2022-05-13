@@ -725,6 +725,11 @@ export class RollingUpdateStatefulSetStrategy extends jspb.Message {
   getPartition(): number;
   setPartition(value: number): RollingUpdateStatefulSetStrategy;
 
+  getMaxunavailable(): k8s_io_apimachinery_pkg_util_intstr_generated_pb.IntOrString | undefined;
+  setMaxunavailable(value?: k8s_io_apimachinery_pkg_util_intstr_generated_pb.IntOrString): RollingUpdateStatefulSetStrategy;
+  hasMaxunavailable(): boolean;
+  clearMaxunavailable(): RollingUpdateStatefulSetStrategy;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RollingUpdateStatefulSetStrategy.AsObject;
   static toObject(includeInstance: boolean, msg: RollingUpdateStatefulSetStrategy): RollingUpdateStatefulSetStrategy.AsObject;
@@ -736,6 +741,7 @@ export class RollingUpdateStatefulSetStrategy extends jspb.Message {
 export namespace RollingUpdateStatefulSetStrategy {
   export type AsObject = {
     partition: number,
+    maxunavailable?: k8s_io_apimachinery_pkg_util_intstr_generated_pb.IntOrString.AsObject,
   }
 }
 

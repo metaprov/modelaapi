@@ -7064,7 +7064,8 @@ proto.k8s.io.api.apps.v1.RollingUpdateStatefulSetStrategy.prototype.toObject = f
  */
 proto.k8s.io.api.apps.v1.RollingUpdateStatefulSetStrategy.toObject = function(includeInstance, msg) {
   var f, obj = {
-    partition: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f
+    partition: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    maxunavailable: (f = msg.getMaxunavailable()) && k8s_io_apimachinery_pkg_util_intstr_generated_pb.IntOrString.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -7105,6 +7106,11 @@ proto.k8s.io.api.apps.v1.RollingUpdateStatefulSetStrategy.deserializeBinaryFromR
       var value = /** @type {number} */ (reader.readInt32());
       msg.setPartition(value);
       break;
+    case 2:
+      var value = new k8s_io_apimachinery_pkg_util_intstr_generated_pb.IntOrString;
+      reader.readMessage(value,k8s_io_apimachinery_pkg_util_intstr_generated_pb.IntOrString.deserializeBinaryFromReader);
+      msg.setMaxunavailable(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -7139,6 +7145,14 @@ proto.k8s.io.api.apps.v1.RollingUpdateStatefulSetStrategy.serializeBinaryToWrite
     writer.writeInt32(
       1,
       f
+    );
+  }
+  f = message.getMaxunavailable();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      k8s_io_apimachinery_pkg_util_intstr_generated_pb.IntOrString.serializeBinaryToWriter
     );
   }
 };
@@ -7177,6 +7191,43 @@ proto.k8s.io.api.apps.v1.RollingUpdateStatefulSetStrategy.prototype.clearPartiti
  */
 proto.k8s.io.api.apps.v1.RollingUpdateStatefulSetStrategy.prototype.hasPartition = function() {
   return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional k8s.io.apimachinery.pkg.util.intstr.IntOrString maxUnavailable = 2;
+ * @return {?proto.k8s.io.apimachinery.pkg.util.intstr.IntOrString}
+ */
+proto.k8s.io.api.apps.v1.RollingUpdateStatefulSetStrategy.prototype.getMaxunavailable = function() {
+  return /** @type{?proto.k8s.io.apimachinery.pkg.util.intstr.IntOrString} */ (
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_util_intstr_generated_pb.IntOrString, 2));
+};
+
+
+/**
+ * @param {?proto.k8s.io.apimachinery.pkg.util.intstr.IntOrString|undefined} value
+ * @return {!proto.k8s.io.api.apps.v1.RollingUpdateStatefulSetStrategy} returns this
+*/
+proto.k8s.io.api.apps.v1.RollingUpdateStatefulSetStrategy.prototype.setMaxunavailable = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.k8s.io.api.apps.v1.RollingUpdateStatefulSetStrategy} returns this
+ */
+proto.k8s.io.api.apps.v1.RollingUpdateStatefulSetStrategy.prototype.clearMaxunavailable = function() {
+  return this.setMaxunavailable(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.k8s.io.api.apps.v1.RollingUpdateStatefulSetStrategy.prototype.hasMaxunavailable = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 

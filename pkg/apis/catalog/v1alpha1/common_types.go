@@ -909,11 +909,11 @@ const (
 	NoneEstimatorName              ClassicEstimatorName = "none"
 
 	// Clustering
-	SpectralClustering        ClassicEstimatorName = "spectral"
-	AgglomerativeClustering   ClassicEstimatorName = "agglomerative"
-	GaussianMixtureClustering ClassicEstimatorName = "gaussian-mixture"
-	KMeanClustering           ClassicEstimatorName = "kmean"
-	DBSCANClustering          ClassicEstimatorName = "dbscan"
+	KMeansClustering   ClassicEstimatorName = "kmeans"
+	SpectralClustering ClassicEstimatorName = "spectral"
+	DBSCANClustering   ClassicEstimatorName = "dbscan"
+	OpticsClustering   ClassicEstimatorName = "optics"
+	BirchClustering    ClassicEstimatorName = "birch"
 
 	// Meta Estimators
 	VotingClassifier   ClassicEstimatorName = "voting-classifier"

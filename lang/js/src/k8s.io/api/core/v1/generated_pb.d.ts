@@ -6712,6 +6712,9 @@ export class TopologySpreadConstraint extends jspb.Message {
   hasLabelselector(): boolean;
   clearLabelselector(): TopologySpreadConstraint;
 
+  getMindomains(): number;
+  setMindomains(value: number): TopologySpreadConstraint;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TopologySpreadConstraint.AsObject;
   static toObject(includeInstance: boolean, msg: TopologySpreadConstraint): TopologySpreadConstraint.AsObject;
@@ -6726,6 +6729,7 @@ export namespace TopologySpreadConstraint {
     topologykey: string,
     whenunsatisfiable: string,
     labelselector?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.LabelSelector.AsObject,
+    mindomains: number,
   }
 }
 

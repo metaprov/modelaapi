@@ -64547,7 +64547,8 @@ proto.k8s.io.api.core.v1.TopologySpreadConstraint.toObject = function(includeIns
     maxskew: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     topologykey: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     whenunsatisfiable: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-    labelselector: (f = msg.getLabelselector()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.LabelSelector.toObject(includeInstance, f)
+    labelselector: (f = msg.getLabelselector()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.LabelSelector.toObject(includeInstance, f),
+    mindomains: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -64600,6 +64601,10 @@ proto.k8s.io.api.core.v1.TopologySpreadConstraint.deserializeBinaryFromReader = 
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.LabelSelector;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.LabelSelector.deserializeBinaryFromReader);
       msg.setLabelselector(value);
+      break;
+    case 5:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setMindomains(value);
       break;
     default:
       reader.skipField();
@@ -64657,6 +64662,13 @@ proto.k8s.io.api.core.v1.TopologySpreadConstraint.serializeBinaryToWriter = func
       4,
       f,
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.LabelSelector.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 5));
+  if (f != null) {
+    writer.writeInt32(
+      5,
+      f
     );
   }
 };
@@ -64804,6 +64816,42 @@ proto.k8s.io.api.core.v1.TopologySpreadConstraint.prototype.clearLabelselector =
  */
 proto.k8s.io.api.core.v1.TopologySpreadConstraint.prototype.hasLabelselector = function() {
   return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional int32 minDomains = 5;
+ * @return {number}
+ */
+proto.k8s.io.api.core.v1.TopologySpreadConstraint.prototype.getMindomains = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.k8s.io.api.core.v1.TopologySpreadConstraint} returns this
+ */
+proto.k8s.io.api.core.v1.TopologySpreadConstraint.prototype.setMindomains = function(value) {
+  return jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.k8s.io.api.core.v1.TopologySpreadConstraint} returns this
+ */
+proto.k8s.io.api.core.v1.TopologySpreadConstraint.prototype.clearMindomains = function() {
+  return jspb.Message.setField(this, 5, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.k8s.io.api.core.v1.TopologySpreadConstraint.prototype.hasMindomains = function() {
+  return jspb.Message.getField(this, 5) != null;
 };
 
 

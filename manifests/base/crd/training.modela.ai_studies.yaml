@@ -1240,9 +1240,9 @@ spec:
                     minimum: 1
                     type: integer
                   maxTime:
-                    default: 30
-                    description: The maximum number of time, in seconds, that the
-                      model search can run for
+                    default: 60
+                    description: The maximum number of minutes, that the model search
+                      can run for
                     format: int32
                     maximum: 10000
                     minimum: 1

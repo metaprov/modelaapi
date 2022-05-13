@@ -179,8 +179,8 @@ type SearchSpec struct {
 	// +kubebuilder:validation:Minimum=1
 	// +kubebuilder:validation:Maximum=1000
 	MaxCost *int32 `json:"maxCost,omitempty" protobuf:"varint,3,opt,name=maxCost"`
-	// The maximum number of time, in seconds, that the model search can run for
-	// +kubebuilder:default:=30
+	// The maximum number of minutes, that the model search can run for
+	// +kubebuilder:default:=60
 	// +kubebuilder:validation:Minimum=1
 	// +kubebuilder:validation:Maximum=10000
 	// +kubebuilder:validation:Optional
