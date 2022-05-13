@@ -289,8 +289,8 @@ func (ms *SearchSpec) Default(task *catalog.MLTask) {
 	if ms.MaxModels == nil {
 		ms.MaxModels = util.Int32Ptr(10)
 	}
-	if ms.MinScore == nil {
-		ms.MinScore = util.Float64Ptr(0)
+	if ms.MinBestScore == nil {
+		ms.MinBestScore = util.Float64Ptr(9999999)
 	}
 	if ms.Trainers == nil {
 		ms.Trainers = util.Int32Ptr(1)

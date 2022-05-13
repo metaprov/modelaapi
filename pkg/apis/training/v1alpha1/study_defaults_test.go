@@ -41,7 +41,6 @@ func Test_DefaultValues(t *testing.T) {
 	assert.Equal(t, *study.Spec.Search.MaxCost, int32(999))
 	assert.Equal(t, *study.Spec.Search.MaxTime, int32(999))
 	assert.Equal(t, *study.Spec.Search.MaxModels, int32(10))
-	assert.Equal(t, *study.Spec.Search.MinScore, float64(100.0))
 
 	assert.Equal(t, *study.Spec.Search.Trainers, int32(1))
 	assert.Equal(t, *study.Spec.Reported, true)
