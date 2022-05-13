@@ -3823,8 +3823,8 @@ func (in *SearchSpec) DeepCopyInto(out *SearchSpec) {
 		*out = new(int32)
 		**out = **in
 	}
-	if in.MinScore != nil {
-		in, out := &in.MinScore, &out.MinScore
+	if in.MinBestScore != nil {
+		in, out := &in.MinBestScore, &out.MinBestScore
 		*out = new(float64)
 		**out = **in
 	}

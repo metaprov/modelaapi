@@ -3086,10 +3086,11 @@ message SearchSpec {
   // +kubebuilder:validation:Optional
   optional int32 maxModels = 5;
 
-  // The minimum score of a candidate model, after which the model search will forcibly stop
-  // +kubebuilder:default:=0
+  // The minimum best score needed to finish the search. The system will finish the search when the minimum is reached.
+  // Note that this number can be negative for a regression.
+  // +kubebuilder:default:=9999999999
   // +kubebuilder:validation:Optional
-  optional double minScore = 6;
+  optional double minBestScore = 6;
 
   // The desired number of trainers that will train candidate models in parallel. The number
   // of trainers is restricted based on the allowance provided by the active License

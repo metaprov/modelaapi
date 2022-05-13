@@ -4558,8 +4558,8 @@ export class SearchSpec extends jspb.Message {
   getMaxmodels(): number;
   setMaxmodels(value: number): SearchSpec;
 
-  getMinscore(): number;
-  setMinscore(value: number): SearchSpec;
+  getMinbestscore(): number;
+  setMinbestscore(value: number): SearchSpec;
 
   getTrainers(): number;
   setTrainers(value: number): SearchSpec;
@@ -4604,7 +4604,7 @@ export namespace SearchSpec {
     maxcost: number,
     maxtime: number,
     maxmodels: number,
-    minscore: number,
+    minbestscore: number,
     trainers: number,
     test: number,
     retaintop: number,

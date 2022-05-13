@@ -191,10 +191,11 @@ type SearchSpec struct {
 	// +kubebuilder:validation:Maximum=1000
 	// +kubebuilder:validation:Optional
 	MaxModels *int32 `json:"maxModels,omitempty" protobuf:"varint,5,opt,name=maxModels"`
-	// The minimum score of a candidate model, after which the model search will forcibly stop
-	// +kubebuilder:default:=0
+	// The minimum best score needed to finish the search. The system will finish the search when the minimum is reached.
+	// Note that this number can be negative for a regression.
+	// +kubebuilder:default:=9999999999
 	// +kubebuilder:validation:Optional
-	MinScore *float64 `json:"minScore,omitempty" protobuf:"bytes,6,opt,name=minScore"`
+	MinBestScore *float64 `json:"minBestScore,omitempty" protobuf:"bytes,6,opt,name=minBestScore"`
 	// The desired number of trainers that will train candidate models in parallel. The number
 	// of trainers is restricted based on the allowance provided by the active License
 	// +kubebuilder:default:=1

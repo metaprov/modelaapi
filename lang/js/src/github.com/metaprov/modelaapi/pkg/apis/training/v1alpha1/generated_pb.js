@@ -45626,7 +45626,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SearchSpec.toObje
     maxcost: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     maxtime: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     maxmodels: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
-    minscore: (f = jspb.Message.getOptionalFloatingPointField(msg, 6)) == null ? undefined : f,
+    minbestscore: (f = jspb.Message.getOptionalFloatingPointField(msg, 6)) == null ? undefined : f,
     trainers: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
     test: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
     retaintop: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
@@ -45694,7 +45694,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SearchSpec.deseri
       break;
     case 6:
       var value = /** @type {number} */ (reader.readDouble());
-      msg.setMinscore(value);
+      msg.setMinbestscore(value);
       break;
     case 7:
       var value = /** @type {number} */ (reader.readInt32());
@@ -46045,10 +46045,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SearchSpec.protot
 
 
 /**
- * optional double minScore = 6;
+ * optional double minBestScore = 6;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SearchSpec.prototype.getMinscore = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SearchSpec.prototype.getMinbestscore = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 6, 0.0));
 };
 
@@ -46057,7 +46057,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SearchSpec.protot
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SearchSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SearchSpec.prototype.setMinscore = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SearchSpec.prototype.setMinbestscore = function(value) {
   return jspb.Message.setField(this, 6, value);
 };
 
@@ -46066,7 +46066,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SearchSpec.protot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SearchSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SearchSpec.prototype.clearMinscore = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SearchSpec.prototype.clearMinbestscore = function() {
   return jspb.Message.setField(this, 6, undefined);
 };
 
@@ -46075,7 +46075,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SearchSpec.protot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SearchSpec.prototype.hasMinscore = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SearchSpec.prototype.hasMinbestscore = function() {
   return jspb.Message.getField(this, 6) != null;
 };
 

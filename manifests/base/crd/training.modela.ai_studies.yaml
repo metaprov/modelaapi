@@ -1247,10 +1247,11 @@ spec:
                     maximum: 10000
                     minimum: 1
                     type: integer
-                  minScore:
-                    default: 0
-                    description: The minimum score of a candidate model, after which
-                      the model search will forcibly stop
+                  minBestScore:
+                    default: 9999999999
+                    description: The minimum best score needed to finish the search.
+                      The system will finish the search when the minimum is reached.
+                      Note that this number can be negative for a regression.
                     type: number
                   objective:
                     description: The objective metric that will be measured against
