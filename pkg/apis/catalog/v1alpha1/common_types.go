@@ -650,14 +650,14 @@ func ParseImputation(name string) Imputation {
 //==============================================================================
 // Scaling
 //==============================================================================
-// +kubebuilder:validation:Enum="standard-scaling";"max-abs-scaling";"min-max-scaling";"normalizion-scaling";"robust-scaling";"scale-to-unit-norm";"none";"auto";
+// +kubebuilder:validation:Enum="standard-scaling";"max-abs-scaling";"min-max-scaling";"normalization-scaling";"robust-scaling";"scale-to-unit-norm";"none";"auto";
 type Scaling string
 
 const (
 	StandardScaling Scaling = "standard-scaling"
 	MaxAbsScaling   Scaling = "max-abs-scaling"
 	MinMaxScaling   Scaling = "min-max-scaling"
-	Normalization   Scaling = "normalizion-scaling"
+	Normalization   Scaling = "normalization-scaling"
 	RobustScaling   Scaling = "robust-scaling"
 	ScaleToUnitNorm Scaling = "scale-to-unit-norm"
 	NoneScaling     Scaling = "none"

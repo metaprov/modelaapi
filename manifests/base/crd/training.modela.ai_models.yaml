@@ -584,7 +584,7 @@ spec:
                           - standard-scaling
                           - max-abs-scaling
                           - min-max-scaling
-                          - normalizion-scaling
+                          - normalization-scaling
                           - robust-scaling
                           - scale-to-unit-norm
                           - none
