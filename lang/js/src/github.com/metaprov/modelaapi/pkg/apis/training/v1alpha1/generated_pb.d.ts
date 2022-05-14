@@ -4490,56 +4490,6 @@ export namespace ResourceConsumption {
   }
 }
 
-export class SearchPhaseStatus extends jspb.Message {
-  getStarttime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setStarttime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): SearchPhaseStatus;
-  hasStarttime(): boolean;
-  clearStarttime(): SearchPhaseStatus;
-
-  getEndtime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setEndtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): SearchPhaseStatus;
-  hasEndtime(): boolean;
-  clearEndtime(): SearchPhaseStatus;
-
-  getWaiting(): number;
-  setWaiting(value: number): SearchPhaseStatus;
-
-  getRunning(): number;
-  setRunning(value: number): SearchPhaseStatus;
-
-  getFailed(): number;
-  setFailed(value: number): SearchPhaseStatus;
-
-  getCompleted(): number;
-  setCompleted(value: number): SearchPhaseStatus;
-
-  getBestscore(): number;
-  setBestscore(value: number): SearchPhaseStatus;
-
-  getModelswithnoprogress(): number;
-  setModelswithnoprogress(value: number): SearchPhaseStatus;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): SearchPhaseStatus.AsObject;
-  static toObject(includeInstance: boolean, msg: SearchPhaseStatus): SearchPhaseStatus.AsObject;
-  static serializeBinaryToWriter(message: SearchPhaseStatus, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): SearchPhaseStatus;
-  static deserializeBinaryFromReader(message: SearchPhaseStatus, reader: jspb.BinaryReader): SearchPhaseStatus;
-}
-
-export namespace SearchPhaseStatus {
-  export type AsObject = {
-    starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    waiting: number,
-    running: number,
-    failed: number,
-    completed: number,
-    bestscore: number,
-    modelswithnoprogress: number,
-  }
-}
-
 export class SearchSpec extends jspb.Message {
   getSampler(): string;
   setSampler(value: string): SearchSpec;
@@ -4809,6 +4759,12 @@ export class StudyPhaseStatus extends jspb.Message {
   getCompleted(): number;
   setCompleted(value: number): StudyPhaseStatus;
 
+  getBestscore(): number;
+  setBestscore(value: number): StudyPhaseStatus;
+
+  getModelswithnoprogress(): number;
+  setModelswithnoprogress(value: number): StudyPhaseStatus;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): StudyPhaseStatus.AsObject;
   static toObject(includeInstance: boolean, msg: StudyPhaseStatus): StudyPhaseStatus.AsObject;
@@ -4825,6 +4781,8 @@ export namespace StudyPhaseStatus {
     running: number,
     failed: number,
     completed: number,
+    bestscore: number,
+    modelswithnoprogress: number,
   }
 }
 
@@ -5134,8 +5092,8 @@ export class StudyStatus extends jspb.Message {
   hasBaseline(): boolean;
   clearBaseline(): StudyStatus;
 
-  getSearch(): SearchPhaseStatus | undefined;
-  setSearch(value?: SearchPhaseStatus): StudyStatus;
+  getSearch(): StudyPhaseStatus | undefined;
+  setSearch(value?: StudyPhaseStatus): StudyStatus;
   hasSearch(): boolean;
   clearSearch(): StudyStatus;
 
@@ -5214,7 +5172,7 @@ export namespace StudyStatus {
     logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
     featureengineering?: StudyPhaseStatus.AsObject,
     baseline?: StudyPhaseStatus.AsObject,
-    search?: SearchPhaseStatus.AsObject,
+    search?: StudyPhaseStatus.AsObject,
     ensemble?: StudyPhaseStatus.AsObject,
     test?: StudyPhaseStatus.AsObject,
     explain?: StudyPhaseStatus.AsObject,

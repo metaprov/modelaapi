@@ -2387,6 +2387,10 @@ spec:
               baseline:
                 description: BaselineStatus contains the status of the baseline phase
                 properties:
+                  bestScore:
+                    description: Best score so far in this phase. The best score is
+                      the value of the objective.
+                    type: number
                   completed:
                     description: The number of models that have been successfully
                       trained
@@ -2399,6 +2403,11 @@ spec:
                   failed:
                     description: The number of models that experienced an error whilst
                       training
+                    format: int32
+                    type: integer
+                  modelsWithNoProgress:
+                    description: Actual number of models where no progress was made.
+                      This used to decide on early stop.
                     format: int32
                     type: integer
                   running:
@@ -2869,6 +2878,10 @@ spec:
               ensemble:
                 description: EnsembleStatus contains the status of the ensemble phase
                 properties:
+                  bestScore:
+                    description: Best score so far in this phase. The best score is
+                      the value of the objective.
+                    type: number
                   completed:
                     description: The number of models that have been successfully
                       trained
@@ -2881,6 +2894,11 @@ spec:
                   failed:
                     description: The number of models that experienced an error whilst
                       training
+                    format: int32
+                    type: integer
+                  modelsWithNoProgress:
+                    description: Actual number of models where no progress was made.
+                      This used to decide on early stop.
                     format: int32
                     type: integer
                   running:
@@ -2899,6 +2917,10 @@ spec:
               explain:
                 description: ExplainStatus contains the status of the explaining phase
                 properties:
+                  bestScore:
+                    description: Best score so far in this phase. The best score is
+                      the value of the objective.
+                    type: number
                   completed:
                     description: The number of models that have been successfully
                       trained
@@ -2911,6 +2933,11 @@ spec:
                   failed:
                     description: The number of models that experienced an error whilst
                       training
+                    format: int32
+                    type: integer
+                  modelsWithNoProgress:
+                    description: Actual number of models where no progress was made.
+                      This used to decide on early stop.
                     format: int32
                     type: integer
                   running:
@@ -2938,6 +2965,10 @@ spec:
                 description: FeatureEngineeringStatus contains the status of the feature
                   engineering phase
                 properties:
+                  bestScore:
+                    description: Best score so far in this phase. The best score is
+                      the value of the objective.
+                    type: number
                   completed:
                     description: The number of models that have been successfully
                       trained
@@ -2950,6 +2981,11 @@ spec:
                   failed:
                     description: The number of models that experienced an error whilst
                       training
+                    format: int32
+                    type: integer
+                  modelsWithNoProgress:
+                    description: Actual number of models where no progress was made.
+                      This used to decide on early stop.
                     format: int32
                     type: integer
                   running:
@@ -3070,7 +3106,7 @@ spec:
                   phase
                 properties:
                   bestScore:
-                    description: Best score so far in the search. The best score is
+                    description: Best score so far in this phase. The best score is
                       the value of the objective.
                     type: number
                   completed:
@@ -3113,6 +3149,10 @@ spec:
               test:
                 description: TestStatus contains the status of the testing phase
                 properties:
+                  bestScore:
+                    description: Best score so far in this phase. The best score is
+                      the value of the objective.
+                    type: number
                   completed:
                     description: The number of models that have been successfully
                       trained
@@ -3125,6 +3165,11 @@ spec:
                   failed:
                     description: The number of models that experienced an error whilst
                       training
+                    format: int32
+                    type: integer
+                  modelsWithNoProgress:
+                    description: Actual number of models where no progress was made.
+                      This used to decide on early stop.
                     format: int32
                     type: integer
                   running:

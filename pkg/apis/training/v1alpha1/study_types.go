@@ -635,7 +635,7 @@ type StudyStatus struct {
 	BaselineStatus StudyPhaseStatus `json:"baseline,omitempty" protobuf:"bytes,26,opt,name=baseline"`
 	// SearchStatus contains the status of the model search phase
 	//+kubebuilder:validation:Optional
-	SearchStatus SearchPhaseStatus `json:"search,omitempty" protobuf:"bytes,27,opt,name=search"`
+	SearchStatus StudyPhaseStatus `json:"search,omitempty" protobuf:"bytes,27,opt,name=search"`
 	// EnsembleStatus contains the status of the ensemble phase
 	//+kubebuilder:validation:Optional
 	EnsembleStatus StudyPhaseStatus `json:"ensemble,omitempty" protobuf:"bytes,28,opt,name=ensemble"`
@@ -756,28 +756,7 @@ type StudyPhaseStatus struct {
 	// The number of models that have been successfully trained
 	// +kubebuilder:validation:Optional
 	Completed int32 `json:"completed,omitempty" protobuf:"varint,6,opt,name=completed"`
-}
-
-type SearchPhaseStatus struct {
-	// The time at which the phase started
-	// +kubebuilder:validation:Optional
-	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,1,opt,name=startTime"`
-	// The time at which the phase concluded
-	// +kubebuilder:validation:Optional
-	EndTime *metav1.Time `json:"endTime,omitempty" protobuf:"bytes,2,opt,name=endTime"`
-	// The number of models pending training
-	// +kubebuilder:validation:Optional
-	Waiting int32 `json:"waiting,omitempty" protobuf:"varint,3,opt,name=waiting"`
-	// The number of models currently being trained
-	// +kubebuilder:validation:Optional
-	Running int32 `json:"running,omitempty" protobuf:"varint,4,opt,name=running"`
-	// The number of models that experienced an error whilst training
-	// +kubebuilder:validation:Optional
-	Failed int32 `json:"failed,omitempty" protobuf:"varint,5,opt,name=failed"`
-	// The number of models that have been successfully trained
-	// +kubebuilder:validation:Optional
-	Completed int32 `json:"completed,omitempty" protobuf:"varint,6,opt,name=completed"`
-	// Best score so far in the search. The best score is the value of the objective.
+	// Best score so far in this phase. The best score is the value of the objective.
 	// +kubebuilder:validation:Optional
 	BestScore float64 `json:"bestScore,omitempty" protobuf:"varint,7,opt,name=bestScore"`
 	// Actual number of models where no progress was made. This used to decide on early stop.
