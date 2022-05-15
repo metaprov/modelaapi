@@ -4,7 +4,7 @@
 // - protoc             v3.19.1
 // source: github.com/metaprov/modelaapi/services/grpc/health/v1/health.proto
 
-package v1
+package grpc_health_v1
 
 import (
 	context "context"
