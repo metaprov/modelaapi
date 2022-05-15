@@ -666,22 +666,16 @@ service DataService {
     
     // sample feature engineering pipeline
     rpc AskFE (AskModelRequest) returns (AskModelResponse) {}
-    // tell the result of the feature engineering search.
-    rpc TellFE (TellModelRequest) returns (TellModelResponse) {}
-    
-    // Ask for baseline modles
     rpc AskBaseline (AskBaselineRequest) returns (AskBaselineResponse) {}
-
-    // sample feature engineering pipeline
     rpc AskEnsemble (AskEnsembleRequest) returns (AskEnsembleResponse) {}
-    // tell the result of the feature engineering search.
-    rpc TellEnsemble (TellModelRequest) returns (TellModelResponse) {}
     
     // sample model randomly for a given budget
     rpc AskModel (AskModelRequest) returns (AskModelResponse) {}
     // sample model randomly for a given budget
     rpc AskAllModelsForTask(AskAllModelsForTaskRequest) returns (AskAllModelsForTaskResponse) {}
 
+    // If a model is a partial model (sample < 100%) 
+    rpc TellPartialModel (TellModelRequest) returns (TellModelResponse) {}
     // for bayaisn optimization, we tell the planner the result of the model evaluation
     rpc TellModel (TellModelRequest) returns (TellModelResponse) {}
     // Partition the class

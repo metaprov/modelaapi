@@ -65,18 +65,14 @@ type DataServiceClient interface {
 	CreateSummaryReport(ctx context.Context, in *CreateSummaryReportRequest, opts ...grpc.CallOption) (*CreateReportResponse, error)
 	// sample feature engineering pipeline
 	AskFE(ctx context.Context, in *AskModelRequest, opts ...grpc.CallOption) (*AskModelResponse, error)
-	// tell the result of the feature engineering search.
-	TellFE(ctx context.Context, in *TellModelRequest, opts ...grpc.CallOption) (*TellModelResponse, error)
-	// Ask for baseline modles
 	AskBaseline(ctx context.Context, in *AskBaselineRequest, opts ...grpc.CallOption) (*AskBaselineResponse, error)
-	// sample feature engineering pipeline
 	AskEnsemble(ctx context.Context, in *AskEnsembleRequest, opts ...grpc.CallOption) (*AskEnsembleResponse, error)
-	// tell the result of the feature engineering search.
-	TellEnsemble(ctx context.Context, in *TellModelRequest, opts ...grpc.CallOption) (*TellModelResponse, error)
 	// sample model randomly for a given budget
 	AskModel(ctx context.Context, in *AskModelRequest, opts ...grpc.CallOption) (*AskModelResponse, error)
 	// sample model randomly for a given budget
 	AskAllModelsForTask(ctx context.Context, in *AskAllModelsForTaskRequest, opts ...grpc.CallOption) (*AskAllModelsForTaskResponse, error)
+	// If a model is a partial model (sample < 100%)
+	TellPartialModel(ctx context.Context, in *TellModelRequest, opts ...grpc.CallOption) (*TellModelResponse, error)
 	// for bayaisn optimization, we tell the planner the result of the model evaluation
 	TellModel(ctx context.Context, in *TellModelRequest, opts ...grpc.CallOption) (*TellModelResponse, error)
 	// Partition the class
@@ -320,15 +316,6 @@ func (c *dataServiceClient) AskFE(ctx context.Context, in *AskModelRequest, opts
 	return out, nil
 }
 
-func (c *dataServiceClient) TellFE(ctx context.Context, in *TellModelRequest, opts ...grpc.CallOption) (*TellModelResponse, error) {
-	out := new(TellModelResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/TellFE", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *dataServiceClient) AskBaseline(ctx context.Context, in *AskBaselineRequest, opts ...grpc.CallOption) (*AskBaselineResponse, error) {
 	out := new(AskBaselineResponse)
 	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/AskBaseline", in, out, opts...)
@@ -347,15 +334,6 @@ func (c *dataServiceClient) AskEnsemble(ctx context.Context, in *AskEnsembleRequ
 	return out, nil
 }
 
-func (c *dataServiceClient) TellEnsemble(ctx context.Context, in *TellModelRequest, opts ...grpc.CallOption) (*TellModelResponse, error) {
-	out := new(TellModelResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/TellEnsemble", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *dataServiceClient) AskModel(ctx context.Context, in *AskModelRequest, opts ...grpc.CallOption) (*AskModelResponse, error) {
 	out := new(AskModelResponse)
 	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/AskModel", in, out, opts...)
@@ -368,6 +346,15 @@ func (c *dataServiceClient) AskModel(ctx context.Context, in *AskModelRequest, o
 func (c *dataServiceClient) AskAllModelsForTask(ctx context.Context, in *AskAllModelsForTaskRequest, opts ...grpc.CallOption) (*AskAllModelsForTaskResponse, error) {
 	out := new(AskAllModelsForTaskResponse)
 	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/AskAllModelsForTask", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dataServiceClient) TellPartialModel(ctx context.Context, in *TellModelRequest, opts ...grpc.CallOption) (*TellModelResponse, error) {
+	out := new(TellModelResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/TellPartialModel", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -529,18 +516,14 @@ type DataServiceServer interface {
 	CreateSummaryReport(context.Context, *CreateSummaryReportRequest) (*CreateReportResponse, error)
 	// sample feature engineering pipeline
 	AskFE(context.Context, *AskModelRequest) (*AskModelResponse, error)
-	// tell the result of the feature engineering search.
-	TellFE(context.Context, *TellModelRequest) (*TellModelResponse, error)
-	// Ask for baseline modles
 	AskBaseline(context.Context, *AskBaselineRequest) (*AskBaselineResponse, error)
-	// sample feature engineering pipeline
 	AskEnsemble(context.Context, *AskEnsembleRequest) (*AskEnsembleResponse, error)
-	// tell the result of the feature engineering search.
-	TellEnsemble(context.Context, *TellModelRequest) (*TellModelResponse, error)
 	// sample model randomly for a given budget
 	AskModel(context.Context, *AskModelRequest) (*AskModelResponse, error)
 	// sample model randomly for a given budget
 	AskAllModelsForTask(context.Context, *AskAllModelsForTaskRequest) (*AskAllModelsForTaskResponse, error)
+	// If a model is a partial model (sample < 100%)
+	TellPartialModel(context.Context, *TellModelRequest) (*TellModelResponse, error)
 	// for bayaisn optimization, we tell the planner the result of the model evaluation
 	TellModel(context.Context, *TellModelRequest) (*TellModelResponse, error)
 	// Partition the class
@@ -637,23 +620,20 @@ func (UnimplementedDataServiceServer) CreateSummaryReport(context.Context, *Crea
 func (UnimplementedDataServiceServer) AskFE(context.Context, *AskModelRequest) (*AskModelResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AskFE not implemented")
 }
-func (UnimplementedDataServiceServer) TellFE(context.Context, *TellModelRequest) (*TellModelResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method TellFE not implemented")
-}
 func (UnimplementedDataServiceServer) AskBaseline(context.Context, *AskBaselineRequest) (*AskBaselineResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AskBaseline not implemented")
 }
 func (UnimplementedDataServiceServer) AskEnsemble(context.Context, *AskEnsembleRequest) (*AskEnsembleResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AskEnsemble not implemented")
 }
-func (UnimplementedDataServiceServer) TellEnsemble(context.Context, *TellModelRequest) (*TellModelResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method TellEnsemble not implemented")
-}
 func (UnimplementedDataServiceServer) AskModel(context.Context, *AskModelRequest) (*AskModelResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AskModel not implemented")
 }
 func (UnimplementedDataServiceServer) AskAllModelsForTask(context.Context, *AskAllModelsForTaskRequest) (*AskAllModelsForTaskResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AskAllModelsForTask not implemented")
+}
+func (UnimplementedDataServiceServer) TellPartialModel(context.Context, *TellModelRequest) (*TellModelResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method TellPartialModel not implemented")
 }
 func (UnimplementedDataServiceServer) TellModel(context.Context, *TellModelRequest) (*TellModelResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method TellModel not implemented")
@@ -1136,24 +1116,6 @@ func _DataService_AskFE_Handler(srv interface{}, ctx context.Context, dec func(i
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DataService_TellFE_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(TellModelRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DataServiceServer).TellFE(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/TellFE",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DataServiceServer).TellFE(ctx, req.(*TellModelRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _DataService_AskBaseline_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(AskBaselineRequest)
 	if err := dec(in); err != nil {
@@ -1190,24 +1152,6 @@ func _DataService_AskEnsemble_Handler(srv interface{}, ctx context.Context, dec 
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DataService_TellEnsemble_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(TellModelRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DataServiceServer).TellEnsemble(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/TellEnsemble",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DataServiceServer).TellEnsemble(ctx, req.(*TellModelRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _DataService_AskModel_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(AskModelRequest)
 	if err := dec(in); err != nil {
@@ -1240,6 +1184,24 @@ func _DataService_AskAllModelsForTask_Handler(srv interface{}, ctx context.Conte
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DataServiceServer).AskAllModelsForTask(ctx, req.(*AskAllModelsForTaskRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DataService_TellPartialModel_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(TellModelRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DataServiceServer).TellPartialModel(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/TellPartialModel",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DataServiceServer).TellPartialModel(ctx, req.(*TellModelRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1564,10 +1526,6 @@ var DataService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _DataService_AskFE_Handler,
 		},
 		{
-			MethodName: "TellFE",
-			Handler:    _DataService_TellFE_Handler,
-		},
-		{
 			MethodName: "AskBaseline",
 			Handler:    _DataService_AskBaseline_Handler,
 		},
@@ -1576,16 +1534,16 @@ var DataService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _DataService_AskEnsemble_Handler,
 		},
 		{
-			MethodName: "TellEnsemble",
-			Handler:    _DataService_TellEnsemble_Handler,
-		},
-		{
 			MethodName: "AskModel",
 			Handler:    _DataService_AskModel_Handler,
 		},
 		{
 			MethodName: "AskAllModelsForTask",
 			Handler:    _DataService_AskAllModelsForTask_Handler,
+		},
+		{
+			MethodName: "TellPartialModel",
+			Handler:    _DataService_TellPartialModel_Handler,
 		},
 		{
 			MethodName: "TellModel",

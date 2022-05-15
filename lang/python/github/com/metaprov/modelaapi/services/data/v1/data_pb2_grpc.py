@@ -134,11 +134,6 @@ class DataServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.AskModelRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.AskModelResponse.FromString,
                 )
-        self.TellFE = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.data.v1.DataService/TellFE',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.TellModelRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.TellModelResponse.FromString,
-                )
         self.AskBaseline = channel.unary_unary(
                 '/github.com.metaprov.modelaapi.services.data.v1.DataService/AskBaseline',
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.AskBaselineRequest.SerializeToString,
@@ -149,11 +144,6 @@ class DataServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.AskEnsembleRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.AskEnsembleResponse.FromString,
                 )
-        self.TellEnsemble = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.data.v1.DataService/TellEnsemble',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.TellModelRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.TellModelResponse.FromString,
-                )
         self.AskModel = channel.unary_unary(
                 '/github.com.metaprov.modelaapi.services.data.v1.DataService/AskModel',
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.AskModelRequest.SerializeToString,
@@ -163,6 +153,11 @@ class DataServiceStub(object):
                 '/github.com.metaprov.modelaapi.services.data.v1.DataService/AskAllModelsForTask',
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.AskAllModelsForTaskRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.AskAllModelsForTaskResponse.FromString,
+                )
+        self.TellPartialModel = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.data.v1.DataService/TellPartialModel',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.TellModelRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.TellModelResponse.FromString,
                 )
         self.TellModel = channel.unary_unary(
                 '/github.com.metaprov.modelaapi.services.data.v1.DataService/TellModel',
@@ -392,30 +387,14 @@ class DataServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def TellFE(self, request, context):
-        """tell the result of the feature engineering search.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
     def AskBaseline(self, request, context):
-        """Ask for baseline modles
-        """
+        """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def AskEnsemble(self, request, context):
-        """sample feature engineering pipeline
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def TellEnsemble(self, request, context):
-        """tell the result of the feature engineering search.
-        """
+        """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -429,6 +408,13 @@ class DataServiceServicer(object):
 
     def AskAllModelsForTask(self, request, context):
         """sample model randomly for a given budget
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def TellPartialModel(self, request, context):
+        """If a model is a partial model (sample < 100%) 
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -634,11 +620,6 @@ def add_DataServiceServicer_to_server(servicer, server):
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.AskModelRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.AskModelResponse.SerializeToString,
             ),
-            'TellFE': grpc.unary_unary_rpc_method_handler(
-                    servicer.TellFE,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.TellModelRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.TellModelResponse.SerializeToString,
-            ),
             'AskBaseline': grpc.unary_unary_rpc_method_handler(
                     servicer.AskBaseline,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.AskBaselineRequest.FromString,
@@ -649,11 +630,6 @@ def add_DataServiceServicer_to_server(servicer, server):
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.AskEnsembleRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.AskEnsembleResponse.SerializeToString,
             ),
-            'TellEnsemble': grpc.unary_unary_rpc_method_handler(
-                    servicer.TellEnsemble,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.TellModelRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.TellModelResponse.SerializeToString,
-            ),
             'AskModel': grpc.unary_unary_rpc_method_handler(
                     servicer.AskModel,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.AskModelRequest.FromString,
@@ -663,6 +639,11 @@ def add_DataServiceServicer_to_server(servicer, server):
                     servicer.AskAllModelsForTask,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.AskAllModelsForTaskRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.AskAllModelsForTaskResponse.SerializeToString,
+            ),
+            'TellPartialModel': grpc.unary_unary_rpc_method_handler(
+                    servicer.TellPartialModel,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.TellModelRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.TellModelResponse.SerializeToString,
             ),
             'TellModel': grpc.unary_unary_rpc_method_handler(
                     servicer.TellModel,
@@ -1143,23 +1124,6 @@ class DataService(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def TellFE(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.data.v1.DataService/TellFE',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.TellModelRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.TellModelResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
     def AskBaseline(request,
             target,
             options=(),
@@ -1194,23 +1158,6 @@ class DataService(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def TellEnsemble(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.data.v1.DataService/TellEnsemble',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.TellModelRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.TellModelResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
     def AskModel(request,
             target,
             options=(),
@@ -1241,6 +1188,23 @@ class DataService(object):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.data.v1.DataService/AskAllModelsForTask',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.AskAllModelsForTaskRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.AskAllModelsForTaskResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def TellPartialModel(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.data.v1.DataService/TellPartialModel',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.TellModelRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.TellModelResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
