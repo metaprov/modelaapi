@@ -45,6 +45,7 @@ python3 -m grpc_tools.protoc \
     k8s.io/apimachinery/pkg/runtime/schema/generated.proto \
     k8s.io/apimachinery/pkg/runtime/generated.proto \
     github.com/gogo/protobuf/gogoproto/gogo.proto \
+    github.com/metaprov/modelaapi/services/grpc/health/v1/health.proto \
     github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto \
     github.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1/generated.proto \
     github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated.proto \
