@@ -790,6 +790,11 @@ type GarbageCollectionSpec struct {
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:=false
 	KeepOnlyBestModelPerAlgorithm *bool `json:"keepOnlyBestModelPerAlgorithm,omitempty" protobuf:"varint,2,opt,name=keepOnlyBestModelPerAlgorithm"`
+	// Indicates if we should keep pruned models
+	// model with the lowest score will be garbage-collected
+	// +kubebuilder:validation:Optional
+	// +kubebuilder:default:=false
+	KeepPrunedModel *bool `json:"keepPrunedModels,omitempty" protobuf:"varint,3,opt,name=keepPrunedModels"`
 }
 
 // GarbageCollectionStatus contains the records for garbage-collected models

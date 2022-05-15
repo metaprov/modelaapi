@@ -1279,6 +1279,9 @@ export class GarbageCollectionSpec extends jspb.Message {
   getKeeponlybestmodelperalgorithm(): boolean;
   setKeeponlybestmodelperalgorithm(value: boolean): GarbageCollectionSpec;
 
+  getKeepprunedmodels(): boolean;
+  setKeepprunedmodels(value: boolean): GarbageCollectionSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GarbageCollectionSpec.AsObject;
   static toObject(includeInstance: boolean, msg: GarbageCollectionSpec): GarbageCollectionSpec.AsObject;
@@ -1291,6 +1294,7 @@ export namespace GarbageCollectionSpec {
   export type AsObject = {
     collectatstudyend: boolean,
     keeponlybestmodelperalgorithm: boolean,
+    keepprunedmodels: boolean,
   }
 }
 

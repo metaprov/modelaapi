@@ -846,6 +846,12 @@ message GarbageCollectionSpec {
   // +kubebuilder:validation:Optional
   // +kubebuilder:default:=false
   optional bool keepOnlyBestModelPerAlgorithm = 2;
+
+  // Indicates if we should keep pruned models
+  // model with the lowest score will be garbage-collected
+  // +kubebuilder:validation:Optional
+  // +kubebuilder:default:=false
+  optional bool keepPrunedModels = 3;
 }
 
 // GarbageCollectionStatus contains the records for garbage-collected models

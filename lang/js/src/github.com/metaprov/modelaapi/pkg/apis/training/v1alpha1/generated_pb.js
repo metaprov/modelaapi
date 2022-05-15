@@ -14505,7 +14505,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GarbageCollection
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GarbageCollectionSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
     collectatstudyend: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
-    keeponlybestmodelperalgorithm: (f = jspb.Message.getBooleanField(msg, 2)) == null ? undefined : f
+    keeponlybestmodelperalgorithm: (f = jspb.Message.getBooleanField(msg, 2)) == null ? undefined : f,
+    keepprunedmodels: (f = jspb.Message.getBooleanField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -14550,6 +14551,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GarbageCollection
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setKeeponlybestmodelperalgorithm(value);
       break;
+    case 3:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setKeepprunedmodels(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -14590,6 +14595,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GarbageCollection
   if (f != null) {
     writer.writeBool(
       2,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeBool(
+      3,
       f
     );
   }
@@ -14665,6 +14677,42 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GarbageCollection
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GarbageCollectionSpec.prototype.hasKeeponlybestmodelperalgorithm = function() {
   return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional bool keepPrunedModels = 3;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GarbageCollectionSpec.prototype.getKeepprunedmodels = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GarbageCollectionSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GarbageCollectionSpec.prototype.setKeepprunedmodels = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GarbageCollectionSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GarbageCollectionSpec.prototype.clearKeepprunedmodels = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GarbageCollectionSpec.prototype.hasKeepprunedmodels = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 

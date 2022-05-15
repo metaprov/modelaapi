@@ -915,6 +915,11 @@ spec:
                       are produced by the Study, the model with the lowest score will
                       be garbage-collected
                     type: boolean
+                  keepPrunedModels:
+                    default: false
+                    description: Indicates if we should keep pruned models model with
+                      the lowest score will be garbage-collected
+                    type: boolean
                 type: object
               imbalanceHandler:
                 description: Set the imbalance dataset handling.
