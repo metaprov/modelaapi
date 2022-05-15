@@ -500,8 +500,11 @@ message TellModelRequest{
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource  datasource         = 4;
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset     dataset            = 5;    
     github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model   model              = 6;
+    bool failed                                                                         = 7;
 }
-message TellModelResponse {}
+message TellModelResponse {
+    bool pruned                                                                         = 1;
+}
 
 
 message DsShutdownRequest {    

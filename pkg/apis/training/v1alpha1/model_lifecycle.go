@@ -590,11 +590,30 @@ func (model *Model) MarkProfiledFailed(err string) {
 		now := metav1.Now()
 		model.Status.EndTime = &now
 	}
-
 }
 
 func (model *Model) Profiled() bool {
 	cond := model.GetCond(ModelProfiled)
+	return cond.Status == v1.ConditionTrue
+}
+
+// ----------------------- Pruned
+
+func (model *Model) MarkPruned(uri string) {
+	model.Status.Phase = ModelPhasePruned
+	model.CreateOrUpdateCond(ModelCondition{
+		Type:   ModelPruned,
+		Status: v1.ConditionTrue,
+	})
+	model.Status.Progress = 100
+	if model.Status.EndTime == nil {
+		now := metav1.Now()
+		model.Status.EndTime = &now
+	}
+}
+
+func (model *Model) Pruned() bool {
+	cond := model.GetCond(ModelPruned)
 	return cond.Status == v1.ConditionTrue
 }
 

@@ -104,6 +104,7 @@ const (
 	ModelPhaseRetired               ModelPhase = "Retired"
 	ModelPhaseTrainingDriftDetector ModelPhase = "TrainingDriftDetector"
 	ModelPhaseTrainedDriftDetector  ModelPhase = "TrainedDriftDetector"
+	ModelPhasePruned                ModelPhase = "Pruned"
 )
 
 // ModelConditionType specifies the current condition of a Model
@@ -148,6 +149,7 @@ const (
 	ModelMaintenance          ModelConditionType = "Maintenance"
 	ModelRetired              ModelConditionType = "Retired"
 	ModelTrainedDriftDetector ModelConditionType = "TrainedDriftDetector"
+	ModelPruned               ModelConditionType = "Pruned" // If the model was pruned by the optimizer
 )
 
 // ModelCondition describes the state of a Model at a certain point

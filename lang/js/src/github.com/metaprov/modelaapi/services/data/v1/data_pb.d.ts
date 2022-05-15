@@ -2276,6 +2276,9 @@ export class TellModelRequest extends jspb.Message {
   hasModel(): boolean;
   clearModel(): TellModelRequest;
 
+  getFailed(): boolean;
+  setFailed(value: boolean): TellModelRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TellModelRequest.AsObject;
   static toObject(includeInstance: boolean, msg: TellModelRequest): TellModelRequest.AsObject;
@@ -2292,10 +2295,14 @@ export namespace TellModelRequest {
     datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
     dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
     model?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject,
+    failed: boolean,
   }
 }
 
 export class TellModelResponse extends jspb.Message {
+  getPruned(): boolean;
+  setPruned(value: boolean): TellModelResponse;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TellModelResponse.AsObject;
   static toObject(includeInstance: boolean, msg: TellModelResponse): TellModelResponse.AsObject;
@@ -2306,6 +2313,7 @@ export class TellModelResponse extends jspb.Message {
 
 export namespace TellModelResponse {
   export type AsObject = {
+    pruned: boolean,
   }
 }
 

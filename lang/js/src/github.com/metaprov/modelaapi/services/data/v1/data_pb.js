@@ -19650,7 +19650,8 @@ proto.github.com.metaprov.modelaapi.services.data.v1.TellModelRequest.toObject =
     study: (f = msg.getStudy()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.toObject(includeInstance, f),
     datasource: (f = msg.getDatasource()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.toObject(includeInstance, f),
     dataset: (f = msg.getDataset()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.toObject(includeInstance, f),
-    model: (f = msg.getModel()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.toObject(includeInstance, f)
+    model: (f = msg.getModel()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.toObject(includeInstance, f),
+    failed: jspb.Message.getBooleanFieldWithDefault(msg, 7, false)
   };
 
   if (includeInstance) {
@@ -19716,6 +19717,10 @@ proto.github.com.metaprov.modelaapi.services.data.v1.TellModelRequest.deserializ
       var value = new github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.deserializeBinaryFromReader);
       msg.setModel(value);
+      break;
+    case 7:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setFailed(value);
       break;
     default:
       reader.skipField();
@@ -19792,6 +19797,13 @@ proto.github.com.metaprov.modelaapi.services.data.v1.TellModelRequest.serializeB
       6,
       f,
       github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.serializeBinaryToWriter
+    );
+  }
+  f = message.getFailed();
+  if (f) {
+    writer.writeBool(
+      7,
+      f
     );
   }
 };
@@ -20019,6 +20031,24 @@ proto.github.com.metaprov.modelaapi.services.data.v1.TellModelRequest.prototype.
 };
 
 
+/**
+ * optional bool failed = 7;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.TellModelRequest.prototype.getFailed = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 7, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.TellModelRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.TellModelRequest.prototype.setFailed = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 7, value);
+};
+
+
 
 
 
@@ -20051,7 +20081,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.TellModelResponse.prototype
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.TellModelResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-
+    pruned: jspb.Message.getBooleanFieldWithDefault(msg, 1, false)
   };
 
   if (includeInstance) {
@@ -20088,6 +20118,10 @@ proto.github.com.metaprov.modelaapi.services.data.v1.TellModelResponse.deseriali
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setPruned(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -20117,6 +20151,31 @@ proto.github.com.metaprov.modelaapi.services.data.v1.TellModelResponse.prototype
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.TellModelResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getPruned();
+  if (f) {
+    writer.writeBool(
+      1,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional bool pruned = 1;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.TellModelResponse.prototype.getPruned = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 1, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.TellModelResponse} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.TellModelResponse.prototype.setPruned = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 1, value);
 };
 
 
