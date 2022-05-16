@@ -99,14 +99,6 @@ func (study *Study) Default() {
 		study.Spec.Schedule.StartAt = &now
 	}
 
-	if study.Spec.Search.Pruner.SHOptions.MaxBudget == nil {
-		study.Spec.Search.Pruner.SHOptions.MaxBudget = util.Int32Ptr(81)
-	}
-
-	if study.Spec.Search.Pruner.SHOptions.EliminationRate == nil {
-		study.Spec.Search.Pruner.SHOptions.EliminationRate = util.Int32Ptr(3)
-	}
-
 	if study.Spec.Aborted == nil {
 		study.Spec.Aborted = util.BoolPtr(false)
 	}
@@ -313,23 +305,5 @@ func (ms *SearchSpec) Default(task *catalog.MLTask) {
 }
 
 func (pspec *PrunerSpec) Default() {
-	name := MedianPruner
-	if pspec.Type == nil {
-		pspec.Type = &name
-	}
-	if pspec.StartupTrials == nil {
-		pspec.StartupTrials = util.Int32Ptr(5)
-	}
-	if pspec.WarmupTrials == nil {
-		pspec.WarmupTrials = util.Int32Ptr(0)
-	}
-	if pspec.MinimumTrials == nil {
-		pspec.MinimumTrials = util.Int32Ptr(1)
-	}
-	if pspec.IntervalSteps == nil {
-		pspec.IntervalSteps = util.Int32Ptr(1)
-	}
-	if pspec.Percentile == nil {
-		pspec.Percentile = util.Int32Ptr(25)
-	}
+
 }
