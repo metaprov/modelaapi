@@ -948,6 +948,28 @@ message HyperParameterValue {
   optional string value = 2;
 }
 
+message HyperbandOptions {
+  // Minimum number of reported trials.
+  // +kubebuilder:default:=1
+  // +kubebuilder:validation:Optional
+  optional int32 minResources = 1;
+
+  // Minimum number of reported trials.
+  // +kubebuilder:default:=1
+  // +kubebuilder:validation:Optional
+  optional int32 maxResources = 2;
+
+  // Minimum number of reported trials.
+  // +kubebuilder:default:=1
+  // +kubebuilder:validation:Optional
+  optional int32 reductionFactor = 3;
+
+  // Minimum number of reported trials.
+  // +kubebuilder:default:=0
+  // +kubebuilder:validation:Optional
+  optional int32 bootstrapCount = 4;
+}
+
 // ImagePipelineSpec represents a single pipeline for preprocessing image data
 message ImagePipelineSpec {
   // The date time imputer.
@@ -1043,6 +1065,28 @@ message Level {
 
   // The distinct values of the column for this level
   repeated string distinc = 5;
+}
+
+message MedianPrunerOptions {
+  // Pruning is disabled until the given number of trials finish in the same study.
+  // +kubebuilder:default:=5
+  // +kubebuilder:validation:Optional
+  optional int32 startupTrials = 1;
+
+  //  Pruning is disabled until the trial exceeds the given number of step
+  // +kubebuilder:default:=0
+  // +kubebuilder:validation:Optional
+  optional int32 warmupSteps = 2;
+
+  // Interval in number of steps between the pruning checks
+  // +kubebuilder:default:=1
+  // +kubebuilder:validation:Optional
+  optional int32 intervalTrials = 3;
+
+  // Minimum number of reported trials.
+  // +kubebuilder:default:=1
+  // +kubebuilder:validation:Optional
+  optional int32 minTrials = 4;
 }
 
 // Model represents a machine learning model that will be trained, evaluated, and deployed by Modela.
@@ -2733,6 +2777,35 @@ message NotebookVarValue {
   optional string value = 2;
 }
 
+message PercentilePrunerOptions {
+  // Keep specific percent of trials. Used only with percentile pruner
+  // +kubebuilder:default:=25
+  // +kubebuilder:validation:Minimum=0
+  // +kubebuilder:validation:Maximum=100
+  // +kubebuilder:validation:Optional
+  optional int32 percentile = 1;
+
+  // Pruning is disabled until the given number of trials finish in the same study.
+  // +kubebuilder:default:=5
+  // +kubebuilder:validation:Optional
+  optional int32 startupTrials = 2;
+
+  //  Pruning is disabled until the trial exceeds the given number of step
+  // +kubebuilder:default:=0
+  // +kubebuilder:validation:Optional
+  optional int32 warmupSteps = 3;
+
+  // Interval in number of steps between the pruning checks
+  // +kubebuilder:default:=1
+  // +kubebuilder:validation:Optional
+  optional int32 intervalTrials = 4;
+
+  // Minimum number of reported trials.
+  // +kubebuilder:default:=1
+  // +kubebuilder:validation:Optional
+  optional int32 minTrials = 5;
+}
+
 // Define the seasonality for a period (yearly / monthly / daily)
 message PeriodSeasonalitySpec {
   // Is this seasonality enabled
@@ -2772,47 +2845,20 @@ message PrunerSpec {
   // +kubebuilder:validation:Optional
   optional string type = 1;
 
-  // Pruning is disabled until the given number of trials finish in the same study.
-  // +kubebuilder:default:=5
   // +kubebuilder:validation:Optional
-  optional int32 startupTrials = 2;
+  optional MedianPrunerOptions median = 2;
 
-  //  Pruning is disabled until the trial exceeds the given number of step
-  // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
-  optional int32 warmupTrials = 3;
+  optional PercentilePrunerOptions percentile = 3;
 
-  // Minimum number of reported trials.
-  // +kubebuilder:default:=1
   // +kubebuilder:validation:Optional
-  optional int32 minTrials = 4;
+  optional SuccessiveHalvingOptions successive = 4;
 
-  // Interval in number of steps between the pruning checks
-  // +kubebuilder:default:=1
   // +kubebuilder:validation:Optional
-  optional int32 intervalTrials = 5;
+  optional HyperbandOptions hyperband = 5;
 
-  // Keep specific percent of trials. Used only with percentile pruner
-  // +kubebuilder:default:=25
-  // +kubebuilder:validation:Minimum=0
-  // +kubebuilder:validation:Maximum=100
   // +kubebuilder:validation:Optional
-  optional int32 percentile = 6;
-
-  // A minimum value which determines whether pruner prunes or not. Used only for threshold pruner
-  // +kubebuilder:default:=0
-  // +kubebuilder:validation:Optional
-  optional int32 lower = 7;
-
-  // A maximum value which determines whether pruner prunes or not. Used only for threshold pruner
-  // +kubebuilder:default:=0
-  // +kubebuilder:validation:Optional
-  optional int32 upper = 8;
-
-  // SHOptions is the desired options for successive halving search.
-  // All other models are saved into an archive.
-  // +kubebuilder:validation:Optional
-  optional SuccessiveHalvingOptions shOptions = 9;
+  optional TresholdPrunerOptions treshold = 6;
 }
 
 message RegressorSpec {
@@ -3621,6 +3667,28 @@ message SuccessiveHalvingSpec {
   optional string modality = 26;
 }
 
+message SucessiveHalvingOptions {
+  // Minimum number of reported trials.
+  // +kubebuilder:default:=1
+  // +kubebuilder:validation:Optional
+  optional int32 minResources = 1;
+
+  // Minimum number of reported trials.
+  // +kubebuilder:default:=1
+  // +kubebuilder:validation:Optional
+  optional int32 reductionFactor = 2;
+
+  // Minimum number of reported trials.
+  // +kubebuilder:default:=0
+  // +kubebuilder:validation:Optional
+  optional int32 minEarlyStoppingRate = 3;
+
+  // Minimum number of reported trials.
+  // +kubebuilder:default:=0
+  // +kubebuilder:validation:Optional
+  optional int32 bootstrapCount = 4;
+}
+
 // TextPipelineSpec represents a single pipeline for transforming text data
 message TextPipelineSpec {
   // The text encoder (e.g. TFIDF)
@@ -3854,6 +3922,28 @@ message TrainingStageSpec {
   // Validations defines the machine learning test cases to run against the new trained model.
   // +kubebuilder:validation:Optional
   repeated ModelValidation validations = 5;
+}
+
+message TresholdPrunerOptions {
+  // Minimum number of reported trials.
+  // +kubebuilder:default:=0
+  // +kubebuilder:validation:Optional
+  optional int32 lower = 1;
+
+  // Minimum number of reported trials.
+  // +kubebuilder:default:=0
+  // +kubebuilder:validation:Optional
+  optional int32 upper = 2;
+
+  //  Pruning is disabled until the trial exceeds the given number of step
+  // +kubebuilder:default:=0
+  // +kubebuilder:validation:Optional
+  optional int32 warmupSteps = 3;
+
+  // Interval in number of steps between the pruning checks
+  // +kubebuilder:default:=1
+  // +kubebuilder:validation:Optional
+  optional int32 intervalTrials = 4;
 }
 
 // UATStageSpec is the specification of the user acceptance test.

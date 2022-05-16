@@ -1474,6 +1474,36 @@ export namespace HyperParameterValue {
   }
 }
 
+export class HyperbandOptions extends jspb.Message {
+  getMinresources(): number;
+  setMinresources(value: number): HyperbandOptions;
+
+  getMaxresources(): number;
+  setMaxresources(value: number): HyperbandOptions;
+
+  getReductionfactor(): number;
+  setReductionfactor(value: number): HyperbandOptions;
+
+  getBootstrapcount(): number;
+  setBootstrapcount(value: number): HyperbandOptions;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): HyperbandOptions.AsObject;
+  static toObject(includeInstance: boolean, msg: HyperbandOptions): HyperbandOptions.AsObject;
+  static serializeBinaryToWriter(message: HyperbandOptions, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): HyperbandOptions;
+  static deserializeBinaryFromReader(message: HyperbandOptions, reader: jspb.BinaryReader): HyperbandOptions;
+}
+
+export namespace HyperbandOptions {
+  export type AsObject = {
+    minresources: number,
+    maxresources: number,
+    reductionfactor: number,
+    bootstrapcount: number,
+  }
+}
+
 export class ImagePipelineSpec extends jspb.Message {
   getFeaturizer(): string;
   setFeaturizer(value: string): ImagePipelineSpec;
@@ -1637,6 +1667,36 @@ export namespace Level {
     freq: string,
     aggregate: string,
     distincList: Array<string>,
+  }
+}
+
+export class MedianPrunerOptions extends jspb.Message {
+  getStartuptrials(): number;
+  setStartuptrials(value: number): MedianPrunerOptions;
+
+  getWarmupsteps(): number;
+  setWarmupsteps(value: number): MedianPrunerOptions;
+
+  getIntervaltrials(): number;
+  setIntervaltrials(value: number): MedianPrunerOptions;
+
+  getMintrials(): number;
+  setMintrials(value: number): MedianPrunerOptions;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): MedianPrunerOptions.AsObject;
+  static toObject(includeInstance: boolean, msg: MedianPrunerOptions): MedianPrunerOptions.AsObject;
+  static serializeBinaryToWriter(message: MedianPrunerOptions, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): MedianPrunerOptions;
+  static deserializeBinaryFromReader(message: MedianPrunerOptions, reader: jspb.BinaryReader): MedianPrunerOptions;
+}
+
+export namespace MedianPrunerOptions {
+  export type AsObject = {
+    startuptrials: number,
+    warmupsteps: number,
+    intervaltrials: number,
+    mintrials: number,
   }
 }
 
@@ -4040,6 +4100,40 @@ export namespace NotebookVarValue {
   }
 }
 
+export class PercentilePrunerOptions extends jspb.Message {
+  getPercentile(): number;
+  setPercentile(value: number): PercentilePrunerOptions;
+
+  getStartuptrials(): number;
+  setStartuptrials(value: number): PercentilePrunerOptions;
+
+  getWarmupsteps(): number;
+  setWarmupsteps(value: number): PercentilePrunerOptions;
+
+  getIntervaltrials(): number;
+  setIntervaltrials(value: number): PercentilePrunerOptions;
+
+  getMintrials(): number;
+  setMintrials(value: number): PercentilePrunerOptions;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PercentilePrunerOptions.AsObject;
+  static toObject(includeInstance: boolean, msg: PercentilePrunerOptions): PercentilePrunerOptions.AsObject;
+  static serializeBinaryToWriter(message: PercentilePrunerOptions, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PercentilePrunerOptions;
+  static deserializeBinaryFromReader(message: PercentilePrunerOptions, reader: jspb.BinaryReader): PercentilePrunerOptions;
+}
+
+export namespace PercentilePrunerOptions {
+  export type AsObject = {
+    percentile: number,
+    startuptrials: number,
+    warmupsteps: number,
+    intervaltrials: number,
+    mintrials: number,
+  }
+}
+
 export class PeriodSeasonalitySpec extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): PeriodSeasonalitySpec;
@@ -4096,31 +4190,30 @@ export class PrunerSpec extends jspb.Message {
   getType(): string;
   setType(value: string): PrunerSpec;
 
-  getStartuptrials(): number;
-  setStartuptrials(value: number): PrunerSpec;
+  getMedian(): MedianPrunerOptions | undefined;
+  setMedian(value?: MedianPrunerOptions): PrunerSpec;
+  hasMedian(): boolean;
+  clearMedian(): PrunerSpec;
 
-  getWarmuptrials(): number;
-  setWarmuptrials(value: number): PrunerSpec;
+  getPercentile(): PercentilePrunerOptions | undefined;
+  setPercentile(value?: PercentilePrunerOptions): PrunerSpec;
+  hasPercentile(): boolean;
+  clearPercentile(): PrunerSpec;
 
-  getMintrials(): number;
-  setMintrials(value: number): PrunerSpec;
+  getSuccessive(): SuccessiveHalvingOptions | undefined;
+  setSuccessive(value?: SuccessiveHalvingOptions): PrunerSpec;
+  hasSuccessive(): boolean;
+  clearSuccessive(): PrunerSpec;
 
-  getIntervaltrials(): number;
-  setIntervaltrials(value: number): PrunerSpec;
+  getHyperband(): HyperbandOptions | undefined;
+  setHyperband(value?: HyperbandOptions): PrunerSpec;
+  hasHyperband(): boolean;
+  clearHyperband(): PrunerSpec;
 
-  getPercentile(): number;
-  setPercentile(value: number): PrunerSpec;
-
-  getLower(): number;
-  setLower(value: number): PrunerSpec;
-
-  getUpper(): number;
-  setUpper(value: number): PrunerSpec;
-
-  getShoptions(): SuccessiveHalvingOptions | undefined;
-  setShoptions(value?: SuccessiveHalvingOptions): PrunerSpec;
-  hasShoptions(): boolean;
-  clearShoptions(): PrunerSpec;
+  getTreshold(): TresholdPrunerOptions | undefined;
+  setTreshold(value?: TresholdPrunerOptions): PrunerSpec;
+  hasTreshold(): boolean;
+  clearTreshold(): PrunerSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PrunerSpec.AsObject;
@@ -4133,14 +4226,11 @@ export class PrunerSpec extends jspb.Message {
 export namespace PrunerSpec {
   export type AsObject = {
     type: string,
-    startuptrials: number,
-    warmuptrials: number,
-    mintrials: number,
-    intervaltrials: number,
-    percentile: number,
-    lower: number,
-    upper: number,
-    shoptions?: SuccessiveHalvingOptions.AsObject,
+    median?: MedianPrunerOptions.AsObject,
+    percentile?: PercentilePrunerOptions.AsObject,
+    successive?: SuccessiveHalvingOptions.AsObject,
+    hyperband?: HyperbandOptions.AsObject,
+    treshold?: TresholdPrunerOptions.AsObject,
   }
 }
 
@@ -5248,6 +5338,36 @@ export namespace SuccessiveHalvingSpec {
   }
 }
 
+export class SucessiveHalvingOptions extends jspb.Message {
+  getMinresources(): number;
+  setMinresources(value: number): SucessiveHalvingOptions;
+
+  getReductionfactor(): number;
+  setReductionfactor(value: number): SucessiveHalvingOptions;
+
+  getMinearlystoppingrate(): number;
+  setMinearlystoppingrate(value: number): SucessiveHalvingOptions;
+
+  getBootstrapcount(): number;
+  setBootstrapcount(value: number): SucessiveHalvingOptions;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SucessiveHalvingOptions.AsObject;
+  static toObject(includeInstance: boolean, msg: SucessiveHalvingOptions): SucessiveHalvingOptions.AsObject;
+  static serializeBinaryToWriter(message: SucessiveHalvingOptions, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SucessiveHalvingOptions;
+  static deserializeBinaryFromReader(message: SucessiveHalvingOptions, reader: jspb.BinaryReader): SucessiveHalvingOptions;
+}
+
+export namespace SucessiveHalvingOptions {
+  export type AsObject = {
+    minresources: number,
+    reductionfactor: number,
+    minearlystoppingrate: number,
+    bootstrapcount: number,
+  }
+}
+
 export class TextPipelineSpec extends jspb.Message {
   getEncoder(): string;
   setEncoder(value: string): TextPipelineSpec;
@@ -5531,6 +5651,36 @@ export namespace TrainingStageSpec {
     labname: string,
     studytemplatename: string,
     validationsList: Array<ModelValidation.AsObject>,
+  }
+}
+
+export class TresholdPrunerOptions extends jspb.Message {
+  getLower(): number;
+  setLower(value: number): TresholdPrunerOptions;
+
+  getUpper(): number;
+  setUpper(value: number): TresholdPrunerOptions;
+
+  getWarmupsteps(): number;
+  setWarmupsteps(value: number): TresholdPrunerOptions;
+
+  getIntervaltrials(): number;
+  setIntervaltrials(value: number): TresholdPrunerOptions;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TresholdPrunerOptions.AsObject;
+  static toObject(includeInstance: boolean, msg: TresholdPrunerOptions): TresholdPrunerOptions.AsObject;
+  static serializeBinaryToWriter(message: TresholdPrunerOptions, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TresholdPrunerOptions;
+  static deserializeBinaryFromReader(message: TresholdPrunerOptions, reader: jspb.BinaryReader): TresholdPrunerOptions;
+}
+
+export namespace TresholdPrunerOptions {
+  export type AsObject = {
+    lower: number,
+    upper: number,
+    warmupsteps: number,
+    intervaltrials: number,
   }
 }
 

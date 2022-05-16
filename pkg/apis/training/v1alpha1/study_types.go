@@ -327,6 +327,44 @@ type PrunerSpec struct {
 	// +kubebuilder:default:=median
 	// +kubebuilder:validation:Optional
 	Type *PrunerName `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
+	// +kubebuilder:validation:Optional
+	Median *MedianPrunerOptions `json:"median,omitempty" protobuf:"bytes,2,opt,name=median"`
+	// +kubebuilder:validation:Optional
+	Precentile *PercentilePrunerOptions `json:"precentile,omitempty" protobuf:"bytes,3,opt,name=percentile"`
+	// +kubebuilder:validation:Optional
+	Successive *SuccessiveHalvingOptions `json:"successive,omitempty" protobuf:"bytes,4,opt,name=successive"`
+	// +kubebuilder:validation:Optional
+	Hyperband *HyperbandOptions `json:"hyperband,omitempty" protobuf:"bytes,5,opt,name=hyperband"`
+	// +kubebuilder:validation:Optional
+	Treshold *TresholdPrunerOptions `json:"treshold,omitempty" protobuf:"bytes,6,opt,name=treshold"`
+}
+
+type MedianPrunerOptions struct {
+	// Pruning is disabled until the given number of trials finish in the same study.
+	// +kubebuilder:default:=5
+	// +kubebuilder:validation:Optional
+	StartupTrials *int32 `json:"startupTrials,omitempty" protobuf:"varint,1,opt,name=startupTrials"`
+	//  Pruning is disabled until the trial exceeds the given number of step
+	// +kubebuilder:default:=0
+	// +kubebuilder:validation:Optional
+	WarmupSteps *int32 `json:"warmupSteps,omitempty" protobuf:"varint,2,opt,name=warmupSteps"`
+	// Interval in number of steps between the pruning checks
+	// +kubebuilder:default:=1
+	// +kubebuilder:validation:Optional
+	IntervalSteps *int32 `json:"intervalTrials,omitempty" protobuf:"varint,3,opt,name=intervalTrials"`
+	// Minimum number of reported trials.
+	// +kubebuilder:default:=1
+	// +kubebuilder:validation:Optional
+	MinTrials *int32 `json:"minTrials,omitempty" protobuf:"varint,4,opt,name=minTrials"`
+}
+
+type PercentilePrunerOptions struct {
+	// Keep specific percent of trials. Used only with percentile pruner
+	// +kubebuilder:default:=25
+	// +kubebuilder:validation:Minimum=0
+	// +kubebuilder:validation:Maximum=100
+	// +kubebuilder:validation:Optional
+	Percentile *int32 `json:"percentile,omitempty" protobuf:"varint,1,opt,name=percentile"`
 	// Pruning is disabled until the given number of trials finish in the same study.
 	// +kubebuilder:default:=5
 	// +kubebuilder:validation:Optional
@@ -334,33 +372,72 @@ type PrunerSpec struct {
 	//  Pruning is disabled until the trial exceeds the given number of step
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
-	WarmupTrials *int32 `json:"warmupTrials,omitempty" protobuf:"varint,3,opt,name=warmupTrials"`
-	// Minimum number of reported trials.
-	// +kubebuilder:default:=1
-	// +kubebuilder:validation:Optional
-	MinimumTrials *int32 `json:"minTrials,omitempty" protobuf:"varint,4,opt,name=minTrials"`
+	WarmupSteps *int32 `json:"warmupSteps,omitempty" protobuf:"varint,3,opt,name=warmupSteps"`
 	// Interval in number of steps between the pruning checks
 	// +kubebuilder:default:=1
 	// +kubebuilder:validation:Optional
-	IntervalSteps *int32 `json:"intervalTrials,omitempty" protobuf:"varint,5,opt,name=intervalTrials"`
-	// Keep specific percent of trials. Used only with percentile pruner
-	// +kubebuilder:default:=25
-	// +kubebuilder:validation:Minimum=0
-	// +kubebuilder:validation:Maximum=100
+	IntervalSteps *int32 `json:"intervalTrials,omitempty" protobuf:"varint,4,opt,name=intervalTrials"`
+	// Minimum number of reported trials.
+	// +kubebuilder:default:=1
 	// +kubebuilder:validation:Optional
-	Percentile *int32 `json:"percentile,omitempty" protobuf:"varint,6,opt,name=percentile"`
-	// A minimum value which determines whether pruner prunes or not. Used only for threshold pruner
+	MinTrials *int32 `json:"minTrials,omitempty" protobuf:"varint,5,opt,name=minTrials"`
+}
+
+type SucessiveHalvingOptions struct {
+	// Minimum number of reported trials.
+	// +kubebuilder:default:=1
+	// +kubebuilder:validation:Optional
+	MinResources *int32 `json:"minResources,omitempty" protobuf:"varint,1,opt,name=minResources"`
+	// Minimum number of reported trials.
+	// +kubebuilder:default:=1
+	// +kubebuilder:validation:Optional
+	ReductionFactor *int32 `json:"reductionFactor,omitempty" protobuf:"varint,2,opt,name=reductionFactor"`
+	// Minimum number of reported trials.
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
-	Lower *int32 `json:"lower,omitempty" protobuf:"varint,7,opt,name=lower"`
-	// A maximum value which determines whether pruner prunes or not. Used only for threshold pruner
+	MinEarlyStoppingRate *int32 `json:"minEarlyStoppingRate,omitempty" protobuf:"varint,3,opt,name=minEarlyStoppingRate"`
+	// Minimum number of reported trials.
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
-	Upper *int32 `json:"upper,omitempty" protobuf:"varint,8,opt,name=upper"`
-	// SHOptions is the desired options for successive halving search.
-	// All other models are saved into an archive.
+	BootstrapCount *int32 `json:"bootstrapCount,omitempty" protobuf:"varint,4,opt,name=bootstrapCount"`
+}
+
+type HyperbandOptions struct {
+	// Minimum number of reported trials.
+	// +kubebuilder:default:=1
 	// +kubebuilder:validation:Optional
-	SHOptions SuccessiveHalvingOptions `json:"shOptions,omitempty" protobuf:"bytes,9,opt,name=shOptions"`
+	MinResources *int32 `json:"minResources,omitempty" protobuf:"varint,1,opt,name=minResources"`
+	// Minimum number of reported trials.
+	// +kubebuilder:default:=1
+	// +kubebuilder:validation:Optional
+	MaxResources *int32 `json:"maxResources,omitempty" protobuf:"varint,2,opt,name=maxResources"`
+	// Minimum number of reported trials.
+	// +kubebuilder:default:=1
+	// +kubebuilder:validation:Optional
+	ReductionFactor *int32 `json:"reductionFactor,omitempty" protobuf:"varint,3,opt,name=reductionFactor"`
+	// Minimum number of reported trials.
+	// +kubebuilder:default:=0
+	// +kubebuilder:validation:Optional
+	BootstrapCount *int32 `json:"bootstrapCount,omitempty" protobuf:"varint,4,opt,name=bootstrapCount"`
+}
+
+type TresholdPrunerOptions struct {
+	// Minimum number of reported trials.
+	// +kubebuilder:default:=0
+	// +kubebuilder:validation:Optional
+	Lower *int32 `json:"lower,omitempty" protobuf:"varint,1,opt,name=lower"`
+	// Minimum number of reported trials.
+	// +kubebuilder:default:=0
+	// +kubebuilder:validation:Optional
+	Upper *int32 `json:"upper,omitempty" protobuf:"varint,2,opt,name=upper"`
+	//  Pruning is disabled until the trial exceeds the given number of step
+	// +kubebuilder:default:=0
+	// +kubebuilder:validation:Optional
+	WarmupSteps *int32 `json:"warmupSteps,omitempty" protobuf:"varint,3,opt,name=warmupSteps"`
+	// Interval in number of steps between the pruning checks
+	// +kubebuilder:default:=1
+	// +kubebuilder:validation:Optional
+	IntervalSteps *int32 `json:"intervalTrials,omitempty" protobuf:"varint,4,opt,name=intervalTrials"`
 }
 
 // StudyForecastSpec specifies the configuration to train a forecasting model

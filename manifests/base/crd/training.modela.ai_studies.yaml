@@ -1426,34 +1426,92 @@ spec:
                       allows you to train a large number of candidate models with
                       a subset of the dataset
                     properties:
-                      intervalTrials:
-                        default: 1
-                        description: Interval in number of steps between the pruning
-                          checks
-                        format: int32
-                        type: integer
-                      lower:
-                        default: 0
-                        description: A minimum value which determines whether pruner
-                          prunes or not. Used only for threshold pruner
-                        format: int32
-                        type: integer
-                      minTrials:
-                        default: 1
-                        description: Minimum number of reported trials.
-                        format: int32
-                        type: integer
-                      percentile:
-                        default: 25
-                        description: Keep specific percent of trials. Used only with
-                          percentile pruner
-                        format: int32
-                        maximum: 100
-                        minimum: 0
-                        type: integer
-                      shOptions:
-                        description: SHOptions is the desired options for successive
-                          halving search. All other models are saved into an archive.
+                      hyperband:
+                        properties:
+                          bootstrapCount:
+                            default: 0
+                            description: Minimum number of reported trials.
+                            format: int32
+                            type: integer
+                          maxResources:
+                            default: 1
+                            description: Minimum number of reported trials.
+                            format: int32
+                            type: integer
+                          minResources:
+                            default: 1
+                            description: Minimum number of reported trials.
+                            format: int32
+                            type: integer
+                          reductionFactor:
+                            default: 1
+                            description: Minimum number of reported trials.
+                            format: int32
+                            type: integer
+                        type: object
+                      median:
+                        properties:
+                          intervalTrials:
+                            default: 1
+                            description: Interval in number of steps between the pruning
+                              checks
+                            format: int32
+                            type: integer
+                          minTrials:
+                            default: 1
+                            description: Minimum number of reported trials.
+                            format: int32
+                            type: integer
+                          startupTrials:
+                            default: 5
+                            description: Pruning is disabled until the given number
+                              of trials finish in the same study.
+                            format: int32
+                            type: integer
+                          warmupSteps:
+                            default: 0
+                            description: Pruning is disabled until the trial exceeds
+                              the given number of step
+                            format: int32
+                            type: integer
+                        type: object
+                      precentile:
+                        properties:
+                          intervalTrials:
+                            default: 1
+                            description: Interval in number of steps between the pruning
+                              checks
+                            format: int32
+                            type: integer
+                          minTrials:
+                            default: 1
+                            description: Minimum number of reported trials.
+                            format: int32
+                            type: integer
+                          percentile:
+                            default: 25
+                            description: Keep specific percent of trials. Used only
+                              with percentile pruner
+                            format: int32
+                            maximum: 100
+                            minimum: 0
+                            type: integer
+                          startupTrials:
+                            default: 5
+                            description: Pruning is disabled until the given number
+                              of trials finish in the same study.
+                            format: int32
+                            type: integer
+                          warmupSteps:
+                            default: 0
+                            description: Pruning is disabled until the trial exceeds
+                              the given number of step
+                            format: int32
+                            type: integer
+                        type: object
+                      successive:
+                        description: SuccessiveHalvingOptions defines the parameters
+                          for a successive halving search
                         properties:
                           eliminationRate:
                             default: 3
@@ -1482,12 +1540,31 @@ spec:
                             - epochs
                             type: string
                         type: object
-                      startupTrials:
-                        default: 5
-                        description: Pruning is disabled until the given number of
-                          trials finish in the same study.
-                        format: int32
-                        type: integer
+                      treshold:
+                        properties:
+                          intervalTrials:
+                            default: 1
+                            description: Interval in number of steps between the pruning
+                              checks
+                            format: int32
+                            type: integer
+                          lower:
+                            default: 0
+                            description: Minimum number of reported trials.
+                            format: int32
+                            type: integer
+                          upper:
+                            default: 0
+                            description: Minimum number of reported trials.
+                            format: int32
+                            type: integer
+                          warmupSteps:
+                            default: 0
+                            description: Pruning is disabled until the trial exceeds
+                              the given number of step
+                            format: int32
+                            type: integer
+                        type: object
                       type:
                         default: median
                         description: The type of pruner to use during model search
@@ -1500,18 +1577,6 @@ spec:
                         - hyperband
                         - threshold
                         type: string
-                      upper:
-                        default: 0
-                        description: A maximum value which determines whether pruner
-                          prunes or not. Used only for threshold pruner
-                        format: int32
-                        type: integer
-                      warmupTrials:
-                        default: 0
-                        description: Pruning is disabled until the trial exceeds the
-                          given number of step
-                        format: int32
-                        type: integer
                     type: object
                   retainTop:
                     default: 1
