@@ -1566,7 +1566,7 @@ spec:
                             type: integer
                         type: object
                       type:
-                        default: median
+                        default: median-pruner
                         description: The type of pruner to use during model search
                         enum:
                         - patient-pruner

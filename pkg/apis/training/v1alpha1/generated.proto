@@ -2841,7 +2841,7 @@ message PeriodSpec {
 
 message PrunerSpec {
   // The type of pruner to use during model search
-  // +kubebuilder:default:=median
+  // +kubebuilder:default:=median-pruner
   // +kubebuilder:validation:Optional
   optional string type = 1;
 

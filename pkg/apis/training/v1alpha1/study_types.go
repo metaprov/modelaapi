@@ -324,7 +324,7 @@ type StudyScheduleSpec struct {
 
 type PrunerSpec struct {
 	// The type of pruner to use during model search
-	// +kubebuilder:default:=median
+	// +kubebuilder:default:=median-pruner
 	// +kubebuilder:validation:Optional
 	Type *PrunerName `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
 	// +kubebuilder:validation:Optional
