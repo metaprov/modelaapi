@@ -1509,7 +1509,7 @@ spec:
                             format: int32
                             type: integer
                         type: object
-                      successive:
+                      successiveHalving:
                         description: SuccessiveHalvingOptions defines the parameters
                           for a successive halving search
                         properties:
@@ -1540,7 +1540,7 @@ spec:
                             - epochs
                             type: string
                         type: object
-                      treshold:
+                      threshold:
                         properties:
                           intervalTrials:
                             default: 1
@@ -1569,13 +1569,12 @@ spec:
                         default: median
                         description: The type of pruner to use during model search
                         enum:
-                        - none
-                        - patient
-                        - median
-                        - percentile
-                        - sh
-                        - hyperband
-                        - threshold
+                        - patient-pruner
+                        - median-pruner
+                        - percentile-pruner
+                        - successive-halving-pruner
+                        - hyperband-pruner
+                        - threshold-pruner
                         type: string
                     type: object
                   retainTop:

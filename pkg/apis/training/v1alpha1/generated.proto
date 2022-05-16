@@ -2852,13 +2852,13 @@ message PrunerSpec {
   optional PercentilePrunerOptions percentile = 3;
 
   // +kubebuilder:validation:Optional
-  optional SuccessiveHalvingOptions successive = 4;
+  optional SuccessiveHalvingOptions successiveHalving = 4;
 
   // +kubebuilder:validation:Optional
   optional HyperbandOptions hyperband = 5;
 
   // +kubebuilder:validation:Optional
-  optional TresholdPrunerOptions treshold = 6;
+  optional TresholdPrunerOptions threshold = 6;
 }
 
 message RegressorSpec {

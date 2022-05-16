@@ -42464,9 +42464,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PrunerSpec.toObje
     type: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     median: (f = msg.getMedian()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.MedianPrunerOptions.toObject(includeInstance, f),
     percentile: (f = msg.getPercentile()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PercentilePrunerOptions.toObject(includeInstance, f),
-    successive: (f = msg.getSuccessive()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SuccessiveHalvingOptions.toObject(includeInstance, f),
+    successivehalving: (f = msg.getSuccessivehalving()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SuccessiveHalvingOptions.toObject(includeInstance, f),
     hyperband: (f = msg.getHyperband()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.HyperbandOptions.toObject(includeInstance, f),
-    treshold: (f = msg.getTreshold()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TresholdPrunerOptions.toObject(includeInstance, f)
+    threshold: (f = msg.getThreshold()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TresholdPrunerOptions.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -42520,7 +42520,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PrunerSpec.deseri
     case 4:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SuccessiveHalvingOptions;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SuccessiveHalvingOptions.deserializeBinaryFromReader);
-      msg.setSuccessive(value);
+      msg.setSuccessivehalving(value);
       break;
     case 5:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.HyperbandOptions;
@@ -42530,7 +42530,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PrunerSpec.deseri
     case 6:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TresholdPrunerOptions;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TresholdPrunerOptions.deserializeBinaryFromReader);
-      msg.setTreshold(value);
+      msg.setThreshold(value);
       break;
     default:
       reader.skipField();
@@ -42584,7 +42584,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PrunerSpec.serial
       proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PercentilePrunerOptions.serializeBinaryToWriter
     );
   }
-  f = message.getSuccessive();
+  f = message.getSuccessivehalving();
   if (f != null) {
     writer.writeMessage(
       4,
@@ -42600,7 +42600,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PrunerSpec.serial
       proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.HyperbandOptions.serializeBinaryToWriter
     );
   }
-  f = message.getTreshold();
+  f = message.getThreshold();
   if (f != null) {
     writer.writeMessage(
       6,
@@ -42722,10 +42722,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PrunerSpec.protot
 
 
 /**
- * optional SuccessiveHalvingOptions successive = 4;
+ * optional SuccessiveHalvingOptions successiveHalving = 4;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SuccessiveHalvingOptions}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PrunerSpec.prototype.getSuccessive = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PrunerSpec.prototype.getSuccessivehalving = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SuccessiveHalvingOptions} */ (
     jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SuccessiveHalvingOptions, 4));
 };
@@ -42735,7 +42735,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PrunerSpec.protot
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SuccessiveHalvingOptions|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PrunerSpec} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PrunerSpec.prototype.setSuccessive = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PrunerSpec.prototype.setSuccessivehalving = function(value) {
   return jspb.Message.setWrapperField(this, 4, value);
 };
 
@@ -42744,8 +42744,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PrunerSpec.protot
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PrunerSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PrunerSpec.prototype.clearSuccessive = function() {
-  return this.setSuccessive(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PrunerSpec.prototype.clearSuccessivehalving = function() {
+  return this.setSuccessivehalving(undefined);
 };
 
 
@@ -42753,7 +42753,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PrunerSpec.protot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PrunerSpec.prototype.hasSuccessive = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PrunerSpec.prototype.hasSuccessivehalving = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
@@ -42796,10 +42796,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PrunerSpec.protot
 
 
 /**
- * optional TresholdPrunerOptions treshold = 6;
+ * optional TresholdPrunerOptions threshold = 6;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TresholdPrunerOptions}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PrunerSpec.prototype.getTreshold = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PrunerSpec.prototype.getThreshold = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TresholdPrunerOptions} */ (
     jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TresholdPrunerOptions, 6));
 };
@@ -42809,7 +42809,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PrunerSpec.protot
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TresholdPrunerOptions|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PrunerSpec} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PrunerSpec.prototype.setTreshold = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PrunerSpec.prototype.setThreshold = function(value) {
   return jspb.Message.setWrapperField(this, 6, value);
 };
 
@@ -42818,8 +42818,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PrunerSpec.protot
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PrunerSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PrunerSpec.prototype.clearTreshold = function() {
-  return this.setTreshold(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PrunerSpec.prototype.clearThreshold = function() {
+  return this.setThreshold(undefined);
 };
 
 
@@ -42827,7 +42827,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PrunerSpec.protot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PrunerSpec.prototype.hasTreshold = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PrunerSpec.prototype.hasThreshold = function() {
   return jspb.Message.getField(this, 6) != null;
 };
 

@@ -4200,20 +4200,20 @@ export class PrunerSpec extends jspb.Message {
   hasPercentile(): boolean;
   clearPercentile(): PrunerSpec;
 
-  getSuccessive(): SuccessiveHalvingOptions | undefined;
-  setSuccessive(value?: SuccessiveHalvingOptions): PrunerSpec;
-  hasSuccessive(): boolean;
-  clearSuccessive(): PrunerSpec;
+  getSuccessivehalving(): SuccessiveHalvingOptions | undefined;
+  setSuccessivehalving(value?: SuccessiveHalvingOptions): PrunerSpec;
+  hasSuccessivehalving(): boolean;
+  clearSuccessivehalving(): PrunerSpec;
 
   getHyperband(): HyperbandOptions | undefined;
   setHyperband(value?: HyperbandOptions): PrunerSpec;
   hasHyperband(): boolean;
   clearHyperband(): PrunerSpec;
 
-  getTreshold(): TresholdPrunerOptions | undefined;
-  setTreshold(value?: TresholdPrunerOptions): PrunerSpec;
-  hasTreshold(): boolean;
-  clearTreshold(): PrunerSpec;
+  getThreshold(): TresholdPrunerOptions | undefined;
+  setThreshold(value?: TresholdPrunerOptions): PrunerSpec;
+  hasThreshold(): boolean;
+  clearThreshold(): PrunerSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PrunerSpec.AsObject;
@@ -4228,9 +4228,9 @@ export namespace PrunerSpec {
     type: string,
     median?: MedianPrunerOptions.AsObject,
     percentile?: PercentilePrunerOptions.AsObject,
-    successive?: SuccessiveHalvingOptions.AsObject,
+    successivehalving?: SuccessiveHalvingOptions.AsObject,
     hyperband?: HyperbandOptions.AsObject,
-    treshold?: TresholdPrunerOptions.AsObject,
+    threshold?: TresholdPrunerOptions.AsObject,
   }
 }
 

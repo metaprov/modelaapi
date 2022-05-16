@@ -3580,8 +3580,8 @@ func (in *PrunerSpec) DeepCopyInto(out *PrunerSpec) {
 		*out = new(HyperbandOptions)
 		(*in).DeepCopyInto(*out)
 	}
-	if in.Treshold != nil {
-		in, out := &in.Treshold, &out.Treshold
+	if in.Threshold != nil {
+		in, out := &in.Threshold, &out.Threshold
 		*out = new(TresholdPrunerOptions)
 		(*in).DeepCopyInto(*out)
 	}

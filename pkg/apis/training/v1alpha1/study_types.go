@@ -49,17 +49,17 @@ const (
 	AutoSearchMethod SamplerName = "auto"
 )
 
-// +kubebuilder:validation:Enum="none";"patient";"median";"percentile";"sh";"hyperband";"threshold";
+// +kubebuilder:validation:Enum="patient-pruner";"median-pruner";"percentile-pruner";"successive-halving-pruner";"hyperband-pruner";"threshold-pruner"
 type PrunerName string
 
 const (
-	NonePruner       PrunerName = "none"
-	PatientPruner    PrunerName = "patient"
-	MedianPruner     PrunerName = "median"
-	PercentilePruner PrunerName = "percentile"
-	SHPruner         PrunerName = "sh"
-	HyperbandPruner  PrunerName = "hyperband"
-	thresholdPruner  PrunerName = "threshold"
+	NonePruner              PrunerName = "none"
+	PatientPruner           PrunerName = "patient-pruner"
+	MedianPruner            PrunerName = "median-pruner"
+	PercentilePruner        PrunerName = "percentile-pruner"
+	SuccessiveHalvingPruner PrunerName = "successive-halving-pruner"
+	HyperbandPruner         PrunerName = "hyperband-pruner"
+	ThresholdPruner         PrunerName = "threshold-pruner"
 )
 
 // StudyConditionType is the condition of a Study
@@ -332,11 +332,11 @@ type PrunerSpec struct {
 	// +kubebuilder:validation:Optional
 	Precentile *PercentilePrunerOptions `json:"precentile,omitempty" protobuf:"bytes,3,opt,name=percentile"`
 	// +kubebuilder:validation:Optional
-	Successive *SuccessiveHalvingOptions `json:"successive,omitempty" protobuf:"bytes,4,opt,name=successive"`
+	Successive *SuccessiveHalvingOptions `json:"successiveHalving,omitempty" protobuf:"bytes,4,opt,name=successiveHalving"`
 	// +kubebuilder:validation:Optional
 	Hyperband *HyperbandOptions `json:"hyperband,omitempty" protobuf:"bytes,5,opt,name=hyperband"`
 	// +kubebuilder:validation:Optional
-	Treshold *TresholdPrunerOptions `json:"treshold,omitempty" protobuf:"bytes,6,opt,name=treshold"`
+	Threshold *TresholdPrunerOptions `json:"threshold,omitempty" protobuf:"bytes,6,opt,name=threshold"`
 }
 
 type MedianPrunerOptions struct {
