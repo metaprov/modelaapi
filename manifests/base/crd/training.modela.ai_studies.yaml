@@ -1542,7 +1542,7 @@ spec:
                         type: object
                       threshold:
                         properties:
-                          intervalTrials:
+                          intervalSteps:
                             default: 1
                             description: Interval in number of steps between the pruning
                               checks

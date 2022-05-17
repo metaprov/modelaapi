@@ -5402,8 +5402,8 @@ export class ThresholdPrunerOptions extends jspb.Message {
   getWarmupsteps(): number;
   setWarmupsteps(value: number): ThresholdPrunerOptions;
 
-  getIntervaltrials(): number;
-  setIntervaltrials(value: number): ThresholdPrunerOptions;
+  getIntervalsteps(): number;
+  setIntervalsteps(value: number): ThresholdPrunerOptions;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ThresholdPrunerOptions.AsObject;
@@ -5418,7 +5418,7 @@ export namespace ThresholdPrunerOptions {
     lower: number,
     upper: number,
     warmupsteps: number,
-    intervaltrials: number,
+    intervalsteps: number,
   }
 }
 

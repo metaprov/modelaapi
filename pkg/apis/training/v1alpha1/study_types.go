@@ -415,7 +415,7 @@ type ThresholdPrunerOptions struct {
 	// Interval in number of steps between the pruning checks
 	// +kubebuilder:default:=1
 	// +kubebuilder:validation:Optional
-	IntervalSteps *int32 `json:"intervalTrials,omitempty" protobuf:"varint,4,opt,name=intervalTrials"`
+	IntervalSteps *int32 `json:"intervalSteps,omitempty" protobuf:"varint,4,opt,name=intervalSteps"`
 }
 
 // StudyForecastSpec specifies the configuration to train a forecasting model

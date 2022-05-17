@@ -3730,7 +3730,7 @@ message ThresholdPrunerOptions {
   // Interval in number of steps between the pruning checks
   // +kubebuilder:default:=1
   // +kubebuilder:validation:Optional
-  optional int32 intervalTrials = 4;
+  optional int32 intervalSteps = 4;
 }
 
 message TimeSeriesDataSpec {

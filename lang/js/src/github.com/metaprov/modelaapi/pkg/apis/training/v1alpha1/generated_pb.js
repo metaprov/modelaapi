@@ -53752,7 +53752,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ThresholdPrunerOp
     lower: (f = jspb.Message.getOptionalFloatingPointField(msg, 1)) == null ? undefined : f,
     upper: (f = jspb.Message.getOptionalFloatingPointField(msg, 2)) == null ? undefined : f,
     warmupsteps: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-    intervaltrials: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
+    intervalsteps: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -53803,7 +53803,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ThresholdPrunerOp
       break;
     case 4:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setIntervaltrials(value);
+      msg.setIntervalsteps(value);
       break;
     default:
       reader.skipField();
@@ -53974,10 +53974,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ThresholdPrunerOp
 
 
 /**
- * optional int32 intervalTrials = 4;
+ * optional int32 intervalSteps = 4;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ThresholdPrunerOptions.prototype.getIntervaltrials = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ThresholdPrunerOptions.prototype.getIntervalsteps = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
@@ -53986,7 +53986,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ThresholdPrunerOp
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ThresholdPrunerOptions} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ThresholdPrunerOptions.prototype.setIntervaltrials = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ThresholdPrunerOptions.prototype.setIntervalsteps = function(value) {
   return jspb.Message.setField(this, 4, value);
 };
 
@@ -53995,7 +53995,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ThresholdPrunerOp
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ThresholdPrunerOptions} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ThresholdPrunerOptions.prototype.clearIntervaltrials = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ThresholdPrunerOptions.prototype.clearIntervalsteps = function() {
   return jspb.Message.setField(this, 4, undefined);
 };
 
@@ -54004,7 +54004,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ThresholdPrunerOp
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ThresholdPrunerOptions.prototype.hasIntervaltrials = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ThresholdPrunerOptions.prototype.hasIntervalsteps = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
