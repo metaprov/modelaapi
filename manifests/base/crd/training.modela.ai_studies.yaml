@@ -1430,22 +1430,26 @@ spec:
                         properties:
                           bootstrapCount:
                             default: 0
-                            description: Minimum number of reported trials.
+                            description: Parameter specifying the number of trials
+                              required in a rung before any trial can be promoted
                             format: int32
                             type: integer
                           maxResources:
                             default: 1
-                            description: Minimum number of reported trials.
+                            description: A parameter for specifying the maximum resource
+                              allocated to a trial
                             format: int32
                             type: integer
                           minResources:
                             default: 1
-                            description: Minimum number of reported trials.
+                            description: "A parameter for specifying the minimum resource
+                              allocated to a trial noted as \U0001D45F in the paper"
                             format: int32
                             type: integer
                           reductionFactor:
-                            default: 1
-                            description: Minimum number of reported trials.
+                            default: 3
+                            description: A parameter for specifying reduction factor
+                              of promotable trials
                             format: int32
                             type: integer
                         type: object
@@ -1490,8 +1494,8 @@ spec:
                             type: integer
                           percentile:
                             default: 25
-                            description: Keep specific percent of trials. Used only
-                              with percentile pruner
+                            description: Percentile which must be between 0 and 100
+                              inclusive
                             format: int32
                             maximum: 100
                             minimum: 0
@@ -1510,35 +1514,31 @@ spec:
                             type: integer
                         type: object
                       successiveHalving:
-                        description: SuccessiveHalvingOptions defines the parameters
-                          for a successive halving search
                         properties:
-                          eliminationRate:
-                            default: 3
-                            description: The denominator for the fraction of models
-                              that will be promoted to the next round (i.e. an EliminationRate
-                              of 3 will only promote 1/3rd models to the next round)
+                          bootstrapCount:
+                            default: 0
+                            description: Minimum number of trials that need to complete
+                              a rung before any trial is considered for promotion
+                              into the next rung.
                             format: int32
-                            minimum: 0
                             type: integer
-                          maxBudget:
-                            default: 81
-                            description: The maximum budget allocated to models during
-                              the successive halving search. For classical models,
-                              this represents the number percentage (0 through 100)
-                              of data that can be allocated to the model for training
+                          minEarlyStoppingRate:
+                            default: 0
+                            description: A parameter for specifying the minimum early-stopping
+                              rate
                             format: int32
-                            minimum: 0
                             type: integer
-                          modality:
-                            default: epochs
-                            description: The type of modality, based on the type of
-                              model For classical models, it should be based on data
-                              percentage For deep models, it should be based on epochs
-                            enum:
-                            - data
-                            - epochs
-                            type: string
+                          minResources:
+                            default: 1
+                            description: Minimum number of reported trials.
+                            format: int32
+                            type: integer
+                          reductionFactor:
+                            default: 4
+                            description: A parameter for specifying reduction factor
+                              of promotable trials
+                            format: int32
+                            type: integer
                         type: object
                       threshold:
                         properties:
@@ -1550,14 +1550,16 @@ spec:
                             type: integer
                           lower:
                             default: 0
-                            description: Minimum number of reported trials.
-                            format: int32
-                            type: integer
+                            description: A minimum value which determines whether
+                              pruner prunes or not. If an intermediate value is smaller
+                              than lower, it prunes.
+                            type: number
                           upper:
                             default: 0
-                            description: Minimum number of reported trials.
-                            format: int32
-                            type: integer
+                            description: A maximum value which determines whether
+                              pruner prunes or not. If an intermediate value is larger
+                              than upper, it prunes.
+                            type: number
                           warmupSteps:
                             default: 0
                             description: Pruning is disabled until the trial exceeds

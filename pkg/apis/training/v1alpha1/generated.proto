@@ -949,22 +949,22 @@ message HyperParameterValue {
 }
 
 message HyperbandOptions {
-  // Minimum number of reported trials.
+  // A parameter for specifying the minimum resource allocated to a trial noted as 𝑟 in the paper
   // +kubebuilder:default:=1
   // +kubebuilder:validation:Optional
   optional int32 minResources = 1;
 
-  // Minimum number of reported trials.
+  // A parameter for specifying the maximum resource allocated to a trial
   // +kubebuilder:default:=1
   // +kubebuilder:validation:Optional
   optional int32 maxResources = 2;
 
-  // Minimum number of reported trials.
-  // +kubebuilder:default:=1
+  // A parameter for specifying reduction factor of promotable trials
+  // +kubebuilder:default:=3
   // +kubebuilder:validation:Optional
   optional int32 reductionFactor = 3;
 
-  // Minimum number of reported trials.
+  // Parameter specifying the number of trials required in a rung before any trial can be promoted
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
   optional int32 bootstrapCount = 4;
@@ -2778,7 +2778,7 @@ message NotebookVarValue {
 }
 
 message PercentilePrunerOptions {
-  // Keep specific percent of trials. Used only with percentile pruner
+  // Percentile which must be between 0 and 100 inclusive
   // +kubebuilder:default:=25
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Maximum=100
@@ -3611,28 +3611,26 @@ message StudyStatus {
   repeated StudyCondition conditions = 35;
 }
 
-// SuccessiveHalvingOptions defines the parameters for a successive halving search
 message SuccessiveHalvingOptions {
-  // The maximum budget allocated to models during the successive halving search. For classical models, this
-  // represents the number percentage (0 through 100) of data that can be allocated to the model for training
-  // +kubebuilder:default:=81
-  // +kubebuilder:validation:Minimum=0
+  // Minimum number of reported trials.
+  // +kubebuilder:default:=1
   // +kubebuilder:validation:Optional
-  optional int32 maxBudget = 1;
+  optional int32 minResources = 1;
 
-  // The denominator for the fraction of models that will be promoted to the next round
-  // (i.e. an EliminationRate of 3 will only promote 1/3rd models to the next round)
-  // +kubebuilder:default:=3
-  // +kubebuilder:validation:Minimum=0
+  // A parameter for specifying reduction factor of promotable trials
+  // +kubebuilder:default:=4
   // +kubebuilder:validation:Optional
-  optional int32 eliminationRate = 2;
+  optional int32 reductionFactor = 2;
 
-  // The type of modality, based on the type of model
-  // For classical models, it should be based on data percentage
-  // For deep models, it should be based on epochs
-  // +kubebuilder:default:=epochs
+  // A parameter for specifying the minimum early-stopping rate
+  // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
-  optional string modality = 3;
+  optional int32 minEarlyStoppingRate = 3;
+
+  // Minimum number of trials that need to complete a rung before any trial is considered for promotion into the next rung.
+  // +kubebuilder:default:=0
+  // +kubebuilder:validation:Optional
+  optional int32 bootstrapCount = 4;
 }
 
 // SuccessiveHalvingSpec records the position of a single model in a successive halving search
@@ -3665,28 +3663,6 @@ message SuccessiveHalvingSpec {
   // For deep models, it should be based on epochs
   // +kubebuilder:validation:Optional
   optional string modality = 26;
-}
-
-message SucessiveHalvingOptions {
-  // Minimum number of reported trials.
-  // +kubebuilder:default:=1
-  // +kubebuilder:validation:Optional
-  optional int32 minResources = 1;
-
-  // Minimum number of reported trials.
-  // +kubebuilder:default:=1
-  // +kubebuilder:validation:Optional
-  optional int32 reductionFactor = 2;
-
-  // Minimum number of reported trials.
-  // +kubebuilder:default:=0
-  // +kubebuilder:validation:Optional
-  optional int32 minEarlyStoppingRate = 3;
-
-  // Minimum number of reported trials.
-  // +kubebuilder:default:=0
-  // +kubebuilder:validation:Optional
-  optional int32 bootstrapCount = 4;
 }
 
 // TextPipelineSpec represents a single pipeline for transforming text data
@@ -3925,15 +3901,15 @@ message TrainingStageSpec {
 }
 
 message TresholdPrunerOptions {
-  // Minimum number of reported trials.
+  // A minimum value which determines whether pruner prunes or not. If an intermediate value is smaller than lower, it prunes.
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
-  optional int32 lower = 1;
+  optional double lower = 1;
 
-  // Minimum number of reported trials.
+  // A maximum value which determines whether pruner prunes or not. If an intermediate value is larger than upper, it prunes.
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
-  optional int32 upper = 2;
+  optional double upper = 2;
 
   //  Pruning is disabled until the trial exceeds the given number of step
   // +kubebuilder:default:=0

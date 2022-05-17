@@ -5279,14 +5279,17 @@ export namespace StudyStatus {
 }
 
 export class SuccessiveHalvingOptions extends jspb.Message {
-  getMaxbudget(): number;
-  setMaxbudget(value: number): SuccessiveHalvingOptions;
+  getMinresources(): number;
+  setMinresources(value: number): SuccessiveHalvingOptions;
 
-  getEliminationrate(): number;
-  setEliminationrate(value: number): SuccessiveHalvingOptions;
+  getReductionfactor(): number;
+  setReductionfactor(value: number): SuccessiveHalvingOptions;
 
-  getModality(): string;
-  setModality(value: string): SuccessiveHalvingOptions;
+  getMinearlystoppingrate(): number;
+  setMinearlystoppingrate(value: number): SuccessiveHalvingOptions;
+
+  getBootstrapcount(): number;
+  setBootstrapcount(value: number): SuccessiveHalvingOptions;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SuccessiveHalvingOptions.AsObject;
@@ -5298,9 +5301,10 @@ export class SuccessiveHalvingOptions extends jspb.Message {
 
 export namespace SuccessiveHalvingOptions {
   export type AsObject = {
-    maxbudget: number,
-    eliminationrate: number,
-    modality: string,
+    minresources: number,
+    reductionfactor: number,
+    minearlystoppingrate: number,
+    bootstrapcount: number,
   }
 }
 
@@ -5335,36 +5339,6 @@ export namespace SuccessiveHalvingSpec {
     rung: number,
     confid: number,
     modality: string,
-  }
-}
-
-export class SucessiveHalvingOptions extends jspb.Message {
-  getMinresources(): number;
-  setMinresources(value: number): SucessiveHalvingOptions;
-
-  getReductionfactor(): number;
-  setReductionfactor(value: number): SucessiveHalvingOptions;
-
-  getMinearlystoppingrate(): number;
-  setMinearlystoppingrate(value: number): SucessiveHalvingOptions;
-
-  getBootstrapcount(): number;
-  setBootstrapcount(value: number): SucessiveHalvingOptions;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): SucessiveHalvingOptions.AsObject;
-  static toObject(includeInstance: boolean, msg: SucessiveHalvingOptions): SucessiveHalvingOptions.AsObject;
-  static serializeBinaryToWriter(message: SucessiveHalvingOptions, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): SucessiveHalvingOptions;
-  static deserializeBinaryFromReader(message: SucessiveHalvingOptions, reader: jspb.BinaryReader): SucessiveHalvingOptions;
-}
-
-export namespace SucessiveHalvingOptions {
-  export type AsObject = {
-    minresources: number,
-    reductionfactor: number,
-    minearlystoppingrate: number,
-    bootstrapcount: number,
   }
 }
 

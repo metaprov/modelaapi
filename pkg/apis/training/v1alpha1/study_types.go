@@ -141,28 +141,6 @@ type Study struct {
 	Status            StudyStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
 }
 
-// SuccessiveHalvingOptions defines the parameters for a successive halving search
-type SuccessiveHalvingOptions struct {
-	// The maximum budget allocated to models during the successive halving search. For classical models, this
-	// represents the number percentage (0 through 100) of data that can be allocated to the model for training
-	// +kubebuilder:default:=81
-	// +kubebuilder:validation:Minimum=0
-	// +kubebuilder:validation:Optional
-	MaxBudget *int32 `json:"maxBudget,omitempty" protobuf:"varint,1,opt,name=maxBudget"`
-	// The denominator for the fraction of models that will be promoted to the next round
-	// (i.e. an EliminationRate of 3 will only promote 1/3rd models to the next round)
-	// +kubebuilder:default:=3
-	// +kubebuilder:validation:Minimum=0
-	// +kubebuilder:validation:Optional
-	EliminationRate *int32 `json:"eliminationRate,omitempty" protobuf:"varint,2,opt,name=eliminationRate"`
-	// The type of modality, based on the type of model
-	// For classical models, it should be based on data percentage
-	// For deep models, it should be based on epochs
-	// +kubebuilder:default:=epochs
-	// +kubebuilder:validation:Optional
-	Modality *catalog.ModalityType `json:"modality,omitempty" protobuf:"bytes,3,opt,name=modality"`
-}
-
 // SearchSpec specifies the configuration for a distributed model search
 type SearchSpec struct {
 	// The hyper-parameter optimization search method
@@ -359,7 +337,7 @@ type MedianPrunerOptions struct {
 }
 
 type PercentilePrunerOptions struct {
-	// Keep specific percent of trials. Used only with percentile pruner
+	// Percentile which must be between 0 and 100 inclusive
 	// +kubebuilder:default:=25
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Maximum=100
@@ -383,53 +361,53 @@ type PercentilePrunerOptions struct {
 	MinTrials *int32 `json:"minTrials,omitempty" protobuf:"varint,5,opt,name=minTrials"`
 }
 
-type SucessiveHalvingOptions struct {
+type SuccessiveHalvingOptions struct {
 	// Minimum number of reported trials.
 	// +kubebuilder:default:=1
 	// +kubebuilder:validation:Optional
 	MinResources *int32 `json:"minResources,omitempty" protobuf:"varint,1,opt,name=minResources"`
-	// Minimum number of reported trials.
-	// +kubebuilder:default:=1
+	// A parameter for specifying reduction factor of promotable trials
+	// +kubebuilder:default:=4
 	// +kubebuilder:validation:Optional
 	ReductionFactor *int32 `json:"reductionFactor,omitempty" protobuf:"varint,2,opt,name=reductionFactor"`
-	// Minimum number of reported trials.
+	// A parameter for specifying the minimum early-stopping rate
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
 	MinEarlyStoppingRate *int32 `json:"minEarlyStoppingRate,omitempty" protobuf:"varint,3,opt,name=minEarlyStoppingRate"`
-	// Minimum number of reported trials.
+	// Minimum number of trials that need to complete a rung before any trial is considered for promotion into the next rung.
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
 	BootstrapCount *int32 `json:"bootstrapCount,omitempty" protobuf:"varint,4,opt,name=bootstrapCount"`
 }
 
 type HyperbandOptions struct {
-	// Minimum number of reported trials.
+	// A parameter for specifying the minimum resource allocated to a trial noted as 𝑟 in the paper
 	// +kubebuilder:default:=1
 	// +kubebuilder:validation:Optional
 	MinResources *int32 `json:"minResources,omitempty" protobuf:"varint,1,opt,name=minResources"`
-	// Minimum number of reported trials.
+	// A parameter for specifying the maximum resource allocated to a trial
 	// +kubebuilder:default:=1
 	// +kubebuilder:validation:Optional
 	MaxResources *int32 `json:"maxResources,omitempty" protobuf:"varint,2,opt,name=maxResources"`
-	// Minimum number of reported trials.
-	// +kubebuilder:default:=1
+	// A parameter for specifying reduction factor of promotable trials
+	// +kubebuilder:default:=3
 	// +kubebuilder:validation:Optional
 	ReductionFactor *int32 `json:"reductionFactor,omitempty" protobuf:"varint,3,opt,name=reductionFactor"`
-	// Minimum number of reported trials.
+	// Parameter specifying the number of trials required in a rung before any trial can be promoted
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
 	BootstrapCount *int32 `json:"bootstrapCount,omitempty" protobuf:"varint,4,opt,name=bootstrapCount"`
 }
 
 type TresholdPrunerOptions struct {
-	// Minimum number of reported trials.
+	// A minimum value which determines whether pruner prunes or not. If an intermediate value is smaller than lower, it prunes.
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
-	Lower *int32 `json:"lower,omitempty" protobuf:"varint,1,opt,name=lower"`
-	// Minimum number of reported trials.
+	Lower *float64 `json:"lower,omitempty" protobuf:"varint,1,opt,name=lower"`
+	// A maximum value which determines whether pruner prunes or not. If an intermediate value is larger than upper, it prunes.
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
-	Upper *int32 `json:"upper,omitempty" protobuf:"varint,2,opt,name=upper"`
+	Upper *float64 `json:"upper,omitempty" protobuf:"varint,2,opt,name=upper"`
 	//  Pruning is disabled until the trial exceeds the given number of step
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
