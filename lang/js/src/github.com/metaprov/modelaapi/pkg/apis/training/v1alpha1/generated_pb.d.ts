@@ -4210,8 +4210,8 @@ export class PrunerSpec extends jspb.Message {
   hasHyperband(): boolean;
   clearHyperband(): PrunerSpec;
 
-  getThreshold(): TresholdPrunerOptions | undefined;
-  setThreshold(value?: TresholdPrunerOptions): PrunerSpec;
+  getThreshold(): ThresholdPrunerOptions | undefined;
+  setThreshold(value?: ThresholdPrunerOptions): PrunerSpec;
   hasThreshold(): boolean;
   clearThreshold(): PrunerSpec;
 
@@ -4230,7 +4230,7 @@ export namespace PrunerSpec {
     percentile?: PercentilePrunerOptions.AsObject,
     successivehalving?: SuccessiveHalvingOptions.AsObject,
     hyperband?: HyperbandOptions.AsObject,
-    threshold?: TresholdPrunerOptions.AsObject,
+    threshold?: ThresholdPrunerOptions.AsObject,
   }
 }
 
@@ -5392,6 +5392,36 @@ export namespace TextPipelineSpec {
   }
 }
 
+export class ThresholdPrunerOptions extends jspb.Message {
+  getLower(): number;
+  setLower(value: number): ThresholdPrunerOptions;
+
+  getUpper(): number;
+  setUpper(value: number): ThresholdPrunerOptions;
+
+  getWarmupsteps(): number;
+  setWarmupsteps(value: number): ThresholdPrunerOptions;
+
+  getIntervaltrials(): number;
+  setIntervaltrials(value: number): ThresholdPrunerOptions;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ThresholdPrunerOptions.AsObject;
+  static toObject(includeInstance: boolean, msg: ThresholdPrunerOptions): ThresholdPrunerOptions.AsObject;
+  static serializeBinaryToWriter(message: ThresholdPrunerOptions, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ThresholdPrunerOptions;
+  static deserializeBinaryFromReader(message: ThresholdPrunerOptions, reader: jspb.BinaryReader): ThresholdPrunerOptions;
+}
+
+export namespace ThresholdPrunerOptions {
+  export type AsObject = {
+    lower: number,
+    upper: number,
+    warmupsteps: number,
+    intervaltrials: number,
+  }
+}
+
 export class TimeSeriesDataSpec extends jspb.Message {
   getTimecolumn(): string;
   setTimecolumn(value: string): TimeSeriesDataSpec;
@@ -5625,36 +5655,6 @@ export namespace TrainingStageSpec {
     labname: string,
     studytemplatename: string,
     validationsList: Array<ModelValidation.AsObject>,
-  }
-}
-
-export class TresholdPrunerOptions extends jspb.Message {
-  getLower(): number;
-  setLower(value: number): TresholdPrunerOptions;
-
-  getUpper(): number;
-  setUpper(value: number): TresholdPrunerOptions;
-
-  getWarmupsteps(): number;
-  setWarmupsteps(value: number): TresholdPrunerOptions;
-
-  getIntervaltrials(): number;
-  setIntervaltrials(value: number): TresholdPrunerOptions;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): TresholdPrunerOptions.AsObject;
-  static toObject(includeInstance: boolean, msg: TresholdPrunerOptions): TresholdPrunerOptions.AsObject;
-  static serializeBinaryToWriter(message: TresholdPrunerOptions, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): TresholdPrunerOptions;
-  static deserializeBinaryFromReader(message: TresholdPrunerOptions, reader: jspb.BinaryReader): TresholdPrunerOptions;
-}
-
-export namespace TresholdPrunerOptions {
-  export type AsObject = {
-    lower: number,
-    upper: number,
-    warmupsteps: number,
-    intervaltrials: number,
   }
 }
 

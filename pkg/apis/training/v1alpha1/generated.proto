@@ -2858,7 +2858,7 @@ message PrunerSpec {
   optional HyperbandOptions hyperband = 5;
 
   // +kubebuilder:validation:Optional
-  optional TresholdPrunerOptions threshold = 6;
+  optional ThresholdPrunerOptions threshold = 6;
 }
 
 message RegressorSpec {
@@ -3711,6 +3711,28 @@ message TextPipelineSpec {
   optional int32 maxSvdComponents = 9;
 }
 
+message ThresholdPrunerOptions {
+  // A minimum value which determines whether pruner prunes or not. If an intermediate value is smaller than lower, it prunes.
+  // +kubebuilder:default:=0
+  // +kubebuilder:validation:Optional
+  optional double lower = 1;
+
+  // A maximum value which determines whether pruner prunes or not. If an intermediate value is larger than upper, it prunes.
+  // +kubebuilder:default:=0
+  // +kubebuilder:validation:Optional
+  optional double upper = 2;
+
+  //  Pruning is disabled until the trial exceeds the given number of step
+  // +kubebuilder:default:=0
+  // +kubebuilder:validation:Optional
+  optional int32 warmupSteps = 3;
+
+  // Interval in number of steps between the pruning checks
+  // +kubebuilder:default:=1
+  // +kubebuilder:validation:Optional
+  optional int32 intervalTrials = 4;
+}
+
 message TimeSeriesDataSpec {
   // General Forecast attributes:
   // The name of the time column
@@ -3898,28 +3920,6 @@ message TrainingStageSpec {
   // Validations defines the machine learning test cases to run against the new trained model.
   // +kubebuilder:validation:Optional
   repeated ModelValidation validations = 5;
-}
-
-message TresholdPrunerOptions {
-  // A minimum value which determines whether pruner prunes or not. If an intermediate value is smaller than lower, it prunes.
-  // +kubebuilder:default:=0
-  // +kubebuilder:validation:Optional
-  optional double lower = 1;
-
-  // A maximum value which determines whether pruner prunes or not. If an intermediate value is larger than upper, it prunes.
-  // +kubebuilder:default:=0
-  // +kubebuilder:validation:Optional
-  optional double upper = 2;
-
-  //  Pruning is disabled until the trial exceeds the given number of step
-  // +kubebuilder:default:=0
-  // +kubebuilder:validation:Optional
-  optional int32 warmupSteps = 3;
-
-  // Interval in number of steps between the pruning checks
-  // +kubebuilder:default:=1
-  // +kubebuilder:validation:Optional
-  optional int32 intervalTrials = 4;
 }
 
 // UATStageSpec is the specification of the user acceptance test.

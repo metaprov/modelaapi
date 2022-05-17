@@ -314,7 +314,7 @@ type PrunerSpec struct {
 	// +kubebuilder:validation:Optional
 	Hyperband *HyperbandOptions `json:"hyperband,omitempty" protobuf:"bytes,5,opt,name=hyperband"`
 	// +kubebuilder:validation:Optional
-	Threshold *TresholdPrunerOptions `json:"threshold,omitempty" protobuf:"bytes,6,opt,name=threshold"`
+	Threshold *ThresholdPrunerOptions `json:"threshold,omitempty" protobuf:"bytes,6,opt,name=threshold"`
 }
 
 type MedianPrunerOptions struct {
@@ -399,7 +399,7 @@ type HyperbandOptions struct {
 	BootstrapCount *int32 `json:"bootstrapCount,omitempty" protobuf:"varint,4,opt,name=bootstrapCount"`
 }
 
-type TresholdPrunerOptions struct {
+type ThresholdPrunerOptions struct {
 	// A minimum value which determines whether pruner prunes or not. If an intermediate value is smaller than lower, it prunes.
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
