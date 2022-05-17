@@ -261,8 +261,7 @@ func (study *Study) validateTask(fldPath *field.Path) field.ErrorList {
 //==============================================================================
 
 func (svo *SuccessiveHalvingOptions) Default() {
-	svo.MaxBudget = util.Int32Ptr(8)
-	svo.EliminationRate = util.Int32Ptr(3)
+
 }
 
 func (ms *SearchSpec) Default(task *catalog.MLTask) {
