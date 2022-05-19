@@ -304,5 +304,55 @@ func (ms *SearchSpec) Default(task *catalog.MLTask) {
 }
 
 func (pspec *PrunerSpec) Default() {
+	switch *pspec.Type {
+	case MedianPruner: // set default median pruner
+		if pspec.Median == nil {
+			pspec.Median = &MedianPrunerOptions{
+				// Pruning is disabled until the given number of trials finish in the same study.
+				StartupTrials: util.Int32Ptr(5),
+				WarmupSteps:   util.Int32Ptr(0),
+				IntervalSteps: util.Int32Ptr(1),
+				MinTrials:     util.Int32Ptr(1),
+			}
+		}
+	case PercentilePruner:
+		if pspec.Percentile == nil {
+			pspec.Percentile = &PercentilePrunerOptions{
+				Percentile:    util.Int32Ptr(25),
+				StartupTrials: util.Int32Ptr(5),
+				WarmupSteps:   util.Int32Ptr(0),
+				IntervalSteps: util.Int32Ptr(1),
+				MinTrials:     util.Int32Ptr(1),
+			}
+		}
+	case SuccessiveHalvingPruner:
+		if pspec.Successive == nil {
+			pspec.Successive = &SuccessiveHalvingOptions{
+				MinResources:         util.Int32Ptr(1),
+				ReductionFactor:      util.Int32Ptr(4),
+				MinEarlyStoppingRate: util.Int32Ptr(0),
+				BootstrapCount:       util.Int32Ptr(0),
+			}
+		}
+	case HyperbandPruner:
+		if pspec.Hyperband == nil {
+			pspec.Hyperband = &HyperbandOptions{
+				MinResources:    util.Int32Ptr(1),
+				MaxResources:    util.Int32Ptr(1),
+				ReductionFactor: util.Int32Ptr(3),
+				BootstrapCount:  util.Int32Ptr(0),
+			}
+		}
+	case ThresholdPruner:
+		if pspec.Threshold == nil {
+			pspec.Threshold = &ThresholdPrunerOptions{
+				Lower:         util.Float64Ptr(0),
+				Upper:         util.Float64Ptr(0),
+				WarmupSteps:   util.Int32Ptr(0),
+				IntervalSteps: util.Int32Ptr(1),
+			}
+		}
+
+	}
 
 }
