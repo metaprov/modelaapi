@@ -228,7 +228,7 @@ spec:
                 maxLength: 512
                 type: string
               driftDetection:
-                description: The spec for generting a density model for this study.
+                description: The spec for generating a density model for this study.
                 properties:
                   enabled:
                     default: false
@@ -518,12 +518,6 @@ spec:
                               - avg
                               - median
                               type: string
-                            distinc:
-                              description: The distinct values of the column for this
-                                level
-                              items:
-                                type: string
-                              type: array
                             freq:
                               description: The freq of the level
                               enum:
@@ -543,6 +537,12 @@ spec:
                             string:
                               description: The name of the level - the column name
                               type: string
+                            values:
+                              description: The distinct values of the column for this
+                                level
+                              items:
+                                type: string
+                              type: array
                           type: object
                         type: array
                       itemLevel:
@@ -557,12 +557,6 @@ spec:
                             - avg
                             - median
                             type: string
-                          distinc:
-                            description: The distinct values of the column for this
-                              level
-                            items:
-                              type: string
-                            type: array
                           freq:
                             description: The freq of the level
                             enum:
@@ -582,6 +576,12 @@ spec:
                           string:
                             description: The name of the level - the column name
                             type: string
+                          values:
+                            description: The distinct values of the column for this
+                              level
+                            items:
+                              type: string
+                            type: array
                         type: object
                       notifierName:
                         description: Optional notifier to use when the forecast is
@@ -1455,7 +1455,7 @@ spec:
                         type: object
                       median:
                         properties:
-                          intervalTrials:
+                          intervalSteps:
                             default: 1
                             description: Interval in number of steps between the pruning
                               checks
@@ -1479,7 +1479,7 @@ spec:
                             format: int32
                             type: integer
                         type: object
-                      precentile:
+                      percentile:
                         properties:
                           intervalTrials:
                             default: 1
@@ -2145,7 +2145,7 @@ spec:
                         description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                         type: string
                     type: object
-                  loglevel:
+                  logLevel:
                     default: info
                     description: The maximum log level for logs produced by Jobs associated
                       with the Model
@@ -2707,7 +2707,7 @@ spec:
                         outlierHandling:
                           default: none
                           description: The method to use when handling outliers Apply
-                            only to numeric datatypes.
+                            only to numeric data types.
                           enum:
                           - trim-outliers
                           - winsorizer-outliers

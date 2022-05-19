@@ -450,7 +450,7 @@ message DeploymentStageSpec {
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 5;
 }
 
-// The spec for generting a density model for this study.
+// The spec for generating a density model for this study.
 message DriftDetectionSpec {
   // Indicates if density models should be created.
   // +kubebuilder:default:=false
@@ -505,7 +505,7 @@ message EnsembleSpec {
   // +kubebuilder:validation:Optional
   optional ClassicalEstimatorSpec final = 3;
 
-  // The ensembling method
+  // The ensemble type method
   // +kubebuilder:validation:Optional
   optional string type = 4;
 }
@@ -576,7 +576,7 @@ message FeatureEngineeringPipeline {
 
   // The method to use when handling outliers
   // +kubebuilder:default:=none
-  // Apply only to numeric datatypes.
+  // Apply only to numeric data types.
   optional string outlierHandling = 9;
 
   // The method to use when handling the date-time data type
@@ -1064,7 +1064,7 @@ message Level {
   optional string aggregate = 4;
 
   // The distinct values of the column for this level
-  repeated string distinc = 5;
+  repeated string values = 5;
 }
 
 message MedianPrunerOptions {
@@ -1081,7 +1081,7 @@ message MedianPrunerOptions {
   // Interval in number of steps between the pruning checks
   // +kubebuilder:default:=1
   // +kubebuilder:validation:Optional
-  optional int32 intervalTrials = 3;
+  optional int32 intervalSteps = 3;
 
   // Minimum number of reported trials.
   // +kubebuilder:default:=1
@@ -2243,7 +2243,7 @@ message ModelStatus {
 
   // The URI to the misclassification file produced during the testing phase
   // +kubebuilder:validation:Optional
-  optional string misclassUri = 23;
+  optional string misclassificationUri = 23;
 
   // The URI to the model tarbell file
   // +kubebuilder:validation:Optional
@@ -2335,7 +2335,7 @@ message ModelStatus {
 
   // Sha256 of the model tar file
   // +kubebuilder:validation:Optional
-  optional string tarfileHash = 47;
+  optional string tarFileHash = 47;
 
   // Sha256 of the model image
   // +kubebuilder:validation:Optional
@@ -2371,11 +2371,11 @@ message ModelStatus {
 
   // The Roc/Auc curve of the trained model
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RocAucCurve rocauccurve = 59;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RocAucCurve rocCurve = 59;
 
   // The Precision/Recall curve of the trained model
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PRCurve prcurve = 60;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PRCurve prCurve = 60;
 
   // The confusion matrix of the trained model
   // +kubebuilder:validation:Optional
@@ -3885,7 +3885,7 @@ message TrainingSpec {
   // The maximum log level for logs produced by Jobs associated with the Model
   // +kubebuilder:default:=info
   // +kubebuilder:validation:Optional
-  optional string loglevel = 19;
+  optional string logLevel = 19;
 
   // The maximum time, in seconds, that Jobs associated with the Model can run for before being forcefully cancelled.
   // +kubebuilder:default:=600

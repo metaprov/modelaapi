@@ -98,14 +98,14 @@ service GRPCInferenceService
 
   rpc Predict(PredictRequest) returns (PredictResponse) {
     option (google.api.http) = {
-      post: "/v1/predictors/{predictor}:predict"
+      post: "/v1/predictors/{predictor}"
       body: "*"
     };
   }
 
   rpc PredictVersion(PredictVersionRequest) returns (PredictResponse) {
     option (google.api.http) = {
-      post: "/v1/predictors/{predictor}/models/{modelversion}:predict"
+      post: "/v1/predictors/{predictor}/models/{modelversion}"
       body: "*"
     };
   }

@@ -17978,7 +17978,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.toObject = 
     horizon: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     freq: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     aggregate: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    distincList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f
+    valuesList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -18033,7 +18033,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.deserialize
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
-      msg.addDistinc(value);
+      msg.addValues(value);
       break;
     default:
       reader.skipField();
@@ -18092,7 +18092,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.serializeBi
       f
     );
   }
-  f = message.getDistincList();
+  f = message.getValuesList();
   if (f.length > 0) {
     writer.writeRepeatedString(
       5,
@@ -18247,10 +18247,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.prototype.h
 
 
 /**
- * repeated string distinc = 5;
+ * repeated string values = 5;
  * @return {!Array<string>}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.prototype.getDistincList = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.prototype.getValuesList = function() {
   return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 5));
 };
 
@@ -18259,7 +18259,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.prototype.g
  * @param {!Array<string>} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.prototype.setDistincList = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.prototype.setValuesList = function(value) {
   return jspb.Message.setField(this, 5, value || []);
 };
 
@@ -18269,7 +18269,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.prototype.s
  * @param {number=} opt_index
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.prototype.addDistinc = function(value, opt_index) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.prototype.addValues = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 5, value, opt_index);
 };
 
@@ -18278,8 +18278,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.prototype.a
  * Clears the list making it empty but non-null.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.prototype.clearDistincList = function() {
-  return this.setDistincList([]);
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.prototype.clearValuesList = function() {
+  return this.setValuesList([]);
 };
 
 
@@ -18317,7 +18317,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.MedianPrunerOptio
   var f, obj = {
     startuptrials: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     warmupsteps: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    intervaltrials: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    intervalsteps: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     mintrials: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
   };
 
@@ -18365,7 +18365,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.MedianPrunerOptio
       break;
     case 3:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setIntervaltrials(value);
+      msg.setIntervalsteps(value);
       break;
     case 4:
       var value = /** @type {number} */ (reader.readInt32());
@@ -18504,10 +18504,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.MedianPrunerOptio
 
 
 /**
- * optional int32 intervalTrials = 3;
+ * optional int32 intervalSteps = 3;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.MedianPrunerOptions.prototype.getIntervaltrials = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.MedianPrunerOptions.prototype.getIntervalsteps = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
@@ -18516,7 +18516,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.MedianPrunerOptio
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.MedianPrunerOptions} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.MedianPrunerOptions.prototype.setIntervaltrials = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.MedianPrunerOptions.prototype.setIntervalsteps = function(value) {
   return jspb.Message.setField(this, 3, value);
 };
 
@@ -18525,7 +18525,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.MedianPrunerOptio
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.MedianPrunerOptions} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.MedianPrunerOptions.prototype.clearIntervaltrials = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.MedianPrunerOptions.prototype.clearIntervalsteps = function() {
   return jspb.Message.setField(this, 3, undefined);
 };
 
@@ -18534,7 +18534,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.MedianPrunerOptio
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.MedianPrunerOptions.prototype.hasIntervaltrials = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.MedianPrunerOptions.prototype.hasIntervalsteps = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
@@ -32565,7 +32565,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.toObj
     labelencoderuri: (f = jspb.Message.getField(msg, 20)) == null ? undefined : f,
     logsuri: (f = jspb.Message.getField(msg, 21)) == null ? undefined : f,
     profileuri: (f = jspb.Message.getField(msg, 22)) == null ? undefined : f,
-    misclassuri: (f = jspb.Message.getField(msg, 23)) == null ? undefined : f,
+    misclassificationuri: (f = jspb.Message.getField(msg, 23)) == null ? undefined : f,
     taruri: (f = jspb.Message.getField(msg, 24)) == null ? undefined : f,
     appuri: (f = jspb.Message.getField(msg, 25)) == null ? undefined : f,
     imagename: (f = jspb.Message.getField(msg, 26)) == null ? undefined : f,
@@ -32598,7 +32598,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.toObj
     team: (f = jspb.Message.getField(msg, 53)) == null ? undefined : f,
     endpoint: (f = jspb.Message.getField(msg, 57)) == null ? undefined : f,
     logs: (f = msg.getLogs()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.toObject(includeInstance, f),
-    rocauccurve: (f = msg.getRocauccurve()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RocAucCurve.toObject(includeInstance, f),
+    roccurve: (f = msg.getRoccurve()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RocAucCurve.toObject(includeInstance, f),
     prcurve: (f = msg.getPrcurve()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PRCurve.toObject(includeInstance, f),
     confusionmatrix: (f = msg.getConfusionmatrix()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix.toObject(includeInstance, f),
     correlationswithtargetList: jspb.Message.toObjectList(msg.getCorrelationswithtargetList(),
@@ -32746,7 +32746,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.deser
       break;
     case 23:
       var value = /** @type {string} */ (reader.readString());
-      msg.setMisclassuri(value);
+      msg.setMisclassificationuri(value);
       break;
     case 24:
       var value = /** @type {string} */ (reader.readString());
@@ -32886,7 +32886,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.deser
     case 59:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RocAucCurve;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RocAucCurve.deserializeBinaryFromReader);
-      msg.setRocauccurve(value);
+      msg.setRoccurve(value);
       break;
     case 60:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PRCurve;
@@ -33355,7 +33355,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.seria
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.serializeBinaryToWriter
     );
   }
-  f = message.getRocauccurve();
+  f = message.getRoccurve();
   if (f != null) {
     writer.writeMessage(
       59,
@@ -34243,10 +34243,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
 
 
 /**
- * optional string misclassUri = 23;
+ * optional string misclassificationUri = 23;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getMisclassuri = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getMisclassificationuri = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 23, ""));
 };
 
@@ -34255,7 +34255,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.setMisclassuri = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.setMisclassificationuri = function(value) {
   return jspb.Message.setField(this, 23, value);
 };
 
@@ -34264,7 +34264,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.clearMisclassuri = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.clearMisclassificationuri = function() {
   return jspb.Message.setField(this, 23, undefined);
 };
 
@@ -34273,7 +34273,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.hasMisclassuri = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.hasMisclassificationuri = function() {
   return jspb.Message.getField(this, 23) != null;
 };
 
@@ -35063,7 +35063,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
 
 
 /**
- * optional string tarfileHash = 47;
+ * optional string tarFileHash = 47;
  * @return {string}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getTarfilehash = function() {
@@ -35391,10 +35391,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RocAucCurve rocauccurve = 59;
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RocAucCurve rocCurve = 59;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RocAucCurve}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getRocauccurve = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getRoccurve = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RocAucCurve} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RocAucCurve, 59));
 };
@@ -35404,7 +35404,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RocAucCurve|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.setRocauccurve = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.setRoccurve = function(value) {
   return jspb.Message.setWrapperField(this, 59, value);
 };
 
@@ -35413,8 +35413,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.clearRocauccurve = function() {
-  return this.setRocauccurve(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.clearRoccurve = function() {
+  return this.setRoccurve(undefined);
 };
 
 
@@ -35422,13 +35422,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.hasRocauccurve = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.hasRoccurve = function() {
   return jspb.Message.getField(this, 59) != null;
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PRCurve prcurve = 60;
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PRCurve prCurve = 60;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PRCurve}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getPrcurve = function() {
@@ -55882,7 +55882,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
 
 
 /**
- * optional string loglevel = 19;
+ * optional string logLevel = 19;
  * @return {string}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.getLoglevel = function() {

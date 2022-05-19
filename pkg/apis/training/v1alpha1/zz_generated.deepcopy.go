@@ -2908,7 +2908,7 @@ func (in *ModelStatus) DeepCopyInto(out *ModelStatus) {
 	out.TrainingResources = in.TrainingResources
 	out.TestingResources = in.TestingResources
 	in.Logs.DeepCopyInto(&out.Logs)
-	in.RocAucCurve.DeepCopyInto(&out.RocAucCurve)
+	in.RocCurve.DeepCopyInto(&out.RocCurve)
 	in.PRCurve.DeepCopyInto(&out.PRCurve)
 	in.ConfusionMatrix.DeepCopyInto(&out.ConfusionMatrix)
 	if in.CorrelationsWithTarget != nil {
@@ -3565,8 +3565,8 @@ func (in *PrunerSpec) DeepCopyInto(out *PrunerSpec) {
 		*out = new(MedianPrunerOptions)
 		(*in).DeepCopyInto(*out)
 	}
-	if in.Precentile != nil {
-		in, out := &in.Precentile, &out.Precentile
+	if in.Percentile != nil {
+		in, out := &in.Percentile, &out.Percentile
 		*out = new(PercentilePrunerOptions)
 		(*in).DeepCopyInto(*out)
 	}

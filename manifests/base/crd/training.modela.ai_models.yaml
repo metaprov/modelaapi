@@ -298,7 +298,7 @@ spec:
                       type: string
                     type: array
                   type:
-                    description: The ensembling method
+                    description: The ensemble type method
                     type: string
                 type: object
               estimator:
@@ -562,7 +562,7 @@ spec:
                         outlierHandling:
                           default: none
                           description: The method to use when handling outliers Apply
-                            only to numeric datatypes.
+                            only to numeric data types.
                           enum:
                           - trim-outliers
                           - winsorizer-outliers
@@ -1811,7 +1811,7 @@ spec:
                         description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                         type: string
                     type: object
-                  loglevel:
+                  logLevel:
                     default: info
                     description: The maximum log level for logs produced by Jobs associated
                       with the Model
@@ -2492,7 +2492,7 @@ spec:
               manifestUri:
                 description: The URI of the Model manifest
                 type: string
-              misclassUri:
+              misclassificationUri:
                 description: The URI to the misclassification file produced during
                   the testing phase
                 type: string
@@ -2505,7 +2505,7 @@ spec:
                 default: Pending
                 description: The phase of the Model
                 type: string
-              prcurve:
+              prCurve:
                 description: The Precision/Recall curve of the trained model
                 properties:
                   values:
@@ -2550,7 +2550,7 @@ spec:
               reportUri:
                 description: The URI of the Report
                 type: string
-              rocauccurve:
+              rocCurve:
                 description: The Roc/Auc curve of the trained model
                 properties:
                   values:
@@ -2572,11 +2572,11 @@ spec:
                   of the Model started
                 format: date-time
                 type: string
+              tarFileHash:
+                description: Sha256 of the model tar file
+                type: string
               tarUri:
                 description: The URI to the model tarbell file
-                type: string
-              tarfileHash:
-                description: Sha256 of the model tar file
                 type: string
               team:
                 description: The team of the Account which trained the model, derived

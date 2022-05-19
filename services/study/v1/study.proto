@@ -145,14 +145,14 @@ service StudyService {
     }
 
     rpc AbortStudy(AbortStudyRequest) returns (AbortStudyResponse) {
-        option (google.api.http).post = "/v1/studies/{namespace}/{name}:abort";
+        option (google.api.http).post = "/v1/studies/{namespace}/{name}/abort";
     }
 
     rpc PauseStudy(PauseStudyRequest) returns (PauseStudyResponse) {
-        option (google.api.http).post = "/v1/studies/{namespace}/{name}:pause";
+        option (google.api.http).post = "/v1/studies/{namespace}/{name}/pause";
     }
 
     rpc ResumeStudy(ResumeStudyRequest) returns (ResumeStudyResponse) {
-        option (google.api.http).post = "/v1/studies/{namespace}/{name}:resume";
+        option (google.api.http).post = "/v1/studies/{namespace}/{name}/resume";
     }
 }

@@ -372,7 +372,7 @@ type EnsembleSpec struct {
 	// The base estimator
 	// +kubebuilder:validation:Optional
 	Final *ClassicalEstimatorSpec `json:"final,omitempty" protobuf:"bytes,3,rep,name=final"`
-	// The ensembling method
+	// The ensemble type method
 	// +kubebuilder:validation:Optional
 	Type *catalog.EnsembleType `json:"type,omitempty" protobuf:"bytes,4,rep,name=type"`
 }
@@ -449,7 +449,7 @@ type ModelStatus struct {
 	ProfileUri string `json:"profileUri" protobuf:"bytes,22,opt,name=profileUri"`
 	// The URI to the misclassification file produced during the testing phase
 	// +kubebuilder:validation:Optional
-	MisclassUri string `json:"misclassUri" protobuf:"bytes,23,opt,name=misclassUri"`
+	MisclassificationUri string `json:"misclassificationUri" protobuf:"bytes,23,opt,name=misclassificationUri"`
 	// The URI to the model tarbell file
 	// +kubebuilder:validation:Optional
 	TarUri string `json:"tarUri" protobuf:"bytes,24,opt,name=tarUri"`
@@ -518,7 +518,7 @@ type ModelStatus struct {
 	ReleasedAt *metav1.Time `json:"releasedAt,omitempty" protobuf:"bytes,46,opt,name=releasedAt"`
 	// Sha256 of the model tar file
 	// +kubebuilder:validation:Optional
-	TarFileHash string `json:"tarfileHash,omitempty" protobuf:"bytes,47,opt,name=tarfileHash"`
+	TarFileHash string `json:"tarFileHash,omitempty" protobuf:"bytes,47,opt,name=tarFileHash"`
 	// Sha256 of the model image
 	// +kubebuilder:validation:Optional
 	ImageHash string `json:"imageHash,omitempty" protobuf:"bytes,48,opt,name=imageHash"`
@@ -545,10 +545,10 @@ type ModelStatus struct {
 	Logs catalog.Logs `json:"logs,omitempty" protobuf:"bytes,58,opt,name=logs"`
 	// The Roc/Auc curve of the trained model
 	// +kubebuilder:validation:Optional
-	RocAucCurve catalog.RocAucCurve `json:"rocauccurve,omitempty" protobuf:"varint,59,opt,name=rocauccurve"`
+	RocCurve catalog.RocAucCurve `json:"rocCurve,omitempty" protobuf:"varint,59,opt,name=rocCurve"`
 	// The Precision/Recall curve of the trained model
 	// +kubebuilder:validation:Optional
-	PRCurve catalog.PRCurve `json:"prcurve,omitempty" protobuf:"varint,60,opt,name=prcurve"`
+	PRCurve catalog.PRCurve `json:"prCurve,omitempty" protobuf:"varint,60,opt,name=prCurve"`
 	// The confusion matrix of the trained model
 	// +kubebuilder:validation:Optional
 	ConfusionMatrix catalog.ConfusionMatrix `json:"confusionMatrix,omitempty" protobuf:"varint,61,opt,name=confusionMatrix"`
@@ -657,7 +657,7 @@ type FeatureEngineeringPipeline struct {
 	VariableTransformation *catalog.VariableTransformation `json:"variableTransformation,omitempty" protobuf:"bytes,8,opt,name=variableTransformation"`
 	// The method to use when handling outliers
 	// +kubebuilder:default:=none
-	// Apply only to numeric datatypes.
+	// Apply only to numeric data types.
 	OutlierHandling *catalog.OutlierHandling `json:"outlierHandling,omitempty" protobuf:"bytes,9,opt,name=outlierHandling"`
 	// The method to use when handling the date-time data type
 	// +kubebuilder:default:=none
@@ -840,7 +840,7 @@ type TrainingSpec struct {
 	// The maximum log level for logs produced by Jobs associated with the Model
 	// +kubebuilder:default:=info
 	// +kubebuilder:validation:Optional
-	LogLevel *catalog.LogLevel `json:"loglevel,omitempty" protobuf:"bytes,19,opt,name=loglevel"`
+	LogLevel *catalog.LogLevel `json:"logLevel,omitempty" protobuf:"bytes,19,opt,name=logLevel"`
 	// The maximum time, in seconds, that Jobs associated with the Model can run for before being forcefully cancelled.
 	// +kubebuilder:default:=600
 	// +kubebuilder:validation:Optional

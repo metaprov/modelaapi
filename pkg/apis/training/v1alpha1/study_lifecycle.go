@@ -291,13 +291,13 @@ func (study *Study) AutoSplit(rows int32) {
 ///////////////////////////////////////////////////////////////
 
 func (study *Study) Splitted() bool {
-	cond := study.GetCond(StudySplitted)
+	cond := study.GetCond(StudySplit)
 	return cond.Status == v1.ConditionTrue
 }
 
 func (study *Study) MarkSplitted() {
 	study.CreateOrUpdateCond(StudyCondition{
-		Type:   StudySplitted,
+		Type:   StudySplit,
 		Status: v1.ConditionTrue,
 	})
 	// set the training location
@@ -318,14 +318,14 @@ func (study *Study) MarkSplitted() {
 		valLocation.Path = util.StrPtr(path.Join(*study.Spec.Location.Path, "data", "validation.parquet"))
 		study.Status.ValidationDataset = valLocation
 	}
-	study.Status.Phase = StudyPhaseSplitted
+	study.Status.Phase = StudyPhaseSplit
 	study.RefreshProgress()
 
 }
 
 func (study *Study) MarkSplitFailed(err string) {
 	study.CreateOrUpdateCond(StudyCondition{
-		Type:    StudySplitted,
+		Type:    StudySplit,
 		Status:  v1.ConditionFalse,
 		Reason:  string(StudyPhaseFailed),
 		Message: err,
@@ -401,7 +401,7 @@ func (study *Study) MarkBaselining() {
 	if study.Status.BaselineStatus.StartTime == nil {
 		study.Status.BaselineStatus.StartTime = &now
 	}
-	study.Status.Phase = StudyPhaseBaeline
+	study.Status.Phase = StudyPhaseBaseline
 	study.RefreshProgress()
 }
 
@@ -516,13 +516,13 @@ func (study *Study) MarkSearchFailed(err string) {
 ///////////////////////////////////////////////////////
 
 func (study *Study) Ensembled() bool {
-	cond := study.GetCond(StudyEnsambleCreated)
+	cond := study.GetCond(StudyEnsembleCreated)
 	return cond.Status == v1.ConditionTrue
 }
 
 func (study *Study) MarkEnsembling() {
 	study.CreateOrUpdateCond(StudyCondition{
-		Type:   StudyEnsambleCreated,
+		Type:   StudyEnsembleCreated,
 		Status: v1.ConditionFalse,
 		Reason: ReasonCreateEnsemble,
 	})
@@ -536,7 +536,7 @@ func (study *Study) MarkEnsembling() {
 
 func (study *Study) MarkEnsembled() {
 	study.CreateOrUpdateCond(StudyCondition{
-		Type:   StudyEnsambleCreated,
+		Type:   StudyEnsembleCreated,
 		Status: v1.ConditionTrue,
 	})
 	now := metav1.Now()
@@ -549,7 +549,7 @@ func (study *Study) MarkEnsembled() {
 
 func (study *Study) MarkEnsembleFailed(err string) {
 	study.CreateOrUpdateCond(StudyCondition{
-		Type:    StudyEnsambleCreated,
+		Type:    StudyEnsembleCreated,
 		Status:  v1.ConditionFalse,
 		Reason:  ReasonFailed,
 		Message: err,
@@ -711,7 +711,7 @@ func (study *Study) MarkPartitioned() bool {
 }
 
 func (study *Study) EnsembleTrained() bool {
-	return study.GetCond(StudyEnsambleCreated).Status == v1.ConditionTrue
+	return study.GetCond(StudyEnsembleCreated).Status == v1.ConditionTrue
 }
 
 func (study *Study) Ready() bool {
@@ -758,7 +758,7 @@ func (study *Study) MarkReady() {
 
 func (study *Study) MarkEnsembleTrained() {
 	study.CreateOrUpdateCond(StudyCondition{
-		Type:   StudyEnsambleCreated,
+		Type:   StudyEnsembleCreated,
 		Status: v1.ConditionTrue,
 	})
 }

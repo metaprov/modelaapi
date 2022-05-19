@@ -14,10 +14,10 @@ type StudyPhase string
 const (
 	StudyPhaseModelPending       StudyPhase = "Pending"
 	StudyPhaseSplitting          StudyPhase = "Splitting"
-	StudyPhaseSplitted           StudyPhase = "Splitted"
+	StudyPhaseSplit              StudyPhase = "Split"
 	StudyPhaseEngineeringFeature StudyPhase = "EngineeringFeatures"
 	StudyPhaseFeatureEngineered  StudyPhase = "FeaturesEngineered"
-	StudyPhaseBaeline            StudyPhase = "Baselining"
+	StudyPhaseBaseline           StudyPhase = "Baselining"
 	StudyPhaseBaselined          StudyPhase = "Baselined"
 	StudyPhaseSearching          StudyPhase = "Searching"
 	StudyPhaseSearched           StudyPhase = "Searched"
@@ -69,16 +69,16 @@ type StudyConditionType string
 const (
 	// StudyInitialized states that the resources needed for training are allocated and ready
 	StudyInitialized StudyConditionType = "Initialized"
-	// StudySplitted states that the training dataset has been split and is ready for use
-	StudySplitted StudyConditionType = "StudySplitted"
+	// StudySplit states that the training dataset has been split and is ready for use
+	StudySplit StudyConditionType = "StudySplit"
 	// StudyFeatureEngineered states that the search for the best feature engineering pipeline is complete
 	StudyFeatureEngineered StudyConditionType = "StudyFeaturesEngineered"
 	// StudyBaselined states that baseline models for each algorithm have been trained
 	StudyBaselined StudyConditionType = "StudyBaselined"
 	// StudySearched states that the primary model search for algorithm and hyper-parameters is complete
 	StudySearched StudyConditionType = "StudySearched"
-	// StudyEnsambleCreated states that ensemble models were trained
-	StudyEnsambleCreated StudyConditionType = "ModelsEnsembleCreated"
+	// StudyEnsembleCreated states that ensemble models were trained
+	StudyEnsembleCreated StudyConditionType = "ModelsEnsembleCreated"
 	// StudyTested states that the best model has been tested against training and testing datasets
 	StudyTested StudyConditionType = "ModelTested"
 	// StudyReported states that a Report resource has been generated for the Study
@@ -233,7 +233,7 @@ type EarlyStopSpec struct {
 	MinModelsWithNoProgress *int32 `json:"minModelsWithNoProgress,omitempty" protobuf:"varint,3,opt,name=minModelsWithNoProgress"`
 }
 
-// The spec for generting a density model for this study.
+// The spec for generating a density model for this study.
 type DriftDetectionSpec struct {
 	// Indicates if density models should be created.
 	// +kubebuilder:default:=false
@@ -308,7 +308,7 @@ type PrunerSpec struct {
 	// +kubebuilder:validation:Optional
 	Median *MedianPrunerOptions `json:"median,omitempty" protobuf:"bytes,2,opt,name=median"`
 	// +kubebuilder:validation:Optional
-	Precentile *PercentilePrunerOptions `json:"precentile,omitempty" protobuf:"bytes,3,opt,name=percentile"`
+	Percentile *PercentilePrunerOptions `json:"percentile,omitempty" protobuf:"bytes,3,opt,name=percentile"`
 	// +kubebuilder:validation:Optional
 	Successive *SuccessiveHalvingOptions `json:"successiveHalving,omitempty" protobuf:"bytes,4,opt,name=successiveHalving"`
 	// +kubebuilder:validation:Optional
@@ -329,7 +329,7 @@ type MedianPrunerOptions struct {
 	// Interval in number of steps between the pruning checks
 	// +kubebuilder:default:=1
 	// +kubebuilder:validation:Optional
-	IntervalSteps *int32 `json:"intervalTrials,omitempty" protobuf:"varint,3,opt,name=intervalTrials"`
+	IntervalSteps *int32 `json:"intervalSteps,omitempty" protobuf:"varint,3,opt,name=intervalSteps"`
 	// Minimum number of reported trials.
 	// +kubebuilder:default:=1
 	// +kubebuilder:validation:Optional
@@ -755,7 +755,7 @@ type Level struct {
 	// The aggregate function used to roll up the lower level
 	Aggregate *catalog.Aggregate `json:"aggregate,omitempty" protobuf:"bytes,4,opt,name=aggregate"`
 	// The distinct values of the column for this level
-	Values []string `json:"distinc,omitempty" protobuf:"bytes,5,rep,name=distinc"`
+	Values []string `json:"values,omitempty" protobuf:"bytes,5,rep,name=values"`
 }
 
 type Hierarchy struct {

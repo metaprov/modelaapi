@@ -1647,10 +1647,10 @@ export class Level extends jspb.Message {
   getAggregate(): string;
   setAggregate(value: string): Level;
 
-  getDistincList(): Array<string>;
-  setDistincList(value: Array<string>): Level;
-  clearDistincList(): Level;
-  addDistinc(value: string, index?: number): Level;
+  getValuesList(): Array<string>;
+  setValuesList(value: Array<string>): Level;
+  clearValuesList(): Level;
+  addValues(value: string, index?: number): Level;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Level.AsObject;
@@ -1666,7 +1666,7 @@ export namespace Level {
     horizon: number,
     freq: string,
     aggregate: string,
-    distincList: Array<string>,
+    valuesList: Array<string>,
   }
 }
 
@@ -1677,8 +1677,8 @@ export class MedianPrunerOptions extends jspb.Message {
   getWarmupsteps(): number;
   setWarmupsteps(value: number): MedianPrunerOptions;
 
-  getIntervaltrials(): number;
-  setIntervaltrials(value: number): MedianPrunerOptions;
+  getIntervalsteps(): number;
+  setIntervalsteps(value: number): MedianPrunerOptions;
 
   getMintrials(): number;
   setMintrials(value: number): MedianPrunerOptions;
@@ -1695,7 +1695,7 @@ export namespace MedianPrunerOptions {
   export type AsObject = {
     startuptrials: number,
     warmupsteps: number,
-    intervaltrials: number,
+    intervalsteps: number,
     mintrials: number,
   }
 }
@@ -3241,8 +3241,8 @@ export class ModelStatus extends jspb.Message {
   getProfileuri(): string;
   setProfileuri(value: string): ModelStatus;
 
-  getMisclassuri(): string;
-  setMisclassuri(value: string): ModelStatus;
+  getMisclassificationuri(): string;
+  setMisclassificationuri(value: string): ModelStatus;
 
   getTaruri(): string;
   setTaruri(value: string): ModelStatus;
@@ -3355,10 +3355,10 @@ export class ModelStatus extends jspb.Message {
   hasLogs(): boolean;
   clearLogs(): ModelStatus;
 
-  getRocauccurve(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RocAucCurve | undefined;
-  setRocauccurve(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RocAucCurve): ModelStatus;
-  hasRocauccurve(): boolean;
-  clearRocauccurve(): ModelStatus;
+  getRoccurve(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RocAucCurve | undefined;
+  setRoccurve(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RocAucCurve): ModelStatus;
+  hasRoccurve(): boolean;
+  clearRoccurve(): ModelStatus;
 
   getPrcurve(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PRCurve | undefined;
   setPrcurve(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PRCurve): ModelStatus;
@@ -3437,7 +3437,7 @@ export namespace ModelStatus {
     labelencoderuri: string,
     logsuri: string,
     profileuri: string,
-    misclassuri: string,
+    misclassificationuri: string,
     taruri: string,
     appuri: string,
     imagename: string,
@@ -3469,7 +3469,7 @@ export namespace ModelStatus {
     team: string,
     endpoint: string,
     logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
-    rocauccurve?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RocAucCurve.AsObject,
+    roccurve?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RocAucCurve.AsObject,
     prcurve?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PRCurve.AsObject,
     confusionmatrix?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix.AsObject,
     correlationswithtargetList: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Correlation.AsObject>,
