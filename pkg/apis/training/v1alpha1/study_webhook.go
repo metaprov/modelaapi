@@ -270,40 +270,21 @@ func (ms *SearchSpec) Default(task *catalog.MLTask) {
 		ms.Sampler = &name
 	}
 	ms.Pruner = PrunerSpec{}
-	ms.Pruner.Default()
-	if ms.MaxCost == nil {
-		ms.MaxCost = util.Int32Ptr(100)
-	}
-	if ms.MaxTime == nil {
-		ms.MaxTime = util.Int32Ptr(30)
-	}
-	if ms.MaxModels == nil {
-		ms.MaxModels = util.Int32Ptr(10)
-	}
-	if ms.MinBestScore == nil {
-		ms.MinBestScore = util.Float64Ptr(9999999)
-	}
-	if ms.Trainers == nil {
-		ms.Trainers = util.Int32Ptr(1)
-	}
-	if ms.Test == nil {
-		ms.Test = util.Int32Ptr(1)
-	}
-	if ms.RetainTop == nil {
-		ms.RetainTop = util.Int32Ptr(10)
-	}
-	if ms.RetainFor == nil {
-		ms.RetainFor = util.Int32Ptr(60)
-	}
 
-	if ms.Objective == nil {
-		o := DefaultObjective(*task)
-		ms.Objective = &o
+	// set default pruner.
+
+	if ms.Pruner.Type == nil {
+		if *ms.Sampler == BayesianSearch {
+			v := HyperbandPruner
+			ms.Pruner.Type = &v
+		}
+		if *ms.Sampler == RandomSearch {
+			v := MedianPruner
+			ms.Pruner.Type = &v
+		}
+
 	}
-
-}
-
-func (pspec *PrunerSpec) Default() {
+	pspec := ms.Pruner
 	switch *pspec.Type {
 	case MedianPruner: // set default median pruner
 		if pspec.Median == nil {
@@ -353,6 +334,36 @@ func (pspec *PrunerSpec) Default() {
 			}
 		}
 
+	}
+
+	if ms.MaxCost == nil {
+		ms.MaxCost = util.Int32Ptr(100)
+	}
+	if ms.MaxTime == nil {
+		ms.MaxTime = util.Int32Ptr(30)
+	}
+	if ms.MaxModels == nil {
+		ms.MaxModels = util.Int32Ptr(10)
+	}
+	if ms.MinBestScore == nil {
+		ms.MinBestScore = util.Float64Ptr(9999999)
+	}
+	if ms.Trainers == nil {
+		ms.Trainers = util.Int32Ptr(1)
+	}
+	if ms.Test == nil {
+		ms.Test = util.Int32Ptr(1)
+	}
+	if ms.RetainTop == nil {
+		ms.RetainTop = util.Int32Ptr(10)
+	}
+	if ms.RetainFor == nil {
+		ms.RetainFor = util.Int32Ptr(60)
+	}
+
+	if ms.Objective == nil {
+		o := DefaultObjective(*task)
+		ms.Objective = &o
 	}
 
 }
