@@ -265,7 +265,7 @@ func (svo *SuccessiveHalvingOptions) Default() {
 }
 
 func (ms *SearchSpec) Default(task *catalog.MLTask) {
-	name := BayesianSearch
+	name := TPESearch
 	if ms.Sampler == nil {
 		ms.Sampler = &name
 	}
@@ -274,7 +274,7 @@ func (ms *SearchSpec) Default(task *catalog.MLTask) {
 	// set default pruner.
 
 	if ms.Pruner.Type == nil {
-		if *ms.Sampler == BayesianSearch {
+		if *ms.Sampler == TPESearch {
 			v := HyperbandPruner
 			ms.Pruner.Type = &v
 		}
