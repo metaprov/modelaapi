@@ -16,6 +16,7 @@ import (
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/schema"
 	"k8s.io/apimachinery/pkg/util/validation/field"
+	"k8s.io/klog/v2"
 	"sigs.k8s.io/controller-runtime/pkg/webhook"
 )
 
@@ -285,6 +286,7 @@ func (ms *SearchSpec) Default(task *catalog.MLTask) {
 
 	}
 	pspec := ms.Pruner
+	klog.InfoS("pspec", *pspec.Type, "sampler", *ms.Sampler)
 	switch *pspec.Type {
 	case MedianPruner: // set default median pruner
 		if pspec.Median == nil {
