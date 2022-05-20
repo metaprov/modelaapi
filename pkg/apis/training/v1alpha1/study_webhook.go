@@ -265,7 +265,7 @@ func (svo *SuccessiveHalvingOptions) Default() {
 }
 
 func (ms *SearchSpec) Default(task *catalog.MLTask) {
-	name := RandomSearch
+	name := BayesianSearch
 	if ms.Sampler == nil {
 		ms.Sampler = &name
 	}
