@@ -290,6 +290,7 @@ func (ms *SearchSpec) Default(task *catalog.MLTask) {
 	switch *pspec.Type {
 	case MedianPruner: // set default median pruner
 		if pspec.Median == nil {
+			klog.InfoS("set default pruner", "update median pruner")
 			pspec.Median = &MedianPrunerOptions{
 				// Pruning is disabled until the given number of trials finish in the same study.
 				StartupTrials: util.Int32Ptr(5),
@@ -300,6 +301,7 @@ func (ms *SearchSpec) Default(task *catalog.MLTask) {
 		}
 	case PercentilePruner:
 		if pspec.Percentile == nil {
+			klog.InfoS("set default pruner", "update percentile pruner")
 			pspec.Percentile = &PercentilePrunerOptions{
 				Percentile:    util.Int32Ptr(25),
 				StartupTrials: util.Int32Ptr(5),
@@ -309,6 +311,7 @@ func (ms *SearchSpec) Default(task *catalog.MLTask) {
 			}
 		}
 	case SuccessiveHalvingPruner:
+		klog.InfoS("v", "update sh pruner")
 		if pspec.Successive == nil {
 			pspec.Successive = &SuccessiveHalvingOptions{
 				MinResources:         util.Int32Ptr(1),
@@ -318,6 +321,7 @@ func (ms *SearchSpec) Default(task *catalog.MLTask) {
 			}
 		}
 	case HyperbandPruner:
+		klog.InfoS("v", "update hyperband pruner")
 		if pspec.Hyperband == nil {
 			pspec.Hyperband = &HyperbandOptions{
 				MinResources:    util.Int32Ptr(1),
@@ -327,6 +331,7 @@ func (ms *SearchSpec) Default(task *catalog.MLTask) {
 			}
 		}
 	case ThresholdPruner:
+		klog.InfoS("v", "update threshold pruner")
 		if pspec.Threshold == nil {
 			pspec.Threshold = &ThresholdPrunerOptions{
 				Lower:         util.Float64Ptr(0),
