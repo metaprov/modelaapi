@@ -286,7 +286,7 @@ func (ms *SearchSpec) Default(task *catalog.MLTask) {
 
 	}
 	pspec := ms.Pruner
-	klog.InfoS("pspec", *pspec.Type, "sampler", *ms.Sampler)
+	klog.InfoS("v", "pspec", *pspec.Type, "sampler", *ms.Sampler)
 	switch *pspec.Type {
 	case MedianPruner: // set default median pruner
 		if pspec.Median == nil {
