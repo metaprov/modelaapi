@@ -160,8 +160,9 @@ func (r *ServingSite) ConstructGrpcIngress() *nwv1.Ingress {
 			},
 		},
 		Spec: nwv1.IngressSpec{
-			TLS:   nil,
-			Rules: []nwv1.IngressRule{},
+			IngressClassName: r.Spec.Ingress.IngressClassName,
+			TLS:              nil,
+			Rules:            []nwv1.IngressRule{},
 		},
 	}
 
@@ -194,8 +195,9 @@ func (r *ServingSite) ConstructRestIngress() *nwv1.Ingress {
 			},
 		},
 		Spec: nwv1.IngressSpec{
-			TLS:   nil,
-			Rules: []nwv1.IngressRule{},
+			IngressClassName: r.Spec.Ingress.IngressClassName,
+			TLS:              nil,
+			Rules:            []nwv1.IngressRule{},
 		},
 	}
 	if r.Spec.Ingress.ClusterIssuerName != nil && *r.Spec.Ingress.ClusterIssuerName != "" {
