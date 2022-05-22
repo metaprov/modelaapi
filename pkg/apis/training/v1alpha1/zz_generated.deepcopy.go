@@ -1146,6 +1146,11 @@ func (in *FeatureSelectionSpec) DeepCopyInto(out *FeatureSelectionSpec) {
 		*out = new(int32)
 		**out = **in
 	}
+	if in.FeatureCountThreshold != nil {
+		in, out := &in.FeatureCountThreshold, &out.FeatureCountThreshold
+		*out = new(int32)
+		**out = **in
+	}
 	if in.Reserved != nil {
 		in, out := &in.Reserved, &out.Reserved
 		*out = make([]string, len(*in))

@@ -778,9 +778,14 @@ message FeatureSelectionSpec {
   // +kubebuilder:validation:Optional
   optional int32 cumulativeImportancePercent = 10;
 
+  // Threshold count.
+  // +kubebuilder:default:=999
+  // +kubebuilder:validation:Optional
+  optional int32 featureCountThreshold = 11;
+
   // List of features that are reserved and will always be included in the final feature selection
   // +kubebuilder:validation:Optional
-  repeated string reserved = 11;
+  repeated string reserved = 12;
 }
 
 // ForecastObj holds the definition of a single forecast

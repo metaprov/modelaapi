@@ -1155,6 +1155,9 @@ export class FeatureSelectionSpec extends jspb.Message {
   getCumulativeimportancepercent(): number;
   setCumulativeimportancepercent(value: number): FeatureSelectionSpec;
 
+  getFeaturecountthreshold(): number;
+  setFeaturecountthreshold(value: number): FeatureSelectionSpec;
+
   getReservedList(): Array<string>;
   setReservedList(value: Array<string>): FeatureSelectionSpec;
   clearReservedList(): FeatureSelectionSpec;
@@ -1180,6 +1183,7 @@ export namespace FeatureSelectionSpec {
     corrthreshold: number,
     topn: number,
     cumulativeimportancepercent: number,
+    featurecountthreshold: number,
     reservedList: Array<string>,
   }
 }

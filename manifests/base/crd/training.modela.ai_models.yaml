@@ -691,6 +691,11 @@ spec:
                         default: true
                         description: Indicates if feature selection is enabled
                         type: boolean
+                      featureCountThreshold:
+                        default: 999
+                        description: Threshold count.
+                        format: int32
+                        type: integer
                       filter:
                         default: true
                         description: Indicates if filter methods will be tested as

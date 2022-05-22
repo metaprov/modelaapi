@@ -1016,9 +1016,13 @@ type FeatureSelectionSpec struct {
 	// +kubebuilder:default:=95
 	// +kubebuilder:validation:Optional
 	CumulativeImportancePercent *int32 `json:"cumulativeImportancePercent,omitempty" protobuf:"varint,10,opt,name=cumulativeImportancePercent"`
+	// Threshold count.
+	// +kubebuilder:default:=999
+	// +kubebuilder:validation:Optional
+	FeatureCountThreshold *int32 `json:"featureCountThreshold,omitempty" protobuf:"varint,11,opt,name=featureCountThreshold"`
 	// List of features that are reserved and will always be included in the final feature selection
 	// +kubebuilder:validation:Optional
-	Reserved []string `json:"reserved,omitempty" protobuf:"bytes,11,rep,name=reserved"`
+	Reserved []string `json:"reserved,omitempty" protobuf:"bytes,12,rep,name=reserved"`
 }
 
 // InterpretabilitySpec specifies the configuration to generate interpretability data and diagrams

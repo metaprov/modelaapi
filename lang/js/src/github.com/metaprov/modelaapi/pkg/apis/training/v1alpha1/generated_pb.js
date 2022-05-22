@@ -13140,7 +13140,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeaturePair.proto
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.repeatedFields_ = [6,11];
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.repeatedFields_ = [6,12];
 
 
 
@@ -13183,7 +13183,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
     corrthreshold: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
     topn: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
     cumulativeimportancepercent: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
-    reservedList: (f = jspb.Message.getRepeatedField(msg, 11)) == null ? undefined : f
+    featurecountthreshold: (f = jspb.Message.getField(msg, 11)) == null ? undefined : f,
+    reservedList: (f = jspb.Message.getRepeatedField(msg, 12)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -13261,6 +13262,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
       msg.setCumulativeimportancepercent(value);
       break;
     case 11:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setFeaturecountthreshold(value);
+      break;
+    case 12:
       var value = /** @type {string} */ (reader.readString());
       msg.addReserved(value);
       break;
@@ -13363,10 +13368,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
       f
     );
   }
+  f = /** @type {number} */ (jspb.Message.getField(message, 11));
+  if (f != null) {
+    writer.writeInt32(
+      11,
+      f
+    );
+  }
   f = message.getReservedList();
   if (f.length > 0) {
     writer.writeRepeatedString(
-      11,
+      12,
       f
     );
   }
@@ -13735,11 +13747,47 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
 
 
 /**
- * repeated string reserved = 11;
+ * optional int32 featureCountThreshold = 11;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.getFeaturecountthreshold = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 11, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.setFeaturecountthreshold = function(value) {
+  return jspb.Message.setField(this, 11, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.clearFeaturecountthreshold = function() {
+  return jspb.Message.setField(this, 11, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.hasFeaturecountthreshold = function() {
+  return jspb.Message.getField(this, 11) != null;
+};
+
+
+/**
+ * repeated string reserved = 12;
  * @return {!Array<string>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.getReservedList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 11));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 12));
 };
 
 
@@ -13748,7 +13796,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.setReservedList = function(value) {
-  return jspb.Message.setField(this, 11, value || []);
+  return jspb.Message.setField(this, 12, value || []);
 };
 
 
@@ -13758,7 +13806,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.addReserved = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 11, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 12, value, opt_index);
 };
 
 
