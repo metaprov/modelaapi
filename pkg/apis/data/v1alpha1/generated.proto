@@ -719,6 +719,16 @@ message DataLocation {
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string topic = 8;
+
+  // The url of the web resource, can be http or git location
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string url = 9;
+
+  // Resource Ref is a reference to another resource that contain the data , e.g. public dataset or another dataset
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional k8s.io.api.core.v1.ObjectReference resourceRef = 10;
 }
 
 // DataOutputSpec specifies the format, features, and output location of a transformed dataset

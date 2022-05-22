@@ -11447,7 +11447,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation.toObject
     table: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     database: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
     sql: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
-    topic: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f
+    topic: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
+    url: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
+    resourceref: (f = msg.getResourceref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -11515,6 +11517,15 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation.deserial
     case 8:
       var value = /** @type {string} */ (reader.readString());
       msg.setTopic(value);
+      break;
+    case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUrl(value);
+      break;
+    case 10:
+      var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
+      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
+      msg.setResourceref(value);
       break;
     default:
       reader.skipField();
@@ -11599,6 +11610,21 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation.serializ
     writer.writeString(
       8,
       f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 9));
+  if (f != null) {
+    writer.writeString(
+      9,
+      f
+    );
+  }
+  f = message.getResourceref();
+  if (f != null) {
+    writer.writeMessage(
+      10,
+      f,
+      k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
     );
   }
 };
@@ -11889,6 +11915,79 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation.prototyp
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation.prototype.hasTopic = function() {
   return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional string url = 9;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation.prototype.getUrl = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation.prototype.setUrl = function(value) {
+  return jspb.Message.setField(this, 9, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation.prototype.clearUrl = function() {
+  return jspb.Message.setField(this, 9, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation.prototype.hasUrl = function() {
+  return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
+ * optional k8s.io.api.core.v1.ObjectReference resourceRef = 10;
+ * @return {?proto.k8s.io.api.core.v1.ObjectReference}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation.prototype.getResourceref = function() {
+  return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
+    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 10));
+};
+
+
+/**
+ * @param {?proto.k8s.io.api.core.v1.ObjectReference|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation.prototype.setResourceref = function(value) {
+  return jspb.Message.setWrapperField(this, 10, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation.prototype.clearResourceref = function() {
+  return this.setResourceref(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation.prototype.hasResourceref = function() {
+  return jspb.Message.getField(this, 10) != null;
 };
 
 

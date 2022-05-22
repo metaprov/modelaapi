@@ -796,6 +796,14 @@ export class DataLocation extends jspb.Message {
   getTopic(): string;
   setTopic(value: string): DataLocation;
 
+  getUrl(): string;
+  setUrl(value: string): DataLocation;
+
+  getResourceref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setResourceref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): DataLocation;
+  hasResourceref(): boolean;
+  clearResourceref(): DataLocation;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataLocation.AsObject;
   static toObject(includeInstance: boolean, msg: DataLocation): DataLocation.AsObject;
@@ -814,6 +822,8 @@ export namespace DataLocation {
     database: string,
     sql: string,
     topic: string,
+    url: string,
+    resourceref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
   }
 }
 
