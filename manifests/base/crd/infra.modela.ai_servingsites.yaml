@@ -383,6 +383,9 @@ spec:
                   are created which use the Ingress access method. If there are no
                   Ingress rules to serve then the Ingress will be destroyed
                 type: string
+              grpcIngressReady:
+                description: Store the status of the grpc ingress
+                type: boolean
               inactivePredictors:
                 description: The number of inactive (non-deployed) predictors
                 format: int32
@@ -411,6 +414,9 @@ spec:
                   If there are no Ingress rules to serve then the Ingress will be
                   destroyed
                 type: string
+              restIngressReady:
+                description: Status of rest ingress.
+                type: boolean
               totalPredictorAccuracyFailed:
                 description: The number of predictors that have detected average inaccurate
                   results

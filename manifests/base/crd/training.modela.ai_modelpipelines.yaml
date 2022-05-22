@@ -814,6 +814,13 @@ spec:
                     description: Template defines the default model deployment for
                       this model
                     properties:
+                      approvedAt:
+                        description: The time of approval
+                        format: date-time
+                        type: string
+                      approvedBy:
+                        description: The account name of the approver
+                        type: string
                       canary:
                         default: false
                         description: Canary denotes if this deployment is a staged

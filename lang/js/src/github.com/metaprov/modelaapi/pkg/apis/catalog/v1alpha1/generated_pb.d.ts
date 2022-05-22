@@ -1085,6 +1085,14 @@ export class ModelDeploymentSpec extends jspb.Message {
   clearCanarymetricsList(): ModelDeploymentSpec;
   addCanarymetrics(value: string, index?: number): ModelDeploymentSpec;
 
+  getApprovedby(): string;
+  setApprovedby(value: string): ModelDeploymentSpec;
+
+  getApprovedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setApprovedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelDeploymentSpec;
+  hasApprovedat(): boolean;
+  clearApprovedat(): ModelDeploymentSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelDeploymentSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelDeploymentSpec): ModelDeploymentSpec.AsObject;
@@ -1106,90 +1114,6 @@ export namespace ModelDeploymentSpec {
     mounttar: boolean,
     trafficselector: string,
     canarymetricsList: Array<string>,
-  }
-}
-
-export class ModelDeploymentStatus extends jspb.Message {
-  getImagename(): string;
-  setImagename(value: string): ModelDeploymentStatus;
-
-  getDeploymentref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setDeploymentref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ModelDeploymentStatus;
-  hasDeploymentref(): boolean;
-  clearDeploymentref(): ModelDeploymentStatus;
-
-  getServiceref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setServiceref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ModelDeploymentStatus;
-  hasServiceref(): boolean;
-  clearServiceref(): ModelDeploymentStatus;
-
-  getHpaname(): string;
-  setHpaname(value: string): ModelDeploymentStatus;
-
-  getCurrent95(): number;
-  setCurrent95(value: number): ModelDeploymentStatus;
-
-  getCurrent99(): number;
-  setCurrent99(value: number): ModelDeploymentStatus;
-
-  getLastpredictiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLastpredictiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelDeploymentStatus;
-  hasLastpredictiontime(): boolean;
-  clearLastpredictiontime(): ModelDeploymentStatus;
-
-  getDailypredictionavg(): number;
-  setDailypredictionavg(value: number): ModelDeploymentStatus;
-
-  getLastfailure(): string;
-  setLastfailure(value: string): ModelDeploymentStatus;
-
-  getPhase(): string;
-  setPhase(value: string): ModelDeploymentStatus;
-
-  getDeployedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setDeployedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelDeploymentStatus;
-  hasDeployedat(): boolean;
-  clearDeployedat(): ModelDeploymentStatus;
-
-  getReleasedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setReleasedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelDeploymentStatus;
-  hasReleasedat(): boolean;
-  clearReleasedat(): ModelDeploymentStatus;
-
-  getTrainingdatasetname(): string;
-  setTrainingdatasetname(value: string): ModelDeploymentStatus;
-
-  getApprovedby(): string;
-  setApprovedby(value: string): ModelDeploymentStatus;
-
-  getApprovedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setApprovedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelDeploymentStatus;
-  hasApprovedat(): boolean;
-  clearApprovedat(): ModelDeploymentStatus;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ModelDeploymentStatus.AsObject;
-  static toObject(includeInstance: boolean, msg: ModelDeploymentStatus): ModelDeploymentStatus.AsObject;
-  static serializeBinaryToWriter(message: ModelDeploymentStatus, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ModelDeploymentStatus;
-  static deserializeBinaryFromReader(message: ModelDeploymentStatus, reader: jspb.BinaryReader): ModelDeploymentStatus;
-}
-
-export namespace ModelDeploymentStatus {
-  export type AsObject = {
-    imagename: string,
-    deploymentref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    serviceref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    hpaname: string,
-    current95: number,
-    current99: number,
-    lastpredictiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    dailypredictionavg: number,
-    lastfailure: string,
-    phase: string,
-    deployedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    releasedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    trainingdatasetname: string,
     approvedby: string,
     approvedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
   }

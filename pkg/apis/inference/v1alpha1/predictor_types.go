@@ -170,7 +170,7 @@ type PredictorSpec struct {
 	Cache *PredictionCacheSpec `json:"cache,omitempty" protobuf:"bytes,17,opt,name=cache"`
 	// Store is the specification of the online data store (currently unimplemented)
 	// +kubebuilder:validation:Optional
-	Store *OnlineFeaturestoreSpec `json:"store,omitempty" protobuf:"bytes,18,opt,name=store"`
+	Store *OnlineFeatureStoreSpec `json:"store,omitempty" protobuf:"bytes,18,opt,name=store"`
 	// The forward curtain receives prediction requests before the prediction (currently unimplemented)
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
@@ -201,6 +201,18 @@ type PredictorSpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	REST *bool `json:"rest,omitempty" protobuf:"varint,26,opt,name=rest"`
+	// The target feature of the model that the Predictor serves
+	//+kubebuilder:validation:Optional
+	TargetColumn string `json:"targetColumn,omitempty" protobuf:"bytes,27,opt,name=targetColumn"`
+	// For binary classification, the name of the positive class of the target feature
+	//+kubebuilder:validation:Optional
+	PositiveLabel string `json:"positiveLabel,omitempty" protobuf:"bytes,28,opt,name=positiveLabel"`
+	// For binary classification, the name of the negative class of the target feature
+	//+kubebuilder:validation:Optional
+	NegativeLabel string `json:"negativeLabel,omitempty" protobuf:"bytes,29,opt,name=negativeLabel"`
+	// The dataset where this model was trained on
+	// +kubebuilder:validation:Optional
+	TrainingDatasetRef v1.ObjectReference `json:"trainingDatasetRef,omitempty" protobuf:"bytes,30,opt,name=trainingDatasetRef"`
 }
 
 // PredictionCacheSpec specifies the connection information of a key-value cache to store predictions
@@ -248,7 +260,7 @@ type AutoScaling struct {
 }
 
 // OnlineFeaturestoreSpec specifies the connection information for an online feature store
-type OnlineFeaturestoreSpec struct {
+type OnlineFeatureStoreSpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Active *bool `json:"active,omitempty" protobuf:"varint,1,opt,name=active"`
@@ -258,80 +270,40 @@ type OnlineFeaturestoreSpec struct {
 
 // PredictorStatus contain the current state of the Predictor resource
 type PredictorStatus struct {
-	// The collection of statuses for each model deployed with the Predictor
-	// +kubebuilder:validation:Optional
-	ModelStatuses []catalog.ModelDeploymentStatus `json:"modelStatus,omitempty" protobuf:"bytes,1,rep,name=modelStatus"`
-	// The last time when model monitoring was computed
-	MonitorLastAttemptAt *metav1.Time `json:"monitorLastAttemptAt,omitempty" protobuf:"bytes,3,opt,name=monitorLastAttemptAt"`
-	// The score from the last time model monitoring was computed
-	MonitorLastScore float64 `json:"monitorLastScore,omitempty" protobuf:"bytes,4,opt,name=monitorLastScore"`
-	// The model latency from the last time model monitoring was computed
-	MonitorLastLatency float64 `json:"monitorLastLatency,omitempty" protobuf:"bytes,5,opt,name=monitorLastLatency"`
-	// The health and other statistics of the Predictor
-	Health PredictorHealth `json:"health,omitempty" protobuf:"bytes,6,opt,name=health"`
 	// ObservedGeneration is the last generation that was acted on
 	//+kubebuilder:validation:Optional
-	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,7,opt,name=observedGeneration"`
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,1,opt,name=observedGeneration"`
 	// The collection of historical records of models deployed to the Predictor, used internally to roll-back models
 	//+kubebuilder:validation:Optional
-	History []ModelRecord `json:"history,omitempty" protobuf:"bytes,9,opt,name=history"`
-	// MonitorStatus contains the status of the last model monitoring that was computed
-	//+kubebuilder:validation:Optional
-	MonitorStatus MonitorStatus `json:"monitorStatus,omitempty" protobuf:"bytes,10,opt,name=monitorStatus"`
+	History []ModelRecord `json:"history,omitempty" protobuf:"bytes,2,opt,name=history"`
+	// The collection of statuses for each model deployed with the Predictor
+	// +kubebuilder:validation:Optional
+	ModelStatuses []ModelDeploymentStatus `json:"models,omitempty" protobuf:"bytes,3,rep,name=models"`
+	// The predictor let status
+	PredictorletStatus PredictorletStatus `json:"predictorlet,omitempty" protobuf:"bytes,4,rep,name=predictorlet"`
+	// The status of the cache
+	CacheStatus PredictionCacheStatus `json:"cache,omitempty" protobuf:"bytes,5,rep,name=cache"`
+	// The status of the online store
+	OnlineStore OnlineStoreStatus `json:"onlineStore,omitempty" protobuf:"bytes,6,rep,name=onlineStore"`
 	// The last time the object was updated
 	//+kubebuilder:validation:Optional
-	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,11,opt,name=lastUpdated"`
-	// The target feature of the model that the Predictor serves
-	//+kubebuilder:validation:Optional
-	TargetColumn string `json:"targetColumn,omitempty" protobuf:"bytes,12,opt,name=targetColumn"`
-	// For binary classification, the name of the positive class of the target feature
-	//+kubebuilder:validation:Optional
-	PositiveLabel string `json:"positiveLabel,omitempty" protobuf:"bytes,13,opt,name=positiveLabel"`
-	// For binary classification, the name of the negative class of the target feature
-	//+kubebuilder:validation:Optional
-	NegativeLabel string `json:"negativeLabel,omitempty" protobuf:"bytes,14,opt,name=negativeLabel"`
+	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,7,opt,name=lastUpdated"`
 	// The end-point URL of the Predictor
 	//+kubebuilder:validation:Optional
-	EndPoint string `json:"endPoint,omitempty" protobuf:"bytes,16,opt,name=endPoint"`
-	// The reference to the Kubernetes Deployment created for the Predictor's prediction proxy
-	// +kubebuilder:validation:Optional
-	ProxyDeploymentRef v1.ObjectReference `json:"proxyDeploymentRef,omitempty" protobuf:"bytes,17,opt,name=proxyDeploymentRef"`
-	// The reference to the Kubernetes Service created for the Predictor's prediction proxy
-	// +kubebuilder:validation:Optional
-	ProxyServiceRef v1.ObjectReference `json:"proxyServiceRef,omitempty" protobuf:"bytes,18,opt,name=proxyServiceRef"`
+	EndPoint string `json:"endPoint,omitempty" protobuf:"bytes,8,opt,name=endPoint"`
 	// In the case of failure, the Predictor resource controller will set this field with a failure reason
 	//+kubebuilder:validation:Optional
-	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,19,opt,name=failureReason"`
+	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,9,opt,name=failureReason"`
 	// In the case of failure, the Predictor resource controller will set this field with a failure reason
 	//+kubebuilder:validation:Optional
-	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,20,opt,name=failureMessage"`
+	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,10,opt,name=failureMessage"`
 	// The status of the load balancer, if the Predictor's access type is LoadBalancer
 	//+kubebuilder:validation:Optional
-	LoadBalancerStatus *v1.LoadBalancerStatus `json:"loadBalancerStatus,omitempty" protobuf:"bytes,21,opt,name=loadBalancerStatus"`
+	LoadBalancerStatus *v1.LoadBalancerStatus `json:"loadBalancerStatus,omitempty" protobuf:"bytes,11,opt,name=loadBalancerStatus"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []PredictorCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,22,rep,name=conditions"`
-}
-
-// PredictorHealth describes the health of an active Predictor
-type PredictorHealth struct {
-	// Indicates if there is a problem with the Predictor's service
-	Service bool `json:"service,omitempty" protobuf:"varint,1,opt,name=service"`
-	// Indicates if a data drift has been detected based on incoming prediction data
-	DataDrift bool `json:"dataDrift,omitempty" protobuf:"varint,2,opt,name=dataDrift"`
-	// Indicates if a concept drift has been detected based on incoming prediction data
-	ConceptDrift bool `json:"conceptDrift,omitempty" protobuf:"varint,3,opt,name=conceptDrift"`
-	// The total number of predictions served by the Predictor
-	TotalPredictions int32 `json:"totalPredictions,omitempty" protobuf:"varint,4,opt,name=totalPredictions"`
-	// The daily average number of predictions served
-	DailyAvg int32 `json:"avg,omitempty" protobuf:"varint,5,opt,name="`
-	// The response time for 95% of predictions served
-	P95ResponseTime int32 `json:"totalP95Requests,omitempty" protobuf:"varint,6,opt,name=totalP95Requests"`
-	// The median response time to serve predictions
-	MedianResponseTime int32 `json:"medianResponseTime,omitempty" protobuf:"varint,7,opt,name=medianResponseTime"`
-	// The predictions from the last 7 days
-	LastDailyPredictions []int32 `json:"lastDailyPredictions,omitempty" protobuf:"bytes,8,rep,name=lastDailyPredictions"`
+	Conditions []PredictorCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,12,rep,name=conditions"`
 }
 
 // MonitorSpec defines the specification to monitor a model in production
@@ -364,13 +336,6 @@ type MonitorSpec struct {
 	LogResponses *bool `json:"logResponses,omitempty" protobuf:"varint,7,opt,name=logResponses"`
 }
 
-type MonitorStatus struct {
-	// Last Prediction time
-	LastPrediction *metav1.Time `json:"lastPrediction,omitempty" protobuf:"bytes,1,opt,name=lastPrediction"`
-	// Validation results contains the latest result
-	ValidationResult []training.ModelValidationResult `json:"validationResults,omitempty" protobuf:"bytes,2,opt,name=validationResults"`
-}
-
 // ModelRecord hold the state of a model that was in production
 type ModelRecord struct {
 	// Model Name is the name of the model
@@ -398,4 +363,140 @@ type PredictorAuthSpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
+}
+
+type ModelDeploymentStatus struct {
+	// The model image name
+	// +kubebuilder:validation:Optional
+	ImageName string `json:"imageName,omitempty" protobuf:"bytes,1,opt,name=imageName"`
+	// The deployment name that serves this model
+	// +kubebuilder:validation:Optional
+	DeploymentRef v1.ObjectReference `json:"deploymentRef,omitempty" protobuf:"bytes,2,opt,name=deploymentRef"`
+	// The service name that serves this model
+	// +kubebuilder:validation:Optional
+	ServiceRef v1.ObjectReference `json:"serviceRef,omitempty" protobuf:"bytes,3,opt,name=serviceRef"`
+	// the name of the horizonal pod autoscaler, if autoscaling is true
+	// +kubebuilder:validation:Optional
+	HPAName string `json:"hpaName,omitempty" protobuf:"bytes,4,opt,name=hpaName"`
+	// P50 latency
+	// +kubebuilder:validation:Optional
+	P50 float64 `json:"p50,omitempty" protobuf:"bytes,5,opt,name=p50"`
+	// P95 latency
+	// +kubebuilder:validation:Optional
+	P95 float64 `json:"p95,omitempty" protobuf:"bytes,6,opt,name=p95"`
+	// P99 is the 99% latency of the model
+	// +kubebuilder:validation:Optional
+	P99 float64 `json:"p99,omitempty" protobuf:"bytes,7,opt,name=p99"`
+	// Last prediction time is the time of the last prediction
+	// +kubebuilder:validation:Optional
+	LastPredictionTime *metav1.Time `json:"lastPredictionTime,omitempty" protobuf:"bytes,8,opt,name=lastPredictionTime"`
+	// +kubebuilder:validation:Optional
+	DailyPredictionAvg int32 `json:"dailyPredictionAvg,omitempty" protobuf:"varint,9,opt,name=dailyPredictionAvg"`
+	// LastFailure is the last failure that occur with the model
+	// +kubebuilder:validation:Optional
+	LastFailure string `json:"lastFailure,omitempty" protobuf:"bytes,10,opt,name=lastFailure"`
+	// Phase is the current phase of this model deployment
+	// +kubebuilder:validation:Optional
+	Phase ModelDeploymentPhase `json:"phase,omitempty" protobuf:"bytes,11,opt,name=phase"`
+	// DeployedAt is the last time that this model was deployed
+	// +kubebuilder:validation:Optional
+	DeployedAt *metav1.Time `json:"deployedAt,omitempty" protobuf:"bytes,12,opt,name=deployedAt"`
+	// ReleasedAt is the time that this model was released
+	// +kubebuilder:validation:Optional
+	ReleasedAt *metav1.Time `json:"releasedAt,omitempty" protobuf:"bytes,13,opt,name=releasedAt"`
+	// If true, the deployment is ready
+	// +kubebuilder:validation:Optional
+	DeploymentReady bool `json:"deploymentReady,omitempty" protobuf:"varint,15,opt,name=deploymentReady"`
+	// If true, the service is ready
+	// +kubebuilder:validation:Optional
+	ServiceReady bool `json:"serviceReady,omitempty" protobuf:"varint,16,opt,name=serviceReady"`
+	// Indicates if a data drift has been detected based on incoming prediction data
+	// +kubebuilder:validation:Optional
+	DataDrift bool `json:"dataDrift,omitempty" protobuf:"varint,17,opt,name=dataDrift"`
+	// Indicates if a concept drift has been detected based on incoming prediction data
+	// +kubebuilder:validation:Optional
+	ConceptDrift bool `json:"conceptDrift,omitempty" protobuf:"varint,18,opt,name=conceptDrift"`
+	// The predictions from the last 7 days
+	LastDailyPredictions []int32 `json:"lastDailyPredictions,omitempty" protobuf:"bytes,19,rep,name=lastDailyPredictions"`
+}
+
+type ModelDeploymentPhase string
+
+const (
+	ModelDeploymentPhaseDeploying ModelDeploymentPhase = "Deploying"
+	ModelDeploymentPhaseDeployed  ModelDeploymentPhase = "Deployed"
+	ModelDeploymentPhaseShadowing ModelDeploymentPhase = "Shadowing"
+	ModelDeploymentPhaseReleasing ModelDeploymentPhase = "Releasing"
+	ModelDeploymentPhaseReleased  ModelDeploymentPhase = "Released"
+	ModelDeploymentPhaseFailed    ModelDeploymentPhase = "Failed"
+)
+
+type PredictorletStatus struct {
+	// The prediction let image name
+	// +kubebuilder:validation:Optional
+	ImageName string `json:"imageName,omitempty" protobuf:"bytes,1,opt,name=imageName"`
+	// The deployment name that serves this model
+	// +kubebuilder:validation:Optional
+	DeploymentRef v1.ObjectReference `json:"deploymentRef,omitempty" protobuf:"bytes,2,opt,name=deploymentRef"`
+	// The service name that serves this model
+	// +kubebuilder:validation:Optional
+	ServiceRef v1.ObjectReference `json:"serviceRef,omitempty" protobuf:"bytes,3,opt,name=serviceRef"`
+	// P50 latency
+	// +kubebuilder:validation:Optional
+	P50 float64 `json:"p50,omitempty" protobuf:"bytes,4,opt,name=p50"`
+	// P95 latency
+	// +kubebuilder:validation:Optional
+	P95 float64 `json:"p95,omitempty" protobuf:"bytes,5,opt,name=current95"`
+	// P99 is the 99% latency of the model
+	// +kubebuilder:validation:Optional
+	P99 float64 `json:"p99,omitempty" protobuf:"bytes,6,opt,name=current99"`
+	// +kubebuilder:validation:Optional
+	DailyPredictionAvg int32 `json:"dailyPredictionAvg,omitempty" protobuf:"varint,7,opt,name=dailyPredictionAvg"`
+	// The total number of predictions served by the Predictor
+	TotalPredictions int32 `json:"totalPredictions,omitempty" protobuf:"varint,8,opt,name=totalPredictions"`
+	// The predictions from the last 7 days
+	LastDailyPredictions []int32 `json:"lastDailyPredictions,omitempty" protobuf:"bytes,9,rep,name=lastDailyPredictions"`
+	// Last prediction time is the time of the last prediction
+	// +kubebuilder:validation:Optional
+	LastPredictionTime *metav1.Time `json:"lastPredictionTime,omitempty" protobuf:"bytes,10,opt,name=lastPredictionTime"`
+	// LastFailure is the last faiure that occur with the model
+	// +kubebuilder:validation:Optional
+	LastFailure string `json:"lastFailure,omitempty" protobuf:"bytes,11,opt,name=lastFailure"`
+	// Phase is the current phase of this model deployment
+	// +kubebuilder:validation:Optional
+	Phase ModelDeploymentPhase `json:"phase,omitempty" protobuf:"bytes,12,opt,name=phase"`
+	// DeployedAt is the last time that this model was deployed
+	// +kubebuilder:validation:Optional
+	DeployedAt *metav1.Time `json:"deployedAt,omitempty" protobuf:"bytes,13,opt,name=deployedAt"`
+	// ReleasedAt is the time that this model was released
+	// +kubebuilder:validation:Optional
+	ReleasedAt *metav1.Time `json:"releasedAt,omitempty" protobuf:"bytes,14,opt,name=releasedAt"`
+	// The dataset where this model was trained on
+	// +kubebuilder:validation:Optional
+	TrainingDatasetName string `json:"trainingDatasetName,omitempty" protobuf:"bytes,15,opt,name=trainingDatasetName"`
+	// If true, the deployment is ready
+	// +kubebuilder:validation:Optional
+	DeploymentReady bool `json:"deploymentReady,omitempty" protobuf:"varint,16,opt,name=deploymentReady"`
+	// If true, the service is ready
+	// +kubebuilder:validation:Optional
+	ServiceReady bool `json:"serviceReady,omitempty" protobuf:"varint,17,opt,name=serviceReady"`
+}
+
+type MonitorStatus struct {
+	// The last time when model monitoring was computed
+	MonitorLastAttemptAt *metav1.Time `json:"monitorLastAttemptAt,omitempty" protobuf:"bytes,1,opt,name=monitorLastAttemptAt"`
+	// The score from the last time model monitoring was computed
+	MonitorLastScore float64 `json:"monitorLastScore,omitempty" protobuf:"bytes,2,opt,name=monitorLastScore"`
+	// The model latency from the last time model monitoring was computed
+	MonitorLastLatency float64 `json:"monitorLastLatency,omitempty" protobuf:"bytes,3,opt,name=monitorLastLatency"`
+}
+
+type PredictionCacheStatus struct {
+	// The last time when model monitoring was computed
+	LastAccessed *metav1.Time `json:"lastAccessed,omitempty" protobuf:"bytes,1,opt,name=LastAccessed"`
+}
+
+type OnlineStoreStatus struct {
+	// The last time when model monitoring was computed
+	LastAccessed *metav1.Time `json:"lastAccessed,omitempty" protobuf:"bytes,1,opt,name=LastAccessed"`
 }

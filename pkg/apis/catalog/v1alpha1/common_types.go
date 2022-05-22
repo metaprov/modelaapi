@@ -1473,64 +1473,13 @@ type ModelDeploymentSpec struct {
 	// Default: none
 	// +kubebuilder:validation:Optional
 	CanaryMetrics []CanaryMetric `json:"canaryMetrics,omitempty" protobuf:"bytes,11,rep,name=canaryMetrics"`
-}
-
-type ModelDeploymentStatus struct {
-	// The model image name
-	// +kubebuilder:validation:Optional
-	ImageName string `json:"imageName,omitempty" protobuf:"bytes,1,opt,name=imageName"`
-	// The deployment name that serves this model
-	// +kubebuilder:validation:Optional
-	DeploymentRef v1.ObjectReference `json:"deploymentRef,omitempty" protobuf:"bytes,2,opt,name=deploymentRef"`
-	// The service name that serves this model
-	// +kubebuilder:validation:Optional
-	ServiceRef v1.ObjectReference `json:"serviceRef,omitempty" protobuf:"bytes,3,opt,name=serviceRef"`
-	// the name of the horizonal pod autoscaler, if autoscaling is true
-	// +kubebuilder:validation:Optional
-	HPAName string `json:"hpaName,omitempty" protobuf:"bytes,4,opt,name=hpaName"`
-	// P95 latency
-	// +kubebuilder:validation:Optional
-	P95 float64 `json:"p95,omitempty" protobuf:"bytes,5,opt,name=current95"`
-	// P99 is the 99% latency of the model
-	// +kubebuilder:validation:Optional
-	P99 float64 `json:"p99,omitempty" protobuf:"bytes,6,opt,name=current99"`
-	// Last prediction time is the time of the last prediction
-	// +kubebuilder:validation:Optional
-	LastPredictionTime *metav1.Time `json:"lastPredictionTime,omitempty" protobuf:"bytes,7,opt,name=lastPredictionTime"`
-	// +kubebuilder:validation:Optional
-	DailyPredictionAvg int32 `json:"dailyPredictionAvg,omitempty" protobuf:"varint,8,opt,name=dailyPredictionAvg"`
-	// LastFailure is the last faiure that occur with the model
-	// +kubebuilder:validation:Optional
-	LastFailure string `json:"lastFailure,omitempty" protobuf:"bytes,9,opt,name=lastFailure"`
-	// Phase is the current phase of this model deployment
-	// +kubebuilder:validation:Optional
-	Phase ModelDeploymentPhase `json:"phase,omitempty" protobuf:"bytes,10,opt,name=phase"`
-	// DeployedAt is the last time that this model was deployed
-	// +kubebuilder:validation:Optional
-	DeployedAt *metav1.Time `json:"deployedAt,omitempty" protobuf:"bytes,11,opt,name=deployedAt"`
-	// ReleasedAt is the time that this model was released
-	// +kubebuilder:validation:Optional
-	ReleasedAt *metav1.Time `json:"releasedAt,omitempty" protobuf:"bytes,12,opt,name=releasedAt"`
-	// The dataset where this model was trained on
-	TrainingDatasetName string `json:"trainingDatasetName,omitempty" protobuf:"bytes,13,opt,name=trainingDatasetName"`
 	// The account name of the approver
 	// +kubebuilder:validation:Optional
-	ApprovedBy string `json:"approvedBy,omitempty" protobuf:"bytes,14,opt,name=approvedBy"`
+	ApprovedBy string `json:"approvedBy,omitempty" protobuf:"bytes,12,opt,name=approvedBy"`
 	// The time of approval
 	// +kubebuilder:validation:Optional
-	ApprovedAt *metav1.Time `json:"approvedAt,omitempty" protobuf:"bytes,15,opt,name=approvedAt"`
+	ApprovedAt *metav1.Time `json:"approvedAt,omitempty" protobuf:"bytes,13,opt,name=approvedAt"`
 }
-
-type ModelDeploymentPhase string
-
-const (
-	ModelDeploymentPhaseDeploying ModelDeploymentPhase = "Deploying"
-	ModelDeploymentPhaseDeployed  ModelDeploymentPhase = "Deployed"
-	ModelDeploymentPhaseShadowing ModelDeploymentPhase = "Shadowing"
-	ModelDeploymentPhaseReleasing ModelDeploymentPhase = "Releasing"
-	ModelDeploymentPhaseReleased  ModelDeploymentPhase = "Released"
-	ModelDeploymentPhaseFailed    ModelDeploymentPhase = "Failed"
-)
 
 // +kubebuilder:validation:Enum="tabular";"image";"text";"video";"audio"
 type DatasetType string

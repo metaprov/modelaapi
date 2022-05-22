@@ -2582,10 +2582,16 @@ message ServingSiteStatus {
   // If there are no Ingress rules to serve then the Ingress will be destroyed
   optional string restIngressName = 12;
 
+  // Store the status of the grpc ingress
+  optional bool grpcIngressReady = 13;
+
+  // Status of rest ingress.
+  optional bool restIngressReady = 14;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated ServingSiteCondition conditions = 13;
+  repeated ServingSiteCondition conditions = 15;
 }
 
 message SingleStoreSpec {

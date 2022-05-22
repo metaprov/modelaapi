@@ -227,6 +227,13 @@ spec:
                     be deployed with a Predictor, and how prediction traffic will
                     be routed to the model
                   properties:
+                    approvedAt:
+                      description: The time of approval
+                      format: date-time
+                      type: string
+                    approvedBy:
+                      description: The account name of the approver
+                      type: string
                     canary:
                       default: false
                       description: Canary denotes if this deployment is a staged release.
@@ -486,6 +493,10 @@ spec:
                       type: object
                     type: array
                 type: object
+              negativeLabel:
+                description: For binary classification, the name of the negative class
+                  of the target feature
+                type: string
               nodePort:
                 description: The port number that will be exposed on the external
                   address of every node on the cluster, in the case of the Predictor's
@@ -519,6 +530,10 @@ spec:
                 maximum: 65535
                 minimum: 1024
                 type: integer
+              positiveLabel:
+                description: For binary classification, the name of the positive class
+                  of the target feature
+                type: string
               predictionThreshold:
                 description: The prediction threshold
                 type: number
@@ -771,6 +786,9 @@ spec:
                     default: ""
                     type: string
                 type: object
+              targetColumn:
+                description: The target feature of the model that the Predictor serves
+                type: string
               task:
                 default: unknown
                 description: The task type of the Predictor, which should match the
@@ -8268,6 +8286,42 @@ spec:
                         type: object
                     type: object
                 type: object
+              trainingDatasetRef:
+                description: The dataset where this model was trained on
+                properties:
+                  apiVersion:
+                    description: API version of the referent.
+                    type: string
+                  fieldPath:
+                    description: 'If referring to a piece of an object instead of
+                      an entire object, this string should contain a valid JSON/Go
+                      field access statement, such as desiredState.manifest.containers[2].
+                      For example, if the object reference is to a container within
+                      a pod, this would take on a value like: "spec.containers{name}"
+                      (where "name" refers to the name of the container that triggered
+                      the event) or if no container name is specified "spec.containers[2]"
+                      (container with index 2 in this pod). This syntax is chosen
+                      only to have some well-defined way of referencing a part of
+                      an object. TODO: this design is not final and this field is
+                      subject to change in the future.'
+                    type: string
+                  kind:
+                    description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                    type: string
+                  name:
+                    description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                    type: string
+                  namespace:
+                    description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                    type: string
+                  resourceVersion:
+                    description: 'Specific resourceVersion to which this reference
+                      is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                    type: string
+                  uid:
+                    description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                    type: string
+                type: object
               type:
                 default: online
                 description: The type of predictor (online, batch, or streaming).
@@ -8290,6 +8344,14 @@ spec:
             description: PredictorStatus contain the current state of the Predictor
               resource
             properties:
+              cache:
+                description: The status of the cache
+                properties:
+                  lastAccessed:
+                    description: The last time when model monitoring was computed
+                    format: date-time
+                    type: string
+                type: object
               conditions:
                 items:
                   description: PredictorCondition describes the state of a Predictor
@@ -8329,44 +8391,6 @@ spec:
                 description: In the case of failure, the Predictor resource controller
                   will set this field with a failure reason
                 type: string
-              health:
-                description: The health and other statistics of the Predictor
-                properties:
-                  avg:
-                    description: The daily average number of predictions served
-                    format: int32
-                    type: integer
-                  conceptDrift:
-                    description: Indicates if a concept drift has been detected based
-                      on incoming prediction data
-                    type: boolean
-                  dataDrift:
-                    description: Indicates if a data drift has been detected based
-                      on incoming prediction data
-                    type: boolean
-                  lastDailyPredictions:
-                    description: The predictions from the last 7 days
-                    items:
-                      format: int32
-                      type: integer
-                    type: array
-                  medianResponseTime:
-                    description: The median response time to serve predictions
-                    format: int32
-                    type: integer
-                  service:
-                    description: Indicates if there is a problem with the Predictor's
-                      service
-                    type: boolean
-                  totalP95Requests:
-                    description: The response time for 95% of predictions served
-                    format: int32
-                    type: integer
-                  totalPredictions:
-                    description: The total number of predictions served by the Predictor
-                    format: int32
-                    type: integer
-                type: object
               history:
                 description: The collection of historical records of models deployed
                   to the Predictor, used internally to roll-back models
@@ -8463,26 +8487,30 @@ spec:
                       type: object
                     type: array
                 type: object
-              modelStatus:
+              models:
                 description: The collection of statuses for each model deployed with
                   the Predictor
                 items:
                   properties:
-                    approvedAt:
-                      description: The time of approval
-                      format: date-time
-                      type: string
-                    approvedBy:
-                      description: The account name of the approver
-                      type: string
+                    conceptDrift:
+                      description: Indicates if a concept drift has been detected
+                        based on incoming prediction data
+                      type: boolean
                     dailyPredictionAvg:
                       format: int32
                       type: integer
+                    dataDrift:
+                      description: Indicates if a data drift has been detected based
+                        on incoming prediction data
+                      type: boolean
                     deployedAt:
                       description: DeployedAt is the last time that this model was
                         deployed
                       format: date-time
                       type: string
+                    deploymentReady:
+                      description: If true, the deployment is ready
+                      type: boolean
                     deploymentRef:
                       description: The deployment name that serves this model
                       properties:
@@ -8527,14 +8555,23 @@ spec:
                     imageName:
                       description: The model image name
                       type: string
+                    lastDailyPredictions:
+                      description: The predictions from the last 7 days
+                      items:
+                        format: int32
+                        type: integer
+                      type: array
                     lastFailure:
-                      description: LastFailure is the last faiure that occur with
+                      description: LastFailure is the last failure that occur with
                         the model
                       type: string
                     lastPredictionTime:
                       description: Last prediction time is the time of the last prediction
                       format: date-time
                       type: string
+                    p50:
+                      description: P50 latency
+                      type: number
                     p95:
                       description: P95 latency
                       type: number
@@ -8548,6 +8585,9 @@ spec:
                       description: ReleasedAt is the time that this model was released
                       format: date-time
                       type: string
+                    serviceReady:
+                      description: If true, the service is ready
+                      type: boolean
                     serviceRef:
                       description: The service name that serves this model
                       properties:
@@ -8585,247 +8625,150 @@ spec:
                           description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                           type: string
                       type: object
-                    trainingDatasetName:
-                      description: The dataset where this model was trained on
-                      type: string
                   type: object
                 type: array
-              monitorLastAttemptAt:
-                description: The last time when model monitoring was computed
-                format: date-time
-                type: string
-              monitorLastLatency:
-                description: The model latency from the last time model monitoring
-                  was computed
-                type: number
-              monitorLastScore:
-                description: The score from the last time model monitoring was computed
-                type: number
-              monitorStatus:
-                description: MonitorStatus contains the status of the last model monitoring
-                  that was computed
-                properties:
-                  lastPrediction:
-                    description: Last Prediction time
-                    format: date-time
-                    type: string
-                  validationResults:
-                    description: Validation results contains the latest result
-                    items:
-                      properties:
-                        actualValue:
-                          description: Actual value is the actual value
-                          type: number
-                        at:
-                          description: At is the time the validation was performed.
-                          format: date-time
-                          type: string
-                        column:
-                          description: Column is the name of the feature.
-                          type: string
-                        datasetName:
-                          description: DatasetName is the name of the dataset used
-                            to perform the validation
-                          type: string
-                        durationInSec:
-                          description: The amount of time it took to compute this
-                            result
-                          format: int32
-                          type: integer
-                        error:
-                          description: Error is a string.
-                          type: string
-                        metric:
-                          description: Metric is the measurement
-                          enum:
-                          - accuracy
-                          - average-precision
-                          - balanced-accuracy
-                          - pr-auc
-                          - pr-auc-micro
-                          - pr-auc-macro
-                          - pr-auc-weighted
-                          - f1
-                          - f1-micro
-                          - f1-macro
-                          - f1-weighted
-                          - f1-samples
-                          - precision
-                          - precision-micro
-                          - precision-macro
-                          - precision-weighted
-                          - precision-samples
-                          - recall
-                          - recall-macro
-                          - recall-micro
-                          - recall-weighted
-                          - recall-samples
-                          - log-loss
-                          - auc
-                          - auc-micro
-                          - auc-macro
-                          - auc-weighted
-                          - zero-one
-                          - hamming-loss
-                          - hinge-loss
-                          - jacquard-loss
-                          - mcc
-                          - fp
-                          - fn
-                          - tn
-                          - tp
-                          - tpr
-                          - fpr
-                          - tnr
-                          - matthews-corr-coef
-                          - explained-variance
-                          - max-error
-                          - mae
-                          - mse
-                          - msle
-                          - rmse
-                          - rmsle
-                          - median-absolute-error
-                          - r2
-                          - adj-r2
-                          - mean_poisson_deviance
-                          - mean-gamma-deviance
-                          - mean-tweedie-deviance
-                          - mape
-                          - maze
-                          - mdape
-                          - smape
-                          - adjusted-mutual-info-score
-                          - adjusted-rand-score
-                          - completeness-score
-                          - fowlkes-mallows-score
-                          - homogeneity-score
-                          - mutual-info-score
-                          - normalized-mutual-info-score
-                          - v-measure-score
-                          - p50-latency
-                          - p95-latency
-                          - p99-latency
-                          - cpu
-                          - gpu
-                          - mem
-                          - gpu-mem
-                          - req-per-sec
-                          - uncertain-prediction-percent
-                          - none
-                          type: string
-                        modelName:
-                          description: ModelName is the name of the model under test
-                          type: string
-                        passed:
-                          description: Passed indicate if the result passed.
-                          type: boolean
-                        type:
-                          type: string
-                      required:
-                      - actualValue
-                      - at
-                      - column
-                      - datasetName
-                      - durationInSec
-                      - error
-                      - metric
-                      - modelName
-                      - passed
-                      - type
-                      type: object
-                    type: array
-                type: object
-              negativeLabel:
-                description: For binary classification, the name of the negative class
-                  of the target feature
-                type: string
               observedGeneration:
                 description: ObservedGeneration is the last generation that was acted
                   on
                 format: int64
                 type: integer
-              positiveLabel:
-                description: For binary classification, the name of the positive class
-                  of the target feature
-                type: string
-              proxyDeploymentRef:
-                description: The reference to the Kubernetes Deployment created for
-                  the Predictor's prediction proxy
+              onlineStore:
+                description: The status of the online store
                 properties:
-                  apiVersion:
-                    description: API version of the referent.
-                    type: string
-                  fieldPath:
-                    description: 'If referring to a piece of an object instead of
-                      an entire object, this string should contain a valid JSON/Go
-                      field access statement, such as desiredState.manifest.containers[2].
-                      For example, if the object reference is to a container within
-                      a pod, this would take on a value like: "spec.containers{name}"
-                      (where "name" refers to the name of the container that triggered
-                      the event) or if no container name is specified "spec.containers[2]"
-                      (container with index 2 in this pod). This syntax is chosen
-                      only to have some well-defined way of referencing a part of
-                      an object. TODO: this design is not final and this field is
-                      subject to change in the future.'
-                    type: string
-                  kind:
-                    description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
-                    type: string
-                  name:
-                    description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
-                    type: string
-                  namespace:
-                    description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
-                    type: string
-                  resourceVersion:
-                    description: 'Specific resourceVersion to which this reference
-                      is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
-                    type: string
-                  uid:
-                    description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                  lastAccessed:
+                    description: The last time when model monitoring was computed
+                    format: date-time
                     type: string
                 type: object
-              proxyServiceRef:
-                description: The reference to the Kubernetes Service created for the
-                  Predictor's prediction proxy
+              predictorlet:
+                description: The predictor let status
                 properties:
-                  apiVersion:
-                    description: API version of the referent.
+                  dailyPredictionAvg:
+                    format: int32
+                    type: integer
+                  deployedAt:
+                    description: DeployedAt is the last time that this model was deployed
+                    format: date-time
                     type: string
-                  fieldPath:
-                    description: 'If referring to a piece of an object instead of
-                      an entire object, this string should contain a valid JSON/Go
-                      field access statement, such as desiredState.manifest.containers[2].
-                      For example, if the object reference is to a container within
-                      a pod, this would take on a value like: "spec.containers{name}"
-                      (where "name" refers to the name of the container that triggered
-                      the event) or if no container name is specified "spec.containers[2]"
-                      (container with index 2 in this pod). This syntax is chosen
-                      only to have some well-defined way of referencing a part of
-                      an object. TODO: this design is not final and this field is
-                      subject to change in the future.'
+                  deploymentReady:
+                    description: If true, the deployment is ready
+                    type: boolean
+                  deploymentRef:
+                    description: The deployment name that serves this model
+                    properties:
+                      apiVersion:
+                        description: API version of the referent.
+                        type: string
+                      fieldPath:
+                        description: 'If referring to a piece of an object instead
+                          of an entire object, this string should contain a valid
+                          JSON/Go field access statement, such as desiredState.manifest.containers[2].
+                          For example, if the object reference is to a container within
+                          a pod, this would take on a value like: "spec.containers{name}"
+                          (where "name" refers to the name of the container that triggered
+                          the event) or if no container name is specified "spec.containers[2]"
+                          (container with index 2 in this pod). This syntax is chosen
+                          only to have some well-defined way of referencing a part
+                          of an object. TODO: this design is not final and this field
+                          is subject to change in the future.'
+                        type: string
+                      kind:
+                        description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                        type: string
+                      name:
+                        description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                        type: string
+                      namespace:
+                        description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                        type: string
+                      resourceVersion:
+                        description: 'Specific resourceVersion to which this reference
+                          is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                        type: string
+                      uid:
+                        description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                        type: string
+                    type: object
+                  imageName:
+                    description: The prediction let image name
                     type: string
-                  kind:
-                    description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                  lastDailyPredictions:
+                    description: The predictions from the last 7 days
+                    items:
+                      format: int32
+                      type: integer
+                    type: array
+                  lastFailure:
+                    description: LastFailure is the last faiure that occur with the
+                      model
                     type: string
-                  name:
-                    description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                  lastPredictionTime:
+                    description: Last prediction time is the time of the last prediction
+                    format: date-time
                     type: string
-                  namespace:
-                    description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                  p50:
+                    description: P50 latency
+                    type: number
+                  p95:
+                    description: P95 latency
+                    type: number
+                  p99:
+                    description: P99 is the 99% latency of the model
+                    type: number
+                  phase:
+                    description: Phase is the current phase of this model deployment
                     type: string
-                  resourceVersion:
-                    description: 'Specific resourceVersion to which this reference
-                      is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                  releasedAt:
+                    description: ReleasedAt is the time that this model was released
+                    format: date-time
                     type: string
-                  uid:
-                    description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                  serviceReady:
+                    description: If true, the service is ready
+                    type: boolean
+                  serviceRef:
+                    description: The service name that serves this model
+                    properties:
+                      apiVersion:
+                        description: API version of the referent.
+                        type: string
+                      fieldPath:
+                        description: 'If referring to a piece of an object instead
+                          of an entire object, this string should contain a valid
+                          JSON/Go field access statement, such as desiredState.manifest.containers[2].
+                          For example, if the object reference is to a container within
+                          a pod, this would take on a value like: "spec.containers{name}"
+                          (where "name" refers to the name of the container that triggered
+                          the event) or if no container name is specified "spec.containers[2]"
+                          (container with index 2 in this pod). This syntax is chosen
+                          only to have some well-defined way of referencing a part
+                          of an object. TODO: this design is not final and this field
+                          is subject to change in the future.'
+                        type: string
+                      kind:
+                        description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                        type: string
+                      name:
+                        description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                        type: string
+                      namespace:
+                        description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                        type: string
+                      resourceVersion:
+                        description: 'Specific resourceVersion to which this reference
+                          is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                        type: string
+                      uid:
+                        description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                        type: string
+                    type: object
+                  totalPredictions:
+                    description: The total number of predictions served by the Predictor
+                    format: int32
+                    type: integer
+                  trainingDatasetName:
+                    description: The dataset where this model was trained on
                     type: string
                 type: object
-              targetColumn:
-                description: The target feature of the model that the Predictor serves
-                type: string
             type: object
         required:
         - spec

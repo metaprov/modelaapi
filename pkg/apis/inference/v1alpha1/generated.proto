@@ -459,6 +459,78 @@ message ForecastSpec {
   optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSpec horizon = 2;
 }
 
+message ModelDeploymentStatus {
+  // The model image name
+  // +kubebuilder:validation:Optional
+  optional string imageName = 1;
+
+  // The deployment name that serves this model
+  // +kubebuilder:validation:Optional
+  optional k8s.io.api.core.v1.ObjectReference deploymentRef = 2;
+
+  // The service name that serves this model
+  // +kubebuilder:validation:Optional
+  optional k8s.io.api.core.v1.ObjectReference serviceRef = 3;
+
+  // the name of the horizonal pod autoscaler, if autoscaling is true
+  // +kubebuilder:validation:Optional
+  optional string hpaName = 4;
+
+  // P50 latency
+  // +kubebuilder:validation:Optional
+  optional double p50 = 5;
+
+  // P95 latency
+  // +kubebuilder:validation:Optional
+  optional double p95 = 6;
+
+  // P99 is the 99% latency of the model
+  // +kubebuilder:validation:Optional
+  optional double p99 = 7;
+
+  // Last prediction time is the time of the last prediction
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastPredictionTime = 8;
+
+  // +kubebuilder:validation:Optional
+  optional int32 dailyPredictionAvg = 9;
+
+  // LastFailure is the last failure that occur with the model
+  // +kubebuilder:validation:Optional
+  optional string lastFailure = 10;
+
+  // Phase is the current phase of this model deployment
+  // +kubebuilder:validation:Optional
+  optional string phase = 11;
+
+  // DeployedAt is the last time that this model was deployed
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time deployedAt = 12;
+
+  // ReleasedAt is the time that this model was released
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time releasedAt = 13;
+
+  // If true, the deployment is ready
+  // +kubebuilder:validation:Optional
+  optional bool deploymentReady = 15;
+
+  // If true, the service is ready
+  // +kubebuilder:validation:Optional
+  optional bool serviceReady = 16;
+
+  // Indicates if a data drift has been detected based on incoming prediction data
+  // +kubebuilder:validation:Optional
+  optional bool dataDrift = 17;
+
+  // Indicates if a concept drift has been detected based on incoming prediction data
+  // +kubebuilder:validation:Optional
+  optional bool conceptDrift = 18;
+
+  // The predictions from the last 7 days
+  repeated int32 lastDailyPredictions = 19;
+}
+
 // ModelRecord hold the state of a model that was in production
 message ModelRecord {
   // Model Name is the name of the model
@@ -523,21 +595,29 @@ message MonitorSpec {
 }
 
 message MonitorStatus {
-  // Last Prediction time
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastPrediction = 1;
+  // The last time when model monitoring was computed
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time monitorLastAttemptAt = 1;
 
-  // Validation results contains the latest result
-  repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidationResult validationResults = 2;
+  // The score from the last time model monitoring was computed
+  optional double monitorLastScore = 2;
+
+  // The model latency from the last time model monitoring was computed
+  optional double monitorLastLatency = 3;
 }
 
 // OnlineFeaturestoreSpec specifies the connection information for an online feature store
-message OnlineFeaturestoreSpec {
+message OnlineFeatureStoreSpec {
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool active = 1;
 
   // +kubebuilder:default:=""
   optional string serviceName = 2;
+}
+
+message OnlineStoreStatus {
+  // The last time when model monitoring was computed
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time LastAccessed = 1;
 }
 
 // Prediction represents a single batch prediction on a dataset
@@ -573,6 +653,11 @@ message PredictionCacheSpec {
   // the name of the cache service
   // +kubebuilder:default:=""
   optional string serviceName = 2;
+}
+
+message PredictionCacheStatus {
+  // The last time when model monitoring was computed
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time LastAccessed = 1;
 }
 
 // PredictionCondition describes the state of a Prediction at a certain point
@@ -791,33 +876,6 @@ message PredictorCondition {
   optional string message = 5;
 }
 
-// PredictorHealth describes the health of an active Predictor
-message PredictorHealth {
-  // Indicates if there is a problem with the Predictor's service
-  optional bool service = 1;
-
-  // Indicates if a data drift has been detected based on incoming prediction data
-  optional bool dataDrift = 2;
-
-  // Indicates if a concept drift has been detected based on incoming prediction data
-  optional bool conceptDrift = 3;
-
-  // The total number of predictions served by the Predictor
-  optional int32 totalPredictions = 4;
-
-  // The daily average number of predictions served
-  optional int32 avg = 5;
-
-  // The response time for 95% of predictions served
-  optional int32 totalP95Requests = 6;
-
-  // The median response time to serve predictions
-  optional int32 medianResponseTime = 7;
-
-  // The predictions from the last 7 days
-  repeated int32 lastDailyPredictions = 8;
-}
-
 // +kubebuilder:object:root=true
 // PredictorList contains a list of Predictors
 message PredictorList {
@@ -924,7 +982,7 @@ message PredictorSpec {
 
   // Store is the specification of the online data store (currently unimplemented)
   // +kubebuilder:validation:Optional
-  optional OnlineFeaturestoreSpec store = 18;
+  optional OnlineFeatureStoreSpec store = 18;
 
   // The forward curtain receives prediction requests before the prediction (currently unimplemented)
   // +kubebuilder:default:=""
@@ -963,82 +1021,138 @@ message PredictorSpec {
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool rest = 26;
+
+  // The target feature of the model that the Predictor serves
+  // +kubebuilder:validation:Optional
+  optional string targetColumn = 27;
+
+  // For binary classification, the name of the positive class of the target feature
+  // +kubebuilder:validation:Optional
+  optional string positiveLabel = 28;
+
+  // For binary classification, the name of the negative class of the target feature
+  // +kubebuilder:validation:Optional
+  optional string negativeLabel = 29;
+
+  // The dataset where this model was trained on
+  // +kubebuilder:validation:Optional
+  optional k8s.io.api.core.v1.ObjectReference trainingDatasetRef = 30;
 }
 
 // PredictorStatus contain the current state of the Predictor resource
 message PredictorStatus {
-  // The collection of statuses for each model deployed with the Predictor
-  // +kubebuilder:validation:Optional
-  repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentStatus modelStatus = 1;
-
-  // The last time when model monitoring was computed
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time monitorLastAttemptAt = 3;
-
-  // The score from the last time model monitoring was computed
-  optional double monitorLastScore = 4;
-
-  // The model latency from the last time model monitoring was computed
-  optional double monitorLastLatency = 5;
-
-  // The health and other statistics of the Predictor
-  optional PredictorHealth health = 6;
-
   // ObservedGeneration is the last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 7;
+  optional int64 observedGeneration = 1;
 
   // The collection of historical records of models deployed to the Predictor, used internally to roll-back models
   // +kubebuilder:validation:Optional
-  repeated ModelRecord history = 9;
+  repeated ModelRecord history = 2;
 
-  // MonitorStatus contains the status of the last model monitoring that was computed
+  // The collection of statuses for each model deployed with the Predictor
   // +kubebuilder:validation:Optional
-  optional MonitorStatus monitorStatus = 10;
+  repeated ModelDeploymentStatus models = 3;
+
+  // The predictor let status
+  optional PredictorletStatus predictorlet = 4;
+
+  // The status of the cache
+  optional PredictionCacheStatus cache = 5;
+
+  // The status of the online store
+  optional OnlineStoreStatus onlineStore = 6;
 
   // The last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 11;
-
-  // The target feature of the model that the Predictor serves
-  // +kubebuilder:validation:Optional
-  optional string targetColumn = 12;
-
-  // For binary classification, the name of the positive class of the target feature
-  // +kubebuilder:validation:Optional
-  optional string positiveLabel = 13;
-
-  // For binary classification, the name of the negative class of the target feature
-  // +kubebuilder:validation:Optional
-  optional string negativeLabel = 14;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 7;
 
   // The end-point URL of the Predictor
   // +kubebuilder:validation:Optional
-  optional string endPoint = 16;
-
-  // The reference to the Kubernetes Deployment created for the Predictor's prediction proxy
-  // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference proxyDeploymentRef = 17;
-
-  // The reference to the Kubernetes Service created for the Predictor's prediction proxy
-  // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference proxyServiceRef = 18;
+  optional string endPoint = 8;
 
   // In the case of failure, the Predictor resource controller will set this field with a failure reason
   // +kubebuilder:validation:Optional
-  optional string failureReason = 19;
+  optional string failureReason = 9;
 
   // In the case of failure, the Predictor resource controller will set this field with a failure reason
   // +kubebuilder:validation:Optional
-  optional string failureMessage = 20;
+  optional string failureMessage = 10;
 
   // The status of the load balancer, if the Predictor's access type is LoadBalancer
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.LoadBalancerStatus loadBalancerStatus = 21;
+  optional k8s.io.api.core.v1.LoadBalancerStatus loadBalancerStatus = 11;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated PredictorCondition conditions = 22;
+  repeated PredictorCondition conditions = 12;
+}
+
+message PredictorletStatus {
+  // The prediction let image name
+  // +kubebuilder:validation:Optional
+  optional string imageName = 1;
+
+  // The deployment name that serves this model
+  // +kubebuilder:validation:Optional
+  optional k8s.io.api.core.v1.ObjectReference deploymentRef = 2;
+
+  // The service name that serves this model
+  // +kubebuilder:validation:Optional
+  optional k8s.io.api.core.v1.ObjectReference serviceRef = 3;
+
+  // P50 latency
+  // +kubebuilder:validation:Optional
+  optional double p50 = 4;
+
+  // P95 latency
+  // +kubebuilder:validation:Optional
+  optional double current95 = 5;
+
+  // P99 is the 99% latency of the model
+  // +kubebuilder:validation:Optional
+  optional double current99 = 6;
+
+  // +kubebuilder:validation:Optional
+  optional int32 dailyPredictionAvg = 7;
+
+  // The total number of predictions served by the Predictor
+  optional int32 totalPredictions = 8;
+
+  // The predictions from the last 7 days
+  repeated int32 lastDailyPredictions = 9;
+
+  // Last prediction time is the time of the last prediction
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastPredictionTime = 10;
+
+  // LastFailure is the last faiure that occur with the model
+  // +kubebuilder:validation:Optional
+  optional string lastFailure = 11;
+
+  // Phase is the current phase of this model deployment
+  // +kubebuilder:validation:Optional
+  optional string phase = 12;
+
+  // DeployedAt is the last time that this model was deployed
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time deployedAt = 13;
+
+  // ReleasedAt is the time that this model was released
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time releasedAt = 14;
+
+  // The dataset where this model was trained on
+  // +kubebuilder:validation:Optional
+  optional string trainingDatasetName = 15;
+
+  // If true, the deployment is ready
+  // +kubebuilder:validation:Optional
+  optional bool deploymentReady = 16;
+
+  // If true, the service is ready
+  // +kubebuilder:validation:Optional
+  optional bool serviceReady = 17;
 }
 
 // ProgressiveSpec defines the specification to progressively deploy a model to production

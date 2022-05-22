@@ -622,66 +622,14 @@ message ModelDeploymentSpec {
   // Default: none
   // +kubebuilder:validation:Optional
   repeated string canaryMetrics = 11;
-}
-
-message ModelDeploymentStatus {
-  // The model image name
-  // +kubebuilder:validation:Optional
-  optional string imageName = 1;
-
-  // The deployment name that serves this model
-  // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference deploymentRef = 2;
-
-  // The service name that serves this model
-  // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference serviceRef = 3;
-
-  // the name of the horizonal pod autoscaler, if autoscaling is true
-  // +kubebuilder:validation:Optional
-  optional string hpaName = 4;
-
-  // P95 latency
-  // +kubebuilder:validation:Optional
-  optional double current95 = 5;
-
-  // P99 is the 99% latency of the model
-  // +kubebuilder:validation:Optional
-  optional double current99 = 6;
-
-  // Last prediction time is the time of the last prediction
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastPredictionTime = 7;
-
-  // +kubebuilder:validation:Optional
-  optional int32 dailyPredictionAvg = 8;
-
-  // LastFailure is the last faiure that occur with the model
-  // +kubebuilder:validation:Optional
-  optional string lastFailure = 9;
-
-  // Phase is the current phase of this model deployment
-  // +kubebuilder:validation:Optional
-  optional string phase = 10;
-
-  // DeployedAt is the last time that this model was deployed
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time deployedAt = 11;
-
-  // ReleasedAt is the time that this model was released
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time releasedAt = 12;
-
-  // The dataset where this model was trained on
-  optional string trainingDatasetName = 13;
 
   // The account name of the approver
   // +kubebuilder:validation:Optional
-  optional string approvedBy = 14;
+  optional string approvedBy = 12;
 
   // The time of approval
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time approvedAt = 15;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time approvedAt = 13;
 }
 
 // NotificationSpec specifies which Notifiers to forward Alert resources to

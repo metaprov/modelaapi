@@ -45355,7 +45355,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec.prot
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.repeatedFields_ = [8,13];
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.repeatedFields_ = [8,15];
 
 
 
@@ -45400,6 +45400,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.to
     failuremessage: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
     grpcingressname: (f = jspb.Message.getField(msg, 11)) == null ? undefined : f,
     restingressname: (f = jspb.Message.getField(msg, 12)) == null ? undefined : f,
+    grpcingressready: (f = jspb.Message.getBooleanField(msg, 13)) == null ? undefined : f,
+    restingressready: (f = jspb.Message.getBooleanField(msg, 14)) == null ? undefined : f,
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition.toObject, includeInstance)
   };
@@ -45490,6 +45492,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.de
       msg.setRestingressname(value);
       break;
     case 13:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setGrpcingressready(value);
+      break;
+    case 14:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setRestingressready(value);
+      break;
+    case 15:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition.deserializeBinaryFromReader);
       msg.addConditions(value);
@@ -45608,10 +45618,24 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.se
       f
     );
   }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 13));
+  if (f != null) {
+    writer.writeBool(
+      13,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 14));
+  if (f != null) {
+    writer.writeBool(
+      14,
+      f
+    );
+  }
   f = message.getConditionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      13,
+      15,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition.serializeBinaryToWriter
     );
@@ -46054,12 +46078,84 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.pr
 
 
 /**
- * repeated ServingSiteCondition conditions = 13;
+ * optional bool grpcIngressReady = 13;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.getGrpcingressready = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 13, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.setGrpcingressready = function(value) {
+  return jspb.Message.setField(this, 13, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.clearGrpcingressready = function() {
+  return jspb.Message.setField(this, 13, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.hasGrpcingressready = function() {
+  return jspb.Message.getField(this, 13) != null;
+};
+
+
+/**
+ * optional bool restIngressReady = 14;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.getRestingressready = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 14, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.setRestingressready = function(value) {
+  return jspb.Message.setField(this, 14, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.clearRestingressready = function() {
+  return jspb.Message.setField(this, 14, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.hasRestingressready = function() {
+  return jspb.Message.getField(this, 14) != null;
+};
+
+
+/**
+ * repeated ServingSiteCondition conditions = 15;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.getConditionsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition, 13));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition, 15));
 };
 
 
@@ -46068,7 +46164,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.pr
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.setConditionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 13, value);
+  return jspb.Message.setRepeatedWrapperField(this, 15, value);
 };
 
 
@@ -46078,7 +46174,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.pr
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 13, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 15, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition, opt_index);
 };
 
 

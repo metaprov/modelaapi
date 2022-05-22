@@ -124,10 +124,14 @@ type ServingSiteStatus struct {
 	// This field is set only after one or more resources are created which use the Ingress access method to serve REST traffic.
 	// If there are no Ingress rules to serve then the Ingress will be destroyed
 	RestIngressName string `json:"restIngressName,omitempty" protobuf:"bytes,12,opt,name=restIngressName"`
+	// Store the status of the grpc ingress
+	GrpcIngressReady bool `json:"grpcIngressReady,omitempty" protobuf:"bytes,13,opt,name=grpcIngressReady"`
+	// Status of rest ingress.
+	RestIngressReady bool `json:"restIngressReady,omitempty" protobuf:"bytes,14,opt,name=restIngressReady"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []ServingSiteCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,13,rep,name=conditions"`
+	Conditions []ServingSiteCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,15,rep,name=conditions"`
 }
 
 // IngressSpec defines the configuration to for a ServingSite to create Ingress resources

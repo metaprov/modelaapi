@@ -703,6 +703,104 @@ export namespace ForecastSpec {
   }
 }
 
+export class ModelDeploymentStatus extends jspb.Message {
+  getImagename(): string;
+  setImagename(value: string): ModelDeploymentStatus;
+
+  getDeploymentref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setDeploymentref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ModelDeploymentStatus;
+  hasDeploymentref(): boolean;
+  clearDeploymentref(): ModelDeploymentStatus;
+
+  getServiceref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setServiceref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ModelDeploymentStatus;
+  hasServiceref(): boolean;
+  clearServiceref(): ModelDeploymentStatus;
+
+  getHpaname(): string;
+  setHpaname(value: string): ModelDeploymentStatus;
+
+  getP50(): number;
+  setP50(value: number): ModelDeploymentStatus;
+
+  getP95(): number;
+  setP95(value: number): ModelDeploymentStatus;
+
+  getP99(): number;
+  setP99(value: number): ModelDeploymentStatus;
+
+  getLastpredictiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastpredictiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelDeploymentStatus;
+  hasLastpredictiontime(): boolean;
+  clearLastpredictiontime(): ModelDeploymentStatus;
+
+  getDailypredictionavg(): number;
+  setDailypredictionavg(value: number): ModelDeploymentStatus;
+
+  getLastfailure(): string;
+  setLastfailure(value: string): ModelDeploymentStatus;
+
+  getPhase(): string;
+  setPhase(value: string): ModelDeploymentStatus;
+
+  getDeployedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setDeployedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelDeploymentStatus;
+  hasDeployedat(): boolean;
+  clearDeployedat(): ModelDeploymentStatus;
+
+  getReleasedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setReleasedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelDeploymentStatus;
+  hasReleasedat(): boolean;
+  clearReleasedat(): ModelDeploymentStatus;
+
+  getDeploymentready(): boolean;
+  setDeploymentready(value: boolean): ModelDeploymentStatus;
+
+  getServiceready(): boolean;
+  setServiceready(value: boolean): ModelDeploymentStatus;
+
+  getDatadrift(): boolean;
+  setDatadrift(value: boolean): ModelDeploymentStatus;
+
+  getConceptdrift(): boolean;
+  setConceptdrift(value: boolean): ModelDeploymentStatus;
+
+  getLastdailypredictionsList(): Array<number>;
+  setLastdailypredictionsList(value: Array<number>): ModelDeploymentStatus;
+  clearLastdailypredictionsList(): ModelDeploymentStatus;
+  addLastdailypredictions(value: number, index?: number): ModelDeploymentStatus;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ModelDeploymentStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: ModelDeploymentStatus): ModelDeploymentStatus.AsObject;
+  static serializeBinaryToWriter(message: ModelDeploymentStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ModelDeploymentStatus;
+  static deserializeBinaryFromReader(message: ModelDeploymentStatus, reader: jspb.BinaryReader): ModelDeploymentStatus;
+}
+
+export namespace ModelDeploymentStatus {
+  export type AsObject = {
+    imagename: string,
+    deploymentref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    serviceref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    hpaname: string,
+    p50: number,
+    p95: number,
+    p99: number,
+    lastpredictiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    dailypredictionavg: number,
+    lastfailure: string,
+    phase: string,
+    deployedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    releasedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    deploymentready: boolean,
+    serviceready: boolean,
+    datadrift: boolean,
+    conceptdrift: boolean,
+    lastdailypredictionsList: Array<number>,
+  }
+}
+
 export class ModelRecord extends jspb.Message {
   getModelname(): string;
   setModelname(value: string): ModelRecord;
@@ -792,15 +890,16 @@ export namespace MonitorSpec {
 }
 
 export class MonitorStatus extends jspb.Message {
-  getLastprediction(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLastprediction(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): MonitorStatus;
-  hasLastprediction(): boolean;
-  clearLastprediction(): MonitorStatus;
+  getMonitorlastattemptat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setMonitorlastattemptat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): MonitorStatus;
+  hasMonitorlastattemptat(): boolean;
+  clearMonitorlastattemptat(): MonitorStatus;
 
-  getValidationresultsList(): Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidationResult>;
-  setValidationresultsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidationResult>): MonitorStatus;
-  clearValidationresultsList(): MonitorStatus;
-  addValidationresults(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidationResult, index?: number): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidationResult;
+  getMonitorlastscore(): number;
+  setMonitorlastscore(value: number): MonitorStatus;
+
+  getMonitorlastlatency(): number;
+  setMonitorlastlatency(value: number): MonitorStatus;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MonitorStatus.AsObject;
@@ -812,30 +911,51 @@ export class MonitorStatus extends jspb.Message {
 
 export namespace MonitorStatus {
   export type AsObject = {
-    lastprediction?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    validationresultsList: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidationResult.AsObject>,
+    monitorlastattemptat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    monitorlastscore: number,
+    monitorlastlatency: number,
   }
 }
 
-export class OnlineFeaturestoreSpec extends jspb.Message {
+export class OnlineFeatureStoreSpec extends jspb.Message {
   getActive(): boolean;
-  setActive(value: boolean): OnlineFeaturestoreSpec;
+  setActive(value: boolean): OnlineFeatureStoreSpec;
 
   getServicename(): string;
-  setServicename(value: string): OnlineFeaturestoreSpec;
+  setServicename(value: string): OnlineFeatureStoreSpec;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): OnlineFeaturestoreSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: OnlineFeaturestoreSpec): OnlineFeaturestoreSpec.AsObject;
-  static serializeBinaryToWriter(message: OnlineFeaturestoreSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): OnlineFeaturestoreSpec;
-  static deserializeBinaryFromReader(message: OnlineFeaturestoreSpec, reader: jspb.BinaryReader): OnlineFeaturestoreSpec;
+  toObject(includeInstance?: boolean): OnlineFeatureStoreSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: OnlineFeatureStoreSpec): OnlineFeatureStoreSpec.AsObject;
+  static serializeBinaryToWriter(message: OnlineFeatureStoreSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OnlineFeatureStoreSpec;
+  static deserializeBinaryFromReader(message: OnlineFeatureStoreSpec, reader: jspb.BinaryReader): OnlineFeatureStoreSpec;
 }
 
-export namespace OnlineFeaturestoreSpec {
+export namespace OnlineFeatureStoreSpec {
   export type AsObject = {
     active: boolean,
     servicename: string,
+  }
+}
+
+export class OnlineStoreStatus extends jspb.Message {
+  getLastaccessed(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastaccessed(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): OnlineStoreStatus;
+  hasLastaccessed(): boolean;
+  clearLastaccessed(): OnlineStoreStatus;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): OnlineStoreStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: OnlineStoreStatus): OnlineStoreStatus.AsObject;
+  static serializeBinaryToWriter(message: OnlineStoreStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OnlineStoreStatus;
+  static deserializeBinaryFromReader(message: OnlineStoreStatus, reader: jspb.BinaryReader): OnlineStoreStatus;
+}
+
+export namespace OnlineStoreStatus {
+  export type AsObject = {
+    lastaccessed?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
   }
 }
 
@@ -890,6 +1010,26 @@ export namespace PredictionCacheSpec {
   export type AsObject = {
     active: boolean,
     servicename: string,
+  }
+}
+
+export class PredictionCacheStatus extends jspb.Message {
+  getLastaccessed(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastaccessed(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): PredictionCacheStatus;
+  hasLastaccessed(): boolean;
+  clearLastaccessed(): PredictionCacheStatus;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PredictionCacheStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: PredictionCacheStatus): PredictionCacheStatus.AsObject;
+  static serializeBinaryToWriter(message: PredictionCacheStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PredictionCacheStatus;
+  static deserializeBinaryFromReader(message: PredictionCacheStatus, reader: jspb.BinaryReader): PredictionCacheStatus;
+}
+
+export namespace PredictionCacheStatus {
+  export type AsObject = {
+    lastaccessed?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
   }
 }
 
@@ -1229,54 +1369,6 @@ export namespace PredictorCondition {
   }
 }
 
-export class PredictorHealth extends jspb.Message {
-  getService(): boolean;
-  setService(value: boolean): PredictorHealth;
-
-  getDatadrift(): boolean;
-  setDatadrift(value: boolean): PredictorHealth;
-
-  getConceptdrift(): boolean;
-  setConceptdrift(value: boolean): PredictorHealth;
-
-  getTotalpredictions(): number;
-  setTotalpredictions(value: number): PredictorHealth;
-
-  getAvg(): number;
-  setAvg(value: number): PredictorHealth;
-
-  getTotalp95requests(): number;
-  setTotalp95requests(value: number): PredictorHealth;
-
-  getMedianresponsetime(): number;
-  setMedianresponsetime(value: number): PredictorHealth;
-
-  getLastdailypredictionsList(): Array<number>;
-  setLastdailypredictionsList(value: Array<number>): PredictorHealth;
-  clearLastdailypredictionsList(): PredictorHealth;
-  addLastdailypredictions(value: number, index?: number): PredictorHealth;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PredictorHealth.AsObject;
-  static toObject(includeInstance: boolean, msg: PredictorHealth): PredictorHealth.AsObject;
-  static serializeBinaryToWriter(message: PredictorHealth, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PredictorHealth;
-  static deserializeBinaryFromReader(message: PredictorHealth, reader: jspb.BinaryReader): PredictorHealth;
-}
-
-export namespace PredictorHealth {
-  export type AsObject = {
-    service: boolean,
-    datadrift: boolean,
-    conceptdrift: boolean,
-    totalpredictions: number,
-    avg: number,
-    totalp95requests: number,
-    medianresponsetime: number,
-    lastdailypredictionsList: Array<number>,
-  }
-}
-
 export class PredictorList extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta): PredictorList;
@@ -1373,8 +1465,8 @@ export class PredictorSpec extends jspb.Message {
   hasCache(): boolean;
   clearCache(): PredictorSpec;
 
-  getStore(): OnlineFeaturestoreSpec | undefined;
-  setStore(value?: OnlineFeaturestoreSpec): PredictorSpec;
+  getStore(): OnlineFeatureStoreSpec | undefined;
+  setStore(value?: OnlineFeatureStoreSpec): PredictorSpec;
   hasStore(): boolean;
   clearStore(): PredictorSpec;
 
@@ -1406,6 +1498,20 @@ export class PredictorSpec extends jspb.Message {
   getRest(): boolean;
   setRest(value: boolean): PredictorSpec;
 
+  getTargetcolumn(): string;
+  setTargetcolumn(value: string): PredictorSpec;
+
+  getPositivelabel(): string;
+  setPositivelabel(value: string): PredictorSpec;
+
+  getNegativelabel(): string;
+  setNegativelabel(value: string): PredictorSpec;
+
+  getTrainingdatasetref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setTrainingdatasetref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): PredictorSpec;
+  hasTrainingdatasetref(): boolean;
+  clearTrainingdatasetref(): PredictorSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PredictorSpec.AsObject;
   static toObject(includeInstance: boolean, msg: PredictorSpec): PredictorSpec.AsObject;
@@ -1433,7 +1539,7 @@ export namespace PredictorSpec {
     owner: string,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     cache?: PredictionCacheSpec.AsObject,
-    store?: OnlineFeaturestoreSpec.AsObject,
+    store?: OnlineFeatureStoreSpec.AsObject,
     forwardcurtain: string,
     backwardcurtain: string,
     type: string,
@@ -1442,31 +1548,14 @@ export namespace PredictorSpec {
     monitor?: MonitorSpec.AsObject,
     auth?: PredictorAuthSpec.AsObject,
     rest: boolean,
+    targetcolumn: string,
+    positivelabel: string,
+    negativelabel: string,
+    trainingdatasetref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
   }
 }
 
 export class PredictorStatus extends jspb.Message {
-  getModelstatusList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentStatus>;
-  setModelstatusList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentStatus>): PredictorStatus;
-  clearModelstatusList(): PredictorStatus;
-  addModelstatus(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentStatus, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentStatus;
-
-  getMonitorlastattemptat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setMonitorlastattemptat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): PredictorStatus;
-  hasMonitorlastattemptat(): boolean;
-  clearMonitorlastattemptat(): PredictorStatus;
-
-  getMonitorlastscore(): number;
-  setMonitorlastscore(value: number): PredictorStatus;
-
-  getMonitorlastlatency(): number;
-  setMonitorlastlatency(value: number): PredictorStatus;
-
-  getHealth(): PredictorHealth | undefined;
-  setHealth(value?: PredictorHealth): PredictorStatus;
-  hasHealth(): boolean;
-  clearHealth(): PredictorStatus;
-
   getObservedgeneration(): number;
   setObservedgeneration(value: number): PredictorStatus;
 
@@ -1475,37 +1564,33 @@ export class PredictorStatus extends jspb.Message {
   clearHistoryList(): PredictorStatus;
   addHistory(value?: ModelRecord, index?: number): ModelRecord;
 
-  getMonitorstatus(): MonitorStatus | undefined;
-  setMonitorstatus(value?: MonitorStatus): PredictorStatus;
-  hasMonitorstatus(): boolean;
-  clearMonitorstatus(): PredictorStatus;
+  getModelsList(): Array<ModelDeploymentStatus>;
+  setModelsList(value: Array<ModelDeploymentStatus>): PredictorStatus;
+  clearModelsList(): PredictorStatus;
+  addModels(value?: ModelDeploymentStatus, index?: number): ModelDeploymentStatus;
+
+  getPredictorlet(): PredictorletStatus | undefined;
+  setPredictorlet(value?: PredictorletStatus): PredictorStatus;
+  hasPredictorlet(): boolean;
+  clearPredictorlet(): PredictorStatus;
+
+  getCache(): PredictionCacheStatus | undefined;
+  setCache(value?: PredictionCacheStatus): PredictorStatus;
+  hasCache(): boolean;
+  clearCache(): PredictorStatus;
+
+  getOnlinestore(): OnlineStoreStatus | undefined;
+  setOnlinestore(value?: OnlineStoreStatus): PredictorStatus;
+  hasOnlinestore(): boolean;
+  clearOnlinestore(): PredictorStatus;
 
   getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): PredictorStatus;
   hasLastupdated(): boolean;
   clearLastupdated(): PredictorStatus;
 
-  getTargetcolumn(): string;
-  setTargetcolumn(value: string): PredictorStatus;
-
-  getPositivelabel(): string;
-  setPositivelabel(value: string): PredictorStatus;
-
-  getNegativelabel(): string;
-  setNegativelabel(value: string): PredictorStatus;
-
   getEndpoint(): string;
   setEndpoint(value: string): PredictorStatus;
-
-  getProxydeploymentref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setProxydeploymentref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): PredictorStatus;
-  hasProxydeploymentref(): boolean;
-  clearProxydeploymentref(): PredictorStatus;
-
-  getProxyserviceref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setProxyserviceref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): PredictorStatus;
-  hasProxyserviceref(): boolean;
-  clearProxyserviceref(): PredictorStatus;
 
   getFailurereason(): string;
   setFailurereason(value: string): PredictorStatus;
@@ -1533,25 +1618,112 @@ export class PredictorStatus extends jspb.Message {
 
 export namespace PredictorStatus {
   export type AsObject = {
-    modelstatusList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentStatus.AsObject>,
-    monitorlastattemptat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    monitorlastscore: number,
-    monitorlastlatency: number,
-    health?: PredictorHealth.AsObject,
     observedgeneration: number,
     historyList: Array<ModelRecord.AsObject>,
-    monitorstatus?: MonitorStatus.AsObject,
+    modelsList: Array<ModelDeploymentStatus.AsObject>,
+    predictorlet?: PredictorletStatus.AsObject,
+    cache?: PredictionCacheStatus.AsObject,
+    onlinestore?: OnlineStoreStatus.AsObject,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    targetcolumn: string,
-    positivelabel: string,
-    negativelabel: string,
     endpoint: string,
-    proxydeploymentref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    proxyserviceref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     failurereason: string,
     failuremessage: string,
     loadbalancerstatus?: k8s_io_api_core_v1_generated_pb.LoadBalancerStatus.AsObject,
     conditionsList: Array<PredictorCondition.AsObject>,
+  }
+}
+
+export class PredictorletStatus extends jspb.Message {
+  getImagename(): string;
+  setImagename(value: string): PredictorletStatus;
+
+  getDeploymentref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setDeploymentref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): PredictorletStatus;
+  hasDeploymentref(): boolean;
+  clearDeploymentref(): PredictorletStatus;
+
+  getServiceref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setServiceref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): PredictorletStatus;
+  hasServiceref(): boolean;
+  clearServiceref(): PredictorletStatus;
+
+  getP50(): number;
+  setP50(value: number): PredictorletStatus;
+
+  getCurrent95(): number;
+  setCurrent95(value: number): PredictorletStatus;
+
+  getCurrent99(): number;
+  setCurrent99(value: number): PredictorletStatus;
+
+  getDailypredictionavg(): number;
+  setDailypredictionavg(value: number): PredictorletStatus;
+
+  getTotalpredictions(): number;
+  setTotalpredictions(value: number): PredictorletStatus;
+
+  getLastdailypredictionsList(): Array<number>;
+  setLastdailypredictionsList(value: Array<number>): PredictorletStatus;
+  clearLastdailypredictionsList(): PredictorletStatus;
+  addLastdailypredictions(value: number, index?: number): PredictorletStatus;
+
+  getLastpredictiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastpredictiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): PredictorletStatus;
+  hasLastpredictiontime(): boolean;
+  clearLastpredictiontime(): PredictorletStatus;
+
+  getLastfailure(): string;
+  setLastfailure(value: string): PredictorletStatus;
+
+  getPhase(): string;
+  setPhase(value: string): PredictorletStatus;
+
+  getDeployedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setDeployedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): PredictorletStatus;
+  hasDeployedat(): boolean;
+  clearDeployedat(): PredictorletStatus;
+
+  getReleasedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setReleasedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): PredictorletStatus;
+  hasReleasedat(): boolean;
+  clearReleasedat(): PredictorletStatus;
+
+  getTrainingdatasetname(): string;
+  setTrainingdatasetname(value: string): PredictorletStatus;
+
+  getDeploymentready(): boolean;
+  setDeploymentready(value: boolean): PredictorletStatus;
+
+  getServiceready(): boolean;
+  setServiceready(value: boolean): PredictorletStatus;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PredictorletStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: PredictorletStatus): PredictorletStatus.AsObject;
+  static serializeBinaryToWriter(message: PredictorletStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PredictorletStatus;
+  static deserializeBinaryFromReader(message: PredictorletStatus, reader: jspb.BinaryReader): PredictorletStatus;
+}
+
+export namespace PredictorletStatus {
+  export type AsObject = {
+    imagename: string,
+    deploymentref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    serviceref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    p50: number,
+    current95: number,
+    current99: number,
+    dailypredictionavg: number,
+    totalpredictions: number,
+    lastdailypredictionsList: Array<number>,
+    lastpredictiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    lastfailure: string,
+    phase: string,
+    deployedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    releasedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    trainingdatasetname: string,
+    deploymentready: boolean,
+    serviceready: boolean,
   }
 }
 

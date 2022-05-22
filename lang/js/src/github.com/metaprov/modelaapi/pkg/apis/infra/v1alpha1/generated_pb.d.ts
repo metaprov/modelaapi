@@ -4543,6 +4543,12 @@ export class ServingSiteStatus extends jspb.Message {
   getRestingressname(): string;
   setRestingressname(value: string): ServingSiteStatus;
 
+  getGrpcingressready(): boolean;
+  setGrpcingressready(value: boolean): ServingSiteStatus;
+
+  getRestingressready(): boolean;
+  setRestingressready(value: boolean): ServingSiteStatus;
+
   getConditionsList(): Array<ServingSiteCondition>;
   setConditionsList(value: Array<ServingSiteCondition>): ServingSiteStatus;
   clearConditionsList(): ServingSiteStatus;
@@ -4570,6 +4576,8 @@ export namespace ServingSiteStatus {
     failuremessage: string,
     grpcingressname: string,
     restingressname: string,
+    grpcingressready: boolean,
+    restingressready: boolean,
     conditionsList: Array<ServingSiteCondition.AsObject>,
   }
 }
