@@ -199,7 +199,6 @@ spec:
                           not managed by Modela
                         type: string
                       resourceRef:
-                        default: ""
                         description: Resource Ref is a reference to another resource
                           that contain the data , e.g. public dataset or another dataset
                         properties:
@@ -365,7 +364,6 @@ spec:
                           not managed by Modela
                         type: string
                       resourceRef:
-                        default: ""
                         description: Resource Ref is a reference to another resource
                           that contain the data , e.g. public dataset or another dataset
                         properties:

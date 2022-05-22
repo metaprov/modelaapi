@@ -482,9 +482,8 @@ type DataLocation struct {
 	// +kubebuilder:validation:Optional
 	URL *string `json:"url" protobuf:"bytes,9,opt,name=url"`
 	// Resource Ref is a reference to another resource that contain the data , e.g. public dataset or another dataset
-	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	ResourceRef v1.ObjectReference `json:"resourceRef" protobuf:"bytes,10,opt,name=resourceRef"`
+	ResourceRef *v1.ObjectReference `json:"resourceRef" protobuf:"bytes,10,opt,name=resourceRef"`
 }
 
 type DataValidationResult struct {

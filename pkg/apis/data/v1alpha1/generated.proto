@@ -726,7 +726,6 @@ message DataLocation {
   optional string url = 9;
 
   // Resource Ref is a reference to another resource that contain the data , e.g. public dataset or another dataset
-  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference resourceRef = 10;
 }
