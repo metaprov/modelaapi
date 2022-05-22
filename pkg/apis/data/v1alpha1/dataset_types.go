@@ -441,49 +441,49 @@ type DataLocation struct {
 	// like a table or a view, a data stream (i.e. Kafka, currently unsupported), or a web location (currently unsupported)
 	// +kubebuilder:default:="object"
 	// +kubebuilder:validation:Optional
-	Type *DataLocationType `json:"type" protobuf:"bytes,1,opt,name=type"`
+	Type *DataLocationType `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
 	// In the case of the type of location being a database, ConnectionName specifies the name of the Connection resource
 	// that exists in the same tenant as the resource specifying the DataLocation. Modela will attempt to connect
 	// to the database using the credentials specified in the Connection, and will execute the query specified by the SQL field
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	ConnectionName *string `json:"connectionName" protobuf:"bytes,2,opt,name=connectionName"`
+	ConnectionName *string `json:"connectionName,omitempty" protobuf:"bytes,2,opt,name=connectionName"`
 	// In the case of the location type being an object storage system, BucketName is the name of the VirtualBucket resource
 	// that exists in the same tenant as the resource specifying the DataLocation. Modela will connect to the external
 	// object storage system, and will access the file from the path specified by the Path field
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	BucketName *string `json:"bucketName" protobuf:"bytes,3,opt,name=bucketName"`
+	BucketName *string `json:"bucketName,omitempty" protobuf:"bytes,3,opt,name=bucketName"`
 	// The path to a flat-file inside an object storage system. When using the Modela API to upload files (through the
 	// FileService API), Modela will upload the data to a predetermined path based on the Tenant, DataProduct,
 	// DataProductVersion, and resource type of the resource in relation to the file being uploaded.
 	// The path does not need to adhere to this format; you can still pass the path of a file inside a bucket not managed by Modela
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	Path *string `json:"path" protobuf:"bytes,4,opt,name=path"`
+	Path *string `json:"path,omitempty" protobuf:"bytes,4,opt,name=path"`
 	// The name of a table inside a database, if applicable
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	Table *string `json:"table" protobuf:"bytes,5,opt,name=table"`
+	Table *string `json:"table,omitempty" protobuf:"bytes,5,opt,name=table"`
 	// The name of a database inside the database system specified by the ConnectionName field
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	Database *string `json:"database" protobuf:"bytes,6,opt,name=database"`
+	Database *string `json:"database,omitempty" protobuf:"bytes,6,opt,name=database"`
 	// The SQL statement which will be executed to query data from the table specified by Table
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	Sql *string `json:"sql" protobuf:"bytes,7,opt,name=sql"`
+	Sql *string `json:"sql,omitempty" protobuf:"bytes,7,opt,name=sql"`
 	// The name of the streaming topic (currently unsupported)
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	Topic *string `json:"topic" protobuf:"bytes,8,opt,name=topic"`
+	Topic *string `json:"topic,omitempty" protobuf:"bytes,8,opt,name=topic"`
 	// The url of the web resource, can be http or git location
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	URL *string `json:"url" protobuf:"bytes,9,opt,name=url"`
+	URL *string `json:"url,omitempty" protobuf:"bytes,9,opt,name=url"`
 	// Resource Ref is a reference to another resource that contain the data , e.g. public dataset or another dataset
 	// +kubebuilder:validation:Optional
-	ResourceRef *v1.ObjectReference `json:"resourceRef" protobuf:"bytes,10,opt,name=resourceRef"`
+	ResourceRef *v1.ObjectReference `json:"resourceRef,omitempty" protobuf:"bytes,10,opt,name=resourceRef"`
 }
 
 type DataValidationResult struct {
