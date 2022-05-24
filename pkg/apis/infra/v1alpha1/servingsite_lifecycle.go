@@ -8,6 +8,7 @@ package v1alpha1
 
 import (
 	"fmt"
+	"github.com/dustin/go-humanize"
 
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/apis/infra"
@@ -126,10 +127,6 @@ func ParseServingSiteServingYaml(content []byte) (*ServingSite, error) {
 	}
 	r := requiredObj.(*ServingSite)
 	return r, nil
-}
-
-func (r *ServingSite) ToYamlFile() ([]byte, error) {
-	return yaml.Marshal(r)
 }
 
 // Create the ingress for GRPC traffic
