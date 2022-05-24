@@ -1,4 +1,4 @@
-module modelaapi
+module github.com/metaprov/modelaapi
 
 go 1.18
 
@@ -10,7 +10,6 @@ require (
 	github.com/golang/protobuf v1.5.2
 	github.com/grpc-ecosystem/grpc-gateway v1.16.0
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.10.2
-	github.com/metaprov/modelaapi v0.5.501
 	github.com/onsi/ginkgo v1.16.5
 	github.com/onsi/gomega v1.19.0
 	github.com/pkg/errors v0.9.1
