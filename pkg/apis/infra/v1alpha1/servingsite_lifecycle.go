@@ -9,11 +9,9 @@ package v1alpha1
 import (
 	"fmt"
 
-	"github.com/dustin/go-humanize"
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/apis/infra"
 	"github.com/metaprov/modelaapi/pkg/util"
-	"gopkg.in/yaml.v2"
 	corev1 "k8s.io/api/core/v1"
 	v1 "k8s.io/api/core/v1"
 	nwv1 "k8s.io/api/networking/v1"
@@ -153,7 +151,6 @@ func (r *ServingSite) ConstructGrpcIngress() *nwv1.Ingress {
 				"kubernetes.io/ingress.allow-http":               "false",
 				"nginx.ingress.kubernetes.io/cors-allow-headers": "x-user-agent,x-grpc-web,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Authorization",
 				"nginx.ingress.kubernetes.io/add-base-url":       "false",
-				"kubernetes.io/ingress.class":                    "nginx",
 				"nginx.ingress.kubernetes.io/backend-protocol":   "GRPC",
 				"nginx.ingress.kubernetes.io/grpc-backend":       "true",
 				"nginx.ingress.kubernetes.io/ssl-redirect":       "true",
