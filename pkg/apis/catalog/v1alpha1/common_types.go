@@ -1673,6 +1673,22 @@ type Logs struct {
 	Containers []ContainerLog `json:"containers,omitempty" protobuf:"bytes,2,rep,name=containers"`
 }
 
+// Append the logs only if they are not already exists
+func (logs *Logs) Append(newLogs []ContainerLog) {
+	for _, v := range logs.Containers {
+		found := false
+		for _, l := range newLogs {
+			if l.Key == v.Key {
+				found = true
+				break
+			}
+		}
+		if !found {
+			logs.Containers = append(logs.Containers, newLogs...)
+		}
+	}
+}
+
 // ContainerLog describes the location of logs for a single Job
 type ContainerLog struct {
 	// The name of the Job
