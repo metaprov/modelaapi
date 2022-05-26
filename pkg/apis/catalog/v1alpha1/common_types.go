@@ -1675,17 +1675,17 @@ type Logs struct {
 
 // Append the logs only if they are not already exists
 func (logs *Logs) Append(newLogs []ContainerLog) {
+	found := false
 	for _, v := range logs.Containers {
-		found := false
 		for _, l := range newLogs {
 			if l.Key == v.Key {
 				found = true
 				break
 			}
 		}
-		if !found {
-			logs.Containers = append(logs.Containers, newLogs...)
-		}
+	}
+	if !found {
+		logs.Containers = append(logs.Containers, newLogs...)
 	}
 }
 
