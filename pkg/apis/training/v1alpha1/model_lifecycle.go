@@ -473,6 +473,9 @@ func (model *Model) Training() bool {
 }
 
 func (model *Model) TrainingFailed() bool {
+	if model.TestingFailed() {
+		return true
+	}
 	cond := model.GetCond(ModelTrained)
 	return cond.Status == v1.ConditionFalse && cond.Reason == ReasonFailed
 }
@@ -924,7 +927,7 @@ func (model *Model) Aborted() bool {
 }
 
 func (model *Model) Failed() bool {
-	return model.Status.Phase == ModelPhaseFailed
+	return model.Status.Phase == ModelPhaseFailed || model.TrainingFailed() || model.TestingFailed()
 }
 
 // -------------------- Maintaince
