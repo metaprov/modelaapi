@@ -610,6 +610,10 @@ type StudySpec struct {
 	// +kubebuilder:default:= 14400
 	// +kubebuilder:validation:Optional
 	TimeoutInSecs *int32 `json:"timeoutInSecs,omitempty" protobuf:"varint,35,opt,name=timeoutInSecs"`
+	// Not implemented. For future use. If true,generate code when the best model
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	CodeGenerated *bool `json:"codeGenerated,omitempty" protobuf:"varint,36,opt,name=codeGenerated"`
 }
 
 // StudyStatus defines the observed state of a Study

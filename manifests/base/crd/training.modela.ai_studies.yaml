@@ -183,6 +183,11 @@ spec:
                       Study's search space with default hyper-parameters
                     type: boolean
                 type: object
+              codeGenerated:
+                default: false
+                description: Not implemented. For future use. If true,generate code
+                  when the best model
+                type: boolean
               compilation:
                 description: CompilerSpec specifies the configuration to compile the
                   best-selected model to a binary (currently unimplemented)
@@ -2269,6 +2274,11 @@ spec:
                     - info
                     - error
                     type: string
+                  maxCores:
+                    default: -1
+                    description: Max cores per job
+                    format: int32
+                    type: integer
                   nodeCount:
                     default: 1
                     description: The number of nodes to use, in the case of distributed
