@@ -609,7 +609,7 @@ type StudySpec struct {
 	// The time, in seconds, after which the execution of the Study will be forcefully aborted (4 hours, by default)
 	// +kubebuilder:default:= 14400
 	// +kubebuilder:validation:Optional
-	TimeoutInSecs *int32 `json:"timeoutInSecs,omitempty" protobuf:"bytes,35,opt,name=timeoutInSecs"`
+	TimeoutInSecs *int32 `json:"timeoutInSecs,omitempty" protobuf:"varint,35,opt,name=timeoutInSecs"`
 }
 
 // StudyStatus defines the observed state of a Study

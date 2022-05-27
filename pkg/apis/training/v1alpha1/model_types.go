@@ -833,7 +833,7 @@ type TrainingSpec struct {
 	// The number percentage (0 through 100) of rows to be used during training
 	// +kubebuilder:default:=100
 	// +kubebuilder:validation:Optional
-	SamplePct *int32 `json:"samplePct,omitempty" protobuf:"bytes,17,opt,name=samplePct"`
+	SamplePct *int32 `json:"samplePct,omitempty" protobuf:"varint,17,opt,name=samplePct"`
 	// Checkpoint specifies the location to store model checkpoints
 	// +kubebuilder:validation:Optional
 	Checkpoint CheckpointSpec `json:"checkpoint,omitempty" protobuf:"bytes,18,opt,name=checkpoint"`
@@ -844,7 +844,7 @@ type TrainingSpec struct {
 	// The maximum time, in seconds, that Jobs associated with the Model can run for before being forcefully cancelled.
 	// +kubebuilder:default:=600
 	// +kubebuilder:validation:Optional
-	TimeoutInSecs *int32 `json:"timeoutInSecs,omitempty" protobuf:"bytes,20,opt,name=timeoutInSecs"`
+	TimeoutInSecs *int32 `json:"timeoutInSecs,omitempty" protobuf:"varint,20,opt,name=timeoutInSecs"`
 }
 
 // CheckpointSpec specifies where to store model checkpoints

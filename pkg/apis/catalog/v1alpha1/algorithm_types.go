@@ -92,7 +92,7 @@ type FloatParameter struct {
 	DefaultValue float64 `json:"defaultValue,omitempty" protobuf:"bytes,5,opt,name=defaultValue"`
 	// Log specify if this hyper paramer is logartimic
 	// +kubebuilder:validation:Optional
-	Log bool `json:"log,omitempty" protobuf:"bytes,6,opt,name=log"`
+	Log bool `json:"log,omitempty" protobuf:"varint,6,opt,name=log"`
 }
 
 // CategoricalParameter contain the specification of an categorical hyper parameter

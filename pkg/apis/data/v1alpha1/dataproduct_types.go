@@ -187,46 +187,46 @@ type DataProductStatus struct {
 	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,2,opt,name=lastUpdated"`
 	// The number of DataSource resources that exist under the namespace
 	//+kubebuilder:validation:Optional
-	TotalDatasources int32 `json:"totalDatasources,omitempty" protobuf:"bytes,3,opt,name=totalDatasources"`
+	TotalDatasources int32 `json:"totalDatasources,omitempty" protobuf:"varint,3,opt,name=totalDatasources"`
 	// The number of Dataset resources that exist under the namespace
 	//+kubebuilder:validation:Optional
-	TotalDatasets int32 `json:"totalDatasets,omitempty" protobuf:"bytes,4,opt,name=totalDatasets"`
+	TotalDatasets int32 `json:"totalDatasets,omitempty" protobuf:"varint,4,opt,name=totalDatasets"`
 	// The number of DataPipeline resources that exist under the namespace
 	//+kubebuilder:validation:Optional
-	TotalDataPipelines int32 `json:"totalDataPipelines,omitempty" protobuf:"bytes,5,opt,name=totalDataPipelines"`
+	TotalDataPipelines int32 `json:"totalDataPipelines,omitempty" protobuf:"varint,5,opt,name=totalDataPipelines"`
 	// The number of DataPipelineRun resources that exist under the namespace
 	//+kubebuilder:validation:Optional
-	TotalDataPipelineRuns int32 `json:"totalDataPipelineRuns,omitempty" protobuf:"bytes,6,opt,name=totalDataPipelineRuns"`
+	TotalDataPipelineRuns int32 `json:"totalDataPipelineRuns,omitempty" protobuf:"varint,6,opt,name=totalDataPipelineRuns"`
 	// The number of Study resources that exist under the namespace
 	//+kubebuilder:validation:Optional
-	TotalStudies int32 `json:"totalStudies,omitempty" protobuf:"bytes,7,opt,name=totalStudies"`
+	TotalStudies int32 `json:"totalStudies,omitempty" protobuf:"varint,7,opt,name=totalStudies"`
 	// The number of Model resources that exist under the namespace
 	//+kubebuilder:validation:Optional
-	TotalModels int32 `json:"totalModels,omitempty" protobuf:"bytes,8,opt,name=totalModels"`
+	TotalModels int32 `json:"totalModels,omitempty" protobuf:"varint,8,opt,name=totalModels"`
 	// The number of ModelPipeline resources that exist under the namespace
 	//+kubebuilder:validation:Optional
-	TotalModelPipelines int32 `json:"totalModelPipelines,omitempty" protobuf:"bytes,9,opt,name=totalModelPipelines"`
+	TotalModelPipelines int32 `json:"totalModelPipelines,omitempty" protobuf:"varint,9,opt,name=totalModelPipelines"`
 	// The number of ModelPipelineRun resources that exist under the namespace
 	//+kubebuilder:validation:Optional
-	TotalModelPipelineRuns int32 `json:"totalModelPipelineRuns,omitempty" protobuf:"bytes,10,opt,name=totalModelPipelineRuns"`
+	TotalModelPipelineRuns int32 `json:"totalModelPipelineRuns,omitempty" protobuf:"varint,10,opt,name=totalModelPipelineRuns"`
 	// The number of Predictor resources that exist under the namespace
 	//+kubebuilder:validation:Optional
-	TotalPredictors int32 `json:"totalPredictors,omitempty" protobuf:"bytes,11,opt,name=totalPredictors"`
+	TotalPredictors int32 `json:"totalPredictors,omitempty" protobuf:"varint,11,opt,name=totalPredictors"`
 	// The number of ModelAutoBuilder resources that exist under the namespace
 	//+kubebuilder:validation:Optional
-	TotalBuilders int32 `json:"totalBuilders,omitempty" protobuf:"bytes,12,opt,name=totalBuilders"`
+	TotalBuilders int32 `json:"totalBuilders,omitempty" protobuf:"varint,12,opt,name=totalBuilders"`
 	// The number of DataApp resources that exist under the namespace
 	//+kubebuilder:validation:Optional
-	TotalApps int32 `json:"totalApps,omitempty" protobuf:"bytes,13,opt,name=totalApps"`
+	TotalApps int32 `json:"totalApps,omitempty" protobuf:"varint,13,opt,name=totalApps"`
 	// The number of Prediction resources that exist under the namespace
 	//+kubebuilder:validation:Optional
-	TotalPredictions int32 `json:"totalPredictions,omitempty" protobuf:"bytes,14,opt,name=totalPredictions"`
+	TotalPredictions int32 `json:"totalPredictions,omitempty" protobuf:"varint,14,opt,name=totalPredictions"`
 	// The number of informative alerts produced under the namespace
 	//+kubebuilder:validation:Optional
-	TotalInfoAlerts int32 `json:"totalInfoAlerts,omitempty" protobuf:"bytes,15,opt,name=totalInfoAlerts"`
+	TotalInfoAlerts int32 `json:"totalInfoAlerts,omitempty" protobuf:"varint,15,opt,name=totalInfoAlerts"`
 	// The number of error alerts produced under the namespace
 	//+kubebuilder:validation:Optional
-	TotalErrorsAlerts int32 `json:"totalErrorAlerts,omitempty" protobuf:"bytes,16,opt,name=totalErrorAlerts"`
+	TotalErrorsAlerts int32 `json:"totalErrorAlerts,omitempty" protobuf:"varint,16,opt,name=totalErrorAlerts"`
 	// In the case of failure, the DataProduct resource controller will set this field with a failure reason
 	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,17,opt,name=failureReason"`
 	// In the case of failure, the DataProduct resource controller will set this field with a failure message

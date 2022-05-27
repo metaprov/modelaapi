@@ -273,7 +273,7 @@ type DatasetStatistics struct {
 	FileSize int32 `json:"fileSize,omitempty" protobuf:"varint,5,opt,name=fileSize"`
 	// The top correlations between all features and the target feature
 	// +kubebuilder:validation:Optional
-	CorrelationsWithTarget []Correlation `json:"correlationsWithTarget,omitempty" protobuf:"bytes,6,opt,name=correlationsWithTarget"`
+	CorrelationsWithTarget []Correlation `json:"correlationsWithTarget,omitempty" protobuf:"bytes,6,rep,name=correlationsWithTarget"`
 	// The top correlations between features, computed per the CorrelationSpec of the parent Dataset
 	// +kubebuilder:validation:Optional
 	TopCorrelations []Correlation `json:"topCorrelations,omitempty" protobuf:"bytes,7,rep,name=topCorrelations"`
@@ -352,7 +352,7 @@ type ColumnStatistics struct {
 	Importance float64 `json:"importance,omitempty" protobuf:"bytes,23,opt,name=importance"`
 	// Indicates if the feature is the target attribute for a Study, as specified by the Dataset's DataSource
 	// +kubebuilder:validation:Optional
-	Target bool `json:"target,omitempty" protobuf:"bytes,24,opt,name=target"`
+	Target bool `json:"target,omitempty" protobuf:"varint,24,opt,name=target"`
 	// Indicates if the column should be ignored, as specified by the Dataset's DataSource
 	// +kubebuilder:validation:Optional
 	Ignore bool `json:"ignore,omitempty" protobuf:"varint,25,opt,name=ignore"`

@@ -125,9 +125,9 @@ type ServingSiteStatus struct {
 	// If there are no Ingress rules to serve then the Ingress will be destroyed
 	RestIngressName string `json:"restIngressName,omitempty" protobuf:"bytes,12,opt,name=restIngressName"`
 	// Store the status of the grpc ingress
-	GrpcIngressReady bool `json:"grpcIngressReady,omitempty" protobuf:"bytes,13,opt,name=grpcIngressReady"`
+	GrpcIngressReady bool `json:"grpcIngressReady,omitempty" protobuf:"bytes,13,varint,name=grpcIngressReady"`
 	// Status of rest ingress.
-	RestIngressReady bool `json:"restIngressReady,omitempty" protobuf:"bytes,14,opt,name=restIngressReady"`
+	RestIngressReady bool `json:"restIngressReady,omitempty" protobuf:"bytes,14,varint,name=restIngressReady"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional

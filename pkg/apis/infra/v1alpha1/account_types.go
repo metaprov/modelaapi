@@ -135,7 +135,7 @@ type AccountSpec struct {
 	Avatar AvatarSpec `json:"avatar,omitempty" protobuf:"bytes,18,opt,name=avatar"`
 	// The collection of DataProduct names that will be displayed with priority on the tenant dashboard for the Account
 	// +kubebuilder:validation:Optional
-	FavoritesProducts []string `json:"favoriteProducts,omitempty" protobuf:"bytes,19,opt,name=favoriteProducts"`
+	FavoritesProducts []string `json:"favoriteProducts,omitempty" protobuf:"bytes,19,rep,name=favoriteProducts"`
 }
 
 // AccountStatus defines the actual state of the api object
