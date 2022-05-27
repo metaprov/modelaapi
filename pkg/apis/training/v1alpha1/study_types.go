@@ -205,7 +205,7 @@ type SearchSpec struct {
 	// The number of new models produced by the search which, if there is no improvement
 	// in score, the model search will conclude
 	// +kubebuilder:validation:Optional
-	EarlyStop EarlyStopSpec `json:"earlyStop,omitempty" protobuf:"varint,12,opt,name=earlyStop"`
+	EarlyStop EarlyStopSpec `json:"earlyStop,omitempty" protobuf:"bytes,12,opt,name=earlyStop"`
 	// The objective metric that will be measured against all models to evaluate their performance
 	// +kubebuilder:validation:Optional
 	Objective *catalog.Metric `json:"objective,omitempty" protobuf:"bytes,14,opt,name=objective"`
@@ -242,7 +242,7 @@ type DriftDetectionSpec struct {
 	// The density model alg.
 	// +kubebuilder:default:="isolation-forest"
 	// +kubebuilder:validation:Optional
-	OutlierAlgorithm catalog.OutlierAlgorithmName `json:"outlierAlgorithm,omitempty" protobuf:"varint,2,opt,name=outlierAlgorithm"`
+	OutlierAlgorithm catalog.OutlierAlgorithmName `json:"outlierAlgorithm,omitempty" protobuf:"bytes,2,opt,name=outlierAlgorithm"`
 }
 
 // EnsemblesSpec specifies the configuration to produce ensemble models
@@ -403,11 +403,11 @@ type ThresholdPrunerOptions struct {
 	// A minimum value which determines whether pruner prunes or not. If an intermediate value is smaller than lower, it prunes.
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
-	Lower *float64 `json:"lower,omitempty" protobuf:"varint,1,opt,name=lower"`
+	Lower *float64 `json:"lower,omitempty" protobuf:"bytes,1,opt,name=lower"`
 	// A maximum value which determines whether pruner prunes or not. If an intermediate value is larger than upper, it prunes.
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
-	Upper *float64 `json:"upper,omitempty" protobuf:"varint,2,opt,name=upper"`
+	Upper *float64 `json:"upper,omitempty" protobuf:"bytes,2,opt,name=upper"`
 	//  Pruning is disabled until the trial exceeds the given number of step
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
@@ -473,6 +473,10 @@ type FeatureEngineeringSearchSpec struct {
 	// successful study.
 	// +kubebuilder:validation:Optional
 	FeatureSelectionTemplate FeatureSelectionSpec `json:"featureSelectionTemplate,omitempty" protobuf:"bytes,10,opt,name=featureSelectionTemplate"`
+	// The number of new models produced by the fe search which, if there is no improvement
+	// in score, the model search will conclude
+	// +kubebuilder:validation:Optional
+	EarlyStop EarlyStopSpec `json:"earlyStop,omitempty" protobuf:"bytes,12,opt,name=earlyStop"`
 }
 
 // StudySpec defines the desired state of a Study and the parameters for a model search
@@ -601,7 +605,7 @@ type StudySpec struct {
 	// ModelVersion specifies the version assigned to all the Model resources produced by the Study
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	ModelVersion *string `json:"modelVersion,omitempty" protobuf:"varint,34,opt,name=modelVersion"`
+	ModelVersion *string `json:"modelVersion,omitempty" protobuf:"bytes,34,opt,name=modelVersion"`
 	// The time, in seconds, after which the execution of the Study will be forcefully aborted (4 hours, by default)
 	// +kubebuilder:default:= 14400
 	// +kubebuilder:validation:Optional

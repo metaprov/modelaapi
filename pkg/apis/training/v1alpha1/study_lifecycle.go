@@ -84,8 +84,8 @@ func (study *Study) ShouldEarlyStopTraining() bool {
 }
 
 func (study *Study) ShouldEarlyStopFE() bool {
-	if *study.Spec.Search.EarlyStop.Enabled {
-		return study.Status.FeatureEngineeringStatus.Failed+study.Status.FeatureEngineeringStatus.Completed >= *study.Spec.Search.EarlyStop.Initial && study.Status.FeatureEngineeringStatus.ModelsWithNoProgress >= *study.Spec.Search.EarlyStop.MinModelsWithNoProgress
+	if *study.Spec.FeatureEngineeringSearch.EarlyStop.Enabled {
+		return study.Status.FeatureEngineeringStatus.Failed+study.Status.FeatureEngineeringStatus.Completed >= *study.Spec.FeatureEngineeringSearch.EarlyStop.Initial && study.Status.FeatureEngineeringStatus.ModelsWithNoProgress >= *study.Spec.FeatureEngineeringSearch.EarlyStop.MinModelsWithNoProgress
 	}
 	return false
 }

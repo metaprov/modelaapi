@@ -255,7 +255,7 @@ type KPI struct {
 	// +kubebuilder:validation:Optional
 	Name *string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
 	// The value of the KPI
-	Value *float64 `json:"value,omitempty" protobuf:"varint,2,opt,name=value"`
+	Value *float64 `json:"value,omitempty" protobuf:"bytes,2,opt,name=value"`
 }
 
 // GovernanceSpec describes the governance requirements for models produced under a DataProduct

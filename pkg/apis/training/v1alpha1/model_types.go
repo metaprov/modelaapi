@@ -545,13 +545,13 @@ type ModelStatus struct {
 	Logs catalog.Logs `json:"logs,omitempty" protobuf:"bytes,58,opt,name=logs"`
 	// The Roc/Auc curve of the trained model
 	// +kubebuilder:validation:Optional
-	RocCurve catalog.RocAucCurve `json:"rocCurve,omitempty" protobuf:"varint,59,opt,name=rocCurve"`
+	RocCurve catalog.RocAucCurve `json:"rocCurve,omitempty" protobuf:"bytes,59,opt,name=rocCurve"`
 	// The Precision/Recall curve of the trained model
 	// +kubebuilder:validation:Optional
-	PRCurve catalog.PRCurve `json:"prCurve,omitempty" protobuf:"varint,60,opt,name=prCurve"`
+	PRCurve catalog.PRCurve `json:"prCurve,omitempty" protobuf:"bytes,60,opt,name=prCurve"`
 	// The confusion matrix of the trained model
 	// +kubebuilder:validation:Optional
-	ConfusionMatrix catalog.ConfusionMatrix `json:"confusionMatrix,omitempty" protobuf:"varint,61,opt,name=confusionMatrix"`
+	ConfusionMatrix catalog.ConfusionMatrix `json:"confusionMatrix,omitempty" protobuf:"bytes,61,opt,name=confusionMatrix"`
 	// The collection of correlations of the features of the training dataset and the target feature
 	// +kubebuilder:validation:Optional
 	CorrelationsWithTarget []data.Correlation `json:"correlationsWithTarget,omitempty" protobuf:"bytes,62,rep,name=correlationsWithTarget"`
@@ -999,7 +999,7 @@ type FeatureSelectionSpec struct {
 	// +kubebuilder:validation:Optional
 	Wrapper *bool `json:"wrapper,omitempty" protobuf:"varint,5,rep,name=wrapper"`
 	// The collection of feature selection methods that will be applied in order to the dataset
-	Pipeline []catalog.FeatureSelection `json:"pipeline,omitempty" protobuf:"varint,6,rep,name=pipeline"`
+	Pipeline []catalog.FeatureSelection `json:"pipeline,omitempty" protobuf:"bytes,6,rep,name=pipeline"`
 	// The threshold as a percentage to remove low variance features
 	// +kubebuilder:default:=5
 	// +kubebuilder:validation:Optional
@@ -1044,7 +1044,7 @@ type InterpretabilitySpec struct {
 	Shap *catalog.ShapType `json:"shap,omitempty" protobuf:"bytes,4,opt,name=shap"`
 	// The collection of feature pairs to generate SHAP scatter diagrams for each
 	// +kubebuilder:validation:Optional
-	ShapPairs []FeaturePair `json:"shappairs,omitempty" protobuf:"varint,5,rep,name=shappairs"`
+	ShapPairs []FeaturePair `json:"shappairs,omitempty" protobuf:"bytes,5,rep,name=shappairs"`
 	// Indicates if counter-factual diagrams will be generated
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional

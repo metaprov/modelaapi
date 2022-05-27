@@ -69,7 +69,7 @@ type NotifierSpec struct {
 	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
 	// The reference to the tenant which the object exists under
 	// +kubebuilder:validation:Optional
-	TenantRef *v1.ObjectReference `json:"tenantRef" protobuf:"varint,2,opt,name=tenantRef"`
+	TenantRef *v1.ObjectReference `json:"tenantRef" protobuf:"bytes,2,opt,name=tenantRef"`
 	// The user provided description of the object
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional

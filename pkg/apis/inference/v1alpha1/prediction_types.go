@@ -135,7 +135,7 @@ type PredictionSpec struct {
 	TTL *int32 `json:"ttl,omitempty" protobuf:"varint,14,opt,name=ttl"`
 	// The forecasting specification in the case that the predicted model is a hierarchical forecast
 	// +kubebuilder:validation:Optional
-	ForecastInfo ForecastSpec `json:"forecastInfo,omitempty" protobuf:"varint,15,opt,name=forecastInfo"`
+	ForecastInfo ForecastSpec `json:"forecastInfo,omitempty" protobuf:"bytes,15,opt,name=forecastInfo"`
 	// CronPredictionName specifies the name of the CronPrediction that created the Prediction, if applicable
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:default:=""

@@ -2294,7 +2294,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReleaseStageSpec = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReleaseStageSpec.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReleaseStageSpec, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -2819,7 +2819,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingStageSpec = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingStageSpec.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingStageSpec, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -11546,7 +11546,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
     samplepct: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
     autoremove: (f = jspb.Message.getBooleanField(msg, 8)) == null ? undefined : f,
     reuse: (f = jspb.Message.getBooleanField(msg, 9)) == null ? undefined : f,
-    featureselectiontemplate: (f = msg.getFeatureselectiontemplate()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.toObject(includeInstance, f)
+    featureselectiontemplate: (f = msg.getFeatureselectiontemplate()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.toObject(includeInstance, f),
+    earlystop: (f = msg.getEarlystop()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EarlyStopSpec.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -11623,6 +11624,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.deserializeBinaryFromReader);
       msg.setFeatureselectiontemplate(value);
+      break;
+    case 12:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EarlyStopSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EarlyStopSpec.deserializeBinaryFromReader);
+      msg.setEarlystop(value);
       break;
     default:
       reader.skipField();
@@ -11722,6 +11728,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
       10,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.serializeBinaryToWriter
+    );
+  }
+  f = message.getEarlystop();
+  if (f != null) {
+    writer.writeMessage(
+      12,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EarlyStopSpec.serializeBinaryToWriter
     );
   }
 };
@@ -12085,6 +12099,43 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSearchSpec.prototype.hasFeatureselectiontemplate = function() {
   return jspb.Message.getField(this, 10) != null;
+};
+
+
+/**
+ * optional EarlyStopSpec earlyStop = 12;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EarlyStopSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSearchSpec.prototype.getEarlystop = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EarlyStopSpec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EarlyStopSpec, 12));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EarlyStopSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSearchSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSearchSpec.prototype.setEarlystop = function(value) {
+  return jspb.Message.setWrapperField(this, 12, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSearchSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSearchSpec.prototype.clearEarlystop = function() {
+  return this.setEarlystop(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSearchSpec.prototype.hasEarlystop = function() {
+  return jspb.Message.getField(this, 12) != null;
 };
 
 
@@ -43103,13 +43154,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.RegressorSpec.pro
 
 
 
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReleaseStageSpec.repeatedFields_ = [6];
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -43146,8 +43190,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReleaseStageSpec.
     predictorname: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     template: (f = msg.getTemplate()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec.toObject(includeInstance, f),
     manualapproval: (f = jspb.Message.getBooleanField(msg, 5)) == null ? undefined : f,
-    validationsList: jspb.Message.toObjectList(msg.getValidationsList(),
-    proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidation.toObject, includeInstance),
     resources: (f = msg.getResources()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.toObject(includeInstance, f)
   };
 
@@ -43205,11 +43247,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReleaseStageSpec.
     case 5:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setManualapproval(value);
-      break;
-    case 6:
-      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidation;
-      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidation.deserializeBinaryFromReader);
-      msg.addValidations(value);
       break;
     case 7:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec;
@@ -43279,14 +43316,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReleaseStageSpec.
     writer.writeBool(
       5,
       f
-    );
-  }
-  f = message.getValidationsList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      6,
-      f,
-      proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidation.serializeBinaryToWriter
     );
   }
   f = message.getResources();
@@ -43478,44 +43507,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReleaseStageSpec.
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReleaseStageSpec.prototype.hasManualapproval = function() {
   return jspb.Message.getField(this, 5) != null;
-};
-
-
-/**
- * repeated ModelValidation validations = 6;
- * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidation>}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReleaseStageSpec.prototype.getValidationsList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidation>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidation, 6));
-};
-
-
-/**
- * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidation>} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReleaseStageSpec} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReleaseStageSpec.prototype.setValidationsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 6, value);
-};
-
-
-/**
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidation=} opt_value
- * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidation}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReleaseStageSpec.prototype.addValidations = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidation, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReleaseStageSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReleaseStageSpec.prototype.clearValidationsList = function() {
-  return this.setValidationsList([]);
 };
 
 
@@ -56002,13 +55993,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
 
 
 
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingStageSpec.repeatedFields_ = [5];
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -56043,9 +56027,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingStageSpec
     enabled: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
     notebookname: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     labname: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-    studytemplatename: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    validationsList: jspb.Message.toObjectList(msg.getValidationsList(),
-    proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidation.toObject, includeInstance)
+    studytemplatename: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -56097,11 +56079,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingStageSpec
     case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setStudytemplatename(value);
-      break;
-    case 5:
-      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidation;
-      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidation.deserializeBinaryFromReader);
-      msg.addValidations(value);
       break;
     default:
       reader.skipField();
@@ -56158,14 +56135,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingStageSpec
     writer.writeString(
       4,
       f
-    );
-  }
-  f = message.getValidationsList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      5,
-      f,
-      proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidation.serializeBinaryToWriter
     );
   }
 };
@@ -56312,44 +56281,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingStageSpec
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingStageSpec.prototype.hasStudytemplatename = function() {
   return jspb.Message.getField(this, 4) != null;
-};
-
-
-/**
- * repeated ModelValidation validations = 5;
- * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidation>}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingStageSpec.prototype.getValidationsList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidation>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidation, 5));
-};
-
-
-/**
- * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidation>} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingStageSpec} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingStageSpec.prototype.setValidationsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 5, value);
-};
-
-
-/**
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidation=} opt_value
- * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidation}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingStageSpec.prototype.addValidations = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidation, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingStageSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingStageSpec.prototype.clearValidationsList = function() {
-  return this.setValidationsList([]);
 };
 
 

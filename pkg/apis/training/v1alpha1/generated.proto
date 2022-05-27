@@ -672,6 +672,11 @@ message FeatureEngineeringSearchSpec {
   // successful study.
   // +kubebuilder:validation:Optional
   optional FeatureSelectionSpec featureSelectionTemplate = 10;
+
+  // The number of new models produced by the fe search which, if there is no improvement
+  // in score, the model search will conclude
+  // +kubebuilder:validation:Optional
+  optional EarlyStopSpec earlyStop = 12;
 }
 
 message FeatureEngineeringSearchStatus {
@@ -2908,10 +2913,6 @@ message ReleaseStageSpec {
   // +kubebuilder:validation:Optional
   optional bool manualApproval = 5;
 
-  // Validations is the List of expectation run against the deployed model before moving production traffic to the model
-  // +kubebuilder:validation:Optional
-  repeated ModelValidation validations = 6;
-
   // Resource define the hardware resources req.
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 7;
@@ -3921,10 +3922,6 @@ message TrainingStageSpec {
   // +kubebuilder:validation:Required
   // +required
   optional string studyTemplateName = 4;
-
-  // Validations defines the machine learning test cases to run against the new trained model.
-  // +kubebuilder:validation:Optional
-  repeated ModelValidation validations = 5;
 }
 
 // UATStageSpec is the specification of the user acceptance test.

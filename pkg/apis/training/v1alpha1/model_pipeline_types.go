@@ -119,11 +119,11 @@ type DataStageSpec struct {
 	// LabName is the lab that execute processing of the data pipeline
 	// +kubebuilder:default =""
 	// +kubebuilder:validation:Optional
-	LabName *string `json:"labName,omitempty" protobuf:"varint,2,opt,name=labName"`
+	LabName *string `json:"labName,omitempty" protobuf:"bytes,2,opt,name=labName"`
 	// If not null, run the data pipeline and create a dataset. else, use the data in the data location
 	// +kubebuilder:default =""
 	// +kubebuilder:validation:Optional
-	DataPipelineName *string `json:"dataPipelineName,omitempty" protobuf:"varint,3,opt,name=datapipelineName"`
+	DataPipelineName *string `json:"dataPipelineName,omitempty" protobuf:"bytes,3,opt,name=datapipelineName"`
 	// If Not null, run a docker image is used in order to generate the data.
 	// The data must reside in location after the container run
 	// Not supported in first release.
@@ -152,9 +152,6 @@ type TrainingStageSpec struct {
 	// +kubebuilder:validation:Required
 	// +required
 	StudyTemplateName *string `json:"studyTemplateName,omitempty" protobuf:"bytes,4,opt,name=studyTemplateName"`
-	// Validations defines the machine learning test cases to run against the new trained model.
-	// +kubebuilder:validation:Optional
-	Validations []ModelValidation `json:"validations,omitempty" protobuf:"bytes,5,rep,name=validations"`
 }
 
 //UATStageSpec is the specification of the user acceptance test.
@@ -239,9 +236,6 @@ type ReleaseStageSpec struct {
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
 	ManualApproval *bool `json:"manualApproval,omitempty" protobuf:"varint,5,opt,name=manualApproval"`
-	// Validations is the List of expectation run against the deployed model before moving production traffic to the model
-	// +kubebuilder:validation:Optional
-	Validations []ModelValidation `json:"validations,omitempty" protobuf:"bytes,6,rep,name=validations"`
 	// Resource define the hardware resources req.
 	// +kubebuilder:validation:Optional
 	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,7,opt,name=resources"`

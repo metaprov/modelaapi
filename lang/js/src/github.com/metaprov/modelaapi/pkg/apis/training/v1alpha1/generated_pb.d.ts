@@ -979,6 +979,11 @@ export class FeatureEngineeringSearchSpec extends jspb.Message {
   hasFeatureselectiontemplate(): boolean;
   clearFeatureselectiontemplate(): FeatureEngineeringSearchSpec;
 
+  getEarlystop(): EarlyStopSpec | undefined;
+  setEarlystop(value?: EarlyStopSpec): FeatureEngineeringSearchSpec;
+  hasEarlystop(): boolean;
+  clearEarlystop(): FeatureEngineeringSearchSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FeatureEngineeringSearchSpec.AsObject;
   static toObject(includeInstance: boolean, msg: FeatureEngineeringSearchSpec): FeatureEngineeringSearchSpec.AsObject;
@@ -999,6 +1004,7 @@ export namespace FeatureEngineeringSearchSpec {
     autoremove: boolean,
     reuse: boolean,
     featureselectiontemplate?: FeatureSelectionSpec.AsObject,
+    earlystop?: EarlyStopSpec.AsObject,
   }
 }
 
@@ -4282,11 +4288,6 @@ export class ReleaseStageSpec extends jspb.Message {
   getManualapproval(): boolean;
   setManualapproval(value: boolean): ReleaseStageSpec;
 
-  getValidationsList(): Array<ModelValidation>;
-  setValidationsList(value: Array<ModelValidation>): ReleaseStageSpec;
-  clearValidationsList(): ReleaseStageSpec;
-  addValidations(value?: ModelValidation, index?: number): ModelValidation;
-
   getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
   setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): ReleaseStageSpec;
   hasResources(): boolean;
@@ -4307,7 +4308,6 @@ export namespace ReleaseStageSpec {
     predictorname: string,
     template?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec.AsObject,
     manualapproval: boolean,
-    validationsList: Array<ModelValidation.AsObject>,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
   }
 }
@@ -5639,11 +5639,6 @@ export class TrainingStageSpec extends jspb.Message {
   getStudytemplatename(): string;
   setStudytemplatename(value: string): TrainingStageSpec;
 
-  getValidationsList(): Array<ModelValidation>;
-  setValidationsList(value: Array<ModelValidation>): TrainingStageSpec;
-  clearValidationsList(): TrainingStageSpec;
-  addValidations(value?: ModelValidation, index?: number): ModelValidation;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TrainingStageSpec.AsObject;
   static toObject(includeInstance: boolean, msg: TrainingStageSpec): TrainingStageSpec.AsObject;
@@ -5658,7 +5653,6 @@ export namespace TrainingStageSpec {
     notebookname: string,
     labname: string,
     studytemplatename: string,
-    validationsList: Array<ModelValidation.AsObject>,
   }
 }
 
