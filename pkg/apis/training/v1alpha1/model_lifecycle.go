@@ -787,7 +787,7 @@ func (model *Model) MarkExplainedFailed(err string) {
 		Reason:  ReasonFailed,
 		Message: err,
 	})
-	model.Status.Phase = ModelPhaseExplained
+	model.Status.Phase = ModelPhaseFailed
 	model.Status.FailureMessage = util.StrPtr("Failed to explain." + err)
 	if model.Status.EndTime == nil {
 		now := metav1.Now()
