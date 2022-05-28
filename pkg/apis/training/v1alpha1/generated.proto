@@ -776,17 +776,12 @@ message FeatureSelectionSpec {
   // The number of features that will be selected based on importance. If TopN is 0, all features will be selected
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
-  optional int32 topN = 9;
+  optional int32 maxFeatures = 9;
 
-  // The cumulative importance threshold of features to be included
-  // +kubebuilder:default:=95
+  // Percent of feautures to keep
+  // +kubebuilder:default:=20
   // +kubebuilder:validation:Optional
-  optional int32 cumulativeImportancePercent = 10;
-
-  // Threshold count.
-  // +kubebuilder:default:=999
-  // +kubebuilder:validation:Optional
-  optional int32 featureCountThreshold = 11;
+  optional int32 percentile = 10;
 
   // List of features that are reserved and will always be included in the final feature selection
   // +kubebuilder:validation:Optional
@@ -2280,13 +2275,9 @@ message ModelStatus {
   // +kubebuilder:validation:Optional
   optional string forecastUri = 29;
 
-  // The Python version of the data plane used during training
+  // The runtime training details.
   // +kubebuilder:validation:Optional
-  optional string pythonVersion = 30;
-
-  // The Python packages used during training (which is the result of running pip freeze)
-  // +kubebuilder:validation:Optional
-  map<string, string> pythonPackages = 31;
+  optional RuntimeStatus runtime = 30;
 
   // TrainDatasetLocation specifies the location of the training dataset
   // +kubebuilder:validation:Optional
@@ -3080,6 +3071,25 @@ message ResourceConsumption {
   optional double mem = 2;
 
   optional double gpu = 3;
+}
+
+// Holds the information about the execution environment.
+message RuntimeStatus {
+  // The Python version of the data plane used during training
+  // +kubebuilder:validation:Optional
+  optional string pythonVersion = 1;
+
+  // The python command line
+  // +kubebuilder:validation:Optional
+  optional string pythonCmd = 2;
+
+  // The OS
+  // +kubebuilder:validation:Optional
+  optional string os = 3;
+
+  // The Python packages used during training (which is the result of running pip freeze)
+  // +kubebuilder:validation:Optional
+  map<string, string> pythonPackages = 4;
 }
 
 // SearchSpec specifies the configuration for a distributed model search

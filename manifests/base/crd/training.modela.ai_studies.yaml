@@ -385,12 +385,6 @@ spec:
                         description: The threshold to remove features with high correlations
                         format: int32
                         type: integer
-                      cumulativeImportancePercent:
-                        default: 95
-                        description: The cumulative importance threshold of features
-                          to be included
-                        format: int32
-                        type: integer
                       embedding:
                         default: true
                         description: Indicates if embedded methods will be tested
@@ -400,17 +394,24 @@ spec:
                         default: true
                         description: Indicates if feature selection is enabled
                         type: boolean
-                      featureCountThreshold:
-                        default: 999
-                        description: Threshold count.
-                        format: int32
-                        type: integer
                       filter:
                         default: true
                         description: Indicates if filter methods will be tested as
                           part of the candidate algorithms (e.g. chi-square or anova
                           tests)
                         type: boolean
+                      maxFeatures:
+                        default: 0
+                        description: The number of features that will be selected
+                          based on importance. If TopN is 0, all features will be
+                          selected
+                        format: int32
+                        type: integer
+                      percentile:
+                        default: 20
+                        description: Percent of feautures to keep
+                        format: int32
+                        type: integer
                       pipeline:
                         description: The collection of feature selection methods that
                           will be applied in order to the dataset
@@ -448,13 +449,6 @@ spec:
                         default: 100
                         description: The number percentage (0 through 100) of the
                           dataset to sample
-                        format: int32
-                        type: integer
-                      topN:
-                        default: 0
-                        description: The number of features that will be selected
-                          based on importance. If TopN is 0, all features will be
-                          selected
                         format: int32
                         type: integer
                       varianceThresholdPct:
@@ -2945,12 +2939,6 @@ spec:
                         description: The threshold to remove features with high correlations
                         format: int32
                         type: integer
-                      cumulativeImportancePercent:
-                        default: 95
-                        description: The cumulative importance threshold of features
-                          to be included
-                        format: int32
-                        type: integer
                       embedding:
                         default: true
                         description: Indicates if embedded methods will be tested
@@ -2960,17 +2948,24 @@ spec:
                         default: true
                         description: Indicates if feature selection is enabled
                         type: boolean
-                      featureCountThreshold:
-                        default: 999
-                        description: Threshold count.
-                        format: int32
-                        type: integer
                       filter:
                         default: true
                         description: Indicates if filter methods will be tested as
                           part of the candidate algorithms (e.g. chi-square or anova
                           tests)
                         type: boolean
+                      maxFeatures:
+                        default: 0
+                        description: The number of features that will be selected
+                          based on importance. If TopN is 0, all features will be
+                          selected
+                        format: int32
+                        type: integer
+                      percentile:
+                        default: 20
+                        description: Percent of feautures to keep
+                        format: int32
+                        type: integer
                       pipeline:
                         description: The collection of feature selection methods that
                           will be applied in order to the dataset
@@ -3008,13 +3003,6 @@ spec:
                         default: 100
                         description: The number percentage (0 through 100) of the
                           dataset to sample
-                        format: int32
-                        type: integer
-                      topN:
-                        default: 0
-                        description: The number of features that will be selected
-                          based on importance. If TopN is 0, all features will be
-                          selected
                         format: int32
                         type: integer
                       varianceThresholdPct:

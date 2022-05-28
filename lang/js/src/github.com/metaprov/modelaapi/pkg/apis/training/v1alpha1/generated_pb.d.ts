@@ -1155,14 +1155,11 @@ export class FeatureSelectionSpec extends jspb.Message {
   getCorrthreshold(): number;
   setCorrthreshold(value: number): FeatureSelectionSpec;
 
-  getTopn(): number;
-  setTopn(value: number): FeatureSelectionSpec;
+  getMaxfeatures(): number;
+  setMaxfeatures(value: number): FeatureSelectionSpec;
 
-  getCumulativeimportancepercent(): number;
-  setCumulativeimportancepercent(value: number): FeatureSelectionSpec;
-
-  getFeaturecountthreshold(): number;
-  setFeaturecountthreshold(value: number): FeatureSelectionSpec;
+  getPercentile(): number;
+  setPercentile(value: number): FeatureSelectionSpec;
 
   getReservedList(): Array<string>;
   setReservedList(value: Array<string>): FeatureSelectionSpec;
@@ -1187,9 +1184,8 @@ export namespace FeatureSelectionSpec {
     pipelineList: Array<string>,
     variancethresholdpct: number,
     corrthreshold: number,
-    topn: number,
-    cumulativeimportancepercent: number,
-    featurecountthreshold: number,
+    maxfeatures: number,
+    percentile: number,
     reservedList: Array<string>,
   }
 }
@@ -3275,11 +3271,10 @@ export class ModelStatus extends jspb.Message {
   getForecasturi(): string;
   setForecasturi(value: string): ModelStatus;
 
-  getPythonversion(): string;
-  setPythonversion(value: string): ModelStatus;
-
-  getPythonpackagesMap(): jspb.Map<string, string>;
-  clearPythonpackagesMap(): ModelStatus;
+  getRuntime(): RuntimeStatus | undefined;
+  setRuntime(value?: RuntimeStatus): ModelStatus;
+  hasRuntime(): boolean;
+  clearRuntime(): ModelStatus;
 
   getTraindataset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
   setTraindataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): ModelStatus;
@@ -3457,8 +3452,7 @@ export namespace ModelStatus {
     imagename: string,
     importanceList: Array<FeatureImportance.AsObject>,
     forecasturi: string,
-    pythonversion: string,
-    pythonpackagesMap: Array<[string, string]>,
+    runtime?: RuntimeStatus.AsObject,
     traindataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     testdataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     validationdataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
@@ -4589,6 +4583,36 @@ export namespace ResourceConsumption {
     cpu: number,
     mem: number,
     gpu: number,
+  }
+}
+
+export class RuntimeStatus extends jspb.Message {
+  getPythonversion(): string;
+  setPythonversion(value: string): RuntimeStatus;
+
+  getPythoncmd(): string;
+  setPythoncmd(value: string): RuntimeStatus;
+
+  getOs(): string;
+  setOs(value: string): RuntimeStatus;
+
+  getPythonpackagesMap(): jspb.Map<string, string>;
+  clearPythonpackagesMap(): RuntimeStatus;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RuntimeStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: RuntimeStatus): RuntimeStatus.AsObject;
+  static serializeBinaryToWriter(message: RuntimeStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RuntimeStatus;
+  static deserializeBinaryFromReader(message: RuntimeStatus, reader: jspb.BinaryReader): RuntimeStatus;
+}
+
+export namespace RuntimeStatus {
+  export type AsObject = {
+    pythonversion: string,
+    pythoncmd: string,
+    os: string,
+    pythonpackagesMap: Array<[string, string]>,
   }
 }
 

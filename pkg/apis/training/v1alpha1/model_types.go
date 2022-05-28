@@ -469,12 +469,9 @@ type ModelStatus struct {
 	// The URI of the model forecast
 	// +kubebuilder:validation:Optional
 	ForecastUri string `json:"forecastUri,omitempty" protobuf:"bytes,29,opt,name=forecastUri"`
-	// The Python version of the data plane used during training
+	// The runtime training details.
 	// +kubebuilder:validation:Optional
-	PythonVersion string `json:"pythonVersion,omitempty" protobuf:"bytes,30,opt,name=pythonVersion"`
-	// The Python packages used during training (which is the result of running pip freeze)
-	// +kubebuilder:validation:Optional
-	PythonPackages map[string]string `json:"pythonPackages,omitempty" protobuf:"bytes,31,opt,name=pythonPackages"`
+	Runtime RuntimeStatus `json:"runtime,omitempty" protobuf:"bytes,30,opt,name=runtime"`
 	// TrainDatasetLocation specifies the location of the training dataset
 	// +kubebuilder:validation:Optional
 	TrainDatasetLocation data.DataLocation `json:"trainDataset,omitempty" protobuf:"bytes,32,opt,name=trainDataset"`
@@ -578,6 +575,25 @@ type ModelStatus struct {
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	Conditions []ModelCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,68,rep,name=conditions"`
+}
+
+// Holds the information about the execution environment.
+type RuntimeStatus struct {
+	// The Python version of the data plane used during training
+	// +kubebuilder:validation:Optional
+	PythonVersion string `json:"pythonVersion,omitempty" protobuf:"bytes,1,opt,name=pythonVersion"`
+
+	// The python command line
+	// +kubebuilder:validation:Optional
+	PythonCMD string `json:"pythonCmd,omitempty" protobuf:"bytes,2,opt,name=pythonCmd"`
+
+	// The OS
+	// +kubebuilder:validation:Optional
+	OS string `json:"os,omitempty" protobuf:"bytes,3,opt,name=os"`
+
+	// The Python packages used during training (which is the result of running pip freeze)
+	// +kubebuilder:validation:Optional
+	PythonPackages map[string]string `json:"pythonPackages,omitempty" protobuf:"bytes,4,opt,name=pythonPackages"`
 }
 
 // HyperParameterValue represent an individual hyper-parameter of a machine earning algorithm
@@ -1019,15 +1035,11 @@ type FeatureSelectionSpec struct {
 	// The number of features that will be selected based on importance. If TopN is 0, all features will be selected
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
-	TopN *int32 `json:"topN,omitempty" protobuf:"varint,9,opt,name=topN"`
-	// The cumulative importance threshold of features to be included
-	// +kubebuilder:default:=95
+	MaxFeatures *int32 `json:"maxFeatures,omitempty" protobuf:"varint,9,opt,name=maxFeatures"`
+	// Percent of feautures to keep
+	// +kubebuilder:default:=20
 	// +kubebuilder:validation:Optional
-	CumulativeImportancePercent *int32 `json:"cumulativeImportancePercent,omitempty" protobuf:"varint,10,opt,name=cumulativeImportancePercent"`
-	// Threshold count.
-	// +kubebuilder:default:=999
-	// +kubebuilder:validation:Optional
-	FeatureCountThreshold *int32 `json:"featureCountThreshold,omitempty" protobuf:"varint,11,opt,name=featureCountThreshold"`
+	Percentile *int32 `json:"percentile,omitempty" protobuf:"varint,10,opt,name=percentile"`
 	// List of features that are reserved and will always be included in the final feature selection
 	// +kubebuilder:validation:Optional
 	Reserved []string `json:"reserved,omitempty" protobuf:"bytes,12,rep,name=reserved"`
