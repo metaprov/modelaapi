@@ -1050,6 +1050,8 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainResponse.toObject 
     logsclouduri: jspb.Message.getFieldWithDefault(msg, 4, ""),
     labelencoder: jspb.Message.getFieldWithDefault(msg, 5, ""),
     pythonversioninfo: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    pythoncmd: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    os: jspb.Message.getFieldWithDefault(msg, 8, ""),
     pipfreezeMap: (f = msg.getPipfreezeMap()) ? f.toObject(includeInstance, undefined) : [],
     featuresimportanceMap: (f = msg.getFeaturesimportanceMap()) ? f.toObject(includeInstance, undefined) : []
   };
@@ -1114,12 +1116,20 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainResponse.deseriali
       msg.setPythonversioninfo(value);
       break;
     case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPythoncmd(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setOs(value);
+      break;
+    case 9:
       var value = msg.getPipfreezeMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
          });
       break;
-    case 8:
+    case 10:
       var value = msg.getFeaturesimportanceMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readFloat, null, "", 0.0);
@@ -1197,13 +1207,27 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainResponse.serialize
       f
     );
   }
+  f = message.getPythoncmd();
+  if (f.length > 0) {
+    writer.writeString(
+      7,
+      f
+    );
+  }
+  f = message.getOs();
+  if (f.length > 0) {
+    writer.writeString(
+      8,
+      f
+    );
+  }
   f = message.getPipfreezeMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(7, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+    f.serializeBinary(9, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
   f = message.getFeaturesimportanceMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(8, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeFloat);
+    f.serializeBinary(10, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeFloat);
   }
 };
 
@@ -1337,14 +1361,50 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainResponse.prototype
 
 
 /**
- * map<string, string> pipFreeze = 7;
+ * optional string pythonCMD = 7;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainResponse.prototype.getPythoncmd = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainResponse} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainResponse.prototype.setPythoncmd = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
+};
+
+
+/**
+ * optional string OS = 8;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainResponse.prototype.getOs = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainResponse} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainResponse.prototype.setOs = function(value) {
+  return jspb.Message.setProto3StringField(this, 8, value);
+};
+
+
+/**
+ * map<string, string> pipFreeze = 9;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
 proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainResponse.prototype.getPipfreezeMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 7, opt_noLazyCreate,
+      jspb.Message.getMapField(this, 9, opt_noLazyCreate,
       null));
 };
 
@@ -1359,14 +1419,14 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainResponse.prototype
 
 
 /**
- * map<string, float> featuresImportance = 8;
+ * map<string, float> featuresImportance = 10;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,number>}
  */
 proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainResponse.prototype.getFeaturesimportanceMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,number>} */ (
-      jspb.Message.getMapField(this, 8, opt_noLazyCreate,
+      jspb.Message.getMapField(this, 10, opt_noLazyCreate,
       null));
 };
 

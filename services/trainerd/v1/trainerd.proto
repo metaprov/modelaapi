@@ -52,10 +52,14 @@ message TrainResponse {
     string labelEncoder = 5;
     // python version info
     string pythonVersionInfo = 6;
+    // python command line
+    string pythonCMD = 7;
+    // The operating system
+    string OS = 8;
     // pip freeze string
-    map<string,string> pipFreeze = 7;
+    map<string,string> pipFreeze = 9;
     // feature importance
-    map<string,float> featuresImportance = 8;
+    map<string,float> featuresImportance = 10;
 
 }
 

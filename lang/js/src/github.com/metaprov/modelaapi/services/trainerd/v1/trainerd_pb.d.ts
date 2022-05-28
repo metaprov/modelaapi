@@ -106,6 +106,12 @@ export class TrainResponse extends jspb.Message {
   getPythonversioninfo(): string;
   setPythonversioninfo(value: string): TrainResponse;
 
+  getPythoncmd(): string;
+  setPythoncmd(value: string): TrainResponse;
+
+  getOs(): string;
+  setOs(value: string): TrainResponse;
+
   getPipfreezeMap(): jspb.Map<string, string>;
   clearPipfreezeMap(): TrainResponse;
 
@@ -128,6 +134,8 @@ export namespace TrainResponse {
     logsclouduri: string,
     labelencoder: string,
     pythonversioninfo: string,
+    pythoncmd: string,
+    os: string,
     pipfreezeMap: Array<[string, string]>,
     featuresimportanceMap: Array<[string, number]>,
   }
