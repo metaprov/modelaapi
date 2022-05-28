@@ -3917,11 +3917,6 @@ message TrainingSpec {
   // +kubebuilder:default:=600
   // +kubebuilder:validation:Optional
   optional int32 timeoutInSecs = 20;
-
-  // Max cores per job
-  // +kubebuilder:default:=-1
-  // +kubebuilder:validation:Optional
-  optional int32 maxCores = 30;
 }
 
 // TrainingStageSpec is the desired state of the training step of the pipeline

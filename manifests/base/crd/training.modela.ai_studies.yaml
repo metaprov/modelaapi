@@ -2268,11 +2268,6 @@ spec:
                     - info
                     - error
                     type: string
-                  maxCores:
-                    default: -1
-                    description: Max cores per job
-                    format: int32
-                    type: integer
                   nodeCount:
                     default: 1
                     description: The number of nodes to use, in the case of distributed

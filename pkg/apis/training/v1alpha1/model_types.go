@@ -865,10 +865,6 @@ type TrainingSpec struct {
 	// +kubebuilder:default:=600
 	// +kubebuilder:validation:Optional
 	TimeoutInSecs *int32 `json:"timeoutInSecs,omitempty" protobuf:"varint,20,opt,name=timeoutInSecs"`
-	// Max cores per job
-	// +kubebuilder:default:=-1
-	// +kubebuilder:validation:Optional
-	MaxCores *int32 `json:"maxCores,omitempty" protobuf:"varint,30,opt,name=maxCores"`
 }
 
 // CheckpointSpec specifies where to store model checkpoints

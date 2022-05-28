@@ -5627,9 +5627,6 @@ export class TrainingSpec extends jspb.Message {
   getTimeoutinsecs(): number;
   setTimeoutinsecs(value: number): TrainingSpec;
 
-  getMaxcores(): number;
-  setMaxcores(value: number): TrainingSpec;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TrainingSpec.AsObject;
   static toObject(includeInstance: boolean, msg: TrainingSpec): TrainingSpec.AsObject;
@@ -5658,7 +5655,6 @@ export namespace TrainingSpec {
     checkpoint?: CheckpointSpec.AsObject,
     loglevel: string,
     timeoutinsecs: number,
-    maxcores: number,
   }
 }
 

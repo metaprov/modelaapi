@@ -55378,8 +55378,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.toOb
     samplepct: (f = jspb.Message.getField(msg, 17)) == null ? undefined : f,
     checkpoint: (f = msg.getCheckpoint()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CheckpointSpec.toObject(includeInstance, f),
     loglevel: (f = jspb.Message.getField(msg, 19)) == null ? undefined : f,
-    timeoutinsecs: (f = jspb.Message.getField(msg, 20)) == null ? undefined : f,
-    maxcores: (f = jspb.Message.getField(msg, 30)) == null ? undefined : f
+    timeoutinsecs: (f = jspb.Message.getField(msg, 20)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -55492,10 +55491,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.dese
     case 20:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setTimeoutinsecs(value);
-      break;
-    case 30:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setMaxcores(value);
       break;
     default:
       reader.skipField();
@@ -55654,13 +55649,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.seri
   if (f != null) {
     writer.writeInt32(
       20,
-      f
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 30));
-  if (f != null) {
-    writer.writeInt32(
-      30,
       f
     );
   }
@@ -56318,42 +56306,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.hasTimeoutinsecs = function() {
   return jspb.Message.getField(this, 20) != null;
-};
-
-
-/**
- * optional int32 maxCores = 30;
- * @return {number}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.getMaxcores = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 30, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.setMaxcores = function(value) {
-  return jspb.Message.setField(this, 30, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.clearMaxcores = function() {
-  return jspb.Message.setField(this, 30, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.hasMaxcores = function() {
-  return jspb.Message.getField(this, 30) != null;
 };
 
 
