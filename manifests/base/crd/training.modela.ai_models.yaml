@@ -2250,24 +2250,6 @@ spec:
                   - type
                   type: object
                 type: array
-              confusionMatrix:
-                description: The confusion matrix of the trained model
-                properties:
-                  rows:
-                    items:
-                      properties:
-                        count:
-                          format: int32
-                          type: integer
-                        p:
-                          type: string
-                        pct:
-                          type: number
-                        t:
-                          type: string
-                      type: object
-                    type: array
-                type: object
               correlationsWithTarget:
                 description: The collection of correlations of the features of the
                   training dataset and the target feature
@@ -2777,6 +2759,24 @@ spec:
                   - value
                   type: object
                 type: array
+              testConfusionMatrix:
+                description: The confusion matrix of the test data
+                properties:
+                  rows:
+                    items:
+                      properties:
+                        count:
+                          format: int32
+                          type: integer
+                        p:
+                          type: string
+                        pct:
+                          type: number
+                        t:
+                          type: string
+                      type: object
+                    type: array
+                type: object
               testDataset:
                 description: TestDatasetLocation specifies the location of the testing
                   dataset
@@ -3024,6 +3024,24 @@ spec:
                   - value
                   type: object
                 type: array
+              trainConfusionMatrix:
+                description: The confusion matrix of the train data.
+                properties:
+                  rows:
+                    items:
+                      properties:
+                        count:
+                          format: int32
+                          type: integer
+                        p:
+                          type: string
+                        pct:
+                          type: number
+                        t:
+                          type: string
+                      type: object
+                    type: array
+                type: object
               trainDataset:
                 description: TrainDatasetLocation specifies the location of the training
                   dataset

@@ -2910,7 +2910,8 @@ func (in *ModelStatus) DeepCopyInto(out *ModelStatus) {
 	in.Logs.DeepCopyInto(&out.Logs)
 	in.RocCurve.DeepCopyInto(&out.RocCurve)
 	in.PRCurve.DeepCopyInto(&out.PRCurve)
-	in.ConfusionMatrix.DeepCopyInto(&out.ConfusionMatrix)
+	in.TrainConfusionMatrix.DeepCopyInto(&out.TrainConfusionMatrix)
+	in.TestConfusionMatrix.DeepCopyInto(&out.TestConfusionMatrix)
 	if in.CorrelationsWithTarget != nil {
 		in, out := &in.CorrelationsWithTarget, &out.CorrelationsWithTarget
 		*out = make([]datav1alpha1.Correlation, len(*in))

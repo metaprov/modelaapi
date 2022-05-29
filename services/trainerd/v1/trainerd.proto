@@ -60,6 +60,8 @@ message TrainResponse {
     map<string,string> pipFreeze = 9;
     // feature importance
     map<string,float> featuresImportance = 10;
+    // confusion matrix
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ConfusionMatrix cm = 11;
 
 }
 
@@ -131,6 +133,8 @@ message TestResponse {
     map<string,string> pipFreeze = 13;
     // feature importance
     map<string,float> featuresImportance = 14;
+    // confusion matrix
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ConfusionMatrix cm = 15;
 
 
 

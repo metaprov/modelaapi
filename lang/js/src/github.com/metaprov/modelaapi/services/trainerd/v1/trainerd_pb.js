@@ -1053,7 +1053,8 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainResponse.toObject 
     pythoncmd: jspb.Message.getFieldWithDefault(msg, 7, ""),
     os: jspb.Message.getFieldWithDefault(msg, 8, ""),
     pipfreezeMap: (f = msg.getPipfreezeMap()) ? f.toObject(includeInstance, undefined) : [],
-    featuresimportanceMap: (f = msg.getFeaturesimportanceMap()) ? f.toObject(includeInstance, undefined) : []
+    featuresimportanceMap: (f = msg.getFeaturesimportanceMap()) ? f.toObject(includeInstance, undefined) : [],
+    cm: (f = msg.getCm()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1134,6 +1135,11 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainResponse.deseriali
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readFloat, null, "", 0.0);
          });
+      break;
+    case 11:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix.deserializeBinaryFromReader);
+      msg.setCm(value);
       break;
     default:
       reader.skipField();
@@ -1228,6 +1234,14 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainResponse.serialize
   f = message.getFeaturesimportanceMap(true);
   if (f && f.getLength() > 0) {
     f.serializeBinary(10, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeFloat);
+  }
+  f = message.getCm();
+  if (f != null) {
+    writer.writeMessage(
+      11,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix.serializeBinaryToWriter
+    );
   }
 };
 
@@ -1438,6 +1452,43 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainResponse.prototype
 proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainResponse.prototype.clearFeaturesimportanceMap = function() {
   this.getFeaturesimportanceMap().clear();
   return this;};
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ConfusionMatrix cm = 11;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ConfusionMatrix}
+ */
+proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainResponse.prototype.getCm = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ConfusionMatrix} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix, 11));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ConfusionMatrix|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainResponse} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainResponse.prototype.setCm = function(value) {
+  return jspb.Message.setWrapperField(this, 11, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainResponse} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainResponse.prototype.clearCm = function() {
+  return this.setCm(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainResponse.prototype.hasCm = function() {
+  return jspb.Message.getField(this, 11) != null;
+};
 
 
 
@@ -2707,7 +2758,8 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.toObject =
     misclassuri: jspb.Message.getFieldWithDefault(msg, 11, ""),
     pythonversioninfo: jspb.Message.getFieldWithDefault(msg, 12, ""),
     pipfreezeMap: (f = msg.getPipfreezeMap()) ? f.toObject(includeInstance, undefined) : [],
-    featuresimportanceMap: (f = msg.getFeaturesimportanceMap()) ? f.toObject(includeInstance, undefined) : []
+    featuresimportanceMap: (f = msg.getFeaturesimportanceMap()) ? f.toObject(includeInstance, undefined) : [],
+    cm: (f = msg.getCm()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2806,6 +2858,11 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.deserializ
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readFloat, null, "", 0.0);
          });
+      break;
+    case 15:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix.deserializeBinaryFromReader);
+      msg.setCm(value);
       break;
     default:
       reader.skipField();
@@ -2930,6 +2987,14 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.serializeB
   f = message.getFeaturesimportanceMap(true);
   if (f && f.getLength() > 0) {
     f.serializeBinary(14, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeFloat);
+  }
+  f = message.getCm();
+  if (f != null) {
+    writer.writeMessage(
+      15,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix.serializeBinaryToWriter
+    );
   }
 };
 
@@ -3252,6 +3317,43 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.
 proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.clearFeaturesimportanceMap = function() {
   this.getFeaturesimportanceMap().clear();
   return this;};
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ConfusionMatrix cm = 15;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ConfusionMatrix}
+ */
+proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.getCm = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ConfusionMatrix} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix, 15));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ConfusionMatrix|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.setCm = function(value) {
+  return jspb.Message.setWrapperField(this, 15, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.clearCm = function() {
+  return this.setCm(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.hasCm = function() {
+  return jspb.Message.getField(this, 15) != null;
+};
 
 
 

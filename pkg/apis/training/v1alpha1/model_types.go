@@ -550,31 +550,34 @@ type ModelStatus struct {
 	// The Precision/Recall curve of the trained model
 	// +kubebuilder:validation:Optional
 	PRCurve catalog.PRCurve `json:"prCurve,omitempty" protobuf:"bytes,60,opt,name=prCurve"`
-	// The confusion matrix of the trained model
+	// The confusion matrix of the train data.
 	// +kubebuilder:validation:Optional
-	ConfusionMatrix catalog.ConfusionMatrix `json:"confusionMatrix,omitempty" protobuf:"bytes,61,opt,name=confusionMatrix"`
+	TrainConfusionMatrix catalog.ConfusionMatrix `json:"trainConfusionMatrix,omitempty" protobuf:"bytes,61,opt,name=trainConfusionMatrix"`
+	// The confusion matrix of the test data
+	// +kubebuilder:validation:Optional
+	TestConfusionMatrix catalog.ConfusionMatrix `json:"testConfusionMatrix,omitempty" protobuf:"bytes,62,opt,name=testConfusionMatrix"`
 	// The collection of correlations of the features of the training dataset and the target feature
 	// +kubebuilder:validation:Optional
-	CorrelationsWithTarget []data.Correlation `json:"correlationsWithTarget,omitempty" protobuf:"bytes,62,rep,name=correlationsWithTarget"`
+	CorrelationsWithTarget []data.Correlation `json:"correlationsWithTarget,omitempty" protobuf:"bytes,63,rep,name=correlationsWithTarget"`
 	// The top correlations between features of the training dataset
 	// +kubebuilder:validation:Optional
-	TopCorrelations []data.Correlation `json:"topCorrelations,omitempty" protobuf:"bytes,63,rep,name=topCorrelations"`
+	TopCorrelations []data.Correlation `json:"topCorrelations,omitempty" protobuf:"bytes,64,rep,name=topCorrelations"`
 	// The last time the object was updated
 	//+kubebuilder:validation:Optional
-	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,64,opt,name=lastUpdated"`
+	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,65,opt,name=lastUpdated"`
 	// Governance specifies the current governance status for the Model
 	// +kubebuilder:validation:Optional
-	Governance data.GovernanceStatus `json:"governance,omitempty" protobuf:"bytes,65,opt,name=governanceStatus"`
+	Governance data.GovernanceStatus `json:"governance,omitempty" protobuf:"bytes,66,opt,name=governanceStatus"`
 	// Interpretability contains results produced during the explaining phase of the Model
 	// +kubebuilder:validation:Optional
-	Interpretability InterpretabilityStatus `json:"interpretability,omitempty" protobuf:"bytes,66,opt,name=interpretability"`
+	Interpretability InterpretabilityStatus `json:"interpretability,omitempty" protobuf:"bytes,67,opt,name=interpretability"`
 	// Images specifies the container images used to train the model
 	// +kubebuilder:validation:Optional
-	Images catalog.Images `json:"images,omitempty" protobuf:"bytes,67,opt,name=images"`
+	Images catalog.Images `json:"images,omitempty" protobuf:"bytes,68,opt,name=images"`
 	// +kubebuilder:validation:Optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
-	Conditions []ModelCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,68,rep,name=conditions"`
+	Conditions []ModelCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,69,rep,name=conditions"`
 }
 
 // Holds the information about the execution environment.

@@ -118,6 +118,11 @@ export class TrainResponse extends jspb.Message {
   getFeaturesimportanceMap(): jspb.Map<string, number>;
   clearFeaturesimportanceMap(): TrainResponse;
 
+  getCm(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix | undefined;
+  setCm(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix): TrainResponse;
+  hasCm(): boolean;
+  clearCm(): TrainResponse;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TrainResponse.AsObject;
   static toObject(includeInstance: boolean, msg: TrainResponse): TrainResponse.AsObject;
@@ -138,6 +143,7 @@ export namespace TrainResponse {
     os: string,
     pipfreezeMap: Array<[string, string]>,
     featuresimportanceMap: Array<[string, number]>,
+    cm?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix.AsObject,
   }
 }
 
@@ -340,6 +346,11 @@ export class TestResponse extends jspb.Message {
   getFeaturesimportanceMap(): jspb.Map<string, number>;
   clearFeaturesimportanceMap(): TestResponse;
 
+  getCm(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix | undefined;
+  setCm(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix): TestResponse;
+  hasCm(): boolean;
+  clearCm(): TestResponse;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TestResponse.AsObject;
   static toObject(includeInstance: boolean, msg: TestResponse): TestResponse.AsObject;
@@ -364,6 +375,7 @@ export namespace TestResponse {
     pythonversioninfo: string,
     pipfreezeMap: Array<[string, string]>,
     featuresimportanceMap: Array<[string, number]>,
+    cm?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix.AsObject,
   }
 }
 
