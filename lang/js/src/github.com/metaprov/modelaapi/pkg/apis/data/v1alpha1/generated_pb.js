@@ -3955,7 +3955,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.toObject = fun
     sigma: (f = jspb.Message.getOptionalFloatingPointField(msg, 35)) == null ? undefined : f,
     skewthreshold: (f = jspb.Message.getOptionalFloatingPointField(msg, 36)) == null ? undefined : f,
     driftthreshold: (f = jspb.Message.getOptionalFloatingPointField(msg, 37)) == null ? undefined : f,
-    index: (f = jspb.Message.getBooleanField(msg, 38)) == null ? undefined : f,
+    indexcolumn: (f = jspb.Message.getBooleanField(msg, 38)) == null ? undefined : f,
     fold: (f = jspb.Message.getBooleanField(msg, 39)) == null ? undefined : f,
     weight: (f = jspb.Message.getBooleanField(msg, 40)) == null ? undefined : f,
     reserved: (f = jspb.Message.getBooleanField(msg, 41)) == null ? undefined : f,
@@ -3964,7 +3964,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.toObject = fun
     generated: (f = jspb.Message.getBooleanField(msg, 44)) == null ? undefined : f,
     formula: (f = jspb.Message.getField(msg, 45)) == null ? undefined : f,
     id: (f = jspb.Message.getBooleanField(msg, 46)) == null ? undefined : f,
-    step: (f = jspb.Message.getOptionalFloatingPointField(msg, 47)) == null ? undefined : f
+    step: (f = jspb.Message.getOptionalFloatingPointField(msg, 47)) == null ? undefined : f,
+    index: (f = jspb.Message.getField(msg, 48)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -4151,7 +4152,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.deserializeBin
       break;
     case 38:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIndex(value);
+      msg.setIndexcolumn(value);
       break;
     case 39:
       var value = /** @type {boolean} */ (reader.readBool());
@@ -4188,6 +4189,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.deserializeBin
     case 47:
       var value = /** @type {number} */ (reader.readDouble());
       msg.setStep(value);
+      break;
+    case 48:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setIndex(value);
       break;
     default:
       reader.skipField();
@@ -4544,6 +4549,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.serializeBinar
   if (f != null) {
     writer.writeDouble(
       47,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 48));
+  if (f != null) {
+    writer.writeInt32(
+      48,
       f
     );
   }
@@ -5884,10 +5896,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.hasD
 
 
 /**
- * optional bool index = 38;
+ * optional bool indexColumn = 38;
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.getIndex = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.getIndexcolumn = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 38, false));
 };
 
@@ -5896,7 +5908,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.getI
  * @param {boolean} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.setIndex = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.setIndexcolumn = function(value) {
   return jspb.Message.setField(this, 38, value);
 };
 
@@ -5905,7 +5917,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.setI
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.clearIndex = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.clearIndexcolumn = function() {
   return jspb.Message.setField(this, 38, undefined);
 };
 
@@ -5914,7 +5926,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.clea
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.hasIndex = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.hasIndexcolumn = function() {
   return jspb.Message.getField(this, 38) != null;
 };
 
@@ -6243,6 +6255,42 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.hasS
 };
 
 
+/**
+ * optional int32 index = 48;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.getIndex = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 48, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.setIndex = function(value) {
+  return jspb.Message.setField(this, 48, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.clearIndex = function() {
+  return jspb.Message.setField(this, 48, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.hasIndex = function() {
+  return jspb.Message.getField(this, 48) != null;
+};
+
+
 
 
 
@@ -6563,7 +6611,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.toOb
     mostfreqvaluesratio: (f = jspb.Message.getOptionalFloatingPointField(msg, 39)) == null ? undefined : f,
     indexofpeculiarity: (f = jspb.Message.getOptionalFloatingPointField(msg, 40)) == null ? undefined : f,
     histogram: (f = msg.getHistogram()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.HistogramData.toObject(includeInstance, f),
-    corrtotarget: (f = jspb.Message.getOptionalFloatingPointField(msg, 42)) == null ? undefined : f
+    corrtotarget: (f = jspb.Message.getOptionalFloatingPointField(msg, 42)) == null ? undefined : f,
+    index: (f = jspb.Message.getField(msg, 43)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -6768,6 +6817,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.dese
     case 42:
       var value = /** @type {number} */ (reader.readDouble());
       msg.setCorrtotarget(value);
+      break;
+    case 43:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setIndex(value);
       break;
     default:
       reader.skipField();
@@ -7090,6 +7143,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.seri
   if (f != null) {
     writer.writeDouble(
       42,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 43));
+  if (f != null) {
+    writer.writeInt32(
+      43,
       f
     );
   }
@@ -8606,6 +8666,42 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prot
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasCorrtotarget = function() {
   return jspb.Message.getField(this, 42) != null;
+};
+
+
+/**
+ * optional int32 index = 43;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getIndex = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 43, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setIndex = function(value) {
+  return jspb.Message.setField(this, 43, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearIndex = function() {
+  return jspb.Message.setField(this, 43, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasIndex = function() {
+  return jspb.Message.getField(this, 43) != null;
 };
 
 

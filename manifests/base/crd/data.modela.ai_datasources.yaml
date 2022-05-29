@@ -475,6 +475,10 @@ spec:
                           - none
                           type: string
                         index:
+                          description: Contain the Index for the column in the schema
+                          format: int32
+                          type: integer
+                        indexColumn:
                           default: false
                           description: Indicates if the column is an index column
                           type: boolean

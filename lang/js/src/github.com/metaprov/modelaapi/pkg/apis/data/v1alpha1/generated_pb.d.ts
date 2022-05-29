@@ -179,8 +179,8 @@ export class Column extends jspb.Message {
   getDriftthreshold(): number;
   setDriftthreshold(value: number): Column;
 
-  getIndex(): boolean;
-  setIndex(value: boolean): Column;
+  getIndexcolumn(): boolean;
+  setIndexcolumn(value: boolean): Column;
 
   getFold(): boolean;
   setFold(value: boolean): Column;
@@ -208,6 +208,9 @@ export class Column extends jspb.Message {
 
   getStep(): number;
   setStep(value: number): Column;
+
+  getIndex(): number;
+  setIndex(value: number): Column;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Column.AsObject;
@@ -256,7 +259,7 @@ export namespace Column {
     sigma: number,
     skewthreshold: number,
     driftthreshold: number,
-    index: boolean,
+    indexcolumn: boolean,
     fold: boolean,
     weight: boolean,
     reserved: boolean,
@@ -266,6 +269,7 @@ export namespace Column {
     formula: string,
     id: boolean,
     step: number,
+    index: number,
   }
 }
 
@@ -426,6 +430,9 @@ export class ColumnStatistics extends jspb.Message {
   getCorrtotarget(): number;
   setCorrtotarget(value: number): ColumnStatistics;
 
+  getIndex(): number;
+  setIndex(value: number): ColumnStatistics;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ColumnStatistics.AsObject;
   static toObject(includeInstance: boolean, msg: ColumnStatistics): ColumnStatistics.AsObject;
@@ -478,6 +485,7 @@ export namespace ColumnStatistics {
     indexofpeculiarity: number,
     histogram?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.HistogramData.AsObject,
     corrtotarget: number,
+    index: number,
   }
 }
 

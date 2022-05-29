@@ -629,7 +629,7 @@ type Column struct {
 	// Indicates if the column is an index column
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Index *bool `json:"index,omitempty" protobuf:"varint,38,opt,name=index"`
+	IndexColumn *bool `json:"indexColumn,omitempty" protobuf:"varint,38,opt,name=indexColumn"`
 	// Indicates if the column holds fold values
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
@@ -663,6 +663,9 @@ type Column struct {
 	// +kubebuilder:default:=1
 	// +kubebuilder:validation:Optional
 	Step *float64 `json:"step,omitempty" protobuf:"bytes,47,opt,name=step"`
+	// Contain the Index for the column in the schema
+	// +kubebuilder:validation:Optional
+	Index int32 `json:"index,omitempty" protobuf:"varint,48,opt,name=index"`
 }
 
 // DataSource defines the specification for the file format and column-level schema of data to be used within Modela

@@ -136,10 +136,6 @@ message TestResponse {
     // confusion matrix
     github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ConfusionMatrix cm = 15;
 
-
-
-
-
 }
 // used for ensable training
 message TrainEnsembleRequest  {

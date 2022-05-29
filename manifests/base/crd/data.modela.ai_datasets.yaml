@@ -885,6 +885,10 @@ spec:
                         importance:
                           description: The feature importance of the column
                           type: number
+                        index:
+                          description: The column index in the dataset
+                          format: int32
+                          type: integer
                         indexOfPeculiarity:
                           description: Used for text attributes
                           type: number

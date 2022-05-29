@@ -257,8 +257,8 @@ func (in *Column) DeepCopyInto(out *Column) {
 		*out = new(float64)
 		**out = **in
 	}
-	if in.Index != nil {
-		in, out := &in.Index, &out.Index
+	if in.IndexColumn != nil {
+		in, out := &in.IndexColumn, &out.IndexColumn
 		*out = new(bool)
 		**out = **in
 	}

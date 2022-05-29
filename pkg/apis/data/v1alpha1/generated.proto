@@ -239,7 +239,7 @@ message Column {
   // Indicates if the column is an index column
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool index = 38;
+  optional bool indexColumn = 38;
 
   // Indicates if the column holds fold values
   // +kubebuilder:default:=false
@@ -282,6 +282,10 @@ message Column {
   // +kubebuilder:default:=1
   // +kubebuilder:validation:Optional
   optional double step = 47;
+
+  // Contain the Index for the column in the schema
+  // +kubebuilder:validation:Optional
+  optional int32 index = 48;
 }
 
 // The spec for a column in the row. A column can span multiple grid based columns
@@ -471,6 +475,9 @@ message ColumnStatistics {
   // Correlation to the target feature
   // +kubebuilder:validation:Optional
   optional double corrToTarget = 42;
+
+  // The column index in the dataset
+  optional int32 index = 43;
 }
 
 // ColumnValidation specifies a validation rule for a single column

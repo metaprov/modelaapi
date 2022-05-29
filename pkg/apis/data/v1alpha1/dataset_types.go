@@ -410,6 +410,8 @@ type ColumnStatistics struct {
 	// Correlation to the target feature
 	// +kubebuilder:validation:Optional
 	CorrToTarget float64 `json:"corrToTarget,omitempty" protobuf:"bytes,42,opt,name=corrToTarget"`
+	// The column index in the dataset
+	Index int32 `json:"index,omitempty" protobuf:"bytes,43,opt,name=index"`
 }
 
 // DatasetTemplate is used to generate new datasets
