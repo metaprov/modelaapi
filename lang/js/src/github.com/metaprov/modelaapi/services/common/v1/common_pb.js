@@ -2623,7 +2623,8 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.toObject = 
     mostfreqvaluesratio: jspb.Message.getFloatingPointFieldWithDefault(msg, 44, 0.0),
     indexofpeculiarity: jspb.Message.getFloatingPointFieldWithDefault(msg, 45, 0.0),
     valuesList: (f = jspb.Message.getRepeatedField(msg, 46)) == null ? undefined : f,
-    corrtotarget: jspb.Message.getFloatingPointFieldWithDefault(msg, 47, 0.0)
+    corrtotarget: jspb.Message.getFloatingPointFieldWithDefault(msg, 47, 0.0),
+    index: jspb.Message.getFieldWithDefault(msg, 48, 0)
   };
 
   if (includeInstance) {
@@ -2848,6 +2849,10 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.deserialize
     case 47:
       var value = /** @type {number} */ (reader.readDouble());
       msg.setCorrtotarget(value);
+      break;
+    case 48:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setIndex(value);
       break;
     default:
       reader.skipField();
@@ -3205,6 +3210,13 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.serializeBi
   if (f !== 0.0) {
     writer.writeDouble(
       47,
+      f
+    );
+  }
+  f = message.getIndex();
+  if (f !== 0) {
+    writer.writeInt32(
+      48,
       f
     );
   }
@@ -4092,6 +4104,24 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.g
  */
 proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.setCorrtotarget = function(value) {
   return jspb.Message.setProto3FloatField(this, 47, value);
+};
+
+
+/**
+ * optional int32 index = 48;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.getIndex = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 48, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.setIndex = function(value) {
+  return jspb.Message.setProto3IntField(this, 48, value);
 };
 
 

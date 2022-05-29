@@ -127,6 +127,7 @@ message ColumnProfile {
 	double    indexOfPeculiarity = 45;   
     repeated  string values       = 46; // Enum set of values
     double    corrToTarget          = 47;
+    int32       index              = 48; // column index
 
 
 }

@@ -430,6 +430,9 @@ export class ColumnProfile extends jspb.Message {
   getCorrtotarget(): number;
   setCorrtotarget(value: number): ColumnProfile;
 
+  getIndex(): number;
+  setIndex(value: number): ColumnProfile;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ColumnProfile.AsObject;
   static toObject(includeInstance: boolean, msg: ColumnProfile): ColumnProfile.AsObject;
@@ -487,6 +490,7 @@ export namespace ColumnProfile {
     indexofpeculiarity: number,
     valuesList: Array<string>,
     corrtotarget: number,
+    index: number,
   }
 }
 
