@@ -334,14 +334,20 @@ export class TestResponse extends jspb.Message {
   getLabelencoder(): string;
   setLabelencoder(value: string): TestResponse;
 
-  getMisclassuri(): string;
-  setMisclassuri(value: string): TestResponse;
+  getPythoncmd(): string;
+  setPythoncmd(value: string): TestResponse;
+
+  getOs(): string;
+  setOs(value: string): TestResponse;
 
   getPythonversioninfo(): string;
   setPythonversioninfo(value: string): TestResponse;
 
   getPipfreezeMap(): jspb.Map<string, string>;
   clearPipfreezeMap(): TestResponse;
+
+  getMisclassuri(): string;
+  setMisclassuri(value: string): TestResponse;
 
   getFeaturesimportanceMap(): jspb.Map<string, number>;
   clearFeaturesimportanceMap(): TestResponse;
@@ -371,9 +377,11 @@ export namespace TestResponse {
     premanifestclouduri: string,
     prelogsclouduri: string,
     labelencoder: string,
-    misclassuri: string,
+    pythoncmd: string,
+    os: string,
     pythonversioninfo: string,
     pipfreezeMap: Array<[string, string]>,
+    misclassuri: string,
     featuresimportanceMap: Array<[string, number]>,
     cm?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix.AsObject,
   }

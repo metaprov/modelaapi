@@ -125,16 +125,20 @@ message TestResponse {
     string preLogsCloudUri = 9;
     // The label encoder uri.
     string labelEncoder = 10;
-    // Misclassfied uri
-    string misclassUri = 11;
+    // python command line
+    string pythonCMD = 11;
+    // The operating system
+    string OS = 12;
     // python version info
-    string pythonVersionInfo = 12;
+    string pythonVersionInfo = 13;
     // pip freeze string
-    map<string,string> pipFreeze = 13;
+    map<string,string> pipFreeze = 14;
+    // Misclassfied uri
+    string misclassUri = 15;
     // feature importance
-    map<string,float> featuresImportance = 14;
+    map<string,float> featuresImportance = 16;
     // confusion matrix
-    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ConfusionMatrix cm = 15;
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ConfusionMatrix cm = 17;
 
 }
 // used for ensable training

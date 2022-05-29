@@ -2755,9 +2755,11 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.toObject =
     premanifestclouduri: jspb.Message.getFieldWithDefault(msg, 8, ""),
     prelogsclouduri: jspb.Message.getFieldWithDefault(msg, 9, ""),
     labelencoder: jspb.Message.getFieldWithDefault(msg, 10, ""),
-    misclassuri: jspb.Message.getFieldWithDefault(msg, 11, ""),
-    pythonversioninfo: jspb.Message.getFieldWithDefault(msg, 12, ""),
+    pythoncmd: jspb.Message.getFieldWithDefault(msg, 11, ""),
+    os: jspb.Message.getFieldWithDefault(msg, 12, ""),
+    pythonversioninfo: jspb.Message.getFieldWithDefault(msg, 13, ""),
     pipfreezeMap: (f = msg.getPipfreezeMap()) ? f.toObject(includeInstance, undefined) : [],
+    misclassuri: jspb.Message.getFieldWithDefault(msg, 15, ""),
     featuresimportanceMap: (f = msg.getFeaturesimportanceMap()) ? f.toObject(includeInstance, undefined) : [],
     cm: (f = msg.getCm()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix.toObject(includeInstance, f)
   };
@@ -2841,25 +2843,33 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.deserializ
       break;
     case 11:
       var value = /** @type {string} */ (reader.readString());
-      msg.setMisclassuri(value);
+      msg.setPythoncmd(value);
       break;
     case 12:
       var value = /** @type {string} */ (reader.readString());
-      msg.setPythonversioninfo(value);
+      msg.setOs(value);
       break;
     case 13:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPythonversioninfo(value);
+      break;
+    case 14:
       var value = msg.getPipfreezeMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
          });
       break;
-    case 14:
+    case 15:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setMisclassuri(value);
+      break;
+    case 16:
       var value = msg.getFeaturesimportanceMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readFloat, null, "", 0.0);
          });
       break;
-    case 15:
+    case 17:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix.deserializeBinaryFromReader);
       msg.setCm(value);
@@ -2966,32 +2976,46 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.serializeB
       f
     );
   }
-  f = message.getMisclassuri();
+  f = message.getPythoncmd();
   if (f.length > 0) {
     writer.writeString(
       11,
       f
     );
   }
-  f = message.getPythonversioninfo();
+  f = message.getOs();
   if (f.length > 0) {
     writer.writeString(
       12,
       f
     );
   }
+  f = message.getPythonversioninfo();
+  if (f.length > 0) {
+    writer.writeString(
+      13,
+      f
+    );
+  }
   f = message.getPipfreezeMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(13, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+    f.serializeBinary(14, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+  }
+  f = message.getMisclassuri();
+  if (f.length > 0) {
+    writer.writeString(
+      15,
+      f
+    );
   }
   f = message.getFeaturesimportanceMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(14, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeFloat);
+    f.serializeBinary(16, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeFloat);
   }
   f = message.getCm();
   if (f != null) {
     writer.writeMessage(
-      15,
+      17,
       f,
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix.serializeBinaryToWriter
     );
@@ -3240,10 +3264,10 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.
 
 
 /**
- * optional string misclassUri = 11;
+ * optional string pythonCMD = 11;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.getMisclassuri = function() {
+proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.getPythoncmd = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
 };
 
@@ -3252,16 +3276,16 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.setMisclassuri = function(value) {
+proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.setPythoncmd = function(value) {
   return jspb.Message.setProto3StringField(this, 11, value);
 };
 
 
 /**
- * optional string pythonVersionInfo = 12;
+ * optional string OS = 12;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.getPythonversioninfo = function() {
+proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.getOs = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
 };
 
@@ -3270,20 +3294,38 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.setPythonversioninfo = function(value) {
+proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.setOs = function(value) {
   return jspb.Message.setProto3StringField(this, 12, value);
 };
 
 
 /**
- * map<string, string> pipFreeze = 13;
+ * optional string pythonVersionInfo = 13;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.getPythonversioninfo = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.setPythonversioninfo = function(value) {
+  return jspb.Message.setProto3StringField(this, 13, value);
+};
+
+
+/**
+ * map<string, string> pipFreeze = 14;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
 proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.getPipfreezeMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 13, opt_noLazyCreate,
+      jspb.Message.getMapField(this, 14, opt_noLazyCreate,
       null));
 };
 
@@ -3298,14 +3340,32 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.
 
 
 /**
- * map<string, float> featuresImportance = 14;
+ * optional string misclassUri = 15;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.getMisclassuri = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 15, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.setMisclassuri = function(value) {
+  return jspb.Message.setProto3StringField(this, 15, value);
+};
+
+
+/**
+ * map<string, float> featuresImportance = 16;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,number>}
  */
 proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.getFeaturesimportanceMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,number>} */ (
-      jspb.Message.getMapField(this, 14, opt_noLazyCreate,
+      jspb.Message.getMapField(this, 16, opt_noLazyCreate,
       null));
 };
 
@@ -3320,12 +3380,12 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ConfusionMatrix cm = 15;
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ConfusionMatrix cm = 17;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ConfusionMatrix}
  */
 proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.getCm = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ConfusionMatrix} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix, 15));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix, 17));
 };
 
 
@@ -3334,7 +3394,7 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.
  * @return {!proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse} returns this
 */
 proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.setCm = function(value) {
-  return jspb.Message.setWrapperField(this, 15, value);
+  return jspb.Message.setWrapperField(this, 17, value);
 };
 
 
@@ -3352,7 +3412,7 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.hasCm = function() {
-  return jspb.Message.getField(this, 15) != null;
+  return jspb.Message.getField(this, 17) != null;
 };
 
 

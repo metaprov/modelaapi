@@ -3,44 +3,44 @@ option go_package = "github.com/metaprov/modelaapi/services/common/v1";
 package github.com.metaprov.modelaapi.services.common.v1;
 
 message DatasetProfile {
-    int32    cols                      = 1;
-    int32    rows                      = 2;
-    int32    filesize                  = 3;
-    // return true if this dataset is imbalance.
-    bool     imbalance                 = 4;
-    repeated Plot plots                = 5;
-    repeated ColumnProfile   columns   = 6;
-    TableView    table                 = 7;
-    string       hash                  = 8; // signature of the dataset profile.    
+  int32    cols = 1;
+  int32    rows = 2;
+  int32    filesize = 3;
+  // return true if this dataset is imbalance.
+  bool     imbalance = 4;
+  repeated Plot plots = 5;
+  repeated ColumnProfile   columns = 6;
+  TableView    table = 7;
+  string       hash = 8; // signature of the dataset profile.
 }
 
 /////////////////////////////////////////////////////////////////////////
 ///// Model profile
 ////////////////////////////////////////////////////////////////////////
 message ModelProfile {
-    string name                            = 1;
-    repeated Plot plots                    = 2;
-    map<string,float> importance           = 3; // hold the feature importance
-    ROCCurve rocauc                        = 4; // roc auc curve
-    PrecisionRecallCurve pr                = 5; // precision recall cureve
-    repeated ROCCurve multiclassRocAuc     = 6; // multi class roc curve
-    repeated PrecisionRecallCurve multiclassPR  = 7; // multi class pr curve
+  string name = 1;
+  repeated Plot plots = 2;
+  map<string, float> importance = 3; // hold the feature importance
+  ROCCurve rocauc = 4; // roc auc curve
+  PrecisionRecallCurve pr = 5; // precision recall cureve
+  repeated ROCCurve multiclassRocAuc = 6; // multi class roc curve
+  repeated PrecisionRecallCurve multiclassPR = 7; // multi class pr curve
 }
 
 message ROCCurve {
-    string classname            = 1;
-    int32  classid              = 2;
-    repeated double fpr         = 3;
-    repeated double tpr         = 4;
-    repeated double thresholds  = 5;    
+  string classname = 1;
+  int32  classid = 2;
+  repeated double fpr = 3;
+  repeated double tpr = 4;
+  repeated double thresholds = 5;
 }
 
 message PrecisionRecallCurve {
-    string classname             = 1;
-    int32  classid               = 2;
-    repeated double precision    = 3;
-    repeated double recall       = 4;
-    repeated double thresholds   = 5;    
+  string classname = 1;
+  int32  classid = 2;
+  repeated double precision = 3;
+  repeated double recall = 4;
+  repeated double thresholds = 5;
 }
 
 
@@ -50,8 +50,8 @@ message PrecisionRecallCurve {
 ///// Forecast profile
 ////////////////////////////////////////////////////////////////////////
 message ForecastProfile {
-    string name                            = 1;
-    repeated Plot plots                    = 2;
+  string name = 1;
+  repeated Plot plots = 2;
 }
 
 
@@ -59,83 +59,83 @@ message ForecastProfile {
 ///// Study profile
 ////////////////////////////////////////////////////////////////////////
 message StudyProfile {
-    repeated Plot plots          = 1;
-    repeated ModelProfile models = 2;
-    string trainingHash          = 3; 
-    string testingHash           = 4;
-    string validationHash        = 5;
+  repeated Plot plots = 1;
+  repeated ModelProfile models = 2;
+  string trainingHash = 3;
+  string testingHash = 4;
+  string validationHash = 5;
 }
 
 message Plot {
-    string name = 1;
-    // The visualization title
-    string title = 2;
-    // image as bin
-    bytes  img        = 3;
-    // image file name
-    string fname      = 4;
-    // The url in the bucket
-    string url        = 5;
+  string name = 1;
+  // The visualization title
+  string title = 2;
+  // image as bin
+  bytes  img = 3;
+  // image file name
+  string fname = 4;
+  // The url in the bucket
+  string url = 5;
 }
 
 
 message ColumnProfile {
-    string    name            = 1;
-    int32     count           = 2;
-    string    type            = 3;
-    int32     missing         = 4;
-    float     percentMissing  = 5;
-    int32     distinct        = 6;
-    double    mean            = 7;
-    string    mode            = 8;
-    double    stddev          = 9;
-    double    variance        = 10;
-    double    min             = 11;
-    double    max             = 12;
-    double    kurtosis        = 13;
-    double    skewness        = 14;
-    double    sum             = 15;
-    double    mad             = 16;
-    double    zeros           = 17;
-    double    p25             = 18;
-    double    p50             = 19;
-    double    p75             = 20;
-    double    p100            = 21;
-    double    iqr             = 22;
-    double    cv              = 23;
-    int32     top             = 24;
-    int32     freq            = 25;
-    bool      ignore          = 26;
-    bool      target          = 27;
-    Histogram histogram       = 28;
-	int32     invalid         = 29; 
-	double    importance      = 30; 
-	bool      nullable        = 31; 
-	bool      highCardinality = 32; 
-	bool      highCorrWithOtherFeatures =33;   
-	bool      lowCorrWithTarget =34;   
-	bool      highMissingPct  = 35;   
-	bool      skewed          = 36;   
-	bool      id              = 37;   
-	bool      constant        = 38;   
-	bool      duplicate       = 39;   
-	bool      reserved        = 40;  
-    int32     outliers        = 41;	 
-	double    completeness    = 42;   
-	double    distinctValueCount = 43;    
-	double    mostFreqValuesRatio = 44;   
-	double    indexOfPeculiarity = 45;   
-    repeated  string values       = 46; // Enum set of values
-    double    corrToTarget          = 47;
-    int32       index              = 48; // column index
+  string    name = 1;
+  int32     count = 2;
+  string    type = 3;
+  int32     missing = 4;
+  float     percentMissing = 5;
+  int32     distinct = 6;
+  double    mean = 7;
+  string    mode = 8;
+  double    stddev = 9;
+  double    variance = 10;
+  double    min = 11;
+  double    max = 12;
+  double    kurtosis = 13;
+  double    skewness = 14;
+  double    sum = 15;
+  double    mad = 16;
+  double    zeros = 17;
+  double    p25 = 18;
+  double    p50 = 19;
+  double    p75 = 20;
+  double    p100 = 21;
+  double    iqr = 22;
+  double    cv = 23;
+  int32     top = 24;
+  int32     freq = 25;
+  bool      ignore = 26;
+  bool      target = 27;
+  Histogram histogram = 28;
+  int32     invalid = 29;
+  double    importance = 30;
+  bool      nullable = 31;
+  bool      highCardinality = 32;
+  bool      highCorrWithOtherFeatures = 33;
+  bool      lowCorrWithTarget = 34;
+  bool      highMissingPct = 35;
+  bool      skewed = 36;
+  bool      id = 37;
+  bool      constant = 38;
+  bool      duplicate = 39;
+  bool      reserved = 40;
+  int32     outliers = 41;
+  double    completeness = 42;
+  double    distinctValueCount = 43;
+  double    mostFreqValuesRatio = 44;
+  double    indexOfPeculiarity = 45;
+  repeated  string values = 46; // Enum set of values
+  double    corrToTarget = 47;
+  int32       index = 48; // column index
 
 
 }
 
 message Histogram {
-    repeated double values = 1;
-    repeated double bins   = 2;
-    repeated string categories = 3; // for categorical variables those are the cateogries.
+  repeated double values = 1;
+  repeated double bins = 2;
+  repeated string categories = 3; // for categorical variables those are the cateogries.
 }
 
 
@@ -144,32 +144,32 @@ message Histogram {
 ////////////////////////////////////////////////////////////////////
 
 message NamespaceInfo {
-    enum NamespaceType {
-        TENANT = 0;
-        DATAPRODUCT = 1;
-        LAB   = 2;
-        SERVINGSITE = 3;
-        MODELASYSTEM = 4;
-        MODELACATALOG = 5;
-    }
-    NamespaceType type = 1;
-    string Name        = 2;
-    int32 accounts     = 3;
-    int32 buckets      = 4;
-    int32 labs         = 5;
-    int32 servingsites = 6;
-    int32 datasets     = 7;
-    int32 datasources  = 8;
-    int32 studies      = 9;
-    int32 models       = 10;
+  enum NamespaceType {
+    TENANT = 0;
+    DATAPRODUCT = 1;
+    LAB = 2;
+    SERVINGSITE = 3;
+    MODELASYSTEM = 4;
+    MODELACATALOG = 5;
+  }
+  NamespaceType type = 1;
+  string Name = 2;
+  int32 accounts = 3;
+  int32 buckets = 4;
+  int32 labs = 5;
+  int32 servingsites = 6;
+  int32 datasets = 7;
+  int32 datasources = 8;
+  int32 studies = 9;
+  int32 models = 10;
 }
 
 message TableView {
-    repeated string        cols = 1;
-    repeated TableViewRow  rows = 2;
-    repeated ColumnProfile profiles = 3;
+  repeated string        cols = 1;
+  repeated TableViewRow  rows = 2;
+  repeated ColumnProfile profiles = 3;
 }
 
 message TableViewRow {
-    repeated string values = 1;
+  repeated string values = 1;
 }
