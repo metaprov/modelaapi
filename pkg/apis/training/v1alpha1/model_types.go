@@ -1005,10 +1005,6 @@ type FeatureSelectionSpec struct {
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
 	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,rep,name=enabled"`
-	// The number percentage (0 through 100) of the dataset to sample
-	// +kubebuilder:default:=100
-	// +kubebuilder:validation:Optional
-	SamplePct *int32 `json:"samplePct,omitempty" protobuf:"varint,2,rep,name=samplePct"`
 	// Indicates if embedded methods will be tested as part of the candidate algorithms (e.g. tree-based selection)
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
@@ -1035,7 +1031,7 @@ type FeatureSelectionSpec struct {
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
 	MaxFeatures *int32 `json:"maxFeatures,omitempty" protobuf:"varint,9,opt,name=maxFeatures"`
-	// Percent of feautures to keep
+	// Percent of features to keep
 	// +kubebuilder:default:=20
 	// +kubebuilder:validation:Optional
 	Percentile *int32 `json:"percentile,omitempty" protobuf:"varint,10,opt,name=percentile"`

@@ -1102,11 +1102,6 @@ func (in *FeatureSelectionSpec) DeepCopyInto(out *FeatureSelectionSpec) {
 		*out = new(bool)
 		**out = **in
 	}
-	if in.SamplePct != nil {
-		in, out := &in.SamplePct, &out.SamplePct
-		*out = new(int32)
-		**out = **in
-	}
 	if in.Embedding != nil {
 		in, out := &in.Embedding, &out.Embedding
 		*out = new(bool)

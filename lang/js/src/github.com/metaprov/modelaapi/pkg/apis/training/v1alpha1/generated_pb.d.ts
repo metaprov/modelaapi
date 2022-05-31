@@ -1132,9 +1132,6 @@ export class FeatureSelectionSpec extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): FeatureSelectionSpec;
 
-  getSamplepct(): number;
-  setSamplepct(value: number): FeatureSelectionSpec;
-
   getEmbedding(): boolean;
   setEmbedding(value: boolean): FeatureSelectionSpec;
 
@@ -1177,7 +1174,6 @@ export class FeatureSelectionSpec extends jspb.Message {
 export namespace FeatureSelectionSpec {
   export type AsObject = {
     enabled: boolean,
-    samplepct: number,
     embedding: boolean,
     filter: boolean,
     wrapper: boolean,

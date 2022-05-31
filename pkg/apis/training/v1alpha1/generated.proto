@@ -740,11 +740,6 @@ message FeatureSelectionSpec {
   // +kubebuilder:validation:Optional
   optional bool enabled = 1;
 
-  // The number percentage (0 through 100) of the dataset to sample
-  // +kubebuilder:default:=100
-  // +kubebuilder:validation:Optional
-  optional int32 samplePct = 2;
-
   // Indicates if embedded methods will be tested as part of the candidate algorithms (e.g. tree-based selection)
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
@@ -778,7 +773,7 @@ message FeatureSelectionSpec {
   // +kubebuilder:validation:Optional
   optional int32 maxFeatures = 9;
 
-  // Percent of feautures to keep
+  // Percent of features to keep
   // +kubebuilder:default:=20
   // +kubebuilder:validation:Optional
   optional int32 percentile = 10;

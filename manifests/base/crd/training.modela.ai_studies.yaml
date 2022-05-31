@@ -409,7 +409,7 @@ spec:
                         type: integer
                       percentile:
                         default: 20
-                        description: Percent of feautures to keep
+                        description: Percent of features to keep
                         format: int32
                         type: integer
                       pipeline:
@@ -445,12 +445,6 @@ spec:
                         items:
                           type: string
                         type: array
-                      samplePct:
-                        default: 100
-                        description: The number percentage (0 through 100) of the
-                          dataset to sample
-                        format: int32
-                        type: integer
                       varianceThresholdPct:
                         default: 5
                         description: The threshold as a percentage to remove low variance
@@ -2958,7 +2952,7 @@ spec:
                         type: integer
                       percentile:
                         default: 20
-                        description: Percent of feautures to keep
+                        description: Percent of features to keep
                         format: int32
                         type: integer
                       pipeline:
@@ -2994,12 +2988,6 @@ spec:
                         items:
                           type: string
                         type: array
-                      samplePct:
-                        default: 100
-                        description: The number percentage (0 through 100) of the
-                          dataset to sample
-                        format: int32
-                        type: integer
                       varianceThresholdPct:
                         default: 5
                         description: The threshold as a percentage to remove low variance

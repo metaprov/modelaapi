@@ -13247,7 +13247,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
     enabled: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
-    samplepct: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     embedding: (f = jspb.Message.getBooleanField(msg, 3)) == null ? undefined : f,
     filter: (f = jspb.Message.getBooleanField(msg, 4)) == null ? undefined : f,
     wrapper: (f = jspb.Message.getBooleanField(msg, 5)) == null ? undefined : f,
@@ -13296,10 +13295,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
     case 1:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setEnabled(value);
-      break;
-    case 2:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setSamplepct(value);
       break;
     case 3:
       var value = /** @type {boolean} */ (reader.readBool());
@@ -13370,13 +13365,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
   if (f != null) {
     writer.writeBool(
       1,
-      f
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 2));
-  if (f != null) {
-    writer.writeInt32(
-      2,
       f
     );
   }
@@ -13479,42 +13467,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.hasEnabled = function() {
   return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional int32 samplePct = 2;
- * @return {number}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.getSamplepct = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.setSamplepct = function(value) {
-  return jspb.Message.setField(this, 2, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.clearSamplepct = function() {
-  return jspb.Message.setField(this, 2, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.hasSamplepct = function() {
-  return jspb.Message.getField(this, 2) != null;
 };
 
 
