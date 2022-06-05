@@ -137,8 +137,11 @@ message TestResponse {
     string misclassUri = 15;
     // feature importance
     map<string,float> featuresImportance = 16;
-    // confusion matrix
-    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ConfusionMatrix cm = 17;
+    // train confusion matrix
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ConfusionMatrix trainCM = 17;
+    // test confusion matrix
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ConfusionMatrix testCM = 18;
+
 
 }
 // used for ensable training

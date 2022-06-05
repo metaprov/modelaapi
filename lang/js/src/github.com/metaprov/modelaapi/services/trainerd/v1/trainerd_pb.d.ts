@@ -352,10 +352,15 @@ export class TestResponse extends jspb.Message {
   getFeaturesimportanceMap(): jspb.Map<string, number>;
   clearFeaturesimportanceMap(): TestResponse;
 
-  getCm(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix | undefined;
-  setCm(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix): TestResponse;
-  hasCm(): boolean;
-  clearCm(): TestResponse;
+  getTraincm(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix | undefined;
+  setTraincm(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix): TestResponse;
+  hasTraincm(): boolean;
+  clearTraincm(): TestResponse;
+
+  getTestcm(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix | undefined;
+  setTestcm(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix): TestResponse;
+  hasTestcm(): boolean;
+  clearTestcm(): TestResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TestResponse.AsObject;
@@ -383,7 +388,8 @@ export namespace TestResponse {
     pipfreezeMap: Array<[string, string]>,
     misclassuri: string,
     featuresimportanceMap: Array<[string, number]>,
-    cm?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix.AsObject,
+    traincm?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix.AsObject,
+    testcm?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix.AsObject,
   }
 }
 
