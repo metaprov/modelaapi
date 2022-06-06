@@ -115,8 +115,11 @@ export class TrainResponse extends jspb.Message {
   getPipfreezeMap(): jspb.Map<string, string>;
   clearPipfreezeMap(): TrainResponse;
 
-  getFeaturesimportanceMap(): jspb.Map<string, number>;
-  clearFeaturesimportanceMap(): TrainResponse;
+  getImpurityfeatureimportanceMap(): jspb.Map<string, number>;
+  clearImpurityfeatureimportanceMap(): TrainResponse;
+
+  getPermutationfeatureimportanceMap(): jspb.Map<string, number>;
+  clearPermutationfeatureimportanceMap(): TrainResponse;
 
   getCm(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix | undefined;
   setCm(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix): TrainResponse;
@@ -142,7 +145,8 @@ export namespace TrainResponse {
     pythoncmd: string,
     os: string,
     pipfreezeMap: Array<[string, string]>,
-    featuresimportanceMap: Array<[string, number]>,
+    impurityfeatureimportanceMap: Array<[string, number]>,
+    permutationfeatureimportanceMap: Array<[string, number]>,
     cm?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix.AsObject,
   }
 }

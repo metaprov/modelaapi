@@ -59,9 +59,11 @@ message TrainResponse {
     // pip freeze string
     map<string,string> pipFreeze = 9;
     // feature importance
-    map<string,float> featuresImportance = 10;
+    map<string,float> impurityFeatureImportance = 10;
+    // permutation feature importance
+    map<string,float> permutationFeatureImportance = 11;
     // confusion matrix
-    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ConfusionMatrix cm = 11;
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ConfusionMatrix cm = 12;
 
 }
 
