@@ -2460,9 +2460,10 @@ spec:
                     description: The image used during training
                     type: string
                 type: object
-              importance:
+              impurityImportance:
                 description: The collection of features and their importance, sorted
-                  by the greatest importance first
+                  by the greatest importance first The collection is measured based
+                  on impuriry and uses the native measures by a tree algorithm
                 items:
                   description: FeatureImportance records the computed importance of
                     a single feature
@@ -2568,6 +2569,23 @@ spec:
                   on
                 format: int64
                 type: integer
+              permutationImportance:
+                description: The collection of features and their importance, sorted
+                  by the greatest importance first The collection is measured using
+                  permutation importance
+                items:
+                  description: FeatureImportance records the computed importance of
+                    a single feature
+                  properties:
+                    feature:
+                      description: The name of the feature
+                      type: string
+                    importance:
+                      description: The importance of the feature
+                      format: float
+                      type: number
+                  type: object
+                type: array
               phase:
                 default: Pending
                 description: The phase of the Model

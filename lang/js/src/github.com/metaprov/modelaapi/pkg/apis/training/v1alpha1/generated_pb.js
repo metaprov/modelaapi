@@ -32580,7 +32580,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.repeatedFields_ = [12,13,14,27,63,64,69];
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.repeatedFields_ = [12,13,14,27,28,63,64,69];
 
 
 
@@ -32643,6 +32643,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.toObj
     appuri: (f = jspb.Message.getField(msg, 25)) == null ? undefined : f,
     imagename: (f = jspb.Message.getField(msg, 26)) == null ? undefined : f,
     importanceList: jspb.Message.toObjectList(msg.getImportanceList(),
+    proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureImportance.toObject, includeInstance),
+    permutationimportanceList: jspb.Message.toObjectList(msg.getPermutationimportanceList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureImportance.toObject, includeInstance),
     forecasturi: (f = jspb.Message.getField(msg, 29)) == null ? undefined : f,
     runtime: (f = msg.getRuntime()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.RuntimeStatus.toObject(includeInstance, f),
@@ -32837,6 +32839,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.deser
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureImportance;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureImportance.deserializeBinaryFromReader);
       msg.addImportance(value);
+      break;
+    case 28:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureImportance;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureImportance.deserializeBinaryFromReader);
+      msg.addPermutationimportance(value);
       break;
     case 29:
       var value = /** @type {string} */ (reader.readString());
@@ -33230,6 +33237,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.seria
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       27,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureImportance.serializeBinaryToWriter
+    );
+  }
+  f = message.getPermutationimportanceList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      28,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureImportance.serializeBinaryToWriter
     );
@@ -34499,6 +34514,44 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.clearImportanceList = function() {
   return this.setImportanceList([]);
+};
+
+
+/**
+ * repeated FeatureImportance permutationImportance = 28;
+ * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureImportance>}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getPermutationimportanceList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureImportance>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureImportance, 28));
+};
+
+
+/**
+ * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureImportance>} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.setPermutationimportanceList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 28, value);
+};
+
+
+/**
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureImportance=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureImportance}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.addPermutationimportance = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 28, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureImportance, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.clearPermutationimportanceList = function() {
+  return this.setPermutationimportanceList([]);
 };
 
 

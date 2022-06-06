@@ -2876,8 +2876,13 @@ func (in *ModelStatus) DeepCopyInto(out *ModelStatus) {
 			(*in)[i].DeepCopyInto(&(*out)[i])
 		}
 	}
-	if in.Importance != nil {
-		in, out := &in.Importance, &out.Importance
+	if in.ImpurityImportance != nil {
+		in, out := &in.ImpurityImportance, &out.ImpurityImportance
+		*out = make([]FeatureImportance, len(*in))
+		copy(*out, *in)
+	}
+	if in.PermutationImportance != nil {
+		in, out := &in.PermutationImportance, &out.PermutationImportance
 		*out = make([]FeatureImportance, len(*in))
 		copy(*out, *in)
 	}

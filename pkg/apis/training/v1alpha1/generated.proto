@@ -2263,8 +2263,14 @@ message ModelStatus {
   optional string imageName = 26;
 
   // The collection of features and their importance, sorted by the greatest importance first
+  // The collection is measured based on impuriry and uses the native measures by a tree algorithm
   // +kubebuilder:validation:Optional
   repeated FeatureImportance importance = 27;
+
+  // The collection of features and their importance, sorted by the greatest importance first
+  // The collection is measured using permutation importance
+  // +kubebuilder:validation:Optional
+  repeated FeatureImportance permutationImportance = 28;
 
   // The URI of the model forecast
   // +kubebuilder:validation:Optional

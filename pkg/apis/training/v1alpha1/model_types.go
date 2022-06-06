@@ -464,8 +464,13 @@ type ModelStatus struct {
 	// +kubebuilder:validation:Optional
 	ImageName string `json:"imageName" protobuf:"bytes,26,opt,name=imageName"`
 	// The collection of features and their importance, sorted by the greatest importance first
+	// The collection is measured based on impuriry and uses the native measures by a tree algorithm
 	// +kubebuilder:validation:Optional
-	Importance []FeatureImportance `json:"importance,,omitempty" protobuf:"bytes,27,rep,name=importance"`
+	ImpurityImportance []FeatureImportance `json:"impurityImportance,,omitempty" protobuf:"bytes,27,rep,name=importance"`
+	// The collection of features and their importance, sorted by the greatest importance first
+	// The collection is measured using permutation importance
+	// +kubebuilder:validation:Optional
+	PermutationImportance []FeatureImportance `json:"permutationImportance,omitempty" protobuf:"bytes,28,rep,name=permutationImportance"`
 	// The URI of the model forecast
 	// +kubebuilder:validation:Optional
 	ForecastUri string `json:"forecastUri,omitempty" protobuf:"bytes,29,opt,name=forecastUri"`

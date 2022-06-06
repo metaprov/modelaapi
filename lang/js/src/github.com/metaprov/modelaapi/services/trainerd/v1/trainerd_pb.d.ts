@@ -349,8 +349,11 @@ export class TestResponse extends jspb.Message {
   getMisclassuri(): string;
   setMisclassuri(value: string): TestResponse;
 
-  getFeaturesimportanceMap(): jspb.Map<string, number>;
-  clearFeaturesimportanceMap(): TestResponse;
+  getImpurityfeatureimportanceMap(): jspb.Map<string, number>;
+  clearImpurityfeatureimportanceMap(): TestResponse;
+
+  getPermutationfeatureimportanceMap(): jspb.Map<string, number>;
+  clearPermutationfeatureimportanceMap(): TestResponse;
 
   getTraincm(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix | undefined;
   setTraincm(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix): TestResponse;
@@ -387,7 +390,8 @@ export namespace TestResponse {
     pythonversioninfo: string,
     pipfreezeMap: Array<[string, string]>,
     misclassuri: string,
-    featuresimportanceMap: Array<[string, number]>,
+    impurityfeatureimportanceMap: Array<[string, number]>,
+    permutationfeatureimportanceMap: Array<[string, number]>,
     traincm?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix.AsObject,
     testcm?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix.AsObject,
   }

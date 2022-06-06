@@ -2760,7 +2760,8 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.toObject =
     pythonversioninfo: jspb.Message.getFieldWithDefault(msg, 13, ""),
     pipfreezeMap: (f = msg.getPipfreezeMap()) ? f.toObject(includeInstance, undefined) : [],
     misclassuri: jspb.Message.getFieldWithDefault(msg, 15, ""),
-    featuresimportanceMap: (f = msg.getFeaturesimportanceMap()) ? f.toObject(includeInstance, undefined) : [],
+    impurityfeatureimportanceMap: (f = msg.getImpurityfeatureimportanceMap()) ? f.toObject(includeInstance, undefined) : [],
+    permutationfeatureimportanceMap: (f = msg.getPermutationfeatureimportanceMap()) ? f.toObject(includeInstance, undefined) : [],
     traincm: (f = msg.getTraincm()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix.toObject(includeInstance, f),
     testcm: (f = msg.getTestcm()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix.toObject(includeInstance, f)
   };
@@ -2865,17 +2866,23 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.deserializ
       msg.setMisclassuri(value);
       break;
     case 16:
-      var value = msg.getFeaturesimportanceMap();
+      var value = msg.getImpurityfeatureimportanceMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readFloat, null, "", 0.0);
          });
       break;
     case 17:
+      var value = msg.getPermutationfeatureimportanceMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readFloat, null, "", 0.0);
+         });
+      break;
+    case 18:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix.deserializeBinaryFromReader);
       msg.setTraincm(value);
       break;
-    case 18:
+    case 19:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix.deserializeBinaryFromReader);
       msg.setTestcm(value);
@@ -3014,14 +3021,18 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.serializeB
       f
     );
   }
-  f = message.getFeaturesimportanceMap(true);
+  f = message.getImpurityfeatureimportanceMap(true);
   if (f && f.getLength() > 0) {
     f.serializeBinary(16, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeFloat);
+  }
+  f = message.getPermutationfeatureimportanceMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(17, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeFloat);
   }
   f = message.getTraincm();
   if (f != null) {
     writer.writeMessage(
-      17,
+      18,
       f,
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix.serializeBinaryToWriter
     );
@@ -3029,7 +3040,7 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.serializeB
   f = message.getTestcm();
   if (f != null) {
     writer.writeMessage(
-      18,
+      19,
       f,
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix.serializeBinaryToWriter
     );
@@ -3372,12 +3383,12 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.
 
 
 /**
- * map<string, float> featuresImportance = 16;
+ * map<string, float> impurityFeatureImportance = 16;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,number>}
  */
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.getFeaturesimportanceMap = function(opt_noLazyCreate) {
+proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.getImpurityfeatureimportanceMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,number>} */ (
       jspb.Message.getMapField(this, 16, opt_noLazyCreate,
       null));
@@ -3388,18 +3399,40 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.
  * Clears values from the map. The map will be non-null.
  * @return {!proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.clearFeaturesimportanceMap = function() {
-  this.getFeaturesimportanceMap().clear();
+proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.clearImpurityfeatureimportanceMap = function() {
+  this.getImpurityfeatureimportanceMap().clear();
   return this;};
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ConfusionMatrix trainCM = 17;
+ * map<string, float> permutationFeatureImportance = 17;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,number>}
+ */
+proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.getPermutationfeatureimportanceMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,number>} */ (
+      jspb.Message.getMapField(this, 17, opt_noLazyCreate,
+      null));
+};
+
+
+/**
+ * Clears values from the map. The map will be non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.clearPermutationfeatureimportanceMap = function() {
+  this.getPermutationfeatureimportanceMap().clear();
+  return this;};
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ConfusionMatrix trainCM = 18;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ConfusionMatrix}
  */
 proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.getTraincm = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ConfusionMatrix} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix, 17));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix, 18));
 };
 
 
@@ -3408,7 +3441,7 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.
  * @return {!proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse} returns this
 */
 proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.setTraincm = function(value) {
-  return jspb.Message.setWrapperField(this, 17, value);
+  return jspb.Message.setWrapperField(this, 18, value);
 };
 
 
@@ -3426,17 +3459,17 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.hasTraincm = function() {
-  return jspb.Message.getField(this, 17) != null;
+  return jspb.Message.getField(this, 18) != null;
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ConfusionMatrix testCM = 18;
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ConfusionMatrix testCM = 19;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ConfusionMatrix}
  */
 proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.getTestcm = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ConfusionMatrix} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix, 18));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix, 19));
 };
 
 
@@ -3445,7 +3478,7 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.
  * @return {!proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse} returns this
 */
 proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.setTestcm = function(value) {
-  return jspb.Message.setWrapperField(this, 18, value);
+  return jspb.Message.setWrapperField(this, 19, value);
 };
 
 
@@ -3463,7 +3496,7 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.hasTestcm = function() {
-  return jspb.Message.getField(this, 18) != null;
+  return jspb.Message.getField(this, 19) != null;
 };
 
 

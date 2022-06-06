@@ -136,11 +136,13 @@ message TestResponse {
     // Misclassfied uri
     string misclassUri = 15;
     // feature importance
-    map<string,float> featuresImportance = 16;
+    map<string,float> impurityFeatureImportance = 16;
+    // permutation feature importance
+    map<string,float> permutationFeatureImportance = 17;
     // train confusion matrix
-    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ConfusionMatrix trainCM = 17;
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ConfusionMatrix trainCM = 18;
     // test confusion matrix
-    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ConfusionMatrix testCM = 18;
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ConfusionMatrix testCM = 19;
 
 
 }

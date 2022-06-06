@@ -3264,6 +3264,11 @@ export class ModelStatus extends jspb.Message {
   clearImportanceList(): ModelStatus;
   addImportance(value?: FeatureImportance, index?: number): FeatureImportance;
 
+  getPermutationimportanceList(): Array<FeatureImportance>;
+  setPermutationimportanceList(value: Array<FeatureImportance>): ModelStatus;
+  clearPermutationimportanceList(): ModelStatus;
+  addPermutationimportance(value?: FeatureImportance, index?: number): FeatureImportance;
+
   getForecasturi(): string;
   setForecasturi(value: string): ModelStatus;
 
@@ -3452,6 +3457,7 @@ export namespace ModelStatus {
     appuri: string,
     imagename: string,
     importanceList: Array<FeatureImportance.AsObject>,
+    permutationimportanceList: Array<FeatureImportance.AsObject>,
     forecasturi: string,
     runtime?: RuntimeStatus.AsObject,
     traindataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
