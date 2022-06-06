@@ -93,6 +93,16 @@ message ResumeStudyResponse {
 
 }
 
+
+message CompleteSearchRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message CompleteSearchResponse {
+
+}
+
 message DeleteStudyRequest {
     string namespace = 1;
     string name      = 2;
@@ -154,5 +164,10 @@ service StudyService {
 
     rpc ResumeStudy(ResumeStudyRequest) returns (ResumeStudyResponse) {
         option (google.api.http).post = "/v1/studies/{namespace}/{name}/resume";
+    }
+
+    // Force completion of the search.
+    rpc CompleteSearch(CompleteSearchRequest) returns (CompleteSearchResponse) {
+        option (google.api.http).post = "/v1/studies/{namespace}/{name}/complete-search";
     }
 }

@@ -32,6 +32,8 @@ type StudyServiceClient interface {
 	AbortStudy(ctx context.Context, in *AbortStudyRequest, opts ...grpc.CallOption) (*AbortStudyResponse, error)
 	PauseStudy(ctx context.Context, in *PauseStudyRequest, opts ...grpc.CallOption) (*PauseStudyResponse, error)
 	ResumeStudy(ctx context.Context, in *ResumeStudyRequest, opts ...grpc.CallOption) (*ResumeStudyResponse, error)
+	// Force completion of the search.
+	CompleteSearch(ctx context.Context, in *CompleteSearchRequest, opts ...grpc.CallOption) (*CompleteSearchResponse, error)
 }
 
 type studyServiceClient struct {
@@ -132,6 +134,15 @@ func (c *studyServiceClient) ResumeStudy(ctx context.Context, in *ResumeStudyReq
 	return out, nil
 }
 
+func (c *studyServiceClient) CompleteSearch(ctx context.Context, in *CompleteSearchRequest, opts ...grpc.CallOption) (*CompleteSearchResponse, error) {
+	out := new(CompleteSearchResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/CompleteSearch", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // StudyServiceServer is the server API for StudyService service.
 // All implementations must embed UnimplementedStudyServiceServer
 // for forward compatibility
@@ -146,6 +157,8 @@ type StudyServiceServer interface {
 	AbortStudy(context.Context, *AbortStudyRequest) (*AbortStudyResponse, error)
 	PauseStudy(context.Context, *PauseStudyRequest) (*PauseStudyResponse, error)
 	ResumeStudy(context.Context, *ResumeStudyRequest) (*ResumeStudyResponse, error)
+	// Force completion of the search.
+	CompleteSearch(context.Context, *CompleteSearchRequest) (*CompleteSearchResponse, error)
 	mustEmbedUnimplementedStudyServiceServer()
 }
 
@@ -182,6 +195,9 @@ func (UnimplementedStudyServiceServer) PauseStudy(context.Context, *PauseStudyRe
 }
 func (UnimplementedStudyServiceServer) ResumeStudy(context.Context, *ResumeStudyRequest) (*ResumeStudyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ResumeStudy not implemented")
+}
+func (UnimplementedStudyServiceServer) CompleteSearch(context.Context, *CompleteSearchRequest) (*CompleteSearchResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CompleteSearch not implemented")
 }
 func (UnimplementedStudyServiceServer) mustEmbedUnimplementedStudyServiceServer() {}
 
@@ -376,6 +392,24 @@ func _StudyService_ResumeStudy_Handler(srv interface{}, ctx context.Context, dec
 	return interceptor(ctx, in, info, handler)
 }
 
+func _StudyService_CompleteSearch_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CompleteSearchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(StudyServiceServer).CompleteSearch(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/github.com.metaprov.modelaapi.services.study.v1.StudyService/CompleteSearch",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(StudyServiceServer).CompleteSearch(ctx, req.(*CompleteSearchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // StudyService_ServiceDesc is the grpc.ServiceDesc for StudyService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -422,6 +456,10 @@ var StudyService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ResumeStudy",
 			Handler:    _StudyService_ResumeStudy_Handler,
+		},
+		{
+			MethodName: "CompleteSearch",
+			Handler:    _StudyService_CompleteSearch_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

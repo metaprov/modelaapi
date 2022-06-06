@@ -465,5 +465,48 @@ export class StudyServiceClient {
     this.methodInfoResumeStudy);
   }
 
+  methodInfoCompleteSearch = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.study.v1.StudyService/CompleteSearch',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_study_v1_study_pb.CompleteSearchRequest,
+    github_com_metaprov_modelaapi_services_study_v1_study_pb.CompleteSearchResponse,
+    (request: github_com_metaprov_modelaapi_services_study_v1_study_pb.CompleteSearchRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_study_v1_study_pb.CompleteSearchResponse.deserializeBinary
+  );
+
+  completeSearch(
+    request: github_com_metaprov_modelaapi_services_study_v1_study_pb.CompleteSearchRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_study_v1_study_pb.CompleteSearchResponse>;
+
+  completeSearch(
+    request: github_com_metaprov_modelaapi_services_study_v1_study_pb.CompleteSearchRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_study_v1_study_pb.CompleteSearchResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_study_v1_study_pb.CompleteSearchResponse>;
+
+  completeSearch(
+    request: github_com_metaprov_modelaapi_services_study_v1_study_pb.CompleteSearchRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_study_v1_study_pb.CompleteSearchResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.study.v1.StudyService/CompleteSearch',
+        request,
+        metadata || {},
+        this.methodInfoCompleteSearch,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.study.v1.StudyService/CompleteSearch',
+    request,
+    metadata || {},
+    this.methodInfoCompleteSearch);
+  }
+
 }
 

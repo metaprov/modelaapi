@@ -64,6 +64,11 @@ class StudyServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.ResumeStudyRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.ResumeStudyResponse.FromString,
                 )
+        self.CompleteSearch = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.study.v1.StudyService/CompleteSearch',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.CompleteSearchRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.CompleteSearchResponse.FromString,
+                )
 
 
 class StudyServiceServicer(object):
@@ -129,6 +134,13 @@ class StudyServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def CompleteSearch(self, request, context):
+        """Force completion of the search.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_StudyServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -181,6 +193,11 @@ def add_StudyServiceServicer_to_server(servicer, server):
                     servicer.ResumeStudy,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.ResumeStudyRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.ResumeStudyResponse.SerializeToString,
+            ),
+            'CompleteSearch': grpc.unary_unary_rpc_method_handler(
+                    servicer.CompleteSearch,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.CompleteSearchRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.CompleteSearchResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -359,5 +376,22 @@ class StudyService(object):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.study.v1.StudyService/ResumeStudy',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.ResumeStudyRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.ResumeStudyResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CompleteSearch(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.study.v1.StudyService/CompleteSearch',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.CompleteSearchRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.CompleteSearchResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

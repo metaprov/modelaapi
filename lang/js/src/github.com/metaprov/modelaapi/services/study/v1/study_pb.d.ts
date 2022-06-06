@@ -372,6 +372,42 @@ export namespace ResumeStudyResponse {
   }
 }
 
+export class CompleteSearchRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): CompleteSearchRequest;
+
+  getName(): string;
+  setName(value: string): CompleteSearchRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CompleteSearchRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CompleteSearchRequest): CompleteSearchRequest.AsObject;
+  static serializeBinaryToWriter(message: CompleteSearchRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CompleteSearchRequest;
+  static deserializeBinaryFromReader(message: CompleteSearchRequest, reader: jspb.BinaryReader): CompleteSearchRequest;
+}
+
+export namespace CompleteSearchRequest {
+  export type AsObject = {
+    namespace: string,
+    name: string,
+  }
+}
+
+export class CompleteSearchResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CompleteSearchResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CompleteSearchResponse): CompleteSearchResponse.AsObject;
+  static serializeBinaryToWriter(message: CompleteSearchResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CompleteSearchResponse;
+  static deserializeBinaryFromReader(message: CompleteSearchResponse, reader: jspb.BinaryReader): CompleteSearchResponse;
+}
+
+export namespace CompleteSearchResponse {
+  export type AsObject = {
+  }
+}
+
 export class DeleteStudyRequest extends jspb.Message {
   getNamespace(): string;
   setNamespace(value: string): DeleteStudyRequest;
