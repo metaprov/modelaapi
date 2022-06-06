@@ -170,6 +170,10 @@ func (r *Study) IsSearching() bool {
 	return r.Status.Phase == StudyPhaseSearching
 }
 
+func (r *Study) IsFeatureEngineering() bool {
+	return r.Status.Phase == StudyPhaseEngineeringFeature
+}
+
 func (r *Study) IsReady() bool {
 	return r.GetCond(StudyCompleted).Status == v1.ConditionTrue
 }
