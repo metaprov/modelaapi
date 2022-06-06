@@ -1898,7 +1898,7 @@ type ConfusionMatrixRow struct {
 }
 
 type ConfusionMatrix struct {
-	Rows []ConfusionMatrixRow `json:"rows,omitempty" protobuf:"bytes,1,opt,name=rows"`
+	Rows []ConfusionMatrixRow `json:"rows,omitempty" protobuf:"bytes,1,rep,name=rows"`
 }
 
 // ResourceSpec specifies the amount of resources that will be allocated to a workload
