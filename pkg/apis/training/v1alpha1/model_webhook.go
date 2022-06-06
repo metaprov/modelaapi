@@ -98,8 +98,12 @@ func (model *Model) Default() {
 		}
 	}
 	// update the status. this might be moved to the crd itself.
-	if model.Status.Importance == nil {
-		model.Status.Importance = make([]FeatureImportance, 0)
+	if model.Status.ImpurityImportance == nil {
+		model.Status.ImpurityImportance = make([]FeatureImportance, 0)
+	}
+
+	if model.Status.PermutationImportance == nil {
+		model.Status.PermutationImportance = make([]FeatureImportance, 0)
 	}
 
 }
