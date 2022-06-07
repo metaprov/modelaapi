@@ -1484,6 +1484,10 @@ message DataSourceSpec {
 
   // List of relationships to other data sources
   repeated RelationshipSpec relationships = 11;
+
+  // A specification on how to label datasets using positive and negative rules.
+  // +kubebuilder:validation:Optional
+  optional LabelingSpec labeling = 12;
 }
 
 // DataSourceStatus defines the observed state of a DataSource object
@@ -3017,6 +3021,28 @@ message LabelingPipelineStatus {
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
   repeated LabelingPipelineCondition conditions = 5;
+}
+
+message LabelingRule {
+  optional string column = 1;
+
+  optional string operator = 2;
+
+  optional string value = 3;
+}
+
+message LabelingSpec {
+  // If true enable labeling.
+  optional bool enabled = 1;
+
+  // The name of the column that will hold the result.
+  optional string resultColumn = 2;
+
+  // List of rules for positive rules.
+  repeated LabelingRule positive = 3;
+
+  // List of negative rules
+  repeated LabelingRule negative = 4;
 }
 
 message LineChartSpec {

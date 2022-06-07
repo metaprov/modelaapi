@@ -1933,6 +1933,11 @@ export class DataSourceSpec extends jspb.Message {
   clearRelationshipsList(): DataSourceSpec;
   addRelationships(value?: RelationshipSpec, index?: number): RelationshipSpec;
 
+  getLabeling(): LabelingSpec | undefined;
+  setLabeling(value?: LabelingSpec): DataSourceSpec;
+  hasLabeling(): boolean;
+  clearLabeling(): DataSourceSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataSourceSpec.AsObject;
   static toObject(includeInstance: boolean, msg: DataSourceSpec): DataSourceSpec.AsObject;
@@ -1954,6 +1959,7 @@ export namespace DataSourceSpec {
     sample?: SampleSpec.AsObject,
     task: string,
     relationshipsList: Array<RelationshipSpec.AsObject>,
+    labeling?: LabelingSpec.AsObject,
   }
 }
 
@@ -4408,6 +4414,66 @@ export namespace LabelingPipelineStatus {
     observedgeneration: number,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<LabelingPipelineCondition.AsObject>,
+  }
+}
+
+export class LabelingRule extends jspb.Message {
+  getColumn(): string;
+  setColumn(value: string): LabelingRule;
+
+  getOperator(): string;
+  setOperator(value: string): LabelingRule;
+
+  getValue(): string;
+  setValue(value: string): LabelingRule;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LabelingRule.AsObject;
+  static toObject(includeInstance: boolean, msg: LabelingRule): LabelingRule.AsObject;
+  static serializeBinaryToWriter(message: LabelingRule, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LabelingRule;
+  static deserializeBinaryFromReader(message: LabelingRule, reader: jspb.BinaryReader): LabelingRule;
+}
+
+export namespace LabelingRule {
+  export type AsObject = {
+    column: string,
+    operator: string,
+    value: string,
+  }
+}
+
+export class LabelingSpec extends jspb.Message {
+  getEnabled(): boolean;
+  setEnabled(value: boolean): LabelingSpec;
+
+  getResultcolumn(): string;
+  setResultcolumn(value: string): LabelingSpec;
+
+  getPositiveList(): Array<LabelingRule>;
+  setPositiveList(value: Array<LabelingRule>): LabelingSpec;
+  clearPositiveList(): LabelingSpec;
+  addPositive(value?: LabelingRule, index?: number): LabelingRule;
+
+  getNegativeList(): Array<LabelingRule>;
+  setNegativeList(value: Array<LabelingRule>): LabelingSpec;
+  clearNegativeList(): LabelingSpec;
+  addNegative(value?: LabelingRule, index?: number): LabelingRule;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LabelingSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: LabelingSpec): LabelingSpec.AsObject;
+  static serializeBinaryToWriter(message: LabelingSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LabelingSpec;
+  static deserializeBinaryFromReader(message: LabelingSpec, reader: jspb.BinaryReader): LabelingSpec;
+}
+
+export namespace LabelingSpec {
+  export type AsObject = {
+    enabled: boolean,
+    resultcolumn: string,
+    positiveList: Array<LabelingRule.AsObject>,
+    negativeList: Array<LabelingRule.AsObject>,
   }
 }
 

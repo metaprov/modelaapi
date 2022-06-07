@@ -307,6 +307,57 @@ spec:
                     - stata
                     - feather
                     type: string
+                  labeling:
+                    description: A specification on how to label datasets using positive
+                      and negative rules.
+                    properties:
+                      enabled:
+                        description: If true enable labeling.
+                        type: boolean
+                      negative:
+                        description: List of negative rules
+                        items:
+                          properties:
+                            column:
+                              type: string
+                            operator:
+                              description: Op is a relational operator
+                              enum:
+                              - lt
+                              - eq
+                              - gt
+                              - ne
+                              - le
+                              - ge
+                              type: string
+                            value:
+                              type: string
+                          type: object
+                        type: array
+                      positive:
+                        description: List of rules for positive rules.
+                        items:
+                          properties:
+                            column:
+                              type: string
+                            operator:
+                              description: Op is a relational operator
+                              enum:
+                              - lt
+                              - eq
+                              - gt
+                              - ne
+                              - le
+                              - ge
+                              type: string
+                            value:
+                              type: string
+                          type: object
+                        type: array
+                      resultColumn:
+                        description: The name of the column that will hold the result.
+                        type: string
+                    type: object
                   owner:
                     default: no-one
                     description: The name of the Account which created the object,

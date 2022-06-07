@@ -729,6 +729,9 @@ type DataSourceSpec struct {
 	Task *catalog.MLTask `json:"task,omitempty" protobuf:"bytes,10,opt,name=task"`
 	// List of relationships to other data sources
 	Relationships []RelationshipSpec `json:"relationships,omitempty" protobuf:"bytes,11,rep,name=relationships"`
+	// A specification on how to label datasets using positive and negative rules.
+	// +kubebuilder:validation:Optional
+	Labeling LabelingSpec `json:"labeling,omitempty" protobuf:"bytes,12,rep,name=labeling"`
 }
 
 // DataSourceStatus defines the observed state of a DataSource object
@@ -783,4 +786,21 @@ type RelationshipSpec struct {
 	// +kubebuilder:validation:Required
 	// +required
 	RelatesTo string `json:"relatesTo,omitempty" protobuf:"bytes,4,opt,name=relatesTo"`
+}
+
+type LabelingSpec struct {
+	// If true enable labeling.
+	Enabled *bool `json:"enabled,omitempty" protobuf:"bytes,1,opt,name=enabled"`
+	// The name of the column that will hold the result.
+	ResultColumn string `json:"resultColumn,omitempty" protobuf:"bytes,2,opt,name=resultColumn"`
+	// List of rules for positive rules.
+	Positive []LabelingRule `json:"positive,omitempty" protobuf:"bytes,3,rep,name=positive"`
+	// List of negative rules
+	Negative []LabelingRule `json:"negative,omitempty" protobuf:"bytes,4,rep,name=negative"`
+}
+
+type LabelingRule struct {
+	Column   string     `json:"column,omitempty" protobuf:"bytes,1,opt,name=column"`
+	Operator catalog.Op `json:"operator,omitempty" protobuf:"bytes,2,opt,name=operator"`
+	Value    string     `json:"value,omitempty" protobuf:"bytes,3,opt,name=value"`
 }
