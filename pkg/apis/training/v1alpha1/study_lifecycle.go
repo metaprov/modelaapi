@@ -1034,3 +1034,15 @@ func (study *Study) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *stri
 		},
 	}
 }
+
+///////////////////////////////////////////////////
+// Mark study failed due to model failure
+//////////////////////////////////////////////////
+func (study *Study) MarkModelFailed(model *Model, err error) {
+	study.Status.Phase = StudyPhaseFailed
+	msg := fmt.Sprintf("model %s failed with messasge %s", model.Name, err.Error())
+	study.Status.FailureMessage = util.StrPtr(msg)
+	study.RefreshProgress()
+	now := metav1.Now()
+	study.Status.EndTime = &now
+}
