@@ -22,7 +22,10 @@ func (dataset *Dataset) Default() {
 	// if not row, we assume is 0
 
 	// if we read from a database, we must snapshot the data. by default we do not snapshot
-	if *dataset.Spec.Origin.Type == DataLocationSQLTable || *dataset.Spec.Origin.Type == DataLocationSQLView {
+	if *dataset.Spec.Origin.Type == DataLocationSQLTable ||
+		*dataset.Spec.Origin.Type == DataLocationSQLView ||
+		*dataset.Spec.Origin.Type == DataLocationWebApi ||
+		*dataset.Spec.Origin.Type == DataLocationPublicDataset {
 		dataset.Spec.Snapshotted = util.BoolPtr(true)
 	}
 
