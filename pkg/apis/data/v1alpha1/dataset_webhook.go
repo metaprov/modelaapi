@@ -23,7 +23,8 @@ func (dataset *Dataset) Default() {
 	if *dataset.Spec.Origin.Type == DataLocationSQLTable ||
 		*dataset.Spec.Origin.Type == DataLocationSQLView ||
 		*dataset.Spec.Origin.Type == DataLocationWebApi ||
-		*dataset.Spec.Origin.Type == DataLocationPublicDataset {
+		*dataset.Spec.Origin.Type == DataLocationPublicDataset ||
+		*dataset.Spec.Origin.Type == DataLocationDataset {
 		dataset.Spec.Snapshotted = util.BoolPtr(true)
 	}
 
