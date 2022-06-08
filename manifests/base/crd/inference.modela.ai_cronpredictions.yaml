@@ -168,12 +168,6 @@ spec:
                           CronPrediction that created the Prediction, if applicable
                         maxLength: 63
                         type: string
-                      datasetName:
-                        default: ""
-                        description: The name of the Dataset  which exists in the
-                          same DataProduct namespace as the Prediction that will be
-                          downloaded to make predictions on each row of its data
-                        type: string
                       forecast:
                         default: false
                         description: Indicates if the prediction is a forecast

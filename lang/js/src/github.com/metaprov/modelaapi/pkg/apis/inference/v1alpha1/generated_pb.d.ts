@@ -1108,9 +1108,6 @@ export class PredictionSpec extends jspb.Message {
   getForecast(): boolean;
   setForecast(value: boolean): PredictionSpec;
 
-  getDatasetname(): string;
-  setDatasetname(value: string): PredictionSpec;
-
   getInput(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataInputSpec | undefined;
   setInput(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataInputSpec): PredictionSpec;
   hasInput(): boolean;
@@ -1173,7 +1170,6 @@ export namespace PredictionSpec {
     predictorname: string,
     labeled: boolean,
     forecast: boolean,
-    datasetname: string,
     input?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataInputSpec.AsObject,
     output?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataOutputSpec.AsObject,
     testsList: Array<string>,

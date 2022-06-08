@@ -712,12 +712,6 @@ message PredictionSpec {
   // +kubebuilder:validation:Optional
   optional bool forecast = 4;
 
-  // The name of the Dataset  which exists in the same DataProduct namespace as the Prediction
-  // that will be downloaded to make predictions on each row of its data
-  // +kubebuilder:validation:Optional
-  // +kubebuilder:default:=""
-  optional string datasetName = 5;
-
   // Input specifies the location of the input data, if not using a Dataset resource
   optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec input = 6;
 

@@ -948,11 +948,6 @@ func (in *PredictionSpec) DeepCopyInto(out *PredictionSpec) {
 		*out = new(bool)
 		**out = **in
 	}
-	if in.DatasetName != nil {
-		in, out := &in.DatasetName, &out.DatasetName
-		*out = new(string)
-		**out = **in
-	}
 	in.Input.DeepCopyInto(&out.Input)
 	in.Output.DeepCopyInto(&out.Output)
 	if in.Tests != nil {

@@ -96,11 +96,6 @@ type PredictionSpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Forecast *bool `json:"forecast,omitempty" protobuf:"varint,4,opt,name=forecast"`
-	// The name of the Dataset  which exists in the same DataProduct namespace as the Prediction
-	// that will be downloaded to make predictions on each row of its data
-	// +kubebuilder:validation:Optional
-	// +kubebuilder:default:=""
-	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,5,opt,name=datasetName"`
 	// Input specifies the location of the input data, if not using a Dataset resource
 	Input data.DataInputSpec `json:"input,omitempty" protobuf:"bytes,6,opt,name=input"`
 	// Output specifies the location where the predicted dataset will be stored
