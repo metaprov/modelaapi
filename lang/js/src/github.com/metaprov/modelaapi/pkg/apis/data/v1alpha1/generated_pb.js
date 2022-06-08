@@ -21915,7 +21915,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.toObje
     task: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
     relationshipsList: jspb.Message.toObjectList(msg.getRelationshipsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RelationshipSpec.toObject, includeInstance),
-    labeling: (f = msg.getLabeling()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingSpec.toObject(includeInstance, f)
+    labeling: (f = msg.getLabeling()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingSpec.toObject(includeInstance, f),
+    inferredfrom: (f = msg.getInferredfrom()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -22005,6 +22006,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.deseri
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingSpec;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingSpec.deserializeBinaryFromReader);
       msg.setLabeling(value);
+      break;
+    case 13:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation.deserializeBinaryFromReader);
+      msg.setInferredfrom(value);
       break;
     default:
       reader.skipField();
@@ -22123,6 +22129,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.serial
       12,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingSpec.serializeBinaryToWriter
+    );
+  }
+  f = message.getInferredfrom();
+  if (f != null) {
+    writer.writeMessage(
+      13,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation.serializeBinaryToWriter
     );
   }
 };
@@ -22564,6 +22578,43 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.protot
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.hasLabeling = function() {
   return jspb.Message.getField(this, 12) != null;
+};
+
+
+/**
+ * optional DataLocation inferredFrom = 13;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.getInferredfrom = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation, 13));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.setInferredfrom = function(value) {
+  return jspb.Message.setWrapperField(this, 13, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.clearInferredfrom = function() {
+  return this.setInferredfrom(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.hasInferredfrom = function() {
+  return jspb.Message.getField(this, 13) != null;
 };
 
 

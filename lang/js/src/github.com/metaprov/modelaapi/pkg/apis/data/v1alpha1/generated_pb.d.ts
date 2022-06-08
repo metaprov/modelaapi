@@ -1938,6 +1938,11 @@ export class DataSourceSpec extends jspb.Message {
   hasLabeling(): boolean;
   clearLabeling(): DataSourceSpec;
 
+  getInferredfrom(): DataLocation | undefined;
+  setInferredfrom(value?: DataLocation): DataSourceSpec;
+  hasInferredfrom(): boolean;
+  clearInferredfrom(): DataSourceSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataSourceSpec.AsObject;
   static toObject(includeInstance: boolean, msg: DataSourceSpec): DataSourceSpec.AsObject;
@@ -1960,6 +1965,7 @@ export namespace DataSourceSpec {
     task: string,
     relationshipsList: Array<RelationshipSpec.AsObject>,
     labeling?: LabelingSpec.AsObject,
+    inferredfrom?: DataLocation.AsObject,
   }
 }
 

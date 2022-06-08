@@ -732,6 +732,9 @@ type DataSourceSpec struct {
 	// A specification on how to label datasets using positive and negative rules.
 	// +kubebuilder:validation:Optional
 	Labeling LabelingSpec `json:"labeling,omitempty" protobuf:"bytes,12,rep,name=labeling"`
+	// The data location which was used to infer the data source schema.
+	// +kubebuilder:validation:Optional
+	InferredFrom *DataLocation `json:"inferredFrom,omitempty" protobuf:"bytes,13,opt,name=inferredFrom"`
 }
 
 // DataSourceStatus defines the observed state of a DataSource object

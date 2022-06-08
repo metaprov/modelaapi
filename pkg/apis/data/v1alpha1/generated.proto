@@ -1488,6 +1488,10 @@ message DataSourceSpec {
   // A specification on how to label datasets using positive and negative rules.
   // +kubebuilder:validation:Optional
   optional LabelingSpec labeling = 12;
+
+  // The data location which was used to infer the data source schema.
+  // +kubebuilder:validation:Optional
+  optional DataLocation inferredFrom = 13;
 }
 
 // DataSourceStatus defines the observed state of a DataSource object
