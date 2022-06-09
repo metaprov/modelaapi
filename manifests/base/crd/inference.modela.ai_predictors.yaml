@@ -8636,6 +8636,10 @@ spec:
                             description: The object kind (e.g. deployment)
                             type: string
                           name:
+                            description: The object name
+                            type: string
+                          namespace:
+                            description: The object namespace
                             type: string
                           status:
                             description: The status of the object
@@ -8786,6 +8790,10 @@ spec:
                           description: The object kind (e.g. deployment)
                           type: string
                         name:
+                          description: The object name
+                          type: string
+                        namespace:
+                          description: The object namespace
                           type: string
                         status:
                           description: The status of the object

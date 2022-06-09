@@ -48,11 +48,14 @@ const (
 )
 
 type K8sObjectStatus struct {
-	Name string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
+	// The object namespace
+	Namespace string `json:"namespace,omitempty" protobuf:"bytes,1,opt,name=namespace"`
+	// The object name
+	Name string `json:"name,omitempty" protobuf:"bytes,2,opt,name=name"`
 	// The object kind (e.g. deployment)
-	Kind string `json:"kind,omitempty" protobuf:"bytes,2,opt,name=kind"`
+	Kind string `json:"kind,omitempty" protobuf:"bytes,3,opt,name=kind"`
 	// The age of the resource
-	Age *metav1.Time `json:"age,omitempty" protobuf:"bytes,3,opt,name=age"`
+	Age *metav1.Time `json:"age,omitempty" protobuf:"bytes,4,opt,name=age"`
 	// The status of the object
-	Status K8sObjectStatusState `json:"status,omitempty" protobuf:"bytes,4,opt,name=status"`
+	Status K8sObjectStatusState `json:"status,omitempty" protobuf:"bytes,5,opt,name=status"`
 }
