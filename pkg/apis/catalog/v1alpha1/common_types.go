@@ -439,7 +439,8 @@ func (metric Metric) IsMultiClass() bool {
 		metric == RecallMicro ||
 		metric == RecallWeighted ||
 		metric == RecallSamples ||
-		metric == AveragePrecision
+		metric == AveragePrecision ||
+		metric == LogLoss
 
 }
 

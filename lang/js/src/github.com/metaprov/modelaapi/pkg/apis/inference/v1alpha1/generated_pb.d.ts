@@ -753,12 +753,6 @@ export class ModelDeploymentStatus extends jspb.Message {
   hasReleasedat(): boolean;
   clearReleasedat(): ModelDeploymentStatus;
 
-  getDeploymentready(): boolean;
-  setDeploymentready(value: boolean): ModelDeploymentStatus;
-
-  getServiceready(): boolean;
-  setServiceready(value: boolean): ModelDeploymentStatus;
-
   getDatadrift(): boolean;
   setDatadrift(value: boolean): ModelDeploymentStatus;
 
@@ -769,6 +763,11 @@ export class ModelDeploymentStatus extends jspb.Message {
   setLastdailypredictionsList(value: Array<number>): ModelDeploymentStatus;
   clearLastdailypredictionsList(): ModelDeploymentStatus;
   addLastdailypredictions(value: number, index?: number): ModelDeploymentStatus;
+
+  getResourcesList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.K8sObjectStatus>;
+  setResourcesList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.K8sObjectStatus>): ModelDeploymentStatus;
+  clearResourcesList(): ModelDeploymentStatus;
+  addResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.K8sObjectStatus, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.K8sObjectStatus;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelDeploymentStatus.AsObject;
@@ -793,11 +792,10 @@ export namespace ModelDeploymentStatus {
     phase: string,
     deployedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     releasedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    deploymentready: boolean,
-    serviceready: boolean,
     datadrift: boolean,
     conceptdrift: boolean,
     lastdailypredictionsList: Array<number>,
+    resourcesList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.K8sObjectStatus.AsObject>,
   }
 }
 
@@ -1687,11 +1685,10 @@ export class PredictorletStatus extends jspb.Message {
   getTrainingdatasetname(): string;
   setTrainingdatasetname(value: string): PredictorletStatus;
 
-  getDeploymentready(): boolean;
-  setDeploymentready(value: boolean): PredictorletStatus;
-
-  getServiceready(): boolean;
-  setServiceready(value: boolean): PredictorletStatus;
+  getResourcesList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.K8sObjectStatus>;
+  setResourcesList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.K8sObjectStatus>): PredictorletStatus;
+  clearResourcesList(): PredictorletStatus;
+  addResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.K8sObjectStatus, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.K8sObjectStatus;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PredictorletStatus.AsObject;
@@ -1718,8 +1715,7 @@ export namespace PredictorletStatus {
     deployedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     releasedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     trainingdatasetname: string,
-    deploymentready: boolean,
-    serviceready: boolean,
+    resourcesList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.K8sObjectStatus.AsObject>,
   }
 }
 

@@ -329,6 +329,19 @@ message IntParameter {
   optional int32 defaultValue = 6;
 }
 
+message K8sObjectStatus {
+  optional string name = 1;
+
+  // The object kind (e.g. deployment)
+  optional string kind = 2;
+
+  // The age of the resource
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time age = 3;
+
+  // The status of the object
+  optional string status = 4;
+}
+
 // LastRunStatus describes the status of a single run for a run-based resource (such as a pipeline)
 message LastRunStatus {
   // The name of the run

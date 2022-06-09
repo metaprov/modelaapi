@@ -404,20 +404,16 @@ type ModelDeploymentStatus struct {
 	// ReleasedAt is the time that this model was released
 	// +kubebuilder:validation:Optional
 	ReleasedAt *metav1.Time `json:"releasedAt,omitempty" protobuf:"bytes,13,opt,name=releasedAt"`
-	// If true, the deployment is ready
-	// +kubebuilder:validation:Optional
-	DeploymentReady bool `json:"deploymentReady,omitempty" protobuf:"varint,15,opt,name=deploymentReady"`
-	// If true, the service is ready
-	// +kubebuilder:validation:Optional
-	ServiceReady bool `json:"serviceReady,omitempty" protobuf:"varint,16,opt,name=serviceReady"`
 	// Indicates if a data drift has been detected based on incoming prediction data
 	// +kubebuilder:validation:Optional
-	DataDrift bool `json:"dataDrift,omitempty" protobuf:"varint,17,opt,name=dataDrift"`
+	DataDrift bool `json:"dataDrift,omitempty" protobuf:"varint,14,opt,name=dataDrift"`
 	// Indicates if a concept drift has been detected based on incoming prediction data
 	// +kubebuilder:validation:Optional
-	ConceptDrift bool `json:"conceptDrift,omitempty" protobuf:"varint,18,opt,name=conceptDrift"`
+	ConceptDrift bool `json:"conceptDrift,omitempty" protobuf:"varint,15,opt,name=conceptDrift"`
 	// The predictions from the last 7 days
-	LastDailyPredictions []int32 `json:"lastDailyPredictions,omitempty" protobuf:"bytes,19,rep,name=lastDailyPredictions"`
+	LastDailyPredictions []int32 `json:"lastDailyPredictions,omitempty" protobuf:"bytes,16,rep,name=lastDailyPredictions"`
+	// The status of the kubernetes resources backing this model
+	Resources []catalog.K8sObjectStatus `json:"resources,omitempty" protobuf:"bytes,17,rep,name=resources"`
 }
 
 type ModelDeploymentPhase string
@@ -474,12 +470,8 @@ type PredictorletStatus struct {
 	// The dataset where this model was trained on
 	// +kubebuilder:validation:Optional
 	TrainingDatasetName string `json:"trainingDatasetName,omitempty" protobuf:"bytes,15,opt,name=trainingDatasetName"`
-	// If true, the deployment is ready
-	// +kubebuilder:validation:Optional
-	DeploymentReady bool `json:"deploymentReady,omitempty" protobuf:"varint,16,opt,name=deploymentReady"`
-	// If true, the service is ready
-	// +kubebuilder:validation:Optional
-	ServiceReady bool `json:"serviceReady,omitempty" protobuf:"varint,17,opt,name=serviceReady"`
+	// The status of the kubernetes resources backing this model
+	Resources []catalog.K8sObjectStatus `json:"resources,omitempty" protobuf:"bytes,16,rep,name=resources"`
 }
 
 type MonitorStatus struct {

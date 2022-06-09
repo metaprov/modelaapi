@@ -511,24 +511,19 @@ message ModelDeploymentStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time releasedAt = 13;
 
-  // If true, the deployment is ready
-  // +kubebuilder:validation:Optional
-  optional bool deploymentReady = 15;
-
-  // If true, the service is ready
-  // +kubebuilder:validation:Optional
-  optional bool serviceReady = 16;
-
   // Indicates if a data drift has been detected based on incoming prediction data
   // +kubebuilder:validation:Optional
-  optional bool dataDrift = 17;
+  optional bool dataDrift = 14;
 
   // Indicates if a concept drift has been detected based on incoming prediction data
   // +kubebuilder:validation:Optional
-  optional bool conceptDrift = 18;
+  optional bool conceptDrift = 15;
 
   // The predictions from the last 7 days
-  repeated int32 lastDailyPredictions = 19;
+  repeated int32 lastDailyPredictions = 16;
+
+  // The status of the kubernetes resources backing this model
+  repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.K8sObjectStatus resources = 17;
 }
 
 // ModelRecord hold the state of a model that was in production
@@ -1140,13 +1135,8 @@ message PredictorletStatus {
   // +kubebuilder:validation:Optional
   optional string trainingDatasetName = 15;
 
-  // If true, the deployment is ready
-  // +kubebuilder:validation:Optional
-  optional bool deploymentReady = 16;
-
-  // If true, the service is ready
-  // +kubebuilder:validation:Optional
-  optional bool serviceReady = 17;
+  // The status of the kubernetes resources backing this model
+  repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.K8sObjectStatus resources = 16;
 }
 
 // ProgressiveSpec defines the specification to progressively deploy a model to production

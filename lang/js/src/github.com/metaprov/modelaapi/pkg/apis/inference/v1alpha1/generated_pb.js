@@ -7192,7 +7192,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ForecastSpec.pro
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.repeatedFields_ = [19];
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.repeatedFields_ = [16,17];
 
 
 
@@ -7238,11 +7238,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentS
     phase: (f = jspb.Message.getField(msg, 11)) == null ? undefined : f,
     deployedat: (f = msg.getDeployedat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     releasedat: (f = msg.getReleasedat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
-    deploymentready: (f = jspb.Message.getBooleanField(msg, 15)) == null ? undefined : f,
-    serviceready: (f = jspb.Message.getBooleanField(msg, 16)) == null ? undefined : f,
-    datadrift: (f = jspb.Message.getBooleanField(msg, 17)) == null ? undefined : f,
-    conceptdrift: (f = jspb.Message.getBooleanField(msg, 18)) == null ? undefined : f,
-    lastdailypredictionsList: (f = jspb.Message.getRepeatedField(msg, 19)) == null ? undefined : f
+    datadrift: (f = jspb.Message.getBooleanField(msg, 14)) == null ? undefined : f,
+    conceptdrift: (f = jspb.Message.getBooleanField(msg, 15)) == null ? undefined : f,
+    lastdailypredictionsList: (f = jspb.Message.getRepeatedField(msg, 16)) == null ? undefined : f,
+    resourcesList: jspb.Message.toObjectList(msg.getResourcesList(),
+    github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.K8sObjectStatus.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -7336,27 +7336,24 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentS
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
       msg.setReleasedat(value);
       break;
-    case 15:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setDeploymentready(value);
-      break;
-    case 16:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setServiceready(value);
-      break;
-    case 17:
+    case 14:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setDatadrift(value);
       break;
-    case 18:
+    case 15:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setConceptdrift(value);
       break;
-    case 19:
+    case 16:
       var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt32() : [reader.readInt32()]);
       for (var i = 0; i < values.length; i++) {
         msg.addLastdailypredictions(values[i]);
       }
+      break;
+    case 17:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.K8sObjectStatus;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.K8sObjectStatus.deserializeBinaryFromReader);
+      msg.addResources(value);
       break;
     default:
       reader.skipField();
@@ -7483,6 +7480,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentS
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
   }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 14));
+  if (f != null) {
+    writer.writeBool(
+      14,
+      f
+    );
+  }
   f = /** @type {boolean} */ (jspb.Message.getField(message, 15));
   if (f != null) {
     writer.writeBool(
@@ -7490,32 +7494,19 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentS
       f
     );
   }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 16));
-  if (f != null) {
-    writer.writeBool(
+  f = message.getLastdailypredictionsList();
+  if (f.length > 0) {
+    writer.writeRepeatedInt32(
       16,
       f
     );
   }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 17));
-  if (f != null) {
-    writer.writeBool(
-      17,
-      f
-    );
-  }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 18));
-  if (f != null) {
-    writer.writeBool(
-      18,
-      f
-    );
-  }
-  f = message.getLastdailypredictionsList();
+  f = message.getResourcesList();
   if (f.length > 0) {
-    writer.writeRepeatedInt32(
-      19,
-      f
+    writer.writeRepeatedMessage(
+      17,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.K8sObjectStatus.serializeBinaryToWriter
     );
   }
 };
@@ -7995,83 +7986,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentS
 
 
 /**
- * optional bool deploymentReady = 15;
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.getDeploymentready = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 15, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.setDeploymentready = function(value) {
-  return jspb.Message.setField(this, 15, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.clearDeploymentready = function() {
-  return jspb.Message.setField(this, 15, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.hasDeploymentready = function() {
-  return jspb.Message.getField(this, 15) != null;
-};
-
-
-/**
- * optional bool serviceReady = 16;
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.getServiceready = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 16, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.setServiceready = function(value) {
-  return jspb.Message.setField(this, 16, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.clearServiceready = function() {
-  return jspb.Message.setField(this, 16, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.hasServiceready = function() {
-  return jspb.Message.getField(this, 16) != null;
-};
-
-
-/**
- * optional bool dataDrift = 17;
+ * optional bool dataDrift = 14;
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.getDatadrift = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 17, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 14, false));
 };
 
 
@@ -8080,7 +7999,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentS
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.setDatadrift = function(value) {
-  return jspb.Message.setField(this, 17, value);
+  return jspb.Message.setField(this, 14, value);
 };
 
 
@@ -8089,7 +8008,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentS
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.clearDatadrift = function() {
-  return jspb.Message.setField(this, 17, undefined);
+  return jspb.Message.setField(this, 14, undefined);
 };
 
 
@@ -8098,16 +8017,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentS
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.hasDatadrift = function() {
-  return jspb.Message.getField(this, 17) != null;
+  return jspb.Message.getField(this, 14) != null;
 };
 
 
 /**
- * optional bool conceptDrift = 18;
+ * optional bool conceptDrift = 15;
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.getConceptdrift = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 18, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 15, false));
 };
 
 
@@ -8116,7 +8035,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentS
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.setConceptdrift = function(value) {
-  return jspb.Message.setField(this, 18, value);
+  return jspb.Message.setField(this, 15, value);
 };
 
 
@@ -8125,7 +8044,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentS
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.clearConceptdrift = function() {
-  return jspb.Message.setField(this, 18, undefined);
+  return jspb.Message.setField(this, 15, undefined);
 };
 
 
@@ -8134,16 +8053,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentS
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.hasConceptdrift = function() {
-  return jspb.Message.getField(this, 18) != null;
+  return jspb.Message.getField(this, 15) != null;
 };
 
 
 /**
- * repeated int32 lastDailyPredictions = 19;
+ * repeated int32 lastDailyPredictions = 16;
  * @return {!Array<number>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.getLastdailypredictionsList = function() {
-  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 19));
+  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 16));
 };
 
 
@@ -8152,7 +8071,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentS
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.setLastdailypredictionsList = function(value) {
-  return jspb.Message.setField(this, 19, value || []);
+  return jspb.Message.setField(this, 16, value || []);
 };
 
 
@@ -8162,7 +8081,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentS
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.addLastdailypredictions = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 19, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 16, value, opt_index);
 };
 
 
@@ -8172,6 +8091,44 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentS
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.clearLastdailypredictionsList = function() {
   return this.setLastdailypredictionsList([]);
+};
+
+
+/**
+ * repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.K8sObjectStatus resources = 17;
+ * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.K8sObjectStatus>}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.getResourcesList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.K8sObjectStatus>} */ (
+    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.K8sObjectStatus, 17));
+};
+
+
+/**
+ * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.K8sObjectStatus>} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.setResourcesList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 17, value);
+};
+
+
+/**
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.K8sObjectStatus=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.K8sObjectStatus}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.addResources = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 17, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.K8sObjectStatus, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.clearResourcesList = function() {
+  return this.setResourcesList([]);
 };
 
 
@@ -15777,7 +15734,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorletStatus.repeatedFields_ = [9];
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorletStatus.repeatedFields_ = [9,16];
 
 
 
@@ -15825,8 +15782,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorletStat
     deployedat: (f = msg.getDeployedat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     releasedat: (f = msg.getReleasedat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     trainingdatasetname: (f = jspb.Message.getField(msg, 15)) == null ? undefined : f,
-    deploymentready: (f = jspb.Message.getBooleanField(msg, 16)) == null ? undefined : f,
-    serviceready: (f = jspb.Message.getBooleanField(msg, 17)) == null ? undefined : f
+    resourcesList: jspb.Message.toObjectList(msg.getResourcesList(),
+    github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.K8sObjectStatus.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -15931,12 +15888,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorletStat
       msg.setTrainingdatasetname(value);
       break;
     case 16:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setDeploymentready(value);
-      break;
-    case 17:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setServiceready(value);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.K8sObjectStatus;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.K8sObjectStatus.deserializeBinaryFromReader);
+      msg.addResources(value);
       break;
     default:
       reader.skipField();
@@ -16077,18 +16031,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorletStat
       f
     );
   }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 16));
-  if (f != null) {
-    writer.writeBool(
+  f = message.getResourcesList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
       16,
-      f
-    );
-  }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 17));
-  if (f != null) {
-    writer.writeBool(
-      17,
-      f
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.K8sObjectStatus.serializeBinaryToWriter
     );
   }
 };
@@ -16641,74 +16589,40 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorletStat
 
 
 /**
- * optional bool deploymentReady = 16;
- * @return {boolean}
+ * repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.K8sObjectStatus resources = 16;
+ * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.K8sObjectStatus>}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorletStatus.prototype.getDeploymentready = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 16, false));
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorletStatus.prototype.getResourcesList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.K8sObjectStatus>} */ (
+    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.K8sObjectStatus, 16));
 };
 
 
 /**
- * @param {boolean} value
+ * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.K8sObjectStatus>} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorletStatus} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorletStatus.prototype.setResourcesList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 16, value);
+};
+
+
+/**
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.K8sObjectStatus=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.K8sObjectStatus}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorletStatus.prototype.addResources = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 16, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.K8sObjectStatus, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorletStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorletStatus.prototype.setDeploymentready = function(value) {
-  return jspb.Message.setField(this, 16, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorletStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorletStatus.prototype.clearDeploymentready = function() {
-  return jspb.Message.setField(this, 16, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorletStatus.prototype.hasDeploymentready = function() {
-  return jspb.Message.getField(this, 16) != null;
-};
-
-
-/**
- * optional bool serviceReady = 17;
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorletStatus.prototype.getServiceready = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 17, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorletStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorletStatus.prototype.setServiceready = function(value) {
-  return jspb.Message.setField(this, 17, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorletStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorletStatus.prototype.clearServiceready = function() {
-  return jspb.Message.setField(this, 17, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorletStatus.prototype.hasServiceready = function() {
-  return jspb.Message.getField(this, 17) != null;
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorletStatus.prototype.clearResourcesList = function() {
+  return this.setResourcesList([]);
 };
 
 
