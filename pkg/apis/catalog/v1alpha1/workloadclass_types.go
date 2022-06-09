@@ -41,9 +41,10 @@ type Lib struct {
 type K8sObjectStatusState string
 
 const (
-	K8sObjectHealthy K8sObjectStatusState = "healthy"
-	K8sObjectWarning K8sObjectStatusState = "warning"
-	K8sObjectError   K8sObjectStatusState = "error"
+	K8sObjectStatusHealthy K8sObjectStatusState = "healthy"
+	K8sObjectStatusWarning K8sObjectStatusState = "warning"
+	K8sObjectStatusError   K8sObjectStatusState = "error"
+	K8sObjectStatusUnknown K8sObjectStatusState = "unknown"
 )
 
 type K8sObjectStatus struct {
