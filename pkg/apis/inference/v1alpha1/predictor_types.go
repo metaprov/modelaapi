@@ -411,8 +411,10 @@ type ModelDeploymentStatus struct {
 	// +kubebuilder:validation:Optional
 	ConceptDrift bool `json:"conceptDrift,omitempty" protobuf:"varint,15,opt,name=conceptDrift"`
 	// The predictions from the last 7 days
+	// +kubebuilder:validation:Optional
 	LastDailyPredictions []int32 `json:"lastDailyPredictions,omitempty" protobuf:"bytes,16,rep,name=lastDailyPredictions"`
 	// The status of the kubernetes resources backing this model
+	// +kubebuilder:validation:Optional
 	Resources []catalog.K8sObjectStatus `json:"resources,omitempty" protobuf:"bytes,17,rep,name=resources"`
 }
 
@@ -471,6 +473,7 @@ type PredictorletStatus struct {
 	// +kubebuilder:validation:Optional
 	TrainingDatasetName string `json:"trainingDatasetName,omitempty" protobuf:"bytes,15,opt,name=trainingDatasetName"`
 	// The status of the kubernetes resources backing this model
+	// +kubebuilder:validation:Optional
 	Resources []catalog.K8sObjectStatus `json:"resources,omitempty" protobuf:"bytes,16,rep,name=resources"`
 }
 

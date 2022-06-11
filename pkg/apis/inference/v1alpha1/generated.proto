@@ -520,9 +520,11 @@ message ModelDeploymentStatus {
   optional bool conceptDrift = 15;
 
   // The predictions from the last 7 days
+  // +kubebuilder:validation:Optional
   repeated int32 lastDailyPredictions = 16;
 
   // The status of the kubernetes resources backing this model
+  // +kubebuilder:validation:Optional
   repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.K8sObjectStatus resources = 17;
 }
 
@@ -1136,6 +1138,7 @@ message PredictorletStatus {
   optional string trainingDatasetName = 15;
 
   // The status of the kubernetes resources backing this model
+  // +kubebuilder:validation:Optional
   repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.K8sObjectStatus resources = 16;
 }
 
