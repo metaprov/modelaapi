@@ -7557,7 +7557,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus.
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.repeatedFields_ = [16];
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.repeatedFields_ = [16,17];
 
 
 
@@ -7605,7 +7605,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentS
     releasedat: (f = msg.getReleasedat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     datadrift: (f = jspb.Message.getBooleanField(msg, 14)) == null ? undefined : f,
     conceptdrift: (f = jspb.Message.getBooleanField(msg, 15)) == null ? undefined : f,
-    lastdailypredictionsList: (f = jspb.Message.getRepeatedField(msg, 16)) == null ? undefined : f
+    lastdailypredictionsList: (f = jspb.Message.getRepeatedField(msg, 16)) == null ? undefined : f,
+    resourcestatusList: jspb.Message.toObjectList(msg.getResourcestatusList(),
+    proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -7712,6 +7714,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentS
       for (var i = 0; i < values.length; i++) {
         msg.addLastdailypredictions(values[i]);
       }
+      break;
+    case 17:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus.deserializeBinaryFromReader);
+      msg.addResourcestatus(value);
       break;
     default:
       reader.skipField();
@@ -7857,6 +7864,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentS
     writer.writeRepeatedInt32(
       16,
       f
+    );
+  }
+  f = message.getResourcestatusList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      17,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus.serializeBinaryToWriter
     );
   }
 };
@@ -8441,6 +8456,44 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentS
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.clearLastdailypredictionsList = function() {
   return this.setLastdailypredictionsList([]);
+};
+
+
+/**
+ * repeated K8sObjectStatus resourceStatus = 17;
+ * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus>}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.getResourcestatusList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus, 17));
+};
+
+
+/**
+ * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus>} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.setResourcestatusList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 17, value);
+};
+
+
+/**
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.addResourcestatus = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 17, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.clearResourcestatusList = function() {
+  return this.setResourcestatusList([]);
 };
 
 

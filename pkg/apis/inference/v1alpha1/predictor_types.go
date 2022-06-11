@@ -415,7 +415,7 @@ type ModelDeploymentStatus struct {
 	LastDailyPredictions []int32 `json:"lastDailyPredictions,omitempty" protobuf:"bytes,16,rep,name=lastDailyPredictions"`
 	// The status of the kubernetes resources backing this model
 	// +kubebuilder:validation:Optional
-	//Resources []K8sObjectStatus `json:"resources,omitempty" protobuf:"bytes,17,rep,name=resources"`
+	ResourceStatus []K8sObjectStatus `json:"resourceStatus,omitempty" protobuf:"bytes,17,rep,name=resourceStatus"`
 }
 
 type ModelDeploymentPhase string

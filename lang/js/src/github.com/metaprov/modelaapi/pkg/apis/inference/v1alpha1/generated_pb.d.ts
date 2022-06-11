@@ -800,6 +800,11 @@ export class ModelDeploymentStatus extends jspb.Message {
   clearLastdailypredictionsList(): ModelDeploymentStatus;
   addLastdailypredictions(value: number, index?: number): ModelDeploymentStatus;
 
+  getResourcestatusList(): Array<K8sObjectStatus>;
+  setResourcestatusList(value: Array<K8sObjectStatus>): ModelDeploymentStatus;
+  clearResourcestatusList(): ModelDeploymentStatus;
+  addResourcestatus(value?: K8sObjectStatus, index?: number): K8sObjectStatus;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelDeploymentStatus.AsObject;
   static toObject(includeInstance: boolean, msg: ModelDeploymentStatus): ModelDeploymentStatus.AsObject;
@@ -826,6 +831,7 @@ export namespace ModelDeploymentStatus {
     datadrift: boolean,
     conceptdrift: boolean,
     lastdailypredictionsList: Array<number>,
+    resourcestatusList: Array<K8sObjectStatus.AsObject>,
   }
 }
 
