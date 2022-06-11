@@ -533,11 +533,11 @@ message ModelDeploymentStatus {
   // +kubebuilder:validation:Optional
   repeated int32 lastDailyPredictions = 16;
 
-  // The status of the kubernetes resources backing this model
-  // +patchMergeKey=type
-  // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated K8sObjectStatus resourceStatus = 17;
+  optional K8sObjectStatus serviceStatus = 17;
+
+  // +kubebuilder:validation:Optional
+  optional K8sObjectStatus deploymentStatus = 18;
 }
 
 // ModelRecord hold the state of a model that was in production
@@ -1148,6 +1148,12 @@ message PredictorletStatus {
   // The dataset where this model was trained on
   // +kubebuilder:validation:Optional
   optional string trainingDatasetName = 15;
+
+  // +kubebuilder:validation:Optional
+  optional K8sObjectStatus serviceStatus = 16;
+
+  // +kubebuilder:validation:Optional
+  optional K8sObjectStatus deploymentStatus = 17;
 }
 
 // ProgressiveSpec defines the specification to progressively deploy a model to production

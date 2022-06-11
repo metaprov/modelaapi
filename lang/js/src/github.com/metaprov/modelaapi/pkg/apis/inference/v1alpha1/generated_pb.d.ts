@@ -788,10 +788,15 @@ export class ModelDeploymentStatus extends jspb.Message {
   clearLastdailypredictionsList(): ModelDeploymentStatus;
   addLastdailypredictions(value: number, index?: number): ModelDeploymentStatus;
 
-  getResourcestatusList(): Array<K8sObjectStatus>;
-  setResourcestatusList(value: Array<K8sObjectStatus>): ModelDeploymentStatus;
-  clearResourcestatusList(): ModelDeploymentStatus;
-  addResourcestatus(value?: K8sObjectStatus, index?: number): K8sObjectStatus;
+  getServicestatus(): K8sObjectStatus | undefined;
+  setServicestatus(value?: K8sObjectStatus): ModelDeploymentStatus;
+  hasServicestatus(): boolean;
+  clearServicestatus(): ModelDeploymentStatus;
+
+  getDeploymentstatus(): K8sObjectStatus | undefined;
+  setDeploymentstatus(value?: K8sObjectStatus): ModelDeploymentStatus;
+  hasDeploymentstatus(): boolean;
+  clearDeploymentstatus(): ModelDeploymentStatus;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelDeploymentStatus.AsObject;
@@ -819,7 +824,8 @@ export namespace ModelDeploymentStatus {
     datadrift: boolean,
     conceptdrift: boolean,
     lastdailypredictionsList: Array<number>,
-    resourcestatusList: Array<K8sObjectStatus.AsObject>,
+    servicestatus?: K8sObjectStatus.AsObject,
+    deploymentstatus?: K8sObjectStatus.AsObject,
   }
 }
 
@@ -1709,6 +1715,16 @@ export class PredictorletStatus extends jspb.Message {
   getTrainingdatasetname(): string;
   setTrainingdatasetname(value: string): PredictorletStatus;
 
+  getServicestatus(): K8sObjectStatus | undefined;
+  setServicestatus(value?: K8sObjectStatus): PredictorletStatus;
+  hasServicestatus(): boolean;
+  clearServicestatus(): PredictorletStatus;
+
+  getDeploymentstatus(): K8sObjectStatus | undefined;
+  setDeploymentstatus(value?: K8sObjectStatus): PredictorletStatus;
+  hasDeploymentstatus(): boolean;
+  clearDeploymentstatus(): PredictorletStatus;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PredictorletStatus.AsObject;
   static toObject(includeInstance: boolean, msg: PredictorletStatus): PredictorletStatus.AsObject;
@@ -1734,6 +1750,8 @@ export namespace PredictorletStatus {
     deployedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     releasedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     trainingdatasetname: string,
+    servicestatus?: K8sObjectStatus.AsObject,
+    deploymentstatus?: K8sObjectStatus.AsObject,
   }
 }
 

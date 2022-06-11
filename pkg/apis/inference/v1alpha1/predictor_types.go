@@ -413,11 +413,10 @@ type ModelDeploymentStatus struct {
 	// The predictions from the last 7 days
 	// +kubebuilder:validation:Optional
 	LastDailyPredictions []int32 `json:"lastDailyPredictions,omitempty" protobuf:"bytes,16,rep,name=lastDailyPredictions"`
-	// The status of the kubernetes resources backing this model
-	// +patchMergeKey=type
-	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	ResourceStatus []K8sObjectStatus `json:"resourceStatus,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,17,rep,name=resourceStatus"`
+	ServiceStatus K8sObjectStatus `json:"serviceStatus,omitempty" protobuf:"bytes,17,rep,name=serviceStatus"`
+	// +kubebuilder:validation:Optional
+	DeploymentStatus K8sObjectStatus `json:"serviceStatus,omitempty" protobuf:"bytes,18,rep,name=deploymentStatus"`
 }
 
 type ModelDeploymentPhase string
@@ -492,9 +491,10 @@ type PredictorletStatus struct {
 	// The dataset where this model was trained on
 	// +kubebuilder:validation:Optional
 	TrainingDatasetName string `json:"trainingDatasetName,omitempty" protobuf:"bytes,15,opt,name=trainingDatasetName"`
-	// The status of the kubernetes resources backing this model
 	// +kubebuilder:validation:Optional
-	//Resources []K8sObjectStatus `json:"resources,omitempty" protobuf:"bytes,16,rep,name=resources"`
+	ServiceStatus K8sObjectStatus `json:"serviceStatus,omitempty" protobuf:"bytes,16,opt,name=serviceStatus"`
+	// +kubebuilder:validation:Optional
+	DeploymentStatus K8sObjectStatus `json:"serviceStatus,omitempty" protobuf:"bytes,17,opt,name=deploymentStatus"`
 }
 
 type MonitorStatus struct {
