@@ -443,7 +443,7 @@ const (
 type K8sObjectStatus struct {
 	// The object reference
 	// +kubebuilder:validation:Optional
-	Ref v1.ObjectReference `json:"namespace,omitempty" protobuf:"bytes,1,opt,name=namespace"`
+	Ref v1.ObjectReference `json:"ref,omitempty" protobuf:"bytes,1,opt,name=ref"`
 	// The status of the object
 	// +kubebuilder:validation:Optional
 	Status K8sObjectStatusState `json:"status,omitempty" protobuf:"bytes,2,opt,name=status"`

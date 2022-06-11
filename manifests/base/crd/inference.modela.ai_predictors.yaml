@@ -8602,7 +8602,7 @@ spec:
                         this model
                       items:
                         properties:
-                          namespace:
+                          ref:
                             description: The object reference
                             properties:
                               apiVersion:

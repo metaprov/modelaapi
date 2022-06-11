@@ -5,7 +5,6 @@ import (
 
 	"github.com/metaprov/modelaapi/pkg/apis/inference"
 	"github.com/metaprov/modelaapi/pkg/util"
-	"gopkg.in/yaml.v2"
 	v1 "k8s.io/api/core/v1"
 	nwv1 "k8s.io/api/networking/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
@@ -23,7 +22,7 @@ func (predictor *Predictor) SetupWebhookWithManager(mgr ctrl.Manager) error {
 func AddOrUpdateK8sStatuses(current []K8sObjectStatus, status K8sObjectStatus) []K8sObjectStatus {
 	// check
 	for i := 0; i < len(current); i++ {
-		if current[i].Name == status.Name && current[i].Namespace == status.Namespace && current[i].Kind == status.Kind {
+		if current[i].Ref.Name == status.Ref.Name && current[i].Ref.Namespace == status.Ref.Namespace && current[i].Ref.Kind == status.Ref.Kind {
 			current[i].Status = status.Status
 			return current
 		}

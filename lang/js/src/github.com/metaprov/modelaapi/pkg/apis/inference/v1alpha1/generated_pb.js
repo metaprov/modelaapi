@@ -7240,7 +7240,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus.
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
-    namespace: (f = msg.getNamespace()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
+    ref: (f = msg.getRef()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     status: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f
   };
 
@@ -7281,7 +7281,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus.
     case 1:
       var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
       reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
-      msg.setNamespace(value);
+      msg.setRef(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -7316,7 +7316,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus.
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getNamespace();
+  f = message.getRef();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -7335,10 +7335,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus.
 
 
 /**
- * optional k8s.io.api.core.v1.ObjectReference namespace = 1;
+ * optional k8s.io.api.core.v1.ObjectReference ref = 1;
  * @return {?proto.k8s.io.api.core.v1.ObjectReference}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus.prototype.getNamespace = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus.prototype.getRef = function() {
   return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
     jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 1));
 };
@@ -7348,7 +7348,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus.
  * @param {?proto.k8s.io.api.core.v1.ObjectReference|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus.prototype.setNamespace = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus.prototype.setRef = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -7357,8 +7357,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus.
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus.prototype.clearNamespace = function() {
-  return this.setNamespace(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus.prototype.clearRef = function() {
+  return this.setRef(undefined);
 };
 
 
@@ -7366,7 +7366,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus.
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus.prototype.hasNamespace = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus.prototype.hasRef = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

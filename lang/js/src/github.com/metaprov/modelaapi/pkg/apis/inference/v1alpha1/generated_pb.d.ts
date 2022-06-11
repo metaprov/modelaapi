@@ -704,10 +704,10 @@ export namespace ForecastSpec {
 }
 
 export class K8sObjectStatus extends jspb.Message {
-  getNamespace(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setNamespace(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): K8sObjectStatus;
-  hasNamespace(): boolean;
-  clearNamespace(): K8sObjectStatus;
+  getRef(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setRef(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): K8sObjectStatus;
+  hasRef(): boolean;
+  clearRef(): K8sObjectStatus;
 
   getStatus(): string;
   setStatus(value: string): K8sObjectStatus;
@@ -722,7 +722,7 @@ export class K8sObjectStatus extends jspb.Message {
 
 export namespace K8sObjectStatus {
   export type AsObject = {
-    namespace?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    ref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     status: string,
   }
 }
