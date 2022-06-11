@@ -93,19 +93,19 @@ endif
 
 .PHONY: install-gen
 install-gen: 
-	go install k8s.io/code-generator/cmd/deepcopy-gen	
-	go install k8s.io/code-generator/cmd/client-gen      
-	go install k8s.io/code-generator/cmd/deepcopy-gen   
-	go install k8s.io/code-generator/cmd/go-to-protobuf  
-	go install k8s.io/code-generator/cmd/informer-gen  
-	go install k8s.io/code-generator/cmd/openapi-gen   
-	go install k8s.io/code-generator/cmd/set-gen
-	go install k8s.io/code-generator/cmd/conversion-gen  
-	go install k8s.io/code-generator/cmd/defaulter-gen  
-	go install k8s.io/code-generator/cmd/import-boss     
-	go install k8s.io/code-generator/cmd/lister-gen    
-	go install k8s.io/code-generator/cmd/register-gen
-	GO111MODULE=on go install sigs.k8s.io/controller-tools/cmd/controller-gen@v0.8.0 
+	go install k8s.io/code-generator/cmd/deepcopy-gen@latest
+	go install k8s.io/code-generator/cmd/client-gen@latest
+	go install k8s.io/code-generator/cmd/deepcopy-gen@latest
+	go install k8s.io/code-generator/cmd/go-to-protobuf@latest
+	go install k8s.io/code-generator/cmd/informer-gen@latest
+	go install k8s.io/code-generator/cmd/openapi-gen@latest
+	go install k8s.io/code-generator/cmd/set-gen@latest
+	go install k8s.io/code-generator/cmd/conversion-gen@latest
+	go install k8s.io/code-generator/cmd/defaulter-gen@latest
+	go install k8s.io/code-generator/cmd/import-boss@latest
+	go install k8s.io/code-generator/cmd/lister-gen@latest
+	go install k8s.io/code-generator/cmd/register-gen@latest
+	GO111MODULE=on go install sigs.k8s.io/controller-tools/cmd/controller-gen@latest
 	
 
 .PHONY: generate
