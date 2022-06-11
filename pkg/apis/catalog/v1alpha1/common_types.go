@@ -1,8 +1,6 @@
 package v1alpha1
 
 import (
-	"fmt"
-
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
@@ -304,57 +302,6 @@ const (
 
 	UnknownProvider ProviderName = "unknown"
 )
-
-func MLTaskFromString(name string) (MLTask, error) {
-	switch name {
-	case "binary-classification":
-		return BinaryClassification, nil
-	case "multi-classification":
-		return MultiClassification, nil
-	case "multi-label-classification":
-		return MultiLabelClassification, nil
-	case "regression":
-		return Regression, nil
-	case "forecasting":
-		return Forecasting, nil
-	case "clustering":
-		return Clustering, nil
-	case "recommendation":
-		return Recommendation, nil
-	case "outlier-detection":
-		return OutlierDetection, nil
-	case "novelty-detection":
-		return NoveltyDetection, nil
-	case "topic-modeling":
-		return TopicModeling, nil
-	case "unknown":
-		return UnknownTask, nil
-	}
-	return UnknownTask, fmt.Errorf("IsFailed to find MLTask for %s", name)
-}
-
-func NewProviderNameFromString(name string) ProviderName {
-	switch name {
-
-	case "aws":
-		return Aws
-	case "digitalocean":
-		return DigitalOcean
-	case "azure":
-		return Azure
-	case "gcp":
-		return Gcp
-	case "email":
-		return SmtpProvider
-	case "slack":
-		return Slack
-	case "github":
-		return GitHub
-	case "image-registry":
-		return ImageRegistry
-	}
-	return UnknownProvider
-}
 
 func IsBinaryClassification(task MLTask) bool {
 	return task == BinaryClassification
