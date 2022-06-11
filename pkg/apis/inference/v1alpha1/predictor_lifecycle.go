@@ -19,7 +19,7 @@ func (predictor *Predictor) SetupWebhookWithManager(mgr ctrl.Manager) error {
 		Complete()
 }
 
-func AddOrUpdateK8sStatuses(current []KubernetesObjectStatus, status KubernetesObjectStatus) []K8sObjectStatus {
+func AddOrUpdateK8sStatuses(current []KubernetesObjectStatus, status KubernetesObjectStatus) []KubernetesObjectStatus {
 	// check
 	for i := 0; i < len(current); i++ {
 		if current[i].Ref.Name == status.Ref.Name && current[i].Ref.Namespace == status.Ref.Namespace && current[i].Ref.Kind == status.Ref.Kind {
@@ -151,7 +151,6 @@ func (r *Predictor) FullServiceName() string {
 func (r *Predictor) DeploymentName() string {
 	return r.Name
 }
-
 
 func (r *Predictor) GreenName() string {
 	return "green-" + r.Name

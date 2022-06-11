@@ -414,9 +414,7 @@ type ModelDeploymentStatus struct {
 	// +kubebuilder:validation:Optional
 	LastDailyPredictions []int32 `json:"lastDailyPredictions,omitempty" protobuf:"bytes,16,rep,name=lastDailyPredictions"`
 	// +kubebuilder:validation:Optional
-	ServiceStatus KubernetesObjectStatus `json:"serviceStatus,omitempty" protobuf:"bytes,17,rep,name=serviceStatus"`
-	// +kubebuilder:validation:Optional
-	DeploymentStatus KubernetesObjectStatus `json:"serviceStatus,omitempty" protobuf:"bytes,18,rep,name=deploymentStatus"`
+	ObjectStatuses []KubernetesObjectStatus `json:"objectStatuses,omitempty" protobuf:"bytes,17,rep,name=objectStatuses"`
 }
 
 type ModelDeploymentPhase string
@@ -445,7 +443,7 @@ type KubernetesObjectStatus struct {
 	Ref *v1.ObjectReference `json:"ref,omitempty" protobuf:"bytes,1,opt,name=ref"`
 	// The status of the object
 	// +kubebuilder:validation:Optional
-	Health *bool `json:"health,omitempty" protobuf:"bytes,2,opt,name=health"`
+	Status K8sObjectStatusState `json:"status,omitempty" protobuf:"bytes,5,opt,name=status"`
 }
 
 type PredictorletStatus struct {
@@ -492,9 +490,7 @@ type PredictorletStatus struct {
 	// +kubebuilder:validation:Optional
 	TrainingDatasetName string `json:"trainingDatasetName,omitempty" protobuf:"bytes,15,opt,name=trainingDatasetName"`
 	// +kubebuilder:validation:Optional
-	ServiceStatus KubernetesObjectStatus `json:"serviceStatus,omitempty" protobuf:"bytes,16,opt,name=serviceStatus"`
-	// +kubebuilder:validation:Optional
-	DeploymentStatus KubernetesObjectStatus `json:"serviceStatus,omitempty" protobuf:"bytes,17,opt,name=deploymentStatus"`
+	ObjectStatuses []KubernetesObjectStatus `json:"objectStatuses,omitempty" protobuf:"bytes,17,rep,name=objectStatuses"`
 }
 
 type MonitorStatus struct {

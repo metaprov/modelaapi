@@ -709,8 +709,8 @@ export class KubernetesObjectStatus extends jspb.Message {
   hasRef(): boolean;
   clearRef(): KubernetesObjectStatus;
 
-  getHealth(): boolean;
-  setHealth(value: boolean): KubernetesObjectStatus;
+  getStatus(): string;
+  setStatus(value: string): KubernetesObjectStatus;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): KubernetesObjectStatus.AsObject;
@@ -723,7 +723,7 @@ export class KubernetesObjectStatus extends jspb.Message {
 export namespace KubernetesObjectStatus {
   export type AsObject = {
     ref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    health: boolean,
+    status: string,
   }
 }
 
@@ -788,15 +788,10 @@ export class ModelDeploymentStatus extends jspb.Message {
   clearLastdailypredictionsList(): ModelDeploymentStatus;
   addLastdailypredictions(value: number, index?: number): ModelDeploymentStatus;
 
-  getServicestatus(): KubernetesObjectStatus | undefined;
-  setServicestatus(value?: KubernetesObjectStatus): ModelDeploymentStatus;
-  hasServicestatus(): boolean;
-  clearServicestatus(): ModelDeploymentStatus;
-
-  getDeploymentstatus(): KubernetesObjectStatus | undefined;
-  setDeploymentstatus(value?: KubernetesObjectStatus): ModelDeploymentStatus;
-  hasDeploymentstatus(): boolean;
-  clearDeploymentstatus(): ModelDeploymentStatus;
+  getObjectstatusesList(): Array<KubernetesObjectStatus>;
+  setObjectstatusesList(value: Array<KubernetesObjectStatus>): ModelDeploymentStatus;
+  clearObjectstatusesList(): ModelDeploymentStatus;
+  addObjectstatuses(value?: KubernetesObjectStatus, index?: number): KubernetesObjectStatus;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelDeploymentStatus.AsObject;
@@ -824,8 +819,7 @@ export namespace ModelDeploymentStatus {
     datadrift: boolean,
     conceptdrift: boolean,
     lastdailypredictionsList: Array<number>,
-    servicestatus?: KubernetesObjectStatus.AsObject,
-    deploymentstatus?: KubernetesObjectStatus.AsObject,
+    objectstatusesList: Array<KubernetesObjectStatus.AsObject>,
   }
 }
 
@@ -1715,15 +1709,10 @@ export class PredictorletStatus extends jspb.Message {
   getTrainingdatasetname(): string;
   setTrainingdatasetname(value: string): PredictorletStatus;
 
-  getServicestatus(): KubernetesObjectStatus | undefined;
-  setServicestatus(value?: KubernetesObjectStatus): PredictorletStatus;
-  hasServicestatus(): boolean;
-  clearServicestatus(): PredictorletStatus;
-
-  getDeploymentstatus(): KubernetesObjectStatus | undefined;
-  setDeploymentstatus(value?: KubernetesObjectStatus): PredictorletStatus;
-  hasDeploymentstatus(): boolean;
-  clearDeploymentstatus(): PredictorletStatus;
+  getObjectstatusesList(): Array<KubernetesObjectStatus>;
+  setObjectstatusesList(value: Array<KubernetesObjectStatus>): PredictorletStatus;
+  clearObjectstatusesList(): PredictorletStatus;
+  addObjectstatuses(value?: KubernetesObjectStatus, index?: number): KubernetesObjectStatus;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PredictorletStatus.AsObject;
@@ -1750,8 +1739,7 @@ export namespace PredictorletStatus {
     deployedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     releasedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     trainingdatasetname: string,
-    servicestatus?: KubernetesObjectStatus.AsObject,
-    deploymentstatus?: KubernetesObjectStatus.AsObject,
+    objectstatusesList: Array<KubernetesObjectStatus.AsObject>,
   }
 }
 

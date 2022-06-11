@@ -7241,7 +7241,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObject
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObjectStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
     ref: (f = msg.getRef()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
-    health: (f = jspb.Message.getBooleanField(msg, 2)) == null ? undefined : f
+    status: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -7283,9 +7283,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObject
       reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
       msg.setRef(value);
       break;
-    case 2:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setHealth(value);
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setStatus(value);
       break;
     default:
       reader.skipField();
@@ -7324,10 +7324,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObject
       k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
     );
   }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 2));
+  f = /** @type {string} */ (jspb.Message.getField(message, 5));
   if (f != null) {
-    writer.writeBool(
-      2,
+    writer.writeString(
+      5,
       f
     );
   }
@@ -7372,20 +7372,20 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObject
 
 
 /**
- * optional bool health = 2;
- * @return {boolean}
+ * optional string status = 5;
+ * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObjectStatus.prototype.getHealth = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 2, false));
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObjectStatus.prototype.getStatus = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
 
 /**
- * @param {boolean} value
+ * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObjectStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObjectStatus.prototype.setHealth = function(value) {
-  return jspb.Message.setField(this, 2, value);
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObjectStatus.prototype.setStatus = function(value) {
+  return jspb.Message.setField(this, 5, value);
 };
 
 
@@ -7393,8 +7393,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObject
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObjectStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObjectStatus.prototype.clearHealth = function() {
-  return jspb.Message.setField(this, 2, undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObjectStatus.prototype.clearStatus = function() {
+  return jspb.Message.setField(this, 5, undefined);
 };
 
 
@@ -7402,8 +7402,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObject
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObjectStatus.prototype.hasHealth = function() {
-  return jspb.Message.getField(this, 2) != null;
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObjectStatus.prototype.hasStatus = function() {
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
@@ -7413,7 +7413,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObject
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.repeatedFields_ = [16];
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.repeatedFields_ = [16,17];
 
 
 
@@ -7462,8 +7462,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentS
     datadrift: (f = jspb.Message.getBooleanField(msg, 14)) == null ? undefined : f,
     conceptdrift: (f = jspb.Message.getBooleanField(msg, 15)) == null ? undefined : f,
     lastdailypredictionsList: (f = jspb.Message.getRepeatedField(msg, 16)) == null ? undefined : f,
-    servicestatus: (f = msg.getServicestatus()) && proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObjectStatus.toObject(includeInstance, f),
-    deploymentstatus: (f = msg.getDeploymentstatus()) && proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObjectStatus.toObject(includeInstance, f)
+    objectstatusesList: jspb.Message.toObjectList(msg.getObjectstatusesList(),
+    proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObjectStatus.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -7574,12 +7574,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentS
     case 17:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObjectStatus;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObjectStatus.deserializeBinaryFromReader);
-      msg.setServicestatus(value);
-      break;
-    case 18:
-      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObjectStatus;
-      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObjectStatus.deserializeBinaryFromReader);
-      msg.setDeploymentstatus(value);
+      msg.addObjectstatuses(value);
       break;
     default:
       reader.skipField();
@@ -7727,18 +7722,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentS
       f
     );
   }
-  f = message.getServicestatus();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getObjectstatusesList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
       17,
-      f,
-      proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObjectStatus.serializeBinaryToWriter
-    );
-  }
-  f = message.getDeploymentstatus();
-  if (f != null) {
-    writer.writeMessage(
-      18,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObjectStatus.serializeBinaryToWriter
     );
@@ -8329,76 +8316,40 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentS
 
 
 /**
- * optional KubernetesObjectStatus serviceStatus = 17;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObjectStatus}
+ * repeated KubernetesObjectStatus objectStatuses = 17;
+ * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObjectStatus>}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.getServicestatus = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObjectStatus} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObjectStatus, 17));
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.getObjectstatusesList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObjectStatus>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObjectStatus, 17));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObjectStatus|undefined} value
+ * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObjectStatus>} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.setServicestatus = function(value) {
-  return jspb.Message.setWrapperField(this, 17, value);
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.setObjectstatusesList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 17, value);
 };
 
 
 /**
- * Clears the message field making it undefined.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObjectStatus=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObjectStatus}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.addObjectstatuses = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 17, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObjectStatus, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.clearServicestatus = function() {
-  return this.setServicestatus(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.hasServicestatus = function() {
-  return jspb.Message.getField(this, 17) != null;
-};
-
-
-/**
- * optional KubernetesObjectStatus deploymentStatus = 18;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObjectStatus}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.getDeploymentstatus = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObjectStatus} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObjectStatus, 18));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObjectStatus|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.setDeploymentstatus = function(value) {
-  return jspb.Message.setWrapperField(this, 18, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.clearDeploymentstatus = function() {
-  return this.setDeploymentstatus(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.hasDeploymentstatus = function() {
-  return jspb.Message.getField(this, 18) != null;
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.clearObjectstatusesList = function() {
+  return this.setObjectstatusesList([]);
 };
 
 
@@ -16004,7 +15955,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorletStatus.repeatedFields_ = [9];
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorletStatus.repeatedFields_ = [9,17];
 
 
 
@@ -16052,8 +16003,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorletStat
     deployedat: (f = msg.getDeployedat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     releasedat: (f = msg.getReleasedat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     trainingdatasetname: (f = jspb.Message.getField(msg, 15)) == null ? undefined : f,
-    servicestatus: (f = msg.getServicestatus()) && proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObjectStatus.toObject(includeInstance, f),
-    deploymentstatus: (f = msg.getDeploymentstatus()) && proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObjectStatus.toObject(includeInstance, f)
+    objectstatusesList: jspb.Message.toObjectList(msg.getObjectstatusesList(),
+    proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObjectStatus.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -16157,15 +16108,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorletStat
       var value = /** @type {string} */ (reader.readString());
       msg.setTrainingdatasetname(value);
       break;
-    case 16:
-      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObjectStatus;
-      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObjectStatus.deserializeBinaryFromReader);
-      msg.setServicestatus(value);
-      break;
     case 17:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObjectStatus;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObjectStatus.deserializeBinaryFromReader);
-      msg.setDeploymentstatus(value);
+      msg.addObjectstatuses(value);
       break;
     default:
       reader.skipField();
@@ -16306,17 +16252,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorletStat
       f
     );
   }
-  f = message.getServicestatus();
-  if (f != null) {
-    writer.writeMessage(
-      16,
-      f,
-      proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObjectStatus.serializeBinaryToWriter
-    );
-  }
-  f = message.getDeploymentstatus();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getObjectstatusesList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
       17,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObjectStatus.serializeBinaryToWriter
@@ -16872,76 +16810,40 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorletStat
 
 
 /**
- * optional KubernetesObjectStatus serviceStatus = 16;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObjectStatus}
+ * repeated KubernetesObjectStatus objectStatuses = 17;
+ * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObjectStatus>}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorletStatus.prototype.getServicestatus = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObjectStatus} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObjectStatus, 16));
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorletStatus.prototype.getObjectstatusesList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObjectStatus>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObjectStatus, 17));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObjectStatus|undefined} value
+ * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObjectStatus>} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorletStatus} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorletStatus.prototype.setServicestatus = function(value) {
-  return jspb.Message.setWrapperField(this, 16, value);
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorletStatus.prototype.setObjectstatusesList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 17, value);
 };
 
 
 /**
- * Clears the message field making it undefined.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObjectStatus=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObjectStatus}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorletStatus.prototype.addObjectstatuses = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 17, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObjectStatus, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorletStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorletStatus.prototype.clearServicestatus = function() {
-  return this.setServicestatus(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorletStatus.prototype.hasServicestatus = function() {
-  return jspb.Message.getField(this, 16) != null;
-};
-
-
-/**
- * optional KubernetesObjectStatus deploymentStatus = 17;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObjectStatus}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorletStatus.prototype.getDeploymentstatus = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObjectStatus} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObjectStatus, 17));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObjectStatus|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorletStatus} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorletStatus.prototype.setDeploymentstatus = function(value) {
-  return jspb.Message.setWrapperField(this, 17, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorletStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorletStatus.prototype.clearDeploymentstatus = function() {
-  return this.setDeploymentstatus(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorletStatus.prototype.hasDeploymentstatus = function() {
-  return jspb.Message.getField(this, 17) != null;
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorletStatus.prototype.clearObjectstatusesList = function() {
+  return this.setObjectstatusesList([]);
 };
 
 

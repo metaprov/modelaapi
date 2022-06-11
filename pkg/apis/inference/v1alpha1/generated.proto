@@ -466,7 +466,7 @@ message KubernetesObjectStatus {
 
   // The status of the object
   // +kubebuilder:validation:Optional
-  optional bool health = 2;
+  optional string status = 5;
 }
 
 message ModelDeploymentStatus {
@@ -534,10 +534,7 @@ message ModelDeploymentStatus {
   repeated int32 lastDailyPredictions = 16;
 
   // +kubebuilder:validation:Optional
-  optional KubernetesObjectStatus serviceStatus = 17;
-
-  // +kubebuilder:validation:Optional
-  optional KubernetesObjectStatus deploymentStatus = 18;
+  repeated KubernetesObjectStatus objectStatuses = 17;
 }
 
 // ModelRecord hold the state of a model that was in production
@@ -1150,10 +1147,7 @@ message PredictorletStatus {
   optional string trainingDatasetName = 15;
 
   // +kubebuilder:validation:Optional
-  optional KubernetesObjectStatus serviceStatus = 16;
-
-  // +kubebuilder:validation:Optional
-  optional KubernetesObjectStatus deploymentStatus = 17;
+  repeated KubernetesObjectStatus objectStatuses = 17;
 }
 
 // ProgressiveSpec defines the specification to progressively deploy a model to production
