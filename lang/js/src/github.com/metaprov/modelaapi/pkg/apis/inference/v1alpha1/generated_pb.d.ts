@@ -704,19 +704,10 @@ export namespace ForecastSpec {
 }
 
 export class K8sObjectStatus extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): K8sObjectStatus;
-
-  getName(): string;
-  setName(value: string): K8sObjectStatus;
-
-  getKind(): string;
-  setKind(value: string): K8sObjectStatus;
-
-  getAge(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setAge(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): K8sObjectStatus;
-  hasAge(): boolean;
-  clearAge(): K8sObjectStatus;
+  getNamespace(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setNamespace(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): K8sObjectStatus;
+  hasNamespace(): boolean;
+  clearNamespace(): K8sObjectStatus;
 
   getStatus(): string;
   setStatus(value: string): K8sObjectStatus;
@@ -731,10 +722,7 @@ export class K8sObjectStatus extends jspb.Message {
 
 export namespace K8sObjectStatus {
   export type AsObject = {
-    namespace: string,
-    name: string,
-    kind: string,
-    age?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    namespace?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     status: string,
   }
 }

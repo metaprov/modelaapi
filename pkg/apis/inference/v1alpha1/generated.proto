@@ -460,25 +460,13 @@ message ForecastSpec {
 }
 
 message K8sObjectStatus {
-  // The object namespace
+  // The object reference
   // +kubebuilder:validation:Optional
-  optional string namespace = 1;
-
-  // The object name
-  // +kubebuilder:validation:Optional
-  optional string name = 2;
-
-  // The object kind (e.g. deployment)
-  // +kubebuilder:validation:Optional
-  optional string kind = 3;
-
-  // The age of the resource
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time age = 4;
+  optional k8s.io.api.core.v1.ObjectReference namespace = 1;
 
   // The status of the object
   // +kubebuilder:validation:Optional
-  optional string status = 5;
+  optional string status = 2;
 }
 
 message ModelDeploymentStatus {
@@ -546,6 +534,8 @@ message ModelDeploymentStatus {
   repeated int32 lastDailyPredictions = 16;
 
   // The status of the kubernetes resources backing this model
+  // +patchMergeKey=type
+  // +patchStrategy=merge
   // +kubebuilder:validation:Optional
   repeated K8sObjectStatus resourceStatus = 17;
 }

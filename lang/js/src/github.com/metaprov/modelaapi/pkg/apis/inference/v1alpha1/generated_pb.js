@@ -7240,11 +7240,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus.
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
-    namespace: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    name: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    kind: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-    age: (f = msg.getAge()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
-    status: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
+    namespace: (f = msg.getNamespace()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
+    status: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -7282,23 +7279,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus.
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
+      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
       msg.setNamespace(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
-      break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setKind(value);
-      break;
-    case 4:
-      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
-      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setAge(value);
-      break;
-    case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setStatus(value);
       break;
@@ -7331,11 +7316,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus.
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = /** @type {string} */ (jspb.Message.getField(message, 1));
+  f = message.getNamespace();
   if (f != null) {
-    writer.writeString(
+    writer.writeMessage(
       1,
-      f
+      f,
+      k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
     );
   }
   f = /** @type {string} */ (jspb.Message.getField(message, 2));
@@ -7345,55 +7331,34 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus.
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 3));
-  if (f != null) {
-    writer.writeString(
-      3,
-      f
-    );
-  }
-  f = message.getAge();
-  if (f != null) {
-    writer.writeMessage(
-      4,
-      f,
-      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 5));
-  if (f != null) {
-    writer.writeString(
-      5,
-      f
-    );
-  }
 };
 
 
 /**
- * optional string namespace = 1;
- * @return {string}
+ * optional k8s.io.api.core.v1.ObjectReference namespace = 1;
+ * @return {?proto.k8s.io.api.core.v1.ObjectReference}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus.prototype.getNamespace = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
+    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 1));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.k8s.io.api.core.v1.ObjectReference|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus} returns this
- */
+*/
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus.prototype.setNamespace = function(value) {
-  return jspb.Message.setField(this, 1, value);
+  return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
- * Clears the field making it undefined.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus.prototype.clearNamespace = function() {
-  return jspb.Message.setField(this, 1, undefined);
+  return this.setNamespace(undefined);
 };
 
 
@@ -7407,10 +7372,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus.
 
 
 /**
- * optional string name = 2;
+ * optional string status = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus.prototype.getName = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus.prototype.getStatus = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -7419,7 +7384,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus.
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus.prototype.setName = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus.prototype.setStatus = function(value) {
   return jspb.Message.setField(this, 2, value);
 };
 
@@ -7428,7 +7393,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus.
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus.prototype.clearName = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus.prototype.clearStatus = function() {
   return jspb.Message.setField(this, 2, undefined);
 };
 
@@ -7437,117 +7402,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus.
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus.prototype.hasName = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional string kind = 3;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus.prototype.getKind = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus.prototype.setKind = function(value) {
-  return jspb.Message.setField(this, 3, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus.prototype.clearKind = function() {
-  return jspb.Message.setField(this, 3, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus.prototype.hasKind = function() {
-  return jspb.Message.getField(this, 3) != null;
-};
-
-
-/**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time age = 4;
- * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus.prototype.getAge = function() {
-  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
-    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 4));
-};
-
-
-/**
- * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus.prototype.setAge = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus.prototype.clearAge = function() {
-  return this.setAge(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus.prototype.hasAge = function() {
-  return jspb.Message.getField(this, 4) != null;
-};
-
-
-/**
- * optional string status = 5;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus.prototype.getStatus = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus.prototype.setStatus = function(value) {
-  return jspb.Message.setField(this, 5, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus.prototype.clearStatus = function() {
-  return jspb.Message.setField(this, 5, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus.prototype.hasStatus = function() {
-  return jspb.Message.getField(this, 5) != null;
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
