@@ -461,18 +461,23 @@ message ForecastSpec {
 
 message K8sObjectStatus {
   // The object namespace
+  // +kubebuilder:validation:Optional
   optional string namespace = 1;
 
   // The object name
+  // +kubebuilder:validation:Optional
   optional string name = 2;
 
   // The object kind (e.g. deployment)
+  // +kubebuilder:validation:Optional
   optional string kind = 3;
 
   // The age of the resource
+  // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time age = 4;
 
   // The status of the object
+  // +kubebuilder:validation:Optional
   optional string status = 5;
 }
 

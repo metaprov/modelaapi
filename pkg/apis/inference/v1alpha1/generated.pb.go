@@ -574,14 +574,19 @@ var xxx_messageInfo_ForecastSpec proto.InternalMessageInfo
 
 type K8SObjectStatus struct {
 	// The object namespace
+	// +kubebuilder:validation:Optional
 	Namespace string `protobuf:"bytes,1,opt,name=namespace" json:"namespace"`
 	// The object name
+	// +kubebuilder:validation:Optional
 	Name string `protobuf:"bytes,2,opt,name=name" json:"name"`
 	// The object kind (e.g. deployment)
+	// +kubebuilder:validation:Optional
 	Kind string `protobuf:"bytes,3,opt,name=kind" json:"kind"`
 	// The age of the resource
+	// +kubebuilder:validation:Optional
 	Age *v1.Time `protobuf:"bytes,4,opt,name=age" json:"age,omitempty"`
 	// The status of the object
+	// +kubebuilder:validation:Optional
 	Status               K8sObjectStatusState `protobuf:"bytes,5,opt,name=status,casttype=K8sObjectStatusState" json:"status"`
 	XXX_NoUnkeyedLiteral struct{}             `json:"-"`
 	XXX_sizecache        int32                `json:"-"`
