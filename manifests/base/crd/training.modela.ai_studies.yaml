@@ -1937,6 +1937,7 @@ spec:
                 - image-multi-label-classification
                 - image-object-detection
                 - image-segmentation
+                - none
                 type: string
               task:
                 description: The machine learning task type (i.e. regression, classification)
