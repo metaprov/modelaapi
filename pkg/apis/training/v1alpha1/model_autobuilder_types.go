@@ -117,8 +117,9 @@ type ModelAutobuilderSpec struct {
 	// The machine learning task type relevant to the dataset (i.e. regression, classification)
 	Task *catalog.MLTask `json:"task,omitempty" protobuf:"bytes,6,opt,name=task"`
 	// The sub task
+	// +kubebuilder:default:="none"
 	// +kubebuilder:validation:Optional
-	SubTask *catalog.MLTask `json:"subtask,omitempty" protobuf:"bytes,7,opt,name=subtask"`
+	SubTask *catalog.MLSubtask `json:"subtask,omitempty" protobuf:"bytes,7,opt,name=subtask"`
 	// The objective metric that will be measured against trained models to evaluate their performance
 	// +kubebuilder:validation:Optional
 	Objective *catalog.Metric `json:"objective,omitempty" protobuf:"bytes,8,opt,name=objective"`

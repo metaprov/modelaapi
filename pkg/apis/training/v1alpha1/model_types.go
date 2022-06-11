@@ -231,8 +231,9 @@ type ModelSpec struct {
 	// +required
 	Task *catalog.MLTask `json:"task,omitempty" protobuf:"bytes,7,opt,name=task"`
 	// The sub task
+	// +kubebuilder:default:="none"
 	// +kubebuilder:validation:Optional
-	SubTask *catalog.MLTask `json:"subtask,omitempty" protobuf:"bytes,8,opt,name=subtask"`
+	SubTask *catalog.MLSubtask `json:"subtask,omitempty" protobuf:"bytes,8,opt,name=subtask"`
 	// The objective metric that will be used to evaluate the performance of the model
 	// +kubebuilder:validation:Required
 	// +required

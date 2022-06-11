@@ -123,8 +123,9 @@ type DataProductSpec struct {
 	// +kubebuilder:validation:Optional
 	Task *catalog.MLTask `json:"task,omitempty" protobuf:"bytes,9,opt,name=task"`
 	// The machine learning sub task relevant to the Dataset. This field *must* be the same as the Data Source of the object
+	// +kubebuilder:default:=none
 	// +kubebuilder:validation:Optional
-	SubTask *catalog.MLSubtaskTaskSpec `json:"subtask,omitempty" protobuf:"bytes,10,opt,name=subtask"`
+	SubTask *catalog.MLSubtask `json:"subtask,omitempty" protobuf:"bytes,10,opt,name=subtask"`
 	// User-provided description of the object
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional

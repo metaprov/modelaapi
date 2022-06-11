@@ -597,58 +597,41 @@ spec:
                 pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
                 type: string
               subtask:
+                default: none
                 description: The machine learning sub task relevant to the Dataset.
                   This field *must* be the same as the Data Source of the object
-                properties:
-                  audio:
-                    description: Audio subtask
-                    type: string
-                  nlp:
-                    description: NLP subtask
-                    enum:
-                    - text-ner
-                    - text-classification
-                    - text-multi-classification
-                    - text-regression
-                    - text-multi-label-classification
-                    - text-conversation
-                    - text-lang-generation
-                    - text-lang-model
-                    - text-multi-modal
-                    - text-ner
-                    - text-qa
-                    - text-summarization
-                    - text-sentence-pair
-                    - text-representation-generation
-                    - text-sentiment-analysis
-                    - text-code-generation
-                    - text-translation
-                    - text-lang-detection
-                    - text-grammar-correction
-                    - text-paraphrasing
-                    - text-intent-classification
-                    - text-semantic-similarity
-                    - text-keyword-extraction
-                    - text-pos
-                    - text-tokenization
-                    - text-lemma
-                    type: string
-                  video:
-                    description: Video subtask
-                    enum:
-                    - video-action-recognition
-                    - video-classification
-                    - video-object-tracking
-                    type: string
-                  vision:
-                    description: Vision subtask
-                    enum:
-                    - image-classification
-                    - image-multi-label-classification
-                    - image-object-detection
-                    - image-segmentation
-                    type: string
-                type: object
+                enum:
+                - text-ner
+                - text-classification
+                - text-multi-classification
+                - text-regression
+                - text-multi-label-classification
+                - text-conversation
+                - text-lang-generation
+                - text-lang-model
+                - text-multi-modal
+                - text-ner
+                - text-qa
+                - text-summarization
+                - text-sentence-pair
+                - text-representation-generation
+                - text-sentiment-analysis
+                - text-code-generation
+                - text-translation
+                - text-lang-detection
+                - text-grammar-correction
+                - text-paraphrasing
+                - text-intent-classification
+                - text-semantic-similarity
+                - text-keyword-extraction
+                - text-pos
+                - text-tokenization
+                - text-lemma
+                - image-classification
+                - image-multi-label-classification
+                - image-object-detection
+                - image-segmentation
+                type: string
               task:
                 description: Task denote the machine learning task of the product
                   (classification/regression,etc.)

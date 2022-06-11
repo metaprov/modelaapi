@@ -1200,6 +1200,7 @@ message ModelAutobuilderSpec {
   optional string task = 6;
 
   // The sub task
+  // +kubebuilder:default:="none"
   // +kubebuilder:validation:Optional
   optional string subtask = 7;
 
@@ -1989,6 +1990,7 @@ message ModelSpec {
   optional string task = 7;
 
   // The sub task
+  // +kubebuilder:default:="none"
   // +kubebuilder:validation:Optional
   optional string subtask = 8;
 
@@ -3368,8 +3370,8 @@ message StudySpec {
   optional string task = 5;
 
   // The machine learning task type (i.e. regression, classification)
-  // +kubebuilder:validation:Required
-  // +required
+  // +kubebuilder:default:=none
+  // +kubebuilder:validation:Optional
   optional string subtask = 6;
 
   // FeatureEngineeringSearch specifies the parameters to perform a feature engineering search

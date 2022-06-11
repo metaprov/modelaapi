@@ -728,8 +728,9 @@ type DataSourceSpec struct {
 	// +kubebuilder:validation:Optional
 	Task *catalog.MLTask `json:"task,omitempty" protobuf:"bytes,10,opt,name=task"`
 	// The sub task
+	// +kubebuilder:default:="none"
 	// +kubebuilder:validation:Optional
-	SubTask *catalog.MLTask `json:"subtask,omitempty" protobuf:"bytes,11,opt,name=subtask"`
+	SubTask *catalog.MLSubtask `json:"subtask,omitempty" protobuf:"bytes,11,opt,name=subtask"`
 	// List of relationships to other data sources
 	// +kubebuilder:validation:Optional
 	Relationships []RelationshipSpec `json:"relationships,omitempty" protobuf:"bytes,12,rep,name=relationships"`

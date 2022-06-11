@@ -1224,8 +1224,8 @@ func (in *DataProductSpec) DeepCopyInto(out *DataProductSpec) {
 	}
 	if in.SubTask != nil {
 		in, out := &in.SubTask, &out.SubTask
-		*out = new(catalogv1alpha1.MLSubtaskTaskSpec)
-		(*in).DeepCopyInto(*out)
+		*out = new(catalogv1alpha1.MLSubtask)
+		**out = **in
 	}
 	if in.Description != nil {
 		in, out := &in.Description, &out.Description
@@ -1586,7 +1586,7 @@ func (in *DataSourceSpec) DeepCopyInto(out *DataSourceSpec) {
 	}
 	if in.SubTask != nil {
 		in, out := &in.SubTask, &out.SubTask
-		*out = new(catalogv1alpha1.MLTask)
+		*out = new(catalogv1alpha1.MLSubtask)
 		**out = **in
 	}
 	if in.Relationships != nil {
@@ -1826,8 +1826,8 @@ func (in *DatasetSpec) DeepCopyInto(out *DatasetSpec) {
 	}
 	if in.SubTask != nil {
 		in, out := &in.SubTask, &out.SubTask
-		*out = new(catalogv1alpha1.MLSubtaskTaskSpec)
-		(*in).DeepCopyInto(*out)
+		*out = new(catalogv1alpha1.MLSubtask)
+		**out = **in
 	}
 	in.Notification.DeepCopyInto(&out.Notification)
 	in.Correlation.DeepCopyInto(&out.Correlation)

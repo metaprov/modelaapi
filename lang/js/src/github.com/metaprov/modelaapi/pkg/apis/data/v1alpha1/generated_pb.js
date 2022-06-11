@@ -17326,7 +17326,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec.toObj
     labname: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
     servingsitename: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
     task: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
-    subtask: (f = msg.getSubtask()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.MLSubtaskTaskSpec.toObject(includeInstance, f),
+    subtask: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
     description: (f = jspb.Message.getField(msg, 11)) == null ? undefined : f,
     datalocation: (f = msg.getDatalocation()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation.toObject(includeInstance, f),
     notification: (f = msg.getNotification()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.toObject(includeInstance, f),
@@ -17414,8 +17414,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec.deser
       msg.setTask(value);
       break;
     case 10:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.MLSubtaskTaskSpec;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.MLSubtaskTaskSpec.deserializeBinaryFromReader);
+      var value = /** @type {string} */ (reader.readString());
       msg.setSubtask(value);
       break;
     case 11:
@@ -17570,12 +17569,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec.seria
       f
     );
   }
-  f = message.getSubtask();
+  f = /** @type {string} */ (jspb.Message.getField(message, 10));
   if (f != null) {
-    writer.writeMessage(
+    writer.writeString(
       10,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.MLSubtaskTaskSpec.serializeBinaryToWriter
+      f
     );
   }
   f = /** @type {string} */ (jspb.Message.getField(message, 11));
@@ -17979,30 +17977,29 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec.proto
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.MLSubtaskTaskSpec subtask = 10;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.MLSubtaskTaskSpec}
+ * optional string subtask = 10;
+ * @return {string}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec.prototype.getSubtask = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.MLSubtaskTaskSpec} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.MLSubtaskTaskSpec, 10));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.MLSubtaskTaskSpec|undefined} value
+ * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec} returns this
-*/
+ */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec.prototype.setSubtask = function(value) {
-  return jspb.Message.setWrapperField(this, 10, value);
+  return jspb.Message.setField(this, 10, value);
 };
 
 
 /**
- * Clears the message field making it undefined.
+ * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec.prototype.clearSubtask = function() {
-  return this.setSubtask(undefined);
+  return jspb.Message.setField(this, 10, undefined);
 };
 
 
@@ -24368,7 +24365,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.toObject 
     type: (f = jspb.Message.getField(msg, 17)) == null ? undefined : f,
     sample: (f = msg.getSample()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SampleSpec.toObject(includeInstance, f),
     task: (f = jspb.Message.getField(msg, 19)) == null ? undefined : f,
-    subtask: (f = msg.getSubtask()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.MLSubtaskTaskSpec.toObject(includeInstance, f),
+    subtask: (f = jspb.Message.getField(msg, 20)) == null ? undefined : f,
     notification: (f = msg.getNotification()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.toObject(includeInstance, f),
     correlation: (f = msg.getCorrelation()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CorrelationSpec.toObject(includeInstance, f),
     fast: (f = jspb.Message.getBooleanField(msg, 23)) == null ? undefined : f,
@@ -24486,8 +24483,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.deseriali
       msg.setTask(value);
       break;
     case 20:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.MLSubtaskTaskSpec;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.MLSubtaskTaskSpec.deserializeBinaryFromReader);
+      var value = /** @type {string} */ (reader.readString());
       msg.setSubtask(value);
       break;
     case 21:
@@ -24668,12 +24664,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.serialize
       f
     );
   }
-  f = message.getSubtask();
+  f = /** @type {string} */ (jspb.Message.getField(message, 20));
   if (f != null) {
-    writer.writeMessage(
+    writer.writeString(
       20,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.MLSubtaskTaskSpec.serializeBinaryToWriter
+      f
     );
   }
   f = message.getNotification();
@@ -25363,30 +25358,29 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.MLSubtaskTaskSpec subtask = 20;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.MLSubtaskTaskSpec}
+ * optional string subtask = 20;
+ * @return {string}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.getSubtask = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.MLSubtaskTaskSpec} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.MLSubtaskTaskSpec, 20));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 20, ""));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.MLSubtaskTaskSpec|undefined} value
+ * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec} returns this
-*/
+ */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.setSubtask = function(value) {
-  return jspb.Message.setWrapperField(this, 20, value);
+  return jspb.Message.setField(this, 20, value);
 };
 
 
 /**
- * Clears the message field making it undefined.
+ * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.clearSubtask = function() {
-  return this.setSubtask(undefined);
+  return jspb.Message.setField(this, 20, undefined);
 };
 
 

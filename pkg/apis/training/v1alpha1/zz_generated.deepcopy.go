@@ -1793,7 +1793,7 @@ func (in *ModelAutobuilderSpec) DeepCopyInto(out *ModelAutobuilderSpec) {
 	}
 	if in.SubTask != nil {
 		in, out := &in.SubTask, &out.SubTask
-		*out = new(catalogv1alpha1.MLTask)
+		*out = new(catalogv1alpha1.MLSubtask)
 		**out = **in
 	}
 	if in.Objective != nil {
@@ -2668,7 +2668,7 @@ func (in *ModelSpec) DeepCopyInto(out *ModelSpec) {
 	}
 	if in.SubTask != nil {
 		in, out := &in.SubTask, &out.SubTask
-		*out = new(catalogv1alpha1.MLTask)
+		*out = new(catalogv1alpha1.MLSubtask)
 		**out = **in
 	}
 	if in.Objective != nil {
@@ -4198,7 +4198,7 @@ func (in *StudySpec) DeepCopyInto(out *StudySpec) {
 	}
 	if in.SubTask != nil {
 		in, out := &in.SubTask, &out.SubTask
-		*out = new(catalogv1alpha1.MLTask)
+		*out = new(catalogv1alpha1.MLSubtask)
 		**out = **in
 	}
 	in.FeatureEngineeringSearch.DeepCopyInto(&out.FeatureEngineeringSearch)

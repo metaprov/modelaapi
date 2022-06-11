@@ -811,36 +811,6 @@ export namespace MLFrameworkSpec {
   }
 }
 
-export class MLSubtaskTaskSpec extends jspb.Message {
-  getNlp(): string;
-  setNlp(value: string): MLSubtaskTaskSpec;
-
-  getVision(): string;
-  setVision(value: string): MLSubtaskTaskSpec;
-
-  getVideo(): string;
-  setVideo(value: string): MLSubtaskTaskSpec;
-
-  getAudio(): string;
-  setAudio(value: string): MLSubtaskTaskSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): MLSubtaskTaskSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: MLSubtaskTaskSpec): MLSubtaskTaskSpec.AsObject;
-  static serializeBinaryToWriter(message: MLSubtaskTaskSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): MLSubtaskTaskSpec;
-  static deserializeBinaryFromReader(message: MLSubtaskTaskSpec, reader: jspb.BinaryReader): MLSubtaskTaskSpec;
-}
-
-export namespace MLSubtaskTaskSpec {
-  export type AsObject = {
-    nlp: string,
-    vision: string,
-    video: string,
-    audio: string,
-  }
-}
-
 export class MachineClass extends jspb.Message {
   getCode(): string;
   setCode(value: string): MachineClass;

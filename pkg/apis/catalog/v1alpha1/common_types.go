@@ -142,72 +142,50 @@ const (
 )
 
 // Define NLP sub tasks
-// +kubebuilder:validation:Enum="text-ner";"text-classification";"text-multi-classification";"text-regression";"text-multi-label-classification";"text-conversation";"text-lang-generation";"text-lang-model";"text-multi-modal";"text-ner";"text-qa";"text-summarization";"text-sentence-pair";"text-representation-generation";"text-sentiment-analysis";"text-code-generation";"text-translation";"text-lang-detection";"text-grammar-correction";"text-paraphrasing";"text-intent-classification";"text-semantic-similarity";"text-keyword-extraction";"text-pos";"text-tokenization";"text-lemma";
-type NLPTask string
+// +kubebuilder:validation:Enum="text-ner";"text-classification";"text-multi-classification";"text-regression";"text-multi-label-classification";"text-conversation";"text-lang-generation";"text-lang-model";"text-multi-modal";"text-ner";"text-qa";"text-summarization";"text-sentence-pair";"text-representation-generation";"text-sentiment-analysis";"text-code-generation";"text-translation";"text-lang-detection";"text-grammar-correction";"text-paraphrasing";"text-intent-classification";"text-semantic-similarity";"text-keyword-extraction";"text-pos";"text-tokenization";"text-lemma";"image-classification";"image-multi-label-classification";"image-object-detection";"image-segmentation";
+type MLSubtask string
 
 const (
-	TextNer                        NLPTask = "text-ner"
-	TextClassification             NLPTask = "text-classification"
-	TextMultiClassification        NLPTask = "text-multi-classification"
-	TextRegression                 NLPTask = "text-regression"
-	TextMultiLabelClassification   NLPTask = "text-multi-label-classification"
-	TextConversation               NLPTask = "text-conversation"
-	TextLangGeneration             NLPTask = "text-lang-generation"
-	TextLangModel                  NLPTask = "text-lang-model"
-	TextMultiModalClassification   NLPTask = "text-multi-modal"
-	TextNER                        NLPTask = "text-ner"
-	TextQA                         NLPTask = "text-qa"
-	TextSummarization              NLPTask = "text-summarization"
-	TextSentencePairClassification NLPTask = "text-sentence-pair"
-	TextRepresentationGeneration   NLPTask = "text-representation-generation"
-	TextSentimentAnalysis          NLPTask = "text-sentiment-analysis"
-	TextCodeGeneration             NLPTask = "text-code-generation"
-	TextTranslation                NLPTask = "text-translation"
-	TextLangDetection              NLPTask = "text-lang-detection"
-	TextGrammarCorrection          NLPTask = "text-grammar-correction"
-	TextParaphrasing               NLPTask = "text-paraphrasing"
-	TextIntentClassification       NLPTask = "text-intent-classification"
-	TextSemanticSimilarity         NLPTask = "text-semantic-similarity"
-	TextKeywordExtraction          NLPTask = "text-keyword-extraction"
-	TextPOS                        NLPTask = "text-pos"
-	TextTokenization               NLPTask = "text-tokenization"
-	TextLemmalization              NLPTask = "text-lemma"
+	TextNer                        MLSubtask = "text-ner"
+	TextClassification             MLSubtask = "text-classification"
+	TextMultiClassification        MLSubtask = "text-multi-classification"
+	TextRegression                 MLSubtask = "text-regression"
+	TextMultiLabelClassification   MLSubtask = "text-multi-label-classification"
+	TextConversation               MLSubtask = "text-conversation"
+	TextLangGeneration             MLSubtask = "text-lang-generation"
+	TextLangModel                  MLSubtask = "text-lang-model"
+	TextMultiModalClassification   MLSubtask = "text-multi-modal"
+	TextNER                        MLSubtask = "text-ner"
+	TextQA                         MLSubtask = "text-qa"
+	TextSummarization              MLSubtask = "text-summarization"
+	TextSentencePairClassification MLSubtask = "text-sentence-pair"
+	TextRepresentationGeneration   MLSubtask = "text-representation-generation"
+	TextSentimentAnalysis          MLSubtask = "text-sentiment-analysis"
+	TextCodeGeneration             MLSubtask = "text-code-generation"
+	TextTranslation                MLSubtask = "text-translation"
+	TextLangDetection              MLSubtask = "text-lang-detection"
+	TextGrammarCorrection          MLSubtask = "text-grammar-correction"
+	TextParaphrasing               MLSubtask = "text-paraphrasing"
+	TextIntentClassification       MLSubtask = "text-intent-classification"
+	TextSemanticSimilarity         MLSubtask = "text-semantic-similarity"
+	TextKeywordExtraction          MLSubtask = "text-keyword-extraction"
+	TextPOS                        MLSubtask = "text-pos"
+	TextTokenization               MLSubtask = "text-tokenization"
+	TextLemmalization              MLSubtask = "text-lemma"
+
+	// Vision
+	ImageClassification           MLSubtask = "image-classification"
+	ImageMultiLabelClassification MLSubtask = "image-multi-label-classification"
+	ImageObjectDetection          MLSubtask = "image-object-detection"
+	ImageSegmentation             MLSubtask = "image-segmentation"
+
+	// Video
+	VideoActionRecognition MLSubtask = "video-action-recognition"
+	VideoClassification    MLSubtask = "video-classification"
+	VideoObjectTracking    MLSubtask = "video-object-tracking"
+
+	NoneSubtask MLSubtask = "none"
 )
-
-// +kubebuilder:validation:Enum="image-classification";"image-multi-label-classification";"image-object-detection";"image-segmentation";
-type VisionTask string
-
-const (
-	ImageClassification           VisionTask = "image-classification"
-	ImageMultiLabelClassification VisionTask = "image-multi-label-classification"
-	ImageObjectDetection          VisionTask = "image-object-detection"
-	ImageSegmentation             VisionTask = "image-segmentation"
-)
-
-// +kubebuilder:validation:Enum="video-action-recognition";"video-classification";"video-object-tracking"
-type VideoTask string
-
-const (
-	VideoActionRecognition VideoTask = "video-action-recognition"
-	VideoClassification    VideoTask = "video-classification"
-	VideoObjectTracking    VideoTask = "video-object-tracking"
-)
-
-type AudioTask string
-
-const ()
-
-// Spec for a mltask
-type MLSubtaskTaskSpec struct {
-	// NLP subtask
-	NLPSubtask *NLPTask `json:"nlp,omitempty" protobuf:"bytes,1,opt,name=nlp"`
-	// Vision subtask
-	VisionSubtask *VisionTask `json:"vision,omitempty" protobuf:"bytes,2,opt,name=vision"`
-	// Video subtask
-	VideoSubtask *VideoTask `json:"video,omitempty" protobuf:"bytes,3,opt,name=video"`
-	// Audio subtask
-	AudioSubtask *AudioTask `json:"audio,omitempty" protobuf:"bytes,4,opt,name=audio"`
-}
 
 // ProviderName is the machine learning task name
 type ProviderName string

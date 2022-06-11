@@ -1436,10 +1436,8 @@ export class DataProductSpec extends jspb.Message {
   getTask(): string;
   setTask(value: string): DataProductSpec;
 
-  getSubtask(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.MLSubtaskTaskSpec | undefined;
-  setSubtask(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.MLSubtaskTaskSpec): DataProductSpec;
-  hasSubtask(): boolean;
-  clearSubtask(): DataProductSpec;
+  getSubtask(): string;
+  setSubtask(value: string): DataProductSpec;
 
   getDescription(): string;
   setDescription(value: string): DataProductSpec;
@@ -1517,7 +1515,7 @@ export namespace DataProductSpec {
     labname: string,
     servingsitename: string,
     task: string,
-    subtask?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.MLSubtaskTaskSpec.AsObject,
+    subtask: string,
     description: string,
     datalocation?: DataLocation.AsObject,
     notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
@@ -2218,10 +2216,8 @@ export class DatasetSpec extends jspb.Message {
   getTask(): string;
   setTask(value: string): DatasetSpec;
 
-  getSubtask(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.MLSubtaskTaskSpec | undefined;
-  setSubtask(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.MLSubtaskTaskSpec): DatasetSpec;
-  hasSubtask(): boolean;
-  clearSubtask(): DatasetSpec;
+  getSubtask(): string;
+  setSubtask(value: string): DatasetSpec;
 
   getNotification(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec | undefined;
   setNotification(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec): DatasetSpec;
@@ -2269,7 +2265,7 @@ export namespace DatasetSpec {
     type: string,
     sample?: SampleSpec.AsObject,
     task: string,
-    subtask?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.MLSubtaskTaskSpec.AsObject,
+    subtask: string,
     notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
     correlation?: CorrelationSpec.AsObject,
     fast: boolean,

@@ -506,9 +506,9 @@ type StudySpec struct {
 	// +required
 	Task *catalog.MLTask `json:"task" protobuf:"bytes,5,opt,name=task"`
 	// The machine learning task type (i.e. regression, classification)
-	// +kubebuilder:validation:Required
-	// +required
-	SubTask *catalog.MLTask `json:"subtask" protobuf:"bytes,6,opt,name=subtask"`
+	// +kubebuilder:default:=none
+	// +kubebuilder:validation:Optional
+	SubTask *catalog.MLSubtask `json:"subtask" protobuf:"bytes,6,opt,name=subtask"`
 	// FeatureEngineeringSearch specifies the parameters to perform a feature engineering search
 	// +kubebuilder:validation:Optional
 	FeatureEngineeringSearch FeatureEngineeringSearchSpec `json:"feSearch,omitempty" protobuf:"bytes,7,opt,name=feSearch"`
