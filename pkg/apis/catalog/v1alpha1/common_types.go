@@ -119,50 +119,97 @@ func (ak ApiKeyName) AsCliOption() string {
 }
 
 // MLTask is the machine learning task name
-// +kubebuilder:validation:Enum="binary-classification";"multi-classification";"multi-label-classification";"forecasting";"regression";"clustering";"recommendation";"outlier-detection";"novelty-detection";"topic-modeling";"video-action-recognition";"video-classification";"video-object-tracking";"image-classification";"image-multi-classification";"image-object-detection";"image-segmentation";"auto";"text-ner";"text-classification";"text-summarization";"text-qa";"text-sentiment-analysis";"text-generation";"text-code-generation";"text-translation";"text-lang-detection";"text-grammer-correction";"text-paraphrasing";"text-intent-classification";"text-semantic-similarity";"text-keyword-extraction";"text-pos";"text-tokenization";"text-lemma";"unknown"
+// +kubebuilder:validation:Enum="binary-classification";"multi-classification";"forecasting";"regression";"clustering";"recommendation";"outlier-detection";"novelty-detection";"auto";"unknown"
 type MLTask string
 
 const (
-	BinaryClassification          MLTask = "binary-classification"
-	MultiClassification           MLTask = "multi-classification"
-	MultiLabelClassification      MLTask = "multi-label-classification"
-	Forecasting                   MLTask = "forecasting"
-	Regression                    MLTask = "regression"
-	Clustering                    MLTask = "clustering"
-	Recommendation                MLTask = "recommendation"
-	OutlierDetection              MLTask = "outlier-detection"
-	NoveltyDetection              MLTask = "novelty-detection"
-	TopicModeling                 MLTask = "topic-modeling"
-	VideoActionRecognition        MLTask = "video-action-recognition"
-	VideoClassification           MLTask = "video-classification"
-	VideoObjectTracking           MLTask = "video-object-tracking"
-	ImageClassification           MLTask = "image-classification"
-	ImageMultiLabelClassification MLTask = "image-multi-classification"
-	ImageObjectDetection          MLTask = "image-object-detection"
-	ImageSegmentation             MLTask = "image-segmentation"
-	AutoDetectTask                MLTask = "auto"
+	BinaryClassification MLTask = "binary-classification"
+	MultiClassification  MLTask = "multi-classification"
+	NLP                  MLTask = "nlp"
+	Vision               MLTask = "vision"
+	Video                MLTask = "video"
+	Audio                MLTask = "audio"
+	Forecasting          MLTask = "forecasting"
+	Regression           MLTask = "regression"
+	Clustering           MLTask = "clustering"
+	Recommendation       MLTask = "recommendation"
+	OutlierDetection     MLTask = "outlier-detection"
+	NoveltyDetection     MLTask = "novelty-detection"
+	TopicModeling        MLTask = "topic-modeling"
+	AutoDetectTask       MLTask = "auto"
 
 	// Text Tasks
-	TextNer                  MLTask = "text-ner"
-	TextClassification       MLTask = "text-classification"
-	TextSummarization        MLTask = "text-summarization"
-	TextQA                   MLTask = "text-qa"
-	TextSentimentAnalysis    MLTask = "text-sentiment-analysis"
-	TextGeneration           MLTask = "text-generation"
-	TextCodeGeneration       MLTask = "text-code-generation"
-	TextTranslation          MLTask = "text-translation"
-	TextLangDetection        MLTask = "text-lang-detection"
-	TextGrammarCorrection    MLTask = "text-grammar-correction"
-	TextParaphrasing         MLTask = "text-paraphrasing"
-	TextIntentClassification MLTask = "text-intent-classification"
-	TextSemanticSimilarity   MLTask = "text-semantic-similarity"
-	TextKeywordExtraction    MLTask = "text-keyword-extraction"
-	TextPOS                  MLTask = "text-pos"
-	TextTokenization         MLTask = "text-tokenization"
-	TextLemmalization        MLTask = "text-lemma"
 
 	UnknownTask MLTask = "unknown"
 )
+
+// Define NLP sub tasks
+// +kubebuilder:validation:Enum="text-ner";"text-classification";"text-multi-classification";"text-regression";"text-multi-label-classification";"text-conversation";"text-lang-generation";"text-lang-model";"text-multi-modal";"text-ner";"text-qa";"text-summarization";"text-sentence-pair";"text-representation-generation";"text-sentiment-analysis";"text-code-generation";"text-translation";"text-lang-detection";"text-grammar-correction";"text-paraphrasing";"text-intent-classification";"text-semantic-similarity";"text-keyword-extraction";"text-pos";"text-tokenization";"text-lemma";
+type NLPTask string
+
+const (
+	TextNer                        NLPTask = "text-ner"
+	TextClassification             NLPTask = "text-classification"
+	TextMultiClassification        NLPTask = "text-multi-classification"
+	TextRegression                 NLPTask = "text-regression"
+	TextMultiLabelClassification   NLPTask = "text-multi-label-classification"
+	TextConversation               NLPTask = "text-conversation"
+	TextLangGeneration             NLPTask = "text-lang-generation"
+	TextLangModel                  NLPTask = "text-lang-model"
+	TextMultiModalClassification   NLPTask = "text-multi-modal"
+	TextNER                        NLPTask = "text-ner"
+	TextQA                         NLPTask = "text-qa"
+	TextSummarization              NLPTask = "text-summarization"
+	TextSentencePairClassification NLPTask = "text-sentence-pair"
+	TextRepresentationGeneration   NLPTask = "text-representation-generation"
+	TextSentimentAnalysis          NLPTask = "text-sentiment-analysis"
+	TextCodeGeneration             NLPTask = "text-code-generation"
+	TextTranslation                NLPTask = "text-translation"
+	TextLangDetection              NLPTask = "text-lang-detection"
+	TextGrammarCorrection          NLPTask = "text-grammar-correction"
+	TextParaphrasing               NLPTask = "text-paraphrasing"
+	TextIntentClassification       NLPTask = "text-intent-classification"
+	TextSemanticSimilarity         NLPTask = "text-semantic-similarity"
+	TextKeywordExtraction          NLPTask = "text-keyword-extraction"
+	TextPOS                        NLPTask = "text-pos"
+	TextTokenization               NLPTask = "text-tokenization"
+	TextLemmalization              NLPTask = "text-lemma"
+)
+
+// +kubebuilder:validation:Enum="image-classification";"image-multi-label-classification";"image-object-detection";"image-segmentation";
+type VisionTask string
+
+const (
+	ImageClassification           VisionTask = "image-classification"
+	ImageMultiLabelClassification VisionTask = "image-multi-label-classification"
+	ImageObjectDetection          VisionTask = "image-object-detection"
+	ImageSegmentation             VisionTask = "image-segmentation"
+)
+
+// +kubebuilder:validation:Enum="video-action-recognition";"video-classification";"video-object-tracking"
+type VideoTask string
+
+const (
+	VideoActionRecognition VideoTask = "video-action-recognition"
+	VideoClassification    VideoTask = "video-classification"
+	VideoObjectTracking    VideoTask = "video-object-tracking"
+)
+
+type AudioTask string
+
+const ()
+
+// Spec for a mltask
+type MLSubtaskTaskSpec struct {
+	// NLP subtask
+	NLPSubtask *NLPTask `json:"nlp,omitempty" protobuf:"bytes,1,opt,name=nlp"`
+	// Vision subtask
+	VisionSubtask *VisionTask `json:"vision,omitempty" protobuf:"bytes,2,opt,name=vision"`
+	// Video subtask
+	VideoSubtask *VideoTask `json:"video,omitempty" protobuf:"bytes,3,opt,name=video"`
+	// Audio subtask
+	AudioSubtask *AudioTask `json:"audio,omitempty" protobuf:"bytes,4,opt,name=audio"`
+}
 
 // ProviderName is the machine learning task name
 type ProviderName string

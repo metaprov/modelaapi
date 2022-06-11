@@ -428,6 +428,21 @@ message MLFrameworkSpec {
   optional string lang = 4;
 }
 
+// Spec for a mltask
+message MLSubtaskTaskSpec {
+  // NLP subtask
+  optional string nlp = 1;
+
+  // Vision subtask
+  optional string vision = 2;
+
+  // Video subtask
+  optional string video = 3;
+
+  // Audio subtask
+  optional string audio = 4;
+}
+
 // MachineClass define the specific for a machine type of a cloud provider
 message MachineClass {
   // Code the the code of the machine class within the data provider

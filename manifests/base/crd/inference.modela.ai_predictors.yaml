@@ -837,39 +837,13 @@ spec:
                 enum:
                 - binary-classification
                 - multi-classification
-                - multi-label-classification
                 - forecasting
                 - regression
                 - clustering
                 - recommendation
                 - outlier-detection
                 - novelty-detection
-                - topic-modeling
-                - video-action-recognition
-                - video-classification
-                - video-object-tracking
-                - image-classification
-                - image-multi-classification
-                - image-object-detection
-                - image-segmentation
                 - auto
-                - text-ner
-                - text-classification
-                - text-summarization
-                - text-qa
-                - text-sentiment-analysis
-                - text-generation
-                - text-code-generation
-                - text-translation
-                - text-lang-detection
-                - text-grammer-correction
-                - text-paraphrasing
-                - text-intent-classification
-                - text-semantic-similarity
-                - text-keyword-extraction
-                - text-pos
-                - text-tokenization
-                - text-lemma
                 - unknown
                 type: string
               template:

@@ -122,36 +122,39 @@ type DataProductSpec struct {
 	// Task denote the machine learning task of the product (classification/regression,etc.)
 	// +kubebuilder:validation:Optional
 	Task *catalog.MLTask `json:"task,omitempty" protobuf:"bytes,9,opt,name=task"`
+	// The machine learning sub task relevant to the Dataset. This field *must* be the same as the Data Source of the object
+	// +kubebuilder:validation:Optional
+	SubTask *catalog.MLSubtaskTaskSpec `json:"subtask,omitempty" protobuf:"bytes,10,opt,name=subtask"`
 	// User-provided description of the object
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:MaxLength=512
-	Description *string `json:"description,omitempty" protobuf:"bytes,10,opt,name=description"`
+	Description *string `json:"description,omitempty" protobuf:"bytes,11,opt,name=description"`
 	// The default location for all artifacts created under the DataProduct. All data-producing resources will
 	// use the VirtualBucket specified by the DataLocation by default
 	// +kubebuilder:validation:Optional
-	DataLocation DataLocation `json:"dataLocation,omitempty" protobuf:"bytes,11,opt,name=dataLocation"`
+	DataLocation DataLocation `json:"dataLocation,omitempty" protobuf:"bytes,12,opt,name=dataLocation"`
 	// The default notification specification for all resources under the DataProduct
 	// +kubebuilder:validation:Optional
-	Notification catalog.NotificationSpec `json:"notification,omitempty" protobuf:"bytes,12,opt,name=notification"`
+	Notification catalog.NotificationSpec `json:"notification,omitempty" protobuf:"bytes,13,opt,name=notification"`
 	// The default resource allocation for model training and data workloads that takes place under the DataProduct
 	// +kubebuilder:validation:Optional
-	DefaultTrainingResources catalog.ResourceSpec `json:"trainingResources,omitempty" protobuf:"bytes,13,opt,name=trainingResources"`
+	DefaultTrainingResources catalog.ResourceSpec `json:"trainingResources,omitempty" protobuf:"bytes,14,opt,name=trainingResources"`
 	// The default resource allocation for model serving workloads that takes place under the DataProduct
 	// +kubebuilder:validation:Optional
-	DefaultServingResources catalog.ResourceSpec `json:"servingResources,omitempty" protobuf:"bytes,14,opt,name=servingResources"`
+	DefaultServingResources catalog.ResourceSpec `json:"servingResources,omitempty" protobuf:"bytes,15,opt,name=servingResources"`
 	// Specifies how many times Jobs created under the DataProduct namespace will retry after failure
 	// +kubebuilder:default:=3
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Maximum=10
 	// +kubebuilder:validation:Optional
-	RetriesOnFailure *int32 `json:"retriesOnFailure,omitempty" protobuf:"varint,15,opt,name=retriesOnFailure"`
+	RetriesOnFailure *int32 `json:"retriesOnFailure,omitempty" protobuf:"varint,16,opt,name=retriesOnFailure"`
 	// KPIs define key performance indicators for the DataProduct (not functional as of the current release)
 	//+kubebuilder:validation:Optional
-	KPIs []KPI `json:"kpis,omitempty" protobuf:"bytes,16,rep,name=kpis"`
+	KPIs []KPI `json:"kpis,omitempty" protobuf:"bytes,17,rep,name=kpis"`
 	// The name of the Account which should be responsible for events that occur under the DataProduct
 	//+kubebuilder:validation:Optional
-	OnCallAccountName string `json:"onCallAccountName,omitempty" protobuf:"bytes,17,opt,name=onCallAccountName"`
+	OnCallAccountName string `json:"onCallAccountName,omitempty" protobuf:"bytes,18,opt,name=onCallAccountName"`
 	// The default compilation specification for Study resources created under the DataProduct
 	//+kubebuilder:validation:Optional
 	Compilation catalog.CompilerSpec `json:"compilation,omitempty" protobuf:"bytes,19,opt,name=compilation"`

@@ -1849,6 +1849,9 @@ export class ModelAutobuilderSpec extends jspb.Message {
   getTask(): string;
   setTask(value: string): ModelAutobuilderSpec;
 
+  getSubtask(): string;
+  setSubtask(value: string): ModelAutobuilderSpec;
+
   getObjective(): string;
   setObjective(value: string): ModelAutobuilderSpec;
 
@@ -1930,6 +1933,7 @@ export namespace ModelAutobuilderSpec {
     datasetname: string,
     location?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     task: string,
+    subtask: string,
     objective: string,
     targetcolumn: string,
     maxtime: number,
@@ -2973,6 +2977,9 @@ export class ModelSpec extends jspb.Message {
   getTask(): string;
   setTask(value: string): ModelSpec;
 
+  getSubtask(): string;
+  setSubtask(value: string): ModelSpec;
+
   getObjective(): string;
   setObjective(value: string): ModelSpec;
 
@@ -3123,6 +3130,7 @@ export namespace ModelSpec {
     studyname: string,
     datasetname: string,
     task: string,
+    subtask: string,
     objective: string,
     featureengineering?: FeatureEngineeringSpec.AsObject,
     estimator?: ClassicalEstimatorSpec.AsObject,
@@ -4962,6 +4970,9 @@ export class StudySpec extends jspb.Message {
   getTask(): string;
   setTask(value: string): StudySpec;
 
+  getSubtask(): string;
+  setSubtask(value: string): StudySpec;
+
   getFesearch(): FeatureEngineeringSearchSpec | undefined;
   setFesearch(value?: FeatureEngineeringSearchSpec): StudySpec;
   hasFesearch(): boolean;
@@ -5102,6 +5113,7 @@ export namespace StudySpec {
     labref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     datasetname: string,
     task: string,
+    subtask: string,
     fesearch?: FeatureEngineeringSearchSpec.AsObject,
     imbalancehandler?: ImbalanceHandlingSpec.AsObject,
     baseline?: BaselineSpec.AsObject,

@@ -230,81 +230,84 @@ type ModelSpec struct {
 	// +kubebuilder:validation:Required
 	// +required
 	Task *catalog.MLTask `json:"task,omitempty" protobuf:"bytes,7,opt,name=task"`
+	// The sub task
+	// +kubebuilder:validation:Optional
+	SubTask *catalog.MLTask `json:"subtask,omitempty" protobuf:"bytes,8,opt,name=subtask"`
 	// The objective metric that will be used to evaluate the performance of the model
 	// +kubebuilder:validation:Required
 	// +required
-	Objective *catalog.Metric `json:"objective,omitempty" protobuf:"bytes,8,opt,name=objective"`
+	Objective *catalog.Metric `json:"objective,omitempty" protobuf:"bytes,9,opt,name=objective"`
 	// FeatureEngineering specifies the preprocessing pipelines that will be applied to the model prior to training.
 	// By default, feature engineering is generated automatically by sampling different pipelines in competition
 	// +kubebuilder:validation:Optional
-	FeatureEngineering FeatureEngineeringSpec `json:"featureEngineering,omitempty" protobuf:"bytes,9,opt,name=featureEngineering"`
+	FeatureEngineering FeatureEngineeringSpec `json:"featureEngineering,omitempty" protobuf:"bytes,10,opt,name=featureEngineering"`
 	// Estimator specifies the machine learning algorithm and hyper-parameters of the Model
 	// +kubebuilder:validation:Optional
-	Estimator *ClassicalEstimatorSpec `json:"estimator,omitempty" protobuf:"bytes,10,opt,name=estimator"`
+	Estimator *ClassicalEstimatorSpec `json:"estimator,omitempty" protobuf:"bytes,11,opt,name=estimator"`
 	// Dnn specifies the estimator for a neural network (currently unimplemented)
 	// +kubebuilder:validation:Optional
-	Dnn *DeepEstimatorSpec `json:"dnn,omitempty" protobuf:"bytes,11,opt,name=dnn"`
+	Dnn *DeepEstimatorSpec `json:"dnn,omitempty" protobuf:"bytes,12,opt,name=dnn"`
 	// Chatbot specifies the estimator for a chatbot model (currently unimplemented)
 	// +kubebuilder:validation:Optional
-	Chatbot *ChatbotEstimatorSpec `json:"chatbot,omitempty" protobuf:"bytes,12,opt,name=chatbot"`
+	Chatbot *ChatbotEstimatorSpec `json:"chatbot,omitempty" protobuf:"bytes,13,opt,name=chatbot"`
 	// NLPEstimator specifies the estimator for a deep NLP model (currently unimplemented)
 	// +kubebuilder:validation:Optional
-	NLPEstimator *NLPEstimatorSpec `json:"nplEstimator,omitempty" protobuf:"bytes,13,opt,name=nlpEstimator"`
+	NLPEstimator *NLPEstimatorSpec `json:"nplEstimator,omitempty" protobuf:"bytes,14,opt,name=nlpEstimator"`
 	// Ensemble specifies the configuration to create an ensemble model
 	// +kubebuilder:validation:Optional
-	Ensemble EnsembleSpec `json:"ensemble,omitempty" protobuf:"bytes,14,opt,name=ensemble"`
+	Ensemble EnsembleSpec `json:"ensemble,omitempty" protobuf:"bytes,15,opt,name=ensemble"`
 	// TrainingSpec specifies the configuration to prepare and train a model
 	// +kubebuilder:validation:Optional
-	Training TrainingSpec `json:"training,omitempty" protobuf:"bytes,15,opt,name=training"`
+	Training TrainingSpec `json:"training,omitempty" protobuf:"bytes,16,opt,name=training"`
 	// ServingSpec defines the resource requirements that will be applied to a Predictor
 	// that will be created if the model is set to be released
 	// +kubebuilder:validation:Optional
-	Serving ServingSpec `json:"serving,omitempty" protobuf:"bytes,16,opt,name=serving"`
+	Serving ServingSpec `json:"serving,omitempty" protobuf:"bytes,17,opt,name=serving"`
 	// Tested indicates if a workload will be instantiated to test the model. The Study resource controller
 	// will automatically set this field if the Model was found to be the highest-performing
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Tested *bool `json:"tested,omitempty" protobuf:"varint,17,opt,name=tested"`
+	Tested *bool `json:"tested,omitempty" protobuf:"varint,18,opt,name=tested"`
 	// Aborted indicates if any workloads associated with the Model should stop execution
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Aborted *bool `json:"aborted,omitempty" protobuf:"varint,18,opt,name=aborted"`
+	Aborted *bool `json:"aborted,omitempty" protobuf:"varint,19,opt,name=aborted"`
 	// Packaged indicates if the Model should be packaged into tarbell
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Packaged *bool `json:"packaged,omitempty" protobuf:"varint,19,opt,name=packaged"`
+	Packaged *bool `json:"packaged,omitempty" protobuf:"varint,20,opt,name=packaged"`
 	// Published indicates that the Model should be baked into a Docker image
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Published *bool `json:"published,omitempty" protobuf:"varint,20,opt,name=published"`
+	Published *bool `json:"published,omitempty" protobuf:"varint,21,opt,name=published"`
 	// Pushed indicates that the Model image should be pushed to a Docker image registry
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Pushed *bool `json:"pushed,omitempty" protobuf:"varint,21,opt,name=pushed"`
+	Pushed *bool `json:"pushed,omitempty" protobuf:"varint,22,opt,name=pushed"`
 	// Reported indicates that a Report will be generated for the Model
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Reported *bool `json:"reported,omitempty" protobuf:"varint,22,opt,name=reported"`
+	Reported *bool `json:"reported,omitempty" protobuf:"varint,23,opt,name=reported"`
 	// Paused indicates that the execution of new workloads associated with the Model should be paused
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Paused *bool `json:"paused,omitempty" protobuf:"varint,23,opt,name=paused"`
+	Paused *bool `json:"paused,omitempty" protobuf:"varint,24,opt,name=paused"`
 	// Profiled indicates that the Model will be profiled
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Profiled *bool `json:"profiled,omitempty" protobuf:"varint,24,opt,name=profiled"`
+	Profiled *bool `json:"profiled,omitempty" protobuf:"varint,25,opt,name=profiled"`
 	// Archived indicates that the Model should be archived in long-term storage
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Archived *bool `json:"archived,omitempty" protobuf:"varint,25,opt,name=archived"`
+	Archived *bool `json:"archived,omitempty" protobuf:"varint,26,opt,name=archived"`
 	// Forecasted indicates that the Model should perform a forecast
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Forecasted *bool `json:"forecasted,omitempty" protobuf:"varint,26,opt,name=forecasted"`
+	Forecasted *bool `json:"forecasted,omitempty" protobuf:"varint,27,opt,name=forecasted"`
 	// Released indicates that the Model will be deployed within Predictor
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Released *bool `json:"released,omitempty" protobuf:"varint,27,opt,name=released"`
+	Released *bool `json:"released,omitempty" protobuf:"varint,28,opt,name=released"`
 	// Explained indicates if a workload to compute SHAP values/diagrams should be executed
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional

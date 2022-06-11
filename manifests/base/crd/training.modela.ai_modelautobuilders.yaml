@@ -1089,6 +1089,20 @@ spec:
                             type: array
                         type: object
                     type: object
+                  subtask:
+                    description: The sub task
+                    enum:
+                    - binary-classification
+                    - multi-classification
+                    - forecasting
+                    - regression
+                    - clustering
+                    - recommendation
+                    - outlier-detection
+                    - novelty-detection
+                    - auto
+                    - unknown
+                    type: string
                   task:
                     description: The default task for Dataset resources created from
                       the DataSource. If null, this will be determined from the default
@@ -1096,39 +1110,13 @@ spec:
                     enum:
                     - binary-classification
                     - multi-classification
-                    - multi-label-classification
                     - forecasting
                     - regression
                     - clustering
                     - recommendation
                     - outlier-detection
                     - novelty-detection
-                    - topic-modeling
-                    - video-action-recognition
-                    - video-classification
-                    - video-object-tracking
-                    - image-classification
-                    - image-multi-classification
-                    - image-object-detection
-                    - image-segmentation
                     - auto
-                    - text-ner
-                    - text-classification
-                    - text-summarization
-                    - text-qa
-                    - text-sentiment-analysis
-                    - text-generation
-                    - text-code-generation
-                    - text-translation
-                    - text-lang-detection
-                    - text-grammer-correction
-                    - text-paraphrasing
-                    - text-intent-classification
-                    - text-semantic-similarity
-                    - text-keyword-extraction
-                    - text-pos
-                    - text-tokenization
-                    - text-lemma
                     - unknown
                     type: string
                   versionName:
@@ -1592,6 +1580,20 @@ spec:
                     description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                     type: string
                 type: object
+              subtask:
+                description: The sub task
+                enum:
+                - binary-classification
+                - multi-classification
+                - forecasting
+                - regression
+                - clustering
+                - recommendation
+                - outlier-detection
+                - novelty-detection
+                - auto
+                - unknown
+                type: string
               targetColumn:
                 description: The name of the column within the dataset that contains
                   the label(s) to be predicted
@@ -1603,39 +1605,13 @@ spec:
                 enum:
                 - binary-classification
                 - multi-classification
-                - multi-label-classification
                 - forecasting
                 - regression
                 - clustering
                 - recommendation
                 - outlier-detection
                 - novelty-detection
-                - topic-modeling
-                - video-action-recognition
-                - video-classification
-                - video-object-tracking
-                - image-classification
-                - image-multi-classification
-                - image-object-detection
-                - image-segmentation
                 - auto
-                - text-ner
-                - text-classification
-                - text-summarization
-                - text-qa
-                - text-sentiment-analysis
-                - text-generation
-                - text-code-generation
-                - text-translation
-                - text-lang-detection
-                - text-grammer-correction
-                - text-paraphrasing
-                - text-intent-classification
-                - text-semantic-similarity
-                - text-keyword-extraction
-                - text-pos
-                - text-tokenization
-                - text-lemma
                 - unknown
                 type: string
               trainers:

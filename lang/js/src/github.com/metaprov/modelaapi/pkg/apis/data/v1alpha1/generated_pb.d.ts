@@ -1436,6 +1436,11 @@ export class DataProductSpec extends jspb.Message {
   getTask(): string;
   setTask(value: string): DataProductSpec;
 
+  getSubtask(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.MLSubtaskTaskSpec | undefined;
+  setSubtask(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.MLSubtaskTaskSpec): DataProductSpec;
+  hasSubtask(): boolean;
+  clearSubtask(): DataProductSpec;
+
   getDescription(): string;
   setDescription(value: string): DataProductSpec;
 
@@ -1512,6 +1517,7 @@ export namespace DataProductSpec {
     labname: string,
     servingsitename: string,
     task: string,
+    subtask?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.MLSubtaskTaskSpec.AsObject,
     description: string,
     datalocation?: DataLocation.AsObject,
     notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
@@ -1928,6 +1934,9 @@ export class DataSourceSpec extends jspb.Message {
   getTask(): string;
   setTask(value: string): DataSourceSpec;
 
+  getSubtask(): string;
+  setSubtask(value: string): DataSourceSpec;
+
   getRelationshipsList(): Array<RelationshipSpec>;
   setRelationshipsList(value: Array<RelationshipSpec>): DataSourceSpec;
   clearRelationshipsList(): DataSourceSpec;
@@ -1963,6 +1972,7 @@ export namespace DataSourceSpec {
     datasettype: string,
     sample?: SampleSpec.AsObject,
     task: string,
+    subtask: string,
     relationshipsList: Array<RelationshipSpec.AsObject>,
     labeling?: LabelingSpec.AsObject,
     inferredfrom?: DataLocation.AsObject,
@@ -2208,6 +2218,11 @@ export class DatasetSpec extends jspb.Message {
   getTask(): string;
   setTask(value: string): DatasetSpec;
 
+  getSubtask(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.MLSubtaskTaskSpec | undefined;
+  setSubtask(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.MLSubtaskTaskSpec): DatasetSpec;
+  hasSubtask(): boolean;
+  clearSubtask(): DatasetSpec;
+
   getNotification(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec | undefined;
   setNotification(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec): DatasetSpec;
   hasNotification(): boolean;
@@ -2254,6 +2269,7 @@ export namespace DatasetSpec {
     type: string,
     sample?: SampleSpec.AsObject,
     task: string,
+    subtask?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.MLSubtaskTaskSpec.AsObject,
     notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
     correlation?: CorrelationSpec.AsObject,
     fast: boolean,

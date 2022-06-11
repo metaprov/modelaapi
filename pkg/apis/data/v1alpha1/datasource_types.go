@@ -727,14 +727,18 @@ type DataSourceSpec struct {
 	// the default task of the DataProduct which owns the DataSource
 	// +kubebuilder:validation:Optional
 	Task *catalog.MLTask `json:"task,omitempty" protobuf:"bytes,10,opt,name=task"`
+	// The sub task
+	// +kubebuilder:validation:Optional
+	SubTask *catalog.MLTask `json:"subtask,omitempty" protobuf:"bytes,11,opt,name=subtask"`
 	// List of relationships to other data sources
-	Relationships []RelationshipSpec `json:"relationships,omitempty" protobuf:"bytes,11,rep,name=relationships"`
+	// +kubebuilder:validation:Optional
+	Relationships []RelationshipSpec `json:"relationships,omitempty" protobuf:"bytes,12,rep,name=relationships"`
 	// A specification on how to label datasets using positive and negative rules.
 	// +kubebuilder:validation:Optional
-	Labeling LabelingSpec `json:"labeling,omitempty" protobuf:"bytes,12,rep,name=labeling"`
+	Labeling LabelingSpec `json:"labeling,omitempty" protobuf:"bytes,13,rep,name=labeling"`
 	// The data location which was used to infer the data source schema.
 	// +kubebuilder:validation:Optional
-	InferredFrom *DataLocation `json:"inferredFrom,omitempty" protobuf:"bytes,13,opt,name=inferredFrom"`
+	InferredFrom *DataLocation `json:"inferredFrom,omitempty" protobuf:"bytes,14,opt,name=inferredFrom"`
 }
 
 // DataSourceStatus defines the observed state of a DataSource object

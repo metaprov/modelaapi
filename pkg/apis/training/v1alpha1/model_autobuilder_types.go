@@ -116,87 +116,90 @@ type ModelAutobuilderSpec struct {
 	Location data.DataLocation `json:"location,omitempty" protobuf:"bytes,5,opt,name=location"`
 	// The machine learning task type relevant to the dataset (i.e. regression, classification)
 	Task *catalog.MLTask `json:"task,omitempty" protobuf:"bytes,6,opt,name=task"`
+	// The sub task
+	// +kubebuilder:validation:Optional
+	SubTask *catalog.MLTask `json:"subtask,omitempty" protobuf:"bytes,7,opt,name=subtask"`
 	// The objective metric that will be measured against trained models to evaluate their performance
 	// +kubebuilder:validation:Optional
-	Objective *catalog.Metric `json:"objective,omitempty" protobuf:"bytes,7,opt,name=objective"`
+	Objective *catalog.Metric `json:"objective,omitempty" protobuf:"bytes,8,opt,name=objective"`
 	// The name of the column within the dataset that contains the label(s) to be predicted
 	// +kubebuilder:validation:MaxLength=128
 	// +kubebuilder:validation:Optional
-	TargetColumn *string `json:"targetColumn,omitempty" protobuf:"bytes,8,opt,name=targetColumn"`
+	TargetColumn *string `json:"targetColumn,omitempty" protobuf:"bytes,9,opt,name=targetColumn"`
 	// The deadline for models to complete training, in seconds
 	// +kubebuilder:validation:Maximum=36000
 	// +kubebuilder:validation:Minimum=1
 	// +kubebuilder:default:=3600
 	// +kubebuilder:validation:Optional
-	MaxTime *int32 `json:"maxTime,omitempty" protobuf:"varint,9,opt,name=maxTime"`
+	MaxTime *int32 `json:"maxTime,omitempty" protobuf:"varint,10,opt,name=maxTime"`
 	// The number of candidate models that will be sampled and trained
 	// +kubebuilder:validation:Maximum=512
 	// +kubebuilder:validation:Minimum=1
 	// +kubebuilder:default:=10
 	// +kubebuilder:validation:Optional
-	MaxModels *int32 `json:"maxModels,omitempty" protobuf:"varint,10,opt,name=maxModels"`
+	MaxModels *int32 `json:"maxModels,omitempty" protobuf:"varint,11,opt,name=maxModels"`
 	// The Kubernetes-native access method which specifies how the Predictor created by the ModelAutobuilder will be exposed.
 	// See https://modela.ai/docs/docs/serving/production/#access-method for a detailed description of each access type
 	// +kubebuilder:default:=cluster-ip
 	// +kubebuilder:validation:Optional
-	AccessMethod *catalog.AccessType `json:"accessMethod,omitempty" protobuf:"bytes,11,opt,name=accessMethod"`
+	AccessMethod *catalog.AccessType `json:"accessMethod,omitempty" protobuf:"bytes,12,opt,name=accessMethod"`
 	// Indicates if the Predictor created by the ModelAutobuilder will automatically scale to traffic
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	AutoScale *bool `json:"autoScale,omitempty" protobuf:"varint,12,opt,name=autoScale"`
+	AutoScale *bool `json:"autoScale,omitempty" protobuf:"varint,13,opt,name=autoScale"`
 	// Indicates if feature engineering will be performed prior to the primary model search
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	FeatureEngineering *bool `json:"featureEngineering,omitempty" protobuf:"varint,13,opt,name=featureEngineering"`
+	FeatureEngineering *bool `json:"featureEngineering,omitempty" protobuf:"varint,14,opt,name=featureEngineering"`
 	// Indicates if feature selection will be performed prior to the primary model search
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	FeatureSelection *bool `json:"featureSelection,omitempty" protobuf:"varint,14,opt,name=featureSelection"`
+	FeatureSelection *bool `json:"featureSelection,omitempty" protobuf:"varint,15,opt,name=featureSelection"`
 	// Indicates if the ModelAutobuilder will create a DataApp resource to serve the highest-performing model that was trained
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	DataApp *bool `json:"dataapp,omitempty" protobuf:"varint,15,opt,name=dataapp"`
+	DataApp *bool `json:"dataapp,omitempty" protobuf:"varint,16,opt,name=dataapp"`
 	// DataSourceSpec specifies the full specification of the DataSource resource that will be created by the ModelAutobuilder.
 	// If empty, the ModelAutobuilder will attempt to infer the schema of the data specified by the Location field
 	// +kubebuilder:validation:Optional
-	DataSourceSpec datav1.DataSourceSpec `json:"dataSourceSpec,omitempty" protobuf:"bytes,16,opt,name=dataSourceSpec"`
+	DataSourceSpec datav1.DataSourceSpec `json:"dataSourceSpec,omitempty" protobuf:"bytes,17,opt,name=dataSourceSpec"`
 	// The desired number of trainers that will train candidate models in parallel. The number
 	// of trainers is restricted based on the allowance provided by the active License
 	// +kubebuilder:default:=1
 	// +kubebuilder:validation:Optional
-	Trainers *int32 `json:"trainers,omitempty" protobuf:"varint,17,opt,name=trainers"`
+	Trainers *int32 `json:"trainers,omitempty" protobuf:"varint,18,opt,name=trainers"`
 	// The hyper-parameter optimization search method
 	// +kubebuilder:default:="random"
 	// +kubebuilder:validation:Optional
-	Sampler *SamplerName `json:"sampler,omitempty" protobuf:"bytes,18,opt,name=sampler"`
+	Sampler *SamplerName `json:"sampler,omitempty" protobuf:"bytes,19,opt,name=sampler"`
 	// Aborted indicates that the execution of the ModelAutobuilder and any associated workloads should be permanently stopped
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Aborted *bool `json:"aborted,omitempty" protobuf:"varint,19,opt,name=aborted"`
+	Aborted *bool `json:"aborted,omitempty" protobuf:"varint,20,opt,name=aborted"`
 	// The name of the Account which created the object, which exists in the same tenant as the object
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
-	Owner *string `json:"owner,omitempty" protobuf:"bytes,20,opt,name=owner"`
+	Owner *string `json:"owner,omitempty" protobuf:"bytes,21,opt,name=owner"`
 	// Resources specifies the resource requirements that will be allocated to dataset and model training Jobs
 	// +kubebuilder:validation:Optional
-	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,21,opt,name=resources"`
+	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,22,opt,name=resources"`
 	// The reference to the Lab under which Dataset and Study resources created by the ModelAutobuilder will be trained.
 	// If unspecified, the default Lab from the parent DataProduct will be used
 	// +kubebuilder:validation:Optional
-	LabRef *v1.ObjectReference `json:"labRef,omitempty" protobuf:"bytes,22,opt,name=labRef"`
+	LabRef *v1.ObjectReference `json:"labRef,omitempty" protobuf:"bytes,23,opt,name=labRef"`
 	// The reference to the ServingSite where the Predictor created by the ModelAutobuilder will be hosted.
 	// If unspecified, the default ServingSite from the parent DataProduct will be used
 	// +kubebuilder:validation:Optional
-	ServingSiteRef *v1.ObjectReference `json:"servingSiteRef,omitempty" protobuf:"bytes,23,opt,name=servingSiteRef"`
+	ServingSiteRef *v1.ObjectReference `json:"servingSiteRef,omitempty" protobuf:"bytes,24,opt,name=servingSiteRef"`
 	// The type of dataset which was uploaded. `tabular` is the only supported type as of the current release
 	// +kubebuilder:validation:Optional
-	DatasetType catalog.DatasetType `json:"datasetType,omitempty" protobuf:"bytes,24,opt,name=datasetType"`
+	DatasetType catalog.DatasetType `json:"datasetType,omitempty" protobuf:"bytes,25,opt,name=datasetType"`
 	// Fast indicates if Dataset and Study resources associated with the ModelAutobuilder should run in fast mode.
 	// Running in fast mode will skip unnecessary workloads such as profiling, reporting, explaining, etc.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Fast *bool `json:"fast,omitempty" protobuf:"varint,25,opt,name=fast"`
+	Fast *bool `json:"fast,omitempty" protobuf:"varint,26,opt,name=fast"`
 }
 
 // ModelAutobuilderStatus define the observed state of a ModelAutobuilder
