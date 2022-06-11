@@ -466,7 +466,7 @@ message KubernetesObjectStatus {
 
   // The status of the object
   // +kubebuilder:validation:Optional
-  optional string status = 5;
+  optional string status = 2;
 }
 
 message ModelDeploymentStatus {

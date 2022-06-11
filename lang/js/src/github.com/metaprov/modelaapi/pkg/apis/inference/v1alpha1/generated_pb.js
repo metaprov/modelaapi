@@ -7241,7 +7241,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObject
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObjectStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
     ref: (f = msg.getRef()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
-    status: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
+    status: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -7283,7 +7283,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObject
       reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
       msg.setRef(value);
       break;
-    case 5:
+    case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setStatus(value);
       break;
@@ -7324,10 +7324,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObject
       k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 5));
+  f = /** @type {string} */ (jspb.Message.getField(message, 2));
   if (f != null) {
     writer.writeString(
-      5,
+      2,
       f
     );
   }
@@ -7372,11 +7372,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObject
 
 
 /**
- * optional string status = 5;
+ * optional string status = 2;
  * @return {string}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObjectStatus.prototype.getStatus = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -7385,7 +7385,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObject
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObjectStatus} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObjectStatus.prototype.setStatus = function(value) {
-  return jspb.Message.setField(this, 5, value);
+  return jspb.Message.setField(this, 2, value);
 };
 
 
@@ -7394,7 +7394,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObject
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObjectStatus} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObjectStatus.prototype.clearStatus = function() {
-  return jspb.Message.setField(this, 5, undefined);
+  return jspb.Message.setField(this, 2, undefined);
 };
 
 
@@ -7403,7 +7403,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObject
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObjectStatus.prototype.hasStatus = function() {
-  return jspb.Message.getField(this, 5) != null;
+  return jspb.Message.getField(this, 2) != null;
 };
 
 

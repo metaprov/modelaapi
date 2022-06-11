@@ -443,7 +443,7 @@ type KubernetesObjectStatus struct {
 	Ref *v1.ObjectReference `json:"ref,omitempty" protobuf:"bytes,1,opt,name=ref"`
 	// The status of the object
 	// +kubebuilder:validation:Optional
-	Status K8sObjectStatusState `json:"status,omitempty" protobuf:"bytes,5,opt,name=status"`
+	Status K8sObjectStatusState `json:"status,omitempty" protobuf:"bytes,2,opt,name=status"`
 }
 
 type PredictorletStatus struct {
