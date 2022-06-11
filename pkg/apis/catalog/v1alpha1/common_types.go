@@ -1985,39 +1985,3 @@ type LastRunStatus struct {
 }
 
 // Hold status of K8s object status
-
-type K8sObjectStatusState string
-
-const (
-	K8sObjectStatusHealthy K8sObjectStatusState = "healthy"
-	K8sObjectStatusWarning K8sObjectStatusState = "warning"
-	K8sObjectStatusError   K8sObjectStatusState = "error"
-	K8sObjectStatusUnknown K8sObjectStatusState = "unknown"
-)
-
-type K8sObjectStatus struct {
-	// The object namespace
-	Namespace string `json:"namespace,omitempty" protobuf:"bytes,1,opt,name=namespace"`
-	// The object name
-	Name string `json:"name,omitempty" protobuf:"bytes,2,opt,name=name"`
-	// The object kind (e.g. deployment)
-	Kind string `json:"kind,omitempty" protobuf:"bytes,3,opt,name=kind"`
-	// The age of the resource
-	Age *metav1.Time `json:"age,omitempty" protobuf:"bytes,4,opt,name=age"`
-	// The status of the object
-	Status K8sObjectStatusState `json:"status,omitempty" protobuf:"bytes,5,opt,name=status"`
-}
-
-func AddOrUpdateK8sStatuses(current []K8sObjectStatus, status K8sObjectStatus) []K8sObjectStatus {
-	// check
-	for i := 0; i < len(current); i++ {
-		if current[i].Name == status.Name && current[i].Namespace == status.Namespace && current[i].Kind == status.Kind {
-			current[i].Status = status.Status
-			return current
-		}
-	}
-	// this point we add the status
-	current = append(current, status)
-	return current
-
-}

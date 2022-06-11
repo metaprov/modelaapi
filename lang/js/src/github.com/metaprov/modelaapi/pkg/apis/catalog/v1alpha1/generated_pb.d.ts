@@ -643,42 +643,6 @@ export namespace IntParameter {
   }
 }
 
-export class K8sObjectStatus extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): K8sObjectStatus;
-
-  getName(): string;
-  setName(value: string): K8sObjectStatus;
-
-  getKind(): string;
-  setKind(value: string): K8sObjectStatus;
-
-  getAge(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setAge(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): K8sObjectStatus;
-  hasAge(): boolean;
-  clearAge(): K8sObjectStatus;
-
-  getStatus(): string;
-  setStatus(value: string): K8sObjectStatus;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): K8sObjectStatus.AsObject;
-  static toObject(includeInstance: boolean, msg: K8sObjectStatus): K8sObjectStatus.AsObject;
-  static serializeBinaryToWriter(message: K8sObjectStatus, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): K8sObjectStatus;
-  static deserializeBinaryFromReader(message: K8sObjectStatus, reader: jspb.BinaryReader): K8sObjectStatus;
-}
-
-export namespace K8sObjectStatus {
-  export type AsObject = {
-    namespace: string,
-    name: string,
-    kind: string,
-    age?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    status: string,
-  }
-}
-
 export class LastRunStatus extends jspb.Message {
   getName(): string;
   setName(value: string): LastRunStatus;

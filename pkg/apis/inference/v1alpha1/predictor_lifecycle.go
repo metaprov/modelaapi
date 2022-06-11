@@ -20,6 +20,20 @@ func (predictor *Predictor) SetupWebhookWithManager(mgr ctrl.Manager) error {
 		Complete()
 }
 
+func AddOrUpdateK8sStatuses(current []K8sObjectStatus, status K8sObjectStatus) []K8sObjectStatus {
+	// check
+	for i := 0; i < len(current); i++ {
+		if current[i].Name == status.Name && current[i].Namespace == status.Namespace && current[i].Kind == status.Kind {
+			current[i].Status = status.Status
+			return current
+		}
+	}
+	// this point we add the status
+	current = append(current, status)
+	return current
+
+}
+
 func (predictor *Predictor) Selector() *metav1.LabelSelector {
 	result := &metav1.LabelSelector{
 		MatchLabels: map[string]string{},

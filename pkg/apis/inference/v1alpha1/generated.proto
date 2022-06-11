@@ -459,6 +459,23 @@ message ForecastSpec {
   optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSpec horizon = 2;
 }
 
+message K8sObjectStatus {
+  // The object namespace
+  optional string namespace = 1;
+
+  // The object name
+  optional string name = 2;
+
+  // The object kind (e.g. deployment)
+  optional string kind = 3;
+
+  // The age of the resource
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time age = 4;
+
+  // The status of the object
+  optional string status = 5;
+}
+
 message ModelDeploymentStatus {
   // The model image name
   // +kubebuilder:validation:Optional
@@ -525,7 +542,7 @@ message ModelDeploymentStatus {
 
   // The status of the kubernetes resources backing this model
   // +kubebuilder:validation:Optional
-  repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.K8sObjectStatus resources = 17;
+  repeated K8sObjectStatus resources = 17;
 }
 
 // ModelRecord hold the state of a model that was in production
@@ -1139,7 +1156,7 @@ message PredictorletStatus {
 
   // The status of the kubernetes resources backing this model
   // +kubebuilder:validation:Optional
-  repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.K8sObjectStatus resources = 16;
+  repeated K8sObjectStatus resources = 16;
 }
 
 // ProgressiveSpec defines the specification to progressively deploy a model to production

@@ -415,7 +415,7 @@ type ModelDeploymentStatus struct {
 	LastDailyPredictions []int32 `json:"lastDailyPredictions,omitempty" protobuf:"bytes,16,rep,name=lastDailyPredictions"`
 	// The status of the kubernetes resources backing this model
 	// +kubebuilder:validation:Optional
-	Resources []catalog.K8sObjectStatus `json:"resources,omitempty" protobuf:"bytes,17,rep,name=resources"`
+	Resources []K8sObjectStatus `json:"resources,omitempty" protobuf:"bytes,17,rep,name=resources"`
 }
 
 type ModelDeploymentPhase string
@@ -428,6 +428,28 @@ const (
 	ModelDeploymentPhaseReleased  ModelDeploymentPhase = "Released"
 	ModelDeploymentPhaseFailed    ModelDeploymentPhase = "Failed"
 )
+
+type K8sObjectStatusState string
+
+const (
+	K8sObjectStatusHealthy K8sObjectStatusState = "healthy"
+	K8sObjectStatusWarning K8sObjectStatusState = "warning"
+	K8sObjectStatusError   K8sObjectStatusState = "error"
+	K8sObjectStatusUnknown K8sObjectStatusState = "unknown"
+)
+
+type K8sObjectStatus struct {
+	// The object namespace
+	Namespace string `json:"namespace,omitempty" protobuf:"bytes,1,opt,name=namespace"`
+	// The object name
+	Name string `json:"name,omitempty" protobuf:"bytes,2,opt,name=name"`
+	// The object kind (e.g. deployment)
+	Kind string `json:"kind,omitempty" protobuf:"bytes,3,opt,name=kind"`
+	// The age of the resource
+	Age *metav1.Time `json:"age,omitempty" protobuf:"bytes,4,opt,name=age"`
+	// The status of the object
+	Status K8sObjectStatusState `json:"status,omitempty" protobuf:"bytes,5,opt,name=status"`
+}
 
 type PredictorletStatus struct {
 	// The prediction let image name
@@ -474,7 +496,7 @@ type PredictorletStatus struct {
 	TrainingDatasetName string `json:"trainingDatasetName,omitempty" protobuf:"bytes,15,opt,name=trainingDatasetName"`
 	// The status of the kubernetes resources backing this model
 	// +kubebuilder:validation:Optional
-	Resources []catalog.K8sObjectStatus `json:"resources,omitempty" protobuf:"bytes,16,rep,name=resources"`
+	Resources []K8sObjectStatus `json:"resources,omitempty" protobuf:"bytes,16,rep,name=resources"`
 }
 
 type MonitorStatus struct {

@@ -703,6 +703,42 @@ export namespace ForecastSpec {
   }
 }
 
+export class K8sObjectStatus extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): K8sObjectStatus;
+
+  getName(): string;
+  setName(value: string): K8sObjectStatus;
+
+  getKind(): string;
+  setKind(value: string): K8sObjectStatus;
+
+  getAge(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setAge(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): K8sObjectStatus;
+  hasAge(): boolean;
+  clearAge(): K8sObjectStatus;
+
+  getStatus(): string;
+  setStatus(value: string): K8sObjectStatus;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): K8sObjectStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: K8sObjectStatus): K8sObjectStatus.AsObject;
+  static serializeBinaryToWriter(message: K8sObjectStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): K8sObjectStatus;
+  static deserializeBinaryFromReader(message: K8sObjectStatus, reader: jspb.BinaryReader): K8sObjectStatus;
+}
+
+export namespace K8sObjectStatus {
+  export type AsObject = {
+    namespace: string,
+    name: string,
+    kind: string,
+    age?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    status: string,
+  }
+}
+
 export class ModelDeploymentStatus extends jspb.Message {
   getImagename(): string;
   setImagename(value: string): ModelDeploymentStatus;
@@ -764,10 +800,10 @@ export class ModelDeploymentStatus extends jspb.Message {
   clearLastdailypredictionsList(): ModelDeploymentStatus;
   addLastdailypredictions(value: number, index?: number): ModelDeploymentStatus;
 
-  getResourcesList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.K8sObjectStatus>;
-  setResourcesList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.K8sObjectStatus>): ModelDeploymentStatus;
+  getResourcesList(): Array<K8sObjectStatus>;
+  setResourcesList(value: Array<K8sObjectStatus>): ModelDeploymentStatus;
   clearResourcesList(): ModelDeploymentStatus;
-  addResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.K8sObjectStatus, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.K8sObjectStatus;
+  addResources(value?: K8sObjectStatus, index?: number): K8sObjectStatus;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelDeploymentStatus.AsObject;
@@ -795,7 +831,7 @@ export namespace ModelDeploymentStatus {
     datadrift: boolean,
     conceptdrift: boolean,
     lastdailypredictionsList: Array<number>,
-    resourcesList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.K8sObjectStatus.AsObject>,
+    resourcesList: Array<K8sObjectStatus.AsObject>,
   }
 }
 
@@ -1685,10 +1721,10 @@ export class PredictorletStatus extends jspb.Message {
   getTrainingdatasetname(): string;
   setTrainingdatasetname(value: string): PredictorletStatus;
 
-  getResourcesList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.K8sObjectStatus>;
-  setResourcesList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.K8sObjectStatus>): PredictorletStatus;
+  getResourcesList(): Array<K8sObjectStatus>;
+  setResourcesList(value: Array<K8sObjectStatus>): PredictorletStatus;
   clearResourcesList(): PredictorletStatus;
-  addResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.K8sObjectStatus, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.K8sObjectStatus;
+  addResources(value?: K8sObjectStatus, index?: number): K8sObjectStatus;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PredictorletStatus.AsObject;
@@ -1715,7 +1751,7 @@ export namespace PredictorletStatus {
     deployedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     releasedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     trainingdatasetname: string,
-    resourcesList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.K8sObjectStatus.AsObject>,
+    resourcesList: Array<K8sObjectStatus.AsObject>,
   }
 }
 
