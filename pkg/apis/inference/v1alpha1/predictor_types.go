@@ -414,9 +414,9 @@ type ModelDeploymentStatus struct {
 	// +kubebuilder:validation:Optional
 	LastDailyPredictions []int32 `json:"lastDailyPredictions,omitempty" protobuf:"bytes,16,rep,name=lastDailyPredictions"`
 	// +kubebuilder:validation:Optional
-	ServiceStatus K8sObjectStatus `json:"serviceStatus,omitempty" protobuf:"bytes,17,rep,name=serviceStatus"`
+	ServiceStatus KubernetesObjectStatus `json:"serviceStatus,omitempty" protobuf:"bytes,17,rep,name=serviceStatus"`
 	// +kubebuilder:validation:Optional
-	DeploymentStatus K8sObjectStatus `json:"serviceStatus,omitempty" protobuf:"bytes,18,rep,name=deploymentStatus"`
+	DeploymentStatus KubernetesObjectStatus `json:"serviceStatus,omitempty" protobuf:"bytes,18,rep,name=deploymentStatus"`
 }
 
 type ModelDeploymentPhase string
@@ -439,13 +439,13 @@ const (
 	K8sObjectStatusUnknown K8sObjectStatusState = "unknown"
 )
 
-type K8sObjectStatus struct {
+type KubernetesObjectStatus struct {
 	// The object reference
 	// +kubebuilder:validation:Optional
-	Ref v1.ObjectReference `json:"ref,omitempty" protobuf:"bytes,1,opt,name=ref"`
+	Ref *v1.ObjectReference `json:"ref,omitempty" protobuf:"bytes,1,opt,name=ref"`
 	// The status of the object
 	// +kubebuilder:validation:Optional
-	Status K8sObjectStatusState `json:"status,omitempty" protobuf:"bytes,2,opt,name=status"`
+	Health *bool `json:"health,omitempty" protobuf:"bytes,2,opt,name=health"`
 }
 
 type PredictorletStatus struct {
@@ -492,9 +492,9 @@ type PredictorletStatus struct {
 	// +kubebuilder:validation:Optional
 	TrainingDatasetName string `json:"trainingDatasetName,omitempty" protobuf:"bytes,15,opt,name=trainingDatasetName"`
 	// +kubebuilder:validation:Optional
-	ServiceStatus K8sObjectStatus `json:"serviceStatus,omitempty" protobuf:"bytes,16,opt,name=serviceStatus"`
+	ServiceStatus KubernetesObjectStatus `json:"serviceStatus,omitempty" protobuf:"bytes,16,opt,name=serviceStatus"`
 	// +kubebuilder:validation:Optional
-	DeploymentStatus K8sObjectStatus `json:"serviceStatus,omitempty" protobuf:"bytes,17,opt,name=deploymentStatus"`
+	DeploymentStatus KubernetesObjectStatus `json:"serviceStatus,omitempty" protobuf:"bytes,17,opt,name=deploymentStatus"`
 }
 
 type MonitorStatus struct {

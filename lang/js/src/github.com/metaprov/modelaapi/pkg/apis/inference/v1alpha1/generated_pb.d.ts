@@ -703,27 +703,27 @@ export namespace ForecastSpec {
   }
 }
 
-export class K8sObjectStatus extends jspb.Message {
+export class KubernetesObjectStatus extends jspb.Message {
   getRef(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setRef(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): K8sObjectStatus;
+  setRef(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): KubernetesObjectStatus;
   hasRef(): boolean;
-  clearRef(): K8sObjectStatus;
+  clearRef(): KubernetesObjectStatus;
 
-  getStatus(): string;
-  setStatus(value: string): K8sObjectStatus;
+  getHealth(): boolean;
+  setHealth(value: boolean): KubernetesObjectStatus;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): K8sObjectStatus.AsObject;
-  static toObject(includeInstance: boolean, msg: K8sObjectStatus): K8sObjectStatus.AsObject;
-  static serializeBinaryToWriter(message: K8sObjectStatus, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): K8sObjectStatus;
-  static deserializeBinaryFromReader(message: K8sObjectStatus, reader: jspb.BinaryReader): K8sObjectStatus;
+  toObject(includeInstance?: boolean): KubernetesObjectStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: KubernetesObjectStatus): KubernetesObjectStatus.AsObject;
+  static serializeBinaryToWriter(message: KubernetesObjectStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): KubernetesObjectStatus;
+  static deserializeBinaryFromReader(message: KubernetesObjectStatus, reader: jspb.BinaryReader): KubernetesObjectStatus;
 }
 
-export namespace K8sObjectStatus {
+export namespace KubernetesObjectStatus {
   export type AsObject = {
     ref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    status: string,
+    health: boolean,
   }
 }
 
@@ -788,13 +788,13 @@ export class ModelDeploymentStatus extends jspb.Message {
   clearLastdailypredictionsList(): ModelDeploymentStatus;
   addLastdailypredictions(value: number, index?: number): ModelDeploymentStatus;
 
-  getServicestatus(): K8sObjectStatus | undefined;
-  setServicestatus(value?: K8sObjectStatus): ModelDeploymentStatus;
+  getServicestatus(): KubernetesObjectStatus | undefined;
+  setServicestatus(value?: KubernetesObjectStatus): ModelDeploymentStatus;
   hasServicestatus(): boolean;
   clearServicestatus(): ModelDeploymentStatus;
 
-  getDeploymentstatus(): K8sObjectStatus | undefined;
-  setDeploymentstatus(value?: K8sObjectStatus): ModelDeploymentStatus;
+  getDeploymentstatus(): KubernetesObjectStatus | undefined;
+  setDeploymentstatus(value?: KubernetesObjectStatus): ModelDeploymentStatus;
   hasDeploymentstatus(): boolean;
   clearDeploymentstatus(): ModelDeploymentStatus;
 
@@ -824,8 +824,8 @@ export namespace ModelDeploymentStatus {
     datadrift: boolean,
     conceptdrift: boolean,
     lastdailypredictionsList: Array<number>,
-    servicestatus?: K8sObjectStatus.AsObject,
-    deploymentstatus?: K8sObjectStatus.AsObject,
+    servicestatus?: KubernetesObjectStatus.AsObject,
+    deploymentstatus?: KubernetesObjectStatus.AsObject,
   }
 }
 
@@ -1715,13 +1715,13 @@ export class PredictorletStatus extends jspb.Message {
   getTrainingdatasetname(): string;
   setTrainingdatasetname(value: string): PredictorletStatus;
 
-  getServicestatus(): K8sObjectStatus | undefined;
-  setServicestatus(value?: K8sObjectStatus): PredictorletStatus;
+  getServicestatus(): KubernetesObjectStatus | undefined;
+  setServicestatus(value?: KubernetesObjectStatus): PredictorletStatus;
   hasServicestatus(): boolean;
   clearServicestatus(): PredictorletStatus;
 
-  getDeploymentstatus(): K8sObjectStatus | undefined;
-  setDeploymentstatus(value?: K8sObjectStatus): PredictorletStatus;
+  getDeploymentstatus(): KubernetesObjectStatus | undefined;
+  setDeploymentstatus(value?: KubernetesObjectStatus): PredictorletStatus;
   hasDeploymentstatus(): boolean;
   clearDeploymentstatus(): PredictorletStatus;
 
@@ -1750,8 +1750,8 @@ export namespace PredictorletStatus {
     deployedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     releasedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     trainingdatasetname: string,
-    servicestatus?: K8sObjectStatus.AsObject,
-    deploymentstatus?: K8sObjectStatus.AsObject,
+    servicestatus?: KubernetesObjectStatus.AsObject,
+    deploymentstatus?: KubernetesObjectStatus.AsObject,
   }
 }
 

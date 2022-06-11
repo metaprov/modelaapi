@@ -8636,6 +8636,9 @@ spec:
                       type: object
                     serviceStatus:
                       properties:
+                        health:
+                          description: The status of the object
+                          type: boolean
                         ref:
                           description: The object reference
                           properties:
@@ -8674,9 +8677,6 @@ spec:
                               description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                               type: string
                           type: object
-                        status:
-                          description: The status of the object
-                          type: string
                       type: object
                   type: object
                 type: array
@@ -8810,6 +8810,9 @@ spec:
                     type: object
                   serviceStatus:
                     properties:
+                      health:
+                        description: The status of the object
+                        type: boolean
                       ref:
                         description: The object reference
                         properties:
@@ -8847,9 +8850,6 @@ spec:
                             description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                             type: string
                         type: object
-                      status:
-                        description: The status of the object
-                        type: string
                     type: object
                   totalPredictions:
                     description: The total number of predictions served by the Predictor
