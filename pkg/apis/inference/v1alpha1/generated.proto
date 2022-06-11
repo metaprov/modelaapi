@@ -544,10 +544,6 @@ message ModelDeploymentStatus {
   // The predictions from the last 7 days
   // +kubebuilder:validation:Optional
   repeated int32 lastDailyPredictions = 16;
-
-  // The status of the kubernetes resources backing this model
-  // +kubebuilder:validation:Optional
-  repeated K8sObjectStatus resources = 17;
 }
 
 // ModelRecord hold the state of a model that was in production
@@ -1158,10 +1154,6 @@ message PredictorletStatus {
   // The dataset where this model was trained on
   // +kubebuilder:validation:Optional
   optional string trainingDatasetName = 15;
-
-  // The status of the kubernetes resources backing this model
-  // +kubebuilder:validation:Optional
-  repeated K8sObjectStatus resources = 16;
 }
 
 // ProgressiveSpec defines the specification to progressively deploy a model to production

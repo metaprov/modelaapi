@@ -8597,29 +8597,6 @@ spec:
                       description: ReleasedAt is the time that this model was released
                       format: date-time
                       type: string
-                    resources:
-                      description: The status of the kubernetes resources backing
-                        this model
-                      items:
-                        properties:
-                          age:
-                            description: The age of the resource
-                            format: date-time
-                            type: string
-                          kind:
-                            description: The object kind (e.g. deployment)
-                            type: string
-                          name:
-                            description: The object name
-                            type: string
-                          namespace:
-                            description: The object namespace
-                            type: string
-                          status:
-                            description: The status of the object
-                            type: string
-                        type: object
-                      type: array
                     serviceRef:
                       description: The service name that serves this model
                       properties:
@@ -8751,29 +8728,6 @@ spec:
                     description: ReleasedAt is the time that this model was released
                     format: date-time
                     type: string
-                  resources:
-                    description: The status of the kubernetes resources backing this
-                      model
-                    items:
-                      properties:
-                        age:
-                          description: The age of the resource
-                          format: date-time
-                          type: string
-                        kind:
-                          description: The object kind (e.g. deployment)
-                          type: string
-                        name:
-                          description: The object name
-                          type: string
-                        namespace:
-                          description: The object namespace
-                          type: string
-                        status:
-                          description: The status of the object
-                          type: string
-                      type: object
-                    type: array
                   serviceRef:
                     description: The service name that serves this model
                     properties:

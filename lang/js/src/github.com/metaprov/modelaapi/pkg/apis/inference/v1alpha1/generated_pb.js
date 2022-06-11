@@ -7557,7 +7557,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus.
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.repeatedFields_ = [16,17];
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.repeatedFields_ = [16];
 
 
 
@@ -7605,9 +7605,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentS
     releasedat: (f = msg.getReleasedat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     datadrift: (f = jspb.Message.getBooleanField(msg, 14)) == null ? undefined : f,
     conceptdrift: (f = jspb.Message.getBooleanField(msg, 15)) == null ? undefined : f,
-    lastdailypredictionsList: (f = jspb.Message.getRepeatedField(msg, 16)) == null ? undefined : f,
-    resourcesList: jspb.Message.toObjectList(msg.getResourcesList(),
-    proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus.toObject, includeInstance)
+    lastdailypredictionsList: (f = jspb.Message.getRepeatedField(msg, 16)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -7714,11 +7712,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentS
       for (var i = 0; i < values.length; i++) {
         msg.addLastdailypredictions(values[i]);
       }
-      break;
-    case 17:
-      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus;
-      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus.deserializeBinaryFromReader);
-      msg.addResources(value);
       break;
     default:
       reader.skipField();
@@ -7864,14 +7857,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentS
     writer.writeRepeatedInt32(
       16,
       f
-    );
-  }
-  f = message.getResourcesList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      17,
-      f,
-      proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus.serializeBinaryToWriter
     );
   }
 };
@@ -8456,44 +8441,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentS
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.clearLastdailypredictionsList = function() {
   return this.setLastdailypredictionsList([]);
-};
-
-
-/**
- * repeated K8sObjectStatus resources = 17;
- * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus>}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.getResourcesList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus, 17));
-};
-
-
-/**
- * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus>} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.setResourcesList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 17, value);
-};
-
-
-/**
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus=} opt_value
- * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.addResources = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 17, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.clearResourcesList = function() {
-  return this.setResourcesList([]);
 };
 
 
@@ -16099,7 +16046,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorletStatus.repeatedFields_ = [9,16];
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorletStatus.repeatedFields_ = [9];
 
 
 
@@ -16146,9 +16093,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorletStat
     phase: (f = jspb.Message.getField(msg, 12)) == null ? undefined : f,
     deployedat: (f = msg.getDeployedat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     releasedat: (f = msg.getReleasedat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
-    trainingdatasetname: (f = jspb.Message.getField(msg, 15)) == null ? undefined : f,
-    resourcesList: jspb.Message.toObjectList(msg.getResourcesList(),
-    proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus.toObject, includeInstance)
+    trainingdatasetname: (f = jspb.Message.getField(msg, 15)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -16251,11 +16196,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorletStat
     case 15:
       var value = /** @type {string} */ (reader.readString());
       msg.setTrainingdatasetname(value);
-      break;
-    case 16:
-      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus;
-      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus.deserializeBinaryFromReader);
-      msg.addResources(value);
       break;
     default:
       reader.skipField();
@@ -16394,14 +16334,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorletStat
     writer.writeString(
       15,
       f
-    );
-  }
-  f = message.getResourcesList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      16,
-      f,
-      proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus.serializeBinaryToWriter
     );
   }
 };
@@ -16950,44 +16882,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorletStat
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorletStatus.prototype.hasTrainingdatasetname = function() {
   return jspb.Message.getField(this, 15) != null;
-};
-
-
-/**
- * repeated K8sObjectStatus resources = 16;
- * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus>}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorletStatus.prototype.getResourcesList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus, 16));
-};
-
-
-/**
- * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus>} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorletStatus} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorletStatus.prototype.setResourcesList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 16, value);
-};
-
-
-/**
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus=} opt_value
- * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorletStatus.prototype.addResources = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 16, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.K8sObjectStatus, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorletStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorletStatus.prototype.clearResourcesList = function() {
-  return this.setResourcesList([]);
 };
 
 

@@ -415,7 +415,7 @@ type ModelDeploymentStatus struct {
 	LastDailyPredictions []int32 `json:"lastDailyPredictions,omitempty" protobuf:"bytes,16,rep,name=lastDailyPredictions"`
 	// The status of the kubernetes resources backing this model
 	// +kubebuilder:validation:Optional
-	Resources []K8sObjectStatus `json:"resources,omitempty" protobuf:"bytes,17,rep,name=resources"`
+	//Resources []K8sObjectStatus `json:"resources,omitempty" protobuf:"bytes,17,rep,name=resources"`
 }
 
 type ModelDeploymentPhase string
@@ -501,7 +501,7 @@ type PredictorletStatus struct {
 	TrainingDatasetName string `json:"trainingDatasetName,omitempty" protobuf:"bytes,15,opt,name=trainingDatasetName"`
 	// The status of the kubernetes resources backing this model
 	// +kubebuilder:validation:Optional
-	Resources []K8sObjectStatus `json:"resources,omitempty" protobuf:"bytes,16,rep,name=resources"`
+	//Resources []K8sObjectStatus `json:"resources,omitempty" protobuf:"bytes,16,rep,name=resources"`
 }
 
 type MonitorStatus struct {

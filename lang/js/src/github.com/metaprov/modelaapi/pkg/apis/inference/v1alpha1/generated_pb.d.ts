@@ -800,11 +800,6 @@ export class ModelDeploymentStatus extends jspb.Message {
   clearLastdailypredictionsList(): ModelDeploymentStatus;
   addLastdailypredictions(value: number, index?: number): ModelDeploymentStatus;
 
-  getResourcesList(): Array<K8sObjectStatus>;
-  setResourcesList(value: Array<K8sObjectStatus>): ModelDeploymentStatus;
-  clearResourcesList(): ModelDeploymentStatus;
-  addResources(value?: K8sObjectStatus, index?: number): K8sObjectStatus;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelDeploymentStatus.AsObject;
   static toObject(includeInstance: boolean, msg: ModelDeploymentStatus): ModelDeploymentStatus.AsObject;
@@ -831,7 +826,6 @@ export namespace ModelDeploymentStatus {
     datadrift: boolean,
     conceptdrift: boolean,
     lastdailypredictionsList: Array<number>,
-    resourcesList: Array<K8sObjectStatus.AsObject>,
   }
 }
 
@@ -1721,11 +1715,6 @@ export class PredictorletStatus extends jspb.Message {
   getTrainingdatasetname(): string;
   setTrainingdatasetname(value: string): PredictorletStatus;
 
-  getResourcesList(): Array<K8sObjectStatus>;
-  setResourcesList(value: Array<K8sObjectStatus>): PredictorletStatus;
-  clearResourcesList(): PredictorletStatus;
-  addResources(value?: K8sObjectStatus, index?: number): K8sObjectStatus;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PredictorletStatus.AsObject;
   static toObject(includeInstance: boolean, msg: PredictorletStatus): PredictorletStatus.AsObject;
@@ -1751,7 +1740,6 @@ export namespace PredictorletStatus {
     deployedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     releasedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     trainingdatasetname: string,
-    resourcesList: Array<K8sObjectStatus.AsObject>,
   }
 }
 
