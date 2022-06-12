@@ -366,55 +366,61 @@ type PredictorAuthSpec struct {
 }
 
 type ModelDeploymentStatus struct {
+	// The model name
+	// +kubebuilder:validation:Optional
+	ModelName string `json:"modelName,omitempty" protobuf:"bytes,1,opt,name=modelName"`
+	// The version
+	// +kubebuilder:validation:Optional
+	ModelVersion string `json:"modelVersion,omitempty" protobuf:"bytes,2,opt,name=modelVersion"`
 	// The model image name
 	// +kubebuilder:validation:Optional
-	ImageName string `json:"imageName,omitempty" protobuf:"bytes,1,opt,name=imageName"`
+	ImageName string `json:"imageName,omitempty" protobuf:"bytes,3,opt,name=imageName"`
 	// The deployment name that serves this model
 	// +kubebuilder:validation:Optional
-	DeploymentRef v1.ObjectReference `json:"deploymentRef,omitempty" protobuf:"bytes,2,opt,name=deploymentRef"`
+	DeploymentRef v1.ObjectReference `json:"deploymentRef,omitempty" protobuf:"bytes,4,opt,name=deploymentRef"`
 	// The service name that serves this model
 	// +kubebuilder:validation:Optional
-	ServiceRef v1.ObjectReference `json:"serviceRef,omitempty" protobuf:"bytes,3,opt,name=serviceRef"`
+	ServiceRef v1.ObjectReference `json:"serviceRef,omitempty" protobuf:"bytes,5,opt,name=serviceRef"`
 	// the name of the horizonal pod autoscaler, if autoscaling is true
 	// +kubebuilder:validation:Optional
-	HPAName string `json:"hpaName,omitempty" protobuf:"bytes,4,opt,name=hpaName"`
+	HPARef v1.ObjectReference `json:"hpaRef,omitempty" protobuf:"bytes,6,opt,name=hpaRef"`
 	// P50 latency
 	// +kubebuilder:validation:Optional
-	P50 float64 `json:"p50,omitempty" protobuf:"bytes,5,opt,name=p50"`
+	P50 float64 `json:"p50,omitempty" protobuf:"bytes,7,opt,name=p50"`
 	// P95 latency
 	// +kubebuilder:validation:Optional
-	P95 float64 `json:"p95,omitempty" protobuf:"bytes,6,opt,name=p95"`
+	P95 float64 `json:"p95,omitempty" protobuf:"bytes,8,opt,name=p95"`
 	// P99 is the 99% latency of the model
 	// +kubebuilder:validation:Optional
-	P99 float64 `json:"p99,omitempty" protobuf:"bytes,7,opt,name=p99"`
+	P99 float64 `json:"p99,omitempty" protobuf:"bytes,9,opt,name=p99"`
 	// Last prediction time is the time of the last prediction
 	// +kubebuilder:validation:Optional
-	LastPredictionTime *metav1.Time `json:"lastPredictionTime,omitempty" protobuf:"bytes,8,opt,name=lastPredictionTime"`
+	LastPredictionTime *metav1.Time `json:"lastPredictionTime,omitempty" protobuf:"bytes,10,opt,name=lastPredictionTime"`
 	// +kubebuilder:validation:Optional
-	DailyPredictionAvg int32 `json:"dailyPredictionAvg,omitempty" protobuf:"varint,9,opt,name=dailyPredictionAvg"`
+	DailyPredictionAvg int32 `json:"dailyPredictionAvg,omitempty" protobuf:"varint,11,opt,name=dailyPredictionAvg"`
 	// LastFailure is the last failure that occur with the model
 	// +kubebuilder:validation:Optional
-	LastFailure string `json:"lastFailure,omitempty" protobuf:"bytes,10,opt,name=lastFailure"`
+	LastFailure string `json:"lastFailure,omitempty" protobuf:"bytes,12,opt,name=lastFailure"`
 	// Phase is the current phase of this model deployment
 	// +kubebuilder:validation:Optional
-	Phase ModelDeploymentPhase `json:"phase,omitempty" protobuf:"bytes,11,opt,name=phase"`
+	Phase ModelDeploymentPhase `json:"phase,omitempty" protobuf:"bytes,13,opt,name=phase"`
 	// DeployedAt is the last time that this model was deployed
 	// +kubebuilder:validation:Optional
-	DeployedAt *metav1.Time `json:"deployedAt,omitempty" protobuf:"bytes,12,opt,name=deployedAt"`
+	DeployedAt *metav1.Time `json:"deployedAt,omitempty" protobuf:"bytes,14,opt,name=deployedAt"`
 	// ReleasedAt is the time that this model was released
 	// +kubebuilder:validation:Optional
-	ReleasedAt *metav1.Time `json:"releasedAt,omitempty" protobuf:"bytes,13,opt,name=releasedAt"`
+	ReleasedAt *metav1.Time `json:"releasedAt,omitempty" protobuf:"bytes,15,opt,name=releasedAt"`
 	// Indicates if a data drift has been detected based on incoming prediction data
 	// +kubebuilder:validation:Optional
-	DataDrift bool `json:"dataDrift,omitempty" protobuf:"varint,14,opt,name=dataDrift"`
+	DataDrift bool `json:"dataDrift,omitempty" protobuf:"varint,16,opt,name=dataDrift"`
 	// Indicates if a concept drift has been detected based on incoming prediction data
 	// +kubebuilder:validation:Optional
-	ConceptDrift bool `json:"conceptDrift,omitempty" protobuf:"varint,15,opt,name=conceptDrift"`
+	ConceptDrift bool `json:"conceptDrift,omitempty" protobuf:"varint,17,opt,name=conceptDrift"`
 	// The predictions from the last 7 days
 	// +kubebuilder:validation:Optional
-	LastDailyPredictions []int32 `json:"lastDailyPredictions,omitempty" protobuf:"bytes,16,rep,name=lastDailyPredictions"`
+	LastDailyPredictions []int32 `json:"lastDailyPredictions,omitempty" protobuf:"bytes,18,rep,name=lastDailyPredictions"`
 	// +kubebuilder:validation:Optional
-	ObjectStatuses []KubernetesObjectStatus `json:"objectStatuses,omitempty" protobuf:"bytes,17,rep,name=objectStatuses"`
+	ObjectStatuses []KubernetesObjectStatus `json:"objectStatuses,omitempty" protobuf:"bytes,19,rep,name=objectStatuses"`
 }
 
 type ModelDeploymentPhase string

@@ -470,71 +470,79 @@ message KubernetesObjectStatus {
 }
 
 message ModelDeploymentStatus {
+  // The model name
+  // +kubebuilder:validation:Optional
+  optional string modelName = 1;
+
+  // The version
+  // +kubebuilder:validation:Optional
+  optional string modelVersion = 2;
+
   // The model image name
   // +kubebuilder:validation:Optional
-  optional string imageName = 1;
+  optional string imageName = 3;
 
   // The deployment name that serves this model
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference deploymentRef = 2;
+  optional k8s.io.api.core.v1.ObjectReference deploymentRef = 4;
 
   // The service name that serves this model
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference serviceRef = 3;
+  optional k8s.io.api.core.v1.ObjectReference serviceRef = 5;
 
   // the name of the horizonal pod autoscaler, if autoscaling is true
   // +kubebuilder:validation:Optional
-  optional string hpaName = 4;
+  optional k8s.io.api.core.v1.ObjectReference hpaRef = 6;
 
   // P50 latency
   // +kubebuilder:validation:Optional
-  optional double p50 = 5;
+  optional double p50 = 7;
 
   // P95 latency
   // +kubebuilder:validation:Optional
-  optional double p95 = 6;
+  optional double p95 = 8;
 
   // P99 is the 99% latency of the model
   // +kubebuilder:validation:Optional
-  optional double p99 = 7;
+  optional double p99 = 9;
 
   // Last prediction time is the time of the last prediction
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastPredictionTime = 8;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastPredictionTime = 10;
 
   // +kubebuilder:validation:Optional
-  optional int32 dailyPredictionAvg = 9;
+  optional int32 dailyPredictionAvg = 11;
 
   // LastFailure is the last failure that occur with the model
   // +kubebuilder:validation:Optional
-  optional string lastFailure = 10;
+  optional string lastFailure = 12;
 
   // Phase is the current phase of this model deployment
   // +kubebuilder:validation:Optional
-  optional string phase = 11;
+  optional string phase = 13;
 
   // DeployedAt is the last time that this model was deployed
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time deployedAt = 12;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time deployedAt = 14;
 
   // ReleasedAt is the time that this model was released
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time releasedAt = 13;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time releasedAt = 15;
 
   // Indicates if a data drift has been detected based on incoming prediction data
   // +kubebuilder:validation:Optional
-  optional bool dataDrift = 14;
+  optional bool dataDrift = 16;
 
   // Indicates if a concept drift has been detected based on incoming prediction data
   // +kubebuilder:validation:Optional
-  optional bool conceptDrift = 15;
+  optional bool conceptDrift = 17;
 
   // The predictions from the last 7 days
   // +kubebuilder:validation:Optional
-  repeated int32 lastDailyPredictions = 16;
+  repeated int32 lastDailyPredictions = 18;
 
   // +kubebuilder:validation:Optional
-  repeated KubernetesObjectStatus objectStatuses = 17;
+  repeated KubernetesObjectStatus objectStatuses = 19;
 }
 
 // ModelRecord hold the state of a model that was in production

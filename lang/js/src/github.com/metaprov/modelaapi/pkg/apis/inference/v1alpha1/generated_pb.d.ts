@@ -728,6 +728,12 @@ export namespace KubernetesObjectStatus {
 }
 
 export class ModelDeploymentStatus extends jspb.Message {
+  getModelname(): string;
+  setModelname(value: string): ModelDeploymentStatus;
+
+  getModelversion(): string;
+  setModelversion(value: string): ModelDeploymentStatus;
+
   getImagename(): string;
   setImagename(value: string): ModelDeploymentStatus;
 
@@ -741,8 +747,10 @@ export class ModelDeploymentStatus extends jspb.Message {
   hasServiceref(): boolean;
   clearServiceref(): ModelDeploymentStatus;
 
-  getHpaname(): string;
-  setHpaname(value: string): ModelDeploymentStatus;
+  getHparef(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setHparef(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ModelDeploymentStatus;
+  hasHparef(): boolean;
+  clearHparef(): ModelDeploymentStatus;
 
   getP50(): number;
   setP50(value: number): ModelDeploymentStatus;
@@ -803,10 +811,12 @@ export class ModelDeploymentStatus extends jspb.Message {
 
 export namespace ModelDeploymentStatus {
   export type AsObject = {
+    modelname: string,
+    modelversion: string,
     imagename: string,
     deploymentref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     serviceref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    hpaname: string,
+    hparef?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     p50: number,
     p95: number,
     p99: number,

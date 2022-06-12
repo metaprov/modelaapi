@@ -660,6 +660,7 @@ func (in *ModelDeploymentStatus) DeepCopyInto(out *ModelDeploymentStatus) {
 	*out = *in
 	out.DeploymentRef = in.DeploymentRef
 	out.ServiceRef = in.ServiceRef
+	out.HPARef = in.HPARef
 	if in.LastPredictionTime != nil {
 		in, out := &in.LastPredictionTime, &out.LastPredictionTime
 		*out = (*in).DeepCopy()
