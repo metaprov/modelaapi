@@ -812,7 +812,7 @@ const (
 // Estimators
 //==============================================================================
 
-// +kubebuilder:validation:Enum="knn-regressor";"ridge-regressor";"lasso-regressor";"ada-boost-regressor";"decision-tree-regressor";"extra-tree-regressor";"linear-svr";"svr";"passive-agressive-regressor";"sgd-regressor";"gradient-boosting-regressor";"random-forest-regressor";"xgb-regressor";"catboost-regressor";"sgd-regressor";"gradient-boosting-regressor";"random-forest-regressor";"xgb-regressor";"catboost-regressor";"lightgbm-regressor";"elasticnet-regressor";"dnn-regressor";"elliptic-envelope";"one-class-svm";"isolation-forest";"local-outlier-factor";"prophet";"knn-classifier";"ada-boost-classifier";"bernoulli-nb";"decision-tree-classifier";"extra-tree-classifier";"linear-svc";"svc";"passive-aggressive-classifier";"sgd-classifier";"logistic-regression";"gradient-boosting-classifier";"random-forest-classifier";"xgboost-classifier";"ridge-classifier";"quadratic-discriminant";"linear-discriminant";"lightgbm-classifier";"catboost-classifier";"stacking-ensemble";"none";"arima";"auto-arima";"vrima";"exponential-smoothing";"fast-fourier-transform";"nbeats";"theata-method";"als";"bayesian-personalized-ranking";"voting-classifier";"voting-regressor";"stacking-classifier";"stacking-regressor";"hist-gradient-boosting-classifier";"hist-gradient-boosting-regressor";"linear-regression"
+// +kubebuilder:validation:Enum="knn-regressor";"ridge-regressor";"lasso-regressor";"ada-boost-regressor";"decision-tree-regressor";"extra-tree-regressor";"linear-svr";"svr";"passive-agressive-regressor";"sgd-regressor";"gradient-boosting-regressor";"random-forest-regressor";"xgb-regressor";"catboost-regressor";"sgd-regressor";"gradient-boosting-regressor";"random-forest-regressor";"xgb-regressor";"catboost-regressor";"lightgbm-regressor";"elasticnet-regressor";"dnn-regressor";"elliptic-envelope";"one-class-svm";"isolation-forest";"local-outlier-factor";"prophet";"knn-classifier";"ada-boost-classifier";"decision-tree-classifier";"extra-tree-classifier";"linear-svc";"svc";"passive-aggressive-classifier";"sgd-classifier";"logistic-regression";"gradient-boosting-classifier";"random-forest-classifier";"xgboost-classifier";"ridge-classifier";"quadratic-discriminant";"linear-discriminant";"lightgbm-classifier";"catboost-classifier";"stacking-ensemble";"none";"arima";"auto-arima";"vrima";"exponential-smoothing";"fast-fourier-transform";"nbeats";"theata-method";"als";"bayesian-personalized-ranking";"voting-classifier";"voting-regressor";"stacking-classifier";"stacking-regressor";"hist-gradient-boosting-classifier";"hist-gradient-boosting-regressor";"linear-regression";"bernoulli-nb";"gaussian-nb";"multinomial-nb";
 type ClassicEstimatorName string
 
 const (
@@ -858,9 +858,12 @@ const (
 	BayesianPersonalizedRanking ClassicEstimatorName = "bayesian-personalized-ranking"
 
 	// Classifiers
-	KNeighborsClassifier           ClassicEstimatorName = "knn-classifier"
-	AdaBoostClassifier             ClassicEstimatorName = "ada-boost-classifier"
-	BernoulliNB                    ClassicEstimatorName = "bernoulli-nb"
+	KNeighborsClassifier ClassicEstimatorName = "knn-classifier"
+	AdaBoostClassifier   ClassicEstimatorName = "ada-boost-classifier"
+	BernoulliNB          ClassicEstimatorName = "bernoulli-nb"
+	GaussianNB           ClassicEstimatorName = "gaussian-nb"
+	MultinomialNB        ClassicEstimatorName = "multinomial-nb"
+
 	DecisionTreeClassifier         ClassicEstimatorName = "decision-tree-classifier"
 	ExtraTreeClassifier            ClassicEstimatorName = "extra-tree-classifier"
 	LinearSVC                      ClassicEstimatorName = "linear-svc"

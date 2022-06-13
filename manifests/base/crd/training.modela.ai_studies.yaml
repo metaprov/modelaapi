@@ -140,7 +140,6 @@ spec:
                       - prophet
                       - knn-classifier
                       - ada-boost-classifier
-                      - bernoulli-nb
                       - decision-tree-classifier
                       - extra-tree-classifier
                       - linear-svc
@@ -174,6 +173,9 @@ spec:
                       - hist-gradient-boosting-classifier
                       - hist-gradient-boosting-regressor
                       - linear-regression
+                      - bernoulli-nb
+                      - gaussian-nb
+                      - multinomial-nb
                       type: string
                     type: array
                   enabled:
@@ -342,7 +344,6 @@ spec:
                     - prophet
                     - knn-classifier
                     - ada-boost-classifier
-                    - bernoulli-nb
                     - decision-tree-classifier
                     - extra-tree-classifier
                     - linear-svc
@@ -376,6 +377,9 @@ spec:
                     - hist-gradient-boosting-classifier
                     - hist-gradient-boosting-regressor
                     - linear-regression
+                    - bernoulli-nb
+                    - gaussian-nb
+                    - multinomial-nb
                     type: string
                   featureSelectionTemplate:
                     description: Specification for feature selection. successful study.
@@ -1708,7 +1712,6 @@ spec:
                           - prophet
                           - knn-classifier
                           - ada-boost-classifier
-                          - bernoulli-nb
                           - decision-tree-classifier
                           - extra-tree-classifier
                           - linear-svc
@@ -1742,6 +1745,9 @@ spec:
                           - hist-gradient-boosting-classifier
                           - hist-gradient-boosting-regressor
                           - linear-regression
+                          - bernoulli-nb
+                          - gaussian-nb
+                          - multinomial-nb
                           type: string
                         type: array
                     type: object
