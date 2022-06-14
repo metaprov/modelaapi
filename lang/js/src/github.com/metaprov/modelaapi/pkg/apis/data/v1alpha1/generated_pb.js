@@ -25995,6 +25995,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.toObjec
     reporturi: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     profileuri: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     imbalanced: (f = jspb.Message.getBooleanField(msg, 6)) == null ? undefined : f,
+    anomaliesuri: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
     observedgeneration: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
     validationresultsList: jspb.Message.toObjectList(msg.getValidationresultsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataValidationResult.toObject, includeInstance),
@@ -26071,6 +26072,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.deseria
     case 6:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setImbalanced(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setAnomaliesuri(value);
       break;
     case 8:
       var value = /** @type {number} */ (reader.readInt64());
@@ -26205,6 +26210,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.seriali
   if (f != null) {
     writer.writeBool(
       6,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 7));
+  if (f != null) {
+    writer.writeString(
+      7,
       f
     );
   }
@@ -26531,6 +26543,42 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.prototy
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.hasImbalanced = function() {
   return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional string anomaliesUri = 7;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.getAnomaliesuri = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.setAnomaliesuri = function(value) {
+  return jspb.Message.setField(this, 7, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.clearAnomaliesuri = function() {
+  return jspb.Message.setField(this, 7, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.hasAnomaliesuri = function() {
+  return jspb.Message.getField(this, 7) != null;
 };
 
 

@@ -334,7 +334,8 @@ proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile.toObject =
     columnsList: jspb.Message.toObjectList(msg.getColumnsList(),
     proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.toObject, includeInstance),
     table: (f = msg.getTable()) && proto.github.com.metaprov.modelaapi.services.common.v1.TableView.toObject(includeInstance, f),
-    hash: jspb.Message.getFieldWithDefault(msg, 8, "")
+    hash: jspb.Message.getFieldWithDefault(msg, 8, ""),
+    anomalyuri: jspb.Message.getFieldWithDefault(msg, 9, "")
   };
 
   if (includeInstance) {
@@ -405,6 +406,10 @@ proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile.deserializ
     case 8:
       var value = /** @type {string} */ (reader.readString());
       msg.setHash(value);
+      break;
+    case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setAnomalyuri(value);
       break;
     default:
       reader.skipField();
@@ -491,6 +496,13 @@ proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile.serializeB
   if (f.length > 0) {
     writer.writeString(
       8,
+      f
+    );
+  }
+  f = message.getAnomalyuri();
+  if (f.length > 0) {
+    writer.writeString(
+      9,
       f
     );
   }
@@ -697,6 +709,24 @@ proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile.prototype.
  */
 proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile.prototype.setHash = function(value) {
   return jspb.Message.setProto3StringField(this, 8, value);
+};
+
+
+/**
+ * optional string anomalyURI = 9;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile.prototype.getAnomalyuri = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile.prototype.setAnomalyuri = function(value) {
+  return jspb.Message.setProto3StringField(this, 9, value);
 };
 
 

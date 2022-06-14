@@ -214,6 +214,10 @@ type DatasetStatus struct {
 	// Whether or not the data was detected as imbalanced
 	//+kubebuilder:validation:Optional
 	Imbalanced bool `json:"imbalanced,omitempty" protobuf:"bytes,6,opt,name=imbalanced"`
+	// The location of anomaly file. The file contain the list of rows that were marked as anomaly by an isolation forest.
+	// algorithm
+	// +kubebuilder:validation:Optional
+	AnomaliesUri string `json:"anomaliesUri" protobuf:"bytes,7,opt,name=anomaliesUri"`
 	// ObservedGeneration is the last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,8,opt,name=observedGeneration"`

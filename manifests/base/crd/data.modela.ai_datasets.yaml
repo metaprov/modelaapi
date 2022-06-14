@@ -662,6 +662,10 @@ spec:
           status:
             description: DatasetStatus defines the observed state of a Dataset object
             properties:
+              anomaliesUri:
+                description: The location of anomaly file. The file contain the list
+                  of rows that were marked as anomaly by an isolation forest. algorithm
+                type: string
               conditions:
                 items:
                   description: DatasetCondition describes the state of a dataset at

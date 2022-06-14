@@ -12,6 +12,7 @@ message DatasetProfile {
   repeated ColumnProfile   columns = 6;
   TableView    table = 7;
   string       hash = 8; // signature of the dataset profile.
+  string       anomalyURI = 9;
 }
 
 /////////////////////////////////////////////////////////////////////////

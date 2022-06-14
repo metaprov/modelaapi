@@ -2338,6 +2338,9 @@ export class DatasetStatus extends jspb.Message {
   getImbalanced(): boolean;
   setImbalanced(value: boolean): DatasetStatus;
 
+  getAnomaliesuri(): string;
+  setAnomaliesuri(value: string): DatasetStatus;
+
   getObservedgeneration(): number;
   setObservedgeneration(value: number): DatasetStatus;
 
@@ -2412,6 +2415,7 @@ export namespace DatasetStatus {
     reporturi: string,
     profileuri: string,
     imbalanced: boolean,
+    anomaliesuri: string,
     observedgeneration: number,
     validationresultsList: Array<DataValidationResult.AsObject>,
     laststudytime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
