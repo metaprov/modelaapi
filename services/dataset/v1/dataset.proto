@@ -219,7 +219,14 @@ message SnapshotResponse {
 }
 
 
+message GetAnomaliesRequest {
+    string namespace = 1;
+    string name      = 2;
+}
 
+message GetAnomaliesResponse {
+    github.com.metaprov.modelaapi.services.common.v1.TableView   table   =1;
+}
 
 
 
@@ -294,4 +301,14 @@ service DatasetService {
     rpc ExecuteSql(ExecuteSqlRequest) returns (ExecuteSqlResponse) {
         option (google.api.http).post = "/v1/datasets/{connectionNamespace}/{connectionName}:executesql";
     }
+
+    rpc GetAnomalies(GetAnomaliesRequest) returns (GetAnomaliesResponse) {
+        option (google.api.http).get = "/v1/models/{namespace}/{name}:anomalies";
+    }
+
+
+
+
+
+
 }

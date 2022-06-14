@@ -835,3 +835,45 @@ export namespace SnapshotResponse {
   }
 }
 
+export class GetAnomaliesRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): GetAnomaliesRequest;
+
+  getName(): string;
+  setName(value: string): GetAnomaliesRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetAnomaliesRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetAnomaliesRequest): GetAnomaliesRequest.AsObject;
+  static serializeBinaryToWriter(message: GetAnomaliesRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetAnomaliesRequest;
+  static deserializeBinaryFromReader(message: GetAnomaliesRequest, reader: jspb.BinaryReader): GetAnomaliesRequest;
+}
+
+export namespace GetAnomaliesRequest {
+  export type AsObject = {
+    namespace: string,
+    name: string,
+  }
+}
+
+export class GetAnomaliesResponse extends jspb.Message {
+  getTable(): github_com_metaprov_modelaapi_services_common_v1_common_pb.TableView | undefined;
+  setTable(value?: github_com_metaprov_modelaapi_services_common_v1_common_pb.TableView): GetAnomaliesResponse;
+  hasTable(): boolean;
+  clearTable(): GetAnomaliesResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetAnomaliesResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetAnomaliesResponse): GetAnomaliesResponse.AsObject;
+  static serializeBinaryToWriter(message: GetAnomaliesResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetAnomaliesResponse;
+  static deserializeBinaryFromReader(message: GetAnomaliesResponse, reader: jspb.BinaryReader): GetAnomaliesResponse;
+}
+
+export namespace GetAnomaliesResponse {
+  export type AsObject = {
+    table?: github_com_metaprov_modelaapi_services_common_v1_common_pb.TableView.AsObject,
+  }
+}
+

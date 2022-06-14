@@ -41,6 +41,7 @@ type DatasetServiceClient interface {
 	GetDatabases(ctx context.Context, in *GetDatabasesRequest, opts ...grpc.CallOption) (*GetDatabasesResponse, error)
 	GetTables(ctx context.Context, in *GetTablesRequest, opts ...grpc.CallOption) (*GetTablesResponse, error)
 	ExecuteSql(ctx context.Context, in *ExecuteSqlRequest, opts ...grpc.CallOption) (*ExecuteSqlResponse, error)
+	GetAnomalies(ctx context.Context, in *GetAnomaliesRequest, opts ...grpc.CallOption) (*GetAnomaliesResponse, error)
 }
 
 type datasetServiceClient struct {
@@ -186,6 +187,15 @@ func (c *datasetServiceClient) ExecuteSql(ctx context.Context, in *ExecuteSqlReq
 	return out, nil
 }
 
+func (c *datasetServiceClient) GetAnomalies(ctx context.Context, in *GetAnomaliesRequest, opts ...grpc.CallOption) (*GetAnomaliesResponse, error) {
+	out := new(GetAnomaliesResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/GetAnomalies", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // DatasetServiceServer is the server API for DatasetService service.
 // All implementations must embed UnimplementedDatasetServiceServer
 // for forward compatibility
@@ -209,6 +219,7 @@ type DatasetServiceServer interface {
 	GetDatabases(context.Context, *GetDatabasesRequest) (*GetDatabasesResponse, error)
 	GetTables(context.Context, *GetTablesRequest) (*GetTablesResponse, error)
 	ExecuteSql(context.Context, *ExecuteSqlRequest) (*ExecuteSqlResponse, error)
+	GetAnomalies(context.Context, *GetAnomaliesRequest) (*GetAnomaliesResponse, error)
 	mustEmbedUnimplementedDatasetServiceServer()
 }
 
@@ -260,6 +271,9 @@ func (UnimplementedDatasetServiceServer) GetTables(context.Context, *GetTablesRe
 }
 func (UnimplementedDatasetServiceServer) ExecuteSql(context.Context, *ExecuteSqlRequest) (*ExecuteSqlResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExecuteSql not implemented")
+}
+func (UnimplementedDatasetServiceServer) GetAnomalies(context.Context, *GetAnomaliesRequest) (*GetAnomaliesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAnomalies not implemented")
 }
 func (UnimplementedDatasetServiceServer) mustEmbedUnimplementedDatasetServiceServer() {}
 
@@ -544,6 +558,24 @@ func _DatasetService_ExecuteSql_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
+func _DatasetService_GetAnomalies_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAnomaliesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatasetServiceServer).GetAnomalies(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/GetAnomalies",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatasetServiceServer).GetAnomalies(ctx, req.(*GetAnomaliesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // DatasetService_ServiceDesc is the grpc.ServiceDesc for DatasetService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -610,6 +642,10 @@ var DatasetService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ExecuteSql",
 			Handler:    _DatasetService_ExecuteSql_Handler,
+		},
+		{
+			MethodName: "GetAnomalies",
+			Handler:    _DatasetService_GetAnomalies_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

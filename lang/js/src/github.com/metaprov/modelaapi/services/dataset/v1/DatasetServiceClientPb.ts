@@ -680,5 +680,48 @@ export class DatasetServiceClient {
     this.methodInfoExecuteSql);
   }
 
+  methodInfoGetAnomalies = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/GetAnomalies',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetAnomaliesRequest,
+    github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetAnomaliesResponse,
+    (request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetAnomaliesRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetAnomaliesResponse.deserializeBinary
+  );
+
+  getAnomalies(
+    request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetAnomaliesRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetAnomaliesResponse>;
+
+  getAnomalies(
+    request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetAnomaliesRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetAnomaliesResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetAnomaliesResponse>;
+
+  getAnomalies(
+    request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetAnomaliesRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetAnomaliesResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/GetAnomalies',
+        request,
+        metadata || {},
+        this.methodInfoGetAnomalies,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/GetAnomalies',
+    request,
+    metadata || {},
+    this.methodInfoGetAnomalies);
+  }
+
 }
 
