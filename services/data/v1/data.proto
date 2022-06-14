@@ -345,16 +345,6 @@ message DsGetTableViewResponse {
     github.com.metaprov.modelaapi.services.common.v1.TableView tableview = 1;
 }
 
-message DsGetMisclassTableViewRequest {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket     bucket = 1;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection        connection = 2;
-    map<string,bytes>                                                       secret =3;
-    string                                                                  key = 4;
-}
-
-message DsGetMisclassTableViewResponse {
-    github.com.metaprov.modelaapi.services.common.v1.TableView tableview = 1;
-}
 
 
 
@@ -645,8 +635,6 @@ service DataService {
     rpc InferSchema(DsInferSchemaRequest) returns (DsInferSchemaResponse) {}
     // Just infer the datasource, do no plots
     rpc GetTableView(DsGetTableViewRequest) returns (DsGetTableViewResponse) {}
-    // Just infer the datasource, do no plots
-    rpc GetMisclassTableView(DsGetMisclassTableViewRequest) returns (DsGetMisclassTableViewResponse) {}
     // split the dataset to rungs
     rpc SplitDatasetToRungs(DsSplitDatasetToRungsRequest) returns (DsSplitDatasetToRungsResponse) {}
     // create dataset profile

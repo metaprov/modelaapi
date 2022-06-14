@@ -46,8 +46,6 @@ type DataServiceClient interface {
 	InferSchema(ctx context.Context, in *DsInferSchemaRequest, opts ...grpc.CallOption) (*DsInferSchemaResponse, error)
 	// Just infer the datasource, do no plots
 	GetTableView(ctx context.Context, in *DsGetTableViewRequest, opts ...grpc.CallOption) (*DsGetTableViewResponse, error)
-	// Just infer the datasource, do no plots
-	GetMisclassTableView(ctx context.Context, in *DsGetMisclassTableViewRequest, opts ...grpc.CallOption) (*DsGetMisclassTableViewResponse, error)
 	// split the dataset to rungs
 	SplitDatasetToRungs(ctx context.Context, in *DsSplitDatasetToRungsRequest, opts ...grpc.CallOption) (*DsSplitDatasetToRungsResponse, error)
 	// create dataset profile
@@ -202,15 +200,6 @@ func (c *dataServiceClient) InferSchema(ctx context.Context, in *DsInferSchemaRe
 func (c *dataServiceClient) GetTableView(ctx context.Context, in *DsGetTableViewRequest, opts ...grpc.CallOption) (*DsGetTableViewResponse, error) {
 	out := new(DsGetTableViewResponse)
 	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/GetTableView", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *dataServiceClient) GetMisclassTableView(ctx context.Context, in *DsGetMisclassTableViewRequest, opts ...grpc.CallOption) (*DsGetMisclassTableViewResponse, error) {
-	out := new(DsGetMisclassTableViewResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/GetMisclassTableView", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -497,8 +486,6 @@ type DataServiceServer interface {
 	InferSchema(context.Context, *DsInferSchemaRequest) (*DsInferSchemaResponse, error)
 	// Just infer the datasource, do no plots
 	GetTableView(context.Context, *DsGetTableViewRequest) (*DsGetTableViewResponse, error)
-	// Just infer the datasource, do no plots
-	GetMisclassTableView(context.Context, *DsGetMisclassTableViewRequest) (*DsGetMisclassTableViewResponse, error)
 	// split the dataset to rungs
 	SplitDatasetToRungs(context.Context, *DsSplitDatasetToRungsRequest) (*DsSplitDatasetToRungsResponse, error)
 	// create dataset profile
@@ -583,9 +570,6 @@ func (UnimplementedDataServiceServer) InferSchema(context.Context, *DsInferSchem
 }
 func (UnimplementedDataServiceServer) GetTableView(context.Context, *DsGetTableViewRequest) (*DsGetTableViewResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetTableView not implemented")
-}
-func (UnimplementedDataServiceServer) GetMisclassTableView(context.Context, *DsGetMisclassTableViewRequest) (*DsGetMisclassTableViewResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetMisclassTableView not implemented")
 }
 func (UnimplementedDataServiceServer) SplitDatasetToRungs(context.Context, *DsSplitDatasetToRungsRequest) (*DsSplitDatasetToRungsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SplitDatasetToRungs not implemented")
@@ -896,24 +880,6 @@ func _DataService_GetTableView_Handler(srv interface{}, ctx context.Context, dec
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DataServiceServer).GetTableView(ctx, req.(*DsGetTableViewRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DataService_GetMisclassTableView_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DsGetMisclassTableViewRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DataServiceServer).GetMisclassTableView(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/GetMisclassTableView",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DataServiceServer).GetMisclassTableView(ctx, req.(*DsGetMisclassTableViewRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1476,10 +1442,6 @@ var DataService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetTableView",
 			Handler:    _DataService_GetTableView_Handler,
-		},
-		{
-			MethodName: "GetMisclassTableView",
-			Handler:    _DataService_GetMisclassTableView_Handler,
 		},
 		{
 			MethodName: "SplitDatasetToRungs",

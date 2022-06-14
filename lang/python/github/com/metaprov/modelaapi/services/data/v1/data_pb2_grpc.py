@@ -74,11 +74,6 @@ class DataServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsGetTableViewRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsGetTableViewResponse.FromString,
                 )
-        self.GetMisclassTableView = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.data.v1.DataService/GetMisclassTableView',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsGetMisclassTableViewRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsGetMisclassTableViewResponse.FromString,
-                )
         self.SplitDatasetToRungs = channel.unary_unary(
                 '/github.com.metaprov.modelaapi.services.data.v1.DataService/SplitDatasetToRungs',
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsSplitDatasetToRungsRequest.SerializeToString,
@@ -302,13 +297,6 @@ class DataServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def GetTableView(self, request, context):
-        """Just infer the datasource, do no plots
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def GetMisclassTableView(self, request, context):
         """Just infer the datasource, do no plots
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -559,11 +547,6 @@ def add_DataServiceServicer_to_server(servicer, server):
                     servicer.GetTableView,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsGetTableViewRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsGetTableViewResponse.SerializeToString,
-            ),
-            'GetMisclassTableView': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetMisclassTableView,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsGetMisclassTableViewRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsGetMisclassTableViewResponse.SerializeToString,
             ),
             'SplitDatasetToRungs': grpc.unary_unary_rpc_method_handler(
                     servicer.SplitDatasetToRungs,
@@ -916,23 +899,6 @@ class DataService(object):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.data.v1.DataService/GetTableView',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsGetTableViewRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsGetTableViewResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def GetMisclassTableView(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.data.v1.DataService/GetMisclassTableView',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsGetMisclassTableViewRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsGetMisclassTableViewResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

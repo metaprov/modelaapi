@@ -1555,60 +1555,6 @@ export namespace DsGetTableViewResponse {
   }
 }
 
-export class DsGetMisclassTableViewRequest extends jspb.Message {
-  getBucket(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
-  setBucket(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): DsGetMisclassTableViewRequest;
-  hasBucket(): boolean;
-  clearBucket(): DsGetMisclassTableViewRequest;
-
-  getConnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
-  setConnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): DsGetMisclassTableViewRequest;
-  hasConnection(): boolean;
-  clearConnection(): DsGetMisclassTableViewRequest;
-
-  getSecretMap(): jspb.Map<string, Uint8Array | string>;
-  clearSecretMap(): DsGetMisclassTableViewRequest;
-
-  getKey(): string;
-  setKey(value: string): DsGetMisclassTableViewRequest;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DsGetMisclassTableViewRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: DsGetMisclassTableViewRequest): DsGetMisclassTableViewRequest.AsObject;
-  static serializeBinaryToWriter(message: DsGetMisclassTableViewRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DsGetMisclassTableViewRequest;
-  static deserializeBinaryFromReader(message: DsGetMisclassTableViewRequest, reader: jspb.BinaryReader): DsGetMisclassTableViewRequest;
-}
-
-export namespace DsGetMisclassTableViewRequest {
-  export type AsObject = {
-    bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
-    connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
-    secretMap: Array<[string, Uint8Array | string]>,
-    key: string,
-  }
-}
-
-export class DsGetMisclassTableViewResponse extends jspb.Message {
-  getTableview(): github_com_metaprov_modelaapi_services_common_v1_common_pb.TableView | undefined;
-  setTableview(value?: github_com_metaprov_modelaapi_services_common_v1_common_pb.TableView): DsGetMisclassTableViewResponse;
-  hasTableview(): boolean;
-  clearTableview(): DsGetMisclassTableViewResponse;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DsGetMisclassTableViewResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: DsGetMisclassTableViewResponse): DsGetMisclassTableViewResponse.AsObject;
-  static serializeBinaryToWriter(message: DsGetMisclassTableViewResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DsGetMisclassTableViewResponse;
-  static deserializeBinaryFromReader(message: DsGetMisclassTableViewResponse, reader: jspb.BinaryReader): DsGetMisclassTableViewResponse;
-}
-
-export namespace DsGetMisclassTableViewResponse {
-  export type AsObject = {
-    tableview?: github_com_metaprov_modelaapi_services_common_v1_common_pb.TableView.AsObject,
-  }
-}
-
 export class CreateModelReportRequest extends jspb.Message {
   getProduct(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct | undefined;
   setProduct(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): CreateModelReportRequest;
