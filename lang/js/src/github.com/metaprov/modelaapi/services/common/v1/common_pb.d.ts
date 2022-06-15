@@ -411,11 +411,11 @@ export class ColumnProfile extends jspb.Message {
   getReserved(): boolean;
   setReserved(value: boolean): ColumnProfile;
 
-  getOutliersover(): number;
-  setOutliersover(value: number): ColumnProfile;
-
   getOutliersupper(): number;
   setOutliersupper(value: number): ColumnProfile;
+
+  getOutlierslower(): number;
+  setOutlierslower(value: number): ColumnProfile;
 
   getOutlierspercent(): number;
   setOutlierspercent(value: number): ColumnProfile;
@@ -493,8 +493,8 @@ export namespace ColumnProfile {
     constant: boolean,
     duplicate: boolean,
     reserved: boolean,
-    outliersover: number,
     outliersupper: number,
+    outlierslower: number,
     outlierspercent: number,
     completeness: number,
     distinctvaluecount: number,

@@ -2647,8 +2647,8 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.toObject = 
     constant: jspb.Message.getBooleanFieldWithDefault(msg, 38, false),
     duplicate: jspb.Message.getBooleanFieldWithDefault(msg, 39, false),
     reserved: jspb.Message.getBooleanFieldWithDefault(msg, 40, false),
-    outliersover: jspb.Message.getFieldWithDefault(msg, 41, 0),
-    outliersupper: jspb.Message.getFieldWithDefault(msg, 42, 0),
+    outliersupper: jspb.Message.getFieldWithDefault(msg, 41, 0),
+    outlierslower: jspb.Message.getFieldWithDefault(msg, 42, 0),
     outlierspercent: jspb.Message.getFieldWithDefault(msg, 43, 0),
     completeness: jspb.Message.getFloatingPointFieldWithDefault(msg, 44, 0.0),
     distinctvaluecount: jspb.Message.getFloatingPointFieldWithDefault(msg, 45, 0.0),
@@ -2856,11 +2856,11 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.deserialize
       break;
     case 41:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setOutliersover(value);
+      msg.setOutliersupper(value);
       break;
     case 42:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setOutliersupper(value);
+      msg.setOutlierslower(value);
       break;
     case 43:
       var value = /** @type {number} */ (reader.readInt32());
@@ -3204,14 +3204,14 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.serializeBi
       f
     );
   }
-  f = message.getOutliersover();
+  f = message.getOutliersupper();
   if (f !== 0) {
     writer.writeInt32(
       41,
       f
     );
   }
-  f = message.getOutliersupper();
+  f = message.getOutlierslower();
   if (f !== 0) {
     writer.writeInt32(
       42,
@@ -4017,10 +4017,10 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.s
 
 
 /**
- * optional int32 outliersOver = 41;
+ * optional int32 outliersUpper = 41;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.getOutliersover = function() {
+proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.getOutliersupper = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 41, 0));
 };
 
@@ -4029,16 +4029,16 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.g
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile} returns this
  */
-proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.setOutliersover = function(value) {
+proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.setOutliersupper = function(value) {
   return jspb.Message.setProto3IntField(this, 41, value);
 };
 
 
 /**
- * optional int32 outliersUpper = 42;
+ * optional int32 outliersLower = 42;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.getOutliersupper = function() {
+proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.getOutlierslower = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 42, 0));
 };
 
@@ -4047,7 +4047,7 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.g
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile} returns this
  */
-proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.setOutliersupper = function(value) {
+proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.setOutlierslower = function(value) {
   return jspb.Message.setProto3IntField(this, 42, value);
 };
 

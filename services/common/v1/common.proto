@@ -121,8 +121,8 @@ message ColumnProfile {
   bool      constant = 38;
   bool      duplicate = 39;
   bool      reserved = 40;
-  int32     outliersOver = 41;
-  int32     outliersUpper = 42;
+  int32     outliersUpper = 41;
+  int32     outliersLower = 42;
   int32     outliersPercent = 43;
   double    completeness = 44;
   double    distinctValueCount = 45;
