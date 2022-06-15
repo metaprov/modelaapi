@@ -2649,7 +2649,7 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.toObject = 
     reserved: jspb.Message.getBooleanFieldWithDefault(msg, 40, false),
     outliersupper: jspb.Message.getFieldWithDefault(msg, 41, 0),
     outlierslower: jspb.Message.getFieldWithDefault(msg, 42, 0),
-    outlierspercent: jspb.Message.getFieldWithDefault(msg, 43, 0),
+    outlierspercent: jspb.Message.getFloatingPointFieldWithDefault(msg, 43, 0.0),
     completeness: jspb.Message.getFloatingPointFieldWithDefault(msg, 44, 0.0),
     distinctvaluecount: jspb.Message.getFloatingPointFieldWithDefault(msg, 45, 0.0),
     mostfreqvaluesratio: jspb.Message.getFloatingPointFieldWithDefault(msg, 46, 0.0),
@@ -2863,7 +2863,7 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.deserialize
       msg.setOutlierslower(value);
       break;
     case 43:
-      var value = /** @type {number} */ (reader.readInt32());
+      var value = /** @type {number} */ (reader.readFloat());
       msg.setOutlierspercent(value);
       break;
     case 44:
@@ -3219,8 +3219,8 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.serializeBi
     );
   }
   f = message.getOutlierspercent();
-  if (f !== 0) {
-    writer.writeInt32(
+  if (f !== 0.0) {
+    writer.writeFloat(
       43,
       f
     );
@@ -4053,11 +4053,11 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.s
 
 
 /**
- * optional int32 outliersPercent = 43;
+ * optional float outliersPercent = 43;
  * @return {number}
  */
 proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.getOutlierspercent = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 43, 0));
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 43, 0.0));
 };
 
 
@@ -4066,7 +4066,7 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.g
  * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile} returns this
  */
 proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.setOutlierspercent = function(value) {
-  return jspb.Message.setProto3IntField(this, 43, value);
+  return jspb.Message.setProto3FloatField(this, 43, value);
 };
 
 
