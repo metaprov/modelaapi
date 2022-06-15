@@ -279,10 +279,10 @@ export class GetTableViewRequest extends jspb.Message {
   getTenant(): string;
   setTenant(value: string): GetTableViewRequest;
 
-  getFlatfilespec(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.CsvFileSpec | undefined;
-  setFlatfilespec(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.CsvFileSpec): GetTableViewRequest;
-  hasFlatfilespec(): boolean;
-  clearFlatfilespec(): GetTableViewRequest;
+  getFormat(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileFormatSpec | undefined;
+  setFormat(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileFormatSpec): GetTableViewRequest;
+  hasFormat(): boolean;
+  clearFormat(): GetTableViewRequest;
 
   getLocation(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
   setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): GetTableViewRequest;
@@ -300,7 +300,7 @@ export class GetTableViewRequest extends jspb.Message {
 export namespace GetTableViewRequest {
   export type AsObject = {
     tenant: string,
-    flatfilespec?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.CsvFileSpec.AsObject,
+    format?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileFormatSpec.AsObject,
     location?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
   }
 }
