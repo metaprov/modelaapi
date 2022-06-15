@@ -278,7 +278,7 @@ const (
 )
 
 // FlatFileType represent the type of the file
-// +kubebuilder:validation:Enum="csv";"tsv";"excel";"fwf";"hdf";"html";"json";"pickle";"sas";"stata";"feather";
+// +kubebuilder:validation:Enum="csv";"tsv";"excel";"fwf";"hdf";"html";"json";"pickle";"sas";"stata";"feather";"parquet";
 type FlatFileType string
 
 const (
@@ -293,6 +293,7 @@ const (
 	FlatFileTypeSas     FlatFileType = "sas"
 	FlatFileTypeStata   FlatFileType = "stata"
 	FlatFileTypeFeather FlatFileType = "feather"
+	FlatFileTypeParquet FlatFileType = "parquet"
 )
 
 // DatabaseServerType is the type of the database server

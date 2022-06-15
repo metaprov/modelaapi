@@ -258,6 +258,7 @@ spec:
                     - sas
                     - stata
                     - feather
+                    - parquet
                     type: string
                   parquet:
                     description: The file format of parquet files, if applicable
