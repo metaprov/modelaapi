@@ -448,10 +448,6 @@ message ColumnStatistics {
   // +kubebuilder:validation:Optional
   optional bool reserved = 35;
 
-  // The amount of outliers detected in the columns values
-  // +kubebuilder:validation:Optional
-  optional int32 outliers = 36;
-
   // The ratio between non-null and null values in the column
   // +kubebuilder:validation:Optional
   optional double completeness = 37;
@@ -478,6 +474,9 @@ message ColumnStatistics {
 
   // The column index in the dataset
   optional int32 index = 43;
+
+  // Outlier statistics.
+  optional OutlierStat outliers = 44;
 }
 
 // ColumnValidation specifies a validation rule for a single column
@@ -3186,6 +3185,17 @@ message MultiDatasetValidation {
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool generated = 3;
+}
+
+message OutlierStat {
+  // number of outliers below
+  optional int32 lower = 1;
+
+  // number of outliers above
+  optional int32 upper = 2;
+
+  // percent of outliers.
+  optional float percent = 3;
 }
 
 message PageSpec {

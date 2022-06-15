@@ -397,9 +397,6 @@ type ColumnStatistics struct {
 	// Indicates if the column is reserved and must be a feature included in model training
 	// +kubebuilder:validation:Optional
 	Reserved bool `json:"reserved,omitempty" protobuf:"varint,35,opt,name=reserved"`
-	// The amount of outliers detected in the columns values
-	// +kubebuilder:validation:Optional
-	Outliers int32 `json:"outliers,omitempty" protobuf:"varint,36,opt,name=outliers"`
 	// The ratio between non-null and null values in the column
 	// +kubebuilder:validation:Optional
 	Completeness float64 `json:"completeness,omitempty" protobuf:"bytes,37,opt,name=completeness"`
@@ -420,6 +417,17 @@ type ColumnStatistics struct {
 	CorrToTarget float64 `json:"corrToTarget,omitempty" protobuf:"bytes,42,opt,name=corrToTarget"`
 	// The column index in the dataset
 	Index int32 `json:"index,omitempty" protobuf:"bytes,43,opt,name=index"`
+	// Outlier statistics.
+	Outliers OutlierStat `json:"outliers,omitempty" protobuf:"bytes,44,opt,name=outliers"`
+}
+
+type OutlierStat struct {
+	// number of outliers below
+	Lower int32 `json:"lower,omitempty" protobuf:"varint,1,opt,name=lower"`
+	// number of outliers above
+	Upper int32 `json:"upper,omitempty" protobuf:"varint,2,opt,name=upper"`
+	// percent of outliers.
+	Percent float32 `json:"percent,omitempty" protobuf:"bytes,3,opt,name=percent"`
 }
 
 // DatasetTemplate is used to generate new datasets

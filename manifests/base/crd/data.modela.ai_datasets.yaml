@@ -955,10 +955,20 @@ spec:
                             as specified by the Dataset's DataSource
                           type: boolean
                         outliers:
-                          description: The amount of outliers detected in the columns
-                            values
-                          format: int32
-                          type: integer
+                          description: Outlier statistics.
+                          properties:
+                            lower:
+                              description: number of outliers below
+                              format: int32
+                              type: integer
+                            percent:
+                              description: percent of outliers.
+                              type: number
+                            upper:
+                              description: number of outliers above
+                              format: int32
+                              type: integer
+                          type: object
                         p25:
                           description: The 25% point of all the values of the column
                             in order

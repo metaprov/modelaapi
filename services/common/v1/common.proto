@@ -121,14 +121,16 @@ message ColumnProfile {
   bool      constant = 38;
   bool      duplicate = 39;
   bool      reserved = 40;
-  int32     outliers = 41;
-  double    completeness = 42;
-  double    distinctValueCount = 43;
-  double    mostFreqValuesRatio = 44;
-  double    indexOfPeculiarity = 45;
-  repeated  string values = 46; // Enum set of values
-  double    corrToTarget = 47;
-  int32       index = 48; // column index
+  int32     outliersOver = 41;
+  int32     outliersUpper = 42;
+  int32     outliersPercent = 43;
+  double    completeness = 44;
+  double    distinctValueCount = 45;
+  double    mostFreqValuesRatio = 46;
+  double    indexOfPeculiarity = 47;
+  repeated  string values = 48; // Enum set of values
+  double    corrToTarget = 49;
+  int32     index = 50; // column index
 
 
 }

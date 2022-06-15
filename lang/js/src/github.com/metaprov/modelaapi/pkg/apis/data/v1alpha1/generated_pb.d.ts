@@ -407,9 +407,6 @@ export class ColumnStatistics extends jspb.Message {
   getReserved(): boolean;
   setReserved(value: boolean): ColumnStatistics;
 
-  getOutliers(): number;
-  setOutliers(value: number): ColumnStatistics;
-
   getCompleteness(): number;
   setCompleteness(value: number): ColumnStatistics;
 
@@ -432,6 +429,11 @@ export class ColumnStatistics extends jspb.Message {
 
   getIndex(): number;
   setIndex(value: number): ColumnStatistics;
+
+  getOutliers(): OutlierStat | undefined;
+  setOutliers(value?: OutlierStat): ColumnStatistics;
+  hasOutliers(): boolean;
+  clearOutliers(): ColumnStatistics;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ColumnStatistics.AsObject;
@@ -478,7 +480,6 @@ export namespace ColumnStatistics {
     constant: boolean,
     duplicate: boolean,
     reserved: boolean,
-    outliers: number,
     completeness: number,
     distinctvaluecount: number,
     mostfreqvaluesratio: number,
@@ -486,6 +487,7 @@ export namespace ColumnStatistics {
     histogram?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.HistogramData.AsObject,
     corrtotarget: number,
     index: number,
+    outliers?: OutlierStat.AsObject,
   }
 }
 
@@ -4678,6 +4680,32 @@ export namespace MultiDatasetValidation {
     type: string,
     datasetsList: Array<string>,
     generated: boolean,
+  }
+}
+
+export class OutlierStat extends jspb.Message {
+  getLower(): number;
+  setLower(value: number): OutlierStat;
+
+  getUpper(): number;
+  setUpper(value: number): OutlierStat;
+
+  getPercent(): number;
+  setPercent(value: number): OutlierStat;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): OutlierStat.AsObject;
+  static toObject(includeInstance: boolean, msg: OutlierStat): OutlierStat.AsObject;
+  static serializeBinaryToWriter(message: OutlierStat, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OutlierStat;
+  static deserializeBinaryFromReader(message: OutlierStat, reader: jspb.BinaryReader): OutlierStat;
+}
+
+export namespace OutlierStat {
+  export type AsObject = {
+    lower: number,
+    upper: number,
+    percent: number,
   }
 }
 
