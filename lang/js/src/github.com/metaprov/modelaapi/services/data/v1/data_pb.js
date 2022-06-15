@@ -13543,7 +13543,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsGetTableViewRequest.proto
 proto.github.com.metaprov.modelaapi.services.data.v1.DsGetTableViewRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     bucket: (f = msg.getBucket()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.toObject(includeInstance, f),
-    flatfile: (f = msg.getFlatfile()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.CsvFileSpec.toObject(includeInstance, f),
+    flatfile: (f = msg.getFlatfile()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileFormatSpec.toObject(includeInstance, f),
     location: (f = msg.getLocation()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.toObject(includeInstance, f),
     connection: (f = msg.getConnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
     secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : []
@@ -13589,8 +13589,8 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsGetTableViewRequest.deser
       msg.setBucket(value);
       break;
     case 2:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.CsvFileSpec;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.CsvFileSpec.deserializeBinaryFromReader);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileFormatSpec;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileFormatSpec.deserializeBinaryFromReader);
       msg.setFlatfile(value);
       break;
     case 3:
@@ -13651,7 +13651,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsGetTableViewRequest.seria
     writer.writeMessage(
       2,
       f,
-      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.CsvFileSpec.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileFormatSpec.serializeBinaryToWriter
     );
   }
   f = message.getLocation();
@@ -13715,17 +13715,17 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsGetTableViewRequest.proto
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec flatfile = 2;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec}
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileFormatSpec flatfile = 2;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileFormatSpec}
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.DsGetTableViewRequest.prototype.getFlatfile = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.CsvFileSpec, 2));
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileFormatSpec} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileFormatSpec, 2));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec|undefined} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileFormatSpec|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsGetTableViewRequest} returns this
 */
 proto.github.com.metaprov.modelaapi.services.data.v1.DsGetTableViewRequest.prototype.setFlatfile = function(value) {

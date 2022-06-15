@@ -1499,8 +1499,8 @@ export class DsGetTableViewRequest extends jspb.Message {
   hasBucket(): boolean;
   clearBucket(): DsGetTableViewRequest;
 
-  getFlatfile(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.CsvFileSpec | undefined;
-  setFlatfile(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.CsvFileSpec): DsGetTableViewRequest;
+  getFlatfile(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileFormatSpec | undefined;
+  setFlatfile(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileFormatSpec): DsGetTableViewRequest;
   hasFlatfile(): boolean;
   clearFlatfile(): DsGetTableViewRequest;
 
@@ -1528,7 +1528,7 @@ export class DsGetTableViewRequest extends jspb.Message {
 export namespace DsGetTableViewRequest {
   export type AsObject = {
     bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
-    flatfile?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.CsvFileSpec.AsObject,
+    flatfile?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileFormatSpec.AsObject,
     location?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     secretMap: Array<[string, Uint8Array | string]>,
