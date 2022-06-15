@@ -1456,26 +1456,17 @@ message DataSourceSpec {
   // +kubebuilder:validation:Optional
   optional string description = 3;
 
-  // The schema which will be used during the ingestion process of any Dataset resources which specify the DataSource
-  optional Schema schema = 4;
-
-  // The file type of incoming data which uses the DataSource (by default, a CSV file)
-  // +kubebuilder:default:="csv"
-  // +kubebuilder:validation:Optional
-  optional string fileType = 5;
-
-  // The file format for CSV files, if applicable
-  // +kubebuilder:validation:Optional
-  optional CsvFileSpec csvfile = 6;
-
-  // The file format of excel files, if applicable
-  // +kubebuilder:validation:Optional
-  optional ExcelNotebookSpec excelNotebook = 7;
-
   // The type of dataset; currently, the only supported type is `tabular`
   // +kubebuilder:default:="tabular"
   // +kubebuilder:validation:Optional
-  optional string datasetType = 8;
+  optional string datasetType = 4;
+
+  // The schema which will be used during the ingestion process of any Dataset resources which specify the DataSource
+  optional Schema schema = 5;
+
+  // Flat file spec define the paramter needed to read a flat file.
+  // +kubebuilder:validation:Optional
+  optional FlatFileFormatSpec flatfile = 6;
 
   // The specification for how incoming data should be sampled (i.e. how many rows should be used). Applicable
   // primarily for very large datasets
@@ -2698,6 +2689,26 @@ message FileValidation {
   optional bool generated = 10;
 }
 
+// Flat File Spec specify the setting for reading flat file
+message FlatFileFormatSpec {
+  // The file type of incoming data which uses the DataSource (by default, a CSV file)
+  // +kubebuilder:default:="csv"
+  // +kubebuilder:validation:Optional
+  optional string fileType = 1;
+
+  // The file format for CSV files, if applicable
+  // +kubebuilder:validation:Optional
+  optional CsvFileSpec csv = 2;
+
+  // The file format of excel files, if applicable
+  // +kubebuilder:validation:Optional
+  optional ExcelNotebookSpec excel = 3;
+
+  // The file format of parquet files, if applicable
+  // +kubebuilder:validation:Optional
+  optional ParquetFileSpec parquet = 4;
+}
+
 message GaugeSpec {
   // Dataset is the name of the dataset
   // +kubebuilder:validation:Optional
@@ -3200,6 +3211,14 @@ message OutlierStat {
 
 message PageSpec {
   repeated RowSpec rows = 1;
+}
+
+// ParquetFileSpec specifies the format of a CSV (comma-separated values) file
+message ParquetFileSpec {
+  // The character used to separate fields (by default, a comma)
+  // +kubebuilder:default:="auto"
+  // +kubebuilder:validation:Optional
+  optional string engine = 1;
 }
 
 // Recipe represents a single batch of data

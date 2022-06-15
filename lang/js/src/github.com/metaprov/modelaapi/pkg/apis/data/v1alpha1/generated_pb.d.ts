@@ -1905,26 +1905,18 @@ export class DataSourceSpec extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): DataSourceSpec;
 
+  getDatasettype(): string;
+  setDatasettype(value: string): DataSourceSpec;
+
   getSchema(): Schema | undefined;
   setSchema(value?: Schema): DataSourceSpec;
   hasSchema(): boolean;
   clearSchema(): DataSourceSpec;
 
-  getFiletype(): string;
-  setFiletype(value: string): DataSourceSpec;
-
-  getCsvfile(): CsvFileSpec | undefined;
-  setCsvfile(value?: CsvFileSpec): DataSourceSpec;
-  hasCsvfile(): boolean;
-  clearCsvfile(): DataSourceSpec;
-
-  getExcelnotebook(): ExcelNotebookSpec | undefined;
-  setExcelnotebook(value?: ExcelNotebookSpec): DataSourceSpec;
-  hasExcelnotebook(): boolean;
-  clearExcelnotebook(): DataSourceSpec;
-
-  getDatasettype(): string;
-  setDatasettype(value: string): DataSourceSpec;
+  getFlatfile(): FlatFileFormatSpec | undefined;
+  setFlatfile(value?: FlatFileFormatSpec): DataSourceSpec;
+  hasFlatfile(): boolean;
+  clearFlatfile(): DataSourceSpec;
 
   getSample(): SampleSpec | undefined;
   setSample(value?: SampleSpec): DataSourceSpec;
@@ -1965,11 +1957,9 @@ export namespace DataSourceSpec {
     owner: string,
     versionname: string,
     description: string,
-    schema?: Schema.AsObject,
-    filetype: string,
-    csvfile?: CsvFileSpec.AsObject,
-    excelnotebook?: ExcelNotebookSpec.AsObject,
     datasettype: string,
+    schema?: Schema.AsObject,
+    flatfile?: FlatFileFormatSpec.AsObject,
     sample?: SampleSpec.AsObject,
     task: string,
     subtask: string,
@@ -3829,6 +3819,42 @@ export namespace FileValidation {
   }
 }
 
+export class FlatFileFormatSpec extends jspb.Message {
+  getFiletype(): string;
+  setFiletype(value: string): FlatFileFormatSpec;
+
+  getCsv(): CsvFileSpec | undefined;
+  setCsv(value?: CsvFileSpec): FlatFileFormatSpec;
+  hasCsv(): boolean;
+  clearCsv(): FlatFileFormatSpec;
+
+  getExcel(): ExcelNotebookSpec | undefined;
+  setExcel(value?: ExcelNotebookSpec): FlatFileFormatSpec;
+  hasExcel(): boolean;
+  clearExcel(): FlatFileFormatSpec;
+
+  getParquet(): ParquetFileSpec | undefined;
+  setParquet(value?: ParquetFileSpec): FlatFileFormatSpec;
+  hasParquet(): boolean;
+  clearParquet(): FlatFileFormatSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FlatFileFormatSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: FlatFileFormatSpec): FlatFileFormatSpec.AsObject;
+  static serializeBinaryToWriter(message: FlatFileFormatSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FlatFileFormatSpec;
+  static deserializeBinaryFromReader(message: FlatFileFormatSpec, reader: jspb.BinaryReader): FlatFileFormatSpec;
+}
+
+export namespace FlatFileFormatSpec {
+  export type AsObject = {
+    filetype: string,
+    csv?: CsvFileSpec.AsObject,
+    excel?: ExcelNotebookSpec.AsObject,
+    parquet?: ParquetFileSpec.AsObject,
+  }
+}
+
 export class GaugeSpec extends jspb.Message {
   getDatasetname(): string;
   setDatasetname(value: string): GaugeSpec;
@@ -4726,6 +4752,24 @@ export class PageSpec extends jspb.Message {
 export namespace PageSpec {
   export type AsObject = {
     rowsList: Array<RowSpec.AsObject>,
+  }
+}
+
+export class ParquetFileSpec extends jspb.Message {
+  getEngine(): string;
+  setEngine(value: string): ParquetFileSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ParquetFileSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: ParquetFileSpec): ParquetFileSpec.AsObject;
+  static serializeBinaryToWriter(message: ParquetFileSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ParquetFileSpec;
+  static deserializeBinaryFromReader(message: ParquetFileSpec, reader: jspb.BinaryReader): ParquetFileSpec;
+}
+
+export namespace ParquetFileSpec {
+  export type AsObject = {
+    engine: string,
   }
 }
 

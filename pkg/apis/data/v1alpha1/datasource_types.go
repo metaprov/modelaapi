@@ -324,6 +324,14 @@ const (
 	Exasol         DatabaseServerType = "exasol"
 )
 
+// ParquetFileSpec specifies the format of a CSV (comma-separated values) file
+type ParquetFileSpec struct {
+	// The character used to separate fields (by default, a comma)
+	// +kubebuilder:default:="auto"
+	// +kubebuilder:validation:Optional
+	Engine *string `json:"engine,omitempty" protobuf:"bytes,1,opt,name=engine"`
+}
+
 // CsvFileSpec specifies the format of a CSV (comma-separated values) file
 type CsvFileSpec struct {
 	// The character used to separate fields (by default, a comma)
@@ -704,22 +712,15 @@ type DataSourceSpec struct {
 	// +kubebuilder:validation:MaxLength=512
 	// +kubebuilder:validation:Optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
-	// The schema which will be used during the ingestion process of any Dataset resources which specify the DataSource
-	Schema Schema `json:"schema,omitempty" protobuf:"bytes,4,opt,name=schema"`
-	// The file type of incoming data which uses the DataSource (by default, a CSV file)
-	// +kubebuilder:default:="csv"
-	// +kubebuilder:validation:Optional
-	FileType *FlatFileType `json:"fileType,omitempty" protobuf:"bytes,5,opt,name=fileType"`
-	// The file format for CSV files, if applicable
-	// +kubebuilder:validation:Optional
-	CsvFile CsvFileSpec `json:"csvfile,omitempty" protobuf:"bytes,6,opt,name=csvfile"`
-	// The file format of excel files, if applicable
-	// +kubebuilder:validation:Optional
-	ExcelNotebook ExcelNotebookSpec `json:"excelNotebook,omitempty" protobuf:"bytes,7,opt,name=excelNotebook"`
 	// The type of dataset; currently, the only supported type is `tabular`
 	// +kubebuilder:default:="tabular"
 	// +kubebuilder:validation:Optional
-	DatasetType *catalog.DatasetType `json:"datasetType,omitempty" protobuf:"bytes,8,opt,name=datasetType"`
+	DatasetType *catalog.DatasetType `json:"datasetType,omitempty" protobuf:"bytes,4,opt,name=datasetType"`
+	// The schema which will be used during the ingestion process of any Dataset resources which specify the DataSource
+	Schema Schema `json:"schema,omitempty" protobuf:"bytes,5,opt,name=schema"`
+	// Flat file spec define the paramter needed to read a flat file.
+	// +kubebuilder:validation:Optional
+	FlatFile *FlatFileFormatSpec `json:"flatfile,omitempty" protobuf:"bytes,6,opt,name=flatfile"`
 	// The specification for how incoming data should be sampled (i.e. how many rows should be used). Applicable
 	// primarily for very large datasets
 	Sample SampleSpec `json:"sample,omitempty" protobuf:"bytes,9,opt,name=sample"`
@@ -740,6 +741,23 @@ type DataSourceSpec struct {
 	// The data location which was used to infer the data source schema.
 	// +kubebuilder:validation:Optional
 	InferredFrom *DataLocation `json:"inferredFrom,omitempty" protobuf:"bytes,14,opt,name=inferredFrom"`
+}
+
+// Flat File Spec specify the setting for reading flat file
+type FlatFileFormatSpec struct {
+	// The file type of incoming data which uses the DataSource (by default, a CSV file)
+	// +kubebuilder:default:="csv"
+	// +kubebuilder:validation:Optional
+	FileType *FlatFileType `json:"fileType,omitempty" protobuf:"bytes,1,opt,name=fileType"`
+	// The file format for CSV files, if applicable
+	// +kubebuilder:validation:Optional
+	Csv CsvFileSpec `json:"csv,omitempty" protobuf:"bytes,2,opt,name=csv"`
+	// The file format of excel files, if applicable
+	// +kubebuilder:validation:Optional
+	Excel ExcelNotebookSpec `json:"excel,omitempty" protobuf:"bytes,3,opt,name=excel"`
+	// The file format of parquet files, if applicable
+	// +kubebuilder:validation:Optional
+	Parquet ParquetFileSpec `json:"parquet,omitempty" protobuf:"bytes,4,opt,name=parquet"`
 }
 
 // DataSourceStatus defines the observed state of a DataSource object
