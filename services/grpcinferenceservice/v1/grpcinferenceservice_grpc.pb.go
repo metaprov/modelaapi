@@ -45,7 +45,6 @@ type GRPCInferenceServiceClient interface {
 	GetPredictor(ctx context.Context, in *GetPredictorRequest, opts ...grpc.CallOption) (*GetPredictorResponse, error)
 	GetModel(ctx context.Context, in *GetModelRequest, opts ...grpc.CallOption) (*GetModelResponse, error)
 	Predict(ctx context.Context, in *PredictRequest, opts ...grpc.CallOption) (*PredictResponse, error)
-	PredictVersion(ctx context.Context, in *PredictVersionRequest, opts ...grpc.CallOption) (*PredictResponse, error)
 	Shutdown(ctx context.Context, in *ServerShutdownRequest, opts ...grpc.CallOption) (*ServerShutdownResponse, error)
 }
 
@@ -138,15 +137,6 @@ func (c *gRPCInferenceServiceClient) Predict(ctx context.Context, in *PredictReq
 	return out, nil
 }
 
-func (c *gRPCInferenceServiceClient) PredictVersion(ctx context.Context, in *PredictVersionRequest, opts ...grpc.CallOption) (*PredictResponse, error) {
-	out := new(PredictResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService/PredictVersion", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *gRPCInferenceServiceClient) Shutdown(ctx context.Context, in *ServerShutdownRequest, opts ...grpc.CallOption) (*ServerShutdownResponse, error) {
 	out := new(ServerShutdownResponse)
 	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService/Shutdown", in, out, opts...)
@@ -183,7 +173,6 @@ type GRPCInferenceServiceServer interface {
 	GetPredictor(context.Context, *GetPredictorRequest) (*GetPredictorResponse, error)
 	GetModel(context.Context, *GetModelRequest) (*GetModelResponse, error)
 	Predict(context.Context, *PredictRequest) (*PredictResponse, error)
-	PredictVersion(context.Context, *PredictVersionRequest) (*PredictResponse, error)
 	Shutdown(context.Context, *ServerShutdownRequest) (*ServerShutdownResponse, error)
 	mustEmbedUnimplementedGRPCInferenceServiceServer()
 }
@@ -218,9 +207,6 @@ func (UnimplementedGRPCInferenceServiceServer) GetModel(context.Context, *GetMod
 }
 func (UnimplementedGRPCInferenceServiceServer) Predict(context.Context, *PredictRequest) (*PredictResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Predict not implemented")
-}
-func (UnimplementedGRPCInferenceServiceServer) PredictVersion(context.Context, *PredictVersionRequest) (*PredictResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method PredictVersion not implemented")
 }
 func (UnimplementedGRPCInferenceServiceServer) Shutdown(context.Context, *ServerShutdownRequest) (*ServerShutdownResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Shutdown not implemented")
@@ -400,24 +386,6 @@ func _GRPCInferenceService_Predict_Handler(srv interface{}, ctx context.Context,
 	return interceptor(ctx, in, info, handler)
 }
 
-func _GRPCInferenceService_PredictVersion_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(PredictVersionRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GRPCInferenceServiceServer).PredictVersion(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService/PredictVersion",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GRPCInferenceServiceServer).PredictVersion(ctx, req.(*PredictVersionRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _GRPCInferenceService_Shutdown_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ServerShutdownRequest)
 	if err := dec(in); err != nil {
@@ -478,10 +446,6 @@ var GRPCInferenceService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "Predict",
 			Handler:    _GRPCInferenceService_Predict_Handler,
-		},
-		{
-			MethodName: "PredictVersion",
-			Handler:    _GRPCInferenceService_PredictVersion_Handler,
 		},
 		{
 			MethodName: "Shutdown",

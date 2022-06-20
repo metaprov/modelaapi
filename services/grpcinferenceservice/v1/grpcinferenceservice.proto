@@ -102,14 +102,7 @@ service GRPCInferenceService
       body: "*"
     };
   }
-
-  rpc PredictVersion(PredictVersionRequest) returns (PredictResponse) {
-    option (google.api.http) = {
-      post: "/v1/predictors/{predictor}/models/{modelversion}"
-      body: "*"
-    };
-  }
-
+  
   rpc Shutdown(ServerShutdownRequest) returns (ServerShutdownResponse) {}
 }
 
@@ -469,24 +462,13 @@ message PredictRequest {
     string             payload          = 5;  // json or csv array of rows.
     bool               labeled          = 6;  // indicate that this is labeled prediction
     repeated  string   metrics          = 7;  // one or more metrics to use when evaluating labeled prediction
+    string             modelversion     = 8;  // the version of the model, if empty use any model
 }
 
 message PredictResponse {
      repeated PredictResultLineItem items  = 1;
      map<string,float>              scores = 2;
 }
-
-message PredictVersionRequest {
-  string             predictor        = 1;    
-  bool               validate         = 2;  // use the schema to validate the request
-  bool               explain          = 3;  // if true, explain the prediction using shap.
-  string             format           = 4;  // can be csv,json.
-  string             payload          = 5;  // json or csv array of rows.
-  bool               labeled          = 6;  // indicate that this is labeled prediction
-  repeated  string   metrics          = 7;  // one or more metrics to use when evaluating labeled prediction
-  string             modelversion     = 8;  // can be csv,json.
-}
-
 
 message PredictResultLineItem {
     bool                       success         = 1; // success or failure
