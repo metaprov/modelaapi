@@ -763,6 +763,78 @@ func local_request_StudyService_ResumeStudy_0(ctx context.Context, marshaler run
 
 }
 
+func request_StudyService_CompleteSearch_0(ctx context.Context, marshaler runtime.Marshaler, client StudyServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq CompleteSearchRequest
+	var metadata runtime.ServerMetadata
+
+	var (
+		val string
+		ok  bool
+		err error
+		_   = err
+	)
+
+	val, ok = pathParams["namespace"]
+	if !ok {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "namespace")
+	}
+
+	protoReq.Namespace, err = runtime.String(val)
+	if err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "namespace", err)
+	}
+
+	val, ok = pathParams["name"]
+	if !ok {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "name")
+	}
+
+	protoReq.Name, err = runtime.String(val)
+	if err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "name", err)
+	}
+
+	msg, err := client.CompleteSearch(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	return msg, metadata, err
+
+}
+
+func local_request_StudyService_CompleteSearch_0(ctx context.Context, marshaler runtime.Marshaler, server StudyServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq CompleteSearchRequest
+	var metadata runtime.ServerMetadata
+
+	var (
+		val string
+		ok  bool
+		err error
+		_   = err
+	)
+
+	val, ok = pathParams["namespace"]
+	if !ok {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "namespace")
+	}
+
+	protoReq.Namespace, err = runtime.String(val)
+	if err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "namespace", err)
+	}
+
+	val, ok = pathParams["name"]
+	if !ok {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "name")
+	}
+
+	protoReq.Name, err = runtime.String(val)
+	if err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "name", err)
+	}
+
+	msg, err := server.CompleteSearch(ctx, &protoReq)
+	return msg, metadata, err
+
+}
+
 // RegisterStudyServiceHandlerServer registers the http handlers for service StudyService to "mux".
 // UnaryRPC     :call StudyServiceServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
@@ -936,7 +1008,7 @@ func RegisterStudyServiceHandlerServer(ctx context.Context, mux *runtime.ServeMu
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/AbortStudy", runtime.WithHTTPPathPattern("/v1/studies/{namespace}/{name}:abort"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/AbortStudy", runtime.WithHTTPPathPattern("/v1/studies/{namespace}/{name}/abort"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -959,7 +1031,7 @@ func RegisterStudyServiceHandlerServer(ctx context.Context, mux *runtime.ServeMu
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/PauseStudy", runtime.WithHTTPPathPattern("/v1/studies/{namespace}/{name}:pause"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/PauseStudy", runtime.WithHTTPPathPattern("/v1/studies/{namespace}/{name}/pause"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -982,7 +1054,7 @@ func RegisterStudyServiceHandlerServer(ctx context.Context, mux *runtime.ServeMu
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/ResumeStudy", runtime.WithHTTPPathPattern("/v1/studies/{namespace}/{name}:resume"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/ResumeStudy", runtime.WithHTTPPathPattern("/v1/studies/{namespace}/{name}/resume"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -996,6 +1068,29 @@ func RegisterStudyServiceHandlerServer(ctx context.Context, mux *runtime.ServeMu
 		}
 
 		forward_StudyService_ResumeStudy_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+
+	})
+
+	mux.Handle("POST", pattern_StudyService_CompleteSearch_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+		ctx, cancel := context.WithCancel(req.Context())
+		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
+		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/CompleteSearch", runtime.WithHTTPPathPattern("/v1/studies/{namespace}/{name}/complete-search"))
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		resp, md, err := local_request_StudyService_CompleteSearch_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
+		ctx = runtime.NewServerMetadataContext(ctx, md)
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+
+		forward_StudyService_CompleteSearch_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -1184,7 +1279,7 @@ func RegisterStudyServiceHandlerClient(ctx context.Context, mux *runtime.ServeMu
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/AbortStudy", runtime.WithHTTPPathPattern("/v1/studies/{namespace}/{name}:abort"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/AbortStudy", runtime.WithHTTPPathPattern("/v1/studies/{namespace}/{name}/abort"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1204,7 +1299,7 @@ func RegisterStudyServiceHandlerClient(ctx context.Context, mux *runtime.ServeMu
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/PauseStudy", runtime.WithHTTPPathPattern("/v1/studies/{namespace}/{name}:pause"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/PauseStudy", runtime.WithHTTPPathPattern("/v1/studies/{namespace}/{name}/pause"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1224,7 +1319,7 @@ func RegisterStudyServiceHandlerClient(ctx context.Context, mux *runtime.ServeMu
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/ResumeStudy", runtime.WithHTTPPathPattern("/v1/studies/{namespace}/{name}:resume"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/ResumeStudy", runtime.WithHTTPPathPattern("/v1/studies/{namespace}/{name}/resume"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1237,6 +1332,26 @@ func RegisterStudyServiceHandlerClient(ctx context.Context, mux *runtime.ServeMu
 		}
 
 		forward_StudyService_ResumeStudy_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+
+	})
+
+	mux.Handle("POST", pattern_StudyService_CompleteSearch_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+		ctx, cancel := context.WithCancel(req.Context())
+		defer cancel()
+		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/CompleteSearch", runtime.WithHTTPPathPattern("/v1/studies/{namespace}/{name}/complete-search"))
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		resp, md, err := request_StudyService_CompleteSearch_0(rctx, inboundMarshaler, client, req, pathParams)
+		ctx = runtime.NewServerMetadataContext(ctx, md)
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+
+		forward_StudyService_CompleteSearch_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -1258,11 +1373,13 @@ var (
 
 	pattern_StudyService_GetStudyProfile_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 1, 0, 4, 1, 5, 3, 2, 4}, []string{"v1", "studies", "namespace", "name", "profile"}, ""))
 
-	pattern_StudyService_AbortStudy_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 1, 0, 4, 1, 5, 3}, []string{"v1", "studies", "namespace", "name"}, "abort"))
+	pattern_StudyService_AbortStudy_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 1, 0, 4, 1, 5, 3, 2, 4}, []string{"v1", "studies", "namespace", "name", "abort"}, ""))
 
-	pattern_StudyService_PauseStudy_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 1, 0, 4, 1, 5, 3}, []string{"v1", "studies", "namespace", "name"}, "pause"))
+	pattern_StudyService_PauseStudy_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 1, 0, 4, 1, 5, 3, 2, 4}, []string{"v1", "studies", "namespace", "name", "pause"}, ""))
 
-	pattern_StudyService_ResumeStudy_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 1, 0, 4, 1, 5, 3}, []string{"v1", "studies", "namespace", "name"}, "resume"))
+	pattern_StudyService_ResumeStudy_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 1, 0, 4, 1, 5, 3, 2, 4}, []string{"v1", "studies", "namespace", "name", "resume"}, ""))
+
+	pattern_StudyService_CompleteSearch_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 1, 0, 4, 1, 5, 3, 2, 4}, []string{"v1", "studies", "namespace", "name", "complete-search"}, ""))
 )
 
 var (
@@ -1285,4 +1402,6 @@ var (
 	forward_StudyService_PauseStudy_0 = runtime.ForwardResponseMessage
 
 	forward_StudyService_ResumeStudy_0 = runtime.ForwardResponseMessage
+
+	forward_StudyService_CompleteSearch_0 = runtime.ForwardResponseMessage
 )
