@@ -374,8 +374,7 @@ func (servingsite *ServingSite) PredictorRole() *rbacv1.ClusterRole {
 func (servingsite *ServingSite) PredictorRoleBinding() *rbacv1.ClusterRoleBinding {
 	return &rbacv1.ClusterRoleBinding{
 		ObjectMeta: metav1.ObjectMeta{
-			Name:      catalog.ServingSitePredictorRoleBinding,
-			Namespace: servingsite.Name,
+			Name: catalog.ServingSitePredictorRoleBinding,
 		},
 		Subjects: []rbacv1.Subject{
 			{
