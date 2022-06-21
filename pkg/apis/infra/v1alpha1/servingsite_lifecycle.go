@@ -341,8 +341,7 @@ func (servingsite *ServingSite) ServiceAccount() *corev1.ServiceAccount {
 func (servingsite *ServingSite) PredictorRole() *rbacv1.ClusterRole {
 	return &rbacv1.ClusterRole{
 		ObjectMeta: metav1.ObjectMeta{
-			Name:      catalog.ServingSitePredictorRole,
-			Namespace: servingsite.Name,
+			Name: catalog.ServingSitePredictorRole,
 		},
 		Rules: []rbacv1.PolicyRule{
 			{
