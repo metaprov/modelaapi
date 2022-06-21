@@ -82,19 +82,19 @@ func (model *Model) Default() {
 	if model.ObjectMeta.Labels == nil {
 		model.ObjectMeta.Labels = make(map[string]string)
 		if model.Spec.ModelVersion != nil {
-			model.ObjectMeta.Labels["modelVersion"] = *model.Spec.ModelVersion
+			model.ObjectMeta.Labels["modela.ai/modelversion"] = *model.Spec.ModelVersion
 		}
 		if model.Spec.StudyName != nil {
-			model.ObjectMeta.Labels["study"] = *model.Spec.StudyName
+			model.ObjectMeta.Labels["modela.ai/study"] = *model.Spec.StudyName
 		}
 		if model.Spec.Estimator != nil {
-			model.ObjectMeta.Labels["alg"] = model.Spec.Estimator.AlgorithmName
+			model.ObjectMeta.Labels["modela.ai/algorithm"] = model.Spec.Estimator.AlgorithmName
 		}
 		if model.Spec.Owner != nil {
-			model.ObjectMeta.Labels["owner"] = *model.Spec.Owner
+			model.ObjectMeta.Labels["modela.ai/owner"] = *model.Spec.Owner
 		}
 		if model.Spec.DatasetName != nil {
-			model.ObjectMeta.Labels["dataset"] = *model.Spec.DatasetName
+			model.ObjectMeta.Labels["modela.ai/dataset"] = *model.Spec.DatasetName
 		}
 	}
 	// update the status. this might be moved to the crd itself.

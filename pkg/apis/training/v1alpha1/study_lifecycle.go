@@ -59,7 +59,7 @@ func (study *Study) PipelineName() string {
 }
 
 func (study *Study) AddPipelineLable(pipeline string) {
-	study.ObjectMeta.Labels["pipeline"] = pipeline
+	study.ObjectMeta.Labels["modela.ai/pipeline"] = pipeline
 
 }
 

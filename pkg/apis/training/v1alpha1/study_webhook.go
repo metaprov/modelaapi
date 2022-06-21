@@ -87,7 +87,7 @@ func (study *Study) Default() {
 		study.Spec.Ensembles.StackingEnsemble = util.BoolPtr(true)
 	}
 
-	if *study.Spec.Baseline.Enabled {
+	if study.Spec.Baseline.Enabled != nil && *study.Spec.Baseline.Enabled {
 		if len(study.Spec.Baseline.Baselines) == 0 {
 			study.Spec.Baseline.Baselines = append(study.Spec.Baseline.Baselines, study.DefaultBaselineEstimator(*study.Spec.Task))
 		}
@@ -108,10 +108,6 @@ func (study *Study) Default() {
 		study.Spec.Reported = util.BoolPtr(true)
 	}
 
-	//if study.Spec.Paused == nil {
-	//	study.Spec.Paused = util.BoolPtr(false)
-	//}
-
 	if study.Spec.Profiled == nil {
 		study.Spec.Profiled = util.BoolPtr(true)
 	}
@@ -127,13 +123,14 @@ func (study *Study) Default() {
 		study.ObjectMeta.Labels = make(map[string]string)
 	}
 	if study.Spec.Owner != nil {
-		study.ObjectMeta.Labels["owner"] = *study.Spec.Owner
+		study.ObjectMeta.Labels["modela.ai/owner"] = *study.Spec.Owner
 	}
 	if study.Spec.DatasetName != nil {
-		study.ObjectMeta.Labels["dataset"] = *study.Spec.DatasetName
+		study.ObjectMeta.Labels["modela.ai/dataset"] = *study.Spec.DatasetName
 	}
 	study.ObjectMeta.Labels["modela.ai/tenant"] = study.Spec.LabRef.Namespace
 	study.ObjectMeta.Labels["modela.ai/lab"] = study.Spec.LabRef.Name
+	study.ObjectMeta.Labels["modela.ai/version"] = *study.Spec.VersionName
 
 }
 

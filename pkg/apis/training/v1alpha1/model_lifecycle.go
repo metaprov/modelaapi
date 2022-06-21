@@ -1013,7 +1013,7 @@ func (model *Model) InitModelFromStudy(study *Study) {
 	model.Spec.Task = study.Spec.Task
 	model.Spec.Objective = study.Spec.Search.Objective
 	model.ObjectMeta.Labels = study.ObjectMeta.Labels
-	model.ObjectMeta.Labels["study"] = study.Name
+	model.ObjectMeta.Labels["modela.ai/study"] = study.Name
 	model.Spec.Pushed = study.Spec.ModelImagePushed
 	model.Spec.Published = study.Spec.ModelPublished
 	model.Spec.Training.LabRef = study.Spec.LabRef
