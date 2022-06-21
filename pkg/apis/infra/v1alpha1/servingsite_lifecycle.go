@@ -338,8 +338,8 @@ func (servingsite *ServingSite) ServiceAccount() *corev1.ServiceAccount {
 // Predictor role
 //////////////////////////////////////////////////////////
 
-func (servingsite *ServingSite) PredictorRole() *rbacv1.Role {
-	return &rbacv1.Role{
+func (servingsite *ServingSite) PredictorRole() *rbacv1.ClusterRole {
+	return &rbacv1.ClusterRole{
 		ObjectMeta: metav1.ObjectMeta{
 			Name:      catalog.ServingSitePredictorRole,
 			Namespace: servingsite.Name,
@@ -371,8 +371,8 @@ func (servingsite *ServingSite) PredictorRole() *rbacv1.Role {
 }
 
 // Create a role binding for a job
-func (servingsite *ServingSite) PredictorRoleBinding() *rbacv1.RoleBinding {
-	return &rbacv1.RoleBinding{
+func (servingsite *ServingSite) PredictorRoleBinding() *rbacv1.ClusterRoleBinding {
+	return &rbacv1.ClusterRoleBinding{
 		ObjectMeta: metav1.ObjectMeta{
 			Name:      catalog.ServingSitePredictorRoleBinding,
 			Namespace: servingsite.Name,
