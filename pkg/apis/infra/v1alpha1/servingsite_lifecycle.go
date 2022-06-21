@@ -333,3 +333,71 @@ func (servingsite *ServingSite) ServiceAccount() *corev1.ServiceAccount {
 		},
 	}
 }
+
+///////////////////////////////////////////////////////////
+// Predictor role
+//////////////////////////////////////////////////////////
+
+func (servingsite *ServingSite) PredictorRole() *rbacv1.Role {
+	return &rbacv1.Role{
+		ObjectMeta: metav1.ObjectMeta{
+			Name:      catalog.ServingSitePredictorRole,
+			Namespace: servingsite.Name,
+		},
+		Rules: []rbacv1.PolicyRule{
+			{
+				Verbs:           []string{"*"},
+				APIGroups:       []string{"data.modela.ai"},
+				Resources:       []string{"datasets", "datasets/status", "datasources", "datasources/status"},
+				ResourceNames:   []string{},
+				NonResourceURLs: []string{},
+			},
+			{
+				Verbs:           []string{"*"},
+				APIGroups:       []string{"training.modela.ai"},
+				Resources:       []string{"models", "models/status", "study", "study/status"},
+				ResourceNames:   []string{},
+				NonResourceURLs: []string{},
+			},
+			{
+				Verbs:           []string{"*"},
+				APIGroups:       []string{"inference.modela.ai"},
+				Resources:       []string{"predictor", "predictors/status"},
+				ResourceNames:   []string{},
+				NonResourceURLs: []string{},
+			},
+		},
+	}
+}
+
+// Create a role binding for a job
+func (servingsite *ServingSite) PredictorRoleBinding() *rbacv1.RoleBinding {
+	return &rbacv1.RoleBinding{
+		ObjectMeta: metav1.ObjectMeta{
+			Name:      catalog.ServingSitePredictorRoleBinding,
+			Namespace: servingsite.Name,
+		},
+		Subjects: []rbacv1.Subject{
+			{
+				Kind:      "ServiceAccount",
+				APIGroup:  "",
+				Name:      catalog.ServingSitePredictorSa,
+				Namespace: servingsite.Name,
+			},
+		},
+		RoleRef: rbacv1.RoleRef{
+			APIGroup: "rbac.authorization.k8s.io",
+			Kind:     "Role",
+			Name:     catalog.ServingSitePredictorRole,
+		},
+	}
+}
+
+func (servingsite *ServingSite) PredictorServiceAccount() *corev1.ServiceAccount {
+	return &corev1.ServiceAccount{
+		ObjectMeta: metav1.ObjectMeta{
+			Name:      catalog.ServingSitePredictorSa,
+			Namespace: servingsite.Name,
+		},
+	}
+}
