@@ -9,31 +9,71 @@ import * as k8s_io_apimachinery_pkg_runtime_generated_pb from '../../../../../..
 import * as k8s_io_apimachinery_pkg_runtime_schema_generated_pb from '../../../../../../../k8s.io/apimachinery/pkg/runtime/schema/generated_pb';
 
 
-export class AutoScaling extends jspb.Message {
-  getEnabled(): boolean;
-  setEnabled(value: boolean): AutoScaling;
+export class AccessSpec extends jspb.Message {
+  getPort(): number;
+  setPort(value: number): AccessSpec;
 
-  getMinreplicas(): number;
-  setMinreplicas(value: number): AutoScaling;
+  getNodeport(): number;
+  setNodeport(value: number): AccessSpec;
 
-  getMaxreplicas(): number;
-  setMaxreplicas(value: number): AutoScaling;
+  getPath(): string;
+  setPath(value: string): AccessSpec;
 
-  getCpuavgutilization(): number;
-  setCpuavgutilization(value: number): AutoScaling;
+  getAccesstype(): string;
+  setAccesstype(value: string): AccessSpec;
 
-  getMemavgutilization(): number;
-  setMemavgutilization(value: number): AutoScaling;
+  getRest(): boolean;
+  setRest(value: boolean): AccessSpec;
+
+  getApikeysecretref(): k8s_io_api_core_v1_generated_pb.SecretReference | undefined;
+  setApikeysecretref(value?: k8s_io_api_core_v1_generated_pb.SecretReference): AccessSpec;
+  hasApikeysecretref(): boolean;
+  clearApikeysecretref(): AccessSpec;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): AutoScaling.AsObject;
-  static toObject(includeInstance: boolean, msg: AutoScaling): AutoScaling.AsObject;
-  static serializeBinaryToWriter(message: AutoScaling, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): AutoScaling;
-  static deserializeBinaryFromReader(message: AutoScaling, reader: jspb.BinaryReader): AutoScaling;
+  toObject(includeInstance?: boolean): AccessSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: AccessSpec): AccessSpec.AsObject;
+  static serializeBinaryToWriter(message: AccessSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AccessSpec;
+  static deserializeBinaryFromReader(message: AccessSpec, reader: jspb.BinaryReader): AccessSpec;
 }
 
-export namespace AutoScaling {
+export namespace AccessSpec {
+  export type AsObject = {
+    port: number,
+    nodeport: number,
+    path: string,
+    accesstype: string,
+    rest: boolean,
+    apikeysecretref?: k8s_io_api_core_v1_generated_pb.SecretReference.AsObject,
+  }
+}
+
+export class AutoScalingSpec extends jspb.Message {
+  getEnabled(): boolean;
+  setEnabled(value: boolean): AutoScalingSpec;
+
+  getMinreplicas(): number;
+  setMinreplicas(value: number): AutoScalingSpec;
+
+  getMaxreplicas(): number;
+  setMaxreplicas(value: number): AutoScalingSpec;
+
+  getCpuavgutilization(): number;
+  setCpuavgutilization(value: number): AutoScalingSpec;
+
+  getMemavgutilization(): number;
+  setMemavgutilization(value: number): AutoScalingSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AutoScalingSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: AutoScalingSpec): AutoScalingSpec.AsObject;
+  static serializeBinaryToWriter(message: AutoScalingSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AutoScalingSpec;
+  static deserializeBinaryFromReader(message: AutoScalingSpec, reader: jspb.BinaryReader): AutoScalingSpec;
+}
+
+export namespace AutoScalingSpec {
   export type AsObject = {
     enabled: boolean,
     minreplicas: number,
@@ -703,6 +743,36 @@ export namespace ForecastSpec {
   }
 }
 
+export class HumanInTheLoopSpec extends jspb.Message {
+  getEnabled(): boolean;
+  setEnabled(value: boolean): HumanInTheLoopSpec;
+
+  getForwardcurtainref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setForwardcurtainref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): HumanInTheLoopSpec;
+  hasForwardcurtainref(): boolean;
+  clearForwardcurtainref(): HumanInTheLoopSpec;
+
+  getBackwardcurtainref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setBackwardcurtainref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): HumanInTheLoopSpec;
+  hasBackwardcurtainref(): boolean;
+  clearBackwardcurtainref(): HumanInTheLoopSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): HumanInTheLoopSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: HumanInTheLoopSpec): HumanInTheLoopSpec.AsObject;
+  static serializeBinaryToWriter(message: HumanInTheLoopSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): HumanInTheLoopSpec;
+  static deserializeBinaryFromReader(message: HumanInTheLoopSpec, reader: jspb.BinaryReader): HumanInTheLoopSpec;
+}
+
+export namespace HumanInTheLoopSpec {
+  export type AsObject = {
+    enabled: boolean,
+    forwardcurtainref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    backwardcurtainref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+  }
+}
+
 export class KubernetesObjectStatus extends jspb.Message {
   getRef(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setRef(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): KubernetesObjectStatus;
@@ -875,6 +945,28 @@ export namespace ModelRecord {
   }
 }
 
+export class ModelServingSpec extends jspb.Message {
+  getType(): string;
+  setType(value: string): ModelServingSpec;
+
+  getServerless(): boolean;
+  setServerless(value: boolean): ModelServingSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ModelServingSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: ModelServingSpec): ModelServingSpec.AsObject;
+  static serializeBinaryToWriter(message: ModelServingSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ModelServingSpec;
+  static deserializeBinaryFromReader(message: ModelServingSpec, reader: jspb.BinaryReader): ModelServingSpec;
+}
+
+export namespace ModelServingSpec {
+  export type AsObject = {
+    type: string,
+    serverless: boolean,
+  }
+}
+
 export class MonitorSpec extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): MonitorSpec;
@@ -887,19 +979,20 @@ export class MonitorSpec extends jspb.Message {
   hasSchedule(): boolean;
   clearSchedule(): MonitorSpec;
 
-  getNotifiername(): string;
-  setNotifiername(value: string): MonitorSpec;
+  getNotifiername(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setNotifiername(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): MonitorSpec;
+  hasNotifiername(): boolean;
+  clearNotifiername(): MonitorSpec;
 
   getValidationsList(): Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidation>;
   setValidationsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidation>): MonitorSpec;
   clearValidationsList(): MonitorSpec;
   addValidations(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidation, index?: number): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidation;
 
-  getLogrequests(): boolean;
-  setLogrequests(value: boolean): MonitorSpec;
-
-  getLogresponses(): boolean;
-  setLogresponses(value: boolean): MonitorSpec;
+  getOutlierdetectionmodel(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setOutlierdetectionmodel(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): MonitorSpec;
+  hasOutlierdetectionmodel(): boolean;
+  clearOutlierdetectionmodel(): MonitorSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MonitorSpec.AsObject;
@@ -914,10 +1007,9 @@ export namespace MonitorSpec {
     enabled: boolean,
     samplepercent: number,
     schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
-    notifiername: string,
+    notifiername?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     validationsList: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidation.AsObject>,
-    logrequests: boolean,
-    logresponses: boolean,
+    outlierdetectionmodel?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
   }
 }
 
@@ -950,11 +1042,11 @@ export namespace MonitorStatus {
 }
 
 export class OnlineFeatureStoreSpec extends jspb.Message {
-  getActive(): boolean;
-  setActive(value: boolean): OnlineFeatureStoreSpec;
+  getEnabled(): boolean;
+  setEnabled(value: boolean): OnlineFeatureStoreSpec;
 
-  getServicename(): string;
-  setServicename(value: string): OnlineFeatureStoreSpec;
+  getHostname(): string;
+  setHostname(value: string): OnlineFeatureStoreSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OnlineFeatureStoreSpec.AsObject;
@@ -966,8 +1058,8 @@ export class OnlineFeatureStoreSpec extends jspb.Message {
 
 export namespace OnlineFeatureStoreSpec {
   export type AsObject = {
-    active: boolean,
-    servicename: string,
+    enabled: boolean,
+    hostname: string,
   }
 }
 
@@ -1027,8 +1119,14 @@ export class PredictionCacheSpec extends jspb.Message {
   getActive(): boolean;
   setActive(value: boolean): PredictionCacheSpec;
 
-  getServicename(): string;
-  setServicename(value: string): PredictionCacheSpec;
+  getInmemory(): boolean;
+  setInmemory(value: boolean): PredictionCacheSpec;
+
+  getRedis(): boolean;
+  setRedis(value: boolean): PredictionCacheSpec;
+
+  getHostname(): string;
+  setHostname(value: string): PredictionCacheSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PredictionCacheSpec.AsObject;
@@ -1041,7 +1139,9 @@ export class PredictionCacheSpec extends jspb.Message {
 export namespace PredictionCacheSpec {
   export type AsObject = {
     active: boolean,
-    servicename: string,
+    inmemory: boolean,
+    redis: boolean,
+    hostname: string,
   }
 }
 
@@ -1124,6 +1224,36 @@ export namespace PredictionList {
   export type AsObject = {
     metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta.AsObject,
     itemsList: Array<Prediction.AsObject>,
+  }
+}
+
+export class PredictionLoggingSpec extends jspb.Message {
+  getEnabled(): boolean;
+  setEnabled(value: boolean): PredictionLoggingSpec;
+
+  getSamplepercent(): number;
+  setSamplepercent(value: number): PredictionLoggingSpec;
+
+  getLogrequests(): boolean;
+  setLogrequests(value: boolean): PredictionLoggingSpec;
+
+  getLogresponses(): boolean;
+  setLogresponses(value: boolean): PredictionLoggingSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PredictionLoggingSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: PredictionLoggingSpec): PredictionLoggingSpec.AsObject;
+  static serializeBinaryToWriter(message: PredictionLoggingSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PredictionLoggingSpec;
+  static deserializeBinaryFromReader(message: PredictionLoggingSpec, reader: jspb.BinaryReader): PredictionLoggingSpec;
+}
+
+export namespace PredictionLoggingSpec {
+  export type AsObject = {
+    enabled: boolean,
+    samplepercent: number,
+    logrequests: boolean,
+    logresponses: boolean,
   }
 }
 
@@ -1343,24 +1473,6 @@ export namespace Predictor {
   }
 }
 
-export class PredictorAuthSpec extends jspb.Message {
-  getEnabled(): boolean;
-  setEnabled(value: boolean): PredictorAuthSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PredictorAuthSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: PredictorAuthSpec): PredictorAuthSpec.AsObject;
-  static serializeBinaryToWriter(message: PredictorAuthSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PredictorAuthSpec;
-  static deserializeBinaryFromReader(message: PredictorAuthSpec, reader: jspb.BinaryReader): PredictorAuthSpec;
-}
-
-export namespace PredictorAuthSpec {
-  export type AsObject = {
-    enabled: boolean,
-  }
-}
-
 export class PredictorCondition extends jspb.Message {
   getType(): string;
   setType(value: string): PredictorCondition;
@@ -1460,23 +1572,16 @@ export class PredictorSpec extends jspb.Message {
   hasArtifactsfolder(): boolean;
   clearArtifactsfolder(): PredictorSpec;
 
-  getPort(): number;
-  setPort(value: number): PredictorSpec;
-
-  getNodeport(): number;
-  setNodeport(value: number): PredictorSpec;
-
-  getPath(): string;
-  setPath(value: string): PredictorSpec;
-
-  getAccesstype(): string;
-  setAccesstype(value: string): PredictorSpec;
+  getAccess(): AccessSpec | undefined;
+  setAccess(value?: AccessSpec): PredictorSpec;
+  hasAccess(): boolean;
+  clearAccess(): PredictorSpec;
 
   getReplicas(): number;
   setReplicas(value: number): PredictorSpec;
 
-  getAutoscaling(): AutoScaling | undefined;
-  setAutoscaling(value?: AutoScaling): PredictorSpec;
+  getAutoscaling(): AutoScalingSpec | undefined;
+  setAutoscaling(value?: AutoScalingSpec): PredictorSpec;
   hasAutoscaling(): boolean;
   clearAutoscaling(): PredictorSpec;
 
@@ -1498,14 +1603,10 @@ export class PredictorSpec extends jspb.Message {
   hasStore(): boolean;
   clearStore(): PredictorSpec;
 
-  getForwardcurtain(): string;
-  setForwardcurtain(value: string): PredictorSpec;
-
-  getBackwardcurtain(): string;
-  setBackwardcurtain(value: string): PredictorSpec;
-
-  getType(): string;
-  setType(value: string): PredictorSpec;
+  getServing(): ModelServingSpec | undefined;
+  setServing(value?: ModelServingSpec): PredictorSpec;
+  hasServing(): boolean;
+  clearServing(): PredictorSpec;
 
   getTask(): string;
   setTask(value: string): PredictorSpec;
@@ -1518,27 +1619,15 @@ export class PredictorSpec extends jspb.Message {
   hasMonitor(): boolean;
   clearMonitor(): PredictorSpec;
 
-  getAuth(): PredictorAuthSpec | undefined;
-  setAuth(value?: PredictorAuthSpec): PredictorSpec;
-  hasAuth(): boolean;
-  clearAuth(): PredictorSpec;
+  getPredictionlogging(): PredictionLoggingSpec | undefined;
+  setPredictionlogging(value?: PredictionLoggingSpec): PredictorSpec;
+  hasPredictionlogging(): boolean;
+  clearPredictionlogging(): PredictorSpec;
 
-  getRest(): boolean;
-  setRest(value: boolean): PredictorSpec;
-
-  getTargetcolumn(): string;
-  setTargetcolumn(value: string): PredictorSpec;
-
-  getPositivelabel(): string;
-  setPositivelabel(value: string): PredictorSpec;
-
-  getNegativelabel(): string;
-  setNegativelabel(value: string): PredictorSpec;
-
-  getTrainingdatasetref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setTrainingdatasetref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): PredictorSpec;
-  hasTrainingdatasetref(): boolean;
-  clearTrainingdatasetref(): PredictorSpec;
+  getHumans(): HumanInTheLoopSpec | undefined;
+  setHumans(value?: HumanInTheLoopSpec): PredictorSpec;
+  hasHumans(): boolean;
+  clearHumans(): PredictorSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PredictorSpec.AsObject;
@@ -1558,28 +1647,19 @@ export namespace PredictorSpec {
     modelsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec.AsObject>,
     progressive?: ProgressiveSpec.AsObject,
     artifactsfolder?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
-    port: number,
-    nodeport: number,
-    path: string,
-    accesstype: string,
+    access?: AccessSpec.AsObject,
     replicas: number,
-    autoscaling?: AutoScaling.AsObject,
+    autoscaling?: AutoScalingSpec.AsObject,
     owner: string,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     cache?: PredictionCacheSpec.AsObject,
     store?: OnlineFeatureStoreSpec.AsObject,
-    forwardcurtain: string,
-    backwardcurtain: string,
-    type: string,
+    serving?: ModelServingSpec.AsObject,
     task: string,
     predictionthreshold: number,
     monitor?: MonitorSpec.AsObject,
-    auth?: PredictorAuthSpec.AsObject,
-    rest: boolean,
-    targetcolumn: string,
-    positivelabel: string,
-    negativelabel: string,
-    trainingdatasetref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    predictionlogging?: PredictionLoggingSpec.AsObject,
+    humans?: HumanInTheLoopSpec.AsObject,
   }
 }
 

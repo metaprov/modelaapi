@@ -20,8 +20,52 @@ import "k8s.io/apimachinery/pkg/runtime/schema/generated.proto";
 // Package-wide variables from generator "generated".
 option go_package = "github.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1";
 
+message AccessSpec {
+  // The port number that will be exposed on the Predictor's Pods to serve prediction traffic through the GRPCInferenceService API.
+  // The Kubernetes Service created by the Predictor will expose the port and forward GRPC traffic to the backend pods
+  // +kubebuilder:validation:Optional
+  // +kubebuilder:validation:Minimum=1024
+  // +kubebuilder:validation:Maximum=65535
+  // +kubebuilder:validation:Optional
+  // +kubebuilder:default:=8080
+  optional int32 port = 1;
+
+  // The port number that will be exposed on the external address of every node on the cluster, in the case of the
+  // Predictor's access type being NodePort. Traffic from the port will be forwarded to the Predictor's backend service
+  // +kubebuilder:validation:Minimum=0
+  // +kubebuilder:validation:Maximum=65535
+  // +kubebuilder:validation:Optional
+  optional int32 nodePort = 2;
+
+  // The auto-generated DNS path where the Predictor service can be accessed. If the access type is ClusterIP, it will
+  // be a cluster-internal DNS name (i.e. predictor.default-serving-site.svc.cluster.local). In the case of the Ingress
+  // access type, it will be determined by the FQDN of the host ServingSite (i.e. predictor.default-serving-site.modela.ai).
+  // +kubebuilder:validation:MaxLength=256
+  // +kubebuilder:validation:Optional
+  // +kubebuilder:default:=""
+  optional string path = 3;
+
+  // The Kubernetes-native access method which specifies how the Kubernetes Service created by the Predictor will be exposed.
+  // See https://modela.ai/docs/docs/serving/production/#access-method for a detailed description of each access type
+  // (defaults to cluster-ip)
+  // +kubebuilder:default:="cluster-ip"
+  // +kubebuilder:validation:Optional
+  optional string accessType = 4;
+
+  // Indicates if the prediction service should expose an additional port to serve the GRPCInferenceService API through REST.
+  // The port one digit above the number specified by the Port field will be exposed to accept HTTP/1.1 traffic
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool rest = 5;
+
+  // The number of replicas for the Kubernetes Deployment associated with the Predictor, which will instantiate multiple
+  // copies of the service in the case that automatic scaling is disabled
+  // +kubebuilder:validation:Optional
+  optional k8s.io.api.core.v1.SecretReference apikeySecretRef = 6;
+}
+
 // AutoScaling defines the configuration for the automatic scaling of a service
-message AutoScaling {
+message AutoScalingSpec {
   // Indicates if automatic scaling is enabled
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
@@ -459,6 +503,20 @@ message ForecastSpec {
   optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSpec horizon = 2;
 }
 
+message HumanInTheLoopSpec {
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool enabled = 1;
+
+  // The forward curtain receives prediction requests before the prediction (currently unimplemented)
+  // +kubebuilder:validation:Optional
+  optional k8s.io.api.core.v1.ObjectReference forwardCurtainRef = 2;
+
+  // The backward curtain receives prediction requests after the prediction (currently unimplemented)
+  // +kubebuilder:validation:Optional
+  optional k8s.io.api.core.v1.ObjectReference backwardCurtainRef = 3;
+}
+
 message KubernetesObjectStatus {
   // The object reference
   // +kubebuilder:validation:Optional
@@ -572,6 +630,19 @@ message ModelRecord {
   optional double avgLatency = 6;
 }
 
+// ////////////////////////////////////////////////////////////////////////
+// Model Serving Spec
+// ///////////////////////////////////////////////////////////////////////
+message ModelServingSpec {
+  // The type of predictor (online, batch, or streaming). Online is the only supported type as of the current release
+  // +kubebuilder:default:="online"
+  // +kubebuilder:validation:Optional
+  optional string type = 1;
+
+  // Do not start the model until they are prediction
+  optional bool serverless = 2;
+}
+
 // MonitorSpec defines the specification to monitor a model in production
 message MonitorSpec {
   // If true monitoring is enabled.
@@ -591,21 +662,15 @@ message MonitorSpec {
   // NotifierName is the name of notifier to alert in case of
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string notifierName = 4;
+  optional k8s.io.api.core.v1.ObjectReference notifierName = 4;
 
   // List of model validation
   // +kubebuilder:validation:Optional
   repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidation validations = 5;
 
-  // Log requests (incoming traffic)
-  // +kubebuilder:default:=false
+  // Reference to a model that would be used as outliter detection. If empty, do not use outlier detection model.
   // +kubebuilder:validation:Optional
-  optional bool logRequests = 6;
-
-  // Log outgoing traffic
-  // +kubebuilder:default:=false
-  // +kubebuilder:validation:Optional
-  optional bool logResponses = 7;
+  optional k8s.io.api.core.v1.ObjectReference outlierDetectionModel = 6;
 }
 
 message MonitorStatus {
@@ -623,10 +688,11 @@ message MonitorStatus {
 message OnlineFeatureStoreSpec {
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool active = 1;
+  optional bool enabled = 1;
 
+  // The host name of the feature store micro service.
   // +kubebuilder:default:=""
-  optional string serviceName = 2;
+  optional string hostname = 2;
 }
 
 message OnlineStoreStatus {
@@ -664,9 +730,19 @@ message PredictionCacheSpec {
   // +kubebuilder:validation:Optional
   optional bool active = 1;
 
+  // Active indicate if the cache is active
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool inMemory = 2;
+
+  // Active indicate if the cache is active
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool redis = 3;
+
   // the name of the cache service
   // +kubebuilder:default:=""
-  optional string serviceName = 2;
+  optional string hostname = 4;
 }
 
 message PredictionCacheStatus {
@@ -698,6 +774,28 @@ message PredictionList {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
 
   repeated Prediction items = 2;
+}
+
+message PredictionLoggingSpec {
+  // If true monitoring is enabled.
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool enabled = 1;
+
+  // How many rows to sample from the live data for
+  // +kubebuilder:default:=0
+  // +kubebuilder:validation:Optional
+  optional int32 samplePercent = 2;
+
+  // Log requests (incoming prediction traffic)
+  // +kubebuilder:default:=true
+  // +kubebuilder:validation:Optional
+  optional bool logRequests = 3;
+
+  // Log the prediction result
+  // +kubebuilder:default:=true
+  // +kubebuilder:validation:Optional
+  optional bool logResponses = 4;
 }
 
 // PredictionSpec represent the desired state of Prediction
@@ -859,13 +957,6 @@ message Predictor {
   optional PredictorStatus status = 3;
 }
 
-message PredictorAuthSpec {
-  // Indicates if authentication is enabled
-  // +kubebuilder:default:=false
-  // +kubebuilder:validation:Optional
-  optional bool enabled = 1;
-}
-
 // PredictorCondition describes the state of a Predictor at a certain point
 message PredictorCondition {
   // Type of Predictor condition
@@ -932,119 +1023,58 @@ message PredictorSpec {
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation artifactsFolder = 8;
 
-  // The port number that will be exposed on the Predictor's Pods to serve prediction traffic through the GRPCInferenceService API.
-  // The Kubernetes Service created by the Predictor will expose the port and forward GRPC traffic to the backend pods
+  // The data location where artifacts generated by the Predictor will be stored
   // +kubebuilder:validation:Optional
-  // +kubebuilder:validation:Minimum=1024
-  // +kubebuilder:validation:Maximum=65535
-  // +kubebuilder:validation:Optional
-  // +kubebuilder:default:=8080
-  optional int32 port = 9;
+  optional AccessSpec access = 9;
 
-  // The port number that will be exposed on the external address of every node on the cluster, in the case of the
-  // Predictor's access type being NodePort. Traffic from the port will be forwarded to the Predictor's backend service
-  // +kubebuilder:validation:Minimum=0
-  // +kubebuilder:validation:Maximum=65535
+  // The data location where artifacts generated by the Predictor will be stored
   // +kubebuilder:validation:Optional
-  optional int32 nodePort = 10;
-
-  // The auto-generated DNS path where the Predictor service can be accessed. If the access type is ClusterIP, it will
-  // be a cluster-internal DNS name (i.e. predictor.default-serving-site.svc.cluster.local). In the case of the Ingress
-  // access type, it will be determined by the FQDN of the host ServingSite (i.e. predictor.default-serving-site.modela.ai).
-  // +kubebuilder:validation:MaxLength=256
-  // +kubebuilder:validation:Optional
-  // +kubebuilder:default:=""
-  optional string path = 11;
-
-  // The Kubernetes-native access method which specifies how the Kubernetes Service created by the Predictor will be exposed.
-  // See https://modela.ai/docs/docs/serving/production/#access-method for a detailed description of each access type
-  // (defaults to cluster-ip)
-  // +kubebuilder:default:="cluster-ip"
-  // +kubebuilder:validation:Optional
-  optional string accessType = 12;
-
-  // The number of replicas for the Kubernetes Deployment associated with the Predictor, which will instantiate multiple
-  // copies of the service in the case that automatic scaling is disabled
-  // +kubebuilder:validation:Optional
-  // +kubebuilder:validation:Maximum=10
-  // +kubebuilder:validation:Minimum=1
-  // +kubebuilder:default:=1
-  optional int32 replicas = 13;
+  optional int32 replicas = 10;
 
   // AutoScaling specifies the auto-scaling policy
   // +kubebuilder:validation:Optional
-  optional AutoScaling autoScaling = 14;
+  optional AutoScalingSpec autoScaling = 11;
 
   // The name of the Account which created the object, which exists in the same tenant as the object
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
-  optional string owner = 15;
+  optional string owner = 12;
 
   // Resources specifies the resource requirements allocated to the prediction service
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 16;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 13;
 
   // Cache is the specification of prediction cache (currently unimplemented)
   // +kubebuilder:validation:Optional
-  optional PredictionCacheSpec cache = 17;
+  optional PredictionCacheSpec cache = 14;
 
   // Store is the specification of the online data store (currently unimplemented)
   // +kubebuilder:validation:Optional
-  optional OnlineFeatureStoreSpec store = 18;
+  optional OnlineFeatureStoreSpec store = 15;
 
-  // The forward curtain receives prediction requests before the prediction (currently unimplemented)
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:Optional
-  optional string forwardCurtain = 19;
-
-  // The backward curtain receives prediction requests after the prediction (currently unimplemented)
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:Optional
-  optional string backwardCurtain = 20;
-
-  // The type of predictor (online, batch, or streaming). Online is the only supported type as of the current release
-  // +kubebuilder:default:="online"
-  // +kubebuilder:validation:Optional
-  optional string type = 21;
+  // Define the actual serving spec.
+  optional ModelServingSpec serving = 16;
 
   // The task type of the Predictor, which should match the task type of the models being served
   // +kubebuilder:default:="unknown"
   // +kubebuilder:validation:Optional
-  optional string task = 22;
+  optional string task = 19;
 
   // The prediction threshold
   // +kubebuilder:validation:Optional
-  optional double predictionThreshold = 23;
+  optional double predictionThreshold = 20;
 
   // Monitor spec specify the monitor for this predictor.
   // +kubebuilder:validation:Optional
-  optional MonitorSpec monitor = 24;
+  optional MonitorSpec monitor = 21;
 
-  // The specification to authenticate requests to the prediction service
+  // Monitor spec specify the monitor for this predictor.
   // +kubebuilder:validation:Optional
-  optional PredictorAuthSpec auth = 25;
+  optional PredictionLoggingSpec predictionLogging = 22;
 
-  // Indicates if the prediction service should expose an additional port to serve the GRPCInferenceService API through REST.
-  // The port one digit above the number specified by the Port field will be exposed to accept HTTP/1.1 traffic
-  // +kubebuilder:default:=false
+  // Monitor spec specify the monitor for this predictor.
   // +kubebuilder:validation:Optional
-  optional bool rest = 26;
-
-  // The target feature of the model that the Predictor serves
-  // +kubebuilder:validation:Optional
-  optional string targetColumn = 27;
-
-  // For binary classification, the name of the positive class of the target feature
-  // +kubebuilder:validation:Optional
-  optional string positiveLabel = 28;
-
-  // For binary classification, the name of the negative class of the target feature
-  // +kubebuilder:validation:Optional
-  optional string negativeLabel = 29;
-
-  // The dataset where this model was trained on
-  // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference trainingDatasetRef = 30;
+  optional HumanInTheLoopSpec humans = 23;
 }
 
 // PredictorStatus contain the current state of the Predictor resource
@@ -1062,12 +1092,15 @@ message PredictorStatus {
   repeated ModelDeploymentStatus models = 3;
 
   // The predictor let status
+  // +kubebuilder:validation:Optional
   optional PredictorletStatus predictorlet = 4;
 
   // The status of the cache
+  // +kubebuilder:validation:Optional
   optional PredictionCacheStatus cache = 5;
 
   // The status of the online store
+  // +kubebuilder:validation:Optional
   optional OnlineStoreStatus onlineStore = 6;
 
   // The last time the object was updated
