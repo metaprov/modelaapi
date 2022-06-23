@@ -36,7 +36,6 @@ type MonitorSpec struct {
 	// +kubebuilder:validation:Optional
 	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,3,opt,name=schedule"`
 	// NotifierName is the name of notifier to alert in case of
-	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	NotifierRef *v1.ObjectReference `json:"notifierRef,omitempty" protobuf:"bytes,4,opt,name=notifierRef"`
 	// List of model validation

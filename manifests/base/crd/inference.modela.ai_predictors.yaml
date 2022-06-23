@@ -475,7 +475,6 @@ spec:
                     description: If true monitoring is enabled.
                     type: boolean
                   notifierRef:
-                    default: ""
                     description: NotifierName is the name of notifier to alert in
                       case of
                     properties:

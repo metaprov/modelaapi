@@ -633,7 +633,6 @@ message MonitorSpec {
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 3;
 
   // NotifierName is the name of notifier to alert in case of
-  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference notifierRef = 4;
 
