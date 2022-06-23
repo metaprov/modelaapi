@@ -403,18 +403,13 @@ message DataAppSpec {
   // +kubebuilder:default:=""
   optional string description = 3;
 
-  // The URL where the DataApp web application can be accessed. If the access type is ClusterIP, it will
-  // be a cluster-internal DNS name (i.e. data-app.default-serving-site.svc.cluster.local). In the case of the Ingress
-  // access type, the URL will be given its own path based on the FQDN of the host ServingSite
-  // (i.e. apps.default-serving-site.modela.ai/data-app).
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:Optional
-  optional string path = 4;
-
   // The name of the predictive app model. The model will be used
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string modelName = 5;
+  optional string modelName = 4;
+
+  // Define how to access the app.
+  optional AccessSpec access = 6;
 
   // The number of replicas for the Kubernetes Deployment associated with the DataApp, which will instantiate multiple
   // copies of the service in the case that automatic scaling is disabled
@@ -422,31 +417,9 @@ message DataAppSpec {
   // +kubebuilder:validation:Optional
   optional int32 replicas = 7;
 
-  // The port number that will be exposed on the DataApp's Pods to serve the web-based dashboard application.
-  // The Kubernetes Service created by the DataApp will expose the port and forward HTTP traffic to the backend pods
-  // +kubebuilder:default:=3000
-  // +kubebuilder:validation:Minimum=1
-  // +kubebuilder:validation:Maximum=65535
-  // +kubebuilder:validation:Optional
-  optional int32 port = 8;
-
-  // The port number that will be exposed on the external address of every node on the cluster, in the case of the
-  // DataApps's access type being NodePort. Traffic from the port will be served the DataApp's web application
-  // +kubebuilder:validation:Minimum=1
-  // +kubebuilder:validation:Maximum=65535
-  // +kubebuilder:validation:Optional
-  optional int32 nodePort = 9;
-
   // Resources specifies the resource requirements allocated to the DataApp's web server
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 10;
-
-  // The Kubernetes-native access method which specifies how the Kubernetes Service created by the DataApp will be exposed.
-  // See https://modela.ai/docs/docs/serving/production/#access-method for a detailed description of each access type
-  // (defaults to cluster-ip)
-  // +kubebuilder:default:="cluster-ip"
-  // +kubebuilder:validation:Optional
-  optional string accessType = 11;
 
   // The reference to the DataProduct that the resource exists under
   // +kubebuilder:validation:Optional
@@ -662,15 +635,15 @@ message MonitorSpec {
   // NotifierName is the name of notifier to alert in case of
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference notifierName = 4;
+  optional k8s.io.api.core.v1.ObjectReference notifierRef = 4;
 
   // List of model validation
-  // +kubebuilder:validation:Optional
+  // +kubebuilder:validation:Optionalthis
   repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidation validations = 5;
 
   // Reference to a model that would be used as outliter detection. If empty, do not use outlier detection model.
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference outlierDetectionModel = 6;
+  optional k8s.io.api.core.v1.ObjectReference outlierDetectionModelRef = 6;
 }
 
 message MonitorStatus {
@@ -728,7 +701,7 @@ message PredictionCacheSpec {
   // Active indicate if the cache is active
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool active = 1;
+  optional bool enabled = 1;
 
   // Active indicate if the cache is active
   // +kubebuilder:default:=false

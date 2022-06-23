@@ -605,28 +605,21 @@ export class DataAppSpec extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): DataAppSpec;
 
-  getPath(): string;
-  setPath(value: string): DataAppSpec;
-
   getModelname(): string;
   setModelname(value: string): DataAppSpec;
 
+  getAccess(): AccessSpec | undefined;
+  setAccess(value?: AccessSpec): DataAppSpec;
+  hasAccess(): boolean;
+  clearAccess(): DataAppSpec;
+
   getReplicas(): number;
   setReplicas(value: number): DataAppSpec;
-
-  getPort(): number;
-  setPort(value: number): DataAppSpec;
-
-  getNodeport(): number;
-  setNodeport(value: number): DataAppSpec;
 
   getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
   setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): DataAppSpec;
   hasResources(): boolean;
   clearResources(): DataAppSpec;
-
-  getAccesstype(): string;
-  setAccesstype(value: string): DataAppSpec;
 
   getProductref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setProductref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): DataAppSpec;
@@ -656,13 +649,10 @@ export namespace DataAppSpec {
     owner: string,
     versionname: string,
     description: string,
-    path: string,
     modelname: string,
+    access?: AccessSpec.AsObject,
     replicas: number,
-    port: number,
-    nodeport: number,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
-    accesstype: string,
     productref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     servingsiteref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     custom?: CustomAppSpec.AsObject,
@@ -979,20 +969,20 @@ export class MonitorSpec extends jspb.Message {
   hasSchedule(): boolean;
   clearSchedule(): MonitorSpec;
 
-  getNotifiername(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setNotifiername(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): MonitorSpec;
-  hasNotifiername(): boolean;
-  clearNotifiername(): MonitorSpec;
+  getNotifierref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setNotifierref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): MonitorSpec;
+  hasNotifierref(): boolean;
+  clearNotifierref(): MonitorSpec;
 
   getValidationsList(): Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidation>;
   setValidationsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidation>): MonitorSpec;
   clearValidationsList(): MonitorSpec;
   addValidations(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidation, index?: number): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidation;
 
-  getOutlierdetectionmodel(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setOutlierdetectionmodel(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): MonitorSpec;
-  hasOutlierdetectionmodel(): boolean;
-  clearOutlierdetectionmodel(): MonitorSpec;
+  getOutlierdetectionmodelref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setOutlierdetectionmodelref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): MonitorSpec;
+  hasOutlierdetectionmodelref(): boolean;
+  clearOutlierdetectionmodelref(): MonitorSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MonitorSpec.AsObject;
@@ -1007,9 +997,9 @@ export namespace MonitorSpec {
     enabled: boolean,
     samplepercent: number,
     schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
-    notifiername?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    notifierref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     validationsList: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidation.AsObject>,
-    outlierdetectionmodel?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    outlierdetectionmodelref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
   }
 }
 
@@ -1116,8 +1106,8 @@ export namespace Prediction {
 }
 
 export class PredictionCacheSpec extends jspb.Message {
-  getActive(): boolean;
-  setActive(value: boolean): PredictionCacheSpec;
+  getEnabled(): boolean;
+  setEnabled(value: boolean): PredictionCacheSpec;
 
   getInmemory(): boolean;
   setInmemory(value: boolean): PredictionCacheSpec;
@@ -1138,7 +1128,7 @@ export class PredictionCacheSpec extends jspb.Message {
 
 export namespace PredictionCacheSpec {
   export type AsObject = {
-    active: boolean,
+    enabled: boolean,
     inmemory: boolean,
     redis: boolean,
     hostname: string,

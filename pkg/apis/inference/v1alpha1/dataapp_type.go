@@ -79,44 +79,20 @@ type DataAppSpec struct {
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:=""
 	Description *string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
-	// The URL where the DataApp web application can be accessed. If the access type is ClusterIP, it will
-	// be a cluster-internal DNS name (i.e. data-app.default-serving-site.svc.cluster.local). In the case of the Ingress
-	// access type, the URL will be given its own path based on the FQDN of the host ServingSite
-	// (i.e. apps.default-serving-site.modela.ai/data-app).
-	// +kubebuilder:default:=""
-	// +kubebuilder:validation:Optional
-	Path *string `json:"path,omitempty" protobuf:"bytes,4,opt,name=path"`
 	// The name of the predictive app model. The model will be used
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	ModelName *string `json:"modelName,omitempty" protobuf:"bytes,5,opt,name=modelName"`
+	ModelName *string `json:"modelName,omitempty" protobuf:"bytes,4,opt,name=modelName"`
+	// Define how to access the app.
+	Access AccessSpec `json:"access,omitempty" protobuf:"bytes,6,opt,name=access"`
 	// The number of replicas for the Kubernetes Deployment associated with the DataApp, which will instantiate multiple
 	// copies of the service in the case that automatic scaling is disabled
 	// +kubebuilder:default:=1
 	// +kubebuilder:validation:Optional
 	Replicas *int32 `json:"replicas,omitempty" protobuf:"varint,7,opt,name=replicas"`
-	// The port number that will be exposed on the DataApp's Pods to serve the web-based dashboard application.
-	// The Kubernetes Service created by the DataApp will expose the port and forward HTTP traffic to the backend pods
-	// +kubebuilder:default:=3000
-	// +kubebuilder:validation:Minimum=1
-	// +kubebuilder:validation:Maximum=65535
-	// +kubebuilder:validation:Optional
-	Port *int32 `json:"port,omitempty" protobuf:"varint,8,opt,name=port"`
-	// The port number that will be exposed on the external address of every node on the cluster, in the case of the
-	// DataApps's access type being NodePort. Traffic from the port will be served the DataApp's web application
-	// +kubebuilder:validation:Minimum=1
-	// +kubebuilder:validation:Maximum=65535
-	// +kubebuilder:validation:Optional
-	NodePort *int32 `json:"nodePort,omitempty" protobuf:"varint,9,opt,name=nodePort"`
 	// Resources specifies the resource requirements allocated to the DataApp's web server
 	// +kubebuilder:validation:Optional
 	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,10,opt,name=resources"`
-	// The Kubernetes-native access method which specifies how the Kubernetes Service created by the DataApp will be exposed.
-	// See https://modela.ai/docs/docs/serving/production/#access-method for a detailed description of each access type
-	// (defaults to cluster-ip)
-	// +kubebuilder:default:="cluster-ip"
-	// +kubebuilder:validation:Optional
-	AccessType *catalog.AccessType `json:"accessType,omitempty" protobuf:"bytes,11,opt,name=accessType"`
 	// The reference to the DataProduct that the resource exists under
 	// +kubebuilder:validation:Optional
 	ProductRef *v1.ObjectReference `json:"productRef,omitempty" protobuf:"bytes,12,opt,name=productRef"`

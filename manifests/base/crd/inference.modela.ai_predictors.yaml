@@ -281,7 +281,7 @@ spec:
                 description: Cache is the specification of prediction cache (currently
                   unimplemented)
                 properties:
-                  active:
+                  enabled:
                     default: false
                     description: Active indicate if the cache is active
                     type: boolean
@@ -474,7 +474,7 @@ spec:
                     default: false
                     description: If true monitoring is enabled.
                     type: boolean
-                  notifierName:
+                  notifierRef:
                     default: ""
                     description: NotifierName is the name of notifier to alert in
                       case of
@@ -512,7 +512,7 @@ spec:
                         description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                         type: string
                     type: object
-                  outlierDetectionModel:
+                  outlierDetectionModelRef:
                     description: Reference to a model that would be used as outliter
                       detection. If empty, do not use outlier detection model.
                     properties:

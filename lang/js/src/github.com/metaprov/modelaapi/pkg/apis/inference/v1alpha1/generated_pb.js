@@ -6323,13 +6323,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppSpec.toOb
     owner: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     versionname: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     description: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-    path: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    modelname: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    modelname: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    access: (f = msg.getAccess()) && proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.AccessSpec.toObject(includeInstance, f),
     replicas: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
-    port: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
-    nodeport: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
     resources: (f = msg.getResources()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.toObject(includeInstance, f),
-    accesstype: (f = jspb.Message.getField(msg, 11)) == null ? undefined : f,
     productref: (f = msg.getProductref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     servingsiteref: (f = msg.getServingsiteref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     custom: (f = msg.getCustom()) && proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CustomAppSpec.toObject(includeInstance, f)
@@ -6383,32 +6380,21 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppSpec.dese
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
-      msg.setPath(value);
-      break;
-    case 5:
-      var value = /** @type {string} */ (reader.readString());
       msg.setModelname(value);
+      break;
+    case 6:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.AccessSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.AccessSpec.deserializeBinaryFromReader);
+      msg.setAccess(value);
       break;
     case 7:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setReplicas(value);
       break;
-    case 8:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setPort(value);
-      break;
-    case 9:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setNodeport(value);
-      break;
     case 10:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.deserializeBinaryFromReader);
       msg.setResources(value);
-      break;
-    case 11:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setAccesstype(value);
       break;
     case 12:
       var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
@@ -6482,11 +6468,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppSpec.seri
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 5));
+  f = message.getAccess();
   if (f != null) {
-    writer.writeString(
-      5,
-      f
+    writer.writeMessage(
+      6,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.AccessSpec.serializeBinaryToWriter
     );
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 7));
@@ -6496,33 +6483,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppSpec.seri
       f
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 8));
-  if (f != null) {
-    writer.writeInt32(
-      8,
-      f
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 9));
-  if (f != null) {
-    writer.writeInt32(
-      9,
-      f
-    );
-  }
   f = message.getResources();
   if (f != null) {
     writer.writeMessage(
       10,
       f,
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.serializeBinaryToWriter
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 11));
-  if (f != null) {
-    writer.writeString(
-      11,
-      f
     );
   }
   f = message.getProductref();
@@ -6661,10 +6627,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppSpec.prot
 
 
 /**
- * optional string path = 4;
+ * optional string modelName = 4;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppSpec.prototype.getPath = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppSpec.prototype.getModelname = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
@@ -6673,7 +6639,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppSpec.prot
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppSpec.prototype.setPath = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppSpec.prototype.setModelname = function(value) {
   return jspb.Message.setField(this, 4, value);
 };
 
@@ -6682,7 +6648,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppSpec.prot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppSpec.prototype.clearPath = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppSpec.prototype.clearModelname = function() {
   return jspb.Message.setField(this, 4, undefined);
 };
 
@@ -6691,35 +6657,36 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppSpec.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppSpec.prototype.hasPath = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppSpec.prototype.hasModelname = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * optional string modelName = 5;
- * @return {string}
+ * optional AccessSpec access = 6;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.AccessSpec}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppSpec.prototype.getModelname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppSpec.prototype.getAccess = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.AccessSpec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.AccessSpec, 6));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.AccessSpec|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppSpec.prototype.setModelname = function(value) {
-  return jspb.Message.setField(this, 5, value);
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppSpec.prototype.setAccess = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
 };
 
 
 /**
- * Clears the field making it undefined.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppSpec.prototype.clearModelname = function() {
-  return jspb.Message.setField(this, 5, undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppSpec.prototype.clearAccess = function() {
+  return this.setAccess(undefined);
 };
 
 
@@ -6727,8 +6694,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppSpec.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppSpec.prototype.hasModelname = function() {
-  return jspb.Message.getField(this, 5) != null;
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppSpec.prototype.hasAccess = function() {
+  return jspb.Message.getField(this, 6) != null;
 };
 
 
@@ -6769,78 +6736,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppSpec.prot
 
 
 /**
- * optional int32 port = 8;
- * @return {number}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppSpec.prototype.getPort = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppSpec.prototype.setPort = function(value) {
-  return jspb.Message.setField(this, 8, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppSpec.prototype.clearPort = function() {
-  return jspb.Message.setField(this, 8, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppSpec.prototype.hasPort = function() {
-  return jspb.Message.getField(this, 8) != null;
-};
-
-
-/**
- * optional int32 nodePort = 9;
- * @return {number}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppSpec.prototype.getNodeport = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppSpec.prototype.setNodeport = function(value) {
-  return jspb.Message.setField(this, 9, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppSpec.prototype.clearNodeport = function() {
-  return jspb.Message.setField(this, 9, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppSpec.prototype.hasNodeport = function() {
-  return jspb.Message.getField(this, 9) != null;
-};
-
-
-/**
  * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 10;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec}
  */
@@ -6874,42 +6769,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppSpec.prot
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppSpec.prototype.hasResources = function() {
   return jspb.Message.getField(this, 10) != null;
-};
-
-
-/**
- * optional string accessType = 11;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppSpec.prototype.getAccesstype = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppSpec.prototype.setAccesstype = function(value) {
-  return jspb.Message.setField(this, 11, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppSpec.prototype.clearAccesstype = function() {
-  return jspb.Message.setField(this, 11, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppSpec.prototype.hasAccesstype = function() {
-  return jspb.Message.getField(this, 11) != null;
 };
 
 
@@ -9791,10 +9650,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec.toOb
     enabled: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
     samplepercent: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     schedule: (f = msg.getSchedule()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.toObject(includeInstance, f),
-    notifiername: (f = msg.getNotifiername()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
+    notifierref: (f = msg.getNotifierref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     validationsList: jspb.Message.toObjectList(msg.getValidationsList(),
     github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidation.toObject, includeInstance),
-    outlierdetectionmodel: (f = msg.getOutlierdetectionmodel()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f)
+    outlierdetectionmodelref: (f = msg.getOutlierdetectionmodelref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -9847,7 +9706,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec.dese
     case 4:
       var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
       reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
-      msg.setNotifiername(value);
+      msg.setNotifierref(value);
       break;
     case 5:
       var value = new github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidation;
@@ -9857,7 +9716,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec.dese
     case 6:
       var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
       reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
-      msg.setOutlierdetectionmodel(value);
+      msg.setOutlierdetectionmodelref(value);
       break;
     default:
       reader.skipField();
@@ -9910,7 +9769,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec.seri
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.serializeBinaryToWriter
     );
   }
-  f = message.getNotifiername();
+  f = message.getNotifierref();
   if (f != null) {
     writer.writeMessage(
       4,
@@ -9926,7 +9785,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec.seri
       github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidation.serializeBinaryToWriter
     );
   }
-  f = message.getOutlierdetectionmodel();
+  f = message.getOutlierdetectionmodelref();
   if (f != null) {
     writer.writeMessage(
       6,
@@ -10047,10 +9906,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec.prot
 
 
 /**
- * optional k8s.io.api.core.v1.ObjectReference notifierName = 4;
+ * optional k8s.io.api.core.v1.ObjectReference notifierRef = 4;
  * @return {?proto.k8s.io.api.core.v1.ObjectReference}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec.prototype.getNotifiername = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec.prototype.getNotifierref = function() {
   return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
     jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 4));
 };
@@ -10060,7 +9919,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec.prot
  * @param {?proto.k8s.io.api.core.v1.ObjectReference|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec.prototype.setNotifiername = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec.prototype.setNotifierref = function(value) {
   return jspb.Message.setWrapperField(this, 4, value);
 };
 
@@ -10069,8 +9928,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec.prot
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec.prototype.clearNotifiername = function() {
-  return this.setNotifiername(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec.prototype.clearNotifierref = function() {
+  return this.setNotifierref(undefined);
 };
 
 
@@ -10078,7 +9937,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec.prototype.hasNotifiername = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec.prototype.hasNotifierref = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
@@ -10122,10 +9981,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec.prot
 
 
 /**
- * optional k8s.io.api.core.v1.ObjectReference outlierDetectionModel = 6;
+ * optional k8s.io.api.core.v1.ObjectReference outlierDetectionModelRef = 6;
  * @return {?proto.k8s.io.api.core.v1.ObjectReference}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec.prototype.getOutlierdetectionmodel = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec.prototype.getOutlierdetectionmodelref = function() {
   return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
     jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 6));
 };
@@ -10135,7 +9994,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec.prot
  * @param {?proto.k8s.io.api.core.v1.ObjectReference|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec.prototype.setOutlierdetectionmodel = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec.prototype.setOutlierdetectionmodelref = function(value) {
   return jspb.Message.setWrapperField(this, 6, value);
 };
 
@@ -10144,8 +10003,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec.prot
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec.prototype.clearOutlierdetectionmodel = function() {
-  return this.setOutlierdetectionmodel(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec.prototype.clearOutlierdetectionmodelref = function() {
+  return this.setOutlierdetectionmodelref(undefined);
 };
 
 
@@ -10153,7 +10012,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec.prototype.hasOutlierdetectionmodel = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec.prototype.hasOutlierdetectionmodelref = function() {
   return jspb.Message.getField(this, 6) != null;
 };
 
@@ -11037,7 +10896,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCacheS
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCacheSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
-    active: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
+    enabled: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
     inmemory: (f = jspb.Message.getBooleanField(msg, 2)) == null ? undefined : f,
     redis: (f = jspb.Message.getBooleanField(msg, 3)) == null ? undefined : f,
     hostname: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
@@ -11079,7 +10938,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCacheS
     switch (field) {
     case 1:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setActive(value);
+      msg.setEnabled(value);
       break;
     case 2:
       var value = /** @type {boolean} */ (reader.readBool());
@@ -11154,10 +11013,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCacheS
 
 
 /**
- * optional bool active = 1;
+ * optional bool enabled = 1;
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCacheSpec.prototype.getActive = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCacheSpec.prototype.getEnabled = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 1, false));
 };
 
@@ -11166,7 +11025,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCacheS
  * @param {boolean} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCacheSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCacheSpec.prototype.setActive = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCacheSpec.prototype.setEnabled = function(value) {
   return jspb.Message.setField(this, 1, value);
 };
 
@@ -11175,7 +11034,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCacheS
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCacheSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCacheSpec.prototype.clearActive = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCacheSpec.prototype.clearEnabled = function() {
   return jspb.Message.setField(this, 1, undefined);
 };
 
@@ -11184,7 +11043,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCacheS
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCacheSpec.prototype.hasActive = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCacheSpec.prototype.hasEnabled = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

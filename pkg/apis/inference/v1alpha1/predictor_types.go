@@ -38,13 +38,13 @@ type MonitorSpec struct {
 	// NotifierName is the name of notifier to alert in case of
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	NotifierRef *v1.ObjectReference `json:"notifierName,omitempty" protobuf:"bytes,4,opt,name=notifierName"`
+	NotifierRef *v1.ObjectReference `json:"notifierRef,omitempty" protobuf:"bytes,4,opt,name=notifierRef"`
 	// List of model validation
-	// +kubebuilder:validation:Optional
+	// +kubebuilder:validation:Optionalthis
 	Validations []training.ModelValidation `json:"validations,omitempty" protobuf:"bytes,5,opt,name=validations"`
 	// Reference to a model that would be used as outliter detection. If empty, do not use outlier detection model.
 	// +kubebuilder:validation:Optional
-	OutlierDetectionModel v1.ObjectReference `json:"outlierDetectionModel,omitempty" protobuf:"bytes,6,opt,name=outlierDetectionModel"`
+	OutlierDetectionModelRef v1.ObjectReference `json:"outlierDetectionModelRef,omitempty" protobuf:"bytes,6,opt,name=outlierDetectionModelRef"`
 }
 
 //////////////////////////////////////////////////////////////////////////
@@ -106,7 +106,7 @@ type PredictionCacheSpec struct {
 	// Active indicate if the cache is active
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Enabled *bool `json:"active,omitempty" protobuf:"varint,1,opt,name=active"`
+	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
 
 	// Active indicate if the cache is active
 	// +kubebuilder:default:=false
