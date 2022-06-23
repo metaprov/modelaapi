@@ -149,7 +149,7 @@ func (dataapp *DataApp) ConstructGrpcRule(fqdn string, serviceName string) *nwv1
 							Service: &nwv1.IngressServiceBackend{
 								Name: serviceName,
 								Port: nwv1.ServiceBackendPort{
-									Number: *dataapp.Spec.Port,
+									Number: *dataapp.Spec.Access.Port,
 								},
 							},
 							Resource: nil,
@@ -175,7 +175,7 @@ func (dataapp *DataApp) ConstructRESTRule(fqdn string, serviceName string) *nwv1
 							Service: &nwv1.IngressServiceBackend{
 								Name: serviceName,
 								Port: nwv1.ServiceBackendPort{
-									Number: *dataapp.Spec.Port + 1,
+									Number: *dataapp.Spec.Access.Port + 1,
 								},
 							},
 							Resource: nil,

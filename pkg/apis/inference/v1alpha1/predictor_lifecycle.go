@@ -202,7 +202,7 @@ func (predictor *Predictor) ConstructGrpcRule(fqdn string, serviceName string) *
 							Service: &nwv1.IngressServiceBackend{
 								Name: serviceName,
 								Port: nwv1.ServiceBackendPort{
-									Number: *predictor.Spec.Port,
+									Number: *predictor.Spec.Access.Port,
 								},
 							},
 							Resource: nil,
@@ -228,7 +228,7 @@ func (predictor *Predictor) ConstructRESTRule(fqdn string, serviceName string) *
 							Service: &nwv1.IngressServiceBackend{
 								Name: serviceName,
 								Port: nwv1.ServiceBackendPort{
-									Number: *predictor.Spec.Port + 1,
+									Number: *predictor.Spec.Access.Port + 1,
 								},
 							},
 							Resource: nil,
