@@ -1445,14 +1445,6 @@ func (in *PredictorletStatus) DeepCopyInto(out *PredictorletStatus) {
 		in, out := &in.LastPredictionTime, &out.LastPredictionTime
 		*out = (*in).DeepCopy()
 	}
-	if in.DeployedAt != nil {
-		in, out := &in.DeployedAt, &out.DeployedAt
-		*out = (*in).DeepCopy()
-	}
-	if in.ReleasedAt != nil {
-		in, out := &in.ReleasedAt, &out.ReleasedAt
-		*out = (*in).DeepCopy()
-	}
 	if in.ObjectStatuses != nil {
 		in, out := &in.ObjectStatuses, &out.ObjectStatuses
 		*out = make([]KubernetesObjectStatus, len(*in))

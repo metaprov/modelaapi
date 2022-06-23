@@ -538,20 +538,8 @@ type PredictorletStatus struct {
 	// LastFailure is the last faiure that occur with the model
 	// +kubebuilder:validation:Optional
 	LastFailure string `json:"lastFailure,omitempty" protobuf:"bytes,11,opt,name=lastFailure"`
-	// Phase is the current phase of this model deployment
 	// +kubebuilder:validation:Optional
-	Phase ModelDeploymentPhase `json:"phase,omitempty" protobuf:"bytes,12,opt,name=phase"`
-	// DeployedAt is the last time that this model was deployed
-	// +kubebuilder:validation:Optional
-	DeployedAt *metav1.Time `json:"deployedAt,omitempty" protobuf:"bytes,13,opt,name=deployedAt"`
-	// ReleasedAt is the time that this model was released
-	// +kubebuilder:validation:Optional
-	ReleasedAt *metav1.Time `json:"releasedAt,omitempty" protobuf:"bytes,14,opt,name=releasedAt"`
-	// The dataset where this model was trained on
-	// +kubebuilder:validation:Optional
-	TrainingDatasetName string `json:"trainingDatasetName,omitempty" protobuf:"bytes,15,opt,name=trainingDatasetName"`
-	// +kubebuilder:validation:Optional
-	ObjectStatuses []KubernetesObjectStatus `json:"objectStatuses,omitempty" protobuf:"bytes,17,rep,name=objectStatuses"`
+	ObjectStatuses []KubernetesObjectStatus `json:"objectStatuses,omitempty" protobuf:"bytes,12,rep,name=objectStatuses"`
 }
 
 type MonitorStatus struct {

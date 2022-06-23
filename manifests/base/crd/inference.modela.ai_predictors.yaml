@@ -8872,10 +8872,6 @@ spec:
                   dailyPredictionAvg:
                     format: int32
                     type: integer
-                  deployedAt:
-                    description: DeployedAt is the last time that this model was deployed
-                    format: date-time
-                    type: string
                   deploymentRef:
                     description: The deployment name that serves this model
                     properties:
@@ -8984,13 +8980,6 @@ spec:
                   p99:
                     description: P99 is the 99% latency of the model
                     type: number
-                  phase:
-                    description: Phase is the current phase of this model deployment
-                    type: string
-                  releasedAt:
-                    description: ReleasedAt is the time that this model was released
-                    format: date-time
-                    type: string
                   serviceRef:
                     description: The service name that serves this model
                     properties:
@@ -9031,9 +9020,6 @@ spec:
                     description: The total number of predictions served by the Predictor
                     format: int32
                     type: integer
-                  trainingDatasetName:
-                    description: The dataset where this model was trained on
-                    type: string
                 type: object
             type: object
         required:

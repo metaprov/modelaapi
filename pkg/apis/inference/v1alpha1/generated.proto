@@ -1143,24 +1143,8 @@ message PredictorletStatus {
   // +kubebuilder:validation:Optional
   optional string lastFailure = 11;
 
-  // Phase is the current phase of this model deployment
   // +kubebuilder:validation:Optional
-  optional string phase = 12;
-
-  // DeployedAt is the last time that this model was deployed
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time deployedAt = 13;
-
-  // ReleasedAt is the time that this model was released
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time releasedAt = 14;
-
-  // The dataset where this model was trained on
-  // +kubebuilder:validation:Optional
-  optional string trainingDatasetName = 15;
-
-  // +kubebuilder:validation:Optional
-  repeated KubernetesObjectStatus objectStatuses = 17;
+  repeated KubernetesObjectStatus objectStatuses = 12;
 }
 
 // ProgressiveSpec defines the specification to progressively deploy a model to production

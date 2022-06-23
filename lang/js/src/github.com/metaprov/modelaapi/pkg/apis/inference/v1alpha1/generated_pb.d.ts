@@ -1773,22 +1773,6 @@ export class PredictorletStatus extends jspb.Message {
   getLastfailure(): string;
   setLastfailure(value: string): PredictorletStatus;
 
-  getPhase(): string;
-  setPhase(value: string): PredictorletStatus;
-
-  getDeployedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setDeployedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): PredictorletStatus;
-  hasDeployedat(): boolean;
-  clearDeployedat(): PredictorletStatus;
-
-  getReleasedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setReleasedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): PredictorletStatus;
-  hasReleasedat(): boolean;
-  clearReleasedat(): PredictorletStatus;
-
-  getTrainingdatasetname(): string;
-  setTrainingdatasetname(value: string): PredictorletStatus;
-
   getObjectstatusesList(): Array<KubernetesObjectStatus>;
   setObjectstatusesList(value: Array<KubernetesObjectStatus>): PredictorletStatus;
   clearObjectstatusesList(): PredictorletStatus;
@@ -1815,10 +1799,6 @@ export namespace PredictorletStatus {
     lastdailypredictionsList: Array<number>,
     lastpredictiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     lastfailure: string,
-    phase: string,
-    deployedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    releasedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    trainingdatasetname: string,
     objectstatusesList: Array<KubernetesObjectStatus.AsObject>,
   }
 }
