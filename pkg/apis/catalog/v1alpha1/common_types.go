@@ -1406,6 +1406,7 @@ type Measurement struct {
 	Value *float64 `json:"value" protobuf:"bytes,2,opt,name=value"`
 }
 
+// +kubebuilder:validation:Enum="champion";"challenger";"shadow";
 type ModelRole string
 
 const (
@@ -1417,19 +1418,19 @@ const (
 // ModelDeploymentSpec describes how a single model should be deployed with a Predictor, and
 // how prediction traffic will be routed to the model
 type ModelDeploymentSpec struct {
-	// The name of a model, which is fully complete and packaged, that exists in the same DataProduct namespace
-	// as the resource which specifies the ModelDeploymentSpec
+	// The reference to a Model resource which has been packaged and exists in the same Data Product
+	// as the Predictor which specifies the ModelDeploymentSpec
 	// +kubebuilder:validation:Required
 	// +required
 	ModelRef *v1.ObjectReference `json:"modelRef,omitempty" protobuf:"bytes,1,opt,name=modelRef"`
-	// The version of the model
+	// The version of the model, derived from the Study which created it
 	ModelVersion *string `json:"modelVersion,omitempty" protobuf:"bytes,2,opt,name=modelVersion"`
-	// The minimum percentage of traffic that will be served by the model
+	// The minimum percentage (0 through 100) of traffic that will be served by the model
 	// +kubebuilder:validation:Maximum=100
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
 	Traffic *int32 `json:"traffic,omitempty" protobuf:"varint,4,opt,name=traffic"`
-	// Role denote the role of this model
+	// Role denotes the role of this model
 	// +kubebuilder:default:=champion
 	// +kubebuilder:validation:Optional
 	Role *ModelRole `json:"role,omitempty" protobuf:"bytes,5,opt,name=role"`
@@ -1447,8 +1448,7 @@ type ModelDeploymentSpec struct {
 	// TrafficSelector is a filter on the traffic to this model
 	// +kubebuilder:validation:Optional
 	TrafficSelector *string `json:"trafficSelector,omitempty" protobuf:"bytes,10,opt,name=trafficSelector"`
-	// If the deployment is canary, the metric define how to evaluate the canary.
-	// Default: none
+	// If the deployment is canary, the metric define how to evaluate the canary
 	// +kubebuilder:validation:Optional
 	CanaryMetrics []CanaryMetric `json:"canaryMetrics,omitempty" protobuf:"bytes,11,rep,name=canaryMetrics"`
 	// The account name of the approver

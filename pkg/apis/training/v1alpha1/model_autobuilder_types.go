@@ -116,7 +116,7 @@ type ModelAutobuilderSpec struct {
 	Location data.DataLocation `json:"location,omitempty" protobuf:"bytes,5,opt,name=location"`
 	// The machine learning task type relevant to the dataset (i.e. regression, classification)
 	Task *catalog.MLTask `json:"task,omitempty" protobuf:"bytes,6,opt,name=task"`
-	// The sub task
+	// The machine learning subtask relevant to the primary task (text classification, image object detection, etc.)
 	// +kubebuilder:default:="none"
 	// +kubebuilder:validation:Optional
 	SubTask *catalog.MLSubtask `json:"subtask,omitempty" protobuf:"bytes,7,opt,name=subtask"`
