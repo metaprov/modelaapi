@@ -10575,7 +10575,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.OnlineStoreStatu
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time LastAccessed = 1;
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastAccessed = 1;
  * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.OnlineStoreStatus.prototype.getLastaccessed = function() {
@@ -10899,7 +10899,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCacheS
     enabled: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
     inmemory: (f = jspb.Message.getBooleanField(msg, 2)) == null ? undefined : f,
     redis: (f = jspb.Message.getBooleanField(msg, 3)) == null ? undefined : f,
-    hostname: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
+    hostname: (f = msg.getHostname()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -10949,7 +10949,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCacheS
       msg.setRedis(value);
       break;
     case 4:
-      var value = /** @type {string} */ (reader.readString());
+      var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
+      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
       msg.setHostname(value);
       break;
     default:
@@ -11002,11 +11003,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCacheS
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 4));
+  f = message.getHostname();
   if (f != null) {
-    writer.writeString(
+    writer.writeMessage(
       4,
-      f
+      f,
+      k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
     );
   }
 };
@@ -11121,29 +11123,30 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCacheS
 
 
 /**
- * optional string hostname = 4;
- * @return {string}
+ * optional k8s.io.api.core.v1.ObjectReference hostname = 4;
+ * @return {?proto.k8s.io.api.core.v1.ObjectReference}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCacheSpec.prototype.getHostname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+  return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
+    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 4));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.k8s.io.api.core.v1.ObjectReference|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCacheSpec} returns this
- */
+*/
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCacheSpec.prototype.setHostname = function(value) {
-  return jspb.Message.setField(this, 4, value);
+  return jspb.Message.setWrapperField(this, 4, value);
 };
 
 
 /**
- * Clears the field making it undefined.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCacheSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCacheSpec.prototype.clearHostname = function() {
-  return jspb.Message.setField(this, 4, undefined);
+  return this.setHostname(undefined);
 };
 
 
@@ -11271,7 +11274,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCacheS
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time LastAccessed = 1;
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastAccessed = 1;
  * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCacheStatus.prototype.getLastaccessed = function() {

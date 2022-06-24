@@ -38,7 +38,7 @@ type MonitorSpec struct {
 	// NotifierRef references a Notifier resource that will be triggered in the case that a concept or data drift is detected
 	// +kubebuilder:validation:Optional
 	NotifierRef *v1.ObjectReference `json:"notifierRef,omitempty" protobuf:"bytes,4,opt,name=notifierRef"`
-	// Validations contains the collection of model validations that will be 
+	// Validations contains the collection of model validations that will be
 	// performed based on incoming prediction traffic
 	// +kubebuilder:validation:Optionalthis
 	Validations []training.ModelValidation `json:"validations,omitempty" protobuf:"bytes,5,opt,name=validations"`
@@ -47,18 +47,16 @@ type MonitorSpec struct {
 	OutlierDetectionModelRef v1.ObjectReference `json:"outlierDetectionModelRef,omitempty" protobuf:"bytes,6,opt,name=outlierDetectionModelRef"`
 }
 
-
 // ModelServingSpec specifies the configuration for models to be served by a Predictor
 type ModelServingSpec struct {
 	// The type of predictor (online, batch, or streaming). Online is the only supported type as of the current release
 	// +kubebuilder:default:="online"
 	// +kubebuilder:validation:Optional
 	Type *PredictorType `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
-	// If Serverless is true, the Kubernetes Deployment which serves the model will not be created 
+	// If Serverless is true, the Kubernetes Deployment which serves the model will not be created
 	// until it starts to receive prediction traffic, and will be destroyed once the model becomes dormant
 	Serverless *bool `json:"serverless,omitempty" protobuf:"varint,2,opt,name=serverless"`
 }
-
 
 // PredictionLoggingSpec specifies the configuration to log incoming and outgoing prediction requests
 type PredictionLoggingSpec struct {
@@ -170,7 +168,6 @@ type OnlineFeatureStoreSpec struct {
 	// +kubebuilder:default:=""
 	Hostname *string `json:"hostname,omitempty" protobuf:"bytes,2,opt,name=hostname"`
 }
-
 
 // AccessSpec specifies the configuration to expose a Predictor service externally
 type AccessSpec struct {

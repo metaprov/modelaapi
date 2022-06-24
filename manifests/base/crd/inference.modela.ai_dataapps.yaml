@@ -82,10 +82,9 @@ spec:
                     - none
                     type: string
                   apikeySecretRef:
-                    description: The number of replicas for the Kubernetes Deployment
-                      associated with the Predictor, which will instantiate multiple
-                      copies of the service in the case that automatic scaling is
-                      disabled
+                    description: ApiKeySecretRef references a Kubernetes Secret containing
+                      an API key that must be passed in prediction requests to the
+                      Predictor
                     properties:
                       name:
                         description: name is unique within a namespace to reference
@@ -111,7 +110,7 @@ spec:
                       can be accessed. If the access type is ClusterIP, it will be
                       a cluster-internal DNS name (i.e. predictor.default-serving-site.svc.cluster.local).
                       In the case of the Ingress access type, it will be determined
-                      by the FQDN of the host ServingSite (i.e. predictor.default-serving-site.modela.ai).
+                      by the FQDN of the host ServingSite (i.e. predictor.default-serving-site.your-domain.ai).
                     maxLength: 256
                     type: string
                   port:

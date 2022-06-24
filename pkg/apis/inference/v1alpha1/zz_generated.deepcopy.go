@@ -950,7 +950,7 @@ func (in *PredictionCacheSpec) DeepCopyInto(out *PredictionCacheSpec) {
 	}
 	if in.Hostname != nil {
 		in, out := &in.Hostname, &out.Hostname
-		*out = new(string)
+		*out = new(v1.ObjectReference)
 		**out = **in
 	}
 }

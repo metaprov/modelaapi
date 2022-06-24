@@ -1199,7 +1199,7 @@ message ModelAutobuilderSpec {
   // The machine learning task type relevant to the dataset (i.e. regression, classification)
   optional string task = 6;
 
-  // The sub task
+  // The machine learning subtask relevant to the primary task (text classification, image object detection, etc.)
   // +kubebuilder:default:="none"
   // +kubebuilder:validation:Optional
   optional string subtask = 7;
@@ -3369,7 +3369,7 @@ message StudySpec {
   // +required
   optional string task = 5;
 
-  // The machine learning task type (i.e. regression, classification)
+  // The machine learning subtask relevant to the primary task (text classification, image object detection, etc.)
   // +kubebuilder:default:=none
   // +kubebuilder:validation:Optional
   optional string subtask = 6;

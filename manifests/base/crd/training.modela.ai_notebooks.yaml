@@ -103,12 +103,12 @@ spec:
                       path based on the Tenant, DataProduct, DataProductVersion, and
                       resource type of the resource in relation to the file being
                       uploaded. The path does not need to adhere to this format; you
-                      can still pass the path of a file inside a bucket not managed
-                      by Modela
+                      can give the path to a file inside a bucket not managed by Modela
                     type: string
                   resourceRef:
-                    description: Resource Ref is a reference to another resource that
-                      contain the data , e.g. public dataset or another dataset
+                    description: In the case of the location type being Dataset or
+                      PublicDataset, ResourceRef references another resource that
+                      containing data that will be used as a data source
                     properties:
                       apiVersion:
                         description: API version of the referent.
@@ -163,10 +163,21 @@ spec:
                       Minio), a SQL location like a table or a view, a data stream
                       (i.e. Kafka, currently unsupported), or a web location (currently
                       unsupported)
+                    enum:
+                    - object
+                    - table
+                    - view
+                    - stream
+                    - web
+                    - public-dataset
+                    - dataset
                     type: string
                   url:
                     default: ""
-                    description: The url of the web resource, can be http or git location
+                    description: In the case of the location type being WebApi, URL
+                      specifies the external location (HTTP or Git) that will be queried
+                      and then stored as flat-file by the resource which specifies
+                      the DataLocation
                     type: string
                 type: object
               owner:

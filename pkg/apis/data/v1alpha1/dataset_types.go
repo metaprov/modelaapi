@@ -426,7 +426,7 @@ type OutlierStat struct {
 	Lower int32 `json:"lower,omitempty" protobuf:"varint,1,opt,name=lower"`
 	// The number of outliers above baseline
 	Upper int32 `json:"upper,omitempty" protobuf:"varint,2,opt,name=upper"`
-	// Percentage of rows detected as outliers 
+	// Percentage of rows detected as outliers
 	Percent float32 `json:"percent,omitempty" protobuf:"bytes,3,opt,name=percent"`
 }
 

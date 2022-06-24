@@ -822,8 +822,8 @@ spec:
                         description: The account name of the approver
                         type: string
                       canaryMetrics:
-                        description: 'If the deployment is canary, the metric define
-                          how to evaluate the canary. Default: none'
+                        description: If the deployment is canary, the metric define
+                          how to evaluate the canary
                         items:
                           description: CanaryMetric is used when testing the canary
                           enum:
@@ -839,9 +839,9 @@ spec:
                           are up, but does not serve production traffic
                         type: boolean
                       modelRef:
-                        description: The name of a model, which is fully complete
-                          and packaged, that exists in the same DataProduct namespace
-                          as the resource which specifies the ModelDeploymentSpec
+                        description: The reference to a Model resource which has been
+                          packaged and exists in the same Data Product as the Predictor
+                          which specifies the ModelDeploymentSpec
                         properties:
                           apiVersion:
                             description: API version of the referent.
@@ -878,7 +878,8 @@ spec:
                             type: string
                         type: object
                       modelVersion:
-                        description: The version of the model
+                        description: The version of the model, derived from the Study
+                          which created it
                         type: string
                       mountTar:
                         default: true
@@ -892,11 +893,15 @@ spec:
                         type: boolean
                       role:
                         default: champion
-                        description: Role denote the role of this model
+                        description: Role denotes the role of this model
+                        enum:
+                        - champion
+                        - challenger
+                        - shadow
                         type: string
                       traffic:
-                        description: The minimum percentage of traffic that will be
-                          served by the model
+                        description: The minimum percentage (0 through 100) of traffic
+                          that will be served by the model
                         format: int32
                         maximum: 100
                         minimum: 0
