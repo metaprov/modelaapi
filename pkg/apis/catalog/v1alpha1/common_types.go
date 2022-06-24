@@ -1406,6 +1406,14 @@ type Measurement struct {
 	Value *float64 `json:"value" protobuf:"bytes,2,opt,name=value"`
 }
 
+type ModelRole string
+
+const (
+	Champion   ModelRole = "champion"
+	Challanger ModelRole = "challenger"
+	Shadow     ModelRole = "shadow"
+)
+
 // ModelDeploymentSpec describes how a single model should be deployed with a Predictor, and
 // how prediction traffic will be routed to the model
 type ModelDeploymentSpec struct {
@@ -1413,28 +1421,18 @@ type ModelDeploymentSpec struct {
 	// as the resource which specifies the ModelDeploymentSpec
 	// +kubebuilder:validation:Required
 	// +required
-	ModelName *string `json:"modelName,omitempty" protobuf:"bytes,1,opt,name=modelName"`
+	ModelRef *v1.ObjectReference `json:"modelRef,omitempty" protobuf:"bytes,1,opt,name=modelRef"`
 	// The version of the model
 	ModelVersion *string `json:"modelVersion,omitempty" protobuf:"bytes,2,opt,name=modelVersion"`
-	// The maximum percentage of traffic that will be served by the model
-	// +kubebuilder:validation:Optional
-	// +kubebuilder:validation:Maximum=100
-	// +kubebuilder:validation:Minimum=0
-	MaxTraffic *int32 `json:"maxTraffic,omitempty" protobuf:"varint,3,opt,name=maxTraffic"`
 	// The minimum percentage of traffic that will be served by the model
 	// +kubebuilder:validation:Maximum=100
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
 	Traffic *int32 `json:"traffic,omitempty" protobuf:"varint,4,opt,name=traffic"`
-	// Canary denotes if this deployment is a staged release. A staged release will serve traffic in increments
-	// +kubebuilder:default:=false
+	// Role denote the role of this model
+	// +kubebuilder:default:=champion
 	// +kubebuilder:validation:Optional
-	Canary *bool `json:"canary,omitempty" protobuf:"varint,5,opt,name=canary"`
-	// Shadow denotes if the model is running in shadow mode. A shadow model face the production traffic, however, the predictions are not
-	// served back to the client
-	// +kubebuilder:default:=false
-	// +kubebuilder:validation:Optional
-	Shadow *bool `json:"shadow,omitempty" protobuf:"varint,6,opt,name=shadow"`
+	Role *ModelRole `json:"role,omitempty" protobuf:"bytes,5,opt,name=role"`
 	// A released model is a model that should serve production traffic
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional

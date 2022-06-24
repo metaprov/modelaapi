@@ -572,16 +572,10 @@ message ModelDeploymentSpec {
   // as the resource which specifies the ModelDeploymentSpec
   // +kubebuilder:validation:Required
   // +required
-  optional string modelName = 1;
+  optional k8s.io.api.core.v1.ObjectReference modelRef = 1;
 
   // The version of the model
   optional string modelVersion = 2;
-
-  // The maximum percentage of traffic that will be served by the model
-  // +kubebuilder:validation:Optional
-  // +kubebuilder:validation:Maximum=100
-  // +kubebuilder:validation:Minimum=0
-  optional int32 maxTraffic = 3;
 
   // The minimum percentage of traffic that will be served by the model
   // +kubebuilder:validation:Maximum=100
@@ -589,16 +583,10 @@ message ModelDeploymentSpec {
   // +kubebuilder:validation:Optional
   optional int32 traffic = 4;
 
-  // Canary denotes if this deployment is a staged release. A staged release will serve traffic in increments
-  // +kubebuilder:default:=false
+  // Role denote the role of this model
+  // +kubebuilder:default:=champion
   // +kubebuilder:validation:Optional
-  optional bool canary = 5;
-
-  // Shadow denotes if the model is running in shadow mode. A shadow model face the production traffic, however, the predictions are not
-  // served back to the client
-  // +kubebuilder:default:=false
-  // +kubebuilder:validation:Optional
-  optional bool shadow = 6;
+  optional string role = 5;
 
   // A released model is a model that should serve production traffic
   // +kubebuilder:default:=false

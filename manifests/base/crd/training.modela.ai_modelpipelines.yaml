@@ -821,11 +821,6 @@ spec:
                       approvedBy:
                         description: The account name of the approver
                         type: string
-                      canary:
-                        default: false
-                        description: Canary denotes if this deployment is a staged
-                          release. A staged release will serve traffic in increments
-                        type: boolean
                       canaryMetrics:
                         description: 'If the deployment is canary, the metric define
                           how to evaluate the canary. Default: none'
@@ -843,18 +838,45 @@ spec:
                         description: A deployed model is a model whose containers
                           are up, but does not serve production traffic
                         type: boolean
-                      maxTraffic:
-                        description: The maximum percentage of traffic that will be
-                          served by the model
-                        format: int32
-                        maximum: 100
-                        minimum: 0
-                        type: integer
-                      modelName:
+                      modelRef:
                         description: The name of a model, which is fully complete
                           and packaged, that exists in the same DataProduct namespace
                           as the resource which specifies the ModelDeploymentSpec
-                        type: string
+                        properties:
+                          apiVersion:
+                            description: API version of the referent.
+                            type: string
+                          fieldPath:
+                            description: 'If referring to a piece of an object instead
+                              of an entire object, this string should contain a valid
+                              JSON/Go field access statement, such as desiredState.manifest.containers[2].
+                              For example, if the object reference is to a container
+                              within a pod, this would take on a value like: "spec.containers{name}"
+                              (where "name" refers to the name of the container that
+                              triggered the event) or if no container name is specified
+                              "spec.containers[2]" (container with index 2 in this
+                              pod). This syntax is chosen only to have some well-defined
+                              way of referencing a part of an object. TODO: this design
+                              is not final and this field is subject to change in
+                              the future.'
+                            type: string
+                          kind:
+                            description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                            type: string
+                          name:
+                            description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                            type: string
+                          namespace:
+                            description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                            type: string
+                          resourceVersion:
+                            description: 'Specific resourceVersion to which this reference
+                              is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                            type: string
+                          uid:
+                            description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                            type: string
+                        type: object
                       modelVersion:
                         description: The version of the model
                         type: string
@@ -868,12 +890,10 @@ spec:
                         description: A released model is a model that should serve
                           production traffic
                         type: boolean
-                      shadow:
-                        default: false
-                        description: Shadow denotes if the model is running in shadow
-                          mode. A shadow model face the production traffic, however,
-                          the predictions are not served back to the client
-                        type: boolean
+                      role:
+                        default: champion
+                        description: Role denote the role of this model
+                        type: string
                       traffic:
                         description: The minimum percentage of traffic that will be
                           served by the model

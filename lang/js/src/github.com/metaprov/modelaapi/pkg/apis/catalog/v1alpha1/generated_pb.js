@@ -10670,12 +10670,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpe
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
-    modelname: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    modelref: (f = msg.getModelref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     modelversion: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    maxtraffic: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     traffic: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    canary: (f = jspb.Message.getBooleanField(msg, 5)) == null ? undefined : f,
-    shadow: (f = jspb.Message.getBooleanField(msg, 6)) == null ? undefined : f,
+    role: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     released: (f = jspb.Message.getBooleanField(msg, 7)) == null ? undefined : f,
     deployed: (f = jspb.Message.getBooleanField(msg, 8)) == null ? undefined : f,
     mounttar: (f = jspb.Message.getBooleanField(msg, 9)) == null ? undefined : f,
@@ -10720,28 +10718,21 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpe
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setModelname(value);
+      var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
+      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
+      msg.setModelref(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setModelversion(value);
-      break;
-    case 3:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setMaxtraffic(value);
       break;
     case 4:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setTraffic(value);
       break;
     case 5:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setCanary(value);
-      break;
-    case 6:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setShadow(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setRole(value);
       break;
     case 7:
       var value = /** @type {boolean} */ (reader.readBool());
@@ -10801,24 +10792,18 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpe
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = /** @type {string} */ (jspb.Message.getField(message, 1));
+  f = message.getModelref();
   if (f != null) {
-    writer.writeString(
+    writer.writeMessage(
       1,
-      f
+      f,
+      k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
     );
   }
   f = /** @type {string} */ (jspb.Message.getField(message, 2));
   if (f != null) {
     writer.writeString(
       2,
-      f
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 3));
-  if (f != null) {
-    writer.writeInt32(
-      3,
       f
     );
   }
@@ -10829,17 +10814,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpe
       f
     );
   }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 5));
+  f = /** @type {string} */ (jspb.Message.getField(message, 5));
   if (f != null) {
-    writer.writeBool(
+    writer.writeString(
       5,
-      f
-    );
-  }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 6));
-  if (f != null) {
-    writer.writeBool(
-      6,
       f
     );
   }
@@ -10897,29 +10875,30 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpe
 
 
 /**
- * optional string modelName = 1;
- * @return {string}
+ * optional k8s.io.api.core.v1.ObjectReference modelRef = 1;
+ * @return {?proto.k8s.io.api.core.v1.ObjectReference}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.getModelname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.getModelref = function() {
+  return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
+    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 1));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.k8s.io.api.core.v1.ObjectReference|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.setModelname = function(value) {
-  return jspb.Message.setField(this, 1, value);
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.setModelref = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
- * Clears the field making it undefined.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.clearModelname = function() {
-  return jspb.Message.setField(this, 1, undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.clearModelref = function() {
+  return this.setModelref(undefined);
 };
 
 
@@ -10927,7 +10906,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpe
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.hasModelname = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.hasModelref = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -10969,42 +10948,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpe
 
 
 /**
- * optional int32 maxTraffic = 3;
- * @return {number}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.getMaxtraffic = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.setMaxtraffic = function(value) {
-  return jspb.Message.setField(this, 3, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.clearMaxtraffic = function() {
-  return jspb.Message.setField(this, 3, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.hasMaxtraffic = function() {
-  return jspb.Message.getField(this, 3) != null;
-};
-
-
-/**
  * optional int32 traffic = 4;
  * @return {number}
  */
@@ -11041,19 +10984,19 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpe
 
 
 /**
- * optional bool canary = 5;
- * @return {boolean}
+ * optional string role = 5;
+ * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.getCanary = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 5, false));
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.getRole = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
 
 /**
- * @param {boolean} value
+ * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.setCanary = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.setRole = function(value) {
   return jspb.Message.setField(this, 5, value);
 };
 
@@ -11062,7 +11005,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpe
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.clearCanary = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.clearRole = function() {
   return jspb.Message.setField(this, 5, undefined);
 };
 
@@ -11071,44 +11014,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpe
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.hasCanary = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.hasRole = function() {
   return jspb.Message.getField(this, 5) != null;
-};
-
-
-/**
- * optional bool shadow = 6;
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.getShadow = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.setShadow = function(value) {
-  return jspb.Message.setField(this, 6, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.clearShadow = function() {
-  return jspb.Message.setField(this, 6, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.hasShadow = function() {
-  return jspb.Message.getField(this, 6) != null;
 };
 
 

@@ -1050,23 +1050,19 @@ export namespace Measurement {
 }
 
 export class ModelDeploymentSpec extends jspb.Message {
-  getModelname(): string;
-  setModelname(value: string): ModelDeploymentSpec;
+  getModelref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setModelref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ModelDeploymentSpec;
+  hasModelref(): boolean;
+  clearModelref(): ModelDeploymentSpec;
 
   getModelversion(): string;
   setModelversion(value: string): ModelDeploymentSpec;
 
-  getMaxtraffic(): number;
-  setMaxtraffic(value: number): ModelDeploymentSpec;
-
   getTraffic(): number;
   setTraffic(value: number): ModelDeploymentSpec;
 
-  getCanary(): boolean;
-  setCanary(value: boolean): ModelDeploymentSpec;
-
-  getShadow(): boolean;
-  setShadow(value: boolean): ModelDeploymentSpec;
+  getRole(): string;
+  setRole(value: string): ModelDeploymentSpec;
 
   getReleased(): boolean;
   setReleased(value: boolean): ModelDeploymentSpec;
@@ -1103,12 +1099,10 @@ export class ModelDeploymentSpec extends jspb.Message {
 
 export namespace ModelDeploymentSpec {
   export type AsObject = {
-    modelname: string,
+    modelref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     modelversion: string,
-    maxtraffic: number,
     traffic: number,
-    canary: boolean,
-    shadow: boolean,
+    role: string,
     released: boolean,
     deployed: boolean,
     mounttar: boolean,
