@@ -725,26 +725,26 @@ type DataSourceSpec struct {
 	// The specification for how incoming data should be sampled (i.e. how many rows should be used). Applicable
 	// primarily for very large datasets
 	Sample SampleSpec `json:"sample,omitempty" protobuf:"bytes,9,opt,name=sample"`
-	// The default task for Dataset resources created from the DataSource. If null, this will be determined from
-	// the default task of the DataProduct which owns the DataSource
+	// The default task for Dataset resources created from the Data Source. If null, the task type will default to the
+	// the default task type of the Data Product which contains the Data Source
 	// +kubebuilder:validation:Optional
 	Task *catalog.MLTask `json:"task,omitempty" protobuf:"bytes,10,opt,name=task"`
-	// The sub task
+	// The machine learning subtask relevant to the primary task (text classification, image object detection, etc.)
 	// +kubebuilder:default:="none"
 	// +kubebuilder:validation:Optional
 	SubTask *catalog.MLSubtask `json:"subtask,omitempty" protobuf:"bytes,11,opt,name=subtask"`
 	// List of relationships to other data sources
 	// +kubebuilder:validation:Optional
 	Relationships []RelationshipSpec `json:"relationships,omitempty" protobuf:"bytes,12,rep,name=relationships"`
-	// A specification on how to label datasets using positive and negative rules.
+	// Labeling specificies how to automatically label the dataset using positive and negative rules
 	// +kubebuilder:validation:Optional
 	Labeling LabelingSpec `json:"labeling,omitempty" protobuf:"bytes,13,rep,name=labeling"`
-	// The data location which was used to infer the data source schema.
+	// InferredFrom specifies the location of the data that was used to generate the schema of the Data Source
 	// +kubebuilder:validation:Optional
 	InferredFrom *DataLocation `json:"inferredFrom,omitempty" protobuf:"bytes,14,opt,name=inferredFrom"`
 }
 
-// Flat File Spec specify the setting for reading flat file
+// FlatFileFormatSpec defines the format for incoming flat-files to be parsed
 type FlatFileFormatSpec struct {
 	// The file type of incoming data which uses the DataSource (by default, a CSV file)
 	// +kubebuilder:default:="csv"
@@ -753,10 +753,10 @@ type FlatFileFormatSpec struct {
 	// The file format for CSV files, if applicable
 	// +kubebuilder:validation:Optional
 	Csv CsvFileSpec `json:"csv,omitempty" protobuf:"bytes,2,opt,name=csv"`
-	// The file format of excel files, if applicable
+	// The file format for Excel files, if applicable
 	// +kubebuilder:validation:Optional
 	Excel ExcelNotebookSpec `json:"excel,omitempty" protobuf:"bytes,3,opt,name=excel"`
-	// The file format of parquet files, if applicable
+	// The file format for Parquet files, if applicable
 	// +kubebuilder:validation:Optional
 	Parquet ParquetFileSpec `json:"parquet,omitempty" protobuf:"bytes,4,opt,name=parquet"`
 }

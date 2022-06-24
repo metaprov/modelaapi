@@ -119,10 +119,10 @@ type DataProductSpec struct {
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +kubebuilder:validation:Optional
 	ServingSiteName *string `json:"servingSiteName" protobuf:"bytes,8,opt,name=servingSiteName"`
-	// Task denote the machine learning task of the product (classification/regression,etc.)
+	// Task specifies the default machine learning task of the product (classification, regression, etc.)
 	// +kubebuilder:validation:Optional
 	Task *catalog.MLTask `json:"task,omitempty" protobuf:"bytes,9,opt,name=task"`
-	// The machine learning sub task relevant to the Dataset. This field *must* be the same as the Data Source of the object
+	// Subtask specifies the default subtask relevant to the primary task (text classification, image object detection, etc.)
 	// +kubebuilder:default:=none
 	// +kubebuilder:validation:Optional
 	SubTask *catalog.MLSubtask `json:"subtask,omitempty" protobuf:"bytes,10,opt,name=subtask"`

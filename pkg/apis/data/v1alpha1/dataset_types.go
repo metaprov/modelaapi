@@ -34,7 +34,7 @@ type DatasetConditionType string
 const (
 	DatasetReported    DatasetConditionType = "Reported"
 	DatasetValidated   DatasetConditionType = "Validated"
-	DatasetSnapshotted DatasetConditionType = "Snapshootted"
+	DatasetSnapshotted DatasetConditionType = "Snapshotted"
 	DatasetProfiled    DatasetConditionType = "Profiled"
 	DatasetIngested    DatasetConditionType = "Ingested"
 	DatasetGenerated   DatasetConditionType = "Generated"
@@ -422,11 +422,11 @@ type ColumnStatistics struct {
 }
 
 type OutlierStat struct {
-	// number of outliers below
+	// The number of outliers below baseline
 	Lower int32 `json:"lower,omitempty" protobuf:"varint,1,opt,name=lower"`
-	// number of outliers above
+	// The number of outliers above baseline
 	Upper int32 `json:"upper,omitempty" protobuf:"varint,2,opt,name=upper"`
-	// percent of outliers.
+	// Percentage of rows detected as outliers 
 	Percent float32 `json:"percent,omitempty" protobuf:"bytes,3,opt,name=percent"`
 }
 
@@ -439,6 +439,7 @@ type DatasetTemplate struct {
 	Spec              DatasetSpec `json:"spec" protobuf:"bytes,2,opt,name=spec"`
 }
 
+// +kubebuilder:validation:Enum="object";"table";"view";"stream";"web";"public-dataset";"dataset"
 type DataLocationType string
 
 const (
@@ -475,7 +476,7 @@ type DataLocation struct {
 	// The path to a flat-file inside an object storage system. When using the Modela API to upload files (through the
 	// FileService API), Modela will upload the data to a predetermined path based on the Tenant, DataProduct,
 	// DataProductVersion, and resource type of the resource in relation to the file being uploaded.
-	// The path does not need to adhere to this format; you can still pass the path of a file inside a bucket not managed by Modela
+	// The path does not need to adhere to this format; you can give the path to a file inside a bucket not managed by Modela
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Path *string `json:"path,omitempty" protobuf:"bytes,4,opt,name=path"`
@@ -495,11 +496,13 @@ type DataLocation struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Topic *string `json:"topic,omitempty" protobuf:"bytes,8,opt,name=topic"`
-	// The url of the web resource, can be http or git location
+	// In the case of the location type being WebApi, URL specifies the external location (HTTP or Git) that will be queried
+	// and then stored as flat-file by the resource which specifies the DataLocation
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	URL *string `json:"url,omitempty" protobuf:"bytes,9,opt,name=url"`
-	// Resource Ref is a reference to another resource that contain the data , e.g. public dataset or another dataset
+	// In the case of the location type being Dataset or PublicDataset, ResourceRef references another resource that
+	// containing data that will be used as a data source
 	// +kubebuilder:validation:Optional
 	ResourceRef *v1.ObjectReference `json:"resourceRef,omitempty" protobuf:"bytes,10,opt,name=resourceRef"`
 }

@@ -505,7 +505,7 @@ type StudySpec struct {
 	// +kubebuilder:validation:Required
 	// +required
 	Task *catalog.MLTask `json:"task" protobuf:"bytes,5,opt,name=task"`
-	// The machine learning task type (i.e. regression, classification)
+	// The machine learning subtask relevant to the primary task (text classification, image object detection, etc.)
 	// +kubebuilder:default:=none
 	// +kubebuilder:validation:Optional
 	SubTask *catalog.MLSubtask `json:"subtask" protobuf:"bytes,6,opt,name=subtask"`
