@@ -128,9 +128,9 @@ func (study *Study) Default() {
 	if study.Spec.DatasetName != nil {
 		study.ObjectMeta.Labels["modela.ai/dataset"] = *study.Spec.DatasetName
 	}
-	study.ObjectMeta.Labels["modela.ai/tenant"] = study.Spec.LabRef.Namespace
-	study.ObjectMeta.Labels["modela.ai/lab"] = study.Spec.LabRef.Name
-	study.ObjectMeta.Labels["modela.ai/version"] = *study.Spec.VersionName
+	study.ObjectMeta.Labels[catalog.TenantLabelKey] = study.Spec.LabRef.Namespace
+	study.ObjectMeta.Labels[catalog.LabLabelKey] = study.Spec.LabRef.Name
+	study.ObjectMeta.Labels[catalog.DataProductLabelKey] = *study.Spec.VersionName
 
 }
 

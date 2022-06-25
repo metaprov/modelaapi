@@ -1971,13 +1971,13 @@ type LastRunStatus struct {
 
 const (
 	// catalog group
-	AlgorithmLabelKey       = "commit"
-	CloudLabelKey           = "username"
-	ManagedImageLabelKey    = "username"
-	MLFrameworkLabelKey     = "username"
-	PretrainedModelLabelKey = "username"
-	PublicDatasetLabelKey   = "username"
-	WorkloadClassLabelKey   = "username"
+	AlgorithmLabelKey       = "modela.ai/algorithm"
+	CloudLabelKey           = "modela.ai/cloud"
+	ManagedImageLabelKey    = "modela.ai/managedimage"
+	MLFrameworkLabelKey     = "modela.ai/mlframework"
+	PretrainedModelLabelKey = "modela.ai/pretrainedmodel"
+	PublicDatasetLabelKey   = "modela.ai/publicdataset"
+	WorkloadClassLabelKey   = "modela.ai/workloadclass"
 
 	// data group
 	DataPipelineLabelKey        = "modela.ai/datapipline"

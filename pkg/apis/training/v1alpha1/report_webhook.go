@@ -20,10 +20,10 @@ func (report *Report) Default() {
 		report.ObjectMeta.Labels = make(map[string]string)
 	}
 	if report.Spec.VersionName != nil {
-		report.ObjectMeta.Labels["modela.ai/version"] = *report.Spec.VersionName
+		report.ObjectMeta.Labels[catalog.DataProductLabelKey] = *report.Spec.VersionName
 	}
-	report.ObjectMeta.Labels["modela.ai/tenant"] = report.Spec.LabRef.Namespace
-	report.ObjectMeta.Labels["modela.ai/lab"] = report.Spec.LabRef.Name
+	report.ObjectMeta.Labels[catalog.TenantLabelKey] = report.Spec.LabRef.Namespace
+	report.ObjectMeta.Labels[catalog.LabLabelKey] = report.Spec.LabRef.Name
 }
 
 // validation

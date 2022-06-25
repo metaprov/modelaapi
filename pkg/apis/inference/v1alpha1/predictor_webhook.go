@@ -41,7 +41,7 @@ func (predictor *Predictor) Default() {
 	if predictor.ObjectMeta.Labels == nil {
 		predictor.ObjectMeta.Labels = make(map[string]string)
 	}
-	predictor.ObjectMeta.Labels["modela.ai/tenant"] = predictor.Spec.ServingSiteRef.Namespace
+	predictor.ObjectMeta.Labels[catalog.TenantLabelKey] = predictor.Spec.ServingSiteRef.Namespace
 	predictor.ObjectMeta.Labels["modela.ai/servingsite"] = predictor.Spec.ServingSiteRef.Name
 
 }

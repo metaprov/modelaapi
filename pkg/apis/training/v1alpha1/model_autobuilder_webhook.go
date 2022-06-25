@@ -52,10 +52,10 @@ func (b *ModelAutobuilder) Default() {
 		b.ObjectMeta.Labels = make(map[string]string)
 	}
 	if b.Spec.DataProductVersionName != nil {
-		b.ObjectMeta.Labels["modela.ai/version"] = *b.Spec.DataProductVersionName
+		b.ObjectMeta.Labels[catalog.DataProductLabelKey] = *b.Spec.DataProductVersionName
 	}
-	b.ObjectMeta.Labels["modela.ai/tenant"] = b.Spec.LabRef.Namespace
-	b.ObjectMeta.Labels["modela.ai/lab"] = b.Spec.LabRef.Name
+	b.ObjectMeta.Labels[catalog.TenantLabelKey] = b.Spec.LabRef.Namespace
+	b.ObjectMeta.Labels[catalog.LabLabelKey] = b.Spec.LabRef.Name
 	b.ObjectMeta.Labels["modela.ai/servingsite"] = b.Spec.ServingSiteRef.Name
 
 }

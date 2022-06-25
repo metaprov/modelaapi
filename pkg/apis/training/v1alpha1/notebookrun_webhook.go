@@ -7,6 +7,7 @@
 package v1alpha1
 
 import (
+	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	apierrors "k8s.io/apimachinery/pkg/api/errors"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/schema"
@@ -20,10 +21,10 @@ func (run *NotebookRun) Default() {
 		run.ObjectMeta.Labels = make(map[string]string)
 	}
 	if run.Spec.VersionName != nil {
-		run.ObjectMeta.Labels["modela.ai/version"] = *run.Spec.VersionName
+		run.ObjectMeta.Labels[catalog.DataProductVersionLabelKey] = *run.Spec.VersionName
 	}
-	run.ObjectMeta.Labels["modela.ai/tenant"] = run.Spec.LabRef.Namespace
-	run.ObjectMeta.Labels["modela.ai/lab"] = run.Spec.LabRef.Name
+	run.ObjectMeta.Labels[catalog.TenantLabelKey] = run.Spec.LabRef.Namespace
+	run.ObjectMeta.Labels[catalog.LabLabelKey] = run.Spec.LabRef.Name
 
 }
 

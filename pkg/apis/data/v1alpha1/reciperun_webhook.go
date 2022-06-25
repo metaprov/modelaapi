@@ -7,6 +7,7 @@
 package v1alpha1
 
 import (
+	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	"k8s.io/apimachinery/pkg/runtime"
 	"sigs.k8s.io/controller-runtime/pkg/webhook"
 )
@@ -19,13 +20,13 @@ func (run *RecipeRun) Default() {
 		run.ObjectMeta.Labels = make(map[string]string)
 	}
 	if run.Spec.RecipeName != nil {
-		run.ObjectMeta.Labels["modela.ai/recipe"] = *run.Spec.RecipeName
+		run.ObjectMeta.Labels[catalog.RecipeLabelKey] = *run.Spec.RecipeName
 	}
 	if run.Spec.VersionName != nil {
-		run.ObjectMeta.Labels["modela.ai/version"] = *run.Spec.VersionName
+		run.ObjectMeta.Labels[catalog.DataProductVersionLabelKey] = *run.Spec.VersionName
 	}
-	run.ObjectMeta.Labels["modela.ai/tenant"] = run.Spec.LabRef.Namespace
-	run.ObjectMeta.Labels["modela.ai/lab"] = run.Spec.LabRef.Name
+	run.ObjectMeta.Labels[catalog.TenantLabelKey] = run.Spec.LabRef.Namespace
+	run.ObjectMeta.Labels[catalog.LabLabelKey] = run.Spec.LabRef.Name
 }
 
 // validation

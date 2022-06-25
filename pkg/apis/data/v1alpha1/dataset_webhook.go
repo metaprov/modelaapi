@@ -7,6 +7,7 @@
 package v1alpha1
 
 import (
+	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	"strings"
 
 	"github.com/metaprov/modelaapi/pkg/util"
@@ -32,16 +33,16 @@ func (dataset *Dataset) Default() {
 		dataset.ObjectMeta.Labels = make(map[string]string)
 	}
 	if dataset.Spec.DataSourceName != nil {
-		dataset.ObjectMeta.Labels["modela.ai/datasource"] = *dataset.Spec.DataSourceName
+		dataset.ObjectMeta.Labels[catalog.DatasourceLabelKey] = *dataset.Spec.DataSourceName
 	}
 	if dataset.Spec.VersionName != nil {
-		dataset.ObjectMeta.Labels["modela.ai/version"] = *dataset.Spec.VersionName
+		dataset.ObjectMeta.Labels[catalog.DataProductVersionLabelKey] = *dataset.Spec.VersionName
 	}
 	if dataset.Spec.Owner != nil {
 		dataset.ObjectMeta.Labels["modela.ai/owner"] = *dataset.Spec.Owner
 	}
-	dataset.ObjectMeta.Labels["modela.ai/tenant"] = dataset.Spec.LabRef.Namespace
-	dataset.ObjectMeta.Labels["modela.ai/lab"] = dataset.Spec.LabRef.Name
+	dataset.ObjectMeta.Labels[catalog.TenantLabelKey] = dataset.Spec.LabRef.Namespace
+	dataset.ObjectMeta.Labels[catalog.LabLabelKey] = dataset.Spec.LabRef.Name
 
 	// If the live path is empty, copy it from the depot path
 	if *dataset.Spec.Origin.Type == DataLocationObjectStorage {

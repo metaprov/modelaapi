@@ -28,7 +28,7 @@ func (dataapp *DataApp) Default() {
 	if dataapp.ObjectMeta.Labels == nil {
 		dataapp.ObjectMeta.Labels = make(map[string]string)
 	}
-	dataapp.ObjectMeta.Labels["modela.ai/tenant"] = dataapp.Spec.ServingSiteRef.Namespace
+	dataapp.ObjectMeta.Labels[catalog.TenantLabelKey] = dataapp.Spec.ServingSiteRef.Namespace
 	dataapp.ObjectMeta.Labels["modela.ai/servingsite"] = dataapp.Spec.ServingSiteRef.Name
 
 }

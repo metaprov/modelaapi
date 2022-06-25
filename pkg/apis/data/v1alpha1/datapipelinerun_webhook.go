@@ -7,6 +7,7 @@
 package v1alpha1
 
 import (
+	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/util/validation/field"
 	ctrl "sigs.k8s.io/controller-runtime"
@@ -61,15 +62,15 @@ func (run *DataPipelineRun) Default() {
 		run.ObjectMeta.Labels = make(map[string]string)
 	}
 	if run.Spec.DataPipelineName != nil {
-		run.ObjectMeta.Labels["modela.ai/datapipeline"] = *run.Spec.DataPipelineName
+		run.ObjectMeta.Labels[catalog.DataPipelineLabelKey] = *run.Spec.DataPipelineName
 	}
 	if run.Spec.VersionName != nil {
-		run.ObjectMeta.Labels["modela.ai/version"] = *run.Spec.VersionName
+		run.ObjectMeta.Labels[catalog.DataProductVersionLabelKey] = *run.Spec.VersionName
 	}
 	if run.Spec.Owner != nil {
 		run.ObjectMeta.Labels["modela.ai/owner"] = *run.Spec.Owner
 	}
-	run.ObjectMeta.Labels["modela.ai/tenant"] = run.Spec.LabRef.Namespace
-	run.ObjectMeta.Labels["modela.ai/lab"] = run.Spec.LabRef.Name
+	run.ObjectMeta.Labels[catalog.TenantLabelKey] = run.Spec.LabRef.Namespace
+	run.ObjectMeta.Labels[catalog.LabLabelKey] = run.Spec.LabRef.Name
 
 }
