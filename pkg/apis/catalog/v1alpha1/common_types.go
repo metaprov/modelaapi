@@ -2042,6 +2042,8 @@ const (
 	NotebookRunLabelKey      = "modela.ai/notebookrun"
 	ReportLabelKey           = "modela.ai/report"
 	StudyLabelKey            = "modela.ai/study"
+	TaskLabelKey             = "modela.ai/task"
+	JobLabelKey              = "kubernetes.io/job"
 
 	BranchLabelKey  = "branch"
 	RoleLabelKey    = "labels"
