@@ -1,6 +1,7 @@
 package v1alpha1
 
 import (
+	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	data "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/util"
 	apierrors "k8s.io/apimachinery/pkg/api/errors"
@@ -26,7 +27,7 @@ func (prediction *Prediction) Default() {
 		prediction.ObjectMeta.Labels = make(map[string]string)
 	}
 	prediction.ObjectMeta.Labels[catalog.TenantLabelKey] = prediction.Spec.ServingSiteRef.Namespace
-	prediction.ObjectMeta.Labels["modela.ai/servingsite"] = prediction.Spec.ServingSiteRef.Name
+	prediction.ObjectMeta.Labels[catalog.ServingSiteLabelKey] = prediction.Spec.ServingSiteRef.Name
 
 }
 

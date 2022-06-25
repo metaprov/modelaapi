@@ -7,6 +7,7 @@
 package v1alpha1
 
 import (
+	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/util"
 	"k8s.io/apimachinery/pkg/runtime"
 	"sigs.k8s.io/controller-runtime/pkg/webhook"
@@ -29,7 +30,7 @@ func (dataapp *DataApp) Default() {
 		dataapp.ObjectMeta.Labels = make(map[string]string)
 	}
 	dataapp.ObjectMeta.Labels[catalog.TenantLabelKey] = dataapp.Spec.ServingSiteRef.Namespace
-	dataapp.ObjectMeta.Labels["modela.ai/servingsite"] = dataapp.Spec.ServingSiteRef.Name
+	dataapp.ObjectMeta.Labels[catalog.ServingSiteLabelKey] = dataapp.Spec.ServingSiteRef.Name
 
 }
 
