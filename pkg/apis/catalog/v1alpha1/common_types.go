@@ -1967,4 +1967,83 @@ type LastRunStatus struct {
 	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,6,opt,name=failureMessage"`
 }
 
-// Hold status of K8s object status
+// The labels key for modela objects
+
+const (
+	// catalog group
+	AlgorithmLabelKey       = "commit"
+	CloudLabelKey           = "username"
+	ManagedImageLabelKey    = "username"
+	MLFrameworkLabelKey     = "username"
+	PretrainedModelLabelKey = "username"
+	PublicDatasetLabelKey   = "username"
+	WorkloadClassLabelKey   = "username"
+
+	// data group
+	DataPipelineLabelKey   = "modela.ai/datapipline"
+	DataPipeleRunLabelKey  = "modela.ai/datapipelinerun"
+	DataProductLabelKey    = "modela.ai/dataproduct"
+	DataProductVersion     = "modela.ai/dataproductversion"
+	DatasetLabelKey        = "modela.ai/dataset"
+	DatasourceLabelKey     = "modela.ai/datasource"
+	EntityLabelKey         = "modela.ai/entity"
+	FeatureHistogramKey    = "modela.ai/featurehistorgram"
+	FeatureKey             = "modela.ai/feature"
+	FeaturePipelineKey     = "modela.ai/featurepipeline"
+	FeaturePipelineRunKey  = "modela.ai/featurepipelinerun"
+	FeatureSetKey          = "modela.ai/featureset"
+	LabelingPipelineKey    = "modela.ai/labelingpipeline"
+	LabelingPipelineRunKey = "modela.ai/labelingpipelinerun"
+	RecipeKey              = "modela.ai/recipe"
+	RecipeRunKey           = "modela.ai/reciperun"
+	SqlQueryKey            = "modela.ai/sqlquery"
+	SqlQueryRunKey         = "modela.ai/sqlqueryrun"
+	WebRequestKey          = "modela.ai/webrequest"
+	WebRequestRunKey       = "modela.ai/webrequestrun"
+
+	// inference
+	CronPredictionKey = "modela.ai/cronprediction"
+	CurtainKey        = "modela.ai/curtain"
+	DataAppKey        = "modela.ai/dataapp"
+	PredictionKey     = "modela.ai/prediction"
+	PredictorKey      = "modela.ai/predictor"
+
+	AccountKey        = "modela.ai/account"
+	AlertKey          = "modela.ai/alert"
+	ApiTokenKey       = "modela.ai/apitoken"
+	AttachmentKey     = "modela.ai/attachment"
+	CommitKey         = "modela.ai/commit"
+	ConnectionKey     = "modela.ai/connection"
+	LabKey            = "modela.ai/lab"
+	LicenseKey        = "modela.ai/license"
+	NotifierKey       = "modela.ai/notifier"
+	ServingSiteKey    = "modela.ai/servingsite"
+	TenantKey         = "modela.ai/tenant"
+	UserClassKey      = "modela.ai/userclass"
+	VirtualBucketKey  = "modela.ai/virtualbucket"
+	VirtualClusterKey = "modela.ai/virtualcluster"
+	VirtualVolummeKey = "modela.ai/virtualvolume"
+
+	// team
+	MeetingKey    = "modela.ai/meeting"
+	PostmortemKey = "modela.ai/postmortem"
+	ReviewKey     = "modela.ai/review"
+	RunbookKey    = "modela.ai/runbook"
+	TodoKey       = "modela.ai/todo"
+
+	// training
+	CronReportKey       = "modela.ai/cronreport"
+	ModelAutobuilderKey = "modela.ai/modelautobuilder"
+	ModelKey            = "modela.ai/model"
+	ModelPipelineKey    = "modela.ai/modelpipeline"
+	ModelPipelineRunKey = "modela.ai/modelpipelinerun"
+	ModelCompilerRunKey = "modela.ai/modelcompilerrun"
+	NotebookKey         = "modela.ai/notebook"
+	NotebookRunKey      = "modela.ai/notebookrun"
+	ReportKey           = "modela.ai/report"
+	StudyKey            = "modela.ai/study"
+
+	BranchLabelKey  = "branch"
+	RoleLabelKey    = "labels"
+	ChangedLabelKey = "changed"
+)

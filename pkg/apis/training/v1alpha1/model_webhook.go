@@ -85,16 +85,16 @@ func (model *Model) Default() {
 			model.ObjectMeta.Labels["modela.ai/modelversion"] = *model.Spec.ModelVersion
 		}
 		if model.Spec.StudyName != nil {
-			model.ObjectMeta.Labels["modela.ai/study"] = *model.Spec.StudyName
+			model.ObjectMeta.Labels[catalog.StudyKey] = *model.Spec.StudyName
 		}
 		if model.Spec.Estimator != nil {
-			model.ObjectMeta.Labels["modela.ai/algorithm"] = model.Spec.Estimator.AlgorithmName
+			model.ObjectMeta.Labels[catalog.AlgorithmLabelKey] = model.Spec.Estimator.AlgorithmName
 		}
 		if model.Spec.Owner != nil {
 			model.ObjectMeta.Labels["modela.ai/owner"] = *model.Spec.Owner
 		}
 		if model.Spec.DatasetName != nil {
-			model.ObjectMeta.Labels["modela.ai/dataset"] = *model.Spec.DatasetName
+			model.ObjectMeta.Labels[catalog.DatasetLabelKey] = *model.Spec.DatasetName
 		}
 	}
 	// update the status. this might be moved to the crd itself.
