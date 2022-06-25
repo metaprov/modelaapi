@@ -114,8 +114,7 @@ type PredictionCacheSpec struct {
 	// +kubebuilder:validation:Optional
 	Redis *bool `json:"redis,omitempty" protobuf:"varint,3,opt,name=redis"`
 	// The reference to a Connection resource to an external Redis deployment
-	// +kubebuilder:default:=""
-	Hostname *v1.ObjectReference `json:"hostname,omitempty" protobuf:"bytes,4,opt,name=hostname"`
+	ConnectionRef *v1.ObjectReference `json:"connectionRef,omitempty" protobuf:"bytes,4,opt,name=connectionRef"`
 }
 
 /////////////////////////////////////////////////////

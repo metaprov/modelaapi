@@ -290,12 +290,7 @@ spec:
               cache:
                 description: Cache specifies the configuration of the prediction cache
                 properties:
-                  enabled:
-                    default: false
-                    description: Enabled indicates if predictions will be cached
-                    type: boolean
-                  hostname:
-                    default: ""
+                  connectionRef:
                     description: The reference to a Connection resource to an external
                       Redis deployment
                     properties:
@@ -332,6 +327,10 @@ spec:
                         description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                         type: string
                     type: object
+                  enabled:
+                    default: false
+                    description: Enabled indicates if predictions will be cached
+                    type: boolean
                   inMemory:
                     default: false
                     description: InMemory indicates if predictions will be cached

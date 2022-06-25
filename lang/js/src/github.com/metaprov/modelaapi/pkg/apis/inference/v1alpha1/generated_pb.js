@@ -10899,7 +10899,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCacheS
     enabled: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
     inmemory: (f = jspb.Message.getBooleanField(msg, 2)) == null ? undefined : f,
     redis: (f = jspb.Message.getBooleanField(msg, 3)) == null ? undefined : f,
-    hostname: (f = msg.getHostname()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f)
+    connectionref: (f = msg.getConnectionref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -10951,7 +10951,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCacheS
     case 4:
       var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
       reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
-      msg.setHostname(value);
+      msg.setConnectionref(value);
       break;
     default:
       reader.skipField();
@@ -11003,7 +11003,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCacheS
       f
     );
   }
-  f = message.getHostname();
+  f = message.getConnectionref();
   if (f != null) {
     writer.writeMessage(
       4,
@@ -11123,10 +11123,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCacheS
 
 
 /**
- * optional k8s.io.api.core.v1.ObjectReference hostname = 4;
+ * optional k8s.io.api.core.v1.ObjectReference connectionRef = 4;
  * @return {?proto.k8s.io.api.core.v1.ObjectReference}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCacheSpec.prototype.getHostname = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCacheSpec.prototype.getConnectionref = function() {
   return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
     jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 4));
 };
@@ -11136,7 +11136,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCacheS
  * @param {?proto.k8s.io.api.core.v1.ObjectReference|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCacheSpec} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCacheSpec.prototype.setHostname = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCacheSpec.prototype.setConnectionref = function(value) {
   return jspb.Message.setWrapperField(this, 4, value);
 };
 
@@ -11145,8 +11145,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCacheS
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCacheSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCacheSpec.prototype.clearHostname = function() {
-  return this.setHostname(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCacheSpec.prototype.clearConnectionref = function() {
+  return this.setConnectionref(undefined);
 };
 
 
@@ -11154,7 +11154,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCacheS
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCacheSpec.prototype.hasHostname = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCacheSpec.prototype.hasConnectionref = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 

@@ -714,8 +714,7 @@ message PredictionCacheSpec {
   optional bool redis = 3;
 
   // The reference to a Connection resource to an external Redis deployment
-  // +kubebuilder:default:=""
-  optional k8s.io.api.core.v1.ObjectReference hostname = 4;
+  optional k8s.io.api.core.v1.ObjectReference connectionRef = 4;
 }
 
 message PredictionCacheStatus {

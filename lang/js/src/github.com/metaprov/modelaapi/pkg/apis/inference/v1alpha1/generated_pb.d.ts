@@ -1115,10 +1115,10 @@ export class PredictionCacheSpec extends jspb.Message {
   getRedis(): boolean;
   setRedis(value: boolean): PredictionCacheSpec;
 
-  getHostname(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setHostname(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): PredictionCacheSpec;
-  hasHostname(): boolean;
-  clearHostname(): PredictionCacheSpec;
+  getConnectionref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setConnectionref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): PredictionCacheSpec;
+  hasConnectionref(): boolean;
+  clearConnectionref(): PredictionCacheSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PredictionCacheSpec.AsObject;
@@ -1133,7 +1133,7 @@ export namespace PredictionCacheSpec {
     enabled: boolean,
     inmemory: boolean,
     redis: boolean,
-    hostname?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    connectionref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
   }
 }
 
