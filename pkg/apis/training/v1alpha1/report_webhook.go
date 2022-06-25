@@ -7,6 +7,7 @@
 package v1alpha1
 
 import (
+	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/util/validation/field"
 	"sigs.k8s.io/controller-runtime/pkg/webhook"

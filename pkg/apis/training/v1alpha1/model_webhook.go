@@ -85,7 +85,7 @@ func (model *Model) Default() {
 			model.ObjectMeta.Labels["modela.ai/modelversion"] = *model.Spec.ModelVersion
 		}
 		if model.Spec.StudyName != nil {
-			model.ObjectMeta.Labels[catalog.StudyKey] = *model.Spec.StudyName
+			model.ObjectMeta.Labels[catalog.StudyLabelKey] = *model.Spec.StudyName
 		}
 		if model.Spec.Estimator != nil {
 			model.ObjectMeta.Labels[catalog.AlgorithmLabelKey] = model.Spec.Estimator.AlgorithmName
