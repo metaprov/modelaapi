@@ -2044,6 +2044,7 @@ const (
 	StudyLabelKey            = "modela.ai/study"
 	TaskLabelKey             = "modela.ai/task"
 	JobLabelKey              = "kubernetes.io/job"
+	OwnerKindLabelKey        = "modela.ai/owner-kind"
 
 	BranchLabelKey  = "branch"
 	RoleLabelKey    = "labels"
