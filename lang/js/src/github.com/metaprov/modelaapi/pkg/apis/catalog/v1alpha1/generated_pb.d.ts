@@ -1034,6 +1034,9 @@ export class Measurement extends jspb.Message {
   getValue(): number;
   setValue(value: number): Measurement;
 
+  getStddev(): number;
+  setStddev(value: number): Measurement;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Measurement.AsObject;
   static toObject(includeInstance: boolean, msg: Measurement): Measurement.AsObject;
@@ -1046,6 +1049,7 @@ export namespace Measurement {
   export type AsObject = {
     metric: string,
     value: number,
+    stddev: number,
   }
 }
 

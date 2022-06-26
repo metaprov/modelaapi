@@ -563,6 +563,11 @@ message Measurement {
   // +kubebuilder:validation:Required
   // +required
   optional double value = 2;
+
+  // Metric standard diviation
+  // +kubebuilder:validation:Required
+  // +kubebuilder:validation:Optional
+  optional double stddev = 3;
 }
 
 // ModelDeploymentSpec describes how a single model should be deployed with a Predictor, and

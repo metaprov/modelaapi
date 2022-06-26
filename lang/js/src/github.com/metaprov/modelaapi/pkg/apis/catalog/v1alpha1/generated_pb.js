@@ -10468,7 +10468,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement.protot
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement.toObject = function(includeInstance, msg) {
   var f, obj = {
     metric: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    value: (f = jspb.Message.getOptionalFloatingPointField(msg, 2)) == null ? undefined : f
+    value: (f = jspb.Message.getOptionalFloatingPointField(msg, 2)) == null ? undefined : f,
+    stddev: (f = jspb.Message.getOptionalFloatingPointField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -10513,6 +10514,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement.deseri
       var value = /** @type {number} */ (reader.readDouble());
       msg.setValue(value);
       break;
+    case 3:
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setStddev(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -10553,6 +10558,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement.serial
   if (f != null) {
     writer.writeDouble(
       2,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeDouble(
+      3,
       f
     );
   }
@@ -10628,6 +10640,42 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement.protot
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement.prototype.hasValue = function() {
   return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional double stddev = 3;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement.prototype.getStddev = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 3, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement.prototype.setStddev = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement.prototype.clearStddev = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement.prototype.hasStddev = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 

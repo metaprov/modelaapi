@@ -14225,7 +14225,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecastSpec.toOb
     backtest: (f = msg.getBacktest()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.BacktestSpec.toObject(includeInstance, f),
     postprocessing: (f = msg.getPostprocessing()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecastPostProcessingSpec.toObject(includeInstance, f),
     plot: (f = jspb.Message.getBooleanField(msg, 5)) == null ? undefined : f,
-    plotchangepoints: (f = jspb.Message.getBooleanField(msg, 6)) == null ? undefined : f
+    plotchangepoints: (f = jspb.Message.getBooleanField(msg, 6)) == null ? undefined : f,
+    outputlocation: (f = msg.getOutputlocation()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -14288,6 +14289,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecastSpec.dese
     case 6:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setPlotchangepoints(value);
+      break;
+    case 7:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.deserializeBinaryFromReader);
+      msg.setOutputlocation(value);
       break;
     default:
       reader.skipField();
@@ -14361,6 +14367,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecastSpec.seri
     writer.writeBool(
       6,
       f
+    );
+  }
+  f = message.getOutputlocation();
+  if (f != null) {
+    writer.writeMessage(
+      7,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.serializeBinaryToWriter
     );
   }
 };
@@ -14582,6 +14596,43 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecastSpec.prot
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecastSpec.prototype.hasPlotchangepoints = function() {
   return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation outputLocation = 7;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecastSpec.prototype.getOutputlocation = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation, 7));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecastSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecastSpec.prototype.setOutputlocation = function(value) {
+  return jspb.Message.setWrapperField(this, 7, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecastSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecastSpec.prototype.clearOutputlocation = function() {
+  return this.setOutputlocation(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecastSpec.prototype.hasOutputlocation = function() {
+  return jspb.Message.getField(this, 7) != null;
 };
 
 
@@ -15419,8 +15470,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Hierarchy.toObjec
     columnsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
     grouplevelsList: jspb.Message.toObjectList(msg.getGrouplevelsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.toObject, includeInstance),
-    itemlevel: (f = msg.getItemlevel()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.toObject(includeInstance, f),
-    notifiername: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
+    itemlevel: (f = msg.getItemlevel()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -15470,10 +15520,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Hierarchy.deseria
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.deserializeBinaryFromReader);
       msg.setItemlevel(value);
-      break;
-    case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setNotifiername(value);
       break;
     default:
       reader.skipField();
@@ -15525,13 +15571,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Hierarchy.seriali
       3,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.serializeBinaryToWriter
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 4));
-  if (f != null) {
-    writer.writeString(
-      4,
-      f
     );
   }
 };
@@ -15646,42 +15685,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Hierarchy.prototy
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Hierarchy.prototype.hasItemlevel = function() {
   return jspb.Message.getField(this, 3) != null;
-};
-
-
-/**
- * optional string notifierName = 4;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Hierarchy.prototype.getNotifiername = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Hierarchy} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Hierarchy.prototype.setNotifiername = function(value) {
-  return jspb.Message.setField(this, 4, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Hierarchy} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Hierarchy.prototype.clearNotifiername = function() {
-  return jspb.Message.setField(this, 4, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Hierarchy.prototype.hasNotifiername = function() {
-  return jspb.Message.getField(this, 4) != null;
 };
 
 

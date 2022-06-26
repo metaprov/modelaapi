@@ -777,9 +777,6 @@ type Hierarchy struct {
 	GroupLevels []Level `json:"groupLevels,omitempty" protobuf:"bytes,2,rep,name=groupLevels"`
 	// Item level column.
 	ItemLevel *Level `json:"itemLevel,omitempty" protobuf:"bytes,3,opt,name=itemLevel"`
-	// Optional notifier to use when the forecast is complete.
-	// +kubebuilder:validation:Optional
-	NotifierName *string `json:"notifierName,omitempty" protobuf:"bytes,4,opt,name=notifierName"`
 }
 
 // ForecastObj holds the definition of a single forecast

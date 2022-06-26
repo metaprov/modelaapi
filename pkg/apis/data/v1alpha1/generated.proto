@@ -2133,13 +2133,13 @@ message FeatureHistogramSpec {
   // +kubebuilder:validation:Optional
   optional string column = 5;
 
-  // The name of the dataset
+  // A reference to the dataset that contain the column with this histogram
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference dataset = 6;
 
-  // Bins is the number of bins in the histogram
+  // The histogram to comapre to for data drift calc
   // +kubebuilder:validation:Optional
-  optional int32 bins = 7;
+  optional k8s.io.api.core.v1.ObjectReference baseFeatureHistogram = 7;
 }
 
 // FeatureHistogramStatus defines the observed state of FeatureHistogram
@@ -2163,10 +2163,14 @@ message FeatureHistogramStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 5;
 
+  // The calculation of the drift metrics for this histogram against the reference feature histogram
+  // +kubebuilder:validation:Optional
+  repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement drift = 6;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated FeatureHistogramCondition conditions = 6;
+  repeated FeatureHistogramCondition conditions = 7;
 }
 
 // +kubebuilder:object:root=true

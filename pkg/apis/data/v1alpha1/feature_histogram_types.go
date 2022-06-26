@@ -83,12 +83,12 @@ type FeatureHistogramSpec struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Column *string `json:"column,omitempty" protobuf:"bytes,5,opt,name=column"`
-	// The name of the dataset
+	// A reference to the dataset that contain the column with this histogram
 	// +kubebuilder:validation:Optional
 	Dataset *v1.ObjectReference `json:"dataset,omitempty" protobuf:"bytes,6,opt,name=dataset"`
-	// Bins is the number of bins in the histogram
+	// The histogram to comapre to for data drift calc
 	// +kubebuilder:validation:Optional
-	Bins *int32 `json:"bins,omitempty" protobuf:"varint,7,opt,name=bins"`
+	BaseFeatureHistogram v1.ObjectReference `json:"baseFeatureHistogram,omitempty" protobuf:"bytes,7,opt,name=baseFeatureHistogram"`
 }
 
 // FeatureHistogramStatus defines the observed state of FeatureHistogram
@@ -107,9 +107,11 @@ type FeatureHistogramStatus struct {
 	// Last time the object was updated
 	//+kubebuilder:validation:Optional
 	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,5,opt,name=lastUpdated"`
-
+	// The calculation of the drift metrics for this histogram against the reference feature histogram
+	//+kubebuilder:validation:Optional
+	Drift []catalog.Measurement `json:"drift,omitempty" protobuf:"bytes,6,opt,name=drift"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []FeatureHistogramCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,6,rep,name=conditions"`
+	Conditions []FeatureHistogramCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,7,rep,name=conditions"`
 }

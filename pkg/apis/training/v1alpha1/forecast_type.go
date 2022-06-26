@@ -1,6 +1,9 @@
 package v1alpha1
 
-import catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
+import (
+	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
+	data "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1"
+)
 
 // +kubebuilder:validation:Enum="linear";"logistic";"flat"
 type GrowthMode string
@@ -205,6 +208,9 @@ type ForecastSpec struct {
 	// +kubebuilder:default = true
 	// +kubebuilder:validation:Optional
 	PlotChangePoints *bool `json:"plotChangePoints,omitempty" protobuf:"varint,6,opt,name=plotChangePoints"`
+	// The data location that would store the forecast result.
+	// +kubebuilder:validation:Optional
+	OutputLocation data.DataLocation `json:"outputLocation,omitempty" protobuf:"bytes,7,opt,name=outputLocation"`
 }
 
 // BacktestSpec specify the back test

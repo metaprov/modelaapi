@@ -424,7 +424,7 @@ func (metric Metric) IsClustering() bool {
 	return false
 }
 
-// +kubebuilder:validation:Enum="accuracy";"average-precision";"balanced-accuracy";"pr-auc";"pr-auc-micro";"pr-auc-macro";"pr-auc-weighted";"f1";"f1-micro";"f1-macro";"f1-weighted";"f1-samples";"precision";"precision-micro";"precision-macro";"precision-weighted";	"precision-samples";"recall";"recall-macro";"recall-micro";"recall-weighted";"recall-samples";"log-loss";"auc";"auc-micro";"auc-macro";"auc-weighted";"zero-one";"hamming-loss";"hinge-loss";"jacquard-loss";"mcc";"fp";"fn";"tn";"tp";"tpr";"fpr";"tnr";"matthews-corr-coef";"explained-variance";"max-error";"mae";"mse";"msle";"rmse";"rmsle";"median-absolute-error";"r2";"adj-r2";"mean_poisson_deviance";"mean-gamma-deviance";"mean-tweedie-deviance";"mape";"maze";"mdape";"smape";"adjusted-mutual-info-score";"adjusted-rand-score";"completeness-score";"fowlkes-mallows-score";"homogeneity-score";"mutual-info-score";"normalized-mutual-info-score";"v-measure-score";"p50-latency";"p95-latency";"p99-latency";"cpu";"gpu";"mem";"gpu-mem";"req-per-sec";"uncertain-prediction-percent";"none";
+// +kubebuilder:validation:Enum="accuracy";"average-precision";"balanced-accuracy";"pr-auc";"pr-auc-micro";"pr-auc-macro";"pr-auc-weighted";"f1";"f1-micro";"f1-macro";"f1-weighted";"f1-samples";"precision";"precision-micro";"precision-macro";"precision-weighted";	"precision-samples";"recall";"recall-macro";"recall-micro";"recall-weighted";"recall-samples";"log-loss";"auc";"auc-micro";"auc-macro";"auc-weighted";"zero-one";"hamming-loss";"hinge-loss";"jacquard-loss";"mcc";"fp";"fn";"tn";"tp";"tpr";"fpr";"tnr";"matthews-corr-coef";"explained-variance";"max-error";"mae";"mse";"msle";"rmse";"rmsle";"median-absolute-error";"r2";"adj-r2";"mean_poisson_deviance";"mean-gamma-deviance";"mean-tweedie-deviance";"mape";"maze";"mdape";"smape";"adjusted-mutual-info-score";"adjusted-rand-score";"completeness-score";"fowlkes-mallows-score";"homogeneity-score";"mutual-info-score";"normalized-mutual-info-score";"v-measure-score";"p50-latency";"p95-latency";"p99-latency";"cpu";"gpu";"mem";"gpu-mem";"req-per-sec";"uncertain-prediction-percent";"none";"ks";"psi";"wasserstein-distance";"kl-divergenece";"jensen-shannon-distance"
 type Metric string
 
 const (
@@ -511,6 +511,13 @@ const (
 	GpuMem                     Metric = "gpu-mem"
 	ReqSec                     Metric = "req-per-sec"
 	UncertainPredictionPercent Metric = "uncertain-prediction-percent"
+
+	// Data drift measurments
+	KSTest                Metric = "ks"
+	PSI                   Metric = "psi"
+	WassersteinDistance   Metric = "wasserstein-distance"
+	KLDivergence          Metric = "kl-divergenece"
+	JensenShannonDistance Metric = "jensen-shannon-distance"
 
 	NoneMetric Metric = "none"
 )
@@ -1404,6 +1411,10 @@ type Measurement struct {
 	// +kubebuilder:validation:Required
 	// +required
 	Value *float64 `json:"value" protobuf:"bytes,2,opt,name=value"`
+	// Metric standard diviation
+	// +kubebuilder:validation:Required
+	// +kubebuilder:validation:Optional
+	Stddev *float64 `json:"stddev" protobuf:"bytes,3,opt,name=stddev"`
 }
 
 // +kubebuilder:validation:Enum="champion";"challenger";"shadow";

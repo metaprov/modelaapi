@@ -2935,8 +2935,10 @@ export class FeatureHistogramSpec extends jspb.Message {
   hasDataset(): boolean;
   clearDataset(): FeatureHistogramSpec;
 
-  getBins(): number;
-  setBins(value: number): FeatureHistogramSpec;
+  getBasefeaturehistogram(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setBasefeaturehistogram(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): FeatureHistogramSpec;
+  hasBasefeaturehistogram(): boolean;
+  clearBasefeaturehistogram(): FeatureHistogramSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FeatureHistogramSpec.AsObject;
@@ -2953,7 +2955,7 @@ export namespace FeatureHistogramSpec {
     description: string,
     column: string,
     dataset?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    bins: number,
+    basefeaturehistogram?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
   }
 }
 
@@ -2977,6 +2979,11 @@ export class FeatureHistogramStatus extends jspb.Message {
   hasLastupdated(): boolean;
   clearLastupdated(): FeatureHistogramStatus;
 
+  getDriftList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>;
+  setDriftList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>): FeatureHistogramStatus;
+  clearDriftList(): FeatureHistogramStatus;
+  addDrift(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement;
+
   getConditionsList(): Array<FeatureHistogramCondition>;
   setConditionsList(value: Array<FeatureHistogramCondition>): FeatureHistogramStatus;
   clearConditionsList(): FeatureHistogramStatus;
@@ -2997,6 +3004,7 @@ export namespace FeatureHistogramStatus {
     missing: number,
     invalid: number,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    driftList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.AsObject>,
     conditionsList: Array<FeatureHistogramCondition.AsObject>,
   }
 }

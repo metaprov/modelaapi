@@ -832,6 +832,10 @@ message ForecastSpec {
   // +kubebuilder:default = true
   // +kubebuilder:validation:Optional
   optional bool plotChangePoints = 6;
+
+  // The data location that would store the forecast result.
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation outputLocation = 7;
 }
 
 // GarbageCollectionSpec specifies the configuration to garbage-collect unused Model resources
@@ -894,10 +898,6 @@ message Hierarchy {
 
   // Item level column.
   optional Level itemLevel = 3;
-
-  // Optional notifier to use when the forecast is complete.
-  // +kubebuilder:validation:Optional
-  optional string notifierName = 4;
 }
 
 // Define weather an hierarchy exists in the time series

@@ -1255,6 +1255,11 @@ export class ForecastSpec extends jspb.Message {
   getPlotchangepoints(): boolean;
   setPlotchangepoints(value: boolean): ForecastSpec;
 
+  getOutputlocation(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
+  setOutputlocation(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): ForecastSpec;
+  hasOutputlocation(): boolean;
+  clearOutputlocation(): ForecastSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ForecastSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ForecastSpec): ForecastSpec.AsObject;
@@ -1271,6 +1276,7 @@ export namespace ForecastSpec {
     postprocessing?: ForecastPostProcessingSpec.AsObject,
     plot: boolean,
     plotchangepoints: boolean,
+    outputlocation?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
   }
 }
 
@@ -1374,9 +1380,6 @@ export class Hierarchy extends jspb.Message {
   hasItemlevel(): boolean;
   clearItemlevel(): Hierarchy;
 
-  getNotifiername(): string;
-  setNotifiername(value: string): Hierarchy;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Hierarchy.AsObject;
   static toObject(includeInstance: boolean, msg: Hierarchy): Hierarchy.AsObject;
@@ -1390,7 +1393,6 @@ export namespace Hierarchy {
     columnsList: Array<string>,
     grouplevelsList: Array<Level.AsObject>,
     itemlevel?: Level.AsObject,
-    notifiername: string,
   }
 }
 

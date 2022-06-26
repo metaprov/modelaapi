@@ -31502,7 +31502,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.
     description: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     column: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     dataset: (f = msg.getDataset()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
-    bins: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f
+    basefeaturehistogram: (f = msg.getBasefeaturehistogram()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -31561,8 +31561,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.
       msg.setDataset(value);
       break;
     case 7:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setBins(value);
+      var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
+      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
+      msg.setBasefeaturehistogram(value);
       break;
     default:
       reader.skipField();
@@ -31629,11 +31630,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.
       k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 7));
+  f = message.getBasefeaturehistogram();
   if (f != null) {
-    writer.writeInt32(
+    writer.writeMessage(
       7,
-      f
+      f,
+      k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
     );
   }
 };
@@ -31821,29 +31823,30 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.
 
 
 /**
- * optional int32 bins = 7;
- * @return {number}
+ * optional k8s.io.api.core.v1.ObjectReference baseFeatureHistogram = 7;
+ * @return {?proto.k8s.io.api.core.v1.ObjectReference}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.getBins = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.getBasefeaturehistogram = function() {
+  return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
+    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 7));
 };
 
 
 /**
- * @param {number} value
+ * @param {?proto.k8s.io.api.core.v1.ObjectReference|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.setBins = function(value) {
-  return jspb.Message.setField(this, 7, value);
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.setBasefeaturehistogram = function(value) {
+  return jspb.Message.setWrapperField(this, 7, value);
 };
 
 
 /**
- * Clears the field making it undefined.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.clearBins = function() {
-  return jspb.Message.setField(this, 7, undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.clearBasefeaturehistogram = function() {
+  return this.setBasefeaturehistogram(undefined);
 };
 
 
@@ -31851,7 +31854,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.hasBins = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.hasBasefeaturehistogram = function() {
   return jspb.Message.getField(this, 7) != null;
 };
 
@@ -31862,7 +31865,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.repeatedFields_ = [6];
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.repeatedFields_ = [6,7];
 
 
 
@@ -31900,6 +31903,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatu
     missing: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     invalid: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     lastupdated: (f = msg.getLastupdated()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    driftList: jspb.Message.toObjectList(msg.getDriftList(),
+    github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.toObject, includeInstance),
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramCondition.toObject, includeInstance)
   };
@@ -31961,6 +31966,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatu
       msg.setLastupdated(value);
       break;
     case 6:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.deserializeBinaryFromReader);
+      msg.addDrift(value);
+      break;
+    case 7:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramCondition;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramCondition.deserializeBinaryFromReader);
       msg.addConditions(value);
@@ -32031,10 +32041,18 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatu
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
   }
-  f = message.getConditionsList();
+  f = message.getDriftList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       6,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.serializeBinaryToWriter
+    );
+  }
+  f = message.getConditionsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      7,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramCondition.serializeBinaryToWriter
     );
@@ -32225,12 +32243,50 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatu
 
 
 /**
- * repeated FeatureHistogramCondition conditions = 6;
+ * repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement drift = 6;
+ * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement>}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.getDriftList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement>} */ (
+    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement, 6));
+};
+
+
+/**
+ * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement>} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.setDriftList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 6, value);
+};
+
+
+/**
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.addDrift = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.clearDriftList = function() {
+  return this.setDriftList([]);
+};
+
+
+/**
+ * repeated FeatureHistogramCondition conditions = 7;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramCondition>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.getConditionsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramCondition, 6));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramCondition, 7));
 };
 
 
@@ -32239,7 +32295,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatu
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.setConditionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 6, value);
+  return jspb.Message.setRepeatedWrapperField(this, 7, value);
 };
 
 
@@ -32249,7 +32305,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatu
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramCondition}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 7, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramCondition, opt_index);
 };
 
 

@@ -249,6 +249,11 @@ spec:
                           - req-per-sec
                           - uncertain-prediction-percent
                           - none
+                          - ks
+                          - psi
+                          - wasserstein-distance
+                          - kl-divergenece
+                          - jensen-shannon-distance
                           type: string
                         modelName:
                           description: ModelName is the name of the model under test
@@ -435,6 +440,11 @@ spec:
                           - req-per-sec
                           - uncertain-prediction-percent
                           - none
+                          - ks
+                          - psi
+                          - wasserstein-distance
+                          - kl-divergenece
+                          - jensen-shannon-distance
                           type: string
                         modelName:
                           description: ModelName is the name of the model under test
@@ -596,6 +606,11 @@ spec:
                           - req-per-sec
                           - uncertain-prediction-percent
                           - none
+                          - ks
+                          - psi
+                          - wasserstein-distance
+                          - kl-divergenece
+                          - jensen-shannon-distance
                           type: string
                         modelName:
                           description: ModelName is the name of the model under test
@@ -768,6 +783,11 @@ spec:
                           - req-per-sec
                           - uncertain-prediction-percent
                           - none
+                          - ks
+                          - psi
+                          - wasserstein-distance
+                          - kl-divergenece
+                          - jensen-shannon-distance
                           type: string
                         modelName:
                           description: ModelName is the name of the model under test
@@ -932,6 +952,11 @@ spec:
                           - req-per-sec
                           - uncertain-prediction-percent
                           - none
+                          - ks
+                          - psi
+                          - wasserstein-distance
+                          - kl-divergenece
+                          - jensen-shannon-distance
                           type: string
                         modelName:
                           description: ModelName is the name of the model under test
@@ -1103,6 +1128,11 @@ spec:
                           - req-per-sec
                           - uncertain-prediction-percent
                           - none
+                          - ks
+                          - psi
+                          - wasserstein-distance
+                          - kl-divergenece
+                          - jensen-shannon-distance
                           type: string
                         modelName:
                           description: ModelName is the name of the model under test
@@ -1269,6 +1299,11 @@ spec:
                           - req-per-sec
                           - uncertain-prediction-percent
                           - none
+                          - ks
+                          - psi
+                          - wasserstein-distance
+                          - kl-divergenece
+                          - jensen-shannon-distance
                           type: string
                         modelName:
                           description: ModelName is the name of the model under test
@@ -1436,6 +1471,11 @@ spec:
                           - req-per-sec
                           - uncertain-prediction-percent
                           - none
+                          - ks
+                          - psi
+                          - wasserstein-distance
+                          - kl-divergenece
+                          - jensen-shannon-distance
                           type: string
                         modelName:
                           description: ModelName is the name of the model under test

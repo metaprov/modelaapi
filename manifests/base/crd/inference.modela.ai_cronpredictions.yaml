@@ -816,6 +816,11 @@ spec:
                           - req-per-sec
                           - uncertain-prediction-percent
                           - none
+                          - ks
+                          - psi
+                          - wasserstein-distance
+                          - kl-divergenece
+                          - jensen-shannon-distance
                           type: string
                         type: array
                       ttl:
