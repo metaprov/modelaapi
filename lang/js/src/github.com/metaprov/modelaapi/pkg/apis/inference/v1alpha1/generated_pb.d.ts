@@ -25,6 +25,9 @@ export class AccessSpec extends jspb.Message {
   getRest(): boolean;
   setRest(value: boolean): AccessSpec;
 
+  getAuthmethod(): string;
+  setAuthmethod(value: string): AccessSpec;
+
   getApikeysecretref(): k8s_io_api_core_v1_generated_pb.SecretReference | undefined;
   setApikeysecretref(value?: k8s_io_api_core_v1_generated_pb.SecretReference): AccessSpec;
   hasApikeysecretref(): boolean;
@@ -45,6 +48,7 @@ export namespace AccessSpec {
     path: string,
     accesstype: string,
     rest: boolean,
+    authmethod: string,
     apikeysecretref?: k8s_io_api_core_v1_generated_pb.SecretReference.AsObject,
   }
 }

@@ -18,6 +18,14 @@ const (
 	Streaming PredictorType = "streaming"
 )
 
+type AuthMethod string
+
+const (
+	ApiToken AuthMethod = "api-token"
+	JwtToken AuthMethod = "jwt-token"
+	None     AutoMethod = "none"
+)
+
 //==============================================================================
 // Monitoring spec
 //==============================================================================
@@ -202,9 +210,13 @@ type AccessSpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	REST *bool `json:"rest,omitempty" protobuf:"varint,5,opt,name=rest"`
+	// Indicates
+	// +kubebuilder:default:=none
+	// +kubebuilder:validation:Optional
+	AuthMethod *AuthMethod `json:"authMethod,omitempty" protobuf:"bytes,6,opt,name=authMethod"`
 	// ApiKeySecretRef references a Kubernetes Secret containing an API key that must be passed in prediction requests to the Predictor
 	// +kubebuilder:validation:Optional
-	ApiKeySecretRef *v1.SecretReference `json:"apikeySecretRef,omitempty" protobuf:"bytes,6,opt,name=apikeySecretRef"`
+	ApiKeySecretRef *v1.SecretReference `json:"apikeySecretRef,omitempty" protobuf:"bytes,7,opt,name=apikeySecretRef"`
 }
 
 type HumanInTheLoopSpec struct {

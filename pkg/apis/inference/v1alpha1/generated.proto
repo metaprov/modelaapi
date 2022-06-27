@@ -59,9 +59,14 @@ message AccessSpec {
   // +kubebuilder:validation:Optional
   optional bool rest = 5;
 
+  // Indicates
+  // +kubebuilder:default:=none
+  // +kubebuilder:validation:Optional
+  optional string authMethod = 6;
+
   // ApiKeySecretRef references a Kubernetes Secret containing an API key that must be passed in prediction requests to the Predictor
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.SecretReference apikeySecretRef = 6;
+  optional k8s.io.api.core.v1.SecretReference apikeySecretRef = 7;
 }
 
 // AutoScaling defines the configuration for the automatic scaling of a service

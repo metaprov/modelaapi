@@ -1059,6 +1059,9 @@ export class ModelDeploymentSpec extends jspb.Message {
   hasModelref(): boolean;
   clearModelref(): ModelDeploymentSpec;
 
+  getPort(): number;
+  setPort(value: number): ModelDeploymentSpec;
+
   getModelversion(): string;
   setModelversion(value: string): ModelDeploymentSpec;
 
@@ -1104,6 +1107,7 @@ export class ModelDeploymentSpec extends jspb.Message {
 export namespace ModelDeploymentSpec {
   export type AsObject = {
     modelref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    port: number,
     modelversion: string,
     traffic: number,
     role: string,

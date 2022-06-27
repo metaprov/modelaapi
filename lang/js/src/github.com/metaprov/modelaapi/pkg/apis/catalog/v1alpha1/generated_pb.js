@@ -10719,7 +10719,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpe
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
     modelref: (f = msg.getModelref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
-    modelversion: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    port: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    modelversion: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     traffic: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     role: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     released: (f = jspb.Message.getBooleanField(msg, 7)) == null ? undefined : f,
@@ -10771,6 +10772,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpe
       msg.setModelref(value);
       break;
     case 2:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setPort(value);
+      break;
+    case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.setModelversion(value);
       break;
@@ -10848,10 +10853,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpe
       k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 2));
+  f = /** @type {number} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeInt32(
+      2,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
   if (f != null) {
     writer.writeString(
-      2,
+      3,
       f
     );
   }
@@ -10960,19 +10972,19 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpe
 
 
 /**
- * optional string modelVersion = 2;
- * @return {string}
+ * optional int32 port = 2;
+ * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.getModelversion = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.getPort = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.setModelversion = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.setPort = function(value) {
   return jspb.Message.setField(this, 2, value);
 };
 
@@ -10981,7 +10993,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpe
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.clearModelversion = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.clearPort = function() {
   return jspb.Message.setField(this, 2, undefined);
 };
 
@@ -10990,8 +11002,44 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpe
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.hasModelversion = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.hasPort = function() {
   return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional string modelVersion = 3;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.getModelversion = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.setModelversion = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.clearModelversion = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.hasModelversion = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 

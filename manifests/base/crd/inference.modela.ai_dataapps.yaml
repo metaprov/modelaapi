@@ -95,6 +95,10 @@ spec:
                           secret name must be unique.
                         type: string
                     type: object
+                  authMethod:
+                    default: none
+                    description: Indicates
+                    type: string
                   nodePort:
                     description: The port number that will be exposed on the external
                       address of every node on the cluster, in the case of the Predictor's

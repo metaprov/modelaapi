@@ -1062,6 +1062,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.AccessSpec.toObj
     path: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     accesstype: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     rest: (f = jspb.Message.getBooleanField(msg, 5)) == null ? undefined : f,
+    authmethod: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
     apikeysecretref: (f = msg.getApikeysecretref()) && k8s_io_api_core_v1_generated_pb.SecretReference.toObject(includeInstance, f)
   };
 
@@ -1120,6 +1121,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.AccessSpec.deser
       msg.setRest(value);
       break;
     case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setAuthmethod(value);
+      break;
+    case 7:
       var value = new k8s_io_api_core_v1_generated_pb.SecretReference;
       reader.readMessage(value,k8s_io_api_core_v1_generated_pb.SecretReference.deserializeBinaryFromReader);
       msg.setApikeysecretref(value);
@@ -1188,10 +1193,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.AccessSpec.seria
       f
     );
   }
+  f = /** @type {string} */ (jspb.Message.getField(message, 6));
+  if (f != null) {
+    writer.writeString(
+      6,
+      f
+    );
+  }
   f = message.getApikeysecretref();
   if (f != null) {
     writer.writeMessage(
-      6,
+      7,
       f,
       k8s_io_api_core_v1_generated_pb.SecretReference.serializeBinaryToWriter
     );
@@ -1380,12 +1392,48 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.AccessSpec.proto
 
 
 /**
- * optional k8s.io.api.core.v1.SecretReference apikeySecretRef = 6;
+ * optional string authMethod = 6;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.AccessSpec.prototype.getAuthmethod = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.AccessSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.AccessSpec.prototype.setAuthmethod = function(value) {
+  return jspb.Message.setField(this, 6, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.AccessSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.AccessSpec.prototype.clearAuthmethod = function() {
+  return jspb.Message.setField(this, 6, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.AccessSpec.prototype.hasAuthmethod = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional k8s.io.api.core.v1.SecretReference apikeySecretRef = 7;
  * @return {?proto.k8s.io.api.core.v1.SecretReference}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.AccessSpec.prototype.getApikeysecretref = function() {
   return /** @type{?proto.k8s.io.api.core.v1.SecretReference} */ (
-    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.SecretReference, 6));
+    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.SecretReference, 7));
 };
 
 
@@ -1394,7 +1442,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.AccessSpec.proto
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.AccessSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.AccessSpec.prototype.setApikeysecretref = function(value) {
-  return jspb.Message.setWrapperField(this, 6, value);
+  return jspb.Message.setWrapperField(this, 7, value);
 };
 
 
@@ -1412,7 +1460,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.AccessSpec.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.AccessSpec.prototype.hasApikeysecretref = function() {
-  return jspb.Message.getField(this, 6) != null;
+  return jspb.Message.getField(this, 7) != null;
 };
 
 

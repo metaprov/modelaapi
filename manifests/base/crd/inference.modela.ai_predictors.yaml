@@ -100,6 +100,10 @@ spec:
                           secret name must be unique.
                         type: string
                     type: object
+                  authMethod:
+                    default: none
+                    description: Indicates
+                    type: string
                   nodePort:
                     description: The port number that will be exposed on the external
                       address of every node on the cluster, in the case of the Predictor's
@@ -510,6 +514,11 @@ spec:
                       description: MountTar means that we would mount the model tar
                         file. Else we would use baked image.
                       type: boolean
+                    port:
+                      default: 8080
+                      description: the port of the model service.
+                      format: int32
+                      type: integer
                     released:
                       default: false
                       description: A released model is a model that should serve production

@@ -47,6 +47,11 @@ func (in *AccessSpec) DeepCopyInto(out *AccessSpec) {
 		*out = new(bool)
 		**out = **in
 	}
+	if in.AuthMethod != nil {
+		in, out := &in.AuthMethod, &out.AuthMethod
+		*out = new(AuthMethod)
+		**out = **in
+	}
 	if in.ApiKeySecretRef != nil {
 		in, out := &in.ApiKeySecretRef, &out.ApiKeySecretRef
 		*out = new(v1.SecretReference)

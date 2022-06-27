@@ -579,8 +579,13 @@ message ModelDeploymentSpec {
   // +required
   optional k8s.io.api.core.v1.ObjectReference modelRef = 1;
 
+  // the port of the model service.
+  // +kubebuilder:default:=8080
+  // +kubebuilder:validation:Optional
+  optional int32 port = 2;
+
   // The version of the model, derived from the Study which created it
-  optional string modelVersion = 2;
+  optional string modelVersion = 3;
 
   // The minimum percentage (0 through 100) of traffic that will be served by the model
   // +kubebuilder:validation:Maximum=100

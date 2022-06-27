@@ -1434,8 +1434,12 @@ type ModelDeploymentSpec struct {
 	// +kubebuilder:validation:Required
 	// +required
 	ModelRef *v1.ObjectReference `json:"modelRef,omitempty" protobuf:"bytes,1,opt,name=modelRef"`
+	// the port of the model service.
+	// +kubebuilder:default:=8080
+	// +kubebuilder:validation:Optional
+	Port *int32 `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
 	// The version of the model, derived from the Study which created it
-	ModelVersion *string `json:"modelVersion,omitempty" protobuf:"bytes,2,opt,name=modelVersion"`
+	ModelVersion *string `json:"modelVersion,omitempty" protobuf:"bytes,3,opt,name=modelVersion"`
 	// The minimum percentage (0 through 100) of traffic that will be served by the model
 	// +kubebuilder:validation:Maximum=100
 	// +kubebuilder:validation:Minimum=0

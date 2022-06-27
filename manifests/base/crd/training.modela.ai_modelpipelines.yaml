@@ -896,6 +896,11 @@ spec:
                         description: MountTar means that we would mount the model
                           tar file. Else we would use baked image.
                         type: boolean
+                      port:
+                        default: 8080
+                        description: the port of the model service.
+                        format: int32
+                        type: integer
                       released:
                         default: false
                         description: A released model is a model that should serve

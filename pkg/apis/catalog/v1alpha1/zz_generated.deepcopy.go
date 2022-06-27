@@ -940,6 +940,11 @@ func (in *ModelDeploymentSpec) DeepCopyInto(out *ModelDeploymentSpec) {
 		*out = new(v1.ObjectReference)
 		**out = **in
 	}
+	if in.Port != nil {
+		in, out := &in.Port, &out.Port
+		*out = new(int32)
+		**out = **in
+	}
 	if in.ModelVersion != nil {
 		in, out := &in.ModelVersion, &out.ModelVersion
 		*out = new(string)
