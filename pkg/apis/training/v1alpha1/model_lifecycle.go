@@ -425,6 +425,27 @@ func (model *Model) MarkLive(predictor string, role catalog.ModelRole) {
 	})
 }
 
+func (model *Model) MarkUndeployed() {
+	if model.Status.ReleasedAt == nil {
+		now := metav1.Now()
+		model.Status.ReleasedAt = &now
+	}
+	labels := make(map[string]string)
+	for k, v := range model.Labels {
+		if k == catalog.PredictorLabelKey || k == catalog.ModelRoleLabelKey {
+			continue
+		}
+		labels[k] = v
+	}
+	model.Labels = labels
+	model.Status.Phase = ModelPhaseCompleted
+
+	model.CreateOrUpdateCond(ModelCondition{
+		Type:   ModelReleased,
+		Status: v1.ConditionTrue,
+	})
+}
+
 func (model *Model) IsLive() bool {
 	cond := model.GetCond(ModelReleased)
 	return cond.Status == v1.ConditionTrue
