@@ -23,7 +23,7 @@ type AuthMethod string
 const (
 	ApiToken AuthMethod = "api-token"
 	JwtToken AuthMethod = "jwt-token"
-	None     AutoMethod = "none"
+	None     AuthMethod = "none"
 )
 
 //==============================================================================
