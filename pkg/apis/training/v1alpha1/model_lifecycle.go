@@ -403,13 +403,22 @@ func (model *Model) IsReleasing() bool {
 	return model.Status.Phase == ModelPhaseReleasing
 }
 
-func (model *Model) MarkLive() {
-
+func (model *Model) MarkLive(predictor string, role catalog.ModelRole) {
 	if model.Status.ReleasedAt == nil {
 		now := metav1.Now()
 		model.Status.ReleasedAt = &now
 	}
-	model.Status.Phase = ModelPhaseLive
+	model.Labels[catalog.PredictorLabelKey] = predictor
+	model.Labels[catalog.ModelRoleLabelKey] = string(role)
+	switch role {
+	case catalog.Champion:
+		model.Status.Phase = ModelPhaseLiveChampion
+	case catalog.Challanger:
+		model.Status.Phase = ModelPhaseLiveChallenger
+	case catalog.Shadow:
+		model.Status.Phase = ModelPhaseLiveShadow
+	}
+
 	model.CreateOrUpdateCond(ModelCondition{
 		Type:   ModelReleased,
 		Status: v1.ConditionTrue,

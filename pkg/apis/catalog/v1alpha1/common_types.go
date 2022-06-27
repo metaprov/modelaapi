@@ -2061,6 +2061,8 @@ const (
 	JobLabelKey              = "kubernetes.io/job"
 	OwnerKindLabelKey        = "modela.ai/owner-kind"
 
+	ModelRoleLabelKey = "models.ai/role"
+
 	BranchLabelKey  = "branch"
 	RoleLabelKey    = "labels"
 	ChangedLabelKey = "changed"
