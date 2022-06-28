@@ -1,0 +1,140 @@
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.8.0
+  creationTimestamp: null
+  name: publicdatasets.catalog.modela.ai
+spec:
+  group: catalog.modela.ai
+  names:
+    categories:
+    - catalog
+    - modela
+    - all
+    kind: PublicDataset
+    listKind: PublicDatasetList
+    plural: publicdatasets
+    singular: publicdataset
+  scope: Namespaced
+  versions:
+  - additionalPrinterColumns:
+    - description: ML task name
+      jsonPath: .spec.task
+      name: Task
+      type: string
+    - jsonPath: .spec.url
+      name: URL
+      priority: 1
+      type: string
+    - jsonPath: .spec.rows
+      name: Rows
+      type: number
+    - jsonPath: .spec.columns
+      name: Columns
+      type: number
+    - jsonPath: .spec.targetColumn
+      name: Target
+      type: string
+    - jsonPath: .spec.imbalanced
+      name: Imbalanced
+      priority: 1
+      type: string
+    - jsonPath: .metadata.creationTimestamp
+      name: Age
+      type: date
+    name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: PublicDataset represent the metadata about a public dataset
+        properties:
+          apiVersion:
+            description: 'APIVersion defines the versioned schema of this representation
+              of an object. Servers should convert recognized schemas to the latest
+              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            type: string
+          kind:
+            description: 'Kind is a string value representing the REST resource this
+              object represents. Servers may infer this from the endpoint the client
+              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            type: string
+          metadata:
+            type: object
+          spec:
+            properties:
+              citation:
+                description: Dataset citation
+                type: string
+              columns:
+                description: Number of columns in the dataset
+                format: int32
+                type: integer
+              dataProductCR:
+                description: URI of the data product CR
+                type: string
+              dataUrl:
+                description: The URL to the actual data file or folder
+                type: string
+              datasetCR:
+                description: URI of the dataset CR for this public dataset
+                type: string
+              datasourceCR:
+                description: URI of the datasource CR for this public dataset
+                type: string
+              description:
+                description: Dataset description
+                type: string
+              fileSize:
+                description: The size of the dataset in bytes
+                format: int32
+                type: integer
+              imbalanced:
+                type: boolean
+              industry:
+                description: The target column name
+                type: string
+              openMLID:
+                description: The open ml id of the dataset
+                type: string
+              rows:
+                description: Number of rows in the dataset
+                format: int32
+                type: integer
+              studyCR:
+                description: URI of the study CR for this public dataset
+                type: string
+              targetColumn:
+                description: The target column name
+                type: string
+              task:
+                description: Task is the machine learning task of the public dataset
+                enum:
+                - binary-classification
+                - multi-classification
+                - forecasting
+                - regression
+                - clustering
+                - recommendation
+                - outlier-detection
+                - novelty-detection
+                - auto
+                - unknown
+                type: string
+              url:
+                type: string
+            required:
+            - task
+            type: object
+        required:
+        - spec
+        type: object
+    served: true
+    storage: true
+    subresources: {}
+status:
+  acceptedNames:
+    kind: ""
+    plural: ""
+  conditions: []
+  storedVersions: []

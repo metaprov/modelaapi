@@ -1,0 +1,950 @@
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.8.0
+  creationTimestamp: null
+  name: dataproducts.data.modela.ai
+spec:
+  group: data.modela.ai
+  names:
+    categories:
+    - data
+    - modela
+    - all
+    kind: DataProduct
+    listKind: DataProductList
+    plural: dataproducts
+    shortNames:
+    - prod
+    singular: dataproduct
+  scope: Namespaced
+  versions:
+  - additionalPrinterColumns:
+    - jsonPath: .status.conditions[?(@.type=="Ready")].status
+      name: Ready
+      type: string
+    - jsonPath: .spec.owner
+      name: Owner
+      type: string
+    - jsonPath: .spec.task
+      name: Task
+      type: string
+    - jsonPath: .spec.public
+      name: Public
+      type: boolean
+    - jsonPath: .status.totalErrorAlerts
+      name: Errors
+      type: integer
+    - jsonPath: .status.totalDatasources
+      name: Data Sources
+      priority: 1
+      type: integer
+    - jsonPath: .status.totalDatasets
+      name: Datasets
+      priority: 1
+      type: integer
+    - jsonPath: .status.totalStudies
+      name: Studies
+      priority: 1
+      type: integer
+    - jsonPath: .status.totalModels
+      name: Models
+      priority: 1
+      type: integer
+    - jsonPath: .status.totalPredictors
+      name: Predictors
+      priority: 1
+      type: integer
+    - jsonPath: .status.totalApps
+      name: Apps
+      priority: 1
+      type: integer
+    - jsonPath: .metadata.creationTimestamp
+      name: Age
+      type: date
+    name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: DataProduct represents a single DataProduct namespace, which
+          contains all non-infrastructure resources. Additionally, it specifies default
+          parameters for resources to be created under the namespace, such as workload
+          class and storage location
+        properties:
+          apiVersion:
+            description: 'APIVersion defines the versioned schema of this representation
+              of an object. Servers should convert recognized schemas to the latest
+              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            type: string
+          kind:
+            description: 'Kind is a string value representing the REST resource this
+              object represents. Servers may infer this from the endpoint the client
+              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: DataProductSpec defines the desired state of the DataProduct
+            properties:
+              clearanceLevel:
+                default: unclassified
+                description: The clearance level required to access the DataProduct.
+                  Accounts which do not have a clearance level greater than or equal
+                  to ClearanceLevel will be denied access to the DataProduct namespace
+                enum:
+                - unclassified
+                - confidential
+                - secret
+                - top-secret
+                type: string
+              color:
+                default: none
+                description: The color assigned to the product, for visual purposes
+                  only
+                type: string
+              compilation:
+                description: The default compilation specification for Study resources
+                  created under the DataProduct
+                properties:
+                  compiler:
+                    default: none
+                    description: Set one or more targets Enable set the enable to
+                    enum:
+                    - tvm
+                    - onyx
+                    - xla
+                    - none
+                    type: string
+                  enable:
+                    default: false
+                    description: Enable set the enable to
+                    type: boolean
+                  targets:
+                    description: Set one or more targets for the compiler
+                    items:
+                      enum:
+                      - amd-epyc-2
+                      - arma-53
+                      - arma-72
+                      - intel-cascade-lake
+                      - intel-broadwell
+                      - intel-skylake
+                      - tesla-v100
+                      - tesla-k80
+                      - t4
+                      - raspberry-pi8-modela-b
+                      type: string
+                    type: array
+                type: object
+              dataLocation:
+                description: The default location for all artifacts created under
+                  the DataProduct. All data-producing resources will use the VirtualBucket
+                  specified by the DataLocation by default
+                properties:
+                  bucketName:
+                    default: ""
+                    description: In the case of the location type being an object
+                      storage system, BucketName is the name of the VirtualBucket
+                      resource that exists in the same tenant as the resource specifying
+                      the DataLocation. Modela will connect to the external object
+                      storage system, and will access the file from the path specified
+                      by the Path field
+                    type: string
+                  connectionName:
+                    default: ""
+                    description: In the case of the type of location being a database,
+                      ConnectionName specifies the name of the Connection resource
+                      that exists in the same tenant as the resource specifying the
+                      DataLocation. Modela will attempt to connect to the database
+                      using the credentials specified in the Connection, and will
+                      execute the query specified by the SQL field
+                    type: string
+                  database:
+                    default: ""
+                    description: The name of a database inside the database system
+                      specified by the ConnectionName field
+                    type: string
+                  path:
+                    default: ""
+                    description: The path to a flat-file inside an object storage
+                      system. When using the Modela API to upload files (through the
+                      FileService API), Modela will upload the data to a predetermined
+                      path based on the Tenant, DataProduct, DataProductVersion, and
+                      resource type of the resource in relation to the file being
+                      uploaded. The path does not need to adhere to this format; you
+                      can give the path to a file inside a bucket not managed by Modela
+                    type: string
+                  resourceRef:
+                    description: In the case of the location type being Dataset or
+                      PublicDataset, ResourceRef references another resource that
+                      containing data that will be used as a data source
+                    properties:
+                      apiVersion:
+                        description: API version of the referent.
+                        type: string
+                      fieldPath:
+                        description: 'If referring to a piece of an object instead
+                          of an entire object, this string should contain a valid
+                          JSON/Go field access statement, such as desiredState.manifest.containers[2].
+                          For example, if the object reference is to a container within
+                          a pod, this would take on a value like: "spec.containers{name}"
+                          (where "name" refers to the name of the container that triggered
+                          the event) or if no container name is specified "spec.containers[2]"
+                          (container with index 2 in this pod). This syntax is chosen
+                          only to have some well-defined way of referencing a part
+                          of an object. TODO: this design is not final and this field
+                          is subject to change in the future.'
+                        type: string
+                      kind:
+                        description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                        type: string
+                      name:
+                        description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                        type: string
+                      namespace:
+                        description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                        type: string
+                      resourceVersion:
+                        description: 'Specific resourceVersion to which this reference
+                          is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                        type: string
+                      uid:
+                        description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                        type: string
+                    type: object
+                  sql:
+                    default: ""
+                    description: The SQL statement which will be executed to query
+                      data from the table specified by Table
+                    type: string
+                  table:
+                    default: ""
+                    description: The name of a table inside a database, if applicable
+                    type: string
+                  topic:
+                    default: ""
+                    description: The name of the streaming topic (currently unsupported)
+                    type: string
+                  type:
+                    default: object
+                    description: The type of location where the data resides, which
+                      can either be an object inside an object storage system (i.e.
+                      Minio), a SQL location like a table or a view, a data stream
+                      (i.e. Kafka, currently unsupported), or a web location (currently
+                      unsupported)
+                    enum:
+                    - object
+                    - table
+                    - view
+                    - stream
+                    - web
+                    - public-dataset
+                    - dataset
+                    type: string
+                  url:
+                    default: ""
+                    description: In the case of the location type being WebApi, URL
+                      specifies the external location (HTTP or Git) that will be queried
+                      and then stored as flat-file by the resource which specifies
+                      the DataLocation
+                    type: string
+                type: object
+              description:
+                default: ""
+                description: User-provided description of the object
+                maxLength: 512
+                type: string
+              gitLocation:
+                description: GitLocation is the default Git location where all child
+                  resources will be tracked as YAML
+                properties:
+                  branch:
+                    default: ""
+                    description: The branch inside the Git repository
+                    maxLength: 256
+                    type: string
+                  gitConnectionName:
+                    default: ""
+                    description: The Git Connection resource which exists in the same
+                      tenant as the parent DataProduct
+                    type: string
+                  private:
+                    default: true
+                    description: Indicates if the repository is private
+                    type: boolean
+                  url:
+                    default: ""
+                    description: The URL to the destination Git repository
+                    maxLength: 256
+                    type: string
+                type: object
+              governance:
+                description: The Governance requirements (not functional as of the
+                  current release)
+                properties:
+                  businessReviewer:
+                    description: The account name of the business reviewer
+                    type: string
+                  complianceReviewer:
+                    description: The account name of the compliance reviewer
+                    type: string
+                  country:
+                    description: The country whose regulations are under consideration
+                    type: string
+                  enabled:
+                    default: false
+                    description: Indicates if governance is enabled
+                    type: boolean
+                  itReviewer:
+                    description: The account name of the IT reviewer
+                    type: string
+                type: object
+              imageLocation:
+                description: ImageLocation is the default Docker image repository
+                  where model images produced under the DataProduct will be stored
+                properties:
+                  name:
+                    default: ""
+                    description: The canonical name of the image repository. If not
+                      set, it will default to docker/{dataproduct_name}
+                    maxLength: 256
+                    type: string
+                  registryConnectionName:
+                    default: ""
+                    description: The image repository Connection resource which exists
+                      in the same tenant as the parent DataProduct. If the field is
+                      not set, Modela will ignore the image location and not push
+                      images
+                    type: string
+                type: object
+              kpis:
+                description: KPIs define key performance indicators for the DataProduct
+                  (not functional as of the current release)
+                items:
+                  description: KPI specifies a key performance indicator for a DataProduct.
+                    Currently not implemented.
+                  properties:
+                    name:
+                      default: ""
+                      description: The name of the KPI
+                      type: string
+                    value:
+                      description: The value of the KPI
+                      type: number
+                  type: object
+                type: array
+              labName:
+                description: The name of the Lab that will be used by default with
+                  all compute-requiring child resources
+                maxLength: 63
+                pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
+                type: string
+              notification:
+                description: The default notification specification for all resources
+                  under the DataProduct
+                properties:
+                  errorTTL:
+                    default: 3600
+                    description: Time-to-live for error messages, in seconds
+                    format: int32
+                    type: integer
+                  notifierName:
+                    default: ""
+                    description: The name of the Notifier which exists in the same
+                      tenant as the resource specifying the NotificationSpec
+                    type: string
+                  selector:
+                    additionalProperties:
+                      type: string
+                    description: The labels which will be searched for in all Notifiers
+                      to determine the target Notifiers
+                    type: object
+                  successTTL:
+                    default: 3600
+                    description: Time-to-live for success messages. In seconds
+                    format: int32
+                    type: integer
+                type: object
+              onCallAccountName:
+                description: The name of the Account which should be responsible for
+                  events that occur under the DataProduct
+                type: string
+              owner:
+                default: no-one
+                description: The name of the Account which created the object, which
+                  exists in the same tenant as the object
+                type: string
+              permissions:
+                description: Permissions denotes the specification that determines
+                  which Accounts can access the DataProduct and what actions they
+                  can perform
+                properties:
+                  stakeholders:
+                    items:
+                      description: Stakeholder specifies the User Role Classes of
+                        an individual Account
+                      properties:
+                        account:
+                          description: The name of an Account
+                          type: string
+                        roles:
+                          description: The object references to UserRoleClass resources
+                            which describe the actions the Account may perform
+                          items:
+                            description: 'ObjectReference contains enough information
+                              to let you inspect or modify the referred object. ---
+                              New uses of this type are discouraged because of difficulty
+                              describing its usage when embedded in APIs. 1. Ignored
+                              fields.  It includes many fields which are not generally
+                              honored.  For instance, ResourceVersion and FieldPath
+                              are both very rarely valid in actual usage. 2. Invalid
+                              usage help.  It is impossible to add specific help for
+                              individual usage.  In most embedded usages, there are
+                              particular restrictions like, "must refer only to types
+                              A and B" or "UID not honored" or "name must be restricted".
+                              Those cannot be well described when embedded. 3. Inconsistent
+                              validation.  Because the usages are different, the validation
+                              rules are different by usage, which makes it hard for
+                              users to predict what will happen. 4. The fields are
+                              both imprecise and overly precise.  Kind is not a precise
+                              mapping to a URL. This can produce ambiguity during
+                              interpretation and require a REST mapping.  In most
+                              cases, the dependency is on the group,resource tuple
+                              and the version of the actual struct is irrelevant.
+                              5. We cannot easily change it.  Because this type is
+                              embedded in many locations, updates to this type will
+                              affect numerous schemas.  Don''t make new APIs embed
+                              an underspecified API type they do not control. Instead
+                              of using this type, create a locally provided and used
+                              type that is well-focused on your reference. For example,
+                              ServiceReferences for admission registration: https://github.com/kubernetes/api/blob/release-1.17/admissionregistration/v1/types.go#L533
+                              .'
+                            properties:
+                              apiVersion:
+                                description: API version of the referent.
+                                type: string
+                              fieldPath:
+                                description: 'If referring to a piece of an object
+                                  instead of an entire object, this string should
+                                  contain a valid JSON/Go field access statement,
+                                  such as desiredState.manifest.containers[2]. For
+                                  example, if the object reference is to a container
+                                  within a pod, this would take on a value like: "spec.containers{name}"
+                                  (where "name" refers to the name of the container
+                                  that triggered the event) or if no container name
+                                  is specified "spec.containers[2]" (container with
+                                  index 2 in this pod). This syntax is chosen only
+                                  to have some well-defined way of referencing a part
+                                  of an object. TODO: this design is not final and
+                                  this field is subject to change in the future.'
+                                type: string
+                              kind:
+                                description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                                type: string
+                              name:
+                                description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                                type: string
+                              namespace:
+                                description: 'Namespace of the referent. More info:
+                                  https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                                type: string
+                              resourceVersion:
+                                description: 'Specific resourceVersion to which this
+                                  reference is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                                type: string
+                              uid:
+                                description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                                type: string
+                            type: object
+                          type: array
+                      type: object
+                    type: array
+                type: object
+              priority:
+                default: medium
+                description: The default priority level assigned to Jobs created under
+                  the DataProduct namespace
+                enum:
+                - low
+                - medium
+                - high
+                - urgent
+                type: string
+              public:
+                default: false
+                description: Indicates if the DataProduct is public and can be accessed
+                  without permissions
+                type: boolean
+              retriesOnFailure:
+                default: 3
+                description: Specifies how many times Jobs created under the DataProduct
+                  namespace will retry after failure
+                format: int32
+                maximum: 10
+                minimum: 0
+                type: integer
+              servingResources:
+                description: The default resource allocation for model serving workloads
+                  that takes place under the DataProduct
+                properties:
+                  cpuImage:
+                    description: Reference to the managed CPU trainer image, used
+                      internally
+                    properties:
+                      apiVersion:
+                        description: API version of the referent.
+                        type: string
+                      fieldPath:
+                        description: 'If referring to a piece of an object instead
+                          of an entire object, this string should contain a valid
+                          JSON/Go field access statement, such as desiredState.manifest.containers[2].
+                          For example, if the object reference is to a container within
+                          a pod, this would take on a value like: "spec.containers{name}"
+                          (where "name" refers to the name of the container that triggered
+                          the event) or if no container name is specified "spec.containers[2]"
+                          (container with index 2 in this pod). This syntax is chosen
+                          only to have some well-defined way of referencing a part
+                          of an object. TODO: this design is not final and this field
+                          is subject to change in the future.'
+                        type: string
+                      kind:
+                        description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                        type: string
+                      name:
+                        description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                        type: string
+                      namespace:
+                        description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                        type: string
+                      resourceVersion:
+                        description: 'Specific resourceVersion to which this reference
+                          is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                        type: string
+                      uid:
+                        description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                        type: string
+                    type: object
+                  custom:
+                    default: false
+                    description: If true, ignore the workload class name.
+                    type: boolean
+                  gpuImage:
+                    description: Reference to the managed GPU trainer image, used
+                      internally
+                    properties:
+                      apiVersion:
+                        description: API version of the referent.
+                        type: string
+                      fieldPath:
+                        description: 'If referring to a piece of an object instead
+                          of an entire object, this string should contain a valid
+                          JSON/Go field access statement, such as desiredState.manifest.containers[2].
+                          For example, if the object reference is to a container within
+                          a pod, this would take on a value like: "spec.containers{name}"
+                          (where "name" refers to the name of the container that triggered
+                          the event) or if no container name is specified "spec.containers[2]"
+                          (container with index 2 in this pod). This syntax is chosen
+                          only to have some well-defined way of referencing a part
+                          of an object. TODO: this design is not final and this field
+                          is subject to change in the future.'
+                        type: string
+                      kind:
+                        description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                        type: string
+                      name:
+                        description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                        type: string
+                      namespace:
+                        description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                        type: string
+                      resourceVersion:
+                        description: 'Specific resourceVersion to which this reference
+                          is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                        type: string
+                      uid:
+                        description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                        type: string
+                    type: object
+                  requirements:
+                    description: The custom resource requirements for the workload,
+                      which are used if `WorkloadName` is not set
+                    properties:
+                      limits:
+                        additionalProperties:
+                          anyOf:
+                          - type: integer
+                          - type: string
+                          pattern: ^(\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))(([KMGTPE]i)|[numkMGTPE]|([eE](\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))))?$
+                          x-kubernetes-int-or-string: true
+                        description: 'Limits describes the maximum amount of compute
+                          resources allowed. More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/'
+                        type: object
+                      requests:
+                        additionalProperties:
+                          anyOf:
+                          - type: integer
+                          - type: string
+                          pattern: ^(\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))(([KMGTPE]i)|[numkMGTPE]|([eE](\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))))?$
+                          x-kubernetes-int-or-string: true
+                        description: 'Requests describes the minimum amount of compute
+                          resources required. If Requests is omitted for a container,
+                          it defaults to Limits if that is explicitly specified, otherwise
+                          to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/'
+                        type: object
+                    type: object
+                  workloadName:
+                    default: general-large
+                    description: If this resource is based on the workload, this field
+                      contain the name of the workload. The name of a WorkloadClass.
+                      The system will use the resource requirements described by the
+                      WorkloadClass
+                    type: string
+                type: object
+              servingSiteName:
+                description: The name of the Serving Site which will be used by default
+                  with all Predictor resources
+                maxLength: 63
+                pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
+                type: string
+              subtask:
+                default: none
+                description: Subtask specifies the default subtask relevant to the
+                  primary task (text classification, image object detection, etc.)
+                enum:
+                - text-ner
+                - text-classification
+                - text-multi-classification
+                - text-regression
+                - text-multi-label-classification
+                - text-conversation
+                - text-lang-generation
+                - text-lang-model
+                - text-multi-modal
+                - text-ner
+                - text-qa
+                - text-summarization
+                - text-sentence-pair
+                - text-representation-generation
+                - text-sentiment-analysis
+                - text-code-generation
+                - text-translation
+                - text-lang-detection
+                - text-grammar-correction
+                - text-paraphrasing
+                - text-intent-classification
+                - text-semantic-similarity
+                - text-keyword-extraction
+                - text-pos
+                - text-tokenization
+                - text-lemma
+                - image-classification
+                - image-multi-label-classification
+                - image-object-detection
+                - image-segmentation
+                - none
+                type: string
+              task:
+                description: Task specifies the default machine learning task of the
+                  product (classification, regression, etc.)
+                enum:
+                - binary-classification
+                - multi-classification
+                - forecasting
+                - regression
+                - clustering
+                - recommendation
+                - outlier-detection
+                - novelty-detection
+                - auto
+                - unknown
+                type: string
+              tenantRef:
+                description: The reference to the Tenant which owns the DataProduct.
+                  Defaults to `default-tenant`
+                properties:
+                  apiVersion:
+                    description: API version of the referent.
+                    type: string
+                  fieldPath:
+                    description: 'If referring to a piece of an object instead of
+                      an entire object, this string should contain a valid JSON/Go
+                      field access statement, such as desiredState.manifest.containers[2].
+                      For example, if the object reference is to a container within
+                      a pod, this would take on a value like: "spec.containers{name}"
+                      (where "name" refers to the name of the container that triggered
+                      the event) or if no container name is specified "spec.containers[2]"
+                      (container with index 2 in this pod). This syntax is chosen
+                      only to have some well-defined way of referencing a part of
+                      an object. TODO: this design is not final and this field is
+                      subject to change in the future.'
+                    type: string
+                  kind:
+                    description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                    type: string
+                  name:
+                    description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                    type: string
+                  namespace:
+                    description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                    type: string
+                  resourceVersion:
+                    description: 'Specific resourceVersion to which this reference
+                      is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                    type: string
+                  uid:
+                    description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                    type: string
+                type: object
+              trainingResources:
+                description: The default resource allocation for model training and
+                  data workloads that takes place under the DataProduct
+                properties:
+                  cpuImage:
+                    description: Reference to the managed CPU trainer image, used
+                      internally
+                    properties:
+                      apiVersion:
+                        description: API version of the referent.
+                        type: string
+                      fieldPath:
+                        description: 'If referring to a piece of an object instead
+                          of an entire object, this string should contain a valid
+                          JSON/Go field access statement, such as desiredState.manifest.containers[2].
+                          For example, if the object reference is to a container within
+                          a pod, this would take on a value like: "spec.containers{name}"
+                          (where "name" refers to the name of the container that triggered
+                          the event) or if no container name is specified "spec.containers[2]"
+                          (container with index 2 in this pod). This syntax is chosen
+                          only to have some well-defined way of referencing a part
+                          of an object. TODO: this design is not final and this field
+                          is subject to change in the future.'
+                        type: string
+                      kind:
+                        description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                        type: string
+                      name:
+                        description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                        type: string
+                      namespace:
+                        description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                        type: string
+                      resourceVersion:
+                        description: 'Specific resourceVersion to which this reference
+                          is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                        type: string
+                      uid:
+                        description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                        type: string
+                    type: object
+                  custom:
+                    default: false
+                    description: If true, ignore the workload class name.
+                    type: boolean
+                  gpuImage:
+                    description: Reference to the managed GPU trainer image, used
+                      internally
+                    properties:
+                      apiVersion:
+                        description: API version of the referent.
+                        type: string
+                      fieldPath:
+                        description: 'If referring to a piece of an object instead
+                          of an entire object, this string should contain a valid
+                          JSON/Go field access statement, such as desiredState.manifest.containers[2].
+                          For example, if the object reference is to a container within
+                          a pod, this would take on a value like: "spec.containers{name}"
+                          (where "name" refers to the name of the container that triggered
+                          the event) or if no container name is specified "spec.containers[2]"
+                          (container with index 2 in this pod). This syntax is chosen
+                          only to have some well-defined way of referencing a part
+                          of an object. TODO: this design is not final and this field
+                          is subject to change in the future.'
+                        type: string
+                      kind:
+                        description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                        type: string
+                      name:
+                        description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                        type: string
+                      namespace:
+                        description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                        type: string
+                      resourceVersion:
+                        description: 'Specific resourceVersion to which this reference
+                          is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                        type: string
+                      uid:
+                        description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                        type: string
+                    type: object
+                  requirements:
+                    description: The custom resource requirements for the workload,
+                      which are used if `WorkloadName` is not set
+                    properties:
+                      limits:
+                        additionalProperties:
+                          anyOf:
+                          - type: integer
+                          - type: string
+                          pattern: ^(\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))(([KMGTPE]i)|[numkMGTPE]|([eE](\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))))?$
+                          x-kubernetes-int-or-string: true
+                        description: 'Limits describes the maximum amount of compute
+                          resources allowed. More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/'
+                        type: object
+                      requests:
+                        additionalProperties:
+                          anyOf:
+                          - type: integer
+                          - type: string
+                          pattern: ^(\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))(([KMGTPE]i)|[numkMGTPE]|([eE](\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))))?$
+                          x-kubernetes-int-or-string: true
+                        description: 'Requests describes the minimum amount of compute
+                          resources required. If Requests is omitted for a container,
+                          it defaults to Limits if that is explicitly specified, otherwise
+                          to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/'
+                        type: object
+                    type: object
+                  workloadName:
+                    default: general-large
+                    description: If this resource is based on the workload, this field
+                      contain the name of the workload. The name of a WorkloadClass.
+                      The system will use the resource requirements described by the
+                      WorkloadClass
+                    type: string
+                type: object
+            type: object
+          status:
+            description: DataProductStatus defines the observed state of DataProduct
+            properties:
+              baselineVersion:
+                description: The name of the DataProductVersion which currently represents
+                  the latest version of the DataProduct. Newly-created resources will
+                  be instantiated with this version by default
+                type: string
+              conditions:
+                items:
+                  description: DataProductCondition describes the state of a DataProduct
+                    at a certain point
+                  properties:
+                    lastTransitionTime:
+                      description: Last time the condition transitioned from one status
+                        to another
+                      format: date-time
+                      type: string
+                    message:
+                      description: A human readable message indicating details about
+                        the transition
+                      type: string
+                    reason:
+                      description: The reason for the condition's last transition
+                      type: string
+                    status:
+                      description: Status of the condition, one of True, False, Unknown
+                      type: string
+                    type:
+                      description: Type of condition.
+                      type: string
+                  required:
+                  - status
+                  - type
+                  type: object
+                type: array
+              failureMessage:
+                description: In the case of failure, the DataProduct resource controller
+                  will set this field with a failure message
+                type: string
+              failureReason:
+                description: In the case of failure, the DataProduct resource controller
+                  will set this field with a failure reason
+                type: string
+              lastUpdated:
+                description: The last time the object was updated
+                format: date-time
+                type: string
+              observedGeneration:
+                description: ObservedGeneration is the last generation that was acted
+                  on
+                format: int64
+                type: integer
+              totalApps:
+                description: The number of DataApp resources that exist under the
+                  namespace
+                format: int32
+                type: integer
+              totalBuilders:
+                description: The number of ModelAutoBuilder resources that exist under
+                  the namespace
+                format: int32
+                type: integer
+              totalDataPipelineRuns:
+                description: The number of DataPipelineRun resources that exist under
+                  the namespace
+                format: int32
+                type: integer
+              totalDataPipelines:
+                description: The number of DataPipeline resources that exist under
+                  the namespace
+                format: int32
+                type: integer
+              totalDatasets:
+                description: The number of Dataset resources that exist under the
+                  namespace
+                format: int32
+                type: integer
+              totalDatasources:
+                description: The number of DataSource resources that exist under the
+                  namespace
+                format: int32
+                type: integer
+              totalErrorAlerts:
+                description: The number of error alerts produced under the namespace
+                format: int32
+                type: integer
+              totalInfoAlerts:
+                description: The number of informative alerts produced under the namespace
+                format: int32
+                type: integer
+              totalModelPipelineRuns:
+                description: The number of ModelPipelineRun resources that exist under
+                  the namespace
+                format: int32
+                type: integer
+              totalModelPipelines:
+                description: The number of ModelPipeline resources that exist under
+                  the namespace
+                format: int32
+                type: integer
+              totalModels:
+                description: The number of Model resources that exist under the namespace
+                format: int32
+                type: integer
+              totalPredictions:
+                description: The number of Prediction resources that exist under the
+                  namespace
+                format: int32
+                type: integer
+              totalPredictors:
+                description: The number of Predictor resources that exist under the
+                  namespace
+                format: int32
+                type: integer
+              totalStudies:
+                description: The number of Study resources that exist under the namespace
+                format: int32
+                type: integer
+            type: object
+        required:
+        - metadata
+        - spec
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}
+status:
+  acceptedNames:
+    kind: ""
+    plural: ""
+  conditions: []
+  storedVersions: []

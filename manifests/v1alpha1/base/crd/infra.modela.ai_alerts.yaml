@@ -1,0 +1,253 @@
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.8.0
+  creationTimestamp: null
+  name: alerts.infra.modela.ai
+spec:
+  group: infra.modela.ai
+  names:
+    categories:
+    - infra
+    - modela
+    kind: Alert
+    listKind: AlertList
+    plural: alerts
+    singular: alert
+  scope: Namespaced
+  versions:
+  - additionalPrinterColumns:
+    - jsonPath: .status.phase
+      name: Status
+      type: string
+    - jsonPath: .spec.level
+      name: Level
+      type: string
+    - jsonPath: .spec.subject
+      name: Subject
+      type: string
+    - jsonPath: .spec.entityRef.namespace
+      name: Entity Namespace
+      type: string
+    - jsonPath: .spec.entityRef.name
+      name: Entity Name
+      type: string
+    - jsonPath: .spec.notifierName
+      name: Notifier
+      type: string
+    - jsonPath: .status.at
+      name: At
+      type: date
+    - jsonPath: .metadata.creationTimestamp
+      name: Age
+      type: date
+    name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: Alert represents temporal information about an event that occurred
+          with a Modela custom resource
+        properties:
+          apiVersion:
+            description: 'APIVersion defines the versioned schema of this representation
+              of an object. Servers should convert recognized schemas to the latest
+              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            type: string
+          kind:
+            description: 'Kind is a string value representing the REST resource this
+              object represents. Servers may infer this from the endpoint the client
+              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: AlertSpec defines the contents of an Alert. Alerts are generated
+              by Modela resource controllers and should not be created manually.
+            properties:
+              entityRef:
+                description: The entity which the Alert is in reference to
+                properties:
+                  apiVersion:
+                    description: API version of the referent.
+                    type: string
+                  fieldPath:
+                    description: 'If referring to a piece of an object instead of
+                      an entire object, this string should contain a valid JSON/Go
+                      field access statement, such as desiredState.manifest.containers[2].
+                      For example, if the object reference is to a container within
+                      a pod, this would take on a value like: "spec.containers{name}"
+                      (where "name" refers to the name of the container that triggered
+                      the event) or if no container name is specified "spec.containers[2]"
+                      (container with index 2 in this pod). This syntax is chosen
+                      only to have some well-defined way of referencing a part of
+                      an object. TODO: this design is not final and this field is
+                      subject to change in the future.'
+                    type: string
+                  kind:
+                    description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                    type: string
+                  name:
+                    description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                    type: string
+                  namespace:
+                    description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                    type: string
+                  resourceVersion:
+                    description: 'Specific resourceVersion to which this reference
+                      is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                    type: string
+                  uid:
+                    description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                    type: string
+                type: object
+              fields:
+                additionalProperties:
+                  type: string
+                description: Additional key-value information about the event
+                type: object
+              image:
+                default: ""
+                description: The URL of an image in reference to the Alert
+                type: string
+              level:
+                default: normal
+                description: The significance of the Alert, which can be normal, warning,
+                  or error
+                type: string
+              message:
+                default: ""
+                description: The message of the Alert
+                type: string
+              notifierName:
+                default: ""
+                description: The name of the Notifier resource that exists in the
+                  same tenant as the Alert which the contents of the Alert will be
+                  forwarded to
+                type: string
+              owner:
+                default: no-one
+                description: The name of the Account which owns the resource that
+                  the Alert references
+                type: string
+              subject:
+                default: ""
+                description: The subject of the Alert
+                type: string
+              tenantRef:
+                description: The reference to the tenant which the object exists under
+                properties:
+                  apiVersion:
+                    description: API version of the referent.
+                    type: string
+                  fieldPath:
+                    description: 'If referring to a piece of an object instead of
+                      an entire object, this string should contain a valid JSON/Go
+                      field access statement, such as desiredState.manifest.containers[2].
+                      For example, if the object reference is to a container within
+                      a pod, this would take on a value like: "spec.containers{name}"
+                      (where "name" refers to the name of the container that triggered
+                      the event) or if no container name is specified "spec.containers[2]"
+                      (container with index 2 in this pod). This syntax is chosen
+                      only to have some well-defined way of referencing a part of
+                      an object. TODO: this design is not final and this field is
+                      subject to change in the future.'
+                    type: string
+                  kind:
+                    description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                    type: string
+                  name:
+                    description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                    type: string
+                  namespace:
+                    description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                    type: string
+                  resourceVersion:
+                    description: 'Specific resourceVersion to which this reference
+                      is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                    type: string
+                  uid:
+                    description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                    type: string
+                type: object
+              ttl:
+                default: 3600
+                description: The time-to-live of the Alert, after which the Alert
+                  will be archived
+                format: int32
+                type: integer
+              url:
+                default: ""
+                description: The URL of the subject
+                type: string
+            type: object
+          status:
+            description: AlertStatus is the observed state of an Alert
+            properties:
+              at:
+                description: The time when the Alert was fired
+                format: date-time
+                type: string
+              conditions:
+                items:
+                  description: AlertCondition describes the state of an Alert at a
+                    certain point
+                  properties:
+                    lastTransitionTime:
+                      description: Last time the condition transitioned from one status
+                        to another
+                      format: date-time
+                      type: string
+                    message:
+                      description: A human-readable message indicating details about
+                        the transition
+                      type: string
+                    reason:
+                      description: The reason for the condition's last transition
+                      type: string
+                    status:
+                      description: Status of the condition, one of True, False, Unknown.
+                      type: string
+                    type:
+                      description: Type of account condition.
+                      type: string
+                  required:
+                  - status
+                  - type
+                  type: object
+                type: array
+              failureMessage:
+                description: In the case of failure, the Alert resource controller
+                  will set this field with a failure message
+                type: string
+              failureReason:
+                description: In the case of failure, the Alert resource controller
+                  will set this field with a failure reason
+                type: string
+              lastUpdated:
+                description: The last time the object was updated
+                format: date-time
+                type: string
+              observedGeneration:
+                description: ObservedGeneration is the last generation that was acted
+                  on
+                format: int64
+                type: integer
+              phase:
+                default: Pending
+                description: The current phase of the Alert
+                type: string
+            type: object
+        required:
+        - spec
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}
+status:
+  acceptedNames:
+    kind: ""
+    plural: ""
+  conditions: []
+  storedVersions: []
