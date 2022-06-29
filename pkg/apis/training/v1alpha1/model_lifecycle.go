@@ -436,6 +436,7 @@ func (model *Model) MarkUndeployed() {
 	}
 	model.Labels = labels
 	model.Status.Phase = ModelPhaseCompleted
+	model.Status.PredictorName = ""
 	// Mark released as false in order to avoid creating the predictor again.
 	model.Spec.Released = util.BoolPtr(false)
 
