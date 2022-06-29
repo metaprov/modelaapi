@@ -235,6 +235,22 @@ func (study *Study) IsInCond(ct StudyConditionType) bool {
 	return current.Status == v1.ConditionTrue
 }
 
+func (study *Study) SelectSplitMethod() {
+	if *study.Spec.Task == catalog.Forecasting {
+		v := catalog.DataSplitMethodTime
+		study.Spec.TrainingTemplate.Split.Method = &v
+	}
+	if *study.Spec.Task == catalog.Regression {
+		v := catalog.DataSplitMethodRandom
+		study.Spec.TrainingTemplate.Split.Method = &v
+	}
+	if *study.Spec.Task == catalog.BinaryClassification || *study.Spec.Task == catalog.MultiClassification {
+		v := catalog.DataSplitMethodRandomStratified
+		study.Spec.TrainingTemplate.Split.Method = &v
+	}
+
+}
+
 // use to sort the model by score
 func (study *Study) AutoSplit(rows int32) {
 	if rows < 1000 {

@@ -426,10 +426,7 @@ func (model *Model) MarkLive(predictor string, role catalog.ModelRole) {
 }
 
 func (model *Model) MarkUndeployed() {
-	if model.Status.ReleasedAt == nil {
-		now := metav1.Now()
-		model.Status.ReleasedAt = &now
-	}
+	model.Status.ReleasedAt = nil
 	labels := make(map[string]string)
 	for k, v := range model.Labels {
 		if k == catalog.PredictorLabelKey || k == catalog.ModelRoleLabelKey {
