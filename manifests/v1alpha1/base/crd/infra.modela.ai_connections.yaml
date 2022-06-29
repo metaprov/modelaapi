@@ -1,0 +1,1464 @@
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.8.0
+  creationTimestamp: null
+  name: connections.infra.modela.ai
+spec:
+  group: infra.modela.ai
+  names:
+    categories:
+    - infra
+    - modela
+    kind: Connection
+    listKind: ConnectionList
+    plural: connections
+    shortNames:
+    - conn
+    singular: connection
+  scope: Namespaced
+  versions:
+  - additionalPrinterColumns:
+    - jsonPath: .status.conditions[?(@.type=="Ready")].status
+      name: Ready
+      type: string
+    - jsonPath: .spec.provider
+      name: Provider
+      type: string
+    - jsonPath: .spec.category
+      name: Category
+      type: string
+    - jsonPath: .spec.secretRef.name
+      name: Secret
+      priority: 1
+      type: string
+    - jsonPath: .metadata.creationTimestamp
+      name: Age
+      type: date
+    name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: Connection define a connection to an external system (e.g. database,
+          public cloud)
+        properties:
+          apiVersion:
+            description: 'APIVersion defines the versioned schema of this representation
+              of an object. Servers should convert recognized schemas to the latest
+              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            type: string
+          kind:
+            description: 'Kind is a string value representing the REST resource this
+              object represents. Servers may infer this from the endpoint the client
+              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: ConnectionSpec defines the desired state of a Connection
+            properties:
+              alicloud:
+                properties:
+                  accessKey:
+                    default: ""
+                    type: string
+                  host:
+                    default: ""
+                    type: string
+                  region:
+                    default: ""
+                    type: string
+                  secretKey:
+                    default: ""
+                    type: string
+                type: object
+              athena:
+                description: AthenaSpec defines the connection to Athena db
+                properties:
+                  hostName:
+                    default: ""
+                    type: string
+                  password:
+                    default: ""
+                    type: string
+                  region:
+                    default: ""
+                    type: string
+                  url:
+                    default: ""
+                    type: string
+                  username:
+                    default: ""
+                    description: UserName
+                    type: string
+                type: object
+              aws:
+                description: ////////////////////////// Cloud connection //////////////////////////
+                properties:
+                  accessKey:
+                    default: ""
+                    description: Aws Access key. This is an hidden fields which are
+                      stored in the secret
+                    type: string
+                  defaultRegion:
+                    default: ""
+                    description: Default zone.
+                    type: string
+                  secretKey:
+                    default: ""
+                    description: Aws StorageSecret key. This is an hidden fields which
+                      are stored in the secret
+                    type: string
+                type: object
+              azuresqldatabase:
+                description: CassandraSpec defines the connection to cassandra
+                properties:
+                  database:
+                    default: ""
+                    description: URL override the other settings
+                    type: string
+                  host:
+                    default: ""
+                    type: string
+                  password:
+                    default: ""
+                    type: string
+                  port:
+                    default: 1433
+                    format: int32
+                    maximum: 65535
+                    minimum: 1
+                    type: integer
+                  url:
+                    default: ""
+                    type: string
+                  username:
+                    default: ""
+                    type: string
+                type: object
+              azurestorage:
+                properties:
+                  accessKey:
+                    default: ""
+                    description: This is an hidden field which is stored in a p
+                    type: string
+                  storageAccount:
+                    default: ""
+                    type: string
+                type: object
+              bigquery:
+                description: BigQuerySpec defines the connection to Google BigQuery
+                properties:
+                  host:
+                    type: string
+                  oauthType:
+                    default: ""
+                    type: string
+                  password:
+                    default: ""
+                    type: string
+                  port:
+                    default: 9042
+                    format: int32
+                    maximum: 65535
+                    minimum: 1
+                    type: integer
+                  projectID:
+                    default: ""
+                    type: string
+                  serviceAccountKeyPath:
+                    default: ""
+                    type: string
+                  url:
+                    default: ""
+                    description: URL override the other settings
+                    type: string
+                  username:
+                    default: ""
+                    description: UserName
+                    type: string
+                type: object
+              bitbuckt:
+                properties:
+                  ssh:
+                    default: ""
+                    type: string
+                  token:
+                    default: ""
+                    type: string
+                  username:
+                    default: ""
+                    type: string
+                type: object
+              box:
+                properties:
+                  token:
+                    default: ""
+                    type: string
+                type: object
+              cassandra:
+                description: CassandraSpec defines the connection to cassandra
+                properties:
+                  host:
+                    default: ""
+                    type: string
+                  keyspace:
+                    default: ""
+                    type: string
+                  password:
+                    default: ""
+                    type: string
+                  port:
+                    default: 9042
+                    format: int32
+                    maximum: 65535
+                    minimum: 1
+                    type: integer
+                  url:
+                    default: ""
+                    description: URL override the other settings
+                    type: string
+                  username:
+                    default: ""
+                    type: string
+                type: object
+              category:
+                default: general
+                description: The type of external system which the connection references
+                enum:
+                - general
+                - cloud
+                - docker-image-registry
+                - database
+                - git
+                - messaging
+                type: string
+              clickhouse:
+                properties:
+                  database:
+                    default: ""
+                    type: string
+                  host:
+                    default: ""
+                    type: string
+                  password:
+                    default: ""
+                    type: string
+                  port:
+                    default: 8123
+                    format: int32
+                    maximum: 65535
+                    minimum: 1
+                    type: integer
+                  url:
+                    default: ""
+                    description: URL Override the other
+                    type: string
+                  username:
+                    default: ""
+                    type: string
+                type: object
+              cockroachdb:
+                properties:
+                  database:
+                    default: ""
+                    type: string
+                  host:
+                    default: ""
+                    type: string
+                  password:
+                    default: ""
+                    type: string
+                  port:
+                    default: 5432
+                    format: int32
+                    maximum: 65535
+                    minimum: 1
+                    type: integer
+                  url:
+                    description: URL Override the other
+                    type: string
+                  username:
+                    default: ""
+                    type: string
+                type: object
+              couchbase:
+                properties:
+                  database:
+                    default: ""
+                    type: string
+                  defaultBucket:
+                    description: URL Override the other
+                    type: string
+                  host:
+                    default: ""
+                    type: string
+                  password:
+                    default: ""
+                    type: string
+                  port:
+                    default: 8123
+                    format: int32
+                    maximum: 65535
+                    minimum: 1
+                    type: integer
+                  url:
+                    default: ""
+                    description: URL Override the other
+                    type: string
+                  username:
+                    default: ""
+                    type: string
+                type: object
+              db2:
+                properties:
+                  host:
+                    default: ""
+                    type: string
+                  keyspace:
+                    default: ""
+                    type: string
+                  password:
+                    default: ""
+                    type: string
+                  port:
+                    default: 9042
+                    format: int32
+                    maximum: 65535
+                    minimum: 1
+                    type: integer
+                  url:
+                    default: ""
+                    description: URL override the other settings
+                    type: string
+                  username:
+                    default: ""
+                    type: string
+                type: object
+              digitalocean:
+                properties:
+                  accessKey:
+                    default: ""
+                    description: Access Key for digital ocean spaces
+                    type: string
+                  defaultRegion:
+                    default: ""
+                    description: Default digital ocean
+                    type: string
+                  host:
+                    default: ""
+                    description: url or connection string
+                    type: string
+                  secretKey:
+                    default: ""
+                    description: StorageSecret Key for digital ocean spaces
+                    type: string
+                  token:
+                    default: ""
+                    description: Token for digital ocean
+                    type: string
+                type: object
+              discrod:
+                properties:
+                  contentType:
+                    default: application/json
+                    description: Content type
+                    type: string
+                  headers:
+                    additionalProperties:
+                      type: string
+                    description: custom headers to send
+                    type: object
+                  ssl:
+                    default: false
+                    type: boolean
+                  token:
+                    description: The webhook secret token
+                    type: string
+                  url:
+                    default: ""
+                    description: Discrod webhook
+                    type: string
+                type: object
+              dremio:
+                properties:
+                  host:
+                    default: ""
+                    type: string
+                  keyspace:
+                    default: ""
+                    type: string
+                  password:
+                    default: ""
+                    type: string
+                  port:
+                    default: 9042
+                    format: int32
+                    maximum: 65535
+                    minimum: 1
+                    type: integer
+                  url:
+                    default: ""
+                    description: URL override the other settings
+                    type: string
+                  username:
+                    default: ""
+                    type: string
+                type: object
+              drill:
+                description: ApacheDruid
+                properties:
+                  host:
+                    default: ""
+                    type: string
+                  keyspace:
+                    default: ""
+                    type: string
+                  password:
+                    default: ""
+                    type: string
+                  port:
+                    default: 9042
+                    format: int32
+                    maximum: 65535
+                    minimum: 1
+                    type: integer
+                  url:
+                    default: ""
+                    description: URL override the other settings
+                    type: string
+                  username:
+                    default: ""
+                    type: string
+                type: object
+              dropbox:
+                properties:
+                  token:
+                    default: ""
+                    type: string
+                type: object
+              druid:
+                description: ApacheDruid defines the connection to Apache Druid
+                properties:
+                  host:
+                    default: ""
+                    type: string
+                  keyspace:
+                    default: ""
+                    type: string
+                  password:
+                    default: ""
+                    type: string
+                  port:
+                    default: 9042
+                    format: int32
+                    maximum: 65535
+                    minimum: 1
+                    type: integer
+                  url:
+                    default: ""
+                    description: URL override the other settings
+                    type: string
+                  username:
+                    default: ""
+                    type: string
+                type: object
+              elasticsearch:
+                properties:
+                  host:
+                    default: ""
+                    type: string
+                  password:
+                    default: ""
+                    type: string
+                  port:
+                    default: 5432
+                    format: int32
+                    maximum: 65535
+                    minimum: 1
+                    type: integer
+                  prefix:
+                    default: ""
+                    type: string
+                  url:
+                    description: URL Override the other
+                    type: string
+                  username:
+                    default: ""
+                    type: string
+                type: object
+              exasol:
+                properties:
+                  host:
+                    default: ""
+                    type: string
+                  password:
+                    default: ""
+                    type: string
+                  port:
+                    format: int32
+                    maximum: 65535
+                    minimum: 1
+                    type: integer
+                  url:
+                    default: ""
+                    description: URL Override the other
+                    type: string
+                  username:
+                    default: ""
+                    type: string
+                type: object
+              facebook:
+                description: Social media
+                properties:
+                  token:
+                    default: ""
+                    type: string
+                type: object
+              ftp:
+                properties:
+                  host:
+                    default: ""
+                    type: string
+                  password:
+                    default: ""
+                    type: string
+                  port:
+                    default: 21
+                    format: int32
+                    maximum: 65535
+                    minimum: 1
+                    type: integer
+                  username:
+                    default: ""
+                    type: string
+                type: object
+              gcpstorage:
+                properties:
+                  keyFile:
+                    default: ""
+                    type: string
+                  project:
+                    default: ""
+                    type: string
+                type: object
+              github:
+                properties:
+                  ssh:
+                    default: ""
+                    type: string
+                  token:
+                    default: ""
+                    type: string
+                  username:
+                    default: ""
+                    type: string
+                type: object
+              gitlab:
+                properties:
+                  ssh:
+                    default: ""
+                    type: string
+                  token:
+                    default: ""
+                    type: string
+                type: object
+              greenplum:
+                properties:
+                  database:
+                    default: ""
+                    type: string
+                  host:
+                    default: ""
+                    type: string
+                  password:
+                    default: ""
+                    type: string
+                  port:
+                    default: 5432
+                    format: int32
+                    maximum: 65535
+                    minimum: 1
+                    type: integer
+                  url:
+                    default: ""
+                    description: URL Override the other
+                    type: string
+                  username:
+                    default: ""
+                    type: string
+                type: object
+              gsheets:
+                properties:
+                  dataToPull:
+                    default: ""
+                    type: string
+                  id:
+                    default: ""
+                    type: string
+                  scopes:
+                    default: ""
+                    type: string
+                type: object
+              hana:
+                properties:
+                  database:
+                    default: ""
+                    type: string
+                  host:
+                    default: ""
+                    type: string
+                  password:
+                    default: ""
+                    type: string
+                  port:
+                    default: 1526
+                    format: int32
+                    maximum: 65535
+                    minimum: 1
+                    type: integer
+                  url:
+                    description: URL Override the other
+                    type: string
+                  username:
+                    default: ""
+                    type: string
+                type: object
+              hetzner:
+                properties:
+                  ssh:
+                    default: ""
+                    type: string
+                  token:
+                    default: ""
+                    type: string
+                type: object
+              hipchat:
+                properties:
+                  room:
+                    default: ""
+                    type: string
+                  token:
+                    default: ""
+                    type: string
+                  url:
+                    default: ""
+                    type: string
+                type: object
+              hive:
+                properties:
+                  host:
+                    default: ""
+                    type: string
+                  password:
+                    default: ""
+                    type: string
+                  port:
+                    default: 10000
+                    format: int32
+                    maximum: 65535
+                    minimum: 1
+                    type: integer
+                  schema:
+                    default: ""
+                    type: string
+                  url:
+                    description: URL Override the other
+                    type: string
+                  username:
+                    default: ""
+                    type: string
+                type: object
+              imageRegistry:
+                properties:
+                  host:
+                    default: ""
+                    description: Hostname for the image registry
+                    type: string
+                  password:
+                    default: ""
+                    type: string
+                  username:
+                    default: ""
+                    description: Username for image registry
+                    type: string
+                type: object
+              informix:
+                properties:
+                  database:
+                    default: ""
+                    type: string
+                  host:
+                    default: ""
+                    type: string
+                  password:
+                    default: ""
+                    type: string
+                  port:
+                    default: 1526
+                    format: int32
+                    maximum: 65535
+                    minimum: 1
+                    type: integer
+                  url:
+                    description: URL Override the other
+                    type: string
+                  username:
+                    default: ""
+                    type: string
+                type: object
+              kafka:
+                properties:
+                  channel:
+                    default: ""
+                    type: string
+                  host:
+                    default: ""
+                    type: string
+                  password:
+                    default: ""
+                    type: string
+                  port:
+                    format: int32
+                    maximum: 65535
+                    minimum: 1
+                    type: integer
+                  url:
+                    default: ""
+                    description: URL Override the other
+                    type: string
+                  username:
+                    default: ""
+                    type: string
+                type: object
+              linode:
+                properties:
+                  token:
+                    default: ""
+                    type: string
+                type: object
+              matterMost:
+                properties:
+                  channel:
+                    default: ""
+                    type: string
+                  url:
+                    default: ""
+                    type: string
+                  username:
+                    default: ""
+                    type: string
+                type: object
+              minio:
+                properties:
+                  accessKey:
+                    default: ""
+                    description: Access key for minio
+                    type: string
+                  host:
+                    default: ""
+                    description: Minio url connection.
+                    type: string
+                  secretKey:
+                    default: ""
+                    description: StorageSecret key for minio
+                    type: string
+                type: object
+              mongodb:
+                properties:
+                  database:
+                    default: ""
+                    type: string
+                  host:
+                    default: ""
+                    type: string
+                  password:
+                    default: ""
+                    type: string
+                  port:
+                    default: 27017
+                    format: int32
+                    maximum: 65535
+                    minimum: 1
+                    type: integer
+                  url:
+                    default: ""
+                    type: string
+                  username:
+                    default: ""
+                    type: string
+                type: object
+              mssqlserver:
+                properties:
+                  database:
+                    default: ""
+                    type: string
+                  host:
+                    default: ""
+                    type: string
+                  instance:
+                    default: ""
+                    type: string
+                  password:
+                    default: ""
+                    type: string
+                  port:
+                    default: 1433
+                    format: int32
+                    maximum: 65535
+                    minimum: 1
+                    type: integer
+                  url:
+                    description: URL Override the other
+                    type: string
+                  username:
+                    default: ""
+                    type: string
+                type: object
+              msteam:
+                properties:
+                  webhook:
+                    default: ""
+                    type: string
+                type: object
+              mysql:
+                properties:
+                  database:
+                    default: ""
+                    type: string
+                  host:
+                    default: ""
+                    type: string
+                  password:
+                    default: ""
+                    type: string
+                  port:
+                    default: 3306
+                    format: int32
+                    minimum: 0
+                    type: integer
+                  url:
+                    default: ""
+                    type: string
+                  username:
+                    default: ""
+                    type: string
+                type: object
+              neo4j:
+                properties:
+                  host:
+                    default: ""
+                    type: string
+                  password:
+                    default: ""
+                    type: string
+                  port:
+                    format: int32
+                    maximum: 65535
+                    minimum: 1
+                    type: integer
+                  url:
+                    default: ""
+                    description: URL Override the other
+                    type: string
+                  username:
+                    default: ""
+                    type: string
+                type: object
+              odbc:
+                properties:
+                  connectionString:
+                    default: ""
+                    type: string
+                type: object
+              openstack:
+                properties:
+                  authUrl:
+                    default: ""
+                    type: string
+                  password:
+                    default: ""
+                    type: string
+                  region:
+                    default: ""
+                    type: string
+                  tenantName:
+                    default: ""
+                    type: string
+                  username:
+                    default: ""
+                    type: string
+                type: object
+              opsgenie:
+                properties:
+                  apiID:
+                    default: ""
+                    type: string
+                  apiKey:
+                    default: ""
+                    type: string
+                  url:
+                    default: ""
+                    type: string
+                type: object
+              oracle:
+                properties:
+                  driver:
+                    default: thin
+                    type: string
+                  host:
+                    default: ""
+                    type: string
+                  password:
+                    default: ""
+                    type: string
+                  port:
+                    default: 1521
+                    format: int32
+                    maximum: 65535
+                    minimum: 1
+                    type: integer
+                  sid:
+                    default: XE
+                    type: string
+                  url:
+                    default: ""
+                    description: URL override the other settings
+                    type: string
+                  username:
+                    default: ""
+                    type: string
+                type: object
+              ovh:
+                properties:
+                  application:
+                    default: ""
+                    type: string
+                  consumerkey:
+                    default: ""
+                    type: string
+                  endpoint:
+                    default: ""
+                    type: string
+                  secret:
+                    default: ""
+                    type: string
+                type: object
+              owner:
+                default: no-one
+                type: string
+              pagerduty:
+                properties:
+                  apiID:
+                    default: ""
+                    type: string
+                  apiKey:
+                    default: ""
+                    type: string
+                  url:
+                    default: ""
+                    type: string
+                type: object
+              postgres:
+                properties:
+                  database:
+                    default: ""
+                    type: string
+                  host:
+                    default: ""
+                    type: string
+                  password:
+                    default: ""
+                    type: string
+                  port:
+                    default: 5432
+                    format: int32
+                    maximum: 65535
+                    minimum: 1
+                    type: integer
+                  url:
+                    default: ""
+                    description: URL override the other settings
+                    type: string
+                  username:
+                    default: ""
+                    type: string
+                type: object
+              presto:
+                properties:
+                  catalog:
+                    default: ""
+                    type: string
+                  host:
+                    default: ""
+                    type: string
+                  password:
+                    default: ""
+                    type: string
+                  port:
+                    default: 8080
+                    format: int32
+                    maximum: 65535
+                    minimum: 1
+                    type: integer
+                  schema:
+                    default: ""
+                    type: string
+                  url:
+                    default: ""
+                    description: URL override the other settings
+                    type: string
+                  username:
+                    default: ""
+                    type: string
+                type: object
+              provider:
+                description: Provider specifies the name api provider (E.g. aws)
+                type: string
+              pushover:
+                properties:
+                  apiID:
+                    default: ""
+                    type: string
+                  apiKey:
+                    default: ""
+                    type: string
+                  url:
+                    default: ""
+                    type: string
+                type: object
+              rabbitmq:
+                properties:
+                  host:
+                    default: ""
+                    type: string
+                  password:
+                    default: ""
+                    type: string
+                  port:
+                    default: 21
+                    format: int32
+                    maximum: 65535
+                    minimum: 1
+                    type: integer
+                  username:
+                    default: ""
+                    type: string
+                type: object
+              redshift:
+                properties:
+                  database:
+                    default: ""
+                    type: string
+                  host:
+                    default: ""
+                    type: string
+                  password:
+                    default: ""
+                    type: string
+                  port:
+                    default: 5439
+                    format: int32
+                    maximum: 65535
+                    minimum: 1
+                    type: integer
+                  url:
+                    default: ""
+                    description: URL Override the other
+                    type: string
+                  username:
+                    default: ""
+                    type: string
+                type: object
+              secretRef:
+                description: The reference to the secret which stores the sensitive
+                  credentials required to connect to the external system
+                properties:
+                  name:
+                    description: name is unique within a namespace to reference a
+                      secret resource.
+                    type: string
+                  namespace:
+                    description: namespace defines the space within which the secret
+                      name must be unique.
+                    type: string
+                type: object
+              sftp:
+                properties:
+                  host:
+                    default: ""
+                    type: string
+                  password:
+                    default: ""
+                    type: string
+                  port:
+                    default: 21
+                    format: int32
+                    maximum: 65535
+                    minimum: 1
+                    type: integer
+                  username:
+                    default: ""
+                    type: string
+                type: object
+              singlestore:
+                properties:
+                  host:
+                    default: ""
+                    type: string
+                  password:
+                    default: ""
+                    type: string
+                  port:
+                    format: int32
+                    maximum: 65535
+                    minimum: 1
+                    type: integer
+                  url:
+                    default: ""
+                    description: URL Override the other
+                    type: string
+                  username:
+                    default: ""
+                    type: string
+                type: object
+              slack:
+                properties:
+                  token:
+                    default: ""
+                    type: string
+                type: object
+              smtp:
+                properties:
+                  email:
+                    description: The smtp email
+                    type: string
+                  helo:
+                    default: ""
+                    description: The SMTP domain name
+                    type: string
+                  host:
+                    default: ""
+                    description: SMTP server Host
+                    type: string
+                  password:
+                    default: ""
+                    description: Password when using user name and password
+                    type: string
+                  passwordAuth:
+                    default: true
+                    description: Use user name password auth
+                    type: boolean
+                  port:
+                    default: 25
+                    description: SMTP Server Port
+                    format: int32
+                    maximum: 65535
+                    minimum: 1
+                    type: integer
+                  ssl:
+                    default: false
+                    description: Use SSL when connecting to SMTP server
+                    type: boolean
+                  username:
+                    description: User name when using user name and password
+                    type: string
+                  verifyHost:
+                    default: false
+                    type: boolean
+                  verifyPeer:
+                    default: false
+                    type: boolean
+                type: object
+              snowflake:
+                properties:
+                  database:
+                    default: ""
+                    type: string
+                  host:
+                    default: ""
+                    type: string
+                  password:
+                    default: ""
+                    type: string
+                  port:
+                    default: 443
+                    format: int32
+                    maximum: 65535
+                    minimum: 1
+                    type: integer
+                  schema:
+                    default: ""
+                    type: string
+                  url:
+                    description: URL Override the other
+                    type: string
+                  username:
+                    default: ""
+                    type: string
+                  warehouse:
+                    default: ""
+                    type: string
+                type: object
+              spanner:
+                properties:
+                  database:
+                    default: ""
+                    type: string
+                  instance:
+                    default: ""
+                    type: string
+                  password:
+                    default: ""
+                    type: string
+                  project:
+                    default: ""
+                    type: string
+                  url:
+                    description: URL Override the other
+                    type: string
+                  username:
+                    default: ""
+                    type: string
+                type: object
+              spark:
+                properties:
+                  host:
+                    default: ""
+                    type: string
+                  password:
+                    default: ""
+                    type: string
+                  port:
+                    default: 5433
+                    format: int32
+                    maximum: 65535
+                    minimum: 1
+                    type: integer
+                  schema:
+                    default: ""
+                    type: string
+                  url:
+                    description: URL Override the other
+                    type: string
+                  username:
+                    default: ""
+                    type: string
+                type: object
+              sqlite:
+                properties:
+                  fileName:
+                    default: general
+                    type: string
+                type: object
+              sybase:
+                properties:
+                  database:
+                    default: ""
+                    type: string
+                  host:
+                    default: ""
+                    type: string
+                  password:
+                    default: ""
+                    type: string
+                  port:
+                    default: 5000
+                    format: int32
+                    maximum: 65535
+                    minimum: 1
+                    type: integer
+                  url:
+                    description: URL Override the other
+                    type: string
+                  username:
+                    default: ""
+                    type: string
+                type: object
+              tenantRef:
+                description: The reference to the Tenant which owns the DataProduct.
+                  Defaults to `default-tenant`
+                properties:
+                  apiVersion:
+                    description: API version of the referent.
+                    type: string
+                  fieldPath:
+                    description: 'If referring to a piece of an object instead of
+                      an entire object, this string should contain a valid JSON/Go
+                      field access statement, such as desiredState.manifest.containers[2].
+                      For example, if the object reference is to a container within
+                      a pod, this would take on a value like: "spec.containers{name}"
+                      (where "name" refers to the name of the container that triggered
+                      the event) or if no container name is specified "spec.containers[2]"
+                      (container with index 2 in this pod). This syntax is chosen
+                      only to have some well-defined way of referencing a part of
+                      an object. TODO: this design is not final and this field is
+                      subject to change in the future.'
+                    type: string
+                  kind:
+                    description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                    type: string
+                  name:
+                    description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                    type: string
+                  namespace:
+                    description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                    type: string
+                  resourceVersion:
+                    description: 'Specific resourceVersion to which this reference
+                      is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                    type: string
+                  uid:
+                    description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                    type: string
+                type: object
+              teradata:
+                properties:
+                  database:
+                    default: ""
+                    type: string
+                  host:
+                    default: ""
+                    type: string
+                  password:
+                    default: ""
+                    type: string
+                  port:
+                    default: 6666
+                    format: int32
+                    maximum: 65535
+                    minimum: 1
+                    type: integer
+                  url:
+                    description: URL Override the other
+                    type: string
+                  username:
+                    default: ""
+                    type: string
+                type: object
+              twitter:
+                properties:
+                  token:
+                    default: ""
+                    type: string
+                type: object
+              vertica:
+                properties:
+                  database:
+                    default: ""
+                    type: string
+                  host:
+                    default: ""
+                    type: string
+                  password:
+                    default: ""
+                    type: string
+                  port:
+                    default: 5433
+                    format: int32
+                    maximum: 65535
+                    minimum: 1
+                    type: integer
+                  url:
+                    description: URL Override the other
+                    type: string
+                  username:
+                    default: ""
+                    type: string
+                type: object
+              victorop:
+                properties:
+                  apiID:
+                    default: ""
+                    type: string
+                  apiKey:
+                    default: ""
+                    type: string
+                  url:
+                    default: ""
+                    type: string
+                type: object
+              webhook:
+                properties:
+                  contentType:
+                    default: application/json
+                    description: Content type
+                    type: string
+                  headers:
+                    additionalProperties:
+                      type: string
+                    description: custom headers to send
+                    type: object
+                  ssl:
+                    default: false
+                    type: boolean
+                  token:
+                    description: The webhook secret token
+                    type: string
+                  url:
+                    default: ""
+                    type: string
+                type: object
+            type: object
+          status:
+            description: ConnectionStatus is the observed state of a Connection
+            properties:
+              conditions:
+                items:
+                  description: ConnectionCondition describes the state of a connection
+                    at a certain point.
+                  properties:
+                    lastTransitionTime:
+                      description: Last time the condition transitioned from one status
+                        to another.
+                      format: date-time
+                      type: string
+                    message:
+                      description: A human readable message indicating details about
+                        the transition.
+                      type: string
+                    reason:
+                      description: The reason for the condition's last transition.
+                      type: string
+                    status:
+                      description: Status of the condition, one of True, False, Unknown.
+                      type: string
+                    type:
+                      description: Type of account condition.
+                      type: string
+                  required:
+                  - status
+                  - type
+                  type: object
+                type: array
+              failureMessage:
+                description: Update in case of terminal failure message
+                type: string
+              failureReason:
+                description: Update in case of terminal failure Borrowed from cluster
+                  api controller
+                type: string
+              lastUpdated:
+                description: Last time the object was updated
+                format: date-time
+                type: string
+              observedGeneration:
+                description: ObservedGeneration is the Last generation that was acted
+                  on
+                format: int64
+                type: integer
+            type: object
+        required:
+        - spec
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}
+status:
+  acceptedNames:
+    kind: ""
+    plural: ""
+  conditions: []
+  storedVersions: []

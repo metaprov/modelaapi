@@ -66,12 +66,13 @@ generate-deepcopy:
 
 .PHONY: generate-crd
 generate-crd:
-	$(CONTROLLER_GEN) crd:allowDangerousTypes=true,crdVersions=v1 paths=./pkg/apis/catalog/v1alpha1 output:crd:artifacts:config=manifests/base/crd
-	$(CONTROLLER_GEN) crd:allowDangerousTypes=true,crdVersions=v1 paths=./pkg/apis/infra/v1alpha1 output:crd:artifacts:config=manifests/base/crd
-	$(CONTROLLER_GEN) crd:allowDangerousTypes=true,crdVersions=v1 paths=./pkg/apis/data/v1alpha1 output:crd:artifacts:config=manifests/base/crd
-	$(CONTROLLER_GEN) crd:allowDangerousTypes=true,crdVersions=v1 paths=./pkg/apis/training/v1alpha1 output:crd:artifacts:config=manifests/base/crd
-	$(CONTROLLER_GEN) crd:allowDangerousTypes=true,crdVersions=v1 paths=./pkg/apis/inference/v1alpha1 output:crd:artifacts:config=manifests/base/crd
-	$(CONTROLLER_GEN) crd:allowDangerousTypes=true,crdVersions=v1 paths=./pkg/apis/team/v1alpha1 output:crd:artifacts:config=manifests/base/crd
+	$(CONTROLLER_GEN) crd:allowDangerousTypes=true,crdVersions=v1 paths=./pkg/apis/catalog/v1alpha1 output:crd:artifacts:config=manifests/v1alpha1/base/crd
+	$(CONTROLLER_GEN) crd:allowDangerousTypes=true,crdVersions=v1 paths=./pkg/apis/infra/v1alpha1 output:crd:artifacts:config=manifests/v1alpha1/base/crd
+	$(CONTROLLER_GEN) crd:allowDangerousTypes=true,crdVersions=v1 paths=./pkg/apis/data/v1alpha1 output:crd:artifacts:config=manifests/v1alpha1/base/crd
+	$(CONTROLLER_GEN) crd:allowDangerousTypes=true,crdVersions=v1 paths=./pkg/apis/training/v1alpha1 output:crd:artifacts:config=manifests/v1alpha1/base/crd
+	$(CONTROLLER_GEN) crd:allowDangerousTypes=true,crdVersions=v1 paths=./pkg/apis/inference/v1alpha1 output:crd:artifacts:config=manifests/v1alpha1/base/crd
+	$(CONTROLLER_GEN) crd:allowDangerousTypes=true,crdVersions=v1 paths=./pkg/apis/team/v1alpha1 output:crd:artifacts:config=manifests/v1alpha1/base/crd
+	rm manifests/v1alpha1/base/crd/kustomization.yaml && cd manifests/v1alpha1/base/crd && kustomize create --autodetect && cd ../../../...
 
 
 .PHONY: controller-gen
@@ -93,19 +94,19 @@ endif
 
 .PHONY: install-gen
 install-gen: 
-	go install k8s.io/code-generator/cmd/deepcopy-gen@v0.24.2
-	go install k8s.io/code-generator/cmd/client-gen@v0.24.2
-	go install k8s.io/code-generator/cmd/deepcopy-gen@v0.24.2
-	go install k8s.io/code-generator/cmd/go-to-protobuf@v0.24.2
-	go install k8s.io/code-generator/cmd/informer-gen@v0.24.2
-	go install k8s.io/code-generator/cmd/openapi-gen@v0.24.2
-	go install k8s.io/code-generator/cmd/set-gen@v0.24.2
-	go install k8s.io/code-generator/cmd/conversion-gen@v0.24.2
-	go install k8s.io/code-generator/cmd/defaulter-gen@v0.24.2
-	go install k8s.io/code-generator/cmd/import-boss@v0.24.2
-	go install k8s.io/code-generator/cmd/lister-gen@v0.24.2
-	go install k8s.io/code-generator/cmd/register-gen@v0.24.2
-	GO111MODULE=on go install sigs.k8s.io/controller-tools/cmd/controller-gen@v0.9.0
+	go install k8s.io/code-generator/cmd/deepcopy-gen	
+	go install k8s.io/code-generator/cmd/client-gen      
+	go install k8s.io/code-generator/cmd/deepcopy-gen   
+	go install k8s.io/code-generator/cmd/go-to-protobuf  
+	go install k8s.io/code-generator/cmd/informer-gen  
+	go install k8s.io/code-generator/cmd/openapi-gen   
+	go install k8s.io/code-generator/cmd/set-gen
+	go install k8s.io/code-generator/cmd/conversion-gen  
+	go install k8s.io/code-generator/cmd/defaulter-gen  
+	go install k8s.io/code-generator/cmd/import-boss     
+	go install k8s.io/code-generator/cmd/lister-gen    
+	go install k8s.io/code-generator/cmd/register-gen
+	GO111MODULE=on go install sigs.k8s.io/controller-tools/cmd/controller-gen@v0.8.0 
 	
 
 .PHONY: generate
@@ -114,7 +115,7 @@ generate: install-gen generate-proto fix-packages generate-go generate-js genera
 
 .PHONY: install-crd
 install-crd:
-	kustomize build ./manifests/base/crd | kubectl replace --force --save-config=false -f -	
+	kustomize build ./manifests/v1alpha1/base/crd | kubectl replace --force --save-config=false -f -	
 
 
 generated-reference-docs: update-licenses
@@ -133,7 +134,7 @@ update-licenses:
 install-protoc:	 
 	 wget https://github.com/protocolbuffers/protobuf/releases/download/v3.19.1/protoc-3.19.1-linux-x86_64.zip 
 	 mv protoc-3.19.1-linux-x86_64.zip /tmp/protoc-3.19.1-linux-x86_64.zip
-	 unzip /tmp/protoc-3.19.1-linux-x86_64.zip -d $(HOME)/.local
+	 unzip /tmp/protoc-3.19.1-linux-x86_64.zip -d $HOME/.local
 	 export PATH=$PATH:$HOME/.local/bin
 
 
