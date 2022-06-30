@@ -1421,9 +1421,9 @@ type Measurement struct {
 type ModelRole string
 
 const (
-	Champion   ModelRole = "champion"
-	Challanger ModelRole = "challenger"
-	Shadow     ModelRole = "shadow"
+	Champion ModelRole = "champion"
+	Canary   ModelRole = "canary"
+	Shadow   ModelRole = "shadow"
 )
 
 // ModelDeploymentSpec describes how a single model should be deployed with a Predictor, and
@@ -1449,26 +1449,15 @@ type ModelDeploymentSpec struct {
 	// +kubebuilder:default:=champion
 	// +kubebuilder:validation:Optional
 	Role *ModelRole `json:"role,omitempty" protobuf:"bytes,5,opt,name=role"`
-	// A released model is a model that should serve production traffic
-	// +kubebuilder:default:=false
-	// +kubebuilder:validation:Optional
-	Released *bool `json:"released,omitempty" protobuf:"varint,7,opt,name=released"`
-	// A deployed model is a model whose containers are up, but does not serve production traffic
-	// +kubebuilder:default:=false
-	// +kubebuilder:validation:Optional
-	Deployed *bool `json:"deployed,omitempty" protobuf:"varint,8,opt,name=deployed"`
 	// MountTar means that we would mount the model tar file. Else we would use baked image.
 	// +kubebuilder:default:=true
 	MountTar *bool `json:"mountTar,omitempty" protobuf:"varint,9,opt,name=mountTar"`
 	// TrafficSelector is a filter on the traffic to this model
 	// +kubebuilder:validation:Optional
 	TrafficSelector *string `json:"trafficSelector,omitempty" protobuf:"bytes,10,opt,name=trafficSelector"`
-	// If the deployment is canary, the metric define how to evaluate the canary
+	// The approver account name
 	// +kubebuilder:validation:Optional
-	CanaryMetrics []CanaryMetric `json:"canaryMetrics,omitempty" protobuf:"bytes,11,rep,name=canaryMetrics"`
-	// The account name of the approver
-	// +kubebuilder:validation:Optional
-	ApprovedBy string `json:"approvedBy,omitempty" protobuf:"bytes,12,opt,name=approvedBy"`
+	ApprovedBy v1.ObjectReference `json:"approvedBy,omitempty" protobuf:"bytes,12,opt,name=approvedBy"`
 	// The time of approval
 	// +kubebuilder:validation:Optional
 	ApprovedAt *metav1.Time `json:"approvedAt,omitempty" protobuf:"bytes,13,opt,name=approvedAt"`
@@ -2068,3 +2057,41 @@ const (
 	RoleLabelKey    = "labels"
 	ChangedLabelKey = "changed"
 )
+
+////////////////////////////////////////////////////////////////////////////////
+// Monitoring Rules
+///////////////////////////////////////////////////////////////////////////////
+
+// ModelValidationName defines a model monitoring validation rule
+type ModelValidationName string
+
+const (
+	ColumnGE            ModelValidationName = "column_metric_should_be_greater_equal_than"
+	ColumnMetricInRange ModelValidationName = "column_metric_should_be_in_range"
+	ColumnLE            ModelValidationName = "column_metric_should_be_less_equal_than"
+	ModelMetricGE       ModelValidationName = "model_metric_should_be_less_equal_than"
+	ModelMetricInRange  ModelValidationName = "column_metric_should_be_in_range"
+	ModelMetricLE       ModelValidationName = "model_metric_should_be_in_range"
+)
+
+// ModelValidation defines a single validation to be run against a model
+type ModelValidationRule struct {
+	// The type of model validation
+	// +kubebuilder:validation:Optional
+	Assertion ModelValidationName `json:"assertion" protobuf:"bytes,2,opt,name=assertion,casttype=ModelValidationName"`
+	// Define the column name for the validation role
+	// +kubebuilder:validation:Optional
+	Column *string `json:"column,omitempty" protobuf:"bytes,5,opt,name=column"`
+	// Define the measurement metric.
+	// +kubebuilder:validation:Optional
+	Metric *Metric `json:"metric,omitempty" protobuf:"bytes,6,opt,name=metric"`
+	// The lower range of the metric
+	// +kubebuilder:validation:Optional
+	Min *float64 `json:"min,omitempty" protobuf:"bytes,7,opt,name=min"`
+	// The lower upper range of the metric
+	// +kubebuilder:validation:Optional
+	Max *float64 `json:"max,omitempty" protobuf:"bytes,8,opt,name=max"`
+	// Agg specifies the type of aggregate when measuring aggregate performance (e.g. median, average)
+	// +kubebuilder:validation:Optional
+	Agg *Aggregate `json:"agg,omitempty" protobuf:"bytes,12,opt,name=agg"`
+}

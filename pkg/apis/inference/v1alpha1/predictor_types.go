@@ -3,7 +3,6 @@ package v1alpha1
 import (
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	data "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1"
-	training "github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
@@ -32,27 +31,47 @@ const (
 
 // MonitorSpec defines the specification to monitor a model in production
 type MonitorSpec struct {
+	// Service spec define general service health monitor.
+	// +kubebuilder:validation:Optional
+	ServiceHealth MonitorPart `json:"serviceHealth,omitempty" protobuf:"bytes,1,opt,name=serviceHealth"`
+	// Data drift define data drift monitoring
+	// +kubebuilder:validation:Optional
+	DataDrift MonitorPart `json:"dataDrift,omitempty" protobuf:"bytes,2,opt,name=dataDrift"`
+	// Prediction drift define prediction (target) drift between two schedules.
+	// +kubebuilder:validation:Optional
+	PredictionDrift MonitorPart `json:"predictionDrift,omitempty" protobuf:"bytes,3,opt,name=predictionDrift"`
+	// Model Performance monitor, monitor the production model performance against
+	// +kubebuilder:validation:Optional
+	ModelPerformance MonitorPart `json:"modelPerformance,omitempty" protobuf:"bytes,4,opt,name=modelPerformance"`
+	// For any extera rules
+	// +kubebuilder:validation:Optional
+	Other MonitorPart `json:"other,omitempty" protobuf:"bytes,5,opt,name=other"`
+}
+
+type MonitorPart struct {
 	// Indicates if model monitoring is enabled for the model
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
-	// The percentage of rows (0 through 100) of incoming data to sample for model monitoring
-	// +kubebuilder:default:=100
+	// Define the reference period freq - e.g. hourly, daily
 	// +kubebuilder:validation:Optional
-	SamplePercent *int32 `json:"samplePercent,omitempty" protobuf:"varint,2,opt,name=samplePercent"`
+	RefFreq catalog.Freq `json:"refFreq,omitempty" protobuf:"bytes,2,opt,name=refFreq"`
+	// Define the reference period interval (e.g. 7 days)
+	// +kubebuilder:validation:Optional
+	RefInterval *int32 `json:"refInterval,omitempty" protobuf:"varint,3,opt,name=refInterval"`
+	// Refer to the training dataset as your baseline
+	RefTraining *bool `json:"refTraining,omitempty" protobuf:"varint,4,opt,name=refTraining"`
+	// Define the validation rule for this monitor
+	Rules []catalog.ModelValidationRule `json:"rules,omitempty" protobuf:"bytes,5,opt,name=rules"`
 	// The schedule on which model monitoring computations will be performed
 	// +kubebuilder:validation:Optional
-	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,3,opt,name=schedule"`
+	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,6,opt,name=schedule"`
 	// NotifierRef references a Notifier resource that will be triggered in the case that a concept or data drift is detected
 	// +kubebuilder:validation:Optional
-	NotifierRef *v1.ObjectReference `json:"notifierRef,omitempty" protobuf:"bytes,4,opt,name=notifierRef"`
-	// Validations contains the collection of model validations that will be
-	// performed based on incoming prediction traffic
-	// +kubebuilder:validation:Optionalthis
-	Validations []training.ModelValidation `json:"validations,omitempty" protobuf:"bytes,5,opt,name=validations"`
+	NotifierRef *v1.ObjectReference `json:"notifierRef,omitempty" protobuf:"bytes,7,opt,name=notifierRef"`
 	// Reference to a model that will be used for outlier detection. If empty, an outlier detection model.
 	// +kubebuilder:validation:Optional
-	OutlierDetectionModelRef v1.ObjectReference `json:"outlierDetectionModelRef,omitempty" protobuf:"bytes,6,opt,name=outlierDetectionModelRef"`
+	OutlierDetectionModelRef v1.ObjectReference `json:"outlierDetectionModelRef,omitempty" protobuf:"bytes,8,opt,name=outlierDetectionModelRef"`
 }
 
 // ModelServingSpec specifies the configuration for models to be served by a Predictor
@@ -480,6 +499,8 @@ type ModelDeploymentStatus struct {
 	LastDailyPredictions []int32 `json:"lastDailyPredictions,omitempty" protobuf:"bytes,18,rep,name=lastDailyPredictions"`
 	// +kubebuilder:validation:Optional
 	ObjectStatuses []KubernetesObjectStatus `json:"objectStatuses,omitempty" protobuf:"bytes,19,rep,name=objectStatuses"`
+	// the set of validation errors
+	Errors []ValidationError `json:"errors,omitempty" protobuf:"bytes,20,opt,name=errors"`
 }
 
 type ModelDeploymentPhase string
@@ -528,10 +549,10 @@ type PredictorletStatus struct {
 	P50 float64 `json:"p50,omitempty" protobuf:"bytes,4,opt,name=p50"`
 	// 95% latency for predictions served by the Predictorlet
 	// +kubebuilder:validation:Optional
-	P95 float64 `json:"p95,omitempty" protobuf:"bytes,5,opt,name=current95"`
+	P95 float64 `json:"p95,omitempty" protobuf:"bytes,5,opt,name=p95"`
 	// 99% latency for predictions served by the Predictorlet
 	// +kubebuilder:validation:Optional
-	P99 float64 `json:"p99,omitempty" protobuf:"bytes,6,opt,name=current99"`
+	P99 float64 `json:"p99,omitempty" protobuf:"bytes,6,opt,name=p99"`
 	// +kubebuilder:validation:Optional
 	DailyPredictionAvg int32 `json:"dailyPredictionAvg,omitempty" protobuf:"varint,7,opt,name=dailyPredictionAvg"`
 	// The total number of predictions served by the Predictorlet
@@ -548,15 +569,6 @@ type PredictorletStatus struct {
 	ObjectStatuses []KubernetesObjectStatus `json:"objectStatuses,omitempty" protobuf:"bytes,12,rep,name=objectStatuses"`
 }
 
-type MonitorStatus struct {
-	// The last time when model monitoring was computed
-	MonitorLastAttemptAt *metav1.Time `json:"monitorLastAttemptAt,omitempty" protobuf:"bytes,1,opt,name=monitorLastAttemptAt"`
-	// The score from the last time model monitoring was computed
-	MonitorLastScore float64 `json:"monitorLastScore,omitempty" protobuf:"bytes,2,opt,name=monitorLastScore"`
-	// The model latency from the last time model monitoring was computed
-	MonitorLastLatency float64 `json:"monitorLastLatency,omitempty" protobuf:"bytes,3,opt,name=monitorLastLatency"`
-}
-
 type PredictionCacheStatus struct {
 	// LastAccessed specifies the last time the prediction cache was accessed
 	LastAccessed *metav1.Time `json:"lastAccessed,omitempty" protobuf:"bytes,1,opt,name=lastAccessed"`
@@ -565,4 +577,17 @@ type PredictionCacheStatus struct {
 type OnlineStoreStatus struct {
 	// LastAccessed specifies the last time the online store was accessed
 	LastAccessed *metav1.Time `json:"lastAccessed,omitempty" protobuf:"bytes,1,opt,name=lastAccessed"`
+}
+
+type ValidationError struct {
+	// The name of the column
+	Column string `json:"column,omitempty" protobuf:"bytes,1,opt,name=column"`
+	// The metric from the rule
+	Metric catalog.Metric `json:"metric,omitempty" protobuf:"bytes,2,opt,name=metric"`
+	// Expected min
+	Min float64 `json:"min,omitempty" protobuf:"bytes,3,opt,name=min"`
+	// Expected max
+	Max float64 `json:"max,omitempty" protobuf:"bytes,4,opt,name=max"`
+	// Actual value
+	Actual float64 `json:"actual,omitempty" protobuf:"bytes,5,opt,name=actual"`
 }

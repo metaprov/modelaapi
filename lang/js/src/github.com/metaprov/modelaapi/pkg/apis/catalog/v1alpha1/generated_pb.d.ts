@@ -1071,25 +1071,16 @@ export class ModelDeploymentSpec extends jspb.Message {
   getRole(): string;
   setRole(value: string): ModelDeploymentSpec;
 
-  getReleased(): boolean;
-  setReleased(value: boolean): ModelDeploymentSpec;
-
-  getDeployed(): boolean;
-  setDeployed(value: boolean): ModelDeploymentSpec;
-
   getMounttar(): boolean;
   setMounttar(value: boolean): ModelDeploymentSpec;
 
   getTrafficselector(): string;
   setTrafficselector(value: string): ModelDeploymentSpec;
 
-  getCanarymetricsList(): Array<string>;
-  setCanarymetricsList(value: Array<string>): ModelDeploymentSpec;
-  clearCanarymetricsList(): ModelDeploymentSpec;
-  addCanarymetrics(value: string, index?: number): ModelDeploymentSpec;
-
-  getApprovedby(): string;
-  setApprovedby(value: string): ModelDeploymentSpec;
+  getApprovedby(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setApprovedby(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ModelDeploymentSpec;
+  hasApprovedby(): boolean;
+  clearApprovedby(): ModelDeploymentSpec;
 
   getApprovedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setApprovedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelDeploymentSpec;
@@ -1111,13 +1102,48 @@ export namespace ModelDeploymentSpec {
     modelversion: string,
     traffic: number,
     role: string,
-    released: boolean,
-    deployed: boolean,
     mounttar: boolean,
     trafficselector: string,
-    canarymetricsList: Array<string>,
-    approvedby: string,
+    approvedby?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     approvedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+  }
+}
+
+export class ModelValidationRule extends jspb.Message {
+  getAssertion(): string;
+  setAssertion(value: string): ModelValidationRule;
+
+  getColumn(): string;
+  setColumn(value: string): ModelValidationRule;
+
+  getMetric(): string;
+  setMetric(value: string): ModelValidationRule;
+
+  getMin(): number;
+  setMin(value: number): ModelValidationRule;
+
+  getMax(): number;
+  setMax(value: number): ModelValidationRule;
+
+  getAgg(): string;
+  setAgg(value: string): ModelValidationRule;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ModelValidationRule.AsObject;
+  static toObject(includeInstance: boolean, msg: ModelValidationRule): ModelValidationRule.AsObject;
+  static serializeBinaryToWriter(message: ModelValidationRule, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ModelValidationRule;
+  static deserializeBinaryFromReader(message: ModelValidationRule, reader: jspb.BinaryReader): ModelValidationRule;
+}
+
+export namespace ModelValidationRule {
+  export type AsObject = {
+    assertion: string,
+    column: string,
+    metric: string,
+    min: number,
+    max: number,
+    agg: string,
   }
 }
 

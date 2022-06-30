@@ -447,25 +447,42 @@ spec:
                       format: date-time
                       type: string
                     approvedBy:
-                      description: The account name of the approver
-                      type: string
-                    canaryMetrics:
-                      description: If the deployment is canary, the metric define
-                        how to evaluate the canary
-                      items:
-                        description: CanaryMetric is used when testing the canary
-                        enum:
-                        - cpu
-                        - mem
-                        - latency
-                        - crash
-                        type: string
-                      type: array
-                    deployed:
-                      default: false
-                      description: A deployed model is a model whose containers are
-                        up, but does not serve production traffic
-                      type: boolean
+                      description: The approver account name
+                      properties:
+                        apiVersion:
+                          description: API version of the referent.
+                          type: string
+                        fieldPath:
+                          description: 'If referring to a piece of an object instead
+                            of an entire object, this string should contain a valid
+                            JSON/Go field access statement, such as desiredState.manifest.containers[2].
+                            For example, if the object reference is to a container
+                            within a pod, this would take on a value like: "spec.containers{name}"
+                            (where "name" refers to the name of the container that
+                            triggered the event) or if no container name is specified
+                            "spec.containers[2]" (container with index 2 in this pod).
+                            This syntax is chosen only to have some well-defined way
+                            of referencing a part of an object. TODO: this design
+                            is not final and this field is subject to change in the
+                            future.'
+                          type: string
+                        kind:
+                          description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                          type: string
+                        name:
+                          description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                          type: string
+                        namespace:
+                          description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                          type: string
+                        resourceVersion:
+                          description: 'Specific resourceVersion to which this reference
+                            is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                          type: string
+                        uid:
+                          description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                          type: string
+                      type: object
                     modelRef:
                       description: The reference to a Model resource which has been
                         packaged and exists in the same Data Product as the Predictor
@@ -519,11 +536,6 @@ spec:
                       description: the port of the model service.
                       format: int32
                       type: integer
-                    released:
-                      default: false
-                      description: A released model is a model that should serve production
-                        traffic
-                      type: boolean
                     role:
                       default: champion
                       description: Role denotes the role of this model
@@ -548,265 +560,1303 @@ spec:
               monitor:
                 description: Monitor spec specify the monitor for this predictor.
                 properties:
-                  enabled:
-                    default: false
-                    description: Indicates if model monitoring is enabled for the
-                      model
-                    type: boolean
-                  notifierRef:
-                    description: NotifierRef references a Notifier resource that will
-                      be triggered in the case that a concept or data drift is detected
+                  dataDrift:
+                    description: Data drift define data drift monitoring
                     properties:
-                      apiVersion:
-                        description: API version of the referent.
-                        type: string
-                      fieldPath:
-                        description: 'If referring to a piece of an object instead
-                          of an entire object, this string should contain a valid
-                          JSON/Go field access statement, such as desiredState.manifest.containers[2].
-                          For example, if the object reference is to a container within
-                          a pod, this would take on a value like: "spec.containers{name}"
-                          (where "name" refers to the name of the container that triggered
-                          the event) or if no container name is specified "spec.containers[2]"
-                          (container with index 2 in this pod). This syntax is chosen
-                          only to have some well-defined way of referencing a part
-                          of an object. TODO: this design is not final and this field
-                          is subject to change in the future.'
-                        type: string
-                      kind:
-                        description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
-                        type: string
-                      name:
-                        description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
-                        type: string
-                      namespace:
-                        description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
-                        type: string
-                      resourceVersion:
-                        description: 'Specific resourceVersion to which this reference
-                          is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
-                        type: string
-                      uid:
-                        description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
-                        type: string
-                    type: object
-                  outlierDetectionModelRef:
-                    description: Reference to a model that will be used for outlier
-                      detection. If empty, an outlier detection model.
-                    properties:
-                      apiVersion:
-                        description: API version of the referent.
-                        type: string
-                      fieldPath:
-                        description: 'If referring to a piece of an object instead
-                          of an entire object, this string should contain a valid
-                          JSON/Go field access statement, such as desiredState.manifest.containers[2].
-                          For example, if the object reference is to a container within
-                          a pod, this would take on a value like: "spec.containers{name}"
-                          (where "name" refers to the name of the container that triggered
-                          the event) or if no container name is specified "spec.containers[2]"
-                          (container with index 2 in this pod). This syntax is chosen
-                          only to have some well-defined way of referencing a part
-                          of an object. TODO: this design is not final and this field
-                          is subject to change in the future.'
-                        type: string
-                      kind:
-                        description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
-                        type: string
-                      name:
-                        description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
-                        type: string
-                      namespace:
-                        description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
-                        type: string
-                      resourceVersion:
-                        description: 'Specific resourceVersion to which this reference
-                          is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
-                        type: string
-                      uid:
-                        description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
-                        type: string
-                    type: object
-                  samplePercent:
-                    default: 100
-                    description: The percentage of rows (0 through 100) of incoming
-                      data to sample for model monitoring
-                    format: int32
-                    type: integer
-                  schedule:
-                    description: The schedule on which model monitoring computations
-                      will be performed
-                    properties:
-                      cron:
-                        description: The cron string of the schedule. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm
-                          for more information
-                        type: string
                       enabled:
                         default: false
-                        description: Indicates if the schedule is enabled and the
-                          Jobs associated it will be created at the specified time
+                        description: Indicates if model monitoring is enabled for
+                          the model
                         type: boolean
-                      endTime:
-                        description: The time of the day when the schedule is expected
-                          to conclude
-                        format: date-time
-                        type: string
-                      startTime:
-                        description: The time of the day when the schedule will be
-                          executed
-                        format: date-time
-                        type: string
-                      type:
-                        description: The type of schedule, which can be a frequency
-                          interval or a cron expression
+                      notifierRef:
+                        description: NotifierRef references a Notifier resource that
+                          will be triggered in the case that a concept or data drift
+                          is detected
+                        properties:
+                          apiVersion:
+                            description: API version of the referent.
+                            type: string
+                          fieldPath:
+                            description: 'If referring to a piece of an object instead
+                              of an entire object, this string should contain a valid
+                              JSON/Go field access statement, such as desiredState.manifest.containers[2].
+                              For example, if the object reference is to a container
+                              within a pod, this would take on a value like: "spec.containers{name}"
+                              (where "name" refers to the name of the container that
+                              triggered the event) or if no container name is specified
+                              "spec.containers[2]" (container with index 2 in this
+                              pod). This syntax is chosen only to have some well-defined
+                              way of referencing a part of an object. TODO: this design
+                              is not final and this field is subject to change in
+                              the future.'
+                            type: string
+                          kind:
+                            description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                            type: string
+                          name:
+                            description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                            type: string
+                          namespace:
+                            description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                            type: string
+                          resourceVersion:
+                            description: 'Specific resourceVersion to which this reference
+                              is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                            type: string
+                          uid:
+                            description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                            type: string
+                        type: object
+                      outlierDetectionModelRef:
+                        description: Reference to a model that will be used for outlier
+                          detection. If empty, an outlier detection model.
+                        properties:
+                          apiVersion:
+                            description: API version of the referent.
+                            type: string
+                          fieldPath:
+                            description: 'If referring to a piece of an object instead
+                              of an entire object, this string should contain a valid
+                              JSON/Go field access statement, such as desiredState.manifest.containers[2].
+                              For example, if the object reference is to a container
+                              within a pod, this would take on a value like: "spec.containers{name}"
+                              (where "name" refers to the name of the container that
+                              triggered the event) or if no container name is specified
+                              "spec.containers[2]" (container with index 2 in this
+                              pod). This syntax is chosen only to have some well-defined
+                              way of referencing a part of an object. TODO: this design
+                              is not final and this field is subject to change in
+                              the future.'
+                            type: string
+                          kind:
+                            description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                            type: string
+                          name:
+                            description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                            type: string
+                          namespace:
+                            description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                            type: string
+                          resourceVersion:
+                            description: 'Specific resourceVersion to which this reference
+                              is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                            type: string
+                          uid:
+                            description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                            type: string
+                        type: object
+                      refFreq:
+                        description: Define the reference period freq - e.g. hourly,
+                          daily
                         enum:
-                        - now
-                        - once
-                        - hourly
-                        - daily
-                        - weekly
-                        - monthly
-                        - yearly
-                        - cron
+                        - second
+                        - minute
+                        - hour
+                        - day
+                        - week
+                        - month
+                        - quarter
+                        - year
                         type: string
+                      refInterval:
+                        description: Define the reference period interval (e.g. 7
+                          days)
+                        format: int32
+                        type: integer
+                      refTraining:
+                        description: Refer to the training dataset as your baseline
+                        type: boolean
+                      rules:
+                        description: Define the validation rule for this monitor
+                        items:
+                          description: ModelValidation defines a single validation
+                            to be run against a model
+                          properties:
+                            agg:
+                              description: Agg specifies the type of aggregate when
+                                measuring aggregate performance (e.g. median, average)
+                              enum:
+                              - min
+                              - max
+                              - avg
+                              - median
+                              type: string
+                            assertion:
+                              description: The type of model validation
+                              type: string
+                            column:
+                              description: Define the column name for the validation
+                                role
+                              type: string
+                            max:
+                              description: The lower upper range of the metric
+                              type: number
+                            metric:
+                              description: Define the measurement metric.
+                              enum:
+                              - accuracy
+                              - average-precision
+                              - balanced-accuracy
+                              - pr-auc
+                              - pr-auc-micro
+                              - pr-auc-macro
+                              - pr-auc-weighted
+                              - f1
+                              - f1-micro
+                              - f1-macro
+                              - f1-weighted
+                              - f1-samples
+                              - precision
+                              - precision-micro
+                              - precision-macro
+                              - precision-weighted
+                              - precision-samples
+                              - recall
+                              - recall-macro
+                              - recall-micro
+                              - recall-weighted
+                              - recall-samples
+                              - log-loss
+                              - auc
+                              - auc-micro
+                              - auc-macro
+                              - auc-weighted
+                              - zero-one
+                              - hamming-loss
+                              - hinge-loss
+                              - jacquard-loss
+                              - mcc
+                              - fp
+                              - fn
+                              - tn
+                              - tp
+                              - tpr
+                              - fpr
+                              - tnr
+                              - matthews-corr-coef
+                              - explained-variance
+                              - max-error
+                              - mae
+                              - mse
+                              - msle
+                              - rmse
+                              - rmsle
+                              - median-absolute-error
+                              - r2
+                              - adj-r2
+                              - mean_poisson_deviance
+                              - mean-gamma-deviance
+                              - mean-tweedie-deviance
+                              - mape
+                              - maze
+                              - mdape
+                              - smape
+                              - adjusted-mutual-info-score
+                              - adjusted-rand-score
+                              - completeness-score
+                              - fowlkes-mallows-score
+                              - homogeneity-score
+                              - mutual-info-score
+                              - normalized-mutual-info-score
+                              - v-measure-score
+                              - p50-latency
+                              - p95-latency
+                              - p99-latency
+                              - cpu
+                              - gpu
+                              - mem
+                              - gpu-mem
+                              - req-per-sec
+                              - uncertain-prediction-percent
+                              - none
+                              - ks
+                              - psi
+                              - wasserstein-distance
+                              - kl-divergenece
+                              - jensen-shannon-distance
+                              type: string
+                            min:
+                              description: The lower range of the metric
+                              type: number
+                          type: object
+                        type: array
+                      schedule:
+                        description: The schedule on which model monitoring computations
+                          will be performed
+                        properties:
+                          cron:
+                            description: The cron string of the schedule. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm
+                              for more information
+                            type: string
+                          enabled:
+                            default: false
+                            description: Indicates if the schedule is enabled and
+                              the Jobs associated it will be created at the specified
+                              time
+                            type: boolean
+                          endTime:
+                            description: The time of the day when the schedule is
+                              expected to conclude
+                            format: date-time
+                            type: string
+                          startTime:
+                            description: The time of the day when the schedule will
+                              be executed
+                            format: date-time
+                            type: string
+                          type:
+                            description: The type of schedule, which can be a frequency
+                              interval or a cron expression
+                            enum:
+                            - now
+                            - once
+                            - hourly
+                            - daily
+                            - weekly
+                            - monthly
+                            - yearly
+                            - cron
+                            type: string
+                        type: object
                     type: object
-                  validations:
-                    description: Validations contains the collection of model validations
-                      that will be performed based on incoming prediction traffic
-                    items:
-                      description: ModelValidation defines a single validation to
-                        be run against a model
-                      properties:
-                        agg:
-                          description: Agg specifies the type of aggregate when measuring
-                            aggregate performance (e.g. median, average)
-                          enum:
-                          - min
-                          - max
-                          - avg
-                          - median
-                          type: string
-                        column:
-                          type: string
-                        datasetName:
-                          description: The name of a labeled dataset used to test
-                            the model, when measuring a performance metric
-                          type: string
-                        driftFreq:
-                          description: / The Horizon unit
-                          enum:
-                          - second
-                          - minute
-                          - hour
-                          - day
-                          - week
-                          - month
-                          - quarter
-                          - year
-                          type: string
-                        driftInterval:
-                          format: int32
-                          type: integer
-                        max:
-                          type: number
-                        maxPercent:
-                          type: number
-                        metric:
-                          enum:
-                          - accuracy
-                          - average-precision
-                          - balanced-accuracy
-                          - pr-auc
-                          - pr-auc-micro
-                          - pr-auc-macro
-                          - pr-auc-weighted
-                          - f1
-                          - f1-micro
-                          - f1-macro
-                          - f1-weighted
-                          - f1-samples
-                          - precision
-                          - precision-micro
-                          - precision-macro
-                          - precision-weighted
-                          - precision-samples
-                          - recall
-                          - recall-macro
-                          - recall-micro
-                          - recall-weighted
-                          - recall-samples
-                          - log-loss
-                          - auc
-                          - auc-micro
-                          - auc-macro
-                          - auc-weighted
-                          - zero-one
-                          - hamming-loss
-                          - hinge-loss
-                          - jacquard-loss
-                          - mcc
-                          - fp
-                          - fn
-                          - tn
-                          - tp
-                          - tpr
-                          - fpr
-                          - tnr
-                          - matthews-corr-coef
-                          - explained-variance
-                          - max-error
-                          - mae
-                          - mse
-                          - msle
-                          - rmse
-                          - rmsle
-                          - median-absolute-error
-                          - r2
-                          - adj-r2
-                          - mean_poisson_deviance
-                          - mean-gamma-deviance
-                          - mean-tweedie-deviance
-                          - mape
-                          - maze
-                          - mdape
-                          - smape
-                          - adjusted-mutual-info-score
-                          - adjusted-rand-score
-                          - completeness-score
-                          - fowlkes-mallows-score
-                          - homogeneity-score
-                          - mutual-info-score
-                          - normalized-mutual-info-score
-                          - v-measure-score
-                          - p50-latency
-                          - p95-latency
-                          - p99-latency
-                          - cpu
-                          - gpu
-                          - mem
-                          - gpu-mem
-                          - req-per-sec
-                          - uncertain-prediction-percent
-                          - none
-                          - ks
-                          - psi
-                          - wasserstein-distance
-                          - kl-divergenece
-                          - jensen-shannon-distance
-                          type: string
-                        min:
-                          type: number
-                        minPercent:
-                          type: number
-                        prevModel:
-                          description: PrevModel specifies a previous model to compare
-                            against
-                          type: string
-                        type:
-                          description: The type of model validation
-                          type: string
-                      type: object
-                    type: array
+                  modelPerformance:
+                    description: Model Performance monitor, monitor the production
+                      model performance against
+                    properties:
+                      enabled:
+                        default: false
+                        description: Indicates if model monitoring is enabled for
+                          the model
+                        type: boolean
+                      notifierRef:
+                        description: NotifierRef references a Notifier resource that
+                          will be triggered in the case that a concept or data drift
+                          is detected
+                        properties:
+                          apiVersion:
+                            description: API version of the referent.
+                            type: string
+                          fieldPath:
+                            description: 'If referring to a piece of an object instead
+                              of an entire object, this string should contain a valid
+                              JSON/Go field access statement, such as desiredState.manifest.containers[2].
+                              For example, if the object reference is to a container
+                              within a pod, this would take on a value like: "spec.containers{name}"
+                              (where "name" refers to the name of the container that
+                              triggered the event) or if no container name is specified
+                              "spec.containers[2]" (container with index 2 in this
+                              pod). This syntax is chosen only to have some well-defined
+                              way of referencing a part of an object. TODO: this design
+                              is not final and this field is subject to change in
+                              the future.'
+                            type: string
+                          kind:
+                            description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                            type: string
+                          name:
+                            description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                            type: string
+                          namespace:
+                            description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                            type: string
+                          resourceVersion:
+                            description: 'Specific resourceVersion to which this reference
+                              is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                            type: string
+                          uid:
+                            description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                            type: string
+                        type: object
+                      outlierDetectionModelRef:
+                        description: Reference to a model that will be used for outlier
+                          detection. If empty, an outlier detection model.
+                        properties:
+                          apiVersion:
+                            description: API version of the referent.
+                            type: string
+                          fieldPath:
+                            description: 'If referring to a piece of an object instead
+                              of an entire object, this string should contain a valid
+                              JSON/Go field access statement, such as desiredState.manifest.containers[2].
+                              For example, if the object reference is to a container
+                              within a pod, this would take on a value like: "spec.containers{name}"
+                              (where "name" refers to the name of the container that
+                              triggered the event) or if no container name is specified
+                              "spec.containers[2]" (container with index 2 in this
+                              pod). This syntax is chosen only to have some well-defined
+                              way of referencing a part of an object. TODO: this design
+                              is not final and this field is subject to change in
+                              the future.'
+                            type: string
+                          kind:
+                            description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                            type: string
+                          name:
+                            description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                            type: string
+                          namespace:
+                            description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                            type: string
+                          resourceVersion:
+                            description: 'Specific resourceVersion to which this reference
+                              is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                            type: string
+                          uid:
+                            description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                            type: string
+                        type: object
+                      refFreq:
+                        description: Define the reference period freq - e.g. hourly,
+                          daily
+                        enum:
+                        - second
+                        - minute
+                        - hour
+                        - day
+                        - week
+                        - month
+                        - quarter
+                        - year
+                        type: string
+                      refInterval:
+                        description: Define the reference period interval (e.g. 7
+                          days)
+                        format: int32
+                        type: integer
+                      refTraining:
+                        description: Refer to the training dataset as your baseline
+                        type: boolean
+                      rules:
+                        description: Define the validation rule for this monitor
+                        items:
+                          description: ModelValidation defines a single validation
+                            to be run against a model
+                          properties:
+                            agg:
+                              description: Agg specifies the type of aggregate when
+                                measuring aggregate performance (e.g. median, average)
+                              enum:
+                              - min
+                              - max
+                              - avg
+                              - median
+                              type: string
+                            assertion:
+                              description: The type of model validation
+                              type: string
+                            column:
+                              description: Define the column name for the validation
+                                role
+                              type: string
+                            max:
+                              description: The lower upper range of the metric
+                              type: number
+                            metric:
+                              description: Define the measurement metric.
+                              enum:
+                              - accuracy
+                              - average-precision
+                              - balanced-accuracy
+                              - pr-auc
+                              - pr-auc-micro
+                              - pr-auc-macro
+                              - pr-auc-weighted
+                              - f1
+                              - f1-micro
+                              - f1-macro
+                              - f1-weighted
+                              - f1-samples
+                              - precision
+                              - precision-micro
+                              - precision-macro
+                              - precision-weighted
+                              - precision-samples
+                              - recall
+                              - recall-macro
+                              - recall-micro
+                              - recall-weighted
+                              - recall-samples
+                              - log-loss
+                              - auc
+                              - auc-micro
+                              - auc-macro
+                              - auc-weighted
+                              - zero-one
+                              - hamming-loss
+                              - hinge-loss
+                              - jacquard-loss
+                              - mcc
+                              - fp
+                              - fn
+                              - tn
+                              - tp
+                              - tpr
+                              - fpr
+                              - tnr
+                              - matthews-corr-coef
+                              - explained-variance
+                              - max-error
+                              - mae
+                              - mse
+                              - msle
+                              - rmse
+                              - rmsle
+                              - median-absolute-error
+                              - r2
+                              - adj-r2
+                              - mean_poisson_deviance
+                              - mean-gamma-deviance
+                              - mean-tweedie-deviance
+                              - mape
+                              - maze
+                              - mdape
+                              - smape
+                              - adjusted-mutual-info-score
+                              - adjusted-rand-score
+                              - completeness-score
+                              - fowlkes-mallows-score
+                              - homogeneity-score
+                              - mutual-info-score
+                              - normalized-mutual-info-score
+                              - v-measure-score
+                              - p50-latency
+                              - p95-latency
+                              - p99-latency
+                              - cpu
+                              - gpu
+                              - mem
+                              - gpu-mem
+                              - req-per-sec
+                              - uncertain-prediction-percent
+                              - none
+                              - ks
+                              - psi
+                              - wasserstein-distance
+                              - kl-divergenece
+                              - jensen-shannon-distance
+                              type: string
+                            min:
+                              description: The lower range of the metric
+                              type: number
+                          type: object
+                        type: array
+                      schedule:
+                        description: The schedule on which model monitoring computations
+                          will be performed
+                        properties:
+                          cron:
+                            description: The cron string of the schedule. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm
+                              for more information
+                            type: string
+                          enabled:
+                            default: false
+                            description: Indicates if the schedule is enabled and
+                              the Jobs associated it will be created at the specified
+                              time
+                            type: boolean
+                          endTime:
+                            description: The time of the day when the schedule is
+                              expected to conclude
+                            format: date-time
+                            type: string
+                          startTime:
+                            description: The time of the day when the schedule will
+                              be executed
+                            format: date-time
+                            type: string
+                          type:
+                            description: The type of schedule, which can be a frequency
+                              interval or a cron expression
+                            enum:
+                            - now
+                            - once
+                            - hourly
+                            - daily
+                            - weekly
+                            - monthly
+                            - yearly
+                            - cron
+                            type: string
+                        type: object
+                    type: object
+                  other:
+                    description: For any extera rules
+                    properties:
+                      enabled:
+                        default: false
+                        description: Indicates if model monitoring is enabled for
+                          the model
+                        type: boolean
+                      notifierRef:
+                        description: NotifierRef references a Notifier resource that
+                          will be triggered in the case that a concept or data drift
+                          is detected
+                        properties:
+                          apiVersion:
+                            description: API version of the referent.
+                            type: string
+                          fieldPath:
+                            description: 'If referring to a piece of an object instead
+                              of an entire object, this string should contain a valid
+                              JSON/Go field access statement, such as desiredState.manifest.containers[2].
+                              For example, if the object reference is to a container
+                              within a pod, this would take on a value like: "spec.containers{name}"
+                              (where "name" refers to the name of the container that
+                              triggered the event) or if no container name is specified
+                              "spec.containers[2]" (container with index 2 in this
+                              pod). This syntax is chosen only to have some well-defined
+                              way of referencing a part of an object. TODO: this design
+                              is not final and this field is subject to change in
+                              the future.'
+                            type: string
+                          kind:
+                            description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                            type: string
+                          name:
+                            description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                            type: string
+                          namespace:
+                            description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                            type: string
+                          resourceVersion:
+                            description: 'Specific resourceVersion to which this reference
+                              is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                            type: string
+                          uid:
+                            description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                            type: string
+                        type: object
+                      outlierDetectionModelRef:
+                        description: Reference to a model that will be used for outlier
+                          detection. If empty, an outlier detection model.
+                        properties:
+                          apiVersion:
+                            description: API version of the referent.
+                            type: string
+                          fieldPath:
+                            description: 'If referring to a piece of an object instead
+                              of an entire object, this string should contain a valid
+                              JSON/Go field access statement, such as desiredState.manifest.containers[2].
+                              For example, if the object reference is to a container
+                              within a pod, this would take on a value like: "spec.containers{name}"
+                              (where "name" refers to the name of the container that
+                              triggered the event) or if no container name is specified
+                              "spec.containers[2]" (container with index 2 in this
+                              pod). This syntax is chosen only to have some well-defined
+                              way of referencing a part of an object. TODO: this design
+                              is not final and this field is subject to change in
+                              the future.'
+                            type: string
+                          kind:
+                            description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                            type: string
+                          name:
+                            description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                            type: string
+                          namespace:
+                            description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                            type: string
+                          resourceVersion:
+                            description: 'Specific resourceVersion to which this reference
+                              is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                            type: string
+                          uid:
+                            description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                            type: string
+                        type: object
+                      refFreq:
+                        description: Define the reference period freq - e.g. hourly,
+                          daily
+                        enum:
+                        - second
+                        - minute
+                        - hour
+                        - day
+                        - week
+                        - month
+                        - quarter
+                        - year
+                        type: string
+                      refInterval:
+                        description: Define the reference period interval (e.g. 7
+                          days)
+                        format: int32
+                        type: integer
+                      refTraining:
+                        description: Refer to the training dataset as your baseline
+                        type: boolean
+                      rules:
+                        description: Define the validation rule for this monitor
+                        items:
+                          description: ModelValidation defines a single validation
+                            to be run against a model
+                          properties:
+                            agg:
+                              description: Agg specifies the type of aggregate when
+                                measuring aggregate performance (e.g. median, average)
+                              enum:
+                              - min
+                              - max
+                              - avg
+                              - median
+                              type: string
+                            assertion:
+                              description: The type of model validation
+                              type: string
+                            column:
+                              description: Define the column name for the validation
+                                role
+                              type: string
+                            max:
+                              description: The lower upper range of the metric
+                              type: number
+                            metric:
+                              description: Define the measurement metric.
+                              enum:
+                              - accuracy
+                              - average-precision
+                              - balanced-accuracy
+                              - pr-auc
+                              - pr-auc-micro
+                              - pr-auc-macro
+                              - pr-auc-weighted
+                              - f1
+                              - f1-micro
+                              - f1-macro
+                              - f1-weighted
+                              - f1-samples
+                              - precision
+                              - precision-micro
+                              - precision-macro
+                              - precision-weighted
+                              - precision-samples
+                              - recall
+                              - recall-macro
+                              - recall-micro
+                              - recall-weighted
+                              - recall-samples
+                              - log-loss
+                              - auc
+                              - auc-micro
+                              - auc-macro
+                              - auc-weighted
+                              - zero-one
+                              - hamming-loss
+                              - hinge-loss
+                              - jacquard-loss
+                              - mcc
+                              - fp
+                              - fn
+                              - tn
+                              - tp
+                              - tpr
+                              - fpr
+                              - tnr
+                              - matthews-corr-coef
+                              - explained-variance
+                              - max-error
+                              - mae
+                              - mse
+                              - msle
+                              - rmse
+                              - rmsle
+                              - median-absolute-error
+                              - r2
+                              - adj-r2
+                              - mean_poisson_deviance
+                              - mean-gamma-deviance
+                              - mean-tweedie-deviance
+                              - mape
+                              - maze
+                              - mdape
+                              - smape
+                              - adjusted-mutual-info-score
+                              - adjusted-rand-score
+                              - completeness-score
+                              - fowlkes-mallows-score
+                              - homogeneity-score
+                              - mutual-info-score
+                              - normalized-mutual-info-score
+                              - v-measure-score
+                              - p50-latency
+                              - p95-latency
+                              - p99-latency
+                              - cpu
+                              - gpu
+                              - mem
+                              - gpu-mem
+                              - req-per-sec
+                              - uncertain-prediction-percent
+                              - none
+                              - ks
+                              - psi
+                              - wasserstein-distance
+                              - kl-divergenece
+                              - jensen-shannon-distance
+                              type: string
+                            min:
+                              description: The lower range of the metric
+                              type: number
+                          type: object
+                        type: array
+                      schedule:
+                        description: The schedule on which model monitoring computations
+                          will be performed
+                        properties:
+                          cron:
+                            description: The cron string of the schedule. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm
+                              for more information
+                            type: string
+                          enabled:
+                            default: false
+                            description: Indicates if the schedule is enabled and
+                              the Jobs associated it will be created at the specified
+                              time
+                            type: boolean
+                          endTime:
+                            description: The time of the day when the schedule is
+                              expected to conclude
+                            format: date-time
+                            type: string
+                          startTime:
+                            description: The time of the day when the schedule will
+                              be executed
+                            format: date-time
+                            type: string
+                          type:
+                            description: The type of schedule, which can be a frequency
+                              interval or a cron expression
+                            enum:
+                            - now
+                            - once
+                            - hourly
+                            - daily
+                            - weekly
+                            - monthly
+                            - yearly
+                            - cron
+                            type: string
+                        type: object
+                    type: object
+                  predictionDrift:
+                    description: Prediction drift define prediction (target) drift
+                      between two schedules.
+                    properties:
+                      enabled:
+                        default: false
+                        description: Indicates if model monitoring is enabled for
+                          the model
+                        type: boolean
+                      notifierRef:
+                        description: NotifierRef references a Notifier resource that
+                          will be triggered in the case that a concept or data drift
+                          is detected
+                        properties:
+                          apiVersion:
+                            description: API version of the referent.
+                            type: string
+                          fieldPath:
+                            description: 'If referring to a piece of an object instead
+                              of an entire object, this string should contain a valid
+                              JSON/Go field access statement, such as desiredState.manifest.containers[2].
+                              For example, if the object reference is to a container
+                              within a pod, this would take on a value like: "spec.containers{name}"
+                              (where "name" refers to the name of the container that
+                              triggered the event) or if no container name is specified
+                              "spec.containers[2]" (container with index 2 in this
+                              pod). This syntax is chosen only to have some well-defined
+                              way of referencing a part of an object. TODO: this design
+                              is not final and this field is subject to change in
+                              the future.'
+                            type: string
+                          kind:
+                            description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                            type: string
+                          name:
+                            description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                            type: string
+                          namespace:
+                            description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                            type: string
+                          resourceVersion:
+                            description: 'Specific resourceVersion to which this reference
+                              is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                            type: string
+                          uid:
+                            description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                            type: string
+                        type: object
+                      outlierDetectionModelRef:
+                        description: Reference to a model that will be used for outlier
+                          detection. If empty, an outlier detection model.
+                        properties:
+                          apiVersion:
+                            description: API version of the referent.
+                            type: string
+                          fieldPath:
+                            description: 'If referring to a piece of an object instead
+                              of an entire object, this string should contain a valid
+                              JSON/Go field access statement, such as desiredState.manifest.containers[2].
+                              For example, if the object reference is to a container
+                              within a pod, this would take on a value like: "spec.containers{name}"
+                              (where "name" refers to the name of the container that
+                              triggered the event) or if no container name is specified
+                              "spec.containers[2]" (container with index 2 in this
+                              pod). This syntax is chosen only to have some well-defined
+                              way of referencing a part of an object. TODO: this design
+                              is not final and this field is subject to change in
+                              the future.'
+                            type: string
+                          kind:
+                            description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                            type: string
+                          name:
+                            description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                            type: string
+                          namespace:
+                            description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                            type: string
+                          resourceVersion:
+                            description: 'Specific resourceVersion to which this reference
+                              is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                            type: string
+                          uid:
+                            description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                            type: string
+                        type: object
+                      refFreq:
+                        description: Define the reference period freq - e.g. hourly,
+                          daily
+                        enum:
+                        - second
+                        - minute
+                        - hour
+                        - day
+                        - week
+                        - month
+                        - quarter
+                        - year
+                        type: string
+                      refInterval:
+                        description: Define the reference period interval (e.g. 7
+                          days)
+                        format: int32
+                        type: integer
+                      refTraining:
+                        description: Refer to the training dataset as your baseline
+                        type: boolean
+                      rules:
+                        description: Define the validation rule for this monitor
+                        items:
+                          description: ModelValidation defines a single validation
+                            to be run against a model
+                          properties:
+                            agg:
+                              description: Agg specifies the type of aggregate when
+                                measuring aggregate performance (e.g. median, average)
+                              enum:
+                              - min
+                              - max
+                              - avg
+                              - median
+                              type: string
+                            assertion:
+                              description: The type of model validation
+                              type: string
+                            column:
+                              description: Define the column name for the validation
+                                role
+                              type: string
+                            max:
+                              description: The lower upper range of the metric
+                              type: number
+                            metric:
+                              description: Define the measurement metric.
+                              enum:
+                              - accuracy
+                              - average-precision
+                              - balanced-accuracy
+                              - pr-auc
+                              - pr-auc-micro
+                              - pr-auc-macro
+                              - pr-auc-weighted
+                              - f1
+                              - f1-micro
+                              - f1-macro
+                              - f1-weighted
+                              - f1-samples
+                              - precision
+                              - precision-micro
+                              - precision-macro
+                              - precision-weighted
+                              - precision-samples
+                              - recall
+                              - recall-macro
+                              - recall-micro
+                              - recall-weighted
+                              - recall-samples
+                              - log-loss
+                              - auc
+                              - auc-micro
+                              - auc-macro
+                              - auc-weighted
+                              - zero-one
+                              - hamming-loss
+                              - hinge-loss
+                              - jacquard-loss
+                              - mcc
+                              - fp
+                              - fn
+                              - tn
+                              - tp
+                              - tpr
+                              - fpr
+                              - tnr
+                              - matthews-corr-coef
+                              - explained-variance
+                              - max-error
+                              - mae
+                              - mse
+                              - msle
+                              - rmse
+                              - rmsle
+                              - median-absolute-error
+                              - r2
+                              - adj-r2
+                              - mean_poisson_deviance
+                              - mean-gamma-deviance
+                              - mean-tweedie-deviance
+                              - mape
+                              - maze
+                              - mdape
+                              - smape
+                              - adjusted-mutual-info-score
+                              - adjusted-rand-score
+                              - completeness-score
+                              - fowlkes-mallows-score
+                              - homogeneity-score
+                              - mutual-info-score
+                              - normalized-mutual-info-score
+                              - v-measure-score
+                              - p50-latency
+                              - p95-latency
+                              - p99-latency
+                              - cpu
+                              - gpu
+                              - mem
+                              - gpu-mem
+                              - req-per-sec
+                              - uncertain-prediction-percent
+                              - none
+                              - ks
+                              - psi
+                              - wasserstein-distance
+                              - kl-divergenece
+                              - jensen-shannon-distance
+                              type: string
+                            min:
+                              description: The lower range of the metric
+                              type: number
+                          type: object
+                        type: array
+                      schedule:
+                        description: The schedule on which model monitoring computations
+                          will be performed
+                        properties:
+                          cron:
+                            description: The cron string of the schedule. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm
+                              for more information
+                            type: string
+                          enabled:
+                            default: false
+                            description: Indicates if the schedule is enabled and
+                              the Jobs associated it will be created at the specified
+                              time
+                            type: boolean
+                          endTime:
+                            description: The time of the day when the schedule is
+                              expected to conclude
+                            format: date-time
+                            type: string
+                          startTime:
+                            description: The time of the day when the schedule will
+                              be executed
+                            format: date-time
+                            type: string
+                          type:
+                            description: The type of schedule, which can be a frequency
+                              interval or a cron expression
+                            enum:
+                            - now
+                            - once
+                            - hourly
+                            - daily
+                            - weekly
+                            - monthly
+                            - yearly
+                            - cron
+                            type: string
+                        type: object
+                    type: object
+                  serviceHealth:
+                    description: Service spec define general service health monitor.
+                    properties:
+                      enabled:
+                        default: false
+                        description: Indicates if model monitoring is enabled for
+                          the model
+                        type: boolean
+                      notifierRef:
+                        description: NotifierRef references a Notifier resource that
+                          will be triggered in the case that a concept or data drift
+                          is detected
+                        properties:
+                          apiVersion:
+                            description: API version of the referent.
+                            type: string
+                          fieldPath:
+                            description: 'If referring to a piece of an object instead
+                              of an entire object, this string should contain a valid
+                              JSON/Go field access statement, such as desiredState.manifest.containers[2].
+                              For example, if the object reference is to a container
+                              within a pod, this would take on a value like: "spec.containers{name}"
+                              (where "name" refers to the name of the container that
+                              triggered the event) or if no container name is specified
+                              "spec.containers[2]" (container with index 2 in this
+                              pod). This syntax is chosen only to have some well-defined
+                              way of referencing a part of an object. TODO: this design
+                              is not final and this field is subject to change in
+                              the future.'
+                            type: string
+                          kind:
+                            description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                            type: string
+                          name:
+                            description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                            type: string
+                          namespace:
+                            description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                            type: string
+                          resourceVersion:
+                            description: 'Specific resourceVersion to which this reference
+                              is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                            type: string
+                          uid:
+                            description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                            type: string
+                        type: object
+                      outlierDetectionModelRef:
+                        description: Reference to a model that will be used for outlier
+                          detection. If empty, an outlier detection model.
+                        properties:
+                          apiVersion:
+                            description: API version of the referent.
+                            type: string
+                          fieldPath:
+                            description: 'If referring to a piece of an object instead
+                              of an entire object, this string should contain a valid
+                              JSON/Go field access statement, such as desiredState.manifest.containers[2].
+                              For example, if the object reference is to a container
+                              within a pod, this would take on a value like: "spec.containers{name}"
+                              (where "name" refers to the name of the container that
+                              triggered the event) or if no container name is specified
+                              "spec.containers[2]" (container with index 2 in this
+                              pod). This syntax is chosen only to have some well-defined
+                              way of referencing a part of an object. TODO: this design
+                              is not final and this field is subject to change in
+                              the future.'
+                            type: string
+                          kind:
+                            description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                            type: string
+                          name:
+                            description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                            type: string
+                          namespace:
+                            description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                            type: string
+                          resourceVersion:
+                            description: 'Specific resourceVersion to which this reference
+                              is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                            type: string
+                          uid:
+                            description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                            type: string
+                        type: object
+                      refFreq:
+                        description: Define the reference period freq - e.g. hourly,
+                          daily
+                        enum:
+                        - second
+                        - minute
+                        - hour
+                        - day
+                        - week
+                        - month
+                        - quarter
+                        - year
+                        type: string
+                      refInterval:
+                        description: Define the reference period interval (e.g. 7
+                          days)
+                        format: int32
+                        type: integer
+                      refTraining:
+                        description: Refer to the training dataset as your baseline
+                        type: boolean
+                      rules:
+                        description: Define the validation rule for this monitor
+                        items:
+                          description: ModelValidation defines a single validation
+                            to be run against a model
+                          properties:
+                            agg:
+                              description: Agg specifies the type of aggregate when
+                                measuring aggregate performance (e.g. median, average)
+                              enum:
+                              - min
+                              - max
+                              - avg
+                              - median
+                              type: string
+                            assertion:
+                              description: The type of model validation
+                              type: string
+                            column:
+                              description: Define the column name for the validation
+                                role
+                              type: string
+                            max:
+                              description: The lower upper range of the metric
+                              type: number
+                            metric:
+                              description: Define the measurement metric.
+                              enum:
+                              - accuracy
+                              - average-precision
+                              - balanced-accuracy
+                              - pr-auc
+                              - pr-auc-micro
+                              - pr-auc-macro
+                              - pr-auc-weighted
+                              - f1
+                              - f1-micro
+                              - f1-macro
+                              - f1-weighted
+                              - f1-samples
+                              - precision
+                              - precision-micro
+                              - precision-macro
+                              - precision-weighted
+                              - precision-samples
+                              - recall
+                              - recall-macro
+                              - recall-micro
+                              - recall-weighted
+                              - recall-samples
+                              - log-loss
+                              - auc
+                              - auc-micro
+                              - auc-macro
+                              - auc-weighted
+                              - zero-one
+                              - hamming-loss
+                              - hinge-loss
+                              - jacquard-loss
+                              - mcc
+                              - fp
+                              - fn
+                              - tn
+                              - tp
+                              - tpr
+                              - fpr
+                              - tnr
+                              - matthews-corr-coef
+                              - explained-variance
+                              - max-error
+                              - mae
+                              - mse
+                              - msle
+                              - rmse
+                              - rmsle
+                              - median-absolute-error
+                              - r2
+                              - adj-r2
+                              - mean_poisson_deviance
+                              - mean-gamma-deviance
+                              - mean-tweedie-deviance
+                              - mape
+                              - maze
+                              - mdape
+                              - smape
+                              - adjusted-mutual-info-score
+                              - adjusted-rand-score
+                              - completeness-score
+                              - fowlkes-mallows-score
+                              - homogeneity-score
+                              - mutual-info-score
+                              - normalized-mutual-info-score
+                              - v-measure-score
+                              - p50-latency
+                              - p95-latency
+                              - p99-latency
+                              - cpu
+                              - gpu
+                              - mem
+                              - gpu-mem
+                              - req-per-sec
+                              - uncertain-prediction-percent
+                              - none
+                              - ks
+                              - psi
+                              - wasserstein-distance
+                              - kl-divergenece
+                              - jensen-shannon-distance
+                              type: string
+                            min:
+                              description: The lower range of the metric
+                              type: number
+                          type: object
+                        type: array
+                      schedule:
+                        description: The schedule on which model monitoring computations
+                          will be performed
+                        properties:
+                          cron:
+                            description: The cron string of the schedule. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm
+                              for more information
+                            type: string
+                          enabled:
+                            default: false
+                            description: Indicates if the schedule is enabled and
+                              the Jobs associated it will be created at the specified
+                              time
+                            type: boolean
+                          endTime:
+                            description: The time of the day when the schedule is
+                              expected to conclude
+                            format: date-time
+                            type: string
+                          startTime:
+                            description: The time of the day when the schedule will
+                              be executed
+                            format: date-time
+                            type: string
+                          type:
+                            description: The type of schedule, which can be a frequency
+                              interval or a cron expression
+                            enum:
+                            - now
+                            - once
+                            - hourly
+                            - daily
+                            - weekly
+                            - monthly
+                            - yearly
+                            - cron
+                            type: string
+                        type: object
+                    type: object
                 type: object
               owner:
                 default: no-one
@@ -8785,6 +9835,108 @@ spec:
                           description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                           type: string
                       type: object
+                    errors:
+                      description: the set of validation errors
+                      items:
+                        properties:
+                          actual:
+                            description: Actual value
+                            type: number
+                          column:
+                            description: The name of the column
+                            type: string
+                          max:
+                            description: Expected max
+                            type: number
+                          metric:
+                            description: The metric from the rule
+                            enum:
+                            - accuracy
+                            - average-precision
+                            - balanced-accuracy
+                            - pr-auc
+                            - pr-auc-micro
+                            - pr-auc-macro
+                            - pr-auc-weighted
+                            - f1
+                            - f1-micro
+                            - f1-macro
+                            - f1-weighted
+                            - f1-samples
+                            - precision
+                            - precision-micro
+                            - precision-macro
+                            - precision-weighted
+                            - precision-samples
+                            - recall
+                            - recall-macro
+                            - recall-micro
+                            - recall-weighted
+                            - recall-samples
+                            - log-loss
+                            - auc
+                            - auc-micro
+                            - auc-macro
+                            - auc-weighted
+                            - zero-one
+                            - hamming-loss
+                            - hinge-loss
+                            - jacquard-loss
+                            - mcc
+                            - fp
+                            - fn
+                            - tn
+                            - tp
+                            - tpr
+                            - fpr
+                            - tnr
+                            - matthews-corr-coef
+                            - explained-variance
+                            - max-error
+                            - mae
+                            - mse
+                            - msle
+                            - rmse
+                            - rmsle
+                            - median-absolute-error
+                            - r2
+                            - adj-r2
+                            - mean_poisson_deviance
+                            - mean-gamma-deviance
+                            - mean-tweedie-deviance
+                            - mape
+                            - maze
+                            - mdape
+                            - smape
+                            - adjusted-mutual-info-score
+                            - adjusted-rand-score
+                            - completeness-score
+                            - fowlkes-mallows-score
+                            - homogeneity-score
+                            - mutual-info-score
+                            - normalized-mutual-info-score
+                            - v-measure-score
+                            - p50-latency
+                            - p95-latency
+                            - p99-latency
+                            - cpu
+                            - gpu
+                            - mem
+                            - gpu-mem
+                            - req-per-sec
+                            - uncertain-prediction-percent
+                            - none
+                            - ks
+                            - psi
+                            - wasserstein-distance
+                            - kl-divergenece
+                            - jensen-shannon-distance
+                            type: string
+                          min:
+                            description: Expected min
+                            type: number
+                        type: object
+                      type: array
                     hpaRef:
                       description: the name of the horizonal pod autoscaler, if autoscaling
                         is true

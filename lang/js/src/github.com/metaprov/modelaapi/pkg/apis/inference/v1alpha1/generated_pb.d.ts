@@ -865,6 +865,11 @@ export class ModelDeploymentStatus extends jspb.Message {
   clearObjectstatusesList(): ModelDeploymentStatus;
   addObjectstatuses(value?: KubernetesObjectStatus, index?: number): KubernetesObjectStatus;
 
+  getErrorsList(): Array<ValidationError>;
+  setErrorsList(value: Array<ValidationError>): ModelDeploymentStatus;
+  clearErrorsList(): ModelDeploymentStatus;
+  addErrors(value?: ValidationError, index?: number): ValidationError;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelDeploymentStatus.AsObject;
   static toObject(includeInstance: boolean, msg: ModelDeploymentStatus): ModelDeploymentStatus.AsObject;
@@ -894,6 +899,7 @@ export namespace ModelDeploymentStatus {
     conceptdrift: boolean,
     lastdailypredictionsList: Array<number>,
     objectstatusesList: Array<KubernetesObjectStatus.AsObject>,
+    errorsList: Array<ValidationError.AsObject>,
   }
 }
 
@@ -961,32 +967,85 @@ export namespace ModelServingSpec {
   }
 }
 
-export class MonitorSpec extends jspb.Message {
+export class MonitorPart extends jspb.Message {
   getEnabled(): boolean;
-  setEnabled(value: boolean): MonitorSpec;
+  setEnabled(value: boolean): MonitorPart;
 
-  getSamplepercent(): number;
-  setSamplepercent(value: number): MonitorSpec;
+  getReffreq(): string;
+  setReffreq(value: string): MonitorPart;
+
+  getRefinterval(): number;
+  setRefinterval(value: number): MonitorPart;
+
+  getReftraining(): boolean;
+  setReftraining(value: boolean): MonitorPart;
+
+  getRulesList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelValidationRule>;
+  setRulesList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelValidationRule>): MonitorPart;
+  clearRulesList(): MonitorPart;
+  addRules(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelValidationRule, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelValidationRule;
 
   getSchedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
-  setSchedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): MonitorSpec;
+  setSchedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): MonitorPart;
   hasSchedule(): boolean;
-  clearSchedule(): MonitorSpec;
+  clearSchedule(): MonitorPart;
 
   getNotifierref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setNotifierref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): MonitorSpec;
+  setNotifierref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): MonitorPart;
   hasNotifierref(): boolean;
-  clearNotifierref(): MonitorSpec;
-
-  getValidationsList(): Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidation>;
-  setValidationsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidation>): MonitorSpec;
-  clearValidationsList(): MonitorSpec;
-  addValidations(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidation, index?: number): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidation;
+  clearNotifierref(): MonitorPart;
 
   getOutlierdetectionmodelref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setOutlierdetectionmodelref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): MonitorSpec;
+  setOutlierdetectionmodelref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): MonitorPart;
   hasOutlierdetectionmodelref(): boolean;
-  clearOutlierdetectionmodelref(): MonitorSpec;
+  clearOutlierdetectionmodelref(): MonitorPart;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): MonitorPart.AsObject;
+  static toObject(includeInstance: boolean, msg: MonitorPart): MonitorPart.AsObject;
+  static serializeBinaryToWriter(message: MonitorPart, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): MonitorPart;
+  static deserializeBinaryFromReader(message: MonitorPart, reader: jspb.BinaryReader): MonitorPart;
+}
+
+export namespace MonitorPart {
+  export type AsObject = {
+    enabled: boolean,
+    reffreq: string,
+    refinterval: number,
+    reftraining: boolean,
+    rulesList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelValidationRule.AsObject>,
+    schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
+    notifierref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    outlierdetectionmodelref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+  }
+}
+
+export class MonitorSpec extends jspb.Message {
+  getServicehealth(): MonitorPart | undefined;
+  setServicehealth(value?: MonitorPart): MonitorSpec;
+  hasServicehealth(): boolean;
+  clearServicehealth(): MonitorSpec;
+
+  getDatadrift(): MonitorPart | undefined;
+  setDatadrift(value?: MonitorPart): MonitorSpec;
+  hasDatadrift(): boolean;
+  clearDatadrift(): MonitorSpec;
+
+  getPredictiondrift(): MonitorPart | undefined;
+  setPredictiondrift(value?: MonitorPart): MonitorSpec;
+  hasPredictiondrift(): boolean;
+  clearPredictiondrift(): MonitorSpec;
+
+  getModelperformance(): MonitorPart | undefined;
+  setModelperformance(value?: MonitorPart): MonitorSpec;
+  hasModelperformance(): boolean;
+  clearModelperformance(): MonitorSpec;
+
+  getOther(): MonitorPart | undefined;
+  setOther(value?: MonitorPart): MonitorSpec;
+  hasOther(): boolean;
+  clearOther(): MonitorSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MonitorSpec.AsObject;
@@ -998,40 +1057,11 @@ export class MonitorSpec extends jspb.Message {
 
 export namespace MonitorSpec {
   export type AsObject = {
-    enabled: boolean,
-    samplepercent: number,
-    schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
-    notifierref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    validationsList: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidation.AsObject>,
-    outlierdetectionmodelref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-  }
-}
-
-export class MonitorStatus extends jspb.Message {
-  getMonitorlastattemptat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setMonitorlastattemptat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): MonitorStatus;
-  hasMonitorlastattemptat(): boolean;
-  clearMonitorlastattemptat(): MonitorStatus;
-
-  getMonitorlastscore(): number;
-  setMonitorlastscore(value: number): MonitorStatus;
-
-  getMonitorlastlatency(): number;
-  setMonitorlastlatency(value: number): MonitorStatus;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): MonitorStatus.AsObject;
-  static toObject(includeInstance: boolean, msg: MonitorStatus): MonitorStatus.AsObject;
-  static serializeBinaryToWriter(message: MonitorStatus, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): MonitorStatus;
-  static deserializeBinaryFromReader(message: MonitorStatus, reader: jspb.BinaryReader): MonitorStatus;
-}
-
-export namespace MonitorStatus {
-  export type AsObject = {
-    monitorlastattemptat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    monitorlastscore: number,
-    monitorlastlatency: number,
+    servicehealth?: MonitorPart.AsObject,
+    datadrift?: MonitorPart.AsObject,
+    predictiondrift?: MonitorPart.AsObject,
+    modelperformance?: MonitorPart.AsObject,
+    other?: MonitorPart.AsObject,
   }
 }
 
@@ -1754,11 +1784,11 @@ export class PredictorletStatus extends jspb.Message {
   getP50(): number;
   setP50(value: number): PredictorletStatus;
 
-  getCurrent95(): number;
-  setCurrent95(value: number): PredictorletStatus;
+  getP95(): number;
+  setP95(value: number): PredictorletStatus;
 
-  getCurrent99(): number;
-  setCurrent99(value: number): PredictorletStatus;
+  getP99(): number;
+  setP99(value: number): PredictorletStatus;
 
   getDailypredictionavg(): number;
   setDailypredictionavg(value: number): PredictorletStatus;
@@ -1798,8 +1828,8 @@ export namespace PredictorletStatus {
     deploymentref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     serviceref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     p50: number,
-    current95: number,
-    current99: number,
+    p95: number,
+    p99: number,
     dailypredictionavg: number,
     totalpredictions: number,
     lastdailypredictionsList: Array<number>,
@@ -1834,6 +1864,40 @@ export namespace ProgressiveSpec {
     warmup: number,
     trafficincrement: number,
     canarymetricsList: Array<string>,
+  }
+}
+
+export class ValidationError extends jspb.Message {
+  getColumn(): string;
+  setColumn(value: string): ValidationError;
+
+  getMetric(): string;
+  setMetric(value: string): ValidationError;
+
+  getMin(): number;
+  setMin(value: number): ValidationError;
+
+  getMax(): number;
+  setMax(value: number): ValidationError;
+
+  getActual(): number;
+  setActual(value: number): ValidationError;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ValidationError.AsObject;
+  static toObject(includeInstance: boolean, msg: ValidationError): ValidationError.AsObject;
+  static serializeBinaryToWriter(message: ValidationError, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ValidationError;
+  static deserializeBinaryFromReader(message: ValidationError, reader: jspb.BinaryReader): ValidationError;
+}
+
+export namespace ValidationError {
+  export type AsObject = {
+    column: string,
+    metric: string,
+    min: number,
+    max: number,
+    actual: number,
   }
 }
 

@@ -580,6 +580,9 @@ message ModelDeploymentStatus {
 
   // +kubebuilder:validation:Optional
   repeated KubernetesObjectStatus objectStatuses = 19;
+
+  // the set of validation errors
+  repeated ValidationError errors = 20;
 }
 
 // ModelRecord hold the state of a model that was in production
@@ -621,45 +624,60 @@ message ModelServingSpec {
   optional bool serverless = 2;
 }
 
-// MonitorSpec defines the specification to monitor a model in production
-message MonitorSpec {
+message MonitorPart {
   // Indicates if model monitoring is enabled for the model
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool enabled = 1;
 
-  // The percentage of rows (0 through 100) of incoming data to sample for model monitoring
-  // +kubebuilder:default:=100
+  // Define the reference period freq - e.g. hourly, daily
   // +kubebuilder:validation:Optional
-  optional int32 samplePercent = 2;
+  optional string refFreq = 2;
+
+  // Define the reference period interval (e.g. 7 days)
+  // +kubebuilder:validation:Optional
+  optional int32 refInterval = 3;
+
+  // Refer to the training dataset as your baseline
+  optional bool refTraining = 4;
+
+  // Define the validation rule for this monitor
+  repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelValidationRule rules = 5;
 
   // The schedule on which model monitoring computations will be performed
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 3;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 6;
 
   // NotifierRef references a Notifier resource that will be triggered in the case that a concept or data drift is detected
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference notifierRef = 4;
-
-  // Validations contains the collection of model validations that will be
-  // performed based on incoming prediction traffic
-  // +kubebuilder:validation:Optionalthis
-  repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidation validations = 5;
+  optional k8s.io.api.core.v1.ObjectReference notifierRef = 7;
 
   // Reference to a model that will be used for outlier detection. If empty, an outlier detection model.
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference outlierDetectionModelRef = 6;
+  optional k8s.io.api.core.v1.ObjectReference outlierDetectionModelRef = 8;
 }
 
-message MonitorStatus {
-  // The last time when model monitoring was computed
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time monitorLastAttemptAt = 1;
+// MonitorSpec defines the specification to monitor a model in production
+message MonitorSpec {
+  // Service spec define general service health monitor.
+  // +kubebuilder:validation:Optional
+  optional MonitorPart serviceHealth = 1;
 
-  // The score from the last time model monitoring was computed
-  optional double monitorLastScore = 2;
+  // Data drift define data drift monitoring
+  // +kubebuilder:validation:Optional
+  optional MonitorPart dataDrift = 2;
 
-  // The model latency from the last time model monitoring was computed
-  optional double monitorLastLatency = 3;
+  // Prediction drift define prediction (target) drift between two schedules.
+  // +kubebuilder:validation:Optional
+  optional MonitorPart predictionDrift = 3;
+
+  // Model Performance monitor, monitor the production model performance against
+  // +kubebuilder:validation:Optional
+  optional MonitorPart modelPerformance = 4;
+
+  // For any extera rules
+  // +kubebuilder:validation:Optional
+  optional MonitorPart other = 5;
 }
 
 // OnlineFeaturestoreSpec specifies the connection information for an online feature store
@@ -1129,11 +1147,11 @@ message PredictorletStatus {
 
   // 95% latency for predictions served by the Predictorlet
   // +kubebuilder:validation:Optional
-  optional double current95 = 5;
+  optional double p95 = 5;
 
   // 99% latency for predictions served by the Predictorlet
   // +kubebuilder:validation:Optional
-  optional double current99 = 6;
+  optional double p99 = 6;
 
   // +kubebuilder:validation:Optional
   optional int32 dailyPredictionAvg = 7;
@@ -1173,5 +1191,22 @@ message ProgressiveSpec {
   // What metric to use when comparing the candidate model to the current model
   // +kubebuilder:validation:Optional
   repeated string canaryMetrics = 3;
+}
+
+message ValidationError {
+  // The name of the column
+  optional string column = 1;
+
+  // The metric from the rule
+  optional string metric = 2;
+
+  // Expected min
+  optional double min = 3;
+
+  // Expected max
+  optional double max = 4;
+
+  // Actual value
+  optional double actual = 5;
 }
 

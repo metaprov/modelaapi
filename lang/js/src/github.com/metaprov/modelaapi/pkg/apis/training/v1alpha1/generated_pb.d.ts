@@ -115,10 +115,10 @@ export class CapacityStageSpec extends jspb.Message {
   getServingsitename(): string;
   setServingsitename(value: string): CapacityStageSpec;
 
-  getValidationsList(): Array<ModelValidation>;
-  setValidationsList(value: Array<ModelValidation>): CapacityStageSpec;
+  getValidationsList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelValidationRule>;
+  setValidationsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelValidationRule>): CapacityStageSpec;
   clearValidationsList(): CapacityStageSpec;
-  addValidations(value?: ModelValidation, index?: number): ModelValidation;
+  addValidations(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelValidationRule, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelValidationRule;
 
   getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
   setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): CapacityStageSpec;
@@ -137,7 +137,7 @@ export namespace CapacityStageSpec {
   export type AsObject = {
     enabled: boolean,
     servingsitename: string,
-    validationsList: Array<ModelValidation.AsObject>,
+    validationsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelValidationRule.AsObject>,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
   }
 }
@@ -672,10 +672,10 @@ export class DeploymentStageSpec extends jspb.Message {
   getManualapproval(): boolean;
   setManualapproval(value: boolean): DeploymentStageSpec;
 
-  getValidationsList(): Array<ModelValidation>;
-  setValidationsList(value: Array<ModelValidation>): DeploymentStageSpec;
+  getValidationsList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelValidationRule>;
+  setValidationsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelValidationRule>): DeploymentStageSpec;
   clearValidationsList(): DeploymentStageSpec;
-  addValidations(value?: ModelValidation, index?: number): ModelValidation;
+  addValidations(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelValidationRule, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelValidationRule;
 
   getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
   setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): DeploymentStageSpec;
@@ -695,7 +695,7 @@ export namespace DeploymentStageSpec {
     enabled: boolean,
     servingsitename: string,
     manualapproval: boolean,
-    validationsList: Array<ModelValidation.AsObject>,
+    validationsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelValidationRule.AsObject>,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
   }
 }
@@ -3508,68 +3508,6 @@ export namespace ModelStatus {
   }
 }
 
-export class ModelValidation extends jspb.Message {
-  getType(): string;
-  setType(value: string): ModelValidation;
-
-  getPrevmodel(): string;
-  setPrevmodel(value: string): ModelValidation;
-
-  getDatasetname(): string;
-  setDatasetname(value: string): ModelValidation;
-
-  getDriftfreq(): string;
-  setDriftfreq(value: string): ModelValidation;
-
-  getDriftinterval(): number;
-  setDriftinterval(value: number): ModelValidation;
-
-  getColumn(): string;
-  setColumn(value: string): ModelValidation;
-
-  getMetric(): string;
-  setMetric(value: string): ModelValidation;
-
-  getMin(): number;
-  setMin(value: number): ModelValidation;
-
-  getMax(): number;
-  setMax(value: number): ModelValidation;
-
-  getMinpercent(): number;
-  setMinpercent(value: number): ModelValidation;
-
-  getMaxpercent(): number;
-  setMaxpercent(value: number): ModelValidation;
-
-  getAgg(): string;
-  setAgg(value: string): ModelValidation;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ModelValidation.AsObject;
-  static toObject(includeInstance: boolean, msg: ModelValidation): ModelValidation.AsObject;
-  static serializeBinaryToWriter(message: ModelValidation, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ModelValidation;
-  static deserializeBinaryFromReader(message: ModelValidation, reader: jspb.BinaryReader): ModelValidation;
-}
-
-export namespace ModelValidation {
-  export type AsObject = {
-    type: string,
-    prevmodel: string,
-    datasetname: string,
-    driftfreq: string,
-    driftinterval: number,
-    column: string,
-    metric: string,
-    min: number,
-    max: number,
-    minpercent: number,
-    maxpercent: number,
-    agg: string,
-  }
-}
-
 export class ModelValidationResult extends jspb.Message {
   getType(): string;
   setType(value: string): ModelValidationResult;
@@ -5717,10 +5655,10 @@ export class UATStageSpec extends jspb.Message {
   getServingsitename(): string;
   setServingsitename(value: string): UATStageSpec;
 
-  getValidationsList(): Array<ModelValidation>;
-  setValidationsList(value: Array<ModelValidation>): UATStageSpec;
+  getValidationsList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelValidationRule>;
+  setValidationsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelValidationRule>): UATStageSpec;
   clearValidationsList(): UATStageSpec;
-  addValidations(value?: ModelValidation, index?: number): ModelValidation;
+  addValidations(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelValidationRule, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelValidationRule;
 
   getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
   setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): UATStageSpec;
@@ -5739,7 +5677,7 @@ export namespace UATStageSpec {
   export type AsObject = {
     enabled: boolean,
     servingsitename: string,
-    validationsList: Array<ModelValidation.AsObject>,
+    validationsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelValidationRule.AsObject>,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
   }
 }

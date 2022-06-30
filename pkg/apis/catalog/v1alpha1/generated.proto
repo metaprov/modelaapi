@@ -598,16 +598,6 @@ message ModelDeploymentSpec {
   // +kubebuilder:validation:Optional
   optional string role = 5;
 
-  // A released model is a model that should serve production traffic
-  // +kubebuilder:default:=false
-  // +kubebuilder:validation:Optional
-  optional bool released = 7;
-
-  // A deployed model is a model whose containers are up, but does not serve production traffic
-  // +kubebuilder:default:=false
-  // +kubebuilder:validation:Optional
-  optional bool deployed = 8;
-
   // MountTar means that we would mount the model tar file. Else we would use baked image.
   // +kubebuilder:default:=true
   optional bool mountTar = 9;
@@ -616,17 +606,40 @@ message ModelDeploymentSpec {
   // +kubebuilder:validation:Optional
   optional string trafficSelector = 10;
 
-  // If the deployment is canary, the metric define how to evaluate the canary
+  // The approver account name
   // +kubebuilder:validation:Optional
-  repeated string canaryMetrics = 11;
-
-  // The account name of the approver
-  // +kubebuilder:validation:Optional
-  optional string approvedBy = 12;
+  optional k8s.io.api.core.v1.ObjectReference approvedBy = 12;
 
   // The time of approval
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time approvedAt = 13;
+}
+
+// ModelValidation defines a single validation to be run against a model
+message ModelValidationRule {
+  // The type of model validation
+  // +kubebuilder:validation:Optional
+  optional string assertion = 2;
+
+  // Define the column name for the validation role
+  // +kubebuilder:validation:Optional
+  optional string column = 5;
+
+  // Define the measurement metric.
+  // +kubebuilder:validation:Optional
+  optional string metric = 6;
+
+  // The lower range of the metric
+  // +kubebuilder:validation:Optional
+  optional double min = 7;
+
+  // The lower upper range of the metric
+  // +kubebuilder:validation:Optional
+  optional double max = 8;
+
+  // Agg specifies the type of aggregate when measuring aggregate performance (e.g. median, average)
+  // +kubebuilder:validation:Optional
+  optional string agg = 12;
 }
 
 // NotificationSpec specifies which Notifiers to forward Alert resources to

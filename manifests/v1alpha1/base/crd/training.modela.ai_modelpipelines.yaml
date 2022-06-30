@@ -210,32 +210,17 @@ spec:
                           - avg
                           - median
                           type: string
+                        assertion:
+                          description: The type of model validation
+                          type: string
                         column:
+                          description: Define the column name for the validation role
                           type: string
-                        datasetName:
-                          description: The name of a labeled dataset used to test
-                            the model, when measuring a performance metric
-                          type: string
-                        driftFreq:
-                          description: / The Horizon unit
-                          enum:
-                          - second
-                          - minute
-                          - hour
-                          - day
-                          - week
-                          - month
-                          - quarter
-                          - year
-                          type: string
-                        driftInterval:
-                          format: int32
-                          type: integer
                         max:
-                          type: number
-                        maxPercent:
+                          description: The lower upper range of the metric
                           type: number
                         metric:
+                          description: Define the measurement metric.
                           enum:
                           - accuracy
                           - average-precision
@@ -319,16 +304,8 @@ spec:
                           - jensen-shannon-distance
                           type: string
                         min:
+                          description: The lower range of the metric
                           type: number
-                        minPercent:
-                          type: number
-                        prevModel:
-                          description: PrevModel specifies a previous model to compare
-                            against
-                          type: string
-                        type:
-                          description: The type of model validation
-                          type: string
                       type: object
                     type: array
                 type: object
@@ -511,32 +488,17 @@ spec:
                           - avg
                           - median
                           type: string
+                        assertion:
+                          description: The type of model validation
+                          type: string
                         column:
+                          description: Define the column name for the validation role
                           type: string
-                        datasetName:
-                          description: The name of a labeled dataset used to test
-                            the model, when measuring a performance metric
-                          type: string
-                        driftFreq:
-                          description: / The Horizon unit
-                          enum:
-                          - second
-                          - minute
-                          - hour
-                          - day
-                          - week
-                          - month
-                          - quarter
-                          - year
-                          type: string
-                        driftInterval:
-                          format: int32
-                          type: integer
                         max:
-                          type: number
-                        maxPercent:
+                          description: The lower upper range of the metric
                           type: number
                         metric:
+                          description: Define the measurement metric.
                           enum:
                           - accuracy
                           - average-precision
@@ -620,16 +582,8 @@ spec:
                           - jensen-shannon-distance
                           type: string
                         min:
+                          description: The lower range of the metric
                           type: number
-                        minPercent:
-                          type: number
-                        prevModel:
-                          description: PrevModel specifies a previous model to compare
-                            against
-                          type: string
-                        type:
-                          description: The type of model validation
-                          type: string
                       type: object
                     type: array
                 type: object
@@ -829,25 +783,42 @@ spec:
                         format: date-time
                         type: string
                       approvedBy:
-                        description: The account name of the approver
-                        type: string
-                      canaryMetrics:
-                        description: If the deployment is canary, the metric define
-                          how to evaluate the canary
-                        items:
-                          description: CanaryMetric is used when testing the canary
-                          enum:
-                          - cpu
-                          - mem
-                          - latency
-                          - crash
-                          type: string
-                        type: array
-                      deployed:
-                        default: false
-                        description: A deployed model is a model whose containers
-                          are up, but does not serve production traffic
-                        type: boolean
+                        description: The approver account name
+                        properties:
+                          apiVersion:
+                            description: API version of the referent.
+                            type: string
+                          fieldPath:
+                            description: 'If referring to a piece of an object instead
+                              of an entire object, this string should contain a valid
+                              JSON/Go field access statement, such as desiredState.manifest.containers[2].
+                              For example, if the object reference is to a container
+                              within a pod, this would take on a value like: "spec.containers{name}"
+                              (where "name" refers to the name of the container that
+                              triggered the event) or if no container name is specified
+                              "spec.containers[2]" (container with index 2 in this
+                              pod). This syntax is chosen only to have some well-defined
+                              way of referencing a part of an object. TODO: this design
+                              is not final and this field is subject to change in
+                              the future.'
+                            type: string
+                          kind:
+                            description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                            type: string
+                          name:
+                            description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                            type: string
+                          namespace:
+                            description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                            type: string
+                          resourceVersion:
+                            description: 'Specific resourceVersion to which this reference
+                              is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                            type: string
+                          uid:
+                            description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                            type: string
+                        type: object
                       modelRef:
                         description: The reference to a Model resource which has been
                           packaged and exists in the same Data Product as the Predictor
@@ -901,11 +872,6 @@ spec:
                         description: the port of the model service.
                         format: int32
                         type: integer
-                      released:
-                        default: false
-                        description: A released model is a model that should serve
-                          production traffic
-                        type: boolean
                       role:
                         default: champion
                         description: Role denotes the role of this model
@@ -1130,32 +1096,17 @@ spec:
                           - avg
                           - median
                           type: string
+                        assertion:
+                          description: The type of model validation
+                          type: string
                         column:
+                          description: Define the column name for the validation role
                           type: string
-                        datasetName:
-                          description: The name of a labeled dataset used to test
-                            the model, when measuring a performance metric
-                          type: string
-                        driftFreq:
-                          description: / The Horizon unit
-                          enum:
-                          - second
-                          - minute
-                          - hour
-                          - day
-                          - week
-                          - month
-                          - quarter
-                          - year
-                          type: string
-                        driftInterval:
-                          format: int32
-                          type: integer
                         max:
-                          type: number
-                        maxPercent:
+                          description: The lower upper range of the metric
                           type: number
                         metric:
+                          description: Define the measurement metric.
                           enum:
                           - accuracy
                           - average-precision
@@ -1239,16 +1190,8 @@ spec:
                           - jensen-shannon-distance
                           type: string
                         min:
+                          description: The lower range of the metric
                           type: number
-                        minPercent:
-                          type: number
-                        prevModel:
-                          description: PrevModel specifies a previous model to compare
-                            against
-                          type: string
-                        type:
-                          description: The type of model validation
-                          type: string
                       type: object
                     type: array
                 type: object
