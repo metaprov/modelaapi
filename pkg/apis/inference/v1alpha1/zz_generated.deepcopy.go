@@ -830,7 +830,7 @@ func (in *MonitorPart) DeepCopyInto(out *MonitorPart) {
 	}
 	if in.Rules != nil {
 		in, out := &in.Rules, &out.Rules
-		*out = make([]catalogv1alpha1.ModelValidationRule, len(*in))
+		*out = make([]catalogv1alpha1.ModelTest, len(*in))
 		for i := range *in {
 			(*in)[i].DeepCopyInto(&(*out)[i])
 		}

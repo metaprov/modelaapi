@@ -2062,36 +2062,42 @@ const (
 // Monitoring Rules
 ///////////////////////////////////////////////////////////////////////////////
 
-// ModelValidationName defines a model monitoring validation rule
-type ModelValidationName string
+// ModelTestName defines a model monitoring validation rule
+type ModelTestName string
 
 const (
-	ColumnGE            ModelValidationName = "column_metric_should_be_greater_equal_than"
-	ColumnMetricInRange ModelValidationName = "column_metric_should_be_in_range"
-	ColumnLE            ModelValidationName = "column_metric_should_be_less_equal_than"
-	ModelMetricGE       ModelValidationName = "model_metric_should_be_less_equal_than"
-	ModelMetricInRange  ModelValidationName = "column_metric_should_be_in_range"
-	ModelMetricLE       ModelValidationName = "model_metric_should_be_in_range"
+	ColumnGE            ModelTestName = "column_metric_should_be_greater_equal_than"
+	ColumnMetricInRange ModelTestName = "column_metric_should_be_in_range"
+	ColumnLE            ModelTestName = "column_metric_should_be_less_equal_than"
+	ModelMetricGE       ModelTestName = "model_metric_should_be_less_equal_than"
+	ModelMetricInRange  ModelTestName = "column_metric_should_be_in_range"
+	ModelMetricLE       ModelTestName = "model_metric_should_be_in_range"
 )
 
 // ModelValidation defines a single validation to be run against a model
-type ModelValidationRule struct {
+type ModelTest struct {
 	// The type of model validation
 	// +kubebuilder:validation:Optional
-	Assertion ModelValidationName `json:"assertion" protobuf:"bytes,2,opt,name=assertion,casttype=ModelValidationName"`
+	Assertion ModelTestName `json:"assertion" protobuf:"bytes,1,opt,name=assertion,casttype=ModelTestName"`
+	// PrevModel specifies a previous model to compare against
+	// +kubebuilder:validation:Optional
+	PrevModel *string `json:"prevModel,omitempty" protobuf:"bytes,2,opt,name=prevModel"`
+	// The name of a labeled dataset used to test the model, when measuring a performance metric
+	// +kubebuilder:validation:Optional
+	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,3,opt,name=datasetName"`
 	// Define the column name for the validation role
 	// +kubebuilder:validation:Optional
-	Column *string `json:"column,omitempty" protobuf:"bytes,5,opt,name=column"`
+	Column *string `json:"column,omitempty" protobuf:"bytes,4,opt,name=column"`
 	// Define the measurement metric.
 	// +kubebuilder:validation:Optional
-	Metric *Metric `json:"metric,omitempty" protobuf:"bytes,6,opt,name=metric"`
+	Metric *Metric `json:"metric,omitempty" protobuf:"bytes,5,opt,name=metric"`
 	// The lower range of the metric
 	// +kubebuilder:validation:Optional
-	Min *float64 `json:"min,omitempty" protobuf:"bytes,7,opt,name=min"`
+	Min *float64 `json:"min,omitempty" protobuf:"bytes,6,opt,name=min"`
 	// The lower upper range of the metric
 	// +kubebuilder:validation:Optional
-	Max *float64 `json:"max,omitempty" protobuf:"bytes,8,opt,name=max"`
+	Max *float64 `json:"max,omitempty" protobuf:"bytes,7,opt,name=max"`
 	// Agg specifies the type of aggregate when measuring aggregate performance (e.g. median, average)
 	// +kubebuilder:validation:Optional
-	Agg *Aggregate `json:"agg,omitempty" protobuf:"bytes,12,opt,name=agg"`
+	Agg *Aggregate `json:"agg,omitempty" protobuf:"bytes,8,opt,name=agg"`
 }

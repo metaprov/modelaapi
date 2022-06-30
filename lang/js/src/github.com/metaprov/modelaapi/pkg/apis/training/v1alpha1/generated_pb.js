@@ -3808,8 +3808,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CapacityStageSpec
   var f, obj = {
     enabled: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
     servingsitename: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    validationsList: jspb.Message.toObjectList(msg.getValidationsList(),
-    github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelValidationRule.toObject, includeInstance),
+    testsList: jspb.Message.toObjectList(msg.getTestsList(),
+    github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelTest.toObject, includeInstance),
     resources: (f = msg.getResources()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.toObject(includeInstance, f)
   };
 
@@ -3856,9 +3856,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CapacityStageSpec
       msg.setServingsitename(value);
       break;
     case 3:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelValidationRule;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelValidationRule.deserializeBinaryFromReader);
-      msg.addValidations(value);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelTest;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelTest.deserializeBinaryFromReader);
+      msg.addTests(value);
       break;
     case 4:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec;
@@ -3908,12 +3908,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CapacityStageSpec
       f
     );
   }
-  f = message.getValidationsList();
+  f = message.getTestsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       3,
       f,
-      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelValidationRule.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelTest.serializeBinaryToWriter
     );
   }
   f = message.getResources();
@@ -4000,31 +4000,31 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CapacityStageSpec
 
 
 /**
- * repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelValidationRule validations = 3;
- * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelValidationRule>}
+ * repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelTest tests = 3;
+ * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelTest>}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CapacityStageSpec.prototype.getValidationsList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelValidationRule>} */ (
-    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelValidationRule, 3));
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CapacityStageSpec.prototype.getTestsList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelTest>} */ (
+    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelTest, 3));
 };
 
 
 /**
- * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelValidationRule>} value
+ * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelTest>} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CapacityStageSpec} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CapacityStageSpec.prototype.setValidationsList = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CapacityStageSpec.prototype.setTestsList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 3, value);
 };
 
 
 /**
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelValidationRule=} opt_value
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelTest=} opt_value
  * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelValidationRule}
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelTest}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CapacityStageSpec.prototype.addValidations = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelValidationRule, opt_index);
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CapacityStageSpec.prototype.addTests = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelTest, opt_index);
 };
 
 
@@ -4032,8 +4032,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CapacityStageSpec
  * Clears the list making it empty but non-null.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CapacityStageSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CapacityStageSpec.prototype.clearValidationsList = function() {
-  return this.setValidationsList([]);
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CapacityStageSpec.prototype.clearTestsList = function() {
+  return this.setTestsList([]);
 };
 
 
@@ -8909,8 +8909,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DeploymentStageSp
     enabled: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
     servingsitename: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     manualapproval: (f = jspb.Message.getBooleanField(msg, 3)) == null ? undefined : f,
-    validationsList: jspb.Message.toObjectList(msg.getValidationsList(),
-    github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelValidationRule.toObject, includeInstance),
+    testsList: jspb.Message.toObjectList(msg.getTestsList(),
+    github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelTest.toObject, includeInstance),
     resources: (f = msg.getResources()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.toObject(includeInstance, f)
   };
 
@@ -8961,9 +8961,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DeploymentStageSp
       msg.setManualapproval(value);
       break;
     case 4:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelValidationRule;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelValidationRule.deserializeBinaryFromReader);
-      msg.addValidations(value);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelTest;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelTest.deserializeBinaryFromReader);
+      msg.addTests(value);
       break;
     case 5:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec;
@@ -9020,12 +9020,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DeploymentStageSp
       f
     );
   }
-  f = message.getValidationsList();
+  f = message.getTestsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       4,
       f,
-      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelValidationRule.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelTest.serializeBinaryToWriter
     );
   }
   f = message.getResources();
@@ -9148,31 +9148,31 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DeploymentStageSp
 
 
 /**
- * repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelValidationRule validations = 4;
- * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelValidationRule>}
+ * repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelTest tests = 4;
+ * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelTest>}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DeploymentStageSpec.prototype.getValidationsList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelValidationRule>} */ (
-    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelValidationRule, 4));
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DeploymentStageSpec.prototype.getTestsList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelTest>} */ (
+    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelTest, 4));
 };
 
 
 /**
- * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelValidationRule>} value
+ * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelTest>} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DeploymentStageSpec} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DeploymentStageSpec.prototype.setValidationsList = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DeploymentStageSpec.prototype.setTestsList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 4, value);
 };
 
 
 /**
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelValidationRule=} opt_value
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelTest=} opt_value
  * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelValidationRule}
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelTest}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DeploymentStageSpec.prototype.addValidations = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelValidationRule, opt_index);
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DeploymentStageSpec.prototype.addTests = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelTest, opt_index);
 };
 
 
@@ -9180,8 +9180,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DeploymentStageSp
  * Clears the list making it empty but non-null.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DeploymentStageSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DeploymentStageSpec.prototype.clearValidationsList = function() {
-  return this.setValidationsList([]);
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DeploymentStageSpec.prototype.clearTestsList = function() {
+  return this.setTestsList([]);
 };
 
 
@@ -56147,8 +56147,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UATStageSpec.toOb
   var f, obj = {
     enabled: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
     servingsitename: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    validationsList: jspb.Message.toObjectList(msg.getValidationsList(),
-    github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelValidationRule.toObject, includeInstance),
+    testsList: jspb.Message.toObjectList(msg.getTestsList(),
+    github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelTest.toObject, includeInstance),
     resources: (f = msg.getResources()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.toObject(includeInstance, f)
   };
 
@@ -56195,9 +56195,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UATStageSpec.dese
       msg.setServingsitename(value);
       break;
     case 3:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelValidationRule;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelValidationRule.deserializeBinaryFromReader);
-      msg.addValidations(value);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelTest;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelTest.deserializeBinaryFromReader);
+      msg.addTests(value);
       break;
     case 4:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec;
@@ -56247,12 +56247,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UATStageSpec.seri
       f
     );
   }
-  f = message.getValidationsList();
+  f = message.getTestsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       3,
       f,
-      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelValidationRule.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelTest.serializeBinaryToWriter
     );
   }
   f = message.getResources();
@@ -56339,31 +56339,31 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UATStageSpec.prot
 
 
 /**
- * repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelValidationRule validations = 3;
- * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelValidationRule>}
+ * repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelTest tests = 3;
+ * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelTest>}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UATStageSpec.prototype.getValidationsList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelValidationRule>} */ (
-    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelValidationRule, 3));
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UATStageSpec.prototype.getTestsList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelTest>} */ (
+    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelTest, 3));
 };
 
 
 /**
- * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelValidationRule>} value
+ * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelTest>} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UATStageSpec} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UATStageSpec.prototype.setValidationsList = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UATStageSpec.prototype.setTestsList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 3, value);
 };
 
 
 /**
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelValidationRule=} opt_value
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelTest=} opt_value
  * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelValidationRule}
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelTest}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UATStageSpec.prototype.addValidations = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelValidationRule, opt_index);
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UATStageSpec.prototype.addTests = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelTest, opt_index);
 };
 
 
@@ -56371,8 +56371,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UATStageSpec.prot
  * Clears the list making it empty but non-null.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UATStageSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UATStageSpec.prototype.clearValidationsList = function() {
-  return this.setValidationsList([]);
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UATStageSpec.prototype.clearTestsList = function() {
+  return this.setTestsList([]);
 };
 
 

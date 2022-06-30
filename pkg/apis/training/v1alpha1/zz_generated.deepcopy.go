@@ -141,9 +141,9 @@ func (in *CapacityStageSpec) DeepCopyInto(out *CapacityStageSpec) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.Validations != nil {
-		in, out := &in.Validations, &out.Validations
-		*out = make([]catalogv1alpha1.ModelValidationRule, len(*in))
+	if in.Tests != nil {
+		in, out := &in.Tests, &out.Tests
+		*out = make([]catalogv1alpha1.ModelTest, len(*in))
 		for i := range *in {
 			(*in)[i].DeepCopyInto(&(*out)[i])
 		}
@@ -658,9 +658,9 @@ func (in *DeploymentStageSpec) DeepCopyInto(out *DeploymentStageSpec) {
 		*out = new(bool)
 		**out = **in
 	}
-	if in.Validations != nil {
-		in, out := &in.Validations, &out.Validations
-		*out = make([]catalogv1alpha1.ModelValidationRule, len(*in))
+	if in.Tests != nil {
+		in, out := &in.Tests, &out.Tests
+		*out = make([]catalogv1alpha1.ModelTest, len(*in))
 		for i := range *in {
 			(*in)[i].DeepCopyInto(&(*out)[i])
 		}
@@ -4681,9 +4681,9 @@ func (in *UATStageSpec) DeepCopyInto(out *UATStageSpec) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.Validations != nil {
-		in, out := &in.Validations, &out.Validations
-		*out = make([]catalogv1alpha1.ModelValidationRule, len(*in))
+	if in.Tests != nil {
+		in, out := &in.Tests, &out.Tests
+		*out = make([]catalogv1alpha1.ModelTest, len(*in))
 		for i := range *in {
 			(*in)[i].DeepCopyInto(&(*out)[i])
 		}

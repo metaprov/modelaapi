@@ -980,10 +980,10 @@ export class MonitorPart extends jspb.Message {
   getReftraining(): boolean;
   setReftraining(value: boolean): MonitorPart;
 
-  getRulesList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelValidationRule>;
-  setRulesList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelValidationRule>): MonitorPart;
-  clearRulesList(): MonitorPart;
-  addRules(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelValidationRule, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelValidationRule;
+  getTestsList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelTest>;
+  setTestsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelTest>): MonitorPart;
+  clearTestsList(): MonitorPart;
+  addTests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelTest, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelTest;
 
   getSchedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
   setSchedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): MonitorPart;
@@ -1014,7 +1014,7 @@ export namespace MonitorPart {
     reffreq: string,
     refinterval: number,
     reftraining: boolean,
-    rulesList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelValidationRule.AsObject>,
+    testsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelTest.AsObject>,
     schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     notifierref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     outlierdetectionmodelref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,

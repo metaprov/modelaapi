@@ -666,7 +666,45 @@ spec:
                       refTraining:
                         description: Refer to the training dataset as your baseline
                         type: boolean
-                      rules:
+                      schedule:
+                        description: The schedule on which model monitoring computations
+                          will be performed
+                        properties:
+                          cron:
+                            description: The cron string of the schedule. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm
+                              for more information
+                            type: string
+                          enabled:
+                            default: false
+                            description: Indicates if the schedule is enabled and
+                              the Jobs associated it will be created at the specified
+                              time
+                            type: boolean
+                          endTime:
+                            description: The time of the day when the schedule is
+                              expected to conclude
+                            format: date-time
+                            type: string
+                          startTime:
+                            description: The time of the day when the schedule will
+                              be executed
+                            format: date-time
+                            type: string
+                          type:
+                            description: The type of schedule, which can be a frequency
+                              interval or a cron expression
+                            enum:
+                            - now
+                            - once
+                            - hourly
+                            - daily
+                            - weekly
+                            - monthly
+                            - yearly
+                            - cron
+                            type: string
+                        type: object
+                      tests:
                         description: Define the validation rule for this monitor
                         items:
                           description: ModelValidation defines a single validation
@@ -687,6 +725,10 @@ spec:
                             column:
                               description: Define the column name for the validation
                                 role
+                              type: string
+                            datasetName:
+                              description: The name of a labeled dataset used to test
+                                the model, when measuring a performance metric
                               type: string
                             max:
                               description: The lower upper range of the metric
@@ -778,46 +820,12 @@ spec:
                             min:
                               description: The lower range of the metric
                               type: number
+                            prevModel:
+                              description: PrevModel specifies a previous model to
+                                compare against
+                              type: string
                           type: object
                         type: array
-                      schedule:
-                        description: The schedule on which model monitoring computations
-                          will be performed
-                        properties:
-                          cron:
-                            description: The cron string of the schedule. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm
-                              for more information
-                            type: string
-                          enabled:
-                            default: false
-                            description: Indicates if the schedule is enabled and
-                              the Jobs associated it will be created at the specified
-                              time
-                            type: boolean
-                          endTime:
-                            description: The time of the day when the schedule is
-                              expected to conclude
-                            format: date-time
-                            type: string
-                          startTime:
-                            description: The time of the day when the schedule will
-                              be executed
-                            format: date-time
-                            type: string
-                          type:
-                            description: The type of schedule, which can be a frequency
-                              interval or a cron expression
-                            enum:
-                            - now
-                            - once
-                            - hourly
-                            - daily
-                            - weekly
-                            - monthly
-                            - yearly
-                            - cron
-                            type: string
-                        type: object
                     type: object
                   modelPerformance:
                     description: Model Performance monitor, monitor the production
@@ -926,7 +934,45 @@ spec:
                       refTraining:
                         description: Refer to the training dataset as your baseline
                         type: boolean
-                      rules:
+                      schedule:
+                        description: The schedule on which model monitoring computations
+                          will be performed
+                        properties:
+                          cron:
+                            description: The cron string of the schedule. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm
+                              for more information
+                            type: string
+                          enabled:
+                            default: false
+                            description: Indicates if the schedule is enabled and
+                              the Jobs associated it will be created at the specified
+                              time
+                            type: boolean
+                          endTime:
+                            description: The time of the day when the schedule is
+                              expected to conclude
+                            format: date-time
+                            type: string
+                          startTime:
+                            description: The time of the day when the schedule will
+                              be executed
+                            format: date-time
+                            type: string
+                          type:
+                            description: The type of schedule, which can be a frequency
+                              interval or a cron expression
+                            enum:
+                            - now
+                            - once
+                            - hourly
+                            - daily
+                            - weekly
+                            - monthly
+                            - yearly
+                            - cron
+                            type: string
+                        type: object
+                      tests:
                         description: Define the validation rule for this monitor
                         items:
                           description: ModelValidation defines a single validation
@@ -947,6 +993,10 @@ spec:
                             column:
                               description: Define the column name for the validation
                                 role
+                              type: string
+                            datasetName:
+                              description: The name of a labeled dataset used to test
+                                the model, when measuring a performance metric
                               type: string
                             max:
                               description: The lower upper range of the metric
@@ -1038,46 +1088,12 @@ spec:
                             min:
                               description: The lower range of the metric
                               type: number
+                            prevModel:
+                              description: PrevModel specifies a previous model to
+                                compare against
+                              type: string
                           type: object
                         type: array
-                      schedule:
-                        description: The schedule on which model monitoring computations
-                          will be performed
-                        properties:
-                          cron:
-                            description: The cron string of the schedule. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm
-                              for more information
-                            type: string
-                          enabled:
-                            default: false
-                            description: Indicates if the schedule is enabled and
-                              the Jobs associated it will be created at the specified
-                              time
-                            type: boolean
-                          endTime:
-                            description: The time of the day when the schedule is
-                              expected to conclude
-                            format: date-time
-                            type: string
-                          startTime:
-                            description: The time of the day when the schedule will
-                              be executed
-                            format: date-time
-                            type: string
-                          type:
-                            description: The type of schedule, which can be a frequency
-                              interval or a cron expression
-                            enum:
-                            - now
-                            - once
-                            - hourly
-                            - daily
-                            - weekly
-                            - monthly
-                            - yearly
-                            - cron
-                            type: string
-                        type: object
                     type: object
                   other:
                     description: For any extera rules
@@ -1185,7 +1201,45 @@ spec:
                       refTraining:
                         description: Refer to the training dataset as your baseline
                         type: boolean
-                      rules:
+                      schedule:
+                        description: The schedule on which model monitoring computations
+                          will be performed
+                        properties:
+                          cron:
+                            description: The cron string of the schedule. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm
+                              for more information
+                            type: string
+                          enabled:
+                            default: false
+                            description: Indicates if the schedule is enabled and
+                              the Jobs associated it will be created at the specified
+                              time
+                            type: boolean
+                          endTime:
+                            description: The time of the day when the schedule is
+                              expected to conclude
+                            format: date-time
+                            type: string
+                          startTime:
+                            description: The time of the day when the schedule will
+                              be executed
+                            format: date-time
+                            type: string
+                          type:
+                            description: The type of schedule, which can be a frequency
+                              interval or a cron expression
+                            enum:
+                            - now
+                            - once
+                            - hourly
+                            - daily
+                            - weekly
+                            - monthly
+                            - yearly
+                            - cron
+                            type: string
+                        type: object
+                      tests:
                         description: Define the validation rule for this monitor
                         items:
                           description: ModelValidation defines a single validation
@@ -1206,6 +1260,10 @@ spec:
                             column:
                               description: Define the column name for the validation
                                 role
+                              type: string
+                            datasetName:
+                              description: The name of a labeled dataset used to test
+                                the model, when measuring a performance metric
                               type: string
                             max:
                               description: The lower upper range of the metric
@@ -1297,46 +1355,12 @@ spec:
                             min:
                               description: The lower range of the metric
                               type: number
+                            prevModel:
+                              description: PrevModel specifies a previous model to
+                                compare against
+                              type: string
                           type: object
                         type: array
-                      schedule:
-                        description: The schedule on which model monitoring computations
-                          will be performed
-                        properties:
-                          cron:
-                            description: The cron string of the schedule. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm
-                              for more information
-                            type: string
-                          enabled:
-                            default: false
-                            description: Indicates if the schedule is enabled and
-                              the Jobs associated it will be created at the specified
-                              time
-                            type: boolean
-                          endTime:
-                            description: The time of the day when the schedule is
-                              expected to conclude
-                            format: date-time
-                            type: string
-                          startTime:
-                            description: The time of the day when the schedule will
-                              be executed
-                            format: date-time
-                            type: string
-                          type:
-                            description: The type of schedule, which can be a frequency
-                              interval or a cron expression
-                            enum:
-                            - now
-                            - once
-                            - hourly
-                            - daily
-                            - weekly
-                            - monthly
-                            - yearly
-                            - cron
-                            type: string
-                        type: object
                     type: object
                   predictionDrift:
                     description: Prediction drift define prediction (target) drift
@@ -1445,7 +1469,45 @@ spec:
                       refTraining:
                         description: Refer to the training dataset as your baseline
                         type: boolean
-                      rules:
+                      schedule:
+                        description: The schedule on which model monitoring computations
+                          will be performed
+                        properties:
+                          cron:
+                            description: The cron string of the schedule. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm
+                              for more information
+                            type: string
+                          enabled:
+                            default: false
+                            description: Indicates if the schedule is enabled and
+                              the Jobs associated it will be created at the specified
+                              time
+                            type: boolean
+                          endTime:
+                            description: The time of the day when the schedule is
+                              expected to conclude
+                            format: date-time
+                            type: string
+                          startTime:
+                            description: The time of the day when the schedule will
+                              be executed
+                            format: date-time
+                            type: string
+                          type:
+                            description: The type of schedule, which can be a frequency
+                              interval or a cron expression
+                            enum:
+                            - now
+                            - once
+                            - hourly
+                            - daily
+                            - weekly
+                            - monthly
+                            - yearly
+                            - cron
+                            type: string
+                        type: object
+                      tests:
                         description: Define the validation rule for this monitor
                         items:
                           description: ModelValidation defines a single validation
@@ -1466,6 +1528,10 @@ spec:
                             column:
                               description: Define the column name for the validation
                                 role
+                              type: string
+                            datasetName:
+                              description: The name of a labeled dataset used to test
+                                the model, when measuring a performance metric
                               type: string
                             max:
                               description: The lower upper range of the metric
@@ -1557,46 +1623,12 @@ spec:
                             min:
                               description: The lower range of the metric
                               type: number
+                            prevModel:
+                              description: PrevModel specifies a previous model to
+                                compare against
+                              type: string
                           type: object
                         type: array
-                      schedule:
-                        description: The schedule on which model monitoring computations
-                          will be performed
-                        properties:
-                          cron:
-                            description: The cron string of the schedule. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm
-                              for more information
-                            type: string
-                          enabled:
-                            default: false
-                            description: Indicates if the schedule is enabled and
-                              the Jobs associated it will be created at the specified
-                              time
-                            type: boolean
-                          endTime:
-                            description: The time of the day when the schedule is
-                              expected to conclude
-                            format: date-time
-                            type: string
-                          startTime:
-                            description: The time of the day when the schedule will
-                              be executed
-                            format: date-time
-                            type: string
-                          type:
-                            description: The type of schedule, which can be a frequency
-                              interval or a cron expression
-                            enum:
-                            - now
-                            - once
-                            - hourly
-                            - daily
-                            - weekly
-                            - monthly
-                            - yearly
-                            - cron
-                            type: string
-                        type: object
                     type: object
                   serviceHealth:
                     description: Service spec define general service health monitor.
@@ -1704,7 +1736,45 @@ spec:
                       refTraining:
                         description: Refer to the training dataset as your baseline
                         type: boolean
-                      rules:
+                      schedule:
+                        description: The schedule on which model monitoring computations
+                          will be performed
+                        properties:
+                          cron:
+                            description: The cron string of the schedule. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm
+                              for more information
+                            type: string
+                          enabled:
+                            default: false
+                            description: Indicates if the schedule is enabled and
+                              the Jobs associated it will be created at the specified
+                              time
+                            type: boolean
+                          endTime:
+                            description: The time of the day when the schedule is
+                              expected to conclude
+                            format: date-time
+                            type: string
+                          startTime:
+                            description: The time of the day when the schedule will
+                              be executed
+                            format: date-time
+                            type: string
+                          type:
+                            description: The type of schedule, which can be a frequency
+                              interval or a cron expression
+                            enum:
+                            - now
+                            - once
+                            - hourly
+                            - daily
+                            - weekly
+                            - monthly
+                            - yearly
+                            - cron
+                            type: string
+                        type: object
+                      tests:
                         description: Define the validation rule for this monitor
                         items:
                           description: ModelValidation defines a single validation
@@ -1725,6 +1795,10 @@ spec:
                             column:
                               description: Define the column name for the validation
                                 role
+                              type: string
+                            datasetName:
+                              description: The name of a labeled dataset used to test
+                                the model, when measuring a performance metric
                               type: string
                             max:
                               description: The lower upper range of the metric
@@ -1816,46 +1890,12 @@ spec:
                             min:
                               description: The lower range of the metric
                               type: number
+                            prevModel:
+                              description: PrevModel specifies a previous model to
+                                compare against
+                              type: string
                           type: object
                         type: array
-                      schedule:
-                        description: The schedule on which model monitoring computations
-                          will be performed
-                        properties:
-                          cron:
-                            description: The cron string of the schedule. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm
-                              for more information
-                            type: string
-                          enabled:
-                            default: false
-                            description: Indicates if the schedule is enabled and
-                              the Jobs associated it will be created at the specified
-                              time
-                            type: boolean
-                          endTime:
-                            description: The time of the day when the schedule is
-                              expected to conclude
-                            format: date-time
-                            type: string
-                          startTime:
-                            description: The time of the day when the schedule will
-                              be executed
-                            format: date-time
-                            type: string
-                          type:
-                            description: The type of schedule, which can be a frequency
-                              interval or a cron expression
-                            enum:
-                            - now
-                            - once
-                            - hourly
-                            - daily
-                            - weekly
-                            - monthly
-                            - yearly
-                            - cron
-                            type: string
-                        type: object
                     type: object
                 type: object
               owner:

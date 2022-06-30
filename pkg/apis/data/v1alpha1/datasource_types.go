@@ -6,25 +6,25 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-type MultiDatasetValidationName string
+type MultiDatasetTestName string
 
 const (
-	MultiDatasetValidationNameSameNumberOfRows  MultiDatasetValidationName = "same-number-of-rows"
-	MultiDatasetValidationNameOuterJoinEmpty    MultiDatasetValidationName = "outer-join-empty"
-	MultiDatasetValidationNameOuterJoinNotEmpty MultiDatasetValidationName = "outer-join-not-empty"
-	MultiDatasetValidationNameInnerJoinEmpty    MultiDatasetValidationName = "inner-join-empty"
-	MultiDatasetValidationNameInnerJoinNotEmpty MultiDatasetValidationName = "inner-join-not-empty"
-	MultiDatasetValidationNameLeftJoinEmpty     MultiDatasetValidationName = "left-join-empty"
-	MultiDatasetValidationNameLeftJoinNotEmpty  MultiDatasetValidationName = "left-join-not-empty"
-	MultiDatasetValidationNameRightJoinEmpty    MultiDatasetValidationName = "right-join-empty"
-	MultiDatasetValidationNameRightJoinNotEmpty MultiDatasetValidationName = "right-join-not-empty"
+	MultiDatasetTestNameSameNumberOfRows  MultiDatasetTestName = "same-number-of-rows"
+	MultiDatasetTestNameOuterJoinEmpty    MultiDatasetTestName = "outer-join-empty"
+	MultiDatasetTestNameOuterJoinNotEmpty MultiDatasetTestName = "outer-join-not-empty"
+	MultiDatasetTestNameInnerJoinEmpty    MultiDatasetTestName = "inner-join-empty"
+	MultiDatasetTestNameInnerJoinNotEmpty MultiDatasetTestName = "inner-join-not-empty"
+	MultiDatasetTestNameLeftJoinEmpty     MultiDatasetTestName = "left-join-empty"
+	MultiDatasetTestNameLeftJoinNotEmpty  MultiDatasetTestName = "left-join-not-empty"
+	MultiDatasetTestNameRightJoinEmpty    MultiDatasetTestName = "right-join-empty"
+	MultiDatasetTestNameRightJoinNotEmpty MultiDatasetTestName = "right-join-not-empty"
 )
 
-// MultiDatasetValidation specifies a validation rule between multiple datasets
-type MultiDatasetValidation struct {
+// MultiDatasetTest specifies a validation rule between multiple datasets
+type MultiDatasetTest struct {
 	// The type of validation rule
 	// +kubebuilder:validation:Optional
-	Type *MultiDatasetValidationName `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
+	Type *MultiDatasetTestName `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
 	// The list of datasets that will be checked
 	// +kubebuilder:validation:Optional
 	Datasets []string `json:"datasets,omitempty" protobuf:"bytes,2,rep,name=datasets"`
@@ -34,22 +34,22 @@ type MultiDatasetValidation struct {
 	Generated *bool `json:"generated,omitempty" protobuf:"varint,3,opt,name=generated"`
 }
 
-type DatasetValidationName string
+type DatasetTestName string
 
 const (
-	DatasetValidationNameColumnsCountEqual    DatasetValidationName = "columns-count-equal"
-	DatasetValidationNameColumnsNameInSet     DatasetValidationName = "columns-in-set"
-	DatasetValidationNameColumnsInOrderedList DatasetValidationName = "columns-in-ordered-list"
-	DatasetValidationNameRowCountBetween      DatasetValidationName = "row-count-between"
-	DatasetValidationNameNameNotEmpty         DatasetValidationName = "dataset-not-empty"
-	DatasetValidationNameNameEmpty            DatasetValidationName = "dataset-empty"
+	DatasetTestNameColumnsCountEqual    DatasetTestName = "columns-count-equal"
+	DatasetTestNameColumnsNameInSet     DatasetTestName = "columns-in-set"
+	DatasetTestNameColumnsInOrderedList DatasetTestName = "columns-in-ordered-list"
+	DatasetTestNameRowCountBetween      DatasetTestName = "row-count-between"
+	DatasetTestNameNameNotEmpty         DatasetTestName = "dataset-not-empty"
+	DatasetTestNameNameEmpty            DatasetTestName = "dataset-empty"
 )
 
-// DatasetValidation specifies a validation rule for the contents of an entire dataset
-type DatasetValidation struct {
+// DatasetTest specifies a validation rule for the contents of an entire dataset
+type DatasetTest struct {
 	// The type of validation rule
 	// +kubebuilder:validation:Optional
-	Type *DatasetValidationName `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
+	Type *DatasetTestName `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
 	// +kubebuilder:validation:Format=float
 	// +kubebuilder:validation:Type=number
 	// +kubebuilder:validation:Optional
@@ -77,16 +77,16 @@ type DatasetValidation struct {
 }
 
 const (
-	MultiColumnCorr MultiColumnValidationName = "multi-column-corr"
+	MultiColumnCorr MultiColumnTestName = "multi-column-corr"
 )
 
-type MultiColumnValidationName string
+type MultiColumnTestName string
 
 // MultiColumnValidation specifies a validation rule that encompasses multiple columns
 type MultiColumnValidation struct {
 	// The type of validation rule
 	// +kubebuilder:validation:Optional
-	Type *MultiColumnValidationName `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
+	Type *MultiColumnTestName `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
 	// The list of columns that will be checked
 	// +kubebuilder:validation:Optional
 	Columns []string `json:"columns,omitempty" protobuf:"bytes,2,rep,name=columns"`
@@ -111,55 +111,55 @@ type MultiColumnValidation struct {
 	Generated *bool `json:"generated,omitempty" protobuf:"varint,9,opt,name=generated"`
 }
 
-type ColumnValidationName string
+type ColumnTestName string
 
 const (
-	ColumnValidationNameColumnExist      ColumnValidationName = "column-exist"
-	ColumnValidationNameColumnHaveValues ColumnValidationName = "have-values"
-	ColumnValidationNameColumnHasNoValue ColumnValidationName = "has-no-values"
-	ColumnValidationNameColumnHaveNulls  ColumnValidationName = "value-have-nulls"
-	ColumnValidationNameColumnHasNoNull  ColumnValidationName = "value-has-no-nulls"
-	ColumnValidationNameColumnOfType     ColumnValidationName = "value-of-type"
-	ColumnValidationNameInSet            ColumnValidationName = "values-in-set"
-	ColumnValidationNameIncreasing       ColumnValidationName = "values-increasing"
-	ColumnValidationNameDecreasing       ColumnValidationName = "values-decreasing"
-	ColumnValidationNameLengthBetween    ColumnValidationName = "value-length-between"
-	ColumnValidationNameMatchRegex       ColumnValidationName = "value-match-regex"
-	ColumnValidationNameIsDate           ColumnValidationName = "value-is-date"
-	ColumnValidationNameIsJson           ColumnValidationName = "value-is-json"
-	ColumnValidationInDomain             ColumnValidationName = "value-in-domain"
+	ColumnTestNameColumnExist      ColumnTestName = "column-exist"
+	ColumnTestNameColumnHaveValues ColumnTestName = "have-values"
+	ColumnTestNameColumnHasNoValue ColumnTestName = "has-no-values"
+	ColumnTestNameColumnHaveNulls  ColumnTestName = "value-have-nulls"
+	ColumnTestNameColumnHasNoNull  ColumnTestName = "value-has-no-nulls"
+	ColumnTestNameColumnOfType     ColumnTestName = "value-of-type"
+	ColumnTestNameInSet            ColumnTestName = "values-in-set"
+	ColumnTestNameIncreasing       ColumnTestName = "values-increasing"
+	ColumnTestNameDecreasing       ColumnTestName = "values-decreasing"
+	ColumnTestNameLengthBetween    ColumnTestName = "value-length-between"
+	ColumnTestNameMatchRegex       ColumnTestName = "value-match-regex"
+	ColumnTestNameIsDate           ColumnTestName = "value-is-date"
+	ColumnTestNameIsJson           ColumnTestName = "value-is-json"
+	ColumnTestInDomain             ColumnTestName = "value-in-domain"
 	// Count
-	ColumnValidationNameUniqueValueCountBetween   ColumnValidationName = "unique-value-count-between"
-	ColumnValidationNameOutlierValueUniqueBetween ColumnValidationName = "outlier-value-count-between"
-	ColumnValidationNameValidValueUniqueBetween   ColumnValidationName = "valid-values-count-between"
-	ColumnValidationNameMismatchValueBetween      ColumnValidationName = "mismatch-values-between"
+	ColumnTestNameUniqueValueCountBetween   ColumnTestName = "unique-value-count-between"
+	ColumnTestNameOutlierValueUniqueBetween ColumnTestName = "outlier-value-count-between"
+	ColumnTestNameValidValueUniqueBetween   ColumnTestName = "valid-values-count-between"
+	ColumnTestNameMismatchValueBetween      ColumnTestName = "mismatch-values-between"
 	// Statistics
-	ColumnValidationNameMinBetween           ColumnValidationName = "min-between"
-	ColumnValidationNameLowerQuartileBetween ColumnValidationName = "lower-quartile-between"
-	ColumnValidationNameMedianBetween        ColumnValidationName = "median-between"
-	ColumnValidationNameAvgBetween           ColumnValidationName = "average-between"
-	ColumnValidationNameUpperQuartileBetween ColumnValidationName = "upper-quartile-between"
-	ColumnValidationNameMaxBetween           ColumnValidationName = "max-between"
-	ColumnValidationStddevBetween            ColumnValidationName = "stddev-between"
-	ColumnValidationChiSquarePValueBetween   ColumnValidationName = "chi-square-p-value-between"
-	ColumnValidationPairCramersBetween       ColumnValidationName = "pair-cramers-between"
+	ColumnTestNameMinBetween           ColumnTestName = "min-between"
+	ColumnTestNameLowerQuartileBetween ColumnTestName = "lower-quartile-between"
+	ColumnTestNameMedianBetween        ColumnTestName = "median-between"
+	ColumnTestNameAvgBetween           ColumnTestName = "average-between"
+	ColumnTestNameUpperQuartileBetween ColumnTestName = "upper-quartile-between"
+	ColumnTestNameMaxBetween           ColumnTestName = "max-between"
+	ColumnTestStddevBetween            ColumnTestName = "stddev-between"
+	ColumnTestChiSquarePValueBetween   ColumnTestName = "chi-square-p-value-between"
+	ColumnTestPairCramersBetween       ColumnTestName = "pair-cramers-between"
 )
 
-type FileValidationName string
+type FileTestName string
 
 const (
-	FileSizeBetween            FileValidationName = "file-size-between"
-	FileExist                  FileValidationName = "file-exist"
-	FileRegexMatchCountBetween FileValidationName = "file-regex-match-count-between"
-	FileValidJson              FileValidationName = "file-valid-json"
-	FileValidCsv               FileValidationName = "file-valid-csv"
+	FileSizeBetween            FileTestName = "file-size-between"
+	FileExist                  FileTestName = "file-exist"
+	FileRegexMatchCountBetween FileTestName = "file-regex-match-count-between"
+	FileValidJson              FileTestName = "file-valid-json"
+	FileValidCsv               FileTestName = "file-valid-csv"
 )
 
-// ColumnValidation specifies a validation rule for a single column
-type ColumnValidation struct {
+// ColumnTest specifies a validation rule for a single column
+type ColumnTest struct {
 	// The type of validation rule
 	// +kubebuilder:validation:Optional
-	Type *ColumnValidationName `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
+	Type *ColumnTestName `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
 	// The name of the column to be validated
 	// +kubebuilder:validation:Optional
 	Column *string `json:"column,omitempty" protobuf:"bytes,2,opt,name=column"`
@@ -187,9 +187,9 @@ type ColumnValidation struct {
 	Generated *bool `json:"generated,omitempty" protobuf:"varint,9,opt,name=generated"`
 }
 
-type FileValidation struct {
+type FileTest struct {
 	// +kubebuilder:validation:Optional
-	Type *FileValidationName `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
+	Type *FileTestName `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
 	// +kubebuilder:validation:Optional
 	BucketName *string `json:"bucketName,omitempty" protobuf:"bytes,2,opt,name=bucketName"`
 	// +kubebuilder:validation:Optional
@@ -431,21 +431,21 @@ type ExcelSheetArea struct {
 }
 
 type ValidationSpec struct {
-	// MultiDatasetValidation contains validations for multiple datasets
+	// MultiDatasetTest contains validations for multiple datasets
 	// +kubebuilder:validation:Optional
-	MultiDatasetValidations []MultiDatasetValidation `json:"multiDatasetValidations,omitempty" protobuf:"bytes,1,rep,name=multiDatasetValidations"`
+	MultiDatasetValidations []MultiDatasetTest `json:"multiDatasetValidations,omitempty" protobuf:"bytes,1,rep,name=multiDatasetValidations"`
 	// DatasetValidations contains validations for the whole dataset
 	// +kubebuilder:validation:Optional
-	DatasetValidations []DatasetValidation `json:"datasetValidations,omitempty" protobuf:"bytes,2,rep,name=datasetValidations"`
+	DatasetValidations []DatasetTest `json:"datasetValidations,omitempty" protobuf:"bytes,2,rep,name=datasetValidations"`
 	// MultiColumnValidations defines validations for multiple columns from the dataset
 	// +kubebuilder:validation:Optional
 	MultiColumnValidations []MultiColumnValidation `json:"multiColumnValidations,omitempty" protobuf:"bytes,3,rep,name=multiColumnValidations"`
 	// ColumnValidations defines assertions for columns from the dataset
 	// +kubebuilder:validation:Optional
-	ColumnValidations []ColumnValidation `json:"columnValidations,omitempty" protobuf:"bytes,4,rep,name=columnValidations"`
+	ColumnValidations []ColumnTest `json:"columnValidations,omitempty" protobuf:"bytes,4,rep,name=columnValidations"`
 	// FileValidations defines assertions for the contents of the data file
 	// +kubebuilder:validation:Optional
-	FileValidations []FileValidation `json:"fileValidations,omitempty" protobuf:"bytes,5,rep,name=fileValidations"`
+	FileValidations []FileTest `json:"fileValidations,omitempty" protobuf:"bytes,5,rep,name=fileValidations"`
 }
 
 // Schema defines the column-level format and validation rules for data associated with a DataSource

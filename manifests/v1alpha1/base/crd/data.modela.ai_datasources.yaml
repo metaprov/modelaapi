@@ -883,8 +883,8 @@ spec:
                         description: ColumnValidations defines assertions for columns
                           from the dataset
                         items:
-                          description: ColumnValidation specifies a validation rule
-                            for a single column
+                          description: ColumnTest specifies a validation rule for
+                            a single column
                           properties:
                             column:
                               description: The name of the column to be validated
@@ -921,8 +921,8 @@ spec:
                         description: DatasetValidations contains validations for the
                           whole dataset
                         items:
-                          description: DatasetValidation specifies a validation rule
-                            for the contents of an entire dataset
+                          description: DatasetTest specifies a validation rule for
+                            the contents of an entire dataset
                           properties:
                             generated:
                               default: false
@@ -1028,11 +1028,11 @@ spec:
                           type: object
                         type: array
                       multiDatasetValidations:
-                        description: MultiDatasetValidation contains validations for
-                          multiple datasets
+                        description: MultiDatasetTest contains validations for multiple
+                          datasets
                         items:
-                          description: MultiDatasetValidation specifies a validation
-                            rule between multiple datasets
+                          description: MultiDatasetTest specifies a validation rule
+                            between multiple datasets
                           properties:
                             datasets:
                               description: The list of datasets that will be checked

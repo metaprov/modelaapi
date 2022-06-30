@@ -479,8 +479,8 @@ message ColumnStatistics {
   optional OutlierStat outliers = 44;
 }
 
-// ColumnValidation specifies a validation rule for a single column
-message ColumnValidation {
+// ColumnTest specifies a validation rule for a single column
+message ColumnTest {
   // The type of validation rule
   // +kubebuilder:validation:Optional
   optional string type = 1;
@@ -1850,8 +1850,8 @@ message DatasetTemplate {
   optional DatasetSpec spec = 2;
 }
 
-// DatasetValidation specifies a validation rule for the contents of an entire dataset
-message DatasetValidation {
+// DatasetTest specifies a validation rule for the contents of an entire dataset
+message DatasetTest {
   // The type of validation rule
   // +kubebuilder:validation:Optional
   optional string type = 1;
@@ -2654,7 +2654,7 @@ message FeaturesetStatus {
   repeated FeaturesetCondition conditions = 3;
 }
 
-message FileValidation {
+message FileTest {
   // +kubebuilder:validation:Optional
   optional string type = 1;
 
@@ -3188,8 +3188,8 @@ message MultiColumnValidation {
   optional bool generated = 9;
 }
 
-// MultiDatasetValidation specifies a validation rule between multiple datasets
-message MultiDatasetValidation {
+// MultiDatasetTest specifies a validation rule between multiple datasets
+message MultiDatasetTest {
   // The type of validation rule
   // +kubebuilder:validation:Optional
   optional string type = 1;
@@ -3963,13 +3963,13 @@ message TimeSeriesSchema {
 }
 
 message ValidationSpec {
-  // MultiDatasetValidation contains validations for multiple datasets
+  // MultiDatasetTest contains validations for multiple datasets
   // +kubebuilder:validation:Optional
-  repeated MultiDatasetValidation multiDatasetValidations = 1;
+  repeated MultiDatasetTest multiDatasetValidations = 1;
 
   // DatasetValidations contains validations for the whole dataset
   // +kubebuilder:validation:Optional
-  repeated DatasetValidation datasetValidations = 2;
+  repeated DatasetTest datasetValidations = 2;
 
   // MultiColumnValidations defines validations for multiple columns from the dataset
   // +kubebuilder:validation:Optional
@@ -3977,11 +3977,11 @@ message ValidationSpec {
 
   // ColumnValidations defines assertions for columns from the dataset
   // +kubebuilder:validation:Optional
-  repeated ColumnValidation columnValidations = 4;
+  repeated ColumnTest columnValidations = 4;
 
   // FileValidations defines assertions for the contents of the data file
   // +kubebuilder:validation:Optional
-  repeated FileValidation fileValidations = 5;
+  repeated FileTest fileValidations = 5;
 }
 
 // WebRequest represent a single sqlquery in the sqlquery store.

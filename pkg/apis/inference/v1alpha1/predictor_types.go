@@ -62,7 +62,7 @@ type MonitorPart struct {
 	// Refer to the training dataset as your baseline
 	RefTraining *bool `json:"refTraining,omitempty" protobuf:"varint,4,opt,name=refTraining"`
 	// Define the validation rule for this monitor
-	Rules []catalog.ModelValidationRule `json:"rules,omitempty" protobuf:"bytes,5,opt,name=rules"`
+	Rules []catalog.ModelTest `json:"tests,omitempty" protobuf:"bytes,5,opt,name=tests"`
 	// The schedule on which model monitoring computations will be performed
 	// +kubebuilder:validation:Optional
 	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,6,opt,name=schedule"`

@@ -194,7 +194,7 @@ spec:
                       during the capacity stage If the serving site is empty or null,
                       the system will skip the capacity stage unit tests.
                     type: string
-                  validations:
+                  tests:
                     description: Validations is the specification of tests to run
                       in this stage
                     items:
@@ -215,6 +215,10 @@ spec:
                           type: string
                         column:
                           description: Define the column name for the validation role
+                          type: string
+                        datasetName:
+                          description: The name of a labeled dataset used to test
+                            the model, when measuring a performance metric
                           type: string
                         max:
                           description: The lower upper range of the metric
@@ -306,6 +310,10 @@ spec:
                         min:
                           description: The lower range of the metric
                           type: number
+                        prevModel:
+                          description: PrevModel specifies a previous model to compare
+                            against
+                          type: string
                       type: object
                     type: array
                 type: object
@@ -472,9 +480,9 @@ spec:
                     description: ServingSiteName is the serving site for the release,
                       if empty, the system will use the default serving site name
                     type: string
-                  validations:
-                    description: Validations is the specification of tests to run
-                      in this stage
+                  tests:
+                    description: Tests is the specification of tests to run in this
+                      stage
                     items:
                       description: ModelValidation defines a single validation to
                         be run against a model
@@ -493,6 +501,10 @@ spec:
                           type: string
                         column:
                           description: Define the column name for the validation role
+                          type: string
+                        datasetName:
+                          description: The name of a labeled dataset used to test
+                            the model, when measuring a performance metric
                           type: string
                         max:
                           description: The lower upper range of the metric
@@ -584,6 +596,10 @@ spec:
                         min:
                           description: The lower range of the metric
                           type: number
+                        prevModel:
+                          description: PrevModel specifies a previous model to compare
+                            against
+                          type: string
                       type: object
                     type: array
                 type: object
@@ -1080,7 +1096,7 @@ spec:
                       uat tests. If the serving site is empty, the system will skip
                       the uat stage
                     type: string
-                  validations:
+                  tests:
                     description: Validations defines the machine learning test cases
                       to run against the new trained model.
                     items:
@@ -1101,6 +1117,10 @@ spec:
                           type: string
                         column:
                           description: Define the column name for the validation role
+                          type: string
+                        datasetName:
+                          description: The name of a labeled dataset used to test
+                            the model, when measuring a performance metric
                           type: string
                         max:
                           description: The lower upper range of the metric
@@ -1192,6 +1212,10 @@ spec:
                         min:
                           description: The lower range of the metric
                           type: number
+                        prevModel:
+                          description: PrevModel specifies a previous model to compare
+                            against
+                          type: string
                       type: object
                     type: array
                 type: object

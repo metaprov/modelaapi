@@ -491,45 +491,45 @@ export namespace ColumnStatistics {
   }
 }
 
-export class ColumnValidation extends jspb.Message {
+export class ColumnTest extends jspb.Message {
   getType(): string;
-  setType(value: string): ColumnValidation;
+  setType(value: string): ColumnTest;
 
   getColumn(): string;
-  setColumn(value: string): ColumnValidation;
+  setColumn(value: string): ColumnTest;
 
   getValue(): number;
-  setValue(value: number): ColumnValidation;
+  setValue(value: number): ColumnTest;
 
   getMin(): number;
-  setMin(value: number): ColumnValidation;
+  setMin(value: number): ColumnTest;
 
   getMax(): number;
-  setMax(value: number): ColumnValidation;
+  setMax(value: number): ColumnTest;
 
   getValuesetList(): Array<string>;
-  setValuesetList(value: Array<string>): ColumnValidation;
-  clearValuesetList(): ColumnValidation;
-  addValueset(value: string, index?: number): ColumnValidation;
+  setValuesetList(value: Array<string>): ColumnTest;
+  clearValuesetList(): ColumnTest;
+  addValueset(value: string, index?: number): ColumnTest;
 
   getStrictmin(): boolean;
-  setStrictmin(value: boolean): ColumnValidation;
+  setStrictmin(value: boolean): ColumnTest;
 
   getStrictmax(): boolean;
-  setStrictmax(value: boolean): ColumnValidation;
+  setStrictmax(value: boolean): ColumnTest;
 
   getGenerated(): boolean;
-  setGenerated(value: boolean): ColumnValidation;
+  setGenerated(value: boolean): ColumnTest;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ColumnValidation.AsObject;
-  static toObject(includeInstance: boolean, msg: ColumnValidation): ColumnValidation.AsObject;
-  static serializeBinaryToWriter(message: ColumnValidation, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ColumnValidation;
-  static deserializeBinaryFromReader(message: ColumnValidation, reader: jspb.BinaryReader): ColumnValidation;
+  toObject(includeInstance?: boolean): ColumnTest.AsObject;
+  static toObject(includeInstance: boolean, msg: ColumnTest): ColumnTest.AsObject;
+  static serializeBinaryToWriter(message: ColumnTest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ColumnTest;
+  static deserializeBinaryFromReader(message: ColumnTest, reader: jspb.BinaryReader): ColumnTest;
 }
 
-export namespace ColumnValidation {
+export namespace ColumnTest {
   export type AsObject = {
     type: string,
     column: string,
@@ -2451,42 +2451,42 @@ export namespace DatasetTemplate {
   }
 }
 
-export class DatasetValidation extends jspb.Message {
+export class DatasetTest extends jspb.Message {
   getType(): string;
-  setType(value: string): DatasetValidation;
+  setType(value: string): DatasetTest;
 
   getValue(): number;
-  setValue(value: number): DatasetValidation;
+  setValue(value: number): DatasetTest;
 
   getMin(): number;
-  setMin(value: number): DatasetValidation;
+  setMin(value: number): DatasetTest;
 
   getMax(): number;
-  setMax(value: number): DatasetValidation;
+  setMax(value: number): DatasetTest;
 
   getValuesetList(): Array<string>;
-  setValuesetList(value: Array<string>): DatasetValidation;
-  clearValuesetList(): DatasetValidation;
-  addValueset(value: string, index?: number): DatasetValidation;
+  setValuesetList(value: Array<string>): DatasetTest;
+  clearValuesetList(): DatasetTest;
+  addValueset(value: string, index?: number): DatasetTest;
 
   getStrictmin(): boolean;
-  setStrictmin(value: boolean): DatasetValidation;
+  setStrictmin(value: boolean): DatasetTest;
 
   getStrictmax(): boolean;
-  setStrictmax(value: boolean): DatasetValidation;
+  setStrictmax(value: boolean): DatasetTest;
 
   getGenerated(): boolean;
-  setGenerated(value: boolean): DatasetValidation;
+  setGenerated(value: boolean): DatasetTest;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DatasetValidation.AsObject;
-  static toObject(includeInstance: boolean, msg: DatasetValidation): DatasetValidation.AsObject;
-  static serializeBinaryToWriter(message: DatasetValidation, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DatasetValidation;
-  static deserializeBinaryFromReader(message: DatasetValidation, reader: jspb.BinaryReader): DatasetValidation;
+  toObject(includeInstance?: boolean): DatasetTest.AsObject;
+  static toObject(includeInstance: boolean, msg: DatasetTest): DatasetTest.AsObject;
+  static serializeBinaryToWriter(message: DatasetTest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DatasetTest;
+  static deserializeBinaryFromReader(message: DatasetTest, reader: jspb.BinaryReader): DatasetTest;
 }
 
-export namespace DatasetValidation {
+export namespace DatasetTest {
   export type AsObject = {
     type: string,
     value: number,
@@ -3771,48 +3771,48 @@ export namespace FeaturesetStatus {
   }
 }
 
-export class FileValidation extends jspb.Message {
+export class FileTest extends jspb.Message {
   getType(): string;
-  setType(value: string): FileValidation;
+  setType(value: string): FileTest;
 
   getBucketname(): string;
-  setBucketname(value: string): FileValidation;
+  setBucketname(value: string): FileTest;
 
   getColumn(): string;
-  setColumn(value: string): FileValidation;
+  setColumn(value: string): FileTest;
 
   getValue(): number;
-  setValue(value: number): FileValidation;
+  setValue(value: number): FileTest;
 
   getMin(): number;
-  setMin(value: number): FileValidation;
+  setMin(value: number): FileTest;
 
   getMax(): number;
-  setMax(value: number): FileValidation;
+  setMax(value: number): FileTest;
 
   getValuesetList(): Array<string>;
-  setValuesetList(value: Array<string>): FileValidation;
-  clearValuesetList(): FileValidation;
-  addValueset(value: string, index?: number): FileValidation;
+  setValuesetList(value: Array<string>): FileTest;
+  clearValuesetList(): FileTest;
+  addValueset(value: string, index?: number): FileTest;
 
   getStrictmin(): boolean;
-  setStrictmin(value: boolean): FileValidation;
+  setStrictmin(value: boolean): FileTest;
 
   getStrictmax(): boolean;
-  setStrictmax(value: boolean): FileValidation;
+  setStrictmax(value: boolean): FileTest;
 
   getGenerated(): boolean;
-  setGenerated(value: boolean): FileValidation;
+  setGenerated(value: boolean): FileTest;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): FileValidation.AsObject;
-  static toObject(includeInstance: boolean, msg: FileValidation): FileValidation.AsObject;
-  static serializeBinaryToWriter(message: FileValidation, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): FileValidation;
-  static deserializeBinaryFromReader(message: FileValidation, reader: jspb.BinaryReader): FileValidation;
+  toObject(includeInstance?: boolean): FileTest.AsObject;
+  static toObject(includeInstance: boolean, msg: FileTest): FileTest.AsObject;
+  static serializeBinaryToWriter(message: FileTest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FileTest;
+  static deserializeBinaryFromReader(message: FileTest, reader: jspb.BinaryReader): FileTest;
 }
 
-export namespace FileValidation {
+export namespace FileTest {
   export type AsObject = {
     type: string,
     bucketname: string,
@@ -4689,27 +4689,27 @@ export namespace MultiColumnValidation {
   }
 }
 
-export class MultiDatasetValidation extends jspb.Message {
+export class MultiDatasetTest extends jspb.Message {
   getType(): string;
-  setType(value: string): MultiDatasetValidation;
+  setType(value: string): MultiDatasetTest;
 
   getDatasetsList(): Array<string>;
-  setDatasetsList(value: Array<string>): MultiDatasetValidation;
-  clearDatasetsList(): MultiDatasetValidation;
-  addDatasets(value: string, index?: number): MultiDatasetValidation;
+  setDatasetsList(value: Array<string>): MultiDatasetTest;
+  clearDatasetsList(): MultiDatasetTest;
+  addDatasets(value: string, index?: number): MultiDatasetTest;
 
   getGenerated(): boolean;
-  setGenerated(value: boolean): MultiDatasetValidation;
+  setGenerated(value: boolean): MultiDatasetTest;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): MultiDatasetValidation.AsObject;
-  static toObject(includeInstance: boolean, msg: MultiDatasetValidation): MultiDatasetValidation.AsObject;
-  static serializeBinaryToWriter(message: MultiDatasetValidation, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): MultiDatasetValidation;
-  static deserializeBinaryFromReader(message: MultiDatasetValidation, reader: jspb.BinaryReader): MultiDatasetValidation;
+  toObject(includeInstance?: boolean): MultiDatasetTest.AsObject;
+  static toObject(includeInstance: boolean, msg: MultiDatasetTest): MultiDatasetTest.AsObject;
+  static serializeBinaryToWriter(message: MultiDatasetTest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): MultiDatasetTest;
+  static deserializeBinaryFromReader(message: MultiDatasetTest, reader: jspb.BinaryReader): MultiDatasetTest;
 }
 
-export namespace MultiDatasetValidation {
+export namespace MultiDatasetTest {
   export type AsObject = {
     type: string,
     datasetsList: Array<string>,
@@ -6004,30 +6004,30 @@ export namespace TimeSeriesSchema {
 }
 
 export class ValidationSpec extends jspb.Message {
-  getMultidatasetvalidationsList(): Array<MultiDatasetValidation>;
-  setMultidatasetvalidationsList(value: Array<MultiDatasetValidation>): ValidationSpec;
+  getMultidatasetvalidationsList(): Array<MultiDatasetTest>;
+  setMultidatasetvalidationsList(value: Array<MultiDatasetTest>): ValidationSpec;
   clearMultidatasetvalidationsList(): ValidationSpec;
-  addMultidatasetvalidations(value?: MultiDatasetValidation, index?: number): MultiDatasetValidation;
+  addMultidatasetvalidations(value?: MultiDatasetTest, index?: number): MultiDatasetTest;
 
-  getDatasetvalidationsList(): Array<DatasetValidation>;
-  setDatasetvalidationsList(value: Array<DatasetValidation>): ValidationSpec;
+  getDatasetvalidationsList(): Array<DatasetTest>;
+  setDatasetvalidationsList(value: Array<DatasetTest>): ValidationSpec;
   clearDatasetvalidationsList(): ValidationSpec;
-  addDatasetvalidations(value?: DatasetValidation, index?: number): DatasetValidation;
+  addDatasetvalidations(value?: DatasetTest, index?: number): DatasetTest;
 
   getMulticolumnvalidationsList(): Array<MultiColumnValidation>;
   setMulticolumnvalidationsList(value: Array<MultiColumnValidation>): ValidationSpec;
   clearMulticolumnvalidationsList(): ValidationSpec;
   addMulticolumnvalidations(value?: MultiColumnValidation, index?: number): MultiColumnValidation;
 
-  getColumnvalidationsList(): Array<ColumnValidation>;
-  setColumnvalidationsList(value: Array<ColumnValidation>): ValidationSpec;
+  getColumnvalidationsList(): Array<ColumnTest>;
+  setColumnvalidationsList(value: Array<ColumnTest>): ValidationSpec;
   clearColumnvalidationsList(): ValidationSpec;
-  addColumnvalidations(value?: ColumnValidation, index?: number): ColumnValidation;
+  addColumnvalidations(value?: ColumnTest, index?: number): ColumnTest;
 
-  getFilevalidationsList(): Array<FileValidation>;
-  setFilevalidationsList(value: Array<FileValidation>): ValidationSpec;
+  getFilevalidationsList(): Array<FileTest>;
+  setFilevalidationsList(value: Array<FileTest>): ValidationSpec;
   clearFilevalidationsList(): ValidationSpec;
-  addFilevalidations(value?: FileValidation, index?: number): FileValidation;
+  addFilevalidations(value?: FileTest, index?: number): FileTest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ValidationSpec.AsObject;
@@ -6039,11 +6039,11 @@ export class ValidationSpec extends jspb.Message {
 
 export namespace ValidationSpec {
   export type AsObject = {
-    multidatasetvalidationsList: Array<MultiDatasetValidation.AsObject>,
-    datasetvalidationsList: Array<DatasetValidation.AsObject>,
+    multidatasetvalidationsList: Array<MultiDatasetTest.AsObject>,
+    datasetvalidationsList: Array<DatasetTest.AsObject>,
     multicolumnvalidationsList: Array<MultiColumnValidation.AsObject>,
-    columnvalidationsList: Array<ColumnValidation.AsObject>,
-    filevalidationsList: Array<FileValidation.AsObject>,
+    columnvalidationsList: Array<ColumnTest.AsObject>,
+    filevalidationsList: Array<FileTest.AsObject>,
   }
 }
 

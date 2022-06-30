@@ -98,7 +98,7 @@ message CapacityStageSpec {
 
   // Validations is the specification of tests to run in this stage
   // +kubebuilder:validation:Optional
-  repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelValidationRule validations = 3;
+  repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelTest tests = 3;
 
   // Resource define the hardware resources req.
   // +kubebuilder:validation:Optional
@@ -441,9 +441,9 @@ message DeploymentStageSpec {
   // +kubebuilder:validation:Optional
   optional bool manualApproval = 3;
 
-  // Validations is the specification of tests to run in this stage
+  // Tests is the specification of tests to run in this stage
   // +kubebuilder:validation:Optional
-  repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelValidationRule validations = 4;
+  repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelTest tests = 4;
 
   // Resource define the hardware resources req.
   // +kubebuilder:validation:Optional
@@ -3937,7 +3937,7 @@ message UATStageSpec {
 
   // Validations defines the machine learning test cases to run against the new trained model.
   // +kubebuilder:validation:Optional
-  repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelValidationRule validations = 3;
+  repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelTest tests = 3;
 
   // Resource define the hardware resources req.
   // +kubebuilder:validation:Optional

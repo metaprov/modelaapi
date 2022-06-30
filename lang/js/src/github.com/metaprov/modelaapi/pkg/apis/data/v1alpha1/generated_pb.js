@@ -36,7 +36,7 @@ goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Ba
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Correlation', null, global);
@@ -78,7 +78,7 @@ goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Da
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatistics', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTemplate', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntityCondition', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntityList', null, global);
@@ -112,7 +112,7 @@ goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Fe
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturesetList', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturesetSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturesetStatus', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileFormatSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GaugeSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GitLocation', null, global);
@@ -138,7 +138,7 @@ goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Li
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MetricSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiColumnValidation', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetValidation', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetTest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.OutlierStat', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.PageSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ParquetFileSpec', null, global);
@@ -301,16 +301,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.repeatedFields_, null);
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest.repeatedFields_, null);
 };
-goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation';
+  proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1183,16 +1183,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation.repeatedFields_, null);
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest.repeatedFields_, null);
 };
-goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation';
+  proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1897,16 +1897,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.repeatedFields_, null);
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest.repeatedFields_, null);
 };
-goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation';
+  proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -2443,16 +2443,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetValidation = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetValidation.repeatedFields_, null);
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetTest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetTest.repeatedFields_, null);
 };
-goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetValidation, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetTest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetValidation.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetValidation';
+  proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetTest.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetTest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -8824,7 +8824,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prot
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.repeatedFields_ = [6];
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest.repeatedFields_ = [6];
 
 
 
@@ -8841,8 +8841,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest.toObject(opt_includeInstance, this);
 };
 
 
@@ -8851,11 +8851,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.prot
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest.toObject = function(includeInstance, msg) {
   var f, obj = {
     type: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     column: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
@@ -8879,23 +8879,23 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.toOb
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation}
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation;
-  return proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest;
+  return proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation}
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -8951,9 +8951,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.dese
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -8961,11 +8961,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.prot
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation} message
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = /** @type {string} */ (jspb.Message.getField(message, 1));
   if (f != null) {
@@ -9037,25 +9037,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.seri
  * optional string type = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.getType = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest.prototype.getType = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.setType = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest.prototype.setType = function(value) {
   return jspb.Message.setField(this, 1, value);
 };
 
 
 /**
  * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.clearType = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest.prototype.clearType = function() {
   return jspb.Message.setField(this, 1, undefined);
 };
 
@@ -9064,7 +9064,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.hasType = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest.prototype.hasType = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -9073,25 +9073,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.prot
  * optional string column = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.getColumn = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest.prototype.getColumn = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.setColumn = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest.prototype.setColumn = function(value) {
   return jspb.Message.setField(this, 2, value);
 };
 
 
 /**
  * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.clearColumn = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest.prototype.clearColumn = function() {
   return jspb.Message.setField(this, 2, undefined);
 };
 
@@ -9100,7 +9100,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.hasColumn = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest.prototype.hasColumn = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
@@ -9109,25 +9109,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.prot
  * optional double value = 3;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.getValue = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest.prototype.getValue = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 3, 0.0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.setValue = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest.prototype.setValue = function(value) {
   return jspb.Message.setField(this, 3, value);
 };
 
 
 /**
  * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.clearValue = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest.prototype.clearValue = function() {
   return jspb.Message.setField(this, 3, undefined);
 };
 
@@ -9136,7 +9136,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.hasValue = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest.prototype.hasValue = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
@@ -9145,25 +9145,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.prot
  * optional double min = 4;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.getMin = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest.prototype.getMin = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 4, 0.0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.setMin = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest.prototype.setMin = function(value) {
   return jspb.Message.setField(this, 4, value);
 };
 
 
 /**
  * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.clearMin = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest.prototype.clearMin = function() {
   return jspb.Message.setField(this, 4, undefined);
 };
 
@@ -9172,7 +9172,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.hasMin = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest.prototype.hasMin = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
@@ -9181,25 +9181,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.prot
  * optional double max = 5;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.getMax = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest.prototype.getMax = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 5, 0.0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.setMax = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest.prototype.setMax = function(value) {
   return jspb.Message.setField(this, 5, value);
 };
 
 
 /**
  * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.clearMax = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest.prototype.clearMax = function() {
   return jspb.Message.setField(this, 5, undefined);
 };
 
@@ -9208,7 +9208,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.hasMax = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest.prototype.hasMax = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 
@@ -9217,16 +9217,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.prot
  * repeated string valueSet = 6;
  * @return {!Array<string>}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.getValuesetList = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest.prototype.getValuesetList = function() {
   return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 6));
 };
 
 
 /**
  * @param {!Array<string>} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.setValuesetList = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest.prototype.setValuesetList = function(value) {
   return jspb.Message.setField(this, 6, value || []);
 };
 
@@ -9234,18 +9234,18 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.prot
 /**
  * @param {string} value
  * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.addValueset = function(value, opt_index) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest.prototype.addValueset = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 6, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.clearValuesetList = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest.prototype.clearValuesetList = function() {
   return this.setValuesetList([]);
 };
 
@@ -9254,25 +9254,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.prot
  * optional bool strictMin = 7;
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.getStrictmin = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest.prototype.getStrictmin = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 7, false));
 };
 
 
 /**
  * @param {boolean} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.setStrictmin = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest.prototype.setStrictmin = function(value) {
   return jspb.Message.setField(this, 7, value);
 };
 
 
 /**
  * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.clearStrictmin = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest.prototype.clearStrictmin = function() {
   return jspb.Message.setField(this, 7, undefined);
 };
 
@@ -9281,7 +9281,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.hasStrictmin = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest.prototype.hasStrictmin = function() {
   return jspb.Message.getField(this, 7) != null;
 };
 
@@ -9290,25 +9290,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.prot
  * optional bool strictMax = 8;
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.getStrictmax = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest.prototype.getStrictmax = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 8, false));
 };
 
 
 /**
  * @param {boolean} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.setStrictmax = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest.prototype.setStrictmax = function(value) {
   return jspb.Message.setField(this, 8, value);
 };
 
 
 /**
  * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.clearStrictmax = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest.prototype.clearStrictmax = function() {
   return jspb.Message.setField(this, 8, undefined);
 };
 
@@ -9317,7 +9317,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.hasStrictmax = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest.prototype.hasStrictmax = function() {
   return jspb.Message.getField(this, 8) != null;
 };
 
@@ -9326,25 +9326,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.prot
  * optional bool generated = 9;
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.getGenerated = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest.prototype.getGenerated = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 9, false));
 };
 
 
 /**
  * @param {boolean} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.setGenerated = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest.prototype.setGenerated = function(value) {
   return jspb.Message.setField(this, 9, value);
 };
 
 
 /**
  * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.clearGenerated = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest.prototype.clearGenerated = function() {
   return jspb.Message.setField(this, 9, undefined);
 };
 
@@ -9353,7 +9353,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.hasGenerated = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest.prototype.hasGenerated = function() {
   return jspb.Message.getField(this, 9) != null;
 };
 
@@ -27274,7 +27274,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTemplate.proto
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation.repeatedFields_ = [5];
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest.repeatedFields_ = [5];
 
 
 
@@ -27291,8 +27291,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest.toObject(opt_includeInstance, this);
 };
 
 
@@ -27301,11 +27301,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation.pro
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest.toObject = function(includeInstance, msg) {
   var f, obj = {
     type: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     value: (f = jspb.Message.getOptionalFloatingPointField(msg, 2)) == null ? undefined : f,
@@ -27328,23 +27328,23 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation.toO
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation}
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation;
-  return proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest;
+  return proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation}
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -27396,9 +27396,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation.des
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -27406,11 +27406,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation.pro
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation} message
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = /** @type {string} */ (jspb.Message.getField(message, 1));
   if (f != null) {
@@ -27475,25 +27475,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation.ser
  * optional string type = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation.prototype.getType = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest.prototype.getType = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation.prototype.setType = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest.prototype.setType = function(value) {
   return jspb.Message.setField(this, 1, value);
 };
 
 
 /**
  * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation.prototype.clearType = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest.prototype.clearType = function() {
   return jspb.Message.setField(this, 1, undefined);
 };
 
@@ -27502,7 +27502,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation.prototype.hasType = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest.prototype.hasType = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -27511,25 +27511,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation.pro
  * optional double value = 2;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation.prototype.getValue = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest.prototype.getValue = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 2, 0.0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation.prototype.setValue = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest.prototype.setValue = function(value) {
   return jspb.Message.setField(this, 2, value);
 };
 
 
 /**
  * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation.prototype.clearValue = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest.prototype.clearValue = function() {
   return jspb.Message.setField(this, 2, undefined);
 };
 
@@ -27538,7 +27538,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation.prototype.hasValue = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest.prototype.hasValue = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
@@ -27547,25 +27547,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation.pro
  * optional double min = 3;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation.prototype.getMin = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest.prototype.getMin = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 3, 0.0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation.prototype.setMin = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest.prototype.setMin = function(value) {
   return jspb.Message.setField(this, 3, value);
 };
 
 
 /**
  * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation.prototype.clearMin = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest.prototype.clearMin = function() {
   return jspb.Message.setField(this, 3, undefined);
 };
 
@@ -27574,7 +27574,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation.prototype.hasMin = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest.prototype.hasMin = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
@@ -27583,25 +27583,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation.pro
  * optional double max = 4;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation.prototype.getMax = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest.prototype.getMax = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 4, 0.0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation.prototype.setMax = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest.prototype.setMax = function(value) {
   return jspb.Message.setField(this, 4, value);
 };
 
 
 /**
  * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation.prototype.clearMax = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest.prototype.clearMax = function() {
   return jspb.Message.setField(this, 4, undefined);
 };
 
@@ -27610,7 +27610,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation.prototype.hasMax = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest.prototype.hasMax = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
@@ -27619,16 +27619,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation.pro
  * repeated string valueSet = 5;
  * @return {!Array<string>}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation.prototype.getValuesetList = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest.prototype.getValuesetList = function() {
   return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 5));
 };
 
 
 /**
  * @param {!Array<string>} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation.prototype.setValuesetList = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest.prototype.setValuesetList = function(value) {
   return jspb.Message.setField(this, 5, value || []);
 };
 
@@ -27636,18 +27636,18 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation.pro
 /**
  * @param {string} value
  * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation.prototype.addValueset = function(value, opt_index) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest.prototype.addValueset = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 5, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation.prototype.clearValuesetList = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest.prototype.clearValuesetList = function() {
   return this.setValuesetList([]);
 };
 
@@ -27656,25 +27656,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation.pro
  * optional bool strictMin = 6;
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation.prototype.getStrictmin = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest.prototype.getStrictmin = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
 };
 
 
 /**
  * @param {boolean} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation.prototype.setStrictmin = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest.prototype.setStrictmin = function(value) {
   return jspb.Message.setField(this, 6, value);
 };
 
 
 /**
  * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation.prototype.clearStrictmin = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest.prototype.clearStrictmin = function() {
   return jspb.Message.setField(this, 6, undefined);
 };
 
@@ -27683,7 +27683,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation.prototype.hasStrictmin = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest.prototype.hasStrictmin = function() {
   return jspb.Message.getField(this, 6) != null;
 };
 
@@ -27692,25 +27692,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation.pro
  * optional bool strictMax = 7;
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation.prototype.getStrictmax = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest.prototype.getStrictmax = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 7, false));
 };
 
 
 /**
  * @param {boolean} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation.prototype.setStrictmax = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest.prototype.setStrictmax = function(value) {
   return jspb.Message.setField(this, 7, value);
 };
 
 
 /**
  * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation.prototype.clearStrictmax = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest.prototype.clearStrictmax = function() {
   return jspb.Message.setField(this, 7, undefined);
 };
 
@@ -27719,7 +27719,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation.prototype.hasStrictmax = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest.prototype.hasStrictmax = function() {
   return jspb.Message.getField(this, 7) != null;
 };
 
@@ -27728,25 +27728,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation.pro
  * optional bool generated = 8;
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation.prototype.getGenerated = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest.prototype.getGenerated = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 8, false));
 };
 
 
 /**
  * @param {boolean} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation.prototype.setGenerated = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest.prototype.setGenerated = function(value) {
   return jspb.Message.setField(this, 8, value);
 };
 
 
 /**
  * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation.prototype.clearGenerated = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest.prototype.clearGenerated = function() {
   return jspb.Message.setField(this, 8, undefined);
 };
 
@@ -27755,7 +27755,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation.prototype.hasGenerated = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest.prototype.hasGenerated = function() {
   return jspb.Message.getField(this, 8) != null;
 };
 
@@ -39487,7 +39487,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturesetStatus.prot
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.repeatedFields_ = [7];
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest.repeatedFields_ = [7];
 
 
 
@@ -39504,8 +39504,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest.toObject(opt_includeInstance, this);
 };
 
 
@@ -39514,11 +39514,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.protot
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest.toObject = function(includeInstance, msg) {
   var f, obj = {
     type: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     bucketname: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
@@ -39543,23 +39543,23 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.toObje
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation}
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation;
-  return proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest;
+  return proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation}
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -39619,9 +39619,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.deseri
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -39629,11 +39629,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.protot
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation} message
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = /** @type {string} */ (jspb.Message.getField(message, 1));
   if (f != null) {
@@ -39712,25 +39712,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.serial
  * optional string type = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.prototype.getType = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest.prototype.getType = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.prototype.setType = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest.prototype.setType = function(value) {
   return jspb.Message.setField(this, 1, value);
 };
 
 
 /**
  * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.prototype.clearType = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest.prototype.clearType = function() {
   return jspb.Message.setField(this, 1, undefined);
 };
 
@@ -39739,7 +39739,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.protot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.prototype.hasType = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest.prototype.hasType = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -39748,25 +39748,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.protot
  * optional string bucketName = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.prototype.getBucketname = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest.prototype.getBucketname = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.prototype.setBucketname = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest.prototype.setBucketname = function(value) {
   return jspb.Message.setField(this, 2, value);
 };
 
 
 /**
  * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.prototype.clearBucketname = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest.prototype.clearBucketname = function() {
   return jspb.Message.setField(this, 2, undefined);
 };
 
@@ -39775,7 +39775,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.protot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.prototype.hasBucketname = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest.prototype.hasBucketname = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
@@ -39784,25 +39784,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.protot
  * optional string column = 3;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.prototype.getColumn = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest.prototype.getColumn = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.prototype.setColumn = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest.prototype.setColumn = function(value) {
   return jspb.Message.setField(this, 3, value);
 };
 
 
 /**
  * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.prototype.clearColumn = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest.prototype.clearColumn = function() {
   return jspb.Message.setField(this, 3, undefined);
 };
 
@@ -39811,7 +39811,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.protot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.prototype.hasColumn = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest.prototype.hasColumn = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
@@ -39820,25 +39820,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.protot
  * optional double value = 4;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.prototype.getValue = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest.prototype.getValue = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 4, 0.0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.prototype.setValue = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest.prototype.setValue = function(value) {
   return jspb.Message.setField(this, 4, value);
 };
 
 
 /**
  * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.prototype.clearValue = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest.prototype.clearValue = function() {
   return jspb.Message.setField(this, 4, undefined);
 };
 
@@ -39847,7 +39847,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.protot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.prototype.hasValue = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest.prototype.hasValue = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
@@ -39856,25 +39856,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.protot
  * optional double min = 5;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.prototype.getMin = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest.prototype.getMin = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 5, 0.0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.prototype.setMin = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest.prototype.setMin = function(value) {
   return jspb.Message.setField(this, 5, value);
 };
 
 
 /**
  * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.prototype.clearMin = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest.prototype.clearMin = function() {
   return jspb.Message.setField(this, 5, undefined);
 };
 
@@ -39883,7 +39883,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.protot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.prototype.hasMin = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest.prototype.hasMin = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 
@@ -39892,25 +39892,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.protot
  * optional double max = 6;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.prototype.getMax = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest.prototype.getMax = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 6, 0.0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.prototype.setMax = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest.prototype.setMax = function(value) {
   return jspb.Message.setField(this, 6, value);
 };
 
 
 /**
  * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.prototype.clearMax = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest.prototype.clearMax = function() {
   return jspb.Message.setField(this, 6, undefined);
 };
 
@@ -39919,7 +39919,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.protot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.prototype.hasMax = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest.prototype.hasMax = function() {
   return jspb.Message.getField(this, 6) != null;
 };
 
@@ -39928,16 +39928,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.protot
  * repeated string valueSet = 7;
  * @return {!Array<string>}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.prototype.getValuesetList = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest.prototype.getValuesetList = function() {
   return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 7));
 };
 
 
 /**
  * @param {!Array<string>} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.prototype.setValuesetList = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest.prototype.setValuesetList = function(value) {
   return jspb.Message.setField(this, 7, value || []);
 };
 
@@ -39945,18 +39945,18 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.protot
 /**
  * @param {string} value
  * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.prototype.addValueset = function(value, opt_index) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest.prototype.addValueset = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 7, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.prototype.clearValuesetList = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest.prototype.clearValuesetList = function() {
   return this.setValuesetList([]);
 };
 
@@ -39965,25 +39965,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.protot
  * optional bool strictMin = 8;
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.prototype.getStrictmin = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest.prototype.getStrictmin = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 8, false));
 };
 
 
 /**
  * @param {boolean} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.prototype.setStrictmin = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest.prototype.setStrictmin = function(value) {
   return jspb.Message.setField(this, 8, value);
 };
 
 
 /**
  * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.prototype.clearStrictmin = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest.prototype.clearStrictmin = function() {
   return jspb.Message.setField(this, 8, undefined);
 };
 
@@ -39992,7 +39992,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.protot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.prototype.hasStrictmin = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest.prototype.hasStrictmin = function() {
   return jspb.Message.getField(this, 8) != null;
 };
 
@@ -40001,25 +40001,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.protot
  * optional bool strictMax = 9;
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.prototype.getStrictmax = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest.prototype.getStrictmax = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 9, false));
 };
 
 
 /**
  * @param {boolean} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.prototype.setStrictmax = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest.prototype.setStrictmax = function(value) {
   return jspb.Message.setField(this, 9, value);
 };
 
 
 /**
  * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.prototype.clearStrictmax = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest.prototype.clearStrictmax = function() {
   return jspb.Message.setField(this, 9, undefined);
 };
 
@@ -40028,7 +40028,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.protot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.prototype.hasStrictmax = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest.prototype.hasStrictmax = function() {
   return jspb.Message.getField(this, 9) != null;
 };
 
@@ -40037,25 +40037,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.protot
  * optional bool generated = 10;
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.prototype.getGenerated = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest.prototype.getGenerated = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 10, false));
 };
 
 
 /**
  * @param {boolean} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.prototype.setGenerated = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest.prototype.setGenerated = function(value) {
   return jspb.Message.setField(this, 10, value);
 };
 
 
 /**
  * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.prototype.clearGenerated = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest.prototype.clearGenerated = function() {
   return jspb.Message.setField(this, 10, undefined);
 };
 
@@ -40064,7 +40064,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.protot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.prototype.hasGenerated = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest.prototype.hasGenerated = function() {
   return jspb.Message.getField(this, 10) != null;
 };
 
@@ -48003,7 +48003,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiColumnValidation
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetValidation.repeatedFields_ = [2];
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetTest.repeatedFields_ = [2];
 
 
 
@@ -48020,8 +48020,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetValidation.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetValidation.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetTest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetTest.toObject(opt_includeInstance, this);
 };
 
 
@@ -48030,11 +48030,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetValidatio
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetValidation} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetTest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetValidation.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetTest.toObject = function(includeInstance, msg) {
   var f, obj = {
     type: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     datasetsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
@@ -48052,23 +48052,23 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetValidatio
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetValidation}
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetTest}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetValidation.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetTest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetValidation;
-  return proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetValidation.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetTest;
+  return proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetTest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetValidation} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetTest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetValidation}
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetTest}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetValidation.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetTest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -48100,9 +48100,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetValidatio
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetValidation.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetTest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetValidation.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetTest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -48110,11 +48110,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetValidatio
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetValidation} message
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetTest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetValidation.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetTest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = /** @type {string} */ (jspb.Message.getField(message, 1));
   if (f != null) {
@@ -48144,25 +48144,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetValidatio
  * optional string type = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetValidation.prototype.getType = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetTest.prototype.getType = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetValidation} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetTest} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetValidation.prototype.setType = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetTest.prototype.setType = function(value) {
   return jspb.Message.setField(this, 1, value);
 };
 
 
 /**
  * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetValidation} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetTest} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetValidation.prototype.clearType = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetTest.prototype.clearType = function() {
   return jspb.Message.setField(this, 1, undefined);
 };
 
@@ -48171,7 +48171,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetValidatio
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetValidation.prototype.hasType = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetTest.prototype.hasType = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -48180,16 +48180,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetValidatio
  * repeated string datasets = 2;
  * @return {!Array<string>}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetValidation.prototype.getDatasetsList = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetTest.prototype.getDatasetsList = function() {
   return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 2));
 };
 
 
 /**
  * @param {!Array<string>} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetValidation} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetTest} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetValidation.prototype.setDatasetsList = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetTest.prototype.setDatasetsList = function(value) {
   return jspb.Message.setField(this, 2, value || []);
 };
 
@@ -48197,18 +48197,18 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetValidatio
 /**
  * @param {string} value
  * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetValidation} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetTest} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetValidation.prototype.addDatasets = function(value, opt_index) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetTest.prototype.addDatasets = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 2, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetValidation} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetTest} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetValidation.prototype.clearDatasetsList = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetTest.prototype.clearDatasetsList = function() {
   return this.setDatasetsList([]);
 };
 
@@ -48217,25 +48217,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetValidatio
  * optional bool generated = 3;
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetValidation.prototype.getGenerated = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetTest.prototype.getGenerated = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
 };
 
 
 /**
  * @param {boolean} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetValidation} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetTest} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetValidation.prototype.setGenerated = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetTest.prototype.setGenerated = function(value) {
   return jspb.Message.setField(this, 3, value);
 };
 
 
 /**
  * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetValidation} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetTest} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetValidation.prototype.clearGenerated = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetTest.prototype.clearGenerated = function() {
   return jspb.Message.setField(this, 3, undefined);
 };
 
@@ -48244,7 +48244,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetValidatio
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetValidation.prototype.hasGenerated = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetTest.prototype.hasGenerated = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
@@ -59949,15 +59949,15 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ValidationSpec.protot
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ValidationSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
     multidatasetvalidationsList: jspb.Message.toObjectList(msg.getMultidatasetvalidationsList(),
-    proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetValidation.toObject, includeInstance),
+    proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetTest.toObject, includeInstance),
     datasetvalidationsList: jspb.Message.toObjectList(msg.getDatasetvalidationsList(),
-    proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation.toObject, includeInstance),
+    proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest.toObject, includeInstance),
     multicolumnvalidationsList: jspb.Message.toObjectList(msg.getMulticolumnvalidationsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiColumnValidation.toObject, includeInstance),
     columnvalidationsList: jspb.Message.toObjectList(msg.getColumnvalidationsList(),
-    proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.toObject, includeInstance),
+    proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest.toObject, includeInstance),
     filevalidationsList: jspb.Message.toObjectList(msg.getFilevalidationsList(),
-    proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.toObject, includeInstance)
+    proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -59995,13 +59995,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ValidationSpec.deseri
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetValidation;
-      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetValidation.deserializeBinaryFromReader);
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetTest;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetTest.deserializeBinaryFromReader);
       msg.addMultidatasetvalidations(value);
       break;
     case 2:
-      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation;
-      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation.deserializeBinaryFromReader);
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest.deserializeBinaryFromReader);
       msg.addDatasetvalidations(value);
       break;
     case 3:
@@ -60010,13 +60010,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ValidationSpec.deseri
       msg.addMulticolumnvalidations(value);
       break;
     case 4:
-      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation;
-      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.deserializeBinaryFromReader);
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest.deserializeBinaryFromReader);
       msg.addColumnvalidations(value);
       break;
     case 5:
-      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation;
-      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.deserializeBinaryFromReader);
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest.deserializeBinaryFromReader);
       msg.addFilevalidations(value);
       break;
     default:
@@ -60053,7 +60053,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ValidationSpec.serial
     writer.writeRepeatedMessage(
       1,
       f,
-      proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetValidation.serializeBinaryToWriter
+      proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetTest.serializeBinaryToWriter
     );
   }
   f = message.getDatasetvalidationsList();
@@ -60061,7 +60061,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ValidationSpec.serial
     writer.writeRepeatedMessage(
       2,
       f,
-      proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation.serializeBinaryToWriter
+      proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest.serializeBinaryToWriter
     );
   }
   f = message.getMulticolumnvalidationsList();
@@ -60077,7 +60077,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ValidationSpec.serial
     writer.writeRepeatedMessage(
       4,
       f,
-      proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.serializeBinaryToWriter
+      proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest.serializeBinaryToWriter
     );
   }
   f = message.getFilevalidationsList();
@@ -60085,24 +60085,24 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ValidationSpec.serial
     writer.writeRepeatedMessage(
       5,
       f,
-      proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation.serializeBinaryToWriter
+      proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * repeated MultiDatasetValidation multiDatasetValidations = 1;
- * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetValidation>}
+ * repeated MultiDatasetTest multiDatasetValidations = 1;
+ * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetTest>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ValidationSpec.prototype.getMultidatasetvalidationsList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetValidation>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetValidation, 1));
+  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetTest>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetTest, 1));
 };
 
 
 /**
- * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetValidation>} value
+ * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetTest>} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ValidationSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ValidationSpec.prototype.setMultidatasetvalidationsList = function(value) {
@@ -60111,12 +60111,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ValidationSpec.protot
 
 
 /**
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetValidation=} opt_value
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetTest=} opt_value
  * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetValidation}
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetTest}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ValidationSpec.prototype.addMultidatasetvalidations = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetValidation, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetTest, opt_index);
 };
 
 
@@ -60130,17 +60130,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ValidationSpec.protot
 
 
 /**
- * repeated DatasetValidation datasetValidations = 2;
- * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation>}
+ * repeated DatasetTest datasetValidations = 2;
+ * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ValidationSpec.prototype.getDatasetvalidationsList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation, 2));
+  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest, 2));
 };
 
 
 /**
- * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation>} value
+ * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest>} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ValidationSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ValidationSpec.prototype.setDatasetvalidationsList = function(value) {
@@ -60149,12 +60149,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ValidationSpec.protot
 
 
 /**
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation=} opt_value
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest=} opt_value
  * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation}
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ValidationSpec.prototype.addDatasetvalidations = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetValidation, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTest, opt_index);
 };
 
 
@@ -60206,17 +60206,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ValidationSpec.protot
 
 
 /**
- * repeated ColumnValidation columnValidations = 4;
- * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation>}
+ * repeated ColumnTest columnValidations = 4;
+ * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ValidationSpec.prototype.getColumnvalidationsList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation, 4));
+  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest, 4));
 };
 
 
 /**
- * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation>} value
+ * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest>} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ValidationSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ValidationSpec.prototype.setColumnvalidationsList = function(value) {
@@ -60225,12 +60225,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ValidationSpec.protot
 
 
 /**
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation=} opt_value
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest=} opt_value
  * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation}
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ValidationSpec.prototype.addColumnvalidations = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnTest, opt_index);
 };
 
 
@@ -60244,17 +60244,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ValidationSpec.protot
 
 
 /**
- * repeated FileValidation fileValidations = 5;
- * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation>}
+ * repeated FileTest fileValidations = 5;
+ * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ValidationSpec.prototype.getFilevalidationsList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation, 5));
+  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest, 5));
 };
 
 
 /**
- * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation>} value
+ * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest>} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ValidationSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ValidationSpec.prototype.setFilevalidationsList = function(value) {
@@ -60263,12 +60263,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ValidationSpec.protot
 
 
 /**
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation=} opt_value
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest=} opt_value
  * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation}
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ValidationSpec.prototype.addFilevalidations = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileTest, opt_index);
 };
 
 
