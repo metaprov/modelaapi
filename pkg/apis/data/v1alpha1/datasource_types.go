@@ -82,8 +82,8 @@ const (
 
 type MultiColumnTestName string
 
-// MultiColumnValidation specifies a validation rule that encompasses multiple columns
-type MultiColumnValidation struct {
+// MultiColumnTest specifies a validation rule that encompasses multiple columns
+type MultiColumnTest struct {
 	// The type of validation rule
 	// +kubebuilder:validation:Optional
 	Type *MultiColumnTestName `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
@@ -430,22 +430,22 @@ type ExcelSheetArea struct {
 	ToRow *int32 `json:"toRow,omitempty" protobuf:"varint,5,opt,name=toRow"`
 }
 
-type ValidationSpec struct {
+type TestSpec struct {
 	// MultiDatasetTest contains validations for multiple datasets
 	// +kubebuilder:validation:Optional
-	MultiDatasetValidations []MultiDatasetTest `json:"multiDatasetValidations,omitempty" protobuf:"bytes,1,rep,name=multiDatasetValidations"`
-	// DatasetValidations contains validations for the whole dataset
+	MultiDatasetTests []MultiDatasetTest `json:"multiDatasetTests,omitempty" protobuf:"bytes,1,rep,name=multiDatasetTests"`
+	// DatasetTests contains validations for the whole dataset
 	// +kubebuilder:validation:Optional
-	DatasetValidations []DatasetTest `json:"datasetValidations,omitempty" protobuf:"bytes,2,rep,name=datasetValidations"`
-	// MultiColumnValidations defines validations for multiple columns from the dataset
+	DatasetTests []DatasetTest `json:"datasetTests,omitempty" protobuf:"bytes,2,rep,name=datasetTests"`
+	// MultiColumnTests defines validations for multiple columns from the dataset
 	// +kubebuilder:validation:Optional
-	MultiColumnValidations []MultiColumnValidation `json:"multiColumnValidations,omitempty" protobuf:"bytes,3,rep,name=multiColumnValidations"`
-	// ColumnValidations defines assertions for columns from the dataset
+	MultiColumnTests []MultiColumnTest `json:"multiColumnTests,omitempty" protobuf:"bytes,3,rep,name=multiColumnTests"`
+	// ColumnTests defines assertions for columns from the dataset
 	// +kubebuilder:validation:Optional
-	ColumnValidations []ColumnTest `json:"columnValidations,omitempty" protobuf:"bytes,4,rep,name=columnValidations"`
-	// FileValidations defines assertions for the contents of the data file
+	ColumnTests []ColumnTest `json:"columnTests,omitempty" protobuf:"bytes,4,rep,name=columnTests"`
+	// FileTests defines assertions for the contents of the data file
 	// +kubebuilder:validation:Optional
-	FileValidations []FileTest `json:"fileValidations,omitempty" protobuf:"bytes,5,rep,name=fileValidations"`
+	FileTests []FileTest `json:"fileTests,omitempty" protobuf:"bytes,5,rep,name=fileTests"`
 }
 
 // Schema defines the column-level format and validation rules for data associated with a DataSource
@@ -459,7 +459,7 @@ type Schema struct {
 	// The collection of columns and their attributes
 	Columns []Column `json:"columns,omitempty" protobuf:"bytes,3,rep,name=columns"`
 	// The specification for validation rules which will be performed on new Datasets
-	Validation ValidationSpec `json:"validation,omitempty" protobuf:"bytes,4,opt,name=validation"`
+	Tests TestSpec `json:"tests,omitempty" protobuf:"bytes,4,opt,name=tests"`
 }
 
 type TimeSeriesSchema struct {

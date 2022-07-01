@@ -4635,47 +4635,47 @@ export namespace MetricSpec {
   }
 }
 
-export class MultiColumnValidation extends jspb.Message {
+export class MultiColumnTest extends jspb.Message {
   getType(): string;
-  setType(value: string): MultiColumnValidation;
+  setType(value: string): MultiColumnTest;
 
   getColumnsList(): Array<string>;
-  setColumnsList(value: Array<string>): MultiColumnValidation;
-  clearColumnsList(): MultiColumnValidation;
-  addColumns(value: string, index?: number): MultiColumnValidation;
+  setColumnsList(value: Array<string>): MultiColumnTest;
+  clearColumnsList(): MultiColumnTest;
+  addColumns(value: string, index?: number): MultiColumnTest;
 
   getValue(): number;
-  setValue(value: number): MultiColumnValidation;
+  setValue(value: number): MultiColumnTest;
 
   getMin(): number;
-  setMin(value: number): MultiColumnValidation;
+  setMin(value: number): MultiColumnTest;
 
   getMax(): number;
-  setMax(value: number): MultiColumnValidation;
+  setMax(value: number): MultiColumnTest;
 
   getValuesetList(): Array<string>;
-  setValuesetList(value: Array<string>): MultiColumnValidation;
-  clearValuesetList(): MultiColumnValidation;
-  addValueset(value: string, index?: number): MultiColumnValidation;
+  setValuesetList(value: Array<string>): MultiColumnTest;
+  clearValuesetList(): MultiColumnTest;
+  addValueset(value: string, index?: number): MultiColumnTest;
 
   getStrictmin(): boolean;
-  setStrictmin(value: boolean): MultiColumnValidation;
+  setStrictmin(value: boolean): MultiColumnTest;
 
   getStrictmax(): boolean;
-  setStrictmax(value: boolean): MultiColumnValidation;
+  setStrictmax(value: boolean): MultiColumnTest;
 
   getGenerated(): boolean;
-  setGenerated(value: boolean): MultiColumnValidation;
+  setGenerated(value: boolean): MultiColumnTest;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): MultiColumnValidation.AsObject;
-  static toObject(includeInstance: boolean, msg: MultiColumnValidation): MultiColumnValidation.AsObject;
-  static serializeBinaryToWriter(message: MultiColumnValidation, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): MultiColumnValidation;
-  static deserializeBinaryFromReader(message: MultiColumnValidation, reader: jspb.BinaryReader): MultiColumnValidation;
+  toObject(includeInstance?: boolean): MultiColumnTest.AsObject;
+  static toObject(includeInstance: boolean, msg: MultiColumnTest): MultiColumnTest.AsObject;
+  static serializeBinaryToWriter(message: MultiColumnTest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): MultiColumnTest;
+  static deserializeBinaryFromReader(message: MultiColumnTest, reader: jspb.BinaryReader): MultiColumnTest;
 }
 
-export namespace MultiColumnValidation {
+export namespace MultiColumnTest {
   export type AsObject = {
     type: string,
     columnsList: Array<string>,
@@ -5473,10 +5473,10 @@ export class Schema extends jspb.Message {
   clearColumnsList(): Schema;
   addColumns(value?: Column, index?: number): Column;
 
-  getValidation(): ValidationSpec | undefined;
-  setValidation(value?: ValidationSpec): Schema;
-  hasValidation(): boolean;
-  clearValidation(): Schema;
+  getTests(): TestSpec | undefined;
+  setTests(value?: TestSpec): Schema;
+  hasTests(): boolean;
+  clearTests(): Schema;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Schema.AsObject;
@@ -5491,7 +5491,7 @@ export namespace Schema {
     timeseriesschema?: TimeSeriesSchema.AsObject,
     recommendationschema?: RecommendationSchema.AsObject,
     columnsList: Array<Column.AsObject>,
-    validation?: ValidationSpec.AsObject,
+    tests?: TestSpec.AsObject,
   }
 }
 
@@ -5981,6 +5981,50 @@ export namespace TableSpec {
   }
 }
 
+export class TestSpec extends jspb.Message {
+  getMultidatasettestsList(): Array<MultiDatasetTest>;
+  setMultidatasettestsList(value: Array<MultiDatasetTest>): TestSpec;
+  clearMultidatasettestsList(): TestSpec;
+  addMultidatasettests(value?: MultiDatasetTest, index?: number): MultiDatasetTest;
+
+  getDatasettestsList(): Array<DatasetTest>;
+  setDatasettestsList(value: Array<DatasetTest>): TestSpec;
+  clearDatasettestsList(): TestSpec;
+  addDatasettests(value?: DatasetTest, index?: number): DatasetTest;
+
+  getMulticolumntestsList(): Array<MultiColumnTest>;
+  setMulticolumntestsList(value: Array<MultiColumnTest>): TestSpec;
+  clearMulticolumntestsList(): TestSpec;
+  addMulticolumntests(value?: MultiColumnTest, index?: number): MultiColumnTest;
+
+  getColumntestsList(): Array<ColumnTest>;
+  setColumntestsList(value: Array<ColumnTest>): TestSpec;
+  clearColumntestsList(): TestSpec;
+  addColumntests(value?: ColumnTest, index?: number): ColumnTest;
+
+  getFiletestsList(): Array<FileTest>;
+  setFiletestsList(value: Array<FileTest>): TestSpec;
+  clearFiletestsList(): TestSpec;
+  addFiletests(value?: FileTest, index?: number): FileTest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TestSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: TestSpec): TestSpec.AsObject;
+  static serializeBinaryToWriter(message: TestSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TestSpec;
+  static deserializeBinaryFromReader(message: TestSpec, reader: jspb.BinaryReader): TestSpec;
+}
+
+export namespace TestSpec {
+  export type AsObject = {
+    multidatasettestsList: Array<MultiDatasetTest.AsObject>,
+    datasettestsList: Array<DatasetTest.AsObject>,
+    multicolumntestsList: Array<MultiColumnTest.AsObject>,
+    columntestsList: Array<ColumnTest.AsObject>,
+    filetestsList: Array<FileTest.AsObject>,
+  }
+}
+
 export class TimeSeriesSchema extends jspb.Message {
   getFreq(): string;
   setFreq(value: string): TimeSeriesSchema;
@@ -6000,50 +6044,6 @@ export namespace TimeSeriesSchema {
   export type AsObject = {
     freq: string,
     country: string,
-  }
-}
-
-export class ValidationSpec extends jspb.Message {
-  getMultidatasetvalidationsList(): Array<MultiDatasetTest>;
-  setMultidatasetvalidationsList(value: Array<MultiDatasetTest>): ValidationSpec;
-  clearMultidatasetvalidationsList(): ValidationSpec;
-  addMultidatasetvalidations(value?: MultiDatasetTest, index?: number): MultiDatasetTest;
-
-  getDatasetvalidationsList(): Array<DatasetTest>;
-  setDatasetvalidationsList(value: Array<DatasetTest>): ValidationSpec;
-  clearDatasetvalidationsList(): ValidationSpec;
-  addDatasetvalidations(value?: DatasetTest, index?: number): DatasetTest;
-
-  getMulticolumnvalidationsList(): Array<MultiColumnValidation>;
-  setMulticolumnvalidationsList(value: Array<MultiColumnValidation>): ValidationSpec;
-  clearMulticolumnvalidationsList(): ValidationSpec;
-  addMulticolumnvalidations(value?: MultiColumnValidation, index?: number): MultiColumnValidation;
-
-  getColumnvalidationsList(): Array<ColumnTest>;
-  setColumnvalidationsList(value: Array<ColumnTest>): ValidationSpec;
-  clearColumnvalidationsList(): ValidationSpec;
-  addColumnvalidations(value?: ColumnTest, index?: number): ColumnTest;
-
-  getFilevalidationsList(): Array<FileTest>;
-  setFilevalidationsList(value: Array<FileTest>): ValidationSpec;
-  clearFilevalidationsList(): ValidationSpec;
-  addFilevalidations(value?: FileTest, index?: number): FileTest;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ValidationSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: ValidationSpec): ValidationSpec.AsObject;
-  static serializeBinaryToWriter(message: ValidationSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ValidationSpec;
-  static deserializeBinaryFromReader(message: ValidationSpec, reader: jspb.BinaryReader): ValidationSpec;
-}
-
-export namespace ValidationSpec {
-  export type AsObject = {
-    multidatasetvalidationsList: Array<MultiDatasetTest.AsObject>,
-    datasetvalidationsList: Array<DatasetTest.AsObject>,
-    multicolumnvalidationsList: Array<MultiColumnValidation.AsObject>,
-    columnvalidationsList: Array<ColumnTest.AsObject>,
-    filevalidationsList: Array<FileTest.AsObject>,
   }
 }
 
