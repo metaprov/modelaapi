@@ -127,7 +127,6 @@ func (dataset *Dataset) Populate(name string) {
 	dataset.Spec = DatasetSpec{
 		VersionName:    util.StrPtr("iris-0.0.1"),
 		DataSourceName: util.StrPtr("iris-source"),
-		Labeled:        nil,
 	}
 }
 
