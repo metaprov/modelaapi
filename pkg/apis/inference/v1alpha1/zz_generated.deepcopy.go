@@ -740,8 +740,8 @@ func (in *ForwardCurtainSpec) DeepCopyInto(out *ForwardCurtainSpec) {
 		*out = new(bool)
 		**out = **in
 	}
-	if in.ForwardCurtainRef != nil {
-		in, out := &in.ForwardCurtainRef, &out.ForwardCurtainRef
+	if in.CurtainRef != nil {
+		in, out := &in.CurtainRef, &out.CurtainRef
 		*out = new(v1.ObjectReference)
 		**out = **in
 	}

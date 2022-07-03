@@ -2406,6 +2406,29 @@ func (in *FeatureHistogramSpec) DeepCopyInto(out *FeatureHistogramSpec) {
 		*out = new(v1.ObjectReference)
 		**out = **in
 	}
+	if in.Training != nil {
+		in, out := &in.Training, &out.Training
+		*out = new(bool)
+		**out = **in
+	}
+	if in.Target != nil {
+		in, out := &in.Target, &out.Target
+		*out = new(bool)
+		**out = **in
+	}
+	if in.Active != nil {
+		in, out := &in.Active, &out.Active
+		*out = new(bool)
+		**out = **in
+	}
+	if in.Start != nil {
+		in, out := &in.Start, &out.Start
+		*out = (*in).DeepCopy()
+	}
+	if in.End != nil {
+		in, out := &in.End, &out.End
+		*out = (*in).DeepCopy()
+	}
 	out.BaseFeatureHistogram = in.BaseFeatureHistogram
 }
 
