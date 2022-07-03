@@ -88,6 +88,8 @@ type DataServiceClient interface {
 	GetTables(ctx context.Context, in *DsGetTablesRequest, opts ...grpc.CallOption) (*DsGetTablesResponse, error)
 	ExecuteSql(ctx context.Context, in *DsExecuteSqlRequest, opts ...grpc.CallOption) (*DsExecuteSqlResponse, error)
 	Snapshot(ctx context.Context, in *DsSnapshotRequest, opts ...grpc.CallOption) (*DsSnapshotResponse, error)
+	DetectDrift(ctx context.Context, in *DsDetectDriftRequest, opts ...grpc.CallOption) (*DsDetectDriftResponse, error)
+	EvalPrediction(ctx context.Context, in *DsEvalPredictionRequest, opts ...grpc.CallOption) (*DsEvalPredictionResponse, error)
 }
 
 type dataServiceClient struct {
@@ -458,6 +460,24 @@ func (c *dataServiceClient) Snapshot(ctx context.Context, in *DsSnapshotRequest,
 	return out, nil
 }
 
+func (c *dataServiceClient) DetectDrift(ctx context.Context, in *DsDetectDriftRequest, opts ...grpc.CallOption) (*DsDetectDriftResponse, error) {
+	out := new(DsDetectDriftResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/DetectDrift", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dataServiceClient) EvalPrediction(ctx context.Context, in *DsEvalPredictionRequest, opts ...grpc.CallOption) (*DsEvalPredictionResponse, error) {
+	out := new(DsEvalPredictionResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/EvalPrediction", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // DataServiceServer is the server API for DataService service.
 // All implementations must embed UnimplementedDataServiceServer
 // for forward compatibility
@@ -528,6 +548,8 @@ type DataServiceServer interface {
 	GetTables(context.Context, *DsGetTablesRequest) (*DsGetTablesResponse, error)
 	ExecuteSql(context.Context, *DsExecuteSqlRequest) (*DsExecuteSqlResponse, error)
 	Snapshot(context.Context, *DsSnapshotRequest) (*DsSnapshotResponse, error)
+	DetectDrift(context.Context, *DsDetectDriftRequest) (*DsDetectDriftResponse, error)
+	EvalPrediction(context.Context, *DsEvalPredictionRequest) (*DsEvalPredictionResponse, error)
 	mustEmbedUnimplementedDataServiceServer()
 }
 
@@ -654,6 +676,12 @@ func (UnimplementedDataServiceServer) ExecuteSql(context.Context, *DsExecuteSqlR
 }
 func (UnimplementedDataServiceServer) Snapshot(context.Context, *DsSnapshotRequest) (*DsSnapshotResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Snapshot not implemented")
+}
+func (UnimplementedDataServiceServer) DetectDrift(context.Context, *DsDetectDriftRequest) (*DsDetectDriftResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DetectDrift not implemented")
+}
+func (UnimplementedDataServiceServer) EvalPrediction(context.Context, *DsEvalPredictionRequest) (*DsEvalPredictionResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method EvalPrediction not implemented")
 }
 func (UnimplementedDataServiceServer) mustEmbedUnimplementedDataServiceServer() {}
 
@@ -1388,6 +1416,42 @@ func _DataService_Snapshot_Handler(srv interface{}, ctx context.Context, dec fun
 	return interceptor(ctx, in, info, handler)
 }
 
+func _DataService_DetectDrift_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DsDetectDriftRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DataServiceServer).DetectDrift(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/DetectDrift",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DataServiceServer).DetectDrift(ctx, req.(*DsDetectDriftRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DataService_EvalPrediction_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DsEvalPredictionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DataServiceServer).EvalPrediction(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/EvalPrediction",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DataServiceServer).EvalPrediction(ctx, req.(*DsEvalPredictionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // DataService_ServiceDesc is the grpc.ServiceDesc for DataService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -1554,6 +1618,14 @@ var DataService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "Snapshot",
 			Handler:    _DataService_Snapshot_Handler,
+		},
+		{
+			MethodName: "DetectDrift",
+			Handler:    _DataService_DetectDrift_Handler,
+		},
+		{
+			MethodName: "EvalPrediction",
+			Handler:    _DataService_EvalPrediction_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -1755,5 +1755,91 @@ export class DataServiceClient {
     this.methodInfoSnapshot);
   }
 
+  methodInfoDetectDrift = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.data.v1.DataService/DetectDrift',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.DsDetectDriftRequest,
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.DsDetectDriftResponse,
+    (request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsDetectDriftRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.DsDetectDriftResponse.deserializeBinary
+  );
+
+  detectDrift(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsDetectDriftRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_data_v1_data_pb.DsDetectDriftResponse>;
+
+  detectDrift(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsDetectDriftRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsDetectDriftResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_data_v1_data_pb.DsDetectDriftResponse>;
+
+  detectDrift(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsDetectDriftRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsDetectDriftResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.data.v1.DataService/DetectDrift',
+        request,
+        metadata || {},
+        this.methodInfoDetectDrift,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.data.v1.DataService/DetectDrift',
+    request,
+    metadata || {},
+    this.methodInfoDetectDrift);
+  }
+
+  methodInfoEvalPrediction = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.data.v1.DataService/EvalPrediction',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.DsEvalPredictionRequest,
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.DsEvalPredictionResponse,
+    (request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsEvalPredictionRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.DsEvalPredictionResponse.deserializeBinary
+  );
+
+  evalPrediction(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsEvalPredictionRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_data_v1_data_pb.DsEvalPredictionResponse>;
+
+  evalPrediction(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsEvalPredictionRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsEvalPredictionResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_data_v1_data_pb.DsEvalPredictionResponse>;
+
+  evalPrediction(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsEvalPredictionRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsEvalPredictionResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.data.v1.DataService/EvalPrediction',
+        request,
+        metadata || {},
+        this.methodInfoEvalPrediction,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.data.v1.DataService/EvalPrediction',
+    request,
+    metadata || {},
+    this.methodInfoEvalPrediction);
+  }
+
 }
 

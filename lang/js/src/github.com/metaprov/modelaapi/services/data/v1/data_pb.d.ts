@@ -857,6 +857,192 @@ export namespace DsMergeForecastFileResponse {
   }
 }
 
+export class DsEvalPredictionRequest extends jspb.Message {
+  getProduct(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct | undefined;
+  setProduct(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): DsEvalPredictionRequest;
+  hasProduct(): boolean;
+  clearProduct(): DsEvalPredictionRequest;
+
+  getVersion(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion | undefined;
+  setVersion(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion): DsEvalPredictionRequest;
+  hasVersion(): boolean;
+  clearVersion(): DsEvalPredictionRequest;
+
+  getDatasource(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource | undefined;
+  setDatasource(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource): DsEvalPredictionRequest;
+  hasDatasource(): boolean;
+  clearDatasource(): DsEvalPredictionRequest;
+
+  getPredictionsdataset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
+  setPredictionsdataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): DsEvalPredictionRequest;
+  hasPredictionsdataset(): boolean;
+  clearPredictionsdataset(): DsEvalPredictionRequest;
+
+  getStudy(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study | undefined;
+  setStudy(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study): DsEvalPredictionRequest;
+  hasStudy(): boolean;
+  clearStudy(): DsEvalPredictionRequest;
+
+  getModel(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model | undefined;
+  setModel(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model): DsEvalPredictionRequest;
+  hasModel(): boolean;
+  clearModel(): DsEvalPredictionRequest;
+
+  getConnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setConnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): DsEvalPredictionRequest;
+  hasConnection(): boolean;
+  clearConnection(): DsEvalPredictionRequest;
+
+  getBucket(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
+  setBucket(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): DsEvalPredictionRequest;
+  hasBucket(): boolean;
+  clearBucket(): DsEvalPredictionRequest;
+
+  getSecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearSecretMap(): DsEvalPredictionRequest;
+
+  getGroundtruthdataset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
+  setGroundtruthdataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): DsEvalPredictionRequest;
+  hasGroundtruthdataset(): boolean;
+  clearGroundtruthdataset(): DsEvalPredictionRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DsEvalPredictionRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DsEvalPredictionRequest): DsEvalPredictionRequest.AsObject;
+  static serializeBinaryToWriter(message: DsEvalPredictionRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DsEvalPredictionRequest;
+  static deserializeBinaryFromReader(message: DsEvalPredictionRequest, reader: jspb.BinaryReader): DsEvalPredictionRequest;
+}
+
+export namespace DsEvalPredictionRequest {
+  export type AsObject = {
+    product?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
+    version?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.AsObject,
+    datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
+    predictionsdataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
+    study?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
+    model?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject,
+    connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
+    secretMap: Array<[string, Uint8Array | string]>,
+    groundtruthdataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
+  }
+}
+
+export class DsEvalPredictionResponse extends jspb.Message {
+  getResultsMap(): jspb.Map<string, number>;
+  clearResultsMap(): DsEvalPredictionResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DsEvalPredictionResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: DsEvalPredictionResponse): DsEvalPredictionResponse.AsObject;
+  static serializeBinaryToWriter(message: DsEvalPredictionResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DsEvalPredictionResponse;
+  static deserializeBinaryFromReader(message: DsEvalPredictionResponse, reader: jspb.BinaryReader): DsEvalPredictionResponse;
+}
+
+export namespace DsEvalPredictionResponse {
+  export type AsObject = {
+    resultsMap: Array<[string, number]>,
+  }
+}
+
+export class DsDetectDriftRequest extends jspb.Message {
+  getProduct(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct | undefined;
+  setProduct(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): DsDetectDriftRequest;
+  hasProduct(): boolean;
+  clearProduct(): DsDetectDriftRequest;
+
+  getVersion(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion | undefined;
+  setVersion(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion): DsDetectDriftRequest;
+  hasVersion(): boolean;
+  clearVersion(): DsDetectDriftRequest;
+
+  getDatasource(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource | undefined;
+  setDatasource(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource): DsDetectDriftRequest;
+  hasDatasource(): boolean;
+  clearDatasource(): DsDetectDriftRequest;
+
+  getDataset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
+  setDataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): DsDetectDriftRequest;
+  hasDataset(): boolean;
+  clearDataset(): DsDetectDriftRequest;
+
+  getStudy(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study | undefined;
+  setStudy(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study): DsDetectDriftRequest;
+  hasStudy(): boolean;
+  clearStudy(): DsDetectDriftRequest;
+
+  getModel(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model | undefined;
+  setModel(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model): DsDetectDriftRequest;
+  hasModel(): boolean;
+  clearModel(): DsDetectDriftRequest;
+
+  getConnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setConnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): DsDetectDriftRequest;
+  hasConnection(): boolean;
+  clearConnection(): DsDetectDriftRequest;
+
+  getBucket(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
+  setBucket(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): DsDetectDriftRequest;
+  hasBucket(): boolean;
+  clearBucket(): DsDetectDriftRequest;
+
+  getSecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearSecretMap(): DsDetectDriftRequest;
+
+  getTraininghistogramList(): Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram>;
+  setTraininghistogramList(value: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram>): DsDetectDriftRequest;
+  clearTraininghistogramList(): DsDetectDriftRequest;
+  addTraininghistogram(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram, index?: number): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram;
+
+  getPredictionhistogramList(): Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram>;
+  setPredictionhistogramList(value: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram>): DsDetectDriftRequest;
+  clearPredictionhistogramList(): DsDetectDriftRequest;
+  addPredictionhistogram(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram, index?: number): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DsDetectDriftRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DsDetectDriftRequest): DsDetectDriftRequest.AsObject;
+  static serializeBinaryToWriter(message: DsDetectDriftRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DsDetectDriftRequest;
+  static deserializeBinaryFromReader(message: DsDetectDriftRequest, reader: jspb.BinaryReader): DsDetectDriftRequest;
+}
+
+export namespace DsDetectDriftRequest {
+  export type AsObject = {
+    product?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
+    version?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.AsObject,
+    datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
+    dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
+    study?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
+    model?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject,
+    connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
+    secretMap: Array<[string, Uint8Array | string]>,
+    traininghistogramList: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.AsObject>,
+    predictionhistogramList: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.AsObject>,
+  }
+}
+
+export class DsDetectDriftResponse extends jspb.Message {
+  getResultsMap(): jspb.Map<string, number>;
+  clearResultsMap(): DsDetectDriftResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DsDetectDriftResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: DsDetectDriftResponse): DsDetectDriftResponse.AsObject;
+  static serializeBinaryToWriter(message: DsDetectDriftResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DsDetectDriftResponse;
+  static deserializeBinaryFromReader(message: DsDetectDriftResponse, reader: jspb.BinaryReader): DsDetectDriftResponse;
+}
+
+export namespace DsDetectDriftResponse {
+  export type AsObject = {
+    resultsMap: Array<[string, number]>,
+  }
+}
+
 export class DsCreateStudyProfileRequest extends jspb.Message {
   getProduct(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct | undefined;
   setProduct(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): DsCreateStudyProfileRequest;

@@ -198,6 +198,48 @@ message DsMergeForecastFileResponse {
     string uri = 1;
 }
 
+///////////////////////////////// Merge Forecast Files
+
+// Evaludate the prediction against ground truth
+message DsEvalPredictionRequest {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct product = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion version = 2;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 3;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset predictionsDataset = 4;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study study = 5;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model model = 6;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection = 8;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 9;
+    map<string,bytes> secret = 10;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset groundTruthDataset = 11;
+}
+
+message DsEvalPredictionResponse {
+    map<string,float> results = 1;
+}
+
+// Evaludate the prediction against ground truth
+message DsDetectDriftRequest {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct product = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion version = 2;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 3;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset dataset = 4;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study study = 5;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model model = 6;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection = 8;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 9;
+    map<string,bytes> secret = 10;
+    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram trainingHistogram = 11;
+    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram predictionHistogram = 12;
+}
+
+message DsDetectDriftResponse {
+    // For each histogram answer the value of the drift parameter.
+    map<string,float> results = 1;
+}
+
+
+
 
 ///////////////////////////////////  Study profile
 
@@ -681,4 +723,6 @@ service DataService {
     rpc GetTables(DsGetTablesRequest)   returns (DsGetTablesResponse) {}
     rpc ExecuteSql(DsExecuteSqlRequest) returns (DsExecuteSqlResponse) {}
     rpc Snapshot(DsSnapshotRequest) returns (DsSnapshotResponse) {}
+    rpc DetectDrift(DsDetectDriftRequest) returns (DsDetectDriftResponse) {}
+    rpc EvalPrediction(DsEvalPredictionRequest) returns (DsEvalPredictionResponse) {}
 }
