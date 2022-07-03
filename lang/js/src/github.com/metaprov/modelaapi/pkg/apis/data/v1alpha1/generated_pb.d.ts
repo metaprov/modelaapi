@@ -2941,6 +2941,25 @@ export class FeatureHistogramSpec extends jspb.Message {
   hasDataset(): boolean;
   clearDataset(): FeatureHistogramSpec;
 
+  getTraining(): boolean;
+  setTraining(value: boolean): FeatureHistogramSpec;
+
+  getTarget(): boolean;
+  setTarget(value: boolean): FeatureHistogramSpec;
+
+  getActive(): boolean;
+  setActive(value: boolean): FeatureHistogramSpec;
+
+  getStart(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setStart(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): FeatureHistogramSpec;
+  hasStart(): boolean;
+  clearStart(): FeatureHistogramSpec;
+
+  getEnd(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setEnd(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): FeatureHistogramSpec;
+  hasEnd(): boolean;
+  clearEnd(): FeatureHistogramSpec;
+
   getBasefeaturehistogram(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setBasefeaturehistogram(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): FeatureHistogramSpec;
   hasBasefeaturehistogram(): boolean;
@@ -2961,6 +2980,11 @@ export namespace FeatureHistogramSpec {
     description: string,
     column: string,
     dataset?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    training: boolean,
+    target: boolean,
+    active: boolean,
+    start?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    end?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     basefeaturehistogram?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
   }
 }

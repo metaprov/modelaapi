@@ -66,6 +66,11 @@ spec:
           spec:
             description: FeatureHistogramSpec contain the desired state of a FeatureHistogram
             properties:
+              active:
+                default: false
+                description: If true, this is an active feature histogram. This feature
+                  histogram is being update
+                type: boolean
               baseFeatureHistogram:
                 description: The histogram to comapre to for data drift calc
                 properties:
@@ -149,10 +154,28 @@ spec:
                 description: Comments is a description of the feature
                 maxLength: 512
                 type: string
+              end:
+                description: The end time of the feature histogram. If reached, the
+                  predictor will start a new feature histogram
+                format: date-time
+                type: string
               owner:
                 default: no-one
                 description: The feature owner
                 type: string
+              start:
+                description: The start time of this feature histogram. For training
+                  dataset histogram this is set to the creation time of the dataset
+                format: date-time
+                type: string
+              target:
+                default: false
+                description: If true, this is a feature histogram of the target column
+                type: boolean
+              training:
+                default: false
+                description: If true, this is a training dataset feature histogram
+                type: boolean
               versionName:
                 default: ""
                 description: The product version for the feature.

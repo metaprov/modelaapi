@@ -2140,9 +2140,31 @@ message FeatureHistogramSpec {
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference dataset = 6;
 
+  // If true, this is a training dataset feature histogram
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool training = 7;
+
+  // If true, this is a feature histogram of the target column
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool target = 8;
+
+  // If true, this is an active feature histogram. This feature histogram is being update
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool active = 9;
+
+  // The start time of this feature histogram. For training dataset histogram this is set to the creation
+  // time of the dataset
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time start = 10;
+
+  // The end time of the feature histogram. If reached, the predictor will start a new feature histogram
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time end = 11;
+
   // The histogram to comapre to for data drift calc
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference baseFeatureHistogram = 7;
+  optional k8s.io.api.core.v1.ObjectReference baseFeatureHistogram = 12;
 }
 
 // FeatureHistogramStatus defines the observed state of FeatureHistogram

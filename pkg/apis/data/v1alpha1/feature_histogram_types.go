@@ -86,9 +86,26 @@ type FeatureHistogramSpec struct {
 	// A reference to the dataset that contain the column with this histogram
 	// +kubebuilder:validation:Optional
 	Dataset *v1.ObjectReference `json:"dataset,omitempty" protobuf:"bytes,6,opt,name=dataset"`
+	// If true, this is a training dataset feature histogram
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Training *bool `json:"training,omitempty" protobuf:"varint,7,opt,name=training"`
+	// If true, this is a feature histogram of the target column
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Target *bool `json:"target,omitempty" protobuf:"varint,8,opt,name=target"`
+	// If true, this is an active feature histogram. This feature histogram is being update
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Active *bool `json:"active,omitempty" protobuf:"varint,9,opt,name=active"`
+	// The start time of this feature histogram. For training dataset histogram this is set to the creation
+	// time of the dataset
+	Start *metav1.Time `json:"start,omitempty" protobuf:"bytes,10,opt,name=start"`
+	// The end time of the feature histogram. If reached, the predictor will start a new feature histogram
+	End *metav1.Time `json:"end,omitempty" protobuf:"bytes,11,opt,name=end"`
 	// The histogram to comapre to for data drift calc
 	// +kubebuilder:validation:Optional
-	BaseFeatureHistogram v1.ObjectReference `json:"baseFeatureHistogram,omitempty" protobuf:"bytes,7,opt,name=baseFeatureHistogram"`
+	BaseFeatureHistogram v1.ObjectReference `json:"baseFeatureHistogram,omitempty" protobuf:"bytes,12,opt,name=baseFeatureHistogram"`
 }
 
 // FeatureHistogramStatus defines the observed state of FeatureHistogram
