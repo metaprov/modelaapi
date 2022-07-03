@@ -113,7 +113,7 @@ message BackwardCurtainSpec {
 
   // The forward curtain receives prediction requests before the prediction (currently unimplemented)
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference forwardCurtainRef = 2;
+  optional k8s.io.api.core.v1.ObjectReference curtainRef = 2;
 
   // For backward curtain is the confidence low
   // +kubebuilder:validation:Optional
@@ -531,7 +531,7 @@ message ForwardCurtainSpec {
 
   // The forward curtain receives prediction requests before the prediction (currently unimplemented)
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference forwardCurtainRef = 2;
+  optional k8s.io.api.core.v1.ObjectReference curtainRef = 2;
 
   // Percent of request that are sent to the foreward curtain.
   // +kubebuilder:default:=0

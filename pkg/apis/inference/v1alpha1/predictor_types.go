@@ -248,7 +248,7 @@ type ForwardCurtainSpec struct {
 	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
 	// The forward curtain receives prediction requests before the prediction (currently unimplemented)
 	// +kubebuilder:validation:Optional
-	ForwardCurtainRef *v1.ObjectReference `json:"forwardCurtainRef,omitempty" protobuf:"bytes,2,opt,name=forwardCurtainRef"`
+	CurtainRef *v1.ObjectReference `json:"curtainRef,omitempty" protobuf:"bytes,2,opt,name=curtainRef"`
 	// Percent of request that are sent to the foreward curtain.
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
@@ -261,7 +261,7 @@ type BackwardCurtainSpec struct {
 	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
 	// The forward curtain receives prediction requests before the prediction (currently unimplemented)
 	// +kubebuilder:validation:Optional
-	CurtainRef *v1.ObjectReference `json:"forwardCurtainRef,omitempty" protobuf:"bytes,2,opt,name=forwardCurtainRef"`
+	CurtainRef *v1.ObjectReference `json:"curtainRef,omitempty" protobuf:"bytes,2,opt,name=curtainRef"`
 	// For backward curtain is the confidence low
 	// +kubebuilder:validation:Optional
 	ConfidenceLow *float64 `json:"confidenceLow,omitempty" protobuf:"bytes,4,opt,name=confidenceLow"`

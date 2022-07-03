@@ -300,10 +300,7 @@ spec:
                   confidenceLow:
                     description: For backward curtain is the confidence low
                     type: number
-                  enabled:
-                    default: false
-                    type: boolean
-                  forwardCurtainRef:
+                  curtainRef:
                     description: The forward curtain receives prediction requests
                       before the prediction (currently unimplemented)
                     properties:
@@ -340,6 +337,9 @@ spec:
                         description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                         type: string
                     type: object
+                  enabled:
+                    default: false
+                    type: boolean
                 type: object
               cache:
                 description: Cache specifies the configuration of the prediction cache
@@ -496,10 +496,7 @@ spec:
               forwardCurtain:
                 description: Forward curtain
                 properties:
-                  enabled:
-                    default: false
-                    type: boolean
-                  forwardCurtainRef:
+                  curtainRef:
                     description: The forward curtain receives prediction requests
                       before the prediction (currently unimplemented)
                     properties:
@@ -536,6 +533,9 @@ spec:
                         description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                         type: string
                     type: object
+                  enabled:
+                    default: false
+                    type: boolean
                   percent:
                     default: 0
                     description: Percent of request that are sent to the foreward

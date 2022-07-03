@@ -91,10 +91,10 @@ export class BackwardCurtainSpec extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): BackwardCurtainSpec;
 
-  getForwardcurtainref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setForwardcurtainref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): BackwardCurtainSpec;
-  hasForwardcurtainref(): boolean;
-  clearForwardcurtainref(): BackwardCurtainSpec;
+  getCurtainref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setCurtainref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): BackwardCurtainSpec;
+  hasCurtainref(): boolean;
+  clearCurtainref(): BackwardCurtainSpec;
 
   getConfidencelow(): number;
   setConfidencelow(value: number): BackwardCurtainSpec;
@@ -113,7 +113,7 @@ export class BackwardCurtainSpec extends jspb.Message {
 export namespace BackwardCurtainSpec {
   export type AsObject = {
     enabled: boolean,
-    forwardcurtainref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    curtainref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     confidencelow: number,
     confidencehigh: number,
   }
@@ -811,10 +811,10 @@ export class ForwardCurtainSpec extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): ForwardCurtainSpec;
 
-  getForwardcurtainref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setForwardcurtainref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ForwardCurtainSpec;
-  hasForwardcurtainref(): boolean;
-  clearForwardcurtainref(): ForwardCurtainSpec;
+  getCurtainref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setCurtainref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ForwardCurtainSpec;
+  hasCurtainref(): boolean;
+  clearCurtainref(): ForwardCurtainSpec;
 
   getPercent(): number;
   setPercent(value: number): ForwardCurtainSpec;
@@ -830,7 +830,7 @@ export class ForwardCurtainSpec extends jspb.Message {
 export namespace ForwardCurtainSpec {
   export type AsObject = {
     enabled: boolean,
-    forwardcurtainref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    curtainref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     percent: number,
   }
 }
