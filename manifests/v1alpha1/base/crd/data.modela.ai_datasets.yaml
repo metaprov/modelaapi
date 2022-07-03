@@ -960,6 +960,16 @@ spec:
                               items:
                                 type: string
                               type: array
+                            invalid:
+                              description: The number of invalid values
+                              format: int32
+                              minimum: 0
+                              type: integer
+                            missing:
+                              description: The number of missing values
+                              format: int32
+                              minimum: 0
+                              type: integer
                             values:
                               description: The set of values per bin
                               items:

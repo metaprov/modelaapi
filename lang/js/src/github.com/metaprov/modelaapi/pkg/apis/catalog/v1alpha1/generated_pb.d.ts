@@ -567,6 +567,12 @@ export class HistogramData extends jspb.Message {
   clearCategoriesList(): HistogramData;
   addCategories(value: string, index?: number): HistogramData;
 
+  getMissing(): number;
+  setMissing(value: number): HistogramData;
+
+  getInvalid(): number;
+  setInvalid(value: number): HistogramData;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): HistogramData.AsObject;
   static toObject(includeInstance: boolean, msg: HistogramData): HistogramData.AsObject;
@@ -580,6 +586,8 @@ export namespace HistogramData {
     binsList: Array<number>,
     valuesList: Array<number>,
     categoriesList: Array<string>,
+    missing: number,
+    invalid: number,
   }
 }
 

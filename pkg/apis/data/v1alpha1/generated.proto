@@ -288,6 +288,26 @@ message Column {
   optional int32 index = 48;
 }
 
+message ColumnDrift {
+  // The name of the column
+  // +kubebuilder:validation:Optional
+  optional string name = 1;
+
+  // Measure of drift for a column
+  // +kubebuilder:validation:Optional
+  repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement metrics = 2;
+}
+
+message ColumnHistogram {
+  // The name of the column
+  // +kubebuilder:validation:Optional
+  optional string name = 1;
+
+  // Measure of drift for a column
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.HistogramData histogram = 2;
+}
+
 // The spec for a column in the row. A column can span multiple grid based columns
 message ColumnSpec {
   // If true this column is an empty spacer
@@ -2142,13 +2162,13 @@ message FeatureHistogramSpec {
   // Type name of the column key, this column is the key column in the entity.
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string column = 5;
+  repeated string columns = 5;
 
-  // A reference to the dataset that contain the column with this histogram
+  // A reference to the dataset or predictor that contain the column with this histogram
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference dataset = 6;
+  optional k8s.io.api.core.v1.ObjectReference sourceRef = 6;
 
-  // If true, this is a training dataset feature histogram
+  // If true, this is a training dataset feature histogram. If false the histogram was generated during serving.
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool training = 7;
@@ -2158,7 +2178,7 @@ message FeatureHistogramSpec {
   // +kubebuilder:validation:Optional
   optional bool target = 8;
 
-  // If true, this is an active feature histogram. This feature histogram is being update
+  // If true, this is an active feature histogram. This feature histogram is being live updated by the predictorlet
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool active = 9;
@@ -2181,29 +2201,21 @@ message FeatureHistogramStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 1;
 
-  // The histogram values
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.HistogramData data = 2;
-
-  // The number of missing values
-  // +kubebuilder:validation:Minimum=0
-  optional int32 missing = 3;
-
-  // The number of invalid values
-  // +kubebuilder:validation:Minimum=0
-  optional int32 invalid = 4;
+  // The histogram values, map from column name to an histogram
+  repeated ColumnHistogram data = 2;
 
   // Last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 5;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 3;
 
-  // The calculation of the drift metrics for this histogram against the reference feature histogram
+  // The calculation of the drift metrics for each column in the histogram
   // +kubebuilder:validation:Optional
-  repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement drift = 6;
+  repeated ColumnDrift drift = 4;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated FeatureHistogramCondition conditions = 7;
+  repeated FeatureHistogramCondition conditions = 5;
 }
 
 // +kubebuilder:object:root=true

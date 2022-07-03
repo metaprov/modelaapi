@@ -273,6 +273,54 @@ export namespace Column {
   }
 }
 
+export class ColumnDrift extends jspb.Message {
+  getName(): string;
+  setName(value: string): ColumnDrift;
+
+  getMetricsList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>;
+  setMetricsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>): ColumnDrift;
+  clearMetricsList(): ColumnDrift;
+  addMetrics(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ColumnDrift.AsObject;
+  static toObject(includeInstance: boolean, msg: ColumnDrift): ColumnDrift.AsObject;
+  static serializeBinaryToWriter(message: ColumnDrift, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ColumnDrift;
+  static deserializeBinaryFromReader(message: ColumnDrift, reader: jspb.BinaryReader): ColumnDrift;
+}
+
+export namespace ColumnDrift {
+  export type AsObject = {
+    name: string,
+    metricsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.AsObject>,
+  }
+}
+
+export class ColumnHistogram extends jspb.Message {
+  getName(): string;
+  setName(value: string): ColumnHistogram;
+
+  getHistogram(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.HistogramData | undefined;
+  setHistogram(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.HistogramData): ColumnHistogram;
+  hasHistogram(): boolean;
+  clearHistogram(): ColumnHistogram;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ColumnHistogram.AsObject;
+  static toObject(includeInstance: boolean, msg: ColumnHistogram): ColumnHistogram.AsObject;
+  static serializeBinaryToWriter(message: ColumnHistogram, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ColumnHistogram;
+  static deserializeBinaryFromReader(message: ColumnHistogram, reader: jspb.BinaryReader): ColumnHistogram;
+}
+
+export namespace ColumnHistogram {
+  export type AsObject = {
+    name: string,
+    histogram?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.HistogramData.AsObject,
+  }
+}
+
 export class ColumnSpec extends jspb.Message {
   getSpacer(): boolean;
   setSpacer(value: boolean): ColumnSpec;
@@ -2943,13 +2991,15 @@ export class FeatureHistogramSpec extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): FeatureHistogramSpec;
 
-  getColumn(): string;
-  setColumn(value: string): FeatureHistogramSpec;
+  getColumnsList(): Array<string>;
+  setColumnsList(value: Array<string>): FeatureHistogramSpec;
+  clearColumnsList(): FeatureHistogramSpec;
+  addColumns(value: string, index?: number): FeatureHistogramSpec;
 
-  getDataset(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setDataset(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): FeatureHistogramSpec;
-  hasDataset(): boolean;
-  clearDataset(): FeatureHistogramSpec;
+  getSourceref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setSourceref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): FeatureHistogramSpec;
+  hasSourceref(): boolean;
+  clearSourceref(): FeatureHistogramSpec;
 
   getTraining(): boolean;
   setTraining(value: boolean): FeatureHistogramSpec;
@@ -2988,8 +3038,8 @@ export namespace FeatureHistogramSpec {
     owner: string,
     versionname: string,
     description: string,
-    column: string,
-    dataset?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    columnsList: Array<string>,
+    sourceref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     training: boolean,
     target: boolean,
     active: boolean,
@@ -3003,26 +3053,20 @@ export class FeatureHistogramStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): FeatureHistogramStatus;
 
-  getData(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.HistogramData | undefined;
-  setData(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.HistogramData): FeatureHistogramStatus;
-  hasData(): boolean;
-  clearData(): FeatureHistogramStatus;
-
-  getMissing(): number;
-  setMissing(value: number): FeatureHistogramStatus;
-
-  getInvalid(): number;
-  setInvalid(value: number): FeatureHistogramStatus;
+  getDataList(): Array<ColumnHistogram>;
+  setDataList(value: Array<ColumnHistogram>): FeatureHistogramStatus;
+  clearDataList(): FeatureHistogramStatus;
+  addData(value?: ColumnHistogram, index?: number): ColumnHistogram;
 
   getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): FeatureHistogramStatus;
   hasLastupdated(): boolean;
   clearLastupdated(): FeatureHistogramStatus;
 
-  getDriftList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>;
-  setDriftList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>): FeatureHistogramStatus;
+  getDriftList(): Array<ColumnDrift>;
+  setDriftList(value: Array<ColumnDrift>): FeatureHistogramStatus;
   clearDriftList(): FeatureHistogramStatus;
-  addDrift(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement;
+  addDrift(value?: ColumnDrift, index?: number): ColumnDrift;
 
   getConditionsList(): Array<FeatureHistogramCondition>;
   setConditionsList(value: Array<FeatureHistogramCondition>): FeatureHistogramStatus;
@@ -3040,11 +3084,9 @@ export class FeatureHistogramStatus extends jspb.Message {
 export namespace FeatureHistogramStatus {
   export type AsObject = {
     observedgeneration: number,
-    data?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.HistogramData.AsObject,
-    missing: number,
-    invalid: number,
+    dataList: Array<ColumnHistogram.AsObject>,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    driftList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.AsObject>,
+    driftList: Array<ColumnDrift.AsObject>,
     conditionsList: Array<FeatureHistogramCondition.AsObject>,
   }
 }

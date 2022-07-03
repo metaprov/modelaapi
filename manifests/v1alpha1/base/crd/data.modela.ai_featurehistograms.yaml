@@ -69,7 +69,7 @@ spec:
               active:
                 default: false
                 description: If true, this is an active feature histogram. This feature
-                  histogram is being update
+                  histogram is being live updated by the predictorlet
                 type: boolean
               baseFeatureHistogram:
                 description: The histogram to comapre to for data drift calc
@@ -107,14 +107,30 @@ spec:
                     description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                     type: string
                 type: object
-              column:
+              columns:
                 default: ""
                 description: Type name of the column key, this column is the key column
                   in the entity.
+                items:
+                  type: string
+                type: array
+              description:
+                default: ""
+                description: Comments is a description of the feature
+                maxLength: 512
                 type: string
-              dataset:
-                description: A reference to the dataset that contain the column with
-                  this histogram
+              end:
+                description: The end time of the feature histogram. If reached, the
+                  predictor will start a new feature histogram
+                format: date-time
+                type: string
+              owner:
+                default: no-one
+                description: The feature owner
+                type: string
+              sourceRef:
+                description: A reference to the dataset or predictor that contain
+                  the column with this histogram
                 properties:
                   apiVersion:
                     description: API version of the referent.
@@ -149,20 +165,6 @@ spec:
                     description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                     type: string
                 type: object
-              description:
-                default: ""
-                description: Comments is a description of the feature
-                maxLength: 512
-                type: string
-              end:
-                description: The end time of the feature histogram. If reached, the
-                  predictor will start a new feature histogram
-                format: date-time
-                type: string
-              owner:
-                default: no-one
-                description: The feature owner
-                type: string
               start:
                 description: The start time of this feature histogram. For training
                   dataset histogram this is set to the creation time of the dataset
@@ -174,7 +176,8 @@ spec:
                 type: boolean
               training:
                 default: false
-                description: If true, this is a training dataset feature histogram
+                description: If true, this is a training dataset feature histogram.
+                  If false the histogram was generated during serving.
                 type: boolean
               versionName:
                 default: ""
@@ -213,140 +216,159 @@ spec:
                   type: object
                 type: array
               data:
-                description: The histogram values
-                properties:
-                  bins:
-                    description: The bins if the histogram describes continous variables
-                    items:
-                      type: number
-                    type: array
-                  categories:
-                    description: The name of the categories, one per bin if this is
-                      a categorical histogram
-                    items:
-                      type: string
-                    type: array
-                  values:
-                    description: The set of values per bin
-                    items:
-                      type: number
-                    type: array
-                type: object
-              drift:
-                description: The calculation of the drift metrics for this histogram
-                  against the reference feature histogram
+                description: The histogram values, map from column name to an histogram
                 items:
-                  description: Measurement is a value for a specific metric
                   properties:
-                    metric:
-                      description: The metric type name (e.g. F1 / Accuracy)
-                      enum:
-                      - accuracy
-                      - average-precision
-                      - balanced-accuracy
-                      - pr-auc
-                      - pr-auc-micro
-                      - pr-auc-macro
-                      - pr-auc-weighted
-                      - f1
-                      - f1-micro
-                      - f1-macro
-                      - f1-weighted
-                      - f1-samples
-                      - precision
-                      - precision-micro
-                      - precision-macro
-                      - precision-weighted
-                      - precision-samples
-                      - recall
-                      - recall-macro
-                      - recall-micro
-                      - recall-weighted
-                      - recall-samples
-                      - log-loss
-                      - auc
-                      - auc-micro
-                      - auc-macro
-                      - auc-weighted
-                      - zero-one
-                      - hamming-loss
-                      - hinge-loss
-                      - jacquard-loss
-                      - mcc
-                      - fp
-                      - fn
-                      - tn
-                      - tp
-                      - tpr
-                      - fpr
-                      - tnr
-                      - matthews-corr-coef
-                      - explained-variance
-                      - max-error
-                      - mae
-                      - mse
-                      - msle
-                      - rmse
-                      - rmsle
-                      - median-absolute-error
-                      - r2
-                      - adj-r2
-                      - mean_poisson_deviance
-                      - mean-gamma-deviance
-                      - mean-tweedie-deviance
-                      - mape
-                      - maze
-                      - mdape
-                      - smape
-                      - adjusted-mutual-info-score
-                      - adjusted-rand-score
-                      - completeness-score
-                      - fowlkes-mallows-score
-                      - homogeneity-score
-                      - mutual-info-score
-                      - normalized-mutual-info-score
-                      - v-measure-score
-                      - p50-latency
-                      - p95-latency
-                      - p99-latency
-                      - cpu
-                      - gpu
-                      - mem
-                      - gpu-mem
-                      - req-per-sec
-                      - uncertain-prediction-percent
-                      - none
-                      - ks
-                      - psi
-                      - wasserstein-distance
-                      - kl-divergenece
-                      - jensen-shannon-distance
+                    historgram:
+                      description: Measure of drift for a column
+                      properties:
+                        bins:
+                          description: The bins if the histogram describes continous
+                            variables
+                          items:
+                            type: number
+                          type: array
+                        categories:
+                          description: The name of the categories, one per bin if
+                            this is a categorical histogram
+                          items:
+                            type: string
+                          type: array
+                        invalid:
+                          description: The number of invalid values
+                          format: int32
+                          minimum: 0
+                          type: integer
+                        missing:
+                          description: The number of missing values
+                          format: int32
+                          minimum: 0
+                          type: integer
+                        values:
+                          description: The set of values per bin
+                          items:
+                            type: number
+                          type: array
+                      type: object
+                    name:
+                      description: The name of the column
                       type: string
-                    stddev:
-                      description: Metric standard diviation
-                      type: number
-                    value:
-                      description: The value of the metric
-                      type: number
-                  required:
-                  - metric
-                  - value
                   type: object
                 type: array
-              invalid:
-                description: The number of invalid values
-                format: int32
-                minimum: 0
-                type: integer
+              drift:
+                description: The calculation of the drift metrics for each column
+                  in the histogram
+                items:
+                  properties:
+                    metrics:
+                      description: Measure of drift for a column
+                      items:
+                        description: Measurement is a value for a specific metric
+                        properties:
+                          metric:
+                            description: The metric type name (e.g. F1 / Accuracy)
+                            enum:
+                            - accuracy
+                            - average-precision
+                            - balanced-accuracy
+                            - pr-auc
+                            - pr-auc-micro
+                            - pr-auc-macro
+                            - pr-auc-weighted
+                            - f1
+                            - f1-micro
+                            - f1-macro
+                            - f1-weighted
+                            - f1-samples
+                            - precision
+                            - precision-micro
+                            - precision-macro
+                            - precision-weighted
+                            - precision-samples
+                            - recall
+                            - recall-macro
+                            - recall-micro
+                            - recall-weighted
+                            - recall-samples
+                            - log-loss
+                            - auc
+                            - auc-micro
+                            - auc-macro
+                            - auc-weighted
+                            - zero-one
+                            - hamming-loss
+                            - hinge-loss
+                            - jacquard-loss
+                            - mcc
+                            - fp
+                            - fn
+                            - tn
+                            - tp
+                            - tpr
+                            - fpr
+                            - tnr
+                            - matthews-corr-coef
+                            - explained-variance
+                            - max-error
+                            - mae
+                            - mse
+                            - msle
+                            - rmse
+                            - rmsle
+                            - median-absolute-error
+                            - r2
+                            - adj-r2
+                            - mean_poisson_deviance
+                            - mean-gamma-deviance
+                            - mean-tweedie-deviance
+                            - mape
+                            - maze
+                            - mdape
+                            - smape
+                            - adjusted-mutual-info-score
+                            - adjusted-rand-score
+                            - completeness-score
+                            - fowlkes-mallows-score
+                            - homogeneity-score
+                            - mutual-info-score
+                            - normalized-mutual-info-score
+                            - v-measure-score
+                            - p50-latency
+                            - p95-latency
+                            - p99-latency
+                            - cpu
+                            - gpu
+                            - mem
+                            - gpu-mem
+                            - req-per-sec
+                            - uncertain-prediction-percent
+                            - none
+                            - ks
+                            - psi
+                            - wasserstein-distance
+                            - kl-divergenece
+                            - jensen-shannon-distance
+                            type: string
+                          stddev:
+                            description: Metric standard diviation
+                            type: number
+                          value:
+                            description: The value of the metric
+                            type: number
+                        required:
+                        - metric
+                        - value
+                        type: object
+                      type: array
+                    name:
+                      description: The name of the column
+                      type: string
+                  type: object
+                type: array
               lastUpdated:
                 description: Last time the object was updated
                 format: date-time
                 type: string
-              missing:
-                description: The number of missing values
-                format: int32
-                minimum: 0
-                type: integer
               observedGeneration:
                 description: ObservedGeneration is the Last generation that was acted
                   on

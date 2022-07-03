@@ -6117,7 +6117,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.HistogramData.toOb
   var f, obj = {
     binsList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 1)) == null ? undefined : f,
     valuesList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 2)) == null ? undefined : f,
-    categoriesList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f
+    categoriesList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
+    missing: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    invalid: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -6170,6 +6172,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.HistogramData.dese
       var value = /** @type {string} */ (reader.readString());
       msg.addCategories(value);
       break;
+    case 4:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setMissing(value);
+      break;
+    case 5:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setInvalid(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -6217,6 +6227,20 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.HistogramData.seri
   if (f.length > 0) {
     writer.writeRepeatedString(
       3,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeInt32(
+      4,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 5));
+  if (f != null) {
+    writer.writeInt32(
+      5,
       f
     );
   }
@@ -6331,6 +6355,78 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.HistogramData.prot
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.HistogramData.prototype.clearCategoriesList = function() {
   return this.setCategoriesList([]);
+};
+
+
+/**
+ * optional int32 missing = 4;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.HistogramData.prototype.getMissing = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.HistogramData} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.HistogramData.prototype.setMissing = function(value) {
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.HistogramData} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.HistogramData.prototype.clearMissing = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.HistogramData.prototype.hasMissing = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional int32 invalid = 5;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.HistogramData.prototype.getInvalid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.HistogramData} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.HistogramData.prototype.setInvalid = function(value) {
+  return jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.HistogramData} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.HistogramData.prototype.clearInvalid = function() {
+  return jspb.Message.setField(this, 5, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.HistogramData.prototype.hasInvalid = function() {
+  return jspb.Message.getField(this, 5) != null;
 };
 
 

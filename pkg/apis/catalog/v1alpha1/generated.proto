@@ -289,6 +289,14 @@ message HistogramData {
 
   // The name of the categories, one per bin if this is a categorical histogram
   repeated string categories = 3;
+
+  // The number of missing values
+  // +kubebuilder:validation:Minimum=0
+  optional int32 missing = 4;
+
+  // The number of invalid values
+  // +kubebuilder:validation:Minimum=0
+  optional int32 invalid = 5;
 }
 
 // Images describes the Docker images used internally to perform workloads

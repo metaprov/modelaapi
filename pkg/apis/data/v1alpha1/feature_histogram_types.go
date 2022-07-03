@@ -82,11 +82,11 @@ type FeatureHistogramSpec struct {
 	// Type name of the column key, this column is the key column in the entity.
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	Column *string `json:"column,omitempty" protobuf:"bytes,5,opt,name=column"`
-	// A reference to the dataset that contain the column with this histogram
+	Columns []string `json:"columns,omitempty" protobuf:"bytes,5,opt,name=columns"`
+	// A reference to the dataset or predictor that contain the column with this histogram
 	// +kubebuilder:validation:Optional
-	Dataset *v1.ObjectReference `json:"dataset,omitempty" protobuf:"bytes,6,opt,name=dataset"`
-	// If true, this is a training dataset feature histogram
+	SourceRef *v1.ObjectReference `json:"sourceRef,omitempty" protobuf:"bytes,6,opt,name=sourceRef"`
+	// If true, this is a training dataset feature histogram. If false the histogram was generated during serving.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Training *bool `json:"training,omitempty" protobuf:"varint,7,opt,name=training"`
@@ -94,7 +94,7 @@ type FeatureHistogramSpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Target *bool `json:"target,omitempty" protobuf:"varint,8,opt,name=target"`
-	// If true, this is an active feature histogram. This feature histogram is being update
+	// If true, this is an active feature histogram. This feature histogram is being live updated by the predictorlet
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Active *bool `json:"active,omitempty" protobuf:"varint,9,opt,name=active"`
@@ -113,22 +113,34 @@ type FeatureHistogramStatus struct {
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,1,opt,name=observedGeneration"`
-	// The histogram values
-	Data catalog.HistogramData `json:"data,omitempty" protobuf:"bytes,2,opt,name=data"`
-	// The number of missing values
-	// +kubebuilder:validation:Minimum=0
-	Missing int32 `json:"missing,omitempty" protobuf:"varint,3,opt,name=missing"`
-	// The number of invalid values
-	// +kubebuilder:validation:Minimum=0
-	Invalid int32 `json:"invalid,omitempty" protobuf:"varint,4,opt,name=invalid"`
+	// The histogram values, map from column name to an histogram
+	Data []ColumnHistogram `json:"data,omitempty" protobuf:"bytes,2,opt,name=data"`
 	// Last time the object was updated
 	//+kubebuilder:validation:Optional
-	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,5,opt,name=lastUpdated"`
-	// The calculation of the drift metrics for this histogram against the reference feature histogram
+	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,3,opt,name=lastUpdated"`
+	// The calculation of the drift metrics for each column in the histogram
 	//+kubebuilder:validation:Optional
-	Drift []catalog.Measurement `json:"drift,omitempty" protobuf:"bytes,6,opt,name=drift"`
+	Drift []ColumnDrift `json:"drift,omitempty" protobuf:"bytes,4,opt,name=drift"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []FeatureHistogramCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,7,rep,name=conditions"`
+	Conditions []FeatureHistogramCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,5,rep,name=conditions"`
+}
+
+type ColumnDrift struct {
+	// The name of the column
+	//+kubebuilder:validation:Optional
+	Name string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
+	// Measure of drift for a column
+	//+kubebuilder:validation:Optional
+	Metrics []catalog.Measurement `json:"metrics,omitempty" protobuf:"bytes,2,opt,name=metrics"`
+}
+
+type ColumnHistogram struct {
+	// The name of the column
+	//+kubebuilder:validation:Optional
+	Name string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
+	// Measure of drift for a column
+	//+kubebuilder:validation:Optional
+	Historgram catalog.HistogramData `json:"historgram,omitempty" protobuf:"bytes,2,opt,name=histogram"`
 }

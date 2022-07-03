@@ -462,10 +462,10 @@ const (
 type DatasetRole string
 
 const (
-	DatasetRoleUnlabled    DataLocationType = "unlabeled"    // Unlabeled dataset
-	DatasetRolePredictions DataLocationType = "predictions"  // Dataset contain prediction
-	DatasetRoleGroundTruth DataLocationType = "ground-truth" // ground true dataset which was labeled
-	DatasetRoleTraining    DataLocationType = "training"     // Regular Labeled dataset
+	DatasetRoleUnlabeled   DatasetRole = "unlabeled"    // Unlabeled dataset
+	DatasetRolePredictions DatasetRole = "predictions"  // Dataset contain prediction
+	DatasetRoleGroundTruth DatasetRole = "ground-truth" // ground true dataset which was labeled
+	DatasetRoleTraining    DatasetRole = "training"     // Regular Labeled dataset
 
 )
 
