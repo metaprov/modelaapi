@@ -2161,6 +2161,9 @@ export class DatasetSpec extends jspb.Message {
   getDisplayname(): string;
   setDisplayname(value: string): DatasetSpec;
 
+  getRole(): string;
+  setRole(value: string): DatasetSpec;
+
   getReported(): boolean;
   setReported(value: boolean): DatasetSpec;
 
@@ -2169,9 +2172,6 @@ export class DatasetSpec extends jspb.Message {
 
   getValidate(): boolean;
   setValidate(value: boolean): DatasetSpec;
-
-  getLabeled(): boolean;
-  setLabeled(value: boolean): DatasetSpec;
 
   getSynthetic(): boolean;
   setSynthetic(value: boolean): DatasetSpec;
@@ -2204,6 +2204,11 @@ export class DatasetSpec extends jspb.Message {
   setSample(value?: SampleSpec): DatasetSpec;
   hasSample(): boolean;
   clearSample(): DatasetSpec;
+
+  getSyntactic(): SyntacticSpec | undefined;
+  setSyntactic(value?: SyntacticSpec): DatasetSpec;
+  hasSyntactic(): boolean;
+  clearSyntactic(): DatasetSpec;
 
   getTask(): string;
   setTask(value: string): DatasetSpec;
@@ -2244,10 +2249,10 @@ export namespace DatasetSpec {
     datasourcename: string,
     description: string,
     displayname: string,
+    role: string,
     reported: boolean,
     snapshotted: boolean,
     validate: boolean,
-    labeled: boolean,
     synthetic: boolean,
     syntheticrows: number,
     origin?: DataLocation.AsObject,
@@ -2256,6 +2261,7 @@ export namespace DatasetSpec {
     activedeadlineseconds: number,
     type: string,
     sample?: SampleSpec.AsObject,
+    syntactic?: SyntacticSpec.AsObject,
     task: string,
     subtask: string,
     notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
@@ -5930,6 +5936,28 @@ export namespace SqlQueryStatus {
     failurereason: string,
     failuremessage: string,
     conditionsList: Array<SqlQueryCondition.AsObject>,
+  }
+}
+
+export class SyntacticSpec extends jspb.Message {
+  getEnabled(): boolean;
+  setEnabled(value: boolean): SyntacticSpec;
+
+  getRows(): number;
+  setRows(value: number): SyntacticSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SyntacticSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: SyntacticSpec): SyntacticSpec.AsObject;
+  static serializeBinaryToWriter(message: SyntacticSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SyntacticSpec;
+  static deserializeBinaryFromReader(message: SyntacticSpec, reader: jspb.BinaryReader): SyntacticSpec;
+}
+
+export namespace SyntacticSpec {
+  export type AsObject = {
+    enabled: boolean,
+    rows: number,
   }
 }
 

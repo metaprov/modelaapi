@@ -158,10 +158,6 @@ spec:
                     description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                     type: string
                 type: object
-              labeled:
-                default: true
-                description: Indicates if the data is labeled or not
-                type: boolean
               location:
                 description: Location is the final location of the data which was
                   copied from the `Origin` location during the ingestion phase. This
@@ -545,6 +541,15 @@ spec:
                       WorkloadClass
                     type: string
                 type: object
+              role:
+                default: training
+                description: The dataset role
+                enum:
+                - unlabled
+                - predictions
+                - ground-truth
+                - training
+                type: string
               sample:
                 description: The specification for how the data should be sampled,
                   if applicable. Sampling may improve dataset and model creation time
@@ -631,6 +636,19 @@ spec:
                 - image-segmentation
                 - none
                 type: string
+              syntactic:
+                description: If the dataset is syntactic, this is the syntactic spec
+                properties:
+                  enabled:
+                    description: Enabled syntatic data
+                    type: boolean
+                  rows:
+                    default: 0
+                    description: The number of top correlations to be included in
+                      the correlation results
+                    format: int32
+                    type: integer
+                type: object
               synthetic:
                 default: false
                 description: Indicates if synthetic data should be generated (currently

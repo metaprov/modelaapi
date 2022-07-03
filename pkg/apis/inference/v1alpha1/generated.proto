@@ -106,6 +106,24 @@ message AutoScalingSpec {
   optional int32 memAvgUtilization = 5;
 }
 
+message BackwardCurtainSpec {
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool enabled = 1;
+
+  // The forward curtain receives prediction requests before the prediction (currently unimplemented)
+  // +kubebuilder:validation:Optional
+  optional k8s.io.api.core.v1.ObjectReference forwardCurtainRef = 2;
+
+  // For backward curtain is the confidence low
+  // +kubebuilder:validation:Optional
+  optional double confidenceLow = 4;
+
+  // For backward curtain is the confidence high
+  // +kubebuilder:validation:Optional
+  optional double confidenceHigh = 5;
+}
+
 // CronPrediction represents a Prediction which runs on a predefined schedule
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
@@ -471,6 +489,31 @@ message DataAppStatus {
   repeated DataAppCondition conditions = 7;
 }
 
+// Fast slow model mode, use two models as the champion.
+// All request are send first to the fast model.
+message FastSlowModelSpec {
+  // Indicates if model monitoring is enabled for the model
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool enabled = 1;
+
+  // Reference to the fast model
+  optional k8s.io.api.core.v1.ObjectReference fastModelRef = 2;
+
+  // Reference to the slow model
+  optional k8s.io.api.core.v1.ObjectReference slowModelRef = 3;
+
+  // The low range of confidence.
+  // +kubebuilder:default:=40
+  // +kubebuilder:validation:Optional
+  optional int32 probaLowPct = 4;
+
+  // The high range of confidence , Must be higher than probalow
+  // +kubebuilder:default:=60
+  // +kubebuilder:validation:Optional
+  optional int32 probaHighPct = 5;
+}
+
 // ForecastSpec specifies the details of a forecasting model
 message ForecastSpec {
   // The hierarchy specification, which maps columns to values
@@ -481,7 +524,7 @@ message ForecastSpec {
   optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSpec horizon = 2;
 }
 
-message HumanInTheLoopSpec {
+message ForwardCurtainSpec {
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool enabled = 1;
@@ -490,9 +533,10 @@ message HumanInTheLoopSpec {
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference forwardCurtainRef = 2;
 
-  // The backward curtain receives prediction requests after the prediction (currently unimplemented)
+  // Percent of request that are sent to the foreward curtain.
+  // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference backwardCurtainRef = 3;
+  optional int32 percent = 3;
 }
 
 // KubernetesObjectStatus describes the location and status of a Kubernetes-native resource
@@ -792,6 +836,11 @@ message PredictionLoggingSpec {
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
   optional bool logResponses = 4;
+
+  // how many minutes to log between created a prediction dataset
+  // +kubebuilder:default:=0
+  // +kubebuilder:validation:Optional
+  optional int32 uploadedIntervalMinutes = 5;
 }
 
 // PredictionSpec represent the desired state of Prediction
@@ -1069,9 +1118,17 @@ message PredictorSpec {
   // +kubebuilder:validation:Optional
   optional PredictionLoggingSpec predictionLogging = 22;
 
-  // Monitor spec specify the monitor for this predictor.
+  // Forward curtain
   // +kubebuilder:validation:Optional
-  optional HumanInTheLoopSpec humans = 23;
+  optional ForwardCurtainSpec forwardCurtain = 23;
+
+  // Backward curtain
+  // +kubebuilder:validation:Optional
+  optional BackwardCurtainSpec backwardCurtain = 24;
+
+  // Backward curtain
+  // +kubebuilder:validation:Optional
+  optional FastSlowModelSpec fastSlow = 25;
 }
 
 // PredictorStatus contain the current state of the Predictor resource
@@ -1121,10 +1178,18 @@ message PredictorStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.LoadBalancerStatus loadBalancerStatus = 11;
 
+  // The last time that a prediction dataset was created
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastPredictionDataset = 12;
+
+  // Ground true metrics specifies the collection of metrics that are computed against the ground true dataset
+  // +kubebuilder:validation:Optional
+  repeated string groundTrueMetrics = 13;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated PredictorCondition conditions = 12;
+  repeated PredictorCondition conditions = 14;
 }
 
 // PredictorletStatus describes the current state of a prediction proxy service associated with a Predictor

@@ -87,6 +87,38 @@ export namespace AutoScalingSpec {
   }
 }
 
+export class BackwardCurtainSpec extends jspb.Message {
+  getEnabled(): boolean;
+  setEnabled(value: boolean): BackwardCurtainSpec;
+
+  getForwardcurtainref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setForwardcurtainref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): BackwardCurtainSpec;
+  hasForwardcurtainref(): boolean;
+  clearForwardcurtainref(): BackwardCurtainSpec;
+
+  getConfidencelow(): number;
+  setConfidencelow(value: number): BackwardCurtainSpec;
+
+  getConfidencehigh(): number;
+  setConfidencehigh(value: number): BackwardCurtainSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): BackwardCurtainSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: BackwardCurtainSpec): BackwardCurtainSpec.AsObject;
+  static serializeBinaryToWriter(message: BackwardCurtainSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): BackwardCurtainSpec;
+  static deserializeBinaryFromReader(message: BackwardCurtainSpec, reader: jspb.BinaryReader): BackwardCurtainSpec;
+}
+
+export namespace BackwardCurtainSpec {
+  export type AsObject = {
+    enabled: boolean,
+    forwardcurtainref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    confidencelow: number,
+    confidencehigh: number,
+  }
+}
+
 export class CronPrediction extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): CronPrediction;
@@ -713,6 +745,44 @@ export namespace DataAppStatus {
   }
 }
 
+export class FastSlowModelSpec extends jspb.Message {
+  getEnabled(): boolean;
+  setEnabled(value: boolean): FastSlowModelSpec;
+
+  getFastmodelref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setFastmodelref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): FastSlowModelSpec;
+  hasFastmodelref(): boolean;
+  clearFastmodelref(): FastSlowModelSpec;
+
+  getSlowmodelref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setSlowmodelref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): FastSlowModelSpec;
+  hasSlowmodelref(): boolean;
+  clearSlowmodelref(): FastSlowModelSpec;
+
+  getProbalowpct(): number;
+  setProbalowpct(value: number): FastSlowModelSpec;
+
+  getProbahighpct(): number;
+  setProbahighpct(value: number): FastSlowModelSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FastSlowModelSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: FastSlowModelSpec): FastSlowModelSpec.AsObject;
+  static serializeBinaryToWriter(message: FastSlowModelSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FastSlowModelSpec;
+  static deserializeBinaryFromReader(message: FastSlowModelSpec, reader: jspb.BinaryReader): FastSlowModelSpec;
+}
+
+export namespace FastSlowModelSpec {
+  export type AsObject = {
+    enabled: boolean,
+    fastmodelref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    slowmodelref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    probalowpct: number,
+    probahighpct: number,
+  }
+}
+
 export class ForecastSpec extends jspb.Message {
   getHierarchyvaluesMap(): jspb.Map<string, string>;
   clearHierarchyvaluesMap(): ForecastSpec;
@@ -737,33 +807,31 @@ export namespace ForecastSpec {
   }
 }
 
-export class HumanInTheLoopSpec extends jspb.Message {
+export class ForwardCurtainSpec extends jspb.Message {
   getEnabled(): boolean;
-  setEnabled(value: boolean): HumanInTheLoopSpec;
+  setEnabled(value: boolean): ForwardCurtainSpec;
 
   getForwardcurtainref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setForwardcurtainref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): HumanInTheLoopSpec;
+  setForwardcurtainref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ForwardCurtainSpec;
   hasForwardcurtainref(): boolean;
-  clearForwardcurtainref(): HumanInTheLoopSpec;
+  clearForwardcurtainref(): ForwardCurtainSpec;
 
-  getBackwardcurtainref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setBackwardcurtainref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): HumanInTheLoopSpec;
-  hasBackwardcurtainref(): boolean;
-  clearBackwardcurtainref(): HumanInTheLoopSpec;
+  getPercent(): number;
+  setPercent(value: number): ForwardCurtainSpec;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): HumanInTheLoopSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: HumanInTheLoopSpec): HumanInTheLoopSpec.AsObject;
-  static serializeBinaryToWriter(message: HumanInTheLoopSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): HumanInTheLoopSpec;
-  static deserializeBinaryFromReader(message: HumanInTheLoopSpec, reader: jspb.BinaryReader): HumanInTheLoopSpec;
+  toObject(includeInstance?: boolean): ForwardCurtainSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: ForwardCurtainSpec): ForwardCurtainSpec.AsObject;
+  static serializeBinaryToWriter(message: ForwardCurtainSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ForwardCurtainSpec;
+  static deserializeBinaryFromReader(message: ForwardCurtainSpec, reader: jspb.BinaryReader): ForwardCurtainSpec;
 }
 
-export namespace HumanInTheLoopSpec {
+export namespace ForwardCurtainSpec {
   export type AsObject = {
     enabled: boolean,
     forwardcurtainref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    backwardcurtainref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    percent: number,
   }
 }
 
@@ -1266,6 +1334,9 @@ export class PredictionLoggingSpec extends jspb.Message {
   getLogresponses(): boolean;
   setLogresponses(value: boolean): PredictionLoggingSpec;
 
+  getUploadedintervalminutes(): number;
+  setUploadedintervalminutes(value: number): PredictionLoggingSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PredictionLoggingSpec.AsObject;
   static toObject(includeInstance: boolean, msg: PredictionLoggingSpec): PredictionLoggingSpec.AsObject;
@@ -1280,6 +1351,7 @@ export namespace PredictionLoggingSpec {
     samplepercent: number,
     logrequests: boolean,
     logresponses: boolean,
+    uploadedintervalminutes: number,
   }
 }
 
@@ -1650,10 +1722,20 @@ export class PredictorSpec extends jspb.Message {
   hasPredictionlogging(): boolean;
   clearPredictionlogging(): PredictorSpec;
 
-  getHumans(): HumanInTheLoopSpec | undefined;
-  setHumans(value?: HumanInTheLoopSpec): PredictorSpec;
-  hasHumans(): boolean;
-  clearHumans(): PredictorSpec;
+  getForwardcurtain(): ForwardCurtainSpec | undefined;
+  setForwardcurtain(value?: ForwardCurtainSpec): PredictorSpec;
+  hasForwardcurtain(): boolean;
+  clearForwardcurtain(): PredictorSpec;
+
+  getBackwardcurtain(): BackwardCurtainSpec | undefined;
+  setBackwardcurtain(value?: BackwardCurtainSpec): PredictorSpec;
+  hasBackwardcurtain(): boolean;
+  clearBackwardcurtain(): PredictorSpec;
+
+  getFastslow(): FastSlowModelSpec | undefined;
+  setFastslow(value?: FastSlowModelSpec): PredictorSpec;
+  hasFastslow(): boolean;
+  clearFastslow(): PredictorSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PredictorSpec.AsObject;
@@ -1685,7 +1767,9 @@ export namespace PredictorSpec {
     predictionthreshold: number,
     monitor?: MonitorSpec.AsObject,
     predictionlogging?: PredictionLoggingSpec.AsObject,
-    humans?: HumanInTheLoopSpec.AsObject,
+    forwardcurtain?: ForwardCurtainSpec.AsObject,
+    backwardcurtain?: BackwardCurtainSpec.AsObject,
+    fastslow?: FastSlowModelSpec.AsObject,
   }
 }
 
@@ -1737,6 +1821,16 @@ export class PredictorStatus extends jspb.Message {
   hasLoadbalancerstatus(): boolean;
   clearLoadbalancerstatus(): PredictorStatus;
 
+  getLastpredictiondataset(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastpredictiondataset(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): PredictorStatus;
+  hasLastpredictiondataset(): boolean;
+  clearLastpredictiondataset(): PredictorStatus;
+
+  getGroundtruemetricsList(): Array<string>;
+  setGroundtruemetricsList(value: Array<string>): PredictorStatus;
+  clearGroundtruemetricsList(): PredictorStatus;
+  addGroundtruemetrics(value: string, index?: number): PredictorStatus;
+
   getConditionsList(): Array<PredictorCondition>;
   setConditionsList(value: Array<PredictorCondition>): PredictorStatus;
   clearConditionsList(): PredictorStatus;
@@ -1763,6 +1857,8 @@ export namespace PredictorStatus {
     failurereason: string,
     failuremessage: string,
     loadbalancerstatus?: k8s_io_api_core_v1_generated_pb.LoadBalancerStatus.AsObject,
+    lastpredictiondataset?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    groundtruemetricsList: Array<string>,
     conditionsList: Array<PredictorCondition.AsObject>,
   }
 }

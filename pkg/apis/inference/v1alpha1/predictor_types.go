@@ -103,6 +103,10 @@ type PredictionLoggingSpec struct {
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
 	LogResponses *bool `json:"logResponses,omitempty" protobuf:"varint,4,opt,name=logResponses"`
+	// how many minutes to log between created a prediction dataset
+	// +kubebuilder:default:=0
+	// +kubebuilder:validation:Optional
+	UploadIntervalMinutes *int32 `json:"uploadedIntervalMinutes,omitempty" protobuf:"varint,5,opt,name=uploadedIntervalMinutes"`
 }
 
 // ProgressiveSpec defines the specification to progressively deploy a model to production
@@ -238,16 +242,32 @@ type AccessSpec struct {
 	ApiKeySecretRef *v1.SecretReference `json:"apikeySecretRef,omitempty" protobuf:"bytes,7,opt,name=apikeySecretRef"`
 }
 
-type HumanInTheLoopSpec struct {
+type ForwardCurtainSpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
 	// The forward curtain receives prediction requests before the prediction (currently unimplemented)
 	// +kubebuilder:validation:Optional
 	ForwardCurtainRef *v1.ObjectReference `json:"forwardCurtainRef,omitempty" protobuf:"bytes,2,opt,name=forwardCurtainRef"`
-	// The backward curtain receives prediction requests after the prediction (currently unimplemented)
+	// Percent of request that are sent to the foreward curtain.
+	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
-	BackwardCurtainRef *v1.ObjectReference `json:"backwardCurtainRef,omitempty" protobuf:"bytes,3,opt,name=backwardCurtainRef"`
+	Percent *int32 `json:"percent,omitempty" protobuf:"bytes,3,opt,name=percent"`
+}
+
+type BackwardCurtainSpec struct {
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
+	// The forward curtain receives prediction requests before the prediction (currently unimplemented)
+	// +kubebuilder:validation:Optional
+	CurtainRef *v1.ObjectReference `json:"forwardCurtainRef,omitempty" protobuf:"bytes,2,opt,name=forwardCurtainRef"`
+	// For backward curtain is the confidence low
+	// +kubebuilder:validation:Optional
+	ConfidenceLow *float64 `json:"confidenceLow,omitempty" protobuf:"bytes,4,opt,name=confidenceLow"`
+	// For backward curtain is the confidence high
+	// +kubebuilder:validation:Optional
+	ConfidenceHigh *float64 `json:"confidenceHigh,omitempty" protobuf:"bytes,5,opt,name=confidenceHigh"`
 }
 
 //==============================================================================
@@ -374,9 +394,15 @@ type PredictorSpec struct {
 	// Monitor spec specify the monitor for this predictor.
 	// +kubebuilder:validation:Optional
 	PredictionLogging PredictionLoggingSpec `json:"predictionLogging,omitempty" protobuf:"bytes,22,opt,name=predictionLogging"`
-	// Monitor spec specify the monitor for this predictor.
+	// Forward curtain
 	// +kubebuilder:validation:Optional
-	Humans HumanInTheLoopSpec `json:"humans,omitempty" protobuf:"bytes,23,opt,name=humans"`
+	ForwardCurtain ForwardCurtainSpec `json:"forwardCurtain,omitempty" protobuf:"bytes,23,opt,name=forwardCurtain"`
+	// Backward curtain
+	// +kubebuilder:validation:Optional
+	BackwardCurtain BackwardCurtainSpec `json:"backwardCurtain,omitempty" protobuf:"bytes,24,opt,name=backwardCurtain"`
+	// Backward curtain
+	// +kubebuilder:validation:Optional
+	FastSlow FastSlowModelSpec `json:"fastSlow,omitempty" protobuf:"bytes,25,opt,name=fastSlow"`
 }
 
 // PredictorStatus contain the current state of the Predictor resource
@@ -415,10 +441,16 @@ type PredictorStatus struct {
 	// The status of the load balancer, if the Predictor's access type is LoadBalancer
 	//+kubebuilder:validation:Optional
 	LoadBalancerStatus *v1.LoadBalancerStatus `json:"loadBalancerStatus,omitempty" protobuf:"bytes,11,opt,name=loadBalancerStatus"`
+	// The last time that a prediction dataset was created
+	//+kubebuilder:validation:Optional
+	LastPredictionDataset *metav1.Time `json:"lastPredictionDataset,omitempty" protobuf:"bytes,12,opt,name=lastPredictionDataset"`
+	// Ground true metrics specifies the collection of metrics that are computed against the ground true dataset
+	// +kubebuilder:validation:Optional
+	GroundTrueMetrics []catalog.Metric `json:"groundTrueMetrics,omitempty" protobuf:"bytes,13,rep,name=groundTrueMetrics"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []PredictorCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,12,rep,name=conditions"`
+	Conditions []PredictorCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,14,rep,name=conditions"`
 }
 
 // ModelRecord hold the state of a model that was in production
@@ -590,4 +622,25 @@ type ValidationError struct {
 	Max float64 `json:"max,omitempty" protobuf:"bytes,4,opt,name=max"`
 	// Actual value
 	Actual float64 `json:"actual,omitempty" protobuf:"bytes,5,opt,name=actual"`
+}
+
+// Fast slow model mode, use two models as the champion.
+// All request are send first to the fast model.
+type FastSlowModelSpec struct {
+	// Indicates if model monitoring is enabled for the model
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
+	// Reference to the fast model
+	FastModelRef v1.ObjectReference `json:"fastModelRef,omitempty" protobuf:"bytes,2,opt,name=fastModelRef"`
+	// Reference to the slow model
+	SlowModelRef v1.ObjectReference `json:"slowModelRef,omitempty" protobuf:"bytes,3,opt,name=slowModelRef"`
+	// The low range of confidence.
+	// +kubebuilder:default:=40
+	// +kubebuilder:validation:Optional
+	ProbaLowPct *int32 `json:"probaLowPct,omitempty" protobuf:"varint,4,opt,name=probaLowPct"`
+	// The high range of confidence , Must be higher than probalow
+	// +kubebuilder:default:=60
+	// +kubebuilder:validation:Optional
+	ProbaHighPct *int32 `json:"probaHighPct,omitempty" protobuf:"varint,5,opt,name=probaHighPct"`
 }

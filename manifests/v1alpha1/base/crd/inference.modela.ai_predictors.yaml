@@ -291,6 +291,56 @@ spec:
                     minimum: 1
                     type: integer
                 type: object
+              backwardCurtain:
+                description: Backward curtain
+                properties:
+                  confidenceHigh:
+                    description: For backward curtain is the confidence high
+                    type: number
+                  confidenceLow:
+                    description: For backward curtain is the confidence low
+                    type: number
+                  enabled:
+                    default: false
+                    type: boolean
+                  forwardCurtainRef:
+                    description: The forward curtain receives prediction requests
+                      before the prediction (currently unimplemented)
+                    properties:
+                      apiVersion:
+                        description: API version of the referent.
+                        type: string
+                      fieldPath:
+                        description: 'If referring to a piece of an object instead
+                          of an entire object, this string should contain a valid
+                          JSON/Go field access statement, such as desiredState.manifest.containers[2].
+                          For example, if the object reference is to a container within
+                          a pod, this would take on a value like: "spec.containers{name}"
+                          (where "name" refers to the name of the container that triggered
+                          the event) or if no container name is specified "spec.containers[2]"
+                          (container with index 2 in this pod). This syntax is chosen
+                          only to have some well-defined way of referencing a part
+                          of an object. TODO: this design is not final and this field
+                          is subject to change in the future.'
+                        type: string
+                      kind:
+                        description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                        type: string
+                      name:
+                        description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                        type: string
+                      namespace:
+                        description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                        type: string
+                      resourceVersion:
+                        description: 'Specific resourceVersion to which this reference
+                          is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                        type: string
+                      uid:
+                        description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                        type: string
+                    type: object
+                type: object
               cache:
                 description: Cache specifies the configuration of the prediction cache
                 properties:
@@ -351,12 +401,16 @@ spec:
                 description: The user-provided description of the Predictor
                 maxLength: 256
                 type: string
-              humans:
-                description: Monitor spec specify the monitor for this predictor.
+              fastSlow:
+                description: Backward curtain
                 properties:
-                  backwardCurtainRef:
-                    description: The backward curtain receives prediction requests
-                      after the prediction (currently unimplemented)
+                  enabled:
+                    default: false
+                    description: Indicates if model monitoring is enabled for the
+                      model
+                    type: boolean
+                  fastModelRef:
+                    description: Reference to the fast model
                     properties:
                       apiVersion:
                         description: API version of the referent.
@@ -391,6 +445,57 @@ spec:
                         description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                         type: string
                     type: object
+                  probaHighPct:
+                    default: 60
+                    description: The high range of confidence , Must be higher than
+                      probalow
+                    format: int32
+                    type: integer
+                  probaLowPct:
+                    default: 40
+                    description: The low range of confidence.
+                    format: int32
+                    type: integer
+                  slowModelRef:
+                    description: Reference to the slow model
+                    properties:
+                      apiVersion:
+                        description: API version of the referent.
+                        type: string
+                      fieldPath:
+                        description: 'If referring to a piece of an object instead
+                          of an entire object, this string should contain a valid
+                          JSON/Go field access statement, such as desiredState.manifest.containers[2].
+                          For example, if the object reference is to a container within
+                          a pod, this would take on a value like: "spec.containers{name}"
+                          (where "name" refers to the name of the container that triggered
+                          the event) or if no container name is specified "spec.containers[2]"
+                          (container with index 2 in this pod). This syntax is chosen
+                          only to have some well-defined way of referencing a part
+                          of an object. TODO: this design is not final and this field
+                          is subject to change in the future.'
+                        type: string
+                      kind:
+                        description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                        type: string
+                      name:
+                        description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                        type: string
+                      namespace:
+                        description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                        type: string
+                      resourceVersion:
+                        description: 'Specific resourceVersion to which this reference
+                          is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                        type: string
+                      uid:
+                        description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                        type: string
+                    type: object
+                type: object
+              forwardCurtain:
+                description: Forward curtain
+                properties:
                   enabled:
                     default: false
                     type: boolean
@@ -431,6 +536,12 @@ spec:
                         description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                         type: string
                     type: object
+                  percent:
+                    default: 0
+                    description: Percent of request that are sent to the foreward
+                      curtain.
+                    format: int32
+                    type: integer
                 type: object
               models:
                 description: The collection of model deployment specifications that
@@ -1922,6 +2033,12 @@ spec:
                     default: 0
                     description: The number percentage (0 through 100) of prediction
                       requests to log
+                    format: int32
+                    type: integer
+                  uploadedIntervalMinutes:
+                    default: 0
+                    description: how many minutes to log between created a prediction
+                      dataset
                     format: int32
                     type: integer
                 type: object
@@ -9720,6 +9837,93 @@ spec:
                 description: In the case of failure, the Predictor resource controller
                   will set this field with a failure reason
                 type: string
+              groundTrueMetrics:
+                description: Ground true metrics specifies the collection of metrics
+                  that are computed against the ground true dataset
+                items:
+                  enum:
+                  - accuracy
+                  - average-precision
+                  - balanced-accuracy
+                  - pr-auc
+                  - pr-auc-micro
+                  - pr-auc-macro
+                  - pr-auc-weighted
+                  - f1
+                  - f1-micro
+                  - f1-macro
+                  - f1-weighted
+                  - f1-samples
+                  - precision
+                  - precision-micro
+                  - precision-macro
+                  - precision-weighted
+                  - precision-samples
+                  - recall
+                  - recall-macro
+                  - recall-micro
+                  - recall-weighted
+                  - recall-samples
+                  - log-loss
+                  - auc
+                  - auc-micro
+                  - auc-macro
+                  - auc-weighted
+                  - zero-one
+                  - hamming-loss
+                  - hinge-loss
+                  - jacquard-loss
+                  - mcc
+                  - fp
+                  - fn
+                  - tn
+                  - tp
+                  - tpr
+                  - fpr
+                  - tnr
+                  - matthews-corr-coef
+                  - explained-variance
+                  - max-error
+                  - mae
+                  - mse
+                  - msle
+                  - rmse
+                  - rmsle
+                  - median-absolute-error
+                  - r2
+                  - adj-r2
+                  - mean_poisson_deviance
+                  - mean-gamma-deviance
+                  - mean-tweedie-deviance
+                  - mape
+                  - maze
+                  - mdape
+                  - smape
+                  - adjusted-mutual-info-score
+                  - adjusted-rand-score
+                  - completeness-score
+                  - fowlkes-mallows-score
+                  - homogeneity-score
+                  - mutual-info-score
+                  - normalized-mutual-info-score
+                  - v-measure-score
+                  - p50-latency
+                  - p95-latency
+                  - p99-latency
+                  - cpu
+                  - gpu
+                  - mem
+                  - gpu-mem
+                  - req-per-sec
+                  - uncertain-prediction-percent
+                  - none
+                  - ks
+                  - psi
+                  - wasserstein-distance
+                  - kl-divergenece
+                  - jensen-shannon-distance
+                  type: string
+                type: array
               history:
                 description: The collection of historical records of models deployed
                   to the Predictor, used internally to roll-back models
@@ -9753,6 +9957,10 @@ spec:
                       type: string
                   type: object
                 type: array
+              lastPredictionDataset:
+                description: The last time that a prediction dataset was created
+                format: date-time
+                type: string
               lastUpdated:
                 description: The last time the object was updated
                 format: date-time
