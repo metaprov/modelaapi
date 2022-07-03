@@ -92,7 +92,8 @@ const (
 	GenerateDataset       TaskName = "generate-dataset"
 	ValidateModel         TaskName = "validate-model"
 	EvalPrediction        TaskName = "eval-prediction"
-	DataDrift             TaskName = "data-drift"
+	DetectDrift           TaskName = "detect-drift"
+	TrainDriftDetector    TaskName = "train-drift-detector"
 )
 
 // ApiKeyName is the secret or in env variable
