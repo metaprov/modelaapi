@@ -515,7 +515,6 @@ func (b *ModelAutobuilder) CreateDataset(notification catalog.NotificationSpec) 
 			Description:    util.StrPtr(""),
 			Reported:       util.BoolPtr(true),
 			Validated:      util.BoolPtr(true),
-			Labeled:        util.BoolPtr(true),
 			Origin:         b.Spec.Location,
 			Task:           b.Spec.Task,
 			Location: data.DataLocation{
