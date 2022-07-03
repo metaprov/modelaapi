@@ -382,6 +382,9 @@ spec:
                       the DataLocation
                     type: string
                 type: object
+              labeled:
+                description: If true, this datasource is for labeled data.
+                type: boolean
               labeling:
                 description: Labeling specificies how to automatically label the dataset
                   using positive and negative rules

@@ -1334,8 +1334,13 @@ export class PredictionLoggingSpec extends jspb.Message {
   getLogresponses(): boolean;
   setLogresponses(value: boolean): PredictionLoggingSpec;
 
-  getUploadedintervalminutes(): number;
-  setUploadedintervalminutes(value: number): PredictionLoggingSpec;
+  getRows(): number;
+  setRows(value: number): PredictionLoggingSpec;
+
+  getLocation(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
+  setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): PredictionLoggingSpec;
+  hasLocation(): boolean;
+  clearLocation(): PredictionLoggingSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PredictionLoggingSpec.AsObject;
@@ -1351,7 +1356,8 @@ export namespace PredictionLoggingSpec {
     samplepercent: number,
     logrequests: boolean,
     logresponses: boolean,
-    uploadedintervalminutes: number,
+    rows: number,
+    location?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
   }
 }
 

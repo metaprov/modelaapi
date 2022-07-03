@@ -12909,7 +12909,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionLoggin
     samplepercent: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     logrequests: (f = jspb.Message.getBooleanField(msg, 3)) == null ? undefined : f,
     logresponses: (f = jspb.Message.getBooleanField(msg, 4)) == null ? undefined : f,
-    uploadedintervalminutes: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
+    rows: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    location: (f = msg.getLocation()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -12964,7 +12965,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionLoggin
       break;
     case 5:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setUploadedintervalminutes(value);
+      msg.setRows(value);
+      break;
+    case 6:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.deserializeBinaryFromReader);
+      msg.setLocation(value);
       break;
     default:
       reader.skipField();
@@ -13028,6 +13034,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionLoggin
     writer.writeInt32(
       5,
       f
+    );
+  }
+  f = message.getLocation();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.serializeBinaryToWriter
     );
   }
 };
@@ -13178,10 +13192,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionLoggin
 
 
 /**
- * optional int32 uploadedIntervalMinutes = 5;
+ * optional int32 rows = 5;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionLoggingSpec.prototype.getUploadedintervalminutes = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionLoggingSpec.prototype.getRows = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
@@ -13190,7 +13204,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionLoggin
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionLoggingSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionLoggingSpec.prototype.setUploadedintervalminutes = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionLoggingSpec.prototype.setRows = function(value) {
   return jspb.Message.setField(this, 5, value);
 };
 
@@ -13199,7 +13213,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionLoggin
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionLoggingSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionLoggingSpec.prototype.clearUploadedintervalminutes = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionLoggingSpec.prototype.clearRows = function() {
   return jspb.Message.setField(this, 5, undefined);
 };
 
@@ -13208,8 +13222,45 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionLoggin
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionLoggingSpec.prototype.hasUploadedintervalminutes = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionLoggingSpec.prototype.hasRows = function() {
   return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation location = 6;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionLoggingSpec.prototype.getLocation = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation, 6));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionLoggingSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionLoggingSpec.prototype.setLocation = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionLoggingSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionLoggingSpec.prototype.clearLocation = function() {
+  return this.setLocation(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionLoggingSpec.prototype.hasLocation = function() {
+  return jspb.Message.getField(this, 6) != null;
 };
 
 

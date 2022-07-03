@@ -837,10 +837,14 @@ message PredictionLoggingSpec {
   // +kubebuilder:validation:Optional
   optional bool logResponses = 4;
 
-  // how many minutes to log between created a prediction dataset
+  // Number of rows in the prediction dataset
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
-  optional int32 uploadedIntervalMinutes = 5;
+  optional int32 rows = 5;
+
+  // Target location of the prediction log
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation location = 6;
 }
 
 // PredictionSpec represent the desired state of Prediction

@@ -22048,6 +22048,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.toObje
     datasettype: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     schema: (f = msg.getSchema()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Schema.toObject(includeInstance, f),
     flatfile: (f = msg.getFlatfile()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileFormatSpec.toObject(includeInstance, f),
+    labeld: (f = jspb.Message.getBooleanField(msg, 7)) == null ? undefined : f,
     sample: (f = msg.getSample()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SampleSpec.toObject(includeInstance, f),
     task: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
     subtask: (f = jspb.Message.getField(msg, 11)) == null ? undefined : f,
@@ -22116,6 +22117,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.deseri
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileFormatSpec;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileFormatSpec.deserializeBinaryFromReader);
       msg.setFlatfile(value);
+      break;
+    case 7:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setLabeld(value);
       break;
     case 9:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SampleSpec;
@@ -22216,6 +22221,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.serial
       6,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileFormatSpec.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 7));
+  if (f != null) {
+    writer.writeBool(
+      7,
+      f
     );
   }
   f = message.getSample();
@@ -22482,6 +22494,42 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.protot
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.hasFlatfile = function() {
   return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional bool labeld = 7;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.getLabeld = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 7, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.setLabeld = function(value) {
+  return jspb.Message.setField(this, 7, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.clearLabeld = function() {
+  return jspb.Message.setField(this, 7, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.hasLabeld = function() {
+  return jspb.Message.getField(this, 7) != null;
 };
 
 
@@ -24362,7 +24410,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.toObject 
     notification: (f = msg.getNotification()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.toObject(includeInstance, f),
     correlation: (f = msg.getCorrelation()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CorrelationSpec.toObject(includeInstance, f),
     fast: (f = jspb.Message.getBooleanField(msg, 24)) == null ? undefined : f,
-    labref: (f = msg.getLabref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f)
+    labref: (f = msg.getLabref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
+    predictiondatasetref: (f = msg.getPredictiondatasetref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -24502,6 +24551,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.deseriali
       var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
       reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
       msg.setLabref(value);
+      break;
+    case 26:
+      var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
+      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
+      msg.setPredictiondatasetref(value);
       break;
     default:
       reader.skipField();
@@ -24704,6 +24758,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.serialize
   if (f != null) {
     writer.writeMessage(
       25,
+      f,
+      k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
+    );
+  }
+  f = message.getPredictiondatasetref();
+  if (f != null) {
+    writer.writeMessage(
+      26,
       f,
       k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
     );
@@ -25580,6 +25642,43 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.hasLabref = function() {
   return jspb.Message.getField(this, 25) != null;
+};
+
+
+/**
+ * optional k8s.io.api.core.v1.ObjectReference predictionDatasetRef = 26;
+ * @return {?proto.k8s.io.api.core.v1.ObjectReference}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.getPredictiondatasetref = function() {
+  return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
+    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 26));
+};
+
+
+/**
+ * @param {?proto.k8s.io.api.core.v1.ObjectReference|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.setPredictiondatasetref = function(value) {
+  return jspb.Message.setWrapperField(this, 26, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.clearPredictiondatasetref = function() {
+  return this.setPredictiondatasetref(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.hasPredictiondatasetref = function() {
+  return jspb.Message.getField(this, 26) != null;
 };
 
 

@@ -1918,6 +1918,9 @@ export class DataSourceSpec extends jspb.Message {
   hasFlatfile(): boolean;
   clearFlatfile(): DataSourceSpec;
 
+  getLabeld(): boolean;
+  setLabeld(value: boolean): DataSourceSpec;
+
   getSample(): SampleSpec | undefined;
   setSample(value?: SampleSpec): DataSourceSpec;
   hasSample(): boolean;
@@ -1960,6 +1963,7 @@ export namespace DataSourceSpec {
     datasettype: string,
     schema?: Schema.AsObject,
     flatfile?: FlatFileFormatSpec.AsObject,
+    labeld: boolean,
     sample?: SampleSpec.AsObject,
     task: string,
     subtask: string,
@@ -2234,6 +2238,11 @@ export class DatasetSpec extends jspb.Message {
   hasLabref(): boolean;
   clearLabref(): DatasetSpec;
 
+  getPredictiondatasetref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setPredictiondatasetref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): DatasetSpec;
+  hasPredictiondatasetref(): boolean;
+  clearPredictiondatasetref(): DatasetSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DatasetSpec.AsObject;
   static toObject(includeInstance: boolean, msg: DatasetSpec): DatasetSpec.AsObject;
@@ -2268,6 +2277,7 @@ export namespace DatasetSpec {
     correlation?: CorrelationSpec.AsObject,
     fast: boolean,
     labref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    predictiondatasetref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
   }
 }
 

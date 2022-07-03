@@ -103,10 +103,13 @@ type PredictionLoggingSpec struct {
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
 	LogResponses *bool `json:"logResponses,omitempty" protobuf:"varint,4,opt,name=logResponses"`
-	// how many minutes to log between created a prediction dataset
+	// Number of rows in the prediction dataset
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
-	UploadIntervalMinutes *int32 `json:"uploadedIntervalMinutes,omitempty" protobuf:"varint,5,opt,name=uploadedIntervalMinutes"`
+	Rows *int32 `json:"rows,omitempty" protobuf:"varint,5,opt,name=rows"`
+	//Target location of the prediction log
+	// +kubebuilder:validation:Optional
+	Location data.DataLocation `json:"location,omitempty" protobuf:"bytes,6,opt,name=location"`
 }
 
 // ProgressiveSpec defines the specification to progressively deploy a model to production

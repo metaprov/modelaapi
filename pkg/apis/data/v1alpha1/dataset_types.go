@@ -192,6 +192,9 @@ type DatasetSpec struct {
 	// The reference to the Lab under which Jobs created by the Dataset will be executed
 	// +kubebuilder:validation:Optional
 	LabRef v1.ObjectReference `json:"labRef,omitempty" protobuf:"bytes,25,opt,name=labRef"`
+	// Prediction dataset ref is a reference to a prediction dataset ref (dataset that contain the predictions log).
+	// +kubebuilder:validation:Optional
+	PredictionDatasetRef v1.ObjectReference `json:"predictionDatasetRef,omitempty" protobuf:"bytes,26,opt,name=predictionDatasetRef"`
 }
 
 // DatasetStatus defines the observed state of a Dataset object
