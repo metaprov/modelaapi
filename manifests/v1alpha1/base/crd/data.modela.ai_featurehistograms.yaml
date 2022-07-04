@@ -108,9 +108,7 @@ spec:
                     type: string
                 type: object
               columns:
-                default: ""
-                description: Type name of the column key, this column is the key column
-                  in the entity.
+                description: The list of columns to generate the histograms.
                 items:
                   type: string
                 type: array

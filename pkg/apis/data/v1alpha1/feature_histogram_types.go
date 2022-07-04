@@ -79,8 +79,7 @@ type FeatureHistogramSpec struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:MaxLength=512
 	Description *string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
-	// Type name of the column key, this column is the key column in the entity.
-	// +kubebuilder:default:=""
+	// The list of columns to generate the histograms.
 	// +kubebuilder:validation:Optional
 	Columns []string `json:"columns,omitempty" protobuf:"bytes,5,opt,name=columns"`
 	// A reference to the dataset or predictor that contain the column with this histogram
