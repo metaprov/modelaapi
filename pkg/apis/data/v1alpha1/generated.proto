@@ -1749,6 +1749,10 @@ message DatasetSpec {
   // Prediction dataset ref is a reference to a prediction dataset ref (dataset that contain the predictions log).
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference predictionDatasetRef = 26;
+
+  // Used for prediction dataset, contain a reference to the predictor resource that created this dataset
+  // +kubebuilder:validation:Optional
+  optional k8s.io.api.core.v1.ObjectReference predictionRef = 27;
 }
 
 // DatasetStatistics contains statistics about the Dataset's overall data, as well as every feature of the data. The

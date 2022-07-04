@@ -2291,6 +2291,11 @@ export class DatasetSpec extends jspb.Message {
   hasPredictiondatasetref(): boolean;
   clearPredictiondatasetref(): DatasetSpec;
 
+  getPredictionref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setPredictionref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): DatasetSpec;
+  hasPredictionref(): boolean;
+  clearPredictionref(): DatasetSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DatasetSpec.AsObject;
   static toObject(includeInstance: boolean, msg: DatasetSpec): DatasetSpec.AsObject;
@@ -2326,6 +2331,7 @@ export namespace DatasetSpec {
     fast: boolean,
     labref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     predictiondatasetref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    predictionref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
   }
 }
 
