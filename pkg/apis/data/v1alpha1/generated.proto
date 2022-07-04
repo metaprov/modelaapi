@@ -1492,7 +1492,7 @@ message DataSourceSpec {
 
   // If true, this datasource is for labeled data.
   // +kubebuilder:validation:Optional
-  optional bool labeld = 7;
+  optional bool labeled = 7;
 
   // The specification for how incoming data should be sampled (i.e. how many rows should be used). Applicable
   // primarily for very large datasets

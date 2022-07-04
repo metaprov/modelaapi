@@ -1966,8 +1966,8 @@ export class DataSourceSpec extends jspb.Message {
   hasFlatfile(): boolean;
   clearFlatfile(): DataSourceSpec;
 
-  getLabeld(): boolean;
-  setLabeld(value: boolean): DataSourceSpec;
+  getLabeled(): boolean;
+  setLabeled(value: boolean): DataSourceSpec;
 
   getSample(): SampleSpec | undefined;
   setSample(value?: SampleSpec): DataSourceSpec;
@@ -2011,7 +2011,7 @@ export namespace DataSourceSpec {
     datasettype: string,
     schema?: Schema.AsObject,
     flatfile?: FlatFileFormatSpec.AsObject,
-    labeld: boolean,
+    labeled: boolean,
     sample?: SampleSpec.AsObject,
     task: string,
     subtask: string,
