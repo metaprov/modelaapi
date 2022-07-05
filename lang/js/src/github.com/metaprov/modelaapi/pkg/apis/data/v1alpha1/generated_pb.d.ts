@@ -539,58 +539,6 @@ export namespace ColumnStatistics {
   }
 }
 
-export class ColumnTest extends jspb.Message {
-  getType(): string;
-  setType(value: string): ColumnTest;
-
-  getColumn(): string;
-  setColumn(value: string): ColumnTest;
-
-  getValue(): number;
-  setValue(value: number): ColumnTest;
-
-  getMin(): number;
-  setMin(value: number): ColumnTest;
-
-  getMax(): number;
-  setMax(value: number): ColumnTest;
-
-  getValuesetList(): Array<string>;
-  setValuesetList(value: Array<string>): ColumnTest;
-  clearValuesetList(): ColumnTest;
-  addValueset(value: string, index?: number): ColumnTest;
-
-  getStrictmin(): boolean;
-  setStrictmin(value: boolean): ColumnTest;
-
-  getStrictmax(): boolean;
-  setStrictmax(value: boolean): ColumnTest;
-
-  getGenerated(): boolean;
-  setGenerated(value: boolean): ColumnTest;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ColumnTest.AsObject;
-  static toObject(includeInstance: boolean, msg: ColumnTest): ColumnTest.AsObject;
-  static serializeBinaryToWriter(message: ColumnTest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ColumnTest;
-  static deserializeBinaryFromReader(message: ColumnTest, reader: jspb.BinaryReader): ColumnTest;
-}
-
-export namespace ColumnTest {
-  export type AsObject = {
-    type: string,
-    column: string,
-    value: number,
-    min: number,
-    max: number,
-    valuesetList: Array<string>,
-    strictmin: boolean,
-    strictmax: boolean,
-    generated: boolean,
-  }
-}
-
 export class ComponentSpec extends jspb.Message {
   getTitle(): string;
   setTitle(value: string): ComponentSpec;
@@ -2073,36 +2021,6 @@ export namespace DataSourceStatus {
   }
 }
 
-export class DataTestResult extends jspb.Message {
-  getType(): string;
-  setType(value: string): DataTestResult;
-
-  getColumn(): string;
-  setColumn(value: string): DataTestResult;
-
-  getError(): string;
-  setError(value: string): DataTestResult;
-
-  getPassed(): boolean;
-  setPassed(value: boolean): DataTestResult;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DataTestResult.AsObject;
-  static toObject(includeInstance: boolean, msg: DataTestResult): DataTestResult.AsObject;
-  static serializeBinaryToWriter(message: DataTestResult, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DataTestResult;
-  static deserializeBinaryFromReader(message: DataTestResult, reader: jspb.BinaryReader): DataTestResult;
-}
-
-export namespace DataTestResult {
-  export type AsObject = {
-    type: string,
-    column: string,
-    error: string,
-    passed: boolean,
-  }
-}
-
 export class Dataset extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): Dataset;
@@ -2406,10 +2324,10 @@ export class DatasetStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): DatasetStatus;
 
-  getValidationresultsList(): Array<DataTestResult>;
-  setValidationresultsList(value: Array<DataTestResult>): DatasetStatus;
-  clearValidationresultsList(): DatasetStatus;
-  addValidationresults(value?: DataTestResult, index?: number): DataTestResult;
+  getTestresults(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
+  setTestresults(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): DatasetStatus;
+  hasTestresults(): boolean;
+  clearTestresults(): DatasetStatus;
 
   getLaststudytime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setLaststudytime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DatasetStatus;
@@ -2479,7 +2397,7 @@ export namespace DatasetStatus {
     imbalanced: boolean,
     anomaliesuri: string,
     observedgeneration: number,
-    validationresultsList: Array<DataTestResult.AsObject>,
+    testresults?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
     laststudytime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     failurereason: string,
     failuremessage: string,
@@ -2518,54 +2436,6 @@ export namespace DatasetTemplate {
   export type AsObject = {
     metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.AsObject,
     spec?: DatasetSpec.AsObject,
-  }
-}
-
-export class DatasetTest extends jspb.Message {
-  getType(): string;
-  setType(value: string): DatasetTest;
-
-  getValue(): number;
-  setValue(value: number): DatasetTest;
-
-  getMin(): number;
-  setMin(value: number): DatasetTest;
-
-  getMax(): number;
-  setMax(value: number): DatasetTest;
-
-  getValuesetList(): Array<string>;
-  setValuesetList(value: Array<string>): DatasetTest;
-  clearValuesetList(): DatasetTest;
-  addValueset(value: string, index?: number): DatasetTest;
-
-  getStrictmin(): boolean;
-  setStrictmin(value: boolean): DatasetTest;
-
-  getStrictmax(): boolean;
-  setStrictmax(value: boolean): DatasetTest;
-
-  getGenerated(): boolean;
-  setGenerated(value: boolean): DatasetTest;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DatasetTest.AsObject;
-  static toObject(includeInstance: boolean, msg: DatasetTest): DatasetTest.AsObject;
-  static serializeBinaryToWriter(message: DatasetTest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DatasetTest;
-  static deserializeBinaryFromReader(message: DatasetTest, reader: jspb.BinaryReader): DatasetTest;
-}
-
-export namespace DatasetTest {
-  export type AsObject = {
-    type: string,
-    value: number,
-    min: number,
-    max: number,
-    valuesetList: Array<string>,
-    strictmin: boolean,
-    strictmax: boolean,
-    generated: boolean,
   }
 }
 
@@ -3859,62 +3729,6 @@ export namespace FeaturesetStatus {
   }
 }
 
-export class FileTest extends jspb.Message {
-  getType(): string;
-  setType(value: string): FileTest;
-
-  getBucketname(): string;
-  setBucketname(value: string): FileTest;
-
-  getColumn(): string;
-  setColumn(value: string): FileTest;
-
-  getValue(): number;
-  setValue(value: number): FileTest;
-
-  getMin(): number;
-  setMin(value: number): FileTest;
-
-  getMax(): number;
-  setMax(value: number): FileTest;
-
-  getValuesetList(): Array<string>;
-  setValuesetList(value: Array<string>): FileTest;
-  clearValuesetList(): FileTest;
-  addValueset(value: string, index?: number): FileTest;
-
-  getStrictmin(): boolean;
-  setStrictmin(value: boolean): FileTest;
-
-  getStrictmax(): boolean;
-  setStrictmax(value: boolean): FileTest;
-
-  getGenerated(): boolean;
-  setGenerated(value: boolean): FileTest;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): FileTest.AsObject;
-  static toObject(includeInstance: boolean, msg: FileTest): FileTest.AsObject;
-  static serializeBinaryToWriter(message: FileTest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): FileTest;
-  static deserializeBinaryFromReader(message: FileTest, reader: jspb.BinaryReader): FileTest;
-}
-
-export namespace FileTest {
-  export type AsObject = {
-    type: string,
-    bucketname: string,
-    column: string,
-    value: number,
-    min: number,
-    max: number,
-    valuesetList: Array<string>,
-    strictmin: boolean,
-    strictmax: boolean,
-    generated: boolean,
-  }
-}
-
 export class FlatFileFormatSpec extends jspb.Message {
   getFiletype(): string;
   setFiletype(value: string): FlatFileFormatSpec;
@@ -4720,88 +4534,6 @@ export namespace MetricSpec {
     column: string,
     row: number,
     scalar: string,
-  }
-}
-
-export class MultiColumnTest extends jspb.Message {
-  getType(): string;
-  setType(value: string): MultiColumnTest;
-
-  getColumnsList(): Array<string>;
-  setColumnsList(value: Array<string>): MultiColumnTest;
-  clearColumnsList(): MultiColumnTest;
-  addColumns(value: string, index?: number): MultiColumnTest;
-
-  getValue(): number;
-  setValue(value: number): MultiColumnTest;
-
-  getMin(): number;
-  setMin(value: number): MultiColumnTest;
-
-  getMax(): number;
-  setMax(value: number): MultiColumnTest;
-
-  getValuesetList(): Array<string>;
-  setValuesetList(value: Array<string>): MultiColumnTest;
-  clearValuesetList(): MultiColumnTest;
-  addValueset(value: string, index?: number): MultiColumnTest;
-
-  getStrictmin(): boolean;
-  setStrictmin(value: boolean): MultiColumnTest;
-
-  getStrictmax(): boolean;
-  setStrictmax(value: boolean): MultiColumnTest;
-
-  getGenerated(): boolean;
-  setGenerated(value: boolean): MultiColumnTest;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): MultiColumnTest.AsObject;
-  static toObject(includeInstance: boolean, msg: MultiColumnTest): MultiColumnTest.AsObject;
-  static serializeBinaryToWriter(message: MultiColumnTest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): MultiColumnTest;
-  static deserializeBinaryFromReader(message: MultiColumnTest, reader: jspb.BinaryReader): MultiColumnTest;
-}
-
-export namespace MultiColumnTest {
-  export type AsObject = {
-    type: string,
-    columnsList: Array<string>,
-    value: number,
-    min: number,
-    max: number,
-    valuesetList: Array<string>,
-    strictmin: boolean,
-    strictmax: boolean,
-    generated: boolean,
-  }
-}
-
-export class MultiDatasetTest extends jspb.Message {
-  getType(): string;
-  setType(value: string): MultiDatasetTest;
-
-  getDatasetsList(): Array<string>;
-  setDatasetsList(value: Array<string>): MultiDatasetTest;
-  clearDatasetsList(): MultiDatasetTest;
-  addDatasets(value: string, index?: number): MultiDatasetTest;
-
-  getGenerated(): boolean;
-  setGenerated(value: boolean): MultiDatasetTest;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): MultiDatasetTest.AsObject;
-  static toObject(includeInstance: boolean, msg: MultiDatasetTest): MultiDatasetTest.AsObject;
-  static serializeBinaryToWriter(message: MultiDatasetTest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): MultiDatasetTest;
-  static deserializeBinaryFromReader(message: MultiDatasetTest, reader: jspb.BinaryReader): MultiDatasetTest;
-}
-
-export namespace MultiDatasetTest {
-  export type AsObject = {
-    type: string,
-    datasetsList: Array<string>,
-    generated: boolean,
   }
 }
 
@@ -5877,11 +5609,6 @@ export class SqlQueryRunStatus extends jspb.Message {
   hasLogs(): boolean;
   clearLogs(): SqlQueryRunStatus;
 
-  getValidationresultsList(): Array<DataTestResult>;
-  setValidationresultsList(value: Array<DataTestResult>): SqlQueryRunStatus;
-  clearValidationresultsList(): SqlQueryRunStatus;
-  addValidationresults(value?: DataTestResult, index?: number): DataTestResult;
-
   getLocation(): DataLocation | undefined;
   setLocation(value?: DataLocation): SqlQueryRunStatus;
   hasLocation(): boolean;
@@ -5923,7 +5650,6 @@ export namespace SqlQueryRunStatus {
     rows: number,
     triggeredby: string,
     logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
-    validationresultsList: Array<DataTestResult.AsObject>,
     location?: DataLocation.AsObject,
     reportname: string,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
@@ -6092,30 +5818,30 @@ export namespace TableSpec {
 }
 
 export class TestSpec extends jspb.Message {
-  getMultidatasettestsList(): Array<MultiDatasetTest>;
-  setMultidatasettestsList(value: Array<MultiDatasetTest>): TestSpec;
+  getMultidatasettestsList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase>;
+  setMultidatasettestsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase>): TestSpec;
   clearMultidatasettestsList(): TestSpec;
-  addMultidatasettests(value?: MultiDatasetTest, index?: number): MultiDatasetTest;
+  addMultidatasettests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase;
 
-  getDatasettestsList(): Array<DatasetTest>;
-  setDatasettestsList(value: Array<DatasetTest>): TestSpec;
+  getDatasettestsList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase>;
+  setDatasettestsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase>): TestSpec;
   clearDatasettestsList(): TestSpec;
-  addDatasettests(value?: DatasetTest, index?: number): DatasetTest;
+  addDatasettests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase;
 
-  getMulticolumntestsList(): Array<MultiColumnTest>;
-  setMulticolumntestsList(value: Array<MultiColumnTest>): TestSpec;
+  getMulticolumntestsList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase>;
+  setMulticolumntestsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase>): TestSpec;
   clearMulticolumntestsList(): TestSpec;
-  addMulticolumntests(value?: MultiColumnTest, index?: number): MultiColumnTest;
+  addMulticolumntests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase;
 
-  getColumntestsList(): Array<ColumnTest>;
-  setColumntestsList(value: Array<ColumnTest>): TestSpec;
+  getColumntestsList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase>;
+  setColumntestsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase>): TestSpec;
   clearColumntestsList(): TestSpec;
-  addColumntests(value?: ColumnTest, index?: number): ColumnTest;
+  addColumntests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase;
 
-  getFiletestsList(): Array<FileTest>;
-  setFiletestsList(value: Array<FileTest>): TestSpec;
+  getFiletestsList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase>;
+  setFiletestsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase>): TestSpec;
   clearFiletestsList(): TestSpec;
-  addFiletests(value?: FileTest, index?: number): FileTest;
+  addFiletests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TestSpec.AsObject;
@@ -6127,11 +5853,11 @@ export class TestSpec extends jspb.Message {
 
 export namespace TestSpec {
   export type AsObject = {
-    multidatasettestsList: Array<MultiDatasetTest.AsObject>,
-    datasettestsList: Array<DatasetTest.AsObject>,
-    multicolumntestsList: Array<MultiColumnTest.AsObject>,
-    columntestsList: Array<ColumnTest.AsObject>,
-    filetestsList: Array<FileTest.AsObject>,
+    multidatasettestsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase.AsObject>,
+    datasettestsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase.AsObject>,
+    multicolumntestsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase.AsObject>,
+    columntestsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase.AsObject>,
+    filetestsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase.AsObject>,
   }
 }
 

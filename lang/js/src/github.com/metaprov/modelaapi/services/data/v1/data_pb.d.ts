@@ -1182,10 +1182,10 @@ export namespace DsTestDatasetRequest {
 }
 
 export class DsTestDatasetResponse extends jspb.Message {
-  getResultList(): Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataTestResult>;
-  setResultList(value: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataTestResult>): DsTestDatasetResponse;
+  getResultList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCaseResult>;
+  setResultList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCaseResult>): DsTestDatasetResponse;
   clearResultList(): DsTestDatasetResponse;
-  addResult(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataTestResult, index?: number): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataTestResult;
+  addResult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCaseResult, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCaseResult;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DsTestDatasetResponse.AsObject;
@@ -1197,7 +1197,7 @@ export class DsTestDatasetResponse extends jspb.Message {
 
 export namespace DsTestDatasetResponse {
   export type AsObject = {
-    resultList: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataTestResult.AsObject>,
+    resultList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCaseResult.AsObject>,
   }
 }
 

@@ -156,9 +156,6 @@ type SqlQueryRunStatus struct {
 	// Holds the location of log paths
 	//+kubebuilder:validation:Optional
 	Logs catalog.Logs `json:"logs,omitempty" protobuf:"bytes,7,opt,name=logs"`
-	// List of data problems, as reported by the validation process
-	//+kubebuilder:validation:Optional
-	ValidationResults []DataTestResult `json:"validationResults,omitempty" protobuf:"bytes,8,rep,name=validationResults"`
 	// The location of the materialized view
 	//+kubebuilder:validation:Optional
 	Location DataLocation `json:"location,omitempty" protobuf:"bytes,9,opt,name=location"`

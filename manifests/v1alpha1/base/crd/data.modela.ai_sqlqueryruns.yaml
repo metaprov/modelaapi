@@ -480,26 +480,6 @@ spec:
                 - on-concept-drift
                 - on-pref-degradation
                 type: string
-              validationResults:
-                description: List of data problems, as reported by the validation
-                  process
-                items:
-                  properties:
-                    column:
-                      type: string
-                    error:
-                      type: string
-                    passed:
-                      type: boolean
-                    type:
-                      type: string
-                  required:
-                  - column
-                  - error
-                  - passed
-                  - type
-                  type: object
-                type: array
             type: object
         required:
         - metadata

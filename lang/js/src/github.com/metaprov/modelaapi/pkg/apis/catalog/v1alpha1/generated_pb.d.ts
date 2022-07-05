@@ -1545,6 +1545,172 @@ export namespace Stakeholder {
   }
 }
 
+export class TestCase extends jspb.Message {
+  getName(): string;
+  setName(value: string): TestCase;
+
+  getMetric(): string;
+  setMetric(value: string): TestCase;
+
+  getColumn(): string;
+  setColumn(value: string): TestCase;
+
+  getValue(): number;
+  setValue(value: number): TestCase;
+
+  getMin(): number;
+  setMin(value: number): TestCase;
+
+  getMax(): number;
+  setMax(value: number): TestCase;
+
+  getValuesetList(): Array<string>;
+  setValuesetList(value: Array<string>): TestCase;
+  clearValuesetList(): TestCase;
+  addValueset(value: string, index?: number): TestCase;
+
+  getStrictmin(): boolean;
+  setStrictmin(value: boolean): TestCase;
+
+  getStrictmax(): boolean;
+  setStrictmax(value: boolean): TestCase;
+
+  getGenerated(): boolean;
+  setGenerated(value: boolean): TestCase;
+
+  getBucketname(): string;
+  setBucketname(value: string): TestCase;
+
+  getPath(): string;
+  setPath(value: string): TestCase;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TestCase.AsObject;
+  static toObject(includeInstance: boolean, msg: TestCase): TestCase.AsObject;
+  static serializeBinaryToWriter(message: TestCase, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TestCase;
+  static deserializeBinaryFromReader(message: TestCase, reader: jspb.BinaryReader): TestCase;
+}
+
+export namespace TestCase {
+  export type AsObject = {
+    name: string,
+    metric: string,
+    column: string,
+    value: number,
+    min: number,
+    max: number,
+    valuesetList: Array<string>,
+    strictmin: boolean,
+    strictmax: boolean,
+    generated: boolean,
+    bucketname: string,
+    path: string,
+  }
+}
+
+export class TestCaseResult extends jspb.Message {
+  getName(): string;
+  setName(value: string): TestCaseResult;
+
+  getMetric(): string;
+  setMetric(value: string): TestCaseResult;
+
+  getColumn(): string;
+  setColumn(value: string): TestCaseResult;
+
+  getFailed(): boolean;
+  setFailed(value: boolean): TestCaseResult;
+
+  getTotalvalues(): number;
+  setTotalvalues(value: number): TestCaseResult;
+
+  getFailedvalues(): number;
+  setFailedvalues(value: number): TestCaseResult;
+
+  getSamplefailedvalues(): string;
+  setSamplefailedvalues(value: string): TestCaseResult;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TestCaseResult.AsObject;
+  static toObject(includeInstance: boolean, msg: TestCaseResult): TestCaseResult.AsObject;
+  static serializeBinaryToWriter(message: TestCaseResult, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TestCaseResult;
+  static deserializeBinaryFromReader(message: TestCaseResult, reader: jspb.BinaryReader): TestCaseResult;
+}
+
+export namespace TestCaseResult {
+  export type AsObject = {
+    name: string,
+    metric: string,
+    column: string,
+    failed: boolean,
+    totalvalues: number,
+    failedvalues: number,
+    samplefailedvalues: string,
+  }
+}
+
+export class TestSuite extends jspb.Message {
+  getTestsList(): Array<TestCase>;
+  setTestsList(value: Array<TestCase>): TestSuite;
+  clearTestsList(): TestSuite;
+  addTests(value?: TestCase, index?: number): TestCase;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TestSuite.AsObject;
+  static toObject(includeInstance: boolean, msg: TestSuite): TestSuite.AsObject;
+  static serializeBinaryToWriter(message: TestSuite, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TestSuite;
+  static deserializeBinaryFromReader(message: TestSuite, reader: jspb.BinaryReader): TestSuite;
+}
+
+export namespace TestSuite {
+  export type AsObject = {
+    testsList: Array<TestCase.AsObject>,
+  }
+}
+
+export class TestSuiteResult extends jspb.Message {
+  getFaiures(): number;
+  setFaiures(value: number): TestSuiteResult;
+
+  getSuccess(): number;
+  setSuccess(value: number): TestSuiteResult;
+
+  getStarted(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setStarted(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): TestSuiteResult;
+  hasStarted(): boolean;
+  clearStarted(): TestSuiteResult;
+
+  getEnded(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setEnded(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): TestSuiteResult;
+  hasEnded(): boolean;
+  clearEnded(): TestSuiteResult;
+
+  getTestsList(): Array<TestCaseResult>;
+  setTestsList(value: Array<TestCaseResult>): TestSuiteResult;
+  clearTestsList(): TestSuiteResult;
+  addTests(value?: TestCaseResult, index?: number): TestCaseResult;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TestSuiteResult.AsObject;
+  static toObject(includeInstance: boolean, msg: TestSuiteResult): TestSuiteResult.AsObject;
+  static serializeBinaryToWriter(message: TestSuiteResult, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TestSuiteResult;
+  static deserializeBinaryFromReader(message: TestSuiteResult, reader: jspb.BinaryReader): TestSuiteResult;
+}
+
+export namespace TestSuiteResult {
+  export type AsObject = {
+    faiures: number,
+    success: number,
+    started?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    ended?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    testsList: Array<TestCaseResult.AsObject>,
+  }
+}
+
 export class VizUri extends jspb.Message {
   getName(): string;
   setName(value: string): VizUri;

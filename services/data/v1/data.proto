@@ -271,7 +271,7 @@ message DsTestDatasetRequest {
 }
 
 message DsTestDatasetResponse {
-    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataTestResult result = 1;
+    repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult result = 1;
 }
 
 

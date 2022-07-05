@@ -149,131 +149,134 @@ spec:
                       against the new model
                     items:
                       properties:
-                        actualValue:
-                          description: Actual value is the actual value
-                          type: number
-                        at:
-                          description: At is the time the validation was performed.
-                          format: date-time
-                          type: string
-                        column:
-                          description: Column is the name of the feature.
-                          type: string
                         datasetName:
-                          description: DatasetName is the name of the dataset used
-                            to perform the validation
+                          description: The name of a labeled dataset used to test
+                            the model, when measuring a performance metric
                           type: string
-                        durationInSec:
-                          description: The amount of time it took to compute this
-                            result
-                          format: int32
-                          type: integer
-                        error:
-                          description: Error is a string.
+                        prevModel:
+                          description: PrevModel specifies a previous model to compare
+                            against
                           type: string
-                        metric:
-                          description: Metric is the measurement
-                          enum:
-                          - accuracy
-                          - average-precision
-                          - balanced-accuracy
-                          - pr-auc
-                          - pr-auc-micro
-                          - pr-auc-macro
-                          - pr-auc-weighted
-                          - f1
-                          - f1-micro
-                          - f1-macro
-                          - f1-weighted
-                          - f1-samples
-                          - precision
-                          - precision-micro
-                          - precision-macro
-                          - precision-weighted
-                          - precision-samples
-                          - recall
-                          - recall-macro
-                          - recall-micro
-                          - recall-weighted
-                          - recall-samples
-                          - log-loss
-                          - auc
-                          - auc-micro
-                          - auc-macro
-                          - auc-weighted
-                          - zero-one
-                          - hamming-loss
-                          - hinge-loss
-                          - jacquard-loss
-                          - mcc
-                          - fp
-                          - fn
-                          - tn
-                          - tp
-                          - tpr
-                          - fpr
-                          - tnr
-                          - matthews-corr-coef
-                          - explained-variance
-                          - max-error
-                          - mae
-                          - mse
-                          - msle
-                          - rmse
-                          - rmsle
-                          - median-absolute-error
-                          - r2
-                          - adj-r2
-                          - mean_poisson_deviance
-                          - mean-gamma-deviance
-                          - mean-tweedie-deviance
-                          - mape
-                          - maze
-                          - mdape
-                          - smape
-                          - adjusted-mutual-info-score
-                          - adjusted-rand-score
-                          - completeness-score
-                          - fowlkes-mallows-score
-                          - homogeneity-score
-                          - mutual-info-score
-                          - normalized-mutual-info-score
-                          - v-measure-score
-                          - p50-latency
-                          - p95-latency
-                          - p99-latency
-                          - cpu
-                          - gpu
-                          - mem
-                          - gpu-mem
-                          - req-per-sec
-                          - uncertain-prediction-percent
-                          - none
-                          - ks
-                          - psi
-                          - wasserstein-distance
-                          - kl-divergenece
-                          - jensen-shannon-distance
-                          type: string
-                        modelName:
-                          description: ModelName is the name of the model under test
-                          type: string
-                        passed:
-                          description: Passed indicate if the result passed.
-                          type: boolean
-                        type:
-                          type: string
-                      required:
-                      - actualValue
-                      - at
-                      - column
-                      - datasetName
-                      - durationInSec
-                      - error
-                      - metric
-                      - modelName
-                      - passed
-                      - type
+                        suiteResult:
+                          properties:
+                            ended:
+                              format: date-time
+                              type: string
+                            failures:
+                              format: int32
+                              type: integer
+                            started:
+                              format: date-time
+                              type: string
+                            success:
+                              format: int32
+                              type: integer
+                            tests:
+                              items:
+                                description: Result for a specific case
+                                properties:
+                                  column:
+                                    type: string
+                                  failed:
+                                    type: boolean
+                                  failedValues:
+                                    format: int32
+                                    type: integer
+                                  metric:
+                                    enum:
+                                    - accuracy
+                                    - average-precision
+                                    - balanced-accuracy
+                                    - pr-auc
+                                    - pr-auc-micro
+                                    - pr-auc-macro
+                                    - pr-auc-weighted
+                                    - f1
+                                    - f1-micro
+                                    - f1-macro
+                                    - f1-weighted
+                                    - f1-samples
+                                    - precision
+                                    - precision-micro
+                                    - precision-macro
+                                    - precision-weighted
+                                    - precision-samples
+                                    - recall
+                                    - recall-macro
+                                    - recall-micro
+                                    - recall-weighted
+                                    - recall-samples
+                                    - log-loss
+                                    - auc
+                                    - auc-micro
+                                    - auc-macro
+                                    - auc-weighted
+                                    - zero-one
+                                    - hamming-loss
+                                    - hinge-loss
+                                    - jacquard-loss
+                                    - mcc
+                                    - fp
+                                    - fn
+                                    - tn
+                                    - tp
+                                    - tpr
+                                    - fpr
+                                    - tnr
+                                    - matthews-corr-coef
+                                    - explained-variance
+                                    - max-error
+                                    - mae
+                                    - mse
+                                    - msle
+                                    - rmse
+                                    - rmsle
+                                    - median-absolute-error
+                                    - r2
+                                    - adj-r2
+                                    - mean_poisson_deviance
+                                    - mean-gamma-deviance
+                                    - mean-tweedie-deviance
+                                    - mape
+                                    - maze
+                                    - mdape
+                                    - smape
+                                    - adjusted-mutual-info-score
+                                    - adjusted-rand-score
+                                    - completeness-score
+                                    - fowlkes-mallows-score
+                                    - homogeneity-score
+                                    - mutual-info-score
+                                    - normalized-mutual-info-score
+                                    - v-measure-score
+                                    - p50-latency
+                                    - p95-latency
+                                    - p99-latency
+                                    - cpu
+                                    - gpu
+                                    - mem
+                                    - gpu-mem
+                                    - req-per-sec
+                                    - uncertain-prediction-percent
+                                    - none
+                                    - ks
+                                    - psi
+                                    - wasserstein-distance
+                                    - kl-divergenece
+                                    - jensen-shannon-distance
+                                    type: string
+                                  name:
+                                    description: ////////////////////////////////////////////////////////
+                                      Test /////////////////////////////////////////////////////////
+                                    type: string
+                                  sampleFailedValues:
+                                    type: string
+                                  totalValues:
+                                    format: int32
+                                    type: integer
+                                type: object
+                              type: array
+                          type: object
                       type: object
                     type: array
                   startTime:
@@ -340,131 +343,134 @@ spec:
                       against the new model
                     items:
                       properties:
-                        actualValue:
-                          description: Actual value is the actual value
-                          type: number
-                        at:
-                          description: At is the time the validation was performed.
-                          format: date-time
-                          type: string
-                        column:
-                          description: Column is the name of the feature.
-                          type: string
                         datasetName:
-                          description: DatasetName is the name of the dataset used
-                            to perform the validation
+                          description: The name of a labeled dataset used to test
+                            the model, when measuring a performance metric
                           type: string
-                        durationInSec:
-                          description: The amount of time it took to compute this
-                            result
-                          format: int32
-                          type: integer
-                        error:
-                          description: Error is a string.
+                        prevModel:
+                          description: PrevModel specifies a previous model to compare
+                            against
                           type: string
-                        metric:
-                          description: Metric is the measurement
-                          enum:
-                          - accuracy
-                          - average-precision
-                          - balanced-accuracy
-                          - pr-auc
-                          - pr-auc-micro
-                          - pr-auc-macro
-                          - pr-auc-weighted
-                          - f1
-                          - f1-micro
-                          - f1-macro
-                          - f1-weighted
-                          - f1-samples
-                          - precision
-                          - precision-micro
-                          - precision-macro
-                          - precision-weighted
-                          - precision-samples
-                          - recall
-                          - recall-macro
-                          - recall-micro
-                          - recall-weighted
-                          - recall-samples
-                          - log-loss
-                          - auc
-                          - auc-micro
-                          - auc-macro
-                          - auc-weighted
-                          - zero-one
-                          - hamming-loss
-                          - hinge-loss
-                          - jacquard-loss
-                          - mcc
-                          - fp
-                          - fn
-                          - tn
-                          - tp
-                          - tpr
-                          - fpr
-                          - tnr
-                          - matthews-corr-coef
-                          - explained-variance
-                          - max-error
-                          - mae
-                          - mse
-                          - msle
-                          - rmse
-                          - rmsle
-                          - median-absolute-error
-                          - r2
-                          - adj-r2
-                          - mean_poisson_deviance
-                          - mean-gamma-deviance
-                          - mean-tweedie-deviance
-                          - mape
-                          - maze
-                          - mdape
-                          - smape
-                          - adjusted-mutual-info-score
-                          - adjusted-rand-score
-                          - completeness-score
-                          - fowlkes-mallows-score
-                          - homogeneity-score
-                          - mutual-info-score
-                          - normalized-mutual-info-score
-                          - v-measure-score
-                          - p50-latency
-                          - p95-latency
-                          - p99-latency
-                          - cpu
-                          - gpu
-                          - mem
-                          - gpu-mem
-                          - req-per-sec
-                          - uncertain-prediction-percent
-                          - none
-                          - ks
-                          - psi
-                          - wasserstein-distance
-                          - kl-divergenece
-                          - jensen-shannon-distance
-                          type: string
-                        modelName:
-                          description: ModelName is the name of the model under test
-                          type: string
-                        passed:
-                          description: Passed indicate if the result passed.
-                          type: boolean
-                        type:
-                          type: string
-                      required:
-                      - actualValue
-                      - at
-                      - column
-                      - datasetName
-                      - durationInSec
-                      - error
-                      - metric
-                      - modelName
-                      - passed
-                      - type
+                        suiteResult:
+                          properties:
+                            ended:
+                              format: date-time
+                              type: string
+                            failures:
+                              format: int32
+                              type: integer
+                            started:
+                              format: date-time
+                              type: string
+                            success:
+                              format: int32
+                              type: integer
+                            tests:
+                              items:
+                                description: Result for a specific case
+                                properties:
+                                  column:
+                                    type: string
+                                  failed:
+                                    type: boolean
+                                  failedValues:
+                                    format: int32
+                                    type: integer
+                                  metric:
+                                    enum:
+                                    - accuracy
+                                    - average-precision
+                                    - balanced-accuracy
+                                    - pr-auc
+                                    - pr-auc-micro
+                                    - pr-auc-macro
+                                    - pr-auc-weighted
+                                    - f1
+                                    - f1-micro
+                                    - f1-macro
+                                    - f1-weighted
+                                    - f1-samples
+                                    - precision
+                                    - precision-micro
+                                    - precision-macro
+                                    - precision-weighted
+                                    - precision-samples
+                                    - recall
+                                    - recall-macro
+                                    - recall-micro
+                                    - recall-weighted
+                                    - recall-samples
+                                    - log-loss
+                                    - auc
+                                    - auc-micro
+                                    - auc-macro
+                                    - auc-weighted
+                                    - zero-one
+                                    - hamming-loss
+                                    - hinge-loss
+                                    - jacquard-loss
+                                    - mcc
+                                    - fp
+                                    - fn
+                                    - tn
+                                    - tp
+                                    - tpr
+                                    - fpr
+                                    - tnr
+                                    - matthews-corr-coef
+                                    - explained-variance
+                                    - max-error
+                                    - mae
+                                    - mse
+                                    - msle
+                                    - rmse
+                                    - rmsle
+                                    - median-absolute-error
+                                    - r2
+                                    - adj-r2
+                                    - mean_poisson_deviance
+                                    - mean-gamma-deviance
+                                    - mean-tweedie-deviance
+                                    - mape
+                                    - maze
+                                    - mdape
+                                    - smape
+                                    - adjusted-mutual-info-score
+                                    - adjusted-rand-score
+                                    - completeness-score
+                                    - fowlkes-mallows-score
+                                    - homogeneity-score
+                                    - mutual-info-score
+                                    - normalized-mutual-info-score
+                                    - v-measure-score
+                                    - p50-latency
+                                    - p95-latency
+                                    - p99-latency
+                                    - cpu
+                                    - gpu
+                                    - mem
+                                    - gpu-mem
+                                    - req-per-sec
+                                    - uncertain-prediction-percent
+                                    - none
+                                    - ks
+                                    - psi
+                                    - wasserstein-distance
+                                    - kl-divergenece
+                                    - jensen-shannon-distance
+                                    type: string
+                                  name:
+                                    description: ////////////////////////////////////////////////////////
+                                      Test /////////////////////////////////////////////////////////
+                                    type: string
+                                  sampleFailedValues:
+                                    type: string
+                                  totalValues:
+                                    format: int32
+                                    type: integer
+                                type: object
+                              type: array
+                          type: object
                       type: object
                     type: array
                   startTime:
@@ -506,131 +512,134 @@ spec:
                       against the new model
                     items:
                       properties:
-                        actualValue:
-                          description: Actual value is the actual value
-                          type: number
-                        at:
-                          description: At is the time the validation was performed.
-                          format: date-time
-                          type: string
-                        column:
-                          description: Column is the name of the feature.
-                          type: string
                         datasetName:
-                          description: DatasetName is the name of the dataset used
-                            to perform the validation
+                          description: The name of a labeled dataset used to test
+                            the model, when measuring a performance metric
                           type: string
-                        durationInSec:
-                          description: The amount of time it took to compute this
-                            result
-                          format: int32
-                          type: integer
-                        error:
-                          description: Error is a string.
+                        prevModel:
+                          description: PrevModel specifies a previous model to compare
+                            against
                           type: string
-                        metric:
-                          description: Metric is the measurement
-                          enum:
-                          - accuracy
-                          - average-precision
-                          - balanced-accuracy
-                          - pr-auc
-                          - pr-auc-micro
-                          - pr-auc-macro
-                          - pr-auc-weighted
-                          - f1
-                          - f1-micro
-                          - f1-macro
-                          - f1-weighted
-                          - f1-samples
-                          - precision
-                          - precision-micro
-                          - precision-macro
-                          - precision-weighted
-                          - precision-samples
-                          - recall
-                          - recall-macro
-                          - recall-micro
-                          - recall-weighted
-                          - recall-samples
-                          - log-loss
-                          - auc
-                          - auc-micro
-                          - auc-macro
-                          - auc-weighted
-                          - zero-one
-                          - hamming-loss
-                          - hinge-loss
-                          - jacquard-loss
-                          - mcc
-                          - fp
-                          - fn
-                          - tn
-                          - tp
-                          - tpr
-                          - fpr
-                          - tnr
-                          - matthews-corr-coef
-                          - explained-variance
-                          - max-error
-                          - mae
-                          - mse
-                          - msle
-                          - rmse
-                          - rmsle
-                          - median-absolute-error
-                          - r2
-                          - adj-r2
-                          - mean_poisson_deviance
-                          - mean-gamma-deviance
-                          - mean-tweedie-deviance
-                          - mape
-                          - maze
-                          - mdape
-                          - smape
-                          - adjusted-mutual-info-score
-                          - adjusted-rand-score
-                          - completeness-score
-                          - fowlkes-mallows-score
-                          - homogeneity-score
-                          - mutual-info-score
-                          - normalized-mutual-info-score
-                          - v-measure-score
-                          - p50-latency
-                          - p95-latency
-                          - p99-latency
-                          - cpu
-                          - gpu
-                          - mem
-                          - gpu-mem
-                          - req-per-sec
-                          - uncertain-prediction-percent
-                          - none
-                          - ks
-                          - psi
-                          - wasserstein-distance
-                          - kl-divergenece
-                          - jensen-shannon-distance
-                          type: string
-                        modelName:
-                          description: ModelName is the name of the model under test
-                          type: string
-                        passed:
-                          description: Passed indicate if the result passed.
-                          type: boolean
-                        type:
-                          type: string
-                      required:
-                      - actualValue
-                      - at
-                      - column
-                      - datasetName
-                      - durationInSec
-                      - error
-                      - metric
-                      - modelName
-                      - passed
-                      - type
+                        suiteResult:
+                          properties:
+                            ended:
+                              format: date-time
+                              type: string
+                            failures:
+                              format: int32
+                              type: integer
+                            started:
+                              format: date-time
+                              type: string
+                            success:
+                              format: int32
+                              type: integer
+                            tests:
+                              items:
+                                description: Result for a specific case
+                                properties:
+                                  column:
+                                    type: string
+                                  failed:
+                                    type: boolean
+                                  failedValues:
+                                    format: int32
+                                    type: integer
+                                  metric:
+                                    enum:
+                                    - accuracy
+                                    - average-precision
+                                    - balanced-accuracy
+                                    - pr-auc
+                                    - pr-auc-micro
+                                    - pr-auc-macro
+                                    - pr-auc-weighted
+                                    - f1
+                                    - f1-micro
+                                    - f1-macro
+                                    - f1-weighted
+                                    - f1-samples
+                                    - precision
+                                    - precision-micro
+                                    - precision-macro
+                                    - precision-weighted
+                                    - precision-samples
+                                    - recall
+                                    - recall-macro
+                                    - recall-micro
+                                    - recall-weighted
+                                    - recall-samples
+                                    - log-loss
+                                    - auc
+                                    - auc-micro
+                                    - auc-macro
+                                    - auc-weighted
+                                    - zero-one
+                                    - hamming-loss
+                                    - hinge-loss
+                                    - jacquard-loss
+                                    - mcc
+                                    - fp
+                                    - fn
+                                    - tn
+                                    - tp
+                                    - tpr
+                                    - fpr
+                                    - tnr
+                                    - matthews-corr-coef
+                                    - explained-variance
+                                    - max-error
+                                    - mae
+                                    - mse
+                                    - msle
+                                    - rmse
+                                    - rmsle
+                                    - median-absolute-error
+                                    - r2
+                                    - adj-r2
+                                    - mean_poisson_deviance
+                                    - mean-gamma-deviance
+                                    - mean-tweedie-deviance
+                                    - mape
+                                    - maze
+                                    - mdape
+                                    - smape
+                                    - adjusted-mutual-info-score
+                                    - adjusted-rand-score
+                                    - completeness-score
+                                    - fowlkes-mallows-score
+                                    - homogeneity-score
+                                    - mutual-info-score
+                                    - normalized-mutual-info-score
+                                    - v-measure-score
+                                    - p50-latency
+                                    - p95-latency
+                                    - p99-latency
+                                    - cpu
+                                    - gpu
+                                    - mem
+                                    - gpu-mem
+                                    - req-per-sec
+                                    - uncertain-prediction-percent
+                                    - none
+                                    - ks
+                                    - psi
+                                    - wasserstein-distance
+                                    - kl-divergenece
+                                    - jensen-shannon-distance
+                                    type: string
+                                  name:
+                                    description: ////////////////////////////////////////////////////////
+                                      Test /////////////////////////////////////////////////////////
+                                    type: string
+                                  sampleFailedValues:
+                                    type: string
+                                  totalValues:
+                                    format: int32
+                                    type: integer
+                                type: object
+                              type: array
+                          type: object
                       type: object
                     type: array
                   startTime:
@@ -683,131 +692,134 @@ spec:
                       against the new model
                     items:
                       properties:
-                        actualValue:
-                          description: Actual value is the actual value
-                          type: number
-                        at:
-                          description: At is the time the validation was performed.
-                          format: date-time
-                          type: string
-                        column:
-                          description: Column is the name of the feature.
-                          type: string
                         datasetName:
-                          description: DatasetName is the name of the dataset used
-                            to perform the validation
+                          description: The name of a labeled dataset used to test
+                            the model, when measuring a performance metric
                           type: string
-                        durationInSec:
-                          description: The amount of time it took to compute this
-                            result
-                          format: int32
-                          type: integer
-                        error:
-                          description: Error is a string.
+                        prevModel:
+                          description: PrevModel specifies a previous model to compare
+                            against
                           type: string
-                        metric:
-                          description: Metric is the measurement
-                          enum:
-                          - accuracy
-                          - average-precision
-                          - balanced-accuracy
-                          - pr-auc
-                          - pr-auc-micro
-                          - pr-auc-macro
-                          - pr-auc-weighted
-                          - f1
-                          - f1-micro
-                          - f1-macro
-                          - f1-weighted
-                          - f1-samples
-                          - precision
-                          - precision-micro
-                          - precision-macro
-                          - precision-weighted
-                          - precision-samples
-                          - recall
-                          - recall-macro
-                          - recall-micro
-                          - recall-weighted
-                          - recall-samples
-                          - log-loss
-                          - auc
-                          - auc-micro
-                          - auc-macro
-                          - auc-weighted
-                          - zero-one
-                          - hamming-loss
-                          - hinge-loss
-                          - jacquard-loss
-                          - mcc
-                          - fp
-                          - fn
-                          - tn
-                          - tp
-                          - tpr
-                          - fpr
-                          - tnr
-                          - matthews-corr-coef
-                          - explained-variance
-                          - max-error
-                          - mae
-                          - mse
-                          - msle
-                          - rmse
-                          - rmsle
-                          - median-absolute-error
-                          - r2
-                          - adj-r2
-                          - mean_poisson_deviance
-                          - mean-gamma-deviance
-                          - mean-tweedie-deviance
-                          - mape
-                          - maze
-                          - mdape
-                          - smape
-                          - adjusted-mutual-info-score
-                          - adjusted-rand-score
-                          - completeness-score
-                          - fowlkes-mallows-score
-                          - homogeneity-score
-                          - mutual-info-score
-                          - normalized-mutual-info-score
-                          - v-measure-score
-                          - p50-latency
-                          - p95-latency
-                          - p99-latency
-                          - cpu
-                          - gpu
-                          - mem
-                          - gpu-mem
-                          - req-per-sec
-                          - uncertain-prediction-percent
-                          - none
-                          - ks
-                          - psi
-                          - wasserstein-distance
-                          - kl-divergenece
-                          - jensen-shannon-distance
-                          type: string
-                        modelName:
-                          description: ModelName is the name of the model under test
-                          type: string
-                        passed:
-                          description: Passed indicate if the result passed.
-                          type: boolean
-                        type:
-                          type: string
-                      required:
-                      - actualValue
-                      - at
-                      - column
-                      - datasetName
-                      - durationInSec
-                      - error
-                      - metric
-                      - modelName
-                      - passed
-                      - type
+                        suiteResult:
+                          properties:
+                            ended:
+                              format: date-time
+                              type: string
+                            failures:
+                              format: int32
+                              type: integer
+                            started:
+                              format: date-time
+                              type: string
+                            success:
+                              format: int32
+                              type: integer
+                            tests:
+                              items:
+                                description: Result for a specific case
+                                properties:
+                                  column:
+                                    type: string
+                                  failed:
+                                    type: boolean
+                                  failedValues:
+                                    format: int32
+                                    type: integer
+                                  metric:
+                                    enum:
+                                    - accuracy
+                                    - average-precision
+                                    - balanced-accuracy
+                                    - pr-auc
+                                    - pr-auc-micro
+                                    - pr-auc-macro
+                                    - pr-auc-weighted
+                                    - f1
+                                    - f1-micro
+                                    - f1-macro
+                                    - f1-weighted
+                                    - f1-samples
+                                    - precision
+                                    - precision-micro
+                                    - precision-macro
+                                    - precision-weighted
+                                    - precision-samples
+                                    - recall
+                                    - recall-macro
+                                    - recall-micro
+                                    - recall-weighted
+                                    - recall-samples
+                                    - log-loss
+                                    - auc
+                                    - auc-micro
+                                    - auc-macro
+                                    - auc-weighted
+                                    - zero-one
+                                    - hamming-loss
+                                    - hinge-loss
+                                    - jacquard-loss
+                                    - mcc
+                                    - fp
+                                    - fn
+                                    - tn
+                                    - tp
+                                    - tpr
+                                    - fpr
+                                    - tnr
+                                    - matthews-corr-coef
+                                    - explained-variance
+                                    - max-error
+                                    - mae
+                                    - mse
+                                    - msle
+                                    - rmse
+                                    - rmsle
+                                    - median-absolute-error
+                                    - r2
+                                    - adj-r2
+                                    - mean_poisson_deviance
+                                    - mean-gamma-deviance
+                                    - mean-tweedie-deviance
+                                    - mape
+                                    - maze
+                                    - mdape
+                                    - smape
+                                    - adjusted-mutual-info-score
+                                    - adjusted-rand-score
+                                    - completeness-score
+                                    - fowlkes-mallows-score
+                                    - homogeneity-score
+                                    - mutual-info-score
+                                    - normalized-mutual-info-score
+                                    - v-measure-score
+                                    - p50-latency
+                                    - p95-latency
+                                    - p99-latency
+                                    - cpu
+                                    - gpu
+                                    - mem
+                                    - gpu-mem
+                                    - req-per-sec
+                                    - uncertain-prediction-percent
+                                    - none
+                                    - ks
+                                    - psi
+                                    - wasserstein-distance
+                                    - kl-divergenece
+                                    - jensen-shannon-distance
+                                    type: string
+                                  name:
+                                    description: ////////////////////////////////////////////////////////
+                                      Test /////////////////////////////////////////////////////////
+                                    type: string
+                                  sampleFailedValues:
+                                    type: string
+                                  totalValues:
+                                    format: int32
+                                    type: integer
+                                type: object
+                              type: array
+                          type: object
                       type: object
                     type: array
                   startTime:
@@ -852,131 +864,134 @@ spec:
                       against the new model
                     items:
                       properties:
-                        actualValue:
-                          description: Actual value is the actual value
-                          type: number
-                        at:
-                          description: At is the time the validation was performed.
-                          format: date-time
-                          type: string
-                        column:
-                          description: Column is the name of the feature.
-                          type: string
                         datasetName:
-                          description: DatasetName is the name of the dataset used
-                            to perform the validation
+                          description: The name of a labeled dataset used to test
+                            the model, when measuring a performance metric
                           type: string
-                        durationInSec:
-                          description: The amount of time it took to compute this
-                            result
-                          format: int32
-                          type: integer
-                        error:
-                          description: Error is a string.
+                        prevModel:
+                          description: PrevModel specifies a previous model to compare
+                            against
                           type: string
-                        metric:
-                          description: Metric is the measurement
-                          enum:
-                          - accuracy
-                          - average-precision
-                          - balanced-accuracy
-                          - pr-auc
-                          - pr-auc-micro
-                          - pr-auc-macro
-                          - pr-auc-weighted
-                          - f1
-                          - f1-micro
-                          - f1-macro
-                          - f1-weighted
-                          - f1-samples
-                          - precision
-                          - precision-micro
-                          - precision-macro
-                          - precision-weighted
-                          - precision-samples
-                          - recall
-                          - recall-macro
-                          - recall-micro
-                          - recall-weighted
-                          - recall-samples
-                          - log-loss
-                          - auc
-                          - auc-micro
-                          - auc-macro
-                          - auc-weighted
-                          - zero-one
-                          - hamming-loss
-                          - hinge-loss
-                          - jacquard-loss
-                          - mcc
-                          - fp
-                          - fn
-                          - tn
-                          - tp
-                          - tpr
-                          - fpr
-                          - tnr
-                          - matthews-corr-coef
-                          - explained-variance
-                          - max-error
-                          - mae
-                          - mse
-                          - msle
-                          - rmse
-                          - rmsle
-                          - median-absolute-error
-                          - r2
-                          - adj-r2
-                          - mean_poisson_deviance
-                          - mean-gamma-deviance
-                          - mean-tweedie-deviance
-                          - mape
-                          - maze
-                          - mdape
-                          - smape
-                          - adjusted-mutual-info-score
-                          - adjusted-rand-score
-                          - completeness-score
-                          - fowlkes-mallows-score
-                          - homogeneity-score
-                          - mutual-info-score
-                          - normalized-mutual-info-score
-                          - v-measure-score
-                          - p50-latency
-                          - p95-latency
-                          - p99-latency
-                          - cpu
-                          - gpu
-                          - mem
-                          - gpu-mem
-                          - req-per-sec
-                          - uncertain-prediction-percent
-                          - none
-                          - ks
-                          - psi
-                          - wasserstein-distance
-                          - kl-divergenece
-                          - jensen-shannon-distance
-                          type: string
-                        modelName:
-                          description: ModelName is the name of the model under test
-                          type: string
-                        passed:
-                          description: Passed indicate if the result passed.
-                          type: boolean
-                        type:
-                          type: string
-                      required:
-                      - actualValue
-                      - at
-                      - column
-                      - datasetName
-                      - durationInSec
-                      - error
-                      - metric
-                      - modelName
-                      - passed
-                      - type
+                        suiteResult:
+                          properties:
+                            ended:
+                              format: date-time
+                              type: string
+                            failures:
+                              format: int32
+                              type: integer
+                            started:
+                              format: date-time
+                              type: string
+                            success:
+                              format: int32
+                              type: integer
+                            tests:
+                              items:
+                                description: Result for a specific case
+                                properties:
+                                  column:
+                                    type: string
+                                  failed:
+                                    type: boolean
+                                  failedValues:
+                                    format: int32
+                                    type: integer
+                                  metric:
+                                    enum:
+                                    - accuracy
+                                    - average-precision
+                                    - balanced-accuracy
+                                    - pr-auc
+                                    - pr-auc-micro
+                                    - pr-auc-macro
+                                    - pr-auc-weighted
+                                    - f1
+                                    - f1-micro
+                                    - f1-macro
+                                    - f1-weighted
+                                    - f1-samples
+                                    - precision
+                                    - precision-micro
+                                    - precision-macro
+                                    - precision-weighted
+                                    - precision-samples
+                                    - recall
+                                    - recall-macro
+                                    - recall-micro
+                                    - recall-weighted
+                                    - recall-samples
+                                    - log-loss
+                                    - auc
+                                    - auc-micro
+                                    - auc-macro
+                                    - auc-weighted
+                                    - zero-one
+                                    - hamming-loss
+                                    - hinge-loss
+                                    - jacquard-loss
+                                    - mcc
+                                    - fp
+                                    - fn
+                                    - tn
+                                    - tp
+                                    - tpr
+                                    - fpr
+                                    - tnr
+                                    - matthews-corr-coef
+                                    - explained-variance
+                                    - max-error
+                                    - mae
+                                    - mse
+                                    - msle
+                                    - rmse
+                                    - rmsle
+                                    - median-absolute-error
+                                    - r2
+                                    - adj-r2
+                                    - mean_poisson_deviance
+                                    - mean-gamma-deviance
+                                    - mean-tweedie-deviance
+                                    - mape
+                                    - maze
+                                    - mdape
+                                    - smape
+                                    - adjusted-mutual-info-score
+                                    - adjusted-rand-score
+                                    - completeness-score
+                                    - fowlkes-mallows-score
+                                    - homogeneity-score
+                                    - mutual-info-score
+                                    - normalized-mutual-info-score
+                                    - v-measure-score
+                                    - p50-latency
+                                    - p95-latency
+                                    - p99-latency
+                                    - cpu
+                                    - gpu
+                                    - mem
+                                    - gpu-mem
+                                    - req-per-sec
+                                    - uncertain-prediction-percent
+                                    - none
+                                    - ks
+                                    - psi
+                                    - wasserstein-distance
+                                    - kl-divergenece
+                                    - jensen-shannon-distance
+                                    type: string
+                                  name:
+                                    description: ////////////////////////////////////////////////////////
+                                      Test /////////////////////////////////////////////////////////
+                                    type: string
+                                  sampleFailedValues:
+                                    type: string
+                                  totalValues:
+                                    format: int32
+                                    type: integer
+                                type: object
+                              type: array
+                          type: object
                       type: object
                     type: array
                   startTime:
@@ -1028,131 +1043,134 @@ spec:
                       against the new model
                     items:
                       properties:
-                        actualValue:
-                          description: Actual value is the actual value
-                          type: number
-                        at:
-                          description: At is the time the validation was performed.
-                          format: date-time
-                          type: string
-                        column:
-                          description: Column is the name of the feature.
-                          type: string
                         datasetName:
-                          description: DatasetName is the name of the dataset used
-                            to perform the validation
+                          description: The name of a labeled dataset used to test
+                            the model, when measuring a performance metric
                           type: string
-                        durationInSec:
-                          description: The amount of time it took to compute this
-                            result
-                          format: int32
-                          type: integer
-                        error:
-                          description: Error is a string.
+                        prevModel:
+                          description: PrevModel specifies a previous model to compare
+                            against
                           type: string
-                        metric:
-                          description: Metric is the measurement
-                          enum:
-                          - accuracy
-                          - average-precision
-                          - balanced-accuracy
-                          - pr-auc
-                          - pr-auc-micro
-                          - pr-auc-macro
-                          - pr-auc-weighted
-                          - f1
-                          - f1-micro
-                          - f1-macro
-                          - f1-weighted
-                          - f1-samples
-                          - precision
-                          - precision-micro
-                          - precision-macro
-                          - precision-weighted
-                          - precision-samples
-                          - recall
-                          - recall-macro
-                          - recall-micro
-                          - recall-weighted
-                          - recall-samples
-                          - log-loss
-                          - auc
-                          - auc-micro
-                          - auc-macro
-                          - auc-weighted
-                          - zero-one
-                          - hamming-loss
-                          - hinge-loss
-                          - jacquard-loss
-                          - mcc
-                          - fp
-                          - fn
-                          - tn
-                          - tp
-                          - tpr
-                          - fpr
-                          - tnr
-                          - matthews-corr-coef
-                          - explained-variance
-                          - max-error
-                          - mae
-                          - mse
-                          - msle
-                          - rmse
-                          - rmsle
-                          - median-absolute-error
-                          - r2
-                          - adj-r2
-                          - mean_poisson_deviance
-                          - mean-gamma-deviance
-                          - mean-tweedie-deviance
-                          - mape
-                          - maze
-                          - mdape
-                          - smape
-                          - adjusted-mutual-info-score
-                          - adjusted-rand-score
-                          - completeness-score
-                          - fowlkes-mallows-score
-                          - homogeneity-score
-                          - mutual-info-score
-                          - normalized-mutual-info-score
-                          - v-measure-score
-                          - p50-latency
-                          - p95-latency
-                          - p99-latency
-                          - cpu
-                          - gpu
-                          - mem
-                          - gpu-mem
-                          - req-per-sec
-                          - uncertain-prediction-percent
-                          - none
-                          - ks
-                          - psi
-                          - wasserstein-distance
-                          - kl-divergenece
-                          - jensen-shannon-distance
-                          type: string
-                        modelName:
-                          description: ModelName is the name of the model under test
-                          type: string
-                        passed:
-                          description: Passed indicate if the result passed.
-                          type: boolean
-                        type:
-                          type: string
-                      required:
-                      - actualValue
-                      - at
-                      - column
-                      - datasetName
-                      - durationInSec
-                      - error
-                      - metric
-                      - modelName
-                      - passed
-                      - type
+                        suiteResult:
+                          properties:
+                            ended:
+                              format: date-time
+                              type: string
+                            failures:
+                              format: int32
+                              type: integer
+                            started:
+                              format: date-time
+                              type: string
+                            success:
+                              format: int32
+                              type: integer
+                            tests:
+                              items:
+                                description: Result for a specific case
+                                properties:
+                                  column:
+                                    type: string
+                                  failed:
+                                    type: boolean
+                                  failedValues:
+                                    format: int32
+                                    type: integer
+                                  metric:
+                                    enum:
+                                    - accuracy
+                                    - average-precision
+                                    - balanced-accuracy
+                                    - pr-auc
+                                    - pr-auc-micro
+                                    - pr-auc-macro
+                                    - pr-auc-weighted
+                                    - f1
+                                    - f1-micro
+                                    - f1-macro
+                                    - f1-weighted
+                                    - f1-samples
+                                    - precision
+                                    - precision-micro
+                                    - precision-macro
+                                    - precision-weighted
+                                    - precision-samples
+                                    - recall
+                                    - recall-macro
+                                    - recall-micro
+                                    - recall-weighted
+                                    - recall-samples
+                                    - log-loss
+                                    - auc
+                                    - auc-micro
+                                    - auc-macro
+                                    - auc-weighted
+                                    - zero-one
+                                    - hamming-loss
+                                    - hinge-loss
+                                    - jacquard-loss
+                                    - mcc
+                                    - fp
+                                    - fn
+                                    - tn
+                                    - tp
+                                    - tpr
+                                    - fpr
+                                    - tnr
+                                    - matthews-corr-coef
+                                    - explained-variance
+                                    - max-error
+                                    - mae
+                                    - mse
+                                    - msle
+                                    - rmse
+                                    - rmsle
+                                    - median-absolute-error
+                                    - r2
+                                    - adj-r2
+                                    - mean_poisson_deviance
+                                    - mean-gamma-deviance
+                                    - mean-tweedie-deviance
+                                    - mape
+                                    - maze
+                                    - mdape
+                                    - smape
+                                    - adjusted-mutual-info-score
+                                    - adjusted-rand-score
+                                    - completeness-score
+                                    - fowlkes-mallows-score
+                                    - homogeneity-score
+                                    - mutual-info-score
+                                    - normalized-mutual-info-score
+                                    - v-measure-score
+                                    - p50-latency
+                                    - p95-latency
+                                    - p99-latency
+                                    - cpu
+                                    - gpu
+                                    - mem
+                                    - gpu-mem
+                                    - req-per-sec
+                                    - uncertain-prediction-percent
+                                    - none
+                                    - ks
+                                    - psi
+                                    - wasserstein-distance
+                                    - kl-divergenece
+                                    - jensen-shannon-distance
+                                    type: string
+                                  name:
+                                    description: ////////////////////////////////////////////////////////
+                                      Test /////////////////////////////////////////////////////////
+                                    type: string
+                                  sampleFailedValues:
+                                    type: string
+                                  totalValues:
+                                    format: int32
+                                    type: integer
+                                type: object
+                              type: array
+                          type: object
                       type: object
                     type: array
                   startTime:
@@ -1199,131 +1217,134 @@ spec:
                       against the new model
                     items:
                       properties:
-                        actualValue:
-                          description: Actual value is the actual value
-                          type: number
-                        at:
-                          description: At is the time the validation was performed.
-                          format: date-time
-                          type: string
-                        column:
-                          description: Column is the name of the feature.
-                          type: string
                         datasetName:
-                          description: DatasetName is the name of the dataset used
-                            to perform the validation
+                          description: The name of a labeled dataset used to test
+                            the model, when measuring a performance metric
                           type: string
-                        durationInSec:
-                          description: The amount of time it took to compute this
-                            result
-                          format: int32
-                          type: integer
-                        error:
-                          description: Error is a string.
+                        prevModel:
+                          description: PrevModel specifies a previous model to compare
+                            against
                           type: string
-                        metric:
-                          description: Metric is the measurement
-                          enum:
-                          - accuracy
-                          - average-precision
-                          - balanced-accuracy
-                          - pr-auc
-                          - pr-auc-micro
-                          - pr-auc-macro
-                          - pr-auc-weighted
-                          - f1
-                          - f1-micro
-                          - f1-macro
-                          - f1-weighted
-                          - f1-samples
-                          - precision
-                          - precision-micro
-                          - precision-macro
-                          - precision-weighted
-                          - precision-samples
-                          - recall
-                          - recall-macro
-                          - recall-micro
-                          - recall-weighted
-                          - recall-samples
-                          - log-loss
-                          - auc
-                          - auc-micro
-                          - auc-macro
-                          - auc-weighted
-                          - zero-one
-                          - hamming-loss
-                          - hinge-loss
-                          - jacquard-loss
-                          - mcc
-                          - fp
-                          - fn
-                          - tn
-                          - tp
-                          - tpr
-                          - fpr
-                          - tnr
-                          - matthews-corr-coef
-                          - explained-variance
-                          - max-error
-                          - mae
-                          - mse
-                          - msle
-                          - rmse
-                          - rmsle
-                          - median-absolute-error
-                          - r2
-                          - adj-r2
-                          - mean_poisson_deviance
-                          - mean-gamma-deviance
-                          - mean-tweedie-deviance
-                          - mape
-                          - maze
-                          - mdape
-                          - smape
-                          - adjusted-mutual-info-score
-                          - adjusted-rand-score
-                          - completeness-score
-                          - fowlkes-mallows-score
-                          - homogeneity-score
-                          - mutual-info-score
-                          - normalized-mutual-info-score
-                          - v-measure-score
-                          - p50-latency
-                          - p95-latency
-                          - p99-latency
-                          - cpu
-                          - gpu
-                          - mem
-                          - gpu-mem
-                          - req-per-sec
-                          - uncertain-prediction-percent
-                          - none
-                          - ks
-                          - psi
-                          - wasserstein-distance
-                          - kl-divergenece
-                          - jensen-shannon-distance
-                          type: string
-                        modelName:
-                          description: ModelName is the name of the model under test
-                          type: string
-                        passed:
-                          description: Passed indicate if the result passed.
-                          type: boolean
-                        type:
-                          type: string
-                      required:
-                      - actualValue
-                      - at
-                      - column
-                      - datasetName
-                      - durationInSec
-                      - error
-                      - metric
-                      - modelName
-                      - passed
-                      - type
+                        suiteResult:
+                          properties:
+                            ended:
+                              format: date-time
+                              type: string
+                            failures:
+                              format: int32
+                              type: integer
+                            started:
+                              format: date-time
+                              type: string
+                            success:
+                              format: int32
+                              type: integer
+                            tests:
+                              items:
+                                description: Result for a specific case
+                                properties:
+                                  column:
+                                    type: string
+                                  failed:
+                                    type: boolean
+                                  failedValues:
+                                    format: int32
+                                    type: integer
+                                  metric:
+                                    enum:
+                                    - accuracy
+                                    - average-precision
+                                    - balanced-accuracy
+                                    - pr-auc
+                                    - pr-auc-micro
+                                    - pr-auc-macro
+                                    - pr-auc-weighted
+                                    - f1
+                                    - f1-micro
+                                    - f1-macro
+                                    - f1-weighted
+                                    - f1-samples
+                                    - precision
+                                    - precision-micro
+                                    - precision-macro
+                                    - precision-weighted
+                                    - precision-samples
+                                    - recall
+                                    - recall-macro
+                                    - recall-micro
+                                    - recall-weighted
+                                    - recall-samples
+                                    - log-loss
+                                    - auc
+                                    - auc-micro
+                                    - auc-macro
+                                    - auc-weighted
+                                    - zero-one
+                                    - hamming-loss
+                                    - hinge-loss
+                                    - jacquard-loss
+                                    - mcc
+                                    - fp
+                                    - fn
+                                    - tn
+                                    - tp
+                                    - tpr
+                                    - fpr
+                                    - tnr
+                                    - matthews-corr-coef
+                                    - explained-variance
+                                    - max-error
+                                    - mae
+                                    - mse
+                                    - msle
+                                    - rmse
+                                    - rmsle
+                                    - median-absolute-error
+                                    - r2
+                                    - adj-r2
+                                    - mean_poisson_deviance
+                                    - mean-gamma-deviance
+                                    - mean-tweedie-deviance
+                                    - mape
+                                    - maze
+                                    - mdape
+                                    - smape
+                                    - adjusted-mutual-info-score
+                                    - adjusted-rand-score
+                                    - completeness-score
+                                    - fowlkes-mallows-score
+                                    - homogeneity-score
+                                    - mutual-info-score
+                                    - normalized-mutual-info-score
+                                    - v-measure-score
+                                    - p50-latency
+                                    - p95-latency
+                                    - p99-latency
+                                    - cpu
+                                    - gpu
+                                    - mem
+                                    - gpu-mem
+                                    - req-per-sec
+                                    - uncertain-prediction-percent
+                                    - none
+                                    - ks
+                                    - psi
+                                    - wasserstein-distance
+                                    - kl-divergenece
+                                    - jensen-shannon-distance
+                                    type: string
+                                  name:
+                                    description: ////////////////////////////////////////////////////////
+                                      Test /////////////////////////////////////////////////////////
+                                    type: string
+                                  sampleFailedValues:
+                                    type: string
+                                  totalValues:
+                                    format: int32
+                                    type: integer
+                                type: object
+                              type: array
+                          type: object
                       type: object
                     type: array
                   startTime:
@@ -1371,131 +1392,134 @@ spec:
                       against the new model
                     items:
                       properties:
-                        actualValue:
-                          description: Actual value is the actual value
-                          type: number
-                        at:
-                          description: At is the time the validation was performed.
-                          format: date-time
-                          type: string
-                        column:
-                          description: Column is the name of the feature.
-                          type: string
                         datasetName:
-                          description: DatasetName is the name of the dataset used
-                            to perform the validation
+                          description: The name of a labeled dataset used to test
+                            the model, when measuring a performance metric
                           type: string
-                        durationInSec:
-                          description: The amount of time it took to compute this
-                            result
-                          format: int32
-                          type: integer
-                        error:
-                          description: Error is a string.
+                        prevModel:
+                          description: PrevModel specifies a previous model to compare
+                            against
                           type: string
-                        metric:
-                          description: Metric is the measurement
-                          enum:
-                          - accuracy
-                          - average-precision
-                          - balanced-accuracy
-                          - pr-auc
-                          - pr-auc-micro
-                          - pr-auc-macro
-                          - pr-auc-weighted
-                          - f1
-                          - f1-micro
-                          - f1-macro
-                          - f1-weighted
-                          - f1-samples
-                          - precision
-                          - precision-micro
-                          - precision-macro
-                          - precision-weighted
-                          - precision-samples
-                          - recall
-                          - recall-macro
-                          - recall-micro
-                          - recall-weighted
-                          - recall-samples
-                          - log-loss
-                          - auc
-                          - auc-micro
-                          - auc-macro
-                          - auc-weighted
-                          - zero-one
-                          - hamming-loss
-                          - hinge-loss
-                          - jacquard-loss
-                          - mcc
-                          - fp
-                          - fn
-                          - tn
-                          - tp
-                          - tpr
-                          - fpr
-                          - tnr
-                          - matthews-corr-coef
-                          - explained-variance
-                          - max-error
-                          - mae
-                          - mse
-                          - msle
-                          - rmse
-                          - rmsle
-                          - median-absolute-error
-                          - r2
-                          - adj-r2
-                          - mean_poisson_deviance
-                          - mean-gamma-deviance
-                          - mean-tweedie-deviance
-                          - mape
-                          - maze
-                          - mdape
-                          - smape
-                          - adjusted-mutual-info-score
-                          - adjusted-rand-score
-                          - completeness-score
-                          - fowlkes-mallows-score
-                          - homogeneity-score
-                          - mutual-info-score
-                          - normalized-mutual-info-score
-                          - v-measure-score
-                          - p50-latency
-                          - p95-latency
-                          - p99-latency
-                          - cpu
-                          - gpu
-                          - mem
-                          - gpu-mem
-                          - req-per-sec
-                          - uncertain-prediction-percent
-                          - none
-                          - ks
-                          - psi
-                          - wasserstein-distance
-                          - kl-divergenece
-                          - jensen-shannon-distance
-                          type: string
-                        modelName:
-                          description: ModelName is the name of the model under test
-                          type: string
-                        passed:
-                          description: Passed indicate if the result passed.
-                          type: boolean
-                        type:
-                          type: string
-                      required:
-                      - actualValue
-                      - at
-                      - column
-                      - datasetName
-                      - durationInSec
-                      - error
-                      - metric
-                      - modelName
-                      - passed
-                      - type
+                        suiteResult:
+                          properties:
+                            ended:
+                              format: date-time
+                              type: string
+                            failures:
+                              format: int32
+                              type: integer
+                            started:
+                              format: date-time
+                              type: string
+                            success:
+                              format: int32
+                              type: integer
+                            tests:
+                              items:
+                                description: Result for a specific case
+                                properties:
+                                  column:
+                                    type: string
+                                  failed:
+                                    type: boolean
+                                  failedValues:
+                                    format: int32
+                                    type: integer
+                                  metric:
+                                    enum:
+                                    - accuracy
+                                    - average-precision
+                                    - balanced-accuracy
+                                    - pr-auc
+                                    - pr-auc-micro
+                                    - pr-auc-macro
+                                    - pr-auc-weighted
+                                    - f1
+                                    - f1-micro
+                                    - f1-macro
+                                    - f1-weighted
+                                    - f1-samples
+                                    - precision
+                                    - precision-micro
+                                    - precision-macro
+                                    - precision-weighted
+                                    - precision-samples
+                                    - recall
+                                    - recall-macro
+                                    - recall-micro
+                                    - recall-weighted
+                                    - recall-samples
+                                    - log-loss
+                                    - auc
+                                    - auc-micro
+                                    - auc-macro
+                                    - auc-weighted
+                                    - zero-one
+                                    - hamming-loss
+                                    - hinge-loss
+                                    - jacquard-loss
+                                    - mcc
+                                    - fp
+                                    - fn
+                                    - tn
+                                    - tp
+                                    - tpr
+                                    - fpr
+                                    - tnr
+                                    - matthews-corr-coef
+                                    - explained-variance
+                                    - max-error
+                                    - mae
+                                    - mse
+                                    - msle
+                                    - rmse
+                                    - rmsle
+                                    - median-absolute-error
+                                    - r2
+                                    - adj-r2
+                                    - mean_poisson_deviance
+                                    - mean-gamma-deviance
+                                    - mean-tweedie-deviance
+                                    - mape
+                                    - maze
+                                    - mdape
+                                    - smape
+                                    - adjusted-mutual-info-score
+                                    - adjusted-rand-score
+                                    - completeness-score
+                                    - fowlkes-mallows-score
+                                    - homogeneity-score
+                                    - mutual-info-score
+                                    - normalized-mutual-info-score
+                                    - v-measure-score
+                                    - p50-latency
+                                    - p95-latency
+                                    - p99-latency
+                                    - cpu
+                                    - gpu
+                                    - mem
+                                    - gpu-mem
+                                    - req-per-sec
+                                    - uncertain-prediction-percent
+                                    - none
+                                    - ks
+                                    - psi
+                                    - wasserstein-distance
+                                    - kl-divergenece
+                                    - jensen-shannon-distance
+                                    type: string
+                                  name:
+                                    description: ////////////////////////////////////////////////////////
+                                      Test /////////////////////////////////////////////////////////
+                                    type: string
+                                  sampleFailedValues:
+                                    type: string
+                                  totalValues:
+                                    format: int32
+                                    type: integer
+                                type: object
+                              type: array
+                          type: object
                       type: object
                     type: array
                   startTime:

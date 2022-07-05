@@ -11212,7 +11212,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetResponse.proto
 proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     resultList: jspb.Message.toObjectList(msg.getResultList(),
-    github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataTestResult.toObject, includeInstance)
+    github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCaseResult.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -11250,8 +11250,8 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetResponse.deser
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataTestResult;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataTestResult.deserializeBinaryFromReader);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCaseResult;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCaseResult.deserializeBinaryFromReader);
       msg.addResult(value);
       break;
     default:
@@ -11288,24 +11288,24 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetResponse.seria
     writer.writeRepeatedMessage(
       1,
       f,
-      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataTestResult.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCaseResult.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataTestResult result = 1;
- * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataTestResult>}
+ * repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult result = 1;
+ * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult>}
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetResponse.prototype.getResultList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataTestResult>} */ (
-    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataTestResult, 1));
+  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult>} */ (
+    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCaseResult, 1));
 };
 
 
 /**
- * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataTestResult>} value
+ * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult>} value
  * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetResponse} returns this
 */
 proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetResponse.prototype.setResultList = function(value) {
@@ -11314,12 +11314,12 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetResponse.proto
 
 
 /**
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataTestResult=} opt_value
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult=} opt_value
  * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataTestResult}
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult}
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetResponse.prototype.addResult = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataTestResult, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult, opt_index);
 };
 
 

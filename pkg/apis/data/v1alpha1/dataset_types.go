@@ -231,7 +231,7 @@ type DatasetStatus struct {
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,8,opt,name=observedGeneration"`
 	// List of validation results which are generated for every validation rule associated with the Dataset's Data Source
 	//+kubebuilder:validation:Optional
-	ValidationResults []DataTestResult `json:"validationResults,omitempty" protobuf:"bytes,9,rep,name=validationResults"`
+	TestResults catalog.TestSuiteResult `json:"testResults,omitempty" protobuf:"bytes,9,rep,name=testResults"`
 	// Last time the Dataset was used with a Study
 	//+kubebuilder:validation:Optional
 	LastStudyTime *metav1.Time `json:"lastStudyTime,omitempty" protobuf:"bytes,10,opt,name=lastStudyTime"`
@@ -524,13 +524,6 @@ type DataLocation struct {
 	// containing data that will be used as a data source
 	// +kubebuilder:validation:Optional
 	ResourceRef *v1.ObjectReference `json:"resourceRef,omitempty" protobuf:"bytes,10,opt,name=resourceRef"`
-}
-
-type DataTestResult struct {
-	Type   string `json:"type" protobuf:"bytes,1,opt,name=type"`
-	Column string `json:"column" protobuf:"bytes,2,opt,name=column"`
-	Error  string `json:"error" protobuf:"bytes,3,opt,name=error"`
-	Passed bool   `json:"passed" protobuf:"varint,4,opt,name=passed"`
 }
 
 // Correlation records the correlation between two features in a Dataset

@@ -661,7 +661,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorPart = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorPart.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorPart, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -10414,13 +10414,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelServingSpec
 
 
 
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorPart.repeatedFields_ = [5];
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -10456,8 +10449,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorPart.toOb
     reffreq: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     refinterval: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     reftraining: (f = jspb.Message.getBooleanField(msg, 4)) == null ? undefined : f,
-    testsList: jspb.Message.toObjectList(msg.getTestsList(),
-    github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelTest.toObject, includeInstance),
+    tests: (f = msg.getTests()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.toObject(includeInstance, f),
     schedule: (f = msg.getSchedule()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.toObject(includeInstance, f),
     notifierref: (f = msg.getNotifierref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     outlierdetectionmodelref: (f = msg.getOutlierdetectionmodelref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f)
@@ -10514,9 +10506,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorPart.dese
       msg.setReftraining(value);
       break;
     case 5:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelTest;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelTest.deserializeBinaryFromReader);
-      msg.addTests(value);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.deserializeBinaryFromReader);
+      msg.setTests(value);
       break;
     case 6:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule;
@@ -10590,12 +10582,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorPart.seri
       f
     );
   }
-  f = message.getTestsList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
+  f = message.getTests();
+  if (f != null) {
+    writer.writeMessage(
       5,
       f,
-      github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelTest.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.serializeBinaryToWriter
     );
   }
   f = message.getSchedule();
@@ -10770,40 +10762,39 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorPart.prot
 
 
 /**
- * repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTest tests = 5;
- * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTest>}
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite tests = 5;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorPart.prototype.getTestsList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTest>} */ (
-    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelTest, 5));
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorPart.prototype.getTests = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite, 5));
 };
 
 
 /**
- * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTest>} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorPart} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorPart.prototype.setTestsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 5, value);
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorPart.prototype.setTests = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
 };
 
 
 /**
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTest=} opt_value
- * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTest}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorPart.prototype.addTests = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTest, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorPart} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorPart.prototype.clearTestsList = function() {
-  return this.setTestsList([]);
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorPart.prototype.clearTests = function() {
+  return this.setTests(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorPart.prototype.hasTests = function() {
+  return jspb.Message.getField(this, 5) != null;
 };
 
 

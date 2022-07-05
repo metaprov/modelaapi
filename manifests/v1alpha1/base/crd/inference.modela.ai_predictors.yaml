@@ -817,126 +817,128 @@ spec:
                         type: object
                       tests:
                         description: Define the validation rule for this monitor
-                        items:
-                          description: ModelValidation defines a single validation
-                            to be run against a model
-                          properties:
-                            agg:
-                              description: Agg specifies the type of aggregate when
-                                measuring aggregate performance (e.g. median, average)
-                              enum:
-                              - min
-                              - max
-                              - avg
-                              - median
-                              type: string
-                            column:
-                              description: Define the column name for the validation
-                                role
-                              type: string
-                            datasetName:
-                              description: The name of a labeled dataset used to test
-                                the model, when measuring a performance metric
-                              type: string
-                            max:
-                              description: The lower upper range of the metric
-                              type: number
-                            metric:
-                              description: Define the measurement metric.
-                              enum:
-                              - accuracy
-                              - average-precision
-                              - balanced-accuracy
-                              - pr-auc
-                              - pr-auc-micro
-                              - pr-auc-macro
-                              - pr-auc-weighted
-                              - f1
-                              - f1-micro
-                              - f1-macro
-                              - f1-weighted
-                              - f1-samples
-                              - precision
-                              - precision-micro
-                              - precision-macro
-                              - precision-weighted
-                              - precision-samples
-                              - recall
-                              - recall-macro
-                              - recall-micro
-                              - recall-weighted
-                              - recall-samples
-                              - log-loss
-                              - auc
-                              - auc-micro
-                              - auc-macro
-                              - auc-weighted
-                              - zero-one
-                              - hamming-loss
-                              - hinge-loss
-                              - jacquard-loss
-                              - mcc
-                              - fp
-                              - fn
-                              - tn
-                              - tp
-                              - tpr
-                              - fpr
-                              - tnr
-                              - matthews-corr-coef
-                              - explained-variance
-                              - max-error
-                              - mae
-                              - mse
-                              - msle
-                              - rmse
-                              - rmsle
-                              - median-absolute-error
-                              - r2
-                              - adj-r2
-                              - mean_poisson_deviance
-                              - mean-gamma-deviance
-                              - mean-tweedie-deviance
-                              - mape
-                              - maze
-                              - mdape
-                              - smape
-                              - adjusted-mutual-info-score
-                              - adjusted-rand-score
-                              - completeness-score
-                              - fowlkes-mallows-score
-                              - homogeneity-score
-                              - mutual-info-score
-                              - normalized-mutual-info-score
-                              - v-measure-score
-                              - p50-latency
-                              - p95-latency
-                              - p99-latency
-                              - cpu
-                              - gpu
-                              - mem
-                              - gpu-mem
-                              - req-per-sec
-                              - uncertain-prediction-percent
-                              - none
-                              - ks
-                              - psi
-                              - wasserstein-distance
-                              - kl-divergenece
-                              - jensen-shannon-distance
-                              type: string
-                            min:
-                              description: The lower range of the metric
-                              type: number
-                            name:
-                              description: The type of model validation
-                              type: string
-                            prevModel:
-                              description: PrevModel specifies a previous model to
-                                compare against
-                              type: string
-                          type: object
-                        type: array
+                        properties:
+                          tests:
+                            items:
+                              properties:
+                                bucketName:
+                                  type: string
+                                column:
+                                  type: string
+                                generated:
+                                  description: Indicates if this validation rule was
+                                    automatically generated by the system
+                                  type: boolean
+                                max:
+                                  format: float
+                                  type: number
+                                metric:
+                                  enum:
+                                  - accuracy
+                                  - average-precision
+                                  - balanced-accuracy
+                                  - pr-auc
+                                  - pr-auc-micro
+                                  - pr-auc-macro
+                                  - pr-auc-weighted
+                                  - f1
+                                  - f1-micro
+                                  - f1-macro
+                                  - f1-weighted
+                                  - f1-samples
+                                  - precision
+                                  - precision-micro
+                                  - precision-macro
+                                  - precision-weighted
+                                  - precision-samples
+                                  - recall
+                                  - recall-macro
+                                  - recall-micro
+                                  - recall-weighted
+                                  - recall-samples
+                                  - log-loss
+                                  - auc
+                                  - auc-micro
+                                  - auc-macro
+                                  - auc-weighted
+                                  - zero-one
+                                  - hamming-loss
+                                  - hinge-loss
+                                  - jacquard-loss
+                                  - mcc
+                                  - fp
+                                  - fn
+                                  - tn
+                                  - tp
+                                  - tpr
+                                  - fpr
+                                  - tnr
+                                  - matthews-corr-coef
+                                  - explained-variance
+                                  - max-error
+                                  - mae
+                                  - mse
+                                  - msle
+                                  - rmse
+                                  - rmsle
+                                  - median-absolute-error
+                                  - r2
+                                  - adj-r2
+                                  - mean_poisson_deviance
+                                  - mean-gamma-deviance
+                                  - mean-tweedie-deviance
+                                  - mape
+                                  - maze
+                                  - mdape
+                                  - smape
+                                  - adjusted-mutual-info-score
+                                  - adjusted-rand-score
+                                  - completeness-score
+                                  - fowlkes-mallows-score
+                                  - homogeneity-score
+                                  - mutual-info-score
+                                  - normalized-mutual-info-score
+                                  - v-measure-score
+                                  - p50-latency
+                                  - p95-latency
+                                  - p99-latency
+                                  - cpu
+                                  - gpu
+                                  - mem
+                                  - gpu-mem
+                                  - req-per-sec
+                                  - uncertain-prediction-percent
+                                  - none
+                                  - ks
+                                  - psi
+                                  - wasserstein-distance
+                                  - kl-divergenece
+                                  - jensen-shannon-distance
+                                  type: string
+                                min:
+                                  format: float
+                                  type: number
+                                name:
+                                  description: ////////////////////////////////////////////////////////
+                                    Test /////////////////////////////////////////////////////////
+                                  type: string
+                                path:
+                                  type: string
+                                strictMax:
+                                  type: boolean
+                                strictMin:
+                                  type: boolean
+                                value:
+                                  type: number
+                                valueSet:
+                                  items:
+                                    type: string
+                                  type: array
+                              required:
+                              - name
+                              type: object
+                            type: array
+                        type: object
                     type: object
                   modelPerformance:
                     description: Model Performance monitor, monitor the production
@@ -1085,126 +1087,128 @@ spec:
                         type: object
                       tests:
                         description: Define the validation rule for this monitor
-                        items:
-                          description: ModelValidation defines a single validation
-                            to be run against a model
-                          properties:
-                            agg:
-                              description: Agg specifies the type of aggregate when
-                                measuring aggregate performance (e.g. median, average)
-                              enum:
-                              - min
-                              - max
-                              - avg
-                              - median
-                              type: string
-                            column:
-                              description: Define the column name for the validation
-                                role
-                              type: string
-                            datasetName:
-                              description: The name of a labeled dataset used to test
-                                the model, when measuring a performance metric
-                              type: string
-                            max:
-                              description: The lower upper range of the metric
-                              type: number
-                            metric:
-                              description: Define the measurement metric.
-                              enum:
-                              - accuracy
-                              - average-precision
-                              - balanced-accuracy
-                              - pr-auc
-                              - pr-auc-micro
-                              - pr-auc-macro
-                              - pr-auc-weighted
-                              - f1
-                              - f1-micro
-                              - f1-macro
-                              - f1-weighted
-                              - f1-samples
-                              - precision
-                              - precision-micro
-                              - precision-macro
-                              - precision-weighted
-                              - precision-samples
-                              - recall
-                              - recall-macro
-                              - recall-micro
-                              - recall-weighted
-                              - recall-samples
-                              - log-loss
-                              - auc
-                              - auc-micro
-                              - auc-macro
-                              - auc-weighted
-                              - zero-one
-                              - hamming-loss
-                              - hinge-loss
-                              - jacquard-loss
-                              - mcc
-                              - fp
-                              - fn
-                              - tn
-                              - tp
-                              - tpr
-                              - fpr
-                              - tnr
-                              - matthews-corr-coef
-                              - explained-variance
-                              - max-error
-                              - mae
-                              - mse
-                              - msle
-                              - rmse
-                              - rmsle
-                              - median-absolute-error
-                              - r2
-                              - adj-r2
-                              - mean_poisson_deviance
-                              - mean-gamma-deviance
-                              - mean-tweedie-deviance
-                              - mape
-                              - maze
-                              - mdape
-                              - smape
-                              - adjusted-mutual-info-score
-                              - adjusted-rand-score
-                              - completeness-score
-                              - fowlkes-mallows-score
-                              - homogeneity-score
-                              - mutual-info-score
-                              - normalized-mutual-info-score
-                              - v-measure-score
-                              - p50-latency
-                              - p95-latency
-                              - p99-latency
-                              - cpu
-                              - gpu
-                              - mem
-                              - gpu-mem
-                              - req-per-sec
-                              - uncertain-prediction-percent
-                              - none
-                              - ks
-                              - psi
-                              - wasserstein-distance
-                              - kl-divergenece
-                              - jensen-shannon-distance
-                              type: string
-                            min:
-                              description: The lower range of the metric
-                              type: number
-                            name:
-                              description: The type of model validation
-                              type: string
-                            prevModel:
-                              description: PrevModel specifies a previous model to
-                                compare against
-                              type: string
-                          type: object
-                        type: array
+                        properties:
+                          tests:
+                            items:
+                              properties:
+                                bucketName:
+                                  type: string
+                                column:
+                                  type: string
+                                generated:
+                                  description: Indicates if this validation rule was
+                                    automatically generated by the system
+                                  type: boolean
+                                max:
+                                  format: float
+                                  type: number
+                                metric:
+                                  enum:
+                                  - accuracy
+                                  - average-precision
+                                  - balanced-accuracy
+                                  - pr-auc
+                                  - pr-auc-micro
+                                  - pr-auc-macro
+                                  - pr-auc-weighted
+                                  - f1
+                                  - f1-micro
+                                  - f1-macro
+                                  - f1-weighted
+                                  - f1-samples
+                                  - precision
+                                  - precision-micro
+                                  - precision-macro
+                                  - precision-weighted
+                                  - precision-samples
+                                  - recall
+                                  - recall-macro
+                                  - recall-micro
+                                  - recall-weighted
+                                  - recall-samples
+                                  - log-loss
+                                  - auc
+                                  - auc-micro
+                                  - auc-macro
+                                  - auc-weighted
+                                  - zero-one
+                                  - hamming-loss
+                                  - hinge-loss
+                                  - jacquard-loss
+                                  - mcc
+                                  - fp
+                                  - fn
+                                  - tn
+                                  - tp
+                                  - tpr
+                                  - fpr
+                                  - tnr
+                                  - matthews-corr-coef
+                                  - explained-variance
+                                  - max-error
+                                  - mae
+                                  - mse
+                                  - msle
+                                  - rmse
+                                  - rmsle
+                                  - median-absolute-error
+                                  - r2
+                                  - adj-r2
+                                  - mean_poisson_deviance
+                                  - mean-gamma-deviance
+                                  - mean-tweedie-deviance
+                                  - mape
+                                  - maze
+                                  - mdape
+                                  - smape
+                                  - adjusted-mutual-info-score
+                                  - adjusted-rand-score
+                                  - completeness-score
+                                  - fowlkes-mallows-score
+                                  - homogeneity-score
+                                  - mutual-info-score
+                                  - normalized-mutual-info-score
+                                  - v-measure-score
+                                  - p50-latency
+                                  - p95-latency
+                                  - p99-latency
+                                  - cpu
+                                  - gpu
+                                  - mem
+                                  - gpu-mem
+                                  - req-per-sec
+                                  - uncertain-prediction-percent
+                                  - none
+                                  - ks
+                                  - psi
+                                  - wasserstein-distance
+                                  - kl-divergenece
+                                  - jensen-shannon-distance
+                                  type: string
+                                min:
+                                  format: float
+                                  type: number
+                                name:
+                                  description: ////////////////////////////////////////////////////////
+                                    Test /////////////////////////////////////////////////////////
+                                  type: string
+                                path:
+                                  type: string
+                                strictMax:
+                                  type: boolean
+                                strictMin:
+                                  type: boolean
+                                value:
+                                  type: number
+                                valueSet:
+                                  items:
+                                    type: string
+                                  type: array
+                              required:
+                              - name
+                              type: object
+                            type: array
+                        type: object
                     type: object
                   other:
                     description: For any extera rules
@@ -1352,126 +1356,128 @@ spec:
                         type: object
                       tests:
                         description: Define the validation rule for this monitor
-                        items:
-                          description: ModelValidation defines a single validation
-                            to be run against a model
-                          properties:
-                            agg:
-                              description: Agg specifies the type of aggregate when
-                                measuring aggregate performance (e.g. median, average)
-                              enum:
-                              - min
-                              - max
-                              - avg
-                              - median
-                              type: string
-                            column:
-                              description: Define the column name for the validation
-                                role
-                              type: string
-                            datasetName:
-                              description: The name of a labeled dataset used to test
-                                the model, when measuring a performance metric
-                              type: string
-                            max:
-                              description: The lower upper range of the metric
-                              type: number
-                            metric:
-                              description: Define the measurement metric.
-                              enum:
-                              - accuracy
-                              - average-precision
-                              - balanced-accuracy
-                              - pr-auc
-                              - pr-auc-micro
-                              - pr-auc-macro
-                              - pr-auc-weighted
-                              - f1
-                              - f1-micro
-                              - f1-macro
-                              - f1-weighted
-                              - f1-samples
-                              - precision
-                              - precision-micro
-                              - precision-macro
-                              - precision-weighted
-                              - precision-samples
-                              - recall
-                              - recall-macro
-                              - recall-micro
-                              - recall-weighted
-                              - recall-samples
-                              - log-loss
-                              - auc
-                              - auc-micro
-                              - auc-macro
-                              - auc-weighted
-                              - zero-one
-                              - hamming-loss
-                              - hinge-loss
-                              - jacquard-loss
-                              - mcc
-                              - fp
-                              - fn
-                              - tn
-                              - tp
-                              - tpr
-                              - fpr
-                              - tnr
-                              - matthews-corr-coef
-                              - explained-variance
-                              - max-error
-                              - mae
-                              - mse
-                              - msle
-                              - rmse
-                              - rmsle
-                              - median-absolute-error
-                              - r2
-                              - adj-r2
-                              - mean_poisson_deviance
-                              - mean-gamma-deviance
-                              - mean-tweedie-deviance
-                              - mape
-                              - maze
-                              - mdape
-                              - smape
-                              - adjusted-mutual-info-score
-                              - adjusted-rand-score
-                              - completeness-score
-                              - fowlkes-mallows-score
-                              - homogeneity-score
-                              - mutual-info-score
-                              - normalized-mutual-info-score
-                              - v-measure-score
-                              - p50-latency
-                              - p95-latency
-                              - p99-latency
-                              - cpu
-                              - gpu
-                              - mem
-                              - gpu-mem
-                              - req-per-sec
-                              - uncertain-prediction-percent
-                              - none
-                              - ks
-                              - psi
-                              - wasserstein-distance
-                              - kl-divergenece
-                              - jensen-shannon-distance
-                              type: string
-                            min:
-                              description: The lower range of the metric
-                              type: number
-                            name:
-                              description: The type of model validation
-                              type: string
-                            prevModel:
-                              description: PrevModel specifies a previous model to
-                                compare against
-                              type: string
-                          type: object
-                        type: array
+                        properties:
+                          tests:
+                            items:
+                              properties:
+                                bucketName:
+                                  type: string
+                                column:
+                                  type: string
+                                generated:
+                                  description: Indicates if this validation rule was
+                                    automatically generated by the system
+                                  type: boolean
+                                max:
+                                  format: float
+                                  type: number
+                                metric:
+                                  enum:
+                                  - accuracy
+                                  - average-precision
+                                  - balanced-accuracy
+                                  - pr-auc
+                                  - pr-auc-micro
+                                  - pr-auc-macro
+                                  - pr-auc-weighted
+                                  - f1
+                                  - f1-micro
+                                  - f1-macro
+                                  - f1-weighted
+                                  - f1-samples
+                                  - precision
+                                  - precision-micro
+                                  - precision-macro
+                                  - precision-weighted
+                                  - precision-samples
+                                  - recall
+                                  - recall-macro
+                                  - recall-micro
+                                  - recall-weighted
+                                  - recall-samples
+                                  - log-loss
+                                  - auc
+                                  - auc-micro
+                                  - auc-macro
+                                  - auc-weighted
+                                  - zero-one
+                                  - hamming-loss
+                                  - hinge-loss
+                                  - jacquard-loss
+                                  - mcc
+                                  - fp
+                                  - fn
+                                  - tn
+                                  - tp
+                                  - tpr
+                                  - fpr
+                                  - tnr
+                                  - matthews-corr-coef
+                                  - explained-variance
+                                  - max-error
+                                  - mae
+                                  - mse
+                                  - msle
+                                  - rmse
+                                  - rmsle
+                                  - median-absolute-error
+                                  - r2
+                                  - adj-r2
+                                  - mean_poisson_deviance
+                                  - mean-gamma-deviance
+                                  - mean-tweedie-deviance
+                                  - mape
+                                  - maze
+                                  - mdape
+                                  - smape
+                                  - adjusted-mutual-info-score
+                                  - adjusted-rand-score
+                                  - completeness-score
+                                  - fowlkes-mallows-score
+                                  - homogeneity-score
+                                  - mutual-info-score
+                                  - normalized-mutual-info-score
+                                  - v-measure-score
+                                  - p50-latency
+                                  - p95-latency
+                                  - p99-latency
+                                  - cpu
+                                  - gpu
+                                  - mem
+                                  - gpu-mem
+                                  - req-per-sec
+                                  - uncertain-prediction-percent
+                                  - none
+                                  - ks
+                                  - psi
+                                  - wasserstein-distance
+                                  - kl-divergenece
+                                  - jensen-shannon-distance
+                                  type: string
+                                min:
+                                  format: float
+                                  type: number
+                                name:
+                                  description: ////////////////////////////////////////////////////////
+                                    Test /////////////////////////////////////////////////////////
+                                  type: string
+                                path:
+                                  type: string
+                                strictMax:
+                                  type: boolean
+                                strictMin:
+                                  type: boolean
+                                value:
+                                  type: number
+                                valueSet:
+                                  items:
+                                    type: string
+                                  type: array
+                              required:
+                              - name
+                              type: object
+                            type: array
+                        type: object
                     type: object
                   predictionDrift:
                     description: Prediction drift define prediction (target) drift
@@ -1620,126 +1626,128 @@ spec:
                         type: object
                       tests:
                         description: Define the validation rule for this monitor
-                        items:
-                          description: ModelValidation defines a single validation
-                            to be run against a model
-                          properties:
-                            agg:
-                              description: Agg specifies the type of aggregate when
-                                measuring aggregate performance (e.g. median, average)
-                              enum:
-                              - min
-                              - max
-                              - avg
-                              - median
-                              type: string
-                            column:
-                              description: Define the column name for the validation
-                                role
-                              type: string
-                            datasetName:
-                              description: The name of a labeled dataset used to test
-                                the model, when measuring a performance metric
-                              type: string
-                            max:
-                              description: The lower upper range of the metric
-                              type: number
-                            metric:
-                              description: Define the measurement metric.
-                              enum:
-                              - accuracy
-                              - average-precision
-                              - balanced-accuracy
-                              - pr-auc
-                              - pr-auc-micro
-                              - pr-auc-macro
-                              - pr-auc-weighted
-                              - f1
-                              - f1-micro
-                              - f1-macro
-                              - f1-weighted
-                              - f1-samples
-                              - precision
-                              - precision-micro
-                              - precision-macro
-                              - precision-weighted
-                              - precision-samples
-                              - recall
-                              - recall-macro
-                              - recall-micro
-                              - recall-weighted
-                              - recall-samples
-                              - log-loss
-                              - auc
-                              - auc-micro
-                              - auc-macro
-                              - auc-weighted
-                              - zero-one
-                              - hamming-loss
-                              - hinge-loss
-                              - jacquard-loss
-                              - mcc
-                              - fp
-                              - fn
-                              - tn
-                              - tp
-                              - tpr
-                              - fpr
-                              - tnr
-                              - matthews-corr-coef
-                              - explained-variance
-                              - max-error
-                              - mae
-                              - mse
-                              - msle
-                              - rmse
-                              - rmsle
-                              - median-absolute-error
-                              - r2
-                              - adj-r2
-                              - mean_poisson_deviance
-                              - mean-gamma-deviance
-                              - mean-tweedie-deviance
-                              - mape
-                              - maze
-                              - mdape
-                              - smape
-                              - adjusted-mutual-info-score
-                              - adjusted-rand-score
-                              - completeness-score
-                              - fowlkes-mallows-score
-                              - homogeneity-score
-                              - mutual-info-score
-                              - normalized-mutual-info-score
-                              - v-measure-score
-                              - p50-latency
-                              - p95-latency
-                              - p99-latency
-                              - cpu
-                              - gpu
-                              - mem
-                              - gpu-mem
-                              - req-per-sec
-                              - uncertain-prediction-percent
-                              - none
-                              - ks
-                              - psi
-                              - wasserstein-distance
-                              - kl-divergenece
-                              - jensen-shannon-distance
-                              type: string
-                            min:
-                              description: The lower range of the metric
-                              type: number
-                            name:
-                              description: The type of model validation
-                              type: string
-                            prevModel:
-                              description: PrevModel specifies a previous model to
-                                compare against
-                              type: string
-                          type: object
-                        type: array
+                        properties:
+                          tests:
+                            items:
+                              properties:
+                                bucketName:
+                                  type: string
+                                column:
+                                  type: string
+                                generated:
+                                  description: Indicates if this validation rule was
+                                    automatically generated by the system
+                                  type: boolean
+                                max:
+                                  format: float
+                                  type: number
+                                metric:
+                                  enum:
+                                  - accuracy
+                                  - average-precision
+                                  - balanced-accuracy
+                                  - pr-auc
+                                  - pr-auc-micro
+                                  - pr-auc-macro
+                                  - pr-auc-weighted
+                                  - f1
+                                  - f1-micro
+                                  - f1-macro
+                                  - f1-weighted
+                                  - f1-samples
+                                  - precision
+                                  - precision-micro
+                                  - precision-macro
+                                  - precision-weighted
+                                  - precision-samples
+                                  - recall
+                                  - recall-macro
+                                  - recall-micro
+                                  - recall-weighted
+                                  - recall-samples
+                                  - log-loss
+                                  - auc
+                                  - auc-micro
+                                  - auc-macro
+                                  - auc-weighted
+                                  - zero-one
+                                  - hamming-loss
+                                  - hinge-loss
+                                  - jacquard-loss
+                                  - mcc
+                                  - fp
+                                  - fn
+                                  - tn
+                                  - tp
+                                  - tpr
+                                  - fpr
+                                  - tnr
+                                  - matthews-corr-coef
+                                  - explained-variance
+                                  - max-error
+                                  - mae
+                                  - mse
+                                  - msle
+                                  - rmse
+                                  - rmsle
+                                  - median-absolute-error
+                                  - r2
+                                  - adj-r2
+                                  - mean_poisson_deviance
+                                  - mean-gamma-deviance
+                                  - mean-tweedie-deviance
+                                  - mape
+                                  - maze
+                                  - mdape
+                                  - smape
+                                  - adjusted-mutual-info-score
+                                  - adjusted-rand-score
+                                  - completeness-score
+                                  - fowlkes-mallows-score
+                                  - homogeneity-score
+                                  - mutual-info-score
+                                  - normalized-mutual-info-score
+                                  - v-measure-score
+                                  - p50-latency
+                                  - p95-latency
+                                  - p99-latency
+                                  - cpu
+                                  - gpu
+                                  - mem
+                                  - gpu-mem
+                                  - req-per-sec
+                                  - uncertain-prediction-percent
+                                  - none
+                                  - ks
+                                  - psi
+                                  - wasserstein-distance
+                                  - kl-divergenece
+                                  - jensen-shannon-distance
+                                  type: string
+                                min:
+                                  format: float
+                                  type: number
+                                name:
+                                  description: ////////////////////////////////////////////////////////
+                                    Test /////////////////////////////////////////////////////////
+                                  type: string
+                                path:
+                                  type: string
+                                strictMax:
+                                  type: boolean
+                                strictMin:
+                                  type: boolean
+                                value:
+                                  type: number
+                                valueSet:
+                                  items:
+                                    type: string
+                                  type: array
+                              required:
+                              - name
+                              type: object
+                            type: array
+                        type: object
                     type: object
                   serviceHealth:
                     description: Service spec define general service health monitor.
@@ -1887,126 +1895,128 @@ spec:
                         type: object
                       tests:
                         description: Define the validation rule for this monitor
-                        items:
-                          description: ModelValidation defines a single validation
-                            to be run against a model
-                          properties:
-                            agg:
-                              description: Agg specifies the type of aggregate when
-                                measuring aggregate performance (e.g. median, average)
-                              enum:
-                              - min
-                              - max
-                              - avg
-                              - median
-                              type: string
-                            column:
-                              description: Define the column name for the validation
-                                role
-                              type: string
-                            datasetName:
-                              description: The name of a labeled dataset used to test
-                                the model, when measuring a performance metric
-                              type: string
-                            max:
-                              description: The lower upper range of the metric
-                              type: number
-                            metric:
-                              description: Define the measurement metric.
-                              enum:
-                              - accuracy
-                              - average-precision
-                              - balanced-accuracy
-                              - pr-auc
-                              - pr-auc-micro
-                              - pr-auc-macro
-                              - pr-auc-weighted
-                              - f1
-                              - f1-micro
-                              - f1-macro
-                              - f1-weighted
-                              - f1-samples
-                              - precision
-                              - precision-micro
-                              - precision-macro
-                              - precision-weighted
-                              - precision-samples
-                              - recall
-                              - recall-macro
-                              - recall-micro
-                              - recall-weighted
-                              - recall-samples
-                              - log-loss
-                              - auc
-                              - auc-micro
-                              - auc-macro
-                              - auc-weighted
-                              - zero-one
-                              - hamming-loss
-                              - hinge-loss
-                              - jacquard-loss
-                              - mcc
-                              - fp
-                              - fn
-                              - tn
-                              - tp
-                              - tpr
-                              - fpr
-                              - tnr
-                              - matthews-corr-coef
-                              - explained-variance
-                              - max-error
-                              - mae
-                              - mse
-                              - msle
-                              - rmse
-                              - rmsle
-                              - median-absolute-error
-                              - r2
-                              - adj-r2
-                              - mean_poisson_deviance
-                              - mean-gamma-deviance
-                              - mean-tweedie-deviance
-                              - mape
-                              - maze
-                              - mdape
-                              - smape
-                              - adjusted-mutual-info-score
-                              - adjusted-rand-score
-                              - completeness-score
-                              - fowlkes-mallows-score
-                              - homogeneity-score
-                              - mutual-info-score
-                              - normalized-mutual-info-score
-                              - v-measure-score
-                              - p50-latency
-                              - p95-latency
-                              - p99-latency
-                              - cpu
-                              - gpu
-                              - mem
-                              - gpu-mem
-                              - req-per-sec
-                              - uncertain-prediction-percent
-                              - none
-                              - ks
-                              - psi
-                              - wasserstein-distance
-                              - kl-divergenece
-                              - jensen-shannon-distance
-                              type: string
-                            min:
-                              description: The lower range of the metric
-                              type: number
-                            name:
-                              description: The type of model validation
-                              type: string
-                            prevModel:
-                              description: PrevModel specifies a previous model to
-                                compare against
-                              type: string
-                          type: object
-                        type: array
+                        properties:
+                          tests:
+                            items:
+                              properties:
+                                bucketName:
+                                  type: string
+                                column:
+                                  type: string
+                                generated:
+                                  description: Indicates if this validation rule was
+                                    automatically generated by the system
+                                  type: boolean
+                                max:
+                                  format: float
+                                  type: number
+                                metric:
+                                  enum:
+                                  - accuracy
+                                  - average-precision
+                                  - balanced-accuracy
+                                  - pr-auc
+                                  - pr-auc-micro
+                                  - pr-auc-macro
+                                  - pr-auc-weighted
+                                  - f1
+                                  - f1-micro
+                                  - f1-macro
+                                  - f1-weighted
+                                  - f1-samples
+                                  - precision
+                                  - precision-micro
+                                  - precision-macro
+                                  - precision-weighted
+                                  - precision-samples
+                                  - recall
+                                  - recall-macro
+                                  - recall-micro
+                                  - recall-weighted
+                                  - recall-samples
+                                  - log-loss
+                                  - auc
+                                  - auc-micro
+                                  - auc-macro
+                                  - auc-weighted
+                                  - zero-one
+                                  - hamming-loss
+                                  - hinge-loss
+                                  - jacquard-loss
+                                  - mcc
+                                  - fp
+                                  - fn
+                                  - tn
+                                  - tp
+                                  - tpr
+                                  - fpr
+                                  - tnr
+                                  - matthews-corr-coef
+                                  - explained-variance
+                                  - max-error
+                                  - mae
+                                  - mse
+                                  - msle
+                                  - rmse
+                                  - rmsle
+                                  - median-absolute-error
+                                  - r2
+                                  - adj-r2
+                                  - mean_poisson_deviance
+                                  - mean-gamma-deviance
+                                  - mean-tweedie-deviance
+                                  - mape
+                                  - maze
+                                  - mdape
+                                  - smape
+                                  - adjusted-mutual-info-score
+                                  - adjusted-rand-score
+                                  - completeness-score
+                                  - fowlkes-mallows-score
+                                  - homogeneity-score
+                                  - mutual-info-score
+                                  - normalized-mutual-info-score
+                                  - v-measure-score
+                                  - p50-latency
+                                  - p95-latency
+                                  - p99-latency
+                                  - cpu
+                                  - gpu
+                                  - mem
+                                  - gpu-mem
+                                  - req-per-sec
+                                  - uncertain-prediction-percent
+                                  - none
+                                  - ks
+                                  - psi
+                                  - wasserstein-distance
+                                  - kl-divergenece
+                                  - jensen-shannon-distance
+                                  type: string
+                                min:
+                                  format: float
+                                  type: number
+                                name:
+                                  description: ////////////////////////////////////////////////////////
+                                    Test /////////////////////////////////////////////////////////
+                                  type: string
+                                path:
+                                  type: string
+                                strictMax:
+                                  type: boolean
+                                strictMin:
+                                  type: boolean
+                                value:
+                                  type: number
+                                valueSet:
+                                  items:
+                                    type: string
+                                  type: array
+                              required:
+                              - name
+                              type: object
+                            type: array
+                        type: object
                     type: object
                 type: object
               owner:
