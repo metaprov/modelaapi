@@ -456,7 +456,7 @@ spec:
                     description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                     type: string
                 type: object
-              predictionRef:
+              predictorRef:
                 description: Used for prediction dataset, contain a reference to the
                   predictor resource that created this dataset
                 properties:

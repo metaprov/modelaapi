@@ -197,7 +197,7 @@ type DatasetSpec struct {
 	PredictionDatasetRef v1.ObjectReference `json:"predictionDatasetRef,omitempty" protobuf:"bytes,26,opt,name=predictionDatasetRef"`
 	// Used for prediction dataset, contain a reference to the predictor resource that created this dataset
 	// +kubebuilder:validation:Optional
-	PredictorRef v1.ObjectReference `json:"predictionRef,omitempty" protobuf:"bytes,27,opt,name=predictionRef"`
+	PredictorRef v1.ObjectReference `json:"predictorRef,omitempty" protobuf:"bytes,27,opt,name=predictorRef"`
 }
 
 // DatasetStatus defines the observed state of a Dataset object
