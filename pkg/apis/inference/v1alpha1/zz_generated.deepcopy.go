@@ -14,6 +14,7 @@ package v1alpha1
 import (
 	catalogv1alpha1 "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	datav1alpha1 "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1"
+	trainingv1alpha1 "github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1"
 	"k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 )
@@ -897,7 +898,7 @@ func (in *MonitorPart) DeepCopyInto(out *MonitorPart) {
 	}
 	if in.Rules != nil {
 		in, out := &in.Rules, &out.Rules
-		*out = make([]catalogv1alpha1.ModelTest, len(*in))
+		*out = make([]trainingv1alpha1.ModelTest, len(*in))
 		for i := range *in {
 			(*in)[i].DeepCopyInto(&(*out)[i])
 		}
