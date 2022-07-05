@@ -260,7 +260,7 @@ message DsCreateStudyProfileResponse {
 }
 
 // Validate a dataset
-message DsValidateDatasetRequest {
+message DsTestDatasetRequest {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct product = 1;
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion version = 2;
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 3;
@@ -270,7 +270,7 @@ message DsValidateDatasetRequest {
     map<string,bytes> secret = 7;
 }
 
-message DsValidateDatasetResponse {
+message DsTestDatasetResponse {
     repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataTestResult result = 1;
 }
 
@@ -542,7 +542,7 @@ message TellModelResponse {
 message DsShutdownRequest {    
 }
 message DsShutdownResponse {}
-message ValidateModelRequest {
+message DsTestModelRequest {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct            product = 1;
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion     version = 2;
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource             datasource   = 3;
@@ -555,7 +555,7 @@ message ValidateModelRequest {
     map<string,bytes>     secret     = 10;
 }
 
-message ValidateModelResponse {
+message DsTestModelResponse {
     repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestResult result = 1;
 }
 
@@ -666,7 +666,7 @@ service DataService {
     // Read from a flat file and create a dataset
     rpc WriteFile(DsWriteFileRequest) returns (DsReadFromStoreResponse) {}
     // Based on the datasource business rules, validate a dataset.
-    rpc ValidateDataset(DsValidateDatasetRequest) returns(DsValidateDatasetResponse) {}
+    rpc TestDataset(DsTestDatasetRequest) returns(DsTestDatasetResponse) {}
     // Based on the datasource, generate test dataset
     rpc GenerateDataset(DsGenerateDatasetRequest) returns (DsGenerateDatasetResponse) {}
     // Preform the split. The dataset is assumed to be in the live area after validation
@@ -713,7 +713,7 @@ service DataService {
     // Merge the forecast back to one file.
     rpc MergeForecastFile(DsMergeForecastFileRequest) returns (DsMergeForecastFileResponse) {}
     // Check for data drift
-    rpc ValidateModel(ValidateModelRequest) returns (ValidateModelResponse) {}
+    rpc TestModel(DsTestModelRequest) returns (DsTestModelResponse) {}
     // test connection from python presepective
     rpc DsTestConnection(DsTestConnectionRequest) returns (DsTestConnectionResponse) {}
     rpc ShutDown(DsShutdownRequest) returns (DsShutdownResponse) {}

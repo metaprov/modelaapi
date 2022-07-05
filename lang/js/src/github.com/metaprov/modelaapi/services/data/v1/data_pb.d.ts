@@ -1127,49 +1127,49 @@ export namespace DsCreateStudyProfileResponse {
   }
 }
 
-export class DsValidateDatasetRequest extends jspb.Message {
+export class DsTestDatasetRequest extends jspb.Message {
   getProduct(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct | undefined;
-  setProduct(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): DsValidateDatasetRequest;
+  setProduct(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): DsTestDatasetRequest;
   hasProduct(): boolean;
-  clearProduct(): DsValidateDatasetRequest;
+  clearProduct(): DsTestDatasetRequest;
 
   getVersion(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion | undefined;
-  setVersion(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion): DsValidateDatasetRequest;
+  setVersion(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion): DsTestDatasetRequest;
   hasVersion(): boolean;
-  clearVersion(): DsValidateDatasetRequest;
+  clearVersion(): DsTestDatasetRequest;
 
   getDatasource(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource | undefined;
-  setDatasource(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource): DsValidateDatasetRequest;
+  setDatasource(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource): DsTestDatasetRequest;
   hasDatasource(): boolean;
-  clearDatasource(): DsValidateDatasetRequest;
+  clearDatasource(): DsTestDatasetRequest;
 
   getDataset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
-  setDataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): DsValidateDatasetRequest;
+  setDataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): DsTestDatasetRequest;
   hasDataset(): boolean;
-  clearDataset(): DsValidateDatasetRequest;
+  clearDataset(): DsTestDatasetRequest;
 
   getConnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
-  setConnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): DsValidateDatasetRequest;
+  setConnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): DsTestDatasetRequest;
   hasConnection(): boolean;
-  clearConnection(): DsValidateDatasetRequest;
+  clearConnection(): DsTestDatasetRequest;
 
   getBucket(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
-  setBucket(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): DsValidateDatasetRequest;
+  setBucket(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): DsTestDatasetRequest;
   hasBucket(): boolean;
-  clearBucket(): DsValidateDatasetRequest;
+  clearBucket(): DsTestDatasetRequest;
 
   getSecretMap(): jspb.Map<string, Uint8Array | string>;
-  clearSecretMap(): DsValidateDatasetRequest;
+  clearSecretMap(): DsTestDatasetRequest;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DsValidateDatasetRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: DsValidateDatasetRequest): DsValidateDatasetRequest.AsObject;
-  static serializeBinaryToWriter(message: DsValidateDatasetRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DsValidateDatasetRequest;
-  static deserializeBinaryFromReader(message: DsValidateDatasetRequest, reader: jspb.BinaryReader): DsValidateDatasetRequest;
+  toObject(includeInstance?: boolean): DsTestDatasetRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DsTestDatasetRequest): DsTestDatasetRequest.AsObject;
+  static serializeBinaryToWriter(message: DsTestDatasetRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DsTestDatasetRequest;
+  static deserializeBinaryFromReader(message: DsTestDatasetRequest, reader: jspb.BinaryReader): DsTestDatasetRequest;
 }
 
-export namespace DsValidateDatasetRequest {
+export namespace DsTestDatasetRequest {
   export type AsObject = {
     product?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
     version?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.AsObject,
@@ -1181,21 +1181,21 @@ export namespace DsValidateDatasetRequest {
   }
 }
 
-export class DsValidateDatasetResponse extends jspb.Message {
+export class DsTestDatasetResponse extends jspb.Message {
   getResultList(): Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataTestResult>;
-  setResultList(value: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataTestResult>): DsValidateDatasetResponse;
-  clearResultList(): DsValidateDatasetResponse;
+  setResultList(value: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataTestResult>): DsTestDatasetResponse;
+  clearResultList(): DsTestDatasetResponse;
   addResult(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataTestResult, index?: number): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataTestResult;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DsValidateDatasetResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: DsValidateDatasetResponse): DsValidateDatasetResponse.AsObject;
-  static serializeBinaryToWriter(message: DsValidateDatasetResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DsValidateDatasetResponse;
-  static deserializeBinaryFromReader(message: DsValidateDatasetResponse, reader: jspb.BinaryReader): DsValidateDatasetResponse;
+  toObject(includeInstance?: boolean): DsTestDatasetResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: DsTestDatasetResponse): DsTestDatasetResponse.AsObject;
+  static serializeBinaryToWriter(message: DsTestDatasetResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DsTestDatasetResponse;
+  static deserializeBinaryFromReader(message: DsTestDatasetResponse, reader: jspb.BinaryReader): DsTestDatasetResponse;
 }
 
-export namespace DsValidateDatasetResponse {
+export namespace DsTestDatasetResponse {
   export type AsObject = {
     resultList: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataTestResult.AsObject>,
   }
@@ -2477,64 +2477,64 @@ export namespace DsShutdownResponse {
   }
 }
 
-export class ValidateModelRequest extends jspb.Message {
+export class DsTestModelRequest extends jspb.Message {
   getProduct(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct | undefined;
-  setProduct(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): ValidateModelRequest;
+  setProduct(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): DsTestModelRequest;
   hasProduct(): boolean;
-  clearProduct(): ValidateModelRequest;
+  clearProduct(): DsTestModelRequest;
 
   getVersion(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion | undefined;
-  setVersion(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion): ValidateModelRequest;
+  setVersion(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion): DsTestModelRequest;
   hasVersion(): boolean;
-  clearVersion(): ValidateModelRequest;
+  clearVersion(): DsTestModelRequest;
 
   getDatasource(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource | undefined;
-  setDatasource(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource): ValidateModelRequest;
+  setDatasource(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource): DsTestModelRequest;
   hasDatasource(): boolean;
-  clearDatasource(): ValidateModelRequest;
+  clearDatasource(): DsTestModelRequest;
 
   getDataset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
-  setDataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): ValidateModelRequest;
+  setDataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): DsTestModelRequest;
   hasDataset(): boolean;
-  clearDataset(): ValidateModelRequest;
+  clearDataset(): DsTestModelRequest;
 
   getStudy(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study | undefined;
-  setStudy(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study): ValidateModelRequest;
+  setStudy(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study): DsTestModelRequest;
   hasStudy(): boolean;
-  clearStudy(): ValidateModelRequest;
+  clearStudy(): DsTestModelRequest;
 
   getModel(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model | undefined;
-  setModel(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model): ValidateModelRequest;
+  setModel(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model): DsTestModelRequest;
   hasModel(): boolean;
-  clearModel(): ValidateModelRequest;
+  clearModel(): DsTestModelRequest;
 
   getPredictor(): github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor | undefined;
-  setPredictor(value?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor): ValidateModelRequest;
+  setPredictor(value?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor): DsTestModelRequest;
   hasPredictor(): boolean;
-  clearPredictor(): ValidateModelRequest;
+  clearPredictor(): DsTestModelRequest;
 
   getConnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
-  setConnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): ValidateModelRequest;
+  setConnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): DsTestModelRequest;
   hasConnection(): boolean;
-  clearConnection(): ValidateModelRequest;
+  clearConnection(): DsTestModelRequest;
 
   getBucket(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
-  setBucket(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): ValidateModelRequest;
+  setBucket(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): DsTestModelRequest;
   hasBucket(): boolean;
-  clearBucket(): ValidateModelRequest;
+  clearBucket(): DsTestModelRequest;
 
   getSecretMap(): jspb.Map<string, Uint8Array | string>;
-  clearSecretMap(): ValidateModelRequest;
+  clearSecretMap(): DsTestModelRequest;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ValidateModelRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: ValidateModelRequest): ValidateModelRequest.AsObject;
-  static serializeBinaryToWriter(message: ValidateModelRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ValidateModelRequest;
-  static deserializeBinaryFromReader(message: ValidateModelRequest, reader: jspb.BinaryReader): ValidateModelRequest;
+  toObject(includeInstance?: boolean): DsTestModelRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DsTestModelRequest): DsTestModelRequest.AsObject;
+  static serializeBinaryToWriter(message: DsTestModelRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DsTestModelRequest;
+  static deserializeBinaryFromReader(message: DsTestModelRequest, reader: jspb.BinaryReader): DsTestModelRequest;
 }
 
-export namespace ValidateModelRequest {
+export namespace DsTestModelRequest {
   export type AsObject = {
     product?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
     version?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.AsObject,
@@ -2549,21 +2549,21 @@ export namespace ValidateModelRequest {
   }
 }
 
-export class ValidateModelResponse extends jspb.Message {
+export class DsTestModelResponse extends jspb.Message {
   getResultList(): Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelTestResult>;
-  setResultList(value: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelTestResult>): ValidateModelResponse;
-  clearResultList(): ValidateModelResponse;
+  setResultList(value: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelTestResult>): DsTestModelResponse;
+  clearResultList(): DsTestModelResponse;
   addResult(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelTestResult, index?: number): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelTestResult;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ValidateModelResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: ValidateModelResponse): ValidateModelResponse.AsObject;
-  static serializeBinaryToWriter(message: ValidateModelResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ValidateModelResponse;
-  static deserializeBinaryFromReader(message: ValidateModelResponse, reader: jspb.BinaryReader): ValidateModelResponse;
+  toObject(includeInstance?: boolean): DsTestModelResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: DsTestModelResponse): DsTestModelResponse.AsObject;
+  static serializeBinaryToWriter(message: DsTestModelResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DsTestModelResponse;
+  static deserializeBinaryFromReader(message: DsTestModelResponse, reader: jspb.BinaryReader): DsTestModelResponse;
 }
 
-export namespace ValidateModelResponse {
+export namespace DsTestModelResponse {
   export type AsObject = {
     resultList: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelTestResult.AsObject>,
   }

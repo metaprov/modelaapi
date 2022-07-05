@@ -3,6 +3,7 @@ package v1alpha1
 import (
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	data "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1"
+	training "github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
@@ -62,7 +63,7 @@ type MonitorPart struct {
 	// Refer to the training dataset as your baseline
 	RefTraining *bool `json:"refTraining,omitempty" protobuf:"varint,4,opt,name=refTraining"`
 	// Define the validation rule for this monitor
-	Rules []catalog.ModelTest `json:"tests,omitempty" protobuf:"bytes,5,opt,name=tests"`
+	Rules []training.ModelTest `json:"tests,omitempty" protobuf:"bytes,5,opt,name=tests"`
 	// The schedule on which model monitoring computations will be performed
 	// +kubebuilder:validation:Optional
 	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,6,opt,name=schedule"`

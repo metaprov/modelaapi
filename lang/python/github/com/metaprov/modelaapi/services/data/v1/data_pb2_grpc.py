@@ -44,10 +44,10 @@ class DataServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsWriteFileRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsReadFromStoreResponse.FromString,
                 )
-        self.ValidateDataset = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.data.v1.DataService/ValidateDataset',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsValidateDatasetRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsValidateDatasetResponse.FromString,
+        self.TestDataset = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.data.v1.DataService/TestDataset',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsTestDatasetRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsTestDatasetResponse.FromString,
                 )
         self.GenerateDataset = channel.unary_unary(
                 '/github.com.metaprov.modelaapi.services.data.v1.DataService/GenerateDataset',
@@ -169,10 +169,10 @@ class DataServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsMergeForecastFileRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsMergeForecastFileResponse.FromString,
                 )
-        self.ValidateModel = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.data.v1.DataService/ValidateModel',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.ValidateModelRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.ValidateModelResponse.FromString,
+        self.TestModel = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.data.v1.DataService/TestModel',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsTestModelRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsTestModelResponse.FromString,
                 )
         self.DsTestConnection = channel.unary_unary(
                 '/github.com.metaprov.modelaapi.services.data.v1.DataService/DsTestConnection',
@@ -271,7 +271,7 @@ class DataServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ValidateDataset(self, request, context):
+    def TestDataset(self, request, context):
         """Based on the datasource business rules, validate a dataset.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -439,7 +439,7 @@ class DataServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ValidateModel(self, request, context):
+    def TestModel(self, request, context):
         """Check for data drift
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -540,10 +540,10 @@ def add_DataServiceServicer_to_server(servicer, server):
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsWriteFileRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsReadFromStoreResponse.SerializeToString,
             ),
-            'ValidateDataset': grpc.unary_unary_rpc_method_handler(
-                    servicer.ValidateDataset,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsValidateDatasetRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsValidateDatasetResponse.SerializeToString,
+            'TestDataset': grpc.unary_unary_rpc_method_handler(
+                    servicer.TestDataset,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsTestDatasetRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsTestDatasetResponse.SerializeToString,
             ),
             'GenerateDataset': grpc.unary_unary_rpc_method_handler(
                     servicer.GenerateDataset,
@@ -665,10 +665,10 @@ def add_DataServiceServicer_to_server(servicer, server):
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsMergeForecastFileRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsMergeForecastFileResponse.SerializeToString,
             ),
-            'ValidateModel': grpc.unary_unary_rpc_method_handler(
-                    servicer.ValidateModel,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.ValidateModelRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.ValidateModelResponse.SerializeToString,
+            'TestModel': grpc.unary_unary_rpc_method_handler(
+                    servicer.TestModel,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsTestModelRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsTestModelResponse.SerializeToString,
             ),
             'DsTestConnection': grpc.unary_unary_rpc_method_handler(
                     servicer.DsTestConnection,
@@ -833,7 +833,7 @@ class DataService(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def ValidateDataset(request,
+    def TestDataset(request,
             target,
             options=(),
             channel_credentials=None,
@@ -843,9 +843,9 @@ class DataService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.data.v1.DataService/ValidateDataset',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsValidateDatasetRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsValidateDatasetResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.data.v1.DataService/TestDataset',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsTestDatasetRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsTestDatasetResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -1258,7 +1258,7 @@ class DataService(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def ValidateModel(request,
+    def TestModel(request,
             target,
             options=(),
             channel_credentials=None,
@@ -1268,9 +1268,9 @@ class DataService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.data.v1.DataService/ValidateModel',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.ValidateModelRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.ValidateModelResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.data.v1.DataService/TestModel',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsTestModelRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsTestModelResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

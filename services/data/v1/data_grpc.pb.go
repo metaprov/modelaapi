@@ -35,7 +35,7 @@ type DataServiceClient interface {
 	// Read from a flat file and create a dataset
 	WriteFile(ctx context.Context, in *DsWriteFileRequest, opts ...grpc.CallOption) (*DsReadFromStoreResponse, error)
 	// Based on the datasource business rules, validate a dataset.
-	ValidateDataset(ctx context.Context, in *DsValidateDatasetRequest, opts ...grpc.CallOption) (*DsValidateDatasetResponse, error)
+	TestDataset(ctx context.Context, in *DsTestDatasetRequest, opts ...grpc.CallOption) (*DsTestDatasetResponse, error)
 	// Based on the datasource, generate test dataset
 	GenerateDataset(ctx context.Context, in *DsGenerateDatasetRequest, opts ...grpc.CallOption) (*DsGenerateDatasetResponse, error)
 	// Preform the split. The dataset is assumed to be in the live area after validation
@@ -78,7 +78,7 @@ type DataServiceClient interface {
 	// Merge the forecast back to one file.
 	MergeForecastFile(ctx context.Context, in *DsMergeForecastFileRequest, opts ...grpc.CallOption) (*DsMergeForecastFileResponse, error)
 	// Check for data drift
-	ValidateModel(ctx context.Context, in *ValidateModelRequest, opts ...grpc.CallOption) (*ValidateModelResponse, error)
+	TestModel(ctx context.Context, in *DsTestModelRequest, opts ...grpc.CallOption) (*DsTestModelResponse, error)
 	// test connection from python presepective
 	DsTestConnection(ctx context.Context, in *DsTestConnectionRequest, opts ...grpc.CallOption) (*DsTestConnectionResponse, error)
 	ShutDown(ctx context.Context, in *DsShutdownRequest, opts ...grpc.CallOption) (*DsShutdownResponse, error)
@@ -154,9 +154,9 @@ func (c *dataServiceClient) WriteFile(ctx context.Context, in *DsWriteFileReques
 	return out, nil
 }
 
-func (c *dataServiceClient) ValidateDataset(ctx context.Context, in *DsValidateDatasetRequest, opts ...grpc.CallOption) (*DsValidateDatasetResponse, error) {
-	out := new(DsValidateDatasetResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/ValidateDataset", in, out, opts...)
+func (c *dataServiceClient) TestDataset(ctx context.Context, in *DsTestDatasetRequest, opts ...grpc.CallOption) (*DsTestDatasetResponse, error) {
+	out := new(DsTestDatasetResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/TestDataset", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -379,9 +379,9 @@ func (c *dataServiceClient) MergeForecastFile(ctx context.Context, in *DsMergeFo
 	return out, nil
 }
 
-func (c *dataServiceClient) ValidateModel(ctx context.Context, in *ValidateModelRequest, opts ...grpc.CallOption) (*ValidateModelResponse, error) {
-	out := new(ValidateModelResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/ValidateModel", in, out, opts...)
+func (c *dataServiceClient) TestModel(ctx context.Context, in *DsTestModelRequest, opts ...grpc.CallOption) (*DsTestModelResponse, error) {
+	out := new(DsTestModelResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/TestModel", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -495,7 +495,7 @@ type DataServiceServer interface {
 	// Read from a flat file and create a dataset
 	WriteFile(context.Context, *DsWriteFileRequest) (*DsReadFromStoreResponse, error)
 	// Based on the datasource business rules, validate a dataset.
-	ValidateDataset(context.Context, *DsValidateDatasetRequest) (*DsValidateDatasetResponse, error)
+	TestDataset(context.Context, *DsTestDatasetRequest) (*DsTestDatasetResponse, error)
 	// Based on the datasource, generate test dataset
 	GenerateDataset(context.Context, *DsGenerateDatasetRequest) (*DsGenerateDatasetResponse, error)
 	// Preform the split. The dataset is assumed to be in the live area after validation
@@ -538,7 +538,7 @@ type DataServiceServer interface {
 	// Merge the forecast back to one file.
 	MergeForecastFile(context.Context, *DsMergeForecastFileRequest) (*DsMergeForecastFileResponse, error)
 	// Check for data drift
-	ValidateModel(context.Context, *ValidateModelRequest) (*ValidateModelResponse, error)
+	TestModel(context.Context, *DsTestModelRequest) (*DsTestModelResponse, error)
 	// test connection from python presepective
 	DsTestConnection(context.Context, *DsTestConnectionRequest) (*DsTestConnectionResponse, error)
 	ShutDown(context.Context, *DsShutdownRequest) (*DsShutdownResponse, error)
@@ -575,8 +575,8 @@ func (UnimplementedDataServiceServer) RunRecipe(context.Context, *DsRunRecipeReq
 func (UnimplementedDataServiceServer) WriteFile(context.Context, *DsWriteFileRequest) (*DsReadFromStoreResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method WriteFile not implemented")
 }
-func (UnimplementedDataServiceServer) ValidateDataset(context.Context, *DsValidateDatasetRequest) (*DsValidateDatasetResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ValidateDataset not implemented")
+func (UnimplementedDataServiceServer) TestDataset(context.Context, *DsTestDatasetRequest) (*DsTestDatasetResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method TestDataset not implemented")
 }
 func (UnimplementedDataServiceServer) GenerateDataset(context.Context, *DsGenerateDatasetRequest) (*DsGenerateDatasetResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GenerateDataset not implemented")
@@ -650,8 +650,8 @@ func (UnimplementedDataServiceServer) PartitionForecastFile(context.Context, *Ds
 func (UnimplementedDataServiceServer) MergeForecastFile(context.Context, *DsMergeForecastFileRequest) (*DsMergeForecastFileResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method MergeForecastFile not implemented")
 }
-func (UnimplementedDataServiceServer) ValidateModel(context.Context, *ValidateModelRequest) (*ValidateModelResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ValidateModel not implemented")
+func (UnimplementedDataServiceServer) TestModel(context.Context, *DsTestModelRequest) (*DsTestModelResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method TestModel not implemented")
 }
 func (UnimplementedDataServiceServer) DsTestConnection(context.Context, *DsTestConnectionRequest) (*DsTestConnectionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DsTestConnection not implemented")
@@ -804,20 +804,20 @@ func _DataService_WriteFile_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DataService_ValidateDataset_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DsValidateDatasetRequest)
+func _DataService_TestDataset_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DsTestDatasetRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DataServiceServer).ValidateDataset(ctx, in)
+		return srv.(DataServiceServer).TestDataset(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/ValidateDataset",
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/TestDataset",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DataServiceServer).ValidateDataset(ctx, req.(*DsValidateDatasetRequest))
+		return srv.(DataServiceServer).TestDataset(ctx, req.(*DsTestDatasetRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1254,20 +1254,20 @@ func _DataService_MergeForecastFile_Handler(srv interface{}, ctx context.Context
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DataService_ValidateModel_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ValidateModelRequest)
+func _DataService_TestModel_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DsTestModelRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DataServiceServer).ValidateModel(ctx, in)
+		return srv.(DataServiceServer).TestModel(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/ValidateModel",
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/TestModel",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DataServiceServer).ValidateModel(ctx, req.(*ValidateModelRequest))
+		return srv.(DataServiceServer).TestModel(ctx, req.(*DsTestModelRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1484,8 +1484,8 @@ var DataService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _DataService_WriteFile_Handler,
 		},
 		{
-			MethodName: "ValidateDataset",
-			Handler:    _DataService_ValidateDataset_Handler,
+			MethodName: "TestDataset",
+			Handler:    _DataService_TestDataset_Handler,
 		},
 		{
 			MethodName: "GenerateDataset",
@@ -1584,8 +1584,8 @@ var DataService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _DataService_MergeForecastFile_Handler,
 		},
 		{
-			MethodName: "ValidateModel",
-			Handler:    _DataService_ValidateModel_Handler,
+			MethodName: "TestModel",
+			Handler:    _DataService_TestModel_Handler,
 		},
 		{
 			MethodName: "DsTestConnection",

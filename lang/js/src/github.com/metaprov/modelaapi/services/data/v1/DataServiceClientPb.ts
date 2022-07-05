@@ -293,47 +293,47 @@ export class DataServiceClient {
     this.methodInfoWriteFile);
   }
 
-  methodInfoValidateDataset = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.data.v1.DataService/ValidateDataset',
+  methodInfoTestDataset = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.data.v1.DataService/TestDataset',
     grpcWeb.MethodType.UNARY,
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.DsValidateDatasetRequest,
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.DsValidateDatasetResponse,
-    (request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsValidateDatasetRequest) => {
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.DsTestDatasetRequest,
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.DsTestDatasetResponse,
+    (request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsTestDatasetRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.DsValidateDatasetResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.DsTestDatasetResponse.deserializeBinary
   );
 
-  validateDataset(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsValidateDatasetRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_data_v1_data_pb.DsValidateDatasetResponse>;
+  testDataset(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsTestDatasetRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_data_v1_data_pb.DsTestDatasetResponse>;
 
-  validateDataset(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsValidateDatasetRequest,
+  testDataset(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsTestDatasetRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsValidateDatasetResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_data_v1_data_pb.DsValidateDatasetResponse>;
+               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsTestDatasetResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_data_v1_data_pb.DsTestDatasetResponse>;
 
-  validateDataset(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsValidateDatasetRequest,
+  testDataset(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsTestDatasetRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsValidateDatasetResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsTestDatasetResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.data.v1.DataService/ValidateDataset',
+          '/github.com.metaprov.modelaapi.services.data.v1.DataService/TestDataset',
         request,
         metadata || {},
-        this.methodInfoValidateDataset,
+        this.methodInfoTestDataset,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.data.v1.DataService/ValidateDataset',
+      '/github.com.metaprov.modelaapi.services.data.v1.DataService/TestDataset',
     request,
     metadata || {},
-    this.methodInfoValidateDataset);
+    this.methodInfoTestDataset);
   }
 
   methodInfoGenerateDataset = new grpcWeb.MethodDescriptor(
@@ -1368,47 +1368,47 @@ export class DataServiceClient {
     this.methodInfoMergeForecastFile);
   }
 
-  methodInfoValidateModel = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.data.v1.DataService/ValidateModel',
+  methodInfoTestModel = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.data.v1.DataService/TestModel',
     grpcWeb.MethodType.UNARY,
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.ValidateModelRequest,
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.ValidateModelResponse,
-    (request: github_com_metaprov_modelaapi_services_data_v1_data_pb.ValidateModelRequest) => {
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.DsTestModelRequest,
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.DsTestModelResponse,
+    (request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsTestModelRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.ValidateModelResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.DsTestModelResponse.deserializeBinary
   );
 
-  validateModel(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.ValidateModelRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_data_v1_data_pb.ValidateModelResponse>;
+  testModel(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsTestModelRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_data_v1_data_pb.DsTestModelResponse>;
 
-  validateModel(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.ValidateModelRequest,
+  testModel(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsTestModelRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.ValidateModelResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_data_v1_data_pb.ValidateModelResponse>;
+               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsTestModelResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_data_v1_data_pb.DsTestModelResponse>;
 
-  validateModel(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.ValidateModelRequest,
+  testModel(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsTestModelRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.ValidateModelResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsTestModelResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.data.v1.DataService/ValidateModel',
+          '/github.com.metaprov.modelaapi.services.data.v1.DataService/TestModel',
         request,
         metadata || {},
-        this.methodInfoValidateModel,
+        this.methodInfoTestModel,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.data.v1.DataService/ValidateModel',
+      '/github.com.metaprov.modelaapi.services.data.v1.DataService/TestModel',
     request,
     metadata || {},
-    this.methodInfoValidateModel);
+    this.methodInfoTestModel);
   }
 
   methodInfoDsTestConnection = new grpcWeb.MethodDescriptor(

@@ -1117,52 +1117,6 @@ export namespace ModelDeploymentSpec {
   }
 }
 
-export class ModelTest extends jspb.Message {
-  getAssertion(): string;
-  setAssertion(value: string): ModelTest;
-
-  getPrevmodel(): string;
-  setPrevmodel(value: string): ModelTest;
-
-  getDatasetname(): string;
-  setDatasetname(value: string): ModelTest;
-
-  getColumn(): string;
-  setColumn(value: string): ModelTest;
-
-  getMetric(): string;
-  setMetric(value: string): ModelTest;
-
-  getMin(): number;
-  setMin(value: number): ModelTest;
-
-  getMax(): number;
-  setMax(value: number): ModelTest;
-
-  getAgg(): string;
-  setAgg(value: string): ModelTest;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ModelTest.AsObject;
-  static toObject(includeInstance: boolean, msg: ModelTest): ModelTest.AsObject;
-  static serializeBinaryToWriter(message: ModelTest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ModelTest;
-  static deserializeBinaryFromReader(message: ModelTest, reader: jspb.BinaryReader): ModelTest;
-}
-
-export namespace ModelTest {
-  export type AsObject = {
-    assertion: string,
-    prevmodel: string,
-    datasetname: string,
-    column: string,
-    metric: string,
-    min: number,
-    max: number,
-    agg: string,
-  }
-}
-
 export class NotificationSpec extends jspb.Message {
   getErrorttl(): number;
   setErrorttl(value: number): NotificationSpec;

@@ -98,7 +98,7 @@ message CapacityStageSpec {
 
   // Validations is the specification of tests to run in this stage
   // +kubebuilder:validation:Optional
-  repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelTest tests = 3;
+  repeated ModelTest tests = 3;
 
   // Resource define the hardware resources req.
   // +kubebuilder:validation:Optional
@@ -443,7 +443,7 @@ message DeploymentStageSpec {
 
   // Tests is the specification of tests to run in this stage
   // +kubebuilder:validation:Optional
-  repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelTest tests = 4;
+  repeated ModelTest tests = 4;
 
   // Resource define the hardware resources req.
   // +kubebuilder:validation:Optional
@@ -2432,6 +2432,41 @@ message ModelStatus {
   repeated ModelCondition conditions = 69;
 }
 
+// ModelValidation defines a single validation to be run against a model
+message ModelTest {
+  // The type of model validation
+  // +kubebuilder:validation:Optional
+  optional string name = 1;
+
+  // PrevModel specifies a previous model to compare against
+  // +kubebuilder:validation:Optional
+  optional string prevModel = 2;
+
+  // The name of a labeled dataset used to test the model, when measuring a performance metric
+  // +kubebuilder:validation:Optional
+  optional string datasetName = 3;
+
+  // Define the column name for the validation role
+  // +kubebuilder:validation:Optional
+  optional string column = 4;
+
+  // Define the measurement metric.
+  // +kubebuilder:validation:Optional
+  optional string metric = 5;
+
+  // The lower range of the metric
+  // +kubebuilder:validation:Optional
+  optional double min = 6;
+
+  // The lower upper range of the metric
+  // +kubebuilder:validation:Optional
+  optional double max = 7;
+
+  // Agg specifies the type of aggregate when measuring aggregate performance (e.g. median, average)
+  // +kubebuilder:validation:Optional
+  optional string agg = 8;
+}
+
 message ModelTestResult {
   optional string type = 1;
 
@@ -3937,7 +3972,7 @@ message UATStageSpec {
 
   // Validations defines the machine learning test cases to run against the new trained model.
   // +kubebuilder:validation:Optional
-  repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelTest tests = 3;
+  repeated ModelTest tests = 3;
 
   // Resource define the hardware resources req.
   // +kubebuilder:validation:Optional

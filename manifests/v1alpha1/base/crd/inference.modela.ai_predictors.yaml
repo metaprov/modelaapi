@@ -830,9 +830,6 @@ spec:
                               - avg
                               - median
                               type: string
-                            assertion:
-                              description: The type of model validation
-                              type: string
                             column:
                               description: Define the column name for the validation
                                 role
@@ -931,6 +928,9 @@ spec:
                             min:
                               description: The lower range of the metric
                               type: number
+                            name:
+                              description: The type of model validation
+                              type: string
                             prevModel:
                               description: PrevModel specifies a previous model to
                                 compare against
@@ -1098,9 +1098,6 @@ spec:
                               - avg
                               - median
                               type: string
-                            assertion:
-                              description: The type of model validation
-                              type: string
                             column:
                               description: Define the column name for the validation
                                 role
@@ -1199,6 +1196,9 @@ spec:
                             min:
                               description: The lower range of the metric
                               type: number
+                            name:
+                              description: The type of model validation
+                              type: string
                             prevModel:
                               description: PrevModel specifies a previous model to
                                 compare against
@@ -1365,9 +1365,6 @@ spec:
                               - avg
                               - median
                               type: string
-                            assertion:
-                              description: The type of model validation
-                              type: string
                             column:
                               description: Define the column name for the validation
                                 role
@@ -1466,6 +1463,9 @@ spec:
                             min:
                               description: The lower range of the metric
                               type: number
+                            name:
+                              description: The type of model validation
+                              type: string
                             prevModel:
                               description: PrevModel specifies a previous model to
                                 compare against
@@ -1633,9 +1633,6 @@ spec:
                               - avg
                               - median
                               type: string
-                            assertion:
-                              description: The type of model validation
-                              type: string
                             column:
                               description: Define the column name for the validation
                                 role
@@ -1734,6 +1731,9 @@ spec:
                             min:
                               description: The lower range of the metric
                               type: number
+                            name:
+                              description: The type of model validation
+                              type: string
                             prevModel:
                               description: PrevModel specifies a previous model to
                                 compare against
@@ -1900,9 +1900,6 @@ spec:
                               - avg
                               - median
                               type: string
-                            assertion:
-                              description: The type of model validation
-                              type: string
                             column:
                               description: Define the column name for the validation
                                 role
@@ -2001,6 +1998,9 @@ spec:
                             min:
                               description: The lower range of the metric
                               type: number
+                            name:
+                              description: The type of model validation
+                              type: string
                             prevModel:
                               description: PrevModel specifies a previous model to
                                 compare against
