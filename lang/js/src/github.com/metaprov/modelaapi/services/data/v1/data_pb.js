@@ -11212,7 +11212,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsValidateDatasetResponse.p
 proto.github.com.metaprov.modelaapi.services.data.v1.DsValidateDatasetResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     resultList: jspb.Message.toObjectList(msg.getResultList(),
-    github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataValidationResult.toObject, includeInstance)
+    github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataTestResult.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -11250,8 +11250,8 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsValidateDatasetResponse.d
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataValidationResult;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataValidationResult.deserializeBinaryFromReader);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataTestResult;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataTestResult.deserializeBinaryFromReader);
       msg.addResult(value);
       break;
     default:
@@ -11288,24 +11288,24 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsValidateDatasetResponse.s
     writer.writeRepeatedMessage(
       1,
       f,
-      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataValidationResult.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataTestResult.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataValidationResult result = 1;
- * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataValidationResult>}
+ * repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataTestResult result = 1;
+ * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataTestResult>}
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.DsValidateDatasetResponse.prototype.getResultList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataValidationResult>} */ (
-    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataValidationResult, 1));
+  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataTestResult>} */ (
+    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataTestResult, 1));
 };
 
 
 /**
- * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataValidationResult>} value
+ * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataTestResult>} value
  * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsValidateDatasetResponse} returns this
 */
 proto.github.com.metaprov.modelaapi.services.data.v1.DsValidateDatasetResponse.prototype.setResultList = function(value) {
@@ -11314,12 +11314,12 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsValidateDatasetResponse.p
 
 
 /**
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataValidationResult=} opt_value
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataTestResult=} opt_value
  * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataValidationResult}
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataTestResult}
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.DsValidateDatasetResponse.prototype.addResult = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataValidationResult, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataTestResult, opt_index);
 };
 
 
@@ -22153,7 +22153,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.ValidateModelResponse.proto
 proto.github.com.metaprov.modelaapi.services.data.v1.ValidateModelResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     resultList: jspb.Message.toObjectList(msg.getResultList(),
-    github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidationResult.toObject, includeInstance)
+    github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelTestResult.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -22191,8 +22191,8 @@ proto.github.com.metaprov.modelaapi.services.data.v1.ValidateModelResponse.deser
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidationResult;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidationResult.deserializeBinaryFromReader);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelTestResult;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelTestResult.deserializeBinaryFromReader);
       msg.addResult(value);
       break;
     default:
@@ -22229,24 +22229,24 @@ proto.github.com.metaprov.modelaapi.services.data.v1.ValidateModelResponse.seria
     writer.writeRepeatedMessage(
       1,
       f,
-      github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidationResult.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelTestResult.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidationResult result = 1;
- * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidationResult>}
+ * repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestResult result = 1;
+ * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestResult>}
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.ValidateModelResponse.prototype.getResultList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidationResult>} */ (
-    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidationResult, 1));
+  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestResult>} */ (
+    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelTestResult, 1));
 };
 
 
 /**
- * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidationResult>} value
+ * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestResult>} value
  * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.ValidateModelResponse} returns this
 */
 proto.github.com.metaprov.modelaapi.services.data.v1.ValidateModelResponse.prototype.setResultList = function(value) {
@@ -22255,12 +22255,12 @@ proto.github.com.metaprov.modelaapi.services.data.v1.ValidateModelResponse.proto
 
 
 /**
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidationResult=} opt_value
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestResult=} opt_value
  * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidationResult}
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestResult}
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.ValidateModelResponse.prototype.addResult = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidationResult, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestResult, opt_index);
 };
 
 

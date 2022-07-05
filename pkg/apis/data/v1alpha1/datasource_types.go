@@ -134,15 +134,15 @@ const (
 	ColumnTestNameValidValueUniqueBetween   ColumnTestName = "valid-values-count-between"
 	ColumnTestNameMismatchValueBetween      ColumnTestName = "mismatch-values-between"
 	// Statistics
-	ColumnTestNameMinBetween           ColumnTestName = "min-between"
-	ColumnTestNameLowerQuartileBetween ColumnTestName = "lower-quartile-between"
-	ColumnTestNameMedianBetween        ColumnTestName = "median-between"
-	ColumnTestNameAvgBetween           ColumnTestName = "average-between"
-	ColumnTestNameUpperQuartileBetween ColumnTestName = "upper-quartile-between"
-	ColumnTestNameMaxBetween           ColumnTestName = "max-between"
-	ColumnTestStddevBetween            ColumnTestName = "stddev-between"
-	ColumnTestChiSquarePValueBetween   ColumnTestName = "chi-square-p-value-between"
-	ColumnTestPairCramersBetween       ColumnTestName = "pair-cramers-between"
+	ColumnTestNameMinBetween             ColumnTestName = "min-between"
+	ColumnTestNameLowerQuartileBetween   ColumnTestName = "lower-quartile-between"
+	ColumnTestNameMedianBetween          ColumnTestName = "median-between"
+	ColumnTestNameAvgBetween             ColumnTestName = "average-between"
+	ColumnTestNameUpperQuartileBetween   ColumnTestName = "upper-quartile-between"
+	ColumnTestNameMaxBetween             ColumnTestName = "max-between"
+	ColumnTestNameStddevBetween          ColumnTestName = "stddev-between"
+	ColumnTestNameChiSquarePValueBetween ColumnTestName = "chi-square-p-value-between"
+	ColumnTestNamePairCramersBetween     ColumnTestName = "pair-cramers-between"
 )
 
 type FileTestName string

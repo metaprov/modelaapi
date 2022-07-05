@@ -1182,10 +1182,10 @@ export namespace DsValidateDatasetRequest {
 }
 
 export class DsValidateDatasetResponse extends jspb.Message {
-  getResultList(): Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataValidationResult>;
-  setResultList(value: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataValidationResult>): DsValidateDatasetResponse;
+  getResultList(): Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataTestResult>;
+  setResultList(value: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataTestResult>): DsValidateDatasetResponse;
   clearResultList(): DsValidateDatasetResponse;
-  addResult(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataValidationResult, index?: number): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataValidationResult;
+  addResult(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataTestResult, index?: number): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataTestResult;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DsValidateDatasetResponse.AsObject;
@@ -1197,7 +1197,7 @@ export class DsValidateDatasetResponse extends jspb.Message {
 
 export namespace DsValidateDatasetResponse {
   export type AsObject = {
-    resultList: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataValidationResult.AsObject>,
+    resultList: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataTestResult.AsObject>,
   }
 }
 
@@ -2550,10 +2550,10 @@ export namespace ValidateModelRequest {
 }
 
 export class ValidateModelResponse extends jspb.Message {
-  getResultList(): Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidationResult>;
-  setResultList(value: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidationResult>): ValidateModelResponse;
+  getResultList(): Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelTestResult>;
+  setResultList(value: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelTestResult>): ValidateModelResponse;
   clearResultList(): ValidateModelResponse;
-  addResult(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidationResult, index?: number): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidationResult;
+  addResult(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelTestResult, index?: number): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelTestResult;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ValidateModelResponse.AsObject;
@@ -2565,7 +2565,7 @@ export class ValidateModelResponse extends jspb.Message {
 
 export namespace ValidateModelResponse {
   export type AsObject = {
-    resultList: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidationResult.AsObject>,
+    resultList: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelTestResult.AsObject>,
   }
 }
 

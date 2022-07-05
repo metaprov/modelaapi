@@ -2623,10 +2623,10 @@ export class ModelPipelineRunStageStatus extends jspb.Message {
   hasEndtime(): boolean;
   clearEndtime(): ModelPipelineRunStageStatus;
 
-  getResultsList(): Array<ModelValidationResult>;
-  setResultsList(value: Array<ModelValidationResult>): ModelPipelineRunStageStatus;
+  getResultsList(): Array<ModelTestResult>;
+  setResultsList(value: Array<ModelTestResult>): ModelPipelineRunStageStatus;
   clearResultsList(): ModelPipelineRunStageStatus;
-  addResults(value?: ModelValidationResult, index?: number): ModelValidationResult;
+  addResults(value?: ModelTestResult, index?: number): ModelTestResult;
 
   getError(): string;
   setError(value: string): ModelPipelineRunStageStatus;
@@ -2647,7 +2647,7 @@ export namespace ModelPipelineRunStageStatus {
     approvedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    resultsList: Array<ModelValidationResult.AsObject>,
+    resultsList: Array<ModelTestResult.AsObject>,
     error: string,
   }
 }
@@ -3508,48 +3508,48 @@ export namespace ModelStatus {
   }
 }
 
-export class ModelValidationResult extends jspb.Message {
+export class ModelTestResult extends jspb.Message {
   getType(): string;
-  setType(value: string): ModelValidationResult;
+  setType(value: string): ModelTestResult;
 
   getDatasetname(): string;
-  setDatasetname(value: string): ModelValidationResult;
+  setDatasetname(value: string): ModelTestResult;
 
   getModelname(): string;
-  setModelname(value: string): ModelValidationResult;
+  setModelname(value: string): ModelTestResult;
 
   getColumn(): string;
-  setColumn(value: string): ModelValidationResult;
+  setColumn(value: string): ModelTestResult;
 
   getError(): string;
-  setError(value: string): ModelValidationResult;
+  setError(value: string): ModelTestResult;
 
   getMetric(): string;
-  setMetric(value: string): ModelValidationResult;
+  setMetric(value: string): ModelTestResult;
 
   getActualvalue(): number;
-  setActualvalue(value: number): ModelValidationResult;
+  setActualvalue(value: number): ModelTestResult;
 
   getPassed(): boolean;
-  setPassed(value: boolean): ModelValidationResult;
+  setPassed(value: boolean): ModelTestResult;
 
   getAt(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setAt(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelValidationResult;
+  setAt(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelTestResult;
   hasAt(): boolean;
-  clearAt(): ModelValidationResult;
+  clearAt(): ModelTestResult;
 
   getDurationinsec(): number;
-  setDurationinsec(value: number): ModelValidationResult;
+  setDurationinsec(value: number): ModelTestResult;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ModelValidationResult.AsObject;
-  static toObject(includeInstance: boolean, msg: ModelValidationResult): ModelValidationResult.AsObject;
-  static serializeBinaryToWriter(message: ModelValidationResult, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ModelValidationResult;
-  static deserializeBinaryFromReader(message: ModelValidationResult, reader: jspb.BinaryReader): ModelValidationResult;
+  toObject(includeInstance?: boolean): ModelTestResult.AsObject;
+  static toObject(includeInstance: boolean, msg: ModelTestResult): ModelTestResult.AsObject;
+  static serializeBinaryToWriter(message: ModelTestResult, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ModelTestResult;
+  static deserializeBinaryFromReader(message: ModelTestResult, reader: jspb.BinaryReader): ModelTestResult;
 }
 
-export namespace ModelValidationResult {
+export namespace ModelTestResult {
   export type AsObject = {
     type: string,
     datasetname: string,

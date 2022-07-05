@@ -164,7 +164,7 @@ const (
 	StageStatusPhaseFailed             StageStatusPhase = "Failed"
 )
 
-type ModelValidationResult struct {
+type ModelTestResult struct {
 	Type string `json:"type" protobuf:"bytes,1,opt,name=type"`
 	// DatasetName is the name of the dataset used to perform the validation
 	DatasetName string `json:"datasetName" protobuf:"bytes,2,opt,name=datasetName"`
@@ -209,7 +209,7 @@ type ModelPipelineRunStageStatus struct {
 	EndTime *metav1.Time `json:"endTime,omitempty" protobuf:"bytes,8,opt,name=endTime"`
 	// Results is the results of running the test datasets against the new model
 	// +kubebuilder:validation:Optional
-	Results []ModelValidationResult `json:"results,omitempty" protobuf:"bytes,9,rep,name=results"`
+	Results []ModelTestResult `json:"results,omitempty" protobuf:"bytes,9,rep,name=results"`
 	// Error record error.
 	//+kubebuilder:validation:Optional
 	Error string `json:"error,omitempty" protobuf:"bytes,10,opt,name=error"`

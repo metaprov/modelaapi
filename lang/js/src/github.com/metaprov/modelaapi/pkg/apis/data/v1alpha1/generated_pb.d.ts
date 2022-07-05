@@ -2073,28 +2073,28 @@ export namespace DataSourceStatus {
   }
 }
 
-export class DataValidationResult extends jspb.Message {
+export class DataTestResult extends jspb.Message {
   getType(): string;
-  setType(value: string): DataValidationResult;
+  setType(value: string): DataTestResult;
 
   getColumn(): string;
-  setColumn(value: string): DataValidationResult;
+  setColumn(value: string): DataTestResult;
 
   getError(): string;
-  setError(value: string): DataValidationResult;
+  setError(value: string): DataTestResult;
 
   getPassed(): boolean;
-  setPassed(value: boolean): DataValidationResult;
+  setPassed(value: boolean): DataTestResult;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DataValidationResult.AsObject;
-  static toObject(includeInstance: boolean, msg: DataValidationResult): DataValidationResult.AsObject;
-  static serializeBinaryToWriter(message: DataValidationResult, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DataValidationResult;
-  static deserializeBinaryFromReader(message: DataValidationResult, reader: jspb.BinaryReader): DataValidationResult;
+  toObject(includeInstance?: boolean): DataTestResult.AsObject;
+  static toObject(includeInstance: boolean, msg: DataTestResult): DataTestResult.AsObject;
+  static serializeBinaryToWriter(message: DataTestResult, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DataTestResult;
+  static deserializeBinaryFromReader(message: DataTestResult, reader: jspb.BinaryReader): DataTestResult;
 }
 
-export namespace DataValidationResult {
+export namespace DataTestResult {
   export type AsObject = {
     type: string,
     column: string,
@@ -2406,10 +2406,10 @@ export class DatasetStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): DatasetStatus;
 
-  getValidationresultsList(): Array<DataValidationResult>;
-  setValidationresultsList(value: Array<DataValidationResult>): DatasetStatus;
+  getValidationresultsList(): Array<DataTestResult>;
+  setValidationresultsList(value: Array<DataTestResult>): DatasetStatus;
   clearValidationresultsList(): DatasetStatus;
-  addValidationresults(value?: DataValidationResult, index?: number): DataValidationResult;
+  addValidationresults(value?: DataTestResult, index?: number): DataTestResult;
 
   getLaststudytime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setLaststudytime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DatasetStatus;
@@ -2479,7 +2479,7 @@ export namespace DatasetStatus {
     imbalanced: boolean,
     anomaliesuri: string,
     observedgeneration: number,
-    validationresultsList: Array<DataValidationResult.AsObject>,
+    validationresultsList: Array<DataTestResult.AsObject>,
     laststudytime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     failurereason: string,
     failuremessage: string,
@@ -5877,10 +5877,10 @@ export class SqlQueryRunStatus extends jspb.Message {
   hasLogs(): boolean;
   clearLogs(): SqlQueryRunStatus;
 
-  getValidationresultsList(): Array<DataValidationResult>;
-  setValidationresultsList(value: Array<DataValidationResult>): SqlQueryRunStatus;
+  getValidationresultsList(): Array<DataTestResult>;
+  setValidationresultsList(value: Array<DataTestResult>): SqlQueryRunStatus;
   clearValidationresultsList(): SqlQueryRunStatus;
-  addValidationresults(value?: DataValidationResult, index?: number): DataValidationResult;
+  addValidationresults(value?: DataTestResult, index?: number): DataTestResult;
 
   getLocation(): DataLocation | undefined;
   setLocation(value?: DataLocation): SqlQueryRunStatus;
@@ -5923,7 +5923,7 @@ export namespace SqlQueryRunStatus {
     rows: number,
     triggeredby: string,
     logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
-    validationresultsList: Array<DataValidationResult.AsObject>,
+    validationresultsList: Array<DataTestResult.AsObject>,
     location?: DataLocation.AsObject,
     reportname: string,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,

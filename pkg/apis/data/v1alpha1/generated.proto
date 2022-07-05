@@ -1558,7 +1558,7 @@ message DataSourceStatus {
   repeated DataSourceCondition conditions = 8;
 }
 
-message DataValidationResult {
+message DataTestResult {
   optional string type = 1;
 
   optional string column = 2;
@@ -1822,7 +1822,7 @@ message DatasetStatus {
 
   // List of validation results which are generated for every validation rule associated with the Dataset's Data Source
   // +kubebuilder:validation:Optional
-  repeated DataValidationResult validationResults = 9;
+  repeated DataTestResult validationResults = 9;
 
   // Last time the Dataset was used with a Study
   // +kubebuilder:validation:Optional
@@ -3883,7 +3883,7 @@ message SqlQueryRunStatus {
 
   // List of data problems, as reported by the validation process
   // +kubebuilder:validation:Optional
-  repeated DataValidationResult validationResults = 8;
+  repeated DataTestResult validationResults = 8;
 
   // The location of the materialized view
   // +kubebuilder:validation:Optional
