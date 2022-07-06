@@ -984,19 +984,19 @@ message PredictorMonitorSpec {
   optional bool enabled = 1;
 
   // Define the tests to run against the predictor.
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite testSuite = 5;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite testSuite = 2;
 
   // The schedule on which model monitoring computations will be performed
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 6;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 3;
 
   // NotifierRef references a Notifier resource that will be triggered in the case that a concept or data drift is detected
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference notifierRef = 7;
+  optional k8s.io.api.core.v1.ObjectReference notifierRef = 4;
 
   // Reference to a model that will be used for outlier detection. If empty, an outlier detection model.
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference outlierDetectionModelRef = 8;
+  optional k8s.io.api.core.v1.ObjectReference outlierDetectionModelRef = 5;
 }
 
 // PredictorSpec defines the desired state of a Predictor

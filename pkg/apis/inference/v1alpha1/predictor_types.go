@@ -36,16 +36,16 @@ type PredictorMonitorSpec struct {
 	// +kubebuilder:validation:Optional
 	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
 	// Define the tests to run against the predictor.
-	TestSuite catalog.TestSuite `json:"testSuite,omitempty" protobuf:"bytes,5,opt,name=testSuite"`
+	TestSuite catalog.TestSuite `json:"testSuite,omitempty" protobuf:"bytes,2,opt,name=testSuite"`
 	// The schedule on which model monitoring computations will be performed
 	// +kubebuilder:validation:Optional
-	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,6,opt,name=schedule"`
+	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,3,opt,name=schedule"`
 	// NotifierRef references a Notifier resource that will be triggered in the case that a concept or data drift is detected
 	// +kubebuilder:validation:Optional
-	NotifierRef *v1.ObjectReference `json:"notifierRef,omitempty" protobuf:"bytes,7,opt,name=notifierRef"`
+	NotifierRef *v1.ObjectReference `json:"notifierRef,omitempty" protobuf:"bytes,4,opt,name=notifierRef"`
 	// Reference to a model that will be used for outlier detection. If empty, an outlier detection model.
 	// +kubebuilder:validation:Optional
-	OutlierDetectionModelRef v1.ObjectReference `json:"outlierDetectionModelRef,omitempty" protobuf:"bytes,8,opt,name=outlierDetectionModelRef"`
+	OutlierDetectionModelRef v1.ObjectReference `json:"outlierDetectionModelRef,omitempty" protobuf:"bytes,5,opt,name=outlierDetectionModelRef"`
 }
 
 // ModelServingSpec specifies the configuration for models to be served by a Predictor
