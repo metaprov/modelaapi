@@ -3830,23 +3830,23 @@ message TableSpec {
 message TestSpec {
   // MultiDatasetTest contains validations for multiple datasets
   // +kubebuilder:validation:Optional
-  repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase multiDatasetTests = 1;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite multiDatasetSuite = 1;
 
   // DatasetTests contains validations for the whole dataset
   // +kubebuilder:validation:Optional
-  repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase datasetTests = 2;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite datasetSuite = 2;
 
   // MultiColumnTests defines validations for multiple columns from the dataset
   // +kubebuilder:validation:Optional
-  repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase multiColumnTests = 3;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite multiColumnSuite = 3;
 
   // ColumnTests defines assertions for columns from the dataset
   // +kubebuilder:validation:Optional
-  repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase columnTests = 4;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite columnSuite = 4;
 
   // FileTests defines assertions for the contents of the data file
   // +kubebuilder:validation:Optional
-  repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase fileTests = 5;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite fileSuite = 5;
 }
 
 message TimeSeriesSchema {

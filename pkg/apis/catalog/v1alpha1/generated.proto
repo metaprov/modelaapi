@@ -851,29 +851,35 @@ message Stakeholder {
 }
 
 message TestCase {
-  optional string name = 1;
+  // The assertion type
+  optional string assertThat = 1;
 
   // +kubebuilder:validation:Optional
   optional string metric = 2;
 
+  // The entity names, depends on the assertion
   // +kubebuilder:validation:Optional
-  optional string column = 3;
+  optional string entity = 3;
 
+  // The expected value
   // +kubebuilder:validation:Optional
-  optional double value = 4;
+  optional double expectedNumber = 4;
+
+  // The expected value
+  // +kubebuilder:validation:Optional
+  optional string expectedString = 5;
+
+  // Minimum range
+  // +kubebuilder:validation:Format=float
+  // +kubebuilder:validation:Optional
+  optional double min = 6;
 
   // +kubebuilder:validation:Format=float
-  // +kubebuilder:validation:Type=number
   // +kubebuilder:validation:Optional
-  optional double min = 5;
-
-  // +kubebuilder:validation:Format=float
-  // +kubebuilder:validation:Type=number
-  // +kubebuilder:validation:Optional
-  optional double max = 6;
+  optional double max = 7;
 
   // +kubebuilder:validation:Optional
-  repeated string valueSet = 8;
+  repeated string expectedSet = 8;
 
   // +kubebuilder:validation:Optional
   optional bool strictMin = 9;
@@ -890,18 +896,30 @@ message TestCase {
 
   // +kubebuilder:validation:Optional
   optional string path = 13;
+
+  // +kubebuilder:validation:Optional
+  optional bool enabled = 14;
+
+  // +kubebuilder:validation:Optional
+  optional string displayName = 15;
+
+  // Optional Test Tags
+  repeated string tags = 16;
 }
 
 // Result for a specific case
 message TestCaseResult {
+  // Assertion name , taken from the assertion.
   // +kubebuilder:validation:Optional
-  optional string name = 1;
+  optional string assertion = 1;
 
+  // The entity name,taken from the assertion
   // +kubebuilder:validation:Optional
-  optional string metric = 2;
+  optional string entity = 2;
 
+  // Actual value of the metric
   // +kubebuilder:validation:Optional
-  optional string column = 3;
+  optional Measurement actual = 3;
 
   // +kubebuilder:validation:Optional
   optional bool failed = 4;

@@ -686,7 +686,7 @@ message MonitorPart {
   optional bool refTraining = 4;
 
   // Define the validation rule for this monitor
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite tests = 5;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite testSuite = 5;
 
   // The schedule on which model monitoring computations will be performed
   // +kubebuilder:validation:Optional

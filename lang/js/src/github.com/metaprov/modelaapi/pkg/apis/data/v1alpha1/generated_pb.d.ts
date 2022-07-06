@@ -5818,30 +5818,30 @@ export namespace TableSpec {
 }
 
 export class TestSpec extends jspb.Message {
-  getMultidatasettestsList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase>;
-  setMultidatasettestsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase>): TestSpec;
-  clearMultidatasettestsList(): TestSpec;
-  addMultidatasettests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase;
+  getMultidatasetsuite(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
+  setMultidatasetsuite(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): TestSpec;
+  hasMultidatasetsuite(): boolean;
+  clearMultidatasetsuite(): TestSpec;
 
-  getDatasettestsList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase>;
-  setDatasettestsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase>): TestSpec;
-  clearDatasettestsList(): TestSpec;
-  addDatasettests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase;
+  getDatasetsuite(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
+  setDatasetsuite(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): TestSpec;
+  hasDatasetsuite(): boolean;
+  clearDatasetsuite(): TestSpec;
 
-  getMulticolumntestsList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase>;
-  setMulticolumntestsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase>): TestSpec;
-  clearMulticolumntestsList(): TestSpec;
-  addMulticolumntests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase;
+  getMulticolumnsuite(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
+  setMulticolumnsuite(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): TestSpec;
+  hasMulticolumnsuite(): boolean;
+  clearMulticolumnsuite(): TestSpec;
 
-  getColumntestsList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase>;
-  setColumntestsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase>): TestSpec;
-  clearColumntestsList(): TestSpec;
-  addColumntests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase;
+  getColumnsuite(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
+  setColumnsuite(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): TestSpec;
+  hasColumnsuite(): boolean;
+  clearColumnsuite(): TestSpec;
 
-  getFiletestsList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase>;
-  setFiletestsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase>): TestSpec;
-  clearFiletestsList(): TestSpec;
-  addFiletests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase;
+  getFilesuite(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
+  setFilesuite(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): TestSpec;
+  hasFilesuite(): boolean;
+  clearFilesuite(): TestSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TestSpec.AsObject;
@@ -5853,11 +5853,11 @@ export class TestSpec extends jspb.Message {
 
 export namespace TestSpec {
   export type AsObject = {
-    multidatasettestsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase.AsObject>,
-    datasettestsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase.AsObject>,
-    multicolumntestsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase.AsObject>,
-    columntestsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase.AsObject>,
-    filetestsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase.AsObject>,
+    multidatasetsuite?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
+    datasetsuite?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
+    multicolumnsuite?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
+    columnsuite?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
+    filesuite?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
   }
 }
 

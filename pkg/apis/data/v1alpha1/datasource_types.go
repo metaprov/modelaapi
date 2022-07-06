@@ -271,19 +271,19 @@ type ExcelSheetArea struct {
 type TestSpec struct {
 	// MultiDatasetTest contains validations for multiple datasets
 	// +kubebuilder:validation:Optional
-	MultiDatasetTests []catalog.TestCase `json:"multiDatasetTests,omitempty" protobuf:"bytes,1,rep,name=multiDatasetTests"`
+	MultiDatasetSuite catalog.TestSuite `json:"multiDatasetSuite,omitempty" protobuf:"bytes,1,rep,name=multiDatasetSuite"`
 	// DatasetTests contains validations for the whole dataset
 	// +kubebuilder:validation:Optional
-	DatasetTests []catalog.TestCase `json:"datasetTests,omitempty" protobuf:"bytes,2,rep,name=datasetTests"`
+	DatasetSuite catalog.TestSuite `json:"datasetSuite,omitempty" protobuf:"bytes,2,rep,name=datasetSuite"`
 	// MultiColumnTests defines validations for multiple columns from the dataset
 	// +kubebuilder:validation:Optional
-	MultiColumnTests []catalog.TestCase `json:"multiColumnTests,omitempty" protobuf:"bytes,3,rep,name=multiColumnTests"`
+	MultiColumnSuite catalog.TestSuite `json:"multiColumnSuite,omitempty" protobuf:"bytes,3,rep,name=multiColumnSuite"`
 	// ColumnTests defines assertions for columns from the dataset
 	// +kubebuilder:validation:Optional
-	ColumnTests []catalog.TestCase `json:"columnTests,omitempty" protobuf:"bytes,4,rep,name=columnTests"`
+	ColumnSuite catalog.TestSuite `json:"columnSuite,omitempty" protobuf:"bytes,4,rep,name=columnSuite"`
 	// FileTests defines assertions for the contents of the data file
 	// +kubebuilder:validation:Optional
-	FileTests []catalog.TestCase `json:"fileTests,omitempty" protobuf:"bytes,5,rep,name=fileTests"`
+	FileSuite catalog.TestSuite `json:"fileSuite,omitempty" protobuf:"bytes,5,rep,name=fileSuite"`
 }
 
 // Schema defines the column-level format and validation rules for data associated with a DataSource

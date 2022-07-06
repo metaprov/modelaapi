@@ -815,15 +815,33 @@ spec:
                             - cron
                             type: string
                         type: object
-                      tests:
+                      testSuite:
                         description: Define the validation rule for this monitor
                         properties:
                           tests:
                             items:
                               properties:
+                                assertThat:
+                                  description: The assertion type
+                                  type: string
                                 bucketName:
                                   type: string
-                                column:
+                                displayName:
+                                  type: string
+                                enabled:
+                                  type: boolean
+                                entity:
+                                  description: The entity names, depends on the assertion
+                                  type: string
+                                expectedNumber:
+                                  description: The expected value
+                                  type: number
+                                expectedSetSet:
+                                  items:
+                                    type: string
+                                  type: array
+                                expectedString:
+                                  description: The expected value
                                   type: string
                                 generated:
                                   description: Indicates if this validation rule was
@@ -916,26 +934,22 @@ spec:
                                   - jensen-shannon-distance
                                   type: string
                                 min:
+                                  description: Minimum range
                                   format: float
                                   type: number
-                                name:
-                                  description: ////////////////////////////////////////////////////////
-                                    Test /////////////////////////////////////////////////////////
-                                  type: string
                                 path:
                                   type: string
                                 strictMax:
                                   type: boolean
                                 strictMin:
                                   type: boolean
-                                value:
-                                  type: number
-                                valueSet:
+                                tags:
+                                  description: Optional Test Tags
                                   items:
                                     type: string
                                   type: array
                               required:
-                              - name
+                              - assertThat
                               type: object
                             type: array
                         type: object
@@ -1085,15 +1099,33 @@ spec:
                             - cron
                             type: string
                         type: object
-                      tests:
+                      testSuite:
                         description: Define the validation rule for this monitor
                         properties:
                           tests:
                             items:
                               properties:
+                                assertThat:
+                                  description: The assertion type
+                                  type: string
                                 bucketName:
                                   type: string
-                                column:
+                                displayName:
+                                  type: string
+                                enabled:
+                                  type: boolean
+                                entity:
+                                  description: The entity names, depends on the assertion
+                                  type: string
+                                expectedNumber:
+                                  description: The expected value
+                                  type: number
+                                expectedSetSet:
+                                  items:
+                                    type: string
+                                  type: array
+                                expectedString:
+                                  description: The expected value
                                   type: string
                                 generated:
                                   description: Indicates if this validation rule was
@@ -1186,26 +1218,22 @@ spec:
                                   - jensen-shannon-distance
                                   type: string
                                 min:
+                                  description: Minimum range
                                   format: float
                                   type: number
-                                name:
-                                  description: ////////////////////////////////////////////////////////
-                                    Test /////////////////////////////////////////////////////////
-                                  type: string
                                 path:
                                   type: string
                                 strictMax:
                                   type: boolean
                                 strictMin:
                                   type: boolean
-                                value:
-                                  type: number
-                                valueSet:
+                                tags:
+                                  description: Optional Test Tags
                                   items:
                                     type: string
                                   type: array
                               required:
-                              - name
+                              - assertThat
                               type: object
                             type: array
                         type: object
@@ -1354,15 +1382,33 @@ spec:
                             - cron
                             type: string
                         type: object
-                      tests:
+                      testSuite:
                         description: Define the validation rule for this monitor
                         properties:
                           tests:
                             items:
                               properties:
+                                assertThat:
+                                  description: The assertion type
+                                  type: string
                                 bucketName:
                                   type: string
-                                column:
+                                displayName:
+                                  type: string
+                                enabled:
+                                  type: boolean
+                                entity:
+                                  description: The entity names, depends on the assertion
+                                  type: string
+                                expectedNumber:
+                                  description: The expected value
+                                  type: number
+                                expectedSetSet:
+                                  items:
+                                    type: string
+                                  type: array
+                                expectedString:
+                                  description: The expected value
                                   type: string
                                 generated:
                                   description: Indicates if this validation rule was
@@ -1455,26 +1501,22 @@ spec:
                                   - jensen-shannon-distance
                                   type: string
                                 min:
+                                  description: Minimum range
                                   format: float
                                   type: number
-                                name:
-                                  description: ////////////////////////////////////////////////////////
-                                    Test /////////////////////////////////////////////////////////
-                                  type: string
                                 path:
                                   type: string
                                 strictMax:
                                   type: boolean
                                 strictMin:
                                   type: boolean
-                                value:
-                                  type: number
-                                valueSet:
+                                tags:
+                                  description: Optional Test Tags
                                   items:
                                     type: string
                                   type: array
                               required:
-                              - name
+                              - assertThat
                               type: object
                             type: array
                         type: object
@@ -1624,15 +1666,33 @@ spec:
                             - cron
                             type: string
                         type: object
-                      tests:
+                      testSuite:
                         description: Define the validation rule for this monitor
                         properties:
                           tests:
                             items:
                               properties:
+                                assertThat:
+                                  description: The assertion type
+                                  type: string
                                 bucketName:
                                   type: string
-                                column:
+                                displayName:
+                                  type: string
+                                enabled:
+                                  type: boolean
+                                entity:
+                                  description: The entity names, depends on the assertion
+                                  type: string
+                                expectedNumber:
+                                  description: The expected value
+                                  type: number
+                                expectedSetSet:
+                                  items:
+                                    type: string
+                                  type: array
+                                expectedString:
+                                  description: The expected value
                                   type: string
                                 generated:
                                   description: Indicates if this validation rule was
@@ -1725,26 +1785,22 @@ spec:
                                   - jensen-shannon-distance
                                   type: string
                                 min:
+                                  description: Minimum range
                                   format: float
                                   type: number
-                                name:
-                                  description: ////////////////////////////////////////////////////////
-                                    Test /////////////////////////////////////////////////////////
-                                  type: string
                                 path:
                                   type: string
                                 strictMax:
                                   type: boolean
                                 strictMin:
                                   type: boolean
-                                value:
-                                  type: number
-                                valueSet:
+                                tags:
+                                  description: Optional Test Tags
                                   items:
                                     type: string
                                   type: array
                               required:
-                              - name
+                              - assertThat
                               type: object
                             type: array
                         type: object
@@ -1893,15 +1949,33 @@ spec:
                             - cron
                             type: string
                         type: object
-                      tests:
+                      testSuite:
                         description: Define the validation rule for this monitor
                         properties:
                           tests:
                             items:
                               properties:
+                                assertThat:
+                                  description: The assertion type
+                                  type: string
                                 bucketName:
                                   type: string
-                                column:
+                                displayName:
+                                  type: string
+                                enabled:
+                                  type: boolean
+                                entity:
+                                  description: The entity names, depends on the assertion
+                                  type: string
+                                expectedNumber:
+                                  description: The expected value
+                                  type: number
+                                expectedSetSet:
+                                  items:
+                                    type: string
+                                  type: array
+                                expectedString:
+                                  description: The expected value
                                   type: string
                                 generated:
                                   description: Indicates if this validation rule was
@@ -1994,26 +2068,22 @@ spec:
                                   - jensen-shannon-distance
                                   type: string
                                 min:
+                                  description: Minimum range
                                   format: float
                                   type: number
-                                name:
-                                  description: ////////////////////////////////////////////////////////
-                                    Test /////////////////////////////////////////////////////////
-                                  type: string
                                 path:
                                   type: string
                                 strictMax:
                                   type: boolean
                                 strictMin:
                                   type: boolean
-                                value:
-                                  type: number
-                                valueSet:
+                                tags:
+                                  description: Optional Test Tags
                                   items:
                                     type: string
                                   type: array
                               required:
-                              - name
+                              - assertThat
                               type: object
                             type: array
                         type: object
@@ -2214,12 +2284,87 @@ spec:
                     description: What metric to use when comparing the candidate model
                       to the current model
                     items:
-                      description: CanaryMetric is used when testing the canary
                       enum:
+                      - accuracy
+                      - average-precision
+                      - balanced-accuracy
+                      - pr-auc
+                      - pr-auc-micro
+                      - pr-auc-macro
+                      - pr-auc-weighted
+                      - f1
+                      - f1-micro
+                      - f1-macro
+                      - f1-weighted
+                      - f1-samples
+                      - precision
+                      - precision-micro
+                      - precision-macro
+                      - precision-weighted
+                      - precision-samples
+                      - recall
+                      - recall-macro
+                      - recall-micro
+                      - recall-weighted
+                      - recall-samples
+                      - log-loss
+                      - auc
+                      - auc-micro
+                      - auc-macro
+                      - auc-weighted
+                      - zero-one
+                      - hamming-loss
+                      - hinge-loss
+                      - jacquard-loss
+                      - mcc
+                      - fp
+                      - fn
+                      - tn
+                      - tp
+                      - tpr
+                      - fpr
+                      - tnr
+                      - matthews-corr-coef
+                      - explained-variance
+                      - max-error
+                      - mae
+                      - mse
+                      - msle
+                      - rmse
+                      - rmsle
+                      - median-absolute-error
+                      - r2
+                      - adj-r2
+                      - mean_poisson_deviance
+                      - mean-gamma-deviance
+                      - mean-tweedie-deviance
+                      - mape
+                      - maze
+                      - mdape
+                      - smape
+                      - adjusted-mutual-info-score
+                      - adjusted-rand-score
+                      - completeness-score
+                      - fowlkes-mallows-score
+                      - homogeneity-score
+                      - mutual-info-score
+                      - normalized-mutual-info-score
+                      - v-measure-score
+                      - p50-latency
+                      - p95-latency
+                      - p99-latency
                       - cpu
+                      - gpu
                       - mem
-                      - latency
-                      - crash
+                      - gpu-mem
+                      - req-per-sec
+                      - uncertain-prediction-percent
+                      - none
+                      - ks
+                      - psi
+                      - wasserstein-distance
+                      - kl-divergenece
+                      - jensen-shannon-distance
                       type: string
                     type: array
                   trafficIncrement:

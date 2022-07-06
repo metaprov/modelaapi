@@ -10449,7 +10449,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorPart.toOb
     reffreq: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     refinterval: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     reftraining: (f = jspb.Message.getBooleanField(msg, 4)) == null ? undefined : f,
-    tests: (f = msg.getTests()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.toObject(includeInstance, f),
+    testsuite: (f = msg.getTestsuite()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.toObject(includeInstance, f),
     schedule: (f = msg.getSchedule()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.toObject(includeInstance, f),
     notifierref: (f = msg.getNotifierref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     outlierdetectionmodelref: (f = msg.getOutlierdetectionmodelref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f)
@@ -10508,7 +10508,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorPart.dese
     case 5:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.deserializeBinaryFromReader);
-      msg.setTests(value);
+      msg.setTestsuite(value);
       break;
     case 6:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule;
@@ -10582,7 +10582,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorPart.seri
       f
     );
   }
-  f = message.getTests();
+  f = message.getTestsuite();
   if (f != null) {
     writer.writeMessage(
       5,
@@ -10762,10 +10762,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorPart.prot
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite tests = 5;
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite testSuite = 5;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorPart.prototype.getTests = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorPart.prototype.getTestsuite = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite, 5));
 };
@@ -10775,7 +10775,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorPart.prot
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorPart} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorPart.prototype.setTests = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorPart.prototype.setTestsuite = function(value) {
   return jspb.Message.setWrapperField(this, 5, value);
 };
 
@@ -10784,8 +10784,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorPart.prot
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorPart} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorPart.prototype.clearTests = function() {
-  return this.setTests(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorPart.prototype.clearTestsuite = function() {
+  return this.setTestsuite(undefined);
 };
 
 
@@ -10793,7 +10793,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorPart.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorPart.prototype.hasTests = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorPart.prototype.hasTestsuite = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 

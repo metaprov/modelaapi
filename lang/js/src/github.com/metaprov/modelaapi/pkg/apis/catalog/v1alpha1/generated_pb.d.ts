@@ -1546,17 +1546,20 @@ export namespace Stakeholder {
 }
 
 export class TestCase extends jspb.Message {
-  getName(): string;
-  setName(value: string): TestCase;
+  getAssertthat(): string;
+  setAssertthat(value: string): TestCase;
 
   getMetric(): string;
   setMetric(value: string): TestCase;
 
-  getColumn(): string;
-  setColumn(value: string): TestCase;
+  getEntity(): string;
+  setEntity(value: string): TestCase;
 
-  getValue(): number;
-  setValue(value: number): TestCase;
+  getExpectednumber(): number;
+  setExpectednumber(value: number): TestCase;
+
+  getExpectedstring(): string;
+  setExpectedstring(value: string): TestCase;
 
   getMin(): number;
   setMin(value: number): TestCase;
@@ -1564,10 +1567,10 @@ export class TestCase extends jspb.Message {
   getMax(): number;
   setMax(value: number): TestCase;
 
-  getValuesetList(): Array<string>;
-  setValuesetList(value: Array<string>): TestCase;
-  clearValuesetList(): TestCase;
-  addValueset(value: string, index?: number): TestCase;
+  getExpectedsetList(): Array<string>;
+  setExpectedsetList(value: Array<string>): TestCase;
+  clearExpectedsetList(): TestCase;
+  addExpectedset(value: string, index?: number): TestCase;
 
   getStrictmin(): boolean;
   setStrictmin(value: boolean): TestCase;
@@ -1584,6 +1587,17 @@ export class TestCase extends jspb.Message {
   getPath(): string;
   setPath(value: string): TestCase;
 
+  getEnabled(): boolean;
+  setEnabled(value: boolean): TestCase;
+
+  getDisplayname(): string;
+  setDisplayname(value: string): TestCase;
+
+  getTagsList(): Array<string>;
+  setTagsList(value: Array<string>): TestCase;
+  clearTagsList(): TestCase;
+  addTags(value: string, index?: number): TestCase;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TestCase.AsObject;
   static toObject(includeInstance: boolean, msg: TestCase): TestCase.AsObject;
@@ -1594,30 +1608,36 @@ export class TestCase extends jspb.Message {
 
 export namespace TestCase {
   export type AsObject = {
-    name: string,
+    assertthat: string,
     metric: string,
-    column: string,
-    value: number,
+    entity: string,
+    expectednumber: number,
+    expectedstring: string,
     min: number,
     max: number,
-    valuesetList: Array<string>,
+    expectedsetList: Array<string>,
     strictmin: boolean,
     strictmax: boolean,
     generated: boolean,
     bucketname: string,
     path: string,
+    enabled: boolean,
+    displayname: string,
+    tagsList: Array<string>,
   }
 }
 
 export class TestCaseResult extends jspb.Message {
-  getName(): string;
-  setName(value: string): TestCaseResult;
+  getAssertion(): string;
+  setAssertion(value: string): TestCaseResult;
 
-  getMetric(): string;
-  setMetric(value: string): TestCaseResult;
+  getEntity(): string;
+  setEntity(value: string): TestCaseResult;
 
-  getColumn(): string;
-  setColumn(value: string): TestCaseResult;
+  getActual(): Measurement | undefined;
+  setActual(value?: Measurement): TestCaseResult;
+  hasActual(): boolean;
+  clearActual(): TestCaseResult;
 
   getFailed(): boolean;
   setFailed(value: boolean): TestCaseResult;
@@ -1641,9 +1661,9 @@ export class TestCaseResult extends jspb.Message {
 
 export namespace TestCaseResult {
   export type AsObject = {
-    name: string,
-    metric: string,
-    column: string,
+    assertion: string,
+    entity: string,
+    actual?: Measurement.AsObject,
     failed: boolean,
     totalvalues: number,
     failedvalues: number,

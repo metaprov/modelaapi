@@ -1048,10 +1048,10 @@ export class MonitorPart extends jspb.Message {
   getReftraining(): boolean;
   setReftraining(value: boolean): MonitorPart;
 
-  getTests(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
-  setTests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): MonitorPart;
-  hasTests(): boolean;
-  clearTests(): MonitorPart;
+  getTestsuite(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
+  setTestsuite(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): MonitorPart;
+  hasTestsuite(): boolean;
+  clearTestsuite(): MonitorPart;
 
   getSchedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
   setSchedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): MonitorPart;
@@ -1082,7 +1082,7 @@ export namespace MonitorPart {
     reffreq: string,
     refinterval: number,
     reftraining: boolean,
-    tests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
+    testsuite?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
     schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     notifierref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     outlierdetectionmodelref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,

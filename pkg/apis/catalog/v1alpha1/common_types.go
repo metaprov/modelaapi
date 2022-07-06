@@ -1357,17 +1357,6 @@ const (
 	CompilerNameNone CompilerName = "none"
 )
 
-// CanaryMetric is used when testing the canary
-// +kubebuilder:validation:Enum="cpu";"mem";"latency";"crash"
-type CanaryMetric string
-
-const (
-	CpuCanaryMetric     CanaryMetric = "cpu"
-	MemCanaryMetric     CanaryMetric = "mem"
-	LatencyCanaryMetric CanaryMetric = "latency"
-	CrashCanaryMetric   CanaryMetric = "crash"
-)
-
 // GithubEvents specify repo and the events to listen in order ot fire the pipeline
 type GithubEvents struct {
 	// The github connections used to loginto git
@@ -2068,7 +2057,7 @@ const (
 //////////////////////////////////////////////////////////
 // Test
 ///////////////////////////////////////////////////////////
-type TestCaseName string
+type AssertionType string
 
 type TestSuite struct {
 	// +kubebuilder:validation:Optional
@@ -2076,23 +2065,28 @@ type TestSuite struct {
 }
 
 type TestCase struct {
-	Name TestCaseName `json:"name" protobuf:"bytes,1,opt,name=name"`
+	// The assertion type
+	AssertThat AssertionType `json:"assertThat" protobuf:"bytes,1,opt,name=assertThat"`
 	// +kubebuilder:validation:Optional
 	Metric Metric `json:"metric" protobuf:"bytes,2,opt,name=metric"`
+	// The entity names, depends on the assertion
 	// +kubebuilder:validation:Optional
-	Column *string `json:"column" protobuf:"bytes,3,opt,name=column"`
+	Entity *string `json:"entity" protobuf:"bytes,3,opt,name=entity"`
+	// The expected value
 	// +kubebuilder:validation:Optional
-	Value *float64 `json:"value,omitempty" protobuf:"bytes,4,opt,name=value"`
+	ExpectedNumber *float64 `json:"expectedNumber,omitempty" protobuf:"bytes,4,opt,name=expectedNumber"`
+	// The expected value
+	// +kubebuilder:validation:Optional
+	ExpectedString *string `json:"expectedString,omitempty" protobuf:"bytes,5,opt,name=expectedString"`
+	// Minimum range
 	// +kubebuilder:validation:Format=float
-	// +kubebuilder:validation:Type=number
 	// +kubebuilder:validation:Optional
-	Min *float64 `json:"min,omitempty" protobuf:"bytes,5,opt,name=min"`
+	Min *float64 `json:"min,omitempty" protobuf:"bytes,6,opt,name=min"`
 	// +kubebuilder:validation:Format=float
-	// +kubebuilder:validation:Type=number
 	// +kubebuilder:validation:Optional
-	Max *float64 `json:"max,omitempty" protobuf:"bytes,6,opt,name=max"`
+	Max *float64 `json:"max,omitempty" protobuf:"bytes,7,opt,name=max"`
 	// +kubebuilder:validation:Optional
-	ValueSet []string `json:"valueSet,omitempty" protobuf:"bytes,8,rep,name=valueSet"`
+	ExpectedSet []string `json:"expectedSetSet,omitempty" protobuf:"bytes,8,rep,name=expectedSet"`
 	// +kubebuilder:validation:Optional
 	StrictMin *bool `json:"strictMin,omitempty" protobuf:"varint,9,opt,name=strictMin"`
 	// +kubebuilder:validation:Optional
@@ -2104,6 +2098,12 @@ type TestCase struct {
 	BucketName *string `json:"bucketName,omitempty" protobuf:"bytes,12,opt,name=bucketName"`
 	// +kubebuilder:validation:Optional
 	Path *string `json:"path,omitempty" protobuf:"bytes,13,opt,name=path"`
+	// +kubebuilder:validation:Optional
+	Enabled *bool `json:"enabled,omitempty" protobuf:"bytes,14,opt,name=enabled"`
+	// +kubebuilder:validation:Optional
+	DisplayName *string `json:"displayName,omitempty" protobuf:"bytes,15,opt,name=displayName"`
+	// Optional Test Tags
+	Tags []string `json:"tags,omitempty" protobuf:"bytes,16,opt,name=tags"`
 }
 
 type TestSuiteResult struct {
@@ -2121,12 +2121,15 @@ type TestSuiteResult struct {
 
 // Result for a specific case
 type TestCaseResult struct {
+	// Assertion name , taken from the assertion.
 	// +kubebuilder:validation:Optional
-	Name TestCaseName `json:"name" protobuf:"bytes,1,opt,name=name"`
+	Assertion AssertionType `json:"assertion" protobuf:"bytes,1,opt,name=assertion"`
+	// The entity name,taken from the assertion
 	// +kubebuilder:validation:Optional
-	Metric Metric `json:"metric" protobuf:"bytes,2,opt,name=metric"`
+	Entity string `json:"entity" protobuf:"bytes,2,opt,name=entity"`
+	// Actual value of the metric
 	// +kubebuilder:validation:Optional
-	Column string `json:"column" protobuf:"bytes,3,opt,name=column"`
+	Actual Measurement `json:"actual" protobuf:"bytes,3,opt,name=actual"`
 	// +kubebuilder:validation:Optional
 	Failed bool `json:"failed" protobuf:"bytes,4,opt,name=failed"`
 	// +kubebuilder:validation:Optional

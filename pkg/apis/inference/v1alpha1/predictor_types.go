@@ -62,7 +62,7 @@ type MonitorPart struct {
 	// Refer to the training dataset as your baseline
 	RefTraining *bool `json:"refTraining,omitempty" protobuf:"varint,4,opt,name=refTraining"`
 	// Define the validation rule for this monitor
-	Tests catalog.TestSuite `json:"tests,omitempty" protobuf:"bytes,5,opt,name=tests"`
+	TestSuite catalog.TestSuite `json:"testSuite,omitempty" protobuf:"bytes,5,opt,name=testSuite"`
 	// The schedule on which model monitoring computations will be performed
 	// +kubebuilder:validation:Optional
 	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,6,opt,name=schedule"`
@@ -126,7 +126,7 @@ type ProgressiveSpec struct {
 	TrafficIncrement *int32 `json:"trafficIncrement,omitempty" protobuf:"varint,2,opt,name=trafficIncrement"`
 	// What metric to use when comparing the candidate model to the current model
 	// +kubebuilder:validation:Optional
-	CanaryMetrics []catalog.CanaryMetric `json:"canaryMetrics,omitempty" protobuf:"bytes,3,rep,name=canaryMetrics"`
+	CanaryMetrics []catalog.Metric `json:"canaryMetrics,omitempty" protobuf:"bytes,3,rep,name=canaryMetrics"`
 }
 
 /////////////////////////////////////////////////////

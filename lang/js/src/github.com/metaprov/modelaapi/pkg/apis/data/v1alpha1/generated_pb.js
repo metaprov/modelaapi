@@ -3134,7 +3134,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TestSpec = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TestSpec.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TestSpec, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -57852,13 +57852,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec.prototype.h
 
 
 
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TestSpec.repeatedFields_ = [1,2,3,4,5];
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -57890,16 +57883,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TestSpec.prototype.to
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TestSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
-    multidatasettestsList: jspb.Message.toObjectList(msg.getMultidatasettestsList(),
-    github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase.toObject, includeInstance),
-    datasettestsList: jspb.Message.toObjectList(msg.getDatasettestsList(),
-    github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase.toObject, includeInstance),
-    multicolumntestsList: jspb.Message.toObjectList(msg.getMulticolumntestsList(),
-    github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase.toObject, includeInstance),
-    columntestsList: jspb.Message.toObjectList(msg.getColumntestsList(),
-    github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase.toObject, includeInstance),
-    filetestsList: jspb.Message.toObjectList(msg.getFiletestsList(),
-    github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase.toObject, includeInstance)
+    multidatasetsuite: (f = msg.getMultidatasetsuite()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.toObject(includeInstance, f),
+    datasetsuite: (f = msg.getDatasetsuite()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.toObject(includeInstance, f),
+    multicolumnsuite: (f = msg.getMulticolumnsuite()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.toObject(includeInstance, f),
+    columnsuite: (f = msg.getColumnsuite()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.toObject(includeInstance, f),
+    filesuite: (f = msg.getFilesuite()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -57937,29 +57925,29 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TestSpec.deserializeB
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase.deserializeBinaryFromReader);
-      msg.addMultidatasettests(value);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.deserializeBinaryFromReader);
+      msg.setMultidatasetsuite(value);
       break;
     case 2:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase.deserializeBinaryFromReader);
-      msg.addDatasettests(value);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.deserializeBinaryFromReader);
+      msg.setDatasetsuite(value);
       break;
     case 3:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase.deserializeBinaryFromReader);
-      msg.addMulticolumntests(value);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.deserializeBinaryFromReader);
+      msg.setMulticolumnsuite(value);
       break;
     case 4:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase.deserializeBinaryFromReader);
-      msg.addColumntests(value);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.deserializeBinaryFromReader);
+      msg.setColumnsuite(value);
       break;
     case 5:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase.deserializeBinaryFromReader);
-      msg.addFiletests(value);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.deserializeBinaryFromReader);
+      msg.setFilesuite(value);
       break;
     default:
       reader.skipField();
@@ -57990,236 +57978,231 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TestSpec.prototype.se
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TestSpec.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getMultidatasettestsList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
+  f = message.getMultidatasetsuite();
+  if (f != null) {
+    writer.writeMessage(
       1,
       f,
-      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.serializeBinaryToWriter
     );
   }
-  f = message.getDatasettestsList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
+  f = message.getDatasetsuite();
+  if (f != null) {
+    writer.writeMessage(
       2,
       f,
-      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.serializeBinaryToWriter
     );
   }
-  f = message.getMulticolumntestsList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
+  f = message.getMulticolumnsuite();
+  if (f != null) {
+    writer.writeMessage(
       3,
       f,
-      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.serializeBinaryToWriter
     );
   }
-  f = message.getColumntestsList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
+  f = message.getColumnsuite();
+  if (f != null) {
+    writer.writeMessage(
       4,
       f,
-      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.serializeBinaryToWriter
     );
   }
-  f = message.getFiletestsList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
+  f = message.getFilesuite();
+  if (f != null) {
+    writer.writeMessage(
       5,
       f,
-      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase multiDatasetTests = 1;
- * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase>}
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite multiDatasetSuite = 1;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TestSpec.prototype.getMultidatasettestsList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase>} */ (
-    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase, 1));
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TestSpec.prototype.getMultidatasetsuite = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite, 1));
 };
 
 
 /**
- * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase>} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TestSpec} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TestSpec.prototype.setMultidatasettestsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TestSpec.prototype.setMultidatasetsuite = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase=} opt_value
- * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TestSpec.prototype.addMultidatasettests = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TestSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TestSpec.prototype.clearMultidatasettestsList = function() {
-  return this.setMultidatasettestsList([]);
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TestSpec.prototype.clearMultidatasetsuite = function() {
+  return this.setMultidatasetsuite(undefined);
 };
 
 
 /**
- * repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase datasetTests = 2;
- * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase>}
+ * Returns whether this field is set.
+ * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TestSpec.prototype.getDatasettestsList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase>} */ (
-    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase, 2));
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TestSpec.prototype.hasMultidatasetsuite = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
- * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase>} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TestSpec} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TestSpec.prototype.setDatasettestsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 2, value);
-};
-
-
-/**
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase=} opt_value
- * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase}
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite datasetSuite = 2;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TestSpec.prototype.addDatasettests = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase, opt_index);
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TestSpec.prototype.getDatasetsuite = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite, 2));
 };
 
 
 /**
- * Clears the list making it empty but non-null.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TestSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TestSpec.prototype.clearDatasettestsList = function() {
-  return this.setDatasettestsList([]);
-};
-
-
-/**
- * repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase multiColumnTests = 3;
- * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase>}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TestSpec.prototype.getMulticolumntestsList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase>} */ (
-    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase, 3));
-};
-
-
-/**
- * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase>} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TestSpec} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TestSpec.prototype.setMulticolumntestsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 3, value);
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TestSpec.prototype.setDatasetsuite = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
 /**
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase=} opt_value
- * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TestSpec.prototype.addMulticolumntests = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TestSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TestSpec.prototype.clearMulticolumntestsList = function() {
-  return this.setMulticolumntestsList([]);
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TestSpec.prototype.clearDatasetsuite = function() {
+  return this.setDatasetsuite(undefined);
 };
 
 
 /**
- * repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase columnTests = 4;
- * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase>}
+ * Returns whether this field is set.
+ * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TestSpec.prototype.getColumntestsList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase>} */ (
-    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase, 4));
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TestSpec.prototype.hasDatasetsuite = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase>} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TestSpec} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TestSpec.prototype.setColumntestsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 4, value);
-};
-
-
-/**
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase=} opt_value
- * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase}
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite multiColumnSuite = 3;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TestSpec.prototype.addColumntests = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase, opt_index);
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TestSpec.prototype.getMulticolumnsuite = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite, 3));
 };
 
 
 /**
- * Clears the list making it empty but non-null.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TestSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TestSpec.prototype.clearColumntestsList = function() {
-  return this.setColumntestsList([]);
-};
-
-
-/**
- * repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase fileTests = 5;
- * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase>}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TestSpec.prototype.getFiletestsList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase>} */ (
-    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCase, 5));
-};
-
-
-/**
- * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase>} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TestSpec} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TestSpec.prototype.setFiletestsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 5, value);
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TestSpec.prototype.setMulticolumnsuite = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
 };
 
 
 /**
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase=} opt_value
- * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TestSpec.prototype.addFiletests = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TestSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TestSpec.prototype.clearFiletestsList = function() {
-  return this.setFiletestsList([]);
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TestSpec.prototype.clearMulticolumnsuite = function() {
+  return this.setMulticolumnsuite(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TestSpec.prototype.hasMulticolumnsuite = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite columnSuite = 4;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TestSpec.prototype.getColumnsuite = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite, 4));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TestSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TestSpec.prototype.setColumnsuite = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TestSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TestSpec.prototype.clearColumnsuite = function() {
+  return this.setColumnsuite(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TestSpec.prototype.hasColumnsuite = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite fileSuite = 5;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TestSpec.prototype.getFilesuite = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite, 5));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TestSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TestSpec.prototype.setFilesuite = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TestSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TestSpec.prototype.clearFilesuite = function() {
+  return this.setFilesuite(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TestSpec.prototype.hasFilesuite = function() {
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
