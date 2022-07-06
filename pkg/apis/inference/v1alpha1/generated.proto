@@ -668,62 +668,6 @@ message ModelServingSpec {
   optional bool serverless = 2;
 }
 
-message MonitorPart {
-  // Indicates if model monitoring is enabled for the model
-  // +kubebuilder:default:=false
-  // +kubebuilder:validation:Optional
-  optional bool enabled = 1;
-
-  // Define the reference period freq - e.g. hourly, daily
-  // +kubebuilder:validation:Optional
-  optional string refFreq = 2;
-
-  // Define the reference period interval (e.g. 7 days)
-  // +kubebuilder:validation:Optional
-  optional int32 refInterval = 3;
-
-  // Refer to the training dataset as your baseline
-  optional bool refTraining = 4;
-
-  // Define the validation rule for this monitor
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite testSuite = 5;
-
-  // The schedule on which model monitoring computations will be performed
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 6;
-
-  // NotifierRef references a Notifier resource that will be triggered in the case that a concept or data drift is detected
-  // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference notifierRef = 7;
-
-  // Reference to a model that will be used for outlier detection. If empty, an outlier detection model.
-  // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference outlierDetectionModelRef = 8;
-}
-
-// MonitorSpec defines the specification to monitor a model in production
-message MonitorSpec {
-  // Service spec define general service health monitor.
-  // +kubebuilder:validation:Optional
-  optional MonitorPart serviceHealth = 1;
-
-  // Data drift define data drift monitoring
-  // +kubebuilder:validation:Optional
-  optional MonitorPart dataDrift = 2;
-
-  // Prediction drift define prediction (target) drift between two schedules.
-  // +kubebuilder:validation:Optional
-  optional MonitorPart predictionDrift = 3;
-
-  // Model Performance monitor, monitor the production model performance against
-  // +kubebuilder:validation:Optional
-  optional MonitorPart modelPerformance = 4;
-
-  // For any extera rules
-  // +kubebuilder:validation:Optional
-  optional MonitorPart other = 5;
-}
-
 // OnlineFeaturestoreSpec specifies the connection information for an online feature store
 message OnlineFeatureStoreSpec {
   // +kubebuilder:default:=false
@@ -1032,6 +976,29 @@ message PredictorList {
   repeated Predictor items = 2;
 }
 
+// MonitorSpec defines the specification to monitor a model in production
+message PredictorMonitorSpec {
+  // Indicates if model monitoring is enabled for the model
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool enabled = 1;
+
+  // Define the tests to run against the predictor.
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite testSuite = 5;
+
+  // The schedule on which model monitoring computations will be performed
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 6;
+
+  // NotifierRef references a Notifier resource that will be triggered in the case that a concept or data drift is detected
+  // +kubebuilder:validation:Optional
+  optional k8s.io.api.core.v1.ObjectReference notifierRef = 7;
+
+  // Reference to a model that will be used for outlier detection. If empty, an outlier detection model.
+  // +kubebuilder:validation:Optional
+  optional k8s.io.api.core.v1.ObjectReference outlierDetectionModelRef = 8;
+}
+
 // PredictorSpec defines the desired state of a Predictor
 message PredictorSpec {
   // The name of the DataProductVersion which describes the version of the resource
@@ -1116,7 +1083,7 @@ message PredictorSpec {
 
   // Monitor spec specify the monitor for this predictor.
   // +kubebuilder:validation:Optional
-  optional MonitorSpec monitor = 21;
+  optional PredictorMonitorSpec monitor = 21;
 
   // Monitor spec specify the monitor for this predictor.
   // +kubebuilder:validation:Optional

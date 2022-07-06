@@ -30,38 +30,12 @@ const (
 //==============================================================================
 
 // MonitorSpec defines the specification to monitor a model in production
-type MonitorSpec struct {
-	// Service spec define general service health monitor.
-	// +kubebuilder:validation:Optional
-	ServiceHealth MonitorPart `json:"serviceHealth,omitempty" protobuf:"bytes,1,opt,name=serviceHealth"`
-	// Data drift define data drift monitoring
-	// +kubebuilder:validation:Optional
-	DataDrift MonitorPart `json:"dataDrift,omitempty" protobuf:"bytes,2,opt,name=dataDrift"`
-	// Prediction drift define prediction (target) drift between two schedules.
-	// +kubebuilder:validation:Optional
-	PredictionDrift MonitorPart `json:"predictionDrift,omitempty" protobuf:"bytes,3,opt,name=predictionDrift"`
-	// Model Performance monitor, monitor the production model performance against
-	// +kubebuilder:validation:Optional
-	ModelPerformance MonitorPart `json:"modelPerformance,omitempty" protobuf:"bytes,4,opt,name=modelPerformance"`
-	// For any extera rules
-	// +kubebuilder:validation:Optional
-	Other MonitorPart `json:"other,omitempty" protobuf:"bytes,5,opt,name=other"`
-}
-
-type MonitorPart struct {
+type PredictorMonitorSpec struct {
 	// Indicates if model monitoring is enabled for the model
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
-	// Define the reference period freq - e.g. hourly, daily
-	// +kubebuilder:validation:Optional
-	RefFreq catalog.Freq `json:"refFreq,omitempty" protobuf:"bytes,2,opt,name=refFreq"`
-	// Define the reference period interval (e.g. 7 days)
-	// +kubebuilder:validation:Optional
-	RefInterval *int32 `json:"refInterval,omitempty" protobuf:"varint,3,opt,name=refInterval"`
-	// Refer to the training dataset as your baseline
-	RefTraining *bool `json:"refTraining,omitempty" protobuf:"varint,4,opt,name=refTraining"`
-	// Define the validation rule for this monitor
+	// Define the tests to run against the predictor.
 	TestSuite catalog.TestSuite `json:"testSuite,omitempty" protobuf:"bytes,5,opt,name=testSuite"`
 	// The schedule on which model monitoring computations will be performed
 	// +kubebuilder:validation:Optional
@@ -393,7 +367,7 @@ type PredictorSpec struct {
 	PredictionThreshold *float64 `json:"predictionThreshold,omitempty" protobuf:"bytes,20,opt,name=predictionThreshold"`
 	// Monitor spec specify the monitor for this predictor.
 	// +kubebuilder:validation:Optional
-	Monitor MonitorSpec `json:"monitor,omitempty" protobuf:"bytes,21,opt,name=monitor"`
+	Monitor PredictorMonitorSpec `json:"monitor,omitempty" protobuf:"bytes,21,opt,name=monitor"`
 	// Monitor spec specify the monitor for this predictor.
 	// +kubebuilder:validation:Optional
 	PredictionLogging PredictionLoggingSpec `json:"predictionLogging,omitempty" protobuf:"bytes,22,opt,name=predictionLogging"`

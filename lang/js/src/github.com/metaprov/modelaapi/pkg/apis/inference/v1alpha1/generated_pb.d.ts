@@ -1035,104 +1035,6 @@ export namespace ModelServingSpec {
   }
 }
 
-export class MonitorPart extends jspb.Message {
-  getEnabled(): boolean;
-  setEnabled(value: boolean): MonitorPart;
-
-  getReffreq(): string;
-  setReffreq(value: string): MonitorPart;
-
-  getRefinterval(): number;
-  setRefinterval(value: number): MonitorPart;
-
-  getReftraining(): boolean;
-  setReftraining(value: boolean): MonitorPart;
-
-  getTestsuite(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
-  setTestsuite(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): MonitorPart;
-  hasTestsuite(): boolean;
-  clearTestsuite(): MonitorPart;
-
-  getSchedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
-  setSchedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): MonitorPart;
-  hasSchedule(): boolean;
-  clearSchedule(): MonitorPart;
-
-  getNotifierref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setNotifierref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): MonitorPart;
-  hasNotifierref(): boolean;
-  clearNotifierref(): MonitorPart;
-
-  getOutlierdetectionmodelref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setOutlierdetectionmodelref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): MonitorPart;
-  hasOutlierdetectionmodelref(): boolean;
-  clearOutlierdetectionmodelref(): MonitorPart;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): MonitorPart.AsObject;
-  static toObject(includeInstance: boolean, msg: MonitorPart): MonitorPart.AsObject;
-  static serializeBinaryToWriter(message: MonitorPart, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): MonitorPart;
-  static deserializeBinaryFromReader(message: MonitorPart, reader: jspb.BinaryReader): MonitorPart;
-}
-
-export namespace MonitorPart {
-  export type AsObject = {
-    enabled: boolean,
-    reffreq: string,
-    refinterval: number,
-    reftraining: boolean,
-    testsuite?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
-    schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
-    notifierref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    outlierdetectionmodelref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-  }
-}
-
-export class MonitorSpec extends jspb.Message {
-  getServicehealth(): MonitorPart | undefined;
-  setServicehealth(value?: MonitorPart): MonitorSpec;
-  hasServicehealth(): boolean;
-  clearServicehealth(): MonitorSpec;
-
-  getDatadrift(): MonitorPart | undefined;
-  setDatadrift(value?: MonitorPart): MonitorSpec;
-  hasDatadrift(): boolean;
-  clearDatadrift(): MonitorSpec;
-
-  getPredictiondrift(): MonitorPart | undefined;
-  setPredictiondrift(value?: MonitorPart): MonitorSpec;
-  hasPredictiondrift(): boolean;
-  clearPredictiondrift(): MonitorSpec;
-
-  getModelperformance(): MonitorPart | undefined;
-  setModelperformance(value?: MonitorPart): MonitorSpec;
-  hasModelperformance(): boolean;
-  clearModelperformance(): MonitorSpec;
-
-  getOther(): MonitorPart | undefined;
-  setOther(value?: MonitorPart): MonitorSpec;
-  hasOther(): boolean;
-  clearOther(): MonitorSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): MonitorSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: MonitorSpec): MonitorSpec.AsObject;
-  static serializeBinaryToWriter(message: MonitorSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): MonitorSpec;
-  static deserializeBinaryFromReader(message: MonitorSpec, reader: jspb.BinaryReader): MonitorSpec;
-}
-
-export namespace MonitorSpec {
-  export type AsObject = {
-    servicehealth?: MonitorPart.AsObject,
-    datadrift?: MonitorPart.AsObject,
-    predictiondrift?: MonitorPart.AsObject,
-    modelperformance?: MonitorPart.AsObject,
-    other?: MonitorPart.AsObject,
-  }
-}
-
 export class OnlineFeatureStoreSpec extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): OnlineFeatureStoreSpec;
@@ -1639,6 +1541,48 @@ export namespace PredictorList {
   }
 }
 
+export class PredictorMonitorSpec extends jspb.Message {
+  getEnabled(): boolean;
+  setEnabled(value: boolean): PredictorMonitorSpec;
+
+  getTestsuite(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
+  setTestsuite(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): PredictorMonitorSpec;
+  hasTestsuite(): boolean;
+  clearTestsuite(): PredictorMonitorSpec;
+
+  getSchedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
+  setSchedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): PredictorMonitorSpec;
+  hasSchedule(): boolean;
+  clearSchedule(): PredictorMonitorSpec;
+
+  getNotifierref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setNotifierref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): PredictorMonitorSpec;
+  hasNotifierref(): boolean;
+  clearNotifierref(): PredictorMonitorSpec;
+
+  getOutlierdetectionmodelref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setOutlierdetectionmodelref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): PredictorMonitorSpec;
+  hasOutlierdetectionmodelref(): boolean;
+  clearOutlierdetectionmodelref(): PredictorMonitorSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PredictorMonitorSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: PredictorMonitorSpec): PredictorMonitorSpec.AsObject;
+  static serializeBinaryToWriter(message: PredictorMonitorSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PredictorMonitorSpec;
+  static deserializeBinaryFromReader(message: PredictorMonitorSpec, reader: jspb.BinaryReader): PredictorMonitorSpec;
+}
+
+export namespace PredictorMonitorSpec {
+  export type AsObject = {
+    enabled: boolean,
+    testsuite?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
+    schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
+    notifierref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    outlierdetectionmodelref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+  }
+}
+
 export class PredictorSpec extends jspb.Message {
   getVersionname(): string;
   setVersionname(value: string): PredictorSpec;
@@ -1718,8 +1662,8 @@ export class PredictorSpec extends jspb.Message {
   getPredictionthreshold(): number;
   setPredictionthreshold(value: number): PredictorSpec;
 
-  getMonitor(): MonitorSpec | undefined;
-  setMonitor(value?: MonitorSpec): PredictorSpec;
+  getMonitor(): PredictorMonitorSpec | undefined;
+  setMonitor(value?: PredictorMonitorSpec): PredictorSpec;
   hasMonitor(): boolean;
   clearMonitor(): PredictorSpec;
 
@@ -1771,7 +1715,7 @@ export namespace PredictorSpec {
     serving?: ModelServingSpec.AsObject,
     task: string,
     predictionthreshold: number,
-    monitor?: MonitorSpec.AsObject,
+    monitor?: PredictorMonitorSpec.AsObject,
     predictionlogging?: PredictionLoggingSpec.AsObject,
     forwardcurtain?: ForwardCurtainSpec.AsObject,
     backwardcurtain?: BackwardCurtainSpec.AsObject,
