@@ -828,7 +828,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -12383,13 +12383,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionLoggin
 
 
 
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.repeatedFields_ = [8];
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -12427,7 +12420,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.t
     forecast: (f = jspb.Message.getBooleanField(msg, 4)) == null ? undefined : f,
     input: (f = msg.getInput()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataInputSpec.toObject(includeInstance, f),
     output: (f = msg.getOutput()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataOutputSpec.toObject(includeInstance, f),
-    testsList: (f = jspb.Message.getRepeatedField(msg, 8)) == null ? undefined : f,
+    test: (f = msg.getTest()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelTest.toObject(includeInstance, f),
     owner: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
     resources: (f = msg.getResources()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.toObject(includeInstance, f),
     activedeadlineseconds: (f = jspb.Message.getField(msg, 11)) == null ? undefined : f,
@@ -12500,8 +12493,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.d
       msg.setOutput(value);
       break;
     case 8:
-      var value = /** @type {string} */ (reader.readString());
-      msg.addTests(value);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelTest;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelTest.deserializeBinaryFromReader);
+      msg.setTest(value);
       break;
     case 9:
       var value = /** @type {string} */ (reader.readString());
@@ -12615,11 +12609,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.s
       github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataOutputSpec.serializeBinaryToWriter
     );
   }
-  f = message.getTestsList();
-  if (f.length > 0) {
-    writer.writeRepeatedString(
+  f = message.getTest();
+  if (f != null) {
+    writer.writeMessage(
       8,
-      f
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelTest.serializeBinaryToWriter
     );
   }
   f = /** @type {string} */ (jspb.Message.getField(message, 9));
@@ -12910,39 +12905,39 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.p
 
 
 /**
- * repeated string tests = 8;
- * @return {!Array<string>}
+ * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTest test = 8;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTest}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.getTestsList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 8));
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.getTest = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTest} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelTest, 8));
 };
 
 
 /**
- * @param {!Array<string>} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTest|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.setTestsList = function(value) {
-  return jspb.Message.setField(this, 8, value || []);
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.setTest = function(value) {
+  return jspb.Message.setWrapperField(this, 8, value);
 };
 
 
 /**
- * @param {string} value
- * @param {number=} opt_index
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.addTests = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 8, value, opt_index);
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.clearTest = function() {
+  return this.setTest(undefined);
 };
 
 
 /**
- * Clears the list making it empty but non-null.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec} returns this
+ * Returns whether this field is set.
+ * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.clearTestsList = function() {
-  return this.setTestsList([]);
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.hasTest = function() {
+  return jspb.Message.getField(this, 8) != null;
 };
 
 
@@ -13279,7 +13274,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.p
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionStatus.repeatedFields_ = [4,12];
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionStatus.repeatedFields_ = [12];
 
 
 
@@ -13315,8 +13310,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionStatus
     starttime: (f = msg.getStarttime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     endtime: (f = msg.getEndtime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     phase: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-    resultsList: jspb.Message.toObjectList(msg.getResultsList(),
-    github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.toObject, includeInstance),
+    testresult: (f = msg.getTestresult()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.toObject(includeInstance, f),
     observedgeneration: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     rows: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
     triggeredby: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
@@ -13377,9 +13371,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionStatus
       msg.setPhase(value);
       break;
     case 4:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.deserializeBinaryFromReader);
-      msg.addResults(value);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.deserializeBinaryFromReader);
+      msg.setTestresult(value);
       break;
     case 5:
       var value = /** @type {number} */ (reader.readInt64());
@@ -13468,12 +13462,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionStatus
       f
     );
   }
-  f = message.getResultsList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
+  f = message.getTestresult();
+  if (f != null) {
+    writer.writeMessage(
       4,
       f,
-      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.serializeBinaryToWriter
     );
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 5));
@@ -13649,40 +13643,39 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionStatus
 
 
 /**
- * repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement results = 4;
- * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement>}
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult testResult = 4;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionStatus.prototype.getResultsList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement>} */ (
-    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement, 4));
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionStatus.prototype.getTestresult = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult, 4));
 };
 
 
 /**
- * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement>} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionStatus} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionStatus.prototype.setResultsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 4, value);
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionStatus.prototype.setTestresult = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
 };
 
 
 /**
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement=} opt_value
- * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionStatus.prototype.addResults = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionStatus.prototype.clearResultsList = function() {
-  return this.setResultsList([]);
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionStatus.prototype.clearTestresult = function() {
+  return this.setTestresult(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionStatus.prototype.hasTestresult = function() {
+  return jspb.Message.getField(this, 4) != null;
 };
 
 

@@ -103,7 +103,7 @@ type PredictionSpec struct {
 	Output data.DataOutputSpec `json:"output,omitempty" protobuf:"bytes,7,opt,name=output"`
 	// Tests specifies a collection of metrics that will be computed for each prediction
 	// if the Labeled field of the Prediction is enabled
-	Tests []catalog.Metric `json:"tests,omitempty" protobuf:"bytes,8,rep,name=tests"`
+	Test training.ModelTest `json:"test,omitempty" protobuf:"bytes,8,rep,name=test"`
 	// The name of the Account which created the object, which exists in the same tenant as the object
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
@@ -154,7 +154,7 @@ type PredictionStatus struct {
 	// The collection of metrics that represent the average measurement across all predictions for each
 	// metric specified by the Tests field of the Predictor
 	// +kubebuilder:validation:Optional
-	Results []catalog.Measurement `json:"results,omitempty" protobuf:"bytes,4,rep,name=results"`
+	TestResult catalog.TestSuiteResult `json:"testResult,omitempty" protobuf:"bytes,4,opt,name=testResult"`
 	// ObservedGeneration is the last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,5,opt,name=observedGeneration"`

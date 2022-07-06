@@ -30,7 +30,7 @@ const (
 )
 
 // ModelValidation defines a single validation to be run against a model
-type StageTestSuite struct {
+type ModelTest struct {
 	// Baseline Model Ref specifies a previous model to compare against
 	// +kubebuilder:validation:Optional
 	BaselineModelRef v1.ObjectReference `json:"baselineModelRef,omitempty" protobuf:"bytes,1,opt,name=baselineModelRef"`

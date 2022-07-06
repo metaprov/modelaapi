@@ -1286,10 +1286,10 @@ export class PredictionSpec extends jspb.Message {
   hasOutput(): boolean;
   clearOutput(): PredictionSpec;
 
-  getTestsList(): Array<string>;
-  setTestsList(value: Array<string>): PredictionSpec;
-  clearTestsList(): PredictionSpec;
-  addTests(value: string, index?: number): PredictionSpec;
+  getTest(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelTest | undefined;
+  setTest(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelTest): PredictionSpec;
+  hasTest(): boolean;
+  clearTest(): PredictionSpec;
 
   getOwner(): string;
   setOwner(value: string): PredictionSpec;
@@ -1340,7 +1340,7 @@ export namespace PredictionSpec {
     forecast: boolean,
     input?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataInputSpec.AsObject,
     output?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataOutputSpec.AsObject,
-    testsList: Array<string>,
+    test?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelTest.AsObject,
     owner: string,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     activedeadlineseconds: number,
@@ -1367,10 +1367,10 @@ export class PredictionStatus extends jspb.Message {
   getPhase(): string;
   setPhase(value: string): PredictionStatus;
 
-  getResultsList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>;
-  setResultsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>): PredictionStatus;
-  clearResultsList(): PredictionStatus;
-  addResults(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement;
+  getTestresult(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
+  setTestresult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): PredictionStatus;
+  hasTestresult(): boolean;
+  clearTestresult(): PredictionStatus;
 
   getObservedgeneration(): number;
   setObservedgeneration(value: number): PredictionStatus;
@@ -1415,7 +1415,7 @@ export namespace PredictionStatus {
     starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     phase: string,
-    resultsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.AsObject>,
+    testresult?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
     observedgeneration: number,
     rows: number,
     triggeredby: string,
