@@ -7,6 +7,7 @@ import (
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/apis/data"
 	"github.com/metaprov/modelaapi/pkg/util"
+	"gopkg.in/yaml.v2"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 
@@ -278,9 +279,9 @@ func (sc *DataSource) Saved() bool {
 }
 
 func (sc *DataSource) HaveValidationRules() bool {
-	return len(sc.Spec.Schema.Tests.DatasetTests.Tests) > 0 ||
-		len(sc.Spec.Schema.Tests.MultiDatasetTests.Tests) > 0 ||
-		len(sc.Spec.Schema.Tests.ColumnTests.Tests) > 0 ||
-		len(sc.Spec.Schema.Tests.FileTests.Tests) > 0
+	return len(sc.Spec.Schema.Tests.DatasetSuite.Tests) > 0 ||
+		len(sc.Spec.Schema.Tests.MultiDatasetSuite.Tests) > 0 ||
+		len(sc.Spec.Schema.Tests.ColumnSuite.Tests) > 0 ||
+		len(sc.Spec.Schema.Tests.FileSuite.Tests) > 0
 
 }
