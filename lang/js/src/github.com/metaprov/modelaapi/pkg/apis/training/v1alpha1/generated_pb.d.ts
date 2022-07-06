@@ -2623,10 +2623,10 @@ export class ModelPipelineRunStageStatus extends jspb.Message {
   hasEndtime(): boolean;
   clearEndtime(): ModelPipelineRunStageStatus;
 
-  getTestresultsList(): Array<StageTestResult>;
-  setTestresultsList(value: Array<StageTestResult>): ModelPipelineRunStageStatus;
-  clearTestresultsList(): ModelPipelineRunStageStatus;
-  addTestresults(value?: StageTestResult, index?: number): StageTestResult;
+  getTestresult(): StageTestResult | undefined;
+  setTestresult(value?: StageTestResult): ModelPipelineRunStageStatus;
+  hasTestresult(): boolean;
+  clearTestresult(): ModelPipelineRunStageStatus;
 
   getError(): string;
   setError(value: string): ModelPipelineRunStageStatus;
@@ -2647,7 +2647,7 @@ export namespace ModelPipelineRunStageStatus {
     approvedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    testresultsList: Array<StageTestResult.AsObject>,
+    testresult?: StageTestResult.AsObject,
     error: string,
   }
 }

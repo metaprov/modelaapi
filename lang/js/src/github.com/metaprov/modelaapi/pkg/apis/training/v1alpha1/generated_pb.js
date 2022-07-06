@@ -1728,7 +1728,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -27025,13 +27025,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
 
 
 
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.repeatedFields_ = [9];
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -27069,8 +27062,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
     approvedat: (f = msg.getApprovedat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     starttime: (f = msg.getStarttime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     endtime: (f = msg.getEndtime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
-    testresultsList: jspb.Message.toObjectList(msg.getTestresultsList(),
-    proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StageTestResult.toObject, includeInstance),
+    testresult: (f = msg.getTestresult()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StageTestResult.toObject(includeInstance, f),
     error: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f
   };
 
@@ -27138,7 +27130,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
     case 9:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StageTestResult;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StageTestResult.deserializeBinaryFromReader);
-      msg.addTestresults(value);
+      msg.setTestresult(value);
       break;
     case 10:
       var value = /** @type {string} */ (reader.readString());
@@ -27218,9 +27210,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
   }
-  f = message.getTestresultsList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
+  f = message.getTestresult();
+  if (f != null) {
+    writer.writeMessage(
       9,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StageTestResult.serializeBinaryToWriter
@@ -27456,40 +27448,39 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
 
 
 /**
- * repeated StageTestResult testResults = 9;
- * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StageTestResult>}
+ * optional StageTestResult testResult = 9;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StageTestResult}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.prototype.getTestresultsList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StageTestResult>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StageTestResult, 9));
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.prototype.getTestresult = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StageTestResult} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StageTestResult, 9));
 };
 
 
 /**
- * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StageTestResult>} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StageTestResult|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.prototype.setTestresultsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 9, value);
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.prototype.setTestresult = function(value) {
+  return jspb.Message.setWrapperField(this, 9, value);
 };
 
 
 /**
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StageTestResult=} opt_value
- * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StageTestResult}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.prototype.addTestresults = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 9, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StageTestResult, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.prototype.clearTestresultsList = function() {
-  return this.setTestresultsList([]);
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.prototype.clearTestresult = function() {
+  return this.setTestresult(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.prototype.hasTestresult = function() {
+  return jspb.Message.getField(this, 9) != null;
 };
 
 
