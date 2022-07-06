@@ -1835,6 +1835,28 @@ message DatasetTemplate {
   optional DatasetSpec spec = 2;
 }
 
+message DatasetTestSuite {
+  // MultiDatasetTest contains validations for multiple datasets
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite multiDatasetSuite = 1;
+
+  // DatasetTests contains validations for the whole dataset
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite datasetSuite = 2;
+
+  // MultiColumnTests defines validations for multiple columns from the dataset
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite multiColumnSuite = 3;
+
+  // ColumnTests defines assertions for columns from the dataset
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite columnSuite = 4;
+
+  // FileTests defines assertions for the contents of the data file
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite fileSuite = 5;
+}
+
 // Entity represents a entity object
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
@@ -3501,8 +3523,8 @@ message Schema {
   // The collection of columns and their attributes
   repeated Column columns = 3;
 
-  // The specification for validation rules which will be performed on new Datasets
-  optional TestSpec tests = 4;
+  // The specification for tests for a new dataset
+  optional DatasetTestSuite tests = 4;
 }
 
 // SqlQuery represent a single sqlquery in the sqlquery store.
@@ -3825,28 +3847,6 @@ message TableSpec {
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool border = 7;
-}
-
-message TestSpec {
-  // MultiDatasetTest contains validations for multiple datasets
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite multiDatasetSuite = 1;
-
-  // DatasetTests contains validations for the whole dataset
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite datasetSuite = 2;
-
-  // MultiColumnTests defines validations for multiple columns from the dataset
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite multiColumnSuite = 3;
-
-  // ColumnTests defines assertions for columns from the dataset
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite columnSuite = 4;
-
-  // FileTests defines assertions for the contents of the data file
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite fileSuite = 5;
 }
 
 message TimeSeriesSchema {

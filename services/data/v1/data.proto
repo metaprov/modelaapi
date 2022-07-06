@@ -556,7 +556,7 @@ message DsTestModelRequest {
 }
 
 message DsTestModelResponse {
-    repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestResult result = 1;
+    repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult result = 1;
 }
 
 message DsTestConnectionRequest {

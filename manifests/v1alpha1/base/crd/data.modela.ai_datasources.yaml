@@ -841,32 +841,36 @@ spec:
                         type: string
                     type: object
                   tests:
-                    description: The specification for validation rules which will
-                      be performed on new Datasets
+                    description: The specification for tests for a new dataset
                     properties:
                       columnSuite:
                         description: ColumnTests defines assertions for columns from
                           the dataset
                         properties:
+                          enabled:
+                            description: If false, this test case is disabled
+                            type: boolean
                           tests:
                             items:
                               properties:
                                 assertThat:
                                   description: The assertion type
                                   type: string
-                                bucketName:
-                                  type: string
                                 displayName:
+                                  description: The test case display name
                                   type: string
                                 enabled:
+                                  description: If false, this test case is disabled
                                   type: boolean
                                 entity:
-                                  description: The entity names, depends on the assertion
+                                  description: The entity names, depends on the assertion.
+                                    For example, dataset name, column name
                                   type: string
                                 expectedNumber:
-                                  description: The expected value
+                                  description: The expected numerical value
                                   type: number
                                 expectedSetSet:
+                                  description: Expected set of values,if the assertion
                                   items:
                                     type: string
                                   type: array
@@ -967,14 +971,13 @@ spec:
                                   description: Minimum range
                                   format: float
                                   type: number
-                                path:
-                                  type: string
                                 strictMax:
                                   type: boolean
                                 strictMin:
                                   type: boolean
                                 tags:
-                                  description: Optional Test Tags
+                                  description: The test case tags, used for filtering.
+                                    Optional Test Tags
                                   items:
                                     type: string
                                   type: array
@@ -987,25 +990,30 @@ spec:
                         description: DatasetTests contains validations for the whole
                           dataset
                         properties:
+                          enabled:
+                            description: If false, this test case is disabled
+                            type: boolean
                           tests:
                             items:
                               properties:
                                 assertThat:
                                   description: The assertion type
                                   type: string
-                                bucketName:
-                                  type: string
                                 displayName:
+                                  description: The test case display name
                                   type: string
                                 enabled:
+                                  description: If false, this test case is disabled
                                   type: boolean
                                 entity:
-                                  description: The entity names, depends on the assertion
+                                  description: The entity names, depends on the assertion.
+                                    For example, dataset name, column name
                                   type: string
                                 expectedNumber:
-                                  description: The expected value
+                                  description: The expected numerical value
                                   type: number
                                 expectedSetSet:
+                                  description: Expected set of values,if the assertion
                                   items:
                                     type: string
                                   type: array
@@ -1106,14 +1114,13 @@ spec:
                                   description: Minimum range
                                   format: float
                                   type: number
-                                path:
-                                  type: string
                                 strictMax:
                                   type: boolean
                                 strictMin:
                                   type: boolean
                                 tags:
-                                  description: Optional Test Tags
+                                  description: The test case tags, used for filtering.
+                                    Optional Test Tags
                                   items:
                                     type: string
                                   type: array
@@ -1126,25 +1133,30 @@ spec:
                         description: FileTests defines assertions for the contents
                           of the data file
                         properties:
+                          enabled:
+                            description: If false, this test case is disabled
+                            type: boolean
                           tests:
                             items:
                               properties:
                                 assertThat:
                                   description: The assertion type
                                   type: string
-                                bucketName:
-                                  type: string
                                 displayName:
+                                  description: The test case display name
                                   type: string
                                 enabled:
+                                  description: If false, this test case is disabled
                                   type: boolean
                                 entity:
-                                  description: The entity names, depends on the assertion
+                                  description: The entity names, depends on the assertion.
+                                    For example, dataset name, column name
                                   type: string
                                 expectedNumber:
-                                  description: The expected value
+                                  description: The expected numerical value
                                   type: number
                                 expectedSetSet:
+                                  description: Expected set of values,if the assertion
                                   items:
                                     type: string
                                   type: array
@@ -1245,14 +1257,13 @@ spec:
                                   description: Minimum range
                                   format: float
                                   type: number
-                                path:
-                                  type: string
                                 strictMax:
                                   type: boolean
                                 strictMin:
                                   type: boolean
                                 tags:
-                                  description: Optional Test Tags
+                                  description: The test case tags, used for filtering.
+                                    Optional Test Tags
                                   items:
                                     type: string
                                   type: array
@@ -1265,25 +1276,30 @@ spec:
                         description: MultiColumnTests defines validations for multiple
                           columns from the dataset
                         properties:
+                          enabled:
+                            description: If false, this test case is disabled
+                            type: boolean
                           tests:
                             items:
                               properties:
                                 assertThat:
                                   description: The assertion type
                                   type: string
-                                bucketName:
-                                  type: string
                                 displayName:
+                                  description: The test case display name
                                   type: string
                                 enabled:
+                                  description: If false, this test case is disabled
                                   type: boolean
                                 entity:
-                                  description: The entity names, depends on the assertion
+                                  description: The entity names, depends on the assertion.
+                                    For example, dataset name, column name
                                   type: string
                                 expectedNumber:
-                                  description: The expected value
+                                  description: The expected numerical value
                                   type: number
                                 expectedSetSet:
+                                  description: Expected set of values,if the assertion
                                   items:
                                     type: string
                                   type: array
@@ -1384,14 +1400,13 @@ spec:
                                   description: Minimum range
                                   format: float
                                   type: number
-                                path:
-                                  type: string
                                 strictMax:
                                   type: boolean
                                 strictMin:
                                   type: boolean
                                 tags:
-                                  description: Optional Test Tags
+                                  description: The test case tags, used for filtering.
+                                    Optional Test Tags
                                   items:
                                     type: string
                                   type: array
@@ -1404,25 +1419,30 @@ spec:
                         description: MultiDatasetTest contains validations for multiple
                           datasets
                         properties:
+                          enabled:
+                            description: If false, this test case is disabled
+                            type: boolean
                           tests:
                             items:
                               properties:
                                 assertThat:
                                   description: The assertion type
                                   type: string
-                                bucketName:
-                                  type: string
                                 displayName:
+                                  description: The test case display name
                                   type: string
                                 enabled:
+                                  description: If false, this test case is disabled
                                   type: boolean
                                 entity:
-                                  description: The entity names, depends on the assertion
+                                  description: The entity names, depends on the assertion.
+                                    For example, dataset name, column name
                                   type: string
                                 expectedNumber:
-                                  description: The expected value
+                                  description: The expected numerical value
                                   type: number
                                 expectedSetSet:
+                                  description: Expected set of values,if the assertion
                                   items:
                                     type: string
                                   type: array
@@ -1523,14 +1543,13 @@ spec:
                                   description: Minimum range
                                   format: float
                                   type: number
-                                path:
-                                  type: string
                                 strictMax:
                                   type: boolean
                                 strictMin:
                                   type: boolean
                                 tags:
-                                  description: Optional Test Tags
+                                  description: The test case tags, used for filtering.
+                                    Optional Test Tags
                                   items:
                                     type: string
                                   type: array

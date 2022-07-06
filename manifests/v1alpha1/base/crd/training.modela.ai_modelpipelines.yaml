@@ -198,36 +198,109 @@ spec:
                     description: Validations is the specification of tests to run
                       in this stage
                     properties:
-                      datasetName:
+                      baselineModelRef:
+                        description: Baseline Model Ref specifies a previous model
+                          to compare against
+                        properties:
+                          apiVersion:
+                            description: API version of the referent.
+                            type: string
+                          fieldPath:
+                            description: 'If referring to a piece of an object instead
+                              of an entire object, this string should contain a valid
+                              JSON/Go field access statement, such as desiredState.manifest.containers[2].
+                              For example, if the object reference is to a container
+                              within a pod, this would take on a value like: "spec.containers{name}"
+                              (where "name" refers to the name of the container that
+                              triggered the event) or if no container name is specified
+                              "spec.containers[2]" (container with index 2 in this
+                              pod). This syntax is chosen only to have some well-defined
+                              way of referencing a part of an object. TODO: this design
+                              is not final and this field is subject to change in
+                              the future.'
+                            type: string
+                          kind:
+                            description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                            type: string
+                          name:
+                            description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                            type: string
+                          namespace:
+                            description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                            type: string
+                          resourceVersion:
+                            description: 'Specific resourceVersion to which this reference
+                              is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                            type: string
+                          uid:
+                            description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                            type: string
+                        type: object
+                      datasetRef:
                         description: The name of a labeled dataset used to test the
                           model, when measuring a performance metric
-                        type: string
-                      prevModel:
-                        description: PrevModel specifies a previous model to compare
-                          against
-                        type: string
+                        properties:
+                          apiVersion:
+                            description: API version of the referent.
+                            type: string
+                          fieldPath:
+                            description: 'If referring to a piece of an object instead
+                              of an entire object, this string should contain a valid
+                              JSON/Go field access statement, such as desiredState.manifest.containers[2].
+                              For example, if the object reference is to a container
+                              within a pod, this would take on a value like: "spec.containers{name}"
+                              (where "name" refers to the name of the container that
+                              triggered the event) or if no container name is specified
+                              "spec.containers[2]" (container with index 2 in this
+                              pod). This syntax is chosen only to have some well-defined
+                              way of referencing a part of an object. TODO: this design
+                              is not final and this field is subject to change in
+                              the future.'
+                            type: string
+                          kind:
+                            description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                            type: string
+                          name:
+                            description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                            type: string
+                          namespace:
+                            description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                            type: string
+                          resourceVersion:
+                            description: 'Specific resourceVersion to which this reference
+                              is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                            type: string
+                          uid:
+                            description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                            type: string
+                        type: object
                       suite:
                         description: Define the column name for the validation role
                         properties:
+                          enabled:
+                            description: If false, this test case is disabled
+                            type: boolean
                           tests:
                             items:
                               properties:
                                 assertThat:
                                   description: The assertion type
                                   type: string
-                                bucketName:
-                                  type: string
                                 displayName:
+                                  description: The test case display name
                                   type: string
                                 enabled:
+                                  description: If false, this test case is disabled
                                   type: boolean
                                 entity:
-                                  description: The entity names, depends on the assertion
+                                  description: The entity names, depends on the assertion.
+                                    For example, dataset name, column name
                                   type: string
                                 expectedNumber:
-                                  description: The expected value
+                                  description: The expected numerical value
                                   type: number
                                 expectedSetSet:
+                                  description: Expected set of values,if the assertion
                                   items:
                                     type: string
                                   type: array
@@ -328,14 +401,13 @@ spec:
                                   description: Minimum range
                                   format: float
                                   type: number
-                                path:
-                                  type: string
                                 strictMax:
                                   type: boolean
                                 strictMin:
                                   type: boolean
                                 tags:
-                                  description: Optional Test Tags
+                                  description: The test case tags, used for filtering.
+                                    Optional Test Tags
                                   items:
                                     type: string
                                   type: array
@@ -513,36 +585,109 @@ spec:
                     description: Tests is the specification of tests to run in this
                       stage
                     properties:
-                      datasetName:
+                      baselineModelRef:
+                        description: Baseline Model Ref specifies a previous model
+                          to compare against
+                        properties:
+                          apiVersion:
+                            description: API version of the referent.
+                            type: string
+                          fieldPath:
+                            description: 'If referring to a piece of an object instead
+                              of an entire object, this string should contain a valid
+                              JSON/Go field access statement, such as desiredState.manifest.containers[2].
+                              For example, if the object reference is to a container
+                              within a pod, this would take on a value like: "spec.containers{name}"
+                              (where "name" refers to the name of the container that
+                              triggered the event) or if no container name is specified
+                              "spec.containers[2]" (container with index 2 in this
+                              pod). This syntax is chosen only to have some well-defined
+                              way of referencing a part of an object. TODO: this design
+                              is not final and this field is subject to change in
+                              the future.'
+                            type: string
+                          kind:
+                            description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                            type: string
+                          name:
+                            description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                            type: string
+                          namespace:
+                            description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                            type: string
+                          resourceVersion:
+                            description: 'Specific resourceVersion to which this reference
+                              is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                            type: string
+                          uid:
+                            description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                            type: string
+                        type: object
+                      datasetRef:
                         description: The name of a labeled dataset used to test the
                           model, when measuring a performance metric
-                        type: string
-                      prevModel:
-                        description: PrevModel specifies a previous model to compare
-                          against
-                        type: string
+                        properties:
+                          apiVersion:
+                            description: API version of the referent.
+                            type: string
+                          fieldPath:
+                            description: 'If referring to a piece of an object instead
+                              of an entire object, this string should contain a valid
+                              JSON/Go field access statement, such as desiredState.manifest.containers[2].
+                              For example, if the object reference is to a container
+                              within a pod, this would take on a value like: "spec.containers{name}"
+                              (where "name" refers to the name of the container that
+                              triggered the event) or if no container name is specified
+                              "spec.containers[2]" (container with index 2 in this
+                              pod). This syntax is chosen only to have some well-defined
+                              way of referencing a part of an object. TODO: this design
+                              is not final and this field is subject to change in
+                              the future.'
+                            type: string
+                          kind:
+                            description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                            type: string
+                          name:
+                            description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                            type: string
+                          namespace:
+                            description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                            type: string
+                          resourceVersion:
+                            description: 'Specific resourceVersion to which this reference
+                              is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                            type: string
+                          uid:
+                            description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                            type: string
+                        type: object
                       suite:
                         description: Define the column name for the validation role
                         properties:
+                          enabled:
+                            description: If false, this test case is disabled
+                            type: boolean
                           tests:
                             items:
                               properties:
                                 assertThat:
                                   description: The assertion type
                                   type: string
-                                bucketName:
-                                  type: string
                                 displayName:
+                                  description: The test case display name
                                   type: string
                                 enabled:
+                                  description: If false, this test case is disabled
                                   type: boolean
                                 entity:
-                                  description: The entity names, depends on the assertion
+                                  description: The entity names, depends on the assertion.
+                                    For example, dataset name, column name
                                   type: string
                                 expectedNumber:
-                                  description: The expected value
+                                  description: The expected numerical value
                                   type: number
                                 expectedSetSet:
+                                  description: Expected set of values,if the assertion
                                   items:
                                     type: string
                                   type: array
@@ -643,14 +788,13 @@ spec:
                                   description: Minimum range
                                   format: float
                                   type: number
-                                path:
-                                  type: string
                                 strictMax:
                                   type: boolean
                                 strictMin:
                                   type: boolean
                                 tags:
-                                  description: Optional Test Tags
+                                  description: The test case tags, used for filtering.
+                                    Optional Test Tags
                                   items:
                                     type: string
                                   type: array
@@ -1158,36 +1302,109 @@ spec:
                     description: Validations defines the machine learning test cases
                       to run against the new trained model.
                     properties:
-                      datasetName:
+                      baselineModelRef:
+                        description: Baseline Model Ref specifies a previous model
+                          to compare against
+                        properties:
+                          apiVersion:
+                            description: API version of the referent.
+                            type: string
+                          fieldPath:
+                            description: 'If referring to a piece of an object instead
+                              of an entire object, this string should contain a valid
+                              JSON/Go field access statement, such as desiredState.manifest.containers[2].
+                              For example, if the object reference is to a container
+                              within a pod, this would take on a value like: "spec.containers{name}"
+                              (where "name" refers to the name of the container that
+                              triggered the event) or if no container name is specified
+                              "spec.containers[2]" (container with index 2 in this
+                              pod). This syntax is chosen only to have some well-defined
+                              way of referencing a part of an object. TODO: this design
+                              is not final and this field is subject to change in
+                              the future.'
+                            type: string
+                          kind:
+                            description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                            type: string
+                          name:
+                            description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                            type: string
+                          namespace:
+                            description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                            type: string
+                          resourceVersion:
+                            description: 'Specific resourceVersion to which this reference
+                              is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                            type: string
+                          uid:
+                            description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                            type: string
+                        type: object
+                      datasetRef:
                         description: The name of a labeled dataset used to test the
                           model, when measuring a performance metric
-                        type: string
-                      prevModel:
-                        description: PrevModel specifies a previous model to compare
-                          against
-                        type: string
+                        properties:
+                          apiVersion:
+                            description: API version of the referent.
+                            type: string
+                          fieldPath:
+                            description: 'If referring to a piece of an object instead
+                              of an entire object, this string should contain a valid
+                              JSON/Go field access statement, such as desiredState.manifest.containers[2].
+                              For example, if the object reference is to a container
+                              within a pod, this would take on a value like: "spec.containers{name}"
+                              (where "name" refers to the name of the container that
+                              triggered the event) or if no container name is specified
+                              "spec.containers[2]" (container with index 2 in this
+                              pod). This syntax is chosen only to have some well-defined
+                              way of referencing a part of an object. TODO: this design
+                              is not final and this field is subject to change in
+                              the future.'
+                            type: string
+                          kind:
+                            description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                            type: string
+                          name:
+                            description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                            type: string
+                          namespace:
+                            description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                            type: string
+                          resourceVersion:
+                            description: 'Specific resourceVersion to which this reference
+                              is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                            type: string
+                          uid:
+                            description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                            type: string
+                        type: object
                       suite:
                         description: Define the column name for the validation role
                         properties:
+                          enabled:
+                            description: If false, this test case is disabled
+                            type: boolean
                           tests:
                             items:
                               properties:
                                 assertThat:
                                   description: The assertion type
                                   type: string
-                                bucketName:
-                                  type: string
                                 displayName:
+                                  description: The test case display name
                                   type: string
                                 enabled:
+                                  description: If false, this test case is disabled
                                   type: boolean
                                 entity:
-                                  description: The entity names, depends on the assertion
+                                  description: The entity names, depends on the assertion.
+                                    For example, dataset name, column name
                                   type: string
                                 expectedNumber:
-                                  description: The expected value
+                                  description: The expected numerical value
                                   type: number
                                 expectedSetSet:
+                                  description: Expected set of values,if the assertion
                                   items:
                                     type: string
                                   type: array
@@ -1288,14 +1505,13 @@ spec:
                                   description: Minimum range
                                   format: float
                                   type: number
-                                path:
-                                  type: string
                                 strictMax:
                                   type: boolean
                                 strictMin:
                                   type: boolean
                                 tags:
-                                  description: Optional Test Tags
+                                  description: The test case tags, used for filtering.
+                                    Optional Test Tags
                                   items:
                                     type: string
                                   type: array

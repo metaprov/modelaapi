@@ -268,22 +268,22 @@ type ExcelSheetArea struct {
 	ToRow *int32 `json:"toRow,omitempty" protobuf:"varint,5,opt,name=toRow"`
 }
 
-type TestSpec struct {
+type DatasetTestSuite struct {
 	// MultiDatasetTest contains validations for multiple datasets
 	// +kubebuilder:validation:Optional
-	MultiDatasetSuite catalog.TestSuite `json:"multiDatasetSuite,omitempty" protobuf:"bytes,1,rep,name=multiDatasetSuite"`
+	MultiDatasetSuite catalog.TestSuite `json:"multiDatasetSuite,omitempty" protobuf:"bytes,1,opt,name=multiDatasetSuite"`
 	// DatasetTests contains validations for the whole dataset
 	// +kubebuilder:validation:Optional
-	DatasetSuite catalog.TestSuite `json:"datasetSuite,omitempty" protobuf:"bytes,2,rep,name=datasetSuite"`
+	DatasetSuite catalog.TestSuite `json:"datasetSuite,omitempty" protobuf:"bytes,2,opt,name=datasetSuite"`
 	// MultiColumnTests defines validations for multiple columns from the dataset
 	// +kubebuilder:validation:Optional
-	MultiColumnSuite catalog.TestSuite `json:"multiColumnSuite,omitempty" protobuf:"bytes,3,rep,name=multiColumnSuite"`
+	MultiColumnSuite catalog.TestSuite `json:"multiColumnSuite,omitempty" protobuf:"bytes,3,opt,name=multiColumnSuite"`
 	// ColumnTests defines assertions for columns from the dataset
 	// +kubebuilder:validation:Optional
-	ColumnSuite catalog.TestSuite `json:"columnSuite,omitempty" protobuf:"bytes,4,rep,name=columnSuite"`
+	ColumnSuite catalog.TestSuite `json:"columnSuite,omitempty" protobuf:"bytes,4,opt,name=columnSuite"`
 	// FileTests defines assertions for the contents of the data file
 	// +kubebuilder:validation:Optional
-	FileSuite catalog.TestSuite `json:"fileSuite,omitempty" protobuf:"bytes,5,rep,name=fileSuite"`
+	FileSuite catalog.TestSuite `json:"fileSuite,omitempty" protobuf:"bytes,5,opt,name=fileSuite"`
 }
 
 // Schema defines the column-level format and validation rules for data associated with a DataSource
@@ -296,8 +296,8 @@ type Schema struct {
 	RecommendationSchema RecommendationSchema `json:"recommendationSchema,omitempty" protobuf:"bytes,2,opt,name=recommendationSchema"`
 	// The collection of columns and their attributes
 	Columns []Column `json:"columns,omitempty" protobuf:"bytes,3,rep,name=columns"`
-	// The specification for validation rules which will be performed on new Datasets
-	Tests TestSpec `json:"tests,omitempty" protobuf:"bytes,4,opt,name=tests"`
+	// The specification for tests for a new dataset
+	TestTemplate DatasetTestSuite `json:"tests,omitempty" protobuf:"bytes,4,opt,name=tests"`
 }
 
 type TimeSeriesSchema struct {

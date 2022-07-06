@@ -2523,6 +2523,11 @@ spec:
                     value:
                       description: The value of the metric
                       type: number
+                    valueSet:
+                      description: Capture a set of values.
+                      items:
+                        type: string
+                      type: array
                   required:
                   - metric
                   - value
@@ -2936,6 +2941,11 @@ spec:
                     value:
                       description: The value of the metric
                       type: number
+                    valueSet:
+                      description: Capture a set of values.
+                      items:
+                        type: string
+                      type: array
                   required:
                   - metric
                   - value
@@ -3220,6 +3230,11 @@ spec:
                     value:
                       description: The value of the metric
                       type: number
+                    valueSet:
+                      description: Capture a set of values.
+                      items:
+                        type: string
+                      type: array
                   required:
                   - metric
                   - value

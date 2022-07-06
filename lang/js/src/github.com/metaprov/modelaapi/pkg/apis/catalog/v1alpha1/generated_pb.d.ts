@@ -1045,6 +1045,11 @@ export class Measurement extends jspb.Message {
   getStddev(): number;
   setStddev(value: number): Measurement;
 
+  getValuesetList(): Array<string>;
+  setValuesetList(value: Array<string>): Measurement;
+  clearValuesetList(): Measurement;
+  addValueset(value: string, index?: number): Measurement;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Measurement.AsObject;
   static toObject(includeInstance: boolean, msg: Measurement): Measurement.AsObject;
@@ -1058,6 +1063,7 @@ export namespace Measurement {
     metric: string,
     value: number,
     stddev: number,
+    valuesetList: Array<string>,
   }
 }
 
@@ -1546,6 +1552,9 @@ export namespace Stakeholder {
 }
 
 export class TestCase extends jspb.Message {
+  getEnabled(): boolean;
+  setEnabled(value: boolean): TestCase;
+
   getAssertthat(): string;
   setAssertthat(value: string): TestCase;
 
@@ -1581,15 +1590,6 @@ export class TestCase extends jspb.Message {
   getGenerated(): boolean;
   setGenerated(value: boolean): TestCase;
 
-  getBucketname(): string;
-  setBucketname(value: string): TestCase;
-
-  getPath(): string;
-  setPath(value: string): TestCase;
-
-  getEnabled(): boolean;
-  setEnabled(value: boolean): TestCase;
-
   getDisplayname(): string;
   setDisplayname(value: string): TestCase;
 
@@ -1608,6 +1608,7 @@ export class TestCase extends jspb.Message {
 
 export namespace TestCase {
   export type AsObject = {
+    enabled: boolean,
     assertthat: string,
     metric: string,
     entity: string,
@@ -1619,21 +1620,12 @@ export namespace TestCase {
     strictmin: boolean,
     strictmax: boolean,
     generated: boolean,
-    bucketname: string,
-    path: string,
-    enabled: boolean,
     displayname: string,
     tagsList: Array<string>,
   }
 }
 
 export class TestCaseResult extends jspb.Message {
-  getAssertion(): string;
-  setAssertion(value: string): TestCaseResult;
-
-  getEntity(): string;
-  setEntity(value: string): TestCaseResult;
-
   getActual(): Measurement | undefined;
   setActual(value?: Measurement): TestCaseResult;
   hasActual(): boolean;
@@ -1642,14 +1634,11 @@ export class TestCaseResult extends jspb.Message {
   getFailed(): boolean;
   setFailed(value: boolean): TestCaseResult;
 
-  getTotalvalues(): number;
-  setTotalvalues(value: number): TestCaseResult;
+  getError(): boolean;
+  setError(value: boolean): TestCaseResult;
 
-  getFailedvalues(): number;
-  setFailedvalues(value: number): TestCaseResult;
-
-  getSamplefailedvalues(): string;
-  setSamplefailedvalues(value: string): TestCaseResult;
+  getFailuremsg(): string;
+  setFailuremsg(value: string): TestCaseResult;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TestCaseResult.AsObject;
@@ -1661,17 +1650,17 @@ export class TestCaseResult extends jspb.Message {
 
 export namespace TestCaseResult {
   export type AsObject = {
-    assertion: string,
-    entity: string,
     actual?: Measurement.AsObject,
     failed: boolean,
-    totalvalues: number,
-    failedvalues: number,
-    samplefailedvalues: string,
+    error: boolean,
+    failuremsg: string,
   }
 }
 
 export class TestSuite extends jspb.Message {
+  getEnabled(): boolean;
+  setEnabled(value: boolean): TestSuite;
+
   getTestsList(): Array<TestCase>;
   setTestsList(value: Array<TestCase>): TestSuite;
   clearTestsList(): TestSuite;
@@ -1687,26 +1676,32 @@ export class TestSuite extends jspb.Message {
 
 export namespace TestSuite {
   export type AsObject = {
+    enabled: boolean,
     testsList: Array<TestCase.AsObject>,
   }
 }
 
 export class TestSuiteResult extends jspb.Message {
+  getFixture(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setFixture(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): TestSuiteResult;
+  hasFixture(): boolean;
+  clearFixture(): TestSuiteResult;
+
   getFaiures(): number;
   setFaiures(value: number): TestSuiteResult;
 
-  getSuccess(): number;
-  setSuccess(value: number): TestSuiteResult;
+  getErrors(): number;
+  setErrors(value: number): TestSuiteResult;
 
-  getStarted(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setStarted(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): TestSuiteResult;
-  hasStarted(): boolean;
-  clearStarted(): TestSuiteResult;
+  getStarttime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setStarttime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): TestSuiteResult;
+  hasStarttime(): boolean;
+  clearStarttime(): TestSuiteResult;
 
-  getEnded(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setEnded(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): TestSuiteResult;
-  hasEnded(): boolean;
-  clearEnded(): TestSuiteResult;
+  getStoptime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setStoptime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): TestSuiteResult;
+  hasStoptime(): boolean;
+  clearStoptime(): TestSuiteResult;
 
   getTestsList(): Array<TestCaseResult>;
   setTestsList(value: Array<TestCaseResult>): TestSuiteResult;
@@ -1723,10 +1718,11 @@ export class TestSuiteResult extends jspb.Message {
 
 export namespace TestSuiteResult {
   export type AsObject = {
+    fixture?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     faiures: number,
-    success: number,
-    started?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    ended?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    errors: number,
+    starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    stoptime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     testsList: Array<TestCaseResult.AsObject>,
   }
 }

@@ -770,7 +770,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement.repeatedFields_, null);
 };
 goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -10620,6 +10620,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ManagedImageSpec.p
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement.repeatedFields_ = [4];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -10653,7 +10660,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement.toObje
   var f, obj = {
     metric: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     value: (f = jspb.Message.getOptionalFloatingPointField(msg, 2)) == null ? undefined : f,
-    stddev: (f = jspb.Message.getOptionalFloatingPointField(msg, 3)) == null ? undefined : f
+    stddev: (f = jspb.Message.getOptionalFloatingPointField(msg, 3)) == null ? undefined : f,
+    valuesetList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -10702,6 +10710,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement.deseri
       var value = /** @type {number} */ (reader.readDouble());
       msg.setStddev(value);
       break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addValueset(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -10749,6 +10761,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement.serial
   if (f != null) {
     writer.writeDouble(
       3,
+      f
+    );
+  }
+  f = message.getValuesetList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      4,
       f
     );
   }
@@ -10860,6 +10879,43 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement.protot
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement.prototype.hasStddev = function() {
   return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * repeated string valueSet = 4;
+ * @return {!Array<string>}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement.prototype.getValuesetList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 4));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement.prototype.setValuesetList = function(value) {
+  return jspb.Message.setField(this, 4, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement.prototype.addValueset = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 4, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement.prototype.clearValuesetList = function() {
+  return this.setValuesetList([]);
 };
 
 
@@ -15264,7 +15320,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Stakeholder.protot
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.repeatedFields_ = [8,16];
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.repeatedFields_ = [9,14];
 
 
 
@@ -15297,22 +15353,20 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.toObject = function(includeInstance, msg) {
   var f, obj = {
-    assertthat: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    metric: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    entity: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-    expectednumber: (f = jspb.Message.getOptionalFloatingPointField(msg, 4)) == null ? undefined : f,
-    expectedstring: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
-    min: (f = jspb.Message.getOptionalFloatingPointField(msg, 6)) == null ? undefined : f,
-    max: (f = jspb.Message.getOptionalFloatingPointField(msg, 7)) == null ? undefined : f,
-    expectedsetList: (f = jspb.Message.getRepeatedField(msg, 8)) == null ? undefined : f,
-    strictmin: (f = jspb.Message.getBooleanField(msg, 9)) == null ? undefined : f,
-    strictmax: (f = jspb.Message.getBooleanField(msg, 10)) == null ? undefined : f,
-    generated: (f = jspb.Message.getBooleanField(msg, 11)) == null ? undefined : f,
-    bucketname: (f = jspb.Message.getField(msg, 12)) == null ? undefined : f,
-    path: (f = jspb.Message.getField(msg, 13)) == null ? undefined : f,
-    enabled: (f = jspb.Message.getBooleanField(msg, 14)) == null ? undefined : f,
-    displayname: (f = jspb.Message.getField(msg, 15)) == null ? undefined : f,
-    tagsList: (f = jspb.Message.getRepeatedField(msg, 16)) == null ? undefined : f
+    enabled: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
+    assertthat: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    metric: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    entity: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    expectednumber: (f = jspb.Message.getOptionalFloatingPointField(msg, 5)) == null ? undefined : f,
+    expectedstring: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
+    min: (f = jspb.Message.getOptionalFloatingPointField(msg, 7)) == null ? undefined : f,
+    max: (f = jspb.Message.getOptionalFloatingPointField(msg, 8)) == null ? undefined : f,
+    expectedsetList: (f = jspb.Message.getRepeatedField(msg, 9)) == null ? undefined : f,
+    strictmin: (f = jspb.Message.getBooleanField(msg, 10)) == null ? undefined : f,
+    strictmax: (f = jspb.Message.getBooleanField(msg, 11)) == null ? undefined : f,
+    generated: (f = jspb.Message.getBooleanField(msg, 12)) == null ? undefined : f,
+    displayname: (f = jspb.Message.getField(msg, 13)) == null ? undefined : f,
+    tagsList: (f = jspb.Message.getRepeatedField(msg, 14)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -15350,66 +15404,58 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.deseriali
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setAssertthat(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setMetric(value);
-      break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setEntity(value);
-      break;
-    case 4:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setExpectednumber(value);
-      break;
-    case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setExpectedstring(value);
-      break;
-    case 6:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setMin(value);
-      break;
-    case 7:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setMax(value);
-      break;
-    case 8:
-      var value = /** @type {string} */ (reader.readString());
-      msg.addExpectedset(value);
-      break;
-    case 9:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setStrictmin(value);
-      break;
-    case 10:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setStrictmax(value);
-      break;
-    case 11:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setGenerated(value);
-      break;
-    case 12:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setBucketname(value);
-      break;
-    case 13:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setPath(value);
-      break;
-    case 14:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setEnabled(value);
       break;
-    case 15:
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setAssertthat(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setMetric(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setEntity(value);
+      break;
+    case 5:
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setExpectednumber(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setExpectedstring(value);
+      break;
+    case 7:
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setMin(value);
+      break;
+    case 8:
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setMax(value);
+      break;
+    case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addExpectedset(value);
+      break;
+    case 10:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setStrictmin(value);
+      break;
+    case 11:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setStrictmax(value);
+      break;
+    case 12:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setGenerated(value);
+      break;
+    case 13:
       var value = /** @type {string} */ (reader.readString());
       msg.setDisplayname(value);
       break;
-    case 16:
+    case 14:
       var value = /** @type {string} */ (reader.readString());
       msg.addTags(value);
       break;
@@ -15442,9 +15488,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = /** @type {string} */ (jspb.Message.getField(message, 1));
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 1));
   if (f != null) {
-    writer.writeString(
+    writer.writeBool(
       1,
       f
     );
@@ -15463,23 +15509,23 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.serialize
       f
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 4));
+  f = /** @type {string} */ (jspb.Message.getField(message, 4));
   if (f != null) {
-    writer.writeDouble(
+    writer.writeString(
       4,
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 5));
+  f = /** @type {number} */ (jspb.Message.getField(message, 5));
   if (f != null) {
-    writer.writeString(
+    writer.writeDouble(
       5,
       f
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 6));
+  f = /** @type {string} */ (jspb.Message.getField(message, 6));
   if (f != null) {
-    writer.writeDouble(
+    writer.writeString(
       6,
       f
     );
@@ -15491,16 +15537,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.serialize
       f
     );
   }
-  f = message.getExpectedsetList();
-  if (f.length > 0) {
-    writer.writeRepeatedString(
+  f = /** @type {number} */ (jspb.Message.getField(message, 8));
+  if (f != null) {
+    writer.writeDouble(
       8,
       f
     );
   }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 9));
-  if (f != null) {
-    writer.writeBool(
+  f = message.getExpectedsetList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
       9,
       f
     );
@@ -15519,9 +15565,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.serialize
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 12));
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 12));
   if (f != null) {
-    writer.writeString(
+    writer.writeBool(
       12,
       f
     );
@@ -15533,44 +15579,30 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.serialize
       f
     );
   }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 14));
-  if (f != null) {
-    writer.writeBool(
+  f = message.getTagsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
       14,
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 15));
-  if (f != null) {
-    writer.writeString(
-      15,
-      f
-    );
-  }
-  f = message.getTagsList();
-  if (f.length > 0) {
-    writer.writeRepeatedString(
-      16,
-      f
-    );
-  }
 };
 
 
 /**
- * optional string assertThat = 1;
- * @return {string}
+ * optional bool enabled = 1;
+ * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.getAssertthat = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.getEnabled = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 1, false));
 };
 
 
 /**
- * @param {string} value
+ * @param {boolean} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.setAssertthat = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.setEnabled = function(value) {
   return jspb.Message.setField(this, 1, value);
 };
 
@@ -15579,7 +15611,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.clearAssertthat = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.clearEnabled = function() {
   return jspb.Message.setField(this, 1, undefined);
 };
 
@@ -15588,16 +15620,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.hasAssertthat = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.hasEnabled = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
- * optional string metric = 2;
+ * optional string assertThat = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.getMetric = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.getAssertthat = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -15606,7 +15638,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.setMetric = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.setAssertthat = function(value) {
   return jspb.Message.setField(this, 2, value);
 };
 
@@ -15615,7 +15647,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.clearMetric = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.clearAssertthat = function() {
   return jspb.Message.setField(this, 2, undefined);
 };
 
@@ -15624,16 +15656,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.hasMetric = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.hasAssertthat = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional string entity = 3;
+ * optional string metric = 3;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.getEntity = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.getMetric = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -15642,7 +15674,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.setEntity = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.setMetric = function(value) {
   return jspb.Message.setField(this, 3, value);
 };
 
@@ -15651,7 +15683,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.clearEntity = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.clearMetric = function() {
   return jspb.Message.setField(this, 3, undefined);
 };
 
@@ -15660,25 +15692,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.hasEntity = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.hasMetric = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional double expectedNumber = 4;
- * @return {number}
+ * optional string entity = 4;
+ * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.getExpectednumber = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 4, 0.0));
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.getEntity = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.setExpectednumber = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.setEntity = function(value) {
   return jspb.Message.setField(this, 4, value);
 };
 
@@ -15687,7 +15719,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.clearExpectednumber = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.clearEntity = function() {
   return jspb.Message.setField(this, 4, undefined);
 };
 
@@ -15696,25 +15728,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.hasExpectednumber = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.hasEntity = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * optional string expectedString = 5;
- * @return {string}
+ * optional double expectedNumber = 5;
+ * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.getExpectedstring = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.getExpectednumber = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 5, 0.0));
 };
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.setExpectedstring = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.setExpectednumber = function(value) {
   return jspb.Message.setField(this, 5, value);
 };
 
@@ -15723,7 +15755,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.clearExpectedstring = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.clearExpectednumber = function() {
   return jspb.Message.setField(this, 5, undefined);
 };
 
@@ -15732,25 +15764,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.hasExpectedstring = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.hasExpectednumber = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 
 
 /**
- * optional double min = 6;
- * @return {number}
+ * optional string expectedString = 6;
+ * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.getMin = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 6, 0.0));
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.getExpectedstring = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.setMin = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.setExpectedstring = function(value) {
   return jspb.Message.setField(this, 6, value);
 };
 
@@ -15759,7 +15791,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.clearMin = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.clearExpectedstring = function() {
   return jspb.Message.setField(this, 6, undefined);
 };
 
@@ -15768,16 +15800,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.hasMin = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.hasExpectedstring = function() {
   return jspb.Message.getField(this, 6) != null;
 };
 
 
 /**
- * optional double max = 7;
+ * optional double min = 7;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.getMax = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.getMin = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 7, 0.0));
 };
 
@@ -15786,7 +15818,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.setMax = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.setMin = function(value) {
   return jspb.Message.setField(this, 7, value);
 };
 
@@ -15795,7 +15827,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.clearMax = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.clearMin = function() {
   return jspb.Message.setField(this, 7, undefined);
 };
 
@@ -15804,17 +15836,53 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.hasMax = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.hasMin = function() {
   return jspb.Message.getField(this, 7) != null;
 };
 
 
 /**
- * repeated string expectedSet = 8;
+ * optional double max = 8;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.getMax = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 8, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.setMax = function(value) {
+  return jspb.Message.setField(this, 8, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.clearMax = function() {
+  return jspb.Message.setField(this, 8, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.hasMax = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * repeated string expectedSet = 9;
  * @return {!Array<string>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.getExpectedsetList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 8));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 9));
 };
 
 
@@ -15823,7 +15891,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.setExpectedsetList = function(value) {
-  return jspb.Message.setField(this, 8, value || []);
+  return jspb.Message.setField(this, 9, value || []);
 };
 
 
@@ -15833,7 +15901,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.addExpectedset = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 8, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 9, value, opt_index);
 };
 
 
@@ -15847,46 +15915,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype
 
 
 /**
- * optional bool strictMin = 9;
+ * optional bool strictMin = 10;
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.getStrictmin = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 9, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.setStrictmin = function(value) {
-  return jspb.Message.setField(this, 9, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.clearStrictmin = function() {
-  return jspb.Message.setField(this, 9, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.hasStrictmin = function() {
-  return jspb.Message.getField(this, 9) != null;
-};
-
-
-/**
- * optional bool strictMax = 10;
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.getStrictmax = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 10, false));
 };
 
@@ -15895,7 +15927,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype
  * @param {boolean} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.setStrictmax = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.setStrictmin = function(value) {
   return jspb.Message.setField(this, 10, value);
 };
 
@@ -15904,7 +15936,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.clearStrictmax = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.clearStrictmin = function() {
   return jspb.Message.setField(this, 10, undefined);
 };
 
@@ -15913,16 +15945,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.hasStrictmax = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.hasStrictmin = function() {
   return jspb.Message.getField(this, 10) != null;
 };
 
 
 /**
- * optional bool generated = 11;
+ * optional bool strictMax = 11;
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.getGenerated = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.getStrictmax = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 11, false));
 };
 
@@ -15931,7 +15963,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype
  * @param {boolean} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.setGenerated = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.setStrictmax = function(value) {
   return jspb.Message.setField(this, 11, value);
 };
 
@@ -15940,7 +15972,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.clearGenerated = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.clearStrictmax = function() {
   return jspb.Message.setField(this, 11, undefined);
 };
 
@@ -15949,25 +15981,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.hasGenerated = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.hasStrictmax = function() {
   return jspb.Message.getField(this, 11) != null;
 };
 
 
 /**
- * optional string bucketName = 12;
- * @return {string}
+ * optional bool generated = 12;
+ * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.getBucketname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.getGenerated = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 12, false));
 };
 
 
 /**
- * @param {string} value
+ * @param {boolean} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.setBucketname = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.setGenerated = function(value) {
   return jspb.Message.setField(this, 12, value);
 };
 
@@ -15976,7 +16008,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.clearBucketname = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.clearGenerated = function() {
   return jspb.Message.setField(this, 12, undefined);
 };
 
@@ -15985,16 +16017,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.hasBucketname = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.hasGenerated = function() {
   return jspb.Message.getField(this, 12) != null;
 };
 
 
 /**
- * optional string path = 13;
+ * optional string displayName = 13;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.getPath = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.getDisplayname = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
 };
 
@@ -16003,7 +16035,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.setPath = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.setDisplayname = function(value) {
   return jspb.Message.setField(this, 13, value);
 };
 
@@ -16012,7 +16044,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.clearPath = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.clearDisplayname = function() {
   return jspb.Message.setField(this, 13, undefined);
 };
 
@@ -16021,89 +16053,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.hasPath = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.hasDisplayname = function() {
   return jspb.Message.getField(this, 13) != null;
 };
 
 
 /**
- * optional bool enabled = 14;
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.getEnabled = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 14, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.setEnabled = function(value) {
-  return jspb.Message.setField(this, 14, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.clearEnabled = function() {
-  return jspb.Message.setField(this, 14, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.hasEnabled = function() {
-  return jspb.Message.getField(this, 14) != null;
-};
-
-
-/**
- * optional string displayName = 15;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.getDisplayname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 15, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.setDisplayname = function(value) {
-  return jspb.Message.setField(this, 15, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.clearDisplayname = function() {
-  return jspb.Message.setField(this, 15, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.hasDisplayname = function() {
-  return jspb.Message.getField(this, 15) != null;
-};
-
-
-/**
- * repeated string tags = 16;
+ * repeated string tags = 14;
  * @return {!Array<string>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.getTagsList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 16));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 14));
 };
 
 
@@ -16112,7 +16072,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.setTagsList = function(value) {
-  return jspb.Message.setField(this, 16, value || []);
+  return jspb.Message.setField(this, 14, value || []);
 };
 
 
@@ -16122,7 +16082,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.prototype.addTags = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 16, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 14, value, opt_index);
 };
 
 
@@ -16167,13 +16127,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult.pro
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult.toObject = function(includeInstance, msg) {
   var f, obj = {
-    assertion: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    entity: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     actual: (f = msg.getActual()) && proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement.toObject(includeInstance, f),
-    failed: (f = jspb.Message.getBooleanField(msg, 4)) == null ? undefined : f,
-    totalvalues: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
-    failedvalues: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
-    samplefailedvalues: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f
+    failed: (f = jspb.Message.getBooleanField(msg, 2)) == null ? undefined : f,
+    error: (f = jspb.Message.getBooleanField(msg, 3)) == null ? undefined : f,
+    failuremsg: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -16211,33 +16168,21 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult.des
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setAssertion(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setEntity(value);
-      break;
-    case 3:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement.deserializeBinaryFromReader);
       msg.setActual(value);
       break;
-    case 4:
+    case 2:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setFailed(value);
       break;
-    case 5:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setTotalvalues(value);
+    case 3:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setError(value);
       break;
-    case 6:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setFailedvalues(value);
-      break;
-    case 7:
+    case 4:
       var value = /** @type {string} */ (reader.readString());
-      msg.setSamplefailedvalues(value);
+      msg.setFailuremsg(value);
       break;
     default:
       reader.skipField();
@@ -16268,138 +16213,45 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult.pro
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = /** @type {string} */ (jspb.Message.getField(message, 1));
-  if (f != null) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 2));
-  if (f != null) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
   f = message.getActual();
   if (f != null) {
     writer.writeMessage(
-      3,
+      1,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement.serializeBinaryToWriter
     );
   }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 4));
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 2));
   if (f != null) {
     writer.writeBool(
+      2,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeBool(
+      3,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeString(
       4,
       f
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 5));
-  if (f != null) {
-    writer.writeInt32(
-      5,
-      f
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 6));
-  if (f != null) {
-    writer.writeInt32(
-      6,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 7));
-  if (f != null) {
-    writer.writeString(
-      7,
-      f
-    );
-  }
 };
 
 
 /**
- * optional string assertion = 1;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult.prototype.getAssertion = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult.prototype.setAssertion = function(value) {
-  return jspb.Message.setField(this, 1, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult.prototype.clearAssertion = function() {
-  return jspb.Message.setField(this, 1, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult.prototype.hasAssertion = function() {
-  return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional string entity = 2;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult.prototype.getEntity = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult.prototype.setEntity = function(value) {
-  return jspb.Message.setField(this, 2, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult.prototype.clearEntity = function() {
-  return jspb.Message.setField(this, 2, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult.prototype.hasEntity = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional Measurement actual = 3;
+ * optional Measurement actual = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult.prototype.getActual = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement, 3));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement, 1));
 };
 
 
@@ -16408,7 +16260,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult.pro
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult.prototype.setActual = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
+  return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
@@ -16426,16 +16278,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult.pro
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult.prototype.hasActual = function() {
-  return jspb.Message.getField(this, 3) != null;
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
- * optional bool failed = 4;
+ * optional bool failed = 2;
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult.prototype.getFailed = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 4, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 2, false));
 };
 
 
@@ -16444,7 +16296,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult.pro
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult.prototype.setFailed = function(value) {
-  return jspb.Message.setField(this, 4, value);
+  return jspb.Message.setField(this, 2, value);
 };
 
 
@@ -16453,7 +16305,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult.pro
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult.prototype.clearFailed = function() {
-  return jspb.Message.setField(this, 4, undefined);
+  return jspb.Message.setField(this, 2, undefined);
 };
 
 
@@ -16462,25 +16314,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult.pro
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult.prototype.hasFailed = function() {
-  return jspb.Message.getField(this, 4) != null;
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional int32 totalValues = 5;
- * @return {number}
+ * optional bool error = 3;
+ * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult.prototype.getTotalvalues = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult.prototype.getError = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
 };
 
 
 /**
- * @param {number} value
+ * @param {boolean} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult.prototype.setTotalvalues = function(value) {
-  return jspb.Message.setField(this, 5, value);
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult.prototype.setError = function(value) {
+  return jspb.Message.setField(this, 3, value);
 };
 
 
@@ -16488,8 +16340,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult.pro
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult.prototype.clearTotalvalues = function() {
-  return jspb.Message.setField(this, 5, undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult.prototype.clearError = function() {
+  return jspb.Message.setField(this, 3, undefined);
 };
 
 
@@ -16497,53 +16349,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult.prototype.hasTotalvalues = function() {
-  return jspb.Message.getField(this, 5) != null;
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult.prototype.hasError = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional int32 failedValues = 6;
- * @return {number}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult.prototype.getFailedvalues = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult.prototype.setFailedvalues = function(value) {
-  return jspb.Message.setField(this, 6, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult.prototype.clearFailedvalues = function() {
-  return jspb.Message.setField(this, 6, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult.prototype.hasFailedvalues = function() {
-  return jspb.Message.getField(this, 6) != null;
-};
-
-
-/**
- * optional string sampleFailedValues = 7;
+ * optional string failureMsg = 4;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult.prototype.getSamplefailedvalues = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult.prototype.getFailuremsg = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
@@ -16551,8 +16367,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult.pro
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult.prototype.setSamplefailedvalues = function(value) {
-  return jspb.Message.setField(this, 7, value);
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult.prototype.setFailuremsg = function(value) {
+  return jspb.Message.setField(this, 4, value);
 };
 
 
@@ -16560,8 +16376,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult.pro
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult.prototype.clearSamplefailedvalues = function() {
-  return jspb.Message.setField(this, 7, undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult.prototype.clearFailuremsg = function() {
+  return jspb.Message.setField(this, 4, undefined);
 };
 
 
@@ -16569,8 +16385,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult.prototype.hasSamplefailedvalues = function() {
-  return jspb.Message.getField(this, 7) != null;
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult.prototype.hasFailuremsg = function() {
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
@@ -16580,7 +16396,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult.pro
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite.repeatedFields_ = [1];
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite.repeatedFields_ = [2];
 
 
 
@@ -16613,6 +16429,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite.prototyp
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite.toObject = function(includeInstance, msg) {
   var f, obj = {
+    enabled: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
     testsList: jspb.Message.toObjectList(msg.getTestsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.toObject, includeInstance)
   };
@@ -16652,6 +16469,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite.deserial
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setEnabled(value);
+      break;
+    case 2:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.deserializeBinaryFromReader);
       msg.addTests(value);
@@ -16685,10 +16506,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite.prototyp
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeBool(
+      1,
+      f
+    );
+  }
   f = message.getTestsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      1,
+      2,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase.serializeBinaryToWriter
     );
@@ -16697,12 +16525,48 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite.serializ
 
 
 /**
- * repeated TestCase tests = 1;
+ * optional bool enabled = 1;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite.prototype.getEnabled = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 1, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite.prototype.setEnabled = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite.prototype.clearEnabled = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite.prototype.hasEnabled = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * repeated TestCase tests = 2;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite.prototype.getTestsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase, 1));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase, 2));
 };
 
 
@@ -16711,7 +16575,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite.prototyp
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite.prototype.setTestsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -16721,7 +16585,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite.prototyp
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite.prototype.addTests = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCase, opt_index);
 };
 
 
@@ -16740,7 +16604,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite.prototyp
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.repeatedFields_ = [5];
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.repeatedFields_ = [6];
 
 
 
@@ -16773,10 +16637,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.pr
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.toObject = function(includeInstance, msg) {
   var f, obj = {
-    faiures: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    success: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    started: (f = msg.getStarted()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
-    ended: (f = msg.getEnded()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    fixture: (f = msg.getFixture()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
+    faiures: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    errors: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    starttime: (f = msg.getStarttime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    stoptime: (f = msg.getStoptime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     testsList: jspb.Message.toObjectList(msg.getTestsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult.toObject, includeInstance)
   };
@@ -16816,24 +16681,29 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.de
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setFaiures(value);
+      var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
+      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
+      msg.setFixture(value);
       break;
     case 2:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setSuccess(value);
+      msg.setFaiures(value);
       break;
     case 3:
-      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
-      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setStarted(value);
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setErrors(value);
       break;
     case 4:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setEnded(value);
+      msg.setStarttime(value);
       break;
     case 5:
+      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
+      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
+      msg.setStoptime(value);
+      break;
+    case 6:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult.deserializeBinaryFromReader);
       msg.addTests(value);
@@ -16867,11 +16737,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.pr
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = /** @type {number} */ (jspb.Message.getField(message, 1));
+  f = message.getFixture();
   if (f != null) {
-    writer.writeInt32(
+    writer.writeMessage(
       1,
-      f
+      f,
+      k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
     );
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 2));
@@ -16881,15 +16752,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.se
       f
     );
   }
-  f = message.getStarted();
+  f = /** @type {number} */ (jspb.Message.getField(message, 3));
   if (f != null) {
-    writer.writeMessage(
+    writer.writeInt32(
       3,
-      f,
-      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
+      f
     );
   }
-  f = message.getEnded();
+  f = message.getStarttime();
   if (f != null) {
     writer.writeMessage(
       4,
@@ -16897,10 +16767,18 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.se
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
   }
+  f = message.getStoptime();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
+    );
+  }
   f = message.getTestsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      5,
+      6,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult.serializeBinaryToWriter
     );
@@ -16909,29 +16787,30 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.se
 
 
 /**
- * optional int32 faiures = 1;
- * @return {number}
+ * optional k8s.io.api.core.v1.ObjectReference fixture = 1;
+ * @return {?proto.k8s.io.api.core.v1.ObjectReference}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.prototype.getFaiures = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.prototype.getFixture = function() {
+  return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
+    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 1));
 };
 
 
 /**
- * @param {number} value
+ * @param {?proto.k8s.io.api.core.v1.ObjectReference|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.prototype.setFaiures = function(value) {
-  return jspb.Message.setField(this, 1, value);
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.prototype.setFixture = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
- * Clears the field making it undefined.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.prototype.clearFaiures = function() {
-  return jspb.Message.setField(this, 1, undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.prototype.clearFixture = function() {
+  return this.setFixture(undefined);
 };
 
 
@@ -16939,16 +16818,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.pr
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.prototype.hasFaiures = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.prototype.hasFixture = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
- * optional int32 success = 2;
+ * optional int32 faiures = 2;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.prototype.getSuccess = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.prototype.getFaiures = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
@@ -16957,7 +16836,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.pr
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.prototype.setSuccess = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.prototype.setFaiures = function(value) {
   return jspb.Message.setField(this, 2, value);
 };
 
@@ -16966,7 +16845,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.pr
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.prototype.clearSuccess = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.prototype.clearFaiures = function() {
   return jspb.Message.setField(this, 2, undefined);
 };
 
@@ -16975,36 +16854,35 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.pr
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.prototype.hasSuccess = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.prototype.hasFaiures = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time started = 3;
- * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
+ * optional int32 errors = 3;
+ * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.prototype.getStarted = function() {
-  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
-    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 3));
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.prototype.getErrors = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
 
 /**
- * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
+ * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.prototype.setStarted = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.prototype.setErrors = function(value) {
+  return jspb.Message.setField(this, 3, value);
 };
 
 
 /**
- * Clears the message field making it undefined.
+ * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.prototype.clearStarted = function() {
-  return this.setStarted(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.prototype.clearErrors = function() {
+  return jspb.Message.setField(this, 3, undefined);
 };
 
 
@@ -17012,16 +16890,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.pr
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.prototype.hasStarted = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.prototype.hasErrors = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time ended = 4;
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 4;
  * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.prototype.getEnded = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.prototype.getStarttime = function() {
   return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
     jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 4));
 };
@@ -17031,7 +16909,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.pr
  * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.prototype.setEnded = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.prototype.setStarttime = function(value) {
   return jspb.Message.setWrapperField(this, 4, value);
 };
 
@@ -17040,8 +16918,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.pr
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.prototype.clearEnded = function() {
-  return this.setEnded(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.prototype.clearStarttime = function() {
+  return this.setStarttime(undefined);
 };
 
 
@@ -17049,18 +16927,55 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.pr
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.prototype.hasEnded = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.prototype.hasStarttime = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * repeated TestCaseResult tests = 5;
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time stopTime = 5;
+ * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.prototype.getStoptime = function() {
+  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 5));
+};
+
+
+/**
+ * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.prototype.setStoptime = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.prototype.clearStoptime = function() {
+  return this.setStoptime(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.prototype.hasStoptime = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * repeated TestCaseResult tests = 6;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.prototype.getTestsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult, 5));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult, 6));
 };
 
 
@@ -17069,7 +16984,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.pr
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.prototype.setTestsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 5, value);
+  return jspb.Message.setRepeatedWrapperField(this, 6, value);
 };
 
 
@@ -17079,7 +16994,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.pr
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.prototype.addTests = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult, opt_index);
 };
 
 

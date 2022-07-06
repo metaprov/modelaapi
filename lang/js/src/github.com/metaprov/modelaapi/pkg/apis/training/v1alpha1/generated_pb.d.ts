@@ -115,8 +115,8 @@ export class CapacityStageSpec extends jspb.Message {
   getServingsitename(): string;
   setServingsitename(value: string): CapacityStageSpec;
 
-  getTests(): ModelTestSuite | undefined;
-  setTests(value?: ModelTestSuite): CapacityStageSpec;
+  getTests(): StageTestSuite | undefined;
+  setTests(value?: StageTestSuite): CapacityStageSpec;
   hasTests(): boolean;
   clearTests(): CapacityStageSpec;
 
@@ -137,7 +137,7 @@ export namespace CapacityStageSpec {
   export type AsObject = {
     enabled: boolean,
     servingsitename: string,
-    tests?: ModelTestSuite.AsObject,
+    tests?: StageTestSuite.AsObject,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
   }
 }
@@ -672,8 +672,8 @@ export class DeploymentStageSpec extends jspb.Message {
   getManualapproval(): boolean;
   setManualapproval(value: boolean): DeploymentStageSpec;
 
-  getTests(): ModelTestSuite | undefined;
-  setTests(value?: ModelTestSuite): DeploymentStageSpec;
+  getTests(): StageTestSuite | undefined;
+  setTests(value?: StageTestSuite): DeploymentStageSpec;
   hasTests(): boolean;
   clearTests(): DeploymentStageSpec;
 
@@ -695,7 +695,7 @@ export namespace DeploymentStageSpec {
     enabled: boolean,
     servingsitename: string,
     manualapproval: boolean,
-    tests?: ModelTestSuite.AsObject,
+    tests?: StageTestSuite.AsObject,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
   }
 }
@@ -2623,10 +2623,10 @@ export class ModelPipelineRunStageStatus extends jspb.Message {
   hasEndtime(): boolean;
   clearEndtime(): ModelPipelineRunStageStatus;
 
-  getResultsList(): Array<ModelTestResult>;
-  setResultsList(value: Array<ModelTestResult>): ModelPipelineRunStageStatus;
-  clearResultsList(): ModelPipelineRunStageStatus;
-  addResults(value?: ModelTestResult, index?: number): ModelTestResult;
+  getTestresultsList(): Array<StageTestResult>;
+  setTestresultsList(value: Array<StageTestResult>): ModelPipelineRunStageStatus;
+  clearTestresultsList(): ModelPipelineRunStageStatus;
+  addTestresults(value?: StageTestResult, index?: number): StageTestResult;
 
   getError(): string;
   setError(value: string): ModelPipelineRunStageStatus;
@@ -2647,7 +2647,7 @@ export namespace ModelPipelineRunStageStatus {
     approvedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    resultsList: Array<ModelTestResult.AsObject>,
+    testresultsList: Array<StageTestResult.AsObject>,
     error: string,
   }
 }
@@ -3505,62 +3505,6 @@ export namespace ModelStatus {
     interpretability?: InterpretabilityStatus.AsObject,
     images?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Images.AsObject,
     conditionsList: Array<ModelCondition.AsObject>,
-  }
-}
-
-export class ModelTestResult extends jspb.Message {
-  getPrevmodel(): string;
-  setPrevmodel(value: string): ModelTestResult;
-
-  getDatasetname(): string;
-  setDatasetname(value: string): ModelTestResult;
-
-  getSuiteresult(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
-  setSuiteresult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): ModelTestResult;
-  hasSuiteresult(): boolean;
-  clearSuiteresult(): ModelTestResult;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ModelTestResult.AsObject;
-  static toObject(includeInstance: boolean, msg: ModelTestResult): ModelTestResult.AsObject;
-  static serializeBinaryToWriter(message: ModelTestResult, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ModelTestResult;
-  static deserializeBinaryFromReader(message: ModelTestResult, reader: jspb.BinaryReader): ModelTestResult;
-}
-
-export namespace ModelTestResult {
-  export type AsObject = {
-    prevmodel: string,
-    datasetname: string,
-    suiteresult?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
-  }
-}
-
-export class ModelTestSuite extends jspb.Message {
-  getPrevmodel(): string;
-  setPrevmodel(value: string): ModelTestSuite;
-
-  getDatasetname(): string;
-  setDatasetname(value: string): ModelTestSuite;
-
-  getSuite(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
-  setSuite(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): ModelTestSuite;
-  hasSuite(): boolean;
-  clearSuite(): ModelTestSuite;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ModelTestSuite.AsObject;
-  static toObject(includeInstance: boolean, msg: ModelTestSuite): ModelTestSuite.AsObject;
-  static serializeBinaryToWriter(message: ModelTestSuite, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ModelTestSuite;
-  static deserializeBinaryFromReader(message: ModelTestSuite, reader: jspb.BinaryReader): ModelTestSuite;
-}
-
-export namespace ModelTestSuite {
-  export type AsObject = {
-    prevmodel: string,
-    datasetname: string,
-    suite?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
   }
 }
 
@@ -4698,6 +4642,70 @@ export namespace ServingSpec {
   }
 }
 
+export class StageTestResult extends jspb.Message {
+  getBaselinemodelref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setBaselinemodelref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): StageTestResult;
+  hasBaselinemodelref(): boolean;
+  clearBaselinemodelref(): StageTestResult;
+
+  getDatasetref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setDatasetref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): StageTestResult;
+  hasDatasetref(): boolean;
+  clearDatasetref(): StageTestResult;
+
+  getSuiteresult(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
+  setSuiteresult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): StageTestResult;
+  hasSuiteresult(): boolean;
+  clearSuiteresult(): StageTestResult;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): StageTestResult.AsObject;
+  static toObject(includeInstance: boolean, msg: StageTestResult): StageTestResult.AsObject;
+  static serializeBinaryToWriter(message: StageTestResult, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): StageTestResult;
+  static deserializeBinaryFromReader(message: StageTestResult, reader: jspb.BinaryReader): StageTestResult;
+}
+
+export namespace StageTestResult {
+  export type AsObject = {
+    baselinemodelref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    datasetref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    suiteresult?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
+  }
+}
+
+export class StageTestSuite extends jspb.Message {
+  getBaselinemodelref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setBaselinemodelref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): StageTestSuite;
+  hasBaselinemodelref(): boolean;
+  clearBaselinemodelref(): StageTestSuite;
+
+  getDatasetref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setDatasetref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): StageTestSuite;
+  hasDatasetref(): boolean;
+  clearDatasetref(): StageTestSuite;
+
+  getSuite(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
+  setSuite(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): StageTestSuite;
+  hasSuite(): boolean;
+  clearSuite(): StageTestSuite;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): StageTestSuite.AsObject;
+  static toObject(includeInstance: boolean, msg: StageTestSuite): StageTestSuite.AsObject;
+  static serializeBinaryToWriter(message: StageTestSuite, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): StageTestSuite;
+  static deserializeBinaryFromReader(message: StageTestSuite, reader: jspb.BinaryReader): StageTestSuite;
+}
+
+export namespace StageTestSuite {
+  export type AsObject = {
+    baselinemodelref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    datasetref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    suite?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
+  }
+}
+
 export class Study extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): Study;
@@ -5655,8 +5663,8 @@ export class UATStageSpec extends jspb.Message {
   getServingsitename(): string;
   setServingsitename(value: string): UATStageSpec;
 
-  getTests(): ModelTestSuite | undefined;
-  setTests(value?: ModelTestSuite): UATStageSpec;
+  getTests(): StageTestSuite | undefined;
+  setTests(value?: StageTestSuite): UATStageSpec;
   hasTests(): boolean;
   clearTests(): UATStageSpec;
 
@@ -5677,7 +5685,7 @@ export namespace UATStageSpec {
   export type AsObject = {
     enabled: boolean,
     servingsitename: string,
-    tests?: ModelTestSuite.AsObject,
+    tests?: StageTestSuite.AsObject,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
   }
 }

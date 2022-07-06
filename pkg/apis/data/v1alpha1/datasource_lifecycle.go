@@ -279,9 +279,9 @@ func (sc *DataSource) Saved() bool {
 }
 
 func (sc *DataSource) HaveValidationRules() bool {
-	return len(sc.Spec.Schema.Tests.DatasetSuite.Tests) > 0 ||
-		len(sc.Spec.Schema.Tests.MultiDatasetSuite.Tests) > 0 ||
-		len(sc.Spec.Schema.Tests.ColumnSuite.Tests) > 0 ||
-		len(sc.Spec.Schema.Tests.FileSuite.Tests) > 0
+	return len(sc.Spec.Schema.TestTemplate.DatasetSuite.Tests) > 0 ||
+		len(sc.Spec.Schema.TestTemplate.MultiDatasetSuite.Tests) > 0 ||
+		len(sc.Spec.Schema.TestTemplate.ColumnSuite.Tests) > 0 ||
+		len(sc.Spec.Schema.TestTemplate.FileSuite.Tests) > 0
 
 }
