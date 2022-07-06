@@ -984,7 +984,7 @@ message PredictorMonitorSpec {
   optional bool enabled = 1;
 
   // Define the tests to run against the predictor.
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite testSuite = 2;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite tests = 2;
 
   // The schedule on which model monitoring computations will be performed
   // +kubebuilder:validation:Optional
@@ -1018,11 +1018,6 @@ message PredictorSpec {
   // The reference to the ServingSite resource that hosts the Predictor
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference servingsiteRef = 4;
-
-  // The pod template for the Predictor's proxy service. The system will create a
-  // deployment for the service based on the template
-  // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.PodTemplate template = 5;
 
   // The collection of model deployment specifications that define which Model resources will be deployed to the
   // Predictor service and how they will be deployed. Each model should be trained with the same type of
@@ -1153,9 +1148,9 @@ message PredictorStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastPredictionDataset = 12;
 
-  // Ground true metrics specifies the collection of metrics that are computed against the ground true dataset
+  // The result of running the last monitor.
   // +kubebuilder:validation:Optional
-  repeated string groundTrueMetrics = 13;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult lastMonitorResults = 13;
 
   // +patchMergeKey=type
   // +patchStrategy=merge

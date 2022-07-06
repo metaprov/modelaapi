@@ -36,7 +36,7 @@ type PredictorMonitorSpec struct {
 	// +kubebuilder:validation:Optional
 	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
 	// Define the tests to run against the predictor.
-	TestSuite catalog.TestSuite `json:"testSuite,omitempty" protobuf:"bytes,2,opt,name=testSuite"`
+	Tests catalog.TestSuite `json:"tests,omitempty" protobuf:"bytes,2,opt,name=tests"`
 	// The schedule on which model monitoring computations will be performed
 	// +kubebuilder:validation:Optional
 	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,3,opt,name=schedule"`
@@ -317,10 +317,6 @@ type PredictorSpec struct {
 	// The reference to the ServingSite resource that hosts the Predictor
 	// +kubebuilder:validation:Optional
 	ServingSiteRef *v1.ObjectReference `json:"servingsiteRef" protobuf:"bytes,4,opt,name=servingsiteRef"`
-	// The pod template for the Predictor's proxy service. The system will create a
-	// deployment for the service based on the template
-	// +kubebuilder:validation:Optional
-	Template *v1.PodTemplate `json:"template,omitempty" protobuf:"bytes,5,opt,name=template"`
 	// The collection of model deployment specifications that define which Model resources will be deployed to the
 	// Predictor service and how they will be deployed. Each model should be trained with the same type of
 	// dataset and possess a unique version
@@ -421,9 +417,9 @@ type PredictorStatus struct {
 	// The last time that a prediction dataset was created
 	//+kubebuilder:validation:Optional
 	LastPredictionDataset *metav1.Time `json:"lastPredictionDataset,omitempty" protobuf:"bytes,12,opt,name=lastPredictionDataset"`
-	// Ground true metrics specifies the collection of metrics that are computed against the ground true dataset
-	// +kubebuilder:validation:Optional
-	GroundTrueMetrics []catalog.Metric `json:"groundTrueMetrics,omitempty" protobuf:"bytes,13,rep,name=groundTrueMetrics"`
+	// The result of running the last monitor.
+	//+kubebuilder:validation:Optional
+	LastMonitorResults catalog.TestSuiteResult `json:"lastMonitorResults,omitempty" protobuf:"bytes,13,rep,name=lastMonitorResults"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional

@@ -1545,10 +1545,10 @@ export class PredictorMonitorSpec extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): PredictorMonitorSpec;
 
-  getTestsuite(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
-  setTestsuite(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): PredictorMonitorSpec;
-  hasTestsuite(): boolean;
-  clearTestsuite(): PredictorMonitorSpec;
+  getTests(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
+  setTests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): PredictorMonitorSpec;
+  hasTests(): boolean;
+  clearTests(): PredictorMonitorSpec;
 
   getSchedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
   setSchedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): PredictorMonitorSpec;
@@ -1576,7 +1576,7 @@ export class PredictorMonitorSpec extends jspb.Message {
 export namespace PredictorMonitorSpec {
   export type AsObject = {
     enabled: boolean,
-    testsuite?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
+    tests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
     schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     notifierref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     outlierdetectionmodelref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
@@ -1599,11 +1599,6 @@ export class PredictorSpec extends jspb.Message {
   setServingsiteref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): PredictorSpec;
   hasServingsiteref(): boolean;
   clearServingsiteref(): PredictorSpec;
-
-  getTemplate(): k8s_io_api_core_v1_generated_pb.PodTemplate | undefined;
-  setTemplate(value?: k8s_io_api_core_v1_generated_pb.PodTemplate): PredictorSpec;
-  hasTemplate(): boolean;
-  clearTemplate(): PredictorSpec;
 
   getModelsList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec>;
   setModelsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec>): PredictorSpec;
@@ -1701,7 +1696,6 @@ export namespace PredictorSpec {
     description: string,
     productref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     servingsiteref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    template?: k8s_io_api_core_v1_generated_pb.PodTemplate.AsObject,
     modelsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec.AsObject>,
     progressive?: ProgressiveSpec.AsObject,
     artifactsfolder?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
@@ -1776,10 +1770,10 @@ export class PredictorStatus extends jspb.Message {
   hasLastpredictiondataset(): boolean;
   clearLastpredictiondataset(): PredictorStatus;
 
-  getGroundtruemetricsList(): Array<string>;
-  setGroundtruemetricsList(value: Array<string>): PredictorStatus;
-  clearGroundtruemetricsList(): PredictorStatus;
-  addGroundtruemetrics(value: string, index?: number): PredictorStatus;
+  getLastmonitorresults(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
+  setLastmonitorresults(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): PredictorStatus;
+  hasLastmonitorresults(): boolean;
+  clearLastmonitorresults(): PredictorStatus;
 
   getConditionsList(): Array<PredictorCondition>;
   setConditionsList(value: Array<PredictorCondition>): PredictorStatus;
@@ -1808,7 +1802,7 @@ export namespace PredictorStatus {
     failuremessage: string,
     loadbalancerstatus?: k8s_io_api_core_v1_generated_pb.LoadBalancerStatus.AsObject,
     lastpredictiondataset?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    groundtruemetricsList: Array<string>,
+    lastmonitorresults?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
     conditionsList: Array<PredictorCondition.AsObject>,
   }
 }
