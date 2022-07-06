@@ -1119,11 +1119,7 @@ func (in *PredictionSpec) DeepCopyInto(out *PredictionSpec) {
 	}
 	in.Input.DeepCopyInto(&out.Input)
 	in.Output.DeepCopyInto(&out.Output)
-	if in.Tests != nil {
-		in, out := &in.Tests, &out.Tests
-		*out = make([]catalogv1alpha1.Metric, len(*in))
-		copy(*out, *in)
-	}
+	in.Test.DeepCopyInto(&out.Test)
 	if in.Owner != nil {
 		in, out := &in.Owner, &out.Owner
 		*out = new(string)
@@ -1180,13 +1176,7 @@ func (in *PredictionStatus) DeepCopyInto(out *PredictionStatus) {
 		in, out := &in.EndTime, &out.EndTime
 		*out = (*in).DeepCopy()
 	}
-	if in.Results != nil {
-		in, out := &in.Results, &out.Results
-		*out = make([]catalogv1alpha1.Measurement, len(*in))
-		for i := range *in {
-			(*in)[i].DeepCopyInto(&(*out)[i])
-		}
-	}
+	in.TestResult.DeepCopyInto(&out.TestResult)
 	in.Logs.DeepCopyInto(&out.Logs)
 	if in.LastUpdated != nil {
 		in, out := &in.LastUpdated, &out.LastUpdated
