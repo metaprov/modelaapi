@@ -650,7 +650,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -755,7 +755,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetResponse.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -8582,7 +8582,8 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest.toO
     connection: (f = msg.getConnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
     bucket: (f = msg.getBucket()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.toObject(includeInstance, f),
     secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : [],
-    groundtruthdataset: (f = msg.getGroundtruthdataset()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.toObject(includeInstance, f)
+    groundtruthdataset: (f = msg.getGroundtruthdataset()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.toObject(includeInstance, f),
+    tests: (f = msg.getTests()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -8669,6 +8670,11 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest.des
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.deserializeBinaryFromReader);
       msg.setGroundtruthdataset(value);
+      break;
+    case 12:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.deserializeBinaryFromReader);
+      msg.setTests(value);
       break;
     default:
       reader.skipField();
@@ -8773,6 +8779,14 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest.ser
       11,
       f,
       github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.serializeBinaryToWriter
+    );
+  }
+  f = message.getTests();
+  if (f != null) {
+    writer.writeMessage(
+      12,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.serializeBinaryToWriter
     );
   }
 };
@@ -9133,6 +9147,43 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest.pro
 };
 
 
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite tests = 12;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest.prototype.getTests = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite, 12));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest.prototype.setTests = function(value) {
+  return jspb.Message.setWrapperField(this, 12, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest.prototype.clearTests = function() {
+  return this.setTests(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest.prototype.hasTests = function() {
+  return jspb.Message.getField(this, 12) != null;
+};
+
+
 
 
 
@@ -9267,13 +9318,6 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionResponse.pr
 
 
 
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.repeatedFields_ = [11,12];
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -9314,10 +9358,9 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.toObje
     connection: (f = msg.getConnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
     bucket: (f = msg.getBucket()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.toObject(includeInstance, f),
     secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : [],
-    traininghistogramList: jspb.Message.toObjectList(msg.getTraininghistogramList(),
-    github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.toObject, includeInstance),
-    predictionhistogramList: jspb.Message.toObjectList(msg.getPredictionhistogramList(),
-    github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.toObject, includeInstance)
+    tests: (f = msg.getTests()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.toObject(includeInstance, f),
+    traininghistogram: (f = msg.getTraininghistogram()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.toObject(includeInstance, f),
+    livehistogram: (f = msg.getLivehistogram()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -9401,14 +9444,19 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.deseri
          });
       break;
     case 11:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.deserializeBinaryFromReader);
-      msg.addTraininghistogram(value);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.deserializeBinaryFromReader);
+      msg.setTests(value);
       break;
     case 12:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.deserializeBinaryFromReader);
-      msg.addPredictionhistogram(value);
+      msg.setTraininghistogram(value);
+      break;
+    case 13:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.deserializeBinaryFromReader);
+      msg.setLivehistogram(value);
       break;
     default:
       reader.skipField();
@@ -9507,18 +9555,26 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.serial
   if (f && f.getLength() > 0) {
     f.serializeBinary(10, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
   }
-  f = message.getTraininghistogramList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
+  f = message.getTests();
+  if (f != null) {
+    writer.writeMessage(
       11,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.serializeBinaryToWriter
+    );
+  }
+  f = message.getTraininghistogram();
+  if (f != null) {
+    writer.writeMessage(
+      12,
       f,
       github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.serializeBinaryToWriter
     );
   }
-  f = message.getPredictionhistogramList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      12,
+  f = message.getLivehistogram();
+  if (f != null) {
+    writer.writeMessage(
+      13,
       f,
       github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.serializeBinaryToWriter
     );
@@ -9845,78 +9901,113 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.protot
 
 
 /**
- * repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram trainingHistogram = 11;
- * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram>}
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite tests = 11;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite}
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.prototype.getTraininghistogramList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram>} */ (
-    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram, 11));
+proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.prototype.getTests = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite, 11));
 };
 
 
 /**
- * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram>} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.prototype.setTraininghistogramList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 11, value);
+proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.prototype.setTests = function(value) {
+  return jspb.Message.setWrapperField(this, 11, value);
 };
 
 
 /**
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram=} opt_value
- * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.prototype.addTraininghistogram = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 11, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.prototype.clearTraininghistogramList = function() {
-  return this.setTraininghistogramList([]);
+proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.prototype.clearTests = function() {
+  return this.setTests(undefined);
 };
 
 
 /**
- * repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram predictionHistogram = 12;
- * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram>}
+ * Returns whether this field is set.
+ * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.prototype.getPredictionhistogramList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram>} */ (
-    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram, 12));
+proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.prototype.hasTests = function() {
+  return jspb.Message.getField(this, 11) != null;
 };
 
 
 /**
- * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram>} value
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram trainingHistogram = 12;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.prototype.getTraininghistogram = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram, 12));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.prototype.setPredictionhistogramList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 12, value);
+proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.prototype.setTraininghistogram = function(value) {
+  return jspb.Message.setWrapperField(this, 12, value);
 };
 
 
 /**
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram=} opt_value
- * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.prototype.addPredictionhistogram = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 12, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.prototype.clearPredictionhistogramList = function() {
-  return this.setPredictionhistogramList([]);
+proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.prototype.clearTraininghistogram = function() {
+  return this.setTraininghistogram(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.prototype.hasTraininghistogram = function() {
+  return jspb.Message.getField(this, 12) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram liveHistogram = 13;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.prototype.getLivehistogram = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram, 13));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.prototype.setLivehistogram = function(value) {
+  return jspb.Message.setWrapperField(this, 13, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.prototype.clearLivehistogram = function() {
+  return this.setLivehistogram(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.prototype.hasLivehistogram = function() {
+  return jspb.Message.getField(this, 13) != null;
 };
 
 
@@ -9952,7 +10043,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftResponse.proto
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    resultsMap: (f = msg.getResultsMap()) ? f.toObject(includeInstance, undefined) : []
+    result: (f = msg.getResult()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -9990,10 +10081,9 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftResponse.deser
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = msg.getResultsMap();
-      reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readFloat, null, "", 0.0);
-         });
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.deserializeBinaryFromReader);
+      msg.setResult(value);
       break;
     default:
       reader.skipField();
@@ -10024,33 +10114,52 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftResponse.proto
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getResultsMap(true);
-  if (f && f.getLength() > 0) {
-    f.serializeBinary(1, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeFloat);
+  f = message.getResult();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.serializeBinaryToWriter
+    );
   }
 };
 
 
 /**
- * map<string, float> results = 1;
- * @param {boolean=} opt_noLazyCreate Do not create the map if
- * empty, instead returning `undefined`
- * @return {!jspb.Map<string,number>}
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult result = 1;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult}
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftResponse.prototype.getResultsMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,number>} */ (
-      jspb.Message.getMapField(this, 1, opt_noLazyCreate,
-      null));
+proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftResponse.prototype.getResult = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult, 1));
 };
 
 
 /**
- * Clears values from the map. The map will be non-null.
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftResponse} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftResponse.prototype.setResult = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftResponse.prototype.clearResultsMap = function() {
-  this.getResultsMap().clear();
-  return this;};
+proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftResponse.prototype.clearResult = function() {
+  return this.setResult(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftResponse.prototype.hasResult = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
 
 
 
@@ -11173,13 +11282,6 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest.protot
 
 
 
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetResponse.repeatedFields_ = [1];
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -11211,8 +11313,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetResponse.proto
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    resultList: jspb.Message.toObjectList(msg.getResultList(),
-    github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCaseResult.toObject, includeInstance)
+    result: (f = msg.getResult()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -11250,9 +11351,9 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetResponse.deser
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCaseResult;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCaseResult.deserializeBinaryFromReader);
-      msg.addResult(value);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.deserializeBinaryFromReader);
+      msg.setResult(value);
       break;
     default:
       reader.skipField();
@@ -11283,52 +11384,51 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetResponse.proto
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getResultList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
+  f = message.getResult();
+  if (f != null) {
+    writer.writeMessage(
       1,
       f,
-      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCaseResult.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult result = 1;
- * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult>}
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult result = 1;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult}
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetResponse.prototype.getResultList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult>} */ (
-    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCaseResult, 1));
+proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetResponse.prototype.getResult = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult, 1));
 };
 
 
 /**
- * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult>} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetResponse.prototype.setResultList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetResponse.prototype.setResult = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult=} opt_value
- * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetResponse.prototype.addResult = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetResponse.prototype.clearResultList = function() {
-  return this.setResultList([]);
+proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetResponse.prototype.clearResult = function() {
+  return this.setResult(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetResponse.prototype.hasResult = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 

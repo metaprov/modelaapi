@@ -906,6 +906,11 @@ export class DsEvalPredictionRequest extends jspb.Message {
   hasGroundtruthdataset(): boolean;
   clearGroundtruthdataset(): DsEvalPredictionRequest;
 
+  getTests(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
+  setTests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): DsEvalPredictionRequest;
+  hasTests(): boolean;
+  clearTests(): DsEvalPredictionRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DsEvalPredictionRequest.AsObject;
   static toObject(includeInstance: boolean, msg: DsEvalPredictionRequest): DsEvalPredictionRequest.AsObject;
@@ -926,6 +931,7 @@ export namespace DsEvalPredictionRequest {
     bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
     secretMap: Array<[string, Uint8Array | string]>,
     groundtruthdataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
+    tests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
   }
 }
 
@@ -991,15 +997,20 @@ export class DsDetectDriftRequest extends jspb.Message {
   getSecretMap(): jspb.Map<string, Uint8Array | string>;
   clearSecretMap(): DsDetectDriftRequest;
 
-  getTraininghistogramList(): Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram>;
-  setTraininghistogramList(value: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram>): DsDetectDriftRequest;
-  clearTraininghistogramList(): DsDetectDriftRequest;
-  addTraininghistogram(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram, index?: number): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram;
+  getTests(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
+  setTests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): DsDetectDriftRequest;
+  hasTests(): boolean;
+  clearTests(): DsDetectDriftRequest;
 
-  getPredictionhistogramList(): Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram>;
-  setPredictionhistogramList(value: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram>): DsDetectDriftRequest;
-  clearPredictionhistogramList(): DsDetectDriftRequest;
-  addPredictionhistogram(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram, index?: number): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram;
+  getTraininghistogram(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram | undefined;
+  setTraininghistogram(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram): DsDetectDriftRequest;
+  hasTraininghistogram(): boolean;
+  clearTraininghistogram(): DsDetectDriftRequest;
+
+  getLivehistogram(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram | undefined;
+  setLivehistogram(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram): DsDetectDriftRequest;
+  hasLivehistogram(): boolean;
+  clearLivehistogram(): DsDetectDriftRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DsDetectDriftRequest.AsObject;
@@ -1020,14 +1031,17 @@ export namespace DsDetectDriftRequest {
     connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
     secretMap: Array<[string, Uint8Array | string]>,
-    traininghistogramList: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.AsObject>,
-    predictionhistogramList: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.AsObject>,
+    tests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
+    traininghistogram?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.AsObject,
+    livehistogram?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.AsObject,
   }
 }
 
 export class DsDetectDriftResponse extends jspb.Message {
-  getResultsMap(): jspb.Map<string, number>;
-  clearResultsMap(): DsDetectDriftResponse;
+  getResult(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
+  setResult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): DsDetectDriftResponse;
+  hasResult(): boolean;
+  clearResult(): DsDetectDriftResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DsDetectDriftResponse.AsObject;
@@ -1039,7 +1053,7 @@ export class DsDetectDriftResponse extends jspb.Message {
 
 export namespace DsDetectDriftResponse {
   export type AsObject = {
-    resultsMap: Array<[string, number]>,
+    result?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
   }
 }
 
@@ -1182,10 +1196,10 @@ export namespace DsTestDatasetRequest {
 }
 
 export class DsTestDatasetResponse extends jspb.Message {
-  getResultList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCaseResult>;
-  setResultList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCaseResult>): DsTestDatasetResponse;
-  clearResultList(): DsTestDatasetResponse;
-  addResult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCaseResult, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCaseResult;
+  getResult(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
+  setResult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): DsTestDatasetResponse;
+  hasResult(): boolean;
+  clearResult(): DsTestDatasetResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DsTestDatasetResponse.AsObject;
@@ -1197,7 +1211,7 @@ export class DsTestDatasetResponse extends jspb.Message {
 
 export namespace DsTestDatasetResponse {
   export type AsObject = {
-    resultList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestCaseResult.AsObject>,
+    result?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
   }
 }
 

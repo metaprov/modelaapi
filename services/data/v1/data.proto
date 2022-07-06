@@ -212,6 +212,8 @@ message DsEvalPredictionRequest {
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 9;
     map<string,bytes> secret = 10;
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset groundTruthDataset = 11;
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite tests = 12;
+
 }
 
 message DsEvalPredictionResponse {
@@ -229,13 +231,14 @@ message DsDetectDriftRequest {
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection = 8;
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 9;
     map<string,bytes> secret = 10;
-    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram trainingHistogram = 11;
-    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram predictionHistogram = 12;
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite tests = 11;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram trainingHistogram = 12;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram liveHistogram = 13;
 }
 
 message DsDetectDriftResponse {
     // For each histogram answer the value of the drift parameter.
-    map<string,float> results = 1;
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult result = 1;
 }
 
 
@@ -271,7 +274,7 @@ message DsTestDatasetRequest {
 }
 
 message DsTestDatasetResponse {
-    repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestCaseResult result = 1;
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult result = 1;
 }
 
 
