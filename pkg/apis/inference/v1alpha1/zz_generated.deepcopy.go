@@ -895,7 +895,7 @@ func (in *MonitorPart) DeepCopyInto(out *MonitorPart) {
 		*out = new(bool)
 		**out = **in
 	}
-	in.Tests.DeepCopyInto(&out.Tests)
+	in.TestSuite.DeepCopyInto(&out.TestSuite)
 	in.Schedule.DeepCopyInto(&out.Schedule)
 	if in.NotifierRef != nil {
 		in, out := &in.NotifierRef, &out.NotifierRef
@@ -1572,7 +1572,7 @@ func (in *ProgressiveSpec) DeepCopyInto(out *ProgressiveSpec) {
 	}
 	if in.CanaryMetrics != nil {
 		in, out := &in.CanaryMetrics, &out.CanaryMetrics
-		*out = make([]catalogv1alpha1.CanaryMetric, len(*in))
+		*out = make([]catalogv1alpha1.Metric, len(*in))
 		copy(*out, *in)
 	}
 }
