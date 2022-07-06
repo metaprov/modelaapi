@@ -9,14 +9,14 @@ import (
 ///////////////////////////////////////////////////////////////////////////////
 
 const (
-	ModelAccuracy  catalog.TestCaseName = "model-accuracy-greater-than"
-	ModelRocAuc    catalog.TestCaseName = "model-roc-auc-greater-than"
-	ModelF1        catalog.TestCaseName = "model-f1-greater-than"
-	ModelPrecision catalog.TestCaseName = "model-precision-greater-than"
-	ModelRecall    catalog.TestCaseName = "model-recall-less-than"
-	ModelMSE       catalog.TestCaseName = "model-mse-less-than"
-	ModelRMSE      catalog.TestCaseName = "model-rmse-less-than"
-	ModelMAPE      catalog.TestCaseName = "model-mape-less-than"
+	ModelAccuracy  catalog.AssertionType = "model-accuracy-greater-than"
+	ModelRocAuc    catalog.AssertionType = "model-roc-auc-greater-than"
+	ModelF1        catalog.AssertionType = "model-f1-greater-than"
+	ModelPrecision catalog.AssertionType = "model-precision-greater-than"
+	ModelRecall    catalog.AssertionType = "model-recall-less-than"
+	ModelMSE       catalog.AssertionType = "model-mse-less-than"
+	ModelRMSE      catalog.AssertionType = "model-rmse-less-than"
+	ModelMAPE      catalog.AssertionType = "model-mape-less-than"
 )
 
 // ModelValidation defines a single validation to be run against a model
