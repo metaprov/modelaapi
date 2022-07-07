@@ -78,7 +78,6 @@ const (
 	TestModelTask         TaskName = "test-model"
 	TrainEnsembleTask     TaskName = "train-ensemble"
 	TrainModelTask        TaskName = "train-model"
-	ValidateDatasetTask   TaskName = "validate-dataset"
 	MergeForecastTask     TaskName = "merge-forecast"
 	PartitionForecastTask TaskName = "partition-forecast"
 	SplitDatasetToRungs   TaskName = "split-dataset-to-rungs"
@@ -90,10 +89,10 @@ const (
 	RunSqlQueryTask       TaskName = "run-sql-query"
 	RunWebRequestTask     TaskName = "run-web-request"
 	GenerateDataset       TaskName = "generate-dataset"
-	ValidateModel         TaskName = "validate-model"
-	EvalPrediction        TaskName = "eval-prediction"
-	DetectDrift           TaskName = "detect-drift"
-	TrainDriftDetector    TaskName = "train-drift-detector"
+	RunDatasetTests       TaskName = "run-dataset-tests"
+	RunModelTests         TaskName = "run-model-tests"
+	RunGroundTruthTests   TaskName = "run-ground-truth-tests"
+	RunDriftTests         TaskName = "run-drift-tests"
 )
 
 // ApiKeyName is the secret or in env variable
