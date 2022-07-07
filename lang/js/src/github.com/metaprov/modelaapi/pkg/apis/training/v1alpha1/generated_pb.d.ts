@@ -2741,6 +2741,11 @@ export class ModelPipelineRunStatus extends jspb.Message {
   hasLastupdated(): boolean;
   clearLastupdated(): ModelPipelineRunStatus;
 
+  getLogs(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs | undefined;
+  setLogs(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs): ModelPipelineRunStatus;
+  hasLogs(): boolean;
+  clearLogs(): ModelPipelineRunStatus;
+
   getConditionsList(): Array<ModelPipelineRunCondition>;
   setConditionsList(value: Array<ModelPipelineRunCondition>): ModelPipelineRunStatus;
   clearConditionsList(): ModelPipelineRunStatus;
@@ -2778,6 +2783,7 @@ export namespace ModelPipelineRunStatus {
     progress: number,
     triggeredby: string,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
     conditionsList: Array<ModelPipelineRunCondition.AsObject>,
   }
 }

@@ -1816,10 +1816,13 @@ message ModelPipelineRunStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 22;
 
+  // The log file specification that determines the location of all logs produced by the object
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 23;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated ModelPipelineRunCondition conditions = 23;
+  repeated ModelPipelineRunCondition conditions = 24;
 }
 
 // ModelPipelineSpec define the desired state of the ModelPipeline resource.

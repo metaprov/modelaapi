@@ -265,8 +265,10 @@ type ModelPipelineRunStatus struct {
 	//+kubebuilder:validation:Optional
 	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,22,opt,name=lastUpdated"`
 
+	// The log file specification that determines the location of all logs produced by the object
+	Logs catalog.Logs `json:"logs" protobuf:"bytes,23,opt,name=logs"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []ModelPipelineRunCondition `json:"conditions,omitempty" protobuf:"bytes,23,rep,name=conditions"`
+	Conditions []ModelPipelineRunCondition `json:"conditions,omitempty" protobuf:"bytes,24,rep,name=conditions"`
 }

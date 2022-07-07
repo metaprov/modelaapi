@@ -1347,6 +1347,33 @@ spec:
                 description: Last time the object was updated
                 format: date-time
                 type: string
+              logs:
+                description: The log file specification that determines the location
+                  of all logs produced by the object
+                properties:
+                  bucketName:
+                    description: The name of the VirtualBucket resource where the
+                      logs are stored
+                    type: string
+                  containers:
+                    description: The collection of ContainerLog objects that describe
+                      the location of logs per container
+                    items:
+                      description: ContainerLog describes the location of logs for
+                        a single Job
+                      properties:
+                        container:
+                          description: The container name
+                          type: string
+                        job:
+                          description: The name of the Job
+                          type: string
+                        key:
+                          description: The path to the log in the bucket
+                          type: string
+                      type: object
+                    type: array
+                type: object
               modelName:
                 description: The name of the best model
                 type: string
@@ -2559,6 +2586,8 @@ spec:
                         type: object
                     type: object
                 type: object
+            required:
+            - logs
             type: object
         required:
         - spec
