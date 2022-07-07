@@ -3547,16 +3547,6 @@ export namespace ModelTestSuite {
 }
 
 export class ModelTestSuiteResult extends jspb.Message {
-  getBaselinemodelref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setBaselinemodelref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ModelTestSuiteResult;
-  hasBaselinemodelref(): boolean;
-  clearBaselinemodelref(): ModelTestSuiteResult;
-
-  getDatasetref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setDatasetref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ModelTestSuiteResult;
-  hasDatasetref(): boolean;
-  clearDatasetref(): ModelTestSuiteResult;
-
   getSuiteresult(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
   setSuiteresult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): ModelTestSuiteResult;
   hasSuiteresult(): boolean;
@@ -3572,8 +3562,6 @@ export class ModelTestSuiteResult extends jspb.Message {
 
 export namespace ModelTestSuiteResult {
   export type AsObject = {
-    baselinemodelref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    datasetref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     suiteresult?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
   }
 }

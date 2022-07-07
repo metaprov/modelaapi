@@ -43,12 +43,6 @@ type ModelTestSuite struct {
 }
 
 type ModelTestSuiteResult struct {
-	// Baseline Model Ref specifies a previous model to compare against
 	// +kubebuilder:validation:Optional
-	BaselineModelRef v1.ObjectReference `json:"baselineModelRef,omitempty" protobuf:"bytes,1,opt,name=baselineModelRef"`
-	// The name of a labeled dataset used to test the model, when measuring a performance metric
-	// +kubebuilder:validation:Optional
-	DatasetRef v1.ObjectReference `json:"datasetRef,omitempty" protobuf:"bytes,2,opt,name=datasetRef"`
-	// +kubebuilder:validation:Optional
-	SuiteResult catalog.TestSuiteResult `json:"suiteResult,omitempty" protobuf:"bytes,3,opt,name=suiteResult"`
+	SuiteResult catalog.TestSuiteResult `json:"suiteResult,omitempty" protobuf:"bytes,1,opt,name=suiteResult"`
 }

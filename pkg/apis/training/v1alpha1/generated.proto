@@ -2451,16 +2451,8 @@ message ModelTestSuite {
 }
 
 message ModelTestSuiteResult {
-  // Baseline Model Ref specifies a previous model to compare against
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference baselineModelRef = 1;
-
-  // The name of a labeled dataset used to test the model, when measuring a performance metric
-  // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference datasetRef = 2;
-
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult suiteResult = 3;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult suiteResult = 1;
 }
 
 // NLPEstimatorSpec specifies the configuration for an NLP model

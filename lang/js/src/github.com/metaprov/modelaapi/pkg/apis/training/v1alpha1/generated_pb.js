@@ -36318,8 +36318,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuiteRes
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuiteResult.toObject = function(includeInstance, msg) {
   var f, obj = {
-    baselinemodelref: (f = msg.getBaselinemodelref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
-    datasetref: (f = msg.getDatasetref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     suiteresult: (f = msg.getSuiteresult()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.toObject(includeInstance, f)
   };
 
@@ -36358,16 +36356,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuiteRes
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
-      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
-      msg.setBaselinemodelref(value);
-      break;
-    case 2:
-      var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
-      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
-      msg.setDatasetref(value);
-      break;
-    case 3:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.deserializeBinaryFromReader);
       msg.setSuiteresult(value);
@@ -36401,26 +36389,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuiteRes
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuiteResult.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getBaselinemodelref();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
-    );
-  }
-  f = message.getDatasetref();
-  if (f != null) {
-    writer.writeMessage(
-      2,
-      f,
-      k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
-    );
-  }
   f = message.getSuiteresult();
   if (f != null) {
     writer.writeMessage(
-      3,
+      1,
       f,
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.serializeBinaryToWriter
     );
@@ -36429,86 +36401,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuiteRes
 
 
 /**
- * optional k8s.io.api.core.v1.ObjectReference baselineModelRef = 1;
- * @return {?proto.k8s.io.api.core.v1.ObjectReference}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuiteResult.prototype.getBaselinemodelref = function() {
-  return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
-    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 1));
-};
-
-
-/**
- * @param {?proto.k8s.io.api.core.v1.ObjectReference|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuiteResult} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuiteResult.prototype.setBaselinemodelref = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuiteResult} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuiteResult.prototype.clearBaselinemodelref = function() {
-  return this.setBaselinemodelref(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuiteResult.prototype.hasBaselinemodelref = function() {
-  return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional k8s.io.api.core.v1.ObjectReference datasetRef = 2;
- * @return {?proto.k8s.io.api.core.v1.ObjectReference}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuiteResult.prototype.getDatasetref = function() {
-  return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
-    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 2));
-};
-
-
-/**
- * @param {?proto.k8s.io.api.core.v1.ObjectReference|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuiteResult} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuiteResult.prototype.setDatasetref = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuiteResult} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuiteResult.prototype.clearDatasetref = function() {
-  return this.setDatasetref(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuiteResult.prototype.hasDatasetref = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult suiteResult = 3;
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult suiteResult = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuiteResult.prototype.getSuiteresult = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult, 3));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult, 1));
 };
 
 
@@ -36517,7 +36415,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuiteRes
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuiteResult} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuiteResult.prototype.setSuiteresult = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
+  return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
@@ -36535,7 +36433,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuiteRes
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuiteResult.prototype.hasSuiteresult = function() {
-  return jspb.Message.getField(this, 3) != null;
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
