@@ -2463,6 +2463,7 @@ func (in *ModelPipelineRunStatus) DeepCopyInto(out *ModelPipelineRunStatus) {
 		in, out := &in.LastUpdated, &out.LastUpdated
 		*out = (*in).DeepCopy()
 	}
+	in.Logs.DeepCopyInto(&out.Logs)
 	if in.Conditions != nil {
 		in, out := &in.Conditions, &out.Conditions
 		*out = make([]ModelPipelineRunCondition, len(*in))
