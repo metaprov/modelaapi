@@ -103,7 +103,7 @@ type PredictionSpec struct {
 	Output data.DataOutputSpec `json:"output,omitempty" protobuf:"bytes,7,opt,name=output"`
 	// Tests specifies a collection of metrics that will be computed for each prediction
 	// if the Labeled field of the Prediction is enabled
-	Test training.ModelTest `json:"test,omitempty" protobuf:"bytes,8,rep,name=test"`
+	Test training.ModelTestSuite `json:"test,omitempty" protobuf:"bytes,8,rep,name=test"`
 	// The name of the Account which created the object, which exists in the same tenant as the object
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional

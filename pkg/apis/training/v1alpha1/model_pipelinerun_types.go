@@ -187,7 +187,7 @@ type ModelPipelineRunStageStatus struct {
 	EndTime *metav1.Time `json:"endTime,omitempty" protobuf:"bytes,8,opt,name=endTime"`
 	// Results is the results of running the test datasets against the new model
 	// +kubebuilder:validation:Optional
-	Result StageTestResult `json:"testResult,omitempty" protobuf:"bytes,9,rep,name=testResult"`
+	Result ModelTestSuiteResult `json:"testResult,omitempty" protobuf:"bytes,9,rep,name=testResult"`
 	// Error record error.
 	//+kubebuilder:validation:Optional
 	Error string `json:"error,omitempty" protobuf:"bytes,10,opt,name=error"`

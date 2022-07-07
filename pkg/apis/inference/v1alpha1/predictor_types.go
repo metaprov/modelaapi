@@ -29,23 +29,39 @@ const (
 // Monitoring spec
 //==============================================================================
 
-// MonitorSpec defines the specification to monitor a model in production
-type PredictorMonitorSpec struct {
+type DriftDetectorSpec struct {
 	// Indicates if model monitoring is enabled for the model
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
+	// Reference to the live FeatureHistogram, the live FeatureHistogram is updated by the predictor for each prediction.
+	LiveHistogramRef v1.ObjectReference `json:"LiveHistogramRef,omitempty" protobuf:"bytes,2,opt,name=liveHistogramRef"`
+	// Reference to the training histogram ref. The training FeatureHistogram is created
+	TrainingHistogramRef v1.ObjectReference `json:"TrainingHistogramRef,omitempty" protobuf:"bytes,3,opt,name=trainingHistogramRef"`
 	// Define the tests to run against the predictor.
-	Tests catalog.TestSuite `json:"tests,omitempty" protobuf:"bytes,2,opt,name=tests"`
+	Tests catalog.TestSuite `json:"driftTests,omitempty" protobuf:"bytes,6,opt,name=driftTests"`
 	// The schedule on which model monitoring computations will be performed
 	// +kubebuilder:validation:Optional
-	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,3,opt,name=schedule"`
-	// NotifierRef references a Notifier resource that will be triggered in the case that a concept or data drift is detected
-	// +kubebuilder:validation:Optional
-	NotifierRef *v1.ObjectReference `json:"notifierRef,omitempty" protobuf:"bytes,4,opt,name=notifierRef"`
+	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,8,opt,name=schedule"`
 	// Reference to a model that will be used for outlier detection. If empty, an outlier detection model.
 	// +kubebuilder:validation:Optional
-	OutlierDetectionModelRef v1.ObjectReference `json:"outlierDetectionModelRef,omitempty" protobuf:"bytes,5,opt,name=outlierDetectionModelRef"`
+	OutlierDetectionModelRef v1.ObjectReference `json:"outlierDetectionModelRef,omitempty" protobuf:"bytes,10,opt,name=outlierDetectionModelRef"`
+}
+
+type GroundTruthTestSpec struct {
+	// Indicates if model monitoring is enabled for the model
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
+	// Reference to the labeled ground true dataset
+	GroundTrueDatasetRef v1.ObjectReference `json:"GroundTrueDatasetRef,omitempty" protobuf:"bytes,2,opt,name=groundTruthDatasetRef"`
+	// Reference to the training dataset for the champion model.
+	TrainingDatasetRef v1.ObjectReference `json:"TrainingDatasetRef,omitempty" protobuf:"bytes,3,opt,name=trainingDatasetRef"`
+	// Define the tests to run against the predictor.
+	Tests catalog.TestSuite `json:"driftTests,omitempty" protobuf:"bytes,6,opt,name=driftTests"`
+	// The schedule on which model monitoring computations will be performed
+	// +kubebuilder:validation:Optional
+	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,8,opt,name=schedule"`
 }
 
 // ModelServingSpec specifies the configuration for models to be served by a Predictor
@@ -357,13 +373,19 @@ type PredictorSpec struct {
 	// The task type of the Predictor, which should match the task type of the models being served
 	// +kubebuilder:default:="unknown"
 	// +kubebuilder:validation:Optional
-	Task *catalog.MLTask `json:"task,omitempty" protobuf:"bytes,19,opt,name=task"`
+	Task *catalog.MLTask `json:"task,omitempty" protobuf:"bytes,17,opt,name=task"`
 	// The prediction threshold
 	// +kubebuilder:validation:Optional
-	PredictionThreshold *float64 `json:"predictionThreshold,omitempty" protobuf:"bytes,20,opt,name=predictionThreshold"`
-	// Monitor spec specify the monitor for this predictor.
+	PredictionThreshold *float64 `json:"predictionThreshold,omitempty" protobuf:"bytes,18,opt,name=predictionThreshold"`
+	// Spec for the drift detection process
 	// +kubebuilder:validation:Optional
-	Monitor PredictorMonitorSpec `json:"monitor,omitempty" protobuf:"bytes,21,opt,name=monitor"`
+	Drift DriftDetectorSpec `json:"drift,omitempty" protobuf:"bytes,19,opt,name=drift"`
+	// Spec for the ground truth process.
+	// +kubebuilder:validation:Optional
+	GroundTruth GroundTruthTestSpec `json:"groundTruth,omitempty" protobuf:"bytes,20,opt,name=groundTruth"`
+	// NotifierRef references a Notifier resource that will be triggered in the case that a concept or data drift is detected
+	// +kubebuilder:validation:Optional
+	NotifierRef *v1.ObjectReference `json:"notifierRef,omitempty" protobuf:"bytes,21,opt,name=notifierRef"`
 	// Monitor spec specify the monitor for this predictor.
 	// +kubebuilder:validation:Optional
 	PredictionLogging PredictionLoggingSpec `json:"predictionLogging,omitempty" protobuf:"bytes,22,opt,name=predictionLogging"`
@@ -419,11 +441,14 @@ type PredictorStatus struct {
 	LastPredictionDataset *metav1.Time `json:"lastPredictionDataset,omitempty" protobuf:"bytes,12,opt,name=lastPredictionDataset"`
 	// The result of running the last monitor.
 	//+kubebuilder:validation:Optional
-	LastMonitorResults catalog.TestSuiteResult `json:"lastMonitorResults,omitempty" protobuf:"bytes,13,rep,name=lastMonitorResults"`
+	GroundTruth GroundTruthTestStatus `json:"groundTruth,omitempty" protobuf:"bytes,13,rep,name=groundTruth"`
+	// The result of running the last monitor.
+	//+kubebuilder:validation:Optional
+	Drift DriftDetectorStatus `json:"drift,omitempty" protobuf:"bytes,14,rep,name=drift"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []PredictorCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,14,rep,name=conditions"`
+	Conditions []PredictorCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,15,rep,name=conditions"`
 }
 
 // ModelRecord hold the state of a model that was in production
@@ -616,4 +641,18 @@ type FastSlowModelSpec struct {
 	// +kubebuilder:default:=60
 	// +kubebuilder:validation:Optional
 	ProbaHighPct *int32 `json:"probaHighPct,omitempty" protobuf:"varint,5,opt,name=probaHighPct"`
+}
+
+type DriftDetectorStatus struct {
+	// +kubebuilder:validation:Optional
+	Results catalog.TestSuiteResult `json:"results,omitempty" protobuf:"bytes,1,opt,name=results"`
+	// +kubebuilder:validation:Optional
+	LastRun *metav1.Time `json:"lastRun,omitempty" protobuf:"bytes,2,opt,name=lastRun"`
+}
+
+type GroundTruthTestStatus struct {
+	// +kubebuilder:validation:Optional
+	Results catalog.TestSuiteResult `json:"results,omitempty" protobuf:"bytes,1,opt,name=results"`
+	// +kubebuilder:validation:Optional
+	LastRun *metav1.Time `json:"lastRun,omitempty" protobuf:"bytes,2,opt,name=lastRun"`
 }

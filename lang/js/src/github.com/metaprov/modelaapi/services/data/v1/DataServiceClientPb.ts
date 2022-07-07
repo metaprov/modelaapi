@@ -293,49 +293,6 @@ export class DataServiceClient {
     this.methodInfoWriteFile);
   }
 
-  methodInfoTestDataset = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.data.v1.DataService/TestDataset',
-    grpcWeb.MethodType.UNARY,
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.DsTestDatasetRequest,
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.DsTestDatasetResponse,
-    (request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsTestDatasetRequest) => {
-      return request.serializeBinary();
-    },
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.DsTestDatasetResponse.deserializeBinary
-  );
-
-  testDataset(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsTestDatasetRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_data_v1_data_pb.DsTestDatasetResponse>;
-
-  testDataset(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsTestDatasetRequest,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsTestDatasetResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_data_v1_data_pb.DsTestDatasetResponse>;
-
-  testDataset(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsTestDatasetRequest,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsTestDatasetResponse) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.data.v1.DataService/TestDataset',
-        request,
-        metadata || {},
-        this.methodInfoTestDataset,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.data.v1.DataService/TestDataset',
-    request,
-    metadata || {},
-    this.methodInfoTestDataset);
-  }
-
   methodInfoGenerateDataset = new grpcWeb.MethodDescriptor(
     '/github.com.metaprov.modelaapi.services.data.v1.DataService/GenerateDataset',
     grpcWeb.MethodType.UNARY,
@@ -1368,49 +1325,6 @@ export class DataServiceClient {
     this.methodInfoMergeForecastFile);
   }
 
-  methodInfoTestModel = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.data.v1.DataService/TestModel',
-    grpcWeb.MethodType.UNARY,
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.DsTestModelRequest,
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.DsTestModelResponse,
-    (request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsTestModelRequest) => {
-      return request.serializeBinary();
-    },
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.DsTestModelResponse.deserializeBinary
-  );
-
-  testModel(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsTestModelRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_data_v1_data_pb.DsTestModelResponse>;
-
-  testModel(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsTestModelRequest,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsTestModelResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_data_v1_data_pb.DsTestModelResponse>;
-
-  testModel(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsTestModelRequest,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsTestModelResponse) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.data.v1.DataService/TestModel',
-        request,
-        metadata || {},
-        this.methodInfoTestModel,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.data.v1.DataService/TestModel',
-    request,
-    metadata || {},
-    this.methodInfoTestModel);
-  }
-
   methodInfoDsTestConnection = new grpcWeb.MethodDescriptor(
     '/github.com.metaprov.modelaapi.services.data.v1.DataService/DsTestConnection',
     grpcWeb.MethodType.UNARY,
@@ -1755,90 +1669,176 @@ export class DataServiceClient {
     this.methodInfoSnapshot);
   }
 
-  methodInfoDetectDrift = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.data.v1.DataService/DetectDrift',
+  methodInfoRunDatasetTests = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.data.v1.DataService/RunDatasetTests',
     grpcWeb.MethodType.UNARY,
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.DsDetectDriftRequest,
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.DsDetectDriftResponse,
-    (request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsDetectDriftRequest) => {
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.DsRunDatasetTestsRequest,
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.DsRunDatasetTestsResponse,
+    (request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsRunDatasetTestsRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.DsDetectDriftResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.DsRunDatasetTestsResponse.deserializeBinary
   );
 
-  detectDrift(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsDetectDriftRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_data_v1_data_pb.DsDetectDriftResponse>;
+  runDatasetTests(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsRunDatasetTestsRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_data_v1_data_pb.DsRunDatasetTestsResponse>;
 
-  detectDrift(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsDetectDriftRequest,
+  runDatasetTests(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsRunDatasetTestsRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsDetectDriftResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_data_v1_data_pb.DsDetectDriftResponse>;
+               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsRunDatasetTestsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_data_v1_data_pb.DsRunDatasetTestsResponse>;
 
-  detectDrift(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsDetectDriftRequest,
+  runDatasetTests(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsRunDatasetTestsRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsDetectDriftResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsRunDatasetTestsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.data.v1.DataService/DetectDrift',
+          '/github.com.metaprov.modelaapi.services.data.v1.DataService/RunDatasetTests',
         request,
         metadata || {},
-        this.methodInfoDetectDrift,
+        this.methodInfoRunDatasetTests,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.data.v1.DataService/DetectDrift',
+      '/github.com.metaprov.modelaapi.services.data.v1.DataService/RunDatasetTests',
     request,
     metadata || {},
-    this.methodInfoDetectDrift);
+    this.methodInfoRunDatasetTests);
   }
 
-  methodInfoEvalPrediction = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.data.v1.DataService/EvalPrediction',
+  methodInfoRunModelTests = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.data.v1.DataService/RunModelTests',
     grpcWeb.MethodType.UNARY,
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.DsEvalPredictionRequest,
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.DsEvalPredictionResponse,
-    (request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsEvalPredictionRequest) => {
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.RunModelTestsRequest,
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.RunModelTestsResponse,
+    (request: github_com_metaprov_modelaapi_services_data_v1_data_pb.RunModelTestsRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.DsEvalPredictionResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.RunModelTestsResponse.deserializeBinary
   );
 
-  evalPrediction(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsEvalPredictionRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_data_v1_data_pb.DsEvalPredictionResponse>;
+  runModelTests(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.RunModelTestsRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_data_v1_data_pb.RunModelTestsResponse>;
 
-  evalPrediction(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsEvalPredictionRequest,
+  runModelTests(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.RunModelTestsRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsEvalPredictionResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_data_v1_data_pb.DsEvalPredictionResponse>;
+               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.RunModelTestsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_data_v1_data_pb.RunModelTestsResponse>;
 
-  evalPrediction(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsEvalPredictionRequest,
+  runModelTests(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.RunModelTestsRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsEvalPredictionResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.RunModelTestsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.data.v1.DataService/EvalPrediction',
+          '/github.com.metaprov.modelaapi.services.data.v1.DataService/RunModelTests',
         request,
         metadata || {},
-        this.methodInfoEvalPrediction,
+        this.methodInfoRunModelTests,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.data.v1.DataService/EvalPrediction',
+      '/github.com.metaprov.modelaapi.services.data.v1.DataService/RunModelTests',
     request,
     metadata || {},
-    this.methodInfoEvalPrediction);
+    this.methodInfoRunModelTests);
+  }
+
+  methodInfoRunDataDriftTests = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.data.v1.DataService/RunDataDriftTests',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.RunDriftTestsRequest,
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.RunDriftTestsResponse,
+    (request: github_com_metaprov_modelaapi_services_data_v1_data_pb.RunDriftTestsRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.RunDriftTestsResponse.deserializeBinary
+  );
+
+  runDataDriftTests(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.RunDriftTestsRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_data_v1_data_pb.RunDriftTestsResponse>;
+
+  runDataDriftTests(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.RunDriftTestsRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.RunDriftTestsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_data_v1_data_pb.RunDriftTestsResponse>;
+
+  runDataDriftTests(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.RunDriftTestsRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.RunDriftTestsResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.data.v1.DataService/RunDataDriftTests',
+        request,
+        metadata || {},
+        this.methodInfoRunDataDriftTests,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.data.v1.DataService/RunDataDriftTests',
+    request,
+    metadata || {},
+    this.methodInfoRunDataDriftTests);
+  }
+
+  methodInfoRunGroundTrueTests = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.data.v1.DataService/RunGroundTrueTests',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.RunGroundTruthTestsRequest,
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.RunGroundTruthTestsResponse,
+    (request: github_com_metaprov_modelaapi_services_data_v1_data_pb.RunGroundTruthTestsRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.RunGroundTruthTestsResponse.deserializeBinary
+  );
+
+  runGroundTrueTests(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.RunGroundTruthTestsRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_data_v1_data_pb.RunGroundTruthTestsResponse>;
+
+  runGroundTrueTests(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.RunGroundTruthTestsRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.RunGroundTruthTestsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_data_v1_data_pb.RunGroundTruthTestsResponse>;
+
+  runGroundTrueTests(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.RunGroundTruthTestsRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.RunGroundTruthTestsResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.data.v1.DataService/RunGroundTrueTests',
+        request,
+        metadata || {},
+        this.methodInfoRunGroundTrueTests,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.data.v1.DataService/RunGroundTrueTests',
+    request,
+    metadata || {},
+    this.methodInfoRunGroundTrueTests);
   }
 
 }

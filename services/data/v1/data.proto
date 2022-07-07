@@ -200,44 +200,8 @@ message DsMergeForecastFileResponse {
 
 ///////////////////////////////// Merge Forecast Files
 
-// Evaludate the prediction against ground truth
-message DsEvalPredictionRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct product = 1;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion version = 2;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 3;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset predictionsDataset = 4;
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study study = 5;
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model model = 6;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection = 8;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 9;
-    map<string,bytes> secret = 10;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset groundTruthDataset = 11;
-    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite tests = 12;
-
-}
-
-message DsEvalPredictionResponse {
-    map<string,float> results = 1;
-}
 
 // Evaludate the prediction against ground truth
-message DsDetectDriftRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct product = 1;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion version = 2;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 3;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset dataset = 4;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection = 5;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 6;
-    map<string,bytes> secret = 7;
-    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite tests = 8;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram trainingHistogram = 9;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram liveHistogram = 10;
-}
-
-message DsDetectDriftResponse {
-    // For each histogram answer the value of the drift parameter.
-    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult result = 1;
-}
 
 
 
@@ -260,8 +224,8 @@ message DsCreateStudyProfileResponse {
    string uri = 1;
 }
 
-// Validate a dataset
-message DsTestDatasetRequest {
+// Dataset tests
+message DsRunDatasetTestsRequest {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct product = 1;
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion version = 2;
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 3;
@@ -271,10 +235,66 @@ message DsTestDatasetRequest {
     map<string,bytes> secret = 7;
 }
 
-message DsTestDatasetResponse {
+message DsRunDatasetTestsResponse {
     github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult result = 1;
 }
 
+// Model Tests
+message RunModelTestsRequest {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct product = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion version = 2;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 3;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset dataset = 4;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection = 5;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 6;
+    map<string,bytes> secret = 7;
+}
+
+message RunModelTestsResponse {
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult result = 1;
+}
+
+// Drift Tests
+
+message RunDriftTestsRequest {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct product = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion version = 2;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 3;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset dataset = 4;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection = 5;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 6;
+    map<string,bytes> secret = 7;
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite tests = 8;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram trainingHistogram = 9;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram liveHistogram = 10;
+}
+
+message RunDriftTestsResponse {
+    // For each histogram answer the value of the drift parameter.
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult result = 1;
+}
+
+// Ground true tests
+
+
+// Evaludate the prediction against ground truth
+message RunGroundTruthTestsRequest {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct product = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion version = 2;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 3;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset predictionsDataset = 4;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study study = 5;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model model = 6;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection = 8;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 9;
+    map<string,bytes> secret = 10;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset groundTruthDataset = 11;
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite tests = 12;
+}
+
+message RunGroundTruthTestsResponse {
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult result = 1;
+}
 
 
 
@@ -543,22 +563,6 @@ message TellModelResponse {
 message DsShutdownRequest {    
 }
 message DsShutdownResponse {}
-message DsTestModelRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct            product = 1;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion     version = 2;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource             datasource   = 3;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset                dataset     = 4;
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study              study = 5;
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model              model = 6;  
-    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor         predictor = 7;  
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            connection  = 8;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket         bucket   = 9;
-    map<string,bytes>     secret     = 10;
-}
-
-message DsTestModelResponse {
-    repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult result = 1;
-}
 
 message DsTestConnectionRequest {
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            connection  = 1;
@@ -666,8 +670,6 @@ service DataService {
     rpc RunRecipe(DsRunRecipeRequest) returns (DsRunRecipeResponse) {}
     // Read from a flat file and create a dataset
     rpc WriteFile(DsWriteFileRequest) returns (DsReadFromStoreResponse) {}
-    // Based on the datasource business rules, validate a dataset.
-    rpc TestDataset(DsTestDatasetRequest) returns(DsTestDatasetResponse) {}
     // Based on the datasource, generate test dataset
     rpc GenerateDataset(DsGenerateDatasetRequest) returns (DsGenerateDatasetResponse) {}
     // Preform the split. The dataset is assumed to be in the live area after validation
@@ -713,8 +715,6 @@ service DataService {
     rpc PartitionForecastFile(DsCreateForecastPartitionFilesRequest) returns (DsCreateForecastPartitionFilesResponse) {}
     // Merge the forecast back to one file.
     rpc MergeForecastFile(DsMergeForecastFileRequest) returns (DsMergeForecastFileResponse) {}
-    // Check for data drift
-    rpc TestModel(DsTestModelRequest) returns (DsTestModelResponse) {}
     // test connection from python presepective
     rpc DsTestConnection(DsTestConnectionRequest) returns (DsTestConnectionResponse) {}
     rpc ShutDown(DsShutdownRequest) returns (DsShutdownResponse) {}
@@ -724,6 +724,9 @@ service DataService {
     rpc GetTables(DsGetTablesRequest)   returns (DsGetTablesResponse) {}
     rpc ExecuteSql(DsExecuteSqlRequest) returns (DsExecuteSqlResponse) {}
     rpc Snapshot(DsSnapshotRequest) returns (DsSnapshotResponse) {}
-    rpc DetectDrift(DsDetectDriftRequest) returns (DsDetectDriftResponse) {}
-    rpc EvalPrediction(DsEvalPredictionRequest) returns (DsEvalPredictionResponse) {}
+    // Tests
+    rpc RunDatasetTests(DsRunDatasetTestsRequest) returns (DsRunDatasetTestsResponse) {}
+    rpc RunModelTests(RunModelTestsRequest) returns (RunModelTestsResponse) {}
+    rpc RunDataDriftTests(RunDriftTestsRequest) returns (RunDriftTestsResponse) {}
+    rpc RunGroundTrueTests(RunGroundTruthTestsRequest) returns (RunGroundTruthTestsResponse) {}
 }

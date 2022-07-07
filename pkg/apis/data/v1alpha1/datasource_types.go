@@ -286,6 +286,25 @@ type DatasetTestSuite struct {
 	FileSuite catalog.TestSuite `json:"fileSuite,omitempty" protobuf:"bytes,5,opt,name=fileSuite"`
 }
 
+// Holds the dataset test suite result
+type DatasetTestSuiteResult struct {
+	// MultiDatasetTest contains validations for multiple datasets
+	// +kubebuilder:validation:Optional
+	MultiDatasetSuite catalog.TestSuiteResult `json:"multiDatasetSuite,omitempty" protobuf:"bytes,1,opt,name=multiDatasetSuite"`
+	// DatasetTests contains validations for the whole dataset
+	// +kubebuilder:validation:Optional
+	DatasetSuite catalog.TestSuiteResult `json:"datasetSuite,omitempty" protobuf:"bytes,2,opt,name=datasetSuite"`
+	// MultiColumnTests defines validations for multiple columns from the dataset
+	// +kubebuilder:validation:Optional
+	MultiColumnSuite catalog.TestSuiteResult `json:"multiColumnSuite,omitempty" protobuf:"bytes,3,opt,name=multiColumnSuite"`
+	// ColumnTests defines assertions for columns from the dataset
+	// +kubebuilder:validation:Optional
+	ColumnSuite catalog.TestSuiteResult `json:"columnSuite,omitempty" protobuf:"bytes,4,opt,name=columnSuite"`
+	// FileTests defines assertions for the contents of the data file
+	// +kubebuilder:validation:Optional
+	FileSuite catalog.TestSuiteResult `json:"fileSuite,omitempty" protobuf:"bytes,5,opt,name=fileSuite"`
+}
+
 // Schema defines the column-level format and validation rules for data associated with a DataSource
 type Schema struct {
 	// The time-series schema, which sets time-series specific parameters

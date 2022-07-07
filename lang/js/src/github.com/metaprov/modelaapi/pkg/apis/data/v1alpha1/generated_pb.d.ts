@@ -2324,8 +2324,8 @@ export class DatasetStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): DatasetStatus;
 
-  getTestresults(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
-  setTestresults(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): DatasetStatus;
+  getTestresults(): DatasetTestSuiteResult | undefined;
+  setTestresults(value?: DatasetTestSuiteResult): DatasetStatus;
   hasTestresults(): boolean;
   clearTestresults(): DatasetStatus;
 
@@ -2397,7 +2397,7 @@ export namespace DatasetStatus {
     imbalanced: boolean,
     anomaliesuri: string,
     observedgeneration: number,
-    testresults?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
+    testresults?: DatasetTestSuiteResult.AsObject,
     laststudytime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     failurereason: string,
     failuremessage: string,
@@ -2480,6 +2480,50 @@ export namespace DatasetTestSuite {
     multicolumnsuite?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
     columnsuite?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
     filesuite?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
+  }
+}
+
+export class DatasetTestSuiteResult extends jspb.Message {
+  getMultidatasetsuite(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
+  setMultidatasetsuite(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): DatasetTestSuiteResult;
+  hasMultidatasetsuite(): boolean;
+  clearMultidatasetsuite(): DatasetTestSuiteResult;
+
+  getDatasetsuite(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
+  setDatasetsuite(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): DatasetTestSuiteResult;
+  hasDatasetsuite(): boolean;
+  clearDatasetsuite(): DatasetTestSuiteResult;
+
+  getMulticolumnsuite(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
+  setMulticolumnsuite(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): DatasetTestSuiteResult;
+  hasMulticolumnsuite(): boolean;
+  clearMulticolumnsuite(): DatasetTestSuiteResult;
+
+  getColumnsuite(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
+  setColumnsuite(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): DatasetTestSuiteResult;
+  hasColumnsuite(): boolean;
+  clearColumnsuite(): DatasetTestSuiteResult;
+
+  getFilesuite(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
+  setFilesuite(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): DatasetTestSuiteResult;
+  hasFilesuite(): boolean;
+  clearFilesuite(): DatasetTestSuiteResult;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DatasetTestSuiteResult.AsObject;
+  static toObject(includeInstance: boolean, msg: DatasetTestSuiteResult): DatasetTestSuiteResult.AsObject;
+  static serializeBinaryToWriter(message: DatasetTestSuiteResult, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DatasetTestSuiteResult;
+  static deserializeBinaryFromReader(message: DatasetTestSuiteResult, reader: jspb.BinaryReader): DatasetTestSuiteResult;
+}
+
+export namespace DatasetTestSuiteResult {
+  export type AsObject = {
+    multidatasetsuite?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
+    datasetsuite?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
+    multicolumnsuite?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
+    columnsuite?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
+    filesuite?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
   }
 }
 

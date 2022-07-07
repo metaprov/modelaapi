@@ -1772,7 +1772,7 @@ message DatasetStatus {
 
   // List of validation results which are generated for every validation rule associated with the Dataset's Data Source
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult testResults = 9;
+  optional DatasetTestSuiteResult testResults = 9;
 
   // Last time the Dataset was used with a Study
   // +kubebuilder:validation:Optional
@@ -1855,6 +1855,29 @@ message DatasetTestSuite {
   // FileTests defines assertions for the contents of the data file
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite fileSuite = 5;
+}
+
+// Holds the dataset test suite result
+message DatasetTestSuiteResult {
+  // MultiDatasetTest contains validations for multiple datasets
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult multiDatasetSuite = 1;
+
+  // DatasetTests contains validations for the whole dataset
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult datasetSuite = 2;
+
+  // MultiColumnTests defines validations for multiple columns from the dataset
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult multiColumnSuite = 3;
+
+  // ColumnTests defines assertions for columns from the dataset
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult columnSuite = 4;
+
+  // FileTests defines assertions for the contents of the data file
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult fileSuite = 5;
 }
 
 // Entity represents a entity object

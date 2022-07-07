@@ -34,8 +34,6 @@ type DataServiceClient interface {
 	RunRecipe(ctx context.Context, in *DsRunRecipeRequest, opts ...grpc.CallOption) (*DsRunRecipeResponse, error)
 	// Read from a flat file and create a dataset
 	WriteFile(ctx context.Context, in *DsWriteFileRequest, opts ...grpc.CallOption) (*DsReadFromStoreResponse, error)
-	// Based on the datasource business rules, validate a dataset.
-	TestDataset(ctx context.Context, in *DsTestDatasetRequest, opts ...grpc.CallOption) (*DsTestDatasetResponse, error)
 	// Based on the datasource, generate test dataset
 	GenerateDataset(ctx context.Context, in *DsGenerateDatasetRequest, opts ...grpc.CallOption) (*DsGenerateDatasetResponse, error)
 	// Preform the split. The dataset is assumed to be in the live area after validation
@@ -77,8 +75,6 @@ type DataServiceClient interface {
 	PartitionForecastFile(ctx context.Context, in *DsCreateForecastPartitionFilesRequest, opts ...grpc.CallOption) (*DsCreateForecastPartitionFilesResponse, error)
 	// Merge the forecast back to one file.
 	MergeForecastFile(ctx context.Context, in *DsMergeForecastFileRequest, opts ...grpc.CallOption) (*DsMergeForecastFileResponse, error)
-	// Check for data drift
-	TestModel(ctx context.Context, in *DsTestModelRequest, opts ...grpc.CallOption) (*DsTestModelResponse, error)
 	// test connection from python presepective
 	DsTestConnection(ctx context.Context, in *DsTestConnectionRequest, opts ...grpc.CallOption) (*DsTestConnectionResponse, error)
 	ShutDown(ctx context.Context, in *DsShutdownRequest, opts ...grpc.CallOption) (*DsShutdownResponse, error)
@@ -88,8 +84,11 @@ type DataServiceClient interface {
 	GetTables(ctx context.Context, in *DsGetTablesRequest, opts ...grpc.CallOption) (*DsGetTablesResponse, error)
 	ExecuteSql(ctx context.Context, in *DsExecuteSqlRequest, opts ...grpc.CallOption) (*DsExecuteSqlResponse, error)
 	Snapshot(ctx context.Context, in *DsSnapshotRequest, opts ...grpc.CallOption) (*DsSnapshotResponse, error)
-	DetectDrift(ctx context.Context, in *DsDetectDriftRequest, opts ...grpc.CallOption) (*DsDetectDriftResponse, error)
-	EvalPrediction(ctx context.Context, in *DsEvalPredictionRequest, opts ...grpc.CallOption) (*DsEvalPredictionResponse, error)
+	// Tests
+	RunDatasetTests(ctx context.Context, in *DsRunDatasetTestsRequest, opts ...grpc.CallOption) (*DsRunDatasetTestsResponse, error)
+	RunModelTests(ctx context.Context, in *RunModelTestsRequest, opts ...grpc.CallOption) (*RunModelTestsResponse, error)
+	RunDataDriftTests(ctx context.Context, in *RunDriftTestsRequest, opts ...grpc.CallOption) (*RunDriftTestsResponse, error)
+	RunGroundTrueTests(ctx context.Context, in *RunGroundTruthTestsRequest, opts ...grpc.CallOption) (*RunGroundTruthTestsResponse, error)
 }
 
 type dataServiceClient struct {
@@ -148,15 +147,6 @@ func (c *dataServiceClient) RunRecipe(ctx context.Context, in *DsRunRecipeReques
 func (c *dataServiceClient) WriteFile(ctx context.Context, in *DsWriteFileRequest, opts ...grpc.CallOption) (*DsReadFromStoreResponse, error) {
 	out := new(DsReadFromStoreResponse)
 	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/WriteFile", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *dataServiceClient) TestDataset(ctx context.Context, in *DsTestDatasetRequest, opts ...grpc.CallOption) (*DsTestDatasetResponse, error) {
-	out := new(DsTestDatasetResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/TestDataset", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -379,15 +369,6 @@ func (c *dataServiceClient) MergeForecastFile(ctx context.Context, in *DsMergeFo
 	return out, nil
 }
 
-func (c *dataServiceClient) TestModel(ctx context.Context, in *DsTestModelRequest, opts ...grpc.CallOption) (*DsTestModelResponse, error) {
-	out := new(DsTestModelResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/TestModel", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *dataServiceClient) DsTestConnection(ctx context.Context, in *DsTestConnectionRequest, opts ...grpc.CallOption) (*DsTestConnectionResponse, error) {
 	out := new(DsTestConnectionResponse)
 	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/DsTestConnection", in, out, opts...)
@@ -460,18 +441,36 @@ func (c *dataServiceClient) Snapshot(ctx context.Context, in *DsSnapshotRequest,
 	return out, nil
 }
 
-func (c *dataServiceClient) DetectDrift(ctx context.Context, in *DsDetectDriftRequest, opts ...grpc.CallOption) (*DsDetectDriftResponse, error) {
-	out := new(DsDetectDriftResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/DetectDrift", in, out, opts...)
+func (c *dataServiceClient) RunDatasetTests(ctx context.Context, in *DsRunDatasetTestsRequest, opts ...grpc.CallOption) (*DsRunDatasetTestsResponse, error) {
+	out := new(DsRunDatasetTestsResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/RunDatasetTests", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *dataServiceClient) EvalPrediction(ctx context.Context, in *DsEvalPredictionRequest, opts ...grpc.CallOption) (*DsEvalPredictionResponse, error) {
-	out := new(DsEvalPredictionResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/EvalPrediction", in, out, opts...)
+func (c *dataServiceClient) RunModelTests(ctx context.Context, in *RunModelTestsRequest, opts ...grpc.CallOption) (*RunModelTestsResponse, error) {
+	out := new(RunModelTestsResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/RunModelTests", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dataServiceClient) RunDataDriftTests(ctx context.Context, in *RunDriftTestsRequest, opts ...grpc.CallOption) (*RunDriftTestsResponse, error) {
+	out := new(RunDriftTestsResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/RunDataDriftTests", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dataServiceClient) RunGroundTrueTests(ctx context.Context, in *RunGroundTruthTestsRequest, opts ...grpc.CallOption) (*RunGroundTruthTestsResponse, error) {
+	out := new(RunGroundTruthTestsResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/RunGroundTrueTests", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -494,8 +493,6 @@ type DataServiceServer interface {
 	RunRecipe(context.Context, *DsRunRecipeRequest) (*DsRunRecipeResponse, error)
 	// Read from a flat file and create a dataset
 	WriteFile(context.Context, *DsWriteFileRequest) (*DsReadFromStoreResponse, error)
-	// Based on the datasource business rules, validate a dataset.
-	TestDataset(context.Context, *DsTestDatasetRequest) (*DsTestDatasetResponse, error)
 	// Based on the datasource, generate test dataset
 	GenerateDataset(context.Context, *DsGenerateDatasetRequest) (*DsGenerateDatasetResponse, error)
 	// Preform the split. The dataset is assumed to be in the live area after validation
@@ -537,8 +534,6 @@ type DataServiceServer interface {
 	PartitionForecastFile(context.Context, *DsCreateForecastPartitionFilesRequest) (*DsCreateForecastPartitionFilesResponse, error)
 	// Merge the forecast back to one file.
 	MergeForecastFile(context.Context, *DsMergeForecastFileRequest) (*DsMergeForecastFileResponse, error)
-	// Check for data drift
-	TestModel(context.Context, *DsTestModelRequest) (*DsTestModelResponse, error)
 	// test connection from python presepective
 	DsTestConnection(context.Context, *DsTestConnectionRequest) (*DsTestConnectionResponse, error)
 	ShutDown(context.Context, *DsShutdownRequest) (*DsShutdownResponse, error)
@@ -548,8 +543,11 @@ type DataServiceServer interface {
 	GetTables(context.Context, *DsGetTablesRequest) (*DsGetTablesResponse, error)
 	ExecuteSql(context.Context, *DsExecuteSqlRequest) (*DsExecuteSqlResponse, error)
 	Snapshot(context.Context, *DsSnapshotRequest) (*DsSnapshotResponse, error)
-	DetectDrift(context.Context, *DsDetectDriftRequest) (*DsDetectDriftResponse, error)
-	EvalPrediction(context.Context, *DsEvalPredictionRequest) (*DsEvalPredictionResponse, error)
+	// Tests
+	RunDatasetTests(context.Context, *DsRunDatasetTestsRequest) (*DsRunDatasetTestsResponse, error)
+	RunModelTests(context.Context, *RunModelTestsRequest) (*RunModelTestsResponse, error)
+	RunDataDriftTests(context.Context, *RunDriftTestsRequest) (*RunDriftTestsResponse, error)
+	RunGroundTrueTests(context.Context, *RunGroundTruthTestsRequest) (*RunGroundTruthTestsResponse, error)
 	mustEmbedUnimplementedDataServiceServer()
 }
 
@@ -574,9 +572,6 @@ func (UnimplementedDataServiceServer) RunRecipe(context.Context, *DsRunRecipeReq
 }
 func (UnimplementedDataServiceServer) WriteFile(context.Context, *DsWriteFileRequest) (*DsReadFromStoreResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method WriteFile not implemented")
-}
-func (UnimplementedDataServiceServer) TestDataset(context.Context, *DsTestDatasetRequest) (*DsTestDatasetResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method TestDataset not implemented")
 }
 func (UnimplementedDataServiceServer) GenerateDataset(context.Context, *DsGenerateDatasetRequest) (*DsGenerateDatasetResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GenerateDataset not implemented")
@@ -650,9 +645,6 @@ func (UnimplementedDataServiceServer) PartitionForecastFile(context.Context, *Ds
 func (UnimplementedDataServiceServer) MergeForecastFile(context.Context, *DsMergeForecastFileRequest) (*DsMergeForecastFileResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method MergeForecastFile not implemented")
 }
-func (UnimplementedDataServiceServer) TestModel(context.Context, *DsTestModelRequest) (*DsTestModelResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method TestModel not implemented")
-}
 func (UnimplementedDataServiceServer) DsTestConnection(context.Context, *DsTestConnectionRequest) (*DsTestConnectionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DsTestConnection not implemented")
 }
@@ -677,11 +669,17 @@ func (UnimplementedDataServiceServer) ExecuteSql(context.Context, *DsExecuteSqlR
 func (UnimplementedDataServiceServer) Snapshot(context.Context, *DsSnapshotRequest) (*DsSnapshotResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Snapshot not implemented")
 }
-func (UnimplementedDataServiceServer) DetectDrift(context.Context, *DsDetectDriftRequest) (*DsDetectDriftResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DetectDrift not implemented")
+func (UnimplementedDataServiceServer) RunDatasetTests(context.Context, *DsRunDatasetTestsRequest) (*DsRunDatasetTestsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RunDatasetTests not implemented")
 }
-func (UnimplementedDataServiceServer) EvalPrediction(context.Context, *DsEvalPredictionRequest) (*DsEvalPredictionResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method EvalPrediction not implemented")
+func (UnimplementedDataServiceServer) RunModelTests(context.Context, *RunModelTestsRequest) (*RunModelTestsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RunModelTests not implemented")
+}
+func (UnimplementedDataServiceServer) RunDataDriftTests(context.Context, *RunDriftTestsRequest) (*RunDriftTestsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RunDataDriftTests not implemented")
+}
+func (UnimplementedDataServiceServer) RunGroundTrueTests(context.Context, *RunGroundTruthTestsRequest) (*RunGroundTruthTestsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RunGroundTrueTests not implemented")
 }
 func (UnimplementedDataServiceServer) mustEmbedUnimplementedDataServiceServer() {}
 
@@ -800,24 +798,6 @@ func _DataService_WriteFile_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DataServiceServer).WriteFile(ctx, req.(*DsWriteFileRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DataService_TestDataset_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DsTestDatasetRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DataServiceServer).TestDataset(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/TestDataset",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DataServiceServer).TestDataset(ctx, req.(*DsTestDatasetRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1254,24 +1234,6 @@ func _DataService_MergeForecastFile_Handler(srv interface{}, ctx context.Context
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DataService_TestModel_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DsTestModelRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DataServiceServer).TestModel(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/TestModel",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DataServiceServer).TestModel(ctx, req.(*DsTestModelRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _DataService_DsTestConnection_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DsTestConnectionRequest)
 	if err := dec(in); err != nil {
@@ -1416,38 +1378,74 @@ func _DataService_Snapshot_Handler(srv interface{}, ctx context.Context, dec fun
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DataService_DetectDrift_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DsDetectDriftRequest)
+func _DataService_RunDatasetTests_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DsRunDatasetTestsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DataServiceServer).DetectDrift(ctx, in)
+		return srv.(DataServiceServer).RunDatasetTests(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/DetectDrift",
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/RunDatasetTests",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DataServiceServer).DetectDrift(ctx, req.(*DsDetectDriftRequest))
+		return srv.(DataServiceServer).RunDatasetTests(ctx, req.(*DsRunDatasetTestsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DataService_EvalPrediction_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DsEvalPredictionRequest)
+func _DataService_RunModelTests_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RunModelTestsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DataServiceServer).EvalPrediction(ctx, in)
+		return srv.(DataServiceServer).RunModelTests(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/EvalPrediction",
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/RunModelTests",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DataServiceServer).EvalPrediction(ctx, req.(*DsEvalPredictionRequest))
+		return srv.(DataServiceServer).RunModelTests(ctx, req.(*RunModelTestsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DataService_RunDataDriftTests_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RunDriftTestsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DataServiceServer).RunDataDriftTests(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/RunDataDriftTests",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DataServiceServer).RunDataDriftTests(ctx, req.(*RunDriftTestsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DataService_RunGroundTrueTests_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RunGroundTruthTestsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DataServiceServer).RunGroundTrueTests(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/RunGroundTrueTests",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DataServiceServer).RunGroundTrueTests(ctx, req.(*RunGroundTruthTestsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1482,10 +1480,6 @@ var DataService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "WriteFile",
 			Handler:    _DataService_WriteFile_Handler,
-		},
-		{
-			MethodName: "TestDataset",
-			Handler:    _DataService_TestDataset_Handler,
 		},
 		{
 			MethodName: "GenerateDataset",
@@ -1584,10 +1578,6 @@ var DataService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _DataService_MergeForecastFile_Handler,
 		},
 		{
-			MethodName: "TestModel",
-			Handler:    _DataService_TestModel_Handler,
-		},
-		{
 			MethodName: "DsTestConnection",
 			Handler:    _DataService_DsTestConnection_Handler,
 		},
@@ -1620,12 +1610,20 @@ var DataService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _DataService_Snapshot_Handler,
 		},
 		{
-			MethodName: "DetectDrift",
-			Handler:    _DataService_DetectDrift_Handler,
+			MethodName: "RunDatasetTests",
+			Handler:    _DataService_RunDatasetTests_Handler,
 		},
 		{
-			MethodName: "EvalPrediction",
-			Handler:    _DataService_EvalPrediction_Handler,
+			MethodName: "RunModelTests",
+			Handler:    _DataService_RunModelTests_Handler,
+		},
+		{
+			MethodName: "RunDataDriftTests",
+			Handler:    _DataService_RunDataDriftTests_Handler,
+		},
+		{
+			MethodName: "RunGroundTrueTests",
+			Handler:    _DataService_RunGroundTrueTests_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

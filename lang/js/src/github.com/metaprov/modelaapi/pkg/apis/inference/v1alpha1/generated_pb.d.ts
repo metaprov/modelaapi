@@ -745,6 +745,80 @@ export namespace DataAppStatus {
   }
 }
 
+export class DriftDetectorSpec extends jspb.Message {
+  getEnabled(): boolean;
+  setEnabled(value: boolean): DriftDetectorSpec;
+
+  getLivehistogramref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setLivehistogramref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): DriftDetectorSpec;
+  hasLivehistogramref(): boolean;
+  clearLivehistogramref(): DriftDetectorSpec;
+
+  getTraininghistogramref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setTraininghistogramref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): DriftDetectorSpec;
+  hasTraininghistogramref(): boolean;
+  clearTraininghistogramref(): DriftDetectorSpec;
+
+  getDrifttests(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
+  setDrifttests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): DriftDetectorSpec;
+  hasDrifttests(): boolean;
+  clearDrifttests(): DriftDetectorSpec;
+
+  getSchedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
+  setSchedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): DriftDetectorSpec;
+  hasSchedule(): boolean;
+  clearSchedule(): DriftDetectorSpec;
+
+  getOutlierdetectionmodelref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setOutlierdetectionmodelref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): DriftDetectorSpec;
+  hasOutlierdetectionmodelref(): boolean;
+  clearOutlierdetectionmodelref(): DriftDetectorSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DriftDetectorSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: DriftDetectorSpec): DriftDetectorSpec.AsObject;
+  static serializeBinaryToWriter(message: DriftDetectorSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DriftDetectorSpec;
+  static deserializeBinaryFromReader(message: DriftDetectorSpec, reader: jspb.BinaryReader): DriftDetectorSpec;
+}
+
+export namespace DriftDetectorSpec {
+  export type AsObject = {
+    enabled: boolean,
+    livehistogramref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    traininghistogramref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    drifttests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
+    schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
+    outlierdetectionmodelref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+  }
+}
+
+export class DriftDetectorStatus extends jspb.Message {
+  getResults(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
+  setResults(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): DriftDetectorStatus;
+  hasResults(): boolean;
+  clearResults(): DriftDetectorStatus;
+
+  getLastrun(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastrun(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DriftDetectorStatus;
+  hasLastrun(): boolean;
+  clearLastrun(): DriftDetectorStatus;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DriftDetectorStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: DriftDetectorStatus): DriftDetectorStatus.AsObject;
+  static serializeBinaryToWriter(message: DriftDetectorStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DriftDetectorStatus;
+  static deserializeBinaryFromReader(message: DriftDetectorStatus, reader: jspb.BinaryReader): DriftDetectorStatus;
+}
+
+export namespace DriftDetectorStatus {
+  export type AsObject = {
+    results?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
+    lastrun?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+  }
+}
+
 export class FastSlowModelSpec extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): FastSlowModelSpec;
@@ -832,6 +906,74 @@ export namespace ForwardCurtainSpec {
     enabled: boolean,
     curtainref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     percent: number,
+  }
+}
+
+export class GroundTruthTestSpec extends jspb.Message {
+  getEnabled(): boolean;
+  setEnabled(value: boolean): GroundTruthTestSpec;
+
+  getGroundtruthdatasetref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setGroundtruthdatasetref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): GroundTruthTestSpec;
+  hasGroundtruthdatasetref(): boolean;
+  clearGroundtruthdatasetref(): GroundTruthTestSpec;
+
+  getTrainingdatasetref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setTrainingdatasetref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): GroundTruthTestSpec;
+  hasTrainingdatasetref(): boolean;
+  clearTrainingdatasetref(): GroundTruthTestSpec;
+
+  getDrifttests(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
+  setDrifttests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): GroundTruthTestSpec;
+  hasDrifttests(): boolean;
+  clearDrifttests(): GroundTruthTestSpec;
+
+  getSchedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
+  setSchedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): GroundTruthTestSpec;
+  hasSchedule(): boolean;
+  clearSchedule(): GroundTruthTestSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GroundTruthTestSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: GroundTruthTestSpec): GroundTruthTestSpec.AsObject;
+  static serializeBinaryToWriter(message: GroundTruthTestSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GroundTruthTestSpec;
+  static deserializeBinaryFromReader(message: GroundTruthTestSpec, reader: jspb.BinaryReader): GroundTruthTestSpec;
+}
+
+export namespace GroundTruthTestSpec {
+  export type AsObject = {
+    enabled: boolean,
+    groundtruthdatasetref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    trainingdatasetref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    drifttests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
+    schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
+  }
+}
+
+export class GroundTruthTestStatus extends jspb.Message {
+  getResults(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
+  setResults(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): GroundTruthTestStatus;
+  hasResults(): boolean;
+  clearResults(): GroundTruthTestStatus;
+
+  getLastrun(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastrun(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): GroundTruthTestStatus;
+  hasLastrun(): boolean;
+  clearLastrun(): GroundTruthTestStatus;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GroundTruthTestStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: GroundTruthTestStatus): GroundTruthTestStatus.AsObject;
+  static serializeBinaryToWriter(message: GroundTruthTestStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GroundTruthTestStatus;
+  static deserializeBinaryFromReader(message: GroundTruthTestStatus, reader: jspb.BinaryReader): GroundTruthTestStatus;
+}
+
+export namespace GroundTruthTestStatus {
+  export type AsObject = {
+    results?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
+    lastrun?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
   }
 }
 
@@ -1286,8 +1428,8 @@ export class PredictionSpec extends jspb.Message {
   hasOutput(): boolean;
   clearOutput(): PredictionSpec;
 
-  getTest(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelTest | undefined;
-  setTest(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelTest): PredictionSpec;
+  getTest(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelTestSuite | undefined;
+  setTest(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelTestSuite): PredictionSpec;
   hasTest(): boolean;
   clearTest(): PredictionSpec;
 
@@ -1340,7 +1482,7 @@ export namespace PredictionSpec {
     forecast: boolean,
     input?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataInputSpec.AsObject,
     output?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataOutputSpec.AsObject,
-    test?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelTest.AsObject,
+    test?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelTestSuite.AsObject,
     owner: string,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     activedeadlineseconds: number,
@@ -1541,48 +1683,6 @@ export namespace PredictorList {
   }
 }
 
-export class PredictorMonitorSpec extends jspb.Message {
-  getEnabled(): boolean;
-  setEnabled(value: boolean): PredictorMonitorSpec;
-
-  getTests(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
-  setTests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): PredictorMonitorSpec;
-  hasTests(): boolean;
-  clearTests(): PredictorMonitorSpec;
-
-  getSchedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
-  setSchedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): PredictorMonitorSpec;
-  hasSchedule(): boolean;
-  clearSchedule(): PredictorMonitorSpec;
-
-  getNotifierref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setNotifierref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): PredictorMonitorSpec;
-  hasNotifierref(): boolean;
-  clearNotifierref(): PredictorMonitorSpec;
-
-  getOutlierdetectionmodelref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setOutlierdetectionmodelref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): PredictorMonitorSpec;
-  hasOutlierdetectionmodelref(): boolean;
-  clearOutlierdetectionmodelref(): PredictorMonitorSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PredictorMonitorSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: PredictorMonitorSpec): PredictorMonitorSpec.AsObject;
-  static serializeBinaryToWriter(message: PredictorMonitorSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PredictorMonitorSpec;
-  static deserializeBinaryFromReader(message: PredictorMonitorSpec, reader: jspb.BinaryReader): PredictorMonitorSpec;
-}
-
-export namespace PredictorMonitorSpec {
-  export type AsObject = {
-    enabled: boolean,
-    tests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
-    schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
-    notifierref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    outlierdetectionmodelref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-  }
-}
-
 export class PredictorSpec extends jspb.Message {
   getVersionname(): string;
   setVersionname(value: string): PredictorSpec;
@@ -1657,10 +1757,20 @@ export class PredictorSpec extends jspb.Message {
   getPredictionthreshold(): number;
   setPredictionthreshold(value: number): PredictorSpec;
 
-  getMonitor(): PredictorMonitorSpec | undefined;
-  setMonitor(value?: PredictorMonitorSpec): PredictorSpec;
-  hasMonitor(): boolean;
-  clearMonitor(): PredictorSpec;
+  getDrift(): DriftDetectorSpec | undefined;
+  setDrift(value?: DriftDetectorSpec): PredictorSpec;
+  hasDrift(): boolean;
+  clearDrift(): PredictorSpec;
+
+  getGroundtruth(): GroundTruthTestSpec | undefined;
+  setGroundtruth(value?: GroundTruthTestSpec): PredictorSpec;
+  hasGroundtruth(): boolean;
+  clearGroundtruth(): PredictorSpec;
+
+  getNotifierref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setNotifierref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): PredictorSpec;
+  hasNotifierref(): boolean;
+  clearNotifierref(): PredictorSpec;
 
   getPredictionlogging(): PredictionLoggingSpec | undefined;
   setPredictionlogging(value?: PredictionLoggingSpec): PredictorSpec;
@@ -1709,7 +1819,9 @@ export namespace PredictorSpec {
     serving?: ModelServingSpec.AsObject,
     task: string,
     predictionthreshold: number,
-    monitor?: PredictorMonitorSpec.AsObject,
+    drift?: DriftDetectorSpec.AsObject,
+    groundtruth?: GroundTruthTestSpec.AsObject,
+    notifierref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     predictionlogging?: PredictionLoggingSpec.AsObject,
     forwardcurtain?: ForwardCurtainSpec.AsObject,
     backwardcurtain?: BackwardCurtainSpec.AsObject,
@@ -1770,10 +1882,15 @@ export class PredictorStatus extends jspb.Message {
   hasLastpredictiondataset(): boolean;
   clearLastpredictiondataset(): PredictorStatus;
 
-  getLastmonitorresults(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
-  setLastmonitorresults(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): PredictorStatus;
-  hasLastmonitorresults(): boolean;
-  clearLastmonitorresults(): PredictorStatus;
+  getGroundtruth(): GroundTruthTestStatus | undefined;
+  setGroundtruth(value?: GroundTruthTestStatus): PredictorStatus;
+  hasGroundtruth(): boolean;
+  clearGroundtruth(): PredictorStatus;
+
+  getDrift(): DriftDetectorStatus | undefined;
+  setDrift(value?: DriftDetectorStatus): PredictorStatus;
+  hasDrift(): boolean;
+  clearDrift(): PredictorStatus;
 
   getConditionsList(): Array<PredictorCondition>;
   setConditionsList(value: Array<PredictorCondition>): PredictorStatus;
@@ -1802,7 +1919,8 @@ export namespace PredictorStatus {
     failuremessage: string,
     loadbalancerstatus?: k8s_io_api_core_v1_generated_pb.LoadBalancerStatus.AsObject,
     lastpredictiondataset?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    lastmonitorresults?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
+    groundtruth?: GroundTruthTestStatus.AsObject,
+    drift?: DriftDetectorStatus.AsObject,
     conditionsList: Array<PredictorCondition.AsObject>,
   }
 }

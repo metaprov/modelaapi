@@ -401,6 +401,305 @@ spec:
                 description: The user-provided description of the Predictor
                 maxLength: 256
                 type: string
+              drift:
+                description: Spec for the drift detection process
+                properties:
+                  LiveHistogramRef:
+                    description: Reference to the live FeatureHistogram, the live
+                      FeatureHistogram is updated by the predictor for each prediction.
+                    properties:
+                      apiVersion:
+                        description: API version of the referent.
+                        type: string
+                      fieldPath:
+                        description: 'If referring to a piece of an object instead
+                          of an entire object, this string should contain a valid
+                          JSON/Go field access statement, such as desiredState.manifest.containers[2].
+                          For example, if the object reference is to a container within
+                          a pod, this would take on a value like: "spec.containers{name}"
+                          (where "name" refers to the name of the container that triggered
+                          the event) or if no container name is specified "spec.containers[2]"
+                          (container with index 2 in this pod). This syntax is chosen
+                          only to have some well-defined way of referencing a part
+                          of an object. TODO: this design is not final and this field
+                          is subject to change in the future.'
+                        type: string
+                      kind:
+                        description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                        type: string
+                      name:
+                        description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                        type: string
+                      namespace:
+                        description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                        type: string
+                      resourceVersion:
+                        description: 'Specific resourceVersion to which this reference
+                          is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                        type: string
+                      uid:
+                        description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                        type: string
+                    type: object
+                  TrainingHistogramRef:
+                    description: Reference to the training histogram ref. The training
+                      FeatureHistogram is created
+                    properties:
+                      apiVersion:
+                        description: API version of the referent.
+                        type: string
+                      fieldPath:
+                        description: 'If referring to a piece of an object instead
+                          of an entire object, this string should contain a valid
+                          JSON/Go field access statement, such as desiredState.manifest.containers[2].
+                          For example, if the object reference is to a container within
+                          a pod, this would take on a value like: "spec.containers{name}"
+                          (where "name" refers to the name of the container that triggered
+                          the event) or if no container name is specified "spec.containers[2]"
+                          (container with index 2 in this pod). This syntax is chosen
+                          only to have some well-defined way of referencing a part
+                          of an object. TODO: this design is not final and this field
+                          is subject to change in the future.'
+                        type: string
+                      kind:
+                        description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                        type: string
+                      name:
+                        description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                        type: string
+                      namespace:
+                        description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                        type: string
+                      resourceVersion:
+                        description: 'Specific resourceVersion to which this reference
+                          is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                        type: string
+                      uid:
+                        description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                        type: string
+                    type: object
+                  driftTests:
+                    description: Define the tests to run against the predictor.
+                    properties:
+                      enabled:
+                        description: If false, this test case is disabled
+                        type: boolean
+                      tests:
+                        items:
+                          properties:
+                            assertThat:
+                              description: The assertion type
+                              type: string
+                            displayName:
+                              description: The test case display name
+                              type: string
+                            enabled:
+                              description: If false, this test case is disabled
+                              type: boolean
+                            entity:
+                              description: The entity names, depends on the assertion.
+                                For example, dataset name, column name
+                              type: string
+                            expectedNumber:
+                              description: The expected numerical value
+                              type: number
+                            expectedSetSet:
+                              description: Expected set of values,if the assertion
+                              items:
+                                type: string
+                              type: array
+                            expectedString:
+                              description: The expected value
+                              type: string
+                            generated:
+                              description: Indicates if this validation rule was automatically
+                                generated by the system
+                              type: boolean
+                            max:
+                              format: float
+                              type: number
+                            metric:
+                              enum:
+                              - accuracy
+                              - average-precision
+                              - balanced-accuracy
+                              - pr-auc
+                              - pr-auc-micro
+                              - pr-auc-macro
+                              - pr-auc-weighted
+                              - f1
+                              - f1-micro
+                              - f1-macro
+                              - f1-weighted
+                              - f1-samples
+                              - precision
+                              - precision-micro
+                              - precision-macro
+                              - precision-weighted
+                              - precision-samples
+                              - recall
+                              - recall-macro
+                              - recall-micro
+                              - recall-weighted
+                              - recall-samples
+                              - log-loss
+                              - auc
+                              - auc-micro
+                              - auc-macro
+                              - auc-weighted
+                              - zero-one
+                              - hamming-loss
+                              - hinge-loss
+                              - jacquard-loss
+                              - mcc
+                              - fp
+                              - fn
+                              - tn
+                              - tp
+                              - tpr
+                              - fpr
+                              - tnr
+                              - matthews-corr-coef
+                              - explained-variance
+                              - max-error
+                              - mae
+                              - mse
+                              - msle
+                              - rmse
+                              - rmsle
+                              - median-absolute-error
+                              - r2
+                              - adj-r2
+                              - mean_poisson_deviance
+                              - mean-gamma-deviance
+                              - mean-tweedie-deviance
+                              - mape
+                              - maze
+                              - mdape
+                              - smape
+                              - adjusted-mutual-info-score
+                              - adjusted-rand-score
+                              - completeness-score
+                              - fowlkes-mallows-score
+                              - homogeneity-score
+                              - mutual-info-score
+                              - normalized-mutual-info-score
+                              - v-measure-score
+                              - p50-latency
+                              - p95-latency
+                              - p99-latency
+                              - cpu
+                              - gpu
+                              - mem
+                              - gpu-mem
+                              - req-per-sec
+                              - uncertain-prediction-percent
+                              - none
+                              - ks
+                              - psi
+                              - wasserstein-distance
+                              - kl-divergenece
+                              - jensen-shannon-distance
+                              type: string
+                            min:
+                              description: Minimum range
+                              format: float
+                              type: number
+                            strictMax:
+                              type: boolean
+                            strictMin:
+                              type: boolean
+                            tags:
+                              description: The test case tags, used for filtering.
+                                Optional Test Tags
+                              items:
+                                type: string
+                              type: array
+                          required:
+                          - assertThat
+                          type: object
+                        type: array
+                    type: object
+                  enabled:
+                    default: false
+                    description: Indicates if model monitoring is enabled for the
+                      model
+                    type: boolean
+                  outlierDetectionModelRef:
+                    description: Reference to a model that will be used for outlier
+                      detection. If empty, an outlier detection model.
+                    properties:
+                      apiVersion:
+                        description: API version of the referent.
+                        type: string
+                      fieldPath:
+                        description: 'If referring to a piece of an object instead
+                          of an entire object, this string should contain a valid
+                          JSON/Go field access statement, such as desiredState.manifest.containers[2].
+                          For example, if the object reference is to a container within
+                          a pod, this would take on a value like: "spec.containers{name}"
+                          (where "name" refers to the name of the container that triggered
+                          the event) or if no container name is specified "spec.containers[2]"
+                          (container with index 2 in this pod). This syntax is chosen
+                          only to have some well-defined way of referencing a part
+                          of an object. TODO: this design is not final and this field
+                          is subject to change in the future.'
+                        type: string
+                      kind:
+                        description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                        type: string
+                      name:
+                        description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                        type: string
+                      namespace:
+                        description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                        type: string
+                      resourceVersion:
+                        description: 'Specific resourceVersion to which this reference
+                          is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                        type: string
+                      uid:
+                        description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                        type: string
+                    type: object
+                  schedule:
+                    description: The schedule on which model monitoring computations
+                      will be performed
+                    properties:
+                      cron:
+                        description: The cron string of the schedule. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm
+                          for more information
+                        type: string
+                      enabled:
+                        default: false
+                        description: Indicates if the schedule is enabled and the
+                          Jobs associated it will be created at the specified time
+                        type: boolean
+                      endTime:
+                        description: The time of the day when the schedule is expected
+                          to conclude
+                        format: date-time
+                        type: string
+                      startTime:
+                        description: The time of the day when the schedule will be
+                          executed
+                        format: date-time
+                        type: string
+                      type:
+                        description: The type of schedule, which can be a frequency
+                          interval or a cron expression
+                        enum:
+                        - now
+                        - once
+                        - hourly
+                        - daily
+                        - weekly
+                        - monthly
+                        - yearly
+                        - cron
+                        type: string
+                    type: object
+                type: object
               fastSlow:
                 description: Backward curtain
                 properties:
@@ -543,142 +842,11 @@ spec:
                     format: int32
                     type: integer
                 type: object
-              models:
-                description: The collection of model deployment specifications that
-                  define which Model resources will be deployed to the Predictor service
-                  and how they will be deployed. Each model should be trained with
-                  the same type of dataset and possess a unique version
-                items:
-                  description: ModelDeploymentSpec describes how a single model should
-                    be deployed with a Predictor, and how prediction traffic will
-                    be routed to the model
-                  properties:
-                    approvedAt:
-                      description: The time of approval
-                      format: date-time
-                      type: string
-                    approvedBy:
-                      description: The approver account name
-                      properties:
-                        apiVersion:
-                          description: API version of the referent.
-                          type: string
-                        fieldPath:
-                          description: 'If referring to a piece of an object instead
-                            of an entire object, this string should contain a valid
-                            JSON/Go field access statement, such as desiredState.manifest.containers[2].
-                            For example, if the object reference is to a container
-                            within a pod, this would take on a value like: "spec.containers{name}"
-                            (where "name" refers to the name of the container that
-                            triggered the event) or if no container name is specified
-                            "spec.containers[2]" (container with index 2 in this pod).
-                            This syntax is chosen only to have some well-defined way
-                            of referencing a part of an object. TODO: this design
-                            is not final and this field is subject to change in the
-                            future.'
-                          type: string
-                        kind:
-                          description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
-                          type: string
-                        name:
-                          description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
-                          type: string
-                        namespace:
-                          description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
-                          type: string
-                        resourceVersion:
-                          description: 'Specific resourceVersion to which this reference
-                            is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
-                          type: string
-                        uid:
-                          description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
-                          type: string
-                      type: object
-                    modelRef:
-                      description: The reference to a Model resource which has been
-                        packaged and exists in the same Data Product as the Predictor
-                        which specifies the ModelDeploymentSpec
-                      properties:
-                        apiVersion:
-                          description: API version of the referent.
-                          type: string
-                        fieldPath:
-                          description: 'If referring to a piece of an object instead
-                            of an entire object, this string should contain a valid
-                            JSON/Go field access statement, such as desiredState.manifest.containers[2].
-                            For example, if the object reference is to a container
-                            within a pod, this would take on a value like: "spec.containers{name}"
-                            (where "name" refers to the name of the container that
-                            triggered the event) or if no container name is specified
-                            "spec.containers[2]" (container with index 2 in this pod).
-                            This syntax is chosen only to have some well-defined way
-                            of referencing a part of an object. TODO: this design
-                            is not final and this field is subject to change in the
-                            future.'
-                          type: string
-                        kind:
-                          description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
-                          type: string
-                        name:
-                          description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
-                          type: string
-                        namespace:
-                          description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
-                          type: string
-                        resourceVersion:
-                          description: 'Specific resourceVersion to which this reference
-                            is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
-                          type: string
-                        uid:
-                          description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
-                          type: string
-                      type: object
-                    modelVersion:
-                      description: The version of the model, derived from the Study
-                        which created it
-                      type: string
-                    mountTar:
-                      default: true
-                      description: MountTar means that we would mount the model tar
-                        file. Else we would use baked image.
-                      type: boolean
-                    port:
-                      default: 8080
-                      description: the port of the model service.
-                      format: int32
-                      type: integer
-                    role:
-                      default: champion
-                      description: Role denotes the role of this model
-                      enum:
-                      - champion
-                      - challenger
-                      - shadow
-                      type: string
-                    traffic:
-                      description: The minimum percentage (0 through 100) of traffic
-                        that will be served by the model
-                      format: int32
-                      maximum: 100
-                      minimum: 0
-                      type: integer
-                    trafficSelector:
-                      description: TrafficSelector is a filter on the traffic to this
-                        model
-                      type: string
-                  type: object
-                type: array
-              monitor:
-                description: Monitor spec specify the monitor for this predictor.
+              groundTruth:
+                description: Spec for the ground truth process.
                 properties:
-                  enabled:
-                    default: false
-                    description: Indicates if model monitoring is enabled for the
-                      model
-                    type: boolean
-                  notifierRef:
-                    description: NotifierRef references a Notifier resource that will
-                      be triggered in the case that a concept or data drift is detected
+                  GroundTrueDatasetRef:
+                    description: Reference to the labeled ground true dataset
                     properties:
                       apiVersion:
                         description: API version of the referent.
@@ -713,9 +881,9 @@ spec:
                         description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                         type: string
                     type: object
-                  outlierDetectionModelRef:
-                    description: Reference to a model that will be used for outlier
-                      detection. If empty, an outlier detection model.
+                  TrainingDatasetRef:
+                    description: Reference to the training dataset for the champion
+                      model.
                     properties:
                       apiVersion:
                         description: API version of the referent.
@@ -750,44 +918,7 @@ spec:
                         description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                         type: string
                     type: object
-                  schedule:
-                    description: The schedule on which model monitoring computations
-                      will be performed
-                    properties:
-                      cron:
-                        description: The cron string of the schedule. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm
-                          for more information
-                        type: string
-                      enabled:
-                        default: false
-                        description: Indicates if the schedule is enabled and the
-                          Jobs associated it will be created at the specified time
-                        type: boolean
-                      endTime:
-                        description: The time of the day when the schedule is expected
-                          to conclude
-                        format: date-time
-                        type: string
-                      startTime:
-                        description: The time of the day when the schedule will be
-                          executed
-                        format: date-time
-                        type: string
-                      type:
-                        description: The type of schedule, which can be a frequency
-                          interval or a cron expression
-                        enum:
-                        - now
-                        - once
-                        - hourly
-                        - daily
-                        - weekly
-                        - monthly
-                        - yearly
-                        - cron
-                        type: string
-                    type: object
-                  tests:
+                  driftTests:
                     description: Define the tests to run against the predictor.
                     properties:
                       enabled:
@@ -929,6 +1060,210 @@ spec:
                           type: object
                         type: array
                     type: object
+                  enabled:
+                    default: false
+                    description: Indicates if model monitoring is enabled for the
+                      model
+                    type: boolean
+                  schedule:
+                    description: The schedule on which model monitoring computations
+                      will be performed
+                    properties:
+                      cron:
+                        description: The cron string of the schedule. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm
+                          for more information
+                        type: string
+                      enabled:
+                        default: false
+                        description: Indicates if the schedule is enabled and the
+                          Jobs associated it will be created at the specified time
+                        type: boolean
+                      endTime:
+                        description: The time of the day when the schedule is expected
+                          to conclude
+                        format: date-time
+                        type: string
+                      startTime:
+                        description: The time of the day when the schedule will be
+                          executed
+                        format: date-time
+                        type: string
+                      type:
+                        description: The type of schedule, which can be a frequency
+                          interval or a cron expression
+                        enum:
+                        - now
+                        - once
+                        - hourly
+                        - daily
+                        - weekly
+                        - monthly
+                        - yearly
+                        - cron
+                        type: string
+                    type: object
+                type: object
+              models:
+                description: The collection of model deployment specifications that
+                  define which Model resources will be deployed to the Predictor service
+                  and how they will be deployed. Each model should be trained with
+                  the same type of dataset and possess a unique version
+                items:
+                  description: ModelDeploymentSpec describes how a single model should
+                    be deployed with a Predictor, and how prediction traffic will
+                    be routed to the model
+                  properties:
+                    approvedAt:
+                      description: The time of approval
+                      format: date-time
+                      type: string
+                    approvedBy:
+                      description: The approver account name
+                      properties:
+                        apiVersion:
+                          description: API version of the referent.
+                          type: string
+                        fieldPath:
+                          description: 'If referring to a piece of an object instead
+                            of an entire object, this string should contain a valid
+                            JSON/Go field access statement, such as desiredState.manifest.containers[2].
+                            For example, if the object reference is to a container
+                            within a pod, this would take on a value like: "spec.containers{name}"
+                            (where "name" refers to the name of the container that
+                            triggered the event) or if no container name is specified
+                            "spec.containers[2]" (container with index 2 in this pod).
+                            This syntax is chosen only to have some well-defined way
+                            of referencing a part of an object. TODO: this design
+                            is not final and this field is subject to change in the
+                            future.'
+                          type: string
+                        kind:
+                          description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                          type: string
+                        name:
+                          description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                          type: string
+                        namespace:
+                          description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                          type: string
+                        resourceVersion:
+                          description: 'Specific resourceVersion to which this reference
+                            is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                          type: string
+                        uid:
+                          description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                          type: string
+                      type: object
+                    modelRef:
+                      description: The reference to a Model resource which has been
+                        packaged and exists in the same Data Product as the Predictor
+                        which specifies the ModelDeploymentSpec
+                      properties:
+                        apiVersion:
+                          description: API version of the referent.
+                          type: string
+                        fieldPath:
+                          description: 'If referring to a piece of an object instead
+                            of an entire object, this string should contain a valid
+                            JSON/Go field access statement, such as desiredState.manifest.containers[2].
+                            For example, if the object reference is to a container
+                            within a pod, this would take on a value like: "spec.containers{name}"
+                            (where "name" refers to the name of the container that
+                            triggered the event) or if no container name is specified
+                            "spec.containers[2]" (container with index 2 in this pod).
+                            This syntax is chosen only to have some well-defined way
+                            of referencing a part of an object. TODO: this design
+                            is not final and this field is subject to change in the
+                            future.'
+                          type: string
+                        kind:
+                          description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                          type: string
+                        name:
+                          description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                          type: string
+                        namespace:
+                          description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                          type: string
+                        resourceVersion:
+                          description: 'Specific resourceVersion to which this reference
+                            is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                          type: string
+                        uid:
+                          description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                          type: string
+                      type: object
+                    modelVersion:
+                      description: The version of the model, derived from the Study
+                        which created it
+                      type: string
+                    mountTar:
+                      default: true
+                      description: MountTar means that we would mount the model tar
+                        file. Else we would use baked image.
+                      type: boolean
+                    port:
+                      default: 8080
+                      description: the port of the model service.
+                      format: int32
+                      type: integer
+                    role:
+                      default: champion
+                      description: Role denotes the role of this model
+                      enum:
+                      - champion
+                      - challenger
+                      - shadow
+                      type: string
+                    traffic:
+                      description: The minimum percentage (0 through 100) of traffic
+                        that will be served by the model
+                      format: int32
+                      maximum: 100
+                      minimum: 0
+                      type: integer
+                    trafficSelector:
+                      description: TrafficSelector is a filter on the traffic to this
+                        model
+                      type: string
+                  type: object
+                type: array
+              notifierRef:
+                description: NotifierRef references a Notifier resource that will
+                  be triggered in the case that a concept or data drift is detected
+                properties:
+                  apiVersion:
+                    description: API version of the referent.
+                    type: string
+                  fieldPath:
+                    description: 'If referring to a piece of an object instead of
+                      an entire object, this string should contain a valid JSON/Go
+                      field access statement, such as desiredState.manifest.containers[2].
+                      For example, if the object reference is to a container within
+                      a pod, this would take on a value like: "spec.containers{name}"
+                      (where "name" refers to the name of the container that triggered
+                      the event) or if no container name is specified "spec.containers[2]"
+                      (container with index 2 in this pod). This syntax is chosen
+                      only to have some well-defined way of referencing a part of
+                      an object. TODO: this design is not final and this field is
+                      subject to change in the future.'
+                    type: string
+                  kind:
+                    description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                    type: string
+                  name:
+                    description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                    type: string
+                  namespace:
+                    description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                    type: string
+                  resourceVersion:
+                    description: 'Specific resourceVersion to which this reference
+                      is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                    type: string
+                  uid:
+                    description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                    type: string
                 type: object
               owner:
                 default: no-one
@@ -1479,6 +1814,193 @@ spec:
                   - type
                   type: object
                 type: array
+              drift:
+                description: The result of running the last monitor.
+                properties:
+                  lastRun:
+                    format: date-time
+                    type: string
+                  results:
+                    properties:
+                      errors:
+                        description: Total number of assertion errors.
+                        format: int32
+                        type: integer
+                      failures:
+                        description: Total number of failures. A failure is an unplanned
+                          error, e.g. cannot connect to a dataset
+                        format: int32
+                        type: integer
+                      fixture:
+                        description: A reference to the object under test. Best practice
+                          is to have one suite for an object
+                        properties:
+                          apiVersion:
+                            description: API version of the referent.
+                            type: string
+                          fieldPath:
+                            description: 'If referring to a piece of an object instead
+                              of an entire object, this string should contain a valid
+                              JSON/Go field access statement, such as desiredState.manifest.containers[2].
+                              For example, if the object reference is to a container
+                              within a pod, this would take on a value like: "spec.containers{name}"
+                              (where "name" refers to the name of the container that
+                              triggered the event) or if no container name is specified
+                              "spec.containers[2]" (container with index 2 in this
+                              pod). This syntax is chosen only to have some well-defined
+                              way of referencing a part of an object. TODO: this design
+                              is not final and this field is subject to change in
+                              the future.'
+                            type: string
+                          kind:
+                            description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                            type: string
+                          name:
+                            description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                            type: string
+                          namespace:
+                            description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                            type: string
+                          resourceVersion:
+                            description: 'Specific resourceVersion to which this reference
+                              is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                            type: string
+                          uid:
+                            description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                            type: string
+                        type: object
+                      startTime:
+                        description: Start time of running the suite
+                        format: date-time
+                        type: string
+                      stopTime:
+                        description: Stop time of running the suite.
+                        format: date-time
+                        type: string
+                      tests:
+                        description: The result of executing the test suite. The result
+                          contain one result object per test case.
+                        items:
+                          description: Result for a specific case
+                          properties:
+                            actual:
+                              description: Actual value of the metric
+                              properties:
+                                metric:
+                                  description: The metric type name (e.g. F1 / Accuracy)
+                                  enum:
+                                  - accuracy
+                                  - average-precision
+                                  - balanced-accuracy
+                                  - pr-auc
+                                  - pr-auc-micro
+                                  - pr-auc-macro
+                                  - pr-auc-weighted
+                                  - f1
+                                  - f1-micro
+                                  - f1-macro
+                                  - f1-weighted
+                                  - f1-samples
+                                  - precision
+                                  - precision-micro
+                                  - precision-macro
+                                  - precision-weighted
+                                  - precision-samples
+                                  - recall
+                                  - recall-macro
+                                  - recall-micro
+                                  - recall-weighted
+                                  - recall-samples
+                                  - log-loss
+                                  - auc
+                                  - auc-micro
+                                  - auc-macro
+                                  - auc-weighted
+                                  - zero-one
+                                  - hamming-loss
+                                  - hinge-loss
+                                  - jacquard-loss
+                                  - mcc
+                                  - fp
+                                  - fn
+                                  - tn
+                                  - tp
+                                  - tpr
+                                  - fpr
+                                  - tnr
+                                  - matthews-corr-coef
+                                  - explained-variance
+                                  - max-error
+                                  - mae
+                                  - mse
+                                  - msle
+                                  - rmse
+                                  - rmsle
+                                  - median-absolute-error
+                                  - r2
+                                  - adj-r2
+                                  - mean_poisson_deviance
+                                  - mean-gamma-deviance
+                                  - mean-tweedie-deviance
+                                  - mape
+                                  - maze
+                                  - mdape
+                                  - smape
+                                  - adjusted-mutual-info-score
+                                  - adjusted-rand-score
+                                  - completeness-score
+                                  - fowlkes-mallows-score
+                                  - homogeneity-score
+                                  - mutual-info-score
+                                  - normalized-mutual-info-score
+                                  - v-measure-score
+                                  - p50-latency
+                                  - p95-latency
+                                  - p99-latency
+                                  - cpu
+                                  - gpu
+                                  - mem
+                                  - gpu-mem
+                                  - req-per-sec
+                                  - uncertain-prediction-percent
+                                  - none
+                                  - ks
+                                  - psi
+                                  - wasserstein-distance
+                                  - kl-divergenece
+                                  - jensen-shannon-distance
+                                  type: string
+                                stddev:
+                                  description: Metric standard diviation
+                                  type: number
+                                value:
+                                  description: The value of the metric
+                                  type: number
+                                valueSet:
+                                  description: Capture a set of values.
+                                  items:
+                                    type: string
+                                  type: array
+                              required:
+                              - metric
+                              - value
+                              type: object
+                            error:
+                              description: An error occur if the system cannot execute
+                                the test case (e.g. connection error).
+                              type: boolean
+                            failed:
+                              description: A failure occur on assertion failure
+                              type: boolean
+                            failureMsg:
+                              description: An optional
+                              type: string
+                          required:
+                          - failureMsg
+                          type: object
+                        type: array
+                    type: object
+                type: object
               endPoint:
                 description: The end-point URL of the Predictor
                 type: string
@@ -1490,6 +2012,193 @@ spec:
                 description: In the case of failure, the Predictor resource controller
                   will set this field with a failure reason
                 type: string
+              groundTruth:
+                description: The result of running the last monitor.
+                properties:
+                  lastRun:
+                    format: date-time
+                    type: string
+                  results:
+                    properties:
+                      errors:
+                        description: Total number of assertion errors.
+                        format: int32
+                        type: integer
+                      failures:
+                        description: Total number of failures. A failure is an unplanned
+                          error, e.g. cannot connect to a dataset
+                        format: int32
+                        type: integer
+                      fixture:
+                        description: A reference to the object under test. Best practice
+                          is to have one suite for an object
+                        properties:
+                          apiVersion:
+                            description: API version of the referent.
+                            type: string
+                          fieldPath:
+                            description: 'If referring to a piece of an object instead
+                              of an entire object, this string should contain a valid
+                              JSON/Go field access statement, such as desiredState.manifest.containers[2].
+                              For example, if the object reference is to a container
+                              within a pod, this would take on a value like: "spec.containers{name}"
+                              (where "name" refers to the name of the container that
+                              triggered the event) or if no container name is specified
+                              "spec.containers[2]" (container with index 2 in this
+                              pod). This syntax is chosen only to have some well-defined
+                              way of referencing a part of an object. TODO: this design
+                              is not final and this field is subject to change in
+                              the future.'
+                            type: string
+                          kind:
+                            description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                            type: string
+                          name:
+                            description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                            type: string
+                          namespace:
+                            description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                            type: string
+                          resourceVersion:
+                            description: 'Specific resourceVersion to which this reference
+                              is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                            type: string
+                          uid:
+                            description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                            type: string
+                        type: object
+                      startTime:
+                        description: Start time of running the suite
+                        format: date-time
+                        type: string
+                      stopTime:
+                        description: Stop time of running the suite.
+                        format: date-time
+                        type: string
+                      tests:
+                        description: The result of executing the test suite. The result
+                          contain one result object per test case.
+                        items:
+                          description: Result for a specific case
+                          properties:
+                            actual:
+                              description: Actual value of the metric
+                              properties:
+                                metric:
+                                  description: The metric type name (e.g. F1 / Accuracy)
+                                  enum:
+                                  - accuracy
+                                  - average-precision
+                                  - balanced-accuracy
+                                  - pr-auc
+                                  - pr-auc-micro
+                                  - pr-auc-macro
+                                  - pr-auc-weighted
+                                  - f1
+                                  - f1-micro
+                                  - f1-macro
+                                  - f1-weighted
+                                  - f1-samples
+                                  - precision
+                                  - precision-micro
+                                  - precision-macro
+                                  - precision-weighted
+                                  - precision-samples
+                                  - recall
+                                  - recall-macro
+                                  - recall-micro
+                                  - recall-weighted
+                                  - recall-samples
+                                  - log-loss
+                                  - auc
+                                  - auc-micro
+                                  - auc-macro
+                                  - auc-weighted
+                                  - zero-one
+                                  - hamming-loss
+                                  - hinge-loss
+                                  - jacquard-loss
+                                  - mcc
+                                  - fp
+                                  - fn
+                                  - tn
+                                  - tp
+                                  - tpr
+                                  - fpr
+                                  - tnr
+                                  - matthews-corr-coef
+                                  - explained-variance
+                                  - max-error
+                                  - mae
+                                  - mse
+                                  - msle
+                                  - rmse
+                                  - rmsle
+                                  - median-absolute-error
+                                  - r2
+                                  - adj-r2
+                                  - mean_poisson_deviance
+                                  - mean-gamma-deviance
+                                  - mean-tweedie-deviance
+                                  - mape
+                                  - maze
+                                  - mdape
+                                  - smape
+                                  - adjusted-mutual-info-score
+                                  - adjusted-rand-score
+                                  - completeness-score
+                                  - fowlkes-mallows-score
+                                  - homogeneity-score
+                                  - mutual-info-score
+                                  - normalized-mutual-info-score
+                                  - v-measure-score
+                                  - p50-latency
+                                  - p95-latency
+                                  - p99-latency
+                                  - cpu
+                                  - gpu
+                                  - mem
+                                  - gpu-mem
+                                  - req-per-sec
+                                  - uncertain-prediction-percent
+                                  - none
+                                  - ks
+                                  - psi
+                                  - wasserstein-distance
+                                  - kl-divergenece
+                                  - jensen-shannon-distance
+                                  type: string
+                                stddev:
+                                  description: Metric standard diviation
+                                  type: number
+                                value:
+                                  description: The value of the metric
+                                  type: number
+                                valueSet:
+                                  description: Capture a set of values.
+                                  items:
+                                    type: string
+                                  type: array
+                              required:
+                              - metric
+                              - value
+                              type: object
+                            error:
+                              description: An error occur if the system cannot execute
+                                the test case (e.g. connection error).
+                              type: boolean
+                            failed:
+                              description: A failure occur on assertion failure
+                              type: boolean
+                            failureMsg:
+                              description: An optional
+                              type: string
+                          required:
+                          - failureMsg
+                          type: object
+                        type: array
+                    type: object
+                type: object
               history:
                 description: The collection of historical records of models deployed
                   to the Predictor, used internally to roll-back models
@@ -1523,186 +2232,6 @@ spec:
                       type: string
                   type: object
                 type: array
-              lastMonitorResults:
-                description: The result of running the last monitor.
-                properties:
-                  errors:
-                    description: Total number of assertion errors.
-                    format: int32
-                    type: integer
-                  failures:
-                    description: Total number of failures. A failure is an unplanned
-                      error, e.g. cannot connect to a dataset
-                    format: int32
-                    type: integer
-                  fixture:
-                    description: A reference to the object under test. Best practice
-                      is to have one suite for an object
-                    properties:
-                      apiVersion:
-                        description: API version of the referent.
-                        type: string
-                      fieldPath:
-                        description: 'If referring to a piece of an object instead
-                          of an entire object, this string should contain a valid
-                          JSON/Go field access statement, such as desiredState.manifest.containers[2].
-                          For example, if the object reference is to a container within
-                          a pod, this would take on a value like: "spec.containers{name}"
-                          (where "name" refers to the name of the container that triggered
-                          the event) or if no container name is specified "spec.containers[2]"
-                          (container with index 2 in this pod). This syntax is chosen
-                          only to have some well-defined way of referencing a part
-                          of an object. TODO: this design is not final and this field
-                          is subject to change in the future.'
-                        type: string
-                      kind:
-                        description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
-                        type: string
-                      name:
-                        description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
-                        type: string
-                      namespace:
-                        description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
-                        type: string
-                      resourceVersion:
-                        description: 'Specific resourceVersion to which this reference
-                          is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
-                        type: string
-                      uid:
-                        description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
-                        type: string
-                    type: object
-                  startTime:
-                    description: Start time of running the suite
-                    format: date-time
-                    type: string
-                  stopTime:
-                    description: Stop time of running the suite.
-                    format: date-time
-                    type: string
-                  tests:
-                    description: The result of executing the test suite. The result
-                      contain one result object per test case.
-                    items:
-                      description: Result for a specific case
-                      properties:
-                        actual:
-                          description: Actual value of the metric
-                          properties:
-                            metric:
-                              description: The metric type name (e.g. F1 / Accuracy)
-                              enum:
-                              - accuracy
-                              - average-precision
-                              - balanced-accuracy
-                              - pr-auc
-                              - pr-auc-micro
-                              - pr-auc-macro
-                              - pr-auc-weighted
-                              - f1
-                              - f1-micro
-                              - f1-macro
-                              - f1-weighted
-                              - f1-samples
-                              - precision
-                              - precision-micro
-                              - precision-macro
-                              - precision-weighted
-                              - precision-samples
-                              - recall
-                              - recall-macro
-                              - recall-micro
-                              - recall-weighted
-                              - recall-samples
-                              - log-loss
-                              - auc
-                              - auc-micro
-                              - auc-macro
-                              - auc-weighted
-                              - zero-one
-                              - hamming-loss
-                              - hinge-loss
-                              - jacquard-loss
-                              - mcc
-                              - fp
-                              - fn
-                              - tn
-                              - tp
-                              - tpr
-                              - fpr
-                              - tnr
-                              - matthews-corr-coef
-                              - explained-variance
-                              - max-error
-                              - mae
-                              - mse
-                              - msle
-                              - rmse
-                              - rmsle
-                              - median-absolute-error
-                              - r2
-                              - adj-r2
-                              - mean_poisson_deviance
-                              - mean-gamma-deviance
-                              - mean-tweedie-deviance
-                              - mape
-                              - maze
-                              - mdape
-                              - smape
-                              - adjusted-mutual-info-score
-                              - adjusted-rand-score
-                              - completeness-score
-                              - fowlkes-mallows-score
-                              - homogeneity-score
-                              - mutual-info-score
-                              - normalized-mutual-info-score
-                              - v-measure-score
-                              - p50-latency
-                              - p95-latency
-                              - p99-latency
-                              - cpu
-                              - gpu
-                              - mem
-                              - gpu-mem
-                              - req-per-sec
-                              - uncertain-prediction-percent
-                              - none
-                              - ks
-                              - psi
-                              - wasserstein-distance
-                              - kl-divergenece
-                              - jensen-shannon-distance
-                              type: string
-                            stddev:
-                              description: Metric standard diviation
-                              type: number
-                            value:
-                              description: The value of the metric
-                              type: number
-                            valueSet:
-                              description: Capture a set of values.
-                              items:
-                                type: string
-                              type: array
-                          required:
-                          - metric
-                          - value
-                          type: object
-                        error:
-                          description: An error occur if the system cannot execute
-                            the test case (e.g. connection error).
-                          type: boolean
-                        failed:
-                          description: A failure occur on assertion failure
-                          type: boolean
-                        failureMsg:
-                          description: An optional
-                          type: string
-                      required:
-                      - failureMsg
-                      type: object
-                    type: array
-                type: object
               lastPredictionDataset:
                 description: The last time that a prediction dataset was created
                 format: date-time

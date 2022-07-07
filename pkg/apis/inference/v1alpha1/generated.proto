@@ -489,6 +489,38 @@ message DataAppStatus {
   repeated DataAppCondition conditions = 7;
 }
 
+message DriftDetectorSpec {
+  // Indicates if model monitoring is enabled for the model
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool enabled = 1;
+
+  // Reference to the live FeatureHistogram, the live FeatureHistogram is updated by the predictor for each prediction.
+  optional k8s.io.api.core.v1.ObjectReference liveHistogramRef = 2;
+
+  // Reference to the training histogram ref. The training FeatureHistogram is created
+  optional k8s.io.api.core.v1.ObjectReference trainingHistogramRef = 3;
+
+  // Define the tests to run against the predictor.
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite driftTests = 6;
+
+  // The schedule on which model monitoring computations will be performed
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 8;
+
+  // Reference to a model that will be used for outlier detection. If empty, an outlier detection model.
+  // +kubebuilder:validation:Optional
+  optional k8s.io.api.core.v1.ObjectReference outlierDetectionModelRef = 10;
+}
+
+message DriftDetectorStatus {
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult results = 1;
+
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 2;
+}
+
 // Fast slow model mode, use two models as the champion.
 // All request are send first to the fast model.
 message FastSlowModelSpec {
@@ -537,6 +569,34 @@ message ForwardCurtainSpec {
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
   optional int32 percent = 3;
+}
+
+message GroundTruthTestSpec {
+  // Indicates if model monitoring is enabled for the model
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool enabled = 1;
+
+  // Reference to the labeled ground true dataset
+  optional k8s.io.api.core.v1.ObjectReference groundTruthDatasetRef = 2;
+
+  // Reference to the training dataset for the champion model.
+  optional k8s.io.api.core.v1.ObjectReference trainingDatasetRef = 3;
+
+  // Define the tests to run against the predictor.
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite driftTests = 6;
+
+  // The schedule on which model monitoring computations will be performed
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 8;
+}
+
+message GroundTruthTestStatus {
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult results = 1;
+
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 2;
 }
 
 // KubernetesObjectStatus describes the location and status of a Kubernetes-native resource
@@ -826,7 +886,7 @@ message PredictionSpec {
 
   // Tests specifies a collection of metrics that will be computed for each prediction
   // if the Labeled field of the Prediction is enabled
-  optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTest test = 8;
+  optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuite test = 8;
 
   // The name of the Account which created the object, which exists in the same tenant as the object
   // +kubebuilder:default:="no-one"
@@ -976,29 +1036,6 @@ message PredictorList {
   repeated Predictor items = 2;
 }
 
-// MonitorSpec defines the specification to monitor a model in production
-message PredictorMonitorSpec {
-  // Indicates if model monitoring is enabled for the model
-  // +kubebuilder:default:=false
-  // +kubebuilder:validation:Optional
-  optional bool enabled = 1;
-
-  // Define the tests to run against the predictor.
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite tests = 2;
-
-  // The schedule on which model monitoring computations will be performed
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 3;
-
-  // NotifierRef references a Notifier resource that will be triggered in the case that a concept or data drift is detected
-  // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference notifierRef = 4;
-
-  // Reference to a model that will be used for outlier detection. If empty, an outlier detection model.
-  // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference outlierDetectionModelRef = 5;
-}
-
 // PredictorSpec defines the desired state of a Predictor
 message PredictorSpec {
   // The name of the DataProductVersion which describes the version of the resource
@@ -1070,15 +1107,23 @@ message PredictorSpec {
   // The task type of the Predictor, which should match the task type of the models being served
   // +kubebuilder:default:="unknown"
   // +kubebuilder:validation:Optional
-  optional string task = 19;
+  optional string task = 17;
 
   // The prediction threshold
   // +kubebuilder:validation:Optional
-  optional double predictionThreshold = 20;
+  optional double predictionThreshold = 18;
 
-  // Monitor spec specify the monitor for this predictor.
+  // Spec for the drift detection process
   // +kubebuilder:validation:Optional
-  optional PredictorMonitorSpec monitor = 21;
+  optional DriftDetectorSpec drift = 19;
+
+  // Spec for the ground truth process.
+  // +kubebuilder:validation:Optional
+  optional GroundTruthTestSpec groundTruth = 20;
+
+  // NotifierRef references a Notifier resource that will be triggered in the case that a concept or data drift is detected
+  // +kubebuilder:validation:Optional
+  optional k8s.io.api.core.v1.ObjectReference notifierRef = 21;
 
   // Monitor spec specify the monitor for this predictor.
   // +kubebuilder:validation:Optional
@@ -1150,12 +1195,16 @@ message PredictorStatus {
 
   // The result of running the last monitor.
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult lastMonitorResults = 13;
+  optional GroundTruthTestStatus groundTruth = 13;
+
+  // The result of running the last monitor.
+  // +kubebuilder:validation:Optional
+  optional DriftDetectorStatus drift = 14;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated PredictorCondition conditions = 14;
+  repeated PredictorCondition conditions = 15;
 }
 
 // PredictorletStatus describes the current state of a prediction proxy service associated with a Predictor

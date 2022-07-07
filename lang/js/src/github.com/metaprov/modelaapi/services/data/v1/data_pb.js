@@ -65,10 +65,6 @@ goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.data.v1.DsCreate
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.data.v1.DsCreateStudyProfileResponse', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.data.v1.DsDatasetProfileRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.data.v1.DsDatasetProfileResponse', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftResponse', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionResponse', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.data.v1.DsExecuteSqlRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.data.v1.DsExecuteSqlResponse', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.data.v1.DsGenerateDatasetRequest', null, global);
@@ -90,6 +86,8 @@ goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.data.v1.DsReadFr
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.data.v1.DsReadTextCorpusRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDataPipelineRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDataPipelineResponse', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsResponse', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.data.v1.DsRunRecipeRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.data.v1.DsRunRecipeResponse', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.data.v1.DsShutdownRequest', null, global);
@@ -104,12 +102,14 @@ goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.data.v1.DsStudyE
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.data.v1.DsStudyEndedResponse', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.data.v1.DsTestConnectionRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.data.v1.DsTestConnectionResponse', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetResponse', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelResponse', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.data.v1.DsWriteFileRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.data.v1.PartitionValues', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsResponse', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsResponse', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsResponse', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.data.v1.SaveOptimizerDBRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.data.v1.SaveOptimizerDBResponse', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.data.v1.TellModelRequest', null, global);
@@ -607,90 +607,6 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
-};
-goog.inherits(proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
-  proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest.displayName = 'proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest';
-}
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
-};
-goog.inherits(proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionResponse, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
-  proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionResponse.displayName = 'proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionResponse';
-}
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
-};
-goog.inherits(proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
-  proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.displayName = 'proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest';
-}
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
-};
-goog.inherits(proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftResponse, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
-  proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftResponse.displayName = 'proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftResponse';
-}
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
 proto.github.com.metaprov.modelaapi.services.data.v1.DsCreateStudyProfileRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.services.data.v1.DsCreateStudyProfileRequest.repeatedFields_, null);
 };
@@ -733,16 +649,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest = function(opt_data) {
+proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest.displayName = 'proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest';
+  proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsRequest.displayName = 'proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -754,16 +670,142 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetResponse = function(opt_data) {
+proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetResponse, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetResponse.displayName = 'proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetResponse';
+  proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsResponse.displayName = 'proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsRequest.displayName = 'proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsResponse.displayName = 'proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest.displayName = 'proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsResponse.displayName = 'proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest.displayName = 'proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsResponse.displayName = 'proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1436,48 +1478,6 @@ if (goog.DEBUG && !COMPILED) {
    * @override
    */
   proto.github.com.metaprov.modelaapi.services.data.v1.DsShutdownResponse.displayName = 'proto.github.com.metaprov.modelaapi.services.data.v1.DsShutdownResponse';
-}
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
-};
-goog.inherits(proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
-  proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest.displayName = 'proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest';
-}
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelResponse.repeatedFields_, null);
-};
-goog.inherits(proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelResponse, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
-  proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelResponse.displayName = 'proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -8542,1525 +8542,6 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsMergeForecastFileResponse
 
 
 
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    product: (f = msg.getProduct()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.toObject(includeInstance, f),
-    version: (f = msg.getVersion()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.toObject(includeInstance, f),
-    datasource: (f = msg.getDatasource()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.toObject(includeInstance, f),
-    predictionsdataset: (f = msg.getPredictionsdataset()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.toObject(includeInstance, f),
-    study: (f = msg.getStudy()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.toObject(includeInstance, f),
-    model: (f = msg.getModel()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.toObject(includeInstance, f),
-    connection: (f = msg.getConnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
-    bucket: (f = msg.getBucket()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.toObject(includeInstance, f),
-    secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : [],
-    groundtruthdataset: (f = msg.getGroundtruthdataset()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.toObject(includeInstance, f),
-    tests: (f = msg.getTests()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.toObject(includeInstance, f)
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest;
-  return proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.deserializeBinaryFromReader);
-      msg.setProduct(value);
-      break;
-    case 2:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.deserializeBinaryFromReader);
-      msg.setVersion(value);
-      break;
-    case 3:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.deserializeBinaryFromReader);
-      msg.setDatasource(value);
-      break;
-    case 4:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.deserializeBinaryFromReader);
-      msg.setPredictionsdataset(value);
-      break;
-    case 5:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.deserializeBinaryFromReader);
-      msg.setStudy(value);
-      break;
-    case 6:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.deserializeBinaryFromReader);
-      msg.setModel(value);
-      break;
-    case 8:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.deserializeBinaryFromReader);
-      msg.setConnection(value);
-      break;
-    case 9:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.deserializeBinaryFromReader);
-      msg.setBucket(value);
-      break;
-    case 10:
-      var value = msg.getSecretMap();
-      reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBytes, null, "", "");
-         });
-      break;
-    case 11:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.deserializeBinaryFromReader);
-      msg.setGroundtruthdataset(value);
-      break;
-    case 12:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.deserializeBinaryFromReader);
-      msg.setTests(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = message.getProduct();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.serializeBinaryToWriter
-    );
-  }
-  f = message.getVersion();
-  if (f != null) {
-    writer.writeMessage(
-      2,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.serializeBinaryToWriter
-    );
-  }
-  f = message.getDatasource();
-  if (f != null) {
-    writer.writeMessage(
-      3,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.serializeBinaryToWriter
-    );
-  }
-  f = message.getPredictionsdataset();
-  if (f != null) {
-    writer.writeMessage(
-      4,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.serializeBinaryToWriter
-    );
-  }
-  f = message.getStudy();
-  if (f != null) {
-    writer.writeMessage(
-      5,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.serializeBinaryToWriter
-    );
-  }
-  f = message.getModel();
-  if (f != null) {
-    writer.writeMessage(
-      6,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.serializeBinaryToWriter
-    );
-  }
-  f = message.getConnection();
-  if (f != null) {
-    writer.writeMessage(
-      8,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.serializeBinaryToWriter
-    );
-  }
-  f = message.getBucket();
-  if (f != null) {
-    writer.writeMessage(
-      9,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.serializeBinaryToWriter
-    );
-  }
-  f = message.getSecretMap(true);
-  if (f && f.getLength() > 0) {
-    f.serializeBinary(10, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
-  }
-  f = message.getGroundtruthdataset();
-  if (f != null) {
-    writer.writeMessage(
-      11,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.serializeBinaryToWriter
-    );
-  }
-  f = message.getTests();
-  if (f != null) {
-    writer.writeMessage(
-      12,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.serializeBinaryToWriter
-    );
-  }
-};
-
-
-/**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct product = 1;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest.prototype.getProduct = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct, 1));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest.prototype.setProduct = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest.prototype.clearProduct = function() {
-  return this.setProduct(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest.prototype.hasProduct = function() {
-  return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion version = 2;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest.prototype.getVersion = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion, 2));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest.prototype.setVersion = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest.prototype.clearVersion = function() {
-  return this.setVersion(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest.prototype.hasVersion = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 3;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest.prototype.getDatasource = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource, 3));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest.prototype.setDatasource = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest.prototype.clearDatasource = function() {
-  return this.setDatasource(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest.prototype.hasDatasource = function() {
-  return jspb.Message.getField(this, 3) != null;
-};
-
-
-/**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset predictionsDataset = 4;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest.prototype.getPredictionsdataset = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset, 4));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest.prototype.setPredictionsdataset = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest.prototype.clearPredictionsdataset = function() {
-  return this.setPredictionsdataset(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest.prototype.hasPredictionsdataset = function() {
-  return jspb.Message.getField(this, 4) != null;
-};
-
-
-/**
- * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study study = 5;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest.prototype.getStudy = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study, 5));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest.prototype.setStudy = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest.prototype.clearStudy = function() {
-  return this.setStudy(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest.prototype.hasStudy = function() {
-  return jspb.Message.getField(this, 5) != null;
-};
-
-
-/**
- * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model model = 6;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest.prototype.getModel = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model, 6));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest.prototype.setModel = function(value) {
-  return jspb.Message.setWrapperField(this, 6, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest.prototype.clearModel = function() {
-  return this.setModel(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest.prototype.hasModel = function() {
-  return jspb.Message.getField(this, 6) != null;
-};
-
-
-/**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection = 8;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest.prototype.getConnection = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection, 8));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest.prototype.setConnection = function(value) {
-  return jspb.Message.setWrapperField(this, 8, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest.prototype.clearConnection = function() {
-  return this.setConnection(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest.prototype.hasConnection = function() {
-  return jspb.Message.getField(this, 8) != null;
-};
-
-
-/**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 9;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest.prototype.getBucket = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket, 9));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest.prototype.setBucket = function(value) {
-  return jspb.Message.setWrapperField(this, 9, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest.prototype.clearBucket = function() {
-  return this.setBucket(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest.prototype.hasBucket = function() {
-  return jspb.Message.getField(this, 9) != null;
-};
-
-
-/**
- * map<string, bytes> secret = 10;
- * @param {boolean=} opt_noLazyCreate Do not create the map if
- * empty, instead returning `undefined`
- * @return {!jspb.Map<string,!(string|Uint8Array)>}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest.prototype.getSecretMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,!(string|Uint8Array)>} */ (
-      jspb.Message.getMapField(this, 10, opt_noLazyCreate,
-      null));
-};
-
-
-/**
- * Clears values from the map. The map will be non-null.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest.prototype.clearSecretMap = function() {
-  this.getSecretMap().clear();
-  return this;};
-
-
-/**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset groundTruthDataset = 11;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest.prototype.getGroundtruthdataset = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset, 11));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest.prototype.setGroundtruthdataset = function(value) {
-  return jspb.Message.setWrapperField(this, 11, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest.prototype.clearGroundtruthdataset = function() {
-  return this.setGroundtruthdataset(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest.prototype.hasGroundtruthdataset = function() {
-  return jspb.Message.getField(this, 11) != null;
-};
-
-
-/**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite tests = 12;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest.prototype.getTests = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite, 12));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest.prototype.setTests = function(value) {
-  return jspb.Message.setWrapperField(this, 12, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest.prototype.clearTests = function() {
-  return this.setTests(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionRequest.prototype.hasTests = function() {
-  return jspb.Message.getField(this, 12) != null;
-};
-
-
-
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionResponse.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionResponse} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionResponse.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    resultsMap: (f = msg.getResultsMap()) ? f.toObject(includeInstance, undefined) : []
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionResponse}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionResponse.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionResponse;
-  return proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionResponse.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionResponse} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionResponse}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionResponse.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = msg.getResultsMap();
-      reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readFloat, null, "", 0.0);
-         });
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionResponse.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionResponse.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionResponse} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionResponse.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = message.getResultsMap(true);
-  if (f && f.getLength() > 0) {
-    f.serializeBinary(1, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeFloat);
-  }
-};
-
-
-/**
- * map<string, float> results = 1;
- * @param {boolean=} opt_noLazyCreate Do not create the map if
- * empty, instead returning `undefined`
- * @return {!jspb.Map<string,number>}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionResponse.prototype.getResultsMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,number>} */ (
-      jspb.Message.getMapField(this, 1, opt_noLazyCreate,
-      null));
-};
-
-
-/**
- * Clears values from the map. The map will be non-null.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionResponse} returns this
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsEvalPredictionResponse.prototype.clearResultsMap = function() {
-  this.getResultsMap().clear();
-  return this;};
-
-
-
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    product: (f = msg.getProduct()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.toObject(includeInstance, f),
-    version: (f = msg.getVersion()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.toObject(includeInstance, f),
-    datasource: (f = msg.getDatasource()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.toObject(includeInstance, f),
-    dataset: (f = msg.getDataset()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.toObject(includeInstance, f),
-    connection: (f = msg.getConnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
-    bucket: (f = msg.getBucket()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.toObject(includeInstance, f),
-    secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : [],
-    tests: (f = msg.getTests()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.toObject(includeInstance, f),
-    traininghistogram: (f = msg.getTraininghistogram()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.toObject(includeInstance, f),
-    livehistogram: (f = msg.getLivehistogram()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.toObject(includeInstance, f)
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest;
-  return proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.deserializeBinaryFromReader);
-      msg.setProduct(value);
-      break;
-    case 2:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.deserializeBinaryFromReader);
-      msg.setVersion(value);
-      break;
-    case 3:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.deserializeBinaryFromReader);
-      msg.setDatasource(value);
-      break;
-    case 4:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.deserializeBinaryFromReader);
-      msg.setDataset(value);
-      break;
-    case 5:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.deserializeBinaryFromReader);
-      msg.setConnection(value);
-      break;
-    case 6:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.deserializeBinaryFromReader);
-      msg.setBucket(value);
-      break;
-    case 7:
-      var value = msg.getSecretMap();
-      reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBytes, null, "", "");
-         });
-      break;
-    case 8:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.deserializeBinaryFromReader);
-      msg.setTests(value);
-      break;
-    case 9:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.deserializeBinaryFromReader);
-      msg.setTraininghistogram(value);
-      break;
-    case 10:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.deserializeBinaryFromReader);
-      msg.setLivehistogram(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = message.getProduct();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.serializeBinaryToWriter
-    );
-  }
-  f = message.getVersion();
-  if (f != null) {
-    writer.writeMessage(
-      2,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.serializeBinaryToWriter
-    );
-  }
-  f = message.getDatasource();
-  if (f != null) {
-    writer.writeMessage(
-      3,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.serializeBinaryToWriter
-    );
-  }
-  f = message.getDataset();
-  if (f != null) {
-    writer.writeMessage(
-      4,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.serializeBinaryToWriter
-    );
-  }
-  f = message.getConnection();
-  if (f != null) {
-    writer.writeMessage(
-      5,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.serializeBinaryToWriter
-    );
-  }
-  f = message.getBucket();
-  if (f != null) {
-    writer.writeMessage(
-      6,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.serializeBinaryToWriter
-    );
-  }
-  f = message.getSecretMap(true);
-  if (f && f.getLength() > 0) {
-    f.serializeBinary(7, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
-  }
-  f = message.getTests();
-  if (f != null) {
-    writer.writeMessage(
-      8,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.serializeBinaryToWriter
-    );
-  }
-  f = message.getTraininghistogram();
-  if (f != null) {
-    writer.writeMessage(
-      9,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.serializeBinaryToWriter
-    );
-  }
-  f = message.getLivehistogram();
-  if (f != null) {
-    writer.writeMessage(
-      10,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.serializeBinaryToWriter
-    );
-  }
-};
-
-
-/**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct product = 1;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.prototype.getProduct = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct, 1));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.prototype.setProduct = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.prototype.clearProduct = function() {
-  return this.setProduct(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.prototype.hasProduct = function() {
-  return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion version = 2;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.prototype.getVersion = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion, 2));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.prototype.setVersion = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.prototype.clearVersion = function() {
-  return this.setVersion(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.prototype.hasVersion = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 3;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.prototype.getDatasource = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource, 3));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.prototype.setDatasource = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.prototype.clearDatasource = function() {
-  return this.setDatasource(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.prototype.hasDatasource = function() {
-  return jspb.Message.getField(this, 3) != null;
-};
-
-
-/**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset dataset = 4;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.prototype.getDataset = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset, 4));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.prototype.setDataset = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.prototype.clearDataset = function() {
-  return this.setDataset(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.prototype.hasDataset = function() {
-  return jspb.Message.getField(this, 4) != null;
-};
-
-
-/**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection = 5;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.prototype.getConnection = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection, 5));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.prototype.setConnection = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.prototype.clearConnection = function() {
-  return this.setConnection(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.prototype.hasConnection = function() {
-  return jspb.Message.getField(this, 5) != null;
-};
-
-
-/**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 6;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.prototype.getBucket = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket, 6));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.prototype.setBucket = function(value) {
-  return jspb.Message.setWrapperField(this, 6, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.prototype.clearBucket = function() {
-  return this.setBucket(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.prototype.hasBucket = function() {
-  return jspb.Message.getField(this, 6) != null;
-};
-
-
-/**
- * map<string, bytes> secret = 7;
- * @param {boolean=} opt_noLazyCreate Do not create the map if
- * empty, instead returning `undefined`
- * @return {!jspb.Map<string,!(string|Uint8Array)>}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.prototype.getSecretMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,!(string|Uint8Array)>} */ (
-      jspb.Message.getMapField(this, 7, opt_noLazyCreate,
-      null));
-};
-
-
-/**
- * Clears values from the map. The map will be non-null.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.prototype.clearSecretMap = function() {
-  this.getSecretMap().clear();
-  return this;};
-
-
-/**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite tests = 8;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.prototype.getTests = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite, 8));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.prototype.setTests = function(value) {
-  return jspb.Message.setWrapperField(this, 8, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.prototype.clearTests = function() {
-  return this.setTests(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.prototype.hasTests = function() {
-  return jspb.Message.getField(this, 8) != null;
-};
-
-
-/**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram trainingHistogram = 9;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.prototype.getTraininghistogram = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram, 9));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.prototype.setTraininghistogram = function(value) {
-  return jspb.Message.setWrapperField(this, 9, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.prototype.clearTraininghistogram = function() {
-  return this.setTraininghistogram(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.prototype.hasTraininghistogram = function() {
-  return jspb.Message.getField(this, 9) != null;
-};
-
-
-/**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram liveHistogram = 10;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.prototype.getLivehistogram = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram, 10));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.prototype.setLivehistogram = function(value) {
-  return jspb.Message.setWrapperField(this, 10, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.prototype.clearLivehistogram = function() {
-  return this.setLivehistogram(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftRequest.prototype.hasLivehistogram = function() {
-  return jspb.Message.getField(this, 10) != null;
-};
-
-
-
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftResponse.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftResponse} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftResponse.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    result: (f = msg.getResult()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.toObject(includeInstance, f)
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftResponse}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftResponse.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftResponse;
-  return proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftResponse.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftResponse} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftResponse}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftResponse.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.deserializeBinaryFromReader);
-      msg.setResult(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftResponse.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftResponse.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftResponse} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftResponse.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = message.getResult();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.serializeBinaryToWriter
-    );
-  }
-};
-
-
-/**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult result = 1;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftResponse.prototype.getResult = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult, 1));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftResponse} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftResponse.prototype.setResult = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftResponse} returns this
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftResponse.prototype.clearResult = function() {
-  return this.setResult(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsDetectDriftResponse.prototype.hasResult = function() {
-  return jspb.Message.getField(this, 1) != null;
-};
-
-
-
 /**
  * List of repeated fields within this message type.
  * @private {!Array<number>}
@@ -10756,8 +9237,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -10766,11 +9247,11 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest.protot
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     product: (f = msg.getProduct()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.toObject(includeInstance, f),
     version: (f = msg.getVersion()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.toObject(includeInstance, f),
@@ -10792,23 +9273,23 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest.toObje
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest}
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsRequest}
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest;
-  return proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsRequest;
+  return proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest}
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsRequest}
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -10864,9 +9345,9 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest.deseri
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -10874,11 +9355,11 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest.protot
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest} message
+ * @param {!proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getProduct();
   if (f != null) {
@@ -10939,7 +9420,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest.serial
  * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct product = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct}
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest.prototype.getProduct = function() {
+proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsRequest.prototype.getProduct = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct, 1));
 };
@@ -10947,18 +9428,18 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest.protot
 
 /**
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest.prototype.setProduct = function(value) {
+proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsRequest.prototype.setProduct = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest.prototype.clearProduct = function() {
+proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsRequest.prototype.clearProduct = function() {
   return this.setProduct(undefined);
 };
 
@@ -10967,7 +9448,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest.protot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest.prototype.hasProduct = function() {
+proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsRequest.prototype.hasProduct = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -10976,7 +9457,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest.protot
  * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion version = 2;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion}
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest.prototype.getVersion = function() {
+proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsRequest.prototype.getVersion = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion, 2));
 };
@@ -10984,18 +9465,18 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest.protot
 
 /**
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest.prototype.setVersion = function(value) {
+proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsRequest.prototype.setVersion = function(value) {
   return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest.prototype.clearVersion = function() {
+proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsRequest.prototype.clearVersion = function() {
   return this.setVersion(undefined);
 };
 
@@ -11004,7 +9485,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest.protot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest.prototype.hasVersion = function() {
+proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsRequest.prototype.hasVersion = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
@@ -11013,7 +9494,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest.protot
  * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 3;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource}
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest.prototype.getDatasource = function() {
+proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsRequest.prototype.getDatasource = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource, 3));
 };
@@ -11021,18 +9502,18 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest.protot
 
 /**
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest.prototype.setDatasource = function(value) {
+proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsRequest.prototype.setDatasource = function(value) {
   return jspb.Message.setWrapperField(this, 3, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest.prototype.clearDatasource = function() {
+proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsRequest.prototype.clearDatasource = function() {
   return this.setDatasource(undefined);
 };
 
@@ -11041,7 +9522,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest.protot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest.prototype.hasDatasource = function() {
+proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsRequest.prototype.hasDatasource = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
@@ -11050,7 +9531,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest.protot
  * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset dataset = 4;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset}
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest.prototype.getDataset = function() {
+proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsRequest.prototype.getDataset = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset, 4));
 };
@@ -11058,18 +9539,18 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest.protot
 
 /**
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest.prototype.setDataset = function(value) {
+proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsRequest.prototype.setDataset = function(value) {
   return jspb.Message.setWrapperField(this, 4, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest.prototype.clearDataset = function() {
+proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsRequest.prototype.clearDataset = function() {
   return this.setDataset(undefined);
 };
 
@@ -11078,7 +9559,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest.protot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest.prototype.hasDataset = function() {
+proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsRequest.prototype.hasDataset = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
@@ -11087,7 +9568,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest.protot
  * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection = 5;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection}
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest.prototype.getConnection = function() {
+proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsRequest.prototype.getConnection = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection, 5));
 };
@@ -11095,18 +9576,18 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest.protot
 
 /**
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest.prototype.setConnection = function(value) {
+proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsRequest.prototype.setConnection = function(value) {
   return jspb.Message.setWrapperField(this, 5, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest.prototype.clearConnection = function() {
+proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsRequest.prototype.clearConnection = function() {
   return this.setConnection(undefined);
 };
 
@@ -11115,7 +9596,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest.protot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest.prototype.hasConnection = function() {
+proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsRequest.prototype.hasConnection = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 
@@ -11124,7 +9605,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest.protot
  * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 6;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket}
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest.prototype.getBucket = function() {
+proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsRequest.prototype.getBucket = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket, 6));
 };
@@ -11132,18 +9613,18 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest.protot
 
 /**
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest.prototype.setBucket = function(value) {
+proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsRequest.prototype.setBucket = function(value) {
   return jspb.Message.setWrapperField(this, 6, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest.prototype.clearBucket = function() {
+proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsRequest.prototype.clearBucket = function() {
   return this.setBucket(undefined);
 };
 
@@ -11152,7 +9633,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest.protot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest.prototype.hasBucket = function() {
+proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsRequest.prototype.hasBucket = function() {
   return jspb.Message.getField(this, 6) != null;
 };
 
@@ -11163,7 +9644,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest.protot
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,!(string|Uint8Array)>}
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest.prototype.getSecretMap = function(opt_noLazyCreate) {
+proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsRequest.prototype.getSecretMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,!(string|Uint8Array)>} */ (
       jspb.Message.getMapField(this, 7, opt_noLazyCreate,
       null));
@@ -11172,9 +9653,9 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest.protot
 
 /**
  * Clears values from the map. The map will be non-null.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetRequest.prototype.clearSecretMap = function() {
+proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsRequest.prototype.clearSecretMap = function() {
   this.getSecretMap().clear();
   return this;};
 
@@ -11195,8 +9676,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetResponse.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -11205,11 +9686,11 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetResponse.proto
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetResponse} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetResponse.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     result: (f = msg.getResult()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.toObject(includeInstance, f)
   };
@@ -11225,23 +9706,23 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetResponse.toObj
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetResponse}
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsResponse}
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetResponse.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetResponse;
-  return proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsResponse;
+  return proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetResponse} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetResponse}
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsResponse}
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -11266,9 +9747,9 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetResponse.deser
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetResponse.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetResponse.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -11276,11 +9757,11 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetResponse.proto
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetResponse} message
+ * @param {!proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetResponse.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getResult();
   if (f != null) {
@@ -11297,7 +9778,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetResponse.seria
  * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult result = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult}
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetResponse.prototype.getResult = function() {
+proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsResponse.prototype.getResult = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult, 1));
 };
@@ -11305,18 +9786,18 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetResponse.proto
 
 /**
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetResponse} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetResponse.prototype.setResult = function(value) {
+proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsResponse.prototype.setResult = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetResponse} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetResponse.prototype.clearResult = function() {
+proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsResponse.prototype.clearResult = function() {
   return this.setResult(undefined);
 };
 
@@ -11325,7 +9806,2134 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetResponse.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestDatasetResponse.prototype.hasResult = function() {
+proto.github.com.metaprov.modelaapi.services.data.v1.DsRunDatasetTestsResponse.prototype.hasResult = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    product: (f = msg.getProduct()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.toObject(includeInstance, f),
+    version: (f = msg.getVersion()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.toObject(includeInstance, f),
+    datasource: (f = msg.getDatasource()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.toObject(includeInstance, f),
+    dataset: (f = msg.getDataset()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.toObject(includeInstance, f),
+    connection: (f = msg.getConnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
+    bucket: (f = msg.getBucket()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.toObject(includeInstance, f),
+    secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : []
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsRequest}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsRequest;
+  return proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsRequest}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.deserializeBinaryFromReader);
+      msg.setProduct(value);
+      break;
+    case 2:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.deserializeBinaryFromReader);
+      msg.setVersion(value);
+      break;
+    case 3:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.deserializeBinaryFromReader);
+      msg.setDatasource(value);
+      break;
+    case 4:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.deserializeBinaryFromReader);
+      msg.setDataset(value);
+      break;
+    case 5:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.deserializeBinaryFromReader);
+      msg.setConnection(value);
+      break;
+    case 6:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.deserializeBinaryFromReader);
+      msg.setBucket(value);
+      break;
+    case 7:
+      var value = msg.getSecretMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBytes, null, "", "");
+         });
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getProduct();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.serializeBinaryToWriter
+    );
+  }
+  f = message.getVersion();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.serializeBinaryToWriter
+    );
+  }
+  f = message.getDatasource();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.serializeBinaryToWriter
+    );
+  }
+  f = message.getDataset();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.serializeBinaryToWriter
+    );
+  }
+  f = message.getConnection();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.serializeBinaryToWriter
+    );
+  }
+  f = message.getBucket();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.serializeBinaryToWriter
+    );
+  }
+  f = message.getSecretMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(7, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
+  }
+};
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct product = 1;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsRequest.prototype.getProduct = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct, 1));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsRequest} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsRequest.prototype.setProduct = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsRequest.prototype.clearProduct = function() {
+  return this.setProduct(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsRequest.prototype.hasProduct = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion version = 2;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsRequest.prototype.getVersion = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion, 2));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsRequest} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsRequest.prototype.setVersion = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsRequest.prototype.clearVersion = function() {
+  return this.setVersion(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsRequest.prototype.hasVersion = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 3;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsRequest.prototype.getDatasource = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource, 3));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsRequest} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsRequest.prototype.setDatasource = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsRequest.prototype.clearDatasource = function() {
+  return this.setDatasource(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsRequest.prototype.hasDatasource = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset dataset = 4;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsRequest.prototype.getDataset = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset, 4));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsRequest} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsRequest.prototype.setDataset = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsRequest.prototype.clearDataset = function() {
+  return this.setDataset(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsRequest.prototype.hasDataset = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection = 5;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsRequest.prototype.getConnection = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection, 5));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsRequest} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsRequest.prototype.setConnection = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsRequest.prototype.clearConnection = function() {
+  return this.setConnection(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsRequest.prototype.hasConnection = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 6;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsRequest.prototype.getBucket = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket, 6));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsRequest} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsRequest.prototype.setBucket = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsRequest.prototype.clearBucket = function() {
+  return this.setBucket(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsRequest.prototype.hasBucket = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * map<string, bytes> secret = 7;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,!(string|Uint8Array)>}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsRequest.prototype.getSecretMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,!(string|Uint8Array)>} */ (
+      jspb.Message.getMapField(this, 7, opt_noLazyCreate,
+      null));
+};
+
+
+/**
+ * Clears values from the map. The map will be non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsRequest.prototype.clearSecretMap = function() {
+  this.getSecretMap().clear();
+  return this;};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    result: (f = msg.getResult()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsResponse}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsResponse;
+  return proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsResponse}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.deserializeBinaryFromReader);
+      msg.setResult(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getResult();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult result = 1;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsResponse.prototype.getResult = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult, 1));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsResponse} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsResponse.prototype.setResult = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsResponse} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsResponse.prototype.clearResult = function() {
+  return this.setResult(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsResponse.prototype.hasResult = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    product: (f = msg.getProduct()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.toObject(includeInstance, f),
+    version: (f = msg.getVersion()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.toObject(includeInstance, f),
+    datasource: (f = msg.getDatasource()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.toObject(includeInstance, f),
+    dataset: (f = msg.getDataset()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.toObject(includeInstance, f),
+    connection: (f = msg.getConnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
+    bucket: (f = msg.getBucket()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.toObject(includeInstance, f),
+    secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : [],
+    tests: (f = msg.getTests()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.toObject(includeInstance, f),
+    traininghistogram: (f = msg.getTraininghistogram()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.toObject(includeInstance, f),
+    livehistogram: (f = msg.getLivehistogram()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest;
+  return proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.deserializeBinaryFromReader);
+      msg.setProduct(value);
+      break;
+    case 2:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.deserializeBinaryFromReader);
+      msg.setVersion(value);
+      break;
+    case 3:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.deserializeBinaryFromReader);
+      msg.setDatasource(value);
+      break;
+    case 4:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.deserializeBinaryFromReader);
+      msg.setDataset(value);
+      break;
+    case 5:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.deserializeBinaryFromReader);
+      msg.setConnection(value);
+      break;
+    case 6:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.deserializeBinaryFromReader);
+      msg.setBucket(value);
+      break;
+    case 7:
+      var value = msg.getSecretMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBytes, null, "", "");
+         });
+      break;
+    case 8:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.deserializeBinaryFromReader);
+      msg.setTests(value);
+      break;
+    case 9:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.deserializeBinaryFromReader);
+      msg.setTraininghistogram(value);
+      break;
+    case 10:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.deserializeBinaryFromReader);
+      msg.setLivehistogram(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getProduct();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.serializeBinaryToWriter
+    );
+  }
+  f = message.getVersion();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.serializeBinaryToWriter
+    );
+  }
+  f = message.getDatasource();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.serializeBinaryToWriter
+    );
+  }
+  f = message.getDataset();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.serializeBinaryToWriter
+    );
+  }
+  f = message.getConnection();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.serializeBinaryToWriter
+    );
+  }
+  f = message.getBucket();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.serializeBinaryToWriter
+    );
+  }
+  f = message.getSecretMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(7, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
+  }
+  f = message.getTests();
+  if (f != null) {
+    writer.writeMessage(
+      8,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.serializeBinaryToWriter
+    );
+  }
+  f = message.getTraininghistogram();
+  if (f != null) {
+    writer.writeMessage(
+      9,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.serializeBinaryToWriter
+    );
+  }
+  f = message.getLivehistogram();
+  if (f != null) {
+    writer.writeMessage(
+      10,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct product = 1;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest.prototype.getProduct = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct, 1));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest.prototype.setProduct = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest.prototype.clearProduct = function() {
+  return this.setProduct(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest.prototype.hasProduct = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion version = 2;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest.prototype.getVersion = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion, 2));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest.prototype.setVersion = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest.prototype.clearVersion = function() {
+  return this.setVersion(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest.prototype.hasVersion = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 3;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest.prototype.getDatasource = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource, 3));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest.prototype.setDatasource = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest.prototype.clearDatasource = function() {
+  return this.setDatasource(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest.prototype.hasDatasource = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset dataset = 4;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest.prototype.getDataset = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset, 4));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest.prototype.setDataset = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest.prototype.clearDataset = function() {
+  return this.setDataset(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest.prototype.hasDataset = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection = 5;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest.prototype.getConnection = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection, 5));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest.prototype.setConnection = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest.prototype.clearConnection = function() {
+  return this.setConnection(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest.prototype.hasConnection = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 6;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest.prototype.getBucket = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket, 6));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest.prototype.setBucket = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest.prototype.clearBucket = function() {
+  return this.setBucket(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest.prototype.hasBucket = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * map<string, bytes> secret = 7;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,!(string|Uint8Array)>}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest.prototype.getSecretMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,!(string|Uint8Array)>} */ (
+      jspb.Message.getMapField(this, 7, opt_noLazyCreate,
+      null));
+};
+
+
+/**
+ * Clears values from the map. The map will be non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest.prototype.clearSecretMap = function() {
+  this.getSecretMap().clear();
+  return this;};
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite tests = 8;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest.prototype.getTests = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite, 8));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest.prototype.setTests = function(value) {
+  return jspb.Message.setWrapperField(this, 8, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest.prototype.clearTests = function() {
+  return this.setTests(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest.prototype.hasTests = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram trainingHistogram = 9;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest.prototype.getTraininghistogram = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram, 9));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest.prototype.setTraininghistogram = function(value) {
+  return jspb.Message.setWrapperField(this, 9, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest.prototype.clearTraininghistogram = function() {
+  return this.setTraininghistogram(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest.prototype.hasTraininghistogram = function() {
+  return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram liveHistogram = 10;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest.prototype.getLivehistogram = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram, 10));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest.prototype.setLivehistogram = function(value) {
+  return jspb.Message.setWrapperField(this, 10, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest.prototype.clearLivehistogram = function() {
+  return this.setLivehistogram(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest.prototype.hasLivehistogram = function() {
+  return jspb.Message.getField(this, 10) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    result: (f = msg.getResult()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsResponse}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsResponse;
+  return proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsResponse}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.deserializeBinaryFromReader);
+      msg.setResult(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getResult();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult result = 1;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsResponse.prototype.getResult = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult, 1));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsResponse} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsResponse.prototype.setResult = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsResponse} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsResponse.prototype.clearResult = function() {
+  return this.setResult(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsResponse.prototype.hasResult = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    product: (f = msg.getProduct()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.toObject(includeInstance, f),
+    version: (f = msg.getVersion()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.toObject(includeInstance, f),
+    datasource: (f = msg.getDatasource()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.toObject(includeInstance, f),
+    predictionsdataset: (f = msg.getPredictionsdataset()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.toObject(includeInstance, f),
+    study: (f = msg.getStudy()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.toObject(includeInstance, f),
+    model: (f = msg.getModel()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.toObject(includeInstance, f),
+    connection: (f = msg.getConnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
+    bucket: (f = msg.getBucket()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.toObject(includeInstance, f),
+    secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : [],
+    groundtruthdataset: (f = msg.getGroundtruthdataset()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.toObject(includeInstance, f),
+    tests: (f = msg.getTests()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest;
+  return proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.deserializeBinaryFromReader);
+      msg.setProduct(value);
+      break;
+    case 2:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.deserializeBinaryFromReader);
+      msg.setVersion(value);
+      break;
+    case 3:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.deserializeBinaryFromReader);
+      msg.setDatasource(value);
+      break;
+    case 4:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.deserializeBinaryFromReader);
+      msg.setPredictionsdataset(value);
+      break;
+    case 5:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.deserializeBinaryFromReader);
+      msg.setStudy(value);
+      break;
+    case 6:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.deserializeBinaryFromReader);
+      msg.setModel(value);
+      break;
+    case 8:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.deserializeBinaryFromReader);
+      msg.setConnection(value);
+      break;
+    case 9:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.deserializeBinaryFromReader);
+      msg.setBucket(value);
+      break;
+    case 10:
+      var value = msg.getSecretMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBytes, null, "", "");
+         });
+      break;
+    case 11:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.deserializeBinaryFromReader);
+      msg.setGroundtruthdataset(value);
+      break;
+    case 12:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.deserializeBinaryFromReader);
+      msg.setTests(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getProduct();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.serializeBinaryToWriter
+    );
+  }
+  f = message.getVersion();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.serializeBinaryToWriter
+    );
+  }
+  f = message.getDatasource();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.serializeBinaryToWriter
+    );
+  }
+  f = message.getPredictionsdataset();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.serializeBinaryToWriter
+    );
+  }
+  f = message.getStudy();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.serializeBinaryToWriter
+    );
+  }
+  f = message.getModel();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.serializeBinaryToWriter
+    );
+  }
+  f = message.getConnection();
+  if (f != null) {
+    writer.writeMessage(
+      8,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.serializeBinaryToWriter
+    );
+  }
+  f = message.getBucket();
+  if (f != null) {
+    writer.writeMessage(
+      9,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.serializeBinaryToWriter
+    );
+  }
+  f = message.getSecretMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(10, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
+  }
+  f = message.getGroundtruthdataset();
+  if (f != null) {
+    writer.writeMessage(
+      11,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.serializeBinaryToWriter
+    );
+  }
+  f = message.getTests();
+  if (f != null) {
+    writer.writeMessage(
+      12,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct product = 1;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest.prototype.getProduct = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct, 1));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest.prototype.setProduct = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest.prototype.clearProduct = function() {
+  return this.setProduct(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest.prototype.hasProduct = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion version = 2;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest.prototype.getVersion = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion, 2));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest.prototype.setVersion = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest.prototype.clearVersion = function() {
+  return this.setVersion(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest.prototype.hasVersion = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 3;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest.prototype.getDatasource = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource, 3));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest.prototype.setDatasource = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest.prototype.clearDatasource = function() {
+  return this.setDatasource(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest.prototype.hasDatasource = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset predictionsDataset = 4;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest.prototype.getPredictionsdataset = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset, 4));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest.prototype.setPredictionsdataset = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest.prototype.clearPredictionsdataset = function() {
+  return this.setPredictionsdataset(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest.prototype.hasPredictionsdataset = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study study = 5;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest.prototype.getStudy = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study, 5));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest.prototype.setStudy = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest.prototype.clearStudy = function() {
+  return this.setStudy(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest.prototype.hasStudy = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model model = 6;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest.prototype.getModel = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model, 6));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest.prototype.setModel = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest.prototype.clearModel = function() {
+  return this.setModel(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest.prototype.hasModel = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection = 8;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest.prototype.getConnection = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection, 8));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest.prototype.setConnection = function(value) {
+  return jspb.Message.setWrapperField(this, 8, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest.prototype.clearConnection = function() {
+  return this.setConnection(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest.prototype.hasConnection = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 9;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest.prototype.getBucket = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket, 9));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest.prototype.setBucket = function(value) {
+  return jspb.Message.setWrapperField(this, 9, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest.prototype.clearBucket = function() {
+  return this.setBucket(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest.prototype.hasBucket = function() {
+  return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
+ * map<string, bytes> secret = 10;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,!(string|Uint8Array)>}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest.prototype.getSecretMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,!(string|Uint8Array)>} */ (
+      jspb.Message.getMapField(this, 10, opt_noLazyCreate,
+      null));
+};
+
+
+/**
+ * Clears values from the map. The map will be non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest.prototype.clearSecretMap = function() {
+  this.getSecretMap().clear();
+  return this;};
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset groundTruthDataset = 11;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest.prototype.getGroundtruthdataset = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset, 11));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest.prototype.setGroundtruthdataset = function(value) {
+  return jspb.Message.setWrapperField(this, 11, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest.prototype.clearGroundtruthdataset = function() {
+  return this.setGroundtruthdataset(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest.prototype.hasGroundtruthdataset = function() {
+  return jspb.Message.getField(this, 11) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite tests = 12;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest.prototype.getTests = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite, 12));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest.prototype.setTests = function(value) {
+  return jspb.Message.setWrapperField(this, 12, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest.prototype.clearTests = function() {
+  return this.setTests(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsRequest.prototype.hasTests = function() {
+  return jspb.Message.getField(this, 12) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    result: (f = msg.getResult()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsResponse}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsResponse;
+  return proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsResponse}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.deserializeBinaryFromReader);
+      msg.setResult(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getResult();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult result = 1;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsResponse.prototype.getResult = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult, 1));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsResponse} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsResponse.prototype.setResult = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsResponse} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsResponse.prototype.clearResult = function() {
+  return this.setResult(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunGroundTruthTestsResponse.prototype.hasResult = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -21516,758 +22124,6 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsShutdownResponse.prototyp
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.DsShutdownResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-};
-
-
-
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    product: (f = msg.getProduct()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.toObject(includeInstance, f),
-    version: (f = msg.getVersion()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.toObject(includeInstance, f),
-    datasource: (f = msg.getDatasource()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.toObject(includeInstance, f),
-    dataset: (f = msg.getDataset()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.toObject(includeInstance, f),
-    study: (f = msg.getStudy()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.toObject(includeInstance, f),
-    model: (f = msg.getModel()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.toObject(includeInstance, f),
-    predictor: (f = msg.getPredictor()) && github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor.toObject(includeInstance, f),
-    connection: (f = msg.getConnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
-    bucket: (f = msg.getBucket()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.toObject(includeInstance, f),
-    secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : []
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest;
-  return proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.deserializeBinaryFromReader);
-      msg.setProduct(value);
-      break;
-    case 2:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.deserializeBinaryFromReader);
-      msg.setVersion(value);
-      break;
-    case 3:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.deserializeBinaryFromReader);
-      msg.setDatasource(value);
-      break;
-    case 4:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.deserializeBinaryFromReader);
-      msg.setDataset(value);
-      break;
-    case 5:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.deserializeBinaryFromReader);
-      msg.setStudy(value);
-      break;
-    case 6:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.deserializeBinaryFromReader);
-      msg.setModel(value);
-      break;
-    case 7:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor.deserializeBinaryFromReader);
-      msg.setPredictor(value);
-      break;
-    case 8:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.deserializeBinaryFromReader);
-      msg.setConnection(value);
-      break;
-    case 9:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.deserializeBinaryFromReader);
-      msg.setBucket(value);
-      break;
-    case 10:
-      var value = msg.getSecretMap();
-      reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBytes, null, "", "");
-         });
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = message.getProduct();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.serializeBinaryToWriter
-    );
-  }
-  f = message.getVersion();
-  if (f != null) {
-    writer.writeMessage(
-      2,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.serializeBinaryToWriter
-    );
-  }
-  f = message.getDatasource();
-  if (f != null) {
-    writer.writeMessage(
-      3,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.serializeBinaryToWriter
-    );
-  }
-  f = message.getDataset();
-  if (f != null) {
-    writer.writeMessage(
-      4,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.serializeBinaryToWriter
-    );
-  }
-  f = message.getStudy();
-  if (f != null) {
-    writer.writeMessage(
-      5,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.serializeBinaryToWriter
-    );
-  }
-  f = message.getModel();
-  if (f != null) {
-    writer.writeMessage(
-      6,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.serializeBinaryToWriter
-    );
-  }
-  f = message.getPredictor();
-  if (f != null) {
-    writer.writeMessage(
-      7,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor.serializeBinaryToWriter
-    );
-  }
-  f = message.getConnection();
-  if (f != null) {
-    writer.writeMessage(
-      8,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.serializeBinaryToWriter
-    );
-  }
-  f = message.getBucket();
-  if (f != null) {
-    writer.writeMessage(
-      9,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.serializeBinaryToWriter
-    );
-  }
-  f = message.getSecretMap(true);
-  if (f && f.getLength() > 0) {
-    f.serializeBinary(10, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
-  }
-};
-
-
-/**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct product = 1;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest.prototype.getProduct = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct, 1));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest.prototype.setProduct = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest.prototype.clearProduct = function() {
-  return this.setProduct(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest.prototype.hasProduct = function() {
-  return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion version = 2;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest.prototype.getVersion = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion, 2));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest.prototype.setVersion = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest.prototype.clearVersion = function() {
-  return this.setVersion(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest.prototype.hasVersion = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 3;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest.prototype.getDatasource = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource, 3));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest.prototype.setDatasource = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest.prototype.clearDatasource = function() {
-  return this.setDatasource(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest.prototype.hasDatasource = function() {
-  return jspb.Message.getField(this, 3) != null;
-};
-
-
-/**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset dataset = 4;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest.prototype.getDataset = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset, 4));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest.prototype.setDataset = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest.prototype.clearDataset = function() {
-  return this.setDataset(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest.prototype.hasDataset = function() {
-  return jspb.Message.getField(this, 4) != null;
-};
-
-
-/**
- * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study study = 5;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest.prototype.getStudy = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study, 5));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest.prototype.setStudy = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest.prototype.clearStudy = function() {
-  return this.setStudy(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest.prototype.hasStudy = function() {
-  return jspb.Message.getField(this, 5) != null;
-};
-
-
-/**
- * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model model = 6;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest.prototype.getModel = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model, 6));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest.prototype.setModel = function(value) {
-  return jspb.Message.setWrapperField(this, 6, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest.prototype.clearModel = function() {
-  return this.setModel(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest.prototype.hasModel = function() {
-  return jspb.Message.getField(this, 6) != null;
-};
-
-
-/**
- * optional github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor predictor = 7;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest.prototype.getPredictor = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor, 7));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest.prototype.setPredictor = function(value) {
-  return jspb.Message.setWrapperField(this, 7, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest.prototype.clearPredictor = function() {
-  return this.setPredictor(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest.prototype.hasPredictor = function() {
-  return jspb.Message.getField(this, 7) != null;
-};
-
-
-/**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection = 8;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest.prototype.getConnection = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection, 8));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest.prototype.setConnection = function(value) {
-  return jspb.Message.setWrapperField(this, 8, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest.prototype.clearConnection = function() {
-  return this.setConnection(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest.prototype.hasConnection = function() {
-  return jspb.Message.getField(this, 8) != null;
-};
-
-
-/**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 9;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest.prototype.getBucket = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket, 9));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest.prototype.setBucket = function(value) {
-  return jspb.Message.setWrapperField(this, 9, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest.prototype.clearBucket = function() {
-  return this.setBucket(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest.prototype.hasBucket = function() {
-  return jspb.Message.getField(this, 9) != null;
-};
-
-
-/**
- * map<string, bytes> secret = 10;
- * @param {boolean=} opt_noLazyCreate Do not create the map if
- * empty, instead returning `undefined`
- * @return {!jspb.Map<string,!(string|Uint8Array)>}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest.prototype.getSecretMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,!(string|Uint8Array)>} */ (
-      jspb.Message.getMapField(this, 10, opt_noLazyCreate,
-      null));
-};
-
-
-/**
- * Clears values from the map. The map will be non-null.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelRequest.prototype.clearSecretMap = function() {
-  this.getSecretMap().clear();
-  return this;};
-
-
-
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelResponse.repeatedFields_ = [1];
-
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelResponse.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelResponse} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelResponse.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    resultList: jspb.Message.toObjectList(msg.getResultList(),
-    github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.toObject, includeInstance)
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelResponse}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelResponse.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelResponse;
-  return proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelResponse.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelResponse} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelResponse}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelResponse.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.deserializeBinaryFromReader);
-      msg.addResult(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelResponse.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelResponse.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelResponse} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelResponse.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = message.getResultList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      1,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.serializeBinaryToWriter
-    );
-  }
-};
-
-
-/**
- * repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult result = 1;
- * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult>}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelResponse.prototype.getResultList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult>} */ (
-    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult, 1));
-};
-
-
-/**
- * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult>} value
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelResponse} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelResponse.prototype.setResultList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 1, value);
-};
-
-
-/**
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult=} opt_value
- * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelResponse.prototype.addResult = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelResponse} returns this
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsTestModelResponse.prototype.clearResultList = function() {
-  return this.setResultList([]);
 };
 
 
