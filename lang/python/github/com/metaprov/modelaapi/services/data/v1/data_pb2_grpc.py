@@ -206,8 +206,8 @@ class DataServiceStub(object):
                 )
         self.RunDatasetTests = channel.unary_unary(
                 '/github.com.metaprov.modelaapi.services.data.v1.DataService/RunDatasetTests',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsRunDatasetTestsRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsRunDatasetTestsResponse.FromString,
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.RunDatasetTestsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.RunDatasetTestsResponse.FromString,
                 )
         self.RunModelTests = channel.unary_unary(
                 '/github.com.metaprov.modelaapi.services.data.v1.DataService/RunModelTests',
@@ -701,8 +701,8 @@ def add_DataServiceServicer_to_server(servicer, server):
             ),
             'RunDatasetTests': grpc.unary_unary_rpc_method_handler(
                     servicer.RunDatasetTests,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsRunDatasetTestsRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsRunDatasetTestsResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.RunDatasetTestsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.RunDatasetTestsResponse.SerializeToString,
             ),
             'RunModelTests': grpc.unary_unary_rpc_method_handler(
                     servicer.RunModelTests,
@@ -1387,8 +1387,8 @@ class DataService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.data.v1.DataService/RunDatasetTests',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsRunDatasetTestsRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsRunDatasetTestsResponse.FromString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.RunDatasetTestsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.RunDatasetTestsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

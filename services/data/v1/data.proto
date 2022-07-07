@@ -225,7 +225,7 @@ message DsCreateStudyProfileResponse {
 }
 
 // Dataset tests
-message DsRunDatasetTestsRequest {
+message RunDatasetTestsRequest {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct product = 1;
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion version = 2;
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 3;
@@ -235,8 +235,8 @@ message DsRunDatasetTestsRequest {
     map<string,bytes> secret = 7;
 }
 
-message DsRunDatasetTestsResponse {
-    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult result = 1;
+message RunDatasetTestsResponse {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTestSuiteResult result = 1;
 }
 
 // Model Tests
@@ -251,7 +251,7 @@ message RunModelTestsRequest {
 }
 
 message RunModelTestsResponse {
-    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult result = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuiteResult result = 1;
 }
 
 // Drift Tests
@@ -725,7 +725,7 @@ service DataService {
     rpc ExecuteSql(DsExecuteSqlRequest) returns (DsExecuteSqlResponse) {}
     rpc Snapshot(DsSnapshotRequest) returns (DsSnapshotResponse) {}
     // Tests
-    rpc RunDatasetTests(DsRunDatasetTestsRequest) returns (DsRunDatasetTestsResponse) {}
+    rpc RunDatasetTests(RunDatasetTestsRequest) returns (RunDatasetTestsResponse) {}
     rpc RunModelTests(RunModelTestsRequest) returns (RunModelTestsResponse) {}
     rpc RunDataDriftTests(RunDriftTestsRequest) returns (RunDriftTestsResponse) {}
     rpc RunGroundTrueTests(RunGroundTruthTestsRequest) returns (RunGroundTruthTestsResponse) {}

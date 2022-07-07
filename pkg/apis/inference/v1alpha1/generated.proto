@@ -489,7 +489,7 @@ message DataAppStatus {
   repeated DataAppCondition conditions = 7;
 }
 
-message DriftDetectorSpec {
+message DriftDetectionSpec {
   // Indicates if model monitoring is enabled for the model
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
@@ -513,7 +513,7 @@ message DriftDetectorSpec {
   optional k8s.io.api.core.v1.ObjectReference outlierDetectionModelRef = 10;
 }
 
-message DriftDetectorStatus {
+message DriftDetectionStatus {
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult results = 1;
 
@@ -1115,7 +1115,7 @@ message PredictorSpec {
 
   // Spec for the drift detection process
   // +kubebuilder:validation:Optional
-  optional DriftDetectorSpec drift = 19;
+  optional DriftDetectionSpec drift = 19;
 
   // Spec for the ground truth process.
   // +kubebuilder:validation:Optional
@@ -1199,7 +1199,7 @@ message PredictorStatus {
 
   // The result of running the last monitor.
   // +kubebuilder:validation:Optional
-  optional DriftDetectorStatus drift = 14;
+  optional DriftDetectionStatus drift = 14;
 
   // +patchMergeKey=type
   // +patchStrategy=merge

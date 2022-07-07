@@ -85,7 +85,7 @@ type DataServiceClient interface {
 	ExecuteSql(ctx context.Context, in *DsExecuteSqlRequest, opts ...grpc.CallOption) (*DsExecuteSqlResponse, error)
 	Snapshot(ctx context.Context, in *DsSnapshotRequest, opts ...grpc.CallOption) (*DsSnapshotResponse, error)
 	// Tests
-	RunDatasetTests(ctx context.Context, in *DsRunDatasetTestsRequest, opts ...grpc.CallOption) (*DsRunDatasetTestsResponse, error)
+	RunDatasetTests(ctx context.Context, in *RunDatasetTestsRequest, opts ...grpc.CallOption) (*RunDatasetTestsResponse, error)
 	RunModelTests(ctx context.Context, in *RunModelTestsRequest, opts ...grpc.CallOption) (*RunModelTestsResponse, error)
 	RunDataDriftTests(ctx context.Context, in *RunDriftTestsRequest, opts ...grpc.CallOption) (*RunDriftTestsResponse, error)
 	RunGroundTrueTests(ctx context.Context, in *RunGroundTruthTestsRequest, opts ...grpc.CallOption) (*RunGroundTruthTestsResponse, error)
@@ -441,8 +441,8 @@ func (c *dataServiceClient) Snapshot(ctx context.Context, in *DsSnapshotRequest,
 	return out, nil
 }
 
-func (c *dataServiceClient) RunDatasetTests(ctx context.Context, in *DsRunDatasetTestsRequest, opts ...grpc.CallOption) (*DsRunDatasetTestsResponse, error) {
-	out := new(DsRunDatasetTestsResponse)
+func (c *dataServiceClient) RunDatasetTests(ctx context.Context, in *RunDatasetTestsRequest, opts ...grpc.CallOption) (*RunDatasetTestsResponse, error) {
+	out := new(RunDatasetTestsResponse)
 	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/RunDatasetTests", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -544,7 +544,7 @@ type DataServiceServer interface {
 	ExecuteSql(context.Context, *DsExecuteSqlRequest) (*DsExecuteSqlResponse, error)
 	Snapshot(context.Context, *DsSnapshotRequest) (*DsSnapshotResponse, error)
 	// Tests
-	RunDatasetTests(context.Context, *DsRunDatasetTestsRequest) (*DsRunDatasetTestsResponse, error)
+	RunDatasetTests(context.Context, *RunDatasetTestsRequest) (*RunDatasetTestsResponse, error)
 	RunModelTests(context.Context, *RunModelTestsRequest) (*RunModelTestsResponse, error)
 	RunDataDriftTests(context.Context, *RunDriftTestsRequest) (*RunDriftTestsResponse, error)
 	RunGroundTrueTests(context.Context, *RunGroundTruthTestsRequest) (*RunGroundTruthTestsResponse, error)
@@ -669,7 +669,7 @@ func (UnimplementedDataServiceServer) ExecuteSql(context.Context, *DsExecuteSqlR
 func (UnimplementedDataServiceServer) Snapshot(context.Context, *DsSnapshotRequest) (*DsSnapshotResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Snapshot not implemented")
 }
-func (UnimplementedDataServiceServer) RunDatasetTests(context.Context, *DsRunDatasetTestsRequest) (*DsRunDatasetTestsResponse, error) {
+func (UnimplementedDataServiceServer) RunDatasetTests(context.Context, *RunDatasetTestsRequest) (*RunDatasetTestsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method RunDatasetTests not implemented")
 }
 func (UnimplementedDataServiceServer) RunModelTests(context.Context, *RunModelTestsRequest) (*RunModelTestsResponse, error) {
@@ -1379,7 +1379,7 @@ func _DataService_Snapshot_Handler(srv interface{}, ctx context.Context, dec fun
 }
 
 func _DataService_RunDatasetTests_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DsRunDatasetTestsRequest)
+	in := new(RunDatasetTestsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -1391,7 +1391,7 @@ func _DataService_RunDatasetTests_Handler(srv interface{}, ctx context.Context, 
 		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/RunDatasetTests",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DataServiceServer).RunDatasetTests(ctx, req.(*DsRunDatasetTestsRequest))
+		return srv.(DataServiceServer).RunDatasetTests(ctx, req.(*RunDatasetTestsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }

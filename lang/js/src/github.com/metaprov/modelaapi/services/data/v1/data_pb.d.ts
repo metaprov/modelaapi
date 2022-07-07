@@ -941,49 +941,49 @@ export namespace DsCreateStudyProfileResponse {
   }
 }
 
-export class DsRunDatasetTestsRequest extends jspb.Message {
+export class RunDatasetTestsRequest extends jspb.Message {
   getProduct(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct | undefined;
-  setProduct(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): DsRunDatasetTestsRequest;
+  setProduct(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): RunDatasetTestsRequest;
   hasProduct(): boolean;
-  clearProduct(): DsRunDatasetTestsRequest;
+  clearProduct(): RunDatasetTestsRequest;
 
   getVersion(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion | undefined;
-  setVersion(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion): DsRunDatasetTestsRequest;
+  setVersion(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion): RunDatasetTestsRequest;
   hasVersion(): boolean;
-  clearVersion(): DsRunDatasetTestsRequest;
+  clearVersion(): RunDatasetTestsRequest;
 
   getDatasource(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource | undefined;
-  setDatasource(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource): DsRunDatasetTestsRequest;
+  setDatasource(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource): RunDatasetTestsRequest;
   hasDatasource(): boolean;
-  clearDatasource(): DsRunDatasetTestsRequest;
+  clearDatasource(): RunDatasetTestsRequest;
 
   getDataset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
-  setDataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): DsRunDatasetTestsRequest;
+  setDataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): RunDatasetTestsRequest;
   hasDataset(): boolean;
-  clearDataset(): DsRunDatasetTestsRequest;
+  clearDataset(): RunDatasetTestsRequest;
 
   getConnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
-  setConnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): DsRunDatasetTestsRequest;
+  setConnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): RunDatasetTestsRequest;
   hasConnection(): boolean;
-  clearConnection(): DsRunDatasetTestsRequest;
+  clearConnection(): RunDatasetTestsRequest;
 
   getBucket(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
-  setBucket(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): DsRunDatasetTestsRequest;
+  setBucket(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): RunDatasetTestsRequest;
   hasBucket(): boolean;
-  clearBucket(): DsRunDatasetTestsRequest;
+  clearBucket(): RunDatasetTestsRequest;
 
   getSecretMap(): jspb.Map<string, Uint8Array | string>;
-  clearSecretMap(): DsRunDatasetTestsRequest;
+  clearSecretMap(): RunDatasetTestsRequest;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DsRunDatasetTestsRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: DsRunDatasetTestsRequest): DsRunDatasetTestsRequest.AsObject;
-  static serializeBinaryToWriter(message: DsRunDatasetTestsRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DsRunDatasetTestsRequest;
-  static deserializeBinaryFromReader(message: DsRunDatasetTestsRequest, reader: jspb.BinaryReader): DsRunDatasetTestsRequest;
+  toObject(includeInstance?: boolean): RunDatasetTestsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: RunDatasetTestsRequest): RunDatasetTestsRequest.AsObject;
+  static serializeBinaryToWriter(message: RunDatasetTestsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RunDatasetTestsRequest;
+  static deserializeBinaryFromReader(message: RunDatasetTestsRequest, reader: jspb.BinaryReader): RunDatasetTestsRequest;
 }
 
-export namespace DsRunDatasetTestsRequest {
+export namespace RunDatasetTestsRequest {
   export type AsObject = {
     product?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
     version?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.AsObject,
@@ -995,23 +995,23 @@ export namespace DsRunDatasetTestsRequest {
   }
 }
 
-export class DsRunDatasetTestsResponse extends jspb.Message {
-  getResult(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
-  setResult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): DsRunDatasetTestsResponse;
+export class RunDatasetTestsResponse extends jspb.Message {
+  getResult(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetTestSuiteResult | undefined;
+  setResult(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetTestSuiteResult): RunDatasetTestsResponse;
   hasResult(): boolean;
-  clearResult(): DsRunDatasetTestsResponse;
+  clearResult(): RunDatasetTestsResponse;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DsRunDatasetTestsResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: DsRunDatasetTestsResponse): DsRunDatasetTestsResponse.AsObject;
-  static serializeBinaryToWriter(message: DsRunDatasetTestsResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DsRunDatasetTestsResponse;
-  static deserializeBinaryFromReader(message: DsRunDatasetTestsResponse, reader: jspb.BinaryReader): DsRunDatasetTestsResponse;
+  toObject(includeInstance?: boolean): RunDatasetTestsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: RunDatasetTestsResponse): RunDatasetTestsResponse.AsObject;
+  static serializeBinaryToWriter(message: RunDatasetTestsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RunDatasetTestsResponse;
+  static deserializeBinaryFromReader(message: RunDatasetTestsResponse, reader: jspb.BinaryReader): RunDatasetTestsResponse;
 }
 
-export namespace DsRunDatasetTestsResponse {
+export namespace RunDatasetTestsResponse {
   export type AsObject = {
-    result?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
+    result?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetTestSuiteResult.AsObject,
   }
 }
 
@@ -1070,8 +1070,8 @@ export namespace RunModelTestsRequest {
 }
 
 export class RunModelTestsResponse extends jspb.Message {
-  getResult(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
-  setResult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): RunModelTestsResponse;
+  getResult(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelTestSuiteResult | undefined;
+  setResult(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelTestSuiteResult): RunModelTestsResponse;
   hasResult(): boolean;
   clearResult(): RunModelTestsResponse;
 
@@ -1085,7 +1085,7 @@ export class RunModelTestsResponse extends jspb.Message {
 
 export namespace RunModelTestsResponse {
   export type AsObject = {
-    result?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
+    result?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelTestSuiteResult.AsObject,
   }
 }
 

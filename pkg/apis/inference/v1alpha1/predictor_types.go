@@ -29,7 +29,7 @@ const (
 // Monitoring spec
 //==============================================================================
 
-type DriftDetectorSpec struct {
+type DriftDetectionSpec struct {
 	// Indicates if model monitoring is enabled for the model
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
@@ -379,7 +379,7 @@ type PredictorSpec struct {
 	PredictionThreshold *float64 `json:"predictionThreshold,omitempty" protobuf:"bytes,18,opt,name=predictionThreshold"`
 	// Spec for the drift detection process
 	// +kubebuilder:validation:Optional
-	Drift DriftDetectorSpec `json:"drift,omitempty" protobuf:"bytes,19,opt,name=drift"`
+	Drift DriftDetectionSpec `json:"drift,omitempty" protobuf:"bytes,19,opt,name=drift"`
 	// Spec for the ground truth process.
 	// +kubebuilder:validation:Optional
 	GroundTruth GroundTruthTestSpec `json:"groundTruth,omitempty" protobuf:"bytes,20,opt,name=groundTruth"`
@@ -444,7 +444,7 @@ type PredictorStatus struct {
 	GroundTruth GroundTruthTestStatus `json:"groundTruth,omitempty" protobuf:"bytes,13,rep,name=groundTruth"`
 	// The result of running the last monitor.
 	//+kubebuilder:validation:Optional
-	Drift DriftDetectorStatus `json:"drift,omitempty" protobuf:"bytes,14,rep,name=drift"`
+	Drift DriftDetectionStatus `json:"drift,omitempty" protobuf:"bytes,14,rep,name=drift"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
@@ -643,7 +643,7 @@ type FastSlowModelSpec struct {
 	ProbaHighPct *int32 `json:"probaHighPct,omitempty" protobuf:"varint,5,opt,name=probaHighPct"`
 }
 
-type DriftDetectorStatus struct {
+type DriftDetectionStatus struct {
 	// +kubebuilder:validation:Optional
 	Results catalog.TestSuiteResult `json:"results,omitempty" protobuf:"bytes,1,opt,name=results"`
 	// +kubebuilder:validation:Optional

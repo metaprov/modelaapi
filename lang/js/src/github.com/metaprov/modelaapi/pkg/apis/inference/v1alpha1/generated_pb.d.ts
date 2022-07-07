@@ -745,44 +745,44 @@ export namespace DataAppStatus {
   }
 }
 
-export class DriftDetectorSpec extends jspb.Message {
+export class DriftDetectionSpec extends jspb.Message {
   getEnabled(): boolean;
-  setEnabled(value: boolean): DriftDetectorSpec;
+  setEnabled(value: boolean): DriftDetectionSpec;
 
   getLivehistogramref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setLivehistogramref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): DriftDetectorSpec;
+  setLivehistogramref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): DriftDetectionSpec;
   hasLivehistogramref(): boolean;
-  clearLivehistogramref(): DriftDetectorSpec;
+  clearLivehistogramref(): DriftDetectionSpec;
 
   getTraininghistogramref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setTraininghistogramref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): DriftDetectorSpec;
+  setTraininghistogramref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): DriftDetectionSpec;
   hasTraininghistogramref(): boolean;
-  clearTraininghistogramref(): DriftDetectorSpec;
+  clearTraininghistogramref(): DriftDetectionSpec;
 
   getDrifttests(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
-  setDrifttests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): DriftDetectorSpec;
+  setDrifttests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): DriftDetectionSpec;
   hasDrifttests(): boolean;
-  clearDrifttests(): DriftDetectorSpec;
+  clearDrifttests(): DriftDetectionSpec;
 
   getSchedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
-  setSchedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): DriftDetectorSpec;
+  setSchedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): DriftDetectionSpec;
   hasSchedule(): boolean;
-  clearSchedule(): DriftDetectorSpec;
+  clearSchedule(): DriftDetectionSpec;
 
   getOutlierdetectionmodelref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setOutlierdetectionmodelref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): DriftDetectorSpec;
+  setOutlierdetectionmodelref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): DriftDetectionSpec;
   hasOutlierdetectionmodelref(): boolean;
-  clearOutlierdetectionmodelref(): DriftDetectorSpec;
+  clearOutlierdetectionmodelref(): DriftDetectionSpec;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DriftDetectorSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: DriftDetectorSpec): DriftDetectorSpec.AsObject;
-  static serializeBinaryToWriter(message: DriftDetectorSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DriftDetectorSpec;
-  static deserializeBinaryFromReader(message: DriftDetectorSpec, reader: jspb.BinaryReader): DriftDetectorSpec;
+  toObject(includeInstance?: boolean): DriftDetectionSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: DriftDetectionSpec): DriftDetectionSpec.AsObject;
+  static serializeBinaryToWriter(message: DriftDetectionSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DriftDetectionSpec;
+  static deserializeBinaryFromReader(message: DriftDetectionSpec, reader: jspb.BinaryReader): DriftDetectionSpec;
 }
 
-export namespace DriftDetectorSpec {
+export namespace DriftDetectionSpec {
   export type AsObject = {
     enabled: boolean,
     livehistogramref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
@@ -793,26 +793,26 @@ export namespace DriftDetectorSpec {
   }
 }
 
-export class DriftDetectorStatus extends jspb.Message {
+export class DriftDetectionStatus extends jspb.Message {
   getResults(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
-  setResults(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): DriftDetectorStatus;
+  setResults(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): DriftDetectionStatus;
   hasResults(): boolean;
-  clearResults(): DriftDetectorStatus;
+  clearResults(): DriftDetectionStatus;
 
   getLastrun(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLastrun(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DriftDetectorStatus;
+  setLastrun(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DriftDetectionStatus;
   hasLastrun(): boolean;
-  clearLastrun(): DriftDetectorStatus;
+  clearLastrun(): DriftDetectionStatus;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DriftDetectorStatus.AsObject;
-  static toObject(includeInstance: boolean, msg: DriftDetectorStatus): DriftDetectorStatus.AsObject;
-  static serializeBinaryToWriter(message: DriftDetectorStatus, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DriftDetectorStatus;
-  static deserializeBinaryFromReader(message: DriftDetectorStatus, reader: jspb.BinaryReader): DriftDetectorStatus;
+  toObject(includeInstance?: boolean): DriftDetectionStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: DriftDetectionStatus): DriftDetectionStatus.AsObject;
+  static serializeBinaryToWriter(message: DriftDetectionStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DriftDetectionStatus;
+  static deserializeBinaryFromReader(message: DriftDetectionStatus, reader: jspb.BinaryReader): DriftDetectionStatus;
 }
 
-export namespace DriftDetectorStatus {
+export namespace DriftDetectionStatus {
   export type AsObject = {
     results?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
     lastrun?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
@@ -1757,8 +1757,8 @@ export class PredictorSpec extends jspb.Message {
   getPredictionthreshold(): number;
   setPredictionthreshold(value: number): PredictorSpec;
 
-  getDrift(): DriftDetectorSpec | undefined;
-  setDrift(value?: DriftDetectorSpec): PredictorSpec;
+  getDrift(): DriftDetectionSpec | undefined;
+  setDrift(value?: DriftDetectionSpec): PredictorSpec;
   hasDrift(): boolean;
   clearDrift(): PredictorSpec;
 
@@ -1819,7 +1819,7 @@ export namespace PredictorSpec {
     serving?: ModelServingSpec.AsObject,
     task: string,
     predictionthreshold: number,
-    drift?: DriftDetectorSpec.AsObject,
+    drift?: DriftDetectionSpec.AsObject,
     groundtruth?: GroundTruthTestSpec.AsObject,
     notifierref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     predictionlogging?: PredictionLoggingSpec.AsObject,
@@ -1887,8 +1887,8 @@ export class PredictorStatus extends jspb.Message {
   hasGroundtruth(): boolean;
   clearGroundtruth(): PredictorStatus;
 
-  getDrift(): DriftDetectorStatus | undefined;
-  setDrift(value?: DriftDetectorStatus): PredictorStatus;
+  getDrift(): DriftDetectionStatus | undefined;
+  setDrift(value?: DriftDetectionStatus): PredictorStatus;
   hasDrift(): boolean;
   clearDrift(): PredictorStatus;
 
@@ -1920,7 +1920,7 @@ export namespace PredictorStatus {
     loadbalancerstatus?: k8s_io_api_core_v1_generated_pb.LoadBalancerStatus.AsObject,
     lastpredictiondataset?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     groundtruth?: GroundTruthTestStatus.AsObject,
-    drift?: DriftDetectorStatus.AsObject,
+    drift?: DriftDetectionStatus.AsObject,
     conditionsList: Array<PredictorCondition.AsObject>,
   }
 }

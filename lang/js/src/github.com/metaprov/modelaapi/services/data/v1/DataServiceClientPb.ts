@@ -1672,29 +1672,29 @@ export class DataServiceClient {
   methodInfoRunDatasetTests = new grpcWeb.MethodDescriptor(
     '/github.com.metaprov.modelaapi.services.data.v1.DataService/RunDatasetTests',
     grpcWeb.MethodType.UNARY,
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.DsRunDatasetTestsRequest,
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.DsRunDatasetTestsResponse,
-    (request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsRunDatasetTestsRequest) => {
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.RunDatasetTestsRequest,
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.RunDatasetTestsResponse,
+    (request: github_com_metaprov_modelaapi_services_data_v1_data_pb.RunDatasetTestsRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.DsRunDatasetTestsResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.RunDatasetTestsResponse.deserializeBinary
   );
 
   runDatasetTests(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsRunDatasetTestsRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_data_v1_data_pb.DsRunDatasetTestsResponse>;
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.RunDatasetTestsRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_data_v1_data_pb.RunDatasetTestsResponse>;
 
   runDatasetTests(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsRunDatasetTestsRequest,
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.RunDatasetTestsRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsRunDatasetTestsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_data_v1_data_pb.DsRunDatasetTestsResponse>;
+               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.RunDatasetTestsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_data_v1_data_pb.RunDatasetTestsResponse>;
 
   runDatasetTests(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsRunDatasetTestsRequest,
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.RunDatasetTestsRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsRunDatasetTestsResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.RunDatasetTestsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
