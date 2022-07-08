@@ -7,7 +7,9 @@
 package v1alpha1
 
 import (
+	"fmt"
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
+	infra "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/apis/training"
 	"github.com/metaprov/modelaapi/pkg/util"
 	"gopkg.in/yaml.v2"
@@ -435,4 +437,59 @@ func (run *ModelPipelineRun) RunStatus() *catalog.LastRunStatus {
 	result.Status = string(run.Status.Phase)
 	return result
 
+}
+
+func (run *ModelPipelineRun) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *string, err error) *infra.Alert {
+	level := infra.Error
+	subject := fmt.Sprintf("ModelPipelineRun %s failed with error %v", run.Name, err.Error())
+	return &infra.Alert{
+		ObjectMeta: metav1.ObjectMeta{
+			GenerateName: run.Name,
+			Namespace:    run.Namespace,
+		},
+		Spec: infra.AlertSpec{
+			Subject:      util.StrPtr(subject),
+			Message:      util.StrPtr(err.Error()),
+			Level:        &level,
+			TenantRef:    tenantRef,
+			NotifierName: notifierName,
+			EntityRef: v1.ObjectReference{
+				Kind:      "ModelPipelineRun",
+				Name:      run.Name,
+				Namespace: run.Namespace,
+			},
+			Owner: run.Spec.Owner,
+			Fields: map[string]string{
+				"Start Time":      run.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
+				"Completion Time": run.Status.EndTime.Format("01/2/2006 15:04:05"),
+			},
+		},
+	}
+}
+
+func (run *ModelPipelineRun) CompletionAlert(tenantRef *v1.ObjectReference, notifierName *string) *infra.Alert {
+	level := infra.Info
+	subject := fmt.Sprintf("Dataset %s completed successfully ", run.Name)
+	return &infra.Alert{
+		ObjectMeta: metav1.ObjectMeta{
+			GenerateName: run.Name,
+			Namespace:    run.Namespace,
+		},
+		Spec: infra.AlertSpec{
+			Subject: util.StrPtr(subject),
+			Level:   &level,
+			EntityRef: v1.ObjectReference{
+				Kind:      "ModelPipelineRun",
+				Name:      run.Name,
+				Namespace: run.Namespace,
+			},
+			TenantRef:    tenantRef,
+			NotifierName: notifierName,
+			Owner:        run.Spec.Owner,
+			Fields: map[string]string{
+				"Start Time":      run.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
+				"Completion Time": run.Status.EndTime.Format("01/2/2006 15:04:05"),
+			},
+		},
+	}
 }
