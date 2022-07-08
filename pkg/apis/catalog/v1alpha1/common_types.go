@@ -2086,8 +2086,9 @@ type DataTestCase struct {
 	Enabled *bool `json:"enabled,omitempty" protobuf:"bytes,1,opt,name=enabled"`
 	// The assertion type
 	AssertThat AssertionType `json:"assertThat,omitempty" protobuf:"bytes,2,opt,name=assertThat"`
+	// Reference to an entity.
 	// +kubebuilder:validation:Optional
-	Dataset v1.ObjectReference `json:"dataset,omitempty" protobuf:"bytes,3,opt,name=dataset"`
+	EntityRef v1.ObjectReference `json:"entityRef,omitempty" protobuf:"bytes,3,opt,name=entityRef"`
 	// +kubebuilder:validation:Optional
 	Column *string `json:"column,omitempty" protobuf:"bytes,4,opt,name=column"`
 	// +kubebuilder:validation:Optional
@@ -2128,7 +2129,7 @@ type DataTestCase struct {
 
 type TestSuiteResult struct {
 	// A reference to the object under test. Best practice is to have one suite for an object
-	Fixture v1.ObjectReference `json:"fixture,omitempty" protobuf:"bytes,1,opt,name=fixture"`
+	EntityRef v1.ObjectReference `json:"entityRef,omitempty" protobuf:"bytes,1,opt,name=entityRef"`
 	// Total number of failures. A failure is an unplanned error, e.g. cannot connect to a dataset
 	// +kubebuilder:validation:Optional
 	Failures int32 `json:"failures,omitempty" protobuf:"bytes,2,opt,name=failures"`
@@ -2149,19 +2150,19 @@ type TestSuiteResult struct {
 // Result for a specific case
 type DataTestCaseResult struct {
 	// The assertion type
-	AssertThat AssertionType `json:"assertThat" protobuf:"bytes,1,opt,name=assertThat"`
+	AssertThat AssertionType `json:"assertThat" protobuf:"bytes,2,opt,name=assertThat"`
 	// Actual observation
 	// +kubebuilder:validation:Optional
-	Actual Measurement `json:"actual,omitempty" protobuf:"bytes,2,opt,name=actual"`
+	Actual Measurement `json:"actual,omitempty" protobuf:"bytes,3,opt,name=actual"`
 	// A failure occur on assertion failure
 	// +kubebuilder:validation:Optional
-	Failure bool `json:"failure,omitempty" protobuf:"varint,3,opt,name=failure"`
+	Failure bool `json:"failure,omitempty" protobuf:"varint,4,opt,name=failure"`
 	// An error occur if the system cannot execute the test case (e.g. connection error).
 	// +kubebuilder:validation:Optional
-	Error bool `json:"error,omitempty" protobuf:"varint,4,opt,name=error"`
+	Error bool `json:"error,omitempty" protobuf:"varint,5,opt,name=error"`
 	// An optional
 	// +kubebuilder:validation:Optional
-	FailureMsg string `json:"failureMsg" protobuf:"bytes,5,opt,name=failureMsg"`
+	FailureMsg string `json:"failureMsg" protobuf:"bytes,6,opt,name=failureMsg"`
 }
 
 ////////////////////////////////////

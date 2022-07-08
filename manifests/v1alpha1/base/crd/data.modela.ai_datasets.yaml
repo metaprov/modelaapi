@@ -1210,16 +1210,7 @@ spec:
                     description: ColumnTests defines assertions for columns from the
                       dataset
                     properties:
-                      errors:
-                        description: Total number of assertion errors.
-                        format: int32
-                        type: integer
-                      failures:
-                        description: Total number of failures. A failure is an unplanned
-                          error, e.g. cannot connect to a dataset
-                        format: int32
-                        type: integer
-                      fixture:
+                      entityRef:
                         description: A reference to the object under test. Best practice
                           is to have one suite for an object
                         properties:
@@ -1257,6 +1248,15 @@ spec:
                             description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                             type: string
                         type: object
+                      errors:
+                        description: Total number of assertion errors.
+                        format: int32
+                        type: integer
+                      failures:
+                        description: Total number of failures. A failure is an unplanned
+                          error, e.g. cannot connect to a dataset
+                        format: int32
+                        type: integer
                       startTime:
                         description: Start time of running the suite
                         format: date-time
@@ -1488,16 +1488,7 @@ spec:
                   datasetSuite:
                     description: DatasetTests contains validations for the whole dataset
                     properties:
-                      errors:
-                        description: Total number of assertion errors.
-                        format: int32
-                        type: integer
-                      failures:
-                        description: Total number of failures. A failure is an unplanned
-                          error, e.g. cannot connect to a dataset
-                        format: int32
-                        type: integer
-                      fixture:
+                      entityRef:
                         description: A reference to the object under test. Best practice
                           is to have one suite for an object
                         properties:
@@ -1535,6 +1526,15 @@ spec:
                             description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                             type: string
                         type: object
+                      errors:
+                        description: Total number of assertion errors.
+                        format: int32
+                        type: integer
+                      failures:
+                        description: Total number of failures. A failure is an unplanned
+                          error, e.g. cannot connect to a dataset
+                        format: int32
+                        type: integer
                       startTime:
                         description: Start time of running the suite
                         format: date-time
@@ -1767,16 +1767,7 @@ spec:
                     description: FileTests defines assertions for the contents of
                       the data file
                     properties:
-                      errors:
-                        description: Total number of assertion errors.
-                        format: int32
-                        type: integer
-                      failures:
-                        description: Total number of failures. A failure is an unplanned
-                          error, e.g. cannot connect to a dataset
-                        format: int32
-                        type: integer
-                      fixture:
+                      entityRef:
                         description: A reference to the object under test. Best practice
                           is to have one suite for an object
                         properties:
@@ -1814,6 +1805,15 @@ spec:
                             description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                             type: string
                         type: object
+                      errors:
+                        description: Total number of assertion errors.
+                        format: int32
+                        type: integer
+                      failures:
+                        description: Total number of failures. A failure is an unplanned
+                          error, e.g. cannot connect to a dataset
+                        format: int32
+                        type: integer
                       startTime:
                         description: Start time of running the suite
                         format: date-time
@@ -2046,16 +2046,7 @@ spec:
                     description: MultiColumnTests defines validations for multiple
                       columns from the dataset
                     properties:
-                      errors:
-                        description: Total number of assertion errors.
-                        format: int32
-                        type: integer
-                      failures:
-                        description: Total number of failures. A failure is an unplanned
-                          error, e.g. cannot connect to a dataset
-                        format: int32
-                        type: integer
-                      fixture:
+                      entityRef:
                         description: A reference to the object under test. Best practice
                           is to have one suite for an object
                         properties:
@@ -2093,6 +2084,15 @@ spec:
                             description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                             type: string
                         type: object
+                      errors:
+                        description: Total number of assertion errors.
+                        format: int32
+                        type: integer
+                      failures:
+                        description: Total number of failures. A failure is an unplanned
+                          error, e.g. cannot connect to a dataset
+                        format: int32
+                        type: integer
                       startTime:
                         description: Start time of running the suite
                         format: date-time
@@ -2325,16 +2325,7 @@ spec:
                     description: MultiDatasetTest contains validations for multiple
                       datasets
                     properties:
-                      errors:
-                        description: Total number of assertion errors.
-                        format: int32
-                        type: integer
-                      failures:
-                        description: Total number of failures. A failure is an unplanned
-                          error, e.g. cannot connect to a dataset
-                        format: int32
-                        type: integer
-                      fixture:
+                      entityRef:
                         description: A reference to the object under test. Best practice
                           is to have one suite for an object
                         properties:
@@ -2372,6 +2363,15 @@ spec:
                             description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                             type: string
                         type: object
+                      errors:
+                        description: Total number of assertion errors.
+                        format: int32
+                        type: integer
+                      failures:
+                        description: Total number of failures. A failure is an unplanned
+                          error, e.g. cannot connect to a dataset
+                        format: int32
+                        type: integer
                       startTime:
                         description: Start time of running the suite
                         format: date-time

@@ -422,10 +422,10 @@ export class DataTestCase extends jspb.Message {
   getAssertthat(): string;
   setAssertthat(value: string): DataTestCase;
 
-  getDataset(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setDataset(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): DataTestCase;
-  hasDataset(): boolean;
-  clearDataset(): DataTestCase;
+  getEntityref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setEntityref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): DataTestCase;
+  hasEntityref(): boolean;
+  clearEntityref(): DataTestCase;
 
   getColumn(): string;
   setColumn(value: string): DataTestCase;
@@ -482,7 +482,7 @@ export namespace DataTestCase {
   export type AsObject = {
     enabled: boolean,
     assertthat: string,
-    dataset?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    entityref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     column: string,
     metric: string,
     expectedvalue: number,
@@ -1720,10 +1720,10 @@ export namespace TestSuite {
 }
 
 export class TestSuiteResult extends jspb.Message {
-  getFixture(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setFixture(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): TestSuiteResult;
-  hasFixture(): boolean;
-  clearFixture(): TestSuiteResult;
+  getEntityref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setEntityref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): TestSuiteResult;
+  hasEntityref(): boolean;
+  clearEntityref(): TestSuiteResult;
 
   getFailures(): number;
   setFailures(value: number): TestSuiteResult;
@@ -1756,7 +1756,7 @@ export class TestSuiteResult extends jspb.Message {
 
 export namespace TestSuiteResult {
   export type AsObject = {
-    fixture?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    entityref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     failures: number,
     errors: number,
     starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
