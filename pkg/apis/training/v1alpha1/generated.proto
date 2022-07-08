@@ -450,8 +450,13 @@ message DeploymentStageSpec {
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 5;
 }
 
+message DriftDetectorStatus {
+  // The location of the prediction outlier detection
+  optional string outlierModelURI = 1;
+}
+
 // The spec for generating a density model for this study.
-message DriftDetectionSpec {
+message DriftModelSpec {
   // Indicates if density models should be created.
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
@@ -461,11 +466,6 @@ message DriftDetectionSpec {
   // +kubebuilder:default:="isolation-forest"
   // +kubebuilder:validation:Optional
   optional string outlierAlgorithm = 2;
-}
-
-message DriftDetectorStatus {
-  // The location of the prediction outlier detection
-  optional string outlierModelURI = 1;
 }
 
 // EarlyStopSpec specifies the configuration to automatically abort a model search
@@ -3366,7 +3366,7 @@ message StudySpec {
   optional InterpretabilitySpec interpretability = 16;
 
   // +kubebuilder:validation:Optional
-  optional DriftDetectionSpec driftDetection = 17;
+  optional DriftModelSpec driftDetection = 17;
 
   // Aborted indicates that the execution of the Study and associated Models should be permanently stopped
   // +kubebuilder:default:=false

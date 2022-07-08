@@ -234,7 +234,7 @@ type EarlyStopSpec struct {
 }
 
 // The spec for generating a density model for this study.
-type DriftDetectionSpec struct {
+type DriftModelSpec struct {
 	// Indicates if density models should be created.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
@@ -541,7 +541,7 @@ type StudySpec struct {
 	// +kubebuilder:validation:Optional
 	Interpretability InterpretabilitySpec `json:"interpretability,omitempty" protobuf:"bytes,16,opt,name=interpretability"`
 	// +kubebuilder:validation:Optional
-	DriftDetector DriftDetectionSpec `json:"driftDetection,omitempty" protobuf:"bytes,17,opt,name=driftDetection"`
+	DriftDetector DriftModelSpec `json:"driftDetection,omitempty" protobuf:"bytes,17,opt,name=driftDetection"`
 	// Aborted indicates that the execution of the Study and associated Models should be permanently stopped
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional

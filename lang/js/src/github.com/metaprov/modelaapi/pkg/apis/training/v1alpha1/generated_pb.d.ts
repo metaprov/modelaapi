@@ -700,28 +700,6 @@ export namespace DeploymentStageSpec {
   }
 }
 
-export class DriftDetectionSpec extends jspb.Message {
-  getEnabled(): boolean;
-  setEnabled(value: boolean): DriftDetectionSpec;
-
-  getOutlieralgorithm(): string;
-  setOutlieralgorithm(value: string): DriftDetectionSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DriftDetectionSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: DriftDetectionSpec): DriftDetectionSpec.AsObject;
-  static serializeBinaryToWriter(message: DriftDetectionSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DriftDetectionSpec;
-  static deserializeBinaryFromReader(message: DriftDetectionSpec, reader: jspb.BinaryReader): DriftDetectionSpec;
-}
-
-export namespace DriftDetectionSpec {
-  export type AsObject = {
-    enabled: boolean,
-    outlieralgorithm: string,
-  }
-}
-
 export class DriftDetectorStatus extends jspb.Message {
   getOutliermodeluri(): string;
   setOutliermodeluri(value: string): DriftDetectorStatus;
@@ -737,6 +715,28 @@ export class DriftDetectorStatus extends jspb.Message {
 export namespace DriftDetectorStatus {
   export type AsObject = {
     outliermodeluri: string,
+  }
+}
+
+export class DriftModelSpec extends jspb.Message {
+  getEnabled(): boolean;
+  setEnabled(value: boolean): DriftModelSpec;
+
+  getOutlieralgorithm(): string;
+  setOutlieralgorithm(value: string): DriftModelSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DriftModelSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: DriftModelSpec): DriftModelSpec.AsObject;
+  static serializeBinaryToWriter(message: DriftModelSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DriftModelSpec;
+  static deserializeBinaryFromReader(message: DriftModelSpec, reader: jspb.BinaryReader): DriftModelSpec;
+}
+
+export namespace DriftModelSpec {
+  export type AsObject = {
+    enabled: boolean,
+    outlieralgorithm: string,
   }
 }
 
@@ -4965,8 +4965,8 @@ export class StudySpec extends jspb.Message {
   hasInterpretability(): boolean;
   clearInterpretability(): StudySpec;
 
-  getDriftdetection(): DriftDetectionSpec | undefined;
-  setDriftdetection(value?: DriftDetectionSpec): StudySpec;
+  getDriftdetection(): DriftModelSpec | undefined;
+  setDriftdetection(value?: DriftModelSpec): StudySpec;
   hasDriftdetection(): boolean;
   clearDriftdetection(): StudySpec;
 
@@ -5066,7 +5066,7 @@ export namespace StudySpec {
     forecast?: StudyForecastSpec.AsObject,
     schedule?: StudyScheduleSpec.AsObject,
     interpretability?: InterpretabilitySpec.AsObject,
-    driftdetection?: DriftDetectionSpec.AsObject,
+    driftdetection?: DriftModelSpec.AsObject,
     aborted: boolean,
     reported: boolean,
     paused: boolean,
