@@ -18,7 +18,7 @@ func Test_Trained(t *testing.T) {
 	metric := catalog.F1Binary
 	model.MarkTrained([]catalog.Measurement{{
 		Metric: &metric,
-		Amount: nil,
+		Value:  nil,
 	}})
 	assert.True(t, model.Trained())
 }
