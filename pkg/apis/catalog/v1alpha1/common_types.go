@@ -93,6 +93,7 @@ const (
 	RunModelTests         TaskName = "run-model-tests"
 	RunGroundTruthTests   TaskName = "run-ground-truth-tests"
 	RunDriftTests         TaskName = "run-drift-tests"
+	TrainDriftDetector    TaskName = "train-drift-detector"
 )
 
 // ApiKeyName is the secret or in env variable
