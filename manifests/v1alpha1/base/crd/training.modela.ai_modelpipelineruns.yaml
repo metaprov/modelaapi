@@ -320,6 +320,9 @@ spec:
                                   - metric
                                   - value
                                   type: object
+                                assertThat:
+                                  description: The assertion type
+                                  type: string
                                 error:
                                   description: An error occur if the system cannot
                                     execute the test case (e.g. connection error).
@@ -331,7 +334,7 @@ spec:
                                   description: An optional
                                   type: string
                               required:
-                              - failureMsg
+                              - assertThat
                               type: object
                             type: array
                         type: object
@@ -567,6 +570,9 @@ spec:
                                   - metric
                                   - value
                                   type: object
+                                assertThat:
+                                  description: The assertion type
+                                  type: string
                                 error:
                                   description: An error occur if the system cannot
                                     execute the test case (e.g. connection error).
@@ -578,7 +584,7 @@ spec:
                                   description: An optional
                                   type: string
                               required:
-                              - failureMsg
+                              - assertThat
                               type: object
                             type: array
                         type: object
@@ -789,6 +795,9 @@ spec:
                                   - metric
                                   - value
                                   type: object
+                                assertThat:
+                                  description: The assertion type
+                                  type: string
                                 error:
                                   description: An error occur if the system cannot
                                     execute the test case (e.g. connection error).
@@ -800,7 +809,7 @@ spec:
                                   description: An optional
                                   type: string
                               required:
-                              - failureMsg
+                              - assertThat
                               type: object
                             type: array
                         type: object
@@ -1022,6 +1031,9 @@ spec:
                                   - metric
                                   - value
                                   type: object
+                                assertThat:
+                                  description: The assertion type
+                                  type: string
                                 error:
                                   description: An error occur if the system cannot
                                     execute the test case (e.g. connection error).
@@ -1033,7 +1045,7 @@ spec:
                                   description: An optional
                                   type: string
                               required:
-                              - failureMsg
+                              - assertThat
                               type: object
                             type: array
                         type: object
@@ -1274,6 +1286,9 @@ spec:
                                   - metric
                                   - value
                                   type: object
+                                assertThat:
+                                  description: The assertion type
+                                  type: string
                                 error:
                                   description: An error occur if the system cannot
                                     execute the test case (e.g. connection error).
@@ -1285,7 +1300,7 @@ spec:
                                   description: An optional
                                   type: string
                               required:
-                              - failureMsg
+                              - assertThat
                               type: object
                             type: array
                         type: object
@@ -1506,6 +1521,9 @@ spec:
                                   - metric
                                   - value
                                   type: object
+                                assertThat:
+                                  description: The assertion type
+                                  type: string
                                 error:
                                   description: An error occur if the system cannot
                                     execute the test case (e.g. connection error).
@@ -1517,7 +1535,7 @@ spec:
                                   description: An optional
                                   type: string
                               required:
-                              - failureMsg
+                              - assertThat
                               type: object
                             type: array
                         type: object
@@ -1733,6 +1751,9 @@ spec:
                                   - metric
                                   - value
                                   type: object
+                                assertThat:
+                                  description: The assertion type
+                                  type: string
                                 error:
                                   description: An error occur if the system cannot
                                     execute the test case (e.g. connection error).
@@ -1744,7 +1765,7 @@ spec:
                                   description: An optional
                                   type: string
                               required:
-                              - failureMsg
+                              - assertThat
                               type: object
                             type: array
                         type: object
@@ -1961,6 +1982,9 @@ spec:
                                   - metric
                                   - value
                                   type: object
+                                assertThat:
+                                  description: The assertion type
+                                  type: string
                                 error:
                                   description: An error occur if the system cannot
                                     execute the test case (e.g. connection error).
@@ -1972,7 +1996,7 @@ spec:
                                   description: An optional
                                   type: string
                               required:
-                              - failureMsg
+                              - assertThat
                               type: object
                             type: array
                         type: object

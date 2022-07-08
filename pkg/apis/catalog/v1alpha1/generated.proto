@@ -912,20 +912,24 @@ message TestCase {
 
 // Result for a specific case
 message TestCaseResult {
+  // The assertion type
+  optional string assertThat = 1;
+
   // Actual value of the metric
   // +kubebuilder:validation:Optional
-  optional Measurement actual = 1;
+  optional Measurement actual = 2;
 
   // A failure occur on assertion failure
   // +kubebuilder:validation:Optional
-  optional bool failed = 2;
+  optional bool failed = 3;
 
   // An error occur if the system cannot execute the test case (e.g. connection error).
   // +kubebuilder:validation:Optional
-  optional bool error = 3;
+  optional bool error = 4;
 
   // An optional
-  optional string failureMsg = 4;
+  // +kubebuilder:validation:Optional
+  optional string failureMsg = 5;
 }
 
 message TestSuite {

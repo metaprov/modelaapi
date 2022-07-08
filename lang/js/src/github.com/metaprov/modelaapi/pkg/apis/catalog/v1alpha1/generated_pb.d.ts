@@ -1626,6 +1626,9 @@ export namespace TestCase {
 }
 
 export class TestCaseResult extends jspb.Message {
+  getAssertthat(): string;
+  setAssertthat(value: string): TestCaseResult;
+
   getActual(): Measurement | undefined;
   setActual(value?: Measurement): TestCaseResult;
   hasActual(): boolean;
@@ -1650,6 +1653,7 @@ export class TestCaseResult extends jspb.Message {
 
 export namespace TestCaseResult {
   export type AsObject = {
+    assertthat: string,
     actual?: Measurement.AsObject,
     failed: boolean,
     error: boolean,

@@ -2135,15 +2135,18 @@ type TestSuiteResult struct {
 
 // Result for a specific case
 type TestCaseResult struct {
+	// The assertion type
+	AssertThat AssertionType `json:"assertThat" protobuf:"bytes,1,opt,name=assertThat"`
 	// Actual value of the metric
 	// +kubebuilder:validation:Optional
-	Actual Measurement `json:"actual,omitempty" protobuf:"bytes,1,opt,name=actual"`
+	Actual Measurement `json:"actual,omitempty" protobuf:"bytes,2,opt,name=actual"`
 	// A failure occur on assertion failure
 	// +kubebuilder:validation:Optional
-	Failure bool `json:"failed,omitempty" protobuf:"varint,2,opt,name=failed"`
+	Failure bool `json:"failed,omitempty" protobuf:"varint,3,opt,name=failed"`
 	// An error occur if the system cannot execute the test case (e.g. connection error).
 	// +kubebuilder:validation:Optional
-	Error bool `json:"error,omitempty" protobuf:"varint,3,opt,name=error"`
+	Error bool `json:"error,omitempty" protobuf:"varint,4,opt,name=error"`
 	// An optional
-	FailureMsg string `json:"failureMsg" protobuf:"bytes,4,opt,name=failureMsg"`
+	// +kubebuilder:validation:Optional
+	FailureMsg string `json:"failureMsg" protobuf:"bytes,5,opt,name=failureMsg"`
 }
