@@ -238,7 +238,7 @@ message CronPredictionStatus {
 // Curtain represent an object which can be placed before or after predictor
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Serving Site",type="string",JSONPath=".spec.servingsiteRef.name"
-// +kubebuilder:printcolumn:name="Dataset",type="string",JSONPath=".spec.datasetRef.name"
+// +kubebuilder:printcolumn:name="Entity",type="string",JSONPath=".spec.datasetRef.name"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
@@ -748,7 +748,7 @@ message OnlineStoreStatus {
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status"
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",priority=1
 // +kubebuilder:printcolumn:name="Predictor",type="string",JSONPath=".spec.predictorName"
-// +kubebuilder:printcolumn:name="Dataset",type="string",JSONPath=".spec.datasetName"
+// +kubebuilder:printcolumn:name="Entity",type="string",JSONPath=".spec.datasetName"
 // +kubebuilder:printcolumn:name="Labeled",type="string",JSONPath=".spec.labeled"
 // +kubebuilder:printcolumn:name="Bucket",type="string",JSONPath=".spec.output.bucketName",priority=1
 // +kubebuilder:printcolumn:name="Key",type="string",JSONPath=".spec.output.path",priority=1
@@ -877,7 +877,7 @@ message PredictionSpec {
   // +kubebuilder:validation:Optional
   optional bool forecast = 4;
 
-  // Input specifies the location of the input data, if not using a Dataset resource
+  // Input specifies the location of the input data, if not using a Entity resource
   optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec input = 6;
 
   // Output specifies the location where the predicted dataset will be stored

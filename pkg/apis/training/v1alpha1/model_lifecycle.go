@@ -218,7 +218,7 @@ func (model *Model) CombinedImageName() string {
 func (model *Model) GetTestResult(metric catalog.Metric) float64 {
 	for _, v := range model.Status.Train {
 		if *v.Metric == metric {
-			return *v.Value
+			return *v.Amount
 		}
 	}
 	return 0
@@ -1116,7 +1116,7 @@ func (model *Model) CompletionAlert(tenantRef *v1.ObjectReference, notifierName 
 			NotifierName: notifierName,
 			Owner:        model.Spec.Owner,
 			Fields: map[string]string{
-				"Dataset":         *model.Spec.DatasetName,
+				"Entity":          *model.Spec.DatasetName,
 				"Study":           *model.Spec.StudyName,
 				"Task":            string(*model.Spec.Task),
 				"Objective":       string(*model.Spec.Objective),
@@ -1150,7 +1150,7 @@ func (model *Model) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *stri
 			NotifierName: notifierName,
 			Owner:        model.Spec.Owner,
 			Fields: map[string]string{
-				"Dataset":         *model.Spec.DatasetName,
+				"Entity":          *model.Spec.DatasetName,
 				"Study":           *model.Spec.StudyName,
 				"Task":            string(*model.Spec.Task),
 				"Objective":       string(*model.Spec.Objective),

@@ -41,7 +41,7 @@ type FeatureHistogramCondition struct {
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
 // +kubebuilder:printcolumn:name="Column",type="string",JSONPath=".spec.column"
-// +kubebuilder:printcolumn:name="Dataset",type="string",JSONPath=".spec.dataset"
+// +kubebuilder:printcolumn:name="Entity",type="string",JSONPath=".spec.dataset"
 // +kubebuilder:printcolumn:name="Bins",type="number",JSONPath=".spec.bins"
 // +kubebuilder:printcolumn:name="Missing",type="number",JSONPath=".status.missing"
 // +kubebuilder:printcolumn:name="Invalid",type="number",JSONPath=".status.invalid"

@@ -32,7 +32,7 @@ spec:
       name: Version
       type: string
     - jsonPath: .status.datasetName
-      name: Dataset
+      name: Entity
       type: string
     - jsonPath: .status.studyName
       name: Study
@@ -920,35 +920,119 @@ spec:
                                     assertThat:
                                       description: The assertion type
                                       type: string
+                                    column:
+                                      type: string
+                                    column2:
+                                      description: For test that involve two columns
+                                        (e.g. correlation)
+                                      type: string
+                                    dataset:
+                                      description: 'ObjectReference contains enough
+                                        information to let you inspect or modify the
+                                        referred object. --- New uses of this type
+                                        are discouraged because of difficulty describing
+                                        its usage when embedded in APIs. 1. Ignored
+                                        fields.  It includes many fields which are
+                                        not generally honored.  For instance, ResourceVersion
+                                        and FieldPath are both very rarely valid in
+                                        actual usage. 2. Invalid usage help.  It is
+                                        impossible to add specific help for individual
+                                        usage.  In most embedded usages, there are
+                                        particular restrictions like, "must refer
+                                        only to types A and B" or "UID not honored"
+                                        or "name must be restricted". Those cannot
+                                        be well described when embedded. 3. Inconsistent
+                                        validation.  Because the usages are different,
+                                        the validation rules are different by usage,
+                                        which makes it hard for users to predict what
+                                        will happen. 4. The fields are both imprecise
+                                        and overly precise.  Kind is not a precise
+                                        mapping to a URL. This can produce ambiguity
+                                        during interpretation and require a REST mapping.  In
+                                        most cases, the dependency is on the group,resource
+                                        tuple and the version of the actual struct
+                                        is irrelevant. 5. We cannot easily change
+                                        it.  Because this type is embedded in many
+                                        locations, updates to this type will affect
+                                        numerous schemas.  Don''t make new APIs embed
+                                        an underspecified API type they do not control.
+                                        Instead of using this type, create a locally
+                                        provided and used type that is well-focused
+                                        on your reference. For example, ServiceReferences
+                                        for admission registration: https://github.com/kubernetes/api/blob/release-1.17/admissionregistration/v1/types.go#L533
+                                        .'
+                                      properties:
+                                        apiVersion:
+                                          description: API version of the referent.
+                                          type: string
+                                        fieldPath:
+                                          description: 'If referring to a piece of
+                                            an object instead of an entire object,
+                                            this string should contain a valid JSON/Go
+                                            field access statement, such as desiredState.manifest.containers[2].
+                                            For example, if the object reference is
+                                            to a container within a pod, this would
+                                            take on a value like: "spec.containers{name}"
+                                            (where "name" refers to the name of the
+                                            container that triggered the event) or
+                                            if no container name is specified "spec.containers[2]"
+                                            (container with index 2 in this pod).
+                                            This syntax is chosen only to have some
+                                            well-defined way of referencing a part
+                                            of an object. TODO: this design is not
+                                            final and this field is subject to change
+                                            in the future.'
+                                          type: string
+                                        kind:
+                                          description: 'Kind of the referent. More
+                                            info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                                          type: string
+                                        name:
+                                          description: 'Name of the referent. More
+                                            info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                                          type: string
+                                        namespace:
+                                          description: 'Namespace of the referent.
+                                            More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                                          type: string
+                                        resourceVersion:
+                                          description: 'Specific resourceVersion to
+                                            which this reference is made, if any.
+                                            More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                                          type: string
+                                        uid:
+                                          description: 'UID of the referent. More
+                                            info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                                          type: string
+                                      type: object
                                     displayName:
                                       description: The test case display name
                                       type: string
                                     enabled:
                                       description: If false, this test case is disabled
                                       type: boolean
-                                    entity:
-                                      description: The entity names, depends on the
-                                        assertion. For example, dataset name, column
-                                        name
+                                    expectedCategory:
+                                      description: The expected value
                                       type: string
-                                    expectedNumber:
-                                      description: The expected numerical value
+                                    expectedMax:
+                                      format: float
+                                      type: number
+                                    expectedMin:
+                                      description: Minimum range
+                                      format: float
                                       type: number
                                     expectedSetSet:
                                       description: Expected set of values,if the assertion
                                       items:
                                         type: string
                                       type: array
-                                    expectedString:
-                                      description: The expected value
-                                      type: string
+                                    expectedValue:
+                                      description: The expected numerical value
+                                      type: number
                                     generated:
                                       description: Indicates if this validation rule
                                         was automatically generated by the system
                                       type: boolean
-                                    max:
-                                      format: float
-                                      type: number
                                     metric:
                                       enum:
                                       - accuracy
@@ -1032,10 +1116,6 @@ spec:
                                       - kl-divergenece
                                       - jensen-shannon-distance
                                       type: string
-                                    min:
-                                      description: Minimum range
-                                      format: float
-                                      type: number
                                     strictMax:
                                       type: boolean
                                     strictMin:
@@ -1046,8 +1126,6 @@ spec:
                                       items:
                                         type: string
                                       type: array
-                                  required:
-                                  - assertThat
                                   type: object
                                 type: array
                             type: object
@@ -1064,35 +1142,119 @@ spec:
                                     assertThat:
                                       description: The assertion type
                                       type: string
+                                    column:
+                                      type: string
+                                    column2:
+                                      description: For test that involve two columns
+                                        (e.g. correlation)
+                                      type: string
+                                    dataset:
+                                      description: 'ObjectReference contains enough
+                                        information to let you inspect or modify the
+                                        referred object. --- New uses of this type
+                                        are discouraged because of difficulty describing
+                                        its usage when embedded in APIs. 1. Ignored
+                                        fields.  It includes many fields which are
+                                        not generally honored.  For instance, ResourceVersion
+                                        and FieldPath are both very rarely valid in
+                                        actual usage. 2. Invalid usage help.  It is
+                                        impossible to add specific help for individual
+                                        usage.  In most embedded usages, there are
+                                        particular restrictions like, "must refer
+                                        only to types A and B" or "UID not honored"
+                                        or "name must be restricted". Those cannot
+                                        be well described when embedded. 3. Inconsistent
+                                        validation.  Because the usages are different,
+                                        the validation rules are different by usage,
+                                        which makes it hard for users to predict what
+                                        will happen. 4. The fields are both imprecise
+                                        and overly precise.  Kind is not a precise
+                                        mapping to a URL. This can produce ambiguity
+                                        during interpretation and require a REST mapping.  In
+                                        most cases, the dependency is on the group,resource
+                                        tuple and the version of the actual struct
+                                        is irrelevant. 5. We cannot easily change
+                                        it.  Because this type is embedded in many
+                                        locations, updates to this type will affect
+                                        numerous schemas.  Don''t make new APIs embed
+                                        an underspecified API type they do not control.
+                                        Instead of using this type, create a locally
+                                        provided and used type that is well-focused
+                                        on your reference. For example, ServiceReferences
+                                        for admission registration: https://github.com/kubernetes/api/blob/release-1.17/admissionregistration/v1/types.go#L533
+                                        .'
+                                      properties:
+                                        apiVersion:
+                                          description: API version of the referent.
+                                          type: string
+                                        fieldPath:
+                                          description: 'If referring to a piece of
+                                            an object instead of an entire object,
+                                            this string should contain a valid JSON/Go
+                                            field access statement, such as desiredState.manifest.containers[2].
+                                            For example, if the object reference is
+                                            to a container within a pod, this would
+                                            take on a value like: "spec.containers{name}"
+                                            (where "name" refers to the name of the
+                                            container that triggered the event) or
+                                            if no container name is specified "spec.containers[2]"
+                                            (container with index 2 in this pod).
+                                            This syntax is chosen only to have some
+                                            well-defined way of referencing a part
+                                            of an object. TODO: this design is not
+                                            final and this field is subject to change
+                                            in the future.'
+                                          type: string
+                                        kind:
+                                          description: 'Kind of the referent. More
+                                            info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                                          type: string
+                                        name:
+                                          description: 'Name of the referent. More
+                                            info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                                          type: string
+                                        namespace:
+                                          description: 'Namespace of the referent.
+                                            More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                                          type: string
+                                        resourceVersion:
+                                          description: 'Specific resourceVersion to
+                                            which this reference is made, if any.
+                                            More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                                          type: string
+                                        uid:
+                                          description: 'UID of the referent. More
+                                            info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                                          type: string
+                                      type: object
                                     displayName:
                                       description: The test case display name
                                       type: string
                                     enabled:
                                       description: If false, this test case is disabled
                                       type: boolean
-                                    entity:
-                                      description: The entity names, depends on the
-                                        assertion. For example, dataset name, column
-                                        name
+                                    expectedCategory:
+                                      description: The expected value
                                       type: string
-                                    expectedNumber:
-                                      description: The expected numerical value
+                                    expectedMax:
+                                      format: float
+                                      type: number
+                                    expectedMin:
+                                      description: Minimum range
+                                      format: float
                                       type: number
                                     expectedSetSet:
                                       description: Expected set of values,if the assertion
                                       items:
                                         type: string
                                       type: array
-                                    expectedString:
-                                      description: The expected value
-                                      type: string
+                                    expectedValue:
+                                      description: The expected numerical value
+                                      type: number
                                     generated:
                                       description: Indicates if this validation rule
                                         was automatically generated by the system
                                       type: boolean
-                                    max:
-                                      format: float
-                                      type: number
                                     metric:
                                       enum:
                                       - accuracy
@@ -1176,10 +1338,6 @@ spec:
                                       - kl-divergenece
                                       - jensen-shannon-distance
                                       type: string
-                                    min:
-                                      description: Minimum range
-                                      format: float
-                                      type: number
                                     strictMax:
                                       type: boolean
                                     strictMin:
@@ -1190,8 +1348,6 @@ spec:
                                       items:
                                         type: string
                                       type: array
-                                  required:
-                                  - assertThat
                                   type: object
                                 type: array
                             type: object
@@ -1208,35 +1364,119 @@ spec:
                                     assertThat:
                                       description: The assertion type
                                       type: string
+                                    column:
+                                      type: string
+                                    column2:
+                                      description: For test that involve two columns
+                                        (e.g. correlation)
+                                      type: string
+                                    dataset:
+                                      description: 'ObjectReference contains enough
+                                        information to let you inspect or modify the
+                                        referred object. --- New uses of this type
+                                        are discouraged because of difficulty describing
+                                        its usage when embedded in APIs. 1. Ignored
+                                        fields.  It includes many fields which are
+                                        not generally honored.  For instance, ResourceVersion
+                                        and FieldPath are both very rarely valid in
+                                        actual usage. 2. Invalid usage help.  It is
+                                        impossible to add specific help for individual
+                                        usage.  In most embedded usages, there are
+                                        particular restrictions like, "must refer
+                                        only to types A and B" or "UID not honored"
+                                        or "name must be restricted". Those cannot
+                                        be well described when embedded. 3. Inconsistent
+                                        validation.  Because the usages are different,
+                                        the validation rules are different by usage,
+                                        which makes it hard for users to predict what
+                                        will happen. 4. The fields are both imprecise
+                                        and overly precise.  Kind is not a precise
+                                        mapping to a URL. This can produce ambiguity
+                                        during interpretation and require a REST mapping.  In
+                                        most cases, the dependency is on the group,resource
+                                        tuple and the version of the actual struct
+                                        is irrelevant. 5. We cannot easily change
+                                        it.  Because this type is embedded in many
+                                        locations, updates to this type will affect
+                                        numerous schemas.  Don''t make new APIs embed
+                                        an underspecified API type they do not control.
+                                        Instead of using this type, create a locally
+                                        provided and used type that is well-focused
+                                        on your reference. For example, ServiceReferences
+                                        for admission registration: https://github.com/kubernetes/api/blob/release-1.17/admissionregistration/v1/types.go#L533
+                                        .'
+                                      properties:
+                                        apiVersion:
+                                          description: API version of the referent.
+                                          type: string
+                                        fieldPath:
+                                          description: 'If referring to a piece of
+                                            an object instead of an entire object,
+                                            this string should contain a valid JSON/Go
+                                            field access statement, such as desiredState.manifest.containers[2].
+                                            For example, if the object reference is
+                                            to a container within a pod, this would
+                                            take on a value like: "spec.containers{name}"
+                                            (where "name" refers to the name of the
+                                            container that triggered the event) or
+                                            if no container name is specified "spec.containers[2]"
+                                            (container with index 2 in this pod).
+                                            This syntax is chosen only to have some
+                                            well-defined way of referencing a part
+                                            of an object. TODO: this design is not
+                                            final and this field is subject to change
+                                            in the future.'
+                                          type: string
+                                        kind:
+                                          description: 'Kind of the referent. More
+                                            info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                                          type: string
+                                        name:
+                                          description: 'Name of the referent. More
+                                            info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                                          type: string
+                                        namespace:
+                                          description: 'Namespace of the referent.
+                                            More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                                          type: string
+                                        resourceVersion:
+                                          description: 'Specific resourceVersion to
+                                            which this reference is made, if any.
+                                            More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                                          type: string
+                                        uid:
+                                          description: 'UID of the referent. More
+                                            info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                                          type: string
+                                      type: object
                                     displayName:
                                       description: The test case display name
                                       type: string
                                     enabled:
                                       description: If false, this test case is disabled
                                       type: boolean
-                                    entity:
-                                      description: The entity names, depends on the
-                                        assertion. For example, dataset name, column
-                                        name
+                                    expectedCategory:
+                                      description: The expected value
                                       type: string
-                                    expectedNumber:
-                                      description: The expected numerical value
+                                    expectedMax:
+                                      format: float
+                                      type: number
+                                    expectedMin:
+                                      description: Minimum range
+                                      format: float
                                       type: number
                                     expectedSetSet:
                                       description: Expected set of values,if the assertion
                                       items:
                                         type: string
                                       type: array
-                                    expectedString:
-                                      description: The expected value
-                                      type: string
+                                    expectedValue:
+                                      description: The expected numerical value
+                                      type: number
                                     generated:
                                       description: Indicates if this validation rule
                                         was automatically generated by the system
                                       type: boolean
-                                    max:
-                                      format: float
-                                      type: number
                                     metric:
                                       enum:
                                       - accuracy
@@ -1320,10 +1560,6 @@ spec:
                                       - kl-divergenece
                                       - jensen-shannon-distance
                                       type: string
-                                    min:
-                                      description: Minimum range
-                                      format: float
-                                      type: number
                                     strictMax:
                                       type: boolean
                                     strictMin:
@@ -1334,8 +1570,6 @@ spec:
                                       items:
                                         type: string
                                       type: array
-                                  required:
-                                  - assertThat
                                   type: object
                                 type: array
                             type: object
@@ -1352,35 +1586,119 @@ spec:
                                     assertThat:
                                       description: The assertion type
                                       type: string
+                                    column:
+                                      type: string
+                                    column2:
+                                      description: For test that involve two columns
+                                        (e.g. correlation)
+                                      type: string
+                                    dataset:
+                                      description: 'ObjectReference contains enough
+                                        information to let you inspect or modify the
+                                        referred object. --- New uses of this type
+                                        are discouraged because of difficulty describing
+                                        its usage when embedded in APIs. 1. Ignored
+                                        fields.  It includes many fields which are
+                                        not generally honored.  For instance, ResourceVersion
+                                        and FieldPath are both very rarely valid in
+                                        actual usage. 2. Invalid usage help.  It is
+                                        impossible to add specific help for individual
+                                        usage.  In most embedded usages, there are
+                                        particular restrictions like, "must refer
+                                        only to types A and B" or "UID not honored"
+                                        or "name must be restricted". Those cannot
+                                        be well described when embedded. 3. Inconsistent
+                                        validation.  Because the usages are different,
+                                        the validation rules are different by usage,
+                                        which makes it hard for users to predict what
+                                        will happen. 4. The fields are both imprecise
+                                        and overly precise.  Kind is not a precise
+                                        mapping to a URL. This can produce ambiguity
+                                        during interpretation and require a REST mapping.  In
+                                        most cases, the dependency is on the group,resource
+                                        tuple and the version of the actual struct
+                                        is irrelevant. 5. We cannot easily change
+                                        it.  Because this type is embedded in many
+                                        locations, updates to this type will affect
+                                        numerous schemas.  Don''t make new APIs embed
+                                        an underspecified API type they do not control.
+                                        Instead of using this type, create a locally
+                                        provided and used type that is well-focused
+                                        on your reference. For example, ServiceReferences
+                                        for admission registration: https://github.com/kubernetes/api/blob/release-1.17/admissionregistration/v1/types.go#L533
+                                        .'
+                                      properties:
+                                        apiVersion:
+                                          description: API version of the referent.
+                                          type: string
+                                        fieldPath:
+                                          description: 'If referring to a piece of
+                                            an object instead of an entire object,
+                                            this string should contain a valid JSON/Go
+                                            field access statement, such as desiredState.manifest.containers[2].
+                                            For example, if the object reference is
+                                            to a container within a pod, this would
+                                            take on a value like: "spec.containers{name}"
+                                            (where "name" refers to the name of the
+                                            container that triggered the event) or
+                                            if no container name is specified "spec.containers[2]"
+                                            (container with index 2 in this pod).
+                                            This syntax is chosen only to have some
+                                            well-defined way of referencing a part
+                                            of an object. TODO: this design is not
+                                            final and this field is subject to change
+                                            in the future.'
+                                          type: string
+                                        kind:
+                                          description: 'Kind of the referent. More
+                                            info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                                          type: string
+                                        name:
+                                          description: 'Name of the referent. More
+                                            info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                                          type: string
+                                        namespace:
+                                          description: 'Namespace of the referent.
+                                            More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                                          type: string
+                                        resourceVersion:
+                                          description: 'Specific resourceVersion to
+                                            which this reference is made, if any.
+                                            More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                                          type: string
+                                        uid:
+                                          description: 'UID of the referent. More
+                                            info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                                          type: string
+                                      type: object
                                     displayName:
                                       description: The test case display name
                                       type: string
                                     enabled:
                                       description: If false, this test case is disabled
                                       type: boolean
-                                    entity:
-                                      description: The entity names, depends on the
-                                        assertion. For example, dataset name, column
-                                        name
+                                    expectedCategory:
+                                      description: The expected value
                                       type: string
-                                    expectedNumber:
-                                      description: The expected numerical value
+                                    expectedMax:
+                                      format: float
+                                      type: number
+                                    expectedMin:
+                                      description: Minimum range
+                                      format: float
                                       type: number
                                     expectedSetSet:
                                       description: Expected set of values,if the assertion
                                       items:
                                         type: string
                                       type: array
-                                    expectedString:
-                                      description: The expected value
-                                      type: string
+                                    expectedValue:
+                                      description: The expected numerical value
+                                      type: number
                                     generated:
                                       description: Indicates if this validation rule
                                         was automatically generated by the system
                                       type: boolean
-                                    max:
-                                      format: float
-                                      type: number
                                     metric:
                                       enum:
                                       - accuracy
@@ -1464,10 +1782,6 @@ spec:
                                       - kl-divergenece
                                       - jensen-shannon-distance
                                       type: string
-                                    min:
-                                      description: Minimum range
-                                      format: float
-                                      type: number
                                     strictMax:
                                       type: boolean
                                     strictMin:
@@ -1478,8 +1792,6 @@ spec:
                                       items:
                                         type: string
                                       type: array
-                                  required:
-                                  - assertThat
                                   type: object
                                 type: array
                             type: object
@@ -1496,35 +1808,119 @@ spec:
                                     assertThat:
                                       description: The assertion type
                                       type: string
+                                    column:
+                                      type: string
+                                    column2:
+                                      description: For test that involve two columns
+                                        (e.g. correlation)
+                                      type: string
+                                    dataset:
+                                      description: 'ObjectReference contains enough
+                                        information to let you inspect or modify the
+                                        referred object. --- New uses of this type
+                                        are discouraged because of difficulty describing
+                                        its usage when embedded in APIs. 1. Ignored
+                                        fields.  It includes many fields which are
+                                        not generally honored.  For instance, ResourceVersion
+                                        and FieldPath are both very rarely valid in
+                                        actual usage. 2. Invalid usage help.  It is
+                                        impossible to add specific help for individual
+                                        usage.  In most embedded usages, there are
+                                        particular restrictions like, "must refer
+                                        only to types A and B" or "UID not honored"
+                                        or "name must be restricted". Those cannot
+                                        be well described when embedded. 3. Inconsistent
+                                        validation.  Because the usages are different,
+                                        the validation rules are different by usage,
+                                        which makes it hard for users to predict what
+                                        will happen. 4. The fields are both imprecise
+                                        and overly precise.  Kind is not a precise
+                                        mapping to a URL. This can produce ambiguity
+                                        during interpretation and require a REST mapping.  In
+                                        most cases, the dependency is on the group,resource
+                                        tuple and the version of the actual struct
+                                        is irrelevant. 5. We cannot easily change
+                                        it.  Because this type is embedded in many
+                                        locations, updates to this type will affect
+                                        numerous schemas.  Don''t make new APIs embed
+                                        an underspecified API type they do not control.
+                                        Instead of using this type, create a locally
+                                        provided and used type that is well-focused
+                                        on your reference. For example, ServiceReferences
+                                        for admission registration: https://github.com/kubernetes/api/blob/release-1.17/admissionregistration/v1/types.go#L533
+                                        .'
+                                      properties:
+                                        apiVersion:
+                                          description: API version of the referent.
+                                          type: string
+                                        fieldPath:
+                                          description: 'If referring to a piece of
+                                            an object instead of an entire object,
+                                            this string should contain a valid JSON/Go
+                                            field access statement, such as desiredState.manifest.containers[2].
+                                            For example, if the object reference is
+                                            to a container within a pod, this would
+                                            take on a value like: "spec.containers{name}"
+                                            (where "name" refers to the name of the
+                                            container that triggered the event) or
+                                            if no container name is specified "spec.containers[2]"
+                                            (container with index 2 in this pod).
+                                            This syntax is chosen only to have some
+                                            well-defined way of referencing a part
+                                            of an object. TODO: this design is not
+                                            final and this field is subject to change
+                                            in the future.'
+                                          type: string
+                                        kind:
+                                          description: 'Kind of the referent. More
+                                            info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                                          type: string
+                                        name:
+                                          description: 'Name of the referent. More
+                                            info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                                          type: string
+                                        namespace:
+                                          description: 'Namespace of the referent.
+                                            More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                                          type: string
+                                        resourceVersion:
+                                          description: 'Specific resourceVersion to
+                                            which this reference is made, if any.
+                                            More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                                          type: string
+                                        uid:
+                                          description: 'UID of the referent. More
+                                            info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                                          type: string
+                                      type: object
                                     displayName:
                                       description: The test case display name
                                       type: string
                                     enabled:
                                       description: If false, this test case is disabled
                                       type: boolean
-                                    entity:
-                                      description: The entity names, depends on the
-                                        assertion. For example, dataset name, column
-                                        name
+                                    expectedCategory:
+                                      description: The expected value
                                       type: string
-                                    expectedNumber:
-                                      description: The expected numerical value
+                                    expectedMax:
+                                      format: float
+                                      type: number
+                                    expectedMin:
+                                      description: Minimum range
+                                      format: float
                                       type: number
                                     expectedSetSet:
                                       description: Expected set of values,if the assertion
                                       items:
                                         type: string
                                       type: array
-                                    expectedString:
-                                      description: The expected value
-                                      type: string
+                                    expectedValue:
+                                      description: The expected numerical value
+                                      type: number
                                     generated:
                                       description: Indicates if this validation rule
                                         was automatically generated by the system
                                       type: boolean
-                                    max:
-                                      format: float
-                                      type: number
                                     metric:
                                       enum:
                                       - accuracy
@@ -1608,10 +2004,6 @@ spec:
                                       - kl-divergenece
                                       - jensen-shannon-distance
                                       type: string
-                                    min:
-                                      description: Minimum range
-                                      format: float
-                                      type: number
                                     strictMax:
                                       type: boolean
                                     strictMin:
@@ -1622,8 +2014,6 @@ spec:
                                       items:
                                         type: string
                                       type: array
-                                  required:
-                                  - assertThat
                                   type: object
                                 type: array
                             type: object
@@ -1735,8 +2125,8 @@ spec:
                   resource to serve the highest-performing model that was trained
                 type: boolean
               datasetName:
-                description: The name of an existing Dataset resource, or the name
-                  of the Dataset resource that will be created based on the data specified
+                description: The name of an existing Entity resource, or the name
+                  of the Entity resource that will be created based on the data specified
                   by the Location field, which will be used to train models
                 maxLength: 253
                 pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
@@ -1754,14 +2144,14 @@ spec:
               datasourceName:
                 description: DataSourceName is the name of an existing DataSource
                   resource which will be used as the schema for the ModelAutoBuilder's
-                  Dataset. If empty, a DataSource will be automatically created based
+                  Entity. If empty, a DataSource will be automatically created based
                   on the data specified by the Location field
                 maxLength: 253
                 pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
                 type: string
               fast:
                 default: false
-                description: Fast indicates if Dataset and Study resources associated
+                description: Fast indicates if Entity and Study resources associated
                   with the ModelAutobuilder should run in fast mode. Running in fast
                   mode will skip unnecessary workloads such as profiling, reporting,
                   explaining, etc.
@@ -1777,7 +2167,7 @@ spec:
                   to the primary model search
                 type: boolean
               labRef:
-                description: The reference to the Lab under which Dataset and Study
+                description: The reference to the Lab under which Entity and Study
                   resources created by the ModelAutobuilder will be trained. If unspecified,
                   the default Lab from the parent DataProduct will be used
                 properties:
@@ -1815,7 +2205,7 @@ spec:
                     type: string
                 type: object
               location:
-                description: The location for data that will be saved in a Dataset
+                description: The location for data that will be saved in a Entity
                   resource to train models with
                 properties:
                   bucketName:
@@ -2275,7 +2665,7 @@ spec:
                   Study resource
                 type: number
               cols:
-                description: The number of columns observed in the Dataset associated
+                description: The number of columns observed in the Entity associated
                   with the resource
                 format: int32
                 type: integer
@@ -2314,7 +2704,7 @@ spec:
                 description: The name of the DataApp associated with the resource
                 type: string
               datasetName:
-                description: The name of the Dataset associated with the resource
+                description: The name of the Entity associated with the resource
                 type: string
               endTime:
                 description: EndTime represents the time at which the ModelAutobuilder
@@ -2356,13 +2746,13 @@ spec:
                   controller will set this field with a failure reason
                 type: string
               fileSize:
-                description: The size of the raw data in the Dataset associated with
+                description: The size of the raw data in the Entity associated with
                   the resource
                 format: int32
                 type: integer
               flatFileName:
                 description: The name of the flat-file generated for the associated
-                  Dataset
+                  Entity
                 type: string
               imageRepoName:
                 type: string
@@ -2388,7 +2778,7 @@ spec:
                 description: The name of the Predictor associated with the resource
                 type: string
               rows:
-                description: The number of rows observed in the Dataset associated
+                description: The number of rows observed in the Entity associated
                   with the resource
                 format: int32
                 type: integer

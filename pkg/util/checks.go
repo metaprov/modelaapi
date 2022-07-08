@@ -123,7 +123,7 @@ func CheckMinValue64(v int64, field string, min int64) error {
 // Enabled the filed has maz length
 func CheckMaxValue(v int32, field string, max int32) error {
 	if v > max {
-		return errors.Errorf("field %s overflow. Max value is %d, but got %d", field, max, v)
+		return errors.Errorf("field %s overflow. ExpectedValueMax value is %d, but got %d", field, max, v)
 	}
 	return nil
 }
@@ -149,7 +149,7 @@ func CheckInteger(v string, field string) error {
 
 func CheckMaxFloat(v float64, field string, max float64) error {
 	if v > max {
-		return errors.Errorf("field %s overflow. Max value is %f, but got %f", field, max, v)
+		return errors.Errorf("field %s overflow. ExpectedValueMax value is %f, but got %f", field, max, v)
 	}
 	return nil
 }

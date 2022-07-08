@@ -122,7 +122,7 @@ type StudyCondition struct {
 // +kubebuilder:printcolumn:name="Progress",type="number",JSONPath=".status.progress",priority=1
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",priority=1
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName",priority=1
-// +kubebuilder:printcolumn:name="Dataset",type="string",JSONPath=".spec.datasetName"
+// +kubebuilder:printcolumn:name="Entity",type="string",JSONPath=".spec.datasetName"
 // +kubebuilder:printcolumn:name="Task",type="string",JSONPath=".spec.task"
 // +kubebuilder:printcolumn:name="Objective",type="string",JSONPath=".spec.search.objective"
 // +kubebuilder:printcolumn:name="Score",type="number",JSONPath=".status.bestModelScore"
@@ -496,7 +496,7 @@ type StudySpec struct {
 	// If unspecified, the default Lab from the parent DataProduct will be used
 	// +kubebuilder:validation:Optional
 	LabRef v1.ObjectReference `json:"labRef,omitempty" protobuf:"bytes,3,opt,name=labRef"`
-	// The name of the Dataset resource that will be used to train models with.
+	// The name of the Entity resource that will be used to train models with.
 	// The dataset will be split into individual training, testing, and validation datasets
 	// +kubebuilder:validation:Required
 	// +required

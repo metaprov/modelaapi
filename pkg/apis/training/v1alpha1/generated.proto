@@ -47,7 +47,7 @@ message BacktestSpec {
   // +kubebuilder:validation:Optional
   optional int32 splits = 2;
 
-  // Max size for a single training set
+  // ExpectedValueMax size for a single training set
   // +kubebuilder:default = 0
   // +kubebuilder:validation:Optional
   optional int32 maxTrainSize = 3;
@@ -327,19 +327,19 @@ message DataSplitSpec {
   // +kubebuilder:validation:Optional
   repeated SegmentSpec segments = 6;
 
-  // The name of the Dataset resource which will be used as the training dataset
+  // The name of the Entity resource which will be used as the training dataset
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string trainDataset = 7;
 
-  // The name of the Dataset resource which will be used as the testing dataset, applicable
+  // The name of the Entity resource which will be used as the testing dataset, applicable
   // if the split type uses test-dataset. If enabled, the training dataset will not be split and used as-is
   // If empty, we will not use test dataset
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string testDataset = 8;
 
-  // The name of the Dataset resource which will be used as the validation dataset, applicable
+  // The name of the Entity resource which will be used as the validation dataset, applicable
   // if the split type uses test-dataset. If enabled, the training dataset will not be split and used as-is
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
@@ -1122,7 +1122,7 @@ message Model {
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
 // +kubebuilder:printcolumn:name="Data Product",type="string",JSONPath=".spec.dataProductName"
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.dataProductVersionName"
-// +kubebuilder:printcolumn:name="Dataset",type="string",JSONPath=".status.datasetName"
+// +kubebuilder:printcolumn:name="Entity",type="string",JSONPath=".status.datasetName"
 // +kubebuilder:printcolumn:name="Study",type="string",JSONPath=".status.studyName"
 // +kubebuilder:printcolumn:name="Predictor",type="string",JSONPath=".status.predictorName"
 // +kubebuilder:printcolumn:name="StartTime",type="date",JSONPath=".status.startTime",priority=1
@@ -1179,20 +1179,20 @@ message ModelAutobuilderSpec {
   // +kubebuilder:validation:Optional
   optional string dataProductVersionName = 2;
 
-  // DataSourceName is the name of an existing DataSource resource which will be used as the schema for the ModelAutoBuilder's Dataset.
+  // DataSourceName is the name of an existing DataSource resource which will be used as the schema for the ModelAutoBuilder's Entity.
   // If empty, a DataSource will be automatically created based on the data specified by the Location field
   // +kubebuilder:validation:MaxLength=253
   // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
   // +kubebuilder:validation:Optional
   optional string datasourceName = 3;
 
-  // The name of an existing Dataset resource, or the name of the Dataset resource that will be created
+  // The name of an existing Entity resource, or the name of the Entity resource that will be created
   // based on the data specified by the Location field, which will be used to train models
   // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
   // +kubebuilder:validation:MaxLength=253
   optional string datasetName = 4;
 
-  // The location for data that will be saved in a Dataset resource to train models with
+  // The location for data that will be saved in a Entity resource to train models with
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation location = 5;
 
@@ -1284,7 +1284,7 @@ message ModelAutobuilderSpec {
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 22;
 
-  // The reference to the Lab under which Dataset and Study resources created by the ModelAutobuilder will be trained.
+  // The reference to the Lab under which Entity and Study resources created by the ModelAutobuilder will be trained.
   // If unspecified, the default Lab from the parent DataProduct will be used
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference labRef = 23;
@@ -1298,7 +1298,7 @@ message ModelAutobuilderSpec {
   // +kubebuilder:validation:Optional
   optional string datasetType = 25;
 
-  // Fast indicates if Dataset and Study resources associated with the ModelAutobuilder should run in fast mode.
+  // Fast indicates if Entity and Study resources associated with the ModelAutobuilder should run in fast mode.
   // Running in fast mode will skip unnecessary workloads such as profiling, reporting, explaining, etc.
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
@@ -1307,13 +1307,13 @@ message ModelAutobuilderSpec {
 
 // ModelAutobuilderStatus define the observed state of a ModelAutobuilder
 message ModelAutobuilderStatus {
-  // The name of the flat-file generated for the associated Dataset
+  // The name of the flat-file generated for the associated Entity
   optional string flatFileName = 1;
 
   // The name of the DataSource associated with resource
   optional string dataSourceName = 2;
 
-  // The name of the Dataset associated with the resource
+  // The name of the Entity associated with the resource
   optional string datasetName = 3;
 
   // The name of the Study associated with the resource
@@ -1335,15 +1335,15 @@ message ModelAutobuilderStatus {
   // +kubebuilder:validation:Optional
   optional string phase = 10;
 
-  // The number of rows observed in the Dataset associated with the resource
+  // The number of rows observed in the Entity associated with the resource
   // +kubebuilder:validation:Optional
   optional int32 rows = 11;
 
-  // The number of columns observed in the Dataset associated with the resource
+  // The number of columns observed in the Entity associated with the resource
   // +kubebuilder:validation:Optional
   optional int32 cols = 12;
 
-  // The size of the raw data in the Dataset associated with the resource
+  // The size of the raw data in the Entity associated with the resource
   // +kubebuilder:validation:Optional
   optional int32 fileSize = 13;
 
@@ -1981,7 +1981,7 @@ message ModelSpec {
   // +required
   optional string studyName = 5;
 
-  // The name of the Dataset resource which the Model is being trained with
+  // The name of the Entity resource which the Model is being trained with
   // +kubebuilder:validation:Required
   // +kubebuilder:validation:MaxLength=63
   // +required
@@ -2930,7 +2930,7 @@ message ReportSpec {
   // +kubebuilder:validation:Optional
   optional string versionName = 1;
 
-  // EntityRef specifies the entity which the Report references. The supported entities consist of Dataset, Model, and Study resources
+  // EntityRef specifies the entity which the Report references. The supported entities consist of Entity, Model, and Study resources
   optional k8s.io.api.core.v1.ObjectReference entityRef = 2;
 
   // The location of the flat-file containing the PDF report
@@ -3179,7 +3179,7 @@ message ServingSpec {
 // +kubebuilder:printcolumn:name="Progress",type="number",JSONPath=".status.progress",priority=1
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",priority=1
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName",priority=1
-// +kubebuilder:printcolumn:name="Dataset",type="string",JSONPath=".spec.datasetName"
+// +kubebuilder:printcolumn:name="Entity",type="string",JSONPath=".spec.datasetName"
 // +kubebuilder:printcolumn:name="Task",type="string",JSONPath=".spec.task"
 // +kubebuilder:printcolumn:name="Objective",type="string",JSONPath=".spec.search.objective"
 // +kubebuilder:printcolumn:name="Score",type="number",JSONPath=".status.bestModelScore"
@@ -3308,7 +3308,7 @@ message StudySpec {
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference labRef = 3;
 
-  // The name of the Dataset resource that will be used to train models with.
+  // The name of the Entity resource that will be used to train models with.
   // The dataset will be split into individual training, testing, and validation datasets
   // +kubebuilder:validation:Required
   // +required

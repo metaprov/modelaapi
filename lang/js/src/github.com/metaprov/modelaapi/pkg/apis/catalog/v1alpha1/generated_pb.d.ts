@@ -415,6 +415,126 @@ export namespace DataCenter {
   }
 }
 
+export class DataTestCase extends jspb.Message {
+  getEnabled(): boolean;
+  setEnabled(value: boolean): DataTestCase;
+
+  getAssertthat(): string;
+  setAssertthat(value: string): DataTestCase;
+
+  getDataset(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setDataset(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): DataTestCase;
+  hasDataset(): boolean;
+  clearDataset(): DataTestCase;
+
+  getColumn(): string;
+  setColumn(value: string): DataTestCase;
+
+  getMetric(): string;
+  setMetric(value: string): DataTestCase;
+
+  getExpectedvalue(): number;
+  setExpectedvalue(value: number): DataTestCase;
+
+  getExpectedcategory(): string;
+  setExpectedcategory(value: string): DataTestCase;
+
+  getExpectedmin(): number;
+  setExpectedmin(value: number): DataTestCase;
+
+  getExpectedmax(): number;
+  setExpectedmax(value: number): DataTestCase;
+
+  getExpectedsetList(): Array<string>;
+  setExpectedsetList(value: Array<string>): DataTestCase;
+  clearExpectedsetList(): DataTestCase;
+  addExpectedset(value: string, index?: number): DataTestCase;
+
+  getStrictmin(): boolean;
+  setStrictmin(value: boolean): DataTestCase;
+
+  getStrictmax(): boolean;
+  setStrictmax(value: boolean): DataTestCase;
+
+  getGenerated(): boolean;
+  setGenerated(value: boolean): DataTestCase;
+
+  getDisplayname(): string;
+  setDisplayname(value: string): DataTestCase;
+
+  getTagsList(): Array<string>;
+  setTagsList(value: Array<string>): DataTestCase;
+  clearTagsList(): DataTestCase;
+  addTags(value: string, index?: number): DataTestCase;
+
+  getColumn2(): string;
+  setColumn2(value: string): DataTestCase;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DataTestCase.AsObject;
+  static toObject(includeInstance: boolean, msg: DataTestCase): DataTestCase.AsObject;
+  static serializeBinaryToWriter(message: DataTestCase, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DataTestCase;
+  static deserializeBinaryFromReader(message: DataTestCase, reader: jspb.BinaryReader): DataTestCase;
+}
+
+export namespace DataTestCase {
+  export type AsObject = {
+    enabled: boolean,
+    assertthat: string,
+    dataset?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    column: string,
+    metric: string,
+    expectedvalue: number,
+    expectedcategory: string,
+    expectedmin: number,
+    expectedmax: number,
+    expectedsetList: Array<string>,
+    strictmin: boolean,
+    strictmax: boolean,
+    generated: boolean,
+    displayname: string,
+    tagsList: Array<string>,
+    column2: string,
+  }
+}
+
+export class DataTestCaseResult extends jspb.Message {
+  getAssertthat(): string;
+  setAssertthat(value: string): DataTestCaseResult;
+
+  getActual(): Measurement | undefined;
+  setActual(value?: Measurement): DataTestCaseResult;
+  hasActual(): boolean;
+  clearActual(): DataTestCaseResult;
+
+  getFailure(): boolean;
+  setFailure(value: boolean): DataTestCaseResult;
+
+  getError(): boolean;
+  setError(value: boolean): DataTestCaseResult;
+
+  getFailuremsg(): string;
+  setFailuremsg(value: string): DataTestCaseResult;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DataTestCaseResult.AsObject;
+  static toObject(includeInstance: boolean, msg: DataTestCaseResult): DataTestCaseResult.AsObject;
+  static serializeBinaryToWriter(message: DataTestCaseResult, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DataTestCaseResult;
+  static deserializeBinaryFromReader(message: DataTestCaseResult, reader: jspb.BinaryReader): DataTestCaseResult;
+}
+
+export namespace DataTestCaseResult {
+  export type AsObject = {
+    assertthat: string,
+    actual?: Measurement.AsObject,
+    failure: boolean,
+    error: boolean,
+    failuremsg: string,
+  }
+}
+
 export class FloatParameter extends jspb.Message {
   getName(): string;
   setName(value: string): FloatParameter;
@@ -1036,6 +1156,14 @@ export namespace ManagedImageSpec {
 }
 
 export class Measurement extends jspb.Message {
+  getEntity(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setEntity(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): Measurement;
+  hasEntity(): boolean;
+  clearEntity(): Measurement;
+
+  getColumn(): string;
+  setColumn(value: string): Measurement;
+
   getMetric(): string;
   setMetric(value: string): Measurement;
 
@@ -1045,10 +1173,21 @@ export class Measurement extends jspb.Message {
   getStddev(): number;
   setStddev(value: number): Measurement;
 
+  getBoolvalue(): boolean;
+  setBoolvalue(value: boolean): Measurement;
+
+  getCategory(): string;
+  setCategory(value: string): Measurement;
+
   getValuesetList(): Array<string>;
   setValuesetList(value: Array<string>): Measurement;
   clearValuesetList(): Measurement;
   addValueset(value: string, index?: number): Measurement;
+
+  getTimepoint(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setTimepoint(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): Measurement;
+  hasTimepoint(): boolean;
+  clearTimepoint(): Measurement;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Measurement.AsObject;
@@ -1060,10 +1199,15 @@ export class Measurement extends jspb.Message {
 
 export namespace Measurement {
   export type AsObject = {
+    entity?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    column: string,
     metric: string,
     value: number,
     stddev: number,
+    boolvalue: boolean,
+    category: string,
     valuesetList: Array<string>,
+    timepoint?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
   }
 }
 
@@ -1551,124 +1695,14 @@ export namespace Stakeholder {
   }
 }
 
-export class TestCase extends jspb.Message {
-  getEnabled(): boolean;
-  setEnabled(value: boolean): TestCase;
-
-  getAssertthat(): string;
-  setAssertthat(value: string): TestCase;
-
-  getMetric(): string;
-  setMetric(value: string): TestCase;
-
-  getEntity(): string;
-  setEntity(value: string): TestCase;
-
-  getExpectednumber(): number;
-  setExpectednumber(value: number): TestCase;
-
-  getExpectedstring(): string;
-  setExpectedstring(value: string): TestCase;
-
-  getMin(): number;
-  setMin(value: number): TestCase;
-
-  getMax(): number;
-  setMax(value: number): TestCase;
-
-  getExpectedsetList(): Array<string>;
-  setExpectedsetList(value: Array<string>): TestCase;
-  clearExpectedsetList(): TestCase;
-  addExpectedset(value: string, index?: number): TestCase;
-
-  getStrictmin(): boolean;
-  setStrictmin(value: boolean): TestCase;
-
-  getStrictmax(): boolean;
-  setStrictmax(value: boolean): TestCase;
-
-  getGenerated(): boolean;
-  setGenerated(value: boolean): TestCase;
-
-  getDisplayname(): string;
-  setDisplayname(value: string): TestCase;
-
-  getTagsList(): Array<string>;
-  setTagsList(value: Array<string>): TestCase;
-  clearTagsList(): TestCase;
-  addTags(value: string, index?: number): TestCase;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): TestCase.AsObject;
-  static toObject(includeInstance: boolean, msg: TestCase): TestCase.AsObject;
-  static serializeBinaryToWriter(message: TestCase, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): TestCase;
-  static deserializeBinaryFromReader(message: TestCase, reader: jspb.BinaryReader): TestCase;
-}
-
-export namespace TestCase {
-  export type AsObject = {
-    enabled: boolean,
-    assertthat: string,
-    metric: string,
-    entity: string,
-    expectednumber: number,
-    expectedstring: string,
-    min: number,
-    max: number,
-    expectedsetList: Array<string>,
-    strictmin: boolean,
-    strictmax: boolean,
-    generated: boolean,
-    displayname: string,
-    tagsList: Array<string>,
-  }
-}
-
-export class TestCaseResult extends jspb.Message {
-  getAssertthat(): string;
-  setAssertthat(value: string): TestCaseResult;
-
-  getActual(): Measurement | undefined;
-  setActual(value?: Measurement): TestCaseResult;
-  hasActual(): boolean;
-  clearActual(): TestCaseResult;
-
-  getFailed(): boolean;
-  setFailed(value: boolean): TestCaseResult;
-
-  getError(): boolean;
-  setError(value: boolean): TestCaseResult;
-
-  getFailuremsg(): string;
-  setFailuremsg(value: string): TestCaseResult;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): TestCaseResult.AsObject;
-  static toObject(includeInstance: boolean, msg: TestCaseResult): TestCaseResult.AsObject;
-  static serializeBinaryToWriter(message: TestCaseResult, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): TestCaseResult;
-  static deserializeBinaryFromReader(message: TestCaseResult, reader: jspb.BinaryReader): TestCaseResult;
-}
-
-export namespace TestCaseResult {
-  export type AsObject = {
-    assertthat: string,
-    actual?: Measurement.AsObject,
-    failed: boolean,
-    error: boolean,
-    failuremsg: string,
-  }
-}
-
 export class TestSuite extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): TestSuite;
 
-  getTestsList(): Array<TestCase>;
-  setTestsList(value: Array<TestCase>): TestSuite;
+  getTestsList(): Array<DataTestCase>;
+  setTestsList(value: Array<DataTestCase>): TestSuite;
   clearTestsList(): TestSuite;
-  addTests(value?: TestCase, index?: number): TestCase;
+  addTests(value?: DataTestCase, index?: number): DataTestCase;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TestSuite.AsObject;
@@ -1681,7 +1715,7 @@ export class TestSuite extends jspb.Message {
 export namespace TestSuite {
   export type AsObject = {
     enabled: boolean,
-    testsList: Array<TestCase.AsObject>,
+    testsList: Array<DataTestCase.AsObject>,
   }
 }
 
@@ -1691,8 +1725,8 @@ export class TestSuiteResult extends jspb.Message {
   hasFixture(): boolean;
   clearFixture(): TestSuiteResult;
 
-  getFaiures(): number;
-  setFaiures(value: number): TestSuiteResult;
+  getFailures(): number;
+  setFailures(value: number): TestSuiteResult;
 
   getErrors(): number;
   setErrors(value: number): TestSuiteResult;
@@ -1707,10 +1741,10 @@ export class TestSuiteResult extends jspb.Message {
   hasStoptime(): boolean;
   clearStoptime(): TestSuiteResult;
 
-  getTestsList(): Array<TestCaseResult>;
-  setTestsList(value: Array<TestCaseResult>): TestSuiteResult;
+  getTestsList(): Array<DataTestCaseResult>;
+  setTestsList(value: Array<DataTestCaseResult>): TestSuiteResult;
   clearTestsList(): TestSuiteResult;
-  addTests(value?: TestCaseResult, index?: number): TestCaseResult;
+  addTests(value?: DataTestCaseResult, index?: number): DataTestCaseResult;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TestSuiteResult.AsObject;
@@ -1723,11 +1757,11 @@ export class TestSuiteResult extends jspb.Message {
 export namespace TestSuiteResult {
   export type AsObject = {
     fixture?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    faiures: number,
+    failures: number,
     errors: number,
     starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     stoptime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    testsList: Array<TestCaseResult.AsObject>,
+    testsList: Array<DataTestCaseResult.AsObject>,
   }
 }
 

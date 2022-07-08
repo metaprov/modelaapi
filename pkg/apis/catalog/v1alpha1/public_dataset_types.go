@@ -28,7 +28,7 @@ type PublicDataset struct {
 
 type PublicDatasetSpec struct {
 	Url string `json:"url,omitempty" protobuf:"bytes,1,opt,name=url"`
-	// Dataset description
+	// Entity description
 	// +kubebuilder:default =""
 	// +kubebuilder:validation:Optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
@@ -42,7 +42,7 @@ type PublicDatasetSpec struct {
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default =""
 	DataUrl *string `json:"dataUrl,omitempty" protobuf:"bytes,5,opt,name=dataUrl"`
-	// Dataset citation
+	// Entity citation
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default =""
 	Citation *string `json:"citation,omitempty" protobuf:"bytes,6,opt,name=citation"`

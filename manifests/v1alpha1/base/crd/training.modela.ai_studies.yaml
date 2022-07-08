@@ -37,7 +37,7 @@ spec:
       priority: 1
       type: string
     - jsonPath: .spec.datasetName
-      name: Dataset
+      name: Entity
       type: string
     - jsonPath: .spec.task
       name: Task
@@ -225,7 +225,7 @@ spec:
                     type: array
                 type: object
               datasetName:
-                description: The name of the Dataset resource that will be used to
+                description: The name of the Entity resource that will be used to
                   train models with. The dataset will be split into individual training,
                   testing, and validation datasets
                 type: string
@@ -626,7 +626,8 @@ spec:
                             minimum: 0
                             type: integer
                           maxTrainSize:
-                            description: Max size for a single training set
+                            description: ExpectedValueMax size for a single training
+                              set
                             format: int32
                             type: integer
                           sliding:
@@ -2669,7 +2670,7 @@ spec:
                         type: integer
                       testDataset:
                         default: ""
-                        description: The name of the Dataset resource which will be
+                        description: The name of the Entity resource which will be
                           used as the testing dataset, applicable if the split type
                           uses test-dataset. If enabled, the training dataset will
                           not be split and used as-is If empty, we will not use test
@@ -2685,7 +2686,7 @@ spec:
                         type: integer
                       trainDataset:
                         default: ""
-                        description: The name of the Dataset resource which will be
+                        description: The name of the Entity resource which will be
                           used as the training dataset
                         type: string
                       validation:
@@ -2699,7 +2700,7 @@ spec:
                         type: integer
                       validationDataset:
                         default: ""
-                        description: The name of the Dataset resource which will be
+                        description: The name of the Entity resource which will be
                           used as the validation dataset, applicable if the split
                           type uses test-dataset. If enabled, the training dataset
                           will not be split and used as-is

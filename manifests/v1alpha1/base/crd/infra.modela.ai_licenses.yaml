@@ -35,15 +35,15 @@ spec:
       name: Trial End
       type: string
     - jsonPath: .spec.maxTrainers
-      name: Max Trainers
+      name: ExpectedValueMax Trainers
       priority: 1
       type: string
     - jsonPath: .spec.maxServers
-      name: Max Nodes
+      name: ExpectedValueMax Nodes
       priority: 1
       type: string
     - jsonPath: .spec.maxUsers
-      name: Max Users
+      name: ExpectedValueMax Users
       priority: 1
       type: string
     - jsonPath: .spec.expireAt

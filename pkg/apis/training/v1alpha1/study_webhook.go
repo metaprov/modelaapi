@@ -182,7 +182,7 @@ func (study *Study) validateName(fldPath *field.Path) field.ErrorList {
 func (study *Study) validateSpec(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
 	allErrs = append(allErrs, study.validateTask(fldPath.Child("Task"))...)
-	allErrs = append(allErrs, study.validateDataset(fldPath.Child("Dataset"))...)
+	allErrs = append(allErrs, study.validateDataset(fldPath.Child("Entity"))...)
 	return allErrs
 }
 

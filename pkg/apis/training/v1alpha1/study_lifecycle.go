@@ -1011,7 +1011,7 @@ func (study *Study) CompletionAlert(tenantRef *v1.ObjectReference, notifierName 
 			NotifierName: notifierName,
 			Owner:        study.Spec.Owner,
 			Fields: map[string]string{
-				"Dataset":         *study.Spec.DatasetName,
+				"Entity":          *study.Spec.DatasetName,
 				"Task":            string(*study.Spec.Task),
 				"Phase":           string(study.Status.Phase),
 				"Start Time":      study.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
@@ -1041,7 +1041,7 @@ func (study *Study) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *stri
 			NotifierName: notifierName,
 			Owner:        study.Spec.Owner,
 			Fields: map[string]string{
-				"Dataset":         *study.Spec.DatasetName,
+				"Entity":          *study.Spec.DatasetName,
 				"Task":            string(*study.Spec.Task),
 				"Phase":           string(study.Status.Phase),
 				"Start Time":      study.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),

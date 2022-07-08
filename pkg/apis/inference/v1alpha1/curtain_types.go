@@ -42,7 +42,7 @@ type CurtainCondition struct {
 // Curtain represent an object which can be placed before or after predictor
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Serving Site",type="string",JSONPath=".spec.servingsiteRef.name"
-// +kubebuilder:printcolumn:name="Dataset",type="string",JSONPath=".spec.datasetRef.name"
+// +kubebuilder:printcolumn:name="Entity",type="string",JSONPath=".spec.datasetRef.name"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status

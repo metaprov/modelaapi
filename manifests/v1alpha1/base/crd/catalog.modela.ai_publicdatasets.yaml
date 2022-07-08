@@ -64,7 +64,7 @@ spec:
           spec:
             properties:
               citation:
-                description: Dataset citation
+                description: Entity citation
                 type: string
               columns:
                 description: Number of columns in the dataset
@@ -83,7 +83,7 @@ spec:
                 description: URI of the datasource CR for this public dataset
                 type: string
               description:
-                description: Dataset description
+                description: Entity description
                 type: string
               fileSize:
                 description: The size of the dataset in bytes

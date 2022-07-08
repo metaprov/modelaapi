@@ -474,7 +474,7 @@ func (dataset *Dataset) IsFailed() bool {
 // Generate a dataset completion alert
 func (dataset *Dataset) CompletionAlert(tenantRef *v1.ObjectReference, notifierName *string) *infra.Alert {
 	level := infra.Info
-	subject := fmt.Sprintf("Dataset %s completed successfully ", dataset.Name)
+	subject := fmt.Sprintf("Entity %s completed successfully ", dataset.Name)
 	return &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
 			GenerateName: dataset.Name,
@@ -484,7 +484,7 @@ func (dataset *Dataset) CompletionAlert(tenantRef *v1.ObjectReference, notifierN
 			Subject: util.StrPtr(subject),
 			Level:   &level,
 			EntityRef: v1.ObjectReference{
-				Kind:      "Dataset",
+				Kind:      "Entity",
 				Name:      dataset.Name,
 				Namespace: dataset.Namespace,
 			},
@@ -504,7 +504,7 @@ func (dataset *Dataset) CompletionAlert(tenantRef *v1.ObjectReference, notifierN
 
 func (dataset *Dataset) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *string, err error) *infra.Alert {
 	level := infra.Error
-	subject := fmt.Sprintf("Dataset %s failed with error %v", dataset.Name, err.Error())
+	subject := fmt.Sprintf("Entity %s failed with error %v", dataset.Name, err.Error())
 	return &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
 			GenerateName: dataset.Name,
@@ -517,7 +517,7 @@ func (dataset *Dataset) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *
 			TenantRef:    tenantRef,
 			NotifierName: notifierName,
 			EntityRef: v1.ObjectReference{
-				Kind:      "Dataset",
+				Kind:      "Entity",
 				Name:      dataset.Name,
 				Namespace: dataset.Namespace,
 			},

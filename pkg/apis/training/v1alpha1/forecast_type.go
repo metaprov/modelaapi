@@ -223,7 +223,7 @@ type BacktestSpec struct {
 	// +kubebuilder:default = 5
 	// +kubebuilder:validation:Optional
 	Splits *int32 `json:"splits,omitempty" protobuf:"varint,2,opt,name=splits"`
-	// Max size for a single training set
+	// ExpectedValueMax size for a single training set
 	// +kubebuilder:default = 0
 	// +kubebuilder:validation:Optional
 	MaxTrainSize *int32 `json:"maxTrainSize,omitempty" protobuf:"varint,3,opt,name=maxTrainSize"`

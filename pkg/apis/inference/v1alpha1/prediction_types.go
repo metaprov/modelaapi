@@ -48,7 +48,7 @@ type PredictionCondition struct {
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status"
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",priority=1
 // +kubebuilder:printcolumn:name="Predictor",type="string",JSONPath=".spec.predictorName"
-// +kubebuilder:printcolumn:name="Dataset",type="string",JSONPath=".spec.datasetName"
+// +kubebuilder:printcolumn:name="Entity",type="string",JSONPath=".spec.datasetName"
 // +kubebuilder:printcolumn:name="Labeled",type="string",JSONPath=".spec.labeled"
 // +kubebuilder:printcolumn:name="Bucket",type="string",JSONPath=".spec.output.bucketName",priority=1
 // +kubebuilder:printcolumn:name="Key",type="string",JSONPath=".spec.output.path",priority=1
@@ -96,7 +96,7 @@ type PredictionSpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Forecast *bool `json:"forecast,omitempty" protobuf:"varint,4,opt,name=forecast"`
-	// Input specifies the location of the input data, if not using a Dataset resource
+	// Input specifies the location of the input data, if not using a Entity resource
 	Input data.DataInputSpec `json:"input,omitempty" protobuf:"bytes,6,opt,name=input"`
 	// Output specifies the location where the predicted dataset will be stored
 	// +kubebuilder:validation:Optional

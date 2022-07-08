@@ -27,7 +27,7 @@ spec:
       name: Serving Site
       type: string
     - jsonPath: .spec.datasetRef.name
-      name: Dataset
+      name: Entity
       type: string
     - jsonPath: .metadata.creationTimestamp
       name: Age

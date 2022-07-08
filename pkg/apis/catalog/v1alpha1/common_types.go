@@ -1394,21 +1394,30 @@ type RunSchedule struct {
 
 // Measurement is a value for a specific metric
 type Measurement struct {
+	// +kubebuilder:validation:Optional
+	Entity v1.ObjectReference `json:"entity" protobuf:"bytes,1,opt,name=entity"`
+	// +kubebuilder:validation:Optional
+	Column *string `json:"column" protobuf:"bytes,2,opt,name=column"`
 	// The metric type name (e.g. F1 / Accuracy)
 	// +kubebuilder:validation:Required
-	Metric *Metric `json:"metric" protobuf:"bytes,1,opt,name=metric"`
-	// The value of the metric
+	Metric *Metric `json:"metric" protobuf:"bytes,3,opt,name=metric"`
+	// The value of the metric for quantitive observations
 	// +kubebuilder:validation:Required
 	// +required
-	Value *float64 `json:"value" protobuf:"bytes,2,opt,name=value"`
-	// Metric standard diviation
-	// +kubebuilder:validation:Required
+	Value *float64 `json:"value" protobuf:"bytes,4,opt,name=value"`
+	// Metric standard diviation for quantative observations.
 	// +kubebuilder:validation:Optional
-	Stddev *float64 `json:"stddev" protobuf:"bytes,3,opt,name=stddev"`
+	Stddev *float64 `json:"stddev" protobuf:"bytes,5,opt,name=stddev"`
+	// If the metric refer to a bool unit, store the bool value
+	BoolQty *bool `json:"boolValue" protobuf:"bytes,6,opt,name=boolValue"`
+	// If the metric refer to categorical measure,store the category.
+	Category *string `json:"categoy" protobuf:"bytes,7,opt,name=category"`
 	// Capture a set of values.
 	// +kubebuilder:validation:Required
 	// +kubebuilder:validation:Optional
-	ValueSet []string `json:"valueSet" protobuf:"bytes,4,opt,name=valueSet"`
+	ValueSet []string `json:"valueSet" protobuf:"bytes,8,opt,name=valueSet"`
+	// The Time when the observation was taken
+	TimePoint *metav1.Time `json:"timePoint" protobuf:"bytes,9,opt,name=timePoint"`
 }
 
 // +kubebuilder:validation:Enum="champion";"challenger";"shadow";
@@ -2068,49 +2077,53 @@ type TestSuite struct {
 	// +kubebuilder:validation:Optional
 	Enabled *bool `json:"enabled,omitempty" protobuf:"bytes,1,opt,name=enabled"`
 	// +kubebuilder:validation:Optional
-	Tests []TestCase `json:"tests" protobuf:"bytes,2,opt,name=tests"`
+	Tests []DataTestCase `json:"tests" protobuf:"bytes,2,opt,name=tests"`
 }
 
-type TestCase struct {
+type DataTestCase struct {
 	// If false, this test case is disabled
 	// +kubebuilder:validation:Optional
 	Enabled *bool `json:"enabled,omitempty" protobuf:"bytes,1,opt,name=enabled"`
 	// The assertion type
-	AssertThat AssertionType `json:"assertThat" protobuf:"bytes,2,opt,name=assertThat"`
+	AssertThat AssertionType `json:"assertThat,omitempty" protobuf:"bytes,2,opt,name=assertThat"`
 	// +kubebuilder:validation:Optional
-	Metric Metric `json:"metric" protobuf:"bytes,3,opt,name=metric"`
-	// The entity names, depends on the assertion. For example, dataset name, column name
+	Dataset v1.ObjectReference `json:"dataset,omitempty" protobuf:"bytes,3,opt,name=dataset"`
 	// +kubebuilder:validation:Optional
-	Entity *string `json:"entity" protobuf:"bytes,4,opt,name=entity"`
+	Column *string `json:"column,omitempty" protobuf:"bytes,4,opt,name=column"`
+	// +kubebuilder:validation:Optional
+	Metric Metric `json:"metric,omitempty" protobuf:"bytes,5,opt,name=metric"`
 	// The expected numerical value
 	// +kubebuilder:validation:Optional
-	ExpectedNumber *float64 `json:"expectedNumber,omitempty" protobuf:"bytes,5,opt,name=expectedNumber"`
+	ExpectedValue *float64 `json:"expectedValue,omitempty" protobuf:"bytes,6,opt,name=expectedValue"`
 	// The expected value
 	// +kubebuilder:validation:Optional
-	ExpectedString *string `json:"expectedString,omitempty" protobuf:"bytes,6,opt,name=expectedString"`
+	ExpectedCategory *string `json:"expectedCategory,omitempty" protobuf:"bytes,7,opt,name=expectedCategory"`
 	// Minimum range
 	// +kubebuilder:validation:Format=float
 	// +kubebuilder:validation:Optional
-	Min *float64 `json:"min,omitempty" protobuf:"bytes,7,opt,name=min"`
+	ExpectedMin *float64 `json:"expectedMin,omitempty" protobuf:"bytes,8,opt,name=expectedMin"`
 	// +kubebuilder:validation:Format=float
 	// +kubebuilder:validation:Optional
-	Max *float64 `json:"max,omitempty" protobuf:"bytes,8,opt,name=max"`
+	ExpectedMax *float64 `json:"expectedMax,omitempty" protobuf:"bytes,9,opt,name=expectedMax"`
 	// Expected set of values,if the assertion
 	// +kubebuilder:validation:Optional
-	ExpectedSet []string `json:"expectedSetSet,omitempty" protobuf:"bytes,9,rep,name=expectedSet"`
+	ExpectedSet []string `json:"expectedSetSet,omitempty" protobuf:"bytes,10,rep,name=expectedSet"`
 	// +kubebuilder:validation:Optional
-	StrictMin *bool `json:"strictMin,omitempty" protobuf:"varint,10,opt,name=strictMin"`
+	StrictMin *bool `json:"strictMin,omitempty" protobuf:"varint,11,opt,name=strictMin"`
 	// +kubebuilder:validation:Optional
-	StrictMax *bool `json:"strictMax,omitempty" protobuf:"varint,11,opt,name=strictMax"`
+	StrictMax *bool `json:"strictMax,omitempty" protobuf:"varint,12,opt,name=strictMax"`
 	// Indicates if this validation rule was automatically generated by the system
 	// +kubebuilder:validation:Optional
-	Generated *bool `json:"generated,omitempty" protobuf:"varint,12,opt,name=generated"`
+	Generated *bool `json:"generated,omitempty" protobuf:"varint,13,opt,name=generated"`
 	// The test case display name
 	// +kubebuilder:validation:Optional
-	DisplayName *string `json:"displayName,omitempty" protobuf:"bytes,13,opt,name=displayName"`
+	DisplayName *string `json:"displayName,omitempty" protobuf:"bytes,14,opt,name=displayName"`
 	// The test case tags, used for filtering.
 	// Optional Test Tags
-	Tags []string `json:"tags,omitempty" protobuf:"bytes,14,opt,name=tags"`
+	Tags []string `json:"tags,omitempty" protobuf:"bytes,15,opt,name=tags"`
+	// For test that involve two columns (e.g. correlation)
+	// +kubebuilder:validation:Optional
+	Column2 *string `json:"column2,omitempty" protobuf:"bytes,16,opt,name=column2"`
 }
 
 type TestSuiteResult struct {
@@ -2118,7 +2131,7 @@ type TestSuiteResult struct {
 	Fixture v1.ObjectReference `json:"fixture,omitempty" protobuf:"bytes,1,opt,name=fixture"`
 	// Total number of failures. A failure is an unplanned error, e.g. cannot connect to a dataset
 	// +kubebuilder:validation:Optional
-	Failures int32 `json:"failures,omitempty" protobuf:"bytes,2,opt,name=faiures"`
+	Failures int32 `json:"failures,omitempty" protobuf:"bytes,2,opt,name=failures"`
 	// Total number of assertion errors.
 	// +kubebuilder:validation:Optional
 	Errors int32 `json:"errors,omitempty" protobuf:"bytes,3,opt,name=errors"`
@@ -2130,19 +2143,19 @@ type TestSuiteResult struct {
 	StopTime *metav1.Time `json:"stopTime,omitempty" protobuf:"bytes,5,opt,name=stopTime"`
 	// The result of executing the test suite. The result contain one result object per test case.
 	// +kubebuilder:validation:Optional
-	Tests []TestCaseResult `json:"tests,omitempty" protobuf:"bytes,6,opt,name=tests"`
+	Tests []DataTestCaseResult `json:"tests,omitempty" protobuf:"bytes,6,opt,name=tests"`
 }
 
 // Result for a specific case
-type TestCaseResult struct {
+type DataTestCaseResult struct {
 	// The assertion type
 	AssertThat AssertionType `json:"assertThat" protobuf:"bytes,1,opt,name=assertThat"`
-	// Actual value of the metric
+	// Actual observation
 	// +kubebuilder:validation:Optional
 	Actual Measurement `json:"actual,omitempty" protobuf:"bytes,2,opt,name=actual"`
 	// A failure occur on assertion failure
 	// +kubebuilder:validation:Optional
-	Failure bool `json:"failed,omitempty" protobuf:"varint,3,opt,name=failed"`
+	Failure bool `json:"failure,omitempty" protobuf:"varint,3,opt,name=failure"`
 	// An error occur if the system cannot execute the test case (e.g. connection error).
 	// +kubebuilder:validation:Optional
 	Error bool `json:"error,omitempty" protobuf:"varint,4,opt,name=error"`
@@ -2150,3 +2163,7 @@ type TestCaseResult struct {
 	// +kubebuilder:validation:Optional
 	FailureMsg string `json:"failureMsg" protobuf:"bytes,5,opt,name=failureMsg"`
 }
+
+////////////////////////////////////
+// Test frameworks
+///////////////////////////////////

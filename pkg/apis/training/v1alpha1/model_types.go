@@ -158,7 +158,7 @@ type ModelSpec struct {
 	// +kubebuilder:validation:MaxLength=63
 	// +required
 	StudyName *string `json:"studyName,omitempty" protobuf:"bytes,5,opt,name=studyName"`
-	// The name of the Dataset resource which the Model is being trained with
+	// The name of the Entity resource which the Model is being trained with
 	// +kubebuilder:validation:Required
 	// +kubebuilder:validation:MaxLength=63
 	// +required
@@ -729,17 +729,17 @@ type DataSplitSpec struct {
 	// The collection of segments
 	// +kubebuilder:validation:Optional
 	Segments []SegmentSpec `json:"segments,omitempty" protobuf:"bytes,6,rep,name=segments"`
-	// The name of the Dataset resource which will be used as the training dataset
+	// The name of the Entity resource which will be used as the training dataset
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	TrainDatasetName *string `json:"trainDataset,omitempty" protobuf:"bytes,7,rep,name=trainDataset"`
-	// The name of the Dataset resource which will be used as the testing dataset, applicable
+	// The name of the Entity resource which will be used as the testing dataset, applicable
 	// if the split type uses test-dataset. If enabled, the training dataset will not be split and used as-is
 	// If empty, we will not use test dataset
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	TestDatasetName *string `json:"testDataset,omitempty" protobuf:"bytes,8,rep,name=testDataset"`
-	// The name of the Dataset resource which will be used as the validation dataset, applicable
+	// The name of the Entity resource which will be used as the validation dataset, applicable
 	// if the split type uses test-dataset. If enabled, the training dataset will not be split and used as-is
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional

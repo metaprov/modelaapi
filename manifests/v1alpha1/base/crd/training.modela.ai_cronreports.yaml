@@ -331,7 +331,7 @@ spec:
                         type: object
                       entityRef:
                         description: EntityRef specifies the entity which the Report
-                          references. The supported entities consist of Dataset, Model,
+                          references. The supported entities consist of Entity, Model,
                           and Study resources
                         properties:
                           apiVersion:

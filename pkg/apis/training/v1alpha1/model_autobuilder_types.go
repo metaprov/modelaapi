@@ -63,7 +63,7 @@ type ModelAutobuilderCondition struct {
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
 // +kubebuilder:printcolumn:name="Data Product",type="string",JSONPath=".spec.dataProductName"
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.dataProductVersionName"
-// +kubebuilder:printcolumn:name="Dataset",type="string",JSONPath=".status.datasetName"
+// +kubebuilder:printcolumn:name="Entity",type="string",JSONPath=".status.datasetName"
 // +kubebuilder:printcolumn:name="Study",type="string",JSONPath=".status.studyName"
 // +kubebuilder:printcolumn:name="Predictor",type="string",JSONPath=".status.predictorName"
 // +kubebuilder:printcolumn:name="StartTime",type="date",JSONPath=".status.startTime",priority=1
@@ -100,18 +100,18 @@ type ModelAutobuilderSpec struct {
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +kubebuilder:validation:Optional
 	DataProductVersionName *string `json:"dataProductVersionName,omitempty" protobuf:"bytes,2,opt,name=dataProductVersionName"`
-	// DataSourceName is the name of an existing DataSource resource which will be used as the schema for the ModelAutoBuilder's Dataset.
+	// DataSourceName is the name of an existing DataSource resource which will be used as the schema for the ModelAutoBuilder's Entity.
 	// If empty, a DataSource will be automatically created based on the data specified by the Location field
 	// +kubebuilder:validation:MaxLength=253
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +kubebuilder:validation:Optional
 	DataSourceName *string `json:"datasourceName,omitempty" protobuf:"bytes,3,opt,name=datasourceName"`
-	// The name of an existing Dataset resource, or the name of the Dataset resource that will be created
+	// The name of an existing Entity resource, or the name of the Entity resource that will be created
 	// based on the data specified by the Location field, which will be used to train models
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +kubebuilder:validation:MaxLength=253
 	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,4,opt,name=datasetName"`
-	// The location for data that will be saved in a Dataset resource to train models with
+	// The location for data that will be saved in a Entity resource to train models with
 	// +kubebuilder:validation:Optional
 	Location data.DataLocation `json:"location,omitempty" protobuf:"bytes,5,opt,name=location"`
 	// The machine learning task type relevant to the dataset (i.e. regression, classification)
@@ -185,7 +185,7 @@ type ModelAutobuilderSpec struct {
 	// Resources specifies the resource requirements that will be allocated to dataset and model training Jobs
 	// +kubebuilder:validation:Optional
 	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,22,opt,name=resources"`
-	// The reference to the Lab under which Dataset and Study resources created by the ModelAutobuilder will be trained.
+	// The reference to the Lab under which Entity and Study resources created by the ModelAutobuilder will be trained.
 	// If unspecified, the default Lab from the parent DataProduct will be used
 	// +kubebuilder:validation:Optional
 	LabRef *v1.ObjectReference `json:"labRef,omitempty" protobuf:"bytes,23,opt,name=labRef"`
@@ -196,7 +196,7 @@ type ModelAutobuilderSpec struct {
 	// The type of dataset which was uploaded. `tabular` is the only supported type as of the current release
 	// +kubebuilder:validation:Optional
 	DatasetType catalog.DatasetType `json:"datasetType,omitempty" protobuf:"bytes,25,opt,name=datasetType"`
-	// Fast indicates if Dataset and Study resources associated with the ModelAutobuilder should run in fast mode.
+	// Fast indicates if Entity and Study resources associated with the ModelAutobuilder should run in fast mode.
 	// Running in fast mode will skip unnecessary workloads such as profiling, reporting, explaining, etc.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
@@ -205,11 +205,11 @@ type ModelAutobuilderSpec struct {
 
 // ModelAutobuilderStatus define the observed state of a ModelAutobuilder
 type ModelAutobuilderStatus struct {
-	// The name of the flat-file generated for the associated Dataset
+	// The name of the flat-file generated for the associated Entity
 	FlatFileName string `json:"flatFileName,omitempty" protobuf:"bytes,1,opt,name=flatFileName"`
 	// The name of the DataSource associated with resource
 	DataSourceName string `json:"dataSourceName,omitempty" protobuf:"bytes,2,opt,name=dataSourceName"`
-	// The name of the Dataset associated with the resource
+	// The name of the Entity associated with the resource
 	DatasetName string `json:"datasetName,omitempty" protobuf:"bytes,3,opt,name=datasetName"`
 	// The name of the Study associated with the resource
 	StudyName string `json:"studyName,omitempty" protobuf:"bytes,4,opt,name=studyName"`
@@ -224,13 +224,13 @@ type ModelAutobuilderStatus struct {
 	// +kubebuilder:default:="Pending"
 	// +kubebuilder:validation:Optional
 	Phase ModelAutobuilderPhase `json:"phase,omitempty" protobuf:"bytes,10,opt,name=phase"`
-	// The number of rows observed in the Dataset associated with the resource
+	// The number of rows observed in the Entity associated with the resource
 	// +kubebuilder:validation:Optional
 	Rows int32 `json:"rows,omitempty" protobuf:"varint,11,opt,name=rows"`
-	// The number of columns observed in the Dataset associated with the resource
+	// The number of columns observed in the Entity associated with the resource
 	// +kubebuilder:validation:Optional
 	Cols int32 `json:"cols,omitempty" protobuf:"varint,12,opt,name=cols"`
-	// The size of the raw data in the Dataset associated with the resource
+	// The size of the raw data in the Entity associated with the resource
 	// +kubebuilder:validation:Optional
 	FileSize int32 `json:"fileSize,omitempty" protobuf:"varint,13,opt,name=fileSize"`
 	// The number of total Model resources created by the associated Study resource

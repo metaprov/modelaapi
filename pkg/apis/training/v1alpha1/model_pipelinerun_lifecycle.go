@@ -469,7 +469,7 @@ func (run *ModelPipelineRun) ErrorAlert(tenantRef *v1.ObjectReference, notifierN
 
 func (run *ModelPipelineRun) CompletionAlert(tenantRef *v1.ObjectReference, notifierName *string) *infra.Alert {
 	level := infra.Info
-	subject := fmt.Sprintf("Dataset %s completed successfully ", run.Name)
+	subject := fmt.Sprintf("Entity %s completed successfully ", run.Name)
 	return &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
 			GenerateName: run.Name,
