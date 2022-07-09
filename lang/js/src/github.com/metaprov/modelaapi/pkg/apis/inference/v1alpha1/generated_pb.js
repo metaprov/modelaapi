@@ -7828,7 +7828,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSp
     enabled: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
     livehistogramref: (f = msg.getLivehistogramref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     traininghistogramref: (f = msg.getTraininghistogramref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
-    drifttests: (f = msg.getDrifttests()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.toObject(includeInstance, f),
+    tests: (f = msg.getTests()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.toObject(includeInstance, f),
     schedule: (f = msg.getSchedule()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.toObject(includeInstance, f),
     outlierdetectionmodelref: (f = msg.getOutlierdetectionmodelref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f)
   };
@@ -7884,7 +7884,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSp
     case 6:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.deserializeBinaryFromReader);
-      msg.setDrifttests(value);
+      msg.setTests(value);
       break;
     case 8:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule;
@@ -7948,7 +7948,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSp
       k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
     );
   }
-  f = message.getDrifttests();
+  f = message.getTests();
   if (f != null) {
     writer.writeMessage(
       6,
@@ -8086,10 +8086,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSp
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite driftTests = 6;
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite tests = 6;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSpec.prototype.getDrifttests = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSpec.prototype.getTests = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite, 6));
 };
@@ -8099,7 +8099,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSp
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSpec} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSpec.prototype.setDrifttests = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSpec.prototype.setTests = function(value) {
   return jspb.Message.setWrapperField(this, 6, value);
 };
 
@@ -8108,8 +8108,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSp
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSpec.prototype.clearDrifttests = function() {
-  return this.setDrifttests(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSpec.prototype.clearTests = function() {
+  return this.setTests(undefined);
 };
 
 
@@ -8117,7 +8117,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSp
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSpec.prototype.hasDrifttests = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSpec.prototype.hasTests = function() {
   return jspb.Message.getField(this, 6) != null;
 };
 
@@ -9210,7 +9210,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.GroundTruthTestS
     enabled: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
     groundtruthdatasetref: (f = msg.getGroundtruthdatasetref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     trainingdatasetref: (f = msg.getTrainingdatasetref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
-    drifttests: (f = msg.getDrifttests()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.toObject(includeInstance, f),
+    tests: (f = msg.getTests()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.toObject(includeInstance, f),
     schedule: (f = msg.getSchedule()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.toObject(includeInstance, f)
   };
 
@@ -9265,7 +9265,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.GroundTruthTestS
     case 6:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.deserializeBinaryFromReader);
-      msg.setDrifttests(value);
+      msg.setTests(value);
       break;
     case 8:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule;
@@ -9324,7 +9324,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.GroundTruthTestS
       k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
     );
   }
-  f = message.getDrifttests();
+  f = message.getTests();
   if (f != null) {
     writer.writeMessage(
       6,
@@ -9454,10 +9454,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.GroundTruthTestS
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite driftTests = 6;
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite tests = 6;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.GroundTruthTestSpec.prototype.getDrifttests = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.GroundTruthTestSpec.prototype.getTests = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite, 6));
 };
@@ -9467,7 +9467,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.GroundTruthTestS
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.GroundTruthTestSpec} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.GroundTruthTestSpec.prototype.setDrifttests = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.GroundTruthTestSpec.prototype.setTests = function(value) {
   return jspb.Message.setWrapperField(this, 6, value);
 };
 
@@ -9476,8 +9476,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.GroundTruthTestS
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.GroundTruthTestSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.GroundTruthTestSpec.prototype.clearDrifttests = function() {
-  return this.setDrifttests(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.GroundTruthTestSpec.prototype.clearTests = function() {
+  return this.setTests(undefined);
 };
 
 
@@ -9485,7 +9485,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.GroundTruthTestS
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.GroundTruthTestSpec.prototype.hasDrifttests = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.GroundTruthTestSpec.prototype.hasTests = function() {
   return jspb.Message.getField(this, 6) != null;
 };
 

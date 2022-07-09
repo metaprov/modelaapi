@@ -1489,8 +1489,8 @@ func (in *PredictorStatus) DeepCopyInto(out *PredictorStatus) {
 			(*in)[i].DeepCopyInto(&(*out)[i])
 		}
 	}
-	if in.ModelStatuses != nil {
-		in, out := &in.ModelStatuses, &out.ModelStatuses
+	if in.Models != nil {
+		in, out := &in.Models, &out.Models
 		*out = make([]ModelDeploymentStatus, len(*in))
 		for i := range *in {
 			(*in)[i].DeepCopyInto(&(*out)[i])

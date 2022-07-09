@@ -404,7 +404,12 @@ spec:
               drift:
                 description: Spec for the drift detection process
                 properties:
-                  LiveHistogramRef:
+                  enabled:
+                    default: false
+                    description: Indicates if model monitoring is enabled for the
+                      model
+                    type: boolean
+                  liveHistogramRef:
                     description: Reference to the live FeatureHistogram, the live
                       FeatureHistogram is updated by the predictor for each prediction.
                     properties:
@@ -441,9 +446,9 @@ spec:
                         description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                         type: string
                     type: object
-                  TrainingHistogramRef:
-                    description: Reference to the training histogram ref. The training
-                      FeatureHistogram is created
+                  outlierDetectionModelRef:
+                    description: Reference to a model that will be used for outlier
+                      detection. If empty, an outlier detection model.
                     properties:
                       apiVersion:
                         description: API version of the referent.
@@ -478,7 +483,44 @@ spec:
                         description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                         type: string
                     type: object
-                  driftTests:
+                  schedule:
+                    description: The schedule on which model monitoring computations
+                      will be performed
+                    properties:
+                      cron:
+                        description: The cron string of the schedule. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm
+                          for more information
+                        type: string
+                      enabled:
+                        default: false
+                        description: Indicates if the schedule is enabled and the
+                          Jobs associated it will be created at the specified time
+                        type: boolean
+                      endTime:
+                        description: The time of the day when the schedule is expected
+                          to conclude
+                        format: date-time
+                        type: string
+                      startTime:
+                        description: The time of the day when the schedule will be
+                          executed
+                        format: date-time
+                        type: string
+                      type:
+                        description: The type of schedule, which can be a frequency
+                          interval or a cron expression
+                        enum:
+                        - now
+                        - once
+                        - hourly
+                        - daily
+                        - weekly
+                        - monthly
+                        - yearly
+                        - cron
+                        type: string
+                    type: object
+                  tests:
                     description: Define the tests to run against the predictor.
                     properties:
                       enabled:
@@ -660,14 +702,9 @@ spec:
                           type: object
                         type: array
                     type: object
-                  enabled:
-                    default: false
-                    description: Indicates if model monitoring is enabled for the
-                      model
-                    type: boolean
-                  outlierDetectionModelRef:
-                    description: Reference to a model that will be used for outlier
-                      detection. If empty, an outlier detection model.
+                  trainingHistogramRef:
+                    description: Reference to the training histogram ref. The training
+                      FeatureHistogram is created
                     properties:
                       apiVersion:
                         description: API version of the referent.
@@ -700,43 +737,6 @@ spec:
                         type: string
                       uid:
                         description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
-                        type: string
-                    type: object
-                  schedule:
-                    description: The schedule on which model monitoring computations
-                      will be performed
-                    properties:
-                      cron:
-                        description: The cron string of the schedule. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm
-                          for more information
-                        type: string
-                      enabled:
-                        default: false
-                        description: Indicates if the schedule is enabled and the
-                          Jobs associated it will be created at the specified time
-                        type: boolean
-                      endTime:
-                        description: The time of the day when the schedule is expected
-                          to conclude
-                        format: date-time
-                        type: string
-                      startTime:
-                        description: The time of the day when the schedule will be
-                          executed
-                        format: date-time
-                        type: string
-                      type:
-                        description: The type of schedule, which can be a frequency
-                          interval or a cron expression
-                        enum:
-                        - now
-                        - once
-                        - hourly
-                        - daily
-                        - weekly
-                        - monthly
-                        - yearly
-                        - cron
                         type: string
                     type: object
                 type: object
@@ -885,7 +885,12 @@ spec:
               groundTruth:
                 description: Spec for the ground truth process.
                 properties:
-                  GroundTrueDatasetRef:
+                  enabled:
+                    default: false
+                    description: Indicates if model monitoring is enabled for the
+                      model
+                    type: boolean
+                  groundTrueDatasetRef:
                     description: Reference to the labeled ground true dataset
                     properties:
                       apiVersion:
@@ -921,44 +926,44 @@ spec:
                         description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                         type: string
                     type: object
-                  TrainingDatasetRef:
-                    description: Reference to the training dataset for the champion
-                      model.
+                  schedule:
+                    description: The schedule on which model monitoring computations
+                      will be performed
                     properties:
-                      apiVersion:
-                        description: API version of the referent.
+                      cron:
+                        description: The cron string of the schedule. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm
+                          for more information
                         type: string
-                      fieldPath:
-                        description: 'If referring to a piece of an object instead
-                          of an entire object, this string should contain a valid
-                          JSON/Go field access statement, such as desiredState.manifest.containers[2].
-                          For example, if the object reference is to a container within
-                          a pod, this would take on a value like: "spec.containers{name}"
-                          (where "name" refers to the name of the container that triggered
-                          the event) or if no container name is specified "spec.containers[2]"
-                          (container with index 2 in this pod). This syntax is chosen
-                          only to have some well-defined way of referencing a part
-                          of an object. TODO: this design is not final and this field
-                          is subject to change in the future.'
+                      enabled:
+                        default: false
+                        description: Indicates if the schedule is enabled and the
+                          Jobs associated it will be created at the specified time
+                        type: boolean
+                      endTime:
+                        description: The time of the day when the schedule is expected
+                          to conclude
+                        format: date-time
                         type: string
-                      kind:
-                        description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                      startTime:
+                        description: The time of the day when the schedule will be
+                          executed
+                        format: date-time
                         type: string
-                      name:
-                        description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
-                        type: string
-                      namespace:
-                        description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
-                        type: string
-                      resourceVersion:
-                        description: 'Specific resourceVersion to which this reference
-                          is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
-                        type: string
-                      uid:
-                        description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                      type:
+                        description: The type of schedule, which can be a frequency
+                          interval or a cron expression
+                        enum:
+                        - now
+                        - once
+                        - hourly
+                        - daily
+                        - weekly
+                        - monthly
+                        - yearly
+                        - cron
                         type: string
                     type: object
-                  driftTests:
+                  tests:
                     description: Define the tests to run against the predictor.
                     properties:
                       enabled:
@@ -1140,46 +1145,41 @@ spec:
                           type: object
                         type: array
                     type: object
-                  enabled:
-                    default: false
-                    description: Indicates if model monitoring is enabled for the
-                      model
-                    type: boolean
-                  schedule:
-                    description: The schedule on which model monitoring computations
-                      will be performed
+                  trainingDatasetRef:
+                    description: Reference to the training dataset for the champion
+                      model.
                     properties:
-                      cron:
-                        description: The cron string of the schedule. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm
-                          for more information
+                      apiVersion:
+                        description: API version of the referent.
                         type: string
-                      enabled:
-                        default: false
-                        description: Indicates if the schedule is enabled and the
-                          Jobs associated it will be created at the specified time
-                        type: boolean
-                      endTime:
-                        description: The time of the day when the schedule is expected
-                          to conclude
-                        format: date-time
+                      fieldPath:
+                        description: 'If referring to a piece of an object instead
+                          of an entire object, this string should contain a valid
+                          JSON/Go field access statement, such as desiredState.manifest.containers[2].
+                          For example, if the object reference is to a container within
+                          a pod, this would take on a value like: "spec.containers{name}"
+                          (where "name" refers to the name of the container that triggered
+                          the event) or if no container name is specified "spec.containers[2]"
+                          (container with index 2 in this pod). This syntax is chosen
+                          only to have some well-defined way of referencing a part
+                          of an object. TODO: this design is not final and this field
+                          is subject to change in the future.'
                         type: string
-                      startTime:
-                        description: The time of the day when the schedule will be
-                          executed
-                        format: date-time
+                      kind:
+                        description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
                         type: string
-                      type:
-                        description: The type of schedule, which can be a frequency
-                          interval or a cron expression
-                        enum:
-                        - now
-                        - once
-                        - hourly
-                        - daily
-                        - weekly
-                        - monthly
-                        - yearly
-                        - cron
+                      name:
+                        description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                        type: string
+                      namespace:
+                        description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                        type: string
+                      resourceVersion:
+                        description: 'Specific resourceVersion to which this reference
+                          is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                        type: string
+                      uid:
+                        description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                         type: string
                     type: object
                 type: object

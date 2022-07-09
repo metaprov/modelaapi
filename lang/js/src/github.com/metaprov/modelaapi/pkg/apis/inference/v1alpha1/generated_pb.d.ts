@@ -759,10 +759,10 @@ export class DriftDetectionSpec extends jspb.Message {
   hasTraininghistogramref(): boolean;
   clearTraininghistogramref(): DriftDetectionSpec;
 
-  getDrifttests(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
-  setDrifttests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): DriftDetectionSpec;
-  hasDrifttests(): boolean;
-  clearDrifttests(): DriftDetectionSpec;
+  getTests(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
+  setTests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): DriftDetectionSpec;
+  hasTests(): boolean;
+  clearTests(): DriftDetectionSpec;
 
   getSchedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
   setSchedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): DriftDetectionSpec;
@@ -787,7 +787,7 @@ export namespace DriftDetectionSpec {
     enabled: boolean,
     livehistogramref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     traininghistogramref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    drifttests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
+    tests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
     schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     outlierdetectionmodelref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
   }
@@ -923,10 +923,10 @@ export class GroundTruthTestSpec extends jspb.Message {
   hasTrainingdatasetref(): boolean;
   clearTrainingdatasetref(): GroundTruthTestSpec;
 
-  getDrifttests(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
-  setDrifttests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): GroundTruthTestSpec;
-  hasDrifttests(): boolean;
-  clearDrifttests(): GroundTruthTestSpec;
+  getTests(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
+  setTests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): GroundTruthTestSpec;
+  hasTests(): boolean;
+  clearTests(): GroundTruthTestSpec;
 
   getSchedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
   setSchedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): GroundTruthTestSpec;
@@ -946,7 +946,7 @@ export namespace GroundTruthTestSpec {
     enabled: boolean,
     groundtruthdatasetref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     trainingdatasetref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    drifttests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
+    tests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
     schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
   }
 }

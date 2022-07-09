@@ -35,11 +35,11 @@ type DriftDetectionSpec struct {
 	// +kubebuilder:validation:Optional
 	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
 	// Reference to the live FeatureHistogram, the live FeatureHistogram is updated by the predictor for each prediction.
-	LiveHistogramRef v1.ObjectReference `json:"LiveHistogramRef,omitempty" protobuf:"bytes,2,opt,name=liveHistogramRef"`
+	LiveHistogramRef v1.ObjectReference `json:"liveHistogramRef,omitempty" protobuf:"bytes,2,opt,name=liveHistogramRef"`
 	// Reference to the training histogram ref. The training FeatureHistogram is created
-	TrainingHistogramRef v1.ObjectReference `json:"TrainingHistogramRef,omitempty" protobuf:"bytes,3,opt,name=trainingHistogramRef"`
+	TrainingHistogramRef v1.ObjectReference `json:"trainingHistogramRef,omitempty" protobuf:"bytes,3,opt,name=trainingHistogramRef"`
 	// Define the tests to run against the predictor.
-	Tests catalog.TestSuite `json:"driftTests,omitempty" protobuf:"bytes,6,opt,name=driftTests"`
+	Tests catalog.TestSuite `json:"tests,omitempty" protobuf:"bytes,6,opt,name=tests"`
 	// The schedule on which model monitoring computations will be performed
 	// +kubebuilder:validation:Optional
 	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,8,opt,name=schedule"`
@@ -54,11 +54,11 @@ type GroundTruthTestSpec struct {
 	// +kubebuilder:validation:Optional
 	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
 	// Reference to the labeled ground true dataset
-	GroundTrueDatasetRef v1.ObjectReference `json:"GroundTrueDatasetRef,omitempty" protobuf:"bytes,2,opt,name=groundTruthDatasetRef"`
+	GroundTrueDatasetRef v1.ObjectReference `json:"groundTrueDatasetRef,omitempty" protobuf:"bytes,2,opt,name=groundTruthDatasetRef"`
 	// Reference to the training dataset for the champion model.
-	TrainingDatasetRef v1.ObjectReference `json:"TrainingDatasetRef,omitempty" protobuf:"bytes,3,opt,name=trainingDatasetRef"`
+	TrainingDatasetRef v1.ObjectReference `json:"trainingDatasetRef,omitempty" protobuf:"bytes,3,opt,name=trainingDatasetRef"`
 	// Define the tests to run against the predictor.
-	Tests catalog.TestSuite `json:"driftTests,omitempty" protobuf:"bytes,6,opt,name=driftTests"`
+	Tests catalog.TestSuite `json:"tests,omitempty" protobuf:"bytes,6,opt,name=tests"`
 	// The schedule on which model monitoring computations will be performed
 	// +kubebuilder:validation:Optional
 	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,8,opt,name=schedule"`
@@ -410,7 +410,7 @@ type PredictorStatus struct {
 	History []ModelRecord `json:"history,omitempty" protobuf:"bytes,2,opt,name=history"`
 	// The collection of statuses for each model deployed with the Predictor
 	// +kubebuilder:validation:Optional
-	ModelStatuses []ModelDeploymentStatus `json:"models,omitempty" protobuf:"bytes,3,rep,name=models"`
+	Models []ModelDeploymentStatus `json:"models,omitempty" protobuf:"bytes,3,rep,name=models"`
 	// The status of the Predictorlet associated with the Predictor. The Predictorlet is a service which handles prediction traffic
 	// and routes predictions to individual models based on the specification of the Predictor
 	// +kubebuilder:validation:Optional

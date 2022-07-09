@@ -502,7 +502,7 @@ message DriftDetectionSpec {
   optional k8s.io.api.core.v1.ObjectReference trainingHistogramRef = 3;
 
   // Define the tests to run against the predictor.
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite driftTests = 6;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite tests = 6;
 
   // The schedule on which model monitoring computations will be performed
   // +kubebuilder:validation:Optional
@@ -584,7 +584,7 @@ message GroundTruthTestSpec {
   optional k8s.io.api.core.v1.ObjectReference trainingDatasetRef = 3;
 
   // Define the tests to run against the predictor.
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite driftTests = 6;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite tests = 6;
 
   // The schedule on which model monitoring computations will be performed
   // +kubebuilder:validation:Optional
