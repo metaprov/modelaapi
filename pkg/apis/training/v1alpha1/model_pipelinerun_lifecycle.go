@@ -133,7 +133,7 @@ func (this *ModelPipelineRunStageStatus) IsRunning() bool {
 ////////////////////////////////////////////////////////////
 
 func (this *ModelPipelineRun) MarkDataStageRunning() {
-	this.Status.DataStatus.MarkRunning()
+	this.Status.Data.MarkRunning()
 	this.Status.Phase = PipelinePhaseRunning
 	this.Status.Stage = ModelPipelineStageData
 	this.CreateOrUpdateCond(ModelPipelineRunCondition{
@@ -150,7 +150,7 @@ func (this *ModelPipelineRun) IsDataStageRunning() bool {
 }
 
 func (this *ModelPipelineRun) MarkDataStageCompleted() {
-	this.Status.DataStatus.MarkCompleted()
+	this.Status.Data.MarkCompleted()
 	this.Status.Phase = PipelinePhaseRunning
 	this.Status.Stage = ModelPipelineStageData
 
@@ -166,7 +166,7 @@ func (this *ModelPipelineRun) IsDataStageCompleted() bool {
 }
 
 func (this *ModelPipelineRun) MarkDataStageFailed(err error) {
-	this.Status.DataStatus.MarkFailed(err)
+	this.Status.Data.MarkFailed(err)
 	this.Status.Stage = ModelPipelineStageData
 	this.CreateOrUpdateCond(ModelPipelineRunCondition{
 		Type:    MPRDataStageCompleted,
@@ -189,7 +189,7 @@ func (this *ModelPipelineRun) IsDataStageFailed() bool {
 // Training Stage
 ////////////////////////////////////////////////////////////
 func (this *ModelPipelineRun) MarkTrainingStageRunning() {
-	this.Status.TrainingStatus.MarkRunning()
+	this.Status.Training.MarkRunning()
 	this.Status.Phase = PipelinePhaseRunning
 	this.Status.Stage = ModelPipelineStageTraining
 	this.CreateOrUpdateCond(ModelPipelineRunCondition{
@@ -206,7 +206,7 @@ func (this *ModelPipelineRun) IsTrainingStageRunning() bool {
 }
 
 func (this *ModelPipelineRun) MarkTrainingStageCompleted() {
-	this.Status.TrainingStatus.MarkCompleted()
+	this.Status.Training.MarkCompleted()
 	this.Status.Phase = PipelinePhaseRunning
 	this.Status.Stage = ModelPipelineStageTraining
 
@@ -222,7 +222,7 @@ func (this *ModelPipelineRun) IsTrainingStageCompleted() bool {
 }
 
 func (this *ModelPipelineRun) MarkTrainingStageFailed(err error) {
-	this.Status.TrainingStatus.MarkFailed(err)
+	this.Status.Training.MarkFailed(err)
 	this.Status.Stage = ModelPipelineStageTraining
 	this.CreateOrUpdateCond(ModelPipelineRunCondition{
 		Type:    MPRTrainingStageCompleted,
@@ -245,7 +245,7 @@ func (this *ModelPipelineRun) IsTrainingStageFailed() bool {
 // UAT Stage
 ////////////////////////////////////////////////////////////
 func (this *ModelPipelineRun) MarkUATStageRunning() {
-	this.Status.UATStatus.MarkRunning()
+	this.Status.UAT.MarkRunning()
 	this.Status.Phase = PipelinePhaseRunning
 	this.Status.Stage = ModelPipelineStageUAT
 	this.CreateOrUpdateCond(ModelPipelineRunCondition{
@@ -262,7 +262,7 @@ func (this *ModelPipelineRun) IsUATStageRunning() bool {
 }
 
 func (this *ModelPipelineRun) MarkUATStageCompleted() {
-	this.Status.UATStatus.MarkCompleted()
+	this.Status.UAT.MarkCompleted()
 	this.Status.Phase = PipelinePhaseRunning
 	this.Status.Stage = ModelPipelineStageUAT
 
@@ -278,7 +278,7 @@ func (this *ModelPipelineRun) IsUatStageCompleted() bool {
 }
 
 func (this *ModelPipelineRun) MarkUatStageFailed(err error) {
-	this.Status.UATStatus.MarkFailed(err)
+	this.Status.UAT.MarkFailed(err)
 	this.Status.Stage = ModelPipelineStageUAT
 	this.CreateOrUpdateCond(ModelPipelineRunCondition{
 		Type:    MPRUATCompleted,
@@ -301,7 +301,7 @@ func (this *ModelPipelineRun) IsUATStageFailed() bool {
 // Capacity Stage
 ////////////////////////////////////////////////////////////
 func (this *ModelPipelineRun) MarkCapacityStageRunning() {
-	this.Status.CapacityStatus.MarkRunning()
+	this.Status.Capacity.MarkRunning()
 	this.Status.Phase = PipelinePhaseRunning
 	this.Status.Stage = ModelPipelineStageCapacity
 	this.CreateOrUpdateCond(ModelPipelineRunCondition{
@@ -318,7 +318,7 @@ func (this *ModelPipelineRun) IsCapacityStageRunning() bool {
 }
 
 func (this *ModelPipelineRun) MarkCapcityStageCompleted() {
-	this.Status.CapacityStatus.MarkCompleted()
+	this.Status.Capacity.MarkCompleted()
 	this.Status.Phase = PipelinePhaseRunning
 	this.Status.Stage = ModelPipelineStageUAT
 
@@ -334,7 +334,7 @@ func (this *ModelPipelineRun) IsCapacityStageCompleted() bool {
 }
 
 func (this *ModelPipelineRun) MarkCapacityStageFailed(err error) {
-	this.Status.CapacityStatus.MarkFailed(err)
+	this.Status.Capacity.MarkFailed(err)
 	this.Status.Stage = ModelPipelineStageUAT
 	this.CreateOrUpdateCond(ModelPipelineRunCondition{
 		Type:    MPRCapacityStageCompleted,
@@ -358,7 +358,7 @@ func (this *ModelPipelineRun) IsCapacityStageFailed() bool {
 ////////////////////////////////////////////////////////////
 
 func (this *ModelPipelineRun) MarkProdStageRunning() {
-	this.Status.DeploymentStatus.MarkRunning()
+	this.Status.Deployment.MarkRunning()
 	this.Status.Phase = PipelinePhaseRunning
 	this.Status.Stage = ModelPipelineStageProd
 	this.CreateOrUpdateCond(ModelPipelineRunCondition{
@@ -375,7 +375,7 @@ func (this *ModelPipelineRun) IsProdStageRunning() bool {
 }
 
 func (this *ModelPipelineRun) MarkProdStageCompleted() {
-	this.Status.DeploymentStatus.MarkCompleted()
+	this.Status.Deployment.MarkCompleted()
 	this.Status.Phase = PipelinePhaseRunning
 	this.Status.Stage = ModelPipelineStageProd
 
@@ -391,7 +391,7 @@ func (this *ModelPipelineRun) IsProdStageCompleted() bool {
 }
 
 func (this *ModelPipelineRun) MarkProdStageFailed(err error) {
-	this.Status.DeploymentStatus.MarkFailed(err)
+	this.Status.Deployment.MarkFailed(err)
 	this.Status.Stage = ModelPipelineStageProd
 	this.CreateOrUpdateCond(ModelPipelineRunCondition{
 		Type:    MPRModelReleased,

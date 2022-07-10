@@ -33,7 +33,7 @@ func Test_Failed_Testing(t *testing.T) {
 	metric := catalog.F1Binary
 	model.MarkTrained([]catalog.Measurement{{
 		Metric: &metric,
-		Amount: nil,
+		Value:  nil,
 	}})
 	model.Status.Best = true
 	model.MarkTestingFailed("err")
