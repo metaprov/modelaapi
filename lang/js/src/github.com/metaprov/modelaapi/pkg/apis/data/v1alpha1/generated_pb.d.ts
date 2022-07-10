@@ -2214,6 +2214,9 @@ export class DatasetSpec extends jspb.Message {
   hasPredictorref(): boolean;
   clearPredictorref(): DatasetSpec;
 
+  getGeneratefeaturehistogram(): boolean;
+  setGeneratefeaturehistogram(value: boolean): DatasetSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DatasetSpec.AsObject;
   static toObject(includeInstance: boolean, msg: DatasetSpec): DatasetSpec.AsObject;
@@ -2250,6 +2253,7 @@ export namespace DatasetSpec {
     labref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     predictiondatasetref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     predictorref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    generatefeaturehistogram: boolean,
   }
 }
 
@@ -2374,6 +2378,11 @@ export class DatasetStatus extends jspb.Message {
   hasEndtime(): boolean;
   clearEndtime(): DatasetStatus;
 
+  getFeaturehistogramref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setFeaturehistogramref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): DatasetStatus;
+  hasFeaturehistogramref(): boolean;
+  clearFeaturehistogramref(): DatasetStatus;
+
   getConditionsList(): Array<DatasetCondition>;
   setConditionsList(value: Array<DatasetCondition>): DatasetStatus;
   clearConditionsList(): DatasetStatus;
@@ -2409,6 +2418,7 @@ export namespace DatasetStatus {
     images?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Images.AsObject,
     starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    featurehistogramref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     conditionsList: Array<DatasetCondition.AsObject>,
   }
 }

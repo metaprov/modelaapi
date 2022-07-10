@@ -198,6 +198,10 @@ type DatasetSpec struct {
 	// Used for prediction dataset, contain a reference to the predictor resource that created this dataset
 	// +kubebuilder:validation:Optional
 	PredictorRef v1.ObjectReference `json:"predictorRef,omitempty" protobuf:"bytes,27,opt,name=predictorRef"`
+	// If true generate feature histogram.
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	GenerateFeatureHistogram *bool `json:"generateFeatureHistogram,omitempty" protobuf:"varint,28,opt,name=generateFeatureHistogram"`
 }
 
 // DatasetStatus defines the observed state of a Dataset object
@@ -266,10 +270,13 @@ type DatasetStatus struct {
 	// The time that the Dataset finished processing, either due to completion or failure
 	// +kubebuilder:validation:Optional
 	EndTime *metav1.Time `json:"endTime,omitempty" protobuf:"bytes,21,opt,name=endTime"`
+	// The generated training feature histogram, Empty if no feature histogram generated
+	// +kubebuilder:validation:Optional
+	FeatureHistogramRef v1.ObjectReference `json:"featureHistogramRef,omitempty" protobuf:"bytes,22,opt,name=featureHistogramRef"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []DatasetCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,22,rep,name=conditions"`
+	Conditions []DatasetCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,23,rep,name=conditions"`
 }
 
 // DatasetStatistics contains statistics about the Dataset's overall data, as well as every feature of the data. The

@@ -1703,6 +1703,11 @@ message DatasetSpec {
   // Used for prediction dataset, contain a reference to the predictor resource that created this dataset
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference predictorRef = 27;
+
+  // If true generate feature histogram.
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool generateFeatureHistogram = 28;
 }
 
 // DatasetStatistics contains statistics about the Dataset's overall data, as well as every feature of the data. The
@@ -1819,10 +1824,14 @@ message DatasetStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 21;
 
+  // The generated training feature histogram, Empty if no feature histogram generated
+  // +kubebuilder:validation:Optional
+  optional k8s.io.api.core.v1.ObjectReference featureHistogramRef = 22;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated DatasetCondition conditions = 22;
+  repeated DatasetCondition conditions = 23;
 }
 
 // DatasetTemplate is used to generate new datasets
