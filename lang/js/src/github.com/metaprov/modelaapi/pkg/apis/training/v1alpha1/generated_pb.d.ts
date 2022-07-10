@@ -2623,10 +2623,10 @@ export class ModelPipelineRunStageStatus extends jspb.Message {
   hasEndtime(): boolean;
   clearEndtime(): ModelPipelineRunStageStatus;
 
-  getTestresult(): ModelTestSuiteResult | undefined;
-  setTestresult(value?: ModelTestSuiteResult): ModelPipelineRunStageStatus;
-  hasTestresult(): boolean;
-  clearTestresult(): ModelPipelineRunStageStatus;
+  getResult(): ModelTestSuiteResult | undefined;
+  setResult(value?: ModelTestSuiteResult): ModelPipelineRunStageStatus;
+  hasResult(): boolean;
+  clearResult(): ModelPipelineRunStageStatus;
 
   getError(): string;
   setError(value: string): ModelPipelineRunStageStatus;
@@ -2647,7 +2647,7 @@ export namespace ModelPipelineRunStageStatus {
     approvedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    testresult?: ModelTestSuiteResult.AsObject,
+    result?: ModelTestSuiteResult.AsObject,
     error: string,
   }
 }
@@ -2665,45 +2665,45 @@ export class ModelPipelineRunStatus extends jspb.Message {
   getModelname(): string;
   setModelname(value: string): ModelPipelineRunStatus;
 
-  getDatastatus(): ModelPipelineRunStageStatus | undefined;
-  setDatastatus(value?: ModelPipelineRunStageStatus): ModelPipelineRunStatus;
-  hasDatastatus(): boolean;
-  clearDatastatus(): ModelPipelineRunStatus;
+  getData(): ModelPipelineRunStageStatus | undefined;
+  setData(value?: ModelPipelineRunStageStatus): ModelPipelineRunStatus;
+  hasData(): boolean;
+  clearData(): ModelPipelineRunStatus;
 
-  getTrainingstatus(): ModelPipelineRunStageStatus | undefined;
-  setTrainingstatus(value?: ModelPipelineRunStageStatus): ModelPipelineRunStatus;
-  hasTrainingstatus(): boolean;
-  clearTrainingstatus(): ModelPipelineRunStatus;
+  getTraining(): ModelPipelineRunStageStatus | undefined;
+  setTraining(value?: ModelPipelineRunStageStatus): ModelPipelineRunStatus;
+  hasTraining(): boolean;
+  clearTraining(): ModelPipelineRunStatus;
 
-  getUatstatus(): ModelPipelineRunStageStatus | undefined;
-  setUatstatus(value?: ModelPipelineRunStageStatus): ModelPipelineRunStatus;
-  hasUatstatus(): boolean;
-  clearUatstatus(): ModelPipelineRunStatus;
+  getUat(): ModelPipelineRunStageStatus | undefined;
+  setUat(value?: ModelPipelineRunStageStatus): ModelPipelineRunStatus;
+  hasUat(): boolean;
+  clearUat(): ModelPipelineRunStatus;
 
-  getCapacitystatus(): ModelPipelineRunStageStatus | undefined;
-  setCapacitystatus(value?: ModelPipelineRunStageStatus): ModelPipelineRunStatus;
-  hasCapacitystatus(): boolean;
-  clearCapacitystatus(): ModelPipelineRunStatus;
+  getCapacity(): ModelPipelineRunStageStatus | undefined;
+  setCapacity(value?: ModelPipelineRunStageStatus): ModelPipelineRunStatus;
+  hasCapacity(): boolean;
+  clearCapacity(): ModelPipelineRunStatus;
 
-  getDeploymentstatus(): ModelPipelineRunStageStatus | undefined;
-  setDeploymentstatus(value?: ModelPipelineRunStageStatus): ModelPipelineRunStatus;
-  hasDeploymentstatus(): boolean;
-  clearDeploymentstatus(): ModelPipelineRunStatus;
+  getDeployment(): ModelPipelineRunStageStatus | undefined;
+  setDeployment(value?: ModelPipelineRunStageStatus): ModelPipelineRunStatus;
+  hasDeployment(): boolean;
+  clearDeployment(): ModelPipelineRunStatus;
 
-  getReleasestatus(): ModelPipelineRunStageStatus | undefined;
-  setReleasestatus(value?: ModelPipelineRunStageStatus): ModelPipelineRunStatus;
-  hasReleasestatus(): boolean;
-  clearReleasestatus(): ModelPipelineRunStatus;
+  getRelease(): ModelPipelineRunStageStatus | undefined;
+  setRelease(value?: ModelPipelineRunStageStatus): ModelPipelineRunStatus;
+  hasRelease(): boolean;
+  clearRelease(): ModelPipelineRunStatus;
 
-  getMonitoringstatus(): ModelPipelineRunStageStatus | undefined;
-  setMonitoringstatus(value?: ModelPipelineRunStageStatus): ModelPipelineRunStatus;
-  hasMonitoringstatus(): boolean;
-  clearMonitoringstatus(): ModelPipelineRunStatus;
+  getMonitor(): ModelPipelineRunStageStatus | undefined;
+  setMonitor(value?: ModelPipelineRunStageStatus): ModelPipelineRunStatus;
+  hasMonitor(): boolean;
+  clearMonitor(): ModelPipelineRunStatus;
 
-  getLabelingstatus(): ModelPipelineRunStageStatus | undefined;
-  setLabelingstatus(value?: ModelPipelineRunStageStatus): ModelPipelineRunStatus;
-  hasLabelingstatus(): boolean;
-  clearLabelingstatus(): ModelPipelineRunStatus;
+  getLabeling(): ModelPipelineRunStageStatus | undefined;
+  setLabeling(value?: ModelPipelineRunStageStatus): ModelPipelineRunStatus;
+  hasLabeling(): boolean;
+  clearLabeling(): ModelPipelineRunStatus;
 
   getStarttime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setStarttime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelPipelineRunStatus;
@@ -2765,14 +2765,14 @@ export namespace ModelPipelineRunStatus {
     datasetname: string,
     studyname: string,
     modelname: string,
-    datastatus?: ModelPipelineRunStageStatus.AsObject,
-    trainingstatus?: ModelPipelineRunStageStatus.AsObject,
-    uatstatus?: ModelPipelineRunStageStatus.AsObject,
-    capacitystatus?: ModelPipelineRunStageStatus.AsObject,
-    deploymentstatus?: ModelPipelineRunStageStatus.AsObject,
-    releasestatus?: ModelPipelineRunStageStatus.AsObject,
-    monitoringstatus?: ModelPipelineRunStageStatus.AsObject,
-    labelingstatus?: ModelPipelineRunStageStatus.AsObject,
+    data?: ModelPipelineRunStageStatus.AsObject,
+    training?: ModelPipelineRunStageStatus.AsObject,
+    uat?: ModelPipelineRunStageStatus.AsObject,
+    capacity?: ModelPipelineRunStageStatus.AsObject,
+    deployment?: ModelPipelineRunStageStatus.AsObject,
+    release?: ModelPipelineRunStageStatus.AsObject,
+    monitor?: ModelPipelineRunStageStatus.AsObject,
+    labeling?: ModelPipelineRunStageStatus.AsObject,
     starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     phase: string,
@@ -3547,10 +3547,10 @@ export namespace ModelTestSuite {
 }
 
 export class ModelTestSuiteResult extends jspb.Message {
-  getSuiteresult(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
-  setSuiteresult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): ModelTestSuiteResult;
-  hasSuiteresult(): boolean;
-  clearSuiteresult(): ModelTestSuiteResult;
+  getSuite(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
+  setSuite(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): ModelTestSuiteResult;
+  hasSuite(): boolean;
+  clearSuite(): ModelTestSuiteResult;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelTestSuiteResult.AsObject;
@@ -3562,7 +3562,7 @@ export class ModelTestSuiteResult extends jspb.Message {
 
 export namespace ModelTestSuiteResult {
   export type AsObject = {
-    suiteresult?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
+    suite?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
   }
 }
 

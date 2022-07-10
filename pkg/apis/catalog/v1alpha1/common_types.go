@@ -2132,10 +2132,10 @@ type TestSuiteResult struct {
 	EntityRef v1.ObjectReference `json:"entityRef,omitempty" protobuf:"bytes,1,opt,name=entityRef"`
 	// Total number of failures. A failure is an unplanned error, e.g. cannot connect to a dataset
 	// +kubebuilder:validation:Optional
-	Failures int32 `json:"failures,omitempty" protobuf:"bytes,2,opt,name=failures"`
+	Failures int32 `json:"failures,omitempty" protobuf:"varint,2,opt,name=failures"`
 	// Total number of assertion errors.
 	// +kubebuilder:validation:Optional
-	Errors int32 `json:"errors,omitempty" protobuf:"bytes,3,opt,name=errors"`
+	Errors int32 `json:"errors,omitempty" protobuf:"varint,3,opt,name=errors"`
 	// Start time of running the suite
 	// +kubebuilder:validation:Optional
 	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,4,opt,name=startTime"`

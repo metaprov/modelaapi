@@ -187,7 +187,7 @@ type ModelPipelineRunStageStatus struct {
 	EndTime *metav1.Time `json:"endTime,omitempty" protobuf:"bytes,8,opt,name=endTime"`
 	// Results is the results of running the test datasets against the new model
 	// +kubebuilder:validation:Optional
-	Result ModelTestSuiteResult `json:"testResult,omitempty" protobuf:"bytes,9,rep,name=testResult"`
+	Result ModelTestSuiteResult `json:"result,omitempty" protobuf:"bytes,9,rep,name=result"`
 	// Error record error.
 	//+kubebuilder:validation:Optional
 	Error string `json:"error,omitempty" protobuf:"bytes,10,opt,name=error"`
@@ -210,28 +210,28 @@ type ModelPipelineRunStatus struct {
 	// DataStatus is the status of the data stage
 	// data is the status for the data stage.
 	//+kubebuilder:validation:Optional
-	DataStatus ModelPipelineRunStageStatus `json:"dataStatus,omitempty" protobuf:"bytes,5,opt,name=dataStatus"`
+	Data ModelPipelineRunStageStatus `json:"data,omitempty" protobuf:"bytes,5,opt,name=data"`
 	// TrainingStatus is the status for the training stage
 	// +kubebuilder:validation:Optional
-	TrainingStatus ModelPipelineRunStageStatus `json:"trainingStatus,omitempty" protobuf:"bytes,6,opt,name=trainingStatus"`
+	Training ModelPipelineRunStageStatus `json:"training,omitempty" protobuf:"bytes,6,opt,name=training"`
 	// UATStatus is the status of the uat stage
 	//+kubebuilder:validation:Optional
-	UATStatus ModelPipelineRunStageStatus `json:"uatStatus,omitempty" protobuf:"bytes,7,opt,name=uatStatus"`
+	UAT ModelPipelineRunStageStatus `json:"uat,omitempty" protobuf:"bytes,7,opt,name=uat"`
 	// CapacityStatus is the status for the capacity stage.
 	//+kubebuilder:validation:Optional
-	CapacityStatus ModelPipelineRunStageStatus `json:"capacityStatus,omitempty" protobuf:"bytes,8,opt,name=capacityStatus"`
+	Capacity ModelPipelineRunStageStatus `json:"capacity,omitempty" protobuf:"bytes,8,opt,name=capacity"`
 	// DeploymentStatus is the status for the prod stage
 	//+kubebuilder:validation:Optional
-	DeploymentStatus ModelPipelineRunStageStatus `json:"deploymentStatus,omitempty" protobuf:"bytes,9,opt,name=deploymentStatus"`
+	Deployment ModelPipelineRunStageStatus `json:"deployment,omitempty" protobuf:"bytes,9,opt,name=deployment"`
 	// DeploymentStatus is the status for the prod stage
 	//+kubebuilder:validation:Optional
-	ReleaseStatus ModelPipelineRunStageStatus `json:"releaseStatus,omitempty" protobuf:"bytes,10,opt,name=releaseStatus"`
+	Release ModelPipelineRunStageStatus `json:"release,omitempty" protobuf:"bytes,10,opt,name=release"`
 	// Monitoring status is the status of the monitor phase.
 	//+kubebuilder:validation:Optional
-	MonitoringStatus ModelPipelineRunStageStatus `json:"monitoringStatus,omitempty" protobuf:"bytes,11,opt,name=monitoringStatus"`
+	Monitor ModelPipelineRunStageStatus `json:"monitor,omitempty" protobuf:"bytes,11,opt,name=monitor"`
 	// Labeling status if the status of the labeling process
 	//+kubebuilder:validation:Optional
-	LabelingStatus ModelPipelineRunStageStatus `json:"labelingStatus,omitempty" protobuf:"bytes,12,opt,name=labelingStatus"`
+	Labeling ModelPipelineRunStageStatus `json:"labeling,omitempty" protobuf:"bytes,12,opt,name=labeling"`
 	// +kubebuilder:validation:Optional
 	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,13,opt,name=startTime"`
 	// +kubebuilder:validation:Optional

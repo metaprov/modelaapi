@@ -1717,7 +1717,7 @@ message ModelPipelineRunStageStatus {
 
   // Results is the results of running the test datasets against the new model
   // +kubebuilder:validation:Optional
-  optional ModelTestSuiteResult testResult = 9;
+  optional ModelTestSuiteResult result = 9;
 
   // Error record error.
   // +kubebuilder:validation:Optional
@@ -1745,35 +1745,35 @@ message ModelPipelineRunStatus {
   // DataStatus is the status of the data stage
   // data is the status for the data stage.
   // +kubebuilder:validation:Optional
-  optional ModelPipelineRunStageStatus dataStatus = 5;
+  optional ModelPipelineRunStageStatus data = 5;
 
   // TrainingStatus is the status for the training stage
   // +kubebuilder:validation:Optional
-  optional ModelPipelineRunStageStatus trainingStatus = 6;
+  optional ModelPipelineRunStageStatus training = 6;
 
   // UATStatus is the status of the uat stage
   // +kubebuilder:validation:Optional
-  optional ModelPipelineRunStageStatus uatStatus = 7;
+  optional ModelPipelineRunStageStatus uat = 7;
 
   // CapacityStatus is the status for the capacity stage.
   // +kubebuilder:validation:Optional
-  optional ModelPipelineRunStageStatus capacityStatus = 8;
+  optional ModelPipelineRunStageStatus capacity = 8;
 
   // DeploymentStatus is the status for the prod stage
   // +kubebuilder:validation:Optional
-  optional ModelPipelineRunStageStatus deploymentStatus = 9;
+  optional ModelPipelineRunStageStatus deployment = 9;
 
   // DeploymentStatus is the status for the prod stage
   // +kubebuilder:validation:Optional
-  optional ModelPipelineRunStageStatus releaseStatus = 10;
+  optional ModelPipelineRunStageStatus release = 10;
 
   // Monitoring status is the status of the monitor phase.
   // +kubebuilder:validation:Optional
-  optional ModelPipelineRunStageStatus monitoringStatus = 11;
+  optional ModelPipelineRunStageStatus monitor = 11;
 
   // Labeling status if the status of the labeling process
   // +kubebuilder:validation:Optional
-  optional ModelPipelineRunStageStatus labelingStatus = 12;
+  optional ModelPipelineRunStageStatus labeling = 12;
 
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 13;
@@ -2452,7 +2452,7 @@ message ModelTestSuite {
 
 message ModelTestSuiteResult {
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult suiteResult = 1;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult suite = 1;
 }
 
 // NLPEstimatorSpec specifies the configuration for an NLP model
