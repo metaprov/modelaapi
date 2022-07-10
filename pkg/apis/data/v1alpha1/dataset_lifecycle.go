@@ -8,7 +8,6 @@ package v1alpha1
 
 import (
 	"fmt"
-
 	"github.com/metaprov/modelaapi/pkg/apis/data"
 	infra "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/util"
@@ -531,4 +530,24 @@ func (dataset *Dataset) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *
 			},
 		},
 	}
+}
+
+// return the list of drift. Currently return the drift columns
+func (dataset *Dataset) DriftColumnNames() []string {
+	result := make([]string, 0)
+	for _, v := range dataset.Status.Statistics.Columns {
+		result = append(result, v.Name)
+	}
+	return result
+}
+
+// Search for a column stat, based on name
+func (dataset *Dataset) GetColumn(name string) (*ColumnStatistics, error) {
+	for _, v := range dataset.Status.Statistics.Columns {
+		if v.Name == name {
+			return &v, nil
+		}
+	}
+	return nil, fmt.Errorf("column not found %s", name)
+
 }
