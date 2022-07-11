@@ -1700,10 +1700,15 @@ export class PredictorSpec extends jspb.Message {
   hasServingsiteref(): boolean;
   clearServingsiteref(): PredictorSpec;
 
-  getModelsList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec>;
-  setModelsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec>): PredictorSpec;
-  clearModelsList(): PredictorSpec;
-  addModels(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec;
+  getLive(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec | undefined;
+  setLive(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec): PredictorSpec;
+  hasLive(): boolean;
+  clearLive(): PredictorSpec;
+
+  getShadowsList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec>;
+  setShadowsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec>): PredictorSpec;
+  clearShadowsList(): PredictorSpec;
+  addShadows(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec;
 
   getProgressive(): ProgressiveSpec | undefined;
   setProgressive(value?: ProgressiveSpec): PredictorSpec;
@@ -1806,7 +1811,8 @@ export namespace PredictorSpec {
     description: string,
     productref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     servingsiteref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    modelsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec.AsObject>,
+    live?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec.AsObject,
+    shadowsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec.AsObject>,
     progressive?: ProgressiveSpec.AsObject,
     artifactsfolder?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     access?: AccessSpec.AsObject,
@@ -1838,10 +1844,15 @@ export class PredictorStatus extends jspb.Message {
   clearHistoryList(): PredictorStatus;
   addHistory(value?: ModelRecord, index?: number): ModelRecord;
 
-  getModelsList(): Array<ModelDeploymentStatus>;
-  setModelsList(value: Array<ModelDeploymentStatus>): PredictorStatus;
-  clearModelsList(): PredictorStatus;
-  addModels(value?: ModelDeploymentStatus, index?: number): ModelDeploymentStatus;
+  getLive(): ModelDeploymentStatus | undefined;
+  setLive(value?: ModelDeploymentStatus): PredictorStatus;
+  hasLive(): boolean;
+  clearLive(): PredictorStatus;
+
+  getShadowsList(): Array<ModelDeploymentStatus>;
+  setShadowsList(value: Array<ModelDeploymentStatus>): PredictorStatus;
+  clearShadowsList(): PredictorStatus;
+  addShadows(value?: ModelDeploymentStatus, index?: number): ModelDeploymentStatus;
 
   getPredictorlet(): PredictorletStatus | undefined;
   setPredictorlet(value?: PredictorletStatus): PredictorStatus;
@@ -1909,7 +1920,8 @@ export namespace PredictorStatus {
   export type AsObject = {
     observedgeneration: number,
     historyList: Array<ModelRecord.AsObject>,
-    modelsList: Array<ModelDeploymentStatus.AsObject>,
+    live?: ModelDeploymentStatus.AsObject,
+    shadowsList: Array<ModelDeploymentStatus.AsObject>,
     predictorlet?: PredictorletStatus.AsObject,
     cache?: PredictionCacheStatus.AsObject,
     onlinestore?: OnlineStoreStatus.AsObject,

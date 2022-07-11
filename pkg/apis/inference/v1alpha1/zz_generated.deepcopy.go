@@ -1417,8 +1417,9 @@ func (in *PredictorSpec) DeepCopyInto(out *PredictorSpec) {
 		*out = new(v1.ObjectReference)
 		**out = **in
 	}
-	if in.Models != nil {
-		in, out := &in.Models, &out.Models
+	in.Live.DeepCopyInto(&out.Live)
+	if in.Shadows != nil {
+		in, out := &in.Shadows, &out.Shadows
 		*out = make([]catalogv1alpha1.ModelDeploymentSpec, len(*in))
 		for i := range *in {
 			(*in)[i].DeepCopyInto(&(*out)[i])
@@ -1489,8 +1490,9 @@ func (in *PredictorStatus) DeepCopyInto(out *PredictorStatus) {
 			(*in)[i].DeepCopyInto(&(*out)[i])
 		}
 	}
-	if in.Models != nil {
-		in, out := &in.Models, &out.Models
+	in.Live.DeepCopyInto(&out.Live)
+	if in.Shadows != nil {
+		in, out := &in.Shadows, &out.Shadows
 		*out = make([]ModelDeploymentStatus, len(*in))
 		for i := range *in {
 			(*in)[i].DeepCopyInto(&(*out)[i])
