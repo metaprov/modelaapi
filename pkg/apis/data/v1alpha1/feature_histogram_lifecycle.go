@@ -8,6 +8,8 @@ package v1alpha1
 
 import (
 	"fmt"
+	"github.com/dustin/go-humanize"
+	infra "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
 
 	"github.com/metaprov/modelaapi/pkg/apis/common"
 	"github.com/metaprov/modelaapi/pkg/apis/data"
@@ -47,30 +49,12 @@ func (feature *FeatureHistogram) RepPath(root string) (string, error) {
 	return fmt.Sprintf("%s/schemas/%s.yaml", root, feature.ObjectMeta.Name), nil
 }
 
-func (feature *FeatureHistogram) ToYamlFile() ([]byte, error) {
-	return yaml.Marshal(feature)
-}
-
 func (feature *FeatureHistogram) RepEntry() (string, error) {
 	return fmt.Sprintf("schemas/%s.yaml", feature.ObjectMeta.Name), nil
 }
 
 func (feature *FeatureHistogram) Age() string {
 	return humanize.Time(feature.CreationTimestamp.Time)
-}
-
-//==============================================================================
-// Factory method
-//==============================================================================
-
-// Parse an data
-func ParseFeatureHistogram(content string, user string, commit string) (*FeatureHistogram, error) {
-	this := &FeatureHistogram{}
-	err := yaml.Unmarshal([]byte(content), this)
-	if err != nil {
-		return nil, err
-	}
-	return this, nil
 }
 
 //==============================================================================
@@ -188,4 +172,54 @@ func (feature *FeatureHistogram) MarkFailed(msg string) {
 	feature.Status.Phase = FeatureHistogramPhaseFailed
 	feature.Status.FailureMessage = util.StrPtr(msg)
 
+}
+
+func (fh *FeatureHistogram) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *string, err error) *infra.Alert {
+	level := infra.Error
+	subject := fmt.Sprintf("Entity %s failed with error %v", fh.Name, err.Error())
+	return &infra.Alert{
+		ObjectMeta: metav1.ObjectMeta{
+			GenerateName: fh.Name,
+			Namespace:    fh.Namespace,
+		},
+		Spec: infra.AlertSpec{
+			Subject:      util.StrPtr(subject),
+			Message:      util.StrPtr(err.Error()),
+			Level:        &level,
+			TenantRef:    tenantRef,
+			NotifierName: notifierName,
+			EntityRef: v1.ObjectReference{
+				Kind:      "Entity",
+				Name:      fh.Name,
+				Namespace: fh.Namespace,
+			},
+			Owner:  fh.Spec.Owner,
+			Fields: map[string]string{},
+		},
+	}
+}
+
+func (fh *FeatureHistogram) DriftAlert(tenantRef *v1.ObjectReference, notifierName *string, err error) *infra.Alert {
+	level := infra.Error
+	subject := fmt.Sprintf("Drift occured")
+	return &infra.Alert{
+		ObjectMeta: metav1.ObjectMeta{
+			GenerateName: fh.Name,
+			Namespace:    fh.Namespace,
+		},
+		Spec: infra.AlertSpec{
+			Subject:      util.StrPtr(subject),
+			Message:      util.StrPtr(err.Error()),
+			Level:        &level,
+			TenantRef:    tenantRef,
+			NotifierName: notifierName,
+			EntityRef: v1.ObjectReference{
+				Kind:      "Entity",
+				Name:      fh.Name,
+				Namespace: fh.Namespace,
+			},
+			Owner:  fh.Spec.Owner,
+			Fields: map[string]string{},
+		},
+	}
 }
