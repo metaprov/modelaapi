@@ -409,6 +409,11 @@ spec:
                     description: Indicates if model monitoring is enabled for the
                       model
                     type: boolean
+                  histogramDurationMin:
+                    description: The duration in minutes that an histogram is updated
+                      before computing drift
+                    format: int32
+                    type: integer
                   liveHistogramRef:
                     description: Reference to the live FeatureHistogram, the live
                       FeatureHistogram is updated by the predictor for each prediction.
@@ -446,6 +451,11 @@ spec:
                         description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                         type: string
                     type: object
+                  maxHistograms:
+                    description: how many feature histograms to keep in memory (as
+                      kubernetes objects). Histograms are garbage collected.
+                    format: int32
+                    type: integer
                   outlierDetectionModelRef:
                     description: Reference to a model that will be used for outlier
                       detection. If empty, an outlier detection model.
@@ -738,6 +748,110 @@ spec:
                       uid:
                         description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                         type: string
+                    type: object
+                  tresholdsTemplate:
+                    description: Define drift tresholds. This is usually assigned
+                      from the predictor.
+                    properties:
+                      tresholds:
+                        items:
+                          description: Define a treshold
+                          properties:
+                            metric:
+                              description: The metric type name (e.g. F1 / Accuracy)
+                              enum:
+                              - accuracy
+                              - average-precision
+                              - balanced-accuracy
+                              - pr-auc
+                              - pr-auc-micro
+                              - pr-auc-macro
+                              - pr-auc-weighted
+                              - f1
+                              - f1-micro
+                              - f1-macro
+                              - f1-weighted
+                              - f1-samples
+                              - precision
+                              - precision-micro
+                              - precision-macro
+                              - precision-weighted
+                              - precision-samples
+                              - recall
+                              - recall-macro
+                              - recall-micro
+                              - recall-weighted
+                              - recall-samples
+                              - log-loss
+                              - auc
+                              - auc-micro
+                              - auc-macro
+                              - auc-weighted
+                              - zero-one
+                              - hamming-loss
+                              - hinge-loss
+                              - jacquard-loss
+                              - mcc
+                              - fp
+                              - fn
+                              - tn
+                              - tp
+                              - tpr
+                              - fpr
+                              - tnr
+                              - matthews-corr-coef
+                              - explained-variance
+                              - max-error
+                              - mae
+                              - mse
+                              - msle
+                              - rmse
+                              - rmsle
+                              - median-absolute-error
+                              - r2
+                              - adj-r2
+                              - mean_poisson_deviance
+                              - mean-gamma-deviance
+                              - mean-tweedie-deviance
+                              - mape
+                              - maze
+                              - mdape
+                              - smape
+                              - adjusted-mutual-info-score
+                              - adjusted-rand-score
+                              - completeness-score
+                              - fowlkes-mallows-score
+                              - homogeneity-score
+                              - mutual-info-score
+                              - normalized-mutual-info-score
+                              - v-measure-score
+                              - p50-latency
+                              - p95-latency
+                              - p99-latency
+                              - cpu
+                              - gpu
+                              - mem
+                              - gpu-mem
+                              - req-per-sec
+                              - uncertain-prediction-percent
+                              - none
+                              - ks
+                              - psi
+                              - wasserstein-distance
+                              - kl-divergenece
+                              - jensen-shannon-distance
+                              type: string
+                            value:
+                              description: The value of the metric for quantitive
+                                observations
+                              type: number
+                          required:
+                          - metric
+                          - value
+                          type: object
+                        type: array
+                    required:
+                    - tresholds
                     type: object
                 type: object
               fastSlow:
@@ -2838,6 +2952,234 @@ spec:
                     description: LastFailure is the last failure that occured with
                       the model
                     type: string
+                  lastGroundTruthDatasetRef:
+                    description: Ref to the last ground true dataset that this model
+                      was tested against.
+                    properties:
+                      apiVersion:
+                        description: API version of the referent.
+                        type: string
+                      fieldPath:
+                        description: 'If referring to a piece of an object instead
+                          of an entire object, this string should contain a valid
+                          JSON/Go field access statement, such as desiredState.manifest.containers[2].
+                          For example, if the object reference is to a container within
+                          a pod, this would take on a value like: "spec.containers{name}"
+                          (where "name" refers to the name of the container that triggered
+                          the event) or if no container name is specified "spec.containers[2]"
+                          (container with index 2 in this pod). This syntax is chosen
+                          only to have some well-defined way of referencing a part
+                          of an object. TODO: this design is not final and this field
+                          is subject to change in the future.'
+                        type: string
+                      kind:
+                        description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                        type: string
+                      name:
+                        description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                        type: string
+                      namespace:
+                        description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                        type: string
+                      resourceVersion:
+                        description: 'Specific resourceVersion to which this reference
+                          is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                        type: string
+                      uid:
+                        description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                        type: string
+                    type: object
+                  lastGroundTruthTest:
+                    description: Last time that a ground true test was done.
+                    format: date-time
+                    type: string
+                  lastGroundTruthTestResults:
+                    description: Last results of the ground truth tests.
+                    items:
+                      description: Measurement is a value for a specific metric
+                      properties:
+                        boolValue:
+                          description: If the metric refer to a bool unit, store the
+                            bool value
+                          type: boolean
+                        categoy:
+                          description: If the metric refer to categorical measure,store
+                            the category.
+                          type: string
+                        column:
+                          type: string
+                        entity:
+                          description: 'ObjectReference contains enough information
+                            to let you inspect or modify the referred object. ---
+                            New uses of this type are discouraged because of difficulty
+                            describing its usage when embedded in APIs. 1. Ignored
+                            fields.  It includes many fields which are not generally
+                            honored.  For instance, ResourceVersion and FieldPath
+                            are both very rarely valid in actual usage. 2. Invalid
+                            usage help.  It is impossible to add specific help for
+                            individual usage.  In most embedded usages, there are
+                            particular restrictions like, "must refer only to types
+                            A and B" or "UID not honored" or "name must be restricted".
+                            Those cannot be well described when embedded. 3. Inconsistent
+                            validation.  Because the usages are different, the validation
+                            rules are different by usage, which makes it hard for
+                            users to predict what will happen. 4. The fields are both
+                            imprecise and overly precise.  Kind is not a precise mapping
+                            to a URL. This can produce ambiguity during interpretation
+                            and require a REST mapping.  In most cases, the dependency
+                            is on the group,resource tuple and the version of the
+                            actual struct is irrelevant. 5. We cannot easily change
+                            it.  Because this type is embedded in many locations,
+                            updates to this type will affect numerous schemas.  Don''t
+                            make new APIs embed an underspecified API type they do
+                            not control. Instead of using this type, create a locally
+                            provided and used type that is well-focused on your reference.
+                            For example, ServiceReferences for admission registration:
+                            https://github.com/kubernetes/api/blob/release-1.17/admissionregistration/v1/types.go#L533
+                            .'
+                          properties:
+                            apiVersion:
+                              description: API version of the referent.
+                              type: string
+                            fieldPath:
+                              description: 'If referring to a piece of an object instead
+                                of an entire object, this string should contain a
+                                valid JSON/Go field access statement, such as desiredState.manifest.containers[2].
+                                For example, if the object reference is to a container
+                                within a pod, this would take on a value like: "spec.containers{name}"
+                                (where "name" refers to the name of the container
+                                that triggered the event) or if no container name
+                                is specified "spec.containers[2]" (container with
+                                index 2 in this pod). This syntax is chosen only to
+                                have some well-defined way of referencing a part of
+                                an object. TODO: this design is not final and this
+                                field is subject to change in the future.'
+                              type: string
+                            kind:
+                              description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                              type: string
+                            name:
+                              description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                              type: string
+                            namespace:
+                              description: 'Namespace of the referent. More info:
+                                https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                              type: string
+                            resourceVersion:
+                              description: 'Specific resourceVersion to which this
+                                reference is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                              type: string
+                            uid:
+                              description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                              type: string
+                          type: object
+                        metric:
+                          description: The metric type name (e.g. F1 / Accuracy)
+                          enum:
+                          - accuracy
+                          - average-precision
+                          - balanced-accuracy
+                          - pr-auc
+                          - pr-auc-micro
+                          - pr-auc-macro
+                          - pr-auc-weighted
+                          - f1
+                          - f1-micro
+                          - f1-macro
+                          - f1-weighted
+                          - f1-samples
+                          - precision
+                          - precision-micro
+                          - precision-macro
+                          - precision-weighted
+                          - precision-samples
+                          - recall
+                          - recall-macro
+                          - recall-micro
+                          - recall-weighted
+                          - recall-samples
+                          - log-loss
+                          - auc
+                          - auc-micro
+                          - auc-macro
+                          - auc-weighted
+                          - zero-one
+                          - hamming-loss
+                          - hinge-loss
+                          - jacquard-loss
+                          - mcc
+                          - fp
+                          - fn
+                          - tn
+                          - tp
+                          - tpr
+                          - fpr
+                          - tnr
+                          - matthews-corr-coef
+                          - explained-variance
+                          - max-error
+                          - mae
+                          - mse
+                          - msle
+                          - rmse
+                          - rmsle
+                          - median-absolute-error
+                          - r2
+                          - adj-r2
+                          - mean_poisson_deviance
+                          - mean-gamma-deviance
+                          - mean-tweedie-deviance
+                          - mape
+                          - maze
+                          - mdape
+                          - smape
+                          - adjusted-mutual-info-score
+                          - adjusted-rand-score
+                          - completeness-score
+                          - fowlkes-mallows-score
+                          - homogeneity-score
+                          - mutual-info-score
+                          - normalized-mutual-info-score
+                          - v-measure-score
+                          - p50-latency
+                          - p95-latency
+                          - p99-latency
+                          - cpu
+                          - gpu
+                          - mem
+                          - gpu-mem
+                          - req-per-sec
+                          - uncertain-prediction-percent
+                          - none
+                          - ks
+                          - psi
+                          - wasserstein-distance
+                          - kl-divergenece
+                          - jensen-shannon-distance
+                          type: string
+                        stddev:
+                          description: Metric standard diviation for quantative observations.
+                          type: number
+                        timePoint:
+                          description: The Time when the observation was taken
+                          format: date-time
+                          type: string
+                        value:
+                          description: The value of the metric for quantitive observations
+                          type: number
+                        valueSet:
+                          description: Capture a set of values.
+                          items:
+                            type: string
+                          type: array
+                      required:
+                      - boolValue
+                      - categoy
+                      - metric
+                      - timePoint
+                      - value
+                      type: object
+                    type: array
                   lastPredictionTime:
                     description: The last time a prediction was served by the Predictorlet
                     format: date-time
@@ -3401,6 +3743,237 @@ spec:
                       description: LastFailure is the last failure that occured with
                         the model
                       type: string
+                    lastGroundTruthDatasetRef:
+                      description: Ref to the last ground true dataset that this model
+                        was tested against.
+                      properties:
+                        apiVersion:
+                          description: API version of the referent.
+                          type: string
+                        fieldPath:
+                          description: 'If referring to a piece of an object instead
+                            of an entire object, this string should contain a valid
+                            JSON/Go field access statement, such as desiredState.manifest.containers[2].
+                            For example, if the object reference is to a container
+                            within a pod, this would take on a value like: "spec.containers{name}"
+                            (where "name" refers to the name of the container that
+                            triggered the event) or if no container name is specified
+                            "spec.containers[2]" (container with index 2 in this pod).
+                            This syntax is chosen only to have some well-defined way
+                            of referencing a part of an object. TODO: this design
+                            is not final and this field is subject to change in the
+                            future.'
+                          type: string
+                        kind:
+                          description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                          type: string
+                        name:
+                          description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                          type: string
+                        namespace:
+                          description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                          type: string
+                        resourceVersion:
+                          description: 'Specific resourceVersion to which this reference
+                            is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                          type: string
+                        uid:
+                          description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                          type: string
+                      type: object
+                    lastGroundTruthTest:
+                      description: Last time that a ground true test was done.
+                      format: date-time
+                      type: string
+                    lastGroundTruthTestResults:
+                      description: Last results of the ground truth tests.
+                      items:
+                        description: Measurement is a value for a specific metric
+                        properties:
+                          boolValue:
+                            description: If the metric refer to a bool unit, store
+                              the bool value
+                            type: boolean
+                          categoy:
+                            description: If the metric refer to categorical measure,store
+                              the category.
+                            type: string
+                          column:
+                            type: string
+                          entity:
+                            description: 'ObjectReference contains enough information
+                              to let you inspect or modify the referred object. ---
+                              New uses of this type are discouraged because of difficulty
+                              describing its usage when embedded in APIs. 1. Ignored
+                              fields.  It includes many fields which are not generally
+                              honored.  For instance, ResourceVersion and FieldPath
+                              are both very rarely valid in actual usage. 2. Invalid
+                              usage help.  It is impossible to add specific help for
+                              individual usage.  In most embedded usages, there are
+                              particular restrictions like, "must refer only to types
+                              A and B" or "UID not honored" or "name must be restricted".
+                              Those cannot be well described when embedded. 3. Inconsistent
+                              validation.  Because the usages are different, the validation
+                              rules are different by usage, which makes it hard for
+                              users to predict what will happen. 4. The fields are
+                              both imprecise and overly precise.  Kind is not a precise
+                              mapping to a URL. This can produce ambiguity during
+                              interpretation and require a REST mapping.  In most
+                              cases, the dependency is on the group,resource tuple
+                              and the version of the actual struct is irrelevant.
+                              5. We cannot easily change it.  Because this type is
+                              embedded in many locations, updates to this type will
+                              affect numerous schemas.  Don''t make new APIs embed
+                              an underspecified API type they do not control. Instead
+                              of using this type, create a locally provided and used
+                              type that is well-focused on your reference. For example,
+                              ServiceReferences for admission registration: https://github.com/kubernetes/api/blob/release-1.17/admissionregistration/v1/types.go#L533
+                              .'
+                            properties:
+                              apiVersion:
+                                description: API version of the referent.
+                                type: string
+                              fieldPath:
+                                description: 'If referring to a piece of an object
+                                  instead of an entire object, this string should
+                                  contain a valid JSON/Go field access statement,
+                                  such as desiredState.manifest.containers[2]. For
+                                  example, if the object reference is to a container
+                                  within a pod, this would take on a value like: "spec.containers{name}"
+                                  (where "name" refers to the name of the container
+                                  that triggered the event) or if no container name
+                                  is specified "spec.containers[2]" (container with
+                                  index 2 in this pod). This syntax is chosen only
+                                  to have some well-defined way of referencing a part
+                                  of an object. TODO: this design is not final and
+                                  this field is subject to change in the future.'
+                                type: string
+                              kind:
+                                description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                                type: string
+                              name:
+                                description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                                type: string
+                              namespace:
+                                description: 'Namespace of the referent. More info:
+                                  https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                                type: string
+                              resourceVersion:
+                                description: 'Specific resourceVersion to which this
+                                  reference is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                                type: string
+                              uid:
+                                description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                                type: string
+                            type: object
+                          metric:
+                            description: The metric type name (e.g. F1 / Accuracy)
+                            enum:
+                            - accuracy
+                            - average-precision
+                            - balanced-accuracy
+                            - pr-auc
+                            - pr-auc-micro
+                            - pr-auc-macro
+                            - pr-auc-weighted
+                            - f1
+                            - f1-micro
+                            - f1-macro
+                            - f1-weighted
+                            - f1-samples
+                            - precision
+                            - precision-micro
+                            - precision-macro
+                            - precision-weighted
+                            - precision-samples
+                            - recall
+                            - recall-macro
+                            - recall-micro
+                            - recall-weighted
+                            - recall-samples
+                            - log-loss
+                            - auc
+                            - auc-micro
+                            - auc-macro
+                            - auc-weighted
+                            - zero-one
+                            - hamming-loss
+                            - hinge-loss
+                            - jacquard-loss
+                            - mcc
+                            - fp
+                            - fn
+                            - tn
+                            - tp
+                            - tpr
+                            - fpr
+                            - tnr
+                            - matthews-corr-coef
+                            - explained-variance
+                            - max-error
+                            - mae
+                            - mse
+                            - msle
+                            - rmse
+                            - rmsle
+                            - median-absolute-error
+                            - r2
+                            - adj-r2
+                            - mean_poisson_deviance
+                            - mean-gamma-deviance
+                            - mean-tweedie-deviance
+                            - mape
+                            - maze
+                            - mdape
+                            - smape
+                            - adjusted-mutual-info-score
+                            - adjusted-rand-score
+                            - completeness-score
+                            - fowlkes-mallows-score
+                            - homogeneity-score
+                            - mutual-info-score
+                            - normalized-mutual-info-score
+                            - v-measure-score
+                            - p50-latency
+                            - p95-latency
+                            - p99-latency
+                            - cpu
+                            - gpu
+                            - mem
+                            - gpu-mem
+                            - req-per-sec
+                            - uncertain-prediction-percent
+                            - none
+                            - ks
+                            - psi
+                            - wasserstein-distance
+                            - kl-divergenece
+                            - jensen-shannon-distance
+                            type: string
+                          stddev:
+                            description: Metric standard diviation for quantative
+                              observations.
+                            type: number
+                          timePoint:
+                            description: The Time when the observation was taken
+                            format: date-time
+                            type: string
+                          value:
+                            description: The value of the metric for quantitive observations
+                            type: number
+                          valueSet:
+                            description: Capture a set of values.
+                            items:
+                              type: string
+                            type: array
+                        required:
+                        - boolValue
+                        - categoy
+                        - metric
+                        - timePoint
+                        - value
+                        type: object
+                      type: array
                     lastPredictionTime:
                       description: The last time a prediction was served by the Predictorlet
                       format: date-time

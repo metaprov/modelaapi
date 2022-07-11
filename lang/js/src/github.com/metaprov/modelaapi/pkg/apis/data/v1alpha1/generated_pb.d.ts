@@ -2541,6 +2541,48 @@ export namespace DatasetTestSuiteResult {
   }
 }
 
+export class DriftTreshold extends jspb.Message {
+  getMetric(): string;
+  setMetric(value: string): DriftTreshold;
+
+  getValue(): number;
+  setValue(value: number): DriftTreshold;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DriftTreshold.AsObject;
+  static toObject(includeInstance: boolean, msg: DriftTreshold): DriftTreshold.AsObject;
+  static serializeBinaryToWriter(message: DriftTreshold, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DriftTreshold;
+  static deserializeBinaryFromReader(message: DriftTreshold, reader: jspb.BinaryReader): DriftTreshold;
+}
+
+export namespace DriftTreshold {
+  export type AsObject = {
+    metric: string,
+    value: number,
+  }
+}
+
+export class DriftTresholdsSpec extends jspb.Message {
+  getTresholdsList(): Array<DriftTreshold>;
+  setTresholdsList(value: Array<DriftTreshold>): DriftTresholdsSpec;
+  clearTresholdsList(): DriftTresholdsSpec;
+  addTresholds(value?: DriftTreshold, index?: number): DriftTreshold;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DriftTresholdsSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: DriftTresholdsSpec): DriftTresholdsSpec.AsObject;
+  static serializeBinaryToWriter(message: DriftTresholdsSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DriftTresholdsSpec;
+  static deserializeBinaryFromReader(message: DriftTresholdsSpec, reader: jspb.BinaryReader): DriftTresholdsSpec;
+}
+
+export namespace DriftTresholdsSpec {
+  export type AsObject = {
+    tresholdsList: Array<DriftTreshold.AsObject>,
+  }
+}
+
 export class Entity extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): Entity;
@@ -3003,6 +3045,11 @@ export class FeatureHistogramSpec extends jspb.Message {
   hasBasefeaturehistogram(): boolean;
   clearBasefeaturehistogram(): FeatureHistogramSpec;
 
+  getTresholds(): DriftTresholdsSpec | undefined;
+  setTresholds(value?: DriftTresholdsSpec): FeatureHistogramSpec;
+  hasTresholds(): boolean;
+  clearTresholds(): FeatureHistogramSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FeatureHistogramSpec.AsObject;
   static toObject(includeInstance: boolean, msg: FeatureHistogramSpec): FeatureHistogramSpec.AsObject;
@@ -3024,6 +3071,7 @@ export namespace FeatureHistogramSpec {
     start?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     end?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     basefeaturehistogram?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    tresholds?: DriftTresholdsSpec.AsObject,
   }
 }
 

@@ -39,13 +39,22 @@ type DriftDetectionSpec struct {
 	// Reference to the training histogram ref. The training FeatureHistogram is created
 	TrainingHistogramRef v1.ObjectReference `json:"trainingHistogramRef,omitempty" protobuf:"bytes,3,opt,name=trainingHistogramRef"`
 	// Define the tests to run against the predictor.
-	Tests catalog.TestSuite `json:"tests,omitempty" protobuf:"bytes,6,opt,name=tests"`
+	Tests catalog.TestSuite `json:"tests,omitempty" protobuf:"bytes,4,opt,name=tests"`
 	// The schedule on which model monitoring computations will be performed
 	// +kubebuilder:validation:Optional
-	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,8,opt,name=schedule"`
+	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,5,opt,name=schedule"`
 	// Reference to a model that will be used for outlier detection. If empty, an outlier detection model.
 	// +kubebuilder:validation:Optional
-	OutlierDetectionModelRef v1.ObjectReference `json:"outlierDetectionModelRef,omitempty" protobuf:"bytes,10,opt,name=outlierDetectionModelRef"`
+	OutlierDetectionModelRef v1.ObjectReference `json:"outlierDetectionModelRef,omitempty" protobuf:"bytes,6,opt,name=outlierDetectionModelRef"`
+	// Define drift tresholds. This is usually assigned from the predictor.
+	// +kubebuilder:validation:Optional
+	TresholdsTemplate data.DriftTresholdsSpec `json:"tresholdsTemplate,omitempty" protobuf:"bytes,7,opt,name=tresholdsTemplate"`
+	// how many feature histograms to keep in memory (as kubernetes objects). Histograms are garbage collected.
+	// +kubebuilder:validation:Optional
+	MaxHistograms *int32 `json:"maxHistograms,omitempty" protobuf:"varint,8,opt,name=maxHistograms"`
+	// The duration in minutes that an histogram is updated before computing drift
+	// +kubebuilder:validation:Optional
+	HistogramDurationMin *int32 `json:"histogramDurationMin,omitempty" protobuf:"varint,9,opt,name=histogramDurationMin"`
 }
 
 type GroundTruthTestSpec struct {
@@ -536,6 +545,12 @@ type ModelDeploymentStatus struct {
 	ObjectStatuses []KubernetesObjectStatus `json:"objectStatuses,omitempty" protobuf:"bytes,19,rep,name=objectStatuses"`
 	// the set of validation errors
 	Errors []ValidationError `json:"errors,omitempty" protobuf:"bytes,20,opt,name=errors"`
+	// Ref to the last ground true dataset that this model was tested against.
+	LastGroundTruthDatasetRef v1.ObjectReference `json:"lastGroundTruthDatasetRef,omitempty" protobuf:"bytes,21,opt,name=lastGroundTruthDatasetRef"`
+	// Last time that a ground true test was done.
+	LastGroundTruthTest *metav1.Time `json:"lastGroundTruthTest,omitempty" protobuf:"bytes,22,opt,name=lastGroundTruthTest"`
+	// Last results of the ground truth tests.
+	LastGroundTruthTestResults []catalog.Measurement `json:"lastGroundTruthTestResults,omitempty" protobuf:"bytes,23,opt,name=lastGroundTruthTestResults"`
 }
 
 type ModelDeploymentPhase string

@@ -111,6 +111,9 @@ type FeatureHistogramSpec struct {
 	// The histogram to compare to for data drift calc
 	// +kubebuilder:validation:Optional
 	BaseFeatureHistogram v1.ObjectReference `json:"baseFeatureHistogram,omitempty" protobuf:"bytes,12,opt,name=baseFeatureHistogram"`
+	// Define drift tresholds. This is usually assigned from the predictor.
+	// +kubebuilder:validation:Optional
+	Tresholds DriftTresholdsSpec `json:"tresholds,omitempty" protobuf:"bytes,13,opt,name=tresholds"`
 }
 
 // FeatureHistogramStatus defines the observed state of FeatureHistogram
@@ -142,6 +145,22 @@ type FeatureHistogramStatus struct {
 	Conditions []FeatureHistogramCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,9,rep,name=conditions"`
 }
 
+type DriftTresholdsSpec struct {
+	Tresholds []DriftTreshold `json:"tresholds" protobuf:"bytes,1,opt,name=tresholds"`
+}
+
+// Define a treshold
+type DriftTreshold struct {
+	// The metric type name (e.g. F1 / Accuracy)
+	// +kubebuilder:validation:Required
+	Metric *catalog.Metric `json:"metric" protobuf:"bytes,1,opt,name=metric"`
+	// The value of the metric for quantitive observations
+	// +kubebuilder:validation:Required
+	// +required
+	Value *float64 `json:"value" protobuf:"bytes,2,opt,name=value"`
+}
+
+// hold the drift values.
 type ColumnDrift struct {
 	// The name of the column
 	//+kubebuilder:validation:Optional

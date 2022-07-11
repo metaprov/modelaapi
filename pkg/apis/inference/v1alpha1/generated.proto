@@ -502,15 +502,27 @@ message DriftDetectionSpec {
   optional k8s.io.api.core.v1.ObjectReference trainingHistogramRef = 3;
 
   // Define the tests to run against the predictor.
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite tests = 6;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite tests = 4;
 
   // The schedule on which model monitoring computations will be performed
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 8;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 5;
 
   // Reference to a model that will be used for outlier detection. If empty, an outlier detection model.
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference outlierDetectionModelRef = 10;
+  optional k8s.io.api.core.v1.ObjectReference outlierDetectionModelRef = 6;
+
+  // Define drift tresholds. This is usually assigned from the predictor.
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DriftTresholdsSpec tresholdsTemplate = 7;
+
+  // how many feature histograms to keep in memory (as kubernetes objects). Histograms are garbage collected.
+  // +kubebuilder:validation:Optional
+  optional int32 maxHistograms = 8;
+
+  // The duration in minutes that an histogram is updated before computing drift
+  // +kubebuilder:validation:Optional
+  optional int32 histogramDurationMin = 9;
 }
 
 message DriftDetectionStatus {
@@ -687,6 +699,15 @@ message ModelDeploymentStatus {
 
   // the set of validation errors
   repeated ValidationError errors = 20;
+
+  // Ref to the last ground true dataset that this model was tested against.
+  optional k8s.io.api.core.v1.ObjectReference lastGroundTruthDatasetRef = 21;
+
+  // Last time that a ground true test was done.
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastGroundTruthTest = 22;
+
+  // Last results of the ground truth tests.
+  repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement lastGroundTruthTestResults = 23;
 }
 
 // ModelRecord hold the state of a model that was in production

@@ -288,6 +288,7 @@ message Column {
   optional int32 index = 48;
 }
 
+// hold the drift values.
 message ColumnDrift {
   // The name of the column
   // +kubebuilder:validation:Optional
@@ -1893,6 +1894,22 @@ message DatasetTestSuiteResult {
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult fileSuite = 5;
 }
 
+// Define a treshold
+message DriftTreshold {
+  // The metric type name (e.g. F1 / Accuracy)
+  // +kubebuilder:validation:Required
+  optional string metric = 1;
+
+  // The value of the metric for quantitive observations
+  // +kubebuilder:validation:Required
+  // +required
+  optional double value = 2;
+}
+
+message DriftTresholdsSpec {
+  repeated DriftTreshold tresholds = 1;
+}
+
 // Entity represents a entity object
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
@@ -2161,6 +2178,10 @@ message FeatureHistogramSpec {
   // The histogram to compare to for data drift calc
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference baseFeatureHistogram = 12;
+
+  // Define drift tresholds. This is usually assigned from the predictor.
+  // +kubebuilder:validation:Optional
+  optional DriftTresholdsSpec tresholds = 13;
 }
 
 // FeatureHistogramStatus defines the observed state of FeatureHistogram

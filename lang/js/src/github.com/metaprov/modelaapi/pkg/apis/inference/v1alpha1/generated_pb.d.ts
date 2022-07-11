@@ -774,6 +774,17 @@ export class DriftDetectionSpec extends jspb.Message {
   hasOutlierdetectionmodelref(): boolean;
   clearOutlierdetectionmodelref(): DriftDetectionSpec;
 
+  getTresholdstemplate(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DriftTresholdsSpec | undefined;
+  setTresholdstemplate(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DriftTresholdsSpec): DriftDetectionSpec;
+  hasTresholdstemplate(): boolean;
+  clearTresholdstemplate(): DriftDetectionSpec;
+
+  getMaxhistograms(): number;
+  setMaxhistograms(value: number): DriftDetectionSpec;
+
+  getHistogramdurationmin(): number;
+  setHistogramdurationmin(value: number): DriftDetectionSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DriftDetectionSpec.AsObject;
   static toObject(includeInstance: boolean, msg: DriftDetectionSpec): DriftDetectionSpec.AsObject;
@@ -790,6 +801,9 @@ export namespace DriftDetectionSpec {
     tests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
     schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     outlierdetectionmodelref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    tresholdstemplate?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DriftTresholdsSpec.AsObject,
+    maxhistograms: number,
+    histogramdurationmin: number,
   }
 }
 
@@ -1080,6 +1094,21 @@ export class ModelDeploymentStatus extends jspb.Message {
   clearErrorsList(): ModelDeploymentStatus;
   addErrors(value?: ValidationError, index?: number): ValidationError;
 
+  getLastgroundtruthdatasetref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setLastgroundtruthdatasetref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ModelDeploymentStatus;
+  hasLastgroundtruthdatasetref(): boolean;
+  clearLastgroundtruthdatasetref(): ModelDeploymentStatus;
+
+  getLastgroundtruthtest(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastgroundtruthtest(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelDeploymentStatus;
+  hasLastgroundtruthtest(): boolean;
+  clearLastgroundtruthtest(): ModelDeploymentStatus;
+
+  getLastgroundtruthtestresultsList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>;
+  setLastgroundtruthtestresultsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>): ModelDeploymentStatus;
+  clearLastgroundtruthtestresultsList(): ModelDeploymentStatus;
+  addLastgroundtruthtestresults(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelDeploymentStatus.AsObject;
   static toObject(includeInstance: boolean, msg: ModelDeploymentStatus): ModelDeploymentStatus.AsObject;
@@ -1110,6 +1139,9 @@ export namespace ModelDeploymentStatus {
     lastdailypredictionsList: Array<number>,
     objectstatusesList: Array<KubernetesObjectStatus.AsObject>,
     errorsList: Array<ValidationError.AsObject>,
+    lastgroundtruthdatasetref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    lastgroundtruthtest?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    lastgroundtruthtestresultsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.AsObject>,
   }
 }
 
