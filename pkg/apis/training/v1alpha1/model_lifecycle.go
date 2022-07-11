@@ -411,11 +411,11 @@ func (model *Model) MarkLive(predictor string, role catalog.ModelRole) {
 	model.Labels[catalog.PredictorLabelKey] = predictor
 	model.Labels[catalog.ModelRoleLabelKey] = string(role)
 	switch role {
-	case catalog.Champion:
+	case catalog.ModelRoleLive:
 		model.Status.Phase = ModelPhaseChampion
 	case catalog.Canary:
 		model.Status.Phase = ModelPhaseCanary
-	case catalog.Shadow:
+	case catalog.ModelRoleShadow:
 		model.Status.Phase = ModelPhaseShadow
 	}
 

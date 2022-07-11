@@ -1424,9 +1424,8 @@ type Measurement struct {
 type ModelRole string
 
 const (
-	Champion ModelRole = "champion"
-	Canary   ModelRole = "canary"
-	Shadow   ModelRole = "shadow"
+	ModelRoleLive   ModelRole = "live"
+	ModelRoleShadow ModelRole = "shadow"
 )
 
 // ModelDeploymentSpec describes how a single model should be deployed with a Predictor, and
