@@ -9,11 +9,9 @@ package v1alpha1
 import (
 	"fmt"
 
-	"github.com/dustin/go-humanize"
 	"github.com/metaprov/modelaapi/pkg/apis/common"
 	"github.com/metaprov/modelaapi/pkg/apis/data"
 	"github.com/metaprov/modelaapi/pkg/util"
-	"gopkg.in/yaml.v2"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
@@ -178,4 +176,16 @@ func (feature *FeatureHistogram) MarkArchived() {
 
 func (feature *FeatureHistogram) Archived() bool {
 	return feature.GetCond(FeatureHistogramSaved).Status == v1.ConditionTrue
+}
+
+func (feature *FeatureHistogram) MarkFailed(msg string) {
+	feature.CreateOrUpdateCond(FeatureHistogramCondition{
+		Type:    FeatureHistogramReady,
+		Status:  v1.ConditionFalse,
+		Reason:  string(DatasetPhaseFailed),
+		Message: "Feature histogram failed." + msg,
+	})
+	feature.Status.Phase = FeatureHistogramPhaseFailed
+	feature.Status.FailureMessage = util.StrPtr(msg)
+
 }

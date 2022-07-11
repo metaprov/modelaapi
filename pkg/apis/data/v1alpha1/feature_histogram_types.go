@@ -12,13 +12,24 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
+type FeatureHistogramPhase string
+
+const (
+	FeatureHistogramPhasePending        FeatureHistogramPhase = "Pending"        // when generating
+	FeatureHistogramPhaseDetectingDrift FeatureHistogramPhase = "DetectingDrift" // when generating
+	FeatureHistogramPhaseDrifted        FeatureHistogramPhase = "Drifted"        // when one or more column drifted
+	FeatureHistogramPhaseReady          FeatureHistogramPhase = "Ready"          // when ready and not drift.
+	FeatureHistogramPhaseFailed         FeatureHistogramPhase = "Failed"         // failed in the process.
+)
+
 // FeatureHistogramConditionType is the condition of the feature
 type FeatureHistogramConditionType string
 
 /// FeatureHistogram Condition
 const (
-	FeatureHistogramReady FeatureHistogramConditionType = "Ready"
-	FeatureHistogramSaved FeatureHistogramConditionType = "Saved"
+	FeatureHistogramReady         FeatureHistogramConditionType = "Ready"
+	FeatureHistogramDriftDetected FeatureHistogramConditionType = "DriftDetected"
+	FeatureHistogramSaved         FeatureHistogramConditionType = "Saved"
 )
 
 // FeatureHistogramCondition describes the state of a deployment at a certain point.
@@ -40,11 +51,6 @@ type FeatureHistogramCondition struct {
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
-// +kubebuilder:printcolumn:name="Column",type="string",JSONPath=".spec.column"
-// +kubebuilder:printcolumn:name="Entity",type="string",JSONPath=".spec.dataset"
-// +kubebuilder:printcolumn:name="Bins",type="number",JSONPath=".spec.bins"
-// +kubebuilder:printcolumn:name="Missing",type="number",JSONPath=".status.missing"
-// +kubebuilder:printcolumn:name="Invalid",type="number",JSONPath=".status.invalid"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=featurehistograms,singular=featurehistogram,categories={data,modela}
 // +kubebuilder:subresource:status
@@ -102,7 +108,7 @@ type FeatureHistogramSpec struct {
 	Start *metav1.Time `json:"start,omitempty" protobuf:"bytes,10,opt,name=start"`
 	// The end time of the feature histogram. If reached, the predictor will start a new feature histogram
 	End *metav1.Time `json:"end,omitempty" protobuf:"bytes,11,opt,name=end"`
-	// The histogram to comapre to for data drift calc
+	// The histogram to compare to for data drift calc
 	// +kubebuilder:validation:Optional
 	BaseFeatureHistogram v1.ObjectReference `json:"baseFeatureHistogram,omitempty" protobuf:"bytes,12,opt,name=baseFeatureHistogram"`
 }
@@ -120,10 +126,20 @@ type FeatureHistogramStatus struct {
 	// The calculation of the drift metrics for each column in the histogram
 	//+kubebuilder:validation:Optional
 	Drift []ColumnDrift `json:"drift,omitempty" protobuf:"bytes,4,opt,name=drift"`
+	// The log file specification that determines the location of all logs produced by the object
+	Logs catalog.Logs `json:"logs" protobuf:"bytes,5,opt,name=logs"`
+	// The phase of the feature histogram
+	Phase FeatureHistogramPhase `json:"phase" protobuf:"bytes,6,opt,name=phase"`
+	// In the case of failure, the Dataset resource controller will set this field with a failure reason
+	//+kubebuilder:validation:Optional
+	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,7,opt,name=failureReason"`
+	// In the case of failure, the Dataset resource controller will set this field with a failure message
+	//+kubebuilder:validation:Optional
+	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,8,opt,name=failureMessage"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []FeatureHistogramCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,5,rep,name=conditions"`
+	Conditions []FeatureHistogramCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,9,rep,name=conditions"`
 }
 
 type ColumnDrift struct {
@@ -133,6 +149,9 @@ type ColumnDrift struct {
 	// Measure of drift for a column
 	//+kubebuilder:validation:Optional
 	Metrics []catalog.Measurement `json:"metrics,omitempty" protobuf:"bytes,2,opt,name=metrics"`
+	// true if drift was detected for this column
+	//+kubebuilder:validation:Optional
+	Drift *bool `json:"drift,omitempty" protobuf:"varint,3,opt,name=drift"`
 }
 
 type ColumnHistogram struct {

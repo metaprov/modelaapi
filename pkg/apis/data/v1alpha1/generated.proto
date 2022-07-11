@@ -296,6 +296,10 @@ message ColumnDrift {
   // Measure of drift for a column
   // +kubebuilder:validation:Optional
   repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement metrics = 2;
+
+  // true if drift was detected for this column
+  // +kubebuilder:validation:Optional
+  optional bool drift = 3;
 }
 
 message ColumnHistogram {
@@ -2068,11 +2072,6 @@ message FeatureCondition {
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
-// +kubebuilder:printcolumn:name="Column",type="string",JSONPath=".spec.column"
-// +kubebuilder:printcolumn:name="Entity",type="string",JSONPath=".spec.dataset"
-// +kubebuilder:printcolumn:name="Bins",type="number",JSONPath=".spec.bins"
-// +kubebuilder:printcolumn:name="Missing",type="number",JSONPath=".status.missing"
-// +kubebuilder:printcolumn:name="Invalid",type="number",JSONPath=".status.invalid"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=featurehistograms,singular=featurehistogram,categories={data,modela}
 // +kubebuilder:subresource:status
@@ -2159,7 +2158,7 @@ message FeatureHistogramSpec {
   // The end time of the feature histogram. If reached, the predictor will start a new feature histogram
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time end = 11;
 
-  // The histogram to comapre to for data drift calc
+  // The histogram to compare to for data drift calc
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference baseFeatureHistogram = 12;
 }
@@ -2181,10 +2180,24 @@ message FeatureHistogramStatus {
   // +kubebuilder:validation:Optional
   repeated ColumnDrift drift = 4;
 
+  // The log file specification that determines the location of all logs produced by the object
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 5;
+
+  // The phase of the feature histogram
+  optional string phase = 6;
+
+  // In the case of failure, the Dataset resource controller will set this field with a failure reason
+  // +kubebuilder:validation:Optional
+  optional string failureReason = 7;
+
+  // In the case of failure, the Dataset resource controller will set this field with a failure message
+  // +kubebuilder:validation:Optional
+  optional string failureMessage = 8;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated FeatureHistogramCondition conditions = 5;
+  repeated FeatureHistogramCondition conditions = 9;
 }
 
 // +kubebuilder:object:root=true

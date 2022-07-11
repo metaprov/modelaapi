@@ -282,6 +282,9 @@ export class ColumnDrift extends jspb.Message {
   clearMetricsList(): ColumnDrift;
   addMetrics(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement;
 
+  getDrift(): boolean;
+  setDrift(value: boolean): ColumnDrift;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ColumnDrift.AsObject;
   static toObject(includeInstance: boolean, msg: ColumnDrift): ColumnDrift.AsObject;
@@ -294,6 +297,7 @@ export namespace ColumnDrift {
   export type AsObject = {
     name: string,
     metricsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.AsObject>,
+    drift: boolean,
   }
 }
 
@@ -3042,6 +3046,20 @@ export class FeatureHistogramStatus extends jspb.Message {
   clearDriftList(): FeatureHistogramStatus;
   addDrift(value?: ColumnDrift, index?: number): ColumnDrift;
 
+  getLogs(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs | undefined;
+  setLogs(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs): FeatureHistogramStatus;
+  hasLogs(): boolean;
+  clearLogs(): FeatureHistogramStatus;
+
+  getPhase(): string;
+  setPhase(value: string): FeatureHistogramStatus;
+
+  getFailurereason(): string;
+  setFailurereason(value: string): FeatureHistogramStatus;
+
+  getFailuremessage(): string;
+  setFailuremessage(value: string): FeatureHistogramStatus;
+
   getConditionsList(): Array<FeatureHistogramCondition>;
   setConditionsList(value: Array<FeatureHistogramCondition>): FeatureHistogramStatus;
   clearConditionsList(): FeatureHistogramStatus;
@@ -3061,6 +3079,10 @@ export namespace FeatureHistogramStatus {
     dataList: Array<ColumnHistogram.AsObject>,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     driftList: Array<ColumnDrift.AsObject>,
+    logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
+    phase: string,
+    failurereason: string,
+    failuremessage: string,
     conditionsList: Array<FeatureHistogramCondition.AsObject>,
   }
 }

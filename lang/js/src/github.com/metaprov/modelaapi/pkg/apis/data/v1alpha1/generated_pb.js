@@ -6398,7 +6398,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnDrift.toObject 
   var f, obj = {
     name: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     metricsList: jspb.Message.toObjectList(msg.getMetricsList(),
-    github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.toObject, includeInstance)
+    github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.toObject, includeInstance),
+    drift: (f = jspb.Message.getBooleanField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -6444,6 +6445,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnDrift.deseriali
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.deserializeBinaryFromReader);
       msg.addMetrics(value);
       break;
+    case 3:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setDrift(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -6486,6 +6491,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnDrift.serialize
       2,
       f,
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeBool(
+      3,
+      f
     );
   }
 };
@@ -6562,6 +6574,42 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnDrift.prototype
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnDrift.prototype.clearMetricsList = function() {
   return this.setMetricsList([]);
+};
+
+
+/**
+ * optional bool drift = 3;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnDrift.prototype.getDrift = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnDrift} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnDrift.prototype.setDrift = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnDrift} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnDrift.prototype.clearDrift = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnDrift.prototype.hasDrift = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
@@ -32166,7 +32214,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.repeatedFields_ = [2,4,5];
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.repeatedFields_ = [2,4,9];
 
 
 
@@ -32205,6 +32253,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatu
     lastupdated: (f = msg.getLastupdated()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     driftList: jspb.Message.toObjectList(msg.getDriftList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnDrift.toObject, includeInstance),
+    logs: (f = msg.getLogs()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.toObject(includeInstance, f),
+    phase: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
+    failurereason: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
+    failuremessage: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramCondition.toObject, includeInstance)
   };
@@ -32263,6 +32315,23 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatu
       msg.addDrift(value);
       break;
     case 5:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.deserializeBinaryFromReader);
+      msg.setLogs(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPhase(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFailurereason(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFailuremessage(value);
+      break;
+    case 9:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramCondition;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramCondition.deserializeBinaryFromReader);
       msg.addConditions(value);
@@ -32327,10 +32396,39 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatu
       proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnDrift.serializeBinaryToWriter
     );
   }
+  f = message.getLogs();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 6));
+  if (f != null) {
+    writer.writeString(
+      6,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 7));
+  if (f != null) {
+    writer.writeString(
+      7,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 8));
+  if (f != null) {
+    writer.writeString(
+      8,
+      f
+    );
+  }
   f = message.getConditionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      5,
+      9,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramCondition.serializeBinaryToWriter
     );
@@ -32488,12 +32586,157 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatu
 
 
 /**
- * repeated FeatureHistogramCondition conditions = 5;
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 5;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.getLogs = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs, 5));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.setLogs = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.clearLogs = function() {
+  return this.setLogs(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.hasLogs = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional string phase = 6;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.getPhase = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.setPhase = function(value) {
+  return jspb.Message.setField(this, 6, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.clearPhase = function() {
+  return jspb.Message.setField(this, 6, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.hasPhase = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional string failureReason = 7;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.getFailurereason = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.setFailurereason = function(value) {
+  return jspb.Message.setField(this, 7, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.clearFailurereason = function() {
+  return jspb.Message.setField(this, 7, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.hasFailurereason = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
+ * optional string failureMessage = 8;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.getFailuremessage = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.setFailuremessage = function(value) {
+  return jspb.Message.setField(this, 8, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.clearFailuremessage = function() {
+  return jspb.Message.setField(this, 8, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.hasFailuremessage = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * repeated FeatureHistogramCondition conditions = 9;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramCondition>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.getConditionsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramCondition, 5));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramCondition, 9));
 };
 
 
@@ -32502,7 +32745,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatu
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.setConditionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 5, value);
+  return jspb.Message.setRepeatedWrapperField(this, 9, value);
 };
 
 
@@ -32512,7 +32755,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatu
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramCondition}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 9, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramCondition, opt_index);
 };
 
 

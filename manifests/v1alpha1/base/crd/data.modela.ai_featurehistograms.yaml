@@ -28,21 +28,6 @@ spec:
     - jsonPath: .spec.versionName
       name: Version
       type: string
-    - jsonPath: .spec.column
-      name: Column
-      type: string
-    - jsonPath: .spec.dataset
-      name: Entity
-      type: string
-    - jsonPath: .spec.bins
-      name: Bins
-      type: number
-    - jsonPath: .status.missing
-      name: Missing
-      type: number
-    - jsonPath: .status.invalid
-      name: Invalid
-      type: number
     - jsonPath: .metadata.creationTimestamp
       name: Age
       type: date
@@ -72,7 +57,7 @@ spec:
                   histogram is being live updated by the predictorlet
                 type: boolean
               baseFeatureHistogram:
-                description: The histogram to comapre to for data drift calc
+                description: The histogram to compare to for data drift calc
                 properties:
                   apiVersion:
                     description: API version of the referent.
@@ -258,6 +243,9 @@ spec:
                   in the histogram
                 items:
                   properties:
+                    drift:
+                      description: true if drift was detected for this column
+                      type: boolean
                     metrics:
                       description: Measure of drift for a column
                       items:
@@ -452,15 +440,56 @@ spec:
                       type: string
                   type: object
                 type: array
+              failureMessage:
+                description: In the case of failure, the Dataset resource controller
+                  will set this field with a failure message
+                type: string
+              failureReason:
+                description: In the case of failure, the Dataset resource controller
+                  will set this field with a failure reason
+                type: string
               lastUpdated:
                 description: Last time the object was updated
                 format: date-time
                 type: string
+              logs:
+                description: The log file specification that determines the location
+                  of all logs produced by the object
+                properties:
+                  bucketName:
+                    description: The name of the VirtualBucket resource where the
+                      logs are stored
+                    type: string
+                  containers:
+                    description: The collection of ContainerLog objects that describe
+                      the location of logs per container
+                    items:
+                      description: ContainerLog describes the location of logs for
+                        a single Job
+                      properties:
+                        container:
+                          description: The container name
+                          type: string
+                        job:
+                          description: The name of the Job
+                          type: string
+                        key:
+                          description: The path to the log in the bucket
+                          type: string
+                      type: object
+                    type: array
+                type: object
               observedGeneration:
                 description: ObservedGeneration is the Last generation that was acted
                   on
                 format: int64
                 type: integer
+              phase:
+                description: The phase of the feature histogram
+                type: string
+            required:
+            - logs
+            - phase
             type: object
         required:
         - metadata
