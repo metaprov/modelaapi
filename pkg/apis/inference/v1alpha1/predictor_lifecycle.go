@@ -241,13 +241,13 @@ func (predictor *Predictor) ConstructRESTRule(fqdn string, serviceName string) *
 	}
 }
 
-func (p *Predictor) UpdateK8sStatus(model training.Model, deployment kapps.Deployment, k8sStatus KubernetesObjectStatus) {
+func (p *Predictor) UpdateK8sDeploymentStatus(model training.Model, deployment kapps.Deployment, k8sStatus KubernetesObjectStatus) {
 	// update live model
 	if p.Spec.Live.ModelRef.Name == model.Name {
 		status := p.Status.Live
 		status.ObjectStatuses = AddOrUpdateK8sStatuses(status.ObjectStatuses, k8sStatus)
 		p.Status.Live = status
-	} else {
+	} else { // shadow model
 		found := false
 		// else update shddow model k8sStatus
 		for i, v := range p.Spec.Shadows {
@@ -270,7 +270,39 @@ func (p *Predictor) UpdateK8sStatus(model training.Model, deployment kapps.Deplo
 			}
 			status.ObjectStatuses = AddOrUpdateK8sStatuses(status.ObjectStatuses, k8sStatus)
 			p.Status.Shadows = append(p.Status.Shadows, status)
-			klog.InfoS("added model deployment k8sStatus to predictor", "controller", "predictor", "model", model.Name)
+		}
+	}
+}
+
+func (p *Predictor) UpdateK8sServiceStatus(model training.Model, service v1.Service, k8sStatus KubernetesObjectStatus) {
+	// update live model
+	if p.Spec.Live.ModelRef.Name == model.Name {
+		status := p.Status.Live
+		status.ObjectStatuses = AddOrUpdateK8sStatuses(status.ObjectStatuses, k8sStatus)
+		p.Status.Live = status
+	} else { // shadow model
+		found := false
+		// else update shddow model k8sStatus
+		for i, v := range p.Spec.Shadows {
+			if v.ModelRef.Name == model.Name {
+				found = true
+				shadowModelStatus := p.Status.Shadows[i]
+				shadowModelStatus.ObjectStatuses = AddOrUpdateK8sStatuses(shadowModelStatus.ObjectStatuses, k8sStatus)
+				p.Status.Shadows[i] = shadowModelStatus
+			}
+		}
+		if !found {
+			status := ModelDeploymentStatus{
+				DeploymentRef: v1.ObjectReference{
+					Name:      service.Name,
+					Namespace: service.Namespace,
+					Kind:      "Service",
+				},
+				ModelName:    model.Name,
+				ModelVersion: *model.Spec.ModelVersion,
+			}
+			status.ObjectStatuses = AddOrUpdateK8sStatuses(status.ObjectStatuses, k8sStatus)
+			p.Status.Shadows = append(p.Status.Shadows, status)
 		}
 	}
 
