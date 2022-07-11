@@ -413,8 +413,6 @@ func (model *Model) MarkLive(predictor string, role catalog.ModelRole) {
 	switch role {
 	case catalog.ModelRoleLive:
 		model.Status.Phase = ModelPhaseChampion
-	case catalog.Canary:
-		model.Status.Phase = ModelPhaseCanary
 	case catalog.ModelRoleShadow:
 		model.Status.Phase = ModelPhaseShadow
 	}
