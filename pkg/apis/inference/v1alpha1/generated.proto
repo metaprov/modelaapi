@@ -1156,6 +1156,7 @@ message PredictorStatus {
   repeated ModelRecord history = 2;
 
   // The status of the live model
+  // +kubebuilder:validation:Optional
   optional ModelDeploymentStatus live = 3;
 
   // The status of the shadow models

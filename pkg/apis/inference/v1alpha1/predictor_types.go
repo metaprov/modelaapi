@@ -411,6 +411,7 @@ type PredictorStatus struct {
 	//+kubebuilder:validation:Optional
 	History []ModelRecord `json:"history,omitempty" protobuf:"bytes,2,opt,name=history"`
 	// The status of the live model
+	//+kubebuilder:validation:Optional
 	Live ModelDeploymentStatus `json:"live,omitempty" protobuf:"bytes,3,rep,name=live"`
 	// The status of the shadow models
 	// +kubebuilder:validation:Optional

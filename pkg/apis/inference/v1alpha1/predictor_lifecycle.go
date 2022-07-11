@@ -2,9 +2,10 @@ package v1alpha1
 
 import (
 	"fmt"
-
 	"github.com/metaprov/modelaapi/pkg/apis/inference"
+	training "github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/util"
+	kapps "k8s.io/api/apps/v1"
 	v1 "k8s.io/api/core/v1"
 	nwv1 "k8s.io/api/networking/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
@@ -238,4 +239,39 @@ func (predictor *Predictor) ConstructRESTRule(fqdn string, serviceName string) *
 			},
 		},
 	}
+}
+
+func (p *Predictor) UpdateK8sStatus(model training.Model, deployment kapps.Deployment, k8sStatus KubernetesObjectStatus) {
+	// update live model
+	if p.Spec.Live.ModelRef.Name == model.Name {
+		status := p.Status.Live
+		status.ObjectStatuses = AddOrUpdateK8sStatuses(status.ObjectStatuses, k8sStatus)
+		p.Status.Live = status
+	} else {
+		found := false
+		// else update shddow model k8sStatus
+		for i, v := range p.Spec.Shadows {
+			if v.ModelRef.Name == model.Name {
+				found = true
+				shadowModelStatus := p.Status.Shadows[i]
+				shadowModelStatus.ObjectStatuses = AddOrUpdateK8sStatuses(shadowModelStatus.ObjectStatuses, k8sStatus)
+				p.Status.Shadows[i] = shadowModelStatus
+			}
+		}
+		if !found {
+			status := ModelDeploymentStatus{
+				DeploymentRef: v1.ObjectReference{
+					Name:      deployment.Name,
+					Namespace: deployment.Namespace,
+					Kind:      "Deployment",
+				},
+				ModelName:    model.Name,
+				ModelVersion: *model.Spec.ModelVersion,
+			}
+			status.ObjectStatuses = AddOrUpdateK8sStatuses(status.ObjectStatuses, k8sStatus)
+			p.Status.Shadows = append(p.Status.Shadows, status)
+			klog.InfoS("added model deployment k8sStatus to predictor", "controller", "predictor", "model", model.Name)
+		}
+	}
+
 }
