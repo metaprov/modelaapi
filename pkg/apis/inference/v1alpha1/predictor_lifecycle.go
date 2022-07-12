@@ -244,18 +244,18 @@ func (predictor *Predictor) ConstructRESTRule(fqdn string, serviceName string) *
 func (p *Predictor) UpdateK8sDeploymentStatus(model training.Model, deployment kapps.Deployment, k8sStatus KubernetesObjectStatus) {
 	// update live model
 	if p.Spec.Live.ModelRef.Name == model.Name {
-		status := p.Status.Live
+		status := p.Status.LiveStatus
 		status.ObjectStatuses = AddOrUpdateK8sStatuses(status.ObjectStatuses, k8sStatus)
-		p.Status.Live = status
+		p.Status.LiveStatus = status
 	} else { // shadow model
 		found := false
 		// else update shddow model k8sStatus
 		for i, v := range p.Spec.Shadows {
 			if v.ModelRef.Name == model.Name {
 				found = true
-				shadowModelStatus := p.Status.Shadows[i]
+				shadowModelStatus := p.Status.ShadowsStatus[i]
 				shadowModelStatus.ObjectStatuses = AddOrUpdateK8sStatuses(shadowModelStatus.ObjectStatuses, k8sStatus)
-				p.Status.Shadows[i] = shadowModelStatus
+				p.Status.ShadowsStatus[i] = shadowModelStatus
 			}
 		}
 		if !found {
@@ -269,7 +269,7 @@ func (p *Predictor) UpdateK8sDeploymentStatus(model training.Model, deployment k
 				ModelVersion: *model.Spec.ModelVersion,
 			}
 			status.ObjectStatuses = AddOrUpdateK8sStatuses(status.ObjectStatuses, k8sStatus)
-			p.Status.Shadows = append(p.Status.Shadows, status)
+			p.Status.ShadowsStatus = append(p.Status.ShadowsStatus, status)
 		}
 	}
 }
@@ -277,18 +277,18 @@ func (p *Predictor) UpdateK8sDeploymentStatus(model training.Model, deployment k
 func (p *Predictor) UpdateK8sServiceStatus(model training.Model, service v1.Service, k8sStatus KubernetesObjectStatus) {
 	// update live model
 	if p.Spec.Live.ModelRef.Name == model.Name {
-		status := p.Status.Live
+		status := p.Status.LiveStatus
 		status.ObjectStatuses = AddOrUpdateK8sStatuses(status.ObjectStatuses, k8sStatus)
-		p.Status.Live = status
+		p.Status.LiveStatus = status
 	} else { // shadow model
 		found := false
 		// else update shddow model k8sStatus
 		for i, v := range p.Spec.Shadows {
 			if v.ModelRef.Name == model.Name {
 				found = true
-				shadowModelStatus := p.Status.Shadows[i]
+				shadowModelStatus := p.Status.ShadowsStatus[i]
 				shadowModelStatus.ObjectStatuses = AddOrUpdateK8sStatuses(shadowModelStatus.ObjectStatuses, k8sStatus)
-				p.Status.Shadows[i] = shadowModelStatus
+				p.Status.ShadowsStatus[i] = shadowModelStatus
 			}
 		}
 		if !found {
@@ -302,7 +302,7 @@ func (p *Predictor) UpdateK8sServiceStatus(model training.Model, service v1.Serv
 				ModelVersion: *model.Spec.ModelVersion,
 			}
 			status.ObjectStatuses = AddOrUpdateK8sStatuses(status.ObjectStatuses, k8sStatus)
-			p.Status.Shadows = append(p.Status.Shadows, status)
+			p.Status.ShadowsStatus = append(p.Status.ShadowsStatus, status)
 		}
 	}
 
