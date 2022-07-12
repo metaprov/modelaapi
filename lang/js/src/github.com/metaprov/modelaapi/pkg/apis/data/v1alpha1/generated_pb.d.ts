@@ -3027,8 +3027,8 @@ export class FeatureHistogramSpec extends jspb.Message {
   getTarget(): boolean;
   setTarget(value: boolean): FeatureHistogramSpec;
 
-  getActive(): boolean;
-  setActive(value: boolean): FeatureHistogramSpec;
+  getLive(): boolean;
+  setLive(value: boolean): FeatureHistogramSpec;
 
   getStart(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setStart(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): FeatureHistogramSpec;
@@ -3045,10 +3045,13 @@ export class FeatureHistogramSpec extends jspb.Message {
   hasBasefeaturehistogram(): boolean;
   clearBasefeaturehistogram(): FeatureHistogramSpec;
 
-  getTresholds(): DriftTresholdsSpec | undefined;
-  setTresholds(value?: DriftTresholdsSpec): FeatureHistogramSpec;
-  hasTresholds(): boolean;
-  clearTresholds(): FeatureHistogramSpec;
+  getThresholds(): DriftTresholdsSpec | undefined;
+  setThresholds(value?: DriftTresholdsSpec): FeatureHistogramSpec;
+  hasThresholds(): boolean;
+  clearThresholds(): FeatureHistogramSpec;
+
+  getSyncintervalsec(): number;
+  setSyncintervalsec(value: number): FeatureHistogramSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FeatureHistogramSpec.AsObject;
@@ -3067,11 +3070,12 @@ export namespace FeatureHistogramSpec {
     sourceref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     training: boolean,
     target: boolean,
-    active: boolean,
+    live: boolean,
     start?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     end?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     basefeaturehistogram?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    tresholds?: DriftTresholdsSpec.AsObject,
+    thresholds?: DriftTresholdsSpec.AsObject,
+    syncintervalsec: number,
   }
 }
 

@@ -32006,11 +32006,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.
     sourceref: (f = msg.getSourceref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     training: (f = jspb.Message.getBooleanField(msg, 7)) == null ? undefined : f,
     target: (f = jspb.Message.getBooleanField(msg, 8)) == null ? undefined : f,
-    active: (f = jspb.Message.getBooleanField(msg, 9)) == null ? undefined : f,
+    live: (f = jspb.Message.getBooleanField(msg, 9)) == null ? undefined : f,
     start: (f = msg.getStart()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     end: (f = msg.getEnd()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     basefeaturehistogram: (f = msg.getBasefeaturehistogram()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
-    tresholds: (f = msg.getTresholds()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DriftTresholdsSpec.toObject(includeInstance, f)
+    thresholds: (f = msg.getThresholds()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DriftTresholdsSpec.toObject(includeInstance, f),
+    syncintervalsec: (f = jspb.Message.getField(msg, 14)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -32078,7 +32079,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.
       break;
     case 9:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setActive(value);
+      msg.setLive(value);
       break;
     case 10:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
@@ -32098,7 +32099,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.
     case 13:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DriftTresholdsSpec;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DriftTresholdsSpec.deserializeBinaryFromReader);
-      msg.setTresholds(value);
+      msg.setThresholds(value);
+      break;
+    case 14:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setSyncintervalsec(value);
       break;
     default:
       reader.skipField();
@@ -32210,12 +32215,19 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.
       k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
     );
   }
-  f = message.getTresholds();
+  f = message.getThresholds();
   if (f != null) {
     writer.writeMessage(
       13,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DriftTresholdsSpec.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 14));
+  if (f != null) {
+    writer.writeInt32(
+      14,
+      f
     );
   }
 };
@@ -32476,10 +32488,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.
 
 
 /**
- * optional bool active = 9;
+ * optional bool live = 9;
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.getActive = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.getLive = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 9, false));
 };
 
@@ -32488,7 +32500,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.
  * @param {boolean} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.setActive = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.setLive = function(value) {
   return jspb.Message.setField(this, 9, value);
 };
 
@@ -32497,7 +32509,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.clearActive = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.clearLive = function() {
   return jspb.Message.setField(this, 9, undefined);
 };
 
@@ -32506,7 +32518,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.hasActive = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.hasLive = function() {
   return jspb.Message.getField(this, 9) != null;
 };
 
@@ -32623,10 +32635,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.
 
 
 /**
- * optional DriftTresholdsSpec tresholds = 13;
+ * optional DriftTresholdsSpec thresholds = 13;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DriftTresholdsSpec}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.getTresholds = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.getThresholds = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DriftTresholdsSpec} */ (
     jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DriftTresholdsSpec, 13));
 };
@@ -32636,7 +32648,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DriftTresholdsSpec|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.setTresholds = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.setThresholds = function(value) {
   return jspb.Message.setWrapperField(this, 13, value);
 };
 
@@ -32645,8 +32657,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.clearTresholds = function() {
-  return this.setTresholds(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.clearThresholds = function() {
+  return this.setThresholds(undefined);
 };
 
 
@@ -32654,8 +32666,44 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.hasTresholds = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.hasThresholds = function() {
   return jspb.Message.getField(this, 13) != null;
+};
+
+
+/**
+ * optional int32 SyncIntervalSec = 14;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.getSyncintervalsec = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 14, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.setSyncintervalsec = function(value) {
+  return jspb.Message.setField(this, 14, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.clearSyncintervalsec = function() {
+  return jspb.Message.setField(this, 14, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.hasSyncintervalsec = function() {
+  return jspb.Message.getField(this, 14) != null;
 };
 
 

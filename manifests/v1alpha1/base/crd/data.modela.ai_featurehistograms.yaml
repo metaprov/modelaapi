@@ -51,11 +51,12 @@ spec:
           spec:
             description: FeatureHistogramSpec contain the desired state of a FeatureHistogram
             properties:
-              active:
-                default: false
-                description: If true, this is an active feature histogram. This feature
-                  histogram is being live updated by the predictorlet
-                type: boolean
+              SyncIntervalSec:
+                default: 60
+                description: How much time in seconds, we should sync the im memory
+                  histograms to etcd Default is one minute.
+                format: int32
+                type: integer
               baseFeatureHistogram:
                 description: The histogram to compare to for data drift calc
                 properties:
@@ -107,6 +108,11 @@ spec:
                   predictor will start a new feature histogram
                 format: date-time
                 type: string
+              live:
+                default: false
+                description: If true, this is an active feature histogram. This feature
+                  histogram is being live updated by the predictorlet
+                type: boolean
               owner:
                 default: no-one
                 description: The feature owner
@@ -157,13 +163,8 @@ spec:
                 default: false
                 description: If true, this is a feature histogram of the target column
                 type: boolean
-              training:
-                default: false
-                description: If true, this is a training dataset feature histogram.
-                  If false the histogram was generated during serving.
-                type: boolean
-              tresholds:
-                description: Define drift tresholds. This is usually assigned from
+              thresholds:
+                description: Define drift thresholds. This is usually assigned from
                   the predictor.
                 properties:
                   tresholds:
@@ -265,6 +266,11 @@ spec:
                 required:
                 - tresholds
                 type: object
+              training:
+                default: false
+                description: If true, this is a training dataset feature histogram.
+                  If false the histogram was generated during serving.
+                type: boolean
               versionName:
                 default: ""
                 description: The product version for the feature.

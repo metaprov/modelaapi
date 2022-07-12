@@ -102,18 +102,24 @@ type FeatureHistogramSpec struct {
 	// If true, this is an active feature histogram. This feature histogram is being live updated by the predictorlet
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Active *bool `json:"active,omitempty" protobuf:"varint,9,opt,name=active"`
+	Live *bool `json:"live,omitempty" protobuf:"varint,9,opt,name=live"`
 	// The start time of this feature histogram. For training dataset histogram this is set to the creation
 	// time of the dataset
 	Start *metav1.Time `json:"start,omitempty" protobuf:"bytes,10,opt,name=start"`
 	// The end time of the feature histogram. If reached, the predictor will start a new feature histogram
+	// +kubebuilder:validation:Optional
 	End *metav1.Time `json:"end,omitempty" protobuf:"bytes,11,opt,name=end"`
 	// The histogram to compare to for data drift calc
 	// +kubebuilder:validation:Optional
 	BaseFeatureHistogram v1.ObjectReference `json:"baseFeatureHistogram,omitempty" protobuf:"bytes,12,opt,name=baseFeatureHistogram"`
-	// Define drift tresholds. This is usually assigned from the predictor.
+	// Define drift thresholds. This is usually assigned from the predictor.
 	// +kubebuilder:validation:Optional
-	Tresholds DriftTresholdsSpec `json:"tresholds,omitempty" protobuf:"bytes,13,opt,name=tresholds"`
+	Thresholds DriftTresholdsSpec `json:"thresholds,omitempty" protobuf:"bytes,13,opt,name=thresholds"`
+	// How much time in seconds, we should sync the im memory histograms to etcd
+	// Default is one minute.
+	// +kubebuilder:default:=60
+	// +kubebuilder:validation:Optional
+	SyncIntervalSec *int32 `json:"SyncIntervalSec,omitempty" protobuf:"bytes,14,opt,name=SyncIntervalSec"`
 }
 
 // FeatureHistogramStatus defines the observed state of FeatureHistogram

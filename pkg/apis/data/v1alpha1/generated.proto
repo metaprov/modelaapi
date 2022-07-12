@@ -2166,22 +2166,29 @@ message FeatureHistogramSpec {
   // If true, this is an active feature histogram. This feature histogram is being live updated by the predictorlet
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool active = 9;
+  optional bool live = 9;
 
   // The start time of this feature histogram. For training dataset histogram this is set to the creation
   // time of the dataset
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time start = 10;
 
   // The end time of the feature histogram. If reached, the predictor will start a new feature histogram
+  // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time end = 11;
 
   // The histogram to compare to for data drift calc
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference baseFeatureHistogram = 12;
 
-  // Define drift tresholds. This is usually assigned from the predictor.
+  // Define drift thresholds. This is usually assigned from the predictor.
   // +kubebuilder:validation:Optional
-  optional DriftTresholdsSpec tresholds = 13;
+  optional DriftTresholdsSpec thresholds = 13;
+
+  // How much time in seconds, we should sync the im memory histograms to etcd
+  // Default is one minute.
+  // +kubebuilder:default:=60
+  // +kubebuilder:validation:Optional
+  optional int32 SyncIntervalSec = 14;
 }
 
 // FeatureHistogramStatus defines the observed state of FeatureHistogram
