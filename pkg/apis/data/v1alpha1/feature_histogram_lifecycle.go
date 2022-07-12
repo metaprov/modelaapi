@@ -17,6 +17,7 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/client-go/kubernetes/scheme"
+	"strings"
 )
 
 //==============================================================================
@@ -198,7 +199,7 @@ func (fh *FeatureHistogram) ErrorAlert(tenantRef *v1.ObjectReference, notifierNa
 	}
 }
 
-func (fh *FeatureHistogram) DriftAlert(tenantRef *v1.ObjectReference, notifierName *string, err error) *infra.Alert {
+func (fh *FeatureHistogram) DriftAlert(tenantRef *v1.ObjectReference, notifierName *string, columns []string) *infra.Alert {
 	level := infra.Error
 	subject := fmt.Sprintf("Drift occured")
 	return &infra.Alert{
@@ -208,7 +209,7 @@ func (fh *FeatureHistogram) DriftAlert(tenantRef *v1.ObjectReference, notifierNa
 		},
 		Spec: infra.AlertSpec{
 			Subject:      util.StrPtr(subject),
-			Message:      util.StrPtr(err.Error()),
+			Message:      util.StrPtr("Drift was detected"),
 			Level:        &level,
 			TenantRef:    tenantRef,
 			NotifierName: notifierName,
@@ -217,8 +218,10 @@ func (fh *FeatureHistogram) DriftAlert(tenantRef *v1.ObjectReference, notifierNa
 				Name:      fh.Name,
 				Namespace: fh.Namespace,
 			},
-			Owner:  fh.Spec.Owner,
-			Fields: map[string]string{},
+			Owner: fh.Spec.Owner,
+			Fields: map[string]string{
+				"columns": strings.Join(columns, ","),
+			},
 		},
 	}
 }
