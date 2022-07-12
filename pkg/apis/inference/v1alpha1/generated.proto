@@ -1178,24 +1178,24 @@ message PredictorStatus {
 
   // The status of the live model
   // +kubebuilder:validation:Optional
-  optional ModelDeploymentStatus live = 3;
+  optional ModelDeploymentStatus liveStatus = 3;
 
   // The status of the shadow models
   // +kubebuilder:validation:Optional
-  repeated ModelDeploymentStatus shadows = 4;
+  repeated ModelDeploymentStatus shadowsStatus = 4;
 
   // The status of the Predictorlet associated with the Predictor. The Predictorlet is a service which handles prediction traffic
   // and routes predictions to individual models based on the specification of the Predictor
   // +kubebuilder:validation:Optional
-  optional PredictorletStatus predictorlet = 5;
+  optional PredictorletStatus predictorletStatus = 5;
 
   // The status of the prediction cache managed by the Predictor
   // +kubebuilder:validation:Optional
-  optional PredictionCacheStatus cache = 6;
+  optional PredictionCacheStatus cacheStatus = 6;
 
   // The status of the online store managed by the Predictor
   // +kubebuilder:validation:Optional
-  optional OnlineStoreStatus onlineStore = 7;
+  optional OnlineStoreStatus onlineStoreStatus = 7;
 
   // The last time the object was updated
   // +kubebuilder:validation:Optional

@@ -421,20 +421,20 @@ type PredictorStatus struct {
 	History []ModelRecord `json:"history,omitempty" protobuf:"bytes,2,opt,name=history"`
 	// The status of the live model
 	//+kubebuilder:validation:Optional
-	Live ModelDeploymentStatus `json:"live,omitempty" protobuf:"bytes,3,rep,name=live"`
+	LiveStatus ModelDeploymentStatus `json:"liveStatus,omitempty" protobuf:"bytes,3,rep,name=liveStatus"`
 	// The status of the shadow models
 	// +kubebuilder:validation:Optional
-	Shadows []ModelDeploymentStatus `json:"shadows,omitempty" protobuf:"bytes,4,rep,name=shadows"`
+	ShadowsStatus []ModelDeploymentStatus `json:"shadowsStatus,omitempty" protobuf:"bytes,4,rep,name=shadowsStatus"`
 	// The status of the Predictorlet associated with the Predictor. The Predictorlet is a service which handles prediction traffic
 	// and routes predictions to individual models based on the specification of the Predictor
 	// +kubebuilder:validation:Optional
-	PredictorletStatus PredictorletStatus `json:"predictorlet,omitempty" protobuf:"bytes,5,opt,name=predictorlet"`
+	PredictorletStatus PredictorletStatus `json:"predictorletStatus,omitempty" protobuf:"bytes,5,opt,name=predictorletStatus"`
 	// The status of the prediction cache managed by the Predictor
 	// +kubebuilder:validation:Optional
-	CacheStatus PredictionCacheStatus `json:"cache,omitempty" protobuf:"bytes,6,opt,name=cache"`
+	CacheStatus PredictionCacheStatus `json:"cacheStatus,omitempty" protobuf:"bytes,6,opt,name=cacheStatus"`
 	// The status of the online store managed by the Predictor
 	// +kubebuilder:validation:Optional
-	OnlineStore OnlineStoreStatus `json:"onlineStore,omitempty" protobuf:"bytes,7,opt,name=onlineStore"`
+	OnlineStore OnlineStoreStatus `json:"onlineStoreStatus,omitempty" protobuf:"bytes,7,opt,name=onlineStoreStatus"`
 	// The last time the object was updated
 	//+kubebuilder:validation:Optional
 	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,8,opt,name=lastUpdated"`

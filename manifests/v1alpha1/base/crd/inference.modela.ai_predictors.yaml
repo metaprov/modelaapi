@@ -2088,7 +2088,7 @@ spec:
             description: PredictorStatus contain the current state of the Predictor
               resource
             properties:
-              cache:
+              cacheStatus:
                 description: The status of the prediction cache managed by the Predictor
                 properties:
                   lastAccessed:
@@ -2745,7 +2745,7 @@ spec:
                 description: The last time the object was updated
                 format: date-time
                 type: string
-              live:
+              liveStatus:
                 description: The status of the live model
                 properties:
                   conceptDrift:
@@ -3358,7 +3358,7 @@ spec:
                   on
                 format: int64
                 type: integer
-              onlineStore:
+              onlineStoreStatus:
                 description: The status of the online store managed by the Predictor
                 properties:
                   lastAccessed:
@@ -3367,7 +3367,7 @@ spec:
                     format: date-time
                     type: string
                 type: object
-              predictorlet:
+              predictorletStatus:
                 description: The status of the Predictorlet associated with the Predictor.
                   The Predictorlet is a service which handles prediction traffic and
                   routes predictions to individual models based on the specification
@@ -3531,7 +3531,7 @@ spec:
                     format: int32
                     type: integer
                 type: object
-              shadows:
+              shadowsStatus:
                 description: The status of the shadow models
                 items:
                   properties:

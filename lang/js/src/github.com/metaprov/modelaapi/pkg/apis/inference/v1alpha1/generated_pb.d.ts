@@ -1876,30 +1876,30 @@ export class PredictorStatus extends jspb.Message {
   clearHistoryList(): PredictorStatus;
   addHistory(value?: ModelRecord, index?: number): ModelRecord;
 
-  getLive(): ModelDeploymentStatus | undefined;
-  setLive(value?: ModelDeploymentStatus): PredictorStatus;
-  hasLive(): boolean;
-  clearLive(): PredictorStatus;
+  getLivestatus(): ModelDeploymentStatus | undefined;
+  setLivestatus(value?: ModelDeploymentStatus): PredictorStatus;
+  hasLivestatus(): boolean;
+  clearLivestatus(): PredictorStatus;
 
-  getShadowsList(): Array<ModelDeploymentStatus>;
-  setShadowsList(value: Array<ModelDeploymentStatus>): PredictorStatus;
-  clearShadowsList(): PredictorStatus;
-  addShadows(value?: ModelDeploymentStatus, index?: number): ModelDeploymentStatus;
+  getShadowsstatusList(): Array<ModelDeploymentStatus>;
+  setShadowsstatusList(value: Array<ModelDeploymentStatus>): PredictorStatus;
+  clearShadowsstatusList(): PredictorStatus;
+  addShadowsstatus(value?: ModelDeploymentStatus, index?: number): ModelDeploymentStatus;
 
-  getPredictorlet(): PredictorletStatus | undefined;
-  setPredictorlet(value?: PredictorletStatus): PredictorStatus;
-  hasPredictorlet(): boolean;
-  clearPredictorlet(): PredictorStatus;
+  getPredictorletstatus(): PredictorletStatus | undefined;
+  setPredictorletstatus(value?: PredictorletStatus): PredictorStatus;
+  hasPredictorletstatus(): boolean;
+  clearPredictorletstatus(): PredictorStatus;
 
-  getCache(): PredictionCacheStatus | undefined;
-  setCache(value?: PredictionCacheStatus): PredictorStatus;
-  hasCache(): boolean;
-  clearCache(): PredictorStatus;
+  getCachestatus(): PredictionCacheStatus | undefined;
+  setCachestatus(value?: PredictionCacheStatus): PredictorStatus;
+  hasCachestatus(): boolean;
+  clearCachestatus(): PredictorStatus;
 
-  getOnlinestore(): OnlineStoreStatus | undefined;
-  setOnlinestore(value?: OnlineStoreStatus): PredictorStatus;
-  hasOnlinestore(): boolean;
-  clearOnlinestore(): PredictorStatus;
+  getOnlinestorestatus(): OnlineStoreStatus | undefined;
+  setOnlinestorestatus(value?: OnlineStoreStatus): PredictorStatus;
+  hasOnlinestorestatus(): boolean;
+  clearOnlinestorestatus(): PredictorStatus;
 
   getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): PredictorStatus;
@@ -1952,11 +1952,11 @@ export namespace PredictorStatus {
   export type AsObject = {
     observedgeneration: number,
     historyList: Array<ModelRecord.AsObject>,
-    live?: ModelDeploymentStatus.AsObject,
-    shadowsList: Array<ModelDeploymentStatus.AsObject>,
-    predictorlet?: PredictorletStatus.AsObject,
-    cache?: PredictionCacheStatus.AsObject,
-    onlinestore?: OnlineStoreStatus.AsObject,
+    livestatus?: ModelDeploymentStatus.AsObject,
+    shadowsstatusList: Array<ModelDeploymentStatus.AsObject>,
+    predictorletstatus?: PredictorletStatus.AsObject,
+    cachestatus?: PredictionCacheStatus.AsObject,
+    onlinestorestatus?: OnlineStoreStatus.AsObject,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     endpoint: string,
     failurereason: string,

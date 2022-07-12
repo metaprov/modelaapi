@@ -17864,12 +17864,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.
     observedgeneration: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     historyList: jspb.Message.toObjectList(msg.getHistoryList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelRecord.toObject, includeInstance),
-    live: (f = msg.getLive()) && proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.toObject(includeInstance, f),
-    shadowsList: jspb.Message.toObjectList(msg.getShadowsList(),
+    livestatus: (f = msg.getLivestatus()) && proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.toObject(includeInstance, f),
+    shadowsstatusList: jspb.Message.toObjectList(msg.getShadowsstatusList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.toObject, includeInstance),
-    predictorlet: (f = msg.getPredictorlet()) && proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorletStatus.toObject(includeInstance, f),
-    cache: (f = msg.getCache()) && proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCacheStatus.toObject(includeInstance, f),
-    onlinestore: (f = msg.getOnlinestore()) && proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.OnlineStoreStatus.toObject(includeInstance, f),
+    predictorletstatus: (f = msg.getPredictorletstatus()) && proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorletStatus.toObject(includeInstance, f),
+    cachestatus: (f = msg.getCachestatus()) && proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCacheStatus.toObject(includeInstance, f),
+    onlinestorestatus: (f = msg.getOnlinestorestatus()) && proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.OnlineStoreStatus.toObject(includeInstance, f),
     lastupdated: (f = msg.getLastupdated()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     endpoint: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
     failurereason: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
@@ -17928,27 +17928,27 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.
     case 3:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.deserializeBinaryFromReader);
-      msg.setLive(value);
+      msg.setLivestatus(value);
       break;
     case 4:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.deserializeBinaryFromReader);
-      msg.addShadows(value);
+      msg.addShadowsstatus(value);
       break;
     case 5:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorletStatus;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorletStatus.deserializeBinaryFromReader);
-      msg.setPredictorlet(value);
+      msg.setPredictorletstatus(value);
       break;
     case 6:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCacheStatus;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCacheStatus.deserializeBinaryFromReader);
-      msg.setCache(value);
+      msg.setCachestatus(value);
       break;
     case 7:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.OnlineStoreStatus;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.OnlineStoreStatus.deserializeBinaryFromReader);
-      msg.setOnlinestore(value);
+      msg.setOnlinestorestatus(value);
       break;
     case 8:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
@@ -18036,7 +18036,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.
       proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelRecord.serializeBinaryToWriter
     );
   }
-  f = message.getLive();
+  f = message.getLivestatus();
   if (f != null) {
     writer.writeMessage(
       3,
@@ -18044,7 +18044,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.
       proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.serializeBinaryToWriter
     );
   }
-  f = message.getShadowsList();
+  f = message.getShadowsstatusList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       4,
@@ -18052,7 +18052,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.
       proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.serializeBinaryToWriter
     );
   }
-  f = message.getPredictorlet();
+  f = message.getPredictorletstatus();
   if (f != null) {
     writer.writeMessage(
       5,
@@ -18060,7 +18060,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.
       proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorletStatus.serializeBinaryToWriter
     );
   }
-  f = message.getCache();
+  f = message.getCachestatus();
   if (f != null) {
     writer.writeMessage(
       6,
@@ -18068,7 +18068,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.
       proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCacheStatus.serializeBinaryToWriter
     );
   }
-  f = message.getOnlinestore();
+  f = message.getOnlinestorestatus();
   if (f != null) {
     writer.writeMessage(
       7,
@@ -18223,10 +18223,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.
 
 
 /**
- * optional ModelDeploymentStatus live = 3;
+ * optional ModelDeploymentStatus liveStatus = 3;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.getLive = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.getLivestatus = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus} */ (
     jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus, 3));
 };
@@ -18236,7 +18236,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.setLive = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.setLivestatus = function(value) {
   return jspb.Message.setWrapperField(this, 3, value);
 };
 
@@ -18245,8 +18245,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.clearLive = function() {
-  return this.setLive(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.clearLivestatus = function() {
+  return this.setLivestatus(undefined);
 };
 
 
@@ -18254,16 +18254,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.hasLive = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.hasLivestatus = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * repeated ModelDeploymentStatus shadows = 4;
+ * repeated ModelDeploymentStatus shadowsStatus = 4;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus>}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.getShadowsList = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.getShadowsstatusList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus, 4));
 };
@@ -18273,7 +18273,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.
  * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus>} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.setShadowsList = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.setShadowsstatusList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 4, value);
 };
 
@@ -18283,7 +18283,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.
  * @param {number=} opt_index
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.addShadows = function(opt_value, opt_index) {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.addShadowsstatus = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus, opt_index);
 };
 
@@ -18292,16 +18292,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.
  * Clears the list making it empty but non-null.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.clearShadowsList = function() {
-  return this.setShadowsList([]);
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.clearShadowsstatusList = function() {
+  return this.setShadowsstatusList([]);
 };
 
 
 /**
- * optional PredictorletStatus predictorlet = 5;
+ * optional PredictorletStatus predictorletStatus = 5;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorletStatus}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.getPredictorlet = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.getPredictorletstatus = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorletStatus} */ (
     jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorletStatus, 5));
 };
@@ -18311,7 +18311,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorletStatus|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.setPredictorlet = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.setPredictorletstatus = function(value) {
   return jspb.Message.setWrapperField(this, 5, value);
 };
 
@@ -18320,8 +18320,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.clearPredictorlet = function() {
-  return this.setPredictorlet(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.clearPredictorletstatus = function() {
+  return this.setPredictorletstatus(undefined);
 };
 
 
@@ -18329,16 +18329,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.hasPredictorlet = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.hasPredictorletstatus = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 
 
 /**
- * optional PredictionCacheStatus cache = 6;
+ * optional PredictionCacheStatus cacheStatus = 6;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCacheStatus}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.getCache = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.getCachestatus = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCacheStatus} */ (
     jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCacheStatus, 6));
 };
@@ -18348,7 +18348,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCacheStatus|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.setCache = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.setCachestatus = function(value) {
   return jspb.Message.setWrapperField(this, 6, value);
 };
 
@@ -18357,8 +18357,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.clearCache = function() {
-  return this.setCache(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.clearCachestatus = function() {
+  return this.setCachestatus(undefined);
 };
 
 
@@ -18366,16 +18366,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.hasCache = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.hasCachestatus = function() {
   return jspb.Message.getField(this, 6) != null;
 };
 
 
 /**
- * optional OnlineStoreStatus onlineStore = 7;
+ * optional OnlineStoreStatus onlineStoreStatus = 7;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.OnlineStoreStatus}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.getOnlinestore = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.getOnlinestorestatus = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.OnlineStoreStatus} */ (
     jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.OnlineStoreStatus, 7));
 };
@@ -18385,7 +18385,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.OnlineStoreStatus|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.setOnlinestore = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.setOnlinestorestatus = function(value) {
   return jspb.Message.setWrapperField(this, 7, value);
 };
 
@@ -18394,8 +18394,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.clearOnlinestore = function() {
-  return this.setOnlinestore(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.clearOnlinestorestatus = function() {
+  return this.setOnlinestorestatus(undefined);
 };
 
 
@@ -18403,7 +18403,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.hasOnlinestore = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.hasOnlinestorestatus = function() {
   return jspb.Message.getField(this, 7) != null;
 };
 
