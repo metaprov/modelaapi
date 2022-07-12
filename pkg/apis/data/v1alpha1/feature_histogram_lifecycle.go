@@ -9,10 +9,9 @@ package v1alpha1
 import (
 	"fmt"
 	"github.com/dustin/go-humanize"
-	infra "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
-
 	"github.com/metaprov/modelaapi/pkg/apis/common"
 	"github.com/metaprov/modelaapi/pkg/apis/data"
+	infra "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/util"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
@@ -222,4 +221,14 @@ func (fh *FeatureHistogram) DriftAlert(tenantRef *v1.ObjectReference, notifierNa
 			Fields: map[string]string{},
 		},
 	}
+}
+
+// check if we should compute drift, we should compute drift,
+// if we have no drift parameters, and we pass the historam
+func (fh *FeatureHistogram) ShouldComputeDrift() bool {
+	if *fh.Spec.Live {
+		return false
+	}
+	now := metav1.Now()
+	return fh.Spec.End.Before(&now) && len(fh.Status.Drift) == 0
 }
