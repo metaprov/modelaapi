@@ -624,8 +624,8 @@ spec:
                 description: The dataset role
                 enum:
                 - unlabled
-                - predictions
-                - ground-truth
+                - serving
+                - feedback
                 - training
                 type: string
               sample:

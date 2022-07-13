@@ -54,18 +54,18 @@ type DriftDetectionSpec struct {
 	MaxHistograms *int32 `json:"maxHistograms,omitempty" protobuf:"varint,8,opt,name=maxHistograms"`
 	// The duration in minutes that an histogram is updated before computing drift
 	// +kubebuilder:validation:Optional
-	HistogramDurationMin *int32 `json:"histogramDurationMin,omitempty" protobuf:"varint,9,opt,name=histogramDurationMin"`
+	WindowSecs *int32 `json:"histogramDurationMin,omitempty" protobuf:"varint,9,opt,name=histogramDurationMin"`
 }
 
-type GroundTruthTestSpec struct {
+type FeedbackTestSpec struct {
 	// Indicates if model monitoring is enabled for the model
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
 	// Reference to the labeled ground true dataset
-	GroundTrueDatasetRef v1.ObjectReference `json:"groundTrueDatasetRef,omitempty" protobuf:"bytes,2,opt,name=groundTruthDatasetRef"`
+	FeedbackDatasetRef v1.ObjectReference `json:"feedbackDatasetRef,omitempty" protobuf:"bytes,2,opt,name=feedbackDatasetRef"`
 	// Reference to the training dataset for the champion model.
-	TrainingDatasetRef v1.ObjectReference `json:"trainingDatasetRef,omitempty" protobuf:"bytes,3,opt,name=trainingDatasetRef"`
+	TrainingDatasetRef v1.ObjectReference `json:"trainingRef,omitempty" protobuf:"bytes,3,opt,name=trainingDatasetRef"`
 	// Define the tests to run against the predictor.
 	Tests catalog.TestSuite `json:"tests,omitempty" protobuf:"bytes,6,opt,name=tests"`
 	// The schedule on which model monitoring computations will be performed
@@ -94,21 +94,13 @@ type PredictionLoggingSpec struct {
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
 	SamplePercent *int32 `json:"samplePercent,omitempty" protobuf:"varint,2,opt,name=samplePercent"`
-	// Indicates if incoming requests will be logged
-	// +kubebuilder:default:=true
-	// +kubebuilder:validation:Optional
-	LogRequests *bool `json:"logRequests,omitempty" protobuf:"varint,3,opt,name=logRequests"`
-	// Indicates if outgoing predictions will be logged
-	// +kubebuilder:default:=true
-	// +kubebuilder:validation:Optional
-	LogResponses *bool `json:"logResponses,omitempty" protobuf:"varint,4,opt,name=logResponses"`
-	// Number of rows in the prediction dataset
+	// Number of rows in the serving dataset
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
-	Rows *int32 `json:"rows,omitempty" protobuf:"varint,5,opt,name=rows"`
-	//Target location of the prediction log
+	Rows *int32 `json:"rows,omitempty" protobuf:"varint,3,opt,name=rows"`
+	// Target location of the serving dataset
 	// +kubebuilder:validation:Optional
-	Location data.DataLocation `json:"location,omitempty" protobuf:"bytes,6,opt,name=location"`
+	Location data.DataLocation `json:"location,omitempty" protobuf:"bytes,4,opt,name=location"`
 }
 
 // ProgressiveSpec defines the specification to progressively deploy a model to production
@@ -393,7 +385,7 @@ type PredictorSpec struct {
 	Drift DriftDetectionSpec `json:"drift,omitempty" protobuf:"bytes,20,opt,name=drift"`
 	// Spec for the ground truth process.
 	// +kubebuilder:validation:Optional
-	GroundTruth GroundTruthTestSpec `json:"groundTruth,omitempty" protobuf:"bytes,21,opt,name=groundTruth"`
+	GroundTruth FeedbackTestSpec `json:"groundTruth,omitempty" protobuf:"bytes,21,opt,name=groundTruth"`
 	// NotifierRef references a Notifier resource that will be triggered in the case that a concept or data drift is detected
 	// +kubebuilder:validation:Optional
 	NotifierRef *v1.ObjectReference `json:"notifierRef,omitempty" protobuf:"bytes,22,opt,name=notifierRef"`

@@ -871,6 +871,48 @@ export namespace FastSlowModelSpec {
   }
 }
 
+export class FeedbackTestSpec extends jspb.Message {
+  getEnabled(): boolean;
+  setEnabled(value: boolean): FeedbackTestSpec;
+
+  getFeedbackdatasetref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setFeedbackdatasetref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): FeedbackTestSpec;
+  hasFeedbackdatasetref(): boolean;
+  clearFeedbackdatasetref(): FeedbackTestSpec;
+
+  getTrainingdatasetref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setTrainingdatasetref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): FeedbackTestSpec;
+  hasTrainingdatasetref(): boolean;
+  clearTrainingdatasetref(): FeedbackTestSpec;
+
+  getTests(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
+  setTests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): FeedbackTestSpec;
+  hasTests(): boolean;
+  clearTests(): FeedbackTestSpec;
+
+  getSchedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
+  setSchedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): FeedbackTestSpec;
+  hasSchedule(): boolean;
+  clearSchedule(): FeedbackTestSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FeedbackTestSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: FeedbackTestSpec): FeedbackTestSpec.AsObject;
+  static serializeBinaryToWriter(message: FeedbackTestSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FeedbackTestSpec;
+  static deserializeBinaryFromReader(message: FeedbackTestSpec, reader: jspb.BinaryReader): FeedbackTestSpec;
+}
+
+export namespace FeedbackTestSpec {
+  export type AsObject = {
+    enabled: boolean,
+    feedbackdatasetref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    trainingdatasetref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    tests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
+    schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
+  }
+}
+
 export class ForecastSpec extends jspb.Message {
   getHierarchyvaluesMap(): jspb.Map<string, string>;
   clearHierarchyvaluesMap(): ForecastSpec;
@@ -920,48 +962,6 @@ export namespace ForwardCurtainSpec {
     enabled: boolean,
     curtainref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     percent: number,
-  }
-}
-
-export class GroundTruthTestSpec extends jspb.Message {
-  getEnabled(): boolean;
-  setEnabled(value: boolean): GroundTruthTestSpec;
-
-  getGroundtruthdatasetref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setGroundtruthdatasetref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): GroundTruthTestSpec;
-  hasGroundtruthdatasetref(): boolean;
-  clearGroundtruthdatasetref(): GroundTruthTestSpec;
-
-  getTrainingdatasetref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setTrainingdatasetref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): GroundTruthTestSpec;
-  hasTrainingdatasetref(): boolean;
-  clearTrainingdatasetref(): GroundTruthTestSpec;
-
-  getTests(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
-  setTests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): GroundTruthTestSpec;
-  hasTests(): boolean;
-  clearTests(): GroundTruthTestSpec;
-
-  getSchedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
-  setSchedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): GroundTruthTestSpec;
-  hasSchedule(): boolean;
-  clearSchedule(): GroundTruthTestSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GroundTruthTestSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: GroundTruthTestSpec): GroundTruthTestSpec.AsObject;
-  static serializeBinaryToWriter(message: GroundTruthTestSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GroundTruthTestSpec;
-  static deserializeBinaryFromReader(message: GroundTruthTestSpec, reader: jspb.BinaryReader): GroundTruthTestSpec;
-}
-
-export namespace GroundTruthTestSpec {
-  export type AsObject = {
-    enabled: boolean,
-    groundtruthdatasetref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    trainingdatasetref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    tests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
-    schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
   }
 }
 
@@ -1404,12 +1404,6 @@ export class PredictionLoggingSpec extends jspb.Message {
   getSamplepercent(): number;
   setSamplepercent(value: number): PredictionLoggingSpec;
 
-  getLogrequests(): boolean;
-  setLogrequests(value: boolean): PredictionLoggingSpec;
-
-  getLogresponses(): boolean;
-  setLogresponses(value: boolean): PredictionLoggingSpec;
-
   getRows(): number;
   setRows(value: number): PredictionLoggingSpec;
 
@@ -1430,8 +1424,6 @@ export namespace PredictionLoggingSpec {
   export type AsObject = {
     enabled: boolean,
     samplepercent: number,
-    logrequests: boolean,
-    logresponses: boolean,
     rows: number,
     location?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
   }
@@ -1799,8 +1791,8 @@ export class PredictorSpec extends jspb.Message {
   hasDrift(): boolean;
   clearDrift(): PredictorSpec;
 
-  getGroundtruth(): GroundTruthTestSpec | undefined;
-  setGroundtruth(value?: GroundTruthTestSpec): PredictorSpec;
+  getGroundtruth(): FeedbackTestSpec | undefined;
+  setGroundtruth(value?: FeedbackTestSpec): PredictorSpec;
   hasGroundtruth(): boolean;
   clearGroundtruth(): PredictorSpec;
 
@@ -1858,7 +1850,7 @@ export namespace PredictorSpec {
     task: string,
     predictionthreshold: number,
     drift?: DriftDetectionSpec.AsObject,
-    groundtruth?: GroundTruthTestSpec.AsObject,
+    groundtruth?: FeedbackTestSpec.AsObject,
     notifierref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     predictionlogging?: PredictionLoggingSpec.AsObject,
     forwardcurtain?: ForwardCurtainSpec.AsObject,

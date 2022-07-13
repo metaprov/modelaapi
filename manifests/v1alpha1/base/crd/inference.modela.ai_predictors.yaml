@@ -1004,7 +1004,7 @@ spec:
                     description: Indicates if model monitoring is enabled for the
                       model
                     type: boolean
-                  groundTrueDatasetRef:
+                  feedbackDatasetRef:
                     description: Reference to the labeled ground true dataset
                     properties:
                       apiVersion:
@@ -1259,7 +1259,7 @@ spec:
                           type: object
                         type: array
                     type: object
-                  trainingDatasetRef:
+                  trainingRef:
                     description: Reference to the training dataset for the champion
                       model.
                     properties:
@@ -1463,7 +1463,7 @@ spec:
                     description: Indicates if prediction logging is enabled
                     type: boolean
                   location:
-                    description: Target location of the prediction log
+                    description: Target location of the serving dataset
                     properties:
                       bucketName:
                         default: ""
@@ -1575,17 +1575,9 @@ spec:
                           which specifies the DataLocation
                         type: string
                     type: object
-                  logRequests:
-                    default: true
-                    description: Indicates if incoming requests will be logged
-                    type: boolean
-                  logResponses:
-                    default: true
-                    description: Indicates if outgoing predictions will be logged
-                    type: boolean
                   rows:
                     default: 0
-                    description: Number of rows in the prediction dataset
+                    description: Number of rows in the serving dataset
                     format: int32
                     type: integer
                   samplePercent:

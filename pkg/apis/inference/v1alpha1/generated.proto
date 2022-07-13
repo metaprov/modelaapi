@@ -558,6 +558,26 @@ message FastSlowModelSpec {
   optional int32 probaHighPct = 5;
 }
 
+message FeedbackTestSpec {
+  // Indicates if model monitoring is enabled for the model
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool enabled = 1;
+
+  // Reference to the labeled ground true dataset
+  optional k8s.io.api.core.v1.ObjectReference feedbackDatasetRef = 2;
+
+  // Reference to the training dataset for the champion model.
+  optional k8s.io.api.core.v1.ObjectReference trainingDatasetRef = 3;
+
+  // Define the tests to run against the predictor.
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite tests = 6;
+
+  // The schedule on which model monitoring computations will be performed
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 8;
+}
+
 // ForecastSpec specifies the details of a forecasting model
 message ForecastSpec {
   // The hierarchy specification, which maps columns to values
@@ -581,26 +601,6 @@ message ForwardCurtainSpec {
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
   optional int32 percent = 3;
-}
-
-message GroundTruthTestSpec {
-  // Indicates if model monitoring is enabled for the model
-  // +kubebuilder:default:=false
-  // +kubebuilder:validation:Optional
-  optional bool enabled = 1;
-
-  // Reference to the labeled ground true dataset
-  optional k8s.io.api.core.v1.ObjectReference groundTruthDatasetRef = 2;
-
-  // Reference to the training dataset for the champion model.
-  optional k8s.io.api.core.v1.ObjectReference trainingDatasetRef = 3;
-
-  // Define the tests to run against the predictor.
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite tests = 6;
-
-  // The schedule on which model monitoring computations will be performed
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 8;
 }
 
 message GroundTruthTestStatus {
@@ -852,24 +852,14 @@ message PredictionLoggingSpec {
   // +kubebuilder:validation:Optional
   optional int32 samplePercent = 2;
 
-  // Indicates if incoming requests will be logged
-  // +kubebuilder:default:=true
-  // +kubebuilder:validation:Optional
-  optional bool logRequests = 3;
-
-  // Indicates if outgoing predictions will be logged
-  // +kubebuilder:default:=true
-  // +kubebuilder:validation:Optional
-  optional bool logResponses = 4;
-
-  // Number of rows in the prediction dataset
+  // Number of rows in the serving dataset
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
-  optional int32 rows = 5;
+  optional int32 rows = 3;
 
-  // Target location of the prediction log
+  // Target location of the serving dataset
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation location = 6;
+  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation location = 4;
 }
 
 // PredictionSpec represent the desired state of Prediction
@@ -1143,7 +1133,7 @@ message PredictorSpec {
 
   // Spec for the ground truth process.
   // +kubebuilder:validation:Optional
-  optional GroundTruthTestSpec groundTruth = 21;
+  optional FeedbackTestSpec groundTruth = 21;
 
   // NotifierRef references a Notifier resource that will be triggered in the case that a concept or data drift is detected
   // +kubebuilder:validation:Optional

@@ -468,14 +468,14 @@ const (
 
 )
 
-// +kubebuilder:validation:Enum="unlabled";"predictions";"ground-truth";"training";
+// +kubebuilder:validation:Enum="unlabled";"serving";"feedback";"training";
 type DatasetRole string
 
 const (
-	DatasetRoleUnlabeled   DatasetRole = "unlabeled"    // Unlabeled dataset
-	DatasetRolePredictions DatasetRole = "predictions"  // Dataset contain prediction
-	DatasetRoleGroundTruth DatasetRole = "ground-truth" // ground true dataset which was labeled
-	DatasetRoleTraining    DatasetRole = "training"     // Regular Labeled dataset
+	DatasetRoleUnlabeled DatasetRole = "unlabeled" // Unlabeled dataset
+	DatasetRoleServing   DatasetRole = "serving"   // Dataset contain serving data.
+	DatasetRoleFeedback  DatasetRole = "feedback"  // feedback dataset which was labeled
+	DatasetRoleTraining  DatasetRole = "training"  // Regular Labeled dataset
 
 )
 
