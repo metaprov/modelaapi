@@ -520,9 +520,10 @@ message DriftDetectionSpec {
   // +kubebuilder:validation:Optional
   optional int32 maxHistograms = 8;
 
-  // The duration in minutes that an histogram is updated before computing drift
+  // The duration in seconds that an histogram is updated before computing drift
+  // the default is one hour
   // +kubebuilder:validation:Optional
-  optional int32 histogramDurationMin = 9;
+  optional int32 periodSeconds = 9;
 }
 
 message DriftDetectionStatus {
@@ -578,6 +579,14 @@ message FeedbackTestSpec {
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 8;
 }
 
+message FeedbackTestStatus {
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult results = 1;
+
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 2;
+}
+
 // ForecastSpec specifies the details of a forecasting model
 message ForecastSpec {
   // The hierarchy specification, which maps columns to values
@@ -601,14 +610,6 @@ message ForwardCurtainSpec {
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
   optional int32 percent = 3;
-}
-
-message GroundTruthTestStatus {
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult results = 1;
-
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 2;
 }
 
 // KubernetesObjectStatus describes the location and status of a Kubernetes-native resource
@@ -1049,13 +1050,13 @@ message PredictorList {
 
 // PredictorSpec defines the desired state of a Predictor
 message PredictorSpec {
-  // The name of the DataProductVersion which describes the version of the resource
+  // If specified, the name of the DataProductVersion which describes the version of the resource
   // that exists in the same DataProduct namespace as the resource
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string versionName = 1;
 
-  // The user-provided description of the Predictor
+  // If specified, the user-provided description of the Predictor
   // +kubebuilder:validation:MaxLength=256
   // +kubebuilder:default:=""
   optional string description = 2;
@@ -1063,20 +1064,20 @@ message PredictorSpec {
   // The reference to the DataProduct that the resource exists under
   optional k8s.io.api.core.v1.ObjectReference productRef = 3;
 
-  // The reference to the ServingSite resource that hosts the Predictor
+  // If specified, the reference to the ServingSite resource that hosts the Predictor
+  // If not specified, the predictor will be hosted on the default serving site.
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference servingsiteRef = 5;
 
-  // The live model in production, serving live requests. All requests are served by the live model
+  // The specification of the live model, serving live requests. All requests are served by the live model
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec live = 6;
 
-  // The collection of model deployment specifications that define which Model resources will be deployed to the
-  // Predictor service and how they will be deployed. Each model should be trained with the same type of
-  // dataset and possess a unique version
+  // If specified, the collection of shadow models. A shadow model receives prediction request, but does
+  // not serve the reply.
   // +kubebuilder:validation:Optional
   repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec shadows = 7;
 
-  // The specification to progressively deploy models. ModelDeploymentSpec specifications within Models that have the
+  // The specification to progressively deploy a new live model. ModelDeploymentSpec specifications within Models that have the
   // `Canary` field enabled will be progressively deployed according to the specification when they are applied to the Predictor
   // +kubebuilder:validation:Optional
   optional ProgressiveSpec progressive = 8;
@@ -1108,11 +1109,9 @@ message PredictorSpec {
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 14;
 
   // Cache specifies the configuration of the prediction cache
-  // +kubebuilder:validation:Optional
   optional PredictionCacheSpec cache = 15;
 
   // Store specifies the configuration of the online data store
-  // +kubebuilder:validation:Optional
   optional OnlineFeatureStoreSpec store = 16;
 
   // Serving specifies the configuration for individual models to handle prediction traffic
@@ -1151,7 +1150,7 @@ message PredictorSpec {
   // +kubebuilder:validation:Optional
   optional BackwardCurtainSpec backwardCurtain = 25;
 
-  // Backward curtain
+  // Fast slow is the specification of deployment of a fast - slow models.
   // +kubebuilder:validation:Optional
   optional FastSlowModelSpec fastSlow = 26;
 }
@@ -1213,11 +1212,11 @@ message PredictorStatus {
 
   // The result of running the last monitor.
   // +kubebuilder:validation:Optional
-  optional GroundTruthTestStatus groundTruth = 14;
+  optional FeedbackTestStatus feedbackTests = 14;
 
   // The result of running the last monitor.
   // +kubebuilder:validation:Optional
-  optional DriftDetectionStatus drift = 15;
+  optional DriftDetectionStatus driftStatus = 15;
 
   // +patchMergeKey=type
   // +patchStrategy=merge

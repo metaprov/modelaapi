@@ -866,7 +866,7 @@ func (model *Model) MarkPublishFailed(err string) {
 
 }
 
-// --------------------- Train Drift detector
+// --------------------- Train DriftStatus detector
 func (model *Model) MarkTrainingDriftDetector() {
 	model.Status.Phase = ModelPhaseTrainingDriftDetector
 	model.CreateOrUpdateCond(ModelCondition{

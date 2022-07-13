@@ -201,7 +201,7 @@ func (fh *FeatureHistogram) ErrorAlert(tenantRef *v1.ObjectReference, notifierNa
 
 func (fh *FeatureHistogram) DriftAlert(tenantRef *v1.ObjectReference, notifierName *string, columns []string) *infra.Alert {
 	level := infra.Error
-	subject := fmt.Sprintf("Drift occured")
+	subject := fmt.Sprintf("DriftStatus occured")
 	return &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
 			GenerateName: fh.Name,
@@ -209,7 +209,7 @@ func (fh *FeatureHistogram) DriftAlert(tenantRef *v1.ObjectReference, notifierNa
 		},
 		Spec: infra.AlertSpec{
 			Subject:      util.StrPtr(subject),
-			Message:      util.StrPtr("Drift was detected"),
+			Message:      util.StrPtr("DriftStatus was detected"),
 			Level:        &level,
 			TenantRef:    tenantRef,
 			NotifierName: notifierName,

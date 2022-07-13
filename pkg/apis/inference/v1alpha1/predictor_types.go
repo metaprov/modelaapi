@@ -52,9 +52,10 @@ type DriftDetectionSpec struct {
 	// how many feature histograms to keep in memory (as kubernetes objects). Histograms are garbage collected.
 	// +kubebuilder:validation:Optional
 	MaxHistograms *int32 `json:"maxHistograms,omitempty" protobuf:"varint,8,opt,name=maxHistograms"`
-	// The duration in minutes that an histogram is updated before computing drift
+	// The duration in seconds that an histogram is updated before computing drift
+	// the default is one hour
 	// +kubebuilder:validation:Optional
-	WindowSecs *int32 `json:"histogramDurationMin,omitempty" protobuf:"varint,9,opt,name=histogramDurationMin"`
+	PeriodSeconds *int32 `json:"periodSeconds,omitempty" protobuf:"varint,9,opt,name=periodSeconds"`
 }
 
 type FeedbackTestSpec struct {
@@ -320,28 +321,28 @@ type PredictorList struct {
 
 // PredictorSpec defines the desired state of a Predictor
 type PredictorSpec struct {
-	// The name of the DataProductVersion which describes the version of the resource
+	// If specified, the name of the DataProductVersion which describes the version of the resource
 	// that exists in the same DataProduct namespace as the resource
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
-	// The user-provided description of the Predictor
+	// If specified, the user-provided description of the Predictor
 	// +kubebuilder:validation:MaxLength=256
 	// +kubebuilder:default:=""
 	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
 	// The reference to the DataProduct that the resource exists under
 	ProductRef *v1.ObjectReference `json:"productRef" protobuf:"bytes,3,opt,name=productRef"`
-	// The reference to the ServingSite resource that hosts the Predictor
+	// If specified, the reference to the ServingSite resource that hosts the Predictor
+	// If not specified, the predictor will be hosted on the default serving site.
 	// +kubebuilder:validation:Optional
 	ServingSiteRef *v1.ObjectReference `json:"servingsiteRef" protobuf:"bytes,5,opt,name=servingsiteRef"`
-	// The live model in production, serving live requests. All requests are served by the live model
+	// The specification of the live model, serving live requests. All requests are served by the live model
 	Live catalog.ModelDeploymentSpec `json:"live" protobuf:"bytes,6,opt,name=live"`
-	// The collection of model deployment specifications that define which Model resources will be deployed to the
-	// Predictor service and how they will be deployed. Each model should be trained with the same type of
-	// dataset and possess a unique version
+	// If specified, the collection of shadow models. A shadow model receives prediction request, but does
+	// not serve the reply.
 	// +kubebuilder:validation:Optional
 	Shadows []catalog.ModelDeploymentSpec `json:"shadows,omitempty" protobuf:"bytes,7,rep,name=shadows"`
-	// The specification to progressively deploy models. ModelDeploymentSpec specifications within Models that have the
+	// The specification to progressively deploy a new live model. ModelDeploymentSpec specifications within Models that have the
 	// `Canary` field enabled will be progressively deployed according to the specification when they are applied to the Predictor
 	// +kubebuilder:validation:Optional
 	Progressive *ProgressiveSpec `json:"progressive,omitempty" protobuf:"bytes,8,opt,name=progressive"`
@@ -366,10 +367,8 @@ type PredictorSpec struct {
 	// +kubebuilder:validation:Optional
 	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,14,opt,name=resources"`
 	// Cache specifies the configuration of the prediction cache
-	// +kubebuilder:validation:Optional
 	Cache PredictionCacheSpec `json:"cache,omitempty" protobuf:"bytes,15,opt,name=cache"`
 	// Store specifies the configuration of the online data store
-	// +kubebuilder:validation:Optional
 	Store OnlineFeatureStoreSpec `json:"store,omitempty" protobuf:"bytes,16,opt,name=store"`
 	// Serving specifies the configuration for individual models to handle prediction traffic
 	Serving ModelServingSpec `json:"serving,omitempty" protobuf:"bytes,17,opt,name=serving"`
@@ -398,7 +397,7 @@ type PredictorSpec struct {
 	// Backward curtain
 	// +kubebuilder:validation:Optional
 	BackwardCurtain BackwardCurtainSpec `json:"backwardCurtain,omitempty" protobuf:"bytes,25,opt,name=backwardCurtain"`
-	// Backward curtain
+	// Fast slow is the specification of deployment of a fast - slow models.
 	// +kubebuilder:validation:Optional
 	FastSlow FastSlowModelSpec `json:"fastSlow,omitempty" protobuf:"bytes,26,opt,name=fastSlow"`
 }
@@ -447,10 +446,10 @@ type PredictorStatus struct {
 	LastPredictionDataset *metav1.Time `json:"lastPredictionDataset,omitempty" protobuf:"bytes,13,opt,name=lastPredictionDataset"`
 	// The result of running the last monitor.
 	//+kubebuilder:validation:Optional
-	GroundTruth GroundTruthTestStatus `json:"groundTruth,omitempty" protobuf:"bytes,14,rep,name=groundTruth"`
+	FeedbackTests FeedbackTestStatus `json:"feedbackTests,omitempty" protobuf:"bytes,14,rep,name=feedbackTests"`
 	// The result of running the last monitor.
 	//+kubebuilder:validation:Optional
-	Drift DriftDetectionStatus `json:"drift,omitempty" protobuf:"bytes,15,rep,name=drift"`
+	DriftStatus DriftDetectionStatus `json:"driftStatus,omitempty" protobuf:"bytes,15,rep,name=driftStatus"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
@@ -662,7 +661,7 @@ type DriftDetectionStatus struct {
 	LastRun *metav1.Time `json:"lastRun,omitempty" protobuf:"bytes,2,opt,name=lastRun"`
 }
 
-type GroundTruthTestStatus struct {
+type FeedbackTestStatus struct {
 	// +kubebuilder:validation:Optional
 	Results catalog.TestSuiteResult `json:"results,omitempty" protobuf:"bytes,1,opt,name=results"`
 	// +kubebuilder:validation:Optional

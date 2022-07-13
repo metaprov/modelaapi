@@ -398,7 +398,7 @@ spec:
                 type: object
               description:
                 default: ""
-                description: The user-provided description of the Predictor
+                description: If specified, the user-provided description of the Predictor
                 maxLength: 256
                 type: string
               drift:
@@ -409,11 +409,6 @@ spec:
                     description: Indicates if model monitoring is enabled for the
                       model
                     type: boolean
-                  histogramDurationMin:
-                    description: The duration in minutes that an histogram is updated
-                      before computing drift
-                    format: int32
-                    type: integer
                   liveHistogramRef:
                     description: Reference to the live FeatureHistogram, the live
                       FeatureHistogram is updated by the predictor for each prediction.
@@ -493,6 +488,11 @@ spec:
                         description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                         type: string
                     type: object
+                  periodSeconds:
+                    description: The duration in seconds that an histogram is updated
+                      before computing drift the default is one hour
+                    format: int32
+                    type: integer
                   schedule:
                     description: The schedule on which model monitoring computations
                       will be performed
@@ -855,7 +855,8 @@ spec:
                     type: object
                 type: object
               fastSlow:
-                description: Backward curtain
+                description: Fast slow is the specification of deployment of a fast
+                  - slow models.
                 properties:
                   enabled:
                     default: false
@@ -1298,7 +1299,7 @@ spec:
                     type: object
                 type: object
               live:
-                description: The live model in production, serving live requests.
+                description: The specification of the live model, serving live requests.
                   All requests are served by the live model
                 properties:
                   approvedAt:
@@ -1628,10 +1629,10 @@ spec:
                     type: string
                 type: object
               progressive:
-                description: The specification to progressively deploy models. ModelDeploymentSpec
-                  specifications within Models that have the `Canary` field enabled
-                  will be progressively deployed according to the specification when
-                  they are applied to the Predictor
+                description: The specification to progressively deploy a new live
+                  model. ModelDeploymentSpec specifications within Models that have
+                  the `Canary` field enabled will be progressively deployed according
+                  to the specification when they are applied to the Predictor
                 properties:
                   canaryMetrics:
                     description: What metric to use when comparing the candidate model
@@ -1877,8 +1878,9 @@ spec:
                     type: string
                 type: object
               servingsiteRef:
-                description: The reference to the ServingSite resource that hosts
-                  the Predictor
+                description: If specified, the reference to the ServingSite resource
+                  that hosts the Predictor If not specified, the predictor will be
+                  hosted on the default serving site.
                 properties:
                   apiVersion:
                     description: API version of the referent.
@@ -1914,10 +1916,8 @@ spec:
                     type: string
                 type: object
               shadows:
-                description: The collection of model deployment specifications that
-                  define which Model resources will be deployed to the Predictor service
-                  and how they will be deployed. Each model should be trained with
-                  the same type of dataset and possess a unique version
+                description: If specified, the collection of shadow models. A shadow
+                  model receives prediction request, but does not serve the reply.
                 items:
                   description: ModelDeploymentSpec describes how a single model should
                     be deployed with a Predictor, and how prediction traffic will
@@ -2068,9 +2068,9 @@ spec:
                 type: string
               versionName:
                 default: ""
-                description: The name of the DataProductVersion which describes the
-                  version of the resource that exists in the same DataProduct namespace
-                  as the resource
+                description: If specified, the name of the DataProductVersion which
+                  describes the version of the resource that exists in the same DataProduct
+                  namespace as the resource
                 type: string
             required:
             - live
@@ -2117,7 +2117,7 @@ spec:
                   - type
                   type: object
                 type: array
-              drift:
+              driftStatus:
                 description: The result of running the last monitor.
                 properties:
                   lastRun:
@@ -2412,7 +2412,7 @@ spec:
                 description: In the case of failure, the Predictor resource controller
                   will set this field with a failure reason
                 type: string
-              groundTruth:
+              feedbackTests:
                 description: The result of running the last monitor.
                 properties:
                   lastRun:
