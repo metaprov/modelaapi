@@ -2076,7 +2076,7 @@ type TestSuite struct {
 	// +kubebuilder:validation:Optional
 	Enabled *bool `json:"enabled,omitempty" protobuf:"bytes,1,opt,name=enabled"`
 	// +kubebuilder:validation:Optional
-	Tests []DataTestCase `json:"tests" protobuf:"bytes,2,opt,name=tests"`
+	Tests []DataTestCase `json:"tests,omitempty" protobuf:"bytes,2,opt,name=tests"`
 }
 
 type DataTestCase struct {
@@ -2128,6 +2128,7 @@ type DataTestCase struct {
 
 type TestSuiteResult struct {
 	// A reference to the object under test. Best practice is to have one suite for an object
+	// +kubebuilder:validation:Optional
 	EntityRef v1.ObjectReference `json:"entityRef,omitempty" protobuf:"bytes,1,opt,name=entityRef"`
 	// Total number of failures. A failure is an unplanned error, e.g. cannot connect to a dataset
 	// +kubebuilder:validation:Optional

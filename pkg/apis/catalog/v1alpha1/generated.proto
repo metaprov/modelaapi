@@ -964,6 +964,7 @@ message TestSuite {
 
 message TestSuiteResult {
   // A reference to the object under test. Best practice is to have one suite for an object
+  // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference entityRef = 1;
 
   // Total number of failures. A failure is an unplanned error, e.g. cannot connect to a dataset
