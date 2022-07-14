@@ -1422,7 +1422,7 @@ type Measurement struct {
 	TimePoint *metav1.Time `json:"timePoint" protobuf:"bytes,9,opt,name=timePoint"`
 }
 
-// +kubebuilder:validation:Enum="champion";"challenger";"shadow";
+// +kubebuilder:validation:Enum="live";"shadow";
 type ModelRole string
 
 const (
@@ -1450,7 +1450,7 @@ type ModelDeploymentSpec struct {
 	// +kubebuilder:validation:Optional
 	Traffic *int32 `json:"traffic,omitempty" protobuf:"varint,4,opt,name=traffic"`
 	// Role denotes the role of this model
-	// +kubebuilder:default:=champion
+	// +kubebuilder:default:=live
 	// +kubebuilder:validation:Optional
 	Role *ModelRole `json:"role,omitempty" protobuf:"bytes,5,opt,name=role"`
 	// MountTar means that we would mount the model tar file. Else we would use baked image.

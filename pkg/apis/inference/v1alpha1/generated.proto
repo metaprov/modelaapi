@@ -534,7 +534,7 @@ message DriftDetectionStatus {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 2;
 }
 
-// Fast slow model mode, use two models as the champion.
+// Fast slow model mode, use two models as the live.
 // All request are send first to the fast model.
 message FastSlowModelSpec {
   // Indicates if model monitoring is enabled for the model
@@ -568,7 +568,7 @@ message FeedbackTestSpec {
   // Reference to the labeled ground true dataset
   optional k8s.io.api.core.v1.ObjectReference feedbackDatasetRef = 2;
 
-  // Reference to the training dataset for the champion model.
+  // Reference to the training dataset for the live model.
   optional k8s.io.api.core.v1.ObjectReference trainingDatasetRef = 3;
 
   // Define the tests to run against the predictor.

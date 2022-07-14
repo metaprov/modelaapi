@@ -65,7 +65,7 @@ type FeedbackTestSpec struct {
 	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
 	// Reference to the labeled ground true dataset
 	FeedbackDatasetRef v1.ObjectReference `json:"feedbackDatasetRef,omitempty" protobuf:"bytes,2,opt,name=feedbackDatasetRef"`
-	// Reference to the training dataset for the champion model.
+	// Reference to the training dataset for the live model.
 	TrainingDatasetRef v1.ObjectReference `json:"trainingRef,omitempty" protobuf:"bytes,3,opt,name=trainingDatasetRef"`
 	// Define the tests to run against the predictor.
 	Tests catalog.TestSuite `json:"tests,omitempty" protobuf:"bytes,6,opt,name=tests"`
@@ -633,7 +633,7 @@ type ValidationError struct {
 	Actual float64 `json:"actual,omitempty" protobuf:"bytes,5,opt,name=actual"`
 }
 
-// Fast slow model mode, use two models as the champion.
+// Fast slow model mode, use two models as the live.
 // All request are send first to the fast model.
 type FastSlowModelSpec struct {
 	// Indicates if model monitoring is enabled for the model

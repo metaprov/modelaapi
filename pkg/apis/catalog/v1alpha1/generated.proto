@@ -707,7 +707,7 @@ message ModelDeploymentSpec {
   optional int32 traffic = 4;
 
   // Role denotes the role of this model
-  // +kubebuilder:default:=champion
+  // +kubebuilder:default:=live
   // +kubebuilder:validation:Optional
   optional string role = 5;
 

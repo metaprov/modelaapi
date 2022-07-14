@@ -1181,11 +1181,10 @@ spec:
                         format: int32
                         type: integer
                       role:
-                        default: champion
+                        default: live
                         description: Role denotes the role of this model
                         enum:
-                        - champion
-                        - challenger
+                        - live
                         - shadow
                         type: string
                       traffic:
