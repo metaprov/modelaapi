@@ -1399,24 +1399,26 @@ type Measurement struct {
 	// +kubebuilder:validation:Optional
 	Column *string `json:"column" protobuf:"bytes,2,opt,name=column"`
 	// The metric type name (e.g. F1 / Accuracy)
-	// +kubebuilder:validation:Required
+	// +kubebuilder:validation:Optional
 	Metric *Metric `json:"metric" protobuf:"bytes,3,opt,name=metric"`
 	// The value of the metric for quantitive observations
 	// +kubebuilder:validation:Required
-	// +required
+	// +kubebuilder:validation:Optional
 	Value *float64 `json:"value" protobuf:"bytes,4,opt,name=value"`
 	// Metric standard diviation for quantative observations.
 	// +kubebuilder:validation:Optional
 	Stddev *float64 `json:"stddev" protobuf:"bytes,5,opt,name=stddev"`
 	// If the metric refer to a bool unit, store the bool value
-	BoolQty *bool `json:"boolValue" protobuf:"bytes,6,opt,name=boolValue"`
+	// +kubebuilder:validation:Optional
+	BoolQty *bool `json:"boolValue" protobuf:"varint,6,opt,name=boolValue"`
 	// If the metric refer to categorical measure,store the category.
-	Category *string `json:"categoy" protobuf:"bytes,7,opt,name=category"`
+	// +kubebuilder:validation:Optional
+	Category *string `json:"category" protobuf:"bytes,7,opt,name=category"`
 	// Capture a set of values.
-	// +kubebuilder:validation:Required
 	// +kubebuilder:validation:Optional
 	ValueSet []string `json:"valueSet" protobuf:"bytes,8,opt,name=valueSet"`
 	// The Time when the observation was taken
+	// +kubebuilder:validation:Optional
 	TimePoint *metav1.Time `json:"timePoint" protobuf:"bytes,9,opt,name=timePoint"`
 }
 

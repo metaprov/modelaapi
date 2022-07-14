@@ -1319,7 +1319,7 @@ spec:
                                   description: If the metric refer to a bool unit,
                                     store the bool value
                                   type: boolean
-                                categoy:
+                                category:
                                   description: If the metric refer to categorical
                                     measure,store the category.
                                   type: string
@@ -1501,12 +1501,6 @@ spec:
                                   items:
                                     type: string
                                   type: array
-                              required:
-                              - boolValue
-                              - categoy
-                              - metric
-                              - timePoint
-                              - value
                               type: object
                             assertThat:
                               description: The assertion type
@@ -1597,7 +1591,7 @@ spec:
                                   description: If the metric refer to a bool unit,
                                     store the bool value
                                   type: boolean
-                                categoy:
+                                category:
                                   description: If the metric refer to categorical
                                     measure,store the category.
                                   type: string
@@ -1779,12 +1773,6 @@ spec:
                                   items:
                                     type: string
                                   type: array
-                              required:
-                              - boolValue
-                              - categoy
-                              - metric
-                              - timePoint
-                              - value
                               type: object
                             assertThat:
                               description: The assertion type
@@ -1876,7 +1864,7 @@ spec:
                                   description: If the metric refer to a bool unit,
                                     store the bool value
                                   type: boolean
-                                categoy:
+                                category:
                                   description: If the metric refer to categorical
                                     measure,store the category.
                                   type: string
@@ -2058,12 +2046,6 @@ spec:
                                   items:
                                     type: string
                                   type: array
-                              required:
-                              - boolValue
-                              - categoy
-                              - metric
-                              - timePoint
-                              - value
                               type: object
                             assertThat:
                               description: The assertion type
@@ -2155,7 +2137,7 @@ spec:
                                   description: If the metric refer to a bool unit,
                                     store the bool value
                                   type: boolean
-                                categoy:
+                                category:
                                   description: If the metric refer to categorical
                                     measure,store the category.
                                   type: string
@@ -2337,12 +2319,6 @@ spec:
                                   items:
                                     type: string
                                   type: array
-                              required:
-                              - boolValue
-                              - categoy
-                              - metric
-                              - timePoint
-                              - value
                               type: object
                             assertThat:
                               description: The assertion type
@@ -2434,7 +2410,7 @@ spec:
                                   description: If the metric refer to a bool unit,
                                     store the bool value
                                   type: boolean
-                                categoy:
+                                category:
                                   description: If the metric refer to categorical
                                     measure,store the category.
                                   type: string
@@ -2616,12 +2592,6 @@ spec:
                                   items:
                                     type: string
                                   type: array
-                              required:
-                              - boolValue
-                              - categoy
-                              - metric
-                              - timePoint
-                              - value
                               type: object
                             assertThat:
                               description: The assertion type

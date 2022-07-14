@@ -654,12 +654,12 @@ message Measurement {
   optional string column = 2;
 
   // The metric type name (e.g. F1 / Accuracy)
-  // +kubebuilder:validation:Required
+  // +kubebuilder:validation:Optional
   optional string metric = 3;
 
   // The value of the metric for quantitive observations
   // +kubebuilder:validation:Required
-  // +required
+  // +kubebuilder:validation:Optional
   optional double value = 4;
 
   // Metric standard diviation for quantative observations.
@@ -667,17 +667,19 @@ message Measurement {
   optional double stddev = 5;
 
   // If the metric refer to a bool unit, store the bool value
+  // +kubebuilder:validation:Optional
   optional bool boolValue = 6;
 
   // If the metric refer to categorical measure,store the category.
+  // +kubebuilder:validation:Optional
   optional string category = 7;
 
   // Capture a set of values.
-  // +kubebuilder:validation:Required
   // +kubebuilder:validation:Optional
   repeated string valueSet = 8;
 
   // The Time when the observation was taken
+  // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time timePoint = 9;
 }
 
