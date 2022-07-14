@@ -1907,6 +1907,7 @@ message DriftTreshold {
 }
 
 message DriftTresholdsSpec {
+  // +kubebuilder:validation:Optional
   repeated DriftTreshold tresholds = 1;
 }
 
@@ -2170,6 +2171,7 @@ message FeatureHistogramSpec {
 
   // The start time of this feature histogram. For training dataset histogram this is set to the creation
   // time of the dataset
+  // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time start = 10;
 
   // The end time of the feature histogram. If reached, the predictor will start a new feature histogram
@@ -2209,9 +2211,11 @@ message FeatureHistogramStatus {
   repeated ColumnDrift drift = 4;
 
   // The log file specification that determines the location of all logs produced by the object
+  // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 5;
 
   // The phase of the feature histogram
+  // +kubebuilder:validation:Optional
   optional string phase = 6;
 
   // In the case of failure, the Dataset resource controller will set this field with a failure reason

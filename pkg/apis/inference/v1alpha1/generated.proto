@@ -517,11 +517,13 @@ message DriftDetectionSpec {
   optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DriftTresholdsSpec tresholdsTemplate = 7;
 
   // how many feature histograms to keep in memory (as kubernetes objects). Histograms are garbage collected.
+  // +kubebuilder:default:=5
   // +kubebuilder:validation:Optional
   optional int32 maxHistograms = 8;
 
   // The duration in seconds that an histogram is updated before computing drift
   // the default is one hour
+  // +kubebuilder:default:=3600
   // +kubebuilder:validation:Optional
   optional int32 periodSeconds = 9;
 }

@@ -263,8 +263,6 @@ spec:
                       - value
                       type: object
                     type: array
-                required:
-                - tresholds
                 type: object
               training:
                 default: false
@@ -591,9 +589,6 @@ spec:
               phase:
                 description: The phase of the feature histogram
                 type: string
-            required:
-            - logs
-            - phase
             type: object
         required:
         - metadata

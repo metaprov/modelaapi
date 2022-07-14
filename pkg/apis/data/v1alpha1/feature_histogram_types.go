@@ -105,6 +105,7 @@ type FeatureHistogramSpec struct {
 	Live *bool `json:"live,omitempty" protobuf:"varint,9,opt,name=live"`
 	// The start time of this feature histogram. For training dataset histogram this is set to the creation
 	// time of the dataset
+	// +kubebuilder:validation:Optional
 	Start *metav1.Time `json:"start,omitempty" protobuf:"bytes,10,opt,name=start"`
 	// The end time of the feature histogram. If reached, the predictor will start a new feature histogram
 	// +kubebuilder:validation:Optional
@@ -136,8 +137,10 @@ type FeatureHistogramStatus struct {
 	//+kubebuilder:validation:Optional
 	Drift []ColumnDrift `json:"drift,omitempty" protobuf:"bytes,4,opt,name=drift"`
 	// The log file specification that determines the location of all logs produced by the object
+	// +kubebuilder:validation:Optional
 	Logs catalog.Logs `json:"logs" protobuf:"bytes,5,opt,name=logs"`
 	// The phase of the feature histogram
+	// +kubebuilder:validation:Optional
 	Phase FeatureHistogramPhase `json:"phase" protobuf:"bytes,6,opt,name=phase"`
 	// In the case of failure, the Dataset resource controller will set this field with a failure reason
 	//+kubebuilder:validation:Optional
@@ -152,6 +155,7 @@ type FeatureHistogramStatus struct {
 }
 
 type DriftTresholdsSpec struct {
+	// +kubebuilder:validation:Optional
 	Tresholds []DriftTreshold `json:"tresholds" protobuf:"bytes,1,opt,name=tresholds"`
 }
 

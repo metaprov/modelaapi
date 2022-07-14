@@ -50,10 +50,12 @@ type DriftDetectionSpec struct {
 	// +kubebuilder:validation:Optional
 	TresholdsTemplate data.DriftTresholdsSpec `json:"tresholdsTemplate,omitempty" protobuf:"bytes,7,opt,name=tresholdsTemplate"`
 	// how many feature histograms to keep in memory (as kubernetes objects). Histograms are garbage collected.
+	// +kubebuilder:default:=5
 	// +kubebuilder:validation:Optional
 	MaxHistograms *int32 `json:"maxHistograms,omitempty" protobuf:"varint,8,opt,name=maxHistograms"`
 	// The duration in seconds that an histogram is updated before computing drift
 	// the default is one hour
+	// +kubebuilder:default:=3600
 	// +kubebuilder:validation:Optional
 	PeriodSeconds *int32 `json:"periodSeconds,omitempty" protobuf:"varint,9,opt,name=periodSeconds"`
 }

@@ -447,6 +447,7 @@ spec:
                         type: string
                     type: object
                   maxHistograms:
+                    default: 5
                     description: how many feature histograms to keep in memory (as
                       kubernetes objects). Histograms are garbage collected.
                     format: int32
@@ -489,6 +490,7 @@ spec:
                         type: string
                     type: object
                   periodSeconds:
+                    default: 3600
                     description: The duration in seconds that an histogram is updated
                       before computing drift the default is one hour
                     format: int32
@@ -850,8 +852,6 @@ spec:
                           - value
                           type: object
                         type: array
-                    required:
-                    - tresholds
                     type: object
                 type: object
               fastSlow:
