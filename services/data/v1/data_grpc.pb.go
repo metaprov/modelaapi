@@ -88,7 +88,7 @@ type DataServiceClient interface {
 	RunDatasetTests(ctx context.Context, in *RunDatasetTestsRequest, opts ...grpc.CallOption) (*RunDatasetTestsResponse, error)
 	RunModelTests(ctx context.Context, in *RunModelTestsRequest, opts ...grpc.CallOption) (*RunModelTestsResponse, error)
 	RunDataDriftTests(ctx context.Context, in *RunDriftTestsRequest, opts ...grpc.CallOption) (*RunDriftTestsResponse, error)
-	RunGroundTrueTests(ctx context.Context, in *RunGroundTruthTestsRequest, opts ...grpc.CallOption) (*RunGroundTruthTestsResponse, error)
+	RunFeedbackTests(ctx context.Context, in *RunFeedbackTestsRequest, opts ...grpc.CallOption) (*RunFeedbackTestsResponse, error)
 }
 
 type dataServiceClient struct {
@@ -468,9 +468,9 @@ func (c *dataServiceClient) RunDataDriftTests(ctx context.Context, in *RunDriftT
 	return out, nil
 }
 
-func (c *dataServiceClient) RunGroundTrueTests(ctx context.Context, in *RunGroundTruthTestsRequest, opts ...grpc.CallOption) (*RunGroundTruthTestsResponse, error) {
-	out := new(RunGroundTruthTestsResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/RunGroundTrueTests", in, out, opts...)
+func (c *dataServiceClient) RunFeedbackTests(ctx context.Context, in *RunFeedbackTestsRequest, opts ...grpc.CallOption) (*RunFeedbackTestsResponse, error) {
+	out := new(RunFeedbackTestsResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/RunFeedbackTests", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -547,7 +547,7 @@ type DataServiceServer interface {
 	RunDatasetTests(context.Context, *RunDatasetTestsRequest) (*RunDatasetTestsResponse, error)
 	RunModelTests(context.Context, *RunModelTestsRequest) (*RunModelTestsResponse, error)
 	RunDataDriftTests(context.Context, *RunDriftTestsRequest) (*RunDriftTestsResponse, error)
-	RunGroundTrueTests(context.Context, *RunGroundTruthTestsRequest) (*RunGroundTruthTestsResponse, error)
+	RunFeedbackTests(context.Context, *RunFeedbackTestsRequest) (*RunFeedbackTestsResponse, error)
 	mustEmbedUnimplementedDataServiceServer()
 }
 
@@ -678,8 +678,8 @@ func (UnimplementedDataServiceServer) RunModelTests(context.Context, *RunModelTe
 func (UnimplementedDataServiceServer) RunDataDriftTests(context.Context, *RunDriftTestsRequest) (*RunDriftTestsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method RunDataDriftTests not implemented")
 }
-func (UnimplementedDataServiceServer) RunGroundTrueTests(context.Context, *RunGroundTruthTestsRequest) (*RunGroundTruthTestsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RunGroundTrueTests not implemented")
+func (UnimplementedDataServiceServer) RunFeedbackTests(context.Context, *RunFeedbackTestsRequest) (*RunFeedbackTestsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RunFeedbackTests not implemented")
 }
 func (UnimplementedDataServiceServer) mustEmbedUnimplementedDataServiceServer() {}
 
@@ -1432,20 +1432,20 @@ func _DataService_RunDataDriftTests_Handler(srv interface{}, ctx context.Context
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DataService_RunGroundTrueTests_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RunGroundTruthTestsRequest)
+func _DataService_RunFeedbackTests_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RunFeedbackTestsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DataServiceServer).RunGroundTrueTests(ctx, in)
+		return srv.(DataServiceServer).RunFeedbackTests(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/RunGroundTrueTests",
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/RunFeedbackTests",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DataServiceServer).RunGroundTrueTests(ctx, req.(*RunGroundTruthTestsRequest))
+		return srv.(DataServiceServer).RunFeedbackTests(ctx, req.(*RunFeedbackTestsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1622,8 +1622,8 @@ var DataService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _DataService_RunDataDriftTests_Handler,
 		},
 		{
-			MethodName: "RunGroundTrueTests",
-			Handler:    _DataService_RunGroundTrueTests_Handler,
+			MethodName: "RunFeedbackTests",
+			Handler:    _DataService_RunFeedbackTests_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

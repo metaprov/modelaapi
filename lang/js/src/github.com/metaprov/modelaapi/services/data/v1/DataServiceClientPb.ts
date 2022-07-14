@@ -1798,47 +1798,47 @@ export class DataServiceClient {
     this.methodInfoRunDataDriftTests);
   }
 
-  methodInfoRunGroundTrueTests = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.data.v1.DataService/RunGroundTrueTests',
+  methodInfoRunFeedbackTests = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.data.v1.DataService/RunFeedbackTests',
     grpcWeb.MethodType.UNARY,
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.RunGroundTruthTestsRequest,
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.RunGroundTruthTestsResponse,
-    (request: github_com_metaprov_modelaapi_services_data_v1_data_pb.RunGroundTruthTestsRequest) => {
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.RunFeedbackTestsRequest,
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.RunFeedbackTestsResponse,
+    (request: github_com_metaprov_modelaapi_services_data_v1_data_pb.RunFeedbackTestsRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.RunGroundTruthTestsResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.RunFeedbackTestsResponse.deserializeBinary
   );
 
-  runGroundTrueTests(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.RunGroundTruthTestsRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_data_v1_data_pb.RunGroundTruthTestsResponse>;
+  runFeedbackTests(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.RunFeedbackTestsRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_data_v1_data_pb.RunFeedbackTestsResponse>;
 
-  runGroundTrueTests(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.RunGroundTruthTestsRequest,
+  runFeedbackTests(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.RunFeedbackTestsRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.RunGroundTruthTestsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_data_v1_data_pb.RunGroundTruthTestsResponse>;
+               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.RunFeedbackTestsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_data_v1_data_pb.RunFeedbackTestsResponse>;
 
-  runGroundTrueTests(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.RunGroundTruthTestsRequest,
+  runFeedbackTests(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.RunFeedbackTestsRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.RunGroundTruthTestsResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.RunFeedbackTestsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.data.v1.DataService/RunGroundTrueTests',
+          '/github.com.metaprov.modelaapi.services.data.v1.DataService/RunFeedbackTests',
         request,
         metadata || {},
-        this.methodInfoRunGroundTrueTests,
+        this.methodInfoRunFeedbackTests,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.data.v1.DataService/RunGroundTrueTests',
+      '/github.com.metaprov.modelaapi.services.data.v1.DataService/RunFeedbackTests',
     request,
     metadata || {},
-    this.methodInfoRunGroundTrueTests);
+    this.methodInfoRunFeedbackTests);
   }
 
 }

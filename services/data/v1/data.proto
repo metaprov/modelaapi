@@ -282,7 +282,7 @@ message RunDriftTestsResponse {
 
 
 // Evaludate the prediction against ground truth
-message RunGroundTruthTestsRequest {
+message RunFeedbackTestsRequest {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct product = 1;
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion version = 2;
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 3;
@@ -296,7 +296,7 @@ message RunGroundTruthTestsRequest {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset groundTruthDataset = 11;
 }
 
-message RunGroundTruthTestsResponse {
+message RunFeedbackTestsResponse {
     github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult result = 1;
 }
 
@@ -732,5 +732,5 @@ service DataService {
     rpc RunDatasetTests(RunDatasetTestsRequest) returns (RunDatasetTestsResponse) {}
     rpc RunModelTests(RunModelTestsRequest) returns (RunModelTestsResponse) {}
     rpc RunDataDriftTests(RunDriftTestsRequest) returns (RunDriftTestsResponse) {}
-    rpc RunGroundTrueTests(RunGroundTruthTestsRequest) returns (RunGroundTruthTestsResponse) {}
+    rpc RunFeedbackTests(RunFeedbackTestsRequest) returns (RunFeedbackTestsResponse) {}
 }

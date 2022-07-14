@@ -1205,69 +1205,69 @@ export namespace RunDriftTestsResponse {
   }
 }
 
-export class RunGroundTruthTestsRequest extends jspb.Message {
+export class RunFeedbackTestsRequest extends jspb.Message {
   getProduct(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct | undefined;
-  setProduct(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): RunGroundTruthTestsRequest;
+  setProduct(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): RunFeedbackTestsRequest;
   hasProduct(): boolean;
-  clearProduct(): RunGroundTruthTestsRequest;
+  clearProduct(): RunFeedbackTestsRequest;
 
   getVersion(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion | undefined;
-  setVersion(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion): RunGroundTruthTestsRequest;
+  setVersion(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion): RunFeedbackTestsRequest;
   hasVersion(): boolean;
-  clearVersion(): RunGroundTruthTestsRequest;
+  clearVersion(): RunFeedbackTestsRequest;
 
   getDatasource(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource | undefined;
-  setDatasource(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource): RunGroundTruthTestsRequest;
+  setDatasource(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource): RunFeedbackTestsRequest;
   hasDatasource(): boolean;
-  clearDatasource(): RunGroundTruthTestsRequest;
+  clearDatasource(): RunFeedbackTestsRequest;
 
   getPredictionsdataset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
-  setPredictionsdataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): RunGroundTruthTestsRequest;
+  setPredictionsdataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): RunFeedbackTestsRequest;
   hasPredictionsdataset(): boolean;
-  clearPredictionsdataset(): RunGroundTruthTestsRequest;
+  clearPredictionsdataset(): RunFeedbackTestsRequest;
 
   getStudy(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study | undefined;
-  setStudy(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study): RunGroundTruthTestsRequest;
+  setStudy(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study): RunFeedbackTestsRequest;
   hasStudy(): boolean;
-  clearStudy(): RunGroundTruthTestsRequest;
+  clearStudy(): RunFeedbackTestsRequest;
 
   getModel(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model | undefined;
-  setModel(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model): RunGroundTruthTestsRequest;
+  setModel(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model): RunFeedbackTestsRequest;
   hasModel(): boolean;
-  clearModel(): RunGroundTruthTestsRequest;
+  clearModel(): RunFeedbackTestsRequest;
 
   getConnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
-  setConnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): RunGroundTruthTestsRequest;
+  setConnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): RunFeedbackTestsRequest;
   hasConnection(): boolean;
-  clearConnection(): RunGroundTruthTestsRequest;
+  clearConnection(): RunFeedbackTestsRequest;
 
   getBucket(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
-  setBucket(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): RunGroundTruthTestsRequest;
+  setBucket(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): RunFeedbackTestsRequest;
   hasBucket(): boolean;
-  clearBucket(): RunGroundTruthTestsRequest;
+  clearBucket(): RunFeedbackTestsRequest;
 
   getSecretMap(): jspb.Map<string, Uint8Array | string>;
-  clearSecretMap(): RunGroundTruthTestsRequest;
+  clearSecretMap(): RunFeedbackTestsRequest;
 
   getTests(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
-  setTests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): RunGroundTruthTestsRequest;
+  setTests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): RunFeedbackTestsRequest;
   hasTests(): boolean;
-  clearTests(): RunGroundTruthTestsRequest;
+  clearTests(): RunFeedbackTestsRequest;
 
   getGroundtruthdataset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
-  setGroundtruthdataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): RunGroundTruthTestsRequest;
+  setGroundtruthdataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): RunFeedbackTestsRequest;
   hasGroundtruthdataset(): boolean;
-  clearGroundtruthdataset(): RunGroundTruthTestsRequest;
+  clearGroundtruthdataset(): RunFeedbackTestsRequest;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): RunGroundTruthTestsRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: RunGroundTruthTestsRequest): RunGroundTruthTestsRequest.AsObject;
-  static serializeBinaryToWriter(message: RunGroundTruthTestsRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): RunGroundTruthTestsRequest;
-  static deserializeBinaryFromReader(message: RunGroundTruthTestsRequest, reader: jspb.BinaryReader): RunGroundTruthTestsRequest;
+  toObject(includeInstance?: boolean): RunFeedbackTestsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: RunFeedbackTestsRequest): RunFeedbackTestsRequest.AsObject;
+  static serializeBinaryToWriter(message: RunFeedbackTestsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RunFeedbackTestsRequest;
+  static deserializeBinaryFromReader(message: RunFeedbackTestsRequest, reader: jspb.BinaryReader): RunFeedbackTestsRequest;
 }
 
-export namespace RunGroundTruthTestsRequest {
+export namespace RunFeedbackTestsRequest {
   export type AsObject = {
     product?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
     version?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.AsObject,
@@ -1283,21 +1283,21 @@ export namespace RunGroundTruthTestsRequest {
   }
 }
 
-export class RunGroundTruthTestsResponse extends jspb.Message {
+export class RunFeedbackTestsResponse extends jspb.Message {
   getResult(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
-  setResult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): RunGroundTruthTestsResponse;
+  setResult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): RunFeedbackTestsResponse;
   hasResult(): boolean;
-  clearResult(): RunGroundTruthTestsResponse;
+  clearResult(): RunFeedbackTestsResponse;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): RunGroundTruthTestsResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: RunGroundTruthTestsResponse): RunGroundTruthTestsResponse.AsObject;
-  static serializeBinaryToWriter(message: RunGroundTruthTestsResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): RunGroundTruthTestsResponse;
-  static deserializeBinaryFromReader(message: RunGroundTruthTestsResponse, reader: jspb.BinaryReader): RunGroundTruthTestsResponse;
+  toObject(includeInstance?: boolean): RunFeedbackTestsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: RunFeedbackTestsResponse): RunFeedbackTestsResponse.AsObject;
+  static serializeBinaryToWriter(message: RunFeedbackTestsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RunFeedbackTestsResponse;
+  static deserializeBinaryFromReader(message: RunFeedbackTestsResponse, reader: jspb.BinaryReader): RunFeedbackTestsResponse;
 }
 
-export namespace RunGroundTruthTestsResponse {
+export namespace RunFeedbackTestsResponse {
   export type AsObject = {
     result?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
   }
