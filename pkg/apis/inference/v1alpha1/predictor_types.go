@@ -386,7 +386,7 @@ type PredictorSpec struct {
 	Drift DriftDetectionSpec `json:"drift,omitempty" protobuf:"bytes,20,opt,name=drift"`
 	// Spec for the ground truth process.
 	// +kubebuilder:validation:Optional
-	GroundTruth FeedbackTestSpec `json:"groundTruth,omitempty" protobuf:"bytes,21,opt,name=groundTruth"`
+	Feedback FeedbackTestSpec `json:"feedback,omitempty" protobuf:"bytes,21,opt,name=feedback"`
 	// NotifierRef references a Notifier resource that will be triggered in the case that a concept or data drift is detected
 	// +kubebuilder:validation:Optional
 	NotifierRef *v1.ObjectReference `json:"notifierRef,omitempty" protobuf:"bytes,22,opt,name=notifierRef"`
@@ -539,11 +539,11 @@ type ModelDeploymentStatus struct {
 	// the set of validation errors
 	Errors []ValidationError `json:"errors,omitempty" protobuf:"bytes,20,opt,name=errors"`
 	// Ref to the last ground true dataset that this model was tested against.
-	LastGroundTruthDatasetRef v1.ObjectReference `json:"lastGroundTruthDatasetRef,omitempty" protobuf:"bytes,21,opt,name=lastGroundTruthDatasetRef"`
+	LastFeedbackDatasetRef v1.ObjectReference `json:"lastFeedbackDatasetRef,omitempty" protobuf:"bytes,21,opt,name=lastFeedbackDatasetRef"`
 	// Last time that a ground true test was done.
-	LastGroundTruthTest *metav1.Time `json:"lastGroundTruthTest,omitempty" protobuf:"bytes,22,opt,name=lastGroundTruthTest"`
+	LastFeedbackTest *metav1.Time `json:"lastFeedbackTest,omitempty" protobuf:"bytes,22,opt,name=lastFeedbackTest"`
 	// Last results of the ground truth tests.
-	LastGroundTruthTestResults []catalog.Measurement `json:"lastGroundTruthTestResults,omitempty" protobuf:"bytes,23,opt,name=lastGroundTruthTestResults"`
+	LastFeedbackTestResults []catalog.Measurement `json:"lastFeedbackTestResults,omitempty" protobuf:"bytes,23,opt,name=lastFeedbackTestResults"`
 }
 
 type ModelDeploymentPhase string

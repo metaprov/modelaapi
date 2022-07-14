@@ -1094,20 +1094,20 @@ export class ModelDeploymentStatus extends jspb.Message {
   clearErrorsList(): ModelDeploymentStatus;
   addErrors(value?: ValidationError, index?: number): ValidationError;
 
-  getLastgroundtruthdatasetref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setLastgroundtruthdatasetref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ModelDeploymentStatus;
-  hasLastgroundtruthdatasetref(): boolean;
-  clearLastgroundtruthdatasetref(): ModelDeploymentStatus;
+  getLastfeedbackdatasetref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setLastfeedbackdatasetref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ModelDeploymentStatus;
+  hasLastfeedbackdatasetref(): boolean;
+  clearLastfeedbackdatasetref(): ModelDeploymentStatus;
 
-  getLastgroundtruthtest(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLastgroundtruthtest(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelDeploymentStatus;
-  hasLastgroundtruthtest(): boolean;
-  clearLastgroundtruthtest(): ModelDeploymentStatus;
+  getLastfeedbacktest(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastfeedbacktest(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelDeploymentStatus;
+  hasLastfeedbacktest(): boolean;
+  clearLastfeedbacktest(): ModelDeploymentStatus;
 
-  getLastgroundtruthtestresultsList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>;
-  setLastgroundtruthtestresultsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>): ModelDeploymentStatus;
-  clearLastgroundtruthtestresultsList(): ModelDeploymentStatus;
-  addLastgroundtruthtestresults(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement;
+  getLastfeedbacktestresultsList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>;
+  setLastfeedbacktestresultsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>): ModelDeploymentStatus;
+  clearLastfeedbacktestresultsList(): ModelDeploymentStatus;
+  addLastfeedbacktestresults(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelDeploymentStatus.AsObject;
@@ -1139,9 +1139,9 @@ export namespace ModelDeploymentStatus {
     lastdailypredictionsList: Array<number>,
     objectstatusesList: Array<KubernetesObjectStatus.AsObject>,
     errorsList: Array<ValidationError.AsObject>,
-    lastgroundtruthdatasetref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    lastgroundtruthtest?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    lastgroundtruthtestresultsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.AsObject>,
+    lastfeedbackdatasetref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    lastfeedbacktest?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    lastfeedbacktestresultsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.AsObject>,
   }
 }
 
@@ -1791,10 +1791,10 @@ export class PredictorSpec extends jspb.Message {
   hasDrift(): boolean;
   clearDrift(): PredictorSpec;
 
-  getGroundtruth(): FeedbackTestSpec | undefined;
-  setGroundtruth(value?: FeedbackTestSpec): PredictorSpec;
-  hasGroundtruth(): boolean;
-  clearGroundtruth(): PredictorSpec;
+  getFeedback(): FeedbackTestSpec | undefined;
+  setFeedback(value?: FeedbackTestSpec): PredictorSpec;
+  hasFeedback(): boolean;
+  clearFeedback(): PredictorSpec;
 
   getNotifierref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setNotifierref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): PredictorSpec;
@@ -1850,7 +1850,7 @@ export namespace PredictorSpec {
     task: string,
     predictionthreshold: number,
     drift?: DriftDetectionSpec.AsObject,
-    groundtruth?: FeedbackTestSpec.AsObject,
+    feedback?: FeedbackTestSpec.AsObject,
     notifierref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     predictionlogging?: PredictionLoggingSpec.AsObject,
     forwardcurtain?: ForwardCurtainSpec.AsObject,

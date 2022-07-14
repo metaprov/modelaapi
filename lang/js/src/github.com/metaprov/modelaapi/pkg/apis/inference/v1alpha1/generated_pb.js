@@ -10136,9 +10136,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentS
     proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.KubernetesObjectStatus.toObject, includeInstance),
     errorsList: jspb.Message.toObjectList(msg.getErrorsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ValidationError.toObject, includeInstance),
-    lastgroundtruthdatasetref: (f = msg.getLastgroundtruthdatasetref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
-    lastgroundtruthtest: (f = msg.getLastgroundtruthtest()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
-    lastgroundtruthtestresultsList: jspb.Message.toObjectList(msg.getLastgroundtruthtestresultsList(),
+    lastfeedbackdatasetref: (f = msg.getLastfeedbackdatasetref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
+    lastfeedbacktest: (f = msg.getLastfeedbacktest()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    lastfeedbacktestresultsList: jspb.Message.toObjectList(msg.getLastfeedbacktestresultsList(),
     github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.toObject, includeInstance)
   };
 
@@ -10269,17 +10269,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentS
     case 21:
       var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
       reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
-      msg.setLastgroundtruthdatasetref(value);
+      msg.setLastfeedbackdatasetref(value);
       break;
     case 22:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setLastgroundtruthtest(value);
+      msg.setLastfeedbacktest(value);
       break;
     case 23:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.deserializeBinaryFromReader);
-      msg.addLastgroundtruthtestresults(value);
+      msg.addLastfeedbacktestresults(value);
       break;
     default:
       reader.skipField();
@@ -10458,7 +10458,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentS
       proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ValidationError.serializeBinaryToWriter
     );
   }
-  f = message.getLastgroundtruthdatasetref();
+  f = message.getLastfeedbackdatasetref();
   if (f != null) {
     writer.writeMessage(
       21,
@@ -10466,7 +10466,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentS
       k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
     );
   }
-  f = message.getLastgroundtruthtest();
+  f = message.getLastfeedbacktest();
   if (f != null) {
     writer.writeMessage(
       22,
@@ -10474,7 +10474,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentS
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
   }
-  f = message.getLastgroundtruthtestresultsList();
+  f = message.getLastfeedbacktestresultsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       23,
@@ -11217,10 +11217,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentS
 
 
 /**
- * optional k8s.io.api.core.v1.ObjectReference lastGroundTruthDatasetRef = 21;
+ * optional k8s.io.api.core.v1.ObjectReference lastFeedbackDatasetRef = 21;
  * @return {?proto.k8s.io.api.core.v1.ObjectReference}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.getLastgroundtruthdatasetref = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.getLastfeedbackdatasetref = function() {
   return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
     jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 21));
 };
@@ -11230,7 +11230,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentS
  * @param {?proto.k8s.io.api.core.v1.ObjectReference|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.setLastgroundtruthdatasetref = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.setLastfeedbackdatasetref = function(value) {
   return jspb.Message.setWrapperField(this, 21, value);
 };
 
@@ -11239,8 +11239,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentS
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.clearLastgroundtruthdatasetref = function() {
-  return this.setLastgroundtruthdatasetref(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.clearLastfeedbackdatasetref = function() {
+  return this.setLastfeedbackdatasetref(undefined);
 };
 
 
@@ -11248,16 +11248,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentS
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.hasLastgroundtruthdatasetref = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.hasLastfeedbackdatasetref = function() {
   return jspb.Message.getField(this, 21) != null;
 };
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastGroundTruthTest = 22;
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastFeedbackTest = 22;
  * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.getLastgroundtruthtest = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.getLastfeedbacktest = function() {
   return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
     jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 22));
 };
@@ -11267,7 +11267,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentS
  * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.setLastgroundtruthtest = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.setLastfeedbacktest = function(value) {
   return jspb.Message.setWrapperField(this, 22, value);
 };
 
@@ -11276,8 +11276,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentS
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.clearLastgroundtruthtest = function() {
-  return this.setLastgroundtruthtest(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.clearLastfeedbacktest = function() {
+  return this.setLastfeedbacktest(undefined);
 };
 
 
@@ -11285,16 +11285,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentS
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.hasLastgroundtruthtest = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.hasLastfeedbacktest = function() {
   return jspb.Message.getField(this, 22) != null;
 };
 
 
 /**
- * repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement lastGroundTruthTestResults = 23;
+ * repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement lastFeedbackTestResults = 23;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement>}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.getLastgroundtruthtestresultsList = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.getLastfeedbacktestresultsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement>} */ (
     jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement, 23));
 };
@@ -11304,7 +11304,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentS
  * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement>} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.setLastgroundtruthtestresultsList = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.setLastfeedbacktestresultsList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 23, value);
 };
 
@@ -11314,7 +11314,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentS
  * @param {number=} opt_index
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.addLastgroundtruthtestresults = function(opt_value, opt_index) {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.addLastfeedbacktestresults = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 23, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement, opt_index);
 };
 
@@ -11323,8 +11323,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentS
  * Clears the list making it empty but non-null.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.clearLastgroundtruthtestresultsList = function() {
-  return this.setLastgroundtruthtestresultsList([]);
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.prototype.clearLastfeedbacktestresultsList = function() {
+  return this.setLastfeedbacktestresultsList([]);
 };
 
 
@@ -16419,7 +16419,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec.to
     task: (f = jspb.Message.getField(msg, 18)) == null ? undefined : f,
     predictionthreshold: (f = jspb.Message.getOptionalFloatingPointField(msg, 19)) == null ? undefined : f,
     drift: (f = msg.getDrift()) && proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSpec.toObject(includeInstance, f),
-    groundtruth: (f = msg.getGroundtruth()) && proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.FeedbackTestSpec.toObject(includeInstance, f),
+    feedback: (f = msg.getFeedback()) && proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.FeedbackTestSpec.toObject(includeInstance, f),
     notifierref: (f = msg.getNotifierref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     predictionlogging: (f = msg.getPredictionlogging()) && proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionLoggingSpec.toObject(includeInstance, f),
     forwardcurtain: (f = msg.getForwardcurtain()) && proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ForwardCurtainSpec.toObject(includeInstance, f),
@@ -16553,7 +16553,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec.de
     case 21:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.FeedbackTestSpec;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.FeedbackTestSpec.deserializeBinaryFromReader);
-      msg.setGroundtruth(value);
+      msg.setFeedback(value);
       break;
     case 22:
       var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
@@ -16755,7 +16755,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec.se
       proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSpec.serializeBinaryToWriter
     );
   }
-  f = message.getGroundtruth();
+  f = message.getFeedback();
   if (f != null) {
     writer.writeMessage(
       21,
@@ -17505,10 +17505,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec.pr
 
 
 /**
- * optional FeedbackTestSpec groundTruth = 21;
+ * optional FeedbackTestSpec feedback = 21;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.FeedbackTestSpec}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.getGroundtruth = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.getFeedback = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.FeedbackTestSpec} */ (
     jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.FeedbackTestSpec, 21));
 };
@@ -17518,7 +17518,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec.pr
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.FeedbackTestSpec|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.setGroundtruth = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.setFeedback = function(value) {
   return jspb.Message.setWrapperField(this, 21, value);
 };
 
@@ -17527,8 +17527,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec.pr
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.clearGroundtruth = function() {
-  return this.setGroundtruth(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.clearFeedback = function() {
+  return this.setFeedback(undefined);
 };
 
 
@@ -17536,7 +17536,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec.pr
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.hasGroundtruth = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.hasFeedback = function() {
   return jspb.Message.getField(this, 21) != null;
 };
 

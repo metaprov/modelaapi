@@ -917,13 +917,13 @@ func (in *ModelDeploymentStatus) DeepCopyInto(out *ModelDeploymentStatus) {
 		*out = make([]ValidationError, len(*in))
 		copy(*out, *in)
 	}
-	out.LastGroundTruthDatasetRef = in.LastGroundTruthDatasetRef
-	if in.LastGroundTruthTest != nil {
-		in, out := &in.LastGroundTruthTest, &out.LastGroundTruthTest
+	out.LastFeedbackDatasetRef = in.LastFeedbackDatasetRef
+	if in.LastFeedbackTest != nil {
+		in, out := &in.LastFeedbackTest, &out.LastFeedbackTest
 		*out = (*in).DeepCopy()
 	}
-	if in.LastGroundTruthTestResults != nil {
-		in, out := &in.LastGroundTruthTestResults, &out.LastGroundTruthTestResults
+	if in.LastFeedbackTestResults != nil {
+		in, out := &in.LastFeedbackTestResults, &out.LastFeedbackTestResults
 		*out = make([]catalogv1alpha1.Measurement, len(*in))
 		for i := range *in {
 			(*in)[i].DeepCopyInto(&(*out)[i])
@@ -1471,7 +1471,7 @@ func (in *PredictorSpec) DeepCopyInto(out *PredictorSpec) {
 		**out = **in
 	}
 	in.Drift.DeepCopyInto(&out.Drift)
-	in.GroundTruth.DeepCopyInto(&out.GroundTruth)
+	in.Feedback.DeepCopyInto(&out.Feedback)
 	if in.NotifierRef != nil {
 		in, out := &in.NotifierRef, &out.NotifierRef
 		*out = new(v1.ObjectReference)

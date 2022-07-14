@@ -91,7 +91,7 @@ const (
 	GenerateDataset       TaskName = "generate-dataset"
 	RunDatasetTests       TaskName = "run-dataset-tests"
 	RunModelTests         TaskName = "run-model-tests"
-	RunGroundTruthTests   TaskName = "run-ground-truth-tests"
+	RunFeedbackTests      TaskName = "run-feedback-tests"
 	RunDriftTests         TaskName = "run-drift-tests"
 	TrainDriftDetector    TaskName = "train-drift-detector"
 )
