@@ -1188,6 +1188,7 @@ spec:
                         - shadow
                         type: string
                       traffic:
+                        default: 100
                         description: The minimum percentage (0 through 100) of traffic
                           that will be served by the model
                         format: int32

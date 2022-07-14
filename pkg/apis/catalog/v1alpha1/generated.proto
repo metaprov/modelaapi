@@ -698,11 +698,13 @@ message ModelDeploymentSpec {
   optional int32 port = 2;
 
   // The version of the model, derived from the Study which created it
+  // +kubebuilder:validation:Optional
   optional string modelVersion = 3;
 
   // The minimum percentage (0 through 100) of traffic that will be served by the model
   // +kubebuilder:validation:Maximum=100
   // +kubebuilder:validation:Minimum=0
+  // +kubebuilder:default:=100
   // +kubebuilder:validation:Optional
   optional int32 traffic = 4;
 
@@ -713,6 +715,7 @@ message ModelDeploymentSpec {
 
   // MountTar means that we would mount the model tar file. Else we would use baked image.
   // +kubebuilder:default:=true
+  // +kubebuilder:validation:Optional
   optional bool mountTar = 9;
 
   // TrafficSelector is a filter on the traffic to this model

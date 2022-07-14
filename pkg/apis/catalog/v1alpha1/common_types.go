@@ -1437,16 +1437,18 @@ type ModelDeploymentSpec struct {
 	// as the Predictor which specifies the ModelDeploymentSpec
 	// +kubebuilder:validation:Required
 	// +required
-	ModelRef *v1.ObjectReference `json:"modelRef,omitempty" protobuf:"bytes,1,opt,name=modelRef"`
+	ModelRef v1.ObjectReference `json:"modelRef,omitempty" protobuf:"bytes,1,opt,name=modelRef"`
 	// the port of the model service.
 	// +kubebuilder:default:=8080
 	// +kubebuilder:validation:Optional
 	Port *int32 `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
 	// The version of the model, derived from the Study which created it
+	// +kubebuilder:validation:Optional
 	ModelVersion *string `json:"modelVersion,omitempty" protobuf:"bytes,3,opt,name=modelVersion"`
 	// The minimum percentage (0 through 100) of traffic that will be served by the model
 	// +kubebuilder:validation:Maximum=100
 	// +kubebuilder:validation:Minimum=0
+	// +kubebuilder:default:=100
 	// +kubebuilder:validation:Optional
 	Traffic *int32 `json:"traffic,omitempty" protobuf:"varint,4,opt,name=traffic"`
 	// Role denotes the role of this model
@@ -1455,6 +1457,7 @@ type ModelDeploymentSpec struct {
 	Role *ModelRole `json:"role,omitempty" protobuf:"bytes,5,opt,name=role"`
 	// MountTar means that we would mount the model tar file. Else we would use baked image.
 	// +kubebuilder:default:=true
+	// +kubebuilder:validation:Optional
 	MountTar *bool `json:"mountTar,omitempty" protobuf:"varint,9,opt,name=mountTar"`
 	// TrafficSelector is a filter on the traffic to this model
 	// +kubebuilder:validation:Optional
