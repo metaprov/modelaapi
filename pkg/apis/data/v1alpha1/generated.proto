@@ -2199,6 +2199,7 @@ message FeatureHistogramStatus {
   optional int64 observedGeneration = 1;
 
   // The histogram values, map from column name to an histogram
+  // +kubebuilder:validation:Optional
   repeated ColumnHistogram data = 2;
 
   // Last time the object was updated

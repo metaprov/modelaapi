@@ -128,13 +128,14 @@ type FeatureHistogramStatus struct {
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,1,opt,name=observedGeneration"`
 	// The histogram values, map from column name to an histogram
-	Data []ColumnHistogram `json:"data,omitempty" protobuf:"bytes,2,opt,name=data"`
+	// +kubebuilder:validation:Optional
+	Data []ColumnHistogram `json:"data,omitempty" protobuf:"bytes,2,rep,name=data"`
 	// Last time the object was updated
 	//+kubebuilder:validation:Optional
 	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,3,opt,name=lastUpdated"`
 	// The calculation of the drift metrics for each column in the histogram
 	//+kubebuilder:validation:Optional
-	Drift []ColumnDrift `json:"drift,omitempty" protobuf:"bytes,4,opt,name=drift"`
+	Drift []ColumnDrift `json:"drift,omitempty" protobuf:"bytes,4,rep,name=drift"`
 	// The log file specification that determines the location of all logs produced by the object
 	// +kubebuilder:validation:Optional
 	Logs catalog.Logs `json:"logs" protobuf:"bytes,5,opt,name=logs"`
