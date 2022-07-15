@@ -48,18 +48,17 @@ type FeatureHistogramCondition struct {
 
 // FeatureHistogram represent a single feature in the feature store.
 // +kubebuilder:object:root=true
+// +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=featurehistograms,singular=featurehistogram,categories={data,modela}
-// +kubebuilder:subresource:status
+// +kubebuilder:resource:path=featurehistograms,shortName=fh,singular=featurehistogram,categories={data,modela}
 type FeatureHistogram struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata" protobuf:"bytes,1,opt,name=metadata"`
-	Spec              FeatureHistogramSpec `json:"spec" protobuf:"bytes,2,opt,name=spec"`
-	//+optional
-	Status FeatureHistogramStatus `json:"status" protobuf:"bytes,3,opt,name=status"`
+	Spec              FeatureHistogramSpec   `json:"spec" protobuf:"bytes,2,opt,name=spec"`
+	Status            FeatureHistogramStatus `json:"status" protobuf:"bytes,3,opt,name=status"`
 }
 
 // +kubebuilder:object:root=true

@@ -2087,18 +2087,17 @@ message FeatureCondition {
 
 // FeatureHistogram represent a single feature in the feature store.
 // +kubebuilder:object:root=true
+// +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=featurehistograms,singular=featurehistogram,categories={data,modela}
-// +kubebuilder:subresource:status
+// +kubebuilder:resource:path=featurehistograms,shortName=fh,singular=featurehistogram,categories={data,modela}
 message FeatureHistogram {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
   optional FeatureHistogramSpec spec = 2;
 
-  // +optional
   optional FeatureHistogramStatus status = 3;
 }
 
