@@ -3,6 +3,7 @@ package v1alpha1
 import (
 	"fmt"
 	"github.com/metaprov/modelaapi/pkg/apis/inference"
+	catalog "github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1"
 	training "github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/util"
 	kapps "k8s.io/api/apps/v1"
@@ -293,5 +294,14 @@ func (p *Predictor) UpdateK8sServiceStatus(model training.Model, service v1.Serv
 		status.ObjectStatuses = AddOrUpdateK8sStatuses(status.ObjectStatuses, k8sStatus)
 		p.Status.ModelStatus = append(p.Status.ModelStatus, status)
 	}
+}
 
+// Return the live model name.
+func (p *Predictor) GetLiveModelName() string {
+	for _, v := range p.Spec.Models {
+		if v.Role == catalog.ModelRoleLive {
+			return v.ModelRef.Name
+		}
+	}
+	return ""
 }
