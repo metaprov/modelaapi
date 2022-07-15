@@ -246,8 +246,8 @@ func (p *Predictor) UpdateK8sDeploymentStatus(model training.Model, deployment k
 	// update live model
 	found := false
 	// else update shddow model k8sStatus
-	for i, v := range p.Spec.Models {
-		if v.ModelRef.Name == model.Name {
+	for i, v := range p.Status.ModelStatus {
+		if v.ModelName == model.Name {
 			found = true
 			shadowModelStatus := p.Status.ModelStatus[i]
 			shadowModelStatus.ObjectStatuses = AddOrUpdateK8sStatuses(shadowModelStatus.ObjectStatuses, k8sStatus)
@@ -273,8 +273,8 @@ func (p *Predictor) UpdateK8sServiceStatus(model training.Model, service v1.Serv
 	// update live model
 	found := false
 	// else update shddow model k8sStatus
-	for i, v := range p.Spec.Models {
-		if v.ModelRef.Name == model.Name {
+	for i, v := range p.Status.ModelStatus {
+		if v.ModelName == model.Name {
 			found = true
 			shadowModelStatus := p.Status.ModelStatus[i]
 			shadowModelStatus.ObjectStatuses = AddOrUpdateK8sStatuses(shadowModelStatus.ObjectStatuses, k8sStatus)
