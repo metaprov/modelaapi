@@ -35,7 +35,7 @@ type DriftDetectionSpec struct {
 	// +kubebuilder:validation:Optional
 	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
 	// Reference to the live FeatureHistogram, the live FeatureHistogram is updated by the predictor for each prediction.
-	LiveHistogramRef v1.ObjectReference `json:"liveHistogramRef,omitempty" protobuf:"bytes,2,opt,name=liveHistogramRef"`
+	ServingHistogramRef v1.ObjectReference `json:"servingHistogramRef,omitempty" protobuf:"bytes,2,opt,name=liveHistogramRef"`
 	// Reference to the training histogram ref. The training FeatureHistogram is created
 	TrainingHistogramRef v1.ObjectReference `json:"trainingHistogramRef,omitempty" protobuf:"bytes,3,opt,name=trainingHistogramRef"`
 	// Define the tests to run against the predictor.
@@ -338,12 +338,10 @@ type PredictorSpec struct {
 	// If not specified, the predictor will be hosted on the default serving site.
 	// +kubebuilder:validation:Optional
 	ServingSiteRef *v1.ObjectReference `json:"servingsiteRef" protobuf:"bytes,5,opt,name=servingsiteRef"`
-	// The specification of the live model, serving live requests. All requests are served by the live model
-	Live catalog.ModelDeploymentSpec `json:"live" protobuf:"bytes,6,opt,name=live"`
 	// If specified, the collection of shadow models. A shadow model receives prediction request, but does
 	// not serve the reply.
 	// +kubebuilder:validation:Optional
-	Shadows []catalog.ModelDeploymentSpec `json:"shadows,omitempty" protobuf:"bytes,7,rep,name=shadows"`
+	Models []catalog.ModelDeploymentSpec `json:"models,omitempty" protobuf:"bytes,7,rep,name=models"`
 	// The specification to progressively deploy a new live model. ModelDeploymentSpec specifications within Models that have the
 	// `Canary` field enabled will be progressively deployed according to the specification when they are applied to the Predictor
 	// +kubebuilder:validation:Optional
@@ -412,12 +410,9 @@ type PredictorStatus struct {
 	// The collection of historical records of models deployed to the Predictor, used internally to roll-back models
 	//+kubebuilder:validation:Optional
 	History []ModelRecord `json:"history,omitempty" protobuf:"bytes,2,opt,name=history"`
-	// The status of the live model
-	//+kubebuilder:validation:Optional
-	LiveStatus ModelDeploymentStatus `json:"liveStatus,omitempty" protobuf:"bytes,3,rep,name=liveStatus"`
 	// The status of the shadow models
 	// +kubebuilder:validation:Optional
-	ShadowsStatus []ModelDeploymentStatus `json:"shadowsStatus,omitempty" protobuf:"bytes,4,rep,name=shadowsStatus"`
+	ModelStatus []ModelDeploymentStatus `json:"modelsStatus,omitempty" protobuf:"bytes,4,rep,name=modelsStatus"`
 	// The status of the Predictorlet associated with the Predictor. The Predictorlet is a service which handles prediction traffic
 	// and routes predictions to individual models based on the specification of the Predictor
 	// +kubebuilder:validation:Optional

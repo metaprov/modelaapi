@@ -1071,13 +1071,10 @@ message PredictorSpec {
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference servingsiteRef = 5;
 
-  // The specification of the live model, serving live requests. All requests are served by the live model
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec live = 6;
-
   // If specified, the collection of shadow models. A shadow model receives prediction request, but does
   // not serve the reply.
   // +kubebuilder:validation:Optional
-  repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec shadows = 7;
+  repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec models = 7;
 
   // The specification to progressively deploy a new live model. ModelDeploymentSpec specifications within Models that have the
   // `Canary` field enabled will be progressively deployed according to the specification when they are applied to the Predictor
@@ -1167,13 +1164,9 @@ message PredictorStatus {
   // +kubebuilder:validation:Optional
   repeated ModelRecord history = 2;
 
-  // The status of the live model
-  // +kubebuilder:validation:Optional
-  optional ModelDeploymentStatus liveStatus = 3;
-
   // The status of the shadow models
   // +kubebuilder:validation:Optional
-  repeated ModelDeploymentStatus shadowsStatus = 4;
+  repeated ModelDeploymentStatus modelsStatus = 4;
 
   // The status of the Predictorlet associated with the Predictor. The Predictorlet is a service which handles prediction traffic
   // and routes predictions to individual models based on the specification of the Predictor
