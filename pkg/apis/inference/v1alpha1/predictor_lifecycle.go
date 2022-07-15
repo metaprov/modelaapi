@@ -307,7 +307,7 @@ func (p *Predictor) GetLiveModelName() string {
 }
 
 // Get the first live model or none if none exist
-func (p *Predictor) GetLiveModel() *catalog.ModelDeploymentSpec {
+func (p Predictor) GetLiveModel() *catalog.ModelDeploymentSpec {
 	for _, v := range p.Spec.Models {
 		if *v.Role == catalog.ModelRoleLive {
 			return &v
@@ -316,7 +316,7 @@ func (p *Predictor) GetLiveModel() *catalog.ModelDeploymentSpec {
 	return nil
 }
 
-func (p *Predictor) GetShadowModels() []catalog.ModelDeploymentSpec {
+func (p Predictor) GetShadowModels() []catalog.ModelDeploymentSpec {
 	result := make([]catalog.ModelDeploymentSpec, 0)
 	for _, v := range p.Spec.Models {
 		if *v.Role == catalog.ModelRoleLive {
