@@ -685,7 +685,7 @@ func (in *DriftDetectionSpec) DeepCopyInto(out *DriftDetectionSpec) {
 		*out = new(bool)
 		**out = **in
 	}
-	out.LiveHistogramRef = in.LiveHistogramRef
+	out.ServingHistogramRef = in.ServingHistogramRef
 	out.TrainingHistogramRef = in.TrainingHistogramRef
 	in.Tests.DeepCopyInto(&out.Tests)
 	in.Schedule.DeepCopyInto(&out.Schedule)
@@ -1430,9 +1430,8 @@ func (in *PredictorSpec) DeepCopyInto(out *PredictorSpec) {
 		*out = new(v1.ObjectReference)
 		**out = **in
 	}
-	in.Live.DeepCopyInto(&out.Live)
-	if in.Shadows != nil {
-		in, out := &in.Shadows, &out.Shadows
+	if in.Models != nil {
+		in, out := &in.Models, &out.Models
 		*out = make([]catalogv1alpha1.ModelDeploymentSpec, len(*in))
 		for i := range *in {
 			(*in)[i].DeepCopyInto(&(*out)[i])
@@ -1503,9 +1502,8 @@ func (in *PredictorStatus) DeepCopyInto(out *PredictorStatus) {
 			(*in)[i].DeepCopyInto(&(*out)[i])
 		}
 	}
-	in.LiveStatus.DeepCopyInto(&out.LiveStatus)
-	if in.ShadowsStatus != nil {
-		in, out := &in.ShadowsStatus, &out.ShadowsStatus
+	if in.ModelStatus != nil {
+		in, out := &in.ModelStatus, &out.ModelStatus
 		*out = make([]ModelDeploymentStatus, len(*in))
 		for i := range *in {
 			(*in)[i].DeepCopyInto(&(*out)[i])

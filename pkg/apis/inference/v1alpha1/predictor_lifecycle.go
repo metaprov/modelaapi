@@ -243,67 +243,55 @@ func (predictor *Predictor) ConstructRESTRule(fqdn string, serviceName string) *
 
 func (p *Predictor) UpdateK8sDeploymentStatus(model training.Model, deployment kapps.Deployment, k8sStatus KubernetesObjectStatus) {
 	// update live model
-	if p.Spec.Live.ModelRef.Name == model.Name {
-		status := p.Status.LiveStatus
+	found := false
+	// else update shddow model k8sStatus
+	for i, v := range p.Spec.Models {
+		if v.ModelRef.Name == model.Name {
+			found = true
+			shadowModelStatus := p.Status.ModelStatus[i]
+			shadowModelStatus.ObjectStatuses = AddOrUpdateK8sStatuses(shadowModelStatus.ObjectStatuses, k8sStatus)
+			p.Status.ModelStatus[i] = shadowModelStatus
+		}
+	}
+	if !found {
+		status := ModelDeploymentStatus{
+			DeploymentRef: v1.ObjectReference{
+				Name:      deployment.Name,
+				Namespace: deployment.Namespace,
+				Kind:      "Deployment",
+			},
+			ModelName:    model.Name,
+			ModelVersion: *model.Spec.ModelVersion,
+		}
 		status.ObjectStatuses = AddOrUpdateK8sStatuses(status.ObjectStatuses, k8sStatus)
-		p.Status.LiveStatus = status
-	} else { // shadow model
-		found := false
-		// else update shddow model k8sStatus
-		for i, v := range p.Spec.Shadows {
-			if v.ModelRef.Name == model.Name {
-				found = true
-				shadowModelStatus := p.Status.ShadowsStatus[i]
-				shadowModelStatus.ObjectStatuses = AddOrUpdateK8sStatuses(shadowModelStatus.ObjectStatuses, k8sStatus)
-				p.Status.ShadowsStatus[i] = shadowModelStatus
-			}
-		}
-		if !found {
-			status := ModelDeploymentStatus{
-				DeploymentRef: v1.ObjectReference{
-					Name:      deployment.Name,
-					Namespace: deployment.Namespace,
-					Kind:      "Deployment",
-				},
-				ModelName:    model.Name,
-				ModelVersion: *model.Spec.ModelVersion,
-			}
-			status.ObjectStatuses = AddOrUpdateK8sStatuses(status.ObjectStatuses, k8sStatus)
-			p.Status.ShadowsStatus = append(p.Status.ShadowsStatus, status)
-		}
+		p.Status.ModelStatus = append(p.Status.ModelStatus, status)
 	}
 }
 
 func (p *Predictor) UpdateK8sServiceStatus(model training.Model, service v1.Service, k8sStatus KubernetesObjectStatus) {
 	// update live model
-	if p.Spec.Live.ModelRef.Name == model.Name {
-		status := p.Status.LiveStatus
+	found := false
+	// else update shddow model k8sStatus
+	for i, v := range p.Spec.Models {
+		if v.ModelRef.Name == model.Name {
+			found = true
+			shadowModelStatus := p.Status.ModelStatus[i]
+			shadowModelStatus.ObjectStatuses = AddOrUpdateK8sStatuses(shadowModelStatus.ObjectStatuses, k8sStatus)
+			p.Status.ModelStatus[i] = shadowModelStatus
+		}
+	}
+	if !found {
+		status := ModelDeploymentStatus{
+			DeploymentRef: v1.ObjectReference{
+				Name:      service.Name,
+				Namespace: service.Namespace,
+				Kind:      "Service",
+			},
+			ModelName:    model.Name,
+			ModelVersion: *model.Spec.ModelVersion,
+		}
 		status.ObjectStatuses = AddOrUpdateK8sStatuses(status.ObjectStatuses, k8sStatus)
-		p.Status.LiveStatus = status
-	} else { // shadow model
-		found := false
-		// else update shddow model k8sStatus
-		for i, v := range p.Spec.Shadows {
-			if v.ModelRef.Name == model.Name {
-				found = true
-				shadowModelStatus := p.Status.ShadowsStatus[i]
-				shadowModelStatus.ObjectStatuses = AddOrUpdateK8sStatuses(shadowModelStatus.ObjectStatuses, k8sStatus)
-				p.Status.ShadowsStatus[i] = shadowModelStatus
-			}
-		}
-		if !found {
-			status := ModelDeploymentStatus{
-				DeploymentRef: v1.ObjectReference{
-					Name:      service.Name,
-					Namespace: service.Namespace,
-					Kind:      "Service",
-				},
-				ModelName:    model.Name,
-				ModelVersion: *model.Spec.ModelVersion,
-			}
-			status.ObjectStatuses = AddOrUpdateK8sStatuses(status.ObjectStatuses, k8sStatus)
-			p.Status.ShadowsStatus = append(p.Status.ShadowsStatus, status)
-		}
+		p.Status.ModelStatus = append(p.Status.ModelStatus, status)
 	}
 
 }
