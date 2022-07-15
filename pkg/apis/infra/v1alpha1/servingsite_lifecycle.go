@@ -8,8 +8,6 @@ package v1alpha1
 
 import (
 	"fmt"
-	"github.com/dustin/go-humanize"
-
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/apis/infra"
 	"github.com/metaprov/modelaapi/pkg/util"
@@ -348,6 +346,13 @@ func (servingsite *ServingSite) PredictorRole() *rbacv1.ClusterRole {
 				Verbs:           []string{"get", "list", "watch", "create", "update", "patch", "delete", "deletecollection"},
 				APIGroups:       []string{"data.modela.ai"},
 				Resources:       []string{"datasets"},
+				ResourceNames:   []string{},
+				NonResourceURLs: []string{},
+			},
+			{
+				Verbs:           []string{"get", "list", "watch", "create", "update", "patch", "delete", "deletecollection"},
+				APIGroups:       []string{"data.modela.ai"},
+				Resources:       []string{"featurehistograms"},
 				ResourceNames:   []string{},
 				NonResourceURLs: []string{},
 			},
