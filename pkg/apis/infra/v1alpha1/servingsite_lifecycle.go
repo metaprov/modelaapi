@@ -382,7 +382,7 @@ func (servingsite *ServingSite) PredictorRole() *rbacv1.ClusterRole {
 			{
 				Verbs:           []string{"get", "list", "watch", "create", "update", "patch", "delete", "deletecollection"},
 				APIGroups:       []string{"inference.modela.ai"},
-				Resources:       []string{"predictors,predictors/status"},
+				Resources:       []string{"predictors", "predictors/status"},
 				ResourceNames:   []string{},
 				NonResourceURLs: []string{},
 			},
