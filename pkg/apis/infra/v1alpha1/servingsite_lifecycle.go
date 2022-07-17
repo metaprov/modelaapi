@@ -9,6 +9,7 @@ package v1alpha1
 import (
 	"fmt"
 
+	"github.com/dustin/go-humanize"
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/apis/infra"
 	"github.com/metaprov/modelaapi/pkg/util"
@@ -18,6 +19,7 @@ import (
 	rbacv1 "k8s.io/api/rbac/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
+	"k8s.io/client-go/kubernetes/scheme"
 )
 
 func (r *ServingSite) IsMarkedForDeletion() bool {
