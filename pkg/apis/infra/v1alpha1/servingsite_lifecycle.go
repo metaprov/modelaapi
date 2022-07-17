@@ -9,7 +9,6 @@ package v1alpha1
 import (
 	"fmt"
 
-	"github.com/dustin/go-humanize"
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/apis/infra"
 	"github.com/metaprov/modelaapi/pkg/util"
@@ -347,42 +346,42 @@ func (servingsite *ServingSite) PredictorRole() *rbacv1.ClusterRole {
 			{
 				Verbs:           []string{"get", "list", "watch", "create", "update", "patch", "delete", "deletecollection"},
 				APIGroups:       []string{"data.modela.ai"},
-				Resources:       []string{"datasets"},
+				Resources:       []string{"datasets", "datasets/status"},
 				ResourceNames:   []string{},
 				NonResourceURLs: []string{},
 			},
 			{
 				Verbs:           []string{"get", "list", "watch", "create", "update", "patch", "delete", "deletecollection"},
 				APIGroups:       []string{"data.modela.ai"},
-				Resources:       []string{"featurehistograms"},
+				Resources:       []string{"featurehistograms", "featurehistograms/status"},
 				ResourceNames:   []string{},
 				NonResourceURLs: []string{},
 			},
 			{
 				Verbs:           []string{"get", "list", "watch", "create", "update", "patch", "delete", "deletecollection"},
 				APIGroups:       []string{"data.modela.ai"},
-				Resources:       []string{"datasources"},
+				Resources:       []string{"datasources", "datasources/status"},
 				ResourceNames:   []string{},
 				NonResourceURLs: []string{},
 			},
 			{
 				Verbs:           []string{"get", "list", "watch", "create", "update", "patch", "delete", "deletecollection"},
 				APIGroups:       []string{"training.modela.ai"},
-				Resources:       []string{"models"},
+				Resources:       []string{"models", "models/status"},
 				ResourceNames:   []string{},
 				NonResourceURLs: []string{},
 			},
 			{
 				Verbs:           []string{"get", "list", "watch", "create", "update", "patch", "delete", "deletecollection"},
 				APIGroups:       []string{"training.modela.ai"},
-				Resources:       []string{"studies"},
+				Resources:       []string{"studies", "studies/status"},
 				ResourceNames:   []string{},
 				NonResourceURLs: []string{},
 			},
 			{
 				Verbs:           []string{"get", "list", "watch", "create", "update", "patch", "delete", "deletecollection"},
 				APIGroups:       []string{"inference.modela.ai"},
-				Resources:       []string{"predictors"},
+				Resources:       []string{"predictors,predictors/status"},
 				ResourceNames:   []string{},
 				NonResourceURLs: []string{},
 			},
