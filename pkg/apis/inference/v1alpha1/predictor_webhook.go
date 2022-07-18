@@ -42,8 +42,8 @@ func (predictor *Predictor) Default() {
 	if predictor.ObjectMeta.Labels == nil {
 		predictor.ObjectMeta.Labels = make(map[string]string)
 	}
-	if predictor.Spec.Drift.TresholdsTemplate.Tresholds == nil {
-		predictor.Spec.Drift.TresholdsTemplate.Tresholds = make([]data.DriftTreshold, 0)
+	if predictor.Spec.Drift.Thresholds == nil {
+		predictor.Spec.Drift.Thresholds = make([]data.DriftThreshold, 0)
 	}
 	predictor.ObjectMeta.Labels[catalog.TenantLabelKey] = predictor.Spec.ServingSiteRef.Namespace
 	predictor.ObjectMeta.Labels["modela.ai/servingsite"] = predictor.Spec.ServingSiteRef.Name

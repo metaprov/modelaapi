@@ -774,10 +774,10 @@ export class DriftDetectionSpec extends jspb.Message {
   hasOutlierdetectionmodelref(): boolean;
   clearOutlierdetectionmodelref(): DriftDetectionSpec;
 
-  getTresholdstemplate(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DriftTresholdsSpec | undefined;
-  setTresholdstemplate(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DriftTresholdsSpec): DriftDetectionSpec;
-  hasTresholdstemplate(): boolean;
-  clearTresholdstemplate(): DriftDetectionSpec;
+  getThresholdsList(): Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DriftThreshold>;
+  setThresholdsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DriftThreshold>): DriftDetectionSpec;
+  clearThresholdsList(): DriftDetectionSpec;
+  addThresholds(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DriftThreshold, index?: number): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DriftThreshold;
 
   getMaxhistograms(): number;
   setMaxhistograms(value: number): DriftDetectionSpec;
@@ -801,7 +801,7 @@ export namespace DriftDetectionSpec {
     tests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
     schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     outlierdetectionmodelref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    tresholdstemplate?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DriftTresholdsSpec.AsObject,
+    thresholdsList: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DriftThreshold.AsObject>,
     maxhistograms: number,
     periodseconds: number,
   }

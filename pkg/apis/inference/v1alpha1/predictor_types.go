@@ -46,9 +46,9 @@ type DriftDetectionSpec struct {
 	// Reference to a model that will be used for outlier detection. If empty, an outlier detection model.
 	// +kubebuilder:validation:Optional
 	OutlierDetectionModelRef v1.ObjectReference `json:"outlierDetectionModelRef,omitempty" protobuf:"bytes,6,opt,name=outlierDetectionModelRef"`
-	// Define drift tresholds. This is usually assigned from the predictor.
+	// Define drift thresholds. This is usually assigned from the predictor.
 	// +kubebuilder:validation:Optional
-	TresholdsTemplate data.DriftTresholdsSpec `json:"tresholdsTemplate,omitempty" protobuf:"bytes,7,opt,name=tresholdsTemplate"`
+	Thresholds []data.DriftThreshold `json:"thresholds" protobuf:"bytes,7,opt,name=thresholds"`
 	// how many feature histograms to keep in memory (as kubernetes objects). Histograms are garbage collected.
 	// +kubebuilder:default:=5
 	// +kubebuilder:validation:Optional

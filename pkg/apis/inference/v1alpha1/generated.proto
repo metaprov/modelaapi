@@ -512,9 +512,9 @@ message DriftDetectionSpec {
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference outlierDetectionModelRef = 6;
 
-  // Define drift tresholds. This is usually assigned from the predictor.
+  // Define drift thresholds. This is usually assigned from the predictor.
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DriftTresholdsSpec tresholdsTemplate = 7;
+  repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DriftThreshold thresholds = 7;
 
   // how many feature histograms to keep in memory (as kubernetes objects). Histograms are garbage collected.
   // +kubebuilder:default:=5
