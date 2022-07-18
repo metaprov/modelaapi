@@ -27,9 +27,21 @@ spec:
     - jsonPath: .spec.owner
       name: Owner
       type: string
+    - jsonPath: .spec.description
+      name: Description
+      type: string
     - jsonPath: .spec.versionName
       name: Version
       type: string
+    - jsonPath: .spec.live
+      name: Live
+      type: boolean
+    - jsonPath: .spec.start
+      name: Start
+      type: time
+    - jsonPath: .spec.end
+      name: End
+      type: time
     - jsonPath: .metadata.creationTimestamp
       name: Age
       type: date

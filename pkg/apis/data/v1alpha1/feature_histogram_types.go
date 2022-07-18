@@ -51,7 +51,11 @@ type FeatureHistogramCondition struct {
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
+// +kubebuilder:printcolumn:name="Description",type="string",JSONPath=".spec.description"
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
+// +kubebuilder:printcolumn:name="Live",type="boolean",JSONPath=".spec.live"
+// +kubebuilder:printcolumn:name="Start",type="time",JSONPath=".spec.start"
+// +kubebuilder:printcolumn:name="End",type="time",JSONPath=".spec.end"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=featurehistograms,shortName=fh,singular=featurehistogram,categories={data,modela}
 type FeatureHistogram struct {
