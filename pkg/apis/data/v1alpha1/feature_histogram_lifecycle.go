@@ -132,6 +132,10 @@ func (feature *FeatureHistogram) IsReady() bool {
 	return feature.GetCond(FeatureHistogramReady).Status == v1.ConditionTrue
 }
 
+func (feature *FeatureHistogram) IsArchived() bool {
+	return feature.GetCond(FeatureHistogramSaved).Status == v1.ConditionTrue
+}
+
 func (feature *FeatureHistogram) Key() string {
 	return fmt.Sprintf("%s/%s/%s", "features", feature.Namespace, feature.Name)
 }
