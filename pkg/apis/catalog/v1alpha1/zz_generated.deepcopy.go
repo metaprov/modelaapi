@@ -580,14 +580,14 @@ func (in *HistogramData) DeepCopyInto(out *HistogramData) {
 		*out = make([]float64, len(*in))
 		copy(*out, *in)
 	}
-	if in.Values != nil {
-		in, out := &in.Values, &out.Values
-		*out = make([]float64, len(*in))
-		copy(*out, *in)
-	}
 	if in.Categories != nil {
 		in, out := &in.Categories, &out.Categories
 		*out = make([]string, len(*in))
+		copy(*out, *in)
+	}
+	if in.Counts != nil {
+		in, out := &in.Counts, &out.Counts
+		*out = make([]float64, len(*in))
 		copy(*out, *in)
 	}
 }

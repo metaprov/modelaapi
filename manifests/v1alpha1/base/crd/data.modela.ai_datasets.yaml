@@ -1038,6 +1038,11 @@ spec:
                               items:
                                 type: string
                               type: array
+                            counts:
+                              description: The set of values per bin
+                              items:
+                                type: number
+                              type: array
                             invalid:
                               description: The number of invalid values
                               format: int32
@@ -1048,11 +1053,6 @@ spec:
                               format: int32
                               minimum: 0
                               type: integer
-                            values:
-                              description: The set of values per bin
-                              items:
-                                type: number
-                              type: array
                           type: object
                         id:
                           description: Indicates if the column is an ID column, such

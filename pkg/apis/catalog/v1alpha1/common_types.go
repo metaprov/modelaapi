@@ -1926,16 +1926,16 @@ const (
 type HistogramData struct {
 	// The bins if the histogram describes continous variables
 	Bins []float64 `json:"bins,omitempty" protobuf:"bytes,1,rep,name=bins"`
-	// The set of values per bin
-	Values []float64 `json:"values,omitempty" protobuf:"bytes,2,rep,name=values"`
 	// The name of the categories, one per bin if this is a categorical histogram
-	Categories []string `json:"categories,omitempty" protobuf:"bytes,3,rep,name=categories"`
+	Categories []string `json:"categories,omitempty" protobuf:"bytes,2,rep,name=categories"`
+	// The set of values per bin
+	Counts []float64 `json:"counts,omitempty" protobuf:"bytes,3,rep,name=counts"`
 	// The number of missing values
 	// +kubebuilder:validation:Minimum=0
 	Missing int32 `json:"missing,omitempty" protobuf:"varint,4,opt,name=missing"`
 	// The number of invalid values
 	// +kubebuilder:validation:Minimum=0
-	Invalid int32 `json:"invalid,omitempty" protobuf:"varint,5,opt,name=invalid"`
+	InvalidCount int32 `json:"invalid,omitempty" protobuf:"varint,5,opt,name=invalid"`
 }
 
 // PermissionsSpec specifies the Accounts that have access to a DataProduct or Tenant namespace and what permissions

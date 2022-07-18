@@ -755,9 +755,9 @@ spec:
                     description: Define drift tresholds. This is usually assigned
                       from the predictor.
                     properties:
-                      tresholds:
+                      thresholds:
                         items:
-                          description: Define a treshold
+                          description: Define a threshold
                           properties:
                             metric:
                               description: The metric type name (e.g. F1 / Accuracy)

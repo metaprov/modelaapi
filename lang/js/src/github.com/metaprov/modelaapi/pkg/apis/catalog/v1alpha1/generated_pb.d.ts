@@ -677,15 +677,15 @@ export class HistogramData extends jspb.Message {
   clearBinsList(): HistogramData;
   addBins(value: number, index?: number): HistogramData;
 
-  getValuesList(): Array<number>;
-  setValuesList(value: Array<number>): HistogramData;
-  clearValuesList(): HistogramData;
-  addValues(value: number, index?: number): HistogramData;
-
   getCategoriesList(): Array<string>;
   setCategoriesList(value: Array<string>): HistogramData;
   clearCategoriesList(): HistogramData;
   addCategories(value: string, index?: number): HistogramData;
+
+  getCountsList(): Array<number>;
+  setCountsList(value: Array<number>): HistogramData;
+  clearCountsList(): HistogramData;
+  addCounts(value: number, index?: number): HistogramData;
 
   getMissing(): number;
   setMissing(value: number): HistogramData;
@@ -704,8 +704,8 @@ export class HistogramData extends jspb.Message {
 export namespace HistogramData {
   export type AsObject = {
     binsList: Array<number>,
-    valuesList: Array<number>,
     categoriesList: Array<string>,
+    countsList: Array<number>,
     missing: number,
     invalid: number,
   }

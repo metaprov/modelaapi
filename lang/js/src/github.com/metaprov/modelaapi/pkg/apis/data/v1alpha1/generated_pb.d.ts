@@ -273,34 +273,6 @@ export namespace Column {
   }
 }
 
-export class ColumnDrift extends jspb.Message {
-  getName(): string;
-  setName(value: string): ColumnDrift;
-
-  getMetricsList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>;
-  setMetricsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>): ColumnDrift;
-  clearMetricsList(): ColumnDrift;
-  addMetrics(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement;
-
-  getDrift(): boolean;
-  setDrift(value: boolean): ColumnDrift;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ColumnDrift.AsObject;
-  static toObject(includeInstance: boolean, msg: ColumnDrift): ColumnDrift.AsObject;
-  static serializeBinaryToWriter(message: ColumnDrift, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ColumnDrift;
-  static deserializeBinaryFromReader(message: ColumnDrift, reader: jspb.BinaryReader): ColumnDrift;
-}
-
-export namespace ColumnDrift {
-  export type AsObject = {
-    name: string,
-    metricsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.AsObject>,
-    drift: boolean,
-  }
-}
-
 export class ColumnHistogram extends jspb.Message {
   getName(): string;
   setName(value: string): ColumnHistogram;
@@ -309,6 +281,19 @@ export class ColumnHistogram extends jspb.Message {
   setHistogram(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.HistogramData): ColumnHistogram;
   hasHistogram(): boolean;
   clearHistogram(): ColumnHistogram;
+
+  getTraining(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.HistogramData | undefined;
+  setTraining(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.HistogramData): ColumnHistogram;
+  hasTraining(): boolean;
+  clearTraining(): ColumnHistogram;
+
+  getMetricsList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>;
+  setMetricsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>): ColumnHistogram;
+  clearMetricsList(): ColumnHistogram;
+  addMetrics(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement;
+
+  getDrift(): boolean;
+  setDrift(value: boolean): ColumnHistogram;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ColumnHistogram.AsObject;
@@ -322,6 +307,9 @@ export namespace ColumnHistogram {
   export type AsObject = {
     name: string,
     histogram?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.HistogramData.AsObject,
+    training?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.HistogramData.AsObject,
+    metricsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.AsObject>,
+    drift: boolean,
   }
 }
 
@@ -2541,22 +2529,22 @@ export namespace DatasetTestSuiteResult {
   }
 }
 
-export class DriftTreshold extends jspb.Message {
+export class DriftThreshold extends jspb.Message {
   getMetric(): string;
-  setMetric(value: string): DriftTreshold;
+  setMetric(value: string): DriftThreshold;
 
   getValue(): number;
-  setValue(value: number): DriftTreshold;
+  setValue(value: number): DriftThreshold;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DriftTreshold.AsObject;
-  static toObject(includeInstance: boolean, msg: DriftTreshold): DriftTreshold.AsObject;
-  static serializeBinaryToWriter(message: DriftTreshold, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DriftTreshold;
-  static deserializeBinaryFromReader(message: DriftTreshold, reader: jspb.BinaryReader): DriftTreshold;
+  toObject(includeInstance?: boolean): DriftThreshold.AsObject;
+  static toObject(includeInstance: boolean, msg: DriftThreshold): DriftThreshold.AsObject;
+  static serializeBinaryToWriter(message: DriftThreshold, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DriftThreshold;
+  static deserializeBinaryFromReader(message: DriftThreshold, reader: jspb.BinaryReader): DriftThreshold;
 }
 
-export namespace DriftTreshold {
+export namespace DriftThreshold {
   export type AsObject = {
     metric: string,
     value: number,
@@ -2564,10 +2552,10 @@ export namespace DriftTreshold {
 }
 
 export class DriftTresholdsSpec extends jspb.Message {
-  getTresholdsList(): Array<DriftTreshold>;
-  setTresholdsList(value: Array<DriftTreshold>): DriftTresholdsSpec;
-  clearTresholdsList(): DriftTresholdsSpec;
-  addTresholds(value?: DriftTreshold, index?: number): DriftTreshold;
+  getThresholdsList(): Array<DriftThreshold>;
+  setThresholdsList(value: Array<DriftThreshold>): DriftTresholdsSpec;
+  clearThresholdsList(): DriftTresholdsSpec;
+  addThresholds(value?: DriftThreshold, index?: number): DriftThreshold;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DriftTresholdsSpec.AsObject;
@@ -2579,7 +2567,7 @@ export class DriftTresholdsSpec extends jspb.Message {
 
 export namespace DriftTresholdsSpec {
   export type AsObject = {
-    tresholdsList: Array<DriftTreshold.AsObject>,
+    thresholdsList: Array<DriftThreshold.AsObject>,
   }
 }
 
@@ -3083,20 +3071,15 @@ export class FeatureHistogramStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): FeatureHistogramStatus;
 
-  getDataList(): Array<ColumnHistogram>;
-  setDataList(value: Array<ColumnHistogram>): FeatureHistogramStatus;
-  clearDataList(): FeatureHistogramStatus;
-  addData(value?: ColumnHistogram, index?: number): ColumnHistogram;
+  getColumnsList(): Array<ColumnHistogram>;
+  setColumnsList(value: Array<ColumnHistogram>): FeatureHistogramStatus;
+  clearColumnsList(): FeatureHistogramStatus;
+  addColumns(value?: ColumnHistogram, index?: number): ColumnHistogram;
 
   getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): FeatureHistogramStatus;
   hasLastupdated(): boolean;
   clearLastupdated(): FeatureHistogramStatus;
-
-  getDriftList(): Array<ColumnDrift>;
-  setDriftList(value: Array<ColumnDrift>): FeatureHistogramStatus;
-  clearDriftList(): FeatureHistogramStatus;
-  addDrift(value?: ColumnDrift, index?: number): ColumnDrift;
 
   getLogs(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs | undefined;
   setLogs(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs): FeatureHistogramStatus;
@@ -3128,9 +3111,8 @@ export class FeatureHistogramStatus extends jspb.Message {
 export namespace FeatureHistogramStatus {
   export type AsObject = {
     observedgeneration: number,
-    dataList: Array<ColumnHistogram.AsObject>,
+    columnsList: Array<ColumnHistogram.AsObject>,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    driftList: Array<ColumnDrift.AsObject>,
     logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
     phase: string,
     failurereason: string,

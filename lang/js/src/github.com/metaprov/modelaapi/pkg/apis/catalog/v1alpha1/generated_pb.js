@@ -7405,8 +7405,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.HistogramData.prot
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.HistogramData.toObject = function(includeInstance, msg) {
   var f, obj = {
     binsList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 1)) == null ? undefined : f,
-    valuesList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 2)) == null ? undefined : f,
-    categoriesList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
+    categoriesList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
+    countsList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 3)) == null ? undefined : f,
     missing: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     invalid: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
   };
@@ -7452,14 +7452,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.HistogramData.dese
       }
       break;
     case 2:
-      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedDouble() : [reader.readDouble()]);
-      for (var i = 0; i < values.length; i++) {
-        msg.addValues(values[i]);
-      }
-      break;
-    case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.addCategories(value);
+      break;
+    case 3:
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedDouble() : [reader.readDouble()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addCounts(values[i]);
+      }
       break;
     case 4:
       var value = /** @type {number} */ (reader.readInt32());
@@ -7505,16 +7505,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.HistogramData.seri
       f
     );
   }
-  f = message.getValuesList();
+  f = message.getCategoriesList();
   if (f.length > 0) {
-    writer.writeRepeatedDouble(
+    writer.writeRepeatedString(
       2,
       f
     );
   }
-  f = message.getCategoriesList();
+  f = message.getCountsList();
   if (f.length > 0) {
-    writer.writeRepeatedString(
+    writer.writeRepeatedDouble(
       3,
       f
     );
@@ -7574,48 +7574,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.HistogramData.prot
 
 
 /**
- * repeated double values = 2;
- * @return {!Array<number>}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.HistogramData.prototype.getValuesList = function() {
-  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedFloatingPointField(this, 2));
-};
-
-
-/**
- * @param {!Array<number>} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.HistogramData} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.HistogramData.prototype.setValuesList = function(value) {
-  return jspb.Message.setField(this, 2, value || []);
-};
-
-
-/**
- * @param {number} value
- * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.HistogramData} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.HistogramData.prototype.addValues = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 2, value, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.HistogramData} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.HistogramData.prototype.clearValuesList = function() {
-  return this.setValuesList([]);
-};
-
-
-/**
- * repeated string categories = 3;
+ * repeated string categories = 2;
  * @return {!Array<string>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.HistogramData.prototype.getCategoriesList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 3));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 2));
 };
 
 
@@ -7624,7 +7587,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.HistogramData.prot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.HistogramData} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.HistogramData.prototype.setCategoriesList = function(value) {
-  return jspb.Message.setField(this, 3, value || []);
+  return jspb.Message.setField(this, 2, value || []);
 };
 
 
@@ -7634,7 +7597,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.HistogramData.prot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.HistogramData} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.HistogramData.prototype.addCategories = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 3, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 2, value, opt_index);
 };
 
 
@@ -7644,6 +7607,43 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.HistogramData.prot
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.HistogramData.prototype.clearCategoriesList = function() {
   return this.setCategoriesList([]);
+};
+
+
+/**
+ * repeated double counts = 3;
+ * @return {!Array<number>}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.HistogramData.prototype.getCountsList = function() {
+  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedFloatingPointField(this, 3));
+};
+
+
+/**
+ * @param {!Array<number>} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.HistogramData} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.HistogramData.prototype.setCountsList = function(value) {
+  return jspb.Message.setField(this, 3, value || []);
+};
+
+
+/**
+ * @param {number} value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.HistogramData} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.HistogramData.prototype.addCounts = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 3, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.HistogramData} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.HistogramData.prototype.clearCountsList = function() {
+  return this.setCountsList([]);
 };
 
 

@@ -129,13 +129,10 @@ type FeatureHistogramStatus struct {
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,1,opt,name=observedGeneration"`
 	// The histogram values, map from column name to an histogram
 	// +kubebuilder:validation:Optional
-	Data []ColumnHistogram `json:"data,omitempty" protobuf:"bytes,2,rep,name=data"`
+	Columns []ColumnHistogram `json:"columns,omitempty" protobuf:"bytes,2,rep,name=columns"`
 	// Last time the object was updated
 	//+kubebuilder:validation:Optional
 	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,3,opt,name=lastUpdated"`
-	// The calculation of the drift metrics for each column in the histogram
-	//+kubebuilder:validation:Optional
-	Drift []ColumnDrift `json:"drift,omitempty" protobuf:"bytes,4,rep,name=drift"`
 	// The log file specification that determines the location of all logs produced by the object
 	// +kubebuilder:validation:Optional
 	Logs catalog.Logs `json:"logs" protobuf:"bytes,5,opt,name=logs"`
@@ -156,11 +153,11 @@ type FeatureHistogramStatus struct {
 
 type DriftTresholdsSpec struct {
 	// +kubebuilder:validation:Optional
-	Tresholds []DriftTreshold `json:"tresholds" protobuf:"bytes,1,opt,name=tresholds"`
+	Thresholds []DriftThreshold `json:"thresholds" protobuf:"bytes,1,opt,name=thresholds"`
 }
 
-// Define a treshold
-type DriftTreshold struct {
+// Define a threshold
+type DriftThreshold struct {
 	// The metric type name (e.g. F1 / Accuracy)
 	// +kubebuilder:validation:Required
 	Metric *catalog.Metric `json:"metric" protobuf:"bytes,1,opt,name=metric"`
@@ -170,24 +167,20 @@ type DriftTreshold struct {
 	Value *float64 `json:"value" protobuf:"bytes,2,opt,name=value"`
 }
 
-// hold the drift values.
-type ColumnDrift struct {
-	// The name of the column
-	//+kubebuilder:validation:Optional
-	Name string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
-	// Measure of drift for a column
-	//+kubebuilder:validation:Optional
-	Metrics []catalog.Measurement `json:"metrics,omitempty" protobuf:"bytes,2,opt,name=metrics"`
-	// true if drift was detected for this column
-	//+kubebuilder:validation:Optional
-	Drift *bool `json:"drift,omitempty" protobuf:"varint,3,opt,name=drift"`
-}
-
 type ColumnHistogram struct {
 	// The name of the column
 	//+kubebuilder:validation:Optional
 	Name string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
 	// Measure of drift for a column
 	//+kubebuilder:validation:Optional
-	Historgram catalog.HistogramData `json:"historgram,omitempty" protobuf:"bytes,2,opt,name=histogram"`
+	Histogram catalog.HistogramData `json:"histogram,omitempty" protobuf:"bytes,2,opt,name=histogram"`
+	// The reference training histogram for this column
+	//+kubebuilder:validation:Optional
+	Training catalog.HistogramData `json:"training,omitempty" protobuf:"bytes,3,opt,name=training"`
+	// Measure of drift for this column
+	//+kubebuilder:validation:Optional
+	Metrics []catalog.Measurement `json:"metrics,omitempty" protobuf:"bytes,4,opt,name=metrics"`
+	// true if drift was detected for this column
+	//+kubebuilder:validation:Optional
+	Drift *bool `json:"drift,omitempty" protobuf:"varint,5,opt,name=drift"`
 }

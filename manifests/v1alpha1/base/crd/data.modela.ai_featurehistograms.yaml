@@ -169,9 +169,9 @@ spec:
                 description: Define drift thresholds. This is usually assigned from
                   the predictor.
                 properties:
-                  tresholds:
+                  thresholds:
                     items:
-                      description: Define a treshold
+                      description: Define a threshold
                       properties:
                         metric:
                           description: The metric type name (e.g. F1 / Accuracy)
@@ -279,39 +279,14 @@ spec:
           status:
             description: FeatureHistogramStatus defines the observed state of FeatureHistogram
             properties:
-              conditions:
-                items:
-                  description: FeatureHistogramCondition describes the state of a
-                    deployment at a certain point.
-                  properties:
-                    lastTransitionTime:
-                      description: Last time the condition transitioned from one status
-                        to another.
-                      format: date-time
-                      type: string
-                    message:
-                      description: A human readable message indicating details about
-                        the transition.
-                      type: string
-                    reason:
-                      description: The reason for the condition's last transition.
-                      type: string
-                    status:
-                      description: Status of the condition, one of True, False, Unknown
-                      type: string
-                    type:
-                      description: Type of account condition.
-                      type: string
-                  required:
-                  - status
-                  - type
-                  type: object
-                type: array
-              data:
+              columns:
                 description: The histogram values, map from column name to an histogram
                 items:
                   properties:
-                    historgram:
+                    drift:
+                      description: true if drift was detected for this column
+                      type: boolean
+                    histogram:
                       description: Measure of drift for a column
                       properties:
                         bins:
@@ -326,6 +301,11 @@ spec:
                           items:
                             type: string
                           type: array
+                        counts:
+                          description: The set of values per bin
+                          items:
+                            type: number
+                          type: array
                         invalid:
                           description: The number of invalid values
                           format: int32
@@ -336,28 +316,9 @@ spec:
                           format: int32
                           minimum: 0
                           type: integer
-                        values:
-                          description: The set of values per bin
-                          items:
-                            type: number
-                          type: array
                       type: object
-                    name:
-                      description: The name of the column
-                      type: string
-                  type: object
-                type: array
-              drift:
-                description: The calculation of the drift metrics for each column
-                  in the histogram
-                items:
-                  description: hold the drift values.
-                  properties:
-                    drift:
-                      description: true if drift was detected for this column
-                      type: boolean
                     metrics:
-                      description: Measure of drift for a column
+                      description: Measure of drift for this column
                       items:
                         description: Measurement is a value for a specific metric
                         properties:
@@ -542,6 +503,65 @@ spec:
                     name:
                       description: The name of the column
                       type: string
+                    training:
+                      description: The reference training histogram for this column
+                      properties:
+                        bins:
+                          description: The bins if the histogram describes continous
+                            variables
+                          items:
+                            type: number
+                          type: array
+                        categories:
+                          description: The name of the categories, one per bin if
+                            this is a categorical histogram
+                          items:
+                            type: string
+                          type: array
+                        counts:
+                          description: The set of values per bin
+                          items:
+                            type: number
+                          type: array
+                        invalid:
+                          description: The number of invalid values
+                          format: int32
+                          minimum: 0
+                          type: integer
+                        missing:
+                          description: The number of missing values
+                          format: int32
+                          minimum: 0
+                          type: integer
+                      type: object
+                  type: object
+                type: array
+              conditions:
+                items:
+                  description: FeatureHistogramCondition describes the state of a
+                    deployment at a certain point.
+                  properties:
+                    lastTransitionTime:
+                      description: Last time the condition transitioned from one status
+                        to another.
+                      format: date-time
+                      type: string
+                    message:
+                      description: A human readable message indicating details about
+                        the transition.
+                      type: string
+                    reason:
+                      description: The reason for the condition's last transition.
+                      type: string
+                    status:
+                      description: Status of the condition, one of True, False, Unknown
+                      type: string
+                    type:
+                      description: Type of account condition.
+                      type: string
+                  required:
+                  - status
+                  - type
                   type: object
                 type: array
               failureMessage:

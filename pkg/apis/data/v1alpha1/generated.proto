@@ -288,21 +288,6 @@ message Column {
   optional int32 index = 48;
 }
 
-// hold the drift values.
-message ColumnDrift {
-  // The name of the column
-  // +kubebuilder:validation:Optional
-  optional string name = 1;
-
-  // Measure of drift for a column
-  // +kubebuilder:validation:Optional
-  repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement metrics = 2;
-
-  // true if drift was detected for this column
-  // +kubebuilder:validation:Optional
-  optional bool drift = 3;
-}
-
 message ColumnHistogram {
   // The name of the column
   // +kubebuilder:validation:Optional
@@ -311,6 +296,18 @@ message ColumnHistogram {
   // Measure of drift for a column
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.HistogramData histogram = 2;
+
+  // The reference training histogram for this column
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.HistogramData training = 3;
+
+  // Measure of drift for this column
+  // +kubebuilder:validation:Optional
+  repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement metrics = 4;
+
+  // true if drift was detected for this column
+  // +kubebuilder:validation:Optional
+  optional bool drift = 5;
 }
 
 // The spec for a column in the row. A column can span multiple grid based columns
@@ -1894,8 +1891,8 @@ message DatasetTestSuiteResult {
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult fileSuite = 5;
 }
 
-// Define a treshold
-message DriftTreshold {
+// Define a threshold
+message DriftThreshold {
   // The metric type name (e.g. F1 / Accuracy)
   // +kubebuilder:validation:Required
   optional string metric = 1;
@@ -1908,7 +1905,7 @@ message DriftTreshold {
 
 message DriftTresholdsSpec {
   // +kubebuilder:validation:Optional
-  repeated DriftTreshold tresholds = 1;
+  repeated DriftThreshold thresholds = 1;
 }
 
 // Entity represents a entity object
@@ -2200,15 +2197,11 @@ message FeatureHistogramStatus {
 
   // The histogram values, map from column name to an histogram
   // +kubebuilder:validation:Optional
-  repeated ColumnHistogram data = 2;
+  repeated ColumnHistogram columns = 2;
 
   // Last time the object was updated
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 3;
-
-  // The calculation of the drift metrics for each column in the histogram
-  // +kubebuilder:validation:Optional
-  repeated ColumnDrift drift = 4;
 
   // The log file specification that determines the location of all logs produced by the object
   // +kubebuilder:validation:Optional

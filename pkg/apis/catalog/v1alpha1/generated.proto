@@ -368,11 +368,11 @@ message HistogramData {
   // The bins if the histogram describes continous variables
   repeated double bins = 1;
 
-  // The set of values per bin
-  repeated double values = 2;
-
   // The name of the categories, one per bin if this is a categorical histogram
-  repeated string categories = 3;
+  repeated string categories = 2;
+
+  // The set of values per bin
+  repeated double counts = 3;
 
   // The number of missing values
   // +kubebuilder:validation:Minimum=0
