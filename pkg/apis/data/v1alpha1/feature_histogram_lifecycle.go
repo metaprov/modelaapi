@@ -8,6 +8,8 @@ package v1alpha1
 
 import (
 	"fmt"
+	"strings"
+
 	"github.com/dustin/go-humanize"
 	"github.com/metaprov/modelaapi/pkg/apis/common"
 	"github.com/metaprov/modelaapi/pkg/apis/data"
@@ -17,7 +19,6 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/client-go/kubernetes/scheme"
-	"strings"
 )
 
 //==============================================================================
@@ -229,9 +230,10 @@ func (fh *FeatureHistogram) DriftAlert(tenantRef *v1.ObjectReference, notifierNa
 // check if we should compute drift, we should compute drift,
 // if we have no drift parameters, and we pass the historam
 func (fh *FeatureHistogram) ShouldComputeDrift() bool {
-	if *fh.Spec.Live {
+	// do not compute drift on training or live histogram
+	if *fh.Spec.Live || *fh.Spec.Training || fh.IsReady() {
 		return false
 	}
-	now := metav1.Now()
-	return fh.Spec.End.Before(&now) && len(fh.Status.Drift) == 0
+	return true
+
 }
