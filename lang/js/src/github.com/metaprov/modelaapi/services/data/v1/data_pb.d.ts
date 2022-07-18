@@ -1150,15 +1150,10 @@ export class RunDriftTestsRequest extends jspb.Message {
   hasTests(): boolean;
   clearTests(): RunDriftTestsRequest;
 
-  getTraininghistogram(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram | undefined;
-  setTraininghistogram(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram): RunDriftTestsRequest;
-  hasTraininghistogram(): boolean;
-  clearTraininghistogram(): RunDriftTestsRequest;
-
-  getLivehistogram(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram | undefined;
-  setLivehistogram(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram): RunDriftTestsRequest;
-  hasLivehistogram(): boolean;
-  clearLivehistogram(): RunDriftTestsRequest;
+  getHistogram(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram | undefined;
+  setHistogram(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram): RunDriftTestsRequest;
+  hasHistogram(): boolean;
+  clearHistogram(): RunDriftTestsRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RunDriftTestsRequest.AsObject;
@@ -1180,8 +1175,7 @@ export namespace RunDriftTestsRequest {
     bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
     secretMap: Array<[string, Uint8Array | string]>,
     tests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
-    traininghistogram?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.AsObject,
-    livehistogram?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.AsObject,
+    histogram?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.AsObject,
   }
 }
 
@@ -1190,6 +1184,11 @@ export class RunDriftTestsResponse extends jspb.Message {
   setResult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): RunDriftTestsResponse;
   hasResult(): boolean;
   clearResult(): RunDriftTestsResponse;
+
+  getDriftList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>;
+  setDriftList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>): RunDriftTestsResponse;
+  clearDriftList(): RunDriftTestsResponse;
+  addDrift(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RunDriftTestsResponse.AsObject;
@@ -1202,6 +1201,7 @@ export class RunDriftTestsResponse extends jspb.Message {
 export namespace RunDriftTestsResponse {
   export type AsObject = {
     result?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
+    driftList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.AsObject>,
   }
 }
 

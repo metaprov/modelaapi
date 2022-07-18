@@ -755,7 +755,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsResponse.repeatedFields_, null);
 };
 goog.inherits(proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -10545,8 +10545,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest.toObje
     bucket: (f = msg.getBucket()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.toObject(includeInstance, f),
     secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : [],
     tests: (f = msg.getTests()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.toObject(includeInstance, f),
-    traininghistogram: (f = msg.getTraininghistogram()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.toObject(includeInstance, f),
-    livehistogram: (f = msg.getLivehistogram()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.toObject(includeInstance, f)
+    histogram: (f = msg.getHistogram()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -10637,12 +10636,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest.deseri
     case 12:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.deserializeBinaryFromReader);
-      msg.setTraininghistogram(value);
-      break;
-    case 13:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.deserializeBinaryFromReader);
-      msg.setLivehistogram(value);
+      msg.setHistogram(value);
       break;
     default:
       reader.skipField();
@@ -10749,18 +10743,10 @@ proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest.serial
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.serializeBinaryToWriter
     );
   }
-  f = message.getTraininghistogram();
+  f = message.getHistogram();
   if (f != null) {
     writer.writeMessage(
       12,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.serializeBinaryToWriter
-    );
-  }
-  f = message.getLivehistogram();
-  if (f != null) {
-    writer.writeMessage(
-      13,
       f,
       github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.serializeBinaryToWriter
     );
@@ -11124,10 +11110,10 @@ proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest.protot
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram trainingHistogram = 12;
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram histogram = 12;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram}
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest.prototype.getTraininghistogram = function() {
+proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest.prototype.getHistogram = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram, 12));
 };
@@ -11137,7 +11123,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest.protot
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest.prototype.setTraininghistogram = function(value) {
+proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest.prototype.setHistogram = function(value) {
   return jspb.Message.setWrapperField(this, 12, value);
 };
 
@@ -11146,8 +11132,8 @@ proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest.protot
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest.prototype.clearTraininghistogram = function() {
-  return this.setTraininghistogram(undefined);
+proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest.prototype.clearHistogram = function() {
+  return this.setHistogram(undefined);
 };
 
 
@@ -11155,48 +11141,18 @@ proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest.protot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest.prototype.hasTraininghistogram = function() {
+proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest.prototype.hasHistogram = function() {
   return jspb.Message.getField(this, 12) != null;
 };
 
 
+
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram liveHistogram = 13;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram}
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest.prototype.getLivehistogram = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram, 13));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest.prototype.setLivehistogram = function(value) {
-  return jspb.Message.setWrapperField(this, 13, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest.prototype.clearLivehistogram = function() {
-  return this.setLivehistogram(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsRequest.prototype.hasLivehistogram = function() {
-  return jspb.Message.getField(this, 13) != null;
-};
-
-
+proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsResponse.repeatedFields_ = [2];
 
 
 
@@ -11229,7 +11185,9 @@ proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsResponse.proto
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    result: (f = msg.getResult()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.toObject(includeInstance, f)
+    result: (f = msg.getResult()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.toObject(includeInstance, f),
+    driftList: jspb.Message.toObjectList(msg.getDriftList(),
+    github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -11271,6 +11229,11 @@ proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsResponse.deser
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.deserializeBinaryFromReader);
       msg.setResult(value);
       break;
+    case 2:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.deserializeBinaryFromReader);
+      msg.addDrift(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -11306,6 +11269,14 @@ proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsResponse.seria
       1,
       f,
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.serializeBinaryToWriter
+    );
+  }
+  f = message.getDriftList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      2,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.serializeBinaryToWriter
     );
   }
 };
@@ -11345,6 +11316,44 @@ proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsResponse.proto
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsResponse.prototype.hasResult = function() {
   return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement drift = 2;
+ * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement>}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsResponse.prototype.getDriftList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement>} */ (
+    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement, 2));
+};
+
+
+/**
+ * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement>} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsResponse} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsResponse.prototype.setDriftList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsResponse.prototype.addDrift = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsResponse} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunDriftTestsResponse.prototype.clearDriftList = function() {
+  return this.setDriftList([]);
 };
 
 

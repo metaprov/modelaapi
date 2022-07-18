@@ -269,13 +269,13 @@ message RunDriftTestsRequest {
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 8;
     map<string,bytes> secret = 10;
     github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite tests = 11;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram trainingHistogram = 12;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram liveHistogram = 13;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram histogram = 12;    
 }
 
 message RunDriftTestsResponse {
     // For each histogram answer the value of the drift parameter.
     github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult result = 1;
+    repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement drift = 2;
 }
 
 // Ground true tests
