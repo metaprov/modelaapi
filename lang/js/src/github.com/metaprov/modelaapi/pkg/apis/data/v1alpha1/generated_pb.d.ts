@@ -2551,26 +2551,6 @@ export namespace DriftThreshold {
   }
 }
 
-export class DriftTresholdsSpec extends jspb.Message {
-  getThresholdsList(): Array<DriftThreshold>;
-  setThresholdsList(value: Array<DriftThreshold>): DriftTresholdsSpec;
-  clearThresholdsList(): DriftTresholdsSpec;
-  addThresholds(value?: DriftThreshold, index?: number): DriftThreshold;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DriftTresholdsSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: DriftTresholdsSpec): DriftTresholdsSpec.AsObject;
-  static serializeBinaryToWriter(message: DriftTresholdsSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DriftTresholdsSpec;
-  static deserializeBinaryFromReader(message: DriftTresholdsSpec, reader: jspb.BinaryReader): DriftTresholdsSpec;
-}
-
-export namespace DriftTresholdsSpec {
-  export type AsObject = {
-    thresholdsList: Array<DriftThreshold.AsObject>,
-  }
-}
-
 export class Entity extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): Entity;
@@ -3033,10 +3013,10 @@ export class FeatureHistogramSpec extends jspb.Message {
   hasBasefeaturehistogram(): boolean;
   clearBasefeaturehistogram(): FeatureHistogramSpec;
 
-  getThresholds(): DriftTresholdsSpec | undefined;
-  setThresholds(value?: DriftTresholdsSpec): FeatureHistogramSpec;
-  hasThresholds(): boolean;
-  clearThresholds(): FeatureHistogramSpec;
+  getDriftthresholdsList(): Array<DriftThreshold>;
+  setDriftthresholdsList(value: Array<DriftThreshold>): FeatureHistogramSpec;
+  clearDriftthresholdsList(): FeatureHistogramSpec;
+  addDriftthresholds(value?: DriftThreshold, index?: number): DriftThreshold;
 
   getSyncintervalsec(): number;
   setSyncintervalsec(value: number): FeatureHistogramSpec;
@@ -3062,7 +3042,7 @@ export namespace FeatureHistogramSpec {
     start?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     end?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     basefeaturehistogram?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    thresholds?: DriftTresholdsSpec.AsObject,
+    driftthresholdsList: Array<DriftThreshold.AsObject>,
     syncintervalsec: number,
   }
 }

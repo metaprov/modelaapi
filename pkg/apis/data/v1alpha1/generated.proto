@@ -1903,11 +1903,6 @@ message DriftThreshold {
   optional double value = 2;
 }
 
-message DriftTresholdsSpec {
-  // +kubebuilder:validation:Optional
-  repeated DriftThreshold thresholds = 1;
-}
-
 // Entity represents a entity object
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
@@ -2184,7 +2179,7 @@ message FeatureHistogramSpec {
 
   // Define drift thresholds. This is usually assigned from the predictor.
   // +kubebuilder:validation:Optional
-  optional DriftTresholdsSpec thresholds = 13;
+  repeated DriftThreshold driftThresholds = 13;
 
   // How much time in seconds, we should sync the im memory histograms to etcd
   // Default is one minute.

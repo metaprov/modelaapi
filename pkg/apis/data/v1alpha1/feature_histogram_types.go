@@ -118,7 +118,7 @@ type FeatureHistogramSpec struct {
 	BaseFeatureHistogram v1.ObjectReference `json:"baseFeatureHistogram,omitempty" protobuf:"bytes,12,opt,name=baseFeatureHistogram"`
 	// Define drift thresholds. This is usually assigned from the predictor.
 	// +kubebuilder:validation:Optional
-	Thresholds DriftTresholdsSpec `json:"thresholds,omitempty" protobuf:"bytes,13,opt,name=thresholds"`
+	DriftThresholds []DriftThreshold `json:"driftThresholds" protobuf:"bytes,13,opt,name=driftThresholds"`
 	// How much time in seconds, we should sync the im memory histograms to etcd
 	// Default is one minute.
 	// +kubebuilder:default:=60
@@ -153,11 +153,6 @@ type FeatureHistogramStatus struct {
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
 	Conditions []FeatureHistogramCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,9,rep,name=conditions"`
-}
-
-type DriftTresholdsSpec struct {
-	// +kubebuilder:validation:Optional
-	Thresholds []DriftThreshold `json:"thresholds" protobuf:"bytes,1,opt,name=thresholds"`
 }
 
 // Define a threshold
