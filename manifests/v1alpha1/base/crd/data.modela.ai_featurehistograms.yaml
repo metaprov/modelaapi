@@ -38,10 +38,10 @@ spec:
       type: boolean
     - jsonPath: .spec.start
       name: Start
-      type: time
+      type: date
     - jsonPath: .spec.end
       name: End
-      type: time
+      type: date
     - jsonPath: .metadata.creationTimestamp
       name: Age
       type: date

@@ -2085,8 +2085,8 @@ message FeatureCondition {
 // +kubebuilder:printcolumn:name="Description",type="string",JSONPath=".spec.description"
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
 // +kubebuilder:printcolumn:name="Live",type="boolean",JSONPath=".spec.live"
-// +kubebuilder:printcolumn:name="Start",type="time",JSONPath=".spec.start"
-// +kubebuilder:printcolumn:name="End",type="time",JSONPath=".spec.end"
+// +kubebuilder:printcolumn:name="Start",type="date",JSONPath=".spec.start"
+// +kubebuilder:printcolumn:name="End",type="date",JSONPath=".spec.end"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=featurehistograms,shortName=fh,singular=featurehistogram,categories={data,modela}
 message FeatureHistogram {
