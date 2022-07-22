@@ -224,10 +224,6 @@ func (sc *DataSource) Poplulate() {
 
 }
 
-func (schema *DataSource) ToYamlFile() ([]byte, error) {
-	return yaml.Marshal(schema)
-}
-
 func (in *DataSource) ActiveColumns() (string, error) {
 	columns := make([]string, 0)
 	for _, v := range in.Spec.Schema.Columns {
