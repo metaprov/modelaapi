@@ -1502,9 +1502,6 @@ spec:
                                     type: string
                                   type: array
                               type: object
-                            assertThat:
-                              description: The assertion type
-                              type: string
                             error:
                               description: An error occur if the system cannot execute
                                 the test case (e.g. connection error).
@@ -1515,8 +1512,11 @@ spec:
                             failureMsg:
                               description: An optional
                               type: string
+                            name:
+                              description: The test case name for this result.
+                              type: string
                           required:
-                          - assertThat
+                          - name
                           type: object
                         type: array
                     type: object
@@ -1774,9 +1774,6 @@ spec:
                                     type: string
                                   type: array
                               type: object
-                            assertThat:
-                              description: The assertion type
-                              type: string
                             error:
                               description: An error occur if the system cannot execute
                                 the test case (e.g. connection error).
@@ -1787,8 +1784,11 @@ spec:
                             failureMsg:
                               description: An optional
                               type: string
+                            name:
+                              description: The test case name for this result.
+                              type: string
                           required:
-                          - assertThat
+                          - name
                           type: object
                         type: array
                     type: object
@@ -2047,9 +2047,6 @@ spec:
                                     type: string
                                   type: array
                               type: object
-                            assertThat:
-                              description: The assertion type
-                              type: string
                             error:
                               description: An error occur if the system cannot execute
                                 the test case (e.g. connection error).
@@ -2060,8 +2057,11 @@ spec:
                             failureMsg:
                               description: An optional
                               type: string
+                            name:
+                              description: The test case name for this result.
+                              type: string
                           required:
-                          - assertThat
+                          - name
                           type: object
                         type: array
                     type: object
@@ -2320,9 +2320,6 @@ spec:
                                     type: string
                                   type: array
                               type: object
-                            assertThat:
-                              description: The assertion type
-                              type: string
                             error:
                               description: An error occur if the system cannot execute
                                 the test case (e.g. connection error).
@@ -2333,8 +2330,11 @@ spec:
                             failureMsg:
                               description: An optional
                               type: string
+                            name:
+                              description: The test case name for this result.
+                              type: string
                           required:
-                          - assertThat
+                          - name
                           type: object
                         type: array
                     type: object
@@ -2593,9 +2593,6 @@ spec:
                                     type: string
                                   type: array
                               type: object
-                            assertThat:
-                              description: The assertion type
-                              type: string
                             error:
                               description: An error occur if the system cannot execute
                                 the test case (e.g. connection error).
@@ -2606,8 +2603,11 @@ spec:
                             failureMsg:
                               description: An optional
                               type: string
+                            name:
+                              description: The test case name for this result.
+                              type: string
                           required:
-                          - assertThat
+                          - name
                           type: object
                         type: array
                     type: object

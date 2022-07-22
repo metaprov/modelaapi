@@ -419,6 +419,9 @@ export class DataTestCase extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): DataTestCase;
 
+  getName(): string;
+  setName(value: string): DataTestCase;
+
   getAssertthat(): string;
   setAssertthat(value: string): DataTestCase;
 
@@ -430,6 +433,9 @@ export class DataTestCase extends jspb.Message {
   getColumn(): string;
   setColumn(value: string): DataTestCase;
 
+  getType(): string;
+  setType(value: string): DataTestCase;
+
   getMetric(): string;
   setMetric(value: string): DataTestCase;
 
@@ -439,28 +445,25 @@ export class DataTestCase extends jspb.Message {
   getExpectedcategory(): string;
   setExpectedcategory(value: string): DataTestCase;
 
-  getExpectedmin(): number;
-  setExpectedmin(value: number): DataTestCase;
+  getLower(): number;
+  setLower(value: number): DataTestCase;
 
-  getExpectedmax(): number;
-  setExpectedmax(value: number): DataTestCase;
+  getUpper(): number;
+  setUpper(value: number): DataTestCase;
 
   getExpectedsetList(): Array<string>;
   setExpectedsetList(value: Array<string>): DataTestCase;
   clearExpectedsetList(): DataTestCase;
   addExpectedset(value: string, index?: number): DataTestCase;
 
-  getStrictmin(): boolean;
-  setStrictmin(value: boolean): DataTestCase;
+  getLowerinclusive(): boolean;
+  setLowerinclusive(value: boolean): DataTestCase;
 
-  getStrictmax(): boolean;
-  setStrictmax(value: boolean): DataTestCase;
+  getUpperinclusive(): boolean;
+  setUpperinclusive(value: boolean): DataTestCase;
 
   getGenerated(): boolean;
   setGenerated(value: boolean): DataTestCase;
-
-  getDisplayname(): string;
-  setDisplayname(value: string): DataTestCase;
 
   getTagsList(): Array<string>;
   setTagsList(value: Array<string>): DataTestCase;
@@ -469,6 +472,11 @@ export class DataTestCase extends jspb.Message {
 
   getColumn2(): string;
   setColumn2(value: string): DataTestCase;
+
+  getEntityref2(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setEntityref2(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): DataTestCase;
+  hasEntityref2(): boolean;
+  clearEntityref2(): DataTestCase;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataTestCase.AsObject;
@@ -481,27 +489,29 @@ export class DataTestCase extends jspb.Message {
 export namespace DataTestCase {
   export type AsObject = {
     enabled: boolean,
+    name: string,
     assertthat: string,
     entityref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     column: string,
+    type: string,
     metric: string,
     expectedvalue: number,
     expectedcategory: string,
-    expectedmin: number,
-    expectedmax: number,
+    lower: number,
+    upper: number,
     expectedsetList: Array<string>,
-    strictmin: boolean,
-    strictmax: boolean,
+    lowerinclusive: boolean,
+    upperinclusive: boolean,
     generated: boolean,
-    displayname: string,
     tagsList: Array<string>,
     column2: string,
+    entityref2?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
   }
 }
 
 export class DataTestCaseResult extends jspb.Message {
-  getAssertthat(): string;
-  setAssertthat(value: string): DataTestCaseResult;
+  getName(): string;
+  setName(value: string): DataTestCaseResult;
 
   getActual(): Measurement | undefined;
   setActual(value?: Measurement): DataTestCaseResult;
@@ -527,7 +537,7 @@ export class DataTestCaseResult extends jspb.Message {
 
 export namespace DataTestCaseResult {
   export type AsObject = {
-    assertthat: string,
+    name: string,
     actual?: Measurement.AsObject,
     failure: boolean,
     error: boolean,
