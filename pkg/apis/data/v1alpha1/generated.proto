@@ -1481,6 +1481,10 @@ message DataSourceSpec {
   // InferredFrom specifies the location of the data that was used to generate the schema of the Data Source
   // +kubebuilder:validation:Optional
   optional DataLocation inferredFrom = 14;
+
+  // The specification for tests for a new dataset
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite testsTemplate = 15;
 }
 
 // DataSourceStatus defines the observed state of a DataSource object
@@ -1710,6 +1714,10 @@ message DatasetSpec {
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool generateFeatureHistogram = 28;
+
+  // The specification for tests for a new dataset
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite tests = 29;
 }
 
 // DatasetStatistics contains statistics about the Dataset's overall data, as well as every feature of the data. The
@@ -1829,6 +1837,10 @@ message DatasetStatus {
   // The generated training feature histogram, Empty if no feature histogram generated
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference featureHistogramRef = 22;
+
+  // The specification for tests for a new dataset
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult testResult = 29;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
@@ -2177,12 +2189,13 @@ message FeatureHistogramStatus {
   optional string failureMessage = 8;
 
   // Test suite for this histogram.
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult testResult = 15;
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult testsResult = 9;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated FeatureHistogramCondition conditions = 9;
+  repeated FeatureHistogramCondition conditions = 10;
 }
 
 // +kubebuilder:object:root=true
@@ -3551,10 +3564,8 @@ message Schema {
   optional RecommendationSchema recommendationSchema = 2;
 
   // The collection of columns and their attributes
+  // +kubebuilder:validation:Optional
   repeated Column columns = 3;
-
-  // The specification for tests for a new dataset
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite tests = 4;
 }
 
 // SqlQuery represent a single sqlquery in the sqlquery store.

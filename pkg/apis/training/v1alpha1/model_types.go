@@ -304,6 +304,9 @@ type ModelSpec struct {
 	// Interpretability specifies the configuration to generate model interpretability visualizations
 	// +kubebuilder:validation:Optional
 	Interpretability InterpretabilitySpec `json:"interpretability,omitempty" protobuf:"bytes,44,opt,name=interpretability"`
+	// Interpretability specifies the configuration to generate model interpretability visualizations
+	// +kubebuilder:validation:Optional
+	UnitTests catalog.TestSuite `json:"unitTests,omitempty" protobuf:"bytes,45,opt,name=unitTests"`
 }
 
 // EnsembleSpec specifies the parameters of an ensemble model
@@ -520,10 +523,13 @@ type ModelStatus struct {
 	// Images specifies the container images used to train the model
 	// +kubebuilder:validation:Optional
 	Images catalog.Images `json:"images,omitempty" protobuf:"bytes,68,opt,name=images"`
+	// Interpretability specifies the configuration to generate model interpretability visualizations
+	// +kubebuilder:validation:Optional
+	TestsResult catalog.TestSuite `json:"testsResult,omitempty" protobuf:"bytes,69,opt,name="`
 	// +kubebuilder:validation:Optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
-	Conditions []ModelCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,69,rep,name=conditions"`
+	Conditions []ModelCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,70,rep,name=conditions"`
 }
 
 // Holds the information about the execution environment.

@@ -3122,6 +3122,11 @@ export class ModelSpec extends jspb.Message {
   hasInterpretability(): boolean;
   clearInterpretability(): ModelSpec;
 
+  getUnittests(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
+  setUnittests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): ModelSpec;
+  hasUnittests(): boolean;
+  clearUnittests(): ModelSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelSpec): ModelSpec.AsObject;
@@ -3175,6 +3180,7 @@ export namespace ModelSpec {
     trialid: number,
     governance?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.GovernanceSpec.AsObject,
     interpretability?: InterpretabilitySpec.AsObject,
+    unittests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
   }
 }
 
@@ -3431,6 +3437,11 @@ export class ModelStatus extends jspb.Message {
   hasImages(): boolean;
   clearImages(): ModelStatus;
 
+  getTestsresult(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
+  setTestsresult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): ModelStatus;
+  hasTestsresult(): boolean;
+  clearTestsresult(): ModelStatus;
+
   getConditionsList(): Array<ModelCondition>;
   setConditionsList(value: Array<ModelCondition>): ModelStatus;
   clearConditionsList(): ModelStatus;
@@ -3510,6 +3521,7 @@ export namespace ModelStatus {
     governancestatus?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.GovernanceStatus.AsObject,
     interpretability?: InterpretabilityStatus.AsObject,
     images?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Images.AsObject,
+    testsresult?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
     conditionsList: Array<ModelCondition.AsObject>,
   }
 }
@@ -3525,10 +3537,10 @@ export class ModelTestSuite extends jspb.Message {
   hasDatasetref(): boolean;
   clearDatasetref(): ModelTestSuite;
 
-  getSuite(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
-  setSuite(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): ModelTestSuite;
-  hasSuite(): boolean;
-  clearSuite(): ModelTestSuite;
+  getTests(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
+  setTests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): ModelTestSuite;
+  hasTests(): boolean;
+  clearTests(): ModelTestSuite;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelTestSuite.AsObject;
@@ -3542,7 +3554,7 @@ export namespace ModelTestSuite {
   export type AsObject = {
     baselinemodelref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     datasetref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    suite?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
+    tests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
   }
 }
 
@@ -5020,6 +5032,11 @@ export class StudySpec extends jspb.Message {
   getCodegenerated(): boolean;
   setCodegenerated(value: boolean): StudySpec;
 
+  getTeststemplate(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
+  setTeststemplate(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): StudySpec;
+  hasTeststemplate(): boolean;
+  clearTeststemplate(): StudySpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): StudySpec.AsObject;
   static toObject(includeInstance: boolean, msg: StudySpec): StudySpec.AsObject;
@@ -5067,6 +5084,7 @@ export namespace StudySpec {
     modelversion: string,
     timeoutinsecs: number,
     codegenerated: boolean,
+    teststemplate?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
   }
 }
 

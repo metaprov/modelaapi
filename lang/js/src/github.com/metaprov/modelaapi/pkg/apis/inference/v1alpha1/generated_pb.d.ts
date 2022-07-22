@@ -901,32 +901,6 @@ export namespace FeedbackTestSpec {
   }
 }
 
-export class FeedbackTestStatus extends jspb.Message {
-  getResults(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
-  setResults(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): FeedbackTestStatus;
-  hasResults(): boolean;
-  clearResults(): FeedbackTestStatus;
-
-  getLastrun(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLastrun(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): FeedbackTestStatus;
-  hasLastrun(): boolean;
-  clearLastrun(): FeedbackTestStatus;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): FeedbackTestStatus.AsObject;
-  static toObject(includeInstance: boolean, msg: FeedbackTestStatus): FeedbackTestStatus.AsObject;
-  static serializeBinaryToWriter(message: FeedbackTestStatus, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): FeedbackTestStatus;
-  static deserializeBinaryFromReader(message: FeedbackTestStatus, reader: jspb.BinaryReader): FeedbackTestStatus;
-}
-
-export namespace FeedbackTestStatus {
-  export type AsObject = {
-    results?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
-    lastrun?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-  }
-}
-
 export class ForecastSpec extends jspb.Message {
   getHierarchyvaluesMap(): jspb.Map<string, string>;
   clearHierarchyvaluesMap(): ForecastSpec;
@@ -1894,15 +1868,15 @@ export class PredictorStatus extends jspb.Message {
   hasLastpredictiondataset(): boolean;
   clearLastpredictiondataset(): PredictorStatus;
 
-  getFeedbacktests(): FeedbackTestStatus | undefined;
-  setFeedbacktests(value?: FeedbackTestStatus): PredictorStatus;
-  hasFeedbacktests(): boolean;
-  clearFeedbacktests(): PredictorStatus;
+  getFeedbacktestsresult(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
+  setFeedbacktestsresult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): PredictorStatus;
+  hasFeedbacktestsresult(): boolean;
+  clearFeedbacktestsresult(): PredictorStatus;
 
-  getDriftdetectionresults(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
-  setDriftdetectionresults(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): PredictorStatus;
-  hasDriftdetectionresults(): boolean;
-  clearDriftdetectionresults(): PredictorStatus;
+  getDriftdetectiontestsresults(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
+  setDriftdetectiontestsresults(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): PredictorStatus;
+  hasDriftdetectiontestsresults(): boolean;
+  clearDriftdetectiontestsresults(): PredictorStatus;
 
   getConditionsList(): Array<PredictorCondition>;
   setConditionsList(value: Array<PredictorCondition>): PredictorStatus;
@@ -1931,8 +1905,8 @@ export namespace PredictorStatus {
     failuremessage: string,
     loadbalancerstatus?: k8s_io_api_core_v1_generated_pb.LoadBalancerStatus.AsObject,
     lastpredictiondataset?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    feedbacktests?: FeedbackTestStatus.AsObject,
-    driftdetectionresults?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
+    feedbacktestsresult?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
+    driftdetectiontestsresults?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
     conditionsList: Array<PredictorCondition.AsObject>,
   }
 }

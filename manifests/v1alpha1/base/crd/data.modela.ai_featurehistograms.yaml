@@ -842,7 +842,7 @@ spec:
               phase:
                 description: The phase of the feature histogram
                 type: string
-              testResult:
+              testsResult:
                 description: Test suite for this histogram.
                 properties:
                   entityRef:

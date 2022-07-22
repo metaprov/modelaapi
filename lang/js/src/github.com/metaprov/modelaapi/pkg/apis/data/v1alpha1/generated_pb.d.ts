@@ -1935,6 +1935,11 @@ export class DataSourceSpec extends jspb.Message {
   hasInferredfrom(): boolean;
   clearInferredfrom(): DataSourceSpec;
 
+  getTeststemplate(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
+  setTeststemplate(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): DataSourceSpec;
+  hasTeststemplate(): boolean;
+  clearTeststemplate(): DataSourceSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataSourceSpec.AsObject;
   static toObject(includeInstance: boolean, msg: DataSourceSpec): DataSourceSpec.AsObject;
@@ -1958,6 +1963,7 @@ export namespace DataSourceSpec {
     relationshipsList: Array<RelationshipSpec.AsObject>,
     labeling?: LabelingSpec.AsObject,
     inferredfrom?: DataLocation.AsObject,
+    teststemplate?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
   }
 }
 
@@ -2209,6 +2215,11 @@ export class DatasetSpec extends jspb.Message {
   getGeneratefeaturehistogram(): boolean;
   setGeneratefeaturehistogram(value: boolean): DatasetSpec;
 
+  getTests(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
+  setTests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): DatasetSpec;
+  hasTests(): boolean;
+  clearTests(): DatasetSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DatasetSpec.AsObject;
   static toObject(includeInstance: boolean, msg: DatasetSpec): DatasetSpec.AsObject;
@@ -2246,6 +2257,7 @@ export namespace DatasetSpec {
     predictiondatasetref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     predictorref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     generatefeaturehistogram: boolean,
+    tests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
   }
 }
 
@@ -2375,6 +2387,11 @@ export class DatasetStatus extends jspb.Message {
   hasFeaturehistogramref(): boolean;
   clearFeaturehistogramref(): DatasetStatus;
 
+  getTestresult(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
+  setTestresult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): DatasetStatus;
+  hasTestresult(): boolean;
+  clearTestresult(): DatasetStatus;
+
   getConditionsList(): Array<DatasetCondition>;
   setConditionsList(value: Array<DatasetCondition>): DatasetStatus;
   clearConditionsList(): DatasetStatus;
@@ -2411,6 +2428,7 @@ export namespace DatasetStatus {
     starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     featurehistogramref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    testresult?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
     conditionsList: Array<DatasetCondition.AsObject>,
   }
 }
@@ -2993,10 +3011,10 @@ export class FeatureHistogramStatus extends jspb.Message {
   getFailuremessage(): string;
   setFailuremessage(value: string): FeatureHistogramStatus;
 
-  getTestresult(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
-  setTestresult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): FeatureHistogramStatus;
-  hasTestresult(): boolean;
-  clearTestresult(): FeatureHistogramStatus;
+  getTestsresult(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
+  setTestsresult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): FeatureHistogramStatus;
+  hasTestsresult(): boolean;
+  clearTestsresult(): FeatureHistogramStatus;
 
   getConditionsList(): Array<FeatureHistogramCondition>;
   setConditionsList(value: Array<FeatureHistogramCondition>): FeatureHistogramStatus;
@@ -3020,7 +3038,7 @@ export namespace FeatureHistogramStatus {
     phase: string,
     failurereason: string,
     failuremessage: string,
-    testresult?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
+    testsresult?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
     conditionsList: Array<FeatureHistogramCondition.AsObject>,
   }
 }
@@ -5351,11 +5369,6 @@ export class Schema extends jspb.Message {
   clearColumnsList(): Schema;
   addColumns(value?: Column, index?: number): Column;
 
-  getTests(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
-  setTests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): Schema;
-  hasTests(): boolean;
-  clearTests(): Schema;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Schema.AsObject;
   static toObject(includeInstance: boolean, msg: Schema): Schema.AsObject;
@@ -5369,7 +5382,6 @@ export namespace Schema {
     timeseriesschema?: TimeSeriesSchema.AsObject,
     recommendationschema?: RecommendationSchema.AsObject,
     columnsList: Array<Column.AsObject>,
-    tests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
   }
 }
 

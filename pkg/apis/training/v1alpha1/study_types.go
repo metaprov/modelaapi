@@ -618,6 +618,9 @@ type StudySpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	CodeGenerated *bool `json:"codeGenerated,omitempty" protobuf:"varint,37,opt,name=codeGenerated"`
+	// A template for models unit tests
+	// +kubebuilder:validation:Optional
+	TestsTemplate catalog.TestSuite `json:"testsTemplate,omitempty" protobuf:"bytes,38,opt,name=testsTemplate"`
 }
 
 // StudyStatus defines the observed state of a Study

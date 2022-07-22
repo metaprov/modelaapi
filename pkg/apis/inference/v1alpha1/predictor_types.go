@@ -443,10 +443,10 @@ type PredictorStatus struct {
 	LastPredictionDataset *metav1.Time `json:"lastPredictionDataset,omitempty" protobuf:"bytes,13,opt,name=lastPredictionDataset"`
 	// The result of running the last monitor.
 	//+kubebuilder:validation:Optional
-	FeedbackTests FeedbackTestStatus `json:"feedbackTests,omitempty" protobuf:"bytes,14,rep,name=feedbackTests"`
+	FeedbackTestsResult catalog.TestSuiteResult `json:"feedbackTestsResult,omitempty" protobuf:"bytes,14,opt,name=feedbackTestsResult"`
 	// The result of running the last monitor.
 	//+kubebuilder:validation:Optional
-	DriftDetectionResult catalog.TestSuiteResult `json:"driftDetectionResult,omitempty" protobuf:"bytes,15,opt,name=driftDetectionResults"`
+	DriftDetectionTestsResult catalog.TestSuiteResult `json:"driftDetectionTestsResult,omitempty" protobuf:"bytes,15,opt,name=driftDetectionTestsResults"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
@@ -654,11 +654,4 @@ type FastSlowModelSpec struct {
 type DriftDetectionStatus struct {
 	// +kubebuilder:validation:Optional
 
-}
-
-type FeedbackTestStatus struct {
-	// +kubebuilder:validation:Optional
-	Results catalog.TestSuiteResult `json:"results,omitempty" protobuf:"bytes,1,opt,name=results"`
-	// +kubebuilder:validation:Optional
-	LastRun *metav1.Time `json:"lastRun,omitempty" protobuf:"bytes,2,opt,name=lastRun"`
 }

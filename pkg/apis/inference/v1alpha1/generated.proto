@@ -576,14 +576,6 @@ message FeedbackTestSpec {
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 8;
 }
 
-message FeedbackTestStatus {
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult results = 1;
-
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 2;
-}
-
 // ForecastSpec specifies the details of a forecasting model
 message ForecastSpec {
   // The hierarchy specification, which maps columns to values
@@ -1202,11 +1194,11 @@ message PredictorStatus {
 
   // The result of running the last monitor.
   // +kubebuilder:validation:Optional
-  optional FeedbackTestStatus feedbackTests = 14;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult feedbackTestsResult = 14;
 
   // The result of running the last monitor.
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult driftDetectionResults = 15;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult driftDetectionTestsResults = 15;
 
   // +patchMergeKey=type
   // +patchStrategy=merge

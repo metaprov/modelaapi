@@ -202,6 +202,9 @@ type DatasetSpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	GenerateFeatureHistogram *bool `json:"generateFeatureHistogram,omitempty" protobuf:"varint,28,opt,name=generateFeatureHistogram"`
+	// The specification for tests for a new dataset
+	// +kubebuilder:validation:Optional
+	Tests catalog.TestSuite `json:"tests,omitempty" protobuf:"bytes,29,opt,name=tests"`
 }
 
 // DatasetStatus defines the observed state of a Dataset object
@@ -273,6 +276,9 @@ type DatasetStatus struct {
 	// The generated training feature histogram, Empty if no feature histogram generated
 	// +kubebuilder:validation:Optional
 	FeatureHistogramRef v1.ObjectReference `json:"featureHistogramRef,omitempty" protobuf:"bytes,22,opt,name=featureHistogramRef"`
+	// The specification for tests for a new dataset
+	// +kubebuilder:validation:Optional
+	TestResult catalog.TestSuiteResult `json:"testResults,omitempty" protobuf:"bytes,29,opt,name=testResult"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional

@@ -152,11 +152,12 @@ type FeatureHistogramStatus struct {
 	//+kubebuilder:validation:Optional
 	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,8,opt,name=failureMessage"`
 	// Test suite for this histogram.
-	TestsResult catalog.TestSuiteResult `json:"testResult,omitempty" protobuf:"bytes,15,opt,name=testResult"`
+	//+kubebuilder:validation:Optional
+	TestsResult catalog.TestSuiteResult `json:"testsResult,omitempty" protobuf:"bytes,9,opt,name=testsResult"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []FeatureHistogramCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,9,rep,name=conditions"`
+	Conditions []FeatureHistogramCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,10,rep,name=conditions"`
 }
 
 // Define a threshold

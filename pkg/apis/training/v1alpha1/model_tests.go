@@ -39,5 +39,5 @@ type ModelTestSuite struct {
 	DatasetRef v1.ObjectReference `json:"datasetRef,omitempty" protobuf:"bytes,2,opt,name=datasetRef"`
 	// Define the column name for the validation role
 	// +kubebuilder:validation:Optional
-	Suite catalog.TestSuite `json:"suite,omitempty" protobuf:"bytes,3,opt,name=suite"`
+	Tests catalog.TestSuite `json:"tests,omitempty" protobuf:"bytes,3,opt,name=tests"`
 }

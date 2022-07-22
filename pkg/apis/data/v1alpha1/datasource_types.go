@@ -277,9 +277,8 @@ type Schema struct {
 	// +kubebuilder:validation:Optional
 	RecommendationSchema RecommendationSchema `json:"recommendationSchema,omitempty" protobuf:"bytes,2,opt,name=recommendationSchema"`
 	// The collection of columns and their attributes
+	// +kubebuilder:validation:Optional
 	Columns []Column `json:"columns,omitempty" protobuf:"bytes,3,rep,name=columns"`
-	// The specification for tests for a new dataset
-	Tests catalog.TestSuite `json:"tests,omitempty" protobuf:"bytes,4,opt,name=tests"`
 }
 
 type TimeSeriesSchema struct {
@@ -565,6 +564,9 @@ type DataSourceSpec struct {
 	// InferredFrom specifies the location of the data that was used to generate the schema of the Data Source
 	// +kubebuilder:validation:Optional
 	InferredFrom *DataLocation `json:"inferredFrom,omitempty" protobuf:"bytes,14,opt,name=inferredFrom"`
+	// The specification for tests for a new dataset
+	// +kubebuilder:validation:Optional
+	TestsTemplate catalog.TestSuite `json:"testsTemplate,omitempty" protobuf:"bytes,15,opt,name=testsTemplate"`
 }
 
 // FlatFileFormatSpec defines the format for incoming flat-files to be parsed
