@@ -306,7 +306,7 @@ type ModelSpec struct {
 	Interpretability InterpretabilitySpec `json:"interpretability,omitempty" protobuf:"bytes,44,opt,name=interpretability"`
 	// Interpretability specifies the configuration to generate model interpretability visualizations
 	// +kubebuilder:validation:Optional
-	UnitTests catalog.TestSuite `json:"unitTests,omitempty" protobuf:"bytes,45,opt,name=unitTests"`
+	Tests catalog.TestSuite `json:"tests,omitempty" protobuf:"bytes,45,opt,name=tests"`
 }
 
 // EnsembleSpec specifies the parameters of an ensemble model

@@ -2168,7 +2168,7 @@ message ModelSpec {
 
   // Interpretability specifies the configuration to generate model interpretability visualizations
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite unitTests = 45;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite tests = 45;
 }
 
 // ModelStatus defines the observed state of a Model

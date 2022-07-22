@@ -441,12 +441,6 @@ type PredictorStatus struct {
 	// The last time that a prediction dataset was created
 	//+kubebuilder:validation:Optional
 	LastPredictionDataset *metav1.Time `json:"lastPredictionDataset,omitempty" protobuf:"bytes,13,opt,name=lastPredictionDataset"`
-	// The result of running the last monitor.
-	//+kubebuilder:validation:Optional
-	FeedbackTestsResult catalog.TestSuiteResult `json:"feedbackTestsResult,omitempty" protobuf:"bytes,14,opt,name=feedbackTestsResult"`
-	// The result of running the last monitor.
-	//+kubebuilder:validation:Optional
-	DriftDetectionTestsResult catalog.TestSuiteResult `json:"driftDetectionTestsResult,omitempty" protobuf:"bytes,15,opt,name=driftDetectionTestsResults"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional

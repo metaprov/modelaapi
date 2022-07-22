@@ -1868,16 +1868,6 @@ export class PredictorStatus extends jspb.Message {
   hasLastpredictiondataset(): boolean;
   clearLastpredictiondataset(): PredictorStatus;
 
-  getFeedbacktestsresult(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
-  setFeedbacktestsresult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): PredictorStatus;
-  hasFeedbacktestsresult(): boolean;
-  clearFeedbacktestsresult(): PredictorStatus;
-
-  getDriftdetectiontestsresults(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
-  setDriftdetectiontestsresults(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): PredictorStatus;
-  hasDriftdetectiontestsresults(): boolean;
-  clearDriftdetectiontestsresults(): PredictorStatus;
-
   getConditionsList(): Array<PredictorCondition>;
   setConditionsList(value: Array<PredictorCondition>): PredictorStatus;
   clearConditionsList(): PredictorStatus;
@@ -1905,8 +1895,6 @@ export namespace PredictorStatus {
     failuremessage: string,
     loadbalancerstatus?: k8s_io_api_core_v1_generated_pb.LoadBalancerStatus.AsObject,
     lastpredictiondataset?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    feedbacktestsresult?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
-    driftdetectiontestsresults?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
     conditionsList: Array<PredictorCondition.AsObject>,
   }
 }

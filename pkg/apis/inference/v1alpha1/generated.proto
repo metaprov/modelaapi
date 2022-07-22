@@ -1192,14 +1192,6 @@ message PredictorStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastPredictionDataset = 13;
 
-  // The result of running the last monitor.
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult feedbackTestsResult = 14;
-
-  // The result of running the last monitor.
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult driftDetectionTestsResults = 15;
-
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
