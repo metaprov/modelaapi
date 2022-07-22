@@ -1779,7 +1779,7 @@ message DatasetStatus {
 
   // List of validation results which are generated for every validation rule associated with the Dataset's Data Source
   // +kubebuilder:validation:Optional
-  optional DatasetTestSuiteResult testResults = 9;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult testResults = 9;
 
   // Last time the Dataset was used with a Study
   // +kubebuilder:validation:Optional
@@ -1844,51 +1844,6 @@ message DatasetTemplate {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
   optional DatasetSpec spec = 2;
-}
-
-message DatasetTestSuite {
-  // MultiDatasetTest contains validations for multiple datasets
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite multiDatasetSuite = 1;
-
-  // DatasetTests contains validations for the whole dataset
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite datasetSuite = 2;
-
-  // MultiColumnTests defines validations for multiple columns from the dataset
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite multiColumnSuite = 3;
-
-  // ColumnTests defines assertions for columns from the dataset
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite columnSuite = 4;
-
-  // FileTests defines assertions for the contents of the data file
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite fileSuite = 5;
-}
-
-// Holds the dataset test suite result
-message DatasetTestSuiteResult {
-  // MultiDatasetTest contains validations for multiple datasets
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult multiDatasetSuite = 1;
-
-  // DatasetTests contains validations for the whole dataset
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult datasetSuite = 2;
-
-  // MultiColumnTests defines validations for multiple columns from the dataset
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult multiColumnSuite = 3;
-
-  // ColumnTests defines assertions for columns from the dataset
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult columnSuite = 4;
-
-  // FileTests defines assertions for the contents of the data file
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult fileSuite = 5;
 }
 
 // Define a threshold
@@ -2186,6 +2141,9 @@ message FeatureHistogramSpec {
   // +kubebuilder:default:=60
   // +kubebuilder:validation:Optional
   optional int32 SyncIntervalSec = 14;
+
+  // Test suite for this histogram.
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite tests = 15;
 }
 
 // FeatureHistogramStatus defines the observed state of FeatureHistogram
@@ -2217,6 +2175,9 @@ message FeatureHistogramStatus {
   // In the case of failure, the Dataset resource controller will set this field with a failure message
   // +kubebuilder:validation:Optional
   optional string failureMessage = 8;
+
+  // Test suite for this histogram.
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult testResult = 15;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
@@ -3593,7 +3554,7 @@ message Schema {
   repeated Column columns = 3;
 
   // The specification for tests for a new dataset
-  optional DatasetTestSuite tests = 4;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite tests = 4;
 }
 
 // SqlQuery represent a single sqlquery in the sqlquery store.

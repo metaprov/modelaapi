@@ -996,8 +996,8 @@ export namespace RunDatasetTestsRequest {
 }
 
 export class RunDatasetTestsResponse extends jspb.Message {
-  getResult(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetTestSuiteResult | undefined;
-  setResult(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetTestSuiteResult): RunDatasetTestsResponse;
+  getResult(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
+  setResult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): RunDatasetTestsResponse;
   hasResult(): boolean;
   clearResult(): RunDatasetTestsResponse;
 
@@ -1011,7 +1011,7 @@ export class RunDatasetTestsResponse extends jspb.Message {
 
 export namespace RunDatasetTestsResponse {
   export type AsObject = {
-    result?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetTestSuiteResult.AsObject,
+    result?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
   }
 }
 
@@ -1082,8 +1082,8 @@ export namespace RunModelTestsRequest {
 }
 
 export class RunModelTestsResponse extends jspb.Message {
-  getResult(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelTestSuiteResult | undefined;
-  setResult(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelTestSuiteResult): RunModelTestsResponse;
+  getResult(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
+  setResult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): RunModelTestsResponse;
   hasResult(): boolean;
   clearResult(): RunModelTestsResponse;
 
@@ -1097,7 +1097,7 @@ export class RunModelTestsResponse extends jspb.Message {
 
 export namespace RunModelTestsResponse {
   export type AsObject = {
-    result?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelTestSuiteResult.AsObject,
+    result?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
   }
 }
 

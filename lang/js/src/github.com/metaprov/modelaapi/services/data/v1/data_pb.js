@@ -9692,7 +9692,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.RunDatasetTestsResponse.pro
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.RunDatasetTestsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    result: (f = msg.getResult()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetTestSuiteResult.toObject(includeInstance, f)
+    result: (f = msg.getResult()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -9730,8 +9730,8 @@ proto.github.com.metaprov.modelaapi.services.data.v1.RunDatasetTestsResponse.des
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetTestSuiteResult;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetTestSuiteResult.deserializeBinaryFromReader);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.deserializeBinaryFromReader);
       msg.setResult(value);
       break;
     default:
@@ -9768,24 +9768,24 @@ proto.github.com.metaprov.modelaapi.services.data.v1.RunDatasetTestsResponse.ser
     writer.writeMessage(
       1,
       f,
-      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetTestSuiteResult.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTestSuiteResult result = 1;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTestSuiteResult}
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult result = 1;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult}
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.RunDatasetTestsResponse.prototype.getResult = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTestSuiteResult} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetTestSuiteResult, 1));
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult, 1));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTestSuiteResult|undefined} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunDatasetTestsResponse} returns this
 */
 proto.github.com.metaprov.modelaapi.services.data.v1.RunDatasetTestsResponse.prototype.setResult = function(value) {
@@ -10384,7 +10384,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsResponse.proto
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    result: (f = msg.getResult()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelTestSuiteResult.toObject(includeInstance, f)
+    result: (f = msg.getResult()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -10422,8 +10422,8 @@ proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsResponse.deser
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelTestSuiteResult;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelTestSuiteResult.deserializeBinaryFromReader);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.deserializeBinaryFromReader);
       msg.setResult(value);
       break;
     default:
@@ -10460,24 +10460,24 @@ proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsResponse.seria
     writer.writeMessage(
       1,
       f,
-      github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelTestSuiteResult.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuiteResult result = 1;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuiteResult}
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult result = 1;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult}
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsResponse.prototype.getResult = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuiteResult} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelTestSuiteResult, 1));
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult, 1));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuiteResult|undefined} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsResponse} returns this
 */
 proto.github.com.metaprov.modelaapi.services.data.v1.RunModelTestsResponse.prototype.setResult = function(value) {

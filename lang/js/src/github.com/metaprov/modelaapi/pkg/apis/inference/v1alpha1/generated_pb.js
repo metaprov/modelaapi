@@ -8384,8 +8384,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSt
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
-    results: (f = msg.getResults()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.toObject(includeInstance, f),
-    lastrun: (f = msg.getLastrun()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f)
+
   };
 
   if (includeInstance) {
@@ -8422,16 +8421,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSt
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.deserializeBinaryFromReader);
-      msg.setResults(value);
-      break;
-    case 2:
-      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
-      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setLastrun(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -8461,96 +8450,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSt
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionStatus.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getResults();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.serializeBinaryToWriter
-    );
-  }
-  f = message.getLastrun();
-  if (f != null) {
-    writer.writeMessage(
-      2,
-      f,
-      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
-    );
-  }
-};
-
-
-/**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult results = 1;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionStatus.prototype.getResults = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult, 1));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionStatus} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionStatus.prototype.setResults = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionStatus.prototype.clearResults = function() {
-  return this.setResults(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionStatus.prototype.hasResults = function() {
-  return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 2;
- * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionStatus.prototype.getLastrun = function() {
-  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
-    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 2));
-};
-
-
-/**
- * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionStatus} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionStatus.prototype.setLastrun = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionStatus.prototype.clearLastrun = function() {
-  return this.setLastrun(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionStatus.prototype.hasLastrun = function() {
-  return jspb.Message.getField(this, 2) != null;
 };
 
 
@@ -17738,7 +17637,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.
     loadbalancerstatus: (f = msg.getLoadbalancerstatus()) && k8s_io_api_core_v1_generated_pb.LoadBalancerStatus.toObject(includeInstance, f),
     lastpredictiondataset: (f = msg.getLastpredictiondataset()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     feedbacktests: (f = msg.getFeedbacktests()) && proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.FeedbackTestStatus.toObject(includeInstance, f),
-    driftstatus: (f = msg.getDriftstatus()) && proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionStatus.toObject(includeInstance, f),
+    driftdetectionresults: (f = msg.getDriftdetectionresults()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.toObject(includeInstance, f),
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorCondition.toObject, includeInstance)
   };
@@ -17839,9 +17738,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.
       msg.setFeedbacktests(value);
       break;
     case 15:
-      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionStatus;
-      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionStatus.deserializeBinaryFromReader);
-      msg.setDriftstatus(value);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.deserializeBinaryFromReader);
+      msg.setDriftdetectionresults(value);
       break;
     case 16:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorCondition;
@@ -17977,12 +17876,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.
       proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.FeedbackTestStatus.serializeBinaryToWriter
     );
   }
-  f = message.getDriftstatus();
+  f = message.getDriftdetectionresults();
   if (f != null) {
     writer.writeMessage(
       15,
       f,
-      proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionStatus.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.serializeBinaryToWriter
     );
   }
   f = message.getConditionsList();
@@ -18476,20 +18375,20 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.
 
 
 /**
- * optional DriftDetectionStatus driftStatus = 15;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionStatus}
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult driftDetectionResults = 15;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.getDriftstatus = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionStatus} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionStatus, 15));
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.getDriftdetectionresults = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult, 15));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionStatus|undefined} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.setDriftstatus = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.setDriftdetectionresults = function(value) {
   return jspb.Message.setWrapperField(this, 15, value);
 };
 
@@ -18498,8 +18397,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.clearDriftstatus = function() {
-  return this.setDriftstatus(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.clearDriftdetectionresults = function() {
+  return this.setDriftdetectionresults(undefined);
 };
 
 
@@ -18507,7 +18406,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.hasDriftstatus = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.hasDriftdetectionresults = function() {
   return jspb.Message.getField(this, 15) != null;
 };
 

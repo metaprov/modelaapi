@@ -2320,8 +2320,8 @@ export class DatasetStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): DatasetStatus;
 
-  getTestresults(): DatasetTestSuiteResult | undefined;
-  setTestresults(value?: DatasetTestSuiteResult): DatasetStatus;
+  getTestresults(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
+  setTestresults(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): DatasetStatus;
   hasTestresults(): boolean;
   clearTestresults(): DatasetStatus;
 
@@ -2398,7 +2398,7 @@ export namespace DatasetStatus {
     imbalanced: boolean,
     anomaliesuri: string,
     observedgeneration: number,
-    testresults?: DatasetTestSuiteResult.AsObject,
+    testresults?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
     laststudytime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     failurereason: string,
     failuremessage: string,
@@ -2438,94 +2438,6 @@ export namespace DatasetTemplate {
   export type AsObject = {
     metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.AsObject,
     spec?: DatasetSpec.AsObject,
-  }
-}
-
-export class DatasetTestSuite extends jspb.Message {
-  getMultidatasetsuite(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
-  setMultidatasetsuite(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): DatasetTestSuite;
-  hasMultidatasetsuite(): boolean;
-  clearMultidatasetsuite(): DatasetTestSuite;
-
-  getDatasetsuite(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
-  setDatasetsuite(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): DatasetTestSuite;
-  hasDatasetsuite(): boolean;
-  clearDatasetsuite(): DatasetTestSuite;
-
-  getMulticolumnsuite(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
-  setMulticolumnsuite(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): DatasetTestSuite;
-  hasMulticolumnsuite(): boolean;
-  clearMulticolumnsuite(): DatasetTestSuite;
-
-  getColumnsuite(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
-  setColumnsuite(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): DatasetTestSuite;
-  hasColumnsuite(): boolean;
-  clearColumnsuite(): DatasetTestSuite;
-
-  getFilesuite(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
-  setFilesuite(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): DatasetTestSuite;
-  hasFilesuite(): boolean;
-  clearFilesuite(): DatasetTestSuite;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DatasetTestSuite.AsObject;
-  static toObject(includeInstance: boolean, msg: DatasetTestSuite): DatasetTestSuite.AsObject;
-  static serializeBinaryToWriter(message: DatasetTestSuite, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DatasetTestSuite;
-  static deserializeBinaryFromReader(message: DatasetTestSuite, reader: jspb.BinaryReader): DatasetTestSuite;
-}
-
-export namespace DatasetTestSuite {
-  export type AsObject = {
-    multidatasetsuite?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
-    datasetsuite?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
-    multicolumnsuite?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
-    columnsuite?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
-    filesuite?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
-  }
-}
-
-export class DatasetTestSuiteResult extends jspb.Message {
-  getMultidatasetsuite(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
-  setMultidatasetsuite(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): DatasetTestSuiteResult;
-  hasMultidatasetsuite(): boolean;
-  clearMultidatasetsuite(): DatasetTestSuiteResult;
-
-  getDatasetsuite(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
-  setDatasetsuite(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): DatasetTestSuiteResult;
-  hasDatasetsuite(): boolean;
-  clearDatasetsuite(): DatasetTestSuiteResult;
-
-  getMulticolumnsuite(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
-  setMulticolumnsuite(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): DatasetTestSuiteResult;
-  hasMulticolumnsuite(): boolean;
-  clearMulticolumnsuite(): DatasetTestSuiteResult;
-
-  getColumnsuite(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
-  setColumnsuite(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): DatasetTestSuiteResult;
-  hasColumnsuite(): boolean;
-  clearColumnsuite(): DatasetTestSuiteResult;
-
-  getFilesuite(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
-  setFilesuite(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): DatasetTestSuiteResult;
-  hasFilesuite(): boolean;
-  clearFilesuite(): DatasetTestSuiteResult;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DatasetTestSuiteResult.AsObject;
-  static toObject(includeInstance: boolean, msg: DatasetTestSuiteResult): DatasetTestSuiteResult.AsObject;
-  static serializeBinaryToWriter(message: DatasetTestSuiteResult, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DatasetTestSuiteResult;
-  static deserializeBinaryFromReader(message: DatasetTestSuiteResult, reader: jspb.BinaryReader): DatasetTestSuiteResult;
-}
-
-export namespace DatasetTestSuiteResult {
-  export type AsObject = {
-    multidatasetsuite?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
-    datasetsuite?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
-    multicolumnsuite?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
-    columnsuite?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
-    filesuite?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
   }
 }
 
@@ -3021,6 +2933,11 @@ export class FeatureHistogramSpec extends jspb.Message {
   getSyncintervalsec(): number;
   setSyncintervalsec(value: number): FeatureHistogramSpec;
 
+  getTests(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
+  setTests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): FeatureHistogramSpec;
+  hasTests(): boolean;
+  clearTests(): FeatureHistogramSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FeatureHistogramSpec.AsObject;
   static toObject(includeInstance: boolean, msg: FeatureHistogramSpec): FeatureHistogramSpec.AsObject;
@@ -3044,6 +2961,7 @@ export namespace FeatureHistogramSpec {
     basefeaturehistogram?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     driftthresholdsList: Array<DriftThreshold.AsObject>,
     syncintervalsec: number,
+    tests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
   }
 }
 
@@ -3075,6 +2993,11 @@ export class FeatureHistogramStatus extends jspb.Message {
   getFailuremessage(): string;
   setFailuremessage(value: string): FeatureHistogramStatus;
 
+  getTestresult(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
+  setTestresult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): FeatureHistogramStatus;
+  hasTestresult(): boolean;
+  clearTestresult(): FeatureHistogramStatus;
+
   getConditionsList(): Array<FeatureHistogramCondition>;
   setConditionsList(value: Array<FeatureHistogramCondition>): FeatureHistogramStatus;
   clearConditionsList(): FeatureHistogramStatus;
@@ -3097,6 +3020,7 @@ export namespace FeatureHistogramStatus {
     phase: string,
     failurereason: string,
     failuremessage: string,
+    testresult?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
     conditionsList: Array<FeatureHistogramCondition.AsObject>,
   }
 }
@@ -5427,8 +5351,8 @@ export class Schema extends jspb.Message {
   clearColumnsList(): Schema;
   addColumns(value?: Column, index?: number): Column;
 
-  getTests(): DatasetTestSuite | undefined;
-  setTests(value?: DatasetTestSuite): Schema;
+  getTests(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
+  setTests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): Schema;
   hasTests(): boolean;
   clearTests(): Schema;
 
@@ -5445,7 +5369,7 @@ export namespace Schema {
     timeseriesschema?: TimeSeriesSchema.AsObject,
     recommendationschema?: RecommendationSchema.AsObject,
     columnsList: Array<Column.AsObject>,
-    tests?: DatasetTestSuite.AsObject,
+    tests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
   }
 }
 

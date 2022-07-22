@@ -41,8 +41,3 @@ type ModelTestSuite struct {
 	// +kubebuilder:validation:Optional
 	Suite catalog.TestSuite `json:"suite,omitempty" protobuf:"bytes,3,opt,name=suite"`
 }
-
-type ModelTestSuiteResult struct {
-	// +kubebuilder:validation:Optional
-	Suite catalog.TestSuiteResult `json:"suite,omitempty" protobuf:"bytes,1,opt,name=suite"`
-}

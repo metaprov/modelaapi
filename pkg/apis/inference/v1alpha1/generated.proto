@@ -529,11 +529,6 @@ message DriftDetectionSpec {
 }
 
 message DriftDetectionStatus {
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult results = 1;
-
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 2;
 }
 
 // Fast slow model mode, use two models as the live.
@@ -1211,7 +1206,7 @@ message PredictorStatus {
 
   // The result of running the last monitor.
   // +kubebuilder:validation:Optional
-  optional DriftDetectionStatus driftStatus = 15;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult driftDetectionResults = 15;
 
   // +patchMergeKey=type
   // +patchStrategy=merge

@@ -236,7 +236,7 @@ message RunDatasetTestsRequest {
 }
 
 message RunDatasetTestsResponse {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetTestSuiteResult result = 1;
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult result = 1;
 }
 
 // Model Tests
@@ -253,7 +253,7 @@ message RunModelTestsRequest {
 }
 
 message RunModelTestsResponse {
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuiteResult result = 1;
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult result = 1;
 }
 
 // Drift Tests

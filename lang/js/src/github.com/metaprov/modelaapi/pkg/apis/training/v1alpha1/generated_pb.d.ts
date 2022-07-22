@@ -2623,8 +2623,8 @@ export class ModelPipelineRunStageStatus extends jspb.Message {
   hasEndtime(): boolean;
   clearEndtime(): ModelPipelineRunStageStatus;
 
-  getResult(): ModelTestSuiteResult | undefined;
-  setResult(value?: ModelTestSuiteResult): ModelPipelineRunStageStatus;
+  getResult(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
+  setResult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): ModelPipelineRunStageStatus;
   hasResult(): boolean;
   clearResult(): ModelPipelineRunStageStatus;
 
@@ -2647,7 +2647,7 @@ export namespace ModelPipelineRunStageStatus {
     approvedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    result?: ModelTestSuiteResult.AsObject,
+    result?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
     error: string,
   }
 }
@@ -3543,26 +3543,6 @@ export namespace ModelTestSuite {
     baselinemodelref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     datasetref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     suite?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
-  }
-}
-
-export class ModelTestSuiteResult extends jspb.Message {
-  getSuite(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
-  setSuite(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): ModelTestSuiteResult;
-  hasSuite(): boolean;
-  clearSuite(): ModelTestSuiteResult;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ModelTestSuiteResult.AsObject;
-  static toObject(includeInstance: boolean, msg: ModelTestSuiteResult): ModelTestSuiteResult.AsObject;
-  static serializeBinaryToWriter(message: ModelTestSuiteResult, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ModelTestSuiteResult;
-  static deserializeBinaryFromReader(message: ModelTestSuiteResult, reader: jspb.BinaryReader): ModelTestSuiteResult;
-}
-
-export namespace ModelTestSuiteResult {
-  export type AsObject = {
-    suite?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
   }
 }
 
