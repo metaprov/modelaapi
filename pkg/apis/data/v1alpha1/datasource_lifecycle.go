@@ -274,6 +274,6 @@ func (sc *DataSource) Saved() bool {
 }
 
 func (sc *DataSource) HaveValidationRules() bool {
-	return len(sc.Spec.TestsTemplate.Tests) > 0
+	return len(sc.Spec.UnitTestsTemplate.Tests) > 0
 
 }
