@@ -525,7 +525,7 @@ type ModelStatus struct {
 	Images catalog.Images `json:"images,omitempty" protobuf:"bytes,68,opt,name=images"`
 	// Interpretability specifies the configuration to generate model interpretability visualizations
 	// +kubebuilder:validation:Optional
-	TestsResult catalog.TestSuite `json:"testsResult,omitempty" protobuf:"bytes,69,opt,name="`
+	TestsResult catalog.TestSuiteResult `json:"testsResult,omitempty" protobuf:"bytes,69,opt,name="`
 	// +kubebuilder:validation:Optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge

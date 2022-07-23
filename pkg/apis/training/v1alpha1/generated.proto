@@ -2435,7 +2435,7 @@ message ModelStatus {
 
   // Interpretability specifies the configuration to generate model interpretability visualizations
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite testsResult = 69;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult testsResult = 69;
 
   // +kubebuilder:validation:Optional
   // +patchMergeKey=type
