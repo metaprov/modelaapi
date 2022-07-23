@@ -98,7 +98,7 @@ message CapacityStageSpec {
 
   // Validations is the specification of tests to run in this stage
   // +kubebuilder:validation:Optional
-  optional ModelTestSuite test = 3;
+  optional ModelTestSuite tests = 3;
 
   // Resource define the hardware resources req.
   // +kubebuilder:validation:Optional
@@ -443,7 +443,7 @@ message DeploymentStageSpec {
 
   // Tests is the specification of tests to run in this stage
   // +kubebuilder:validation:Optional
-  optional ModelTestSuite test = 4;
+  optional ModelTestSuite tests = 4;
 
   // Resource define the hardware resources req.
   // +kubebuilder:validation:Optional
@@ -1717,7 +1717,7 @@ message ModelPipelineRunStageStatus {
 
   // Results is the results of running the test datasets against the new model
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult result = 9;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult testsResult = 9;
 
   // Error record error.
   // +kubebuilder:validation:Optional
@@ -3936,7 +3936,7 @@ message UATStageSpec {
 
   // Validations defines the machine learning test cases to run against the new trained model.
   // +kubebuilder:validation:Optional
-  optional ModelTestSuite test = 3;
+  optional ModelTestSuite tests = 3;
 
   // Resource define the hardware resources req.
   // +kubebuilder:validation:Optional

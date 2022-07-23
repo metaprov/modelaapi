@@ -144,7 +144,11 @@ spec:
                     default: Pending
                     description: Phase is the phase of the stage
                     type: string
-                  result:
+                  startTime:
+                    description: Start time is the start time of the stage
+                    format: date-time
+                    type: string
+                  testsResult:
                     description: Results is the results of running the test datasets
                       against the new model
                     properties:
@@ -417,10 +421,6 @@ spec:
                           type: object
                         type: array
                     type: object
-                  startTime:
-                    description: Start time is the start time of the stage
-                    format: date-time
-                    type: string
                 type: object
               conditions:
                 items:
@@ -476,7 +476,11 @@ spec:
                     default: Pending
                     description: Phase is the phase of the stage
                     type: string
-                  result:
+                  startTime:
+                    description: Start time is the start time of the stage
+                    format: date-time
+                    type: string
+                  testsResult:
                     description: Results is the results of running the test datasets
                       against the new model
                     properties:
@@ -749,10 +753,6 @@ spec:
                           type: object
                         type: array
                     type: object
-                  startTime:
-                    description: Start time is the start time of the stage
-                    format: date-time
-                    type: string
                 type: object
               datasetName:
                 description: The name of the dataset that was captured by the label
@@ -783,7 +783,11 @@ spec:
                     default: Pending
                     description: Phase is the phase of the stage
                     type: string
-                  result:
+                  startTime:
+                    description: Start time is the start time of the stage
+                    format: date-time
+                    type: string
+                  testsResult:
                     description: Results is the results of running the test datasets
                       against the new model
                     properties:
@@ -1056,10 +1060,6 @@ spec:
                           type: object
                         type: array
                     type: object
-                  startTime:
-                    description: Start time is the start time of the stage
-                    format: date-time
-                    type: string
                 type: object
               endTime:
                 format: date-time
@@ -1101,7 +1101,11 @@ spec:
                     default: Pending
                     description: Phase is the phase of the stage
                     type: string
-                  result:
+                  startTime:
+                    description: Start time is the start time of the stage
+                    format: date-time
+                    type: string
+                  testsResult:
                     description: Results is the results of running the test datasets
                       against the new model
                     properties:
@@ -1374,10 +1378,6 @@ spec:
                           type: object
                         type: array
                     type: object
-                  startTime:
-                    description: Start time is the start time of the stage
-                    format: date-time
-                    type: string
                 type: object
               lastUpdated:
                 description: Last time the object was updated
@@ -1438,7 +1438,11 @@ spec:
                     default: Pending
                     description: Phase is the phase of the stage
                     type: string
-                  result:
+                  startTime:
+                    description: Start time is the start time of the stage
+                    format: date-time
+                    type: string
+                  testsResult:
                     description: Results is the results of running the test datasets
                       against the new model
                     properties:
@@ -1711,10 +1715,6 @@ spec:
                           type: object
                         type: array
                     type: object
-                  startTime:
-                    description: Start time is the start time of the stage
-                    format: date-time
-                    type: string
                 type: object
               observedGeneration:
                 description: ObservedGeneration is the Last generation that was acted
@@ -1755,7 +1755,11 @@ spec:
                     default: Pending
                     description: Phase is the phase of the stage
                     type: string
-                  result:
+                  startTime:
+                    description: Start time is the start time of the stage
+                    format: date-time
+                    type: string
+                  testsResult:
                     description: Results is the results of running the test datasets
                       against the new model
                     properties:
@@ -2028,10 +2032,6 @@ spec:
                           type: object
                         type: array
                     type: object
-                  startTime:
-                    description: Start time is the start time of the stage
-                    format: date-time
-                    type: string
                 type: object
               stage:
                 description: The current stage of the pipeline
@@ -2067,7 +2067,11 @@ spec:
                     default: Pending
                     description: Phase is the phase of the stage
                     type: string
-                  result:
+                  startTime:
+                    description: Start time is the start time of the stage
+                    format: date-time
+                    type: string
+                  testsResult:
                     description: Results is the results of running the test datasets
                       against the new model
                     properties:
@@ -2340,10 +2344,6 @@ spec:
                           type: object
                         type: array
                     type: object
-                  startTime:
-                    description: Start time is the start time of the stage
-                    format: date-time
-                    type: string
                 type: object
               triggeredBy:
                 description: What triggered the run
@@ -2380,7 +2380,11 @@ spec:
                     default: Pending
                     description: Phase is the phase of the stage
                     type: string
-                  result:
+                  startTime:
+                    description: Start time is the start time of the stage
+                    format: date-time
+                    type: string
+                  testsResult:
                     description: Results is the results of running the test datasets
                       against the new model
                     properties:
@@ -2653,10 +2657,6 @@ spec:
                           type: object
                         type: array
                     type: object
-                  startTime:
-                    description: Start time is the start time of the stage
-                    format: date-time
-                    type: string
                 type: object
             required:
             - logs

@@ -115,10 +115,10 @@ export class CapacityStageSpec extends jspb.Message {
   getServingsitename(): string;
   setServingsitename(value: string): CapacityStageSpec;
 
-  getTest(): ModelTestSuite | undefined;
-  setTest(value?: ModelTestSuite): CapacityStageSpec;
-  hasTest(): boolean;
-  clearTest(): CapacityStageSpec;
+  getTests(): ModelTestSuite | undefined;
+  setTests(value?: ModelTestSuite): CapacityStageSpec;
+  hasTests(): boolean;
+  clearTests(): CapacityStageSpec;
 
   getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
   setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): CapacityStageSpec;
@@ -137,7 +137,7 @@ export namespace CapacityStageSpec {
   export type AsObject = {
     enabled: boolean,
     servingsitename: string,
-    test?: ModelTestSuite.AsObject,
+    tests?: ModelTestSuite.AsObject,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
   }
 }
@@ -672,10 +672,10 @@ export class DeploymentStageSpec extends jspb.Message {
   getManualapproval(): boolean;
   setManualapproval(value: boolean): DeploymentStageSpec;
 
-  getTest(): ModelTestSuite | undefined;
-  setTest(value?: ModelTestSuite): DeploymentStageSpec;
-  hasTest(): boolean;
-  clearTest(): DeploymentStageSpec;
+  getTests(): ModelTestSuite | undefined;
+  setTests(value?: ModelTestSuite): DeploymentStageSpec;
+  hasTests(): boolean;
+  clearTests(): DeploymentStageSpec;
 
   getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
   setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): DeploymentStageSpec;
@@ -695,7 +695,7 @@ export namespace DeploymentStageSpec {
     enabled: boolean,
     servingsitename: string,
     manualapproval: boolean,
-    test?: ModelTestSuite.AsObject,
+    tests?: ModelTestSuite.AsObject,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
   }
 }
@@ -2623,10 +2623,10 @@ export class ModelPipelineRunStageStatus extends jspb.Message {
   hasEndtime(): boolean;
   clearEndtime(): ModelPipelineRunStageStatus;
 
-  getResult(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
-  setResult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): ModelPipelineRunStageStatus;
-  hasResult(): boolean;
-  clearResult(): ModelPipelineRunStageStatus;
+  getTestsresult(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
+  setTestsresult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): ModelPipelineRunStageStatus;
+  hasTestsresult(): boolean;
+  clearTestsresult(): ModelPipelineRunStageStatus;
 
   getError(): string;
   setError(value: string): ModelPipelineRunStageStatus;
@@ -2647,7 +2647,7 @@ export namespace ModelPipelineRunStageStatus {
     approvedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    result?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
+    testsresult?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
     error: string,
   }
 }
@@ -5655,10 +5655,10 @@ export class UATStageSpec extends jspb.Message {
   getServingsitename(): string;
   setServingsitename(value: string): UATStageSpec;
 
-  getTest(): ModelTestSuite | undefined;
-  setTest(value?: ModelTestSuite): UATStageSpec;
-  hasTest(): boolean;
-  clearTest(): UATStageSpec;
+  getTests(): ModelTestSuite | undefined;
+  setTests(value?: ModelTestSuite): UATStageSpec;
+  hasTests(): boolean;
+  clearTests(): UATStageSpec;
 
   getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
   setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): UATStageSpec;
@@ -5677,7 +5677,7 @@ export namespace UATStageSpec {
   export type AsObject = {
     enabled: boolean,
     servingsitename: string,
-    test?: ModelTestSuite.AsObject,
+    tests?: ModelTestSuite.AsObject,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
   }
 }

@@ -194,7 +194,7 @@ spec:
                       during the capacity stage If the serving site is empty or null,
                       the system will skip the capacity stage unit tests.
                     type: string
-                  test:
+                  tests:
                     description: Validations is the specification of tests to run
                       in this stage
                     properties:
@@ -676,7 +676,7 @@ spec:
                     description: ServingSiteName is the serving site for the release,
                       if empty, the system will use the default serving site name
                     type: string
-                  test:
+                  tests:
                     description: Tests is the specification of tests to run in this
                       stage
                     properties:
