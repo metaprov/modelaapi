@@ -626,7 +626,13 @@ spec:
                     description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                     type: string
                 type: object
-              tests:
+              ttl:
+                default: 0
+                description: The time-to-live of the Prediction, after which the Prediction
+                  will be archived
+                format: int32
+                type: integer
+              unitTests:
                 description: Tests specifies a collection of metrics that will be
                   computed for each prediction if the Labeled field of the Prediction
                   is enabled
@@ -705,7 +711,7 @@ spec:
                         description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                         type: string
                     type: object
-                  tests:
+                  unitTests:
                     description: Define the column name for the validation role
                     properties:
                       enabled:
@@ -718,11 +724,54 @@ spec:
                               description: The assertion type
                               type: string
                             column:
+                              description: If unit test is column test, this is the
+                                name of the column
                               type: string
                             column2:
                               description: For test that involve two columns (e.g.
                                 correlation)
                               type: string
+                            compareToRef:
+                              description: Reference to another entity which is a
+                                ref.
+                              properties:
+                                apiVersion:
+                                  description: API version of the referent.
+                                  type: string
+                                fieldPath:
+                                  description: 'If referring to a piece of an object
+                                    instead of an entire object, this string should
+                                    contain a valid JSON/Go field access statement,
+                                    such as desiredState.manifest.containers[2]. For
+                                    example, if the object reference is to a container
+                                    within a pod, this would take on a value like:
+                                    "spec.containers{name}" (where "name" refers to
+                                    the name of the container that triggered the event)
+                                    or if no container name is specified "spec.containers[2]"
+                                    (container with index 2 in this pod). This syntax
+                                    is chosen only to have some well-defined way of
+                                    referencing a part of an object. TODO: this design
+                                    is not final and this field is subject to change
+                                    in the future.'
+                                  type: string
+                                kind:
+                                  description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                                  type: string
+                                name:
+                                  description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                                  type: string
+                                namespace:
+                                  description: 'Namespace of the referent. More info:
+                                    https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                                  type: string
+                                resourceVersion:
+                                  description: 'Specific resourceVersion to which
+                                    this reference is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                                  type: string
+                                uid:
+                                  description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                                  type: string
+                              type: object
                             enabled:
                               description: If false, this test case is disabled
                               type: boolean
@@ -828,6 +877,7 @@ spec:
                             lowerInclusive:
                               type: boolean
                             metric:
+                              description: The metric that is used for the test
                               enum:
                               - accuracy
                               - average-precision
@@ -922,7 +972,7 @@ spec:
                                 type: string
                               type: array
                             type:
-                              description: The type of the data test
+                              description: The test type The type of the data test
                               type: string
                             upper:
                               format: float
@@ -933,12 +983,6 @@ spec:
                         type: array
                     type: object
                 type: object
-              ttl:
-                default: 0
-                description: The time-to-live of the Prediction, after which the Prediction
-                  will be archived
-                format: int32
-                type: integer
               versionName:
                 default: ""
                 description: The name of the DataProductVersion which describes the
@@ -1039,7 +1083,17 @@ spec:
                   Job started
                 format: date-time
                 type: string
-              testsResult:
+              triggeredBy:
+                description: The trigger that started the batch prediction
+                enum:
+                - on-demand
+                - on-schedule
+                - on-new-data
+                - on-github-event
+                - on-concept-drift
+                - on-pref-degradation
+                type: string
+              unitTestsResult:
                 description: The collection of metrics that represent the average
                   measurement across all predictions for each metric specified by
                   the Tests field of the Predictor
@@ -1306,16 +1360,6 @@ spec:
                       type: object
                     type: array
                 type: object
-              triggeredBy:
-                description: The trigger that started the batch prediction
-                enum:
-                - on-demand
-                - on-schedule
-                - on-new-data
-                - on-github-event
-                - on-concept-drift
-                - on-pref-degradation
-                type: string
             type: object
         required:
         - spec

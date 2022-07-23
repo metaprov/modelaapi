@@ -126,6 +126,9 @@ type WebRequestRunSpec struct {
 	// If none, use the default lab from the data product
 	// +kubebuilder:validation:Optional
 	LabRef v1.ObjectReference `json:"labRef,omitempty" protobuf:"bytes,14,opt,name=labRef"`
+	// unit tests on the result
+	// +kubebuilder:validation:Optional
+	UnitTests catalog.TestSuite `json:"unitTests,omitempty" protobuf:"bytes,15,opt,name=unitTests"`
 }
 
 // WebRequestRunStatus defines the observed state of WebRequestRun
@@ -169,8 +172,11 @@ type WebRequestRunStatus struct {
 	// Last time the object was updated
 	//+kubebuilder:validation:Optional
 	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,13,opt,name=lastUpdated"`
+	// The unit tests results.
+	// +kubebuilder:validation:Optional
+	UnitTestsResult catalog.TestSuiteResult `json:"unitTestsResult,omitempty" protobuf:"bytes,14,opt,name=unitTestsResult"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []WebRequestRunCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,14,rep,name=conditions"`
+	Conditions []WebRequestRunCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,15,rep,name=conditions"`
 }

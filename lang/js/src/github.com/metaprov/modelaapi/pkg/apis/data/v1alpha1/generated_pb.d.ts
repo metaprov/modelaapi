@@ -1935,10 +1935,10 @@ export class DataSourceSpec extends jspb.Message {
   hasInferredfrom(): boolean;
   clearInferredfrom(): DataSourceSpec;
 
-  getTeststemplate(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
-  setTeststemplate(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): DataSourceSpec;
-  hasTeststemplate(): boolean;
-  clearTeststemplate(): DataSourceSpec;
+  getUnitteststemplate(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
+  setUnitteststemplate(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): DataSourceSpec;
+  hasUnitteststemplate(): boolean;
+  clearUnitteststemplate(): DataSourceSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataSourceSpec.AsObject;
@@ -1963,7 +1963,7 @@ export namespace DataSourceSpec {
     relationshipsList: Array<RelationshipSpec.AsObject>,
     labeling?: LabelingSpec.AsObject,
     inferredfrom?: DataLocation.AsObject,
-    teststemplate?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
+    unitteststemplate?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
   }
 }
 
@@ -2215,10 +2215,10 @@ export class DatasetSpec extends jspb.Message {
   getGeneratefeaturehistogram(): boolean;
   setGeneratefeaturehistogram(value: boolean): DatasetSpec;
 
-  getTests(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
-  setTests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): DatasetSpec;
-  hasTests(): boolean;
-  clearTests(): DatasetSpec;
+  getUnittests(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
+  setUnittests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): DatasetSpec;
+  hasUnittests(): boolean;
+  clearUnittests(): DatasetSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DatasetSpec.AsObject;
@@ -2257,7 +2257,7 @@ export namespace DatasetSpec {
     predictiondatasetref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     predictorref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     generatefeaturehistogram: boolean,
-    tests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
+    unittests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
   }
 }
 
@@ -2332,10 +2332,10 @@ export class DatasetStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): DatasetStatus;
 
-  getTestresults(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
-  setTestresults(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): DatasetStatus;
-  hasTestresults(): boolean;
-  clearTestresults(): DatasetStatus;
+  getUnittestresults(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
+  setUnittestresults(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): DatasetStatus;
+  hasUnittestresults(): boolean;
+  clearUnittestresults(): DatasetStatus;
 
   getLaststudytime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setLaststudytime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DatasetStatus;
@@ -2387,10 +2387,10 @@ export class DatasetStatus extends jspb.Message {
   hasFeaturehistogramref(): boolean;
   clearFeaturehistogramref(): DatasetStatus;
 
-  getTestresult(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
-  setTestresult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): DatasetStatus;
-  hasTestresult(): boolean;
-  clearTestresult(): DatasetStatus;
+  getUnittestresult(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
+  setUnittestresult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): DatasetStatus;
+  hasUnittestresult(): boolean;
+  clearUnittestresult(): DatasetStatus;
 
   getConditionsList(): Array<DatasetCondition>;
   setConditionsList(value: Array<DatasetCondition>): DatasetStatus;
@@ -2415,7 +2415,7 @@ export namespace DatasetStatus {
     imbalanced: boolean,
     anomaliesuri: string,
     observedgeneration: number,
-    testresults?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
+    unittestresults?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
     laststudytime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     failurereason: string,
     failuremessage: string,
@@ -2428,7 +2428,7 @@ export namespace DatasetStatus {
     starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     featurehistogramref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    testresult?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
+    unittestresult?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
     conditionsList: Array<DatasetCondition.AsObject>,
   }
 }
@@ -2951,10 +2951,10 @@ export class FeatureHistogramSpec extends jspb.Message {
   getSyncintervalsec(): number;
   setSyncintervalsec(value: number): FeatureHistogramSpec;
 
-  getTests(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
-  setTests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): FeatureHistogramSpec;
-  hasTests(): boolean;
-  clearTests(): FeatureHistogramSpec;
+  getUnittests(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
+  setUnittests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): FeatureHistogramSpec;
+  hasUnittests(): boolean;
+  clearUnittests(): FeatureHistogramSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FeatureHistogramSpec.AsObject;
@@ -2979,7 +2979,7 @@ export namespace FeatureHistogramSpec {
     basefeaturehistogram?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     driftthresholdsList: Array<DriftThreshold.AsObject>,
     syncintervalsec: number,
-    tests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
+    unittests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
   }
 }
 
@@ -3011,10 +3011,10 @@ export class FeatureHistogramStatus extends jspb.Message {
   getFailuremessage(): string;
   setFailuremessage(value: string): FeatureHistogramStatus;
 
-  getTestsresult(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
-  setTestsresult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): FeatureHistogramStatus;
-  hasTestsresult(): boolean;
-  clearTestsresult(): FeatureHistogramStatus;
+  getUnittestsresult(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
+  setUnittestsresult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): FeatureHistogramStatus;
+  hasUnittestsresult(): boolean;
+  clearUnittestsresult(): FeatureHistogramStatus;
 
   getConditionsList(): Array<FeatureHistogramCondition>;
   setConditionsList(value: Array<FeatureHistogramCondition>): FeatureHistogramStatus;
@@ -3038,7 +3038,7 @@ export namespace FeatureHistogramStatus {
     phase: string,
     failurereason: string,
     failuremessage: string,
-    testsresult?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
+    unittestsresult?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
     conditionsList: Array<FeatureHistogramCondition.AsObject>,
   }
 }
@@ -5025,6 +5025,11 @@ export class RecipeRunStatus extends jspb.Message {
   hasLastupdated(): boolean;
   clearLastupdated(): RecipeRunStatus;
 
+  getUnittestsresult(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
+  setUnittestsresult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): RecipeRunStatus;
+  hasUnittestsresult(): boolean;
+  clearUnittestsresult(): RecipeRunStatus;
+
   getConditionsList(): Array<RecipeCondition>;
   setConditionsList(value: Array<RecipeCondition>): RecipeRunStatus;
   clearConditionsList(): RecipeRunStatus;
@@ -5049,6 +5054,7 @@ export namespace RecipeRunStatus {
     triggeredby: string,
     logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    unittestsresult?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
     conditionsList: Array<RecipeCondition.AsObject>,
   }
 }
@@ -5094,6 +5100,11 @@ export class RecipeSpec extends jspb.Message {
   getTtl(): number;
   setTtl(value: number): RecipeSpec;
 
+  getUnitteststemplate(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
+  setUnitteststemplate(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): RecipeSpec;
+  hasUnitteststemplate(): boolean;
+  clearUnitteststemplate(): RecipeSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RecipeSpec.AsObject;
   static toObject(includeInstance: boolean, msg: RecipeSpec): RecipeSpec.AsObject;
@@ -5114,6 +5125,7 @@ export namespace RecipeSpec {
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     activedeadlineseconds: number,
     ttl: number,
+    unitteststemplate?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
   }
 }
 
@@ -5136,12 +5148,6 @@ export class RecipeStatus extends jspb.Message {
   hasLastupdated(): boolean;
   clearLastupdated(): RecipeStatus;
 
-  getFailurereason(): string;
-  setFailurereason(value: string): RecipeStatus;
-
-  getFailuremessage(): string;
-  setFailuremessage(value: string): RecipeStatus;
-
   getConditionsList(): Array<RecipeCondition>;
   setConditionsList(value: Array<RecipeCondition>): RecipeStatus;
   clearConditionsList(): RecipeStatus;
@@ -5161,8 +5167,6 @@ export namespace RecipeStatus {
     lastrun?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus.AsObject,
     nextrun?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    failurereason: string,
-    failuremessage: string,
     conditionsList: Array<RecipeCondition.AsObject>,
   }
 }
@@ -5623,6 +5627,11 @@ export class SqlQueryRunSpec extends jspb.Message {
   hasLabref(): boolean;
   clearLabref(): SqlQueryRunSpec;
 
+  getUnittests(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
+  setUnittests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): SqlQueryRunSpec;
+  hasUnittests(): boolean;
+  clearUnittests(): SqlQueryRunSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SqlQueryRunSpec.AsObject;
   static toObject(includeInstance: boolean, msg: SqlQueryRunSpec): SqlQueryRunSpec.AsObject;
@@ -5648,6 +5657,7 @@ export namespace SqlQueryRunSpec {
     reported: boolean,
     sqlqueryname: string,
     labref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    unittests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
   }
 }
 
@@ -5698,6 +5708,11 @@ export class SqlQueryRunStatus extends jspb.Message {
   getFailuremessage(): string;
   setFailuremessage(value: string): SqlQueryRunStatus;
 
+  getUnittestsresult(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
+  setUnittestsresult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): SqlQueryRunStatus;
+  hasUnittestsresult(): boolean;
+  clearUnittestsresult(): SqlQueryRunStatus;
+
   getConditionsList(): Array<SqlQueryRunCondition>;
   setConditionsList(value: Array<SqlQueryRunCondition>): SqlQueryRunStatus;
   clearConditionsList(): SqlQueryRunStatus;
@@ -5725,6 +5740,7 @@ export namespace SqlQueryRunStatus {
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     failurereason: string,
     failuremessage: string,
+    unittestsresult?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
     conditionsList: Array<SqlQueryRunCondition.AsObject>,
   }
 }
@@ -5786,12 +5802,6 @@ export class SqlQueryStatus extends jspb.Message {
   hasNextrun(): boolean;
   clearNextrun(): SqlQueryStatus;
 
-  getFailurereason(): string;
-  setFailurereason(value: string): SqlQueryStatus;
-
-  getFailuremessage(): string;
-  setFailuremessage(value: string): SqlQueryStatus;
-
   getConditionsList(): Array<SqlQueryCondition>;
   setConditionsList(value: Array<SqlQueryCondition>): SqlQueryStatus;
   clearConditionsList(): SqlQueryStatus;
@@ -5811,8 +5821,6 @@ export namespace SqlQueryStatus {
     observedgeneration: number,
     lastrun?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus.AsObject,
     nextrun?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    failurereason: string,
-    failuremessage: string,
     conditionsList: Array<SqlQueryCondition.AsObject>,
   }
 }
@@ -6144,6 +6152,11 @@ export class WebRequestRunSpec extends jspb.Message {
   hasLabref(): boolean;
   clearLabref(): WebRequestRunSpec;
 
+  getUnittests(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
+  setUnittests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): WebRequestRunSpec;
+  hasUnittests(): boolean;
+  clearUnittests(): WebRequestRunSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): WebRequestRunSpec.AsObject;
   static toObject(includeInstance: boolean, msg: WebRequestRunSpec): WebRequestRunSpec.AsObject;
@@ -6168,6 +6181,7 @@ export namespace WebRequestRunSpec {
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     webrequestname: string,
     labref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    unittests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
   }
 }
 
@@ -6221,6 +6235,11 @@ export class WebRequestRunStatus extends jspb.Message {
   hasLastupdated(): boolean;
   clearLastupdated(): WebRequestRunStatus;
 
+  getUnittestsresult(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
+  setUnittestsresult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): WebRequestRunStatus;
+  hasUnittestsresult(): boolean;
+  clearUnittestsresult(): WebRequestRunStatus;
+
   getConditionsList(): Array<WebRequestRunCondition>;
   setConditionsList(value: Array<WebRequestRunCondition>): WebRequestRunStatus;
   clearConditionsList(): WebRequestRunStatus;
@@ -6249,6 +6268,7 @@ export namespace WebRequestRunStatus {
     failuremessage: string,
     logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    unittestsresult?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
     conditionsList: Array<WebRequestRunCondition.AsObject>,
   }
 }
@@ -6310,12 +6330,6 @@ export class WebRequestStatus extends jspb.Message {
   hasNextrun(): boolean;
   clearNextrun(): WebRequestStatus;
 
-  getFailurereason(): string;
-  setFailurereason(value: string): WebRequestStatus;
-
-  getFailuremessage(): string;
-  setFailuremessage(value: string): WebRequestStatus;
-
   getConditionsList(): Array<WebRequestCondition>;
   setConditionsList(value: Array<WebRequestCondition>): WebRequestStatus;
   clearConditionsList(): WebRequestStatus;
@@ -6335,8 +6349,6 @@ export namespace WebRequestStatus {
     observedgeneration: number,
     lastrun?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus.AsObject,
     nextrun?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    failurereason: string,
-    failuremessage: string,
     conditionsList: Array<WebRequestCondition.AsObject>,
   }
 }

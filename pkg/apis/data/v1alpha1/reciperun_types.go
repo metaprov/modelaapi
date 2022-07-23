@@ -9,11 +9,12 @@ import (
 type RecipeRunPhase string
 
 const (
-	RecipeRunPhasePending RecipeRunPhase = "Pending"
-	RecipeRunPhaseAborted RecipeRunPhase = "Aborted"
-	RecipeRunPhaseRunning RecipeRunPhase = "Running"
-	RecipeRunPhaseSucceed RecipeRunPhase = "Completed"
-	RecipeRunPhaseFailed  RecipeRunPhase = "Failed"
+	RecipeRunPhasePending     RecipeRunPhase = "Pending"
+	RecipeRunPhaseAborted     RecipeRunPhase = "Aborted"
+	RecipeRunPhaseRunning     RecipeRunPhase = "Running"
+	RecipeRunPhaseUnitTesting RecipeRunPhase = "UnitTesting"
+	RecipeRunPhaseSucceed     RecipeRunPhase = "Completed"
+	RecipeRunPhaseFailed      RecipeRunPhase = "Failed"
 )
 
 // Condition on the dataset
@@ -21,8 +22,9 @@ type RecipeRunConditionType string
 
 /// RecipeName Condition
 const (
-	RecipeRunCompleted RecipeConditionType = "Completed"
-	RecipeRunSaved     RecipeConditionType = "Saved"
+	RecipeRunUnitTested RecipeConditionType = "UnitTested"
+	RecipeRunCompleted  RecipeConditionType = "Completed"
+	RecipeRunSaved      RecipeConditionType = "Saved"
 )
 
 // RecipeRunCondition describes the state of a dataset at a certain point.
@@ -122,9 +124,11 @@ type RecipeRunStatus struct {
 	// Last time the object was updated
 	//+kubebuilder:validation:Optional
 	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,9,opt,name=lastUpdated"`
-
+	// Test suite for this recipe
+	//+kubebuilder:validation:Optional
+	UnitTestsResult catalog.TestSuiteResult `json:"unitTestsResult,omitempty" protobuf:"bytes,10,opt,name=unitTestsResult"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []RecipeCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,10,rep,name=conditions"`
+	Conditions []RecipeCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,11,rep,name=conditions"`
 }

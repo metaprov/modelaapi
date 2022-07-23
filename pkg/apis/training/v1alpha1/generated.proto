@@ -98,7 +98,7 @@ message CapacityStageSpec {
 
   // Validations is the specification of tests to run in this stage
   // +kubebuilder:validation:Optional
-  optional ModelTestSuite tests = 3;
+  optional ModelTestSuite unitTests = 3;
 
   // Resource define the hardware resources req.
   // +kubebuilder:validation:Optional
@@ -443,7 +443,7 @@ message DeploymentStageSpec {
 
   // Tests is the specification of tests to run in this stage
   // +kubebuilder:validation:Optional
-  optional ModelTestSuite tests = 4;
+  optional ModelTestSuite unitTests = 4;
 
   // Resource define the hardware resources req.
   // +kubebuilder:validation:Optional
@@ -1717,7 +1717,7 @@ message ModelPipelineRunStageStatus {
 
   // Results is the results of running the test datasets against the new model
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult testsResult = 9;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult unitTestsResult = 9;
 
   // Error record error.
   // +kubebuilder:validation:Optional
@@ -2166,9 +2166,9 @@ message ModelSpec {
   // +kubebuilder:validation:Optional
   optional InterpretabilitySpec interpretability = 44;
 
-  // Interpretability specifies the configuration to generate model interpretability visualizations
+  // The set of unit tests for this model.
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite tests = 45;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite unitTests = 45;
 }
 
 // ModelStatus defines the observed state of a Model
@@ -2433,9 +2433,9 @@ message ModelStatus {
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Images images = 68;
 
-  // Interpretability specifies the configuration to generate model interpretability visualizations
+  // The result of running the unit tests
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult testsResult = 69;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult unitTestsResult = 69;
 
   // +kubebuilder:validation:Optional
   // +patchMergeKey=type
@@ -2455,7 +2455,7 @@ message ModelTestSuite {
 
   // Define the column name for the validation role
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite tests = 3;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite unitTests = 3;
 }
 
 // NLPEstimatorSpec specifies the configuration for an NLP model
@@ -2701,6 +2701,10 @@ message NotebookSpec {
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool paused = 14;
+
+  // The set of unit tests for this notebook
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite unitTests = 15;
 }
 
 // NotebookStatus is the observed state of the notebook resource
@@ -2729,14 +2733,9 @@ message NotebookStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 6;
 
-  // Update in case of terminal failure
-  // Borrowed from cluster api controller
+  // The result of running the unit tests
   // +kubebuilder:validation:Optional
-  optional string failureReason = 7;
-
-  // Update in case of terminal failure message
-  // +kubebuilder:validation:Optional
-  optional string failureMessage = 8;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult unitTestsResult = 7;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
@@ -3469,7 +3468,7 @@ message StudySpec {
 
   // A template for models unit tests
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite testsTemplate = 38;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite unitTestsTemplate = 38;
 }
 
 // StudyStatus defines the observed state of a Study
@@ -3936,7 +3935,7 @@ message UATStageSpec {
 
   // Validations defines the machine learning test cases to run against the new trained model.
   // +kubebuilder:validation:Optional
-  optional ModelTestSuite tests = 3;
+  optional ModelTestSuite unitTests = 3;
 
   // Resource define the hardware resources req.
   // +kubebuilder:validation:Optional

@@ -384,6 +384,7 @@ func (in *DataTestCase) DeepCopyInto(out *DataTestCase) {
 		**out = **in
 	}
 	out.EntityRef = in.EntityRef
+	out.CompareToRef = in.CompareToRef
 	if in.Column != nil {
 		in, out := &in.Column, &out.Column
 		*out = new(string)

@@ -25,6 +25,8 @@ const (
 	StudyPhaseCreatedEnsembles   StudyPhase = "CreatedEnsembles"
 	StudyPhaseTesting            StudyPhase = "Testing"
 	StudyPhaseTested             StudyPhase = "Tested"
+	StudyPhaseUnitTesting        StudyPhase = "UnitTesting"
+	StudyPhaseUnitTested         StudyPhase = "UnitTested"
 	StudyPhaseReported           StudyPhase = "Reported"
 	StudyPhaseReporting          StudyPhase = "Reporting"
 	StudyPhaseProfiling          StudyPhase = "Profiling"
@@ -94,6 +96,7 @@ const (
 	StudyCompleted   StudyConditionType = "Completed"
 	StudyPartitioned StudyConditionType = "Partitioned"
 	StudyArchived    StudyConditionType = "Archived"
+	StudyUnitTested  StudyConditionType = "UnitTested"
 )
 
 // StudyCondition describes the state of a Study at a certain point
@@ -620,7 +623,7 @@ type StudySpec struct {
 	CodeGenerated *bool `json:"codeGenerated,omitempty" protobuf:"varint,37,opt,name=codeGenerated"`
 	// A template for models unit tests
 	// +kubebuilder:validation:Optional
-	TestsTemplate catalog.TestSuite `json:"testsTemplate,omitempty" protobuf:"bytes,38,opt,name=testsTemplate"`
+	UnitTestsTemplate catalog.TestSuite `json:"unitTestsTemplate,omitempty" protobuf:"bytes,38,opt,name=unitTestsTemplate"`
 }
 
 // StudyStatus defines the observed state of a Study

@@ -16,11 +16,12 @@ import (
 type SqlQueryRunPhase string
 
 const (
-	SqlQueryRunPhasePending   SqlQueryRunPhase = "Pending"
-	SqlQueryRunPhaseRunning   SqlQueryRunPhase = "Running"
-	SqlQueryRunPhaseFailed    SqlQueryRunPhase = "Failed"
-	SqlQueryRunPhaseAborted   SqlQueryRunPhase = "Aborted"
-	SqlQueryRunPhaseCompleted SqlQueryRunPhase = "Completed"
+	SqlQueryRunPhasePending     SqlQueryRunPhase = "Pending"
+	SqlQueryRunPhaseRunning     SqlQueryRunPhase = "Running"
+	SqlQueryRunPhaseFailed      SqlQueryRunPhase = "Failed"
+	SqlQueryRunPhaseUnitTesting RecipeRunPhase   = "UnitTesting"
+	SqlQueryRunPhaseAborted     SqlQueryRunPhase = "Aborted"
+	SqlQueryRunPhaseCompleted   SqlQueryRunPhase = "Completed"
 )
 
 // SqlQueryRunConditionType is the condition of the sqlquery
@@ -28,8 +29,9 @@ type SqlQueryRunConditionType string
 
 /// SqlQueryRun Condition
 const (
-	SqlQueryRunCompleted SqlQueryRunConditionType = "Completed"
-	SqlQueryRunSaved     SqlQueryRunConditionType = "Saved"
+	SqlQueryRunUnitTested SqlQueryRunConditionType = "UnitTested"
+	SqlQueryRunCompleted  SqlQueryRunConditionType = "Completed"
+	SqlQueryRunSaved      SqlQueryRunConditionType = "Saved"
 )
 
 // SqlQueryRunCondition describes the state of a deployment at a certain point.
@@ -132,6 +134,9 @@ type SqlQueryRunSpec struct {
 	// The execution env of this recipes
 	// +kubebuilder:validation:Optional
 	LabRef v1.ObjectReference `json:"labRef,omitempty" protobuf:"bytes,15,opt,name=labRef"`
+	// unit tests on the result
+	// +kubebuilder:validation:Optional
+	UnitTests catalog.TestSuite `json:"unitTests,omitempty" protobuf:"bytes,16,opt,name=unitTests"`
 }
 
 // SqlQueryRunStatus defines the observed state of SqlQueryRun
@@ -172,7 +177,9 @@ type SqlQueryRunStatus struct {
 	// Update in case of terminal failure message
 	//+kubebuilder:validation:Optional
 	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,13,opt,name=failureMessage"`
-
+	// The unit tests results.
+	// +kubebuilder:validation:Optional
+	UnitTestsResult catalog.TestSuiteResult `json:"unitTestsResult,omitempty" protobuf:"bytes,16,opt,name=unitTestsResult"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional

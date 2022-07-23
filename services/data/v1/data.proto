@@ -198,13 +198,6 @@ message DsMergeForecastFileResponse {
     string uri = 1;
 }
 
-///////////////////////////////// Merge Forecast Files
-
-
-// Evaludate the prediction against ground truth
-
-
-
 
 ///////////////////////////////////  Study profile
 
@@ -224,41 +217,7 @@ message DsCreateStudyProfileResponse {
    string uri = 1;
 }
 
-// Dataset tests
-message RunDatasetTestsRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct product = 1;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion version = 2;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 3;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset dataset = 4;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection = 5;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 6;
-    map<string,bytes> secret = 7;
-}
-
-message RunDatasetTestsResponse {
-    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult result = 1;
-}
-
-// Model Tests
-message RunModelTestsRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct product = 1;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion version = 2;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 3;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset dataset = 4;
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study study = 5;
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model model = 6;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection = 7;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 8;
-    map<string,bytes> secret = 9;
-}
-
-message RunModelTestsResponse {
-    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult result = 1;
-}
-
-// Drift Tests
-
-message RunDriftTestsRequest {
+message RunTestSuiteRequest {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct product = 1;
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion version = 2;
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 3;
@@ -268,39 +227,30 @@ message RunDriftTestsRequest {
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection = 7;
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 8;
     map<string,bytes> secret = 10;
-    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite tests = 11;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram histogram = 12;    
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite suite = 11;
+    oneof sut_oneof {
+        github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset  sutDataset = 12;
+        github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study sutStudy = 13;
+        github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model sutModel = 14;
+        github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe sutRecipe = 15;
+        github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram sutHistogram = 16;
+        github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram sutPredictor = 17;
+
+    }
+    oneof sut_ref {
+        github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset  refDataset = 20;
+        github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study refStudy = 21;
+        github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model refModel = 22;
+        github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe refRecipe = 23;
+        github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram reftHistogram = 24;
+        github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram refPredictor = 25;
+    }
 }
 
-message RunDriftTestsResponse {
+message RunTestSuiteResponse{
     // For each histogram answer the value of the drift parameter.
     github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult result = 1;
-    repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement drift = 2;
 }
-
-// Ground true tests
-
-
-// Evaludate the prediction against ground truth
-message RunFeedbackTestsRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct product = 1;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion version = 2;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 3;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset predictionsDataset = 4;
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study study = 5;
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model model = 6;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection = 7;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 8;
-    map<string,bytes> secret = 9;
-    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite tests = 10;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset groundTruthDataset = 11;
-}
-
-message RunFeedbackTestsResponse {
-    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult result = 1;
-}
-
-
 
 message DsGenerateDatasetRequest {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct product = 1;
@@ -729,8 +679,5 @@ service DataService {
     rpc ExecuteSql(DsExecuteSqlRequest) returns (DsExecuteSqlResponse) {}
     rpc Snapshot(DsSnapshotRequest) returns (DsSnapshotResponse) {}
     // Tests
-    rpc RunDatasetTests(RunDatasetTestsRequest) returns (RunDatasetTestsResponse) {}
-    rpc RunModelTests(RunModelTestsRequest) returns (RunModelTestsResponse) {}
-    rpc RunDataDriftTests(RunDriftTestsRequest) returns (RunDriftTestsResponse) {}
-    rpc RunFeedbackTests(RunFeedbackTestsRequest) returns (RunFeedbackTestsResponse) {}
+    rpc RunTestSuite(RunTestSuiteRequest) returns (RunTestSuiteResponse) {}
 }

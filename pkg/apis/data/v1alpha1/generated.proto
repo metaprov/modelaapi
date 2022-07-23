@@ -1484,7 +1484,7 @@ message DataSourceSpec {
 
   // The specification for tests for a new dataset
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite testsTemplate = 15;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite unitTestsTemplate = 15;
 }
 
 // DataSourceStatus defines the observed state of a DataSource object
@@ -1717,7 +1717,7 @@ message DatasetSpec {
 
   // The specification for tests for a new dataset
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite tests = 29;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite unitTests = 29;
 }
 
 // DatasetStatistics contains statistics about the Dataset's overall data, as well as every feature of the data. The
@@ -1787,7 +1787,7 @@ message DatasetStatus {
 
   // List of validation results which are generated for every validation rule associated with the Dataset's Data Source
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult testResults = 9;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult unitTestResults = 9;
 
   // Last time the Dataset was used with a Study
   // +kubebuilder:validation:Optional
@@ -1838,14 +1838,14 @@ message DatasetStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference featureHistogramRef = 22;
 
-  // The specification for tests for a new dataset
+  // The the result of the last run of unit tests.
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult testResult = 29;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult unitTestResult = 23;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated DatasetCondition conditions = 23;
+  repeated DatasetCondition conditions = 24;
 }
 
 // DatasetTemplate is used to generate new datasets
@@ -2155,7 +2155,8 @@ message FeatureHistogramSpec {
   optional int32 SyncIntervalSec = 14;
 
   // Test suite for this histogram.
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite tests = 15;
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite unitTests = 15;
 }
 
 // FeatureHistogramStatus defines the observed state of FeatureHistogram
@@ -2190,7 +2191,7 @@ message FeatureHistogramStatus {
 
   // Test suite for this histogram.
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult testsResult = 9;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult unitTestsResult = 9;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
@@ -3364,10 +3365,14 @@ message RecipeRunStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 9;
 
+  // Test suite for this recipe
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult unitTestsResult = 10;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated RecipeCondition conditions = 10;
+  repeated RecipeCondition conditions = 11;
 }
 
 // RecipeSpec defines the desired state of a dataset
@@ -3415,6 +3420,10 @@ message RecipeSpec {
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
   optional int32 ttl = 11;
+
+  // Unit tests templates operating on the recipe run.
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite unitTestsTemplate = 12;
 }
 
 // RecipeStatus defines the observed state of Recipe
@@ -3434,15 +3443,6 @@ message RecipeStatus {
   // Last time the object was updated
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 4;
-
-  // Update in case of terminal failure
-  // Borrowed from cluster api controller
-  // +kubebuilder:validation:Optional
-  optional string failureReason = 5;
-
-  // Update in case of terminal failure message
-  // +kubebuilder:validation:Optional
-  optional string failureMessage = 6;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
@@ -3731,6 +3731,10 @@ message SqlQueryRunSpec {
   // The execution env of this recipes
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference labRef = 15;
+
+  // unit tests on the result
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite unitTests = 16;
 }
 
 // SqlQueryRunStatus defines the observed state of SqlQueryRun
@@ -3782,6 +3786,10 @@ message SqlQueryRunStatus {
   // +kubebuilder:validation:Optional
   optional string failureMessage = 13;
 
+  // The unit tests results.
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult unitTestsResult = 16;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
@@ -3831,15 +3839,6 @@ message SqlQueryStatus {
   // The time of the next schedule run
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time nextRun = 4;
-
-  // Update in case of terminal failure
-  // Borrowed from cluster api controller
-  // +kubebuilder:validation:Optional
-  optional string failureReason = 5;
-
-  // Update in case of terminal failure message
-  // +kubebuilder:validation:Optional
-  optional string failureMessage = 6;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
@@ -4053,6 +4052,10 @@ message WebRequestRunSpec {
   // If none, use the default lab from the data product
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference labRef = 14;
+
+  // unit tests on the result
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite unitTests = 15;
 }
 
 // WebRequestRunStatus defines the observed state of WebRequestRun
@@ -4109,10 +4112,14 @@ message WebRequestRunStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 13;
 
+  // The unit tests results.
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult unitTestsResult = 14;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated WebRequestRunCondition conditions = 14;
+  repeated WebRequestRunCondition conditions = 15;
 }
 
 // WebRequestSpec contain the desired state of a WebRequest
@@ -4157,15 +4164,6 @@ message WebRequestStatus {
   // The time of the next schedule run
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time nextRun = 4;
-
-  // Update in case of terminal failure
-  // Borrowed from cluster api controller
-  // +kubebuilder:validation:Optional
-  optional string failureReason = 5;
-
-  // Update in case of terminal failure message
-  // +kubebuilder:validation:Optional
-  optional string failureMessage = 6;
 
   // +patchMergeKey=type
   // +patchStrategy=merge

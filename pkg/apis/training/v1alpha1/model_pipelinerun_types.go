@@ -14,7 +14,8 @@ const (
 	PipelinePhasePublishing         PipelinePhase = "Publishing"
 	PipelinePhaseSmokeTest          PipelinePhase = "SmokeTest"
 	PipelinePhasePredictorSetup     PipelinePhase = "PredictorSetup"
-	PipelinePhaseTesting            PipelinePhase = "Testing"
+	PipelinePhaseUnitTesting        PipelinePhase = "UnitTesting"
+	PipelinePhaseUnitTested         PipelinePhase = "UnitTested"
 	PipelinePhaseWaitingForApproval PipelinePhase = "WaitingForApproval"
 	PipelinePhaseApproved           PipelinePhase = "Approved"
 	PipelinePhaseRunning            PipelinePhase = "Running"
@@ -187,7 +188,7 @@ type ModelPipelineRunStageStatus struct {
 	EndTime *metav1.Time `json:"endTime,omitempty" protobuf:"bytes,8,opt,name=endTime"`
 	// Results is the results of running the test datasets against the new model
 	// +kubebuilder:validation:Optional
-	TestsResult catalog.TestSuiteResult `json:"testsResult,omitempty" protobuf:"bytes,9,rep,name=testsResult"`
+	UnitTestsResult catalog.TestSuiteResult `json:"unitTestsResult,omitempty" protobuf:"bytes,9,rep,name=unitTestsResult"`
 	// Error record error.
 	//+kubebuilder:validation:Optional
 	Error string `json:"error,omitempty" protobuf:"bytes,10,opt,name=error"`

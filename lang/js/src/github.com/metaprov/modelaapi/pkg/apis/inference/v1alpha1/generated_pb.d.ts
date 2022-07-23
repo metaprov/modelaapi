@@ -759,10 +759,10 @@ export class DriftDetectionSpec extends jspb.Message {
   hasTraininghistogramref(): boolean;
   clearTraininghistogramref(): DriftDetectionSpec;
 
-  getTests(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
-  setTests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): DriftDetectionSpec;
-  hasTests(): boolean;
-  clearTests(): DriftDetectionSpec;
+  getUnitteststemplate(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
+  setUnitteststemplate(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): DriftDetectionSpec;
+  hasUnitteststemplate(): boolean;
+  clearUnitteststemplate(): DriftDetectionSpec;
 
   getSchedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
   setSchedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): DriftDetectionSpec;
@@ -798,7 +798,7 @@ export namespace DriftDetectionSpec {
     enabled: boolean,
     livehistogramref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     traininghistogramref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    tests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
+    unitteststemplate?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
     schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     outlierdetectionmodelref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     thresholdsList: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DriftThreshold.AsObject>,
@@ -1414,10 +1414,10 @@ export class PredictionSpec extends jspb.Message {
   hasOutput(): boolean;
   clearOutput(): PredictionSpec;
 
-  getTests(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelTestSuite | undefined;
-  setTests(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelTestSuite): PredictionSpec;
-  hasTests(): boolean;
-  clearTests(): PredictionSpec;
+  getUnittests(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelTestSuite | undefined;
+  setUnittests(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelTestSuite): PredictionSpec;
+  hasUnittests(): boolean;
+  clearUnittests(): PredictionSpec;
 
   getOwner(): string;
   setOwner(value: string): PredictionSpec;
@@ -1468,7 +1468,7 @@ export namespace PredictionSpec {
     forecast: boolean,
     input?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataInputSpec.AsObject,
     output?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataOutputSpec.AsObject,
-    tests?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelTestSuite.AsObject,
+    unittests?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelTestSuite.AsObject,
     owner: string,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     activedeadlineseconds: number,
@@ -1495,10 +1495,10 @@ export class PredictionStatus extends jspb.Message {
   getPhase(): string;
   setPhase(value: string): PredictionStatus;
 
-  getTestsresult(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
-  setTestsresult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): PredictionStatus;
-  hasTestsresult(): boolean;
-  clearTestsresult(): PredictionStatus;
+  getUnittestsresult(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
+  setUnittestsresult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): PredictionStatus;
+  hasUnittestsresult(): boolean;
+  clearUnittestsresult(): PredictionStatus;
 
   getObservedgeneration(): number;
   setObservedgeneration(value: number): PredictionStatus;
@@ -1543,7 +1543,7 @@ export namespace PredictionStatus {
     starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     phase: string,
-    testsresult?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
+    unittestsresult?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
     observedgeneration: number,
     rows: number,
     triggeredby: string,

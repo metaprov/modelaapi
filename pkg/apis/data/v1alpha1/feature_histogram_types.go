@@ -125,7 +125,8 @@ type FeatureHistogramSpec struct {
 	// +kubebuilder:validation:Optional
 	SyncIntervalSec *int32 `json:"SyncIntervalSec,omitempty" protobuf:"bytes,14,opt,name=SyncIntervalSec"`
 	// Test suite for this histogram.
-	Tests catalog.TestSuite `json:"tests,omitempty" protobuf:"bytes,15,opt,name=tests"`
+	// +kubebuilder:validation:Optional
+	UnitTests catalog.TestSuite `json:"unitTests,omitempty" protobuf:"bytes,15,opt,name=unitTests"`
 }
 
 // FeatureHistogramStatus defines the observed state of FeatureHistogram
@@ -153,7 +154,7 @@ type FeatureHistogramStatus struct {
 	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,8,opt,name=failureMessage"`
 	// Test suite for this histogram.
 	//+kubebuilder:validation:Optional
-	TestsResult catalog.TestSuiteResult `json:"testsResult,omitempty" protobuf:"bytes,9,opt,name=testsResult"`
+	UnitTestsResult catalog.TestSuiteResult `json:"unitTestsResult,omitempty" protobuf:"bytes,9,opt,name=unitTestsResult"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional

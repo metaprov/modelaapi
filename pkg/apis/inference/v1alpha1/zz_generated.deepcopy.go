@@ -687,7 +687,7 @@ func (in *DriftDetectionSpec) DeepCopyInto(out *DriftDetectionSpec) {
 	}
 	out.ServingHistogramRef = in.ServingHistogramRef
 	out.TrainingHistogramRef = in.TrainingHistogramRef
-	in.Tests.DeepCopyInto(&out.Tests)
+	in.UnitTestsTemplate.DeepCopyInto(&out.UnitTestsTemplate)
 	in.Schedule.DeepCopyInto(&out.Schedule)
 	out.OutlierDetectionModelRef = in.OutlierDetectionModelRef
 	if in.Thresholds != nil {
@@ -776,7 +776,7 @@ func (in *FeedbackTestSpec) DeepCopyInto(out *FeedbackTestSpec) {
 	}
 	out.FeedbackDatasetRef = in.FeedbackDatasetRef
 	out.TrainingDatasetRef = in.TrainingDatasetRef
-	in.Tests.DeepCopyInto(&out.Tests)
+	in.UnitTestsTemplate.DeepCopyInto(&out.UnitTestsTemplate)
 	in.Schedule.DeepCopyInto(&out.Schedule)
 }
 
@@ -1202,7 +1202,7 @@ func (in *PredictionSpec) DeepCopyInto(out *PredictionSpec) {
 	}
 	in.Input.DeepCopyInto(&out.Input)
 	in.Output.DeepCopyInto(&out.Output)
-	in.Tests.DeepCopyInto(&out.Tests)
+	in.UnitTests.DeepCopyInto(&out.UnitTests)
 	if in.Owner != nil {
 		in, out := &in.Owner, &out.Owner
 		*out = new(string)
@@ -1259,7 +1259,7 @@ func (in *PredictionStatus) DeepCopyInto(out *PredictionStatus) {
 		in, out := &in.EndTime, &out.EndTime
 		*out = (*in).DeepCopy()
 	}
-	in.TestsResult.DeepCopyInto(&out.TestsResult)
+	in.UnitTestsResult.DeepCopyInto(&out.UnitTestsResult)
 	in.Logs.DeepCopyInto(&out.Logs)
 	if in.LastUpdated != nil {
 		in, out := &in.LastUpdated, &out.LastUpdated

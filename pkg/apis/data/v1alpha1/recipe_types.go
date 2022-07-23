@@ -92,6 +92,9 @@ type RecipeSpec struct {
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
 	TTL *int32 `json:"ttl,omitempty" protobuf:"varint,11,opt,name=ttl"`
+	// Unit tests templates operating on the recipe run.
+	// +kubebuilder:validation:Optional
+	UnitTestsTemplate catalog.TestSuite `json:"unitTestsTemplate,omitempty" protobuf:"bytes,12,opt,name=unitTestsTemplate"`
 }
 
 // RecipeStatus defines the observed state of Recipe
@@ -110,13 +113,6 @@ type RecipeStatus struct {
 	// Last time the object was updated
 	//+kubebuilder:validation:Optional
 	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,4,opt,name=lastUpdated"`
-	// Update in case of terminal failure
-	// Borrowed from cluster api controller
-	//+kubebuilder:validation:Optional
-	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,5,opt,name=failureReason"`
-	// Update in case of terminal failure message
-	//+kubebuilder:validation:Optional
-	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,6,opt,name=failureMessage"`
 
 	// +patchMergeKey=type
 	// +patchStrategy=merge

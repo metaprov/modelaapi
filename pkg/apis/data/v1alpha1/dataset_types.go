@@ -9,22 +9,21 @@ import (
 type DatasetPhase string
 
 const (
-	DatasetPhasePending           DatasetPhase = "Pending"    // when generating
-	DatasetPhaseGenerating        DatasetPhase = "Generating" // when generating
-	DatasetPhaseGenSuccess        DatasetPhase = "GenSuccess" // when synthetic gen success
-	DatasetPhaseIngestRunning     DatasetPhase = "Ingesting"
-	DatasetPhaseIngestSuccess     DatasetPhase = "Ingested"
-	DatasetPhaseReportRunning     DatasetPhase = "Reporting"
-	DatasetPhaseReportSuccess     DatasetPhase = "Reported"
-	DatasetPhaseProfileRunning    DatasetPhase = "Profiling"
-	DatasetPhaseProfileSuccess    DatasetPhase = "Profiled"
-	DatasetPhaseValidationRunning DatasetPhase = "Validating"
-	DatasetPhaseValidationSuccess DatasetPhase = "Validated"
-	DatasetPhaseSnapshotRunning   DatasetPhase = "TakingSnapshot"
-	DatasetPhaseSnapshotSuccess   DatasetPhase = "Snapshotted"
-	DatasetPhaseFailed            DatasetPhase = "Failed"
-	DatasetPhaseAborted           DatasetPhase = "Aborted"
-	DatasetPhaseReady             DatasetPhase = "Ready"
+	DatasetPhasePending         DatasetPhase = "Pending"    // when generating
+	DatasetPhaseGenerating      DatasetPhase = "Generating" // when generating
+	DatasetPhaseGenSuccess      DatasetPhase = "GenSuccess" // when synthetic gen success
+	DatasetPhaseIngestRunning   DatasetPhase = "Ingesting"
+	DatasetPhaseIngestSuccess   DatasetPhase = "Ingested"
+	DatasetPhaseReportRunning   DatasetPhase = "Reporting"
+	DatasetPhaseReportSuccess   DatasetPhase = "Reported"
+	DatasetPhaseProfileRunning  DatasetPhase = "Profiling"
+	DatasetPhaseProfileSuccess  DatasetPhase = "Profiled"
+	DatasetPhaseUnitTesting     DatasetPhase = "UnitTesting"
+	DatasetPhaseSnapshotRunning DatasetPhase = "TakingSnapshot"
+	DatasetPhaseSnapshotSuccess DatasetPhase = "Snapshotted"
+	DatasetPhaseFailed          DatasetPhase = "Failed"
+	DatasetPhaseAborted         DatasetPhase = "Aborted"
+	DatasetPhaseReady           DatasetPhase = "Ready"
 )
 
 // Condition on the dataset
@@ -33,7 +32,7 @@ type DatasetConditionType string
 /// DatasetName Condition
 const (
 	DatasetReported    DatasetConditionType = "Reported"
-	DatasetValidated   DatasetConditionType = "Validated"
+	DatasetUnitTested  DatasetConditionType = "UnitTested"
 	DatasetSnapshotted DatasetConditionType = "Snapshotted"
 	DatasetProfiled    DatasetConditionType = "Profiled"
 	DatasetIngested    DatasetConditionType = "Ingested"
@@ -204,7 +203,7 @@ type DatasetSpec struct {
 	GenerateFeatureHistogram *bool `json:"generateFeatureHistogram,omitempty" protobuf:"varint,28,opt,name=generateFeatureHistogram"`
 	// The specification for tests for a new dataset
 	// +kubebuilder:validation:Optional
-	Tests catalog.TestSuite `json:"tests,omitempty" protobuf:"bytes,29,opt,name=tests"`
+	UnitTests catalog.TestSuite `json:"unitTests,omitempty" protobuf:"bytes,29,opt,name=unitTests"`
 }
 
 // DatasetStatus defines the observed state of a Dataset object
@@ -238,7 +237,7 @@ type DatasetStatus struct {
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,8,opt,name=observedGeneration"`
 	// List of validation results which are generated for every validation rule associated with the Dataset's Data Source
 	//+kubebuilder:validation:Optional
-	TestResults catalog.TestSuiteResult `json:"testResults,omitempty" protobuf:"bytes,9,rep,name=testResults"`
+	UnitTestResults catalog.TestSuiteResult `json:"unitTestResults,omitempty" protobuf:"bytes,9,rep,name=unitTestResults"`
 	// Last time the Dataset was used with a Study
 	//+kubebuilder:validation:Optional
 	LastStudyTime *metav1.Time `json:"lastStudyTime,omitempty" protobuf:"bytes,10,opt,name=lastStudyTime"`
@@ -276,13 +275,13 @@ type DatasetStatus struct {
 	// The generated training feature histogram, Empty if no feature histogram generated
 	// +kubebuilder:validation:Optional
 	FeatureHistogramRef v1.ObjectReference `json:"featureHistogramRef,omitempty" protobuf:"bytes,22,opt,name=featureHistogramRef"`
-	// The specification for tests for a new dataset
+	// The the result of the last run of unit tests.
 	// +kubebuilder:validation:Optional
-	TestResult catalog.TestSuiteResult `json:"testResults,omitempty" protobuf:"bytes,29,opt,name=testResult"`
+	UnitTestResult catalog.TestSuiteResult `json:"unitTestResults,omitempty" protobuf:"bytes,23,opt,name=unitTestResult"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []DatasetCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,23,rep,name=conditions"`
+	Conditions []DatasetCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,24,rep,name=conditions"`
 }
 
 // DatasetStatistics contains statistics about the Dataset's overall data, as well as every feature of the data. The

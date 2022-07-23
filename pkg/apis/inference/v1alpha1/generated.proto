@@ -502,7 +502,7 @@ message DriftDetectionSpec {
   optional k8s.io.api.core.v1.ObjectReference trainingHistogramRef = 3;
 
   // Define the tests to run against the predictor.
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite tests = 4;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite unitTestsTemplate = 4;
 
   // The schedule on which model monitoring computations will be performed
   // +kubebuilder:validation:Optional
@@ -569,11 +569,11 @@ message FeedbackTestSpec {
   optional k8s.io.api.core.v1.ObjectReference trainingDatasetRef = 3;
 
   // Define the tests to run against the predictor.
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite tests = 6;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite tests = 4;
 
   // The schedule on which model monitoring computations will be performed
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 8;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 5;
 }
 
 // ForecastSpec specifies the details of a forecasting model
@@ -888,7 +888,7 @@ message PredictionSpec {
   // Tests specifies a collection of metrics that will be computed for each prediction
   // if the Labeled field of the Prediction is enabled
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuite tests = 8;
+  optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuite unitTests = 8;
 
   // The name of the Account which created the object, which exists in the same tenant as the object
   // +kubebuilder:default:="no-one"
@@ -951,7 +951,7 @@ message PredictionStatus {
   // The collection of metrics that represent the average measurement across all predictions for each
   // metric specified by the Tests field of the Predictor
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult testsResult = 4;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult unitTestsResult = 4;
 
   // ObservedGeneration is the last generation that was acted on
   // +kubebuilder:validation:Optional

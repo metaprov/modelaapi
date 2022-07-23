@@ -39,7 +39,7 @@ type DriftDetectionSpec struct {
 	// Reference to the training histogram ref. The training FeatureHistogram is created
 	TrainingHistogramRef v1.ObjectReference `json:"trainingHistogramRef,omitempty" protobuf:"bytes,3,opt,name=trainingHistogramRef"`
 	// Define the tests to run against the predictor.
-	Tests catalog.TestSuite `json:"tests,omitempty" protobuf:"bytes,4,opt,name=tests"`
+	UnitTestsTemplate catalog.TestSuite `json:"unitTestsTemplate,omitempty" protobuf:"bytes,4,opt,name=unitTestsTemplate"`
 	// The schedule on which model monitoring computations will be performed
 	// +kubebuilder:validation:Optional
 	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,5,opt,name=schedule"`
@@ -70,10 +70,10 @@ type FeedbackTestSpec struct {
 	// Reference to the training dataset for the live model.
 	TrainingDatasetRef v1.ObjectReference `json:"trainingRef,omitempty" protobuf:"bytes,3,opt,name=trainingDatasetRef"`
 	// Define the tests to run against the predictor.
-	Tests catalog.TestSuite `json:"tests,omitempty" protobuf:"bytes,6,opt,name=tests"`
+	UnitTestsTemplate catalog.TestSuite `json:"unitTestsTemplate,omitempty" protobuf:"bytes,4,opt,name=tests"`
 	// The schedule on which model monitoring computations will be performed
 	// +kubebuilder:validation:Optional
-	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,8,opt,name=schedule"`
+	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,5,opt,name=schedule"`
 }
 
 // ModelServingSpec specifies the configuration for models to be served by a Predictor

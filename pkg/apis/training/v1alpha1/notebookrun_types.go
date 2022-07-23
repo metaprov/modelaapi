@@ -22,18 +22,21 @@ type NotebookRunConditionType string
 
 /// NotebookRun Condition
 const (
-	NotebookRunCompleted NotebookRunConditionType = "Completed"
-	NotebookRunSaved     NotebookRunConditionType = "Saved"
+	NotebookRunUnitTested NotebookRunConditionType = "UnitTested"
+	NotebookRunCompleted  NotebookRunConditionType = "Completed"
+	NotebookRunSaved      NotebookRunConditionType = "Saved"
 )
 
 type NotebookRunPhase string
 
 const (
-	NotebookRunPhasePending   NotebookRunPhase = "Pending"
-	NotebookRunPhaseAborted   NotebookRunPhase = "Aborted"
-	NotebookRunPhaseRunning   NotebookRunPhase = "Running"
-	NotebookRunPhaseCompleted NotebookRunPhase = "Completed"
-	NotebookRunPhaseFailed    NotebookRunPhase = "Failed"
+	NotebookRunPhasePending     NotebookRunPhase = "Pending"
+	NotebookRunPhaseAborted     NotebookRunPhase = "Aborted"
+	NotebookRunPhaseRunning     NotebookRunPhase = "Running"
+	NotebookRunPhaseUnitTesting NotebookRunPhase = "UnitTesting"
+	NotebookRunPhaseUnitTested  NotebookRunPhase = "UnitTested"
+	NotebookRunPhaseCompleted   NotebookRunPhase = "Completed"
+	NotebookRunPhaseFailed      NotebookRunPhase = "Failed"
 )
 
 // NotebookRunCondition describes the state of a notebook run.

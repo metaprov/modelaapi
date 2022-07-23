@@ -3801,7 +3801,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CapacityStageSpec
   var f, obj = {
     enabled: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
     servingsitename: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    tests: (f = msg.getTests()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuite.toObject(includeInstance, f),
+    unittests: (f = msg.getUnittests()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuite.toObject(includeInstance, f),
     resources: (f = msg.getResources()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.toObject(includeInstance, f)
   };
 
@@ -3850,7 +3850,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CapacityStageSpec
     case 3:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuite;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuite.deserializeBinaryFromReader);
-      msg.setTests(value);
+      msg.setUnittests(value);
       break;
     case 4:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec;
@@ -3900,7 +3900,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CapacityStageSpec
       f
     );
   }
-  f = message.getTests();
+  f = message.getUnittests();
   if (f != null) {
     writer.writeMessage(
       3,
@@ -3992,10 +3992,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CapacityStageSpec
 
 
 /**
- * optional ModelTestSuite tests = 3;
+ * optional ModelTestSuite unitTests = 3;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuite}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CapacityStageSpec.prototype.getTests = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CapacityStageSpec.prototype.getUnittests = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuite} */ (
     jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuite, 3));
 };
@@ -4005,7 +4005,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CapacityStageSpec
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuite|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CapacityStageSpec} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CapacityStageSpec.prototype.setTests = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CapacityStageSpec.prototype.setUnittests = function(value) {
   return jspb.Message.setWrapperField(this, 3, value);
 };
 
@@ -4014,8 +4014,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CapacityStageSpec
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CapacityStageSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CapacityStageSpec.prototype.clearTests = function() {
-  return this.setTests(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CapacityStageSpec.prototype.clearUnittests = function() {
+  return this.setUnittests(undefined);
 };
 
 
@@ -4023,7 +4023,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CapacityStageSpec
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CapacityStageSpec.prototype.hasTests = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CapacityStageSpec.prototype.hasUnittests = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
@@ -8893,7 +8893,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DeploymentStageSp
     enabled: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
     servingsitename: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     manualapproval: (f = jspb.Message.getBooleanField(msg, 3)) == null ? undefined : f,
-    tests: (f = msg.getTests()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuite.toObject(includeInstance, f),
+    unittests: (f = msg.getUnittests()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuite.toObject(includeInstance, f),
     resources: (f = msg.getResources()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.toObject(includeInstance, f)
   };
 
@@ -8946,7 +8946,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DeploymentStageSp
     case 4:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuite;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuite.deserializeBinaryFromReader);
-      msg.setTests(value);
+      msg.setUnittests(value);
       break;
     case 5:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec;
@@ -9003,7 +9003,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DeploymentStageSp
       f
     );
   }
-  f = message.getTests();
+  f = message.getUnittests();
   if (f != null) {
     writer.writeMessage(
       4,
@@ -9131,10 +9131,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DeploymentStageSp
 
 
 /**
- * optional ModelTestSuite tests = 4;
+ * optional ModelTestSuite unitTests = 4;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuite}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DeploymentStageSpec.prototype.getTests = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DeploymentStageSpec.prototype.getUnittests = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuite} */ (
     jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuite, 4));
 };
@@ -9144,7 +9144,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DeploymentStageSp
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuite|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DeploymentStageSpec} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DeploymentStageSpec.prototype.setTests = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DeploymentStageSpec.prototype.setUnittests = function(value) {
   return jspb.Message.setWrapperField(this, 4, value);
 };
 
@@ -9153,8 +9153,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DeploymentStageSp
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DeploymentStageSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DeploymentStageSpec.prototype.clearTests = function() {
-  return this.setTests(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DeploymentStageSpec.prototype.clearUnittests = function() {
+  return this.setUnittests(undefined);
 };
 
 
@@ -9162,7 +9162,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DeploymentStageSp
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DeploymentStageSpec.prototype.hasTests = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DeploymentStageSpec.prototype.hasUnittests = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
@@ -27040,7 +27040,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
     approvedat: (f = msg.getApprovedat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     starttime: (f = msg.getStarttime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     endtime: (f = msg.getEndtime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
-    testsresult: (f = msg.getTestsresult()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.toObject(includeInstance, f),
+    unittestsresult: (f = msg.getUnittestsresult()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.toObject(includeInstance, f),
     error: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f
   };
 
@@ -27108,7 +27108,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
     case 9:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.deserializeBinaryFromReader);
-      msg.setTestsresult(value);
+      msg.setUnittestsresult(value);
       break;
     case 10:
       var value = /** @type {string} */ (reader.readString());
@@ -27188,7 +27188,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
   }
-  f = message.getTestsresult();
+  f = message.getUnittestsresult();
   if (f != null) {
     writer.writeMessage(
       9,
@@ -27426,10 +27426,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult testsResult = 9;
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult unitTestsResult = 9;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.prototype.getTestsresult = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.prototype.getUnittestsresult = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult, 9));
 };
@@ -27439,7 +27439,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.prototype.setTestsresult = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.prototype.setUnittestsresult = function(value) {
   return jspb.Message.setWrapperField(this, 9, value);
 };
 
@@ -27448,8 +27448,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.prototype.clearTestsresult = function() {
-  return this.setTestsresult(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.prototype.clearUnittestsresult = function() {
+  return this.setUnittestsresult(undefined);
 };
 
 
@@ -27457,7 +27457,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.prototype.hasTestsresult = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.prototype.hasUnittestsresult = function() {
   return jspb.Message.getField(this, 9) != null;
 };
 
@@ -30547,7 +30547,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.toObjec
     trialid: (f = jspb.Message.getField(msg, 42)) == null ? undefined : f,
     governance: (f = msg.getGovernance()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.GovernanceSpec.toObject(includeInstance, f),
     interpretability: (f = msg.getInterpretability()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.InterpretabilitySpec.toObject(includeInstance, f),
-    tests: (f = msg.getTests()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.toObject(includeInstance, f)
+    unittests: (f = msg.getUnittests()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -30772,7 +30772,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.deseria
     case 45:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.deserializeBinaryFromReader);
-      msg.setTests(value);
+      msg.setUnittests(value);
       break;
     default:
       reader.skipField();
@@ -31117,7 +31117,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.seriali
       proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.InterpretabilitySpec.serializeBinaryToWriter
     );
   }
-  f = message.getTests();
+  f = message.getUnittests();
   if (f != null) {
     writer.writeMessage(
       45,
@@ -32690,10 +32690,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite tests = 45;
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite unitTests = 45;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.getTests = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.getUnittests = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite, 45));
 };
@@ -32703,7 +32703,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.setTests = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.setUnittests = function(value) {
   return jspb.Message.setWrapperField(this, 45, value);
 };
 
@@ -32712,8 +32712,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.clearTests = function() {
-  return this.setTests(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.clearUnittests = function() {
+  return this.setUnittests(undefined);
 };
 
 
@@ -32721,7 +32721,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.hasTests = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.hasUnittests = function() {
   return jspb.Message.getField(this, 45) != null;
 };
 
@@ -32836,7 +32836,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.toObj
     governancestatus: (f = msg.getGovernancestatus()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.GovernanceStatus.toObject(includeInstance, f),
     interpretability: (f = msg.getInterpretability()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.InterpretabilityStatus.toObject(includeInstance, f),
     images: (f = msg.getImages()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Images.toObject(includeInstance, f),
-    testsresult: (f = msg.getTestsresult()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.toObject(includeInstance, f),
+    unittestsresult: (f = msg.getUnittestsresult()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.toObject(includeInstance, f),
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCondition.toObject, includeInstance)
   };
@@ -33164,7 +33164,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.deser
     case 69:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.deserializeBinaryFromReader);
-      msg.setTestsresult(value);
+      msg.setUnittestsresult(value);
       break;
     case 70:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCondition;
@@ -33678,7 +33678,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.seria
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Images.serializeBinaryToWriter
     );
   }
-  f = message.getTestsresult();
+  f = message.getUnittestsresult();
   if (f != null) {
     writer.writeMessage(
       69,
@@ -36039,10 +36039,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult testsResult = 69;
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult unitTestsResult = 69;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getTestsresult = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getUnittestsresult = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult, 69));
 };
@@ -36052,7 +36052,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.setTestsresult = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.setUnittestsresult = function(value) {
   return jspb.Message.setWrapperField(this, 69, value);
 };
 
@@ -36061,8 +36061,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.clearTestsresult = function() {
-  return this.setTestsresult(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.clearUnittestsresult = function() {
+  return this.setUnittestsresult(undefined);
 };
 
 
@@ -36070,7 +36070,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.hasTestsresult = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.hasUnittestsresult = function() {
   return jspb.Message.getField(this, 69) != null;
 };
 
@@ -36147,7 +36147,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuite.to
   var f, obj = {
     baselinemodelref: (f = msg.getBaselinemodelref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     datasetref: (f = msg.getDatasetref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
-    tests: (f = msg.getTests()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.toObject(includeInstance, f)
+    unittests: (f = msg.getUnittests()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -36197,7 +36197,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuite.de
     case 3:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.deserializeBinaryFromReader);
-      msg.setTests(value);
+      msg.setUnittests(value);
       break;
     default:
       reader.skipField();
@@ -36244,7 +36244,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuite.se
       k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
     );
   }
-  f = message.getTests();
+  f = message.getUnittests();
   if (f != null) {
     writer.writeMessage(
       3,
@@ -36330,10 +36330,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuite.pr
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite tests = 3;
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite unitTests = 3;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuite.prototype.getTests = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuite.prototype.getUnittests = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite, 3));
 };
@@ -36343,7 +36343,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuite.pr
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuite} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuite.prototype.setTests = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuite.prototype.setUnittests = function(value) {
   return jspb.Message.setWrapperField(this, 3, value);
 };
 
@@ -36352,8 +36352,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuite.pr
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuite} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuite.prototype.clearTests = function() {
-  return this.setTests(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuite.prototype.clearUnittests = function() {
+  return this.setUnittests(undefined);
 };
 
 
@@ -36361,7 +36361,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuite.pr
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuite.prototype.hasTests = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuite.prototype.hasUnittests = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
@@ -39434,7 +39434,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookSpec.toOb
     activedeadlineseconds: (f = jspb.Message.getField(msg, 11)) == null ? undefined : f,
     schedule: (f = msg.getSchedule()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.toObject(includeInstance, f),
     priority: (f = jspb.Message.getField(msg, 13)) == null ? undefined : f,
-    paused: (f = jspb.Message.getBooleanField(msg, 14)) == null ? undefined : f
+    paused: (f = jspb.Message.getBooleanField(msg, 14)) == null ? undefined : f,
+    unittests: (f = msg.getUnittests()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -39530,6 +39531,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookSpec.dese
     case 14:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setPaused(value);
+      break;
+    case 15:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.deserializeBinaryFromReader);
+      msg.setUnittests(value);
       break;
     default:
       reader.skipField();
@@ -39660,6 +39666,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookSpec.seri
     writer.writeBool(
       14,
       f
+    );
+  }
+  f = message.getUnittests();
+  if (f != null) {
+    writer.writeMessage(
+      15,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.serializeBinaryToWriter
     );
   }
 };
@@ -40174,6 +40188,43 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookSpec.prot
 };
 
 
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite unitTests = 15;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookSpec.prototype.getUnittests = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite, 15));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookSpec.prototype.setUnittests = function(value) {
+  return jspb.Message.setWrapperField(this, 15, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookSpec.prototype.clearUnittests = function() {
+  return this.setUnittests(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookSpec.prototype.hasUnittests = function() {
+  return jspb.Message.getField(this, 15) != null;
+};
+
+
 
 /**
  * List of repeated fields within this message type.
@@ -40219,8 +40270,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookStatus.to
     lastrun: (f = msg.getLastrun()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus.toObject(includeInstance, f),
     nextrun: (f = msg.getNextrun()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     lastupdated: (f = msg.getLastupdated()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
-    failurereason: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
-    failuremessage: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
+    unittestsresult: (f = msg.getUnittestsresult()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.toObject(includeInstance, f),
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookCondition.toObject, includeInstance)
   };
@@ -40287,12 +40337,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookStatus.de
       msg.setLastupdated(value);
       break;
     case 7:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setFailurereason(value);
-      break;
-    case 8:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setFailuremessage(value);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.deserializeBinaryFromReader);
+      msg.setUnittestsresult(value);
       break;
     case 9:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookCondition;
@@ -40373,18 +40420,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookStatus.se
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 7));
+  f = message.getUnittestsresult();
   if (f != null) {
-    writer.writeString(
+    writer.writeMessage(
       7,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 8));
-  if (f != null) {
-    writer.writeString(
-      8,
-      f
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.serializeBinaryToWriter
     );
   }
   f = message.getConditionsList();
@@ -40618,29 +40659,30 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookStatus.pr
 
 
 /**
- * optional string failureReason = 7;
- * @return {string}
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult unitTestsResult = 7;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookStatus.prototype.getFailurereason = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookStatus.prototype.getUnittestsresult = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult, 7));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookStatus.prototype.setFailurereason = function(value) {
-  return jspb.Message.setField(this, 7, value);
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookStatus.prototype.setUnittestsresult = function(value) {
+  return jspb.Message.setWrapperField(this, 7, value);
 };
 
 
 /**
- * Clears the field making it undefined.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookStatus.prototype.clearFailurereason = function() {
-  return jspb.Message.setField(this, 7, undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookStatus.prototype.clearUnittestsresult = function() {
+  return this.setUnittestsresult(undefined);
 };
 
 
@@ -40648,44 +40690,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookStatus.pr
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookStatus.prototype.hasFailurereason = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookStatus.prototype.hasUnittestsresult = function() {
   return jspb.Message.getField(this, 7) != null;
-};
-
-
-/**
- * optional string failureMessage = 8;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookStatus.prototype.getFailuremessage = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookStatus.prototype.setFailuremessage = function(value) {
-  return jspb.Message.setField(this, 8, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookStatus.prototype.clearFailuremessage = function() {
-  return jspb.Message.setField(this, 8, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookStatus.prototype.hasFailuremessage = function() {
-  return jspb.Message.getField(this, 8) != null;
 };
 
 
@@ -48557,7 +48563,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.toObjec
     modelversion: (f = jspb.Message.getField(msg, 35)) == null ? undefined : f,
     timeoutinsecs: (f = jspb.Message.getField(msg, 36)) == null ? undefined : f,
     codegenerated: (f = jspb.Message.getBooleanField(msg, 37)) == null ? undefined : f,
-    teststemplate: (f = msg.getTeststemplate()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.toObject(includeInstance, f)
+    unitteststemplate: (f = msg.getUnitteststemplate()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -48762,7 +48768,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.deseria
     case 38:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.deserializeBinaryFromReader);
-      msg.setTeststemplate(value);
+      msg.setUnitteststemplate(value);
       break;
     default:
       reader.skipField();
@@ -49069,7 +49075,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.seriali
       f
     );
   }
-  f = message.getTeststemplate();
+  f = message.getUnitteststemplate();
   if (f != null) {
     writer.writeMessage(
       38,
@@ -50430,10 +50436,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototy
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite testsTemplate = 38;
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite unitTestsTemplate = 38;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.getTeststemplate = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.getUnitteststemplate = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite, 38));
 };
@@ -50443,7 +50449,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototy
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.setTeststemplate = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.setUnitteststemplate = function(value) {
   return jspb.Message.setWrapperField(this, 38, value);
 };
 
@@ -50452,8 +50458,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototy
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.clearTeststemplate = function() {
-  return this.setTeststemplate(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.clearUnitteststemplate = function() {
+  return this.setUnitteststemplate(undefined);
 };
 
 
@@ -50461,7 +50467,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototy
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.hasTeststemplate = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.hasUnitteststemplate = function() {
   return jspb.Message.getField(this, 38) != null;
 };
 
@@ -55987,7 +55993,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UATStageSpec.toOb
   var f, obj = {
     enabled: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
     servingsitename: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    tests: (f = msg.getTests()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuite.toObject(includeInstance, f),
+    unittests: (f = msg.getUnittests()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuite.toObject(includeInstance, f),
     resources: (f = msg.getResources()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.toObject(includeInstance, f)
   };
 
@@ -56036,7 +56042,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UATStageSpec.dese
     case 3:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuite;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuite.deserializeBinaryFromReader);
-      msg.setTests(value);
+      msg.setUnittests(value);
       break;
     case 4:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec;
@@ -56086,7 +56092,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UATStageSpec.seri
       f
     );
   }
-  f = message.getTests();
+  f = message.getUnittests();
   if (f != null) {
     writer.writeMessage(
       3,
@@ -56178,10 +56184,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UATStageSpec.prot
 
 
 /**
- * optional ModelTestSuite tests = 3;
+ * optional ModelTestSuite unitTests = 3;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuite}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UATStageSpec.prototype.getTests = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UATStageSpec.prototype.getUnittests = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuite} */ (
     jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuite, 3));
 };
@@ -56191,7 +56197,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UATStageSpec.prot
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuite|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UATStageSpec} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UATStageSpec.prototype.setTests = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UATStageSpec.prototype.setUnittests = function(value) {
   return jspb.Message.setWrapperField(this, 3, value);
 };
 
@@ -56200,8 +56206,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UATStageSpec.prot
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UATStageSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UATStageSpec.prototype.clearTests = function() {
-  return this.setTests(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UATStageSpec.prototype.clearUnittests = function() {
+  return this.setUnittests(undefined);
 };
 
 
@@ -56209,7 +56215,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UATStageSpec.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UATStageSpec.prototype.hasTests = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UATStageSpec.prototype.hasUnittests = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 

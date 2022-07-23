@@ -17,6 +17,8 @@ const (
 	ModelPhaseTrained               ModelPhase = "Trained"
 	ModelPhaseTesting               ModelPhase = "Testing"
 	ModelPhaseTested                ModelPhase = "Tested"
+	ModelPhaseUnitTesting           ModelPhase = "UnitTesting"
+	ModelPhaseUnitTested            ModelPhase = "UnitTested"
 	ModelPhaseReporting             ModelPhase = "Reporting"
 	ModelPhaseReported              ModelPhase = "Reported"
 	ModelPhaseCompleted             ModelPhase = "Completed"
@@ -55,6 +57,8 @@ const (
 	ModelTrained ModelConditionType = "Trained"
 	// ModelTested states that the Model was trained on the training dataset, and tested against the testing dataset
 	ModelTested ModelConditionType = "Tested"
+	// ModelUnitTested states that the Model was trained on the training dataset, and tested against the testing dataset
+	ModelUnitTested ModelConditionType = "UnitTested"
 	// ModelReported states that a Report for the Model was generated and uploaded to a bucket
 	ModelReported ModelConditionType = "Reported"
 	// ModelPackaged states that the Model was baked into a Docker image
@@ -304,9 +308,9 @@ type ModelSpec struct {
 	// Interpretability specifies the configuration to generate model interpretability visualizations
 	// +kubebuilder:validation:Optional
 	Interpretability InterpretabilitySpec `json:"interpretability,omitempty" protobuf:"bytes,44,opt,name=interpretability"`
-	// Interpretability specifies the configuration to generate model interpretability visualizations
+	// The set of unit tests for this model.
 	// +kubebuilder:validation:Optional
-	Tests catalog.TestSuite `json:"tests,omitempty" protobuf:"bytes,45,opt,name=tests"`
+	UnitTests catalog.TestSuite `json:"unitTests,omitempty" protobuf:"bytes,45,opt,name=unitTests"`
 }
 
 // EnsembleSpec specifies the parameters of an ensemble model
@@ -523,9 +527,9 @@ type ModelStatus struct {
 	// Images specifies the container images used to train the model
 	// +kubebuilder:validation:Optional
 	Images catalog.Images `json:"images,omitempty" protobuf:"bytes,68,opt,name=images"`
-	// Interpretability specifies the configuration to generate model interpretability visualizations
+	// The result of running the unit tests
 	// +kubebuilder:validation:Optional
-	TestsResult catalog.TestSuiteResult `json:"testsResult,omitempty" protobuf:"bytes,69,opt,name="`
+	UnitTestsResult catalog.TestSuiteResult `json:"unitTestsResult,omitempty" protobuf:"bytes,69,opt,name="`
 	// +kubebuilder:validation:Optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge

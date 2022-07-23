@@ -170,8 +170,8 @@ func (dataset *Dataset) Ingested() bool {
 	return dataset.GetCond(DatasetIngested).Status == v1.ConditionTrue
 }
 
-func (dataset *Dataset) Validated() bool {
-	return *dataset.Spec.Validated && dataset.GetCond(DatasetValidated).Status == v1.ConditionTrue
+func (dataset *Dataset) UnitTested() bool {
+	return *dataset.Spec.Validated && dataset.GetCond(DatasetUnitTested).Status == v1.ConditionTrue
 }
 
 func (dataset *Dataset) Snapshotted() bool {
@@ -231,9 +231,9 @@ func (dataset *Dataset) MarkTakingSnapshot() {
 
 // ----------------------------- Validation --------------------
 
-func (dataset *Dataset) MarkValidationFailed(msg string) {
+func (dataset *Dataset) MarkUnitTestFailed(msg string) {
 	dataset.CreateOrUpdateCond(DatasetCondition{
-		Type:    DatasetValidated,
+		Type:    DatasetUnitTested,
 		Status:  v1.ConditionFalse,
 		Reason:  string(DatasetPhaseFailed),
 		Message: "Failed to validate." + msg,
@@ -247,23 +247,22 @@ func (dataset *Dataset) MarkValidationFailed(msg string) {
 	}
 }
 
-func (dataset *Dataset) MarkValidated() {
+func (dataset *Dataset) MarkUnitTested() {
 	dataset.CreateOrUpdateCond(DatasetCondition{
-		Type:   DatasetValidated,
+		Type:   DatasetUnitTested,
 		Status: v1.ConditionTrue,
 	})
-	dataset.Status.Phase = DatasetPhaseValidationSuccess
 	dataset.Status.Progress = 40
 
 }
 
 func (dataset *Dataset) MarkValidating() {
 	dataset.CreateOrUpdateCond(DatasetCondition{
-		Type:   DatasetValidated,
+		Type:   DatasetUnitTested,
 		Status: v1.ConditionFalse,
-		Reason: string(DatasetPhaseValidationRunning),
+		Reason: string(DatasetPhaseUnitTesting),
 	})
-	dataset.Status.Phase = DatasetPhaseValidationRunning
+	dataset.Status.Phase = DatasetPhaseUnitTesting
 	dataset.Status.Progress = 10
 }
 

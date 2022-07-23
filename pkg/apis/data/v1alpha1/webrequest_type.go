@@ -94,13 +94,6 @@ type WebRequestStatus struct {
 	// The time of the next schedule run
 	//+kubebuilder:validation:Optional
 	NextRun *metav1.Time `json:"nextRun,omitempty" protobuf:"bytes,4,opt,name=nextRun"`
-	// Update in case of terminal failure
-	// Borrowed from cluster api controller
-	//+kubebuilder:validation:Optional
-	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,5,opt,name=failureReason"`
-	// Update in case of terminal failure message
-	//+kubebuilder:validation:Optional
-	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,6,opt,name=failureMessage"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional

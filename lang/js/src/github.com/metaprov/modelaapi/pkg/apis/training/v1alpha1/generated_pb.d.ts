@@ -115,10 +115,10 @@ export class CapacityStageSpec extends jspb.Message {
   getServingsitename(): string;
   setServingsitename(value: string): CapacityStageSpec;
 
-  getTests(): ModelTestSuite | undefined;
-  setTests(value?: ModelTestSuite): CapacityStageSpec;
-  hasTests(): boolean;
-  clearTests(): CapacityStageSpec;
+  getUnittests(): ModelTestSuite | undefined;
+  setUnittests(value?: ModelTestSuite): CapacityStageSpec;
+  hasUnittests(): boolean;
+  clearUnittests(): CapacityStageSpec;
 
   getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
   setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): CapacityStageSpec;
@@ -137,7 +137,7 @@ export namespace CapacityStageSpec {
   export type AsObject = {
     enabled: boolean,
     servingsitename: string,
-    tests?: ModelTestSuite.AsObject,
+    unittests?: ModelTestSuite.AsObject,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
   }
 }
@@ -672,10 +672,10 @@ export class DeploymentStageSpec extends jspb.Message {
   getManualapproval(): boolean;
   setManualapproval(value: boolean): DeploymentStageSpec;
 
-  getTests(): ModelTestSuite | undefined;
-  setTests(value?: ModelTestSuite): DeploymentStageSpec;
-  hasTests(): boolean;
-  clearTests(): DeploymentStageSpec;
+  getUnittests(): ModelTestSuite | undefined;
+  setUnittests(value?: ModelTestSuite): DeploymentStageSpec;
+  hasUnittests(): boolean;
+  clearUnittests(): DeploymentStageSpec;
 
   getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
   setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): DeploymentStageSpec;
@@ -695,7 +695,7 @@ export namespace DeploymentStageSpec {
     enabled: boolean,
     servingsitename: string,
     manualapproval: boolean,
-    tests?: ModelTestSuite.AsObject,
+    unittests?: ModelTestSuite.AsObject,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
   }
 }
@@ -2623,10 +2623,10 @@ export class ModelPipelineRunStageStatus extends jspb.Message {
   hasEndtime(): boolean;
   clearEndtime(): ModelPipelineRunStageStatus;
 
-  getTestsresult(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
-  setTestsresult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): ModelPipelineRunStageStatus;
-  hasTestsresult(): boolean;
-  clearTestsresult(): ModelPipelineRunStageStatus;
+  getUnittestsresult(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
+  setUnittestsresult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): ModelPipelineRunStageStatus;
+  hasUnittestsresult(): boolean;
+  clearUnittestsresult(): ModelPipelineRunStageStatus;
 
   getError(): string;
   setError(value: string): ModelPipelineRunStageStatus;
@@ -2647,7 +2647,7 @@ export namespace ModelPipelineRunStageStatus {
     approvedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    testsresult?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
+    unittestsresult?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
     error: string,
   }
 }
@@ -3122,10 +3122,10 @@ export class ModelSpec extends jspb.Message {
   hasInterpretability(): boolean;
   clearInterpretability(): ModelSpec;
 
-  getTests(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
-  setTests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): ModelSpec;
-  hasTests(): boolean;
-  clearTests(): ModelSpec;
+  getUnittests(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
+  setUnittests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): ModelSpec;
+  hasUnittests(): boolean;
+  clearUnittests(): ModelSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelSpec.AsObject;
@@ -3180,7 +3180,7 @@ export namespace ModelSpec {
     trialid: number,
     governance?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.GovernanceSpec.AsObject,
     interpretability?: InterpretabilitySpec.AsObject,
-    tests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
+    unittests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
   }
 }
 
@@ -3437,10 +3437,10 @@ export class ModelStatus extends jspb.Message {
   hasImages(): boolean;
   clearImages(): ModelStatus;
 
-  getTestsresult(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
-  setTestsresult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): ModelStatus;
-  hasTestsresult(): boolean;
-  clearTestsresult(): ModelStatus;
+  getUnittestsresult(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
+  setUnittestsresult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): ModelStatus;
+  hasUnittestsresult(): boolean;
+  clearUnittestsresult(): ModelStatus;
 
   getConditionsList(): Array<ModelCondition>;
   setConditionsList(value: Array<ModelCondition>): ModelStatus;
@@ -3521,7 +3521,7 @@ export namespace ModelStatus {
     governancestatus?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.GovernanceStatus.AsObject,
     interpretability?: InterpretabilityStatus.AsObject,
     images?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Images.AsObject,
-    testsresult?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
+    unittestsresult?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
     conditionsList: Array<ModelCondition.AsObject>,
   }
 }
@@ -3537,10 +3537,10 @@ export class ModelTestSuite extends jspb.Message {
   hasDatasetref(): boolean;
   clearDatasetref(): ModelTestSuite;
 
-  getTests(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
-  setTests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): ModelTestSuite;
-  hasTests(): boolean;
-  clearTests(): ModelTestSuite;
+  getUnittests(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
+  setUnittests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): ModelTestSuite;
+  hasUnittests(): boolean;
+  clearUnittests(): ModelTestSuite;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelTestSuite.AsObject;
@@ -3554,7 +3554,7 @@ export namespace ModelTestSuite {
   export type AsObject = {
     baselinemodelref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     datasetref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    tests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
+    unittests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
   }
 }
 
@@ -3951,6 +3951,11 @@ export class NotebookSpec extends jspb.Message {
   getPaused(): boolean;
   setPaused(value: boolean): NotebookSpec;
 
+  getUnittests(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
+  setUnittests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): NotebookSpec;
+  hasUnittests(): boolean;
+  clearUnittests(): NotebookSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): NotebookSpec.AsObject;
   static toObject(includeInstance: boolean, msg: NotebookSpec): NotebookSpec.AsObject;
@@ -3975,6 +3980,7 @@ export namespace NotebookSpec {
     schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     priority: string,
     paused: boolean,
+    unittests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
   }
 }
 
@@ -4003,11 +4009,10 @@ export class NotebookStatus extends jspb.Message {
   hasLastupdated(): boolean;
   clearLastupdated(): NotebookStatus;
 
-  getFailurereason(): string;
-  setFailurereason(value: string): NotebookStatus;
-
-  getFailuremessage(): string;
-  setFailuremessage(value: string): NotebookStatus;
+  getUnittestsresult(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
+  setUnittestsresult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): NotebookStatus;
+  hasUnittestsresult(): boolean;
+  clearUnittestsresult(): NotebookStatus;
 
   getConditionsList(): Array<NotebookCondition>;
   setConditionsList(value: Array<NotebookCondition>): NotebookStatus;
@@ -4030,8 +4035,7 @@ export namespace NotebookStatus {
     lastrun?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus.AsObject,
     nextrun?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    failurereason: string,
-    failuremessage: string,
+    unittestsresult?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
     conditionsList: Array<NotebookCondition.AsObject>,
   }
 }
@@ -5032,10 +5036,10 @@ export class StudySpec extends jspb.Message {
   getCodegenerated(): boolean;
   setCodegenerated(value: boolean): StudySpec;
 
-  getTeststemplate(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
-  setTeststemplate(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): StudySpec;
-  hasTeststemplate(): boolean;
-  clearTeststemplate(): StudySpec;
+  getUnitteststemplate(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
+  setUnitteststemplate(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): StudySpec;
+  hasUnitteststemplate(): boolean;
+  clearUnitteststemplate(): StudySpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): StudySpec.AsObject;
@@ -5084,7 +5088,7 @@ export namespace StudySpec {
     modelversion: string,
     timeoutinsecs: number,
     codegenerated: boolean,
-    teststemplate?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
+    unitteststemplate?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
   }
 }
 
@@ -5655,10 +5659,10 @@ export class UATStageSpec extends jspb.Message {
   getServingsitename(): string;
   setServingsitename(value: string): UATStageSpec;
 
-  getTests(): ModelTestSuite | undefined;
-  setTests(value?: ModelTestSuite): UATStageSpec;
-  hasTests(): boolean;
-  clearTests(): UATStageSpec;
+  getUnittests(): ModelTestSuite | undefined;
+  setUnittests(value?: ModelTestSuite): UATStageSpec;
+  hasUnittests(): boolean;
+  clearUnittests(): UATStageSpec;
 
   getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
   setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): UATStageSpec;
@@ -5677,7 +5681,7 @@ export namespace UATStageSpec {
   export type AsObject = {
     enabled: boolean,
     servingsitename: string,
-    tests?: ModelTestSuite.AsObject,
+    unittests?: ModelTestSuite.AsObject,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
   }
 }

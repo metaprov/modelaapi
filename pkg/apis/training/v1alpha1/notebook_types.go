@@ -118,6 +118,9 @@ type NotebookSpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Paused *bool `json:"paused,omitempty" protobuf:"varint,14,opt,name=paused"`
+	// The set of unit tests for this notebook
+	// +kubebuilder:validation:Optional
+	UnitTests catalog.TestSuite `json:"unitTests,omitempty" protobuf:"bytes,15,opt,name=unitTests"`
 }
 
 // NotebookStatus is the observed state of the notebook resource
@@ -142,13 +145,9 @@ type NotebookStatus struct {
 	//+kubebuilder:validation:Optional
 	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,6,opt,name=lastUpdated"`
 
-	// Update in case of terminal failure
-	// Borrowed from cluster api controller
-	//+kubebuilder:validation:Optional
-	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,7,opt,name=failureReason"`
-	// Update in case of terminal failure message
-	//+kubebuilder:validation:Optional
-	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,8,opt,name=failureMessage"`
+	// The result of running the unit tests
+	// +kubebuilder:validation:Optional
+	UnitTestsResult catalog.TestSuiteResult `json:"unitTestsResult,omitempty" protobuf:"bytes,7,opt,name="`
 
 	// +patchMergeKey=type
 	// +patchStrategy=merge

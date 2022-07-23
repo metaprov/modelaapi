@@ -430,6 +430,11 @@ export class DataTestCase extends jspb.Message {
   hasEntityref(): boolean;
   clearEntityref(): DataTestCase;
 
+  getComparetoref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setComparetoref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): DataTestCase;
+  hasComparetoref(): boolean;
+  clearComparetoref(): DataTestCase;
+
   getColumn(): string;
   setColumn(value: string): DataTestCase;
 
@@ -492,6 +497,7 @@ export namespace DataTestCase {
     name: string,
     assertthat: string,
     entityref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    comparetoref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     column: string,
     type: string,
     metric: string,

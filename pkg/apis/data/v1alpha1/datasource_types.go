@@ -566,7 +566,7 @@ type DataSourceSpec struct {
 	InferredFrom *DataLocation `json:"inferredFrom,omitempty" protobuf:"bytes,14,opt,name=inferredFrom"`
 	// The specification for tests for a new dataset
 	// +kubebuilder:validation:Optional
-	TestsTemplate catalog.TestSuite `json:"testsTemplate,omitempty" protobuf:"bytes,15,opt,name=testsTemplate"`
+	UnitTestsTemplate catalog.TestSuite `json:"unitTestsTemplate,omitempty" protobuf:"bytes,15,opt,name=unitTestsTemplate"`
 }
 
 // FlatFileFormatSpec defines the format for incoming flat-files to be parsed
