@@ -1202,7 +1202,7 @@ func (in *PredictionSpec) DeepCopyInto(out *PredictionSpec) {
 	}
 	in.Input.DeepCopyInto(&out.Input)
 	in.Output.DeepCopyInto(&out.Output)
-	in.Test.DeepCopyInto(&out.Test)
+	in.Tests.DeepCopyInto(&out.Tests)
 	if in.Owner != nil {
 		in, out := &in.Owner, &out.Owner
 		*out = new(string)
@@ -1259,7 +1259,7 @@ func (in *PredictionStatus) DeepCopyInto(out *PredictionStatus) {
 		in, out := &in.EndTime, &out.EndTime
 		*out = (*in).DeepCopy()
 	}
-	in.TestResult.DeepCopyInto(&out.TestResult)
+	in.TestsResult.DeepCopyInto(&out.TestsResult)
 	in.Logs.DeepCopyInto(&out.Logs)
 	if in.LastUpdated != nil {
 		in, out := &in.LastUpdated, &out.LastUpdated

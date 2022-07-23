@@ -626,7 +626,7 @@ spec:
                     description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                     type: string
                 type: object
-              test:
+              tests:
                 description: Tests specifies a collection of metrics that will be
                   computed for each prediction if the Labeled field of the Prediction
                   is enabled
@@ -1039,7 +1039,7 @@ spec:
                   Job started
                 format: date-time
                 type: string
-              testResult:
+              testsResult:
                 description: The collection of metrics that represent the average
                   measurement across all predictions for each metric specified by
                   the Tests field of the Predictor

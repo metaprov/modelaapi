@@ -887,7 +887,8 @@ message PredictionSpec {
 
   // Tests specifies a collection of metrics that will be computed for each prediction
   // if the Labeled field of the Prediction is enabled
-  optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuite test = 8;
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuite tests = 8;
 
   // The name of the Account which created the object, which exists in the same tenant as the object
   // +kubebuilder:default:="no-one"
@@ -950,7 +951,7 @@ message PredictionStatus {
   // The collection of metrics that represent the average measurement across all predictions for each
   // metric specified by the Tests field of the Predictor
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult testResult = 4;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult testsResult = 4;
 
   // ObservedGeneration is the last generation that was acted on
   // +kubebuilder:validation:Optional
