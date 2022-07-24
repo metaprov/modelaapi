@@ -9131,7 +9131,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.RunTestSuiteRequest.SutRefC
   REFSTUDY: 21,
   REFMODEL: 22,
   REFRECIPE: 23,
-  REFTHISTOGRAM: 24,
+  REFHISTOGRAM: 24,
   REFPREDICTOR: 25
 };
 
@@ -9193,7 +9193,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.RunTestSuiteRequest.toObjec
     refstudy: (f = msg.getRefstudy()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.toObject(includeInstance, f),
     refmodel: (f = msg.getRefmodel()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.toObject(includeInstance, f),
     refrecipe: (f = msg.getRefrecipe()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe.toObject(includeInstance, f),
-    refthistogram: (f = msg.getRefthistogram()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.toObject(includeInstance, f),
+    refhistogram: (f = msg.getRefhistogram()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.toObject(includeInstance, f),
     refpredictor: (f = msg.getRefpredictor()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.toObject(includeInstance, f)
   };
 
@@ -9335,7 +9335,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.RunTestSuiteRequest.deseria
     case 24:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.deserializeBinaryFromReader);
-      msg.setRefthistogram(value);
+      msg.setRefhistogram(value);
       break;
     case 25:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram;
@@ -9527,7 +9527,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.RunTestSuiteRequest.seriali
       github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe.serializeBinaryToWriter
     );
   }
-  f = message.getRefthistogram();
+  f = message.getRefhistogram();
   if (f != null) {
     writer.writeMessage(
       24,
@@ -10272,10 +10272,10 @@ proto.github.com.metaprov.modelaapi.services.data.v1.RunTestSuiteRequest.prototy
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram reftHistogram = 24;
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram refHistogram = 24;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram}
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.RunTestSuiteRequest.prototype.getRefthistogram = function() {
+proto.github.com.metaprov.modelaapi.services.data.v1.RunTestSuiteRequest.prototype.getRefhistogram = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram, 24));
 };
@@ -10285,7 +10285,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.RunTestSuiteRequest.prototy
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunTestSuiteRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.data.v1.RunTestSuiteRequest.prototype.setRefthistogram = function(value) {
+proto.github.com.metaprov.modelaapi.services.data.v1.RunTestSuiteRequest.prototype.setRefhistogram = function(value) {
   return jspb.Message.setOneofWrapperField(this, 24, proto.github.com.metaprov.modelaapi.services.data.v1.RunTestSuiteRequest.oneofGroups_[1], value);
 };
 
@@ -10294,8 +10294,8 @@ proto.github.com.metaprov.modelaapi.services.data.v1.RunTestSuiteRequest.prototy
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunTestSuiteRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.RunTestSuiteRequest.prototype.clearRefthistogram = function() {
-  return this.setRefthistogram(undefined);
+proto.github.com.metaprov.modelaapi.services.data.v1.RunTestSuiteRequest.prototype.clearRefhistogram = function() {
+  return this.setRefhistogram(undefined);
 };
 
 
@@ -10303,7 +10303,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.RunTestSuiteRequest.prototy
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.RunTestSuiteRequest.prototype.hasRefthistogram = function() {
+proto.github.com.metaprov.modelaapi.services.data.v1.RunTestSuiteRequest.prototype.hasRefhistogram = function() {
   return jspb.Message.getField(this, 24) != null;
 };
 

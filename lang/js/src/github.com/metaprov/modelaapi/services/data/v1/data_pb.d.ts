@@ -1040,10 +1040,10 @@ export class RunTestSuiteRequest extends jspb.Message {
   hasRefrecipe(): boolean;
   clearRefrecipe(): RunTestSuiteRequest;
 
-  getRefthistogram(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram | undefined;
-  setRefthistogram(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram): RunTestSuiteRequest;
-  hasRefthistogram(): boolean;
-  clearRefthistogram(): RunTestSuiteRequest;
+  getRefhistogram(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram | undefined;
+  setRefhistogram(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram): RunTestSuiteRequest;
+  hasRefhistogram(): boolean;
+  clearRefhistogram(): RunTestSuiteRequest;
 
   getRefpredictor(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram | undefined;
   setRefpredictor(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram): RunTestSuiteRequest;
@@ -1084,7 +1084,7 @@ export namespace RunTestSuiteRequest {
     refstudy?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
     refmodel?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject,
     refrecipe?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe.AsObject,
-    refthistogram?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.AsObject,
+    refhistogram?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.AsObject,
     refpredictor?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.AsObject,
   }
 
@@ -1104,7 +1104,7 @@ export namespace RunTestSuiteRequest {
     REFSTUDY = 21,
     REFMODEL = 22,
     REFRECIPE = 23,
-    REFTHISTOGRAM = 24,
+    REFHISTOGRAM = 24,
     REFPREDICTOR = 25,
   }
 }
