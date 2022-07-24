@@ -234,7 +234,7 @@ message RunTestSuiteRequest {
         github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model sutModel = 14;
         github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe sutRecipe = 15;
         github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram sutHistogram = 16;
-        github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram sutPredictor = 17;
+        github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor sutPredictor = 17;
 
     }
     oneof sut_ref {
@@ -242,8 +242,8 @@ message RunTestSuiteRequest {
         github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study refStudy = 21;
         github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model refModel = 22;
         github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe refRecipe = 23;
-        github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram reftHistogram = 24;
-        github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram refPredictor = 25;
+        github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram refHistogram = 24;
+        github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor refPredictor = 25;
     }
 }
 

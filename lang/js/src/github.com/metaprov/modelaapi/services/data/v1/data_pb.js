@@ -9188,13 +9188,13 @@ proto.github.com.metaprov.modelaapi.services.data.v1.RunTestSuiteRequest.toObjec
     sutmodel: (f = msg.getSutmodel()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.toObject(includeInstance, f),
     sutrecipe: (f = msg.getSutrecipe()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe.toObject(includeInstance, f),
     suthistogram: (f = msg.getSuthistogram()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.toObject(includeInstance, f),
-    sutpredictor: (f = msg.getSutpredictor()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.toObject(includeInstance, f),
+    sutpredictor: (f = msg.getSutpredictor()) && github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor.toObject(includeInstance, f),
     refdataset: (f = msg.getRefdataset()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.toObject(includeInstance, f),
     refstudy: (f = msg.getRefstudy()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.toObject(includeInstance, f),
     refmodel: (f = msg.getRefmodel()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.toObject(includeInstance, f),
     refrecipe: (f = msg.getRefrecipe()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe.toObject(includeInstance, f),
     refhistogram: (f = msg.getRefhistogram()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.toObject(includeInstance, f),
-    refpredictor: (f = msg.getRefpredictor()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.toObject(includeInstance, f)
+    refpredictor: (f = msg.getRefpredictor()) && github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -9308,8 +9308,8 @@ proto.github.com.metaprov.modelaapi.services.data.v1.RunTestSuiteRequest.deseria
       msg.setSuthistogram(value);
       break;
     case 17:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.deserializeBinaryFromReader);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor.deserializeBinaryFromReader);
       msg.setSutpredictor(value);
       break;
     case 20:
@@ -9338,8 +9338,8 @@ proto.github.com.metaprov.modelaapi.services.data.v1.RunTestSuiteRequest.deseria
       msg.setRefhistogram(value);
       break;
     case 25:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.deserializeBinaryFromReader);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor.deserializeBinaryFromReader);
       msg.setRefpredictor(value);
       break;
     default:
@@ -9492,7 +9492,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.RunTestSuiteRequest.seriali
     writer.writeMessage(
       17,
       f,
-      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor.serializeBinaryToWriter
     );
   }
   f = message.getRefdataset();
@@ -9540,7 +9540,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.RunTestSuiteRequest.seriali
     writer.writeMessage(
       25,
       f,
-      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor.serializeBinaryToWriter
     );
   }
 };
@@ -10087,17 +10087,17 @@ proto.github.com.metaprov.modelaapi.services.data.v1.RunTestSuiteRequest.prototy
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram sutPredictor = 17;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram}
+ * optional github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor sutPredictor = 17;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor}
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.RunTestSuiteRequest.prototype.getSutpredictor = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram, 17));
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor, 17));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram|undefined} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunTestSuiteRequest} returns this
 */
 proto.github.com.metaprov.modelaapi.services.data.v1.RunTestSuiteRequest.prototype.setSutpredictor = function(value) {
@@ -10309,17 +10309,17 @@ proto.github.com.metaprov.modelaapi.services.data.v1.RunTestSuiteRequest.prototy
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram refPredictor = 25;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram}
+ * optional github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor refPredictor = 25;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor}
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.RunTestSuiteRequest.prototype.getRefpredictor = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram, 25));
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor, 25));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram|undefined} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunTestSuiteRequest} returns this
 */
 proto.github.com.metaprov.modelaapi.services.data.v1.RunTestSuiteRequest.prototype.setRefpredictor = function(value) {

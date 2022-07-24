@@ -1015,8 +1015,8 @@ export class RunTestSuiteRequest extends jspb.Message {
   hasSuthistogram(): boolean;
   clearSuthistogram(): RunTestSuiteRequest;
 
-  getSutpredictor(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram | undefined;
-  setSutpredictor(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram): RunTestSuiteRequest;
+  getSutpredictor(): github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor | undefined;
+  setSutpredictor(value?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor): RunTestSuiteRequest;
   hasSutpredictor(): boolean;
   clearSutpredictor(): RunTestSuiteRequest;
 
@@ -1045,8 +1045,8 @@ export class RunTestSuiteRequest extends jspb.Message {
   hasRefhistogram(): boolean;
   clearRefhistogram(): RunTestSuiteRequest;
 
-  getRefpredictor(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram | undefined;
-  setRefpredictor(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram): RunTestSuiteRequest;
+  getRefpredictor(): github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor | undefined;
+  setRefpredictor(value?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor): RunTestSuiteRequest;
   hasRefpredictor(): boolean;
   clearRefpredictor(): RunTestSuiteRequest;
 
@@ -1079,13 +1079,13 @@ export namespace RunTestSuiteRequest {
     sutmodel?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject,
     sutrecipe?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe.AsObject,
     suthistogram?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.AsObject,
-    sutpredictor?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.AsObject,
+    sutpredictor?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor.AsObject,
     refdataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
     refstudy?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
     refmodel?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject,
     refrecipe?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe.AsObject,
     refhistogram?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.AsObject,
-    refpredictor?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.AsObject,
+    refpredictor?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor.AsObject,
   }
 
   export enum SutOneofCase { 
