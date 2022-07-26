@@ -123,7 +123,8 @@ spec:
                 type: boolean
               generateFeatureHistogram:
                 default: false
-                description: If true generate feature histogram.
+                description: If true generate feature histogram object from this dataset
+                  columns.
                 type: boolean
               labRef:
                 description: The reference to the Lab under which Jobs created by
@@ -423,43 +424,6 @@ spec:
                 description: The name of the Account which created the object, which
                   exists in the same tenant as the object
                 type: string
-              predictionDatasetRef:
-                description: Prediction dataset ref is a reference to a prediction
-                  dataset ref (dataset that contain the predictions log).
-                properties:
-                  apiVersion:
-                    description: API version of the referent.
-                    type: string
-                  fieldPath:
-                    description: 'If referring to a piece of an object instead of
-                      an entire object, this string should contain a valid JSON/Go
-                      field access statement, such as desiredState.manifest.containers[2].
-                      For example, if the object reference is to a container within
-                      a pod, this would take on a value like: "spec.containers{name}"
-                      (where "name" refers to the name of the container that triggered
-                      the event) or if no container name is specified "spec.containers[2]"
-                      (container with index 2 in this pod). This syntax is chosen
-                      only to have some well-defined way of referencing a part of
-                      an object. TODO: this design is not final and this field is
-                      subject to change in the future.'
-                    type: string
-                  kind:
-                    description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
-                    type: string
-                  name:
-                    description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
-                    type: string
-                  namespace:
-                    description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
-                    type: string
-                  resourceVersion:
-                    description: 'Specific resourceVersion to which this reference
-                      is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
-                    type: string
-                  uid:
-                    description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
-                    type: string
-                type: object
               predictorRef:
                 description: Used for prediction dataset, contain a reference to the
                   predictor resource that created this dataset
@@ -671,6 +635,43 @@ spec:
                     - stratified
                     type: string
                 type: object
+              servingDatasetRef:
+                description: For dataset that contain feedback information, this is
+                  reference to the serving dataset
+                properties:
+                  apiVersion:
+                    description: API version of the referent.
+                    type: string
+                  fieldPath:
+                    description: 'If referring to a piece of an object instead of
+                      an entire object, this string should contain a valid JSON/Go
+                      field access statement, such as desiredState.manifest.containers[2].
+                      For example, if the object reference is to a container within
+                      a pod, this would take on a value like: "spec.containers{name}"
+                      (where "name" refers to the name of the container that triggered
+                      the event) or if no container name is specified "spec.containers[2]"
+                      (container with index 2 in this pod). This syntax is chosen
+                      only to have some well-defined way of referencing a part of
+                      an object. TODO: this design is not final and this field is
+                      subject to change in the future.'
+                    type: string
+                  kind:
+                    description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                    type: string
+                  name:
+                    description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                    type: string
+                  namespace:
+                    description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                    type: string
+                  resourceVersion:
+                    description: 'Specific resourceVersion to which this reference
+                      is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                    type: string
+                  uid:
+                    description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                    type: string
+                type: object
               snapshotted:
                 default: false
                 description: Indicates if the resource controller has created a snapshot
@@ -764,6 +765,11 @@ spec:
                 - video
                 - audio
                 type: string
+              unitTested:
+                default: true
+                description: Indicates if the Dataset should be checked against the
+                  validation rules of its Data Source
+                type: boolean
               unitTests:
                 description: The specification for tests for a new dataset
                 properties:
@@ -1027,11 +1033,6 @@ spec:
                       type: object
                     type: array
                 type: object
-              validate:
-                default: true
-                description: Indicates if the Dataset should be checked against the
-                  validation rules of its Data Source
-                type: boolean
               versionName:
                 default: ""
                 description: The name of the DataProductVersion which describes the

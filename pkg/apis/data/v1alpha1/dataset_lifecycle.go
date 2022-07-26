@@ -11,7 +11,6 @@ import (
 	"github.com/metaprov/modelaapi/pkg/apis/data"
 	infra "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/util"
-	"gopkg.in/yaml.v2"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
@@ -171,7 +170,7 @@ func (dataset *Dataset) Ingested() bool {
 }
 
 func (dataset *Dataset) UnitTested() bool {
-	return *dataset.Spec.Validated && dataset.GetCond(DatasetUnitTested).Status == v1.ConditionTrue
+	return *dataset.Spec.UnitTested && dataset.GetCond(DatasetUnitTested).Status == v1.ConditionTrue
 }
 
 func (dataset *Dataset) Snapshotted() bool {
@@ -229,7 +228,7 @@ func (dataset *Dataset) MarkTakingSnapshot() {
 	dataset.Status.Progress = 10
 }
 
-// ----------------------------- Validation --------------------
+// ----------------------------- Unit Tests --------------------
 
 func (dataset *Dataset) MarkUnitTestFailed(msg string) {
 	dataset.CreateOrUpdateCond(DatasetCondition{
@@ -256,7 +255,7 @@ func (dataset *Dataset) MarkUnitTested() {
 
 }
 
-func (dataset *Dataset) MarkValidating() {
+func (dataset *Dataset) MarkUnitTesting() {
 	dataset.CreateOrUpdateCond(DatasetCondition{
 		Type:   DatasetUnitTested,
 		Status: v1.ConditionFalse,

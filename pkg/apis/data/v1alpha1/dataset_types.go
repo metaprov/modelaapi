@@ -133,7 +133,7 @@ type DatasetSpec struct {
 	// Indicates if the Dataset should be checked against the validation rules of its Data Source
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	Validated *bool `json:"validate,omitempty" protobuf:"varint,9,opt,name=validate"`
+	UnitTested *bool `json:"unitTested,omitempty" protobuf:"varint,9,opt,name=unitTested"`
 	// Indicates if synthetic data should be generated (currently unimplemented)
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
@@ -191,13 +191,13 @@ type DatasetSpec struct {
 	// The reference to the Lab under which Jobs created by the Dataset will be executed
 	// +kubebuilder:validation:Optional
 	LabRef v1.ObjectReference `json:"labRef,omitempty" protobuf:"bytes,25,opt,name=labRef"`
-	// Prediction dataset ref is a reference to a prediction dataset ref (dataset that contain the predictions log).
+	// For dataset that contain feedback information, this is reference to the serving dataset
 	// +kubebuilder:validation:Optional
-	PredictionDatasetRef v1.ObjectReference `json:"predictionDatasetRef,omitempty" protobuf:"bytes,26,opt,name=predictionDatasetRef"`
+	ServingDatasetRef v1.ObjectReference `json:"servingDatasetRef,omitempty" protobuf:"bytes,26,opt,name=servingDatasetRef"`
 	// Used for prediction dataset, contain a reference to the predictor resource that created this dataset
 	// +kubebuilder:validation:Optional
 	PredictorRef v1.ObjectReference `json:"predictorRef,omitempty" protobuf:"bytes,27,opt,name=predictorRef"`
-	// If true generate feature histogram.
+	// If true generate feature histogram object from this dataset columns.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	GenerateFeatureHistogram *bool `json:"generateFeatureHistogram,omitempty" protobuf:"varint,28,opt,name=generateFeatureHistogram"`

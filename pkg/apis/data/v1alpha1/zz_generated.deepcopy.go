@@ -1749,8 +1749,8 @@ func (in *DatasetSpec) DeepCopyInto(out *DatasetSpec) {
 		*out = new(bool)
 		**out = **in
 	}
-	if in.Validated != nil {
-		in, out := &in.Validated, &out.Validated
+	if in.UnitTested != nil {
+		in, out := &in.UnitTested, &out.UnitTested
 		*out = new(bool)
 		**out = **in
 	}
@@ -1797,7 +1797,7 @@ func (in *DatasetSpec) DeepCopyInto(out *DatasetSpec) {
 		**out = **in
 	}
 	out.LabRef = in.LabRef
-	out.PredictionDatasetRef = in.PredictionDatasetRef
+	out.ServingDatasetRef = in.ServingDatasetRef
 	out.PredictorRef = in.PredictorRef
 	if in.GenerateFeatureHistogram != nil {
 		in, out := &in.GenerateFeatureHistogram, &out.GenerateFeatureHistogram

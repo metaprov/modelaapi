@@ -3079,6 +3079,17 @@ export class ModelSpec extends jspb.Message {
   getFast(): boolean;
   setFast(value: boolean): ModelSpec;
 
+  getUnittested(): boolean;
+  setUnittested(value: boolean): ModelSpec;
+
+  getFeedbacktested(): boolean;
+  setFeedbacktested(value: boolean): ModelSpec;
+
+  getFeedbackdatasetref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setFeedbackdatasetref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ModelSpec;
+  hasFeedbackdatasetref(): boolean;
+  clearFeedbackdatasetref(): ModelSpec;
+
   getFlagged(): boolean;
   setFlagged(value: boolean): ModelSpec;
 
@@ -3169,6 +3180,9 @@ export namespace ModelSpec {
     baseline: boolean,
     gendriftdetector: boolean,
     fast: boolean,
+    unittested: boolean,
+    feedbacktested: boolean,
+    feedbackdatasetref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     flagged: boolean,
     location?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     forecast?: ForecastSpec.AsObject,
@@ -3244,6 +3258,16 @@ export class ModelStatus extends jspb.Message {
   setTestList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>): ModelStatus;
   clearTestList(): ModelStatus;
   addTest(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement;
+
+  getFeedbackList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>;
+  setFeedbackList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>): ModelStatus;
+  clearFeedbackList(): ModelStatus;
+  addFeedback(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement;
+
+  getLastfeedbackdatasetref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setLastfeedbackdatasetref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ModelStatus;
+  hasLastfeedbackdatasetref(): boolean;
+  clearLastfeedbackdatasetref(): ModelStatus;
 
   getPhase(): string;
   setPhase(value: string): ModelStatus;
@@ -3471,6 +3495,8 @@ export namespace ModelStatus {
     cvList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.AsObject>,
     trainList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.AsObject>,
     testList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.AsObject>,
+    feedbackList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.AsObject>,
+    lastfeedbackdatasetref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     phase: string,
     reportname: string,
     reporturi: string,

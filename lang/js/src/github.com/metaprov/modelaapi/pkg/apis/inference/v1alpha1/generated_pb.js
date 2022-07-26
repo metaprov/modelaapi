@@ -11439,7 +11439,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelServingSpec
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelServingSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
     type: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    serverless: (f = jspb.Message.getBooleanField(msg, 2)) == null ? undefined : f
+    serverless: (f = jspb.Message.getBooleanField(msg, 2)) == null ? undefined : f,
+    servingtests: (f = msg.getServingtests()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -11484,6 +11485,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelServingSpec
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setServerless(value);
       break;
+    case 4:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.deserializeBinaryFromReader);
+      msg.setServingtests(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -11525,6 +11531,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelServingSpec
     writer.writeBool(
       2,
       f
+    );
+  }
+  f = message.getServingtests();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.serializeBinaryToWriter
     );
   }
 };
@@ -11599,6 +11613,43 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelServingSpec
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelServingSpec.prototype.hasServerless = function() {
   return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite servingTests = 4;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelServingSpec.prototype.getServingtests = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite, 4));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelServingSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelServingSpec.prototype.setServingtests = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelServingSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelServingSpec.prototype.clearServingtests = function() {
+  return this.setServingtests(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelServingSpec.prototype.hasServingtests = function() {
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
@@ -13530,11 +13581,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.p
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
     versionname: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    predictorname: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    predictorref: (f = msg.getPredictorref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     labeled: (f = jspb.Message.getBooleanField(msg, 3)) == null ? undefined : f,
     forecast: (f = jspb.Message.getBooleanField(msg, 4)) == null ? undefined : f,
-    input: (f = msg.getInput()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataInputSpec.toObject(includeInstance, f),
+    input: (f = msg.getInput()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     output: (f = msg.getOutput()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataOutputSpec.toObject(includeInstance, f),
+    createdataset: (f = jspb.Message.getBooleanField(msg, 7)) == null ? undefined : f,
     unittests: (f = msg.getUnittests()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelTestSuite.toObject(includeInstance, f),
     owner: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
     resources: (f = msg.getResources()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.toObject(includeInstance, f),
@@ -13586,8 +13638,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.d
       msg.setVersionname(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setPredictorname(value);
+      var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
+      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
+      msg.setPredictorref(value);
       break;
     case 3:
       var value = /** @type {boolean} */ (reader.readBool());
@@ -13597,15 +13650,19 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.d
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setForecast(value);
       break;
-    case 6:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataInputSpec;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataInputSpec.deserializeBinaryFromReader);
+    case 5:
+      var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
+      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
       msg.setInput(value);
       break;
-    case 7:
+    case 6:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataOutputSpec;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataOutputSpec.deserializeBinaryFromReader);
       msg.setOutput(value);
+      break;
+    case 7:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setCreatedataset(value);
       break;
     case 8:
       var value = new github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelTestSuite;
@@ -13687,11 +13744,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.s
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 2));
+  f = message.getPredictorref();
   if (f != null) {
-    writer.writeString(
+    writer.writeMessage(
       2,
-      f
+      f,
+      k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
     );
   }
   f = /** @type {boolean} */ (jspb.Message.getField(message, 3));
@@ -13711,17 +13769,24 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.s
   f = message.getInput();
   if (f != null) {
     writer.writeMessage(
-      6,
+      5,
       f,
-      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataInputSpec.serializeBinaryToWriter
+      k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
     );
   }
   f = message.getOutput();
   if (f != null) {
     writer.writeMessage(
-      7,
+      6,
       f,
       github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataOutputSpec.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 7));
+  if (f != null) {
+    writer.writeBool(
+      7,
+      f
     );
   }
   f = message.getUnittests();
@@ -13838,29 +13903,30 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.p
 
 
 /**
- * optional string predictorName = 2;
- * @return {string}
+ * optional k8s.io.api.core.v1.ObjectReference predictorRef = 2;
+ * @return {?proto.k8s.io.api.core.v1.ObjectReference}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.getPredictorname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.getPredictorref = function() {
+  return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
+    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 2));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.k8s.io.api.core.v1.ObjectReference|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.setPredictorname = function(value) {
-  return jspb.Message.setField(this, 2, value);
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.setPredictorref = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
 /**
- * Clears the field making it undefined.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.clearPredictorname = function() {
-  return jspb.Message.setField(this, 2, undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.clearPredictorref = function() {
+  return this.setPredictorref(undefined);
 };
 
 
@@ -13868,7 +13934,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.p
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.hasPredictorname = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.hasPredictorref = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
@@ -13946,21 +14012,21 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.p
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec input = 6;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec}
+ * optional k8s.io.api.core.v1.ObjectReference input = 5;
+ * @return {?proto.k8s.io.api.core.v1.ObjectReference}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.getInput = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataInputSpec, 6));
+  return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
+    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 5));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec|undefined} value
+ * @param {?proto.k8s.io.api.core.v1.ObjectReference|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.setInput = function(value) {
-  return jspb.Message.setWrapperField(this, 6, value);
+  return jspb.Message.setWrapperField(this, 5, value);
 };
 
 
@@ -13978,17 +14044,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.p
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.hasInput = function() {
-  return jspb.Message.getField(this, 6) != null;
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataOutputSpec output = 7;
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataOutputSpec output = 6;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataOutputSpec}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.getOutput = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataOutputSpec} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataOutputSpec, 7));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataOutputSpec, 6));
 };
 
 
@@ -13997,7 +14063,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.p
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.setOutput = function(value) {
-  return jspb.Message.setWrapperField(this, 7, value);
+  return jspb.Message.setWrapperField(this, 6, value);
 };
 
 
@@ -14015,6 +14081,42 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.p
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.hasOutput = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional bool createDataset = 7;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.getCreatedataset = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 7, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.setCreatedataset = function(value) {
+  return jspb.Message.setField(this, 7, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.clearCreatedataset = function() {
+  return jspb.Message.setField(this, 7, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.hasCreatedataset = function() {
   return jspb.Message.getField(this, 7) != null;
 };
 
@@ -17411,7 +17513,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.
     failurereason: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
     failuremessage: (f = jspb.Message.getField(msg, 11)) == null ? undefined : f,
     loadbalancerstatus: (f = msg.getLoadbalancerstatus()) && k8s_io_api_core_v1_generated_pb.LoadBalancerStatus.toObject(includeInstance, f),
-    lastpredictiondataset: (f = msg.getLastpredictiondataset()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    lastpredictiondataset: (f = msg.getLastpredictiondataset()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
+    servingtestsresults: (f = msg.getServingtestsresults()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.toObject(includeInstance, f),
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorCondition.toObject, includeInstance)
   };
@@ -17502,9 +17605,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.
       msg.setLoadbalancerstatus(value);
       break;
     case 13:
-      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
-      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
+      var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
+      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
       msg.setLastpredictiondataset(value);
+      break;
+    case 14:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.deserializeBinaryFromReader);
+      msg.setServingtestsresults(value);
       break;
     case 16:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorCondition;
@@ -17629,7 +17737,15 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.
     writer.writeMessage(
       13,
       f,
-      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
+      k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
+    );
+  }
+  f = message.getServingtestsresults();
+  if (f != null) {
+    writer.writeMessage(
+      14,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.serializeBinaryToWriter
     );
   }
   f = message.getConditionsList();
@@ -18049,17 +18165,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastPredictionDataset = 13;
- * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
+ * optional k8s.io.api.core.v1.ObjectReference lastPredictionDataset = 13;
+ * @return {?proto.k8s.io.api.core.v1.ObjectReference}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.getLastpredictiondataset = function() {
-  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
-    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 13));
+  return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
+    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 13));
 };
 
 
 /**
- * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
+ * @param {?proto.k8s.io.api.core.v1.ObjectReference|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.setLastpredictiondataset = function(value) {
@@ -18082,6 +18198,43 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.hasLastpredictiondataset = function() {
   return jspb.Message.getField(this, 13) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult servingTestsResults = 14;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.getServingtestsresults = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult, 14));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.setServingtestsresults = function(value) {
+  return jspb.Message.setWrapperField(this, 14, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.clearServingtestsresults = function() {
+  return this.setServingtestsresults(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.hasServingtestsresults = function() {
+  return jspb.Message.getField(this, 14) != null;
 };
 
 

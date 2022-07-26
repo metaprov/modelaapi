@@ -737,6 +737,8 @@ message ModelServingSpec {
   // If Serverless is true, the Kubernetes Deployment which serves the model will not be created
   // until it starts to receive prediction traffic, and will be destroyed once the model becomes dormant
   optional bool serverless = 2;
+
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite servingTests = 4;
 }
 
 // OnlineFeaturestoreSpec specifies the connection information for an online feature store
@@ -862,10 +864,9 @@ message PredictionSpec {
 
   // PredictorName is the name of the Predictor resource that will be used to evaluate predictions for the
   // unlabeled input dataset. The Predictor must exist in the same DataProduct namespace as the resource
-  // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:validation:Required
   // +required
-  optional string predictorName = 2;
+  optional k8s.io.api.core.v1.ObjectReference predictorRef = 2;
 
   // If true, measurements for the metrics specified by the `Tests` field will be computed for each prediction and
   // stored in the Prediction's status with the average result of all predictions
@@ -878,12 +879,17 @@ message PredictionSpec {
   // +kubebuilder:validation:Optional
   optional bool forecast = 4;
 
-  // Input specifies the location of the input data, if not using a Entity resource
-  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec input = 6;
+  // A reference to the input dataset. this is a unlabeled dataset
+  optional k8s.io.api.core.v1.ObjectReference input = 5;
 
   // Output specifies the location where the predicted dataset will be stored
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataOutputSpec output = 7;
+  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataOutputSpec output = 6;
+
+  // If true create output dataset
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool createDataset = 7;
 
   // Tests specifies a collection of metrics that will be computed for each prediction
   // if the Labeled field of the Prediction is enabled
@@ -1191,7 +1197,11 @@ message PredictorStatus {
 
   // The last time that a prediction dataset was created
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastPredictionDataset = 13;
+  optional k8s.io.api.core.v1.ObjectReference lastPredictionDataset = 13;
+
+  // The results of running the serving tests
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult servingTestsResults = 14;
 
   // +patchMergeKey=type
   // +patchStrategy=merge

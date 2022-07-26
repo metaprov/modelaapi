@@ -83,10 +83,9 @@ type PredictionSpec struct {
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
 	// PredictorName is the name of the Predictor resource that will be used to evaluate predictions for the
 	// unlabeled input dataset. The Predictor must exist in the same DataProduct namespace as the resource
-	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:validation:Required
 	// +required
-	PredictorName *string `json:"predictorName,omitempty" protobuf:"bytes,2,opt,name=predictorName"`
+	PredictorRef *v1.ObjectReference `json:"predictorRef,omitempty" protobuf:"bytes,2,opt,name=predictorRef"`
 	// If true, measurements for the metrics specified by the `Tests` field will be computed for each prediction and
 	// stored in the Prediction's status with the average result of all predictions
 	// +kubebuilder:default:=false
@@ -96,11 +95,15 @@ type PredictionSpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Forecast *bool `json:"forecast,omitempty" protobuf:"varint,4,opt,name=forecast"`
-	// Input specifies the location of the input data, if not using a Entity resource
-	Input data.DataInputSpec `json:"input,omitempty" protobuf:"bytes,6,opt,name=input"`
+	// A reference to the input dataset. this is a unlabeled dataset
+	InputRef v1.ObjectReference `json:"input,omitempty" protobuf:"bytes,5,opt,name=input"`
 	// Output specifies the location where the predicted dataset will be stored
 	// +kubebuilder:validation:Optional
-	Output data.DataOutputSpec `json:"output,omitempty" protobuf:"bytes,7,opt,name=output"`
+	Output data.DataOutputSpec `json:"output,omitempty" protobuf:"bytes,6,opt,name=output"`
+	// If true create output dataset
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	CreateDataset *bool `json:"createDataset,omitempty" protobuf:"bytes,7,opt,name=createDataset"`
 	// Tests specifies a collection of metrics that will be computed for each prediction
 	// if the Labeled field of the Prediction is enabled
 	// +kubebuilder:validation:Optional

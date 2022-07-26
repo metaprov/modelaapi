@@ -2138,8 +2138,8 @@ export class DatasetSpec extends jspb.Message {
   getSnapshotted(): boolean;
   setSnapshotted(value: boolean): DatasetSpec;
 
-  getValidate(): boolean;
-  setValidate(value: boolean): DatasetSpec;
+  getUnittested(): boolean;
+  setUnittested(value: boolean): DatasetSpec;
 
   getSynthetic(): boolean;
   setSynthetic(value: boolean): DatasetSpec;
@@ -2202,10 +2202,10 @@ export class DatasetSpec extends jspb.Message {
   hasLabref(): boolean;
   clearLabref(): DatasetSpec;
 
-  getPredictiondatasetref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setPredictiondatasetref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): DatasetSpec;
-  hasPredictiondatasetref(): boolean;
-  clearPredictiondatasetref(): DatasetSpec;
+  getServingdatasetref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setServingdatasetref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): DatasetSpec;
+  hasServingdatasetref(): boolean;
+  clearServingdatasetref(): DatasetSpec;
 
   getPredictorref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setPredictorref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): DatasetSpec;
@@ -2238,7 +2238,7 @@ export namespace DatasetSpec {
     role: string,
     reported: boolean,
     snapshotted: boolean,
-    validate: boolean,
+    unittested: boolean,
     synthetic: boolean,
     syntheticrows: number,
     origin?: DataLocation.AsObject,
@@ -2254,7 +2254,7 @@ export namespace DatasetSpec {
     correlation?: CorrelationSpec.AsObject,
     fast: boolean,
     labref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    predictiondatasetref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    servingdatasetref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     predictorref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     generatefeaturehistogram: boolean,
     unittests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,

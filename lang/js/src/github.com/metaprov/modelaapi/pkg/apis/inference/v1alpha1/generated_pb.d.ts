@@ -1156,6 +1156,11 @@ export class ModelServingSpec extends jspb.Message {
   getServerless(): boolean;
   setServerless(value: boolean): ModelServingSpec;
 
+  getServingtests(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
+  setServingtests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): ModelServingSpec;
+  hasServingtests(): boolean;
+  clearServingtests(): ModelServingSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelServingSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelServingSpec): ModelServingSpec.AsObject;
@@ -1168,6 +1173,7 @@ export namespace ModelServingSpec {
   export type AsObject = {
     type: string,
     serverless: boolean,
+    servingtests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
   }
 }
 
@@ -1395,8 +1401,10 @@ export class PredictionSpec extends jspb.Message {
   getVersionname(): string;
   setVersionname(value: string): PredictionSpec;
 
-  getPredictorname(): string;
-  setPredictorname(value: string): PredictionSpec;
+  getPredictorref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setPredictorref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): PredictionSpec;
+  hasPredictorref(): boolean;
+  clearPredictorref(): PredictionSpec;
 
   getLabeled(): boolean;
   setLabeled(value: boolean): PredictionSpec;
@@ -1404,8 +1412,8 @@ export class PredictionSpec extends jspb.Message {
   getForecast(): boolean;
   setForecast(value: boolean): PredictionSpec;
 
-  getInput(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataInputSpec | undefined;
-  setInput(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataInputSpec): PredictionSpec;
+  getInput(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setInput(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): PredictionSpec;
   hasInput(): boolean;
   clearInput(): PredictionSpec;
 
@@ -1413,6 +1421,9 @@ export class PredictionSpec extends jspb.Message {
   setOutput(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataOutputSpec): PredictionSpec;
   hasOutput(): boolean;
   clearOutput(): PredictionSpec;
+
+  getCreatedataset(): boolean;
+  setCreatedataset(value: boolean): PredictionSpec;
 
   getUnittests(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelTestSuite | undefined;
   setUnittests(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelTestSuite): PredictionSpec;
@@ -1463,11 +1474,12 @@ export class PredictionSpec extends jspb.Message {
 export namespace PredictionSpec {
   export type AsObject = {
     versionname: string,
-    predictorname: string,
+    predictorref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     labeled: boolean,
     forecast: boolean,
-    input?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataInputSpec.AsObject,
+    input?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     output?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataOutputSpec.AsObject,
+    createdataset: boolean,
     unittests?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelTestSuite.AsObject,
     owner: string,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
@@ -1863,10 +1875,15 @@ export class PredictorStatus extends jspb.Message {
   hasLoadbalancerstatus(): boolean;
   clearLoadbalancerstatus(): PredictorStatus;
 
-  getLastpredictiondataset(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLastpredictiondataset(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): PredictorStatus;
+  getLastpredictiondataset(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setLastpredictiondataset(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): PredictorStatus;
   hasLastpredictiondataset(): boolean;
   clearLastpredictiondataset(): PredictorStatus;
+
+  getServingtestsresults(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
+  setServingtestsresults(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): PredictorStatus;
+  hasServingtestsresults(): boolean;
+  clearServingtestsresults(): PredictorStatus;
 
   getConditionsList(): Array<PredictorCondition>;
   setConditionsList(value: Array<PredictorCondition>): PredictorStatus;
@@ -1894,7 +1911,8 @@ export namespace PredictorStatus {
     failurereason: string,
     failuremessage: string,
     loadbalancerstatus?: k8s_io_api_core_v1_generated_pb.LoadBalancerStatus.AsObject,
-    lastpredictiondataset?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    lastpredictiondataset?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    servingtestsresults?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
     conditionsList: Array<PredictorCondition.AsObject>,
   }
 }

@@ -2759,6 +2759,21 @@ func (in *ModelSpec) DeepCopyInto(out *ModelSpec) {
 		*out = new(bool)
 		**out = **in
 	}
+	if in.UnitTested != nil {
+		in, out := &in.UnitTested, &out.UnitTested
+		*out = new(bool)
+		**out = **in
+	}
+	if in.FeedbackTested != nil {
+		in, out := &in.FeedbackTested, &out.FeedbackTested
+		*out = new(bool)
+		**out = **in
+	}
+	if in.FeedbackDatasetRef != nil {
+		in, out := &in.FeedbackDatasetRef, &out.FeedbackDatasetRef
+		*out = new(v1.ObjectReference)
+		**out = **in
+	}
 	if in.Flagged != nil {
 		in, out := &in.Flagged, &out.Flagged
 		*out = new(bool)
@@ -2866,6 +2881,14 @@ func (in *ModelStatus) DeepCopyInto(out *ModelStatus) {
 			(*in)[i].DeepCopyInto(&(*out)[i])
 		}
 	}
+	if in.Feedback != nil {
+		in, out := &in.Feedback, &out.Feedback
+		*out = make([]catalogv1alpha1.Measurement, len(*in))
+		for i := range *in {
+			(*in)[i].DeepCopyInto(&(*out)[i])
+		}
+	}
+	out.LastFeedbackDatasetRef = in.LastFeedbackDatasetRef
 	if in.ImpurityImportance != nil {
 		in, out := &in.ImpurityImportance, &out.ImpurityImportance
 		*out = make([]FeatureImportance, len(*in))

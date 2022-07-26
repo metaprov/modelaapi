@@ -85,6 +85,9 @@ type ModelServingSpec struct {
 	// If Serverless is true, the Kubernetes Deployment which serves the model will not be created
 	// until it starts to receive prediction traffic, and will be destroyed once the model becomes dormant
 	Serverless *bool `json:"serverless,omitempty" protobuf:"varint,2,opt,name=serverless"`
+	// Serving tests
+
+	UnitTestsTemplate catalog.TestSuite `json:"servingTests,omitempty" protobuf:"bytes,4,opt,name=servingTests"`
 }
 
 // PredictionLoggingSpec specifies the configuration to log incoming and outgoing prediction requests
@@ -440,7 +443,10 @@ type PredictorStatus struct {
 	LoadBalancerStatus *v1.LoadBalancerStatus `json:"loadBalancerStatus,omitempty" protobuf:"bytes,12,opt,name=loadBalancerStatus"`
 	// The last time that a prediction dataset was created
 	//+kubebuilder:validation:Optional
-	LastPredictionDataset *metav1.Time `json:"lastPredictionDataset,omitempty" protobuf:"bytes,13,opt,name=lastPredictionDataset"`
+	LastPredictionDataset v1.ObjectReference `json:"lastPredictionDataset,omitempty" protobuf:"bytes,13,opt,name=lastPredictionDataset"`
+	// The results of running the serving tests
+	//+kubebuilder:validation:Optional
+	ServingTestResult catalog.TestSuiteResult `json:"servingTestResult,omitempty" protobuf:"bytes,14,opt,name=servingTestsResults"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional

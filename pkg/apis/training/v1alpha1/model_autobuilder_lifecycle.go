@@ -10,7 +10,6 @@ import (
 	"fmt"
 	"path/filepath"
 
-	"github.com/dustin/go-humanize"
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	data "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1"
 	infra "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
@@ -514,7 +513,7 @@ func (b *ModelAutobuilder) CreateDataset(notification catalog.NotificationSpec) 
 			DataSourceName: util.StrPtr(b.DatasourceName()),
 			Description:    util.StrPtr(""),
 			Reported:       util.BoolPtr(true),
-			Validated:      util.BoolPtr(true),
+			UnitTested:     util.BoolPtr(true),
 			Origin:         b.Spec.Location,
 			Task:           b.Spec.Task,
 			Location: data.DataLocation{

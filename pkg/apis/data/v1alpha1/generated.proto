@@ -1628,7 +1628,7 @@ message DatasetSpec {
   // Indicates if the Dataset should be checked against the validation rules of its Data Source
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
-  optional bool validate = 9;
+  optional bool unitTested = 9;
 
   // Indicates if synthetic data should be generated (currently unimplemented)
   // +kubebuilder:default:=false
@@ -1702,15 +1702,15 @@ message DatasetSpec {
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference labRef = 25;
 
-  // Prediction dataset ref is a reference to a prediction dataset ref (dataset that contain the predictions log).
+  // For dataset that contain feedback information, this is reference to the serving dataset
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference predictionDatasetRef = 26;
+  optional k8s.io.api.core.v1.ObjectReference servingDatasetRef = 26;
 
   // Used for prediction dataset, contain a reference to the predictor resource that created this dataset
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference predictorRef = 27;
 
-  // If true generate feature histogram.
+  // If true generate feature histogram object from this dataset columns.
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool generateFeatureHistogram = 28;
