@@ -279,7 +279,6 @@ type ModelSpec struct {
 	// +kubebuilder:validation:Optional
 	FeedbackTested *bool `json:"FeedbackTested,omitempty" protobuf:"varint,35,opt,name=feedbackTested"`
 	// The reference to the lated feedback dataset
-	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	FeedbackDatasetRef *v1.ObjectReference `json:"feedbackDatasetRef,omitempty" protobuf:"varint,36,opt,name=feedbackDatasetRef"`
 	// Indicates if the model is flagged

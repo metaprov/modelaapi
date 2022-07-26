@@ -759,7 +759,6 @@ spec:
                     type: object
                 type: object
               feedbackDatasetRef:
-                default: false
                 description: The reference to the lated feedback dataset
                 properties:
                   apiVersion:

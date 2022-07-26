@@ -2128,7 +2128,6 @@ message ModelSpec {
   optional bool feedbackTested = 35;
 
   // The reference to the lated feedback dataset
-  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference feedbackDatasetRef = 36;
 
