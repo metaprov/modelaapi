@@ -8,6 +8,7 @@ package v1alpha1
 
 import (
 	"fmt"
+
 	"github.com/metaprov/modelaapi/pkg/apis/data"
 	infra "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/util"
