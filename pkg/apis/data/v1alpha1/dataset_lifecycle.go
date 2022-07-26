@@ -128,10 +128,6 @@ func (dataset *Dataset) Populate(name string) {
 	}
 }
 
-func (dataset *Dataset) ToYamlFile() ([]byte, error) {
-	return yaml.Marshal(dataset)
-}
-
 // update the phase of the study based on its condition
 func (dataset *Dataset) UpdatePhaseFromConditions() {
 	if dataset.IsReady() {
