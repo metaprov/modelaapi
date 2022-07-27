@@ -436,7 +436,7 @@ spec:
                                 expectedCategory:
                                   description: The expected value
                                   type: string
-                                expectedSetSet:
+                                expectedSet:
                                   description: Expected set of values,if the assertion
                                   items:
                                     type: string
@@ -968,7 +968,7 @@ spec:
                                 expectedCategory:
                                   description: The expected value
                                   type: string
-                                expectedSetSet:
+                                expectedSet:
                                   description: Expected set of values,if the assertion
                                   items:
                                     type: string
@@ -1830,7 +1830,7 @@ spec:
                                 expectedCategory:
                                   description: The expected value
                                   type: string
-                                expectedSetSet:
+                                expectedSet:
                                   description: Expected set of values,if the assertion
                                   items:
                                     type: string

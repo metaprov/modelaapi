@@ -282,11 +282,6 @@ export class ColumnHistogram extends jspb.Message {
   hasHistogram(): boolean;
   clearHistogram(): ColumnHistogram;
 
-  getTraining(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.HistogramData | undefined;
-  setTraining(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.HistogramData): ColumnHistogram;
-  hasTraining(): boolean;
-  clearTraining(): ColumnHistogram;
-
   getMetricsList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>;
   setMetricsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>): ColumnHistogram;
   clearMetricsList(): ColumnHistogram;
@@ -307,7 +302,6 @@ export namespace ColumnHistogram {
   export type AsObject = {
     name: string,
     histogram?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.HistogramData.AsObject,
-    training?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.HistogramData.AsObject,
     metricsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.AsObject>,
     drift: boolean,
   }

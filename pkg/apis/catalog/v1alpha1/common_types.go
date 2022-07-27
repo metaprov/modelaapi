@@ -514,11 +514,13 @@ const (
 	UncertainPredictionPercent Metric = "uncertain-prediction-percent"
 
 	// Data drift measurments
-	KSTest                Metric = "ks"
-	PSI                   Metric = "psi"
-	WassersteinDistance   Metric = "wasserstein-distance"
-	KLDivergence          Metric = "kl-divergenece"
-	JensenShannonDistance Metric = "jensen-shannon-distance"
+	KSTest                   Metric = "two-sample-ks-test"
+	ChiSqrTest               Metric = "chi-squared-test"
+	ProportionDifferenceTest Metric = "proportion-difference-test"
+	WassersteinDistanceTest  Metric = "wasserstein-distance-test"
+	PSI                      Metric = "psi"
+	KLDivergence             Metric = "kl-divergenece"
+	JSDistance               Metric = "jensen-shannon-distance"
 
 	NoneMetric Metric = "none"
 )
@@ -2134,7 +2136,7 @@ type DataTestCase struct {
 	Upper *float64 `json:"upper,omitempty" protobuf:"bytes,12,opt,name=upper"`
 	// Expected set of values,if the assertion
 	// +kubebuilder:validation:Optional
-	ExpectedSet []string `json:"expectedSetSet,omitempty" protobuf:"bytes,13,rep,name=expectedSet"`
+	ExpectedSet []string `json:"expectedSet,omitempty" protobuf:"bytes,13,rep,name=expectedSet"`
 	// +kubebuilder:validation:Optional
 	LowerInclusive *bool `json:"lowerInclusive,omitempty" protobuf:"varint,14,opt,name=lowerInclusive"`
 	// +kubebuilder:validation:Optional

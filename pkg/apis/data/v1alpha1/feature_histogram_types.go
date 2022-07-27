@@ -12,6 +12,16 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
+const (
+	ModelDriftTwoSampleKSTestLessThan     catalog.AssertionType = "model-two-sample-ks-test-less-than"
+	ModelDriftChiSquaredLessThan          catalog.AssertionType = "model-chi-squared-test-less-than"
+	ModelDriftProportionDiffTestLessThan  catalog.AssertionType = "model-proportion-difference-test-less-than"
+	ModelDriftWassersteinDistanceLessThan catalog.AssertionType = "model-wasserstein-distance-less-than"
+	ModelDriftJSDistanceLessThan          catalog.AssertionType = "model-js-distance-less"
+	ModelDriftPSILessThan                 catalog.AssertionType = "model-psi-less-than"
+	ModelDriftKLDivergenceLessThan        catalog.AssertionType = "model-kl-divergence-less-than"
+)
+
 type FeatureHistogramPhase string
 
 const (
@@ -179,9 +189,6 @@ type ColumnHistogram struct {
 	// Measure of drift for a column
 	//+kubebuilder:validation:Optional
 	Histogram catalog.HistogramData `json:"histogram,omitempty" protobuf:"bytes,2,opt,name=histogram"`
-	// The reference training histogram for this column
-	//+kubebuilder:validation:Optional
-	Training catalog.HistogramData `json:"training,omitempty" protobuf:"bytes,3,opt,name=training"`
 	// Measure of drift for this column
 	//+kubebuilder:validation:Optional
 	Metrics []catalog.Measurement `json:"metrics,omitempty" protobuf:"bytes,4,opt,name=metrics"`

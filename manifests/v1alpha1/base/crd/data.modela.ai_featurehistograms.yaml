@@ -419,7 +419,7 @@ spec:
                         expectedCategory:
                           description: The expected value
                           type: string
-                        expectedSetSet:
+                        expectedSet:
                           description: Expected set of values,if the assertion
                           items:
                             type: string
@@ -775,37 +775,6 @@ spec:
                     name:
                       description: The name of the column
                       type: string
-                    training:
-                      description: The reference training histogram for this column
-                      properties:
-                        bins:
-                          description: The bins if the histogram describes continous
-                            variables
-                          items:
-                            type: number
-                          type: array
-                        categories:
-                          description: The name of the categories, one per bin if
-                            this is a categorical histogram
-                          items:
-                            type: string
-                          type: array
-                        counts:
-                          description: The set of values per bin
-                          items:
-                            type: number
-                          type: array
-                        invalid:
-                          description: The number of invalid values
-                          format: int32
-                          minimum: 0
-                          type: integer
-                        missing:
-                          description: The number of missing values
-                          format: int32
-                          minimum: 0
-                          type: integer
-                      type: object
                   type: object
                 type: array
               conditions:

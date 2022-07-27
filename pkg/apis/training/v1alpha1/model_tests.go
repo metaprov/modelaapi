@@ -93,13 +93,6 @@ const (
 	GpuMemBetween              catalog.AssertionType = "gpu-mem-between"
 
 	PredictorUncertainPredictionPercent catalog.AssertionType = "uncertain-prediction-percent-between"
-
-	// Data drift measurments
-	ModelDriftKSTestLessThan              catalog.AssertionType = "model-ks-less-than"
-	ModelDriftPSILessThan                 catalog.AssertionType = "model-psi-less-than"
-	ModelDriftWassersteinDistanceLessThan catalog.AssertionType = "model-wasserstein-distance-less-than"
-	ModelDriftKLDivergenceLessThan        catalog.AssertionType = "model-kl-divergenece-less-than"
-	ModelDriftJensenShannonLessThan       catalog.AssertionType = "model-jensen-shannon-distance-between"
 )
 
 // Assertion type compare to baseline

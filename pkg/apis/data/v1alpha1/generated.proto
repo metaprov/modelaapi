@@ -297,10 +297,6 @@ message ColumnHistogram {
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.HistogramData histogram = 2;
 
-  // The reference training histogram for this column
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.HistogramData training = 3;
-
   // Measure of drift for this column
   // +kubebuilder:validation:Optional
   repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement metrics = 4;

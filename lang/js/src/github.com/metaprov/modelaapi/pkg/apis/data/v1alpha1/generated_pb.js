@@ -6354,7 +6354,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnHistogram.toObj
   var f, obj = {
     name: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     histogram: (f = msg.getHistogram()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.HistogramData.toObject(includeInstance, f),
-    training: (f = msg.getTraining()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.HistogramData.toObject(includeInstance, f),
     metricsList: jspb.Message.toObjectList(msg.getMetricsList(),
     github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.toObject, includeInstance),
     drift: (f = jspb.Message.getBooleanField(msg, 5)) == null ? undefined : f
@@ -6402,11 +6401,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnHistogram.deser
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.HistogramData;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.HistogramData.deserializeBinaryFromReader);
       msg.setHistogram(value);
-      break;
-    case 3:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.HistogramData;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.HistogramData.deserializeBinaryFromReader);
-      msg.setTraining(value);
       break;
     case 4:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement;
@@ -6457,14 +6451,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnHistogram.seria
   if (f != null) {
     writer.writeMessage(
       2,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.HistogramData.serializeBinaryToWriter
-    );
-  }
-  f = message.getTraining();
-  if (f != null) {
-    writer.writeMessage(
-      3,
       f,
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.HistogramData.serializeBinaryToWriter
     );
@@ -6557,43 +6543,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnHistogram.proto
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnHistogram.prototype.hasHistogram = function() {
   return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.HistogramData training = 3;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.HistogramData}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnHistogram.prototype.getTraining = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.HistogramData} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.HistogramData, 3));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.HistogramData|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnHistogram} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnHistogram.prototype.setTraining = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnHistogram} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnHistogram.prototype.clearTraining = function() {
-  return this.setTraining(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnHistogram.prototype.hasTraining = function() {
-  return jspb.Message.getField(this, 3) != null;
 };
 
 
