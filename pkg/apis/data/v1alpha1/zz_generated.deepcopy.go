@@ -308,7 +308,6 @@ func (in *Column) DeepCopy() *Column {
 func (in *ColumnHistogram) DeepCopyInto(out *ColumnHistogram) {
 	*out = *in
 	in.Histogram.DeepCopyInto(&out.Histogram)
-	in.Training.DeepCopyInto(&out.Training)
 	if in.Metrics != nil {
 		in, out := &in.Metrics, &out.Metrics
 		*out = make([]catalogv1alpha1.Measurement, len(*in))
