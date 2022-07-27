@@ -11,7 +11,6 @@ import (
 	"strings"
 
 	"github.com/dustin/go-humanize"
-	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/apis/common"
 	"github.com/metaprov/modelaapi/pkg/apis/data"
 	infra "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
@@ -240,18 +239,4 @@ func (fh *FeatureHistogram) ShouldComputeDrift() bool {
 		return false
 	}
 	return true
-}
-
-func (fh *FeatureHistogram) AssignColumnTrainingHistogram(col string, histogram catalog.HistogramData) {
-	for i, column := range fh.Status.Columns {
-		if column.Name == col {
-			fh.Status.Columns[i].Training = histogram
-		}
-	}
-}
-
-func (fh *FeatureHistogram) AssignTrainingHistogramFrom(other *FeatureHistogram) {
-	for _, column := range other.Status.Columns {
-		fh.AssignColumnTrainingHistogram(column.Name, column.Histogram)
-	}
 }
