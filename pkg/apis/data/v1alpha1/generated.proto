@@ -1449,6 +1449,7 @@ message DataSourceSpec {
   optional FlatFileFormatSpec flatfile = 6;
 
   // If true, this datasource is for labeled data.
+  // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
   optional bool labeled = 7;
 

@@ -566,6 +566,7 @@ type DataSourceSpec struct {
 	// +kubebuilder:validation:Optional
 	FlatFile *FlatFileFormatSpec `json:"flatfile,omitempty" protobuf:"bytes,6,opt,name=flatfile"`
 	// If true, this datasource is for labeled data.
+	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
 	Labeled *bool `json:"labeled,omitempty" protobuf:"bytes,7,opt,name=labeled"`
 	// The specification for how incoming data should be sampled (i.e. how many rows should be used). Applicable

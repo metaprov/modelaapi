@@ -437,6 +437,7 @@ spec:
                         type: string
                     type: object
                   labeled:
+                    default: true
                     description: If true, this datasource is for labeled data.
                     type: boolean
                   labeling:

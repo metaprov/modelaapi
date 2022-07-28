@@ -2174,7 +2174,7 @@ type TestSuiteResult struct {
 	StopTime *metav1.Time `json:"stopTime,omitempty" protobuf:"bytes,5,opt,name=stopTime"`
 	// The result of executing the test suite. The result contain one result object per test case.
 	// +kubebuilder:validation:Optional
-	Tests []DataTestCaseResult `json:"tests,omitempty" protobuf:"bytes,6,opt,name=tests"`
+	Tests []DataTestCaseResult `json:"tests,omitempty" protobuf:"bytes,6,rep,name=tests"`
 }
 
 // Result for a specific case
