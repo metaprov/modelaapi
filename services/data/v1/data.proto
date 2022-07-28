@@ -679,5 +679,10 @@ service DataService {
     rpc ExecuteSql(DsExecuteSqlRequest) returns (DsExecuteSqlResponse) {}
     rpc Snapshot(DsSnapshotRequest) returns (DsSnapshotResponse) {}
     // Tests
-    rpc RunTestSuite(RunTestSuiteRequest) returns (RunTestSuiteResponse) {}
+    rpc UnitTestDataset(RunTestSuiteRequest) returns (RunTestSuiteResponse) {}
+    rpc UnitTestModel(RunTestSuiteRequest) returns (RunTestSuiteResponse) {}
+    rpc UnitTestFeedback(RunTestSuiteRequest) returns (RunTestSuiteResponse) {}
+    rpc UnitTestFeatureHistogram(RunTestSuiteRequest) returns (RunTestSuiteResponse) {}
+    rpc UnitTestPredictor(RunTestSuiteRequest) returns (RunTestSuiteResponse) {}
+
 }

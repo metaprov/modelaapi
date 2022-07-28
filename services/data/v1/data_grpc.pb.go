@@ -85,7 +85,11 @@ type DataServiceClient interface {
 	ExecuteSql(ctx context.Context, in *DsExecuteSqlRequest, opts ...grpc.CallOption) (*DsExecuteSqlResponse, error)
 	Snapshot(ctx context.Context, in *DsSnapshotRequest, opts ...grpc.CallOption) (*DsSnapshotResponse, error)
 	// Tests
-	RunTestSuite(ctx context.Context, in *RunTestSuiteRequest, opts ...grpc.CallOption) (*RunTestSuiteResponse, error)
+	UnitTestDataset(ctx context.Context, in *RunTestSuiteRequest, opts ...grpc.CallOption) (*RunTestSuiteResponse, error)
+	UnitTestModel(ctx context.Context, in *RunTestSuiteRequest, opts ...grpc.CallOption) (*RunTestSuiteResponse, error)
+	UnitTestFeedback(ctx context.Context, in *RunTestSuiteRequest, opts ...grpc.CallOption) (*RunTestSuiteResponse, error)
+	UnitTestFeatureHistogram(ctx context.Context, in *RunTestSuiteRequest, opts ...grpc.CallOption) (*RunTestSuiteResponse, error)
+	UnitTestPredictor(ctx context.Context, in *RunTestSuiteRequest, opts ...grpc.CallOption) (*RunTestSuiteResponse, error)
 }
 
 type dataServiceClient struct {
@@ -438,9 +442,45 @@ func (c *dataServiceClient) Snapshot(ctx context.Context, in *DsSnapshotRequest,
 	return out, nil
 }
 
-func (c *dataServiceClient) RunTestSuite(ctx context.Context, in *RunTestSuiteRequest, opts ...grpc.CallOption) (*RunTestSuiteResponse, error) {
+func (c *dataServiceClient) UnitTestDataset(ctx context.Context, in *RunTestSuiteRequest, opts ...grpc.CallOption) (*RunTestSuiteResponse, error) {
 	out := new(RunTestSuiteResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/RunTestSuite", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/UnitTestDataset", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dataServiceClient) UnitTestModel(ctx context.Context, in *RunTestSuiteRequest, opts ...grpc.CallOption) (*RunTestSuiteResponse, error) {
+	out := new(RunTestSuiteResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/UnitTestModel", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dataServiceClient) UnitTestFeedback(ctx context.Context, in *RunTestSuiteRequest, opts ...grpc.CallOption) (*RunTestSuiteResponse, error) {
+	out := new(RunTestSuiteResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/UnitTestFeedback", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dataServiceClient) UnitTestFeatureHistogram(ctx context.Context, in *RunTestSuiteRequest, opts ...grpc.CallOption) (*RunTestSuiteResponse, error) {
+	out := new(RunTestSuiteResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/UnitTestFeatureHistogram", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dataServiceClient) UnitTestPredictor(ctx context.Context, in *RunTestSuiteRequest, opts ...grpc.CallOption) (*RunTestSuiteResponse, error) {
+	out := new(RunTestSuiteResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/UnitTestPredictor", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -514,7 +554,11 @@ type DataServiceServer interface {
 	ExecuteSql(context.Context, *DsExecuteSqlRequest) (*DsExecuteSqlResponse, error)
 	Snapshot(context.Context, *DsSnapshotRequest) (*DsSnapshotResponse, error)
 	// Tests
-	RunTestSuite(context.Context, *RunTestSuiteRequest) (*RunTestSuiteResponse, error)
+	UnitTestDataset(context.Context, *RunTestSuiteRequest) (*RunTestSuiteResponse, error)
+	UnitTestModel(context.Context, *RunTestSuiteRequest) (*RunTestSuiteResponse, error)
+	UnitTestFeedback(context.Context, *RunTestSuiteRequest) (*RunTestSuiteResponse, error)
+	UnitTestFeatureHistogram(context.Context, *RunTestSuiteRequest) (*RunTestSuiteResponse, error)
+	UnitTestPredictor(context.Context, *RunTestSuiteRequest) (*RunTestSuiteResponse, error)
 	mustEmbedUnimplementedDataServiceServer()
 }
 
@@ -636,8 +680,20 @@ func (UnimplementedDataServiceServer) ExecuteSql(context.Context, *DsExecuteSqlR
 func (UnimplementedDataServiceServer) Snapshot(context.Context, *DsSnapshotRequest) (*DsSnapshotResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Snapshot not implemented")
 }
-func (UnimplementedDataServiceServer) RunTestSuite(context.Context, *RunTestSuiteRequest) (*RunTestSuiteResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RunTestSuite not implemented")
+func (UnimplementedDataServiceServer) UnitTestDataset(context.Context, *RunTestSuiteRequest) (*RunTestSuiteResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UnitTestDataset not implemented")
+}
+func (UnimplementedDataServiceServer) UnitTestModel(context.Context, *RunTestSuiteRequest) (*RunTestSuiteResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UnitTestModel not implemented")
+}
+func (UnimplementedDataServiceServer) UnitTestFeedback(context.Context, *RunTestSuiteRequest) (*RunTestSuiteResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UnitTestFeedback not implemented")
+}
+func (UnimplementedDataServiceServer) UnitTestFeatureHistogram(context.Context, *RunTestSuiteRequest) (*RunTestSuiteResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UnitTestFeatureHistogram not implemented")
+}
+func (UnimplementedDataServiceServer) UnitTestPredictor(context.Context, *RunTestSuiteRequest) (*RunTestSuiteResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UnitTestPredictor not implemented")
 }
 func (UnimplementedDataServiceServer) mustEmbedUnimplementedDataServiceServer() {}
 
@@ -1336,20 +1392,92 @@ func _DataService_Snapshot_Handler(srv interface{}, ctx context.Context, dec fun
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DataService_RunTestSuite_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _DataService_UnitTestDataset_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(RunTestSuiteRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DataServiceServer).RunTestSuite(ctx, in)
+		return srv.(DataServiceServer).UnitTestDataset(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/RunTestSuite",
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/UnitTestDataset",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DataServiceServer).RunTestSuite(ctx, req.(*RunTestSuiteRequest))
+		return srv.(DataServiceServer).UnitTestDataset(ctx, req.(*RunTestSuiteRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DataService_UnitTestModel_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RunTestSuiteRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DataServiceServer).UnitTestModel(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/UnitTestModel",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DataServiceServer).UnitTestModel(ctx, req.(*RunTestSuiteRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DataService_UnitTestFeedback_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RunTestSuiteRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DataServiceServer).UnitTestFeedback(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/UnitTestFeedback",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DataServiceServer).UnitTestFeedback(ctx, req.(*RunTestSuiteRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DataService_UnitTestFeatureHistogram_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RunTestSuiteRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DataServiceServer).UnitTestFeatureHistogram(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/UnitTestFeatureHistogram",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DataServiceServer).UnitTestFeatureHistogram(ctx, req.(*RunTestSuiteRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DataService_UnitTestPredictor_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RunTestSuiteRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DataServiceServer).UnitTestPredictor(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/UnitTestPredictor",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DataServiceServer).UnitTestPredictor(ctx, req.(*RunTestSuiteRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1514,8 +1642,24 @@ var DataService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _DataService_Snapshot_Handler,
 		},
 		{
-			MethodName: "RunTestSuite",
-			Handler:    _DataService_RunTestSuite_Handler,
+			MethodName: "UnitTestDataset",
+			Handler:    _DataService_UnitTestDataset_Handler,
+		},
+		{
+			MethodName: "UnitTestModel",
+			Handler:    _DataService_UnitTestModel_Handler,
+		},
+		{
+			MethodName: "UnitTestFeedback",
+			Handler:    _DataService_UnitTestFeedback_Handler,
+		},
+		{
+			MethodName: "UnitTestFeatureHistogram",
+			Handler:    _DataService_UnitTestFeatureHistogram_Handler,
+		},
+		{
+			MethodName: "UnitTestPredictor",
+			Handler:    _DataService_UnitTestPredictor_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
