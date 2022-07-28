@@ -12,7 +12,6 @@ import (
 	"path"
 	"time"
 
-	"github.com/dustin/go-humanize"
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	data "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1"
 	infra "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
@@ -971,6 +970,33 @@ func (model *Model) MarkMaintain() {
 func (model *Model) Maintain() bool {
 	cond := model.GetCond(ModelMaintenance)
 	return cond.Status == v1.ConditionTrue
+}
+
+// ----------------- Unit tested
+
+func (model *Model) MarkUnitTestFailed(msg string) {
+	model.CreateOrUpdateCond(ModelCondition{
+		Type:    ModelUnitTested,
+		Status:  v1.ConditionFalse,
+		Reason:  string(ModelPhaseFailed),
+		Message: "Failed to unit test." + msg,
+	})
+	model.Status.Phase = ModelPhaseFailed
+	model.Status.FailureMessage = util.StrPtr(msg)
+	model.Status.Progress = 100
+	now := metav1.Now()
+	if model.Status.EndTime == nil {
+		model.Status.EndTime = &now
+	}
+}
+
+func (dataset *Model) MarkUnitTested() {
+	dataset.CreateOrUpdateCond(ModelCondition{
+		Type:   ModelUnitTested,
+		Status: v1.ConditionTrue,
+	})
+	dataset.Status.Progress = 40
+
 }
 
 // ------------------ Ready
