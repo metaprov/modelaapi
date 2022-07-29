@@ -1508,7 +1508,8 @@ spec:
                     type: array
                 type: object
               unitTestResults:
-                description: The the result of the last run of unit tests.
+                description: List of validation results which are generated for every
+                  validation rule associated with the Dataset's Data Source
                 properties:
                   entityRef:
                     description: A reference to the object under test. Best practice

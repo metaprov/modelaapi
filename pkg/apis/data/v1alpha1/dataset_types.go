@@ -275,9 +275,6 @@ type DatasetStatus struct {
 	// The generated training feature histogram, Empty if no feature histogram generated
 	// +kubebuilder:validation:Optional
 	FeatureHistogramRef v1.ObjectReference `json:"featureHistogramRef,omitempty" protobuf:"bytes,22,opt,name=featureHistogramRef"`
-	// The the result of the last run of unit tests.
-	// +kubebuilder:validation:Optional
-	UnitTestResult catalog.TestSuiteResult `json:"unitTestResults,omitempty" protobuf:"bytes,23,opt,name=unitTestResult"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional

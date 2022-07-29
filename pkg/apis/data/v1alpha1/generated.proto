@@ -1835,10 +1835,6 @@ message DatasetStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference featureHistogramRef = 22;
 
-  // The the result of the last run of unit tests.
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult unitTestResult = 23;
-
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional

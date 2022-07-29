@@ -1887,7 +1887,6 @@ func (in *DatasetStatus) DeepCopyInto(out *DatasetStatus) {
 		*out = (*in).DeepCopy()
 	}
 	out.FeatureHistogramRef = in.FeatureHistogramRef
-	in.UnitTestResult.DeepCopyInto(&out.UnitTestResult)
 	if in.Conditions != nil {
 		in, out := &in.Conditions, &out.Conditions
 		*out = make([]DatasetCondition, len(*in))
