@@ -49,7 +49,7 @@ type CompilerSpec struct {
 	// +kubebuilder:validation:Optional
 	Compiler *CompilerName `json:"compiler,omitempty" protobuf:"bytes,2,opt,name=compiler"`
 	// Set one or more targets for the compiler
-	Targets []HardwareTarget `json:"targets,omitempty" protobuf:"bytes,3,opt,name=targets"`
+	Targets []HardwareTarget `json:"targets,omitempty" protobuf:"bytes,3,rep,name=targets"`
 }
 
 //============================================================
@@ -1419,7 +1419,7 @@ type Measurement struct {
 	Category *string `json:"category" protobuf:"bytes,7,opt,name=category"`
 	// Capture a set of values.
 	// +kubebuilder:validation:Optional
-	ValueSet []string `json:"valueSet" protobuf:"bytes,8,opt,name=valueSet"`
+	ValueSet []string `json:"valueSet" protobuf:"bytes,8,rep,name=valueSet"`
 	// The Time when the observation was taken
 	// +kubebuilder:validation:Optional
 	TimePoint *metav1.Time `json:"timePoint" protobuf:"bytes,9,opt,name=timePoint"`
@@ -1875,11 +1875,11 @@ type CurvePoint struct {
 	Y float64 `json:"y,omitempty" protobuf:"bytes,2,opt,name=y"`
 }
 type RocAucCurve struct {
-	Values []CurvePoint `json:"values,omitempty" protobuf:"bytes,1,opt,name=values"`
+	Values []CurvePoint `json:"values,omitempty" protobuf:"bytes,1,rep,name=values"`
 }
 
 type PRCurve struct {
-	Values []CurvePoint `json:"values,omitempty" protobuf:"bytes,1,opt,name=values"`
+	Values []CurvePoint `json:"values,omitempty" protobuf:"bytes,1,rep,name=values"`
 }
 
 type ConfusionMatrixRow struct {
@@ -1944,7 +1944,7 @@ type HistogramData struct {
 // PermissionsSpec specifies the Accounts that have access to a DataProduct or Tenant namespace and what permissions
 // they possess for resources under the namespace
 type PermissionsSpec struct {
-	Stakeholders []Stakeholder `json:"stakeholders,omitempty" protobuf:"bytes,1,opt,name=stakeholders"`
+	Stakeholders []Stakeholder `json:"stakeholders,omitempty" protobuf:"bytes,1,rep,name=stakeholders"`
 }
 
 // Stakeholder specifies the User Role Classes of an individual Account
@@ -1952,7 +1952,7 @@ type Stakeholder struct {
 	// The name of an Account
 	AccountName string `json:"account,omitempty" protobuf:"bytes,1,opt,name=account"`
 	// The object references to UserRoleClass resources which describe the actions the Account may perform
-	Roles []v1.ObjectReference `json:"roles,omitempty" protobuf:"bytes,2,opt,name=roles"`
+	Roles []v1.ObjectReference `json:"roles,omitempty" protobuf:"bytes,2,rep,name=roles"`
 }
 
 // Images describes the Docker images used internally to perform workloads
@@ -2096,7 +2096,7 @@ type TestSuite struct {
 	// +kubebuilder:validation:Optional
 	Enabled *bool `json:"enabled,omitempty" protobuf:"bytes,1,opt,name=enabled"`
 	// +kubebuilder:validation:Optional
-	Tests []DataTestCase `json:"tests,omitempty" protobuf:"bytes,2,opt,name=tests"`
+	Tests []DataTestCase `json:"tests,omitempty" protobuf:"bytes,2,rep,name=tests"`
 }
 
 type DataTestCase struct {
@@ -2147,7 +2147,7 @@ type DataTestCase struct {
 	Generated *bool `json:"generated,omitempty" protobuf:"varint,16,opt,name=generated"`
 	// The test case tags, used for filtering.
 	// Optional Test Tags
-	Tags []string `json:"tags,omitempty" protobuf:"bytes,17,opt,name=tags"`
+	Tags []string `json:"tags,omitempty" protobuf:"bytes,17,rep,name=tags"`
 	// For test that involve two columns (e.g. correlation)
 	// +kubebuilder:validation:Optional
 	Column2 *string `json:"column2,omitempty" protobuf:"bytes,18,opt,name=column2"`
