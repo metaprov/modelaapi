@@ -2122,11 +2122,6 @@ message ModelSpec {
   // +kubebuilder:validation:Optional
   optional bool unitTested = 34;
 
-  // Indicate if this model should be unit tested.
-  // +kubebuilder:default:=false
-  // +kubebuilder:validation:Optional
-  optional bool feedbackTested = 35;
-
   // The reference to the lated feedback dataset
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference feedbackDatasetRef = 36;

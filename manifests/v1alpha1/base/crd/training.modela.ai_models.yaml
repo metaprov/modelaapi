@@ -92,10 +92,6 @@ spec:
           spec:
             description: ModelSpec defines the desired state of the Model resource
             properties:
-              FeedbackTested:
-                default: false
-                description: Indicate if this model should be unit tested.
-                type: boolean
               aborted:
                 default: false
                 description: Aborted indicates if any workloads associated with the

@@ -3082,9 +3082,6 @@ export class ModelSpec extends jspb.Message {
   getUnittested(): boolean;
   setUnittested(value: boolean): ModelSpec;
 
-  getFeedbacktested(): boolean;
-  setFeedbacktested(value: boolean): ModelSpec;
-
   getFeedbackdatasetref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setFeedbackdatasetref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ModelSpec;
   hasFeedbackdatasetref(): boolean;
@@ -3181,7 +3178,6 @@ export namespace ModelSpec {
     gendriftdetector: boolean,
     fast: boolean,
     unittested: boolean,
-    feedbacktested: boolean,
     feedbackdatasetref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     flagged: boolean,
     location?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,

@@ -19,6 +19,8 @@ const (
 	ModelPhaseTested                ModelPhase = "Tested"
 	ModelPhaseUnitTesting           ModelPhase = "UnitTesting"
 	ModelPhaseUnitTested            ModelPhase = "UnitTested"
+	ModelPhaseComputingFeedback     ModelPhase = "ComputingFeedback"
+	ModelPhaseComputedFeedback      ModelPhase = "ComputedFeedback"
 	ModelPhaseReporting             ModelPhase = "Reporting"
 	ModelPhaseReported              ModelPhase = "Reported"
 	ModelPhaseCompleted             ModelPhase = "Completed"
@@ -274,10 +276,6 @@ type ModelSpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	UnitTested *bool `json:"unitTested,omitempty" protobuf:"varint,34,opt,name=unitTested"`
-	// Indicate if this model should be unit tested.
-	// +kubebuilder:default:=false
-	// +kubebuilder:validation:Optional
-	FeedbackTested *bool `json:"FeedbackTested,omitempty" protobuf:"varint,35,opt,name=feedbackTested"`
 	// The reference to the lated feedback dataset
 	// +kubebuilder:validation:Optional
 	FeedbackDatasetRef *v1.ObjectReference `json:"feedbackDatasetRef,omitempty" protobuf:"varint,36,opt,name=feedbackDatasetRef"`
@@ -547,6 +545,9 @@ type ModelStatus struct {
 	// The result of running the unit tests
 	// +kubebuilder:validation:Optional
 	UnitTestsResult catalog.TestSuiteResult `json:"unitTestsResult,omitempty" protobuf:"bytes,69,opt,name="`
+	// The result of running the feedback unit tests, the feedback unit tests
+	// +kubebuilder:validation:Optional
+	FeedbackTestsResult catalog.TestSuiteResult `json:"unitTestsResult,omitempty" protobuf:"bytes,69,opt,name="`
 	// +kubebuilder:validation:Optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge

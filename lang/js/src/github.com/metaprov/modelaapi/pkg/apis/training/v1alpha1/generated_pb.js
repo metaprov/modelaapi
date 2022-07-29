@@ -30537,7 +30537,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.toObjec
     gendriftdetector: (f = jspb.Message.getBooleanField(msg, 32)) == null ? undefined : f,
     fast: (f = jspb.Message.getBooleanField(msg, 33)) == null ? undefined : f,
     unittested: (f = jspb.Message.getBooleanField(msg, 34)) == null ? undefined : f,
-    feedbacktested: (f = jspb.Message.getBooleanField(msg, 35)) == null ? undefined : f,
     feedbackdatasetref: (f = msg.getFeedbackdatasetref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     flagged: (f = jspb.Message.getBooleanField(msg, 37)) == null ? undefined : f,
     location: (f = msg.getLocation()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.toObject(includeInstance, f),
@@ -30726,10 +30725,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.deseria
     case 34:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setUnittested(value);
-      break;
-    case 35:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setFeedbacktested(value);
       break;
     case 36:
       var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
@@ -31055,13 +31050,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.seriali
   if (f != null) {
     writer.writeBool(
       34,
-      f
-    );
-  }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 35));
-  if (f != null) {
-    writer.writeBool(
-      35,
       f
     );
   }
@@ -32359,42 +32347,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.hasUnittested = function() {
   return jspb.Message.getField(this, 34) != null;
-};
-
-
-/**
- * optional bool feedbackTested = 35;
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.getFeedbacktested = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 35, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.setFeedbacktested = function(value) {
-  return jspb.Message.setField(this, 35, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.clearFeedbacktested = function() {
-  return jspb.Message.setField(this, 35, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.hasFeedbacktested = function() {
-  return jspb.Message.getField(this, 35) != null;
 };
 
 

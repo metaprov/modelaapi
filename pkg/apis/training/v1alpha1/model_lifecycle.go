@@ -863,7 +863,6 @@ func (model *Model) MarkExplainedFailed(err string) {
 		now := metav1.Now()
 		model.Status.EndTime = &now
 	}
-
 }
 
 // ---------------------- publishing
