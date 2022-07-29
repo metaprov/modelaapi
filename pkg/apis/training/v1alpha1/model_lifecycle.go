@@ -576,6 +576,48 @@ func (model *Model) Tested() bool {
 	return model.GetCond(ModelTested).Status == v1.ConditionTrue
 }
 
+// -------------------- Unit testing
+
+func (model *Model) MarkUnitTesting() {
+	model.Status.Phase = ModelPhaseUnitTesting
+	model.CreateOrUpdateCond(ModelCondition{
+		Type:   ModelUnitTested,
+		Status: v1.ConditionFalse,
+		Reason: ReasonTesting,
+	})
+	model.Status.Progress = 75
+}
+
+func (model *Model) MarkUnitTestingFailed(err string) {
+	model.CreateOrUpdateCond(ModelCondition{
+		Type:    ModelUnitTested,
+		Status:  v1.ConditionFalse,
+		Reason:  ReasonFailed,
+		Message: err,
+	})
+	model.Status.Phase = ModelPhaseFailed
+	model.Status.FailureMessage = util.StrPtr("unit test failed." + err)
+	model.Status.Progress = 100
+	if model.Status.EndTime == nil {
+		now := metav1.Now()
+		model.Status.EndTime = &now
+	}
+
+}
+
+func (model *Model) MarkUnitTested() {
+	model.Status.Phase = ModelPhaseUnitTested
+	model.CreateOrUpdateCond(ModelCondition{
+		Type:   ModelUnitTested,
+		Status: v1.ConditionTrue,
+	})
+	model.Status.Progress = 80
+}
+
+func (model *Model) UnitTested() bool {
+	return model.GetCond(ModelUnitTested).Status == v1.ConditionTrue
+}
+
 func (model *Model) Testing() bool {
 	cond := model.GetCond(ModelTested)
 	return cond.Status == v1.ConditionFalse && cond.Reason == ReasonTesting
@@ -989,15 +1031,6 @@ func (model *Model) MarkUnitTestFailed(msg string) {
 	if model.Status.EndTime == nil {
 		model.Status.EndTime = &now
 	}
-}
-
-func (dataset *Model) MarkUnitTested() {
-	dataset.CreateOrUpdateCond(ModelCondition{
-		Type:   ModelUnitTested,
-		Status: v1.ConditionTrue,
-	})
-	dataset.Status.Progress = 40
-
 }
 
 // ------------------ Ready
