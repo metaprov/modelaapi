@@ -706,7 +706,6 @@ func (model *Model) MarkReportFailed(err string) {
 		Reason:  string(ModelPhaseFailed),
 		Message: err,
 	})
-
 }
 
 func (model *Model) Reported() bool {
