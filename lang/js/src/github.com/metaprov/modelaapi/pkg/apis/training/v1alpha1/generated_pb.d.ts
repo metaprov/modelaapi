@@ -3135,6 +3135,11 @@ export class ModelSpec extends jspb.Message {
   hasUnittests(): boolean;
   clearUnittests(): ModelSpec;
 
+  getFeedbacktests(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
+  setFeedbacktests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): ModelSpec;
+  hasFeedbacktests(): boolean;
+  clearFeedbacktests(): ModelSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelSpec): ModelSpec.AsObject;
@@ -3191,6 +3196,7 @@ export namespace ModelSpec {
     governance?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.GovernanceSpec.AsObject,
     interpretability?: InterpretabilitySpec.AsObject,
     unittests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
+    feedbacktests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
   }
 }
 
@@ -3462,6 +3468,11 @@ export class ModelStatus extends jspb.Message {
   hasUnittestsresult(): boolean;
   clearUnittestsresult(): ModelStatus;
 
+  getFeedbacktestsresult(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
+  setFeedbacktestsresult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): ModelStatus;
+  hasFeedbacktestsresult(): boolean;
+  clearFeedbacktestsresult(): ModelStatus;
+
   getConditionsList(): Array<ModelCondition>;
   setConditionsList(value: Array<ModelCondition>): ModelStatus;
   clearConditionsList(): ModelStatus;
@@ -3544,6 +3555,7 @@ export namespace ModelStatus {
     interpretability?: InterpretabilityStatus.AsObject,
     images?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Images.AsObject,
     unittestsresult?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
+    feedbacktestsresult?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
     conditionsList: Array<ModelCondition.AsObject>,
   }
 }

@@ -656,13 +656,6 @@ func (model *Model) MarkProfiledFailed(err string) {
 		Reason:  ReasonFailed,
 		Message: err,
 	})
-	model.Status.Phase = ModelPhaseFailed
-	model.Status.FailureMessage = util.StrPtr("Failed to profile." + err)
-	model.Status.Progress = 100
-	if model.Status.EndTime == nil {
-		now := metav1.Now()
-		model.Status.EndTime = &now
-	}
 }
 
 func (model *Model) Profiled() bool {
@@ -857,12 +850,6 @@ func (model *Model) MarkExplainedFailed(err string) {
 		Reason:  ReasonFailed,
 		Message: err,
 	})
-	model.Status.Phase = ModelPhaseFailed
-	model.Status.FailureMessage = util.StrPtr("Failed to explain." + err)
-	if model.Status.EndTime == nil {
-		now := metav1.Now()
-		model.Status.EndTime = &now
-	}
 }
 
 // ---------------------- publishing

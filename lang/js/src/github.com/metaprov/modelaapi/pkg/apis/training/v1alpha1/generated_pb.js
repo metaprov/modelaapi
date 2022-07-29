@@ -30549,7 +30549,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.toObjec
     trialid: (f = jspb.Message.getField(msg, 45)) == null ? undefined : f,
     governance: (f = msg.getGovernance()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.GovernanceSpec.toObject(includeInstance, f),
     interpretability: (f = msg.getInterpretability()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.InterpretabilitySpec.toObject(includeInstance, f),
-    unittests: (f = msg.getUnittests()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.toObject(includeInstance, f)
+    unittests: (f = msg.getUnittests()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.toObject(includeInstance, f),
+    feedbacktests: (f = msg.getFeedbacktests()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -30784,6 +30785,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.deseria
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.deserializeBinaryFromReader);
       msg.setUnittests(value);
+      break;
+    case 49:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.deserializeBinaryFromReader);
+      msg.setFeedbacktests(value);
       break;
     default:
       reader.skipField();
@@ -31147,6 +31153,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.seriali
   if (f != null) {
     writer.writeMessage(
       48,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.serializeBinaryToWriter
+    );
+  }
+  f = message.getFeedbacktests();
+  if (f != null) {
+    writer.writeMessage(
+      49,
       f,
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.serializeBinaryToWriter
     );
@@ -32825,13 +32839,50 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
 };
 
 
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite feedbackTests = 49;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.getFeedbacktests = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite, 49));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.setFeedbacktests = function(value) {
+  return jspb.Message.setWrapperField(this, 49, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.clearFeedbacktests = function() {
+  return this.setFeedbacktests(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.hasFeedbacktests = function() {
+  return jspb.Message.getField(this, 49) != null;
+};
+
+
 
 /**
  * List of repeated fields within this message type.
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.repeatedFields_ = [12,13,14,15,29,30,63,64,70];
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.repeatedFields_ = [12,13,14,15,29,30,63,64,71];
 
 
 
@@ -32939,6 +32990,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.toObj
     interpretability: (f = msg.getInterpretability()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.InterpretabilityStatus.toObject(includeInstance, f),
     images: (f = msg.getImages()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Images.toObject(includeInstance, f),
     unittestsresult: (f = msg.getUnittestsresult()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.toObject(includeInstance, f),
+    feedbacktestsresult: (f = msg.getFeedbacktestsresult()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.toObject(includeInstance, f),
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCondition.toObject, includeInstance)
   };
@@ -33279,6 +33331,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.deser
       msg.setUnittestsresult(value);
       break;
     case 70:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.deserializeBinaryFromReader);
+      msg.setFeedbacktestsresult(value);
+      break;
+    case 71:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCondition;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCondition.deserializeBinaryFromReader);
       msg.addConditions(value);
@@ -33814,10 +33871,18 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.seria
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.serializeBinaryToWriter
     );
   }
+  f = message.getFeedbacktestsresult();
+  if (f != null) {
+    writer.writeMessage(
+      70,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.serializeBinaryToWriter
+    );
+  }
   f = message.getConditionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      70,
+      71,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCondition.serializeBinaryToWriter
     );
@@ -36279,12 +36344,49 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
 
 
 /**
- * repeated ModelCondition conditions = 70;
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult feedbackTestsResult = 70;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getFeedbacktestsresult = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult, 70));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.setFeedbacktestsresult = function(value) {
+  return jspb.Message.setWrapperField(this, 70, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.clearFeedbacktestsresult = function() {
+  return this.setFeedbacktestsresult(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.hasFeedbacktestsresult = function() {
+  return jspb.Message.getField(this, 70) != null;
+};
+
+
+/**
+ * repeated ModelCondition conditions = 71;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCondition>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getConditionsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCondition, 70));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCondition, 71));
 };
 
 
@@ -36293,7 +36395,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.setConditionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 70, value);
+  return jspb.Message.setRepeatedWrapperField(this, 71, value);
 };
 
 
@@ -36303,7 +36405,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCondition}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 70, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 71, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCondition, opt_index);
 };
 
 

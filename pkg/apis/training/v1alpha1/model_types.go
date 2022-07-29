@@ -320,6 +320,9 @@ type ModelSpec struct {
 	// The set of unit tests for this model.
 	// +kubebuilder:validation:Optional
 	UnitTests catalog.TestSuite `json:"unitTests,omitempty" protobuf:"bytes,48,opt,name=unitTests"`
+	// The set of unit tests for this model.
+	// +kubebuilder:validation:Optional
+	FeedbackTests catalog.TestSuite `json:"feedbackTests,omitempty" protobuf:"bytes,49,opt,name=feedbackTests"`
 }
 
 // EnsembleSpec specifies the parameters of an ensemble model
@@ -547,11 +550,11 @@ type ModelStatus struct {
 	UnitTestsResult catalog.TestSuiteResult `json:"unitTestsResult,omitempty" protobuf:"bytes,69,opt,name="`
 	// The result of running the feedback unit tests, the feedback unit tests
 	// +kubebuilder:validation:Optional
-	FeedbackTestsResult catalog.TestSuiteResult `json:"unitTestsResult,omitempty" protobuf:"bytes,69,opt,name="`
+	FeedbackTestsResult catalog.TestSuiteResult `json:"feedbackTestsResult,omitempty" protobuf:"bytes,70,opt,name="`
 	// +kubebuilder:validation:Optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
-	Conditions []ModelCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,70,rep,name=conditions"`
+	Conditions []ModelCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,71,rep,name=conditions"`
 }
 
 // Holds the information about the execution environment.
