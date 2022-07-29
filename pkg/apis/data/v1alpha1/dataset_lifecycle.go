@@ -499,7 +499,7 @@ func (dataset *Dataset) CompletionAlert(tenantRef *v1.ObjectReference, notifierN
 func (dataset *Dataset) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *string, err error) *infra.Alert {
 	level := infra.Error
 	subject := fmt.Sprintf("Entity %s failed with error %v", dataset.Name, err.Error())
-	return &infra.Alert{
+	result := &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
 			GenerateName: dataset.Name,
 			Namespace:    dataset.Namespace,
@@ -517,14 +517,17 @@ func (dataset *Dataset) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *
 			},
 			Owner: dataset.Spec.Owner,
 			Fields: map[string]string{
-				"Rows":            util.ItoA(&dataset.Status.Statistics.Rows),
-				"Columns":         util.ItoA(&dataset.Status.Statistics.Cols),
-				"Size":            util.ItoA(&dataset.Status.Statistics.FileSize),
-				"Start Time":      dataset.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
-				"Completion Time": dataset.Status.EndTime.Format("01/2/2006 15:04:05"),
+				"Rows":       util.ItoA(&dataset.Status.Statistics.Rows),
+				"Columns":    util.ItoA(&dataset.Status.Statistics.Cols),
+				"Size":       util.ItoA(&dataset.Status.Statistics.FileSize),
+				"Start Time": dataset.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
 			},
 		},
 	}
+	if dataset.Status.EndTime != nil {
+		result.Spec.Fields["Completion Time"] = dataset.Status.EndTime.Format("01/2/2006 15:04:05")
+	}
+	return result
 }
 
 // return the list of drift. Currently return the drift columns
