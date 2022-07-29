@@ -588,30 +588,24 @@ func (model *Model) MarkUnitTesting() {
 	model.Status.Progress = 75
 }
 
-func (model *Model) MarkUnitTestingFailed(err string) {
+// ----------------- Unit tested
+// If stop, stop the search
+func (model *Model) MarkUnitTestFailed(msg string, stop bool) {
 	model.CreateOrUpdateCond(ModelCondition{
 		Type:    ModelUnitTested,
 		Status:  v1.ConditionFalse,
-		Reason:  ReasonFailed,
-		Message: err,
+		Reason:  string(ModelPhaseFailed),
+		Message: "Failed to unit test." + msg,
 	})
-	model.Status.Phase = ModelPhaseFailed
-	model.Status.FailureMessage = util.StrPtr("unit test failed." + err)
-	model.Status.Progress = 100
-	if model.Status.EndTime == nil {
+	if stop {
+		model.Status.Phase = ModelPhaseFailed
+		model.Status.FailureMessage = util.StrPtr(msg)
+		model.Status.Progress = 100
 		now := metav1.Now()
-		model.Status.EndTime = &now
+		if model.Status.EndTime == nil {
+			model.Status.EndTime = &now
+		}
 	}
-
-}
-
-func (model *Model) MarkUnitTested() {
-	model.Status.Phase = ModelPhaseUnitTested
-	model.CreateOrUpdateCond(ModelCondition{
-		Type:   ModelUnitTested,
-		Status: v1.ConditionTrue,
-	})
-	model.Status.Progress = 80
 }
 
 func (model *Model) UnitTested() bool {
@@ -712,12 +706,6 @@ func (model *Model) MarkReportFailed(err string) {
 		Reason:  string(ModelPhaseFailed),
 		Message: err,
 	})
-	model.Status.Phase = ModelPhaseFailed
-	model.Status.FailureMessage = util.StrPtr("Failed to report." + err)
-	model.Status.Progress = 100
-	now := metav1.Now()
-	model.Status.EndTime = &now
-	model.Status.FailureMessage = util.StrPtr(err)
 
 }
 
@@ -999,24 +987,6 @@ func (model *Model) MarkMaintain() {
 func (model *Model) Maintain() bool {
 	cond := model.GetCond(ModelMaintenance)
 	return cond.Status == v1.ConditionTrue
-}
-
-// ----------------- Unit tested
-
-func (model *Model) MarkUnitTestFailed(msg string) {
-	model.CreateOrUpdateCond(ModelCondition{
-		Type:    ModelUnitTested,
-		Status:  v1.ConditionFalse,
-		Reason:  string(ModelPhaseFailed),
-		Message: "Failed to unit test." + msg,
-	})
-	model.Status.Phase = ModelPhaseFailed
-	model.Status.FailureMessage = util.StrPtr(msg)
-	model.Status.Progress = 100
-	now := metav1.Now()
-	if model.Status.EndTime == nil {
-		model.Status.EndTime = &now
-	}
 }
 
 // ------------------ Ready
