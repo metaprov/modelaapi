@@ -12036,7 +12036,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement.toObje
     metric: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     value: (f = jspb.Message.getOptionalFloatingPointField(msg, 4)) == null ? undefined : f,
     stddev: (f = jspb.Message.getOptionalFloatingPointField(msg, 5)) == null ? undefined : f,
-    boolvalue: (f = jspb.Message.getBooleanField(msg, 6)) == null ? undefined : f,
+    boolqty: (f = jspb.Message.getBooleanField(msg, 6)) == null ? undefined : f,
     category: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
     valuesetList: (f = jspb.Message.getRepeatedField(msg, 8)) == null ? undefined : f,
     timepoint: (f = msg.getTimepoint()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f)
@@ -12099,7 +12099,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement.deseri
       break;
     case 6:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setBoolvalue(value);
+      msg.setBoolqty(value);
       break;
     case 7:
       var value = /** @type {string} */ (reader.readString());
@@ -12393,10 +12393,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement.protot
 
 
 /**
- * optional bool boolValue = 6;
+ * optional bool boolQty = 6;
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement.prototype.getBoolvalue = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement.prototype.getBoolqty = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
 };
 
@@ -12405,7 +12405,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement.protot
  * @param {boolean} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement.prototype.setBoolvalue = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement.prototype.setBoolqty = function(value) {
   return jspb.Message.setField(this, 6, value);
 };
 
@@ -12414,7 +12414,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement.protot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement.prototype.clearBoolvalue = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement.prototype.clearBoolqty = function() {
   return jspb.Message.setField(this, 6, undefined);
 };
 
@@ -12423,7 +12423,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement.protot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement.prototype.hasBoolvalue = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement.prototype.hasBoolqty = function() {
   return jspb.Message.getField(this, 6) != null;
 };
 

@@ -1189,8 +1189,8 @@ export class Measurement extends jspb.Message {
   getStddev(): number;
   setStddev(value: number): Measurement;
 
-  getBoolvalue(): boolean;
-  setBoolvalue(value: boolean): Measurement;
+  getBoolqty(): boolean;
+  setBoolqty(value: boolean): Measurement;
 
   getCategory(): string;
   setCategory(value: string): Measurement;
@@ -1220,7 +1220,7 @@ export namespace Measurement {
     metric: string,
     value: number,
     stddev: number,
-    boolvalue: boolean,
+    boolqty: boolean,
     category: string,
     valuesetList: Array<string>,
     timepoint?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,

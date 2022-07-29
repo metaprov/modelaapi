@@ -1398,31 +1398,30 @@ type RunSchedule struct {
 // Measurement is a value for a specific metric
 type Measurement struct {
 	// +kubebuilder:validation:Optional
-	Entity v1.ObjectReference `json:"entity" protobuf:"bytes,1,opt,name=entity"`
+	Entity v1.ObjectReference `json:"entity,omitempty" protobuf:"bytes,1,opt,name=entity"`
 	// +kubebuilder:validation:Optional
-	Column *string `json:"column" protobuf:"bytes,2,opt,name=column"`
+	Column *string `json:"column,omitempty" protobuf:"bytes,2,opt,name=column"`
 	// The metric type name (e.g. F1 / Accuracy)
 	// +kubebuilder:validation:Optional
-	Metric *Metric `json:"metric" protobuf:"bytes,3,opt,name=metric"`
+	Metric *Metric `json:"metric,omitempty" protobuf:"bytes,3,opt,name=metric"`
 	// The value of the metric for quantitive observations
-	// +kubebuilder:validation:Required
 	// +kubebuilder:validation:Optional
-	Value *float64 `json:"value" protobuf:"bytes,4,opt,name=value"`
+	Value *float64 `json:"value,omitempty" protobuf:"bytes,4,opt,name=value"`
 	// Metric standard diviation for quantative observations.
 	// +kubebuilder:validation:Optional
-	Stddev *float64 `json:"stddev" protobuf:"bytes,5,opt,name=stddev"`
+	Stddev *float64 `json:"stddev,omitempty" protobuf:"bytes,5,opt,name=stddev"`
 	// If the metric refer to a bool unit, store the bool value
 	// +kubebuilder:validation:Optional
-	BoolQty *bool `json:"boolValue" protobuf:"varint,6,opt,name=boolValue"`
+	BoolQty *bool `json:"boolQty,omitempty" protobuf:"varint,6,opt,name=boolQty"`
 	// If the metric refer to categorical measure,store the category.
 	// +kubebuilder:validation:Optional
-	Category *string `json:"category" protobuf:"bytes,7,opt,name=category"`
+	Category *string `json:"category,omitempty" protobuf:"bytes,7,opt,name=category"`
 	// Capture a set of values.
 	// +kubebuilder:validation:Optional
-	ValueSet []string `json:"valueSet" protobuf:"bytes,8,rep,name=valueSet"`
+	ValueSet []string `json:"valueSet,omitempty" protobuf:"bytes,8,rep,name=valueSet"`
 	// The Time when the observation was taken
 	// +kubebuilder:validation:Optional
-	TimePoint *metav1.Time `json:"timePoint" protobuf:"bytes,9,opt,name=timePoint"`
+	TimePoint *metav1.Time `json:"timePoint,omitempty" protobuf:"bytes,9,opt,name=timePoint"`
 }
 
 // +kubebuilder:validation:Enum="live";"shadow";
@@ -2192,7 +2191,7 @@ type DataTestCaseResult struct {
 	Error bool `json:"error,omitempty" protobuf:"varint,4,opt,name=error"`
 	// An optional
 	// +kubebuilder:validation:Optional
-	FailureMsg string `json:"failureMsg" protobuf:"bytes,5,opt,name=failureMsg"`
+	FailureMsg string `json:"failureMsg,omitempty" protobuf:"bytes,5,opt,name=failureMsg"`
 }
 
 ////////////////////////////////////

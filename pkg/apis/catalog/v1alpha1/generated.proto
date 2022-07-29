@@ -671,7 +671,6 @@ message Measurement {
   optional string metric = 3;
 
   // The value of the metric for quantitive observations
-  // +kubebuilder:validation:Required
   // +kubebuilder:validation:Optional
   optional double value = 4;
 
@@ -681,7 +680,7 @@ message Measurement {
 
   // If the metric refer to a bool unit, store the bool value
   // +kubebuilder:validation:Optional
-  optional bool boolValue = 6;
+  optional bool boolQty = 6;
 
   // If the metric refer to categorical measure,store the category.
   // +kubebuilder:validation:Optional

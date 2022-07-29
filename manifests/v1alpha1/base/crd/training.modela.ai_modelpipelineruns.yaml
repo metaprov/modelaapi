@@ -216,7 +216,7 @@ spec:
                             actual:
                               description: Actual observation
                               properties:
-                                boolValue:
+                                boolQty:
                                   description: If the metric refer to a bool unit,
                                     store the bool value
                                   type: boolean
@@ -548,7 +548,7 @@ spec:
                             actual:
                               description: Actual observation
                               properties:
-                                boolValue:
+                                boolQty:
                                   description: If the metric refer to a bool unit,
                                     store the bool value
                                   type: boolean
@@ -855,7 +855,7 @@ spec:
                             actual:
                               description: Actual observation
                               properties:
-                                boolValue:
+                                boolQty:
                                   description: If the metric refer to a bool unit,
                                     store the bool value
                                   type: boolean
@@ -1173,7 +1173,7 @@ spec:
                             actual:
                               description: Actual observation
                               properties:
-                                boolValue:
+                                boolQty:
                                   description: If the metric refer to a bool unit,
                                     store the bool value
                                   type: boolean
@@ -1510,7 +1510,7 @@ spec:
                             actual:
                               description: Actual observation
                               properties:
-                                boolValue:
+                                boolQty:
                                   description: If the metric refer to a bool unit,
                                     store the bool value
                                   type: boolean
@@ -1827,7 +1827,7 @@ spec:
                             actual:
                               description: Actual observation
                               properties:
-                                boolValue:
+                                boolQty:
                                   description: If the metric refer to a bool unit,
                                     store the bool value
                                   type: boolean
@@ -2139,7 +2139,7 @@ spec:
                             actual:
                               description: Actual observation
                               properties:
-                                boolValue:
+                                boolQty:
                                   description: If the metric refer to a bool unit,
                                     store the bool value
                                   type: boolean
@@ -2452,7 +2452,7 @@ spec:
                             actual:
                               description: Actual observation
                               properties:
-                                boolValue:
+                                boolQty:
                                   description: If the metric refer to a bool unit,
                                     store the bool value
                                   type: boolean
