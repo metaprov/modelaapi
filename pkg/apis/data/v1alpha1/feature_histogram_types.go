@@ -25,11 +25,11 @@ const (
 type FeatureHistogramPhase string
 
 const (
-	FeatureHistogramPhasePending        FeatureHistogramPhase = "Pending"        // when generating
-	FeatureHistogramPhaseDetectingDrift FeatureHistogramPhase = "DetectingDrift" // when generating
-	FeatureHistogramPhaseDrifted        FeatureHistogramPhase = "Drifted"        // when one or more column drifted
-	FeatureHistogramPhaseReady          FeatureHistogramPhase = "Ready"          // when ready and not drift.
-	FeatureHistogramPhaseFailed         FeatureHistogramPhase = "Failed"         // failed in the process.
+	FeatureHistogramPhasePending     FeatureHistogramPhase = "Pending"     // when generating
+	FeatureHistogramPhaseUnitTesting FeatureHistogramPhase = "UnitTesting" // when generating
+	FeatureHistogramPhaseUnitTested  FeatureHistogramPhase = "UnitTested"  // when one or more column drifted
+	FeatureHistogramPhaseReady       FeatureHistogramPhase = "Ready"       // when ready and not drift.
+	FeatureHistogramPhaseFailed      FeatureHistogramPhase = "Failed"      // failed in the process.
 )
 
 // FeatureHistogramConditionType is the condition of the feature
@@ -38,6 +38,7 @@ type FeatureHistogramConditionType string
 /// FeatureHistogram Condition
 const (
 	FeatureHistogramReady         FeatureHistogramConditionType = "Ready"
+	FeatureHistogramUnitTested    FeatureHistogramConditionType = "UnitTested"
 	FeatureHistogramDriftDetected FeatureHistogramConditionType = "DriftDetected"
 	FeatureHistogramSaved         FeatureHistogramConditionType = "Saved"
 )

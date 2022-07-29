@@ -206,7 +206,7 @@ func (fh *FeatureHistogram) ErrorAlert(tenantRef *v1.ObjectReference, notifierNa
 
 func (fh *FeatureHistogram) DriftAlert(tenantRef *v1.ObjectReference, notifierName *string, columns []string) *infra.Alert {
 	level := infra.Error
-	subject := fmt.Sprintf("DriftStatus occured")
+	subject := fmt.Sprintf("drift detected")
 	return &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
 			GenerateName: fh.Name,
@@ -214,7 +214,7 @@ func (fh *FeatureHistogram) DriftAlert(tenantRef *v1.ObjectReference, notifierNa
 		},
 		Spec: infra.AlertSpec{
 			Subject:      util.StrPtr(subject),
-			Message:      util.StrPtr("DriftStatus was detected"),
+			Message:      util.StrPtr("drift was detected"),
 			Level:        &level,
 			TenantRef:    tenantRef,
 			NotifierName: notifierName,
@@ -239,4 +239,40 @@ func (fh *FeatureHistogram) ShouldComputeDrift() bool {
 		return false
 	}
 	return true
+}
+
+// -------------------- Unit testing
+
+func (fh *FeatureHistogram) MarkUnitTesting() {
+	fh.Status.Phase = FeatureHistogramPhaseFailed
+	fh.CreateOrUpdateCond(FeatureHistogramCondition{
+		Type:   FeatureHistogramUnitTested,
+		Status: v1.ConditionFalse,
+		Reason: "UnitTesting",
+	})
+
+}
+
+func (fh *FeatureHistogram) MarkUnitTested() {
+
+	fh.CreateOrUpdateCond(FeatureHistogramCondition{
+		Type:   FeatureHistogramUnitTested,
+		Status: v1.ConditionTrue,
+		Reason: "UnitTesting",
+	})
+
+}
+
+func (fh *FeatureHistogram) MarkUnitTestFailed(msg string, stop bool) {
+	fh.CreateOrUpdateCond(FeatureHistogramCondition{
+		Type:    FeatureHistogramUnitTested,
+		Status:  v1.ConditionFalse,
+		Reason:  "FailedToUnitTest",
+		Message: "Failed to unit test." + msg,
+	})
+
+}
+
+func (fh *FeatureHistogram) UnitTested() bool {
+	return fh.GetCond(FeatureHistogramUnitTested).Status == v1.ConditionTrue
 }

@@ -353,6 +353,7 @@ const (
 	ReasonPausing            = "Pausing"
 	ReasonWaitingToTrain     = "WaitingToTrain"
 	ReasonWaitingToTest      = "WaitingToTest"
+	ReasonUnitTesting        = "UnitTesting"
 )
 
 // ----------------- Training commands
@@ -567,6 +568,8 @@ func (model *Model) MarkTested() {
 	model.Status.Progress = 80
 }
 
+////// Test
+
 func (model *Model) TestingFailed() bool {
 	cond := model.GetCond(ModelTested)
 	return cond.Status == v1.ConditionFalse && cond.Reason == ReasonFailed
@@ -574,6 +577,15 @@ func (model *Model) TestingFailed() bool {
 
 func (model *Model) Tested() bool {
 	return model.GetCond(ModelTested).Status == v1.ConditionTrue
+}
+
+func (model *Model) Testing() bool {
+	cond := model.GetCond(ModelTested)
+	return cond.Status == v1.ConditionFalse && cond.Reason == ReasonTesting
+}
+
+func (model *Model) WaitingToTest() bool {
+	return *model.Spec.Tested && model.Status.TestingStartTime == nil
 }
 
 // -------------------- Unit testing
@@ -588,8 +600,16 @@ func (model *Model) MarkUnitTesting() {
 	model.Status.Progress = 75
 }
 
-// ----------------- Unit tested
-// If stop, stop the search
+func (model *Model) MarkUnitTested() {
+	model.Status.Phase = ModelPhaseUnitTested
+	model.CreateOrUpdateCond(ModelCondition{
+		Type:   ModelUnitTested,
+		Status: v1.ConditionTrue,
+		Reason: ReasonTesting,
+	})
+	model.Status.Progress = 80
+}
+
 func (model *Model) MarkUnitTestFailed(msg string, stop bool) {
 	model.CreateOrUpdateCond(ModelCondition{
 		Type:    ModelUnitTested,
@@ -610,15 +630,6 @@ func (model *Model) MarkUnitTestFailed(msg string, stop bool) {
 
 func (model *Model) UnitTested() bool {
 	return model.GetCond(ModelUnitTested).Status == v1.ConditionTrue
-}
-
-func (model *Model) Testing() bool {
-	cond := model.GetCond(ModelTested)
-	return cond.Status == v1.ConditionFalse && cond.Reason == ReasonTesting
-}
-
-func (model *Model) WaitingToTest() bool {
-	return *model.Spec.Tested && model.Status.TestingStartTime == nil
 }
 
 //-------------------- profile command
