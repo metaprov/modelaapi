@@ -92,7 +92,8 @@ const (
 	ModelMaintenance          ModelConditionType = "Maintenance"
 	ModelRetired              ModelConditionType = "Retired"
 	ModelTrainedDriftDetector ModelConditionType = "TrainedDriftDetector"
-	ModelPruned               ModelConditionType = "Pruned" // If the model was pruned by the optimizer
+	ModelPruned               ModelConditionType = "Pruned"   // If the model was pruned by the optimizer
+	ModelFeedback             ModelConditionType = "Feedback" // If the model feedback.
 )
 
 // ModelCondition describes the state of a Model at a certain point

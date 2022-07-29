@@ -342,6 +342,8 @@ func ParseModelYaml(content []byte) (*Model, error) {
 const (
 	ReasonFailed             = "Failed"
 	ReasonTesting            = "Testing"
+	ReasonUnitTesting        = "UnitTesting"
+	ReasonFeedback           = "Feedback"
 	ReasonReporting          = "Reporting"
 	ReasonProfiling          = "Profiling"
 	ReasonPublishing         = "Publishing"
@@ -588,7 +590,15 @@ func (model *Model) MarkUnitTesting() {
 	model.Status.Progress = 75
 }
 
-// ----------------- Unit tested
+func (model *Model) MarkUnitTested() {
+	model.Status.Phase = ModelPhaseUnitTested
+	model.CreateOrUpdateCond(ModelCondition{
+		Type:   ModelUnitTested,
+		Status: v1.ConditionTrue,
+	})
+	model.Status.Progress = 80
+}
+
 // If stop, stop the search
 func (model *Model) MarkUnitTestFailed(msg string, stop bool) {
 	model.CreateOrUpdateCond(ModelCondition{
@@ -610,6 +620,39 @@ func (model *Model) MarkUnitTestFailed(msg string, stop bool) {
 
 func (model *Model) UnitTested() bool {
 	return model.GetCond(ModelUnitTested).Status == v1.ConditionTrue
+}
+
+// ---------------------- Feedback
+
+func (model *Model) MarkCalculatingFeedback() {
+	model.CreateOrUpdateCond(ModelCondition{
+		Type:   ModelFeedback,
+		Status: v1.ConditionFalse,
+		Reason: ReasonFeedback,
+	})
+
+}
+
+func (model *Model) MarkFeedbackCalculated() {
+	model.CreateOrUpdateCond(ModelCondition{
+		Type:   ModelFeedback,
+		Status: v1.ConditionTrue,
+	})
+
+}
+
+// If stop, stop the search
+func (model *Model) MarkFeedbackFailed(msg string) {
+	model.CreateOrUpdateCond(ModelCondition{
+		Type:    ModelFeedback,
+		Status:  v1.ConditionFalse,
+		Reason:  string(ModelPhaseFailed),
+		Message: "Failed to calculate feedback." + msg,
+	})
+}
+
+func (model *Model) CalculatedFeedback() bool {
+	return model.GetCond(ModelFeedback).Status == v1.ConditionTrue
 }
 
 func (model *Model) Testing() bool {
