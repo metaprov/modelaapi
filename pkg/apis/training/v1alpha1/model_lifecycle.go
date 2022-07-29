@@ -342,8 +342,6 @@ func ParseModelYaml(content []byte) (*Model, error) {
 const (
 	ReasonFailed             = "Failed"
 	ReasonTesting            = "Testing"
-	ReasonUnitTesting        = "UnitTesting"
-	ReasonFeedback           = "Feedback"
 	ReasonReporting          = "Reporting"
 	ReasonProfiling          = "Profiling"
 	ReasonPublishing         = "Publishing"
@@ -590,15 +588,7 @@ func (model *Model) MarkUnitTesting() {
 	model.Status.Progress = 75
 }
 
-func (model *Model) MarkUnitTested() {
-	model.Status.Phase = ModelPhaseUnitTested
-	model.CreateOrUpdateCond(ModelCondition{
-		Type:   ModelUnitTested,
-		Status: v1.ConditionTrue,
-	})
-	model.Status.Progress = 80
-}
-
+// ----------------- Unit tested
 // If stop, stop the search
 func (model *Model) MarkUnitTestFailed(msg string, stop bool) {
 	model.CreateOrUpdateCond(ModelCondition{
@@ -620,39 +610,6 @@ func (model *Model) MarkUnitTestFailed(msg string, stop bool) {
 
 func (model *Model) UnitTested() bool {
 	return model.GetCond(ModelUnitTested).Status == v1.ConditionTrue
-}
-
-// ---------------------- Feedback
-
-func (model *Model) MarkCalculatingFeedback() {
-	model.CreateOrUpdateCond(ModelCondition{
-		Type:   ModelFeedback,
-		Status: v1.ConditionFalse,
-		Reason: ReasonFeedback,
-	})
-
-}
-
-func (model *Model) MarkFeedbackCalculated() {
-	model.CreateOrUpdateCond(ModelCondition{
-		Type:   ModelFeedback,
-		Status: v1.ConditionTrue,
-	})
-
-}
-
-// If stop, stop the search
-func (model *Model) MarkFeedbackFailed(msg string) {
-	model.CreateOrUpdateCond(ModelCondition{
-		Type:    ModelFeedback,
-		Status:  v1.ConditionFalse,
-		Reason:  string(ModelPhaseFailed),
-		Message: "Failed to calculate feedback." + msg,
-	})
-}
-
-func (model *Model) CalculatedFeedback() bool {
-	return model.GetCond(ModelFeedback).Status == v1.ConditionTrue
 }
 
 func (model *Model) Testing() bool {
@@ -697,7 +654,7 @@ func (model *Model) MarkProfiledFailed(err string) {
 
 func (model *Model) Profiled() bool {
 	cond := model.GetCond(ModelProfiled)
-	return cond.Status == v1.ConditionTrue
+	return cond.Status == v1.ConditionTrue || cond.Reason == ReasonFailed
 }
 
 // ----------------------- Pruned
@@ -746,14 +703,14 @@ func (model *Model) MarkReportFailed(err string) {
 	model.CreateOrUpdateCond(ModelCondition{
 		Type:    ModelReported,
 		Status:  v1.ConditionFalse,
-		Reason:  string(ModelPhaseFailed),
+		Reason:  ReasonFailed,
 		Message: err,
 	})
 }
 
 func (model *Model) Reported() bool {
 	cond := model.GetCond(ModelReported)
-	return cond.Status == v1.ConditionTrue
+	return cond.Status == v1.ConditionTrue || cond.Reason == ReasonFailed
 }
 
 // ------------------ Forecast
@@ -861,7 +818,7 @@ func (model *Model) MarkExplaining() {
 
 func (model *Model) Explained() bool {
 	cond := model.GetCond(ModelExplained)
-	return cond.Status == v1.ConditionTrue
+	return cond.Status == v1.ConditionTrue || cond.Reason == ReasonFailed
 }
 
 func (model *Model) MarkExplained(image string) {
