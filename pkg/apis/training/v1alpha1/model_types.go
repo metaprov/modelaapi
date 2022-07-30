@@ -61,6 +61,8 @@ const (
 	ModelTested ModelConditionType = "Tested"
 	// ModelUnitTested states that the Model was trained on the training dataset, and tested against the testing dataset
 	ModelUnitTested ModelConditionType = "UnitTested"
+	// ModelUnitTested states that the Model was trained on the training dataset, and tested against the testing dataset
+	ModelFeedbackTested ModelConditionType = "FeedbackTested"
 	// ModelReported states that a Report for the Model was generated and uploaded to a bucket
 	ModelReported ModelConditionType = "Reported"
 	// ModelPackaged states that the Model was baked into a Docker image

@@ -632,6 +632,38 @@ func (model *Model) UnitTested() bool {
 	return model.GetCond(ModelUnitTested).Status == v1.ConditionTrue
 }
 
+// -------------------- Feedback
+
+func (model *Model) MarkFeedbackTesting() {
+	model.CreateOrUpdateCond(ModelCondition{
+		Type:   ModelFeedbackTested,
+		Status: v1.ConditionFalse,
+		Reason: ReasonTesting,
+	})
+}
+
+func (model *Model) MarkFeedbackTested() {
+	model.CreateOrUpdateCond(ModelCondition{
+		Type:   ModelFeedbackTested,
+		Status: v1.ConditionTrue,
+		Reason: ReasonTesting,
+	})
+
+}
+
+func (model *Model) MarkFeedbackTestFailed(msg string) {
+	model.CreateOrUpdateCond(ModelCondition{
+		Type:    ModelFeedbackTested,
+		Status:  v1.ConditionFalse,
+		Reason:  string(ModelPhaseFailed),
+		Message: "Failed to test feedback." + msg,
+	})
+}
+
+func (model *Model) FeedbackTested() bool {
+	return model.GetCond(ModelFeedbackTested).Status == v1.ConditionTrue
+}
+
 //-------------------- profile command
 
 func (model *Model) MarkProfiling() {
