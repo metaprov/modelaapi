@@ -199,7 +199,7 @@ func (run *Prediction) MarkRunning() {
 func (prediction *Prediction) CompletionAlert(tenantRef *v1.ObjectReference, notifierName *string) *infra.Alert {
 	level := infra.Info
 	subject := fmt.Sprintf("Prediction %s completed successfully", prediction.Name)
-	return &infra.Alert{
+	result := &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
 			GenerateName: prediction.Name,
 			Namespace:    prediction.Namespace,
@@ -217,16 +217,20 @@ func (prediction *Prediction) CompletionAlert(tenantRef *v1.ObjectReference, not
 			Owner:        prediction.Spec.Owner,
 			Fields: map[string]string{
 				"Start Time":      prediction.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
-				"Completion Time": prediction.Status.EndTime.Format("01/2/2006 15:04:05"),
+				
 			},
 		},
 	}
+	if prediction.Status.EndTime != nil {
+		result.Spec.Fields["Completion Time"] = prediction.Status.EndTime.Format("01/2/2006 15:04:05")
+	}
+	return result
 }
 
 func (prediction *Prediction) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *string, err error) *infra.Alert {
 	level := infra.Error
 	subject := fmt.Sprintf("Prediction %s failed with error %v", prediction.Name, err.Error())
-	return &infra.Alert{
+	result:= &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
 			GenerateName: prediction.Name,
 			Namespace:    prediction.Namespace,
@@ -243,11 +247,14 @@ func (prediction *Prediction) ErrorAlert(tenantRef *v1.ObjectReference, notifier
 			NotifierName: notifierName,
 			Owner:        prediction.Spec.Owner,
 			Fields: map[string]string{
-				"Start Time":      prediction.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
-				"Completion Time": prediction.Status.EndTime.Format("01/2/2006 15:04:05"),
+				"Start Time":      prediction.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),				
 			},
 		},
 	}
+	if prediction.Status.EndTime != nil {
+		result.Spec.Fields["Completion Time"] = prediction.Status.EndTime.Format("01/2/2006 15:04:05")
+	}
+	return result
 }
 
 func (in *Prediction) IsFailed() bool {

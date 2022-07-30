@@ -193,7 +193,7 @@ func (run *WebRequestRun) MarkRunning() {
 func (run *WebRequestRun) CompletionAlert(tenantRef *v1.ObjectReference, notifierName *string) *infra.Alert {
 	level := infra.Info
 	subject := fmt.Sprintf("Web request run %s completed successfully", run.Name)
-	return &infra.Alert{
+	result := &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
 			GenerateName: run.Name,
 			Namespace:    run.Namespace,
@@ -211,16 +211,20 @@ func (run *WebRequestRun) CompletionAlert(tenantRef *v1.ObjectReference, notifie
 			Owner:        run.Spec.Owner,
 			Fields: map[string]string{
 				"Start Time":      run.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
-				"Completion Time": run.Status.EndTime.Format("01/2/2006 15:04:05"),
+				
 			},
 		},
 	}
+	if run.Status.EndTime != nil {
+		result.Spec.Fields["Completion Time"] = run.Status.EndTime.Format("01/2/2006 15:04:05")
+	}
+	return result
 }
 
 func (run *WebRequestRun) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *string, err error) *infra.Alert {
 	level := infra.Error
 	subject := fmt.Sprintf("Web request run %s failed with error %v", run.Name, err.Error())
-	return &infra.Alert{
+	result := &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
 			GenerateName: run.Name,
 			Namespace:    run.Namespace,
@@ -238,10 +242,14 @@ func (run *WebRequestRun) ErrorAlert(tenantRef *v1.ObjectReference, notifierName
 			Owner:        run.Spec.Owner,
 			Fields: map[string]string{
 				"Start Time":      run.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
-				"Completion Time": run.Status.EndTime.Format("01/2/2006 15:04:05"),
+				
 			},
 		},
 	}
+	if run.Status.EndTime != nil {
+		result.Spec.Fields["Completion Time"] = run.Status.EndTime.Format("01/2/2006 15:04:05")
+	}
+	return result
 }
 
 func (in *WebRequestRun) IsFailed() bool {

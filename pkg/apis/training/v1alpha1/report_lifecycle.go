@@ -247,7 +247,7 @@ func (report *Report) MarkReportReady(product *data.DataProduct) {
 func (report *Report) CompletionAlert(tenantRef *v1.ObjectReference, notifierName *string) *infra.Alert {
 	level := infra.Info
 	subject := fmt.Sprintf("Report %s completed successfully", report.Name)
-	return &infra.Alert{
+	result := &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
 			GenerateName: report.Name,
 			Namespace:    report.Namespace,
@@ -264,19 +264,23 @@ func (report *Report) CompletionAlert(tenantRef *v1.ObjectReference, notifierNam
 			NotifierName: notifierName,
 			Owner:        report.Spec.Owner,
 			Fields: map[string]string{
-				"Start Time":      report.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
-				"Completion Time": report.Status.EndTime.Format("01/2/2006 15:04:05"),
-				"Bucket":          *report.Spec.Location.BucketName,
-				"URL":             *report.Spec.Location.Path,
+				"Start Time": report.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
+				"Bucket":     *report.Spec.Location.BucketName,
+				"URL":        *report.Spec.Location.Path,
 			},
 		},
 	}
+	if report.Status.EndTime != nil {
+		result.Spec.Fields["Completion Time"] = report.Status.EndTime.Format("01/2/2006 15:04:05")
+	}
+
+	return result
 }
 
 func (report *Report) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *string, err error) *infra.Alert {
 	level := infra.Error
 	subject := fmt.Sprintf("Report %s failed with error %v", report.Name, err.Error())
-	return &infra.Alert{
+	result := &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
 			GenerateName: report.Name,
 			Namespace:    report.Namespace,
@@ -293,14 +297,17 @@ func (report *Report) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *st
 			NotifierName: notifierName,
 			Owner:        report.Spec.Owner,
 			Fields: map[string]string{
-				"Start Time":      report.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
-				"Completion Time": report.Status.EndTime.Format("01/2/2006 15:04:05"),
-				"Bucket":          *report.Spec.Location.BucketName,
-				"URL":             *report.Spec.Location.Path,
-				"Type":            string(*report.Spec.ReportType),
+				"Start Time": report.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
+				"Bucket":     *report.Spec.Location.BucketName,
+				"URL":        *report.Spec.Location.Path,
+				"Type":       string(*report.Spec.ReportType),
 			},
 		},
 	}
+	if report.Status.EndTime != nil {
+		result.Spec.Fields["Completion Time"] = report.Status.EndTime.Format("01/2/2006 15:04:05")
+	}
+	return result
 }
 
 func (in *Report) IsFailed() bool {

@@ -994,7 +994,7 @@ func (study *Study) RefreshProgress() {
 func (study *Study) CompletionAlert(tenantRef *v1.ObjectReference, notifierName *string) *infra.Alert {
 	level := infra.Info
 	subject := fmt.Sprintf("Study %s completed successfully", study.Name)
-	return &infra.Alert{
+	result := &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
 			GenerateName: study.Name,
 			Namespace:    study.Namespace,
@@ -1011,20 +1011,23 @@ func (study *Study) CompletionAlert(tenantRef *v1.ObjectReference, notifierName 
 			NotifierName: notifierName,
 			Owner:        study.Spec.Owner,
 			Fields: map[string]string{
-				"Entity":          *study.Spec.DatasetName,
-				"Task":            string(*study.Spec.Task),
-				"Phase":           string(study.Status.Phase),
-				"Start Time":      study.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
-				"Completion Time": study.Status.EndTime.Format("01/2/2006 15:04:05"),
+				"Entity":     *study.Spec.DatasetName,
+				"Task":       string(*study.Spec.Task),
+				"Phase":      string(study.Status.Phase),
+				"Start Time": study.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
 			},
 		},
 	}
+	if study.Status.EndTime != nil {
+		result.Spec.Fields["Completion Time"] = study.Status.EndTime.Format("01/2/2006 15:04:05")
+	}
+	return result
 }
 
 func (study *Study) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *string, err error) *infra.Alert {
 	level := infra.Error
 	subject := fmt.Sprintf("Study %s failed with error %v", study.Name, err.Error())
-	return &infra.Alert{
+	result := &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
 			GenerateName: study.Name,
 			Namespace:    study.Namespace,
@@ -1041,14 +1044,17 @@ func (study *Study) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *stri
 			NotifierName: notifierName,
 			Owner:        study.Spec.Owner,
 			Fields: map[string]string{
-				"Entity":          *study.Spec.DatasetName,
-				"Task":            string(*study.Spec.Task),
-				"Phase":           string(study.Status.Phase),
-				"Start Time":      study.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
-				"Completion Time": study.Status.EndTime.Format("01/2/2006 15:04:05"),
+				"Entity":     *study.Spec.DatasetName,
+				"Task":       string(*study.Spec.Task),
+				"Phase":      string(study.Status.Phase),
+				"Start Time": study.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
 			},
 		},
 	}
+	if study.Status.EndTime != nil {
+		result.Spec.Fields["Completion Time"] = study.Status.EndTime.Format("01/2/2006 15:04:05")
+	}
+	return result
 }
 
 ///////////////////////////////////////////////////

@@ -637,7 +637,7 @@ func (b *ModelAutobuilder) DataAppReady() bool {
 func (run *ModelAutobuilder) CompletionAlert(tenantRef *v1.ObjectReference, notifierName *string) *infra.Alert {
 	level := infra.Info
 	subject := fmt.Sprintf("Model auto builder %s completed successfully", run.Name)
-	return &infra.Alert{
+	result := &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
 			GenerateName: run.Name,
 			Namespace:    run.Namespace,
@@ -655,16 +655,19 @@ func (run *ModelAutobuilder) CompletionAlert(tenantRef *v1.ObjectReference, noti
 			Owner:        run.Spec.Owner,
 			Fields: map[string]string{
 				"Start Time":      run.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
-				"Completion Time": run.Status.EndTime.Format("01/2/2006 15:04:05"),
 			},
 		},
 	}
+	if run.Status.EndTime != nil {
+		result.Spec.Fields["Completion Time"] = run.Status.EndTime.Format("01/2/2006 15:04:05")
+	}
+	return result
 }
 
 func (run *ModelAutobuilder) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *string, err error) *infra.Alert {
 	level := infra.Error
 	subject := fmt.Sprintf("Model Auto Builder %s failed with error %v", run.Name, err.Error())
-	return &infra.Alert{
+	result:= &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
 			GenerateName: run.Name,
 			Namespace:    run.Namespace,
@@ -681,9 +684,12 @@ func (run *ModelAutobuilder) ErrorAlert(tenantRef *v1.ObjectReference, notifierN
 			NotifierName: notifierName,
 			Owner:        run.Spec.Owner,
 			Fields: map[string]string{
-				"Start Time":      run.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
-				"Completion Time": run.Status.EndTime.Format("01/2/2006 15:04:05"),
+				"Start Time":      run.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),				
 			},
 		},
 	}
+	if run.Status.EndTime != nil {
+		result.Spec.Fields["Completion Time"] = run.Status.EndTime.Format("01/2/2006 15:04:05")
+	}
+	return result
 }

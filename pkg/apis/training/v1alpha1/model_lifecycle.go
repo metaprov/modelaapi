@@ -1155,7 +1155,7 @@ func (model Model) IsTest() bool {
 func (model *Model) CompletionAlert(tenantRef *v1.ObjectReference, notifierName *string) *infra.Alert {
 	level := infra.Info
 	subject := fmt.Sprintf("Model %s completed successfully", model.Name)
-	return &infra.Alert{
+	result := &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
 			GenerateName: model.Name,
 			Namespace:    model.Namespace,
@@ -1172,24 +1172,28 @@ func (model *Model) CompletionAlert(tenantRef *v1.ObjectReference, notifierName 
 			NotifierName: notifierName,
 			Owner:        model.Spec.Owner,
 			Fields: map[string]string{
-				"Entity":          *model.Spec.DatasetName,
-				"Study":           *model.Spec.StudyName,
-				"Task":            string(*model.Spec.Task),
-				"Objective":       string(*model.Spec.Objective),
-				"Algorithm":       model.Spec.Estimator.AlgorithmName,
-				"Phase":           string(model.Status.Phase),
-				"Score":           util.FtoA(&model.Status.CVScore),
-				"Start Time":      model.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
-				"Completion time": model.Status.EndTime.Format("01/2/2006 15:04:05"),
+				"Entity":     *model.Spec.DatasetName,
+				"Study":      *model.Spec.StudyName,
+				"Task":       string(*model.Spec.Task),
+				"Objective":  string(*model.Spec.Objective),
+				"Algorithm":  model.Spec.Estimator.AlgorithmName,
+				"Phase":      string(model.Status.Phase),
+				"Score":      util.FtoA(&model.Status.CVScore),
+				"Start Time": model.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
 			},
 		},
 	}
+	if model.Status.EndTime != nil {
+		result.Spec.Fields["Completion Time"] = model.Status.EndTime.Format("01/2/2006 15:04:05")
+	}
+	return result
+
 }
 
 func (model *Model) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *string, err error) *infra.Alert {
 	level := infra.Error
 	subject := fmt.Sprintf("Model %s failed with error %v", model.Name, err.Error())
-	return &infra.Alert{
+	result := &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
 			GenerateName: model.Name,
 			Namespace:    model.Namespace,
@@ -1206,16 +1210,19 @@ func (model *Model) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *stri
 			NotifierName: notifierName,
 			Owner:        model.Spec.Owner,
 			Fields: map[string]string{
-				"Entity":          *model.Spec.DatasetName,
-				"Study":           *model.Spec.StudyName,
-				"Task":            string(*model.Spec.Task),
-				"Objective":       string(*model.Spec.Objective),
-				"Algorithm":       model.Spec.Estimator.AlgorithmName,
-				"Phase":           string(model.Status.Phase),
-				"Score":           util.FtoA(&model.Status.CVScore),
-				"Start Time":      model.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
-				"Completion Time": model.Status.EndTime.Format("01/2/2006 15:04:05"),
+				"Entity":     *model.Spec.DatasetName,
+				"Study":      *model.Spec.StudyName,
+				"Task":       string(*model.Spec.Task),
+				"Objective":  string(*model.Spec.Objective),
+				"Algorithm":  model.Spec.Estimator.AlgorithmName,
+				"Phase":      string(model.Status.Phase),
+				"Score":      util.FtoA(&model.Status.CVScore),
+				"Start Time": model.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
 			},
 		},
 	}
+	if model.Status.EndTime != nil {
+		result.Spec.Fields["Completion Time"] = model.Status.EndTime.Format("01/2/2006 15:04:05")
+	}
+	return result
 }

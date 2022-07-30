@@ -469,7 +469,7 @@ func (dataset *Dataset) IsFailed() bool {
 func (dataset *Dataset) CompletionAlert(tenantRef *v1.ObjectReference, notifierName *string) *infra.Alert {
 	level := infra.Info
 	subject := fmt.Sprintf("Entity %s completed successfully ", dataset.Name)
-	return &infra.Alert{
+	result := &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
 			GenerateName: dataset.Name,
 			Namespace:    dataset.Namespace,
@@ -489,11 +489,14 @@ func (dataset *Dataset) CompletionAlert(tenantRef *v1.ObjectReference, notifierN
 				"Rows":            util.ItoA(&dataset.Status.Statistics.Rows),
 				"Columns":         util.ItoA(&dataset.Status.Statistics.Cols),
 				"Size":            util.ItoA(&dataset.Status.Statistics.FileSize),
-				"Start Time":      dataset.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
-				"Completion Time": dataset.Status.EndTime.Format("01/2/2006 15:04:05"),
+				"Start Time":      dataset.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),				
 			},
 		},
 	}
+	if dataset.Status.EndTime != nil {
+		result.Spec.Fields["Completion Time"] = dataset.Status.EndTime.Format("01/2/2006 15:04:05")
+	}
+	return result
 }
 
 func (dataset *Dataset) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *string, err error) *infra.Alert {
