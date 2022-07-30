@@ -233,7 +233,7 @@ func (fh *FeatureHistogram) DriftAlert(tenantRef *v1.ObjectReference, notifierNa
 
 // check if we should compute drift, we should compute drift,
 // if we have no drift parameters, and we pass the historam
-func (fh *FeatureHistogram) ShouldComputeDrift() bool {
+func (fh *FeatureHistogram) ShouldUnitTest() bool {
 	// do not compute drift on training or live histogram
 	if *fh.Spec.Live || *fh.Spec.Training || fh.IsReady() {
 		return false
