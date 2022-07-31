@@ -562,18 +562,12 @@ message FeedbackTestSpec {
   // +kubebuilder:validation:Optional
   optional bool enabled = 1;
 
-  // Reference to the labeled ground true dataset
-  optional k8s.io.api.core.v1.ObjectReference feedbackDatasetRef = 2;
-
-  // Reference to the training dataset for the live model.
-  optional k8s.io.api.core.v1.ObjectReference trainingDatasetRef = 3;
-
   // Define the tests to run against the predictor.
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite tests = 4;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite tests = 2;
 
   // The schedule on which model monitoring computations will be performed
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 5;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 3;
 }
 
 // ForecastSpec specifies the details of a forecasting model

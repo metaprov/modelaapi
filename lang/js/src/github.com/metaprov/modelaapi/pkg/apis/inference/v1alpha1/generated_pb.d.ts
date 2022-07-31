@@ -863,16 +863,6 @@ export class FeedbackTestSpec extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): FeedbackTestSpec;
 
-  getFeedbackdatasetref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setFeedbackdatasetref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): FeedbackTestSpec;
-  hasFeedbackdatasetref(): boolean;
-  clearFeedbackdatasetref(): FeedbackTestSpec;
-
-  getTrainingdatasetref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setTrainingdatasetref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): FeedbackTestSpec;
-  hasTrainingdatasetref(): boolean;
-  clearTrainingdatasetref(): FeedbackTestSpec;
-
   getTests(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
   setTests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): FeedbackTestSpec;
   hasTests(): boolean;
@@ -894,8 +884,6 @@ export class FeedbackTestSpec extends jspb.Message {
 export namespace FeedbackTestSpec {
   export type AsObject = {
     enabled: boolean,
-    feedbackdatasetref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    trainingdatasetref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     tests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
     schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
   }

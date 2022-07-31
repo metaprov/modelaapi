@@ -8810,8 +8810,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.FeedbackTestSpec
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.FeedbackTestSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
     enabled: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
-    feedbackdatasetref: (f = msg.getFeedbackdatasetref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
-    trainingdatasetref: (f = msg.getTrainingdatasetref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     tests: (f = msg.getTests()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.toObject(includeInstance, f),
     schedule: (f = msg.getSchedule()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.toObject(includeInstance, f)
   };
@@ -8855,21 +8853,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.FeedbackTestSpec
       msg.setEnabled(value);
       break;
     case 2:
-      var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
-      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
-      msg.setFeedbackdatasetref(value);
-      break;
-    case 3:
-      var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
-      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
-      msg.setTrainingdatasetref(value);
-      break;
-    case 4:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.deserializeBinaryFromReader);
       msg.setTests(value);
       break;
-    case 5:
+    case 3:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.deserializeBinaryFromReader);
       msg.setSchedule(value);
@@ -8910,26 +8898,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.FeedbackTestSpec
       f
     );
   }
-  f = message.getFeedbackdatasetref();
-  if (f != null) {
-    writer.writeMessage(
-      2,
-      f,
-      k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
-    );
-  }
-  f = message.getTrainingdatasetref();
-  if (f != null) {
-    writer.writeMessage(
-      3,
-      f,
-      k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
-    );
-  }
   f = message.getTests();
   if (f != null) {
     writer.writeMessage(
-      4,
+      2,
       f,
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.serializeBinaryToWriter
     );
@@ -8937,7 +8909,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.FeedbackTestSpec
   f = message.getSchedule();
   if (f != null) {
     writer.writeMessage(
-      5,
+      3,
       f,
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.serializeBinaryToWriter
     );
@@ -8982,86 +8954,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.FeedbackTestSpec
 
 
 /**
- * optional k8s.io.api.core.v1.ObjectReference feedbackDatasetRef = 2;
- * @return {?proto.k8s.io.api.core.v1.ObjectReference}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.FeedbackTestSpec.prototype.getFeedbackdatasetref = function() {
-  return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
-    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 2));
-};
-
-
-/**
- * @param {?proto.k8s.io.api.core.v1.ObjectReference|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.FeedbackTestSpec} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.FeedbackTestSpec.prototype.setFeedbackdatasetref = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.FeedbackTestSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.FeedbackTestSpec.prototype.clearFeedbackdatasetref = function() {
-  return this.setFeedbackdatasetref(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.FeedbackTestSpec.prototype.hasFeedbackdatasetref = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional k8s.io.api.core.v1.ObjectReference trainingDatasetRef = 3;
- * @return {?proto.k8s.io.api.core.v1.ObjectReference}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.FeedbackTestSpec.prototype.getTrainingdatasetref = function() {
-  return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
-    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 3));
-};
-
-
-/**
- * @param {?proto.k8s.io.api.core.v1.ObjectReference|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.FeedbackTestSpec} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.FeedbackTestSpec.prototype.setTrainingdatasetref = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.FeedbackTestSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.FeedbackTestSpec.prototype.clearTrainingdatasetref = function() {
-  return this.setTrainingdatasetref(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.FeedbackTestSpec.prototype.hasTrainingdatasetref = function() {
-  return jspb.Message.getField(this, 3) != null;
-};
-
-
-/**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite tests = 4;
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite tests = 2;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.FeedbackTestSpec.prototype.getTests = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite, 4));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite, 2));
 };
 
 
@@ -9070,7 +8968,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.FeedbackTestSpec
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.FeedbackTestSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.FeedbackTestSpec.prototype.setTests = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
+  return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
@@ -9088,17 +8986,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.FeedbackTestSpec
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.FeedbackTestSpec.prototype.hasTests = function() {
-  return jspb.Message.getField(this, 4) != null;
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 5;
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 3;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.FeedbackTestSpec.prototype.getSchedule = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule, 5));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule, 3));
 };
 
 
@@ -9107,7 +9005,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.FeedbackTestSpec
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.FeedbackTestSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.FeedbackTestSpec.prototype.setSchedule = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
+  return jspb.Message.setWrapperField(this, 3, value);
 };
 
 
@@ -9125,7 +9023,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.FeedbackTestSpec
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.FeedbackTestSpec.prototype.hasSchedule = function() {
-  return jspb.Message.getField(this, 5) != null;
+  return jspb.Message.getField(this, 3) != null;
 };
 
 

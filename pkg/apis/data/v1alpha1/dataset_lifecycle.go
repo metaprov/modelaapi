@@ -486,10 +486,10 @@ func (dataset *Dataset) CompletionAlert(tenantRef *v1.ObjectReference, notifierN
 			NotifierName: notifierName,
 			Owner:        dataset.Spec.Owner,
 			Fields: map[string]string{
-				"Rows":            util.ItoA(&dataset.Status.Statistics.Rows),
-				"Columns":         util.ItoA(&dataset.Status.Statistics.Cols),
-				"Size":            util.ItoA(&dataset.Status.Statistics.FileSize),
-				"Start Time":      dataset.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),				
+				"Rows":       util.ItoA(&dataset.Status.Statistics.Rows),
+				"Columns":    util.ItoA(&dataset.Status.Statistics.Cols),
+				"Size":       util.ItoA(&dataset.Status.Statistics.FileSize),
+				"Start Time": dataset.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
 			},
 		},
 	}

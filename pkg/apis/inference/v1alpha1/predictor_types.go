@@ -65,15 +65,11 @@ type FeedbackTestSpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
-	// Reference to the labeled ground true dataset
-	FeedbackDatasetRef v1.ObjectReference `json:"feedbackDatasetRef,omitempty" protobuf:"bytes,2,opt,name=feedbackDatasetRef"`
-	// Reference to the training dataset for the live model.
-	TrainingDatasetRef v1.ObjectReference `json:"trainingRef,omitempty" protobuf:"bytes,3,opt,name=trainingDatasetRef"`
 	// Define the tests to run against the predictor.
-	UnitTestsTemplate catalog.TestSuite `json:"unitTestsTemplate,omitempty" protobuf:"bytes,4,opt,name=tests"`
+	Tests catalog.TestSuite `json:"tests,omitempty" protobuf:"bytes,2,opt,name=tests"`
 	// The schedule on which model monitoring computations will be performed
 	// +kubebuilder:validation:Optional
-	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,5,opt,name=schedule"`
+	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,3,opt,name=schedule"`
 }
 
 // ModelServingSpec specifies the configuration for models to be served by a Predictor

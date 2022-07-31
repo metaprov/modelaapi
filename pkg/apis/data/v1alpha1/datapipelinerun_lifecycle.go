@@ -208,8 +208,7 @@ func (run *DataPipelineRun) CompletionAlert(tenantRef *v1.ObjectReference, notif
 			NotifierName: notifierName,
 			Owner:        run.Spec.Owner,
 			Fields: map[string]string{
-				"Start Time":      run.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
-				
+				"Start Time": run.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
 			},
 		},
 	}
@@ -239,7 +238,7 @@ func (run *DataPipelineRun) ErrorAlert(tenantRef *v1.ObjectReference, notifierNa
 			},
 			Owner: run.Spec.Owner,
 			Fields: map[string]string{
-				"Start Time":      run.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),				
+				"Start Time": run.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
 			},
 		},
 	}

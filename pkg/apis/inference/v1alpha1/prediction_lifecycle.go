@@ -216,8 +216,7 @@ func (prediction *Prediction) CompletionAlert(tenantRef *v1.ObjectReference, not
 			NotifierName: notifierName,
 			Owner:        prediction.Spec.Owner,
 			Fields: map[string]string{
-				"Start Time":      prediction.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
-				
+				"Start Time": prediction.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
 			},
 		},
 	}
@@ -230,7 +229,7 @@ func (prediction *Prediction) CompletionAlert(tenantRef *v1.ObjectReference, not
 func (prediction *Prediction) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *string, err error) *infra.Alert {
 	level := infra.Error
 	subject := fmt.Sprintf("Prediction %s failed with error %v", prediction.Name, err.Error())
-	result:= &infra.Alert{
+	result := &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
 			GenerateName: prediction.Name,
 			Namespace:    prediction.Namespace,
@@ -247,7 +246,7 @@ func (prediction *Prediction) ErrorAlert(tenantRef *v1.ObjectReference, notifier
 			NotifierName: notifierName,
 			Owner:        prediction.Spec.Owner,
 			Fields: map[string]string{
-				"Start Time":      prediction.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),				
+				"Start Time": prediction.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
 			},
 		},
 	}
