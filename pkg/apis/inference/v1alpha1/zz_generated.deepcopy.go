@@ -774,9 +774,7 @@ func (in *FeedbackTestSpec) DeepCopyInto(out *FeedbackTestSpec) {
 		*out = new(bool)
 		**out = **in
 	}
-	out.FeedbackDatasetRef = in.FeedbackDatasetRef
-	out.TrainingDatasetRef = in.TrainingDatasetRef
-	in.UnitTestsTemplate.DeepCopyInto(&out.UnitTestsTemplate)
+	in.Tests.DeepCopyInto(&out.Tests)
 	in.Schedule.DeepCopyInto(&out.Schedule)
 }
 
