@@ -685,18 +685,19 @@ func (in *DriftDetectionSpec) DeepCopyInto(out *DriftDetectionSpec) {
 		*out = new(bool)
 		**out = **in
 	}
-	out.ServingHistogramRef = in.ServingHistogramRef
-	out.TrainingHistogramRef = in.TrainingHistogramRef
+	if in.Generate != nil {
+		in, out := &in.Generate, &out.Generate
+		*out = new(bool)
+		**out = **in
+	}
+	if in.Columns != nil {
+		in, out := &in.Columns, &out.Columns
+		*out = make([]string, len(*in))
+		copy(*out, *in)
+	}
 	in.UnitTestsTemplate.DeepCopyInto(&out.UnitTestsTemplate)
 	in.Schedule.DeepCopyInto(&out.Schedule)
 	out.OutlierDetectionModelRef = in.OutlierDetectionModelRef
-	if in.Thresholds != nil {
-		in, out := &in.Thresholds, &out.Thresholds
-		*out = make([]datav1alpha1.DriftThreshold, len(*in))
-		for i := range *in {
-			(*in)[i].DeepCopyInto(&(*out)[i])
-		}
-	}
 	if in.MaxHistograms != nil {
 		in, out := &in.MaxHistograms, &out.MaxHistograms
 		*out = new(int32)
