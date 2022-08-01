@@ -242,7 +242,7 @@ func (fh *FeatureHistogram) ShouldUnitTest() bool {
 }
 
 func (fh *FeatureHistogram) ShouldGenerateUnitTest() bool {
-
+	return *fh.Spec.GenUnitTests && len(fh.Spec.UnitTests.Tests) == 0
 }
 
 // -------------------- Unit testing
