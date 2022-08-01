@@ -2944,6 +2944,9 @@ export class FeatureHistogramSpec extends jspb.Message {
   hasUnittests(): boolean;
   clearUnittests(): FeatureHistogramSpec;
 
+  getGenunittests(): boolean;
+  setGenunittests(value: boolean): FeatureHistogramSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FeatureHistogramSpec.AsObject;
   static toObject(includeInstance: boolean, msg: FeatureHistogramSpec): FeatureHistogramSpec.AsObject;
@@ -2968,6 +2971,7 @@ export namespace FeatureHistogramSpec {
     driftthresholdsList: Array<DriftThreshold.AsObject>,
     syncintervalsec: number,
     unittests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
+    genunittests: boolean,
   }
 }
 

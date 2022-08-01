@@ -220,6 +220,10 @@ spec:
                   predictor will start a new feature histogram
                 format: date-time
                 type: string
+              genUnitTests:
+                default: false
+                description: If true, generate the unit tests
+                type: boolean
               live:
                 default: false
                 description: If true, this is an active feature histogram. This feature

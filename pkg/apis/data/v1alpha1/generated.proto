@@ -2150,6 +2150,11 @@ message FeatureHistogramSpec {
   // Test suite for this histogram.
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite unitTests = 15;
+
+  // If true, generate the unit tests
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool genUnitTests = 16;
 }
 
 // FeatureHistogramStatus defines the observed state of FeatureHistogram

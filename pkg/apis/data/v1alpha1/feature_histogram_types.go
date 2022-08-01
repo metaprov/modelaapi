@@ -138,6 +138,10 @@ type FeatureHistogramSpec struct {
 	// Test suite for this histogram.
 	// +kubebuilder:validation:Optional
 	UnitTests catalog.TestSuite `json:"unitTests,omitempty" protobuf:"bytes,15,opt,name=unitTests"`
+	// If true, generate the unit tests
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	GenUnitTests *bool `json:"genUnitTests,omitempty" protobuf:"varint,16,opt,name=genUnitTests"`
 }
 
 // FeatureHistogramStatus defines the observed state of FeatureHistogram

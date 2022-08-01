@@ -241,6 +241,10 @@ func (fh *FeatureHistogram) ShouldUnitTest() bool {
 	return true
 }
 
+func (fh *FeatureHistogram) ShouldGenerateUnitTest() bool {
+
+}
+
 // -------------------- Unit testing
 
 func (fh *FeatureHistogram) MarkUnitTesting() {
