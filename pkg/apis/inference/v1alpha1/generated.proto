@@ -495,12 +495,6 @@ message DriftDetectionSpec {
   // +kubebuilder:validation:Optional
   optional bool enabled = 1;
 
-  // Reference to the live FeatureHistogram, the live FeatureHistogram is updated by the predictor for each prediction.
-  optional k8s.io.api.core.v1.ObjectReference liveHistogramRef = 2;
-
-  // Reference to the training histogram ref. The training FeatureHistogram is created
-  optional k8s.io.api.core.v1.ObjectReference trainingHistogramRef = 3;
-
   // Define the tests to run against the predictor.
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite unitTestsTemplate = 4;
 
@@ -509,12 +503,9 @@ message DriftDetectionSpec {
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 5;
 
   // Reference to a model that will be used for outlier detection. If empty, an outlier detection model.
+  // Currently not in use.
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference outlierDetectionModelRef = 6;
-
-  // Define drift thresholds. This is usually assigned from the predictor.
-  // +kubebuilder:validation:Optional
-  repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DriftThreshold thresholds = 7;
 
   // how many feature histograms to keep in memory (as kubernetes objects). Histograms are garbage collected.
   // +kubebuilder:default:=5

@@ -34,21 +34,15 @@ type DriftDetectionSpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
-	// Reference to the live FeatureHistogram, the live FeatureHistogram is updated by the predictor for each prediction.
-	ServingHistogramRef v1.ObjectReference `json:"servingHistogramRef,omitempty" protobuf:"bytes,2,opt,name=liveHistogramRef"`
-	// Reference to the training histogram ref. The training FeatureHistogram is created
-	TrainingHistogramRef v1.ObjectReference `json:"trainingHistogramRef,omitempty" protobuf:"bytes,3,opt,name=trainingHistogramRef"`
 	// Define the tests to run against the predictor.
 	UnitTestsTemplate catalog.TestSuite `json:"unitTestsTemplate,omitempty" protobuf:"bytes,4,opt,name=unitTestsTemplate"`
 	// The schedule on which model monitoring computations will be performed
 	// +kubebuilder:validation:Optional
 	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,5,opt,name=schedule"`
 	// Reference to a model that will be used for outlier detection. If empty, an outlier detection model.
+	// Currently not in use.
 	// +kubebuilder:validation:Optional
 	OutlierDetectionModelRef v1.ObjectReference `json:"outlierDetectionModelRef,omitempty" protobuf:"bytes,6,opt,name=outlierDetectionModelRef"`
-	// Define drift thresholds. This is usually assigned from the predictor.
-	// +kubebuilder:validation:Optional
-	Thresholds []data.DriftThreshold `json:"thresholds" protobuf:"bytes,7,opt,name=thresholds"`
 	// how many feature histograms to keep in memory (as kubernetes objects). Histograms are garbage collected.
 	// +kubebuilder:default:=5
 	// +kubebuilder:validation:Optional

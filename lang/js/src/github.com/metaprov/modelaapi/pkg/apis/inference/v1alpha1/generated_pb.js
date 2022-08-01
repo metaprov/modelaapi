@@ -515,7 +515,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSpec = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSpec.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSpec, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -7772,13 +7772,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppStatus.pr
 
 
 
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSpec.repeatedFields_ = [7];
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -7811,13 +7804,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSp
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
     enabled: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
-    livehistogramref: (f = msg.getLivehistogramref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
-    traininghistogramref: (f = msg.getTraininghistogramref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     unitteststemplate: (f = msg.getUnitteststemplate()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.toObject(includeInstance, f),
     schedule: (f = msg.getSchedule()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.toObject(includeInstance, f),
     outlierdetectionmodelref: (f = msg.getOutlierdetectionmodelref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
-    thresholdsList: jspb.Message.toObjectList(msg.getThresholdsList(),
-    github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DriftThreshold.toObject, includeInstance),
     maxhistograms: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
     periodseconds: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f
   };
@@ -7860,16 +7849,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSp
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setEnabled(value);
       break;
-    case 2:
-      var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
-      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
-      msg.setLivehistogramref(value);
-      break;
-    case 3:
-      var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
-      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
-      msg.setTraininghistogramref(value);
-      break;
     case 4:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.deserializeBinaryFromReader);
@@ -7884,11 +7863,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSp
       var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
       reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
       msg.setOutlierdetectionmodelref(value);
-      break;
-    case 7:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DriftThreshold;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DriftThreshold.deserializeBinaryFromReader);
-      msg.addThresholds(value);
       break;
     case 8:
       var value = /** @type {number} */ (reader.readInt32());
@@ -7934,22 +7908,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSp
       f
     );
   }
-  f = message.getLivehistogramref();
-  if (f != null) {
-    writer.writeMessage(
-      2,
-      f,
-      k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
-    );
-  }
-  f = message.getTraininghistogramref();
-  if (f != null) {
-    writer.writeMessage(
-      3,
-      f,
-      k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
-    );
-  }
   f = message.getUnitteststemplate();
   if (f != null) {
     writer.writeMessage(
@@ -7972,14 +7930,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSp
       6,
       f,
       k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
-    );
-  }
-  f = message.getThresholdsList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      7,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DriftThreshold.serializeBinaryToWriter
     );
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 8));
@@ -8032,80 +7982,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSp
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSpec.prototype.hasEnabled = function() {
   return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional k8s.io.api.core.v1.ObjectReference liveHistogramRef = 2;
- * @return {?proto.k8s.io.api.core.v1.ObjectReference}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSpec.prototype.getLivehistogramref = function() {
-  return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
-    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 2));
-};
-
-
-/**
- * @param {?proto.k8s.io.api.core.v1.ObjectReference|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSpec} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSpec.prototype.setLivehistogramref = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSpec.prototype.clearLivehistogramref = function() {
-  return this.setLivehistogramref(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSpec.prototype.hasLivehistogramref = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional k8s.io.api.core.v1.ObjectReference trainingHistogramRef = 3;
- * @return {?proto.k8s.io.api.core.v1.ObjectReference}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSpec.prototype.getTraininghistogramref = function() {
-  return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
-    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 3));
-};
-
-
-/**
- * @param {?proto.k8s.io.api.core.v1.ObjectReference|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSpec} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSpec.prototype.setTraininghistogramref = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSpec.prototype.clearTraininghistogramref = function() {
-  return this.setTraininghistogramref(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSpec.prototype.hasTraininghistogramref = function() {
-  return jspb.Message.getField(this, 3) != null;
 };
 
 
@@ -8217,44 +8093,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSp
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSpec.prototype.hasOutlierdetectionmodelref = function() {
   return jspb.Message.getField(this, 6) != null;
-};
-
-
-/**
- * repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DriftThreshold thresholds = 7;
- * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DriftThreshold>}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSpec.prototype.getThresholdsList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DriftThreshold>} */ (
-    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DriftThreshold, 7));
-};
-
-
-/**
- * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DriftThreshold>} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSpec} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSpec.prototype.setThresholdsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 7, value);
-};
-
-
-/**
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DriftThreshold=} opt_value
- * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DriftThreshold}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSpec.prototype.addThresholds = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 7, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DriftThreshold, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSpec.prototype.clearThresholdsList = function() {
-  return this.setThresholdsList([]);
 };
 
 

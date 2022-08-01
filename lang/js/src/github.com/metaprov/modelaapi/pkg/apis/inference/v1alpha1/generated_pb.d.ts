@@ -749,16 +749,6 @@ export class DriftDetectionSpec extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): DriftDetectionSpec;
 
-  getLivehistogramref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setLivehistogramref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): DriftDetectionSpec;
-  hasLivehistogramref(): boolean;
-  clearLivehistogramref(): DriftDetectionSpec;
-
-  getTraininghistogramref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setTraininghistogramref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): DriftDetectionSpec;
-  hasTraininghistogramref(): boolean;
-  clearTraininghistogramref(): DriftDetectionSpec;
-
   getUnitteststemplate(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
   setUnitteststemplate(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): DriftDetectionSpec;
   hasUnitteststemplate(): boolean;
@@ -773,11 +763,6 @@ export class DriftDetectionSpec extends jspb.Message {
   setOutlierdetectionmodelref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): DriftDetectionSpec;
   hasOutlierdetectionmodelref(): boolean;
   clearOutlierdetectionmodelref(): DriftDetectionSpec;
-
-  getThresholdsList(): Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DriftThreshold>;
-  setThresholdsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DriftThreshold>): DriftDetectionSpec;
-  clearThresholdsList(): DriftDetectionSpec;
-  addThresholds(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DriftThreshold, index?: number): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DriftThreshold;
 
   getMaxhistograms(): number;
   setMaxhistograms(value: number): DriftDetectionSpec;
@@ -796,12 +781,9 @@ export class DriftDetectionSpec extends jspb.Message {
 export namespace DriftDetectionSpec {
   export type AsObject = {
     enabled: boolean,
-    livehistogramref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    traininghistogramref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     unitteststemplate?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
     schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     outlierdetectionmodelref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    thresholdsList: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DriftThreshold.AsObject>,
     maxhistograms: number,
     periodseconds: number,
   }
