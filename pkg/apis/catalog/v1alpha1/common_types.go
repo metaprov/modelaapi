@@ -2080,12 +2080,12 @@ const (
 type DataTestType string
 
 const (
-	DataTestTypeMultiDataset DatasetType = "multi-dataset"
-	DataTestTypeDataset      DatasetType = "dataset"
-	DataTestTypeMultiColumn  DatasetType = "multi-column"
-	DataTestTypeColumn       DatasetType = "column"
-	DataTestTypeModel        DatasetType = "model"
-	DataTestTypeDataDrift    DatasetType = "data-drift"
+	DataTestTypeMultiDataset DataTestType = "multi-dataset"
+	DataTestTypeDataset      DataTestType = "dataset"
+	DataTestTypeMultiColumn  DataTestType = "multi-column"
+	DataTestTypeColumn       DataTestType = "column"
+	DataTestTypeModel        DataTestType = "model"
+	DataTestTypeDataDrift    DataTestType = "data-drift"
 )
 
 type AssertionType string
