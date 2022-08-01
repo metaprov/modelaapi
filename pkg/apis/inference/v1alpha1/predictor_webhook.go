@@ -2,6 +2,7 @@ package v1alpha1
 
 import (
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
+	data "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/util"
 	v1 "k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/runtime"
@@ -42,7 +43,41 @@ func (predictor *Predictor) Default() {
 		predictor.ObjectMeta.Labels = make(map[string]string)
 	}
 	predictor.ObjectMeta.Labels[catalog.TenantLabelKey] = predictor.Spec.ServingSiteRef.Namespace
-	predictor.ObjectMeta.Labels["modela.ai/servingsite"] = predictor.Spec.ServingSiteRef.Name
+	predictor.ObjectMeta.Labels[catalog.ServingSiteLabelKey] = predictor.Spec.ServingSiteRef.Name
+
+	// set the default threshold if non exist.
+	if len(predictor.Spec.Drift.DriftThresholds) == 0 {
+		predictor.Spec.Drift.DriftThresholds = []data.DriftThreshold{
+			{
+				Metric: catalog.PSI,
+				Value:  0.3,
+			},
+			{
+				Metric: catalog.WassersteinDistanceTest,
+				Value:  0.3,
+			},
+			{
+				Metric: catalog.KLDivergence,
+				Value:  0.3,
+			},
+			{
+				Metric: catalog.JSDistance,
+				Value:  0.3,
+			},
+			{
+				Metric: catalog.KSTest,
+				Value:  0.3,
+			},
+			{
+				Metric: catalog.ChiSqrTest,
+				Value:  0.3,
+			},
+			{
+				Metric: catalog.ProportionDifferenceTest,
+				Value:  0.3,
+			},
+		}
+	}
 
 }
 

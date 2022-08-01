@@ -695,6 +695,11 @@ func (in *DriftDetectionSpec) DeepCopyInto(out *DriftDetectionSpec) {
 		*out = make([]string, len(*in))
 		copy(*out, *in)
 	}
+	if in.DriftThresholds != nil {
+		in, out := &in.DriftThresholds, &out.DriftThresholds
+		*out = make([]datav1alpha1.DriftThreshold, len(*in))
+		copy(*out, *in)
+	}
 	in.UnitTestsTemplate.DeepCopyInto(&out.UnitTestsTemplate)
 	in.Schedule.DeepCopyInto(&out.Schedule)
 	out.OutlierDetectionModelRef = in.OutlierDetectionModelRef

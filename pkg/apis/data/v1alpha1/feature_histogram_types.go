@@ -176,11 +176,11 @@ type FeatureHistogramStatus struct {
 type DriftThreshold struct {
 	// The metric type name (e.g. F1 / Accuracy)
 	// +kubebuilder:validation:Required
-	Metric *catalog.Metric `json:"metric" protobuf:"bytes,1,opt,name=metric"`
+	Metric catalog.Metric `json:"metric" protobuf:"bytes,1,opt,name=metric"`
 	// The value of the metric for quantitive observations
 	// +kubebuilder:validation:Required
 	// +required
-	Value *float64 `json:"value" protobuf:"bytes,2,opt,name=value"`
+	Value float64 `json:"value" protobuf:"bytes,2,opt,name=value"`
 }
 
 type ColumnHistogram struct {
