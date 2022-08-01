@@ -749,6 +749,14 @@ export class DriftDetectionSpec extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): DriftDetectionSpec;
 
+  getGenerate(): boolean;
+  setGenerate(value: boolean): DriftDetectionSpec;
+
+  getColumnsList(): Array<string>;
+  setColumnsList(value: Array<string>): DriftDetectionSpec;
+  clearColumnsList(): DriftDetectionSpec;
+  addColumns(value: string, index?: number): DriftDetectionSpec;
+
   getUnitteststemplate(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
   setUnitteststemplate(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): DriftDetectionSpec;
   hasUnitteststemplate(): boolean;
@@ -781,6 +789,8 @@ export class DriftDetectionSpec extends jspb.Message {
 export namespace DriftDetectionSpec {
   export type AsObject = {
     enabled: boolean,
+    generate: boolean,
+    columnsList: Array<string>,
     unitteststemplate?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
     schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     outlierdetectionmodelref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,

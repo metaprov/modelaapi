@@ -515,7 +515,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSpec = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSpec.repeatedFields_, null);
 };
 goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSpec, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -7772,6 +7772,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppStatus.pr
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSpec.repeatedFields_ = [3];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -7804,6 +7811,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSp
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
     enabled: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
+    generate: (f = jspb.Message.getBooleanField(msg, 2)) == null ? undefined : f,
+    columnsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
     unitteststemplate: (f = msg.getUnitteststemplate()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.toObject(includeInstance, f),
     schedule: (f = msg.getSchedule()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.toObject(includeInstance, f),
     outlierdetectionmodelref: (f = msg.getOutlierdetectionmodelref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
@@ -7848,6 +7857,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSp
     case 1:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setEnabled(value);
+      break;
+    case 2:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setGenerate(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addColumns(value);
       break;
     case 4:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite;
@@ -7905,6 +7922,20 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSp
   if (f != null) {
     writer.writeBool(
       1,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeBool(
+      2,
+      f
+    );
+  }
+  f = message.getColumnsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      3,
       f
     );
   }
@@ -7982,6 +8013,79 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSp
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSpec.prototype.hasEnabled = function() {
   return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional bool generate = 2;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSpec.prototype.getGenerate = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 2, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSpec.prototype.setGenerate = function(value) {
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSpec.prototype.clearGenerate = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSpec.prototype.hasGenerate = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * repeated string columns = 3;
+ * @return {!Array<string>}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSpec.prototype.getColumnsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 3));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSpec.prototype.setColumnsList = function(value) {
+  return jspb.Message.setField(this, 3, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSpec.prototype.addColumns = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 3, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSpec.prototype.clearColumnsList = function() {
+  return this.setColumnsList([]);
 };
 
 

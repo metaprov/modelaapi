@@ -34,6 +34,13 @@ type DriftDetectionSpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
+	// If true, automatically generate drift test to all the columns based on the column type
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Generate *bool `json:"generate,omitempty" protobuf:"varint,2,opt,name=generate"`
+	// Set the list of columns for drift detection, if empty, watch all the columns.
+	// +kubebuilder:validation:Optional
+	Columns []string `json:"columns,omitempty" protobuf:"bytes,3,rep,name=columns"`
 	// Define the tests to run against the predictor.
 	UnitTestsTemplate catalog.TestSuite `json:"unitTestsTemplate,omitempty" protobuf:"bytes,4,opt,name=unitTestsTemplate"`
 	// The schedule on which model monitoring computations will be performed
@@ -60,6 +67,7 @@ type FeedbackTestSpec struct {
 	// +kubebuilder:validation:Optional
 	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
 	// Define the tests to run against the predictor.
+	// +kubebuilder:validation:Optional
 	Tests catalog.TestSuite `json:"tests,omitempty" protobuf:"bytes,2,opt,name=tests"`
 	// The schedule on which model monitoring computations will be performed
 	// +kubebuilder:validation:Optional

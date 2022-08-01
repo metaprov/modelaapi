@@ -404,10 +404,21 @@ spec:
               drift:
                 description: Spec for the drift detection process
                 properties:
+                  columns:
+                    description: Set the list of columns for drift detection, if empty,
+                      watch all the columns.
+                    items:
+                      type: string
+                    type: array
                   enabled:
                     default: false
                     description: Indicates if model monitoring is enabled for the
                       model
+                    type: boolean
+                  generate:
+                    default: false
+                    description: If true, automatically generate drift test to all
+                      the columns based on the column type
                     type: boolean
                   maxHistograms:
                     default: 5
