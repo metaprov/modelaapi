@@ -41,15 +41,18 @@ type DriftDetectionSpec struct {
 	// Set the list of columns for drift detection, if empty, watch all the columns.
 	// +kubebuilder:validation:Optional
 	Columns []string `json:"columns,omitempty" protobuf:"bytes,3,rep,name=columns"`
+	// The drift threshold for drift metrics.
+	// If empty will be set the modela
+	DriftThresholds []data.DriftThreshold `json:"driftThresholds,omitempty" protobuf:"bytes,4,rep,name=driftThresholds"`
 	// Define the tests to run against the predictor.
-	UnitTestsTemplate catalog.TestSuite `json:"unitTestsTemplate,omitempty" protobuf:"bytes,4,opt,name=unitTestsTemplate"`
+	UnitTestsTemplate catalog.TestSuite `json:"unitTestsTemplate,omitempty" protobuf:"bytes,5,opt,name=unitTestsTemplate"`
 	// The schedule on which model monitoring computations will be performed
 	// +kubebuilder:validation:Optional
-	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,5,opt,name=schedule"`
+	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,6,opt,name=schedule"`
 	// Reference to a model that will be used for outlier detection. If empty, an outlier detection model.
 	// Currently not in use.
 	// +kubebuilder:validation:Optional
-	OutlierDetectionModelRef v1.ObjectReference `json:"outlierDetectionModelRef,omitempty" protobuf:"bytes,6,opt,name=outlierDetectionModelRef"`
+	OutlierDetectionModelRef v1.ObjectReference `json:"outlierDetectionModelRef,omitempty" protobuf:"bytes,7,opt,name=outlierDetectionModelRef"`
 	// how many feature histograms to keep in memory (as kubernetes objects). Histograms are garbage collected.
 	// +kubebuilder:default:=5
 	// +kubebuilder:validation:Optional
