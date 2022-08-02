@@ -11,9 +11,11 @@ import (
 	"strings"
 
 	"github.com/dustin/go-humanize"
+	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/apis/common"
 	"github.com/metaprov/modelaapi/pkg/apis/data"
 	infra "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
+
 	"github.com/metaprov/modelaapi/pkg/util"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
@@ -243,6 +245,29 @@ func (fh *FeatureHistogram) ShouldUnitTest() bool {
 
 func (fh *FeatureHistogram) ShouldGenerateUnitTest() bool {
 	return *fh.Spec.GenUnitTests && len(fh.Spec.UnitTests.Tests) == 0
+}
+
+// Return true if we should detect drift for column
+func (fh *FeatureHistogram) ShouldDetectDriftForColumn(column string) bool {
+	if len(fh.Spec.Columns) == 0 {
+		return true // if not column defined, return true
+	}
+	for _, v := range fh.Spec.Columns {
+		if v == column {
+			return true
+		}
+	}
+	return false
+}
+
+// Used during drift unit test generation
+func (fh *FeatureHistogram) DefaultDriftThreshold(metric catalog.Metric) float64 {
+	for _, th := range fh.Spec.DriftThresholds {
+		if th.Metric == metric {
+			return th.Value
+		}
+	}
+	return 0.3
 }
 
 // -------------------- Unit testing
