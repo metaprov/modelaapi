@@ -494,10 +494,12 @@ spec:
                           - req-per-sec
                           - uncertain-prediction-percent
                           - none
-                          - ks
-                          - psi
+                          - two-sample-ks-test
+                          - chi-squared-test
+                          - proportion-difference
                           - wasserstein-distance
-                          - kl-divergenece
+                          - psi
+                          - kl-divergence
                           - jensen-shannon-distance
                           type: string
                         value:
@@ -848,10 +850,12 @@ spec:
                               - req-per-sec
                               - uncertain-prediction-percent
                               - none
-                              - ks
-                              - psi
+                              - two-sample-ks-test
+                              - chi-squared-test
+                              - proportion-difference
                               - wasserstein-distance
-                              - kl-divergenece
+                              - psi
+                              - kl-divergence
                               - jensen-shannon-distance
                               type: string
                             name:
@@ -1258,10 +1262,12 @@ spec:
                               - req-per-sec
                               - uncertain-prediction-percent
                               - none
-                              - ks
-                              - psi
+                              - two-sample-ks-test
+                              - chi-squared-test
+                              - proportion-difference
                               - wasserstein-distance
-                              - kl-divergenece
+                              - psi
+                              - kl-divergence
                               - jensen-shannon-distance
                               type: string
                             name:
@@ -1760,10 +1766,12 @@ spec:
                       - req-per-sec
                       - uncertain-prediction-percent
                       - none
-                      - ks
-                      - psi
+                      - two-sample-ks-test
+                      - chi-squared-test
+                      - proportion-difference
                       - wasserstein-distance
-                      - kl-divergenece
+                      - psi
+                      - kl-divergence
                       - jensen-shannon-distance
                       type: string
                     type: array
@@ -2155,10 +2163,12 @@ spec:
                               - req-per-sec
                               - uncertain-prediction-percent
                               - none
-                              - ks
-                              - psi
+                              - two-sample-ks-test
+                              - chi-squared-test
+                              - proportion-difference
                               - wasserstein-distance
-                              - kl-divergenece
+                              - psi
+                              - kl-divergence
                               - jensen-shannon-distance
                               type: string
                             name:
@@ -2601,10 +2611,12 @@ spec:
                             - req-per-sec
                             - uncertain-prediction-percent
                             - none
-                            - ks
-                            - psi
+                            - two-sample-ks-test
+                            - chi-squared-test
+                            - proportion-difference
                             - wasserstein-distance
-                            - kl-divergenece
+                            - psi
+                            - kl-divergence
                             - jensen-shannon-distance
                             type: string
                           min:
@@ -2865,10 +2877,12 @@ spec:
                             - req-per-sec
                             - uncertain-prediction-percent
                             - none
-                            - ks
-                            - psi
+                            - two-sample-ks-test
+                            - chi-squared-test
+                            - proportion-difference
                             - wasserstein-distance
-                            - kl-divergenece
+                            - psi
+                            - kl-divergence
                             - jensen-shannon-distance
                             type: string
                           stddev:
@@ -3407,10 +3421,12 @@ spec:
                               - req-per-sec
                               - uncertain-prediction-percent
                               - none
-                              - ks
-                              - psi
+                              - two-sample-ks-test
+                              - chi-squared-test
+                              - proportion-difference
                               - wasserstein-distance
-                              - kl-divergenece
+                              - psi
+                              - kl-divergence
                               - jensen-shannon-distance
                               type: string
                             stddev:

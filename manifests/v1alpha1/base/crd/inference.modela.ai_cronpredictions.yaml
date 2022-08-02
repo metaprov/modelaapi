@@ -1017,10 +1017,12 @@ spec:
                                       - req-per-sec
                                       - uncertain-prediction-percent
                                       - none
-                                      - ks
-                                      - psi
+                                      - two-sample-ks-test
+                                      - chi-squared-test
+                                      - proportion-difference
                                       - wasserstein-distance
-                                      - kl-divergenece
+                                      - psi
+                                      - kl-divergence
                                       - jensen-shannon-distance
                                       type: string
                                     name:
