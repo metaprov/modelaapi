@@ -53,7 +53,7 @@ func (predictor *Predictor) Default() {
 				Value:  0.3,
 			},
 			{
-				Metric: catalog.WassersteinDistanceTest,
+				Metric: catalog.WassersteinDistance,
 				Value:  0.3,
 			},
 			{
@@ -65,7 +65,7 @@ func (predictor *Predictor) Default() {
 				Value:  0.3,
 			},
 			{
-				Metric: catalog.KSTest,
+				Metric: catalog.TwoSampleKSTest,
 				Value:  0.3,
 			},
 			{
@@ -73,7 +73,7 @@ func (predictor *Predictor) Default() {
 				Value:  0.3,
 			},
 			{
-				Metric: catalog.ProportionDifferenceTest,
+				Metric: catalog.ProportionDifference,
 				Value:  0.3,
 			},
 		}
