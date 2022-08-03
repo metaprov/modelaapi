@@ -207,7 +207,7 @@ func (predictor *Predictor) ConstructGrpcRule(serviceName string) *nwv1.HTTPIngr
 	}
 }
 
-func (predictor *Predictor) ConstructRESTRule(fqdn string, serviceName string) *nwv1.HTTPIngressPath {
+func (predictor *Predictor) ConstructRESTRule(serviceName string) *nwv1.HTTPIngressPath {
 	prefix := nwv1.PathTypePrefix
 	return &nwv1.HTTPIngressPath{
 		PathType: &prefix,
