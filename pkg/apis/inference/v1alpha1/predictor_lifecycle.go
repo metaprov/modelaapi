@@ -190,19 +190,28 @@ func (predictor *Predictor) MarkFailed(err string) {
 	predictor.Status.FailureMessage = util.StrPtr(err)
 }
 
-func (predictor *Predictor) ConstructGrpcRule(serviceName string) *nwv1.HTTPIngressPath {
+func (predictor *Predictor) ConstructGrpcRule(fqdn string, serviceName string) *nwv1.IngressRule {
 	prefix := nwv1.PathTypePrefix
-	return &nwv1.HTTPIngressPath{
-		Path:     "/",
-		PathType: &prefix,
-		Backend: nwv1.IngressBackend{
-			Service: &nwv1.IngressServiceBackend{
-				Name: serviceName,
-				Port: nwv1.ServiceBackendPort{
-					Number: *predictor.Spec.Access.Port,
+	return &nwv1.IngressRule{
+		Host: predictor.Name + "." + fqdn,
+		IngressRuleValue: nwv1.IngressRuleValue{
+			HTTP: &nwv1.HTTPIngressRuleValue{
+				Paths: []nwv1.HTTPIngressPath{
+					{
+						Path:     "/",
+						PathType: &prefix,
+						Backend: nwv1.IngressBackend{
+							Service: &nwv1.IngressServiceBackend{
+								Name: serviceName,
+								Port: nwv1.ServiceBackendPort{
+									Number: *predictor.Spec.Access.Port,
+								},
+							},
+							Resource: nil,
+						},
+					},
 				},
 			},
-			Resource: nil,
 		},
 	}
 }
