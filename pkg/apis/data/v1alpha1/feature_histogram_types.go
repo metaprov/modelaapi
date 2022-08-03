@@ -101,7 +101,7 @@ type FeatureHistogramSpec struct {
 	Description *string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
 	// The list of columns to generate the histograms.
 	// +kubebuilder:validation:Optional
-	Columns []string `json:"columns,omitempty" protobuf:"bytes,5,opt,name=columns"`
+	Columns []string `json:"columns,omitempty" protobuf:"bytes,5,rep,name=columns"`
 	// A reference to the dataset or predictor that contain the column with this histogram
 	// +kubebuilder:validation:Optional
 	SourceRef *v1.ObjectReference `json:"sourceRef,omitempty" protobuf:"bytes,6,opt,name=sourceRef"`
@@ -129,12 +129,12 @@ type FeatureHistogramSpec struct {
 	BaseFeatureHistogram v1.ObjectReference `json:"baseFeatureHistogram,omitempty" protobuf:"bytes,12,opt,name=baseFeatureHistogram"`
 	// Define drift thresholds. This is usually assigned from the predictor.
 	// +kubebuilder:validation:Optional
-	DriftThresholds []DriftThreshold `json:"driftThresholds" protobuf:"bytes,13,opt,name=driftThresholds"`
+	DriftThresholds []DriftThreshold `json:"driftThresholds" protobuf:"bytes,13,rep,name=driftThresholds"`
 	// How much time in seconds, we should sync the im memory histograms to etcd
 	// Default is one minute.
 	// +kubebuilder:default:=60
 	// +kubebuilder:validation:Optional
-	SyncIntervalSec *int32 `json:"SyncIntervalSec,omitempty" protobuf:"bytes,14,opt,name=SyncIntervalSec"`
+	SyncIntervalSec *int32 `json:"SyncIntervalSec,omitempty" protobuf:"varint,14,opt,name=SyncIntervalSec"`
 	// Test suite for this histogram.
 	// +kubebuilder:validation:Optional
 	UnitTests catalog.TestSuite `json:"unitTests,omitempty" protobuf:"bytes,15,opt,name=unitTests"`
@@ -163,10 +163,10 @@ type FeatureHistogramStatus struct {
 	Phase FeatureHistogramPhase `json:"phase" protobuf:"bytes,6,opt,name=phase"`
 	// In the case of failure, the Dataset resource controller will set this field with a failure reason
 	//+kubebuilder:validation:Optional
-	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,7,opt,name=failureReason"`
+	FailureReason catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,7,opt,name=failureReason"`
 	// In the case of failure, the Dataset resource controller will set this field with a failure message
 	//+kubebuilder:validation:Optional
-	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,8,opt,name=failureMessage"`
+	FailureMessage string `json:"failureMessage,omitempty" protobuf:"bytes,8,opt,name=failureMessage"`
 	// Test suite for this histogram.
 	//+kubebuilder:validation:Optional
 	UnitTestsResult catalog.TestSuiteResult `json:"unitTestsResult,omitempty" protobuf:"bytes,9,opt,name=unitTestsResult"`
@@ -196,8 +196,8 @@ type ColumnHistogram struct {
 	Histogram catalog.HistogramData `json:"histogram,omitempty" protobuf:"bytes,2,opt,name=histogram"`
 	// Measure of drift for this column
 	//+kubebuilder:validation:Optional
-	Metrics []catalog.Measurement `json:"metrics,omitempty" protobuf:"bytes,4,opt,name=metrics"`
+	Metrics []catalog.Measurement `json:"metrics,omitempty" protobuf:"bytes,3,rep,name=metrics"`
 	// true if drift was detected for this column
 	//+kubebuilder:validation:Optional
-	Drift *bool `json:"drift,omitempty" protobuf:"varint,5,opt,name=drift"`
+	Drift *bool `json:"drift,omitempty" protobuf:"varint,4,opt,name=drift"`
 }

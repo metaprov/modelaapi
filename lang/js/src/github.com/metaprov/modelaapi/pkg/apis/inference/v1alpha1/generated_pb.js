@@ -7811,7 +7811,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSp
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
     enabled: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
-    generate: (f = jspb.Message.getBooleanField(msg, 2)) == null ? undefined : f,
+    gendrifttests: (f = jspb.Message.getBooleanField(msg, 2)) == null ? undefined : f,
     columnsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
     driftthresholdsList: jspb.Message.toObjectList(msg.getDriftthresholdsList(),
     github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DriftThreshold.toObject, includeInstance),
@@ -7862,7 +7862,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSp
       break;
     case 2:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setGenerate(value);
+      msg.setGendrifttests(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
@@ -8032,10 +8032,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSp
 
 
 /**
- * optional bool generate = 2;
+ * optional bool genDriftTests = 2;
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSpec.prototype.getGenerate = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSpec.prototype.getGendrifttests = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 2, false));
 };
 
@@ -8044,7 +8044,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSp
  * @param {boolean} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSpec.prototype.setGenerate = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSpec.prototype.setGendrifttests = function(value) {
   return jspb.Message.setField(this, 2, value);
 };
 
@@ -8053,7 +8053,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSp
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSpec.prototype.clearGenerate = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSpec.prototype.clearGendrifttests = function() {
   return jspb.Message.setField(this, 2, undefined);
 };
 
@@ -8062,7 +8062,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSp
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSpec.prototype.hasGenerate = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DriftDetectionSpec.prototype.hasGendrifttests = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 

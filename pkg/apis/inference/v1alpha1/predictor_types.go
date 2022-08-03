@@ -35,9 +35,9 @@ type DriftDetectionSpec struct {
 	// +kubebuilder:validation:Optional
 	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
 	// If true, automatically generate drift test to all the columns based on the column type
-	// +kubebuilder:default:=false
+	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	Generate *bool `json:"generate,omitempty" protobuf:"varint,2,opt,name=generate"`
+	GenDriftTests *bool `json:"genDriftTests,omitempty" protobuf:"varint,2,opt,name=genDriftTests"`
 	// Set the list of columns for drift detection, if empty, watch all the columns.
 	// +kubebuilder:validation:Optional
 	Columns []string `json:"columns,omitempty" protobuf:"bytes,3,rep,name=columns"`

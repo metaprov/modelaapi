@@ -515,8 +515,8 @@ spec:
                     description: Indicates if model monitoring is enabled for the
                       model
                     type: boolean
-                  generate:
-                    default: false
+                  genDriftTests:
+                    default: true
                     description: If true, automatically generate drift test to all
                       the columns based on the column type
                     type: boolean

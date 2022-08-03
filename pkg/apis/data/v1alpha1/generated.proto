@@ -299,11 +299,11 @@ message ColumnHistogram {
 
   // Measure of drift for this column
   // +kubebuilder:validation:Optional
-  repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement metrics = 4;
+  repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement metrics = 3;
 
   // true if drift was detected for this column
   // +kubebuilder:validation:Optional
-  optional bool drift = 5;
+  optional bool drift = 4;
 }
 
 // The spec for a column in the row. A column can span multiple grid based columns

@@ -6319,7 +6319,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.hasI
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnHistogram.repeatedFields_ = [4];
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnHistogram.repeatedFields_ = [3];
 
 
 
@@ -6356,7 +6356,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnHistogram.toObj
     histogram: (f = msg.getHistogram()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.HistogramData.toObject(includeInstance, f),
     metricsList: jspb.Message.toObjectList(msg.getMetricsList(),
     github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.toObject, includeInstance),
-    drift: (f = jspb.Message.getBooleanField(msg, 5)) == null ? undefined : f
+    drift: (f = jspb.Message.getBooleanField(msg, 4)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -6402,12 +6402,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnHistogram.deser
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.HistogramData.deserializeBinaryFromReader);
       msg.setHistogram(value);
       break;
-    case 4:
+    case 3:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.deserializeBinaryFromReader);
       msg.addMetrics(value);
       break;
-    case 5:
+    case 4:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setDrift(value);
       break;
@@ -6458,15 +6458,15 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnHistogram.seria
   f = message.getMetricsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      4,
+      3,
       f,
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.serializeBinaryToWriter
     );
   }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 5));
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 4));
   if (f != null) {
     writer.writeBool(
-      5,
+      4,
       f
     );
   }
@@ -6547,12 +6547,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnHistogram.proto
 
 
 /**
- * repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement metrics = 4;
+ * repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement metrics = 3;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnHistogram.prototype.getMetricsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement>} */ (
-    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement, 4));
+    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement, 3));
 };
 
 
@@ -6561,7 +6561,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnHistogram.proto
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnHistogram} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnHistogram.prototype.setMetricsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 4, value);
+  return jspb.Message.setRepeatedWrapperField(this, 3, value);
 };
 
 
@@ -6571,7 +6571,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnHistogram.proto
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnHistogram.prototype.addMetrics = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement, opt_index);
 };
 
 
@@ -6585,11 +6585,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnHistogram.proto
 
 
 /**
- * optional bool drift = 5;
+ * optional bool drift = 4;
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnHistogram.prototype.getDrift = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 5, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 4, false));
 };
 
 
@@ -6598,7 +6598,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnHistogram.proto
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnHistogram} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnHistogram.prototype.setDrift = function(value) {
-  return jspb.Message.setField(this, 5, value);
+  return jspb.Message.setField(this, 4, value);
 };
 
 
@@ -6607,7 +6607,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnHistogram.proto
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnHistogram} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnHistogram.prototype.clearDrift = function() {
-  return jspb.Message.setField(this, 5, undefined);
+  return jspb.Message.setField(this, 4, undefined);
 };
 
 
@@ -6616,7 +6616,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnHistogram.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnHistogram.prototype.hasDrift = function() {
-  return jspb.Message.getField(this, 5) != null;
+  return jspb.Message.getField(this, 4) != null;
 };
 
 

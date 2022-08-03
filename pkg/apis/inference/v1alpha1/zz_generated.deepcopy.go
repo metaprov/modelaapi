@@ -685,8 +685,8 @@ func (in *DriftDetectionSpec) DeepCopyInto(out *DriftDetectionSpec) {
 		*out = new(bool)
 		**out = **in
 	}
-	if in.Generate != nil {
-		in, out := &in.Generate, &out.Generate
+	if in.GenDriftTests != nil {
+		in, out := &in.GenDriftTests, &out.GenDriftTests
 		*out = new(bool)
 		**out = **in
 	}

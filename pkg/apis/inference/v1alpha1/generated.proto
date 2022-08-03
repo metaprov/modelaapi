@@ -496,9 +496,9 @@ message DriftDetectionSpec {
   optional bool enabled = 1;
 
   // If true, automatically generate drift test to all the columns based on the column type
-  // +kubebuilder:default:=false
+  // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
-  optional bool generate = 2;
+  optional bool genDriftTests = 2;
 
   // Set the list of columns for drift detection, if empty, watch all the columns.
   // +kubebuilder:validation:Optional
