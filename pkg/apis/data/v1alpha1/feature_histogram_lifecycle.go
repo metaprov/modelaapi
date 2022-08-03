@@ -177,7 +177,7 @@ func (feature *FeatureHistogram) MarkFailed(msg string) {
 		Message: "Feature histogram failed." + msg,
 	})
 	feature.Status.Phase = FeatureHistogramPhaseFailed
-	feature.Status.FailureMessage = util.StrPtr(msg)
+	feature.Status.FailureMessage = msg
 
 }
 
