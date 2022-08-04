@@ -690,6 +690,11 @@ func (in *DriftDetectionSpec) DeepCopyInto(out *DriftDetectionSpec) {
 		*out = new(bool)
 		**out = **in
 	}
+	if in.MinPredictions != nil {
+		in, out := &in.MinPredictions, &out.MinPredictions
+		*out = new(int32)
+		**out = **in
+	}
 	if in.Columns != nil {
 		in, out := &in.Columns, &out.Columns
 		*out = make([]string, len(*in))
