@@ -38,30 +38,34 @@ type DriftDetectionSpec struct {
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
 	GenDriftTests *bool `json:"genDriftTests,omitempty" protobuf:"varint,2,opt,name=genDriftTests"`
+	// If true, automatically generate drift test to all the columns based on the column type
+	// +kubebuilder:default:=1000
+	// +kubebuilder:validation:Optional
+	MinPredictions *int32 `json:"minPredictions,omitempty" protobuf:"varint,3,opt,name=minPredictions"`
 	// Set the list of columns for drift detection, if empty, watch all the columns.
 	// +kubebuilder:validation:Optional
-	Columns []string `json:"columns,omitempty" protobuf:"bytes,3,rep,name=columns"`
+	Columns []string `json:"columns,omitempty" protobuf:"bytes,4,rep,name=columns"`
 	// The drift threshold for drift metrics.
 	// If empty will be set the modela
-	DriftThresholds []data.DriftThreshold `json:"driftThresholds,omitempty" protobuf:"bytes,4,rep,name=driftThresholds"`
+	DriftThresholds []data.DriftThreshold `json:"driftThresholds,omitempty" protobuf:"bytes,5,rep,name=driftThresholds"`
 	// Define the tests to run against the predictor.
-	UnitTestsTemplate catalog.TestSuite `json:"unitTestsTemplate,omitempty" protobuf:"bytes,5,opt,name=unitTestsTemplate"`
+	UnitTestsTemplate catalog.TestSuite `json:"unitTestsTemplate,omitempty" protobuf:"bytes,6,opt,name=unitTestsTemplate"`
 	// The schedule on which model monitoring computations will be performed
 	// +kubebuilder:validation:Optional
-	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,6,opt,name=schedule"`
+	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,7,opt,name=schedule"`
 	// Reference to a model that will be used for outlier detection. If empty, an outlier detection model.
 	// Currently not in use.
 	// +kubebuilder:validation:Optional
-	OutlierDetectionModelRef v1.ObjectReference `json:"outlierDetectionModelRef,omitempty" protobuf:"bytes,7,opt,name=outlierDetectionModelRef"`
+	OutlierDetectionModelRef v1.ObjectReference `json:"outlierDetectionModelRef,omitempty" protobuf:"bytes,8,opt,name=outlierDetectionModelRef"`
 	// how many feature histograms to keep in memory (as kubernetes objects). Histograms are garbage collected.
 	// +kubebuilder:default:=5
 	// +kubebuilder:validation:Optional
-	MaxHistograms *int32 `json:"maxHistograms,omitempty" protobuf:"varint,8,opt,name=maxHistograms"`
+	MaxHistograms *int32 `json:"maxHistograms,omitempty" protobuf:"varint,9,opt,name=maxHistograms"`
 	// The duration in seconds that an histogram is updated before computing drift
 	// the default is one hour
 	// +kubebuilder:default:=3600
 	// +kubebuilder:validation:Optional
-	PeriodSeconds *int32 `json:"periodSeconds,omitempty" protobuf:"varint,9,opt,name=periodSeconds"`
+	PeriodSeconds *int32 `json:"periodSeconds,omitempty" protobuf:"varint,10,opt,name=periodSeconds"`
 }
 
 type FeedbackTestSpec struct {

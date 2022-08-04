@@ -526,6 +526,12 @@ spec:
                       kubernetes objects). Histograms are garbage collected.
                     format: int32
                     type: integer
+                  minPredictions:
+                    default: 1000
+                    description: If true, automatically generate drift test to all
+                      the columns based on the column type
+                    format: int32
+                    type: integer
                   outlierDetectionModelRef:
                     description: Reference to a model that will be used for outlier
                       detection. If empty, an outlier detection model. Currently not

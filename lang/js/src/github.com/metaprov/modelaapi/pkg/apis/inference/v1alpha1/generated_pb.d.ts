@@ -752,6 +752,9 @@ export class DriftDetectionSpec extends jspb.Message {
   getGendrifttests(): boolean;
   setGendrifttests(value: boolean): DriftDetectionSpec;
 
+  getMinpredictions(): number;
+  setMinpredictions(value: number): DriftDetectionSpec;
+
   getColumnsList(): Array<string>;
   setColumnsList(value: Array<string>): DriftDetectionSpec;
   clearColumnsList(): DriftDetectionSpec;
@@ -795,6 +798,7 @@ export namespace DriftDetectionSpec {
   export type AsObject = {
     enabled: boolean,
     gendrifttests: boolean,
+    minpredictions: number,
     columnsList: Array<string>,
     driftthresholdsList: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DriftThreshold.AsObject>,
     unitteststemplate?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,

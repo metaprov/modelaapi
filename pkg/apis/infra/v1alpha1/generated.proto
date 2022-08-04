@@ -1580,6 +1580,12 @@ message IngressSpec {
   // ClusterIssuerName is a cert manager resource that provide TLS certificate to the ingress.
   // +kubebuilder:default:=""
   optional string clusterIssuerName = 5;
+
+  // TlsSecretName specifies the name of the secret that contains the TLS certificate for the ingress.
+  // If it does not exist, ClusterIssuerName must be specified for Cert Manager to generate the certificate
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional k8s.io.api.core.v1.SecretReference tlsSecretRef = 6;
 }
 
 message KafkaSpec {

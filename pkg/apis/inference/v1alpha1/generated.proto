@@ -500,36 +500,41 @@ message DriftDetectionSpec {
   // +kubebuilder:validation:Optional
   optional bool genDriftTests = 2;
 
+  // If true, automatically generate drift test to all the columns based on the column type
+  // +kubebuilder:default:=1000
+  // +kubebuilder:validation:Optional
+  optional int32 minPredictions = 3;
+
   // Set the list of columns for drift detection, if empty, watch all the columns.
   // +kubebuilder:validation:Optional
-  repeated string columns = 3;
+  repeated string columns = 4;
 
   // The drift threshold for drift metrics.
   // If empty will be set the modela
-  repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DriftThreshold driftThresholds = 4;
+  repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DriftThreshold driftThresholds = 5;
 
   // Define the tests to run against the predictor.
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite unitTestsTemplate = 5;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite unitTestsTemplate = 6;
 
   // The schedule on which model monitoring computations will be performed
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 6;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 7;
 
   // Reference to a model that will be used for outlier detection. If empty, an outlier detection model.
   // Currently not in use.
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference outlierDetectionModelRef = 7;
+  optional k8s.io.api.core.v1.ObjectReference outlierDetectionModelRef = 8;
 
   // how many feature histograms to keep in memory (as kubernetes objects). Histograms are garbage collected.
   // +kubebuilder:default:=5
   // +kubebuilder:validation:Optional
-  optional int32 maxHistograms = 8;
+  optional int32 maxHistograms = 9;
 
   // The duration in seconds that an histogram is updated before computing drift
   // the default is one hour
   // +kubebuilder:default:=3600
   // +kubebuilder:validation:Optional
-  optional int32 periodSeconds = 9;
+  optional int32 periodSeconds = 10;
 }
 
 message DriftDetectionStatus {

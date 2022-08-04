@@ -2762,6 +2762,11 @@ export class IngressSpec extends jspb.Message {
   getClusterissuername(): string;
   setClusterissuername(value: string): IngressSpec;
 
+  getTlssecretref(): k8s_io_api_core_v1_generated_pb.SecretReference | undefined;
+  setTlssecretref(value?: k8s_io_api_core_v1_generated_pb.SecretReference): IngressSpec;
+  hasTlssecretref(): boolean;
+  clearTlssecretref(): IngressSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): IngressSpec.AsObject;
   static toObject(includeInstance: boolean, msg: IngressSpec): IngressSpec.AsObject;
@@ -2777,6 +2782,7 @@ export namespace IngressSpec {
     rest: boolean,
     ingressclassname: string,
     clusterissuername: string,
+    tlssecretref?: k8s_io_api_core_v1_generated_pb.SecretReference.AsObject,
   }
 }
 
