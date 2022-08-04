@@ -233,6 +233,17 @@ func (fh *FeatureHistogram) DriftAlert(tenantRef *v1.ObjectReference, notifierNa
 	}
 }
 
+// check if we need to close this feature histofram
+func (fh *FeatureHistogram) ShouldClose(maxPredictions int32) bool {
+	// calc total points
+	totalPoints := 0
+	for _, v := range fh.Status.Counts {
+		totalPoints += v
+	}
+	// do not compute drift on training or live histogram
+	return *fh.Spec.Live && totalPoints > maxPredictions
+}
+
 // check if we should compute drift, we should compute drift,
 // if we have no drift parameters, and we pass the historam
 func (fh *FeatureHistogram) ShouldUnitTest() bool {
@@ -243,6 +254,7 @@ func (fh *FeatureHistogram) ShouldUnitTest() bool {
 	return true
 }
 
+// Check if we need to generate unit test for this feature histogram
 func (fh *FeatureHistogram) ShouldGenerateUnitTest() bool {
 	return *fh.Spec.GenUnitTests && len(fh.Spec.UnitTests.Tests) == 0
 }
