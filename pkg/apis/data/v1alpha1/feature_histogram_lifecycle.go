@@ -236,12 +236,7 @@ func (fh *FeatureHistogram) DriftAlert(tenantRef *v1.ObjectReference, notifierNa
 // check if we need to close this feature histofram
 func (fh *FeatureHistogram) ShouldClose(maxPredictions int32) bool {
 	// calc total points
-	totalPoints := int32(0)
-	for _, v := range fh.Status.Counts {
-		totalPoints += v
-	}
-	// do not compute drift on training or live histogram
-	return *fh.Spec.Live && totalPoints > maxPredictions
+	return *fh.Spec.Live && fh.Status.Total > maxPredictions
 }
 
 // check if we should compute drift, we should compute drift,
