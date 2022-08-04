@@ -815,6 +815,10 @@ spec:
                   - type
                   type: object
                 type: array
+              errors:
+                description: Errors predictions
+                format: int32
+                type: integer
               failureMessage:
                 description: In the case of failure, the Dataset resource controller
                   will set this field with a failure message
@@ -862,6 +866,10 @@ spec:
               phase:
                 description: The phase of the feature histogram
                 type: string
+              total:
+                description: Total prediction recorded by this feature histograms
+                format: int32
+                type: integer
               unitTestsResult:
                 description: Test suite for this histogram.
                 properties:

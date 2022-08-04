@@ -2191,10 +2191,18 @@ message FeatureHistogramStatus {
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult unitTestsResult = 9;
 
+  // Total prediction recorded by this feature histograms
+  // +kubebuilder:validation:Optional
+  optional int32 total = 10;
+
+  // Errors predictions
+  // +kubebuilder:validation:Optional
+  optional int32 errors = 11;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated FeatureHistogramCondition conditions = 10;
+  repeated FeatureHistogramCondition conditions = 12;
 }
 
 // +kubebuilder:object:root=true

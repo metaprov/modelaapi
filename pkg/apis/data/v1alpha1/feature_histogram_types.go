@@ -170,10 +170,16 @@ type FeatureHistogramStatus struct {
 	// Test suite for this histogram.
 	//+kubebuilder:validation:Optional
 	UnitTestsResult catalog.TestSuiteResult `json:"unitTestsResult,omitempty" protobuf:"bytes,9,opt,name=unitTestsResult"`
+	// Total prediction recorded by this feature histograms
+	//+kubebuilder:validation:Optional
+	Total int32 `json:"total,omitempty" protobuf:"varint,10,opt,name=total"`
+	// Errors predictions
+	//+kubebuilder:validation:Optional
+	Errors int32 `json:"errors,omitempty" protobuf:"varint,11,opt,name=errors"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []FeatureHistogramCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,10,rep,name=conditions"`
+	Conditions []FeatureHistogramCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,12,rep,name=conditions"`
 }
 
 // Define a threshold

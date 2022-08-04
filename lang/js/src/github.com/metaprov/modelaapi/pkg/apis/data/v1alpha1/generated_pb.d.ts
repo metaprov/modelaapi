@@ -3008,6 +3008,12 @@ export class FeatureHistogramStatus extends jspb.Message {
   hasUnittestsresult(): boolean;
   clearUnittestsresult(): FeatureHistogramStatus;
 
+  getTotal(): number;
+  setTotal(value: number): FeatureHistogramStatus;
+
+  getErrors(): number;
+  setErrors(value: number): FeatureHistogramStatus;
+
   getConditionsList(): Array<FeatureHistogramCondition>;
   setConditionsList(value: Array<FeatureHistogramCondition>): FeatureHistogramStatus;
   clearConditionsList(): FeatureHistogramStatus;
@@ -3031,6 +3037,8 @@ export namespace FeatureHistogramStatus {
     failurereason: string,
     failuremessage: string,
     unittestsresult?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
+    total: number,
+    errors: number,
     conditionsList: Array<FeatureHistogramCondition.AsObject>,
   }
 }

@@ -236,7 +236,7 @@ func (fh *FeatureHistogram) DriftAlert(tenantRef *v1.ObjectReference, notifierNa
 // check if we need to close this feature histofram
 func (fh *FeatureHistogram) ShouldClose(maxPredictions int32) bool {
 	// calc total points
-	totalPoints := 0
+	totalPoints := int32(0)
 	for _, v := range fh.Status.Counts {
 		totalPoints += v
 	}
