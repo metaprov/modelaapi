@@ -633,7 +633,7 @@ func (col *ColumnStatistics) SmallCatTest(thresholds []DriftThreshold, rowCount 
 
 func (col *ColumnStatistics) SmallBoolTest(thresholds []DriftThreshold, rowCount int32) *catalog.DataTestCase {
 	assertion := ModelDriftProportionDiffTestLessThan
-	threshold := col.findThreshold(thresholds, catalog.ModelDriftProportionDiffTestLessThan)
+	threshold := col.findThreshold(thresholds, catalog.ProportionDifference)
 	t := catalog.DataTestTypeDataDrift
 	return &catalog.DataTestCase{
 		Enabled:       util.BoolPtr(true),
