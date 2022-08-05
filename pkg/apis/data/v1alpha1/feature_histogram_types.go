@@ -17,7 +17,7 @@ const (
 	ModelDriftChiSquaredLessThan          catalog.AssertionType = "model-chi-squared-test-less-than"
 	ModelDriftProportionDiffTestLessThan  catalog.AssertionType = "model-proportion-difference-test-less-than"
 	ModelDriftWassersteinDistanceLessThan catalog.AssertionType = "model-wasserstein-distance-less-than"
-	ModelDriftJSDistanceLessThan          catalog.AssertionType = "model-js-distance-less"
+	ModelDriftJSDivergenceLessThan        catalog.AssertionType = "model-js-divergence-less"
 	ModelDriftPSILessThan                 catalog.AssertionType = "model-psi-less-than"
 	ModelDriftKLDivergenceLessThan        catalog.AssertionType = "model-kl-divergence-less-than"
 )

@@ -521,7 +521,7 @@ const (
 	WassersteinDistance  Metric = "wasserstein-distance"
 	PSI                  Metric = "psi"
 	KLDivergence         Metric = "kl-divergence"
-	JSDistance           Metric = "jensen-shannon-distance"
+	JSDivergence         Metric = "js-divergence"
 
 	NoneMetric Metric = "none"
 )

@@ -9,6 +9,7 @@ package v1alpha1
 import (
 	"fmt"
 
+	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/apis/data"
 	infra "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/util"
@@ -551,4 +552,145 @@ func (dataset *Dataset) GetColumn(name string) (*ColumnStatistics, error) {
 	}
 	return nil, fmt.Errorf("column not found %s", name)
 
+}
+
+// Based on the column type generate the drift test case
+func (col *ColumnStatistics) GenDriftTestCase(thresholds []DriftThreshold, rowCount int32) *catalog.DataTestCase {
+	// small data
+	if rowCount < 1000 && col.DataType == catalog.DataTypeNumber {
+		return col.SmallNumericTest(thresholds, rowCount)
+	}
+	if rowCount < 1000 && col.DataType == catalog.DataTypeCategorical {
+		return col.SmallCatTest(thresholds, rowCount)
+	}
+	if rowCount < 1000 && col.DataType == catalog.DataTypeBoolean {
+		return col.SmallBoolTest(thresholds, rowCount)
+	}
+	if rowCount >= 1000 && col.DataType == catalog.DataTypeNumber {
+		return col.BigNumericTest(thresholds, rowCount)
+	}
+	if rowCount >= 1000 && col.DataType == catalog.DataTypeCategorical {
+		return col.BigCatTest(thresholds, rowCount)
+	}
+	if rowCount >= 1000 && col.DataType == catalog.DataTypeBoolean {
+		return col.BigBoolTest(thresholds, rowCount)
+	}
+
+	return &catalog.DataTestCase{}
+
+	// large data
+}
+
+// TwoSampleKSTest      Metric = "two-sample-ks-test"
+// ChiSqrTest           Metric = "chi-squared-test"
+// ProportionDifference Metric = "proportion-difference"
+// WassersteinDistance  Metric = "wasserstein-distance"
+// PSI                  Metric = "psi"
+// KLDivergence         Metric = "kl-divergence"
+// JSDistance           Metric = "jensen-shannon-distance"
+
+func (col *ColumnStatistics) findThreshold(thresholds []DriftThreshold, metric catalog.Metric) float64 {
+	for _, v := range thresholds {
+		if v.Metric == metric {
+			return v.Value
+		}
+	}
+	return 0.3
+}
+
+func (col *ColumnStatistics) SmallNumericTest(thresholds []DriftThreshold, rowCount int32) *catalog.DataTestCase {
+	assertion := ModelDriftTwoSampleKSTestLessThan
+	threshold := col.findThreshold(thresholds, catalog.TwoSampleKSTest)
+	t := catalog.DataTestTypeDataDrift
+	return &catalog.DataTestCase{
+		Enabled:       util.BoolPtr(true),
+		Name:          string(assertion) + "/" + col.Name,
+		AssertThat:    assertion,
+		Column:        &col.Name,
+		Type:          t,
+		Metric:        catalog.TwoSampleKSTest,
+		ExpectedValue: util.Float64Ptr(threshold),
+		Generated:     util.BoolPtr(true),
+	}
+
+}
+
+func (col *ColumnStatistics) SmallCatTest(thresholds []DriftThreshold, rowCount int32) *catalog.DataTestCase {
+	assertion := ModelDriftChiSquaredLessThan
+	threshold := col.findThreshold(thresholds, catalog.ChiSqrTest)
+	t := catalog.DataTestTypeDataDrift
+	return &catalog.DataTestCase{
+		Enabled:       util.BoolPtr(true),
+		Name:          string(assertion) + "/" + col.Name,
+		AssertThat:    assertion,
+		Column:        &col.Name,
+		Type:          t,
+		Metric:        catalog.ChiSqrTest,
+		ExpectedValue: util.Float64Ptr(threshold),
+		Generated:     util.BoolPtr(true),
+	}
+}
+
+func (col *ColumnStatistics) SmallBoolTest(thresholds []DriftThreshold, rowCount int32) *catalog.DataTestCase {
+	assertion := ModelDriftProportionDiffTestLessThan
+	threshold := col.findThreshold(thresholds, catalog.ModelDriftProportionDiffTestLessThan)
+	t := catalog.DataTestTypeDataDrift
+	return &catalog.DataTestCase{
+		Enabled:       util.BoolPtr(true),
+		Name:          string(assertion) + "/" + col.Name,
+		AssertThat:    assertion,
+		Column:        &col.Name,
+		Type:          t,
+		Metric:        catalog.ProportionDifference,
+		ExpectedValue: util.Float64Ptr(threshold),
+		Generated:     util.BoolPtr(true),
+	}
+}
+
+func (col *ColumnStatistics) BigNumericTest(thresholds []DriftThreshold, rowCount int32) *catalog.DataTestCase {
+	assertion := ModelDriftWassersteinDistanceLessThan
+	threshold := col.findThreshold(thresholds, catalog.WassersteinDistance)
+	t := catalog.DataTestTypeDataDrift
+	return &catalog.DataTestCase{
+		Enabled:       util.BoolPtr(true),
+		Name:          string(assertion) + "/" + col.Name,
+		AssertThat:    assertion,
+		Column:        &col.Name,
+		Type:          t,
+		Metric:        catalog.WassersteinDistance,
+		ExpectedValue: util.Float64Ptr(threshold),
+		Generated:     util.BoolPtr(true),
+	}
+}
+
+func (col *ColumnStatistics) BigCatTest(thresholds []DriftThreshold, rowCount int32) *catalog.DataTestCase {
+	assertion := ModelDriftJSDivergenceLessThan
+	threshold := col.findThreshold(thresholds, catalog.JSDivergence)
+	t := catalog.DataTestTypeDataDrift
+	return &catalog.DataTestCase{
+		Enabled:       util.BoolPtr(true),
+		Name:          string(assertion) + "/" + col.Name,
+		AssertThat:    assertion,
+		Column:        &col.Name,
+		Type:          t,
+		Metric:        catalog.JSDivergence,
+		ExpectedValue: util.Float64Ptr(threshold),
+		Generated:     util.BoolPtr(true),
+	}
+}
+
+func (col *ColumnStatistics) BigBoolTest(thresholds []DriftThreshold, rowCount int32) *catalog.DataTestCase {
+	assertion := ModelDriftJSDivergenceLessThan
+	threshold := col.findThreshold(thresholds, catalog.ModelDriftJSDivergenceLessThan)
+	t := catalog.DataTestTypeDataDrift
+	return &catalog.DataTestCase{
+		Enabled:       util.BoolPtr(true),
+		Name:          string(assertion) + "/" + col.Name,
+		AssertThat:    assertion,
+		Column:        &col.Name,
+		Type:          t,
+		Metric:        catalog.JSDivergence,
+		ExpectedValue: util.Float64Ptr(threshold),
+		Generated:     util.BoolPtr(true),
+	}
 }
