@@ -681,7 +681,7 @@ func (col *ColumnStatistics) BigCatTest(thresholds []DriftThreshold, rowCount in
 
 func (col *ColumnStatistics) BigBoolTest(thresholds []DriftThreshold, rowCount int32) *catalog.DataTestCase {
 	assertion := ModelDriftJSDivergenceLessThan
-	threshold := col.findThreshold(thresholds, catalog.ModelDriftJSDivergenceLessThan)
+	threshold := col.findThreshold(thresholds, catalog.JSDivergence)
 	t := catalog.DataTestTypeDataDrift
 	return &catalog.DataTestCase{
 		Enabled:       util.BoolPtr(true),
