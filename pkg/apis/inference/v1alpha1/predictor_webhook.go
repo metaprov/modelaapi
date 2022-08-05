@@ -61,7 +61,7 @@ func (predictor *Predictor) Default() {
 				Value:  0.3,
 			},
 			{
-				Metric: catalog.JSDistance,
+				Metric: catalog.JSDivergence,
 				Value:  0.3,
 			},
 			{
