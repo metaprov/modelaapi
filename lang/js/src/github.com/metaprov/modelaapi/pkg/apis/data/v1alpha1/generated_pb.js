@@ -31001,11 +31001,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.
     columnsList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
     sourceref: (f = msg.getSourceref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     training: (f = jspb.Message.getBooleanField(msg, 7)) == null ? undefined : f,
-    target: (f = jspb.Message.getBooleanField(msg, 8)) == null ? undefined : f,
     live: (f = jspb.Message.getBooleanField(msg, 9)) == null ? undefined : f,
     start: (f = msg.getStart()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     end: (f = msg.getEnd()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
-    basefeaturehistogram: (f = msg.getBasefeaturehistogram()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
+    baseref: (f = msg.getBaseref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     driftthresholdsList: jspb.Message.toObjectList(msg.getDriftthresholdsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DriftThreshold.toObject, includeInstance),
     syncintervalsec: (f = jspb.Message.getField(msg, 14)) == null ? undefined : f,
@@ -31072,10 +31071,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setTraining(value);
       break;
-    case 8:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setTarget(value);
-      break;
     case 9:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setLive(value);
@@ -31093,7 +31088,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.
     case 12:
       var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
       reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
-      msg.setBasefeaturehistogram(value);
+      msg.setBaseref(value);
       break;
     case 13:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DriftThreshold;
@@ -31185,13 +31180,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.
       f
     );
   }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 8));
-  if (f != null) {
-    writer.writeBool(
-      8,
-      f
-    );
-  }
   f = /** @type {boolean} */ (jspb.Message.getField(message, 9));
   if (f != null) {
     writer.writeBool(
@@ -31215,7 +31203,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
   }
-  f = message.getBasefeaturehistogram();
+  f = message.getBaseref();
   if (f != null) {
     writer.writeMessage(
       12,
@@ -31475,42 +31463,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.
 
 
 /**
- * optional bool target = 8;
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.getTarget = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 8, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.setTarget = function(value) {
-  return jspb.Message.setField(this, 8, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.clearTarget = function() {
-  return jspb.Message.setField(this, 8, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.hasTarget = function() {
-  return jspb.Message.getField(this, 8) != null;
-};
-
-
-/**
  * optional bool live = 9;
  * @return {boolean}
  */
@@ -31621,10 +31573,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.
 
 
 /**
- * optional k8s.io.api.core.v1.ObjectReference baseFeatureHistogram = 12;
+ * optional k8s.io.api.core.v1.ObjectReference baseRef = 12;
  * @return {?proto.k8s.io.api.core.v1.ObjectReference}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.getBasefeaturehistogram = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.getBaseref = function() {
   return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
     jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 12));
 };
@@ -31634,7 +31586,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.
  * @param {?proto.k8s.io.api.core.v1.ObjectReference|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.setBasefeaturehistogram = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.setBaseref = function(value) {
   return jspb.Message.setWrapperField(this, 12, value);
 };
 
@@ -31643,8 +31595,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.clearBasefeaturehistogram = function() {
-  return this.setBasefeaturehistogram(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.clearBaseref = function() {
+  return this.setBaseref(undefined);
 };
 
 
@@ -31652,7 +31604,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.hasBasefeaturehistogram = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.hasBaseref = function() {
   return jspb.Message.getField(this, 12) != null;
 };
 

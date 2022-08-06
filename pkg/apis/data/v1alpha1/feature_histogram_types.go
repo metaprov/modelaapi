@@ -25,11 +25,15 @@ const (
 type FeatureHistogramPhase string
 
 const (
-	FeatureHistogramPhasePending     FeatureHistogramPhase = "Pending"     // when generating
-	FeatureHistogramPhaseUnitTesting FeatureHistogramPhase = "UnitTesting" // when generating
-	FeatureHistogramPhaseUnitTested  FeatureHistogramPhase = "UnitTested"  // when one or more column drifted
-	FeatureHistogramPhaseReady       FeatureHistogramPhase = "Ready"       // when ready and not drift.
-	FeatureHistogramPhaseFailed      FeatureHistogramPhase = "Failed"      // failed in the process.
+	FeatureHistogramPhasePending     FeatureHistogramPhase = "Pending"        // when generating
+	FeatureHistogramPhaseLive        FeatureHistogramPhase = "Live"           // when the feature histogram is live. I.e. get updated by predictions
+	FeatureHistogramPhaseExpired     FeatureHistogramPhase = "Expired"        // when the feature histogram is expired. I.e. get updated by predictions
+	FeatureHistogramPhaseGenTest     FeatureHistogramPhase = "GeneratingTest" // when the unit tests are generated
+	FeatureHistogramPhaseReadyToTest FeatureHistogramPhase = "ReadyToTest"    // when the unit tests were generated or the histogram has tests
+	FeatureHistogramPhaseUnitTesting FeatureHistogramPhase = "UnitTesting"    // when running the unit tests
+	FeatureHistogramPhaseDrift       FeatureHistogramPhase = "Drift"          // when one or more column drifted
+	FeatureHistogramPhaseReady       FeatureHistogramPhase = "Ready"          // when ready and not drift.
+	FeatureHistogramPhaseFailed      FeatureHistogramPhase = "Failed"         // failed in the process.
 )
 
 // FeatureHistogramConditionType is the condition of the feature
@@ -37,10 +41,9 @@ type FeatureHistogramConditionType string
 
 /// FeatureHistogram Condition
 const (
-	FeatureHistogramReady         FeatureHistogramConditionType = "Ready"
-	FeatureHistogramUnitTested    FeatureHistogramConditionType = "UnitTested"
-	FeatureHistogramDriftDetected FeatureHistogramConditionType = "DriftDetected"
-	FeatureHistogramSaved         FeatureHistogramConditionType = "Saved"
+	FeatureHistogramReady      FeatureHistogramConditionType = "Ready"
+	FeatureHistogramUnitTested FeatureHistogramConditionType = "UnitTested"
+	FeatureHistogramSaved      FeatureHistogramConditionType = "Saved"
 )
 
 // FeatureHistogramCondition describes the state of a deployment at a certain point.
@@ -109,10 +112,6 @@ type FeatureHistogramSpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Training *bool `json:"training,omitempty" protobuf:"varint,7,opt,name=training"`
-	// If true, this is a feature histogram of the target column
-	// +kubebuilder:default:=false
-	// +kubebuilder:validation:Optional
-	Target *bool `json:"target,omitempty" protobuf:"varint,8,opt,name=target"`
 	// If true, this is an active feature histogram. This feature histogram is being live updated by the predictorlet
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
@@ -126,7 +125,7 @@ type FeatureHistogramSpec struct {
 	End *metav1.Time `json:"end,omitempty" protobuf:"bytes,11,opt,name=end"`
 	// The histogram to compare to for data drift calc
 	// +kubebuilder:validation:Optional
-	BaseFeatureHistogram v1.ObjectReference `json:"baseFeatureHistogram,omitempty" protobuf:"bytes,12,opt,name=baseFeatureHistogram"`
+	BaseRef v1.ObjectReference `json:"baseRef,omitempty" protobuf:"bytes,12,opt,name=baseRef"`
 	// Define drift thresholds. This is usually assigned from the predictor.
 	// +kubebuilder:validation:Optional
 	DriftThresholds []DriftThreshold `json:"driftThresholds" protobuf:"bytes,13,rep,name=driftThresholds"`

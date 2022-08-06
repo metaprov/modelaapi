@@ -71,7 +71,7 @@ spec:
                   histograms to etcd Default is one minute.
                 format: int32
                 type: integer
-              baseFeatureHistogram:
+              baseRef:
                 description: The histogram to compare to for data drift calc
                 properties:
                   apiVersion:
@@ -277,10 +277,6 @@ spec:
                   dataset histogram this is set to the creation time of the dataset
                 format: date-time
                 type: string
-              target:
-                default: false
-                description: If true, this is a feature histogram of the target column
-                type: boolean
               training:
                 default: false
                 description: If true, this is a training dataset feature histogram.

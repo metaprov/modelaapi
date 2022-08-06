@@ -2910,9 +2910,6 @@ export class FeatureHistogramSpec extends jspb.Message {
   getTraining(): boolean;
   setTraining(value: boolean): FeatureHistogramSpec;
 
-  getTarget(): boolean;
-  setTarget(value: boolean): FeatureHistogramSpec;
-
   getLive(): boolean;
   setLive(value: boolean): FeatureHistogramSpec;
 
@@ -2926,10 +2923,10 @@ export class FeatureHistogramSpec extends jspb.Message {
   hasEnd(): boolean;
   clearEnd(): FeatureHistogramSpec;
 
-  getBasefeaturehistogram(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setBasefeaturehistogram(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): FeatureHistogramSpec;
-  hasBasefeaturehistogram(): boolean;
-  clearBasefeaturehistogram(): FeatureHistogramSpec;
+  getBaseref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setBaseref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): FeatureHistogramSpec;
+  hasBaseref(): boolean;
+  clearBaseref(): FeatureHistogramSpec;
 
   getDriftthresholdsList(): Array<DriftThreshold>;
   setDriftthresholdsList(value: Array<DriftThreshold>): FeatureHistogramSpec;
@@ -2963,11 +2960,10 @@ export namespace FeatureHistogramSpec {
     columnsList: Array<string>,
     sourceref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     training: boolean,
-    target: boolean,
     live: boolean,
     start?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     end?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    basefeaturehistogram?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    baseref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     driftthresholdsList: Array<DriftThreshold.AsObject>,
     syncintervalsec: number,
     unittests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,

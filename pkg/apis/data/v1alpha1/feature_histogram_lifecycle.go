@@ -129,6 +129,126 @@ func (feature *FeatureHistogram) GetCond(t FeatureHistogramConditionType) Featur
 
 }
 
+///////////////////////////// Feature histogram states /////////////////////////
+// Live , Expired, GenTest, ReadyToTest,Testing,Ready,Drifted
+////////////////////////////////////////////////////////////////////////////////
+
+// MarkLive
+func (feature *FeatureHistogram) MarkLive() {
+	feature.Spec.Live = util.BoolPtr(true)
+	feature.CreateOrUpdateCond(FeatureHistogramCondition{
+		Type:   FeatureHistogramReady,
+		Status: v1.ConditionFalse,
+		Reason: string(FeatureHistogramPhaseLive),
+	})
+	feature.Status.Phase = FeatureHistogramPhaseLive
+}
+
+func (feature *FeatureHistogram) Drifted() bool {
+	for _, v := range feature.Status.Columns {
+		if *v.Drift {
+			return true
+		}
+	}
+	return false
+}
+
+func (feature *FeatureHistogram) MarkDrift() {
+	feature.Spec.Live = util.BoolPtr(true)
+	feature.CreateOrUpdateCond(FeatureHistogramCondition{
+		Type:   FeatureHistogramReady,
+		Status: v1.ConditionFalse,
+		Reason: string(FeatureHistogramPhaseDrift),
+	})
+	feature.Status.Phase = FeatureHistogramPhaseDrift
+}
+
+func (feature FeatureHistogram) Live() bool {
+	return feature.GetCond(FeatureHistogramReady).Status == v1.ConditionFalse &&
+		feature.GetCond(FeatureHistogramReady).Reason == string(FeatureHistogramPhaseLive)
+}
+
+// Mark Expired
+func (feature *FeatureHistogram) MarkExpired() {
+	feature.CreateOrUpdateCond(FeatureHistogramCondition{
+		Type:   FeatureHistogramReady,
+		Status: v1.ConditionFalse,
+		Reason: string(FeatureHistogramPhaseLive),
+	})
+	feature.Status.Phase = FeatureHistogramPhaseExpired
+}
+
+// MarkGenTest
+func (feature *FeatureHistogram) MarkGenTest() {
+	feature.CreateOrUpdateCond(FeatureHistogramCondition{
+		Type:   FeatureHistogramReady,
+		Status: v1.ConditionFalse,
+		Reason: string(FeatureHistogramPhaseGenTest),
+	})
+	feature.Status.Phase = FeatureHistogramPhaseGenTest
+}
+
+// MarkReadyToTest
+func (feature *FeatureHistogram) MarkReadyToTest() {
+	feature.CreateOrUpdateCond(FeatureHistogramCondition{
+		Type:   FeatureHistogramReady,
+		Status: v1.ConditionFalse,
+		Reason: string(FeatureHistogramPhaseReadyToTest),
+	})
+	feature.Status.Phase = FeatureHistogramPhaseReadyToTest
+}
+
+// MarkUnitTesting
+func (fh *FeatureHistogram) MarkUnitTesting() {
+
+	fh.CreateOrUpdateCond(FeatureHistogramCondition{
+		Type:   FeatureHistogramUnitTested,
+		Status: v1.ConditionFalse,
+		Reason: string(FeatureHistogramPhaseUnitTesting),
+	})
+	fh.Status.Phase = FeatureHistogramPhaseUnitTesting
+
+}
+
+func (fh *FeatureHistogram) MarkUnitTested() {
+
+	fh.CreateOrUpdateCond(FeatureHistogramCondition{
+		Type:   FeatureHistogramUnitTested,
+		Status: v1.ConditionTrue,
+		Reason: "UnitTesting",
+	})
+
+}
+
+func (fh *FeatureHistogram) MarkUnitTestFailed(msg string, stop bool) {
+	fh.CreateOrUpdateCond(FeatureHistogramCondition{
+		Type:    FeatureHistogramUnitTested,
+		Status:  v1.ConditionFalse,
+		Reason:  string(FeatureHistogramPhaseFailed),
+		Message: "Failed to unit test." + msg,
+	})
+	fh.CreateOrUpdateCond(FeatureHistogramCondition{
+		Type:    FeatureHistogramReady,
+		Status:  v1.ConditionFalse,
+		Reason:  string(FeatureHistogramPhaseFailed),
+		Message: "Failed to unit test." + msg,
+	})
+
+	fh.Status.Phase = FeatureHistogramPhaseFailed
+	fh.Status.FailureMessage = msg
+
+}
+
+func (fh *FeatureHistogram) UnitTested() bool {
+	return fh.GetCond(FeatureHistogramUnitTested).Status == v1.ConditionTrue
+}
+
+// MarkReady
+
+// MarkFailed
+
+// MarkDrifted
+
 func (feature *FeatureHistogram) IsReady() bool {
 	return feature.GetCond(FeatureHistogramReady).Status == v1.ConditionTrue
 }
@@ -156,6 +276,7 @@ func (feature *FeatureHistogram) MarkReady() {
 		Type:   FeatureHistogramReady,
 		Status: v1.ConditionTrue,
 	})
+	feature.Status.Phase = FeatureHistogramPhaseReady
 }
 
 func (feature *FeatureHistogram) MarkArchived() {
@@ -178,7 +299,6 @@ func (feature *FeatureHistogram) MarkFailed(msg string) {
 	})
 	feature.Status.Phase = FeatureHistogramPhaseFailed
 	feature.Status.FailureMessage = msg
-
 }
 
 func (fh *FeatureHistogram) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *string, err error) *infra.Alert {
@@ -279,36 +399,11 @@ func (fh *FeatureHistogram) DefaultDriftThreshold(metric catalog.Metric) float64
 
 // -------------------- Unit testing
 
-func (fh *FeatureHistogram) MarkUnitTesting() {
-	fh.Status.Phase = FeatureHistogramPhaseFailed
-	fh.CreateOrUpdateCond(FeatureHistogramCondition{
-		Type:   FeatureHistogramUnitTested,
-		Status: v1.ConditionFalse,
-		Reason: "UnitTesting",
-	})
-
-}
-
-func (fh *FeatureHistogram) MarkUnitTested() {
-
-	fh.CreateOrUpdateCond(FeatureHistogramCondition{
-		Type:   FeatureHistogramUnitTested,
-		Status: v1.ConditionTrue,
-		Reason: "UnitTesting",
-	})
-
-}
-
-func (fh *FeatureHistogram) MarkUnitTestFailed(msg string, stop bool) {
-	fh.CreateOrUpdateCond(FeatureHistogramCondition{
-		Type:    FeatureHistogramUnitTested,
-		Status:  v1.ConditionFalse,
-		Reason:  "FailedToUnitTest",
-		Message: "Failed to unit test." + msg,
-	})
-
-}
-
-func (fh *FeatureHistogram) UnitTested() bool {
-	return fh.GetCond(FeatureHistogramUnitTested).Status == v1.ConditionTrue
+// Return true if the feature histogram is expired
+func (fh *FeatureHistogram) Expired() bool {
+	now := metav1.Now()
+	if fh.Spec.End == nil {
+		return false
+	}
+	return fh.Spec.End.Before(&now)
 }

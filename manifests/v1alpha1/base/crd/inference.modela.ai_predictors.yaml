@@ -31,10 +31,10 @@ spec:
     - jsonPath: .spec.servingsiteRef.name
       name: Serving Site
       type: string
-    - jsonPath: .spec.port
+    - jsonPath: .spec.access.port
       name: Port
       type: integer
-    - jsonPath: .spec.accessType
+    - jsonPath: .spec.access.accessType
       name: Access
       type: string
     - jsonPath: .spec.replicas

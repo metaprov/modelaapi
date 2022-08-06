@@ -2335,11 +2335,6 @@ func (in *FeatureHistogramSpec) DeepCopyInto(out *FeatureHistogramSpec) {
 		*out = new(bool)
 		**out = **in
 	}
-	if in.Target != nil {
-		in, out := &in.Target, &out.Target
-		*out = new(bool)
-		**out = **in
-	}
 	if in.Live != nil {
 		in, out := &in.Live, &out.Live
 		*out = new(bool)
@@ -2353,7 +2348,7 @@ func (in *FeatureHistogramSpec) DeepCopyInto(out *FeatureHistogramSpec) {
 		in, out := &in.End, &out.End
 		*out = (*in).DeepCopy()
 	}
-	out.BaseFeatureHistogram = in.BaseFeatureHistogram
+	out.BaseRef = in.BaseRef
 	if in.DriftThresholds != nil {
 		in, out := &in.DriftThresholds, &out.DriftThresholds
 		*out = make([]DriftThreshold, len(*in))
