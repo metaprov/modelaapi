@@ -581,14 +581,6 @@ func (col *ColumnStatistics) GenDriftTestCase(thresholds []DriftThreshold, rowCo
 	// large data
 }
 
-// TwoSampleKSTest      Metric = "two-sample-ks-test"
-// ChiSqrTest           Metric = "chi-squared-test"
-// ProportionDifference Metric = "proportion-difference"
-// WassersteinDistance  Metric = "wasserstein-distance"
-// PSI                  Metric = "psi"
-// KLDivergence         Metric = "kl-divergence"
-// JSDistance           Metric = "jensen-shannon-distance"
-
 func (col *ColumnStatistics) findThreshold(thresholds []DriftThreshold, metric catalog.Metric) float64 {
 	for _, v := range thresholds {
 		if v.Metric == metric {

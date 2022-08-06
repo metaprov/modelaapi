@@ -1537,7 +1537,7 @@ spec:
                     - wasserstein-distance
                     - psi
                     - kl-divergence
-                    - jensen-shannon-distance
+                    - js-divergence
                     type: string
                   objective2:
                     default: none
@@ -1626,7 +1626,7 @@ spec:
                     - wasserstein-distance
                     - psi
                     - kl-divergence
-                    - jensen-shannon-distance
+                    - js-divergence
                     type: string
                   pruner:
                     description: Pruner specifies the configuration to run a model
@@ -2374,7 +2374,7 @@ spec:
                       - wasserstein-distance
                       - psi
                       - kl-divergence
-                      - jensen-shannon-distance
+                      - js-divergence
                       type: string
                     type: array
                   featureImportance:
@@ -2966,7 +2966,7 @@ spec:
                           - wasserstein-distance
                           - psi
                           - kl-divergence
-                          - jensen-shannon-distance
+                          - js-divergence
                           type: string
                         name:
                           description: The name of the test case, will be generate

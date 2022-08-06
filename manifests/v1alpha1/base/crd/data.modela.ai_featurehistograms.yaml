@@ -207,7 +207,7 @@ spec:
                       - wasserstein-distance
                       - psi
                       - kl-divergence
-                      - jensen-shannon-distance
+                      - js-divergence
                       type: string
                     value:
                       description: The value of the metric for quantitive observations
@@ -527,7 +527,7 @@ spec:
                           - wasserstein-distance
                           - psi
                           - kl-divergence
-                          - jensen-shannon-distance
+                          - js-divergence
                           type: string
                         name:
                           description: The name of the test case, will be generate
@@ -762,7 +762,7 @@ spec:
                             - wasserstein-distance
                             - psi
                             - kl-divergence
-                            - jensen-shannon-distance
+                            - js-divergence
                             type: string
                           stddev:
                             description: Metric standard diviation for quantative
@@ -1099,7 +1099,7 @@ spec:
                               - wasserstein-distance
                               - psi
                               - kl-divergence
-                              - jensen-shannon-distance
+                              - js-divergence
                               type: string
                             stddev:
                               description: Metric standard diviation for quantative

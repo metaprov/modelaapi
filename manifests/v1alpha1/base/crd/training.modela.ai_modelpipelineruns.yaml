@@ -385,7 +385,7 @@ spec:
                                   - wasserstein-distance
                                   - psi
                                   - kl-divergence
-                                  - jensen-shannon-distance
+                                  - js-divergence
                                   type: string
                                 stddev:
                                   description: Metric standard diviation for quantative
@@ -719,7 +719,7 @@ spec:
                                   - wasserstein-distance
                                   - psi
                                   - kl-divergence
-                                  - jensen-shannon-distance
+                                  - js-divergence
                                   type: string
                                 stddev:
                                   description: Metric standard diviation for quantative
@@ -1028,7 +1028,7 @@ spec:
                                   - wasserstein-distance
                                   - psi
                                   - kl-divergence
-                                  - jensen-shannon-distance
+                                  - js-divergence
                                   type: string
                                 stddev:
                                   description: Metric standard diviation for quantative
@@ -1348,7 +1348,7 @@ spec:
                                   - wasserstein-distance
                                   - psi
                                   - kl-divergence
-                                  - jensen-shannon-distance
+                                  - js-divergence
                                   type: string
                                 stddev:
                                   description: Metric standard diviation for quantative
@@ -1687,7 +1687,7 @@ spec:
                                   - wasserstein-distance
                                   - psi
                                   - kl-divergence
-                                  - jensen-shannon-distance
+                                  - js-divergence
                                   type: string
                                 stddev:
                                   description: Metric standard diviation for quantative
@@ -2006,7 +2006,7 @@ spec:
                                   - wasserstein-distance
                                   - psi
                                   - kl-divergence
-                                  - jensen-shannon-distance
+                                  - js-divergence
                                   type: string
                                 stddev:
                                   description: Metric standard diviation for quantative
@@ -2320,7 +2320,7 @@ spec:
                                   - wasserstein-distance
                                   - psi
                                   - kl-divergence
-                                  - jensen-shannon-distance
+                                  - js-divergence
                                   type: string
                                 stddev:
                                   description: Metric standard diviation for quantative
@@ -2635,7 +2635,7 @@ spec:
                                   - wasserstein-distance
                                   - psi
                                   - kl-divergence
-                                  - jensen-shannon-distance
+                                  - js-divergence
                                   type: string
                                 stddev:
                                   description: Metric standard diviation for quantative
