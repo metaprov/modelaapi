@@ -353,10 +353,10 @@ func (fh *FeatureHistogram) DriftAlert(tenantRef *v1.ObjectReference, notifierNa
 	}
 }
 
-// check if we need to close this feature histofram
-func (fh *FeatureHistogram) ShouldClose(maxPredictions int32) bool {
+// check if we need to expire the feature histogram
+func (fh *FeatureHistogram) ShouldExpire(maxPredictions int32) bool {
 	// calc total points
-	return *fh.Spec.Live && fh.Status.Total > maxPredictions
+	return *fh.Spec.Live && fh.Status.Total > maxPredictions && fh.Expired()
 }
 
 // check if we should compute drift, we should compute drift,
