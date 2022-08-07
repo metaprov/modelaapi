@@ -591,7 +591,10 @@ func (dataset *Dataset) ConstuctFeatureHistogram() (*FeatureHistogram, error) {
 func (dataset *Dataset) DriftColumnNames() []string {
 	result := make([]string, 0)
 	for _, v := range dataset.Status.Statistics.Columns {
-		result = append(result, v.Name)
+		if !v.Target {
+			result = append(result, v.Name)
+		}
+
 	}
 	return result
 }

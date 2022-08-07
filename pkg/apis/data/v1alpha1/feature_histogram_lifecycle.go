@@ -266,7 +266,7 @@ func ParseFeatureHistogramYaml(content []byte) (*FeatureHistogram, error) {
 	if err != nil {
 		return nil, err
 	}
-	r := requiredObj.(*FeatureHistogram)
+	r := requiredObj.(*FeatureHistogram) 
 	return r, nil
 }
 
