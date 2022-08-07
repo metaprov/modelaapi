@@ -535,7 +535,7 @@ func (dataset *Dataset) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *
 	return result
 }
 
-func (dataset *Dataset) ContructFeatureHistogram() (*FeatureHistogram, error) {
+func (dataset *Dataset) ConstuctFeatureHistogram() (*FeatureHistogram, error) {
 	// get the columns that we need to track drift for
 	columns := dataset.DriftColumnNames()
 
