@@ -17,6 +17,7 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/client-go/kubernetes/scheme"
+	"k8s.io/klog/v2"
 	ctrl "sigs.k8s.io/controller-runtime"
 )
 
@@ -532,6 +533,58 @@ func (dataset *Dataset) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *
 		result.Spec.Fields["Completion Time"] = dataset.Status.EndTime.Format("01/2/2006 15:04:05")
 	}
 	return result
+}
+
+func (dataset *Dataset) ContructFeatureHistogram() (*FeatureHistogram, error) {
+	// get the columns that we need to track drift for
+	columns := dataset.DriftColumnNames()
+
+	// create the actual column histogram for the status.
+	histograms := make([]ColumnHistogram, 0)
+	// iterate over all the columns and build the feature histograms
+	for _, c := range columns {
+		column, err := dataset.GetColumn(c)
+		if err != nil {
+			klog.ErrorS(err, "cannot find dataset feature", "column", c)
+			return nil, err
+		}
+		each := ColumnHistogram{
+			Name:      c,
+			Histogram: column.Histogram,
+		}
+		histograms = append(histograms, each)
+	}
+
+	// create a training feature histogram for the dataset.
+	result := &FeatureHistogram{
+		ObjectMeta: metav1.ObjectMeta{
+			Name:      dataset.Name,
+			Namespace: dataset.Namespace,
+		},
+		Spec: FeatureHistogramSpec{
+			Owner:       dataset.Spec.Owner,
+			VersionName: dataset.Spec.VersionName,
+			Description: util.StrPtr(""),
+			Columns:     columns,
+			SourceRef: &v1.ObjectReference{
+				Namespace: dataset.Namespace,
+				Name:      dataset.Name,
+			},
+			Training: util.BoolPtr(true),
+			Live:     util.BoolPtr(false),
+			BaseRef:  v1.ObjectReference{},
+		},
+		Status: FeatureHistogramStatus{
+			ObservedGeneration: 0,
+			Columns:            histograms,
+			LastUpdated:        nil,
+			Logs:               catalog.Logs{},
+			Phase:              "",
+		},
+	}
+
+	return result, nil
+
 }
 
 // return the list of drift. Currently return the drift columns
