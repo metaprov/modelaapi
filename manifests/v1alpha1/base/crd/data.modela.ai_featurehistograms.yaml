@@ -21,8 +21,8 @@ spec:
   scope: Namespaced
   versions:
   - additionalPrinterColumns:
-    - jsonPath: .status.conditions[?(@.type=="Ready")].status
-      name: Ready
+    - jsonPath: .status.phase
+      name: Status
       type: string
     - jsonPath: .spec.owner
       name: Owner
