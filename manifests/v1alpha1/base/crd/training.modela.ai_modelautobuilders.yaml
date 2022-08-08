@@ -943,7 +943,7 @@ spec:
                             - year
                             type: string
                           interval:
-                            default: false
+                            default: 1
                             format: int32
                             type: integer
                           levels:

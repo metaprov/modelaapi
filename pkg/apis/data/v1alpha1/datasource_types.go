@@ -310,7 +310,6 @@ type TimeSeriesSchema struct {
 	// +kubebuilder:validation:Optional
 	Freq catalog.Freq `json:"freq,omitempty" protobuf:"bytes,1,opt,name=freq"`
 	// +kubebuilder:default:=1
-	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Interval *int32 `json:"interval,omitempty" protobuf:"bytes,2,opt,name=interval"`
 	// The holiday which should be taken into account
