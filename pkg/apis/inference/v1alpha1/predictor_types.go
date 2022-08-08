@@ -115,7 +115,7 @@ type PredictionLoggingSpec struct {
 	BackupFreqSeconds *int32 `json:"backupFreqSeconds,omitempty" protobuf:"varint,4,opt,name=backupFreqSeconds"`
 	// Reference to backup location.
 	// +kubebuilder:validation:Optional
-	BackupConnectionRef v1.ObjectReference `json:"backupConnectionRef,omitempty" protobuf:"varint,5,opt,name=backupConnectionRef"`
+	BackupConnectionRef v1.ObjectReference `json:"backupConnectionRef,omitempty" protobuf:"bytes,5,opt,name=backupConnectionRef"`
 	// Target location of the serving dataset
 	// +kubebuilder:validation:Optional
 	Location data.DataLocation `json:"location,omitempty" protobuf:"bytes,6,opt,name=location"`

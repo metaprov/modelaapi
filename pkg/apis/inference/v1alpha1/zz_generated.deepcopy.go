@@ -1174,6 +1174,12 @@ func (in *PredictionLoggingSpec) DeepCopyInto(out *PredictionLoggingSpec) {
 		*out = new(int32)
 		**out = **in
 	}
+	if in.BackupFreqSeconds != nil {
+		in, out := &in.BackupFreqSeconds, &out.BackupFreqSeconds
+		*out = new(int32)
+		**out = **in
+	}
+	out.BackupConnectionRef = in.BackupConnectionRef
 	in.Location.DeepCopyInto(&out.Location)
 }
 
@@ -1210,7 +1216,8 @@ func (in *PredictionSpec) DeepCopyInto(out *PredictionSpec) {
 		*out = new(bool)
 		**out = **in
 	}
-	out.InputRef = in.InputRef
+	out.DataSourceRef = in.DataSourceRef
+	in.Input.DeepCopyInto(&out.Input)
 	in.Output.DeepCopyInto(&out.Output)
 	if in.CreateDataset != nil {
 		in, out := &in.CreateDataset, &out.CreateDataset
