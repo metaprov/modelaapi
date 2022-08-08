@@ -109,9 +109,16 @@ type PredictionLoggingSpec struct {
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
 	Rows *int32 `json:"rows,omitempty" protobuf:"varint,3,opt,name=rows"`
+	// Backup Frequency seconds.
+	// +kubebuilder:default:=0
+	// +kubebuilder:validation:Optional
+	BackupFreqSeconds *int32 `json:"backupFreqSeconds,omitempty" protobuf:"varint,4,opt,name=backupFreqSeconds"`
+	// Reference to backup location.
+	// +kubebuilder:validation:Optional
+	BackupConnectionRef v1.ObjectReference `json:"backupConnectionRef,omitempty" protobuf:"varint,5,opt,name=backupConnectionRef"`
 	// Target location of the serving dataset
 	// +kubebuilder:validation:Optional
-	Location data.DataLocation `json:"location,omitempty" protobuf:"bytes,4,opt,name=location"`
+	Location data.DataLocation `json:"location,omitempty" protobuf:"bytes,6,opt,name=location"`
 }
 
 // ProgressiveSpec defines the specification to progressively deploy a model to production

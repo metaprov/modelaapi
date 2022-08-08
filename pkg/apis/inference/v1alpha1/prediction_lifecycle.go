@@ -150,6 +150,43 @@ func (prediction *Prediction) MarkFailed(msg string) {
 	prediction.Status.FailureMessage = util.StrPtr(msg)
 }
 
+// Mark Expired
+func (prediction *Prediction) MarkPending() {
+	prediction.CreateOrUpdateCond(PredictionCondition{
+		Type:   PredictionCompleted,
+		Status: v1.ConditionFalse,
+		Reason: string(PredictionPhasePending),
+	})
+	prediction.Status.Phase = PredictionPhasePending
+}
+
+func (prediction *Prediction) MarkCreatingDataset() {
+	prediction.CreateOrUpdateCond(PredictionCondition{
+		Type:   PredictionCompleted,
+		Status: v1.ConditionFalse,
+		Reason: string(PredictionPhaseCreatingDataset),
+	})
+	prediction.Status.Phase = PredictionPhaseCreatingDataset
+}
+
+func (prediction *Prediction) MarkWaitingForDataset() {
+	prediction.CreateOrUpdateCond(PredictionCondition{
+		Type:   PredictionCompleted,
+		Status: v1.ConditionFalse,
+		Reason: string(PredictionPhaseWaitingForDataset),
+	})
+	prediction.Status.Phase = PredictionPhaseWaitingForDataset
+}
+
+func (prediction *Prediction) MarkDetectingDrift() {
+	prediction.CreateOrUpdateCond(PredictionCondition{
+		Type:   PredictionCompleted,
+		Status: v1.ConditionFalse,
+		Reason: string(PredictionPhaseDetectingDrift),
+	})
+	prediction.Status.Phase = PredictionPhaseDetectingDrift
+}
+
 func (prediction *Prediction) MarkCompleted() {
 	prediction.CreateOrUpdateCond(PredictionCondition{
 		Type:   PredictionCompleted,

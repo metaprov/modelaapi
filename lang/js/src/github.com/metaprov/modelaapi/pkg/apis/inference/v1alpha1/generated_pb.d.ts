@@ -1365,6 +1365,14 @@ export class PredictionLoggingSpec extends jspb.Message {
   getRows(): number;
   setRows(value: number): PredictionLoggingSpec;
 
+  getBackupfreqseconds(): number;
+  setBackupfreqseconds(value: number): PredictionLoggingSpec;
+
+  getBackupconnectionref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setBackupconnectionref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): PredictionLoggingSpec;
+  hasBackupconnectionref(): boolean;
+  clearBackupconnectionref(): PredictionLoggingSpec;
+
   getLocation(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
   setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): PredictionLoggingSpec;
   hasLocation(): boolean;
@@ -1383,6 +1391,8 @@ export namespace PredictionLoggingSpec {
     enabled: boolean,
     samplepercent: number,
     rows: number,
+    backupfreqseconds: number,
+    backupconnectionref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     location?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
   }
 }

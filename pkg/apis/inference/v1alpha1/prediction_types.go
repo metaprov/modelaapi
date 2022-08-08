@@ -13,11 +13,14 @@ import (
 type PredictionPhase string
 
 const (
-	PredictionPhasePending   PredictionPhase = "Pending"
-	PredictionPhaseRunning   PredictionPhase = "Running"
-	PredictionPhaseFailed    PredictionPhase = "Failed"
-	PredictionPhaseAborted   PredictionPhase = "Aborted"
-	PredictionPhaseCompleted PredictionPhase = "Completed"
+	PredictionPhasePending           PredictionPhase = "Pending"
+	PredictionPhaseCreatingDataset   PredictionPhase = "CreatingDataset"
+	PredictionPhaseWaitingForDataset PredictionPhase = "WaitingForDataset"
+	PredictionPhaseRunning           PredictionPhase = "Running"
+	PredictionPhaseFailed            PredictionPhase = "Failed"
+	PredictionPhaseAborted           PredictionPhase = "Aborted"
+	PredictionPhaseCompleted         PredictionPhase = "Completed"
+	PredictionPhaseDetectingDrift    PredictionPhase = "DetectingDrift"
 )
 
 // PredictionConditionType is the condition type of the prediction pipeline
@@ -27,6 +30,7 @@ type PredictionConditionType string
 const (
 	PredictionCompleted PredictionConditionType = "Completed"
 	PredictionSaved     PredictionConditionType = "Saved"
+	PredictionDrifted   PredictionConditionType = "Drifted"
 	PredictionArchived  PredictionConditionType = "Archived"
 )
 
