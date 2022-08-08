@@ -266,7 +266,7 @@ func ParseFeatureHistogramYaml(content []byte) (*FeatureHistogram, error) {
 	if err != nil {
 		return nil, err
 	}
-	r := requiredObj.(*FeatureHistogram) 
+	r := requiredObj.(*FeatureHistogram)
 	return r, nil
 }
 
@@ -376,11 +376,8 @@ func (fh *FeatureHistogram) ShouldGenerateUnitTest() bool {
 
 // Return true if we should detect drift for column
 func (fh *FeatureHistogram) ShouldDetectDriftForColumn(column string) bool {
-	if len(fh.Spec.Columns) == 0 {
-		return true // if not column defined, return true
-	}
-	for _, v := range fh.Spec.Columns {
-		if v == column {
+	for _, v := range fh.Status.Columns {
+		if v.Name == column {
 			return true
 		}
 	}
