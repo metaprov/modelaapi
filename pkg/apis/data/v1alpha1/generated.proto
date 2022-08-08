@@ -3892,10 +3892,20 @@ message TableSpec {
 
 message TimeSeriesSchema {
   // The time series frequency
+  // +kubebuilder:validation:Optional
   optional string freq = 1;
 
+  // +kubebuilder:default:=1
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional int32 interval = 2;
+
   // The holiday which should be taken into account
-  optional string country = 2;
+  optional string country = 3;
+
+  // Map from column id to level. If this is a simple time series, this fields is empty
+  // +kubebuilder:validation:Optional
+  map<string, int32> levels = 4;
 }
 
 // WebRequest represent a single sqlquery in the sqlquery store.

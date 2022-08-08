@@ -664,6 +664,9 @@ spec:
                               - psi
                               - kl-divergence
                               - js-divergence
+                              - wape
+                              - rmspe
+                              - quantile-loss
                               type: string
                             stddev:
                               description: Metric standard diviation for quantative

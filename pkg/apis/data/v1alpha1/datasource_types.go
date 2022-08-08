@@ -307,9 +307,17 @@ type Schema struct {
 
 type TimeSeriesSchema struct {
 	// The time series frequency
+	// +kubebuilder:validation:Optional
 	Freq catalog.Freq `json:"freq,omitempty" protobuf:"bytes,1,opt,name=freq"`
+	// +kubebuilder:default:=1
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Interval *int32 `json:"interval,omitempty" protobuf:"bytes,2,opt,name=interval"`
 	// The holiday which should be taken into account
-	Country *catalog.HolidayCountry `json:"country,omitempty" protobuf:"bytes,2,opt,name=country"`
+	Country *catalog.HolidayCountry `json:"country,omitempty" protobuf:"bytes,3,opt,name=country"`
+	// Map from column id to level. If this is a simple time series, this fields is empty
+	// +kubebuilder:validation:Optional
+	Levels map[string]int32 `json:"levels,omitempty" protobuf:"bytes,4,opt,name=levels"`
 }
 
 type RecommendationSchema struct {

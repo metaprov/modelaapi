@@ -1538,6 +1538,9 @@ spec:
                     - psi
                     - kl-divergence
                     - js-divergence
+                    - wape
+                    - rmspe
+                    - quantile-loss
                     type: string
                   objective2:
                     default: none
@@ -1627,6 +1630,9 @@ spec:
                     - psi
                     - kl-divergence
                     - js-divergence
+                    - wape
+                    - rmspe
+                    - quantile-loss
                     type: string
                   pruner:
                     description: Pruner specifies the configuration to run a model
@@ -2375,6 +2381,9 @@ spec:
                       - psi
                       - kl-divergence
                       - js-divergence
+                      - wape
+                      - rmspe
+                      - quantile-loss
                       type: string
                     type: array
                   featureImportance:
@@ -2967,6 +2976,9 @@ spec:
                           - psi
                           - kl-divergence
                           - js-divergence
+                          - wape
+                          - rmspe
+                          - quantile-loss
                           type: string
                         name:
                           description: The name of the test case, will be generate

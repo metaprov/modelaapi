@@ -942,6 +942,17 @@ spec:
                             - quarter
                             - year
                             type: string
+                          interval:
+                            default: false
+                            format: int32
+                            type: integer
+                          levels:
+                            additionalProperties:
+                              format: int32
+                              type: integer
+                            description: Map from column id to level. If this is a
+                              simple time series, this fields is empty
+                            type: object
                         type: object
                     type: object
                   subtask:
@@ -1248,6 +1259,9 @@ spec:
                               - psi
                               - kl-divergence
                               - js-divergence
+                              - wape
+                              - rmspe
+                              - quantile-loss
                               type: string
                             name:
                               description: The name of the test case, will be generate
@@ -1577,6 +1591,9 @@ spec:
                 - psi
                 - kl-divergence
                 - js-divergence
+                - wape
+                - rmspe
+                - quantile-loss
                 type: string
               owner:
                 default: no-one

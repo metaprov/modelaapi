@@ -1032,6 +1032,9 @@ spec:
                           - psi
                           - kl-divergence
                           - js-divergence
+                          - wape
+                          - rmspe
+                          - quantile-loss
                           type: string
                         name:
                           description: The name of the test case, will be generate
@@ -1799,6 +1802,9 @@ spec:
                 - psi
                 - kl-divergence
                 - js-divergence
+                - wape
+                - rmspe
+                - quantile-loss
                 type: string
               owner:
                 default: no-one
@@ -2301,6 +2307,9 @@ spec:
                       - psi
                       - kl-divergence
                       - js-divergence
+                      - wape
+                      - rmspe
+                      - quantile-loss
                       type: string
                     type: array
                   featureImportance:
@@ -2903,6 +2912,9 @@ spec:
                           - psi
                           - kl-divergence
                           - js-divergence
+                          - wape
+                          - rmspe
+                          - quantile-loss
                           type: string
                         name:
                           description: The name of the test case, will be generate
@@ -3164,6 +3176,9 @@ spec:
                       - psi
                       - kl-divergence
                       - js-divergence
+                      - wape
+                      - rmspe
+                      - quantile-loss
                       type: string
                     stddev:
                       description: Metric standard diviation for quantative observations.
@@ -3366,6 +3381,9 @@ spec:
                       - psi
                       - kl-divergence
                       - js-divergence
+                      - wape
+                      - rmspe
+                      - quantile-loss
                       type: string
                     stddev:
                       description: Metric standard diviation for quantative observations.
@@ -3615,6 +3633,9 @@ spec:
                               - psi
                               - kl-divergence
                               - js-divergence
+                              - wape
+                              - rmspe
+                              - quantile-loss
                               type: string
                             stddev:
                               description: Metric standard diviation for quantative
@@ -4142,6 +4163,9 @@ spec:
                       - psi
                       - kl-divergence
                       - js-divergence
+                      - wape
+                      - rmspe
+                      - quantile-loss
                       type: string
                     stddev:
                       description: Metric standard diviation for quantative observations.
@@ -4506,6 +4530,9 @@ spec:
                       - psi
                       - kl-divergence
                       - js-divergence
+                      - wape
+                      - rmspe
+                      - quantile-loss
                       type: string
                     stddev:
                       description: Metric standard diviation for quantative observations.
@@ -4931,6 +4958,9 @@ spec:
                               - psi
                               - kl-divergence
                               - js-divergence
+                              - wape
+                              - rmspe
+                              - quantile-loss
                               type: string
                             stddev:
                               description: Metric standard diviation for quantative

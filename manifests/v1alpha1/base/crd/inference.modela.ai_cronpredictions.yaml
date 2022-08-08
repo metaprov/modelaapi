@@ -1024,6 +1024,9 @@ spec:
                                       - psi
                                       - kl-divergence
                                       - js-divergence
+                                      - wape
+                                      - rmspe
+                                      - quantile-loss
                                       type: string
                                     name:
                                       description: The name of the test case, will
