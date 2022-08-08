@@ -1543,6 +1543,11 @@ export class PredictionStatus extends jspb.Message {
   getFailuremessage(): string;
   setFailuremessage(value: string): PredictionStatus;
 
+  getDatasetref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setDatasetref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): PredictionStatus;
+  hasDatasetref(): boolean;
+  clearDatasetref(): PredictionStatus;
+
   getConditionsList(): Array<PredictionCondition>;
   setConditionsList(value: Array<PredictionCondition>): PredictionStatus;
   clearConditionsList(): PredictionStatus;
@@ -1569,6 +1574,7 @@ export namespace PredictionStatus {
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     failurereason: string,
     failuremessage: string,
+    datasetref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     conditionsList: Array<PredictionCondition.AsObject>,
   }
 }

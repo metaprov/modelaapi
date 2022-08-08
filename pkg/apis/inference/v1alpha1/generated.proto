@@ -1005,10 +1005,14 @@ message PredictionStatus {
   // +kubebuilder:validation:Optional
   optional string failureMessage = 11;
 
+  // The dataset that was generated.
+  // +kubebuilder:validation:Optional
+  optional k8s.io.api.core.v1.ObjectReference datasetRef = 12;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated PredictionCondition conditions = 12;
+  repeated PredictionCondition conditions = 13;
 }
 
 // PredictionTemplate defines the specification for a Prediction resource to be created

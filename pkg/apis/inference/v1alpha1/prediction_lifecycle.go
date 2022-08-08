@@ -4,6 +4,7 @@ import (
 	"fmt"
 
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
+	data "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/apis/inference"
 	infra "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/util"
@@ -227,6 +228,40 @@ func (run *Prediction) MarkRunning() {
 		Reason: string(catalog.Running),
 	})
 	run.Status.Phase = PredictionPhaseRunning
+}
+
+func (prediction *Prediction) ConstructDataset() (*data.Dataset, error) {
+
+	// create a training feature histogram for the dataset.
+	result := &data.Dataset{
+		ObjectMeta: metav1.ObjectMeta{
+			Name:      prediction.Name,
+			Namespace: prediction.Namespace,
+		},
+		Spec: data.DatasetSpec{
+			Owner:          prediction.Spec.Owner,
+			VersionName:    prediction.Spec.VersionName,
+			Description:    util.StrPtr(""),
+			Origin:         *prediction.Spec.Input.Location,
+			DataSourceName: &prediction.Spec.DataSourceRef.Name,
+			PredictorRef: v1.ObjectReference{
+				Name:      prediction.Spec.PredictorRef.Name,
+				Namespace: prediction.Spec.PredictorRef.Namespace,
+			},
+		},
+		Status: data.DatasetStatus{
+			ObservedGeneration: 0,
+			LastUpdated:        nil,
+			Logs:               catalog.Logs{},
+			Phase:              "",
+		},
+	}
+
+	return result, nil
+
+}
+
+func (run *Prediction) CreateDataset() *data.Dataset {
 
 }
 

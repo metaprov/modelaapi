@@ -188,10 +188,13 @@ type PredictionStatus struct {
 	// In the case of failure, the Prediction resource controller will set this field with a failure message
 	//+kubebuilder:validation:Optional
 	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,11,opt,name=failureMessage"`
+	// The dataset that was generated.
+	//+kubebuilder:validation:Optional
+	DatasetRef v1.ObjectReference `json:"datasetRef,omitempty" protobuf:"bytes,12,opt,name=datasetRef"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []PredictionCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,12,rep,name=conditions"`
+	Conditions []PredictionCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,13,rep,name=conditions"`
 }
 
 // ForecastSpec specifies the details of a forecasting model
