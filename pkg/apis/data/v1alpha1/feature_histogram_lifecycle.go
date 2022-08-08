@@ -146,7 +146,7 @@ func (feature *FeatureHistogram) MarkLive() {
 
 func (feature *FeatureHistogram) Drifted() bool {
 	for _, v := range feature.Status.Columns {
-		if *v.Drift {
+		if v.Drift != nil && *v.Drift {
 			return true
 		}
 	}
