@@ -261,10 +261,6 @@ func (prediction *Prediction) ConstructDataset() (*data.Dataset, error) {
 
 }
 
-func (run *Prediction) CreateDataset() *data.Dataset {
-
-}
-
 ////////////////////////////////////////////////////////////
 // Model Alerts
 

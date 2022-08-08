@@ -1297,6 +1297,7 @@ func (in *PredictionStatus) DeepCopyInto(out *PredictionStatus) {
 		*out = new(string)
 		**out = **in
 	}
+	out.DatasetRef = in.DatasetRef
 	if in.Conditions != nil {
 		in, out := &in.Conditions, &out.Conditions
 		*out = make([]PredictionCondition, len(*in))
