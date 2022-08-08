@@ -1402,8 +1402,13 @@ export class PredictionSpec extends jspb.Message {
   getForecast(): boolean;
   setForecast(value: boolean): PredictionSpec;
 
-  getInput(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setInput(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): PredictionSpec;
+  getDatasourceref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setDatasourceref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): PredictionSpec;
+  hasDatasourceref(): boolean;
+  clearDatasourceref(): PredictionSpec;
+
+  getInput(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataInputSpec | undefined;
+  setInput(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataInputSpec): PredictionSpec;
   hasInput(): boolean;
   clearInput(): PredictionSpec;
 
@@ -1467,7 +1472,8 @@ export namespace PredictionSpec {
     predictorref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     labeled: boolean,
     forecast: boolean,
-    input?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    datasourceref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    input?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataInputSpec.AsObject,
     output?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataOutputSpec.AsObject,
     createdataset: boolean,
     unittests?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelTestSuite.AsObject,
