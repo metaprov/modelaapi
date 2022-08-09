@@ -591,6 +591,7 @@ spec:
                 - serving
                 - feedback
                 - training
+                - prediction
                 type: string
               sample:
                 description: The specification for how the data should be sampled,
