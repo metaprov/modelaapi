@@ -1548,6 +1548,11 @@ export class PredictionStatus extends jspb.Message {
   hasDatasetref(): boolean;
   clearDatasetref(): PredictionStatus;
 
+  getColumnsList(): Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.ColumnHistogram>;
+  setColumnsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.ColumnHistogram>): PredictionStatus;
+  clearColumnsList(): PredictionStatus;
+  addColumns(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.ColumnHistogram, index?: number): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.ColumnHistogram;
+
   getConditionsList(): Array<PredictionCondition>;
   setConditionsList(value: Array<PredictionCondition>): PredictionStatus;
   clearConditionsList(): PredictionStatus;
@@ -1575,6 +1580,7 @@ export namespace PredictionStatus {
     failurereason: string,
     failuremessage: string,
     datasetref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    columnsList: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.ColumnHistogram.AsObject>,
     conditionsList: Array<PredictionCondition.AsObject>,
   }
 }

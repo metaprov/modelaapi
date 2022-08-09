@@ -191,10 +191,13 @@ type PredictionStatus struct {
 	// The dataset that was generated.
 	//+kubebuilder:validation:Optional
 	DatasetRef v1.ObjectReference `json:"datasetRef,omitempty" protobuf:"bytes,12,opt,name=datasetRef"`
+	// The histogram values, map from column name to an histogram
+	// +kubebuilder:validation:Optional
+	Columns []data.ColumnHistogram `json:"columns,omitempty" protobuf:"bytes,13,rep,name=columns"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []PredictionCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,13,rep,name=conditions"`
+	Conditions []PredictionCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,14,rep,name=conditions"`
 }
 
 // ForecastSpec specifies the details of a forecasting model

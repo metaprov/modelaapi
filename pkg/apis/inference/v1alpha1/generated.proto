@@ -1009,10 +1009,14 @@ message PredictionStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference datasetRef = 12;
 
+  // The histogram values, map from column name to an histogram
+  // +kubebuilder:validation:Optional
+  repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnHistogram columns = 13;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated PredictionCondition conditions = 13;
+  repeated PredictionCondition conditions = 14;
 }
 
 // PredictionTemplate defines the specification for a Prediction resource to be created

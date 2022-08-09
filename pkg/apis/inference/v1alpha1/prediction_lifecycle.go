@@ -8,7 +8,6 @@ import (
 	"github.com/metaprov/modelaapi/pkg/apis/inference"
 	infra "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/util"
-	"gopkg.in/yaml.v2"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
@@ -228,6 +227,22 @@ func (run *Prediction) MarkRunning() {
 		Reason: string(catalog.Running),
 	})
 	run.Status.Phase = PredictionPhaseRunning
+}
+
+func (prediction *Prediction) MarkUnitTestFailed(msg string) {
+	prediction.CreateOrUpdateCond(PredictionCondition{
+		Type:    PredictionUnitTested,
+		Status:  v1.ConditionFalse,
+		Reason:  string(UnitTestPhaseFailed),
+		Message: "Failed to validate." + msg,
+	})
+	prediction.Status.Phase = DatasetPhaseFailed
+	prediction.Status.FailureMessage = util.StrPtr(msg)
+	prediction.Status.Progress = 100
+	now := metav1.Now()
+	if prediction.Status.EndTime == nil {
+		prediction.Status.EndTime = &now
+	}
 }
 
 func (prediction *Prediction) ConstructDataset() (*data.Dataset, error) {
