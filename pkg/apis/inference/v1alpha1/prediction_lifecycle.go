@@ -245,7 +245,7 @@ func (run *Prediction) MarkRunning() {
 }
 
 func (prediction *Prediction) ConstructDataset() (*data.Dataset, error) {
-
+	datasettype := catalog.DatasetTypeTabular
 	// create a training feature histogram for the dataset.
 	result := &data.Dataset{
 		ObjectMeta: metav1.ObjectMeta{
@@ -262,6 +262,8 @@ func (prediction *Prediction) ConstructDataset() (*data.Dataset, error) {
 				Name:      prediction.Spec.PredictorRef.Name,
 				Namespace: prediction.Spec.PredictorRef.Namespace,
 			},
+			GenerateFeatureHistogram: util.BoolPtr(true),
+			Type:                     &datasettype,
 		},
 		Status: data.DatasetStatus{
 			ObservedGeneration: 0,
