@@ -2,6 +2,7 @@ package v1alpha1
 
 import (
 	"fmt"
+	strings "strings"
 
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	data "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1"
@@ -203,6 +204,16 @@ func (prediction *Prediction) MarkCompleted() {
 	}
 }
 
+func (prediction *Prediction) MarkUnitTestFailed(msg string) {
+	prediction.CreateOrUpdateCond(PredictionCondition{
+		Type:    PredictionUnitTested,
+		Status:  v1.ConditionFalse,
+		Reason:  string(PredictionPhaseFailed),
+		Message: "Failed to validate." + msg,
+	})
+
+}
+
 func (prediction *Prediction) MarkArchived() {
 	prediction.CreateOrUpdateCond(PredictionCondition{
 		Type:   PredictionArchived,
@@ -343,4 +354,31 @@ func (run *Prediction) RunStatus() *catalog.LastRunStatus {
 	result.Status = string(run.Status.Phase)
 	return result
 
+}
+
+func (fh *Prediction) DriftAlert(tenantRef *v1.ObjectReference, notifierName *string, columns []string) *infra.Alert {
+	level := infra.Error
+	subject := fmt.Sprintf("drift detected")
+	return &infra.Alert{
+		ObjectMeta: metav1.ObjectMeta{
+			GenerateName: fh.Name,
+			Namespace:    fh.Namespace,
+		},
+		Spec: infra.AlertSpec{
+			Subject:      util.StrPtr(subject),
+			Message:      util.StrPtr("drift was detected"),
+			Level:        &level,
+			TenantRef:    tenantRef,
+			NotifierName: notifierName,
+			EntityRef: v1.ObjectReference{
+				Kind:      "Entity",
+				Name:      fh.Name,
+				Namespace: fh.Namespace,
+			},
+			Owner: fh.Spec.Owner,
+			Fields: map[string]string{
+				"columns": strings.Join(columns, ","),
+			},
+		},
+	}
 }
