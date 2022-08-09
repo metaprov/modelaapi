@@ -1365,6 +1365,9 @@ spec:
                     description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                     type: string
                 type: object
+              drifted:
+                description: Set to true if drifted
+                type: boolean
               endTime:
                 description: EndTime denotes the time when the batch prediction Job
                   completed or failed

@@ -1553,6 +1553,9 @@ export class PredictionStatus extends jspb.Message {
   clearColumnsList(): PredictionStatus;
   addColumns(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.ColumnHistogram, index?: number): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.ColumnHistogram;
 
+  getDrifted(): boolean;
+  setDrifted(value: boolean): PredictionStatus;
+
   getConditionsList(): Array<PredictionCondition>;
   setConditionsList(value: Array<PredictionCondition>): PredictionStatus;
   clearConditionsList(): PredictionStatus;
@@ -1581,6 +1584,7 @@ export namespace PredictionStatus {
     failuremessage: string,
     datasetref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     columnsList: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.ColumnHistogram.AsObject>,
+    drifted: boolean,
     conditionsList: Array<PredictionCondition.AsObject>,
   }
 }

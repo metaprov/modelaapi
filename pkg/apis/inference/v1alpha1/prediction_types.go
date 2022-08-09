@@ -20,7 +20,8 @@ const (
 	PredictionPhaseFailed            PredictionPhase = "Failed"
 	PredictionPhaseAborted           PredictionPhase = "Aborted"
 	PredictionPhaseCompleted         PredictionPhase = "Completed"
-	PredictionPhaseDetectingDrift    PredictionPhase = "DetectingDrift"
+	PredictionPhaseUnitTesting       PredictionPhase = "UnitTesting"
+	PredictionPhaseUnitTested        PredictionPhase = "UnitTested"
 )
 
 // PredictionConditionType is the condition type of the prediction pipeline
@@ -28,10 +29,10 @@ type PredictionConditionType string
 
 /// PredictionTemplate Condition
 const (
-	PredictionCompleted PredictionConditionType = "Completed"
-	PredictionSaved     PredictionConditionType = "Saved"
-	PredictionDrifted   PredictionConditionType = "Drifted"
-	PredictionArchived  PredictionConditionType = "Archived"
+	PredictionCompleted  PredictionConditionType = "Completed"
+	PredictionSaved      PredictionConditionType = "Saved"
+	PredictionUnitTested PredictionConditionType = "UnitTested"
+	PredictionArchived   PredictionConditionType = "Archived"
 )
 
 // PredictionCondition describes the state of a Prediction at a certain point
@@ -194,10 +195,13 @@ type PredictionStatus struct {
 	// The histogram values, map from column name to an histogram
 	// +kubebuilder:validation:Optional
 	Columns []data.ColumnHistogram `json:"columns,omitempty" protobuf:"bytes,13,rep,name=columns"`
+	// Set to true if drifted
+	// +kubebuilder:validation:Optional
+	Drifted bool `json:"drifted,omitempty" protobuf:"bytes,14,rep,name=drifted"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []PredictionCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,14,rep,name=conditions"`
+	Conditions []PredictionCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,15,rep,name=conditions"`
 }
 
 // ForecastSpec specifies the details of a forecasting model

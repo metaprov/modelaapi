@@ -132,10 +132,6 @@ func ParsePredictionYaml(content []byte) (*Prediction, error) {
 	return r, nil
 }
 
-func (prediction *Prediction) ToYamlFile() ([]byte, error) {
-	return yaml.Marshal(prediction)
-}
-
 func (prediction *Prediction) MarkFailed(msg string) {
 	prediction.CreateOrUpdateCond(PredictionCondition{
 		Type:    PredictionCompleted,
@@ -178,13 +174,21 @@ func (prediction *Prediction) MarkWaitingForDataset() {
 	prediction.Status.Phase = PredictionPhaseWaitingForDataset
 }
 
-func (prediction *Prediction) MarkDetectingDrift() {
+func (prediction *Prediction) MarkUnitTesting() {
 	prediction.CreateOrUpdateCond(PredictionCondition{
 		Type:   PredictionCompleted,
 		Status: v1.ConditionFalse,
-		Reason: string(PredictionPhaseDetectingDrift),
+		Reason: string(PredictionPhaseUnitTesting),
 	})
-	prediction.Status.Phase = PredictionPhaseDetectingDrift
+	prediction.Status.Phase = PredictionPhaseUnitTesting
+}
+
+func (prediction *Prediction) MarkUnitTested() {
+	prediction.CreateOrUpdateCond(PredictionCondition{
+		Type:   PredictionUnitTested,
+		Status: v1.ConditionTrue,
+	})
+	prediction.Status.Phase = PredictionPhaseUnitTested
 }
 
 func (prediction *Prediction) MarkCompleted() {
@@ -227,22 +231,6 @@ func (run *Prediction) MarkRunning() {
 		Reason: string(catalog.Running),
 	})
 	run.Status.Phase = PredictionPhaseRunning
-}
-
-func (prediction *Prediction) MarkUnitTestFailed(msg string) {
-	prediction.CreateOrUpdateCond(PredictionCondition{
-		Type:    PredictionUnitTested,
-		Status:  v1.ConditionFalse,
-		Reason:  string(UnitTestPhaseFailed),
-		Message: "Failed to validate." + msg,
-	})
-	prediction.Status.Phase = DatasetPhaseFailed
-	prediction.Status.FailureMessage = util.StrPtr(msg)
-	prediction.Status.Progress = 100
-	now := metav1.Now()
-	if prediction.Status.EndTime == nil {
-		prediction.Status.EndTime = &now
-	}
 }
 
 func (prediction *Prediction) ConstructDataset() (*data.Dataset, error) {
