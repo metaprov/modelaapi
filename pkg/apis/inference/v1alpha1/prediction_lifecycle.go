@@ -246,6 +246,7 @@ func (run *Prediction) MarkRunning() {
 
 func (prediction *Prediction) ConstructDataset() (*data.Dataset, error) {
 	datasettype := catalog.DatasetTypeTabular
+	datasetrole := data.DatasetRolePrediction
 	// create a training feature histogram for the dataset.
 	result := &data.Dataset{
 		ObjectMeta: metav1.ObjectMeta{
@@ -255,7 +256,7 @@ func (prediction *Prediction) ConstructDataset() (*data.Dataset, error) {
 		Spec: data.DatasetSpec{
 			Owner:          prediction.Spec.Owner,
 			VersionName:    prediction.Spec.VersionName,
-			Description:    util.StrPtr(""),
+			Description:    util.StrPtr("dataset for prediction " + prediction.Name),
 			Origin:         *prediction.Spec.Input.Location,
 			DataSourceName: &prediction.Spec.DataSourceRef.Name,
 			PredictorRef: v1.ObjectReference{
@@ -264,6 +265,7 @@ func (prediction *Prediction) ConstructDataset() (*data.Dataset, error) {
 			},
 			GenerateFeatureHistogram: util.BoolPtr(true),
 			Type:                     &datasettype,
+			Role:                     &datasetrole,
 		},
 		Status: data.DatasetStatus{
 			ObservedGeneration: 0,
