@@ -389,6 +389,15 @@ spec:
                                   - wape
                                   - rmspe
                                   - quantile-loss
+                                  - equal-opportunity
+                                  - demographic-parity
+                                  - equals-odds-tnr
+                                  - individual-fairness
+                                  - individual-fairness-counter-factuals
+                                  - pearson
+                                  - cramers-v
+                                  - rank-biserial
+                                  - point-biserial
                                   type: string
                                 stddev:
                                   description: Metric standard diviation for quantative
@@ -726,6 +735,15 @@ spec:
                                   - wape
                                   - rmspe
                                   - quantile-loss
+                                  - equal-opportunity
+                                  - demographic-parity
+                                  - equals-odds-tnr
+                                  - individual-fairness
+                                  - individual-fairness-counter-factuals
+                                  - pearson
+                                  - cramers-v
+                                  - rank-biserial
+                                  - point-biserial
                                   type: string
                                 stddev:
                                   description: Metric standard diviation for quantative
@@ -1038,6 +1056,15 @@ spec:
                                   - wape
                                   - rmspe
                                   - quantile-loss
+                                  - equal-opportunity
+                                  - demographic-parity
+                                  - equals-odds-tnr
+                                  - individual-fairness
+                                  - individual-fairness-counter-factuals
+                                  - pearson
+                                  - cramers-v
+                                  - rank-biserial
+                                  - point-biserial
                                   type: string
                                 stddev:
                                   description: Metric standard diviation for quantative
@@ -1361,6 +1388,15 @@ spec:
                                   - wape
                                   - rmspe
                                   - quantile-loss
+                                  - equal-opportunity
+                                  - demographic-parity
+                                  - equals-odds-tnr
+                                  - individual-fairness
+                                  - individual-fairness-counter-factuals
+                                  - pearson
+                                  - cramers-v
+                                  - rank-biserial
+                                  - point-biserial
                                   type: string
                                 stddev:
                                   description: Metric standard diviation for quantative
@@ -1703,6 +1739,15 @@ spec:
                                   - wape
                                   - rmspe
                                   - quantile-loss
+                                  - equal-opportunity
+                                  - demographic-parity
+                                  - equals-odds-tnr
+                                  - individual-fairness
+                                  - individual-fairness-counter-factuals
+                                  - pearson
+                                  - cramers-v
+                                  - rank-biserial
+                                  - point-biserial
                                   type: string
                                 stddev:
                                   description: Metric standard diviation for quantative
@@ -2025,6 +2070,15 @@ spec:
                                   - wape
                                   - rmspe
                                   - quantile-loss
+                                  - equal-opportunity
+                                  - demographic-parity
+                                  - equals-odds-tnr
+                                  - individual-fairness
+                                  - individual-fairness-counter-factuals
+                                  - pearson
+                                  - cramers-v
+                                  - rank-biserial
+                                  - point-biserial
                                   type: string
                                 stddev:
                                   description: Metric standard diviation for quantative
@@ -2342,6 +2396,15 @@ spec:
                                   - wape
                                   - rmspe
                                   - quantile-loss
+                                  - equal-opportunity
+                                  - demographic-parity
+                                  - equals-odds-tnr
+                                  - individual-fairness
+                                  - individual-fairness-counter-factuals
+                                  - pearson
+                                  - cramers-v
+                                  - rank-biserial
+                                  - point-biserial
                                   type: string
                                 stddev:
                                   description: Metric standard diviation for quantative
@@ -2660,6 +2723,15 @@ spec:
                                   - wape
                                   - rmspe
                                   - quantile-loss
+                                  - equal-opportunity
+                                  - demographic-parity
+                                  - equals-odds-tnr
+                                  - individual-fairness
+                                  - individual-fairness-counter-factuals
+                                  - pearson
+                                  - cramers-v
+                                  - rank-biserial
+                                  - point-biserial
                                   type: string
                                 stddev:
                                   description: Metric standard diviation for quantative

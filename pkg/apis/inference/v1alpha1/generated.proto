@@ -581,7 +581,7 @@ message FeedbackTestSpec {
 }
 
 // ForecastSpec specifies the details of a forecasting model
-message ForecastSpec {
+message ForecastPredictionSpec {
   // The hierarchy specification, which maps columns to values
   // +kubebuilder:validation:Optional
   map<string, string> hierarchyValues = 1;
@@ -946,7 +946,7 @@ message PredictionSpec {
 
   // The forecasting specification in the case that the predicted model is a hierarchical forecast
   // +kubebuilder:validation:Optional
-  optional ForecastSpec forecastInfo = 16;
+  optional ForecastPredictionSpec forecastSpec = 16;
 
   // CronPredictionName specifies the name of the CronPrediction that created the Prediction, if applicable
   // +kubebuilder:validation:MaxLength=63

@@ -426,7 +426,7 @@ func (metric Metric) IsClustering() bool {
 	return false
 }
 
-// +kubebuilder:validation:Enum="accuracy";"average-precision";"balanced-accuracy";"pr-auc";"pr-auc-micro";"pr-auc-macro";"pr-auc-weighted";"f1";"f1-micro";"f1-macro";"f1-weighted";"f1-samples";"precision";"precision-micro";"precision-macro";"precision-weighted";	"precision-samples";"recall";"recall-macro";"recall-micro";"recall-weighted";"recall-samples";"log-loss";"auc";"auc-micro";"auc-macro";"auc-weighted";"zero-one";"hamming-loss";"hinge-loss";"jacquard-loss";"mcc";"fp";"fn";"tn";"tp";"tpr";"fpr";"tnr";"matthews-corr-coef";"explained-variance";"max-error";"mae";"mse";"msle";"rmse";"rmsle";"median-absolute-error";"r2";"adj-r2";"mean_poisson_deviance";"mean-gamma-deviance";"mean-tweedie-deviance";"mape";"maze";"mdape";"smape";"adjusted-mutual-info-score";"adjusted-rand-score";"completeness-score";"fowlkes-mallows-score";"homogeneity-score";"mutual-info-score";"normalized-mutual-info-score";"v-measure-score";"p50-latency";"p95-latency";"p99-latency";"cpu";"gpu";"mem";"gpu-mem";"req-per-sec";"uncertain-prediction-percent";"none";"two-sample-ks-test";"chi-squared-test";"proportion-difference";"wasserstein-distance";"psi";"kl-divergence";"js-divergence";"wape";"rmspe";"quantile-loss"
+// +kubebuilder:validation:Enum="accuracy";"average-precision";"balanced-accuracy";"pr-auc";"pr-auc-micro";"pr-auc-macro";"pr-auc-weighted";"f1";"f1-micro";"f1-macro";"f1-weighted";"f1-samples";"precision";"precision-micro";"precision-macro";"precision-weighted";	"precision-samples";"recall";"recall-macro";"recall-micro";"recall-weighted";"recall-samples";"log-loss";"auc";"auc-micro";"auc-macro";"auc-weighted";"zero-one";"hamming-loss";"hinge-loss";"jacquard-loss";"mcc";"fp";"fn";"tn";"tp";"tpr";"fpr";"tnr";"matthews-corr-coef";"explained-variance";"max-error";"mae";"mse";"msle";"rmse";"rmsle";"median-absolute-error";"r2";"adj-r2";"mean_poisson_deviance";"mean-gamma-deviance";"mean-tweedie-deviance";"mape";"maze";"mdape";"smape";"adjusted-mutual-info-score";"adjusted-rand-score";"completeness-score";"fowlkes-mallows-score";"homogeneity-score";"mutual-info-score";"normalized-mutual-info-score";"v-measure-score";"p50-latency";"p95-latency";"p99-latency";"cpu";"gpu";"mem";"gpu-mem";"req-per-sec";"uncertain-prediction-percent";"none";"two-sample-ks-test";"chi-squared-test";"proportion-difference";"wasserstein-distance";"psi";"kl-divergence";"js-divergence";"wape";"rmspe";"quantile-loss";"equal-opportunity"; "demographic-parity";"equals-odds-tnr";"individual-fairness";"individual-fairness-counter-factuals";"pearson";"cramers-v";"rank-biserial";"point-biserial"
 type Metric string
 
 const (
@@ -517,7 +517,7 @@ const (
 	ReqSec                     Metric = "req-per-sec"
 	UncertainPredictionPercent Metric = "uncertain-prediction-percent"
 
-	// Data drift measurments
+	// Data drift metrics
 	TwoSampleKSTest      Metric = "two-sample-ks-test"
 	ChiSqrTest           Metric = "chi-squared-test"
 	ProportionDifference Metric = "proportion-difference"
@@ -525,6 +525,19 @@ const (
 	PSI                  Metric = "psi"
 	KLDivergence         Metric = "kl-divergence"
 	JSDivergence         Metric = "js-divergence"
+
+	// Bias metrics
+	EqualOpportunity                  Metric = "equal-opportunity"
+	DemographicParity                 Metric = "demographic-parity"
+	EqualOddsTnr                      Metric = "equals-odds-tnr"
+	IndividualFairness                Metric = "individual-fairness"
+	IndividualFairnessCounterfactuals Metric = "individual-fairness-counter-factuals"
+
+	// Corrolation Metrics
+	Pearson       Metric = "pearson"
+	CramersV      Metric = "cramers-v"
+	RankBiserial  Metric = "rank-biserial"
+	PointBiserial Metric = "point-biserial"
 
 	NoneMetric Metric = "none"
 )

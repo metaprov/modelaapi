@@ -1262,6 +1262,15 @@ spec:
                               - wape
                               - rmspe
                               - quantile-loss
+                              - equal-opportunity
+                              - demographic-parity
+                              - equals-odds-tnr
+                              - individual-fairness
+                              - individual-fairness-counter-factuals
+                              - pearson
+                              - cramers-v
+                              - rank-biserial
+                              - point-biserial
                               type: string
                             name:
                               description: The name of the test case, will be generate
@@ -1594,6 +1603,15 @@ spec:
                 - wape
                 - rmspe
                 - quantile-loss
+                - equal-opportunity
+                - demographic-parity
+                - equals-odds-tnr
+                - individual-fairness
+                - individual-fairness-counter-factuals
+                - pearson
+                - cramers-v
+                - rank-biserial
+                - point-biserial
                 type: string
               owner:
                 default: no-one

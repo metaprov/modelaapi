@@ -139,7 +139,7 @@ spec:
                 default: false
                 description: Indicates if the prediction is a forecast
                 type: boolean
-              forecastInfo:
+              forecastSpec:
                 description: The forecasting specification in the case that the predicted
                   model is a hierarchical forecast
                 properties:
@@ -1036,6 +1036,15 @@ spec:
                               - wape
                               - rmspe
                               - quantile-loss
+                              - equal-opportunity
+                              - demographic-parity
+                              - equals-odds-tnr
+                              - individual-fairness
+                              - individual-fairness-counter-factuals
+                              - pearson
+                              - cramers-v
+                              - rank-biserial
+                              - point-biserial
                               type: string
                             name:
                               description: The name of the test case, will be generate
@@ -1277,6 +1286,15 @@ spec:
                             - wape
                             - rmspe
                             - quantile-loss
+                            - equal-opportunity
+                            - demographic-parity
+                            - equals-odds-tnr
+                            - individual-fairness
+                            - individual-fairness-counter-factuals
+                            - pearson
+                            - cramers-v
+                            - rank-biserial
+                            - point-biserial
                             type: string
                           stddev:
                             description: Metric standard diviation for quantative
@@ -1675,6 +1693,15 @@ spec:
                               - wape
                               - rmspe
                               - quantile-loss
+                              - equal-opportunity
+                              - demographic-parity
+                              - equals-odds-tnr
+                              - individual-fairness
+                              - individual-fairness-counter-factuals
+                              - pearson
+                              - cramers-v
+                              - rank-biserial
+                              - point-biserial
                               type: string
                             stddev:
                               description: Metric standard diviation for quantative

@@ -579,7 +579,7 @@ func (dataset *Dataset) ConstuctFeatureHistogram() (*FeatureHistogram, error) {
 			Columns:            histograms,
 			LastUpdated:        nil,
 			Logs:               catalog.Logs{},
-			Phase:              "",
+			Phase:              FeatureHistogramPhaseReady,
 		},
 	}
 

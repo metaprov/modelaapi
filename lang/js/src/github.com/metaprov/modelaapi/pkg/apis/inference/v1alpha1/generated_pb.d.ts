@@ -891,24 +891,24 @@ export namespace FeedbackTestSpec {
   }
 }
 
-export class ForecastSpec extends jspb.Message {
+export class ForecastPredictionSpec extends jspb.Message {
   getHierarchyvaluesMap(): jspb.Map<string, string>;
-  clearHierarchyvaluesMap(): ForecastSpec;
+  clearHierarchyvaluesMap(): ForecastPredictionSpec;
 
   getHorizon(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.PeriodSpec | undefined;
-  setHorizon(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.PeriodSpec): ForecastSpec;
+  setHorizon(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.PeriodSpec): ForecastPredictionSpec;
   hasHorizon(): boolean;
-  clearHorizon(): ForecastSpec;
+  clearHorizon(): ForecastPredictionSpec;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ForecastSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: ForecastSpec): ForecastSpec.AsObject;
-  static serializeBinaryToWriter(message: ForecastSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ForecastSpec;
-  static deserializeBinaryFromReader(message: ForecastSpec, reader: jspb.BinaryReader): ForecastSpec;
+  toObject(includeInstance?: boolean): ForecastPredictionSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: ForecastPredictionSpec): ForecastPredictionSpec.AsObject;
+  static serializeBinaryToWriter(message: ForecastPredictionSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ForecastPredictionSpec;
+  static deserializeBinaryFromReader(message: ForecastPredictionSpec, reader: jspb.BinaryReader): ForecastPredictionSpec;
 }
 
-export namespace ForecastSpec {
+export namespace ForecastPredictionSpec {
   export type AsObject = {
     hierarchyvaluesMap: Array<[string, string]>,
     horizon?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.PeriodSpec.AsObject,
@@ -1455,10 +1455,10 @@ export class PredictionSpec extends jspb.Message {
   getTtl(): number;
   setTtl(value: number): PredictionSpec;
 
-  getForecastinfo(): ForecastSpec | undefined;
-  setForecastinfo(value?: ForecastSpec): PredictionSpec;
-  hasForecastinfo(): boolean;
-  clearForecastinfo(): PredictionSpec;
+  getForecastspec(): ForecastPredictionSpec | undefined;
+  setForecastspec(value?: ForecastPredictionSpec): PredictionSpec;
+  hasForecastspec(): boolean;
+  clearForecastspec(): PredictionSpec;
 
   getCronpredictorname(): string;
   setCronpredictorname(value: string): PredictionSpec;
@@ -1493,7 +1493,7 @@ export namespace PredictionSpec {
     priority: string,
     aborted: boolean,
     ttl: number,
-    forecastinfo?: ForecastSpec.AsObject,
+    forecastspec?: ForecastPredictionSpec.AsObject,
     cronpredictorname: string,
     servingsiteref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
   }

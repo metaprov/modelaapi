@@ -143,7 +143,7 @@ type PredictionSpec struct {
 	TTL *int32 `json:"ttl,omitempty" protobuf:"varint,15,opt,name=ttl"`
 	// The forecasting specification in the case that the predicted model is a hierarchical forecast
 	// +kubebuilder:validation:Optional
-	ForecastInfo ForecastSpec `json:"forecastInfo,omitempty" protobuf:"bytes,16,opt,name=forecastInfo"`
+	ForecastSpec ForecastPredictionSpec `json:"forecastSpec,omitempty" protobuf:"bytes,16,opt,name=forecastSpec"`
 	// CronPredictionName specifies the name of the CronPrediction that created the Prediction, if applicable
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:default:=""
@@ -205,7 +205,7 @@ type PredictionStatus struct {
 }
 
 // ForecastSpec specifies the details of a forecasting model
-type ForecastSpec struct {
+type ForecastPredictionSpec struct {
 	// The hierarchy specification, which maps columns to values
 	// +kubebuilder:validation:Optional
 	HierarchyValues map[string]string `json:"hierarchyValues,omitempty" protobuf:"bytes,1,opt,name=hierarchyValues"`

@@ -156,10 +156,10 @@ type FeatureHistogramStatus struct {
 	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,3,opt,name=lastUpdated"`
 	// The log file specification that determines the location of all logs produced by the object
 	// +kubebuilder:validation:Optional
-	Logs catalog.Logs `json:"logs" protobuf:"bytes,5,opt,name=logs"`
+	Logs catalog.Logs `json:"logs,omitempty" protobuf:"bytes,5,opt,name=logs"`
 	// The phase of the feature histogram
 	// +kubebuilder:validation:Optional
-	Phase FeatureHistogramPhase `json:"phase" protobuf:"bytes,6,opt,name=phase"`
+	Phase FeatureHistogramPhase `json:"phase,omitempty" protobuf:"bytes,6,opt,name=phase"`
 	// In the case of failure, the Dataset resource controller will set this field with a failure reason
 	//+kubebuilder:validation:Optional
 	FailureReason catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,7,opt,name=failureReason"`

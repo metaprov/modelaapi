@@ -1541,6 +1541,15 @@ spec:
                     - wape
                     - rmspe
                     - quantile-loss
+                    - equal-opportunity
+                    - demographic-parity
+                    - equals-odds-tnr
+                    - individual-fairness
+                    - individual-fairness-counter-factuals
+                    - pearson
+                    - cramers-v
+                    - rank-biserial
+                    - point-biserial
                     type: string
                   objective2:
                     default: none
@@ -1633,6 +1642,15 @@ spec:
                     - wape
                     - rmspe
                     - quantile-loss
+                    - equal-opportunity
+                    - demographic-parity
+                    - equals-odds-tnr
+                    - individual-fairness
+                    - individual-fairness-counter-factuals
+                    - pearson
+                    - cramers-v
+                    - rank-biserial
+                    - point-biserial
                     type: string
                   pruner:
                     description: Pruner specifies the configuration to run a model
@@ -2384,6 +2402,15 @@ spec:
                       - wape
                       - rmspe
                       - quantile-loss
+                      - equal-opportunity
+                      - demographic-parity
+                      - equals-odds-tnr
+                      - individual-fairness
+                      - individual-fairness-counter-factuals
+                      - pearson
+                      - cramers-v
+                      - rank-biserial
+                      - point-biserial
                       type: string
                     type: array
                   featureImportance:
@@ -2979,6 +3006,15 @@ spec:
                           - wape
                           - rmspe
                           - quantile-loss
+                          - equal-opportunity
+                          - demographic-parity
+                          - equals-odds-tnr
+                          - individual-fairness
+                          - individual-fairness-counter-factuals
+                          - pearson
+                          - cramers-v
+                          - rank-biserial
+                          - point-biserial
                           type: string
                         name:
                           description: The name of the test case, will be generate
