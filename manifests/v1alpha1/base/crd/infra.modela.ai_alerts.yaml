@@ -30,12 +30,15 @@ spec:
       type: string
     - jsonPath: .spec.entityRef.namespace
       name: Entity Namespace
+      priority: 1
       type: string
     - jsonPath: .spec.entityRef.name
       name: Entity Name
+      priority: 1
       type: string
     - jsonPath: .spec.notifierName
       name: Notifier
+      priority: 1
       type: string
     - jsonPath: .status.at
       name: At
