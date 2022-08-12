@@ -2,10 +2,8 @@ package v1alpha1
 
 import (
 	"fmt"
-	strings "strings"
 
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
-	data "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/apis/inference"
 	infra "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/util"
@@ -25,8 +23,6 @@ func (forecast *Forecast) SetupWebhookWithManager(mgr ctrl.Manager) error {
 		For(forecast).
 		Complete()
 }
-
-const PipelineLabelKey = "pipeline"
 
 //==============================================================================
 // Keys
@@ -244,43 +240,6 @@ func (run *Forecast) MarkRunning() {
 	run.Status.Phase = ForecastPhaseRunning
 }
 
-func (forecast *Forecast) ConstructDataset() (*data.Dataset, error) {
-	datasettype := catalog.DatasetTypeTabular
-	datasetrole := data.DatasetRoleForecast
-
-	// create a training feature histogram for the dataset.
-	result := &data.Dataset{
-		ObjectMeta: metav1.ObjectMeta{
-			Name:      forecast.Name,
-			Namespace: forecast.Namespace,
-		},
-		Spec: data.DatasetSpec{
-			Owner:          forecast.Spec.Owner,
-			VersionName:    forecast.Spec.VersionName,
-			Description:    util.StrPtr("dataset for forecast " + forecast.Name),
-			Origin:         *forecast.Spec.Input.Location,
-			Location:       *forecast.Spec.Input.Location,
-			DataSourceName: &forecast.Spec.DataSourceRef.Name,
-			PredictorRef: v1.ObjectReference{
-				Name:      forecast.Spec.PredictorRef.Name,
-				Namespace: forecast.Spec.PredictorRef.Namespace,
-			},
-			GenerateFeatureHistogram: util.BoolPtr(true),
-			Type:                     &datasettype,
-			Role:                     &datasetrole,
-		},
-		Status: data.DatasetStatus{
-			ObservedGeneration: 0,
-			LastUpdated:        nil,
-			Logs:               catalog.Logs{},
-			Phase:              "",
-		},
-	}
-
-	return result, nil
-
-}
-
 ////////////////////////////////////////////////////////////
 // Model Alerts
 
@@ -360,31 +319,4 @@ func (run *Forecast) RunStatus() *catalog.LastRunStatus {
 	result.Status = string(run.Status.Phase)
 	return result
 
-}
-
-func (fh *Forecast) DriftAlert(tenantRef *v1.ObjectReference, notifierName *string, columns []string) *infra.Alert {
-	level := infra.Error
-	subject := fmt.Sprintf("drift detected")
-	return &infra.Alert{
-		ObjectMeta: metav1.ObjectMeta{
-			GenerateName: fh.Name,
-			Namespace:    fh.Namespace,
-		},
-		Spec: infra.AlertSpec{
-			Subject:      util.StrPtr(subject),
-			Message:      util.StrPtr("drift was detected"),
-			Level:        &level,
-			TenantRef:    tenantRef,
-			NotifierName: notifierName,
-			EntityRef: v1.ObjectReference{
-				Kind:      "Entity",
-				Name:      fh.Name,
-				Namespace: fh.Namespace,
-			},
-			Owner: fh.Spec.Owner,
-			Fields: map[string]string{
-				"columns": strings.Join(columns, ","),
-			},
-		},
-	}
 }
