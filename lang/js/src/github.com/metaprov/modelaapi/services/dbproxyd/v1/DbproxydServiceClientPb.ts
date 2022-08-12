@@ -9286,6 +9286,221 @@ export class DatabaseProxyServiceClient {
     this.methodInfoDeletePrediction);
   }
 
+  methodInfoListForecasts = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListForecasts',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListForecastsRequest,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListForecastsResponse,
+    (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListForecastsRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListForecastsResponse.deserializeBinary
+  );
+
+  listForecasts(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListForecastsRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListForecastsResponse>;
+
+  listForecasts(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListForecastsRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListForecastsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListForecastsResponse>;
+
+  listForecasts(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListForecastsRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListForecastsResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListForecasts',
+        request,
+        metadata || {},
+        this.methodInfoListForecasts,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListForecasts',
+    request,
+    metadata || {},
+    this.methodInfoListForecasts);
+  }
+
+  methodInfoGetForecast = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetForecast',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetForecastRequest,
+    github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Forecast,
+    (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetForecastRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Forecast.deserializeBinary
+  );
+
+  getForecast(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetForecastRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Forecast>;
+
+  getForecast(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetForecastRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Forecast) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Forecast>;
+
+  getForecast(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetForecastRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Forecast) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetForecast',
+        request,
+        metadata || {},
+        this.methodInfoGetForecast,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetForecast',
+    request,
+    metadata || {},
+    this.methodInfoGetForecast);
+  }
+
+  methodInfoCreateForecast = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateForecast',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateForecastRequest,
+    github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Forecast,
+    (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateForecastRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Forecast.deserializeBinary
+  );
+
+  createForecast(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateForecastRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Forecast>;
+
+  createForecast(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateForecastRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Forecast) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Forecast>;
+
+  createForecast(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateForecastRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Forecast) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateForecast',
+        request,
+        metadata || {},
+        this.methodInfoCreateForecast,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateForecast',
+    request,
+    metadata || {},
+    this.methodInfoCreateForecast);
+  }
+
+  methodInfoUpdateForecast = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateForecast',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateForecastRequest,
+    github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Forecast,
+    (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateForecastRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Forecast.deserializeBinary
+  );
+
+  updateForecast(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateForecastRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Forecast>;
+
+  updateForecast(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateForecastRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Forecast) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Forecast>;
+
+  updateForecast(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateForecastRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Forecast) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateForecast',
+        request,
+        metadata || {},
+        this.methodInfoUpdateForecast,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateForecast',
+    request,
+    metadata || {},
+    this.methodInfoUpdateForecast);
+  }
+
+  methodInfoDeleteForecast = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteForecast',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteForecastRequest,
+    google_protobuf_empty_pb.Empty,
+    (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteForecastRequest) => {
+      return request.serializeBinary();
+    },
+    google_protobuf_empty_pb.Empty.deserializeBinary
+  );
+
+  deleteForecast(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteForecastRequest,
+    metadata: grpcWeb.Metadata | null): Promise<google_protobuf_empty_pb.Empty>;
+
+  deleteForecast(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteForecastRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
+
+  deleteForecast(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteForecastRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: google_protobuf_empty_pb.Empty) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteForecast',
+        request,
+        metadata || {},
+        this.methodInfoDeleteForecast,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteForecast',
+    request,
+    metadata || {},
+    this.methodInfoDeleteForecast);
+  }
+
   methodInfoListPredictors = new grpcWeb.MethodDescriptor(
     '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListPredictors',
     grpcWeb.MethodType.UNARY,

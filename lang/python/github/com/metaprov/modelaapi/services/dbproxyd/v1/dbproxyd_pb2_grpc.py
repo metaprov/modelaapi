@@ -1095,6 +1095,31 @@ class DatabaseProxyServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeletePredictionRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
+        self.ListForecasts = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListForecasts',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListForecastsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListForecastsResponse.FromString,
+                )
+        self.GetForecast = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetForecast',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetForecastRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Forecast.FromString,
+                )
+        self.CreateForecast = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateForecast',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateForecastRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Forecast.FromString,
+                )
+        self.UpdateForecast = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateForecast',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateForecastRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Forecast.FromString,
+                )
+        self.DeleteForecast = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteForecast',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteForecastRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
         self.ListPredictors = channel.unary_unary(
                 '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListPredictors',
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListPredictorsRequest.SerializeToString,
@@ -2655,6 +2680,36 @@ class DatabaseProxyServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListForecasts(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetForecast(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateForecast(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateForecast(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteForecast(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def ListPredictors(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -4031,6 +4086,31 @@ def add_DatabaseProxyServiceServicer_to_server(servicer, server):
             'DeletePrediction': grpc.unary_unary_rpc_method_handler(
                     servicer.DeletePrediction,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeletePredictionRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'ListForecasts': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListForecasts,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListForecastsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListForecastsResponse.SerializeToString,
+            ),
+            'GetForecast': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetForecast,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetForecastRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Forecast.SerializeToString,
+            ),
+            'CreateForecast': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateForecast,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateForecastRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Forecast.SerializeToString,
+            ),
+            'UpdateForecast': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateForecast,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateForecastRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Forecast.SerializeToString,
+            ),
+            'DeleteForecast': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteForecast,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteForecastRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'ListPredictors': grpc.unary_unary_rpc_method_handler(
@@ -7944,6 +8024,91 @@ class DatabaseProxyService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeletePrediction',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeletePredictionRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListForecasts(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListForecasts',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListForecastsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListForecastsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetForecast(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetForecast',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetForecastRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Forecast.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateForecast(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateForecast',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateForecastRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Forecast.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateForecast(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateForecast',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateForecastRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Forecast.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteForecast(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteForecast',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteForecastRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
