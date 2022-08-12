@@ -106,6 +106,7 @@ python3 -m grpc_tools.protoc \
     github.com/metaprov/modelaapi/services/offlinefeaturestored/v1/offlinefeaturestored.proto \
     github.com/metaprov/modelaapi/services/postmortem/v1/postmortem.proto \
     github.com/metaprov/modelaapi/services/prediction/v1/prediction.proto \
+    github.com/metaprov/modelaapi/services/forecast/v1/forecast.proto \
     github.com/metaprov/modelaapi/services/cronprediction/v1/cronprediction.proto \
     github.com/metaprov/modelaapi/services/predictionstore/v1/predictionstore.proto \
     github.com/metaprov/modelaapi/services/grpcinferenceservice/v1/grpcinferenceservice.proto \

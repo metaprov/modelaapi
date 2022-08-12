@@ -891,6 +891,124 @@ export namespace FeedbackTestSpec {
   }
 }
 
+export class Forecast extends jspb.Message {
+  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
+  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): Forecast;
+  hasMetadata(): boolean;
+  clearMetadata(): Forecast;
+
+  getSpec(): ForecastSpec | undefined;
+  setSpec(value?: ForecastSpec): Forecast;
+  hasSpec(): boolean;
+  clearSpec(): Forecast;
+
+  getStatus(): ForecastStatus | undefined;
+  setStatus(value?: ForecastStatus): Forecast;
+  hasStatus(): boolean;
+  clearStatus(): Forecast;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Forecast.AsObject;
+  static toObject(includeInstance: boolean, msg: Forecast): Forecast.AsObject;
+  static serializeBinaryToWriter(message: Forecast, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Forecast;
+  static deserializeBinaryFromReader(message: Forecast, reader: jspb.BinaryReader): Forecast;
+}
+
+export namespace Forecast {
+  export type AsObject = {
+    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.AsObject,
+    spec?: ForecastSpec.AsObject,
+    status?: ForecastStatus.AsObject,
+  }
+}
+
+export class ForecastCondition extends jspb.Message {
+  getType(): string;
+  setType(value: string): ForecastCondition;
+
+  getStatus(): string;
+  setStatus(value: string): ForecastCondition;
+
+  getLasttransitiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLasttransitiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ForecastCondition;
+  hasLasttransitiontime(): boolean;
+  clearLasttransitiontime(): ForecastCondition;
+
+  getReason(): string;
+  setReason(value: string): ForecastCondition;
+
+  getMessage(): string;
+  setMessage(value: string): ForecastCondition;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ForecastCondition.AsObject;
+  static toObject(includeInstance: boolean, msg: ForecastCondition): ForecastCondition.AsObject;
+  static serializeBinaryToWriter(message: ForecastCondition, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ForecastCondition;
+  static deserializeBinaryFromReader(message: ForecastCondition, reader: jspb.BinaryReader): ForecastCondition;
+}
+
+export namespace ForecastCondition {
+  export type AsObject = {
+    type: string,
+    status: string,
+    lasttransitiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    reason: string,
+    message: string,
+  }
+}
+
+export class ForecastForecastSpec extends jspb.Message {
+  getHierarchyvaluesMap(): jspb.Map<string, string>;
+  clearHierarchyvaluesMap(): ForecastForecastSpec;
+
+  getHorizon(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.PeriodSpec | undefined;
+  setHorizon(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.PeriodSpec): ForecastForecastSpec;
+  hasHorizon(): boolean;
+  clearHorizon(): ForecastForecastSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ForecastForecastSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: ForecastForecastSpec): ForecastForecastSpec.AsObject;
+  static serializeBinaryToWriter(message: ForecastForecastSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ForecastForecastSpec;
+  static deserializeBinaryFromReader(message: ForecastForecastSpec, reader: jspb.BinaryReader): ForecastForecastSpec;
+}
+
+export namespace ForecastForecastSpec {
+  export type AsObject = {
+    hierarchyvaluesMap: Array<[string, string]>,
+    horizon?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.PeriodSpec.AsObject,
+  }
+}
+
+export class ForecastList extends jspb.Message {
+  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta | undefined;
+  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta): ForecastList;
+  hasMetadata(): boolean;
+  clearMetadata(): ForecastList;
+
+  getItemsList(): Array<Forecast>;
+  setItemsList(value: Array<Forecast>): ForecastList;
+  clearItemsList(): ForecastList;
+  addItems(value?: Forecast, index?: number): Forecast;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ForecastList.AsObject;
+  static toObject(includeInstance: boolean, msg: ForecastList): ForecastList.AsObject;
+  static serializeBinaryToWriter(message: ForecastList, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ForecastList;
+  static deserializeBinaryFromReader(message: ForecastList, reader: jspb.BinaryReader): ForecastList;
+}
+
+export namespace ForecastList {
+  export type AsObject = {
+    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta.AsObject,
+    itemsList: Array<Forecast.AsObject>,
+  }
+}
+
 export class ForecastPredictionSpec extends jspb.Message {
   getHierarchyvaluesMap(): jspb.Map<string, string>;
   clearHierarchyvaluesMap(): ForecastPredictionSpec;
@@ -912,6 +1030,198 @@ export namespace ForecastPredictionSpec {
   export type AsObject = {
     hierarchyvaluesMap: Array<[string, string]>,
     horizon?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.PeriodSpec.AsObject,
+  }
+}
+
+export class ForecastSpec extends jspb.Message {
+  getVersionname(): string;
+  setVersionname(value: string): ForecastSpec;
+
+  getPredictorref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setPredictorref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ForecastSpec;
+  hasPredictorref(): boolean;
+  clearPredictorref(): ForecastSpec;
+
+  getLabeled(): boolean;
+  setLabeled(value: boolean): ForecastSpec;
+
+  getForecast(): boolean;
+  setForecast(value: boolean): ForecastSpec;
+
+  getDatasourceref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setDatasourceref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ForecastSpec;
+  hasDatasourceref(): boolean;
+  clearDatasourceref(): ForecastSpec;
+
+  getInput(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataInputSpec | undefined;
+  setInput(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataInputSpec): ForecastSpec;
+  hasInput(): boolean;
+  clearInput(): ForecastSpec;
+
+  getOutput(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataOutputSpec | undefined;
+  setOutput(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataOutputSpec): ForecastSpec;
+  hasOutput(): boolean;
+  clearOutput(): ForecastSpec;
+
+  getCreatedataset(): boolean;
+  setCreatedataset(value: boolean): ForecastSpec;
+
+  getUnittests(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelTestSuite | undefined;
+  setUnittests(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelTestSuite): ForecastSpec;
+  hasUnittests(): boolean;
+  clearUnittests(): ForecastSpec;
+
+  getOwner(): string;
+  setOwner(value: string): ForecastSpec;
+
+  getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
+  setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): ForecastSpec;
+  hasResources(): boolean;
+  clearResources(): ForecastSpec;
+
+  getActivedeadlineseconds(): number;
+  setActivedeadlineseconds(value: number): ForecastSpec;
+
+  getPriority(): string;
+  setPriority(value: string): ForecastSpec;
+
+  getAborted(): boolean;
+  setAborted(value: boolean): ForecastSpec;
+
+  getTtl(): number;
+  setTtl(value: number): ForecastSpec;
+
+  getForecastspec(): ForecastForecastSpec | undefined;
+  setForecastspec(value?: ForecastForecastSpec): ForecastSpec;
+  hasForecastspec(): boolean;
+  clearForecastspec(): ForecastSpec;
+
+  getCronpredictorname(): string;
+  setCronpredictorname(value: string): ForecastSpec;
+
+  getServingsiteref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setServingsiteref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ForecastSpec;
+  hasServingsiteref(): boolean;
+  clearServingsiteref(): ForecastSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ForecastSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: ForecastSpec): ForecastSpec.AsObject;
+  static serializeBinaryToWriter(message: ForecastSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ForecastSpec;
+  static deserializeBinaryFromReader(message: ForecastSpec, reader: jspb.BinaryReader): ForecastSpec;
+}
+
+export namespace ForecastSpec {
+  export type AsObject = {
+    versionname: string,
+    predictorref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    labeled: boolean,
+    forecast: boolean,
+    datasourceref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    input?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataInputSpec.AsObject,
+    output?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataOutputSpec.AsObject,
+    createdataset: boolean,
+    unittests?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelTestSuite.AsObject,
+    owner: string,
+    resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
+    activedeadlineseconds: number,
+    priority: string,
+    aborted: boolean,
+    ttl: number,
+    forecastspec?: ForecastForecastSpec.AsObject,
+    cronpredictorname: string,
+    servingsiteref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+  }
+}
+
+export class ForecastStatus extends jspb.Message {
+  getStarttime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setStarttime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ForecastStatus;
+  hasStarttime(): boolean;
+  clearStarttime(): ForecastStatus;
+
+  getEndtime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setEndtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ForecastStatus;
+  hasEndtime(): boolean;
+  clearEndtime(): ForecastStatus;
+
+  getPhase(): string;
+  setPhase(value: string): ForecastStatus;
+
+  getUnittestsresult(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
+  setUnittestsresult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): ForecastStatus;
+  hasUnittestsresult(): boolean;
+  clearUnittestsresult(): ForecastStatus;
+
+  getObservedgeneration(): number;
+  setObservedgeneration(value: number): ForecastStatus;
+
+  getRows(): number;
+  setRows(value: number): ForecastStatus;
+
+  getTriggeredby(): string;
+  setTriggeredby(value: string): ForecastStatus;
+
+  getLogs(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs | undefined;
+  setLogs(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs): ForecastStatus;
+  hasLogs(): boolean;
+  clearLogs(): ForecastStatus;
+
+  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ForecastStatus;
+  hasLastupdated(): boolean;
+  clearLastupdated(): ForecastStatus;
+
+  getFailurereason(): string;
+  setFailurereason(value: string): ForecastStatus;
+
+  getFailuremessage(): string;
+  setFailuremessage(value: string): ForecastStatus;
+
+  getDatasetref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setDatasetref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ForecastStatus;
+  hasDatasetref(): boolean;
+  clearDatasetref(): ForecastStatus;
+
+  getColumnsList(): Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.ColumnHistogram>;
+  setColumnsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.ColumnHistogram>): ForecastStatus;
+  clearColumnsList(): ForecastStatus;
+  addColumns(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.ColumnHistogram, index?: number): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.ColumnHistogram;
+
+  getDrifted(): boolean;
+  setDrifted(value: boolean): ForecastStatus;
+
+  getConditionsList(): Array<ForecastCondition>;
+  setConditionsList(value: Array<ForecastCondition>): ForecastStatus;
+  clearConditionsList(): ForecastStatus;
+  addConditions(value?: ForecastCondition, index?: number): ForecastCondition;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ForecastStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: ForecastStatus): ForecastStatus.AsObject;
+  static serializeBinaryToWriter(message: ForecastStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ForecastStatus;
+  static deserializeBinaryFromReader(message: ForecastStatus, reader: jspb.BinaryReader): ForecastStatus;
+}
+
+export namespace ForecastStatus {
+  export type AsObject = {
+    starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    phase: string,
+    unittestsresult?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
+    observedgeneration: number,
+    rows: number,
+    triggeredby: string,
+    logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
+    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    failurereason: string,
+    failuremessage: string,
+    datasetref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    columnsList: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.ColumnHistogram.AsObject>,
+    drifted: boolean,
+    conditionsList: Array<ForecastCondition.AsObject>,
   }
 }
 

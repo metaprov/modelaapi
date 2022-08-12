@@ -31,6 +31,7 @@ resources:
 - inference.modela.ai_cronpredictions.yaml
 - inference.modela.ai_curtains.yaml
 - inference.modela.ai_dataapps.yaml
+- inference.modela.ai_forecasts.yaml
 - inference.modela.ai_predictions.yaml
 - inference.modela.ai_predictors.yaml
 - infra.modela.ai_accounts.yaml

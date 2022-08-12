@@ -580,6 +580,65 @@ message FeedbackTestSpec {
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 3;
 }
 
+// Forecast represents a single batch forecast on a dataset
+// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status"
+// +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",priority=1
+// +kubebuilder:printcolumn:name="Predictor",type="string",JSONPath=".spec.predictorName"
+// +kubebuilder:printcolumn:name="Entity",type="string",JSONPath=".spec.datasetName"
+// +kubebuilder:printcolumn:name="Labeled",type="string",JSONPath=".spec.labeled"
+// +kubebuilder:printcolumn:name="Bucket",type="string",JSONPath=".spec.output.bucketName",priority=1
+// +kubebuilder:printcolumn:name="Key",type="string",JSONPath=".spec.output.path",priority=1
+// +kubebuilder:printcolumn:name="Score",type="string",JSONPath=".status.score"
+// +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
+// +kubebuilder:printcolumn:name="Rows",type="string",JSONPath=".status.rows"
+// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
+// +kubebuilder:object:root=true
+// +kubebuilder:subresource:status
+// +kubebuilder:resource:path=forecasts,shortName=fr,singular=forecast,categories={inference,modela}
+message Forecast {
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
+
+  optional ForecastSpec spec = 2;
+
+  optional ForecastStatus status = 3;
+}
+
+// ForecastCondition describes the state of a Forecast at a certain point
+message ForecastCondition {
+  // Type of Forecast condition
+  optional string type = 1;
+
+  // Status of the condition, one of True, False, Unknown
+  optional string status = 2;
+
+  // Last time the condition transitioned from one status to another
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
+
+  // The reason for the condition's last transition
+  optional string reason = 4;
+
+  // A human-readable message indicating details about the transition
+  optional string message = 5;
+}
+
+// ForecastSpec specifies the details of a forecasting model
+message ForecastForecastSpec {
+  // The hierarchy specification, which maps columns to values
+  // +kubebuilder:validation:Optional
+  map<string, string> hierarchyValues = 1;
+
+  // The interval of the forecast
+  optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSpec horizon = 2;
+}
+
+// +kubebuilder:object:root=true
+// ForecastList is a list of Forecasts
+message ForecastList {
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
+
+  repeated Forecast items = 2;
+}
+
 // ForecastSpec specifies the details of a forecasting model
 message ForecastPredictionSpec {
   // The hierarchy specification, which maps columns to values
@@ -588,6 +647,162 @@ message ForecastPredictionSpec {
 
   // The interval of the forecast
   optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSpec horizon = 2;
+}
+
+// ForecastSpec represent the desired state of Forecast
+message ForecastSpec {
+  // The name of the DataProductVersion which describes the version of the resource
+  // that exists in the same DataProduct namespace as the resource
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string versionName = 1;
+
+  // PredictorRef is the name of the Predictor resource that will be used to evaluate forecasts for the
+  // unlabeled input dataset. The Predictor must exist in the same DataProduct namespace as the resource
+  // +kubebuilder:validation:Required
+  // +required
+  optional k8s.io.api.core.v1.ObjectReference predictorRef = 2;
+
+  // If true, measurements for the metrics specified by the `Tests` field will be computed for each forecast and
+  // stored in the Forecast's status with the average result of all forecasts
+  // +kubebuilder:default:=false
+  // Used usually for unit testing
+  optional bool labeled = 3;
+
+  // Indicates if the forecast is a forecast
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool forecast = 4;
+
+  // A reference to the input data source ref
+  // +kubebuilder:validation:Optional
+  optional k8s.io.api.core.v1.ObjectReference dataSourceRef = 5;
+
+  // Output specifies the location where the predicted dataset will be stored
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec input = 6;
+
+  // Output specifies the location where the predicted dataset will be stored
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataOutputSpec output = 7;
+
+  // If true create output dataset
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool createDataset = 8;
+
+  // Tests specifies a collection of metrics that will be computed for each forecast
+  // if the Labeled field of the Forecast is enabled
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuite unitTests = 9;
+
+  // The name of the Account which created the object, which exists in the same tenant as the object
+  // +kubebuilder:default:="no-one"
+  // +kubebuilder:validation:Optional
+  optional string owner = 10;
+
+  // Resources specifies the resource requirements that will be allocated to the batch forecast Job
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 11;
+
+  // The deadline for the batch forecast Job to be completed in seconds
+  // +kubebuilder:default:=600
+  // +kubebuilder:validation:Minimum=0
+  // +kubebuilder:validation:Optional
+  optional int64 activeDeadlineSeconds = 12;
+
+  // The priority of the Kubernetes Job created by the Forecast (medium, by default)
+  // +kubebuilder:default:=medium
+  // +kubebuilder:validation:Optional
+  optional string priority = 13;
+
+  // Indicates if the Forecast was aborted and should stop execution
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool aborted = 14;
+
+  // The time-to-live of the Forecast, after which the Forecast will be archived
+  // +kubebuilder:default:=0
+  // +kubebuilder:validation:Optional
+  optional int32 ttl = 15;
+
+  // The forecasting specification in the case that the predicted model is a hierarchical forecast
+  // +kubebuilder:validation:Optional
+  optional ForecastForecastSpec forecastSpec = 16;
+
+  // CronForecastName specifies the name of the CronForecast that created the Forecast, if applicable
+  // +kubebuilder:validation:MaxLength=63
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string cronPredictorName = 17;
+
+  // The reference to the ServingSite resource that hosts the Forecast
+  // +kubebuilder:validation:Optional
+  optional k8s.io.api.core.v1.ObjectReference servingsiteRef = 18;
+}
+
+// ForecastStatus is the observed state of a Forecast
+message ForecastStatus {
+  // StartTime denotes the time when the batch forecast Job started
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 1;
+
+  // EndTime denotes the time when the batch forecast Job completed or failed
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 2;
+
+  // The current phase of the forecast
+  // +kubebuilder:default:="Pending"
+  // +kubebuilder:validation:Optional
+  optional string phase = 3;
+
+  // The collection of metrics that represent the average measurement across all forecasts for each
+  // metric specified by the Tests field of the Predictor
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult unitTestsResult = 4;
+
+  // ObservedGeneration is the last generation that was acted on
+  // +kubebuilder:validation:Optional
+  optional int64 observedGeneration = 5;
+
+  // The number of rows predicted
+  // +kubebuilder:validation:Optional
+  optional int32 rows = 6;
+
+  // The trigger that started the batch forecast
+  // +kubebuilder:validation:Optional
+  optional string triggeredBy = 7;
+
+  // The location of logs produced by the batch forecast Job
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 8;
+
+  // The last time the object was updated
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 9;
+
+  // In the case of failure, the Forecast resource controller will set this field with a failure reason
+  // +kubebuilder:validation:Optional
+  optional string failureReason = 10;
+
+  // In the case of failure, the Forecast resource controller will set this field with a failure message
+  // +kubebuilder:validation:Optional
+  optional string failureMessage = 11;
+
+  // The dataset that was generated.
+  // +kubebuilder:validation:Optional
+  optional k8s.io.api.core.v1.ObjectReference datasetRef = 12;
+
+  // The histogram values, map from column name to an histogram
+  // +kubebuilder:validation:Optional
+  repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnHistogram columns = 13;
+
+  // Set to true if drifted
+  // +kubebuilder:validation:Optional
+  optional bool drifted = 14;
+
+  // +patchMergeKey=type
+  // +patchStrategy=merge
+  // +kubebuilder:validation:Optional
+  repeated ForecastCondition conditions = 15;
 }
 
 message ForwardCurtainSpec {
