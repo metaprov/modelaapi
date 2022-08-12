@@ -421,16 +421,6 @@ type ThresholdPrunerOptions struct {
 	IntervalSteps *int32 `json:"intervalSteps,omitempty" protobuf:"varint,4,opt,name=intervalSteps"`
 }
 
-// StudyForecastSpec specifies the configuration to train a forecasting model
-type StudyForecastSpec struct {
-	// Template to use for each model
-	// +kubebuilder:validation:Optional
-	Template ForecastSpec `json:"template,omitempty" protobuf:"bytes,1,opt,name=template"`
-	// The group hierarchy, in the case of a multi-level forecast
-	// +kubebuilder:validation:Optional
-	Hierarchy Hierarchy `json:"hierarchy,omitempty" protobuf:"bytes,2,opt,name=hierarchy"`
-}
-
 // FeatureEngineeringSearchSpec specifies the configuration to produce
 // the best-performing feature engineering pipeline for a given dataset
 type FeatureEngineeringSearchSpec struct {
@@ -536,7 +526,7 @@ type StudySpec struct {
 	ServingTemplate ServingSpec `json:"servingTemplate,omitempty" protobuf:"bytes,13,opt,name=servingTemplate"`
 	// ForecastSpec specifies the parameters required when generating a forecasting model
 	// +kubebuilder:validation:Optional
-	ForecastSpec StudyForecastSpec `json:"forecast,omitempty" protobuf:"bytes,14,opt,name=forecast"`
+	ForecastTraining ForecasterTrainingSpec `json:"forecasterTraining,omitempty" protobuf:"bytes,14,opt,name=forecasterTraining"`
 	// Schedule specifies the configuration to execute the Study at a later date
 	// +kubebuilder:validation:Optional
 	Schedule StudyScheduleSpec `json:"schedule,omitempty" protobuf:"bytes,15,opt,name=schedule"`

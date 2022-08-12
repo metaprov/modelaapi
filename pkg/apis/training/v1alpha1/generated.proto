@@ -804,38 +804,103 @@ message ForecastPostProcessingSpec {
   optional bool forecast = 2;
 }
 
+// A forecaster contains the metadata for one forecast model
+message Forecaster {
+  // Key is the uniqe key of a time series
+  // +kubebuilder:validation:Optional
+  repeated string key = 1;
+
+  // AlgorithmName is a reference to the algorithm in the catalog
+  optional string algorithmName = 2;
+
+  // Parameters is a list of the algorithm hyper parameters
+  repeated HyperParameterValue parameters = 3;
+
+  // The scores
+  // +kubebuilder:validation:Optional
+  map<string, double> scores = 4;
+
+  // The result of feature computation for this time series.
+  // +kubebuilder:validation:Optional
+  map<string, double> featureValues = 5;
+}
+
+// The list of forecasters
+message ForecasterList {
+  // +kubebuilder:validation:Optional
+  repeated Forecaster items = 2;
+}
+
 // ForecastingSpec
-message ForecastSpec {
+message ForecasterTrainingSpec {
   // Specification of the forecast data.
   // +kubebuilder:validation:Optional
   optional TimeSeriesDataSpec data = 1;
+
+  // The spec for the holiday
+  // +kubebuilder:validation:Optional
+  optional HolidaySpec holiday = 2;
+
+  // The historical periods
+  // +kubebuilder:validation:Optional
+  optional PeriodSpec history = 3;
+
+  // The forecast periods
+  // +kubebuilder:validation:Optional
+  optional PeriodSpec forecast = 4;
+
+  // The list of additional regressors. The regresors are part of the time series data
+  // +kubebuilder:validation:Optional
+  repeated CustomSeasonalitySpec customSeasonalities = 5;
+
+  // Set an holiday schedule for a country.
+  // Change point specification
+  // +kubebuilder:validation:Optional
+  optional ChangePointSpec changepoints = 6;
+
+  // +kubebuilder:default = 0.8
+  // +kubebuilder:validation:Optional
+  optional double intevalWidth = 7;
+
+  // +kubebuilder:default = 1000
+  // +kubebuilder:validation:Optional
+  optional int32 uncertaintySamples = 8;
+
+  // The generate seasonality mode
+  // +kubebuilder:default = "additive"
+  // +kubebuilder:validation:Optional
+  optional string seasonality = 9;
 
   // The confidence levels for the forecast, each level must be between 1-100.
   // +kubebuilder:default = 95
   // +kubebuilder:validation:Optional
   // +kubebuilder:validation:Minimum=0
-  optional int32 confidenceInterval = 2;
+  optional int32 confidenceInterval = 10;
 
   // The backtest specification, the system supports back testing with expanding windows.
   // +kubebuilder:validation:Optional
-  optional BacktestSpec backtest = 3;
+  optional BacktestSpec backtest = 11;
 
   // Post processing
   // +kubebuilder:validation:Optional
-  optional ForecastPostProcessingSpec postProcessing = 4;
+  optional ForecastPostProcessingSpec postProcessing = 12;
 
   // If true generate the plots
   // +kubebuilder:default = true
   // +kubebuilder:validation:Optional
-  optional bool plot = 5;
+  optional bool plot = 13;
 
   // +kubebuilder:default = true
   // +kubebuilder:validation:Optional
-  optional bool plotChangePoints = 6;
+  optional bool plotChangePoints = 14;
 
   // The data location that would store the forecast result.
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation outputLocation = 7;
+  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation outputLocation = 15;
+
+  // List of time series features to compute on each time series.
+  // +kubebuilder:validation:Optional
+  repeated string features = 16;
 }
 
 // GarbageCollectionSpec specifies the configuration to garbage-collect unused Model resources
@@ -898,26 +963,6 @@ message Hierarchy {
 
   // Item level column.
   optional Level itemLevel = 3;
-}
-
-// Define weather an hierarchy exists in the time series
-message HierarchySpec {
-  // If true enable
-  // +kubebuilder:default:=false
-  // +kubebuilder:validation:Optional
-  optional bool enabled = 1;
-
-  // Column name of the first level of grouping
-  // +kubebuilder:validation:Optional
-  optional string groupColumn = 2;
-
-  // Column name of the second level of grouping
-  // +kubebuilder:validation:Optional
-  optional string subGroupColumn = 3;
-
-  // Column name of the third level of grouping
-  // +kubebuilder:validation:Optional
-  optional string subSubGroupColumn = 4;
 }
 
 message HolidaySpec {
@@ -2137,7 +2182,7 @@ message ModelSpec {
 
   // Forecasting specifies the configuration to train a forecasting model
   // +kubebuilder:validation:Optional
-  optional ForecastSpec forecast = 39;
+  optional ForecasterTrainingSpec forecasting = 39;
 
   // Compilation specifies the configuration to compile a model to a binary (currently unimplemented)
   // +kubebuilder:validation:Optional
@@ -3249,17 +3294,6 @@ message StudyCondition {
   optional string message = 6;
 }
 
-// StudyForecastSpec specifies the configuration to train a forecasting model
-message StudyForecastSpec {
-  // Template to use for each model
-  // +kubebuilder:validation:Optional
-  optional ForecastSpec template = 1;
-
-  // The group hierarchy, in the case of a multi-level forecast
-  // +kubebuilder:validation:Optional
-  optional Hierarchy hierarchy = 2;
-}
-
 // StudyList contains a list of Studies
 // +kubebuilder:object:root=true
 message StudyList {
@@ -3382,7 +3416,7 @@ message StudySpec {
 
   // ForecastSpec specifies the parameters required when generating a forecasting model
   // +kubebuilder:validation:Optional
-  optional StudyForecastSpec forecast = 14;
+  optional ForecasterTrainingSpec forecasterTraining = 14;
 
   // Schedule specifies the configuration to execute the Study at a later date
   // +kubebuilder:validation:Optional
@@ -3777,60 +3811,27 @@ message TimeSeriesDataSpec {
   // +kubebuilder:validation:Optional
   optional string datetimeFormat = 3;
 
-  // The Hierarchy spec
   // +kubebuilder:validation:Optional
-  optional HierarchySpec hierarchy = 4;
-
-  // The spec for the holiday
+  // Column names for the time series key
   // +kubebuilder:validation:Optional
-  optional HolidaySpec holiday = 5;
-
-  // The historical periods
-  // +kubebuilder:validation:Optional
-  optional PeriodSpec history = 6;
-
-  // The forecast periods
-  // +kubebuilder:validation:Optional
-  optional PeriodSpec forecast = 7;
+  repeated string keyColumn = 4;
 
   // +kubebuilder:validation:Optional
-  optional PeriodSeasonalitySpec yearlySeasonality = 8;
+  optional PeriodSeasonalitySpec yearlySeasonality = 5;
 
   // +kubebuilder:validation:Optional
-  optional PeriodSeasonalitySpec weeklySeasonality = 9;
+  optional PeriodSeasonalitySpec weeklySeasonality = 6;
 
   // +kubebuilder:validation:Optional
-  optional PeriodSeasonalitySpec dailySeasonality = 10;
+  optional PeriodSeasonalitySpec dailySeasonality = 7;
 
   // +kubebuilder:default = "linear"
   // +kubebuilder:validation:Optional
-  optional string growth = 13;
+  optional string growth = 8;
 
   // The list of additional regressors. The regresors are part of the time series data
   // +kubebuilder:validation:Optional
-  repeated RegressorSpec regressors = 14;
-
-  // The list of additional regressors. The regresors are part of the time series data
-  // +kubebuilder:validation:Optional
-  repeated CustomSeasonalitySpec customSeasonalities = 15;
-
-  // Set an holiday schedule for a country.
-  // Change point specification
-  // +kubebuilder:validation:Optional
-  optional ChangePointSpec changepoints = 16;
-
-  // +kubebuilder:default = 0.8
-  // +kubebuilder:validation:Optional
-  optional double intevalWidth = 17;
-
-  // +kubebuilder:default = 1000
-  // +kubebuilder:validation:Optional
-  optional int32 uncertaintySamples = 18;
-
-  // The generate seasonality mode
-  // +kubebuilder:default = "additive"
-  // +kubebuilder:validation:Optional
-  optional string seasonality = 19;
+  repeated RegressorSpec regressors = 9;
 }
 
 // TrainingSpec specifies the configuration of a model training workload

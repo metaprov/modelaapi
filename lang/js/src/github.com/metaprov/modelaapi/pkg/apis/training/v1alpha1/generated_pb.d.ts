@@ -1230,53 +1230,159 @@ export namespace ForecastPostProcessingSpec {
   }
 }
 
-export class ForecastSpec extends jspb.Message {
-  getData(): TimeSeriesDataSpec | undefined;
-  setData(value?: TimeSeriesDataSpec): ForecastSpec;
-  hasData(): boolean;
-  clearData(): ForecastSpec;
+export class Forecaster extends jspb.Message {
+  getKeyList(): Array<string>;
+  setKeyList(value: Array<string>): Forecaster;
+  clearKeyList(): Forecaster;
+  addKey(value: string, index?: number): Forecaster;
 
-  getConfidenceinterval(): number;
-  setConfidenceinterval(value: number): ForecastSpec;
+  getAlgorithmname(): string;
+  setAlgorithmname(value: string): Forecaster;
 
-  getBacktest(): BacktestSpec | undefined;
-  setBacktest(value?: BacktestSpec): ForecastSpec;
-  hasBacktest(): boolean;
-  clearBacktest(): ForecastSpec;
+  getParametersList(): Array<HyperParameterValue>;
+  setParametersList(value: Array<HyperParameterValue>): Forecaster;
+  clearParametersList(): Forecaster;
+  addParameters(value?: HyperParameterValue, index?: number): HyperParameterValue;
 
-  getPostprocessing(): ForecastPostProcessingSpec | undefined;
-  setPostprocessing(value?: ForecastPostProcessingSpec): ForecastSpec;
-  hasPostprocessing(): boolean;
-  clearPostprocessing(): ForecastSpec;
+  getScoresMap(): jspb.Map<string, number>;
+  clearScoresMap(): Forecaster;
 
-  getPlot(): boolean;
-  setPlot(value: boolean): ForecastSpec;
-
-  getPlotchangepoints(): boolean;
-  setPlotchangepoints(value: boolean): ForecastSpec;
-
-  getOutputlocation(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
-  setOutputlocation(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): ForecastSpec;
-  hasOutputlocation(): boolean;
-  clearOutputlocation(): ForecastSpec;
+  getFeaturevaluesMap(): jspb.Map<string, number>;
+  clearFeaturevaluesMap(): Forecaster;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ForecastSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: ForecastSpec): ForecastSpec.AsObject;
-  static serializeBinaryToWriter(message: ForecastSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ForecastSpec;
-  static deserializeBinaryFromReader(message: ForecastSpec, reader: jspb.BinaryReader): ForecastSpec;
+  toObject(includeInstance?: boolean): Forecaster.AsObject;
+  static toObject(includeInstance: boolean, msg: Forecaster): Forecaster.AsObject;
+  static serializeBinaryToWriter(message: Forecaster, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Forecaster;
+  static deserializeBinaryFromReader(message: Forecaster, reader: jspb.BinaryReader): Forecaster;
 }
 
-export namespace ForecastSpec {
+export namespace Forecaster {
+  export type AsObject = {
+    keyList: Array<string>,
+    algorithmname: string,
+    parametersList: Array<HyperParameterValue.AsObject>,
+    scoresMap: Array<[string, number]>,
+    featurevaluesMap: Array<[string, number]>,
+  }
+}
+
+export class ForecasterList extends jspb.Message {
+  getItemsList(): Array<Forecaster>;
+  setItemsList(value: Array<Forecaster>): ForecasterList;
+  clearItemsList(): ForecasterList;
+  addItems(value?: Forecaster, index?: number): Forecaster;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ForecasterList.AsObject;
+  static toObject(includeInstance: boolean, msg: ForecasterList): ForecasterList.AsObject;
+  static serializeBinaryToWriter(message: ForecasterList, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ForecasterList;
+  static deserializeBinaryFromReader(message: ForecasterList, reader: jspb.BinaryReader): ForecasterList;
+}
+
+export namespace ForecasterList {
+  export type AsObject = {
+    itemsList: Array<Forecaster.AsObject>,
+  }
+}
+
+export class ForecasterTrainingSpec extends jspb.Message {
+  getData(): TimeSeriesDataSpec | undefined;
+  setData(value?: TimeSeriesDataSpec): ForecasterTrainingSpec;
+  hasData(): boolean;
+  clearData(): ForecasterTrainingSpec;
+
+  getHoliday(): HolidaySpec | undefined;
+  setHoliday(value?: HolidaySpec): ForecasterTrainingSpec;
+  hasHoliday(): boolean;
+  clearHoliday(): ForecasterTrainingSpec;
+
+  getHistory(): PeriodSpec | undefined;
+  setHistory(value?: PeriodSpec): ForecasterTrainingSpec;
+  hasHistory(): boolean;
+  clearHistory(): ForecasterTrainingSpec;
+
+  getForecast(): PeriodSpec | undefined;
+  setForecast(value?: PeriodSpec): ForecasterTrainingSpec;
+  hasForecast(): boolean;
+  clearForecast(): ForecasterTrainingSpec;
+
+  getCustomseasonalitiesList(): Array<CustomSeasonalitySpec>;
+  setCustomseasonalitiesList(value: Array<CustomSeasonalitySpec>): ForecasterTrainingSpec;
+  clearCustomseasonalitiesList(): ForecasterTrainingSpec;
+  addCustomseasonalities(value?: CustomSeasonalitySpec, index?: number): CustomSeasonalitySpec;
+
+  getChangepoints(): ChangePointSpec | undefined;
+  setChangepoints(value?: ChangePointSpec): ForecasterTrainingSpec;
+  hasChangepoints(): boolean;
+  clearChangepoints(): ForecasterTrainingSpec;
+
+  getIntevalwidth(): number;
+  setIntevalwidth(value: number): ForecasterTrainingSpec;
+
+  getUncertaintysamples(): number;
+  setUncertaintysamples(value: number): ForecasterTrainingSpec;
+
+  getSeasonality(): string;
+  setSeasonality(value: string): ForecasterTrainingSpec;
+
+  getConfidenceinterval(): number;
+  setConfidenceinterval(value: number): ForecasterTrainingSpec;
+
+  getBacktest(): BacktestSpec | undefined;
+  setBacktest(value?: BacktestSpec): ForecasterTrainingSpec;
+  hasBacktest(): boolean;
+  clearBacktest(): ForecasterTrainingSpec;
+
+  getPostprocessing(): ForecastPostProcessingSpec | undefined;
+  setPostprocessing(value?: ForecastPostProcessingSpec): ForecasterTrainingSpec;
+  hasPostprocessing(): boolean;
+  clearPostprocessing(): ForecasterTrainingSpec;
+
+  getPlot(): boolean;
+  setPlot(value: boolean): ForecasterTrainingSpec;
+
+  getPlotchangepoints(): boolean;
+  setPlotchangepoints(value: boolean): ForecasterTrainingSpec;
+
+  getOutputlocation(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
+  setOutputlocation(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): ForecasterTrainingSpec;
+  hasOutputlocation(): boolean;
+  clearOutputlocation(): ForecasterTrainingSpec;
+
+  getFeaturesList(): Array<string>;
+  setFeaturesList(value: Array<string>): ForecasterTrainingSpec;
+  clearFeaturesList(): ForecasterTrainingSpec;
+  addFeatures(value: string, index?: number): ForecasterTrainingSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ForecasterTrainingSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: ForecasterTrainingSpec): ForecasterTrainingSpec.AsObject;
+  static serializeBinaryToWriter(message: ForecasterTrainingSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ForecasterTrainingSpec;
+  static deserializeBinaryFromReader(message: ForecasterTrainingSpec, reader: jspb.BinaryReader): ForecasterTrainingSpec;
+}
+
+export namespace ForecasterTrainingSpec {
   export type AsObject = {
     data?: TimeSeriesDataSpec.AsObject,
+    holiday?: HolidaySpec.AsObject,
+    history?: PeriodSpec.AsObject,
+    forecast?: PeriodSpec.AsObject,
+    customseasonalitiesList: Array<CustomSeasonalitySpec.AsObject>,
+    changepoints?: ChangePointSpec.AsObject,
+    intevalwidth: number,
+    uncertaintysamples: number,
+    seasonality: string,
     confidenceinterval: number,
     backtest?: BacktestSpec.AsObject,
     postprocessing?: ForecastPostProcessingSpec.AsObject,
     plot: boolean,
     plotchangepoints: boolean,
     outputlocation?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
+    featuresList: Array<string>,
   }
 }
 
@@ -1393,36 +1499,6 @@ export namespace Hierarchy {
     columnsList: Array<string>,
     grouplevelsList: Array<Level.AsObject>,
     itemlevel?: Level.AsObject,
-  }
-}
-
-export class HierarchySpec extends jspb.Message {
-  getEnabled(): boolean;
-  setEnabled(value: boolean): HierarchySpec;
-
-  getGroupcolumn(): string;
-  setGroupcolumn(value: string): HierarchySpec;
-
-  getSubgroupcolumn(): string;
-  setSubgroupcolumn(value: string): HierarchySpec;
-
-  getSubsubgroupcolumn(): string;
-  setSubsubgroupcolumn(value: string): HierarchySpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): HierarchySpec.AsObject;
-  static toObject(includeInstance: boolean, msg: HierarchySpec): HierarchySpec.AsObject;
-  static serializeBinaryToWriter(message: HierarchySpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): HierarchySpec;
-  static deserializeBinaryFromReader(message: HierarchySpec, reader: jspb.BinaryReader): HierarchySpec;
-}
-
-export namespace HierarchySpec {
-  export type AsObject = {
-    enabled: boolean,
-    groupcolumn: string,
-    subgroupcolumn: string,
-    subsubgroupcolumn: string,
   }
 }
 
@@ -3095,10 +3171,10 @@ export class ModelSpec extends jspb.Message {
   hasLocation(): boolean;
   clearLocation(): ModelSpec;
 
-  getForecast(): ForecastSpec | undefined;
-  setForecast(value?: ForecastSpec): ModelSpec;
-  hasForecast(): boolean;
-  clearForecast(): ModelSpec;
+  getForecasting(): ForecasterTrainingSpec | undefined;
+  setForecasting(value?: ForecasterTrainingSpec): ModelSpec;
+  hasForecasting(): boolean;
+  clearForecasting(): ModelSpec;
 
   getCompilation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec | undefined;
   setCompilation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec): ModelSpec;
@@ -3186,7 +3262,7 @@ export namespace ModelSpec {
     feedbackdatasetref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     flagged: boolean,
     location?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
-    forecast?: ForecastSpec.AsObject,
+    forecasting?: ForecasterTrainingSpec.AsObject,
     compilation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec.AsObject,
     activedeadlineseconds: number,
     estimatortype: string,
@@ -4798,32 +4874,6 @@ export namespace StudyCondition {
   }
 }
 
-export class StudyForecastSpec extends jspb.Message {
-  getTemplate(): ForecastSpec | undefined;
-  setTemplate(value?: ForecastSpec): StudyForecastSpec;
-  hasTemplate(): boolean;
-  clearTemplate(): StudyForecastSpec;
-
-  getHierarchy(): Hierarchy | undefined;
-  setHierarchy(value?: Hierarchy): StudyForecastSpec;
-  hasHierarchy(): boolean;
-  clearHierarchy(): StudyForecastSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): StudyForecastSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: StudyForecastSpec): StudyForecastSpec.AsObject;
-  static serializeBinaryToWriter(message: StudyForecastSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): StudyForecastSpec;
-  static deserializeBinaryFromReader(message: StudyForecastSpec, reader: jspb.BinaryReader): StudyForecastSpec;
-}
-
-export namespace StudyForecastSpec {
-  export type AsObject = {
-    template?: ForecastSpec.AsObject,
-    hierarchy?: Hierarchy.AsObject,
-  }
-}
-
 export class StudyList extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta): StudyList;
@@ -4980,10 +5030,10 @@ export class StudySpec extends jspb.Message {
   hasServingtemplate(): boolean;
   clearServingtemplate(): StudySpec;
 
-  getForecast(): StudyForecastSpec | undefined;
-  setForecast(value?: StudyForecastSpec): StudySpec;
-  hasForecast(): boolean;
-  clearForecast(): StudySpec;
+  getForecastertraining(): ForecasterTrainingSpec | undefined;
+  setForecastertraining(value?: ForecasterTrainingSpec): StudySpec;
+  hasForecastertraining(): boolean;
+  clearForecastertraining(): StudySpec;
 
   getSchedule(): StudyScheduleSpec | undefined;
   setSchedule(value?: StudyScheduleSpec): StudySpec;
@@ -5098,7 +5148,7 @@ export namespace StudySpec {
     ensembles?: EnsemblesSpec.AsObject,
     trainingtemplate?: TrainingSpec.AsObject,
     servingtemplate?: ServingSpec.AsObject,
-    forecast?: StudyForecastSpec.AsObject,
+    forecastertraining?: ForecasterTrainingSpec.AsObject,
     schedule?: StudyScheduleSpec.AsObject,
     interpretability?: InterpretabilitySpec.AsObject,
     driftdetection?: DriftModelSpec.AsObject,
@@ -5466,25 +5516,10 @@ export class TimeSeriesDataSpec extends jspb.Message {
   getDatetimeformat(): string;
   setDatetimeformat(value: string): TimeSeriesDataSpec;
 
-  getHierarchy(): HierarchySpec | undefined;
-  setHierarchy(value?: HierarchySpec): TimeSeriesDataSpec;
-  hasHierarchy(): boolean;
-  clearHierarchy(): TimeSeriesDataSpec;
-
-  getHoliday(): HolidaySpec | undefined;
-  setHoliday(value?: HolidaySpec): TimeSeriesDataSpec;
-  hasHoliday(): boolean;
-  clearHoliday(): TimeSeriesDataSpec;
-
-  getHistory(): PeriodSpec | undefined;
-  setHistory(value?: PeriodSpec): TimeSeriesDataSpec;
-  hasHistory(): boolean;
-  clearHistory(): TimeSeriesDataSpec;
-
-  getForecast(): PeriodSpec | undefined;
-  setForecast(value?: PeriodSpec): TimeSeriesDataSpec;
-  hasForecast(): boolean;
-  clearForecast(): TimeSeriesDataSpec;
+  getKeycolumnList(): Array<string>;
+  setKeycolumnList(value: Array<string>): TimeSeriesDataSpec;
+  clearKeycolumnList(): TimeSeriesDataSpec;
+  addKeycolumn(value: string, index?: number): TimeSeriesDataSpec;
 
   getYearlyseasonality(): PeriodSeasonalitySpec | undefined;
   setYearlyseasonality(value?: PeriodSeasonalitySpec): TimeSeriesDataSpec;
@@ -5509,25 +5544,6 @@ export class TimeSeriesDataSpec extends jspb.Message {
   clearRegressorsList(): TimeSeriesDataSpec;
   addRegressors(value?: RegressorSpec, index?: number): RegressorSpec;
 
-  getCustomseasonalitiesList(): Array<CustomSeasonalitySpec>;
-  setCustomseasonalitiesList(value: Array<CustomSeasonalitySpec>): TimeSeriesDataSpec;
-  clearCustomseasonalitiesList(): TimeSeriesDataSpec;
-  addCustomseasonalities(value?: CustomSeasonalitySpec, index?: number): CustomSeasonalitySpec;
-
-  getChangepoints(): ChangePointSpec | undefined;
-  setChangepoints(value?: ChangePointSpec): TimeSeriesDataSpec;
-  hasChangepoints(): boolean;
-  clearChangepoints(): TimeSeriesDataSpec;
-
-  getIntevalwidth(): number;
-  setIntevalwidth(value: number): TimeSeriesDataSpec;
-
-  getUncertaintysamples(): number;
-  setUncertaintysamples(value: number): TimeSeriesDataSpec;
-
-  getSeasonality(): string;
-  setSeasonality(value: string): TimeSeriesDataSpec;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TimeSeriesDataSpec.AsObject;
   static toObject(includeInstance: boolean, msg: TimeSeriesDataSpec): TimeSeriesDataSpec.AsObject;
@@ -5541,20 +5557,12 @@ export namespace TimeSeriesDataSpec {
     timecolumn: string,
     targetcolumn: string,
     datetimeformat: string,
-    hierarchy?: HierarchySpec.AsObject,
-    holiday?: HolidaySpec.AsObject,
-    history?: PeriodSpec.AsObject,
-    forecast?: PeriodSpec.AsObject,
+    keycolumnList: Array<string>,
     yearlyseasonality?: PeriodSeasonalitySpec.AsObject,
     weeklyseasonality?: PeriodSeasonalitySpec.AsObject,
     dailyseasonality?: PeriodSeasonalitySpec.AsObject,
     growth: string,
     regressorsList: Array<RegressorSpec.AsObject>,
-    customseasonalitiesList: Array<CustomSeasonalitySpec.AsObject>,
-    changepoints?: ChangePointSpec.AsObject,
-    intevalwidth: number,
-    uncertaintysamples: number,
-    seasonality: string,
   }
 }
 

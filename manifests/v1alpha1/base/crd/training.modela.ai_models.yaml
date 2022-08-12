@@ -1071,7 +1071,12 @@ spec:
                 default: false
                 description: Indicates if the model is flagged
                 type: boolean
-              forecast:
+              forecasted:
+                default: false
+                description: Forecasted indicates that the Model should perform a
+                  forecast
+                type: boolean
+              forecasting:
                 description: Forecasting specifies the configuration to train a forecasting
                   model
                 properties:
@@ -1102,44 +1107,44 @@ spec:
                         format: int32
                         type: integer
                     type: object
+                  changepoints:
+                    description: Set an holiday schedule for a country. Change point
+                      specification
+                    properties:
+                      "N":
+                        description: number of change points
+                        format: int32
+                        type: integer
+                      range:
+                        description: Change point range
+                        type: number
+                    type: object
                   confidenceIntervals:
                     description: The confidence levels for the forecast, each level
                       must be between 1-100.
                     format: int32
                     minimum: 0
                     type: integer
+                  customSeasonalities:
+                    description: The list of additional regressors. The regresors
+                      are part of the time series data
+                    items:
+                      description: SeasonalitySpec defines the custom seasonality
+                      properties:
+                        fourierOrder:
+                          format: int32
+                          type: integer
+                        name:
+                          description: The name of the custom seasonality
+                          type: string
+                        period:
+                          description: The name of the custom seasonality
+                          type: number
+                      type: object
+                    type: array
                   data:
                     description: Specification of the forecast data.
                     properties:
-                      changepoints:
-                        description: Set an holiday schedule for a country. Change
-                          point specification
-                        properties:
-                          "N":
-                            description: number of change points
-                            format: int32
-                            type: integer
-                          range:
-                            description: Change point range
-                            type: number
-                        type: object
-                      customSeasonalities:
-                        description: The list of additional regressors. The regresors
-                          are part of the time series data
-                        items:
-                          description: SeasonalitySpec defines the custom seasonality
-                          properties:
-                            fourierOrder:
-                              format: int32
-                              type: integer
-                            name:
-                              description: The name of the custom seasonality
-                              type: string
-                            period:
-                              description: The name of the custom seasonality
-                              type: number
-                          type: object
-                        type: array
                       dailySeasonality:
                         description: Define the seasonality for a period (yearly /
                           monthly / daily)
@@ -1166,118 +1171,17 @@ spec:
                       datetimeFormat:
                         description: The format of the datetime column. Used default
                         type: string
-                      forecast:
-                        description: The forecast periods
-                        properties:
-                          interval:
-                            description: The period interval
-                            enum:
-                            - second
-                            - minute
-                            - hour
-                            - day
-                            - week
-                            - month
-                            - quarter
-                            - year
-                            type: string
-                          length:
-                            description: The windows end day
-                            format: int32
-                            type: integer
-                          start:
-                            default: 0
-                            description: The number of intervals to start
-                            format: int32
-                            type: integer
-                        type: object
                       growth:
                         enum:
                         - linear
                         - logistic
                         - flat
                         type: string
-                      hierarchy:
-                        description: The Hierarchy spec
-                        properties:
-                          enabled:
-                            default: false
-                            description: If true enable
-                            type: boolean
-                          groupColumn:
-                            description: Column name of the first level of grouping
-                            type: string
-                          subGroupColumn:
-                            description: Column name of the second level of grouping
-                            type: string
-                          subSubGroupColumn:
-                            description: Column name of the third level of grouping
-                            type: string
-                        type: object
-                      history:
-                        description: The historical periods
-                        properties:
-                          interval:
-                            description: The period interval
-                            enum:
-                            - second
-                            - minute
-                            - hour
-                            - day
-                            - week
-                            - month
-                            - quarter
-                            - year
-                            type: string
-                          length:
-                            description: The windows end day
-                            format: int32
-                            type: integer
-                          start:
-                            default: 0
-                            description: The number of intervals to start
-                            format: int32
-                            type: integer
-                        type: object
-                      holiday:
-                        description: The spec for the holiday
-                        properties:
-                          country:
-                            description: / The HolidayCountry unit
-                            enum:
-                            - US
-                            - BR
-                            - ID
-                            - IN
-                            - MY
-                            - VN
-                            - TH
-                            - PH
-                            - PK
-                            - BD
-                            - EG
-                            - CN
-                            - RU
-                            - KR
-                            - BY
-                            - AE
-                            - none
-                            type: string
-                          datasetName:
-                            description: For custom holiday use external dataset
-                            type: string
-                          enabled:
-                            default: false
-                            description: If true enable holidays
-                            type: boolean
-                          holidayColumn:
-                            description: The name of the holiday column. If the column
-                              is empty, no holiday Column name of the first level
-                              of grouping
-                            type: string
-                        type: object
-                      intevalWidth:
-                        type: number
+                      keyColumns:
+                        description: Column names for the time series key
+                        items:
+                          type: string
+                        type: array
                       regressors:
                         description: The list of additional regressors. The regresors
                           are part of the time series data
@@ -1296,14 +1200,6 @@ spec:
                               type: boolean
                           type: object
                         type: array
-                      seasonality:
-                        description: The generate seasonality mode
-                        enum:
-                        - multipicative
-                        - additive
-                        - auto
-                        - none
-                        type: string
                       targetColumn:
                         description: The name of the column holding the value. By
                           default this is the target column from the dataset.
@@ -1312,9 +1208,6 @@ spec:
                         description: 'General Forecast attributes: The name of the
                           time column'
                         type: string
-                      uncertaintySamples:
-                        format: int32
-                        type: integer
                       weeklySeasonality:
                         description: Define the seasonality for a period (yearly /
                           monthly / daily)
@@ -1362,6 +1255,101 @@ spec:
                             type: integer
                         type: object
                     type: object
+                  features:
+                    description: List of time series features to compute on each time
+                      series.
+                    items:
+                      description: Represent a time series feature
+                      type: string
+                    type: array
+                  forecast:
+                    description: The forecast periods
+                    properties:
+                      interval:
+                        description: The period interval
+                        enum:
+                        - second
+                        - minute
+                        - hour
+                        - day
+                        - week
+                        - month
+                        - quarter
+                        - year
+                        type: string
+                      length:
+                        description: The windows end day
+                        format: int32
+                        type: integer
+                      start:
+                        default: 0
+                        description: The number of intervals to start
+                        format: int32
+                        type: integer
+                    type: object
+                  history:
+                    description: The historical periods
+                    properties:
+                      interval:
+                        description: The period interval
+                        enum:
+                        - second
+                        - minute
+                        - hour
+                        - day
+                        - week
+                        - month
+                        - quarter
+                        - year
+                        type: string
+                      length:
+                        description: The windows end day
+                        format: int32
+                        type: integer
+                      start:
+                        default: 0
+                        description: The number of intervals to start
+                        format: int32
+                        type: integer
+                    type: object
+                  holiday:
+                    description: The spec for the holiday
+                    properties:
+                      country:
+                        description: / The HolidayCountry unit
+                        enum:
+                        - US
+                        - BR
+                        - ID
+                        - IN
+                        - MY
+                        - VN
+                        - TH
+                        - PH
+                        - PK
+                        - BD
+                        - EG
+                        - CN
+                        - RU
+                        - KR
+                        - BY
+                        - AE
+                        - none
+                        type: string
+                      datasetName:
+                        description: For custom holiday use external dataset
+                        type: string
+                      enabled:
+                        default: false
+                        description: If true enable holidays
+                        type: boolean
+                      holidayColumn:
+                        description: The name of the holiday column. If the column
+                          is empty, no holiday Column name of the first level of grouping
+                        type: string
+                    type: object
+                  intevalWidth:
+                    type: number
                   outputLocation:
                     description: The data location that would store the forecast result.
                     properties:
@@ -1495,12 +1483,18 @@ spec:
                           update the forecast connection.
                         type: boolean
                     type: object
+                  seasonality:
+                    description: The generate seasonality mode
+                    enum:
+                    - multipicative
+                    - additive
+                    - auto
+                    - none
+                    type: string
+                  uncertaintySamples:
+                    format: int32
+                    type: integer
                 type: object
-              forecasted:
-                default: false
-                description: Forecasted indicates that the Model should perform a
-                  forecast
-                type: boolean
               genDriftDetector:
                 default: false
                 description: GenDriftDetector indicates if we should generate a drift

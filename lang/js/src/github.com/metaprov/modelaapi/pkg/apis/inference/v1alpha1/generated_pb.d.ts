@@ -959,27 +959,49 @@ export namespace ForecastCondition {
   }
 }
 
-export class ForecastForecastSpec extends jspb.Message {
-  getHierarchyvaluesMap(): jspb.Map<string, string>;
-  clearHierarchyvaluesMap(): ForecastForecastSpec;
+export class ForecastItemResult extends jspb.Message {
+  getKeyList(): Array<string>;
+  setKeyList(value: Array<string>): ForecastItemResult;
+  clearKeyList(): ForecastItemResult;
+  addKey(value: string, index?: number): ForecastItemResult;
 
-  getHorizon(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.PeriodSpec | undefined;
-  setHorizon(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.PeriodSpec): ForecastForecastSpec;
-  hasHorizon(): boolean;
-  clearHorizon(): ForecastForecastSpec;
+  getDatauri(): string;
+  setDatauri(value: string): ForecastItemResult;
+
+  getProfileuri(): string;
+  setProfileuri(value: string): ForecastItemResult;
+
+  getFeaturesMap(): jspb.Map<string, number>;
+  clearFeaturesMap(): ForecastItemResult;
+
+  getUnittestsresult(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
+  setUnittestsresult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): ForecastItemResult;
+  hasUnittestsresult(): boolean;
+  clearUnittestsresult(): ForecastItemResult;
+
+  getFailed(): boolean;
+  setFailed(value: boolean): ForecastItemResult;
+
+  getFailuremsg(): string;
+  setFailuremsg(value: string): ForecastItemResult;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ForecastForecastSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: ForecastForecastSpec): ForecastForecastSpec.AsObject;
-  static serializeBinaryToWriter(message: ForecastForecastSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ForecastForecastSpec;
-  static deserializeBinaryFromReader(message: ForecastForecastSpec, reader: jspb.BinaryReader): ForecastForecastSpec;
+  toObject(includeInstance?: boolean): ForecastItemResult.AsObject;
+  static toObject(includeInstance: boolean, msg: ForecastItemResult): ForecastItemResult.AsObject;
+  static serializeBinaryToWriter(message: ForecastItemResult, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ForecastItemResult;
+  static deserializeBinaryFromReader(message: ForecastItemResult, reader: jspb.BinaryReader): ForecastItemResult;
 }
 
-export namespace ForecastForecastSpec {
+export namespace ForecastItemResult {
   export type AsObject = {
-    hierarchyvaluesMap: Array<[string, string]>,
-    horizon?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.PeriodSpec.AsObject,
+    keyList: Array<string>,
+    datauri: string,
+    profileuri: string,
+    featuresMap: Array<[string, number]>,
+    unittestsresult?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
+    failed: boolean,
+    failuremsg: string,
   }
 }
 
@@ -1037,47 +1059,18 @@ export class ForecastSpec extends jspb.Message {
   getVersionname(): string;
   setVersionname(value: string): ForecastSpec;
 
-  getPredictorref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setPredictorref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ForecastSpec;
-  hasPredictorref(): boolean;
-  clearPredictorref(): ForecastSpec;
-
-  getLabeled(): boolean;
-  setLabeled(value: boolean): ForecastSpec;
-
-  getForecast(): boolean;
-  setForecast(value: boolean): ForecastSpec;
+  getPredictionref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setPredictionref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ForecastSpec;
+  hasPredictionref(): boolean;
+  clearPredictionref(): ForecastSpec;
 
   getDatasourceref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setDatasourceref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ForecastSpec;
   hasDatasourceref(): boolean;
   clearDatasourceref(): ForecastSpec;
 
-  getInput(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataInputSpec | undefined;
-  setInput(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataInputSpec): ForecastSpec;
-  hasInput(): boolean;
-  clearInput(): ForecastSpec;
-
-  getOutput(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataOutputSpec | undefined;
-  setOutput(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataOutputSpec): ForecastSpec;
-  hasOutput(): boolean;
-  clearOutput(): ForecastSpec;
-
-  getCreatedataset(): boolean;
-  setCreatedataset(value: boolean): ForecastSpec;
-
-  getUnittests(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelTestSuite | undefined;
-  setUnittests(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelTestSuite): ForecastSpec;
-  hasUnittests(): boolean;
-  clearUnittests(): ForecastSpec;
-
   getOwner(): string;
   setOwner(value: string): ForecastSpec;
-
-  getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
-  setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): ForecastSpec;
-  hasResources(): boolean;
-  clearResources(): ForecastSpec;
 
   getActivedeadlineseconds(): number;
   setActivedeadlineseconds(value: number): ForecastSpec;
@@ -1091,13 +1084,10 @@ export class ForecastSpec extends jspb.Message {
   getTtl(): number;
   setTtl(value: number): ForecastSpec;
 
-  getForecastspec(): ForecastForecastSpec | undefined;
-  setForecastspec(value?: ForecastForecastSpec): ForecastSpec;
-  hasForecastspec(): boolean;
-  clearForecastspec(): ForecastSpec;
-
-  getCronpredictorname(): string;
-  setCronpredictorname(value: string): ForecastSpec;
+  getKeysList(): Array<string>;
+  setKeysList(value: Array<string>): ForecastSpec;
+  clearKeysList(): ForecastSpec;
+  addKeys(value: string, index?: number): ForecastSpec;
 
   getServingsiteref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setServingsiteref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ForecastSpec;
@@ -1115,22 +1105,14 @@ export class ForecastSpec extends jspb.Message {
 export namespace ForecastSpec {
   export type AsObject = {
     versionname: string,
-    predictorref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    labeled: boolean,
-    forecast: boolean,
+    predictionref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     datasourceref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    input?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataInputSpec.AsObject,
-    output?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataOutputSpec.AsObject,
-    createdataset: boolean,
-    unittests?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelTestSuite.AsObject,
     owner: string,
-    resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     activedeadlineseconds: number,
     priority: string,
     aborted: boolean,
     ttl: number,
-    forecastspec?: ForecastForecastSpec.AsObject,
-    cronpredictorname: string,
+    keysList: Array<string>,
     servingsiteref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
   }
 }
@@ -1149,48 +1131,19 @@ export class ForecastStatus extends jspb.Message {
   getPhase(): string;
   setPhase(value: string): ForecastStatus;
 
-  getUnittestsresult(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
-  setUnittestsresult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): ForecastStatus;
-  hasUnittestsresult(): boolean;
-  clearUnittestsresult(): ForecastStatus;
-
   getObservedgeneration(): number;
   setObservedgeneration(value: number): ForecastStatus;
 
-  getRows(): number;
-  setRows(value: number): ForecastStatus;
+  getTotal(): number;
+  setTotal(value: number): ForecastStatus;
 
-  getTriggeredby(): string;
-  setTriggeredby(value: string): ForecastStatus;
+  getFailed(): number;
+  setFailed(value: number): ForecastStatus;
 
-  getLogs(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs | undefined;
-  setLogs(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs): ForecastStatus;
-  hasLogs(): boolean;
-  clearLogs(): ForecastStatus;
-
-  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ForecastStatus;
-  hasLastupdated(): boolean;
-  clearLastupdated(): ForecastStatus;
-
-  getFailurereason(): string;
-  setFailurereason(value: string): ForecastStatus;
-
-  getFailuremessage(): string;
-  setFailuremessage(value: string): ForecastStatus;
-
-  getDatasetref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setDatasetref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ForecastStatus;
-  hasDatasetref(): boolean;
-  clearDatasetref(): ForecastStatus;
-
-  getColumnsList(): Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.ColumnHistogram>;
-  setColumnsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.ColumnHistogram>): ForecastStatus;
-  clearColumnsList(): ForecastStatus;
-  addColumns(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.ColumnHistogram, index?: number): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.ColumnHistogram;
-
-  getDrifted(): boolean;
-  setDrifted(value: boolean): ForecastStatus;
+  getItemsList(): Array<ForecastItemResult>;
+  setItemsList(value: Array<ForecastItemResult>): ForecastStatus;
+  clearItemsList(): ForecastStatus;
+  addItems(value?: ForecastItemResult, index?: number): ForecastItemResult;
 
   getConditionsList(): Array<ForecastCondition>;
   setConditionsList(value: Array<ForecastCondition>): ForecastStatus;
@@ -1210,17 +1163,10 @@ export namespace ForecastStatus {
     starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     phase: string,
-    unittestsresult?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
     observedgeneration: number,
-    rows: number,
-    triggeredby: string,
-    logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
-    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    failurereason: string,
-    failuremessage: string,
-    datasetref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    columnsList: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.ColumnHistogram.AsObject>,
-    drifted: boolean,
+    total: number,
+    failed: number,
+    itemsList: Array<ForecastItemResult.AsObject>,
     conditionsList: Array<ForecastCondition.AsObject>,
   }
 }
