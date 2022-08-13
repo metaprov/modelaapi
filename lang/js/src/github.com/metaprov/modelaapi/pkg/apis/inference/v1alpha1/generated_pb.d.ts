@@ -959,52 +959,6 @@ export namespace ForecastCondition {
   }
 }
 
-export class ForecastItemResult extends jspb.Message {
-  getKeyList(): Array<string>;
-  setKeyList(value: Array<string>): ForecastItemResult;
-  clearKeyList(): ForecastItemResult;
-  addKey(value: string, index?: number): ForecastItemResult;
-
-  getDatauri(): string;
-  setDatauri(value: string): ForecastItemResult;
-
-  getProfileuri(): string;
-  setProfileuri(value: string): ForecastItemResult;
-
-  getFeaturesMap(): jspb.Map<string, number>;
-  clearFeaturesMap(): ForecastItemResult;
-
-  getUnittestsresult(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
-  setUnittestsresult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): ForecastItemResult;
-  hasUnittestsresult(): boolean;
-  clearUnittestsresult(): ForecastItemResult;
-
-  getFailed(): boolean;
-  setFailed(value: boolean): ForecastItemResult;
-
-  getFailuremsg(): string;
-  setFailuremsg(value: string): ForecastItemResult;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ForecastItemResult.AsObject;
-  static toObject(includeInstance: boolean, msg: ForecastItemResult): ForecastItemResult.AsObject;
-  static serializeBinaryToWriter(message: ForecastItemResult, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ForecastItemResult;
-  static deserializeBinaryFromReader(message: ForecastItemResult, reader: jspb.BinaryReader): ForecastItemResult;
-}
-
-export namespace ForecastItemResult {
-  export type AsObject = {
-    keyList: Array<string>,
-    datauri: string,
-    profileuri: string,
-    featuresMap: Array<[string, number]>,
-    unittestsresult?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
-    failed: boolean,
-    failuremsg: string,
-  }
-}
-
 export class ForecastList extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta): ForecastList;
@@ -1055,6 +1009,78 @@ export namespace ForecastPredictionSpec {
   }
 }
 
+export class ForecastRun extends jspb.Message {
+  getKey(): string;
+  setKey(value: string): ForecastRun;
+
+  getModeluri(): string;
+  setModeluri(value: string): ForecastRun;
+
+  getHorizon(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.PeriodSpec | undefined;
+  setHorizon(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.PeriodSpec): ForecastRun;
+  hasHorizon(): boolean;
+  clearHorizon(): ForecastRun;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ForecastRun.AsObject;
+  static toObject(includeInstance: boolean, msg: ForecastRun): ForecastRun.AsObject;
+  static serializeBinaryToWriter(message: ForecastRun, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ForecastRun;
+  static deserializeBinaryFromReader(message: ForecastRun, reader: jspb.BinaryReader): ForecastRun;
+}
+
+export namespace ForecastRun {
+  export type AsObject = {
+    key: string,
+    modeluri: string,
+    horizon?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.PeriodSpec.AsObject,
+  }
+}
+
+export class ForecastRunResult extends jspb.Message {
+  getKey(): string;
+  setKey(value: string): ForecastRunResult;
+
+  getDatauri(): string;
+  setDatauri(value: string): ForecastRunResult;
+
+  getProfileuri(): string;
+  setProfileuri(value: string): ForecastRunResult;
+
+  getFeaturesMap(): jspb.Map<string, number>;
+  clearFeaturesMap(): ForecastRunResult;
+
+  getUnittestsresult(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
+  setUnittestsresult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): ForecastRunResult;
+  hasUnittestsresult(): boolean;
+  clearUnittestsresult(): ForecastRunResult;
+
+  getFailed(): boolean;
+  setFailed(value: boolean): ForecastRunResult;
+
+  getFailuremsg(): string;
+  setFailuremsg(value: string): ForecastRunResult;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ForecastRunResult.AsObject;
+  static toObject(includeInstance: boolean, msg: ForecastRunResult): ForecastRunResult.AsObject;
+  static serializeBinaryToWriter(message: ForecastRunResult, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ForecastRunResult;
+  static deserializeBinaryFromReader(message: ForecastRunResult, reader: jspb.BinaryReader): ForecastRunResult;
+}
+
+export namespace ForecastRunResult {
+  export type AsObject = {
+    key: string,
+    datauri: string,
+    profileuri: string,
+    featuresMap: Array<[string, number]>,
+    unittestsresult?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
+    failed: boolean,
+    failuremsg: string,
+  }
+}
+
 export class ForecastSpec extends jspb.Message {
   getVersionname(): string;
   setVersionname(value: string): ForecastSpec;
@@ -1084,10 +1110,8 @@ export class ForecastSpec extends jspb.Message {
   getTtl(): number;
   setTtl(value: number): ForecastSpec;
 
-  getKeysList(): Array<string>;
-  setKeysList(value: Array<string>): ForecastSpec;
-  clearKeysList(): ForecastSpec;
-  addKeys(value: string, index?: number): ForecastSpec;
+  getRunsMap(): jspb.Map<string, ForecastRun>;
+  clearRunsMap(): ForecastSpec;
 
   getServingsiteref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setServingsiteref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ForecastSpec;
@@ -1112,7 +1136,7 @@ export namespace ForecastSpec {
     priority: string,
     aborted: boolean,
     ttl: number,
-    keysList: Array<string>,
+    runsMap: Array<[string, ForecastRun.AsObject]>,
     servingsiteref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
   }
 }
@@ -1140,10 +1164,8 @@ export class ForecastStatus extends jspb.Message {
   getFailed(): number;
   setFailed(value: number): ForecastStatus;
 
-  getItemsList(): Array<ForecastItemResult>;
-  setItemsList(value: Array<ForecastItemResult>): ForecastStatus;
-  clearItemsList(): ForecastStatus;
-  addItems(value?: ForecastItemResult, index?: number): ForecastItemResult;
+  getRunsMap(): jspb.Map<string, ForecastRunResult>;
+  clearRunsMap(): ForecastStatus;
 
   getConditionsList(): Array<ForecastCondition>;
   setConditionsList(value: Array<ForecastCondition>): ForecastStatus;
@@ -1166,7 +1188,7 @@ export namespace ForecastStatus {
     observedgeneration: number,
     total: number,
     failed: number,
-    itemsList: Array<ForecastItemResult.AsObject>,
+    runsMap: Array<[string, ForecastRunResult.AsObject]>,
     conditionsList: Array<ForecastCondition.AsObject>,
   }
 }

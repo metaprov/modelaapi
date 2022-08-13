@@ -1186,6 +1186,62 @@ export namespace FeatureSelectionSpec {
   }
 }
 
+export class ForecastModelSpec extends jspb.Message {
+  getKey(): string;
+  setKey(value: string): ForecastModelSpec;
+
+  getForecastersList(): Array<Forecaster>;
+  setForecastersList(value: Array<Forecaster>): ForecastModelSpec;
+  clearForecastersList(): ForecastModelSpec;
+  addForecasters(value?: Forecaster, index?: number): Forecaster;
+
+  getEnsemble(): boolean;
+  setEnsemble(value: boolean): ForecastModelSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ForecastModelSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: ForecastModelSpec): ForecastModelSpec.AsObject;
+  static serializeBinaryToWriter(message: ForecastModelSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ForecastModelSpec;
+  static deserializeBinaryFromReader(message: ForecastModelSpec, reader: jspb.BinaryReader): ForecastModelSpec;
+}
+
+export namespace ForecastModelSpec {
+  export type AsObject = {
+    key: string,
+    forecastersList: Array<Forecaster.AsObject>,
+    ensemble: boolean,
+  }
+}
+
+export class ForecastModelStatus extends jspb.Message {
+  getKey(): string;
+  setKey(value: string): ForecastModelStatus;
+
+  getFeaturesMap(): jspb.Map<string, number>;
+  clearFeaturesMap(): ForecastModelStatus;
+
+  getForecastersList(): Array<ForecasterStatus>;
+  setForecastersList(value: Array<ForecasterStatus>): ForecastModelStatus;
+  clearForecastersList(): ForecastModelStatus;
+  addForecasters(value?: ForecasterStatus, index?: number): ForecasterStatus;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ForecastModelStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: ForecastModelStatus): ForecastModelStatus.AsObject;
+  static serializeBinaryToWriter(message: ForecastModelStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ForecastModelStatus;
+  static deserializeBinaryFromReader(message: ForecastModelStatus, reader: jspb.BinaryReader): ForecastModelStatus;
+}
+
+export namespace ForecastModelStatus {
+  export type AsObject = {
+    key: string,
+    featuresMap: Array<[string, number]>,
+    forecastersList: Array<ForecasterStatus.AsObject>,
+  }
+}
+
 export class ForecastObj extends jspb.Message {
   getKey(): string;
   setKey(value: string): ForecastObj;
@@ -1231,24 +1287,8 @@ export namespace ForecastPostProcessingSpec {
 }
 
 export class Forecaster extends jspb.Message {
-  getKeyList(): Array<string>;
-  setKeyList(value: Array<string>): Forecaster;
-  clearKeyList(): Forecaster;
-  addKey(value: string, index?: number): Forecaster;
-
   getAlgorithmname(): string;
   setAlgorithmname(value: string): Forecaster;
-
-  getParametersList(): Array<HyperParameterValue>;
-  setParametersList(value: Array<HyperParameterValue>): Forecaster;
-  clearParametersList(): Forecaster;
-  addParameters(value?: HyperParameterValue, index?: number): HyperParameterValue;
-
-  getScoresMap(): jspb.Map<string, number>;
-  clearScoresMap(): Forecaster;
-
-  getFeaturevaluesMap(): jspb.Map<string, number>;
-  clearFeaturevaluesMap(): Forecaster;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Forecaster.AsObject;
@@ -1260,31 +1300,35 @@ export class Forecaster extends jspb.Message {
 
 export namespace Forecaster {
   export type AsObject = {
-    keyList: Array<string>,
     algorithmname: string,
-    parametersList: Array<HyperParameterValue.AsObject>,
-    scoresMap: Array<[string, number]>,
-    featurevaluesMap: Array<[string, number]>,
   }
 }
 
-export class ForecasterList extends jspb.Message {
-  getItemsList(): Array<Forecaster>;
-  setItemsList(value: Array<Forecaster>): ForecasterList;
-  clearItemsList(): ForecasterList;
-  addItems(value?: Forecaster, index?: number): Forecaster;
+export class ForecasterStatus extends jspb.Message {
+  getModeluri(): string;
+  setModeluri(value: string): ForecasterStatus;
+
+  getParametersList(): Array<HyperParameterValue>;
+  setParametersList(value: Array<HyperParameterValue>): ForecasterStatus;
+  clearParametersList(): ForecasterStatus;
+  addParameters(value?: HyperParameterValue, index?: number): HyperParameterValue;
+
+  getScoresMap(): jspb.Map<string, number>;
+  clearScoresMap(): ForecasterStatus;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ForecasterList.AsObject;
-  static toObject(includeInstance: boolean, msg: ForecasterList): ForecasterList.AsObject;
-  static serializeBinaryToWriter(message: ForecasterList, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ForecasterList;
-  static deserializeBinaryFromReader(message: ForecasterList, reader: jspb.BinaryReader): ForecasterList;
+  toObject(includeInstance?: boolean): ForecasterStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: ForecasterStatus): ForecasterStatus.AsObject;
+  static serializeBinaryToWriter(message: ForecasterStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ForecasterStatus;
+  static deserializeBinaryFromReader(message: ForecasterStatus, reader: jspb.BinaryReader): ForecasterStatus;
 }
 
-export namespace ForecasterList {
+export namespace ForecasterStatus {
   export type AsObject = {
-    itemsList: Array<Forecaster.AsObject>,
+    modeluri: string,
+    parametersList: Array<HyperParameterValue.AsObject>,
+    scoresMap: Array<[string, number]>,
   }
 }
 
@@ -3216,6 +3260,9 @@ export class ModelSpec extends jspb.Message {
   hasFeedbacktests(): boolean;
   clearFeedbacktests(): ModelSpec;
 
+  getForecastmodelsMap(): jspb.Map<string, ForecastModelSpec>;
+  clearForecastmodelsMap(): ModelSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelSpec): ModelSpec.AsObject;
@@ -3273,6 +3320,7 @@ export namespace ModelSpec {
     interpretability?: InterpretabilitySpec.AsObject,
     unittests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
     feedbacktests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
+    forecastmodelsMap: Array<[string, ForecastModelSpec.AsObject]>,
   }
 }
 
@@ -3549,6 +3597,9 @@ export class ModelStatus extends jspb.Message {
   hasFeedbacktestsresult(): boolean;
   clearFeedbacktestsresult(): ModelStatus;
 
+  getForecastmodelsMap(): jspb.Map<string, ForecastModelStatus>;
+  clearForecastmodelsMap(): ModelStatus;
+
   getConditionsList(): Array<ModelCondition>;
   setConditionsList(value: Array<ModelCondition>): ModelStatus;
   clearConditionsList(): ModelStatus;
@@ -3632,6 +3683,7 @@ export namespace ModelStatus {
     images?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Images.AsObject,
     unittestsresult?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
     feedbacktestsresult?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
+    forecastmodelsMap: Array<[string, ForecastModelStatus.AsObject]>,
     conditionsList: Array<ModelCondition.AsObject>,
   }
 }

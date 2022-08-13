@@ -783,6 +783,34 @@ message FeatureSelectionSpec {
   repeated string reserved = 12;
 }
 
+// Contain the spec for a single time series.
+message ForecastModelSpec {
+  // The time series key
+  // +kubebuilder:validation:Optional
+  optional string key = 1;
+
+  // +kubebuilder:validation:Optional
+  repeated Forecaster forecasters = 2;
+
+  // If true, also try an ensemble forecaster
+  // +kubebuilder:validation:Optional
+  optional bool ensemble = 3;
+}
+
+message ForecastModelStatus {
+  // The time series key
+  // +kubebuilder:validation:Optional
+  optional string key = 1;
+
+  // The values of the features for the time series.
+  // +kubebuilder:validation:Optional
+  map<string, double> features = 2;
+
+  // The results of the forecast
+  // +kubebuilder:validation:Optional
+  repeated ForecasterStatus forecasters = 3;
+}
+
 // ForecastObj holds the definition of a single forecast
 message ForecastObj {
   optional string key = 1;
@@ -806,29 +834,21 @@ message ForecastPostProcessingSpec {
 
 // A forecaster contains the metadata for one forecast model
 message Forecaster {
-  // Key is the uniqe key of a time series
-  // +kubebuilder:validation:Optional
-  repeated string key = 1;
-
   // AlgorithmName is a reference to the algorithm in the catalog
   optional string algorithmName = 2;
+}
+
+message ForecasterStatus {
+  // +kubebuilder:validation:Optional
+  optional string modelURI = 1;
 
   // Parameters is a list of the algorithm hyper parameters
-  repeated HyperParameterValue parameters = 3;
+  // +kubebuilder:validation:Optional
+  repeated HyperParameterValue parameters = 2;
 
   // The scores
   // +kubebuilder:validation:Optional
-  map<string, double> scores = 4;
-
-  // The result of feature computation for this time series.
-  // +kubebuilder:validation:Optional
-  map<string, double> featureValues = 5;
-}
-
-// The list of forecasters
-message ForecasterList {
-  // +kubebuilder:validation:Optional
-  repeated Forecaster items = 2;
+  map<string, double> scores = 3;
 }
 
 // ForecastingSpec
@@ -2224,9 +2244,13 @@ message ModelSpec {
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite unitTests = 48;
 
-  // The set of unit tests for this model.
+  // The set of unit tests to test this models against the feedback.
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite feedbackTests = 49;
+
+  // In case of forecasting Contain the list of time series for this model
+  // +kubebuilder:validation:Optional
+  map<string, ForecastModelSpec> forecastModels = 50;
 }
 
 // ModelStatus defines the observed state of a Model
@@ -2507,10 +2531,14 @@ message ModelStatus {
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult feedbackTestsResult = 70;
 
+  // In case of forecasting Contain the list of time series for this model
+  // +kubebuilder:validation:Optional
+  map<string, ForecastModelStatus> forecastModels = 71;
+
   // +kubebuilder:validation:Optional
   // +patchMergeKey=type
   // +patchStrategy=merge
-  repeated ModelCondition conditions = 71;
+  repeated ModelCondition conditions = 72;
 }
 
 // ModelValidation defines a single validation to be run against a model

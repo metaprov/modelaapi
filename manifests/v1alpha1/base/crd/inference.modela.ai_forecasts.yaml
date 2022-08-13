@@ -125,11 +125,6 @@ spec:
                     description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                     type: string
                 type: object
-              keys:
-                description: The list of line items.
-                items:
-                  type: string
-                type: array
               owner:
                 default: no-one
                 description: The name of the Account which created the object, which
@@ -183,6 +178,43 @@ spec:
                 - high
                 - urgent
                 type: string
+              runs:
+                additionalProperties:
+                  properties:
+                    horizon:
+                      description: the prediction horizon
+                      properties:
+                        interval:
+                          description: The period interval
+                          enum:
+                          - second
+                          - minute
+                          - hour
+                          - day
+                          - week
+                          - month
+                          - quarter
+                          - year
+                          type: string
+                        length:
+                          description: The windows end day
+                          format: int32
+                          type: integer
+                        start:
+                          default: 0
+                          description: The number of intervals to start
+                          format: int32
+                          type: integer
+                      type: object
+                    key:
+                      description: The reference to the ServingSite resource that
+                      type: string
+                    modelURI:
+                      description: The reference to the ServingSite resource that
+                      type: string
+                  type: object
+                description: The list of forecast runs. Runs are indexed by key
+                type: object
               servingsiteRef:
                 description: The reference to the ServingSite resource that
                 properties:
@@ -272,9 +304,21 @@ spec:
                 description: total number of forecasts failed
                 format: int32
                 type: integer
-              items:
-                description: the forecast results for this forecast
-                items:
+              observedGeneration:
+                description: ObservedGeneration is the last generation that was acted
+                  on
+                format: int64
+                type: integer
+              phase:
+                default: Pending
+                description: The current phase of the forecast
+                type: string
+              rows:
+                description: total number of forecasts
+                format: int32
+                type: integer
+              runs:
+                additionalProperties:
                   description: The result of forecasting one item. The forecast data
                     itself is stored on the cloud. The dataURI is pointing to the
                     forecast, the profile URI
@@ -295,9 +339,7 @@ spec:
                       type: object
                     key:
                       description: The time series key
-                      items:
-                        type: string
-                      type: array
+                      type: string
                     profileURI:
                       description: A pointer to the profile URI
                       type: string
@@ -593,20 +635,8 @@ spec:
                           type: array
                       type: object
                   type: object
-                type: array
-              observedGeneration:
-                description: ObservedGeneration is the last generation that was acted
-                  on
-                format: int64
-                type: integer
-              phase:
-                default: Pending
-                description: The current phase of the forecast
-                type: string
-              rows:
-                description: total number of forecasts
-                format: int32
-                type: integer
+                description: the forecast results for this forecast
+                type: object
               startTime:
                 description: StartTime denotes the time when the batch forecast Job
                   started

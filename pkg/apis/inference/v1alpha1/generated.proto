@@ -621,12 +621,44 @@ message ForecastCondition {
   optional string message = 5;
 }
 
+// +kubebuilder:object:root=true
+// ForecastList is a list of Forecasts
+message ForecastList {
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
+
+  repeated Forecast items = 2;
+}
+
+// ForecastSpec specifies the details of a forecasting model
+message ForecastPredictionSpec {
+  // The hierarchy specification, which maps columns to values
+  // +kubebuilder:validation:Optional
+  map<string, string> hierarchyValues = 1;
+
+  // The interval of the forecast
+  optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSpec horizon = 2;
+}
+
+message ForecastRun {
+  // The reference to the ServingSite resource that
+  // +kubebuilder:validation:Optional
+  optional string key = 1;
+
+  // The reference to the ServingSite resource that
+  // +kubebuilder:validation:Optional
+  optional string modelURI = 2;
+
+  // the prediction horizon
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSpec horizon = 3;
+}
+
 // The result of forecasting one item. The forecast data itself is stored on the cloud.
 // The dataURI is pointing to the forecast, the profile URI
-message ForecastItemResult {
+message ForecastRunResult {
   // The time series key
   // +kubebuilder:validation:Optional
-  repeated string key = 1;
+  optional string key = 1;
 
   // A pointer to the actual forecast
   // +kubebuilder:validation:Optional
@@ -651,24 +683,6 @@ message ForecastItemResult {
   // In case of failure, this is the failure message
   // +kubebuilder:validation:Optional
   optional string failureMsg = 7;
-}
-
-// +kubebuilder:object:root=true
-// ForecastList is a list of Forecasts
-message ForecastList {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
-
-  repeated Forecast items = 2;
-}
-
-// ForecastSpec specifies the details of a forecasting model
-message ForecastPredictionSpec {
-  // The hierarchy specification, which maps columns to values
-  // +kubebuilder:validation:Optional
-  map<string, string> hierarchyValues = 1;
-
-  // The interval of the forecast
-  optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSpec horizon = 2;
 }
 
 // ForecastSpec represent the desired state of Forecast
@@ -715,9 +729,9 @@ message ForecastSpec {
   // +kubebuilder:validation:Optional
   optional int32 ttl = 8;
 
-  // The list of line items.
+  // The list of forecast runs. Runs are indexed by key
   // +kubebuilder:validation:Optional
-  repeated string keys = 9;
+  map<string, ForecastRun> runs = 9;
 
   // The reference to the ServingSite resource that
   // +kubebuilder:validation:Optional
@@ -751,7 +765,7 @@ message ForecastStatus {
 
   // the forecast results for this forecast
   // +kubebuilder:validation:Optional
-  repeated ForecastItemResult items = 7;
+  map<string, ForecastRunResult> runs = 7;
 
   // +patchMergeKey=type
   // +patchStrategy=merge

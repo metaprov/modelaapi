@@ -791,7 +791,8 @@ spec:
                     type: string
                 type: object
               feedbackTests:
-                description: The set of unit tests for this model.
+                description: The set of unit tests to test this models against the
+                  feedback.
                 properties:
                   enabled:
                     description: If false, this test case is disabled
@@ -1071,6 +1072,31 @@ spec:
                 default: false
                 description: Indicates if the model is flagged
                 type: boolean
+              forecastModels:
+                additionalProperties:
+                  description: Contain the spec for a single time series.
+                  properties:
+                    ensemble:
+                      description: If true, also try an ensemble forecaster
+                      type: boolean
+                    forecasters:
+                      items:
+                        description: A forecaster contains the metadata for one forecast
+                          model
+                        properties:
+                          algorithmName:
+                            description: AlgorithmName is a reference to the algorithm
+                              in the catalog
+                            type: string
+                        type: object
+                      type: array
+                    key:
+                      description: The time series key
+                      type: string
+                  type: object
+                description: In case of forecasting Contain the list of time series
+                  for this model
+                type: object
               forecasted:
                 default: false
                 description: Forecasted indicates that the Model should perform a
@@ -3729,6 +3755,52 @@ spec:
                       - name
                       type: object
                     type: array
+                type: object
+              forecastModels:
+                additionalProperties:
+                  properties:
+                    features:
+                      additionalProperties:
+                        type: number
+                      description: The values of the features for the time series.
+                      type: object
+                    forecasters:
+                      description: The results of the forecast
+                      items:
+                        properties:
+                          modelURI:
+                            type: string
+                          parameters:
+                            description: Parameters is a list of the algorithm hyper
+                              parameters
+                            items:
+                              description: HyperParameterValue represent an individual
+                                hyper-parameter of a machine earning algorithm
+                              properties:
+                                name:
+                                  description: The name of the hyper-parameter
+                                  type: string
+                                value:
+                                  description: The value of the hyper-parameter
+                                  type: string
+                              required:
+                              - name
+                              - value
+                              type: object
+                            type: array
+                          scores:
+                            additionalProperties:
+                              type: number
+                            description: The scores
+                            type: object
+                        type: object
+                      type: array
+                    key:
+                      description: The time series key
+                      type: string
+                  type: object
+                description: In case of forecasting Contain the list of time series
+                  for this model
                 type: object
               forecastUri:
                 description: The URI of the model forecast

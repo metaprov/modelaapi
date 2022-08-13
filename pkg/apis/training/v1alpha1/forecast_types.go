@@ -315,25 +315,19 @@ type BacktestSpec struct {
 	Gap *int32 `json:"gap,omitempty" protobuf:"varint,5,opt,name=gap"`
 }
 
-// The list of forecasters
-type ForecasterList struct {
-	// +kubebuilder:validation:Optional
-	Items []Forecaster `json:"items" protobuf:"bytes,2,rep,name=items"`
-}
-
 // A forecaster contains the metadata for one forecast model
 type Forecaster struct {
-	// Key is the uniqe key of a time series
-	// +kubebuilder:validation:Optional
-	Key []string `json:"key,omitempty" protobuf:"bytes,1,rep,name=key"`
 	// AlgorithmName is a reference to the algorithm in the catalog
 	AlgorithmName string `json:"algorithmName,omitempty" protobuf:"bytes,2,opt,name=algorithmName"`
+}
+
+type ForecasterStatus struct {
+	// +kubebuilder:validation:Optional
+	ModelURI string `json:"modelURI,omitempty" protobuf:"bytes,1,rep,name=modelURI"`
 	// Parameters is a list of the algorithm hyper parameters
-	Parameters []HyperParameterValue `json:"parameters,omitempty" protobuf:"bytes,3,rep,name=parameters,casttype=HyperParameterValue"`
+	// +kubebuilder:validation:Optional
+	Parameters []HyperParameterValue `json:"parameters,omitempty" protobuf:"bytes,2,rep,name=parameters,casttype=HyperParameterValue"`
 	// The scores
 	// +kubebuilder:validation:Optional
-	Scores map[catalog.Metric]float64 `json:"scores,omitempty" protobuf:"bytes,4,rep,name=scores"`
-	// The result of feature computation for this time series.
-	// +kubebuilder:validation:Optional
-	FeaturesValue map[TSFeature]float64 `json:"featureValues,omitempty" protobuf:"bytes,5,rep,name=featureValues"`
+	Scores map[catalog.Metric]float64 `json:"scores,omitempty" protobuf:"bytes,3,rep,name=scores"`
 }

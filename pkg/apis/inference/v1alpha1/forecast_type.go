@@ -112,12 +112,24 @@ type ForecastSpec struct {
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
 	TTL *int32 `json:"ttl,omitempty" protobuf:"varint,8,opt,name=ttl"`
-	// The list of line items.
+	// The list of forecast runs. Runs are indexed by key
 	// +kubebuilder:validation:Optional
-	Keys []string `json:"keys,omitempty" protobuf:"bytes,9,opt,name=keys"`
+	Runs map[string]ForecastRun `json:"runs,omitempty" protobuf:"bytes,9,rep,name=runs"`
 	// The reference to the ServingSite resource that
 	// +kubebuilder:validation:Optional
 	ServingSiteRef v1.ObjectReference `json:"servingsiteRef" protobuf:"bytes,10,opt,name=servingsiteRef"`
+}
+
+type ForecastRun struct {
+	// The reference to the ServingSite resource that
+	// +kubebuilder:validation:Optional
+	Key string `json:"key,omitempty" protobuf:"bytes,1,opt,name=key"`
+	// The reference to the ServingSite resource that
+	// +kubebuilder:validation:Optional
+	ModelURI string `json:"modelURI,omitempty" protobuf:"bytes,2,rep,name=modelURI"`
+	// the prediction horizon
+	// +kubebuilder:validation:Optional
+	Horizon training.PeriodSpec `json:"horizon,omitempty" protobuf:"bytes,3,rep,name=horizon"`
 }
 
 // ForecastStatus is the observed state of a Forecast
@@ -141,7 +153,7 @@ type ForecastStatus struct {
 	Failed int32 `json:"failed,omitempty" protobuf:"varint,6,opt,name=failed"`
 	// the forecast results for this forecast
 	//+kubebuilder:validation:Optional
-	Items []ForecastItemResult `json:"items,omitempty" protobuf:"bytes,7,opt,name=items"`
+	Runs map[string]ForecastRunResult `json:"runs,omitempty" protobuf:"bytes,7,opt,name=runs"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
@@ -150,10 +162,10 @@ type ForecastStatus struct {
 
 // The result of forecasting one item. The forecast data itself is stored on the cloud.
 // The dataURI is pointing to the forecast, the profile URI
-type ForecastItemResult struct {
+type ForecastRunResult struct {
 	// The time series key
 	// +kubebuilder:validation:Optional
-	Key []string `json:"key,omitempty" protobuf:"bytes,1,rep,name=key"`
+	Key string `json:"key,omitempty" protobuf:"bytes,1,opt,name=key"`
 	// A pointer to the actual forecast
 	// +kubebuilder:validation:Optional
 	DataURI string `json:"dataURI,omitempty" protobuf:"bytes,2,rep,name=dataURI"`

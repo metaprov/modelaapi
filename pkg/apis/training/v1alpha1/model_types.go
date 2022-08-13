@@ -323,9 +323,36 @@ type ModelSpec struct {
 	// The set of unit tests for this model.
 	// +kubebuilder:validation:Optional
 	UnitTests catalog.TestSuite `json:"unitTests,omitempty" protobuf:"bytes,48,opt,name=unitTests"`
-	// The set of unit tests for this model.
+	// The set of unit tests to test this models against the feedback.
 	// +kubebuilder:validation:Optional
 	FeedbackTests catalog.TestSuite `json:"feedbackTests,omitempty" protobuf:"bytes,49,opt,name=feedbackTests"`
+	// In case of forecasting Contain the list of time series for this model
+	// +kubebuilder:validation:Optional
+	ForecastModels map[string]ForecastModelSpec `json:"forecastModels,omitempty" protobuf:"bytes,50,opt,name=forecastModels"`
+}
+
+// Contain the spec for a single time series.
+type ForecastModelSpec struct {
+	// The time series key
+	// +kubebuilder:validation:Optional
+	Key string `json:"key,omitempty" protobuf:"bytes,1,opt,name=key"`
+	// +kubebuilder:validation:Optional
+	Forecasters []Forecaster `json:"forecasters,omitempty" protobuf:"bytes,2,rep,name=forecasters"`
+	// If true, also try an ensemble forecaster
+	// +kubebuilder:validation:Optional
+	Ensemble *bool `json:"ensemble,omitempty" protobuf:"bytes,3,opt,name=ensemble"`
+}
+
+type ForecastModelStatus struct {
+	// The time series key
+	// +kubebuilder:validation:Optional
+	Key string `json:"key,omitempty" protobuf:"bytes,1,opt,name=key"`
+	// The values of the features for the time series.
+	// +kubebuilder:validation:Optional
+	Features map[TSFeature]float64 `json:"features,omitempty" protobuf:"bytes,2,opt,name=features"`
+	// The results of the forecast
+	// +kubebuilder:validation:Optional
+	Forecasters []ForecasterStatus `json:"forecasters,omitempty" protobuf:"bytes,3,rep,name=forecasters"`
 }
 
 // EnsembleSpec specifies the parameters of an ensemble model
@@ -554,10 +581,13 @@ type ModelStatus struct {
 	// The result of running the feedback unit tests, the feedback unit tests
 	// +kubebuilder:validation:Optional
 	FeedbackTestsResult catalog.TestSuiteResult `json:"feedbackTestsResult,omitempty" protobuf:"bytes,70,opt,name="`
+	// In case of forecasting Contain the list of time series for this model
+	// +kubebuilder:validation:Optional
+	ForecastModels map[string]ForecastModelStatus `json:"forecastModels,omitempty" protobuf:"bytes,71,opt,name=forecastModels"`
 	// +kubebuilder:validation:Optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
-	Conditions []ModelCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,71,rep,name=conditions"`
+	Conditions []ModelCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,72,rep,name=conditions"`
 }
 
 // Holds the information about the execution environment.
