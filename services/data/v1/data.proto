@@ -444,9 +444,36 @@ message AskModelRequest {
 }
 
 
-message AskModelResponse {
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model model = 1;
+
+message GetTimeSeriesDatasetKeysRequest {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct  product = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion version = 2;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study   study = 3;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource  datasource = 4;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset     dataset = 5;
 }
+
+message GetTimeSeriesDatasetKeysResponse {
+    repeated string keys = 1; // list of keys to train from a dataset
+}
+
+
+message AskForecastModelRequest {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct  product           = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion version     = 2;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study   study              = 3;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource  datasource         = 4;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset     dataset            = 5;
+    repeated string algorithms = 8; // ask for a specific algorithm.
+    repeated string keys = 9; // list of keys to train from a dataset
+}
+
+
+message AskForecastModelResponse {
+    repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model model = 1;
+}
+
+
 
 // Ensemble
 
@@ -611,6 +638,11 @@ message DsSnapshotResponse {
 
 
 
+message AskModelResponse {
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model model = 1;
+}
+
+
 service DataService {
     // Read from a flat file and create a dataset
     rpc ReadFile(DsReadFileRequest) returns (DsReadFromStoreResponse) {}
@@ -655,6 +687,7 @@ service DataService {
     rpc AskFE (AskModelRequest) returns (AskModelResponse) {}
     rpc AskBaseline (AskBaselineRequest) returns (AskBaselineResponse) {}
     rpc AskEnsemble (AskEnsembleRequest) returns (AskEnsembleResponse) {}
+    rpc AskForecastModel (AskForecastModelRequest) returns (AskForecastModelResponse) {}
     
     // sample model randomly for a given budget
     rpc AskModel (AskModelRequest) returns (AskModelResponse) {}
@@ -684,5 +717,7 @@ service DataService {
     rpc UnitTestFeedback(RunTestSuiteRequest) returns (RunTestSuiteResponse) {}
     rpc UnitTestFeatureHistogram(RunTestSuiteRequest) returns (RunTestSuiteResponse) {}
     rpc UnitTestPredictor(RunTestSuiteRequest) returns (RunTestSuiteResponse) {}
+
+    rpc GetTimeSeriesDatasetKeys(GetTimeSeriesDatasetKeysRequest) returns (GetTimeSeriesDatasetKeysResponse) {}
 
 }

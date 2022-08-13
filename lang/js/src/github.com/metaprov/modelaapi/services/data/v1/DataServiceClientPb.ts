@@ -1067,6 +1067,49 @@ export class DataServiceClient {
     this.methodInfoAskEnsemble);
   }
 
+  methodInfoAskForecastModel = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.data.v1.DataService/AskForecastModel',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.AskForecastModelRequest,
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.AskForecastModelResponse,
+    (request: github_com_metaprov_modelaapi_services_data_v1_data_pb.AskForecastModelRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.AskForecastModelResponse.deserializeBinary
+  );
+
+  askForecastModel(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.AskForecastModelRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_data_v1_data_pb.AskForecastModelResponse>;
+
+  askForecastModel(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.AskForecastModelRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.AskForecastModelResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_data_v1_data_pb.AskForecastModelResponse>;
+
+  askForecastModel(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.AskForecastModelRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.AskForecastModelResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.data.v1.DataService/AskForecastModel',
+        request,
+        metadata || {},
+        this.methodInfoAskForecastModel,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.data.v1.DataService/AskForecastModel',
+    request,
+    metadata || {},
+    this.methodInfoAskForecastModel);
+  }
+
   methodInfoAskModel = new grpcWeb.MethodDescriptor(
     '/github.com.metaprov.modelaapi.services.data.v1.DataService/AskModel',
     grpcWeb.MethodType.UNARY,
@@ -1882,6 +1925,49 @@ export class DataServiceClient {
     request,
     metadata || {},
     this.methodInfoUnitTestPredictor);
+  }
+
+  methodInfoGetTimeSeriesDatasetKeys = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.data.v1.DataService/GetTimeSeriesDatasetKeys',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.GetTimeSeriesDatasetKeysRequest,
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.GetTimeSeriesDatasetKeysResponse,
+    (request: github_com_metaprov_modelaapi_services_data_v1_data_pb.GetTimeSeriesDatasetKeysRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.GetTimeSeriesDatasetKeysResponse.deserializeBinary
+  );
+
+  getTimeSeriesDatasetKeys(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.GetTimeSeriesDatasetKeysRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_data_v1_data_pb.GetTimeSeriesDatasetKeysResponse>;
+
+  getTimeSeriesDatasetKeys(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.GetTimeSeriesDatasetKeysRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.GetTimeSeriesDatasetKeysResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_data_v1_data_pb.GetTimeSeriesDatasetKeysResponse>;
+
+  getTimeSeriesDatasetKeys(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.GetTimeSeriesDatasetKeysRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.GetTimeSeriesDatasetKeysResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.data.v1.DataService/GetTimeSeriesDatasetKeys',
+        request,
+        metadata || {},
+        this.methodInfoGetTimeSeriesDatasetKeys,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.data.v1.DataService/GetTimeSeriesDatasetKeys',
+    request,
+    metadata || {},
+    this.methodInfoGetTimeSeriesDatasetKeys);
   }
 
 }

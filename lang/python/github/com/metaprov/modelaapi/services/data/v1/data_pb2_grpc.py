@@ -134,6 +134,11 @@ class DataServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.AskEnsembleRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.AskEnsembleResponse.FromString,
                 )
+        self.AskForecastModel = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.data.v1.DataService/AskForecastModel',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.AskForecastModelRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.AskForecastModelResponse.FromString,
+                )
         self.AskModel = channel.unary_unary(
                 '/github.com.metaprov.modelaapi.services.data.v1.DataService/AskModel',
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.AskModelRequest.SerializeToString,
@@ -228,6 +233,11 @@ class DataServiceStub(object):
                 '/github.com.metaprov.modelaapi.services.data.v1.DataService/UnitTestPredictor',
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.RunTestSuiteRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.RunTestSuiteResponse.FromString,
+                )
+        self.GetTimeSeriesDatasetKeys = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.data.v1.DataService/GetTimeSeriesDatasetKeys',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.GetTimeSeriesDatasetKeysRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.GetTimeSeriesDatasetKeysResponse.FromString,
                 )
 
 
@@ -395,6 +405,12 @@ class DataServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def AskForecastModel(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def AskModel(self, request, context):
         """sample model randomly for a given budget
         """
@@ -512,6 +528,12 @@ class DataServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def UnitTestPredictor(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetTimeSeriesDatasetKeys(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -640,6 +662,11 @@ def add_DataServiceServicer_to_server(servicer, server):
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.AskEnsembleRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.AskEnsembleResponse.SerializeToString,
             ),
+            'AskForecastModel': grpc.unary_unary_rpc_method_handler(
+                    servicer.AskForecastModel,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.AskForecastModelRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.AskForecastModelResponse.SerializeToString,
+            ),
             'AskModel': grpc.unary_unary_rpc_method_handler(
                     servicer.AskModel,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.AskModelRequest.FromString,
@@ -734,6 +761,11 @@ def add_DataServiceServicer_to_server(servicer, server):
                     servicer.UnitTestPredictor,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.RunTestSuiteRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.RunTestSuiteResponse.SerializeToString,
+            ),
+            'GetTimeSeriesDatasetKeys': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetTimeSeriesDatasetKeys,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.GetTimeSeriesDatasetKeysRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.GetTimeSeriesDatasetKeysResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -1154,6 +1186,23 @@ class DataService(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
+    def AskForecastModel(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.data.v1.DataService/AskForecastModel',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.AskForecastModelRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.AskForecastModelResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
     def AskModel(request,
             target,
             options=(),
@@ -1473,5 +1522,22 @@ class DataService(object):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.data.v1.DataService/UnitTestPredictor',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.RunTestSuiteRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.RunTestSuiteResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetTimeSeriesDatasetKeys(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.data.v1.DataService/GetTimeSeriesDatasetKeys',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.GetTimeSeriesDatasetKeysRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.GetTimeSeriesDatasetKeysResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

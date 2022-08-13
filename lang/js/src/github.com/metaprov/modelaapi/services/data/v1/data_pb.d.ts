@@ -2069,23 +2069,143 @@ export namespace AskModelRequest {
   }
 }
 
-export class AskModelResponse extends jspb.Message {
-  getModel(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model | undefined;
-  setModel(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model): AskModelResponse;
-  hasModel(): boolean;
-  clearModel(): AskModelResponse;
+export class GetTimeSeriesDatasetKeysRequest extends jspb.Message {
+  getProduct(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct | undefined;
+  setProduct(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): GetTimeSeriesDatasetKeysRequest;
+  hasProduct(): boolean;
+  clearProduct(): GetTimeSeriesDatasetKeysRequest;
+
+  getVersion(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion | undefined;
+  setVersion(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion): GetTimeSeriesDatasetKeysRequest;
+  hasVersion(): boolean;
+  clearVersion(): GetTimeSeriesDatasetKeysRequest;
+
+  getStudy(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study | undefined;
+  setStudy(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study): GetTimeSeriesDatasetKeysRequest;
+  hasStudy(): boolean;
+  clearStudy(): GetTimeSeriesDatasetKeysRequest;
+
+  getDatasource(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource | undefined;
+  setDatasource(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource): GetTimeSeriesDatasetKeysRequest;
+  hasDatasource(): boolean;
+  clearDatasource(): GetTimeSeriesDatasetKeysRequest;
+
+  getDataset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
+  setDataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): GetTimeSeriesDatasetKeysRequest;
+  hasDataset(): boolean;
+  clearDataset(): GetTimeSeriesDatasetKeysRequest;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): AskModelResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: AskModelResponse): AskModelResponse.AsObject;
-  static serializeBinaryToWriter(message: AskModelResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): AskModelResponse;
-  static deserializeBinaryFromReader(message: AskModelResponse, reader: jspb.BinaryReader): AskModelResponse;
+  toObject(includeInstance?: boolean): GetTimeSeriesDatasetKeysRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetTimeSeriesDatasetKeysRequest): GetTimeSeriesDatasetKeysRequest.AsObject;
+  static serializeBinaryToWriter(message: GetTimeSeriesDatasetKeysRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetTimeSeriesDatasetKeysRequest;
+  static deserializeBinaryFromReader(message: GetTimeSeriesDatasetKeysRequest, reader: jspb.BinaryReader): GetTimeSeriesDatasetKeysRequest;
 }
 
-export namespace AskModelResponse {
+export namespace GetTimeSeriesDatasetKeysRequest {
   export type AsObject = {
-    model?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject,
+    product?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
+    version?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.AsObject,
+    study?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
+    datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
+    dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
+  }
+}
+
+export class GetTimeSeriesDatasetKeysResponse extends jspb.Message {
+  getKeysList(): Array<string>;
+  setKeysList(value: Array<string>): GetTimeSeriesDatasetKeysResponse;
+  clearKeysList(): GetTimeSeriesDatasetKeysResponse;
+  addKeys(value: string, index?: number): GetTimeSeriesDatasetKeysResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetTimeSeriesDatasetKeysResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetTimeSeriesDatasetKeysResponse): GetTimeSeriesDatasetKeysResponse.AsObject;
+  static serializeBinaryToWriter(message: GetTimeSeriesDatasetKeysResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetTimeSeriesDatasetKeysResponse;
+  static deserializeBinaryFromReader(message: GetTimeSeriesDatasetKeysResponse, reader: jspb.BinaryReader): GetTimeSeriesDatasetKeysResponse;
+}
+
+export namespace GetTimeSeriesDatasetKeysResponse {
+  export type AsObject = {
+    keysList: Array<string>,
+  }
+}
+
+export class AskForecastModelRequest extends jspb.Message {
+  getProduct(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct | undefined;
+  setProduct(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): AskForecastModelRequest;
+  hasProduct(): boolean;
+  clearProduct(): AskForecastModelRequest;
+
+  getVersion(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion | undefined;
+  setVersion(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion): AskForecastModelRequest;
+  hasVersion(): boolean;
+  clearVersion(): AskForecastModelRequest;
+
+  getStudy(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study | undefined;
+  setStudy(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study): AskForecastModelRequest;
+  hasStudy(): boolean;
+  clearStudy(): AskForecastModelRequest;
+
+  getDatasource(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource | undefined;
+  setDatasource(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource): AskForecastModelRequest;
+  hasDatasource(): boolean;
+  clearDatasource(): AskForecastModelRequest;
+
+  getDataset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
+  setDataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): AskForecastModelRequest;
+  hasDataset(): boolean;
+  clearDataset(): AskForecastModelRequest;
+
+  getAlgorithmsList(): Array<string>;
+  setAlgorithmsList(value: Array<string>): AskForecastModelRequest;
+  clearAlgorithmsList(): AskForecastModelRequest;
+  addAlgorithms(value: string, index?: number): AskForecastModelRequest;
+
+  getKeysList(): Array<string>;
+  setKeysList(value: Array<string>): AskForecastModelRequest;
+  clearKeysList(): AskForecastModelRequest;
+  addKeys(value: string, index?: number): AskForecastModelRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AskForecastModelRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: AskForecastModelRequest): AskForecastModelRequest.AsObject;
+  static serializeBinaryToWriter(message: AskForecastModelRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AskForecastModelRequest;
+  static deserializeBinaryFromReader(message: AskForecastModelRequest, reader: jspb.BinaryReader): AskForecastModelRequest;
+}
+
+export namespace AskForecastModelRequest {
+  export type AsObject = {
+    product?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
+    version?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.AsObject,
+    study?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
+    datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
+    dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
+    algorithmsList: Array<string>,
+    keysList: Array<string>,
+  }
+}
+
+export class AskForecastModelResponse extends jspb.Message {
+  getModelList(): Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model>;
+  setModelList(value: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model>): AskForecastModelResponse;
+  clearModelList(): AskForecastModelResponse;
+  addModel(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model, index?: number): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AskForecastModelResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: AskForecastModelResponse): AskForecastModelResponse.AsObject;
+  static serializeBinaryToWriter(message: AskForecastModelResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AskForecastModelResponse;
+  static deserializeBinaryFromReader(message: AskForecastModelResponse, reader: jspb.BinaryReader): AskForecastModelResponse;
+}
+
+export namespace AskForecastModelResponse {
+  export type AsObject = {
+    modelList: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject>,
   }
 }
 
@@ -2828,6 +2948,26 @@ export class DsSnapshotResponse extends jspb.Message {
 
 export namespace DsSnapshotResponse {
   export type AsObject = {
+  }
+}
+
+export class AskModelResponse extends jspb.Message {
+  getModel(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model | undefined;
+  setModel(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model): AskModelResponse;
+  hasModel(): boolean;
+  clearModel(): AskModelResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AskModelResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: AskModelResponse): AskModelResponse.AsObject;
+  static serializeBinaryToWriter(message: AskModelResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AskModelResponse;
+  static deserializeBinaryFromReader(message: AskModelResponse, reader: jspb.BinaryReader): AskModelResponse;
+}
+
+export namespace AskModelResponse {
+  export type AsObject = {
+    model?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject,
   }
 }
 

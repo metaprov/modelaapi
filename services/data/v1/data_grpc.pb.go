@@ -63,6 +63,7 @@ type DataServiceClient interface {
 	AskFE(ctx context.Context, in *AskModelRequest, opts ...grpc.CallOption) (*AskModelResponse, error)
 	AskBaseline(ctx context.Context, in *AskBaselineRequest, opts ...grpc.CallOption) (*AskBaselineResponse, error)
 	AskEnsemble(ctx context.Context, in *AskEnsembleRequest, opts ...grpc.CallOption) (*AskEnsembleResponse, error)
+	AskForecastModel(ctx context.Context, in *AskForecastModelRequest, opts ...grpc.CallOption) (*AskForecastModelResponse, error)
 	// sample model randomly for a given budget
 	AskModel(ctx context.Context, in *AskModelRequest, opts ...grpc.CallOption) (*AskModelResponse, error)
 	// sample model randomly for a given budget
@@ -90,6 +91,7 @@ type DataServiceClient interface {
 	UnitTestFeedback(ctx context.Context, in *RunTestSuiteRequest, opts ...grpc.CallOption) (*RunTestSuiteResponse, error)
 	UnitTestFeatureHistogram(ctx context.Context, in *RunTestSuiteRequest, opts ...grpc.CallOption) (*RunTestSuiteResponse, error)
 	UnitTestPredictor(ctx context.Context, in *RunTestSuiteRequest, opts ...grpc.CallOption) (*RunTestSuiteResponse, error)
+	GetTimeSeriesDatasetKeys(ctx context.Context, in *GetTimeSeriesDatasetKeysRequest, opts ...grpc.CallOption) (*GetTimeSeriesDatasetKeysResponse, error)
 }
 
 type dataServiceClient struct {
@@ -316,6 +318,15 @@ func (c *dataServiceClient) AskEnsemble(ctx context.Context, in *AskEnsembleRequ
 	return out, nil
 }
 
+func (c *dataServiceClient) AskForecastModel(ctx context.Context, in *AskForecastModelRequest, opts ...grpc.CallOption) (*AskForecastModelResponse, error) {
+	out := new(AskForecastModelResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/AskForecastModel", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *dataServiceClient) AskModel(ctx context.Context, in *AskModelRequest, opts ...grpc.CallOption) (*AskModelResponse, error) {
 	out := new(AskModelResponse)
 	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/AskModel", in, out, opts...)
@@ -487,6 +498,15 @@ func (c *dataServiceClient) UnitTestPredictor(ctx context.Context, in *RunTestSu
 	return out, nil
 }
 
+func (c *dataServiceClient) GetTimeSeriesDatasetKeys(ctx context.Context, in *GetTimeSeriesDatasetKeysRequest, opts ...grpc.CallOption) (*GetTimeSeriesDatasetKeysResponse, error) {
+	out := new(GetTimeSeriesDatasetKeysResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/GetTimeSeriesDatasetKeys", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // DataServiceServer is the server API for DataService service.
 // All implementations must embed UnimplementedDataServiceServer
 // for forward compatibility
@@ -532,6 +552,7 @@ type DataServiceServer interface {
 	AskFE(context.Context, *AskModelRequest) (*AskModelResponse, error)
 	AskBaseline(context.Context, *AskBaselineRequest) (*AskBaselineResponse, error)
 	AskEnsemble(context.Context, *AskEnsembleRequest) (*AskEnsembleResponse, error)
+	AskForecastModel(context.Context, *AskForecastModelRequest) (*AskForecastModelResponse, error)
 	// sample model randomly for a given budget
 	AskModel(context.Context, *AskModelRequest) (*AskModelResponse, error)
 	// sample model randomly for a given budget
@@ -559,6 +580,7 @@ type DataServiceServer interface {
 	UnitTestFeedback(context.Context, *RunTestSuiteRequest) (*RunTestSuiteResponse, error)
 	UnitTestFeatureHistogram(context.Context, *RunTestSuiteRequest) (*RunTestSuiteResponse, error)
 	UnitTestPredictor(context.Context, *RunTestSuiteRequest) (*RunTestSuiteResponse, error)
+	GetTimeSeriesDatasetKeys(context.Context, *GetTimeSeriesDatasetKeysRequest) (*GetTimeSeriesDatasetKeysResponse, error)
 	mustEmbedUnimplementedDataServiceServer()
 }
 
@@ -638,6 +660,9 @@ func (UnimplementedDataServiceServer) AskBaseline(context.Context, *AskBaselineR
 func (UnimplementedDataServiceServer) AskEnsemble(context.Context, *AskEnsembleRequest) (*AskEnsembleResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AskEnsemble not implemented")
 }
+func (UnimplementedDataServiceServer) AskForecastModel(context.Context, *AskForecastModelRequest) (*AskForecastModelResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AskForecastModel not implemented")
+}
 func (UnimplementedDataServiceServer) AskModel(context.Context, *AskModelRequest) (*AskModelResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AskModel not implemented")
 }
@@ -694,6 +719,9 @@ func (UnimplementedDataServiceServer) UnitTestFeatureHistogram(context.Context, 
 }
 func (UnimplementedDataServiceServer) UnitTestPredictor(context.Context, *RunTestSuiteRequest) (*RunTestSuiteResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UnitTestPredictor not implemented")
+}
+func (UnimplementedDataServiceServer) GetTimeSeriesDatasetKeys(context.Context, *GetTimeSeriesDatasetKeysRequest) (*GetTimeSeriesDatasetKeysResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetTimeSeriesDatasetKeys not implemented")
 }
 func (UnimplementedDataServiceServer) mustEmbedUnimplementedDataServiceServer() {}
 
@@ -1140,6 +1168,24 @@ func _DataService_AskEnsemble_Handler(srv interface{}, ctx context.Context, dec 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _DataService_AskForecastModel_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AskForecastModelRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DataServiceServer).AskForecastModel(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/AskForecastModel",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DataServiceServer).AskForecastModel(ctx, req.(*AskForecastModelRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _DataService_AskModel_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(AskModelRequest)
 	if err := dec(in); err != nil {
@@ -1482,6 +1528,24 @@ func _DataService_UnitTestPredictor_Handler(srv interface{}, ctx context.Context
 	return interceptor(ctx, in, info, handler)
 }
 
+func _DataService_GetTimeSeriesDatasetKeys_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetTimeSeriesDatasetKeysRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DataServiceServer).GetTimeSeriesDatasetKeys(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/GetTimeSeriesDatasetKeys",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DataServiceServer).GetTimeSeriesDatasetKeys(ctx, req.(*GetTimeSeriesDatasetKeysRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // DataService_ServiceDesc is the grpc.ServiceDesc for DataService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -1586,6 +1650,10 @@ var DataService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _DataService_AskEnsemble_Handler,
 		},
 		{
+			MethodName: "AskForecastModel",
+			Handler:    _DataService_AskForecastModel_Handler,
+		},
+		{
 			MethodName: "AskModel",
 			Handler:    _DataService_AskModel_Handler,
 		},
@@ -1660,6 +1728,10 @@ var DataService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UnitTestPredictor",
 			Handler:    _DataService_UnitTestPredictor_Handler,
+		},
+		{
+			MethodName: "GetTimeSeriesDatasetKeys",
+			Handler:    _DataService_GetTimeSeriesDatasetKeys_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
