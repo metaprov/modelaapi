@@ -783,34 +783,6 @@ message FeatureSelectionSpec {
   repeated string reserved = 12;
 }
 
-// Contain the spec for a single time series.
-message ForecastModelSpec {
-  // The time series key
-  // +kubebuilder:validation:Optional
-  optional string key = 1;
-
-  // +kubebuilder:validation:Optional
-  repeated Forecaster forecasters = 2;
-
-  // If true, also try an ensemble forecaster
-  // +kubebuilder:validation:Optional
-  optional bool ensemble = 3;
-}
-
-message ForecastModelStatus {
-  // The time series key
-  // +kubebuilder:validation:Optional
-  optional string key = 1;
-
-  // The values of the features for the time series.
-  // +kubebuilder:validation:Optional
-  map<string, double> features = 2;
-
-  // The results of the forecast
-  // +kubebuilder:validation:Optional
-  repeated ForecasterStatus forecasters = 3;
-}
-
 // ForecastObj holds the definition of a single forecast
 message ForecastObj {
   optional string key = 1;
@@ -830,25 +802,6 @@ message ForecastPostProcessingSpec {
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
   optional bool forecast = 2;
-}
-
-// A forecaster contains the metadata for one forecast model
-message Forecaster {
-  // AlgorithmName is a reference to the algorithm in the catalog
-  optional string algorithmName = 2;
-}
-
-message ForecasterStatus {
-  // +kubebuilder:validation:Optional
-  optional string modelURI = 1;
-
-  // Parameters is a list of the algorithm hyper parameters
-  // +kubebuilder:validation:Optional
-  repeated HyperParameterValue parameters = 2;
-
-  // The scores
-  // +kubebuilder:validation:Optional
-  map<string, double> scores = 3;
 }
 
 // ForecastingSpec
@@ -2250,7 +2203,7 @@ message ModelSpec {
 
   // In case of forecasting Contain the list of time series for this model
   // +kubebuilder:validation:Optional
-  map<string, ForecastModelSpec> forecastModels = 50;
+  map<string, TimeSeriesItem> timeSeriesItems = 50;
 }
 
 // ModelStatus defines the observed state of a Model
@@ -2533,7 +2486,7 @@ message ModelStatus {
 
   // In case of forecasting Contain the list of time series for this model
   // +kubebuilder:validation:Optional
-  map<string, ForecastModelStatus> forecastModels = 71;
+  map<string, TimeSeriesItemStatus> forecastModels = 71;
 
   // +kubebuilder:validation:Optional
   // +patchMergeKey=type
@@ -3860,6 +3813,53 @@ message TimeSeriesDataSpec {
   // The list of additional regressors. The regresors are part of the time series data
   // +kubebuilder:validation:Optional
   repeated RegressorSpec regressors = 9;
+}
+
+// Contain the spec for a single time series.
+message TimeSeriesItem {
+  // The time series key
+  // +kubebuilder:validation:Optional
+  optional string key = 1;
+
+  // +kubebuilder:validation:Optional
+  repeated TimeSeriesModelSpec models = 2;
+
+  // If true, also try an ensemble forecaster
+  // +kubebuilder:validation:Optional
+  optional bool ensemble = 3;
+}
+
+message TimeSeriesItemStatus {
+  // The time series key
+  // +kubebuilder:validation:Optional
+  optional string key = 1;
+
+  // The values of the features for the time series.
+  // +kubebuilder:validation:Optional
+  map<string, double> features = 2;
+
+  // The results of the forecast
+  // +kubebuilder:validation:Optional
+  repeated TimeSeriesModelStatus models = 3;
+}
+
+// A forecaster contains the metadata for one forecast model
+message TimeSeriesModelSpec {
+  // AlgorithmName is a reference to the algorithm in the catalog
+  optional string algorithmName = 2;
+}
+
+message TimeSeriesModelStatus {
+  // +kubebuilder:validation:Optional
+  optional string modelURI = 1;
+
+  // Parameters is a list of the algorithm hyper parameters
+  // +kubebuilder:validation:Optional
+  repeated HyperParameterValue parameters = 2;
+
+  // The scores
+  // +kubebuilder:validation:Optional
+  map<string, double> scores = 3;
 }
 
 // TrainingSpec specifies the configuration of a model training workload

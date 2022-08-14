@@ -1072,31 +1072,6 @@ spec:
                 default: false
                 description: Indicates if the model is flagged
                 type: boolean
-              forecastModels:
-                additionalProperties:
-                  description: Contain the spec for a single time series.
-                  properties:
-                    ensemble:
-                      description: If true, also try an ensemble forecaster
-                      type: boolean
-                    forecasters:
-                      items:
-                        description: A forecaster contains the metadata for one forecast
-                          model
-                        properties:
-                          algorithmName:
-                            description: AlgorithmName is a reference to the algorithm
-                              in the catalog
-                            type: string
-                        type: object
-                      type: array
-                    key:
-                      description: The time series key
-                      type: string
-                  type: object
-                description: In case of forecasting Contain the list of time series
-                  for this model
-                type: object
               forecasted:
                 default: false
                 description: Forecasted indicates that the Model should perform a
@@ -2084,6 +2059,31 @@ spec:
                   test the model. The Study resource controller will automatically
                   set this field if the Model was found to be the highest-performing
                 type: boolean
+              timeSeriesItems:
+                additionalProperties:
+                  description: Contain the spec for a single time series.
+                  properties:
+                    ensemble:
+                      description: If true, also try an ensemble forecaster
+                      type: boolean
+                    key:
+                      description: The time series key
+                      type: string
+                    models:
+                      items:
+                        description: A forecaster contains the metadata for one forecast
+                          model
+                        properties:
+                          algorithmName:
+                            description: AlgorithmName is a reference to the algorithm
+                              in the catalog
+                            type: string
+                        type: object
+                      type: array
+                  type: object
+                description: In case of forecasting Contain the list of time series
+                  for this model
+                type: object
               training:
                 description: TrainingSpec specifies the configuration to prepare and
                   train a model
@@ -3764,7 +3764,10 @@ spec:
                         type: number
                       description: The values of the features for the time series.
                       type: object
-                    forecasters:
+                    key:
+                      description: The time series key
+                      type: string
+                    models:
                       description: The results of the forecast
                       items:
                         properties:
@@ -3795,9 +3798,6 @@ spec:
                             type: object
                         type: object
                       type: array
-                    key:
-                      description: The time series key
-                      type: string
                   type: object
                 description: In case of forecasting Contain the list of time series
                   for this model

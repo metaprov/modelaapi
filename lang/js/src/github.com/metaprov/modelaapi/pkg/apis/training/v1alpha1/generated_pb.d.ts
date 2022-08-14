@@ -1186,62 +1186,6 @@ export namespace FeatureSelectionSpec {
   }
 }
 
-export class ForecastModelSpec extends jspb.Message {
-  getKey(): string;
-  setKey(value: string): ForecastModelSpec;
-
-  getForecastersList(): Array<Forecaster>;
-  setForecastersList(value: Array<Forecaster>): ForecastModelSpec;
-  clearForecastersList(): ForecastModelSpec;
-  addForecasters(value?: Forecaster, index?: number): Forecaster;
-
-  getEnsemble(): boolean;
-  setEnsemble(value: boolean): ForecastModelSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ForecastModelSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: ForecastModelSpec): ForecastModelSpec.AsObject;
-  static serializeBinaryToWriter(message: ForecastModelSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ForecastModelSpec;
-  static deserializeBinaryFromReader(message: ForecastModelSpec, reader: jspb.BinaryReader): ForecastModelSpec;
-}
-
-export namespace ForecastModelSpec {
-  export type AsObject = {
-    key: string,
-    forecastersList: Array<Forecaster.AsObject>,
-    ensemble: boolean,
-  }
-}
-
-export class ForecastModelStatus extends jspb.Message {
-  getKey(): string;
-  setKey(value: string): ForecastModelStatus;
-
-  getFeaturesMap(): jspb.Map<string, number>;
-  clearFeaturesMap(): ForecastModelStatus;
-
-  getForecastersList(): Array<ForecasterStatus>;
-  setForecastersList(value: Array<ForecasterStatus>): ForecastModelStatus;
-  clearForecastersList(): ForecastModelStatus;
-  addForecasters(value?: ForecasterStatus, index?: number): ForecasterStatus;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ForecastModelStatus.AsObject;
-  static toObject(includeInstance: boolean, msg: ForecastModelStatus): ForecastModelStatus.AsObject;
-  static serializeBinaryToWriter(message: ForecastModelStatus, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ForecastModelStatus;
-  static deserializeBinaryFromReader(message: ForecastModelStatus, reader: jspb.BinaryReader): ForecastModelStatus;
-}
-
-export namespace ForecastModelStatus {
-  export type AsObject = {
-    key: string,
-    featuresMap: Array<[string, number]>,
-    forecastersList: Array<ForecasterStatus.AsObject>,
-  }
-}
-
 export class ForecastObj extends jspb.Message {
   getKey(): string;
   setKey(value: string): ForecastObj;
@@ -1283,52 +1227,6 @@ export namespace ForecastPostProcessingSpec {
   export type AsObject = {
     connectionname: string,
     forecast: boolean,
-  }
-}
-
-export class Forecaster extends jspb.Message {
-  getAlgorithmname(): string;
-  setAlgorithmname(value: string): Forecaster;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): Forecaster.AsObject;
-  static toObject(includeInstance: boolean, msg: Forecaster): Forecaster.AsObject;
-  static serializeBinaryToWriter(message: Forecaster, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): Forecaster;
-  static deserializeBinaryFromReader(message: Forecaster, reader: jspb.BinaryReader): Forecaster;
-}
-
-export namespace Forecaster {
-  export type AsObject = {
-    algorithmname: string,
-  }
-}
-
-export class ForecasterStatus extends jspb.Message {
-  getModeluri(): string;
-  setModeluri(value: string): ForecasterStatus;
-
-  getParametersList(): Array<HyperParameterValue>;
-  setParametersList(value: Array<HyperParameterValue>): ForecasterStatus;
-  clearParametersList(): ForecasterStatus;
-  addParameters(value?: HyperParameterValue, index?: number): HyperParameterValue;
-
-  getScoresMap(): jspb.Map<string, number>;
-  clearScoresMap(): ForecasterStatus;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ForecasterStatus.AsObject;
-  static toObject(includeInstance: boolean, msg: ForecasterStatus): ForecasterStatus.AsObject;
-  static serializeBinaryToWriter(message: ForecasterStatus, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ForecasterStatus;
-  static deserializeBinaryFromReader(message: ForecasterStatus, reader: jspb.BinaryReader): ForecasterStatus;
-}
-
-export namespace ForecasterStatus {
-  export type AsObject = {
-    modeluri: string,
-    parametersList: Array<HyperParameterValue.AsObject>,
-    scoresMap: Array<[string, number]>,
   }
 }
 
@@ -3260,8 +3158,8 @@ export class ModelSpec extends jspb.Message {
   hasFeedbacktests(): boolean;
   clearFeedbacktests(): ModelSpec;
 
-  getForecastmodelsMap(): jspb.Map<string, ForecastModelSpec>;
-  clearForecastmodelsMap(): ModelSpec;
+  getTimeseriesitemsMap(): jspb.Map<string, TimeSeriesItem>;
+  clearTimeseriesitemsMap(): ModelSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelSpec.AsObject;
@@ -3320,7 +3218,7 @@ export namespace ModelSpec {
     interpretability?: InterpretabilitySpec.AsObject,
     unittests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
     feedbacktests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
-    forecastmodelsMap: Array<[string, ForecastModelSpec.AsObject]>,
+    timeseriesitemsMap: Array<[string, TimeSeriesItem.AsObject]>,
   }
 }
 
@@ -3597,7 +3495,7 @@ export class ModelStatus extends jspb.Message {
   hasFeedbacktestsresult(): boolean;
   clearFeedbacktestsresult(): ModelStatus;
 
-  getForecastmodelsMap(): jspb.Map<string, ForecastModelStatus>;
+  getForecastmodelsMap(): jspb.Map<string, TimeSeriesItemStatus>;
   clearForecastmodelsMap(): ModelStatus;
 
   getConditionsList(): Array<ModelCondition>;
@@ -3683,7 +3581,7 @@ export namespace ModelStatus {
     images?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Images.AsObject,
     unittestsresult?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
     feedbacktestsresult?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
-    forecastmodelsMap: Array<[string, ForecastModelStatus.AsObject]>,
+    forecastmodelsMap: Array<[string, TimeSeriesItemStatus.AsObject]>,
     conditionsList: Array<ModelCondition.AsObject>,
   }
 }
@@ -5615,6 +5513,108 @@ export namespace TimeSeriesDataSpec {
     dailyseasonality?: PeriodSeasonalitySpec.AsObject,
     growth: string,
     regressorsList: Array<RegressorSpec.AsObject>,
+  }
+}
+
+export class TimeSeriesItem extends jspb.Message {
+  getKey(): string;
+  setKey(value: string): TimeSeriesItem;
+
+  getModelsList(): Array<TimeSeriesModelSpec>;
+  setModelsList(value: Array<TimeSeriesModelSpec>): TimeSeriesItem;
+  clearModelsList(): TimeSeriesItem;
+  addModels(value?: TimeSeriesModelSpec, index?: number): TimeSeriesModelSpec;
+
+  getEnsemble(): boolean;
+  setEnsemble(value: boolean): TimeSeriesItem;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TimeSeriesItem.AsObject;
+  static toObject(includeInstance: boolean, msg: TimeSeriesItem): TimeSeriesItem.AsObject;
+  static serializeBinaryToWriter(message: TimeSeriesItem, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TimeSeriesItem;
+  static deserializeBinaryFromReader(message: TimeSeriesItem, reader: jspb.BinaryReader): TimeSeriesItem;
+}
+
+export namespace TimeSeriesItem {
+  export type AsObject = {
+    key: string,
+    modelsList: Array<TimeSeriesModelSpec.AsObject>,
+    ensemble: boolean,
+  }
+}
+
+export class TimeSeriesItemStatus extends jspb.Message {
+  getKey(): string;
+  setKey(value: string): TimeSeriesItemStatus;
+
+  getFeaturesMap(): jspb.Map<string, number>;
+  clearFeaturesMap(): TimeSeriesItemStatus;
+
+  getModelsList(): Array<TimeSeriesModelStatus>;
+  setModelsList(value: Array<TimeSeriesModelStatus>): TimeSeriesItemStatus;
+  clearModelsList(): TimeSeriesItemStatus;
+  addModels(value?: TimeSeriesModelStatus, index?: number): TimeSeriesModelStatus;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TimeSeriesItemStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: TimeSeriesItemStatus): TimeSeriesItemStatus.AsObject;
+  static serializeBinaryToWriter(message: TimeSeriesItemStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TimeSeriesItemStatus;
+  static deserializeBinaryFromReader(message: TimeSeriesItemStatus, reader: jspb.BinaryReader): TimeSeriesItemStatus;
+}
+
+export namespace TimeSeriesItemStatus {
+  export type AsObject = {
+    key: string,
+    featuresMap: Array<[string, number]>,
+    modelsList: Array<TimeSeriesModelStatus.AsObject>,
+  }
+}
+
+export class TimeSeriesModelSpec extends jspb.Message {
+  getAlgorithmname(): string;
+  setAlgorithmname(value: string): TimeSeriesModelSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TimeSeriesModelSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: TimeSeriesModelSpec): TimeSeriesModelSpec.AsObject;
+  static serializeBinaryToWriter(message: TimeSeriesModelSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TimeSeriesModelSpec;
+  static deserializeBinaryFromReader(message: TimeSeriesModelSpec, reader: jspb.BinaryReader): TimeSeriesModelSpec;
+}
+
+export namespace TimeSeriesModelSpec {
+  export type AsObject = {
+    algorithmname: string,
+  }
+}
+
+export class TimeSeriesModelStatus extends jspb.Message {
+  getModeluri(): string;
+  setModeluri(value: string): TimeSeriesModelStatus;
+
+  getParametersList(): Array<HyperParameterValue>;
+  setParametersList(value: Array<HyperParameterValue>): TimeSeriesModelStatus;
+  clearParametersList(): TimeSeriesModelStatus;
+  addParameters(value?: HyperParameterValue, index?: number): HyperParameterValue;
+
+  getScoresMap(): jspb.Map<string, number>;
+  clearScoresMap(): TimeSeriesModelStatus;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TimeSeriesModelStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: TimeSeriesModelStatus): TimeSeriesModelStatus.AsObject;
+  static serializeBinaryToWriter(message: TimeSeriesModelStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TimeSeriesModelStatus;
+  static deserializeBinaryFromReader(message: TimeSeriesModelStatus, reader: jspb.BinaryReader): TimeSeriesModelStatus;
+}
+
+export namespace TimeSeriesModelStatus {
+  export type AsObject = {
+    modeluri: string,
+    parametersList: Array<HyperParameterValue.AsObject>,
+    scoresMap: Array<[string, number]>,
   }
 }
 

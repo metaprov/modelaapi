@@ -328,22 +328,22 @@ type ModelSpec struct {
 	FeedbackTests catalog.TestSuite `json:"feedbackTests,omitempty" protobuf:"bytes,49,opt,name=feedbackTests"`
 	// In case of forecasting Contain the list of time series for this model
 	// +kubebuilder:validation:Optional
-	ForecastModels map[string]ForecastModelSpec `json:"forecastModels,omitempty" protobuf:"bytes,50,opt,name=forecastModels"`
+	TimeSeriesItems map[string]TimeSeriesItem `json:"timeSeriesItems,omitempty" protobuf:"bytes,50,opt,name=timeSeriesItems"`
 }
 
 // Contain the spec for a single time series.
-type ForecastModelSpec struct {
+type TimeSeriesItem struct {
 	// The time series key
 	// +kubebuilder:validation:Optional
 	Key string `json:"key,omitempty" protobuf:"bytes,1,opt,name=key"`
 	// +kubebuilder:validation:Optional
-	Forecasters []Forecaster `json:"forecasters,omitempty" protobuf:"bytes,2,rep,name=forecasters"`
+	Models []TimeSeriesModelSpec `json:"models,omitempty" protobuf:"bytes,2,rep,name=models"`
 	// If true, also try an ensemble forecaster
 	// +kubebuilder:validation:Optional
 	Ensemble *bool `json:"ensemble,omitempty" protobuf:"bytes,3,opt,name=ensemble"`
 }
 
-type ForecastModelStatus struct {
+type TimeSeriesItemStatus struct {
 	// The time series key
 	// +kubebuilder:validation:Optional
 	Key string `json:"key,omitempty" protobuf:"bytes,1,opt,name=key"`
@@ -352,7 +352,7 @@ type ForecastModelStatus struct {
 	Features map[TSFeature]float64 `json:"features,omitempty" protobuf:"bytes,2,opt,name=features"`
 	// The results of the forecast
 	// +kubebuilder:validation:Optional
-	Forecasters []ForecasterStatus `json:"forecasters,omitempty" protobuf:"bytes,3,rep,name=forecasters"`
+	Models []TimeSeriesModelStatus `json:"models,omitempty" protobuf:"bytes,3,rep,name=models"`
 }
 
 // EnsembleSpec specifies the parameters of an ensemble model
@@ -583,7 +583,7 @@ type ModelStatus struct {
 	FeedbackTestsResult catalog.TestSuiteResult `json:"feedbackTestsResult,omitempty" protobuf:"bytes,70,opt,name="`
 	// In case of forecasting Contain the list of time series for this model
 	// +kubebuilder:validation:Optional
-	ForecastModels map[string]ForecastModelStatus `json:"forecastModels,omitempty" protobuf:"bytes,71,opt,name=forecastModels"`
+	ForecastModels map[string]TimeSeriesItemStatus `json:"forecastModels,omitempty" protobuf:"bytes,71,opt,name=forecastModels"`
 	// +kubebuilder:validation:Optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge

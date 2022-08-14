@@ -316,12 +316,12 @@ type BacktestSpec struct {
 }
 
 // A forecaster contains the metadata for one forecast model
-type Forecaster struct {
+type TimeSeriesModelSpec struct {
 	// AlgorithmName is a reference to the algorithm in the catalog
 	AlgorithmName string `json:"algorithmName,omitempty" protobuf:"bytes,2,opt,name=algorithmName"`
 }
 
-type ForecasterStatus struct {
+type TimeSeriesModelStatus struct {
 	// +kubebuilder:validation:Optional
 	ModelURI string `json:"modelURI,omitempty" protobuf:"bytes,1,rep,name=modelURI"`
 	// Parameters is a list of the algorithm hyper parameters
