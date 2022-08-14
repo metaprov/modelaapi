@@ -362,16 +362,24 @@ func (fh *FeatureHistogram) ShouldExpire(maxPredictions int32) bool {
 // check if we should compute drift, we should compute drift,
 // if we have no drift parameters, and we pass the historam
 func (fh *FeatureHistogram) ShouldUnitTest() bool {
-	// do not compute drift on training or live histogram
-	if *fh.Spec.Live || *fh.Spec.Training || fh.IsReady() {
-		return false
+	live := false
+	training := false
+	if fh.Spec.Live != nil && *fh.Spec.Live {
+		live = true
 	}
-	return true
+
+	if fh.Spec.Training != nil && *fh.Spec.Training {
+		training = true
+	}
+
+	// do not compute drift on training or live histogram
+	return !(live || training || fh.IsReady())
+
 }
 
 // Check if we need to generate unit test for this feature histogram
 func (fh *FeatureHistogram) ShouldGenerateUnitTest() bool {
-	return *fh.Spec.GenUnitTests && len(fh.Spec.UnitTests.Tests) == 0
+	return fh.Spec.GenUnitTests != nil && *fh.Spec.GenUnitTests && len(fh.Spec.UnitTests.Tests) == 0
 }
 
 // Return true if we should detect drift for column
