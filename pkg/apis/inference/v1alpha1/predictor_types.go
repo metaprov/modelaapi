@@ -3,6 +3,7 @@ package v1alpha1
 import (
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	data "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1"
+	training "github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
@@ -666,4 +667,22 @@ type FastSlowModelSpec struct {
 type DriftDetectionStatus struct {
 	// +kubebuilder:validation:Optional
 
+}
+
+type ForecastSpec struct {
+	// The list of forecast runs. Runs are indexed by key
+	// +kubebuilder:validation:Optional
+	Runs map[string]ForecastRun `json:"runs,omitempty" protobuf:"bytes,9,rep,name=runs"`
+}
+
+type ForecastRun struct {
+	// The reference to the ServingSite resource that
+	// +kubebuilder:validation:Optional
+	Key string `json:"key,omitempty" protobuf:"bytes,1,opt,name=key"`
+	// The reference to the ServingSite resource that
+	// +kubebuilder:validation:Optional
+	ModelURI string `json:"modelURI,omitempty" protobuf:"bytes,2,rep,name=modelURI"`
+	// the prediction horizon
+	// +kubebuilder:validation:Optional
+	Horizon training.PeriodSpec `json:"horizon,omitempty" protobuf:"bytes,3,rep,name=horizon"`
 }

@@ -258,11 +258,6 @@ type DatabaseProxyServiceClient interface {
 	CreatePrediction(ctx context.Context, in *CreatePredictionRequest, opts ...grpc.CallOption) (*v1alpha14.Prediction, error)
 	UpdatePrediction(ctx context.Context, in *UpdatePredictionRequest, opts ...grpc.CallOption) (*v1alpha14.Prediction, error)
 	DeletePrediction(ctx context.Context, in *DeletePredictionRequest, opts ...grpc.CallOption) (*empty.Empty, error)
-	ListForecasts(ctx context.Context, in *ListForecastsRequest, opts ...grpc.CallOption) (*ListForecastsResponse, error)
-	GetForecast(ctx context.Context, in *GetForecastRequest, opts ...grpc.CallOption) (*v1alpha14.Forecast, error)
-	CreateForecast(ctx context.Context, in *CreateForecastRequest, opts ...grpc.CallOption) (*v1alpha14.Forecast, error)
-	UpdateForecast(ctx context.Context, in *UpdateForecastRequest, opts ...grpc.CallOption) (*v1alpha14.Forecast, error)
-	DeleteForecast(ctx context.Context, in *DeleteForecastRequest, opts ...grpc.CallOption) (*empty.Empty, error)
 	ListPredictors(ctx context.Context, in *ListPredictorsRequest, opts ...grpc.CallOption) (*ListPredictorsResponse, error)
 	GetPredictor(ctx context.Context, in *GetPredictorRequest, opts ...grpc.CallOption) (*v1alpha14.Predictor, error)
 	CreatePredictor(ctx context.Context, in *CreatePredictorRequest, opts ...grpc.CallOption) (*v1alpha14.Predictor, error)
@@ -2258,51 +2253,6 @@ func (c *databaseProxyServiceClient) DeletePrediction(ctx context.Context, in *D
 	return out, nil
 }
 
-func (c *databaseProxyServiceClient) ListForecasts(ctx context.Context, in *ListForecastsRequest, opts ...grpc.CallOption) (*ListForecastsResponse, error) {
-	out := new(ListForecastsResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListForecasts", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *databaseProxyServiceClient) GetForecast(ctx context.Context, in *GetForecastRequest, opts ...grpc.CallOption) (*v1alpha14.Forecast, error) {
-	out := new(v1alpha14.Forecast)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetForecast", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *databaseProxyServiceClient) CreateForecast(ctx context.Context, in *CreateForecastRequest, opts ...grpc.CallOption) (*v1alpha14.Forecast, error) {
-	out := new(v1alpha14.Forecast)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateForecast", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *databaseProxyServiceClient) UpdateForecast(ctx context.Context, in *UpdateForecastRequest, opts ...grpc.CallOption) (*v1alpha14.Forecast, error) {
-	out := new(v1alpha14.Forecast)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateForecast", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *databaseProxyServiceClient) DeleteForecast(ctx context.Context, in *DeleteForecastRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
-	out := new(empty.Empty)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteForecast", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *databaseProxyServiceClient) ListPredictors(ctx context.Context, in *ListPredictorsRequest, opts ...grpc.CallOption) (*ListPredictorsResponse, error) {
 	out := new(ListPredictorsResponse)
 	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListPredictors", in, out, opts...)
@@ -2987,11 +2937,6 @@ type DatabaseProxyServiceServer interface {
 	CreatePrediction(context.Context, *CreatePredictionRequest) (*v1alpha14.Prediction, error)
 	UpdatePrediction(context.Context, *UpdatePredictionRequest) (*v1alpha14.Prediction, error)
 	DeletePrediction(context.Context, *DeletePredictionRequest) (*empty.Empty, error)
-	ListForecasts(context.Context, *ListForecastsRequest) (*ListForecastsResponse, error)
-	GetForecast(context.Context, *GetForecastRequest) (*v1alpha14.Forecast, error)
-	CreateForecast(context.Context, *CreateForecastRequest) (*v1alpha14.Forecast, error)
-	UpdateForecast(context.Context, *UpdateForecastRequest) (*v1alpha14.Forecast, error)
-	DeleteForecast(context.Context, *DeleteForecastRequest) (*empty.Empty, error)
 	ListPredictors(context.Context, *ListPredictorsRequest) (*ListPredictorsResponse, error)
 	GetPredictor(context.Context, *GetPredictorRequest) (*v1alpha14.Predictor, error)
 	CreatePredictor(context.Context, *CreatePredictorRequest) (*v1alpha14.Predictor, error)
@@ -3693,21 +3638,6 @@ func (UnimplementedDatabaseProxyServiceServer) UpdatePrediction(context.Context,
 }
 func (UnimplementedDatabaseProxyServiceServer) DeletePrediction(context.Context, *DeletePredictionRequest) (*empty.Empty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeletePrediction not implemented")
-}
-func (UnimplementedDatabaseProxyServiceServer) ListForecasts(context.Context, *ListForecastsRequest) (*ListForecastsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListForecasts not implemented")
-}
-func (UnimplementedDatabaseProxyServiceServer) GetForecast(context.Context, *GetForecastRequest) (*v1alpha14.Forecast, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetForecast not implemented")
-}
-func (UnimplementedDatabaseProxyServiceServer) CreateForecast(context.Context, *CreateForecastRequest) (*v1alpha14.Forecast, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateForecast not implemented")
-}
-func (UnimplementedDatabaseProxyServiceServer) UpdateForecast(context.Context, *UpdateForecastRequest) (*v1alpha14.Forecast, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateForecast not implemented")
-}
-func (UnimplementedDatabaseProxyServiceServer) DeleteForecast(context.Context, *DeleteForecastRequest) (*empty.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteForecast not implemented")
 }
 func (UnimplementedDatabaseProxyServiceServer) ListPredictors(context.Context, *ListPredictorsRequest) (*ListPredictorsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListPredictors not implemented")
@@ -7742,96 +7672,6 @@ func _DatabaseProxyService_DeletePrediction_Handler(srv interface{}, ctx context
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DatabaseProxyService_ListForecasts_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListForecastsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).ListForecasts(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListForecasts",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).ListForecasts(ctx, req.(*ListForecastsRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DatabaseProxyService_GetForecast_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetForecastRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).GetForecast(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetForecast",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).GetForecast(ctx, req.(*GetForecastRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DatabaseProxyService_CreateForecast_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateForecastRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).CreateForecast(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateForecast",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).CreateForecast(ctx, req.(*CreateForecastRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DatabaseProxyService_UpdateForecast_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateForecastRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).UpdateForecast(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateForecast",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).UpdateForecast(ctx, req.(*UpdateForecastRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DatabaseProxyService_DeleteForecast_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteForecastRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).DeleteForecast(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteForecast",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).DeleteForecast(ctx, req.(*DeleteForecastRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _DatabaseProxyService_ListPredictors_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ListPredictorsRequest)
 	if err := dec(in); err != nil {
@@ -9598,26 +9438,6 @@ var DatabaseProxyService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeletePrediction",
 			Handler:    _DatabaseProxyService_DeletePrediction_Handler,
-		},
-		{
-			MethodName: "ListForecasts",
-			Handler:    _DatabaseProxyService_ListForecasts_Handler,
-		},
-		{
-			MethodName: "GetForecast",
-			Handler:    _DatabaseProxyService_GetForecast_Handler,
-		},
-		{
-			MethodName: "CreateForecast",
-			Handler:    _DatabaseProxyService_CreateForecast_Handler,
-		},
-		{
-			MethodName: "UpdateForecast",
-			Handler:    _DatabaseProxyService_UpdateForecast_Handler,
-		},
-		{
-			MethodName: "DeleteForecast",
-			Handler:    _DatabaseProxyService_DeleteForecast_Handler,
 		},
 		{
 			MethodName: "ListPredictors",

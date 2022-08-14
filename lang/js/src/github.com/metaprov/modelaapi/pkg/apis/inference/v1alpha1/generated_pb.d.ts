@@ -891,100 +891,6 @@ export namespace FeedbackTestSpec {
   }
 }
 
-export class Forecast extends jspb.Message {
-  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
-  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): Forecast;
-  hasMetadata(): boolean;
-  clearMetadata(): Forecast;
-
-  getSpec(): ForecastSpec | undefined;
-  setSpec(value?: ForecastSpec): Forecast;
-  hasSpec(): boolean;
-  clearSpec(): Forecast;
-
-  getStatus(): ForecastStatus | undefined;
-  setStatus(value?: ForecastStatus): Forecast;
-  hasStatus(): boolean;
-  clearStatus(): Forecast;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): Forecast.AsObject;
-  static toObject(includeInstance: boolean, msg: Forecast): Forecast.AsObject;
-  static serializeBinaryToWriter(message: Forecast, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): Forecast;
-  static deserializeBinaryFromReader(message: Forecast, reader: jspb.BinaryReader): Forecast;
-}
-
-export namespace Forecast {
-  export type AsObject = {
-    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.AsObject,
-    spec?: ForecastSpec.AsObject,
-    status?: ForecastStatus.AsObject,
-  }
-}
-
-export class ForecastCondition extends jspb.Message {
-  getType(): string;
-  setType(value: string): ForecastCondition;
-
-  getStatus(): string;
-  setStatus(value: string): ForecastCondition;
-
-  getLasttransitiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLasttransitiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ForecastCondition;
-  hasLasttransitiontime(): boolean;
-  clearLasttransitiontime(): ForecastCondition;
-
-  getReason(): string;
-  setReason(value: string): ForecastCondition;
-
-  getMessage(): string;
-  setMessage(value: string): ForecastCondition;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ForecastCondition.AsObject;
-  static toObject(includeInstance: boolean, msg: ForecastCondition): ForecastCondition.AsObject;
-  static serializeBinaryToWriter(message: ForecastCondition, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ForecastCondition;
-  static deserializeBinaryFromReader(message: ForecastCondition, reader: jspb.BinaryReader): ForecastCondition;
-}
-
-export namespace ForecastCondition {
-  export type AsObject = {
-    type: string,
-    status: string,
-    lasttransitiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    reason: string,
-    message: string,
-  }
-}
-
-export class ForecastList extends jspb.Message {
-  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta | undefined;
-  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta): ForecastList;
-  hasMetadata(): boolean;
-  clearMetadata(): ForecastList;
-
-  getItemsList(): Array<Forecast>;
-  setItemsList(value: Array<Forecast>): ForecastList;
-  clearItemsList(): ForecastList;
-  addItems(value?: Forecast, index?: number): Forecast;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ForecastList.AsObject;
-  static toObject(includeInstance: boolean, msg: ForecastList): ForecastList.AsObject;
-  static serializeBinaryToWriter(message: ForecastList, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ForecastList;
-  static deserializeBinaryFromReader(message: ForecastList, reader: jspb.BinaryReader): ForecastList;
-}
-
-export namespace ForecastList {
-  export type AsObject = {
-    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta.AsObject,
-    itemsList: Array<Forecast.AsObject>,
-  }
-}
-
 export class ForecastPredictionSpec extends jspb.Message {
   getHierarchyvaluesMap(): jspb.Map<string, string>;
   clearHierarchyvaluesMap(): ForecastPredictionSpec;
@@ -1082,41 +988,8 @@ export namespace ForecastRunResult {
 }
 
 export class ForecastSpec extends jspb.Message {
-  getVersionname(): string;
-  setVersionname(value: string): ForecastSpec;
-
-  getPredictionref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setPredictionref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ForecastSpec;
-  hasPredictionref(): boolean;
-  clearPredictionref(): ForecastSpec;
-
-  getDatasourceref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setDatasourceref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ForecastSpec;
-  hasDatasourceref(): boolean;
-  clearDatasourceref(): ForecastSpec;
-
-  getOwner(): string;
-  setOwner(value: string): ForecastSpec;
-
-  getActivedeadlineseconds(): number;
-  setActivedeadlineseconds(value: number): ForecastSpec;
-
-  getPriority(): string;
-  setPriority(value: string): ForecastSpec;
-
-  getAborted(): boolean;
-  setAborted(value: boolean): ForecastSpec;
-
-  getTtl(): number;
-  setTtl(value: number): ForecastSpec;
-
   getRunsMap(): jspb.Map<string, ForecastRun>;
   clearRunsMap(): ForecastSpec;
-
-  getServingsiteref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setServingsiteref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ForecastSpec;
-  hasServingsiteref(): boolean;
-  clearServingsiteref(): ForecastSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ForecastSpec.AsObject;
@@ -1128,68 +1001,7 @@ export class ForecastSpec extends jspb.Message {
 
 export namespace ForecastSpec {
   export type AsObject = {
-    versionname: string,
-    predictionref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    datasourceref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    owner: string,
-    activedeadlineseconds: number,
-    priority: string,
-    aborted: boolean,
-    ttl: number,
     runsMap: Array<[string, ForecastRun.AsObject]>,
-    servingsiteref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-  }
-}
-
-export class ForecastStatus extends jspb.Message {
-  getStarttime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setStarttime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ForecastStatus;
-  hasStarttime(): boolean;
-  clearStarttime(): ForecastStatus;
-
-  getEndtime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setEndtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ForecastStatus;
-  hasEndtime(): boolean;
-  clearEndtime(): ForecastStatus;
-
-  getPhase(): string;
-  setPhase(value: string): ForecastStatus;
-
-  getObservedgeneration(): number;
-  setObservedgeneration(value: number): ForecastStatus;
-
-  getTotal(): number;
-  setTotal(value: number): ForecastStatus;
-
-  getFailed(): number;
-  setFailed(value: number): ForecastStatus;
-
-  getRunsMap(): jspb.Map<string, ForecastRunResult>;
-  clearRunsMap(): ForecastStatus;
-
-  getConditionsList(): Array<ForecastCondition>;
-  setConditionsList(value: Array<ForecastCondition>): ForecastStatus;
-  clearConditionsList(): ForecastStatus;
-  addConditions(value?: ForecastCondition, index?: number): ForecastCondition;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ForecastStatus.AsObject;
-  static toObject(includeInstance: boolean, msg: ForecastStatus): ForecastStatus.AsObject;
-  static serializeBinaryToWriter(message: ForecastStatus, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ForecastStatus;
-  static deserializeBinaryFromReader(message: ForecastStatus, reader: jspb.BinaryReader): ForecastStatus;
-}
-
-export namespace ForecastStatus {
-  export type AsObject = {
-    starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    phase: string,
-    observedgeneration: number,
-    total: number,
-    failed: number,
-    runsMap: Array<[string, ForecastRunResult.AsObject]>,
-    conditionsList: Array<ForecastCondition.AsObject>,
   }
 }
 
@@ -1834,6 +1646,9 @@ export class PredictionStatus extends jspb.Message {
   getDrifted(): boolean;
   setDrifted(value: boolean): PredictionStatus;
 
+  getRunsMap(): jspb.Map<string, ForecastRunResult>;
+  clearRunsMap(): PredictionStatus;
+
   getConditionsList(): Array<PredictionCondition>;
   setConditionsList(value: Array<PredictionCondition>): PredictionStatus;
   clearConditionsList(): PredictionStatus;
@@ -1863,6 +1678,7 @@ export namespace PredictionStatus {
     datasetref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     columnsList: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.ColumnHistogram.AsObject>,
     drifted: boolean,
+    runsMap: Array<[string, ForecastRunResult.AsObject]>,
     conditionsList: Array<PredictionCondition.AsObject>,
   }
 }

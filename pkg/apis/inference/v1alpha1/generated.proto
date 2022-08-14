@@ -580,55 +580,6 @@ message FeedbackTestSpec {
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 3;
 }
 
-// Forecast represents a single batch forecast on a dataset
-// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status"
-// +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",priority=1
-// +kubebuilder:printcolumn:name="Predictor",type="string",JSONPath=".spec.predictorName"
-// +kubebuilder:printcolumn:name="Entity",type="string",JSONPath=".spec.datasetName"
-// +kubebuilder:printcolumn:name="Labeled",type="string",JSONPath=".spec.labeled"
-// +kubebuilder:printcolumn:name="Bucket",type="string",JSONPath=".spec.output.bucketName",priority=1
-// +kubebuilder:printcolumn:name="Key",type="string",JSONPath=".spec.output.path",priority=1
-// +kubebuilder:printcolumn:name="Score",type="string",JSONPath=".status.score"
-// +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
-// +kubebuilder:printcolumn:name="Rows",type="string",JSONPath=".status.rows"
-// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
-// +kubebuilder:object:root=true
-// +kubebuilder:subresource:status
-// +kubebuilder:resource:path=forecasts,shortName=fr,singular=forecast,categories={inference,modela}
-message Forecast {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
-
-  optional ForecastSpec spec = 2;
-
-  optional ForecastStatus status = 3;
-}
-
-// ForecastCondition describes the state of a Forecast at a certain point
-message ForecastCondition {
-  // Type of Forecast condition
-  optional string type = 1;
-
-  // Status of the condition, one of True, False, Unknown
-  optional string status = 2;
-
-  // Last time the condition transitioned from one status to another
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
-
-  // The reason for the condition's last transition
-  optional string reason = 4;
-
-  // A human-readable message indicating details about the transition
-  optional string message = 5;
-}
-
-// +kubebuilder:object:root=true
-// ForecastList is a list of Forecasts
-message ForecastList {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
-
-  repeated Forecast items = 2;
-}
-
 // ForecastSpec specifies the details of a forecasting model
 message ForecastPredictionSpec {
   // The hierarchy specification, which maps columns to values
@@ -685,92 +636,10 @@ message ForecastRunResult {
   optional string failureMsg = 7;
 }
 
-// ForecastSpec represent the desired state of Forecast
 message ForecastSpec {
-  // The name of the DataProductVersion which describes the version of the resource
-  // that exists in the same DataProduct namespace as the resource
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:Optional
-  optional string versionName = 1;
-
-  // PredictorRef is the name of the Prediction that generated this forecast
-  // unlabeled input dataset. The Predictor must exist in the same DataProduct namespace as the resource
-  // +kubebuilder:validation:Required
-  // +required
-  optional k8s.io.api.core.v1.ObjectReference predictionRef = 2;
-
-  // A reference to the input data source ref
-  // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference dataSourceRef = 3;
-
-  // The name of the Account which created the object, which exists in the same tenant as the object
-  // +kubebuilder:default:="no-one"
-  // +kubebuilder:validation:Optional
-  optional string owner = 4;
-
-  // The deadline for the batch forecast Job to be completed in seconds
-  // +kubebuilder:default:=600
-  // +kubebuilder:validation:Minimum=0
-  // +kubebuilder:validation:Optional
-  optional int64 activeDeadlineSeconds = 5;
-
-  // The priority of the Kubernetes Job created by the Forecast (medium, by default)
-  // +kubebuilder:default:=medium
-  // +kubebuilder:validation:Optional
-  optional string priority = 6;
-
-  // Indicates if the Forecast was aborted and should stop execution
-  // +kubebuilder:default:=false
-  // +kubebuilder:validation:Optional
-  optional bool aborted = 7;
-
-  // The time-to-live of the Forecast, after which the Forecast will be archived
-  // +kubebuilder:default:=0
-  // +kubebuilder:validation:Optional
-  optional int32 ttl = 8;
-
   // The list of forecast runs. Runs are indexed by key
   // +kubebuilder:validation:Optional
   map<string, ForecastRun> runs = 9;
-
-  // The reference to the ServingSite resource that
-  // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference servingsiteRef = 10;
-}
-
-// ForecastStatus is the observed state of a Forecast
-message ForecastStatus {
-  // StartTime denotes the time when the batch forecast Job started
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 1;
-
-  // EndTime denotes the time when the batch forecast Job completed or failed
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 2;
-
-  // The current phase of the forecast
-  // +kubebuilder:default:="Pending"
-  // +kubebuilder:validation:Optional
-  optional string phase = 3;
-
-  // ObservedGeneration is the last generation that was acted on
-  // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 4;
-
-  // total number of forecasts
-  // +kubebuilder:validation:Optional
-  optional int32 total = 5;
-
-  // total number of forecasts failed
-  // +kubebuilder:validation:Optional
-  optional int32 failed = 6;
-
-  // the forecast results for this forecast
-  // +kubebuilder:validation:Optional
-  map<string, ForecastRunResult> runs = 7;
-
-  // +patchMergeKey=type
-  // +patchStrategy=merge
-  // +kubebuilder:validation:Optional
-  repeated ForecastCondition conditions = 8;
 }
 
 message ForwardCurtainSpec {
@@ -1200,10 +1069,14 @@ message PredictionStatus {
   // +kubebuilder:validation:Optional
   optional bool drifted = 14;
 
+  // the forecast results for this forecast
+  // +kubebuilder:validation:Optional
+  map<string, ForecastRunResult> runs = 15;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated PredictionCondition conditions = 15;
+  repeated PredictionCondition conditions = 16;
 }
 
 // PredictionTemplate defines the specification for a Prediction resource to be created

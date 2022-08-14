@@ -1511,39 +1511,6 @@ message DeletePredictionRequest {
 }
 
 
-////////////////////////////////////////////////////////////////
-// Forecast
-////////////////////////////////////////////////////////////////
-
-message ListForecastsRequest {
-    string namespace   = 1;
-    int32 page_size    = 2;
-    string page_token  = 3;
-}
-
-message ListForecastsResponse {
-    repeated github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Forecast items = 1;
-    string next_page_token = 2;
-}
-
-message GetForecastRequest {
-    string namespace = 1;
-    string name = 2;
-}
-
-message CreateForecastRequest {
-    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Forecast item = 1;
-}
-
-message UpdateForecastRequest {
-    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Forecast item = 1;
-}
-
-message DeleteForecastRequest {
-    string namespace = 1;
-    string name = 2;
-}
-
 
 
 ////////////////////////////////////////////////////////////////
@@ -2131,13 +2098,6 @@ service DatabaseProxyService {
     rpc CreatePrediction(CreatePredictionRequest) returns (github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction) {}
     rpc UpdatePrediction(UpdatePredictionRequest) returns (github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction) {}
     rpc DeletePrediction(DeletePredictionRequest) returns (google.protobuf.Empty) {}
-
-
-    rpc ListForecasts(ListForecastsRequest) returns (ListForecastsResponse) {}
-    rpc GetForecast(GetForecastRequest) returns (github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Forecast) {}
-    rpc CreateForecast(CreateForecastRequest) returns (github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Forecast) {}
-    rpc UpdateForecast(UpdateForecastRequest) returns (github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Forecast) {}
-    rpc DeleteForecast(DeleteForecastRequest) returns (google.protobuf.Empty) {}
 
     rpc ListPredictors(ListPredictorsRequest) returns (ListPredictorsResponse) {}
     rpc GetPredictor(GetPredictorRequest) returns (github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor) {}

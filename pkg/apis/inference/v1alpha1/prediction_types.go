@@ -198,10 +198,13 @@ type PredictionStatus struct {
 	// Set to true if drifted
 	// +kubebuilder:validation:Optional
 	Drifted bool `json:"drifted,omitempty" protobuf:"bytes,14,rep,name=drifted"`
+	// the forecast results for this forecast
+	//+kubebuilder:validation:Optional
+	Runs map[string]ForecastRunResult `json:"runs,omitempty" protobuf:"bytes,15,opt,name=runs"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []PredictionCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,15,rep,name=conditions"`
+	Conditions []PredictionCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,16,rep,name=conditions"`
 }
 
 // ForecastSpec specifies the details of a forecasting model
@@ -211,4 +214,30 @@ type ForecastPredictionSpec struct {
 	HierarchyValues map[string]string `json:"hierarchyValues,omitempty" protobuf:"bytes,1,opt,name=hierarchyValues"`
 	// The interval of the forecast
 	Horizon training.PeriodSpec `json:"horizon,omitempty" protobuf:"bytes,2,opt,name=horizon"`
+}
+
+// The result of forecasting one item. The forecast data itself is stored on the cloud.
+// The dataURI is pointing to the forecast, the profile URI
+type ForecastRunResult struct {
+	// The time series key
+	// +kubebuilder:validation:Optional
+	Key string `json:"key,omitempty" protobuf:"bytes,1,opt,name=key"`
+	// A pointer to the actual forecast
+	// +kubebuilder:validation:Optional
+	DataURI string `json:"dataURI,omitempty" protobuf:"bytes,2,rep,name=dataURI"`
+	// A pointer to the profile URI
+	// +kubebuilder:validation:Optional
+	ProfileURI string `json:"profileURI,omitempty" protobuf:"bytes,3,rep,name=profileURI"`
+	// Feature scores for this time series.
+	// +kubebuilder:validation:Optional
+	Features map[training.TSFeature]float64 `json:"features,omitempty" protobuf:"bytes,4,opt,name=features"`
+	// the result of a unit test on a forecast
+	// +kubebuilder:validation:Optional
+	UnitTestsResult catalog.TestSuiteResult `json:"unitTestsResult,omitempty" protobuf:"bytes,5,opt,name=unitTestsResult"`
+	// Mark forecast as a failure.
+	// +kubebuilder:validation:Optional
+	Failed *bool `json:"failed,omitempty" protobuf:"bytes,6,opt,name=failed"`
+	// In case of failure, this is the failure message
+	// +kubebuilder:validation:Optional
+	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,7,opt,name=failureMsg"`
 }
