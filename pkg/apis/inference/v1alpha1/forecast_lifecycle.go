@@ -140,7 +140,6 @@ func (forecast *Forecast) MarkFailed(msg string) {
 	if forecast.Status.EndTime == nil {
 		forecast.Status.EndTime = &now
 	}
-	forecast.Status.FailureMessage = util.StrPtr(msg)
 }
 
 // Mark Expired
@@ -151,24 +150,6 @@ func (forecast *Forecast) MarkPending() {
 		Reason: string(ForecastPhasePending),
 	})
 	forecast.Status.Phase = ForecastPhasePending
-}
-
-func (forecast *Forecast) MarkCreatingDataset() {
-	forecast.CreateOrUpdateCond(ForecastCondition{
-		Type:   ForecastCompleted,
-		Status: v1.ConditionFalse,
-		Reason: string(ForecastPhaseCreatingDataset),
-	})
-	forecast.Status.Phase = ForecastPhaseCreatingDataset
-}
-
-func (forecast *Forecast) MarkWaitingForDataset() {
-	forecast.CreateOrUpdateCond(ForecastCondition{
-		Type:   ForecastCompleted,
-		Status: v1.ConditionFalse,
-		Reason: string(ForecastPhaseWaitingForDataset),
-	})
-	forecast.Status.Phase = ForecastPhaseWaitingForDataset
 }
 
 func (forecast *Forecast) MarkUnitTesting() {
@@ -313,8 +294,6 @@ func (run *Forecast) RunStatus() *catalog.LastRunStatus {
 	result := &catalog.LastRunStatus{
 		CompletionTime: run.Status.EndTime,
 		Duration:       int32(run.Status.EndTime.Unix() - run.Status.StartTime.Unix()),
-		FailureReason:  run.Status.FailureReason,
-		FailureMessage: run.Status.FailureMessage,
 	}
 	result.Status = string(run.Status.Phase)
 	return result
