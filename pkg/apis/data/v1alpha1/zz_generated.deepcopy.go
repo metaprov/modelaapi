@@ -4845,12 +4845,10 @@ func (in *TimeSeriesSchema) DeepCopyInto(out *TimeSeriesSchema) {
 		*out = new(catalogv1alpha1.HolidayCountry)
 		**out = **in
 	}
-	if in.Levels != nil {
-		in, out := &in.Levels, &out.Levels
-		*out = make(map[string]int32, len(*in))
-		for key, val := range *in {
-			(*out)[key] = val
-		}
+	if in.Keys != nil {
+		in, out := &in.Keys, &out.Keys
+		*out = make([]string, len(*in))
+		copy(*out, *in)
 	}
 }
 
