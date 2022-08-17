@@ -3133,7 +3133,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.repeatedFields_, null);
 };
 goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -58529,6 +58529,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec.prototype.h
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.repeatedFields_ = [5];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -58563,7 +58570,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.toOb
     freq: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     interval: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     country: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-    levelsMap: (f = msg.getLevelsMap()) ? f.toObject(includeInstance, undefined) : []
+    timecolumns: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    keysList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -58613,10 +58621,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.dese
       msg.setCountry(value);
       break;
     case 4:
-      var value = msg.getLevelsMap();
-      reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readInt32, null, "", 0);
-         });
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTimecolumns(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addKeys(value);
       break;
     default:
       reader.skipField();
@@ -58668,9 +58678,19 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.seri
       f
     );
   }
-  f = message.getLevelsMap(true);
-  if (f && f.getLength() > 0) {
-    f.serializeBinary(4, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeInt32);
+  f = /** @type {string} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = message.getKeysList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      5,
+      f
+    );
   }
 };
 
@@ -58784,25 +58804,76 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prot
 
 
 /**
- * map<string, int32> levels = 4;
- * @param {boolean=} opt_noLazyCreate Do not create the map if
- * empty, instead returning `undefined`
- * @return {!jspb.Map<string,number>}
+ * optional string timeColumns = 4;
+ * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prototype.getLevelsMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,number>} */ (
-      jspb.Message.getMapField(this, 4, opt_noLazyCreate,
-      null));
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prototype.getTimecolumns = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
 /**
- * Clears values from the map. The map will be non-null.
+ * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prototype.clearLevelsMap = function() {
-  this.getLevelsMap().clear();
-  return this;};
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prototype.setTimecolumns = function(value) {
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prototype.clearTimecolumns = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prototype.hasTimecolumns = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * repeated string keys = 5;
+ * @return {!Array<string>}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prototype.getKeysList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 5));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prototype.setKeysList = function(value) {
+  return jspb.Message.setField(this, 5, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prototype.addKeys = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 5, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prototype.clearKeysList = function() {
+  return this.setKeysList([]);
+};
 
 
 

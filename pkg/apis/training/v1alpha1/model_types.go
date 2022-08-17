@@ -343,11 +343,12 @@ type TimeSeriesItem struct {
 	Ensemble *bool `json:"ensemble,omitempty" protobuf:"bytes,3,opt,name=ensemble"`
 }
 
+// Status of a single time series.
 type TimeSeriesItemStatus struct {
 	// The time series key
 	// +kubebuilder:validation:Optional
 	Key string `json:"key,omitempty" protobuf:"bytes,1,opt,name=key"`
-	// The values of the features for the time series.
+	// The values of the time series features.
 	// +kubebuilder:validation:Optional
 	Features map[TSFeature]float64 `json:"features,omitempty" protobuf:"bytes,2,opt,name=features"`
 	// The results of the forecast

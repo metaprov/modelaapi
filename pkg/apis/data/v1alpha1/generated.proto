@@ -3900,11 +3900,15 @@ message TimeSeriesSchema {
   optional int32 interval = 2;
 
   // The holiday which should be taken into account
+  // +kubebuilder:validation:Optional
   optional string country = 3;
 
-  // Map from column id to level. If this is a simple time series, this fields is empty
+  // The time column name
+  optional string timeColumns = 4;
+
+  // The keys columns for hierarchical  time series.
   // +kubebuilder:validation:Optional
-  map<string, int32> levels = 4;
+  repeated string keys = 5;
 }
 
 // WebRequest represent a single sqlquery in the sqlquery store.

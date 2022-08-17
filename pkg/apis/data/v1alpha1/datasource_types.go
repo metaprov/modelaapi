@@ -313,10 +313,13 @@ type TimeSeriesSchema struct {
 	// +kubebuilder:validation:Optional
 	Interval *int32 `json:"interval,omitempty" protobuf:"bytes,2,opt,name=interval"`
 	// The holiday which should be taken into account
-	Country *catalog.HolidayCountry `json:"country,omitempty" protobuf:"bytes,3,opt,name=country"`
-	// Map from column id to level. If this is a simple time series, this fields is empty
 	// +kubebuilder:validation:Optional
-	Levels map[string]int32 `json:"levels,omitempty" protobuf:"bytes,4,opt,name=levels"`
+	Country *catalog.HolidayCountry `json:"country,omitempty" protobuf:"bytes,3,opt,name=country"`
+	// The time column name
+	TimeColumn string `json:"timeColumn,omitempty" protobuf:"bytes,4,opt,name=timeColumns"`
+	// The keys columns for hierarchical  time series.
+	// +kubebuilder:validation:Optional
+	Keys []string `json:"keys,omitempty" protobuf:"bytes,5,rep,name=keys"`
 }
 
 type RecommendationSchema struct {

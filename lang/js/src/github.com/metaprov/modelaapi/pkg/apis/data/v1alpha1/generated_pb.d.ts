@@ -5901,8 +5901,13 @@ export class TimeSeriesSchema extends jspb.Message {
   getCountry(): string;
   setCountry(value: string): TimeSeriesSchema;
 
-  getLevelsMap(): jspb.Map<string, number>;
-  clearLevelsMap(): TimeSeriesSchema;
+  getTimecolumns(): string;
+  setTimecolumns(value: string): TimeSeriesSchema;
+
+  getKeysList(): Array<string>;
+  setKeysList(value: Array<string>): TimeSeriesSchema;
+  clearKeysList(): TimeSeriesSchema;
+  addKeys(value: string, index?: number): TimeSeriesSchema;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TimeSeriesSchema.AsObject;
@@ -5917,7 +5922,8 @@ export namespace TimeSeriesSchema {
     freq: string,
     interval: number,
     country: string,
-    levelsMap: Array<[string, number]>,
+    timecolumns: string,
+    keysList: Array<string>,
   }
 }
 

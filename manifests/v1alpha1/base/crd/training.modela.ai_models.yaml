@@ -3758,11 +3758,12 @@ spec:
                 type: object
               forecastModels:
                 additionalProperties:
+                  description: Status of a single time series.
                   properties:
                     features:
                       additionalProperties:
                         type: number
-                      description: The values of the features for the time series.
+                      description: The values of the time series features.
                       type: object
                     key:
                       description: The time series key

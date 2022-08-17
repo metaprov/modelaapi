@@ -946,13 +946,14 @@ spec:
                             default: 1
                             format: int32
                             type: integer
-                          levels:
-                            additionalProperties:
-                              format: int32
-                              type: integer
-                            description: Map from column id to level. If this is a
-                              simple time series, this fields is empty
-                            type: object
+                          keys:
+                            description: The keys columns for hierarchical  time series.
+                            items:
+                              type: string
+                            type: array
+                          timeColumn:
+                            description: The time column name
+                            type: string
                         type: object
                     type: object
                   subtask:

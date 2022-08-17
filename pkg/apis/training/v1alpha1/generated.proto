@@ -3829,12 +3829,13 @@ message TimeSeriesItem {
   optional bool ensemble = 3;
 }
 
+// Status of a single time series.
 message TimeSeriesItemStatus {
   // The time series key
   // +kubebuilder:validation:Optional
   optional string key = 1;
 
-  // The values of the features for the time series.
+  // The values of the time series features.
   // +kubebuilder:validation:Optional
   map<string, double> features = 2;
 
