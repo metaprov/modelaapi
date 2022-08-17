@@ -350,7 +350,7 @@ type TimeSeriesItemStatus struct {
 	Key string `json:"key,omitempty" protobuf:"bytes,1,opt,name=key"`
 	// The values of the time series features.
 	// +kubebuilder:validation:Optional
-	Features map[TSFeature]float64 `json:"features,omitempty" protobuf:"bytes,2,opt,name=features"`
+	Features map[catalog.Metric]float64 `json:"features,omitempty" protobuf:"bytes,2,opt,name=features"`
 	// The results of the forecast
 	// +kubebuilder:validation:Optional
 	Models []TimeSeriesModelStatus `json:"models,omitempty" protobuf:"bytes,3,rep,name=models"`

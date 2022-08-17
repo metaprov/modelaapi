@@ -230,7 +230,7 @@ type ForecastRunResult struct {
 	ProfileURI string `json:"profileURI,omitempty" protobuf:"bytes,3,rep,name=profileURI"`
 	// Feature scores for this time series.
 	// +kubebuilder:validation:Optional
-	Features map[training.TSFeature]float64 `json:"features,omitempty" protobuf:"bytes,4,opt,name=features"`
+	Features map[catalog.Metric]float64 `json:"features,omitempty" protobuf:"bytes,4,opt,name=features"`
 	// the result of a unit test on a forecast
 	// +kubebuilder:validation:Optional
 	UnitTestsResult catalog.TestSuiteResult `json:"unitTestsResult,omitempty" protobuf:"bytes,5,opt,name=unitTestsResult"`
