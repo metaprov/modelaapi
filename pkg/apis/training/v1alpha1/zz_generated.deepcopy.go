@@ -1237,7 +1237,7 @@ func (in *ForecasterTrainingSpec) DeepCopyInto(out *ForecasterTrainingSpec) {
 	in.OutputLocation.DeepCopyInto(&out.OutputLocation)
 	if in.Features != nil {
 		in, out := &in.Features, &out.Features
-		*out = make([]TSFeature, len(*in))
+		*out = make([]catalogv1alpha1.Metric, len(*in))
 		copy(*out, *in)
 	}
 }
@@ -4532,7 +4532,7 @@ func (in *TimeSeriesItemStatus) DeepCopyInto(out *TimeSeriesItemStatus) {
 	*out = *in
 	if in.Features != nil {
 		in, out := &in.Features, &out.Features
-		*out = make(map[TSFeature]float64, len(*in))
+		*out = make(map[catalogv1alpha1.Metric]float64, len(*in))
 		for key, val := range *in {
 			(*out)[key] = val
 		}
