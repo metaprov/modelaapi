@@ -483,6 +483,20 @@ export class DataTestCase extends jspb.Message {
   hasEntityref2(): boolean;
   clearEntityref2(): DataTestCase;
 
+  getColumnsList(): Array<string>;
+  setColumnsList(value: Array<string>): DataTestCase;
+  clearColumnsList(): DataTestCase;
+  addColumns(value: string, index?: number): DataTestCase;
+
+  getFeaturefilter(): string;
+  setFeaturefilter(value: string): DataTestCase;
+
+  getReferencetype(): string;
+  setReferencetype(value: string): DataTestCase;
+
+  getPeriods(): number;
+  setPeriods(value: number): DataTestCase;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataTestCase.AsObject;
   static toObject(includeInstance: boolean, msg: DataTestCase): DataTestCase.AsObject;
@@ -512,6 +526,10 @@ export namespace DataTestCase {
     tagsList: Array<string>,
     column2: string,
     entityref2?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    columnsList: Array<string>,
+    featurefilter: string,
+    referencetype: string,
+    periods: number,
   }
 }
 

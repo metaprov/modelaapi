@@ -2150,6 +2150,14 @@ message FeatureHistogramSpec {
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool genUnitTests = 16;
+
+  // Filter the filter for this unit test.
+  // +kubebuilder:validation:Optional
+  optional string featureFilter = 17;
+
+  // Set the reference type for this unit test
+  // +kubebuilder:validation:Optional
+  optional string referenceType = 18;
 }
 
 // FeatureHistogramStatus defines the observed state of FeatureHistogram

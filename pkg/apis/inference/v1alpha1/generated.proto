@@ -668,6 +668,17 @@ message KubernetesObjectStatus {
   optional string status = 2;
 }
 
+// Hold the Last X measurments of a metric
+message MetricHistory {
+  // The Metric Name
+  // +kubebuilder:validation:Optional
+  optional string metric = 1;
+
+  // History
+  // +kubebuilder:validation:Optional
+  repeated double history = 2;
+}
+
 message ModelDeploymentStatus {
   // The name of the Model resource associated with the deployment
   // +kubebuilder:validation:Optional
@@ -744,16 +755,24 @@ message ModelDeploymentStatus {
   repeated KubernetesObjectStatus objectStatuses = 19;
 
   // the set of validation errors
+  // +kubebuilder:validation:Optional
   repeated ValidationError errors = 20;
 
   // Ref to the last ground true dataset that this model was tested against.
+  // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference lastFeedbackDatasetRef = 21;
 
   // Last time that a ground true test was done.
+  // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastFeedbackTest = 22;
 
   // Last results of the ground truth tests.
+  // +kubebuilder:validation:Optional
   repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement lastFeedbackTestResults = 23;
+
+  // Holds the last N metrics for this model
+  // +kubebuilder:validation:Optional
+  map<string, MetricHistory> metricsHistory = 24;
 }
 
 // ModelRecord hold the state of a model that was in production

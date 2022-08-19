@@ -1057,6 +1057,30 @@ export namespace KubernetesObjectStatus {
   }
 }
 
+export class MetricHistory extends jspb.Message {
+  getMetric(): string;
+  setMetric(value: string): MetricHistory;
+
+  getHistoryList(): Array<number>;
+  setHistoryList(value: Array<number>): MetricHistory;
+  clearHistoryList(): MetricHistory;
+  addHistory(value: number, index?: number): MetricHistory;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): MetricHistory.AsObject;
+  static toObject(includeInstance: boolean, msg: MetricHistory): MetricHistory.AsObject;
+  static serializeBinaryToWriter(message: MetricHistory, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): MetricHistory;
+  static deserializeBinaryFromReader(message: MetricHistory, reader: jspb.BinaryReader): MetricHistory;
+}
+
+export namespace MetricHistory {
+  export type AsObject = {
+    metric: string,
+    historyList: Array<number>,
+  }
+}
+
 export class ModelDeploymentStatus extends jspb.Message {
   getModelname(): string;
   setModelname(value: string): ModelDeploymentStatus;
@@ -1151,6 +1175,9 @@ export class ModelDeploymentStatus extends jspb.Message {
   clearLastfeedbacktestresultsList(): ModelDeploymentStatus;
   addLastfeedbacktestresults(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement;
 
+  getMetricshistoryMap(): jspb.Map<string, MetricHistory>;
+  clearMetricshistoryMap(): ModelDeploymentStatus;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelDeploymentStatus.AsObject;
   static toObject(includeInstance: boolean, msg: ModelDeploymentStatus): ModelDeploymentStatus.AsObject;
@@ -1184,6 +1211,7 @@ export namespace ModelDeploymentStatus {
     lastfeedbackdatasetref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     lastfeedbacktest?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     lastfeedbacktestresultsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.AsObject>,
+    metricshistoryMap: Array<[string, MetricHistory.AsObject]>,
   }
 }
 

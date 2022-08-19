@@ -545,13 +545,20 @@ type ModelDeploymentStatus struct {
 	// +kubebuilder:validation:Optional
 	ObjectStatuses []KubernetesObjectStatus `json:"objectStatuses,omitempty" protobuf:"bytes,19,rep,name=objectStatuses"`
 	// the set of validation errors
+	// +kubebuilder:validation:Optional
 	Errors []ValidationError `json:"errors,omitempty" protobuf:"bytes,20,opt,name=errors"`
 	// Ref to the last ground true dataset that this model was tested against.
+	// +kubebuilder:validation:Optional
 	LastFeedbackDatasetRef v1.ObjectReference `json:"lastFeedbackDatasetRef,omitempty" protobuf:"bytes,21,opt,name=lastFeedbackDatasetRef"`
 	// Last time that a ground true test was done.
+	// +kubebuilder:validation:Optional
 	LastFeedbackTest *metav1.Time `json:"lastFeedbackTest,omitempty" protobuf:"bytes,22,opt,name=lastFeedbackTest"`
 	// Last results of the ground truth tests.
+	// +kubebuilder:validation:Optional
 	LastFeedbackTestResults []catalog.Measurement `json:"lastFeedbackTestResults,omitempty" protobuf:"bytes,23,opt,name=lastFeedbackTestResults"`
+	// Holds the last N metrics for this model
+	// +kubebuilder:validation:Optional
+	MetricHistory map[catalog.Metric]MetricHistory `json:"metricHistory,omitempty" protobuf:"bytes,24,opt,name=metricsHistory"`
 }
 
 type ModelDeploymentPhase string
@@ -685,4 +692,14 @@ type ForecastRun struct {
 	// the prediction horizon
 	// +kubebuilder:validation:Optional
 	Horizon training.PeriodSpec `json:"horizon,omitempty" protobuf:"bytes,3,rep,name=horizon"`
+}
+
+// Hold the Last X measurments of a metric
+type MetricHistory struct {
+	// The Metric Name
+	// +kubebuilder:validation:Optional
+	Metric catalog.Metric `json:"metric,omitempty" protobuf:"bytes,1,rep,name=metric"`
+	// History
+	// +kubebuilder:validation:Optional
+	History []float64 `json:"history,omitempty" protobuf:"bytes,2,rep,name=history"`
 }

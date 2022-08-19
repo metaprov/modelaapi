@@ -842,7 +842,7 @@ const (
 // Estimators
 //==============================================================================
 
-// +kubebuilder:validation:Enum="knn-regressor";"ridge-regressor";"lasso-regressor";"ada-boost-regressor";"decision-tree-regressor";"extra-tree-regressor";"linear-svr";"svr";"passive-agressive-regressor";"sgd-regressor";"gradient-boosting-regressor";"random-forest-regressor";"xgb-regressor";"catboost-regressor";"sgd-regressor";"gradient-boosting-regressor";"random-forest-regressor";"xgb-regressor";"catboost-regressor";"lightgbm-regressor";"elasticnet-regressor";"dnn-regressor";"elliptic-envelope";"one-class-svm";"isolation-forest";"local-outlier-factor";"prophet";"knn-classifier";"ada-boost-classifier";"decision-tree-classifier";"extra-tree-classifier";"linear-svc";"svc";"passive-aggressive-classifier";"sgd-classifier";"logistic-regression";"gradient-boosting-classifier";"random-forest-classifier";"xgboost-classifier";"ridge-classifier";"quadratic-discriminant";"linear-discriminant";"lightgbm-classifier";"catboost-classifier";"stacking-ensemble";"none";"arima";"auto-arima";"vrima";"exponential-smoothing";"fast-fourier-transform";"nbeats";"theata-method";"als";"bayesian-personalized-ranking";"voting-classifier";"voting-regressor";"stacking-classifier";"stacking-regressor";"hist-gradient-boosting-classifier";"hist-gradient-boosting-regressor";"linear-regression";"bernoulli-nb";"gaussian-nb";"multinomial-nb";
+// +kubebuilder:validation:Enum="knn-regressor";"ridge-regressor";"lasso-regressor";"ada-boost-regressor";"decision-tree-regressor";"extra-tree-regressor";"linear-svr";"svr";"passive-agressive-regressor";"sgd-regressor";"gradient-boosting-regressor";"random-forest-regressor";"xgb-regressor";"catboost-regressor";"sgd-regressor";"gradient-boosting-regressor";"random-forest-regressor";"xgb-regressor";"catboost-regressor";"lightgbm-regressor";"elasticnet-regressor";"dnn-regressor";"elliptic-envelope";"one-class-svm";"isolation-forest";"local-outlier-factor";"prophet";"knn-classifier";"ada-boost-classifier";"decision-tree-classifier";"extra-tree-classifier";"linear-svc";"svc";"passive-aggressive-classifier";"sgd-classifier";"logistic-regression";"gradient-boosting-classifier";"random-forest-classifier";"xgboost-classifier";"ridge-classifier";"quadratic-discriminant";"linear-discriminant";"lightgbm-classifier";"catboost-classifier";"stacking-ensemble";"none";"naive-forecaster";"exponential-smoothing";"auto-ets";"theta-forecaster";"auto-arima";"arima";"sarimax";"var";"varmax";"bats";"tbats";"prophet";"bayesian-personalized-ranking";"voting-classifier";"voting-regressor";"stacking-classifier";"stacking-regressor";"hist-gradient-boosting-classifier";"hist-gradient-boosting-regressor";"linear-regression";"bernoulli-nb";"gaussian-nb";"multinomial-nb";
 type ClassicEstimatorName string
 
 const (
@@ -874,14 +874,19 @@ const (
 	LocalOutlierFactor ClassicEstimatorName = "local-outlier-factor"
 
 	// Forcast
-	Prophet              ClassicEstimatorName = "prophet"
-	ARIMA                ClassicEstimatorName = "arima"
-	AutoARIMA            ClassicEstimatorName = "auto-arima"
-	VRIMA                ClassicEstimatorName = "vrima"
+
+	NaiveForecaster      ClassicEstimatorName = "naive-forecaster"
 	ExponentialSmoothing ClassicEstimatorName = "exponential-smoothing"
-	FastFourierTransform ClassicEstimatorName = "fast-fourier-transform"
-	NBeats               ClassicEstimatorName = "nbeats"
-	ThetaMethod          ClassicEstimatorName = "theata-method"
+	AutoETS              ClassicEstimatorName = "auto-ets"
+	ThetaForecaster      ClassicEstimatorName = "theta-forecaster"
+	AutoARIMA            ClassicEstimatorName = "auto-arima"
+	ARIMA                ClassicEstimatorName = "arima"
+	SARIMAX              ClassicEstimatorName = "sarimax"
+	VAR                  ClassicEstimatorName = "var"
+	VARMAX               ClassicEstimatorName = "varmax"
+	BATS                 ClassicEstimatorName = "bats"
+	TBATS                ClassicEstimatorName = "tbats"
+	Prophet              ClassicEstimatorName = "prophet"
 
 	// Recommendation
 	ALS                         ClassicEstimatorName = "als"
@@ -2113,6 +2118,26 @@ type TestSuite struct {
 	Tests []DataTestCase `json:"tests,omitempty" protobuf:"bytes,2,rep,name=tests"`
 }
 
+type FeatureFilterType string
+
+const (
+	FeatureFilterAllFeatures       FeatureFilterType = "all-features"
+	FeatureFilterImportantFeatures FeatureFilterType = "important-features"
+	FeatureFilterFeatureList       FeatureFilterType = "features-list"
+	FeatureFilterNumericFeatures   FeatureFilterType = "numeric-features"
+	FeatureFilterCatFeatures       FeatureFilterType = "categorical-features"
+	FeatureFilterTextFeatures      FeatureFilterType = "text-features"
+)
+
+type ReferenceDataType string
+
+const (
+	ReferenceDataTrainingData ReferenceDataType = "train-data"
+	ReferenceDataTestingData  ReferenceDataType = "test-data"
+	ReferenceDataRange        ReferenceDataType = "range"
+	ReferenceDataMovingAvg    ReferenceDataType = "moving-avg"
+)
+
 type DataTestCase struct {
 	// If false, this test case is disabled
 	// +kubebuilder:validation:Optional
@@ -2168,6 +2193,19 @@ type DataTestCase struct {
 	// Reference to an entity.
 	// +kubebuilder:validation:Optional
 	EntityRef2 v1.ObjectReference `json:"entityRef2,omitempty" protobuf:"bytes,19,opt,name=entityRef2"`
+
+	// If unit test is column test, this is the name of the column
+	// +kubebuilder:validation:Optional
+	Columns []string `json:"columns,omitempty" protobuf:"bytes,20,rep,name=columns"`
+	// Filter the filter for this unit test.
+	// +kubebuilder:validation:Optional
+	FeatureFilter *FeatureFilterType `json:"featureFilter,omitempty" protobuf:"bytes,21,opt,name=featureFilter"`
+	// Set the reference type for this unit test
+	// +kubebuilder:validation:Optional
+	ReferenceType *ReferenceDataType `json:"referenceType,omitempty" protobuf:"bytes,22,opt,name=referenceType"`
+	// The length of the past if we are comparing to moving avg
+	// +kubebuilder:validation:Optional
+	Periods *int32 `json:"periods,omitempty" protobuf:"bytes,23,opt,name=periods"`
 }
 
 type TestSuiteResult struct {

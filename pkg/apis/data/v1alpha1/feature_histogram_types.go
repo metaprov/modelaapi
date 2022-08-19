@@ -141,6 +141,12 @@ type FeatureHistogramSpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	GenUnitTests *bool `json:"genUnitTests,omitempty" protobuf:"varint,16,opt,name=genUnitTests"`
+	// Filter the filter for this unit test.
+	// +kubebuilder:validation:Optional
+	FeatureFilter catalog.FeatureFilterType `json:"featureFilter,omitempty" protobuf:"bytes,17,opt,name=featureFilter"`
+	// Set the reference type for this unit test
+	// +kubebuilder:validation:Optional
+	ReferenceType catalog.ReferenceDataType `json:"referenceType,omitempty" protobuf:"bytes,18,opt,name=referenceType"`
 }
 
 // FeatureHistogramStatus defines the observed state of FeatureHistogram

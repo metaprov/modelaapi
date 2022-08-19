@@ -2944,6 +2944,12 @@ export class FeatureHistogramSpec extends jspb.Message {
   getGenunittests(): boolean;
   setGenunittests(value: boolean): FeatureHistogramSpec;
 
+  getFeaturefilter(): string;
+  setFeaturefilter(value: string): FeatureHistogramSpec;
+
+  getReferencetype(): string;
+  setReferencetype(value: string): FeatureHistogramSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FeatureHistogramSpec.AsObject;
   static toObject(includeInstance: boolean, msg: FeatureHistogramSpec): FeatureHistogramSpec.AsObject;
@@ -2968,6 +2974,8 @@ export namespace FeatureHistogramSpec {
     syncintervalsec: number,
     unittests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
     genunittests: boolean,
+    featurefilter: string,
+    referencetype: string,
   }
 }
 

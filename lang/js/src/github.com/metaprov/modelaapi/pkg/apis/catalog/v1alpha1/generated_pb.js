@@ -4867,7 +4867,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataCenter.prototy
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataTestCase.repeatedFields_ = [13,17];
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataTestCase.repeatedFields_ = [13,17,20];
 
 
 
@@ -4918,7 +4918,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataTestCase.toObj
     generated: (f = jspb.Message.getBooleanField(msg, 16)) == null ? undefined : f,
     tagsList: (f = jspb.Message.getRepeatedField(msg, 17)) == null ? undefined : f,
     column2: (f = jspb.Message.getField(msg, 18)) == null ? undefined : f,
-    entityref2: (f = msg.getEntityref2()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f)
+    entityref2: (f = msg.getEntityref2()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
+    columnsList: (f = jspb.Message.getRepeatedField(msg, 20)) == null ? undefined : f,
+    featurefilter: (f = jspb.Message.getField(msg, 21)) == null ? undefined : f,
+    referencetype: (f = jspb.Message.getField(msg, 22)) == null ? undefined : f,
+    periods: (f = jspb.Message.getField(msg, 23)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -5033,6 +5037,22 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataTestCase.deser
       var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
       reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
       msg.setEntityref2(value);
+      break;
+    case 20:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addColumns(value);
+      break;
+    case 21:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFeaturefilter(value);
+      break;
+    case 22:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setReferencetype(value);
+      break;
+    case 23:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setPeriods(value);
       break;
     default:
       reader.skipField();
@@ -5197,6 +5217,34 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataTestCase.seria
       19,
       f,
       k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
+    );
+  }
+  f = message.getColumnsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      20,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 21));
+  if (f != null) {
+    writer.writeString(
+      21,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 22));
+  if (f != null) {
+    writer.writeString(
+      22,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 23));
+  if (f != null) {
+    writer.writeInt32(
+      23,
+      f
     );
   }
 };
@@ -5888,6 +5936,151 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataTestCase.proto
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataTestCase.prototype.hasEntityref2 = function() {
   return jspb.Message.getField(this, 19) != null;
+};
+
+
+/**
+ * repeated string columns = 20;
+ * @return {!Array<string>}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataTestCase.prototype.getColumnsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 20));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataTestCase} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataTestCase.prototype.setColumnsList = function(value) {
+  return jspb.Message.setField(this, 20, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataTestCase} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataTestCase.prototype.addColumns = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 20, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataTestCase} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataTestCase.prototype.clearColumnsList = function() {
+  return this.setColumnsList([]);
+};
+
+
+/**
+ * optional string featureFilter = 21;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataTestCase.prototype.getFeaturefilter = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 21, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataTestCase} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataTestCase.prototype.setFeaturefilter = function(value) {
+  return jspb.Message.setField(this, 21, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataTestCase} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataTestCase.prototype.clearFeaturefilter = function() {
+  return jspb.Message.setField(this, 21, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataTestCase.prototype.hasFeaturefilter = function() {
+  return jspb.Message.getField(this, 21) != null;
+};
+
+
+/**
+ * optional string referenceType = 22;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataTestCase.prototype.getReferencetype = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 22, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataTestCase} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataTestCase.prototype.setReferencetype = function(value) {
+  return jspb.Message.setField(this, 22, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataTestCase} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataTestCase.prototype.clearReferencetype = function() {
+  return jspb.Message.setField(this, 22, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataTestCase.prototype.hasReferencetype = function() {
+  return jspb.Message.getField(this, 22) != null;
+};
+
+
+/**
+ * optional int32 periods = 23;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataTestCase.prototype.getPeriods = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 23, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataTestCase} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataTestCase.prototype.setPeriods = function(value) {
+  return jspb.Message.setField(this, 23, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataTestCase} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataTestCase.prototype.clearPeriods = function() {
+  return jspb.Message.setField(this, 23, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataTestCase.prototype.hasPeriods = function() {
+  return jspb.Message.getField(this, 23) != null;
 };
 
 

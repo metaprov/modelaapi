@@ -281,6 +281,22 @@ message DataTestCase {
   // Reference to an entity.
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference entityRef2 = 19;
+
+  // If unit test is column test, this is the name of the column
+  // +kubebuilder:validation:Optional
+  repeated string columns = 20;
+
+  // Filter the filter for this unit test.
+  // +kubebuilder:validation:Optional
+  optional string featureFilter = 21;
+
+  // Set the reference type for this unit test
+  // +kubebuilder:validation:Optional
+  optional string referenceType = 22;
+
+  // The length of the past if we are comparing to moving avg
+  // +kubebuilder:validation:Optional
+  optional int32 periods = 23;
 }
 
 // Result for a specific case

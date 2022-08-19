@@ -31009,7 +31009,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.
     proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DriftThreshold.toObject, includeInstance),
     syncintervalsec: (f = jspb.Message.getField(msg, 14)) == null ? undefined : f,
     unittests: (f = msg.getUnittests()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.toObject(includeInstance, f),
-    genunittests: (f = jspb.Message.getBooleanField(msg, 16)) == null ? undefined : f
+    genunittests: (f = jspb.Message.getBooleanField(msg, 16)) == null ? undefined : f,
+    featurefilter: (f = jspb.Message.getField(msg, 17)) == null ? undefined : f,
+    referencetype: (f = jspb.Message.getField(msg, 18)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -31107,6 +31109,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.
     case 16:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setGenunittests(value);
+      break;
+    case 17:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFeaturefilter(value);
+      break;
+    case 18:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setReferencetype(value);
       break;
     default:
       reader.skipField();
@@ -31238,6 +31248,20 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.
   if (f != null) {
     writer.writeBool(
       16,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 17));
+  if (f != null) {
+    writer.writeString(
+      17,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 18));
+  if (f != null) {
+    writer.writeString(
+      18,
       f
     );
   }
@@ -31753,6 +31777,78 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.hasGenunittests = function() {
   return jspb.Message.getField(this, 16) != null;
+};
+
+
+/**
+ * optional string featureFilter = 17;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.getFeaturefilter = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 17, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.setFeaturefilter = function(value) {
+  return jspb.Message.setField(this, 17, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.clearFeaturefilter = function() {
+  return jspb.Message.setField(this, 17, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.hasFeaturefilter = function() {
+  return jspb.Message.getField(this, 17) != null;
+};
+
+
+/**
+ * optional string referenceType = 18;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.getReferencetype = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 18, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.setReferencetype = function(value) {
+  return jspb.Message.setField(this, 18, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.clearReferencetype = function() {
+  return jspb.Message.setField(this, 18, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.hasReferencetype = function() {
+  return jspb.Message.getField(this, 18) != null;
 };
 
 
