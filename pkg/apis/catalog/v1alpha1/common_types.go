@@ -971,11 +971,7 @@ func ParseEstimatorName(name string) ClassicEstimatorName {
 		Prophet,
 		ARIMA,
 		AutoARIMA,
-		VRIMA,
 		ExponentialSmoothing,
-		FastFourierTransform,
-		NBeats,
-		ThetaMethod,
 
 		// Recommendation
 		ALS,
