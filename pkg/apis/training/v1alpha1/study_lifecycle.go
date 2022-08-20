@@ -251,6 +251,10 @@ func (study *Study) SelectSplitMethod() {
 
 }
 
+func (study *Study) AutoGenTSFeatures() {
+
+}
+
 // use to sort the model by score
 func (study *Study) AutoSplit(rows int32) {
 	if rows < 1000 {

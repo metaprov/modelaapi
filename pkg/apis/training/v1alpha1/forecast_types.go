@@ -295,6 +295,9 @@ type ForecasterTrainingSpec struct {
 	// List of time series features to compute on each time series.
 	// +kubebuilder:validation:Optional
 	Features []catalog.Metric `json:"features,omitempty" protobuf:"bytes,16,opt,name=features"`
+	// Feature engineering spec.
+	// +kubebuilder:validation:Optional
+	FE TimeSeriesPipelineSpec `json:"fe,omitempty" protobuf:"bytes,17,opt,name=fe"`
 }
 
 // BacktestSpec specify the back test

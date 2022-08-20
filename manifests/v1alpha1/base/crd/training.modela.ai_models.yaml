@@ -1214,6 +1214,38 @@ spec:
                             type: integer
                         type: object
                     type: object
+                  fe:
+                    description: Feature engineering spec.
+                    properties:
+                      functions:
+                        description: The list of metrics to generate for each combination
+                          of lag and windows. The default list is min,max,median,stddev
+                        items:
+                          type: string
+                        type: array
+                      lags:
+                        description: The list of lags to use when generating features
+                        items:
+                          format: int32
+                          type: integer
+                        type: array
+                      log:
+                        default: false
+                        type: boolean
+                      selected:
+                        description: The list of final features that were selected
+                          by the time series. Those feature were selected based on
+                          importance.
+                        items:
+                          type: string
+                        type: array
+                      windows:
+                        description: The list of windows to use when generating features.
+                        items:
+                          format: int32
+                          type: integer
+                        type: array
+                    type: object
                   features:
                     description: List of time series features to compute on each time
                       series.

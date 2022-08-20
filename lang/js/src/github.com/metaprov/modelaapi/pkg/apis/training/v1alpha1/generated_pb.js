@@ -14320,7 +14320,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterTrainin
     plot: (f = jspb.Message.getBooleanField(msg, 13)) == null ? undefined : f,
     plotchangepoints: (f = jspb.Message.getBooleanField(msg, 14)) == null ? undefined : f,
     outputlocation: (f = msg.getOutputlocation()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.toObject(includeInstance, f),
-    featuresList: (f = jspb.Message.getRepeatedField(msg, 16)) == null ? undefined : f
+    featuresList: (f = jspb.Message.getRepeatedField(msg, 16)) == null ? undefined : f,
+    fe: (f = msg.getFe()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesPipelineSpec.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -14429,6 +14430,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterTrainin
     case 16:
       var value = /** @type {string} */ (reader.readString());
       msg.addFeatures(value);
+      break;
+    case 17:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesPipelineSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesPipelineSpec.deserializeBinaryFromReader);
+      msg.setFe(value);
       break;
     default:
       reader.skipField();
@@ -14578,6 +14584,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterTrainin
     writer.writeRepeatedString(
       16,
       f
+    );
+  }
+  f = message.getFe();
+  if (f != null) {
+    writer.writeMessage(
+      17,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesPipelineSpec.serializeBinaryToWriter
     );
   }
 };
@@ -15167,6 +15181,43 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterTrainin
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterTrainingSpec.prototype.clearFeaturesList = function() {
   return this.setFeaturesList([]);
+};
+
+
+/**
+ * optional TimeSeriesPipelineSpec fe = 17;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesPipelineSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterTrainingSpec.prototype.getFe = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesPipelineSpec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesPipelineSpec, 17));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesPipelineSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterTrainingSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterTrainingSpec.prototype.setFe = function(value) {
+  return jspb.Message.setWrapperField(this, 17, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterTrainingSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterTrainingSpec.prototype.clearFe = function() {
+  return this.setFe(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterTrainingSpec.prototype.hasFe = function() {
+  return jspb.Message.getField(this, 17) != null;
 };
 
 

@@ -878,6 +878,10 @@ message ForecasterTrainingSpec {
   // List of time series features to compute on each time series.
   // +kubebuilder:validation:Optional
   repeated string features = 16;
+
+  // Feature engineering spec.
+  // +kubebuilder:validation:Optional
+  optional TimeSeriesPipelineSpec fe = 17;
 }
 
 // GarbageCollectionSpec specifies the configuration to garbage-collect unused Model resources

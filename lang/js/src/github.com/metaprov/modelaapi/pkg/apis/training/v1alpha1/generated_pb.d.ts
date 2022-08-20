@@ -1305,6 +1305,11 @@ export class ForecasterTrainingSpec extends jspb.Message {
   clearFeaturesList(): ForecasterTrainingSpec;
   addFeatures(value: string, index?: number): ForecasterTrainingSpec;
 
+  getFe(): TimeSeriesPipelineSpec | undefined;
+  setFe(value?: TimeSeriesPipelineSpec): ForecasterTrainingSpec;
+  hasFe(): boolean;
+  clearFe(): ForecasterTrainingSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ForecasterTrainingSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ForecasterTrainingSpec): ForecasterTrainingSpec.AsObject;
@@ -1331,6 +1336,7 @@ export namespace ForecasterTrainingSpec {
     plotchangepoints: boolean,
     outputlocation?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     featuresList: Array<string>,
+    fe?: TimeSeriesPipelineSpec.AsObject,
   }
 }
 
