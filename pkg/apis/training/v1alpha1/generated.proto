@@ -600,22 +600,26 @@ message FeatureEngineeringPipeline {
   // +kubebuilder:validation:Optional
   optional VideoPipelineSpec video = 14;
 
+  // TimeSeries specify the fe to try in case of a pipeline
+  // +kubebuilder:validation:Optional
+  optional TimeSeriesPipelineSpec timeseries = 15;
+
   // Generated specifies a collection of columns to be generated
   // +kubebuilder:validation:Optional
-  repeated GeneratedColumnSpec generated = 15;
+  repeated GeneratedColumnSpec generated = 16;
 
   // Custom specifies a collection of columns to be generated. Custom columns are specified by end-users
-  repeated GeneratedColumnSpec custom = 16;
+  repeated GeneratedColumnSpec custom = 17;
 
   // Indicates if all of all the columns specified by the Columns field should be dropped
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool drop = 17;
+  optional bool drop = 18;
 
   // Indicates if the pipeline should not be applied and the columns should remain unchanged
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool passthrough = 18;
+  optional bool passthrough = 19;
 }
 
 // FeatureEngineeringSearchSpec specifies the configuration to produce
@@ -3861,6 +3865,30 @@ message TimeSeriesModelStatus {
   // The scores
   // +kubebuilder:validation:Optional
   map<string, double> scores = 3;
+}
+
+message TimeSeriesPipelineSpec {
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool log = 1;
+
+  // The list of windows to use when generating features.
+  // +kubebuilder:validation:Optional
+  repeated int32 windows = 2;
+
+  // The list of lags to use when generating features
+  // +kubebuilder:validation:Optional
+  repeated int32 lags = 3;
+
+  // The list of metrics to generate for each combination of lag and windows.
+  // The default list is min,max,median,stddev
+  // +kubebuilder:validation:Optional
+  repeated string functions = 4;
+
+  // The list of final features that were selected by the time series.
+  // Those feature were selected based on importance.
+  // +kubebuilder:validation:Optional
+  repeated string selected = 5;
 }
 
 // TrainingSpec specifies the configuration of a model training workload

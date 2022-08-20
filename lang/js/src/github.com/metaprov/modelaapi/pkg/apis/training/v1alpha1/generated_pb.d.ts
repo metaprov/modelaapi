@@ -899,6 +899,11 @@ export class FeatureEngineeringPipeline extends jspb.Message {
   hasVideo(): boolean;
   clearVideo(): FeatureEngineeringPipeline;
 
+  getTimeseries(): TimeSeriesPipelineSpec | undefined;
+  setTimeseries(value?: TimeSeriesPipelineSpec): FeatureEngineeringPipeline;
+  hasTimeseries(): boolean;
+  clearTimeseries(): FeatureEngineeringPipeline;
+
   getGeneratedList(): Array<GeneratedColumnSpec>;
   setGeneratedList(value: Array<GeneratedColumnSpec>): FeatureEngineeringPipeline;
   clearGeneratedList(): FeatureEngineeringPipeline;
@@ -939,6 +944,7 @@ export namespace FeatureEngineeringPipeline {
     image?: ImagePipelineSpec.AsObject,
     audio?: AudioPipelineSpec.AsObject,
     video?: VideoPipelineSpec.AsObject,
+    timeseries?: TimeSeriesPipelineSpec.AsObject,
     generatedList: Array<GeneratedColumnSpec.AsObject>,
     customList: Array<GeneratedColumnSpec.AsObject>,
     drop: boolean,
@@ -5615,6 +5621,48 @@ export namespace TimeSeriesModelStatus {
     modeluri: string,
     parametersList: Array<HyperParameterValue.AsObject>,
     scoresMap: Array<[string, number]>,
+  }
+}
+
+export class TimeSeriesPipelineSpec extends jspb.Message {
+  getLog(): boolean;
+  setLog(value: boolean): TimeSeriesPipelineSpec;
+
+  getWindowsList(): Array<number>;
+  setWindowsList(value: Array<number>): TimeSeriesPipelineSpec;
+  clearWindowsList(): TimeSeriesPipelineSpec;
+  addWindows(value: number, index?: number): TimeSeriesPipelineSpec;
+
+  getLagsList(): Array<number>;
+  setLagsList(value: Array<number>): TimeSeriesPipelineSpec;
+  clearLagsList(): TimeSeriesPipelineSpec;
+  addLags(value: number, index?: number): TimeSeriesPipelineSpec;
+
+  getFunctionsList(): Array<string>;
+  setFunctionsList(value: Array<string>): TimeSeriesPipelineSpec;
+  clearFunctionsList(): TimeSeriesPipelineSpec;
+  addFunctions(value: string, index?: number): TimeSeriesPipelineSpec;
+
+  getSelectedList(): Array<string>;
+  setSelectedList(value: Array<string>): TimeSeriesPipelineSpec;
+  clearSelectedList(): TimeSeriesPipelineSpec;
+  addSelected(value: string, index?: number): TimeSeriesPipelineSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TimeSeriesPipelineSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: TimeSeriesPipelineSpec): TimeSeriesPipelineSpec.AsObject;
+  static serializeBinaryToWriter(message: TimeSeriesPipelineSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TimeSeriesPipelineSpec;
+  static deserializeBinaryFromReader(message: TimeSeriesPipelineSpec, reader: jspb.BinaryReader): TimeSeriesPipelineSpec;
+}
+
+export namespace TimeSeriesPipelineSpec {
+  export type AsObject = {
+    log: boolean,
+    windowsList: Array<number>,
+    lagsList: Array<number>,
+    functionsList: Array<string>,
+    selectedList: Array<string>,
   }
 }
 

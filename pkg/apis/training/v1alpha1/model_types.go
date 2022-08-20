@@ -709,19 +709,22 @@ type FeatureEngineeringPipeline struct {
 	// Video specifies the pipeline to handle video data (currently unsupported)
 	// +kubebuilder:validation:Optional
 	Video *VideoPipelineSpec `json:"video,omitempty" protobuf:"bytes,14,opt,name=video"`
+	// TimeSeries specify the fe to try in case of a pipeline
+	// +kubebuilder:validation:Optional
+	TimeSeries *TimeSeriesPipelineSpec `json:"timeseries,omitempty" protobuf:"bytes,15,opt,name=timeseries"`
 	// Generated specifies a collection of columns to be generated
 	// +kubebuilder:validation:Optional
-	Genereted []GeneratedColumnSpec `json:"generated,omitempty" protobuf:"bytes,15,rep,name=generated"`
+	Genereted []GeneratedColumnSpec `json:"generated,omitempty" protobuf:"bytes,16,rep,name=generated"`
 	// Custom specifies a collection of columns to be generated. Custom columns are specified by end-users
-	Custom []GeneratedColumnSpec `json:"custom,omitempty" protobuf:"bytes,16,rep,name=custom"`
+	Custom []GeneratedColumnSpec `json:"custom,omitempty" protobuf:"bytes,17,rep,name=custom"`
 	// Indicates if all of all the columns specified by the Columns field should be dropped
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Drop *bool `json:"drop,omitempty" protobuf:"varint,17,opt,name=drop"`
+	Drop *bool `json:"drop,omitempty" protobuf:"varint,18,opt,name=drop"`
 	// Indicates if the pipeline should not be applied and the columns should remain unchanged
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Passthrough *bool `json:"passthrough,omitempty" protobuf:"varint,18,opt,name=passthrough"`
+	Passthrough *bool `json:"passthrough,omitempty" protobuf:"varint,19,opt,name=passthrough"`
 }
 
 // FeatureImportance records the computed importance of a single feature
@@ -732,6 +735,26 @@ type FeatureImportance struct {
 	// +kubebuilder:validation:Format=float
 	// +kubebuilder:validation:Type=number
 	Importance float64 `json:"importance,omitempty" protobuf:"bytes,2,opt,name=importance"`
+}
+
+type TimeSeriesPipelineSpec struct {
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Log *bool `json:"log,omitempty" protobuf:"bytes,1,opt,name=log"` // should we use the target log.
+	// The list of windows to use when generating features.
+	// +kubebuilder:validation:Optional
+	Windows []int32 `json:"windows,omitempty" protobuf:"bytes,2,opt,name=windows"`
+	// The list of lags to use when generating features
+	// +kubebuilder:validation:Optional
+	Lags []int32 `json:"lags,omitempty" protobuf:"bytes,3,opt,name=lags"`
+	// The list of metrics to generate for each combination of lag and windows.
+	// The default list is min,max,median,stddev
+	// +kubebuilder:validation:Optional
+	Functions []catalog.Metric `json:"functions,omitempty" protobuf:"bytes,4,opt,name=functions"`
+	// The list of final features that were selected by the time series.
+	// Those feature were selected based on importance.
+	// +kubebuilder:validation:Optional
+	SelectedFeatures []string `json:"selected,omitempty" protobuf:"bytes,5,opt,name=selected"`
 }
 
 // SuccessiveHalvingSpec records the position of a single model in a successive halving search
