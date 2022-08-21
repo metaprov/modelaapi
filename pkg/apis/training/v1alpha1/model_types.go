@@ -753,7 +753,7 @@ type FeatureImportance struct {
 }
 
 type TimeSeriesPipelineSpec struct {
-	// +kubebuilder:default:=false
+	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
 	Log *bool `json:"log,omitempty" protobuf:"bytes,1,opt,name=log"` // should we use the target log.
 	// The list of windows to use when generating features.

@@ -3872,7 +3872,7 @@ message TimeSeriesModelStatus {
 }
 
 message TimeSeriesPipelineSpec {
-  // +kubebuilder:default:=false
+  // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
   optional bool log = 1;
 

@@ -666,7 +666,7 @@ spec:
                                 type: integer
                               type: array
                             log:
-                              default: false
+                              default: true
                               type: boolean
                             selected:
                               description: The list of final features that were selected
@@ -1230,7 +1230,7 @@ spec:
                           type: integer
                         type: array
                       log:
-                        default: false
+                        default: true
                         type: boolean
                       selected:
                         description: The list of final features that were selected
