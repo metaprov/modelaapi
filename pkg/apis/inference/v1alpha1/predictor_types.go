@@ -691,7 +691,7 @@ type ForecastRun struct {
 	ModelURI string `json:"modelURI,omitempty" protobuf:"bytes,2,rep,name=modelURI"`
 	// the prediction horizon
 	// +kubebuilder:validation:Optional
-	Horizon training.PeriodSpec `json:"horizon,omitempty" protobuf:"bytes,3,rep,name=horizon"`
+	Horizon training.WindowSpec `json:"horizon,omitempty" protobuf:"bytes,3,opt,name=horizon"`
 }
 
 // Hold the Last X measurments of a metric

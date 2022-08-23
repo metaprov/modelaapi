@@ -587,7 +587,7 @@ message ForecastPredictionSpec {
   map<string, string> hierarchyValues = 1;
 
   // The interval of the forecast
-  optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSpec horizon = 2;
+  optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.WindowSpec horizon = 2;
 }
 
 message ForecastRun {
@@ -601,7 +601,7 @@ message ForecastRun {
 
   // the prediction horizon
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSpec horizon = 3;
+  optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.WindowSpec horizon = 3;
 }
 
 // The result of forecasting one item. The forecast data itself is stored on the cloud.

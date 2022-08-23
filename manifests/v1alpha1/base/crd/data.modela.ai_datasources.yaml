@@ -31,7 +31,7 @@ spec:
     - jsonPath: .spec.versionName
       name: Version
       type: string
-    - jsonPath: .spec.fileType
+    - jsonPath: .spec.flatfile.fileType
       name: Format
       type: string
     - jsonPath: .spec.datasetType

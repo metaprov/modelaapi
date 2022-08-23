@@ -239,12 +239,13 @@ spec:
                                 - year
                                 type: string
                               length:
-                                description: The windows end day
+                                description: The window length
                                 format: int32
                                 type: integer
                               start:
                                 default: 0
-                                description: The number of intervals to start
+                                description: The number of intervals to start. If
+                                  the start is more than 0, there is a gap.
                                 format: int32
                                 type: integer
                             type: object

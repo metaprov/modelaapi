@@ -56,8 +56,8 @@ export class BacktestSpec extends jspb.Message {
   getMaxtrainsize(): number;
   setMaxtrainsize(value: number): BacktestSpec;
 
-  getHorizon(): number;
-  setHorizon(value: number): BacktestSpec;
+  getTestsize(): number;
+  setTestsize(value: number): BacktestSpec;
 
   getGap(): number;
   setGap(value: number): BacktestSpec;
@@ -75,7 +75,7 @@ export namespace BacktestSpec {
     sliding: boolean,
     splits: number,
     maxtrainsize: number,
-    horizon: number,
+    testsize: number,
     gap: number,
   }
 }
@@ -139,28 +139,6 @@ export namespace CapacityStageSpec {
     servingsitename: string,
     unittests?: ModelTestSuite.AsObject,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
-  }
-}
-
-export class ChangePointSpec extends jspb.Message {
-  getN(): number;
-  setN(value: number): ChangePointSpec;
-
-  getRange(): number;
-  setRange(value: number): ChangePointSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ChangePointSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: ChangePointSpec): ChangePointSpec.AsObject;
-  static serializeBinaryToWriter(message: ChangePointSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ChangePointSpec;
-  static deserializeBinaryFromReader(message: ChangePointSpec, reader: jspb.BinaryReader): ChangePointSpec;
-}
-
-export namespace ChangePointSpec {
-  export type AsObject = {
-    n: number,
-    range: number,
   }
 }
 
@@ -899,10 +877,10 @@ export class FeatureEngineeringPipeline extends jspb.Message {
   hasVideo(): boolean;
   clearVideo(): FeatureEngineeringPipeline;
 
-  getTimeseries(): TimeSeriesPipelineSpec | undefined;
-  setTimeseries(value?: TimeSeriesPipelineSpec): FeatureEngineeringPipeline;
-  hasTimeseries(): boolean;
-  clearTimeseries(): FeatureEngineeringPipeline;
+  getTs(): TimeSeriesPipelineSpec | undefined;
+  setTs(value?: TimeSeriesPipelineSpec): FeatureEngineeringPipeline;
+  hasTs(): boolean;
+  clearTs(): FeatureEngineeringPipeline;
 
   getGeneratedList(): Array<GeneratedColumnSpec>;
   setGeneratedList(value: Array<GeneratedColumnSpec>): FeatureEngineeringPipeline;
@@ -944,7 +922,7 @@ export namespace FeatureEngineeringPipeline {
     image?: ImagePipelineSpec.AsObject,
     audio?: AudioPipelineSpec.AsObject,
     video?: VideoPipelineSpec.AsObject,
-    timeseries?: TimeSeriesPipelineSpec.AsObject,
+    ts?: TimeSeriesPipelineSpec.AsObject,
     generatedList: Array<GeneratedColumnSpec.AsObject>,
     customList: Array<GeneratedColumnSpec.AsObject>,
     drop: boolean,
@@ -1237,47 +1215,39 @@ export namespace ForecastPostProcessingSpec {
 }
 
 export class ForecasterTrainingSpec extends jspb.Message {
-  getData(): TimeSeriesDataSpec | undefined;
-  setData(value?: TimeSeriesDataSpec): ForecasterTrainingSpec;
-  hasData(): boolean;
-  clearData(): ForecasterTrainingSpec;
+  getTimecolumn(): string;
+  setTimecolumn(value: string): ForecasterTrainingSpec;
 
-  getHoliday(): HolidaySpec | undefined;
-  setHoliday(value?: HolidaySpec): ForecasterTrainingSpec;
-  hasHoliday(): boolean;
-  clearHoliday(): ForecasterTrainingSpec;
+  getTargetcolumn(): string;
+  setTargetcolumn(value: string): ForecasterTrainingSpec;
 
-  getHistory(): PeriodSpec | undefined;
-  setHistory(value?: PeriodSpec): ForecasterTrainingSpec;
-  hasHistory(): boolean;
-  clearHistory(): ForecasterTrainingSpec;
+  getDatetimeformat(): string;
+  setDatetimeformat(value: string): ForecasterTrainingSpec;
 
-  getForecast(): PeriodSpec | undefined;
-  setForecast(value?: PeriodSpec): ForecasterTrainingSpec;
-  hasForecast(): boolean;
-  clearForecast(): ForecasterTrainingSpec;
+  getKeycolumnList(): Array<string>;
+  setKeycolumnList(value: Array<string>): ForecasterTrainingSpec;
+  clearKeycolumnList(): ForecasterTrainingSpec;
+  addKeycolumn(value: string, index?: number): ForecasterTrainingSpec;
 
-  getCustomseasonalitiesList(): Array<CustomSeasonalitySpec>;
-  setCustomseasonalitiesList(value: Array<CustomSeasonalitySpec>): ForecasterTrainingSpec;
-  clearCustomseasonalitiesList(): ForecasterTrainingSpec;
-  addCustomseasonalities(value?: CustomSeasonalitySpec, index?: number): CustomSeasonalitySpec;
+  getRegressorsList(): Array<RegressorSpec>;
+  setRegressorsList(value: Array<RegressorSpec>): ForecasterTrainingSpec;
+  clearRegressorsList(): ForecasterTrainingSpec;
+  addRegressors(value?: RegressorSpec, index?: number): RegressorSpec;
 
-  getChangepoints(): ChangePointSpec | undefined;
-  setChangepoints(value?: ChangePointSpec): ForecasterTrainingSpec;
-  hasChangepoints(): boolean;
-  clearChangepoints(): ForecasterTrainingSpec;
+  getHolidaysList(): Array<HolidaySpec>;
+  setHolidaysList(value: Array<HolidaySpec>): ForecasterTrainingSpec;
+  clearHolidaysList(): ForecasterTrainingSpec;
+  addHolidays(value?: HolidaySpec, index?: number): HolidaySpec;
 
-  getIntevalwidth(): number;
-  setIntevalwidth(value: number): ForecasterTrainingSpec;
+  getPast(): WindowSpec | undefined;
+  setPast(value?: WindowSpec): ForecasterTrainingSpec;
+  hasPast(): boolean;
+  clearPast(): ForecasterTrainingSpec;
 
-  getUncertaintysamples(): number;
-  setUncertaintysamples(value: number): ForecasterTrainingSpec;
-
-  getSeasonality(): string;
-  setSeasonality(value: string): ForecasterTrainingSpec;
-
-  getConfidenceinterval(): number;
-  setConfidenceinterval(value: number): ForecasterTrainingSpec;
+  getFuture(): WindowSpec | undefined;
+  setFuture(value?: WindowSpec): ForecasterTrainingSpec;
+  hasFuture(): boolean;
+  clearFuture(): ForecasterTrainingSpec;
 
   getBacktest(): BacktestSpec | undefined;
   setBacktest(value?: BacktestSpec): ForecasterTrainingSpec;
@@ -1310,6 +1280,11 @@ export class ForecasterTrainingSpec extends jspb.Message {
   hasFe(): boolean;
   clearFe(): ForecasterTrainingSpec;
 
+  getProphet(): ProphetSpec | undefined;
+  setProphet(value?: ProphetSpec): ForecasterTrainingSpec;
+  hasProphet(): boolean;
+  clearProphet(): ForecasterTrainingSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ForecasterTrainingSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ForecasterTrainingSpec): ForecasterTrainingSpec.AsObject;
@@ -1320,16 +1295,14 @@ export class ForecasterTrainingSpec extends jspb.Message {
 
 export namespace ForecasterTrainingSpec {
   export type AsObject = {
-    data?: TimeSeriesDataSpec.AsObject,
-    holiday?: HolidaySpec.AsObject,
-    history?: PeriodSpec.AsObject,
-    forecast?: PeriodSpec.AsObject,
-    customseasonalitiesList: Array<CustomSeasonalitySpec.AsObject>,
-    changepoints?: ChangePointSpec.AsObject,
-    intevalwidth: number,
-    uncertaintysamples: number,
-    seasonality: string,
-    confidenceinterval: number,
+    timecolumn: string,
+    targetcolumn: string,
+    datetimeformat: string,
+    keycolumnList: Array<string>,
+    regressorsList: Array<RegressorSpec.AsObject>,
+    holidaysList: Array<HolidaySpec.AsObject>,
+    past?: WindowSpec.AsObject,
+    future?: WindowSpec.AsObject,
     backtest?: BacktestSpec.AsObject,
     postprocessing?: ForecastPostProcessingSpec.AsObject,
     plot: boolean,
@@ -1337,6 +1310,7 @@ export namespace ForecasterTrainingSpec {
     outputlocation?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     featuresList: Array<string>,
     fe?: TimeSeriesPipelineSpec.AsObject,
+    prophet?: ProphetSpec.AsObject,
   }
 }
 
@@ -1457,9 +1431,6 @@ export namespace Hierarchy {
 }
 
 export class HolidaySpec extends jspb.Message {
-  getEnabled(): boolean;
-  setEnabled(value: boolean): HolidaySpec;
-
   getHolidaycolumn(): string;
   setHolidaycolumn(value: string): HolidaySpec;
 
@@ -1479,7 +1450,6 @@ export class HolidaySpec extends jspb.Message {
 
 export namespace HolidaySpec {
   export type AsObject = {
-    enabled: boolean,
     holidaycolumn: string,
     country: string,
     datasetname: string,
@@ -4194,29 +4164,69 @@ export namespace PeriodSeasonalitySpec {
   }
 }
 
-export class PeriodSpec extends jspb.Message {
-  getInterval(): string;
-  setInterval(value: string): PeriodSpec;
+export class ProphetSpec extends jspb.Message {
+  getIntervalwidth(): number;
+  setIntervalwidth(value: number): ProphetSpec;
 
-  getStart(): number;
-  setStart(value: number): PeriodSpec;
+  getUncertaintysamples(): number;
+  setUncertaintysamples(value: number): ProphetSpec;
 
-  getLength(): number;
-  setLength(value: number): PeriodSpec;
+  getSeasonality(): string;
+  setSeasonality(value: string): ProphetSpec;
+
+  getConfidenceinterval(): number;
+  setConfidenceinterval(value: number): ProphetSpec;
+
+  getYearlyseasonality(): PeriodSeasonalitySpec | undefined;
+  setYearlyseasonality(value?: PeriodSeasonalitySpec): ProphetSpec;
+  hasYearlyseasonality(): boolean;
+  clearYearlyseasonality(): ProphetSpec;
+
+  getWeeklyseasonality(): PeriodSeasonalitySpec | undefined;
+  setWeeklyseasonality(value?: PeriodSeasonalitySpec): ProphetSpec;
+  hasWeeklyseasonality(): boolean;
+  clearWeeklyseasonality(): ProphetSpec;
+
+  getDailyseasonality(): PeriodSeasonalitySpec | undefined;
+  setDailyseasonality(value?: PeriodSeasonalitySpec): ProphetSpec;
+  hasDailyseasonality(): boolean;
+  clearDailyseasonality(): ProphetSpec;
+
+  getGrowth(): string;
+  setGrowth(value: string): ProphetSpec;
+
+  getChangepoints(): number;
+  setChangepoints(value: number): ProphetSpec;
+
+  getChangepointrange(): number;
+  setChangepointrange(value: number): ProphetSpec;
+
+  getCustomseasonalitiesList(): Array<CustomSeasonalitySpec>;
+  setCustomseasonalitiesList(value: Array<CustomSeasonalitySpec>): ProphetSpec;
+  clearCustomseasonalitiesList(): ProphetSpec;
+  addCustomseasonalities(value?: CustomSeasonalitySpec, index?: number): CustomSeasonalitySpec;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PeriodSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: PeriodSpec): PeriodSpec.AsObject;
-  static serializeBinaryToWriter(message: PeriodSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PeriodSpec;
-  static deserializeBinaryFromReader(message: PeriodSpec, reader: jspb.BinaryReader): PeriodSpec;
+  toObject(includeInstance?: boolean): ProphetSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: ProphetSpec): ProphetSpec.AsObject;
+  static serializeBinaryToWriter(message: ProphetSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ProphetSpec;
+  static deserializeBinaryFromReader(message: ProphetSpec, reader: jspb.BinaryReader): ProphetSpec;
 }
 
-export namespace PeriodSpec {
+export namespace ProphetSpec {
   export type AsObject = {
-    interval: string,
-    start: number,
-    length: number,
+    intervalwidth: number,
+    uncertaintysamples: number,
+    seasonality: string,
+    confidenceinterval: number,
+    yearlyseasonality?: PeriodSeasonalitySpec.AsObject,
+    weeklyseasonality?: PeriodSeasonalitySpec.AsObject,
+    dailyseasonality?: PeriodSeasonalitySpec.AsObject,
+    growth: string,
+    changepoints: number,
+    changepointrange: number,
+    customseasonalitiesList: Array<CustomSeasonalitySpec.AsObject>,
   }
 }
 
@@ -4992,10 +5002,10 @@ export class StudySpec extends jspb.Message {
   hasServingtemplate(): boolean;
   clearServingtemplate(): StudySpec;
 
-  getForecastertraining(): ForecasterTrainingSpec | undefined;
-  setForecastertraining(value?: ForecasterTrainingSpec): StudySpec;
-  hasForecastertraining(): boolean;
-  clearForecastertraining(): StudySpec;
+  getForecasting(): ForecasterTrainingSpec | undefined;
+  setForecasting(value?: ForecasterTrainingSpec): StudySpec;
+  hasForecasting(): boolean;
+  clearForecasting(): StudySpec;
 
   getSchedule(): StudyScheduleSpec | undefined;
   setSchedule(value?: StudyScheduleSpec): StudySpec;
@@ -5110,7 +5120,7 @@ export namespace StudySpec {
     ensembles?: EnsemblesSpec.AsObject,
     trainingtemplate?: TrainingSpec.AsObject,
     servingtemplate?: ServingSpec.AsObject,
-    forecastertraining?: ForecasterTrainingSpec.AsObject,
+    forecasting?: ForecasterTrainingSpec.AsObject,
     schedule?: StudyScheduleSpec.AsObject,
     interpretability?: InterpretabilitySpec.AsObject,
     driftdetection?: DriftModelSpec.AsObject,
@@ -5468,66 +5478,6 @@ export namespace ThresholdPrunerOptions {
   }
 }
 
-export class TimeSeriesDataSpec extends jspb.Message {
-  getTimecolumn(): string;
-  setTimecolumn(value: string): TimeSeriesDataSpec;
-
-  getTargetcolumn(): string;
-  setTargetcolumn(value: string): TimeSeriesDataSpec;
-
-  getDatetimeformat(): string;
-  setDatetimeformat(value: string): TimeSeriesDataSpec;
-
-  getKeycolumnList(): Array<string>;
-  setKeycolumnList(value: Array<string>): TimeSeriesDataSpec;
-  clearKeycolumnList(): TimeSeriesDataSpec;
-  addKeycolumn(value: string, index?: number): TimeSeriesDataSpec;
-
-  getYearlyseasonality(): PeriodSeasonalitySpec | undefined;
-  setYearlyseasonality(value?: PeriodSeasonalitySpec): TimeSeriesDataSpec;
-  hasYearlyseasonality(): boolean;
-  clearYearlyseasonality(): TimeSeriesDataSpec;
-
-  getWeeklyseasonality(): PeriodSeasonalitySpec | undefined;
-  setWeeklyseasonality(value?: PeriodSeasonalitySpec): TimeSeriesDataSpec;
-  hasWeeklyseasonality(): boolean;
-  clearWeeklyseasonality(): TimeSeriesDataSpec;
-
-  getDailyseasonality(): PeriodSeasonalitySpec | undefined;
-  setDailyseasonality(value?: PeriodSeasonalitySpec): TimeSeriesDataSpec;
-  hasDailyseasonality(): boolean;
-  clearDailyseasonality(): TimeSeriesDataSpec;
-
-  getGrowth(): string;
-  setGrowth(value: string): TimeSeriesDataSpec;
-
-  getRegressorsList(): Array<RegressorSpec>;
-  setRegressorsList(value: Array<RegressorSpec>): TimeSeriesDataSpec;
-  clearRegressorsList(): TimeSeriesDataSpec;
-  addRegressors(value?: RegressorSpec, index?: number): RegressorSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): TimeSeriesDataSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: TimeSeriesDataSpec): TimeSeriesDataSpec.AsObject;
-  static serializeBinaryToWriter(message: TimeSeriesDataSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): TimeSeriesDataSpec;
-  static deserializeBinaryFromReader(message: TimeSeriesDataSpec, reader: jspb.BinaryReader): TimeSeriesDataSpec;
-}
-
-export namespace TimeSeriesDataSpec {
-  export type AsObject = {
-    timecolumn: string,
-    targetcolumn: string,
-    datetimeformat: string,
-    keycolumnList: Array<string>,
-    yearlyseasonality?: PeriodSeasonalitySpec.AsObject,
-    weeklyseasonality?: PeriodSeasonalitySpec.AsObject,
-    dailyseasonality?: PeriodSeasonalitySpec.AsObject,
-    growth: string,
-    regressorsList: Array<RegressorSpec.AsObject>,
-  }
-}
-
 export class TimeSeriesItem extends jspb.Message {
   getKey(): string;
   setKey(value: string): TimeSeriesItem;
@@ -5631,6 +5581,12 @@ export namespace TimeSeriesModelStatus {
 }
 
 export class TimeSeriesPipelineSpec extends jspb.Message {
+  getAll(): boolean;
+  setAll(value: boolean): TimeSeriesPipelineSpec;
+
+  getEma(): boolean;
+  setEma(value: boolean): TimeSeriesPipelineSpec;
+
   getLog(): boolean;
   setLog(value: boolean): TimeSeriesPipelineSpec;
 
@@ -5649,10 +5605,10 @@ export class TimeSeriesPipelineSpec extends jspb.Message {
   clearFunctionsList(): TimeSeriesPipelineSpec;
   addFunctions(value: string, index?: number): TimeSeriesPipelineSpec;
 
-  getSelectedList(): Array<string>;
-  setSelectedList(value: Array<string>): TimeSeriesPipelineSpec;
-  clearSelectedList(): TimeSeriesPipelineSpec;
-  addSelected(value: string, index?: number): TimeSeriesPipelineSpec;
+  getFeaturesList(): Array<string>;
+  setFeaturesList(value: Array<string>): TimeSeriesPipelineSpec;
+  clearFeaturesList(): TimeSeriesPipelineSpec;
+  addFeatures(value: string, index?: number): TimeSeriesPipelineSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TimeSeriesPipelineSpec.AsObject;
@@ -5664,11 +5620,13 @@ export class TimeSeriesPipelineSpec extends jspb.Message {
 
 export namespace TimeSeriesPipelineSpec {
   export type AsObject = {
+    all: boolean,
+    ema: boolean,
     log: boolean,
     windowsList: Array<number>,
     lagsList: Array<number>,
     functionsList: Array<string>,
-    selectedList: Array<string>,
+    featuresList: Array<string>,
   }
 }
 
@@ -5849,6 +5807,32 @@ export class VideoPipelineSpec extends jspb.Message {
 export namespace VideoPipelineSpec {
   export type AsObject = {
     featurizer: string,
+  }
+}
+
+export class WindowSpec extends jspb.Message {
+  getInterval(): string;
+  setInterval(value: string): WindowSpec;
+
+  getStart(): number;
+  setStart(value: number): WindowSpec;
+
+  getLength(): number;
+  setLength(value: number): WindowSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): WindowSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: WindowSpec): WindowSpec.AsObject;
+  static serializeBinaryToWriter(message: WindowSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): WindowSpec;
+  static deserializeBinaryFromReader(message: WindowSpec, reader: jspb.BinaryReader): WindowSpec;
+}
+
+export namespace WindowSpec {
+  export type AsObject = {
+    interval: string,
+    start: number,
+    length: number,
   }
 }
 

@@ -895,8 +895,8 @@ export class ForecastPredictionSpec extends jspb.Message {
   getHierarchyvaluesMap(): jspb.Map<string, string>;
   clearHierarchyvaluesMap(): ForecastPredictionSpec;
 
-  getHorizon(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.PeriodSpec | undefined;
-  setHorizon(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.PeriodSpec): ForecastPredictionSpec;
+  getHorizon(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.WindowSpec | undefined;
+  setHorizon(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.WindowSpec): ForecastPredictionSpec;
   hasHorizon(): boolean;
   clearHorizon(): ForecastPredictionSpec;
 
@@ -911,7 +911,7 @@ export class ForecastPredictionSpec extends jspb.Message {
 export namespace ForecastPredictionSpec {
   export type AsObject = {
     hierarchyvaluesMap: Array<[string, string]>,
-    horizon?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.PeriodSpec.AsObject,
+    horizon?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.WindowSpec.AsObject,
   }
 }
 
@@ -922,8 +922,8 @@ export class ForecastRun extends jspb.Message {
   getModeluri(): string;
   setModeluri(value: string): ForecastRun;
 
-  getHorizon(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.PeriodSpec | undefined;
-  setHorizon(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.PeriodSpec): ForecastRun;
+  getHorizon(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.WindowSpec | undefined;
+  setHorizon(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.WindowSpec): ForecastRun;
   hasHorizon(): boolean;
   clearHorizon(): ForecastRun;
 
@@ -939,7 +939,7 @@ export namespace ForecastRun {
   export type AsObject = {
     key: string,
     modeluri: string,
-    horizon?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.PeriodSpec.AsObject,
+    horizon?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.WindowSpec.AsObject,
   }
 }
 

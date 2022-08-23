@@ -526,7 +526,7 @@ type StudySpec struct {
 	ServingTemplate ServingSpec `json:"servingTemplate,omitempty" protobuf:"bytes,13,opt,name=servingTemplate"`
 	// ForecastSpec specifies the parameters required when generating a forecasting model
 	// +kubebuilder:validation:Optional
-	ForecastTraining ForecasterTrainingSpec `json:"forecasterTraining,omitempty" protobuf:"bytes,14,opt,name=forecasterTraining"`
+	Forecasting ForecasterTrainingSpec `json:"forecasting,omitempty" protobuf:"bytes,14,opt,name=forecasting"`
 	// Schedule specifies the configuration to execute the Study at a later date
 	// +kubebuilder:validation:Optional
 	Schedule StudyScheduleSpec `json:"schedule,omitempty" protobuf:"bytes,15,opt,name=schedule"`

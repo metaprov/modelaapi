@@ -56,7 +56,7 @@ message BacktestSpec {
   // +kubebuilder:default = 0
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
-  optional int32 Horizon = 4;
+  optional int32 testSize = 4;
 
   // The number of data points between each windows
   // +kubebuilder:default = 0
@@ -103,18 +103,6 @@ message CapacityStageSpec {
   // Resource define the hardware resources req.
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 4;
-}
-
-message ChangePointSpec {
-  // number of change points
-  // +kubebuilder:default = 25
-  // +kubebuilder:validation:Optional
-  optional int32 N = 1;
-
-  // Change point range
-  // +kubebuilder:default = 0.8
-  // +kubebuilder:validation:Optional
-  optional double range = 2;
 }
 
 // ChatbotEstimatorSpec specifies the configuration for a chatbot model
@@ -602,13 +590,14 @@ message FeatureEngineeringPipeline {
 
   // TimeSeries specify the fe to try in case of a pipeline
   // +kubebuilder:validation:Optional
-  optional TimeSeriesPipelineSpec timeseries = 15;
+  optional TimeSeriesPipelineSpec ts = 15;
 
   // Generated specifies a collection of columns to be generated
   // +kubebuilder:validation:Optional
   repeated GeneratedColumnSpec generated = 16;
 
   // Custom specifies a collection of columns to be generated. Custom columns are specified by end-users
+  // +kubebuilder:validation:Optional
   repeated GeneratedColumnSpec custom = 17;
 
   // Indicates if all of all the columns specified by the Columns field should be dropped
@@ -810,78 +799,74 @@ message ForecastPostProcessingSpec {
 
 // ForecastingSpec
 message ForecasterTrainingSpec {
-  // Specification of the forecast data.
+  // The name of the time column, this should be taken from the data source.
+  // +kubebuilder:validation:Required
+  // +required
+  optional string timeColumn = 1;
+
+  // The name of the column holding the value.
+  // By default this is the target column from the dataset.
+  // +kubebuilder:validation:Required
+  // +required
+  optional string targetColumn = 2;
+
+  // The format of the datetime column. Used default
   // +kubebuilder:validation:Optional
-  optional TimeSeriesDataSpec data = 1;
+  optional string datetimeFormat = 3;
+
+  // +kubebuilder:validation:Optional
+  // Column names for the time series key
+  // +kubebuilder:validation:Optional
+  repeated string keyColumn = 4;
+
+  // The list of additional regressors. The regressors are part of the time series data
+  // +kubebuilder:validation:Optional
+  repeated RegressorSpec regressors = 5;
 
   // The spec for the holiday
   // +kubebuilder:validation:Optional
-  optional HolidaySpec holiday = 2;
+  repeated HolidaySpec holidays = 6;
 
-  // The historical periods
+  // Specification for the past windows
   // +kubebuilder:validation:Optional
-  optional PeriodSpec history = 3;
+  optional WindowSpec past = 7;
 
-  // The forecast periods
+  // Specification for the future windows
   // +kubebuilder:validation:Optional
-  optional PeriodSpec forecast = 4;
-
-  // The list of additional regressors. The regresors are part of the time series data
-  // +kubebuilder:validation:Optional
-  repeated CustomSeasonalitySpec customSeasonalities = 5;
-
-  // Set an holiday schedule for a country.
-  // Change point specification
-  // +kubebuilder:validation:Optional
-  optional ChangePointSpec changepoints = 6;
-
-  // +kubebuilder:default = 0.8
-  // +kubebuilder:validation:Optional
-  optional double intevalWidth = 7;
-
-  // +kubebuilder:default = 1000
-  // +kubebuilder:validation:Optional
-  optional int32 uncertaintySamples = 8;
-
-  // The generate seasonality mode
-  // +kubebuilder:default = "additive"
-  // +kubebuilder:validation:Optional
-  optional string seasonality = 9;
-
-  // The confidence levels for the forecast, each level must be between 1-100.
-  // +kubebuilder:default = 95
-  // +kubebuilder:validation:Optional
-  // +kubebuilder:validation:Minimum=0
-  optional int32 confidenceInterval = 10;
+  optional WindowSpec future = 8;
 
   // The backtest specification, the system supports back testing with expanding windows.
   // +kubebuilder:validation:Optional
-  optional BacktestSpec backtest = 11;
+  optional BacktestSpec backtest = 10;
 
   // Post processing
   // +kubebuilder:validation:Optional
-  optional ForecastPostProcessingSpec postProcessing = 12;
+  optional ForecastPostProcessingSpec postProcessing = 11;
 
   // If true generate the plots
   // +kubebuilder:default = true
   // +kubebuilder:validation:Optional
-  optional bool plot = 13;
+  optional bool plot = 12;
 
   // +kubebuilder:default = true
   // +kubebuilder:validation:Optional
-  optional bool plotChangePoints = 14;
+  optional bool plotChangePoints = 13;
 
   // The data location that would store the forecast result.
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation outputLocation = 15;
+  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation outputLocation = 14;
 
   // List of time series features to compute on each time series.
   // +kubebuilder:validation:Optional
-  repeated string features = 16;
+  repeated string features = 15;
 
   // Feature engineering spec.
   // +kubebuilder:validation:Optional
-  optional TimeSeriesPipelineSpec fe = 17;
+  optional TimeSeriesPipelineSpec fe = 16;
+
+  // If using prophet, those are the prophet settings
+  // +kubebuilder:validation:Optional
+  optional ProphetSpec prophet = 17;
 }
 
 // GarbageCollectionSpec specifies the configuration to garbage-collect unused Model resources
@@ -947,22 +932,17 @@ message Hierarchy {
 }
 
 message HolidaySpec {
-  // If true enable holidays
-  // +kubebuilder:default:=false
-  // +kubebuilder:validation:Optional
-  optional bool enabled = 1;
-
   // The name of the holiday column. If the column is empty, no holiday
   // Column name of the first level of grouping
   // +kubebuilder:validation:Optional
-  optional string holidayColumn = 2;
+  optional string holidayColumn = 1;
 
   // +kubebuilder:validation:Optional
-  optional string country = 3;
+  optional string country = 2;
 
   // For custom holiday use external dataset
   // +kubebuilder:validation:Optional
-  optional string datasetName = 4;
+  optional string datasetName = 3;
 }
 
 // HyperParameterValue represent an individual hyper-parameter of a machine earning algorithm
@@ -2855,20 +2835,52 @@ message PeriodSeasonalitySpec {
   optional string mode = 3;
 }
 
-// Define a range of time series data points
-message PeriodSpec {
-  // The period interval
+message ProphetSpec {
+  // +kubebuilder:default = 0.8
   // +kubebuilder:validation:Optional
-  optional string interval = 1;
+  optional double intervalWidth = 1;
 
-  // The number of intervals to start
-  // +kubebuilder:default:=0
+  // +kubebuilder:default = 1000
   // +kubebuilder:validation:Optional
-  optional int32 start = 2;
+  optional int32 uncertaintySamples = 2;
 
-  // The windows end day
+  // The generate seasonality mode
+  // +kubebuilder:default = "additive"
   // +kubebuilder:validation:Optional
-  optional int32 length = 3;
+  optional string seasonality = 3;
+
+  // The confidence levels for the forecast, each level must be between 1-100.
+  // +kubebuilder:default = 95
+  // +kubebuilder:validation:Optional
+  // +kubebuilder:validation:Minimum=0
+  optional int32 confidenceInterval = 4;
+
+  // +kubebuilder:validation:Optional
+  optional PeriodSeasonalitySpec yearlySeasonality = 5;
+
+  // +kubebuilder:validation:Optional
+  optional PeriodSeasonalitySpec weeklySeasonality = 6;
+
+  // +kubebuilder:validation:Optional
+  optional PeriodSeasonalitySpec dailySeasonality = 7;
+
+  // +kubebuilder:default = "linear"
+  // +kubebuilder:validation:Optional
+  optional string growth = 8;
+
+  // number of change points
+  // +kubebuilder:default = 25
+  // +kubebuilder:validation:Optional
+  optional int32 changePoints = 9;
+
+  // Change point range
+  // +kubebuilder:default = 0.8
+  // +kubebuilder:validation:Optional
+  optional double changePointRange = 10;
+
+  // Change point range
+  // +kubebuilder:validation:Optional
+  repeated CustomSeasonalitySpec customSeasonalities = 11;
 }
 
 message PrunerSpec {
@@ -2898,12 +2910,12 @@ message RegressorSpec {
   // +kubebuilder:validation:Optional
   optional string name = 1;
 
-  // The Name of the regressor
+  // This is a regularization parameter, to adjust the affect of the regressor.
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
   optional double priorScale = 2;
 
-  // The Name of the regressor
+  // Set to true if the regressor is standardized
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool standardize = 3;
@@ -3405,7 +3417,7 @@ message StudySpec {
 
   // ForecastSpec specifies the parameters required when generating a forecasting model
   // +kubebuilder:validation:Optional
-  optional ForecasterTrainingSpec forecasterTraining = 14;
+  optional ForecasterTrainingSpec forecasting = 14;
 
   // Schedule specifies the configuration to execute the Study at a later date
   // +kubebuilder:validation:Optional
@@ -3783,46 +3795,6 @@ message ThresholdPrunerOptions {
   optional int32 intervalSteps = 4;
 }
 
-message TimeSeriesDataSpec {
-  // General Forecast attributes:
-  // The name of the time column
-  // +kubebuilder:validation:Required
-  // +required
-  optional string timeColumn = 1;
-
-  // The name of the column holding the value.
-  // By default this is the target column from the dataset.
-  // +kubebuilder:validation:Required
-  // +required
-  optional string targetColumn = 2;
-
-  // The format of the datetime column. Used default
-  // +kubebuilder:validation:Optional
-  optional string datetimeFormat = 3;
-
-  // +kubebuilder:validation:Optional
-  // Column names for the time series key
-  // +kubebuilder:validation:Optional
-  repeated string keyColumn = 4;
-
-  // +kubebuilder:validation:Optional
-  optional PeriodSeasonalitySpec yearlySeasonality = 5;
-
-  // +kubebuilder:validation:Optional
-  optional PeriodSeasonalitySpec weeklySeasonality = 6;
-
-  // +kubebuilder:validation:Optional
-  optional PeriodSeasonalitySpec dailySeasonality = 7;
-
-  // +kubebuilder:default = "linear"
-  // +kubebuilder:validation:Optional
-  optional string growth = 8;
-
-  // The list of additional regressors. The regresors are part of the time series data
-  // +kubebuilder:validation:Optional
-  repeated RegressorSpec regressors = 9;
-}
-
 // Contain the spec for a single time series.
 message TimeSeriesItem {
   // The time series key
@@ -3872,27 +3844,37 @@ message TimeSeriesModelStatus {
 }
 
 message TimeSeriesPipelineSpec {
+  // generate all features.
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
-  optional bool log = 1;
+  optional bool all = 1;
+
+  // when computing moving avg, use exponential moving avg, other use regular moving avg
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool ema = 2;
+
+  // +kubebuilder:default:=true
+  // +kubebuilder:validation:Optional
+  optional bool log = 3;
 
   // The list of windows to use when generating features.
   // +kubebuilder:validation:Optional
-  repeated int32 windows = 2;
+  repeated int32 windows = 4;
 
   // The list of lags to use when generating features
   // +kubebuilder:validation:Optional
-  repeated int32 lags = 3;
+  repeated int32 lags = 5;
 
   // The list of metrics to generate for each combination of lag and windows.
   // The default list is min,max,median,stddev
   // +kubebuilder:validation:Optional
-  repeated string functions = 4;
+  repeated string functions = 6;
 
   // The list of final features that were selected by the time series.
   // Those feature were selected based on importance.
   // +kubebuilder:validation:Optional
-  repeated string selected = 5;
+  repeated string features = 7;
 }
 
 // TrainingSpec specifies the configuration of a model training workload
@@ -4035,5 +4017,21 @@ message VideoPipelineSpec {
   // +kubebuilder:default:="auto"
   // +kubebuilder:validation:Optional
   optional string featurizer = 1;
+}
+
+// Define a window on the time series.
+message WindowSpec {
+  // The period interval
+  // +kubebuilder:validation:Optional
+  optional string interval = 1;
+
+  // The number of intervals to start. If the start is more than 0, there is a gap.
+  // +kubebuilder:default:=0
+  // +kubebuilder:validation:Optional
+  optional int32 start = 2;
+
+  // The window length
+  // +kubebuilder:validation:Optional
+  optional int32 length = 3;
 }
 

@@ -291,7 +291,7 @@ type ModelSpec struct {
 	Location *data.DataLocation `json:"location,omitempty" protobuf:"bytes,38,opt,name=location"`
 	// Forecasting specifies the configuration to train a forecasting model
 	// +kubebuilder:validation:Optional
-	Forecasting *ForecasterTrainingSpec `json:"forecasting,omitempty" protobuf:"bytes,39,opt,name=forecasting"`
+	Forecasting ForecasterTrainingSpec `json:"forecasting,omitempty" protobuf:"bytes,39,opt,name=forecasting"`
 	// Compilation specifies the configuration to compile a model to a binary (currently unimplemented)
 	// +kubebuilder:validation:Optional
 	Compilation *catalog.CompilerSpec `json:"compilation,omitempty" protobuf:"bytes,40,opt,name=compilation"`
@@ -726,11 +726,12 @@ type FeatureEngineeringPipeline struct {
 	Video *VideoPipelineSpec `json:"video,omitempty" protobuf:"bytes,14,opt,name=video"`
 	// TimeSeries specify the fe to try in case of a pipeline
 	// +kubebuilder:validation:Optional
-	TimeSeries *TimeSeriesPipelineSpec `json:"timeseries,omitempty" protobuf:"bytes,15,opt,name=timeseries"`
+	TimeSeries *TimeSeriesPipelineSpec `json:"ts,omitempty" protobuf:"bytes,15,opt,name=ts"`
 	// Generated specifies a collection of columns to be generated
 	// +kubebuilder:validation:Optional
-	Genereted []GeneratedColumnSpec `json:"generated,omitempty" protobuf:"bytes,16,rep,name=generated"`
+	Generated []GeneratedColumnSpec `json:"generated,omitempty" protobuf:"bytes,16,rep,name=generated"`
 	// Custom specifies a collection of columns to be generated. Custom columns are specified by end-users
+	// +kubebuilder:validation:Optional
 	Custom []GeneratedColumnSpec `json:"custom,omitempty" protobuf:"bytes,17,rep,name=custom"`
 	// Indicates if all of all the columns specified by the Columns field should be dropped
 	// +kubebuilder:default:=false
@@ -753,23 +754,31 @@ type FeatureImportance struct {
 }
 
 type TimeSeriesPipelineSpec struct {
+	// generate all features.
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	Log *bool `json:"log,omitempty" protobuf:"bytes,1,opt,name=log"` // should we use the target log.
+	All *bool `json:"all,omitempty" protobuf:"varint,1,opt,name=all"` // should we use the target log.
+	// when computing moving avg, use exponential moving avg, other use regular moving avg
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	EMA *bool `json:"all,omitempty" protobuf:"varint,2,opt,name=ema"` // should we use the target log.
+	// +kubebuilder:default:=true
+	// +kubebuilder:validation:Optional
+	Log *bool `json:"log,omitempty" protobuf:"varint,3,opt,name=log"` // should we use the target log.
 	// The list of windows to use when generating features.
 	// +kubebuilder:validation:Optional
-	Windows []int32 `json:"windows,omitempty" protobuf:"bytes,2,opt,name=windows"`
+	Windows []int32 `json:"windows,omitempty" protobuf:"bytes,4,opt,name=windows"`
 	// The list of lags to use when generating features
 	// +kubebuilder:validation:Optional
-	Lags []int32 `json:"lags,omitempty" protobuf:"bytes,3,opt,name=lags"`
+	Lags []int32 `json:"lags,omitempty" protobuf:"bytes,5,opt,name=lags"`
 	// The list of metrics to generate for each combination of lag and windows.
 	// The default list is min,max,median,stddev
 	// +kubebuilder:validation:Optional
-	Functions []catalog.Metric `json:"functions,omitempty" protobuf:"bytes,4,opt,name=functions"`
+	Functions []catalog.Metric `json:"functions,omitempty" protobuf:"bytes,6,opt,name=functions"`
 	// The list of final features that were selected by the time series.
 	// Those feature were selected based on importance.
 	// +kubebuilder:validation:Optional
-	SelectedFeatures []string `json:"selected,omitempty" protobuf:"bytes,5,opt,name=selected"`
+	Features []string `json:"features,omitempty" protobuf:"bytes,7,opt,name=features"`
 }
 
 // SuccessiveHalvingSpec records the position of a single model in a successive halving search

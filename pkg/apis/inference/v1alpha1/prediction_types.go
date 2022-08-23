@@ -213,7 +213,7 @@ type ForecastPredictionSpec struct {
 	// +kubebuilder:validation:Optional
 	HierarchyValues map[string]string `json:"hierarchyValues,omitempty" protobuf:"bytes,1,opt,name=hierarchyValues"`
 	// The interval of the forecast
-	Horizon training.PeriodSpec `json:"horizon,omitempty" protobuf:"bytes,2,opt,name=horizon"`
+	Horizon training.WindowSpec `json:"horizon,omitempty" protobuf:"bytes,2,opt,name=horizon"`
 }
 
 // The result of forecasting one item. The forecast data itself is stored on the cloud.

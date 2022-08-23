@@ -9191,7 +9191,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ForecastPredicti
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ForecastPredictionSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
     hierarchyvaluesMap: (f = msg.getHierarchyvaluesMap()) ? f.toObject(includeInstance, undefined) : [],
-    horizon: (f = msg.getHorizon()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.PeriodSpec.toObject(includeInstance, f)
+    horizon: (f = msg.getHorizon()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.WindowSpec.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -9235,8 +9235,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ForecastPredicti
          });
       break;
     case 2:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.PeriodSpec;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.PeriodSpec.deserializeBinaryFromReader);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.WindowSpec;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.WindowSpec.deserializeBinaryFromReader);
       msg.setHorizon(value);
       break;
     default:
@@ -9277,7 +9277,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ForecastPredicti
     writer.writeMessage(
       2,
       f,
-      github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.PeriodSpec.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.WindowSpec.serializeBinaryToWriter
     );
   }
 };
@@ -9306,17 +9306,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ForecastPredicti
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSpec horizon = 2;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSpec}
+ * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.WindowSpec horizon = 2;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.WindowSpec}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ForecastPredictionSpec.prototype.getHorizon = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSpec} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.PeriodSpec, 2));
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.WindowSpec} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.WindowSpec, 2));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSpec|undefined} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.WindowSpec|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ForecastPredictionSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ForecastPredictionSpec.prototype.setHorizon = function(value) {
@@ -9376,7 +9376,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ForecastRun.toOb
   var f, obj = {
     key: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     modeluri: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    horizon: (f = msg.getHorizon()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.PeriodSpec.toObject(includeInstance, f)
+    horizon: (f = msg.getHorizon()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.WindowSpec.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -9422,8 +9422,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ForecastRun.dese
       msg.setModeluri(value);
       break;
     case 3:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.PeriodSpec;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.PeriodSpec.deserializeBinaryFromReader);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.WindowSpec;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.WindowSpec.deserializeBinaryFromReader);
       msg.setHorizon(value);
       break;
     default:
@@ -9474,7 +9474,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ForecastRun.seri
     writer.writeMessage(
       3,
       f,
-      github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.PeriodSpec.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.WindowSpec.serializeBinaryToWriter
     );
   }
 };
@@ -9553,17 +9553,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ForecastRun.prot
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSpec horizon = 3;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSpec}
+ * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.WindowSpec horizon = 3;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.WindowSpec}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ForecastRun.prototype.getHorizon = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSpec} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.PeriodSpec, 3));
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.WindowSpec} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.WindowSpec, 3));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSpec|undefined} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.WindowSpec|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ForecastRun} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ForecastRun.prototype.setHorizon = function(value) {

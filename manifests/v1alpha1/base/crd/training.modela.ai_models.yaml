@@ -647,10 +647,22 @@ spec:
                               description: The text tokenizer character
                               type: string
                           type: object
-                        timeseries:
+                        ts:
                           description: TimeSeries specify the fe to try in case of
                             a pipeline
                           properties:
+                            all:
+                              default: false
+                              description: when computing moving avg, use exponential
+                                moving avg, other use regular moving avg
+                              type: boolean
+                            features:
+                              description: The list of final features that were selected
+                                by the time series. Those feature were selected based
+                                on importance.
+                              items:
+                                type: string
+                              type: array
                             functions:
                               description: The list of metrics to generate for each
                                 combination of lag and windows. The default list is
@@ -668,13 +680,6 @@ spec:
                             log:
                               default: true
                               type: boolean
-                            selected:
-                              description: The list of final features that were selected
-                                by the time series. Those feature were selected based
-                                on importance.
-                              items:
-                                type: string
-                              type: array
                             windows:
                               description: The list of windows to use when generating
                                 features.
@@ -1043,11 +1048,6 @@ spec:
                     description: The backtest specification, the system supports back
                       testing with expanding windows.
                     properties:
-                      Horizon:
-                        description: The number of data points to forecast on.
-                        format: int32
-                        minimum: 0
-                        type: integer
                       gap:
                         description: The number of data points between each windows
                         format: int32
@@ -1065,158 +1065,30 @@ spec:
                         description: Number of splits. Default is 5
                         format: int32
                         type: integer
-                    type: object
-                  changepoints:
-                    description: Set an holiday schedule for a country. Change point
-                      specification
-                    properties:
-                      "N":
-                        description: number of change points
+                      testSize:
+                        description: The number of data points to forecast on.
                         format: int32
+                        minimum: 0
                         type: integer
-                      range:
-                        description: Change point range
-                        type: number
                     type: object
-                  confidenceIntervals:
-                    description: The confidence levels for the forecast, each level
-                      must be between 1-100.
-                    format: int32
-                    minimum: 0
-                    type: integer
-                  customSeasonalities:
-                    description: The list of additional regressors. The regresors
-                      are part of the time series data
-                    items:
-                      description: SeasonalitySpec defines the custom seasonality
-                      properties:
-                        fourierOrder:
-                          format: int32
-                          type: integer
-                        name:
-                          description: The name of the custom seasonality
-                          type: string
-                        period:
-                          description: The name of the custom seasonality
-                          type: number
-                      type: object
-                    type: array
-                  data:
-                    description: Specification of the forecast data.
-                    properties:
-                      dailySeasonality:
-                        description: Define the seasonality for a period (yearly /
-                          monthly / daily)
-                        properties:
-                          enabled:
-                            default: true
-                            description: Is this seasonality enabled
-                            type: boolean
-                          mode:
-                            default: auto
-                            enum:
-                            - multipicative
-                            - additive
-                            - auto
-                            - none
-                            type: string
-                          periods:
-                            default: 0
-                            description: If enabled, the number of data points in
-                              the interval
-                            format: int32
-                            type: integer
-                        type: object
-                      datetimeFormat:
-                        description: The format of the datetime column. Used default
-                        type: string
-                      growth:
-                        enum:
-                        - linear
-                        - logistic
-                        - flat
-                        type: string
-                      keyColumns:
-                        description: Column names for the time series key
-                        items:
-                          type: string
-                        type: array
-                      regressors:
-                        description: The list of additional regressors. The regresors
-                          are part of the time series data
-                        items:
-                          properties:
-                            name:
-                              description: The Name of the regressor
-                              type: string
-                            priorScale:
-                              default: 0
-                              description: The Name of the regressor
-                              type: number
-                            standardize:
-                              default: false
-                              description: The Name of the regressor
-                              type: boolean
-                          type: object
-                        type: array
-                      targetColumn:
-                        description: The name of the column holding the value. By
-                          default this is the target column from the dataset.
-                        type: string
-                      timeColumn:
-                        description: 'General Forecast attributes: The name of the
-                          time column'
-                        type: string
-                      weeklySeasonality:
-                        description: Define the seasonality for a period (yearly /
-                          monthly / daily)
-                        properties:
-                          enabled:
-                            default: true
-                            description: Is this seasonality enabled
-                            type: boolean
-                          mode:
-                            default: auto
-                            enum:
-                            - multipicative
-                            - additive
-                            - auto
-                            - none
-                            type: string
-                          periods:
-                            default: 0
-                            description: If enabled, the number of data points in
-                              the interval
-                            format: int32
-                            type: integer
-                        type: object
-                      yearlySeasonality:
-                        description: Define the seasonality for a period (yearly /
-                          monthly / daily)
-                        properties:
-                          enabled:
-                            default: true
-                            description: Is this seasonality enabled
-                            type: boolean
-                          mode:
-                            default: auto
-                            enum:
-                            - multipicative
-                            - additive
-                            - auto
-                            - none
-                            type: string
-                          periods:
-                            default: 0
-                            description: If enabled, the number of data points in
-                              the interval
-                            format: int32
-                            type: integer
-                        type: object
-                    type: object
+                  datetimeFormat:
+                    description: The format of the datetime column. Used default
+                    type: string
                   fe:
                     description: Feature engineering spec.
                     properties:
+                      all:
+                        default: false
+                        description: when computing moving avg, use exponential moving
+                          avg, other use regular moving avg
+                        type: boolean
+                      features:
+                        description: The list of final features that were selected
+                          by the time series. Those feature were selected based on
+                          importance.
+                        items:
+                          type: string
+                        type: array
                       functions:
                         description: The list of metrics to generate for each combination
                           of lag and windows. The default list is min,max,median,stddev
@@ -1232,13 +1104,6 @@ spec:
                       log:
                         default: true
                         type: boolean
-                      selected:
-                        description: The list of final features that were selected
-                          by the time series. Those feature were selected based on
-                          importance.
-                        items:
-                          type: string
-                        type: array
                       windows:
                         description: The list of windows to use when generating features.
                         items:
@@ -1252,8 +1117,8 @@ spec:
                     items:
                       type: string
                     type: array
-                  forecast:
-                    description: The forecast periods
+                  future:
+                    description: Specification for the future windows
                     properties:
                       interval:
                         description: The period interval
@@ -1268,78 +1133,56 @@ spec:
                         - year
                         type: string
                       length:
-                        description: The windows end day
+                        description: The window length
                         format: int32
                         type: integer
                       start:
                         default: 0
-                        description: The number of intervals to start
+                        description: The number of intervals to start. If the start
+                          is more than 0, there is a gap.
                         format: int32
                         type: integer
                     type: object
-                  history:
-                    description: The historical periods
-                    properties:
-                      interval:
-                        description: The period interval
-                        enum:
-                        - second
-                        - minute
-                        - hour
-                        - day
-                        - week
-                        - month
-                        - quarter
-                        - year
-                        type: string
-                      length:
-                        description: The windows end day
-                        format: int32
-                        type: integer
-                      start:
-                        default: 0
-                        description: The number of intervals to start
-                        format: int32
-                        type: integer
-                    type: object
-                  holiday:
+                  holidays:
                     description: The spec for the holiday
-                    properties:
-                      country:
-                        description: / The HolidayCountry unit
-                        enum:
-                        - US
-                        - BR
-                        - ID
-                        - IN
-                        - MY
-                        - VN
-                        - TH
-                        - PH
-                        - PK
-                        - BD
-                        - EG
-                        - CN
-                        - RU
-                        - KR
-                        - BY
-                        - AE
-                        - none
-                        type: string
-                      datasetName:
-                        description: For custom holiday use external dataset
-                        type: string
-                      enabled:
-                        default: false
-                        description: If true enable holidays
-                        type: boolean
-                      holidayColumn:
-                        description: The name of the holiday column. If the column
-                          is empty, no holiday Column name of the first level of grouping
-                        type: string
-                    type: object
-                  intevalWidth:
-                    type: number
+                    items:
+                      properties:
+                        country:
+                          description: / The HolidayCountry unit
+                          enum:
+                          - US
+                          - BR
+                          - ID
+                          - IN
+                          - MY
+                          - VN
+                          - TH
+                          - PH
+                          - PK
+                          - BD
+                          - EG
+                          - CN
+                          - RU
+                          - KR
+                          - BY
+                          - AE
+                          - none
+                          type: string
+                        datasetName:
+                          description: For custom holiday use external dataset
+                          type: string
+                        holidayColumn:
+                          description: The name of the holiday column. If the column
+                            is empty, no holiday Column name of the first level of
+                            grouping
+                          type: string
+                      type: object
+                    type: array
+                  keyColumns:
+                    description: Column names for the time series key
+                    items:
+                      type: string
+                    type: array
                   outputLocation:
                     description: The data location that would store the forecast result.
                     properties:
@@ -1453,6 +1296,32 @@ spec:
                           which specifies the DataLocation
                         type: string
                     type: object
+                  past:
+                    description: Specification for the past windows
+                    properties:
+                      interval:
+                        description: The period interval
+                        enum:
+                        - second
+                        - minute
+                        - hour
+                        - day
+                        - week
+                        - month
+                        - quarter
+                        - year
+                        type: string
+                      length:
+                        description: The window length
+                        format: int32
+                        type: integer
+                      start:
+                        default: 0
+                        description: The number of intervals to start. If the start
+                          is more than 0, there is a gap.
+                        format: int32
+                        type: integer
+                    type: object
                   plot:
                     description: If true generate the plots
                     type: boolean
@@ -1473,17 +1342,154 @@ spec:
                           update the forecast connection.
                         type: boolean
                     type: object
-                  seasonality:
-                    description: The generate seasonality mode
-                    enum:
-                    - multipicative
-                    - additive
-                    - auto
-                    - none
+                  prophet:
+                    description: If using prophet, those are the prophet settings
+                    properties:
+                      changePointRange:
+                        description: Change point range
+                        type: number
+                      changePoints:
+                        description: number of change points
+                        format: int32
+                        type: integer
+                      confidenceIntervals:
+                        description: The confidence levels for the forecast, each
+                          level must be between 1-100.
+                        format: int32
+                        minimum: 0
+                        type: integer
+                      customSeasonalities:
+                        description: Change point range
+                        items:
+                          description: SeasonalitySpec defines the custom seasonality
+                          properties:
+                            fourierOrder:
+                              format: int32
+                              type: integer
+                            name:
+                              description: The name of the custom seasonality
+                              type: string
+                            period:
+                              description: The name of the custom seasonality
+                              type: number
+                          type: object
+                        type: array
+                      dailySeasonality:
+                        description: Define the seasonality for a period (yearly /
+                          monthly / daily)
+                        properties:
+                          enabled:
+                            default: true
+                            description: Is this seasonality enabled
+                            type: boolean
+                          mode:
+                            default: auto
+                            enum:
+                            - multipicative
+                            - additive
+                            - auto
+                            - none
+                            type: string
+                          periods:
+                            default: 0
+                            description: If enabled, the number of data points in
+                              the interval
+                            format: int32
+                            type: integer
+                        type: object
+                      growth:
+                        enum:
+                        - linear
+                        - logistic
+                        - flat
+                        type: string
+                      intervalWidth:
+                        type: number
+                      seasonality:
+                        description: The generate seasonality mode
+                        enum:
+                        - multipicative
+                        - additive
+                        - auto
+                        - none
+                        type: string
+                      uncertaintySamples:
+                        format: int32
+                        type: integer
+                      weeklySeasonality:
+                        description: Define the seasonality for a period (yearly /
+                          monthly / daily)
+                        properties:
+                          enabled:
+                            default: true
+                            description: Is this seasonality enabled
+                            type: boolean
+                          mode:
+                            default: auto
+                            enum:
+                            - multipicative
+                            - additive
+                            - auto
+                            - none
+                            type: string
+                          periods:
+                            default: 0
+                            description: If enabled, the number of data points in
+                              the interval
+                            format: int32
+                            type: integer
+                        type: object
+                      yearlySeasonality:
+                        description: Define the seasonality for a period (yearly /
+                          monthly / daily)
+                        properties:
+                          enabled:
+                            default: true
+                            description: Is this seasonality enabled
+                            type: boolean
+                          mode:
+                            default: auto
+                            enum:
+                            - multipicative
+                            - additive
+                            - auto
+                            - none
+                            type: string
+                          periods:
+                            default: 0
+                            description: If enabled, the number of data points in
+                              the interval
+                            format: int32
+                            type: integer
+                        type: object
+                    type: object
+                  regressors:
+                    description: The list of additional regressors. The regressors
+                      are part of the time series data
+                    items:
+                      properties:
+                        name:
+                          description: The Name of the regressor
+                          type: string
+                        priorScale:
+                          default: 0
+                          description: This is a regularization parameter, to adjust
+                            the affect of the regressor.
+                          type: number
+                        standardize:
+                          default: false
+                          description: Set to true if the regressor is standardized
+                          type: boolean
+                      type: object
+                    type: array
+                  targetColumn:
+                    description: The name of the column holding the value. By default
+                      this is the target column from the dataset.
                     type: string
-                  uncertaintySamples:
-                    format: int32
-                    type: integer
+                  timeColumn:
+                    description: The name of the time column, this should be taken
+                      from the data source.
+                    type: string
                 type: object
               genDriftDetector:
                 default: false
