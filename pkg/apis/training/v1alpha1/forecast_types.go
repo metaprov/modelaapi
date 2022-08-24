@@ -227,6 +227,29 @@ type ForecasterTrainingSpec struct {
 	// If using prophet, those are the prophet settings
 	// +kubebuilder:validation:Optional
 	Prophet ProphetSpec `json:"prophet,omitempty" protobuf:"bytes,17,opt,name=prophet"`
+	// Definitions of the many models
+	// +kubebuilder:validation:Optional
+	ManyModels ManyModelsSpec `json:"manyModels,omitempty" protobuf:"bytes,18,opt,name=manyModels"`
+}
+
+// A spec for many models definitions.
+// If enabled, the study would generate models based on the levels of the keys
+type ManyModelsSpec struct {
+	// If true, use sliding windows, else use expanding windows
+	// +kubebuilder:default = false
+	// +kubebuilder:validation:Optional
+	Enabled *bool `json:"sliding,omitempty" protobuf:"varint,1,opt,name=enabled"`
+	// Define the grouping of the input file. A model will be generated for every group
+	// +kubebuilder:validation:Optional
+	GroupBy []string `json:"groupBy,omitempty" protobuf:"bytes,2,rep,name=groupBy"`
+	// If true, generate a prophet model for each time series
+	// +kubebuilder:default = true
+	// +kubebuilder:validation:Optional
+	Prophet *bool `json:"prophet,omitempty" protobuf:"varint,3,opt,name=prophet"`
+	// If true, generate a arima model for each time series
+	// +kubebuilder:default = false
+	// +kubebuilder:validation:Optional
+	Arima *bool `json:"arima,omitempty" protobuf:"varint,4,opt,name=arima"`
 }
 
 // BacktestSpec specify the back test

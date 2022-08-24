@@ -1285,6 +1285,11 @@ export class ForecasterTrainingSpec extends jspb.Message {
   hasProphet(): boolean;
   clearProphet(): ForecasterTrainingSpec;
 
+  getManymodels(): ManyModelsSpec | undefined;
+  setManymodels(value?: ManyModelsSpec): ForecasterTrainingSpec;
+  hasManymodels(): boolean;
+  clearManymodels(): ForecasterTrainingSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ForecasterTrainingSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ForecasterTrainingSpec): ForecasterTrainingSpec.AsObject;
@@ -1311,6 +1316,7 @@ export namespace ForecasterTrainingSpec {
     featuresList: Array<string>,
     fe?: TimeSeriesPipelineSpec.AsObject,
     prophet?: ProphetSpec.AsObject,
+    manymodels?: ManyModelsSpec.AsObject,
   }
 }
 
@@ -1671,6 +1677,38 @@ export namespace Level {
     freq: string,
     aggregate: string,
     valuesList: Array<string>,
+  }
+}
+
+export class ManyModelsSpec extends jspb.Message {
+  getEnabled(): boolean;
+  setEnabled(value: boolean): ManyModelsSpec;
+
+  getGroupbyList(): Array<string>;
+  setGroupbyList(value: Array<string>): ManyModelsSpec;
+  clearGroupbyList(): ManyModelsSpec;
+  addGroupby(value: string, index?: number): ManyModelsSpec;
+
+  getProphet(): boolean;
+  setProphet(value: boolean): ManyModelsSpec;
+
+  getArima(): boolean;
+  setArima(value: boolean): ManyModelsSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ManyModelsSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: ManyModelsSpec): ManyModelsSpec.AsObject;
+  static serializeBinaryToWriter(message: ManyModelsSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ManyModelsSpec;
+  static deserializeBinaryFromReader(message: ManyModelsSpec, reader: jspb.BinaryReader): ManyModelsSpec;
+}
+
+export namespace ManyModelsSpec {
+  export type AsObject = {
+    enabled: boolean,
+    groupbyList: Array<string>,
+    prophet: boolean,
+    arima: boolean,
   }
 }
 
@@ -3064,6 +3102,9 @@ export class ModelSpec extends jspb.Message {
   getReleased(): boolean;
   setReleased(value: boolean): ModelSpec;
 
+  getRegistered(): boolean;
+  setRegistered(value: boolean): ModelSpec;
+
   getExplained(): boolean;
   setExplained(value: boolean): ModelSpec;
 
@@ -3180,6 +3221,7 @@ export namespace ModelSpec {
     archived: boolean,
     forecasted: boolean,
     released: boolean,
+    registered: boolean,
     explained: boolean,
     codegenerated: boolean,
     baseline: boolean,

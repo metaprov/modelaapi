@@ -652,6 +652,10 @@ spec:
                             a pipeline
                           properties:
                             all:
+                              default: true
+                              description: generate all features.
+                              type: boolean
+                            ema:
                               default: false
                               description: when computing moving avg, use exponential
                                 moving avg, other use regular moving avg
@@ -1078,6 +1082,10 @@ spec:
                     description: Feature engineering spec.
                     properties:
                       all:
+                        default: true
+                        description: generate all features.
+                        type: boolean
+                      ema:
                         default: false
                         description: when computing moving avg, use exponential moving
                           avg, other use regular moving avg
@@ -1183,6 +1191,28 @@ spec:
                     items:
                       type: string
                     type: array
+                  manyModels:
+                    description: Definitions of the many models
+                    properties:
+                      arima:
+                        description: If true, generate a arima model for each time
+                          series
+                        type: boolean
+                      groupBy:
+                        description: Define the grouping of the input file. A model
+                          will be generated for every group
+                        items:
+                          type: string
+                        type: array
+                      prophet:
+                        description: If true, generate a prophet model for each time
+                          series
+                        type: boolean
+                      sliding:
+                        description: If true, use sliding windows, else use expanding
+                          windows
+                        type: boolean
+                    type: object
                   outputLocation:
                     description: The data location that would store the forecast result.
                     properties:
@@ -1516,6 +1546,12 @@ spec:
                   itReviewer:
                     description: The account name of the IT reviewer
                     type: string
+                  members:
+                    description: The name of the team members account that goveren
+                      this data product.
+                    items:
+                      type: string
+                    type: array
                 type: object
               interpretability:
                 description: Interpretability specifies the configuration to generate
@@ -1747,6 +1783,12 @@ spec:
                 default: false
                 description: Pushed indicates that the Model image should be pushed
                   to a Docker image registry
+                type: boolean
+              registered:
+                default: false
+                description: Registered indicate if this model is registered with
+                  the model registry. A registred model cannot be garbage collected,
+                  and apper in the model registry page.
                 type: boolean
               released:
                 default: false

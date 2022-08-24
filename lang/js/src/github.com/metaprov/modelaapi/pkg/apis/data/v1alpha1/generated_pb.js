@@ -1957,7 +1957,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec.repeatedFields_, null);
 };
 goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -40802,6 +40802,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceReviewStatu
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec.repeatedFields_ = [6];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -40837,7 +40844,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec.toObje
     country: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     itreviewer: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     compliancereviewer: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    businessreviewer: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
+    businessreviewer: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    membersList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -40893,6 +40901,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec.deseri
     case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setBusinessreviewer(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addMembers(value);
       break;
     default:
       reader.skipField();
@@ -40955,6 +40967,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec.serial
   if (f != null) {
     writer.writeString(
       5,
+      f
+    );
+  }
+  f = message.getMembersList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      6,
       f
     );
   }
@@ -41138,6 +41157,43 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec.protot
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec.prototype.hasBusinessreviewer = function() {
   return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * repeated string members = 6;
+ * @return {!Array<string>}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec.prototype.getMembersList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 6));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec.prototype.setMembersList = function(value) {
+  return jspb.Message.setField(this, 6, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec.prototype.addMembers = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 6, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec.prototype.clearMembersList = function() {
+  return this.setMembersList([]);
 };
 
 

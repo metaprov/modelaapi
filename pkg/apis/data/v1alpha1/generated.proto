@@ -2782,6 +2782,10 @@ message GovernanceSpec {
   // The account name of the business reviewer
   // +kubebuilder:validation:Optional
   optional string businessReviewer = 5;
+
+  // The name of the team members account that goveren this data product.
+  // +kubebuilder:validation:Optional
+  repeated string members = 6;
 }
 
 // GovernanceStatus describes the current state of a governance review for a model

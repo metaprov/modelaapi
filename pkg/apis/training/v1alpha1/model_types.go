@@ -255,30 +255,35 @@ type ModelSpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Released *bool `json:"released,omitempty" protobuf:"varint,28,opt,name=released"`
+	// Registered indicate if this model is registered with the model registry.
+	// A registred model cannot be garbage collected, and apper in the model registry page.
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Registered *bool `json:"registered,omitempty" protobuf:"varint,29,opt,name=registered"`
 	// Explained indicates if a workload to compute SHAP values/diagrams should be executed
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Explained *bool `json:"explained,omitempty" protobuf:"varint,29,opt,name=explained"`
+	Explained *bool `json:"explained,omitempty" protobuf:"varint,30,opt,name=explained"`
 	// Not implemented. For future use. If true,generate code when model trained
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	CodeGenerated *bool `json:"codeGenerated,omitempty" protobuf:"varint,30,opt,name=codeGenerated"`
+	CodeGenerated *bool `json:"codeGenerated,omitempty" protobuf:"varint,31,opt,name=codeGenerated"`
 	// Baseline indicates if the Model was produced by the baseline phase of a Study
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Baseline *bool `json:"baseline,omitempty" protobuf:"varint,31,opt,name=baseline"`
+	Baseline *bool `json:"baseline,omitempty" protobuf:"varint,32,opt,name=baseline"`
 	// GenDriftDetector indicates if we should generate a drift detector model for this model
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	GenDriftDetector *bool `json:"genDriftDetector,omitempty" protobuf:"varint,32,opt,name=genDriftDetector"`
+	GenDriftDetector *bool `json:"genDriftDetector,omitempty" protobuf:"varint,33,opt,name=genDriftDetector"`
 	// Fast indicates if the Model should skip profiling, explaining, and reporting
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Fast *bool `json:"fast,omitempty" protobuf:"varint,33,opt,name=fast"`
+	Fast *bool `json:"fast,omitempty" protobuf:"varint,34,opt,name=fast"`
 	// Indicate if this model should be unit tested.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	UnitTested *bool `json:"unitTested,omitempty" protobuf:"varint,34,opt,name=unitTested"`
+	UnitTested *bool `json:"unitTested,omitempty" protobuf:"varint,35,opt,name=unitTested"`
 	// The reference to the lated feedback dataset
 	// +kubebuilder:validation:Optional
 	FeedbackDatasetRef *v1.ObjectReference `json:"feedbackDatasetRef,omitempty" protobuf:"varint,36,opt,name=feedbackDatasetRef"`
@@ -761,7 +766,7 @@ type TimeSeriesPipelineSpec struct {
 	// when computing moving avg, use exponential moving avg, other use regular moving avg
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	EMA *bool `json:"all,omitempty" protobuf:"varint,2,opt,name=ema"` // should we use the target log.
+	EMA *bool `json:"ema,omitempty" protobuf:"varint,2,opt,name=ema"` // should we use the target log.
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
 	Log *bool `json:"log,omitempty" protobuf:"varint,3,opt,name=log"` // should we use the target log.

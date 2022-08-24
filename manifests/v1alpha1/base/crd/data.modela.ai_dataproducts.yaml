@@ -299,6 +299,12 @@ spec:
                   itReviewer:
                     description: The account name of the IT reviewer
                     type: string
+                  members:
+                    description: The name of the team members account that goveren
+                      this data product.
+                    items:
+                      type: string
+                    type: array
                 type: object
               imageLocation:
                 description: ImageLocation is the default Docker image repository

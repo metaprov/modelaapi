@@ -867,6 +867,10 @@ message ForecasterTrainingSpec {
   // If using prophet, those are the prophet settings
   // +kubebuilder:validation:Optional
   optional ProphetSpec prophet = 17;
+
+  // Definitions of the many models
+  // +kubebuilder:validation:Optional
+  optional ManyModelsSpec manyModels = 18;
 }
 
 // GarbageCollectionSpec specifies the configuration to garbage-collect unused Model resources
@@ -1071,6 +1075,29 @@ message Level {
 
   // The distinct values of the column for this level
   repeated string values = 5;
+}
+
+// A spec for many models definitions.
+// If enabled, the study would generate models based on the levels of the keys
+message ManyModelsSpec {
+  // If true, use sliding windows, else use expanding windows
+  // +kubebuilder:default = false
+  // +kubebuilder:validation:Optional
+  optional bool enabled = 1;
+
+  // Define the grouping of the input file. A model will be generated for every group
+  // +kubebuilder:validation:Optional
+  repeated string groupBy = 2;
+
+  // If true, generate a prophet model for each time series
+  // +kubebuilder:default = true
+  // +kubebuilder:validation:Optional
+  optional bool prophet = 3;
+
+  // If true, generate a arima model for each time series
+  // +kubebuilder:default = false
+  // +kubebuilder:validation:Optional
+  optional bool arima = 4;
 }
 
 message MedianPrunerOptions {
@@ -2098,35 +2125,41 @@ message ModelSpec {
   // +kubebuilder:validation:Optional
   optional bool released = 28;
 
+  // Registered indicate if this model is registered with the model registry.
+  // A registred model cannot be garbage collected, and apper in the model registry page.
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool registered = 29;
+
   // Explained indicates if a workload to compute SHAP values/diagrams should be executed
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool explained = 29;
+  optional bool explained = 30;
 
   // Not implemented. For future use. If true,generate code when model trained
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool codeGenerated = 30;
+  optional bool codeGenerated = 31;
 
   // Baseline indicates if the Model was produced by the baseline phase of a Study
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool baseline = 31;
+  optional bool baseline = 32;
 
   // GenDriftDetector indicates if we should generate a drift detector model for this model
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool genDriftDetector = 32;
+  optional bool genDriftDetector = 33;
 
   // Fast indicates if the Model should skip profiling, explaining, and reporting
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool fast = 33;
+  optional bool fast = 34;
 
   // Indicate if this model should be unit tested.
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool unitTested = 34;
+  optional bool unitTested = 35;
 
   // The reference to the lated feedback dataset
   // +kubebuilder:validation:Optional

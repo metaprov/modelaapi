@@ -280,6 +280,9 @@ type GovernanceSpec struct {
 	// The account name of the business reviewer
 	// +kubebuilder:validation:Optional
 	BusinessReviewer *string `json:"businessReviewer,omitempty" protobuf:"bytes,5,opt,name=businessReviewer"`
+	// The name of the team members account that goveren this data product.
+	// +kubebuilder:validation:Optional
+	Members []string `json:"members,omitempty" protobuf:"bytes,6,rep,name=members"`
 }
 
 type ApprovalType string

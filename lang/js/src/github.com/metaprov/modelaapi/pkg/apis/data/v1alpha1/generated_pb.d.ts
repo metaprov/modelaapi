@@ -3949,6 +3949,11 @@ export class GovernanceSpec extends jspb.Message {
   getBusinessreviewer(): string;
   setBusinessreviewer(value: string): GovernanceSpec;
 
+  getMembersList(): Array<string>;
+  setMembersList(value: Array<string>): GovernanceSpec;
+  clearMembersList(): GovernanceSpec;
+  addMembers(value: string, index?: number): GovernanceSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GovernanceSpec.AsObject;
   static toObject(includeInstance: boolean, msg: GovernanceSpec): GovernanceSpec.AsObject;
@@ -3964,6 +3969,7 @@ export namespace GovernanceSpec {
     itreviewer: string,
     compliancereviewer: string,
     businessreviewer: string,
+    membersList: Array<string>,
   }
 }
 
