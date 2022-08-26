@@ -377,9 +377,6 @@ spec:
                     type:
                       description: Type of  condition.
                       type: string
-                  required:
-                  - status
-                  - type
                   type: object
                 type: array
               failureMessage:
@@ -446,8 +443,6 @@ spec:
                 format: int32
                 type: integer
             type: object
-        required:
-        - spec
         type: object
     served: true
     storage: true

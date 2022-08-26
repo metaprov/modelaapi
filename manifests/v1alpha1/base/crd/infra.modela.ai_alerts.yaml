@@ -183,6 +183,8 @@ spec:
                 default: ""
                 description: The URL of the subject
                 type: string
+            required:
+            - notifierName
             type: object
           status:
             description: AlertStatus is the observed state of an Alert
@@ -214,9 +216,6 @@ spec:
                     type:
                       description: Type of account condition.
                       type: string
-                  required:
-                  - status
-                  - type
                   type: object
                 type: array
               failureMessage:
@@ -241,8 +240,6 @@ spec:
                 description: The current phase of the Alert
                 type: string
             type: object
-        required:
-        - spec
         type: object
     served: true
     storage: true

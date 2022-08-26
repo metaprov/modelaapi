@@ -58,6 +58,31 @@ spec:
           spec:
             description: ConnectionSpec defines the desired state of a Connection
             properties:
+              airtable:
+                properties:
+                  host:
+                    default: ""
+                    type: string
+                  keyspace:
+                    default: ""
+                    type: string
+                  password:
+                    default: ""
+                    type: string
+                  port:
+                    default: 9042
+                    format: int32
+                    maximum: 65535
+                    minimum: 1
+                    type: integer
+                  url:
+                    default: ""
+                    description: URL override the other settings
+                    type: string
+                  username:
+                    default: ""
+                    type: string
+                type: object
               alicloud:
                 properties:
                   accessKey:
@@ -70,6 +95,31 @@ spec:
                     default: ""
                     type: string
                   secretKey:
+                    default: ""
+                    type: string
+                type: object
+              appWrite:
+                properties:
+                  host:
+                    default: ""
+                    type: string
+                  keyspace:
+                    default: ""
+                    type: string
+                  password:
+                    default: ""
+                    type: string
+                  port:
+                    default: 9042
+                    format: int32
+                    maximum: 65535
+                    minimum: 1
+                    type: integer
+                  url:
+                    default: ""
+                    description: URL override the other settings
+                    type: string
+                  username:
                     default: ""
                     type: string
                 type: object
@@ -684,6 +734,29 @@ spec:
                     description: Username for image registry
                     type: string
                 type: object
+              influx:
+                properties:
+                  database:
+                    default: ""
+                    type: string
+                  host:
+                    default: ""
+                    type: string
+                  password:
+                    default: ""
+                    type: string
+                  port:
+                    format: int32
+                    maximum: 65535
+                    minimum: 1
+                    type: integer
+                  url:
+                    description: URL Override the other
+                    type: string
+                  username:
+                    default: ""
+                    type: string
+                type: object
               informix:
                 properties:
                   database:
@@ -1071,6 +1144,56 @@ spec:
                     default: ""
                     type: string
                 type: object
+              saleforce:
+                properties:
+                  host:
+                    default: ""
+                    type: string
+                  keyspace:
+                    default: ""
+                    type: string
+                  password:
+                    default: ""
+                    type: string
+                  port:
+                    default: 9042
+                    format: int32
+                    maximum: 65535
+                    minimum: 1
+                    type: integer
+                  url:
+                    default: ""
+                    description: URL override the other settings
+                    type: string
+                  username:
+                    default: ""
+                    type: string
+                type: object
+              sapCrm:
+                properties:
+                  host:
+                    default: ""
+                    type: string
+                  keyspace:
+                    default: ""
+                    type: string
+                  password:
+                    default: ""
+                    type: string
+                  port:
+                    default: 9042
+                    format: int32
+                    maximum: 65535
+                    minimum: 1
+                    type: integer
+                  url:
+                    default: ""
+                    description: URL override the other settings
+                    type: string
+                  username:
+                    default: ""
+                    type: string
+                type: object
               secretRef:
                 description: The reference to the secret which stores the sensitive
                   credentials required to connect to the external system
@@ -1337,6 +1460,31 @@ spec:
                     default: ""
                     type: string
                 type: object
+              timescale:
+                properties:
+                  host:
+                    default: ""
+                    type: string
+                  keyspace:
+                    default: ""
+                    type: string
+                  password:
+                    default: ""
+                    type: string
+                  port:
+                    default: 9042
+                    format: int32
+                    maximum: 65535
+                    minimum: 1
+                    type: integer
+                  url:
+                    default: ""
+                    description: URL override the other settings
+                    type: string
+                  username:
+                    default: ""
+                    type: string
+                type: object
               twitter:
                 properties:
                   token:
@@ -1362,6 +1510,31 @@ spec:
                     type: integer
                   url:
                     description: URL Override the other
+                    type: string
+                  username:
+                    default: ""
+                    type: string
+                type: object
+              victoriaMetrics:
+                properties:
+                  host:
+                    default: ""
+                    type: string
+                  keyspace:
+                    default: ""
+                    type: string
+                  password:
+                    default: ""
+                    type: string
+                  port:
+                    default: 9042
+                    format: int32
+                    maximum: 65535
+                    minimum: 1
+                    type: integer
+                  url:
+                    default: ""
+                    description: URL override the other settings
                     type: string
                   username:
                     default: ""
@@ -1400,6 +1573,9 @@ spec:
                     default: ""
                     type: string
                 type: object
+            required:
+            - provider
+            - secretRef
             type: object
           status:
             description: ConnectionStatus is the observed state of a Connection
@@ -1427,9 +1603,6 @@ spec:
                     type:
                       description: Type of account condition.
                       type: string
-                  required:
-                  - status
-                  - type
                   type: object
                 type: array
               failureMessage:
@@ -1449,8 +1622,6 @@ spec:
                 format: int64
                 type: integer
             type: object
-        required:
-        - spec
         type: object
     served: true
     storage: true

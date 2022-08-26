@@ -138,6 +138,8 @@ spec:
                   to the S3 API. See https://docs.aws.amazon.com/AmazonS3/latest/userguide/Versioning.html
                   for more information
                 type: boolean
+            required:
+            - connectionName
             type: object
           status:
             description: VirtualBucketStatus defines the observed state of a VirtualBucket
@@ -165,9 +167,6 @@ spec:
                     type:
                       description: Type of bucket condition.
                       type: string
-                  required:
-                  - status
-                  - type
                   type: object
                 type: array
               failureMessage:
@@ -188,8 +187,6 @@ spec:
                 format: int64
                 type: integer
             type: object
-        required:
-        - spec
         type: object
     served: true
     storage: true

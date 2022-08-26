@@ -173,6 +173,54 @@ message AccountStatus {
   repeated AccountCondition conditions = 5;
 }
 
+message AirTableSpec {
+  // +kubebuilder:default:=""
+  optional string host = 1;
+
+  // +kubebuilder:default:= 9042
+  // +kubebuilder:validation:Minimum=0
+  // +kubebuilder:validation:Minimum=1
+  // +kubebuilder:validation:Maximum=65535
+  optional int32 port = 2;
+
+  // +kubebuilder:default:=""
+  optional string keyspace = 3;
+
+  // +kubebuilder:default:=""
+  optional string username = 4;
+
+  // +kubebuilder:default:=""
+  optional string password = 5;
+
+  // URL override the other settings
+  // +kubebuilder:default:=""
+  optional string url = 6;
+}
+
+message AirWriteSpec {
+  // +kubebuilder:default:=""
+  optional string host = 1;
+
+  // +kubebuilder:default:= 9042
+  // +kubebuilder:validation:Minimum=0
+  // +kubebuilder:validation:Minimum=1
+  // +kubebuilder:validation:Maximum=65535
+  optional int32 port = 2;
+
+  // +kubebuilder:default:=""
+  optional string keyspace = 3;
+
+  // +kubebuilder:default:=""
+  optional string username = 4;
+
+  // +kubebuilder:default:=""
+  optional string password = 5;
+
+  // URL override the other settings
+  // +kubebuilder:default:=""
+  optional string url = 6;
+}
+
 // Alert represents temporal information about an event that occurred with a Modela custom resource
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
@@ -1150,9 +1198,30 @@ message ConnectionSpec {
   // +kubebuilder:validation:Optional
   optional DiscordSpec discord = 74;
 
+  // +kubebuilder:validation:Optional
+  optional InfluxDBSpec influx = 75;
+
+  // +kubebuilder:validation:Optional
+  optional TimescaleDBSpec timescale = 76;
+
+  // +kubebuilder:validation:Optional
+  optional VictoriaMetricsSpec victoriaMetrics = 77;
+
+  // +kubebuilder:validation:Optional
+  optional SaleforceSpec saleforce = 78;
+
+  // +kubebuilder:validation:Optional
+  optional SapCRMSpec sapCrm = 79;
+
+  // +kubebuilder:validation:Optional
+  optional AirTableSpec airtable = 80;
+
+  // +kubebuilder:validation:Optional
+  optional AirWriteSpec appWrite = 81;
+
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
-  optional string owner = 80;
+  optional string owner = 82;
 }
 
 // ConnectionStatus is the observed state of a Connection
@@ -1525,6 +1594,27 @@ message ImageRegistrySpec {
 
   // +kubebuilder:default:=""
   optional string password = 3;
+}
+
+message InfluxDBSpec {
+  // +kubebuilder:default:=""
+  optional string host = 1;
+
+  // +kubebuilder:validation:Minimum=1
+  // +kubebuilder:validation:Maximum=65535
+  optional int32 port = 2;
+
+  // +kubebuilder:default:=""
+  optional string database = 3;
+
+  // +kubebuilder:default:=""
+  optional string username = 4;
+
+  // +kubebuilder:default:=""
+  optional string password = 5;
+
+  // URL Override the other
+  optional string url = 6;
 }
 
 message InformixSpec {
@@ -2453,6 +2543,54 @@ message SFtpSpec {
   optional string password = 4;
 }
 
+message SaleforceSpec {
+  // +kubebuilder:default:=""
+  optional string host = 1;
+
+  // +kubebuilder:default:= 9042
+  // +kubebuilder:validation:Minimum=0
+  // +kubebuilder:validation:Minimum=1
+  // +kubebuilder:validation:Maximum=65535
+  optional int32 port = 2;
+
+  // +kubebuilder:default:=""
+  optional string keyspace = 3;
+
+  // +kubebuilder:default:=""
+  optional string username = 4;
+
+  // +kubebuilder:default:=""
+  optional string password = 5;
+
+  // URL override the other settings
+  // +kubebuilder:default:=""
+  optional string url = 6;
+}
+
+message SapCRMSpec {
+  // +kubebuilder:default:=""
+  optional string host = 1;
+
+  // +kubebuilder:default:= 9042
+  // +kubebuilder:validation:Minimum=0
+  // +kubebuilder:validation:Minimum=1
+  // +kubebuilder:validation:Maximum=65535
+  optional int32 port = 2;
+
+  // +kubebuilder:default:=""
+  optional string keyspace = 3;
+
+  // +kubebuilder:default:=""
+  optional string username = 4;
+
+  // +kubebuilder:default:=""
+  optional string password = 5;
+
+  // URL override the other settings
+  // +kubebuilder:default:=""
+  optional string url = 6;
+}
+
 message Scope {
   // +kubebuilder:validation:Optional
   optional string name = 1;
@@ -2836,6 +2974,30 @@ message TeradataSpec {
   optional string url = 6;
 }
 
+message TimescaleDBSpec {
+  // +kubebuilder:default:=""
+  optional string host = 1;
+
+  // +kubebuilder:default:= 9042
+  // +kubebuilder:validation:Minimum=0
+  // +kubebuilder:validation:Minimum=1
+  // +kubebuilder:validation:Maximum=65535
+  optional int32 port = 2;
+
+  // +kubebuilder:default:=""
+  optional string keyspace = 3;
+
+  // +kubebuilder:default:=""
+  optional string username = 4;
+
+  // +kubebuilder:default:=""
+  optional string password = 5;
+
+  // URL override the other settings
+  // +kubebuilder:default:=""
+  optional string url = 6;
+}
+
 message TwitterSpec {
   // +kubebuilder:default:=""
   optional string token = 1;
@@ -2910,6 +3072,30 @@ message VictorOpSpec {
 
   // +kubebuilder:default:=""
   optional string url = 3;
+}
+
+message VictoriaMetricsSpec {
+  // +kubebuilder:default:=""
+  optional string host = 1;
+
+  // +kubebuilder:default:= 9042
+  // +kubebuilder:validation:Minimum=0
+  // +kubebuilder:validation:Minimum=1
+  // +kubebuilder:validation:Maximum=65535
+  optional int32 port = 2;
+
+  // +kubebuilder:default:=""
+  optional string keyspace = 3;
+
+  // +kubebuilder:default:=""
+  optional string username = 4;
+
+  // +kubebuilder:default:=""
+  optional string password = 5;
+
+  // URL override the other settings
+  // +kubebuilder:default:=""
+  optional string url = 6;
 }
 
 // VirtualBucket represents an abstract object storage system used to store flat-files

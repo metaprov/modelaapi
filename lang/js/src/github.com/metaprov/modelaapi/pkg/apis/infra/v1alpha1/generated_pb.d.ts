@@ -220,6 +220,82 @@ export namespace AccountStatus {
   }
 }
 
+export class AirTableSpec extends jspb.Message {
+  getHost(): string;
+  setHost(value: string): AirTableSpec;
+
+  getPort(): number;
+  setPort(value: number): AirTableSpec;
+
+  getKeyspace(): string;
+  setKeyspace(value: string): AirTableSpec;
+
+  getUsername(): string;
+  setUsername(value: string): AirTableSpec;
+
+  getPassword(): string;
+  setPassword(value: string): AirTableSpec;
+
+  getUrl(): string;
+  setUrl(value: string): AirTableSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AirTableSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: AirTableSpec): AirTableSpec.AsObject;
+  static serializeBinaryToWriter(message: AirTableSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AirTableSpec;
+  static deserializeBinaryFromReader(message: AirTableSpec, reader: jspb.BinaryReader): AirTableSpec;
+}
+
+export namespace AirTableSpec {
+  export type AsObject = {
+    host: string,
+    port: number,
+    keyspace: string,
+    username: string,
+    password: string,
+    url: string,
+  }
+}
+
+export class AirWriteSpec extends jspb.Message {
+  getHost(): string;
+  setHost(value: string): AirWriteSpec;
+
+  getPort(): number;
+  setPort(value: number): AirWriteSpec;
+
+  getKeyspace(): string;
+  setKeyspace(value: string): AirWriteSpec;
+
+  getUsername(): string;
+  setUsername(value: string): AirWriteSpec;
+
+  getPassword(): string;
+  setPassword(value: string): AirWriteSpec;
+
+  getUrl(): string;
+  setUrl(value: string): AirWriteSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AirWriteSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: AirWriteSpec): AirWriteSpec.AsObject;
+  static serializeBinaryToWriter(message: AirWriteSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AirWriteSpec;
+  static deserializeBinaryFromReader(message: AirWriteSpec, reader: jspb.BinaryReader): AirWriteSpec;
+}
+
+export namespace AirWriteSpec {
+  export type AsObject = {
+    host: string,
+    port: number,
+    keyspace: string,
+    username: string,
+    password: string,
+    url: string,
+  }
+}
+
 export class Alert extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): Alert;
@@ -1927,6 +2003,41 @@ export class ConnectionSpec extends jspb.Message {
   hasDiscord(): boolean;
   clearDiscord(): ConnectionSpec;
 
+  getInflux(): InfluxDBSpec | undefined;
+  setInflux(value?: InfluxDBSpec): ConnectionSpec;
+  hasInflux(): boolean;
+  clearInflux(): ConnectionSpec;
+
+  getTimescale(): TimescaleDBSpec | undefined;
+  setTimescale(value?: TimescaleDBSpec): ConnectionSpec;
+  hasTimescale(): boolean;
+  clearTimescale(): ConnectionSpec;
+
+  getVictoriametrics(): VictoriaMetricsSpec | undefined;
+  setVictoriametrics(value?: VictoriaMetricsSpec): ConnectionSpec;
+  hasVictoriametrics(): boolean;
+  clearVictoriametrics(): ConnectionSpec;
+
+  getSaleforce(): SaleforceSpec | undefined;
+  setSaleforce(value?: SaleforceSpec): ConnectionSpec;
+  hasSaleforce(): boolean;
+  clearSaleforce(): ConnectionSpec;
+
+  getSapcrm(): SapCRMSpec | undefined;
+  setSapcrm(value?: SapCRMSpec): ConnectionSpec;
+  hasSapcrm(): boolean;
+  clearSapcrm(): ConnectionSpec;
+
+  getAirtable(): AirTableSpec | undefined;
+  setAirtable(value?: AirTableSpec): ConnectionSpec;
+  hasAirtable(): boolean;
+  clearAirtable(): ConnectionSpec;
+
+  getAppwrite(): AirWriteSpec | undefined;
+  setAppwrite(value?: AirWriteSpec): ConnectionSpec;
+  hasAppwrite(): boolean;
+  clearAppwrite(): ConnectionSpec;
+
   getOwner(): string;
   setOwner(value: string): ConnectionSpec;
 
@@ -2012,6 +2123,13 @@ export namespace ConnectionSpec {
     kafka?: KafkaSpec.AsObject,
     neo4j?: Neo4JSpec.AsObject,
     discord?: DiscordSpec.AsObject,
+    influx?: InfluxDBSpec.AsObject,
+    timescale?: TimescaleDBSpec.AsObject,
+    victoriametrics?: VictoriaMetricsSpec.AsObject,
+    saleforce?: SaleforceSpec.AsObject,
+    sapcrm?: SapCRMSpec.AsObject,
+    airtable?: AirTableSpec.AsObject,
+    appwrite?: AirWriteSpec.AsObject,
     owner: string,
   }
 }
@@ -2705,6 +2823,44 @@ export namespace ImageRegistrySpec {
     host: string,
     username: string,
     password: string,
+  }
+}
+
+export class InfluxDBSpec extends jspb.Message {
+  getHost(): string;
+  setHost(value: string): InfluxDBSpec;
+
+  getPort(): number;
+  setPort(value: number): InfluxDBSpec;
+
+  getDatabase(): string;
+  setDatabase(value: string): InfluxDBSpec;
+
+  getUsername(): string;
+  setUsername(value: string): InfluxDBSpec;
+
+  getPassword(): string;
+  setPassword(value: string): InfluxDBSpec;
+
+  getUrl(): string;
+  setUrl(value: string): InfluxDBSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): InfluxDBSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: InfluxDBSpec): InfluxDBSpec.AsObject;
+  static serializeBinaryToWriter(message: InfluxDBSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): InfluxDBSpec;
+  static deserializeBinaryFromReader(message: InfluxDBSpec, reader: jspb.BinaryReader): InfluxDBSpec;
+}
+
+export namespace InfluxDBSpec {
+  export type AsObject = {
+    host: string,
+    port: number,
+    database: string,
+    username: string,
+    password: string,
+    url: string,
   }
 }
 
@@ -4346,6 +4502,82 @@ export namespace SFtpSpec {
   }
 }
 
+export class SaleforceSpec extends jspb.Message {
+  getHost(): string;
+  setHost(value: string): SaleforceSpec;
+
+  getPort(): number;
+  setPort(value: number): SaleforceSpec;
+
+  getKeyspace(): string;
+  setKeyspace(value: string): SaleforceSpec;
+
+  getUsername(): string;
+  setUsername(value: string): SaleforceSpec;
+
+  getPassword(): string;
+  setPassword(value: string): SaleforceSpec;
+
+  getUrl(): string;
+  setUrl(value: string): SaleforceSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SaleforceSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: SaleforceSpec): SaleforceSpec.AsObject;
+  static serializeBinaryToWriter(message: SaleforceSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SaleforceSpec;
+  static deserializeBinaryFromReader(message: SaleforceSpec, reader: jspb.BinaryReader): SaleforceSpec;
+}
+
+export namespace SaleforceSpec {
+  export type AsObject = {
+    host: string,
+    port: number,
+    keyspace: string,
+    username: string,
+    password: string,
+    url: string,
+  }
+}
+
+export class SapCRMSpec extends jspb.Message {
+  getHost(): string;
+  setHost(value: string): SapCRMSpec;
+
+  getPort(): number;
+  setPort(value: number): SapCRMSpec;
+
+  getKeyspace(): string;
+  setKeyspace(value: string): SapCRMSpec;
+
+  getUsername(): string;
+  setUsername(value: string): SapCRMSpec;
+
+  getPassword(): string;
+  setPassword(value: string): SapCRMSpec;
+
+  getUrl(): string;
+  setUrl(value: string): SapCRMSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SapCRMSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: SapCRMSpec): SapCRMSpec.AsObject;
+  static serializeBinaryToWriter(message: SapCRMSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SapCRMSpec;
+  static deserializeBinaryFromReader(message: SapCRMSpec, reader: jspb.BinaryReader): SapCRMSpec;
+}
+
+export namespace SapCRMSpec {
+  export type AsObject = {
+    host: string,
+    port: number,
+    keyspace: string,
+    username: string,
+    password: string,
+    url: string,
+  }
+}
+
 export class Scope extends jspb.Message {
   getName(): string;
   setName(value: string): Scope;
@@ -5006,6 +5238,44 @@ export namespace TeradataSpec {
   }
 }
 
+export class TimescaleDBSpec extends jspb.Message {
+  getHost(): string;
+  setHost(value: string): TimescaleDBSpec;
+
+  getPort(): number;
+  setPort(value: number): TimescaleDBSpec;
+
+  getKeyspace(): string;
+  setKeyspace(value: string): TimescaleDBSpec;
+
+  getUsername(): string;
+  setUsername(value: string): TimescaleDBSpec;
+
+  getPassword(): string;
+  setPassword(value: string): TimescaleDBSpec;
+
+  getUrl(): string;
+  setUrl(value: string): TimescaleDBSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TimescaleDBSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: TimescaleDBSpec): TimescaleDBSpec.AsObject;
+  static serializeBinaryToWriter(message: TimescaleDBSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TimescaleDBSpec;
+  static deserializeBinaryFromReader(message: TimescaleDBSpec, reader: jspb.BinaryReader): TimescaleDBSpec;
+}
+
+export namespace TimescaleDBSpec {
+  export type AsObject = {
+    host: string,
+    port: number,
+    keyspace: string,
+    username: string,
+    password: string,
+    url: string,
+  }
+}
+
 export class TwitterSpec extends jspb.Message {
   getToken(): string;
   setToken(value: string): TwitterSpec;
@@ -5170,6 +5440,44 @@ export namespace VictorOpSpec {
   export type AsObject = {
     apiid: string,
     apikey: string,
+    url: string,
+  }
+}
+
+export class VictoriaMetricsSpec extends jspb.Message {
+  getHost(): string;
+  setHost(value: string): VictoriaMetricsSpec;
+
+  getPort(): number;
+  setPort(value: number): VictoriaMetricsSpec;
+
+  getKeyspace(): string;
+  setKeyspace(value: string): VictoriaMetricsSpec;
+
+  getUsername(): string;
+  setUsername(value: string): VictoriaMetricsSpec;
+
+  getPassword(): string;
+  setPassword(value: string): VictoriaMetricsSpec;
+
+  getUrl(): string;
+  setUrl(value: string): VictoriaMetricsSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): VictoriaMetricsSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: VictoriaMetricsSpec): VictoriaMetricsSpec.AsObject;
+  static serializeBinaryToWriter(message: VictoriaMetricsSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): VictoriaMetricsSpec;
+  static deserializeBinaryFromReader(message: VictoriaMetricsSpec, reader: jspb.BinaryReader): VictoriaMetricsSpec;
+}
+
+export namespace VictoriaMetricsSpec {
+  export type AsObject = {
+    host: string,
+    port: number,
+    keyspace: string,
+    username: string,
+    password: string,
     url: string,
   }
 }

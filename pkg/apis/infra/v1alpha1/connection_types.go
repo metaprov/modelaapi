@@ -277,9 +277,30 @@ type ConnectionSpec struct {
 	// +kubebuilder:validation:Optional
 	Discord *DiscordSpec `json:"discrod,omitempty" protobuf:"bytes,74,opt,name=discord"`
 
+	// +kubebuilder:validation:Optional
+	InfluxDb *InfluxDBSpec `json:"influx,omitempty" protobuf:"bytes,75,opt,name=influx"`
+
+	// +kubebuilder:validation:Optional
+	TimescaleDB *TimescaleDBSpec `json:"timescale,omitempty" protobuf:"bytes,76,opt,name=timescale"`
+
+	// +kubebuilder:validation:Optional
+	VictoriaMetrics *VictoriaMetricsSpec `json:"victoriaMetrics,omitempty" protobuf:"bytes,77,opt,name=victoriaMetrics"`
+
+	// +kubebuilder:validation:Optional
+	Saleforce *SaleforceSpec `json:"saleforce,omitempty" protobuf:"bytes,78,opt,name=saleforce"`
+
+	// +kubebuilder:validation:Optional
+	SapCRM *SapCRMSpec `json:"sapCrm,omitempty" protobuf:"bytes,79,opt,name=sapCrm"`
+
+	// +kubebuilder:validation:Optional
+	AirTable *AirTableSpec `json:"airtable,omitempty" protobuf:"bytes,80,opt,name=airtable"`
+
+	// +kubebuilder:validation:Optional
+	AppWrite *AirWriteSpec `json:"appWrite,omitempty" protobuf:"bytes,81,opt,name=appWrite"`
+
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
-	Owner *string `json:"owner,omitempty" protobuf:"bytes,80,opt,name=owner"`
+	Owner *string `json:"owner,omitempty" protobuf:"bytes,82,opt,name=owner"`
 }
 
 // ConnectionStatus is the observed state of a Connection
@@ -643,6 +664,22 @@ type InformixSpec struct {
 	// +kubebuilder:default:=""
 	Host *string `json:"host,omitempty" protobuf:"bytes,1,opt,name=host"`
 	// +kubebuilder:default:=1526
+	// +kubebuilder:validation:Minimum=1
+	// +kubebuilder:validation:Maximum=65535
+	Port *int32 `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
+	// +kubebuilder:default:=""
+	Database *string `json:"database,omitempty" protobuf:"bytes,3,opt,name=database"`
+	// +kubebuilder:default:=""
+	Username *string `json:"username,omitempty" protobuf:"bytes,4,opt,name=username"`
+	// +kubebuilder:default:=""
+	Password *string `json:"password,omitempty" protobuf:"bytes,5,opt,name=password"`
+	// URL Override the other
+	URL *string `json:"url,omitempty" protobuf:"bytes,6,opt,name=url"`
+}
+
+type InfluxDBSpec struct {
+	// +kubebuilder:default:=""
+	Host *string `json:"host,omitempty" protobuf:"bytes,1,opt,name=host"`
 	// +kubebuilder:validation:Minimum=1
 	// +kubebuilder:validation:Maximum=65535
 	Port *int32 `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
@@ -1273,4 +1310,120 @@ type RabbitMQSpec struct {
 	Username *string `json:"username,omitempty" protobuf:"bytes,3,opt,name=username"`
 	// +kubebuilder:default:=""
 	Password *string `json:"password,omitempty" protobuf:"bytes,4,opt,name=password"`
+}
+
+type TimescaleDBSpec struct {
+	// +kubebuilder:default:=""
+	Host *string `json:"host,omitempty" protobuf:"bytes,1,opt,name=host"`
+	// +kubebuilder:default:= 9042
+	// +kubebuilder:validation:Minimum=0
+	// +kubebuilder:validation:Minimum=1
+	// +kubebuilder:validation:Maximum=65535
+	Port *int32 `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
+	// +kubebuilder:default:=""
+	KeySpace *string `json:"keyspace,omitempty" protobuf:"bytes,3,opt,name=keyspace"`
+	// +kubebuilder:default:=""
+	Username *string `json:"username,omitempty" protobuf:"bytes,4,opt,name=username"`
+	// +kubebuilder:default:=""
+	Password *string `json:"password,omitempty" protobuf:"bytes,5,opt,name=password"`
+	// URL override the other settings
+	// +kubebuilder:default:=""
+	URL *string `json:"url,omitempty" protobuf:"bytes,6,opt,name=url"`
+}
+
+type VictoriaMetricsSpec struct {
+	// +kubebuilder:default:=""
+	Host *string `json:"host,omitempty" protobuf:"bytes,1,opt,name=host"`
+	// +kubebuilder:default:= 9042
+	// +kubebuilder:validation:Minimum=0
+	// +kubebuilder:validation:Minimum=1
+	// +kubebuilder:validation:Maximum=65535
+	Port *int32 `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
+	// +kubebuilder:default:=""
+	KeySpace *string `json:"keyspace,omitempty" protobuf:"bytes,3,opt,name=keyspace"`
+	// +kubebuilder:default:=""
+	Username *string `json:"username,omitempty" protobuf:"bytes,4,opt,name=username"`
+	// +kubebuilder:default:=""
+	Password *string `json:"password,omitempty" protobuf:"bytes,5,opt,name=password"`
+	// URL override the other settings
+	// +kubebuilder:default:=""
+	URL *string `json:"url,omitempty" protobuf:"bytes,6,opt,name=url"`
+}
+
+type SaleforceSpec struct {
+	// +kubebuilder:default:=""
+	Host *string `json:"host,omitempty" protobuf:"bytes,1,opt,name=host"`
+	// +kubebuilder:default:= 9042
+	// +kubebuilder:validation:Minimum=0
+	// +kubebuilder:validation:Minimum=1
+	// +kubebuilder:validation:Maximum=65535
+	Port *int32 `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
+	// +kubebuilder:default:=""
+	KeySpace *string `json:"keyspace,omitempty" protobuf:"bytes,3,opt,name=keyspace"`
+	// +kubebuilder:default:=""
+	Username *string `json:"username,omitempty" protobuf:"bytes,4,opt,name=username"`
+	// +kubebuilder:default:=""
+	Password *string `json:"password,omitempty" protobuf:"bytes,5,opt,name=password"`
+	// URL override the other settings
+	// +kubebuilder:default:=""
+	URL *string `json:"url,omitempty" protobuf:"bytes,6,opt,name=url"`
+}
+
+type SapCRMSpec struct {
+	// +kubebuilder:default:=""
+	Host *string `json:"host,omitempty" protobuf:"bytes,1,opt,name=host"`
+	// +kubebuilder:default:= 9042
+	// +kubebuilder:validation:Minimum=0
+	// +kubebuilder:validation:Minimum=1
+	// +kubebuilder:validation:Maximum=65535
+	Port *int32 `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
+	// +kubebuilder:default:=""
+	KeySpace *string `json:"keyspace,omitempty" protobuf:"bytes,3,opt,name=keyspace"`
+	// +kubebuilder:default:=""
+	Username *string `json:"username,omitempty" protobuf:"bytes,4,opt,name=username"`
+	// +kubebuilder:default:=""
+	Password *string `json:"password,omitempty" protobuf:"bytes,5,opt,name=password"`
+	// URL override the other settings
+	// +kubebuilder:default:=""
+	URL *string `json:"url,omitempty" protobuf:"bytes,6,opt,name=url"`
+}
+
+type AirTableSpec struct {
+	// +kubebuilder:default:=""
+	Host *string `json:"host,omitempty" protobuf:"bytes,1,opt,name=host"`
+	// +kubebuilder:default:= 9042
+	// +kubebuilder:validation:Minimum=0
+	// +kubebuilder:validation:Minimum=1
+	// +kubebuilder:validation:Maximum=65535
+	Port *int32 `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
+	// +kubebuilder:default:=""
+	KeySpace *string `json:"keyspace,omitempty" protobuf:"bytes,3,opt,name=keyspace"`
+	// +kubebuilder:default:=""
+	Username *string `json:"username,omitempty" protobuf:"bytes,4,opt,name=username"`
+	// +kubebuilder:default:=""
+	Password *string `json:"password,omitempty" protobuf:"bytes,5,opt,name=password"`
+	// URL override the other settings
+	// +kubebuilder:default:=""
+	URL *string `json:"url,omitempty" protobuf:"bytes,6,opt,name=url"`
+}
+
+// +kubebuilder:validation:Optional
+
+type AirWriteSpec struct {
+	// +kubebuilder:default:=""
+	Host *string `json:"host,omitempty" protobuf:"bytes,1,opt,name=host"`
+	// +kubebuilder:default:= 9042
+	// +kubebuilder:validation:Minimum=0
+	// +kubebuilder:validation:Minimum=1
+	// +kubebuilder:validation:Maximum=65535
+	Port *int32 `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
+	// +kubebuilder:default:=""
+	KeySpace *string `json:"keyspace,omitempty" protobuf:"bytes,3,opt,name=keyspace"`
+	// +kubebuilder:default:=""
+	Username *string `json:"username,omitempty" protobuf:"bytes,4,opt,name=username"`
+	// +kubebuilder:default:=""
+	Password *string `json:"password,omitempty" protobuf:"bytes,5,opt,name=password"`
+	// URL override the other settings
+	// +kubebuilder:default:=""
+	URL *string `json:"url,omitempty" protobuf:"bytes,6,opt,name=url"`
 }

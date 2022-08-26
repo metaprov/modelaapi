@@ -191,6 +191,9 @@ spec:
                 maxLength: 64
                 minLength: 4
                 type: string
+            required:
+            - email
+            - username
             type: object
           status:
             description: AccountStatus defines the actual state of the api object
@@ -218,9 +221,6 @@ spec:
                     type:
                       description: Type of account condition.
                       type: string
-                  required:
-                  - status
-                  - type
                   type: object
                 type: array
               failureMessage:
@@ -241,8 +241,6 @@ spec:
                 format: int64
                 type: integer
             type: object
-        required:
-        - spec
         type: object
     served: true
     storage: true

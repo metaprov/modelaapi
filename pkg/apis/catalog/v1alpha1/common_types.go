@@ -284,6 +284,15 @@ const (
 	Facebook ProviderName = "facebook"
 	Twitter  ProviderName = "twitter"
 
+	// time series db
+	InfluxDB        ProviderName = "influxdb"
+	TimescaleDB     ProviderName = "timescaledb"
+	VictoriaMetrics ProviderName = "victoria-metrics"
+	Saleforce       ProviderName = "saleforce"
+	SapCRM          ProviderName = "sapcrm"
+	AirTable        ProviderName = "airtable"
+	AppWrite        ProviderName = "appwrite"
+
 	UnknownProvider ProviderName = "unknown"
 )
 
@@ -494,6 +503,14 @@ const (
 	WAPE         Metric = "wape"
 	RMSPE        Metric = "rmspe"
 	QuantileLoss Metric = "quantile-loss"
+
+	MedianAbsolutePercentError = "mean-absolute-percentage-error"
+	MeanPinballLoss            = "mean-pinball-loss"
+	MeanTweediaDeviance        = "mean-tweedie-deviance"
+	MeanPoissionDeviance       = "mean-possion-deviance"
+	D2TweedieScore             = "d2-tweedie-score"
+	D2PinballScore             = "d2-pinball-score"
+	D2AbsoluteErrorScore       = "d2-absolute-error-score"
 
 	//Clustering
 	AdjustedMutualInfoScore   Metric = "adjusted-mutual-info-score"
