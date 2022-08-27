@@ -257,8 +257,8 @@ func (in *Column) DeepCopyInto(out *Column) {
 		*out = new(float64)
 		**out = **in
 	}
-	if in.IndexColumn != nil {
-		in, out := &in.IndexColumn, &out.IndexColumn
+	if in.Key != nil {
+		in, out := &in.Key, &out.Key
 		*out = new(bool)
 		**out = **in
 	}
@@ -290,6 +290,21 @@ func (in *Column) DeepCopyInto(out *Column) {
 	if in.Step != nil {
 		in, out := &in.Step, &out.Step
 		*out = new(float64)
+		**out = **in
+	}
+	if in.DateTimeFormat != nil {
+		in, out := &in.DateTimeFormat, &out.DateTimeFormat
+		*out = new(string)
+		**out = **in
+	}
+	if in.TimeSeries != nil {
+		in, out := &in.TimeSeries, &out.TimeSeries
+		*out = new(bool)
+		**out = **in
+	}
+	if in.Exogenous != nil {
+		in, out := &in.Exogenous, &out.Exogenous
+		*out = new(bool)
 		**out = **in
 	}
 }
