@@ -179,8 +179,8 @@ export class Column extends jspb.Message {
   getDriftthreshold(): number;
   setDriftthreshold(value: number): Column;
 
-  getIndexcolumn(): boolean;
-  setIndexcolumn(value: boolean): Column;
+  getKey(): boolean;
+  setKey(value: boolean): Column;
 
   getFold(): boolean;
   setFold(value: boolean): Column;
@@ -211,6 +211,15 @@ export class Column extends jspb.Message {
 
   getIndex(): number;
   setIndex(value: number): Column;
+
+  getDatetimeformat(): string;
+  setDatetimeformat(value: string): Column;
+
+  getTimeseries(): boolean;
+  setTimeseries(value: boolean): Column;
+
+  getExogenous(): boolean;
+  setExogenous(value: boolean): Column;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Column.AsObject;
@@ -259,7 +268,7 @@ export namespace Column {
     sigma: number,
     skewthreshold: number,
     driftthreshold: number,
-    indexcolumn: boolean,
+    key: boolean,
     fold: boolean,
     weight: boolean,
     reserved: boolean,
@@ -270,6 +279,9 @@ export namespace Column {
     id: boolean,
     step: number,
     index: number,
+    datetimeformat: string,
+    timeseries: boolean,
+    exogenous: boolean,
   }
 }
 

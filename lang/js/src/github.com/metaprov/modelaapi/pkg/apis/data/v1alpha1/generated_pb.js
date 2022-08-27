@@ -3977,7 +3977,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.toObject = fun
     sigma: (f = jspb.Message.getOptionalFloatingPointField(msg, 35)) == null ? undefined : f,
     skewthreshold: (f = jspb.Message.getOptionalFloatingPointField(msg, 36)) == null ? undefined : f,
     driftthreshold: (f = jspb.Message.getOptionalFloatingPointField(msg, 37)) == null ? undefined : f,
-    indexcolumn: (f = jspb.Message.getBooleanField(msg, 38)) == null ? undefined : f,
+    key: (f = jspb.Message.getBooleanField(msg, 38)) == null ? undefined : f,
     fold: (f = jspb.Message.getBooleanField(msg, 39)) == null ? undefined : f,
     weight: (f = jspb.Message.getBooleanField(msg, 40)) == null ? undefined : f,
     reserved: (f = jspb.Message.getBooleanField(msg, 41)) == null ? undefined : f,
@@ -3987,7 +3987,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.toObject = fun
     formula: (f = jspb.Message.getField(msg, 45)) == null ? undefined : f,
     id: (f = jspb.Message.getBooleanField(msg, 46)) == null ? undefined : f,
     step: (f = jspb.Message.getOptionalFloatingPointField(msg, 47)) == null ? undefined : f,
-    index: (f = jspb.Message.getField(msg, 48)) == null ? undefined : f
+    index: (f = jspb.Message.getField(msg, 48)) == null ? undefined : f,
+    datetimeformat: (f = jspb.Message.getField(msg, 49)) == null ? undefined : f,
+    timeseries: (f = jspb.Message.getBooleanField(msg, 50)) == null ? undefined : f,
+    exogenous: (f = jspb.Message.getBooleanField(msg, 51)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -4174,7 +4177,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.deserializeBin
       break;
     case 38:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIndexcolumn(value);
+      msg.setKey(value);
       break;
     case 39:
       var value = /** @type {boolean} */ (reader.readBool());
@@ -4215,6 +4218,18 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.deserializeBin
     case 48:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setIndex(value);
+      break;
+    case 49:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDatetimeformat(value);
+      break;
+    case 50:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setTimeseries(value);
+      break;
+    case 51:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setExogenous(value);
       break;
     default:
       reader.skipField();
@@ -4578,6 +4593,27 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.serializeBinar
   if (f != null) {
     writer.writeInt32(
       48,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 49));
+  if (f != null) {
+    writer.writeString(
+      49,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 50));
+  if (f != null) {
+    writer.writeBool(
+      50,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 51));
+  if (f != null) {
+    writer.writeBool(
+      51,
       f
     );
   }
@@ -5918,10 +5954,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.hasD
 
 
 /**
- * optional bool indexColumn = 38;
+ * optional bool key = 38;
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.getIndexcolumn = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.getKey = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 38, false));
 };
 
@@ -5930,7 +5966,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.getI
  * @param {boolean} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.setIndexcolumn = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.setKey = function(value) {
   return jspb.Message.setField(this, 38, value);
 };
 
@@ -5939,7 +5975,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.setI
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.clearIndexcolumn = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.clearKey = function() {
   return jspb.Message.setField(this, 38, undefined);
 };
 
@@ -5948,7 +5984,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.clea
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.hasIndexcolumn = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.hasKey = function() {
   return jspb.Message.getField(this, 38) != null;
 };
 
@@ -6310,6 +6346,114 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.clea
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.hasIndex = function() {
   return jspb.Message.getField(this, 48) != null;
+};
+
+
+/**
+ * optional string datetimeFormat = 49;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.getDatetimeformat = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 49, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.setDatetimeformat = function(value) {
+  return jspb.Message.setField(this, 49, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.clearDatetimeformat = function() {
+  return jspb.Message.setField(this, 49, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.hasDatetimeformat = function() {
+  return jspb.Message.getField(this, 49) != null;
+};
+
+
+/**
+ * optional bool timeseries = 50;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.getTimeseries = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 50, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.setTimeseries = function(value) {
+  return jspb.Message.setField(this, 50, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.clearTimeseries = function() {
+  return jspb.Message.setField(this, 50, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.hasTimeseries = function() {
+  return jspb.Message.getField(this, 50) != null;
+};
+
+
+/**
+ * optional bool Exogenous = 51;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.getExogenous = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 51, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.setExogenous = function(value) {
+  return jspb.Message.setField(this, 51, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.clearExogenous = function() {
+  return jspb.Message.setField(this, 51, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.hasExogenous = function() {
+  return jspb.Message.getField(this, 51) != null;
 };
 
 

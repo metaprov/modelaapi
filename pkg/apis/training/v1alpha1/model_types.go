@@ -729,9 +729,6 @@ type FeatureEngineeringPipeline struct {
 	// Video specifies the pipeline to handle video data (currently unsupported)
 	// +kubebuilder:validation:Optional
 	Video *VideoPipelineSpec `json:"video,omitempty" protobuf:"bytes,14,opt,name=video"`
-	// TimeSeries specify the fe to try in case of a pipeline
-	// +kubebuilder:validation:Optional
-	TimeSeries *TimeSeriesPipelineSpec `json:"ts,omitempty" protobuf:"bytes,15,opt,name=ts"`
 	// Generated specifies a collection of columns to be generated
 	// +kubebuilder:validation:Optional
 	Generated []GeneratedColumnSpec `json:"generated,omitempty" protobuf:"bytes,16,rep,name=generated"`
@@ -756,34 +753,6 @@ type FeatureImportance struct {
 	// +kubebuilder:validation:Format=float
 	// +kubebuilder:validation:Type=number
 	Importance float64 `json:"importance,omitempty" protobuf:"bytes,2,opt,name=importance"`
-}
-
-type TimeSeriesPipelineSpec struct {
-	// generate all features.
-	// +kubebuilder:default:=true
-	// +kubebuilder:validation:Optional
-	All *bool `json:"all,omitempty" protobuf:"varint,1,opt,name=all"` // should we use the target log.
-	// when computing moving avg, use exponential moving avg, other use regular moving avg
-	// +kubebuilder:default:=false
-	// +kubebuilder:validation:Optional
-	EMA *bool `json:"ema,omitempty" protobuf:"varint,2,opt,name=ema"` // should we use the target log.
-	// +kubebuilder:default:=true
-	// +kubebuilder:validation:Optional
-	Log *bool `json:"log,omitempty" protobuf:"varint,3,opt,name=log"` // should we use the target log.
-	// The list of windows to use when generating features.
-	// +kubebuilder:validation:Optional
-	Windows []int32 `json:"windows,omitempty" protobuf:"bytes,4,opt,name=windows"`
-	// The list of lags to use when generating features
-	// +kubebuilder:validation:Optional
-	Lags []int32 `json:"lags,omitempty" protobuf:"bytes,5,opt,name=lags"`
-	// The list of metrics to generate for each combination of lag and windows.
-	// The default list is min,max,median,stddev
-	// +kubebuilder:validation:Optional
-	Functions []catalog.Metric `json:"functions,omitempty" protobuf:"bytes,6,opt,name=functions"`
-	// The list of final features that were selected by the time series.
-	// Those feature were selected based on importance.
-	// +kubebuilder:validation:Optional
-	Features []string `json:"features,omitempty" protobuf:"bytes,7,opt,name=features"`
 }
 
 // SuccessiveHalvingSpec records the position of a single model in a successive halving search

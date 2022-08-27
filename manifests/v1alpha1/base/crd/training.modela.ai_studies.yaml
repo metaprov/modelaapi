@@ -529,14 +529,14 @@ spec:
                     description: The backtest specification, the system supports back
                       testing with expanding windows.
                     properties:
+                      InitialSize:
+                        description: ExpectedValueMax size for a single training set
+                        format: int32
+                        type: integer
                       gap:
                         description: The number of data points between each windows
                         format: int32
                         minimum: 0
-                        type: integer
-                      maxTrainSize:
-                        description: ExpectedValueMax size for a single training set
-                        format: int32
                         type: integer
                       sliding:
                         description: If true, use sliding windows, else use expanding
@@ -546,55 +546,6 @@ spec:
                         description: Number of splits. Default is 5
                         format: int32
                         type: integer
-                      testSize:
-                        description: The number of data points to forecast on.
-                        format: int32
-                        minimum: 0
-                        type: integer
-                    type: object
-                  datetimeFormat:
-                    description: The format of the datetime column. Used default
-                    type: string
-                  fe:
-                    description: Feature engineering spec.
-                    properties:
-                      all:
-                        default: true
-                        description: generate all features.
-                        type: boolean
-                      ema:
-                        default: false
-                        description: when computing moving avg, use exponential moving
-                          avg, other use regular moving avg
-                        type: boolean
-                      features:
-                        description: The list of final features that were selected
-                          by the time series. Those feature were selected based on
-                          importance.
-                        items:
-                          type: string
-                        type: array
-                      functions:
-                        description: The list of metrics to generate for each combination
-                          of lag and windows. The default list is min,max,median,stddev
-                        items:
-                          type: string
-                        type: array
-                      lags:
-                        description: The list of lags to use when generating features
-                        items:
-                          format: int32
-                          type: integer
-                        type: array
-                      log:
-                        default: true
-                        type: boolean
-                      windows:
-                        description: The list of windows to use when generating features.
-                        items:
-                          format: int32
-                          type: integer
-                        type: array
                     type: object
                   features:
                     description: List of time series features to compute on each time
@@ -602,6 +553,9 @@ spec:
                     items:
                       type: string
                     type: array
+                  forecast:
+                    description: Make a forecast post training
+                    type: boolean
                   future:
                     description: Specification for the future windows
                     properties:
@@ -662,11 +616,6 @@ spec:
                             grouping
                           type: string
                       type: object
-                    type: array
-                  keyColumns:
-                    description: Column names for the time series key
-                    items:
-                      type: string
                     type: array
                   manyModels:
                     description: Definitions of the many models
@@ -829,25 +778,306 @@ spec:
                         format: int32
                         type: integer
                     type: object
-                  plot:
-                    description: If true generate the plots
-                    type: boolean
-                  plotChangePoints:
-                    type: boolean
-                  postProcessing:
-                    description: Post processing
+                  pipeline:
+                    description: The forecasting pipeline
                     properties:
-                      connectionName:
-                        description: The name of the connection for a database the
-                          result of the forecast If null, the system will insert the
-                          forecast in the database.
-                        type: string
-                      forecast:
-                        default: true
-                        description: Specify if we should generate a forecast using
-                          the model If true, the system will perform a forecast and
-                          update the forecast connection.
+                      EnsembleForecaster:
+                        description: If this is a test for an ensemble, this is the
+                          ensemble spec.
+                        properties:
+                          base:
+                            additionalProperties:
+                              properties:
+                                algorithmRef:
+                                  description: the Forecasting algorithm.
+                                  properties:
+                                    apiVersion:
+                                      description: API version of the referent.
+                                      type: string
+                                    fieldPath:
+                                      description: 'If referring to a piece of an
+                                        object instead of an entire object, this string
+                                        should contain a valid JSON/Go field access
+                                        statement, such as desiredState.manifest.containers[2].
+                                        For example, if the object reference is to
+                                        a container within a pod, this would take
+                                        on a value like: "spec.containers{name}" (where
+                                        "name" refers to the name of the container
+                                        that triggered the event) or if no container
+                                        name is specified "spec.containers[2]" (container
+                                        with index 2 in this pod). This syntax is
+                                        chosen only to have some well-defined way
+                                        of referencing a part of an object. TODO:
+                                        this design is not final and this field is
+                                        subject to change in the future.'
+                                      type: string
+                                    kind:
+                                      description: 'Kind of the referent. More info:
+                                        https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                                      type: string
+                                    name:
+                                      description: 'Name of the referent. More info:
+                                        https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                                      type: string
+                                    namespace:
+                                      description: 'Namespace of the referent. More
+                                        info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                                      type: string
+                                    resourceVersion:
+                                      description: 'Specific resourceVersion to which
+                                        this reference is made, if any. More info:
+                                        https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                                      type: string
+                                    uid:
+                                      description: 'UID of the referent. More info:
+                                        https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                                      type: string
+                                  type: object
+                                hyperParameters:
+                                  description: Hyper Parameters for the classical
+                                    algorithms.
+                                  items:
+                                    description: HyperParameterValue represent an
+                                      individual hyper-parameter of a machine earning
+                                      algorithm
+                                    properties:
+                                      name:
+                                        description: The name of the hyper-parameter
+                                        type: string
+                                      value:
+                                        description: The value of the hyper-parameter
+                                        type: string
+                                    required:
+                                    - name
+                                    - value
+                                    type: object
+                                  type: array
+                                reduction:
+                                  description: Reduction strategy
+                                  properties:
+                                    estimator:
+                                      description: The est
+                                      properties:
+                                        algorithmName:
+                                          description: AlgorithmName is a reference
+                                            to the algorithm in the catalog
+                                          type: string
+                                        parameters:
+                                          description: Parameters is a list of the
+                                            algorithm hyper parameters
+                                          items:
+                                            description: HyperParameterValue represent
+                                              an individual hyper-parameter of a machine
+                                              earning algorithm
+                                            properties:
+                                              name:
+                                                description: The name of the hyper-parameter
+                                                type: string
+                                              value:
+                                                description: The value of the hyper-parameter
+                                                type: string
+                                            required:
+                                            - name
+                                            - value
+                                            type: object
+                                          type: array
+                                      type: object
+                                    strategy:
+                                      description: The forecast strategy. Since a
+                                        regular regression can
+                                      enum:
+                                      - recursive
+                                      - direct
+                                      type: string
+                                  type: object
+                              type: object
+                            type: object
+                        type: object
+                      date:
+                        default: false
+                        description: If true apply the data transofmer to
                         type: boolean
+                      ema:
+                        default: false
+                        description: when computing moving avg, use exponential moving
+                          avg, other use regular moving avg
+                        type: boolean
+                      encoding:
+                        default: none
+                        description: The encoding method to use for categorical data
+                          types
+                        enum:
+                        - one-hot-encoding
+                        - one-hot-encoding-top-categories
+                        - ordinal-encoding
+                        - count-encoding
+                        - target-encoding
+                        - weight-of-evidence-encoding
+                        - binary-encoding
+                        - label-encoding
+                        - hash-encoding
+                        - catboost-encoding
+                        - loo-encoding
+                        - no-encoding
+                        - auto
+                        - none
+                        type: string
+                      ensemble:
+                        default: false
+                        description: If true this is an ensemble pipeline
+                        type: boolean
+                      forecaster:
+                        description: The forecaster spec. If this is a test of a single
+                          forecaster, this is the forecaster spec.
+                        properties:
+                          algorithmRef:
+                            description: the Forecasting algorithm.
+                            properties:
+                              apiVersion:
+                                description: API version of the referent.
+                                type: string
+                              fieldPath:
+                                description: 'If referring to a piece of an object
+                                  instead of an entire object, this string should
+                                  contain a valid JSON/Go field access statement,
+                                  such as desiredState.manifest.containers[2]. For
+                                  example, if the object reference is to a container
+                                  within a pod, this would take on a value like: "spec.containers{name}"
+                                  (where "name" refers to the name of the container
+                                  that triggered the event) or if no container name
+                                  is specified "spec.containers[2]" (container with
+                                  index 2 in this pod). This syntax is chosen only
+                                  to have some well-defined way of referencing a part
+                                  of an object. TODO: this design is not final and
+                                  this field is subject to change in the future.'
+                                type: string
+                              kind:
+                                description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                                type: string
+                              name:
+                                description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                                type: string
+                              namespace:
+                                description: 'Namespace of the referent. More info:
+                                  https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                                type: string
+                              resourceVersion:
+                                description: 'Specific resourceVersion to which this
+                                  reference is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                                type: string
+                              uid:
+                                description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                                type: string
+                            type: object
+                          hyperParameters:
+                            description: Hyper Parameters for the classical algorithms.
+                            items:
+                              description: HyperParameterValue represent an individual
+                                hyper-parameter of a machine earning algorithm
+                              properties:
+                                name:
+                                  description: The name of the hyper-parameter
+                                  type: string
+                                value:
+                                  description: The value of the hyper-parameter
+                                  type: string
+                              required:
+                              - name
+                              - value
+                              type: object
+                            type: array
+                          reduction:
+                            description: Reduction strategy
+                            properties:
+                              estimator:
+                                description: The est
+                                properties:
+                                  algorithmName:
+                                    description: AlgorithmName is a reference to the
+                                      algorithm in the catalog
+                                    type: string
+                                  parameters:
+                                    description: Parameters is a list of the algorithm
+                                      hyper parameters
+                                    items:
+                                      description: HyperParameterValue represent an
+                                        individual hyper-parameter of a machine earning
+                                        algorithm
+                                      properties:
+                                        name:
+                                          description: The name of the hyper-parameter
+                                          type: string
+                                        value:
+                                          description: The value of the hyper-parameter
+                                          type: string
+                                      required:
+                                      - name
+                                      - value
+                                      type: object
+                                    type: array
+                                type: object
+                              strategy:
+                                description: The forecast strategy. Since a regular
+                                  regression can
+                                enum:
+                                - recursive
+                                - direct
+                                type: string
+                            type: object
+                        type: object
+                      functions:
+                        description: The list of metrics to generate for each combination
+                          of lag and windows. The default list is min,max,median,stddev
+                        items:
+                          type: string
+                        type: array
+                      imputation:
+                        default: none
+                        description: ==============================================================================
+                          Imputation ==============================================================================
+                        enum:
+                        - remove-rows-with-missing-values
+                        - replace-with-mean
+                        - replace-with-median
+                        - replace-with-arbitrary-value
+                        - freq-category-imputation
+                        - add-missing-value-indicator
+                        - knn
+                        - iterative
+                        - mice
+                        - no-imputation
+                        - auto
+                        - none
+                        type: string
+                      lags:
+                        description: The list of lags to use when generating features
+                        items:
+                          format: int32
+                          type: integer
+                        type: array
+                      log:
+                        default: true
+                        type: boolean
+                      scaling:
+                        default: none
+                        description: The scaling method to use for numerical data
+                          types
+                        enum:
+                        - standard-scaling
+                        - max-abs-scaling
+                        - min-max-scaling
+                        - normalization-scaling
+                        - robust-scaling
+                        - scale-to-unit-norm
+                        - none
+                        - auto
+                        type: string
+                      windows:
+                        description: The list of windows to use when generating features.
+                        items:
+                          format: int32
+                          type: integer
+                        type: array
                     type: object
                   prophet:
                     description: If using prophet, those are the prophet settings
@@ -989,14 +1219,6 @@ spec:
                           type: boolean
                       type: object
                     type: array
-                  targetColumn:
-                    description: The name of the column holding the value. By default
-                      this is the target column from the dataset.
-                    type: string
-                  timeColumn:
-                    description: The name of the time column, this should be taken
-                      from the data source.
-                    type: string
                 type: object
               gc:
                 description: GarbageCollectionSpec specifies the configuration to
@@ -2980,51 +3202,6 @@ spec:
                             tokenizer:
                               description: The text tokenizer character
                               type: string
-                          type: object
-                        ts:
-                          description: TimeSeries specify the fe to try in case of
-                            a pipeline
-                          properties:
-                            all:
-                              default: true
-                              description: generate all features.
-                              type: boolean
-                            ema:
-                              default: false
-                              description: when computing moving avg, use exponential
-                                moving avg, other use regular moving avg
-                              type: boolean
-                            features:
-                              description: The list of final features that were selected
-                                by the time series. Those feature were selected based
-                                on importance.
-                              items:
-                                type: string
-                              type: array
-                            functions:
-                              description: The list of metrics to generate for each
-                                combination of lag and windows. The default list is
-                                min,max,median,stddev
-                              items:
-                                type: string
-                              type: array
-                            lags:
-                              description: The list of lags to use when generating
-                                features
-                              items:
-                                format: int32
-                                type: integer
-                              type: array
-                            log:
-                              default: true
-                              type: boolean
-                            windows:
-                              description: The list of windows to use when generating
-                                features.
-                              items:
-                                format: int32
-                                type: integer
-                              type: array
                           type: object
                         variableTransformation:
                           default: none

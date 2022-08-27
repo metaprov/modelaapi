@@ -594,6 +594,10 @@ spec:
                               - categorical-list
                               - text-list
                               type: string
+                            datetimeFormat:
+                              description: The format of the datetime column. Used
+                                default
+                              type: string
                             description:
                               default: ""
                               description: The user-specified description of the feature
@@ -631,6 +635,11 @@ spec:
                               description: The exclusive lower limit of all values
                                 in the column, which does not include the minimum
                                 value
+                              type: boolean
+                            exogenous:
+                              default: false
+                              description: Indicates if the column is contains a exogenous
+                                information.
                               type: boolean
                             externalDocs:
                               default: ""
@@ -722,9 +731,9 @@ spec:
                                 schema
                               format: int32
                               type: integer
-                            indexColumn:
+                            key:
                               default: false
-                              description: Indicates if the column is an index column
+                              description: Indicates if the column is an key column
                               type: boolean
                             log:
                               default: false
@@ -871,6 +880,14 @@ spec:
                               default: false
                               description: Indicates if the column is used as the
                                 time axis in time series forecasting Default is false.
+                              type: boolean
+                            timeseries:
+                              default: false
+                              description: Indicates if the column is contain a time
+                                series, In case of forecasting, if only one column
+                                is a time series, this is a univariate time series
+                                Otherwise, if two or more columns contain time series,
+                                than this is a univariate time series.
                               type: boolean
                             uniqueItems:
                               default: false

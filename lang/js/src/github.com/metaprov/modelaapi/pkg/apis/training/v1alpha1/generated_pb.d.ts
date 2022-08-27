@@ -53,11 +53,8 @@ export class BacktestSpec extends jspb.Message {
   getSplits(): number;
   setSplits(value: number): BacktestSpec;
 
-  getMaxtrainsize(): number;
-  setMaxtrainsize(value: number): BacktestSpec;
-
-  getTestsize(): number;
-  setTestsize(value: number): BacktestSpec;
+  getInitialsize(): number;
+  setInitialsize(value: number): BacktestSpec;
 
   getGap(): number;
   setGap(value: number): BacktestSpec;
@@ -74,8 +71,7 @@ export namespace BacktestSpec {
   export type AsObject = {
     sliding: boolean,
     splits: number,
-    maxtrainsize: number,
-    testsize: number,
+    initialsize: number,
     gap: number,
   }
 }
@@ -744,6 +740,24 @@ export namespace EarlyStopSpec {
   }
 }
 
+export class EnsembleForecasterSpec extends jspb.Message {
+  getBaseMap(): jspb.Map<string, ForecasterSpec>;
+  clearBaseMap(): EnsembleForecasterSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): EnsembleForecasterSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: EnsembleForecasterSpec): EnsembleForecasterSpec.AsObject;
+  static serializeBinaryToWriter(message: EnsembleForecasterSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EnsembleForecasterSpec;
+  static deserializeBinaryFromReader(message: EnsembleForecasterSpec, reader: jspb.BinaryReader): EnsembleForecasterSpec;
+}
+
+export namespace EnsembleForecasterSpec {
+  export type AsObject = {
+    baseMap: Array<[string, ForecasterSpec.AsObject]>,
+  }
+}
+
 export class EnsembleRules extends jspb.Message {
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): EnsembleRules.AsObject;
@@ -877,11 +891,6 @@ export class FeatureEngineeringPipeline extends jspb.Message {
   hasVideo(): boolean;
   clearVideo(): FeatureEngineeringPipeline;
 
-  getTs(): TimeSeriesPipelineSpec | undefined;
-  setTs(value?: TimeSeriesPipelineSpec): FeatureEngineeringPipeline;
-  hasTs(): boolean;
-  clearTs(): FeatureEngineeringPipeline;
-
   getGeneratedList(): Array<GeneratedColumnSpec>;
   setGeneratedList(value: Array<GeneratedColumnSpec>): FeatureEngineeringPipeline;
   clearGeneratedList(): FeatureEngineeringPipeline;
@@ -922,7 +931,6 @@ export namespace FeatureEngineeringPipeline {
     image?: ImagePipelineSpec.AsObject,
     audio?: AudioPipelineSpec.AsObject,
     video?: VideoPipelineSpec.AsObject,
-    ts?: TimeSeriesPipelineSpec.AsObject,
     generatedList: Array<GeneratedColumnSpec.AsObject>,
     customList: Array<GeneratedColumnSpec.AsObject>,
     drop: boolean,
@@ -1192,43 +1200,111 @@ export namespace ForecastObj {
   }
 }
 
-export class ForecastPostProcessingSpec extends jspb.Message {
-  getConnectionname(): string;
-  setConnectionname(value: string): ForecastPostProcessingSpec;
+export class ForecasterPipelineSpec extends jspb.Message {
+  getEnsemble(): boolean;
+  setEnsemble(value: boolean): ForecasterPipelineSpec;
 
-  getForecast(): boolean;
-  setForecast(value: boolean): ForecastPostProcessingSpec;
+  getImputation(): string;
+  setImputation(value: string): ForecasterPipelineSpec;
+
+  getEncoding(): string;
+  setEncoding(value: string): ForecasterPipelineSpec;
+
+  getScaling(): string;
+  setScaling(value: string): ForecasterPipelineSpec;
+
+  getDate(): boolean;
+  setDate(value: boolean): ForecasterPipelineSpec;
+
+  getWindowsList(): Array<number>;
+  setWindowsList(value: Array<number>): ForecasterPipelineSpec;
+  clearWindowsList(): ForecasterPipelineSpec;
+  addWindows(value: number, index?: number): ForecasterPipelineSpec;
+
+  getLagsList(): Array<number>;
+  setLagsList(value: Array<number>): ForecasterPipelineSpec;
+  clearLagsList(): ForecasterPipelineSpec;
+  addLags(value: number, index?: number): ForecasterPipelineSpec;
+
+  getFunctionsList(): Array<string>;
+  setFunctionsList(value: Array<string>): ForecasterPipelineSpec;
+  clearFunctionsList(): ForecasterPipelineSpec;
+  addFunctions(value: string, index?: number): ForecasterPipelineSpec;
+
+  getEma(): boolean;
+  setEma(value: boolean): ForecasterPipelineSpec;
+
+  getLog(): boolean;
+  setLog(value: boolean): ForecasterPipelineSpec;
+
+  getForecaster(): ForecasterSpec | undefined;
+  setForecaster(value?: ForecasterSpec): ForecasterPipelineSpec;
+  hasForecaster(): boolean;
+  clearForecaster(): ForecasterPipelineSpec;
+
+  getEnsembleforecaster(): EnsembleForecasterSpec | undefined;
+  setEnsembleforecaster(value?: EnsembleForecasterSpec): ForecasterPipelineSpec;
+  hasEnsembleforecaster(): boolean;
+  clearEnsembleforecaster(): ForecasterPipelineSpec;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ForecastPostProcessingSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: ForecastPostProcessingSpec): ForecastPostProcessingSpec.AsObject;
-  static serializeBinaryToWriter(message: ForecastPostProcessingSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ForecastPostProcessingSpec;
-  static deserializeBinaryFromReader(message: ForecastPostProcessingSpec, reader: jspb.BinaryReader): ForecastPostProcessingSpec;
+  toObject(includeInstance?: boolean): ForecasterPipelineSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: ForecasterPipelineSpec): ForecasterPipelineSpec.AsObject;
+  static serializeBinaryToWriter(message: ForecasterPipelineSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ForecasterPipelineSpec;
+  static deserializeBinaryFromReader(message: ForecasterPipelineSpec, reader: jspb.BinaryReader): ForecasterPipelineSpec;
 }
 
-export namespace ForecastPostProcessingSpec {
+export namespace ForecasterPipelineSpec {
   export type AsObject = {
-    connectionname: string,
-    forecast: boolean,
+    ensemble: boolean,
+    imputation: string,
+    encoding: string,
+    scaling: string,
+    date: boolean,
+    windowsList: Array<number>,
+    lagsList: Array<number>,
+    functionsList: Array<string>,
+    ema: boolean,
+    log: boolean,
+    forecaster?: ForecasterSpec.AsObject,
+    ensembleforecaster?: EnsembleForecasterSpec.AsObject,
+  }
+}
+
+export class ForecasterSpec extends jspb.Message {
+  getAlgorithmref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setAlgorithmref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ForecasterSpec;
+  hasAlgorithmref(): boolean;
+  clearAlgorithmref(): ForecasterSpec;
+
+  getHyperparametersList(): Array<HyperParameterValue>;
+  setHyperparametersList(value: Array<HyperParameterValue>): ForecasterSpec;
+  clearHyperparametersList(): ForecasterSpec;
+  addHyperparameters(value?: HyperParameterValue, index?: number): HyperParameterValue;
+
+  getReduction(): ReducedForecasterSpec | undefined;
+  setReduction(value?: ReducedForecasterSpec): ForecasterSpec;
+  hasReduction(): boolean;
+  clearReduction(): ForecasterSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ForecasterSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: ForecasterSpec): ForecasterSpec.AsObject;
+  static serializeBinaryToWriter(message: ForecasterSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ForecasterSpec;
+  static deserializeBinaryFromReader(message: ForecasterSpec, reader: jspb.BinaryReader): ForecasterSpec;
+}
+
+export namespace ForecasterSpec {
+  export type AsObject = {
+    algorithmref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    hyperparametersList: Array<HyperParameterValue.AsObject>,
+    reduction?: ReducedForecasterSpec.AsObject,
   }
 }
 
 export class ForecasterTrainingSpec extends jspb.Message {
-  getTimecolumn(): string;
-  setTimecolumn(value: string): ForecasterTrainingSpec;
-
-  getTargetcolumn(): string;
-  setTargetcolumn(value: string): ForecasterTrainingSpec;
-
-  getDatetimeformat(): string;
-  setDatetimeformat(value: string): ForecasterTrainingSpec;
-
-  getKeycolumnList(): Array<string>;
-  setKeycolumnList(value: Array<string>): ForecasterTrainingSpec;
-  clearKeycolumnList(): ForecasterTrainingSpec;
-  addKeycolumn(value: string, index?: number): ForecasterTrainingSpec;
-
   getRegressorsList(): Array<RegressorSpec>;
   setRegressorsList(value: Array<RegressorSpec>): ForecasterTrainingSpec;
   clearRegressorsList(): ForecasterTrainingSpec;
@@ -1254,16 +1330,8 @@ export class ForecasterTrainingSpec extends jspb.Message {
   hasBacktest(): boolean;
   clearBacktest(): ForecasterTrainingSpec;
 
-  getPostprocessing(): ForecastPostProcessingSpec | undefined;
-  setPostprocessing(value?: ForecastPostProcessingSpec): ForecasterTrainingSpec;
-  hasPostprocessing(): boolean;
-  clearPostprocessing(): ForecasterTrainingSpec;
-
-  getPlot(): boolean;
-  setPlot(value: boolean): ForecasterTrainingSpec;
-
-  getPlotchangepoints(): boolean;
-  setPlotchangepoints(value: boolean): ForecasterTrainingSpec;
+  getForecast(): boolean;
+  setForecast(value: boolean): ForecasterTrainingSpec;
 
   getOutputlocation(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
   setOutputlocation(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): ForecasterTrainingSpec;
@@ -1275,15 +1343,15 @@ export class ForecasterTrainingSpec extends jspb.Message {
   clearFeaturesList(): ForecasterTrainingSpec;
   addFeatures(value: string, index?: number): ForecasterTrainingSpec;
 
-  getFe(): TimeSeriesPipelineSpec | undefined;
-  setFe(value?: TimeSeriesPipelineSpec): ForecasterTrainingSpec;
-  hasFe(): boolean;
-  clearFe(): ForecasterTrainingSpec;
-
   getProphet(): ProphetSpec | undefined;
   setProphet(value?: ProphetSpec): ForecasterTrainingSpec;
   hasProphet(): boolean;
   clearProphet(): ForecasterTrainingSpec;
+
+  getPipeline(): ForecasterPipelineSpec | undefined;
+  setPipeline(value?: ForecasterPipelineSpec): ForecasterTrainingSpec;
+  hasPipeline(): boolean;
+  clearPipeline(): ForecasterTrainingSpec;
 
   getManymodels(): ManyModelsSpec | undefined;
   setManymodels(value?: ManyModelsSpec): ForecasterTrainingSpec;
@@ -1300,22 +1368,16 @@ export class ForecasterTrainingSpec extends jspb.Message {
 
 export namespace ForecasterTrainingSpec {
   export type AsObject = {
-    timecolumn: string,
-    targetcolumn: string,
-    datetimeformat: string,
-    keycolumnList: Array<string>,
     regressorsList: Array<RegressorSpec.AsObject>,
     holidaysList: Array<HolidaySpec.AsObject>,
     past?: WindowSpec.AsObject,
     future?: WindowSpec.AsObject,
     backtest?: BacktestSpec.AsObject,
-    postprocessing?: ForecastPostProcessingSpec.AsObject,
-    plot: boolean,
-    plotchangepoints: boolean,
+    forecast: boolean,
     outputlocation?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     featuresList: Array<string>,
-    fe?: TimeSeriesPipelineSpec.AsObject,
     prophet?: ProphetSpec.AsObject,
+    pipeline?: ForecasterPipelineSpec.AsObject,
     manymodels?: ManyModelsSpec.AsObject,
   }
 }
@@ -4320,6 +4382,30 @@ export namespace PrunerSpec {
   }
 }
 
+export class ReducedForecasterSpec extends jspb.Message {
+  getEstimator(): ClassicalEstimatorSpec | undefined;
+  setEstimator(value?: ClassicalEstimatorSpec): ReducedForecasterSpec;
+  hasEstimator(): boolean;
+  clearEstimator(): ReducedForecasterSpec;
+
+  getStrategy(): string;
+  setStrategy(value: string): ReducedForecasterSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ReducedForecasterSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: ReducedForecasterSpec): ReducedForecasterSpec.AsObject;
+  static serializeBinaryToWriter(message: ReducedForecasterSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ReducedForecasterSpec;
+  static deserializeBinaryFromReader(message: ReducedForecasterSpec, reader: jspb.BinaryReader): ReducedForecasterSpec;
+}
+
+export namespace ReducedForecasterSpec {
+  export type AsObject = {
+    estimator?: ClassicalEstimatorSpec.AsObject,
+    strategy: string,
+  }
+}
+
 export class RegressorSpec extends jspb.Message {
   getName(): string;
   setName(value: string): RegressorSpec;
@@ -5619,56 +5705,6 @@ export namespace TimeSeriesModelStatus {
     modeluri: string,
     parametersList: Array<HyperParameterValue.AsObject>,
     scoresMap: Array<[string, number]>,
-  }
-}
-
-export class TimeSeriesPipelineSpec extends jspb.Message {
-  getAll(): boolean;
-  setAll(value: boolean): TimeSeriesPipelineSpec;
-
-  getEma(): boolean;
-  setEma(value: boolean): TimeSeriesPipelineSpec;
-
-  getLog(): boolean;
-  setLog(value: boolean): TimeSeriesPipelineSpec;
-
-  getWindowsList(): Array<number>;
-  setWindowsList(value: Array<number>): TimeSeriesPipelineSpec;
-  clearWindowsList(): TimeSeriesPipelineSpec;
-  addWindows(value: number, index?: number): TimeSeriesPipelineSpec;
-
-  getLagsList(): Array<number>;
-  setLagsList(value: Array<number>): TimeSeriesPipelineSpec;
-  clearLagsList(): TimeSeriesPipelineSpec;
-  addLags(value: number, index?: number): TimeSeriesPipelineSpec;
-
-  getFunctionsList(): Array<string>;
-  setFunctionsList(value: Array<string>): TimeSeriesPipelineSpec;
-  clearFunctionsList(): TimeSeriesPipelineSpec;
-  addFunctions(value: string, index?: number): TimeSeriesPipelineSpec;
-
-  getFeaturesList(): Array<string>;
-  setFeaturesList(value: Array<string>): TimeSeriesPipelineSpec;
-  clearFeaturesList(): TimeSeriesPipelineSpec;
-  addFeatures(value: string, index?: number): TimeSeriesPipelineSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): TimeSeriesPipelineSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: TimeSeriesPipelineSpec): TimeSeriesPipelineSpec.AsObject;
-  static serializeBinaryToWriter(message: TimeSeriesPipelineSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): TimeSeriesPipelineSpec;
-  static deserializeBinaryFromReader(message: TimeSeriesPipelineSpec, reader: jspb.BinaryReader): TimeSeriesPipelineSpec;
-}
-
-export namespace TimeSeriesPipelineSpec {
-  export type AsObject = {
-    all: boolean,
-    ema: boolean,
-    log: boolean,
-    windowsList: Array<number>,
-    lagsList: Array<number>,
-    functionsList: Array<string>,
-    featuresList: Array<string>,
   }
 }
 

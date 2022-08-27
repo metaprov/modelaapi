@@ -3,6 +3,15 @@ package v1alpha1
 import (
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	data "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1"
+	v1 "k8s.io/api/core/v1"
+)
+
+// +kubebuilder:validation:Enum="recursive";"direct";
+type ForecastStrategy string
+
+const (
+	Recursive ForecastStrategy = "recursive"
+	Direct    ForecastStrategy = "direct"
 )
 
 // +kubebuilder:validation:Enum="linear";"logistic";"flat"
@@ -49,7 +58,6 @@ const (
 	Variance_larger_than_standard_deviation catalog.Metric = "variance_larger_than_standard_deviation" // variance_larger_than_standard_deviation(x)	Is variance higher than the standard deviation?
 	Variation_coefficient                   catalog.Metric = "variation_coefficient"                   // variation_coefficient(x)
 	Skewness                                catalog.Metric = "skewness"                                // skewness(x)	Returns the sample skewness of x (calculated with the adjusted Fisher-Pearson standardized moment coefficient G1).
-
 )
 
 // Define the seasonality for a period (yearly / monthly / daily)
@@ -159,77 +167,41 @@ type ProphetSpec struct {
 	CustomSeasonalities []CustomSeasonalitySpec `json:"customSeasonalities,omitempty" protobuf:"bytes,11,rep,name=customSeasonalities"`
 }
 
-// The Forecast storage spec specify where to store the forecast after prediction.
-type ForecastPostProcessingSpec struct {
-	// The name of the connection for a database the result of the forecast
-	// If null, the system will insert the forecast in the database.
-	// +kubebuilder:validation:Optional
-	ConnectionName *string `json:"connectionName,omitempty" protobuf:"bytes,1,opt,name=connectionName"`
-	// Specify if we should generate a forecast using the model
-	// If true, the system will perform a forecast and update the forecast connection.
-	// +kubebuilder:default:=true
-	// +kubebuilder:validation:Optional
-	Forecast *bool `json:"forecast,omitempty" protobuf:"varint,2,opt,name=forecast"`
-}
-
 // ForecastingSpec
 type ForecasterTrainingSpec struct {
-	// The name of the time column, this should be taken from the data source.
-	// +kubebuilder:validation:Required
-	// +required
-	TimeColumn *string `json:"timeColumn,omitempty" protobuf:"bytes,1,opt,name=timeColumn"`
-	// The name of the column holding the value.
-	// By default this is the target column from the dataset.
-	// +kubebuilder:validation:Required
-	// +required
-	TargetColumn *string `json:"targetColumn,omitempty" protobuf:"bytes,2,opt,name=targetColumn"`
-	// The format of the datetime column. Used default
-	// +kubebuilder:validation:Optional
-	DateTimeFormat *string `json:"datetimeFormat,omitempty" protobuf:"bytes,3,opt,name=datetimeFormat"`
-	// +kubebuilder:validation:Optional
-	// Column names for the time series key
-	// +kubebuilder:validation:Optional
-	KeyColumns []string `json:"keyColumns,omitempty" protobuf:"bytes,4,rep,name=keyColumn"`
 	// The list of additional regressors. The regressors are part of the time series data
 	// +kubebuilder:validation:Optional
-	Regressors []RegressorSpec `json:"regressors,omitempty" protobuf:"bytes,5,rep,name=regressors"`
+	Regressors []RegressorSpec `json:"regressors,omitempty" protobuf:"bytes,1,rep,name=regressors"`
 	// The spec for the holiday
 	// +kubebuilder:validation:Optional
-	Holidays []HolidaySpec `json:"holidays,omitempty" protobuf:"bytes,6,rep,name=holidays"`
+	Holidays []HolidaySpec `json:"holidays,omitempty" protobuf:"bytes,2,rep,name=holidays"`
 	// Specification for the past windows
 	// +kubebuilder:validation:Optional
-	Past WindowSpec `json:"past,omitempty" protobuf:"bytes,7,opt,name=past"`
+	Past WindowSpec `json:"past,omitempty" protobuf:"bytes,3,opt,name=past"`
 	// Specification for the future windows
 	// +kubebuilder:validation:Optional
-	Future WindowSpec `json:"future,omitempty" protobuf:"bytes,8,opt,name=future"`
+	Future WindowSpec `json:"future,omitempty" protobuf:"bytes,4,opt,name=future"`
 	// The backtest specification, the system supports back testing with expanding windows.
 	// +kubebuilder:validation:Optional
-	Backtest BacktestSpec `json:"backtest,omitempty" protobuf:"bytes,10,opt,name=backtest"`
-	// Post processing
+	Backtest BacktestSpec `json:"backtest,omitempty" protobuf:"bytes,5,opt,name=backtest"`
+	// Make a forecast post training
 	// +kubebuilder:validation:Optional
-	PostPrecessing ForecastPostProcessingSpec `json:"postProcessing,omitempty" protobuf:"bytes,11,opt,name=postProcessing"`
-	// If true generate the plots
-	// +kubebuilder:default = true
-	// +kubebuilder:validation:Optional
-	Plot *bool `json:"plot,omitempty" protobuf:"varint,12,opt,name=plot"`
-	// +kubebuilder:default = true
-	// +kubebuilder:validation:Optional
-	PlotChangePoints *bool `json:"plotChangePoints,omitempty" protobuf:"varint,13,opt,name=plotChangePoints"`
+	Forecast *bool `json:"forecast,omitempty" protobuf:"bytes,6,opt,name=forecast"`
 	// The data location that would store the forecast result.
 	// +kubebuilder:validation:Optional
-	OutputLocation data.DataLocation `json:"outputLocation,omitempty" protobuf:"bytes,14,opt,name=outputLocation"`
+	OutputLocation data.DataLocation `json:"outputLocation,omitempty" protobuf:"bytes,7,opt,name=outputLocation"`
 	// List of time series features to compute on each time series.
 	// +kubebuilder:validation:Optional
-	Features []catalog.Metric `json:"features,omitempty" protobuf:"bytes,15,opt,name=features"`
-	// Feature engineering spec.
-	// +kubebuilder:validation:Optional
-	FE TimeSeriesPipelineSpec `json:"fe,omitempty" protobuf:"bytes,16,opt,name=fe"`
+	Features []catalog.Metric `json:"features,omitempty" protobuf:"bytes,8,opt,name=features"`
 	// If using prophet, those are the prophet settings
 	// +kubebuilder:validation:Optional
-	Prophet ProphetSpec `json:"prophet,omitempty" protobuf:"bytes,17,opt,name=prophet"`
+	Prophet ProphetSpec `json:"prophet,omitempty" protobuf:"bytes,9,opt,name=prophet"`
+	// The forecasting pipeline
+	// +kubebuilder:validation:Optional
+	Pipeline ForecasterPipelineSpec `json:"pipeline,omitempty" protobuf:"bytes,10,opt,name=pipeline"`
 	// Definitions of the many models
 	// +kubebuilder:validation:Optional
-	ManyModels ManyModelsSpec `json:"manyModels,omitempty" protobuf:"bytes,18,opt,name=manyModels"`
+	ManyModels ManyModelsSpec `json:"manyModels,omitempty" protobuf:"bytes,11,opt,name=manyModels"`
 }
 
 // A spec for many models definitions.
@@ -265,12 +237,7 @@ type BacktestSpec struct {
 	// ExpectedValueMax size for a single training set
 	// +kubebuilder:default = 0
 	// +kubebuilder:validation:Optional
-	MaxTrainSize *int32 `json:"maxTrainSize,omitempty" protobuf:"varint,3,opt,name=maxTrainSize"`
-	// The number of data points to forecast on.
-	// +kubebuilder:default = 0
-	// +kubebuilder:validation:Minimum=0
-	// +kubebuilder:validation:Optional
-	TestSize *int32 `json:"testSize,omitempty" protobuf:"varint,4,opt,name=testSize"`
+	InitialSize *int32 `json:"InitialSize,omitempty" protobuf:"varint,3,opt,name=InitialSize"`
 	// The number of data points between each windows
 	// +kubebuilder:default = 0
 	// +kubebuilder:validation:Minimum=0
@@ -293,4 +260,79 @@ type TimeSeriesModelStatus struct {
 	// The scores
 	// +kubebuilder:validation:Optional
 	Scores map[catalog.Metric]float64 `json:"scores,omitempty" protobuf:"bytes,3,rep,name=scores"`
+}
+
+///////////////////////////////////////////// Sktime based objects
+
+type ForecasterSpec struct {
+	// the Forecasting algorithm.
+	// +kubebuilder:validation:Optional
+	AlgorithmRef v1.ObjectReference `json:"algorithmRef,omitempty" protobuf:"bytes,1,rep,name=algorithmRef"`
+	// Hyper Parameters for the classical algorithms.
+	// +kubebuilder:validation:Optional
+	HyperParameters []HyperParameterValue `json:"hyperParameters,omitempty" protobuf:"bytes,2,rep,name=hyperParameters"`
+	// Reduction strategy
+	// +kubebuilder:validation:Optional
+	Reduction ReducedForecasterSpec `json:"reduction,omitempty" protobuf:"bytes,3,rep,name=reduction"`
+}
+
+// Reduced forecaster is used with a sklearn estimator (regression)
+// Since we can only forecast one point in advance, we must specify the forecast strategy.
+type ReducedForecasterSpec struct {
+	// The est
+	// +kubebuilder:validation:Optional
+	Estimator ClassicalEstimatorSpec `json:"estimator,omitempty" protobuf:"bytes,1,opt,name=estimator"`
+	// The forecast strategy. Since a regular regression can
+	// +kubebuilder:validation:Optional
+	Strategy ForecastStrategy `json:"strategy,omitempty" protobuf:"bytes,2,opt,name=strategy"`
+}
+
+type EnsembleForecasterSpec struct {
+	Base map[string]ForecasterSpec `json:"base,omitempty" protobuf:"bytes,1,opt,name=base"`
+}
+
+type ForecasterPipelineSpec struct {
+	// If true this is an ensemble pipeline
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Ensemble *bool `json:"ensemble,omitempty" protobuf:"bytes,1,opt,name=ensemble"`
+	// +kubebuilder:default:=none
+	// +kubebuilder:validation:Optional
+	Imputation *catalog.Imputation `json:"imputation,omitempty" protobuf:"bytes,2,opt,name=imputation"`
+	// The encoding method to use for categorical data types
+	// +kubebuilder:default:=none
+	// +kubebuilder:validation:Optional
+	Encoding *catalog.CategoricalEncoding `json:"encoding,omitempty" protobuf:"bytes,3,opt,name=encoding"`
+	// The scaling method to use for numerical data types
+	// +kubebuilder:default:=none
+	// +kubebuilder:validation:Optional
+	Scaling *catalog.Scaling `json:"scaling,omitempty" protobuf:"bytes,4,opt,name=scaling"`
+	// If true apply the data transofmer to
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Date *bool `json:"date,omitempty" protobuf:"bytes,5,opt,name=date"`
+	// The list of windows to use when generating features.
+	// +kubebuilder:validation:Optional
+	Windows []int32 `json:"windows,omitempty" protobuf:"bytes,6,opt,name=windows"`
+	// The list of lags to use when generating features
+	// +kubebuilder:validation:Optional
+	Lags []int32 `json:"lags,omitempty" protobuf:"bytes,7,opt,name=lags"`
+	// The list of metrics to generate for each combination of lag and windows.
+	// The default list is min,max,median,stddev
+	// +kubebuilder:validation:Optional
+	Functions []catalog.Metric `json:"functions,omitempty" protobuf:"bytes,8,opt,name=functions"`
+	// when computing moving avg, use exponential moving avg, other use regular moving avg
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	EMA *bool `json:"ema,omitempty" protobuf:"varint,9,opt,name=ema"` // should we use the target log.
+	// +kubebuilder:default:=true
+	// +kubebuilder:validation:Optional
+	Log *bool `json:"log,omitempty" protobuf:"varint,10,opt,name=log"` // should we use the target log.
+	// The forecaster spec.
+	// If this is a test of a single forecaster, this is the forecaster spec.
+	// +kubebuilder:validation:Optional
+	Forecaster *ForecasterSpec `json:"forecaster,omitempty" protobuf:"varint,11,opt,name=forecaster"` // should we use the target log.
+	// If this is a test for an ensemble, this is the ensemble spec.
+	// +kubebuilder:validation:Optional
+	EnsembleForecaster *EnsembleForecasterSpec `json:"EnsembleForecaster,omitempty" protobuf:"varint,12,opt,name=ensembleForecaster"` // should we use the target log.
 }

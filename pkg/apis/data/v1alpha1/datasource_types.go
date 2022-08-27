@@ -488,10 +488,10 @@ type Column struct {
 	// The threshold drift value for model drift detection.
 	// +kubebuilder:validation:Optional
 	Driftthreshold *float64 `json:"driftThreshold,omitempty" protobuf:"bytes,37,opt,name=driftThreshold"`
-	// Indicates if the column is an index column
+	// Indicates if the column is an key column
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	IndexColumn *bool `json:"indexColumn,omitempty" protobuf:"varint,38,opt,name=indexColumn"`
+	Key *bool `json:"key,omitempty" protobuf:"varint,38,opt,name=key"`
 	// Indicates if the column holds fold values
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
@@ -528,6 +528,19 @@ type Column struct {
 	// Contain the Index for the column in the schema
 	// +kubebuilder:validation:Optional
 	Index int32 `json:"index,omitempty" protobuf:"varint,48,opt,name=index"`
+	// The format of the datetime column. Used default
+	// +kubebuilder:validation:Optional
+	DateTimeFormat *string `json:"datetimeFormat,omitempty" protobuf:"bytes,49,opt,name=datetimeFormat"`
+	// Indicates if the column is contain a time series,
+	// In case of forecasting, if only one column is a time series, this is a univariate time series
+	// Otherwise, if two or more columns contain time series, than this is a univariate time series.
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	TimeSeries *bool `json:"timeseries,omitempty" protobuf:"varint,50,opt,name=timeseries"`
+	// Indicates if the column is contains a exogenous information.
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Exogenous *bool `json:"exogenous,omitempty" protobuf:"varint,51,opt,name=Exogenous"`
 }
 
 // DataSource defines the specification for the file format and column-level schema of data to be used within Modela

@@ -50,13 +50,7 @@ message BacktestSpec {
   // ExpectedValueMax size for a single training set
   // +kubebuilder:default = 0
   // +kubebuilder:validation:Optional
-  optional int32 maxTrainSize = 3;
-
-  // The number of data points to forecast on.
-  // +kubebuilder:default = 0
-  // +kubebuilder:validation:Minimum=0
-  // +kubebuilder:validation:Optional
-  optional int32 testSize = 4;
+  optional int32 InitialSize = 3;
 
   // The number of data points between each windows
   // +kubebuilder:default = 0
@@ -475,6 +469,10 @@ message EarlyStopSpec {
   optional int32 minModelsWithNoProgress = 3;
 }
 
+message EnsembleForecasterSpec {
+  map<string, ForecasterSpec> base = 1;
+}
+
 // EnsembleRules is an algorithm class that decide
 message EnsembleRules {
 }
@@ -587,10 +585,6 @@ message FeatureEngineeringPipeline {
   // Video specifies the pipeline to handle video data (currently unsupported)
   // +kubebuilder:validation:Optional
   optional VideoPipelineSpec video = 14;
-
-  // TimeSeries specify the fe to try in case of a pipeline
-  // +kubebuilder:validation:Optional
-  optional TimeSeriesPipelineSpec ts = 15;
 
   // Generated specifies a collection of columns to be generated
   // +kubebuilder:validation:Optional
@@ -783,94 +777,122 @@ message ForecastObj {
   optional int32 levelIndex = 2;
 }
 
-// The Forecast storage spec specify where to store the forecast after prediction.
-message ForecastPostProcessingSpec {
-  // The name of the connection for a database the result of the forecast
-  // If null, the system will insert the forecast in the database.
+message ForecasterPipelineSpec {
+  // If true this is an ensemble pipeline
+  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional string connectionName = 1;
+  optional bool ensemble = 1;
 
-  // Specify if we should generate a forecast using the model
-  // If true, the system will perform a forecast and update the forecast connection.
+  // +kubebuilder:default:=none
+  // +kubebuilder:validation:Optional
+  optional string imputation = 2;
+
+  // The encoding method to use for categorical data types
+  // +kubebuilder:default:=none
+  // +kubebuilder:validation:Optional
+  optional string encoding = 3;
+
+  // The scaling method to use for numerical data types
+  // +kubebuilder:default:=none
+  // +kubebuilder:validation:Optional
+  optional string scaling = 4;
+
+  // If true apply the data transofmer to
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool date = 5;
+
+  // The list of windows to use when generating features.
+  // +kubebuilder:validation:Optional
+  repeated int32 windows = 6;
+
+  // The list of lags to use when generating features
+  // +kubebuilder:validation:Optional
+  repeated int32 lags = 7;
+
+  // The list of metrics to generate for each combination of lag and windows.
+  // The default list is min,max,median,stddev
+  // +kubebuilder:validation:Optional
+  repeated string functions = 8;
+
+  // when computing moving avg, use exponential moving avg, other use regular moving avg
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool ema = 9;
+
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
-  optional bool forecast = 2;
+  optional bool log = 10;
+
+  // The forecaster spec.
+  // If this is a test of a single forecaster, this is the forecaster spec.
+  // +kubebuilder:validation:Optional
+  optional ForecasterSpec forecaster = 11;
+
+  // If this is a test for an ensemble, this is the ensemble spec.
+  // +kubebuilder:validation:Optional
+  optional EnsembleForecasterSpec ensembleForecaster = 12;
+}
+
+message ForecasterSpec {
+  // the Forecasting algorithm.
+  // +kubebuilder:validation:Optional
+  optional k8s.io.api.core.v1.ObjectReference algorithmRef = 1;
+
+  // Hyper Parameters for the classical algorithms.
+  // +kubebuilder:validation:Optional
+  repeated HyperParameterValue hyperParameters = 2;
+
+  // Reduction strategy
+  // +kubebuilder:validation:Optional
+  optional ReducedForecasterSpec reduction = 3;
 }
 
 // ForecastingSpec
 message ForecasterTrainingSpec {
-  // The name of the time column, this should be taken from the data source.
-  // +kubebuilder:validation:Required
-  // +required
-  optional string timeColumn = 1;
-
-  // The name of the column holding the value.
-  // By default this is the target column from the dataset.
-  // +kubebuilder:validation:Required
-  // +required
-  optional string targetColumn = 2;
-
-  // The format of the datetime column. Used default
-  // +kubebuilder:validation:Optional
-  optional string datetimeFormat = 3;
-
-  // +kubebuilder:validation:Optional
-  // Column names for the time series key
-  // +kubebuilder:validation:Optional
-  repeated string keyColumn = 4;
-
   // The list of additional regressors. The regressors are part of the time series data
   // +kubebuilder:validation:Optional
-  repeated RegressorSpec regressors = 5;
+  repeated RegressorSpec regressors = 1;
 
   // The spec for the holiday
   // +kubebuilder:validation:Optional
-  repeated HolidaySpec holidays = 6;
+  repeated HolidaySpec holidays = 2;
 
   // Specification for the past windows
   // +kubebuilder:validation:Optional
-  optional WindowSpec past = 7;
+  optional WindowSpec past = 3;
 
   // Specification for the future windows
   // +kubebuilder:validation:Optional
-  optional WindowSpec future = 8;
+  optional WindowSpec future = 4;
 
   // The backtest specification, the system supports back testing with expanding windows.
   // +kubebuilder:validation:Optional
-  optional BacktestSpec backtest = 10;
+  optional BacktestSpec backtest = 5;
 
-  // Post processing
+  // Make a forecast post training
   // +kubebuilder:validation:Optional
-  optional ForecastPostProcessingSpec postProcessing = 11;
-
-  // If true generate the plots
-  // +kubebuilder:default = true
-  // +kubebuilder:validation:Optional
-  optional bool plot = 12;
-
-  // +kubebuilder:default = true
-  // +kubebuilder:validation:Optional
-  optional bool plotChangePoints = 13;
+  optional bool forecast = 6;
 
   // The data location that would store the forecast result.
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation outputLocation = 14;
+  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation outputLocation = 7;
 
   // List of time series features to compute on each time series.
   // +kubebuilder:validation:Optional
-  repeated string features = 15;
-
-  // Feature engineering spec.
-  // +kubebuilder:validation:Optional
-  optional TimeSeriesPipelineSpec fe = 16;
+  repeated string features = 8;
 
   // If using prophet, those are the prophet settings
   // +kubebuilder:validation:Optional
-  optional ProphetSpec prophet = 17;
+  optional ProphetSpec prophet = 9;
+
+  // The forecasting pipeline
+  // +kubebuilder:validation:Optional
+  optional ForecasterPipelineSpec pipeline = 10;
 
   // Definitions of the many models
   // +kubebuilder:validation:Optional
-  optional ManyModelsSpec manyModels = 18;
+  optional ManyModelsSpec manyModels = 11;
 }
 
 // GarbageCollectionSpec specifies the configuration to garbage-collect unused Model resources
@@ -2938,6 +2960,18 @@ message PrunerSpec {
   optional ThresholdPrunerOptions threshold = 6;
 }
 
+// Reduced forecaster is used with a sklearn estimator (regression)
+// Since we can only forecast one point in advance, we must specify the forecast strategy.
+message ReducedForecasterSpec {
+  // The est
+  // +kubebuilder:validation:Optional
+  optional ClassicalEstimatorSpec estimator = 1;
+
+  // The forecast strategy. Since a regular regression can
+  // +kubebuilder:validation:Optional
+  optional string strategy = 2;
+}
+
 message RegressorSpec {
   // The Name of the regressor
   // +kubebuilder:validation:Optional
@@ -3874,40 +3908,6 @@ message TimeSeriesModelStatus {
   // The scores
   // +kubebuilder:validation:Optional
   map<string, double> scores = 3;
-}
-
-message TimeSeriesPipelineSpec {
-  // generate all features.
-  // +kubebuilder:default:=true
-  // +kubebuilder:validation:Optional
-  optional bool all = 1;
-
-  // when computing moving avg, use exponential moving avg, other use regular moving avg
-  // +kubebuilder:default:=false
-  // +kubebuilder:validation:Optional
-  optional bool ema = 2;
-
-  // +kubebuilder:default:=true
-  // +kubebuilder:validation:Optional
-  optional bool log = 3;
-
-  // The list of windows to use when generating features.
-  // +kubebuilder:validation:Optional
-  repeated int32 windows = 4;
-
-  // The list of lags to use when generating features
-  // +kubebuilder:validation:Optional
-  repeated int32 lags = 5;
-
-  // The list of metrics to generate for each combination of lag and windows.
-  // The default list is min,max,median,stddev
-  // +kubebuilder:validation:Optional
-  repeated string functions = 6;
-
-  // The list of final features that were selected by the time series.
-  // Those feature were selected based on importance.
-  // +kubebuilder:validation:Optional
-  repeated string features = 7;
 }
 
 // TrainingSpec specifies the configuration of a model training workload

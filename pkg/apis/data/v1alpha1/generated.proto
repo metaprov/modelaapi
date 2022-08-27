@@ -236,10 +236,10 @@ message Column {
   // +kubebuilder:validation:Optional
   optional double driftThreshold = 37;
 
-  // Indicates if the column is an index column
+  // Indicates if the column is an key column
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool indexColumn = 38;
+  optional bool key = 38;
 
   // Indicates if the column holds fold values
   // +kubebuilder:default:=false
@@ -286,6 +286,22 @@ message Column {
   // Contain the Index for the column in the schema
   // +kubebuilder:validation:Optional
   optional int32 index = 48;
+
+  // The format of the datetime column. Used default
+  // +kubebuilder:validation:Optional
+  optional string datetimeFormat = 49;
+
+  // Indicates if the column is contain a time series,
+  // In case of forecasting, if only one column is a time series, this is a univariate time series
+  // Otherwise, if two or more columns contain time series, than this is a univariate time series.
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool timeseries = 50;
+
+  // Indicates if the column is contains a exogenous information.
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool Exogenous = 51;
 }
 
 message ColumnHistogram {
