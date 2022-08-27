@@ -2260,6 +2260,11 @@ type DataTestCaseResult struct {
 	FailureMsg string `json:"failureMsg,omitempty" protobuf:"bytes,5,opt,name=failureMsg"`
 }
 
-////////////////////////////////////
-// Test frameworks
-///////////////////////////////////
+// +kubebuilder:validation:Enum="series";"panel";"hierarchical"
+type TimeSeriesType string
+
+const (
+	TimeSeriesTypeSeries       TimeSeriesType = "series"
+	TimeSeriesTypePanel        TimeSeriesType = "panel"
+	TimeSeriesTypeHierarchical TimeSeriesType = "hierarchical"
+)

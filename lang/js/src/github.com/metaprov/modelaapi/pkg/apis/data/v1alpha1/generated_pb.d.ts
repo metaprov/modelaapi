@@ -5918,6 +5918,9 @@ export namespace TableSpec {
 }
 
 export class TimeSeriesSchema extends jspb.Message {
+  getType(): string;
+  setType(value: string): TimeSeriesSchema;
+
   getFreq(): string;
   setFreq(value: string): TimeSeriesSchema;
 
@@ -5945,6 +5948,7 @@ export class TimeSeriesSchema extends jspb.Message {
 
 export namespace TimeSeriesSchema {
   export type AsObject = {
+    type: string,
     freq: string,
     interval: number,
     country: string,

@@ -3919,24 +3919,27 @@ message TableSpec {
 }
 
 message TimeSeriesSchema {
+  // The time series type
+  optional string type = 1;
+
   // The time series frequency
   // +kubebuilder:validation:Optional
-  optional string freq = 1;
+  optional string freq = 2;
 
   // +kubebuilder:default:=1
   // +kubebuilder:validation:Optional
-  optional int32 interval = 2;
+  optional int32 interval = 3;
 
   // The holiday which should be taken into account
   // +kubebuilder:validation:Optional
-  optional string country = 3;
+  optional string country = 4;
 
   // The time column name
-  optional string timeColumns = 4;
+  optional string timeColumns = 5;
 
   // The keys columns for hierarchical  time series.
   // +kubebuilder:validation:Optional
-  repeated string keys = 5;
+  repeated string keys = 6;
 }
 
 // WebRequest represent a single sqlquery in the sqlquery store.

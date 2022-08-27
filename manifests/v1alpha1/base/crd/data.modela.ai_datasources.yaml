@@ -906,6 +906,13 @@ spec:
                       timeColumn:
                         description: The time column name
                         type: string
+                      type:
+                        description: The time series type
+                        enum:
+                        - series
+                        - panel
+                        - hierarchical
+                        type: string
                     type: object
                 type: object
               subtask:

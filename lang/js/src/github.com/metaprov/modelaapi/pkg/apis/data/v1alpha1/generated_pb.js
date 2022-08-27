@@ -58830,7 +58830,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec.prototype.h
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.repeatedFields_ = [5];
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.repeatedFields_ = [6];
 
 
 
@@ -58863,11 +58863,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prot
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.toObject = function(includeInstance, msg) {
   var f, obj = {
-    freq: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    interval: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    country: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-    timecolumns: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    keysList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f
+    type: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    freq: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    interval: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    country: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    timecolumns: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    keysList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -58906,21 +58907,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.dese
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setFreq(value);
+      msg.setType(value);
       break;
     case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFreq(value);
+      break;
+    case 3:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setInterval(value);
       break;
-    case 3:
+    case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setCountry(value);
       break;
-    case 4:
+    case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setTimecolumns(value);
       break;
-    case 5:
+    case 6:
       var value = /** @type {string} */ (reader.readString());
       msg.addKeys(value);
       break;
@@ -58960,16 +58965,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.seri
       f
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 2));
+  f = /** @type {string} */ (jspb.Message.getField(message, 2));
   if (f != null) {
-    writer.writeInt32(
+    writer.writeString(
       2,
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  f = /** @type {number} */ (jspb.Message.getField(message, 3));
   if (f != null) {
-    writer.writeString(
+    writer.writeInt32(
       3,
       f
     );
@@ -58981,10 +58986,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.seri
       f
     );
   }
+  f = /** @type {string} */ (jspb.Message.getField(message, 5));
+  if (f != null) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
   f = message.getKeysList();
   if (f.length > 0) {
     writer.writeRepeatedString(
-      5,
+      6,
       f
     );
   }
@@ -58992,10 +59004,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.seri
 
 
 /**
- * optional string freq = 1;
+ * optional string type = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prototype.getFreq = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prototype.getType = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -59004,7 +59016,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prot
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prototype.setFreq = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prototype.setType = function(value) {
   return jspb.Message.setField(this, 1, value);
 };
 
@@ -59013,7 +59025,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prototype.clearFreq = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prototype.clearType = function() {
   return jspb.Message.setField(this, 1, undefined);
 };
 
@@ -59022,25 +59034,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prototype.hasFreq = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prototype.hasType = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
- * optional int32 interval = 2;
- * @return {number}
+ * optional string freq = 2;
+ * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prototype.getInterval = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prototype.getFreq = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prototype.setInterval = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prototype.setFreq = function(value) {
   return jspb.Message.setField(this, 2, value);
 };
 
@@ -59049,7 +59061,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prototype.clearInterval = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prototype.clearFreq = function() {
   return jspb.Message.setField(this, 2, undefined);
 };
 
@@ -59058,25 +59070,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prototype.hasInterval = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prototype.hasFreq = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional string country = 3;
- * @return {string}
+ * optional int32 interval = 3;
+ * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prototype.getCountry = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prototype.getInterval = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prototype.setCountry = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prototype.setInterval = function(value) {
   return jspb.Message.setField(this, 3, value);
 };
 
@@ -59085,7 +59097,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prototype.clearCountry = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prototype.clearInterval = function() {
   return jspb.Message.setField(this, 3, undefined);
 };
 
@@ -59094,16 +59106,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prototype.hasCountry = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prototype.hasInterval = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional string timeColumns = 4;
+ * optional string country = 4;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prototype.getTimecolumns = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prototype.getCountry = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
@@ -59112,7 +59124,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prot
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prototype.setTimecolumns = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prototype.setCountry = function(value) {
   return jspb.Message.setField(this, 4, value);
 };
 
@@ -59121,7 +59133,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prototype.clearTimecolumns = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prototype.clearCountry = function() {
   return jspb.Message.setField(this, 4, undefined);
 };
 
@@ -59130,17 +59142,53 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prototype.hasTimecolumns = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prototype.hasCountry = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * repeated string keys = 5;
+ * optional string timeColumns = 5;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prototype.getTimecolumns = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prototype.setTimecolumns = function(value) {
+  return jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prototype.clearTimecolumns = function() {
+  return jspb.Message.setField(this, 5, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prototype.hasTimecolumns = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * repeated string keys = 6;
  * @return {!Array<string>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prototype.getKeysList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 5));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 6));
 };
 
 
@@ -59149,7 +59197,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prototype.setKeysList = function(value) {
-  return jspb.Message.setField(this, 5, value || []);
+  return jspb.Message.setField(this, 6, value || []);
 };
 
 
@@ -59159,7 +59207,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prototype.addKeys = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 5, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 6, value, opt_index);
 };
 
 
