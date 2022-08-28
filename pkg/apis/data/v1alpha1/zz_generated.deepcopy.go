@@ -4860,11 +4860,6 @@ func (in *TimeSeriesSchema) DeepCopyInto(out *TimeSeriesSchema) {
 		*out = new(int32)
 		**out = **in
 	}
-	if in.Country != nil {
-		in, out := &in.Country, &out.Country
-		*out = new(catalogv1alpha1.HolidayCountry)
-		**out = **in
-	}
 	if in.Keys != nil {
 		in, out := &in.Keys, &out.Keys
 		*out = make([]string, len(*in))
