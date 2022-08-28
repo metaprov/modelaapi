@@ -469,10 +469,6 @@ message EarlyStopSpec {
   optional int32 minModelsWithNoProgress = 3;
 }
 
-message EnsembleForecasterSpec {
-  map<string, ForecasterSpec> base = 1;
-}
-
 // EnsembleRules is an algorithm class that decide
 message EnsembleRules {
 }
@@ -824,28 +820,10 @@ message ForecasterPipelineSpec {
   // +kubebuilder:validation:Optional
   optional bool log = 10;
 
-  // The forecaster spec.
-  // If this is a test of a single forecaster, this is the forecaster spec.
+  // If we are using reduced model, this is the way the reduced model will make prediction
+  // Default to none
   // +kubebuilder:validation:Optional
-  optional ForecasterSpec forecaster = 11;
-
-  // If this is a test for an ensemble, this is the ensemble spec.
-  // +kubebuilder:validation:Optional
-  optional EnsembleForecasterSpec ensembleForecaster = 12;
-}
-
-message ForecasterSpec {
-  // the Forecasting algorithm.
-  // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference algorithmRef = 1;
-
-  // Hyper Parameters for the classical algorithms.
-  // +kubebuilder:validation:Optional
-  repeated HyperParameterValue hyperParameters = 2;
-
-  // Reduction strategy
-  // +kubebuilder:validation:Optional
-  optional ReducedForecasterSpec reduction = 3;
+  optional string strategy = 11;
 }
 
 // ForecastingSpec
@@ -2958,18 +2936,6 @@ message PrunerSpec {
 
   // +kubebuilder:validation:Optional
   optional ThresholdPrunerOptions threshold = 6;
-}
-
-// Reduced forecaster is used with a sklearn estimator (regression)
-// Since we can only forecast one point in advance, we must specify the forecast strategy.
-message ReducedForecasterSpec {
-  // The est
-  // +kubebuilder:validation:Optional
-  optional ClassicalEstimatorSpec estimator = 1;
-
-  // The forecast strategy. Since a regular regression can
-  // +kubebuilder:validation:Optional
-  optional string strategy = 2;
 }
 
 message RegressorSpec {

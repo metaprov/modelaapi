@@ -740,24 +740,6 @@ export namespace EarlyStopSpec {
   }
 }
 
-export class EnsembleForecasterSpec extends jspb.Message {
-  getBaseMap(): jspb.Map<string, ForecasterSpec>;
-  clearBaseMap(): EnsembleForecasterSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): EnsembleForecasterSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: EnsembleForecasterSpec): EnsembleForecasterSpec.AsObject;
-  static serializeBinaryToWriter(message: EnsembleForecasterSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): EnsembleForecasterSpec;
-  static deserializeBinaryFromReader(message: EnsembleForecasterSpec, reader: jspb.BinaryReader): EnsembleForecasterSpec;
-}
-
-export namespace EnsembleForecasterSpec {
-  export type AsObject = {
-    baseMap: Array<[string, ForecasterSpec.AsObject]>,
-  }
-}
-
 export class EnsembleRules extends jspb.Message {
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): EnsembleRules.AsObject;
@@ -1237,15 +1219,8 @@ export class ForecasterPipelineSpec extends jspb.Message {
   getLog(): boolean;
   setLog(value: boolean): ForecasterPipelineSpec;
 
-  getForecaster(): ForecasterSpec | undefined;
-  setForecaster(value?: ForecasterSpec): ForecasterPipelineSpec;
-  hasForecaster(): boolean;
-  clearForecaster(): ForecasterPipelineSpec;
-
-  getEnsembleforecaster(): EnsembleForecasterSpec | undefined;
-  setEnsembleforecaster(value?: EnsembleForecasterSpec): ForecasterPipelineSpec;
-  hasEnsembleforecaster(): boolean;
-  clearEnsembleforecaster(): ForecasterPipelineSpec;
+  getStrategy(): string;
+  setStrategy(value: string): ForecasterPipelineSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ForecasterPipelineSpec.AsObject;
@@ -1267,40 +1242,7 @@ export namespace ForecasterPipelineSpec {
     functionsList: Array<string>,
     ema: boolean,
     log: boolean,
-    forecaster?: ForecasterSpec.AsObject,
-    ensembleforecaster?: EnsembleForecasterSpec.AsObject,
-  }
-}
-
-export class ForecasterSpec extends jspb.Message {
-  getAlgorithmref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setAlgorithmref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ForecasterSpec;
-  hasAlgorithmref(): boolean;
-  clearAlgorithmref(): ForecasterSpec;
-
-  getHyperparametersList(): Array<HyperParameterValue>;
-  setHyperparametersList(value: Array<HyperParameterValue>): ForecasterSpec;
-  clearHyperparametersList(): ForecasterSpec;
-  addHyperparameters(value?: HyperParameterValue, index?: number): HyperParameterValue;
-
-  getReduction(): ReducedForecasterSpec | undefined;
-  setReduction(value?: ReducedForecasterSpec): ForecasterSpec;
-  hasReduction(): boolean;
-  clearReduction(): ForecasterSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ForecasterSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: ForecasterSpec): ForecasterSpec.AsObject;
-  static serializeBinaryToWriter(message: ForecasterSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ForecasterSpec;
-  static deserializeBinaryFromReader(message: ForecasterSpec, reader: jspb.BinaryReader): ForecasterSpec;
-}
-
-export namespace ForecasterSpec {
-  export type AsObject = {
-    algorithmref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    hyperparametersList: Array<HyperParameterValue.AsObject>,
-    reduction?: ReducedForecasterSpec.AsObject,
+    strategy: string,
   }
 }
 
@@ -4379,30 +4321,6 @@ export namespace PrunerSpec {
     successivehalving?: SuccessiveHalvingOptions.AsObject,
     hyperband?: HyperbandOptions.AsObject,
     threshold?: ThresholdPrunerOptions.AsObject,
-  }
-}
-
-export class ReducedForecasterSpec extends jspb.Message {
-  getEstimator(): ClassicalEstimatorSpec | undefined;
-  setEstimator(value?: ClassicalEstimatorSpec): ReducedForecasterSpec;
-  hasEstimator(): boolean;
-  clearEstimator(): ReducedForecasterSpec;
-
-  getStrategy(): string;
-  setStrategy(value: string): ReducedForecasterSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ReducedForecasterSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: ReducedForecasterSpec): ReducedForecasterSpec.AsObject;
-  static serializeBinaryToWriter(message: ReducedForecasterSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ReducedForecasterSpec;
-  static deserializeBinaryFromReader(message: ReducedForecasterSpec, reader: jspb.BinaryReader): ReducedForecasterSpec;
-}
-
-export namespace ReducedForecasterSpec {
-  export type AsObject = {
-    estimator?: ClassicalEstimatorSpec.AsObject,
-    strategy: string,
   }
 }
 

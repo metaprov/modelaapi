@@ -314,11 +314,6 @@ type TimeSeriesSchema struct {
 	// +kubebuilder:default:=1
 	// +kubebuilder:validation:Optional
 	Interval *int32 `json:"interval,omitempty" protobuf:"bytes,3,opt,name=interval"`
-	// The holiday which should be taken into account
-	// +kubebuilder:validation:Optional
-	Country *catalog.HolidayCountry `json:"country,omitempty" protobuf:"bytes,4,opt,name=country"`
-	// The time column name
-	TimeColumn string `json:"timeColumn,omitempty" protobuf:"bytes,5,opt,name=timeColumns"`
 	// The keys columns for hierarchical  time series.
 	// +kubebuilder:validation:Optional
 	Keys []string `json:"keys,omitempty" protobuf:"bytes,6,rep,name=keys"`

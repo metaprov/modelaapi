@@ -781,118 +781,6 @@ spec:
                   pipeline:
                     description: The forecasting pipeline
                     properties:
-                      EnsembleForecaster:
-                        description: If this is a test for an ensemble, this is the
-                          ensemble spec.
-                        properties:
-                          base:
-                            additionalProperties:
-                              properties:
-                                algorithmRef:
-                                  description: the Forecasting algorithm.
-                                  properties:
-                                    apiVersion:
-                                      description: API version of the referent.
-                                      type: string
-                                    fieldPath:
-                                      description: 'If referring to a piece of an
-                                        object instead of an entire object, this string
-                                        should contain a valid JSON/Go field access
-                                        statement, such as desiredState.manifest.containers[2].
-                                        For example, if the object reference is to
-                                        a container within a pod, this would take
-                                        on a value like: "spec.containers{name}" (where
-                                        "name" refers to the name of the container
-                                        that triggered the event) or if no container
-                                        name is specified "spec.containers[2]" (container
-                                        with index 2 in this pod). This syntax is
-                                        chosen only to have some well-defined way
-                                        of referencing a part of an object. TODO:
-                                        this design is not final and this field is
-                                        subject to change in the future.'
-                                      type: string
-                                    kind:
-                                      description: 'Kind of the referent. More info:
-                                        https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
-                                      type: string
-                                    name:
-                                      description: 'Name of the referent. More info:
-                                        https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
-                                      type: string
-                                    namespace:
-                                      description: 'Namespace of the referent. More
-                                        info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
-                                      type: string
-                                    resourceVersion:
-                                      description: 'Specific resourceVersion to which
-                                        this reference is made, if any. More info:
-                                        https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
-                                      type: string
-                                    uid:
-                                      description: 'UID of the referent. More info:
-                                        https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
-                                      type: string
-                                  type: object
-                                hyperParameters:
-                                  description: Hyper Parameters for the classical
-                                    algorithms.
-                                  items:
-                                    description: HyperParameterValue represent an
-                                      individual hyper-parameter of a machine earning
-                                      algorithm
-                                    properties:
-                                      name:
-                                        description: The name of the hyper-parameter
-                                        type: string
-                                      value:
-                                        description: The value of the hyper-parameter
-                                        type: string
-                                    required:
-                                    - name
-                                    - value
-                                    type: object
-                                  type: array
-                                reduction:
-                                  description: Reduction strategy
-                                  properties:
-                                    estimator:
-                                      description: The est
-                                      properties:
-                                        algorithmName:
-                                          description: AlgorithmName is a reference
-                                            to the algorithm in the catalog
-                                          type: string
-                                        parameters:
-                                          description: Parameters is a list of the
-                                            algorithm hyper parameters
-                                          items:
-                                            description: HyperParameterValue represent
-                                              an individual hyper-parameter of a machine
-                                              earning algorithm
-                                            properties:
-                                              name:
-                                                description: The name of the hyper-parameter
-                                                type: string
-                                              value:
-                                                description: The value of the hyper-parameter
-                                                type: string
-                                            required:
-                                            - name
-                                            - value
-                                            type: object
-                                          type: array
-                                      type: object
-                                    strategy:
-                                      description: The forecast strategy. Since a
-                                        regular regression can
-                                      enum:
-                                      - recursive
-                                      - direct
-                                      type: string
-                                  type: object
-                              type: object
-                            type: object
-                        type: object
                       date:
                         default: false
                         description: If true apply the data transofmer to
@@ -926,105 +814,6 @@ spec:
                         default: false
                         description: If true this is an ensemble pipeline
                         type: boolean
-                      forecaster:
-                        description: The forecaster spec. If this is a test of a single
-                          forecaster, this is the forecaster spec.
-                        properties:
-                          algorithmRef:
-                            description: the Forecasting algorithm.
-                            properties:
-                              apiVersion:
-                                description: API version of the referent.
-                                type: string
-                              fieldPath:
-                                description: 'If referring to a piece of an object
-                                  instead of an entire object, this string should
-                                  contain a valid JSON/Go field access statement,
-                                  such as desiredState.manifest.containers[2]. For
-                                  example, if the object reference is to a container
-                                  within a pod, this would take on a value like: "spec.containers{name}"
-                                  (where "name" refers to the name of the container
-                                  that triggered the event) or if no container name
-                                  is specified "spec.containers[2]" (container with
-                                  index 2 in this pod). This syntax is chosen only
-                                  to have some well-defined way of referencing a part
-                                  of an object. TODO: this design is not final and
-                                  this field is subject to change in the future.'
-                                type: string
-                              kind:
-                                description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
-                                type: string
-                              name:
-                                description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
-                                type: string
-                              namespace:
-                                description: 'Namespace of the referent. More info:
-                                  https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
-                                type: string
-                              resourceVersion:
-                                description: 'Specific resourceVersion to which this
-                                  reference is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
-                                type: string
-                              uid:
-                                description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
-                                type: string
-                            type: object
-                          hyperParameters:
-                            description: Hyper Parameters for the classical algorithms.
-                            items:
-                              description: HyperParameterValue represent an individual
-                                hyper-parameter of a machine earning algorithm
-                              properties:
-                                name:
-                                  description: The name of the hyper-parameter
-                                  type: string
-                                value:
-                                  description: The value of the hyper-parameter
-                                  type: string
-                              required:
-                              - name
-                              - value
-                              type: object
-                            type: array
-                          reduction:
-                            description: Reduction strategy
-                            properties:
-                              estimator:
-                                description: The est
-                                properties:
-                                  algorithmName:
-                                    description: AlgorithmName is a reference to the
-                                      algorithm in the catalog
-                                    type: string
-                                  parameters:
-                                    description: Parameters is a list of the algorithm
-                                      hyper parameters
-                                    items:
-                                      description: HyperParameterValue represent an
-                                        individual hyper-parameter of a machine earning
-                                        algorithm
-                                      properties:
-                                        name:
-                                          description: The name of the hyper-parameter
-                                          type: string
-                                        value:
-                                          description: The value of the hyper-parameter
-                                          type: string
-                                      required:
-                                      - name
-                                      - value
-                                      type: object
-                                    type: array
-                                type: object
-                              strategy:
-                                description: The forecast strategy. Since a regular
-                                  regression can
-                                enum:
-                                - recursive
-                                - direct
-                                type: string
-                            type: object
-                        type: object
                       functions:
                         description: The list of metrics to generate for each combination
                           of lag and windows. The default list is min,max,median,stddev
@@ -1071,6 +860,14 @@ spec:
                         - scale-to-unit-norm
                         - none
                         - auto
+                        type: string
+                      strategy:
+                        description: If we are using reduced model, this is the way
+                          the reduced model will make prediction Default to none
+                        enum:
+                        - recursive
+                        - direct
+                        - none
                         type: string
                       windows:
                         description: The list of windows to use when generating features.

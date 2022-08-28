@@ -3,15 +3,15 @@ package v1alpha1
 import (
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	data "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1"
-	v1 "k8s.io/api/core/v1"
 )
 
-// +kubebuilder:validation:Enum="recursive";"direct";
+// +kubebuilder:validation:Enum="recursive";"direct";"none"
 type ForecastStrategy string
 
 const (
-	Recursive ForecastStrategy = "recursive"
-	Direct    ForecastStrategy = "direct"
+	ForecastStrategyRecursive ForecastStrategy = "recursive"
+	ForecastStrategyDirect    ForecastStrategy = "direct"
+	ForecastStrategyNone      ForecastStrategy = "none"
 )
 
 // +kubebuilder:validation:Enum="linear";"logistic";"flat"
@@ -262,35 +262,6 @@ type TimeSeriesModelStatus struct {
 	Scores map[catalog.Metric]float64 `json:"scores,omitempty" protobuf:"bytes,3,rep,name=scores"`
 }
 
-///////////////////////////////////////////// Sktime based objects
-
-type ForecasterSpec struct {
-	// the Forecasting algorithm.
-	// +kubebuilder:validation:Optional
-	AlgorithmRef v1.ObjectReference `json:"algorithmRef,omitempty" protobuf:"bytes,1,rep,name=algorithmRef"`
-	// Hyper Parameters for the classical algorithms.
-	// +kubebuilder:validation:Optional
-	HyperParameters []HyperParameterValue `json:"hyperParameters,omitempty" protobuf:"bytes,2,rep,name=hyperParameters"`
-	// Reduction strategy
-	// +kubebuilder:validation:Optional
-	Reduction ReducedForecasterSpec `json:"reduction,omitempty" protobuf:"bytes,3,rep,name=reduction"`
-}
-
-// Reduced forecaster is used with a sklearn estimator (regression)
-// Since we can only forecast one point in advance, we must specify the forecast strategy.
-type ReducedForecasterSpec struct {
-	// The est
-	// +kubebuilder:validation:Optional
-	Estimator ClassicalEstimatorSpec `json:"estimator,omitempty" protobuf:"bytes,1,opt,name=estimator"`
-	// The forecast strategy. Since a regular regression can
-	// +kubebuilder:validation:Optional
-	Strategy ForecastStrategy `json:"strategy,omitempty" protobuf:"bytes,2,opt,name=strategy"`
-}
-
-type EnsembleForecasterSpec struct {
-	Base map[string]ForecasterSpec `json:"base,omitempty" protobuf:"bytes,1,opt,name=base"`
-}
-
 type ForecasterPipelineSpec struct {
 	// If true this is an ensemble pipeline
 	// +kubebuilder:default:=false
@@ -328,11 +299,8 @@ type ForecasterPipelineSpec struct {
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
 	Log *bool `json:"log,omitempty" protobuf:"varint,10,opt,name=log"` // should we use the target log.
-	// The forecaster spec.
-	// If this is a test of a single forecaster, this is the forecaster spec.
+	// If we are using reduced model, this is the way the reduced model will make prediction
+	// Default to none
 	// +kubebuilder:validation:Optional
-	Forecaster *ForecasterSpec `json:"forecaster,omitempty" protobuf:"varint,11,opt,name=forecaster"` // should we use the target log.
-	// If this is a test for an ensemble, this is the ensemble spec.
-	// +kubebuilder:validation:Optional
-	EnsembleForecaster *EnsembleForecasterSpec `json:"EnsembleForecaster,omitempty" protobuf:"varint,12,opt,name=ensembleForecaster"` // should we use the target log.
+	ReductionStrategy ForecastStrategy `json:"strategy,omitempty" protobuf:"bytes,11,opt,name=strategy"`
 }

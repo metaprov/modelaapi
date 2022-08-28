@@ -5927,12 +5927,6 @@ export class TimeSeriesSchema extends jspb.Message {
   getInterval(): number;
   setInterval(value: number): TimeSeriesSchema;
 
-  getCountry(): string;
-  setCountry(value: string): TimeSeriesSchema;
-
-  getTimecolumns(): string;
-  setTimecolumns(value: string): TimeSeriesSchema;
-
   getKeysList(): Array<string>;
   setKeysList(value: Array<string>): TimeSeriesSchema;
   clearKeysList(): TimeSeriesSchema;
@@ -5951,8 +5945,6 @@ export namespace TimeSeriesSchema {
     type: string,
     freq: string,
     interval: number,
-    country: string,
-    timecolumns: string,
     keysList: Array<string>,
   }
 }

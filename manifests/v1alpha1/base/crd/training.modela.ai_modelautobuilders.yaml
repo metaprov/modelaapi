@@ -926,27 +926,6 @@ spec:
                         description: The time-series schema, which sets time-series
                           specific parameters
                         properties:
-                          country:
-                            description: The holiday which should be taken into account
-                            enum:
-                            - US
-                            - BR
-                            - ID
-                            - IN
-                            - MY
-                            - VN
-                            - TH
-                            - PH
-                            - PK
-                            - BD
-                            - EG
-                            - CN
-                            - RU
-                            - KR
-                            - BY
-                            - AE
-                            - none
-                            type: string
                           freq:
                             description: The time series frequency
                             enum:
@@ -968,9 +947,6 @@ spec:
                             items:
                               type: string
                             type: array
-                          timeColumn:
-                            description: The time column name
-                            type: string
                           type:
                             description: The time series type
                             enum:

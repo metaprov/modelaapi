@@ -3930,13 +3930,6 @@ message TimeSeriesSchema {
   // +kubebuilder:validation:Optional
   optional int32 interval = 3;
 
-  // The holiday which should be taken into account
-  // +kubebuilder:validation:Optional
-  optional string country = 4;
-
-  // The time column name
-  optional string timeColumns = 5;
-
   // The keys columns for hierarchical  time series.
   // +kubebuilder:validation:Optional
   repeated string keys = 6;

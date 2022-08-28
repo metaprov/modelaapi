@@ -58866,8 +58866,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.toOb
     type: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     freq: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     interval: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-    country: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    timecolumns: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     keysList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f
   };
 
@@ -58916,14 +58914,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.dese
     case 3:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setInterval(value);
-      break;
-    case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setCountry(value);
-      break;
-    case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setTimecolumns(value);
       break;
     case 6:
       var value = /** @type {string} */ (reader.readString());
@@ -58976,20 +58966,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.seri
   if (f != null) {
     writer.writeInt32(
       3,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 4));
-  if (f != null) {
-    writer.writeString(
-      4,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 5));
-  if (f != null) {
-    writer.writeString(
-      5,
       f
     );
   }
@@ -59108,78 +59084,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prot
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prototype.hasInterval = function() {
   return jspb.Message.getField(this, 3) != null;
-};
-
-
-/**
- * optional string country = 4;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prototype.getCountry = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prototype.setCountry = function(value) {
-  return jspb.Message.setField(this, 4, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prototype.clearCountry = function() {
-  return jspb.Message.setField(this, 4, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prototype.hasCountry = function() {
-  return jspb.Message.getField(this, 4) != null;
-};
-
-
-/**
- * optional string timeColumns = 5;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prototype.getTimecolumns = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prototype.setTimecolumns = function(value) {
-  return jspb.Message.setField(this, 5, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prototype.clearTimecolumns = function() {
-  return jspb.Message.setField(this, 5, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prototype.hasTimecolumns = function() {
-  return jspb.Message.getField(this, 5) != null;
 };
 
 
