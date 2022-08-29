@@ -146,9 +146,6 @@ export class Column extends jspb.Message {
   getUniqueitems(): boolean;
   setUniqueitems(value: boolean): Column;
 
-  getTimecolumn(): boolean;
-  setTimecolumn(value: boolean): Column;
-
   getPii(): boolean;
   setPii(value: boolean): Column;
 
@@ -257,7 +254,6 @@ export namespace Column {
     maxitems: number,
     minitems: number,
     uniqueitems: boolean,
-    timecolumn: boolean,
     pii: boolean,
     phi: boolean,
     personaldata: boolean,

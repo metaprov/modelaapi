@@ -3966,7 +3966,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.toObject = fun
     maxitems: (f = jspb.Message.getField(msg, 24)) == null ? undefined : f,
     minitems: (f = jspb.Message.getField(msg, 25)) == null ? undefined : f,
     uniqueitems: (f = jspb.Message.getBooleanField(msg, 26)) == null ? undefined : f,
-    timecolumn: (f = jspb.Message.getBooleanField(msg, 27)) == null ? undefined : f,
     pii: (f = jspb.Message.getBooleanField(msg, 28)) == null ? undefined : f,
     phi: (f = jspb.Message.getBooleanField(msg, 29)) == null ? undefined : f,
     personaldata: (f = jspb.Message.getBooleanField(msg, 30)) == null ? undefined : f,
@@ -4130,10 +4129,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.deserializeBin
     case 26:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setUniqueitems(value);
-      break;
-    case 27:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setTimecolumn(value);
       break;
     case 28:
       var value = /** @type {boolean} */ (reader.readBool());
@@ -4439,13 +4434,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.serializeBinar
   if (f != null) {
     writer.writeBool(
       26,
-      f
-    );
-  }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 27));
-  if (f != null) {
-    writer.writeBool(
-      27,
       f
     );
   }
@@ -5554,42 +5542,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.clea
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.hasUniqueitems = function() {
   return jspb.Message.getField(this, 26) != null;
-};
-
-
-/**
- * optional bool timeColumn = 27;
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.getTimecolumn = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 27, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.setTimecolumn = function(value) {
-  return jspb.Message.setField(this, 27, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.clearTimecolumn = function() {
-  return jspb.Message.setField(this, 27, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.hasTimecolumn = function() {
-  return jspb.Message.getField(this, 27) != null;
 };
 
 

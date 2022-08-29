@@ -590,8 +590,8 @@ spec:
                               - text-list
                               type: string
                             datetimeFormat:
-                              description: The format of the datetime column. Used
-                                default
+                              description: The format of the datetime column. This
+                                is only setup if the column contain datetime type.
                               type: string
                             description:
                               description: The user-specified description of the feature
@@ -838,11 +838,6 @@ spec:
                               description: Indicates if the feature is the target
                                 feature of the model, and the feature which predictions
                                 will be made on
-                              type: boolean
-                            timeColumn:
-                              description: Indicates if the column is used as the
-                                time axis in time series forecasting There can be
-                                more than one time series column Default is false.
                               type: boolean
                             timeseries:
                               description: Indicates if the column is contain a time

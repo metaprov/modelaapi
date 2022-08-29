@@ -163,12 +163,6 @@ message Column {
   // +kubebuilder:validation:Optional
   optional bool uniqueItems = 26;
 
-  // Indicates if the column is used as the time axis in time series forecasting
-  // There can be more than one time series column
-  // Default is false.
-  // +kubebuilder:validation:Optional
-  optional bool timeColumn = 27;
-
   // Indicates if the column contains personally identifiable information
   // +kubebuilder:validation:Optional
   optional bool pii = 28;
@@ -252,7 +246,7 @@ message Column {
   // +kubebuilder:validation:Optional
   optional int32 loc = 48;
 
-  // The format of the datetime column. Used default
+  // The format of the datetime column. This is only setup if the column contain datetime type.
   // +kubebuilder:validation:Optional
   optional string datetimeFormat = 49;
 

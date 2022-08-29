@@ -422,11 +422,6 @@ type Column struct {
 	// Enforce that all the items in the list are unique
 	// +kubebuilder:validation:Optional
 	UniqueItems *bool `json:"uniqueItems,omitempty" protobuf:"varint,26,opt,name=uniqueItems"`
-	// Indicates if the column is used as the time axis in time series forecasting
-	// There can be more than one time series column
-	// Default is false.
-	// +kubebuilder:validation:Optional
-	TimeColumn *bool `json:"timeColumn,omitempty" protobuf:"varint,27,opt,name=timeColumn"`
 	// Indicates if the column contains personally identifiable information
 	// +kubebuilder:validation:Optional
 	PII *bool `json:"pii,omitempty" protobuf:"varint,28,opt,name=pii"`
@@ -476,10 +471,10 @@ type Column struct {
 	Scaling *catalog.Scaling `json:"scaling,omitempty" protobuf:"bytes,43,opt,name=scaling"`
 	// Indicates if the feature was automatically generated
 	// +kubebuilder:validation:Optional
-	Generated bool `json:"generated,omitempty" protobuf:"varint,44,opt,name=generated"`
+	Generated *bool `json:"generated,omitempty" protobuf:"varint,44,opt,name=generated"`
 	// The formula used to generate the column
 	// +kubebuilder:validation:Optional
-	Formula string `json:"formula,omitempty" protobuf:"bytes,45,opt,name=formula"`
+	Formula *string `json:"formula,omitempty" protobuf:"bytes,45,opt,name=formula"`
 	// Indicates if the column is an ID column
 	// +kubebuilder:validation:Optional
 	ID *bool `json:"id,omitempty" protobuf:"varint,46,opt,name=id"`
@@ -489,7 +484,7 @@ type Column struct {
 	// Contain the Index for the column in the schema
 	// +kubebuilder:validation:Optional
 	Loc int32 `json:"loc,omitempty" protobuf:"varint,48,opt,name=loc"`
-	// The format of the datetime column. Used default
+	// The format of the datetime column. This is only setup if the column contain datetime type.
 	// +kubebuilder:validation:Optional
 	DateTimeFormat *string `json:"datetimeFormat,omitempty" protobuf:"bytes,49,opt,name=datetimeFormat"`
 	// Indicates if the column is contain a time series,
