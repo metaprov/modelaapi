@@ -202,11 +202,6 @@ func (in *Column) DeepCopyInto(out *Column) {
 		*out = new(bool)
 		**out = **in
 	}
-	if in.TimeColumn != nil {
-		in, out := &in.TimeColumn, &out.TimeColumn
-		*out = new(bool)
-		**out = **in
-	}
 	if in.PII != nil {
 		in, out := &in.PII, &out.PII
 		*out = new(bool)
@@ -285,6 +280,16 @@ func (in *Column) DeepCopyInto(out *Column) {
 	if in.Scaling != nil {
 		in, out := &in.Scaling, &out.Scaling
 		*out = new(catalogv1alpha1.Scaling)
+		**out = **in
+	}
+	if in.Generated != nil {
+		in, out := &in.Generated, &out.Generated
+		*out = new(bool)
+		**out = **in
+	}
+	if in.Formula != nil {
+		in, out := &in.Formula, &out.Formula
+		*out = new(string)
 		**out = **in
 	}
 	if in.ID != nil {
