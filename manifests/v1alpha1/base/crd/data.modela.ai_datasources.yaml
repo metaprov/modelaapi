@@ -548,7 +548,8 @@ spec:
                           maxLength: 63
                           type: string
                         driftThreshold:
-                          description: The threshold drift value for model drift detection.
+                          description: The threshold drift value for model drift detection
+                            for the feature represented by this feature
                           type: number
                         enum:
                           description: The collection of unique values for categorical
@@ -568,9 +569,9 @@ spec:
                             the column, which does not include the minimum value
                           type: boolean
                         exogenous:
-                          default: false
-                          description: Indicates if the column is contains a exogenous
-                            information. This is relevant only for time series schema
+                          description: In forecasting based data sets Indicates if
+                            the column is contains a exogenous information. This is
+                            relevant only for time series schema
                           type: boolean
                         externalDocs:
                           description: A link to user-specified external documentation
@@ -629,7 +630,6 @@ spec:
                             generated
                           type: boolean
                         id:
-                          default: false
                           description: Indicates if the column is an ID column
                           type: boolean
                         ignore:
@@ -734,7 +734,6 @@ spec:
                             identifiable information
                           type: boolean
                         pk:
-                          default: false
                           description: Denotes if the column specifies a primary key
                             of a database table (i.e. a users ID)
                           type: boolean
@@ -765,10 +764,10 @@ spec:
                           description: Sigma is the standard deviation of the distribution
                           type: number
                         skewThreshold:
-                          description: The threshold skew for skew detection
+                          description: The threshold skew for skew detection for the
+                            feature represented by this feature.
                           type: number
                         step:
-                          default: 1
                           description: The step value if the column values are a sequence
                             of numbers
                           type: number
@@ -779,10 +778,10 @@ spec:
                           type: boolean
                         timeColumn:
                           description: Indicates if the column is used as the time
-                            axis in time series forecasting Default is false.
+                            axis in time series forecasting There can be more than
+                            one time series column Default is false.
                           type: boolean
                         timeseries:
-                          default: false
                           description: Indicates if the column is contain a time series,
                             In case of forecasting, if only one column is a time series,
                             this is a univariate time series Otherwise, if two or

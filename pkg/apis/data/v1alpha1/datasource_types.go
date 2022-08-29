@@ -363,7 +363,6 @@ type Column struct {
 	// +kubebuilder:validation:Optional
 	Nullable *bool `json:"nullable,omitempty" protobuf:"varint,8,opt,name=nullable"`
 	// Denotes if the column specifies a primary key of a database table (i.e. a users ID)
-	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	PK *bool `json:"pk,omitempty" protobuf:"varint,9,opt,name=pk"`
 	// Denotes if the column specifies a foreign key of another database table
@@ -424,6 +423,7 @@ type Column struct {
 	// +kubebuilder:validation:Optional
 	UniqueItems *bool `json:"uniqueItems,omitempty" protobuf:"varint,26,opt,name=uniqueItems"`
 	// Indicates if the column is used as the time axis in time series forecasting
+	// There can be more than one time series column
 	// Default is false.
 	// +kubebuilder:validation:Optional
 	TimeColumn *bool `json:"timeColumn,omitempty" protobuf:"varint,27,opt,name=timeColumn"`
@@ -450,10 +450,10 @@ type Column struct {
 	// Sigma is the standard deviation of the distribution
 	// +kubebuilder:validation:Optional
 	Sigma *float64 `json:"sigma,omitempty" protobuf:"bytes,35,opt,name=sigma"`
-	// The threshold skew for skew detection
+	// The threshold skew for skew detection for the feature represented by this feature.
 	// +kubebuilder:validation:Optional
 	Skewthreshold *float64 `json:"skewThreshold,omitempty" protobuf:"bytes,36,opt,name=skewThreshold"`
-	// The threshold drift value for model drift detection.
+	// The threshold drift value for model drift detection for the feature represented by this feature
 	// +kubebuilder:validation:Optional
 	Driftthreshold *float64 `json:"driftThreshold,omitempty" protobuf:"bytes,37,opt,name=driftThreshold"`
 	// Indicates if the column is an key column
@@ -481,11 +481,9 @@ type Column struct {
 	// +kubebuilder:validation:Optional
 	Formula string `json:"formula,omitempty" protobuf:"bytes,45,opt,name=formula"`
 	// Indicates if the column is an ID column
-	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	ID *bool `json:"id,omitempty" protobuf:"varint,46,opt,name=id"`
 	// The step value if the column values are a sequence of numbers
-	// +kubebuilder:default:=1
 	// +kubebuilder:validation:Optional
 	Step *float64 `json:"step,omitempty" protobuf:"bytes,47,opt,name=step"`
 	// Contain the Index for the column in the schema
@@ -497,12 +495,10 @@ type Column struct {
 	// Indicates if the column is contain a time series,
 	// In case of forecasting, if only one column is a time series, this is a univariate time series
 	// Otherwise, if two or more columns contain time series, than this is a univariate time series.
-	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	TimeSeries *bool `json:"timeseries,omitempty" protobuf:"varint,50,opt,name=timeseries"`
-	// Indicates if the column is contains a exogenous information.
+	// In forecasting based data sets Indicates if the column is contains a exogenous information.
 	// This is relevant only for time series schema
-	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Exogenous *bool `json:"exogenous,omitempty" protobuf:"varint,51,opt,name=exogenous"`
 }

@@ -86,7 +86,6 @@ message Column {
   optional bool nullable = 8;
 
   // Denotes if the column specifies a primary key of a database table (i.e. a users ID)
-  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool pk = 9;
 
@@ -165,6 +164,7 @@ message Column {
   optional bool uniqueItems = 26;
 
   // Indicates if the column is used as the time axis in time series forecasting
+  // There can be more than one time series column
   // Default is false.
   // +kubebuilder:validation:Optional
   optional bool timeColumn = 27;
@@ -200,11 +200,11 @@ message Column {
   // +kubebuilder:validation:Optional
   optional double sigma = 35;
 
-  // The threshold skew for skew detection
+  // The threshold skew for skew detection for the feature represented by this feature.
   // +kubebuilder:validation:Optional
   optional double skewThreshold = 36;
 
-  // The threshold drift value for model drift detection.
+  // The threshold drift value for model drift detection for the feature represented by this feature
   // +kubebuilder:validation:Optional
   optional double driftThreshold = 37;
 
@@ -241,12 +241,10 @@ message Column {
   optional string formula = 45;
 
   // Indicates if the column is an ID column
-  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool id = 46;
 
   // The step value if the column values are a sequence of numbers
-  // +kubebuilder:default:=1
   // +kubebuilder:validation:Optional
   optional double step = 47;
 
@@ -261,13 +259,11 @@ message Column {
   // Indicates if the column is contain a time series,
   // In case of forecasting, if only one column is a time series, this is a univariate time series
   // Otherwise, if two or more columns contain time series, than this is a univariate time series.
-  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool timeseries = 50;
 
-  // Indicates if the column is contains a exogenous information.
+  // In forecasting based data sets Indicates if the column is contains a exogenous information.
   // This is relevant only for time series schema
-  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool exogenous = 51;
 }
