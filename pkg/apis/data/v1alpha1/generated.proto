@@ -57,7 +57,6 @@ message Column {
   optional string name = 1;
 
   // The display name of the column, which is used in reports and other visual elements. If omitted, it will use the raw name
-  // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:validation:Optional
   optional string displayName = 2;
@@ -70,23 +69,19 @@ message Column {
   optional string format = 4;
 
   // The user-specified description of the feature
-  // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:validation:Optional
   optional string description = 5;
 
   // Indicates if the feature should be ignored when building models
-  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool ignore = 6;
 
   // Indicates if the feature is the target feature of the model, and the feature which predictions will be made on
-  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool target = 7;
 
   // Indicates if the column can contain null values
-  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool nullable = 8;
 
@@ -96,65 +91,53 @@ message Column {
   optional bool pk = 9;
 
   // Denotes if the column specifies a foreign key of another database table
-  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool fk = 10;
 
   // The integer value which the values of the column should be a multiple of
-  // +kubebuilder:default:=0
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
   optional int32 multipleOf = 11;
 
   // The maximum value of values all values in the column
-  // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
   optional double maximum = 12;
 
   // The exclusive upper limit of all values in the column, which does not include the maximum value
-  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool exclusiveMaximum = 13;
 
   // The minimum value of values all values in the column
-  // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
   optional double minimum = 14;
 
   // The exclusive lower limit of all values in the column, which does not include the minimum value
-  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool exclusiveMinimum = 15;
 
   // The maximum length of values in the column, if the column data type is a string
-  // +kubebuilder:default:=0
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
   optional int32 maxLength = 16;
 
   // The minimum length of values in the column, if the column data type is a string
-  // +kubebuilder:default:=0
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
   optional int32 minLength = 17;
 
   // The regex pattern which values in the column must adhere to
-  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string pattern = 18;
 
   // Required
-  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool required = 19;
 
   // A user-specified example value
-  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string example = 20;
 
   // A link to user-specified external documentation
-  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string externalDocs = 21;
 
@@ -168,45 +151,37 @@ message Column {
   optional bool ordinal = 23;
 
   // The maximum number of items if the column is a list of values
-  // +kubebuilder:default:=0
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
   optional int32 maxItems = 24;
 
   // The minimum number of items if the column is a list of values
-  // +kubebuilder:default:=0
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
   optional int32 minItems = 25;
 
   // Enforce that all the items in the list are unique
-  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool uniqueItems = 26;
 
   // Indicates if the column is used as the time axis in time series forecasting
   // Default is false.
-  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool timeColumn = 27;
 
   // Indicates if the column contains personally identifiable information
-  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool pii = 28;
 
   // Indicates if the column contains personal health information
-  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool phi = 29;
 
   // Indicates if the column contains any personal data
-  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool personalData = 30;
 
   // Protected means that this feature is important for ethical AI / Fairness
-  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool protected = 31;
 
@@ -214,17 +189,14 @@ message Column {
   optional double defaultValueNum = 32;
 
   // Indicates if values from this column will be sampled on a logarithmic scale
-  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool log = 33;
 
   // Mu is the mean of the normal distribution
-  // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
   optional double mu = 34;
 
   // Sigma is the standard deviation of the distribution
-  // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
   optional double sigma = 35;
 
@@ -237,32 +209,26 @@ message Column {
   optional double driftThreshold = 37;
 
   // Indicates if the column is an key column
-  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool key = 38;
 
   // Indicates if the column holds fold values
-  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool fold = 39;
 
   // If True than this is a weight column
-  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool weight = 40;
 
   // Indicates that the feature should always be used in training
-  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool reserved = 41;
 
   // The recommended imputation method for the column
-  // +kubebuilder:default:=auto
   // +kubebuilder:validation:Optional
   optional string imputation = 42;
 
   // The recommended scaling method for the column
-  // +kubebuilder:default:=auto
   // +kubebuilder:validation:Optional
   optional string scaling = 43;
 
@@ -275,6 +241,7 @@ message Column {
   optional string formula = 45;
 
   // Indicates if the column is an ID column
+  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool id = 46;
 
@@ -285,7 +252,7 @@ message Column {
 
   // Contain the Index for the column in the schema
   // +kubebuilder:validation:Optional
-  optional int32 index = 48;
+  optional int32 loc = 48;
 
   // The format of the datetime column. Used default
   // +kubebuilder:validation:Optional
@@ -299,9 +266,10 @@ message Column {
   optional bool timeseries = 50;
 
   // Indicates if the column is contains a exogenous information.
+  // This is relevant only for time series schema
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool Exogenous = 51;
+  optional bool exogenous = 51;
 }
 
 message ColumnHistogram {
@@ -650,11 +618,6 @@ message CsvFileSpec {
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool hasIndexColumn = 13;
-
-  // The position of the index column
-  // +kubebuilder:default:=0
-  // +kubebuilder:validation:Optional
-  optional int32 indexColumn = 14;
 }
 
 // DataInputSpec specifies the format and location of an input dataset
@@ -3595,6 +3558,10 @@ message Schema {
   // The collection of columns and their attributes
   // +kubebuilder:validation:Optional
   repeated Column columns = 3;
+
+  // The keys columns are the index of the file or table. The set of keys will be used as an index for the in memory representation(e.g. pandas)
+  // +kubebuilder:validation:Optional
+  repeated string index = 4;
 }
 
 // SqlQuery represent a single sqlquery in the sqlquery store.
@@ -3920,19 +3887,18 @@ message TableSpec {
 
 message TimeSeriesSchema {
   // The time series type
+  // +kubebuilder:default:="series"
+  // +kubebuilder:validation:Optional
   optional string type = 1;
 
   // The time series frequency
+  // +kubebuilder:default:="day"
   // +kubebuilder:validation:Optional
   optional string freq = 2;
 
   // +kubebuilder:default:=1
   // +kubebuilder:validation:Optional
   optional int32 interval = 3;
-
-  // The keys columns for hierarchical  time series.
-  // +kubebuilder:validation:Optional
-  repeated string keys = 6;
 }
 
 // WebRequest represent a single sqlquery in the sqlquery store.

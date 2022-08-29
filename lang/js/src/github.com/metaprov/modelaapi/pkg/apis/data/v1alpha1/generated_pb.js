@@ -3133,7 +3133,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -3987,7 +3987,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.toObject = fun
     formula: (f = jspb.Message.getField(msg, 45)) == null ? undefined : f,
     id: (f = jspb.Message.getBooleanField(msg, 46)) == null ? undefined : f,
     step: (f = jspb.Message.getOptionalFloatingPointField(msg, 47)) == null ? undefined : f,
-    index: (f = jspb.Message.getField(msg, 48)) == null ? undefined : f,
+    loc: (f = jspb.Message.getField(msg, 48)) == null ? undefined : f,
     datetimeformat: (f = jspb.Message.getField(msg, 49)) == null ? undefined : f,
     timeseries: (f = jspb.Message.getBooleanField(msg, 50)) == null ? undefined : f,
     exogenous: (f = jspb.Message.getBooleanField(msg, 51)) == null ? undefined : f
@@ -4217,7 +4217,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.deserializeBin
       break;
     case 48:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setIndex(value);
+      msg.setLoc(value);
       break;
     case 49:
       var value = /** @type {string} */ (reader.readString());
@@ -6314,10 +6314,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.hasS
 
 
 /**
- * optional int32 index = 48;
+ * optional int32 loc = 48;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.getIndex = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.getLoc = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 48, 0));
 };
 
@@ -6326,7 +6326,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.getI
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.setIndex = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.setLoc = function(value) {
   return jspb.Message.setField(this, 48, value);
 };
 
@@ -6335,7 +6335,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.setI
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.clearIndex = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.clearLoc = function() {
   return jspb.Message.setField(this, 48, undefined);
 };
 
@@ -6344,7 +6344,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.clea
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.hasIndex = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.hasLoc = function() {
   return jspb.Message.getField(this, 48) != null;
 };
 
@@ -6422,7 +6422,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.hasT
 
 
 /**
- * optional bool Exogenous = 51;
+ * optional bool exogenous = 51;
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.getExogenous = function() {
@@ -10513,8 +10513,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.toObject 
     maxrows: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
     strict: (f = jspb.Message.getBooleanField(msg, 11)) == null ? undefined : f,
     compression: (f = jspb.Message.getField(msg, 12)) == null ? undefined : f,
-    hasindexcolumn: (f = jspb.Message.getBooleanField(msg, 13)) == null ? undefined : f,
-    indexcolumn: (f = jspb.Message.getField(msg, 14)) == null ? undefined : f
+    hasindexcolumn: (f = jspb.Message.getBooleanField(msg, 13)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -10602,10 +10601,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.deseriali
     case 13:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setHasindexcolumn(value);
-      break;
-    case 14:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setIndexcolumn(value);
       break;
     default:
       reader.skipField();
@@ -10724,13 +10719,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.serialize
   if (f != null) {
     writer.writeBool(
       13,
-      f
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 14));
-  if (f != null) {
-    writer.writeInt32(
-      14,
       f
     );
   }
@@ -11202,42 +11190,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.hasHasindexcolumn = function() {
   return jspb.Message.getField(this, 13) != null;
-};
-
-
-/**
- * optional int32 indexColumn = 14;
- * @return {number}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.getIndexcolumn = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 14, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.setIndexcolumn = function(value) {
-  return jspb.Message.setField(this, 14, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.clearIndexcolumn = function() {
-  return jspb.Message.setField(this, 14, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.hasIndexcolumn = function() {
-  return jspb.Message.getField(this, 14) != null;
 };
 
 
@@ -53926,7 +53878,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ScatterPlotSpec.proto
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Schema.repeatedFields_ = [3];
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Schema.repeatedFields_ = [3,4];
 
 
 
@@ -53962,7 +53914,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Schema.toObject = fun
     timeseriesschema: (f = msg.getTimeseriesschema()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.toObject(includeInstance, f),
     recommendationschema: (f = msg.getRecommendationschema()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecommendationSchema.toObject(includeInstance, f),
     columnsList: jspb.Message.toObjectList(msg.getColumnsList(),
-    proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.toObject, includeInstance)
+    proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.toObject, includeInstance),
+    indexList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -54013,6 +53966,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Schema.deserializeBin
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.deserializeBinaryFromReader);
       msg.addColumns(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addIndex(value);
       break;
     default:
       reader.skipField();
@@ -54065,6 +54022,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Schema.serializeBinar
       3,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.serializeBinaryToWriter
+    );
+  }
+  f = message.getIndexList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      4,
+      f
     );
   }
 };
@@ -54179,6 +54143,43 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Schema.prototype.addC
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Schema.prototype.clearColumnsList = function() {
   return this.setColumnsList([]);
+};
+
+
+/**
+ * repeated string index = 4;
+ * @return {!Array<string>}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Schema.prototype.getIndexList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 4));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Schema} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Schema.prototype.setIndexList = function(value) {
+  return jspb.Message.setField(this, 4, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Schema} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Schema.prototype.addIndex = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 4, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Schema} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Schema.prototype.clearIndexList = function() {
+  return this.setIndexList([]);
 };
 
 
@@ -58825,13 +58826,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec.prototype.h
 
 
 
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.repeatedFields_ = [6];
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -58865,8 +58859,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.toOb
   var f, obj = {
     type: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     freq: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    interval: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-    keysList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f
+    interval: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -58915,10 +58908,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.dese
       var value = /** @type {number} */ (reader.readInt32());
       msg.setInterval(value);
       break;
-    case 6:
-      var value = /** @type {string} */ (reader.readString());
-      msg.addKeys(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -58966,13 +58955,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.seri
   if (f != null) {
     writer.writeInt32(
       3,
-      f
-    );
-  }
-  f = message.getKeysList();
-  if (f.length > 0) {
-    writer.writeRepeatedString(
-      6,
       f
     );
   }
@@ -59084,43 +59066,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prot
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prototype.hasInterval = function() {
   return jspb.Message.getField(this, 3) != null;
-};
-
-
-/**
- * repeated string keys = 6;
- * @return {!Array<string>}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prototype.getKeysList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 6));
-};
-
-
-/**
- * @param {!Array<string>} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prototype.setKeysList = function(value) {
-  return jspb.Message.setField(this, 6, value || []);
-};
-
-
-/**
- * @param {string} value
- * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prototype.addKeys = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 6, value, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.prototype.clearKeysList = function() {
-  return this.setKeysList([]);
 };
 
 

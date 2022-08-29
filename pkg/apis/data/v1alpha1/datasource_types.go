@@ -250,10 +250,6 @@ type CsvFileSpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	HasIndexColumn *bool `json:"hasIndexColumn,omitempty" protobuf:"varint,13,opt,name=hasIndexColumn"`
-	// The position of the index column
-	// +kubebuilder:default:=0
-	// +kubebuilder:validation:Optional
-	IndexColumn *int32 `json:"indexColumn,omitempty" protobuf:"varint,14,opt,name=indexColumn"`
 }
 
 // ExcelNotebookSpec specifies the format of an excel file
@@ -303,20 +299,23 @@ type Schema struct {
 	// The collection of columns and their attributes
 	// +kubebuilder:validation:Optional
 	Columns []Column `json:"columns,omitempty" protobuf:"bytes,3,rep,name=columns"`
+	// The keys columns are the index of the file or table. The set of keys will be used as an index for the in memory representation(e.g. pandas)
+	// +kubebuilder:validation:Optional
+	Index []string `json:"index,omitempty" protobuf:"bytes,4,rep,name=index"`
 }
 
 type TimeSeriesSchema struct {
 	// The time series type
-	Type catalog.TimeSeriesType `json:"type,omitempty" protobuf:"bytes,1,rep,name=type"`
-	// The time series frequency
+	// +kubebuilder:default:="series"
 	// +kubebuilder:validation:Optional
-	Freq catalog.Freq `json:"freq,omitempty" protobuf:"bytes,2,opt,name=freq"`
+	Type *catalog.TimeSeriesType `json:"type,omitempty" protobuf:"bytes,1,rep,name=type"`
+	// The time series frequency
+	// +kubebuilder:default:="day"
+	// +kubebuilder:validation:Optional
+	Freq *catalog.Freq `json:"freq,omitempty" protobuf:"bytes,2,opt,name=freq"`
 	// +kubebuilder:default:=1
 	// +kubebuilder:validation:Optional
 	Interval *int32 `json:"interval,omitempty" protobuf:"bytes,3,opt,name=interval"`
-	// The keys columns for hierarchical  time series.
-	// +kubebuilder:validation:Optional
-	Keys []string `json:"keys,omitempty" protobuf:"bytes,6,rep,name=keys"`
 }
 
 type RecommendationSchema struct {
@@ -342,7 +341,6 @@ type Column struct {
 	// +kubebuilder:validation:MinLength=1
 	Name string `json:"name" protobuf:"bytes,1,opt,name=name"`
 	// The display name of the column, which is used in reports and other visual elements. If omitted, it will use the raw name
-	// +kubebuilder:default:=""
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:validation:Optional
 	DisplayName *string `json:"displayName,omitempty" protobuf:"bytes,2,opt,name=displayName"`
@@ -352,20 +350,16 @@ type Column struct {
 	// +kubebuilder:validation:Optional
 	Format *catalog.DataDomain `json:"format,omitempty" protobuf:"bytes,4,opt,name=format"`
 	// The user-specified description of the feature
-	// +kubebuilder:default:=""
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:validation:Optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,5,opt,name=description"`
 	// Indicates if the feature should be ignored when building models
-	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Ignore *bool `json:"ignore,omitempty" protobuf:"varint,6,opt,name=ignore"`
 	// Indicates if the feature is the target feature of the model, and the feature which predictions will be made on
-	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Target *bool `json:"target,omitempty" protobuf:"varint,7,opt,name=target"`
 	// Indicates if the column can contain null values
-	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Nullable *bool `json:"nullable,omitempty" protobuf:"varint,8,opt,name=nullable"`
 	// Denotes if the column specifies a primary key of a database table (i.e. a users ID)
@@ -373,54 +367,42 @@ type Column struct {
 	// +kubebuilder:validation:Optional
 	PK *bool `json:"pk,omitempty" protobuf:"varint,9,opt,name=pk"`
 	// Denotes if the column specifies a foreign key of another database table
-	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	FK *bool `json:"fk,omitempty" protobuf:"varint,10,opt,name=fk"`
 	// The integer value which the values of the column should be a multiple of
-	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
 	MultipleOf *int32 `json:"multipleOf,omitempty" protobuf:"varint,11,opt,name=multipleOf"`
 	// The maximum value of values all values in the column
-	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
 	Maximum *float64 `json:"maximum,omitempty" protobuf:"bytes,12,opt,name=maximum"`
 	// The exclusive upper limit of all values in the column, which does not include the maximum value
-	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	ExclusiveMaximum *bool `json:"exclusiveMaximum,omitempty" protobuf:"varint,13,opt,name=exclusiveMaximum"`
 	// The minimum value of values all values in the column
-	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
 	Minimum *float64 `json:"minimum,omitempty" protobuf:"bytes,14,opt,name=minimum"`
 	// The exclusive lower limit of all values in the column, which does not include the minimum value
-	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	ExclusiveMinimum *bool `json:"exclusiveMinimum,omitempty" protobuf:"varint,15,opt,name=exclusiveMinimum"`
 	// The maximum length of values in the column, if the column data type is a string
-	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
 	MaxLength *int32 `json:"maxLength,omitempty" protobuf:"varint,16,opt,name=maxLength"`
 	// The minimum length of values in the column, if the column data type is a string
-	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
 	MinLength *int32 `json:"minLength,omitempty" protobuf:"varint,17,opt,name=minLength"`
 	// The regex pattern which values in the column must adhere to
-	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Pattern *string `json:"pattern,omitempty" protobuf:"bytes,18,opt,name=pattern"`
 	// Required
-	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Required *bool `json:"required,omitempty" protobuf:"varint,19,opt,name=required"`
 	// A user-specified example value
-	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Example *string `json:"example,omitempty" protobuf:"bytes,20,opt,name=example"`
 	// A link to user-specified external documentation
-	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	ExternalDocs *string `json:"externalDocs,omitempty" protobuf:"bytes,21,opt,name=externalDocs"`
 	// The collection of unique values for categorical features
@@ -431,52 +413,41 @@ type Column struct {
 	// +kubebuilder:validation:Optional
 	Ordinal *bool `json:"ordinal,omitempty" protobuf:"varint,23,opt,name=ordinal"`
 	// The maximum number of items if the column is a list of values
-	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
 	MaxItems *int32 `json:"maxItems,omitempty" protobuf:"varint,24,opt,name=maxItems"`
 	// The minimum number of items if the column is a list of values
-	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
 	MinItems *int32 `json:"minItems,omitempty" protobuf:"varint,25,opt,name=minItems"`
 	// Enforce that all the items in the list are unique
-	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	UniqueItems *bool `json:"uniqueItems,omitempty" protobuf:"varint,26,opt,name=uniqueItems"`
 	// Indicates if the column is used as the time axis in time series forecasting
 	// Default is false.
-	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	TimeColumn *bool `json:"timeColumn,omitempty" protobuf:"varint,27,opt,name=timeColumn"`
 	// Indicates if the column contains personally identifiable information
-	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	PII *bool `json:"pii,omitempty" protobuf:"varint,28,opt,name=pii"`
 	// Indicates if the column contains personal health information
-	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	PHI *bool `json:"phi,omitempty" protobuf:"varint,29,opt,name=phi"`
 	// Indicates if the column contains any personal data
-	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	PersonalData *bool `json:"personalData,omitempty" protobuf:"varint,30,opt,name=personalData"`
 	// Protected means that this feature is important for ethical AI / Fairness
-	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Protected *bool `json:"protected,omitempty" protobuf:"varint,31,opt,name=protected"`
 	// The default value for number types; used internally for synthetic data and validation
 	DefaultValueNum *float64 `json:"DefaultValueNum,omitempty" protobuf:"bytes,32,opt,name=defaultValueNum"`
 	// Indicates if values from this column will be sampled on a logarithmic scale
-	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Log *bool `json:"log,omitempty" protobuf:"varint,33,opt,name=log"`
 	// Mu is the mean of the normal distribution
-	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
 	Mu *float64 `json:"mu,omitempty" protobuf:"bytes,34,opt,name=mu"`
 	// Sigma is the standard deviation of the distribution
-	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
 	Sigma *float64 `json:"sigma,omitempty" protobuf:"bytes,35,opt,name=sigma"`
 	// The threshold skew for skew detection
@@ -486,27 +457,21 @@ type Column struct {
 	// +kubebuilder:validation:Optional
 	Driftthreshold *float64 `json:"driftThreshold,omitempty" protobuf:"bytes,37,opt,name=driftThreshold"`
 	// Indicates if the column is an key column
-	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Key *bool `json:"key,omitempty" protobuf:"varint,38,opt,name=key"`
 	// Indicates if the column holds fold values
-	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Fold *bool `json:"fold,omitempty" protobuf:"varint,39,opt,name=fold"`
 	// If True than this is a weight column
-	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Weight *bool `json:"weight,omitempty" protobuf:"varint,40,opt,name=weight"`
 	// Indicates that the feature should always be used in training
-	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Reserved *bool `json:"reserved,omitempty" protobuf:"varint,41,opt,name=reserved"`
 	// The recommended imputation method for the column
-	// +kubebuilder:default:=auto
 	// +kubebuilder:validation:Optional
 	Imputation *catalog.Imputation `json:"imputation,omitempty" protobuf:"bytes,42,opt,name=imputation"`
 	// The recommended scaling method for the column
-	// +kubebuilder:default:=auto
 	// +kubebuilder:validation:Optional
 	Scaling *catalog.Scaling `json:"scaling,omitempty" protobuf:"bytes,43,opt,name=scaling"`
 	// Indicates if the feature was automatically generated
@@ -516,15 +481,16 @@ type Column struct {
 	// +kubebuilder:validation:Optional
 	Formula string `json:"formula,omitempty" protobuf:"bytes,45,opt,name=formula"`
 	// Indicates if the column is an ID column
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	ID bool `json:"id,omitempty" protobuf:"varint,46,opt,name=id"`
+	ID *bool `json:"id,omitempty" protobuf:"varint,46,opt,name=id"`
 	// The step value if the column values are a sequence of numbers
 	// +kubebuilder:default:=1
 	// +kubebuilder:validation:Optional
 	Step *float64 `json:"step,omitempty" protobuf:"bytes,47,opt,name=step"`
 	// Contain the Index for the column in the schema
 	// +kubebuilder:validation:Optional
-	Index int32 `json:"index,omitempty" protobuf:"varint,48,opt,name=index"`
+	Loc int32 `json:"loc,omitempty" protobuf:"varint,48,opt,name=loc"`
 	// The format of the datetime column. Used default
 	// +kubebuilder:validation:Optional
 	DateTimeFormat *string `json:"datetimeFormat,omitempty" protobuf:"bytes,49,opt,name=datetimeFormat"`
@@ -535,9 +501,10 @@ type Column struct {
 	// +kubebuilder:validation:Optional
 	TimeSeries *bool `json:"timeseries,omitempty" protobuf:"varint,50,opt,name=timeseries"`
 	// Indicates if the column is contains a exogenous information.
+	// This is relevant only for time series schema
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Exogenous *bool `json:"exogenous,omitempty" protobuf:"varint,51,opt,name=Exogenous"`
+	Exogenous *bool `json:"exogenous,omitempty" protobuf:"varint,51,opt,name=exogenous"`
 }
 
 // DataSource defines the specification for the file format and column-level schema of data to be used within Modela

@@ -209,8 +209,8 @@ export class Column extends jspb.Message {
   getStep(): number;
   setStep(value: number): Column;
 
-  getIndex(): number;
-  setIndex(value: number): Column;
+  getLoc(): number;
+  setLoc(value: number): Column;
 
   getDatetimeformat(): string;
   setDatetimeformat(value: string): Column;
@@ -278,7 +278,7 @@ export namespace Column {
     formula: string,
     id: boolean,
     step: number,
-    index: number,
+    loc: number,
     datetimeformat: string,
     timeseries: boolean,
     exogenous: boolean,
@@ -721,9 +721,6 @@ export class CsvFileSpec extends jspb.Message {
   getHasindexcolumn(): boolean;
   setHasindexcolumn(value: boolean): CsvFileSpec;
 
-  getIndexcolumn(): number;
-  setIndexcolumn(value: number): CsvFileSpec;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CsvFileSpec.AsObject;
   static toObject(includeInstance: boolean, msg: CsvFileSpec): CsvFileSpec.AsObject;
@@ -747,7 +744,6 @@ export namespace CsvFileSpec {
     strict: boolean,
     compression: string,
     hasindexcolumn: boolean,
-    indexcolumn: number,
   }
 }
 
@@ -5395,6 +5391,11 @@ export class Schema extends jspb.Message {
   clearColumnsList(): Schema;
   addColumns(value?: Column, index?: number): Column;
 
+  getIndexList(): Array<string>;
+  setIndexList(value: Array<string>): Schema;
+  clearIndexList(): Schema;
+  addIndex(value: string, index?: number): Schema;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Schema.AsObject;
   static toObject(includeInstance: boolean, msg: Schema): Schema.AsObject;
@@ -5408,6 +5409,7 @@ export namespace Schema {
     timeseriesschema?: TimeSeriesSchema.AsObject,
     recommendationschema?: RecommendationSchema.AsObject,
     columnsList: Array<Column.AsObject>,
+    indexList: Array<string>,
   }
 }
 
@@ -5927,11 +5929,6 @@ export class TimeSeriesSchema extends jspb.Message {
   getInterval(): number;
   setInterval(value: number): TimeSeriesSchema;
 
-  getKeysList(): Array<string>;
-  setKeysList(value: Array<string>): TimeSeriesSchema;
-  clearKeysList(): TimeSeriesSchema;
-  addKeys(value: string, index?: number): TimeSeriesSchema;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TimeSeriesSchema.AsObject;
   static toObject(includeInstance: boolean, msg: TimeSeriesSchema): TimeSeriesSchema.AsObject;
@@ -5945,7 +5942,6 @@ export namespace TimeSeriesSchema {
     type: string,
     freq: string,
     interval: number,
-    keysList: Array<string>,
   }
 }
 
