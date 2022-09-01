@@ -217,11 +217,7 @@ type ManyModelsSpec struct {
 	// If true, generate a prophet model for each time series
 	// +kubebuilder:default = true
 	// +kubebuilder:validation:Optional
-	Prophet *bool `json:"prophet,omitempty" protobuf:"varint,3,opt,name=prophet"`
-	// If true, generate a arima model for each time series
-	// +kubebuilder:default = false
-	// +kubebuilder:validation:Optional
-	Arima *bool `json:"arima,omitempty" protobuf:"varint,4,opt,name=arima"`
+	ModelPerTimeSeries *bool `json:"modelPerTimeSeries,omitempty" protobuf:"varint,3,opt,name=modelPerTimeSeries"`
 }
 
 // BacktestSpec specify the back test
@@ -302,5 +298,5 @@ type ForecasterPipelineSpec struct {
 	// If we are using reduced model, this is the way the reduced model will make prediction
 	// Default to none
 	// +kubebuilder:validation:Optional
-	ReductionStrategy ForecastStrategy `json:"strategy,omitempty" protobuf:"bytes,11,opt,name=strategy"`
+	Reduction ForecastStrategy `json:"reduction,omitempty" protobuf:"bytes,11,opt,name=reduction"`
 }

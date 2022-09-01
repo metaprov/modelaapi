@@ -1098,17 +1098,13 @@ spec:
                   manyModels:
                     description: Definitions of the many models
                     properties:
-                      arima:
-                        description: If true, generate a arima model for each time
-                          series
-                        type: boolean
                       groupBy:
                         description: Define the grouping of the input file. A model
                           will be generated for every group
                         items:
                           type: string
                         type: array
-                      prophet:
+                      modelPerTimeSeries:
                         description: If true, generate a prophet model for each time
                           series
                         type: boolean
@@ -1325,6 +1321,14 @@ spec:
                       log:
                         default: true
                         type: boolean
+                      reduction:
+                        description: If we are using reduced model, this is the way
+                          the reduced model will make prediction Default to none
+                        enum:
+                        - recursive
+                        - direct
+                        - none
+                        type: string
                       scaling:
                         default: none
                         description: The scaling method to use for numerical data
@@ -1338,14 +1342,6 @@ spec:
                         - scale-to-unit-norm
                         - none
                         - auto
-                        type: string
-                      strategy:
-                        description: If we are using reduced model, this is the way
-                          the reduced model will make prediction Default to none
-                        enum:
-                        - recursive
-                        - direct
-                        - none
                         type: string
                       windows:
                         description: The list of windows to use when generating features.

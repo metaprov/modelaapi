@@ -218,6 +218,9 @@ export class Column extends jspb.Message {
   getExogenous(): boolean;
   setExogenous(value: boolean): Column;
 
+  getTimeindex(): boolean;
+  setTimeindex(value: boolean): Column;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Column.AsObject;
   static toObject(includeInstance: boolean, msg: Column): Column.AsObject;
@@ -278,6 +281,7 @@ export namespace Column {
     datetimeformat: string,
     timeseries: boolean,
     exogenous: boolean,
+    timeindex: boolean,
   }
 }
 

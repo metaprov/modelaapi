@@ -1219,8 +1219,8 @@ export class ForecasterPipelineSpec extends jspb.Message {
   getLog(): boolean;
   setLog(value: boolean): ForecasterPipelineSpec;
 
-  getStrategy(): string;
-  setStrategy(value: string): ForecasterPipelineSpec;
+  getReduction(): string;
+  setReduction(value: string): ForecasterPipelineSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ForecasterPipelineSpec.AsObject;
@@ -1242,7 +1242,7 @@ export namespace ForecasterPipelineSpec {
     functionsList: Array<string>,
     ema: boolean,
     log: boolean,
-    strategy: string,
+    reduction: string,
   }
 }
 
@@ -1693,11 +1693,8 @@ export class ManyModelsSpec extends jspb.Message {
   clearGroupbyList(): ManyModelsSpec;
   addGroupby(value: string, index?: number): ManyModelsSpec;
 
-  getProphet(): boolean;
-  setProphet(value: boolean): ManyModelsSpec;
-
-  getArima(): boolean;
-  setArima(value: boolean): ManyModelsSpec;
+  getModelpertimeseries(): boolean;
+  setModelpertimeseries(value: boolean): ManyModelsSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ManyModelsSpec.AsObject;
@@ -1711,8 +1708,7 @@ export namespace ManyModelsSpec {
   export type AsObject = {
     enabled: boolean,
     groupbyList: Array<string>,
-    prophet: boolean,
-    arima: boolean,
+    modelpertimeseries: boolean,
   }
 }
 

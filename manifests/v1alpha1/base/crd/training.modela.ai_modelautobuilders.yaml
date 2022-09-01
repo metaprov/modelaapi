@@ -839,6 +839,12 @@ spec:
                                 feature of the model, and the feature which predictions
                                 will be made on
                               type: boolean
+                            timeIndex:
+                              description: For time series, the field indicate tha
+                                this column will be used as the data time index for
+                                the time series. Note that there can multiple datatime
+                                type columns, but only one time column.
+                              type: boolean
                             timeseries:
                               description: Indicates if the column is contain a time
                                 series, In case of forecasting, if only one column

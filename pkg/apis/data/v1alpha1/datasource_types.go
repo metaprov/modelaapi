@@ -496,6 +496,11 @@ type Column struct {
 	// This is relevant only for time series schema
 	// +kubebuilder:validation:Optional
 	Exogenous *bool `json:"exogenous,omitempty" protobuf:"varint,51,opt,name=exogenous"`
+	// For time series, the field indicate tha this column will be used as the data time index
+	// for the time series. Note that there can multiple datatime type columns, but only one
+	// time column.
+	// +kubebuilder:validation:Optional
+	TimeIndex *bool `json:"timeIndex,omitempty" protobuf:"varint,52,opt,name=timeIndex"`
 }
 
 // DataSource defines the specification for the file format and column-level schema of data to be used within Modela

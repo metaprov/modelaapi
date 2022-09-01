@@ -823,7 +823,7 @@ message ForecasterPipelineSpec {
   // If we are using reduced model, this is the way the reduced model will make prediction
   // Default to none
   // +kubebuilder:validation:Optional
-  optional string strategy = 11;
+  optional string reduction = 11;
 }
 
 // ForecastingSpec
@@ -1092,12 +1092,7 @@ message ManyModelsSpec {
   // If true, generate a prophet model for each time series
   // +kubebuilder:default = true
   // +kubebuilder:validation:Optional
-  optional bool prophet = 3;
-
-  // If true, generate a arima model for each time series
-  // +kubebuilder:default = false
-  // +kubebuilder:validation:Optional
-  optional bool arima = 4;
+  optional bool modelPerTimeSeries = 3;
 }
 
 message MedianPrunerOptions {

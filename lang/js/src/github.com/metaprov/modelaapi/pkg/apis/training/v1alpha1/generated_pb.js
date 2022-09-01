@@ -13801,7 +13801,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterPipelin
     functionsList: (f = jspb.Message.getRepeatedField(msg, 8)) == null ? undefined : f,
     ema: (f = jspb.Message.getBooleanField(msg, 9)) == null ? undefined : f,
     log: (f = jspb.Message.getBooleanField(msg, 10)) == null ? undefined : f,
-    strategy: (f = jspb.Message.getField(msg, 11)) == null ? undefined : f
+    reduction: (f = jspb.Message.getField(msg, 11)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -13884,7 +13884,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterPipelin
       break;
     case 11:
       var value = /** @type {string} */ (reader.readString());
-      msg.setStrategy(value);
+      msg.setReduction(value);
       break;
     default:
       reader.skipField();
@@ -14359,10 +14359,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterPipelin
 
 
 /**
- * optional string strategy = 11;
+ * optional string reduction = 11;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterPipelineSpec.prototype.getStrategy = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterPipelineSpec.prototype.getReduction = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
 };
 
@@ -14371,7 +14371,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterPipelin
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterPipelineSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterPipelineSpec.prototype.setStrategy = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterPipelineSpec.prototype.setReduction = function(value) {
   return jspb.Message.setField(this, 11, value);
 };
 
@@ -14380,7 +14380,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterPipelin
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterPipelineSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterPipelineSpec.prototype.clearStrategy = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterPipelineSpec.prototype.clearReduction = function() {
   return jspb.Message.setField(this, 11, undefined);
 };
 
@@ -14389,7 +14389,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterPipelin
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterPipelineSpec.prototype.hasStrategy = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterPipelineSpec.prototype.hasReduction = function() {
   return jspb.Message.getField(this, 11) != null;
 };
 
@@ -18437,8 +18437,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ManyModelsSpec.to
   var f, obj = {
     enabled: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
     groupbyList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
-    prophet: (f = jspb.Message.getBooleanField(msg, 3)) == null ? undefined : f,
-    arima: (f = jspb.Message.getBooleanField(msg, 4)) == null ? undefined : f
+    modelpertimeseries: (f = jspb.Message.getBooleanField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -18485,11 +18484,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ManyModelsSpec.de
       break;
     case 3:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setProphet(value);
-      break;
-    case 4:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setArima(value);
+      msg.setModelpertimeseries(value);
       break;
     default:
       reader.skipField();
@@ -18538,13 +18533,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ManyModelsSpec.se
   if (f != null) {
     writer.writeBool(
       3,
-      f
-    );
-  }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 4));
-  if (f != null) {
-    writer.writeBool(
-      4,
       f
     );
   }
@@ -18625,10 +18613,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ManyModelsSpec.pr
 
 
 /**
- * optional bool prophet = 3;
+ * optional bool modelPerTimeSeries = 3;
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ManyModelsSpec.prototype.getProphet = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ManyModelsSpec.prototype.getModelpertimeseries = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
 };
 
@@ -18637,7 +18625,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ManyModelsSpec.pr
  * @param {boolean} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ManyModelsSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ManyModelsSpec.prototype.setProphet = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ManyModelsSpec.prototype.setModelpertimeseries = function(value) {
   return jspb.Message.setField(this, 3, value);
 };
 
@@ -18646,7 +18634,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ManyModelsSpec.pr
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ManyModelsSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ManyModelsSpec.prototype.clearProphet = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ManyModelsSpec.prototype.clearModelpertimeseries = function() {
   return jspb.Message.setField(this, 3, undefined);
 };
 
@@ -18655,44 +18643,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ManyModelsSpec.pr
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ManyModelsSpec.prototype.hasProphet = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ManyModelsSpec.prototype.hasModelpertimeseries = function() {
   return jspb.Message.getField(this, 3) != null;
-};
-
-
-/**
- * optional bool arima = 4;
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ManyModelsSpec.prototype.getArima = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 4, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ManyModelsSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ManyModelsSpec.prototype.setArima = function(value) {
-  return jspb.Message.setField(this, 4, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ManyModelsSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ManyModelsSpec.prototype.clearArima = function() {
-  return jspb.Message.setField(this, 4, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ManyModelsSpec.prototype.hasArima = function() {
-  return jspb.Message.getField(this, 4) != null;
 };
 
 
