@@ -1601,13 +1601,8 @@ func (in *ManyModelsSpec) DeepCopyInto(out *ManyModelsSpec) {
 		*out = make([]string, len(*in))
 		copy(*out, *in)
 	}
-	if in.Prophet != nil {
-		in, out := &in.Prophet, &out.Prophet
-		*out = new(bool)
-		**out = **in
-	}
-	if in.Arima != nil {
-		in, out := &in.Arima, &out.Arima
+	if in.ModelPerTimeSeries != nil {
+		in, out := &in.ModelPerTimeSeries, &out.ModelPerTimeSeries
 		*out = new(bool)
 		**out = **in
 	}
