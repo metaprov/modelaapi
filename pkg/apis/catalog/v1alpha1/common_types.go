@@ -81,6 +81,7 @@ const (
 	MergeForecastTask        TaskName = "merge-forecast"
 	PartitionForecastTask    TaskName = "partition-forecast"
 	SplitDatasetToRungs      TaskName = "split-dataset-to-rungs"
+	TransformDataset         TaskName = "transform-dataset"
 	CompileTask              TaskName = "compile-model"
 	PackageModelTask         TaskName = "package-model"
 	ExplainModelTask         TaskName = "explain-model"
