@@ -360,6 +360,56 @@ func (study *Study) MarkSplitFailed(err string) {
 	study.RefreshProgress()
 }
 
+///////////////////////////////////////////////////////////////
+// Transform
+///////////////////////////////////////////////////////////////
+
+func (study *Study) Transformed() bool {
+	cond := study.GetCond(StudyTransformed)
+	return cond.Status == v1.ConditionTrue
+}
+
+func (study *Study) MarkTransformed() {
+	study.CreateOrUpdateCond(StudyCondition{
+		Type:   StudySplit,
+		Status: v1.ConditionTrue,
+	})
+	// set the training location
+	trainingLocation := data.DataLocation{}
+	trainingLocation.BucketName = study.Spec.Location.BucketName
+	trainingLocation.Path = util.StrPtr(path.Join(*study.Spec.Location.Path, "data", "training.transformed.parquet"))
+	study.Status.TrainDatasetLocation = trainingLocation
+
+	// set the testing location
+	testingLocation := data.DataLocation{}
+	testingLocation.BucketName = study.Spec.Location.BucketName
+	testingLocation.Path = util.StrPtr(path.Join(*study.Spec.Location.Path, "data", "testing.transformed.parquet"))
+	study.Status.TestDatasetLocation = testingLocation
+
+	if *study.Spec.TrainingTemplate.Split.Validation > 0 {
+		valLocation := data.DataLocation{}
+		valLocation.BucketName = study.Spec.Location.BucketName
+		valLocation.Path = util.StrPtr(path.Join(*study.Spec.Location.Path, "data", "validation.transformed.parquet"))
+		study.Status.ValidationDataset = valLocation
+	}
+	study.Status.Phase = StudyPhaseSplit
+	study.RefreshProgress()
+
+}
+
+func (study *Study) MarkTransformFailed(err string) {
+	study.CreateOrUpdateCond(StudyCondition{
+		Type:    StudyTransformed,
+		Status:  v1.ConditionFalse,
+		Reason:  string(StudyPhaseFailed),
+		Message: err,
+	})
+	study.Status.Phase = StudyPhaseFailed
+	study.UpdateEndTime()
+	study.Status.FailureMessage = util.StrPtr("Failed to transform." + err)
+	study.RefreshProgress()
+}
+
 ////////////////////////////////////////////////
 // Feature engineering
 ////////////////////////////////////////////////

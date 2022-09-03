@@ -1740,6 +1740,11 @@ spec:
                 description: Paused indicates that the execution of new workloads
                   associated with the Model should be paused
                 type: boolean
+              predict:
+                default: false
+                description: Perform a prediction at the end of the study. This is
+                  for example apply to forecasting.
+                type: boolean
               profiled:
                 default: false
                 description: Profiled indicates that the Model will be profiled
@@ -3509,6 +3514,10 @@ spec:
                       type: object
                     type: array
                 type: object
+              predictedAt:
+                description: The time at which the Model was set to release
+                format: date-time
+                type: string
               predictorName:
                 description: The name of the Predictor in the case that the Model
                   has been released and deployed

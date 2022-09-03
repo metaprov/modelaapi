@@ -3105,6 +3105,9 @@ export class ModelSpec extends jspb.Message {
   getRegistered(): boolean;
   setRegistered(value: boolean): ModelSpec;
 
+  getPredict(): boolean;
+  setPredict(value: boolean): ModelSpec;
+
   getExplained(): boolean;
   setExplained(value: boolean): ModelSpec;
 
@@ -3222,6 +3225,7 @@ export namespace ModelSpec {
     forecasted: boolean,
     released: boolean,
     registered: boolean,
+    predict: boolean,
     explained: boolean,
     codegenerated: boolean,
     baseline: boolean,
@@ -3424,6 +3428,11 @@ export class ModelStatus extends jspb.Message {
   hasReleasedat(): boolean;
   clearReleasedat(): ModelStatus;
 
+  getPredictedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setPredictedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelStatus;
+  hasPredictedat(): boolean;
+  clearPredictedat(): ModelStatus;
+
   getTarfilehash(): string;
   setTarfilehash(value: string): ModelStatus;
 
@@ -3584,6 +3593,7 @@ export namespace ModelStatus {
     url: string,
     predictorname: string,
     releasedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    predictedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     tarfilehash: string,
     imagehash: string,
     trainingdatahash?: DataHashes.AsObject,

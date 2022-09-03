@@ -346,6 +346,7 @@ const (
 	ReasonProfiling          = "Profiling"
 	ReasonPublishing         = "Publishing"
 	ReasonReleasing          = "Releasing"
+	ReasonPredicting         = "Predicting"
 	ReasonTraining           = "Training"
 	ReasonBaselining         = "Baselining"
 	ReasonFeatureEngineering = "FeatureEngineering"
@@ -397,6 +398,27 @@ func (model *Model) MarkReleasing() {
 		Type:   ModelReleased,
 		Status: v1.ConditionFalse,
 		Reason: ReasonReleasing,
+	})
+}
+
+func (model *Model) MarkPredicting() {
+	model.Status.Phase = ModelPhasePredicting
+	model.CreateOrUpdateCond(ModelCondition{
+		Type:   ModelPredicted,
+		Status: v1.ConditionFalse,
+		Reason: ReasonPredicting,
+	})
+}
+
+func (model *Model) MarkPredicted() {
+	if model.Status.PredictedAt == nil {
+		now := metav1.Now()
+		model.Status.PredictedAt = &now
+	}
+	model.Status.Phase = ModelPhasePredicted
+	model.CreateOrUpdateCond(ModelCondition{
+		Type:   ModelPredicted,
+		Status: v1.ConditionTrue,
 	})
 }
 
@@ -1075,6 +1097,11 @@ func (model *Model) MarkSaved() {
 
 func (model *Model) IsSaved() bool {
 	cond := model.GetCond(ModelSaved)
+	return cond.Status == v1.ConditionTrue
+}
+
+func (model *Model) IsPredicted() bool {
+	cond := model.GetCond(ModelPredicted)
 	return cond.Status == v1.ConditionTrue
 }
 

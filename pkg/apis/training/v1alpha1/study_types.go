@@ -15,6 +15,8 @@ const (
 	StudyPhaseModelPending       StudyPhase = "Pending"
 	StudyPhaseSplitting          StudyPhase = "Splitting"
 	StudyPhaseSplit              StudyPhase = "Split"
+	StudyPhaseTransforming       StudyPhase = "Transforming"
+	StudyPhaseTransformed        StudyPhase = "Transformed"
 	StudyPhaseEngineeringFeature StudyPhase = "EngineeringFeatures"
 	StudyPhaseFeatureEngineered  StudyPhase = "FeaturesEngineered"
 	StudyPhaseBaseline           StudyPhase = "Baselining"
@@ -73,6 +75,8 @@ const (
 	StudyInitialized StudyConditionType = "Initialized"
 	// StudySplit states that the training dataset has been split and is ready for use
 	StudySplit StudyConditionType = "StudySplit"
+	// Study Transformed states that the training dataset has been split and is ready for use
+	StudyTransformed StudyConditionType = "StudyTransformed"
 	// StudyFeatureEngineered states that the search for the best feature engineering pipeline is complete
 	StudyFeatureEngineered StudyConditionType = "StudyFeaturesEngineered"
 	// StudyBaselined states that baseline models for each algorithm have been trained
