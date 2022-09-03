@@ -1381,6 +1381,104 @@ export namespace DsSplitDatasetResponse {
   }
 }
 
+export class DsTransformRequest extends jspb.Message {
+  getProduct(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct | undefined;
+  setProduct(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): DsTransformRequest;
+  hasProduct(): boolean;
+  clearProduct(): DsTransformRequest;
+
+  getVersion(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion | undefined;
+  setVersion(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion): DsTransformRequest;
+  hasVersion(): boolean;
+  clearVersion(): DsTransformRequest;
+
+  getBucket(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
+  setBucket(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): DsTransformRequest;
+  hasBucket(): boolean;
+  clearBucket(): DsTransformRequest;
+
+  getDatasource(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource | undefined;
+  setDatasource(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource): DsTransformRequest;
+  hasDatasource(): boolean;
+  clearDatasource(): DsTransformRequest;
+
+  getDataset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
+  setDataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): DsTransformRequest;
+  hasDataset(): boolean;
+  clearDataset(): DsTransformRequest;
+
+  getStudy(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study | undefined;
+  setStudy(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study): DsTransformRequest;
+  hasStudy(): boolean;
+  clearStudy(): DsTransformRequest;
+
+  getConnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setConnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): DsTransformRequest;
+  hasConnection(): boolean;
+  clearConnection(): DsTransformRequest;
+
+  getSecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearSecretMap(): DsTransformRequest;
+
+  getTrainingdataset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
+  setTrainingdataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): DsTransformRequest;
+  hasTrainingdataset(): boolean;
+  clearTrainingdataset(): DsTransformRequest;
+
+  getTestingdataset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
+  setTestingdataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): DsTransformRequest;
+  hasTestingdataset(): boolean;
+  clearTestingdataset(): DsTransformRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DsTransformRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DsTransformRequest): DsTransformRequest.AsObject;
+  static serializeBinaryToWriter(message: DsTransformRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DsTransformRequest;
+  static deserializeBinaryFromReader(message: DsTransformRequest, reader: jspb.BinaryReader): DsTransformRequest;
+}
+
+export namespace DsTransformRequest {
+  export type AsObject = {
+    product?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
+    version?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.AsObject,
+    bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
+    datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
+    dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
+    study?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
+    connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    secretMap: Array<[string, Uint8Array | string]>,
+    trainingdataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
+    testingdataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
+  }
+}
+
+export class DsTransformResponse extends jspb.Message {
+  getTrainingHash(): string;
+  setTrainingHash(value: string): DsTransformResponse;
+
+  getTestingHash(): string;
+  setTestingHash(value: string): DsTransformResponse;
+
+  getValidationHash(): string;
+  setValidationHash(value: string): DsTransformResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DsTransformResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: DsTransformResponse): DsTransformResponse.AsObject;
+  static serializeBinaryToWriter(message: DsTransformResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DsTransformResponse;
+  static deserializeBinaryFromReader(message: DsTransformResponse, reader: jspb.BinaryReader): DsTransformResponse;
+}
+
+export namespace DsTransformResponse {
+  export type AsObject = {
+    trainingHash: string,
+    testingHash: string,
+    validationHash: string,
+  }
+}
+
 export class DsCreateColumnProfileRequest extends jspb.Message {
   getProduct(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct | undefined;
   setProduct(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): DsCreateColumnProfileRequest;

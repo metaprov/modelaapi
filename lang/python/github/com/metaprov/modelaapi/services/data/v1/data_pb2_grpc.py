@@ -54,6 +54,11 @@ class DataServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsSplitDatasetRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsSplitDatasetResponse.FromString,
                 )
+        self.Transform = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.data.v1.DataService/Transform',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsTransformRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsTransformResponse.FromString,
+                )
         self.CreateColumnProfile = channel.unary_unary(
                 '/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateColumnProfile',
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsCreateColumnProfileRequest.SerializeToString,
@@ -294,6 +299,13 @@ class DataServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def SplitDataset(self, request, context):
+        """Preform the split. The dataset is assumed to be in the live area after validation
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def Transform(self, request, context):
         """Preform the split. The dataset is assumed to be in the live area after validation
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -581,6 +593,11 @@ def add_DataServiceServicer_to_server(servicer, server):
                     servicer.SplitDataset,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsSplitDatasetRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsSplitDatasetResponse.SerializeToString,
+            ),
+            'Transform': grpc.unary_unary_rpc_method_handler(
+                    servicer.Transform,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsTransformRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsTransformResponse.SerializeToString,
             ),
             'CreateColumnProfile': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateColumnProfile,
@@ -910,6 +927,23 @@ class DataService(object):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.data.v1.DataService/SplitDataset',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsSplitDatasetRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsSplitDatasetResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Transform(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.data.v1.DataService/Transform',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsTransformRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsTransformResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

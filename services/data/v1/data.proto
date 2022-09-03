@@ -301,6 +301,31 @@ message DsSplitDatasetResponse {
     string validation_hash = 6;
 }
 
+
+message DsTransformRequest {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct product = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion version = 2;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 3;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 4;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset dataset = 5;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study study   = 6;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection = 7;
+    map<string,bytes> secret = 8;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset trainingDataset = 9;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset testingDataset = 10;
+
+}
+
+message DsTransformResponse {
+    string training_hash   = 4;
+    string testing_hash    = 5;
+    string validation_hash = 6;
+}
+
+
+
+
+
 // Used to create a profile before the dataset object exist
 message DsCreateColumnProfileRequest {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct product = 1;
@@ -660,6 +685,10 @@ service DataService {
     rpc GenerateDataset(DsGenerateDatasetRequest) returns (DsGenerateDatasetResponse) {}
     // Preform the split. The dataset is assumed to be in the live area after validation
     rpc SplitDataset(DsSplitDatasetRequest) returns (DsSplitDatasetResponse) {}
+
+    // Preform the split. The dataset is assumed to be in the live area after validation
+    rpc Transform(DsTransformRequest) returns (DsTransformResponse) {}
+    
     // Visualize a specific column
     rpc CreateColumnProfile(DsCreateColumnProfileRequest) returns (DsCreateColumnProfileResponse) {}
     // Just infer the datasource, do no plots

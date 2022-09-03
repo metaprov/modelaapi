@@ -38,6 +38,8 @@ type DataServiceClient interface {
 	GenerateDataset(ctx context.Context, in *DsGenerateDatasetRequest, opts ...grpc.CallOption) (*DsGenerateDatasetResponse, error)
 	// Preform the split. The dataset is assumed to be in the live area after validation
 	SplitDataset(ctx context.Context, in *DsSplitDatasetRequest, opts ...grpc.CallOption) (*DsSplitDatasetResponse, error)
+	// Preform the split. The dataset is assumed to be in the live area after validation
+	Transform(ctx context.Context, in *DsTransformRequest, opts ...grpc.CallOption) (*DsTransformResponse, error)
 	// Visualize a specific column
 	CreateColumnProfile(ctx context.Context, in *DsCreateColumnProfileRequest, opts ...grpc.CallOption) (*DsCreateColumnProfileResponse, error)
 	// Just infer the datasource, do no plots
@@ -168,6 +170,15 @@ func (c *dataServiceClient) GenerateDataset(ctx context.Context, in *DsGenerateD
 func (c *dataServiceClient) SplitDataset(ctx context.Context, in *DsSplitDatasetRequest, opts ...grpc.CallOption) (*DsSplitDatasetResponse, error) {
 	out := new(DsSplitDatasetResponse)
 	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/SplitDataset", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dataServiceClient) Transform(ctx context.Context, in *DsTransformRequest, opts ...grpc.CallOption) (*DsTransformResponse, error) {
+	out := new(DsTransformResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/Transform", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -527,6 +538,8 @@ type DataServiceServer interface {
 	GenerateDataset(context.Context, *DsGenerateDatasetRequest) (*DsGenerateDatasetResponse, error)
 	// Preform the split. The dataset is assumed to be in the live area after validation
 	SplitDataset(context.Context, *DsSplitDatasetRequest) (*DsSplitDatasetResponse, error)
+	// Preform the split. The dataset is assumed to be in the live area after validation
+	Transform(context.Context, *DsTransformRequest) (*DsTransformResponse, error)
 	// Visualize a specific column
 	CreateColumnProfile(context.Context, *DsCreateColumnProfileRequest) (*DsCreateColumnProfileResponse, error)
 	// Just infer the datasource, do no plots
@@ -611,6 +624,9 @@ func (UnimplementedDataServiceServer) GenerateDataset(context.Context, *DsGenera
 }
 func (UnimplementedDataServiceServer) SplitDataset(context.Context, *DsSplitDatasetRequest) (*DsSplitDatasetResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SplitDataset not implemented")
+}
+func (UnimplementedDataServiceServer) Transform(context.Context, *DsTransformRequest) (*DsTransformResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Transform not implemented")
 }
 func (UnimplementedDataServiceServer) CreateColumnProfile(context.Context, *DsCreateColumnProfileRequest) (*DsCreateColumnProfileResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateColumnProfile not implemented")
@@ -876,6 +892,24 @@ func _DataService_SplitDataset_Handler(srv interface{}, ctx context.Context, dec
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DataServiceServer).SplitDataset(ctx, req.(*DsSplitDatasetRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DataService_Transform_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DsTransformRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DataServiceServer).Transform(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/Transform",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DataServiceServer).Transform(ctx, req.(*DsTransformRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1584,6 +1618,10 @@ var DataService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "SplitDataset",
 			Handler:    _DataService_SplitDataset_Handler,
+		},
+		{
+			MethodName: "Transform",
+			Handler:    _DataService_Transform_Handler,
 		},
 		{
 			MethodName: "CreateColumnProfile",

@@ -379,6 +379,49 @@ export class DataServiceClient {
     this.methodInfoSplitDataset);
   }
 
+  methodInfoTransform = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.data.v1.DataService/Transform',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.DsTransformRequest,
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.DsTransformResponse,
+    (request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsTransformRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.DsTransformResponse.deserializeBinary
+  );
+
+  transform(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsTransformRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_data_v1_data_pb.DsTransformResponse>;
+
+  transform(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsTransformRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsTransformResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_data_v1_data_pb.DsTransformResponse>;
+
+  transform(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsTransformRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsTransformResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.data.v1.DataService/Transform',
+        request,
+        metadata || {},
+        this.methodInfoTransform,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.data.v1.DataService/Transform',
+    request,
+    metadata || {},
+    this.methodInfoTransform);
+  }
+
   methodInfoCreateColumnProfile = new grpcWeb.MethodDescriptor(
     '/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateColumnProfile',
     grpcWeb.MethodType.UNARY,
