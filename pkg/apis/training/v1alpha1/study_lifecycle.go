@@ -18,7 +18,6 @@ import (
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/apis/training"
 	"github.com/metaprov/modelaapi/pkg/util"
-	"gopkg.in/yaml.v2"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
@@ -685,6 +684,54 @@ func (study *Study) MarkTestingFailed(err string) {
 
 func (study *Study) Tested() bool {
 	return study.GetCond(StudyTested).Status == v1.ConditionTrue
+}
+
+//////////////////////////////////////////////////////
+// Tuned
+//////////////////////////////////////////////////////
+
+func (study *Study) ModelTuned() bool {
+	cond := study.GetCond(StudyTuned)
+	return cond.Status == v1.ConditionTrue
+}
+
+func (study *Study) MarkTuning() {
+	study.CreateOrUpdateCond(StudyCondition{
+		Type:   StudyTuned,
+		Status: v1.ConditionFalse,
+		Reason: ReasonTuning,
+	})
+	now := metav1.Now()
+	study.Status.TestStatus.StartTime = &now
+	study.Status.Phase = StudyPhaseTuning
+}
+
+func (study *Study) MarkTuned() {
+	study.CreateOrUpdateCond(StudyCondition{
+		Type:   StudyTuned,
+		Status: v1.ConditionTrue,
+	})
+	now := metav1.Now()
+	study.Status.TestStatus.EndTime = &now
+	study.Status.Phase = StudyPhaseTuned
+	study.RefreshProgress()
+}
+
+func (study *Study) MarkTuningFailed(err string) {
+	study.CreateOrUpdateCond(StudyCondition{
+		Type:    StudyTuned,
+		Status:  v1.ConditionFalse,
+		Reason:  ReasonFailed,
+		Message: err,
+	})
+	study.Status.Phase = StudyPhaseFailed
+	study.UpdateEndTime()
+	study.Status.FailureMessage = util.StrPtr("Failed to tune model." + err)
+	study.RefreshProgress()
+}
+
+func (study *Study) Tuned() bool {
+	return study.GetCond(StudyTuned).Status == v1.ConditionTrue
 }
 
 ///////////////////////////////////////////////////////

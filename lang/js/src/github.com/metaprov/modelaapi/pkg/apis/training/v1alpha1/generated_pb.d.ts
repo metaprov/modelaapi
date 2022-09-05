@@ -1295,10 +1295,10 @@ export class ForecasterTrainingSpec extends jspb.Message {
   hasPipeline(): boolean;
   clearPipeline(): ForecasterTrainingSpec;
 
-  getManymodels(): ManyModelsSpec | undefined;
-  setManymodels(value?: ManyModelsSpec): ForecasterTrainingSpec;
-  hasManymodels(): boolean;
-  clearManymodels(): ForecasterTrainingSpec;
+  getHierarchy(): ModelAggSpec | undefined;
+  setHierarchy(value?: ModelAggSpec): ForecasterTrainingSpec;
+  hasHierarchy(): boolean;
+  clearHierarchy(): ForecasterTrainingSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ForecasterTrainingSpec.AsObject;
@@ -1320,7 +1320,7 @@ export namespace ForecasterTrainingSpec {
     featuresList: Array<string>,
     prophet?: ProphetSpec.AsObject,
     pipeline?: ForecasterPipelineSpec.AsObject,
-    manymodels?: ManyModelsSpec.AsObject,
+    hierarchy?: ModelAggSpec.AsObject,
   }
 }
 
@@ -1684,34 +1684,6 @@ export namespace Level {
   }
 }
 
-export class ManyModelsSpec extends jspb.Message {
-  getEnabled(): boolean;
-  setEnabled(value: boolean): ManyModelsSpec;
-
-  getGroupbyList(): Array<string>;
-  setGroupbyList(value: Array<string>): ManyModelsSpec;
-  clearGroupbyList(): ManyModelsSpec;
-  addGroupby(value: string, index?: number): ManyModelsSpec;
-
-  getModelpertimeseries(): boolean;
-  setModelpertimeseries(value: boolean): ManyModelsSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ManyModelsSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: ManyModelsSpec): ManyModelsSpec.AsObject;
-  static serializeBinaryToWriter(message: ManyModelsSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ManyModelsSpec;
-  static deserializeBinaryFromReader(message: ManyModelsSpec, reader: jspb.BinaryReader): ManyModelsSpec;
-}
-
-export namespace ManyModelsSpec {
-  export type AsObject = {
-    enabled: boolean,
-    groupbyList: Array<string>,
-    modelpertimeseries: boolean,
-  }
-}
-
 export class MedianPrunerOptions extends jspb.Message {
   getStartuptrials(): number;
   setStartuptrials(value: number): MedianPrunerOptions;
@@ -1771,6 +1743,30 @@ export namespace Model {
     metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.AsObject,
     spec?: ModelSpec.AsObject,
     status?: ModelStatus.AsObject,
+  }
+}
+
+export class ModelAggSpec extends jspb.Message {
+  getEnabled(): boolean;
+  setEnabled(value: boolean): ModelAggSpec;
+
+  getGroupbyList(): Array<string>;
+  setGroupbyList(value: Array<string>): ModelAggSpec;
+  clearGroupbyList(): ModelAggSpec;
+  addGroupby(value: string, index?: number): ModelAggSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ModelAggSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: ModelAggSpec): ModelAggSpec.AsObject;
+  static serializeBinaryToWriter(message: ModelAggSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ModelAggSpec;
+  static deserializeBinaryFromReader(message: ModelAggSpec, reader: jspb.BinaryReader): ModelAggSpec;
+}
+
+export namespace ModelAggSpec {
+  export type AsObject = {
+    enabled: boolean,
+    groupbyList: Array<string>,
   }
 }
 
@@ -3108,6 +3104,9 @@ export class ModelSpec extends jspb.Message {
   getPredict(): boolean;
   setPredict(value: boolean): ModelSpec;
 
+  getTuned(): boolean;
+  setTuned(value: boolean): ModelSpec;
+
   getExplained(): boolean;
   setExplained(value: boolean): ModelSpec;
 
@@ -3184,9 +3183,6 @@ export class ModelSpec extends jspb.Message {
   hasFeedbacktests(): boolean;
   clearFeedbacktests(): ModelSpec;
 
-  getTimeseriesitemsMap(): jspb.Map<string, TimeSeriesItem>;
-  clearTimeseriesitemsMap(): ModelSpec;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelSpec): ModelSpec.AsObject;
@@ -3226,6 +3222,7 @@ export namespace ModelSpec {
     released: boolean,
     registered: boolean,
     predict: boolean,
+    tuned: boolean,
     explained: boolean,
     codegenerated: boolean,
     baseline: boolean,
@@ -3246,7 +3243,6 @@ export namespace ModelSpec {
     interpretability?: InterpretabilitySpec.AsObject,
     unittests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
     feedbacktests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
-    timeseriesitemsMap: Array<[string, TimeSeriesItem.AsObject]>,
   }
 }
 
@@ -3275,6 +3271,16 @@ export class ModelStatus extends jspb.Message {
   setTestingendtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelStatus;
   hasTestingendtime(): boolean;
   clearTestingendtime(): ModelStatus;
+
+  getTuningstarttime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setTuningstarttime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelStatus;
+  hasTuningstarttime(): boolean;
+  clearTuningstarttime(): ModelStatus;
+
+  getTuningendtime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setTuningendtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelStatus;
+  hasTuningendtime(): boolean;
+  clearTuningendtime(): ModelStatus;
 
   getEndtime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setEndtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelStatus;
@@ -3310,6 +3316,11 @@ export class ModelStatus extends jspb.Message {
   setTestList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>): ModelStatus;
   clearTestList(): ModelStatus;
   addTest(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement;
+
+  getTuneList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>;
+  setTuneList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>): ModelStatus;
+  clearTuneList(): ModelStatus;
+  addTune(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement;
 
   getFeedbackList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>;
   setFeedbackList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>): ModelStatus;
@@ -3528,8 +3539,8 @@ export class ModelStatus extends jspb.Message {
   hasFeedbacktestsresult(): boolean;
   clearFeedbacktestsresult(): ModelStatus;
 
-  getForecastmodelsMap(): jspb.Map<string, TimeSeriesItemStatus>;
-  clearForecastmodelsMap(): ModelStatus;
+  getSubmodelsuri(): string;
+  setSubmodelsuri(value: string): ModelStatus;
 
   getConditionsList(): Array<ModelCondition>;
   setConditionsList(value: Array<ModelCondition>): ModelStatus;
@@ -3551,6 +3562,8 @@ export namespace ModelStatus {
     trainingendtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     testingstarttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     testingendtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    tuningstarttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    tuningendtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     cvscore: number,
     trainingscore: number,
@@ -3560,6 +3573,7 @@ export namespace ModelStatus {
     cvList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.AsObject>,
     trainList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.AsObject>,
     testList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.AsObject>,
+    tuneList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.AsObject>,
     feedbackList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.AsObject>,
     lastfeedbackdatasetref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     phase: string,
@@ -3615,7 +3629,7 @@ export namespace ModelStatus {
     images?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Images.AsObject,
     unittestsresult?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
     feedbacktestsresult?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
-    forecastmodelsMap: Array<[string, TimeSeriesItemStatus.AsObject]>,
+    submodelsuri: string,
     conditionsList: Array<ModelCondition.AsObject>,
   }
 }
@@ -4753,6 +4767,9 @@ export class SearchSpec extends jspb.Message {
   getObjective2(): string;
   setObjective2(value: string): SearchSpec;
 
+  getTune(): boolean;
+  setTune(value: boolean): SearchSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SearchSpec.AsObject;
   static toObject(includeInstance: boolean, msg: SearchSpec): SearchSpec.AsObject;
@@ -4777,6 +4794,7 @@ export namespace SearchSpec {
     earlystop?: EarlyStopSpec.AsObject,
     objective: string,
     objective2: string,
+    tune: boolean,
   }
 }
 
@@ -5527,108 +5545,6 @@ export namespace ThresholdPrunerOptions {
     upper: number,
     warmupsteps: number,
     intervalsteps: number,
-  }
-}
-
-export class TimeSeriesItem extends jspb.Message {
-  getKey(): string;
-  setKey(value: string): TimeSeriesItem;
-
-  getModelsList(): Array<TimeSeriesModelSpec>;
-  setModelsList(value: Array<TimeSeriesModelSpec>): TimeSeriesItem;
-  clearModelsList(): TimeSeriesItem;
-  addModels(value?: TimeSeriesModelSpec, index?: number): TimeSeriesModelSpec;
-
-  getEnsemble(): boolean;
-  setEnsemble(value: boolean): TimeSeriesItem;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): TimeSeriesItem.AsObject;
-  static toObject(includeInstance: boolean, msg: TimeSeriesItem): TimeSeriesItem.AsObject;
-  static serializeBinaryToWriter(message: TimeSeriesItem, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): TimeSeriesItem;
-  static deserializeBinaryFromReader(message: TimeSeriesItem, reader: jspb.BinaryReader): TimeSeriesItem;
-}
-
-export namespace TimeSeriesItem {
-  export type AsObject = {
-    key: string,
-    modelsList: Array<TimeSeriesModelSpec.AsObject>,
-    ensemble: boolean,
-  }
-}
-
-export class TimeSeriesItemStatus extends jspb.Message {
-  getKey(): string;
-  setKey(value: string): TimeSeriesItemStatus;
-
-  getFeaturesMap(): jspb.Map<string, number>;
-  clearFeaturesMap(): TimeSeriesItemStatus;
-
-  getModelsList(): Array<TimeSeriesModelStatus>;
-  setModelsList(value: Array<TimeSeriesModelStatus>): TimeSeriesItemStatus;
-  clearModelsList(): TimeSeriesItemStatus;
-  addModels(value?: TimeSeriesModelStatus, index?: number): TimeSeriesModelStatus;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): TimeSeriesItemStatus.AsObject;
-  static toObject(includeInstance: boolean, msg: TimeSeriesItemStatus): TimeSeriesItemStatus.AsObject;
-  static serializeBinaryToWriter(message: TimeSeriesItemStatus, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): TimeSeriesItemStatus;
-  static deserializeBinaryFromReader(message: TimeSeriesItemStatus, reader: jspb.BinaryReader): TimeSeriesItemStatus;
-}
-
-export namespace TimeSeriesItemStatus {
-  export type AsObject = {
-    key: string,
-    featuresMap: Array<[string, number]>,
-    modelsList: Array<TimeSeriesModelStatus.AsObject>,
-  }
-}
-
-export class TimeSeriesModelSpec extends jspb.Message {
-  getAlgorithmname(): string;
-  setAlgorithmname(value: string): TimeSeriesModelSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): TimeSeriesModelSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: TimeSeriesModelSpec): TimeSeriesModelSpec.AsObject;
-  static serializeBinaryToWriter(message: TimeSeriesModelSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): TimeSeriesModelSpec;
-  static deserializeBinaryFromReader(message: TimeSeriesModelSpec, reader: jspb.BinaryReader): TimeSeriesModelSpec;
-}
-
-export namespace TimeSeriesModelSpec {
-  export type AsObject = {
-    algorithmname: string,
-  }
-}
-
-export class TimeSeriesModelStatus extends jspb.Message {
-  getModeluri(): string;
-  setModeluri(value: string): TimeSeriesModelStatus;
-
-  getParametersList(): Array<HyperParameterValue>;
-  setParametersList(value: Array<HyperParameterValue>): TimeSeriesModelStatus;
-  clearParametersList(): TimeSeriesModelStatus;
-  addParameters(value?: HyperParameterValue, index?: number): HyperParameterValue;
-
-  getScoresMap(): jspb.Map<string, number>;
-  clearScoresMap(): TimeSeriesModelStatus;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): TimeSeriesModelStatus.AsObject;
-  static toObject(includeInstance: boolean, msg: TimeSeriesModelStatus): TimeSeriesModelStatus.AsObject;
-  static serializeBinaryToWriter(message: TimeSeriesModelStatus, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): TimeSeriesModelStatus;
-  static deserializeBinaryFromReader(message: TimeSeriesModelStatus, reader: jspb.BinaryReader): TimeSeriesModelStatus;
-}
-
-export namespace TimeSeriesModelStatus {
-  export type AsObject = {
-    modeluri: string,
-    parametersList: Array<HyperParameterValue.AsObject>,
-    scoresMap: Array<[string, number]>,
   }
 }
 

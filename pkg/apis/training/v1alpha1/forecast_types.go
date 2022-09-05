@@ -26,8 +26,8 @@ const (
 // Represent a time series feature
 
 const (
-	AbsEnergy                               catalog.Metric = "ts-abs-enegry"                           // 	Returns the absolute energy of the time series which is the sum over the squared values
-	AbsoluteMaximum                         catalog.Metric = "ts-abs-maximum"                          //  Calculates the highest absolute value of the time series x.
+	AbsEnergy                               catalog.Metric = "abs-enegry"                              // 	Returns the absolute energy of the time series which is the sum over the squared values
+	AbsoluteMaximum                         catalog.Metric = "abs-maximum"                             //  Calculates the highest absolute value of the time series x.
 	AbsoluteSumOfChanges                    catalog.Metric = "abs-sum-of-change"                       ///Returns the sum over the absolute value of consecutive changes in the series x
 	CountAboveMean                          catalog.Metric = "count_above_mean"                        // Returns the number of values in x that are higher than the mean of x
 	CountBelowMean                          catalog.Metric = "count_below_mean"                        //Returns the number of values in x that are lower than the mean of x
@@ -199,14 +199,14 @@ type ForecasterTrainingSpec struct {
 	// The forecasting pipeline
 	// +kubebuilder:validation:Optional
 	Pipeline ForecasterPipelineSpec `json:"pipeline,omitempty" protobuf:"bytes,10,opt,name=pipeline"`
-	// Definitions of the many models
+	// Definitions of the aggeregation
 	// +kubebuilder:validation:Optional
-	ManyModels ManyModelsSpec `json:"manyModels,omitempty" protobuf:"bytes,11,opt,name=manyModels"`
+	Hierarchy ModelAggSpec `json:"hierarchy,omitempty" protobuf:"bytes,11,opt,name=hierarchy"`
 }
 
 // A spec for many models definitions.
 // If enabled, the study would generate models based on the levels of the keys
-type ManyModelsSpec struct {
+type ModelAggSpec struct {
 	// If true, use sliding windows, else use expanding windows
 	// +kubebuilder:default = false
 	// +kubebuilder:validation:Optional
@@ -214,10 +214,6 @@ type ManyModelsSpec struct {
 	// Define the grouping of the input file. A model will be generated for every group
 	// +kubebuilder:validation:Optional
 	GroupBy []string `json:"groupBy,omitempty" protobuf:"bytes,2,rep,name=groupBy"`
-	// If true, generate a prophet model for each time series
-	// +kubebuilder:default = true
-	// +kubebuilder:validation:Optional
-	ModelPerTimeSeries *bool `json:"modelPerTimeSeries,omitempty" protobuf:"varint,3,opt,name=modelPerTimeSeries"`
 }
 
 // BacktestSpec specify the back test
@@ -239,23 +235,6 @@ type BacktestSpec struct {
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
 	Gap *int32 `json:"gap,omitempty" protobuf:"varint,5,opt,name=gap"`
-}
-
-// A forecaster contains the metadata for one forecast model
-type TimeSeriesModelSpec struct {
-	// AlgorithmName is a reference to the algorithm in the catalog
-	AlgorithmName string `json:"algorithmName,omitempty" protobuf:"bytes,2,opt,name=algorithmName"`
-}
-
-type TimeSeriesModelStatus struct {
-	// +kubebuilder:validation:Optional
-	ModelURI string `json:"modelURI,omitempty" protobuf:"bytes,1,rep,name=modelURI"`
-	// Parameters is a list of the algorithm hyper parameters
-	// +kubebuilder:validation:Optional
-	Parameters []HyperParameterValue `json:"parameters,omitempty" protobuf:"bytes,2,rep,name=parameters,casttype=HyperParameterValue"`
-	// The scores
-	// +kubebuilder:validation:Optional
-	Scores map[catalog.Metric]float64 `json:"scores,omitempty" protobuf:"bytes,3,rep,name=scores"`
 }
 
 type ForecasterPipelineSpec struct {

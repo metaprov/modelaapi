@@ -860,7 +860,6 @@ const (
 // Estimators
 //==============================================================================
 
-// +kubebuilder:validation:Enum="knn-regressor";"ridge-regressor";"lasso-regressor";"ada-boost-regressor";"decision-tree-regressor";"extra-tree-regressor";"linear-svr";"svr";"passive-agressive-regressor";"sgd-regressor";"gradient-boosting-regressor";"random-forest-regressor";"xgb-regressor";"catboost-regressor";"sgd-regressor";"gradient-boosting-regressor";"random-forest-regressor";"xgb-regressor";"catboost-regressor";"lightgbm-regressor";"elasticnet-regressor";"dnn-regressor";"elliptic-envelope";"one-class-svm";"isolation-forest";"local-outlier-factor";"prophet";"knn-classifier";"ada-boost-classifier";"decision-tree-classifier";"extra-tree-classifier";"linear-svc";"svc";"passive-aggressive-classifier";"sgd-classifier";"logistic-regression";"gradient-boosting-classifier";"random-forest-classifier";"xgboost-classifier";"ridge-classifier";"quadratic-discriminant";"linear-discriminant";"lightgbm-classifier";"catboost-classifier";"stacking-ensemble";"none";"naive-forecaster";"exponential-smoothing";"auto-ets";"theta-forecaster";"auto-arima";"arima";"sarimax";"var";"varmax";"bats";"tbats";"prophet";"bayesian-personalized-ranking";"voting-classifier";"voting-regressor";"stacking-classifier";"stacking-regressor";"hist-gradient-boosting-classifier";"hist-gradient-boosting-regressor";"linear-regression";"bernoulli-nb";"gaussian-nb";"multinomial-nb";
 type ClassicEstimatorName string
 
 const (
@@ -883,7 +882,18 @@ const (
 	LightGbmRegressor             ClassicEstimatorName = "lightgbm-regressor"
 	ElasticNetRegressor           ClassicEstimatorName = "elasticnet-regressor"
 	DNNRegressor                  ClassicEstimatorName = "dnn-regressor"
-	LinearRegressor               ClassicEstimatorName = "linear-regression"
+	LinearRegressor               ClassicEstimatorName = "linear-regressor"
+
+	// Robust regressor
+	HuberRegressor    ClassicEstimatorName = "huber-regression"
+	RUNSACRegressor   ClassicEstimatorName = "runsac-regression"
+	TheilSenRegressor ClassicEstimatorName = "theilsend-regressor"
+
+	// GLM regressor
+
+	PoissonRegressor ClassicEstimatorName = "poisson-regression"
+	TweedieRegressor ClassicEstimatorName = "tweedie-regression"
+	GammaRegressor   ClassicEstimatorName = "gamma-regression"
 
 	// OutlierFilter
 	EllipticEnvelope   ClassicEstimatorName = "elliptic-envelope"
@@ -905,6 +915,7 @@ const (
 	BATS                 ClassicEstimatorName = "bats"
 	TBATS                ClassicEstimatorName = "tbats"
 	Prophet              ClassicEstimatorName = "prophet"
+	GreyKite             ClassicEstimatorName = "greykite"
 
 	// Recommendation
 	ALS                         ClassicEstimatorName = "als"
@@ -1605,11 +1616,12 @@ const (
 )
 
 // ModelType enamurate the model type
-// +kubebuilder:validation:Enum="classical";"dnn";"transformer";"chatbot";"rl";
+// +kubebuilder:validation:Enum="classical";"dnn";"transformer";"chatbot";"rl";"hierarchy";
 type ModelType string
 
 const (
 	ModelTypeClassical   ModelType = "classical"
+	ModelTypeHierarchy   ModelType = "hierarchy" // mainly for time series.
 	ModelTypeDNN         ModelType = "dnn"
 	ModelTypeTransformer ModelType = "transformer"
 	ModelTypeChatbot     ModelType = "chatbot"

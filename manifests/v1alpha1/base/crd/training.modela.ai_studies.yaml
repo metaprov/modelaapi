@@ -110,76 +110,6 @@ spec:
                     description: Baselines contains the collection of algorithms that
                       models will be created with
                     items:
-                      enum:
-                      - knn-regressor
-                      - ridge-regressor
-                      - lasso-regressor
-                      - ada-boost-regressor
-                      - decision-tree-regressor
-                      - extra-tree-regressor
-                      - linear-svr
-                      - svr
-                      - passive-agressive-regressor
-                      - sgd-regressor
-                      - gradient-boosting-regressor
-                      - random-forest-regressor
-                      - xgb-regressor
-                      - catboost-regressor
-                      - sgd-regressor
-                      - gradient-boosting-regressor
-                      - random-forest-regressor
-                      - xgb-regressor
-                      - catboost-regressor
-                      - lightgbm-regressor
-                      - elasticnet-regressor
-                      - dnn-regressor
-                      - elliptic-envelope
-                      - one-class-svm
-                      - isolation-forest
-                      - local-outlier-factor
-                      - prophet
-                      - knn-classifier
-                      - ada-boost-classifier
-                      - decision-tree-classifier
-                      - extra-tree-classifier
-                      - linear-svc
-                      - svc
-                      - passive-aggressive-classifier
-                      - sgd-classifier
-                      - logistic-regression
-                      - gradient-boosting-classifier
-                      - random-forest-classifier
-                      - xgboost-classifier
-                      - ridge-classifier
-                      - quadratic-discriminant
-                      - linear-discriminant
-                      - lightgbm-classifier
-                      - catboost-classifier
-                      - stacking-ensemble
-                      - none
-                      - naive-forecaster
-                      - exponential-smoothing
-                      - auto-ets
-                      - theta-forecaster
-                      - auto-arima
-                      - arima
-                      - sarimax
-                      - var
-                      - varmax
-                      - bats
-                      - tbats
-                      - prophet
-                      - bayesian-personalized-ranking
-                      - voting-classifier
-                      - voting-regressor
-                      - stacking-classifier
-                      - stacking-regressor
-                      - hist-gradient-boosting-classifier
-                      - hist-gradient-boosting-regressor
-                      - linear-regression
-                      - bernoulli-nb
-                      - gaussian-nb
-                      - multinomial-nb
                       type: string
                     type: array
                   enabled:
@@ -318,76 +248,6 @@ spec:
                   estimator:
                     description: The algorithm to use when evaluating models with
                       different feature engineering pipelines
-                    enum:
-                    - knn-regressor
-                    - ridge-regressor
-                    - lasso-regressor
-                    - ada-boost-regressor
-                    - decision-tree-regressor
-                    - extra-tree-regressor
-                    - linear-svr
-                    - svr
-                    - passive-agressive-regressor
-                    - sgd-regressor
-                    - gradient-boosting-regressor
-                    - random-forest-regressor
-                    - xgb-regressor
-                    - catboost-regressor
-                    - sgd-regressor
-                    - gradient-boosting-regressor
-                    - random-forest-regressor
-                    - xgb-regressor
-                    - catboost-regressor
-                    - lightgbm-regressor
-                    - elasticnet-regressor
-                    - dnn-regressor
-                    - elliptic-envelope
-                    - one-class-svm
-                    - isolation-forest
-                    - local-outlier-factor
-                    - prophet
-                    - knn-classifier
-                    - ada-boost-classifier
-                    - decision-tree-classifier
-                    - extra-tree-classifier
-                    - linear-svc
-                    - svc
-                    - passive-aggressive-classifier
-                    - sgd-classifier
-                    - logistic-regression
-                    - gradient-boosting-classifier
-                    - random-forest-classifier
-                    - xgboost-classifier
-                    - ridge-classifier
-                    - quadratic-discriminant
-                    - linear-discriminant
-                    - lightgbm-classifier
-                    - catboost-classifier
-                    - stacking-ensemble
-                    - none
-                    - naive-forecaster
-                    - exponential-smoothing
-                    - auto-ets
-                    - theta-forecaster
-                    - auto-arima
-                    - arima
-                    - sarimax
-                    - var
-                    - varmax
-                    - bats
-                    - tbats
-                    - prophet
-                    - bayesian-personalized-ranking
-                    - voting-classifier
-                    - voting-regressor
-                    - stacking-classifier
-                    - stacking-regressor
-                    - hist-gradient-boosting-classifier
-                    - hist-gradient-boosting-regressor
-                    - linear-regression
-                    - bernoulli-nb
-                    - gaussian-nb
-                    - multinomial-nb
                     type: string
                   featureSelectionTemplate:
                     description: Specification for feature selection. successful study.
@@ -582,6 +442,20 @@ spec:
                         format: int32
                         type: integer
                     type: object
+                  hierarchy:
+                    description: Definitions of the aggeregation
+                    properties:
+                      groupBy:
+                        description: Define the grouping of the input file. A model
+                          will be generated for every group
+                        items:
+                          type: string
+                        type: array
+                      sliding:
+                        description: If true, use sliding windows, else use expanding
+                          windows
+                        type: boolean
+                    type: object
                   holidays:
                     description: The spec for the holiday
                     items:
@@ -617,24 +491,6 @@ spec:
                           type: string
                       type: object
                     type: array
-                  manyModels:
-                    description: Definitions of the many models
-                    properties:
-                      groupBy:
-                        description: Define the grouping of the input file. A model
-                          will be generated for every group
-                        items:
-                          type: string
-                        type: array
-                      modelPerTimeSeries:
-                        description: If true, generate a prophet model for each time
-                          series
-                        type: boolean
-                      sliding:
-                        description: If true, use sliding windows, else use expanding
-                          windows
-                        type: boolean
-                    type: object
                   outputLocation:
                     description: The data location that would store the forecast result.
                     properties:
@@ -1630,76 +1486,6 @@ spec:
                           available to the Study specifying the AlgorithmSearchSpaceSpec.
                           If empty, all algorithms will be available for training
                         items:
-                          enum:
-                          - knn-regressor
-                          - ridge-regressor
-                          - lasso-regressor
-                          - ada-boost-regressor
-                          - decision-tree-regressor
-                          - extra-tree-regressor
-                          - linear-svr
-                          - svr
-                          - passive-agressive-regressor
-                          - sgd-regressor
-                          - gradient-boosting-regressor
-                          - random-forest-regressor
-                          - xgb-regressor
-                          - catboost-regressor
-                          - sgd-regressor
-                          - gradient-boosting-regressor
-                          - random-forest-regressor
-                          - xgb-regressor
-                          - catboost-regressor
-                          - lightgbm-regressor
-                          - elasticnet-regressor
-                          - dnn-regressor
-                          - elliptic-envelope
-                          - one-class-svm
-                          - isolation-forest
-                          - local-outlier-factor
-                          - prophet
-                          - knn-classifier
-                          - ada-boost-classifier
-                          - decision-tree-classifier
-                          - extra-tree-classifier
-                          - linear-svc
-                          - svc
-                          - passive-aggressive-classifier
-                          - sgd-classifier
-                          - logistic-regression
-                          - gradient-boosting-classifier
-                          - random-forest-classifier
-                          - xgboost-classifier
-                          - ridge-classifier
-                          - quadratic-discriminant
-                          - linear-discriminant
-                          - lightgbm-classifier
-                          - catboost-classifier
-                          - stacking-ensemble
-                          - none
-                          - naive-forecaster
-                          - exponential-smoothing
-                          - auto-ets
-                          - theta-forecaster
-                          - auto-arima
-                          - arima
-                          - sarimax
-                          - var
-                          - varmax
-                          - bats
-                          - tbats
-                          - prophet
-                          - bayesian-personalized-ranking
-                          - voting-classifier
-                          - voting-regressor
-                          - stacking-classifier
-                          - stacking-regressor
-                          - hist-gradient-boosting-classifier
-                          - hist-gradient-boosting-regressor
-                          - linear-regression
-                          - bernoulli-nb
-                          - gaussian-nb
-                          - multinomial-nb
                           type: string
                         type: array
                     type: object
@@ -1721,6 +1507,10 @@ spec:
                     maximum: 50
                     minimum: 0
                     type: integer
+                  tune:
+                    default: false
+                    description: Tune best model
+                    type: boolean
                 type: object
               servingTemplate:
                 description: ServingTemplate specifies the model format and resource

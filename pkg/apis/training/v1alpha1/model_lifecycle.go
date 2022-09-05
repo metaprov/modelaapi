@@ -12,7 +12,6 @@ import (
 	"path"
 	"time"
 
-	"github.com/dustin/go-humanize"
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	data "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1"
 	infra "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
@@ -23,8 +22,6 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/client-go/kubernetes/scheme"
-
-	"github.com/ghodss/yaml"
 )
 
 func NewHyperParameterValue() *HyperParameterValue {
@@ -342,6 +339,8 @@ func ParseModelYaml(content []byte) (*Model, error) {
 const (
 	ReasonFailed             = "Failed"
 	ReasonTesting            = "Testing"
+	ReasonTuning             = "Tuning"
+	ReasonTuned              = "Tuned"
 	ReasonReporting          = "Reporting"
 	ReasonProfiling          = "Profiling"
 	ReasonPublishing         = "Publishing"
@@ -1252,4 +1251,61 @@ func (model *Model) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *stri
 		result.Spec.Fields["Completion Time"] = model.Status.EndTime.Format("01/2/2006 15:04:05")
 	}
 	return result
+}
+
+// =================== Tun
+
+func (model *Model) MarkTuned(ms []catalog.Measurement) {
+	if model.Status.TuningEndTime == nil {
+		now := metav1.Now()
+		model.Status.TuningEndTime = &now
+	}
+	model.Status.Tune = ms
+	model.Status.Phase = ModelPhaseTuned
+	model.CreateOrUpdateCond(ModelCondition{
+		Type:   ModelTuned,
+		Status: v1.ConditionTrue,
+	})
+	model.Status.Progress = 50
+}
+
+func (model *Model) MarkFailedToTune(err string) {
+	model.CreateOrUpdateCond(ModelCondition{
+		Type:    ModelTuned,
+		Status:  v1.ConditionFalse,
+		Reason:  ReasonFailed,
+		Message: err,
+	})
+	model.Status.Phase = ModelPhaseFailed
+	if model.Status.TuningEndTime == nil {
+		now := metav1.Now()
+		model.Status.TuningEndTime = &now
+	}
+	if model.Status.EndTime == nil {
+		now := metav1.Now()
+		model.Status.EndTime = &now
+	}
+	// set the scores to 0, since Nan is invalid value
+	model.Status.CVScore = 0 // we must put it at 0, since NaN is invalid value
+	model.Status.Tune = make([]catalog.Measurement, 0)
+	model.Status.FailureMessage = util.StrPtr("Failed to tune." + err)
+	model.Status.Progress = 100
+
+}
+
+func (model *Model) Tuning() bool {
+	cond := model.GetCond(ModelTuned)
+	return cond.Status == v1.ConditionFalse && cond.Reason == ReasonTuned
+}
+
+func (model *Model) TuningFailed() bool {
+	if model.TuningFailed() {
+		return true
+	}
+	cond := model.GetCond(ModelTuned)
+	return cond.Status == v1.ConditionFalse && cond.Reason == ReasonFailed
+}
+
+func (model *Model) Tuned() bool {
+	return model.GetCond(ModelTuned).Status == v1.ConditionTrue
 }

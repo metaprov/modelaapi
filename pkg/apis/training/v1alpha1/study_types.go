@@ -25,6 +25,8 @@ const (
 	StudyPhaseSearched           StudyPhase = "Searched"
 	StudyPhaseCreatingEnsembles  StudyPhase = "CreatingEnsembles"
 	StudyPhaseCreatedEnsembles   StudyPhase = "CreatedEnsembles"
+	StudyPhaseTuning             StudyPhase = "Tuning"
+	StudyPhaseTuned              StudyPhase = "Tuned"
 	StudyPhaseTesting            StudyPhase = "Testing"
 	StudyPhaseTested             StudyPhase = "Tested"
 	StudyPhaseUnitTesting        StudyPhase = "UnitTesting"
@@ -87,6 +89,9 @@ const (
 	StudyEnsembleCreated StudyConditionType = "ModelsEnsembleCreated"
 	// StudyTested states that the best model has been tested against training and testing datasets
 	StudyTested StudyConditionType = "ModelTested"
+	// StudyTested states that the best model has been tested against training and testing datasets
+	StudyTuned StudyConditionType = "ModelTuned"
+
 	// StudyReported states that a Report resource has been generated for the Study
 	StudyReported  StudyConditionType = "Reported"
 	StudyProfiled  StudyConditionType = "Profiled"
@@ -221,6 +226,10 @@ type SearchSpec struct {
 	// +kubebuilder:default:="none"
 	// +kubebuilder:validation:Optional
 	Objective2 *catalog.Metric `json:"objective2,omitempty" protobuf:"bytes,15,opt,name=objective2"`
+	// Tune best model
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Tune *bool `json:"tune,omitempty" protobuf:"varint,16,opt,name=tune"`
 }
 
 // EarlyStopSpec specifies the configuration to automatically abort a model search
