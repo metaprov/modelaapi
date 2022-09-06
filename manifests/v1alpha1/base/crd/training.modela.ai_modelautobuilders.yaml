@@ -445,6 +445,7 @@ spec:
                       negative:
                         description: List of negative rules
                         items:
+                          description: Labeling rule define a column expression
                           properties:
                             column:
                               type: string
@@ -465,6 +466,7 @@ spec:
                       positive:
                         description: List of rules for positive rules.
                         items:
+                          description: Labeling rule define a column expression
                           properties:
                             column:
                               type: string
@@ -906,6 +908,7 @@ spec:
                             - month
                             - quarter
                             - year
+                            - multi-year
                             type: string
                           interval:
                             default: 1

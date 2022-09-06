@@ -5,6 +5,40 @@ import (
 	data "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1"
 )
 
+// +kubebuilder:validation:Enum="silverkite";"prophet";"auto-arima";"lag-based";"sk";"two-stage";"wow";"daily-1-config-1";"daily-1-config-2";"daily-1-config-3";"daily-1";"daily-90";"weekly";"monthly";"hourly-1";"hourly-24";"hourly-168";"hourly-336"
+type ModelTemplate string
+
+const (
+	ModelTemplateSilverKite    ModelTemplate = "silverkite"
+	ModelTemplateProphet       ModelTemplate = "prophet"
+	ModelTemplateAutoArima     ModelTemplate = "auto-arima"
+	ModelTemplateLagBased      ModelTemplate = "lag-based"
+	ModelTemplateSK            ModelTemplate = "sk"
+	ModelTemplateTwoStage      ModelTemplate = "two-stage"
+	ModelTemplateWow           ModelTemplate = "wow"
+	ModelTemplateDaily1Config1 ModelTemplate = "daily-1-config-1"
+	ModelTemplateDaily1Config2 ModelTemplate = "daily-1-config-2"
+	ModelTemplateDaily1Config3 ModelTemplate = "daily-1-config-3"
+	ModelTemplateDaily1        ModelTemplate = "daily-1"
+	ModelTemplateDaily90       ModelTemplate = "daily-90"
+	ModelTemplateWeekly        ModelTemplate = "weekly"
+	ModelTemplateMonthly       ModelTemplate = "monthly"
+	ModelTemplateHourly1       ModelTemplate = "hourly-1"
+	ModelTemplateHourly24      ModelTemplate = "hourly-24"
+	ModelTemplateHourly168     ModelTemplate = "hourly-168"
+	ModelTemplateHourly336     ModelTemplate = "hourly-336"
+)
+
+type SeasonalityType string
+
+const (
+	SeasonalityTypeHourly  SeasonalityType = "hourly"
+	SeasonalityTypeDaily   SeasonalityType = "daily"
+	SeasonalityTypeWeekly  SeasonalityType = "weekly"
+	SeasonalityTypeMonthly SeasonalityType = "monthly"
+	SeasonalityTypeYearly  SeasonalityType = "yearly"
+)
+
 // +kubebuilder:validation:Enum="recursive";"direct";"none"
 type ForecastStrategy string
 
@@ -18,9 +52,11 @@ const (
 type GrowthMode string
 
 const (
-	Linear   GrowthMode = "linear"
-	Logistic GrowthMode = "logistic"
-	Flat     GrowthMode = "flat"
+	Linear    GrowthMode = "linear"
+	Logistic  GrowthMode = "logistic"
+	Quadratic GrowthMode = "quadratic"
+	Sqr2      GrowthMode = "sqrt"
+	Flat      GrowthMode = "flat"
 )
 
 // Represent a time series feature
@@ -62,10 +98,9 @@ const (
 
 // Define the seasonality for a period (yearly / monthly / daily)
 type PeriodSeasonalitySpec struct {
-	// Is this seasonality enabled
-	// +kubebuilder:default:=true
+	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
-	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
+	Freq catalog.Freq `json:"freq,omitempty" protobuf:"varint,1,opt,name=freq"`
 	// If enabled, the number of data points in the interval
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
@@ -73,20 +108,6 @@ type PeriodSeasonalitySpec struct {
 	// +kubebuilder:default:="auto"
 	// +kubebuilder:validation:Optional
 	Mode *catalog.SeasonalityMode `json:"mode,omitempty" protobuf:"bytes,3,opt,name=mode"`
-}
-
-// SeasonalitySpec defines the custom seasonality
-type CustomSeasonalitySpec struct {
-	// The name of the custom seasonality
-	// +kubebuilder:validation:Required
-	// +required
-	Name string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
-	// The name of the custom seasonality
-	// +kubebuilder:validation:Required
-	// +required
-	Period float64 `json:"period,omitempty" protobuf:"bytes,2,opt,name=period"`
-	// +kubebuilder:validation:Optional
-	FourierOrder *int32 `json:"fourierOrder,omitempty" protobuf:"varint,3,opt,name=fourierOrder"`
 }
 
 // Define a window on the time series.
@@ -103,78 +124,14 @@ type WindowSpec struct {
 	Length *int32 `json:"length,omitempty" protobuf:"varint,3,opt,name=length"`
 }
 
-type RegressorSpec struct {
-	// The Name of the regressor
-	// +kubebuilder:validation:Optional
-	Name *string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
-	// This is a regularization parameter, to adjust the affect of the regressor.
-	// +kubebuilder:default:=0
-	// +kubebuilder:validation:Optional
-	PriorScale *float64 `json:"priorScale,omitempty" protobuf:"bytes,2,opt,name=priorScale"`
-	// Set to true if the regressor is standardized
-	// +kubebuilder:default:=false
-	// +kubebuilder:validation:Optional
-	Standardize *bool `json:"standardize,omitempty" protobuf:"varint,3,opt,name=standardize"`
-}
-
-type HolidaySpec struct {
-	// The name of the holiday column. If the column is empty, no holiday
-	// Column name of the first level of grouping
-	// +kubebuilder:validation:Optional
-	HolidayColumn *string `json:"holidayColumn,omitempty" protobuf:"bytes,1,opt,name=holidayColumn"`
-	// +kubebuilder:validation:Optional
-	Country *catalog.HolidayCountry `json:"country,omitempty" protobuf:"bytes,2,opt,name=country"`
-	// For custom holiday use external dataset
-	// +kubebuilder:validation:Optional
-	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,3,opt,name=datasetName"`
-}
-
-type ProphetSpec struct {
-	// +kubebuilder:default = 0.8
-	// +kubebuilder:validation:Optional
-	IntervalWidth *float64 `json:"intervalWidth,omitempty" protobuf:"bytes,1,opt,name=intervalWidth"`
-	// +kubebuilder:default = 1000
-	// +kubebuilder:validation:Optional
-	UncertaintySamples *int32 `json:"uncertaintySamples,omitempty" protobuf:"varint,2,opt,name=uncertaintySamples"`
-	// The generate seasonality mode
-	// +kubebuilder:default = "additive"
-	// +kubebuilder:validation:Optional
-	SeasonalityMode *catalog.SeasonalityMode `json:"seasonality,omitempty" protobuf:"bytes,3,opt,name=seasonality"`
-	// The confidence levels for the forecast, each level must be between 1-100.
-	// +kubebuilder:default = 95
-	// +kubebuilder:validation:Optional
-	// +kubebuilder:validation:Minimum=0
-	ConfidenceInterval *int32 `json:"confidenceIntervals,omitempty" protobuf:"varint,4,opt,name=confidenceInterval"`
-	// +kubebuilder:validation:Optional
-	YearlySeasonality PeriodSeasonalitySpec `json:"yearlySeasonality,omitempty" protobuf:"bytes,5,opt,name=yearlySeasonality"`
-	// +kubebuilder:validation:Optional
-	WeeklySeasonality PeriodSeasonalitySpec `json:"weeklySeasonality,omitempty" protobuf:"bytes,6,opt,name=weeklySeasonality"`
-	// +kubebuilder:validation:Optional
-	DailySeasonality PeriodSeasonalitySpec `json:"dailySeasonality,omitempty" protobuf:"bytes,7,opt,name=dailySeasonality"`
-	// +kubebuilder:default = "linear"
-	// +kubebuilder:validation:Optional
-	Growth *GrowthMode `json:"growth,omitempty" protobuf:"bytes,8,opt,name=growth"`
-	// number of change points
-	// +kubebuilder:default = 25
-	// +kubebuilder:validation:Optional
-	ChangePoints *int32 `json:"changePoints,omitempty" protobuf:"varint,9,opt,name=changePoints"`
-	// Change point range
-	// +kubebuilder:default = 0.8
-	// +kubebuilder:validation:Optional
-	ChangePointRange *float64 `json:"changePointRange,omitempty" protobuf:"bytes,10,opt,name=changePointRange"`
-	// Change point range
-	// +kubebuilder:validation:Optional
-	CustomSeasonalities []CustomSeasonalitySpec `json:"customSeasonalities,omitempty" protobuf:"bytes,11,rep,name=customSeasonalities"`
-}
-
-// ForecastingSpec
-type ForecasterTrainingSpec struct {
+// The forecaster search define a search for the forecaster
+type ForecasterSpec struct {
 	// The list of additional regressors. The regressors are part of the time series data
 	// +kubebuilder:validation:Optional
-	Regressors []RegressorSpec `json:"regressors,omitempty" protobuf:"bytes,1,rep,name=regressors"`
+	Regressors []string `json:"regressors,omitempty" protobuf:"bytes,1,rep,name=regressors"`
 	// The spec for the holiday
 	// +kubebuilder:validation:Optional
-	Holidays []HolidaySpec `json:"holidays,omitempty" protobuf:"bytes,2,rep,name=holidays"`
+	Events []TimeSeriesEvent `json:"events,omitempty" protobuf:"bytes,2,rep,name=events"`
 	// Specification for the past windows
 	// +kubebuilder:validation:Optional
 	Past WindowSpec `json:"past,omitempty" protobuf:"bytes,3,opt,name=past"`
@@ -193,27 +150,39 @@ type ForecasterTrainingSpec struct {
 	// List of time series features to compute on each time series.
 	// +kubebuilder:validation:Optional
 	Features []catalog.Metric `json:"features,omitempty" protobuf:"bytes,8,opt,name=features"`
-	// If using prophet, those are the prophet settings
 	// +kubebuilder:validation:Optional
-	Prophet ProphetSpec `json:"prophet,omitempty" protobuf:"bytes,9,opt,name=prophet"`
-	// The forecasting pipeline
+	Levels []Level `json:"levels,omitempty" protobuf:"bytes,9,rep,name=levels"`
 	// +kubebuilder:validation:Optional
-	Pipeline ForecasterPipelineSpec `json:"pipeline,omitempty" protobuf:"bytes,10,opt,name=pipeline"`
-	// Definitions of the aggeregation
+	PredefinedTemplate ModelTemplate `json:"predefinedTemplate,omitempty" protobuf:"bytes,10,opt,name=predefinedTemplate"`
 	// +kubebuilder:validation:Optional
-	Hierarchy ModelAggSpec `json:"hierarchy,omitempty" protobuf:"bytes,11,opt,name=hierarchy"`
-}
+	AnomalyInfo []AnomalyItem `json:"anomalyInfo,omitempty" protobuf:"bytes,11,opt,name=anomalyInfo"`
 
-// A spec for many models definitions.
-// If enabled, the study would generate models based on the levels of the keys
-type ModelAggSpec struct {
-	// If true, use sliding windows, else use expanding windows
-	// +kubebuilder:default = false
+	// The data format of the time column, this will be based
 	// +kubebuilder:validation:Optional
-	Enabled *bool `json:"sliding,omitempty" protobuf:"varint,1,opt,name=enabled"`
-	// Define the grouping of the input file. A model will be generated for every group
+	DateFormat *string `json:"dateFormat,omitempty" protobuf:"bytes,12,opt,name=dateFormat"`
+	//
 	// +kubebuilder:validation:Optional
-	GroupBy []string `json:"groupBy,omitempty" protobuf:"bytes,2,rep,name=groupBy"`
+	Freq *catalog.Freq `json:"freq,omitempty" protobuf:"bytes,13,opt,name=freq"`
+	// +kubebuilder:validation:Optional
+	TimeColumn *string `json:"timeColumn,omitempty" protobuf:"bytes,14,opt,name=timeColumn"`
+	// +kubebuilder:validation:Optional
+	TrainEndDate string `json:"trainEndData,omitempty" protobuf:"bytes,15,opt,name=trainEndData"`
+	// The value column. this is the name of the column to forecast, this will be based on the data source.
+	// +kubebuilder:validation:Optional
+	ValueColumn string `json:"valueColumn,omitempty" protobuf:"bytes,16,opt,name=valueColumn"`
+	// +kubebuilder:validation:Optional
+	HPOBudget *int32 `json:"hpoBudget,omitempty" protobuf:"bytes,17,opt,name=hpoBudget"`
+	// Spec for evaluation
+	// +kubebuilder:validation:Optional
+	Evaluation EvaluationMetricSpec `json:"evaluation,omitempty" protobuf:"bytes,18,opt,name=evaluation"`
+	// Spec for time series cross validation
+	// +kubebuilder:validation:Optional
+	CV ForecasterCrossValidationSpec `json:"cv,omitempty" protobuf:"bytes,19,opt,name=cv"`
+	// +kubebuilder:validation:Optional
+	Seasonalities []PeriodSeasonalitySpec `json:"seasonalities,omitempty" protobuf:"bytes,20,opt,name=seasonalities"`
+	// Lagged Regressors
+	// +kubebuilder:validation:Optional
+	LaggedRegressors []string `json:"laggedRegressors,omitempty" protobuf:"bytes,21,opt,name=laggedRegressors"`
 }
 
 // BacktestSpec specify the back test
@@ -229,7 +198,7 @@ type BacktestSpec struct {
 	// ExpectedValueMax size for a single training set
 	// +kubebuilder:default = 0
 	// +kubebuilder:validation:Optional
-	InitialSize *int32 `json:"InitialSize,omitempty" protobuf:"varint,3,opt,name=InitialSize"`
+	Initial *int32 `json:"Initial,omitempty" protobuf:"varint,3,opt,name=Initial"`
 	// The number of data points between each windows
 	// +kubebuilder:default = 0
 	// +kubebuilder:validation:Minimum=0
@@ -237,7 +206,9 @@ type BacktestSpec struct {
 	Gap *int32 `json:"gap,omitempty" protobuf:"varint,5,opt,name=gap"`
 }
 
-type ForecasterPipelineSpec struct {
+// Define how to build a regression model for forecasting (including feature engineering)
+// This is not implemented today
+type RegressionForecasterSpec struct {
 	// If true this is an ensemble pipeline
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
@@ -278,4 +249,95 @@ type ForecasterPipelineSpec struct {
 	// Default to none
 	// +kubebuilder:validation:Optional
 	Reduction ForecastStrategy `json:"reduction,omitempty" protobuf:"bytes,11,opt,name=reduction"`
+}
+
+type AnomalyItem struct {
+	// +kubebuilder:validation:Optional
+	ValueColumn string `json:"valueColumn,omitempty" protobuf:"bytes,1,opt,name=valueColumn"`
+	// +kubebuilder:validation:Optional
+	AdjDeltaColumn string `json:"adjDeltaColumn,omitempty" protobuf:"bytes,2,opt,name=adjDeltaColumn"`
+	// +kubebuilder:validation:Optional
+	Start []string `json:"start,omitempty" protobuf:"bytes,3,opt,name=start"`
+	// +kubebuilder:validation:Optional
+	End []string `json:"end,omitempty" protobuf:"bytes,4,opt,name=end"`
+}
+
+type TimeSeriesEvent struct {
+	// Set to true if this event is an holiday
+	// +kubebuilder:validation:Optional
+	Method string `json:"method,omitempty" protobuf:"bytes,1,opt,name=method"`
+	// Set to true if this event is an holiday
+	// +kubebuilder:validation:Optional
+	Holiday *bool `json:"holiday,omitempty" protobuf:"bytes,2,opt,name=holiday"`
+	// If this event is an holiday, this is the holiday country
+	// +kubebuilder:validation:Optional
+	Country catalog.HolidayCountry `json:"country,omitempty" protobuf:"bytes,3,opt,name=country"`
+	// Pre event window, that might have event effects
+	// +kubebuilder:validation:Optional
+	PreEvent *int32 `json:"preEvent,omitempty" protobuf:"bytes,4,opt,name=preEvent"`
+	// Post event windows the might have event effects.
+	// +kubebuilder:validation:Optional
+	PostEvent *int32 `json:"postEvent,omitempty" protobuf:"bytes,5,opt,name=postEvent"`
+	// The time points to mark the events
+	// +kubebuilder:validation:Optional
+	TimePoints []string `json:"timePoints,omitempty" protobuf:"bytes,6,opt,name=timePoints"`
+}
+
+type ChangePoint struct {
+}
+
+// What metric to evaluate
+type EvaluationMetricSpec struct {
+	// +kubebuilder:validation:Optional
+	AggregateFunction *string `json:"aggregateFunction,omitempty" protobuf:"bytes,1,opt,name=aggregateFunction"`
+	// +kubebuilder:validation:Optional
+	AggregatePeriod *int32 `json:"aggregatePeriod,omitempty" protobuf:"bytes,2,opt,name=aggregatePeriod"`
+	// +kubebuilder:validation:Optional
+	NullModelParams *string `json:"nullModelParams,omitempty" protobuf:"bytes,3,opt,name=nullModelParams"`
+	// +kubebuilder:validation:Optional
+	RelativeErrorTolerance *float64 `json:"relativeErrorTolerance,omitempty" protobuf:"bytes,4,opt,name=relativeErrorTolerance"`
+}
+
+// The cross validation spec, used to evaluate the forecaster during training.
+type ForecasterCrossValidationSpec struct {
+	// +kubebuilder:validation:Optional
+	ReportMetrics []catalog.Metric `json:"reportMetrics,omitempty" protobuf:"bytes,1,opt,name=reportMetrics"`
+	// +kubebuilder:validation:Optional
+	SelectionMetrics catalog.Metric `json:"selectionMetrics,omitempty" protobuf:"bytes,2,opt,name=selectionMetrics"`
+	// +kubebuilder:validation:Optional
+	ExpandingWindows *bool `json:"expandingWindows,omitempty" protobuf:"bytes,3,opt,name=expandingWindows"`
+	// +kubebuilder:validation:Optional
+	Horizon int32 `json:"horizon,omitempty" protobuf:"bytes,4,opt,name=horizon"`
+	// +kubebuilder:validation:Optional
+	MaxSplits int32 `json:"maxSplits,omitempty" protobuf:"bytes,5,opt,name=maxSplits"`
+	// +kubebuilder:validation:Optional
+	MinTrainPeriods int32 `json:"minTrainPeriods,omitempty" protobuf:"bytes,6,opt,name=minTrainPeriods"`
+	// +kubebuilder:validation:Optional
+	PeriodsBetweenSplits int32 `json:"periodsBetweenSplits,omitempty" protobuf:"bytes,7,opt,name=periodsBetweenSplits"`
+	// +kubebuilder:validation:Optional
+	PeriodsBetweenTrainTest int32 `json:"periodsBetweenTrainTest,omitempty" protobuf:"bytes,8,opt,name=periodsBetweenTrainTest"`
+	// +kubebuilder:validation:Optional
+	UseMostRecentSplits bool `json:"useMostRecentSplits,omitempty" protobuf:"bytes,9,opt,name=useMostRecentSplits"`
+	// +kubebuilder:validation:Optional
+	TestHorizon int32 `json:"testHorizon,omitempty" protobuf:"bytes,10,opt,name=testHorizon"`
+	// +kubebuilder:validation:Optional
+	Growth GrowthMode `json:"growth,omitempty" protobuf:"bytes,11,opt,name=growth"`
+}
+
+type UnivariateForecastStatus struct {
+	// URI for the grid search result
+	// +kubebuilder:validation:Optional
+	GridSearchResultURI string `json:"gridSearchResultURI,omitempty" protobuf:"bytes,1,opt,name=gridSearchResultURI"`
+	// The best estimator
+	// +kubebuilder:validation:Optional
+	BestEstimator ClassicalEstimatorSpec `json:"baseEstimator,omitempty" protobuf:"bytes,2,opt,name=baseEstimator"`
+	// URI of the model
+	// +kubebuilder:validation:Optional
+	ModelURI string `json:"modelURI,omitempty" protobuf:"bytes,3,opt,name=modelURI"`
+	// URI of the backtest result
+	// +kubebuilder:validation:Optional
+	CVResultURI string `json:"cvResultURI,omitempty" protobuf:"bytes,4,opt,name=cvResultURI"`
+	// URI to the actual forecast
+	// +kubebuilder:validation:Optional
+	ForecastURI string `json:"forecastURI,omitempty" protobuf:"bytes,5,opt,name=forecastURI"`
 }

@@ -389,7 +389,7 @@ spec:
                     description: The backtest specification, the system supports back
                       testing with expanding windows.
                     properties:
-                      InitialSize:
+                      Initial:
                         description: ExpectedValueMax size for a single training set
                         format: int32
                         type: integer
@@ -430,6 +430,7 @@ spec:
                         - month
                         - quarter
                         - year
+                        - multi-year
                         type: string
                       length:
                         description: The window length
@@ -442,20 +443,10 @@ spec:
                         format: int32
                         type: integer
                     type: object
-                  hierarchy:
-                    description: Definitions of the aggeregation
-                    properties:
-                      groupBy:
-                        description: Define the grouping of the input file. A model
-                          will be generated for every group
-                        items:
-                          type: string
-                        type: array
-                      sliding:
-                        description: If true, use sliding windows, else use expanding
-                          windows
-                        type: boolean
-                    type: object
+                  groupBy:
+                    items:
+                      type: string
+                    type: array
                   holidays:
                     description: The spec for the holiday
                     items:
@@ -618,6 +609,7 @@ spec:
                         - month
                         - quarter
                         - year
+                        - multi-year
                         type: string
                       length:
                         description: The window length
@@ -727,127 +719,6 @@ spec:
                           format: int32
                           type: integer
                         type: array
-                    type: object
-                  prophet:
-                    description: If using prophet, those are the prophet settings
-                    properties:
-                      changePointRange:
-                        description: Change point range
-                        type: number
-                      changePoints:
-                        description: number of change points
-                        format: int32
-                        type: integer
-                      confidenceIntervals:
-                        description: The confidence levels for the forecast, each
-                          level must be between 1-100.
-                        format: int32
-                        minimum: 0
-                        type: integer
-                      customSeasonalities:
-                        description: Change point range
-                        items:
-                          description: SeasonalitySpec defines the custom seasonality
-                          properties:
-                            fourierOrder:
-                              format: int32
-                              type: integer
-                            name:
-                              description: The name of the custom seasonality
-                              type: string
-                            period:
-                              description: The name of the custom seasonality
-                              type: number
-                          type: object
-                        type: array
-                      dailySeasonality:
-                        description: Define the seasonality for a period (yearly /
-                          monthly / daily)
-                        properties:
-                          enabled:
-                            default: true
-                            description: Is this seasonality enabled
-                            type: boolean
-                          mode:
-                            default: auto
-                            enum:
-                            - multipicative
-                            - additive
-                            - auto
-                            - none
-                            type: string
-                          periods:
-                            default: 0
-                            description: If enabled, the number of data points in
-                              the interval
-                            format: int32
-                            type: integer
-                        type: object
-                      growth:
-                        enum:
-                        - linear
-                        - logistic
-                        - flat
-                        type: string
-                      intervalWidth:
-                        type: number
-                      seasonality:
-                        description: The generate seasonality mode
-                        enum:
-                        - multipicative
-                        - additive
-                        - auto
-                        - none
-                        type: string
-                      uncertaintySamples:
-                        format: int32
-                        type: integer
-                      weeklySeasonality:
-                        description: Define the seasonality for a period (yearly /
-                          monthly / daily)
-                        properties:
-                          enabled:
-                            default: true
-                            description: Is this seasonality enabled
-                            type: boolean
-                          mode:
-                            default: auto
-                            enum:
-                            - multipicative
-                            - additive
-                            - auto
-                            - none
-                            type: string
-                          periods:
-                            default: 0
-                            description: If enabled, the number of data points in
-                              the interval
-                            format: int32
-                            type: integer
-                        type: object
-                      yearlySeasonality:
-                        description: Define the seasonality for a period (yearly /
-                          monthly / daily)
-                        properties:
-                          enabled:
-                            default: true
-                            description: Is this seasonality enabled
-                            type: boolean
-                          mode:
-                            default: auto
-                            enum:
-                            - multipicative
-                            - additive
-                            - auto
-                            - none
-                            type: string
-                          periods:
-                            default: 0
-                            description: If enabled, the number of data points in
-                              the interval
-                            format: int32
-                            type: integer
-                        type: object
                     type: object
                   regressors:
                     description: The list of additional regressors. The regressors

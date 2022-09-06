@@ -659,8 +659,12 @@ type LabelingSpec struct {
 	Negative []LabelingRule `json:"negative,omitempty" protobuf:"bytes,4,rep,name=negative"`
 }
 
+// Labeling rule define a column expression
 type LabelingRule struct {
-	Column   string     `json:"column,omitempty" protobuf:"bytes,1,opt,name=column"`
+	//+kubebuilder:validation:Optional
+	Column string `json:"column,omitempty" protobuf:"bytes,1,opt,name=column"`
+	//+kubebuilder:validation:Optional
 	Operator catalog.Op `json:"operator,omitempty" protobuf:"bytes,2,opt,name=operator"`
-	Value    string     `json:"value,omitempty" protobuf:"bytes,3,opt,name=value"`
+	//+kubebuilder:validation:Optional
+	Value string `json:"value,omitempty" protobuf:"bytes,3,opt,name=value"`
 }

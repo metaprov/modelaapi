@@ -539,7 +539,7 @@ type StudySpec struct {
 	ServingTemplate ServingSpec `json:"servingTemplate,omitempty" protobuf:"bytes,13,opt,name=servingTemplate"`
 	// ForecastSpec specifies the parameters required when generating a forecasting model
 	// +kubebuilder:validation:Optional
-	Forecasting ForecasterTrainingSpec `json:"forecasting,omitempty" protobuf:"bytes,14,opt,name=forecasting"`
+	ForecasterTemplate ForecasterSpec `json:"forecasterTemplate,omitempty" protobuf:"bytes,14,opt,name=forecasterTemplate"`
 	// Schedule specifies the configuration to execute the Study at a later date
 	// +kubebuilder:validation:Optional
 	Schedule StudyScheduleSpec `json:"schedule,omitempty" protobuf:"bytes,15,opt,name=schedule"`
@@ -767,31 +767,14 @@ type StudyList struct {
 }
 
 type Level struct {
-	// The name of the level - the column name
-	Name *string `json:"string,omitempty" protobuf:"bytes,1,opt,name=string"`
-	// The number of time periods to
+	// The key for the levels
+	Index []string `json:"index,omitempty" protobuf:"bytes,1,rep,name=index"`
+	// The forecast horizon
 	Horizon *int32 `json:"horizon,omitempty" protobuf:"varint,2,opt,name=horizon"`
 	// The freq of the level
 	Freq *catalog.Freq `json:"freq,omitempty" protobuf:"bytes,3,opt,name=freq"`
 	// The aggregate function used to roll up the lower level
 	Aggregate *catalog.Aggregate `json:"aggregate,omitempty" protobuf:"bytes,4,opt,name=aggregate"`
-	// The distinct values of the column for this level
-	Values []string `json:"values,omitempty" protobuf:"bytes,5,rep,name=values"`
-}
-
-type Hierarchy struct {
-	// The columns in the data frame that belongs to the hierarchy. By default, all the item level column is the last one. The default aggregate function is sum.
-	Columns []string `json:"columns,omitempty" protobuf:"bytes,1,rep,name=columns"`
-	// The group level columns. For each group level column specify the horizon and the aggregate function
-	GroupLevels []Level `json:"groupLevels,omitempty" protobuf:"bytes,2,rep,name=groupLevels"`
-	// Item level column.
-	ItemLevel *Level `json:"itemLevel,omitempty" protobuf:"bytes,3,opt,name=itemLevel"`
-}
-
-// ForecastObj holds the definition of a single forecast
-type ForecastObj struct {
-	Key        string `json:"key,omitempty" protobuf:"bytes,1,opt,name=key"`
-	LevelIndex int32  `json:"levelIndex,omitempty" protobuf:"varint,2,opt,name=levelIndex"`
 }
 
 // ModelImageSpec specifies the destination of Docker images produced by a Study

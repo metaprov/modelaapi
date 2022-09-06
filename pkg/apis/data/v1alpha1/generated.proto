@@ -3037,11 +3037,15 @@ message LabelingPipelineStatus {
   repeated LabelingPipelineCondition conditions = 5;
 }
 
+// Labeling rule define a column expression
 message LabelingRule {
+  // +kubebuilder:validation:Optional
   optional string column = 1;
 
+  // +kubebuilder:validation:Optional
   optional string operator = 2;
 
+  // +kubebuilder:validation:Optional
   optional string value = 3;
 }
 

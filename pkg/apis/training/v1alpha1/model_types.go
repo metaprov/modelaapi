@@ -312,7 +312,7 @@ type ModelSpec struct {
 	Location *data.DataLocation `json:"location,omitempty" protobuf:"bytes,40,opt,name=location"`
 	// Forecasting specifies the configuration to train a forecasting model
 	// +kubebuilder:validation:Optional
-	Forecasting ForecasterTrainingSpec `json:"forecasting,omitempty" protobuf:"bytes,41,opt,name=forecasting"`
+	Forecasting *ForecasterSpec `json:"forecasting,omitempty" protobuf:"bytes,41,opt,name=forecasting"`
 	// Compilation specifies the configuration to compile a model to a binary (currently unimplemented)
 	// +kubebuilder:validation:Optional
 	Compilation *catalog.CompilerSpec `json:"compilation,omitempty" protobuf:"bytes,42,opt,name=compilation"`

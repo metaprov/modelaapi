@@ -14,6 +14,7 @@ import (
 
 	data "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1"
 	infra "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
+	"gopkg.in/yaml.v2"
 
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/apis/training"
@@ -1032,32 +1033,6 @@ func (study *Study) CreatePartitionsPaths() []string {
 }
 
 // Ask the hirerchy to return forecast keys
-func (h Hierarchy) Explode() []ForecastObj {
-	// merge the group and the levels
-	levels := make([]Level, 0)
-	for _, v := range h.GroupLevels {
-		levels = append(levels, v)
-	}
-	levels = append(levels, *h.ItemLevel)
-	result := make([]ForecastObj, 0)
-	// for each level explode all the items in the level
-
-	for i, _ := range levels {
-		keysAtLevel := make([][]string, i+1)
-		// create the keys on each level up to the parent
-		for j := 0; j <= i; j++ {
-			keysAtLevel[j] = levels[j].Values
-		}
-		combs := util.AllCombs(keysAtLevel)
-		for _, combination := range combs {
-			result = append(result, ForecastObj{
-				Key:        combination,
-				LevelIndex: int32(i),
-			})
-		}
-	}
-	return result
-}
 
 func (study *Study) IsRunning() bool {
 	return study.GetCond(StudyCompleted).Status != v1.ConditionFalse &&

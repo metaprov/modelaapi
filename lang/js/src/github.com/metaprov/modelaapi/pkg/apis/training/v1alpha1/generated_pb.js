@@ -34,10 +34,12 @@ goog.object.extend(proto, k8s_io_apimachinery_pkg_runtime_generated_pb);
 var k8s_io_apimachinery_pkg_runtime_schema_generated_pb = require('../../../../../../../k8s.io/apimachinery/pkg/runtime/schema/generated_pb.js');
 goog.object.extend(proto, k8s_io_apimachinery_pkg_runtime_schema_generated_pb);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AlgorithmSearchSpaceSpec', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AnomalyItem', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AudioPipelineSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.BacktestSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.BaselineSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CapacityStageSpec', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ChangePoint', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ChatbotEstimatorSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CheckpointSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ClassicalEstimatorSpec', null, global);
@@ -47,7 +49,6 @@ goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReportSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReportStatus', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CustomReportSpec', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CustomSeasonalitySpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataHashes', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataStageSpec', null, global);
@@ -60,6 +61,7 @@ goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EnsembleRules', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EnsembleSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EnsemblesSpec', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EvaluationMetricSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSearchSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSearchStatus', null, global);
@@ -69,6 +71,7 @@ goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeaturePair', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecastObj', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterPipelineSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterTrainingSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GarbageCollectionSpec', null, global);
@@ -85,7 +88,6 @@ goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.MedianPrunerOptions', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAggSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilder', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderCondition', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderList', null, global);
@@ -129,7 +131,6 @@ goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookVarValue', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PercentilePrunerOptions', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSeasonalitySpec', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PrunerSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.RegressorSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReleaseStageSpec', null, global);
@@ -155,9 +156,12 @@ goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SuccessiveHalvingSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TextPipelineSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ThresholdPrunerOptions', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingStageSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UATStageSpec', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecastStatus', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.VideoPipelineSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.WindowSpec', null, global);
 /**
@@ -180,6 +184,27 @@ if (goog.DEBUG && !COMPILED) {
    * @override
    */
   proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AlgorithmSearchSpaceSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AlgorithmSearchSpaceSpec';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AnomalyItem = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AnomalyItem.repeatedFields_, null);
+};
+goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AnomalyItem, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AnomalyItem.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AnomalyItem';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -264,6 +289,27 @@ if (goog.DEBUG && !COMPILED) {
    * @override
    */
   proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CapacityStageSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CapacityStageSpec';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ChangePoint = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ChangePoint, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ChangePoint.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ChangePoint';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -453,27 +499,6 @@ if (goog.DEBUG && !COMPILED) {
    * @override
    */
   proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CustomReportSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CustomReportSpec';
-}
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CustomSeasonalitySpec = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
-};
-goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CustomSeasonalitySpec, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
-  proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CustomSeasonalitySpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CustomSeasonalitySpec';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -737,6 +762,27 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EvaluationMetricSpec = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EvaluationMetricSpec, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EvaluationMetricSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EvaluationMetricSpec';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.repeatedFields_, null);
 };
@@ -915,6 +961,27 @@ if (goog.DEBUG && !COMPILED) {
    * @override
    */
   proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecastObj.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecastObj';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec.repeatedFields_, null);
+};
+goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1251,27 +1318,6 @@ if (goog.DEBUG && !COMPILED) {
    * @override
    */
   proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model';
-}
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAggSpec = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAggSpec.repeatedFields_, null);
-};
-goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAggSpec, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
-  proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAggSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAggSpec';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -2186,27 +2232,6 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec.repeatedFields_, null);
-};
-goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
-  proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec';
-}
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PrunerSpec = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
@@ -2732,6 +2757,27 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.repeatedFields_, null);
+};
+goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.repeatedFields_, null);
 };
@@ -2784,6 +2830,48 @@ if (goog.DEBUG && !COMPILED) {
    * @override
    */
   proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UATStageSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UATStageSpec';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast.repeatedFields_, null);
+};
+goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecastStatus = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecastStatus, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecastStatus.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecastStatus';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -2984,6 +3072,307 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AlgorithmSearchSp
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AnomalyItem.repeatedFields_ = [3,4];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AnomalyItem.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AnomalyItem.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AnomalyItem} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AnomalyItem.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    valuecolumn: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    adjdeltacolumn: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    startList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
+    endList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AnomalyItem}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AnomalyItem.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AnomalyItem;
+  return proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AnomalyItem.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AnomalyItem} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AnomalyItem}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AnomalyItem.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setValuecolumn(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setAdjdeltacolumn(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addStart(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addEnd(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AnomalyItem.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AnomalyItem.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AnomalyItem} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AnomalyItem.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getStartList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      3,
+      f
+    );
+  }
+  f = message.getEndList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      4,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string valueColumn = 1;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AnomalyItem.prototype.getValuecolumn = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AnomalyItem} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AnomalyItem.prototype.setValuecolumn = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AnomalyItem} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AnomalyItem.prototype.clearValuecolumn = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AnomalyItem.prototype.hasValuecolumn = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string adjDeltaColumn = 2;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AnomalyItem.prototype.getAdjdeltacolumn = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AnomalyItem} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AnomalyItem.prototype.setAdjdeltacolumn = function(value) {
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AnomalyItem} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AnomalyItem.prototype.clearAdjdeltacolumn = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AnomalyItem.prototype.hasAdjdeltacolumn = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * repeated string start = 3;
+ * @return {!Array<string>}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AnomalyItem.prototype.getStartList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 3));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AnomalyItem} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AnomalyItem.prototype.setStartList = function(value) {
+  return jspb.Message.setField(this, 3, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AnomalyItem} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AnomalyItem.prototype.addStart = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 3, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AnomalyItem} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AnomalyItem.prototype.clearStartList = function() {
+  return this.setStartList([]);
+};
+
+
+/**
+ * repeated string end = 4;
+ * @return {!Array<string>}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AnomalyItem.prototype.getEndList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 4));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AnomalyItem} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AnomalyItem.prototype.setEndList = function(value) {
+  return jspb.Message.setField(this, 4, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AnomalyItem} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AnomalyItem.prototype.addEnd = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 4, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AnomalyItem} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AnomalyItem.prototype.clearEndList = function() {
+  return this.setEndList([]);
+};
+
+
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -3165,7 +3554,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.BacktestSpec.toOb
   var f, obj = {
     sliding: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
     splits: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    initialsize: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    initial: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     gap: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
   };
 
@@ -3213,7 +3602,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.BacktestSpec.dese
       break;
     case 3:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setInitialsize(value);
+      msg.setInitial(value);
       break;
     case 5:
       var value = /** @type {number} */ (reader.readInt32());
@@ -3352,10 +3741,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.BacktestSpec.prot
 
 
 /**
- * optional int32 InitialSize = 3;
+ * optional int32 Initial = 3;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.BacktestSpec.prototype.getInitialsize = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.BacktestSpec.prototype.getInitial = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
@@ -3364,7 +3753,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.BacktestSpec.prot
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.BacktestSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.BacktestSpec.prototype.setInitialsize = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.BacktestSpec.prototype.setInitial = function(value) {
   return jspb.Message.setField(this, 3, value);
 };
 
@@ -3373,7 +3762,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.BacktestSpec.prot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.BacktestSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.BacktestSpec.prototype.clearInitialsize = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.BacktestSpec.prototype.clearInitial = function() {
   return jspb.Message.setField(this, 3, undefined);
 };
 
@@ -3382,7 +3771,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.BacktestSpec.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.BacktestSpec.prototype.hasInitialsize = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.BacktestSpec.prototype.hasInitial = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
@@ -3970,6 +4359,107 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CapacityStageSpec
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CapacityStageSpec.prototype.hasResources = function() {
   return jspb.Message.getField(this, 4) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ChangePoint.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ChangePoint.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ChangePoint} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ChangePoint.toObject = function(includeInstance, msg) {
+  var f, obj = {
+
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ChangePoint}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ChangePoint.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ChangePoint;
+  return proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ChangePoint.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ChangePoint} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ChangePoint}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ChangePoint.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ChangePoint.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ChangePoint.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ChangePoint} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ChangePoint.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
 };
 
 
@@ -6442,250 +6932,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CustomReportSpec.
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CustomReportSpec.prototype.clearPagesList = function() {
   return this.setPagesList([]);
-};
-
-
-
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CustomSeasonalitySpec.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CustomSeasonalitySpec.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CustomSeasonalitySpec} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CustomSeasonalitySpec.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    name: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    period: (f = jspb.Message.getOptionalFloatingPointField(msg, 2)) == null ? undefined : f,
-    fourierorder: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CustomSeasonalitySpec}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CustomSeasonalitySpec.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CustomSeasonalitySpec;
-  return proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CustomSeasonalitySpec.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CustomSeasonalitySpec} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CustomSeasonalitySpec}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CustomSeasonalitySpec.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
-      break;
-    case 2:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setPeriod(value);
-      break;
-    case 3:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setFourierorder(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CustomSeasonalitySpec.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CustomSeasonalitySpec.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CustomSeasonalitySpec} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CustomSeasonalitySpec.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = /** @type {string} */ (jspb.Message.getField(message, 1));
-  if (f != null) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 2));
-  if (f != null) {
-    writer.writeDouble(
-      2,
-      f
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 3));
-  if (f != null) {
-    writer.writeInt32(
-      3,
-      f
-    );
-  }
-};
-
-
-/**
- * optional string name = 1;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CustomSeasonalitySpec.prototype.getName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CustomSeasonalitySpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CustomSeasonalitySpec.prototype.setName = function(value) {
-  return jspb.Message.setField(this, 1, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CustomSeasonalitySpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CustomSeasonalitySpec.prototype.clearName = function() {
-  return jspb.Message.setField(this, 1, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CustomSeasonalitySpec.prototype.hasName = function() {
-  return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional double period = 2;
- * @return {number}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CustomSeasonalitySpec.prototype.getPeriod = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 2, 0.0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CustomSeasonalitySpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CustomSeasonalitySpec.prototype.setPeriod = function(value) {
-  return jspb.Message.setField(this, 2, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CustomSeasonalitySpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CustomSeasonalitySpec.prototype.clearPeriod = function() {
-  return jspb.Message.setField(this, 2, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CustomSeasonalitySpec.prototype.hasPeriod = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional int32 fourierOrder = 3;
- * @return {number}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CustomSeasonalitySpec.prototype.getFourierorder = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CustomSeasonalitySpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CustomSeasonalitySpec.prototype.setFourierorder = function(value) {
-  return jspb.Message.setField(this, 3, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CustomSeasonalitySpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CustomSeasonalitySpec.prototype.clearFourierorder = function() {
-  return jspb.Message.setField(this, 3, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CustomSeasonalitySpec.prototype.hasFourierorder = function() {
-  return jspb.Message.getField(this, 3) != null;
 };
 
 
@@ -10206,6 +10452,298 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EnsemblesSpec.pro
 
 
 
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EvaluationMetricSpec.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EvaluationMetricSpec.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EvaluationMetricSpec} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EvaluationMetricSpec.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    aggregatefunction: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    aggregateperiod: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    nullmodelparams: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    relativeerrortolerance: (f = jspb.Message.getOptionalFloatingPointField(msg, 4)) == null ? undefined : f
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EvaluationMetricSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EvaluationMetricSpec.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EvaluationMetricSpec;
+  return proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EvaluationMetricSpec.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EvaluationMetricSpec} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EvaluationMetricSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EvaluationMetricSpec.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setAggregatefunction(value);
+      break;
+    case 2:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setAggregateperiod(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNullmodelparams(value);
+      break;
+    case 4:
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setRelativeerrortolerance(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EvaluationMetricSpec.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EvaluationMetricSpec.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EvaluationMetricSpec} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EvaluationMetricSpec.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeInt32(
+      2,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeDouble(
+      4,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string aggregateFunction = 1;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EvaluationMetricSpec.prototype.getAggregatefunction = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EvaluationMetricSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EvaluationMetricSpec.prototype.setAggregatefunction = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EvaluationMetricSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EvaluationMetricSpec.prototype.clearAggregatefunction = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EvaluationMetricSpec.prototype.hasAggregatefunction = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional int32 aggregatePeriod = 2;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EvaluationMetricSpec.prototype.getAggregateperiod = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EvaluationMetricSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EvaluationMetricSpec.prototype.setAggregateperiod = function(value) {
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EvaluationMetricSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EvaluationMetricSpec.prototype.clearAggregateperiod = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EvaluationMetricSpec.prototype.hasAggregateperiod = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional string nullModelParams = 3;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EvaluationMetricSpec.prototype.getNullmodelparams = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EvaluationMetricSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EvaluationMetricSpec.prototype.setNullmodelparams = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EvaluationMetricSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EvaluationMetricSpec.prototype.clearNullmodelparams = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EvaluationMetricSpec.prototype.hasNullmodelparams = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional double relativeErrorTolerance = 4;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EvaluationMetricSpec.prototype.getRelativeerrortolerance = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 4, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EvaluationMetricSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EvaluationMetricSpec.prototype.setRelativeerrortolerance = function(value) {
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EvaluationMetricSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EvaluationMetricSpec.prototype.clearRelativeerrortolerance = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EvaluationMetricSpec.prototype.hasRelativeerrortolerance = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+
 /**
  * List of repeated fields within this message type.
  * @private {!Array<number>}
@@ -13670,6 +14208,642 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecastObj.proto
  * @private {!Array<number>}
  * @const
  */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec.repeatedFields_ = [1];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    reportmetricsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+    selectionmetrics: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    expandingwindows: (f = jspb.Message.getBooleanField(msg, 3)) == null ? undefined : f,
+    horizon: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    maxsplits: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    mintrainperiods: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
+    periodsbetweensplits: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
+    periodsbetweentraintest: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
+    usemostrecentsplits: (f = jspb.Message.getBooleanField(msg, 9)) == null ? undefined : f,
+    testhorizon: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
+    growth: (f = jspb.Message.getField(msg, 11)) == null ? undefined : f
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec;
+  return proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addReportmetrics(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setSelectionmetrics(value);
+      break;
+    case 3:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setExpandingwindows(value);
+      break;
+    case 4:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setHorizon(value);
+      break;
+    case 5:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setMaxsplits(value);
+      break;
+    case 6:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setMintrainperiods(value);
+      break;
+    case 7:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setPeriodsbetweensplits(value);
+      break;
+    case 8:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setPeriodsbetweentraintest(value);
+      break;
+    case 9:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setUsemostrecentsplits(value);
+      break;
+    case 10:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setTesthorizon(value);
+      break;
+    case 11:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setGrowth(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getReportmetricsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      1,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeBool(
+      3,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeInt32(
+      4,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 5));
+  if (f != null) {
+    writer.writeInt32(
+      5,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 6));
+  if (f != null) {
+    writer.writeInt32(
+      6,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 7));
+  if (f != null) {
+    writer.writeInt32(
+      7,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 8));
+  if (f != null) {
+    writer.writeInt32(
+      8,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 9));
+  if (f != null) {
+    writer.writeBool(
+      9,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 10));
+  if (f != null) {
+    writer.writeInt32(
+      10,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 11));
+  if (f != null) {
+    writer.writeString(
+      11,
+      f
+    );
+  }
+};
+
+
+/**
+ * repeated string reportMetrics = 1;
+ * @return {!Array<string>}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec.prototype.getReportmetricsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 1));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec.prototype.setReportmetricsList = function(value) {
+  return jspb.Message.setField(this, 1, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec.prototype.addReportmetrics = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 1, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec.prototype.clearReportmetricsList = function() {
+  return this.setReportmetricsList([]);
+};
+
+
+/**
+ * optional string selectionMetrics = 2;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec.prototype.getSelectionmetrics = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec.prototype.setSelectionmetrics = function(value) {
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec.prototype.clearSelectionmetrics = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec.prototype.hasSelectionmetrics = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional bool expandingWindows = 3;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec.prototype.getExpandingwindows = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec.prototype.setExpandingwindows = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec.prototype.clearExpandingwindows = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec.prototype.hasExpandingwindows = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional int32 horizon = 4;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec.prototype.getHorizon = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec.prototype.setHorizon = function(value) {
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec.prototype.clearHorizon = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec.prototype.hasHorizon = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional int32 maxSplits = 5;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec.prototype.getMaxsplits = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec.prototype.setMaxsplits = function(value) {
+  return jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec.prototype.clearMaxsplits = function() {
+  return jspb.Message.setField(this, 5, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec.prototype.hasMaxsplits = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional int32 minTrainPeriods = 6;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec.prototype.getMintrainperiods = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec.prototype.setMintrainperiods = function(value) {
+  return jspb.Message.setField(this, 6, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec.prototype.clearMintrainperiods = function() {
+  return jspb.Message.setField(this, 6, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec.prototype.hasMintrainperiods = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional int32 periodsBetweenSplits = 7;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec.prototype.getPeriodsbetweensplits = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec.prototype.setPeriodsbetweensplits = function(value) {
+  return jspb.Message.setField(this, 7, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec.prototype.clearPeriodsbetweensplits = function() {
+  return jspb.Message.setField(this, 7, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec.prototype.hasPeriodsbetweensplits = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
+ * optional int32 periodsBetweenTrainTest = 8;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec.prototype.getPeriodsbetweentraintest = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec.prototype.setPeriodsbetweentraintest = function(value) {
+  return jspb.Message.setField(this, 8, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec.prototype.clearPeriodsbetweentraintest = function() {
+  return jspb.Message.setField(this, 8, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec.prototype.hasPeriodsbetweentraintest = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional bool useMostRecentSplits = 9;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec.prototype.getUsemostrecentsplits = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 9, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec.prototype.setUsemostrecentsplits = function(value) {
+  return jspb.Message.setField(this, 9, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec.prototype.clearUsemostrecentsplits = function() {
+  return jspb.Message.setField(this, 9, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec.prototype.hasUsemostrecentsplits = function() {
+  return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
+ * optional int32 testHorizon = 10;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec.prototype.getTesthorizon = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec.prototype.setTesthorizon = function(value) {
+  return jspb.Message.setField(this, 10, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec.prototype.clearTesthorizon = function() {
+  return jspb.Message.setField(this, 10, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec.prototype.hasTesthorizon = function() {
+  return jspb.Message.getField(this, 10) != null;
+};
+
+
+/**
+ * optional string growth = 11;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec.prototype.getGrowth = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec.prototype.setGrowth = function(value) {
+  return jspb.Message.setField(this, 11, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec.prototype.clearGrowth = function() {
+  return jspb.Message.setField(this, 11, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec.prototype.hasGrowth = function() {
+  return jspb.Message.getField(this, 11) != null;
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterPipelineSpec.repeatedFields_ = [6,7,8];
 
 
@@ -14312,7 +15486,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterPipelin
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterTrainingSpec.repeatedFields_ = [1,2,8];
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterTrainingSpec.repeatedFields_ = [1,2,8,11];
 
 
 
@@ -14355,9 +15529,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterTrainin
     forecast: (f = jspb.Message.getBooleanField(msg, 6)) == null ? undefined : f,
     outputlocation: (f = msg.getOutputlocation()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.toObject(includeInstance, f),
     featuresList: (f = jspb.Message.getRepeatedField(msg, 8)) == null ? undefined : f,
-    prophet: (f = msg.getProphet()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec.toObject(includeInstance, f),
     pipeline: (f = msg.getPipeline()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterPipelineSpec.toObject(includeInstance, f),
-    hierarchy: (f = msg.getHierarchy()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAggSpec.toObject(includeInstance, f)
+    groupbyList: (f = jspb.Message.getRepeatedField(msg, 11)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -14432,20 +15605,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterTrainin
       var value = /** @type {string} */ (reader.readString());
       msg.addFeatures(value);
       break;
-    case 9:
-      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec;
-      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec.deserializeBinaryFromReader);
-      msg.setProphet(value);
-      break;
     case 10:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterPipelineSpec;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterPipelineSpec.deserializeBinaryFromReader);
       msg.setPipeline(value);
       break;
     case 11:
-      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAggSpec;
-      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAggSpec.deserializeBinaryFromReader);
-      msg.setHierarchy(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.addGroupby(value);
       break;
     default:
       reader.skipField();
@@ -14538,14 +15705,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterTrainin
       f
     );
   }
-  f = message.getProphet();
-  if (f != null) {
-    writer.writeMessage(
-      9,
-      f,
-      proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec.serializeBinaryToWriter
-    );
-  }
   f = message.getPipeline();
   if (f != null) {
     writer.writeMessage(
@@ -14554,12 +15713,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterTrainin
       proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterPipelineSpec.serializeBinaryToWriter
     );
   }
-  f = message.getHierarchy();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getGroupbyList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
       11,
-      f,
-      proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAggSpec.serializeBinaryToWriter
+      f
     );
   }
 };
@@ -14863,43 +16021,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterTrainin
 
 
 /**
- * optional ProphetSpec prophet = 9;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterTrainingSpec.prototype.getProphet = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec, 9));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterTrainingSpec} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterTrainingSpec.prototype.setProphet = function(value) {
-  return jspb.Message.setWrapperField(this, 9, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterTrainingSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterTrainingSpec.prototype.clearProphet = function() {
-  return this.setProphet(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterTrainingSpec.prototype.hasProphet = function() {
-  return jspb.Message.getField(this, 9) != null;
-};
-
-
-/**
  * optional ForecasterPipelineSpec pipeline = 10;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterPipelineSpec}
  */
@@ -14937,39 +16058,39 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterTrainin
 
 
 /**
- * optional ModelAggSpec hierarchy = 11;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAggSpec}
+ * repeated string groupBy = 11;
+ * @return {!Array<string>}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterTrainingSpec.prototype.getHierarchy = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAggSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAggSpec, 11));
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterTrainingSpec.prototype.getGroupbyList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 11));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAggSpec|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterTrainingSpec} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterTrainingSpec.prototype.setHierarchy = function(value) {
-  return jspb.Message.setWrapperField(this, 11, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
+ * @param {!Array<string>} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterTrainingSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterTrainingSpec.prototype.clearHierarchy = function() {
-  return this.setHierarchy(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterTrainingSpec.prototype.setGroupbyList = function(value) {
+  return jspb.Message.setField(this, 11, value || []);
 };
 
 
 /**
- * Returns whether this field is set.
- * @return {boolean}
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterTrainingSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterTrainingSpec.prototype.hasHierarchy = function() {
-  return jspb.Message.getField(this, 11) != null;
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterTrainingSpec.prototype.addGroupby = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 11, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterTrainingSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterTrainingSpec.prototype.clearGroupbyList = function() {
+  return this.setGroupbyList([]);
 };
 
 
@@ -18850,210 +19971,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model.prototype.c
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model.prototype.hasStatus = function() {
   return jspb.Message.getField(this, 3) != null;
-};
-
-
-
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAggSpec.repeatedFields_ = [2];
-
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAggSpec.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAggSpec.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAggSpec} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAggSpec.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    enabled: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
-    groupbyList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAggSpec}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAggSpec.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAggSpec;
-  return proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAggSpec.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAggSpec} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAggSpec}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAggSpec.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setEnabled(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.addGroupby(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAggSpec.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAggSpec.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAggSpec} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAggSpec.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 1));
-  if (f != null) {
-    writer.writeBool(
-      1,
-      f
-    );
-  }
-  f = message.getGroupbyList();
-  if (f.length > 0) {
-    writer.writeRepeatedString(
-      2,
-      f
-    );
-  }
-};
-
-
-/**
- * optional bool enabled = 1;
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAggSpec.prototype.getEnabled = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 1, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAggSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAggSpec.prototype.setEnabled = function(value) {
-  return jspb.Message.setField(this, 1, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAggSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAggSpec.prototype.clearEnabled = function() {
-  return jspb.Message.setField(this, 1, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAggSpec.prototype.hasEnabled = function() {
-  return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * repeated string groupBy = 2;
- * @return {!Array<string>}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAggSpec.prototype.getGroupbyList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 2));
-};
-
-
-/**
- * @param {!Array<string>} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAggSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAggSpec.prototype.setGroupbyList = function(value) {
-  return jspb.Message.setField(this, 2, value || []);
-};
-
-
-/**
- * @param {string} value
- * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAggSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAggSpec.prototype.addGroupby = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 2, value, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAggSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAggSpec.prototype.clearGroupbyList = function() {
-  return this.setGroupbyList([]);
 };
 
 
@@ -42245,7 +43162,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSeasonality
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSeasonalitySpec.toObject = function(includeInstance, msg) {
   var f, obj = {
-    enabled: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
+    freq: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     periods: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     mode: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
   };
@@ -42285,8 +43202,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSeasonality
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setEnabled(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFreq(value);
       break;
     case 2:
       var value = /** @type {number} */ (reader.readInt32());
@@ -42325,9 +43242,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSeasonality
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSeasonalitySpec.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 1));
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
   if (f != null) {
-    writer.writeBool(
+    writer.writeString(
       1,
       f
     );
@@ -42350,19 +43267,19 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSeasonality
 
 
 /**
- * optional bool enabled = 1;
- * @return {boolean}
+ * optional string freq = 1;
+ * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSeasonalitySpec.prototype.getEnabled = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 1, false));
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSeasonalitySpec.prototype.getFreq = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {boolean} value
+ * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSeasonalitySpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSeasonalitySpec.prototype.setEnabled = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSeasonalitySpec.prototype.setFreq = function(value) {
   return jspb.Message.setField(this, 1, value);
 };
 
@@ -42371,7 +43288,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSeasonality
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSeasonalitySpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSeasonalitySpec.prototype.clearEnabled = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSeasonalitySpec.prototype.clearFreq = function() {
   return jspb.Message.setField(this, 1, undefined);
 };
 
@@ -42380,7 +43297,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSeasonality
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSeasonalitySpec.prototype.hasEnabled = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSeasonalitySpec.prototype.hasFreq = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -42454,655 +43371,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSeasonality
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSeasonalitySpec.prototype.hasMode = function() {
   return jspb.Message.getField(this, 3) != null;
-};
-
-
-
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec.repeatedFields_ = [11];
-
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    intervalwidth: (f = jspb.Message.getOptionalFloatingPointField(msg, 1)) == null ? undefined : f,
-    uncertaintysamples: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    seasonality: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-    confidenceinterval: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    yearlyseasonality: (f = msg.getYearlyseasonality()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSeasonalitySpec.toObject(includeInstance, f),
-    weeklyseasonality: (f = msg.getWeeklyseasonality()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSeasonalitySpec.toObject(includeInstance, f),
-    dailyseasonality: (f = msg.getDailyseasonality()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSeasonalitySpec.toObject(includeInstance, f),
-    growth: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
-    changepoints: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
-    changepointrange: (f = jspb.Message.getOptionalFloatingPointField(msg, 10)) == null ? undefined : f,
-    customseasonalitiesList: jspb.Message.toObjectList(msg.getCustomseasonalitiesList(),
-    proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CustomSeasonalitySpec.toObject, includeInstance)
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec;
-  return proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setIntervalwidth(value);
-      break;
-    case 2:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setUncertaintysamples(value);
-      break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setSeasonality(value);
-      break;
-    case 4:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setConfidenceinterval(value);
-      break;
-    case 5:
-      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSeasonalitySpec;
-      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSeasonalitySpec.deserializeBinaryFromReader);
-      msg.setYearlyseasonality(value);
-      break;
-    case 6:
-      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSeasonalitySpec;
-      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSeasonalitySpec.deserializeBinaryFromReader);
-      msg.setWeeklyseasonality(value);
-      break;
-    case 7:
-      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSeasonalitySpec;
-      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSeasonalitySpec.deserializeBinaryFromReader);
-      msg.setDailyseasonality(value);
-      break;
-    case 8:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setGrowth(value);
-      break;
-    case 9:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setChangepoints(value);
-      break;
-    case 10:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setChangepointrange(value);
-      break;
-    case 11:
-      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CustomSeasonalitySpec;
-      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CustomSeasonalitySpec.deserializeBinaryFromReader);
-      msg.addCustomseasonalities(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = /** @type {number} */ (jspb.Message.getField(message, 1));
-  if (f != null) {
-    writer.writeDouble(
-      1,
-      f
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 2));
-  if (f != null) {
-    writer.writeInt32(
-      2,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 3));
-  if (f != null) {
-    writer.writeString(
-      3,
-      f
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 4));
-  if (f != null) {
-    writer.writeInt32(
-      4,
-      f
-    );
-  }
-  f = message.getYearlyseasonality();
-  if (f != null) {
-    writer.writeMessage(
-      5,
-      f,
-      proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSeasonalitySpec.serializeBinaryToWriter
-    );
-  }
-  f = message.getWeeklyseasonality();
-  if (f != null) {
-    writer.writeMessage(
-      6,
-      f,
-      proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSeasonalitySpec.serializeBinaryToWriter
-    );
-  }
-  f = message.getDailyseasonality();
-  if (f != null) {
-    writer.writeMessage(
-      7,
-      f,
-      proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSeasonalitySpec.serializeBinaryToWriter
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 8));
-  if (f != null) {
-    writer.writeString(
-      8,
-      f
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 9));
-  if (f != null) {
-    writer.writeInt32(
-      9,
-      f
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 10));
-  if (f != null) {
-    writer.writeDouble(
-      10,
-      f
-    );
-  }
-  f = message.getCustomseasonalitiesList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      11,
-      f,
-      proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CustomSeasonalitySpec.serializeBinaryToWriter
-    );
-  }
-};
-
-
-/**
- * optional double intervalWidth = 1;
- * @return {number}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec.prototype.getIntervalwidth = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 1, 0.0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec.prototype.setIntervalwidth = function(value) {
-  return jspb.Message.setField(this, 1, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec.prototype.clearIntervalwidth = function() {
-  return jspb.Message.setField(this, 1, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec.prototype.hasIntervalwidth = function() {
-  return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional int32 uncertaintySamples = 2;
- * @return {number}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec.prototype.getUncertaintysamples = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec.prototype.setUncertaintysamples = function(value) {
-  return jspb.Message.setField(this, 2, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec.prototype.clearUncertaintysamples = function() {
-  return jspb.Message.setField(this, 2, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec.prototype.hasUncertaintysamples = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional string seasonality = 3;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec.prototype.getSeasonality = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec.prototype.setSeasonality = function(value) {
-  return jspb.Message.setField(this, 3, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec.prototype.clearSeasonality = function() {
-  return jspb.Message.setField(this, 3, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec.prototype.hasSeasonality = function() {
-  return jspb.Message.getField(this, 3) != null;
-};
-
-
-/**
- * optional int32 confidenceInterval = 4;
- * @return {number}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec.prototype.getConfidenceinterval = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec.prototype.setConfidenceinterval = function(value) {
-  return jspb.Message.setField(this, 4, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec.prototype.clearConfidenceinterval = function() {
-  return jspb.Message.setField(this, 4, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec.prototype.hasConfidenceinterval = function() {
-  return jspb.Message.getField(this, 4) != null;
-};
-
-
-/**
- * optional PeriodSeasonalitySpec yearlySeasonality = 5;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSeasonalitySpec}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec.prototype.getYearlyseasonality = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSeasonalitySpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSeasonalitySpec, 5));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSeasonalitySpec|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec.prototype.setYearlyseasonality = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec.prototype.clearYearlyseasonality = function() {
-  return this.setYearlyseasonality(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec.prototype.hasYearlyseasonality = function() {
-  return jspb.Message.getField(this, 5) != null;
-};
-
-
-/**
- * optional PeriodSeasonalitySpec weeklySeasonality = 6;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSeasonalitySpec}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec.prototype.getWeeklyseasonality = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSeasonalitySpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSeasonalitySpec, 6));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSeasonalitySpec|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec.prototype.setWeeklyseasonality = function(value) {
-  return jspb.Message.setWrapperField(this, 6, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec.prototype.clearWeeklyseasonality = function() {
-  return this.setWeeklyseasonality(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec.prototype.hasWeeklyseasonality = function() {
-  return jspb.Message.getField(this, 6) != null;
-};
-
-
-/**
- * optional PeriodSeasonalitySpec dailySeasonality = 7;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSeasonalitySpec}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec.prototype.getDailyseasonality = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSeasonalitySpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSeasonalitySpec, 7));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSeasonalitySpec|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec.prototype.setDailyseasonality = function(value) {
-  return jspb.Message.setWrapperField(this, 7, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec.prototype.clearDailyseasonality = function() {
-  return this.setDailyseasonality(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec.prototype.hasDailyseasonality = function() {
-  return jspb.Message.getField(this, 7) != null;
-};
-
-
-/**
- * optional string growth = 8;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec.prototype.getGrowth = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec.prototype.setGrowth = function(value) {
-  return jspb.Message.setField(this, 8, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec.prototype.clearGrowth = function() {
-  return jspb.Message.setField(this, 8, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec.prototype.hasGrowth = function() {
-  return jspb.Message.getField(this, 8) != null;
-};
-
-
-/**
- * optional int32 changePoints = 9;
- * @return {number}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec.prototype.getChangepoints = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec.prototype.setChangepoints = function(value) {
-  return jspb.Message.setField(this, 9, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec.prototype.clearChangepoints = function() {
-  return jspb.Message.setField(this, 9, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec.prototype.hasChangepoints = function() {
-  return jspb.Message.getField(this, 9) != null;
-};
-
-
-/**
- * optional double changePointRange = 10;
- * @return {number}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec.prototype.getChangepointrange = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 10, 0.0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec.prototype.setChangepointrange = function(value) {
-  return jspb.Message.setField(this, 10, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec.prototype.clearChangepointrange = function() {
-  return jspb.Message.setField(this, 10, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec.prototype.hasChangepointrange = function() {
-  return jspb.Message.getField(this, 10) != null;
-};
-
-
-/**
- * repeated CustomSeasonalitySpec customSeasonalities = 11;
- * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CustomSeasonalitySpec>}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec.prototype.getCustomseasonalitiesList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CustomSeasonalitySpec>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CustomSeasonalitySpec, 11));
-};
-
-
-/**
- * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CustomSeasonalitySpec>} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec.prototype.setCustomseasonalitiesList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 11, value);
-};
-
-
-/**
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CustomSeasonalitySpec=} opt_value
- * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CustomSeasonalitySpec}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec.prototype.addCustomseasonalities = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 11, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CustomSeasonalitySpec, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ProphetSpec.prototype.clearCustomseasonalitiesList = function() {
-  return this.setCustomseasonalitiesList([]);
 };
 
 
@@ -54924,6 +55192,402 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ThresholdPrunerOp
  * @private {!Array<number>}
  * @const
  */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.repeatedFields_ = [6];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    method: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    holiday: (f = jspb.Message.getBooleanField(msg, 2)) == null ? undefined : f,
+    country: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    preevent: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    postevent: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    timepointsList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent;
+  return proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setMethod(value);
+      break;
+    case 2:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setHoliday(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCountry(value);
+      break;
+    case 4:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setPreevent(value);
+      break;
+    case 5:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setPostevent(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addTimepoints(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeBool(
+      2,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeInt32(
+      4,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 5));
+  if (f != null) {
+    writer.writeInt32(
+      5,
+      f
+    );
+  }
+  f = message.getTimepointsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      6,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string method = 1;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.getMethod = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.setMethod = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.clearMethod = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.hasMethod = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional bool holiday = 2;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.getHoliday = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 2, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.setHoliday = function(value) {
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.clearHoliday = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.hasHoliday = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional string country = 3;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.getCountry = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.setCountry = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.clearCountry = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.hasCountry = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional int32 preEvent = 4;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.getPreevent = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.setPreevent = function(value) {
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.clearPreevent = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.hasPreevent = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional int32 postEvent = 5;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.getPostevent = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.setPostevent = function(value) {
+  return jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.clearPostevent = function() {
+  return jspb.Message.setField(this, 5, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.hasPostevent = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * repeated string timePoints = 6;
+ * @return {!Array<string>}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.getTimepointsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 6));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.setTimepointsList = function(value) {
+  return jspb.Message.setField(this, 6, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.addTimepoints = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 6, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.clearTimepointsList = function() {
+  return this.setTimepointsList([]);
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.repeatedFields_ = [7];
 
 
@@ -56492,6 +57156,1151 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UATStageSpec.prot
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UATStageSpec.prototype.hasResources = function() {
   return jspb.Message.getField(this, 4) != null;
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast.repeatedFields_ = [2,11,12,13,14];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    predefinedtemplate: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    anomalyinfoList: jspb.Message.toObjectList(msg.getAnomalyinfoList(),
+    proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AnomalyItem.toObject, includeInstance),
+    dateformat: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    freq: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    timecolumn: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    trainenddata: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
+    valuecolumn: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
+    hpobudget: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
+    evaluation: (f = msg.getEvaluation()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EvaluationMetricSpec.toObject(includeInstance, f),
+    cv: (f = msg.getCv()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec.toObject(includeInstance, f),
+    seasonalitiesList: jspb.Message.toObjectList(msg.getSeasonalitiesList(),
+    proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSeasonalitySpec.toObject, includeInstance),
+    eventsList: jspb.Message.toObjectList(msg.getEventsList(),
+    proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.toObject, includeInstance),
+    regressorsList: (f = jspb.Message.getRepeatedField(msg, 13)) == null ? undefined : f,
+    laggedregressorsList: (f = jspb.Message.getRepeatedField(msg, 14)) == null ? undefined : f
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast;
+  return proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPredefinedtemplate(value);
+      break;
+    case 2:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AnomalyItem;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AnomalyItem.deserializeBinaryFromReader);
+      msg.addAnomalyinfo(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDateformat(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFreq(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTimecolumn(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTrainenddata(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setValuecolumn(value);
+      break;
+    case 8:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setHpobudget(value);
+      break;
+    case 9:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EvaluationMetricSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EvaluationMetricSpec.deserializeBinaryFromReader);
+      msg.setEvaluation(value);
+      break;
+    case 10:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec.deserializeBinaryFromReader);
+      msg.setCv(value);
+      break;
+    case 11:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSeasonalitySpec;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSeasonalitySpec.deserializeBinaryFromReader);
+      msg.addSeasonalities(value);
+      break;
+    case 12:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.deserializeBinaryFromReader);
+      msg.addEvents(value);
+      break;
+    case 13:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addRegressors(value);
+      break;
+    case 14:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addLaggedregressors(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getAnomalyinfoList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      2,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AnomalyItem.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 5));
+  if (f != null) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 6));
+  if (f != null) {
+    writer.writeString(
+      6,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 7));
+  if (f != null) {
+    writer.writeString(
+      7,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 8));
+  if (f != null) {
+    writer.writeInt32(
+      8,
+      f
+    );
+  }
+  f = message.getEvaluation();
+  if (f != null) {
+    writer.writeMessage(
+      9,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EvaluationMetricSpec.serializeBinaryToWriter
+    );
+  }
+  f = message.getCv();
+  if (f != null) {
+    writer.writeMessage(
+      10,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec.serializeBinaryToWriter
+    );
+  }
+  f = message.getSeasonalitiesList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      11,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSeasonalitySpec.serializeBinaryToWriter
+    );
+  }
+  f = message.getEventsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      12,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.serializeBinaryToWriter
+    );
+  }
+  f = message.getRegressorsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      13,
+      f
+    );
+  }
+  f = message.getLaggedregressorsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      14,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string predefinedTemplate = 1;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast.prototype.getPredefinedtemplate = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast.prototype.setPredefinedtemplate = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast.prototype.clearPredefinedtemplate = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast.prototype.hasPredefinedtemplate = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * repeated AnomalyItem anomalyInfo = 2;
+ * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AnomalyItem>}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast.prototype.getAnomalyinfoList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AnomalyItem>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AnomalyItem, 2));
+};
+
+
+/**
+ * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AnomalyItem>} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast.prototype.setAnomalyinfoList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AnomalyItem=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AnomalyItem}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast.prototype.addAnomalyinfo = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AnomalyItem, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast.prototype.clearAnomalyinfoList = function() {
+  return this.setAnomalyinfoList([]);
+};
+
+
+/**
+ * optional string dateFormat = 3;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast.prototype.getDateformat = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast.prototype.setDateformat = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast.prototype.clearDateformat = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast.prototype.hasDateformat = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional string freq = 4;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast.prototype.getFreq = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast.prototype.setFreq = function(value) {
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast.prototype.clearFreq = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast.prototype.hasFreq = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional string timeColumn = 5;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast.prototype.getTimecolumn = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast.prototype.setTimecolumn = function(value) {
+  return jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast.prototype.clearTimecolumn = function() {
+  return jspb.Message.setField(this, 5, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast.prototype.hasTimecolumn = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional string trainEndData = 6;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast.prototype.getTrainenddata = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast.prototype.setTrainenddata = function(value) {
+  return jspb.Message.setField(this, 6, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast.prototype.clearTrainenddata = function() {
+  return jspb.Message.setField(this, 6, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast.prototype.hasTrainenddata = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional string valueColumn = 7;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast.prototype.getValuecolumn = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast.prototype.setValuecolumn = function(value) {
+  return jspb.Message.setField(this, 7, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast.prototype.clearValuecolumn = function() {
+  return jspb.Message.setField(this, 7, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast.prototype.hasValuecolumn = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
+ * optional int32 hpoBudget = 8;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast.prototype.getHpobudget = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast.prototype.setHpobudget = function(value) {
+  return jspb.Message.setField(this, 8, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast.prototype.clearHpobudget = function() {
+  return jspb.Message.setField(this, 8, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast.prototype.hasHpobudget = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional EvaluationMetricSpec evaluation = 9;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EvaluationMetricSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast.prototype.getEvaluation = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EvaluationMetricSpec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EvaluationMetricSpec, 9));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EvaluationMetricSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast.prototype.setEvaluation = function(value) {
+  return jspb.Message.setWrapperField(this, 9, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast.prototype.clearEvaluation = function() {
+  return this.setEvaluation(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast.prototype.hasEvaluation = function() {
+  return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
+ * optional ForecasterCrossValidationSpec cv = 10;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast.prototype.getCv = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec, 10));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterCrossValidationSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast.prototype.setCv = function(value) {
+  return jspb.Message.setWrapperField(this, 10, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast.prototype.clearCv = function() {
+  return this.setCv(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast.prototype.hasCv = function() {
+  return jspb.Message.getField(this, 10) != null;
+};
+
+
+/**
+ * repeated PeriodSeasonalitySpec seasonalities = 11;
+ * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSeasonalitySpec>}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast.prototype.getSeasonalitiesList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSeasonalitySpec>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSeasonalitySpec, 11));
+};
+
+
+/**
+ * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSeasonalitySpec>} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast.prototype.setSeasonalitiesList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 11, value);
+};
+
+
+/**
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSeasonalitySpec=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSeasonalitySpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast.prototype.addSeasonalities = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 11, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSeasonalitySpec, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast.prototype.clearSeasonalitiesList = function() {
+  return this.setSeasonalitiesList([]);
+};
+
+
+/**
+ * repeated TimeSeriesEvent events = 12;
+ * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent>}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast.prototype.getEventsList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent, 12));
+};
+
+
+/**
+ * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent>} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast.prototype.setEventsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 12, value);
+};
+
+
+/**
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast.prototype.addEvents = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 12, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast.prototype.clearEventsList = function() {
+  return this.setEventsList([]);
+};
+
+
+/**
+ * repeated string regressors = 13;
+ * @return {!Array<string>}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast.prototype.getRegressorsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 13));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast.prototype.setRegressorsList = function(value) {
+  return jspb.Message.setField(this, 13, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast.prototype.addRegressors = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 13, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast.prototype.clearRegressorsList = function() {
+  return this.setRegressorsList([]);
+};
+
+
+/**
+ * repeated string laggedRegressors = 14;
+ * @return {!Array<string>}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast.prototype.getLaggedregressorsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 14));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast.prototype.setLaggedregressorsList = function(value) {
+  return jspb.Message.setField(this, 14, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast.prototype.addLaggedregressors = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 14, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecast.prototype.clearLaggedregressorsList = function() {
+  return this.setLaggedregressorsList([]);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecastStatus.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecastStatus.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecastStatus} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecastStatus.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    gridsearchresulturi: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    baseestimator: (f = msg.getBaseestimator()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ClassicalEstimatorSpec.toObject(includeInstance, f),
+    modeluri: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    cvresulturi: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    forecasturi: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecastStatus}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecastStatus.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecastStatus;
+  return proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecastStatus.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecastStatus} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecastStatus}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecastStatus.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setGridsearchresulturi(value);
+      break;
+    case 2:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ClassicalEstimatorSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ClassicalEstimatorSpec.deserializeBinaryFromReader);
+      msg.setBaseestimator(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setModeluri(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCvresulturi(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setForecasturi(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecastStatus.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecastStatus.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecastStatus} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecastStatus.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getBaseestimator();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ClassicalEstimatorSpec.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 5));
+  if (f != null) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string gridSearchResultURI = 1;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecastStatus.prototype.getGridsearchresulturi = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecastStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecastStatus.prototype.setGridsearchresulturi = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecastStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecastStatus.prototype.clearGridsearchresulturi = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecastStatus.prototype.hasGridsearchresulturi = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional ClassicalEstimatorSpec baseEstimator = 2;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ClassicalEstimatorSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecastStatus.prototype.getBaseestimator = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ClassicalEstimatorSpec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ClassicalEstimatorSpec, 2));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ClassicalEstimatorSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecastStatus} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecastStatus.prototype.setBaseestimator = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecastStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecastStatus.prototype.clearBaseestimator = function() {
+  return this.setBaseestimator(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecastStatus.prototype.hasBaseestimator = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional string modelURI = 3;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecastStatus.prototype.getModeluri = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecastStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecastStatus.prototype.setModeluri = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecastStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecastStatus.prototype.clearModeluri = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecastStatus.prototype.hasModeluri = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional string cvResultURI = 4;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecastStatus.prototype.getCvresulturi = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecastStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecastStatus.prototype.setCvresulturi = function(value) {
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecastStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecastStatus.prototype.clearCvresulturi = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecastStatus.prototype.hasCvresulturi = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional string forecastURI = 5;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecastStatus.prototype.getForecasturi = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecastStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecastStatus.prototype.setForecasturi = function(value) {
+  return jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecastStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecastStatus.prototype.clearForecasturi = function() {
+  return jspb.Message.setField(this, 5, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.UnivariateForecastStatus.prototype.hasForecasturi = function() {
+  return jspb.Message.getField(this, 5) != null;
 };
 
 

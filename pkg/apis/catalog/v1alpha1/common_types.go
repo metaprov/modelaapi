@@ -1175,19 +1175,20 @@ type VizUri struct {
 	Uri  string  `json:"uri,omitempty" protobuf:"bytes,2,opt,name=uri"`
 }
 
-/// The Horizon unit
-// +kubebuilder:validation:Enum="second";"minute";"hour";"day";"week";"month";"quarter";"year";
+// The Horizon unit
+// +kubebuilder:validation:Enum="second";"minute";"hour";"day";"week";"month";"quarter";"year";"multi-year"
 type Freq string
 
 const (
-	FreqSeconds Freq = "second"
-	FreqMinutes Freq = "minute"
-	FreqHours   Freq = "hour"
-	FreqDays    Freq = "day"
-	FreqWeeks   Freq = "week"
-	FreqMonths  Freq = "month"
-	FreqQtrs    Freq = "quarter"
-	FreqYears   Freq = "year"
+	FreqSeconds    Freq = "second"
+	FreqMinutes    Freq = "minute"
+	FreqHours      Freq = "hour"
+	FreqDays       Freq = "day"
+	FreqWeeks      Freq = "week"
+	FreqMonths     Freq = "month"
+	FreqQtrs       Freq = "quarter"
+	FreqYears      Freq = "year"
+	FreqMultiYears Freq = "multi-year"
 )
 
 // The Aggregate unit

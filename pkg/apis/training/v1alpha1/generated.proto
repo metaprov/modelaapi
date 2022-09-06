@@ -27,6 +27,20 @@ message AlgorithmSearchSpaceSpec {
   repeated string allowlist = 1;
 }
 
+message AnomalyItem {
+  // +kubebuilder:validation:Optional
+  optional string valueColumn = 1;
+
+  // +kubebuilder:validation:Optional
+  optional string adjDeltaColumn = 2;
+
+  // +kubebuilder:validation:Optional
+  repeated string start = 3;
+
+  // +kubebuilder:validation:Optional
+  repeated string end = 4;
+}
+
 // AudioPipelineSpec represents a single pipeline for preprocessing audio data
 message AudioPipelineSpec {
   // The date time imputer.
@@ -50,7 +64,7 @@ message BacktestSpec {
   // ExpectedValueMax size for a single training set
   // +kubebuilder:default = 0
   // +kubebuilder:validation:Optional
-  optional int32 InitialSize = 3;
+  optional int32 Initial = 3;
 
   // The number of data points between each windows
   // +kubebuilder:default = 0
@@ -97,6 +111,9 @@ message CapacityStageSpec {
   // Resource define the hardware resources req.
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 4;
+}
+
+message ChangePoint {
 }
 
 // ChatbotEstimatorSpec specifies the configuration for a chatbot model
@@ -238,22 +255,6 @@ message CronReportStatus {
 message CustomReportSpec {
   // Pages contains a collection of custom pages that will be appended to a Report
   repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.PageSpec pages = 8;
-}
-
-// SeasonalitySpec defines the custom seasonality
-message CustomSeasonalitySpec {
-  // The name of the custom seasonality
-  // +kubebuilder:validation:Required
-  // +required
-  optional string name = 1;
-
-  // The name of the custom seasonality
-  // +kubebuilder:validation:Required
-  // +required
-  optional double period = 2;
-
-  // +kubebuilder:validation:Optional
-  optional int32 fourierOrder = 3;
 }
 
 // DataHashes contains the hashes for datasets used during model training
@@ -515,6 +516,21 @@ message EnsemblesSpec {
   optional int32 top = 4;
 }
 
+// What metric to evaluate
+message EvaluationMetricSpec {
+  // +kubebuilder:validation:Optional
+  optional string aggregateFunction = 1;
+
+  // +kubebuilder:validation:Optional
+  optional int32 aggregatePeriod = 2;
+
+  // +kubebuilder:validation:Optional
+  optional string nullModelParams = 3;
+
+  // +kubebuilder:validation:Optional
+  optional double relativeErrorTolerance = 4;
+}
+
 // FeatureEngineeringPipeline represent a single pipeline to transform a dataset
 message FeatureEngineeringPipeline {
   // The name of the pipeline
@@ -766,75 +782,51 @@ message FeatureSelectionSpec {
   repeated string reserved = 12;
 }
 
-// ForecastObj holds the definition of a single forecast
-message ForecastObj {
-  optional string key = 1;
+// The cross validation spec, used to evaluate the forecaster during training.
+message ForecasterCrossValidationSpec {
+  // +kubebuilder:validation:Optional
+  repeated string reportMetrics = 1;
 
-  optional int32 levelIndex = 2;
+  // +kubebuilder:validation:Optional
+  optional string selectionMetrics = 2;
+
+  // +kubebuilder:validation:Optional
+  optional bool expandingWindows = 3;
+
+  // +kubebuilder:validation:Optional
+  optional int32 horizon = 4;
+
+  // +kubebuilder:validation:Optional
+  optional int32 maxSplits = 5;
+
+  // +kubebuilder:validation:Optional
+  optional int32 minTrainPeriods = 6;
+
+  // +kubebuilder:validation:Optional
+  optional int32 periodsBetweenSplits = 7;
+
+  // +kubebuilder:validation:Optional
+  optional int32 periodsBetweenTrainTest = 8;
+
+  // +kubebuilder:validation:Optional
+  optional bool useMostRecentSplits = 9;
+
+  // +kubebuilder:validation:Optional
+  optional int32 testHorizon = 10;
+
+  // +kubebuilder:validation:Optional
+  optional string growth = 11;
 }
 
-message ForecasterPipelineSpec {
-  // If true this is an ensemble pipeline
-  // +kubebuilder:default:=false
-  // +kubebuilder:validation:Optional
-  optional bool ensemble = 1;
-
-  // +kubebuilder:default:=none
-  // +kubebuilder:validation:Optional
-  optional string imputation = 2;
-
-  // The encoding method to use for categorical data types
-  // +kubebuilder:default:=none
-  // +kubebuilder:validation:Optional
-  optional string encoding = 3;
-
-  // The scaling method to use for numerical data types
-  // +kubebuilder:default:=none
-  // +kubebuilder:validation:Optional
-  optional string scaling = 4;
-
-  // If true apply the data transofmer to
-  // +kubebuilder:default:=false
-  // +kubebuilder:validation:Optional
-  optional bool date = 5;
-
-  // The list of windows to use when generating features.
-  // +kubebuilder:validation:Optional
-  repeated int32 windows = 6;
-
-  // The list of lags to use when generating features
-  // +kubebuilder:validation:Optional
-  repeated int32 lags = 7;
-
-  // The list of metrics to generate for each combination of lag and windows.
-  // The default list is min,max,median,stddev
-  // +kubebuilder:validation:Optional
-  repeated string functions = 8;
-
-  // when computing moving avg, use exponential moving avg, other use regular moving avg
-  // +kubebuilder:default:=false
-  // +kubebuilder:validation:Optional
-  optional bool ema = 9;
-
-  // +kubebuilder:default:=true
-  // +kubebuilder:validation:Optional
-  optional bool log = 10;
-
-  // If we are using reduced model, this is the way the reduced model will make prediction
-  // Default to none
-  // +kubebuilder:validation:Optional
-  optional string reduction = 11;
-}
-
-// ForecastingSpec
-message ForecasterTrainingSpec {
+// The forecaster search define a search for the forecaster
+message ForecasterSpec {
   // The list of additional regressors. The regressors are part of the time series data
   // +kubebuilder:validation:Optional
-  repeated RegressorSpec regressors = 1;
+  repeated string regressors = 1;
 
   // The spec for the holiday
   // +kubebuilder:validation:Optional
-  repeated HolidaySpec holidays = 2;
+  repeated TimeSeriesEvent events = 2;
 
   // Specification for the past windows
   // +kubebuilder:validation:Optional
@@ -860,17 +852,49 @@ message ForecasterTrainingSpec {
   // +kubebuilder:validation:Optional
   repeated string features = 8;
 
-  // If using prophet, those are the prophet settings
   // +kubebuilder:validation:Optional
-  optional ProphetSpec prophet = 9;
+  repeated Level levels = 9;
 
-  // The forecasting pipeline
   // +kubebuilder:validation:Optional
-  optional ForecasterPipelineSpec pipeline = 10;
+  optional string predefinedTemplate = 10;
 
-  // Definitions of the aggeregation
   // +kubebuilder:validation:Optional
-  optional ModelAggSpec hierarchy = 11;
+  repeated AnomalyItem anomalyInfo = 11;
+
+  // The data format of the time column, this will be based
+  // +kubebuilder:validation:Optional
+  optional string dateFormat = 12;
+
+  // +kubebuilder:validation:Optional
+  optional string freq = 13;
+
+  // +kubebuilder:validation:Optional
+  optional string timeColumn = 14;
+
+  // +kubebuilder:validation:Optional
+  optional string trainEndData = 15;
+
+  // The value column. this is the name of the column to forecast, this will be based on the data source.
+  // +kubebuilder:validation:Optional
+  optional string valueColumn = 16;
+
+  // +kubebuilder:validation:Optional
+  optional int32 hpoBudget = 17;
+
+  // Spec for evaluation
+  // +kubebuilder:validation:Optional
+  optional EvaluationMetricSpec evaluation = 18;
+
+  // Spec for time series cross validation
+  // +kubebuilder:validation:Optional
+  optional ForecasterCrossValidationSpec cv = 19;
+
+  // +kubebuilder:validation:Optional
+  repeated PeriodSeasonalitySpec seasonalities = 20;
+
+  // Lagged Regressors
+  // +kubebuilder:validation:Optional
+  repeated string laggedRegressors = 21;
 }
 
 // GarbageCollectionSpec specifies the configuration to garbage-collect unused Model resources
@@ -922,31 +946,6 @@ message GeneratedColumnSpec {
   // The expression to apply in order to generate the new column
   // +kubebuilder:validation:Optional
   optional string original = 5;
-}
-
-message Hierarchy {
-  // The columns in the data frame that belongs to the hierarchy. By default, all the item level column is the last one. The default aggregate function is sum.
-  repeated string columns = 1;
-
-  // The group level columns. For each group level column specify the horizon and the aggregate function
-  repeated Level groupLevels = 2;
-
-  // Item level column.
-  optional Level itemLevel = 3;
-}
-
-message HolidaySpec {
-  // The name of the holiday column. If the column is empty, no holiday
-  // Column name of the first level of grouping
-  // +kubebuilder:validation:Optional
-  optional string holidayColumn = 1;
-
-  // +kubebuilder:validation:Optional
-  optional string country = 2;
-
-  // For custom holiday use external dataset
-  // +kubebuilder:validation:Optional
-  optional string datasetName = 3;
 }
 
 // HyperParameterValue represent an individual hyper-parameter of a machine earning algorithm
@@ -1061,10 +1060,10 @@ message InterpretabilityStatus {
 }
 
 message Level {
-  // The name of the level - the column name
-  optional string string = 1;
+  // The key for the levels
+  repeated string index = 1;
 
-  // The number of time periods to
+  // The forecast horizon
   optional int32 horizon = 2;
 
   // The freq of the level
@@ -1072,9 +1071,6 @@ message Level {
 
   // The aggregate function used to roll up the lower level
   optional string aggregate = 4;
-
-  // The distinct values of the column for this level
-  repeated string values = 5;
 }
 
 message MedianPrunerOptions {
@@ -1124,19 +1120,6 @@ message Model {
   optional ModelSpec spec = 2;
 
   optional ModelStatus status = 3;
-}
-
-// A spec for many models definitions.
-// If enabled, the study would generate models based on the levels of the keys
-message ModelAggSpec {
-  // If true, use sliding windows, else use expanding windows
-  // +kubebuilder:default = false
-  // +kubebuilder:validation:Optional
-  optional bool enabled = 1;
-
-  // Define the grouping of the input file. A model will be generated for every group
-  // +kubebuilder:validation:Optional
-  repeated string groupBy = 2;
 }
 
 // ModelAutobuilder represents an automated pipeline to train and deploy a model based on a given dataset
@@ -2176,7 +2159,7 @@ message ModelSpec {
 
   // Forecasting specifies the configuration to train a forecasting model
   // +kubebuilder:validation:Optional
-  optional ForecasterTrainingSpec forecasting = 41;
+  optional ForecasterSpec forecasting = 41;
 
   // Compilation specifies the configuration to compile a model to a binary (currently unimplemented)
   // +kubebuilder:validation:Optional
@@ -2865,10 +2848,9 @@ message PercentilePrunerOptions {
 
 // Define the seasonality for a period (yearly / monthly / daily)
 message PeriodSeasonalitySpec {
-  // Is this seasonality enabled
-  // +kubebuilder:default:=true
+  // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
-  optional bool enabled = 1;
+  optional string freq = 1;
 
   // If enabled, the number of data points in the interval
   // +kubebuilder:default:=0
@@ -2878,54 +2860,6 @@ message PeriodSeasonalitySpec {
   // +kubebuilder:default:="auto"
   // +kubebuilder:validation:Optional
   optional string mode = 3;
-}
-
-message ProphetSpec {
-  // +kubebuilder:default = 0.8
-  // +kubebuilder:validation:Optional
-  optional double intervalWidth = 1;
-
-  // +kubebuilder:default = 1000
-  // +kubebuilder:validation:Optional
-  optional int32 uncertaintySamples = 2;
-
-  // The generate seasonality mode
-  // +kubebuilder:default = "additive"
-  // +kubebuilder:validation:Optional
-  optional string seasonality = 3;
-
-  // The confidence levels for the forecast, each level must be between 1-100.
-  // +kubebuilder:default = 95
-  // +kubebuilder:validation:Optional
-  // +kubebuilder:validation:Minimum=0
-  optional int32 confidenceInterval = 4;
-
-  // +kubebuilder:validation:Optional
-  optional PeriodSeasonalitySpec yearlySeasonality = 5;
-
-  // +kubebuilder:validation:Optional
-  optional PeriodSeasonalitySpec weeklySeasonality = 6;
-
-  // +kubebuilder:validation:Optional
-  optional PeriodSeasonalitySpec dailySeasonality = 7;
-
-  // +kubebuilder:default = "linear"
-  // +kubebuilder:validation:Optional
-  optional string growth = 8;
-
-  // number of change points
-  // +kubebuilder:default = 25
-  // +kubebuilder:validation:Optional
-  optional int32 changePoints = 9;
-
-  // Change point range
-  // +kubebuilder:default = 0.8
-  // +kubebuilder:validation:Optional
-  optional double changePointRange = 10;
-
-  // Change point range
-  // +kubebuilder:validation:Optional
-  repeated CustomSeasonalitySpec customSeasonalities = 11;
 }
 
 message PrunerSpec {
@@ -2950,20 +2884,59 @@ message PrunerSpec {
   optional ThresholdPrunerOptions threshold = 6;
 }
 
-message RegressorSpec {
-  // The Name of the regressor
-  // +kubebuilder:validation:Optional
-  optional string name = 1;
-
-  // This is a regularization parameter, to adjust the affect of the regressor.
-  // +kubebuilder:default:=0
-  // +kubebuilder:validation:Optional
-  optional double priorScale = 2;
-
-  // Set to true if the regressor is standardized
+// Define how to build a regression model for forecasting (including feature engineering)
+// This is not implemented today
+message RegressionForecasterSpec {
+  // If true this is an ensemble pipeline
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool standardize = 3;
+  optional bool ensemble = 1;
+
+  // +kubebuilder:default:=none
+  // +kubebuilder:validation:Optional
+  optional string imputation = 2;
+
+  // The encoding method to use for categorical data types
+  // +kubebuilder:default:=none
+  // +kubebuilder:validation:Optional
+  optional string encoding = 3;
+
+  // The scaling method to use for numerical data types
+  // +kubebuilder:default:=none
+  // +kubebuilder:validation:Optional
+  optional string scaling = 4;
+
+  // If true apply the data transofmer to
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool date = 5;
+
+  // The list of windows to use when generating features.
+  // +kubebuilder:validation:Optional
+  repeated int32 windows = 6;
+
+  // The list of lags to use when generating features
+  // +kubebuilder:validation:Optional
+  repeated int32 lags = 7;
+
+  // The list of metrics to generate for each combination of lag and windows.
+  // The default list is min,max,median,stddev
+  // +kubebuilder:validation:Optional
+  repeated string functions = 8;
+
+  // when computing moving avg, use exponential moving avg, other use regular moving avg
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool ema = 9;
+
+  // +kubebuilder:default:=true
+  // +kubebuilder:validation:Optional
+  optional bool log = 10;
+
+  // If we are using reduced model, this is the way the reduced model will make prediction
+  // Default to none
+  // +kubebuilder:validation:Optional
+  optional string reduction = 11;
 }
 
 message ReleaseStageSpec {
@@ -3467,7 +3440,7 @@ message StudySpec {
 
   // ForecastSpec specifies the parameters required when generating a forecasting model
   // +kubebuilder:validation:Optional
-  optional ForecasterTrainingSpec forecasting = 14;
+  optional ForecasterSpec forecasterTemplate = 14;
 
   // Schedule specifies the configuration to execute the Study at a later date
   // +kubebuilder:validation:Optional
@@ -3845,6 +3818,32 @@ message ThresholdPrunerOptions {
   optional int32 intervalSteps = 4;
 }
 
+message TimeSeriesEvent {
+  // Set to true if this event is an holiday
+  // +kubebuilder:validation:Optional
+  optional string method = 1;
+
+  // Set to true if this event is an holiday
+  // +kubebuilder:validation:Optional
+  optional bool holiday = 2;
+
+  // If this event is an holiday, this is the holiday country
+  // +kubebuilder:validation:Optional
+  optional string country = 3;
+
+  // Pre event window, that might have event effects
+  // +kubebuilder:validation:Optional
+  optional int32 preEvent = 4;
+
+  // Post event windows the might have event effects.
+  // +kubebuilder:validation:Optional
+  optional int32 postEvent = 5;
+
+  // The time points to mark the events
+  // +kubebuilder:validation:Optional
+  repeated string timePoints = 6;
+}
+
 // TrainingSpec specifies the configuration of a model training workload
 message TrainingSpec {
   // The reference to the Lab under which the model training Job will be created
@@ -3977,6 +3976,28 @@ message UATStageSpec {
   // Resource define the hardware resources req.
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 4;
+}
+
+message UnivariateForecastStatus {
+  // URI for the grid search result
+  // +kubebuilder:validation:Optional
+  optional string gridSearchResultURI = 1;
+
+  // The best estimator
+  // +kubebuilder:validation:Optional
+  optional ClassicalEstimatorSpec baseEstimator = 2;
+
+  // URI of the model
+  // +kubebuilder:validation:Optional
+  optional string modelURI = 3;
+
+  // URI of the backtest result
+  // +kubebuilder:validation:Optional
+  optional string cvResultURI = 4;
+
+  // URI to the actual forecast
+  // +kubebuilder:validation:Optional
+  optional string forecastURI = 5;
 }
 
 // VideoPipelineSpec represents a single pipeline for preprocessing video data

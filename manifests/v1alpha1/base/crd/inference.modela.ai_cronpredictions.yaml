@@ -237,6 +237,7 @@ spec:
                                 - month
                                 - quarter
                                 - year
+                                - multi-year
                                 type: string
                               length:
                                 description: The window length

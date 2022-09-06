@@ -28,6 +28,40 @@ export namespace AlgorithmSearchSpaceSpec {
   }
 }
 
+export class AnomalyItem extends jspb.Message {
+  getValuecolumn(): string;
+  setValuecolumn(value: string): AnomalyItem;
+
+  getAdjdeltacolumn(): string;
+  setAdjdeltacolumn(value: string): AnomalyItem;
+
+  getStartList(): Array<string>;
+  setStartList(value: Array<string>): AnomalyItem;
+  clearStartList(): AnomalyItem;
+  addStart(value: string, index?: number): AnomalyItem;
+
+  getEndList(): Array<string>;
+  setEndList(value: Array<string>): AnomalyItem;
+  clearEndList(): AnomalyItem;
+  addEnd(value: string, index?: number): AnomalyItem;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AnomalyItem.AsObject;
+  static toObject(includeInstance: boolean, msg: AnomalyItem): AnomalyItem.AsObject;
+  static serializeBinaryToWriter(message: AnomalyItem, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AnomalyItem;
+  static deserializeBinaryFromReader(message: AnomalyItem, reader: jspb.BinaryReader): AnomalyItem;
+}
+
+export namespace AnomalyItem {
+  export type AsObject = {
+    valuecolumn: string,
+    adjdeltacolumn: string,
+    startList: Array<string>,
+    endList: Array<string>,
+  }
+}
+
 export class AudioPipelineSpec extends jspb.Message {
   getFeaturizer(): string;
   setFeaturizer(value: string): AudioPipelineSpec;
@@ -53,8 +87,8 @@ export class BacktestSpec extends jspb.Message {
   getSplits(): number;
   setSplits(value: number): BacktestSpec;
 
-  getInitialsize(): number;
-  setInitialsize(value: number): BacktestSpec;
+  getInitial(): number;
+  setInitial(value: number): BacktestSpec;
 
   getGap(): number;
   setGap(value: number): BacktestSpec;
@@ -71,7 +105,7 @@ export namespace BacktestSpec {
   export type AsObject = {
     sliding: boolean,
     splits: number,
-    initialsize: number,
+    initial: number,
     gap: number,
   }
 }
@@ -135,6 +169,20 @@ export namespace CapacityStageSpec {
     servingsitename: string,
     unittests?: ModelTestSuite.AsObject,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
+  }
+}
+
+export class ChangePoint extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ChangePoint.AsObject;
+  static toObject(includeInstance: boolean, msg: ChangePoint): ChangePoint.AsObject;
+  static serializeBinaryToWriter(message: ChangePoint, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ChangePoint;
+  static deserializeBinaryFromReader(message: ChangePoint, reader: jspb.BinaryReader): ChangePoint;
+}
+
+export namespace ChangePoint {
+  export type AsObject = {
   }
 }
 
@@ -417,32 +465,6 @@ export class CustomReportSpec extends jspb.Message {
 export namespace CustomReportSpec {
   export type AsObject = {
     pagesList: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.PageSpec.AsObject>,
-  }
-}
-
-export class CustomSeasonalitySpec extends jspb.Message {
-  getName(): string;
-  setName(value: string): CustomSeasonalitySpec;
-
-  getPeriod(): number;
-  setPeriod(value: number): CustomSeasonalitySpec;
-
-  getFourierorder(): number;
-  setFourierorder(value: number): CustomSeasonalitySpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CustomSeasonalitySpec.AsObject;
-  static toObject(includeInstance: boolean, msg: CustomSeasonalitySpec): CustomSeasonalitySpec.AsObject;
-  static serializeBinaryToWriter(message: CustomSeasonalitySpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CustomSeasonalitySpec;
-  static deserializeBinaryFromReader(message: CustomSeasonalitySpec, reader: jspb.BinaryReader): CustomSeasonalitySpec;
-}
-
-export namespace CustomSeasonalitySpec {
-  export type AsObject = {
-    name: string,
-    period: number,
-    fourierorder: number,
   }
 }
 
@@ -820,6 +842,36 @@ export namespace EnsemblesSpec {
   }
 }
 
+export class EvaluationMetricSpec extends jspb.Message {
+  getAggregatefunction(): string;
+  setAggregatefunction(value: string): EvaluationMetricSpec;
+
+  getAggregateperiod(): number;
+  setAggregateperiod(value: number): EvaluationMetricSpec;
+
+  getNullmodelparams(): string;
+  setNullmodelparams(value: string): EvaluationMetricSpec;
+
+  getRelativeerrortolerance(): number;
+  setRelativeerrortolerance(value: number): EvaluationMetricSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): EvaluationMetricSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: EvaluationMetricSpec): EvaluationMetricSpec.AsObject;
+  static serializeBinaryToWriter(message: EvaluationMetricSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EvaluationMetricSpec;
+  static deserializeBinaryFromReader(message: EvaluationMetricSpec, reader: jspb.BinaryReader): EvaluationMetricSpec;
+}
+
+export namespace EvaluationMetricSpec {
+  export type AsObject = {
+    aggregatefunction: string,
+    aggregateperiod: number,
+    nullmodelparams: string,
+    relativeerrortolerance: number,
+  }
+}
+
 export class FeatureEngineeringPipeline extends jspb.Message {
   getName(): string;
   setName(value: string): FeatureEngineeringPipeline;
@@ -1182,6 +1234,66 @@ export namespace ForecastObj {
   }
 }
 
+export class ForecasterCrossValidationSpec extends jspb.Message {
+  getReportmetricsList(): Array<string>;
+  setReportmetricsList(value: Array<string>): ForecasterCrossValidationSpec;
+  clearReportmetricsList(): ForecasterCrossValidationSpec;
+  addReportmetrics(value: string, index?: number): ForecasterCrossValidationSpec;
+
+  getSelectionmetrics(): string;
+  setSelectionmetrics(value: string): ForecasterCrossValidationSpec;
+
+  getExpandingwindows(): boolean;
+  setExpandingwindows(value: boolean): ForecasterCrossValidationSpec;
+
+  getHorizon(): number;
+  setHorizon(value: number): ForecasterCrossValidationSpec;
+
+  getMaxsplits(): number;
+  setMaxsplits(value: number): ForecasterCrossValidationSpec;
+
+  getMintrainperiods(): number;
+  setMintrainperiods(value: number): ForecasterCrossValidationSpec;
+
+  getPeriodsbetweensplits(): number;
+  setPeriodsbetweensplits(value: number): ForecasterCrossValidationSpec;
+
+  getPeriodsbetweentraintest(): number;
+  setPeriodsbetweentraintest(value: number): ForecasterCrossValidationSpec;
+
+  getUsemostrecentsplits(): boolean;
+  setUsemostrecentsplits(value: boolean): ForecasterCrossValidationSpec;
+
+  getTesthorizon(): number;
+  setTesthorizon(value: number): ForecasterCrossValidationSpec;
+
+  getGrowth(): string;
+  setGrowth(value: string): ForecasterCrossValidationSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ForecasterCrossValidationSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: ForecasterCrossValidationSpec): ForecasterCrossValidationSpec.AsObject;
+  static serializeBinaryToWriter(message: ForecasterCrossValidationSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ForecasterCrossValidationSpec;
+  static deserializeBinaryFromReader(message: ForecasterCrossValidationSpec, reader: jspb.BinaryReader): ForecasterCrossValidationSpec;
+}
+
+export namespace ForecasterCrossValidationSpec {
+  export type AsObject = {
+    reportmetricsList: Array<string>,
+    selectionmetrics: string,
+    expandingwindows: boolean,
+    horizon: number,
+    maxsplits: number,
+    mintrainperiods: number,
+    periodsbetweensplits: number,
+    periodsbetweentraintest: number,
+    usemostrecentsplits: boolean,
+    testhorizon: number,
+    growth: string,
+  }
+}
+
 export class ForecasterPipelineSpec extends jspb.Message {
   getEnsemble(): boolean;
   setEnsemble(value: boolean): ForecasterPipelineSpec;
@@ -1285,20 +1397,15 @@ export class ForecasterTrainingSpec extends jspb.Message {
   clearFeaturesList(): ForecasterTrainingSpec;
   addFeatures(value: string, index?: number): ForecasterTrainingSpec;
 
-  getProphet(): ProphetSpec | undefined;
-  setProphet(value?: ProphetSpec): ForecasterTrainingSpec;
-  hasProphet(): boolean;
-  clearProphet(): ForecasterTrainingSpec;
-
   getPipeline(): ForecasterPipelineSpec | undefined;
   setPipeline(value?: ForecasterPipelineSpec): ForecasterTrainingSpec;
   hasPipeline(): boolean;
   clearPipeline(): ForecasterTrainingSpec;
 
-  getHierarchy(): ModelAggSpec | undefined;
-  setHierarchy(value?: ModelAggSpec): ForecasterTrainingSpec;
-  hasHierarchy(): boolean;
-  clearHierarchy(): ForecasterTrainingSpec;
+  getGroupbyList(): Array<string>;
+  setGroupbyList(value: Array<string>): ForecasterTrainingSpec;
+  clearGroupbyList(): ForecasterTrainingSpec;
+  addGroupby(value: string, index?: number): ForecasterTrainingSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ForecasterTrainingSpec.AsObject;
@@ -1318,9 +1425,8 @@ export namespace ForecasterTrainingSpec {
     forecast: boolean,
     outputlocation?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     featuresList: Array<string>,
-    prophet?: ProphetSpec.AsObject,
     pipeline?: ForecasterPipelineSpec.AsObject,
-    hierarchy?: ModelAggSpec.AsObject,
+    groupbyList: Array<string>,
   }
 }
 
@@ -1743,30 +1849,6 @@ export namespace Model {
     metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.AsObject,
     spec?: ModelSpec.AsObject,
     status?: ModelStatus.AsObject,
-  }
-}
-
-export class ModelAggSpec extends jspb.Message {
-  getEnabled(): boolean;
-  setEnabled(value: boolean): ModelAggSpec;
-
-  getGroupbyList(): Array<string>;
-  setGroupbyList(value: Array<string>): ModelAggSpec;
-  clearGroupbyList(): ModelAggSpec;
-  addGroupby(value: string, index?: number): ModelAggSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ModelAggSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: ModelAggSpec): ModelAggSpec.AsObject;
-  static serializeBinaryToWriter(message: ModelAggSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ModelAggSpec;
-  static deserializeBinaryFromReader(message: ModelAggSpec, reader: jspb.BinaryReader): ModelAggSpec;
-}
-
-export namespace ModelAggSpec {
-  export type AsObject = {
-    enabled: boolean,
-    groupbyList: Array<string>,
   }
 }
 
@@ -4205,8 +4287,8 @@ export namespace PercentilePrunerOptions {
 }
 
 export class PeriodSeasonalitySpec extends jspb.Message {
-  getEnabled(): boolean;
-  setEnabled(value: boolean): PeriodSeasonalitySpec;
+  getFreq(): string;
+  setFreq(value: string): PeriodSeasonalitySpec;
 
   getPeriods(): number;
   setPeriods(value: number): PeriodSeasonalitySpec;
@@ -4224,75 +4306,9 @@ export class PeriodSeasonalitySpec extends jspb.Message {
 
 export namespace PeriodSeasonalitySpec {
   export type AsObject = {
-    enabled: boolean,
+    freq: string,
     periods: number,
     mode: string,
-  }
-}
-
-export class ProphetSpec extends jspb.Message {
-  getIntervalwidth(): number;
-  setIntervalwidth(value: number): ProphetSpec;
-
-  getUncertaintysamples(): number;
-  setUncertaintysamples(value: number): ProphetSpec;
-
-  getSeasonality(): string;
-  setSeasonality(value: string): ProphetSpec;
-
-  getConfidenceinterval(): number;
-  setConfidenceinterval(value: number): ProphetSpec;
-
-  getYearlyseasonality(): PeriodSeasonalitySpec | undefined;
-  setYearlyseasonality(value?: PeriodSeasonalitySpec): ProphetSpec;
-  hasYearlyseasonality(): boolean;
-  clearYearlyseasonality(): ProphetSpec;
-
-  getWeeklyseasonality(): PeriodSeasonalitySpec | undefined;
-  setWeeklyseasonality(value?: PeriodSeasonalitySpec): ProphetSpec;
-  hasWeeklyseasonality(): boolean;
-  clearWeeklyseasonality(): ProphetSpec;
-
-  getDailyseasonality(): PeriodSeasonalitySpec | undefined;
-  setDailyseasonality(value?: PeriodSeasonalitySpec): ProphetSpec;
-  hasDailyseasonality(): boolean;
-  clearDailyseasonality(): ProphetSpec;
-
-  getGrowth(): string;
-  setGrowth(value: string): ProphetSpec;
-
-  getChangepoints(): number;
-  setChangepoints(value: number): ProphetSpec;
-
-  getChangepointrange(): number;
-  setChangepointrange(value: number): ProphetSpec;
-
-  getCustomseasonalitiesList(): Array<CustomSeasonalitySpec>;
-  setCustomseasonalitiesList(value: Array<CustomSeasonalitySpec>): ProphetSpec;
-  clearCustomseasonalitiesList(): ProphetSpec;
-  addCustomseasonalities(value?: CustomSeasonalitySpec, index?: number): CustomSeasonalitySpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ProphetSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: ProphetSpec): ProphetSpec.AsObject;
-  static serializeBinaryToWriter(message: ProphetSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ProphetSpec;
-  static deserializeBinaryFromReader(message: ProphetSpec, reader: jspb.BinaryReader): ProphetSpec;
-}
-
-export namespace ProphetSpec {
-  export type AsObject = {
-    intervalwidth: number,
-    uncertaintysamples: number,
-    seasonality: string,
-    confidenceinterval: number,
-    yearlyseasonality?: PeriodSeasonalitySpec.AsObject,
-    weeklyseasonality?: PeriodSeasonalitySpec.AsObject,
-    dailyseasonality?: PeriodSeasonalitySpec.AsObject,
-    growth: string,
-    changepoints: number,
-    changepointrange: number,
-    customseasonalitiesList: Array<CustomSeasonalitySpec.AsObject>,
   }
 }
 
@@ -5548,6 +5564,46 @@ export namespace ThresholdPrunerOptions {
   }
 }
 
+export class TimeSeriesEvent extends jspb.Message {
+  getMethod(): string;
+  setMethod(value: string): TimeSeriesEvent;
+
+  getHoliday(): boolean;
+  setHoliday(value: boolean): TimeSeriesEvent;
+
+  getCountry(): string;
+  setCountry(value: string): TimeSeriesEvent;
+
+  getPreevent(): number;
+  setPreevent(value: number): TimeSeriesEvent;
+
+  getPostevent(): number;
+  setPostevent(value: number): TimeSeriesEvent;
+
+  getTimepointsList(): Array<string>;
+  setTimepointsList(value: Array<string>): TimeSeriesEvent;
+  clearTimepointsList(): TimeSeriesEvent;
+  addTimepoints(value: string, index?: number): TimeSeriesEvent;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TimeSeriesEvent.AsObject;
+  static toObject(includeInstance: boolean, msg: TimeSeriesEvent): TimeSeriesEvent.AsObject;
+  static serializeBinaryToWriter(message: TimeSeriesEvent, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TimeSeriesEvent;
+  static deserializeBinaryFromReader(message: TimeSeriesEvent, reader: jspb.BinaryReader): TimeSeriesEvent;
+}
+
+export namespace TimeSeriesEvent {
+  export type AsObject = {
+    method: string,
+    holiday: boolean,
+    country: string,
+    preevent: number,
+    postevent: number,
+    timepointsList: Array<string>,
+  }
+}
+
 export class TrainingSpec extends jspb.Message {
   getLabref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setLabref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): TrainingSpec;
@@ -5707,6 +5763,126 @@ export namespace UATStageSpec {
     servingsitename: string,
     unittests?: ModelTestSuite.AsObject,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
+  }
+}
+
+export class UnivariateForecast extends jspb.Message {
+  getPredefinedtemplate(): string;
+  setPredefinedtemplate(value: string): UnivariateForecast;
+
+  getAnomalyinfoList(): Array<AnomalyItem>;
+  setAnomalyinfoList(value: Array<AnomalyItem>): UnivariateForecast;
+  clearAnomalyinfoList(): UnivariateForecast;
+  addAnomalyinfo(value?: AnomalyItem, index?: number): AnomalyItem;
+
+  getDateformat(): string;
+  setDateformat(value: string): UnivariateForecast;
+
+  getFreq(): string;
+  setFreq(value: string): UnivariateForecast;
+
+  getTimecolumn(): string;
+  setTimecolumn(value: string): UnivariateForecast;
+
+  getTrainenddata(): string;
+  setTrainenddata(value: string): UnivariateForecast;
+
+  getValuecolumn(): string;
+  setValuecolumn(value: string): UnivariateForecast;
+
+  getHpobudget(): number;
+  setHpobudget(value: number): UnivariateForecast;
+
+  getEvaluation(): EvaluationMetricSpec | undefined;
+  setEvaluation(value?: EvaluationMetricSpec): UnivariateForecast;
+  hasEvaluation(): boolean;
+  clearEvaluation(): UnivariateForecast;
+
+  getCv(): ForecasterCrossValidationSpec | undefined;
+  setCv(value?: ForecasterCrossValidationSpec): UnivariateForecast;
+  hasCv(): boolean;
+  clearCv(): UnivariateForecast;
+
+  getSeasonalitiesList(): Array<PeriodSeasonalitySpec>;
+  setSeasonalitiesList(value: Array<PeriodSeasonalitySpec>): UnivariateForecast;
+  clearSeasonalitiesList(): UnivariateForecast;
+  addSeasonalities(value?: PeriodSeasonalitySpec, index?: number): PeriodSeasonalitySpec;
+
+  getEventsList(): Array<TimeSeriesEvent>;
+  setEventsList(value: Array<TimeSeriesEvent>): UnivariateForecast;
+  clearEventsList(): UnivariateForecast;
+  addEvents(value?: TimeSeriesEvent, index?: number): TimeSeriesEvent;
+
+  getRegressorsList(): Array<string>;
+  setRegressorsList(value: Array<string>): UnivariateForecast;
+  clearRegressorsList(): UnivariateForecast;
+  addRegressors(value: string, index?: number): UnivariateForecast;
+
+  getLaggedregressorsList(): Array<string>;
+  setLaggedregressorsList(value: Array<string>): UnivariateForecast;
+  clearLaggedregressorsList(): UnivariateForecast;
+  addLaggedregressors(value: string, index?: number): UnivariateForecast;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UnivariateForecast.AsObject;
+  static toObject(includeInstance: boolean, msg: UnivariateForecast): UnivariateForecast.AsObject;
+  static serializeBinaryToWriter(message: UnivariateForecast, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UnivariateForecast;
+  static deserializeBinaryFromReader(message: UnivariateForecast, reader: jspb.BinaryReader): UnivariateForecast;
+}
+
+export namespace UnivariateForecast {
+  export type AsObject = {
+    predefinedtemplate: string,
+    anomalyinfoList: Array<AnomalyItem.AsObject>,
+    dateformat: string,
+    freq: string,
+    timecolumn: string,
+    trainenddata: string,
+    valuecolumn: string,
+    hpobudget: number,
+    evaluation?: EvaluationMetricSpec.AsObject,
+    cv?: ForecasterCrossValidationSpec.AsObject,
+    seasonalitiesList: Array<PeriodSeasonalitySpec.AsObject>,
+    eventsList: Array<TimeSeriesEvent.AsObject>,
+    regressorsList: Array<string>,
+    laggedregressorsList: Array<string>,
+  }
+}
+
+export class UnivariateForecastStatus extends jspb.Message {
+  getGridsearchresulturi(): string;
+  setGridsearchresulturi(value: string): UnivariateForecastStatus;
+
+  getBaseestimator(): ClassicalEstimatorSpec | undefined;
+  setBaseestimator(value?: ClassicalEstimatorSpec): UnivariateForecastStatus;
+  hasBaseestimator(): boolean;
+  clearBaseestimator(): UnivariateForecastStatus;
+
+  getModeluri(): string;
+  setModeluri(value: string): UnivariateForecastStatus;
+
+  getCvresulturi(): string;
+  setCvresulturi(value: string): UnivariateForecastStatus;
+
+  getForecasturi(): string;
+  setForecasturi(value: string): UnivariateForecastStatus;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UnivariateForecastStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: UnivariateForecastStatus): UnivariateForecastStatus.AsObject;
+  static serializeBinaryToWriter(message: UnivariateForecastStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UnivariateForecastStatus;
+  static deserializeBinaryFromReader(message: UnivariateForecastStatus, reader: jspb.BinaryReader): UnivariateForecastStatus;
+}
+
+export namespace UnivariateForecastStatus {
+  export type AsObject = {
+    gridsearchresulturi: string,
+    baseestimator?: ClassicalEstimatorSpec.AsObject,
+    modeluri: string,
+    cvresulturi: string,
+    forecasturi: string,
   }
 }
 
