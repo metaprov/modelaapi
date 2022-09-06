@@ -153,30 +153,6 @@ message DsCreateModelProfileResponse {
 
 
 
-///////////////////////////////// Partition Forecast Files
-
-message DsCreateForecastPartitionFilesRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct product = 1;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion version = 2;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 3;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset dataset = 4;
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study study = 5;
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model model = 6;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection = 8;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 9;
-    map<string,bytes> secret = 10;
-    repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecastObj forecasts= 11;
-}
-
-message DsCreateForecastPartitionFilesResponse {
-    repeated PartitionValues partitions = 1;
-}
-
-// a distinct set of the values in the partition
-message PartitionValues {
-    string name            = 1; // the name of the partition
-    repeated string values = 2; // the partition values.
-}
 
 
 ///////////////////////////////// Merge Forecast Files
@@ -727,8 +703,6 @@ service DataService {
     rpc TellPartialModel (TellModelRequest) returns (TellModelResponse) {}
     // for bayaisn optimization, we tell the planner the result of the model evaluation
     rpc TellModel (TellModelRequest) returns (TellModelResponse) {}
-    // Partition the class
-    rpc PartitionForecastFile(DsCreateForecastPartitionFilesRequest) returns (DsCreateForecastPartitionFilesResponse) {}
     // Merge the forecast back to one file.
     rpc MergeForecastFile(DsMergeForecastFileRequest) returns (DsMergeForecastFileResponse) {}
     // test connection from python presepective

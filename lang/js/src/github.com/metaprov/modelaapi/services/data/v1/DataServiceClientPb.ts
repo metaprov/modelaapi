@@ -1325,49 +1325,6 @@ export class DataServiceClient {
     this.methodInfoTellModel);
   }
 
-  methodInfoPartitionForecastFile = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.data.v1.DataService/PartitionForecastFile',
-    grpcWeb.MethodType.UNARY,
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.DsCreateForecastPartitionFilesRequest,
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.DsCreateForecastPartitionFilesResponse,
-    (request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsCreateForecastPartitionFilesRequest) => {
-      return request.serializeBinary();
-    },
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.DsCreateForecastPartitionFilesResponse.deserializeBinary
-  );
-
-  partitionForecastFile(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsCreateForecastPartitionFilesRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_data_v1_data_pb.DsCreateForecastPartitionFilesResponse>;
-
-  partitionForecastFile(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsCreateForecastPartitionFilesRequest,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsCreateForecastPartitionFilesResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_data_v1_data_pb.DsCreateForecastPartitionFilesResponse>;
-
-  partitionForecastFile(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsCreateForecastPartitionFilesRequest,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsCreateForecastPartitionFilesResponse) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.data.v1.DataService/PartitionForecastFile',
-        request,
-        metadata || {},
-        this.methodInfoPartitionForecastFile,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.data.v1.DataService/PartitionForecastFile',
-    request,
-    metadata || {},
-    this.methodInfoPartitionForecastFile);
-  }
-
   methodInfoMergeForecastFile = new grpcWeb.MethodDescriptor(
     '/github.com.metaprov.modelaapi.services.data.v1.DataService/MergeForecastFile',
     grpcWeb.MethodType.UNARY,

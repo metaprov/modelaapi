@@ -1004,6 +1004,23 @@ spec:
                 description: Forecasting specifies the configuration to train a forecasting
                   model
                 properties:
+                  anomalyInfo:
+                    items:
+                      properties:
+                        adjDeltaColumn:
+                          type: string
+                        end:
+                          items:
+                            type: string
+                          type: array
+                        start:
+                          items:
+                            type: string
+                          type: array
+                        valueColumn:
+                          type: string
+                      type: object
+                    type: array
                   backtest:
                     description: The backtest specification, the system supports back
                       testing with expanding windows.
@@ -1026,6 +1043,108 @@ spec:
                         format: int32
                         type: integer
                     type: object
+                  cv:
+                    description: Spec for time series cross validation
+                    properties:
+                      expandingWindows:
+                        type: boolean
+                      growth:
+                        enum:
+                        - linear
+                        - logistic
+                        - flat
+                        type: string
+                      horizon:
+                        format: int32
+                        type: integer
+                      maxSplits:
+                        format: int32
+                        type: integer
+                      minTrainPeriods:
+                        format: int32
+                        type: integer
+                      periodsBetweenSplits:
+                        format: int32
+                        type: integer
+                      periodsBetweenTrainTest:
+                        format: int32
+                        type: integer
+                      reportMetrics:
+                        items:
+                          type: string
+                        type: array
+                      selectionMetrics:
+                        type: string
+                      testHorizon:
+                        format: int32
+                        type: integer
+                      useMostRecentSplits:
+                        type: boolean
+                    type: object
+                  dateFormat:
+                    description: The data format of the time column, this will be
+                      based
+                    type: string
+                  evaluation:
+                    description: Spec for evaluation
+                    properties:
+                      aggregateFunction:
+                        type: string
+                      aggregatePeriod:
+                        format: int32
+                        type: integer
+                      nullModelParams:
+                        type: string
+                      relativeErrorTolerance:
+                        type: number
+                    type: object
+                  events:
+                    description: The spec for the holiday
+                    items:
+                      properties:
+                        country:
+                          description: If this event is an holiday, this is the holiday
+                            country
+                          enum:
+                          - US
+                          - BR
+                          - ID
+                          - IN
+                          - MY
+                          - VN
+                          - TH
+                          - PH
+                          - PK
+                          - BD
+                          - EG
+                          - CN
+                          - RU
+                          - KR
+                          - BY
+                          - AE
+                          - none
+                          type: string
+                        holiday:
+                          description: Set to true if this event is an holiday
+                          type: boolean
+                        method:
+                          description: Set to true if this event is an holiday
+                          type: string
+                        postEvent:
+                          description: Post event windows the might have event effects.
+                          format: int32
+                          type: integer
+                        preEvent:
+                          description: Pre event window, that might have event effects
+                          format: int32
+                          type: integer
+                        timePoints:
+                          description: The time points to mark the events
+                          items:
+                            type: string
+                          type: array
+                      type: object
+                    type: array
                   features:
                     description: List of time series features to compute on each time
                       series.
@@ -1035,6 +1154,19 @@ spec:
                   forecast:
                     description: Make a forecast post training
                     type: boolean
+                  freq:
+                    description: The Horizon unit
+                    enum:
+                    - second
+                    - minute
+                    - hour
+                    - day
+                    - week
+                    - month
+                    - quarter
+                    - year
+                    - multi-year
+                    type: string
                   future:
                     description: Specification for the future windows
                     properties:
@@ -1062,43 +1194,48 @@ spec:
                         format: int32
                         type: integer
                     type: object
-                  groupBy:
+                  hpoBudget:
+                    format: int32
+                    type: integer
+                  laggedRegressors:
+                    description: Lagged Regressors
                     items:
                       type: string
                     type: array
-                  holidays:
-                    description: The spec for the holiday
+                  levels:
                     items:
                       properties:
-                        country:
-                          description: / The HolidayCountry unit
+                        aggregate:
+                          description: The aggregate function used to roll up the
+                            lower level
                           enum:
-                          - US
-                          - BR
-                          - ID
-                          - IN
-                          - MY
-                          - VN
-                          - TH
-                          - PH
-                          - PK
-                          - BD
-                          - EG
-                          - CN
-                          - RU
-                          - KR
-                          - BY
-                          - AE
-                          - none
+                          - min
+                          - max
+                          - avg
+                          - median
                           type: string
-                        datasetName:
-                          description: For custom holiday use external dataset
+                        freq:
+                          description: The freq of the level
+                          enum:
+                          - second
+                          - minute
+                          - hour
+                          - day
+                          - week
+                          - month
+                          - quarter
+                          - year
+                          - multi-year
                           type: string
-                        holidayColumn:
-                          description: The name of the holiday column. If the column
-                            is empty, no holiday Column name of the first level of
-                            grouping
-                          type: string
+                        horizon:
+                          description: The forecast horizon
+                          format: int32
+                          type: integer
+                        index:
+                          description: The key for the levels
+                          items:
+                            type: string
+                          type: array
                       type: object
                     type: array
                   outputLocation:
@@ -1241,123 +1378,76 @@ spec:
                         format: int32
                         type: integer
                     type: object
-                  pipeline:
-                    description: The forecasting pipeline
-                    properties:
-                      date:
-                        default: false
-                        description: If true apply the data transofmer to
-                        type: boolean
-                      ema:
-                        default: false
-                        description: when computing moving avg, use exponential moving
-                          avg, other use regular moving avg
-                        type: boolean
-                      encoding:
-                        default: none
-                        description: The encoding method to use for categorical data
-                          types
-                        enum:
-                        - one-hot-encoding
-                        - one-hot-encoding-top-categories
-                        - ordinal-encoding
-                        - count-encoding
-                        - target-encoding
-                        - weight-of-evidence-encoding
-                        - binary-encoding
-                        - label-encoding
-                        - hash-encoding
-                        - catboost-encoding
-                        - loo-encoding
-                        - no-encoding
-                        - auto
-                        - none
-                        type: string
-                      ensemble:
-                        default: false
-                        description: If true this is an ensemble pipeline
-                        type: boolean
-                      functions:
-                        description: The list of metrics to generate for each combination
-                          of lag and windows. The default list is min,max,median,stddev
-                        items:
-                          type: string
-                        type: array
-                      imputation:
-                        default: none
-                        description: ==============================================================================
-                          Imputation ==============================================================================
-                        enum:
-                        - remove-rows-with-missing-values
-                        - replace-with-mean
-                        - replace-with-median
-                        - replace-with-arbitrary-value
-                        - freq-category-imputation
-                        - add-missing-value-indicator
-                        - knn
-                        - iterative
-                        - mice
-                        - no-imputation
-                        - auto
-                        - none
-                        type: string
-                      lags:
-                        description: The list of lags to use when generating features
-                        items:
-                          format: int32
-                          type: integer
-                        type: array
-                      log:
-                        default: true
-                        type: boolean
-                      reduction:
-                        description: If we are using reduced model, this is the way
-                          the reduced model will make prediction Default to none
-                        enum:
-                        - recursive
-                        - direct
-                        - none
-                        type: string
-                      scaling:
-                        default: none
-                        description: The scaling method to use for numerical data
-                          types
-                        enum:
-                        - standard-scaling
-                        - max-abs-scaling
-                        - min-max-scaling
-                        - normalization-scaling
-                        - robust-scaling
-                        - scale-to-unit-norm
-                        - none
-                        - auto
-                        type: string
-                      windows:
-                        description: The list of windows to use when generating features.
-                        items:
-                          format: int32
-                          type: integer
-                        type: array
-                    type: object
+                  predefinedTemplate:
+                    enum:
+                    - silverkite
+                    - prophet
+                    - auto-arima
+                    - lag-based
+                    - sk
+                    - two-stage
+                    - wow
+                    - daily-1-config-1
+                    - daily-1-config-2
+                    - daily-1-config-3
+                    - daily-1
+                    - daily-90
+                    - weekly
+                    - monthly
+                    - hourly-1
+                    - hourly-24
+                    - hourly-168
+                    - hourly-336
+                    type: string
                   regressors:
                     description: The list of additional regressors. The regressors
                       are part of the time series data
                     items:
+                      type: string
+                    type: array
+                  seasonalities:
+                    items:
+                      description: Define the seasonality for a period (yearly / monthly
+                        / daily)
                       properties:
-                        name:
-                          description: The Name of the regressor
-                          type: string
-                        priorScale:
+                        freq:
                           default: 0
-                          description: This is a regularization parameter, to adjust
-                            the affect of the regressor.
-                          type: number
-                        standardize:
-                          default: false
-                          description: Set to true if the regressor is standardized
-                          type: boolean
+                          description: The Horizon unit
+                          enum:
+                          - second
+                          - minute
+                          - hour
+                          - day
+                          - week
+                          - month
+                          - quarter
+                          - year
+                          - multi-year
+                          type: string
+                        mode:
+                          default: auto
+                          enum:
+                          - multipicative
+                          - additive
+                          - auto
+                          - none
+                          type: string
+                        periods:
+                          default: 0
+                          description: If enabled, the number of data points in the
+                            interval
+                          format: int32
+                          type: integer
                       type: object
                     type: array
+                  timeColumn:
+                    type: string
+                  trainEndData:
+                    type: string
+                  valueColumn:
+                    description: The value column. this is the name of the column
+                      to forecast, this will be based on the data source.
+                    type: string
                 type: object
               genDriftDetector:
                 default: false
