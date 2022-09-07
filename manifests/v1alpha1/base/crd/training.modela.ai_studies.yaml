@@ -485,6 +485,9 @@ spec:
                         method:
                           description: Set to true if this event is an holiday
                           type: string
+                        name:
+                          description: Set to true if this event is an holiday
+                          type: string
                         postEvent:
                           description: Post event windows the might have event effects.
                           format: int32

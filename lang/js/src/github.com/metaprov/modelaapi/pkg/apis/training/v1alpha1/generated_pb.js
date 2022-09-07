@@ -54436,7 +54436,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ThresholdPrunerOp
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.repeatedFields_ = [6];
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.repeatedFields_ = [7];
 
 
 
@@ -54469,12 +54469,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.p
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    method: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    holiday: (f = jspb.Message.getBooleanField(msg, 2)) == null ? undefined : f,
-    country: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-    preevent: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    postevent: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
-    timepointsList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f
+    name: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    method: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    holiday: (f = jspb.Message.getBooleanField(msg, 3)) == null ? undefined : f,
+    country: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    preevent: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    postevent: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
+    timepointsList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -54513,25 +54514,29 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.d
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setMethod(value);
+      msg.setName(value);
       break;
     case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setMethod(value);
+      break;
+    case 3:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setHoliday(value);
       break;
-    case 3:
+    case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setCountry(value);
       break;
-    case 4:
+    case 5:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setPreevent(value);
       break;
-    case 5:
+    case 6:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setPostevent(value);
       break;
-    case 6:
+    case 7:
       var value = /** @type {string} */ (reader.readString());
       msg.addTimepoints(value);
       break;
@@ -54571,23 +54576,23 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.s
       f
     );
   }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 2));
+  f = /** @type {string} */ (jspb.Message.getField(message, 2));
   if (f != null) {
-    writer.writeBool(
+    writer.writeString(
       2,
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 3));
   if (f != null) {
-    writer.writeString(
+    writer.writeBool(
       3,
       f
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 4));
+  f = /** @type {string} */ (jspb.Message.getField(message, 4));
   if (f != null) {
-    writer.writeInt32(
+    writer.writeString(
       4,
       f
     );
@@ -54599,10 +54604,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.s
       f
     );
   }
+  f = /** @type {number} */ (jspb.Message.getField(message, 6));
+  if (f != null) {
+    writer.writeInt32(
+      6,
+      f
+    );
+  }
   f = message.getTimepointsList();
   if (f.length > 0) {
     writer.writeRepeatedString(
-      6,
+      7,
       f
     );
   }
@@ -54610,10 +54622,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.s
 
 
 /**
- * optional string method = 1;
+ * optional string name = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.getMethod = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -54622,7 +54634,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.p
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.setMethod = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.setName = function(value) {
   return jspb.Message.setField(this, 1, value);
 };
 
@@ -54631,7 +54643,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.p
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.clearMethod = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.clearName = function() {
   return jspb.Message.setField(this, 1, undefined);
 };
 
@@ -54640,25 +54652,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.p
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.hasMethod = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.hasName = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
- * optional bool holiday = 2;
- * @return {boolean}
+ * optional string method = 2;
+ * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.getHoliday = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 2, false));
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.getMethod = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
- * @param {boolean} value
+ * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.setHoliday = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.setMethod = function(value) {
   return jspb.Message.setField(this, 2, value);
 };
 
@@ -54667,7 +54679,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.p
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.clearHoliday = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.clearMethod = function() {
   return jspb.Message.setField(this, 2, undefined);
 };
 
@@ -54676,25 +54688,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.p
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.hasHoliday = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.hasMethod = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional string country = 3;
- * @return {string}
+ * optional bool holiday = 3;
+ * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.getCountry = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.getHoliday = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
 };
 
 
 /**
- * @param {string} value
+ * @param {boolean} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.setCountry = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.setHoliday = function(value) {
   return jspb.Message.setField(this, 3, value);
 };
 
@@ -54703,7 +54715,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.p
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.clearCountry = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.clearHoliday = function() {
   return jspb.Message.setField(this, 3, undefined);
 };
 
@@ -54712,25 +54724,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.p
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.hasCountry = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.hasHoliday = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional int32 preEvent = 4;
- * @return {number}
+ * optional string country = 4;
+ * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.getPreevent = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.getCountry = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.setPreevent = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.setCountry = function(value) {
   return jspb.Message.setField(this, 4, value);
 };
 
@@ -54739,7 +54751,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.p
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.clearPreevent = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.clearCountry = function() {
   return jspb.Message.setField(this, 4, undefined);
 };
 
@@ -54748,16 +54760,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.p
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.hasPreevent = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.hasCountry = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * optional int32 postEvent = 5;
+ * optional int32 preEvent = 5;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.getPostevent = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.getPreevent = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
@@ -54766,7 +54778,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.p
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.setPostevent = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.setPreevent = function(value) {
   return jspb.Message.setField(this, 5, value);
 };
 
@@ -54775,7 +54787,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.p
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.clearPostevent = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.clearPreevent = function() {
   return jspb.Message.setField(this, 5, undefined);
 };
 
@@ -54784,17 +54796,53 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.p
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.hasPostevent = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.hasPreevent = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 
 
 /**
- * repeated string timePoints = 6;
+ * optional int32 postEvent = 6;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.getPostevent = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.setPostevent = function(value) {
+  return jspb.Message.setField(this, 6, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.clearPostevent = function() {
+  return jspb.Message.setField(this, 6, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.hasPostevent = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * repeated string timePoints = 7;
  * @return {!Array<string>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.getTimepointsList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 6));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 7));
 };
 
 
@@ -54803,7 +54851,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.p
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.setTimepointsList = function(value) {
-  return jspb.Message.setField(this, 6, value || []);
+  return jspb.Message.setField(this, 7, value || []);
 };
 
 
@@ -54813,7 +54861,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.p
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TimeSeriesEvent.prototype.addTimepoints = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 6, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 7, value, opt_index);
 };
 
 

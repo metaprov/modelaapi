@@ -250,22 +250,25 @@ type AnomalyItem struct {
 type TimeSeriesEvent struct {
 	// Set to true if this event is an holiday
 	// +kubebuilder:validation:Optional
-	Method string `json:"method,omitempty" protobuf:"bytes,1,opt,name=method"`
+	Name string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
 	// Set to true if this event is an holiday
 	// +kubebuilder:validation:Optional
-	Holiday *bool `json:"holiday,omitempty" protobuf:"bytes,2,opt,name=holiday"`
+	Method string `json:"method,omitempty" protobuf:"bytes,2,opt,name=method"`
+	// Set to true if this event is an holiday
+	// +kubebuilder:validation:Optional
+	Holiday *bool `json:"holiday,omitempty" protobuf:"bytes,3,opt,name=holiday"`
 	// If this event is an holiday, this is the holiday country
 	// +kubebuilder:validation:Optional
-	Country catalog.HolidayCountry `json:"country,omitempty" protobuf:"bytes,3,opt,name=country"`
+	Country catalog.HolidayCountry `json:"country,omitempty" protobuf:"bytes,4,opt,name=country"`
 	// Pre event window, that might have event effects
 	// +kubebuilder:validation:Optional
-	PreEvent *int32 `json:"preEvent,omitempty" protobuf:"bytes,4,opt,name=preEvent"`
+	PreEvent *int32 `json:"preEvent,omitempty" protobuf:"bytes,5,opt,name=preEvent"`
 	// Post event windows the might have event effects.
 	// +kubebuilder:validation:Optional
-	PostEvent *int32 `json:"postEvent,omitempty" protobuf:"bytes,5,opt,name=postEvent"`
+	PostEvent *int32 `json:"postEvent,omitempty" protobuf:"bytes,6,opt,name=postEvent"`
 	// The time points to mark the events
 	// +kubebuilder:validation:Optional
-	TimePoints []string `json:"timePoints,omitempty" protobuf:"bytes,6,opt,name=timePoints"`
+	TimePoints []string `json:"timePoints,omitempty" protobuf:"bytes,7,opt,name=timePoints"`
 }
 
 type ChangePoint struct {

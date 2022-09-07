@@ -3806,27 +3806,31 @@ message ThresholdPrunerOptions {
 message TimeSeriesEvent {
   // Set to true if this event is an holiday
   // +kubebuilder:validation:Optional
-  optional string method = 1;
+  optional string name = 1;
 
   // Set to true if this event is an holiday
   // +kubebuilder:validation:Optional
-  optional bool holiday = 2;
+  optional string method = 2;
+
+  // Set to true if this event is an holiday
+  // +kubebuilder:validation:Optional
+  optional bool holiday = 3;
 
   // If this event is an holiday, this is the holiday country
   // +kubebuilder:validation:Optional
-  optional string country = 3;
+  optional string country = 4;
 
   // Pre event window, that might have event effects
   // +kubebuilder:validation:Optional
-  optional int32 preEvent = 4;
+  optional int32 preEvent = 5;
 
   // Post event windows the might have event effects.
   // +kubebuilder:validation:Optional
-  optional int32 postEvent = 5;
+  optional int32 postEvent = 6;
 
   // The time points to mark the events
   // +kubebuilder:validation:Optional
-  repeated string timePoints = 6;
+  repeated string timePoints = 7;
 }
 
 // TrainingSpec specifies the configuration of a model training workload

@@ -5487,6 +5487,9 @@ export namespace ThresholdPrunerOptions {
 }
 
 export class TimeSeriesEvent extends jspb.Message {
+  getName(): string;
+  setName(value: string): TimeSeriesEvent;
+
   getMethod(): string;
   setMethod(value: string): TimeSeriesEvent;
 
@@ -5517,6 +5520,7 @@ export class TimeSeriesEvent extends jspb.Message {
 
 export namespace TimeSeriesEvent {
   export type AsObject = {
+    name: string,
     method: string,
     holiday: boolean,
     country: string,
