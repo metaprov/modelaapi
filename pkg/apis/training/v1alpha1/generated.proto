@@ -1042,17 +1042,20 @@ message InterpretabilityStatus {
 }
 
 message Level {
+  // The level name, must be unique
+  optional string name = 1;
+
   // The key for the levels
-  repeated string index = 1;
+  repeated string index = 2;
 
   // The forecast horizon
-  optional int32 horizon = 2;
+  optional int32 horizon = 3;
 
   // The freq of the level
-  optional string freq = 3;
+  optional string freq = 4;
 
   // The aggregate function used to roll up the lower level
-  optional string aggregate = 4;
+  optional string aggregate = 5;
 }
 
 message MedianPrunerOptions {

@@ -767,14 +767,16 @@ type StudyList struct {
 }
 
 type Level struct {
+	// The level name, must be unique
+	Name string `json:"name,omitempty" protobuf:"bytes,1,rep,name=name"`
 	// The key for the levels
-	Index []string `json:"index,omitempty" protobuf:"bytes,1,rep,name=index"`
+	Index []string `json:"index,omitempty" protobuf:"bytes,2,rep,name=index"`
 	// The forecast horizon
-	Horizon *int32 `json:"horizon,omitempty" protobuf:"varint,2,opt,name=horizon"`
+	Horizon *int32 `json:"horizon,omitempty" protobuf:"varint,3,opt,name=horizon"`
 	// The freq of the level
-	Freq *catalog.Freq `json:"freq,omitempty" protobuf:"bytes,3,opt,name=freq"`
+	Freq *catalog.Freq `json:"freq,omitempty" protobuf:"bytes,4,opt,name=freq"`
 	// The aggregate function used to roll up the lower level
-	Aggregate *catalog.Aggregate `json:"aggregate,omitempty" protobuf:"bytes,4,opt,name=aggregate"`
+	Aggregate *catalog.Aggregate `json:"aggregate,omitempty" protobuf:"bytes,5,opt,name=aggregate"`
 }
 
 // ModelImageSpec specifies the destination of Docker images produced by a Study

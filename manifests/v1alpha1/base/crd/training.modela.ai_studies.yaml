@@ -578,6 +578,9 @@ spec:
                           items:
                             type: string
                           type: array
+                        name:
+                          description: The level name, must be unique
+                          type: string
                       type: object
                     type: array
                   outputLocation:

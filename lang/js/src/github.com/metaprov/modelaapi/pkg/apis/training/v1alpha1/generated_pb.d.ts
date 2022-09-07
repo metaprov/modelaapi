@@ -1639,6 +1639,9 @@ export namespace InterpretabilityStatus {
 }
 
 export class Level extends jspb.Message {
+  getName(): string;
+  setName(value: string): Level;
+
   getIndexList(): Array<string>;
   setIndexList(value: Array<string>): Level;
   clearIndexList(): Level;
@@ -1663,6 +1666,7 @@ export class Level extends jspb.Message {
 
 export namespace Level {
   export type AsObject = {
+    name: string,
     indexList: Array<string>,
     horizon: number,
     freq: string,

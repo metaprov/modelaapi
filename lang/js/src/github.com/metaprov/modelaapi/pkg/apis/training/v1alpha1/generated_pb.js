@@ -17933,7 +17933,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.InterpretabilityS
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.repeatedFields_ = [1];
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.repeatedFields_ = [2];
 
 
 
@@ -17966,10 +17966,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.prototype.t
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.toObject = function(includeInstance, msg) {
   var f, obj = {
-    indexList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    horizon: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    freq: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-    aggregate: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
+    name: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    indexList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
+    horizon: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    freq: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    aggregate: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -18008,17 +18009,21 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.deserialize
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.addIndex(value);
+      msg.setName(value);
       break;
     case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addIndex(value);
+      break;
+    case 3:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setHorizon(value);
       break;
-    case 3:
+    case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setFreq(value);
       break;
-    case 4:
+    case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setAggregate(value);
       break;
@@ -18051,23 +18056,23 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.prototype.s
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getIndexList();
-  if (f.length > 0) {
-    writer.writeRepeatedString(
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeString(
       1,
       f
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 2));
-  if (f != null) {
-    writer.writeInt32(
+  f = message.getIndexList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
       2,
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  f = /** @type {number} */ (jspb.Message.getField(message, 3));
   if (f != null) {
-    writer.writeString(
+    writer.writeInt32(
       3,
       f
     );
@@ -18079,15 +18084,58 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.serializeBi
       f
     );
   }
+  f = /** @type {string} */ (jspb.Message.getField(message, 5));
+  if (f != null) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
 };
 
 
 /**
- * repeated string index = 1;
+ * optional string name = 1;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.prototype.getName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.prototype.setName = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.prototype.clearName = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.prototype.hasName = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * repeated string index = 2;
  * @return {!Array<string>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.prototype.getIndexList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 1));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 2));
 };
 
 
@@ -18096,7 +18144,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.prototype.g
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.prototype.setIndexList = function(value) {
-  return jspb.Message.setField(this, 1, value || []);
+  return jspb.Message.setField(this, 2, value || []);
 };
 
 
@@ -18106,7 +18154,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.prototype.s
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.prototype.addIndex = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 1, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 2, value, opt_index);
 };
 
 
@@ -18120,11 +18168,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.prototype.c
 
 
 /**
- * optional int32 horizon = 2;
+ * optional int32 horizon = 3;
  * @return {number}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.prototype.getHorizon = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
 
@@ -18133,42 +18181,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.prototype.g
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.prototype.setHorizon = function(value) {
-  return jspb.Message.setField(this, 2, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.prototype.clearHorizon = function() {
-  return jspb.Message.setField(this, 2, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.prototype.hasHorizon = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional string freq = 3;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.prototype.getFreq = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.prototype.setFreq = function(value) {
   return jspb.Message.setField(this, 3, value);
 };
 
@@ -18177,7 +18189,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.prototype.s
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.prototype.clearFreq = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.prototype.clearHorizon = function() {
   return jspb.Message.setField(this, 3, undefined);
 };
 
@@ -18186,16 +18198,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.prototype.c
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.prototype.hasFreq = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.prototype.hasHorizon = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional string aggregate = 4;
+ * optional string freq = 4;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.prototype.getAggregate = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.prototype.getFreq = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
@@ -18204,7 +18216,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.prototype.g
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.prototype.setAggregate = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.prototype.setFreq = function(value) {
   return jspb.Message.setField(this, 4, value);
 };
 
@@ -18213,7 +18225,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.prototype.s
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.prototype.clearAggregate = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.prototype.clearFreq = function() {
   return jspb.Message.setField(this, 4, undefined);
 };
 
@@ -18222,8 +18234,44 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.prototype.c
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.prototype.hasAggregate = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.prototype.hasFreq = function() {
   return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional string aggregate = 5;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.prototype.getAggregate = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.prototype.setAggregate = function(value) {
+  return jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.prototype.clearAggregate = function() {
+  return jspb.Message.setField(this, 5, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.prototype.hasAggregate = function() {
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
