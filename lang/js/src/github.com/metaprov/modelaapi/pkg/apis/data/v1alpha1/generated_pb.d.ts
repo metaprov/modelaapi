@@ -215,8 +215,11 @@ export class Column extends jspb.Message {
   getTimeseries(): boolean;
   setTimeseries(value: boolean): Column;
 
-  getExogenous(): boolean;
-  setExogenous(value: boolean): Column;
+  getRegressor(): boolean;
+  setRegressor(value: boolean): Column;
+
+  getLaggedregressor(): boolean;
+  setLaggedregressor(value: boolean): Column;
 
   getTimeindex(): boolean;
   setTimeindex(value: boolean): Column;
@@ -280,7 +283,8 @@ export namespace Column {
     loc: number,
     datetimeformat: string,
     timeseries: boolean,
-    exogenous: boolean,
+    regressor: boolean,
+    laggedregressor: boolean,
     timeindex: boolean,
   }
 }

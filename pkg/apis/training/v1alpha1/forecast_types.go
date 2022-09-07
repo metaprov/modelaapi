@@ -126,9 +126,6 @@ type WindowSpec struct {
 
 // The forecaster search define a search for the forecaster
 type ForecasterSpec struct {
-	// The list of additional regressors. The regressors are part of the time series data
-	// +kubebuilder:validation:Optional
-	Regressors []string `json:"regressors,omitempty" protobuf:"bytes,1,rep,name=regressors"`
 	// The spec for the holiday
 	// +kubebuilder:validation:Optional
 	Events []TimeSeriesEvent `json:"events,omitempty" protobuf:"bytes,2,rep,name=events"`
@@ -138,48 +135,36 @@ type ForecasterSpec struct {
 	// Specification for the future windows
 	// +kubebuilder:validation:Optional
 	Future WindowSpec `json:"future,omitempty" protobuf:"bytes,4,opt,name=future"`
-	// The backtest specification, the system supports back testing with expanding windows.
-	// +kubebuilder:validation:Optional
-	Backtest BacktestSpec `json:"backtest,omitempty" protobuf:"bytes,5,opt,name=backtest"`
 	// Make a forecast post training
 	// +kubebuilder:validation:Optional
-	Forecast *bool `json:"forecast,omitempty" protobuf:"bytes,6,opt,name=forecast"`
+	Forecast *bool `json:"forecast,omitempty" protobuf:"bytes,5,opt,name=forecast"`
 	// The data location that would store the forecast result.
 	// +kubebuilder:validation:Optional
-	OutputLocation data.DataLocation `json:"outputLocation,omitempty" protobuf:"bytes,7,opt,name=outputLocation"`
+	OutputLocation data.DataLocation `json:"outputLocation,omitempty" protobuf:"bytes,6,opt,name=outputLocation"`
 	// List of time series features to compute on each time series.
 	// +kubebuilder:validation:Optional
-	Features []catalog.Metric `json:"features,omitempty" protobuf:"bytes,8,opt,name=features"`
+	Features []catalog.Metric `json:"features,omitempty" protobuf:"bytes,7,opt,name=features"`
 	// +kubebuilder:validation:Optional
-	Levels []Level `json:"levels,omitempty" protobuf:"bytes,9,rep,name=levels"`
+	Levels []Level `json:"levels,omitempty" protobuf:"bytes,8,rep,name=levels"`
 	// +kubebuilder:validation:Optional
-	PredefinedTemplate ModelTemplate `json:"predefinedTemplate,omitempty" protobuf:"bytes,10,opt,name=predefinedTemplate"`
+	PredefinedTemplate ModelTemplate `json:"predefinedTemplate,omitempty" protobuf:"bytes,9,opt,name=predefinedTemplate"`
 	// +kubebuilder:validation:Optional
-	AnomalyInfo []AnomalyItem `json:"anomalyInfo,omitempty" protobuf:"bytes,11,opt,name=anomalyInfo"`
-
-	// The data format of the time column, this will be based
+	AnomalyInfo []AnomalyItem `json:"anomalyInfo,omitempty" protobuf:"bytes,10,opt,name=anomalyInfo"`
 	// +kubebuilder:validation:Optional
-	DateFormat *string `json:"dateFormat,omitempty" protobuf:"bytes,12,opt,name=dateFormat"`
-	//
-	// +kubebuilder:validation:Optional
-	Freq *catalog.Freq `json:"freq,omitempty" protobuf:"bytes,13,opt,name=freq"`
-	// +kubebuilder:validation:Optional
-	TimeColumn *string `json:"timeColumn,omitempty" protobuf:"bytes,14,opt,name=timeColumn"`
-	// +kubebuilder:validation:Optional
-	TrainEndDate string `json:"trainEndData,omitempty" protobuf:"bytes,15,opt,name=trainEndData"`
+	TrainEndDate string `json:"trainEndData,omitempty" protobuf:"bytes,14,opt,name=trainEndData"`
 	// The value column. this is the name of the column to forecast, this will be based on the data source.
 	// +kubebuilder:validation:Optional
-	ValueColumn string `json:"valueColumn,omitempty" protobuf:"bytes,16,opt,name=valueColumn"`
+	ValueColumn string `json:"valueColumn,omitempty" protobuf:"bytes,15,opt,name=valueColumn"`
 	// +kubebuilder:validation:Optional
-	HPOBudget *int32 `json:"hpoBudget,omitempty" protobuf:"bytes,17,opt,name=hpoBudget"`
+	HPOBudget *int32 `json:"hpoBudget,omitempty" protobuf:"bytes,16,opt,name=hpoBudget"`
 	// Spec for evaluation
 	// +kubebuilder:validation:Optional
-	Evaluation EvaluationMetricSpec `json:"evaluation,omitempty" protobuf:"bytes,18,opt,name=evaluation"`
+	Evaluation EvaluationMetricSpec `json:"evaluation,omitempty" protobuf:"bytes,17,opt,name=evaluation"`
 	// Spec for time series cross validation
 	// +kubebuilder:validation:Optional
-	CV ForecasterCrossValidationSpec `json:"cv,omitempty" protobuf:"bytes,19,opt,name=cv"`
+	CV ForecasterCrossValidationSpec `json:"cv,omitempty" protobuf:"bytes,18,opt,name=cv"`
 	// +kubebuilder:validation:Optional
-	Seasonalities []PeriodSeasonalitySpec `json:"seasonalities,omitempty" protobuf:"bytes,20,opt,name=seasonalities"`
+	Seasonalities []PeriodSeasonalitySpec `json:"seasonalities,omitempty" protobuf:"bytes,19,opt,name=seasonalities"`
 	// Lagged Regressors
 	// +kubebuilder:validation:Optional
 	LaggedRegressors []string `json:"laggedRegressors,omitempty" protobuf:"bytes,21,opt,name=laggedRegressors"`

@@ -256,16 +256,21 @@ message Column {
   // +kubebuilder:validation:Optional
   optional bool timeseries = 50;
 
-  // In forecasting based data sets Indicates if the column is contains a exogenous information.
+  // In forecasting based data sets Indicates if the column is regressor
   // This is relevant only for time series schema
   // +kubebuilder:validation:Optional
-  optional bool exogenous = 51;
+  optional bool regressor = 51;
+
+  // In forecasting based data sets Indicates if the column is regressor
+  // This is relevant only for time series schema
+  // +kubebuilder:validation:Optional
+  optional bool laggedRegressor = 52;
 
   // For time series, the field indicate tha this column will be used as the data time index
   // for the time series. Note that there can multiple datatime type columns, but only one
   // time column.
   // +kubebuilder:validation:Optional
-  optional bool timeIndex = 52;
+  optional bool timeIndex = 53;
 }
 
 message ColumnHistogram {

@@ -1021,28 +1021,6 @@ spec:
                           type: string
                       type: object
                     type: array
-                  backtest:
-                    description: The backtest specification, the system supports back
-                      testing with expanding windows.
-                    properties:
-                      Initial:
-                        description: ExpectedValueMax size for a single training set
-                        format: int32
-                        type: integer
-                      gap:
-                        description: The number of data points between each windows
-                        format: int32
-                        minimum: 0
-                        type: integer
-                      sliding:
-                        description: If true, use sliding windows, else use expanding
-                          windows
-                        type: boolean
-                      splits:
-                        description: Number of splits. Default is 5
-                        format: int32
-                        type: integer
-                    type: object
                   cv:
                     description: Spec for time series cross validation
                     properties:
@@ -1081,10 +1059,6 @@ spec:
                       useMostRecentSplits:
                         type: boolean
                     type: object
-                  dateFormat:
-                    description: The data format of the time column, this will be
-                      based
-                    type: string
                   evaluation:
                     description: Spec for evaluation
                     properties:
@@ -1154,19 +1128,6 @@ spec:
                   forecast:
                     description: Make a forecast post training
                     type: boolean
-                  freq:
-                    description: The Horizon unit
-                    enum:
-                    - second
-                    - minute
-                    - hour
-                    - day
-                    - week
-                    - month
-                    - quarter
-                    - year
-                    - multi-year
-                    type: string
                   future:
                     description: Specification for the future windows
                     properties:
@@ -1399,12 +1360,6 @@ spec:
                     - hourly-168
                     - hourly-336
                     type: string
-                  regressors:
-                    description: The list of additional regressors. The regressors
-                      are part of the time series data
-                    items:
-                      type: string
-                    type: array
                   seasonalities:
                     items:
                       description: Define the seasonality for a period (yearly / monthly
@@ -1440,8 +1395,6 @@ spec:
                           type: integer
                       type: object
                     type: array
-                  timeColumn:
-                    type: string
                   trainEndData:
                     type: string
                   valueColumn:

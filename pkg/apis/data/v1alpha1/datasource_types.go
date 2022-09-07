@@ -492,15 +492,19 @@ type Column struct {
 	// Otherwise, if two or more columns contain time series, than this is a univariate time series.
 	// +kubebuilder:validation:Optional
 	TimeSeries *bool `json:"timeseries,omitempty" protobuf:"varint,50,opt,name=timeseries"`
-	// In forecasting based data sets Indicates if the column is contains a exogenous information.
+	// In forecasting based data sets Indicates if the column is regressor
 	// This is relevant only for time series schema
 	// +kubebuilder:validation:Optional
-	Exogenous *bool `json:"exogenous,omitempty" protobuf:"varint,51,opt,name=exogenous"`
+	Regressor *bool `json:"regressor,omitempty" protobuf:"varint,51,opt,name=regressor"`
+	// In forecasting based data sets Indicates if the column is regressor
+	// This is relevant only for time series schema
+	// +kubebuilder:validation:Optional
+	LaggedRegressor *bool `json:"laggedRegressor,omitempty" protobuf:"varint,52,opt,name=laggedRegressor"`
 	// For time series, the field indicate tha this column will be used as the data time index
 	// for the time series. Note that there can multiple datatime type columns, but only one
 	// time column.
 	// +kubebuilder:validation:Optional
-	TimeIndex *bool `json:"timeIndex,omitempty" protobuf:"varint,52,opt,name=timeIndex"`
+	TimeIndex *bool `json:"timeIndex,omitempty" protobuf:"varint,53,opt,name=timeIndex"`
 }
 
 // DataSource defines the specification for the file format and column-level schema of data to be used within Modela

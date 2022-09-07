@@ -820,10 +820,6 @@ message ForecasterCrossValidationSpec {
 
 // The forecaster search define a search for the forecaster
 message ForecasterSpec {
-  // The list of additional regressors. The regressors are part of the time series data
-  // +kubebuilder:validation:Optional
-  repeated string regressors = 1;
-
   // The spec for the holiday
   // +kubebuilder:validation:Optional
   repeated TimeSeriesEvent events = 2;
@@ -836,61 +832,47 @@ message ForecasterSpec {
   // +kubebuilder:validation:Optional
   optional WindowSpec future = 4;
 
-  // The backtest specification, the system supports back testing with expanding windows.
-  // +kubebuilder:validation:Optional
-  optional BacktestSpec backtest = 5;
-
   // Make a forecast post training
   // +kubebuilder:validation:Optional
-  optional bool forecast = 6;
+  optional bool forecast = 5;
 
   // The data location that would store the forecast result.
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation outputLocation = 7;
+  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation outputLocation = 6;
 
   // List of time series features to compute on each time series.
   // +kubebuilder:validation:Optional
-  repeated string features = 8;
+  repeated string features = 7;
 
   // +kubebuilder:validation:Optional
-  repeated Level levels = 9;
+  repeated Level levels = 8;
 
   // +kubebuilder:validation:Optional
-  optional string predefinedTemplate = 10;
+  optional string predefinedTemplate = 9;
 
   // +kubebuilder:validation:Optional
-  repeated AnomalyItem anomalyInfo = 11;
-
-  // The data format of the time column, this will be based
-  // +kubebuilder:validation:Optional
-  optional string dateFormat = 12;
+  repeated AnomalyItem anomalyInfo = 10;
 
   // +kubebuilder:validation:Optional
-  optional string freq = 13;
-
-  // +kubebuilder:validation:Optional
-  optional string timeColumn = 14;
-
-  // +kubebuilder:validation:Optional
-  optional string trainEndData = 15;
+  optional string trainEndData = 14;
 
   // The value column. this is the name of the column to forecast, this will be based on the data source.
   // +kubebuilder:validation:Optional
-  optional string valueColumn = 16;
+  optional string valueColumn = 15;
 
   // +kubebuilder:validation:Optional
-  optional int32 hpoBudget = 17;
+  optional int32 hpoBudget = 16;
 
   // Spec for evaluation
   // +kubebuilder:validation:Optional
-  optional EvaluationMetricSpec evaluation = 18;
+  optional EvaluationMetricSpec evaluation = 17;
 
   // Spec for time series cross validation
   // +kubebuilder:validation:Optional
-  optional ForecasterCrossValidationSpec cv = 19;
+  optional ForecasterCrossValidationSpec cv = 18;
 
   // +kubebuilder:validation:Optional
-  repeated PeriodSeasonalitySpec seasonalities = 20;
+  repeated PeriodSeasonalitySpec seasonalities = 19;
 
   // Lagged Regressors
   // +kubebuilder:validation:Optional

@@ -3989,8 +3989,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.toObject = fun
     loc: (f = jspb.Message.getField(msg, 48)) == null ? undefined : f,
     datetimeformat: (f = jspb.Message.getField(msg, 49)) == null ? undefined : f,
     timeseries: (f = jspb.Message.getBooleanField(msg, 50)) == null ? undefined : f,
-    exogenous: (f = jspb.Message.getBooleanField(msg, 51)) == null ? undefined : f,
-    timeindex: (f = jspb.Message.getBooleanField(msg, 52)) == null ? undefined : f
+    regressor: (f = jspb.Message.getBooleanField(msg, 51)) == null ? undefined : f,
+    laggedregressor: (f = jspb.Message.getBooleanField(msg, 52)) == null ? undefined : f,
+    timeindex: (f = jspb.Message.getBooleanField(msg, 53)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -4225,9 +4226,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.deserializeBin
       break;
     case 51:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setExogenous(value);
+      msg.setRegressor(value);
       break;
     case 52:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setLaggedregressor(value);
+      break;
+    case 53:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setTimeindex(value);
       break;
@@ -4614,6 +4619,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.serializeBinar
   if (f != null) {
     writer.writeBool(
       52,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 53));
+  if (f != null) {
+    writer.writeBool(
+      53,
       f
     );
   }
@@ -6386,10 +6398,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.hasT
 
 
 /**
- * optional bool exogenous = 51;
+ * optional bool regressor = 51;
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.getExogenous = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.getRegressor = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 51, false));
 };
 
@@ -6398,7 +6410,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.getE
  * @param {boolean} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.setExogenous = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.setRegressor = function(value) {
   return jspb.Message.setField(this, 51, value);
 };
 
@@ -6407,7 +6419,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.setE
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.clearExogenous = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.clearRegressor = function() {
   return jspb.Message.setField(this, 51, undefined);
 };
 
@@ -6416,16 +6428,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.clea
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.hasExogenous = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.hasRegressor = function() {
   return jspb.Message.getField(this, 51) != null;
 };
 
 
 /**
- * optional bool timeIndex = 52;
+ * optional bool laggedRegressor = 52;
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.getTimeindex = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.getLaggedregressor = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 52, false));
 };
 
@@ -6434,7 +6446,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.getT
  * @param {boolean} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.setTimeindex = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.setLaggedregressor = function(value) {
   return jspb.Message.setField(this, 52, value);
 };
 
@@ -6443,7 +6455,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.setT
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.clearTimeindex = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.clearLaggedregressor = function() {
   return jspb.Message.setField(this, 52, undefined);
 };
 
@@ -6452,8 +6464,44 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.clea
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.hasTimeindex = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.hasLaggedregressor = function() {
   return jspb.Message.getField(this, 52) != null;
+};
+
+
+/**
+ * optional bool timeIndex = 53;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.getTimeindex = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 53, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.setTimeindex = function(value) {
+  return jspb.Message.setField(this, 53, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.clearTimeindex = function() {
+  return jspb.Message.setField(this, 53, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.hasTimeindex = function() {
+  return jspb.Message.getField(this, 53) != null;
 };
 
 

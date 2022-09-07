@@ -312,8 +312,13 @@ func (in *Column) DeepCopyInto(out *Column) {
 		*out = new(bool)
 		**out = **in
 	}
-	if in.Exogenous != nil {
-		in, out := &in.Exogenous, &out.Exogenous
+	if in.Regressor != nil {
+		in, out := &in.Regressor, &out.Regressor
+		*out = new(bool)
+		**out = **in
+	}
+	if in.LaggedRegressor != nil {
+		in, out := &in.LaggedRegressor, &out.LaggedRegressor
 		*out = new(bool)
 		**out = **in
 	}

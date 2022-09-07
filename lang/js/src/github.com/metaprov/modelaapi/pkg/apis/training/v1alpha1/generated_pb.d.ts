@@ -1273,11 +1273,6 @@ export namespace ForecasterCrossValidationSpec {
 }
 
 export class ForecasterSpec extends jspb.Message {
-  getRegressorsList(): Array<string>;
-  setRegressorsList(value: Array<string>): ForecasterSpec;
-  clearRegressorsList(): ForecasterSpec;
-  addRegressors(value: string, index?: number): ForecasterSpec;
-
   getEventsList(): Array<TimeSeriesEvent>;
   setEventsList(value: Array<TimeSeriesEvent>): ForecasterSpec;
   clearEventsList(): ForecasterSpec;
@@ -1292,11 +1287,6 @@ export class ForecasterSpec extends jspb.Message {
   setFuture(value?: WindowSpec): ForecasterSpec;
   hasFuture(): boolean;
   clearFuture(): ForecasterSpec;
-
-  getBacktest(): BacktestSpec | undefined;
-  setBacktest(value?: BacktestSpec): ForecasterSpec;
-  hasBacktest(): boolean;
-  clearBacktest(): ForecasterSpec;
 
   getForecast(): boolean;
   setForecast(value: boolean): ForecasterSpec;
@@ -1323,15 +1313,6 @@ export class ForecasterSpec extends jspb.Message {
   setAnomalyinfoList(value: Array<AnomalyItem>): ForecasterSpec;
   clearAnomalyinfoList(): ForecasterSpec;
   addAnomalyinfo(value?: AnomalyItem, index?: number): AnomalyItem;
-
-  getDateformat(): string;
-  setDateformat(value: string): ForecasterSpec;
-
-  getFreq(): string;
-  setFreq(value: string): ForecasterSpec;
-
-  getTimecolumn(): string;
-  setTimecolumn(value: string): ForecasterSpec;
 
   getTrainenddata(): string;
   setTrainenddata(value: string): ForecasterSpec;
@@ -1372,20 +1353,15 @@ export class ForecasterSpec extends jspb.Message {
 
 export namespace ForecasterSpec {
   export type AsObject = {
-    regressorsList: Array<string>,
     eventsList: Array<TimeSeriesEvent.AsObject>,
     past?: WindowSpec.AsObject,
     future?: WindowSpec.AsObject,
-    backtest?: BacktestSpec.AsObject,
     forecast: boolean,
     outputlocation?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     featuresList: Array<string>,
     levelsList: Array<Level.AsObject>,
     predefinedtemplate: string,
     anomalyinfoList: Array<AnomalyItem.AsObject>,
-    dateformat: string,
-    freq: string,
-    timecolumn: string,
     trainenddata: string,
     valuecolumn: string,
     hpobudget: number,

@@ -628,11 +628,6 @@ spec:
                                 in the column, which does not include the minimum
                                 value
                               type: boolean
-                            exogenous:
-                              description: In forecasting based data sets Indicates
-                                if the column is contains a exogenous information.
-                                This is relevant only for time series schema
-                              type: boolean
                             externalDocs:
                               description: A link to user-specified external documentation
                               type: string
@@ -715,6 +710,11 @@ spec:
                               type: string
                             key:
                               description: Indicates if the column is an key column
+                              type: boolean
+                            laggedRegressor:
+                              description: In forecasting based data sets Indicates
+                                if the column is regressor This is relevant only for
+                                time series schema
                               type: boolean
                             loc:
                               description: Contain the Index for the column in the
@@ -803,6 +803,11 @@ spec:
                             protected:
                               description: Protected means that this feature is important
                                 for ethical AI / Fairness
+                              type: boolean
+                            regressor:
+                              description: In forecasting based data sets Indicates
+                                if the column is regressor This is relevant only for
+                                time series schema
                               type: boolean
                             required:
                               description: Required
