@@ -2860,7 +2860,7 @@ message PercentilePrunerOptions {
 
 // Define the seasonality for a period (yearly / monthly / daily)
 message PeriodSeasonalitySpec {
-  // +kubebuilder:default:=0
+  // +kubebuilder:default:=day
   // +kubebuilder:validation:Optional
   optional string freq = 1;
 

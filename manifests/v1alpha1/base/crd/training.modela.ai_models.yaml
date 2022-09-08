@@ -1434,7 +1434,7 @@ spec:
                         / daily)
                       properties:
                         freq:
-                          default: 0
+                          default: day
                           description: The Horizon unit
                           enum:
                           - second

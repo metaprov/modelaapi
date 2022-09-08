@@ -98,7 +98,7 @@ const (
 
 // Define the seasonality for a period (yearly / monthly / daily)
 type PeriodSeasonalitySpec struct {
-	// +kubebuilder:default:=0
+	// +kubebuilder:default:=day
 	// +kubebuilder:validation:Optional
 	Freq catalog.Freq `json:"freq,omitempty" protobuf:"varint,1,opt,name=freq"`
 	// If enabled, the number of data points in the interval
