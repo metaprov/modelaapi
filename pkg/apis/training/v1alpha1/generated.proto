@@ -27,18 +27,23 @@ message AlgorithmSearchSpaceSpec {
   repeated string allowlist = 1;
 }
 
-message AnomalyItem {
+message Anomaly {
   // +kubebuilder:validation:Optional
-  optional string valueColumn = 1;
+  optional string name = 1;
 
   // +kubebuilder:validation:Optional
-  optional string adjDeltaColumn = 2;
+  optional string valueColumn = 2;
 
   // +kubebuilder:validation:Optional
-  repeated string start = 3;
+  optional string adjDeltaColumn = 3;
 
+  // The start of the anomaly
   // +kubebuilder:validation:Optional
-  repeated string end = 4;
+  optional string start = 4;
+
+  // The end of the anomaly
+  // +kubebuilder:validation:Optional
+  optional string end = 5;
 }
 
 // AudioPipelineSpec represents a single pipeline for preprocessing audio data
@@ -518,17 +523,42 @@ message EnsemblesSpec {
 
 // What metric to evaluate
 message EvaluationMetricSpec {
+  // From: https://linkedin.github.io/greykite/docs/0.1.0/html/pages/stepbystep/0400_configuration.html
+  // Used to select the optimal model during cross-validation.
   // +kubebuilder:validation:Optional
-  optional string aggregateFunction = 1;
+  optional string selection = 1;
 
+  // From: https://linkedin.github.io/greykite/docs/0.1.0/html/pages/stepbystep/0400_configuration.html
+  // Additional metrics to compute during CV, besides the one specified by ``cv_selection_metric``
   // +kubebuilder:validation:Optional
-  optional int32 aggregatePeriod = 2;
+  repeated string reporting = 2;
 
+  //  From: https://linkedin.github.io/greykite/docs/0.1.0/html/pages/stepbystep/0400_configuration.html
+  //  Defines how to aggregate rolling windows of actual and predicted values
+  //  before evaluation.
   // +kubebuilder:validation:Optional
-  optional string nullModelParams = 3;
+  optional string aggregateFunction = 3;
 
+  //  From: https://linkedin.github.io/greykite/docs/0.1.0/html/pages/stepbystep/0400_configuration.html
+  //  Number of periods to aggregate before evaluation.
   // +kubebuilder:validation:Optional
-  optional double relativeErrorTolerance = 4;
+  optional int32 aggregatePeriod = 4;
+
+  //  From: https://linkedin.github.io/greykite/docs/0.1.0/html/pages/stepbystep/0400_configuration.html
+  // Defines baseline model to compute ``R2_null_model_score`` evaluation metric.
+  // R2_null_model_score is the improvement in the loss function relative
+  // to a null model. It can be used to evaluate model quality with respect to
+  // a simple baseline
+  // +kubebuilder:validation:Optional
+  optional string nullModelParams = 5;
+
+  //  From: https://linkedin.github.io/greykite/docs/0.1.0/html/pages/stepbystep/0400_configuration.html
+  // Threshold to compute the ``Outside Tolerance`` metric,
+  // defined as the fraction of forecasted values whose relative
+  // error is strictly greater than ``relative_error_tolerance``.
+  // If `None`, the metric is not computed.
+  // +kubebuilder:validation:Optional
+  optional double relativeErrorTolerance = 6;
 }
 
 // FeatureEngineeringPipeline represent a single pipeline to transform a dataset
@@ -785,37 +815,34 @@ message FeatureSelectionSpec {
 // The cross validation spec, used to evaluate the forecaster during training.
 message ForecasterCrossValidationSpec {
   // +kubebuilder:validation:Optional
-  repeated string reportMetrics = 1;
+  optional bool expandingWindows = 1;
 
   // +kubebuilder:validation:Optional
-  optional string selectionMetrics = 2;
+  optional int32 horizon = 2;
 
   // +kubebuilder:validation:Optional
-  optional bool expandingWindows = 3;
+  optional int32 maxSplits = 3;
 
   // +kubebuilder:validation:Optional
-  optional int32 horizon = 4;
+  optional int32 minTrainPeriods = 4;
 
   // +kubebuilder:validation:Optional
-  optional int32 maxSplits = 5;
+  optional int32 periodsBetweenSplits = 5;
 
   // +kubebuilder:validation:Optional
-  optional int32 minTrainPeriods = 6;
+  optional int32 periodsBetweenTrainTest = 6;
 
   // +kubebuilder:validation:Optional
-  optional int32 periodsBetweenSplits = 7;
+  optional bool useMostRecentSplits = 7;
 
   // +kubebuilder:validation:Optional
-  optional int32 periodsBetweenTrainTest = 8;
+  optional int32 testHorizon = 8;
 
   // +kubebuilder:validation:Optional
-  optional bool useMostRecentSplits = 9;
+  optional string growth = 9;
 
-  // +kubebuilder:validation:Optional
-  optional int32 testHorizon = 10;
-
-  // +kubebuilder:validation:Optional
-  optional string growth = 11;
+  // Evaluation define how to evaluate the cross validation result
+  optional EvaluationMetricSpec evaluation = 10;
 }
 
 // The forecaster search define a search for the forecaster
@@ -851,7 +878,7 @@ message ForecasterSpec {
   optional string predefinedTemplate = 9;
 
   // +kubebuilder:validation:Optional
-  repeated AnomalyItem anomalyInfo = 10;
+  repeated Anomaly anomalies = 10;
 
   // +kubebuilder:validation:Optional
   optional string trainEndData = 14;

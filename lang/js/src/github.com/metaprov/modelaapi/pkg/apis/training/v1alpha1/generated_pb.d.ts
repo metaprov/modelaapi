@@ -28,37 +28,37 @@ export namespace AlgorithmSearchSpaceSpec {
   }
 }
 
-export class AnomalyItem extends jspb.Message {
+export class Anomaly extends jspb.Message {
+  getName(): string;
+  setName(value: string): Anomaly;
+
   getValuecolumn(): string;
-  setValuecolumn(value: string): AnomalyItem;
+  setValuecolumn(value: string): Anomaly;
 
   getAdjdeltacolumn(): string;
-  setAdjdeltacolumn(value: string): AnomalyItem;
+  setAdjdeltacolumn(value: string): Anomaly;
 
-  getStartList(): Array<string>;
-  setStartList(value: Array<string>): AnomalyItem;
-  clearStartList(): AnomalyItem;
-  addStart(value: string, index?: number): AnomalyItem;
+  getStart(): string;
+  setStart(value: string): Anomaly;
 
-  getEndList(): Array<string>;
-  setEndList(value: Array<string>): AnomalyItem;
-  clearEndList(): AnomalyItem;
-  addEnd(value: string, index?: number): AnomalyItem;
+  getEnd(): string;
+  setEnd(value: string): Anomaly;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): AnomalyItem.AsObject;
-  static toObject(includeInstance: boolean, msg: AnomalyItem): AnomalyItem.AsObject;
-  static serializeBinaryToWriter(message: AnomalyItem, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): AnomalyItem;
-  static deserializeBinaryFromReader(message: AnomalyItem, reader: jspb.BinaryReader): AnomalyItem;
+  toObject(includeInstance?: boolean): Anomaly.AsObject;
+  static toObject(includeInstance: boolean, msg: Anomaly): Anomaly.AsObject;
+  static serializeBinaryToWriter(message: Anomaly, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Anomaly;
+  static deserializeBinaryFromReader(message: Anomaly, reader: jspb.BinaryReader): Anomaly;
 }
 
-export namespace AnomalyItem {
+export namespace Anomaly {
   export type AsObject = {
+    name: string,
     valuecolumn: string,
     adjdeltacolumn: string,
-    startList: Array<string>,
-    endList: Array<string>,
+    start: string,
+    end: string,
   }
 }
 
@@ -843,6 +843,14 @@ export namespace EnsemblesSpec {
 }
 
 export class EvaluationMetricSpec extends jspb.Message {
+  getSelection(): string;
+  setSelection(value: string): EvaluationMetricSpec;
+
+  getReportingList(): Array<string>;
+  setReportingList(value: Array<string>): EvaluationMetricSpec;
+  clearReportingList(): EvaluationMetricSpec;
+  addReporting(value: string, index?: number): EvaluationMetricSpec;
+
   getAggregatefunction(): string;
   setAggregatefunction(value: string): EvaluationMetricSpec;
 
@@ -865,6 +873,8 @@ export class EvaluationMetricSpec extends jspb.Message {
 
 export namespace EvaluationMetricSpec {
   export type AsObject = {
+    selection: string,
+    reportingList: Array<string>,
     aggregatefunction: string,
     aggregateperiod: number,
     nullmodelparams: string,
@@ -1213,14 +1223,6 @@ export namespace FeatureSelectionSpec {
 }
 
 export class ForecasterCrossValidationSpec extends jspb.Message {
-  getReportmetricsList(): Array<string>;
-  setReportmetricsList(value: Array<string>): ForecasterCrossValidationSpec;
-  clearReportmetricsList(): ForecasterCrossValidationSpec;
-  addReportmetrics(value: string, index?: number): ForecasterCrossValidationSpec;
-
-  getSelectionmetrics(): string;
-  setSelectionmetrics(value: string): ForecasterCrossValidationSpec;
-
   getExpandingwindows(): boolean;
   setExpandingwindows(value: boolean): ForecasterCrossValidationSpec;
 
@@ -1248,6 +1250,11 @@ export class ForecasterCrossValidationSpec extends jspb.Message {
   getGrowth(): string;
   setGrowth(value: string): ForecasterCrossValidationSpec;
 
+  getEvaluation(): EvaluationMetricSpec | undefined;
+  setEvaluation(value?: EvaluationMetricSpec): ForecasterCrossValidationSpec;
+  hasEvaluation(): boolean;
+  clearEvaluation(): ForecasterCrossValidationSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ForecasterCrossValidationSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ForecasterCrossValidationSpec): ForecasterCrossValidationSpec.AsObject;
@@ -1258,8 +1265,6 @@ export class ForecasterCrossValidationSpec extends jspb.Message {
 
 export namespace ForecasterCrossValidationSpec {
   export type AsObject = {
-    reportmetricsList: Array<string>,
-    selectionmetrics: string,
     expandingwindows: boolean,
     horizon: number,
     maxsplits: number,
@@ -1269,6 +1274,7 @@ export namespace ForecasterCrossValidationSpec {
     usemostrecentsplits: boolean,
     testhorizon: number,
     growth: string,
+    evaluation?: EvaluationMetricSpec.AsObject,
   }
 }
 
@@ -1309,10 +1315,10 @@ export class ForecasterSpec extends jspb.Message {
   getPredefinedtemplate(): string;
   setPredefinedtemplate(value: string): ForecasterSpec;
 
-  getAnomalyinfoList(): Array<AnomalyItem>;
-  setAnomalyinfoList(value: Array<AnomalyItem>): ForecasterSpec;
-  clearAnomalyinfoList(): ForecasterSpec;
-  addAnomalyinfo(value?: AnomalyItem, index?: number): AnomalyItem;
+  getAnomaliesList(): Array<Anomaly>;
+  setAnomaliesList(value: Array<Anomaly>): ForecasterSpec;
+  clearAnomaliesList(): ForecasterSpec;
+  addAnomalies(value?: Anomaly, index?: number): Anomaly;
 
   getTrainenddata(): string;
   setTrainenddata(value: string): ForecasterSpec;
@@ -1361,7 +1367,7 @@ export namespace ForecasterSpec {
     featuresList: Array<string>,
     levelsList: Array<Level.AsObject>,
     predefinedtemplate: string,
-    anomalyinfoList: Array<AnomalyItem.AsObject>,
+    anomaliesList: Array<Anomaly.AsObject>,
     trainenddata: string,
     valuecolumn: string,
     hpobudget: number,

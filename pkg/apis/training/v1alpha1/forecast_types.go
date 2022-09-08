@@ -149,7 +149,7 @@ type ForecasterSpec struct {
 	// +kubebuilder:validation:Optional
 	PredefinedTemplate ModelTemplate `json:"predefinedTemplate,omitempty" protobuf:"bytes,9,opt,name=predefinedTemplate"`
 	// +kubebuilder:validation:Optional
-	AnomalyInfo []AnomalyItem `json:"anomalyInfo,omitempty" protobuf:"bytes,10,opt,name=anomalyInfo"`
+	Anomalies []Anomaly `json:"anomalies,omitempty" protobuf:"bytes,10,opt,name=anomalies"`
 	// +kubebuilder:validation:Optional
 	TrainEndDate string `json:"trainEndData,omitempty" protobuf:"bytes,14,opt,name=trainEndData"`
 	// The value column. this is the name of the column to forecast, this will be based on the data source.
@@ -236,15 +236,19 @@ type RegressionForecasterSpec struct {
 	Reduction ForecastStrategy `json:"reduction,omitempty" protobuf:"bytes,11,opt,name=reduction"`
 }
 
-type AnomalyItem struct {
+type Anomaly struct {
 	// +kubebuilder:validation:Optional
-	ValueColumn string `json:"valueColumn,omitempty" protobuf:"bytes,1,opt,name=valueColumn"`
+	Name string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
 	// +kubebuilder:validation:Optional
-	AdjDeltaColumn string `json:"adjDeltaColumn,omitempty" protobuf:"bytes,2,opt,name=adjDeltaColumn"`
+	ValueColumn string `json:"valueColumn,omitempty" protobuf:"bytes,2,opt,name=valueColumn"`
 	// +kubebuilder:validation:Optional
-	Start []string `json:"start,omitempty" protobuf:"bytes,3,opt,name=start"`
+	AdjDeltaColumn string `json:"adjDeltaColumn,omitempty" protobuf:"bytes,3,opt,name=adjDeltaColumn"`
+	// The start of the anomaly
 	// +kubebuilder:validation:Optional
-	End []string `json:"end,omitempty" protobuf:"bytes,4,opt,name=end"`
+	Start string `json:"start,omitempty" protobuf:"bytes,4,opt,name=start"`
+	// The end of the anomaly
+	// +kubebuilder:validation:Optional
+	End string `json:"end,omitempty" protobuf:"bytes,5,opt,name=end"`
 }
 
 type TimeSeriesEvent struct {
@@ -276,40 +280,61 @@ type ChangePoint struct {
 
 // What metric to evaluate
 type EvaluationMetricSpec struct {
+	// From: https://linkedin.github.io/greykite/docs/0.1.0/html/pages/stepbystep/0400_configuration.html
+	// Used to select the optimal model during cross-validation.
 	// +kubebuilder:validation:Optional
-	AggregateFunction *string `json:"aggregateFunction,omitempty" protobuf:"bytes,1,opt,name=aggregateFunction"`
+	Selection catalog.Metric `json:"selection,omitempty" protobuf:"bytes,1,opt,name=selection"`
+	// From: https://linkedin.github.io/greykite/docs/0.1.0/html/pages/stepbystep/0400_configuration.html
+	// Additional metrics to compute during CV, besides the one specified by ``cv_selection_metric``
 	// +kubebuilder:validation:Optional
-	AggregatePeriod *int32 `json:"aggregatePeriod,omitempty" protobuf:"bytes,2,opt,name=aggregatePeriod"`
+	Reporting []catalog.Metric `json:"reporting,omitempty" protobuf:"bytes,2,opt,name=reporting"`
+	//  From: https://linkedin.github.io/greykite/docs/0.1.0/html/pages/stepbystep/0400_configuration.html
+	//  Defines how to aggregate rolling windows of actual and predicted values
+	//  before evaluation.
 	// +kubebuilder:validation:Optional
-	NullModelParams *string `json:"nullModelParams,omitempty" protobuf:"bytes,3,opt,name=nullModelParams"`
+	AggregateFunction *string `json:"aggregateFunction,omitempty" protobuf:"bytes,3,opt,name=aggregateFunction"`
+	//  From: https://linkedin.github.io/greykite/docs/0.1.0/html/pages/stepbystep/0400_configuration.html
+	//  Number of periods to aggregate before evaluation.
 	// +kubebuilder:validation:Optional
-	RelativeErrorTolerance *float64 `json:"relativeErrorTolerance,omitempty" protobuf:"bytes,4,opt,name=relativeErrorTolerance"`
+	AggregatePeriod *int32 `json:"aggregatePeriod,omitempty" protobuf:"bytes,4,opt,name=aggregatePeriod"`
+	//  From: https://linkedin.github.io/greykite/docs/0.1.0/html/pages/stepbystep/0400_configuration.html
+	// Defines baseline model to compute ``R2_null_model_score`` evaluation metric.
+	// R2_null_model_score is the improvement in the loss function relative
+	//to a null model. It can be used to evaluate model quality with respect to
+	//a simple baseline
+	// +kubebuilder:validation:Optional
+	NullModelParams *string `json:"nullModelParams,omitempty" protobuf:"bytes,5,opt,name=nullModelParams"`
+	//  From: https://linkedin.github.io/greykite/docs/0.1.0/html/pages/stepbystep/0400_configuration.html
+	//Threshold to compute the ``Outside Tolerance`` metric,
+	//defined as the fraction of forecasted values whose relative
+	//error is strictly greater than ``relative_error_tolerance``.
+	//If `None`, the metric is not computed.
+	// +kubebuilder:validation:Optional
+	RelativeErrorTolerance *float64 `json:"relativeErrorTolerance,omitempty" protobuf:"bytes,6,opt,name=relativeErrorTolerance"`
 }
 
 // The cross validation spec, used to evaluate the forecaster during training.
 type ForecasterCrossValidationSpec struct {
 	// +kubebuilder:validation:Optional
-	ReportMetrics []catalog.Metric `json:"reportMetrics,omitempty" protobuf:"bytes,1,opt,name=reportMetrics"`
+	ExpandingWindows *bool `json:"expandingWindows,omitempty" protobuf:"bytes,1,opt,name=expandingWindows"`
 	// +kubebuilder:validation:Optional
-	SelectionMetrics catalog.Metric `json:"selectionMetrics,omitempty" protobuf:"bytes,2,opt,name=selectionMetrics"`
+	Horizon int32 `json:"horizon,omitempty" protobuf:"bytes,2,opt,name=horizon"`
 	// +kubebuilder:validation:Optional
-	ExpandingWindows *bool `json:"expandingWindows,omitempty" protobuf:"bytes,3,opt,name=expandingWindows"`
+	MaxSplits int32 `json:"maxSplits,omitempty" protobuf:"bytes,3,opt,name=maxSplits"`
 	// +kubebuilder:validation:Optional
-	Horizon int32 `json:"horizon,omitempty" protobuf:"bytes,4,opt,name=horizon"`
+	MinTrainPeriods int32 `json:"minTrainPeriods,omitempty" protobuf:"bytes,4,opt,name=minTrainPeriods"`
 	// +kubebuilder:validation:Optional
-	MaxSplits int32 `json:"maxSplits,omitempty" protobuf:"bytes,5,opt,name=maxSplits"`
+	PeriodsBetweenSplits int32 `json:"periodsBetweenSplits,omitempty" protobuf:"bytes,5,opt,name=periodsBetweenSplits"`
 	// +kubebuilder:validation:Optional
-	MinTrainPeriods int32 `json:"minTrainPeriods,omitempty" protobuf:"bytes,6,opt,name=minTrainPeriods"`
+	PeriodsBetweenTrainTest int32 `json:"periodsBetweenTrainTest,omitempty" protobuf:"bytes,6,opt,name=periodsBetweenTrainTest"`
 	// +kubebuilder:validation:Optional
-	PeriodsBetweenSplits int32 `json:"periodsBetweenSplits,omitempty" protobuf:"bytes,7,opt,name=periodsBetweenSplits"`
+	UseMostRecentSplits bool `json:"useMostRecentSplits,omitempty" protobuf:"bytes,7,opt,name=useMostRecentSplits"`
 	// +kubebuilder:validation:Optional
-	PeriodsBetweenTrainTest int32 `json:"periodsBetweenTrainTest,omitempty" protobuf:"bytes,8,opt,name=periodsBetweenTrainTest"`
+	TestHorizon int32 `json:"testHorizon,omitempty" protobuf:"bytes,8,opt,name=testHorizon"`
 	// +kubebuilder:validation:Optional
-	UseMostRecentSplits bool `json:"useMostRecentSplits,omitempty" protobuf:"bytes,9,opt,name=useMostRecentSplits"`
-	// +kubebuilder:validation:Optional
-	TestHorizon int32 `json:"testHorizon,omitempty" protobuf:"bytes,10,opt,name=testHorizon"`
-	// +kubebuilder:validation:Optional
-	Growth GrowthMode `json:"growth,omitempty" protobuf:"bytes,11,opt,name=growth"`
+	Growth GrowthMode `json:"growth,omitempty" protobuf:"bytes,9,opt,name=growth"`
+	// Evaluation define how to evaluate the cross validation result
+	Evaluation EvaluationMetricSpec `json:"evaluation,omitempty" protobuf:"bytes,10,opt,name=evaluation"`
 }
 
 type UnivariateForecastStatus struct {
