@@ -664,6 +664,7 @@ spec:
                 - novelty-detection
                 - auto
                 - unknown
+                - group-forecasting
                 type: string
               tenantRef:
                 description: The reference to the Tenant which owns the DataProduct.

@@ -564,6 +564,8 @@ spec:
                         - weekly-report
                         - monthly-report
                         - summary-report
+                        - group-time-series-dataset
+                        - group-time-series-model
                         type: string
                       resources:
                         description: Resources specifies the resource requirements

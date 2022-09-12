@@ -918,6 +918,7 @@ spec:
                 - novelty-detection
                 - auto
                 - unknown
+                - group-forecasting
                 type: string
               unitTestsTemplate:
                 description: The specification for tests for a new dataset

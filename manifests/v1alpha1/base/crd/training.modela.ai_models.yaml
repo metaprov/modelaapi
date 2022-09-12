@@ -1948,6 +1948,7 @@ spec:
                 - novelty-detection
                 - auto
                 - unknown
+                - group-forecasting
                 type: string
               tested:
                 default: false
