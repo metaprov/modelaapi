@@ -157,12 +157,13 @@ type ForecasterSpec struct {
 	ValueColumn string `json:"valueColumn,omitempty" protobuf:"bytes,15,opt,name=valueColumn"`
 	// +kubebuilder:validation:Optional
 	HPOBudget *int32 `json:"hpoBudget,omitempty" protobuf:"bytes,16,opt,name=hpoBudget"`
-	// Spec for evaluation
+	// Spec for evaluation metric
 	// +kubebuilder:validation:Optional
-	Evaluation EvaluationMetricSpec `json:"evaluation,omitempty" protobuf:"bytes,17,opt,name=evaluation"`
+	EvaluationMetrics EvaluationMetricSpec `json:"evaluationMetrics,omitempty" protobuf:"bytes,17,opt,name=evaluationMetrics"`
 	// Spec for time series cross validation
 	// +kubebuilder:validation:Optional
-	CV ForecasterCrossValidationSpec `json:"cv,omitempty" protobuf:"bytes,18,opt,name=cv"`
+	EvaluationPeriod EvaluationPeriodSpec `json:"evaluationPeriod,omitempty" protobuf:"bytes,18,opt,name=evaluationPeriod"`
+
 	// +kubebuilder:validation:Optional
 	Seasonalities []PeriodSeasonalitySpec `json:"seasonalities,omitempty" protobuf:"bytes,19,opt,name=seasonalities"`
 	// Lagged Regressors
@@ -314,27 +315,54 @@ type EvaluationMetricSpec struct {
 }
 
 // The cross validation spec, used to evaluate the forecaster during training.
-type ForecasterCrossValidationSpec struct {
+type EvaluationPeriodSpec struct {
+	//  From: https://linkedin.github.io/greykite/docs/0.1.0/html/pages/stepbystep/0400_configuration.html
+	//Numbers of periods held back from end of df for test.
+	//The rest is used for cross validation.
+	//If None, default is forecast_horizon. Set to 0 to skip backtest.
 	// +kubebuilder:validation:Optional
-	ExpandingWindows *bool `json:"expandingWindows,omitempty" protobuf:"bytes,1,opt,name=expandingWindows"`
+	TestHorizon *int32 `json:"testHorizon,omitempty" protobuf:"bytes,1,opt,name=testHorizon"`
+	//  From: https://linkedin.github.io/greykite/docs/0.1.0/html/pages/stepbystep/0400_configuration.html
+	//Number of periods for the gap between train and test data.
+	//Applies to both backtest and forecast, however the behaviour is slightly different.
+	//Check the illustration of test parameters for a visual explanation.
+	//If None, default is 0.
+
 	// +kubebuilder:validation:Optional
-	Horizon int32 `json:"horizon,omitempty" protobuf:"bytes,2,opt,name=horizon"`
+	PeriodsBetweenTrainTest *int32 `json:"periodsBetweenTrainTest,omitempty" protobuf:"bytes,2,opt,name=periodsBetweenTrainTest"`
+	//  From: https://linkedin.github.io/greykite/docs/0.1.0/html/pages/stepbystep/0400_configuration.html
+	//Number of periods to slide the test window between CV splits. Has to be greater than or equal to 1.
+	//If None, default is cv_horizon.
 	// +kubebuilder:validation:Optional
-	MaxSplits int32 `json:"maxSplits,omitempty" protobuf:"bytes,3,opt,name=maxSplits"`
+	CvPeriodsBetweenSplits *int32 `json:"cvPeriodsBetweenSplits,omitempty" protobuf:"bytes,3,opt,name=cvPeriodsBetweenSplits"`
+	//  From: https://linkedin.github.io/greykite/docs/0.1.0/html/pages/stepbystep/0400_configuration.html
+	//If True, training window for each CV split is fixed to the first available date.
+	//Otherwise, train start date is sliding, determined by cv_min_train_periods
+
 	// +kubebuilder:validation:Optional
-	MinTrainPeriods int32 `json:"minTrainPeriods,omitempty" protobuf:"bytes,4,opt,name=minTrainPeriods"`
+	CvExpandingWindows *bool `json:"cvExpandingWindows,omitempty" protobuf:"bytes,4,opt,name=cvExpandingWindows"`
+	//  From: https://linkedin.github.io/greykite/docs/0.1.0/html/pages/stepbystep/0400_configuration.html
+	//Number of periods in each CV test set
+	//If None, default is forecast_horizon. Set to 0 to skip CV.
 	// +kubebuilder:validation:Optional
-	PeriodsBetweenSplits int32 `json:"periodsBetweenSplits,omitempty" protobuf:"bytes,5,opt,name=periodsBetweenSplits"`
+	CvHorizon *int32 `json:"cvHorizon,omitempty" protobuf:"bytes,5,opt,name=cvHorizon"`
+	//  From: https://linkedin.github.io/greykite/docs/0.1.0/html/pages/stepbystep/0400_configuration.html
+	// Minimum number of periods for training each CV fold.
+	//If cv_expanding_window is False, every training period is this size
+	//If None, default is 2 * cv_horizon
 	// +kubebuilder:validation:Optional
-	PeriodsBetweenTrainTest int32 `json:"periodsBetweenTrainTest,omitempty" protobuf:"bytes,6,opt,name=periodsBetweenTrainTest"`
+	CvMinTrainPeriods *int32 `json:"cvMinTrainPeriods,omitempty" protobuf:"bytes,6,opt,name=cvMinTrainPeriods"`
+	//  From: https://linkedin.github.io/greykite/docs/0.1.0/html/pages/stepbystep/0400_configuration.html
+	// Maximum number of CV splits.
+	// Given the above configuration, samples up to max_splits train/test splits,
+	// preferring splits toward the end of available data. If None, uses all splits.
 	// +kubebuilder:validation:Optional
-	UseMostRecentSplits bool `json:"useMostRecentSplits,omitempty" protobuf:"bytes,7,opt,name=useMostRecentSplits"`
+	CvMaxSplits *int32 `json:"cvMaxSplits,omitempty" protobuf:"bytes,7,opt,name=cvMaxSplits"`
+	//  From: https://linkedin.github.io/greykite/docs/0.1.0/html/pages/stepbystep/0400_configuration.html
+	//If True, splits from the end of the dataset are used.
+	//Else a sampling strategy is applied. Check
 	// +kubebuilder:validation:Optional
-	TestHorizon int32 `json:"testHorizon,omitempty" protobuf:"bytes,8,opt,name=testHorizon"`
-	// +kubebuilder:validation:Optional
-	Growth GrowthMode `json:"growth,omitempty" protobuf:"bytes,9,opt,name=growth"`
-	// Evaluation define how to evaluate the cross validation result
-	Evaluation EvaluationMetricSpec `json:"evaluation,omitempty" protobuf:"bytes,10,opt,name=evaluation"`
+	CvUseMostRecentSplits *bool `json:"cvUseMostRecentSplits,omitempty" protobuf:"bytes,8,opt,name=cvUseMostRecentSplits"`
 }
 
 type UnivariateForecastStatus struct {

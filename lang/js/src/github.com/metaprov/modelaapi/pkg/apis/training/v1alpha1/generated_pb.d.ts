@@ -882,6 +882,52 @@ export namespace EvaluationMetricSpec {
   }
 }
 
+export class EvaluationPeriodSpec extends jspb.Message {
+  getTesthorizon(): number;
+  setTesthorizon(value: number): EvaluationPeriodSpec;
+
+  getPeriodsbetweentraintest(): number;
+  setPeriodsbetweentraintest(value: number): EvaluationPeriodSpec;
+
+  getCvperiodsbetweensplits(): number;
+  setCvperiodsbetweensplits(value: number): EvaluationPeriodSpec;
+
+  getCvexpandingwindows(): boolean;
+  setCvexpandingwindows(value: boolean): EvaluationPeriodSpec;
+
+  getCvhorizon(): number;
+  setCvhorizon(value: number): EvaluationPeriodSpec;
+
+  getCvmintrainperiods(): number;
+  setCvmintrainperiods(value: number): EvaluationPeriodSpec;
+
+  getCvmaxsplits(): number;
+  setCvmaxsplits(value: number): EvaluationPeriodSpec;
+
+  getCvusemostrecentsplits(): boolean;
+  setCvusemostrecentsplits(value: boolean): EvaluationPeriodSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): EvaluationPeriodSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: EvaluationPeriodSpec): EvaluationPeriodSpec.AsObject;
+  static serializeBinaryToWriter(message: EvaluationPeriodSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EvaluationPeriodSpec;
+  static deserializeBinaryFromReader(message: EvaluationPeriodSpec, reader: jspb.BinaryReader): EvaluationPeriodSpec;
+}
+
+export namespace EvaluationPeriodSpec {
+  export type AsObject = {
+    testhorizon: number,
+    periodsbetweentraintest: number,
+    cvperiodsbetweensplits: number,
+    cvexpandingwindows: boolean,
+    cvhorizon: number,
+    cvmintrainperiods: number,
+    cvmaxsplits: number,
+    cvusemostrecentsplits: boolean,
+  }
+}
+
 export class FeatureEngineeringPipeline extends jspb.Message {
   getName(): string;
   setName(value: string): FeatureEngineeringPipeline;
@@ -1222,62 +1268,6 @@ export namespace FeatureSelectionSpec {
   }
 }
 
-export class ForecasterCrossValidationSpec extends jspb.Message {
-  getExpandingwindows(): boolean;
-  setExpandingwindows(value: boolean): ForecasterCrossValidationSpec;
-
-  getHorizon(): number;
-  setHorizon(value: number): ForecasterCrossValidationSpec;
-
-  getMaxsplits(): number;
-  setMaxsplits(value: number): ForecasterCrossValidationSpec;
-
-  getMintrainperiods(): number;
-  setMintrainperiods(value: number): ForecasterCrossValidationSpec;
-
-  getPeriodsbetweensplits(): number;
-  setPeriodsbetweensplits(value: number): ForecasterCrossValidationSpec;
-
-  getPeriodsbetweentraintest(): number;
-  setPeriodsbetweentraintest(value: number): ForecasterCrossValidationSpec;
-
-  getUsemostrecentsplits(): boolean;
-  setUsemostrecentsplits(value: boolean): ForecasterCrossValidationSpec;
-
-  getTesthorizon(): number;
-  setTesthorizon(value: number): ForecasterCrossValidationSpec;
-
-  getGrowth(): string;
-  setGrowth(value: string): ForecasterCrossValidationSpec;
-
-  getEvaluation(): EvaluationMetricSpec | undefined;
-  setEvaluation(value?: EvaluationMetricSpec): ForecasterCrossValidationSpec;
-  hasEvaluation(): boolean;
-  clearEvaluation(): ForecasterCrossValidationSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ForecasterCrossValidationSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: ForecasterCrossValidationSpec): ForecasterCrossValidationSpec.AsObject;
-  static serializeBinaryToWriter(message: ForecasterCrossValidationSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ForecasterCrossValidationSpec;
-  static deserializeBinaryFromReader(message: ForecasterCrossValidationSpec, reader: jspb.BinaryReader): ForecasterCrossValidationSpec;
-}
-
-export namespace ForecasterCrossValidationSpec {
-  export type AsObject = {
-    expandingwindows: boolean,
-    horizon: number,
-    maxsplits: number,
-    mintrainperiods: number,
-    periodsbetweensplits: number,
-    periodsbetweentraintest: number,
-    usemostrecentsplits: boolean,
-    testhorizon: number,
-    growth: string,
-    evaluation?: EvaluationMetricSpec.AsObject,
-  }
-}
-
 export class ForecasterSpec extends jspb.Message {
   getEventsList(): Array<TimeSeriesEvent>;
   setEventsList(value: Array<TimeSeriesEvent>): ForecasterSpec;
@@ -1329,15 +1319,15 @@ export class ForecasterSpec extends jspb.Message {
   getHpobudget(): number;
   setHpobudget(value: number): ForecasterSpec;
 
-  getEvaluation(): EvaluationMetricSpec | undefined;
-  setEvaluation(value?: EvaluationMetricSpec): ForecasterSpec;
-  hasEvaluation(): boolean;
-  clearEvaluation(): ForecasterSpec;
+  getEvaluationmetrics(): EvaluationMetricSpec | undefined;
+  setEvaluationmetrics(value?: EvaluationMetricSpec): ForecasterSpec;
+  hasEvaluationmetrics(): boolean;
+  clearEvaluationmetrics(): ForecasterSpec;
 
-  getCv(): ForecasterCrossValidationSpec | undefined;
-  setCv(value?: ForecasterCrossValidationSpec): ForecasterSpec;
-  hasCv(): boolean;
-  clearCv(): ForecasterSpec;
+  getEvaluationperiod(): EvaluationPeriodSpec | undefined;
+  setEvaluationperiod(value?: EvaluationPeriodSpec): ForecasterSpec;
+  hasEvaluationperiod(): boolean;
+  clearEvaluationperiod(): ForecasterSpec;
 
   getSeasonalitiesList(): Array<PeriodSeasonalitySpec>;
   setSeasonalitiesList(value: Array<PeriodSeasonalitySpec>): ForecasterSpec;
@@ -1371,8 +1361,8 @@ export namespace ForecasterSpec {
     trainenddata: string,
     valuecolumn: string,
     hpobudget: number,
-    evaluation?: EvaluationMetricSpec.AsObject,
-    cv?: ForecasterCrossValidationSpec.AsObject,
+    evaluationmetrics?: EvaluationMetricSpec.AsObject,
+    evaluationperiod?: EvaluationPeriodSpec.AsObject,
     seasonalitiesList: Array<PeriodSeasonalitySpec.AsObject>,
     laggedregressorsList: Array<string>,
   }

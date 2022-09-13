@@ -561,6 +561,54 @@ message EvaluationMetricSpec {
   optional double relativeErrorTolerance = 6;
 }
 
+// The cross validation spec, used to evaluate the forecaster during training.
+message EvaluationPeriodSpec {
+  //  From: https://linkedin.github.io/greykite/docs/0.1.0/html/pages/stepbystep/0400_configuration.html
+  // Numbers of periods held back from end of df for test.
+  // The rest is used for cross validation.
+  // If None, default is forecast_horizon. Set to 0 to skip backtest.
+  // +kubebuilder:validation:Optional
+  optional int32 testHorizon = 1;
+
+  // +kubebuilder:validation:Optional
+  optional int32 periodsBetweenTrainTest = 2;
+
+  //  From: https://linkedin.github.io/greykite/docs/0.1.0/html/pages/stepbystep/0400_configuration.html
+  // Number of periods to slide the test window between CV splits. Has to be greater than or equal to 1.
+  // If None, default is cv_horizon.
+  // +kubebuilder:validation:Optional
+  optional int32 cvPeriodsBetweenSplits = 3;
+
+  // +kubebuilder:validation:Optional
+  optional bool cvExpandingWindows = 4;
+
+  //  From: https://linkedin.github.io/greykite/docs/0.1.0/html/pages/stepbystep/0400_configuration.html
+  // Number of periods in each CV test set
+  // If None, default is forecast_horizon. Set to 0 to skip CV.
+  // +kubebuilder:validation:Optional
+  optional int32 cvHorizon = 5;
+
+  //  From: https://linkedin.github.io/greykite/docs/0.1.0/html/pages/stepbystep/0400_configuration.html
+  // Minimum number of periods for training each CV fold.
+  // If cv_expanding_window is False, every training period is this size
+  // If None, default is 2 * cv_horizon
+  // +kubebuilder:validation:Optional
+  optional int32 cvMinTrainPeriods = 6;
+
+  //  From: https://linkedin.github.io/greykite/docs/0.1.0/html/pages/stepbystep/0400_configuration.html
+  // Maximum number of CV splits.
+  // Given the above configuration, samples up to max_splits train/test splits,
+  // preferring splits toward the end of available data. If None, uses all splits.
+  // +kubebuilder:validation:Optional
+  optional int32 cvMaxSplits = 7;
+
+  //  From: https://linkedin.github.io/greykite/docs/0.1.0/html/pages/stepbystep/0400_configuration.html
+  // If True, splits from the end of the dataset are used.
+  // Else a sampling strategy is applied. Check
+  // +kubebuilder:validation:Optional
+  optional bool cvUseMostRecentSplits = 8;
+}
+
 // FeatureEngineeringPipeline represent a single pipeline to transform a dataset
 message FeatureEngineeringPipeline {
   // The name of the pipeline
@@ -812,39 +860,6 @@ message FeatureSelectionSpec {
   repeated string reserved = 12;
 }
 
-// The cross validation spec, used to evaluate the forecaster during training.
-message ForecasterCrossValidationSpec {
-  // +kubebuilder:validation:Optional
-  optional bool expandingWindows = 1;
-
-  // +kubebuilder:validation:Optional
-  optional int32 horizon = 2;
-
-  // +kubebuilder:validation:Optional
-  optional int32 maxSplits = 3;
-
-  // +kubebuilder:validation:Optional
-  optional int32 minTrainPeriods = 4;
-
-  // +kubebuilder:validation:Optional
-  optional int32 periodsBetweenSplits = 5;
-
-  // +kubebuilder:validation:Optional
-  optional int32 periodsBetweenTrainTest = 6;
-
-  // +kubebuilder:validation:Optional
-  optional bool useMostRecentSplits = 7;
-
-  // +kubebuilder:validation:Optional
-  optional int32 testHorizon = 8;
-
-  // +kubebuilder:validation:Optional
-  optional string growth = 9;
-
-  // Evaluation define how to evaluate the cross validation result
-  optional EvaluationMetricSpec evaluation = 10;
-}
-
 // The forecaster search define a search for the forecaster
 message ForecasterSpec {
   // The spec for the holiday
@@ -890,13 +905,13 @@ message ForecasterSpec {
   // +kubebuilder:validation:Optional
   optional int32 hpoBudget = 16;
 
-  // Spec for evaluation
+  // Spec for evaluation metric
   // +kubebuilder:validation:Optional
-  optional EvaluationMetricSpec evaluation = 17;
+  optional EvaluationMetricSpec evaluationMetrics = 17;
 
   // Spec for time series cross validation
   // +kubebuilder:validation:Optional
-  optional ForecasterCrossValidationSpec cv = 18;
+  optional EvaluationPeriodSpec evaluationPeriod = 18;
 
   // +kubebuilder:validation:Optional
   repeated PeriodSeasonalitySpec seasonalities = 19;

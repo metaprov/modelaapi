@@ -402,81 +402,8 @@ spec:
                           type: string
                       type: object
                     type: array
-                  cv:
-                    description: Spec for time series cross validation
-                    properties:
-                      evaluation:
-                        description: Evaluation define how to evaluate the cross validation
-                          result
-                        properties:
-                          aggregateFunction:
-                            description: 'From: https://linkedin.github.io/greykite/docs/0.1.0/html/pages/stepbystep/0400_configuration.html
-                              Defines how to aggregate rolling windows of actual and
-                              predicted values before evaluation.'
-                            type: string
-                          aggregatePeriod:
-                            description: 'From: https://linkedin.github.io/greykite/docs/0.1.0/html/pages/stepbystep/0400_configuration.html
-                              Number of periods to aggregate before evaluation.'
-                            format: int32
-                            type: integer
-                          nullModelParams:
-                            description: 'From: https://linkedin.github.io/greykite/docs/0.1.0/html/pages/stepbystep/0400_configuration.html
-                              Defines baseline model to compute ``R2_null_model_score``
-                              evaluation metric. R2_null_model_score is the improvement
-                              in the loss function relative to a null model. It can
-                              be used to evaluate model quality with respect to a
-                              simple baseline'
-                            type: string
-                          relativeErrorTolerance:
-                            description: 'From: https://linkedin.github.io/greykite/docs/0.1.0/html/pages/stepbystep/0400_configuration.html
-                              Threshold to compute the ``Outside Tolerance`` metric,
-                              defined as the fraction of forecasted values whose relative
-                              error is strictly greater than ``relative_error_tolerance``.
-                              If `None`, the metric is not computed.'
-                            type: number
-                          reporting:
-                            description: 'From: https://linkedin.github.io/greykite/docs/0.1.0/html/pages/stepbystep/0400_configuration.html
-                              Additional metrics to compute during CV, besides the
-                              one specified by ``cv_selection_metric``'
-                            items:
-                              type: string
-                            type: array
-                          selection:
-                            description: 'From: https://linkedin.github.io/greykite/docs/0.1.0/html/pages/stepbystep/0400_configuration.html
-                              Used to select the optimal model during cross-validation.'
-                            type: string
-                        type: object
-                      expandingWindows:
-                        type: boolean
-                      growth:
-                        enum:
-                        - linear
-                        - logistic
-                        - flat
-                        type: string
-                      horizon:
-                        format: int32
-                        type: integer
-                      maxSplits:
-                        format: int32
-                        type: integer
-                      minTrainPeriods:
-                        format: int32
-                        type: integer
-                      periodsBetweenSplits:
-                        format: int32
-                        type: integer
-                      periodsBetweenTrainTest:
-                        format: int32
-                        type: integer
-                      testHorizon:
-                        format: int32
-                        type: integer
-                      useMostRecentSplits:
-                        type: boolean
-                    type: object
-                  evaluation:
-                    description: Spec for evaluation
+                  evaluationMetrics:
+                    description: Spec for evaluation metric
                     properties:
                       aggregateFunction:
                         description: 'From: https://linkedin.github.io/greykite/docs/0.1.0/html/pages/stepbystep/0400_configuration.html
@@ -514,6 +441,54 @@ spec:
                         description: 'From: https://linkedin.github.io/greykite/docs/0.1.0/html/pages/stepbystep/0400_configuration.html
                           Used to select the optimal model during cross-validation.'
                         type: string
+                    type: object
+                  evaluationPeriod:
+                    description: Spec for time series cross validation
+                    properties:
+                      cvExpandingWindows:
+                        type: boolean
+                      cvHorizon:
+                        description: 'From: https://linkedin.github.io/greykite/docs/0.1.0/html/pages/stepbystep/0400_configuration.html
+                          Number of periods in each CV test set If None, default is
+                          forecast_horizon. Set to 0 to skip CV.'
+                        format: int32
+                        type: integer
+                      cvMaxSplits:
+                        description: 'From: https://linkedin.github.io/greykite/docs/0.1.0/html/pages/stepbystep/0400_configuration.html
+                          Maximum number of CV splits. Given the above configuration,
+                          samples up to max_splits train/test splits, preferring splits
+                          toward the end of available data. If None, uses all splits.'
+                        format: int32
+                        type: integer
+                      cvMinTrainPeriods:
+                        description: 'From: https://linkedin.github.io/greykite/docs/0.1.0/html/pages/stepbystep/0400_configuration.html
+                          Minimum number of periods for training each CV fold. If
+                          cv_expanding_window is False, every training period is this
+                          size If None, default is 2 * cv_horizon'
+                        format: int32
+                        type: integer
+                      cvPeriodsBetweenSplits:
+                        description: 'From: https://linkedin.github.io/greykite/docs/0.1.0/html/pages/stepbystep/0400_configuration.html
+                          Number of periods to slide the test window between CV splits.
+                          Has to be greater than or equal to 1. If None, default is
+                          cv_horizon.'
+                        format: int32
+                        type: integer
+                      cvUseMostRecentSplits:
+                        description: 'From: https://linkedin.github.io/greykite/docs/0.1.0/html/pages/stepbystep/0400_configuration.html
+                          If True, splits from the end of the dataset are used. Else
+                          a sampling strategy is applied. Check'
+                        type: boolean
+                      periodsBetweenTrainTest:
+                        format: int32
+                        type: integer
+                      testHorizon:
+                        description: 'From: https://linkedin.github.io/greykite/docs/0.1.0/html/pages/stepbystep/0400_configuration.html
+                          Numbers of periods held back from end of df for test. The
+                          rest is used for cross validation. If None, default is forecast_horizon.
+                          Set to 0 to skip backtest.'
+                        format: int32
+                        type: integer
                     type: object
                   events:
                     description: The spec for the holiday
