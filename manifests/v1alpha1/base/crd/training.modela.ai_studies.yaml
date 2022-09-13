@@ -208,180 +208,7 @@ spec:
                 description: Fast indicates if Models associated with the Study should
                   skip profiling, explaining, and reporting
                 type: boolean
-              feSearch:
-                description: FeatureEngineeringSearch specifies the parameters to
-                  perform a feature engineering search
-                properties:
-                  autoRemove:
-                    default: true
-                    description: Indicates if models produced by the feature engineering
-                      search should be automatically removed at the conclusion of
-                      the search
-                    type: boolean
-                  earlyStop:
-                    description: The number of new models produced by the fe search
-                      which, if there is no improvement in score, the model search
-                      will conclude
-                    properties:
-                      enabled:
-                        default: true
-                        description: Indicates if early stopping is enabled
-                        type: boolean
-                      initial:
-                        default: 20
-                        description: The number of models to train before model objective
-                          metrics will begin to be checked for early stopping
-                        format: int32
-                        type: integer
-                      minModelsWithNoProgress:
-                        default: 5
-                        description: The number of models with no improvement in score
-                          that are required to abort the model search
-                        format: int32
-                        type: integer
-                    type: object
-                  enabled:
-                    default: true
-                    description: Indicates if the feature engineering search will
-                      be performed
-                    type: boolean
-                  estimator:
-                    description: The algorithm to use when evaluating models with
-                      different feature engineering pipelines
-                    type: string
-                  featureSelectionTemplate:
-                    description: Specification for feature selection. successful study.
-                    properties:
-                      corrThreshold:
-                        default: 95
-                        description: The threshold to remove features with high correlations
-                        format: int32
-                        type: integer
-                      embedding:
-                        default: true
-                        description: Indicates if embedded methods will be tested
-                          as part of the candidate algorithms (e.g. tree-based selection)
-                        type: boolean
-                      enabled:
-                        default: true
-                        description: Indicates if feature selection is enabled
-                        type: boolean
-                      filter:
-                        default: true
-                        description: Indicates if filter methods will be tested as
-                          part of the candidate algorithms (e.g. chi-square or anova
-                          tests)
-                        type: boolean
-                      maxFeatures:
-                        default: 0
-                        description: The number of features that will be selected
-                          based on importance. If TopN is 0, all features will be
-                          selected
-                        format: int32
-                        type: integer
-                      percentile:
-                        default: 20
-                        description: Percent of features to keep
-                        format: int32
-                        type: integer
-                      pipeline:
-                        description: The collection of feature selection methods that
-                          will be applied in order to the dataset
-                        items:
-                          enum:
-                          - drop-features
-                          - drop-constant-features
-                          - drop-duplicated-features
-                          - drop-correlated-features
-                          - mutual-information
-                          - chisquare
-                          - anova
-                          - step-forward
-                          - step-backward
-                          - lasso-regression
-                          - tree-importance
-                          - recursive-feature-elimination
-                          - recursive-feature-addition
-                          - select-percentile
-                          - select-kbest
-                          - select-fpr
-                          - select-fdr
-                          - variance-threshold
-                          - none
-                          - auto
-                          type: string
-                        type: array
-                      reserved:
-                        description: List of features that are reserved and will always
-                          be included in the final feature selection
-                        items:
-                          type: string
-                        type: array
-                      varianceThresholdPct:
-                        default: 5
-                        description: The threshold as a percentage to remove low variance
-                          features
-                        format: int32
-                        type: integer
-                      wrapper:
-                        default: true
-                        description: Indicates if wrapper methods will be tested as
-                          part of the candidate algorithms
-                        type: boolean
-                    type: object
-                  imbalanceHandler:
-                    default: auto
-                    description: The method to use when handling an imbalanced dataset
-                    enum:
-                    - adasyn
-                    - baseline-smote
-                    - kmean-smote
-                    - random-over-sampler
-                    - smote
-                    - smotenc
-                    - svmsmote
-                    - none
-                    - auto
-                    - class-weights
-                    type: string
-                  maxModels:
-                    default: 10
-                    description: The number of models to sample, after which the feature
-                      engineering with the highest score will be used with Model resources
-                      produced by the primary model search of the parent Study
-                    format: int32
-                    type: integer
-                  maxTime:
-                    default: 3600
-                    description: The deadline, in seconds, for models produced by
-                      the search to be trained
-                    format: int32
-                    type: integer
-                  maxTrainers:
-                    default: 1
-                    description: The desired number of trainers that will train candidate
-                      models in parallel. The number of trainers is restricted based
-                      on the allowance provided by the active License
-                    format: int32
-                    type: integer
-                  reuse:
-                    default: false
-                    description: If true, if a feature engineering pipeline was previously
-                      produced for the same dataset it will be used as a starting
-                      point for the search
-                    type: boolean
-                  samplePct:
-                    default: 100
-                    description: The number percentage (0 through 100) of the dataset
-                      to train models with
-                    format: int32
-                    type: integer
-                type: object
-              flagged:
-                default: false
-                description: Indicates if the Study is flagged
-                type: boolean
-              forecasterTemplate:
+              fctTemplate:
                 description: ForecastSpec specifies the parameters required when generating
                   a forecasting model
                 properties:
@@ -405,12 +232,12 @@ spec:
                   evaluationMetrics:
                     description: Spec for evaluation metric
                     properties:
-                      aggregateFunction:
+                      aggFunc:
                         description: 'From: https://linkedin.github.io/greykite/docs/0.1.0/html/pages/stepbystep/0400_configuration.html
                           Defines how to aggregate rolling windows of actual and predicted
                           values before evaluation.'
                         type: string
-                      aggregatePeriod:
+                      aggPeriod:
                         description: 'From: https://linkedin.github.io/greykite/docs/0.1.0/html/pages/stepbystep/0400_configuration.html
                           Number of periods to aggregate before evaluation.'
                         format: int32
@@ -423,7 +250,7 @@ spec:
                           used to evaluate model quality with respect to a simple
                           baseline'
                         type: string
-                      relativeErrorTolerance:
+                      relErrTolerance:
                         description: 'From: https://linkedin.github.io/greykite/docs/0.1.0/html/pages/stepbystep/0400_configuration.html
                           Threshold to compute the ``Outside Tolerance`` metric, defined
                           as the fraction of forecasted values whose relative error
@@ -826,6 +653,179 @@ spec:
                       to forecast, this will be based on the data source.
                     type: string
                 type: object
+              feSearch:
+                description: FeatureEngineeringSearch specifies the parameters to
+                  perform a feature engineering search
+                properties:
+                  autoRemove:
+                    default: true
+                    description: Indicates if models produced by the feature engineering
+                      search should be automatically removed at the conclusion of
+                      the search
+                    type: boolean
+                  earlyStop:
+                    description: The number of new models produced by the fe search
+                      which, if there is no improvement in score, the model search
+                      will conclude
+                    properties:
+                      enabled:
+                        default: true
+                        description: Indicates if early stopping is enabled
+                        type: boolean
+                      initial:
+                        default: 20
+                        description: The number of models to train before model objective
+                          metrics will begin to be checked for early stopping
+                        format: int32
+                        type: integer
+                      minModelsWithNoProgress:
+                        default: 5
+                        description: The number of models with no improvement in score
+                          that are required to abort the model search
+                        format: int32
+                        type: integer
+                    type: object
+                  enabled:
+                    default: true
+                    description: Indicates if the feature engineering search will
+                      be performed
+                    type: boolean
+                  estimator:
+                    description: The algorithm to use when evaluating models with
+                      different feature engineering pipelines
+                    type: string
+                  featureSelectionTemplate:
+                    description: Specification for feature selection. successful study.
+                    properties:
+                      corrThreshold:
+                        default: 95
+                        description: The threshold to remove features with high correlations
+                        format: int32
+                        type: integer
+                      embedding:
+                        default: true
+                        description: Indicates if embedded methods will be tested
+                          as part of the candidate algorithms (e.g. tree-based selection)
+                        type: boolean
+                      enabled:
+                        default: true
+                        description: Indicates if feature selection is enabled
+                        type: boolean
+                      filter:
+                        default: true
+                        description: Indicates if filter methods will be tested as
+                          part of the candidate algorithms (e.g. chi-square or anova
+                          tests)
+                        type: boolean
+                      maxFeatures:
+                        default: 0
+                        description: The number of features that will be selected
+                          based on importance. If TopN is 0, all features will be
+                          selected
+                        format: int32
+                        type: integer
+                      percentile:
+                        default: 20
+                        description: Percent of features to keep
+                        format: int32
+                        type: integer
+                      pipeline:
+                        description: The collection of feature selection methods that
+                          will be applied in order to the dataset
+                        items:
+                          enum:
+                          - drop-features
+                          - drop-constant-features
+                          - drop-duplicated-features
+                          - drop-correlated-features
+                          - mutual-information
+                          - chisquare
+                          - anova
+                          - step-forward
+                          - step-backward
+                          - lasso-regression
+                          - tree-importance
+                          - recursive-feature-elimination
+                          - recursive-feature-addition
+                          - select-percentile
+                          - select-kbest
+                          - select-fpr
+                          - select-fdr
+                          - variance-threshold
+                          - none
+                          - auto
+                          type: string
+                        type: array
+                      reserved:
+                        description: List of features that are reserved and will always
+                          be included in the final feature selection
+                        items:
+                          type: string
+                        type: array
+                      varianceThresholdPct:
+                        default: 5
+                        description: The threshold as a percentage to remove low variance
+                          features
+                        format: int32
+                        type: integer
+                      wrapper:
+                        default: true
+                        description: Indicates if wrapper methods will be tested as
+                          part of the candidate algorithms
+                        type: boolean
+                    type: object
+                  imbalanceHandler:
+                    default: auto
+                    description: The method to use when handling an imbalanced dataset
+                    enum:
+                    - adasyn
+                    - baseline-smote
+                    - kmean-smote
+                    - random-over-sampler
+                    - smote
+                    - smotenc
+                    - svmsmote
+                    - none
+                    - auto
+                    - class-weights
+                    type: string
+                  maxModels:
+                    default: 10
+                    description: The number of models to sample, after which the feature
+                      engineering with the highest score will be used with Model resources
+                      produced by the primary model search of the parent Study
+                    format: int32
+                    type: integer
+                  maxTime:
+                    default: 3600
+                    description: The deadline, in seconds, for models produced by
+                      the search to be trained
+                    format: int32
+                    type: integer
+                  maxTrainers:
+                    default: 1
+                    description: The desired number of trainers that will train candidate
+                      models in parallel. The number of trainers is restricted based
+                      on the allowance provided by the active License
+                    format: int32
+                    type: integer
+                  reuse:
+                    default: false
+                    description: If true, if a feature engineering pipeline was previously
+                      produced for the same dataset it will be used as a starting
+                      point for the search
+                    type: boolean
+                  samplePct:
+                    default: 100
+                    description: The number percentage (0 through 100) of the dataset
+                      to train models with
+                    format: int32
+                    type: integer
+                type: object
+              flagged:
+                default: false
+                description: Indicates if the Study is flagged
+                type: boolean
               gc:
                 description: GarbageCollectionSpec specifies the configuration to
                   automatically clean-up unused models

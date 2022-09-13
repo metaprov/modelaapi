@@ -842,80 +842,80 @@ export namespace EnsemblesSpec {
   }
 }
 
-export class EvaluationMetricSpec extends jspb.Message {
+export class EvalMetrics extends jspb.Message {
   getSelection(): string;
-  setSelection(value: string): EvaluationMetricSpec;
+  setSelection(value: string): EvalMetrics;
 
   getReportingList(): Array<string>;
-  setReportingList(value: Array<string>): EvaluationMetricSpec;
-  clearReportingList(): EvaluationMetricSpec;
-  addReporting(value: string, index?: number): EvaluationMetricSpec;
+  setReportingList(value: Array<string>): EvalMetrics;
+  clearReportingList(): EvalMetrics;
+  addReporting(value: string, index?: number): EvalMetrics;
 
-  getAggregatefunction(): string;
-  setAggregatefunction(value: string): EvaluationMetricSpec;
+  getAggfunc(): string;
+  setAggfunc(value: string): EvalMetrics;
 
-  getAggregateperiod(): number;
-  setAggregateperiod(value: number): EvaluationMetricSpec;
+  getAggperiod(): number;
+  setAggperiod(value: number): EvalMetrics;
 
   getNullmodelparams(): string;
-  setNullmodelparams(value: string): EvaluationMetricSpec;
+  setNullmodelparams(value: string): EvalMetrics;
 
-  getRelativeerrortolerance(): number;
-  setRelativeerrortolerance(value: number): EvaluationMetricSpec;
+  getRelerrtolerance(): number;
+  setRelerrtolerance(value: number): EvalMetrics;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): EvaluationMetricSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: EvaluationMetricSpec): EvaluationMetricSpec.AsObject;
-  static serializeBinaryToWriter(message: EvaluationMetricSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): EvaluationMetricSpec;
-  static deserializeBinaryFromReader(message: EvaluationMetricSpec, reader: jspb.BinaryReader): EvaluationMetricSpec;
+  toObject(includeInstance?: boolean): EvalMetrics.AsObject;
+  static toObject(includeInstance: boolean, msg: EvalMetrics): EvalMetrics.AsObject;
+  static serializeBinaryToWriter(message: EvalMetrics, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EvalMetrics;
+  static deserializeBinaryFromReader(message: EvalMetrics, reader: jspb.BinaryReader): EvalMetrics;
 }
 
-export namespace EvaluationMetricSpec {
+export namespace EvalMetrics {
   export type AsObject = {
     selection: string,
     reportingList: Array<string>,
-    aggregatefunction: string,
-    aggregateperiod: number,
+    aggfunc: string,
+    aggperiod: number,
     nullmodelparams: string,
-    relativeerrortolerance: number,
+    relerrtolerance: number,
   }
 }
 
-export class EvaluationPeriodSpec extends jspb.Message {
+export class EvalPeriod extends jspb.Message {
   getTesthorizon(): number;
-  setTesthorizon(value: number): EvaluationPeriodSpec;
+  setTesthorizon(value: number): EvalPeriod;
 
   getPeriodsbetweentraintest(): number;
-  setPeriodsbetweentraintest(value: number): EvaluationPeriodSpec;
+  setPeriodsbetweentraintest(value: number): EvalPeriod;
 
   getCvperiodsbetweensplits(): number;
-  setCvperiodsbetweensplits(value: number): EvaluationPeriodSpec;
+  setCvperiodsbetweensplits(value: number): EvalPeriod;
 
   getCvexpandingwindows(): boolean;
-  setCvexpandingwindows(value: boolean): EvaluationPeriodSpec;
+  setCvexpandingwindows(value: boolean): EvalPeriod;
 
   getCvhorizon(): number;
-  setCvhorizon(value: number): EvaluationPeriodSpec;
+  setCvhorizon(value: number): EvalPeriod;
 
   getCvmintrainperiods(): number;
-  setCvmintrainperiods(value: number): EvaluationPeriodSpec;
+  setCvmintrainperiods(value: number): EvalPeriod;
 
   getCvmaxsplits(): number;
-  setCvmaxsplits(value: number): EvaluationPeriodSpec;
+  setCvmaxsplits(value: number): EvalPeriod;
 
   getCvusemostrecentsplits(): boolean;
-  setCvusemostrecentsplits(value: boolean): EvaluationPeriodSpec;
+  setCvusemostrecentsplits(value: boolean): EvalPeriod;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): EvaluationPeriodSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: EvaluationPeriodSpec): EvaluationPeriodSpec.AsObject;
-  static serializeBinaryToWriter(message: EvaluationPeriodSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): EvaluationPeriodSpec;
-  static deserializeBinaryFromReader(message: EvaluationPeriodSpec, reader: jspb.BinaryReader): EvaluationPeriodSpec;
+  toObject(includeInstance?: boolean): EvalPeriod.AsObject;
+  static toObject(includeInstance: boolean, msg: EvalPeriod): EvalPeriod.AsObject;
+  static serializeBinaryToWriter(message: EvalPeriod, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EvalPeriod;
+  static deserializeBinaryFromReader(message: EvalPeriod, reader: jspb.BinaryReader): EvalPeriod;
 }
 
-export namespace EvaluationPeriodSpec {
+export namespace EvalPeriod {
   export type AsObject = {
     testhorizon: number,
     periodsbetweentraintest: number,
@@ -1319,13 +1319,13 @@ export class ForecasterSpec extends jspb.Message {
   getHpobudget(): number;
   setHpobudget(value: number): ForecasterSpec;
 
-  getEvaluationmetrics(): EvaluationMetricSpec | undefined;
-  setEvaluationmetrics(value?: EvaluationMetricSpec): ForecasterSpec;
+  getEvaluationmetrics(): EvalMetrics | undefined;
+  setEvaluationmetrics(value?: EvalMetrics): ForecasterSpec;
   hasEvaluationmetrics(): boolean;
   clearEvaluationmetrics(): ForecasterSpec;
 
-  getEvaluationperiod(): EvaluationPeriodSpec | undefined;
-  setEvaluationperiod(value?: EvaluationPeriodSpec): ForecasterSpec;
+  getEvaluationperiod(): EvalPeriod | undefined;
+  setEvaluationperiod(value?: EvalPeriod): ForecasterSpec;
   hasEvaluationperiod(): boolean;
   clearEvaluationperiod(): ForecasterSpec;
 
@@ -1361,8 +1361,8 @@ export namespace ForecasterSpec {
     trainenddata: string,
     valuecolumn: string,
     hpobudget: number,
-    evaluationmetrics?: EvaluationMetricSpec.AsObject,
-    evaluationperiod?: EvaluationPeriodSpec.AsObject,
+    evaluationmetrics?: EvalMetrics.AsObject,
+    evaluationperiod?: EvalPeriod.AsObject,
     seasonalitiesList: Array<PeriodSeasonalitySpec.AsObject>,
     laggedregressorsList: Array<string>,
   }
@@ -5006,10 +5006,10 @@ export class StudySpec extends jspb.Message {
   hasServingtemplate(): boolean;
   clearServingtemplate(): StudySpec;
 
-  getForecastertemplate(): ForecasterSpec | undefined;
-  setForecastertemplate(value?: ForecasterSpec): StudySpec;
-  hasForecastertemplate(): boolean;
-  clearForecastertemplate(): StudySpec;
+  getFcttemplate(): ForecasterSpec | undefined;
+  setFcttemplate(value?: ForecasterSpec): StudySpec;
+  hasFcttemplate(): boolean;
+  clearFcttemplate(): StudySpec;
 
   getSchedule(): StudyScheduleSpec | undefined;
   setSchedule(value?: StudyScheduleSpec): StudySpec;
@@ -5124,7 +5124,7 @@ export namespace StudySpec {
     ensembles?: EnsemblesSpec.AsObject,
     trainingtemplate?: TrainingSpec.AsObject,
     servingtemplate?: ServingSpec.AsObject,
-    forecastertemplate?: ForecasterSpec.AsObject,
+    fcttemplate?: ForecasterSpec.AsObject,
     schedule?: StudyScheduleSpec.AsObject,
     interpretability?: InterpretabilitySpec.AsObject,
     driftdetection?: DriftModelSpec.AsObject,

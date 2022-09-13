@@ -1024,12 +1024,12 @@ spec:
                   evaluationMetrics:
                     description: Spec for evaluation metric
                     properties:
-                      aggregateFunction:
+                      aggFunc:
                         description: 'From: https://linkedin.github.io/greykite/docs/0.1.0/html/pages/stepbystep/0400_configuration.html
                           Defines how to aggregate rolling windows of actual and predicted
                           values before evaluation.'
                         type: string
-                      aggregatePeriod:
+                      aggPeriod:
                         description: 'From: https://linkedin.github.io/greykite/docs/0.1.0/html/pages/stepbystep/0400_configuration.html
                           Number of periods to aggregate before evaluation.'
                         format: int32
@@ -1042,7 +1042,7 @@ spec:
                           used to evaluate model quality with respect to a simple
                           baseline'
                         type: string
-                      relativeErrorTolerance:
+                      relErrTolerance:
                         description: 'From: https://linkedin.github.io/greykite/docs/0.1.0/html/pages/stepbystep/0400_configuration.html
                           Threshold to compute the ``Outside Tolerance`` metric, defined
                           as the fraction of forecasted values whose relative error

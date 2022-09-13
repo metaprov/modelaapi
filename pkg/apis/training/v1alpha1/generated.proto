@@ -522,7 +522,7 @@ message EnsemblesSpec {
 }
 
 // What metric to evaluate
-message EvaluationMetricSpec {
+message EvalMetrics {
   // From: https://linkedin.github.io/greykite/docs/0.1.0/html/pages/stepbystep/0400_configuration.html
   // Used to select the optimal model during cross-validation.
   // +kubebuilder:validation:Optional
@@ -537,12 +537,12 @@ message EvaluationMetricSpec {
   //  Defines how to aggregate rolling windows of actual and predicted values
   //  before evaluation.
   // +kubebuilder:validation:Optional
-  optional string aggregateFunction = 3;
+  optional string aggFunc = 3;
 
   //  From: https://linkedin.github.io/greykite/docs/0.1.0/html/pages/stepbystep/0400_configuration.html
   //  Number of periods to aggregate before evaluation.
   // +kubebuilder:validation:Optional
-  optional int32 aggregatePeriod = 4;
+  optional int32 aggPeriod = 4;
 
   //  From: https://linkedin.github.io/greykite/docs/0.1.0/html/pages/stepbystep/0400_configuration.html
   // Defines baseline model to compute ``R2_null_model_score`` evaluation metric.
@@ -558,11 +558,11 @@ message EvaluationMetricSpec {
   // error is strictly greater than ``relative_error_tolerance``.
   // If `None`, the metric is not computed.
   // +kubebuilder:validation:Optional
-  optional double relativeErrorTolerance = 6;
+  optional double relErrTolerance = 6;
 }
 
 // The cross validation spec, used to evaluate the forecaster during training.
-message EvaluationPeriodSpec {
+message EvalPeriod {
   //  From: https://linkedin.github.io/greykite/docs/0.1.0/html/pages/stepbystep/0400_configuration.html
   // Numbers of periods held back from end of df for test.
   // The rest is used for cross validation.
@@ -907,11 +907,11 @@ message ForecasterSpec {
 
   // Spec for evaluation metric
   // +kubebuilder:validation:Optional
-  optional EvaluationMetricSpec evaluationMetrics = 17;
+  optional EvalMetrics evaluationMetrics = 17;
 
   // Spec for time series cross validation
   // +kubebuilder:validation:Optional
-  optional EvaluationPeriodSpec evaluationPeriod = 18;
+  optional EvalPeriod evaluationPeriod = 18;
 
   // +kubebuilder:validation:Optional
   repeated PeriodSeasonalitySpec seasonalities = 19;
@@ -3467,7 +3467,7 @@ message StudySpec {
 
   // ForecastSpec specifies the parameters required when generating a forecasting model
   // +kubebuilder:validation:Optional
-  optional ForecasterSpec forecasterTemplate = 14;
+  optional ForecasterSpec fctTemplate = 14;
 
   // Schedule specifies the configuration to execute the Study at a later date
   // +kubebuilder:validation:Optional

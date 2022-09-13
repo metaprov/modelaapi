@@ -159,10 +159,10 @@ type ForecasterSpec struct {
 	HPOBudget *int32 `json:"hpoBudget,omitempty" protobuf:"bytes,16,opt,name=hpoBudget"`
 	// Spec for evaluation metric
 	// +kubebuilder:validation:Optional
-	EvaluationMetrics EvaluationMetricSpec `json:"evaluationMetrics,omitempty" protobuf:"bytes,17,opt,name=evaluationMetrics"`
+	EvalMetrics EvalMetrics `json:"evaluationMetrics,omitempty" protobuf:"bytes,17,opt,name=evaluationMetrics"`
 	// Spec for time series cross validation
 	// +kubebuilder:validation:Optional
-	EvaluationPeriod EvaluationPeriodSpec `json:"evaluationPeriod,omitempty" protobuf:"bytes,18,opt,name=evaluationPeriod"`
+	EvalPeriod EvalPeriod `json:"evaluationPeriod,omitempty" protobuf:"bytes,18,opt,name=evaluationPeriod"`
 
 	// +kubebuilder:validation:Optional
 	Seasonalities []PeriodSeasonalitySpec `json:"seasonalities,omitempty" protobuf:"bytes,19,opt,name=seasonalities"`
@@ -280,7 +280,7 @@ type ChangePoint struct {
 }
 
 // What metric to evaluate
-type EvaluationMetricSpec struct {
+type EvalMetrics struct {
 	// From: https://linkedin.github.io/greykite/docs/0.1.0/html/pages/stepbystep/0400_configuration.html
 	// Used to select the optimal model during cross-validation.
 	// +kubebuilder:validation:Optional
@@ -293,11 +293,11 @@ type EvaluationMetricSpec struct {
 	//  Defines how to aggregate rolling windows of actual and predicted values
 	//  before evaluation.
 	// +kubebuilder:validation:Optional
-	AggregateFunction *string `json:"aggregateFunction,omitempty" protobuf:"bytes,3,opt,name=aggregateFunction"`
+	AggFunc *string `json:"aggFunc,omitempty" protobuf:"bytes,3,opt,name=aggFunc"`
 	//  From: https://linkedin.github.io/greykite/docs/0.1.0/html/pages/stepbystep/0400_configuration.html
 	//  Number of periods to aggregate before evaluation.
 	// +kubebuilder:validation:Optional
-	AggregatePeriod *int32 `json:"aggregatePeriod,omitempty" protobuf:"bytes,4,opt,name=aggregatePeriod"`
+	AggPeriod *int32 `json:"aggPeriod,omitempty" protobuf:"bytes,4,opt,name=aggPeriod"`
 	//  From: https://linkedin.github.io/greykite/docs/0.1.0/html/pages/stepbystep/0400_configuration.html
 	// Defines baseline model to compute ``R2_null_model_score`` evaluation metric.
 	// R2_null_model_score is the improvement in the loss function relative
@@ -311,11 +311,11 @@ type EvaluationMetricSpec struct {
 	//error is strictly greater than ``relative_error_tolerance``.
 	//If `None`, the metric is not computed.
 	// +kubebuilder:validation:Optional
-	RelativeErrorTolerance *float64 `json:"relativeErrorTolerance,omitempty" protobuf:"bytes,6,opt,name=relativeErrorTolerance"`
+	RelErrTolerance *float64 `json:"relErrTolerance,omitempty" protobuf:"bytes,6,opt,name=relErrTolerance"`
 }
 
 // The cross validation spec, used to evaluate the forecaster during training.
-type EvaluationPeriodSpec struct {
+type EvalPeriod struct {
 	//  From: https://linkedin.github.io/greykite/docs/0.1.0/html/pages/stepbystep/0400_configuration.html
 	//Numbers of periods held back from end of df for test.
 	//The rest is used for cross validation.
