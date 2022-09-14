@@ -14551,7 +14551,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.repeatedFields_ = [2,7,8,10,20,21];
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.repeatedFields_ = [2,8,9,11,18,19];
 
 
 
@@ -14589,22 +14589,23 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.to
     past: (f = msg.getPast()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.WindowSpec.toObject(includeInstance, f),
     future: (f = msg.getFuture()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.WindowSpec.toObject(includeInstance, f),
     forecast: (f = jspb.Message.getBooleanField(msg, 5)) == null ? undefined : f,
+    coverage: (f = jspb.Message.getOptionalFloatingPointField(msg, 6)) == null ? undefined : f,
     outputlocation: (f = msg.getOutputlocation()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.toObject(includeInstance, f),
-    featuresList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f,
+    featuresList: (f = jspb.Message.getRepeatedField(msg, 8)) == null ? undefined : f,
     levelsList: jspb.Message.toObjectList(msg.getLevelsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.toObject, includeInstance),
-    predefinedtemplate: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
+    predefinedtemplate: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
     anomaliesList: jspb.Message.toObjectList(msg.getAnomaliesList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Anomaly.toObject, includeInstance),
-    trainenddata: (f = jspb.Message.getField(msg, 14)) == null ? undefined : f,
-    valuecolumn: (f = jspb.Message.getField(msg, 15)) == null ? undefined : f,
-    hpobudget: (f = jspb.Message.getField(msg, 16)) == null ? undefined : f,
+    trainenddata: (f = jspb.Message.getField(msg, 12)) == null ? undefined : f,
+    valuecolumn: (f = jspb.Message.getField(msg, 13)) == null ? undefined : f,
+    hpobudget: (f = jspb.Message.getField(msg, 14)) == null ? undefined : f,
     evaluationmetrics: (f = msg.getEvaluationmetrics()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EvalMetrics.toObject(includeInstance, f),
     evaluationperiod: (f = msg.getEvaluationperiod()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EvalPeriod.toObject(includeInstance, f),
     seasonality: (f = msg.getSeasonality()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SeasonalitySpec.toObject(includeInstance, f),
-    regressorsList: (f = jspb.Message.getRepeatedField(msg, 20)) == null ? undefined : f,
-    laggedregressorsList: (f = jspb.Message.getRepeatedField(msg, 21)) == null ? undefined : f,
-    growth: (f = jspb.Message.getField(msg, 22)) == null ? undefined : f
+    regressorsList: (f = jspb.Message.getRepeatedField(msg, 18)) == null ? undefined : f,
+    laggedregressorsList: (f = jspb.Message.getRepeatedField(msg, 19)) == null ? undefined : f,
+    growth: (f = jspb.Message.getField(msg, 20)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -14661,64 +14662,68 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.de
       msg.setForecast(value);
       break;
     case 6:
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setCoverage(value);
+      break;
+    case 7:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.deserializeBinaryFromReader);
       msg.setOutputlocation(value);
       break;
-    case 7:
+    case 8:
       var value = /** @type {string} */ (reader.readString());
       msg.addFeatures(value);
       break;
-    case 8:
+    case 9:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.deserializeBinaryFromReader);
       msg.addLevels(value);
       break;
-    case 9:
+    case 10:
       var value = /** @type {string} */ (reader.readString());
       msg.setPredefinedtemplate(value);
       break;
-    case 10:
+    case 11:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Anomaly;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Anomaly.deserializeBinaryFromReader);
       msg.addAnomalies(value);
       break;
-    case 14:
+    case 12:
       var value = /** @type {string} */ (reader.readString());
       msg.setTrainenddata(value);
       break;
-    case 15:
+    case 13:
       var value = /** @type {string} */ (reader.readString());
       msg.setValuecolumn(value);
       break;
-    case 16:
+    case 14:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setHpobudget(value);
       break;
-    case 17:
+    case 15:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EvalMetrics;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EvalMetrics.deserializeBinaryFromReader);
       msg.setEvaluationmetrics(value);
       break;
-    case 18:
+    case 16:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EvalPeriod;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EvalPeriod.deserializeBinaryFromReader);
       msg.setEvaluationperiod(value);
       break;
-    case 19:
+    case 17:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SeasonalitySpec;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SeasonalitySpec.deserializeBinaryFromReader);
       msg.setSeasonality(value);
       break;
-    case 20:
+    case 18:
       var value = /** @type {string} */ (reader.readString());
       msg.addRegressors(value);
       break;
-    case 21:
+    case 19:
       var value = /** @type {string} */ (reader.readString());
       msg.addLaggedregressors(value);
       break;
-    case 22:
+    case 20:
       var value = /** @type {string} */ (reader.readString());
       msg.setGrowth(value);
       break;
@@ -14782,10 +14787,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.se
       f
     );
   }
+  f = /** @type {number} */ (jspb.Message.getField(message, 6));
+  if (f != null) {
+    writer.writeDouble(
+      6,
+      f
+    );
+  }
   f = message.getOutputlocation();
   if (f != null) {
     writer.writeMessage(
-      6,
+      7,
       f,
       github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.serializeBinaryToWriter
     );
@@ -14793,58 +14805,58 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.se
   f = message.getFeaturesList();
   if (f.length > 0) {
     writer.writeRepeatedString(
-      7,
+      8,
       f
     );
   }
   f = message.getLevelsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      8,
+      9,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.serializeBinaryToWriter
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 9));
+  f = /** @type {string} */ (jspb.Message.getField(message, 10));
   if (f != null) {
     writer.writeString(
-      9,
+      10,
       f
     );
   }
   f = message.getAnomaliesList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      10,
+      11,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Anomaly.serializeBinaryToWriter
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 14));
+  f = /** @type {string} */ (jspb.Message.getField(message, 12));
   if (f != null) {
     writer.writeString(
-      14,
+      12,
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 15));
+  f = /** @type {string} */ (jspb.Message.getField(message, 13));
   if (f != null) {
     writer.writeString(
-      15,
+      13,
       f
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 16));
+  f = /** @type {number} */ (jspb.Message.getField(message, 14));
   if (f != null) {
     writer.writeInt32(
-      16,
+      14,
       f
     );
   }
   f = message.getEvaluationmetrics();
   if (f != null) {
     writer.writeMessage(
-      17,
+      15,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EvalMetrics.serializeBinaryToWriter
     );
@@ -14852,7 +14864,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.se
   f = message.getEvaluationperiod();
   if (f != null) {
     writer.writeMessage(
-      18,
+      16,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EvalPeriod.serializeBinaryToWriter
     );
@@ -14860,7 +14872,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.se
   f = message.getSeasonality();
   if (f != null) {
     writer.writeMessage(
-      19,
+      17,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SeasonalitySpec.serializeBinaryToWriter
     );
@@ -14868,21 +14880,21 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.se
   f = message.getRegressorsList();
   if (f.length > 0) {
     writer.writeRepeatedString(
-      20,
+      18,
       f
     );
   }
   f = message.getLaggedregressorsList();
   if (f.length > 0) {
     writer.writeRepeatedString(
-      21,
+      19,
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 22));
+  f = /** @type {string} */ (jspb.Message.getField(message, 20));
   if (f != null) {
     writer.writeString(
-      22,
+      20,
       f
     );
   }
@@ -15038,12 +15050,48 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.pr
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation outputLocation = 6;
+ * optional double coverage = 6;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.getCoverage = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 6, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.setCoverage = function(value) {
+  return jspb.Message.setField(this, 6, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.clearCoverage = function() {
+  return jspb.Message.setField(this, 6, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.hasCoverage = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation outputLocation = 7;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.getOutputlocation = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation, 6));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation, 7));
 };
 
 
@@ -15052,7 +15100,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.pr
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.setOutputlocation = function(value) {
-  return jspb.Message.setWrapperField(this, 6, value);
+  return jspb.Message.setWrapperField(this, 7, value);
 };
 
 
@@ -15070,16 +15118,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.pr
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.hasOutputlocation = function() {
-  return jspb.Message.getField(this, 6) != null;
+  return jspb.Message.getField(this, 7) != null;
 };
 
 
 /**
- * repeated string features = 7;
+ * repeated string features = 8;
  * @return {!Array<string>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.getFeaturesList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 7));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 8));
 };
 
 
@@ -15088,7 +15136,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.pr
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.setFeaturesList = function(value) {
-  return jspb.Message.setField(this, 7, value || []);
+  return jspb.Message.setField(this, 8, value || []);
 };
 
 
@@ -15098,7 +15146,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.pr
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.addFeatures = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 7, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 8, value, opt_index);
 };
 
 
@@ -15112,12 +15160,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.pr
 
 
 /**
- * repeated Level levels = 8;
+ * repeated Level levels = 9;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.getLevelsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level, 8));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level, 9));
 };
 
 
@@ -15126,7 +15174,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.pr
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.setLevelsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 8, value);
+  return jspb.Message.setRepeatedWrapperField(this, 9, value);
 };
 
 
@@ -15136,7 +15184,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.pr
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.addLevels = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 8, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 9, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level, opt_index);
 };
 
 
@@ -15150,11 +15198,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.pr
 
 
 /**
- * optional string predefinedTemplate = 9;
+ * optional string predefinedTemplate = 10;
  * @return {string}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.getPredefinedtemplate = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
 };
 
 
@@ -15163,7 +15211,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.pr
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.setPredefinedtemplate = function(value) {
-  return jspb.Message.setField(this, 9, value);
+  return jspb.Message.setField(this, 10, value);
 };
 
 
@@ -15172,7 +15220,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.pr
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.clearPredefinedtemplate = function() {
-  return jspb.Message.setField(this, 9, undefined);
+  return jspb.Message.setField(this, 10, undefined);
 };
 
 
@@ -15181,17 +15229,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.pr
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.hasPredefinedtemplate = function() {
-  return jspb.Message.getField(this, 9) != null;
+  return jspb.Message.getField(this, 10) != null;
 };
 
 
 /**
- * repeated Anomaly anomalies = 10;
+ * repeated Anomaly anomalies = 11;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Anomaly>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.getAnomaliesList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Anomaly>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Anomaly, 10));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Anomaly, 11));
 };
 
 
@@ -15200,7 +15248,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.pr
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.setAnomaliesList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 10, value);
+  return jspb.Message.setRepeatedWrapperField(this, 11, value);
 };
 
 
@@ -15210,7 +15258,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.pr
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Anomaly}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.addAnomalies = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 10, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Anomaly, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 11, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Anomaly, opt_index);
 };
 
 
@@ -15224,11 +15272,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.pr
 
 
 /**
- * optional string trainEndData = 14;
+ * optional string trainEndData = 12;
  * @return {string}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.getTrainenddata = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 14, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
 };
 
 
@@ -15237,7 +15285,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.pr
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.setTrainenddata = function(value) {
-  return jspb.Message.setField(this, 14, value);
+  return jspb.Message.setField(this, 12, value);
 };
 
 
@@ -15246,7 +15294,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.pr
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.clearTrainenddata = function() {
-  return jspb.Message.setField(this, 14, undefined);
+  return jspb.Message.setField(this, 12, undefined);
 };
 
 
@@ -15255,16 +15303,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.pr
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.hasTrainenddata = function() {
-  return jspb.Message.getField(this, 14) != null;
+  return jspb.Message.getField(this, 12) != null;
 };
 
 
 /**
- * optional string valueColumn = 15;
+ * optional string valueColumn = 13;
  * @return {string}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.getValuecolumn = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 15, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
 };
 
 
@@ -15273,7 +15321,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.pr
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.setValuecolumn = function(value) {
-  return jspb.Message.setField(this, 15, value);
+  return jspb.Message.setField(this, 13, value);
 };
 
 
@@ -15282,7 +15330,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.pr
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.clearValuecolumn = function() {
-  return jspb.Message.setField(this, 15, undefined);
+  return jspb.Message.setField(this, 13, undefined);
 };
 
 
@@ -15291,16 +15339,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.pr
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.hasValuecolumn = function() {
-  return jspb.Message.getField(this, 15) != null;
+  return jspb.Message.getField(this, 13) != null;
 };
 
 
 /**
- * optional int32 hpoBudget = 16;
+ * optional int32 hpoBudget = 14;
  * @return {number}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.getHpobudget = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 16, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 14, 0));
 };
 
 
@@ -15309,7 +15357,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.pr
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.setHpobudget = function(value) {
-  return jspb.Message.setField(this, 16, value);
+  return jspb.Message.setField(this, 14, value);
 };
 
 
@@ -15318,7 +15366,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.pr
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.clearHpobudget = function() {
-  return jspb.Message.setField(this, 16, undefined);
+  return jspb.Message.setField(this, 14, undefined);
 };
 
 
@@ -15327,17 +15375,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.pr
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.hasHpobudget = function() {
-  return jspb.Message.getField(this, 16) != null;
+  return jspb.Message.getField(this, 14) != null;
 };
 
 
 /**
- * optional EvalMetrics evaluationMetrics = 17;
+ * optional EvalMetrics evaluationMetrics = 15;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EvalMetrics}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.getEvaluationmetrics = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EvalMetrics} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EvalMetrics, 17));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EvalMetrics, 15));
 };
 
 
@@ -15346,7 +15394,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.pr
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.setEvaluationmetrics = function(value) {
-  return jspb.Message.setWrapperField(this, 17, value);
+  return jspb.Message.setWrapperField(this, 15, value);
 };
 
 
@@ -15364,17 +15412,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.pr
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.hasEvaluationmetrics = function() {
-  return jspb.Message.getField(this, 17) != null;
+  return jspb.Message.getField(this, 15) != null;
 };
 
 
 /**
- * optional EvalPeriod evaluationPeriod = 18;
+ * optional EvalPeriod evaluationPeriod = 16;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EvalPeriod}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.getEvaluationperiod = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EvalPeriod} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EvalPeriod, 18));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EvalPeriod, 16));
 };
 
 
@@ -15383,7 +15431,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.pr
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.setEvaluationperiod = function(value) {
-  return jspb.Message.setWrapperField(this, 18, value);
+  return jspb.Message.setWrapperField(this, 16, value);
 };
 
 
@@ -15401,17 +15449,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.pr
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.hasEvaluationperiod = function() {
-  return jspb.Message.getField(this, 18) != null;
+  return jspb.Message.getField(this, 16) != null;
 };
 
 
 /**
- * optional SeasonalitySpec seasonality = 19;
+ * optional SeasonalitySpec seasonality = 17;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SeasonalitySpec}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.getSeasonality = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SeasonalitySpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SeasonalitySpec, 19));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SeasonalitySpec, 17));
 };
 
 
@@ -15420,7 +15468,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.pr
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.setSeasonality = function(value) {
-  return jspb.Message.setWrapperField(this, 19, value);
+  return jspb.Message.setWrapperField(this, 17, value);
 };
 
 
@@ -15438,16 +15486,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.pr
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.hasSeasonality = function() {
-  return jspb.Message.getField(this, 19) != null;
+  return jspb.Message.getField(this, 17) != null;
 };
 
 
 /**
- * repeated string regressors = 20;
+ * repeated string regressors = 18;
  * @return {!Array<string>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.getRegressorsList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 20));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 18));
 };
 
 
@@ -15456,7 +15504,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.pr
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.setRegressorsList = function(value) {
-  return jspb.Message.setField(this, 20, value || []);
+  return jspb.Message.setField(this, 18, value || []);
 };
 
 
@@ -15466,7 +15514,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.pr
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.addRegressors = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 20, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 18, value, opt_index);
 };
 
 
@@ -15480,11 +15528,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.pr
 
 
 /**
- * repeated string laggedRegressors = 21;
+ * repeated string laggedRegressors = 19;
  * @return {!Array<string>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.getLaggedregressorsList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 21));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 19));
 };
 
 
@@ -15493,7 +15541,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.pr
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.setLaggedregressorsList = function(value) {
-  return jspb.Message.setField(this, 21, value || []);
+  return jspb.Message.setField(this, 19, value || []);
 };
 
 
@@ -15503,7 +15551,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.pr
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.addLaggedregressors = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 21, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 19, value, opt_index);
 };
 
 
@@ -15517,11 +15565,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.pr
 
 
 /**
- * optional string growth = 22;
+ * optional string growth = 20;
  * @return {string}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.getGrowth = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 22, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 20, ""));
 };
 
 
@@ -15530,7 +15578,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.pr
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.setGrowth = function(value) {
-  return jspb.Message.setField(this, 22, value);
+  return jspb.Message.setField(this, 20, value);
 };
 
 
@@ -15539,7 +15587,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.pr
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.clearGrowth = function() {
-  return jspb.Message.setField(this, 22, undefined);
+  return jspb.Message.setField(this, 20, undefined);
 };
 
 
@@ -15548,7 +15596,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.pr
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.hasGrowth = function() {
-  return jspb.Message.getField(this, 22) != null;
+  return jspb.Message.getField(this, 20) != null;
 };
 
 

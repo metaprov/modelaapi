@@ -229,6 +229,9 @@ spec:
                           type: string
                       type: object
                     type: array
+                  coverage:
+                    description: Make a forecast post training
+                    type: number
                   evaluationMetrics:
                     description: Spec for evaluation metric
                     properties:

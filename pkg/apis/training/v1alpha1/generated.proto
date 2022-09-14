@@ -878,55 +878,59 @@ message ForecasterSpec {
   // +kubebuilder:validation:Optional
   optional bool forecast = 5;
 
+  // Make a forecast post training
+  // +kubebuilder:validation:Optional
+  optional double coverage = 6;
+
   // The data location that would store the forecast result.
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation outputLocation = 6;
+  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation outputLocation = 7;
 
   // List of time series features to compute on each time series.
   // +kubebuilder:validation:Optional
-  repeated string features = 7;
+  repeated string features = 8;
 
   // +kubebuilder:validation:Optional
-  repeated Level levels = 8;
+  repeated Level levels = 9;
 
   // +kubebuilder:validation:Optional
-  optional string predefinedTemplate = 9;
+  optional string predefinedTemplate = 10;
 
   // +kubebuilder:validation:Optional
-  repeated Anomaly anomalies = 10;
+  repeated Anomaly anomalies = 11;
 
   // +kubebuilder:validation:Optional
-  optional string trainEndData = 14;
+  optional string trainEndData = 12;
 
   // The value column. this is the name of the column to forecast, this will be based on the data source.
   // +kubebuilder:validation:Optional
-  optional string valueColumn = 15;
+  optional string valueColumn = 13;
 
   // +kubebuilder:validation:Optional
-  optional int32 hpoBudget = 16;
+  optional int32 hpoBudget = 14;
 
   // Spec for evaluation metric
   // +kubebuilder:validation:Optional
-  optional EvalMetrics evaluationMetrics = 17;
+  optional EvalMetrics evaluationMetrics = 15;
 
   // Spec for time series cross validation
   // +kubebuilder:validation:Optional
-  optional EvalPeriod evaluationPeriod = 18;
+  optional EvalPeriod evaluationPeriod = 16;
 
   // +kubebuilder:validation:Optional
-  optional SeasonalitySpec seasonality = 19;
+  optional SeasonalitySpec seasonality = 17;
 
   // The regressor. Initially those are set from the data source schema
   // +kubebuilder:validation:Optional
-  repeated string regressors = 20;
+  repeated string regressors = 18;
 
   // Lagged Regressors
   // +kubebuilder:validation:Optional
-  repeated string laggedRegressors = 21;
+  repeated string laggedRegressors = 19;
 
   // Set the growth of the series
   // +kubebuilder:validation:Optional
-  optional string growth = 22;
+  optional string growth = 20;
 }
 
 // GarbageCollectionSpec specifies the configuration to garbage-collect unused Model resources

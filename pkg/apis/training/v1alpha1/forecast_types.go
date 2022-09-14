@@ -155,42 +155,45 @@ type ForecasterSpec struct {
 	// Make a forecast post training
 	// +kubebuilder:validation:Optional
 	Forecast *bool `json:"forecast,omitempty" protobuf:"bytes,5,opt,name=forecast"`
+	// Make a forecast post training
+	// +kubebuilder:validation:Optional
+	Coverage *float64 `json:"coverage,omitempty" protobuf:"bytes,6,opt,name=coverage"`
 	// The data location that would store the forecast result.
 	// +kubebuilder:validation:Optional
-	OutputLocation data.DataLocation `json:"outputLocation,omitempty" protobuf:"bytes,6,opt,name=outputLocation"`
+	OutputLocation data.DataLocation `json:"outputLocation,omitempty" protobuf:"bytes,7,opt,name=outputLocation"`
 	// List of time series features to compute on each time series.
 	// +kubebuilder:validation:Optional
-	Features []catalog.Metric `json:"features,omitempty" protobuf:"bytes,7,opt,name=features"`
+	Features []catalog.Metric `json:"features,omitempty" protobuf:"bytes,8,opt,name=features"`
 	// +kubebuilder:validation:Optional
-	Levels []Level `json:"levels,omitempty" protobuf:"bytes,8,rep,name=levels"`
+	Levels []Level `json:"levels,omitempty" protobuf:"bytes,9,rep,name=levels"`
 	// +kubebuilder:validation:Optional
-	PredefinedTemplate ModelTemplate `json:"predefinedTemplate,omitempty" protobuf:"bytes,9,opt,name=predefinedTemplate"`
+	PredefinedTemplate ModelTemplate `json:"predefinedTemplate,omitempty" protobuf:"bytes,10,opt,name=predefinedTemplate"`
 	// +kubebuilder:validation:Optional
-	Anomalies []Anomaly `json:"anomalies,omitempty" protobuf:"bytes,10,opt,name=anomalies"`
+	Anomalies []Anomaly `json:"anomalies,omitempty" protobuf:"bytes,11,opt,name=anomalies"`
 	// +kubebuilder:validation:Optional
-	TrainEndDate string `json:"trainEndData,omitempty" protobuf:"bytes,14,opt,name=trainEndData"`
+	TrainEndDate string `json:"trainEndData,omitempty" protobuf:"bytes,12,opt,name=trainEndData"`
 	// The value column. this is the name of the column to forecast, this will be based on the data source.
 	// +kubebuilder:validation:Optional
-	ValueColumn string `json:"valueColumn,omitempty" protobuf:"bytes,15,opt,name=valueColumn"`
+	ValueColumn string `json:"valueColumn,omitempty" protobuf:"bytes,13,opt,name=valueColumn"`
 	// +kubebuilder:validation:Optional
-	HPOBudget *int32 `json:"hpoBudget,omitempty" protobuf:"bytes,16,opt,name=hpoBudget"`
+	HPOBudget *int32 `json:"hpoBudget,omitempty" protobuf:"bytes,14,opt,name=hpoBudget"`
 	// Spec for evaluation metric
 	// +kubebuilder:validation:Optional
-	EvalMetrics EvalMetrics `json:"evaluationMetrics,omitempty" protobuf:"bytes,17,opt,name=evaluationMetrics"`
+	EvalMetrics EvalMetrics `json:"evaluationMetrics,omitempty" protobuf:"bytes,15,opt,name=evaluationMetrics"`
 	// Spec for time series cross validation
 	// +kubebuilder:validation:Optional
-	EvalPeriod EvalPeriod `json:"evaluationPeriod,omitempty" protobuf:"bytes,18,opt,name=evaluationPeriod"`
+	EvalPeriod EvalPeriod `json:"evaluationPeriod,omitempty" protobuf:"bytes,16,opt,name=evaluationPeriod"`
 	// +kubebuilder:validation:Optional
-	Seasonality SeasonalitySpec `json:"seasonality,omitempty" protobuf:"bytes,19,opt,name=seasonality"`
+	Seasonality SeasonalitySpec `json:"seasonality,omitempty" protobuf:"bytes,17,opt,name=seasonality"`
 	// The regressor. Initially those are set from the data source schema
 	// +kubebuilder:validation:Optional
-	Regressors []string `json:"regressors,omitempty" protobuf:"bytes,20,opt,name=regressors"`
+	Regressors []string `json:"regressors,omitempty" protobuf:"bytes,18,opt,name=regressors"`
 	// Lagged Regressors
 	// +kubebuilder:validation:Optional
-	LaggedRegressors []string `json:"laggedRegressors,omitempty" protobuf:"bytes,21,opt,name=laggedRegressors"`
+	LaggedRegressors []string `json:"laggedRegressors,omitempty" protobuf:"bytes,19,opt,name=laggedRegressors"`
 	// Set the growth of the series
 	// +kubebuilder:validation:Optional
-	Growth GrowthMode `json:"growth,omitempty" protobuf:"bytes,22,opt,name=growth"`
+	Growth GrowthMode `json:"growth,omitempty" protobuf:"bytes,20,opt,name=growth"`
 }
 
 // BacktestSpec specify the back test

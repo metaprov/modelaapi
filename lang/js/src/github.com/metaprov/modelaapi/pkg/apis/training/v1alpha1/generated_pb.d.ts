@@ -1287,6 +1287,9 @@ export class ForecasterSpec extends jspb.Message {
   getForecast(): boolean;
   setForecast(value: boolean): ForecasterSpec;
 
+  getCoverage(): number;
+  setCoverage(value: number): ForecasterSpec;
+
   getOutputlocation(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
   setOutputlocation(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): ForecasterSpec;
   hasOutputlocation(): boolean;
@@ -1361,6 +1364,7 @@ export namespace ForecasterSpec {
     past?: WindowSpec.AsObject,
     future?: WindowSpec.AsObject,
     forecast: boolean,
+    coverage: number,
     outputlocation?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     featuresList: Array<string>,
     levelsList: Array<Level.AsObject>,
