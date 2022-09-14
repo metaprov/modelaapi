@@ -914,11 +914,19 @@ message ForecasterSpec {
   optional EvalPeriod evaluationPeriod = 18;
 
   // +kubebuilder:validation:Optional
-  repeated PeriodSeasonalitySpec seasonalities = 19;
+  optional SeasonalitySpec seasonality = 19;
+
+  // The regressor. Initially those are set from the data source schema
+  // +kubebuilder:validation:Optional
+  repeated string regressors = 20;
 
   // Lagged Regressors
   // +kubebuilder:validation:Optional
   repeated string laggedRegressors = 21;
+
+  // Set the growth of the series
+  // +kubebuilder:validation:Optional
+  optional string growth = 22;
 }
 
 // GarbageCollectionSpec specifies the configuration to garbage-collect unused Model resources
@@ -2873,22 +2881,6 @@ message PercentilePrunerOptions {
   optional int32 minTrials = 5;
 }
 
-// Define the seasonality for a period (yearly / monthly / daily)
-message PeriodSeasonalitySpec {
-  // +kubebuilder:default:=day
-  // +kubebuilder:validation:Optional
-  optional string freq = 1;
-
-  // If enabled, the number of data points in the interval
-  // +kubebuilder:default:=0
-  // +kubebuilder:validation:Optional
-  optional int32 periods = 2;
-
-  // +kubebuilder:default:="auto"
-  // +kubebuilder:validation:Optional
-  optional string mode = 3;
-}
-
 message PrunerSpec {
   // The type of pruner to use during model search
   // +kubebuilder:default:=median-pruner
@@ -3266,6 +3258,43 @@ message SearchSpec {
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool tune = 16;
+}
+
+// Define the seasonality for a period (yearly / monthly / daily)
+message SeasonalityPeriodSpec {
+  // Is the seasonality exist
+  // +kubebuilder:validation:Optional
+  optional bool enabled = 1;
+
+  // Infer the seasonality
+  // +kubebuilder:validation:Optional
+  optional bool auto = 2;
+
+  // If enabled, the number of data points in the interval
+  // +kubebuilder:default:=0
+  // +kubebuilder:validation:Optional
+  optional int32 fourierOrder = 3;
+}
+
+message SeasonalitySpec {
+  // If true infer the seasonality
+  // +kubebuilder:validation:Optional
+  optional bool auto = 1;
+
+  // +kubebuilder:validation:Optional
+  optional SeasonalityPeriodSpec yearly = 2;
+
+  // +kubebuilder:validation:Optional
+  optional SeasonalityPeriodSpec quarterly = 3;
+
+  // +kubebuilder:validation:Optional
+  optional SeasonalityPeriodSpec monthly = 4;
+
+  // +kubebuilder:validation:Optional
+  optional SeasonalityPeriodSpec weekly = 5;
+
+  // +kubebuilder:validation:Optional
+  optional SeasonalityPeriodSpec daily = 6;
 }
 
 message SegmentSpec {

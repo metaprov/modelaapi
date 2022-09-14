@@ -403,6 +403,15 @@ spec:
                         format: int32
                         type: integer
                     type: object
+                  growth:
+                    description: Set the growth of the series
+                    enum:
+                    - linear
+                    - logistic
+                    - flat
+                    - quadratic
+                    - none
+                    type: string
                   hpoBudget:
                     format: int32
                     type: integer
@@ -420,8 +429,11 @@ spec:
                           enum:
                           - min
                           - max
-                          - avg
+                          - mean
                           - median
+                          - sum
+                          - stddev
+                          - var
                           type: string
                         freq:
                           description: The freq of the level
@@ -611,41 +623,103 @@ spec:
                     - hourly-168
                     - hourly-336
                     type: string
-                  seasonalities:
+                  regressors:
+                    description: The regressor. Initially those are set from the data
+                      source schema
                     items:
-                      description: Define the seasonality for a period (yearly / monthly
-                        / daily)
-                      properties:
-                        freq:
-                          default: day
-                          description: The Horizon unit
-                          enum:
-                          - second
-                          - minute
-                          - hour
-                          - day
-                          - week
-                          - month
-                          - quarter
-                          - year
-                          - multi-year
-                          type: string
-                        mode:
-                          default: auto
-                          enum:
-                          - multipicative
-                          - additive
-                          - auto
-                          - none
-                          type: string
-                        periods:
-                          default: 0
-                          description: If enabled, the number of data points in the
-                            interval
-                          format: int32
-                          type: integer
-                      type: object
+                      type: string
                     type: array
+                  seasonality:
+                    properties:
+                      auto:
+                        description: If true infer the seasonality
+                        type: boolean
+                      daily:
+                        description: Define the seasonality for a period (yearly /
+                          monthly / daily)
+                        properties:
+                          auto:
+                            description: Infer the seasonality
+                            type: boolean
+                          enabled:
+                            description: Is the seasonality exist
+                            type: boolean
+                          fourierOrder:
+                            default: 0
+                            description: If enabled, the number of data points in
+                              the interval
+                            format: int32
+                            type: integer
+                        type: object
+                      monthly:
+                        description: Define the seasonality for a period (yearly /
+                          monthly / daily)
+                        properties:
+                          auto:
+                            description: Infer the seasonality
+                            type: boolean
+                          enabled:
+                            description: Is the seasonality exist
+                            type: boolean
+                          fourierOrder:
+                            default: 0
+                            description: If enabled, the number of data points in
+                              the interval
+                            format: int32
+                            type: integer
+                        type: object
+                      quarterly:
+                        description: Define the seasonality for a period (yearly /
+                          monthly / daily)
+                        properties:
+                          auto:
+                            description: Infer the seasonality
+                            type: boolean
+                          enabled:
+                            description: Is the seasonality exist
+                            type: boolean
+                          fourierOrder:
+                            default: 0
+                            description: If enabled, the number of data points in
+                              the interval
+                            format: int32
+                            type: integer
+                        type: object
+                      weekly:
+                        description: Define the seasonality for a period (yearly /
+                          monthly / daily)
+                        properties:
+                          auto:
+                            description: Infer the seasonality
+                            type: boolean
+                          enabled:
+                            description: Is the seasonality exist
+                            type: boolean
+                          fourierOrder:
+                            default: 0
+                            description: If enabled, the number of data points in
+                              the interval
+                            format: int32
+                            type: integer
+                        type: object
+                      yearly:
+                        description: Define the seasonality for a period (yearly /
+                          monthly / daily)
+                        properties:
+                          auto:
+                            description: Infer the seasonality
+                            type: boolean
+                          enabled:
+                            description: Is the seasonality exist
+                            type: boolean
+                          fourierOrder:
+                            default: 0
+                            description: If enabled, the number of data points in
+                              the interval
+                            format: int32
+                            type: integer
+                        type: object
+                    type: object
                   trainEndData:
                     type: string
                   valueColumn:

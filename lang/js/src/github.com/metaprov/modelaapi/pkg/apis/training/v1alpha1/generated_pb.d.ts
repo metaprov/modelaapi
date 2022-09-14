@@ -1329,15 +1329,23 @@ export class ForecasterSpec extends jspb.Message {
   hasEvaluationperiod(): boolean;
   clearEvaluationperiod(): ForecasterSpec;
 
-  getSeasonalitiesList(): Array<PeriodSeasonalitySpec>;
-  setSeasonalitiesList(value: Array<PeriodSeasonalitySpec>): ForecasterSpec;
-  clearSeasonalitiesList(): ForecasterSpec;
-  addSeasonalities(value?: PeriodSeasonalitySpec, index?: number): PeriodSeasonalitySpec;
+  getSeasonality(): SeasonalitySpec | undefined;
+  setSeasonality(value?: SeasonalitySpec): ForecasterSpec;
+  hasSeasonality(): boolean;
+  clearSeasonality(): ForecasterSpec;
+
+  getRegressorsList(): Array<string>;
+  setRegressorsList(value: Array<string>): ForecasterSpec;
+  clearRegressorsList(): ForecasterSpec;
+  addRegressors(value: string, index?: number): ForecasterSpec;
 
   getLaggedregressorsList(): Array<string>;
   setLaggedregressorsList(value: Array<string>): ForecasterSpec;
   clearLaggedregressorsList(): ForecasterSpec;
   addLaggedregressors(value: string, index?: number): ForecasterSpec;
+
+  getGrowth(): string;
+  setGrowth(value: string): ForecasterSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ForecasterSpec.AsObject;
@@ -1363,8 +1371,10 @@ export namespace ForecasterSpec {
     hpobudget: number,
     evaluationmetrics?: EvalMetrics.AsObject,
     evaluationperiod?: EvalPeriod.AsObject,
-    seasonalitiesList: Array<PeriodSeasonalitySpec.AsObject>,
+    seasonality?: SeasonalitySpec.AsObject,
+    regressorsList: Array<string>,
     laggedregressorsList: Array<string>,
+    growth: string,
   }
 }
 
@@ -4166,32 +4176,6 @@ export namespace PercentilePrunerOptions {
   }
 }
 
-export class PeriodSeasonalitySpec extends jspb.Message {
-  getFreq(): string;
-  setFreq(value: string): PeriodSeasonalitySpec;
-
-  getPeriods(): number;
-  setPeriods(value: number): PeriodSeasonalitySpec;
-
-  getMode(): string;
-  setMode(value: string): PeriodSeasonalitySpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PeriodSeasonalitySpec.AsObject;
-  static toObject(includeInstance: boolean, msg: PeriodSeasonalitySpec): PeriodSeasonalitySpec.AsObject;
-  static serializeBinaryToWriter(message: PeriodSeasonalitySpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PeriodSeasonalitySpec;
-  static deserializeBinaryFromReader(message: PeriodSeasonalitySpec, reader: jspb.BinaryReader): PeriodSeasonalitySpec;
-}
-
-export namespace PeriodSeasonalitySpec {
-  export type AsObject = {
-    freq: string,
-    periods: number,
-    mode: string,
-  }
-}
-
 export class PrunerSpec extends jspb.Message {
   getType(): string;
   setType(value: string): PrunerSpec;
@@ -4729,6 +4713,80 @@ export namespace SearchSpec {
     objective: string,
     objective2: string,
     tune: boolean,
+  }
+}
+
+export class SeasonalityPeriodSpec extends jspb.Message {
+  getEnabled(): boolean;
+  setEnabled(value: boolean): SeasonalityPeriodSpec;
+
+  getAuto(): boolean;
+  setAuto(value: boolean): SeasonalityPeriodSpec;
+
+  getFourierorder(): number;
+  setFourierorder(value: number): SeasonalityPeriodSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SeasonalityPeriodSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: SeasonalityPeriodSpec): SeasonalityPeriodSpec.AsObject;
+  static serializeBinaryToWriter(message: SeasonalityPeriodSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SeasonalityPeriodSpec;
+  static deserializeBinaryFromReader(message: SeasonalityPeriodSpec, reader: jspb.BinaryReader): SeasonalityPeriodSpec;
+}
+
+export namespace SeasonalityPeriodSpec {
+  export type AsObject = {
+    enabled: boolean,
+    auto: boolean,
+    fourierorder: number,
+  }
+}
+
+export class SeasonalitySpec extends jspb.Message {
+  getAuto(): boolean;
+  setAuto(value: boolean): SeasonalitySpec;
+
+  getYearly(): SeasonalityPeriodSpec | undefined;
+  setYearly(value?: SeasonalityPeriodSpec): SeasonalitySpec;
+  hasYearly(): boolean;
+  clearYearly(): SeasonalitySpec;
+
+  getQuarterly(): SeasonalityPeriodSpec | undefined;
+  setQuarterly(value?: SeasonalityPeriodSpec): SeasonalitySpec;
+  hasQuarterly(): boolean;
+  clearQuarterly(): SeasonalitySpec;
+
+  getMonthly(): SeasonalityPeriodSpec | undefined;
+  setMonthly(value?: SeasonalityPeriodSpec): SeasonalitySpec;
+  hasMonthly(): boolean;
+  clearMonthly(): SeasonalitySpec;
+
+  getWeekly(): SeasonalityPeriodSpec | undefined;
+  setWeekly(value?: SeasonalityPeriodSpec): SeasonalitySpec;
+  hasWeekly(): boolean;
+  clearWeekly(): SeasonalitySpec;
+
+  getDaily(): SeasonalityPeriodSpec | undefined;
+  setDaily(value?: SeasonalityPeriodSpec): SeasonalitySpec;
+  hasDaily(): boolean;
+  clearDaily(): SeasonalitySpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SeasonalitySpec.AsObject;
+  static toObject(includeInstance: boolean, msg: SeasonalitySpec): SeasonalitySpec.AsObject;
+  static serializeBinaryToWriter(message: SeasonalitySpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SeasonalitySpec;
+  static deserializeBinaryFromReader(message: SeasonalitySpec, reader: jspb.BinaryReader): SeasonalitySpec;
+}
+
+export namespace SeasonalitySpec {
+  export type AsObject = {
+    auto: boolean,
+    yearly?: SeasonalityPeriodSpec.AsObject,
+    quarterly?: SeasonalityPeriodSpec.AsObject,
+    monthly?: SeasonalityPeriodSpec.AsObject,
+    weekly?: SeasonalityPeriodSpec.AsObject,
+    daily?: SeasonalityPeriodSpec.AsObject,
   }
 }
 

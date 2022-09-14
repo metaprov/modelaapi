@@ -48,7 +48,7 @@ const (
 	ForecastStrategyNone      ForecastStrategy = "none"
 )
 
-// +kubebuilder:validation:Enum="linear";"logistic";"flat"
+// +kubebuilder:validation:Enum="linear";"logistic";"flat";"quadratic";"none"
 type GrowthMode string
 
 const (
@@ -57,6 +57,7 @@ const (
 	Quadratic GrowthMode = "quadratic"
 	Sqr2      GrowthMode = "sqrt"
 	Flat      GrowthMode = "flat"
+	None      GrowthMode = "none"
 )
 
 // Represent a time series feature
@@ -96,18 +97,34 @@ const (
 	Skewness                                catalog.Metric = "skewness"                                // skewness(x)	Returns the sample skewness of x (calculated with the adjusted Fisher-Pearson standardized moment coefficient G1).
 )
 
-// Define the seasonality for a period (yearly / monthly / daily)
-type PeriodSeasonalitySpec struct {
-	// +kubebuilder:default:=day
+type SeasonalitySpec struct {
+	// If true infer the seasonality
 	// +kubebuilder:validation:Optional
-	Freq catalog.Freq `json:"freq,omitempty" protobuf:"varint,1,opt,name=freq"`
+	Auto *bool `json:"auto,omitempty" protobuf:"varint,1,opt,name=auto"`
+	// +kubebuilder:validation:Optional
+	Yearly *SeasonalityPeriodSpec `json:"yearly,omitempty" protobuf:"bytes,2,opt,name=yearly"`
+	// +kubebuilder:validation:Optional
+	Quarterly *SeasonalityPeriodSpec `json:"quarterly,omitempty" protobuf:"bytes,3,opt,name="`
+	// +kubebuilder:validation:Optional
+	Monthly *SeasonalityPeriodSpec `json:"monthly,omitempty" protobuf:"bytes,4,opt,name=monthly"`
+	// +kubebuilder:validation:Optional
+	Weekly *SeasonalityPeriodSpec `json:"weekly,omitempty" protobuf:"bytes,5,opt,name=weekly"`
+	// +kubebuilder:validation:Optional
+	Daily *SeasonalityPeriodSpec `json:"daily,omitempty" protobuf:"bytes,6,opt,name=daily"`
+}
+
+// Define the seasonality for a period (yearly / monthly / daily)
+type SeasonalityPeriodSpec struct {
+	// Is the seasonality exist
+	// +kubebuilder:validation:Optional
+	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
+	// Infer the seasonality
+	// +kubebuilder:validation:Optional
+	Auto *bool `json:"auto,omitempty" protobuf:"varint,2,opt,name=auto"`
 	// If enabled, the number of data points in the interval
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
-	Periods *int32 `json:"periods,omitempty" protobuf:"varint,2,opt,name=periods"`
-	// +kubebuilder:default:="auto"
-	// +kubebuilder:validation:Optional
-	Mode *catalog.SeasonalityMode `json:"mode,omitempty" protobuf:"bytes,3,opt,name=mode"`
+	FourierOrder *int32 `json:"fourierOrder,omitempty" protobuf:"varint,3,opt,name=fourierOrder"`
 }
 
 // Define a window on the time series.
@@ -163,12 +180,17 @@ type ForecasterSpec struct {
 	// Spec for time series cross validation
 	// +kubebuilder:validation:Optional
 	EvalPeriod EvalPeriod `json:"evaluationPeriod,omitempty" protobuf:"bytes,18,opt,name=evaluationPeriod"`
-
 	// +kubebuilder:validation:Optional
-	Seasonalities []PeriodSeasonalitySpec `json:"seasonalities,omitempty" protobuf:"bytes,19,opt,name=seasonalities"`
+	Seasonality SeasonalitySpec `json:"seasonality,omitempty" protobuf:"bytes,19,opt,name=seasonality"`
+	// The regressor. Initially those are set from the data source schema
+	// +kubebuilder:validation:Optional
+	Regressors []string `json:"regressors,omitempty" protobuf:"bytes,20,opt,name=regressors"`
 	// Lagged Regressors
 	// +kubebuilder:validation:Optional
 	LaggedRegressors []string `json:"laggedRegressors,omitempty" protobuf:"bytes,21,opt,name=laggedRegressors"`
+	// Set the growth of the series
+	// +kubebuilder:validation:Optional
+	Growth GrowthMode `json:"growth,omitempty" protobuf:"bytes,22,opt,name=growth"`
 }
 
 // BacktestSpec specify the back test

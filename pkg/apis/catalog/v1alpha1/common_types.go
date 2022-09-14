@@ -1193,14 +1193,15 @@ const (
 )
 
 // The Aggregate unit
-// +kubebuilder:validation:Enum="min";"max";"avg";"median";
+// +kubebuilder:validation:Enum="min";"max";"mean";"median";"sum";"stddev";"var"
 type Aggregate string
 
 const (
 	AggregateMin    Aggregate = "min"
 	AggregateMax    Aggregate = "max"
-	AggregateAvg    Aggregate = "avg"
+	AggregateMean   Aggregate = "mean"
 	AggregateMedian Aggregate = "median"
+	AggregateSum    Aggregate = "sum"
 	AggregateStddev Aggregate = "stddev"
 	AggregateVar    Aggregate = "var"
 )
