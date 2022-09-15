@@ -1125,6 +1125,7 @@ func (model *Model) InitModelFromStudy(study *Study) {
 	model.Spec.VersionName = study.Spec.VersionName
 	model.Spec.DatasetName = study.Spec.DatasetName
 	model.Spec.Task = study.Spec.Task
+	model.Spec.Forecasting = study.Spec.FctTemplate.DeepCopy()
 	model.Spec.Objective = study.Spec.Search.Objective
 	model.ObjectMeta.Labels = study.ObjectMeta.Labels
 	model.ObjectMeta.Labels[catalog.StudyLabelKey] = study.Name
