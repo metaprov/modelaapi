@@ -1075,7 +1075,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.repeatedFields_, null);
 };
 goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -23916,6 +23916,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetList.prototype
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.repeatedFields_ = [30];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -23974,7 +23981,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.toObject 
     servingdatasetref: (f = msg.getServingdatasetref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     predictorref: (f = msg.getPredictorref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     generatefeaturehistogram: (f = jspb.Message.getBooleanField(msg, 28)) == null ? undefined : f,
-    unittests: (f = msg.getUnittests()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.toObject(includeInstance, f)
+    unittests: (f = msg.getUnittests()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.toObject(includeInstance, f),
+    keyList: (f = jspb.Message.getRepeatedField(msg, 30)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -24133,6 +24141,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.deseriali
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.deserializeBinaryFromReader);
       msg.setUnittests(value);
+      break;
+    case 30:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addKey(value);
       break;
     default:
       reader.skipField();
@@ -24368,6 +24380,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.serialize
       29,
       f,
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.serializeBinaryToWriter
+    );
+  }
+  f = message.getKeyList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      30,
+      f
     );
   }
 };
@@ -25389,6 +25408,43 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.hasUnittests = function() {
   return jspb.Message.getField(this, 29) != null;
+};
+
+
+/**
+ * repeated string key = 30;
+ * @return {!Array<string>}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.getKeyList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 30));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.setKeyList = function(value) {
+  return jspb.Message.setField(this, 30, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.addKey = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 30, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.clearKeyList = function() {
+  return this.setKeyList([]);
 };
 
 

@@ -284,6 +284,11 @@ spec:
                 enum:
                 - pdf
                 type: string
+              key:
+                description: For group forecasting, this is the key of the group
+                items:
+                  type: string
+                type: array
               labRef:
                 description: The reference to the Lab namespace under which the report
                   generation Job will be executed under. If unspecified, the default

@@ -2226,6 +2226,11 @@ export class DatasetSpec extends jspb.Message {
   hasUnittests(): boolean;
   clearUnittests(): DatasetSpec;
 
+  getKeyList(): Array<string>;
+  setKeyList(value: Array<string>): DatasetSpec;
+  clearKeyList(): DatasetSpec;
+  addKey(value: string, index?: number): DatasetSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DatasetSpec.AsObject;
   static toObject(includeInstance: boolean, msg: DatasetSpec): DatasetSpec.AsObject;
@@ -2264,6 +2269,7 @@ export namespace DatasetSpec {
     predictorref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     generatefeaturehistogram: boolean,
     unittests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
+    keyList: Array<string>,
   }
 }
 

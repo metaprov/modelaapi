@@ -931,6 +931,10 @@ message ForecasterSpec {
   // Set the growth of the series
   // +kubebuilder:validation:Optional
   optional string growth = 20;
+
+  // In case of group forecast
+  // +kubebuilder:validation:Optional
+  repeated string key = 21;
 }
 
 // GarbageCollectionSpec specifies the configuration to garbage-collect unused Model resources
@@ -3092,6 +3096,10 @@ message ReportSpec {
   // If unspecified, the default Lab from the parent DataProduct will be used
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference labRef = 13;
+
+  // For group forecasting, this is the key of the group
+  // +kubebuilder:validation:Optional
+  repeated string key = 14;
 }
 
 // ReportStatus defines the observed state of a Report

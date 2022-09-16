@@ -1350,6 +1350,11 @@ export class ForecasterSpec extends jspb.Message {
   getGrowth(): string;
   setGrowth(value: string): ForecasterSpec;
 
+  getKeyList(): Array<string>;
+  setKeyList(value: Array<string>): ForecasterSpec;
+  clearKeyList(): ForecasterSpec;
+  addKey(value: string, index?: number): ForecasterSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ForecasterSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ForecasterSpec): ForecasterSpec.AsObject;
@@ -1379,6 +1384,7 @@ export namespace ForecasterSpec {
     regressorsList: Array<string>,
     laggedregressorsList: Array<string>,
     growth: string,
+    keyList: Array<string>,
   }
 }
 
@@ -4475,6 +4481,11 @@ export class ReportSpec extends jspb.Message {
   hasLabref(): boolean;
   clearLabref(): ReportSpec;
 
+  getKeyList(): Array<string>;
+  setKeyList(value: Array<string>): ReportSpec;
+  clearKeyList(): ReportSpec;
+  addKey(value: string, index?: number): ReportSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ReportSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ReportSpec): ReportSpec.AsObject;
@@ -4497,6 +4508,7 @@ export namespace ReportSpec {
     custom?: CustomReportSpec.AsObject,
     cronreportname: string,
     labref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    keyList: Array<string>,
   }
 }
 

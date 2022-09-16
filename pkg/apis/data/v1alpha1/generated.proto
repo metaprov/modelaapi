@@ -1695,6 +1695,10 @@ message DatasetSpec {
   // The specification for tests for a new dataset
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite unitTests = 29;
+
+  // For group forecasting, this is the key of the group
+  // +kubebuilder:validation:Optional
+  repeated string key = 30;
 }
 
 // DatasetStatistics contains statistics about the Dataset's overall data, as well as every feature of the data. The

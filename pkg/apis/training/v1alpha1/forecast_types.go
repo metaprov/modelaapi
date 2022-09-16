@@ -194,6 +194,9 @@ type ForecasterSpec struct {
 	// Set the growth of the series
 	// +kubebuilder:validation:Optional
 	Growth GrowthMode `json:"growth,omitempty" protobuf:"bytes,20,opt,name=growth"`
+	// In case of group forecast
+	// +kubebuilder:validation:Optional
+	Key []string `json:"key,omitempty" protobuf:"bytes,21,opt,name=key"`
 }
 
 // BacktestSpec specify the back test

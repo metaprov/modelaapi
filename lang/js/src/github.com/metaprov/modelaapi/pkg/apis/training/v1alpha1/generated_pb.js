@@ -2250,7 +2250,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.repeatedFields_, null);
 };
 goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -14551,7 +14551,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.repeatedFields_ = [2,8,9,11,18,19];
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.repeatedFields_ = [2,8,9,11,18,19,21];
 
 
 
@@ -14605,7 +14605,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.to
     seasonality: (f = msg.getSeasonality()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SeasonalitySpec.toObject(includeInstance, f),
     regressorsList: (f = jspb.Message.getRepeatedField(msg, 18)) == null ? undefined : f,
     laggedregressorsList: (f = jspb.Message.getRepeatedField(msg, 19)) == null ? undefined : f,
-    growth: (f = jspb.Message.getField(msg, 20)) == null ? undefined : f
+    growth: (f = jspb.Message.getField(msg, 20)) == null ? undefined : f,
+    keyList: (f = jspb.Message.getRepeatedField(msg, 21)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -14726,6 +14727,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.de
     case 20:
       var value = /** @type {string} */ (reader.readString());
       msg.setGrowth(value);
+      break;
+    case 21:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addKey(value);
       break;
     default:
       reader.skipField();
@@ -14895,6 +14900,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.se
   if (f != null) {
     writer.writeString(
       20,
+      f
+    );
+  }
+  f = message.getKeyList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      21,
       f
     );
   }
@@ -15597,6 +15609,43 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.pr
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.hasGrowth = function() {
   return jspb.Message.getField(this, 20) != null;
+};
+
+
+/**
+ * repeated string key = 21;
+ * @return {!Array<string>}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.getKeyList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 21));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.setKeyList = function(value) {
+  return jspb.Message.setField(this, 21, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.addKey = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 21, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.clearKeyList = function() {
+  return this.setKeyList([]);
 };
 
 
@@ -44379,6 +44428,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportList.protot
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.repeatedFields_ = [14];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -44421,7 +44477,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.toObje
     activedeadlineseconds: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
     custom: (f = msg.getCustom()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CustomReportSpec.toObject(includeInstance, f),
     cronreportname: (f = jspb.Message.getField(msg, 12)) == null ? undefined : f,
-    labref: (f = msg.getLabref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f)
+    labref: (f = msg.getLabref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
+    keyList: (f = jspb.Message.getRepeatedField(msg, 14)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -44510,6 +44567,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.deseri
       var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
       reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
       msg.setLabref(value);
+      break;
+    case 14:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addKey(value);
       break;
     default:
       reader.skipField();
@@ -44627,6 +44688,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.serial
       13,
       f,
       k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
+    );
+  }
+  f = message.getKeyList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      14,
+      f
     );
   }
 };
@@ -45066,6 +45134,43 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.protot
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.prototype.hasLabref = function() {
   return jspb.Message.getField(this, 13) != null;
+};
+
+
+/**
+ * repeated string key = 14;
+ * @return {!Array<string>}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.prototype.getKeyList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 14));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.prototype.setKeyList = function(value) {
+  return jspb.Message.setField(this, 14, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.prototype.addKey = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 14, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.prototype.clearKeyList = function() {
+  return this.setKeyList([]);
 };
 
 

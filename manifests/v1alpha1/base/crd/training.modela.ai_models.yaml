@@ -1210,6 +1210,11 @@ spec:
                   hpoBudget:
                     format: int32
                     type: integer
+                  key:
+                    description: In case of group forecast
+                    items:
+                      type: string
+                    type: array
                   laggedRegressors:
                     description: Lagged Regressors
                     items:

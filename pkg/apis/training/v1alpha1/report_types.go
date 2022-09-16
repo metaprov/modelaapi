@@ -177,6 +177,9 @@ type ReportSpec struct {
 	// If unspecified, the default Lab from the parent DataProduct will be used
 	// +kubebuilder:validation:Optional
 	LabRef v1.ObjectReference `json:"labRef,omitempty" protobuf:"bytes,13,opt,name=labRef"`
+	// For group forecasting, this is the key of the group
+	// +kubebuilder:validation:Optional
+	Key []string `json:"key,omitempty" protobuf:"bytes,14,opt,name=key"`
 }
 
 // ReportStatus defines the observed state of a Report

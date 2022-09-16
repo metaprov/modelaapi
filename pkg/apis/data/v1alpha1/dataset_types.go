@@ -204,6 +204,9 @@ type DatasetSpec struct {
 	// The specification for tests for a new dataset
 	// +kubebuilder:validation:Optional
 	UnitTests catalog.TestSuite `json:"unitTests,omitempty" protobuf:"bytes,29,opt,name=unitTests"`
+	// For group forecasting, this is the key of the group
+	// +kubebuilder:validation:Optional
+	Key []string `json:"key,omitempty" protobuf:"bytes,30,opt,name=key"`
 }
 
 // DatasetStatus defines the observed state of a Dataset object
