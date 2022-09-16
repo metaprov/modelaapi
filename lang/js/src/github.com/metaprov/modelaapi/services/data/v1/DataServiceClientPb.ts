@@ -1970,5 +1970,48 @@ export class DataServiceClient {
     this.methodInfoGetTimeSeriesDatasetKeys);
   }
 
+  methodInfoGroupByDataset = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.data.v1.DataService/GroupByDataset',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.DsGroupByDatasetRequest,
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.DsGroupByDatasetResponse,
+    (request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsGroupByDatasetRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.DsGroupByDatasetResponse.deserializeBinary
+  );
+
+  groupByDataset(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsGroupByDatasetRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_data_v1_data_pb.DsGroupByDatasetResponse>;
+
+  groupByDataset(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsGroupByDatasetRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsGroupByDatasetResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_data_v1_data_pb.DsGroupByDatasetResponse>;
+
+  groupByDataset(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsGroupByDatasetRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsGroupByDatasetResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.data.v1.DataService/GroupByDataset',
+        request,
+        metadata || {},
+        this.methodInfoGroupByDataset,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.data.v1.DataService/GroupByDataset',
+    request,
+    metadata || {},
+    this.methodInfoGroupByDataset);
+  }
+
 }
 

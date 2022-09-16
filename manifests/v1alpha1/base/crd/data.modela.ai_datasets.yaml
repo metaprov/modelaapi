@@ -1014,6 +1014,9 @@ spec:
                   - type
                   type: object
                 type: array
+              datasetGroupIndexUri:
+                description: The location of dataset index file
+                type: string
               derivedFromDataset:
                 description: If the dataset is derived, the name of the Dataset that
                   the object is derived from

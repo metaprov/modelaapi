@@ -1155,6 +1155,78 @@ export namespace DsSplitDatasetRequest {
   }
 }
 
+export class DsGroupByDatasetRequest extends jspb.Message {
+  getProduct(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct | undefined;
+  setProduct(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): DsGroupByDatasetRequest;
+  hasProduct(): boolean;
+  clearProduct(): DsGroupByDatasetRequest;
+
+  getVersion(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion | undefined;
+  setVersion(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion): DsGroupByDatasetRequest;
+  hasVersion(): boolean;
+  clearVersion(): DsGroupByDatasetRequest;
+
+  getBucket(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
+  setBucket(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): DsGroupByDatasetRequest;
+  hasBucket(): boolean;
+  clearBucket(): DsGroupByDatasetRequest;
+
+  getDatasource(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource | undefined;
+  setDatasource(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource): DsGroupByDatasetRequest;
+  hasDatasource(): boolean;
+  clearDatasource(): DsGroupByDatasetRequest;
+
+  getDataset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
+  setDataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): DsGroupByDatasetRequest;
+  hasDataset(): boolean;
+  clearDataset(): DsGroupByDatasetRequest;
+
+  getConnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setConnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): DsGroupByDatasetRequest;
+  hasConnection(): boolean;
+  clearConnection(): DsGroupByDatasetRequest;
+
+  getSecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearSecretMap(): DsGroupByDatasetRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DsGroupByDatasetRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DsGroupByDatasetRequest): DsGroupByDatasetRequest.AsObject;
+  static serializeBinaryToWriter(message: DsGroupByDatasetRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DsGroupByDatasetRequest;
+  static deserializeBinaryFromReader(message: DsGroupByDatasetRequest, reader: jspb.BinaryReader): DsGroupByDatasetRequest;
+}
+
+export namespace DsGroupByDatasetRequest {
+  export type AsObject = {
+    product?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
+    version?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.AsObject,
+    bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
+    datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
+    dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
+    connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    secretMap: Array<[string, Uint8Array | string]>,
+  }
+}
+
+export class DsGroupByDatasetResponse extends jspb.Message {
+  getIndexfile(): string;
+  setIndexfile(value: string): DsGroupByDatasetResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DsGroupByDatasetResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: DsGroupByDatasetResponse): DsGroupByDatasetResponse.AsObject;
+  static serializeBinaryToWriter(message: DsGroupByDatasetResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DsGroupByDatasetResponse;
+  static deserializeBinaryFromReader(message: DsGroupByDatasetResponse, reader: jspb.BinaryReader): DsGroupByDatasetResponse;
+}
+
+export namespace DsGroupByDatasetResponse {
+  export type AsObject = {
+    indexfile: string,
+  }
+}
+
 export class DsSplitDatasetToRungsRequest extends jspb.Message {
   getProduct(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct | undefined;
   setProduct(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): DsSplitDatasetToRungsRequest;

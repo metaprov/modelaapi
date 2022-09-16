@@ -275,6 +275,9 @@ type DatasetStatus struct {
 	// The generated training feature histogram, Empty if no feature histogram generated
 	// +kubebuilder:validation:Optional
 	FeatureHistogramRef v1.ObjectReference `json:"featureHistogramRef,omitempty" protobuf:"bytes,22,opt,name=featureHistogramRef"`
+	// The location of dataset index file
+	// +kubebuilder:validation:Optional
+	DatasetGroupIndexUri string `json:"datasetGroupIndexUri,omitempty" protobuf:"bytes,23,opt,name=datasetGroupIndexUri"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional

@@ -2393,6 +2393,9 @@ export class DatasetStatus extends jspb.Message {
   hasFeaturehistogramref(): boolean;
   clearFeaturehistogramref(): DatasetStatus;
 
+  getDatasetgroupindexuri(): string;
+  setDatasetgroupindexuri(value: string): DatasetStatus;
+
   getConditionsList(): Array<DatasetCondition>;
   setConditionsList(value: Array<DatasetCondition>): DatasetStatus;
   clearConditionsList(): DatasetStatus;
@@ -2429,6 +2432,7 @@ export namespace DatasetStatus {
     starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     featurehistogramref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    datasetgroupindexuri: string,
     conditionsList: Array<DatasetCondition.AsObject>,
   }
 }

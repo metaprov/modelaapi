@@ -256,6 +256,22 @@ message DsSplitDatasetRequest {
 
 }
 
+message DsGroupByDatasetRequest {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct product = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion version = 2;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 3;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 4;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset dataset = 5;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection = 7;
+    map<string,bytes> secret = 8;   
+
+}
+
+message DsGroupByDatasetResponse {
+    string indexFile = 1;
+}
+
+
 message DsSplitDatasetToRungsRequest {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct product = 1;
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion version = 2;
@@ -722,5 +738,7 @@ service DataService {
     rpc UnitTestPredictor(RunTestSuiteRequest) returns (RunTestSuiteResponse) {}
 
     rpc GetTimeSeriesDatasetKeys(GetTimeSeriesDatasetKeysRequest) returns (GetTimeSeriesDatasetKeysResponse) {}
+
+    rpc GroupByDataset(DsGroupByDatasetRequest) returns (DsGroupByDatasetResponse) {} 
 
 }
