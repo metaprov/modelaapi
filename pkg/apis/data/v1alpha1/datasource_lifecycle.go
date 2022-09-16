@@ -60,7 +60,6 @@ func (sc *DataSource) MarkFieldAsTarget(target string) {
 // Validate
 //==============================================================================
 
-
 func (sc DataSource) Validate() (bool, []metav1.StatusCause) {
 	var causes []metav1.StatusCause
 

@@ -92,7 +92,6 @@ type DataServiceClient interface {
 	UnitTestFeatureHistogram(ctx context.Context, in *RunTestSuiteRequest, opts ...grpc.CallOption) (*RunTestSuiteResponse, error)
 	UnitTestPredictor(ctx context.Context, in *RunTestSuiteRequest, opts ...grpc.CallOption) (*RunTestSuiteResponse, error)
 	GetTimeSeriesDatasetKeys(ctx context.Context, in *GetTimeSeriesDatasetKeysRequest, opts ...grpc.CallOption) (*GetTimeSeriesDatasetKeysResponse, error)
-	GroupByDataset(ctx context.Context, in *DsGroupByDatasetRequest, opts ...grpc.CallOption) (*DsGroupByDatasetResponse, error)
 }
 
 type dataServiceClient struct {
@@ -508,15 +507,6 @@ func (c *dataServiceClient) GetTimeSeriesDatasetKeys(ctx context.Context, in *Ge
 	return out, nil
 }
 
-func (c *dataServiceClient) GroupByDataset(ctx context.Context, in *DsGroupByDatasetRequest, opts ...grpc.CallOption) (*DsGroupByDatasetResponse, error) {
-	out := new(DsGroupByDatasetResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/GroupByDataset", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 // DataServiceServer is the server API for DataService service.
 // All implementations must embed UnimplementedDataServiceServer
 // for forward compatibility
@@ -591,7 +581,6 @@ type DataServiceServer interface {
 	UnitTestFeatureHistogram(context.Context, *RunTestSuiteRequest) (*RunTestSuiteResponse, error)
 	UnitTestPredictor(context.Context, *RunTestSuiteRequest) (*RunTestSuiteResponse, error)
 	GetTimeSeriesDatasetKeys(context.Context, *GetTimeSeriesDatasetKeysRequest) (*GetTimeSeriesDatasetKeysResponse, error)
-	GroupByDataset(context.Context, *DsGroupByDatasetRequest) (*DsGroupByDatasetResponse, error)
 	mustEmbedUnimplementedDataServiceServer()
 }
 
@@ -733,9 +722,6 @@ func (UnimplementedDataServiceServer) UnitTestPredictor(context.Context, *RunTes
 }
 func (UnimplementedDataServiceServer) GetTimeSeriesDatasetKeys(context.Context, *GetTimeSeriesDatasetKeysRequest) (*GetTimeSeriesDatasetKeysResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetTimeSeriesDatasetKeys not implemented")
-}
-func (UnimplementedDataServiceServer) GroupByDataset(context.Context, *DsGroupByDatasetRequest) (*DsGroupByDatasetResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GroupByDataset not implemented")
 }
 func (UnimplementedDataServiceServer) mustEmbedUnimplementedDataServiceServer() {}
 
@@ -1560,24 +1546,6 @@ func _DataService_GetTimeSeriesDatasetKeys_Handler(srv interface{}, ctx context.
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DataService_GroupByDataset_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DsGroupByDatasetRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DataServiceServer).GroupByDataset(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/GroupByDataset",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DataServiceServer).GroupByDataset(ctx, req.(*DsGroupByDatasetRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 // DataService_ServiceDesc is the grpc.ServiceDesc for DataService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -1764,10 +1732,6 @@ var DataService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetTimeSeriesDatasetKeys",
 			Handler:    _DataService_GetTimeSeriesDatasetKeys_Handler,
-		},
-		{
-			MethodName: "GroupByDataset",
-			Handler:    _DataService_GroupByDataset_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
