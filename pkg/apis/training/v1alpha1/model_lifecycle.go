@@ -1158,6 +1158,10 @@ func (model *Model) OpName() string {
 	return model.Namespace + "-" + model.Name
 }
 
+func (model Model) IsGroup() bool {
+	return *model.Spec.Task == catalog.GroupForecast
+}
+
 ////////////////////////////////
 // Class Query
 ////////////////////////////////

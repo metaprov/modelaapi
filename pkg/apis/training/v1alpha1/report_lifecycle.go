@@ -175,6 +175,10 @@ func (report *Report) PdfUri() string {
 	return fmt.Sprintf("%s/%s.pdf", report.RootUri(), report.Name)
 }
 
+func (report *Report) IsGroup() bool {
+	return *report.Spec.ReportType == GroupTimeSeriesDatasetReport || *report.Spec.ReportType == GroupTimeSeriesModelReport
+}
+
 func ParseReportYaml(content []byte) (*Report, error) {
 	requiredObj, err := runtime.Decode(scheme.Codecs.UniversalDecoder(SchemeGroupVersion), content)
 	if err != nil {

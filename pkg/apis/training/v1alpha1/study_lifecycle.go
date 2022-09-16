@@ -1043,6 +1043,10 @@ func (study *Study) IsFailed() bool {
 	return study.Status.Phase == StudyPhaseFailed
 }
 
+func (study *Study) IsGroup() bool {
+	return *study.Spec.Task == catalog.GroupForecast
+}
+
 func (study *Study) RefreshProgress() {
 	// if we completed the study, or failed or aborted, put progress at 100
 	if study.IsReady() || study.IsFailed() || study.Aborted() {

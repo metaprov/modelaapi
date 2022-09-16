@@ -467,6 +467,10 @@ func (dataset *Dataset) IsFailed() bool {
 	return dataset.Status.Phase == DatasetPhaseFailed
 }
 
+func (dataset *Dataset) IsGroup() bool {
+	return *dataset.Spec.Task == catalog.GroupForecast
+}
+
 // Generate a dataset completion alert
 func (dataset *Dataset) CompletionAlert(tenantRef *v1.ObjectReference, notifierName *string) *infra.Alert {
 	level := infra.Info
