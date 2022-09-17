@@ -324,6 +324,22 @@ message DsCreateColumnProfileResponse {
 
 }
 
+// Create dataset profile
+message GroupByDatasetRequest {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct product = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion version = 2;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 3;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset dataset = 4;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection = 5;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 6;
+    map<string,bytes> secret = 7;
+}
+
+message GroupByDatasetResponse {
+    string uri = 1; // the index file uri    
+}
+
+
 message DsDatasetProfileRequest {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct product = 1;
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion version = 2;
@@ -723,8 +739,7 @@ service DataService {
     rpc UnitTestFeedback(RunTestSuiteRequest) returns (RunTestSuiteResponse) {}
     rpc UnitTestFeatureHistogram(RunTestSuiteRequest) returns (RunTestSuiteResponse) {}
     rpc UnitTestPredictor(RunTestSuiteRequest) returns (RunTestSuiteResponse) {}
-
-    rpc GetTimeSeriesDatasetKeys(GetTimeSeriesDatasetKeysRequest) returns (GetTimeSeriesDatasetKeysResponse) {}
+    rpc GroupByDataset(GroupByDatasetRequest) returns (GroupByDatasetResponse) {}
 
     
 

@@ -91,7 +91,7 @@ type DataServiceClient interface {
 	UnitTestFeedback(ctx context.Context, in *RunTestSuiteRequest, opts ...grpc.CallOption) (*RunTestSuiteResponse, error)
 	UnitTestFeatureHistogram(ctx context.Context, in *RunTestSuiteRequest, opts ...grpc.CallOption) (*RunTestSuiteResponse, error)
 	UnitTestPredictor(ctx context.Context, in *RunTestSuiteRequest, opts ...grpc.CallOption) (*RunTestSuiteResponse, error)
-	GetTimeSeriesDatasetKeys(ctx context.Context, in *GetTimeSeriesDatasetKeysRequest, opts ...grpc.CallOption) (*GetTimeSeriesDatasetKeysResponse, error)
+	GroupByDataset(ctx context.Context, in *GroupByDatasetRequest, opts ...grpc.CallOption) (*GroupByDatasetResponse, error)
 }
 
 type dataServiceClient struct {
@@ -498,9 +498,9 @@ func (c *dataServiceClient) UnitTestPredictor(ctx context.Context, in *RunTestSu
 	return out, nil
 }
 
-func (c *dataServiceClient) GetTimeSeriesDatasetKeys(ctx context.Context, in *GetTimeSeriesDatasetKeysRequest, opts ...grpc.CallOption) (*GetTimeSeriesDatasetKeysResponse, error) {
-	out := new(GetTimeSeriesDatasetKeysResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/GetTimeSeriesDatasetKeys", in, out, opts...)
+func (c *dataServiceClient) GroupByDataset(ctx context.Context, in *GroupByDatasetRequest, opts ...grpc.CallOption) (*GroupByDatasetResponse, error) {
+	out := new(GroupByDatasetResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/GroupByDataset", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -580,7 +580,7 @@ type DataServiceServer interface {
 	UnitTestFeedback(context.Context, *RunTestSuiteRequest) (*RunTestSuiteResponse, error)
 	UnitTestFeatureHistogram(context.Context, *RunTestSuiteRequest) (*RunTestSuiteResponse, error)
 	UnitTestPredictor(context.Context, *RunTestSuiteRequest) (*RunTestSuiteResponse, error)
-	GetTimeSeriesDatasetKeys(context.Context, *GetTimeSeriesDatasetKeysRequest) (*GetTimeSeriesDatasetKeysResponse, error)
+	GroupByDataset(context.Context, *GroupByDatasetRequest) (*GroupByDatasetResponse, error)
 	mustEmbedUnimplementedDataServiceServer()
 }
 
@@ -720,8 +720,8 @@ func (UnimplementedDataServiceServer) UnitTestFeatureHistogram(context.Context, 
 func (UnimplementedDataServiceServer) UnitTestPredictor(context.Context, *RunTestSuiteRequest) (*RunTestSuiteResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UnitTestPredictor not implemented")
 }
-func (UnimplementedDataServiceServer) GetTimeSeriesDatasetKeys(context.Context, *GetTimeSeriesDatasetKeysRequest) (*GetTimeSeriesDatasetKeysResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetTimeSeriesDatasetKeys not implemented")
+func (UnimplementedDataServiceServer) GroupByDataset(context.Context, *GroupByDatasetRequest) (*GroupByDatasetResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GroupByDataset not implemented")
 }
 func (UnimplementedDataServiceServer) mustEmbedUnimplementedDataServiceServer() {}
 
@@ -1528,20 +1528,20 @@ func _DataService_UnitTestPredictor_Handler(srv interface{}, ctx context.Context
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DataService_GetTimeSeriesDatasetKeys_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetTimeSeriesDatasetKeysRequest)
+func _DataService_GroupByDataset_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GroupByDatasetRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DataServiceServer).GetTimeSeriesDatasetKeys(ctx, in)
+		return srv.(DataServiceServer).GroupByDataset(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/GetTimeSeriesDatasetKeys",
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/GroupByDataset",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DataServiceServer).GetTimeSeriesDatasetKeys(ctx, req.(*GetTimeSeriesDatasetKeysRequest))
+		return srv.(DataServiceServer).GroupByDataset(ctx, req.(*GroupByDatasetRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1730,8 +1730,8 @@ var DataService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _DataService_UnitTestPredictor_Handler,
 		},
 		{
-			MethodName: "GetTimeSeriesDatasetKeys",
-			Handler:    _DataService_GetTimeSeriesDatasetKeys_Handler,
+			MethodName: "GroupByDataset",
+			Handler:    _DataService_GroupByDataset_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

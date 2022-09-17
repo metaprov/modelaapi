@@ -1453,6 +1453,78 @@ export namespace DsCreateColumnProfileResponse {
   }
 }
 
+export class GroupByDatasetRequest extends jspb.Message {
+  getProduct(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct | undefined;
+  setProduct(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): GroupByDatasetRequest;
+  hasProduct(): boolean;
+  clearProduct(): GroupByDatasetRequest;
+
+  getVersion(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion | undefined;
+  setVersion(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion): GroupByDatasetRequest;
+  hasVersion(): boolean;
+  clearVersion(): GroupByDatasetRequest;
+
+  getDatasource(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource | undefined;
+  setDatasource(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource): GroupByDatasetRequest;
+  hasDatasource(): boolean;
+  clearDatasource(): GroupByDatasetRequest;
+
+  getDataset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
+  setDataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): GroupByDatasetRequest;
+  hasDataset(): boolean;
+  clearDataset(): GroupByDatasetRequest;
+
+  getConnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setConnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): GroupByDatasetRequest;
+  hasConnection(): boolean;
+  clearConnection(): GroupByDatasetRequest;
+
+  getBucket(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
+  setBucket(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): GroupByDatasetRequest;
+  hasBucket(): boolean;
+  clearBucket(): GroupByDatasetRequest;
+
+  getSecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearSecretMap(): GroupByDatasetRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GroupByDatasetRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GroupByDatasetRequest): GroupByDatasetRequest.AsObject;
+  static serializeBinaryToWriter(message: GroupByDatasetRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GroupByDatasetRequest;
+  static deserializeBinaryFromReader(message: GroupByDatasetRequest, reader: jspb.BinaryReader): GroupByDatasetRequest;
+}
+
+export namespace GroupByDatasetRequest {
+  export type AsObject = {
+    product?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
+    version?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.AsObject,
+    datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
+    dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
+    connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
+    secretMap: Array<[string, Uint8Array | string]>,
+  }
+}
+
+export class GroupByDatasetResponse extends jspb.Message {
+  getUri(): string;
+  setUri(value: string): GroupByDatasetResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GroupByDatasetResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GroupByDatasetResponse): GroupByDatasetResponse.AsObject;
+  static serializeBinaryToWriter(message: GroupByDatasetResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GroupByDatasetResponse;
+  static deserializeBinaryFromReader(message: GroupByDatasetResponse, reader: jspb.BinaryReader): GroupByDatasetResponse;
+}
+
+export namespace GroupByDatasetResponse {
+  export type AsObject = {
+    uri: string,
+  }
+}
+
 export class DsDatasetProfileRequest extends jspb.Message {
   getProduct(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct | undefined;
   setProduct(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): DsDatasetProfileRequest;

@@ -1927,47 +1927,47 @@ export class DataServiceClient {
     this.methodInfoUnitTestPredictor);
   }
 
-  methodInfoGetTimeSeriesDatasetKeys = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.data.v1.DataService/GetTimeSeriesDatasetKeys',
+  methodInfoGroupByDataset = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.data.v1.DataService/GroupByDataset',
     grpcWeb.MethodType.UNARY,
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.GetTimeSeriesDatasetKeysRequest,
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.GetTimeSeriesDatasetKeysResponse,
-    (request: github_com_metaprov_modelaapi_services_data_v1_data_pb.GetTimeSeriesDatasetKeysRequest) => {
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.GroupByDatasetRequest,
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.GroupByDatasetResponse,
+    (request: github_com_metaprov_modelaapi_services_data_v1_data_pb.GroupByDatasetRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.GetTimeSeriesDatasetKeysResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.GroupByDatasetResponse.deserializeBinary
   );
 
-  getTimeSeriesDatasetKeys(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.GetTimeSeriesDatasetKeysRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_data_v1_data_pb.GetTimeSeriesDatasetKeysResponse>;
+  groupByDataset(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.GroupByDatasetRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_data_v1_data_pb.GroupByDatasetResponse>;
 
-  getTimeSeriesDatasetKeys(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.GetTimeSeriesDatasetKeysRequest,
+  groupByDataset(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.GroupByDatasetRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.GetTimeSeriesDatasetKeysResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_data_v1_data_pb.GetTimeSeriesDatasetKeysResponse>;
+               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.GroupByDatasetResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_data_v1_data_pb.GroupByDatasetResponse>;
 
-  getTimeSeriesDatasetKeys(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.GetTimeSeriesDatasetKeysRequest,
+  groupByDataset(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.GroupByDatasetRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.GetTimeSeriesDatasetKeysResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.GroupByDatasetResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.data.v1.DataService/GetTimeSeriesDatasetKeys',
+          '/github.com.metaprov.modelaapi.services.data.v1.DataService/GroupByDataset',
         request,
         metadata || {},
-        this.methodInfoGetTimeSeriesDatasetKeys,
+        this.methodInfoGroupByDataset,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.data.v1.DataService/GetTimeSeriesDatasetKeys',
+      '/github.com.metaprov.modelaapi.services.data.v1.DataService/GroupByDataset',
     request,
     metadata || {},
-    this.methodInfoGetTimeSeriesDatasetKeys);
+    this.methodInfoGroupByDataset);
   }
 
 }
