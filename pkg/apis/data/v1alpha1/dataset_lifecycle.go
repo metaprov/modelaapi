@@ -256,7 +256,7 @@ func (dataset *Dataset) MarkGroupSuccess() {
 
 }
 
-func (dataset *Dataset) MarkGroupSnapshot() {
+func (dataset *Dataset) MarkGrouping() {
 	dataset.CreateOrUpdateCond(DatasetCondition{
 		Type:   DatasetGrouped,
 		Status: v1.ConditionFalse,
