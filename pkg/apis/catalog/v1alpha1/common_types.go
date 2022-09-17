@@ -96,6 +96,7 @@ const (
 	UnitTestFeatureHistogram TaskName = "unittest-feature-histogram"
 	UnitTestPredictor        TaskName = "unittest-predictor"
 	TrainDriftDetector       TaskName = "train-drift-detector"
+	GroupByDatasetTask       TaskName = "groupby-dataset"
 )
 
 // ApiKeyName is the secret or in env variable
