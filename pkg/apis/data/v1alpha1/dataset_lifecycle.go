@@ -227,6 +227,45 @@ func (dataset *Dataset) MarkTakingSnapshot() {
 	dataset.Status.Progress = 10
 }
 
+//------------------------------ Group
+
+func (dataset *Dataset) MarkGroupFailed(msg string) {
+	dataset.CreateOrUpdateCond(DatasetCondition{
+		Type:    DatasetGrouped,
+		Status:  v1.ConditionFalse,
+		Reason:  string(DatasetPhaseFailed),
+		Message: "Failed to group." + msg,
+	})
+	dataset.Status.Phase = DatasetPhaseFailed
+	dataset.Status.FailureMessage = util.StrPtr(msg)
+	dataset.Status.Progress = 100
+	now := metav1.Now()
+	if dataset.Status.EndTime == nil {
+		dataset.Status.EndTime = &now
+	}
+
+}
+
+func (dataset *Dataset) MarkGroupSuccess() {
+	dataset.CreateOrUpdateCond(DatasetCondition{
+		Type:   DatasetGrouped,
+		Status: v1.ConditionTrue,
+	})
+	dataset.Status.Phase = DatasetPhaseGrouped
+	dataset.Status.Progress = 20
+
+}
+
+func (dataset *Dataset) MarkGroupSnapshot() {
+	dataset.CreateOrUpdateCond(DatasetCondition{
+		Type:   DatasetGrouped,
+		Status: v1.ConditionFalse,
+		Reason: string(DatasetPhaseGrouping),
+	})
+	dataset.Status.Phase = DatasetPhaseGrouping
+	dataset.Status.Progress = 10
+}
+
 // ----------------------------- Unit Tests --------------------
 
 func (dataset *Dataset) MarkUnitTestFailed(msg string) {

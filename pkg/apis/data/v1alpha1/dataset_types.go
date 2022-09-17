@@ -14,6 +14,8 @@ const (
 	DatasetPhaseGenSuccess      DatasetPhase = "GenSuccess" // when synthetic gen success
 	DatasetPhaseIngestRunning   DatasetPhase = "Ingesting"
 	DatasetPhaseIngestSuccess   DatasetPhase = "Ingested"
+	DatasetPhaseGrouping        DatasetPhase = "Grouping"
+	DatasetPhaseGrouped         DatasetPhase = "Grouped"
 	DatasetPhaseReportRunning   DatasetPhase = "Reporting"
 	DatasetPhaseReportSuccess   DatasetPhase = "Reported"
 	DatasetPhaseProfileRunning  DatasetPhase = "Profiling"
@@ -36,6 +38,7 @@ const (
 	DatasetSnapshotted DatasetConditionType = "Snapshotted"
 	DatasetProfiled    DatasetConditionType = "Profiled"
 	DatasetIngested    DatasetConditionType = "Ingested"
+	DatasetGrouped     DatasetConditionType = "Grouped"
 	DatasetGenerated   DatasetConditionType = "Generated"
 	DatasetSaved       DatasetConditionType = "Saved"
 	DatasetArchived    DatasetConditionType = "Archived"
