@@ -915,8 +915,58 @@ spec:
                             - year
                             - multi-year
                             type: string
+                          groups:
+                            description: Define the grouping of the time series.
+                            items:
+                              description: Define one level of grouping, this is used
+                                for time series forecasts
+                              properties:
+                                aggr:
+                                  default: none
+                                  description: Aggregation function. Define how to
+                                    aggregate
+                                  enum:
+                                  - min
+                                  - max
+                                  - mean
+                                  - median
+                                  - sum
+                                  - stddev
+                                  - var
+                                  - none
+                                  type: string
+                                columns:
+                                  description: List of columns to group by
+                                  items:
+                                    type: string
+                                  type: array
+                                freq:
+                                  default: freq
+                                  description: Freq
+                                  enum:
+                                  - second
+                                  - minute
+                                  - hour
+                                  - day
+                                  - week
+                                  - month
+                                  - quarter
+                                  - year
+                                  - multi-year
+                                  type: string
+                                leaf:
+                                  default: leaf
+                                  description: If true, indicate that this is the
+                                    leaf level.
+                                  type: boolean
+                                name:
+                                  description: The groupby name
+                                  type: string
+                              type: object
+                            type: array
                           interval:
                             default: 1
+                            description: The interval to forecast at this level
                             format: int32
                             type: integer
                           type:

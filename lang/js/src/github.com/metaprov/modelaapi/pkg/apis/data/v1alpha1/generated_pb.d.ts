@@ -4027,6 +4027,42 @@ export namespace GovernanceStatus {
   }
 }
 
+export class GroupBy extends jspb.Message {
+  getName(): string;
+  setName(value: string): GroupBy;
+
+  getColumnsList(): Array<string>;
+  setColumnsList(value: Array<string>): GroupBy;
+  clearColumnsList(): GroupBy;
+  addColumns(value: string, index?: number): GroupBy;
+
+  getAggr(): string;
+  setAggr(value: string): GroupBy;
+
+  getFreq(): string;
+  setFreq(value: string): GroupBy;
+
+  getLeaf(): boolean;
+  setLeaf(value: boolean): GroupBy;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GroupBy.AsObject;
+  static toObject(includeInstance: boolean, msg: GroupBy): GroupBy.AsObject;
+  static serializeBinaryToWriter(message: GroupBy, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GroupBy;
+  static deserializeBinaryFromReader(message: GroupBy, reader: jspb.BinaryReader): GroupBy;
+}
+
+export namespace GroupBy {
+  export type AsObject = {
+    name: string,
+    columnsList: Array<string>,
+    aggr: string,
+    freq: string,
+    leaf: boolean,
+  }
+}
+
 export class HistogramSpec extends jspb.Message {
   getDatasetname(): string;
   setDatasetname(value: string): HistogramSpec;
@@ -5943,6 +5979,11 @@ export class TimeSeriesSchema extends jspb.Message {
   getInterval(): number;
   setInterval(value: number): TimeSeriesSchema;
 
+  getGroupsList(): Array<GroupBy>;
+  setGroupsList(value: Array<GroupBy>): TimeSeriesSchema;
+  clearGroupsList(): TimeSeriesSchema;
+  addGroups(value?: GroupBy, index?: number): GroupBy;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TimeSeriesSchema.AsObject;
   static toObject(includeInstance: boolean, msg: TimeSeriesSchema): TimeSeriesSchema.AsObject;
@@ -5956,6 +5997,7 @@ export namespace TimeSeriesSchema {
     type: string,
     freq: string,
     interval: number,
+    groupsList: Array<GroupBy.AsObject>,
   }
 }
 

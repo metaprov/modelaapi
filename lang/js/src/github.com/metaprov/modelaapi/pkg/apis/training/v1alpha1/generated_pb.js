@@ -14592,8 +14592,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.to
     coverage: (f = jspb.Message.getOptionalFloatingPointField(msg, 6)) == null ? undefined : f,
     outputlocation: (f = msg.getOutputlocation()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.toObject(includeInstance, f),
     featuresList: (f = jspb.Message.getRepeatedField(msg, 8)) == null ? undefined : f,
-    levelsList: jspb.Message.toObjectList(msg.getLevelsList(),
-    proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.toObject, includeInstance),
+    groupsList: (f = jspb.Message.getRepeatedField(msg, 9)) == null ? undefined : f,
     predefinedtemplate: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
     anomaliesList: jspb.Message.toObjectList(msg.getAnomaliesList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Anomaly.toObject, includeInstance),
@@ -14676,9 +14675,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.de
       msg.addFeatures(value);
       break;
     case 9:
-      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level;
-      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.deserializeBinaryFromReader);
-      msg.addLevels(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.addGroups(value);
       break;
     case 10:
       var value = /** @type {string} */ (reader.readString());
@@ -14814,12 +14812,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.se
       f
     );
   }
-  f = message.getLevelsList();
+  f = message.getGroupsList();
   if (f.length > 0) {
-    writer.writeRepeatedMessage(
+    writer.writeRepeatedString(
       9,
-      f,
-      proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level.serializeBinaryToWriter
+      f
     );
   }
   f = /** @type {string} */ (jspb.Message.getField(message, 10));
@@ -15172,31 +15169,30 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.pr
 
 
 /**
- * repeated Level levels = 9;
- * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level>}
+ * repeated string groups = 9;
+ * @return {!Array<string>}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.getLevelsList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level, 9));
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.getGroupsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 9));
 };
 
 
 /**
- * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level>} value
+ * @param {!Array<string>} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.setLevelsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 9, value);
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.setGroupsList = function(value) {
+  return jspb.Message.setField(this, 9, value || []);
 };
 
 
 /**
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level=} opt_value
+ * @param {string} value
  * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level}
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.addLevels = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 9, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Level, opt_index);
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.addGroups = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 9, value, opt_index);
 };
 
 
@@ -15204,8 +15200,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.pr
  * Clears the list making it empty but non-null.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.clearLevelsList = function() {
-  return this.setLevelsList([]);
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.clearGroupsList = function() {
+  return this.setGroupsList([]);
 };
 
 

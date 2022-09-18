@@ -2791,6 +2791,32 @@ message GovernanceStatus {
   optional GovernanceReviewStatus businessReviewStatus = 3;
 }
 
+// Define one level of grouping, this is used for time series forecasts
+message GroupBy {
+  // The groupby name
+  // +kubebuilder:validation:Optional
+  optional string name = 1;
+
+  // List of columns to group by
+  // +kubebuilder:validation:Optional
+  repeated string columns = 2;
+
+  // Aggregation function. Define how to aggregate
+  // +kubebuilder:default:="none"
+  // +kubebuilder:validation:Optional
+  optional string aggr = 3;
+
+  // Freq
+  // +kubebuilder:default:="freq"
+  // +kubebuilder:validation:Optional
+  optional string freq = 4;
+
+  // If true, indicate that this is the leaf level.
+  // +kubebuilder:default:="leaf"
+  // +kubebuilder:validation:Optional
+  optional bool leaf = 5;
+}
+
 message HistogramSpec {
   // Dataset is the name of the dataset
   // +kubebuilder:validation:Optional
@@ -3909,9 +3935,14 @@ message TimeSeriesSchema {
   // +kubebuilder:validation:Optional
   optional string freq = 2;
 
+  // The interval to forecast at this level
   // +kubebuilder:default:=1
   // +kubebuilder:validation:Optional
   optional int32 interval = 3;
+
+  // Define the grouping of the time series.
+  // +kubebuilder:validation:Optional
+  repeated GroupBy groups = 4;
 }
 
 // WebRequest represent a single sqlquery in the sqlquery store.

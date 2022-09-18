@@ -1300,10 +1300,10 @@ export class ForecasterSpec extends jspb.Message {
   clearFeaturesList(): ForecasterSpec;
   addFeatures(value: string, index?: number): ForecasterSpec;
 
-  getLevelsList(): Array<Level>;
-  setLevelsList(value: Array<Level>): ForecasterSpec;
-  clearLevelsList(): ForecasterSpec;
-  addLevels(value?: Level, index?: number): Level;
+  getGroupsList(): Array<string>;
+  setGroupsList(value: Array<string>): ForecasterSpec;
+  clearGroupsList(): ForecasterSpec;
+  addGroups(value: string, index?: number): ForecasterSpec;
 
   getPredefinedtemplate(): string;
   setPredefinedtemplate(value: string): ForecasterSpec;
@@ -1372,7 +1372,7 @@ export namespace ForecasterSpec {
     coverage: number,
     outputlocation?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     featuresList: Array<string>,
-    levelsList: Array<Level.AsObject>,
+    groupsList: Array<string>,
     predefinedtemplate: string,
     anomaliesList: Array<Anomaly.AsObject>,
     trainenddata: string,

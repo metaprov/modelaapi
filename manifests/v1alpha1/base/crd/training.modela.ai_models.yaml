@@ -1198,6 +1198,12 @@ spec:
                         format: int32
                         type: integer
                     type: object
+                  groups:
+                    description: Filter the groups to forecast for. If non forecast
+                      only to the leaf group
+                    items:
+                      type: string
+                    type: array
                   growth:
                     description: Set the growth of the series
                     enum:
@@ -1219,48 +1225,6 @@ spec:
                     description: Lagged Regressors
                     items:
                       type: string
-                    type: array
-                  levels:
-                    items:
-                      properties:
-                        aggregate:
-                          description: The aggregate function used to roll up the
-                            lower level
-                          enum:
-                          - min
-                          - max
-                          - mean
-                          - median
-                          - sum
-                          - stddev
-                          - var
-                          type: string
-                        freq:
-                          description: The freq of the level
-                          enum:
-                          - second
-                          - minute
-                          - hour
-                          - day
-                          - week
-                          - month
-                          - quarter
-                          - year
-                          - multi-year
-                          type: string
-                        horizon:
-                          description: The forecast horizon
-                          format: int32
-                          type: integer
-                        index:
-                          description: The key for the levels
-                          items:
-                            type: string
-                          type: array
-                        name:
-                          description: The level name, must be unique
-                          type: string
-                      type: object
                     type: array
                   outputLocation:
                     description: The data location that would store the forecast result.

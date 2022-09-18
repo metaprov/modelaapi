@@ -1194,7 +1194,7 @@ const (
 )
 
 // The Aggregate unit
-// +kubebuilder:validation:Enum="min";"max";"mean";"median";"sum";"stddev";"var"
+// +kubebuilder:validation:Enum="min";"max";"mean";"median";"sum";"stddev";"var";"none"
 type Aggregate string
 
 const (
@@ -1205,6 +1205,7 @@ const (
 	AggregateSum    Aggregate = "sum"
 	AggregateStddev Aggregate = "stddev"
 	AggregateVar    Aggregate = "var"
+	AggregateNone   Aggregate = "none"
 )
 
 /// The HolidayCountry unit
