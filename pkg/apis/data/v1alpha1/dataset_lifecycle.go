@@ -229,6 +229,10 @@ func (dataset *Dataset) MarkTakingSnapshot() {
 
 //------------------------------ Group
 
+func (dataset *Dataset) Grouped() bool {
+	return dataset.GetCond(DatasetGrouped).Status == v1.ConditionTrue
+}
+
 func (dataset *Dataset) MarkGroupFailed(msg string) {
 	dataset.CreateOrUpdateCond(DatasetCondition{
 		Type:    DatasetGrouped,
