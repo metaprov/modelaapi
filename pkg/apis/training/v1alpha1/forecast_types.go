@@ -164,7 +164,7 @@ type ForecasterSpec struct {
 	// List of time series features to compute on each time series.
 	// +kubebuilder:validation:Optional
 	Features []catalog.Metric `json:"features,omitempty" protobuf:"bytes,8,opt,name=features"`
-	// Filter the groups to forecast for. If non forecast only to the leaf group
+	// Filter the groups to forecast for. If none forecast only to the leaf group
 	// +kubebuilder:validation:Optional
 	Groups []string `json:"groups,omitempty" protobuf:"bytes,9,rep,name=groups"`
 	// +kubebuilder:validation:Optional

@@ -890,7 +890,7 @@ message ForecasterSpec {
   // +kubebuilder:validation:Optional
   repeated string features = 8;
 
-  // Filter the groups to forecast for. If non forecast only to the leaf group
+  // Filter the groups to forecast for. If none forecast only to the leaf group
   // +kubebuilder:validation:Optional
   repeated string groups = 9;
 

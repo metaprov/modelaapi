@@ -1199,7 +1199,7 @@ spec:
                         type: integer
                     type: object
                   groups:
-                    description: Filter the groups to forecast for. If non forecast
+                    description: Filter the groups to forecast for. If none forecast
                       only to the leaf group
                     items:
                       type: string
