@@ -694,7 +694,7 @@ type GroupBy struct {
 	// +kubebuilder:validation:Optional
 	Freq *catalog.Freq `json:"freq,omitempty" protobuf:"bytes,4,opt,name=freq"`
 	// If true, indicate that this is the leaf level.
-	// +kubebuilder:default:="leaf"
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Leaf *bool `json:"leaf,omitempty" protobuf:"bytes,5,opt,name=leaf"`
 }

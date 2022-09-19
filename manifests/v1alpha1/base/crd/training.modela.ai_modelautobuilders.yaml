@@ -955,7 +955,7 @@ spec:
                                   - multi-year
                                   type: string
                                 leaf:
-                                  default: leaf
+                                  default: false
                                   description: If true, indicate that this is the
                                     leaf level.
                                   type: boolean

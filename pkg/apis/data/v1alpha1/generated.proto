@@ -2812,7 +2812,7 @@ message GroupBy {
   optional string freq = 4;
 
   // If true, indicate that this is the leaf level.
-  // +kubebuilder:default:="leaf"
+  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool leaf = 5;
 }
