@@ -2807,7 +2807,6 @@ message GroupBy {
   optional string aggr = 3;
 
   // Freq
-  // +kubebuilder:default:="freq"
   // +kubebuilder:validation:Optional
   optional string freq = 4;
 

@@ -690,7 +690,6 @@ type GroupBy struct {
 	// +kubebuilder:validation:Optional
 	Aggr catalog.Aggregate `json:"aggr,omitempty" protobuf:"bytes,3,opt,name=aggr"`
 	// Freq
-	// +kubebuilder:default:="freq"
 	// +kubebuilder:validation:Optional
 	Freq *catalog.Freq `json:"freq,omitempty" protobuf:"bytes,4,opt,name=freq"`
 	// If true, indicate that this is the leaf level.

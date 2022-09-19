@@ -877,7 +877,6 @@ spec:
                                 type: string
                               type: array
                             freq:
-                              default: freq
                               description: Freq
                               enum:
                               - second
