@@ -529,6 +529,9 @@ export class DsCreateDatasetProfileRequest extends jspb.Message {
   getSecretMap(): jspb.Map<string, Uint8Array | string>;
   clearSecretMap(): DsCreateDatasetProfileRequest;
 
+  getGroup(): boolean;
+  setGroup(value: boolean): DsCreateDatasetProfileRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DsCreateDatasetProfileRequest.AsObject;
   static toObject(includeInstance: boolean, msg: DsCreateDatasetProfileRequest): DsCreateDatasetProfileRequest.AsObject;
@@ -546,6 +549,7 @@ export namespace DsCreateDatasetProfileRequest {
     connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
     secretMap: Array<[string, Uint8Array | string]>,
+    group: boolean,
   }
 }
 
@@ -1562,6 +1566,9 @@ export class DsDatasetProfileRequest extends jspb.Message {
   getQuick(): boolean;
   setQuick(value: boolean): DsDatasetProfileRequest;
 
+  getGroup(): boolean;
+  setGroup(value: boolean): DsDatasetProfileRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DsDatasetProfileRequest.AsObject;
   static toObject(includeInstance: boolean, msg: DsDatasetProfileRequest): DsDatasetProfileRequest.AsObject;
@@ -1580,6 +1587,7 @@ export namespace DsDatasetProfileRequest {
     connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     secretMap: Array<[string, Uint8Array | string]>,
     quick: boolean,
+    group: boolean,
   }
 }
 
@@ -1776,6 +1784,9 @@ export class CreateModelReportRequest extends jspb.Message {
   hasReport(): boolean;
   clearReport(): CreateModelReportRequest;
 
+  getGroup(): boolean;
+  setGroup(value: boolean): CreateModelReportRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateModelReportRequest.AsObject;
   static toObject(includeInstance: boolean, msg: CreateModelReportRequest): CreateModelReportRequest.AsObject;
@@ -1796,6 +1807,7 @@ export namespace CreateModelReportRequest {
     secretMap: Array<[string, Uint8Array | string]>,
     bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
     report?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report.AsObject,
+    group: boolean,
   }
 }
 
@@ -1848,6 +1860,9 @@ export class CreateForecastReportRequest extends jspb.Message {
   hasReport(): boolean;
   clearReport(): CreateForecastReportRequest;
 
+  getGroup(): boolean;
+  setGroup(value: boolean): CreateForecastReportRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateForecastReportRequest.AsObject;
   static toObject(includeInstance: boolean, msg: CreateForecastReportRequest): CreateForecastReportRequest.AsObject;
@@ -1868,6 +1883,7 @@ export namespace CreateForecastReportRequest {
     secretMap: Array<[string, Uint8Array | string]>,
     bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
     report?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report.AsObject,
+    group: boolean,
   }
 }
 
@@ -1978,6 +1994,9 @@ export class CreateDatasetReportRequest extends jspb.Message {
   hasReport(): boolean;
   clearReport(): CreateDatasetReportRequest;
 
+  getGroup(): boolean;
+  setGroup(value: boolean): CreateDatasetReportRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateDatasetReportRequest.AsObject;
   static toObject(includeInstance: boolean, msg: CreateDatasetReportRequest): CreateDatasetReportRequest.AsObject;
@@ -1996,6 +2015,7 @@ export namespace CreateDatasetReportRequest {
     bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
     secretMap: Array<[string, Uint8Array | string]>,
     report?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report.AsObject,
+    group: boolean,
   }
 }
 

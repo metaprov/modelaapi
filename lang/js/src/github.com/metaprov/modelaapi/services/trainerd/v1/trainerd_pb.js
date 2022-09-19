@@ -403,7 +403,8 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainRequest.toObject =
     connection: (f = msg.getConnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
     secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : [],
     testdataset: (f = msg.getTestdataset()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.toObject(includeInstance, f),
-    traindataset: (f = msg.getTraindataset()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.toObject(includeInstance, f)
+    traindataset: (f = msg.getTraindataset()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.toObject(includeInstance, f),
+    group: jspb.Message.getBooleanFieldWithDefault(msg, 13, false)
   };
 
   if (includeInstance) {
@@ -495,6 +496,10 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainRequest.deserializ
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.deserializeBinaryFromReader);
       msg.setTraindataset(value);
+      break;
+    case 13:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setGroup(value);
       break;
     default:
       reader.skipField();
@@ -607,6 +612,13 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainRequest.serializeB
       12,
       f,
       github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.serializeBinaryToWriter
+    );
+  }
+  f = message.getGroup();
+  if (f) {
+    writer.writeBool(
+      13,
+      f
     );
   }
 };
@@ -1004,6 +1016,24 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainRequest.prototype.
 };
 
 
+/**
+ * optional bool group = 13;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainRequest.prototype.getGroup = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 13, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainRequest.prototype.setGroup = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 13, value);
+};
+
+
 
 /**
  * List of repeated fields within this message type.
@@ -1055,7 +1085,8 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainResponse.toObject 
     pipfreezeMap: (f = msg.getPipfreezeMap()) ? f.toObject(includeInstance, undefined) : [],
     impurityfeatureimportanceMap: (f = msg.getImpurityfeatureimportanceMap()) ? f.toObject(includeInstance, undefined) : [],
     permutationfeatureimportanceMap: (f = msg.getPermutationfeatureimportanceMap()) ? f.toObject(includeInstance, undefined) : [],
-    cm: (f = msg.getCm()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix.toObject(includeInstance, f)
+    cm: (f = msg.getCm()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix.toObject(includeInstance, f),
+    modelindexuri: jspb.Message.getFieldWithDefault(msg, 13, "")
   };
 
   if (includeInstance) {
@@ -1147,6 +1178,10 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainResponse.deseriali
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix.deserializeBinaryFromReader);
       msg.setCm(value);
+      break;
+    case 13:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setModelindexuri(value);
       break;
     default:
       reader.skipField();
@@ -1252,6 +1287,13 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainResponse.serialize
       12,
       f,
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix.serializeBinaryToWriter
+    );
+  }
+  f = message.getModelindexuri();
+  if (f.length > 0) {
+    writer.writeString(
+      13,
+      f
     );
   }
 };
@@ -1521,6 +1563,24 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainResponse.prototype
  */
 proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainResponse.prototype.hasCm = function() {
   return jspb.Message.getField(this, 12) != null;
+};
+
+
+/**
+ * optional string modelIndexURI = 13;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainResponse.prototype.getModelindexuri = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainResponse} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainResponse.prototype.setModelindexuri = function(value) {
+  return jspb.Message.setProto3StringField(this, 13, value);
 };
 
 
@@ -5376,7 +5436,8 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.ForecastRequest.toObjec
     datasource: (f = msg.getDatasource()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.toObject(includeInstance, f),
     dataset: (f = msg.getDataset()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.toObject(includeInstance, f),
     connection: (f = msg.getConnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
-    secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : []
+    secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : [],
+    group: jspb.Message.getBooleanFieldWithDefault(msg, 11, false)
   };
 
   if (includeInstance) {
@@ -5458,6 +5519,10 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.ForecastRequest.deseria
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBytes, null, "", "");
          });
+      break;
+    case 11:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setGroup(value);
       break;
     default:
       reader.skipField();
@@ -5555,6 +5620,13 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.ForecastRequest.seriali
   f = message.getSecretMap(true);
   if (f && f.getLength() > 0) {
     f.serializeBinary(10, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
+  }
+  f = message.getGroup();
+  if (f) {
+    writer.writeBool(
+      11,
+      f
+    );
   }
 };
 
@@ -5875,6 +5947,24 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.ForecastRequest.prototy
 proto.github.com.metaprov.modelaapi.services.trainerd.v1.ForecastRequest.prototype.clearSecretMap = function() {
   this.getSecretMap().clear();
   return this;};
+
+
+/**
+ * optional bool group = 11;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.trainerd.v1.ForecastRequest.prototype.getGroup = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 11, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.trainerd.v1.ForecastRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.trainerd.v1.ForecastRequest.prototype.setGroup = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 11, value);
+};
 
 
 

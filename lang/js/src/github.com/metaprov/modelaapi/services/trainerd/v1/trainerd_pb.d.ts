@@ -61,6 +61,9 @@ export class TrainRequest extends jspb.Message {
   hasTraindataset(): boolean;
   clearTraindataset(): TrainRequest;
 
+  getGroup(): boolean;
+  setGroup(value: boolean): TrainRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TrainRequest.AsObject;
   static toObject(includeInstance: boolean, msg: TrainRequest): TrainRequest.AsObject;
@@ -82,6 +85,7 @@ export namespace TrainRequest {
     secretMap: Array<[string, Uint8Array | string]>,
     testdataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
     traindataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
+    group: boolean,
   }
 }
 
@@ -126,6 +130,9 @@ export class TrainResponse extends jspb.Message {
   hasCm(): boolean;
   clearCm(): TrainResponse;
 
+  getModelindexuri(): string;
+  setModelindexuri(value: string): TrainResponse;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TrainResponse.AsObject;
   static toObject(includeInstance: boolean, msg: TrainResponse): TrainResponse.AsObject;
@@ -148,6 +155,7 @@ export namespace TrainResponse {
     impurityfeatureimportanceMap: Array<[string, number]>,
     permutationfeatureimportanceMap: Array<[string, number]>,
     cm?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix.AsObject,
+    modelindexuri: string,
   }
 }
 
@@ -661,6 +669,9 @@ export class ForecastRequest extends jspb.Message {
   getSecretMap(): jspb.Map<string, Uint8Array | string>;
   clearSecretMap(): ForecastRequest;
 
+  getGroup(): boolean;
+  setGroup(value: boolean): ForecastRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ForecastRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ForecastRequest): ForecastRequest.AsObject;
@@ -680,6 +691,7 @@ export namespace ForecastRequest {
     dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
     connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     secretMap: Array<[string, Uint8Array | string]>,
+    group: boolean,
   }
 }
 

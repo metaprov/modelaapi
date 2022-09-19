@@ -125,6 +125,7 @@ message DsCreateDatasetProfileRequest {
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection = 5;
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 6;
     map<string,bytes> secret = 7;
+    bool              group  = 8; 
 }
 
 message DsCreateDatasetProfileResponse {
@@ -349,6 +350,7 @@ message DsDatasetProfileRequest {
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection = 6;
     map<string,bytes> secret = 7;
     bool    quick         = 8;
+    bool    group  = 9; 
 }
 
 message DsDatasetProfileResponse {
@@ -396,6 +398,7 @@ message CreateModelReportRequest {
     map<string,bytes>                                                           secret     = 8;
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket          = 9;
     github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report              report = 10;
+    bool                                                                         group  = 11; 
 }
 
 
@@ -410,6 +413,7 @@ message CreateForecastReportRequest {
     map<string,bytes>     secret     = 8;
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket          = 9;
     github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report              report = 10;
+    bool                                                                         group  = 11; 
 }
 
 message CreateSummaryReportRequest {
@@ -435,6 +439,7 @@ message CreateDatasetReportRequest {
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket   = 6;
     map<string,bytes>     secret     = 7;
     github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report              report = 8;
+    bool                                                                         group  = 9; 
 }
 
 
@@ -740,6 +745,7 @@ service DataService {
     rpc UnitTestFeatureHistogram(RunTestSuiteRequest) returns (RunTestSuiteResponse) {}
     rpc UnitTestPredictor(RunTestSuiteRequest) returns (RunTestSuiteResponse) {}
     rpc GroupByDataset(GroupByDatasetRequest) returns (GroupByDatasetResponse) {}
+    
 
     
 

@@ -5650,7 +5650,8 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsCreateDatasetProfileReque
     dataset: (f = msg.getDataset()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.toObject(includeInstance, f),
     connection: (f = msg.getConnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
     bucket: (f = msg.getBucket()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.toObject(includeInstance, f),
-    secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : []
+    secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : [],
+    group: jspb.Message.getBooleanFieldWithDefault(msg, 8, false)
   };
 
   if (includeInstance) {
@@ -5722,6 +5723,10 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsCreateDatasetProfileReque
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBytes, null, "", "");
          });
+      break;
+    case 8:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setGroup(value);
       break;
     default:
       reader.skipField();
@@ -5803,6 +5808,13 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsCreateDatasetProfileReque
   f = message.getSecretMap(true);
   if (f && f.getLength() > 0) {
     f.serializeBinary(7, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
+  }
+  f = message.getGroup();
+  if (f) {
+    writer.writeBool(
+      8,
+      f
+    );
   }
 };
 
@@ -6049,6 +6061,24 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsCreateDatasetProfileReque
 proto.github.com.metaprov.modelaapi.services.data.v1.DsCreateDatasetProfileRequest.prototype.clearSecretMap = function() {
   this.getSecretMap().clear();
   return this;};
+
+
+/**
+ * optional bool group = 8;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.DsCreateDatasetProfileRequest.prototype.getGroup = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 8, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsCreateDatasetProfileRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.DsCreateDatasetProfileRequest.prototype.setGroup = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 8, value);
+};
 
 
 
@@ -13749,7 +13779,8 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsDatasetProfileRequest.toO
     bucket: (f = msg.getBucket()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.toObject(includeInstance, f),
     connection: (f = msg.getConnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
     secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : [],
-    quick: jspb.Message.getBooleanFieldWithDefault(msg, 8, false)
+    quick: jspb.Message.getBooleanFieldWithDefault(msg, 8, false),
+    group: jspb.Message.getBooleanFieldWithDefault(msg, 9, false)
   };
 
   if (includeInstance) {
@@ -13825,6 +13856,10 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsDatasetProfileRequest.des
     case 8:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setQuick(value);
+      break;
+    case 9:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setGroup(value);
       break;
     default:
       reader.skipField();
@@ -13911,6 +13946,13 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsDatasetProfileRequest.ser
   if (f) {
     writer.writeBool(
       8,
+      f
+    );
+  }
+  f = message.getGroup();
+  if (f) {
+    writer.writeBool(
+      9,
       f
     );
   }
@@ -14176,6 +14218,24 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsDatasetProfileRequest.pro
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.DsDatasetProfileRequest.prototype.setQuick = function(value) {
   return jspb.Message.setProto3BooleanField(this, 8, value);
+};
+
+
+/**
+ * optional bool group = 9;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.DsDatasetProfileRequest.prototype.getGroup = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 9, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsDatasetProfileRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.DsDatasetProfileRequest.prototype.setGroup = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 9, value);
 };
 
 
@@ -15347,7 +15407,8 @@ proto.github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest.to
     connection: (f = msg.getConnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
     secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : [],
     bucket: (f = msg.getBucket()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.toObject(includeInstance, f),
-    report: (f = msg.getReport()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report.toObject(includeInstance, f)
+    report: (f = msg.getReport()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report.toObject(includeInstance, f),
+    group: jspb.Message.getBooleanFieldWithDefault(msg, 11, false)
   };
 
   if (includeInstance) {
@@ -15434,6 +15495,10 @@ proto.github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest.de
       var value = new github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report.deserializeBinaryFromReader);
       msg.setReport(value);
+      break;
+    case 11:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setGroup(value);
       break;
     default:
       reader.skipField();
@@ -15538,6 +15603,13 @@ proto.github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest.se
       10,
       f,
       github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report.serializeBinaryToWriter
+    );
+  }
+  f = message.getGroup();
+  if (f) {
+    writer.writeBool(
+      11,
+      f
     );
   }
 };
@@ -15898,6 +15970,24 @@ proto.github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest.pr
 };
 
 
+/**
+ * optional bool group = 11;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest.prototype.getGroup = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 11, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest.prototype.setGroup = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 11, value);
+};
+
+
 
 
 
@@ -15939,7 +16029,8 @@ proto.github.com.metaprov.modelaapi.services.data.v1.CreateForecastReportRequest
     connection: (f = msg.getConnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
     secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : [],
     bucket: (f = msg.getBucket()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.toObject(includeInstance, f),
-    report: (f = msg.getReport()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report.toObject(includeInstance, f)
+    report: (f = msg.getReport()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report.toObject(includeInstance, f),
+    group: jspb.Message.getBooleanFieldWithDefault(msg, 11, false)
   };
 
   if (includeInstance) {
@@ -16026,6 +16117,10 @@ proto.github.com.metaprov.modelaapi.services.data.v1.CreateForecastReportRequest
       var value = new github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report.deserializeBinaryFromReader);
       msg.setReport(value);
+      break;
+    case 11:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setGroup(value);
       break;
     default:
       reader.skipField();
@@ -16130,6 +16225,13 @@ proto.github.com.metaprov.modelaapi.services.data.v1.CreateForecastReportRequest
       10,
       f,
       github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report.serializeBinaryToWriter
+    );
+  }
+  f = message.getGroup();
+  if (f) {
+    writer.writeBool(
+      11,
+      f
     );
   }
 };
@@ -16487,6 +16589,24 @@ proto.github.com.metaprov.modelaapi.services.data.v1.CreateForecastReportRequest
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.CreateForecastReportRequest.prototype.hasReport = function() {
   return jspb.Message.getField(this, 10) != null;
+};
+
+
+/**
+ * optional bool group = 11;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.CreateForecastReportRequest.prototype.getGroup = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 11, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.CreateForecastReportRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.CreateForecastReportRequest.prototype.setGroup = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 11, value);
 };
 
 
@@ -17071,7 +17191,8 @@ proto.github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest.
     connection: (f = msg.getConnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
     bucket: (f = msg.getBucket()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.toObject(includeInstance, f),
     secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : [],
-    report: (f = msg.getReport()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report.toObject(includeInstance, f)
+    report: (f = msg.getReport()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report.toObject(includeInstance, f),
+    group: jspb.Message.getBooleanFieldWithDefault(msg, 9, false)
   };
 
   if (includeInstance) {
@@ -17148,6 +17269,10 @@ proto.github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest.
       var value = new github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report.deserializeBinaryFromReader);
       msg.setReport(value);
+      break;
+    case 9:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setGroup(value);
       break;
     default:
       reader.skipField();
@@ -17236,6 +17361,13 @@ proto.github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest.
       8,
       f,
       github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report.serializeBinaryToWriter
+    );
+  }
+  f = message.getGroup();
+  if (f) {
+    writer.writeBool(
+      9,
+      f
     );
   }
 };
@@ -17519,6 +17651,24 @@ proto.github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest.
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest.prototype.hasReport = function() {
   return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional bool group = 9;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest.prototype.getGroup = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 9, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest.prototype.setGroup = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 9, value);
 };
 
 

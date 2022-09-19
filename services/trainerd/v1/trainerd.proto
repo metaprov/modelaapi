@@ -38,6 +38,7 @@ message TrainRequest {
     map<string,bytes> secret = 10;
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset            testDataset = 11;
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset            trainDataset = 12;
+    bool                                                                    group  = 13; 
 }
 
 message TrainResponse {
@@ -64,6 +65,8 @@ message TrainResponse {
     map<string,float> permutationFeatureImportance = 11;
     // confusion matrix
     github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ConfusionMatrix cm = 12;
+    //
+    string modelIndexURI = 13;
 
 }
 
@@ -203,6 +206,7 @@ message ForecastRequest {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset            dataset = 8;
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection        connection    = 9;
     map<string,bytes> secret = 10;    
+    bool                                                                    group  = 11; 
 }
 
 message ForecastResponse {
