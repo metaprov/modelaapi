@@ -5441,10 +5441,10 @@ export class Schema extends jspb.Message {
   clearColumnsList(): Schema;
   addColumns(value?: Column, index?: number): Column;
 
-  getIndexList(): Array<string>;
-  setIndexList(value: Array<string>): Schema;
-  clearIndexList(): Schema;
-  addIndex(value: string, index?: number): Schema;
+  getKeyList(): Array<string>;
+  setKeyList(value: Array<string>): Schema;
+  clearKeyList(): Schema;
+  addKey(value: string, index?: number): Schema;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Schema.AsObject;
@@ -5459,7 +5459,7 @@ export namespace Schema {
     timeseriesschema?: TimeSeriesSchema.AsObject,
     recommendationschema?: RecommendationSchema.AsObject,
     columnsList: Array<Column.AsObject>,
-    indexList: Array<string>,
+    keyList: Array<string>,
   }
 }
 

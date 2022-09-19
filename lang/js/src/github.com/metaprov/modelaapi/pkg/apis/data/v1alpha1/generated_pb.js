@@ -54437,7 +54437,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Schema.toObject = fun
     recommendationschema: (f = msg.getRecommendationschema()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecommendationSchema.toObject(includeInstance, f),
     columnsList: jspb.Message.toObjectList(msg.getColumnsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.toObject, includeInstance),
-    indexList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f
+    keyList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -54491,7 +54491,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Schema.deserializeBin
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
-      msg.addIndex(value);
+      msg.addKey(value);
       break;
     default:
       reader.skipField();
@@ -54546,7 +54546,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Schema.serializeBinar
       proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.serializeBinaryToWriter
     );
   }
-  f = message.getIndexList();
+  f = message.getKeyList();
   if (f.length > 0) {
     writer.writeRepeatedString(
       4,
@@ -54669,10 +54669,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Schema.prototype.clea
 
 
 /**
- * repeated string index = 4;
+ * repeated string key = 4;
  * @return {!Array<string>}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Schema.prototype.getIndexList = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Schema.prototype.getKeyList = function() {
   return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 4));
 };
 
@@ -54681,7 +54681,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Schema.prototype.getI
  * @param {!Array<string>} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Schema} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Schema.prototype.setIndexList = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Schema.prototype.setKeyList = function(value) {
   return jspb.Message.setField(this, 4, value || []);
 };
 
@@ -54691,7 +54691,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Schema.prototype.setI
  * @param {number=} opt_index
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Schema} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Schema.prototype.addIndex = function(value, opt_index) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Schema.prototype.addKey = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 4, value, opt_index);
 };
 
@@ -54700,8 +54700,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Schema.prototype.addI
  * Clears the list making it empty but non-null.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Schema} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Schema.prototype.clearIndexList = function() {
-  return this.setIndexList([]);
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Schema.prototype.clearKeyList = function() {
+  return this.setKeyList([]);
 };
 
 

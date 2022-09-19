@@ -3600,7 +3600,7 @@ message Schema {
 
   // The keys columns are the index of the file or table. The set of keys will be used as an index for the in memory representation(e.g. pandas)
   // +kubebuilder:validation:Optional
-  repeated string index = 4;
+  repeated string key = 4;
 }
 
 // SqlQuery represent a single sqlquery in the sqlquery store.

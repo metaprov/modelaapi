@@ -871,7 +871,7 @@ spec:
                           - name
                           type: object
                         type: array
-                      index:
+                      key:
                         description: The keys columns are the index of the file or
                           table. The set of keys will be used as an index for the
                           in memory representation(e.g. pandas)

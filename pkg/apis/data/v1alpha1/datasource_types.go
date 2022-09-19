@@ -301,7 +301,7 @@ type Schema struct {
 	Columns []Column `json:"columns,omitempty" protobuf:"bytes,3,rep,name=columns"`
 	// The keys columns are the index of the file or table. The set of keys will be used as an index for the in memory representation(e.g. pandas)
 	// +kubebuilder:validation:Optional
-	Index []string `json:"index,omitempty" protobuf:"bytes,4,rep,name=index"`
+	Key []string `json:"key,omitempty" protobuf:"bytes,4,rep,name=key"`
 }
 
 type TimeSeriesSchema struct {
