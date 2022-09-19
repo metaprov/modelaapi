@@ -1250,12 +1250,10 @@ func (in *ForecasterSpec) DeepCopyInto(out *ForecasterSpec) {
 		*out = make([]catalogv1alpha1.Metric, len(*in))
 		copy(*out, *in)
 	}
-	if in.Levels != nil {
-		in, out := &in.Levels, &out.Levels
-		*out = make([]Level, len(*in))
-		for i := range *in {
-			(*in)[i].DeepCopyInto(&(*out)[i])
-		}
+	if in.Groups != nil {
+		in, out := &in.Groups, &out.Groups
+		*out = make([]string, len(*in))
+		copy(*out, *in)
 	}
 	if in.Anomalies != nil {
 		in, out := &in.Anomalies, &out.Anomalies
