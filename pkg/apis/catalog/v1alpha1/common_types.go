@@ -97,6 +97,10 @@ const (
 	UnitTestPredictor        TaskName = "unittest-predictor"
 	TrainDriftDetector       TaskName = "train-drift-detector"
 	GroupByDatasetTask       TaskName = "groupby-dataset"
+	GroupProfileDatasetTask  TaskName = "group-profile-dataset"
+	GroupReportDatasetTask   TaskName = "group-report-dataset"
+	GroupReportModelTask     TaskName = "group-report-model"
+	GroupTrainModelTask      TaskName = "group-train-model"
 )
 
 // ApiKeyName is the secret or in env variable
