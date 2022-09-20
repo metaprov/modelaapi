@@ -100,7 +100,10 @@ const (
 	GroupProfileDatasetTask  TaskName = "group-profile-dataset"
 	GroupReportDatasetTask   TaskName = "group-report-dataset"
 	GroupReportModelTask     TaskName = "group-report-model"
-	GroupTrainModelTask      TaskName = "group-train-model"
+	GroupModelTrainTask      TaskName = "group-train-model"
+	GroupUnitTestDatasetTask TaskName = "group-unittest-dataset"
+	GroupStudySplitTask      TaskName = "group-study-split"
+	GroupForecastTask        TaskName = "group-forecast-task"
 )
 
 // ApiKeyName is the secret or in env variable
