@@ -1576,6 +1576,20 @@ message ModelCondition {
   optional string message = 6;
 }
 
+message ModelGroupByStatus {
+  // The locations of the datasets profile files. Each file is the group
+  // +kubebuilder:validation:Optional
+  optional string modelsURI = 1;
+
+  // The locations of the datasets profiles files.
+  // +kubebuilder:validation:Optional
+  optional string profilesURI = 2;
+
+  // The locations of the model report file. One report for each key
+  // +kubebuilder:validation:Optional
+  optional string reportsURI = 3;
+}
+
 // ModelImageSpec specifies the destination of Docker images produced by a Study
 message ModelImageSpec {
   // +kubebuilder:validation:Optional

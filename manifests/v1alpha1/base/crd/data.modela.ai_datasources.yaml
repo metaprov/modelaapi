@@ -838,6 +838,20 @@ spec:
                     description: The time-series schema, which sets time-series specific
                       parameters
                     properties:
+                      aggr:
+                        default: none
+                        description: Define the grouping of the time series. Aggregation
+                          function. Define how to aggregate
+                        enum:
+                        - min
+                        - max
+                        - mean
+                        - median
+                        - sum
+                        - stddev
+                        - var
+                        - none
+                        type: string
                       freq:
                         default: day
                         description: The time series frequency
@@ -852,53 +866,6 @@ spec:
                         - year
                         - multi-year
                         type: string
-                      groups:
-                        description: Define the grouping of the time series.
-                        items:
-                          description: Define one level of grouping, this is used
-                            for time series forecasts
-                          properties:
-                            aggr:
-                              default: none
-                              description: Aggregation function. Define how to aggregate
-                              enum:
-                              - min
-                              - max
-                              - mean
-                              - median
-                              - sum
-                              - stddev
-                              - var
-                              - none
-                              type: string
-                            columns:
-                              description: List of columns to group by
-                              items:
-                                type: string
-                              type: array
-                            freq:
-                              description: Freq
-                              enum:
-                              - second
-                              - minute
-                              - hour
-                              - day
-                              - week
-                              - month
-                              - quarter
-                              - year
-                              - multi-year
-                              type: string
-                            leaf:
-                              default: false
-                              description: If true, indicate that this is the leaf
-                                level.
-                              type: boolean
-                            name:
-                              description: The groupby name
-                              type: string
-                          type: object
-                        type: array
                       interval:
                         default: 1
                         description: The interval to forecast at this level

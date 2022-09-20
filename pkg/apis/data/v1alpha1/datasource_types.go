@@ -319,7 +319,10 @@ type TimeSeriesSchema struct {
 	Interval *int32 `json:"interval,omitempty" protobuf:"bytes,3,opt,name=interval"`
 	// Define the grouping of the time series.
 	// +kubebuilder:validation:Optional
-	Groups []GroupBy `json:"groups,omitempty" protobuf:"bytes,4,opt,name=groups"`
+	// Aggregation function. Define how to aggregate
+	// +kubebuilder:default:="none"
+	// +kubebuilder:validation:Optional
+	Aggr catalog.Aggregate `json:"aggr,omitempty" protobuf:"bytes,4,opt,name=aggr"`
 }
 
 type RecommendationSchema struct {
@@ -675,25 +678,4 @@ type LabelingRule struct {
 	Operator catalog.Op `json:"operator,omitempty" protobuf:"bytes,2,opt,name=operator"`
 	//+kubebuilder:validation:Optional
 	Value string `json:"value,omitempty" protobuf:"bytes,3,opt,name=value"`
-}
-
-// Define one level of grouping, this is used for time series forecasts
-type GroupBy struct {
-	// The groupby name
-	// +kubebuilder:validation:Optional
-	Name *string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
-	// List of columns to group by
-	// +kubebuilder:validation:Optional
-	Columns []string `json:"columns,omitempty" protobuf:"bytes,2,opt,name=columns"`
-	// Aggregation function. Define how to aggregate
-	// +kubebuilder:default:="none"
-	// +kubebuilder:validation:Optional
-	Aggr catalog.Aggregate `json:"aggr,omitempty" protobuf:"bytes,3,opt,name=aggr"`
-	// Freq
-	// +kubebuilder:validation:Optional
-	Freq *catalog.Freq `json:"freq,omitempty" protobuf:"bytes,4,opt,name=freq"`
-	// If true, indicate that this is the leaf level.
-	// +kubebuilder:default:=false
-	// +kubebuilder:validation:Optional
-	Leaf *bool `json:"leaf,omitempty" protobuf:"bytes,5,opt,name=leaf"`
 }

@@ -283,7 +283,7 @@ type DatasetStatus struct {
 	FeatureHistogramRef v1.ObjectReference `json:"featureHistogramRef,omitempty" protobuf:"bytes,22,opt,name=featureHistogramRef"`
 	// The location of dataset index file
 	// +kubebuilder:validation:Optional
-	DatasetGroupIndexUri string `json:"datasetGroupIndexUri,omitempty" protobuf:"bytes,23,opt,name=datasetGroupIndexUri"`
+	GroupBy DatasetGroupByStatus `json:"groupby,omitempty" protobuf:"bytes,23,opt,name=groupby"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
@@ -581,4 +581,20 @@ type SyntacticSpec struct {
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
 	Rows *int32 `json:"rows,omitempty" protobuf:"varint,2,opt,name=rows"`
+}
+
+// Represent the status of a groupby
+type DatasetGroupByStatus struct {
+	// The locations of the datasets files. Each file is the group
+	// +kubebuilder:validation:Optional
+	DatasetsURI string `json:"datasetsURI,omitempty" protobuf:"bytes,1,opt,name=datasetsURI"`
+	// The locations of the datasets files.
+	// +kubebuilder:validation:Optional
+	ProfilesURI string `json:"profilesURI,omitempty" protobuf:"bytes,2,opt,name=profilesURI"`
+	// The locations of the report file. One report for each key
+	// +kubebuilder:validation:Optional
+	ReportsURI string `json:"reportsURI,omitempty" protobuf:"bytes,3,opt,name=reportsURI"`
+	// The locations of the report file. One report for each key
+	// +kubebuilder:validation:Optional
+	UnitTestsURI string `json:"unitTestsURI,omitempty" protobuf:"bytes,4,opt,name=unitTestsURI"`
 }

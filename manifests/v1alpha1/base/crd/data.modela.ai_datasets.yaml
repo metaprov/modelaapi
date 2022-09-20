@@ -1019,9 +1019,6 @@ spec:
                   - type
                   type: object
                 type: array
-              datasetGroupIndexUri:
-                description: The location of dataset index file
-                type: string
               derivedFromDataset:
                 description: If the dataset is derived, the name of the Dataset that
                   the object is derived from
@@ -1074,6 +1071,25 @@ spec:
                     type: string
                   uid:
                     description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                    type: string
+                type: object
+              groupby:
+                description: The location of dataset index file
+                properties:
+                  datasetsURI:
+                    description: The locations of the datasets files. Each file is
+                      the group
+                    type: string
+                  profilesURI:
+                    description: The locations of the datasets files.
+                    type: string
+                  reportsURI:
+                    description: The locations of the report file. One report for
+                      each key
+                    type: string
+                  unitTestsURI:
+                    description: The locations of the report file. One report for
+                      each key
                     type: string
                 type: object
               hash:

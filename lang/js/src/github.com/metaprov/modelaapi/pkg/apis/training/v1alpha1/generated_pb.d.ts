@@ -2324,6 +2324,32 @@ export namespace ModelCondition {
   }
 }
 
+export class ModelGroupByStatus extends jspb.Message {
+  getModelsuri(): string;
+  setModelsuri(value: string): ModelGroupByStatus;
+
+  getProfilesuri(): string;
+  setProfilesuri(value: string): ModelGroupByStatus;
+
+  getReportsuri(): string;
+  setReportsuri(value: string): ModelGroupByStatus;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ModelGroupByStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: ModelGroupByStatus): ModelGroupByStatus.AsObject;
+  static serializeBinaryToWriter(message: ModelGroupByStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ModelGroupByStatus;
+  static deserializeBinaryFromReader(message: ModelGroupByStatus, reader: jspb.BinaryReader): ModelGroupByStatus;
+}
+
+export namespace ModelGroupByStatus {
+  export type AsObject = {
+    modelsuri: string,
+    profilesuri: string,
+    reportsuri: string,
+  }
+}
+
 export class ModelImageSpec extends jspb.Message {
   getExist(): boolean;
   setExist(value: boolean): ModelImageSpec;

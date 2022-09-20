@@ -2093,6 +2093,36 @@ export namespace DatasetCondition {
   }
 }
 
+export class DatasetGroupByStatus extends jspb.Message {
+  getDatasetsuri(): string;
+  setDatasetsuri(value: string): DatasetGroupByStatus;
+
+  getProfilesuri(): string;
+  setProfilesuri(value: string): DatasetGroupByStatus;
+
+  getReportsuri(): string;
+  setReportsuri(value: string): DatasetGroupByStatus;
+
+  getUnittestsuri(): string;
+  setUnittestsuri(value: string): DatasetGroupByStatus;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DatasetGroupByStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: DatasetGroupByStatus): DatasetGroupByStatus.AsObject;
+  static serializeBinaryToWriter(message: DatasetGroupByStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DatasetGroupByStatus;
+  static deserializeBinaryFromReader(message: DatasetGroupByStatus, reader: jspb.BinaryReader): DatasetGroupByStatus;
+}
+
+export namespace DatasetGroupByStatus {
+  export type AsObject = {
+    datasetsuri: string,
+    profilesuri: string,
+    reportsuri: string,
+    unittestsuri: string,
+  }
+}
+
 export class DatasetList extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta): DatasetList;
@@ -2399,8 +2429,10 @@ export class DatasetStatus extends jspb.Message {
   hasFeaturehistogramref(): boolean;
   clearFeaturehistogramref(): DatasetStatus;
 
-  getDatasetgroupindexuri(): string;
-  setDatasetgroupindexuri(value: string): DatasetStatus;
+  getGroupby(): DatasetGroupByStatus | undefined;
+  setGroupby(value?: DatasetGroupByStatus): DatasetStatus;
+  hasGroupby(): boolean;
+  clearGroupby(): DatasetStatus;
 
   getConditionsList(): Array<DatasetCondition>;
   setConditionsList(value: Array<DatasetCondition>): DatasetStatus;
@@ -2438,7 +2470,7 @@ export namespace DatasetStatus {
     starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     featurehistogramref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    datasetgroupindexuri: string,
+    groupby?: DatasetGroupByStatus.AsObject,
     conditionsList: Array<DatasetCondition.AsObject>,
   }
 }
@@ -4024,42 +4056,6 @@ export namespace GovernanceStatus {
     itreviewstatus?: GovernanceReviewStatus.AsObject,
     compliancereviewstatus?: GovernanceReviewStatus.AsObject,
     businessreviewstatus?: GovernanceReviewStatus.AsObject,
-  }
-}
-
-export class GroupBy extends jspb.Message {
-  getName(): string;
-  setName(value: string): GroupBy;
-
-  getColumnsList(): Array<string>;
-  setColumnsList(value: Array<string>): GroupBy;
-  clearColumnsList(): GroupBy;
-  addColumns(value: string, index?: number): GroupBy;
-
-  getAggr(): string;
-  setAggr(value: string): GroupBy;
-
-  getFreq(): string;
-  setFreq(value: string): GroupBy;
-
-  getLeaf(): boolean;
-  setLeaf(value: boolean): GroupBy;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GroupBy.AsObject;
-  static toObject(includeInstance: boolean, msg: GroupBy): GroupBy.AsObject;
-  static serializeBinaryToWriter(message: GroupBy, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GroupBy;
-  static deserializeBinaryFromReader(message: GroupBy, reader: jspb.BinaryReader): GroupBy;
-}
-
-export namespace GroupBy {
-  export type AsObject = {
-    name: string,
-    columnsList: Array<string>,
-    aggr: string,
-    freq: string,
-    leaf: boolean,
   }
 }
 
@@ -5979,10 +5975,8 @@ export class TimeSeriesSchema extends jspb.Message {
   getInterval(): number;
   setInterval(value: number): TimeSeriesSchema;
 
-  getGroupsList(): Array<GroupBy>;
-  setGroupsList(value: Array<GroupBy>): TimeSeriesSchema;
-  clearGroupsList(): TimeSeriesSchema;
-  addGroups(value?: GroupBy, index?: number): GroupBy;
+  getAggr(): string;
+  setAggr(value: string): TimeSeriesSchema;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TimeSeriesSchema.AsObject;
@@ -5997,7 +5991,7 @@ export namespace TimeSeriesSchema {
     type: string,
     freq: string,
     interval: number,
-    groupsList: Array<GroupBy.AsObject>,
+    aggr: string,
   }
 }
 

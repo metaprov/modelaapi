@@ -1126,3 +1126,15 @@ type InterpretabilityStatus struct {
 	// The collection of feature importances generated from the computed SHAP values
 	Importance []FeatureImportance `json:"importance,omitempty" protobuf:"bytes,6,rep,name=importance"`
 }
+
+type ModelGroupByStatus struct {
+	// The locations of the datasets profile files. Each file is the group
+	// +kubebuilder:validation:Optional
+	ModelsURI string `json:"modelsURI,omitempty" protobuf:"bytes,1,opt,name=modelsURI"`
+	// The locations of the datasets profiles files.
+	// +kubebuilder:validation:Optional
+	ProfilesURI string `json:"profilesURI,omitempty" protobuf:"bytes,2,opt,name=profilesURI"`
+	// The locations of the model report file. One report for each key
+	// +kubebuilder:validation:Optional
+	ReportsURI string `json:"reportsURI,omitempty" protobuf:"bytes,3,opt,name=reportsURI"`
+}

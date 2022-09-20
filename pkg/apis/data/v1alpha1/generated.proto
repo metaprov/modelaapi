@@ -1543,6 +1543,25 @@ message DatasetCondition {
   optional string message = 6;
 }
 
+// Represent the status of a groupby
+message DatasetGroupByStatus {
+  // The locations of the datasets files. Each file is the group
+  // +kubebuilder:validation:Optional
+  optional string datasetsURI = 1;
+
+  // The locations of the datasets files.
+  // +kubebuilder:validation:Optional
+  optional string profilesURI = 2;
+
+  // The locations of the report file. One report for each key
+  // +kubebuilder:validation:Optional
+  optional string reportsURI = 3;
+
+  // The locations of the report file. One report for each key
+  // +kubebuilder:validation:Optional
+  optional string unitTestsURI = 4;
+}
+
 // +kubebuilder:object:root=true
 // DatasetList contains a list of Datasets
 message DatasetList {
@@ -1821,7 +1840,7 @@ message DatasetStatus {
 
   // The location of dataset index file
   // +kubebuilder:validation:Optional
-  optional string datasetGroupIndexUri = 23;
+  optional DatasetGroupByStatus groupby = 23;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
@@ -2789,31 +2808,6 @@ message GovernanceStatus {
   // The review status for the management department
   // +kubebuilder:validation:Optional
   optional GovernanceReviewStatus businessReviewStatus = 3;
-}
-
-// Define one level of grouping, this is used for time series forecasts
-message GroupBy {
-  // The groupby name
-  // +kubebuilder:validation:Optional
-  optional string name = 1;
-
-  // List of columns to group by
-  // +kubebuilder:validation:Optional
-  repeated string columns = 2;
-
-  // Aggregation function. Define how to aggregate
-  // +kubebuilder:default:="none"
-  // +kubebuilder:validation:Optional
-  optional string aggr = 3;
-
-  // Freq
-  // +kubebuilder:validation:Optional
-  optional string freq = 4;
-
-  // If true, indicate that this is the leaf level.
-  // +kubebuilder:default:=false
-  // +kubebuilder:validation:Optional
-  optional bool leaf = 5;
 }
 
 message HistogramSpec {
@@ -3941,7 +3935,10 @@ message TimeSeriesSchema {
 
   // Define the grouping of the time series.
   // +kubebuilder:validation:Optional
-  repeated GroupBy groups = 4;
+  // Aggregation function. Define how to aggregate
+  // +kubebuilder:default:="none"
+  // +kubebuilder:validation:Optional
+  optional string aggr = 4;
 }
 
 // WebRequest represent a single sqlquery in the sqlquery store.
