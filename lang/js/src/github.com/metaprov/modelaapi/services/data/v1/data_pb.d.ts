@@ -1136,6 +1136,9 @@ export class DsSplitDatasetRequest extends jspb.Message {
   hasTestingdataset(): boolean;
   clearTestingdataset(): DsSplitDatasetRequest;
 
+  getGroup(): boolean;
+  setGroup(value: boolean): DsSplitDatasetRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DsSplitDatasetRequest.AsObject;
   static toObject(includeInstance: boolean, msg: DsSplitDatasetRequest): DsSplitDatasetRequest.AsObject;
@@ -1156,6 +1159,7 @@ export namespace DsSplitDatasetRequest {
     secretMap: Array<[string, Uint8Array | string]>,
     trainingdataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
     testingdataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
+    group: boolean,
   }
 }
 

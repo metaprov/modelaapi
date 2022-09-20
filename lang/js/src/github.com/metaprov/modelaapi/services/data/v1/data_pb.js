@@ -10278,7 +10278,8 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetRequest.toObj
     connection: (f = msg.getConnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
     secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : [],
     trainingdataset: (f = msg.getTrainingdataset()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.toObject(includeInstance, f),
-    testingdataset: (f = msg.getTestingdataset()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.toObject(includeInstance, f)
+    testingdataset: (f = msg.getTestingdataset()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.toObject(includeInstance, f),
+    group: jspb.Message.getBooleanFieldWithDefault(msg, 11, false)
   };
 
   if (includeInstance) {
@@ -10365,6 +10366,10 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetRequest.deser
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.deserializeBinaryFromReader);
       msg.setTestingdataset(value);
+      break;
+    case 11:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setGroup(value);
       break;
     default:
       reader.skipField();
@@ -10469,6 +10474,13 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetRequest.seria
       10,
       f,
       github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.serializeBinaryToWriter
+    );
+  }
+  f = message.getGroup();
+  if (f) {
+    writer.writeBool(
+      11,
+      f
     );
   }
 };
@@ -10826,6 +10838,24 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetRequest.proto
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetRequest.prototype.hasTestingdataset = function() {
   return jspb.Message.getField(this, 10) != null;
+};
+
+
+/**
+ * optional bool group = 11;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetRequest.prototype.getGroup = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 11, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetRequest.prototype.setGroup = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 11, value);
 };
 
 
