@@ -121,6 +121,13 @@ spec:
                   If enabled, the validation, profiling, and reporting phases will
                   be skipped.
                 type: boolean
+              featurized:
+                default: false
+                description: Indicates if the Dataset should be featurized. Features
+                  are computed using tsfresh. If the dataset is grouped dataset, a
+                  feature will be computed to each group. If enabled, the validation,
+                  profiling, and reporting phases will be skipped.
+                type: boolean
               generateFeatureHistogram:
                 default: false
                 description: If true generate feature histogram object from this dataset
@@ -1079,6 +1086,10 @@ spec:
                   datasetsURI:
                     description: The locations of the datasets files. Each file is
                       the group
+                    type: string
+                  featuresURI:
+                    description: The locations of the time series feature files. The
+                      file contain a line for each feature
                     type: string
                   profilesURI:
                     description: The locations of the datasets files.

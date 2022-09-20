@@ -1560,6 +1560,10 @@ message DatasetGroupByStatus {
   // The locations of the report file. One report for each key
   // +kubebuilder:validation:Optional
   optional string unitTestsURI = 4;
+
+  // The locations of the time series feature files. The file contain a line for each feature
+  // +kubebuilder:validation:Optional
+  optional string featuresURI = 5;
 }
 
 // +kubebuilder:object:root=true
@@ -1694,30 +1698,37 @@ message DatasetSpec {
   // +kubebuilder:validation:Optional
   optional bool fast = 24;
 
+  // Indicates if the Dataset should be featurized. Features are computed using tsfresh.
+  // If the dataset is grouped dataset, a feature will be computed to each group.
+  // If enabled, the validation, profiling, and reporting phases will be skipped.
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool featurized = 25;
+
   // The reference to the Lab under which Jobs created by the Dataset will be executed
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference labRef = 25;
+  optional k8s.io.api.core.v1.ObjectReference labRef = 26;
 
   // For dataset that contain feedback information, this is reference to the serving dataset
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference servingDatasetRef = 26;
+  optional k8s.io.api.core.v1.ObjectReference servingDatasetRef = 27;
 
   // Used for prediction dataset, contain a reference to the predictor resource that created this dataset
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference predictorRef = 27;
+  optional k8s.io.api.core.v1.ObjectReference predictorRef = 28;
 
   // If true generate feature histogram object from this dataset columns.
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool generateFeatureHistogram = 28;
+  optional bool generateFeatureHistogram = 29;
 
   // The specification for tests for a new dataset
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite unitTests = 29;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite unitTests = 30;
 
   // For group forecasting, this is the key of the group
   // +kubebuilder:validation:Optional
-  repeated string key = 30;
+  repeated string key = 31;
 }
 
 // DatasetStatistics contains statistics about the Dataset's overall data, as well as every feature of the data. The

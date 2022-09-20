@@ -191,25 +191,31 @@ type DatasetSpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Fast *bool `json:"fast,omitempty" protobuf:"varint,24,opt,name=fast"`
+	// Indicates if the Dataset should be featurized. Features are computed using tsfresh.
+	// If the dataset is grouped dataset, a feature will be computed to each group.
+	// If enabled, the validation, profiling, and reporting phases will be skipped.
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Featurized *bool `json:"featurized,omitempty" protobuf:"varint,25,opt,name=featurized"`
 	// The reference to the Lab under which Jobs created by the Dataset will be executed
 	// +kubebuilder:validation:Optional
-	LabRef v1.ObjectReference `json:"labRef,omitempty" protobuf:"bytes,25,opt,name=labRef"`
+	LabRef v1.ObjectReference `json:"labRef,omitempty" protobuf:"bytes,26,opt,name=labRef"`
 	// For dataset that contain feedback information, this is reference to the serving dataset
 	// +kubebuilder:validation:Optional
-	ServingDatasetRef v1.ObjectReference `json:"servingDatasetRef,omitempty" protobuf:"bytes,26,opt,name=servingDatasetRef"`
+	ServingDatasetRef v1.ObjectReference `json:"servingDatasetRef,omitempty" protobuf:"bytes,27,opt,name=servingDatasetRef"`
 	// Used for prediction dataset, contain a reference to the predictor resource that created this dataset
 	// +kubebuilder:validation:Optional
-	PredictorRef v1.ObjectReference `json:"predictorRef,omitempty" protobuf:"bytes,27,opt,name=predictorRef"`
+	PredictorRef v1.ObjectReference `json:"predictorRef,omitempty" protobuf:"bytes,28,opt,name=predictorRef"`
 	// If true generate feature histogram object from this dataset columns.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	GenerateFeatureHistogram *bool `json:"generateFeatureHistogram,omitempty" protobuf:"varint,28,opt,name=generateFeatureHistogram"`
+	GenerateFeatureHistogram *bool `json:"generateFeatureHistogram,omitempty" protobuf:"varint,29,opt,name=generateFeatureHistogram"`
 	// The specification for tests for a new dataset
 	// +kubebuilder:validation:Optional
-	UnitTests catalog.TestSuite `json:"unitTests,omitempty" protobuf:"bytes,29,opt,name=unitTests"`
+	UnitTests catalog.TestSuite `json:"unitTests,omitempty" protobuf:"bytes,30,opt,name=unitTests"`
 	// For group forecasting, this is the key of the group
 	// +kubebuilder:validation:Optional
-	Key []string `json:"key,omitempty" protobuf:"bytes,30,opt,name=key"`
+	Key []string `json:"key,omitempty" protobuf:"bytes,31,opt,name=key"`
 }
 
 // DatasetStatus defines the observed state of a Dataset object
@@ -597,4 +603,7 @@ type DatasetGroupByStatus struct {
 	// The locations of the report file. One report for each key
 	// +kubebuilder:validation:Optional
 	UnitTestsURI string `json:"unitTestsURI,omitempty" protobuf:"bytes,4,opt,name=unitTestsURI"`
+	// The locations of the time series feature files. The file contain a line for each feature
+	// +kubebuilder:validation:Optional
+	FeaturesURI string `json:"featuresURI,omitempty" protobuf:"bytes,5,opt,name=featuresURI"`
 }

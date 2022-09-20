@@ -2106,6 +2106,9 @@ export class DatasetGroupByStatus extends jspb.Message {
   getUnittestsuri(): string;
   setUnittestsuri(value: string): DatasetGroupByStatus;
 
+  getFeaturesuri(): string;
+  setFeaturesuri(value: string): DatasetGroupByStatus;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DatasetGroupByStatus.AsObject;
   static toObject(includeInstance: boolean, msg: DatasetGroupByStatus): DatasetGroupByStatus.AsObject;
@@ -2120,6 +2123,7 @@ export namespace DatasetGroupByStatus {
     profilesuri: string,
     reportsuri: string,
     unittestsuri: string,
+    featuresuri: string,
   }
 }
 
@@ -2233,6 +2237,9 @@ export class DatasetSpec extends jspb.Message {
   getFast(): boolean;
   setFast(value: boolean): DatasetSpec;
 
+  getFeaturized(): boolean;
+  setFeaturized(value: boolean): DatasetSpec;
+
   getLabref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setLabref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): DatasetSpec;
   hasLabref(): boolean;
@@ -2294,6 +2301,7 @@ export namespace DatasetSpec {
     notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
     correlation?: CorrelationSpec.AsObject,
     fast: boolean,
+    featurized: boolean,
     labref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     servingdatasetref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     predictorref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
