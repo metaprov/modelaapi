@@ -133,7 +133,7 @@ type FeatureHistogramSpec struct {
 	// Default is one minute.
 	// +kubebuilder:default:=60
 	// +kubebuilder:validation:Optional
-	SyncIntervalSec *int32 `json:"SyncIntervalSec,omitempty" protobuf:"varint,14,opt,name=SyncIntervalSec"`
+	SyncIntervalSec *int32 `json:"syncIntervalSec,omitempty" protobuf:"varint,14,opt,name=syncIntervalSec"`
 	// Test suite for this histogram.
 	// +kubebuilder:validation:Optional
 	UnitTests catalog.TestSuite `json:"unitTests,omitempty" protobuf:"bytes,15,opt,name=unitTests"`

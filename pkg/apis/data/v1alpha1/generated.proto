@@ -1630,16 +1630,6 @@ message DatasetSpec {
   // +kubebuilder:validation:Optional
   optional bool unitTested = 9;
 
-  // Indicates if synthetic data should be generated (currently unimplemented)
-  // +kubebuilder:default:=false
-  // +kubebuilder:validation:Optional
-  optional bool synthetic = 11;
-
-  // If `Synthetic` is set to true, SyntheticRows indicates how many rows of synthetic data should be generated
-  // +kubebuilder:default:=0
-  // +kubebuilder:validation:Optional
-  optional int32 syntheticRows = 12;
-
   // Origin is the location of the data file or database query which holds the raw data of the Dataset. When the Dataset is
   // created, the resource controller will retrieve the data from the location, validate it against its Data Source
   // if applicable, and store it inside the `live` section of the Virtual Bucket resource specified by the location
@@ -1672,7 +1662,8 @@ message DatasetSpec {
   optional SampleSpec sample = 18;
 
   // If the dataset is syntactic, this is the syntactic spec
-  optional SyntacticSpec syntactic = 19;
+  // +kubebuilder:validation:Optional
+  optional SyntheticSpec syntactic = 19;
 
   // The machine learning task relevant to the Dataset. This field *must* be the same as the Data Source of the object
   // +kubebuilder:validation:Optional
@@ -2162,7 +2153,7 @@ message FeatureHistogramSpec {
   // Default is one minute.
   // +kubebuilder:default:=60
   // +kubebuilder:validation:Optional
-  optional int32 SyncIntervalSec = 14;
+  optional int32 syncIntervalSec = 14;
 
   // Test suite for this histogram.
   // +kubebuilder:validation:Optional
@@ -3918,7 +3909,7 @@ message SqlQueryStatus {
   repeated SqlQueryCondition conditions = 7;
 }
 
-message SyntacticSpec {
+message SyntheticSpec {
   // Enabled syntatic data
   // +kubebuilder:validation:Optional
   optional bool enabled = 1;

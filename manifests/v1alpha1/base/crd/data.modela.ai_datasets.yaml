@@ -792,17 +792,6 @@ spec:
                     format: int32
                     type: integer
                 type: object
-              synthetic:
-                default: false
-                description: Indicates if synthetic data should be generated (currently
-                  unimplemented)
-                type: boolean
-              syntheticRows:
-                default: 0
-                description: If `Synthetic` is set to true, SyntheticRows indicates
-                  how many rows of synthetic data should be generated
-                format: int32
-                type: integer
               task:
                 description: The machine learning task relevant to the Dataset. This
                   field *must* be the same as the Data Source of the object

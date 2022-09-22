@@ -65,12 +65,6 @@ spec:
           spec:
             description: FeatureHistogramSpec contain the desired state of a FeatureHistogram
             properties:
-              SyncIntervalSec:
-                default: 60
-                description: How much time in seconds, we should sync the im memory
-                  histograms to etcd Default is one minute.
-                format: int32
-                type: integer
               baseRef:
                 description: The histogram to compare to for data drift calc
                 properties:
@@ -200,6 +194,12 @@ spec:
                   dataset histogram this is set to the creation time of the dataset
                 format: date-time
                 type: string
+              syncIntervalSec:
+                default: 60
+                description: How much time in seconds, we should sync the im memory
+                  histograms to etcd Default is one minute.
+                format: int32
+                type: integer
               training:
                 default: false
                 description: If true, this is a training dataset feature histogram.

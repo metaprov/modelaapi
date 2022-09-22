@@ -137,14 +137,6 @@ type DatasetSpec struct {
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
 	UnitTested *bool `json:"unitTested,omitempty" protobuf:"varint,9,opt,name=unitTested"`
-	// Indicates if synthetic data should be generated (currently unimplemented)
-	// +kubebuilder:default:=false
-	// +kubebuilder:validation:Optional
-	Synthetic *bool `json:"synthetic,omitempty" protobuf:"varint,11,opt,name=synthetic"`
-	// If `Synthetic` is set to true, SyntheticRows indicates how many rows of synthetic data should be generated
-	// +kubebuilder:default:=0
-	// +kubebuilder:validation:Optional
-	SyntheticRows *int32 `json:"syntheticRows,omitempty" protobuf:"varint,12,opt,name=syntheticRows"`
 	// Origin is the location of the data file or database query which holds the raw data of the Dataset. When the Dataset is
 	// created, the resource controller will retrieve the data from the location, validate it against its Data Source
 	// if applicable, and store it inside the `live` section of the Virtual Bucket resource specified by the location
@@ -171,7 +163,8 @@ type DatasetSpec struct {
 	// +kubebuilder:validation:Optional
 	Sample SampleSpec `json:"sample,omitempty" protobuf:"bytes,18,opt,name=sample"`
 	// If the dataset is syntactic, this is the syntactic spec
-	Syntactic SyntacticSpec `json:"syntactic,omitempty" protobuf:"bytes,19,opt,name=syntactic"`
+	// +kubebuilder:validation:Optional
+	Synthetic SyntheticSpec `json:"syntactic,omitempty" protobuf:"bytes,19,opt,name=syntactic"`
 	// The machine learning task relevant to the Dataset. This field *must* be the same as the Data Source of the object
 	// +kubebuilder:validation:Optional
 	Task *catalog.MLTask `json:"task,omitempty" protobuf:"bytes,20,opt,name=task"`
@@ -582,7 +575,7 @@ type CorrelationSpec struct {
 	Top *int32 `json:"top,omitempty" protobuf:"varint,3,opt,name=top"`
 }
 
-type SyntacticSpec struct {
+type SyntheticSpec struct {
 	// Enabled syntatic data
 	// +kubebuilder:validation:Optional
 	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`

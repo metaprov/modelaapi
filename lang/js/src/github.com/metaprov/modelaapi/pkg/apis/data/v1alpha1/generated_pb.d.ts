@@ -2181,12 +2181,6 @@ export class DatasetSpec extends jspb.Message {
   getUnittested(): boolean;
   setUnittested(value: boolean): DatasetSpec;
 
-  getSynthetic(): boolean;
-  setSynthetic(value: boolean): DatasetSpec;
-
-  getSyntheticrows(): number;
-  setSyntheticrows(value: number): DatasetSpec;
-
   getOrigin(): DataLocation | undefined;
   setOrigin(value?: DataLocation): DatasetSpec;
   hasOrigin(): boolean;
@@ -2213,8 +2207,8 @@ export class DatasetSpec extends jspb.Message {
   hasSample(): boolean;
   clearSample(): DatasetSpec;
 
-  getSyntactic(): SyntacticSpec | undefined;
-  setSyntactic(value?: SyntacticSpec): DatasetSpec;
+  getSyntactic(): SyntheticSpec | undefined;
+  setSyntactic(value?: SyntheticSpec): DatasetSpec;
   hasSyntactic(): boolean;
   clearSyntactic(): DatasetSpec;
 
@@ -2292,15 +2286,13 @@ export namespace DatasetSpec {
     reported: boolean,
     snapshotted: boolean,
     unittested: boolean,
-    synthetic: boolean,
-    syntheticrows: number,
     origin?: DataLocation.AsObject,
     location?: DataLocation.AsObject,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     activedeadlineseconds: number,
     type: string,
     sample?: SampleSpec.AsObject,
-    syntactic?: SyntacticSpec.AsObject,
+    syntactic?: SyntheticSpec.AsObject,
     task: string,
     subtask: string,
     notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
@@ -5945,22 +5937,22 @@ export namespace SqlQueryStatus {
   }
 }
 
-export class SyntacticSpec extends jspb.Message {
+export class SyntheticSpec extends jspb.Message {
   getEnabled(): boolean;
-  setEnabled(value: boolean): SyntacticSpec;
+  setEnabled(value: boolean): SyntheticSpec;
 
   getRows(): number;
-  setRows(value: number): SyntacticSpec;
+  setRows(value: number): SyntheticSpec;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): SyntacticSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: SyntacticSpec): SyntacticSpec.AsObject;
-  static serializeBinaryToWriter(message: SyntacticSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): SyntacticSpec;
-  static deserializeBinaryFromReader(message: SyntacticSpec, reader: jspb.BinaryReader): SyntacticSpec;
+  toObject(includeInstance?: boolean): SyntheticSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: SyntheticSpec): SyntheticSpec.AsObject;
+  static serializeBinaryToWriter(message: SyntheticSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SyntheticSpec;
+  static deserializeBinaryFromReader(message: SyntheticSpec, reader: jspb.BinaryReader): SyntheticSpec;
 }
 
-export namespace SyntacticSpec {
+export namespace SyntheticSpec {
   export type AsObject = {
     enabled: boolean,
     rows: number,
