@@ -2825,30 +2825,33 @@ message GovernanceStatus {
   optional GovernanceReviewStatus businessReviewStatus = 3;
 }
 
-// Define how to group by the dataset.
-// By default we will use the data source grouping
+// Define how to group by the data, before processing.
 message GroupBySpec {
+  // Enabled the group by, if not enabled, the dataset is treated as defined in the data source.
+  // +kubebuilder:validation:Optional
+  optional bool enabled = 1;
+
   // For group forecasting, this is the key of the group
   // If not specify this will be the key from the data source.
   // +kubebuilder:validation:Optional
-  repeated string groupby = 1;
+  repeated string groupby = 2;
 
   // The time series frequency, if not specify they freq will be the base freq from the data source.
   // +kubebuilder:default:="day"
   // +kubebuilder:validation:Optional
-  optional string freq = 2;
+  optional string freq = 3;
 
   // The interval to forecast at this level. If not specify the interval will be the base interval
   // the data source
   // +kubebuilder:default:=1
   // +kubebuilder:validation:Optional
-  optional int32 interval = 3;
+  optional int32 interval = 4;
 
   // Aggregation function. Define how to aggregate
   // By default this is the aggregation function from the data source.
   // +kubebuilder:default:="none"
   // +kubebuilder:validation:Optional
-  optional string aggr = 4;
+  optional string aggr = 5;
 }
 
 message HistogramSpec {

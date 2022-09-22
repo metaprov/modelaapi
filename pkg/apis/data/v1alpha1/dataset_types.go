@@ -611,25 +611,27 @@ type DatasetGroupByStatus struct {
 	FeaturesURI string `json:"featuresURI,omitempty" protobuf:"bytes,5,opt,name=featuresURI"`
 }
 
-// Define how to group by the dataset.
-// By default we will use the data source grouping
+// Define how to group by the data, before processing.
 type GroupBySpec struct {
+	// Enabled the group by, if not enabled, the dataset is treated as defined in the data source.
+	// +kubebuilder:validation:Optional
+	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
 	// For group forecasting, this is the key of the group
 	// If not specify this will be the key from the data source.
 	// +kubebuilder:validation:Optional
-	GroupBy []string `json:"groupby,omitempty" protobuf:"bytes,1,opt,name=groupby"`
+	GroupBy []string `json:"groupby,omitempty" protobuf:"bytes,2,opt,name=groupby"`
 	// The time series frequency, if not specify they freq will be the base freq from the data source.
 	// +kubebuilder:default:="day"
 	// +kubebuilder:validation:Optional
-	Freq *catalog.Freq `json:"freq,omitempty" protobuf:"bytes,2,opt,name=freq"`
+	Freq *catalog.Freq `json:"freq,omitempty" protobuf:"bytes,3,opt,name=freq"`
 	// The interval to forecast at this level. If not specify the interval will be the base interval
 	// the data source
 	// +kubebuilder:default:=1
 	// +kubebuilder:validation:Optional
-	Interval *int32 `json:"interval,omitempty" protobuf:"bytes,3,opt,name=interval"`
+	Interval *int32 `json:"interval,omitempty" protobuf:"bytes,4,opt,name=interval"`
 	// Aggregation function. Define how to aggregate
 	// By default this is the aggregation function from the data source.
 	// +kubebuilder:default:="none"
 	// +kubebuilder:validation:Optional
-	Aggr catalog.Aggregate `json:"aggr,omitempty" protobuf:"bytes,4,opt,name=aggr"`
+	Aggr catalog.Aggregate `json:"aggr,omitempty" protobuf:"bytes,5,opt,name=aggr"`
 }

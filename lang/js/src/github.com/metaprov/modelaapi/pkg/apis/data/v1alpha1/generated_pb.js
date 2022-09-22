@@ -42190,7 +42190,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceStatus.prot
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec.repeatedFields_ = [1];
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec.repeatedFields_ = [2];
 
 
 
@@ -42223,10 +42223,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec.prototype
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec.toObject = function(includeInstance, msg) {
   var f, obj = {
-    groupbyList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    freq: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    interval: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-    aggr: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
+    enabled: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
+    groupbyList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
+    freq: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    interval: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    aggr: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -42264,18 +42265,22 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec.deseriali
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.addGroupby(value);
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setEnabled(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setFreq(value);
+      msg.addGroupby(value);
       break;
     case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFreq(value);
+      break;
+    case 4:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setInterval(value);
       break;
-    case 4:
+    case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setAggr(value);
       break;
@@ -42308,31 +42313,38 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec.prototype
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getGroupbyList();
-  if (f.length > 0) {
-    writer.writeRepeatedString(
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeBool(
       1,
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 2));
-  if (f != null) {
-    writer.writeString(
+  f = message.getGroupbyList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
       2,
       f
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 3));
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
   if (f != null) {
-    writer.writeInt32(
+    writer.writeString(
       3,
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 4));
+  f = /** @type {number} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeInt32(
+      4,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 5));
   if (f != null) {
     writer.writeString(
-      4,
+      5,
       f
     );
   }
@@ -42340,11 +42352,47 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec.serialize
 
 
 /**
- * repeated string groupby = 1;
+ * optional bool enabled = 1;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec.prototype.getEnabled = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 1, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec.prototype.setEnabled = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec.prototype.clearEnabled = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec.prototype.hasEnabled = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * repeated string groupby = 2;
  * @return {!Array<string>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec.prototype.getGroupbyList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 1));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 2));
 };
 
 
@@ -42353,7 +42401,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec.prototype
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec.prototype.setGroupbyList = function(value) {
-  return jspb.Message.setField(this, 1, value || []);
+  return jspb.Message.setField(this, 2, value || []);
 };
 
 
@@ -42363,7 +42411,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec.prototype
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec.prototype.addGroupby = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 1, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 2, value, opt_index);
 };
 
 
@@ -42377,11 +42425,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec.prototype
 
 
 /**
- * optional string freq = 2;
+ * optional string freq = 3;
  * @return {string}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec.prototype.getFreq = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
@@ -42390,42 +42438,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec.prototype
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec.prototype.setFreq = function(value) {
-  return jspb.Message.setField(this, 2, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec.prototype.clearFreq = function() {
-  return jspb.Message.setField(this, 2, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec.prototype.hasFreq = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional int32 interval = 3;
- * @return {number}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec.prototype.getInterval = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec.prototype.setInterval = function(value) {
   return jspb.Message.setField(this, 3, value);
 };
 
@@ -42434,7 +42446,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec.prototype
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec.prototype.clearInterval = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec.prototype.clearFreq = function() {
   return jspb.Message.setField(this, 3, undefined);
 };
 
@@ -42443,25 +42455,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec.prototype
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec.prototype.hasInterval = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec.prototype.hasFreq = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional string aggr = 4;
- * @return {string}
+ * optional int32 interval = 4;
+ * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec.prototype.getAggr = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec.prototype.getInterval = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec.prototype.setAggr = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec.prototype.setInterval = function(value) {
   return jspb.Message.setField(this, 4, value);
 };
 
@@ -42470,7 +42482,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec.prototype
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec.prototype.clearAggr = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec.prototype.clearInterval = function() {
   return jspb.Message.setField(this, 4, undefined);
 };
 
@@ -42479,8 +42491,44 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec.prototype
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec.prototype.hasAggr = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec.prototype.hasInterval = function() {
   return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional string aggr = 5;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec.prototype.getAggr = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec.prototype.setAggr = function(value) {
+  return jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec.prototype.clearAggr = function() {
+  return jspb.Message.setField(this, 5, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec.prototype.hasAggr = function() {
+  return jspb.Message.getField(this, 5) != null;
 };
 
 

@@ -4074,6 +4074,9 @@ export namespace GovernanceStatus {
 }
 
 export class GroupBySpec extends jspb.Message {
+  getEnabled(): boolean;
+  setEnabled(value: boolean): GroupBySpec;
+
   getGroupbyList(): Array<string>;
   setGroupbyList(value: Array<string>): GroupBySpec;
   clearGroupbyList(): GroupBySpec;
@@ -4098,6 +4101,7 @@ export class GroupBySpec extends jspb.Message {
 
 export namespace GroupBySpec {
   export type AsObject = {
+    enabled: boolean,
     groupbyList: Array<string>,
     freq: string,
     interval: number,

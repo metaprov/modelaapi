@@ -151,6 +151,10 @@ spec:
                     - var
                     - none
                     type: string
+                  enabled:
+                    description: Enabled the group by, if not enabled, the dataset
+                      is treated as defined in the data source.
+                    type: boolean
                   freq:
                     default: day
                     description: The time series frequency, if not specify they freq
