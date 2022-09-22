@@ -1726,9 +1726,9 @@ message DatasetSpec {
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite unitTests = 30;
 
-  // For group forecasting, this is the key of the group
-  // +kubebuilder:validation:Optional
-  repeated string key = 31;
+  // Define how to group by the base dataset, before making the forecasts.
+  // By default, this dataset is assigned
+  optional GroupBySpec groupBy = 31;
 }
 
 // DatasetStatistics contains statistics about the Dataset's overall data, as well as every feature of the data. The
@@ -2819,6 +2819,32 @@ message GovernanceStatus {
   // The review status for the management department
   // +kubebuilder:validation:Optional
   optional GovernanceReviewStatus businessReviewStatus = 3;
+}
+
+// Define how to group by the dataset.
+// By default we will use the data source grouping
+message GroupBySpec {
+  // For group forecasting, this is the key of the group
+  // If not specify this will be the key from the data source.
+  // +kubebuilder:validation:Optional
+  repeated string key = 1;
+
+  // The time series frequency, if not specify they freq will be the base freq from the data source.
+  // +kubebuilder:default:="day"
+  // +kubebuilder:validation:Optional
+  optional string freq = 2;
+
+  // The interval to forecast at this level. If not specify the interval will be the base interval
+  // the data source
+  // +kubebuilder:default:=1
+  // +kubebuilder:validation:Optional
+  optional int32 interval = 3;
+
+  // Aggregation function. Define how to aggregate
+  // By default this is the aggregation function from the data source.
+  // +kubebuilder:default:="none"
+  // +kubebuilder:validation:Optional
+  optional string aggr = 4;
 }
 
 message HistogramSpec {
@@ -3943,13 +3969,6 @@ message TimeSeriesSchema {
   // +kubebuilder:default:=1
   // +kubebuilder:validation:Optional
   optional int32 interval = 3;
-
-  // Define the grouping of the time series.
-  // +kubebuilder:validation:Optional
-  // Aggregation function. Define how to aggregate
-  // +kubebuilder:default:="none"
-  // +kubebuilder:validation:Optional
-  optional string aggr = 4;
 }
 
 // WebRequest represent a single sqlquery in the sqlquery store.

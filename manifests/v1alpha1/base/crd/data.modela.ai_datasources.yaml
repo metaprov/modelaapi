@@ -838,20 +838,6 @@ spec:
                     description: The time-series schema, which sets time-series specific
                       parameters
                     properties:
-                      aggr:
-                        default: none
-                        description: Define the grouping of the time series. Aggregation
-                          function. Define how to aggregate
-                        enum:
-                        - min
-                        - max
-                        - mean
-                        - median
-                        - sum
-                        - stddev
-                        - var
-                        - none
-                        type: string
                       freq:
                         default: day
                         description: The time series frequency

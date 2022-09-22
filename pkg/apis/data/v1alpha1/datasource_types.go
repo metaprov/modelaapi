@@ -317,12 +317,6 @@ type TimeSeriesSchema struct {
 	// +kubebuilder:default:=1
 	// +kubebuilder:validation:Optional
 	Interval *int32 `json:"interval,omitempty" protobuf:"bytes,3,opt,name=interval"`
-	// Define the grouping of the time series.
-	// +kubebuilder:validation:Optional
-	// Aggregation function. Define how to aggregate
-	// +kubebuilder:default:="none"
-	// +kubebuilder:validation:Optional
-	Aggr catalog.Aggregate `json:"aggr,omitempty" protobuf:"bytes,4,opt,name=aggr"`
 }
 
 type RecommendationSchema struct {

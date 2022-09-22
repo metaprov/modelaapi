@@ -2263,10 +2263,10 @@ export class DatasetSpec extends jspb.Message {
   hasUnittests(): boolean;
   clearUnittests(): DatasetSpec;
 
-  getKeyList(): Array<string>;
-  setKeyList(value: Array<string>): DatasetSpec;
-  clearKeyList(): DatasetSpec;
-  addKey(value: string, index?: number): DatasetSpec;
+  getGroupby(): GroupBySpec | undefined;
+  setGroupby(value?: GroupBySpec): DatasetSpec;
+  hasGroupby(): boolean;
+  clearGroupby(): DatasetSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DatasetSpec.AsObject;
@@ -2307,7 +2307,7 @@ export namespace DatasetSpec {
     predictorref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     generatefeaturehistogram: boolean,
     unittests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
-    keyList: Array<string>,
+    groupby?: GroupBySpec.AsObject,
   }
 }
 
@@ -4064,6 +4064,38 @@ export namespace GovernanceStatus {
     itreviewstatus?: GovernanceReviewStatus.AsObject,
     compliancereviewstatus?: GovernanceReviewStatus.AsObject,
     businessreviewstatus?: GovernanceReviewStatus.AsObject,
+  }
+}
+
+export class GroupBySpec extends jspb.Message {
+  getKeyList(): Array<string>;
+  setKeyList(value: Array<string>): GroupBySpec;
+  clearKeyList(): GroupBySpec;
+  addKey(value: string, index?: number): GroupBySpec;
+
+  getFreq(): string;
+  setFreq(value: string): GroupBySpec;
+
+  getInterval(): number;
+  setInterval(value: number): GroupBySpec;
+
+  getAggr(): string;
+  setAggr(value: string): GroupBySpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GroupBySpec.AsObject;
+  static toObject(includeInstance: boolean, msg: GroupBySpec): GroupBySpec.AsObject;
+  static serializeBinaryToWriter(message: GroupBySpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GroupBySpec;
+  static deserializeBinaryFromReader(message: GroupBySpec, reader: jspb.BinaryReader): GroupBySpec;
+}
+
+export namespace GroupBySpec {
+  export type AsObject = {
+    keyList: Array<string>,
+    freq: string,
+    interval: number,
+    aggr: string,
   }
 }
 
@@ -5983,9 +6015,6 @@ export class TimeSeriesSchema extends jspb.Message {
   getInterval(): number;
   setInterval(value: number): TimeSeriesSchema;
 
-  getAggr(): string;
-  setAggr(value: string): TimeSeriesSchema;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TimeSeriesSchema.AsObject;
   static toObject(includeInstance: boolean, msg: TimeSeriesSchema): TimeSeriesSchema.AsObject;
@@ -5999,7 +6028,6 @@ export namespace TimeSeriesSchema {
     type: string,
     freq: string,
     interval: number,
-    aggr: string,
   }
 }
 
