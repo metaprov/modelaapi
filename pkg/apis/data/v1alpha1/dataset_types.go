@@ -216,6 +216,9 @@ type DatasetSpec struct {
 	// Define how to group by the base dataset, before making the forecasts.
 	// By default, this dataset is assigned
 	GroupBy GroupBySpec `json:"groupBy,omitempty" protobuf:"bytes,31,opt,name=groupBy"`
+	// If this dataset represent a group in a multi series dataset, this are the values of the group key.
+	// +kubebuilder:validation:Optional
+	Key []string `json:"key,omitempty" protobuf:"bytes,32,rep,name=key"`
 }
 
 // DatasetStatus defines the observed state of a Dataset object
@@ -614,7 +617,7 @@ type GroupBySpec struct {
 	// For group forecasting, this is the key of the group
 	// If not specify this will be the key from the data source.
 	// +kubebuilder:validation:Optional
-	Key []string `json:"key,omitempty" protobuf:"bytes,1,opt,name=key"`
+	GroupBy []string `json:"groupby,omitempty" protobuf:"bytes,1,opt,name=groupby"`
 	// The time series frequency, if not specify they freq will be the base freq from the data source.
 	// +kubebuilder:default:="day"
 	// +kubebuilder:validation:Optional

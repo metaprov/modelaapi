@@ -2268,6 +2268,11 @@ export class DatasetSpec extends jspb.Message {
   hasGroupby(): boolean;
   clearGroupby(): DatasetSpec;
 
+  getKeyList(): Array<string>;
+  setKeyList(value: Array<string>): DatasetSpec;
+  clearKeyList(): DatasetSpec;
+  addKey(value: string, index?: number): DatasetSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DatasetSpec.AsObject;
   static toObject(includeInstance: boolean, msg: DatasetSpec): DatasetSpec.AsObject;
@@ -2308,6 +2313,7 @@ export namespace DatasetSpec {
     generatefeaturehistogram: boolean,
     unittests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
     groupby?: GroupBySpec.AsObject,
+    keyList: Array<string>,
   }
 }
 
@@ -4068,10 +4074,10 @@ export namespace GovernanceStatus {
 }
 
 export class GroupBySpec extends jspb.Message {
-  getKeyList(): Array<string>;
-  setKeyList(value: Array<string>): GroupBySpec;
-  clearKeyList(): GroupBySpec;
-  addKey(value: string, index?: number): GroupBySpec;
+  getGroupbyList(): Array<string>;
+  setGroupbyList(value: Array<string>): GroupBySpec;
+  clearGroupbyList(): GroupBySpec;
+  addGroupby(value: string, index?: number): GroupBySpec;
 
   getFreq(): string;
   setFreq(value: string): GroupBySpec;
@@ -4092,7 +4098,7 @@ export class GroupBySpec extends jspb.Message {
 
 export namespace GroupBySpec {
   export type AsObject = {
-    keyList: Array<string>,
+    groupbyList: Array<string>,
     freq: string,
     interval: number,
     aggr: string,

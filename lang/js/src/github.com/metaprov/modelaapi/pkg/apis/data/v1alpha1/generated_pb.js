@@ -1098,7 +1098,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.repeatedFields_, null);
 };
 goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -24300,6 +24300,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetList.prototype
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.repeatedFields_ = [32];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -24360,7 +24367,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.toObject 
     predictorref: (f = msg.getPredictorref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     generatefeaturehistogram: (f = jspb.Message.getBooleanField(msg, 29)) == null ? undefined : f,
     unittests: (f = msg.getUnittests()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.toObject(includeInstance, f),
-    groupby: (f = msg.getGroupby()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec.toObject(includeInstance, f)
+    groupby: (f = msg.getGroupby()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec.toObject(includeInstance, f),
+    keyList: (f = jspb.Message.getRepeatedField(msg, 32)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -24528,6 +24536,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.deseriali
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec.deserializeBinaryFromReader);
       msg.setGroupby(value);
+      break;
+    case 32:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addKey(value);
       break;
     default:
       reader.skipField();
@@ -24778,6 +24790,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.serialize
       31,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec.serializeBinaryToWriter
+    );
+  }
+  f = message.getKeyList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      32,
+      f
     );
   }
 };
@@ -25872,6 +25891,43 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.hasGroupby = function() {
   return jspb.Message.getField(this, 31) != null;
+};
+
+
+/**
+ * repeated string key = 32;
+ * @return {!Array<string>}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.getKeyList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 32));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.setKeyList = function(value) {
+  return jspb.Message.setField(this, 32, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.addKey = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 32, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.clearKeyList = function() {
+  return this.setKeyList([]);
 };
 
 
@@ -42167,7 +42223,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec.prototype
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec.toObject = function(includeInstance, msg) {
   var f, obj = {
-    keyList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+    groupbyList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
     freq: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     interval: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     aggr: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
@@ -42209,7 +42265,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec.deseriali
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.addKey(value);
+      msg.addGroupby(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -42252,7 +42308,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec.prototype
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getKeyList();
+  f = message.getGroupbyList();
   if (f.length > 0) {
     writer.writeRepeatedString(
       1,
@@ -42284,10 +42340,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec.serialize
 
 
 /**
- * repeated string key = 1;
+ * repeated string groupby = 1;
  * @return {!Array<string>}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec.prototype.getKeyList = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec.prototype.getGroupbyList = function() {
   return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 1));
 };
 
@@ -42296,7 +42352,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec.prototype
  * @param {!Array<string>} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec.prototype.setKeyList = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec.prototype.setGroupbyList = function(value) {
   return jspb.Message.setField(this, 1, value || []);
 };
 
@@ -42306,7 +42362,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec.prototype
  * @param {number=} opt_index
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec.prototype.addKey = function(value, opt_index) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec.prototype.addGroupby = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 1, value, opt_index);
 };
 
@@ -42315,8 +42371,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec.prototype
  * Clears the list making it empty but non-null.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec.prototype.clearKeyList = function() {
-  return this.setKeyList([]);
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupBySpec.prototype.clearGroupbyList = function() {
+  return this.setGroupbyList([]);
 };
 
 

@@ -1729,6 +1729,10 @@ message DatasetSpec {
   // Define how to group by the base dataset, before making the forecasts.
   // By default, this dataset is assigned
   optional GroupBySpec groupBy = 31;
+
+  // If this dataset represent a group in a multi series dataset, this are the values of the group key.
+  // +kubebuilder:validation:Optional
+  repeated string key = 32;
 }
 
 // DatasetStatistics contains statistics about the Dataset's overall data, as well as every feature of the data. The
@@ -2827,7 +2831,7 @@ message GroupBySpec {
   // For group forecasting, this is the key of the group
   // If not specify this will be the key from the data source.
   // +kubebuilder:validation:Optional
-  repeated string key = 1;
+  repeated string groupby = 1;
 
   // The time series frequency, if not specify they freq will be the base freq from the data source.
   // +kubebuilder:default:="day"

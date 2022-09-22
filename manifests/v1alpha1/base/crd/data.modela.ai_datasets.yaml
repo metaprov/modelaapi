@@ -166,19 +166,25 @@ spec:
                     - year
                     - multi-year
                     type: string
+                  groupby:
+                    description: For group forecasting, this is the key of the group
+                      If not specify this will be the key from the data source.
+                    items:
+                      type: string
+                    type: array
                   interval:
                     default: 1
                     description: The interval to forecast at this level. If not specify
                       the interval will be the base interval the data source
                     format: int32
                     type: integer
-                  key:
-                    description: For group forecasting, this is the key of the group
-                      If not specify this will be the key from the data source.
-                    items:
-                      type: string
-                    type: array
                 type: object
+              key:
+                description: If this dataset represent a group in a multi series dataset,
+                  this are the values of the group key.
+                items:
+                  type: string
+                type: array
               labRef:
                 description: The reference to the Lab under which Jobs created by
                   the Dataset will be executed
