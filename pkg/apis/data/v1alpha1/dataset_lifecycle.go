@@ -105,8 +105,7 @@ func (dataset *Dataset) ManifestUri() string {
 }
 
 func (dataset *Dataset) ProfileUri() string {
-	return fmt.Sprintf("modela/live/tenants/default-tenant/dataproducts/%s/dataproductversions/%s/datasets/%s/profile/dataset_profile.json",
-		dataset.Namespace, *dataset.Spec.VersionName, dataset.Name)
+	return fmt.Sprintf("%s/profile/dataset_profile.json", dataset.RootUri())
 }
 
 func ParseDatasetYaml(content []byte) (*Dataset, error) {
