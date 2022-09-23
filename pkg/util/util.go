@@ -103,3 +103,7 @@ func MinInt(a, b int) int {
 	}
 	return b
 }
+
+func TenantUri(tenantName, uri string) string {
+	return fmt.Sprintf("modela/live/tenants/%s/%s", tenantName, uri)
+}
