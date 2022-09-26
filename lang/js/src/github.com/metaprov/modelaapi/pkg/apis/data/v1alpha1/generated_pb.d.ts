@@ -2109,6 +2109,9 @@ export class DatasetGroupByStatus extends jspb.Message {
   getFeaturesuri(): string;
   setFeaturesuri(value: string): DatasetGroupByStatus;
 
+  getWorkerresultsMap(): jspb.Map<number, string>;
+  clearWorkerresultsMap(): DatasetGroupByStatus;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DatasetGroupByStatus.AsObject;
   static toObject(includeInstance: boolean, msg: DatasetGroupByStatus): DatasetGroupByStatus.AsObject;
@@ -2124,6 +2127,7 @@ export namespace DatasetGroupByStatus {
     reportsuri: string,
     unittestsuri: string,
     featuresuri: string,
+    workerresultsMap: Array<[number, string]>,
   }
 }
 

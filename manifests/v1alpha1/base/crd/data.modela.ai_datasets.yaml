@@ -1142,6 +1142,9 @@ spec:
                     description: The locations of the report file. One report for
                       each key
                     type: string
+                  workerResults:
+                    description: Holds the worker on going result, when a worker finish,
+                      we update the location of thier result files
                 type: object
               hash:
                 default: ""

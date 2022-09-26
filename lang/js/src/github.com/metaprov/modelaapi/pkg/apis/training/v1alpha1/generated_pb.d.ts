@@ -2334,6 +2334,9 @@ export class ModelGroupByStatus extends jspb.Message {
   getReportsuri(): string;
   setReportsuri(value: string): ModelGroupByStatus;
 
+  getWorkerresultsMap(): jspb.Map<number, string>;
+  clearWorkerresultsMap(): ModelGroupByStatus;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelGroupByStatus.AsObject;
   static toObject(includeInstance: boolean, msg: ModelGroupByStatus): ModelGroupByStatus.AsObject;
@@ -2347,6 +2350,7 @@ export namespace ModelGroupByStatus {
     modelsuri: string,
     profilesuri: string,
     reportsuri: string,
+    workerresultsMap: Array<[number, string]>,
   }
 }
 

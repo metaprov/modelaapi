@@ -943,50 +943,6 @@ export namespace ForecastRun {
   }
 }
 
-export class ForecastRunResult extends jspb.Message {
-  getKey(): string;
-  setKey(value: string): ForecastRunResult;
-
-  getDatauri(): string;
-  setDatauri(value: string): ForecastRunResult;
-
-  getProfileuri(): string;
-  setProfileuri(value: string): ForecastRunResult;
-
-  getFeaturesMap(): jspb.Map<string, number>;
-  clearFeaturesMap(): ForecastRunResult;
-
-  getUnittestsresult(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
-  setUnittestsresult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): ForecastRunResult;
-  hasUnittestsresult(): boolean;
-  clearUnittestsresult(): ForecastRunResult;
-
-  getFailed(): boolean;
-  setFailed(value: boolean): ForecastRunResult;
-
-  getFailuremsg(): string;
-  setFailuremsg(value: string): ForecastRunResult;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ForecastRunResult.AsObject;
-  static toObject(includeInstance: boolean, msg: ForecastRunResult): ForecastRunResult.AsObject;
-  static serializeBinaryToWriter(message: ForecastRunResult, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ForecastRunResult;
-  static deserializeBinaryFromReader(message: ForecastRunResult, reader: jspb.BinaryReader): ForecastRunResult;
-}
-
-export namespace ForecastRunResult {
-  export type AsObject = {
-    key: string,
-    datauri: string,
-    profileuri: string,
-    featuresMap: Array<[string, number]>,
-    unittestsresult?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
-    failed: boolean,
-    failuremsg: string,
-  }
-}
-
 export class ForecastSpec extends jspb.Message {
   getRunsMap(): jspb.Map<string, ForecastRun>;
   clearRunsMap(): ForecastSpec;
@@ -1002,6 +958,44 @@ export class ForecastSpec extends jspb.Message {
 export namespace ForecastSpec {
   export type AsObject = {
     runsMap: Array<[string, ForecastRun.AsObject]>,
+  }
+}
+
+export class ForecastStatus extends jspb.Message {
+  getProfileuri(): string;
+  setProfileuri(value: string): ForecastStatus;
+
+  getReporturi(): string;
+  setReporturi(value: string): ForecastStatus;
+
+  getForecasturi(): string;
+  setForecasturi(value: string): ForecastStatus;
+
+  getFailed(): boolean;
+  setFailed(value: boolean): ForecastStatus;
+
+  getFailuremsg(): string;
+  setFailuremsg(value: string): ForecastStatus;
+
+  getWorkerresultsMap(): jspb.Map<number, string>;
+  clearWorkerresultsMap(): ForecastStatus;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ForecastStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: ForecastStatus): ForecastStatus.AsObject;
+  static serializeBinaryToWriter(message: ForecastStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ForecastStatus;
+  static deserializeBinaryFromReader(message: ForecastStatus, reader: jspb.BinaryReader): ForecastStatus;
+}
+
+export namespace ForecastStatus {
+  export type AsObject = {
+    profileuri: string,
+    reporturi: string,
+    forecasturi: string,
+    failed: boolean,
+    failuremsg: string,
+    workerresultsMap: Array<[number, string]>,
   }
 }
 
@@ -1674,8 +1668,10 @@ export class PredictionStatus extends jspb.Message {
   getDrifted(): boolean;
   setDrifted(value: boolean): PredictionStatus;
 
-  getRunsMap(): jspb.Map<string, ForecastRunResult>;
-  clearRunsMap(): PredictionStatus;
+  getForecast(): ForecastStatus | undefined;
+  setForecast(value?: ForecastStatus): PredictionStatus;
+  hasForecast(): boolean;
+  clearForecast(): PredictionStatus;
 
   getConditionsList(): Array<PredictionCondition>;
   setConditionsList(value: Array<PredictionCondition>): PredictionStatus;
@@ -1706,7 +1702,7 @@ export namespace PredictionStatus {
     datasetref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     columnsList: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.ColumnHistogram.AsObject>,
     drifted: boolean,
-    runsMap: Array<[string, ForecastRunResult.AsObject]>,
+    forecast?: ForecastStatus.AsObject,
     conditionsList: Array<PredictionCondition.AsObject>,
   }
 }

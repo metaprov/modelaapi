@@ -602,6 +602,9 @@ type DatasetGroupByStatus struct {
 	// The locations of the time series feature files. The file contain a line for each feature
 	// +kubebuilder:validation:Optional
 	FeaturesURI string `json:"featuresURI,omitempty" protobuf:"bytes,5,opt,name=featuresURI"`
+	// Holds the worker on going result, when a worker finish, we update the location of thier result files
+	// +kubebuilder:validation:Optional
+	WorkerResults map[int32]string `json:"workerResults,omitempty" protobuf:"bytes,6,opt,name=workerResults"`
 }
 
 // Define how to group by the data, before processing.

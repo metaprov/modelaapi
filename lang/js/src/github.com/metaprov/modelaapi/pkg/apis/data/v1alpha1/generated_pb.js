@@ -23784,7 +23784,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetGroupByStatus.
     profilesuri: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     reportsuri: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     unittestsuri: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    featuresuri: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
+    featuresuri: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    workerresultsMap: (f = msg.getWorkerresultsMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
   if (includeInstance) {
@@ -23840,6 +23841,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetGroupByStatus.
     case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setFeaturesuri(value);
+      break;
+    case 6:
+      var value = msg.getWorkerresultsMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readInt32, jspb.BinaryReader.prototype.readString, null, 0, "");
+         });
       break;
     default:
       reader.skipField();
@@ -23904,6 +23911,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetGroupByStatus.
       5,
       f
     );
+  }
+  f = message.getWorkerresultsMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(6, writer, jspb.BinaryWriter.prototype.writeInt32, jspb.BinaryWriter.prototype.writeString);
   }
 };
 
@@ -24086,6 +24097,28 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetGroupByStatus.
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetGroupByStatus.prototype.hasFeaturesuri = function() {
   return jspb.Message.getField(this, 5) != null;
 };
+
+
+/**
+ * map<int32, string> workerResults = 6;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<number,string>}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetGroupByStatus.prototype.getWorkerresultsMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<number,string>} */ (
+      jspb.Message.getMapField(this, 6, opt_noLazyCreate,
+      null));
+};
+
+
+/**
+ * Clears values from the map. The map will be non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetGroupByStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetGroupByStatus.prototype.clearWorkerresultsMap = function() {
+  this.getWorkerresultsMap().clear();
+  return this;};
 
 
 

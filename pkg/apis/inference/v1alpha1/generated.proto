@@ -604,42 +604,38 @@ message ForecastRun {
   optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.WindowSpec horizon = 3;
 }
 
-// The result of forecasting one item. The forecast data itself is stored on the cloud.
-// The dataURI is pointing to the forecast, the profile URI
-message ForecastRunResult {
-  // The time series key
-  // +kubebuilder:validation:Optional
-  optional string key = 1;
-
-  // A pointer to the actual forecast
-  // +kubebuilder:validation:Optional
-  optional string dataURI = 2;
-
-  // A pointer to the profile URI
-  // +kubebuilder:validation:Optional
-  optional string profileURI = 3;
-
-  // Feature scores for this time series.
-  // +kubebuilder:validation:Optional
-  map<string, double> features = 4;
-
-  // the result of a unit test on a forecast
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult unitTestsResult = 5;
-
-  // Mark forecast as a failure.
-  // +kubebuilder:validation:Optional
-  optional bool failed = 6;
-
-  // In case of failure, this is the failure message
-  // +kubebuilder:validation:Optional
-  optional string failureMsg = 7;
-}
-
 message ForecastSpec {
   // The list of forecast runs. Runs are indexed by key
   // +kubebuilder:validation:Optional
   map<string, ForecastRun> runs = 9;
+}
+
+// The result of forecasting one item. The forecast data itself is stored on the cloud.
+// The dataURI is pointing to the forecast, the profile URI
+message ForecastStatus {
+  // The URI of all the porfiles
+  // +kubebuilder:validation:Optional
+  optional string profileURI = 1;
+
+  // A pointer to the actual forecast
+  // +kubebuilder:validation:Optional
+  optional string reportURI = 2;
+
+  // A pointer to the file containing the metadata about the forecasts
+  // +kubebuilder:validation:Optional
+  optional string forecastURI = 3;
+
+  // Mark forecast as a failure.
+  // +kubebuilder:validation:Optional
+  optional bool failed = 4;
+
+  // In case of failure, this is the failure message
+  // +kubebuilder:validation:Optional
+  optional string failureMsg = 5;
+
+  // Holds the worker on going result, when a worker finish, we update the location of thier result files
+  // +kubebuilder:validation:Optional
+  map<int32, string> workerResults = 6;
 }
 
 message ForwardCurtainSpec {
@@ -1090,7 +1086,7 @@ message PredictionStatus {
 
   // the forecast results for this forecast
   // +kubebuilder:validation:Optional
-  map<string, ForecastRunResult> runs = 15;
+  optional ForecastStatus forecast = 15;
 
   // +patchMergeKey=type
   // +patchStrategy=merge

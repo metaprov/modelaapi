@@ -200,7 +200,7 @@ type PredictionStatus struct {
 	Drifted bool `json:"drifted,omitempty" protobuf:"bytes,14,rep,name=drifted"`
 	// the forecast results for this forecast
 	//+kubebuilder:validation:Optional
-	Runs map[string]ForecastRunResult `json:"runs,omitempty" protobuf:"bytes,15,opt,name=runs"`
+	Forecast ForecastStatus `json:"forecast,omitempty" protobuf:"bytes,15,opt,name=forecast"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
@@ -218,26 +218,23 @@ type ForecastPredictionSpec struct {
 
 // The result of forecasting one item. The forecast data itself is stored on the cloud.
 // The dataURI is pointing to the forecast, the profile URI
-type ForecastRunResult struct {
-	// The time series key
+type ForecastStatus struct {
+	// The URI of all the porfiles
 	// +kubebuilder:validation:Optional
-	Key string `json:"key,omitempty" protobuf:"bytes,1,opt,name=key"`
+	ProfileURI string `json:"profileURI,omitempty" protobuf:"bytes,1,opt,name=profileURI"`
 	// A pointer to the actual forecast
 	// +kubebuilder:validation:Optional
-	DataURI string `json:"dataURI,omitempty" protobuf:"bytes,2,rep,name=dataURI"`
-	// A pointer to the profile URI
+	ReportURI string `json:"reportURI,omitempty" protobuf:"bytes,2,rep,name=reportURI"`
+	// A pointer to the file containing the metadata about the forecasts
 	// +kubebuilder:validation:Optional
-	ProfileURI string `json:"profileURI,omitempty" protobuf:"bytes,3,rep,name=profileURI"`
-	// Feature scores for this time series.
-	// +kubebuilder:validation:Optional
-	Features map[catalog.Metric]float64 `json:"features,omitempty" protobuf:"bytes,4,opt,name=features"`
-	// the result of a unit test on a forecast
-	// +kubebuilder:validation:Optional
-	UnitTestsResult catalog.TestSuiteResult `json:"unitTestsResult,omitempty" protobuf:"bytes,5,opt,name=unitTestsResult"`
+	ForecastURI string `json:"forecastURI,omitempty" protobuf:"bytes,3,rep,name=forecastURI"`
 	// Mark forecast as a failure.
 	// +kubebuilder:validation:Optional
-	Failed *bool `json:"failed,omitempty" protobuf:"bytes,6,opt,name=failed"`
+	Failed *bool `json:"failed,omitempty" protobuf:"bytes,4,opt,name=failed"`
 	// In case of failure, this is the failure message
 	// +kubebuilder:validation:Optional
-	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,7,opt,name=failureMsg"`
+	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,5,opt,name=failureMsg"`
+	// Holds the worker on going result, when a worker finish, we update the location of thier result files
+	// +kubebuilder:validation:Optional
+	WorkerResults map[int32]string `json:"workerResults,omitempty" protobuf:"bytes,6,opt,name=workerResults"`
 }

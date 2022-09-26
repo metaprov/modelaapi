@@ -1137,4 +1137,7 @@ type ModelGroupByStatus struct {
 	// The locations of the model report file. One report for each key
 	// +kubebuilder:validation:Optional
 	ReportsURI string `json:"reportsURI,omitempty" protobuf:"bytes,3,opt,name=reportsURI"`
+	// Holds the worker on going result, when a worker finish, we update the location of thier result files
+	// +kubebuilder:validation:Optional
+	WorkerResults map[int32]string `json:"workerResults,omitempty" protobuf:"bytes,4,opt,name=workerResults"`
 }

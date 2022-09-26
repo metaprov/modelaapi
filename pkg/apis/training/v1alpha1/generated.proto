@@ -1588,6 +1588,10 @@ message ModelGroupByStatus {
   // The locations of the model report file. One report for each key
   // +kubebuilder:validation:Optional
   optional string reportsURI = 3;
+
+  // Holds the worker on going result, when a worker finish, we update the location of thier result files
+  // +kubebuilder:validation:Optional
+  map<int32, string> workerResults = 4;
 }
 
 // ModelImageSpec specifies the destination of Docker images produced by a Study

@@ -1564,6 +1564,10 @@ message DatasetGroupByStatus {
   // The locations of the time series feature files. The file contain a line for each feature
   // +kubebuilder:validation:Optional
   optional string featuresURI = 5;
+
+  // Holds the worker on going result, when a worker finish, we update the location of thier result files
+  // +kubebuilder:validation:Optional
+  map<int32, string> workerResults = 6;
 }
 
 // +kubebuilder:object:root=true
