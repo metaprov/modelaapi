@@ -875,10 +875,8 @@ func (in *ForecastStatus) DeepCopyInto(out *ForecastStatus) {
 	}
 	if in.WorkerResults != nil {
 		in, out := &in.WorkerResults, &out.WorkerResults
-		*out = make(map[int32]string, len(*in))
-		for key, val := range *in {
-			(*out)[key] = val
-		}
+		*out = make([]catalogv1alpha1.WorkerRunResult, len(*in))
+		copy(*out, *in)
 	}
 }
 

@@ -1250,6 +1250,17 @@ spec:
                   workerResults:
                     description: Holds the worker on going result, when a worker finish,
                       we update the location of thier result files
+                    items:
+                      properties:
+                        id:
+                          description: Worker ID
+                          format: int32
+                          type: integer
+                        uri:
+                          description: URI
+                          type: string
+                      type: object
+                    type: array
                 type: object
               lastUpdated:
                 description: The last time the object was updated
