@@ -2564,7 +2564,7 @@ message ModelStatus {
 
   // The sub models uri file contain the results of running the sub model
   // +kubebuilder:validation:Optional
-  optional string subModelsURI = 73;
+  optional ModelGroupByStatus groupByStatus = 73;
 
   // +kubebuilder:validation:Optional
   // +patchMergeKey=type

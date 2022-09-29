@@ -33693,7 +33693,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.toObj
     images: (f = msg.getImages()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Images.toObject(includeInstance, f),
     unittestsresult: (f = msg.getUnittestsresult()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.toObject(includeInstance, f),
     feedbacktestsresult: (f = msg.getFeedbacktestsresult()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.toObject(includeInstance, f),
-    submodelsuri: (f = jspb.Message.getField(msg, 73)) == null ? undefined : f,
+    groupbystatus: (f = msg.getGroupbystatus()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelGroupByStatus.toObject(includeInstance, f),
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCondition.toObject, includeInstance)
   };
@@ -34059,8 +34059,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.deser
       msg.setFeedbacktestsresult(value);
       break;
     case 73:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setSubmodelsuri(value);
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelGroupByStatus;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelGroupByStatus.deserializeBinaryFromReader);
+      msg.setGroupbystatus(value);
       break;
     case 74:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCondition;
@@ -34638,11 +34639,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.seria
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.serializeBinaryToWriter
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 73));
+  f = message.getGroupbystatus();
   if (f != null) {
-    writer.writeString(
+    writer.writeMessage(
       73,
-      f
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelGroupByStatus.serializeBinaryToWriter
     );
   }
   f = message.getConditionsList();
@@ -37296,29 +37298,30 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
 
 
 /**
- * optional string subModelsURI = 73;
- * @return {string}
+ * optional ModelGroupByStatus groupByStatus = 73;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelGroupByStatus}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getSubmodelsuri = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 73, ""));
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getGroupbystatus = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelGroupByStatus} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelGroupByStatus, 73));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelGroupByStatus|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.setSubmodelsuri = function(value) {
-  return jspb.Message.setField(this, 73, value);
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.setGroupbystatus = function(value) {
+  return jspb.Message.setWrapperField(this, 73, value);
 };
 
 
 /**
- * Clears the field making it undefined.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.clearSubmodelsuri = function() {
-  return jspb.Message.setField(this, 73, undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.clearGroupbystatus = function() {
+  return this.setGroupbystatus(undefined);
 };
 
 
@@ -37326,7 +37329,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.hasSubmodelsuri = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.hasGroupbystatus = function() {
   return jspb.Message.getField(this, 73) != null;
 };
 

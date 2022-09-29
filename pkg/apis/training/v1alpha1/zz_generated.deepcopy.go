@@ -2961,6 +2961,7 @@ func (in *ModelStatus) DeepCopyInto(out *ModelStatus) {
 	in.Images.DeepCopyInto(&out.Images)
 	in.UnitTestsResult.DeepCopyInto(&out.UnitTestsResult)
 	in.FeedbackTestsResult.DeepCopyInto(&out.FeedbackTestsResult)
+	in.GroupByStatus.DeepCopyInto(&out.GroupByStatus)
 	if in.Conditions != nil {
 		in, out := &in.Conditions, &out.Conditions
 		*out = make([]ModelCondition, len(*in))

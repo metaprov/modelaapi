@@ -3553,8 +3553,10 @@ export class ModelStatus extends jspb.Message {
   hasFeedbacktestsresult(): boolean;
   clearFeedbacktestsresult(): ModelStatus;
 
-  getSubmodelsuri(): string;
-  setSubmodelsuri(value: string): ModelStatus;
+  getGroupbystatus(): ModelGroupByStatus | undefined;
+  setGroupbystatus(value?: ModelGroupByStatus): ModelStatus;
+  hasGroupbystatus(): boolean;
+  clearGroupbystatus(): ModelStatus;
 
   getConditionsList(): Array<ModelCondition>;
   setConditionsList(value: Array<ModelCondition>): ModelStatus;
@@ -3643,7 +3645,7 @@ export namespace ModelStatus {
     images?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Images.AsObject,
     unittestsresult?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
     feedbacktestsresult?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
-    submodelsuri: string,
+    groupbystatus?: ModelGroupByStatus.AsObject,
     conditionsList: Array<ModelCondition.AsObject>,
   }
 }

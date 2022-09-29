@@ -606,7 +606,7 @@ type ModelStatus struct {
 	FeedbackTestsResult catalog.TestSuiteResult `json:"feedbackTestsResult,omitempty" protobuf:"bytes,72,opt,name="`
 	// The sub models uri file contain the results of running the sub model
 	// +kubebuilder:validation:Optional
-	SubModelsURI string `json:"subModelsURI,omitempty" protobuf:"bytes,73,opt,name=subModelsURI"`
+	GroupByStatus ModelGroupByStatus `json:"groupByStatus,omitempty" protobuf:"bytes,73,opt,name=groupByStatus"`
 	// +kubebuilder:validation:Optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
