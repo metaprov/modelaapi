@@ -1027,6 +1027,16 @@ message VizUri {
   optional string uri = 2;
 }
 
+message WorkerRunResult {
+  // Worker ID
+  // +kubebuilder:validation:Optional
+  optional int32 id = 1;
+
+  // URI
+  // +kubebuilder:validation:Optional
+  optional string uri = 2;
+}
+
 // WorkloadClass define a template for a job.
 // +kubebuilder:object:root=true
 // +kubebuilder:printcolumn:name="Age",type=date,JSONPath=`.metadata.creationTimestamp`

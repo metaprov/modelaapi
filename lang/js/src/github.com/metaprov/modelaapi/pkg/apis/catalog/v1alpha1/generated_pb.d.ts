@@ -1821,6 +1821,28 @@ export namespace VizUri {
   }
 }
 
+export class WorkerRunResult extends jspb.Message {
+  getId(): number;
+  setId(value: number): WorkerRunResult;
+
+  getUri(): string;
+  setUri(value: string): WorkerRunResult;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): WorkerRunResult.AsObject;
+  static toObject(includeInstance: boolean, msg: WorkerRunResult): WorkerRunResult.AsObject;
+  static serializeBinaryToWriter(message: WorkerRunResult, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): WorkerRunResult;
+  static deserializeBinaryFromReader(message: WorkerRunResult, reader: jspb.BinaryReader): WorkerRunResult;
+}
+
+export namespace WorkerRunResult {
+  export type AsObject = {
+    id: number,
+    uri: string,
+  }
+}
+
 export class WorkloadClass extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): WorkloadClass;

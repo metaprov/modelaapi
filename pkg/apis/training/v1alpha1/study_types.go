@@ -732,10 +732,12 @@ type StudyStatus struct {
 	BestFE *FeatureEngineeringSpec `json:"bestFE,omitempty" protobuf:"bytes,33,opt,name=bestFE"`
 	// GC specifies the status of garbage collection relevant to the Study
 	GC GarbageCollectionStatus `json:"gc,omitempty" protobuf:"bytes,34,opt,name=gc"`
+	// Study group by
+	GroupStatus StudyGroupByStatus `json:"groupStatus,omitempty" protobuf:"bytes,35,opt,name=groupStatus"`
 	// +optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
-	Conditions []StudyCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,35,rep,name=conditions"`
+	Conditions []StudyCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,36,rep,name=conditions"`
 }
 
 // ModelResult contains the records of a single garbage-collected model
@@ -865,4 +867,13 @@ type ImbalanceHandlingSpec struct {
 	// +kubebuilder:default:=auto
 	// +kubebuilder:validation:Optional
 	Imbalance *catalog.ImbalanceHandling `json:"imbalance,omitempty" protobuf:"bytes,2,opt,name=imbalance"`
+}
+
+type StudyGroupByStatus struct {
+	// The locations of the datasets profile files. Each file is the group
+	// +kubebuilder:validation:Optional
+	StudiesURI string `json:"studiesURI,omitempty" protobuf:"bytes,1,opt,name=studiesURI"`
+	// Holds the worker on going result, when a worker finish, we update the location of thier result files
+	// +kubebuilder:validation:Optional
+	WorkerResults []catalog.WorkerRunResult `json:"workerResults,omitempty" protobuf:"bytes,2,opt,name=workerResults"`
 }

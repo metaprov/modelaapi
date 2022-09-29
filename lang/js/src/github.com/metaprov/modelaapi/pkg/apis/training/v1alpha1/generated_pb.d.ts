@@ -2334,8 +2334,10 @@ export class ModelGroupByStatus extends jspb.Message {
   getReportsuri(): string;
   setReportsuri(value: string): ModelGroupByStatus;
 
-  getWorkerresultsMap(): jspb.Map<number, string>;
-  clearWorkerresultsMap(): ModelGroupByStatus;
+  getWorkerresultsList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkerRunResult>;
+  setWorkerresultsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkerRunResult>): ModelGroupByStatus;
+  clearWorkerresultsList(): ModelGroupByStatus;
+  addWorkerresults(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkerRunResult, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkerRunResult;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelGroupByStatus.AsObject;
@@ -2350,7 +2352,7 @@ export namespace ModelGroupByStatus {
     modelsuri: string,
     profilesuri: string,
     reportsuri: string,
-    workerresultsMap: Array<[number, string]>,
+    workerresultsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkerRunResult.AsObject>,
   }
 }
 
@@ -4954,6 +4956,30 @@ export namespace StudyCondition {
   }
 }
 
+export class StudyGroupByStatus extends jspb.Message {
+  getStudiesuri(): string;
+  setStudiesuri(value: string): StudyGroupByStatus;
+
+  getWorkerresultsList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkerRunResult>;
+  setWorkerresultsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkerRunResult>): StudyGroupByStatus;
+  clearWorkerresultsList(): StudyGroupByStatus;
+  addWorkerresults(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkerRunResult, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkerRunResult;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): StudyGroupByStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: StudyGroupByStatus): StudyGroupByStatus.AsObject;
+  static serializeBinaryToWriter(message: StudyGroupByStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): StudyGroupByStatus;
+  static deserializeBinaryFromReader(message: StudyGroupByStatus, reader: jspb.BinaryReader): StudyGroupByStatus;
+}
+
+export namespace StudyGroupByStatus {
+  export type AsObject = {
+    studiesuri: string,
+    workerresultsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkerRunResult.AsObject>,
+  }
+}
+
 export class StudyList extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta): StudyList;
@@ -5390,6 +5416,11 @@ export class StudyStatus extends jspb.Message {
   hasGc(): boolean;
   clearGc(): StudyStatus;
 
+  getGroupstatus(): StudyGroupByStatus | undefined;
+  setGroupstatus(value?: StudyGroupByStatus): StudyStatus;
+  hasGroupstatus(): boolean;
+  clearGroupstatus(): StudyStatus;
+
   getConditionsList(): Array<StudyCondition>;
   setConditionsList(value: Array<StudyCondition>): StudyStatus;
   clearConditionsList(): StudyStatus;
@@ -5438,6 +5469,7 @@ export namespace StudyStatus {
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     bestfe?: FeatureEngineeringSpec.AsObject,
     gc?: GarbageCollectionStatus.AsObject,
+    groupstatus?: StudyGroupByStatus.AsObject,
     conditionsList: Array<StudyCondition.AsObject>,
   }
 }

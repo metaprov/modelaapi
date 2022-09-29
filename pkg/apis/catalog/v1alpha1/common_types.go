@@ -2293,3 +2293,12 @@ const (
 	TimeSeriesTypePanel        TimeSeriesType = "panel"
 	TimeSeriesTypeHierarchical TimeSeriesType = "hierarchical"
 )
+
+type WorkerRunResult struct {
+	// Worker ID
+	// +kubebuilder:validation:Optional
+	ID int32 `json:"id,omitempty" protobuf:"bytes,1,opt,name=id"`
+	// URI
+	// +kubebuilder:validation:Optional
+	URI string `json:"uri,omitempty" protobuf:"bytes,2,opt,name=uri"`
+}
