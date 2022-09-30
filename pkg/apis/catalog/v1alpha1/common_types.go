@@ -2374,6 +2374,7 @@ func IsMultiWorkerTaskFailed(results []WorkerRunResult, task TaskName, totalWork
 
 }
 
+// return only the worker result for the task.
 func FilterWorkerResult(results []WorkerRunResult, task TaskName) []WorkerRunResult {
 	result := make([]WorkerRunResult, 0)
 	for _, v := range result {
