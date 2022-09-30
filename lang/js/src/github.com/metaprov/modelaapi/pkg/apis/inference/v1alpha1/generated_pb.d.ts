@@ -977,8 +977,10 @@ export class ForecastStatus extends jspb.Message {
   getFailuremsg(): string;
   setFailuremsg(value: string): ForecastStatus;
 
-  getWorkerresultsMap(): jspb.Map<number, string>;
-  clearWorkerresultsMap(): ForecastStatus;
+  getWorkerresultsList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkerRunResult>;
+  setWorkerresultsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkerRunResult>): ForecastStatus;
+  clearWorkerresultsList(): ForecastStatus;
+  addWorkerresults(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkerRunResult, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkerRunResult;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ForecastStatus.AsObject;
@@ -995,7 +997,7 @@ export namespace ForecastStatus {
     forecasturi: string,
     failed: boolean,
     failuremsg: string,
-    workerresultsMap: Array<[number, string]>,
+    workerresultsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkerRunResult.AsObject>,
   }
 }
 

@@ -635,7 +635,7 @@ message ForecastStatus {
 
   // Holds the worker on going result, when a worker finish, we update the location of thier result files
   // +kubebuilder:validation:Optional
-  map<int32, string> workerResults = 6;
+  repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkerRunResult workerResults = 6;
 }
 
 message ForwardCurtainSpec {

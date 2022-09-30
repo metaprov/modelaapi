@@ -666,7 +666,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ForecastStatus = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ForecastStatus.repeatedFields_, null);
 };
 goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ForecastStatus, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -9723,6 +9723,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ForecastSpec.pro
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ForecastStatus.repeatedFields_ = [6];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -9759,7 +9766,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ForecastStatus.t
     forecasturi: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     failed: (f = jspb.Message.getBooleanField(msg, 4)) == null ? undefined : f,
     failuremsg: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
-    workerresultsMap: (f = msg.getWorkerresultsMap()) ? f.toObject(includeInstance, undefined) : []
+    workerresultsList: jspb.Message.toObjectList(msg.getWorkerresultsList(),
+    github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkerRunResult.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -9817,10 +9825,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ForecastStatus.d
       msg.setFailuremsg(value);
       break;
     case 6:
-      var value = msg.getWorkerresultsMap();
-      reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readInt32, jspb.BinaryReader.prototype.readString, null, 0, "");
-         });
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkerRunResult;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkerRunResult.deserializeBinaryFromReader);
+      msg.addWorkerresults(value);
       break;
     default:
       reader.skipField();
@@ -9886,9 +9893,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ForecastStatus.s
       f
     );
   }
-  f = message.getWorkerresultsMap(true);
-  if (f && f.getLength() > 0) {
-    f.serializeBinary(6, writer, jspb.BinaryWriter.prototype.writeInt32, jspb.BinaryWriter.prototype.writeString);
+  f = message.getWorkerresultsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      6,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkerRunResult.serializeBinaryToWriter
+    );
   }
 };
 
@@ -10074,25 +10085,41 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ForecastStatus.p
 
 
 /**
- * map<int32, string> workerResults = 6;
- * @param {boolean=} opt_noLazyCreate Do not create the map if
- * empty, instead returning `undefined`
- * @return {!jspb.Map<number,string>}
+ * repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkerRunResult workerResults = 6;
+ * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkerRunResult>}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ForecastStatus.prototype.getWorkerresultsMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<number,string>} */ (
-      jspb.Message.getMapField(this, 6, opt_noLazyCreate,
-      null));
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ForecastStatus.prototype.getWorkerresultsList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkerRunResult>} */ (
+    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkerRunResult, 6));
 };
 
 
 /**
- * Clears values from the map. The map will be non-null.
+ * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkerRunResult>} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ForecastStatus} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ForecastStatus.prototype.setWorkerresultsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 6, value);
+};
+
+
+/**
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkerRunResult=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkerRunResult}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ForecastStatus.prototype.addWorkerresults = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkerRunResult, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ForecastStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ForecastStatus.prototype.clearWorkerresultsMap = function() {
-  this.getWorkerresultsMap().clear();
-  return this;};
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ForecastStatus.prototype.clearWorkerresultsList = function() {
+  return this.setWorkerresultsList([]);
+};
 
 
 
