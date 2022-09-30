@@ -1035,6 +1035,12 @@ message WorkerRunResult {
   // URI
   // +kubebuilder:validation:Optional
   optional string uri = 2;
+
+  // +kubebuilder:validation:Optional
+  optional string task = 3;
+
+  // +kubebuilder:validation:Optional
+  optional string error = 4;
 }
 
 // WorkloadClass define a template for a job.

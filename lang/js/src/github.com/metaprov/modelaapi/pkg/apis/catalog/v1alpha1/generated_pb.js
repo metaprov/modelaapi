@@ -17994,7 +17994,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkerRunResult.pr
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkerRunResult.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    uri: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f
+    uri: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    task: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    error: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -18039,6 +18041,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkerRunResult.de
       var value = /** @type {string} */ (reader.readString());
       msg.setUri(value);
       break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTask(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setError(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -18079,6 +18089,20 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkerRunResult.se
   if (f != null) {
     writer.writeString(
       2,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeString(
+      4,
       f
     );
   }
@@ -18154,6 +18178,78 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkerRunResult.pr
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkerRunResult.prototype.hasUri = function() {
   return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional string task = 3;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkerRunResult.prototype.getTask = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkerRunResult} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkerRunResult.prototype.setTask = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkerRunResult} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkerRunResult.prototype.clearTask = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkerRunResult.prototype.hasTask = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional string error = 4;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkerRunResult.prototype.getError = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkerRunResult} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkerRunResult.prototype.setError = function(value) {
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkerRunResult} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkerRunResult.prototype.clearError = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkerRunResult.prototype.hasError = function() {
+  return jspb.Message.getField(this, 4) != null;
 };
 
 

@@ -3269,10 +3269,14 @@ spec:
                       we update the location of thier result files
                     items:
                       properties:
+                        error:
+                          type: string
                         id:
                           description: Worker ID
                           format: int32
                           type: integer
+                        task:
+                          type: string
                         uri:
                           description: URI
                           type: string

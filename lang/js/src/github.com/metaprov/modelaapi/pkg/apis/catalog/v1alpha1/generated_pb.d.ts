@@ -1828,6 +1828,12 @@ export class WorkerRunResult extends jspb.Message {
   getUri(): string;
   setUri(value: string): WorkerRunResult;
 
+  getTask(): string;
+  setTask(value: string): WorkerRunResult;
+
+  getError(): string;
+  setError(value: string): WorkerRunResult;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): WorkerRunResult.AsObject;
   static toObject(includeInstance: boolean, msg: WorkerRunResult): WorkerRunResult.AsObject;
@@ -1840,6 +1846,8 @@ export namespace WorkerRunResult {
   export type AsObject = {
     id: number,
     uri: string,
+    task: string,
+    error: string,
   }
 }
 

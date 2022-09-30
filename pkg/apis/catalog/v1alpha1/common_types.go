@@ -2301,4 +2301,75 @@ type WorkerRunResult struct {
 	// URI
 	// +kubebuilder:validation:Optional
 	URI string `json:"uri,omitempty" protobuf:"bytes,2,opt,name=uri"`
+
+	// +kubebuilder:validation:Optional
+	Task TaskName `json:"task,omitempty" protobuf:"bytes,3,opt,name=task"`
+
+	// +kubebuilder:validation:Optional
+	Error string `json:"error,omitempty" protobuf:"bytes,4,opt,name=error"`
+}
+
+// add or update the worker result
+func AddOrUpdateWorkerResult(results []WorkerRunResult, task TaskName, workerID int32, URI string, error string) {
+	index := 0
+	for _, v := range results {
+		if v.Task == task && v.ID == workerID {
+			results[index].Error = error
+			results[index].URI = URI
+			return
+		}
+	}
+	// at this point we can add the result
+	result := WorkerRunResult{
+		ID:    workerID,
+		URI:   URI,
+		Task:  task,
+		Error: error,
+	}
+	results = append(results, result)
+}
+
+func IsWorkerDone(results []WorkerRunResult, task TaskName, workerID int32) bool {
+	for _, v := range results {
+		if v.Task == task && v.ID == workerID {
+			return v.URI != ""
+		}
+	}
+	return false
+}
+
+func IsWorkerFailed(results []WorkerRunResult, task TaskName, workerID int32) bool {
+	for _, v := range results {
+		if v.Task == task && v.ID == workerID {
+			return v.Error != ""
+		}
+	}
+	return false
+}
+
+// Check if all the workers finished thier task
+func IsWorkersFinished(results []WorkerRunResult, task TaskName, totalWorkers int32) bool {
+	finished := int32(0)
+	for _, v := range results {
+		if v.Task == task {
+			finished++
+		}
+	}
+	return totalWorkers == finished
+}
+
+func IsMultiWorkerTaskFailed(results []WorkerRunResult, task TaskName, totalWorkers int32) bool {
+	if !IsWorkersFinished(results, task, totalWorkers) {
+		return false
+	}
+
+	for _, v := range results {
+		if v.Task == task {
+			if v.Error != "" {
+				return true
+			}
+		}
+	}
+	return false
+
 }
