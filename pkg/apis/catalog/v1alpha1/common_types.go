@@ -2310,13 +2310,13 @@ type WorkerRunResult struct {
 }
 
 // add or update the worker result
-func AddOrUpdateWorkerResult(results []WorkerRunResult, task TaskName, workerID int32, URI string, error string) {
+func AddOrUpdateWorkerResult(results []WorkerRunResult, task TaskName, workerID int32, URI string, error string) []WorkerRunResult {
 	index := 0
 	for _, v := range results {
 		if v.Task == task && v.ID == workerID {
 			results[index].Error = error
 			results[index].URI = URI
-			return
+			return results
 		}
 	}
 	// at this point we can add the result
@@ -2327,6 +2327,7 @@ func AddOrUpdateWorkerResult(results []WorkerRunResult, task TaskName, workerID 
 		Error: error,
 	}
 	results = append(results, result)
+	return results
 }
 
 func IsWorkerDone(results []WorkerRunResult, task TaskName, workerID int32) bool {
