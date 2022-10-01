@@ -238,7 +238,7 @@ func (dataset *Dataset) IndexFileKey() string {
 
 // Return the location of the worker index file for the key
 func (dataset *Dataset) WorkerIndexFileKey(workerIndex int, task string) string {
-	return fmt.Sprint("%s/%s_%d.json", path.Dir(*dataset.Spec.Location.Path), task, workerIndex)
+	return fmt.Sprintf("%s/%s_%d.json", path.Dir(*dataset.Spec.Location.Path), task, workerIndex)
 }
 
 func (dataset *Dataset) MarkGroupFailed(msg string) {

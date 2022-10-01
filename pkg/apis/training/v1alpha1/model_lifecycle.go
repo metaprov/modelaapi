@@ -1322,5 +1322,5 @@ func (model *Model) IndexFileKey() string {
 }
 
 func (model *Model) WorkerIndexFileKey(workerIndex int, task string) string {
-	return fmt.Sprint("%s/%s_%d.json", path.Dir(*model.Spec.Location.Path), task, workerIndex)
+	return fmt.Sprintf("%s/%s_%d.json", path.Dir(*model.Spec.Location.Path), task, workerIndex)
 }
