@@ -1150,5 +1150,5 @@ func (study *Study) MarkModelFailed(model *Model, err error) {
 }
 
 func (study *Study) IndexFileKey() string {
-	return path.Dir(*study.Spec.Location.Path) + "groups.json"
+	return path.Dir(*study.Spec.Location.Path) + "/groups.json"
 }

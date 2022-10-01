@@ -233,7 +233,7 @@ func (dataset *Dataset) Grouped() bool {
 }
 
 func (dataset *Dataset) IndexFileKey() string {
-	return path.Dir(*dataset.Spec.Location.Path) + "groups.json"
+	return path.Dir(*dataset.Spec.Location.Path) + "/" + "groups.json"
 }
 
 func (dataset *Dataset) MarkGroupFailed(msg string) {

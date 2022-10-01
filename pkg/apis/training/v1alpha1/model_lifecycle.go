@@ -1318,5 +1318,5 @@ func (model *Model) Tuned() bool {
 }
 
 func (model *Model) IndexFileKey() string {
-	return path.Dir(*model.Spec.Location.Path) + "groups.json"
+	return path.Dir(*model.Spec.Location.Path) + "/groups.json"
 }
