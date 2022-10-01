@@ -595,7 +595,6 @@ func (dataset *Dataset) ConstuctFeatureHistogram() (*FeatureHistogram, error) {
 	for _, c := range columns {
 		column, err := dataset.GetColumn(c)
 		if err != nil {
-			klog.ErrorS(err, "cannot find dataset feature", "column", c)
 			return nil, err
 		}
 		each := ColumnHistogram{
