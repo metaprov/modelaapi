@@ -1148,3 +1148,7 @@ func (study *Study) MarkModelFailed(model *Model, err error) {
 	now := metav1.Now()
 	study.Status.EndTime = &now
 }
+
+func (study *Study) IndexFileKey() string {
+	return path.Dir(*study.Spec.Location.Path) + "groups.json"
+}

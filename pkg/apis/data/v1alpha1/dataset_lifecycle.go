@@ -8,6 +8,7 @@ package v1alpha1
 
 import (
 	"fmt"
+	"path"
 
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/apis/data"
@@ -17,7 +18,6 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/client-go/kubernetes/scheme"
-	"k8s.io/klog/v2"
 	ctrl "sigs.k8s.io/controller-runtime"
 )
 
@@ -230,6 +230,10 @@ func (dataset *Dataset) MarkTakingSnapshot() {
 
 func (dataset *Dataset) Grouped() bool {
 	return dataset.GetCond(DatasetGrouped).Status == v1.ConditionTrue
+}
+
+func (dataset *Dataset) IndexFileKey() string {
+	return path.Dir(*dataset.Spec.Location.Path) + "groups.json"
 }
 
 func (dataset *Dataset) MarkGroupFailed(msg string) {

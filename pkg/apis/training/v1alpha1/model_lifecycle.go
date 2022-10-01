@@ -1316,3 +1316,7 @@ func (model *Model) TuningFailed() bool {
 func (model *Model) Tuned() bool {
 	return model.GetCond(ModelTuned).Status == v1.ConditionTrue
 }
+
+func (model *Model) IndexFileKey() string {
+	return path.Dir(*model.Spec.Location.Path) + "groups.json"
+}
