@@ -1156,3 +1156,7 @@ func (study *Study) IndexFileKey() string {
 func (study *Study) WorkerIndexFileKey(workerIndex int, task string) string {
 	return fmt.Sprintf("%s/%s_%d.json", path.Dir(*study.Spec.Location.Path), task, workerIndex)
 }
+
+func (study *Study) TaskIndexFileKey(task string) string {
+	return fmt.Sprintf("%s/%s.json", path.Dir(*study.Spec.Location.Path), task)
+}

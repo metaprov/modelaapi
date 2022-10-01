@@ -241,6 +241,11 @@ func (dataset *Dataset) WorkerIndexFileKey(workerIndex int, task string) string 
 	return fmt.Sprintf("%s/%s_%d.json", path.Dir(*dataset.Spec.Location.Path), task, workerIndex)
 }
 
+// This is the index file for task
+func (dataset *Dataset) TaskIndexFileKey(task string) string {
+	return fmt.Sprintf("%s/%s.json", path.Dir(*dataset.Spec.Location.Path), task)
+}
+
 func (dataset *Dataset) MarkGroupFailed(msg string) {
 	dataset.CreateOrUpdateCond(DatasetCondition{
 		Type:    DatasetGrouped,
