@@ -1320,3 +1320,7 @@ func (model *Model) Tuned() bool {
 func (model *Model) IndexFileKey() string {
 	return path.Dir(*model.Spec.Location.Path) + "/groups.json"
 }
+
+func (model *Model) WorkerIndexFileKey(workerIndex int, task string) string {
+	return fmt.Sprint("%s/%s_%d.json", path.Dir(*model.Spec.Location.Path), task, workerIndex)
+}

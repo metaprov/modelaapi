@@ -1152,3 +1152,7 @@ func (study *Study) MarkModelFailed(model *Model, err error) {
 func (study *Study) IndexFileKey() string {
 	return path.Dir(*study.Spec.Location.Path) + "/groups.json"
 }
+
+func (study *Study) WorkerIndexFileKey(workerIndex int, task string) string {
+	return fmt.Sprint("%s/%s_%d.json", path.Dir(*study.Spec.Location.Path), task, workerIndex)
+}
