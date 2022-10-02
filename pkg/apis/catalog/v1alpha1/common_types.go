@@ -2376,9 +2376,9 @@ func IsMultiWorkerTaskFailed(results []WorkerRunResult, task TaskName, totalWork
 }
 
 // return only the worker result for the task.
-func FilterWorkerResult(results []WorkerRunResult, task TaskName) []WorkerRunResult {
+func FilterWorkerResult(runs []WorkerRunResult, task TaskName) []WorkerRunResult {
 	result := make([]WorkerRunResult, 0)
-	for _, v := range result {
+	for _, v := range runs {
 		if v.Task == task {
 			result = append(result, v)
 		}
