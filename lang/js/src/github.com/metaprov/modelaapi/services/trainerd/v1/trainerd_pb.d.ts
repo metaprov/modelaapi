@@ -287,6 +287,9 @@ export class TestRequest extends jspb.Message {
   getSecretMap(): jspb.Map<string, Uint8Array | string>;
   clearSecretMap(): TestRequest;
 
+  getGroup(): boolean;
+  setGroup(value: boolean): TestRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TestRequest.AsObject;
   static toObject(includeInstance: boolean, msg: TestRequest): TestRequest.AsObject;
@@ -306,6 +309,7 @@ export namespace TestRequest {
     dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
     connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     secretMap: Array<[string, Uint8Array | string]>,
+    group: boolean,
   }
 }
 
@@ -458,6 +462,9 @@ export class TrainEnsembleRequest extends jspb.Message {
   getSecretMap(): jspb.Map<string, Uint8Array | string>;
   clearSecretMap(): TrainEnsembleRequest;
 
+  getGroup(): boolean;
+  setGroup(value: boolean): TrainEnsembleRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TrainEnsembleRequest.AsObject;
   static toObject(includeInstance: boolean, msg: TrainEnsembleRequest): TrainEnsembleRequest.AsObject;
@@ -478,6 +485,7 @@ export namespace TrainEnsembleRequest {
     dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
     connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     secretMap: Array<[string, Uint8Array | string]>,
+    group: boolean,
   }
 }
 
@@ -530,6 +538,9 @@ export class TestEnsembleRequest extends jspb.Message {
   getSecretMap(): jspb.Map<string, Uint8Array | string>;
   clearSecretMap(): TestEnsembleRequest;
 
+  getGroup(): boolean;
+  setGroup(value: boolean): TestEnsembleRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TestEnsembleRequest.AsObject;
   static toObject(includeInstance: boolean, msg: TestEnsembleRequest): TestEnsembleRequest.AsObject;
@@ -550,6 +561,7 @@ export namespace TestEnsembleRequest {
     dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
     connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     secretMap: Array<[string, Uint8Array | string]>,
+    group: boolean,
   }
 }
 
@@ -602,6 +614,9 @@ export class TrainDriftDetectorRequest extends jspb.Message {
   getSecretMap(): jspb.Map<string, Uint8Array | string>;
   clearSecretMap(): TrainDriftDetectorRequest;
 
+  getGroup(): boolean;
+  setGroup(value: boolean): TrainDriftDetectorRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TrainDriftDetectorRequest.AsObject;
   static toObject(includeInstance: boolean, msg: TrainDriftDetectorRequest): TrainDriftDetectorRequest.AsObject;
@@ -622,6 +637,7 @@ export namespace TrainDriftDetectorRequest {
     dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
     connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     secretMap: Array<[string, Uint8Array | string]>,
+    group: boolean,
   }
 }
 
@@ -785,6 +801,9 @@ export class ExplainRequest extends jspb.Message {
   getSecretMap(): jspb.Map<string, Uint8Array | string>;
   clearSecretMap(): ExplainRequest;
 
+  getGroup(): boolean;
+  setGroup(value: boolean): ExplainRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ExplainRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ExplainRequest): ExplainRequest.AsObject;
@@ -804,6 +823,7 @@ export namespace ExplainRequest {
     dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
     connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     secretMap: Array<[string, Uint8Array | string]>,
+    group: boolean,
   }
 }
 

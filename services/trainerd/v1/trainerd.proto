@@ -107,6 +107,7 @@ message TestRequest {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset            dataset    = 8;
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection        connection = 9;
     map<string,bytes> secret = 10;
+    bool    group  = 11; 
 }
 
 message TestResponse {
@@ -164,6 +165,7 @@ message TrainEnsembleRequest  {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset            dataset    = 9;
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection        connection = 10;
     map<string,bytes> secret = 11;    
+    bool    group  = 12; 
 }
 
 
@@ -179,6 +181,7 @@ message TestEnsembleRequest  {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset            dataset    = 9;
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection        connection = 10;
     map<string,bytes> secret = 11;    
+    bool    group  = 12; 
 }
 
 message TrainDriftDetectorRequest  {
@@ -193,6 +196,7 @@ message TrainDriftDetectorRequest  {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset            dataset    = 9;
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection        connection = 10;
     map<string,bytes> secret = 11;    
+    bool    group  = 12; 
 }
 
 
@@ -229,6 +233,7 @@ message ExplainRequest {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset            dataset = 8;
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection        connection    = 9;
     map<string,bytes> secret = 10;
+    bool    group  = 11; 
 }
 
 message ExplainResponse {
