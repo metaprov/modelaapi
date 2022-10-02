@@ -938,6 +938,9 @@ export class RunTestSuiteRequest extends jspb.Message {
   hasRefpredictor(): boolean;
   clearRefpredictor(): RunTestSuiteRequest;
 
+  getGroup(): boolean;
+  setGroup(value: boolean): RunTestSuiteRequest;
+
   getSutOneofCase(): RunTestSuiteRequest.SutOneofCase;
 
   getSutRefCase(): RunTestSuiteRequest.SutRefCase;
@@ -974,6 +977,7 @@ export namespace RunTestSuiteRequest {
     refrecipe?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe.AsObject,
     refhistogram?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.AsObject,
     refpredictor?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor.AsObject,
+    group: boolean,
   }
 
   export enum SutOneofCase { 

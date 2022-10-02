@@ -8387,7 +8387,8 @@ proto.github.com.metaprov.modelaapi.services.data.v1.RunTestSuiteRequest.toObjec
     refmodel: (f = msg.getRefmodel()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.toObject(includeInstance, f),
     refrecipe: (f = msg.getRefrecipe()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe.toObject(includeInstance, f),
     refhistogram: (f = msg.getRefhistogram()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.toObject(includeInstance, f),
-    refpredictor: (f = msg.getRefpredictor()) && github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor.toObject(includeInstance, f)
+    refpredictor: (f = msg.getRefpredictor()) && github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor.toObject(includeInstance, f),
+    group: jspb.Message.getBooleanFieldWithDefault(msg, 26, false)
   };
 
   if (includeInstance) {
@@ -8534,6 +8535,10 @@ proto.github.com.metaprov.modelaapi.services.data.v1.RunTestSuiteRequest.deseria
       var value = new github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor.deserializeBinaryFromReader);
       msg.setRefpredictor(value);
+      break;
+    case 26:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setGroup(value);
       break;
     default:
       reader.skipField();
@@ -8734,6 +8739,13 @@ proto.github.com.metaprov.modelaapi.services.data.v1.RunTestSuiteRequest.seriali
       25,
       f,
       github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor.serializeBinaryToWriter
+    );
+  }
+  f = message.getGroup();
+  if (f) {
+    writer.writeBool(
+      26,
+      f
     );
   }
 };
@@ -9535,6 +9547,24 @@ proto.github.com.metaprov.modelaapi.services.data.v1.RunTestSuiteRequest.prototy
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.RunTestSuiteRequest.prototype.hasRefpredictor = function() {
   return jspb.Message.getField(this, 25) != null;
+};
+
+
+/**
+ * optional bool group = 26;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunTestSuiteRequest.prototype.getGroup = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 26, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.RunTestSuiteRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.RunTestSuiteRequest.prototype.setGroup = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 26, value);
 };
 
 

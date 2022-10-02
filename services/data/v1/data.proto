@@ -222,6 +222,7 @@ message RunTestSuiteRequest {
         github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram refHistogram = 24;
         github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor refPredictor = 25;
     }
+    bool group = 26;
 }
 
 message RunTestSuiteResponse{
