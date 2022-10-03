@@ -8,6 +8,7 @@ package v1alpha1
 
 import (
 	"fmt"
+	"path"
 
 	"github.com/dustin/go-humanize"
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
@@ -194,6 +195,20 @@ func (report *Report) ToYamlFile() ([]byte, error) {
 
 func (report *Report) ValidateDelete() error {
 	return nil
+}
+
+func (report *Report) IndexFileKey() string {
+	return path.Dir(*report.Spec.Location.Path) + "/" + "groups.json"
+}
+
+// Return the location of the worker index file for the key
+func (report *Report) WorkerIndexFileKey(workerIndex int, task string) string {
+	return fmt.Sprintf("%s/%s_%d.json", path.Dir(*report.Spec.Location.Path), task, workerIndex)
+}
+
+// This is the index file for task
+func (report *Report) TaskIndexFileKey(task string) string {
+	return fmt.Sprintf("%s/%s.json", path.Dir(*report.Spec.Location.Path), task)
 }
 
 func (report *Report) MarkRunning() {
