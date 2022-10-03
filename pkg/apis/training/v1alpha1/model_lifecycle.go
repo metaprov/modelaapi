@@ -343,6 +343,8 @@ const (
 	ReasonTesting            = "Testing"
 	ReasonTuning             = "Tuning"
 	ReasonTuned              = "Tuned"
+	ReasonMerging            = "Merging"
+	ReasonMerged             = "Merged"
 	ReasonReporting          = "Reporting"
 	ReasonProfiling          = "Profiling"
 	ReasonPublishing         = "Publishing"
@@ -1300,6 +1302,8 @@ func (model *Model) MarkFailedToTune(err string) {
 
 }
 
+//////// Tuning
+
 func (model *Model) Tuning() bool {
 	cond := model.GetCond(ModelTuned)
 	return cond.Status == v1.ConditionFalse && cond.Reason == ReasonTuned
@@ -1315,6 +1319,71 @@ func (model *Model) TuningFailed() bool {
 
 func (model *Model) Tuned() bool {
 	return model.GetCond(ModelTuned).Status == v1.ConditionTrue
+}
+
+func (model *Model) MarkMerged() {
+	if model.Status.TuningEndTime == nil {
+		now := metav1.Now()
+		model.Status.TuningEndTime = &now
+	}
+	model.Status.Phase = ModelPhaseMerged
+	model.CreateOrUpdateCond(ModelCondition{
+		Type:   ModelMerged,
+		Status: v1.ConditionTrue,
+	})
+	model.Status.Progress = 50
+}
+
+func (model *Model) MarkFailedToMerge(err string) {
+	model.CreateOrUpdateCond(ModelCondition{
+		Type:    ModelMerged,
+		Status:  v1.ConditionFalse,
+		Reason:  ReasonFailed,
+		Message: err,
+	})
+	model.Status.Phase = ModelPhaseMerged
+	if model.Status.TuningEndTime == nil {
+		now := metav1.Now()
+		model.Status.TuningEndTime = &now
+	}
+	if model.Status.EndTime == nil {
+		now := metav1.Now()
+		model.Status.EndTime = &now
+	}
+	// set the scores to 0, since Nan is invalid value
+	model.Status.CVScore = 0 // we must put it at 0, since NaN is invalid value
+	model.Status.FailureMessage = util.StrPtr("Failed to merge." + err)
+	model.Status.Progress = 100
+
+}
+
+func (model *Model) MarkMerging() {
+
+	model.Status.Phase = ModelPhaseMerging
+	model.Status.Progress = 10
+	model.CreateOrUpdateCond(ModelCondition{
+		Type:   ModelMerged,
+		Status: v1.ConditionFalse,
+		Reason: ReasonMerging,
+	})
+
+}
+
+func (model *Model) Merging() bool {
+	cond := model.GetCond(ModelMerged)
+	return cond.Status == v1.ConditionFalse && cond.Reason == ReasonTuned
+}
+
+func (model *Model) MerginingFailed() bool {
+	if model.TuningFailed() {
+		return true
+	}
+	cond := model.GetCond(ModelMerged)
+	return cond.Status == v1.ConditionFalse && cond.Reason == ReasonFailed
+}
+
+func (model *Model) Merged() bool {
+	return model.GetCond(ModelMerged).Status == v1.ConditionTrue
 }
 
 func (model *Model) IndexFileKey() string {

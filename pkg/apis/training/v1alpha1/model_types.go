@@ -37,6 +37,8 @@ const (
 	ModelPhaseAborted               ModelPhase = "Aborted"
 	ModelPhaseForecasting           ModelPhase = "Forecasting"
 	ModelPhaseForecasted            ModelPhase = "Forecasted"
+	ModelPhaseMerging               ModelPhase = "Merging" // for group forecast, merged the forecast
+	ModelPhaseMerged                ModelPhase = "Merged"
 	ModelPhaseUat                   ModelPhase = "UAT"
 	ModelPhaseDeployed              ModelPhase = "Deployed"
 	ModelPhaseReleasing             ModelPhase = "Releasing"
@@ -77,6 +79,8 @@ const (
 	ModelPublished ModelConditionType = "Published"
 	// ModelPredicted states the the Model perform the prediction.
 	ModelPredicted ModelConditionType = "Predicted"
+	// ModelPredicted states the the Model perform the prediction.
+	ModelMerged ModelConditionType = "Merged"
 	// ModelProfiled states that the Model was profiled
 	ModelProfiled ModelConditionType = "Profiled"
 	// ModelReady states that the Model is ready for deployment
