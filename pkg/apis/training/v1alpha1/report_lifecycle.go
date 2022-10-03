@@ -11,6 +11,7 @@ import (
 	"github.com/dustin/go-humanize"
 	"gopkg.in/yaml.v2"
 	"path"
+	"strings"
 
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	data "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1"
@@ -146,6 +147,39 @@ func (report *Report) Age() string {
 }
 
 func (report *Report) RootUri() string {
+	if *report.Spec.ReportType == GroupTimeSeriesDatasetReport {
+		if len(report.Spec.Key) > 0 {
+			return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/datasets/%s/groups/%s",
+				report.Namespace,
+				*report.Spec.VersionName,
+				report.Spec.EntityRef.Name,
+				strings.Join(report.Spec.Key, "/"))
+		} else {
+			return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/datasets/%s",
+				report.Namespace,
+				*report.Spec.VersionName,
+				report.Spec.EntityRef.Name)
+		}
+
+	}
+
+	if *report.Spec.ReportType == GroupTimeSeriesModelReport {
+		if len(report.Spec.Key) > 0 {
+			return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/studies/%s/models/%s/groups/%s",
+				report.Namespace,
+				*report.Spec.VersionName,
+				report.Labels["study"],
+				report.Spec.EntityRef.Name,
+				strings.Join(report.Spec.Key, "/"))
+		} else {
+			return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/studies/%s/models/%s",
+				report.Namespace,
+				*report.Spec.VersionName,
+				report.Labels["study"],
+				report.Spec.EntityRef.Name)
+		}
+	}
+
 	if report.IsModelReport() {
 		return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/studies/%s/models/%s",
 			report.Namespace,
