@@ -177,7 +177,7 @@ func (report *Report) PdfUri() string {
 }
 
 func (report *Report) IsGroup() bool {
-	return *report.Spec.ReportType == GroupTimeSeriesDatasetReport || *report.Spec.ReportType == GroupTimeSeriesModelReport
+	return *report.Spec.ReportType == GroupDatasetReport || *report.Spec.ReportType == GroupModelReport
 }
 
 func ParseReportYaml(content []byte) (*Report, error) {

@@ -26,14 +26,14 @@ type ReportType string
 const (
 	BinaryClassificationModelReport ReportType = "binary-classification-model"
 	ForecastModelReport             ReportType = "forecast-model"
-	GroupTimeSeriesModelReport      ReportType = "group-time-series-model"
+	GroupModelReport                ReportType = "group-model-report"
 	RegressionModelReport           ReportType = "regression-model"
 	MultiClassificationModelReport  ReportType = "multi-classification-model"
 	TextClassificationModelReport   ReportType = "text-classification-model"
 
 	ClassificationDatasetReport     ReportType = "classification-dataset"
 	ForecastDatasetReport           ReportType = "forecast-dataset"
-	GroupTimeSeriesDatasetReport    ReportType = "group-time-series-dataset"
+	GroupDatasetReport              ReportType = "group-dataset-report"
 	TextClassificationDatasetReport ReportType = "text-classification-dataset"
 	RegressionDatasetReport         ReportType = "regression-dataset"
 	SummaryReport                   ReportType = "summary-report"
