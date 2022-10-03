@@ -3249,7 +3249,7 @@ spec:
                         type: string
                     type: object
                 type: object
-              groupByStatus:
+              groupby:
                 description: The sub models uri file contain the results of running
                   the sub model
                 properties:
@@ -3259,10 +3259,6 @@ spec:
                     type: string
                   profilesURI:
                     description: The locations of the datasets profiles files.
-                    type: string
-                  reportsURI:
-                    description: The locations of the model report file. One report
-                      for each key
                     type: string
                   workerResults:
                     description: Holds the worker on going result, when a worker finish,

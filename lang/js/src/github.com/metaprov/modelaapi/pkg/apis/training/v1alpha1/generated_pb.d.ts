@@ -2331,9 +2331,6 @@ export class ModelGroupByStatus extends jspb.Message {
   getProfilesuri(): string;
   setProfilesuri(value: string): ModelGroupByStatus;
 
-  getReportsuri(): string;
-  setReportsuri(value: string): ModelGroupByStatus;
-
   getWorkerresultsList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkerRunResult>;
   setWorkerresultsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkerRunResult>): ModelGroupByStatus;
   clearWorkerresultsList(): ModelGroupByStatus;
@@ -2351,7 +2348,6 @@ export namespace ModelGroupByStatus {
   export type AsObject = {
     modelsuri: string,
     profilesuri: string,
-    reportsuri: string,
     workerresultsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkerRunResult.AsObject>,
   }
 }
@@ -3553,10 +3549,10 @@ export class ModelStatus extends jspb.Message {
   hasFeedbacktestsresult(): boolean;
   clearFeedbacktestsresult(): ModelStatus;
 
-  getGroupbystatus(): ModelGroupByStatus | undefined;
-  setGroupbystatus(value?: ModelGroupByStatus): ModelStatus;
-  hasGroupbystatus(): boolean;
-  clearGroupbystatus(): ModelStatus;
+  getGroupby(): ModelGroupByStatus | undefined;
+  setGroupby(value?: ModelGroupByStatus): ModelStatus;
+  hasGroupby(): boolean;
+  clearGroupby(): ModelStatus;
 
   getConditionsList(): Array<ModelCondition>;
   setConditionsList(value: Array<ModelCondition>): ModelStatus;
@@ -3645,7 +3641,7 @@ export namespace ModelStatus {
     images?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Images.AsObject,
     unittestsresult?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
     feedbacktestsresult?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
-    groupbystatus?: ModelGroupByStatus.AsObject,
+    groupby?: ModelGroupByStatus.AsObject,
     conditionsList: Array<ModelCondition.AsObject>,
   }
 }
@@ -4442,6 +4438,30 @@ export namespace ReportCondition {
   }
 }
 
+export class ReportGroupByStatus extends jspb.Message {
+  getReportsuri(): string;
+  setReportsuri(value: string): ReportGroupByStatus;
+
+  getWorkerresultsList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkerRunResult>;
+  setWorkerresultsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkerRunResult>): ReportGroupByStatus;
+  clearWorkerresultsList(): ReportGroupByStatus;
+  addWorkerresults(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkerRunResult, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkerRunResult;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ReportGroupByStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: ReportGroupByStatus): ReportGroupByStatus.AsObject;
+  static serializeBinaryToWriter(message: ReportGroupByStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ReportGroupByStatus;
+  static deserializeBinaryFromReader(message: ReportGroupByStatus, reader: jspb.BinaryReader): ReportGroupByStatus;
+}
+
+export namespace ReportGroupByStatus {
+  export type AsObject = {
+    reportsuri: string,
+    workerresultsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkerRunResult.AsObject>,
+  }
+}
+
 export class ReportList extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta): ReportList;
@@ -4582,6 +4602,11 @@ export class ReportStatus extends jspb.Message {
   hasLastupdated(): boolean;
   clearLastupdated(): ReportStatus;
 
+  getGroupby(): ReportGroupByStatus | undefined;
+  setGroupby(value?: ReportGroupByStatus): ReportStatus;
+  hasGroupby(): boolean;
+  clearGroupby(): ReportStatus;
+
   getConditionsList(): Array<ReportCondition>;
   setConditionsList(value: Array<ReportCondition>): ReportStatus;
   clearConditionsList(): ReportStatus;
@@ -4606,6 +4631,7 @@ export namespace ReportStatus {
     failuremessage: string,
     logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    groupby?: ReportGroupByStatus.AsObject,
     conditionsList: Array<ReportCondition.AsObject>,
   }
 }
@@ -5418,10 +5444,10 @@ export class StudyStatus extends jspb.Message {
   hasGc(): boolean;
   clearGc(): StudyStatus;
 
-  getGroupstatus(): StudyGroupByStatus | undefined;
-  setGroupstatus(value?: StudyGroupByStatus): StudyStatus;
-  hasGroupstatus(): boolean;
-  clearGroupstatus(): StudyStatus;
+  getGroupby(): StudyGroupByStatus | undefined;
+  setGroupby(value?: StudyGroupByStatus): StudyStatus;
+  hasGroupby(): boolean;
+  clearGroupby(): StudyStatus;
 
   getConditionsList(): Array<StudyCondition>;
   setConditionsList(value: Array<StudyCondition>): StudyStatus;
@@ -5471,7 +5497,7 @@ export namespace StudyStatus {
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     bestfe?: FeatureEngineeringSpec.AsObject,
     gc?: GarbageCollectionStatus.AsObject,
-    groupstatus?: StudyGroupByStatus.AsObject,
+    groupby?: StudyGroupByStatus.AsObject,
     conditionsList: Array<StudyCondition.AsObject>,
   }
 }

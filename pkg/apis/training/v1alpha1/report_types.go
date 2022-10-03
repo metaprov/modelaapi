@@ -212,13 +212,25 @@ type ReportStatus struct {
 	// The last time the object was updated
 	//+kubebuilder:validation:Optional
 	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,10,opt,name=lastUpdated"`
+	// The sub models uri file contain the results of running the sub model
+	// +kubebuilder:validation:Optional
+	GroupBy ReportGroupByStatus `json:"groupby,omitempty" protobuf:"bytes,11,opt,name=groupby"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []ReportCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,11,rep,name=conditions"`
+	Conditions []ReportCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,12,rep,name=conditions"`
 }
 
 type CustomReportSpec struct {
 	// Pages contains a collection of custom pages that will be appended to a Report
 	Pages []data.PageSpec `json:"pages,omitempty" protobuf:"bytes,8,opt,name=pages"`
+}
+
+type ReportGroupByStatus struct {
+	// The locations of the datasets profile files. Each file is the group
+	// +kubebuilder:validation:Optional
+	ReportsURI string `json:"reportsURI,omitempty" protobuf:"bytes,1,opt,name=reportsURI"`
+	// Holds the worker on going result, when a worker finish, we update the location of thier result files
+	// +kubebuilder:validation:Optional
+	WorkerResults []catalog.WorkerRunResult `json:"workerResults,omitempty" protobuf:"bytes,4,opt,name=workerResults"`
 }

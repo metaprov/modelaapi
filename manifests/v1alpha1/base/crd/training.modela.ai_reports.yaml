@@ -638,6 +638,33 @@ spec:
                 description: In the case of failure, the Report resource controller
                   will set this field with a failure reason
                 type: string
+              groupby:
+                description: The sub models uri file contain the results of running
+                  the sub model
+                properties:
+                  reportsURI:
+                    description: The locations of the datasets profile files. Each
+                      file is the group
+                    type: string
+                  workerResults:
+                    description: Holds the worker on going result, when a worker finish,
+                      we update the location of thier result files
+                    items:
+                      properties:
+                        error:
+                          type: string
+                        id:
+                          description: Worker ID
+                          format: int32
+                          type: integer
+                        task:
+                          type: string
+                        uri:
+                          description: URI
+                          type: string
+                      type: object
+                    type: array
+                type: object
               lastUpdated:
                 description: The last time the object was updated
                 format: date-time

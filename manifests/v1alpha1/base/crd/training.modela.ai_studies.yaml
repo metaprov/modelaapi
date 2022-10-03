@@ -3103,7 +3103,7 @@ spec:
                       type: object
                     type: array
                 type: object
-              groupStatus:
+              groupby:
                 description: Study group by
                 properties:
                   studiesURI:

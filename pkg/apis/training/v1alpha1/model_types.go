@@ -606,7 +606,7 @@ type ModelStatus struct {
 	FeedbackTestsResult catalog.TestSuiteResult `json:"feedbackTestsResult,omitempty" protobuf:"bytes,72,opt,name="`
 	// The sub models uri file contain the results of running the sub model
 	// +kubebuilder:validation:Optional
-	GroupByStatus ModelGroupByStatus `json:"groupByStatus,omitempty" protobuf:"bytes,73,opt,name=groupByStatus"`
+	GroupBy ModelGroupByStatus `json:"groupby,omitempty" protobuf:"bytes,73,opt,name=groupby"`
 	// +kubebuilder:validation:Optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
@@ -1134,9 +1134,6 @@ type ModelGroupByStatus struct {
 	// The locations of the datasets profiles files.
 	// +kubebuilder:validation:Optional
 	ProfilesURI string `json:"profilesURI,omitempty" protobuf:"bytes,2,opt,name=profilesURI"`
-	// The locations of the model report file. One report for each key
-	// +kubebuilder:validation:Optional
-	ReportsURI string `json:"reportsURI,omitempty" protobuf:"bytes,3,opt,name=reportsURI"`
 	// Holds the worker on going result, when a worker finish, we update the location of thier result files
 	// +kubebuilder:validation:Optional
 	WorkerResults []catalog.WorkerRunResult `json:"workerResults,omitempty" protobuf:"bytes,4,opt,name=workerResults"`

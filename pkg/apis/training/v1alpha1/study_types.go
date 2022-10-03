@@ -733,7 +733,7 @@ type StudyStatus struct {
 	// GC specifies the status of garbage collection relevant to the Study
 	GC GarbageCollectionStatus `json:"gc,omitempty" protobuf:"bytes,34,opt,name=gc"`
 	// Study group by
-	GroupStatus StudyGroupByStatus `json:"groupStatus,omitempty" protobuf:"bytes,35,opt,name=groupStatus"`
+	Groupby StudyGroupByStatus `json:"groupby,omitempty" protobuf:"bytes,35,opt,name=groupby"`
 	// +optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
