@@ -570,8 +570,8 @@ spec:
                         - weekly-report
                         - monthly-report
                         - summary-report
-                        - group-time-series-dataset
-                        - group-time-series-model
+                        - group-timeseries-dataset-report
+                        - group-timeseries-model-report
                         type: string
                       resources:
                         description: Resources specifies the resource requirements
