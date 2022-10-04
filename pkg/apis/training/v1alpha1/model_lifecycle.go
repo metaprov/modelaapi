@@ -1387,14 +1387,14 @@ func (model *Model) Merged() bool {
 }
 
 func (model *Model) IndexFileKey() string {
-	return path.Dir(*model.Spec.Location.Path) + "/groups.json"
+	return model.RootUri() + "/groups.json"
 }
 
 func (model *Model) WorkerIndexFileKey(workerIndex int, task string) string {
-	return fmt.Sprintf("%s/%s_%d.json", path.Dir(*model.Spec.Location.Path), task, workerIndex)
+	return fmt.Sprintf("%s/%s_%d.json", model.RootUri(), task, workerIndex)
 }
 
 // This is the index file for task
 func (model *Model) TaskIndexFileKey(task string) string {
-	return fmt.Sprintf("%s/%s.json", path.Dir(*model.Spec.Location.Path), task)
+	return fmt.Sprintf("%s/%s.json", model.RootUri(), task)
 }
