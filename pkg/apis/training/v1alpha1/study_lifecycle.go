@@ -1149,14 +1149,26 @@ func (study *Study) MarkModelFailed(model *Model, err error) {
 	study.Status.EndTime = &now
 }
 
-func (study *Study) IndexFileKey() string {
-	return path.Dir(*study.Spec.Location.Path) + "/groups.json"
-}
-
 func (study *Study) WorkerIndexFileKey(workerIndex int, task string) string {
-	return fmt.Sprintf("%s/%s_%d.json", path.Dir(*study.Spec.Location.Path), task, workerIndex)
+	return fmt.Sprintf("%s/%s_%d.json", study.RootUri(), task, workerIndex)
 }
 
 func (study *Study) TaskIndexFileKey(task string) string {
-	return fmt.Sprintf("%s/%s.json", path.Dir(*study.Spec.Location.Path), task)
+	return fmt.Sprintf("%s/%s.json", study.RootUri(), task)
+}
+
+func (study *Study) GroupFolder(key []string) string {
+	return study.RootUri() + "/" + path.Join(key...)
+}
+
+func (study *Study) GroupDataFolder(key []string) string {
+	return study.GroupFolder(key) + "/data"
+}
+
+func (study *Study) GroupTrainData(key []string) string {
+	return study.GroupFolder(key) + "/data/train.parquet"
+}
+
+func (study *Study) GroupTestData(key []string) string {
+	return study.GroupFolder(key) + "/data/test.parquet"
 }

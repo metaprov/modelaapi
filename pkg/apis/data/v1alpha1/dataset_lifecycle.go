@@ -16,6 +16,7 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/client-go/kubernetes/scheme"
+	"path"
 	ctrl "sigs.k8s.io/controller-runtime"
 )
 
@@ -798,4 +799,31 @@ func (col *ColumnStatistics) BigBoolTest(thresholds []DriftThreshold, rowCount i
 		ExpectedValue: util.Float64Ptr(threshold),
 		Generated:     util.BoolPtr(true),
 	}
+}
+
+///////////////////////////////////////
+// Group folders. This is
+
+func (dataset *Dataset) GroupFolder() string {
+	return dataset.RootUri() + "/" + path.Join(dataset.Spec.Key...)
+}
+
+func (dataset *Dataset) GroupDataFolder() string {
+	return dataset.GroupFolder() + "/data"
+}
+
+func (dataset *Dataset) GroupDataPath() string {
+	return dataset.GroupFolder() + "/data/raw.csv"
+}
+
+func (dataset *Dataset) GroupModelProfileFolder() string {
+	return dataset.GroupFolder() + "/profile"
+}
+
+func (dataset *Dataset) GroupModelReport() string {
+	return dataset.GroupFolder() + "/report.pdf"
+}
+
+func (dataset *Dataset) GroupModelForecast() string {
+	return dataset.GroupFolder() + "/forecasts/forecast.csv"
 }

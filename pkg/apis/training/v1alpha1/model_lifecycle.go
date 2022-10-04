@@ -1386,6 +1386,9 @@ func (model *Model) Merged() bool {
 	return model.GetCond(ModelMerged).Status == v1.ConditionTrue
 }
 
+////////////////////////////
+// Index file paths
+
 func (model *Model) IndexFileKey() string {
 	return model.RootUri() + "/groups.json"
 }
@@ -1397,4 +1400,27 @@ func (model *Model) WorkerIndexFileKey(workerIndex int, task string) string {
 // This is the index file for task
 func (model *Model) TaskIndexFileKey(task string) string {
 	return fmt.Sprintf("%s/%s.json", model.RootUri(), task)
+}
+
+////////////////////////////
+// Group folders
+
+func (model *Model) GroupFolder() string {
+	return model.RootUri() + "/" + path.Join(model.Spec.Forecasting.Key...)
+}
+
+func (model *Model) GroupModelFolder() string {
+	return model.GroupFolder() + "/model"
+}
+
+func (model *Model) GroupModelProfileFolder() string {
+	return model.GroupFolder() + "/profile"
+}
+
+func (model *Model) GroupModelReport() string {
+	return model.GroupFolder() + "report.pdf"
+}
+
+func (model *Model) GroupModelForecast() string {
+	return model.GroupFolder() + "/forecasts/forecast.csv"
 }
