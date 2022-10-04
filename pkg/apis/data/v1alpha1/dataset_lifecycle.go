@@ -816,14 +816,14 @@ func (dataset *Dataset) GroupDataPath() string {
 	return dataset.GroupFolder() + "/data/raw.csv"
 }
 
-func (dataset *Dataset) GroupModelProfileFolder() string {
+func (dataset *Dataset) GroupProfileFolder() string {
 	return dataset.GroupFolder() + "/profile"
 }
 
-func (dataset *Dataset) GroupModelReport() string {
+func (dataset *Dataset) GroupReport() string {
 	return dataset.GroupFolder() + "/report.pdf"
 }
 
-func (dataset *Dataset) GroupModelForecast() string {
+func (dataset *Dataset) GroupForecast() string {
 	return dataset.GroupFolder() + "/forecasts/forecast.csv"
 }
