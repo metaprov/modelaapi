@@ -205,6 +205,9 @@ spec:
                   groupRoot:
                     description: The root of the group folders and files
                     type: string
+                  groupsRoot:
+                    description: The root folder of all the groups
+                    type: string
                 type: object
               key:
                 description: If this dataset represent a group in a multi series dataset,

@@ -42601,12 +42601,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocations
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocationsSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
-    grouproot: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    groupdatafolder: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    groupdatafile: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-    groupprofilefolder: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    groupreportfile: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
-    groupfeaturesfile: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f
+    groupsroot: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    grouproot: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    groupdatafolder: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    groupdatafile: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    groupprofilefolder: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    groupreportfile: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
+    groupfeaturesfile: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -42645,25 +42646,29 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocations
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setGrouproot(value);
+      msg.setGroupsroot(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setGroupdatafolder(value);
+      msg.setGrouproot(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setGroupdatafile(value);
+      msg.setGroupdatafolder(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
-      msg.setGroupprofilefolder(value);
+      msg.setGroupdatafile(value);
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
-      msg.setGroupreportfile(value);
+      msg.setGroupprofilefolder(value);
       break;
     case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setGroupreportfile(value);
+      break;
+    case 7:
       var value = /** @type {string} */ (reader.readString());
       msg.setGroupfeaturesfile(value);
       break;
@@ -42738,14 +42743,21 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocations
       f
     );
   }
+  f = /** @type {string} */ (jspb.Message.getField(message, 7));
+  if (f != null) {
+    writer.writeString(
+      7,
+      f
+    );
+  }
 };
 
 
 /**
- * optional string groupRoot = 1;
+ * optional string groupsRoot = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocationsSpec.prototype.getGrouproot = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocationsSpec.prototype.getGroupsroot = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -42754,7 +42766,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocations
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocationsSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocationsSpec.prototype.setGrouproot = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocationsSpec.prototype.setGroupsroot = function(value) {
   return jspb.Message.setField(this, 1, value);
 };
 
@@ -42763,7 +42775,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocations
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocationsSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocationsSpec.prototype.clearGrouproot = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocationsSpec.prototype.clearGroupsroot = function() {
   return jspb.Message.setField(this, 1, undefined);
 };
 
@@ -42772,16 +42784,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocations
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocationsSpec.prototype.hasGrouproot = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocationsSpec.prototype.hasGroupsroot = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
- * optional string groupDataFolder = 2;
+ * optional string groupRoot = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocationsSpec.prototype.getGroupdatafolder = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocationsSpec.prototype.getGrouproot = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -42790,7 +42802,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocations
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocationsSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocationsSpec.prototype.setGroupdatafolder = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocationsSpec.prototype.setGrouproot = function(value) {
   return jspb.Message.setField(this, 2, value);
 };
 
@@ -42799,7 +42811,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocations
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocationsSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocationsSpec.prototype.clearGroupdatafolder = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocationsSpec.prototype.clearGrouproot = function() {
   return jspb.Message.setField(this, 2, undefined);
 };
 
@@ -42808,16 +42820,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocations
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocationsSpec.prototype.hasGroupdatafolder = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocationsSpec.prototype.hasGrouproot = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional string groupDataFile = 3;
+ * optional string groupDataFolder = 3;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocationsSpec.prototype.getGroupdatafile = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocationsSpec.prototype.getGroupdatafolder = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -42826,7 +42838,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocations
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocationsSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocationsSpec.prototype.setGroupdatafile = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocationsSpec.prototype.setGroupdatafolder = function(value) {
   return jspb.Message.setField(this, 3, value);
 };
 
@@ -42835,7 +42847,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocations
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocationsSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocationsSpec.prototype.clearGroupdatafile = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocationsSpec.prototype.clearGroupdatafolder = function() {
   return jspb.Message.setField(this, 3, undefined);
 };
 
@@ -42844,16 +42856,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocations
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocationsSpec.prototype.hasGroupdatafile = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocationsSpec.prototype.hasGroupdatafolder = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional string groupProfileFolder = 4;
+ * optional string groupDataFile = 4;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocationsSpec.prototype.getGroupprofilefolder = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocationsSpec.prototype.getGroupdatafile = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
@@ -42862,7 +42874,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocations
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocationsSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocationsSpec.prototype.setGroupprofilefolder = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocationsSpec.prototype.setGroupdatafile = function(value) {
   return jspb.Message.setField(this, 4, value);
 };
 
@@ -42871,7 +42883,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocations
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocationsSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocationsSpec.prototype.clearGroupprofilefolder = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocationsSpec.prototype.clearGroupdatafile = function() {
   return jspb.Message.setField(this, 4, undefined);
 };
 
@@ -42880,16 +42892,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocations
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocationsSpec.prototype.hasGroupprofilefolder = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocationsSpec.prototype.hasGroupdatafile = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * optional string groupReportFile = 5;
+ * optional string groupProfileFolder = 5;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocationsSpec.prototype.getGroupreportfile = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocationsSpec.prototype.getGroupprofilefolder = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
@@ -42898,7 +42910,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocations
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocationsSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocationsSpec.prototype.setGroupreportfile = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocationsSpec.prototype.setGroupprofilefolder = function(value) {
   return jspb.Message.setField(this, 5, value);
 };
 
@@ -42907,7 +42919,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocations
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocationsSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocationsSpec.prototype.clearGroupreportfile = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocationsSpec.prototype.clearGroupprofilefolder = function() {
   return jspb.Message.setField(this, 5, undefined);
 };
 
@@ -42916,16 +42928,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocations
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocationsSpec.prototype.hasGroupreportfile = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocationsSpec.prototype.hasGroupprofilefolder = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 
 
 /**
- * optional string groupFeaturesFile = 6;
+ * optional string groupReportFile = 6;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocationsSpec.prototype.getGroupfeaturesfile = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocationsSpec.prototype.getGroupreportfile = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
@@ -42934,7 +42946,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocations
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocationsSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocationsSpec.prototype.setGroupfeaturesfile = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocationsSpec.prototype.setGroupreportfile = function(value) {
   return jspb.Message.setField(this, 6, value);
 };
 
@@ -42943,7 +42955,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocations
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocationsSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocationsSpec.prototype.clearGroupfeaturesfile = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocationsSpec.prototype.clearGroupreportfile = function() {
   return jspb.Message.setField(this, 6, undefined);
 };
 
@@ -42952,8 +42964,44 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocations
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocationsSpec.prototype.hasGroupfeaturesfile = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocationsSpec.prototype.hasGroupreportfile = function() {
   return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional string groupFeaturesFile = 7;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocationsSpec.prototype.getGroupfeaturesfile = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocationsSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocationsSpec.prototype.setGroupfeaturesfile = function(value) {
+  return jspb.Message.setField(this, 7, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocationsSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocationsSpec.prototype.clearGroupfeaturesfile = function() {
+  return jspb.Message.setField(this, 7, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GroupDatasetLocationsSpec.prototype.hasGroupfeaturesfile = function() {
+  return jspb.Message.getField(this, 7) != null;
 };
 
 

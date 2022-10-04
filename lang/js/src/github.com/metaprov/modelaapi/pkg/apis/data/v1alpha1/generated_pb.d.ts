@@ -4114,6 +4114,9 @@ export namespace GroupBySpec {
 }
 
 export class GroupDatasetLocationsSpec extends jspb.Message {
+  getGroupsroot(): string;
+  setGroupsroot(value: string): GroupDatasetLocationsSpec;
+
   getGrouproot(): string;
   setGrouproot(value: string): GroupDatasetLocationsSpec;
 
@@ -4142,6 +4145,7 @@ export class GroupDatasetLocationsSpec extends jspb.Message {
 
 export namespace GroupDatasetLocationsSpec {
   export type AsObject = {
+    groupsroot: string,
     grouproot: string,
     groupdatafolder: string,
     groupdatafile: string,

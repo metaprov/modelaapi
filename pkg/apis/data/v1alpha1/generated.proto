@@ -2855,29 +2855,32 @@ message GroupBySpec {
 
 // If this is a group dataset , the group spec contain the location of the different artifacts
 message GroupDatasetLocationsSpec {
+  // The root folder of all the groups
+  optional string groupsRoot = 1;
+
   // The root of the group folders and files
   // +kubebuilder:validation:Optional
-  optional string groupRoot = 1;
+  optional string groupRoot = 2;
 
   // The folder of group data
   // +kubebuilder:validation:Optional
-  optional string groupDataFolder = 2;
+  optional string groupDataFolder = 3;
 
   // The folder of group data
   // +kubebuilder:validation:Optional
-  optional string groupDataFile = 3;
+  optional string groupDataFile = 4;
 
   // The folder group data profile
   // +kubebuilder:validation:Optional
-  optional string groupProfileFolder = 4;
+  optional string groupProfileFolder = 5;
 
   // The path of the group report
   // +kubebuilder:validation:Optional
-  optional string groupReportFile = 5;
+  optional string groupReportFile = 6;
 
   // The path of the group features files
   // +kubebuilder:validation:Optional
-  optional string groupFeaturesFile = 6;
+  optional string groupFeaturesFile = 7;
 }
 
 message HistogramSpec {
