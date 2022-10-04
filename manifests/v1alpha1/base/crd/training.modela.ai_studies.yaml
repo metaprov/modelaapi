@@ -893,6 +893,16 @@ spec:
                       the lowest score will be garbage-collected
                     type: boolean
                 type: object
+              groupLocations:
+                description: In case of a group by, those are the group locations
+                properties:
+                  groupTestingDataFile:
+                    description: The folder of group data
+                    type: string
+                  groupTrainingDataFile:
+                    description: The folder of group data
+                    type: string
+                type: object
               imbalanceHandler:
                 description: Set the imbalance dataset handling.
                 properties:

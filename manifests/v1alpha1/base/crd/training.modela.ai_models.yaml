@@ -1523,6 +1523,22 @@ spec:
                       type: string
                     type: array
                 type: object
+              groupLocations:
+                description: The set locations in case of group forecasts
+                properties:
+                  groupFolder:
+                    description: The folder of group data
+                    type: string
+                  groupForecastFile:
+                    description: The folder of group data
+                    type: string
+                  groupProfileFolder:
+                    description: The folder of group data
+                    type: string
+                  groupReportFile:
+                    description: The folder of group data
+                    type: string
+                type: object
               interpretability:
                 description: Interpretability specifies the configuration to generate
                   model interpretability visualizations

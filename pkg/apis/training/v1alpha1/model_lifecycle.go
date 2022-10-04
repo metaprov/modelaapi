@@ -1417,10 +1417,10 @@ func (model *Model) GroupModelProfileFolder() string {
 	return model.GroupFolder() + "/profile"
 }
 
-func (model *Model) GroupModelReport() string {
+func (model *Model) GroupModelReportFile() string {
 	return model.GroupFolder() + "report.pdf"
 }
 
-func (model *Model) GroupModelForecast() string {
+func (model *Model) GroupModelForecastFile() string {
 	return model.GroupFolder() + "/forecasts/forecast.csv"
 }

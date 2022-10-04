@@ -152,6 +152,9 @@ type PredictionSpec struct {
 	// The reference to the ServingSite resource that hosts the Prediction
 	// +kubebuilder:validation:Optional
 	ServingSiteRef v1.ObjectReference `json:"servingsiteRef" protobuf:"bytes,18,opt,name=servingsiteRef"`
+	// Locations for group forecasts
+	// +kubebuilder:validation:Optional
+	GroupLocation GroupPredictionLocationsSpec `json:"groupLocation" protobuf:"bytes,19,opt,name=groupLocation"`
 }
 
 // PredictionStatus is the observed state of a Prediction
@@ -237,4 +240,10 @@ type ForecastStatus struct {
 	// Holds the worker on going result, when a worker finish, we update the location of thier result files
 	// +kubebuilder:validation:Optional
 	WorkerResults []catalog.WorkerRunResult `json:"workerResults,omitempty" protobuf:"bytes,6,opt,name=workerResults"`
+}
+
+type GroupPredictionLocationsSpec struct {
+	// The folder of group data
+	// +kubebuilder:validation:Optional
+	GroupForecastFile *string `json:"groupForecastFile,omitempty" protobuf:"bytes,2,opt,name=groupForecastFile"`
 }

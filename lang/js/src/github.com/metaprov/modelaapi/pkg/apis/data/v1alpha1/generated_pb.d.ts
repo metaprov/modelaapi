@@ -2268,6 +2268,11 @@ export class DatasetSpec extends jspb.Message {
   hasGroupby(): boolean;
   clearGroupby(): DatasetSpec;
 
+  getGrouplocations(): GroupDatasetLocationsSpec | undefined;
+  setGrouplocations(value?: GroupDatasetLocationsSpec): DatasetSpec;
+  hasGrouplocations(): boolean;
+  clearGrouplocations(): DatasetSpec;
+
   getKeyList(): Array<string>;
   setKeyList(value: Array<string>): DatasetSpec;
   clearKeyList(): DatasetSpec;
@@ -2311,6 +2316,7 @@ export namespace DatasetSpec {
     generatefeaturehistogram: boolean,
     unittests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
     groupby?: GroupBySpec.AsObject,
+    grouplocations?: GroupDatasetLocationsSpec.AsObject,
     keyList: Array<string>,
   }
 }
@@ -4104,6 +4110,44 @@ export namespace GroupBySpec {
     freq: string,
     interval: number,
     aggr: string,
+  }
+}
+
+export class GroupDatasetLocationsSpec extends jspb.Message {
+  getGrouproot(): string;
+  setGrouproot(value: string): GroupDatasetLocationsSpec;
+
+  getGroupdatafolder(): string;
+  setGroupdatafolder(value: string): GroupDatasetLocationsSpec;
+
+  getGroupdatafile(): string;
+  setGroupdatafile(value: string): GroupDatasetLocationsSpec;
+
+  getGroupprofilefolder(): string;
+  setGroupprofilefolder(value: string): GroupDatasetLocationsSpec;
+
+  getGroupreportfile(): string;
+  setGroupreportfile(value: string): GroupDatasetLocationsSpec;
+
+  getGroupfeaturesfile(): string;
+  setGroupfeaturesfile(value: string): GroupDatasetLocationsSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GroupDatasetLocationsSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: GroupDatasetLocationsSpec): GroupDatasetLocationsSpec.AsObject;
+  static serializeBinaryToWriter(message: GroupDatasetLocationsSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GroupDatasetLocationsSpec;
+  static deserializeBinaryFromReader(message: GroupDatasetLocationsSpec, reader: jspb.BinaryReader): GroupDatasetLocationsSpec;
+}
+
+export namespace GroupDatasetLocationsSpec {
+  export type AsObject = {
+    grouproot: string,
+    groupdatafolder: string,
+    groupdatafile: string,
+    groupprofilefolder: string,
+    groupreportfile: string,
+    groupfeaturesfile: string,
   }
 }
 

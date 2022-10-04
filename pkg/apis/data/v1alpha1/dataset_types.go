@@ -209,9 +209,12 @@ type DatasetSpec struct {
 	// Define how to group by the base dataset, before making the forecasts.
 	// By default, this dataset is assigned
 	GroupBy GroupBySpec `json:"groupBy,omitempty" protobuf:"bytes,31,opt,name=groupBy"`
-	// If this dataset represent a group in a multi series dataset, this are the values of the group key.
+	// Define how to group by the base dataset, before making the forecasts.
+	// By default, this dataset is assigned
+	GroupLocations GroupDatasetLocationsSpec `json:"groupLocations,omitempty" protobuf:"bytes,32,opt,name=groupLocations"`
+	// If this dataset represent a group in a multi series dataset, these are the values of the group key.
 	// +kubebuilder:validation:Optional
-	Key []string `json:"key,omitempty" protobuf:"bytes,32,rep,name=key"`
+	Key []string `json:"key,omitempty" protobuf:"bytes,33,rep,name=key"`
 }
 
 // DatasetStatus defines the observed state of a Dataset object
@@ -630,4 +633,26 @@ type GroupBySpec struct {
 	// +kubebuilder:default:="none"
 	// +kubebuilder:validation:Optional
 	Aggr catalog.Aggregate `json:"aggr,omitempty" protobuf:"bytes,5,opt,name=aggr"`
+}
+
+// If this is a group dataset , the group spec contain the location of the different artifacts
+type GroupDatasetLocationsSpec struct {
+	// The root of the group folders and files
+	// +kubebuilder:validation:Optional
+	GroupRoot *string `json:"groupRoot,omitempty" protobuf:"bytes,1,opt,name=groupRoot"`
+	// The folder of group data
+	// +kubebuilder:validation:Optional
+	GroupDataFolder *string `json:"groupDataFolder,omitempty" protobuf:"bytes,2,opt,name=groupDataFolder"`
+	// The folder of group data
+	// +kubebuilder:validation:Optional
+	GroupDataFile *string `json:"groupDataFile,omitempty" protobuf:"bytes,3,opt,name=groupDataFile"`
+	// The folder group data profile
+	// +kubebuilder:validation:Optional
+	GroupProfileFolder *string `json:"groupProfileFolder,omitempty" protobuf:"bytes,4,opt,name=groupProfileFolder"`
+	// The path of the group report
+	// +kubebuilder:validation:Optional
+	GroupReportFile *string `json:"groupReportFile,omitempty" protobuf:"bytes,5,opt,name=groupReportFile"`
+	// The path of the group features files
+	// +kubebuilder:validation:Optional
+	GroupFeaturesFile *string `json:"groupFeaturesFile,omitempty" protobuf:"bytes,6,opt,name=groupFeaturesFile"`
 }

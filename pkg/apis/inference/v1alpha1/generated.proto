@@ -653,6 +653,12 @@ message ForwardCurtainSpec {
   optional int32 percent = 3;
 }
 
+message GroupPredictionLocationsSpec {
+  // The folder of group data
+  // +kubebuilder:validation:Optional
+  optional string groupForecastFile = 2;
+}
+
 // KubernetesObjectStatus describes the location and status of a Kubernetes-native resource
 message KubernetesObjectStatus {
   // The object reference
@@ -1024,6 +1030,10 @@ message PredictionSpec {
   // The reference to the ServingSite resource that hosts the Prediction
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference servingsiteRef = 18;
+
+  // Locations for group forecasts
+  // +kubebuilder:validation:Optional
+  optional GroupPredictionLocationsSpec groupLocation = 19;
 }
 
 // PredictionStatus is the observed state of a Prediction

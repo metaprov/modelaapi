@@ -1029,6 +1029,24 @@ export namespace ForwardCurtainSpec {
   }
 }
 
+export class GroupPredictionLocationsSpec extends jspb.Message {
+  getGroupforecastfile(): string;
+  setGroupforecastfile(value: string): GroupPredictionLocationsSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GroupPredictionLocationsSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: GroupPredictionLocationsSpec): GroupPredictionLocationsSpec.AsObject;
+  static serializeBinaryToWriter(message: GroupPredictionLocationsSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GroupPredictionLocationsSpec;
+  static deserializeBinaryFromReader(message: GroupPredictionLocationsSpec, reader: jspb.BinaryReader): GroupPredictionLocationsSpec;
+}
+
+export namespace GroupPredictionLocationsSpec {
+  export type AsObject = {
+    groupforecastfile: string,
+  }
+}
+
 export class KubernetesObjectStatus extends jspb.Message {
   getRef(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setRef(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): KubernetesObjectStatus;
@@ -1582,6 +1600,11 @@ export class PredictionSpec extends jspb.Message {
   hasServingsiteref(): boolean;
   clearServingsiteref(): PredictionSpec;
 
+  getGrouplocation(): GroupPredictionLocationsSpec | undefined;
+  setGrouplocation(value?: GroupPredictionLocationsSpec): PredictionSpec;
+  hasGrouplocation(): boolean;
+  clearGrouplocation(): PredictionSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PredictionSpec.AsObject;
   static toObject(includeInstance: boolean, msg: PredictionSpec): PredictionSpec.AsObject;
@@ -1610,6 +1633,7 @@ export namespace PredictionSpec {
     forecastspec?: ForecastPredictionSpec.AsObject,
     cronpredictorname: string,
     servingsiteref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    grouplocation?: GroupPredictionLocationsSpec.AsObject,
   }
 }
 

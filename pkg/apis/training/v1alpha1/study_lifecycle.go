@@ -1165,10 +1165,10 @@ func (study *Study) GroupDataFolder(key []string) string {
 	return study.GroupFolder(key) + "/data"
 }
 
-func (study *Study) GroupTrainData(key []string) string {
+func (study *Study) GroupTrainFile(key []string) string {
 	return study.GroupFolder(key) + "/data/train.parquet"
 }
 
-func (study *Study) GroupTestData(key []string) string {
+func (study *Study) GroupTestFile(key []string) string {
 	return study.GroupFolder(key) + "/data/test.parquet"
 }

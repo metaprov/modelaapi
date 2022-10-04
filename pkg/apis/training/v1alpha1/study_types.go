@@ -627,6 +627,9 @@ type StudySpec struct {
 	// A template for models unit tests
 	// +kubebuilder:validation:Optional
 	UnitTestsTemplate catalog.TestSuite `json:"unitTestsTemplate,omitempty" protobuf:"bytes,38,opt,name=unitTestsTemplate"`
+	// In case of a group by, those are the group locations
+	// +kubebuilder:validation:Optional
+	GroupLocations GroupSplitLocationsSpec `json:"groupLocations,omitempty" protobuf:"bytes,39,opt,name=groupLocations"`
 }
 
 // StudyStatus defines the observed state of a Study
@@ -876,4 +879,13 @@ type StudyGroupByStatus struct {
 	// Holds the worker on going result, when a worker finish, we update the location of thier result files
 	// +kubebuilder:validation:Optional
 	WorkerResults []catalog.WorkerRunResult `json:"workerResults,omitempty" protobuf:"bytes,2,opt,name=workerResults"`
+}
+
+type GroupSplitLocationsSpec struct {
+	// The folder of group data
+	// +kubebuilder:validation:Optional
+	GroupTrainingFile *string `json:"groupTrainingDataFile,omitempty" protobuf:"bytes,1,opt,name=groupTrainingDataFile"`
+	// The folder of group data
+	// +kubebuilder:validation:Optional
+	GroupTestingFile *string `json:"groupTestingDataFile,omitempty" protobuf:"bytes,2,opt,name=groupTestingDataFile"`
 }

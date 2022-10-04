@@ -183,9 +183,32 @@ spec:
                     format: int32
                     type: integer
                 type: object
+              groupLocations:
+                description: Define how to group by the base dataset, before making
+                  the forecasts. By default, this dataset is assigned
+                properties:
+                  groupDataFile:
+                    description: The folder of group data
+                    type: string
+                  groupDataFolder:
+                    description: The folder of group data
+                    type: string
+                  groupFeaturesFile:
+                    description: The path of the group features files
+                    type: string
+                  groupProfileFolder:
+                    description: The folder group data profile
+                    type: string
+                  groupReportFile:
+                    description: The path of the group report
+                    type: string
+                  groupRoot:
+                    description: The root of the group folders and files
+                    type: string
+                type: object
               key:
                 description: If this dataset represent a group in a multi series dataset,
-                  this are the values of the group key.
+                  these are the values of the group key.
                 items:
                   type: string
                 type: array

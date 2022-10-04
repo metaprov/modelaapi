@@ -251,6 +251,13 @@ spec:
                                 type: integer
                             type: object
                         type: object
+                      groupLocation:
+                        description: Locations for group forecasts
+                        properties:
+                          groupForecastFile:
+                            description: The folder of group data
+                            type: string
+                        type: object
                       input:
                         description: Output specifies the location where the predicted
                           dataset will be stored

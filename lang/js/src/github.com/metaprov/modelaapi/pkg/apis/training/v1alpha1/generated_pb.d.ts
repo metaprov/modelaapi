@@ -1472,6 +1472,58 @@ export namespace GeneratedColumnSpec {
   }
 }
 
+export class GroupModelLocationsSpec extends jspb.Message {
+  getGroupfolder(): string;
+  setGroupfolder(value: string): GroupModelLocationsSpec;
+
+  getGroupprofilefolder(): string;
+  setGroupprofilefolder(value: string): GroupModelLocationsSpec;
+
+  getGroupreportfile(): string;
+  setGroupreportfile(value: string): GroupModelLocationsSpec;
+
+  getGroupforecastfile(): string;
+  setGroupforecastfile(value: string): GroupModelLocationsSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GroupModelLocationsSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: GroupModelLocationsSpec): GroupModelLocationsSpec.AsObject;
+  static serializeBinaryToWriter(message: GroupModelLocationsSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GroupModelLocationsSpec;
+  static deserializeBinaryFromReader(message: GroupModelLocationsSpec, reader: jspb.BinaryReader): GroupModelLocationsSpec;
+}
+
+export namespace GroupModelLocationsSpec {
+  export type AsObject = {
+    groupfolder: string,
+    groupprofilefolder: string,
+    groupreportfile: string,
+    groupforecastfile: string,
+  }
+}
+
+export class GroupSplitLocationsSpec extends jspb.Message {
+  getGrouptrainingdatafile(): string;
+  setGrouptrainingdatafile(value: string): GroupSplitLocationsSpec;
+
+  getGrouptestingdatafile(): string;
+  setGrouptestingdatafile(value: string): GroupSplitLocationsSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GroupSplitLocationsSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: GroupSplitLocationsSpec): GroupSplitLocationsSpec.AsObject;
+  static serializeBinaryToWriter(message: GroupSplitLocationsSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GroupSplitLocationsSpec;
+  static deserializeBinaryFromReader(message: GroupSplitLocationsSpec, reader: jspb.BinaryReader): GroupSplitLocationsSpec;
+}
+
+export namespace GroupSplitLocationsSpec {
+  export type AsObject = {
+    grouptrainingdatafile: string,
+    grouptestingdatafile: string,
+  }
+}
+
 export class HyperParameterValue extends jspb.Message {
   getName(): string;
   setName(value: string): HyperParameterValue;
@@ -3193,6 +3245,11 @@ export class ModelSpec extends jspb.Message {
   hasFeedbacktests(): boolean;
   clearFeedbacktests(): ModelSpec;
 
+  getGrouplocations(): GroupModelLocationsSpec | undefined;
+  setGrouplocations(value?: GroupModelLocationsSpec): ModelSpec;
+  hasGrouplocations(): boolean;
+  clearGrouplocations(): ModelSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelSpec): ModelSpec.AsObject;
@@ -3253,6 +3310,7 @@ export namespace ModelSpec {
     interpretability?: InterpretabilitySpec.AsObject,
     unittests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
     feedbacktests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
+    grouplocations?: GroupModelLocationsSpec.AsObject,
   }
 }
 
@@ -5259,6 +5317,11 @@ export class StudySpec extends jspb.Message {
   hasUnitteststemplate(): boolean;
   clearUnitteststemplate(): StudySpec;
 
+  getGrouplocations(): GroupSplitLocationsSpec | undefined;
+  setGrouplocations(value?: GroupSplitLocationsSpec): StudySpec;
+  hasGrouplocations(): boolean;
+  clearGrouplocations(): StudySpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): StudySpec.AsObject;
   static toObject(includeInstance: boolean, msg: StudySpec): StudySpec.AsObject;
@@ -5307,6 +5370,7 @@ export namespace StudySpec {
     timeoutinsecs: number,
     codegenerated: boolean,
     unitteststemplate?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
+    grouplocations?: GroupSplitLocationsSpec.AsObject,
   }
 }
 

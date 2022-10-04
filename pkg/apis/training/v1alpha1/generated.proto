@@ -989,6 +989,34 @@ message GeneratedColumnSpec {
   optional string original = 5;
 }
 
+message GroupModelLocationsSpec {
+  // The folder of group data
+  // +kubebuilder:validation:Optional
+  optional string groupFolder = 1;
+
+  // The folder of group data
+  // +kubebuilder:validation:Optional
+  optional string groupProfileFolder = 2;
+
+  // The folder of group data
+  // +kubebuilder:validation:Optional
+  optional string groupReportFile = 3;
+
+  // The folder of group data
+  // +kubebuilder:validation:Optional
+  optional string groupForecastFile = 4;
+}
+
+message GroupSplitLocationsSpec {
+  // The folder of group data
+  // +kubebuilder:validation:Optional
+  optional string groupTrainingDataFile = 1;
+
+  // The folder of group data
+  // +kubebuilder:validation:Optional
+  optional string groupTestingDataFile = 2;
+}
+
 // HyperParameterValue represent an individual hyper-parameter of a machine earning algorithm
 message HyperParameterValue {
   // The name of the hyper-parameter
@@ -2262,6 +2290,10 @@ message ModelSpec {
   // The set of unit tests to test this models against the feedback.
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite feedbackTests = 51;
+
+  // The set locations in case of group forecasts
+  // +kubebuilder:validation:Optional
+  optional GroupModelLocationsSpec groupLocations = 52;
 }
 
 // ModelStatus defines the observed state of a Model
@@ -3659,6 +3691,10 @@ message StudySpec {
   // A template for models unit tests
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite unitTestsTemplate = 38;
+
+  // In case of a group by, those are the group locations
+  // +kubebuilder:validation:Optional
+  optional GroupSplitLocationsSpec groupLocations = 39;
 }
 
 // StudyStatus defines the observed state of a Study

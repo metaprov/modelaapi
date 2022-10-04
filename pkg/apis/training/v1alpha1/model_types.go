@@ -351,6 +351,9 @@ type ModelSpec struct {
 	// The set of unit tests to test this models against the feedback.
 	// +kubebuilder:validation:Optional
 	FeedbackTests catalog.TestSuite `json:"feedbackTests,omitempty" protobuf:"bytes,51,opt,name=feedbackTests"`
+	// The set locations in case of group forecasts
+	// +kubebuilder:validation:Optional
+	GroupLocations GroupModelLocationsSpec `json:"groupLocations,omitempty" protobuf:"bytes,52,opt,name=groupLocations"`
 }
 
 type SegmentSpec struct {
@@ -1141,4 +1144,19 @@ type ModelGroupByStatus struct {
 	// Holds the worker on going result, when a worker finish, we update the location of thier result files
 	// +kubebuilder:validation:Optional
 	WorkerResults []catalog.WorkerRunResult `json:"workerResults,omitempty" protobuf:"bytes,4,opt,name=workerResults"`
+}
+
+type GroupModelLocationsSpec struct {
+	// The folder of group data
+	// +kubebuilder:validation:Optional
+	GroupFolder *string `json:"groupFolder,omitempty" protobuf:"bytes,1,opt,name=groupFolder"`
+	// The folder of group data
+	// +kubebuilder:validation:Optional
+	GroupProfileFolder *string `json:"groupProfileFolder,omitempty" protobuf:"bytes,2,opt,name=groupProfileFolder"`
+	// The folder of group data
+	// +kubebuilder:validation:Optional
+	GroupReportFile *string `json:"groupReportFile,omitempty" protobuf:"bytes,3,opt,name=groupReportFile"`
+	// The folder of group data
+	// +kubebuilder:validation:Optional
+	GroupForecastFile *string `json:"groupForecastFile,omitempty" protobuf:"bytes,4,opt,name=groupForecastFile"`
 }

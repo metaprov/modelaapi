@@ -1725,9 +1725,13 @@ message DatasetSpec {
   // By default, this dataset is assigned
   optional GroupBySpec groupBy = 31;
 
-  // If this dataset represent a group in a multi series dataset, this are the values of the group key.
+  // Define how to group by the base dataset, before making the forecasts.
+  // By default, this dataset is assigned
+  optional GroupDatasetLocationsSpec groupLocations = 32;
+
+  // If this dataset represent a group in a multi series dataset, these are the values of the group key.
   // +kubebuilder:validation:Optional
-  repeated string key = 32;
+  repeated string key = 33;
 }
 
 // DatasetStatistics contains statistics about the Dataset's overall data, as well as every feature of the data. The
@@ -2847,6 +2851,33 @@ message GroupBySpec {
   // +kubebuilder:default:="none"
   // +kubebuilder:validation:Optional
   optional string aggr = 5;
+}
+
+// If this is a group dataset , the group spec contain the location of the different artifacts
+message GroupDatasetLocationsSpec {
+  // The root of the group folders and files
+  // +kubebuilder:validation:Optional
+  optional string groupRoot = 1;
+
+  // The folder of group data
+  // +kubebuilder:validation:Optional
+  optional string groupDataFolder = 2;
+
+  // The folder of group data
+  // +kubebuilder:validation:Optional
+  optional string groupDataFile = 3;
+
+  // The folder group data profile
+  // +kubebuilder:validation:Optional
+  optional string groupProfileFolder = 4;
+
+  // The path of the group report
+  // +kubebuilder:validation:Optional
+  optional string groupReportFile = 5;
+
+  // The path of the group features files
+  // +kubebuilder:validation:Optional
+  optional string groupFeaturesFile = 6;
 }
 
 message HistogramSpec {
