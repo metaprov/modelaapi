@@ -804,8 +804,12 @@ func (col *ColumnStatistics) BigBoolTest(thresholds []DriftThreshold, rowCount i
 ///////////////////////////////////////
 // Group folders. This is
 
+func (dataset *Dataset) GroupsFolder() string {
+	return dataset.RootUri() + "/groups"
+}
+
 func (dataset *Dataset) GroupFolder() string {
-	return dataset.RootUri() + "/" + path.Join(dataset.Spec.Key...)
+	return path.Join(dataset.GroupsFolder(), path.Join(dataset.Spec.Key...))
 }
 
 func (dataset *Dataset) GroupDataFolder() string {
