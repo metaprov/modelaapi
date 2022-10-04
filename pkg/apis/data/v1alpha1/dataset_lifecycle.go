@@ -8,8 +8,6 @@ package v1alpha1
 
 import (
 	"fmt"
-	"path"
-
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/apis/data"
 	infra "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
@@ -233,17 +231,17 @@ func (dataset *Dataset) Grouped() bool {
 }
 
 func (dataset *Dataset) IndexFileKey() string {
-	return path.Dir(*dataset.Spec.Location.Path) + "/" + "groups.json"
+	return dataset.RootUri() + "/" + "groups.json"
 }
 
 // Return the location of the worker index file for the key
 func (dataset *Dataset) WorkerIndexFileKey(workerIndex int, task string) string {
-	return fmt.Sprintf("%s/%s_%d.json", path.Dir(*dataset.Spec.Location.Path), task, workerIndex)
+	return fmt.Sprintf("%s/%s_%d.json", dataset.RootUri(), task, workerIndex)
 }
 
 // This is the index file for task
 func (dataset *Dataset) TaskIndexFileKey(task string) string {
-	return fmt.Sprintf("%s/%s.json", path.Dir(*dataset.Spec.Location.Path), task)
+	return fmt.Sprintf("%s/%s.json", dataset.RootUri(), task)
 }
 
 func (dataset *Dataset) MarkGroupFailed(msg string) {
