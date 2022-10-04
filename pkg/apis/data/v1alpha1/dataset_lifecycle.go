@@ -812,18 +812,18 @@ func (dataset *Dataset) GroupDataFolder() string {
 	return dataset.GroupFolder() + "/data"
 }
 
-func (dataset *Dataset) GroupDataPath() string {
-	return dataset.GroupFolder() + "/data/raw.csv"
+func (dataset *Dataset) GroupDataFile() string {
+	return dataset.GroupDataFolder() + "/raw.csv"
 }
 
 func (dataset *Dataset) GroupProfileFolder() string {
 	return dataset.GroupFolder() + "/profile"
 }
 
-func (dataset *Dataset) GroupReport() string {
+func (dataset *Dataset) GroupReportFile() string {
 	return dataset.GroupFolder() + "/report.pdf"
 }
 
-func (dataset *Dataset) GroupForecast() string {
+func (dataset *Dataset) GroupForecastFile() string {
 	return dataset.GroupFolder() + "/forecasts/forecast.csv"
 }
