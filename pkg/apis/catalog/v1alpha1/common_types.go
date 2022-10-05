@@ -98,6 +98,7 @@ const (
 	TrainDriftDetector       TaskName = "train-drift-detector"
 	GroupByDatasetTask       TaskName = "groupby-dataset"
 	GroupProfileDatasetTask  TaskName = "group-profile-dataset"
+	GroupProfileModelTask    TaskName = "group-profile-model"
 	GroupReportDatasetTask   TaskName = "group-report-dataset"
 	GroupReportModelTask     TaskName = "group-report-model"
 	GroupModelTrainTask      TaskName = "group-train-model"

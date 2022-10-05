@@ -1158,7 +1158,7 @@ func (study *Study) TaskIndexFileKey(task string) string {
 }
 
 func (study *Study) GroupFolder(key []string) string {
-	return study.RootUri() + "/" + path.Join(key...)
+	return study.RootUri() + "/groups/" + path.Join(key...)
 }
 
 func (study *Study) GroupDataFolder(key []string) string {
