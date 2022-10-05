@@ -10,7 +10,6 @@ import (
 	"fmt"
 	"github.com/dustin/go-humanize"
 	"gopkg.in/yaml.v2"
-	"path"
 	"strings"
 
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
@@ -232,17 +231,16 @@ func (report *Report) ValidateDelete() error {
 }
 
 func (report *Report) IndexFileKey() string {
-	return path.Dir(*report.Spec.Location.Path) + "/" + "groups.json"
+	return report.RootUri() + "/group_report_index.json"
 }
 
-// Return the location of the worker index file for the key
 func (report *Report) WorkerIndexFileKey(workerIndex int, task string) string {
-	return fmt.Sprintf("%s/%s_%d.json", path.Dir(*report.Spec.Location.Path), task, workerIndex)
+	return fmt.Sprintf("%s/%s_%d.json", report.RootUri(), task, workerIndex)
 }
 
 // This is the index file for task
 func (report *Report) TaskIndexFileKey(task string) string {
-	return fmt.Sprintf("%s/%s.json", path.Dir(*report.Spec.Location.Path), task)
+	return fmt.Sprintf("%s/%s.json", report.RootUri(), task)
 }
 
 func (report *Report) MarkRunning() {

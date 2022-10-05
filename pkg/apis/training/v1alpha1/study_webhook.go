@@ -30,7 +30,7 @@ func DefaultObjective(task catalog.MLTask) catalog.Metric {
 	if task == catalog.Regression {
 		return catalog.RMSE
 	}
-	if task == catalog.Forecasting {
+	if task == catalog.Forecasting || task == catalog.GroupForecast {
 		return catalog.MAPE
 	}
 	return catalog.Accuracy
@@ -46,7 +46,7 @@ func (study *Study) DefaultFESearchEstimator(task catalog.MLTask) catalog.Classi
 	if task == catalog.Regression {
 		return catalog.DecisionTreeRegressor
 	}
-	if task == catalog.Forecasting {
+	if task == catalog.Forecasting || task == catalog.GroupForecast {
 		return catalog.AutoARIMA
 	}
 	return catalog.UnknownEstimatorName
@@ -62,7 +62,7 @@ func (study *Study) DefaultBaselineEstimator(task catalog.MLTask) catalog.Classi
 	if task == catalog.Regression {
 		return catalog.RandomForestRegressor
 	}
-	if task == catalog.Forecasting {
+	if task == catalog.Forecasting || task == catalog.GroupForecast {
 		return catalog.AutoARIMA
 	}
 	return catalog.UnknownEstimatorName
@@ -91,6 +91,10 @@ func (study *Study) Default() {
 		if len(study.Spec.Baseline.Baselines) == 0 {
 			study.Spec.Baseline.Baselines = append(study.Spec.Baseline.Baselines, study.DefaultBaselineEstimator(*study.Spec.Task))
 		}
+	}
+
+	if study.Spec.TrainingTemplate.Split.Method == nil || *study.Spec.TrainingTemplate.Split.Method == catalog.DataSplitAuto {
+		study.SelectSplitMethod()
 	}
 
 	study.Spec.Ensembles.StackingEnsemble = util.BoolPtr(true)

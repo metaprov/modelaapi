@@ -236,7 +236,7 @@ func (study *Study) IsInCond(ct StudyConditionType) bool {
 }
 
 func (study *Study) SelectSplitMethod() {
-	if *study.Spec.Task == catalog.Forecasting {
+	if *study.Spec.Task == catalog.Forecasting || *study.Spec.Task == catalog.GroupForecast {
 		v := catalog.DataSplitMethodTime
 		study.Spec.TrainingTemplate.Split.Method = &v
 	}
