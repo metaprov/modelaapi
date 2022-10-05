@@ -1141,6 +1141,9 @@ type ModelGroupByStatus struct {
 	// The locations of the datasets profiles files.
 	// +kubebuilder:validation:Optional
 	ProfilesURI string `json:"profilesURI,omitempty" protobuf:"bytes,2,opt,name=profilesURI"`
+	// The locations of forecasts
+	// +kubebuilder:validation:Optional
+	ForecastsURI string `json:"forecastsURI,omitempty" protobuf:"bytes,3,opt,name=forecastsURI"`
 	// Holds the worker on going result, when a worker finish, we update the location of thier result files
 	// +kubebuilder:validation:Optional
 	WorkerResults []catalog.WorkerRunResult `json:"workerResults,omitempty" protobuf:"bytes,4,opt,name=workerResults"`

@@ -25245,6 +25245,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelGroupByStatu
   var f, obj = {
     modelsuri: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     profilesuri: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    forecastsuri: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     workerresultsList: jspb.Message.toObjectList(msg.getWorkerresultsList(),
     github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkerRunResult.toObject, includeInstance)
   };
@@ -25291,6 +25292,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelGroupByStatu
       var value = /** @type {string} */ (reader.readString());
       msg.setProfilesuri(value);
       break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setForecastsuri(value);
+      break;
     case 4:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkerRunResult;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkerRunResult.deserializeBinaryFromReader);
@@ -25336,6 +25341,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelGroupByStatu
   if (f != null) {
     writer.writeString(
       2,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeString(
+      3,
       f
     );
   }
@@ -25419,6 +25431,42 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelGroupByStatu
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelGroupByStatus.prototype.hasProfilesuri = function() {
   return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional string forecastsURI = 3;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelGroupByStatus.prototype.getForecastsuri = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelGroupByStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelGroupByStatus.prototype.setForecastsuri = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelGroupByStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelGroupByStatus.prototype.clearForecastsuri = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelGroupByStatus.prototype.hasForecastsuri = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 

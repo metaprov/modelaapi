@@ -2383,6 +2383,9 @@ export class ModelGroupByStatus extends jspb.Message {
   getProfilesuri(): string;
   setProfilesuri(value: string): ModelGroupByStatus;
 
+  getForecastsuri(): string;
+  setForecastsuri(value: string): ModelGroupByStatus;
+
   getWorkerresultsList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkerRunResult>;
   setWorkerresultsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkerRunResult>): ModelGroupByStatus;
   clearWorkerresultsList(): ModelGroupByStatus;
@@ -2400,6 +2403,7 @@ export namespace ModelGroupByStatus {
   export type AsObject = {
     modelsuri: string,
     profilesuri: string,
+    forecastsuri: string,
     workerresultsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkerRunResult.AsObject>,
   }
 }

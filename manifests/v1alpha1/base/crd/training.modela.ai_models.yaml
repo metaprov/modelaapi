@@ -3269,6 +3269,9 @@ spec:
                 description: The sub models uri file contain the results of running
                   the sub model
                 properties:
+                  forecastsURI:
+                    description: The locations of forecasts
+                    type: string
                   modelsURI:
                     description: The locations of the datasets profile files. Each
                       file is the group
