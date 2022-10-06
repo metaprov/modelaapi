@@ -16582,7 +16582,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GroupModelLocatio
     groupfolder: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     groupprofilefolder: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     groupreportfile: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-    groupforecastfile: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
+    groupmodelfolder: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    groupmodelfile: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    groupforecastfile: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -16632,6 +16634,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GroupModelLocatio
       msg.setGroupreportfile(value);
       break;
     case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setGroupmodelfolder(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setGroupmodelfile(value);
+      break;
+    case 6:
       var value = /** @type {string} */ (reader.readString());
       msg.setGroupforecastfile(value);
       break;
@@ -16689,6 +16699,20 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GroupModelLocatio
   if (f != null) {
     writer.writeString(
       4,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 5));
+  if (f != null) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 6));
+  if (f != null) {
+    writer.writeString(
+      6,
       f
     );
   }
@@ -16804,10 +16828,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GroupModelLocatio
 
 
 /**
- * optional string groupForecastFile = 4;
+ * optional string groupModelFolder = 4;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GroupModelLocationsSpec.prototype.getGroupforecastfile = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GroupModelLocationsSpec.prototype.getGroupmodelfolder = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
@@ -16816,7 +16840,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GroupModelLocatio
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GroupModelLocationsSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GroupModelLocationsSpec.prototype.setGroupforecastfile = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GroupModelLocationsSpec.prototype.setGroupmodelfolder = function(value) {
   return jspb.Message.setField(this, 4, value);
 };
 
@@ -16825,7 +16849,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GroupModelLocatio
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GroupModelLocationsSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GroupModelLocationsSpec.prototype.clearGroupforecastfile = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GroupModelLocationsSpec.prototype.clearGroupmodelfolder = function() {
   return jspb.Message.setField(this, 4, undefined);
 };
 
@@ -16834,8 +16858,80 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GroupModelLocatio
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GroupModelLocationsSpec.prototype.hasGroupforecastfile = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GroupModelLocationsSpec.prototype.hasGroupmodelfolder = function() {
   return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional string groupModelFile = 5;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GroupModelLocationsSpec.prototype.getGroupmodelfile = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GroupModelLocationsSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GroupModelLocationsSpec.prototype.setGroupmodelfile = function(value) {
+  return jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GroupModelLocationsSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GroupModelLocationsSpec.prototype.clearGroupmodelfile = function() {
+  return jspb.Message.setField(this, 5, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GroupModelLocationsSpec.prototype.hasGroupmodelfile = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional string groupForecastFile = 6;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GroupModelLocationsSpec.prototype.getGroupforecastfile = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GroupModelLocationsSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GroupModelLocationsSpec.prototype.setGroupforecastfile = function(value) {
+  return jspb.Message.setField(this, 6, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GroupModelLocationsSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GroupModelLocationsSpec.prototype.clearGroupforecastfile = function() {
+  return jspb.Message.setField(this, 6, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GroupModelLocationsSpec.prototype.hasGroupforecastfile = function() {
+  return jspb.Message.getField(this, 6) != null;
 };
 
 

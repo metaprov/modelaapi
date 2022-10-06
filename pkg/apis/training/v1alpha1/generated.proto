@@ -1004,7 +1004,15 @@ message GroupModelLocationsSpec {
 
   // The folder of group data
   // +kubebuilder:validation:Optional
-  optional string groupForecastFile = 4;
+  optional string groupModelFolder = 4;
+
+  // The folder of group data
+  // +kubebuilder:validation:Optional
+  optional string groupModelFile = 5;
+
+  // The folder of group data
+  // +kubebuilder:validation:Optional
+  optional string groupForecastFile = 6;
 }
 
 message GroupSplitLocationsSpec {

@@ -1161,5 +1161,11 @@ type GroupModelLocationsSpec struct {
 	GroupReportFile *string `json:"groupReportFile,omitempty" protobuf:"bytes,3,opt,name=groupReportFile"`
 	// The folder of group data
 	// +kubebuilder:validation:Optional
-	GroupForecastFile *string `json:"groupForecastFile,omitempty" protobuf:"bytes,4,opt,name=groupForecastFile"`
+	GroupModelFolder *string `json:"groupModelFolder,omitempty" protobuf:"bytes,4,opt,name=groupModelFolder"`
+	// The folder of group data
+	// +kubebuilder:validation:Optional
+	GroupModelFile *string `json:"groupModelFile,omitempty" protobuf:"bytes,5,opt,name=groupModelFile"`
+	// The folder of group data
+	// +kubebuilder:validation:Optional
+	GroupForecastFile *string `json:"groupForecastFile,omitempty" protobuf:"bytes,6,opt,name=groupForecastFile"`
 }

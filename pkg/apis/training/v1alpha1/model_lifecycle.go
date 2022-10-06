@@ -1406,11 +1406,15 @@ func (model *Model) TaskIndexFileKey(task string) string {
 // Group folders
 
 func (model *Model) GroupFolder() string {
-	return model.RootUri() + "/" + path.Join(model.Spec.Forecasting.Key...)
+	return model.RootUri() + "/groups/" + path.Join(model.Spec.Forecasting.Key...)
 }
 
 func (model *Model) GroupModelFolder() string {
-	return model.GroupFolder() + "/model"
+	return model.GroupFolder() + "/bin/model"
+}
+
+func (model *Model) GroupModelFile() string {
+	return model.GroupFolder() + "/bin/model.zip"
 }
 
 func (model *Model) GroupModelProfileFolder() string {
@@ -1418,7 +1422,7 @@ func (model *Model) GroupModelProfileFolder() string {
 }
 
 func (model *Model) GroupModelReportFile() string {
-	return model.GroupFolder() + "report.pdf"
+	return model.GroupFolder() + "/report.pdf"
 }
 
 func (model *Model) GroupModelForecastFile() string {

@@ -1532,6 +1532,12 @@ spec:
                   groupForecastFile:
                     description: The folder of group data
                     type: string
+                  groupModelFile:
+                    description: The folder of group data
+                    type: string
+                  groupModelFolder:
+                    description: The folder of group data
+                    type: string
                   groupProfileFolder:
                     description: The folder of group data
                     type: string

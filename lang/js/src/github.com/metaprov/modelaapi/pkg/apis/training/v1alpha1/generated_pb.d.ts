@@ -1482,6 +1482,12 @@ export class GroupModelLocationsSpec extends jspb.Message {
   getGroupreportfile(): string;
   setGroupreportfile(value: string): GroupModelLocationsSpec;
 
+  getGroupmodelfolder(): string;
+  setGroupmodelfolder(value: string): GroupModelLocationsSpec;
+
+  getGroupmodelfile(): string;
+  setGroupmodelfile(value: string): GroupModelLocationsSpec;
+
   getGroupforecastfile(): string;
   setGroupforecastfile(value: string): GroupModelLocationsSpec;
 
@@ -1498,6 +1504,8 @@ export namespace GroupModelLocationsSpec {
     groupfolder: string,
     groupprofilefolder: string,
     groupreportfile: string,
+    groupmodelfolder: string,
+    groupmodelfile: string,
     groupforecastfile: string,
   }
 }
