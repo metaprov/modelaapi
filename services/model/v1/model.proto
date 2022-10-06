@@ -28,6 +28,7 @@ message GetModelProfileRequest {
     string namespace = 1;
     string name      = 2;
     string uri       = 3;
+    string group       = 4; // if not null this is a group model
 }
 
 message GetModelProfileResponse {
@@ -180,6 +181,7 @@ message GetMisclassResponse {
 message DownloadModelRequest {
     string namespace = 1;
     string name      = 2;
+    string group     = 3; // if not null
 }
 
 // Answer the report in base 64

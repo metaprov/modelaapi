@@ -1915,7 +1915,8 @@ proto.github.com.metaprov.modelaapi.services.report.v1.DownloadReportRequest.pro
 proto.github.com.metaprov.modelaapi.services.report.v1.DownloadReportRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 2, "")
+    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    group: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -1960,6 +1961,10 @@ proto.github.com.metaprov.modelaapi.services.report.v1.DownloadReportRequest.des
       var value = /** @type {string} */ (reader.readString());
       msg.setName(value);
       break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setGroup(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -2003,6 +2008,13 @@ proto.github.com.metaprov.modelaapi.services.report.v1.DownloadReportRequest.ser
       f
     );
   }
+  f = message.getGroup();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
 };
 
 
@@ -2039,6 +2051,24 @@ proto.github.com.metaprov.modelaapi.services.report.v1.DownloadReportRequest.pro
  */
 proto.github.com.metaprov.modelaapi.services.report.v1.DownloadReportRequest.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string group = 3;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.report.v1.DownloadReportRequest.prototype.getGroup = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.report.v1.DownloadReportRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.report.v1.DownloadReportRequest.prototype.setGroup = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 

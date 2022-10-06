@@ -118,12 +118,14 @@ message GetDatasetProfileRequest {
     string namespace = 1;
     string name      = 2;
     string uri       = 3; // this is optional. used when we do the analysis from the ui (vs in batch mode)
+    string group     = 4; // if not null, this is a group profile.
 }
 
 message GetDatasetProfileResponse {
     string namespace = 1;
     string name      = 2;
     github.com.metaprov.modelaapi.services.common.v1.DatasetProfile profile = 3;
+    
 }
 
 // compare the profile of one or more datasets
@@ -167,6 +169,7 @@ message ValidateDatasetResponse {
 message DownloadDatasetRequest {
     string namespace = 1;
     string name      = 2;
+    string group       = 3; // if not null this is a group request
 }
 
 // Answer the report in base 64
@@ -227,7 +230,6 @@ message GetAnomaliesRequest {
 message GetAnomaliesResponse {
     github.com.metaprov.modelaapi.services.common.v1.TableView   table   =1;
 }
-
 
 
 service DatasetService {

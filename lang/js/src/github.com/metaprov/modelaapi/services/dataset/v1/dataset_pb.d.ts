@@ -397,6 +397,9 @@ export class GetDatasetProfileRequest extends jspb.Message {
   getUri(): string;
   setUri(value: string): GetDatasetProfileRequest;
 
+  getGroup(): string;
+  setGroup(value: string): GetDatasetProfileRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetDatasetProfileRequest.AsObject;
   static toObject(includeInstance: boolean, msg: GetDatasetProfileRequest): GetDatasetProfileRequest.AsObject;
@@ -410,6 +413,7 @@ export namespace GetDatasetProfileRequest {
     namespace: string,
     name: string,
     uri: string,
+    group: string,
   }
 }
 
@@ -610,6 +614,9 @@ export class DownloadDatasetRequest extends jspb.Message {
   getName(): string;
   setName(value: string): DownloadDatasetRequest;
 
+  getGroup(): string;
+  setGroup(value: string): DownloadDatasetRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DownloadDatasetRequest.AsObject;
   static toObject(includeInstance: boolean, msg: DownloadDatasetRequest): DownloadDatasetRequest.AsObject;
@@ -622,6 +629,7 @@ export namespace DownloadDatasetRequest {
   export type AsObject = {
     namespace: string,
     name: string,
+    group: string,
   }
 }
 

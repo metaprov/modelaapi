@@ -41,6 +41,7 @@ message UpdateReportResponse {
 message GetReportRequest {
     string namespace = 1;
     string name      = 2;
+ 
 }
 
 message GetReportResponse {
@@ -62,6 +63,7 @@ message DeleteReportResponse {
 message DownloadReportRequest {
     string namespace = 1;
     string name      = 2;
+    string group     = 3; // if not null this is a group report.
 }
 
 // Answer the report in base 64

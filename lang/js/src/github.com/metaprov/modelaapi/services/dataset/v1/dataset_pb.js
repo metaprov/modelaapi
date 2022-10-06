@@ -3699,7 +3699,8 @@ proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetProfileRequest
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    uri: jspb.Message.getFieldWithDefault(msg, 3, "")
+    uri: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    group: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -3748,6 +3749,10 @@ proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetProfileRequest
       var value = /** @type {string} */ (reader.readString());
       msg.setUri(value);
       break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setGroup(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -3795,6 +3800,13 @@ proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetProfileRequest
   if (f.length > 0) {
     writer.writeString(
       3,
+      f
+    );
+  }
+  f = message.getGroup();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
       f
     );
   }
@@ -3852,6 +3864,24 @@ proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetProfileRequest
  */
 proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetProfileRequest.prototype.setUri = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional string group = 4;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetProfileRequest.prototype.getGroup = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetProfileRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetProfileRequest.prototype.setGroup = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -5374,7 +5404,8 @@ proto.github.com.metaprov.modelaapi.services.dataset.v1.DownloadDatasetRequest.p
 proto.github.com.metaprov.modelaapi.services.dataset.v1.DownloadDatasetRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 2, "")
+    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    group: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -5419,6 +5450,10 @@ proto.github.com.metaprov.modelaapi.services.dataset.v1.DownloadDatasetRequest.d
       var value = /** @type {string} */ (reader.readString());
       msg.setName(value);
       break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setGroup(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -5462,6 +5497,13 @@ proto.github.com.metaprov.modelaapi.services.dataset.v1.DownloadDatasetRequest.s
       f
     );
   }
+  f = message.getGroup();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
 };
 
 
@@ -5498,6 +5540,24 @@ proto.github.com.metaprov.modelaapi.services.dataset.v1.DownloadDatasetRequest.p
  */
 proto.github.com.metaprov.modelaapi.services.dataset.v1.DownloadDatasetRequest.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string group = 3;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.dataset.v1.DownloadDatasetRequest.prototype.getGroup = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.dataset.v1.DownloadDatasetRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.dataset.v1.DownloadDatasetRequest.prototype.setGroup = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 

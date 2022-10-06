@@ -78,6 +78,9 @@ export class GetModelProfileRequest extends jspb.Message {
   getUri(): string;
   setUri(value: string): GetModelProfileRequest;
 
+  getGroup(): string;
+  setGroup(value: string): GetModelProfileRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetModelProfileRequest.AsObject;
   static toObject(includeInstance: boolean, msg: GetModelProfileRequest): GetModelProfileRequest.AsObject;
@@ -91,6 +94,7 @@ export namespace GetModelProfileRequest {
     namespace: string,
     name: string,
     uri: string,
+    group: string,
   }
 }
 
@@ -727,6 +731,9 @@ export class DownloadModelRequest extends jspb.Message {
   getName(): string;
   setName(value: string): DownloadModelRequest;
 
+  getGroup(): string;
+  setGroup(value: string): DownloadModelRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DownloadModelRequest.AsObject;
   static toObject(includeInstance: boolean, msg: DownloadModelRequest): DownloadModelRequest.AsObject;
@@ -739,6 +746,7 @@ export namespace DownloadModelRequest {
   export type AsObject = {
     namespace: string,
     name: string,
+    group: string,
   }
 }
 

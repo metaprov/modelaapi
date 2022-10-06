@@ -226,6 +226,9 @@ export class DownloadReportRequest extends jspb.Message {
   getName(): string;
   setName(value: string): DownloadReportRequest;
 
+  getGroup(): string;
+  setGroup(value: string): DownloadReportRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DownloadReportRequest.AsObject;
   static toObject(includeInstance: boolean, msg: DownloadReportRequest): DownloadReportRequest.AsObject;
@@ -238,6 +241,7 @@ export namespace DownloadReportRequest {
   export type AsObject = {
     namespace: string,
     name: string,
+    group: string,
   }
 }
 
