@@ -723,5 +723,48 @@ export class DatasetServiceClient {
     this.methodInfoGetAnomalies);
   }
 
+  methodInfoGetGroupKeys = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/GetGroupKeys',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetGroupKeysRequest,
+    github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetGroupKeysResponse,
+    (request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetGroupKeysRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetGroupKeysResponse.deserializeBinary
+  );
+
+  getGroupKeys(
+    request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetGroupKeysRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetGroupKeysResponse>;
+
+  getGroupKeys(
+    request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetGroupKeysRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetGroupKeysResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetGroupKeysResponse>;
+
+  getGroupKeys(
+    request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetGroupKeysRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetGroupKeysResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/GetGroupKeys',
+        request,
+        metadata || {},
+        this.methodInfoGetGroupKeys,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/GetGroupKeys',
+    request,
+    metadata || {},
+    this.methodInfoGetGroupKeys);
+  }
+
 }
 

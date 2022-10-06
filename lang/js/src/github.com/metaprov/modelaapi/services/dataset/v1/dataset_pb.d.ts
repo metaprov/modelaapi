@@ -885,3 +885,45 @@ export namespace GetAnomaliesResponse {
   }
 }
 
+export class GetGroupKeysRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): GetGroupKeysRequest;
+
+  getName(): string;
+  setName(value: string): GetGroupKeysRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetGroupKeysRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetGroupKeysRequest): GetGroupKeysRequest.AsObject;
+  static serializeBinaryToWriter(message: GetGroupKeysRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetGroupKeysRequest;
+  static deserializeBinaryFromReader(message: GetGroupKeysRequest, reader: jspb.BinaryReader): GetGroupKeysRequest;
+}
+
+export namespace GetGroupKeysRequest {
+  export type AsObject = {
+    namespace: string,
+    name: string,
+  }
+}
+
+export class GetGroupKeysResponse extends jspb.Message {
+  getKeysList(): Array<string>;
+  setKeysList(value: Array<string>): GetGroupKeysResponse;
+  clearKeysList(): GetGroupKeysResponse;
+  addKeys(value: string, index?: number): GetGroupKeysResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetGroupKeysResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetGroupKeysResponse): GetGroupKeysResponse.AsObject;
+  static serializeBinaryToWriter(message: GetGroupKeysResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetGroupKeysResponse;
+  static deserializeBinaryFromReader(message: GetGroupKeysResponse, reader: jspb.BinaryReader): GetGroupKeysResponse;
+}
+
+export namespace GetGroupKeysResponse {
+  export type AsObject = {
+    keysList: Array<string>,
+  }
+}
+

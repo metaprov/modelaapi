@@ -94,6 +94,11 @@ class DatasetServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.GetAnomaliesRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.GetAnomaliesResponse.FromString,
                 )
+        self.GetGroupKeys = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/GetGroupKeys',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.GetGroupKeysRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.GetGroupKeysResponse.FromString,
+                )
 
 
 class DatasetServiceServicer(object):
@@ -199,6 +204,12 @@ class DatasetServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetGroupKeys(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_DatasetServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -281,6 +292,11 @@ def add_DatasetServiceServicer_to_server(servicer, server):
                     servicer.GetAnomalies,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.GetAnomaliesRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.GetAnomaliesResponse.SerializeToString,
+            ),
+            'GetGroupKeys': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetGroupKeys,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.GetGroupKeysRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.GetGroupKeysResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -561,5 +577,22 @@ class DatasetService(object):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/GetAnomalies',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.GetAnomaliesRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.GetAnomaliesResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetGroupKeys(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/GetGroupKeys',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.GetGroupKeysRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.GetGroupKeysResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

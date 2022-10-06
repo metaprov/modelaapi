@@ -39,6 +39,8 @@ message GetDatasetResponse {
     string yaml = 2;
 }
 
+
+
 // Create Dataset
 message CreateDatasetRequest {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset dataset = 1;
@@ -231,6 +233,18 @@ message GetAnomaliesResponse {
     github.com.metaprov.modelaapi.services.common.v1.TableView   table   =1;
 }
 
+message GetGroupKeysRequest {
+    string namespace = 1;
+    string name      = 2;    
+    
+}
+
+message GetGroupKeysResponse {
+    repeated string keys = 1;
+    
+}
+
+
 
 service DatasetService {
     // Datasets
@@ -308,9 +322,8 @@ service DatasetService {
         option (google.api.http).get = "/v1/models/{namespace}/{name}:anomalies";
     }
 
-
-
-
-
+    rpc GetGroupKeys(GetGroupKeysRequest) returns (GetGroupKeysResponse) {
+        option (google.api.http).get = "/v1/models/{namespace}/{name}:groupkeys";
+    }
 
 }
