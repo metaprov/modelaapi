@@ -117,6 +117,8 @@ func (model *Model) ReportType() ReportType {
 		return RegressionModelReport
 	case catalog.Forecasting:
 		return ForecastModelReport
+	case catalog.GroupForecast:
+		return GroupTimeSeriesModelReport
 	}
 	return InvalidReport
 }
