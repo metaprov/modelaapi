@@ -36,6 +36,11 @@ export class DatasetProfile extends jspb.Message {
   getAnomalyuri(): string;
   setAnomalyuri(value: string): DatasetProfile;
 
+  getTs(): TimeSeriesProfile | undefined;
+  setTs(value?: TimeSeriesProfile): DatasetProfile;
+  hasTs(): boolean;
+  clearTs(): DatasetProfile;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DatasetProfile.AsObject;
   static toObject(includeInstance: boolean, msg: DatasetProfile): DatasetProfile.AsObject;
@@ -55,6 +60,7 @@ export namespace DatasetProfile {
     table?: TableView.AsObject,
     hash: string,
     anomalyuri: string,
+    ts?: TimeSeriesProfile.AsObject,
   }
 }
 
@@ -187,6 +193,216 @@ export namespace PrecisionRecallCurve {
     precisionList: Array<number>,
     recallList: Array<number>,
     thresholdsList: Array<number>,
+  }
+}
+
+export class TimeSeriesProfile extends jspb.Message {
+  getKpss(): KPSS | undefined;
+  setKpss(value?: KPSS): TimeSeriesProfile;
+  hasKpss(): boolean;
+  clearKpss(): TimeSeriesProfile;
+
+  getAdf(): ADF | undefined;
+  setAdf(value?: ADF): TimeSeriesProfile;
+  hasAdf(): boolean;
+  clearAdf(): TimeSeriesProfile;
+
+  getZivot(): ZivotAndrew | undefined;
+  setZivot(value?: ZivotAndrew): TimeSeriesProfile;
+  hasZivot(): boolean;
+  clearZivot(): TimeSeriesProfile;
+
+  getKendall(): MannKendall | undefined;
+  setKendall(value?: MannKendall): TimeSeriesProfile;
+  hasKendall(): boolean;
+  clearKendall(): TimeSeriesProfile;
+
+  getDw(): DurbinWatson | undefined;
+  setDw(value?: DurbinWatson): TimeSeriesProfile;
+  hasDw(): boolean;
+  clearDw(): TimeSeriesProfile;
+
+  getFeaturesMap(): jspb.Map<string, number>;
+  clearFeaturesMap(): TimeSeriesProfile;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TimeSeriesProfile.AsObject;
+  static toObject(includeInstance: boolean, msg: TimeSeriesProfile): TimeSeriesProfile.AsObject;
+  static serializeBinaryToWriter(message: TimeSeriesProfile, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TimeSeriesProfile;
+  static deserializeBinaryFromReader(message: TimeSeriesProfile, reader: jspb.BinaryReader): TimeSeriesProfile;
+}
+
+export namespace TimeSeriesProfile {
+  export type AsObject = {
+    kpss?: KPSS.AsObject,
+    adf?: ADF.AsObject,
+    zivot?: ZivotAndrew.AsObject,
+    kendall?: MannKendall.AsObject,
+    dw?: DurbinWatson.AsObject,
+    featuresMap: Array<[string, number]>,
+  }
+}
+
+export class KPSS extends jspb.Message {
+  getKpssStat(): number;
+  setKpssStat(value: number): KPSS;
+
+  getPValue(): number;
+  setPValue(value: number): KPSS;
+
+  getLags(): number;
+  setLags(value: number): KPSS;
+
+  getCritMap(): jspb.Map<string, number>;
+  clearCritMap(): KPSS;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): KPSS.AsObject;
+  static toObject(includeInstance: boolean, msg: KPSS): KPSS.AsObject;
+  static serializeBinaryToWriter(message: KPSS, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): KPSS;
+  static deserializeBinaryFromReader(message: KPSS, reader: jspb.BinaryReader): KPSS;
+}
+
+export namespace KPSS {
+  export type AsObject = {
+    kpssStat: number,
+    pValue: number,
+    lags: number,
+    critMap: Array<[string, number]>,
+  }
+}
+
+export class ADF extends jspb.Message {
+  getAdf(): number;
+  setAdf(value: number): ADF;
+
+  getPvalue(): number;
+  setPvalue(value: number): ADF;
+
+  getUsedlag(): number;
+  setUsedlag(value: number): ADF;
+
+  getNobs(): number;
+  setNobs(value: number): ADF;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ADF.AsObject;
+  static toObject(includeInstance: boolean, msg: ADF): ADF.AsObject;
+  static serializeBinaryToWriter(message: ADF, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ADF;
+  static deserializeBinaryFromReader(message: ADF, reader: jspb.BinaryReader): ADF;
+}
+
+export namespace ADF {
+  export type AsObject = {
+    adf: number,
+    pvalue: number,
+    usedlag: number,
+    nobs: number,
+  }
+}
+
+export class ZivotAndrew extends jspb.Message {
+  getZastat(): number;
+  setZastat(value: number): ZivotAndrew;
+
+  getPvalue(): number;
+  setPvalue(value: number): ZivotAndrew;
+
+  getCritMap(): jspb.Map<string, number>;
+  clearCritMap(): ZivotAndrew;
+
+  getBaselag(): number;
+  setBaselag(value: number): ZivotAndrew;
+
+  getBpidx(): number;
+  setBpidx(value: number): ZivotAndrew;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ZivotAndrew.AsObject;
+  static toObject(includeInstance: boolean, msg: ZivotAndrew): ZivotAndrew.AsObject;
+  static serializeBinaryToWriter(message: ZivotAndrew, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ZivotAndrew;
+  static deserializeBinaryFromReader(message: ZivotAndrew, reader: jspb.BinaryReader): ZivotAndrew;
+}
+
+export namespace ZivotAndrew {
+  export type AsObject = {
+    zastat: number,
+    pvalue: number,
+    critMap: Array<[string, number]>,
+    baselag: number,
+    bpidx: number,
+  }
+}
+
+export class MannKendall extends jspb.Message {
+  getTrend(): number;
+  setTrend(value: number): MannKendall;
+
+  getH(): number;
+  setH(value: number): MannKendall;
+
+  getP(): number;
+  setP(value: number): MannKendall;
+
+  getZ(): number;
+  setZ(value: number): MannKendall;
+
+  getTau(): number;
+  setTau(value: number): MannKendall;
+
+  getS(): number;
+  setS(value: number): MannKendall;
+
+  getVarS(): number;
+  setVarS(value: number): MannKendall;
+
+  getSlope(): number;
+  setSlope(value: number): MannKendall;
+
+  getIntercept(): number;
+  setIntercept(value: number): MannKendall;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): MannKendall.AsObject;
+  static toObject(includeInstance: boolean, msg: MannKendall): MannKendall.AsObject;
+  static serializeBinaryToWriter(message: MannKendall, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): MannKendall;
+  static deserializeBinaryFromReader(message: MannKendall, reader: jspb.BinaryReader): MannKendall;
+}
+
+export namespace MannKendall {
+  export type AsObject = {
+    trend: number,
+    h: number,
+    p: number,
+    z: number,
+    tau: number,
+    s: number,
+    varS: number,
+    slope: number,
+    intercept: number,
+  }
+}
+
+export class DurbinWatson extends jspb.Message {
+  getDw(): number;
+  setDw(value: number): DurbinWatson;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DurbinWatson.AsObject;
+  static toObject(includeInstance: boolean, msg: DurbinWatson): DurbinWatson.AsObject;
+  static serializeBinaryToWriter(message: DurbinWatson, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DurbinWatson;
+  static deserializeBinaryFromReader(message: DurbinWatson, reader: jspb.BinaryReader): DurbinWatson;
+}
+
+export namespace DurbinWatson {
+  export type AsObject = {
+    dw: number,
   }
 }
 
