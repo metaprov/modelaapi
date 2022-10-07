@@ -113,6 +113,11 @@ export class ModelProfile extends jspb.Message {
   hasGroups(): boolean;
   clearGroups(): ModelProfile;
 
+  getForecast(): TableView | undefined;
+  setForecast(value?: TableView): ModelProfile;
+  hasForecast(): boolean;
+  clearForecast(): ModelProfile;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelProfile.AsObject;
   static toObject(includeInstance: boolean, msg: ModelProfile): ModelProfile.AsObject;
@@ -131,6 +136,7 @@ export namespace ModelProfile {
     multiclassrocaucList: Array<ROCCurve.AsObject>,
     multiclassprList: Array<PrecisionRecallCurve.AsObject>,
     groups?: TableView.AsObject,
+    forecast?: TableView.AsObject,
   }
 }
 
@@ -248,11 +254,6 @@ export class OneTimeSeriesProfile extends jspb.Message {
   hasSeries(): boolean;
   clearSeries(): OneTimeSeriesProfile;
 
-  getForecast(): TableView | undefined;
-  setForecast(value?: TableView): OneTimeSeriesProfile;
-  hasForecast(): boolean;
-  clearForecast(): OneTimeSeriesProfile;
-
   getPlotsList(): Array<Plot>;
   setPlotsList(value: Array<Plot>): OneTimeSeriesProfile;
   clearPlotsList(): OneTimeSeriesProfile;
@@ -275,7 +276,6 @@ export namespace OneTimeSeriesProfile {
     dw?: DurbinWatson.AsObject,
     key: string,
     series?: TableView.AsObject,
-    forecast?: TableView.AsObject,
     plotsList: Array<Plot.AsObject>,
   }
 }
