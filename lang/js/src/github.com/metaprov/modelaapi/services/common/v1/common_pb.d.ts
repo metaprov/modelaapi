@@ -96,6 +96,11 @@ export class ModelProfile extends jspb.Message {
   clearMulticlassprList(): ModelProfile;
   addMulticlasspr(value?: PrecisionRecallCurve, index?: number): PrecisionRecallCurve;
 
+  getGroupforecasters(): TableView | undefined;
+  setGroupforecasters(value?: TableView): ModelProfile;
+  hasGroupforecasters(): boolean;
+  clearGroupforecasters(): ModelProfile;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelProfile.AsObject;
   static toObject(includeInstance: boolean, msg: ModelProfile): ModelProfile.AsObject;
@@ -113,6 +118,7 @@ export namespace ModelProfile {
     pr?: PrecisionRecallCurve.AsObject,
     multiclassrocaucList: Array<ROCCurve.AsObject>,
     multiclassprList: Array<PrecisionRecallCurve.AsObject>,
+    groupforecasters?: TableView.AsObject,
   }
 }
 
@@ -222,8 +228,15 @@ export class TimeSeriesProfile extends jspb.Message {
   hasDw(): boolean;
   clearDw(): TimeSeriesProfile;
 
-  getFeaturesMap(): jspb.Map<string, number>;
-  clearFeaturesMap(): TimeSeriesProfile;
+  getFeatures(): TableView | undefined;
+  setFeatures(value?: TableView): TimeSeriesProfile;
+  hasFeatures(): boolean;
+  clearFeatures(): TimeSeriesProfile;
+
+  getDatasets(): TableView | undefined;
+  setDatasets(value?: TableView): TimeSeriesProfile;
+  hasDatasets(): boolean;
+  clearDatasets(): TimeSeriesProfile;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TimeSeriesProfile.AsObject;
@@ -240,7 +253,8 @@ export namespace TimeSeriesProfile {
     zivot?: ZivotAndrew.AsObject,
     kendall?: MannKendall.AsObject,
     dw?: DurbinWatson.AsObject,
-    featuresMap: Array<[string, number]>,
+    features?: TableView.AsObject,
+    datasets?: TableView.AsObject,
   }
 }
 

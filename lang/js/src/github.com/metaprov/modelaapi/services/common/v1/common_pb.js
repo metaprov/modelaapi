@@ -961,7 +961,8 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.toObject = f
     multiclassrocaucList: jspb.Message.toObjectList(msg.getMulticlassrocaucList(),
     proto.github.com.metaprov.modelaapi.services.common.v1.ROCCurve.toObject, includeInstance),
     multiclassprList: jspb.Message.toObjectList(msg.getMulticlassprList(),
-    proto.github.com.metaprov.modelaapi.services.common.v1.PrecisionRecallCurve.toObject, includeInstance)
+    proto.github.com.metaprov.modelaapi.services.common.v1.PrecisionRecallCurve.toObject, includeInstance),
+    groupforecasters: (f = msg.getGroupforecasters()) && proto.github.com.metaprov.modelaapi.services.common.v1.TableView.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1032,6 +1033,11 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.deserializeB
       var value = new proto.github.com.metaprov.modelaapi.services.common.v1.PrecisionRecallCurve;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.services.common.v1.PrecisionRecallCurve.deserializeBinaryFromReader);
       msg.addMulticlasspr(value);
+      break;
+    case 8:
+      var value = new proto.github.com.metaprov.modelaapi.services.common.v1.TableView;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.services.common.v1.TableView.deserializeBinaryFromReader);
+      msg.setGroupforecasters(value);
       break;
     default:
       reader.skipField();
@@ -1111,6 +1117,14 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.serializeBin
       7,
       f,
       proto.github.com.metaprov.modelaapi.services.common.v1.PrecisionRecallCurve.serializeBinaryToWriter
+    );
+  }
+  f = message.getGroupforecasters();
+  if (f != null) {
+    writer.writeMessage(
+      8,
+      f,
+      proto.github.com.metaprov.modelaapi.services.common.v1.TableView.serializeBinaryToWriter
     );
   }
 };
@@ -1341,6 +1355,43 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.prototype.ad
  */
 proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.prototype.clearMulticlassprList = function() {
   return this.setMulticlassprList([]);
+};
+
+
+/**
+ * optional TableView groupForecasters = 8;
+ * @return {?proto.github.com.metaprov.modelaapi.services.common.v1.TableView}
+ */
+proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.prototype.getGroupforecasters = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.services.common.v1.TableView} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.services.common.v1.TableView, 8));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.services.common.v1.TableView|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.prototype.setGroupforecasters = function(value) {
+  return jspb.Message.setWrapperField(this, 8, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.prototype.clearGroupforecasters = function() {
+  return this.setGroupforecasters(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.prototype.hasGroupforecasters = function() {
+  return jspb.Message.getField(this, 8) != null;
 };
 
 
@@ -2021,7 +2072,8 @@ proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesProfile.toObjec
     zivot: (f = msg.getZivot()) && proto.github.com.metaprov.modelaapi.services.common.v1.ZivotAndrew.toObject(includeInstance, f),
     kendall: (f = msg.getKendall()) && proto.github.com.metaprov.modelaapi.services.common.v1.MannKendall.toObject(includeInstance, f),
     dw: (f = msg.getDw()) && proto.github.com.metaprov.modelaapi.services.common.v1.DurbinWatson.toObject(includeInstance, f),
-    featuresMap: (f = msg.getFeaturesMap()) ? f.toObject(includeInstance, undefined) : []
+    features: (f = msg.getFeatures()) && proto.github.com.metaprov.modelaapi.services.common.v1.TableView.toObject(includeInstance, f),
+    datasets: (f = msg.getDatasets()) && proto.github.com.metaprov.modelaapi.services.common.v1.TableView.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2084,10 +2136,14 @@ proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesProfile.deseria
       msg.setDw(value);
       break;
     case 6:
-      var value = msg.getFeaturesMap();
-      reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readFloat, null, "", 0.0);
-         });
+      var value = new proto.github.com.metaprov.modelaapi.services.common.v1.TableView;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.services.common.v1.TableView.deserializeBinaryFromReader);
+      msg.setFeatures(value);
+      break;
+    case 7:
+      var value = new proto.github.com.metaprov.modelaapi.services.common.v1.TableView;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.services.common.v1.TableView.deserializeBinaryFromReader);
+      msg.setDatasets(value);
       break;
     default:
       reader.skipField();
@@ -2158,9 +2214,21 @@ proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesProfile.seriali
       proto.github.com.metaprov.modelaapi.services.common.v1.DurbinWatson.serializeBinaryToWriter
     );
   }
-  f = message.getFeaturesMap(true);
-  if (f && f.getLength() > 0) {
-    f.serializeBinary(6, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeFloat);
+  f = message.getFeatures();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      proto.github.com.metaprov.modelaapi.services.common.v1.TableView.serializeBinaryToWriter
+    );
+  }
+  f = message.getDatasets();
+  if (f != null) {
+    writer.writeMessage(
+      7,
+      f,
+      proto.github.com.metaprov.modelaapi.services.common.v1.TableView.serializeBinaryToWriter
+    );
   }
 };
 
@@ -2351,25 +2419,77 @@ proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesProfile.prototy
 
 
 /**
- * map<string, float> features = 6;
- * @param {boolean=} opt_noLazyCreate Do not create the map if
- * empty, instead returning `undefined`
- * @return {!jspb.Map<string,number>}
+ * optional TableView features = 6;
+ * @return {?proto.github.com.metaprov.modelaapi.services.common.v1.TableView}
  */
-proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesProfile.prototype.getFeaturesMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,number>} */ (
-      jspb.Message.getMapField(this, 6, opt_noLazyCreate,
-      null));
+proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesProfile.prototype.getFeatures = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.services.common.v1.TableView} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.services.common.v1.TableView, 6));
 };
 
 
 /**
- * Clears values from the map. The map will be non-null.
+ * @param {?proto.github.com.metaprov.modelaapi.services.common.v1.TableView|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesProfile} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesProfile.prototype.setFeatures = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesProfile} returns this
  */
-proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesProfile.prototype.clearFeaturesMap = function() {
-  this.getFeaturesMap().clear();
-  return this;};
+proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesProfile.prototype.clearFeatures = function() {
+  return this.setFeatures(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesProfile.prototype.hasFeatures = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional TableView datasets = 7;
+ * @return {?proto.github.com.metaprov.modelaapi.services.common.v1.TableView}
+ */
+proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesProfile.prototype.getDatasets = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.services.common.v1.TableView} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.services.common.v1.TableView, 7));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.services.common.v1.TableView|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesProfile} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesProfile.prototype.setDatasets = function(value) {
+  return jspb.Message.setWrapperField(this, 7, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesProfile} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesProfile.prototype.clearDatasets = function() {
+  return this.setDatasets(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesProfile.prototype.hasDatasets = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
 
 
 
@@ -6920,7 +7040,7 @@ proto.github.com.metaprov.modelaapi.services.common.v1.TableView.prototype.clear
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.services.common.v1.TableViewRow.repeatedFields_ = [1];
+proto.github.com.metaprov.modelaapi.services.common.v1.TableViewRow.repeatedFields_ = [2];
 
 
 
@@ -6953,7 +7073,7 @@ proto.github.com.metaprov.modelaapi.services.common.v1.TableViewRow.prototype.to
  */
 proto.github.com.metaprov.modelaapi.services.common.v1.TableViewRow.toObject = function(includeInstance, msg) {
   var f, obj = {
-    valuesList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+    valuesList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -6990,7 +7110,7 @@ proto.github.com.metaprov.modelaapi.services.common.v1.TableViewRow.deserializeB
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
+    case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.addValues(value);
       break;
@@ -7026,7 +7146,7 @@ proto.github.com.metaprov.modelaapi.services.common.v1.TableViewRow.serializeBin
   f = message.getValuesList();
   if (f.length > 0) {
     writer.writeRepeatedString(
-      1,
+      2,
       f
     );
   }
@@ -7034,11 +7154,11 @@ proto.github.com.metaprov.modelaapi.services.common.v1.TableViewRow.serializeBin
 
 
 /**
- * repeated string values = 1;
+ * repeated string values = 2;
  * @return {!Array<string>}
  */
 proto.github.com.metaprov.modelaapi.services.common.v1.TableViewRow.prototype.getValuesList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 1));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 2));
 };
 
 
@@ -7047,7 +7167,7 @@ proto.github.com.metaprov.modelaapi.services.common.v1.TableViewRow.prototype.ge
  * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.TableViewRow} returns this
  */
 proto.github.com.metaprov.modelaapi.services.common.v1.TableViewRow.prototype.setValuesList = function(value) {
-  return jspb.Message.setField(this, 1, value || []);
+  return jspb.Message.setField(this, 2, value || []);
 };
 
 
@@ -7057,7 +7177,7 @@ proto.github.com.metaprov.modelaapi.services.common.v1.TableViewRow.prototype.se
  * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.TableViewRow} returns this
  */
 proto.github.com.metaprov.modelaapi.services.common.v1.TableViewRow.prototype.addValues = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 1, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 2, value, opt_index);
 };
 
 

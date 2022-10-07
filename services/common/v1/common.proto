@@ -27,6 +27,7 @@ message ModelProfile {
   PrecisionRecallCurve pr = 5; // precision recall cureve
   repeated ROCCurve multiclassRocAuc = 6; // multi class roc curve
   repeated PrecisionRecallCurve multiclassPR = 7; // multi class pr curve
+  TableView groupForecasters = 8; // case of group time series model
 }
 
 message ROCCurve {
@@ -52,7 +53,9 @@ message TimeSeriesProfile {
     ZivotAndrew zivot = 3;
     MannKendall kendall = 4;
     DurbinWatson dw = 5;
-    map<string,float> features = 6;
+    TableView features = 6;
+    TableView datasets = 7;
+
 }
 
 // KPSS test
@@ -231,5 +234,5 @@ message TableView {
 }
 
 message TableViewRow {
-  repeated string values = 1;
+  repeated string values = 2;
 }
