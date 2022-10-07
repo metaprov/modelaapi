@@ -42,7 +42,6 @@ type DatasetServiceClient interface {
 	GetTables(ctx context.Context, in *GetTablesRequest, opts ...grpc.CallOption) (*GetTablesResponse, error)
 	ExecuteSql(ctx context.Context, in *ExecuteSqlRequest, opts ...grpc.CallOption) (*ExecuteSqlResponse, error)
 	GetAnomalies(ctx context.Context, in *GetAnomaliesRequest, opts ...grpc.CallOption) (*GetAnomaliesResponse, error)
-	GetGroupKeys(ctx context.Context, in *GetGroupKeysRequest, opts ...grpc.CallOption) (*GetGroupKeysResponse, error)
 }
 
 type datasetServiceClient struct {
@@ -197,15 +196,6 @@ func (c *datasetServiceClient) GetAnomalies(ctx context.Context, in *GetAnomalie
 	return out, nil
 }
 
-func (c *datasetServiceClient) GetGroupKeys(ctx context.Context, in *GetGroupKeysRequest, opts ...grpc.CallOption) (*GetGroupKeysResponse, error) {
-	out := new(GetGroupKeysResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/GetGroupKeys", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 // DatasetServiceServer is the server API for DatasetService service.
 // All implementations must embed UnimplementedDatasetServiceServer
 // for forward compatibility
@@ -230,7 +220,6 @@ type DatasetServiceServer interface {
 	GetTables(context.Context, *GetTablesRequest) (*GetTablesResponse, error)
 	ExecuteSql(context.Context, *ExecuteSqlRequest) (*ExecuteSqlResponse, error)
 	GetAnomalies(context.Context, *GetAnomaliesRequest) (*GetAnomaliesResponse, error)
-	GetGroupKeys(context.Context, *GetGroupKeysRequest) (*GetGroupKeysResponse, error)
 	mustEmbedUnimplementedDatasetServiceServer()
 }
 
@@ -285,9 +274,6 @@ func (UnimplementedDatasetServiceServer) ExecuteSql(context.Context, *ExecuteSql
 }
 func (UnimplementedDatasetServiceServer) GetAnomalies(context.Context, *GetAnomaliesRequest) (*GetAnomaliesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAnomalies not implemented")
-}
-func (UnimplementedDatasetServiceServer) GetGroupKeys(context.Context, *GetGroupKeysRequest) (*GetGroupKeysResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetGroupKeys not implemented")
 }
 func (UnimplementedDatasetServiceServer) mustEmbedUnimplementedDatasetServiceServer() {}
 
@@ -590,24 +576,6 @@ func _DatasetService_GetAnomalies_Handler(srv interface{}, ctx context.Context, 
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DatasetService_GetGroupKeys_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetGroupKeysRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DatasetServiceServer).GetGroupKeys(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/GetGroupKeys",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatasetServiceServer).GetGroupKeys(ctx, req.(*GetGroupKeysRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 // DatasetService_ServiceDesc is the grpc.ServiceDesc for DatasetService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -678,10 +646,6 @@ var DatasetService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetAnomalies",
 			Handler:    _DatasetService_GetAnomalies_Handler,
-		},
-		{
-			MethodName: "GetGroupKeys",
-			Handler:    _DatasetService_GetGroupKeys_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

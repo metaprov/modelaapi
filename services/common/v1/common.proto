@@ -13,8 +13,11 @@ message DatasetProfile {
   TableView    table = 7;
   string       hash = 8; // signature of the dataset profile.
   string       anomalyURI = 9;
-  TimeSeriesProfile ts = 10;
+  TableView features = 10;  // return the list of features per group. only for datasets of type group forecast
+  TableView groups = 11;  // return the list of group datasets in this dataset profile. only for datasets of type group forecast
+  OneTimeSeriesProfile groupTimeSeriesProfile = 12;// if the dataset is a group dataset series, this is one profile of a single time series.
 }
+
 
 /////////////////////////////////////////////////////////////////////////
 ///// Model profile
@@ -27,7 +30,7 @@ message ModelProfile {
   PrecisionRecallCurve pr = 5; // precision recall cureve
   repeated ROCCurve multiclassRocAuc = 6; // multi class roc curve
   repeated PrecisionRecallCurve multiclassPR = 7; // multi class pr curve
-  TableView groupForecasters = 8; // case of group time series model
+  TableView groups = 8; // return a list of group models. Only relevent for group forecast.
 }
 
 message ROCCurve {
@@ -47,15 +50,16 @@ message PrecisionRecallCurve {
 }
 
 
-message TimeSeriesProfile {
+message OneTimeSeriesProfile {
     KPSS kpss = 1;
     ADF  adf  = 2;
     ZivotAndrew zivot = 3;
     MannKendall kendall = 4;
     DurbinWatson dw = 5;
-    TableView features = 6;
-    TableView datasets = 7;
-
+    string key      = 6;
+    TableView series = 7; // the series itself
+    TableView forecast = 8; // the series itself    
+    repeated Plot plots = 9;
 }
 
 // KPSS test

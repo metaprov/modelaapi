@@ -36,10 +36,20 @@ export class DatasetProfile extends jspb.Message {
   getAnomalyuri(): string;
   setAnomalyuri(value: string): DatasetProfile;
 
-  getTs(): TimeSeriesProfile | undefined;
-  setTs(value?: TimeSeriesProfile): DatasetProfile;
-  hasTs(): boolean;
-  clearTs(): DatasetProfile;
+  getFeatures(): TableView | undefined;
+  setFeatures(value?: TableView): DatasetProfile;
+  hasFeatures(): boolean;
+  clearFeatures(): DatasetProfile;
+
+  getGroups(): TableView | undefined;
+  setGroups(value?: TableView): DatasetProfile;
+  hasGroups(): boolean;
+  clearGroups(): DatasetProfile;
+
+  getGrouptimeseriesprofile(): OneTimeSeriesProfile | undefined;
+  setGrouptimeseriesprofile(value?: OneTimeSeriesProfile): DatasetProfile;
+  hasGrouptimeseriesprofile(): boolean;
+  clearGrouptimeseriesprofile(): DatasetProfile;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DatasetProfile.AsObject;
@@ -60,7 +70,9 @@ export namespace DatasetProfile {
     table?: TableView.AsObject,
     hash: string,
     anomalyuri: string,
-    ts?: TimeSeriesProfile.AsObject,
+    features?: TableView.AsObject,
+    groups?: TableView.AsObject,
+    grouptimeseriesprofile?: OneTimeSeriesProfile.AsObject,
   }
 }
 
@@ -96,10 +108,10 @@ export class ModelProfile extends jspb.Message {
   clearMulticlassprList(): ModelProfile;
   addMulticlasspr(value?: PrecisionRecallCurve, index?: number): PrecisionRecallCurve;
 
-  getGroupforecasters(): TableView | undefined;
-  setGroupforecasters(value?: TableView): ModelProfile;
-  hasGroupforecasters(): boolean;
-  clearGroupforecasters(): ModelProfile;
+  getGroups(): TableView | undefined;
+  setGroups(value?: TableView): ModelProfile;
+  hasGroups(): boolean;
+  clearGroups(): ModelProfile;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelProfile.AsObject;
@@ -118,7 +130,7 @@ export namespace ModelProfile {
     pr?: PrecisionRecallCurve.AsObject,
     multiclassrocaucList: Array<ROCCurve.AsObject>,
     multiclassprList: Array<PrecisionRecallCurve.AsObject>,
-    groupforecasters?: TableView.AsObject,
+    groups?: TableView.AsObject,
   }
 }
 
@@ -202,59 +214,69 @@ export namespace PrecisionRecallCurve {
   }
 }
 
-export class TimeSeriesProfile extends jspb.Message {
+export class OneTimeSeriesProfile extends jspb.Message {
   getKpss(): KPSS | undefined;
-  setKpss(value?: KPSS): TimeSeriesProfile;
+  setKpss(value?: KPSS): OneTimeSeriesProfile;
   hasKpss(): boolean;
-  clearKpss(): TimeSeriesProfile;
+  clearKpss(): OneTimeSeriesProfile;
 
   getAdf(): ADF | undefined;
-  setAdf(value?: ADF): TimeSeriesProfile;
+  setAdf(value?: ADF): OneTimeSeriesProfile;
   hasAdf(): boolean;
-  clearAdf(): TimeSeriesProfile;
+  clearAdf(): OneTimeSeriesProfile;
 
   getZivot(): ZivotAndrew | undefined;
-  setZivot(value?: ZivotAndrew): TimeSeriesProfile;
+  setZivot(value?: ZivotAndrew): OneTimeSeriesProfile;
   hasZivot(): boolean;
-  clearZivot(): TimeSeriesProfile;
+  clearZivot(): OneTimeSeriesProfile;
 
   getKendall(): MannKendall | undefined;
-  setKendall(value?: MannKendall): TimeSeriesProfile;
+  setKendall(value?: MannKendall): OneTimeSeriesProfile;
   hasKendall(): boolean;
-  clearKendall(): TimeSeriesProfile;
+  clearKendall(): OneTimeSeriesProfile;
 
   getDw(): DurbinWatson | undefined;
-  setDw(value?: DurbinWatson): TimeSeriesProfile;
+  setDw(value?: DurbinWatson): OneTimeSeriesProfile;
   hasDw(): boolean;
-  clearDw(): TimeSeriesProfile;
+  clearDw(): OneTimeSeriesProfile;
 
-  getFeatures(): TableView | undefined;
-  setFeatures(value?: TableView): TimeSeriesProfile;
-  hasFeatures(): boolean;
-  clearFeatures(): TimeSeriesProfile;
+  getKey(): string;
+  setKey(value: string): OneTimeSeriesProfile;
 
-  getDatasets(): TableView | undefined;
-  setDatasets(value?: TableView): TimeSeriesProfile;
-  hasDatasets(): boolean;
-  clearDatasets(): TimeSeriesProfile;
+  getSeries(): TableView | undefined;
+  setSeries(value?: TableView): OneTimeSeriesProfile;
+  hasSeries(): boolean;
+  clearSeries(): OneTimeSeriesProfile;
+
+  getForecast(): TableView | undefined;
+  setForecast(value?: TableView): OneTimeSeriesProfile;
+  hasForecast(): boolean;
+  clearForecast(): OneTimeSeriesProfile;
+
+  getPlotsList(): Array<Plot>;
+  setPlotsList(value: Array<Plot>): OneTimeSeriesProfile;
+  clearPlotsList(): OneTimeSeriesProfile;
+  addPlots(value?: Plot, index?: number): Plot;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): TimeSeriesProfile.AsObject;
-  static toObject(includeInstance: boolean, msg: TimeSeriesProfile): TimeSeriesProfile.AsObject;
-  static serializeBinaryToWriter(message: TimeSeriesProfile, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): TimeSeriesProfile;
-  static deserializeBinaryFromReader(message: TimeSeriesProfile, reader: jspb.BinaryReader): TimeSeriesProfile;
+  toObject(includeInstance?: boolean): OneTimeSeriesProfile.AsObject;
+  static toObject(includeInstance: boolean, msg: OneTimeSeriesProfile): OneTimeSeriesProfile.AsObject;
+  static serializeBinaryToWriter(message: OneTimeSeriesProfile, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OneTimeSeriesProfile;
+  static deserializeBinaryFromReader(message: OneTimeSeriesProfile, reader: jspb.BinaryReader): OneTimeSeriesProfile;
 }
 
-export namespace TimeSeriesProfile {
+export namespace OneTimeSeriesProfile {
   export type AsObject = {
     kpss?: KPSS.AsObject,
     adf?: ADF.AsObject,
     zivot?: ZivotAndrew.AsObject,
     kendall?: MannKendall.AsObject,
     dw?: DurbinWatson.AsObject,
-    features?: TableView.AsObject,
-    datasets?: TableView.AsObject,
+    key: string,
+    series?: TableView.AsObject,
+    forecast?: TableView.AsObject,
+    plotsList: Array<Plot.AsObject>,
   }
 }
 
