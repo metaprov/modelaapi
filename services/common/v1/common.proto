@@ -15,7 +15,7 @@ message DatasetProfile {
   string       anomalyURI = 9;
   TableView features = 10;  // return the list of features per group. only for datasets of type group forecast
   TableView groups = 11;  // return the list of group datasets in this dataset profile. only for datasets of type group forecast
-  GroupTimeSeriesProfile group = 12;// if the dataset is a group dataset series, this is one profile of a single time series.
+  TimeSeriesProfile ts = 12;// if the dataset is a group dataset series, this is one profile of a single time series.
 }
 
 
@@ -52,7 +52,8 @@ message PrecisionRecallCurve {
 }
 
 
-message GroupTimeSeriesProfile {
+// Profile of time series datasets.
+message TimeSeriesProfile {
     KPSS kpss = 1;
     ADF  adf  = 2;
     ZivotAndrew zivot = 3;
@@ -66,7 +67,7 @@ message GroupTimeSeriesProfile {
 // KPSS test
 message KPSS {
   float kpss_stat = 1;
-  float p_value = 2;
+  float pvalue = 2;
   float lags = 3;
   map<string,float> crit = 4;
 }
@@ -77,6 +78,7 @@ message ADF {
   float pvalue = 2;
   int32 usedlag = 3;
   int32 nobs = 4;
+  map<string,float> crit = 5;
 
 }
 
@@ -90,7 +92,7 @@ message ZivotAndrew {
 }
 
 message MannKendall {
-  float trend = 1;
+  string trend = 1;
   float h = 2;
   float p = 3;
   float z = 4;

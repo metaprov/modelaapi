@@ -46,10 +46,10 @@ export class DatasetProfile extends jspb.Message {
   hasGroups(): boolean;
   clearGroups(): DatasetProfile;
 
-  getGroup(): GroupTimeSeriesProfile | undefined;
-  setGroup(value?: GroupTimeSeriesProfile): DatasetProfile;
-  hasGroup(): boolean;
-  clearGroup(): DatasetProfile;
+  getTs(): TimeSeriesProfile | undefined;
+  setTs(value?: TimeSeriesProfile): DatasetProfile;
+  hasTs(): boolean;
+  clearTs(): DatasetProfile;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DatasetProfile.AsObject;
@@ -72,7 +72,7 @@ export namespace DatasetProfile {
     anomalyuri: string,
     features?: TableView.AsObject,
     groups?: TableView.AsObject,
-    group?: GroupTimeSeriesProfile.AsObject,
+    ts?: TimeSeriesProfile.AsObject,
   }
 }
 
@@ -220,54 +220,54 @@ export namespace PrecisionRecallCurve {
   }
 }
 
-export class GroupTimeSeriesProfile extends jspb.Message {
+export class TimeSeriesProfile extends jspb.Message {
   getKpss(): KPSS | undefined;
-  setKpss(value?: KPSS): GroupTimeSeriesProfile;
+  setKpss(value?: KPSS): TimeSeriesProfile;
   hasKpss(): boolean;
-  clearKpss(): GroupTimeSeriesProfile;
+  clearKpss(): TimeSeriesProfile;
 
   getAdf(): ADF | undefined;
-  setAdf(value?: ADF): GroupTimeSeriesProfile;
+  setAdf(value?: ADF): TimeSeriesProfile;
   hasAdf(): boolean;
-  clearAdf(): GroupTimeSeriesProfile;
+  clearAdf(): TimeSeriesProfile;
 
   getZivot(): ZivotAndrew | undefined;
-  setZivot(value?: ZivotAndrew): GroupTimeSeriesProfile;
+  setZivot(value?: ZivotAndrew): TimeSeriesProfile;
   hasZivot(): boolean;
-  clearZivot(): GroupTimeSeriesProfile;
+  clearZivot(): TimeSeriesProfile;
 
   getKendall(): MannKendall | undefined;
-  setKendall(value?: MannKendall): GroupTimeSeriesProfile;
+  setKendall(value?: MannKendall): TimeSeriesProfile;
   hasKendall(): boolean;
-  clearKendall(): GroupTimeSeriesProfile;
+  clearKendall(): TimeSeriesProfile;
 
   getDw(): DurbinWatson | undefined;
-  setDw(value?: DurbinWatson): GroupTimeSeriesProfile;
+  setDw(value?: DurbinWatson): TimeSeriesProfile;
   hasDw(): boolean;
-  clearDw(): GroupTimeSeriesProfile;
+  clearDw(): TimeSeriesProfile;
 
   getKey(): string;
-  setKey(value: string): GroupTimeSeriesProfile;
+  setKey(value: string): TimeSeriesProfile;
 
   getSeries(): TableView | undefined;
-  setSeries(value?: TableView): GroupTimeSeriesProfile;
+  setSeries(value?: TableView): TimeSeriesProfile;
   hasSeries(): boolean;
-  clearSeries(): GroupTimeSeriesProfile;
+  clearSeries(): TimeSeriesProfile;
 
   getPlotsList(): Array<Plot>;
-  setPlotsList(value: Array<Plot>): GroupTimeSeriesProfile;
-  clearPlotsList(): GroupTimeSeriesProfile;
+  setPlotsList(value: Array<Plot>): TimeSeriesProfile;
+  clearPlotsList(): TimeSeriesProfile;
   addPlots(value?: Plot, index?: number): Plot;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GroupTimeSeriesProfile.AsObject;
-  static toObject(includeInstance: boolean, msg: GroupTimeSeriesProfile): GroupTimeSeriesProfile.AsObject;
-  static serializeBinaryToWriter(message: GroupTimeSeriesProfile, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GroupTimeSeriesProfile;
-  static deserializeBinaryFromReader(message: GroupTimeSeriesProfile, reader: jspb.BinaryReader): GroupTimeSeriesProfile;
+  toObject(includeInstance?: boolean): TimeSeriesProfile.AsObject;
+  static toObject(includeInstance: boolean, msg: TimeSeriesProfile): TimeSeriesProfile.AsObject;
+  static serializeBinaryToWriter(message: TimeSeriesProfile, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TimeSeriesProfile;
+  static deserializeBinaryFromReader(message: TimeSeriesProfile, reader: jspb.BinaryReader): TimeSeriesProfile;
 }
 
-export namespace GroupTimeSeriesProfile {
+export namespace TimeSeriesProfile {
   export type AsObject = {
     kpss?: KPSS.AsObject,
     adf?: ADF.AsObject,
@@ -284,8 +284,8 @@ export class KPSS extends jspb.Message {
   getKpssStat(): number;
   setKpssStat(value: number): KPSS;
 
-  getPValue(): number;
-  setPValue(value: number): KPSS;
+  getPvalue(): number;
+  setPvalue(value: number): KPSS;
 
   getLags(): number;
   setLags(value: number): KPSS;
@@ -304,7 +304,7 @@ export class KPSS extends jspb.Message {
 export namespace KPSS {
   export type AsObject = {
     kpssStat: number,
-    pValue: number,
+    pvalue: number,
     lags: number,
     critMap: Array<[string, number]>,
   }
@@ -323,6 +323,9 @@ export class ADF extends jspb.Message {
   getNobs(): number;
   setNobs(value: number): ADF;
 
+  getCritMap(): jspb.Map<string, number>;
+  clearCritMap(): ADF;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ADF.AsObject;
   static toObject(includeInstance: boolean, msg: ADF): ADF.AsObject;
@@ -337,6 +340,7 @@ export namespace ADF {
     pvalue: number,
     usedlag: number,
     nobs: number,
+    critMap: Array<[string, number]>,
   }
 }
 
@@ -375,8 +379,8 @@ export namespace ZivotAndrew {
 }
 
 export class MannKendall extends jspb.Message {
-  getTrend(): number;
-  setTrend(value: number): MannKendall;
+  getTrend(): string;
+  setTrend(value: string): MannKendall;
 
   getH(): number;
   setH(value: number): MannKendall;
@@ -412,7 +416,7 @@ export class MannKendall extends jspb.Message {
 
 export namespace MannKendall {
   export type AsObject = {
-    trend: number,
+    trend: string,
     h: number,
     p: number,
     z: number,
