@@ -46,10 +46,10 @@ export class DatasetProfile extends jspb.Message {
   hasGroups(): boolean;
   clearGroups(): DatasetProfile;
 
-  getGrouptimeseriesprofile(): OneTimeSeriesProfile | undefined;
-  setGrouptimeseriesprofile(value?: OneTimeSeriesProfile): DatasetProfile;
-  hasGrouptimeseriesprofile(): boolean;
-  clearGrouptimeseriesprofile(): DatasetProfile;
+  getGroup(): GroupTimeSeriesProfile | undefined;
+  setGroup(value?: GroupTimeSeriesProfile): DatasetProfile;
+  hasGroup(): boolean;
+  clearGroup(): DatasetProfile;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DatasetProfile.AsObject;
@@ -72,7 +72,7 @@ export namespace DatasetProfile {
     anomalyuri: string,
     features?: TableView.AsObject,
     groups?: TableView.AsObject,
-    grouptimeseriesprofile?: OneTimeSeriesProfile.AsObject,
+    group?: GroupTimeSeriesProfile.AsObject,
   }
 }
 
@@ -220,54 +220,54 @@ export namespace PrecisionRecallCurve {
   }
 }
 
-export class OneTimeSeriesProfile extends jspb.Message {
+export class GroupTimeSeriesProfile extends jspb.Message {
   getKpss(): KPSS | undefined;
-  setKpss(value?: KPSS): OneTimeSeriesProfile;
+  setKpss(value?: KPSS): GroupTimeSeriesProfile;
   hasKpss(): boolean;
-  clearKpss(): OneTimeSeriesProfile;
+  clearKpss(): GroupTimeSeriesProfile;
 
   getAdf(): ADF | undefined;
-  setAdf(value?: ADF): OneTimeSeriesProfile;
+  setAdf(value?: ADF): GroupTimeSeriesProfile;
   hasAdf(): boolean;
-  clearAdf(): OneTimeSeriesProfile;
+  clearAdf(): GroupTimeSeriesProfile;
 
   getZivot(): ZivotAndrew | undefined;
-  setZivot(value?: ZivotAndrew): OneTimeSeriesProfile;
+  setZivot(value?: ZivotAndrew): GroupTimeSeriesProfile;
   hasZivot(): boolean;
-  clearZivot(): OneTimeSeriesProfile;
+  clearZivot(): GroupTimeSeriesProfile;
 
   getKendall(): MannKendall | undefined;
-  setKendall(value?: MannKendall): OneTimeSeriesProfile;
+  setKendall(value?: MannKendall): GroupTimeSeriesProfile;
   hasKendall(): boolean;
-  clearKendall(): OneTimeSeriesProfile;
+  clearKendall(): GroupTimeSeriesProfile;
 
   getDw(): DurbinWatson | undefined;
-  setDw(value?: DurbinWatson): OneTimeSeriesProfile;
+  setDw(value?: DurbinWatson): GroupTimeSeriesProfile;
   hasDw(): boolean;
-  clearDw(): OneTimeSeriesProfile;
+  clearDw(): GroupTimeSeriesProfile;
 
   getKey(): string;
-  setKey(value: string): OneTimeSeriesProfile;
+  setKey(value: string): GroupTimeSeriesProfile;
 
   getSeries(): TableView | undefined;
-  setSeries(value?: TableView): OneTimeSeriesProfile;
+  setSeries(value?: TableView): GroupTimeSeriesProfile;
   hasSeries(): boolean;
-  clearSeries(): OneTimeSeriesProfile;
+  clearSeries(): GroupTimeSeriesProfile;
 
   getPlotsList(): Array<Plot>;
-  setPlotsList(value: Array<Plot>): OneTimeSeriesProfile;
-  clearPlotsList(): OneTimeSeriesProfile;
+  setPlotsList(value: Array<Plot>): GroupTimeSeriesProfile;
+  clearPlotsList(): GroupTimeSeriesProfile;
   addPlots(value?: Plot, index?: number): Plot;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): OneTimeSeriesProfile.AsObject;
-  static toObject(includeInstance: boolean, msg: OneTimeSeriesProfile): OneTimeSeriesProfile.AsObject;
-  static serializeBinaryToWriter(message: OneTimeSeriesProfile, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): OneTimeSeriesProfile;
-  static deserializeBinaryFromReader(message: OneTimeSeriesProfile, reader: jspb.BinaryReader): OneTimeSeriesProfile;
+  toObject(includeInstance?: boolean): GroupTimeSeriesProfile.AsObject;
+  static toObject(includeInstance: boolean, msg: GroupTimeSeriesProfile): GroupTimeSeriesProfile.AsObject;
+  static serializeBinaryToWriter(message: GroupTimeSeriesProfile, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GroupTimeSeriesProfile;
+  static deserializeBinaryFromReader(message: GroupTimeSeriesProfile, reader: jspb.BinaryReader): GroupTimeSeriesProfile;
 }
 
-export namespace OneTimeSeriesProfile {
+export namespace GroupTimeSeriesProfile {
   export type AsObject = {
     kpss?: KPSS.AsObject,
     adf?: ADF.AsObject,

@@ -15,7 +15,7 @@ message DatasetProfile {
   string       anomalyURI = 9;
   TableView features = 10;  // return the list of features per group. only for datasets of type group forecast
   TableView groups = 11;  // return the list of group datasets in this dataset profile. only for datasets of type group forecast
-  OneTimeSeriesProfile groupTimeSeriesProfile = 12;// if the dataset is a group dataset series, this is one profile of a single time series.
+  GroupTimeSeriesProfile group = 12;// if the dataset is a group dataset series, this is one profile of a single time series.
 }
 
 
@@ -52,7 +52,7 @@ message PrecisionRecallCurve {
 }
 
 
-message OneTimeSeriesProfile {
+message GroupTimeSeriesProfile {
     KPSS kpss = 1;
     ADF  adf  = 2;
     ZivotAndrew zivot = 3;
@@ -60,7 +60,7 @@ message OneTimeSeriesProfile {
     DurbinWatson dw = 5;
     string key      = 6;
     TableView series = 7; // the series itself
-    repeated Plot plots = 8;
+    repeated Plot plots = 8; // the single group plots.
 }
 
 // KPSS test
