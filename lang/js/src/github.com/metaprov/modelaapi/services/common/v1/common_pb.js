@@ -1065,7 +1065,10 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.toObject = f
     multiclassprList: jspb.Message.toObjectList(msg.getMulticlassprList(),
     proto.github.com.metaprov.modelaapi.services.common.v1.PrecisionRecallCurve.toObject, includeInstance),
     groups: (f = msg.getGroups()) && proto.github.com.metaprov.modelaapi.services.common.v1.TableView.toObject(includeInstance, f),
-    forecast: (f = msg.getForecast()) && proto.github.com.metaprov.modelaapi.services.common.v1.TableView.toObject(includeInstance, f)
+    historical: (f = msg.getHistorical()) && proto.github.com.metaprov.modelaapi.services.common.v1.TableView.toObject(includeInstance, f),
+    forecast: (f = msg.getForecast()) && proto.github.com.metaprov.modelaapi.services.common.v1.TableView.toObject(includeInstance, f),
+    arima: (f = msg.getArima()) && proto.github.com.metaprov.modelaapi.services.common.v1.TableView.toObject(includeInstance, f),
+    prophet: (f = msg.getProphet()) && proto.github.com.metaprov.modelaapi.services.common.v1.TableView.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1142,10 +1145,25 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.deserializeB
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.services.common.v1.TableView.deserializeBinaryFromReader);
       msg.setGroups(value);
       break;
+    case 9:
+      var value = new proto.github.com.metaprov.modelaapi.services.common.v1.TableView;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.services.common.v1.TableView.deserializeBinaryFromReader);
+      msg.setHistorical(value);
+      break;
     case 10:
       var value = new proto.github.com.metaprov.modelaapi.services.common.v1.TableView;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.services.common.v1.TableView.deserializeBinaryFromReader);
       msg.setForecast(value);
+      break;
+    case 11:
+      var value = new proto.github.com.metaprov.modelaapi.services.common.v1.TableView;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.services.common.v1.TableView.deserializeBinaryFromReader);
+      msg.setArima(value);
+      break;
+    case 12:
+      var value = new proto.github.com.metaprov.modelaapi.services.common.v1.TableView;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.services.common.v1.TableView.deserializeBinaryFromReader);
+      msg.setProphet(value);
       break;
     default:
       reader.skipField();
@@ -1235,10 +1253,34 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.serializeBin
       proto.github.com.metaprov.modelaapi.services.common.v1.TableView.serializeBinaryToWriter
     );
   }
+  f = message.getHistorical();
+  if (f != null) {
+    writer.writeMessage(
+      9,
+      f,
+      proto.github.com.metaprov.modelaapi.services.common.v1.TableView.serializeBinaryToWriter
+    );
+  }
   f = message.getForecast();
   if (f != null) {
     writer.writeMessage(
       10,
+      f,
+      proto.github.com.metaprov.modelaapi.services.common.v1.TableView.serializeBinaryToWriter
+    );
+  }
+  f = message.getArima();
+  if (f != null) {
+    writer.writeMessage(
+      11,
+      f,
+      proto.github.com.metaprov.modelaapi.services.common.v1.TableView.serializeBinaryToWriter
+    );
+  }
+  f = message.getProphet();
+  if (f != null) {
+    writer.writeMessage(
+      12,
       f,
       proto.github.com.metaprov.modelaapi.services.common.v1.TableView.serializeBinaryToWriter
     );
@@ -1512,6 +1554,43 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.prototype.ha
 
 
 /**
+ * optional TableView historical = 9;
+ * @return {?proto.github.com.metaprov.modelaapi.services.common.v1.TableView}
+ */
+proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.prototype.getHistorical = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.services.common.v1.TableView} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.services.common.v1.TableView, 9));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.services.common.v1.TableView|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.prototype.setHistorical = function(value) {
+  return jspb.Message.setWrapperField(this, 9, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.prototype.clearHistorical = function() {
+  return this.setHistorical(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.prototype.hasHistorical = function() {
+  return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
  * optional TableView forecast = 10;
  * @return {?proto.github.com.metaprov.modelaapi.services.common.v1.TableView}
  */
@@ -1545,6 +1624,80 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.prototype.cl
  */
 proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.prototype.hasForecast = function() {
   return jspb.Message.getField(this, 10) != null;
+};
+
+
+/**
+ * optional TableView arima = 11;
+ * @return {?proto.github.com.metaprov.modelaapi.services.common.v1.TableView}
+ */
+proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.prototype.getArima = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.services.common.v1.TableView} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.services.common.v1.TableView, 11));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.services.common.v1.TableView|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.prototype.setArima = function(value) {
+  return jspb.Message.setWrapperField(this, 11, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.prototype.clearArima = function() {
+  return this.setArima(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.prototype.hasArima = function() {
+  return jspb.Message.getField(this, 11) != null;
+};
+
+
+/**
+ * optional TableView prophet = 12;
+ * @return {?proto.github.com.metaprov.modelaapi.services.common.v1.TableView}
+ */
+proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.prototype.getProphet = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.services.common.v1.TableView} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.services.common.v1.TableView, 12));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.services.common.v1.TableView|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.prototype.setProphet = function(value) {
+  return jspb.Message.setWrapperField(this, 12, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.prototype.clearProphet = function() {
+  return this.setProphet(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.prototype.hasProphet = function() {
+  return jspb.Message.getField(this, 12) != null;
 };
 
 

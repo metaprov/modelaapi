@@ -113,10 +113,25 @@ export class ModelProfile extends jspb.Message {
   hasGroups(): boolean;
   clearGroups(): ModelProfile;
 
+  getHistorical(): TableView | undefined;
+  setHistorical(value?: TableView): ModelProfile;
+  hasHistorical(): boolean;
+  clearHistorical(): ModelProfile;
+
   getForecast(): TableView | undefined;
   setForecast(value?: TableView): ModelProfile;
   hasForecast(): boolean;
   clearForecast(): ModelProfile;
+
+  getArima(): TableView | undefined;
+  setArima(value?: TableView): ModelProfile;
+  hasArima(): boolean;
+  clearArima(): ModelProfile;
+
+  getProphet(): TableView | undefined;
+  setProphet(value?: TableView): ModelProfile;
+  hasProphet(): boolean;
+  clearProphet(): ModelProfile;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelProfile.AsObject;
@@ -136,7 +151,10 @@ export namespace ModelProfile {
     multiclassrocaucList: Array<ROCCurve.AsObject>,
     multiclassprList: Array<PrecisionRecallCurve.AsObject>,
     groups?: TableView.AsObject,
+    historical?: TableView.AsObject,
     forecast?: TableView.AsObject,
+    arima?: TableView.AsObject,
+    prophet?: TableView.AsObject,
   }
 }
 

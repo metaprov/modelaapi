@@ -25,14 +25,16 @@ message DatasetProfile {
 message ModelProfile {
   string name = 1;
   repeated Plot plots = 2;
-  map<string, float> importance = 3; // hold the feature importance. only relevent for classification
-  ROCCurve rocauc = 4; // roc auc curve . only relevent for classification
-  PrecisionRecallCurve pr = 5; // precision recall cureve. only relevent for classification
-  repeated ROCCurve multiclassRocAuc = 6; // multi class roc curve.  only relevent for classification
-  repeated PrecisionRecallCurve multiclassPR = 7; // multi class pr curve /. only relevent for classification
-  TableView groups = 8; // return a list of group models and the mertric for each group. Only relevent for regular model of type group
-  TableView forecast = 10; // return the ts forecast
-
+  map<string, float> importance = 3; // hold the feature importance. only relevant for classification
+  ROCCurve rocauc = 4; // roc auc curve . only relevant for classification
+  PrecisionRecallCurve pr = 5; // precision recall curve. only relevant for classification
+  repeated ROCCurve multiclassRocAuc = 6; // multi class roc curve.  only relevant for classification
+  repeated PrecisionRecallCurve multiclassPR = 7; // multi class pr curve /. only relevant for classification
+  TableView groups = 8; // return a list of group models and the metrics for each group. Only relevant for regular model of type group
+  TableView historical = 9; // the historical data
+  TableView forecast = 10; // the greykite forecast
+  TableView arima = 11; // the arima forecast
+  TableView prophet = 12; // the prophet forecast
 }
 
 message ROCCurve {
