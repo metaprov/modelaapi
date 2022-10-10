@@ -825,7 +825,7 @@ func (dataset *Dataset) GroupProfileFolder() string {
 }
 
 func (dataset *Dataset) GroupReportFile() string {
-	return dataset.GroupFolder() + "/" + dataset.ReportName()
+	return dataset.GroupFolder() + "/" + dataset.ReportName() + ".pdf"
 }
 
 func (dataset *Dataset) GroupForecastFile() string {
