@@ -135,7 +135,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesProfile = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesProfile.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesProfile, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -2189,13 +2189,6 @@ proto.github.com.metaprov.modelaapi.services.common.v1.PrecisionRecallCurve.prot
 
 
 
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesProfile.repeatedFields_ = [8];
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -2233,9 +2226,7 @@ proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesProfile.toObjec
     kendall: (f = msg.getKendall()) && proto.github.com.metaprov.modelaapi.services.common.v1.MannKendall.toObject(includeInstance, f),
     dw: (f = msg.getDw()) && proto.github.com.metaprov.modelaapi.services.common.v1.DurbinWatson.toObject(includeInstance, f),
     key: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    series: (f = msg.getSeries()) && proto.github.com.metaprov.modelaapi.services.common.v1.TableView.toObject(includeInstance, f),
-    plotsList: jspb.Message.toObjectList(msg.getPlotsList(),
-    proto.github.com.metaprov.modelaapi.services.common.v1.Plot.toObject, includeInstance)
+    series: (f = msg.getSeries()) && proto.github.com.metaprov.modelaapi.services.common.v1.TableView.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2305,11 +2296,6 @@ proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesProfile.deseria
       var value = new proto.github.com.metaprov.modelaapi.services.common.v1.TableView;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.services.common.v1.TableView.deserializeBinaryFromReader);
       msg.setSeries(value);
-      break;
-    case 8:
-      var value = new proto.github.com.metaprov.modelaapi.services.common.v1.Plot;
-      reader.readMessage(value,proto.github.com.metaprov.modelaapi.services.common.v1.Plot.deserializeBinaryFromReader);
-      msg.addPlots(value);
       break;
     default:
       reader.skipField();
@@ -2393,14 +2379,6 @@ proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesProfile.seriali
       7,
       f,
       proto.github.com.metaprov.modelaapi.services.common.v1.TableView.serializeBinaryToWriter
-    );
-  }
-  f = message.getPlotsList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      8,
-      f,
-      proto.github.com.metaprov.modelaapi.services.common.v1.Plot.serializeBinaryToWriter
     );
   }
 };
@@ -2643,44 +2621,6 @@ proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesProfile.prototy
  */
 proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesProfile.prototype.hasSeries = function() {
   return jspb.Message.getField(this, 7) != null;
-};
-
-
-/**
- * repeated Plot plots = 8;
- * @return {!Array<!proto.github.com.metaprov.modelaapi.services.common.v1.Plot>}
- */
-proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesProfile.prototype.getPlotsList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.services.common.v1.Plot>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.services.common.v1.Plot, 8));
-};
-
-
-/**
- * @param {!Array<!proto.github.com.metaprov.modelaapi.services.common.v1.Plot>} value
- * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesProfile} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesProfile.prototype.setPlotsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 8, value);
-};
-
-
-/**
- * @param {!proto.github.com.metaprov.modelaapi.services.common.v1.Plot=} opt_value
- * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.Plot}
- */
-proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesProfile.prototype.addPlots = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 8, opt_value, proto.github.com.metaprov.modelaapi.services.common.v1.Plot, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesProfile} returns this
- */
-proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesProfile.prototype.clearPlotsList = function() {
-  return this.setPlotsList([]);
 };
 
 

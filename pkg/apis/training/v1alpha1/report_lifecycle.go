@@ -121,7 +121,8 @@ func (report *Report) IsDatasetReport() bool {
 	return *report.Spec.ReportType == ClassificationDatasetReport ||
 		*report.Spec.ReportType == RegressionDatasetReport ||
 		*report.Spec.ReportType == TextClassificationDatasetReport ||
-		*report.Spec.ReportType == ForecastDatasetReport
+		*report.Spec.ReportType == ForecastDatasetReport ||
+		*report.Spec.ReportType == GroupTimeSeriesDatasetReport
 }
 
 func (report *Report) IsStudyReport() bool {
@@ -138,7 +139,8 @@ func (report *Report) IsModelReport() bool {
 		*report.Spec.ReportType == ForecastModelReport ||
 		*report.Spec.ReportType == MultiClassificationModelReport ||
 		*report.Spec.ReportType == TextClassificationModelReport ||
-		*report.Spec.ReportType == RegressionModelReport
+		*report.Spec.ReportType == RegressionModelReport ||
+		*report.Spec.ReportType == GroupTimeSeriesModelReport
 }
 
 func (report *Report) Age() string {

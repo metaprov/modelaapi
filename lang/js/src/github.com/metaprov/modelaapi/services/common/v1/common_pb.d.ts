@@ -254,11 +254,6 @@ export class TimeSeriesProfile extends jspb.Message {
   hasSeries(): boolean;
   clearSeries(): TimeSeriesProfile;
 
-  getPlotsList(): Array<Plot>;
-  setPlotsList(value: Array<Plot>): TimeSeriesProfile;
-  clearPlotsList(): TimeSeriesProfile;
-  addPlots(value?: Plot, index?: number): Plot;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TimeSeriesProfile.AsObject;
   static toObject(includeInstance: boolean, msg: TimeSeriesProfile): TimeSeriesProfile.AsObject;
@@ -276,7 +271,6 @@ export namespace TimeSeriesProfile {
     dw?: DurbinWatson.AsObject,
     key: string,
     series?: TableView.AsObject,
-    plotsList: Array<Plot.AsObject>,
   }
 }
 

@@ -61,7 +61,6 @@ message TimeSeriesProfile {
     DurbinWatson dw = 5;
     string key      = 6;
     TableView series = 7; // the series itself
-    repeated Plot plots = 8; // the single group plots.
 }
 
 // KPSS test
