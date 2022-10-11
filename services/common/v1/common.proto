@@ -30,12 +30,21 @@ message ModelProfile {
   PrecisionRecallCurve pr = 5; // precision recall curve. only relevant for classification
   repeated ROCCurve multiclassRocAuc = 6; // multi class roc curve.  only relevant for classification
   repeated PrecisionRecallCurve multiclassPR = 7; // multi class pr curve /. only relevant for classification
-  TableView groups = 8; // return a list of group models and the metrics for each group. Only relevant for regular model of type group
-  TableView historical = 9; // the historical data
-  TableView forecast = 10; // the greykite forecast
-  TableView arima = 11; // the arima forecast
-  TableView prophet = 12; // the prophet forecast
+  repeated TimeSeriesModelProfile timeSeriesProfiles = 8;
 }
+
+message TimeSeriesModelProfile {
+  string algorithm = 1;
+  TableView series = 2;
+  TableView timeStat = 3; // statistics about the time column
+  TableView valueStat = 4; // statistics about the value column
+  TableView cv = 5; // cross validation result
+  TableView forecast = 6;
+  TableView metrics = 7;
+  TableView changePoints = 8;
+  repeated Plot plots = 9; // plots for this time series.
+}
+
 
 message ROCCurve {
   string classname = 1;

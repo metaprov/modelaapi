@@ -108,30 +108,10 @@ export class ModelProfile extends jspb.Message {
   clearMulticlassprList(): ModelProfile;
   addMulticlasspr(value?: PrecisionRecallCurve, index?: number): PrecisionRecallCurve;
 
-  getGroups(): TableView | undefined;
-  setGroups(value?: TableView): ModelProfile;
-  hasGroups(): boolean;
-  clearGroups(): ModelProfile;
-
-  getHistorical(): TableView | undefined;
-  setHistorical(value?: TableView): ModelProfile;
-  hasHistorical(): boolean;
-  clearHistorical(): ModelProfile;
-
-  getForecast(): TableView | undefined;
-  setForecast(value?: TableView): ModelProfile;
-  hasForecast(): boolean;
-  clearForecast(): ModelProfile;
-
-  getArima(): TableView | undefined;
-  setArima(value?: TableView): ModelProfile;
-  hasArima(): boolean;
-  clearArima(): ModelProfile;
-
-  getProphet(): TableView | undefined;
-  setProphet(value?: TableView): ModelProfile;
-  hasProphet(): boolean;
-  clearProphet(): ModelProfile;
+  getTimeseriesprofilesList(): Array<TimeSeriesModelProfile>;
+  setTimeseriesprofilesList(value: Array<TimeSeriesModelProfile>): ModelProfile;
+  clearTimeseriesprofilesList(): ModelProfile;
+  addTimeseriesprofiles(value?: TimeSeriesModelProfile, index?: number): TimeSeriesModelProfile;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelProfile.AsObject;
@@ -150,11 +130,73 @@ export namespace ModelProfile {
     pr?: PrecisionRecallCurve.AsObject,
     multiclassrocaucList: Array<ROCCurve.AsObject>,
     multiclassprList: Array<PrecisionRecallCurve.AsObject>,
-    groups?: TableView.AsObject,
-    historical?: TableView.AsObject,
+    timeseriesprofilesList: Array<TimeSeriesModelProfile.AsObject>,
+  }
+}
+
+export class TimeSeriesModelProfile extends jspb.Message {
+  getAlgorithm(): string;
+  setAlgorithm(value: string): TimeSeriesModelProfile;
+
+  getSeries(): TableView | undefined;
+  setSeries(value?: TableView): TimeSeriesModelProfile;
+  hasSeries(): boolean;
+  clearSeries(): TimeSeriesModelProfile;
+
+  getTimestat(): TableView | undefined;
+  setTimestat(value?: TableView): TimeSeriesModelProfile;
+  hasTimestat(): boolean;
+  clearTimestat(): TimeSeriesModelProfile;
+
+  getValuestat(): TableView | undefined;
+  setValuestat(value?: TableView): TimeSeriesModelProfile;
+  hasValuestat(): boolean;
+  clearValuestat(): TimeSeriesModelProfile;
+
+  getCv(): TableView | undefined;
+  setCv(value?: TableView): TimeSeriesModelProfile;
+  hasCv(): boolean;
+  clearCv(): TimeSeriesModelProfile;
+
+  getForecast(): TableView | undefined;
+  setForecast(value?: TableView): TimeSeriesModelProfile;
+  hasForecast(): boolean;
+  clearForecast(): TimeSeriesModelProfile;
+
+  getMetrics(): TableView | undefined;
+  setMetrics(value?: TableView): TimeSeriesModelProfile;
+  hasMetrics(): boolean;
+  clearMetrics(): TimeSeriesModelProfile;
+
+  getChangepoints(): TableView | undefined;
+  setChangepoints(value?: TableView): TimeSeriesModelProfile;
+  hasChangepoints(): boolean;
+  clearChangepoints(): TimeSeriesModelProfile;
+
+  getPlotsList(): Array<Plot>;
+  setPlotsList(value: Array<Plot>): TimeSeriesModelProfile;
+  clearPlotsList(): TimeSeriesModelProfile;
+  addPlots(value?: Plot, index?: number): Plot;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TimeSeriesModelProfile.AsObject;
+  static toObject(includeInstance: boolean, msg: TimeSeriesModelProfile): TimeSeriesModelProfile.AsObject;
+  static serializeBinaryToWriter(message: TimeSeriesModelProfile, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TimeSeriesModelProfile;
+  static deserializeBinaryFromReader(message: TimeSeriesModelProfile, reader: jspb.BinaryReader): TimeSeriesModelProfile;
+}
+
+export namespace TimeSeriesModelProfile {
+  export type AsObject = {
+    algorithm: string,
+    series?: TableView.AsObject,
+    timestat?: TableView.AsObject,
+    valuestat?: TableView.AsObject,
+    cv?: TableView.AsObject,
     forecast?: TableView.AsObject,
-    arima?: TableView.AsObject,
-    prophet?: TableView.AsObject,
+    metrics?: TableView.AsObject,
+    changepoints?: TableView.AsObject,
+    plotsList: Array<Plot.AsObject>,
   }
 }
 
