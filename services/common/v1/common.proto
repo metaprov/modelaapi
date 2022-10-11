@@ -30,16 +30,13 @@ message ModelProfile {
   PrecisionRecallCurve pr = 5; // precision recall curve. only relevant for classification
   repeated ROCCurve multiclassRocAuc = 6; // multi class roc curve.  only relevant for classification
   repeated PrecisionRecallCurve multiclassPR = 7; // multi class pr curve /. only relevant for classification
-  repeated TimeSeriesModelProfile timeSeriesProfiles = 8; // for group profile, we have this information about each algorithm
-  GroupTimeSeriesModelProfile group = 9;
+  repeated ForecastingAlgProfile algs = 8; // for group profile, we have this information about each algorithm
+  TableView groups = 9; // in cast of group forecast those are the groups table view
 
 }
 
-message GroupTimeSeriesModelProfile {
-  TableView groups = 1; // in cast of group forecast those are the groups
-}
 
-message TimeSeriesModelProfile {
+message ForecastingAlgProfile {
   string algorithm = 1;
   TableView series = 2;
   TableView timeStat = 3; // statistics about the time column

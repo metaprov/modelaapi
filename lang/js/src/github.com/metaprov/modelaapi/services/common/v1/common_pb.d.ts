@@ -108,15 +108,15 @@ export class ModelProfile extends jspb.Message {
   clearMulticlassprList(): ModelProfile;
   addMulticlasspr(value?: PrecisionRecallCurve, index?: number): PrecisionRecallCurve;
 
-  getTimeseriesprofilesList(): Array<TimeSeriesModelProfile>;
-  setTimeseriesprofilesList(value: Array<TimeSeriesModelProfile>): ModelProfile;
-  clearTimeseriesprofilesList(): ModelProfile;
-  addTimeseriesprofiles(value?: TimeSeriesModelProfile, index?: number): TimeSeriesModelProfile;
+  getAlgsList(): Array<ForecastingAlgProfile>;
+  setAlgsList(value: Array<ForecastingAlgProfile>): ModelProfile;
+  clearAlgsList(): ModelProfile;
+  addAlgs(value?: ForecastingAlgProfile, index?: number): ForecastingAlgProfile;
 
-  getGroup(): GroupTimeSeriesModelProfile | undefined;
-  setGroup(value?: GroupTimeSeriesModelProfile): ModelProfile;
-  hasGroup(): boolean;
-  clearGroup(): ModelProfile;
+  getGroups(): TableView | undefined;
+  setGroups(value?: TableView): ModelProfile;
+  hasGroups(): boolean;
+  clearGroups(): ModelProfile;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelProfile.AsObject;
@@ -135,89 +135,69 @@ export namespace ModelProfile {
     pr?: PrecisionRecallCurve.AsObject,
     multiclassrocaucList: Array<ROCCurve.AsObject>,
     multiclassprList: Array<PrecisionRecallCurve.AsObject>,
-    timeseriesprofilesList: Array<TimeSeriesModelProfile.AsObject>,
-    group?: GroupTimeSeriesModelProfile.AsObject,
-  }
-}
-
-export class GroupTimeSeriesModelProfile extends jspb.Message {
-  getGroups(): TableView | undefined;
-  setGroups(value?: TableView): GroupTimeSeriesModelProfile;
-  hasGroups(): boolean;
-  clearGroups(): GroupTimeSeriesModelProfile;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GroupTimeSeriesModelProfile.AsObject;
-  static toObject(includeInstance: boolean, msg: GroupTimeSeriesModelProfile): GroupTimeSeriesModelProfile.AsObject;
-  static serializeBinaryToWriter(message: GroupTimeSeriesModelProfile, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GroupTimeSeriesModelProfile;
-  static deserializeBinaryFromReader(message: GroupTimeSeriesModelProfile, reader: jspb.BinaryReader): GroupTimeSeriesModelProfile;
-}
-
-export namespace GroupTimeSeriesModelProfile {
-  export type AsObject = {
+    algsList: Array<ForecastingAlgProfile.AsObject>,
     groups?: TableView.AsObject,
   }
 }
 
-export class TimeSeriesModelProfile extends jspb.Message {
+export class ForecastingAlgProfile extends jspb.Message {
   getAlgorithm(): string;
-  setAlgorithm(value: string): TimeSeriesModelProfile;
+  setAlgorithm(value: string): ForecastingAlgProfile;
 
   getSeries(): TableView | undefined;
-  setSeries(value?: TableView): TimeSeriesModelProfile;
+  setSeries(value?: TableView): ForecastingAlgProfile;
   hasSeries(): boolean;
-  clearSeries(): TimeSeriesModelProfile;
+  clearSeries(): ForecastingAlgProfile;
 
   getTimestat(): TableView | undefined;
-  setTimestat(value?: TableView): TimeSeriesModelProfile;
+  setTimestat(value?: TableView): ForecastingAlgProfile;
   hasTimestat(): boolean;
-  clearTimestat(): TimeSeriesModelProfile;
+  clearTimestat(): ForecastingAlgProfile;
 
   getValuestat(): TableView | undefined;
-  setValuestat(value?: TableView): TimeSeriesModelProfile;
+  setValuestat(value?: TableView): ForecastingAlgProfile;
   hasValuestat(): boolean;
-  clearValuestat(): TimeSeriesModelProfile;
+  clearValuestat(): ForecastingAlgProfile;
 
   getCv(): TableView | undefined;
-  setCv(value?: TableView): TimeSeriesModelProfile;
+  setCv(value?: TableView): ForecastingAlgProfile;
   hasCv(): boolean;
-  clearCv(): TimeSeriesModelProfile;
+  clearCv(): ForecastingAlgProfile;
 
   getForecast(): TableView | undefined;
-  setForecast(value?: TableView): TimeSeriesModelProfile;
+  setForecast(value?: TableView): ForecastingAlgProfile;
   hasForecast(): boolean;
-  clearForecast(): TimeSeriesModelProfile;
+  clearForecast(): ForecastingAlgProfile;
 
   getMetrics(): TableView | undefined;
-  setMetrics(value?: TableView): TimeSeriesModelProfile;
+  setMetrics(value?: TableView): ForecastingAlgProfile;
   hasMetrics(): boolean;
-  clearMetrics(): TimeSeriesModelProfile;
+  clearMetrics(): ForecastingAlgProfile;
 
   getChangepoints(): TableView | undefined;
-  setChangepoints(value?: TableView): TimeSeriesModelProfile;
+  setChangepoints(value?: TableView): ForecastingAlgProfile;
   hasChangepoints(): boolean;
-  clearChangepoints(): TimeSeriesModelProfile;
+  clearChangepoints(): ForecastingAlgProfile;
 
   getFeatures(): TableView | undefined;
-  setFeatures(value?: TableView): TimeSeriesModelProfile;
+  setFeatures(value?: TableView): ForecastingAlgProfile;
   hasFeatures(): boolean;
-  clearFeatures(): TimeSeriesModelProfile;
+  clearFeatures(): ForecastingAlgProfile;
 
   getPlotsList(): Array<Plot>;
-  setPlotsList(value: Array<Plot>): TimeSeriesModelProfile;
-  clearPlotsList(): TimeSeriesModelProfile;
+  setPlotsList(value: Array<Plot>): ForecastingAlgProfile;
+  clearPlotsList(): ForecastingAlgProfile;
   addPlots(value?: Plot, index?: number): Plot;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): TimeSeriesModelProfile.AsObject;
-  static toObject(includeInstance: boolean, msg: TimeSeriesModelProfile): TimeSeriesModelProfile.AsObject;
-  static serializeBinaryToWriter(message: TimeSeriesModelProfile, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): TimeSeriesModelProfile;
-  static deserializeBinaryFromReader(message: TimeSeriesModelProfile, reader: jspb.BinaryReader): TimeSeriesModelProfile;
+  toObject(includeInstance?: boolean): ForecastingAlgProfile.AsObject;
+  static toObject(includeInstance: boolean, msg: ForecastingAlgProfile): ForecastingAlgProfile.AsObject;
+  static serializeBinaryToWriter(message: ForecastingAlgProfile, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ForecastingAlgProfile;
+  static deserializeBinaryFromReader(message: ForecastingAlgProfile, reader: jspb.BinaryReader): ForecastingAlgProfile;
 }
 
-export namespace TimeSeriesModelProfile {
+export namespace ForecastingAlgProfile {
   export type AsObject = {
     algorithm: string,
     series?: TableView.AsObject,
