@@ -31,6 +31,7 @@ message ModelProfile {
   repeated ROCCurve multiclassRocAuc = 6; // multi class roc curve.  only relevant for classification
   repeated PrecisionRecallCurve multiclassPR = 7; // multi class pr curve /. only relevant for classification
   repeated TimeSeriesModelProfile timeSeriesProfiles = 8;
+  TableView groups = 9; // in cast of group forecast those are the groups
 }
 
 message TimeSeriesModelProfile {
@@ -42,7 +43,8 @@ message TimeSeriesModelProfile {
   TableView forecast = 6;
   TableView metrics = 7;
   TableView changePoints = 8;
-  repeated Plot plots = 9; // plots for this time series.
+  TableView features = 9; // those are the tsfresh features.
+  repeated Plot plots = 10; // plots for this time series.
 }
 
 

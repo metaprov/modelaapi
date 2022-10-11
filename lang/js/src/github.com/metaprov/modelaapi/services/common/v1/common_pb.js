@@ -1087,7 +1087,8 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.toObject = f
     multiclassprList: jspb.Message.toObjectList(msg.getMulticlassprList(),
     proto.github.com.metaprov.modelaapi.services.common.v1.PrecisionRecallCurve.toObject, includeInstance),
     timeseriesprofilesList: jspb.Message.toObjectList(msg.getTimeseriesprofilesList(),
-    proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesModelProfile.toObject, includeInstance)
+    proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesModelProfile.toObject, includeInstance),
+    groups: (f = msg.getGroups()) && proto.github.com.metaprov.modelaapi.services.common.v1.TableView.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1163,6 +1164,11 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.deserializeB
       var value = new proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesModelProfile;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesModelProfile.deserializeBinaryFromReader);
       msg.addTimeseriesprofiles(value);
+      break;
+    case 9:
+      var value = new proto.github.com.metaprov.modelaapi.services.common.v1.TableView;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.services.common.v1.TableView.deserializeBinaryFromReader);
+      msg.setGroups(value);
       break;
     default:
       reader.skipField();
@@ -1250,6 +1256,14 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.serializeBin
       8,
       f,
       proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesModelProfile.serializeBinaryToWriter
+    );
+  }
+  f = message.getGroups();
+  if (f != null) {
+    writer.writeMessage(
+      9,
+      f,
+      proto.github.com.metaprov.modelaapi.services.common.v1.TableView.serializeBinaryToWriter
     );
   }
 };
@@ -1521,13 +1535,50 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.prototype.cl
 };
 
 
+/**
+ * optional TableView groups = 9;
+ * @return {?proto.github.com.metaprov.modelaapi.services.common.v1.TableView}
+ */
+proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.prototype.getGroups = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.services.common.v1.TableView} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.services.common.v1.TableView, 9));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.services.common.v1.TableView|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.prototype.setGroups = function(value) {
+  return jspb.Message.setWrapperField(this, 9, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.prototype.clearGroups = function() {
+  return this.setGroups(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.prototype.hasGroups = function() {
+  return jspb.Message.getField(this, 9) != null;
+};
+
+
 
 /**
  * List of repeated fields within this message type.
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesModelProfile.repeatedFields_ = [9];
+proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesModelProfile.repeatedFields_ = [10];
 
 
 
@@ -1568,6 +1619,7 @@ proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesModelProfile.to
     forecast: (f = msg.getForecast()) && proto.github.com.metaprov.modelaapi.services.common.v1.TableView.toObject(includeInstance, f),
     metrics: (f = msg.getMetrics()) && proto.github.com.metaprov.modelaapi.services.common.v1.TableView.toObject(includeInstance, f),
     changepoints: (f = msg.getChangepoints()) && proto.github.com.metaprov.modelaapi.services.common.v1.TableView.toObject(includeInstance, f),
+    features: (f = msg.getFeatures()) && proto.github.com.metaprov.modelaapi.services.common.v1.TableView.toObject(includeInstance, f),
     plotsList: jspb.Message.toObjectList(msg.getPlotsList(),
     proto.github.com.metaprov.modelaapi.services.common.v1.Plot.toObject, includeInstance)
   };
@@ -1646,6 +1698,11 @@ proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesModelProfile.de
       msg.setChangepoints(value);
       break;
     case 9:
+      var value = new proto.github.com.metaprov.modelaapi.services.common.v1.TableView;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.services.common.v1.TableView.deserializeBinaryFromReader);
+      msg.setFeatures(value);
+      break;
+    case 10:
       var value = new proto.github.com.metaprov.modelaapi.services.common.v1.Plot;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.services.common.v1.Plot.deserializeBinaryFromReader);
       msg.addPlots(value);
@@ -1742,10 +1799,18 @@ proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesModelProfile.se
       proto.github.com.metaprov.modelaapi.services.common.v1.TableView.serializeBinaryToWriter
     );
   }
+  f = message.getFeatures();
+  if (f != null) {
+    writer.writeMessage(
+      9,
+      f,
+      proto.github.com.metaprov.modelaapi.services.common.v1.TableView.serializeBinaryToWriter
+    );
+  }
   f = message.getPlotsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      9,
+      10,
       f,
       proto.github.com.metaprov.modelaapi.services.common.v1.Plot.serializeBinaryToWriter
     );
@@ -2031,12 +2096,49 @@ proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesModelProfile.pr
 
 
 /**
- * repeated Plot plots = 9;
+ * optional TableView features = 9;
+ * @return {?proto.github.com.metaprov.modelaapi.services.common.v1.TableView}
+ */
+proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesModelProfile.prototype.getFeatures = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.services.common.v1.TableView} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.services.common.v1.TableView, 9));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.services.common.v1.TableView|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesModelProfile} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesModelProfile.prototype.setFeatures = function(value) {
+  return jspb.Message.setWrapperField(this, 9, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesModelProfile} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesModelProfile.prototype.clearFeatures = function() {
+  return this.setFeatures(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesModelProfile.prototype.hasFeatures = function() {
+  return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
+ * repeated Plot plots = 10;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.services.common.v1.Plot>}
  */
 proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesModelProfile.prototype.getPlotsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.services.common.v1.Plot>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.services.common.v1.Plot, 9));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.services.common.v1.Plot, 10));
 };
 
 
@@ -2045,7 +2147,7 @@ proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesModelProfile.pr
  * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesModelProfile} returns this
 */
 proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesModelProfile.prototype.setPlotsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 9, value);
+  return jspb.Message.setRepeatedWrapperField(this, 10, value);
 };
 
 
@@ -2055,7 +2157,7 @@ proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesModelProfile.pr
  * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.Plot}
  */
 proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesModelProfile.prototype.addPlots = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 9, opt_value, proto.github.com.metaprov.modelaapi.services.common.v1.Plot, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 10, opt_value, proto.github.com.metaprov.modelaapi.services.common.v1.Plot, opt_index);
 };
 
 

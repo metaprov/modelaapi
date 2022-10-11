@@ -113,6 +113,11 @@ export class ModelProfile extends jspb.Message {
   clearTimeseriesprofilesList(): ModelProfile;
   addTimeseriesprofiles(value?: TimeSeriesModelProfile, index?: number): TimeSeriesModelProfile;
 
+  getGroups(): TableView | undefined;
+  setGroups(value?: TableView): ModelProfile;
+  hasGroups(): boolean;
+  clearGroups(): ModelProfile;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelProfile.AsObject;
   static toObject(includeInstance: boolean, msg: ModelProfile): ModelProfile.AsObject;
@@ -131,6 +136,7 @@ export namespace ModelProfile {
     multiclassrocaucList: Array<ROCCurve.AsObject>,
     multiclassprList: Array<PrecisionRecallCurve.AsObject>,
     timeseriesprofilesList: Array<TimeSeriesModelProfile.AsObject>,
+    groups?: TableView.AsObject,
   }
 }
 
@@ -173,6 +179,11 @@ export class TimeSeriesModelProfile extends jspb.Message {
   hasChangepoints(): boolean;
   clearChangepoints(): TimeSeriesModelProfile;
 
+  getFeatures(): TableView | undefined;
+  setFeatures(value?: TableView): TimeSeriesModelProfile;
+  hasFeatures(): boolean;
+  clearFeatures(): TimeSeriesModelProfile;
+
   getPlotsList(): Array<Plot>;
   setPlotsList(value: Array<Plot>): TimeSeriesModelProfile;
   clearPlotsList(): TimeSeriesModelProfile;
@@ -196,6 +207,7 @@ export namespace TimeSeriesModelProfile {
     forecast?: TableView.AsObject,
     metrics?: TableView.AsObject,
     changepoints?: TableView.AsObject,
+    features?: TableView.AsObject,
     plotsList: Array<Plot.AsObject>,
   }
 }
