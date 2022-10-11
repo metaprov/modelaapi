@@ -113,10 +113,10 @@ export class ModelProfile extends jspb.Message {
   clearTimeseriesprofilesList(): ModelProfile;
   addTimeseriesprofiles(value?: TimeSeriesModelProfile, index?: number): TimeSeriesModelProfile;
 
-  getGroups(): TableView | undefined;
-  setGroups(value?: TableView): ModelProfile;
-  hasGroups(): boolean;
-  clearGroups(): ModelProfile;
+  getGroup(): GroupTimeSeriesModelProfile | undefined;
+  setGroup(value?: GroupTimeSeriesModelProfile): ModelProfile;
+  hasGroup(): boolean;
+  clearGroup(): ModelProfile;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelProfile.AsObject;
@@ -136,6 +136,26 @@ export namespace ModelProfile {
     multiclassrocaucList: Array<ROCCurve.AsObject>,
     multiclassprList: Array<PrecisionRecallCurve.AsObject>,
     timeseriesprofilesList: Array<TimeSeriesModelProfile.AsObject>,
+    group?: GroupTimeSeriesModelProfile.AsObject,
+  }
+}
+
+export class GroupTimeSeriesModelProfile extends jspb.Message {
+  getGroups(): TableView | undefined;
+  setGroups(value?: TableView): GroupTimeSeriesModelProfile;
+  hasGroups(): boolean;
+  clearGroups(): GroupTimeSeriesModelProfile;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GroupTimeSeriesModelProfile.AsObject;
+  static toObject(includeInstance: boolean, msg: GroupTimeSeriesModelProfile): GroupTimeSeriesModelProfile.AsObject;
+  static serializeBinaryToWriter(message: GroupTimeSeriesModelProfile, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GroupTimeSeriesModelProfile;
+  static deserializeBinaryFromReader(message: GroupTimeSeriesModelProfile, reader: jspb.BinaryReader): GroupTimeSeriesModelProfile;
+}
+
+export namespace GroupTimeSeriesModelProfile {
+  export type AsObject = {
     groups?: TableView.AsObject,
   }
 }
