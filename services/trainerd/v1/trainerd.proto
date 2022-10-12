@@ -69,6 +69,8 @@ message TrainResponse {
     string modelIndexURI = 13;
     // This is used in cases where the training is also performing the forecast
     string forecastURI = 14;
+    // Compute the features on the time series.
+    repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement features = 15;
 
 }
 

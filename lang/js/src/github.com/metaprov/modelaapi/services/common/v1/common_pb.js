@@ -1114,6 +1114,7 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.toObject = f
     proto.github.com.metaprov.modelaapi.services.common.v1.PrecisionRecallCurve.toObject, includeInstance),
     algsList: jspb.Message.toObjectList(msg.getAlgsList(),
     proto.github.com.metaprov.modelaapi.services.common.v1.ForecastingAlgProfile.toObject, includeInstance),
+    features: (f = msg.getFeatures()) && proto.github.com.metaprov.modelaapi.services.common.v1.TableView.toObject(includeInstance, f),
     groups: (f = msg.getGroups()) && proto.github.com.metaprov.modelaapi.services.common.v1.TableView.toObject(includeInstance, f)
   };
 
@@ -1191,7 +1192,12 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.deserializeB
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.services.common.v1.ForecastingAlgProfile.deserializeBinaryFromReader);
       msg.addAlgs(value);
       break;
-    case 9:
+    case 10:
+      var value = new proto.github.com.metaprov.modelaapi.services.common.v1.TableView;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.services.common.v1.TableView.deserializeBinaryFromReader);
+      msg.setFeatures(value);
+      break;
+    case 11:
       var value = new proto.github.com.metaprov.modelaapi.services.common.v1.TableView;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.services.common.v1.TableView.deserializeBinaryFromReader);
       msg.setGroups(value);
@@ -1284,10 +1290,18 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.serializeBin
       proto.github.com.metaprov.modelaapi.services.common.v1.ForecastingAlgProfile.serializeBinaryToWriter
     );
   }
+  f = message.getFeatures();
+  if (f != null) {
+    writer.writeMessage(
+      10,
+      f,
+      proto.github.com.metaprov.modelaapi.services.common.v1.TableView.serializeBinaryToWriter
+    );
+  }
   f = message.getGroups();
   if (f != null) {
     writer.writeMessage(
-      9,
+      11,
       f,
       proto.github.com.metaprov.modelaapi.services.common.v1.TableView.serializeBinaryToWriter
     );
@@ -1562,12 +1576,49 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.prototype.cl
 
 
 /**
- * optional TableView groups = 9;
+ * optional TableView features = 10;
+ * @return {?proto.github.com.metaprov.modelaapi.services.common.v1.TableView}
+ */
+proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.prototype.getFeatures = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.services.common.v1.TableView} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.services.common.v1.TableView, 10));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.services.common.v1.TableView|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.prototype.setFeatures = function(value) {
+  return jspb.Message.setWrapperField(this, 10, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.prototype.clearFeatures = function() {
+  return this.setFeatures(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.prototype.hasFeatures = function() {
+  return jspb.Message.getField(this, 10) != null;
+};
+
+
+/**
+ * optional TableView groups = 11;
  * @return {?proto.github.com.metaprov.modelaapi.services.common.v1.TableView}
  */
 proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.prototype.getGroups = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.services.common.v1.TableView} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.services.common.v1.TableView, 9));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.services.common.v1.TableView, 11));
 };
 
 
@@ -1576,7 +1627,7 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.prototype.ge
  * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile} returns this
 */
 proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.prototype.setGroups = function(value) {
-  return jspb.Message.setWrapperField(this, 9, value);
+  return jspb.Message.setWrapperField(this, 11, value);
 };
 
 
@@ -1594,7 +1645,7 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.prototype.cl
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.prototype.hasGroups = function() {
-  return jspb.Message.getField(this, 9) != null;
+  return jspb.Message.getField(this, 11) != null;
 };
 
 
@@ -1645,7 +1696,6 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ForecastingAlgProfile.toO
     forecast: (f = msg.getForecast()) && proto.github.com.metaprov.modelaapi.services.common.v1.TableView.toObject(includeInstance, f),
     metrics: (f = msg.getMetrics()) && proto.github.com.metaprov.modelaapi.services.common.v1.TableView.toObject(includeInstance, f),
     changepoints: (f = msg.getChangepoints()) && proto.github.com.metaprov.modelaapi.services.common.v1.TableView.toObject(includeInstance, f),
-    features: (f = msg.getFeatures()) && proto.github.com.metaprov.modelaapi.services.common.v1.TableView.toObject(includeInstance, f),
     plotsList: jspb.Message.toObjectList(msg.getPlotsList(),
     proto.github.com.metaprov.modelaapi.services.common.v1.Plot.toObject, includeInstance)
   };
@@ -1722,11 +1772,6 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ForecastingAlgProfile.des
       var value = new proto.github.com.metaprov.modelaapi.services.common.v1.TableView;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.services.common.v1.TableView.deserializeBinaryFromReader);
       msg.setChangepoints(value);
-      break;
-    case 9:
-      var value = new proto.github.com.metaprov.modelaapi.services.common.v1.TableView;
-      reader.readMessage(value,proto.github.com.metaprov.modelaapi.services.common.v1.TableView.deserializeBinaryFromReader);
-      msg.setFeatures(value);
       break;
     case 10:
       var value = new proto.github.com.metaprov.modelaapi.services.common.v1.Plot;
@@ -1821,14 +1866,6 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ForecastingAlgProfile.ser
   if (f != null) {
     writer.writeMessage(
       8,
-      f,
-      proto.github.com.metaprov.modelaapi.services.common.v1.TableView.serializeBinaryToWriter
-    );
-  }
-  f = message.getFeatures();
-  if (f != null) {
-    writer.writeMessage(
-      9,
       f,
       proto.github.com.metaprov.modelaapi.services.common.v1.TableView.serializeBinaryToWriter
     );
@@ -2118,43 +2155,6 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ForecastingAlgProfile.pro
  */
 proto.github.com.metaprov.modelaapi.services.common.v1.ForecastingAlgProfile.prototype.hasChangepoints = function() {
   return jspb.Message.getField(this, 8) != null;
-};
-
-
-/**
- * optional TableView features = 9;
- * @return {?proto.github.com.metaprov.modelaapi.services.common.v1.TableView}
- */
-proto.github.com.metaprov.modelaapi.services.common.v1.ForecastingAlgProfile.prototype.getFeatures = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.services.common.v1.TableView} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.services.common.v1.TableView, 9));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.services.common.v1.TableView|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.ForecastingAlgProfile} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.common.v1.ForecastingAlgProfile.prototype.setFeatures = function(value) {
-  return jspb.Message.setWrapperField(this, 9, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.ForecastingAlgProfile} returns this
- */
-proto.github.com.metaprov.modelaapi.services.common.v1.ForecastingAlgProfile.prototype.clearFeatures = function() {
-  return this.setFeatures(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.services.common.v1.ForecastingAlgProfile.prototype.hasFeatures = function() {
-  return jspb.Message.getField(this, 9) != null;
 };
 
 

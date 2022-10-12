@@ -115,6 +115,11 @@ export class ModelProfile extends jspb.Message {
   clearAlgsList(): ModelProfile;
   addAlgs(value?: ForecastingAlgProfile, index?: number): ForecastingAlgProfile;
 
+  getFeatures(): TableView | undefined;
+  setFeatures(value?: TableView): ModelProfile;
+  hasFeatures(): boolean;
+  clearFeatures(): ModelProfile;
+
   getGroups(): TableView | undefined;
   setGroups(value?: TableView): ModelProfile;
   hasGroups(): boolean;
@@ -138,6 +143,7 @@ export namespace ModelProfile {
     multiclassrocaucList: Array<ROCCurve.AsObject>,
     multiclassprList: Array<PrecisionRecallCurve.AsObject>,
     algsList: Array<ForecastingAlgProfile.AsObject>,
+    features?: TableView.AsObject,
     groups?: TableView.AsObject,
   }
 }
@@ -181,11 +187,6 @@ export class ForecastingAlgProfile extends jspb.Message {
   hasChangepoints(): boolean;
   clearChangepoints(): ForecastingAlgProfile;
 
-  getFeatures(): TableView | undefined;
-  setFeatures(value?: TableView): ForecastingAlgProfile;
-  hasFeatures(): boolean;
-  clearFeatures(): ForecastingAlgProfile;
-
   getPlotsList(): Array<Plot>;
   setPlotsList(value: Array<Plot>): ForecastingAlgProfile;
   clearPlotsList(): ForecastingAlgProfile;
@@ -209,7 +210,6 @@ export namespace ForecastingAlgProfile {
     forecast?: TableView.AsObject,
     metrics?: TableView.AsObject,
     changepoints?: TableView.AsObject,
-    features?: TableView.AsObject,
     plotsList: Array<Plot.AsObject>,
   }
 }

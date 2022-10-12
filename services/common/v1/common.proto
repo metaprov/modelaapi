@@ -35,7 +35,8 @@ message ModelProfile {
   repeated ROCCurve multiclassRocAuc = 6; // multi class roc curve.  only relevant for classification
   repeated PrecisionRecallCurve multiclassPR = 7; // multi class pr curve /. only relevant for classification
   repeated ForecastingAlgProfile algs = 8; // for group profile, we have this information about each algorithm
-  TableView groups = 9; // in cast of group forecast those are the groups table view
+  TableView features = 10; // those are the tsfresh features computed over the group or the time series.
+  TableView groups = 11; // in cast of group forecast those are the groups table view
 }
 
 
@@ -48,7 +49,7 @@ message ForecastingAlgProfile {
   TableView forecast = 6;
   TableView metrics = 7;
   TableView changePoints = 8;
-  TableView features = 9; // those are the tsfresh features.
+
   repeated Plot plots = 10; // plots for this time series.
 }
 
