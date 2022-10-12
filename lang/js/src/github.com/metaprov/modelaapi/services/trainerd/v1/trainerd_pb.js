@@ -1040,7 +1040,7 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainRequest.prototype.
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainResponse.repeatedFields_ = [1,15];
+proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainResponse.repeatedFields_ = [1];
 
 
 
@@ -1087,9 +1087,7 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainResponse.toObject 
     permutationfeatureimportanceMap: (f = msg.getPermutationfeatureimportanceMap()) ? f.toObject(includeInstance, undefined) : [],
     cm: (f = msg.getCm()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix.toObject(includeInstance, f),
     modelindexuri: jspb.Message.getFieldWithDefault(msg, 13, ""),
-    forecasturi: jspb.Message.getFieldWithDefault(msg, 14, ""),
-    testresultList: jspb.Message.toObjectList(msg.getTestresultList(),
-    github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.toObject, includeInstance)
+    forecasturi: jspb.Message.getFieldWithDefault(msg, 14, "")
   };
 
   if (includeInstance) {
@@ -1189,11 +1187,6 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainResponse.deseriali
     case 14:
       var value = /** @type {string} */ (reader.readString());
       msg.setForecasturi(value);
-      break;
-    case 15:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.deserializeBinaryFromReader);
-      msg.addTestresult(value);
       break;
     default:
       reader.skipField();
@@ -1313,14 +1306,6 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainResponse.serialize
     writer.writeString(
       14,
       f
-    );
-  }
-  f = message.getTestresultList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      15,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.serializeBinaryToWriter
     );
   }
 };
@@ -1626,44 +1611,6 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainResponse.prototype
  */
 proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainResponse.prototype.setForecasturi = function(value) {
   return jspb.Message.setProto3StringField(this, 14, value);
-};
-
-
-/**
- * repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement testResult = 15;
- * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement>}
- */
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainResponse.prototype.getTestresultList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement>} */ (
-    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement, 15));
-};
-
-
-/**
- * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement>} value
- * @return {!proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainResponse} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainResponse.prototype.setTestresultList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 15, value);
-};
-
-
-/**
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement=} opt_value
- * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement}
- */
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainResponse.prototype.addTestresult = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 15, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainResponse} returns this
- */
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainResponse.prototype.clearTestresultList = function() {
-  return this.setTestresultList([]);
 };
 
 
