@@ -1480,6 +1480,9 @@ type Measurement struct {
 	// The Time when the observation was taken
 	// +kubebuilder:validation:Optional
 	TimePoint *metav1.Time `json:"timePoint,omitempty" protobuf:"bytes,9,opt,name=timePoint"`
+	// The measurment task type (e.g. train, test, cv, feature)
+	// +kubebuilder:validation:Optional
+	TaskType *string `json:"taskType,omitempty" protobuf:"bytes,10,opt,name=taskType"`
 }
 
 // +kubebuilder:validation:Enum="live";"shadow";

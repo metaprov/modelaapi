@@ -12254,7 +12254,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement.toObje
     boolqty: (f = jspb.Message.getBooleanField(msg, 6)) == null ? undefined : f,
     category: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
     valuesetList: (f = jspb.Message.getRepeatedField(msg, 8)) == null ? undefined : f,
-    timepoint: (f = msg.getTimepoint()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f)
+    timepoint: (f = msg.getTimepoint()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    tasktype: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -12328,6 +12329,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement.deseri
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
       msg.setTimepoint(value);
+      break;
+    case 10:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTasktype(value);
       break;
     default:
       reader.skipField();
@@ -12421,6 +12426,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement.serial
       9,
       f,
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 10));
+  if (f != null) {
+    writer.writeString(
+      10,
+      f
     );
   }
 };
@@ -12750,6 +12762,42 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement.protot
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement.prototype.hasTimepoint = function() {
   return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
+ * optional string taskType = 10;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement.prototype.getTasktype = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement.prototype.setTasktype = function(value) {
+  return jspb.Message.setField(this, 10, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement.prototype.clearTasktype = function() {
+  return jspb.Message.setField(this, 10, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement.prototype.hasTasktype = function() {
+  return jspb.Message.getField(this, 10) != null;
 };
 
 

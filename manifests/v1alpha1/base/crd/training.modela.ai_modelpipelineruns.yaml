@@ -308,6 +308,10 @@ spec:
                                   description: Metric standard diviation for quantative
                                     observations.
                                   type: number
+                                taskType:
+                                  description: The measurment task type (e.g. train,
+                                    test, cv, feature)
+                                  type: string
                                 timePoint:
                                   description: The Time when the observation was taken
                                   format: date-time
@@ -559,6 +563,10 @@ spec:
                                   description: Metric standard diviation for quantative
                                     observations.
                                   type: number
+                                taskType:
+                                  description: The measurment task type (e.g. train,
+                                    test, cv, feature)
+                                  type: string
                                 timePoint:
                                   description: The Time when the observation was taken
                                   format: date-time
@@ -785,6 +793,10 @@ spec:
                                   description: Metric standard diviation for quantative
                                     observations.
                                   type: number
+                                taskType:
+                                  description: The measurment task type (e.g. train,
+                                    test, cv, feature)
+                                  type: string
                                 timePoint:
                                   description: The Time when the observation was taken
                                   format: date-time
@@ -1022,6 +1034,10 @@ spec:
                                   description: Metric standard diviation for quantative
                                     observations.
                                   type: number
+                                taskType:
+                                  description: The measurment task type (e.g. train,
+                                    test, cv, feature)
+                                  type: string
                                 timePoint:
                                   description: The Time when the observation was taken
                                   format: date-time
@@ -1278,6 +1294,10 @@ spec:
                                   description: Metric standard diviation for quantative
                                     observations.
                                   type: number
+                                taskType:
+                                  description: The measurment task type (e.g. train,
+                                    test, cv, feature)
+                                  type: string
                                 timePoint:
                                   description: The Time when the observation was taken
                                   format: date-time
@@ -1514,6 +1534,10 @@ spec:
                                   description: Metric standard diviation for quantative
                                     observations.
                                   type: number
+                                taskType:
+                                  description: The measurment task type (e.g. train,
+                                    test, cv, feature)
+                                  type: string
                                 timePoint:
                                   description: The Time when the observation was taken
                                   format: date-time
@@ -1745,6 +1769,10 @@ spec:
                                   description: Metric standard diviation for quantative
                                     observations.
                                   type: number
+                                taskType:
+                                  description: The measurment task type (e.g. train,
+                                    test, cv, feature)
+                                  type: string
                                 timePoint:
                                   description: The Time when the observation was taken
                                   format: date-time
@@ -1977,6 +2005,10 @@ spec:
                                   description: Metric standard diviation for quantative
                                     observations.
                                   type: number
+                                taskType:
+                                  description: The measurment task type (e.g. train,
+                                    test, cv, feature)
+                                  type: string
                                 timePoint:
                                   description: The Time when the observation was taken
                                   format: date-time

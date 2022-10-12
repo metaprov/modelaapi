@@ -709,6 +709,10 @@ message Measurement {
   // The Time when the observation was taken
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time timePoint = 9;
+
+  // The measurment task type (e.g. train, test, cv, feature)
+  // +kubebuilder:validation:Optional
+  optional string taskType = 10;
 }
 
 // ModelDeploymentSpec describes how a single model should be deployed with a Predictor, and
