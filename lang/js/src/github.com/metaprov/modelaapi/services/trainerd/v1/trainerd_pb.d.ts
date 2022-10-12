@@ -133,6 +133,14 @@ export class TrainResponse extends jspb.Message {
   getModelindexuri(): string;
   setModelindexuri(value: string): TrainResponse;
 
+  getForecasturi(): string;
+  setForecasturi(value: string): TrainResponse;
+
+  getTestresultList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>;
+  setTestresultList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>): TrainResponse;
+  clearTestresultList(): TrainResponse;
+  addTestresult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TrainResponse.AsObject;
   static toObject(includeInstance: boolean, msg: TrainResponse): TrainResponse.AsObject;
@@ -156,6 +164,8 @@ export namespace TrainResponse {
     permutationfeatureimportanceMap: Array<[string, number]>,
     cm?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix.AsObject,
     modelindexuri: string,
+    forecasturi: string,
+    testresultList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.AsObject>,
   }
 }
 

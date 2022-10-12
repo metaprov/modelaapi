@@ -1355,6 +1355,11 @@ export class ForecasterSpec extends jspb.Message {
   clearKeyList(): ForecasterSpec;
   addKey(value: string, index?: number): ForecasterSpec;
 
+  getEstimatorsList(): Array<string>;
+  setEstimatorsList(value: Array<string>): ForecasterSpec;
+  clearEstimatorsList(): ForecasterSpec;
+  addEstimators(value: string, index?: number): ForecasterSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ForecasterSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ForecasterSpec): ForecasterSpec.AsObject;
@@ -1385,6 +1390,7 @@ export namespace ForecasterSpec {
     laggedregressorsList: Array<string>,
     growth: string,
     keyList: Array<string>,
+    estimatorsList: Array<string>,
   }
 }
 

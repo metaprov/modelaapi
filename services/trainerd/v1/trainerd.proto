@@ -65,8 +65,12 @@ message TrainResponse {
     map<string,float> permutationFeatureImportance = 11;
     // confusion matrix
     github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ConfusionMatrix cm = 12;
-    //
+    // this is the model uri
     string modelIndexURI = 13;
+    // This is used in cases where the training is also performing the forecast
+    string forecastURI = 14;
+    // This is needed for cases where the training is also performing a test
+    repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement testResult = 15;
 
 }
 

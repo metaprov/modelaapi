@@ -198,6 +198,9 @@ type ForecasterSpec struct {
 	// In case of group forecast
 	// +kubebuilder:validation:Optional
 	Key []string `json:"key,omitempty" protobuf:"bytes,21,opt,name=key"`
+	// The estimators to try. By default, we try graykit / auto arima and prophet.
+	// +kubebuilder:validation:Optional
+	Estimators []catalog.ClassicEstimatorName `json:"estimators,omitempty" protobuf:"bytes,22,opt,name=estimators"`
 }
 
 // BacktestSpec specify the back test

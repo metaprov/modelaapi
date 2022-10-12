@@ -1,5 +1,7 @@
 import * as jspb from 'google-protobuf'
 
+import * as google_protobuf_duration_pb from 'google-protobuf/google/protobuf/duration_pb';
+import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
 
 export class DatasetProfile extends jspb.Message {
@@ -149,8 +151,8 @@ export class ForecastingAlgProfile extends jspb.Message {
   hasSeries(): boolean;
   clearSeries(): ForecastingAlgProfile;
 
-  getTimestat(): TableView | undefined;
-  setTimestat(value?: TableView): ForecastingAlgProfile;
+  getTimestat(): TimeStat | undefined;
+  setTimestat(value?: TimeStat): ForecastingAlgProfile;
   hasTimestat(): boolean;
   clearTimestat(): ForecastingAlgProfile;
 
@@ -201,7 +203,7 @@ export namespace ForecastingAlgProfile {
   export type AsObject = {
     algorithm: string,
     series?: TableView.AsObject,
-    timestat?: TableView.AsObject,
+    timestat?: TimeStat.AsObject,
     valuestat?: TableView.AsObject,
     cv?: TableView.AsObject,
     forecast?: TableView.AsObject,
@@ -209,6 +211,54 @@ export namespace ForecastingAlgProfile {
     changepoints?: TableView.AsObject,
     features?: TableView.AsObject,
     plotsList: Array<Plot.AsObject>,
+  }
+}
+
+export class TimeStat extends jspb.Message {
+  getGaps(): TableView | undefined;
+  setGaps(value?: TableView): TimeStat;
+  hasGaps(): boolean;
+  clearGaps(): TimeStat;
+
+  getAddedTimepoints(): number;
+  setAddedTimepoints(value: number): TimeStat;
+
+  getDroppedTimepoints(): number;
+  setDroppedTimepoints(value: number): TimeStat;
+
+  getDataPoints(): number;
+  setDataPoints(value: number): TimeStat;
+
+  getMeanIncrementsSecs(): number;
+  setMeanIncrementsSecs(value: number): TimeStat;
+
+  getMinTimestamp(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setMinTimestamp(value?: google_protobuf_timestamp_pb.Timestamp): TimeStat;
+  hasMinTimestamp(): boolean;
+  clearMinTimestamp(): TimeStat;
+
+  getMaxTimestamp(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setMaxTimestamp(value?: google_protobuf_timestamp_pb.Timestamp): TimeStat;
+  hasMaxTimestamp(): boolean;
+  clearMaxTimestamp(): TimeStat;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TimeStat.AsObject;
+  static toObject(includeInstance: boolean, msg: TimeStat): TimeStat.AsObject;
+  static serializeBinaryToWriter(message: TimeStat, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TimeStat;
+  static deserializeBinaryFromReader(message: TimeStat, reader: jspb.BinaryReader): TimeStat;
+}
+
+export namespace TimeStat {
+  export type AsObject = {
+    gaps?: TableView.AsObject,
+    addedTimepoints: number,
+    droppedTimepoints: number,
+    dataPoints: number,
+    meanIncrementsSecs: number,
+    minTimestamp?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    maxTimestamp?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 

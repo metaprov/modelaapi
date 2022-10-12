@@ -2,6 +2,10 @@ syntax = "proto3";
 option go_package = "github.com/metaprov/modelaapi/services/common/v1";
 package github.com.metaprov.modelaapi.services.common.v1;
 
+import "google/protobuf/duration.proto";
+import "google/protobuf/timestamp.proto";
+
+
 message DatasetProfile {
   int32    cols = 1;
   int32    rows = 2;
@@ -32,14 +36,13 @@ message ModelProfile {
   repeated PrecisionRecallCurve multiclassPR = 7; // multi class pr curve /. only relevant for classification
   repeated ForecastingAlgProfile algs = 8; // for group profile, we have this information about each algorithm
   TableView groups = 9; // in cast of group forecast those are the groups table view
-
 }
 
 
 message ForecastingAlgProfile {
   string algorithm = 1;
   TableView series = 2;
-  TableView timeStat = 3; // statistics about the time column
+  TimeStat timeStat = 3; // statistics about the time column
   TableView valueStat = 4; // statistics about the value column
   TableView cv = 5; // cross validation result
   TableView forecast = 6;
@@ -48,6 +51,17 @@ message ForecastingAlgProfile {
   TableView features = 9; // those are the tsfresh features.
   repeated Plot plots = 10; // plots for this time series.
 }
+
+message TimeStat  {
+    TableView gaps = 1;
+    int32 added_timepoints = 2;
+    int32 dropped_timepoints = 3;
+    int32 data_points = 4;
+    float mean_increments_secs = 5;
+    google.protobuf.Timestamp min_timestamp = 6;
+    google.protobuf.Timestamp max_timestamp = 7;
+}
+
 
 
 message ROCCurve {

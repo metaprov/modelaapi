@@ -14661,7 +14661,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.repeatedFields_ = [2,8,9,11,18,19,21];
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.repeatedFields_ = [2,8,9,11,18,19,21,22];
 
 
 
@@ -14715,7 +14715,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.to
     regressorsList: (f = jspb.Message.getRepeatedField(msg, 18)) == null ? undefined : f,
     laggedregressorsList: (f = jspb.Message.getRepeatedField(msg, 19)) == null ? undefined : f,
     growth: (f = jspb.Message.getField(msg, 20)) == null ? undefined : f,
-    keyList: (f = jspb.Message.getRepeatedField(msg, 21)) == null ? undefined : f
+    keyList: (f = jspb.Message.getRepeatedField(msg, 21)) == null ? undefined : f,
+    estimatorsList: (f = jspb.Message.getRepeatedField(msg, 22)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -14839,6 +14840,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.de
     case 21:
       var value = /** @type {string} */ (reader.readString());
       msg.addKey(value);
+      break;
+    case 22:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addEstimators(value);
       break;
     default:
       reader.skipField();
@@ -15014,6 +15019,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.se
   if (f.length > 0) {
     writer.writeRepeatedString(
       21,
+      f
+    );
+  }
+  f = message.getEstimatorsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      22,
       f
     );
   }
@@ -15752,6 +15764,43 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.pr
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.clearKeyList = function() {
   return this.setKeyList([]);
+};
+
+
+/**
+ * repeated string estimators = 22;
+ * @return {!Array<string>}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.getEstimatorsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 22));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.setEstimatorsList = function(value) {
+  return jspb.Message.setField(this, 22, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.addEstimators = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 22, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.clearEstimatorsList = function() {
+  return this.setEstimatorsList([]);
 };
 
 

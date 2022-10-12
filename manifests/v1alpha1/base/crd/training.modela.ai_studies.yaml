@@ -232,6 +232,12 @@ spec:
                   coverage:
                     description: Make a forecast post training
                     type: number
+                  estimators:
+                    description: The estimators to try. By default, we try graykit
+                      / auto arima and prophet.
+                    items:
+                      type: string
+                    type: array
                   evaluationMetrics:
                     description: Spec for evaluation metric
                     properties:

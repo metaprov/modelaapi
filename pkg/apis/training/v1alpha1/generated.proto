@@ -936,6 +936,10 @@ message ForecasterSpec {
   // In case of group forecast
   // +kubebuilder:validation:Optional
   repeated string key = 21;
+
+  // The estimators to try. By default, we try graykit / auto arima and prophet.
+  // +kubebuilder:validation:Optional
+  repeated string estimators = 22;
 }
 
 // GarbageCollectionSpec specifies the configuration to garbage-collect unused Model resources
