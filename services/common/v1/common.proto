@@ -91,6 +91,7 @@ message TimeSeriesProfile {
     DurbinWatson dw = 5;
     string key      = 6;
     TableView series = 7; // the series itself
+    TableView valueStat = 8; // stat about the value column
 }
 
 // KPSS test

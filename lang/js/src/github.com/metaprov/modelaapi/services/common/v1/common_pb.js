@@ -3247,7 +3247,8 @@ proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesProfile.toObjec
     kendall: (f = msg.getKendall()) && proto.github.com.metaprov.modelaapi.services.common.v1.MannKendall.toObject(includeInstance, f),
     dw: (f = msg.getDw()) && proto.github.com.metaprov.modelaapi.services.common.v1.DurbinWatson.toObject(includeInstance, f),
     key: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    series: (f = msg.getSeries()) && proto.github.com.metaprov.modelaapi.services.common.v1.TableView.toObject(includeInstance, f)
+    series: (f = msg.getSeries()) && proto.github.com.metaprov.modelaapi.services.common.v1.TableView.toObject(includeInstance, f),
+    valuestat: (f = msg.getValuestat()) && proto.github.com.metaprov.modelaapi.services.common.v1.TableView.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3317,6 +3318,11 @@ proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesProfile.deseria
       var value = new proto.github.com.metaprov.modelaapi.services.common.v1.TableView;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.services.common.v1.TableView.deserializeBinaryFromReader);
       msg.setSeries(value);
+      break;
+    case 8:
+      var value = new proto.github.com.metaprov.modelaapi.services.common.v1.TableView;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.services.common.v1.TableView.deserializeBinaryFromReader);
+      msg.setValuestat(value);
       break;
     default:
       reader.skipField();
@@ -3398,6 +3404,14 @@ proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesProfile.seriali
   if (f != null) {
     writer.writeMessage(
       7,
+      f,
+      proto.github.com.metaprov.modelaapi.services.common.v1.TableView.serializeBinaryToWriter
+    );
+  }
+  f = message.getValuestat();
+  if (f != null) {
+    writer.writeMessage(
+      8,
       f,
       proto.github.com.metaprov.modelaapi.services.common.v1.TableView.serializeBinaryToWriter
     );
@@ -3642,6 +3656,43 @@ proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesProfile.prototy
  */
 proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesProfile.prototype.hasSeries = function() {
   return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
+ * optional TableView valueStat = 8;
+ * @return {?proto.github.com.metaprov.modelaapi.services.common.v1.TableView}
+ */
+proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesProfile.prototype.getValuestat = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.services.common.v1.TableView} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.services.common.v1.TableView, 8));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.services.common.v1.TableView|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesProfile} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesProfile.prototype.setValuestat = function(value) {
+  return jspb.Message.setWrapperField(this, 8, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesProfile} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesProfile.prototype.clearValuestat = function() {
+  return this.setValuestat(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesProfile.prototype.hasValuestat = function() {
+  return jspb.Message.getField(this, 8) != null;
 };
 
 

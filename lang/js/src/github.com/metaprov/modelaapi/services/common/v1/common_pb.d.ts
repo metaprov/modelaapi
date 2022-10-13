@@ -376,6 +376,11 @@ export class TimeSeriesProfile extends jspb.Message {
   hasSeries(): boolean;
   clearSeries(): TimeSeriesProfile;
 
+  getValuestat(): TableView | undefined;
+  setValuestat(value?: TableView): TimeSeriesProfile;
+  hasValuestat(): boolean;
+  clearValuestat(): TimeSeriesProfile;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TimeSeriesProfile.AsObject;
   static toObject(includeInstance: boolean, msg: TimeSeriesProfile): TimeSeriesProfile.AsObject;
@@ -393,6 +398,7 @@ export namespace TimeSeriesProfile {
     dw?: DurbinWatson.AsObject,
     key: string,
     series?: TableView.AsObject,
+    valuestat?: TableView.AsObject,
   }
 }
 
