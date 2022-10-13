@@ -279,7 +279,7 @@ func (dataset *Dataset) MarkGrouping() {
 		Reason: string(DatasetPhaseGrouping),
 	})
 	dataset.Status.Phase = DatasetPhaseGrouping
-	dataset.Status.Progress = 10
+	dataset.Status.Progress = 55
 }
 
 // ----------------------------- Unit Tests --------------------
