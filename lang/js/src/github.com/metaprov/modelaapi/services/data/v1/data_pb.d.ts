@@ -705,6 +705,11 @@ export class DsMergeForecastFileRequest extends jspb.Message {
   getSecretMap(): jspb.Map<string, Uint8Array | string>;
   clearSecretMap(): DsMergeForecastFileRequest;
 
+  getForecastsList(): Array<string>;
+  setForecastsList(value: Array<string>): DsMergeForecastFileRequest;
+  clearForecastsList(): DsMergeForecastFileRequest;
+  addForecasts(value: string, index?: number): DsMergeForecastFileRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DsMergeForecastFileRequest.AsObject;
   static toObject(includeInstance: boolean, msg: DsMergeForecastFileRequest): DsMergeForecastFileRequest.AsObject;
@@ -724,6 +729,7 @@ export namespace DsMergeForecastFileRequest {
     connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
     secretMap: Array<[string, Uint8Array | string]>,
+    forecastsList: Array<string>,
   }
 }
 

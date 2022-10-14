@@ -504,7 +504,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.DsMergeForecastFileRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.services.data.v1.DsMergeForecastFileRequest.repeatedFields_, null);
 };
 goog.inherits(proto.github.com.metaprov.modelaapi.services.data.v1.DsMergeForecastFileRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -6934,6 +6934,13 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsCreateModelProfileRespons
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.DsMergeForecastFileRequest.repeatedFields_ = [11];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -6973,7 +6980,8 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsMergeForecastFileRequest.
     model: (f = msg.getModel()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.toObject(includeInstance, f),
     connection: (f = msg.getConnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
     bucket: (f = msg.getBucket()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.toObject(includeInstance, f),
-    secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : []
+    secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : [],
+    forecastsList: (f = jspb.Message.getRepeatedField(msg, 11)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -7055,6 +7063,10 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsMergeForecastFileRequest.
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBytes, null, "", "");
          });
+      break;
+    case 11:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addForecasts(value);
       break;
     default:
       reader.skipField();
@@ -7152,6 +7164,13 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsMergeForecastFileRequest.
   f = message.getSecretMap(true);
   if (f && f.getLength() > 0) {
     f.serializeBinary(10, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
+  }
+  f = message.getForecastsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      11,
+      f
+    );
   }
 };
 
@@ -7472,6 +7491,43 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsMergeForecastFileRequest.
 proto.github.com.metaprov.modelaapi.services.data.v1.DsMergeForecastFileRequest.prototype.clearSecretMap = function() {
   this.getSecretMap().clear();
   return this;};
+
+
+/**
+ * repeated string forecasts = 11;
+ * @return {!Array<string>}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.DsMergeForecastFileRequest.prototype.getForecastsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 11));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsMergeForecastFileRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.DsMergeForecastFileRequest.prototype.setForecastsList = function(value) {
+  return jspb.Message.setField(this, 11, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsMergeForecastFileRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.DsMergeForecastFileRequest.prototype.addForecasts = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 11, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsMergeForecastFileRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.DsMergeForecastFileRequest.prototype.clearForecastsList = function() {
+  return this.setForecastsList([]);
+};
 
 
 

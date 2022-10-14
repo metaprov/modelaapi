@@ -169,10 +169,11 @@ message DsMergeForecastFileRequest {
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection = 8;
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 9;
     map<string,bytes> secret = 10;
+    repeated string forecasts = 11;
 }
 
 message DsMergeForecastFileResponse {
-    string uri = 1;
+    string uri = 1; // the uri of the merge file
 }
 
 
