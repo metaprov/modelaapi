@@ -1424,7 +1424,7 @@ func (model *Model) GroupModelProfileFolder() string {
 }
 
 func (model *Model) GroupModelReportFile() string {
-	return model.GroupFolder() + "/report.pdf"
+	return model.GroupFolder() + "/" + model.Name + ".pdf"
 }
 
 func (model *Model) GroupModelForecastFile() string {
