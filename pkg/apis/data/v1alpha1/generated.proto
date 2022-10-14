@@ -2848,7 +2848,7 @@ message GroupBySpec {
 
   // Aggregation function. Define how to aggregate
   // By default this is the aggregation function from the data source.
-  // +kubebuilder:default:="none"
+  // +kubebuilder:default:="sum"
   // +kubebuilder:validation:Optional
   optional string aggr = 5;
 }

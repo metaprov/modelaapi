@@ -1216,6 +1216,17 @@ const (
 	AggregateNone   Aggregate = "none"
 )
 
+// The  hierarchical time series.
+// +kubebuilder:validation:Enum="bottom-up";"middle-out";"top-down";"none";
+type HTS string
+
+const (
+	HTSBottomUp  HTS = "bottom-up"
+	HTSMiddleOut HTS = "middle-out"
+	HTSTopDown   HTS = "top-down"
+	HTSNone      HTS = "none"
+)
+
 /// The HolidayCountry unit
 // +kubebuilder:validation:Enum="US";"BR";"ID";"IN";"MY";"VN";"TH";"PH";"PK";"BD";"EG";"CN";"RU";"KR";"BY";"AE";"none";
 type HolidayCountry string

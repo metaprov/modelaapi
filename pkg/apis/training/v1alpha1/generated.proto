@@ -940,6 +940,12 @@ message ForecasterSpec {
   // The estimators to try. By default, we try graykit / auto arima and prophet.
   // +kubebuilder:validation:Optional
   repeated string estimators = 22;
+
+  // Group recocile.
+  // By default this is the bottom-up
+  // +kubebuilder:default:="bottom-up"
+  // +kubebuilder:validation:Optional
+  optional string hts = 23;
 }
 
 // GarbageCollectionSpec specifies the configuration to garbage-collect unused Model resources

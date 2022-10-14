@@ -430,6 +430,15 @@ spec:
                   hpoBudget:
                     format: int32
                     type: integer
+                  hts:
+                    default: bottom-up
+                    description: Group recocile. By default this is the bottom-up
+                    enum:
+                    - bottom-up
+                    - middle-out
+                    - top-down
+                    - none
+                    type: string
                   key:
                     description: In case of group forecast
                     items:

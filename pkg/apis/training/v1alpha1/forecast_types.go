@@ -201,6 +201,11 @@ type ForecasterSpec struct {
 	// The estimators to try. By default, we try graykit / auto arima and prophet.
 	// +kubebuilder:validation:Optional
 	Estimators []catalog.ClassicEstimatorName `json:"estimators,omitempty" protobuf:"bytes,22,opt,name=estimators"`
+	// Group recocile.
+	// By default this is the bottom-up
+	// +kubebuilder:default:="bottom-up"
+	// +kubebuilder:validation:Optional
+	HTS *catalog.HTS `json:"hts,omitempty" protobuf:"bytes,23,opt,name=hts"`
 }
 
 // BacktestSpec specify the back test

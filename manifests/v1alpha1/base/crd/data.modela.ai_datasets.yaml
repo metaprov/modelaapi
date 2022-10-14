@@ -138,7 +138,7 @@ spec:
                   the forecasts. By default, this dataset is assigned
                 properties:
                   aggr:
-                    default: none
+                    default: sum
                     description: Aggregation function. Define how to aggregate By
                       default this is the aggregation function from the data source.
                     enum:

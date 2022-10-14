@@ -171,7 +171,7 @@ message DsMergeForecastFileRequest {
     map<string,bytes> secret = 10;
     repeated string forecasts = 11;
 }
-
+ 
 message DsMergeForecastFileResponse {
     string uri = 1; // the uri of the merge file
 }

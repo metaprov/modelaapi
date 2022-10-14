@@ -14716,7 +14716,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.to
     laggedregressorsList: (f = jspb.Message.getRepeatedField(msg, 19)) == null ? undefined : f,
     growth: (f = jspb.Message.getField(msg, 20)) == null ? undefined : f,
     keyList: (f = jspb.Message.getRepeatedField(msg, 21)) == null ? undefined : f,
-    estimatorsList: (f = jspb.Message.getRepeatedField(msg, 22)) == null ? undefined : f
+    estimatorsList: (f = jspb.Message.getRepeatedField(msg, 22)) == null ? undefined : f,
+    hts: (f = jspb.Message.getField(msg, 23)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -14844,6 +14845,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.de
     case 22:
       var value = /** @type {string} */ (reader.readString());
       msg.addEstimators(value);
+      break;
+    case 23:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setHts(value);
       break;
     default:
       reader.skipField();
@@ -15026,6 +15031,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.se
   if (f.length > 0) {
     writer.writeRepeatedString(
       22,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 23));
+  if (f != null) {
+    writer.writeString(
+      23,
       f
     );
   }
@@ -15801,6 +15813,42 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.pr
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.clearEstimatorsList = function() {
   return this.setEstimatorsList([]);
+};
+
+
+/**
+ * optional string hts = 23;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.getHts = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 23, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.setHts = function(value) {
+  return jspb.Message.setField(this, 23, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.clearHts = function() {
+  return jspb.Message.setField(this, 23, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecasterSpec.prototype.hasHts = function() {
+  return jspb.Message.getField(this, 23) != null;
 };
 
 

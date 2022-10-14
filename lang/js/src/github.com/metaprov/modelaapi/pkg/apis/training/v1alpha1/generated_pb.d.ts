@@ -1360,6 +1360,9 @@ export class ForecasterSpec extends jspb.Message {
   clearEstimatorsList(): ForecasterSpec;
   addEstimators(value: string, index?: number): ForecasterSpec;
 
+  getHts(): string;
+  setHts(value: string): ForecasterSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ForecasterSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ForecasterSpec): ForecasterSpec.AsObject;
@@ -1391,6 +1394,7 @@ export namespace ForecasterSpec {
     growth: string,
     keyList: Array<string>,
     estimatorsList: Array<string>,
+    hts: string,
   }
 }
 

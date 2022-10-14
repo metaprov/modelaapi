@@ -630,7 +630,7 @@ type GroupBySpec struct {
 	Interval *int32 `json:"interval,omitempty" protobuf:"bytes,4,opt,name=interval"`
 	// Aggregation function. Define how to aggregate
 	// By default this is the aggregation function from the data source.
-	// +kubebuilder:default:="none"
+	// +kubebuilder:default:="sum"
 	// +kubebuilder:validation:Optional
 	Aggr catalog.Aggregate `json:"aggr,omitempty" protobuf:"bytes,5,opt,name=aggr"`
 }
