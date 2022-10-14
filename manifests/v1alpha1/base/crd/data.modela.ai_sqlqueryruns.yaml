@@ -745,6 +745,10 @@ spec:
                         actual:
                           description: Actual observation
                           properties:
+                            algorithm:
+                              description: The name of the algorithm that generated
+                                this measurment
+                              type: string
                             boolQty:
                               description: If the metric refer to a bool unit, store
                                 the bool value

@@ -1494,6 +1494,9 @@ type Measurement struct {
 	// The measurment task type (e.g. train, test, cv, feature)
 	// +kubebuilder:validation:Optional
 	TaskType *string `json:"taskType,omitempty" protobuf:"bytes,10,opt,name=taskType"`
+	// The name of the algorithm that generated this measurment
+	// +kubebuilder:validation:Optional
+	Algorithm *string `json:"algorithm,omitempty" protobuf:"bytes,11,opt,name=algorithm"`
 }
 
 // +kubebuilder:validation:Enum="live";"shadow";

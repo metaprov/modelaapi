@@ -12255,7 +12255,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement.toObje
     category: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
     valuesetList: (f = jspb.Message.getRepeatedField(msg, 8)) == null ? undefined : f,
     timepoint: (f = msg.getTimepoint()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
-    tasktype: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f
+    tasktype: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
+    algorithm: (f = jspb.Message.getField(msg, 11)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -12333,6 +12334,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement.deseri
     case 10:
       var value = /** @type {string} */ (reader.readString());
       msg.setTasktype(value);
+      break;
+    case 11:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setAlgorithm(value);
       break;
     default:
       reader.skipField();
@@ -12432,6 +12437,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement.serial
   if (f != null) {
     writer.writeString(
       10,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 11));
+  if (f != null) {
+    writer.writeString(
+      11,
       f
     );
   }
@@ -12798,6 +12810,42 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement.protot
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement.prototype.hasTasktype = function() {
   return jspb.Message.getField(this, 10) != null;
+};
+
+
+/**
+ * optional string algorithm = 11;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement.prototype.getAlgorithm = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement.prototype.setAlgorithm = function(value) {
+  return jspb.Message.setField(this, 11, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement.prototype.clearAlgorithm = function() {
+  return jspb.Message.setField(this, 11, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement.prototype.hasAlgorithm = function() {
+  return jspb.Message.getField(this, 11) != null;
 };
 
 

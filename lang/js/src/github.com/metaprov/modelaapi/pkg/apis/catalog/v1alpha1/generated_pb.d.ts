@@ -1226,6 +1226,9 @@ export class Measurement extends jspb.Message {
   getTasktype(): string;
   setTasktype(value: string): Measurement;
 
+  getAlgorithm(): string;
+  setAlgorithm(value: string): Measurement;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Measurement.AsObject;
   static toObject(includeInstance: boolean, msg: Measurement): Measurement.AsObject;
@@ -1246,6 +1249,7 @@ export namespace Measurement {
     valuesetList: Array<string>,
     timepoint?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     tasktype: string,
+    algorithm: string,
   }
 }
 

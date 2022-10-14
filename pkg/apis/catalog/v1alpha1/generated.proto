@@ -713,6 +713,10 @@ message Measurement {
   // The measurment task type (e.g. train, test, cv, feature)
   // +kubebuilder:validation:Optional
   optional string taskType = 10;
+
+  // The name of the algorithm that generated this measurment
+  // +kubebuilder:validation:Optional
+  optional string algorithm = 11;
 }
 
 // ModelDeploymentSpec describes how a single model should be deployed with a Predictor, and
