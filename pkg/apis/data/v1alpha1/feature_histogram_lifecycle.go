@@ -10,7 +10,6 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/dustin/go-humanize"
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/apis/common"
 	"github.com/metaprov/modelaapi/pkg/apis/data"

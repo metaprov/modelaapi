@@ -8,7 +8,6 @@ package v1alpha1
 
 import (
 	"fmt"
-	"gopkg.in/yaml.v2"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/util/validation/field"
 	"k8s.io/client-go/kubernetes/scheme"

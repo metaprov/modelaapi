@@ -8,8 +8,6 @@ package v1alpha1
 
 import (
 	"fmt"
-	"github.com/dustin/go-humanize"
-	"gopkg.in/yaml.v2"
 	"strings"
 
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"

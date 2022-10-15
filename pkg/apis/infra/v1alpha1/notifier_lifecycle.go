@@ -10,7 +10,6 @@ import (
 	"fmt"
 
 	"github.com/metaprov/modelaapi/pkg/util"
-	"gopkg.in/yaml.v2"
 	corev1 "k8s.io/api/core/v1"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"

@@ -3,8 +3,6 @@ package util
 import (
 	"fmt"
 
-	"github.com/dustin/go-humanize"
-
 	"path/filepath"
 	"runtime"
 	"testing"
