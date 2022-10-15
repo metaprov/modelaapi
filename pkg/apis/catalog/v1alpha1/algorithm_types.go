@@ -6,6 +6,7 @@ import (
 
 // Algorithm define the metadata about a machine learning algorithm.
 // +kubebuilder:object:root=true
+// +kubebuilder:storageversion
 // +kubebuilder:resource:path=algorithms,singular=algorithm,shortName="alg",categories={catalog,modela,all}
 // +kubebuilder:printcolumn:name="Framework",type="string",JSONPath=".spec.frameworkName",description="ML Framework name"
 // +kubebuilder:printcolumn:name="Docs",type="string",JSONPath=".spec.url",description=""

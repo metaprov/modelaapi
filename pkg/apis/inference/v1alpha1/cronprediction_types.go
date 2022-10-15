@@ -32,6 +32,7 @@ type CronPredictionCondition struct {
 // CronPrediction represents a Prediction which runs on a predefined schedule
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
+// +kubebuilder:storageversion
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status"
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",priority=1
 // +kubebuilder:printcolumn:name="Predictor",type="string",JSONPath=".spec.template.spec.predictorName"

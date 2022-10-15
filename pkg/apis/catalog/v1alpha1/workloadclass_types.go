@@ -6,6 +6,7 @@ import (
 
 // WorkloadClass define a template for a job.
 // +kubebuilder:object:root=true
+// +kubebuilder:storageversion
 // +kubebuilder:printcolumn:name="Age",type=date,JSONPath=`.metadata.creationTimestamp`
 // +kubebuilder:resource:path=workloadclasses,singular=workloadclass,categories={catalog,modela,all}
 type WorkloadClass struct {

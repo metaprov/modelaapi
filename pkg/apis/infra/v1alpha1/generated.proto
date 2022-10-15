@@ -22,6 +22,7 @@ option go_package = "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1";
 // Account represents a single user on the system or a team that other Accounts can be grouped under
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
+// +kubebuilder:storageversion
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Type",type="string",JSONPath=".spec.type",description=""
 // +kubebuilder:printcolumn:name="Username",type="string",JSONPath=".spec.username",description=""
@@ -224,6 +225,7 @@ message AirWriteSpec {
 // Alert represents temporal information about an event that occurred with a Modela custom resource
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
+// +kubebuilder:storageversion
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase",description=""
 // +kubebuilder:printcolumn:name="Level",type="string",JSONPath=".spec.level",description=""
 // +kubebuilder:printcolumn:name="Subject",type="string",JSONPath=".spec.subject",description=""
@@ -531,6 +533,7 @@ message ApacheSparkSpec {
 
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
+// +kubebuilder:storageversion
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=apitokens,singular=apitoken,categories={infra,modela}
@@ -601,6 +604,7 @@ message ApiTokenStatus {
 
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
+// +kubebuilder:storageversion
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Entity Namespace",type="string",JSONPath=".spec.entityRef.name",description=""
 // +kubebuilder:printcolumn:name="Entity Name",type="string",JSONPath=".spec.entityRef.namespace",description=""
@@ -835,6 +839,7 @@ message CockroachDBSpec {
 
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
+// +kubebuilder:storageversion
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase",description=""
 // +kubebuilder:printcolumn:name="Subject",type="string",JSONPath=".spec.subject",description=""
 // +kubebuilder:printcolumn:name="Entity Namespace",type="string",JSONPath=".spec.entityRef.Name",description=""
@@ -932,6 +937,7 @@ message CommitStatus {
 // Connection define a connection to an external system (e.g. database, public cloud)
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
+// +kubebuilder:storageversion
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Provider",type="string",JSONPath=".spec.provider",description=""
 // +kubebuilder:printcolumn:name="Category",type="string",JSONPath=".spec.category",description=""
@@ -1702,6 +1708,7 @@ message KafkaSpec {
 
 // Lab represents a single namespace where data analysis and model training workloads take place
 // +kubebuilder:object:root=true
+// +kubebuilder:storageversion
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
 // +kubebuilder:printcolumn:name="Cluster",type="string",JSONPath=".spec.clusterName"
@@ -1789,6 +1796,7 @@ message LabStatus {
 // License represents the license key and limitations of a cluster-wide license obtained from Modela.ai
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
+// +kubebuilder:storageversion
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Valid\")].status",description=""
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",description=""
 // +kubebuilder:printcolumn:name="Secret",type="string",JSONPath=".spec.secretRef.name",description=""
@@ -2002,6 +2010,7 @@ message MinioSpec {
 
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
+// +kubebuilder:storageversion
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=modelasystems,singular=modelasystem,categories={infra,modela}
@@ -2198,6 +2207,7 @@ message NotificationChannelStatus {
 // The Notifier resource
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
+// +kubebuilder:storageversion
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",description=""
 // +kubebuilder:printcolumn:name="Description",type="string",JSONPath=".spec.description",description=""
@@ -2602,6 +2612,7 @@ message Scope {
 // ServingSite represents a namespace where model serving workloads are executed under
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
+// +kubebuilder:storageversion
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",description="owner"
 // +kubebuilder:printcolumn:name="FQDN",type="string",JSONPath=".spec.ingress.fqdn",description=""
@@ -2860,6 +2871,7 @@ message SybaseSpec {
 // Tenant represents a root namespace for tenant-level resources and child DataProduct namespaces
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
+// +kubebuilder:storageversion
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Default Lab",type="string",JSONPath=".spec.defaultLabRef.Name",description=""
 // +kubebuilder:printcolumn:name="Default Serving Site",type="string",JSONPath=".spec.defaultServingSiteRef.Name",description=""
@@ -3003,6 +3015,7 @@ message TwitterSpec {
   optional string token = 1;
 }
 
+// +kubebuilder:storageversion
 // UserRoleClass specifies the permissions that can be performed on a set of resources
 // +kubebuilder:resource:path=userroleclasses,singular=userroleclass,categories={infra,modela,all}
 // +kubebuilder:object:root=true
@@ -3101,6 +3114,7 @@ message VictoriaMetricsSpec {
 // VirtualBucket represents an abstract object storage system used to store flat-files
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
+// +kubebuilder:storageversion
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",description="owner"
 // +kubebuilder:printcolumn:name="Connection",type="string",JSONPath=".spec.connectionName",description="virtual bucket connections"
@@ -3209,6 +3223,7 @@ message VirtualBucketStatus {
 // The study can create or destroy virtual clusters during training.
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
+// +kubebuilder:storageversion
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.ownerName",description="cluster owner account"
 // +kubebuilder:printcolumn:name="Nodes",type="integer",JSONPath=".spec.connectionName",description="virtual bucket connections"
@@ -3384,6 +3399,7 @@ message VirtualClusterStatus {
 
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
+// +kubebuilder:storageversion
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="StorageConnection",type="string",JSONPath=".spec.connectionName",description="virtual bucket connections"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""

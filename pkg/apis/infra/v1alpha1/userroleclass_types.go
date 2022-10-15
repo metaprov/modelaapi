@@ -8,11 +8,11 @@ package v1alpha1
 
 import (
 	"github.com/metaprov/modelaapi/pkg/apis/common"
-	"gopkg.in/yaml.v2"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
+// +kubebuilder:storageversion
 // UserRoleClass specifies the permissions that can be performed on a set of resources
 // +kubebuilder:resource:path=userroleclasses,singular=userroleclass,categories={infra,modela,all}
 // +kubebuilder:object:root=true

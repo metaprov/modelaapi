@@ -39,6 +39,7 @@ type DataProductCondition struct {
 // it specifies default parameters for resources to be created under the namespace, such as workload class and storage location
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
+// +kubebuilder:storageversion
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status"
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
 // +kubebuilder:printcolumn:name="Task",type="string",JSONPath=".spec.task"

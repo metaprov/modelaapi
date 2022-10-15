@@ -38,6 +38,7 @@ type DataProductVersionCondition struct {
 // DataProductVersion represents a single version of a DataProduct, which should increment versions in response to changes in data
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
+// +kubebuilder:storageversion
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
 // +kubebuilder:printcolumn:name="Product",type="string",JSONPath=".spec.productRef.name",description=""

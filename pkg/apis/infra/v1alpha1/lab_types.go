@@ -31,6 +31,7 @@ type LabCondition struct {
 
 // Lab represents a single namespace where data analysis and model training workloads take place
 // +kubebuilder:object:root=true
+// +kubebuilder:storageversion
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
 // +kubebuilder:printcolumn:name="Cluster",type="string",JSONPath=".spec.clusterName"

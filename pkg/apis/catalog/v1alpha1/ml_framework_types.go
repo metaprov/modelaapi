@@ -18,6 +18,7 @@ const (
 
 // MLFramework define the metadata about a machine learning framework
 // +kubebuilder:object:root=true
+// +kubebuilder:storageversion
 // +kubebuilder:printcolumn:name="URL",type="string",JSONPath=".spec.url"
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.version"
 // +kubebuilder:printcolumn:name="Description",type="string",JSONPath=".spec.description"

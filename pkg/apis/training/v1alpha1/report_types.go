@@ -109,6 +109,7 @@ type ReportCondition struct {
 // Report represents a PDF file containing information compiled about another resource
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
+// +kubebuilder:storageversion
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",priority=1
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"

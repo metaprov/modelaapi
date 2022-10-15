@@ -47,6 +47,7 @@ type NotebookCondition struct {
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:subresource:status
+// +kubebuilder:storageversion
 // +kubebuilder:resource:path=notebooks,singular=notebook,shortName=nb,categories={training,modela,all}
 // Notebook represent a notebook object which specify a single notebook execution
 type Notebook struct {

@@ -13,6 +13,7 @@ import (
 
 // Cloud represent a cloud provider metadata. A cloud contains regions,datacenter,machine classes
 // +kubebuilder:object:root=true
+// +kubebuilder:storageversion
 // +kubebuilder:resource:path=clouds,singular=cloud,categories={catalog,modela,all}
 type Cloud struct {
 	metav1.TypeMeta   `json:",inline"`

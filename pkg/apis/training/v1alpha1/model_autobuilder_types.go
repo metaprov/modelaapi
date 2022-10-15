@@ -60,6 +60,7 @@ type ModelAutobuilderCondition struct {
 // ModelAutobuilder represents an automated pipeline to train and deploy a model based on a given dataset
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
+// +kubebuilder:storageversion
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
 // +kubebuilder:printcolumn:name="Data Product",type="string",JSONPath=".spec.dataProductName"
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.dataProductVersionName"

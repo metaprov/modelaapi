@@ -41,6 +41,7 @@ type NotifierCondition struct {
 // The Notifier resource
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
+// +kubebuilder:storageversion
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",description=""
 // +kubebuilder:printcolumn:name="Description",type="string",JSONPath=".spec.description",description=""

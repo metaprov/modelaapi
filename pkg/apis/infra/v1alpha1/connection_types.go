@@ -33,6 +33,7 @@ type ConnectionCondition struct {
 // Connection define a connection to an external system (e.g. database, public cloud)
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
+// +kubebuilder:storageversion
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Provider",type="string",JSONPath=".spec.provider",description=""
 // +kubebuilder:printcolumn:name="Category",type="string",JSONPath=".spec.category",description=""

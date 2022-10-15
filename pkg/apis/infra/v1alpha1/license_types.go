@@ -45,6 +45,7 @@ type LicenseCondition struct {
 // License represents the license key and limitations of a cluster-wide license obtained from Modela.ai
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
+// +kubebuilder:storageversion
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Valid\")].status",description=""
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",description=""
 // +kubebuilder:printcolumn:name="Secret",type="string",JSONPath=".spec.secretRef.name",description=""

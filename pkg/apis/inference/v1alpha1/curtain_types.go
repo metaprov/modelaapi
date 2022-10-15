@@ -46,6 +46,7 @@ type CurtainCondition struct {
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
+// +kubebuilder:storageversion
 // +kubebuilder:resource:path=curtains,singular=curtain,categories={inference,modela,all}
 type Curtain struct {
 	metav1.TypeMeta   `json:",inline"`

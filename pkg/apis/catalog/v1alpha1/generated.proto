@@ -20,6 +20,7 @@ option go_package = "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1";
 
 // Algorithm define the metadata about a machine learning algorithm.
 // +kubebuilder:object:root=true
+// +kubebuilder:storageversion
 // +kubebuilder:resource:path=algorithms,singular=algorithm,shortName="alg",categories={catalog,modela,all}
 // +kubebuilder:printcolumn:name="Framework",type="string",JSONPath=".spec.frameworkName",description="ML Framework name"
 // +kubebuilder:printcolumn:name="Docs",type="string",JSONPath=".spec.url",description=""
@@ -94,6 +95,7 @@ message CategoricalParameter {
 
 // Cloud represent a cloud provider metadata. A cloud contains regions,datacenter,machine classes
 // +kubebuilder:object:root=true
+// +kubebuilder:storageversion
 // +kubebuilder:resource:path=clouds,singular=cloud,categories={catalog,modela,all}
 message Cloud {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
@@ -493,6 +495,7 @@ message Logs {
 
 // MLFramework define the metadata about a machine learning framework
 // +kubebuilder:object:root=true
+// +kubebuilder:storageversion
 // +kubebuilder:printcolumn:name="URL",type="string",JSONPath=".spec.url"
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.version"
 // +kubebuilder:printcolumn:name="Description",type="string",JSONPath=".spec.description"
@@ -823,6 +826,7 @@ message PretrainedModelSpec {
 
 // PublicDataset represent the metadata about a public dataset
 // +kubebuilder:object:root=true
+// +kubebuilder:storageversion
 // +kubebuilder:printcolumn:name="Task",type="string",JSONPath=".spec.task",description="ML task name"
 // +kubebuilder:printcolumn:name="URL",type="string",JSONPath=".spec.url",description="",priority=1
 // +kubebuilder:printcolumn:name="Rows",type="number",JSONPath=".spec.rows",description=""
@@ -1053,6 +1057,7 @@ message WorkerRunResult {
 
 // WorkloadClass define a template for a job.
 // +kubebuilder:object:root=true
+// +kubebuilder:storageversion
 // +kubebuilder:printcolumn:name="Age",type=date,JSONPath=`.metadata.creationTimestamp`
 // +kubebuilder:resource:path=workloadclasses,singular=workloadclass,categories={catalog,modela,all}
 message WorkloadClass {

@@ -130,6 +130,7 @@ type StudyCondition struct {
 // Study represents an automatic search for the best machine learning model for a given dataset
 // +kubebuilder:subresource:status
 // +kubebuilder:object:root=true
+// +kubebuilder:storageversion
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
 // +kubebuilder:printcolumn:name="Progress",type="number",JSONPath=".status.progress",priority=1
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",priority=1

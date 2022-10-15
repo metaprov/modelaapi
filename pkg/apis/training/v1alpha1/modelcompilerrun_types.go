@@ -41,6 +41,7 @@ type ModelCompilerRunCondition struct {
 
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
+// +kubebuilder:storageversion
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
 // +kubebuilder:printcolumn:name="Progress",type="number",JSONPath=".status.progress",priority=1
 // +kubebuilder:printcolumn:name="Model",type="string",JSONPath=".status.modelName"

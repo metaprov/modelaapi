@@ -46,6 +46,7 @@ type RecipeRunCondition struct {
 // RecipeRun represent one execution of the recipe.
 // Execution is performed by creating a Kubernetes job.
 // +kubebuilder:object:root=true
+// +kubebuilder:storageversion
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"

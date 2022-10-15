@@ -36,6 +36,7 @@ type LabelingPipelineCondition struct {
 
 // LabelingPipeline represents the ETL flow from the data sources to a processed dataset, ready for training.
 // +kubebuilder:object:root=true
+// +kubebuilder:storageversion
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:subresource:status

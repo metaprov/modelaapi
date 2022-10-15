@@ -44,6 +44,7 @@ type AccountCondition struct {
 // Account represents a single user on the system or a team that other Accounts can be grouped under
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
+// +kubebuilder:storageversion
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Type",type="string",JSONPath=".spec.type",description=""
 // +kubebuilder:printcolumn:name="Username",type="string",JSONPath=".spec.username",description=""
