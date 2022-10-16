@@ -159,8 +159,8 @@ func (in *AccountSpec) DeepCopyInto(out *AccountSpec) {
 		*out = new(bool)
 		**out = **in
 	}
-	if in.ClearenceLevel != nil {
-		in, out := &in.ClearenceLevel, &out.ClearenceLevel
+	if in.ClearanceLevel != nil {
+		in, out := &in.ClearanceLevel, &out.ClearanceLevel
 		*out = new(catalogv1alpha1.SecurityClearanceLevel)
 		**out = **in
 	}
