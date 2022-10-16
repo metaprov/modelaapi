@@ -22,7 +22,7 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type ModelClassServiceClient interface {
-	ListStudies(ctx context.Context, in *ListModelClassRequest, opts ...grpc.CallOption) (*ListModelClassResponse, error)
+	ListModelClasses(ctx context.Context, in *ListModelClassRequest, opts ...grpc.CallOption) (*ListModelClassResponse, error)
 	CreateModelClass(ctx context.Context, in *CreateModelClassRequest, opts ...grpc.CallOption) (*CreateModelClassResponse, error)
 	GetModelClass(ctx context.Context, in *GetModelClassRequest, opts ...grpc.CallOption) (*GetModelClassResponse, error)
 	UpdateModelClass(ctx context.Context, in *UpdateModelClassRequest, opts ...grpc.CallOption) (*UpdateModelClassResponse, error)
@@ -38,9 +38,9 @@ func NewModelClassServiceClient(cc grpc.ClientConnInterface) ModelClassServiceCl
 	return &modelClassServiceClient{cc}
 }
 
-func (c *modelClassServiceClient) ListStudies(ctx context.Context, in *ListModelClassRequest, opts ...grpc.CallOption) (*ListModelClassResponse, error) {
+func (c *modelClassServiceClient) ListModelClasses(ctx context.Context, in *ListModelClassRequest, opts ...grpc.CallOption) (*ListModelClassResponse, error) {
 	out := new(ListModelClassResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.study.v1.ModelClassService/ListStudies", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.study.v1.ModelClassService/ListModelClasses", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -96,7 +96,7 @@ func (c *modelClassServiceClient) CreateModelClassProfile(ctx context.Context, i
 // All implementations must embed UnimplementedModelClassServiceServer
 // for forward compatibility
 type ModelClassServiceServer interface {
-	ListStudies(context.Context, *ListModelClassRequest) (*ListModelClassResponse, error)
+	ListModelClasses(context.Context, *ListModelClassRequest) (*ListModelClassResponse, error)
 	CreateModelClass(context.Context, *CreateModelClassRequest) (*CreateModelClassResponse, error)
 	GetModelClass(context.Context, *GetModelClassRequest) (*GetModelClassResponse, error)
 	UpdateModelClass(context.Context, *UpdateModelClassRequest) (*UpdateModelClassResponse, error)
@@ -109,8 +109,8 @@ type ModelClassServiceServer interface {
 type UnimplementedModelClassServiceServer struct {
 }
 
-func (UnimplementedModelClassServiceServer) ListStudies(context.Context, *ListModelClassRequest) (*ListModelClassResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListStudies not implemented")
+func (UnimplementedModelClassServiceServer) ListModelClasses(context.Context, *ListModelClassRequest) (*ListModelClassResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListModelClasses not implemented")
 }
 func (UnimplementedModelClassServiceServer) CreateModelClass(context.Context, *CreateModelClassRequest) (*CreateModelClassResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateModelClass not implemented")
@@ -140,20 +140,20 @@ func RegisterModelClassServiceServer(s grpc.ServiceRegistrar, srv ModelClassServ
 	s.RegisterService(&ModelClassService_ServiceDesc, srv)
 }
 
-func _ModelClassService_ListStudies_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _ModelClassService_ListModelClasses_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ListModelClassRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ModelClassServiceServer).ListStudies(ctx, in)
+		return srv.(ModelClassServiceServer).ListModelClasses(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.study.v1.ModelClassService/ListStudies",
+		FullMethod: "/github.com.metaprov.modelaapi.services.study.v1.ModelClassService/ListModelClasses",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ModelClassServiceServer).ListStudies(ctx, req.(*ListModelClassRequest))
+		return srv.(ModelClassServiceServer).ListModelClasses(ctx, req.(*ListModelClassRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -256,8 +256,8 @@ var ModelClassService_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*ModelClassServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "ListStudies",
-			Handler:    _ModelClassService_ListStudies_Handler,
+			MethodName: "ListModelClasses",
+			Handler:    _ModelClassService_ListModelClasses_Handler,
 		},
 		{
 			MethodName: "CreateModelClass",

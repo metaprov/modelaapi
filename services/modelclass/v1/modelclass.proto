@@ -79,7 +79,7 @@ message UpdateModelClassResponse {
 
 service ModelClassService {
 
-    rpc ListStudies(ListModelClassRequest) returns (ListModelClassResponse) {
+    rpc ListModelClasses(ListModelClassRequest) returns (ListModelClassResponse) {
         option (google.api.http).get = "/v1/modelclasses/{namespace}";
     }
 

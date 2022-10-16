@@ -35,8 +35,8 @@ export class ModelClassServiceClient {
     this.options_ = options;
   }
 
-  methodInfoListStudies = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.study.v1.ModelClassService/ListStudies',
+  methodInfoListModelClasses = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.study.v1.ModelClassService/ListModelClasses',
     grpcWeb.MethodType.UNARY,
     github_com_metaprov_modelaapi_services_modelclass_v1_modelclass_pb.ListModelClassRequest,
     github_com_metaprov_modelaapi_services_modelclass_v1_modelclass_pb.ListModelClassResponse,
@@ -46,17 +46,17 @@ export class ModelClassServiceClient {
     github_com_metaprov_modelaapi_services_modelclass_v1_modelclass_pb.ListModelClassResponse.deserializeBinary
   );
 
-  listStudies(
+  listModelClasses(
     request: github_com_metaprov_modelaapi_services_modelclass_v1_modelclass_pb.ListModelClassRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_modelclass_v1_modelclass_pb.ListModelClassResponse>;
 
-  listStudies(
+  listModelClasses(
     request: github_com_metaprov_modelaapi_services_modelclass_v1_modelclass_pb.ListModelClassRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_modelclass_v1_modelclass_pb.ListModelClassResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_modelclass_v1_modelclass_pb.ListModelClassResponse>;
 
-  listStudies(
+  listModelClasses(
     request: github_com_metaprov_modelaapi_services_modelclass_v1_modelclass_pb.ListModelClassRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.RpcError,
@@ -64,18 +64,18 @@ export class ModelClassServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.study.v1.ModelClassService/ListStudies',
+          '/github.com.metaprov.modelaapi.services.study.v1.ModelClassService/ListModelClasses',
         request,
         metadata || {},
-        this.methodInfoListStudies,
+        this.methodInfoListModelClasses,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.study.v1.ModelClassService/ListStudies',
+      '/github.com.metaprov.modelaapi.services.study.v1.ModelClassService/ListModelClasses',
     request,
     metadata || {},
-    this.methodInfoListStudies);
+    this.methodInfoListModelClasses);
   }
 
   methodInfoCreateModelClass = new grpcWeb.MethodDescriptor(
