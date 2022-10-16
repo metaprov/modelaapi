@@ -3,7 +3,7 @@ module github.com/metaprov/modelaapi
 go 1.18
 
 require (
-	github.com/ghodss/yaml v1.0.0
+	github.com/dustin/go-humanize v1.0.0
 	github.com/go-ozzo/ozzo-validation v3.6.0+incompatible
 	github.com/gogo/protobuf v1.3.2
 	github.com/golang/protobuf v1.5.2
@@ -20,6 +20,7 @@ require (
 	k8s.io/apimachinery v0.24.2
 	k8s.io/client-go v0.24.2
 	k8s.io/code-generator v0.24.2
+	k8s.io/klog/v2 v2.60.1
 	sigs.k8s.io/controller-runtime v0.12.2
 )
 
@@ -74,7 +75,6 @@ require (
 	k8s.io/apiextensions-apiserver v0.24.2 // indirect
 	k8s.io/component-base v0.24.2 // indirect
 	k8s.io/gengo v0.0.0-20211129171323-c02415ce4185 // indirect
-	k8s.io/klog/v2 v2.60.1 // indirect
 	k8s.io/kube-openapi v0.0.0-20220328201542-3ee0da9b0b42 // indirect
 	k8s.io/utils v0.0.0-20220210201930-3a6ce19ff2f9 // indirect
 	sigs.k8s.io/json v0.0.0-20211208200746-9f7c6b3444d2 // indirect
