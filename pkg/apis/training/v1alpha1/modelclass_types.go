@@ -50,35 +50,8 @@ const (
 	ModelClassInitialized ModelClassConditionType = "Initialized"
 	// ModelClassSplit states that the training dataset has been split and is ready for use
 	ModelClassSplit ModelClassConditionType = "ModelClassSplit"
-	// ModelClass Transformed states that the training dataset has been split and is ready for use
-	ModelClassTransformed ModelClassConditionType = "ModelClassTransformed"
-	// ModelClassFeatureEngineered states that the search for the best feature engineering pipeline is complete
-	ModelClassFeatureEngineered ModelClassConditionType = "ModelClassFeaturesEngineered"
-	// ModelClassBaselined states that baseline models for each algorithm have been trained
-	ModelClassBaselined ModelClassConditionType = "ModelClassBaselined"
-	// ModelClassSearched states that the primary model search for algorithm and hyper-parameters is complete
-	ModelClassSearched ModelClassConditionType = "ModelClassSearched"
-	// ModelClassEnsembleCreated states that ensemble models were trained
-	ModelClassEnsembleCreated ModelClassConditionType = "ModelsEnsembleCreated"
-	// ModelClassTested states that the best model has been tested against training and testing datasets
-	ModelClassTested ModelClassConditionType = "ModelTested"
-	// ModelClassTested states that the best model has been tested against training and testing datasets
-	ModelClassTuned ModelClassConditionType = "ModelTuned"
-
-	// ModelClassReported states that a Report resource has been generated for the ModelClass
-	ModelClassReported  ModelClassConditionType = "Reported"
-	ModelClassProfiled  ModelClassConditionType = "Profiled"
-	ModelClassExplained ModelClassConditionType = "Explained"
-	ModelClassAborted   ModelClassConditionType = "Aborted"
-	// ModelClassPaused states that the execution of the ModelClass is paused
-	ModelClassPaused ModelClassConditionType = "Paused"
 	// ModelClassSaved states that the ModelClass has been archived in a database
 	ModelClassSaved ModelClassConditionType = "Saved"
-	// ModelClassCompleted states that the ModelClass has completed execution
-	ModelClassCompleted   ModelClassConditionType = "Completed"
-	ModelClassPartitioned ModelClassConditionType = "Partitioned"
-	ModelClassArchived    ModelClassConditionType = "Archived"
-	ModelClassUnitTested  ModelClassConditionType = "UnitTested"
 )
 
 // ModelClassCondition describes the state of a ModelClass at a certain point
@@ -104,20 +77,8 @@ type ModelClassCondition struct {
 // +kubebuilder:subresource:status
 // +kubebuilder:object:root=true
 // +kubebuilder:storageversion
-// +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
-// +kubebuilder:printcolumn:name="Progress",type="number",JSONPath=".status.progress",priority=1
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",priority=1
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName",priority=1
-// +kubebuilder:printcolumn:name="Entity",type="string",JSONPath=".spec.datasetName"
-// +kubebuilder:printcolumn:name="Task",type="string",JSONPath=".spec.task"
-// +kubebuilder:printcolumn:name="Objective",type="string",JSONPath=".spec.search.objective"
-// +kubebuilder:printcolumn:name="Score",type="number",JSONPath=".status.bestModelScore"
-// +kubebuilder:printcolumn:name="Best model",type="string",JSONPath=".status.bestModel"
-// +kubebuilder:printcolumn:name="Trained",type="number",JSONPath=".status.search.completed"
-// +kubebuilder:printcolumn:name="Tested",type="number",JSONPath=".status.test.completed"
-// +kubebuilder:printcolumn:name="StartTime",type="date",JSONPath=".status.startTime",priority=1
-// +kubebuilder:printcolumn:name="CompletionTime",type="date",JSONPath=".status.completionTime",priority=1
-// +kubebuilder:printcolumn:name="Last Failure",type="string",JSONPath=".status.lastFailure"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:resource:path=studies,singular=ModelClass,shortName=sd,categories={training,modela}
 type ModelClass struct {
@@ -125,6 +86,100 @@ type ModelClass struct {
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
 	Spec              ModelClassSpec   `json:"spec,omitempty" protobuf:"bytes,2,opt,name=spec"`
 	Status            ModelClassStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
+}
+
+// ModelClassSpec defines the desired state of a ModelClass and the parameters for a model search
+type ModelClassSpec struct {
+	// The name of the DataProductVersion which describes the version of the resource
+	// that exists in the same DataProduct namespace as the resource
+	// +kubebuilder:validation:MaxLength=63
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
+	VersionName *string `json:"versionName" protobuf:"bytes,1,opt,name=versionName"`
+	// The user-provided description of the ModelClass
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:MaxLength=512
+	// +kubebuilder:validation:Optional
+	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
+	// The reference to the Lab under which the Model resources created by the ModelClass will be trained.
+	// If unspecified, the default Lab from the parent DataProduct will be used
+	// +kubebuilder:validation:Optional
+	LabRef v1.ObjectReference `json:"labRef,omitempty" protobuf:"bytes,3,opt,name=labRef"`
+	// The name of the Entity resource that will be used to train models with.
+	// The dataset will be split into individual training, testing, and validation datasets
+	// +kubebuilder:validation:Required
+	// +required
+	DatasetName *string `json:"datasetName" protobuf:"bytes,4,opt,name=datasetName"`
+	// The machine learning task type (i.e. regression, classification)
+	// +kubebuilder:validation:Required
+	// +required
+	Task *catalog.MLTask `json:"task" protobuf:"bytes,5,opt,name=task"`
+	// The machine learning subtask relevant to the primary task (text classification, image object detection, etc.)
+	// +kubebuilder:default:=none
+	// +kubebuilder:validation:Optional
+	SubTask *catalog.MLSubtask `json:"subtask" protobuf:"bytes,6,opt,name=subtask"`
+	// FeatureEngineeringSearch specifies the parameters to perform a feature engineering search
+	// +kubebuilder:validation:Optional
+	FeatureEngineeringSearch FeatureEngineeringSearchSpec `json:"feSearch,omitempty" protobuf:"bytes,7,opt,name=feSearch"`
+	// Set the imbalance dataset handling.
+	// +kubebuilder:validation:Optional
+	ImbalanceHandler ImbalanceHandlingSpec `json:"imbalanceHandler,omitempty" protobuf:"bytes,8,opt,name=imbalanceHandler"`
+	// Baseline specifies the parameters to generate baseline (default hyper-parameters) models
+	// +kubebuilder:validation:Optional
+	Baseline BaselineSpec `json:"baseline,omitempty" protobuf:"bytes,9,opt,name=baseline"`
+	// Search specifies the configuration to perform the model search for the best algorithm and hyper-parameters
+	// +kubebuilder:validation:Optional
+	Search SearchSpec `json:"search,omitempty" protobuf:"bytes,10,opt,name=search"`
+	// Ensembles specifies to parameters to generate ensemble models
+	// +kubebuilder:validation:Optional
+	Ensembles EnsemblesSpec `json:"ensembles,omitempty" protobuf:"bytes,11,opt,name=ensembles"`
+	// TrainingTemplate specifies the configuration to train and evaluate models
+	// +kubebuilder:validation:Optional
+	TrainingTemplate TrainingSpec `json:"trainingTemplate,omitempty" protobuf:"bytes,12,opt,name=trainingTemplate"`
+	// ServingTemplate specifies the model format and resource requirements that will be applied to
+	// the Predictor created for the Model that will be selected by the ModelClass
+	// +kubebuilder:validation:Optional
+	ServingTemplate ServingSpec `json:"servingTemplate,omitempty" protobuf:"bytes,13,opt,name=servingTemplate"`
+	// ForecastSpec specifies the parameters required when generating a forecasting model
+	// +kubebuilder:validation:Optional
+	FctTemplate ForecasterSpec `json:"fctTemplate,omitempty" protobuf:"bytes,14,opt,name=fctTemplate"`
+	// Schedule specifies the configuration to execute the ModelClass at a later date
+	// +kubebuilder:validation:Optional
+	Schedule StudyScheduleSpec `json:"schedule,omitempty" protobuf:"bytes,15,opt,name=schedule"`
+	// Interpretability specifies the parameters to create interpretability visualizations for the final model
+	// +kubebuilder:validation:Optional
+	Interpretability InterpretabilitySpec `json:"interpretability,omitempty" protobuf:"bytes,16,opt,name=interpretability"`
+	// +kubebuilder:validation:Optional
+	DriftDetector DriftModelSpec `json:"driftDetection,omitempty" protobuf:"bytes,17,opt,name=driftDetection"`
+	// The data location where ModelClass artifacts (metadata, reports, and model artifacts) generated by the ModelClass will be stored
+	// +kubebuilder:validation:Optional
+	Location data.DataLocation `json:"location,omitempty" protobuf:"bytes,26,opt,name=location"`
+	// The name of the Account which created the object, which exists in the same tenant as the object
+	// +kubebuilder:default:="no-one"
+	// +kubebuilder:validation:Optional
+	Owner *string `json:"owner,omitempty" protobuf:"bytes,27,opt,name=owner"`
+	// CompilerSpec specifies the configuration to compile the best-selected model to a binary (currently unimplemented)
+	//+kubebuilder:validation:Optional
+	Compilation catalog.CompilerSpec `json:"compilation,omitempty" protobuf:"bytes,28,opt,name=compilation"`
+	// The notification specification that determines which notifiers will receive Alerts generated by the object
+	//+kubebuilder:validation:Optional
+	Notification catalog.NotificationSpec `json:"notification,omitempty" protobuf:"bytes,31,opt,name=notification"`
+	// ModelImage specifies the configuration to upload Docker images of models to an image registry
+	//+kubebuilder:validation:Optional
+	ModelImage ModelImageSpec `json:"modelImage,omitempty" protobuf:"bytes,32,opt,name=modelImage"`
+	// GarbageCollectionSpec specifies the configuration to automatically clean-up unused models
+	//+kubebuilder:validation:Optional
+	GC GarbageCollectionSpec `json:"gc,omitempty" protobuf:"bytes,33,opt,name=gc"`
+	// The time-to-live, in seconds, for Model resources produced by the ModelClass
+	// +kubebuilder:default:=0
+	// +kubebuilder:validation:Optional
+	TTL *int32 `json:"ttl,omitempty" protobuf:"varint,34,opt,name=ttl"`
+	// A template for models unit tests
+	// +kubebuilder:validation:Optional
+	UnitTestsTemplate catalog.TestSuite `json:"unitTestsTemplate,omitempty" protobuf:"bytes,38,opt,name=unitTestsTemplate"`
+	// In case of a group by, those are the group locations
+	// +kubebuilder:validation:Optional
+	GroupLocations GroupSplitLocationsSpec `json:"groupLocations,omitempty" protobuf:"bytes,39,opt,name=groupLocations"`
 }
 
 // SearchSpec specifies the configuration for a distributed model search
@@ -457,100 +512,6 @@ type FeatureEngineeringSearchSpec struct {
 	// in score, the model search will conclude
 	// +kubebuilder:validation:Optional
 	EarlyStop EarlyStopSpec `json:"earlyStop,omitempty" protobuf:"bytes,12,opt,name=earlyStop"`
-}
-
-// ModelClassSpec defines the desired state of a ModelClass and the parameters for a model search
-type ModelClassSpec struct {
-	// The name of the DataProductVersion which describes the version of the resource
-	// that exists in the same DataProduct namespace as the resource
-	// +kubebuilder:validation:MaxLength=63
-	// +kubebuilder:default:=""
-	// +kubebuilder:validation:Optional
-	VersionName *string `json:"versionName" protobuf:"bytes,1,opt,name=versionName"`
-	// The user-provided description of the ModelClass
-	// +kubebuilder:default:=""
-	// +kubebuilder:validation:MaxLength=512
-	// +kubebuilder:validation:Optional
-	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
-	// The reference to the Lab under which the Model resources created by the ModelClass will be trained.
-	// If unspecified, the default Lab from the parent DataProduct will be used
-	// +kubebuilder:validation:Optional
-	LabRef v1.ObjectReference `json:"labRef,omitempty" protobuf:"bytes,3,opt,name=labRef"`
-	// The name of the Entity resource that will be used to train models with.
-	// The dataset will be split into individual training, testing, and validation datasets
-	// +kubebuilder:validation:Required
-	// +required
-	DatasetName *string `json:"datasetName" protobuf:"bytes,4,opt,name=datasetName"`
-	// The machine learning task type (i.e. regression, classification)
-	// +kubebuilder:validation:Required
-	// +required
-	Task *catalog.MLTask `json:"task" protobuf:"bytes,5,opt,name=task"`
-	// The machine learning subtask relevant to the primary task (text classification, image object detection, etc.)
-	// +kubebuilder:default:=none
-	// +kubebuilder:validation:Optional
-	SubTask *catalog.MLSubtask `json:"subtask" protobuf:"bytes,6,opt,name=subtask"`
-	// FeatureEngineeringSearch specifies the parameters to perform a feature engineering search
-	// +kubebuilder:validation:Optional
-	FeatureEngineeringSearch FeatureEngineeringSearchSpec `json:"feSearch,omitempty" protobuf:"bytes,7,opt,name=feSearch"`
-	// Set the imbalance dataset handling.
-	// +kubebuilder:validation:Optional
-	ImbalanceHandler ImbalanceHandlingSpec `json:"imbalanceHandler,omitempty" protobuf:"bytes,8,opt,name=imbalanceHandler"`
-	// Baseline specifies the parameters to generate baseline (default hyper-parameters) models
-	// +kubebuilder:validation:Optional
-	Baseline BaselineSpec `json:"baseline,omitempty" protobuf:"bytes,9,opt,name=baseline"`
-	// Search specifies the configuration to perform the model search for the best algorithm and hyper-parameters
-	// +kubebuilder:validation:Optional
-	Search SearchSpec `json:"search,omitempty" protobuf:"bytes,10,opt,name=search"`
-	// Ensembles specifies to parameters to generate ensemble models
-	// +kubebuilder:validation:Optional
-	Ensembles EnsemblesSpec `json:"ensembles,omitempty" protobuf:"bytes,11,opt,name=ensembles"`
-	// TrainingTemplate specifies the configuration to train and evaluate models
-	// +kubebuilder:validation:Optional
-	TrainingTemplate TrainingSpec `json:"trainingTemplate,omitempty" protobuf:"bytes,12,opt,name=trainingTemplate"`
-	// ServingTemplate specifies the model format and resource requirements that will be applied to
-	// the Predictor created for the Model that will be selected by the ModelClass
-	// +kubebuilder:validation:Optional
-	ServingTemplate ServingSpec `json:"servingTemplate,omitempty" protobuf:"bytes,13,opt,name=servingTemplate"`
-	// ForecastSpec specifies the parameters required when generating a forecasting model
-	// +kubebuilder:validation:Optional
-	FctTemplate ForecasterSpec `json:"fctTemplate,omitempty" protobuf:"bytes,14,opt,name=fctTemplate"`
-	// Schedule specifies the configuration to execute the ModelClass at a later date
-	// +kubebuilder:validation:Optional
-	Schedule StudyScheduleSpec `json:"schedule,omitempty" protobuf:"bytes,15,opt,name=schedule"`
-	// Interpretability specifies the parameters to create interpretability visualizations for the final model
-	// +kubebuilder:validation:Optional
-	Interpretability InterpretabilitySpec `json:"interpretability,omitempty" protobuf:"bytes,16,opt,name=interpretability"`
-	// +kubebuilder:validation:Optional
-	DriftDetector DriftModelSpec `json:"driftDetection,omitempty" protobuf:"bytes,17,opt,name=driftDetection"`
-	// The data location where ModelClass artifacts (metadata, reports, and model artifacts) generated by the ModelClass will be stored
-	// +kubebuilder:validation:Optional
-	Location data.DataLocation `json:"location,omitempty" protobuf:"bytes,26,opt,name=location"`
-	// The name of the Account which created the object, which exists in the same tenant as the object
-	// +kubebuilder:default:="no-one"
-	// +kubebuilder:validation:Optional
-	Owner *string `json:"owner,omitempty" protobuf:"bytes,27,opt,name=owner"`
-	// CompilerSpec specifies the configuration to compile the best-selected model to a binary (currently unimplemented)
-	//+kubebuilder:validation:Optional
-	Compilation catalog.CompilerSpec `json:"compilation,omitempty" protobuf:"bytes,28,opt,name=compilation"`
-	// The notification specification that determines which notifiers will receive Alerts generated by the object
-	//+kubebuilder:validation:Optional
-	Notification catalog.NotificationSpec `json:"notification,omitempty" protobuf:"bytes,31,opt,name=notification"`
-	// ModelImage specifies the configuration to upload Docker images of models to an image registry
-	//+kubebuilder:validation:Optional
-	ModelImage ModelImageSpec `json:"modelImage,omitempty" protobuf:"bytes,32,opt,name=modelImage"`
-	// GarbageCollectionSpec specifies the configuration to automatically clean-up unused models
-	//+kubebuilder:validation:Optional
-	GC GarbageCollectionSpec `json:"gc,omitempty" protobuf:"bytes,33,opt,name=gc"`
-	// The time-to-live, in seconds, for Model resources produced by the ModelClass
-	// +kubebuilder:default:=0
-	// +kubebuilder:validation:Optional
-	TTL *int32 `json:"ttl,omitempty" protobuf:"varint,34,opt,name=ttl"`
-	// A template for models unit tests
-	// +kubebuilder:validation:Optional
-	UnitTestsTemplate catalog.TestSuite `json:"unitTestsTemplate,omitempty" protobuf:"bytes,38,opt,name=unitTestsTemplate"`
-	// In case of a group by, those are the group locations
-	// +kubebuilder:validation:Optional
-	GroupLocations GroupSplitLocationsSpec `json:"groupLocations,omitempty" protobuf:"bytes,39,opt,name=groupLocations"`
 }
 
 // ModelClassStatus defines the observed state of a ModelClass

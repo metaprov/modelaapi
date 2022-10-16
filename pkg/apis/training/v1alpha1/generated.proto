@@ -1494,20 +1494,8 @@ message ModelAutobuilderStatus {
 // +kubebuilder:subresource:status
 // +kubebuilder:object:root=true
 // +kubebuilder:storageversion
-// +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
-// +kubebuilder:printcolumn:name="Progress",type="number",JSONPath=".status.progress",priority=1
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",priority=1
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName",priority=1
-// +kubebuilder:printcolumn:name="Entity",type="string",JSONPath=".spec.datasetName"
-// +kubebuilder:printcolumn:name="Task",type="string",JSONPath=".spec.task"
-// +kubebuilder:printcolumn:name="Objective",type="string",JSONPath=".spec.search.objective"
-// +kubebuilder:printcolumn:name="Score",type="number",JSONPath=".status.bestModelScore"
-// +kubebuilder:printcolumn:name="Best model",type="string",JSONPath=".status.bestModel"
-// +kubebuilder:printcolumn:name="Trained",type="number",JSONPath=".status.search.completed"
-// +kubebuilder:printcolumn:name="Tested",type="number",JSONPath=".status.test.completed"
-// +kubebuilder:printcolumn:name="StartTime",type="date",JSONPath=".status.startTime",priority=1
-// +kubebuilder:printcolumn:name="CompletionTime",type="date",JSONPath=".status.completionTime",priority=1
-// +kubebuilder:printcolumn:name="Last Failure",type="string",JSONPath=".status.lastFailure"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:resource:path=studies,singular=ModelClass,shortName=sd,categories={training,modela}
 message ModelClass {
