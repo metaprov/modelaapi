@@ -214,10 +214,6 @@ func ParseStudyYaml(content []byte) (*Study, error) {
 	return r, nil
 }
 
-func (study *Study) ToYamlFile() ([]byte, error) {
-	return yaml.Marshal(study)
-}
-
 func (study *Study) SetStartTime() {
 	now := time.Now()
 	study.Status.StartTime = &metav1.Time{Time: now}

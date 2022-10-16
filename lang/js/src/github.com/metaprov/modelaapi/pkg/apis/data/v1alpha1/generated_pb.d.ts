@@ -2767,38 +2767,6 @@ export namespace ExcelSheetArea {
   }
 }
 
-export class Feature extends jspb.Message {
-  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
-  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): Feature;
-  hasMetadata(): boolean;
-  clearMetadata(): Feature;
-
-  getSpec(): FeatureSpec | undefined;
-  setSpec(value?: FeatureSpec): Feature;
-  hasSpec(): boolean;
-  clearSpec(): Feature;
-
-  getStatus(): FeatureStatus | undefined;
-  setStatus(value?: FeatureStatus): Feature;
-  hasStatus(): boolean;
-  clearStatus(): Feature;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): Feature.AsObject;
-  static toObject(includeInstance: boolean, msg: Feature): Feature.AsObject;
-  static serializeBinaryToWriter(message: Feature, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): Feature;
-  static deserializeBinaryFromReader(message: Feature, reader: jspb.BinaryReader): Feature;
-}
-
-export namespace Feature {
-  export type AsObject = {
-    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.AsObject,
-    spec?: FeatureSpec.AsObject,
-    status?: FeatureStatus.AsObject,
-  }
-}
-
 export class FeatureAggrSpec extends jspb.Message {
   getColumn(): string;
   setColumn(value: string): FeatureAggrSpec;
@@ -2826,42 +2794,6 @@ export namespace FeatureAggrSpec {
     column: string,
     functionsList: Array<string>,
     windowsList: Array<string>,
-  }
-}
-
-export class FeatureCondition extends jspb.Message {
-  getType(): string;
-  setType(value: string): FeatureCondition;
-
-  getStatus(): string;
-  setStatus(value: string): FeatureCondition;
-
-  getLasttransitiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLasttransitiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): FeatureCondition;
-  hasLasttransitiontime(): boolean;
-  clearLasttransitiontime(): FeatureCondition;
-
-  getReason(): string;
-  setReason(value: string): FeatureCondition;
-
-  getMessage(): string;
-  setMessage(value: string): FeatureCondition;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): FeatureCondition.AsObject;
-  static toObject(includeInstance: boolean, msg: FeatureCondition): FeatureCondition.AsObject;
-  static serializeBinaryToWriter(message: FeatureCondition, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): FeatureCondition;
-  static deserializeBinaryFromReader(message: FeatureCondition, reader: jspb.BinaryReader): FeatureCondition;
-}
-
-export namespace FeatureCondition {
-  export type AsObject = {
-    type: string,
-    status: string,
-    lasttransitiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    reason: string,
-    message: string,
   }
 }
 
@@ -3119,32 +3051,6 @@ export namespace FeatureHistogramStatus {
   }
 }
 
-export class FeatureList extends jspb.Message {
-  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta | undefined;
-  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta): FeatureList;
-  hasMetadata(): boolean;
-  clearMetadata(): FeatureList;
-
-  getItemsList(): Array<Feature>;
-  setItemsList(value: Array<Feature>): FeatureList;
-  clearItemsList(): FeatureList;
-  addItems(value?: Feature, index?: number): Feature;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): FeatureList.AsObject;
-  static toObject(includeInstance: boolean, msg: FeatureList): FeatureList.AsObject;
-  static serializeBinaryToWriter(message: FeatureList, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): FeatureList;
-  static deserializeBinaryFromReader(message: FeatureList, reader: jspb.BinaryReader): FeatureList;
-}
-
-export namespace FeatureList {
-  export type AsObject = {
-    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta.AsObject,
-    itemsList: Array<Feature.AsObject>,
-  }
-}
-
 export class FeaturePipeline extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): FeaturePipeline;
@@ -3343,11 +3249,6 @@ export class FeaturePipelineRunSpec extends jspb.Message {
   getFeaturepipelinename(): string;
   setFeaturepipelinename(value: string): FeaturePipelineRunSpec;
 
-  getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
-  setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): FeaturePipelineRunSpec;
-  hasResources(): boolean;
-  clearResources(): FeaturePipelineRunSpec;
-
   getTtl(): number;
   setTtl(value: number): FeaturePipelineRunSpec;
 
@@ -3364,7 +3265,6 @@ export namespace FeaturePipelineRunSpec {
     owner: string,
     versionname: string,
     featurepipelinename: string,
-    resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     ttl: number,
   }
 }
@@ -3456,11 +3356,10 @@ export class FeaturePipelineSpec extends jspb.Message {
   hasMaterialization(): boolean;
   clearMaterialization(): FeaturePipelineSpec;
 
-  getFamily(): string;
-  setFamily(value: string): FeaturePipelineSpec;
-
-  getEntityname(): string;
-  setEntityname(value: string): FeaturePipelineSpec;
+  getFeaturesetref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setFeaturesetref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): FeaturePipelineSpec;
+  hasFeaturesetref(): boolean;
+  clearFeaturesetref(): FeaturePipelineSpec;
 
   getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
   setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): FeaturePipelineSpec;
@@ -3497,8 +3396,7 @@ export namespace FeaturePipelineSpec {
     description: string,
     aggregation?: AggregationSpec.AsObject,
     materialization?: MaterializationSpec.AsObject,
-    family: string,
-    entityname: string,
+    featuresetref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     activedeadlineseconds: number,
@@ -3550,178 +3448,6 @@ export namespace FeaturePipelineStatus {
     observedgeneration: number,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<FeaturePipelineCondition.AsObject>,
-  }
-}
-
-export class FeatureSpec extends jspb.Message {
-  getOwner(): string;
-  setOwner(value: string): FeatureSpec;
-
-  getVersionname(): string;
-  setVersionname(value: string): FeatureSpec;
-
-  getDescription(): string;
-  setDescription(value: string): FeatureSpec;
-
-  getKeycolumn(): string;
-  setKeycolumn(value: string): FeatureSpec;
-
-  getTimestampcolumn(): string;
-  setTimestampcolumn(value: string): FeatureSpec;
-
-  getFeaturecolumn(): string;
-  setFeaturecolumn(value: string): FeatureSpec;
-
-  getEntityname(): string;
-  setEntityname(value: string): FeatureSpec;
-
-  getFeaturepipelinename(): string;
-  setFeaturepipelinename(value: string): FeatureSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): FeatureSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: FeatureSpec): FeatureSpec.AsObject;
-  static serializeBinaryToWriter(message: FeatureSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): FeatureSpec;
-  static deserializeBinaryFromReader(message: FeatureSpec, reader: jspb.BinaryReader): FeatureSpec;
-}
-
-export namespace FeatureSpec {
-  export type AsObject = {
-    owner: string,
-    versionname: string,
-    description: string,
-    keycolumn: string,
-    timestampcolumn: string,
-    featurecolumn: string,
-    entityname: string,
-    featurepipelinename: string,
-  }
-}
-
-export class FeatureStatus extends jspb.Message {
-  getMin(): number;
-  setMin(value: number): FeatureStatus;
-
-  getMax(): number;
-  setMax(value: number): FeatureStatus;
-
-  getMean(): number;
-  setMean(value: number): FeatureStatus;
-
-  getStddev(): number;
-  setStddev(value: number): FeatureStatus;
-
-  getSkewness(): number;
-  setSkewness(value: number): FeatureStatus;
-
-  getKurtosis(): number;
-  setKurtosis(value: number): FeatureStatus;
-
-  getZeros(): number;
-  setZeros(value: number): FeatureStatus;
-
-  getP25(): number;
-  setP25(value: number): FeatureStatus;
-
-  getP50(): number;
-  setP50(value: number): FeatureStatus;
-
-  getP75(): number;
-  setP75(value: number): FeatureStatus;
-
-  getMissing(): number;
-  setMissing(value: number): FeatureStatus;
-
-  getInvalid(): number;
-  setInvalid(value: number): FeatureStatus;
-
-  getTarget(): boolean;
-  setTarget(value: boolean): FeatureStatus;
-
-  getImportance(): number;
-  setImportance(value: number): FeatureStatus;
-
-  getDistinc(): number;
-  setDistinc(value: number): FeatureStatus;
-
-  getIgnored(): boolean;
-  setIgnored(value: boolean): FeatureStatus;
-
-  getNullable(): boolean;
-  setNullable(value: boolean): FeatureStatus;
-
-  getHighcred(): boolean;
-  setHighcred(value: boolean): FeatureStatus;
-
-  getHighcorr(): boolean;
-  setHighcorr(value: boolean): FeatureStatus;
-
-  getSkew(): boolean;
-  setSkew(value: boolean): FeatureStatus;
-
-  getCompleteness(): number;
-  setCompleteness(value: number): FeatureStatus;
-
-  getDistinctvaluecount(): number;
-  setDistinctvaluecount(value: number): FeatureStatus;
-
-  getMostfreqvaluesratio(): number;
-  setMostfreqvaluesratio(value: number): FeatureStatus;
-
-  getIndexofpeculiarity(): number;
-  setIndexofpeculiarity(value: number): FeatureStatus;
-
-  getObservedgeneration(): number;
-  setObservedgeneration(value: number): FeatureStatus;
-
-  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): FeatureStatus;
-  hasLastupdated(): boolean;
-  clearLastupdated(): FeatureStatus;
-
-  getConditionsList(): Array<FeatureCondition>;
-  setConditionsList(value: Array<FeatureCondition>): FeatureStatus;
-  clearConditionsList(): FeatureStatus;
-  addConditions(value?: FeatureCondition, index?: number): FeatureCondition;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): FeatureStatus.AsObject;
-  static toObject(includeInstance: boolean, msg: FeatureStatus): FeatureStatus.AsObject;
-  static serializeBinaryToWriter(message: FeatureStatus, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): FeatureStatus;
-  static deserializeBinaryFromReader(message: FeatureStatus, reader: jspb.BinaryReader): FeatureStatus;
-}
-
-export namespace FeatureStatus {
-  export type AsObject = {
-    min: number,
-    max: number,
-    mean: number,
-    stddev: number,
-    skewness: number,
-    kurtosis: number,
-    zeros: number,
-    p25: number,
-    p50: number,
-    p75: number,
-    missing: number,
-    invalid: number,
-    target: boolean,
-    importance: number,
-    distinc: number,
-    ignored: boolean,
-    nullable: boolean,
-    highcred: boolean,
-    highcorr: boolean,
-    skew: boolean,
-    completeness: number,
-    distinctvaluecount: number,
-    mostfreqvaluesratio: number,
-    indexofpeculiarity: number,
-    observedgeneration: number,
-    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    conditionsList: Array<FeatureCondition.AsObject>,
   }
 }
 
@@ -3826,13 +3552,28 @@ export class FeaturesetSpec extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): FeaturesetSpec;
 
-  getFeaturesList(): Array<string>;
-  setFeaturesList(value: Array<string>): FeaturesetSpec;
-  clearFeaturesList(): FeaturesetSpec;
-  addFeatures(value: string, index?: number): FeaturesetSpec;
-
   getOwner(): string;
   setOwner(value: string): FeaturesetSpec;
+
+  getEntityref(): k8s_io_api_core_v1_generated_pb.LocalObjectReference | undefined;
+  setEntityref(value?: k8s_io_api_core_v1_generated_pb.LocalObjectReference): FeaturesetSpec;
+  hasEntityref(): boolean;
+  clearEntityref(): FeaturesetSpec;
+
+  getDatasourceref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setDatasourceref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): FeaturesetSpec;
+  hasDatasourceref(): boolean;
+  clearDatasourceref(): FeaturesetSpec;
+
+  getIncludeList(): Array<string>;
+  setIncludeList(value: Array<string>): FeaturesetSpec;
+  clearIncludeList(): FeaturesetSpec;
+  addInclude(value: string, index?: number): FeaturesetSpec;
+
+  getExcludeList(): Array<string>;
+  setExcludeList(value: Array<string>): FeaturesetSpec;
+  clearExcludeList(): FeaturesetSpec;
+  addExclude(value: string, index?: number): FeaturesetSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FeaturesetSpec.AsObject;
@@ -3846,8 +3587,11 @@ export namespace FeaturesetSpec {
   export type AsObject = {
     versionname: string,
     description: string,
-    featuresList: Array<string>,
     owner: string,
+    entityref?: k8s_io_api_core_v1_generated_pb.LocalObjectReference.AsObject,
+    datasourceref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    includeList: Array<string>,
+    excludeList: Array<string>,
   }
 }
 

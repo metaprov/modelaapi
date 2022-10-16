@@ -17,7 +17,7 @@ message DatasetProfile {
   TableView    table = 7;
   string       hash = 8; // signature of the dataset profile.
   string       anomalyURI = 9;
-  TableView features = 10;  // return the list of features per group. only for datasets of type group forecast
+
   TableView groups = 11;  // return the list of group datasets in this dataset profile. only for datasets of type group forecast
   TimeSeriesProfile ts = 12;// if the dataset is a group dataset series, this is one profile of a single time series.
 }
@@ -92,6 +92,8 @@ message TimeSeriesProfile {
     string key      = 6;
     TableView series = 7; // the series itself
     TableView valueStat = 8; // stat about the value column
+    TableView featuresView = 9; // stat about the value column
+    map<string,float> features = 10;  // return the list of features per group. only for datasets of type group forecast
 }
 
 // KPSS test

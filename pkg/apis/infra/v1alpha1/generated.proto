@@ -139,7 +139,7 @@ message AccountSpec {
   // clearance level of a DataProduct will not have access to their namespace
   // +kubebuilder:default:=unclassified
   // +kubebuilder:validation:Optional
-  optional string clearenceLevel = 17;
+  optional string clearanceLevel = 17;
 
   // The specification for the Account avatar image
   // +kubebuilder:validation:Optional
@@ -559,7 +559,7 @@ message ApiTokenCondition {
   // The reason for the condition's last transition.
   optional string reason = 4;
 
-  // A human readable message indicating details about the transition.
+  // A human-readable message indicating details about the transition.
   optional string message = 5;
 }
 
@@ -634,7 +634,7 @@ message AttachmentCondition {
   // The reason for the condition's last transition.
   optional string reason = 4;
 
-  // A human readable message indicating details about the transition.
+  // A human-readable message indicating details about the transition.
   optional string message = 5;
 }
 
@@ -869,7 +869,7 @@ message CommitCondition {
   // The reason for the condition's last transition.
   optional string reason = 4;
 
-  // A human readable message indicating details about the transition.
+  // A human-readable message indicating details about the transition.
   optional string message = 5;
 }
 

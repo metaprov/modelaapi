@@ -14,8 +14,8 @@ class OnlineFeatureStoreServiceStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.CreateFeature = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/CreateFeature',
+        self.IngestFeatures = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/IngestFeatures',
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.CreateFeatureRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.CreateFeatureResponse.FromString,
                 )
@@ -49,7 +49,7 @@ class OnlineFeatureStoreServiceStub(object):
 class OnlineFeatureStoreServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
-    def CreateFeature(self, request, context):
+    def IngestFeatures(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -88,8 +88,8 @@ class OnlineFeatureStoreServiceServicer(object):
 
 def add_OnlineFeatureStoreServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'CreateFeature': grpc.unary_unary_rpc_method_handler(
-                    servicer.CreateFeature,
+            'IngestFeatures': grpc.unary_unary_rpc_method_handler(
+                    servicer.IngestFeatures,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.CreateFeatureRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.CreateFeatureResponse.SerializeToString,
             ),
@@ -129,7 +129,7 @@ class OnlineFeatureStoreService(object):
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
-    def CreateFeature(request,
+    def IngestFeatures(request,
             target,
             options=(),
             channel_credentials=None,
@@ -139,7 +139,7 @@ class OnlineFeatureStoreService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/CreateFeature',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/IngestFeatures',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.CreateFeatureRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.CreateFeatureResponse.FromString,
             options, channel_credentials,

@@ -66,12 +66,24 @@ type FeaturesetSpec struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:MaxLength=512
 	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
-	// Reference to the feature names of this featureset
-	Features []string `json:"features,omitempty" protobuf:"bytes,3,rep,name=features"`
 	// The owner account name
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,4,opt,name=owner"`
+	// The owner account name
+	// +kubebuilder:default:="no-one"
+	// +kubebuilder:validation:Optional
+	EntityRef v1.LocalObjectReference `json:"entityRef,omitempty" protobuf:"bytes,5,opt,name=entityRef"`
+	// Datasource ref define the metadata for the features in this
+	// resource which the DataProductVersion describes the version of
+	// +kubebuilder:validation:Optional
+	DatasourceRef v1.ObjectReference `json:"datasourceRef,omitempty" protobuf:"bytes,6,opt,name=datasourceRef"`
+	// Features to include in this set
+	// +kubebuilder:validation:Optional
+	Include []string `json:"include,omitempty" protobuf:"bytes,7,rep,name=include"`
+	// Features to exclude from the data source.
+	// +kubebuilder:validation:Optional
+	Exclude []string `json:"exclude,omitempty" protobuf:"bytes,8,rep,name=exclude"`
 }
 
 // +kubebuilder:object:root=true

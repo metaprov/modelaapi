@@ -26,7 +26,7 @@ func (r *Account) SetupWebhookWithManager(mgr ctrl.Manager) error {
 }
 
 //==============================================================================
-// Finilizer
+// Finalizer
 //==============================================================================
 
 func (account *Account) HasFinalizer() bool { return util.HasFin(&account.ObjectMeta, infra.GroupName) }

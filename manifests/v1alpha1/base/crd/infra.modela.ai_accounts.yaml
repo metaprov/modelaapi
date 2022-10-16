@@ -85,7 +85,7 @@ spec:
                       (e.g. a PNG file)
                     type: string
                 type: object
-              clearenceLevel:
+              clearanceLevel:
                 default: unclassified
                 description: The clearance level of the account. Accounts which do
                   not have a clearance level greater than or equal to the clearance

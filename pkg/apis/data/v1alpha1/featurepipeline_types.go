@@ -90,11 +90,7 @@ type FeaturePipelineSpec struct {
 	// Family is the feature family
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	Family *string `json:"family,omitempty" protobuf:"bytes,7,opt,name=family"`
-	// Reference to the entity name
-	// +kubebuilder:default:=""
-	// +kubebuilder:validation:Optional
-	EntityName *string `json:"entityName,omitempty" protobuf:"bytes,8,opt,name=entityName"`
+	FeatureSetRef v1.ObjectReference `json:"featureSetRef,omitempty" protobuf:"bytes,7,opt,name=featureSetRef"`
 	// Resources is the hardware resource req.
 	// +kubebuilder:validation:Optional
 	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,9,opt,name=resources"`

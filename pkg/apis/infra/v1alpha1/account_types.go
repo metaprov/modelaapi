@@ -130,7 +130,7 @@ type AccountSpec struct {
 	// clearance level of a DataProduct will not have access to their namespace
 	// +kubebuilder:default:=unclassified
 	// +kubebuilder:validation:Optional
-	ClearenceLevel *catalog.SecurityClearanceLevel `json:"clearenceLevel,omitempty" protobuf:"bytes,17,opt,name=clearenceLevel"`
+	ClearanceLevel *catalog.SecurityClearanceLevel `json:"clearanceLevel,omitempty" protobuf:"bytes,17,opt,name=clearanceLevel"`
 	// The specification for the Account avatar image
 	// +kubebuilder:validation:Optional
 	Avatar AvatarSpec `json:"avatar,omitempty" protobuf:"bytes,18,opt,name=avatar"`

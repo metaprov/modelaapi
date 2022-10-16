@@ -38,11 +38,6 @@ export class DatasetProfile extends jspb.Message {
   getAnomalyuri(): string;
   setAnomalyuri(value: string): DatasetProfile;
 
-  getFeatures(): TableView | undefined;
-  setFeatures(value?: TableView): DatasetProfile;
-  hasFeatures(): boolean;
-  clearFeatures(): DatasetProfile;
-
   getGroups(): TableView | undefined;
   setGroups(value?: TableView): DatasetProfile;
   hasGroups(): boolean;
@@ -72,7 +67,6 @@ export namespace DatasetProfile {
     table?: TableView.AsObject,
     hash: string,
     anomalyuri: string,
-    features?: TableView.AsObject,
     groups?: TableView.AsObject,
     ts?: TimeSeriesProfile.AsObject,
   }
@@ -381,6 +375,14 @@ export class TimeSeriesProfile extends jspb.Message {
   hasValuestat(): boolean;
   clearValuestat(): TimeSeriesProfile;
 
+  getFeaturesview(): TableView | undefined;
+  setFeaturesview(value?: TableView): TimeSeriesProfile;
+  hasFeaturesview(): boolean;
+  clearFeaturesview(): TimeSeriesProfile;
+
+  getFeaturesMap(): jspb.Map<string, number>;
+  clearFeaturesMap(): TimeSeriesProfile;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TimeSeriesProfile.AsObject;
   static toObject(includeInstance: boolean, msg: TimeSeriesProfile): TimeSeriesProfile.AsObject;
@@ -399,6 +401,8 @@ export namespace TimeSeriesProfile {
     key: string,
     series?: TableView.AsObject,
     valuestat?: TableView.AsObject,
+    featuresview?: TableView.AsObject,
+    featuresMap: Array<[string, number]>,
   }
 }
 

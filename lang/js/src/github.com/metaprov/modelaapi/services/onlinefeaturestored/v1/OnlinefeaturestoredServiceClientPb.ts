@@ -35,8 +35,8 @@ export class OnlineFeatureStoreServiceClient {
     this.options_ = options;
   }
 
-  methodInfoCreateFeature = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/CreateFeature',
+  methodInfoIngestFeatures = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/IngestFeatures',
     grpcWeb.MethodType.UNARY,
     github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.CreateFeatureRequest,
     github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.CreateFeatureResponse,
@@ -46,17 +46,17 @@ export class OnlineFeatureStoreServiceClient {
     github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.CreateFeatureResponse.deserializeBinary
   );
 
-  createFeature(
+  ingestFeatures(
     request: github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.CreateFeatureRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.CreateFeatureResponse>;
 
-  createFeature(
+  ingestFeatures(
     request: github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.CreateFeatureRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.CreateFeatureResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.CreateFeatureResponse>;
 
-  createFeature(
+  ingestFeatures(
     request: github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.CreateFeatureRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.RpcError,
@@ -64,18 +64,18 @@ export class OnlineFeatureStoreServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/CreateFeature',
+          '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/IngestFeatures',
         request,
         metadata || {},
-        this.methodInfoCreateFeature,
+        this.methodInfoIngestFeatures,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/CreateFeature',
+      '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/IngestFeatures',
     request,
     metadata || {},
-    this.methodInfoCreateFeature);
+    this.methodInfoIngestFeatures);
   }
 
   methodInfoDeleteFeature = new grpcWeb.MethodDescriptor(

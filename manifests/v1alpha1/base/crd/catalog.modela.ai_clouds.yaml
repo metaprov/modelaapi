@@ -86,7 +86,7 @@ spec:
                   provider
                 items:
                   description: MachineClass define the specific for a machine type
-                    of a cloud provider
+                    of cloud provider
                   properties:
                     code:
                       description: Code the the code of the machine class within the

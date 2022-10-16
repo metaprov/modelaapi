@@ -2018,25 +2018,6 @@ message ExcelSheetArea {
   optional int32 toRow = 5;
 }
 
-// Feature represent a single feature in the feature store.
-// +kubebuilder:object:root=true
-// +kubebuilder:storageversion
-// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
-// +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
-// +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
-// +kubebuilder:printcolumn:name="Description",type="string",JSONPath=".spec.description"
-// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=features,singular=feature,categories={data,modela}
-// +kubebuilder:subresource:status
-message Feature {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
-
-  optional FeatureSpec spec = 2;
-
-  // +optional
-  optional FeatureStatus status = 3;
-}
-
 message FeatureAggrSpec {
   // The column
   optional string column = 1;
@@ -2046,24 +2027,6 @@ message FeatureAggrSpec {
 
   // List of windows functions
   repeated string windows = 3;
-}
-
-// FeatureCondition describes the state of a deployment at a certain point.
-message FeatureCondition {
-  // Type of account condition.
-  optional string type = 1;
-
-  // Status of the condition, one of True, False, Unknown
-  optional string status = 2;
-
-  // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 7;
-
-  // The reason for the condition's last transition.
-  optional string reason = 4;
-
-  // A human readable message indicating details about the transition.
-  optional string message = 5;
 }
 
 // FeatureHistogram represent a single feature in the feature store.
@@ -2237,14 +2200,6 @@ message FeatureHistogramStatus {
   repeated FeatureHistogramCondition conditions = 12;
 }
 
-// +kubebuilder:object:root=true
-// FeatureList contain a list of feature objects
-message FeatureList {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
-
-  repeated Feature items = 2;
-}
-
 // FeaturePipeline represent the processing of feature in the store.
 // +kubebuilder:object:root=true
 // +kubebuilder:storageversion
@@ -2354,10 +2309,6 @@ message FeaturePipelineRunSpec {
   // +kubebuilder:validation:MaxLength=64
   optional string featurePipelineName = 3;
 
-  // A reference to the resource class.
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 4;
-
   // TTL.
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
@@ -2441,12 +2392,7 @@ message FeaturePipelineSpec {
   // Family is the feature family
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string family = 7;
-
-  // Reference to the entity name
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:Optional
-  optional string entityName = 8;
+  optional k8s.io.api.core.v1.ObjectReference featureSetRef = 7;
 
   // Resources is the hardware resource req.
   // +kubebuilder:validation:Optional
@@ -2498,146 +2444,6 @@ message FeaturePipelineStatus {
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
   repeated FeaturePipelineCondition conditions = 6;
-}
-
-// FeatureSpec contain the desired state of a Feature
-message FeatureSpec {
-  // The feature owner
-  // +kubebuilder:validation:Optional
-  // +kubebuilder:default:="no-one"
-  optional string owner = 1;
-
-  // The product version for the feature.
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:Optional
-  optional string versionName = 2;
-
-  // Comments is a description of the feature
-  // +kubebuilder:validation:Optional
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:MaxLength=512
-  optional string description = 3;
-
-  // Type name of the column key, this column is the key column in the entity.
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:Optional
-  optional string keyColumn = 5;
-
-  // The name of the time stamp column
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:Optional
-  optional string timestampColumn = 6;
-
-  // The name of the feature column
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:Optional
-  optional string featureColumn = 7;
-
-  // The name of the entity containing this feature
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:Optional
-  optional string entityName = 8;
-
-  // The name of the feature pipeline that is producing this feature
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:Optional
-  optional string featurePipelineName = 9;
-}
-
-// FeatureStatus defines the observed state of Feature
-message FeatureStatus {
-  // Min is the minimum value of the attribute
-  optional double min = 2;
-
-  // Max is the maximum value of the attribute
-  optional double max = 3;
-
-  // Mean is the mean value of the attribute
-  optional double mean = 4;
-
-  // StdDev is the standard deviation value of the attribute
-  optional double stddev = 5;
-
-  // Skewness is the standard deviation value of the attribute
-  optional double skewness = 6;
-
-  // Kurtosis is the standard deviation value of the attribute
-  optional double kurtosis = 7;
-
-  // Zeros is the numbers of zeros in the feature
-  optional double zeros = 8;
-
-  // Pct25 is the 25 percent point
-  optional double p25 = 10;
-
-  // Pct50 is the median
-  optional double p50 = 11;
-
-  // Pct75 is the 75% point
-  optional double p75 = 12;
-
-  // The number of missing values
-  // +kubebuilder:validation:Minimum=0
-  optional int32 missing = 14;
-
-  // The number of invalid values
-  // +kubebuilder:validation:Minimum=0
-  optional int32 invalid = 15;
-
-  // Is this the target attribute, the value is derived from the schema
-  optional bool target = 16;
-
-  // The feature importance
-  optional double importance = 17;
-
-  optional int32 distinc = 18;
-
-  // Should this column be ignored, as specified by the user.
-  // This value is derived from the schema
-  optional bool ignored = 19;
-
-  // Is this column is nullable.
-  // This value is derived from the schema.
-  optional bool nullable = 20;
-
-  // This column has high cardinality and should be ignored.
-  // The value is set during the profile process.
-  optional bool highCred = 21;
-
-  // This column has high corrolation with another feature and should be dropped.
-  // The value is set during the profile process.
-  optional bool highCorr = 22;
-
-  // Mark that this column is skewed and would require a power transform
-  // If skewness is less than -1 or greater than 1, the distribution is highly skewed.
-  // If skewness is between -1 and -0.5 or between 0.5 and 1, the distribution is moderately skewed.
-  // If skewness is between -0.5 and 0.5, the distribution is approximately symmetric
-  optional bool skew = 23;
-
-  // Completeness is the ratio between non null to null
-  optional double completeness = 24;
-
-  // The ratio between distinc to total
-  optional double distinctValueCount = 25;
-
-  // The ratio between most freq value to total
-  optional double mostFreqValuesRatio = 26;
-
-  // Used for text attributes
-  optional double indexOfPeculiarity = 27;
-
-  // ObservedGeneration is the Last generation that was acted on
-  // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 28;
-
-  // Last time the object was updated
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 29;
-
-  // +patchMergeKey=type
-  // +patchStrategy=merge
-  // +kubebuilder:validation:Optional
-  repeated FeatureCondition conditions = 30;
 }
 
 // Featureset represents a featureset object
@@ -2696,13 +2502,28 @@ message FeaturesetSpec {
   // +kubebuilder:validation:MaxLength=512
   optional string description = 2;
 
-  // Reference to the feature names of this featureset
-  repeated string features = 3;
-
   // The owner account name
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
   optional string owner = 4;
+
+  // The owner account name
+  // +kubebuilder:default:="no-one"
+  // +kubebuilder:validation:Optional
+  optional k8s.io.api.core.v1.LocalObjectReference entityRef = 5;
+
+  // Datasource ref define the metadata for the features in this
+  // resource which the DataProductVersion describes the version of
+  // +kubebuilder:validation:Optional
+  optional k8s.io.api.core.v1.ObjectReference datasourceRef = 6;
+
+  // Features to include in this set
+  // +kubebuilder:validation:Optional
+  repeated string include = 7;
+
+  // Features to exclude from the data source.
+  // +kubebuilder:validation:Optional
+  repeated string exclude = 8;
 }
 
 // FeaturesetStatus defines the observed state of Featureset

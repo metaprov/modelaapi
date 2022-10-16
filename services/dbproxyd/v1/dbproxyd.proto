@@ -799,31 +799,31 @@ message DeleteEntityRequest {
 // Feature
 ////////////////////////////////////////////////////////////////
 
-message ListFeaturesRequest {
+message ListModelClassesRequest {
     string namespace   = 1;
     int32 page_size    = 2;
     string page_token  = 3;
 }
 
-message ListFeaturesResponse {
-    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature items = 1;
+message ListModelClassesResponse {
+    repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass items = 1;
     string next_page_token = 2;
 }
 
-message GetFeatureRequest {
+message GetModelClassRequest {
     string namespace = 1;
     string name = 2;
 }
 
-message CreateFeatureRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature item = 1;
+message CreateModelClassRequest {
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass item = 1;
 }
 
-message UpdateFeatureRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature item = 1;
+message UpdateModelClassRequest {
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass item = 1;
 }
 
-message DeleteFeatureRequest {
+message DeleteModelClassRequest {
     string namespace = 1;
     string name = 2;
 }
@@ -1975,11 +1975,11 @@ service DatabaseProxyService {
     rpc UpdateEntity(UpdateEntityRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity) {}
     rpc DeleteEntity(DeleteEntityRequest) returns (google.protobuf.Empty) {}
 
-    rpc ListFeatures(ListFeaturesRequest) returns (ListFeaturesResponse) {}
-    rpc GetFeature(GetFeatureRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature) {}
-    rpc CreateFeature(CreateFeatureRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature) {}
-    rpc UpdateFeature(UpdateFeatureRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature) {}
-    rpc DeleteFeature(DeleteFeatureRequest) returns (google.protobuf.Empty) {}
+    rpc ListModelClass(ListModelClassesRequest) returns (ListModelClassesResponse) {}
+    rpc GetModelClass(GetModelClassRequest) returns (github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass) {}
+    rpc CreateModelClass(CreateModelClassRequest) returns (github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass) {}
+    rpc UpdateModelClas(UpdateModelClassRequest) returns (github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass) {}
+    rpc DeleteModelClass(DeleteModelClassRequest) returns (google.protobuf.Empty) {}
 
     rpc ListFeatureHistograms(ListFeatureHistogramsRequest) returns (ListFeatureHistogramsResponse) {}
     rpc GetFeatureHistogram(GetFeatureHistogramRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram) {}

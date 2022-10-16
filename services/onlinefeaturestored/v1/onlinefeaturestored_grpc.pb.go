@@ -22,7 +22,7 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type OnlineFeatureStoreServiceClient interface {
-	CreateFeature(ctx context.Context, in *CreateFeatureRequest, opts ...grpc.CallOption) (*CreateFeatureResponse, error)
+	IngestFeatures(ctx context.Context, in *CreateFeatureRequest, opts ...grpc.CallOption) (*CreateFeatureResponse, error)
 	DeleteFeature(ctx context.Context, in *DeleteFeatureRequest, opts ...grpc.CallOption) (*DeleteFeatureResponse, error)
 	ListFeatures(ctx context.Context, in *ListFeaturesRequest, opts ...grpc.CallOption) (*ListFeaturesResponse, error)
 	GetFeature(ctx context.Context, in *GetFeatureRequest, opts ...grpc.CallOption) (*GetFeatureResponse, error)
@@ -38,9 +38,9 @@ func NewOnlineFeatureStoreServiceClient(cc grpc.ClientConnInterface) OnlineFeatu
 	return &onlineFeatureStoreServiceClient{cc}
 }
 
-func (c *onlineFeatureStoreServiceClient) CreateFeature(ctx context.Context, in *CreateFeatureRequest, opts ...grpc.CallOption) (*CreateFeatureResponse, error) {
+func (c *onlineFeatureStoreServiceClient) IngestFeatures(ctx context.Context, in *CreateFeatureRequest, opts ...grpc.CallOption) (*CreateFeatureResponse, error) {
 	out := new(CreateFeatureResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/CreateFeature", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/IngestFeatures", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -96,7 +96,7 @@ func (c *onlineFeatureStoreServiceClient) Enrich(ctx context.Context, in *Enrich
 // All implementations must embed UnimplementedOnlineFeatureStoreServiceServer
 // for forward compatibility
 type OnlineFeatureStoreServiceServer interface {
-	CreateFeature(context.Context, *CreateFeatureRequest) (*CreateFeatureResponse, error)
+	IngestFeatures(context.Context, *CreateFeatureRequest) (*CreateFeatureResponse, error)
 	DeleteFeature(context.Context, *DeleteFeatureRequest) (*DeleteFeatureResponse, error)
 	ListFeatures(context.Context, *ListFeaturesRequest) (*ListFeaturesResponse, error)
 	GetFeature(context.Context, *GetFeatureRequest) (*GetFeatureResponse, error)
@@ -109,8 +109,8 @@ type OnlineFeatureStoreServiceServer interface {
 type UnimplementedOnlineFeatureStoreServiceServer struct {
 }
 
-func (UnimplementedOnlineFeatureStoreServiceServer) CreateFeature(context.Context, *CreateFeatureRequest) (*CreateFeatureResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateFeature not implemented")
+func (UnimplementedOnlineFeatureStoreServiceServer) IngestFeatures(context.Context, *CreateFeatureRequest) (*CreateFeatureResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method IngestFeatures not implemented")
 }
 func (UnimplementedOnlineFeatureStoreServiceServer) DeleteFeature(context.Context, *DeleteFeatureRequest) (*DeleteFeatureResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteFeature not implemented")
@@ -141,20 +141,20 @@ func RegisterOnlineFeatureStoreServiceServer(s grpc.ServiceRegistrar, srv Online
 	s.RegisterService(&OnlineFeatureStoreService_ServiceDesc, srv)
 }
 
-func _OnlineFeatureStoreService_CreateFeature_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _OnlineFeatureStoreService_IngestFeatures_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateFeatureRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(OnlineFeatureStoreServiceServer).CreateFeature(ctx, in)
+		return srv.(OnlineFeatureStoreServiceServer).IngestFeatures(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/CreateFeature",
+		FullMethod: "/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/IngestFeatures",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(OnlineFeatureStoreServiceServer).CreateFeature(ctx, req.(*CreateFeatureRequest))
+		return srv.(OnlineFeatureStoreServiceServer).IngestFeatures(ctx, req.(*CreateFeatureRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -257,8 +257,8 @@ var OnlineFeatureStoreService_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*OnlineFeatureStoreServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "CreateFeature",
-			Handler:    _OnlineFeatureStoreService_CreateFeature_Handler,
+			MethodName: "IngestFeatures",
+			Handler:    _OnlineFeatureStoreService_IngestFeatures_Handler,
 		},
 		{
 			MethodName: "DeleteFeature",

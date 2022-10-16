@@ -49,7 +49,6 @@ protoc \
     github.com/metaprov/modelaapi/services/cronreport/v1/cronreport.proto \
     github.com/metaprov/modelaapi/services/data/v1/data.proto \
     github.com/metaprov/modelaapi/services/sqlquery/v1/sqlquery.proto \
-    github.com/metaprov/modelaapi/services/sqlquery/v1/sqlquery.proto \
     github.com/metaprov/modelaapi/services/webrequestrun/v1/webrequestrun.proto \
     github.com/metaprov/modelaapi/services/webrequest/v1/webrequest.proto \        
     github.com/metaprov/modelaapi/services/datapipeline/v1/datapipeline.proto \
@@ -59,7 +58,6 @@ protoc \
     github.com/metaprov/modelaapi/services/dataset/v1/dataset.proto \
     github.com/metaprov/modelaapi/services/datasource/v1/datasource.proto \
     github.com/metaprov/modelaapi/services/entity/v1/entity.proto \
-    github.com/metaprov/modelaapi/services/feature/v1/feature.proto \
     github.com/metaprov/modelaapi/services/featurehistogram/v1/featurehistogram.proto \
     github.com/metaprov/modelaapi/services/featurepipeline/v1/featurepipeline.proto \
     github.com/metaprov/modelaapi/services/featurepipelinerun/v1/featurepipelinerun.proto \
@@ -70,6 +68,7 @@ protoc \
     github.com/metaprov/modelaapi/services/labelingpipelinerun/v1/labelingpipelinerun.proto \
     github.com/metaprov/modelaapi/services/license/v1/license.proto \
     github.com/metaprov/modelaapi/services/model/v1/model.proto \
+    github.com/metaprov/modelaapi/services/modelclass/v1/modelclass.proto \
     github.com/metaprov/modelaapi/services/modelpipeline/v1/modelpipeline.proto \
     github.com/metaprov/modelaapi/services/modelpipelinerun/v1/modelpipelinerun.proto \
     github.com/metaprov/modelaapi/services/modelcompilerrun/v1/modelcompilerrun.proto \

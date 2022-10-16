@@ -1399,8 +1399,8 @@ export namespace ForecasterSpec {
 }
 
 export class GarbageCollectionSpec extends jspb.Message {
-  getCollectatstudyend(): boolean;
-  setCollectatstudyend(value: boolean): GarbageCollectionSpec;
+  getCollectatmodelclassend(): boolean;
+  setCollectatmodelclassend(value: boolean): GarbageCollectionSpec;
 
   getKeeponlybestmodelperalgorithm(): boolean;
   setKeeponlybestmodelperalgorithm(value: boolean): GarbageCollectionSpec;
@@ -1418,7 +1418,7 @@ export class GarbageCollectionSpec extends jspb.Message {
 
 export namespace GarbageCollectionSpec {
   export type AsObject = {
-    collectatstudyend: boolean,
+    collectatmodelclassend: boolean,
     keeponlybestmodelperalgorithm: boolean,
     keepprunedmodels: boolean,
   }
@@ -2157,6 +2157,308 @@ export namespace ModelAutobuilderStatus {
     failuremessage: string,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<ModelAutobuilderCondition.AsObject>,
+  }
+}
+
+export class ModelClass extends jspb.Message {
+  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
+  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): ModelClass;
+  hasMetadata(): boolean;
+  clearMetadata(): ModelClass;
+
+  getSpec(): ModelClassSpec | undefined;
+  setSpec(value?: ModelClassSpec): ModelClass;
+  hasSpec(): boolean;
+  clearSpec(): ModelClass;
+
+  getStatus(): ModelClassStatus | undefined;
+  setStatus(value?: ModelClassStatus): ModelClass;
+  hasStatus(): boolean;
+  clearStatus(): ModelClass;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ModelClass.AsObject;
+  static toObject(includeInstance: boolean, msg: ModelClass): ModelClass.AsObject;
+  static serializeBinaryToWriter(message: ModelClass, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ModelClass;
+  static deserializeBinaryFromReader(message: ModelClass, reader: jspb.BinaryReader): ModelClass;
+}
+
+export namespace ModelClass {
+  export type AsObject = {
+    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.AsObject,
+    spec?: ModelClassSpec.AsObject,
+    status?: ModelClassStatus.AsObject,
+  }
+}
+
+export class ModelClassCondition extends jspb.Message {
+  getType(): string;
+  setType(value: string): ModelClassCondition;
+
+  getStatus(): string;
+  setStatus(value: string): ModelClassCondition;
+
+  getLasttransitiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLasttransitiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelClassCondition;
+  hasLasttransitiontime(): boolean;
+  clearLasttransitiontime(): ModelClassCondition;
+
+  getReason(): string;
+  setReason(value: string): ModelClassCondition;
+
+  getMessage(): string;
+  setMessage(value: string): ModelClassCondition;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ModelClassCondition.AsObject;
+  static toObject(includeInstance: boolean, msg: ModelClassCondition): ModelClassCondition.AsObject;
+  static serializeBinaryToWriter(message: ModelClassCondition, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ModelClassCondition;
+  static deserializeBinaryFromReader(message: ModelClassCondition, reader: jspb.BinaryReader): ModelClassCondition;
+}
+
+export namespace ModelClassCondition {
+  export type AsObject = {
+    type: string,
+    status: string,
+    lasttransitiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    reason: string,
+    message: string,
+  }
+}
+
+export class ModelClassList extends jspb.Message {
+  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta | undefined;
+  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta): ModelClassList;
+  hasMetadata(): boolean;
+  clearMetadata(): ModelClassList;
+
+  getItemsList(): Array<ModelClass>;
+  setItemsList(value: Array<ModelClass>): ModelClassList;
+  clearItemsList(): ModelClassList;
+  addItems(value?: ModelClass, index?: number): ModelClass;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ModelClassList.AsObject;
+  static toObject(includeInstance: boolean, msg: ModelClassList): ModelClassList.AsObject;
+  static serializeBinaryToWriter(message: ModelClassList, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ModelClassList;
+  static deserializeBinaryFromReader(message: ModelClassList, reader: jspb.BinaryReader): ModelClassList;
+}
+
+export namespace ModelClassList {
+  export type AsObject = {
+    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta.AsObject,
+    itemsList: Array<ModelClass.AsObject>,
+  }
+}
+
+export class ModelClassSpec extends jspb.Message {
+  getVersionname(): string;
+  setVersionname(value: string): ModelClassSpec;
+
+  getDescription(): string;
+  setDescription(value: string): ModelClassSpec;
+
+  getLabref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setLabref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ModelClassSpec;
+  hasLabref(): boolean;
+  clearLabref(): ModelClassSpec;
+
+  getDatasetname(): string;
+  setDatasetname(value: string): ModelClassSpec;
+
+  getTask(): string;
+  setTask(value: string): ModelClassSpec;
+
+  getSubtask(): string;
+  setSubtask(value: string): ModelClassSpec;
+
+  getFesearch(): FeatureEngineeringSearchSpec | undefined;
+  setFesearch(value?: FeatureEngineeringSearchSpec): ModelClassSpec;
+  hasFesearch(): boolean;
+  clearFesearch(): ModelClassSpec;
+
+  getImbalancehandler(): ImbalanceHandlingSpec | undefined;
+  setImbalancehandler(value?: ImbalanceHandlingSpec): ModelClassSpec;
+  hasImbalancehandler(): boolean;
+  clearImbalancehandler(): ModelClassSpec;
+
+  getBaseline(): BaselineSpec | undefined;
+  setBaseline(value?: BaselineSpec): ModelClassSpec;
+  hasBaseline(): boolean;
+  clearBaseline(): ModelClassSpec;
+
+  getSearch(): SearchSpec | undefined;
+  setSearch(value?: SearchSpec): ModelClassSpec;
+  hasSearch(): boolean;
+  clearSearch(): ModelClassSpec;
+
+  getEnsembles(): EnsemblesSpec | undefined;
+  setEnsembles(value?: EnsemblesSpec): ModelClassSpec;
+  hasEnsembles(): boolean;
+  clearEnsembles(): ModelClassSpec;
+
+  getTrainingtemplate(): TrainingSpec | undefined;
+  setTrainingtemplate(value?: TrainingSpec): ModelClassSpec;
+  hasTrainingtemplate(): boolean;
+  clearTrainingtemplate(): ModelClassSpec;
+
+  getServingtemplate(): ServingSpec | undefined;
+  setServingtemplate(value?: ServingSpec): ModelClassSpec;
+  hasServingtemplate(): boolean;
+  clearServingtemplate(): ModelClassSpec;
+
+  getFcttemplate(): ForecasterSpec | undefined;
+  setFcttemplate(value?: ForecasterSpec): ModelClassSpec;
+  hasFcttemplate(): boolean;
+  clearFcttemplate(): ModelClassSpec;
+
+  getSchedule(): StudyScheduleSpec | undefined;
+  setSchedule(value?: StudyScheduleSpec): ModelClassSpec;
+  hasSchedule(): boolean;
+  clearSchedule(): ModelClassSpec;
+
+  getInterpretability(): InterpretabilitySpec | undefined;
+  setInterpretability(value?: InterpretabilitySpec): ModelClassSpec;
+  hasInterpretability(): boolean;
+  clearInterpretability(): ModelClassSpec;
+
+  getDriftdetection(): DriftModelSpec | undefined;
+  setDriftdetection(value?: DriftModelSpec): ModelClassSpec;
+  hasDriftdetection(): boolean;
+  clearDriftdetection(): ModelClassSpec;
+
+  getLocation(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
+  setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): ModelClassSpec;
+  hasLocation(): boolean;
+  clearLocation(): ModelClassSpec;
+
+  getOwner(): string;
+  setOwner(value: string): ModelClassSpec;
+
+  getCompilation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec | undefined;
+  setCompilation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec): ModelClassSpec;
+  hasCompilation(): boolean;
+  clearCompilation(): ModelClassSpec;
+
+  getNotification(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec | undefined;
+  setNotification(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec): ModelClassSpec;
+  hasNotification(): boolean;
+  clearNotification(): ModelClassSpec;
+
+  getModelimage(): ModelImageSpec | undefined;
+  setModelimage(value?: ModelImageSpec): ModelClassSpec;
+  hasModelimage(): boolean;
+  clearModelimage(): ModelClassSpec;
+
+  getGc(): GarbageCollectionSpec | undefined;
+  setGc(value?: GarbageCollectionSpec): ModelClassSpec;
+  hasGc(): boolean;
+  clearGc(): ModelClassSpec;
+
+  getTtl(): number;
+  setTtl(value: number): ModelClassSpec;
+
+  getUnitteststemplate(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
+  setUnitteststemplate(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): ModelClassSpec;
+  hasUnitteststemplate(): boolean;
+  clearUnitteststemplate(): ModelClassSpec;
+
+  getGrouplocations(): GroupSplitLocationsSpec | undefined;
+  setGrouplocations(value?: GroupSplitLocationsSpec): ModelClassSpec;
+  hasGrouplocations(): boolean;
+  clearGrouplocations(): ModelClassSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ModelClassSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: ModelClassSpec): ModelClassSpec.AsObject;
+  static serializeBinaryToWriter(message: ModelClassSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ModelClassSpec;
+  static deserializeBinaryFromReader(message: ModelClassSpec, reader: jspb.BinaryReader): ModelClassSpec;
+}
+
+export namespace ModelClassSpec {
+  export type AsObject = {
+    versionname: string,
+    description: string,
+    labref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    datasetname: string,
+    task: string,
+    subtask: string,
+    fesearch?: FeatureEngineeringSearchSpec.AsObject,
+    imbalancehandler?: ImbalanceHandlingSpec.AsObject,
+    baseline?: BaselineSpec.AsObject,
+    search?: SearchSpec.AsObject,
+    ensembles?: EnsemblesSpec.AsObject,
+    trainingtemplate?: TrainingSpec.AsObject,
+    servingtemplate?: ServingSpec.AsObject,
+    fcttemplate?: ForecasterSpec.AsObject,
+    schedule?: StudyScheduleSpec.AsObject,
+    interpretability?: InterpretabilitySpec.AsObject,
+    driftdetection?: DriftModelSpec.AsObject,
+    location?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
+    owner: string,
+    compilation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec.AsObject,
+    notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
+    modelimage?: ModelImageSpec.AsObject,
+    gc?: GarbageCollectionSpec.AsObject,
+    ttl: number,
+    unitteststemplate?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
+    grouplocations?: GroupSplitLocationsSpec.AsObject,
+  }
+}
+
+export class ModelClassStatus extends jspb.Message {
+  getModels(): number;
+  setModels(value: number): ModelClassStatus;
+
+  getObservedgeneration(): number;
+  setObservedgeneration(value: number): ModelClassStatus;
+
+  getLastmodelid(): number;
+  setLastmodelid(value: number): ModelClassStatus;
+
+  getFailurereason(): string;
+  setFailurereason(value: string): ModelClassStatus;
+
+  getFailuremessage(): string;
+  setFailuremessage(value: string): ModelClassStatus;
+
+  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelClassStatus;
+  hasLastupdated(): boolean;
+  clearLastupdated(): ModelClassStatus;
+
+  getBestfe(): FeatureEngineeringSpec | undefined;
+  setBestfe(value?: FeatureEngineeringSpec): ModelClassStatus;
+  hasBestfe(): boolean;
+  clearBestfe(): ModelClassStatus;
+
+  getConditionsList(): Array<ModelClassCondition>;
+  setConditionsList(value: Array<ModelClassCondition>): ModelClassStatus;
+  clearConditionsList(): ModelClassStatus;
+  addConditions(value?: ModelClassCondition, index?: number): ModelClassCondition;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ModelClassStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: ModelClassStatus): ModelClassStatus.AsObject;
+  static serializeBinaryToWriter(message: ModelClassStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ModelClassStatus;
+  static deserializeBinaryFromReader(message: ModelClassStatus, reader: jspb.BinaryReader): ModelClassStatus;
+}
+
+export namespace ModelClassStatus {
+  export type AsObject = {
+    models: number,
+    observedgeneration: number,
+    lastmodelid: number,
+    failurereason: string,
+    failuremessage: string,
+    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    bestfe?: FeatureEngineeringSpec.AsObject,
+    conditionsList: Array<ModelClassCondition.AsObject>,
   }
 }
 

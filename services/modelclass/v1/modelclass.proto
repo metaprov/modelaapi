@@ -1,0 +1,114 @@
+syntax = "proto3";
+option go_package = "github.com/metaprov/modelaapi/services/study/v1";
+package github.com.metaprov.modelaapi.services.study.v1;
+
+import "google/protobuf/field_mask.proto";
+import "google/api/annotations.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated.proto";
+import "github.com/metaprov/modelaapi/services/common/v1/common.proto";
+
+message GetModelClassRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message GetModelClassResponse {
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass modelclass = 1;
+    string yaml = 2;
+}
+
+
+message ListModelClassRequest {
+    string namespace = 1;
+    map<string,string> labels =3;
+}
+
+message ListModelClassResponse {
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassList modelclasses = 1;
+    string next_page_token = 2;
+}
+
+
+message CreateModelClassRequest {
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass modelclass = 1;
+}
+
+message CreateModelClassResponse {}
+
+
+message UpdateModelClassRequest {
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass modelclass = 1;
+    google.protobuf.FieldMask field_mask = 2;
+}
+
+
+message CreateModelClassProfileRequest {
+    string namespace = 1;
+    string name      = 2;
+    repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model modelclasses   = 3;
+}
+
+message CreateModelClassProfileResponse {
+    string namespace = 1;
+    string name      = 2;
+    string uri       = 3;
+}
+
+// Ask for the actual profile.
+message GetModelClassProfileRequest {
+    string namespace = 1;
+    string name      = 2;
+    int32  models    = 3; // the number of models.
+}
+
+
+message DeleteModelClassRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message DeleteModelClassResponse {
+
+}
+
+
+message UpdateModelClassResponse {
+
+}
+
+
+service ModelClassService {
+
+    rpc ListStudies(ListModelClassRequest) returns (ListModelClassResponse) {
+        option (google.api.http).get = "/v1/modelclasses/{namespace}";
+    }
+
+    rpc CreateModelClass(CreateModelClassRequest) returns (CreateModelClassResponse) {
+        option (google.api.http) = {
+			post: "/v1/modelclasses"
+			body: "*"
+		};
+    }
+
+    rpc GetModelClass(GetModelClassRequest) returns (GetModelClassResponse) {
+        option (google.api.http).get = "/v1/modelclasses/{namespace}/{name}";
+    }
+
+    rpc UpdateModelClass(UpdateModelClassRequest) returns (UpdateModelClassResponse) {
+        option (google.api.http) = {
+			put: "/v1/studies/{modelclass.metadata.namespace}/{modelclass.metadata.name}"
+			body: "*"
+		};
+    }
+
+    rpc DeleteModelClass(DeleteModelClassRequest) returns (DeleteModelClassResponse) {
+        option (google.api.http).delete = "/v1/modelclasses/{namespace}/{name}";
+    }
+
+    rpc CreateModelClassProfile(CreateModelClassProfileRequest) returns (CreateModelClassProfileResponse) {
+        option (google.api.http).post = "/v1/modelclasses/{namespace}/{name}/profile";
+    }
+
+
+
+}

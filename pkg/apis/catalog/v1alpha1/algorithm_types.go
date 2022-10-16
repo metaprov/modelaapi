@@ -91,7 +91,7 @@ type FloatParameter struct {
 	// Default float value
 	// +kubebuilder:validation:Optional
 	DefaultValue float64 `json:"defaultValue,omitempty" protobuf:"bytes,5,opt,name=defaultValue"`
-	// Log specify if this hyper paramer is logartimic
+	// Log specify if this hyperparameter is logarithmic
 	// +kubebuilder:validation:Optional
 	Log bool `json:"log,omitempty" protobuf:"varint,6,opt,name=log"`
 }

@@ -19,9 +19,9 @@ import "k8s.io/apimachinery/pkg/runtime/schema/generated.proto";
 // Package-wide variables from generator "generated".
 option go_package = "github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1";
 
-// AlgorithmSearchSpaceSpec defines the algorithms available to models produced by a Study
+// AlgorithmSearchSpaceSpec defines the algorithms available to models produced by a ModelClass
 message AlgorithmSearchSpaceSpec {
-  // AllowList contains the collection of algorithms available to the Study specifying the AlgorithmSearchSpaceSpec.
+  // AllowList contains the collection of algorithms available to the ModelClass specifying the AlgorithmSearchSpaceSpec.
   // If empty, all algorithms will be available for training
   // +kubebuilder:validation:Optional
   repeated string allowlist = 1;
@@ -81,7 +81,7 @@ message BacktestSpec {
 // BaselineSpec specifies the configuration to produce baseline models
 message BaselineSpec {
   // Indicates if baseline models will be produced. Enabling baseline will create a model for each
-  // algorithm in the parent Study's search space with default hyper-parameters
+  // algorithm in the parent ModelClass's search space with default hyper-parameters
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool enabled = 1;
@@ -443,7 +443,7 @@ message DriftDetectorStatus {
   optional string outlierModelURI = 1;
 }
 
-// The spec for generating a density model for this study.
+// The spec for generating a density model for this ModelClass.
 message DriftModelSpec {
   // Indicates if density models should be created.
   // +kubebuilder:default:=false
@@ -713,7 +713,7 @@ message FeatureEngineeringSearchSpec {
   optional string estimator = 3;
 
   // The number of models to sample, after which the feature engineering with the highest
-  // score will be used with Model resources produced by the primary model search of the parent Study
+  // score will be used with Model resources produced by the primary model search of the parent ModelClass
   // +kubebuilder:default:=10
   // +kubebuilder:validation:Optional
   optional int32 maxModels = 4;
@@ -746,7 +746,7 @@ message FeatureEngineeringSearchSpec {
   optional bool reuse = 9;
 
   // Specification for feature selection.
-  // successful study.
+  // successful ModelClass.
   // +kubebuilder:validation:Optional
   optional FeatureSelectionSpec featureSelectionTemplate = 10;
 
@@ -950,12 +950,12 @@ message ForecasterSpec {
 
 // GarbageCollectionSpec specifies the configuration to garbage-collect unused Model resources
 message GarbageCollectionSpec {
-  // Indicates if all models of the Study, excluding the highest-performing model, will be archived
+  // Indicates if all models of the ModelClass, excluding the highest-performing model, will be archived
   // +kubebuilder:validation:Optional
   // +kubebuilder:default:=true
-  optional bool collectAtStudyEnd = 1;
+  optional bool collectAtModelClassEnd = 1;
 
-  // Indicates if multiple models with the same algorithm are produced by the Study, the
+  // Indicates if multiple models with the same algorithm are produced by the ModelClass, the
   // model with the lowest score will be garbage-collected
   // +kubebuilder:validation:Optional
   // +kubebuilder:default:=false
@@ -1164,7 +1164,7 @@ message Level {
 }
 
 message MedianPrunerOptions {
-  // Pruning is disabled until the given number of trials finish in the same study.
+  // Pruning is disabled until the given number of trials finish in the same ModelClass.
   // +kubebuilder:default:=5
   // +kubebuilder:validation:Optional
   optional int32 startupTrials = 1;
@@ -1490,6 +1490,219 @@ message ModelAutobuilderStatus {
   repeated ModelAutobuilderCondition conditions = 25;
 }
 
+// ModelClass represents an automatic search for the best machine learning model for a given dataset
+// +kubebuilder:subresource:status
+// +kubebuilder:object:root=true
+// +kubebuilder:storageversion
+// +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
+// +kubebuilder:printcolumn:name="Progress",type="number",JSONPath=".status.progress",priority=1
+// +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",priority=1
+// +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName",priority=1
+// +kubebuilder:printcolumn:name="Entity",type="string",JSONPath=".spec.datasetName"
+// +kubebuilder:printcolumn:name="Task",type="string",JSONPath=".spec.task"
+// +kubebuilder:printcolumn:name="Objective",type="string",JSONPath=".spec.search.objective"
+// +kubebuilder:printcolumn:name="Score",type="number",JSONPath=".status.bestModelScore"
+// +kubebuilder:printcolumn:name="Best model",type="string",JSONPath=".status.bestModel"
+// +kubebuilder:printcolumn:name="Trained",type="number",JSONPath=".status.search.completed"
+// +kubebuilder:printcolumn:name="Tested",type="number",JSONPath=".status.test.completed"
+// +kubebuilder:printcolumn:name="StartTime",type="date",JSONPath=".status.startTime",priority=1
+// +kubebuilder:printcolumn:name="CompletionTime",type="date",JSONPath=".status.completionTime",priority=1
+// +kubebuilder:printcolumn:name="Last Failure",type="string",JSONPath=".status.lastFailure"
+// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
+// +kubebuilder:resource:path=studies,singular=ModelClass,shortName=sd,categories={training,modela}
+message ModelClass {
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
+
+  optional ModelClassSpec spec = 2;
+
+  optional ModelClassStatus status = 3;
+}
+
+// ModelClassCondition describes the state of a ModelClass at a certain point
+message ModelClassCondition {
+  // Type of ModelClass condition
+  // +kubebuilder:validation:Optional
+  optional string type = 1;
+
+  // Status of the condition, one of True, False, Unknown
+  // +kubebuilder:validation:Optional
+  optional string status = 2;
+
+  // Last time the condition transitioned from one status to another
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 4;
+
+  // The reason for the condition's last transition
+  // +kubebuilder:validation:Optional
+  optional string reason = 5;
+
+  // A human-readable message indicating details about the transition
+  // +kubebuilder:validation:Optional
+  optional string message = 6;
+}
+
+// ModelClassList contains a list of Studies
+// +kubebuilder:object:root=true
+message ModelClassList {
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
+
+  repeated ModelClass items = 2;
+}
+
+// ModelClassSpec defines the desired state of a ModelClass and the parameters for a model search
+message ModelClassSpec {
+  // The name of the DataProductVersion which describes the version of the resource
+  // that exists in the same DataProduct namespace as the resource
+  // +kubebuilder:validation:MaxLength=63
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string versionName = 1;
+
+  // The user-provided description of the ModelClass
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:MaxLength=512
+  // +kubebuilder:validation:Optional
+  optional string description = 2;
+
+  // The reference to the Lab under which the Model resources created by the ModelClass will be trained.
+  // If unspecified, the default Lab from the parent DataProduct will be used
+  // +kubebuilder:validation:Optional
+  optional k8s.io.api.core.v1.ObjectReference labRef = 3;
+
+  // The name of the Entity resource that will be used to train models with.
+  // The dataset will be split into individual training, testing, and validation datasets
+  // +kubebuilder:validation:Required
+  // +required
+  optional string datasetName = 4;
+
+  // The machine learning task type (i.e. regression, classification)
+  // +kubebuilder:validation:Required
+  // +required
+  optional string task = 5;
+
+  // The machine learning subtask relevant to the primary task (text classification, image object detection, etc.)
+  // +kubebuilder:default:=none
+  // +kubebuilder:validation:Optional
+  optional string subtask = 6;
+
+  // FeatureEngineeringSearch specifies the parameters to perform a feature engineering search
+  // +kubebuilder:validation:Optional
+  optional FeatureEngineeringSearchSpec feSearch = 7;
+
+  // Set the imbalance dataset handling.
+  // +kubebuilder:validation:Optional
+  optional ImbalanceHandlingSpec imbalanceHandler = 8;
+
+  // Baseline specifies the parameters to generate baseline (default hyper-parameters) models
+  // +kubebuilder:validation:Optional
+  optional BaselineSpec baseline = 9;
+
+  // Search specifies the configuration to perform the model search for the best algorithm and hyper-parameters
+  // +kubebuilder:validation:Optional
+  optional SearchSpec search = 10;
+
+  // Ensembles specifies to parameters to generate ensemble models
+  // +kubebuilder:validation:Optional
+  optional EnsemblesSpec ensembles = 11;
+
+  // TrainingTemplate specifies the configuration to train and evaluate models
+  // +kubebuilder:validation:Optional
+  optional TrainingSpec trainingTemplate = 12;
+
+  // ServingTemplate specifies the model format and resource requirements that will be applied to
+  // the Predictor created for the Model that will be selected by the ModelClass
+  // +kubebuilder:validation:Optional
+  optional ServingSpec servingTemplate = 13;
+
+  // ForecastSpec specifies the parameters required when generating a forecasting model
+  // +kubebuilder:validation:Optional
+  optional ForecasterSpec fctTemplate = 14;
+
+  // Schedule specifies the configuration to execute the ModelClass at a later date
+  // +kubebuilder:validation:Optional
+  optional StudyScheduleSpec schedule = 15;
+
+  // Interpretability specifies the parameters to create interpretability visualizations for the final model
+  // +kubebuilder:validation:Optional
+  optional InterpretabilitySpec interpretability = 16;
+
+  // +kubebuilder:validation:Optional
+  optional DriftModelSpec driftDetection = 17;
+
+  // The data location where ModelClass artifacts (metadata, reports, and model artifacts) generated by the ModelClass will be stored
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation location = 26;
+
+  // The name of the Account which created the object, which exists in the same tenant as the object
+  // +kubebuilder:default:="no-one"
+  // +kubebuilder:validation:Optional
+  optional string owner = 27;
+
+  // CompilerSpec specifies the configuration to compile the best-selected model to a binary (currently unimplemented)
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.CompilerSpec compilation = 28;
+
+  // The notification specification that determines which notifiers will receive Alerts generated by the object
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 31;
+
+  // ModelImage specifies the configuration to upload Docker images of models to an image registry
+  // +kubebuilder:validation:Optional
+  optional ModelImageSpec modelImage = 32;
+
+  // GarbageCollectionSpec specifies the configuration to automatically clean-up unused models
+  // +kubebuilder:validation:Optional
+  optional GarbageCollectionSpec gc = 33;
+
+  // The time-to-live, in seconds, for Model resources produced by the ModelClass
+  // +kubebuilder:default:=0
+  // +kubebuilder:validation:Optional
+  optional int32 ttl = 34;
+
+  // A template for models unit tests
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite unitTestsTemplate = 38;
+
+  // In case of a group by, those are the group locations
+  // +kubebuilder:validation:Optional
+  optional GroupSplitLocationsSpec groupLocations = 39;
+}
+
+// ModelClassStatus defines the observed state of a ModelClass
+message ModelClassStatus {
+  // Total models created for the ModelClass
+  // +kubebuilder:validation:Optional
+  optional int32 models = 1;
+
+  // ObservedGeneration is the last generation that was acted on
+  // +kubebuilder:validation:Optional
+  optional int64 observedGeneration = 10;
+
+  // The Kubernetes-internal ID of the last Model resource generated by the ModelClass
+  optional int64 lastModelID = 14;
+
+  // In the case of failure, the ModelClass resource controller will set this field with a failure reason
+  // +kubebuilder:validation:Optional
+  optional string failureReason = 15;
+
+  // In the case of failure, the ModelClass resource controller will set this field with a failure message
+  // +kubebuilder:validation:Optional
+  optional string failureMessage = 16;
+
+  // The last time the object was updated
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 32;
+
+  // BestFE specifies the best feature engineering pipeline produced by the ModelClass
+  // +kubebuilder:validation:Optional
+  optional FeatureEngineeringSpec bestFE = 33;
+
+  // +optional
+  // +patchMergeKey=type
+  // +patchStrategy=merge
+  repeated ModelClassCondition conditions = 36;
+}
+
 // ModelCompilerRun represent a single compilation of a model into a target hardware.
 message ModelCompilerRun {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
@@ -1642,7 +1855,7 @@ message ModelGroupByStatus {
   repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkerRunResult workerResults = 4;
 }
 
-// ModelImageSpec specifies the destination of Docker images produced by a Study
+// ModelImageSpec specifies the destination of Docker images produced by a ModelClass
 message ModelImageSpec {
   // +kubebuilder:validation:Optional
   // +kubebuilder:default:=false
@@ -2943,7 +3156,7 @@ message PercentilePrunerOptions {
   // +kubebuilder:validation:Optional
   optional int32 percentile = 1;
 
-  // Pruning is disabled until the given number of trials finish in the same study.
+  // Pruning is disabled until the given number of trials finish in the same ModelClass.
   // +kubebuilder:default:=5
   // +kubebuilder:validation:Optional
   optional int32 startupTrials = 2;
@@ -3530,14 +3743,14 @@ message StudyPhaseStatus {
   optional int32 modelsWithNoProgress = 8;
 }
 
-// StudyScheduleSpec specifies the parameters for a Study to be executed at a certain time
+// ModelClassScheduleSpec specifies the parameters for a ModelClass to be executed at a certain time
 message StudyScheduleSpec {
   // Indicates if the schedule is enabled
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool enabled = 1;
 
-  // The time at which the Study will begin execution
+  // The time at which the ModelClass will begin execution
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startAt = 2;
 }

@@ -4499,7 +4499,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountSpec.toObject
     memberof: (f = jspb.Message.getField(msg, 11)) == null ? undefined : f,
     emailpassword: (f = jspb.Message.getBooleanField(msg, 12)) == null ? undefined : f,
     resetpassword: (f = jspb.Message.getBooleanField(msg, 13)) == null ? undefined : f,
-    clearencelevel: (f = jspb.Message.getField(msg, 17)) == null ? undefined : f,
+    clearancelevel: (f = jspb.Message.getField(msg, 17)) == null ? undefined : f,
     avatar: (f = msg.getAvatar()) && proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AvatarSpec.toObject(includeInstance, f),
     favoriteproductsList: (f = jspb.Message.getRepeatedField(msg, 19)) == null ? undefined : f
   };
@@ -4589,7 +4589,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountSpec.deserial
       break;
     case 17:
       var value = /** @type {string} */ (reader.readString());
-      msg.setClearencelevel(value);
+      msg.setClearancelevel(value);
       break;
     case 18:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AvatarSpec;
@@ -5173,10 +5173,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountSpec.prototyp
 
 
 /**
- * optional string clearenceLevel = 17;
+ * optional string clearanceLevel = 17;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountSpec.prototype.getClearencelevel = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountSpec.prototype.getClearancelevel = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 17, ""));
 };
 
@@ -5185,7 +5185,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountSpec.prototyp
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountSpec.prototype.setClearencelevel = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountSpec.prototype.setClearancelevel = function(value) {
   return jspb.Message.setField(this, 17, value);
 };
 
@@ -5194,7 +5194,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountSpec.prototyp
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountSpec.prototype.clearClearencelevel = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountSpec.prototype.clearClearancelevel = function() {
   return jspb.Message.setField(this, 17, undefined);
 };
 
@@ -5203,7 +5203,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountSpec.prototyp
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountSpec.prototype.hasClearencelevel = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountSpec.prototype.hasClearancelevel = function() {
   return jspb.Message.getField(this, 17) != null;
 };
 

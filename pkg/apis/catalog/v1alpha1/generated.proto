@@ -341,21 +341,21 @@ message FloatParameter {
   // +kubebuilder:validation:Optional
   optional double defaultValue = 5;
 
-  // Log specify if this hyper paramer is logartimic
+  // Log specify if this hyperparameter is logarithmic
   // +kubebuilder:validation:Optional
   optional bool log = 6;
 }
 
 // GithubEvents specify repo and the events to listen in order ot fire the pipeline
 message GithubEvents {
-  // The github connections used to loginto git
+  // The GitHub connections used to loginto git
   optional string gitConnectionName = 1;
 
   // Repository is the name of the github repository
   optional string repository = 2;
 
   // Branch is the name of the github branch.
-  // By default the trigger listen to all branch
+  // By default, the trigger listen to all branch
   optional string branch = 3;
 
   // Blobname regex is a regular expression on the blob name that changed
@@ -535,7 +535,7 @@ message MLFrameworkSpec {
   optional string lang = 4;
 }
 
-// MachineClass define the specific for a machine type of a cloud provider
+// MachineClass define the specific for a machine type of cloud provider
 message MachineClass {
   // Code the the code of the machine class within the data provider
   optional string code = 1;

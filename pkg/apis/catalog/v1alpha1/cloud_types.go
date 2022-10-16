@@ -53,7 +53,7 @@ type CloudSpec struct {
 	Regions []Region `json:"regions,omitempty" protobuf:"bytes,6,rep,name=regions"`
 }
 
-// MachineClass define the specific for a machine type of a cloud provider
+// MachineClass define the specific for a machine type of cloud provider
 type MachineClass struct {
 	//Code the the code of the machine class within the data provider
 	Code string `json:"code" protobuf:"bytes,1,opt,name=code"`

@@ -146,7 +146,7 @@ message MeetingCondition {
   // The reason for the condition's last transition.
   optional string reason = 4;
 
-  // A human readable message indicating details about the transition.
+  // A human-readable message indicating details about the transition.
   optional string message = 5;
 }
 

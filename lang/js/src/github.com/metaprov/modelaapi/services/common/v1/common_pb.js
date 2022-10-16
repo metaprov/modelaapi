@@ -516,7 +516,6 @@ proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile.toObject =
     table: (f = msg.getTable()) && proto.github.com.metaprov.modelaapi.services.common.v1.TableView.toObject(includeInstance, f),
     hash: jspb.Message.getFieldWithDefault(msg, 8, ""),
     anomalyuri: jspb.Message.getFieldWithDefault(msg, 9, ""),
-    features: (f = msg.getFeatures()) && proto.github.com.metaprov.modelaapi.services.common.v1.TableView.toObject(includeInstance, f),
     groups: (f = msg.getGroups()) && proto.github.com.metaprov.modelaapi.services.common.v1.TableView.toObject(includeInstance, f),
     ts: (f = msg.getTs()) && proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesProfile.toObject(includeInstance, f)
   };
@@ -593,11 +592,6 @@ proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile.deserializ
     case 9:
       var value = /** @type {string} */ (reader.readString());
       msg.setAnomalyuri(value);
-      break;
-    case 10:
-      var value = new proto.github.com.metaprov.modelaapi.services.common.v1.TableView;
-      reader.readMessage(value,proto.github.com.metaprov.modelaapi.services.common.v1.TableView.deserializeBinaryFromReader);
-      msg.setFeatures(value);
       break;
     case 11:
       var value = new proto.github.com.metaprov.modelaapi.services.common.v1.TableView;
@@ -702,14 +696,6 @@ proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile.serializeB
     writer.writeString(
       9,
       f
-    );
-  }
-  f = message.getFeatures();
-  if (f != null) {
-    writer.writeMessage(
-      10,
-      f,
-      proto.github.com.metaprov.modelaapi.services.common.v1.TableView.serializeBinaryToWriter
     );
   }
   f = message.getGroups();
@@ -949,43 +935,6 @@ proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile.prototype.
  */
 proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile.prototype.setAnomalyuri = function(value) {
   return jspb.Message.setProto3StringField(this, 9, value);
-};
-
-
-/**
- * optional TableView features = 10;
- * @return {?proto.github.com.metaprov.modelaapi.services.common.v1.TableView}
- */
-proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile.prototype.getFeatures = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.services.common.v1.TableView} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.services.common.v1.TableView, 10));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.services.common.v1.TableView|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile.prototype.setFeatures = function(value) {
-  return jspb.Message.setWrapperField(this, 10, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile} returns this
- */
-proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile.prototype.clearFeatures = function() {
-  return this.setFeatures(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile.prototype.hasFeatures = function() {
-  return jspb.Message.getField(this, 10) != null;
 };
 
 
@@ -3248,7 +3197,9 @@ proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesProfile.toObjec
     dw: (f = msg.getDw()) && proto.github.com.metaprov.modelaapi.services.common.v1.DurbinWatson.toObject(includeInstance, f),
     key: jspb.Message.getFieldWithDefault(msg, 6, ""),
     series: (f = msg.getSeries()) && proto.github.com.metaprov.modelaapi.services.common.v1.TableView.toObject(includeInstance, f),
-    valuestat: (f = msg.getValuestat()) && proto.github.com.metaprov.modelaapi.services.common.v1.TableView.toObject(includeInstance, f)
+    valuestat: (f = msg.getValuestat()) && proto.github.com.metaprov.modelaapi.services.common.v1.TableView.toObject(includeInstance, f),
+    featuresview: (f = msg.getFeaturesview()) && proto.github.com.metaprov.modelaapi.services.common.v1.TableView.toObject(includeInstance, f),
+    featuresMap: (f = msg.getFeaturesMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
   if (includeInstance) {
@@ -3323,6 +3274,17 @@ proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesProfile.deseria
       var value = new proto.github.com.metaprov.modelaapi.services.common.v1.TableView;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.services.common.v1.TableView.deserializeBinaryFromReader);
       msg.setValuestat(value);
+      break;
+    case 9:
+      var value = new proto.github.com.metaprov.modelaapi.services.common.v1.TableView;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.services.common.v1.TableView.deserializeBinaryFromReader);
+      msg.setFeaturesview(value);
+      break;
+    case 10:
+      var value = msg.getFeaturesMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readFloat, null, "", 0.0);
+         });
       break;
     default:
       reader.skipField();
@@ -3415,6 +3377,18 @@ proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesProfile.seriali
       f,
       proto.github.com.metaprov.modelaapi.services.common.v1.TableView.serializeBinaryToWriter
     );
+  }
+  f = message.getFeaturesview();
+  if (f != null) {
+    writer.writeMessage(
+      9,
+      f,
+      proto.github.com.metaprov.modelaapi.services.common.v1.TableView.serializeBinaryToWriter
+    );
+  }
+  f = message.getFeaturesMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(10, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeFloat);
   }
 };
 
@@ -3694,6 +3668,65 @@ proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesProfile.prototy
 proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesProfile.prototype.hasValuestat = function() {
   return jspb.Message.getField(this, 8) != null;
 };
+
+
+/**
+ * optional TableView featuresView = 9;
+ * @return {?proto.github.com.metaprov.modelaapi.services.common.v1.TableView}
+ */
+proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesProfile.prototype.getFeaturesview = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.services.common.v1.TableView} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.services.common.v1.TableView, 9));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.services.common.v1.TableView|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesProfile} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesProfile.prototype.setFeaturesview = function(value) {
+  return jspb.Message.setWrapperField(this, 9, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesProfile} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesProfile.prototype.clearFeaturesview = function() {
+  return this.setFeaturesview(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesProfile.prototype.hasFeaturesview = function() {
+  return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
+ * map<string, float> features = 10;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,number>}
+ */
+proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesProfile.prototype.getFeaturesMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,number>} */ (
+      jspb.Message.getMapField(this, 10, opt_noLazyCreate,
+      null));
+};
+
+
+/**
+ * Clears values from the map. The map will be non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesProfile} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesProfile.prototype.clearFeaturesMap = function() {
+  this.getFeaturesMap().clear();
+  return this;};
 
 
 

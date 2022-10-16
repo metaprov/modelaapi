@@ -1431,12 +1431,12 @@ const (
 
 // GithubEvents specify repo and the events to listen in order ot fire the pipeline
 type GithubEvents struct {
-	// The github connections used to loginto git
+	// The GitHub connections used to loginto git
 	GitConnectionsName *string `json:"gitConnectionName,omitempty" protobuf:"bytes,1,opt,name=gitConnectionName"`
 	// Repository is the name of the github repository
 	Repository *string `json:"repository,omitempty" protobuf:"bytes,2,opt,name=repository"`
 	// Branch is the name of the github branch.
-	// By default the trigger listen to all branch
+	// By default, the trigger listen to all branch
 	Branch *string `json:"branch,omitempty" protobuf:"bytes,3,opt,name=branch"`
 	// Blobname regex is a regular expression on the blob name that changed
 	BlobNameRegex *string `json:"blobNameRegex,omitempty" protobuf:"bytes,4,opt,name=blobNameRegex"`

@@ -82,7 +82,6 @@ python3 -m grpc_tools.protoc \
     github.com/metaprov/modelaapi/services/webrequest/v1/webrequest.proto \
     github.com/metaprov/modelaapi/services/dataapp/v1/dataapp.proto \
     github.com/metaprov/modelaapi/services/entity/v1/entity.proto \
-    github.com/metaprov/modelaapi/services/feature/v1/feature.proto \
     github.com/metaprov/modelaapi/services/featurehistogram/v1/featurehistogram.proto \
     github.com/metaprov/modelaapi/services/featurepipeline/v1/featurepipeline.proto \
     github.com/metaprov/modelaapi/services/featurepipelinerun/v1/featurepipelinerun.proto \
@@ -93,6 +92,7 @@ python3 -m grpc_tools.protoc \
     github.com/metaprov/modelaapi/services/labelingpipelinerun/v1/labelingpipelinerun.proto \
     github.com/metaprov/modelaapi/services/license/v1/license.proto \
     github.com/metaprov/modelaapi/services/model/v1/model.proto \
+    github.com/metaprov/modelaapi/services/modelclass/v1/modelclass.proto \
     github.com/metaprov/modelaapi/services/cronreport/v1/cronreport.proto \
     github.com/metaprov/modelaapi/services/modelautobuilder/v1/modelautobuilder.proto \
     github.com/metaprov/modelaapi/services/modelpipeline/v1/modelpipeline.proto \

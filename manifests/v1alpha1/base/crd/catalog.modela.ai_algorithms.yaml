@@ -92,7 +92,7 @@ spec:
                       description: Default float value
                       type: number
                     log:
-                      description: Log specify if this hyper paramer is logartimic
+                      description: Log specify if this hyperparameter is logarithmic
                       type: boolean
                     max:
                       description: Max is the maximum value

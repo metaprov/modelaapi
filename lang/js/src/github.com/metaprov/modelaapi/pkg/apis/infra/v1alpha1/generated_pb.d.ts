@@ -141,8 +141,8 @@ export class AccountSpec extends jspb.Message {
   getResetpassword(): boolean;
   setResetpassword(value: boolean): AccountSpec;
 
-  getClearencelevel(): string;
-  setClearencelevel(value: string): AccountSpec;
+  getClearancelevel(): string;
+  setClearancelevel(value: string): AccountSpec;
 
   getAvatar(): AvatarSpec | undefined;
   setAvatar(value?: AvatarSpec): AccountSpec;
@@ -176,7 +176,7 @@ export namespace AccountSpec {
     memberof: string,
     emailpassword: boolean,
     resetpassword: boolean,
-    clearencelevel: string,
+    clearancelevel: string,
     avatar?: AvatarSpec.AsObject,
     favoriteproductsList: Array<string>,
   }

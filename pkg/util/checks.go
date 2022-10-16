@@ -82,7 +82,7 @@ func CheckId(id string) error {
 	return nil
 }
 
-// check the the field is not empty
+// check the field is not empty
 func CheckNotEmpty(s string, field string) error {
 	if s == "" {
 		return errors.Errorf("field %s cannot be empty", field)
@@ -90,7 +90,7 @@ func CheckNotEmpty(s string, field string) error {
 	return nil
 }
 
-// check the a field has max len
+// check that a field has max len
 func CheckMinLen(s string, field string, min int) error {
 	if len(s) < min {
 		return errors.Errorf("field %s min length is %d", field, min)
