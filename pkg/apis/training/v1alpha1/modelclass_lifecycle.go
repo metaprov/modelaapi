@@ -9,6 +9,7 @@ package v1alpha1
 import (
 	"fmt"
 	"github.com/dustin/go-humanize"
+	ctrl "sigs.k8s.io/controller-runtime"
 
 	"github.com/metaprov/modelaapi/pkg/apis/training"
 	"github.com/metaprov/modelaapi/pkg/util"
@@ -21,6 +22,13 @@ import (
 
 func (run *ModelClass) IsMarkedForDeletion() bool {
 	return run.DeletionTimestamp != nil
+}
+
+//Set up the webhook with the manager.
+func (mc *ModelClass) SetupWebhookWithManager(mgr ctrl.Manager) error {
+	return ctrl.NewWebhookManagedBy(mgr).
+		For(mc).
+		Complete()
 }
 
 //==============================================================================
