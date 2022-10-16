@@ -89,10 +89,6 @@ func (volume *VirtualVolume) ManifestUri() string {
 	return fmt.Sprintf("%s/%s-virtualvolume.yaml", volume.RootUri(), volume.Name)
 }
 
-func (vv *VirtualVolume) ToYamlFile() ([]byte, error) {
-	return yaml.Marshal(vv)
-}
-
 func (vv *VirtualVolume) MarkReady() {
 	vv.CreateOrUpdateCond(VirtualVolumeCondition{
 		Type:   VirtualVolumeReady,

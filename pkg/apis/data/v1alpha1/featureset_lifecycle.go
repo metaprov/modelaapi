@@ -12,6 +12,7 @@ package v1alpha1
 
 import (
 	"fmt"
+	"github.com/dustin/go-humanize"
 
 	"github.com/metaprov/modelaapi/pkg/apis/common"
 	"github.com/metaprov/modelaapi/pkg/apis/data"
@@ -35,30 +36,12 @@ func (entity *Featureset) RepPath(root string) (string, error) {
 	return fmt.Sprintf("%s/schemas/%s.yaml", root, entity.ObjectMeta.Name), nil
 }
 
-func (entity *Featureset) ToYamlFile() ([]byte, error) {
-	return yaml.Marshal(entity)
-}
-
 func (entity *Featureset) RepEntry() (string, error) {
 	return fmt.Sprintf("schemas/%s.yaml", entity.ObjectMeta.Name), nil
 }
 
 func (entity *Featureset) Age() string {
 	return humanize.Time(entity.CreationTimestamp.Time)
-}
-
-//==============================================================================
-// Factory method
-//==============================================================================
-
-// Parse an data
-func ParseFeatureSet(content string, user string, commit string) (*Featureset, error) {
-	this := &Featureset{}
-	err := yaml.Unmarshal([]byte(content), this)
-	if err != nil {
-		return nil, err
-	}
-	return this, nil
 }
 
 //==============================================================================

@@ -172,10 +172,6 @@ func ParseNotebookYaml(content []byte) (*Notebook, error) {
 	return r, nil
 }
 
-func (notebook *Notebook) ToYamlFile() ([]byte, error) {
-	return yaml.Marshal(notebook)
-}
-
 func (notebook *Notebook) MarkReady() {
 	notebook.CreateOrUpdateCond(NotebookCondition{
 		Type:   NotebookReady,

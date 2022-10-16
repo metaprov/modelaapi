@@ -123,9 +123,6 @@ func (run *CronPrediction) Key() string {
 	return fmt.Sprintf("dataproducts/%s/predictions/%s", run.Namespace, run.Name)
 }
 
-func (run *CronPrediction) ToYamlFile() ([]byte, error) {
-	return yaml.Marshal(run)
-}
 func (run *CronPrediction) OpName() string {
 	return run.Namespace + "-" + run.Name
 }

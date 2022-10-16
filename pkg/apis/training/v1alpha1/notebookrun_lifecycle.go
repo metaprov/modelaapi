@@ -8,6 +8,7 @@ package v1alpha1
 
 import (
 	"fmt"
+	"github.com/dustin/go-humanize"
 
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	infra "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
@@ -139,10 +140,6 @@ func ParseNotebookRunYaml(content []byte) (*NotebookRun, error) {
 	}
 	r := requiredObj.(*NotebookRun)
 	return r, nil
-}
-
-func (run *NotebookRun) ToYamlFile() ([]byte, error) {
-	return yaml.Marshal(run)
 }
 
 func (r *NotebookRun) MarkCompleted() {

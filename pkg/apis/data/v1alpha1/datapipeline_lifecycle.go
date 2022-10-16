@@ -87,10 +87,6 @@ func (wr *DataPipeline) ManifestUri() string {
 	return fmt.Sprintf("%s/%s-wrangler.yaml", wr.RootUri(), wr.Name)
 }
 
-func (wr *DataPipeline) ToYamlFile() ([]byte, error) {
-	return yaml.Marshal(wr)
-}
-
 func (in *DataPipeline) MarkReady() {
 	in.CreateOrUpdateCond(DataPipelineCondition{
 		Type:   DataPipelineReady,

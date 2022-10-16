@@ -103,10 +103,6 @@ func ParseAlertYaml(content []byte) (*Alert, error) {
 	return r, nil
 }
 
-func (alert *Alert) ToYamlFile() ([]byte, error) {
-	return yaml.Marshal(alert)
-}
-
 func (alert *Alert) MarkArchived() {
 	alert.CreateOrUpdateCond(AlertCondition{
 		Type:   AlertSaved,

@@ -45,10 +45,6 @@ func (run *ModelPipelineRun) GetCondIdx(t PipelineRunConditionType) int {
 	return -1
 }
 
-func (run *ModelPipelineRun) ToYamlFile() ([]byte, error) {
-	return yaml.Marshal(run)
-}
-
 func (run *ModelPipelineRun) GetCond(t PipelineRunConditionType) ModelPipelineRunCondition {
 	for _, v := range run.Status.Conditions {
 		if v.Type == t {

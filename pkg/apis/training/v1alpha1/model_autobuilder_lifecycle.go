@@ -8,6 +8,7 @@ package v1alpha1
 
 import (
 	"fmt"
+	"github.com/dustin/go-humanize"
 	"path/filepath"
 
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
@@ -21,8 +22,6 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/client-go/kubernetes/scheme"
-
-	"github.com/ghodss/yaml"
 )
 
 //Set up the webhook with the manager.
@@ -47,10 +46,6 @@ func (b *ModelAutobuilder) RemoveFinalizer() {
 //==============================================================================
 // Trackable
 //==============================================================================
-
-func (b *ModelAutobuilder) ToYamlFile() ([]byte, error) {
-	return yaml.Marshal(b)
-}
 
 func (b *ModelAutobuilder) RootUri() string {
 	return fmt.Sprintf("dataproducts/%s/quickpipelines/%s", b.Namespace, b.Name)

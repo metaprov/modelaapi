@@ -30,10 +30,6 @@ func (tenant *Tenant) RemoveFinalizer()   { util.RemoveFin(&tenant.ObjectMeta, i
 // Trackable
 //==============================================================================
 
-func (tenant *Tenant) ToYamlFile() ([]byte, error) {
-	return yaml.Marshal(tenant)
-}
-
 func (tenant *Tenant) RootUri() string {
 	return fmt.Sprintf("tenants/%s", tenant.Name)
 }

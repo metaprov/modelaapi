@@ -92,10 +92,6 @@ func (alert *Meeting) ManifestUri() string {
 	return fmt.Sprintf("%s/%s-apitoken.yaml", alert.RootUri(), alert.Name)
 }
 
-func (alert *Meeting) ToYamlFile() ([]byte, error) {
-	return yaml.Marshal(alert)
-}
-
 func (alert *Meeting) MarkArchived() {
 	alert.CreateOrUpdateCond(MeetingCondition{
 		Type:   MeetingSaved,

@@ -175,10 +175,6 @@ func (in *DataPipelineRun) MarkAborted(err error) {
 	in.Status.FailureMessage = util.StrPtr(err.Error())
 }
 
-func (run *DataPipelineRun) ToYamlFile() ([]byte, error) {
-	return yaml.Marshal(run)
-}
-
 func (in *DataPipelineRun) MarkSaved() {
 	in.CreateOrUpdateCond(DataPipelineRunCondition{
 		Type:   DataPipelineRunSaved,

@@ -8,6 +8,7 @@ package v1alpha1
 
 import (
 	"fmt"
+	"github.com/dustin/go-humanize"
 
 	"github.com/metaprov/modelaapi/pkg/apis/common"
 	"github.com/metaprov/modelaapi/pkg/apis/data"
@@ -43,30 +44,12 @@ func (lp *LabelingPipeline) RepPath(root string) (string, error) {
 	return fmt.Sprintf("%s/schemas/%s.yaml", root, lp.ObjectMeta.Name), nil
 }
 
-func (lp *LabelingPipeline) ToYamlFile() ([]byte, error) {
-	return yaml.Marshal(lp)
-}
-
 func (lp *LabelingPipeline) RepEntry() (string, error) {
 	return fmt.Sprintf("schemas/%s.yaml", lp.ObjectMeta.Name), nil
 }
 
 func (lp *LabelingPipeline) Age() string {
 	return humanize.Time(lp.CreationTimestamp.Time)
-}
-
-//==============================================================================
-// Factory method
-//==============================================================================
-
-// Parse an data
-func ParseLabelPipeline(content string, user string, commit string) (*LabelingPipeline, error) {
-	this := &LabelingPipeline{}
-	err := yaml.Unmarshal([]byte(content), this)
-	if err != nil {
-		return nil, err
-	}
-	return this, nil
 }
 
 //==============================================================================

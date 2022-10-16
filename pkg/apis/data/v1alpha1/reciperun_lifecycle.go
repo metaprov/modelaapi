@@ -97,10 +97,6 @@ func (r *RecipeRun) ManifestUri() string {
 	return fmt.Sprintf("%s/%s-r.yaml", r.RootUri(), r.Name)
 }
 
-func (r *RecipeRun) ToYamlFile() ([]byte, error) {
-	return yaml.Marshal(r)
-}
-
 func (r *RecipeRun) IsInCond(ct RecipeConditionType) bool {
 	current := r.GetCond(ct)
 	return current.Status == v1.ConditionTrue

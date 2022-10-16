@@ -92,10 +92,6 @@ func (alert *Todo) ManifestUri() string {
 	return fmt.Sprintf("%s/%s-apitoken.yaml", alert.RootUri(), alert.Name)
 }
 
-func (alert *Todo) ToYamlFile() ([]byte, error) {
-	return yaml.Marshal(alert)
-}
-
 func (alert *Todo) MarkArchived() {
 	alert.CreateOrUpdateCond(TodoCondition{
 		Type:   TodoSaved,

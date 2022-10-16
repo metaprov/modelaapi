@@ -99,10 +99,6 @@ func ParseApiTokenYaml(content []byte) (*ApiToken, error) {
 	return r, nil
 }
 
-func (notifier *ApiToken) ToYamlFile() ([]byte, error) {
-	return yaml.Marshal(notifier)
-}
-
 func (token *ApiToken) MarkArchived() {
 	token.CreateOrUpdateCond(ApiTokenCondition{
 		Type:   ApiTokenSaved,

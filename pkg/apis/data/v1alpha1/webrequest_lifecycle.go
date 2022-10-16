@@ -91,10 +91,6 @@ func (r *WebRequest) Populate(name string) {
 	}
 }
 
-func (r *WebRequest) ToYamlFile() ([]byte, error) {
-	return yaml.Marshal(r)
-}
-
 func (r *WebRequest) IsInCond(ct WebRequestConditionType) bool {
 	current := r.GetCond(ct)
 	return current.Status == v1.ConditionTrue

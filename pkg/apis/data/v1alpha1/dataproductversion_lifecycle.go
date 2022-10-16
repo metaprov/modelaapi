@@ -95,10 +95,6 @@ func ParseDataProductVersionYaml(content []byte) (*DataProductVersion, error) {
 	return r, nil
 }
 
-func (version *DataProductVersion) ToYamlFile() ([]byte, error) {
-	return yaml.Marshal(version)
-}
-
 func (version *DataProductVersion) MarkArchived() {
 	version.CreateOrUpdateCond(DataProductVersionCondition{
 		Type:   DataProductVersionSaved,

@@ -110,10 +110,6 @@ func (vcluster *VirtualCluster) ManifestUri() string {
 	return fmt.Sprintf("%s/%s-virtualcluster.yaml", vcluster.RootUri(), vcluster.Name)
 }
 
-func (vcluster *VirtualCluster) ToYamlFile() ([]byte, error) {
-	return yaml.Marshal(vcluster)
-}
-
 func (vcluster *VirtualCluster) MarkArchived() {
 	vcluster.CreateOrUpdateCond(VirtualClusterCondition{
 		Type:   VirtualClusterSaved,

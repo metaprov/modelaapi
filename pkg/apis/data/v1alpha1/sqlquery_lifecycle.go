@@ -91,10 +91,6 @@ func (r *SqlQuery) Populate(name string) {
 	}
 }
 
-func (r *SqlQuery) ToYamlFile() ([]byte, error) {
-	return yaml.Marshal(r)
-}
-
 func (r *SqlQuery) IsInCond(ct SqlQueryConditionType) bool {
 	current := r.GetCond(ct)
 	return current.Status == v1.ConditionTrue

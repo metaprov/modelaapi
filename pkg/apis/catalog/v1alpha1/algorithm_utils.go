@@ -50,10 +50,6 @@ func (alg *Algorithm) RepPath(root string) (string, error) {
 	return fmt.Sprintf("%s/algs/%s", root, alg.ObjectMeta.Name), nil
 }
 
-func (alg *Algorithm) ToYamlFile() ([]byte, error) {
-	return yaml.Marshal(alg)
-}
-
 func (alg *Algorithm) RepEntry() (string, error) {
 	return fmt.Sprintf("algs/%s", alg.ObjectMeta.Name), nil
 }

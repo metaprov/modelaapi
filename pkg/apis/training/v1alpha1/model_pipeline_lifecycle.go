@@ -94,10 +94,6 @@ func (run *ModelPipeline) IsReady() bool {
 	return run.GetCond(ModelPipelineReady).Status == v1.ConditionTrue
 }
 
-func (pl *ModelPipeline) ToYamlFile() ([]byte, error) {
-	return yaml.Marshal(pl)
-}
-
 func ParsePipelineYaml(content []byte) (*ModelPipeline, error) {
 	requiredObj, err := runtime.Decode(scheme.Codecs.UniversalDecoder(SchemeGroupVersion), content)
 	if err != nil {

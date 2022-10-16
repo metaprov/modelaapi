@@ -47,10 +47,6 @@ func (tclass *WorkloadClass) RepPath(root string) (string, error) {
 	return fmt.Sprintf("%s/algs/%s", root, tclass.ObjectMeta.Name), nil
 }
 
-func (tclass *WorkloadClass) ToYamlFile() ([]byte, error) {
-	return yaml.Marshal(tclass)
-}
-
 func (tclass *WorkloadClass) RepEntry() (string, error) {
 	return fmt.Sprintf("algs/%s", tclass.ObjectMeta.Name), nil
 }

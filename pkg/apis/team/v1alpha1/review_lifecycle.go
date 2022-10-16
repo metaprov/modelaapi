@@ -45,10 +45,6 @@ func (conv *Review) RepPath(root string) (string, error) {
 	return fmt.Sprintf("%s/connections/%s.yaml", root, conv.ObjectMeta.Name), nil
 }
 
-func (conv *Review) ToYamlFile() ([]byte, error) {
-	return yaml.Marshal(conv)
-}
-
 func (conv *Review) RootUri() string {
 	return fmt.Sprintf("tenants/%s/connections/%s", conv.Namespace, conv.Name)
 }

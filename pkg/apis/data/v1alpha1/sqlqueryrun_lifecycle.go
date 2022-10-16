@@ -131,10 +131,6 @@ func ParseSqlQueryRunYaml(content []byte) (*SqlQueryRun, error) {
 	return r, nil
 }
 
-func (prediction *SqlQueryRun) ToYamlFile() ([]byte, error) {
-	return yaml.Marshal(prediction)
-}
-
 func (run *SqlQueryRun) MarkFailed(msg string) {
 	run.CreateOrUpdateCond(SqlQueryRunCondition{
 		Type:    SqlQueryRunCompleted,

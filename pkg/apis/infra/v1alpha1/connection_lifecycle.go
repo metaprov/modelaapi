@@ -52,10 +52,6 @@ func (connection *Connection) RemoveFinalizer() {
 // Trackable
 //==============================================================================
 
-func (connection *Connection) ToYamlFile() ([]byte, error) {
-	return yaml.Marshal(connection)
-}
-
 func (connection *Connection) RootUri() string {
 	return fmt.Sprintf("tenants/%s/connections/%s", connection.Namespace, connection.Name)
 }

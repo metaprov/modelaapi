@@ -105,10 +105,6 @@ func ParseModelaSystemYaml(content []byte) (*ModelaSystem, error) {
 	return r, nil
 }
 
-func (notifier *ModelaSystem) ToYamlFile() ([]byte, error) {
-	return yaml.Marshal(notifier)
-}
-
 func (alert *ModelaSystem) MarkArchived() {
 	alert.CreateOrUpdateCond(ModelaSystemCondition{
 		Type:   ModelaSystemSaved,

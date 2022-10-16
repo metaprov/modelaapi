@@ -123,9 +123,6 @@ func (run *CronReport) Key() string {
 	return fmt.Sprintf("dataproducts/%s/reports/%s", run.Namespace, run.Name)
 }
 
-func (run *CronReport) ToYamlFile() ([]byte, error) {
-	return yaml.Marshal(run)
-}
 func (run *CronReport) OpName() string {
 	return run.Namespace + "-" + run.Name
 }

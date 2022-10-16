@@ -82,10 +82,6 @@ func ParseCurtainYaml(content []byte) (*Curtain, error) {
 	return r, nil
 }
 
-func (cur *Curtain) ToYamlFile() ([]byte, error) {
-	return yaml.Marshal(cur)
-}
-
 // Merge or update condition
 // Merge or update condition
 func (cur *Curtain) CreateOrUpdateCond(cond CurtainCondition) {

@@ -104,10 +104,6 @@ func (r *DataProduct) PrefixArchiveUri(uri string) string {
 	return fmt.Sprintf("modela/archive/tenants/%s/%s", r.Namespace, uri)
 }
 
-func (r *DataProduct) ToYamlFile() ([]byte, error) {
-	return yaml.Marshal(r)
-}
-
 // DataEnv product roles
 func (r *DataProduct) ProductAdmin() *rbacv1.Role {
 	return &rbacv1.Role{

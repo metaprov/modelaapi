@@ -41,10 +41,6 @@ func (run *ModelCompilerRun) GetCondIdx(t ModelCompilerRunConditionType) int {
 	return -1
 }
 
-func (run *ModelCompilerRun) ToYamlFile() ([]byte, error) {
-	return yaml.Marshal(run)
-}
-
 func (run *ModelCompilerRun) GetCond(t ModelCompilerRunConditionType) ModelCompilerRunCondition {
 	for _, v := range run.Status.Conditions {
 		if v.Type == t {

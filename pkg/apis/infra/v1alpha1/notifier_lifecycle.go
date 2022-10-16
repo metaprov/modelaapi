@@ -104,10 +104,6 @@ func ParseNotifierYaml(content []byte) (*Notifier, error) {
 	return r, nil
 }
 
-func (notifier *Notifier) ToYamlFile() ([]byte, error) {
-	return yaml.Marshal(notifier)
-}
-
 func (notifier *Notifier) MarkArchived() {
 	notifier.CreateOrUpdateCond(NotifierCondition{
 		Type:   NotifierSaved,

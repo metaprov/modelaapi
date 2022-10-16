@@ -48,10 +48,6 @@ func (pd *PublicDataset) RepPath(root string) (string, error) {
 	return fmt.Sprintf("%s/algs/%s", root, pd.ObjectMeta.Name), nil
 }
 
-func (pd *PublicDataset) ToYamlFile() ([]byte, error) {
-	return yaml.Marshal(pd)
-}
-
 func (pd *PublicDataset) RepEntry() (string, error) {
 	return fmt.Sprintf("algs/%s", pd.ObjectMeta.Name), nil
 }

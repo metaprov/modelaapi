@@ -8,6 +8,7 @@ package v1alpha1
 
 import (
 	"fmt"
+	"github.com/dustin/go-humanize"
 	"strings"
 
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
@@ -220,10 +221,6 @@ func ParseReportYaml(content []byte) (*Report, error) {
 	}
 	r := requiredObj.(*Report)
 	return r, nil
-}
-
-func (report *Report) ToYamlFile() ([]byte, error) {
-	return yaml.Marshal(report)
 }
 
 func (report *Report) ValidateDelete() error {

@@ -69,10 +69,6 @@ func (lab *Lab) RepPath(root string) (string, error) {
 	return fmt.Sprintf("%s/labs/%s.yaml", root, lab.ObjectMeta.Name), nil
 }
 
-func (lab *Lab) ToYamlFile() ([]byte, error) {
-	return yaml.Marshal(lab)
-}
-
 func (lab *Lab) RepEntry() (string, error) {
 	return fmt.Sprintf("labs/%s.yaml", lab.ObjectMeta.Name), nil
 }

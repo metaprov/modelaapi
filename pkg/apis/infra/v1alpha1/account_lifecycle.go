@@ -37,10 +37,6 @@ func (account *Account) RemoveFinalizer()   { util.RemoveFin(&account.ObjectMeta
 // Trackable
 //==============================================================================
 
-func (account *Account) ToYamlFile() ([]byte, error) {
-	return yaml.Marshal(account)
-}
-
 func (account *Account) RootUri() string {
 	return fmt.Sprintf("tenants/%s/accounts/%s", account.Namespace, account.Name)
 }

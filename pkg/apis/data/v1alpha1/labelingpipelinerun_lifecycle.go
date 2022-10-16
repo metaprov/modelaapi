@@ -8,6 +8,7 @@ package v1alpha1
 
 import (
 	"fmt"
+	"github.com/dustin/go-humanize"
 
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/apis/common"
@@ -45,26 +46,8 @@ func (lpr *LabelingPipelineRun) RemoveFinalizer() {
 
 // Return the on disk rep location
 
-func (lpr *LabelingPipelineRun) ToYamlFile() ([]byte, error) {
-	return yaml.Marshal(lpr)
-}
-
 func (lpr *LabelingPipelineRun) Age() string {
 	return humanize.Time(lpr.CreationTimestamp.Time)
-}
-
-//==============================================================================
-// Factory method
-//==============================================================================
-
-// Parse an data
-func ParseLabelPipelineRun(content string, user string, commit string) (*LabelingPipelineRun, error) {
-	this := &LabelingPipelineRun{}
-	err := yaml.Unmarshal([]byte(content), this)
-	if err != nil {
-		return nil, err
-	}
-	return this, nil
 }
 
 //==============================================================================

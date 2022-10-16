@@ -103,10 +103,6 @@ func ParseAttachmentYaml(content []byte) (*Attachment, error) {
 	return r, nil
 }
 
-func (alert *Attachment) ToYamlFile() ([]byte, error) {
-	return yaml.Marshal(alert)
-}
-
 func (alert *Attachment) MarkArchived() {
 	alert.CreateOrUpdateCond(AttachmentCondition{
 		Type:   AttachmentSaved,

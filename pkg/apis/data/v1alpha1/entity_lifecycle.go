@@ -12,6 +12,7 @@ package v1alpha1
 
 import (
 	"fmt"
+	"github.com/dustin/go-humanize"
 
 	"github.com/metaprov/modelaapi/pkg/apis/common"
 	"github.com/metaprov/modelaapi/pkg/apis/data"
@@ -32,10 +33,6 @@ func (entity *Entity) RemoveFinalizer()   { util.RemoveFin(&entity.ObjectMeta, d
 // Return the on disk rep location
 func (entity *Entity) RepPath(root string) (string, error) {
 	return fmt.Sprintf("%s/schemas/%s.yaml", root, entity.ObjectMeta.Name), nil
-}
-
-func (entity *Entity) ToYamlFile() ([]byte, error) {
-	return yaml.Marshal(entity)
 }
 
 func (entity *Entity) RepEntry() (string, error) {

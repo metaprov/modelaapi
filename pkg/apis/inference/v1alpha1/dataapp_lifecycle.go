@@ -97,10 +97,6 @@ func (r *DataApp) Populate(name string) {
 	}
 }
 
-func (r *DataApp) ToYamlFile() ([]byte, error) {
-	return yaml.Marshal(r)
-}
-
 func (r *DataApp) IsInCond(ct DataAppConditionType) bool {
 	current := r.GetCond(ct)
 	return current.Status == v1.ConditionTrue

@@ -49,10 +49,6 @@ func (bucket *VirtualBucket) CreateOrUpdateCond(cond VirtualBucketCondition) {
 	bucket.Status.Conditions[i] = current
 }
 
-func (bucket *VirtualBucket) ToYamlFile() ([]byte, error) {
-	return yaml.Marshal(bucket)
-}
-
 func (bucket *VirtualBucket) GetCondIdx(t VirtualBucketConditionType) int {
 	for i, v := range bucket.Status.Conditions {
 		if v.Type == t {

@@ -43,10 +43,6 @@ func (runbook *RunBook) RepPath(root string) (string, error) {
 	return fmt.Sprintf("%s/runbooks/%s-runbook.yaml", root, runbook.ObjectMeta.Name), nil
 }
 
-func (runbook *RunBook) ToYamlFile() ([]byte, error) {
-	return yaml.Marshal(runbook)
-}
-
 func (runbook *RunBook) RootUri() string {
 	return fmt.Sprintf("tenants/%s/runbooks/%s", runbook.Namespace, runbook.Name)
 }

@@ -39,10 +39,6 @@ func (pm *PostMortem) RepPath(root string) (string, error) {
 	return fmt.Sprintf("%s/connections/%s.yaml", root, pm.ObjectMeta.Name), nil
 }
 
-func (pm *PostMortem) ToYamlFile() ([]byte, error) {
-	return yaml.Marshal(pm)
-}
-
 func (pm *PostMortem) RootUri() string {
 	return fmt.Sprintf("tenants/%s/postmortems/%s", pm.Namespace, pm.Name)
 }

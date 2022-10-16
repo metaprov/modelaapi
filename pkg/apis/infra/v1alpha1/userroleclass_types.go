@@ -56,10 +56,6 @@ type RuleSpec struct {
 	Verbs []common.VerbName `json:"verbs,omitempty" protobuf:"bytes,2,rep,name=verbs"`
 }
 
-func (role *UserRoleClass) ToYamlFile() ([]byte, error) {
-	return yaml.Marshal(role)
-}
-
 func (role *UserRoleClass) Allow(
 	action common.VerbName,
 	resource common.KindName,

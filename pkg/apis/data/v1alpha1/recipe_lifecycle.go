@@ -91,10 +91,6 @@ func (r *Recipe) Populate(name string) {
 	}
 }
 
-func (r *Recipe) ToYamlFile() ([]byte, error) {
-	return yaml.Marshal(r)
-}
-
 func (r *Recipe) IsInCond(ct RecipeConditionType) bool {
 	current := r.GetCond(ct)
 	return current.Status == v1.ConditionTrue

@@ -111,10 +111,6 @@ func ParseLicenseYaml(content []byte) (*License, error) {
 	return r, nil
 }
 
-func (license *License) ToYamlFile() ([]byte, error) {
-	return yaml.Marshal(license)
-}
-
 func (license *License) MarkValid() {
 	license.CreateOrUpdateCond(LicenseCondition{
 		Type:   LicenseValid,

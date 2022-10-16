@@ -9,6 +9,7 @@ package v1alpha1
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/dustin/go-humanize"
 	"path"
 	"time"
 
@@ -140,10 +141,6 @@ func (model *Model) RemoveFinalizer() {
 //==============================================================================
 // Trackable
 //==============================================================================
-
-func (model *Model) ToYamlFile() ([]byte, error) {
-	return yaml.Marshal(model)
-}
 
 func (model *Model) RootUri() string {
 	return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/studies/%s/models/%s",

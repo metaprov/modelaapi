@@ -103,10 +103,6 @@ func ParseCommitYaml(content []byte) (*Commit, error) {
 	return r, nil
 }
 
-func (commit *Commit) ToYamlFile() ([]byte, error) {
-	return yaml.Marshal(commit)
-}
-
 func (commit *Commit) MarkArchived() {
 	commit.CreateOrUpdateCond(CommitCondition{
 		Type:   CommitSaved,

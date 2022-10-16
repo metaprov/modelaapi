@@ -131,10 +131,6 @@ func ParseWebRequestRunYaml(content []byte) (*WebRequestRun, error) {
 	return r, nil
 }
 
-func (prediction *WebRequestRun) ToYamlFile() ([]byte, error) {
-	return yaml.Marshal(prediction)
-}
-
 func (prediction *WebRequestRun) MarkFailed(msg string) {
 	prediction.CreateOrUpdateCond(WebRequestRunCondition{
 		Type:    WebRequestRunCompleted,
