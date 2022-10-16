@@ -5,7 +5,7 @@ metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.8.0
   creationTimestamp: null
-  name: featureSources.data.modela.ai
+  name: featuresources.data.modela.ai
 spec:
   group: data.modela.ai
   names:
@@ -14,10 +14,10 @@ spec:
     - modela
     kind: FeatureSource
     listKind: FeatureSourceList
-    plural: featureSources
+    plural: featuresources
     shortNames:
     - fset
-    singular: featureSource
+    singular: featuresource
   scope: Namespaced
   versions:
   - additionalPrinterColumns:

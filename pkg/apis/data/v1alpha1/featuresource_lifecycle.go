@@ -7,7 +7,7 @@
 package v1alpha1
 
 //==============================================================================
-// Featureset
+// FeatureSource
 //==============================================================================
 
 import (
@@ -21,26 +21,26 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-func (entity *Featureset) HasFinalizer() bool {
+func (entity *FeatureSource) HasFinalizer() bool {
 	return util.HasFin(&entity.ObjectMeta, data.GroupName)
 }
-func (entity *Featureset) AddFinalizer()    { util.AddFin(&entity.ObjectMeta, data.GroupName) }
-func (entity *Featureset) RemoveFinalizer() { util.RemoveFin(&entity.ObjectMeta, data.GroupName) }
+func (entity *FeatureSource) AddFinalizer()    { util.AddFin(&entity.ObjectMeta, data.GroupName) }
+func (entity *FeatureSource) RemoveFinalizer() { util.RemoveFin(&entity.ObjectMeta, data.GroupName) }
 
 //==============================================================================
 // Trackable
 //==============================================================================
 
 // Return the on disk rep location
-func (entity *Featureset) RepPath(root string) (string, error) {
+func (entity *FeatureSource) RepPath(root string) (string, error) {
 	return fmt.Sprintf("%s/schemas/%s.yaml", root, entity.ObjectMeta.Name), nil
 }
 
-func (entity *Featureset) RepEntry() (string, error) {
+func (entity *FeatureSource) RepEntry() (string, error) {
 	return fmt.Sprintf("schemas/%s.yaml", entity.ObjectMeta.Name), nil
 }
 
-func (entity *Featureset) Age() string {
+func (entity *FeatureSource) Age() string {
 	return humanize.Time(entity.CreationTimestamp.Time)
 }
 
@@ -48,13 +48,13 @@ func (entity *Featureset) Age() string {
 // Assign commit and id
 //==============================================================================
 
-func (entity *Featureset) LabelWithCommit(commit string, uname string, branch string) {
+func (entity *FeatureSource) LabelWithCommit(commit string, uname string, branch string) {
 	entity.ObjectMeta.Labels[common.CommitLabelKey] = commit
 	entity.ObjectMeta.Labels[common.UnameLabelKey] = uname
 	entity.ObjectMeta.Labels[common.BranchLabelKey] = branch
 }
 
-func (entity *Featureset) IsGitObj() bool {
+func (entity *FeatureSource) IsGitObj() bool {
 	label, ok := entity.ObjectMeta.Labels[common.CommitLabelKey]
 	if !ok {
 		return false
@@ -62,13 +62,13 @@ func (entity *Featureset) IsGitObj() bool {
 	return label != ""
 }
 
-func (entity *Featureset) SetChanged() {
+func (entity *FeatureSource) SetChanged() {
 	entity.ObjectMeta.Labels[common.ChangedLabelKey] = "true"
 
 }
 
 // Merge or update condition
-func (entity *Featureset) CreateOrUpdateCond(cond FeaturesetCondition) {
+func (entity *FeatureSource) CreateOrUpdateCond(cond FeatureSourceCondition) {
 	i := entity.GetCondIdx(cond.Type)
 	now := metav1.Now()
 	if i == -1 { // not found
@@ -87,7 +87,7 @@ func (entity *Featureset) CreateOrUpdateCond(cond FeaturesetCondition) {
 	entity.Status.Conditions[i] = current
 }
 
-func (entity *Featureset) GetCondIdx(t FeaturesetConditionType) int {
+func (entity *FeatureSource) GetCondIdx(t FeatureSourceConditionType) int {
 	for i, v := range entity.Status.Conditions {
 		if v.Type == t {
 			return i
@@ -96,14 +96,14 @@ func (entity *Featureset) GetCondIdx(t FeaturesetConditionType) int {
 	return -1
 }
 
-func (entity *Featureset) GetCond(t FeaturesetConditionType) FeaturesetCondition {
+func (entity *FeatureSource) GetCond(t FeatureSourceConditionType) FeatureSourceCondition {
 	for _, v := range entity.Status.Conditions {
 		if v.Type == t {
 			return v
 		}
 	}
 	// if we did not find the condition, we return an unknown object
-	return FeaturesetCondition{
+	return FeatureSourceCondition{
 		Type:    t,
 		Status:  v1.ConditionUnknown,
 		Reason:  "",
@@ -112,29 +112,29 @@ func (entity *Featureset) GetCond(t FeaturesetConditionType) FeaturesetCondition
 
 }
 
-func (entity *Featureset) IsReady() bool {
-	return entity.GetCond(FeaturesetReady).Status == v1.ConditionTrue
+func (entity *FeatureSource) IsReady() bool {
+	return entity.GetCond(FeatureSourceReady).Status == v1.ConditionTrue
 }
 
-func (entity *Featureset) Key() string {
+func (entity *FeatureSource) Key() string {
 	return fmt.Sprintf("%s/%s/%s", "entities", entity.Namespace, entity.Name)
 }
 
-func (fset *Featureset) MarkReady() {
+func (fset *FeatureSource) MarkReady() {
 	// update the lab state to ready
-	fset.CreateOrUpdateCond(FeaturesetCondition{
-		Type:   FeaturesetReady,
+	fset.CreateOrUpdateCond(FeatureSourceCondition{
+		Type:   FeatureSourceReady,
 		Status: v1.ConditionTrue,
 	})
 }
 
-func (fset *Featureset) MarkArchived() {
-	fset.CreateOrUpdateCond(FeaturesetCondition{
-		Type:   FeaturesetSaved,
+func (fset *FeatureSource) MarkArchived() {
+	fset.CreateOrUpdateCond(FeatureSourceCondition{
+		Type:   FeatureSourceSaved,
 		Status: v1.ConditionTrue,
 	})
 }
 
-func (pipeline *Featureset) Archived() bool {
-	return pipeline.GetCond(FeaturesetSaved).Status == v1.ConditionTrue
+func (pipeline *FeatureSource) Archived() bool {
+	return pipeline.GetCond(FeatureSourceSaved).Status == v1.ConditionTrue
 }

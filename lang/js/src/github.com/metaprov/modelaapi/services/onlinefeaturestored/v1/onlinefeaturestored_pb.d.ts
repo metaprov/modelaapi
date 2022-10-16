@@ -109,10 +109,10 @@ export namespace ListFeaturesRequest {
 }
 
 export class ListFeaturesResponse extends jspb.Message {
-  getFeaturesets(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturesetList | undefined;
-  setFeaturesets(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturesetList): ListFeaturesResponse;
-  hasFeaturesets(): boolean;
-  clearFeaturesets(): ListFeaturesResponse;
+  getFeaturesources(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSourceList | undefined;
+  setFeaturesources(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSourceList): ListFeaturesResponse;
+  hasFeaturesources(): boolean;
+  clearFeaturesources(): ListFeaturesResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListFeaturesResponse.AsObject;
@@ -124,7 +124,7 @@ export class ListFeaturesResponse extends jspb.Message {
 
 export namespace ListFeaturesResponse {
   export type AsObject = {
-    featuresets?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturesetList.AsObject,
+    featuresources?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSourceList.AsObject,
   }
 }
 
@@ -135,10 +135,10 @@ export class GetFeatureRequest extends jspb.Message {
   getNs(): string;
   setNs(value: string): GetFeatureRequest;
 
-  getFeatureset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Featureset | undefined;
-  setFeatureset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Featureset): GetFeatureRequest;
-  hasFeatureset(): boolean;
-  clearFeatureset(): GetFeatureRequest;
+  getFeaturesource(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSource | undefined;
+  setFeaturesource(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSource): GetFeatureRequest;
+  hasFeaturesource(): boolean;
+  clearFeaturesource(): GetFeatureRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetFeatureRequest.AsObject;
@@ -152,15 +152,15 @@ export namespace GetFeatureRequest {
   export type AsObject = {
     name: string,
     ns: string,
-    featureset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Featureset.AsObject,
+    featuresource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSource.AsObject,
   }
 }
 
 export class GetFeatureResponse extends jspb.Message {
-  getFeatureset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Featureset | undefined;
-  setFeatureset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Featureset): GetFeatureResponse;
-  hasFeatureset(): boolean;
-  clearFeatureset(): GetFeatureResponse;
+  getFeaturesource(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSource | undefined;
+  setFeaturesource(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSource): GetFeatureResponse;
+  hasFeaturesource(): boolean;
+  clearFeaturesource(): GetFeatureResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetFeatureResponse.AsObject;
@@ -172,7 +172,7 @@ export class GetFeatureResponse extends jspb.Message {
 
 export namespace GetFeatureResponse {
   export type AsObject = {
-    featureset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Featureset.AsObject,
+    featuresource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSource.AsObject,
   }
 }
 
@@ -221,10 +221,10 @@ export namespace EnrichResponse {
 }
 
 export class UpdateFeatureRequest extends jspb.Message {
-  getFeatureset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Featureset | undefined;
-  setFeatureset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Featureset): UpdateFeatureRequest;
-  hasFeatureset(): boolean;
-  clearFeatureset(): UpdateFeatureRequest;
+  getFeaturesource(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSource | undefined;
+  setFeaturesource(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSource): UpdateFeatureRequest;
+  hasFeaturesource(): boolean;
+  clearFeaturesource(): UpdateFeatureRequest;
 
   getConnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
   setConnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): UpdateFeatureRequest;
@@ -244,7 +244,7 @@ export class UpdateFeatureRequest extends jspb.Message {
 
 export namespace UpdateFeatureRequest {
   export type AsObject = {
-    featureset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Featureset.AsObject,
+    featuresource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSource.AsObject,
     connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     secretMap: Array<[string, Uint8Array | string]>,
   }

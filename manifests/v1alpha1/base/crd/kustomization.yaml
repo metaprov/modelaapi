@@ -20,6 +20,7 @@ resources:
 - data.modela.ai_featurepipelines.yaml
 - data.modela.ai_features.yaml
 - data.modela.ai_featuresets.yaml
+- data.modela.ai_featuresources.yaml
 - data.modela.ai_labelingpipelineruns.yaml
 - data.modela.ai_labelingpipelines.yaml
 - data.modela.ai_reciperuns.yaml

@@ -3451,65 +3451,65 @@ export namespace FeaturePipelineStatus {
   }
 }
 
-export class Featureset extends jspb.Message {
+export class FeatureSource extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
-  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): Featureset;
+  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): FeatureSource;
   hasMetadata(): boolean;
-  clearMetadata(): Featureset;
+  clearMetadata(): FeatureSource;
 
-  getSpec(): FeaturesetSpec | undefined;
-  setSpec(value?: FeaturesetSpec): Featureset;
+  getSpec(): FeatureSourceSpec | undefined;
+  setSpec(value?: FeatureSourceSpec): FeatureSource;
   hasSpec(): boolean;
-  clearSpec(): Featureset;
+  clearSpec(): FeatureSource;
 
-  getStatus(): FeaturesetStatus | undefined;
-  setStatus(value?: FeaturesetStatus): Featureset;
+  getStatus(): FeatureSourceStatus | undefined;
+  setStatus(value?: FeatureSourceStatus): FeatureSource;
   hasStatus(): boolean;
-  clearStatus(): Featureset;
+  clearStatus(): FeatureSource;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): Featureset.AsObject;
-  static toObject(includeInstance: boolean, msg: Featureset): Featureset.AsObject;
-  static serializeBinaryToWriter(message: Featureset, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): Featureset;
-  static deserializeBinaryFromReader(message: Featureset, reader: jspb.BinaryReader): Featureset;
+  toObject(includeInstance?: boolean): FeatureSource.AsObject;
+  static toObject(includeInstance: boolean, msg: FeatureSource): FeatureSource.AsObject;
+  static serializeBinaryToWriter(message: FeatureSource, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FeatureSource;
+  static deserializeBinaryFromReader(message: FeatureSource, reader: jspb.BinaryReader): FeatureSource;
 }
 
-export namespace Featureset {
+export namespace FeatureSource {
   export type AsObject = {
     metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.AsObject,
-    spec?: FeaturesetSpec.AsObject,
-    status?: FeaturesetStatus.AsObject,
+    spec?: FeatureSourceSpec.AsObject,
+    status?: FeatureSourceStatus.AsObject,
   }
 }
 
-export class FeaturesetCondition extends jspb.Message {
+export class FeatureSourceCondition extends jspb.Message {
   getType(): string;
-  setType(value: string): FeaturesetCondition;
+  setType(value: string): FeatureSourceCondition;
 
   getStatus(): string;
-  setStatus(value: string): FeaturesetCondition;
+  setStatus(value: string): FeatureSourceCondition;
 
   getLasttransitiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLasttransitiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): FeaturesetCondition;
+  setLasttransitiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): FeatureSourceCondition;
   hasLasttransitiontime(): boolean;
-  clearLasttransitiontime(): FeaturesetCondition;
+  clearLasttransitiontime(): FeatureSourceCondition;
 
   getReason(): string;
-  setReason(value: string): FeaturesetCondition;
+  setReason(value: string): FeatureSourceCondition;
 
   getMessage(): string;
-  setMessage(value: string): FeaturesetCondition;
+  setMessage(value: string): FeatureSourceCondition;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): FeaturesetCondition.AsObject;
-  static toObject(includeInstance: boolean, msg: FeaturesetCondition): FeaturesetCondition.AsObject;
-  static serializeBinaryToWriter(message: FeaturesetCondition, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): FeaturesetCondition;
-  static deserializeBinaryFromReader(message: FeaturesetCondition, reader: jspb.BinaryReader): FeaturesetCondition;
+  toObject(includeInstance?: boolean): FeatureSourceCondition.AsObject;
+  static toObject(includeInstance: boolean, msg: FeatureSourceCondition): FeatureSourceCondition.AsObject;
+  static serializeBinaryToWriter(message: FeatureSourceCondition, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FeatureSourceCondition;
+  static deserializeBinaryFromReader(message: FeatureSourceCondition, reader: jspb.BinaryReader): FeatureSourceCondition;
 }
 
-export namespace FeaturesetCondition {
+export namespace FeatureSourceCondition {
   export type AsObject = {
     type: string,
     status: string,
@@ -3519,71 +3519,71 @@ export namespace FeaturesetCondition {
   }
 }
 
-export class FeaturesetList extends jspb.Message {
+export class FeatureSourceList extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta | undefined;
-  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta): FeaturesetList;
+  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta): FeatureSourceList;
   hasMetadata(): boolean;
-  clearMetadata(): FeaturesetList;
+  clearMetadata(): FeatureSourceList;
 
-  getItemsList(): Array<Featureset>;
-  setItemsList(value: Array<Featureset>): FeaturesetList;
-  clearItemsList(): FeaturesetList;
-  addItems(value?: Featureset, index?: number): Featureset;
+  getItemsList(): Array<FeatureSource>;
+  setItemsList(value: Array<FeatureSource>): FeatureSourceList;
+  clearItemsList(): FeatureSourceList;
+  addItems(value?: FeatureSource, index?: number): FeatureSource;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): FeaturesetList.AsObject;
-  static toObject(includeInstance: boolean, msg: FeaturesetList): FeaturesetList.AsObject;
-  static serializeBinaryToWriter(message: FeaturesetList, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): FeaturesetList;
-  static deserializeBinaryFromReader(message: FeaturesetList, reader: jspb.BinaryReader): FeaturesetList;
+  toObject(includeInstance?: boolean): FeatureSourceList.AsObject;
+  static toObject(includeInstance: boolean, msg: FeatureSourceList): FeatureSourceList.AsObject;
+  static serializeBinaryToWriter(message: FeatureSourceList, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FeatureSourceList;
+  static deserializeBinaryFromReader(message: FeatureSourceList, reader: jspb.BinaryReader): FeatureSourceList;
 }
 
-export namespace FeaturesetList {
+export namespace FeatureSourceList {
   export type AsObject = {
     metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta.AsObject,
-    itemsList: Array<Featureset.AsObject>,
+    itemsList: Array<FeatureSource.AsObject>,
   }
 }
 
-export class FeaturesetSpec extends jspb.Message {
+export class FeatureSourceSpec extends jspb.Message {
   getVersionname(): string;
-  setVersionname(value: string): FeaturesetSpec;
+  setVersionname(value: string): FeatureSourceSpec;
 
   getDescription(): string;
-  setDescription(value: string): FeaturesetSpec;
+  setDescription(value: string): FeatureSourceSpec;
 
   getOwner(): string;
-  setOwner(value: string): FeaturesetSpec;
+  setOwner(value: string): FeatureSourceSpec;
 
   getEntityref(): k8s_io_api_core_v1_generated_pb.LocalObjectReference | undefined;
-  setEntityref(value?: k8s_io_api_core_v1_generated_pb.LocalObjectReference): FeaturesetSpec;
+  setEntityref(value?: k8s_io_api_core_v1_generated_pb.LocalObjectReference): FeatureSourceSpec;
   hasEntityref(): boolean;
-  clearEntityref(): FeaturesetSpec;
+  clearEntityref(): FeatureSourceSpec;
 
   getDatasourceref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setDatasourceref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): FeaturesetSpec;
+  setDatasourceref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): FeatureSourceSpec;
   hasDatasourceref(): boolean;
-  clearDatasourceref(): FeaturesetSpec;
+  clearDatasourceref(): FeatureSourceSpec;
 
   getIncludeList(): Array<string>;
-  setIncludeList(value: Array<string>): FeaturesetSpec;
-  clearIncludeList(): FeaturesetSpec;
-  addInclude(value: string, index?: number): FeaturesetSpec;
+  setIncludeList(value: Array<string>): FeatureSourceSpec;
+  clearIncludeList(): FeatureSourceSpec;
+  addInclude(value: string, index?: number): FeatureSourceSpec;
 
   getExcludeList(): Array<string>;
-  setExcludeList(value: Array<string>): FeaturesetSpec;
-  clearExcludeList(): FeaturesetSpec;
-  addExclude(value: string, index?: number): FeaturesetSpec;
+  setExcludeList(value: Array<string>): FeatureSourceSpec;
+  clearExcludeList(): FeatureSourceSpec;
+  addExclude(value: string, index?: number): FeatureSourceSpec;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): FeaturesetSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: FeaturesetSpec): FeaturesetSpec.AsObject;
-  static serializeBinaryToWriter(message: FeaturesetSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): FeaturesetSpec;
-  static deserializeBinaryFromReader(message: FeaturesetSpec, reader: jspb.BinaryReader): FeaturesetSpec;
+  toObject(includeInstance?: boolean): FeatureSourceSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: FeatureSourceSpec): FeatureSourceSpec.AsObject;
+  static serializeBinaryToWriter(message: FeatureSourceSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FeatureSourceSpec;
+  static deserializeBinaryFromReader(message: FeatureSourceSpec, reader: jspb.BinaryReader): FeatureSourceSpec;
 }
 
-export namespace FeaturesetSpec {
+export namespace FeatureSourceSpec {
   export type AsObject = {
     versionname: string,
     description: string,
@@ -3595,33 +3595,33 @@ export namespace FeaturesetSpec {
   }
 }
 
-export class FeaturesetStatus extends jspb.Message {
+export class FeatureSourceStatus extends jspb.Message {
   getObservedgeneration(): number;
-  setObservedgeneration(value: number): FeaturesetStatus;
+  setObservedgeneration(value: number): FeatureSourceStatus;
 
   getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): FeaturesetStatus;
+  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): FeatureSourceStatus;
   hasLastupdated(): boolean;
-  clearLastupdated(): FeaturesetStatus;
+  clearLastupdated(): FeatureSourceStatus;
 
-  getConditionsList(): Array<FeaturesetCondition>;
-  setConditionsList(value: Array<FeaturesetCondition>): FeaturesetStatus;
-  clearConditionsList(): FeaturesetStatus;
-  addConditions(value?: FeaturesetCondition, index?: number): FeaturesetCondition;
+  getConditionsList(): Array<FeatureSourceCondition>;
+  setConditionsList(value: Array<FeatureSourceCondition>): FeatureSourceStatus;
+  clearConditionsList(): FeatureSourceStatus;
+  addConditions(value?: FeatureSourceCondition, index?: number): FeatureSourceCondition;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): FeaturesetStatus.AsObject;
-  static toObject(includeInstance: boolean, msg: FeaturesetStatus): FeaturesetStatus.AsObject;
-  static serializeBinaryToWriter(message: FeaturesetStatus, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): FeaturesetStatus;
-  static deserializeBinaryFromReader(message: FeaturesetStatus, reader: jspb.BinaryReader): FeaturesetStatus;
+  toObject(includeInstance?: boolean): FeatureSourceStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: FeatureSourceStatus): FeatureSourceStatus.AsObject;
+  static serializeBinaryToWriter(message: FeatureSourceStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FeatureSourceStatus;
+  static deserializeBinaryFromReader(message: FeatureSourceStatus, reader: jspb.BinaryReader): FeatureSourceStatus;
 }
 
-export namespace FeaturesetStatus {
+export namespace FeatureSourceStatus {
   export type AsObject = {
     observedgeneration: number,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    conditionsList: Array<FeaturesetCondition.AsObject>,
+    conditionsList: Array<FeatureSourceCondition.AsObject>,
   }
 }
 

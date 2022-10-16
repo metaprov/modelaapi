@@ -137,7 +137,7 @@ func (feature *FeaturePipeline) Key() string {
 	return fmt.Sprintf("%s/%s/%s", "features", feature.Namespace, feature.Name)
 }
 
-func ParseFeaturesetYaml(content []byte) (*FeaturePipeline, error) {
+func ParseFeatureSourceYaml(content []byte) (*FeaturePipeline, error) {
 	requiredObj, err := runtime.Decode(scheme.Codecs.UniversalDecoder(SchemeGroupVersion), content)
 	if err != nil {
 		return nil, err

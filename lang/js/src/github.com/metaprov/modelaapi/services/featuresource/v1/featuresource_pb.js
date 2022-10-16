@@ -1,4 +1,4 @@
-// source: github.com/metaprov/modelaapi/services/featureSource/v1/featureSource.proto
+// source: github.com/metaprov/modelaapi/services/featuresource/v1/featuresource.proto
 /**
  * @fileoverview
  * @enhanceable
@@ -532,7 +532,7 @@ proto.github.com.metaprov.modelaapi.services.featureSource.v1.ListFeatureSourceR
  */
 proto.github.com.metaprov.modelaapi.services.featureSource.v1.ListFeatureSourceResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    featureSources: (f = msg.getFeatureSources()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSourceList.toObject(includeInstance, f),
+    featuresources: (f = msg.getFeaturesources()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSourceList.toObject(includeInstance, f),
     nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -573,7 +573,7 @@ proto.github.com.metaprov.modelaapi.services.featureSource.v1.ListFeatureSourceR
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSourceList;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSourceList.deserializeBinaryFromReader);
-      msg.setFeatureSources(value);
+      msg.setFeaturesources(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -608,7 +608,7 @@ proto.github.com.metaprov.modelaapi.services.featureSource.v1.ListFeatureSourceR
  */
 proto.github.com.metaprov.modelaapi.services.featureSource.v1.ListFeatureSourceResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getFeatureSources();
+  f = message.getFeaturesources();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -630,7 +630,7 @@ proto.github.com.metaprov.modelaapi.services.featureSource.v1.ListFeatureSourceR
  * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureSourceList featureSources = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureSourceList}
  */
-proto.github.com.metaprov.modelaapi.services.featureSource.v1.ListFeatureSourceResponse.prototype.getFeatureSources = function() {
+proto.github.com.metaprov.modelaapi.services.featureSource.v1.ListFeatureSourceResponse.prototype.getFeaturesources = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureSourceList} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSourceList, 1));
 };
@@ -640,7 +640,7 @@ proto.github.com.metaprov.modelaapi.services.featureSource.v1.ListFeatureSourceR
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureSourceList|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.featureSource.v1.ListFeatureSourceResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.featureSource.v1.ListFeatureSourceResponse.prototype.setFeatureSources = function(value) {
+proto.github.com.metaprov.modelaapi.services.featureSource.v1.ListFeatureSourceResponse.prototype.setFeaturesources = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -649,8 +649,8 @@ proto.github.com.metaprov.modelaapi.services.featureSource.v1.ListFeatureSourceR
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.featureSource.v1.ListFeatureSourceResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.featureSource.v1.ListFeatureSourceResponse.prototype.clearFeatureSources = function() {
-  return this.setFeatureSources(undefined);
+proto.github.com.metaprov.modelaapi.services.featureSource.v1.ListFeatureSourceResponse.prototype.clearFeaturesources = function() {
+  return this.setFeaturesources(undefined);
 };
 
 
@@ -658,7 +658,7 @@ proto.github.com.metaprov.modelaapi.services.featureSource.v1.ListFeatureSourceR
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.featureSource.v1.ListFeatureSourceResponse.prototype.hasFeatureSources = function() {
+proto.github.com.metaprov.modelaapi.services.featureSource.v1.ListFeatureSourceResponse.prototype.hasFeaturesources = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -713,7 +713,7 @@ proto.github.com.metaprov.modelaapi.services.featureSource.v1.CreateFeatureSourc
  */
 proto.github.com.metaprov.modelaapi.services.featureSource.v1.CreateFeatureSourceRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    featureSource: (f = msg.getFeatureSource()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSource.toObject(includeInstance, f)
+    featuresource: (f = msg.getFeaturesource()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSource.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -753,7 +753,7 @@ proto.github.com.metaprov.modelaapi.services.featureSource.v1.CreateFeatureSourc
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSource;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSource.deserializeBinaryFromReader);
-      msg.setFeatureSource(value);
+      msg.setFeaturesource(value);
       break;
     default:
       reader.skipField();
@@ -784,7 +784,7 @@ proto.github.com.metaprov.modelaapi.services.featureSource.v1.CreateFeatureSourc
  */
 proto.github.com.metaprov.modelaapi.services.featureSource.v1.CreateFeatureSourceRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getFeatureSource();
+  f = message.getFeaturesource();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -799,7 +799,7 @@ proto.github.com.metaprov.modelaapi.services.featureSource.v1.CreateFeatureSourc
  * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureSource featureSource = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureSource}
  */
-proto.github.com.metaprov.modelaapi.services.featureSource.v1.CreateFeatureSourceRequest.prototype.getFeatureSource = function() {
+proto.github.com.metaprov.modelaapi.services.featureSource.v1.CreateFeatureSourceRequest.prototype.getFeaturesource = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureSource} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSource, 1));
 };
@@ -809,7 +809,7 @@ proto.github.com.metaprov.modelaapi.services.featureSource.v1.CreateFeatureSourc
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureSource|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.featureSource.v1.CreateFeatureSourceRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.featureSource.v1.CreateFeatureSourceRequest.prototype.setFeatureSource = function(value) {
+proto.github.com.metaprov.modelaapi.services.featureSource.v1.CreateFeatureSourceRequest.prototype.setFeaturesource = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -818,8 +818,8 @@ proto.github.com.metaprov.modelaapi.services.featureSource.v1.CreateFeatureSourc
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.featureSource.v1.CreateFeatureSourceRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.featureSource.v1.CreateFeatureSourceRequest.prototype.clearFeatureSource = function() {
-  return this.setFeatureSource(undefined);
+proto.github.com.metaprov.modelaapi.services.featureSource.v1.CreateFeatureSourceRequest.prototype.clearFeaturesource = function() {
+  return this.setFeaturesource(undefined);
 };
 
 
@@ -827,7 +827,7 @@ proto.github.com.metaprov.modelaapi.services.featureSource.v1.CreateFeatureSourc
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.featureSource.v1.CreateFeatureSourceRequest.prototype.hasFeatureSource = function() {
+proto.github.com.metaprov.modelaapi.services.featureSource.v1.CreateFeatureSourceRequest.prototype.hasFeaturesource = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -965,7 +965,7 @@ proto.github.com.metaprov.modelaapi.services.featureSource.v1.UpdateFeatureSourc
  */
 proto.github.com.metaprov.modelaapi.services.featureSource.v1.UpdateFeatureSourceRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    featureSource: (f = msg.getFeatureSource()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSource.toObject(includeInstance, f),
+    featuresource: (f = msg.getFeaturesource()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSource.toObject(includeInstance, f),
     fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
@@ -1006,7 +1006,7 @@ proto.github.com.metaprov.modelaapi.services.featureSource.v1.UpdateFeatureSourc
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSource;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSource.deserializeBinaryFromReader);
-      msg.setFeatureSource(value);
+      msg.setFeaturesource(value);
       break;
     case 2:
       var value = new google_protobuf_field_mask_pb.FieldMask;
@@ -1042,7 +1042,7 @@ proto.github.com.metaprov.modelaapi.services.featureSource.v1.UpdateFeatureSourc
  */
 proto.github.com.metaprov.modelaapi.services.featureSource.v1.UpdateFeatureSourceRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getFeatureSource();
+  f = message.getFeaturesource();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1065,7 +1065,7 @@ proto.github.com.metaprov.modelaapi.services.featureSource.v1.UpdateFeatureSourc
  * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureSource featureSource = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureSource}
  */
-proto.github.com.metaprov.modelaapi.services.featureSource.v1.UpdateFeatureSourceRequest.prototype.getFeatureSource = function() {
+proto.github.com.metaprov.modelaapi.services.featureSource.v1.UpdateFeatureSourceRequest.prototype.getFeaturesource = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureSource} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSource, 1));
 };
@@ -1075,7 +1075,7 @@ proto.github.com.metaprov.modelaapi.services.featureSource.v1.UpdateFeatureSourc
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureSource|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.featureSource.v1.UpdateFeatureSourceRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.featureSource.v1.UpdateFeatureSourceRequest.prototype.setFeatureSource = function(value) {
+proto.github.com.metaprov.modelaapi.services.featureSource.v1.UpdateFeatureSourceRequest.prototype.setFeaturesource = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1084,8 +1084,8 @@ proto.github.com.metaprov.modelaapi.services.featureSource.v1.UpdateFeatureSourc
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.featureSource.v1.UpdateFeatureSourceRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.featureSource.v1.UpdateFeatureSourceRequest.prototype.clearFeatureSource = function() {
-  return this.setFeatureSource(undefined);
+proto.github.com.metaprov.modelaapi.services.featureSource.v1.UpdateFeatureSourceRequest.prototype.clearFeaturesource = function() {
+  return this.setFeaturesource(undefined);
 };
 
 
@@ -1093,7 +1093,7 @@ proto.github.com.metaprov.modelaapi.services.featureSource.v1.UpdateFeatureSourc
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.featureSource.v1.UpdateFeatureSourceRequest.prototype.hasFeatureSource = function() {
+proto.github.com.metaprov.modelaapi.services.featureSource.v1.UpdateFeatureSourceRequest.prototype.hasFeaturesource = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -1428,7 +1428,7 @@ proto.github.com.metaprov.modelaapi.services.featureSource.v1.GetFeatureSourceRe
  */
 proto.github.com.metaprov.modelaapi.services.featureSource.v1.GetFeatureSourceResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    featureSource: (f = msg.getFeatureSource()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSource.toObject(includeInstance, f),
+    featuresource: (f = msg.getFeaturesource()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSource.toObject(includeInstance, f),
     yaml: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -1469,7 +1469,7 @@ proto.github.com.metaprov.modelaapi.services.featureSource.v1.GetFeatureSourceRe
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSource;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSource.deserializeBinaryFromReader);
-      msg.setFeatureSource(value);
+      msg.setFeaturesource(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -1504,7 +1504,7 @@ proto.github.com.metaprov.modelaapi.services.featureSource.v1.GetFeatureSourceRe
  */
 proto.github.com.metaprov.modelaapi.services.featureSource.v1.GetFeatureSourceResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getFeatureSource();
+  f = message.getFeaturesource();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1526,7 +1526,7 @@ proto.github.com.metaprov.modelaapi.services.featureSource.v1.GetFeatureSourceRe
  * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureSource featureSource = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureSource}
  */
-proto.github.com.metaprov.modelaapi.services.featureSource.v1.GetFeatureSourceResponse.prototype.getFeatureSource = function() {
+proto.github.com.metaprov.modelaapi.services.featureSource.v1.GetFeatureSourceResponse.prototype.getFeaturesource = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureSource} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSource, 1));
 };
@@ -1536,7 +1536,7 @@ proto.github.com.metaprov.modelaapi.services.featureSource.v1.GetFeatureSourceRe
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureSource|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.featureSource.v1.GetFeatureSourceResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.featureSource.v1.GetFeatureSourceResponse.prototype.setFeatureSource = function(value) {
+proto.github.com.metaprov.modelaapi.services.featureSource.v1.GetFeatureSourceResponse.prototype.setFeaturesource = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1545,8 +1545,8 @@ proto.github.com.metaprov.modelaapi.services.featureSource.v1.GetFeatureSourceRe
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.featureSource.v1.GetFeatureSourceResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.featureSource.v1.GetFeatureSourceResponse.prototype.clearFeatureSource = function() {
-  return this.setFeatureSource(undefined);
+proto.github.com.metaprov.modelaapi.services.featureSource.v1.GetFeatureSourceResponse.prototype.clearFeaturesource = function() {
+  return this.setFeaturesource(undefined);
 };
 
 
@@ -1554,7 +1554,7 @@ proto.github.com.metaprov.modelaapi.services.featureSource.v1.GetFeatureSourceRe
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.featureSource.v1.GetFeatureSourceResponse.prototype.hasFeatureSource = function() {
+proto.github.com.metaprov.modelaapi.services.featureSource.v1.GetFeatureSourceResponse.prototype.hasFeaturesource = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

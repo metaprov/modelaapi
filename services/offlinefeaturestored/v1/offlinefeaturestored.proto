@@ -17,7 +17,7 @@ service OfflineFeatureStoreService {
 }
 
 message CreateFeatureRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Featureset featureset = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureSource featureSource = 1;
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection = 2;
     map<string,bytes>  secret    = 3;
 }
@@ -32,7 +32,7 @@ message DeleteFeatureResponse {}
 
 
 message UpdateFeatureRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Featureset featureset = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureSource featureSource = 1;
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection = 2;
     map<string,bytes>  secret    = 3;
 }
@@ -43,7 +43,7 @@ message ListFeaturesRequest {
     string ns   = 1;
 }
 message ListFeaturesResponse {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturesetList features = 3;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureSourceList features = 3;
 }
 
 message GetFeatureRequest {
@@ -52,13 +52,13 @@ message GetFeatureRequest {
 }
 
 message GetFeatureResponse {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Featureset feature = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureSource feature = 1;
 }
 
 message GenerateTrainingDatasetRequest {
     string name = 1;
     string ns   = 2;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturesetList features = 3;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureSourceList features = 3;
 }
 
 message GenerateTrainingDatasetResponse {}

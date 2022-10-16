@@ -40,10 +40,10 @@ export namespace ListFeatureSourceRequest {
 }
 
 export class ListFeatureSourceResponse extends jspb.Message {
-  getFeatureSources(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSourceList | undefined;
-  setFeatureSources(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSourceList): ListFeatureSourceResponse;
-  hasFeatureSources(): boolean;
-  clearFeatureSources(): ListFeatureSourceResponse;
+  getFeaturesources(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSourceList | undefined;
+  setFeaturesources(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSourceList): ListFeatureSourceResponse;
+  hasFeaturesources(): boolean;
+  clearFeaturesources(): ListFeatureSourceResponse;
 
   getNextPageToken(): string;
   setNextPageToken(value: string): ListFeatureSourceResponse;
@@ -58,16 +58,16 @@ export class ListFeatureSourceResponse extends jspb.Message {
 
 export namespace ListFeatureSourceResponse {
   export type AsObject = {
-    featureSources?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSourceList.AsObject,
+    featuresources?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSourceList.AsObject,
     nextPageToken: string,
   }
 }
 
 export class CreateFeatureSourceRequest extends jspb.Message {
-  getFeatureSource(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSource | undefined;
-  setFeatureSource(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSource): CreateFeatureSourceRequest;
-  hasFeatureSource(): boolean;
-  clearFeatureSource(): CreateFeatureSourceRequest;
+  getFeaturesource(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSource | undefined;
+  setFeaturesource(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSource): CreateFeatureSourceRequest;
+  hasFeaturesource(): boolean;
+  clearFeaturesource(): CreateFeatureSourceRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateFeatureSourceRequest.AsObject;
@@ -79,7 +79,7 @@ export class CreateFeatureSourceRequest extends jspb.Message {
 
 export namespace CreateFeatureSourceRequest {
   export type AsObject = {
-    featureSource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSource.AsObject,
+    featuresource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSource.AsObject,
   }
 }
 
@@ -98,10 +98,10 @@ export namespace CreateFeatureSourceResponse {
 }
 
 export class UpdateFeatureSourceRequest extends jspb.Message {
-  getFeatureSource(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSource | undefined;
-  setFeatureSource(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSource): UpdateFeatureSourceRequest;
-  hasFeatureSource(): boolean;
-  clearFeatureSource(): UpdateFeatureSourceRequest;
+  getFeaturesource(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSource | undefined;
+  setFeaturesource(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSource): UpdateFeatureSourceRequest;
+  hasFeaturesource(): boolean;
+  clearFeaturesource(): UpdateFeatureSourceRequest;
 
   getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
   setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): UpdateFeatureSourceRequest;
@@ -118,7 +118,7 @@ export class UpdateFeatureSourceRequest extends jspb.Message {
 
 export namespace UpdateFeatureSourceRequest {
   export type AsObject = {
-    featureSource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSource.AsObject,
+    featuresource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSource.AsObject,
     fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
@@ -160,10 +160,10 @@ export namespace GetFeatureSourceRequest {
 }
 
 export class GetFeatureSourceResponse extends jspb.Message {
-  getFeatureSource(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSource | undefined;
-  setFeatureSource(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSource): GetFeatureSourceResponse;
-  hasFeatureSource(): boolean;
-  clearFeatureSource(): GetFeatureSourceResponse;
+  getFeaturesource(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSource | undefined;
+  setFeaturesource(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSource): GetFeatureSourceResponse;
+  hasFeaturesource(): boolean;
+  clearFeaturesource(): GetFeatureSourceResponse;
 
   getYaml(): string;
   setYaml(value: string): GetFeatureSourceResponse;
@@ -178,7 +178,7 @@ export class GetFeatureSourceResponse extends jspb.Message {
 
 export namespace GetFeatureSourceResponse {
   export type AsObject = {
-    featureSource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSource.AsObject,
+    featuresource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSource.AsObject,
     yaml: string,
   }
 }

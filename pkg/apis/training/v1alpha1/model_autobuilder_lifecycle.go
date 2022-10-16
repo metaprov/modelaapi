@@ -55,7 +55,7 @@ func (b *ModelAutobuilder) ManifestUri() string {
 	return fmt.Sprintf("%s/%s-quickpipeline.yaml", b.RootUri(), b.Name)
 }
 
-//    dataproducts/*/featuresets/*/data/<file>.features.train
+//    dataproducts/*/featureSources/*/data/<file>.features.train
 func (b *ModelAutobuilder) TrainUri() string {
 	return fmt.Sprintf("%s/data/%s.b.train", b.RootUri(), b.Name)
 }

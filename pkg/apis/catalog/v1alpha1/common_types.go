@@ -2086,7 +2086,7 @@ const (
 	FeatureLabelKey             = "modela.ai/feature"
 	FeaturePipelineLabelKey     = "modela.ai/featurepipeline"
 	FeaturePipelineRunLabelKey  = "modela.ai/featurepipelinerun"
-	FeatureSetLabelKey          = "modela.ai/featureset"
+	FeatureSetLabelKey          = "modela.ai/featureSource"
 	LabelingPipelineLabelKey    = "modela.ai/labelingpipeline"
 	LabelingPipelineRunLabelKey = "modela.ai/labelingpipelinerun"
 	RecipeLabelKey              = "modela.ai/recipe"

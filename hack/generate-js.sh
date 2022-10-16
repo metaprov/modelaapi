@@ -77,7 +77,7 @@ protoc \
     github.com/metaprov/modelaapi/services/featurehistogram/v1/featurehistogram.proto \
     github.com/metaprov/modelaapi/services/featurepipeline/v1/featurepipeline.proto \
     github.com/metaprov/modelaapi/services/featurepipelinerun/v1/featurepipelinerun.proto \
-    github.com/metaprov/modelaapi/services/featureset/v1/featureset.proto \
+    github.com/metaprov/modelaapi/services/featuresource/v1/featuresource.proto \
     github.com/metaprov/modelaapi/services/k8score/v1/k8score.proto \
     github.com/metaprov/modelaapi/services/lab/v1/lab.proto \
     github.com/metaprov/modelaapi/services/labelingpipeline/v1/labelingpipeline.proto \

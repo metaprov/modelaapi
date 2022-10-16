@@ -16,19 +16,19 @@ import (
 // FeatureSetRef
 //==============================================================================
 
-// Condition on the featureset
-type FeaturesetConditionType string
+// Condition on the featureSource
+type FeatureSourceConditionType string
 
-/// Featureset Condition
+/// FeatureSource Condition
 const (
-	FeaturesetReady FeaturesetConditionType = "Ready"
-	FeaturesetSaved FeaturesetConditionType = "Saved"
+	FeatureSourceReady FeatureSourceConditionType = "Ready"
+	FeatureSourceSaved FeatureSourceConditionType = "Saved"
 )
 
-// FeaturesetCondition describes the state of a deployment at a certain point.
-type FeaturesetCondition struct {
+// FeatureSourceCondition describes the state of a deployment at a certain point.
+type FeatureSourceCondition struct {
 	// Type of account condition.
-	Type FeaturesetConditionType `json:"type" protobuf:"bytes,1,opt,name=type,casttype=FeaturesetConditionType"`
+	Type FeatureSourceConditionType `json:"type" protobuf:"bytes,1,opt,name=type,casttype=FeatureSourceConditionType"`
 	// Status of the condition, one of True, False, Unknown.
 	Status v1.ConditionStatus `json:"status" protobuf:"bytes,2,opt,name=status,casttype=k8s.io/api/core/v1.ConditionStatus"`
 	// Last time the condition transitioned from one status to another.
@@ -39,26 +39,26 @@ type FeaturesetCondition struct {
 	Message string `json:"message,omitempty" protobuf:"bytes,5,opt,name=message"`
 }
 
-// Featureset represents a featureset object
+// FeatureSource represents a featureSource object
 // +kubebuilder:object:root=true
 // +kubebuilder:storageversion
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
 // +kubebuilder:printcolumn:name="Description",type="string",JSONPath=".spec.description"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=featuresets,singular=featureset,shortName=fset,categories={data,modela}
+// +kubebuilder:resource:path=featuresources,singular=featuresource,shortName=fset,categories={data,modela}
 // +kubebuilder:subresource:status
-type Featureset struct {
+type FeatureSource struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata" protobuf:"bytes,1,opt,name=metadata"`
-	Spec              FeaturesetSpec `json:"spec" protobuf:"bytes,2,opt,name=spec"`
+	Spec              FeatureSourceSpec `json:"spec" protobuf:"bytes,2,opt,name=spec"`
 	//+optional
-	Status FeaturesetStatus `json:"status" protobuf:"bytes,3,opt,name=status"`
+	Status FeatureSourceStatus `json:"status" protobuf:"bytes,3,opt,name=status"`
 }
 
-// FeaturesetSpec contain the desired state of a Featureset.
-type FeaturesetSpec struct {
-	// The product version of the featureset
+// FeatureSourceSpec contain the desired state of a FeatureSource.
+type FeatureSourceSpec struct {
+	// The product version of the featureSource
 	// +kubebuilder:default:=""
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
 	// User provided description
@@ -87,15 +87,15 @@ type FeaturesetSpec struct {
 }
 
 // +kubebuilder:object:root=true
-// FeaturesetList contains a list of Featureset
-type FeaturesetList struct {
+// FeatureSourceList contains a list of FeatureSource
+type FeatureSourceList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata" protobuf:"bytes,1,opt,name=metadata"`
-	Items           []Featureset `json:"items" protobuf:"bytes,2,rep,name=items"`
+	Items           []FeatureSource `json:"items" protobuf:"bytes,2,rep,name=items"`
 }
 
-// FeaturesetStatus defines the observed state of Featureset
-type FeaturesetStatus struct {
+// FeatureSourceStatus defines the observed state of FeatureSource
+type FeatureSourceStatus struct {
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,1,opt,name=observedGeneration"`
@@ -106,5 +106,5 @@ type FeaturesetStatus struct {
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []FeaturesetCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,3,rep,name=conditions"`
+	Conditions []FeatureSourceCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,3,rep,name=conditions"`
 }

@@ -2446,26 +2446,26 @@ message FeaturePipelineStatus {
   repeated FeaturePipelineCondition conditions = 6;
 }
 
-// Featureset represents a featureset object
+// FeatureSource represents a featureSource object
 // +kubebuilder:object:root=true
 // +kubebuilder:storageversion
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
 // +kubebuilder:printcolumn:name="Description",type="string",JSONPath=".spec.description"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=featuresets,singular=featureset,shortName=fset,categories={data,modela}
+// +kubebuilder:resource:path=featuresources,singular=featuresource,shortName=fset,categories={data,modela}
 // +kubebuilder:subresource:status
-message Featureset {
+message FeatureSource {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
-  optional FeaturesetSpec spec = 2;
+  optional FeatureSourceSpec spec = 2;
 
   // +optional
-  optional FeaturesetStatus status = 3;
+  optional FeatureSourceStatus status = 3;
 }
 
-// FeaturesetCondition describes the state of a deployment at a certain point.
-message FeaturesetCondition {
+// FeatureSourceCondition describes the state of a deployment at a certain point.
+message FeatureSourceCondition {
   // Type of account condition.
   optional string type = 1;
 
@@ -2483,16 +2483,16 @@ message FeaturesetCondition {
 }
 
 // +kubebuilder:object:root=true
-// FeaturesetList contains a list of Featureset
-message FeaturesetList {
+// FeatureSourceList contains a list of FeatureSource
+message FeatureSourceList {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
 
-  repeated Featureset items = 2;
+  repeated FeatureSource items = 2;
 }
 
-// FeaturesetSpec contain the desired state of a Featureset.
-message FeaturesetSpec {
-  // The product version of the featureset
+// FeatureSourceSpec contain the desired state of a FeatureSource.
+message FeatureSourceSpec {
+  // The product version of the featureSource
   // +kubebuilder:default:=""
   optional string versionName = 1;
 
@@ -2526,8 +2526,8 @@ message FeaturesetSpec {
   repeated string exclude = 8;
 }
 
-// FeaturesetStatus defines the observed state of Featureset
-message FeaturesetStatus {
+// FeatureSourceStatus defines the observed state of FeatureSource
+message FeatureSourceStatus {
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 1;
@@ -2539,7 +2539,7 @@ message FeaturesetStatus {
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated FeaturesetCondition conditions = 3;
+  repeated FeatureSourceCondition conditions = 3;
 }
 
 // FlatFileFormatSpec defines the format for incoming flat-files to be parsed

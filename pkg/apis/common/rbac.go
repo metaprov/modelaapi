@@ -24,7 +24,7 @@ const (
 	FeatureKind             KindName = "features"
 	FeaturePipelineKind     KindName = "featurepipelines"
 	FeaturePipelineRunKind  KindName = "featurepipelineruns"
-	FeaturesetKind          KindName = "featuresets"
+	FeatureSourceKind       KindName = "featureSources"
 	FeatureHistogramKind    KindName = "featurehistograms"
 	LabelingPipelineKind    KindName = "labelingpipelines"
 	LabelingPipelineRunKind KindName = "labelingpipelineruns"
