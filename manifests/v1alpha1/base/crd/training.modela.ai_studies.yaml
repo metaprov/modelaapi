@@ -12,15 +12,22 @@ spec:
     categories:
     - training
     - modela
-    kind: ModelClass
-    listKind: ModelClassList
+    kind: Study
+    listKind: StudyList
     plural: studies
     shortNames:
     - sd
-    singular: ModelClass
+    singular: study
   scope: Namespaced
   versions:
   - additionalPrinterColumns:
+    - jsonPath: .status.phase
+      name: Status
+      type: string
+    - jsonPath: .status.progress
+      name: Progress
+      priority: 1
+      type: number
     - jsonPath: .spec.owner
       name: Owner
       priority: 1
@@ -29,14 +36,46 @@ spec:
       name: Version
       priority: 1
       type: string
+    - jsonPath: .spec.datasetName
+      name: Entity
+      type: string
+    - jsonPath: .spec.task
+      name: Task
+      type: string
+    - jsonPath: .spec.search.objective
+      name: Objective
+      type: string
+    - jsonPath: .status.bestModelScore
+      name: Score
+      type: number
+    - jsonPath: .status.bestModel
+      name: Best model
+      type: string
+    - jsonPath: .status.search.completed
+      name: Trained
+      type: number
+    - jsonPath: .status.test.completed
+      name: Tested
+      type: number
+    - jsonPath: .status.startTime
+      name: StartTime
+      priority: 1
+      type: date
+    - jsonPath: .status.completionTime
+      name: CompletionTime
+      priority: 1
+      type: date
+    - jsonPath: .status.lastFailure
+      name: Last Failure
+      type: string
     - jsonPath: .metadata.creationTimestamp
       name: Age
       type: date
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: ModelClass represents an automatic search for the best machine
-          learning model for a given dataset
+        description: Study represents an automatic search for the best machine learning
+          model for a given dataset
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation
@@ -51,9 +90,14 @@ spec:
           metadata:
             type: object
           spec:
-            description: ModelClassSpec defines the desired state of a ModelClass
-              and the parameters for a model search
+            description: StudySpec defines the desired state of a Study and the parameters
+              for a model search
             properties:
+              aborted:
+                default: false
+                description: Aborted indicates that the execution of the Study and
+                  associated Models should be permanently stopped
+                type: boolean
               baseline:
                 description: Baseline specifies the parameters to generate baseline
                   (default hyper-parameters) models
@@ -75,6 +119,11 @@ spec:
                       ModelClass's search space with default hyper-parameters
                     type: boolean
                 type: object
+              codeGenerated:
+                default: false
+                description: Not implemented. For future use. If true,generate code
+                  when the best model
+                type: boolean
               compilation:
                 description: CompilerSpec specifies the configuration to compile the
                   best-selected model to a binary (currently unimplemented)
@@ -116,7 +165,7 @@ spec:
                 type: string
               description:
                 default: ""
-                description: The user-provided description of the ModelClass
+                description: The user-provided description of the Study
                 maxLength: 512
                 type: string
               driftDetection:
@@ -154,6 +203,11 @@ spec:
                     description: Indicates if a voting ensemble model will be created
                     type: boolean
                 type: object
+              fast:
+                default: false
+                description: Fast indicates if Models associated with the Study should
+                  skip profiling, explaining, and reporting
+                type: boolean
               fctTemplate:
                 description: ForecastSpec specifies the parameters required when generating
                   a forecasting model
@@ -829,6 +883,10 @@ spec:
                     format: int32
                     type: integer
                 type: object
+              flagged:
+                default: false
+                description: Indicates if the Study is flagged
+                type: boolean
               gc:
                 description: GarbageCollectionSpec specifies the configuration to
                   automatically clean-up unused models
@@ -949,7 +1007,7 @@ spec:
                 type: object
               labRef:
                 description: The reference to the Lab under which the Model resources
-                  created by the ModelClass will be trained. If unspecified, the default
+                  created by the Study will be trained. If unspecified, the default
                   Lab from the parent DataProduct will be used
                 properties:
                   apiVersion:
@@ -986,9 +1044,8 @@ spec:
                     type: string
                 type: object
               location:
-                description: The data location where ModelClass artifacts (metadata,
-                  reports, and model artifacts) generated by the ModelClass will be
-                  stored
+                description: The data location where Study artifacts (metadata, reports,
+                  and model artifacts) generated by the Study will be stored
                 properties:
                   bucketName:
                     default: ""
@@ -1098,6 +1155,12 @@ spec:
                       the DataLocation
                     type: string
                 type: object
+              modelExplained:
+                default: true
+                description: ModelExplained indicates if interpretability diagrams,
+                  as specified by the Interpretability field, will be produced for
+                  the final model
+                type: boolean
               modelImage:
                 description: ModelImage specifies the configuration to upload Docker
                   images of models to an image registry
@@ -1115,6 +1178,21 @@ spec:
                       Docker image registry
                     type: string
                 type: object
+              modelImagePushed:
+                default: false
+                description: ModelImagePushed indicates that if a Docker image of
+                  the best model will be pushed to a Docker image registry
+                type: boolean
+              modelPublished:
+                default: false
+                description: ModelPublished indicates that a Docker image will be
+                  created containing the best model produced by the Study
+                type: boolean
+              modelVersion:
+                default: ""
+                description: ModelVersion specifies the version assigned to all the
+                  Model resources produced by the Study
+                type: string
               notification:
                 description: The notification specification that determines which
                   notifiers will receive Alerts generated by the object
@@ -1146,8 +1224,23 @@ spec:
                 description: The name of the Account which created the object, which
                   exists in the same tenant as the object
                 type: string
+              paused:
+                default: false
+                description: Paused indicates that the execution of new workloads
+                  associated with the Study should be paused
+                type: boolean
+              profiled:
+                default: true
+                description: Profiled indicates that the Study will be profiled after
+                  the conclusion of it's model search
+                type: boolean
+              reported:
+                default: true
+                description: Reported indicates that a report will be generated for
+                  the Study
+                type: boolean
               schedule:
-                description: Schedule specifies the configuration to execute the ModelClass
+                description: Schedule specifies the configuration to execute the Study
                   at a later date
                 properties:
                   enabled:
@@ -1450,7 +1543,7 @@ spec:
               servingTemplate:
                 description: ServingTemplate specifies the model format and resource
                   requirements that will be applied to the Predictor created for the
-                  Model that will be selected by the ModelClass
+                  Model that will be selected by the Study
                 properties:
                   format:
                     default: cloudpickle
@@ -1638,6 +1731,17 @@ spec:
                 - unknown
                 - group-forecasting
                 type: string
+              template:
+                default: false
+                description: Indicates if the Study is a template, in which case it
+                  will not be executed
+                type: boolean
+              timeoutInSecs:
+                default: 14400
+                description: The time, in seconds, after which the execution of the
+                  Study will be forcefully aborted (4 hours, by default)
+                format: int32
+                type: integer
               trainingTemplate:
                 description: TrainingTemplate specifies the configuration to train
                   and evaluate models
@@ -2163,7 +2267,7 @@ spec:
               ttl:
                 default: 0
                 description: The time-to-live, in seconds, for Model resources produced
-                  by the ModelClass
+                  by the Study
                 format: int32
                 type: integer
               unitTestsTemplate:
@@ -2377,11 +2481,50 @@ spec:
             - task
             type: object
           status:
-            description: ModelClassStatus defines the observed state of a ModelClass
+            description: StudyStatus defines the observed state of a Study
             properties:
+              baseline:
+                description: BaselineStatus contains the status of the baseline phase
+                properties:
+                  bestScore:
+                    description: Best score so far in this phase. The best score is
+                      the value of the objective.
+                    type: number
+                  completed:
+                    description: The number of models that have been successfully
+                      trained
+                    format: int32
+                    type: integer
+                  endTime:
+                    description: The time at which the phase concluded
+                    format: date-time
+                    type: string
+                  failed:
+                    description: The number of models that experienced an error whilst
+                      training
+                    format: int32
+                    type: integer
+                  modelsWithNoProgress:
+                    description: Actual number of models where no progress was made.
+                      This used to decide on early stop.
+                    format: int32
+                    type: integer
+                  running:
+                    description: The number of models currently being trained
+                    format: int32
+                    type: integer
+                  startTime:
+                    description: The time at which the phase started
+                    format: date-time
+                    type: string
+                  waiting:
+                    description: The number of models pending training
+                    format: int32
+                    type: integer
+                type: object
               bestFE:
                 description: BestFE specifies the best feature engineering pipeline
-                  produced by the ModelClass
+                  produced by the Study
                 properties:
                   imbalance:
                     default: auto
@@ -2779,10 +2922,18 @@ spec:
                         type: boolean
                     type: object
                 type: object
+              bestModel:
+                description: The name of the Model resource which was determined to
+                  be the highest-performing
+                type: string
+              bestModelScore:
+                description: The score of the Model resource which was determined
+                  to be the highest-performing
+                type: number
               conditions:
                 items:
-                  description: ModelClassCondition describes the state of a ModelClass
-                    at a certain point
+                  description: StudyCondition describes the state of a Study at a
+                    certain point
                   properties:
                     lastTransitionTime:
                       description: Last time the condition transitioned from one status
@@ -2800,35 +2951,729 @@ spec:
                       description: Status of the condition, one of True, False, Unknown
                       type: string
                     type:
-                      description: Type of ModelClass condition
+                      description: Type of study condition
                       type: string
                   type: object
                 type: array
+              driftDetection:
+                description: OutlierDetection is the status for outlier detection
+                properties:
+                  outlierModelURI:
+                    description: The location of the prediction outlier detection
+                    type: string
+                type: object
+              endTime:
+                description: EndTime represents the time at which the Study was marked
+                  as completed, failed, or aborted
+                format: date-time
+                type: string
+              ensemble:
+                description: EnsembleStatus contains the status of the ensemble phase
+                properties:
+                  bestScore:
+                    description: Best score so far in this phase. The best score is
+                      the value of the objective.
+                    type: number
+                  completed:
+                    description: The number of models that have been successfully
+                      trained
+                    format: int32
+                    type: integer
+                  endTime:
+                    description: The time at which the phase concluded
+                    format: date-time
+                    type: string
+                  failed:
+                    description: The number of models that experienced an error whilst
+                      training
+                    format: int32
+                    type: integer
+                  modelsWithNoProgress:
+                    description: Actual number of models where no progress was made.
+                      This used to decide on early stop.
+                    format: int32
+                    type: integer
+                  running:
+                    description: The number of models currently being trained
+                    format: int32
+                    type: integer
+                  startTime:
+                    description: The time at which the phase started
+                    format: date-time
+                    type: string
+                  waiting:
+                    description: The number of models pending training
+                    format: int32
+                    type: integer
+                type: object
+              explain:
+                description: ExplainStatus contains the status of the explaining phase
+                properties:
+                  bestScore:
+                    description: Best score so far in this phase. The best score is
+                      the value of the objective.
+                    type: number
+                  completed:
+                    description: The number of models that have been successfully
+                      trained
+                    format: int32
+                    type: integer
+                  endTime:
+                    description: The time at which the phase concluded
+                    format: date-time
+                    type: string
+                  failed:
+                    description: The number of models that experienced an error whilst
+                      training
+                    format: int32
+                    type: integer
+                  modelsWithNoProgress:
+                    description: Actual number of models where no progress was made.
+                      This used to decide on early stop.
+                    format: int32
+                    type: integer
+                  running:
+                    description: The number of models currently being trained
+                    format: int32
+                    type: integer
+                  startTime:
+                    description: The time at which the phase started
+                    format: date-time
+                    type: string
+                  waiting:
+                    description: The number of models pending training
+                    format: int32
+                    type: integer
+                type: object
               failureMessage:
-                description: In the case of failure, the ModelClass resource controller
+                description: In the case of failure, the Study resource controller
                   will set this field with a failure message
                 type: string
               failureReason:
-                description: In the case of failure, the ModelClass resource controller
+                description: In the case of failure, the Study resource controller
                   will set this field with a failure reason
                 type: string
+              featureEngineering:
+                description: FeatureEngineeringStatus contains the status of the feature
+                  engineering phase
+                properties:
+                  bestScore:
+                    description: Best score so far in this phase. The best score is
+                      the value of the objective.
+                    type: number
+                  completed:
+                    description: The number of models that have been successfully
+                      trained
+                    format: int32
+                    type: integer
+                  endTime:
+                    description: The time at which the phase concluded
+                    format: date-time
+                    type: string
+                  failed:
+                    description: The number of models that experienced an error whilst
+                      training
+                    format: int32
+                    type: integer
+                  modelsWithNoProgress:
+                    description: Actual number of models where no progress was made.
+                      This used to decide on early stop.
+                    format: int32
+                    type: integer
+                  running:
+                    description: The number of models currently being trained
+                    format: int32
+                    type: integer
+                  startTime:
+                    description: The time at which the phase started
+                    format: date-time
+                    type: string
+                  waiting:
+                    description: The number of models pending training
+                    format: int32
+                    type: integer
+                type: object
+              gc:
+                description: GC specifies the status of garbage collection relevant
+                  to the Study
+                properties:
+                  collected:
+                    description: The number of models that were collected, equal to
+                      len(Models)
+                    format: int32
+                    type: integer
+                  models:
+                    description: The collection of models that were archived
+                    items:
+                      description: ModelResult contains the records of a single garbage-collected
+                        model
+                      properties:
+                        alg:
+                          description: The type of estimator of the model
+                          type: string
+                        error:
+                          description: Indicates if the model experience an error
+                            whilst training
+                          type: boolean
+                        name:
+                          description: The name of the model
+                          type: string
+                        score:
+                          description: The objective score of the model
+                          type: number
+                        trialID:
+                          description: The optimizer trial ID of the model
+                          format: int32
+                          type: integer
+                      type: object
+                    type: array
+                type: object
+              groupby:
+                description: Study group by
+                properties:
+                  studiesURI:
+                    description: The locations of the datasets profile files. Each
+                      file is the group
+                    type: string
+                  workerResults:
+                    description: Holds the worker on going result, when a worker finish,
+                      we update the location of thier result files
+                    items:
+                      properties:
+                        error:
+                          type: string
+                        id:
+                          description: Worker ID
+                          format: int32
+                          type: integer
+                        task:
+                          type: string
+                        uri:
+                          description: URI
+                          type: string
+                      type: object
+                    type: array
+                type: object
               lastModelID:
                 description: The Kubernetes-internal ID of the last Model resource
-                  generated by the ModelClass
+                  generated by the Study
                 format: int64
                 type: integer
               lastUpdated:
                 description: The last time the object was updated
                 format: date-time
                 type: string
+              logs:
+                description: Logs specifies the location of logs produced by workloads
+                  associated with the Study
+                properties:
+                  bucketName:
+                    description: The name of the VirtualBucket resource where the
+                      logs are stored
+                    type: string
+                  containers:
+                    description: The collection of ContainerLog objects that describe
+                      the location of logs per container
+                    items:
+                      description: ContainerLog describes the location of logs for
+                        a single Job
+                      properties:
+                        container:
+                          description: The container name
+                          type: string
+                        job:
+                          description: The name of the Job
+                          type: string
+                        key:
+                          description: The path to the log in the bucket
+                          type: string
+                      type: object
+                    type: array
+                type: object
               models:
-                description: Total models created for the ModelClass
+                description: Total models created for the study
                 format: int32
                 type: integer
               observedGeneration:
                 description: ObservedGeneration is the last generation that was acted
                   on
                 format: int64
+                type: integer
+              phase:
+                default: Pending
+                description: The phase of the Study
+                type: string
+              profileUri:
+                description: The URI of the raw profile data produced by the Study
+                type: string
+              progress:
+                description: The progress percentage of the Study, which is derived
+                  from the Study's current phase
+                format: int32
+                type: integer
+              reportName:
+                description: Reference to the report object that was generated for
+                  the dataset, which exists in the same Data Product namespace as
+                  the object
+                type: string
+              reportUri:
+                description: The name of the Report resource produced by the Study
+                type: string
+              search:
+                description: SearchStatus contains the status of the model search
+                  phase
+                properties:
+                  bestScore:
+                    description: Best score so far in this phase. The best score is
+                      the value of the objective.
+                    type: number
+                  completed:
+                    description: The number of models that have been successfully
+                      trained
+                    format: int32
+                    type: integer
+                  endTime:
+                    description: The time at which the phase concluded
+                    format: date-time
+                    type: string
+                  failed:
+                    description: The number of models that experienced an error whilst
+                      training
+                    format: int32
+                    type: integer
+                  modelsWithNoProgress:
+                    description: Actual number of models where no progress was made.
+                      This used to decide on early stop.
+                    format: int32
+                    type: integer
+                  running:
+                    description: The number of models currently being trained
+                    format: int32
+                    type: integer
+                  startTime:
+                    description: The time at which the phase started
+                    format: date-time
+                    type: string
+                  waiting:
+                    description: The number of models pending training
+                    format: int32
+                    type: integer
+                type: object
+              startTime:
+                description: StartTime represents the time at which the execution
+                  of the Study started
+                format: date-time
+                type: string
+              test:
+                description: TestStatus contains the status of the testing phase
+                properties:
+                  bestScore:
+                    description: Best score so far in this phase. The best score is
+                      the value of the objective.
+                    type: number
+                  completed:
+                    description: The number of models that have been successfully
+                      trained
+                    format: int32
+                    type: integer
+                  endTime:
+                    description: The time at which the phase concluded
+                    format: date-time
+                    type: string
+                  failed:
+                    description: The number of models that experienced an error whilst
+                      training
+                    format: int32
+                    type: integer
+                  modelsWithNoProgress:
+                    description: Actual number of models where no progress was made.
+                      This used to decide on early stop.
+                    format: int32
+                    type: integer
+                  running:
+                    description: The number of models currently being trained
+                    format: int32
+                    type: integer
+                  startTime:
+                    description: The time at which the phase started
+                    format: date-time
+                    type: string
+                  waiting:
+                    description: The number of models pending training
+                    format: int32
+                    type: integer
+                type: object
+              testDataset:
+                description: TestDatasetLocation specifies the location of the testing
+                  dataset
+                properties:
+                  bucketName:
+                    default: ""
+                    description: In the case of the location type being an object
+                      storage system, BucketName is the name of the VirtualBucket
+                      resource that exists in the same tenant as the resource specifying
+                      the DataLocation. Modela will connect to the external object
+                      storage system, and will access the file from the path specified
+                      by the Path field
+                    type: string
+                  connectionName:
+                    default: ""
+                    description: In the case of the type of location being a database,
+                      ConnectionName specifies the name of the Connection resource
+                      that exists in the same tenant as the resource specifying the
+                      DataLocation. Modela will attempt to connect to the database
+                      using the credentials specified in the Connection, and will
+                      execute the query specified by the SQL field
+                    type: string
+                  database:
+                    default: ""
+                    description: The name of a database inside the database system
+                      specified by the ConnectionName field
+                    type: string
+                  path:
+                    default: ""
+                    description: The path to a flat-file inside an object storage
+                      system. When using the Modela API to upload files (through the
+                      FileService API), Modela will upload the data to a predetermined
+                      path based on the Tenant, DataProduct, DataProductVersion, and
+                      resource type of the resource in relation to the file being
+                      uploaded. The path does not need to adhere to this format; you
+                      can give the path to a file inside a bucket not managed by Modela
+                    type: string
+                  resourceRef:
+                    description: In the case of the location type being Dataset or
+                      PublicDataset, ResourceRef references another resource that
+                      containing data that will be used as a data source
+                    properties:
+                      apiVersion:
+                        description: API version of the referent.
+                        type: string
+                      fieldPath:
+                        description: 'If referring to a piece of an object instead
+                          of an entire object, this string should contain a valid
+                          JSON/Go field access statement, such as desiredState.manifest.containers[2].
+                          For example, if the object reference is to a container within
+                          a pod, this would take on a value like: "spec.containers{name}"
+                          (where "name" refers to the name of the container that triggered
+                          the event) or if no container name is specified "spec.containers[2]"
+                          (container with index 2 in this pod). This syntax is chosen
+                          only to have some well-defined way of referencing a part
+                          of an object. TODO: this design is not final and this field
+                          is subject to change in the future.'
+                        type: string
+                      kind:
+                        description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                        type: string
+                      name:
+                        description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                        type: string
+                      namespace:
+                        description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                        type: string
+                      resourceVersion:
+                        description: 'Specific resourceVersion to which this reference
+                          is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                        type: string
+                      uid:
+                        description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                        type: string
+                    type: object
+                  sql:
+                    default: ""
+                    description: The SQL statement which will be executed to query
+                      data from the table specified by Table
+                    type: string
+                  table:
+                    default: ""
+                    description: The name of a table inside a database, if applicable
+                    type: string
+                  topic:
+                    default: ""
+                    description: The name of the streaming topic (currently unsupported)
+                    type: string
+                  type:
+                    default: object
+                    description: The type of location where the data resides, which
+                      can either be an object inside an object storage system (i.e.
+                      Minio), a SQL location like a table or a view, a data stream
+                      (i.e. Kafka, currently unsupported), or a web location (currently
+                      unsupported)
+                    enum:
+                    - object
+                    - table
+                    - view
+                    - stream
+                    - web
+                    - public-dataset
+                    - dataset
+                    type: string
+                  url:
+                    default: ""
+                    description: In the case of the location type being WebApi, URL
+                      specifies the external location (HTTP or Git) that will be queried
+                      and then stored as flat-file by the resource which specifies
+                      the DataLocation
+                    type: string
+                type: object
+              testingRows:
+                description: The number of rows in the testing dataset
+                format: int32
+                type: integer
+              trainDataset:
+                description: TrainDatasetLocation specifies the location of the training
+                  dataset
+                properties:
+                  bucketName:
+                    default: ""
+                    description: In the case of the location type being an object
+                      storage system, BucketName is the name of the VirtualBucket
+                      resource that exists in the same tenant as the resource specifying
+                      the DataLocation. Modela will connect to the external object
+                      storage system, and will access the file from the path specified
+                      by the Path field
+                    type: string
+                  connectionName:
+                    default: ""
+                    description: In the case of the type of location being a database,
+                      ConnectionName specifies the name of the Connection resource
+                      that exists in the same tenant as the resource specifying the
+                      DataLocation. Modela will attempt to connect to the database
+                      using the credentials specified in the Connection, and will
+                      execute the query specified by the SQL field
+                    type: string
+                  database:
+                    default: ""
+                    description: The name of a database inside the database system
+                      specified by the ConnectionName field
+                    type: string
+                  path:
+                    default: ""
+                    description: The path to a flat-file inside an object storage
+                      system. When using the Modela API to upload files (through the
+                      FileService API), Modela will upload the data to a predetermined
+                      path based on the Tenant, DataProduct, DataProductVersion, and
+                      resource type of the resource in relation to the file being
+                      uploaded. The path does not need to adhere to this format; you
+                      can give the path to a file inside a bucket not managed by Modela
+                    type: string
+                  resourceRef:
+                    description: In the case of the location type being Dataset or
+                      PublicDataset, ResourceRef references another resource that
+                      containing data that will be used as a data source
+                    properties:
+                      apiVersion:
+                        description: API version of the referent.
+                        type: string
+                      fieldPath:
+                        description: 'If referring to a piece of an object instead
+                          of an entire object, this string should contain a valid
+                          JSON/Go field access statement, such as desiredState.manifest.containers[2].
+                          For example, if the object reference is to a container within
+                          a pod, this would take on a value like: "spec.containers{name}"
+                          (where "name" refers to the name of the container that triggered
+                          the event) or if no container name is specified "spec.containers[2]"
+                          (container with index 2 in this pod). This syntax is chosen
+                          only to have some well-defined way of referencing a part
+                          of an object. TODO: this design is not final and this field
+                          is subject to change in the future.'
+                        type: string
+                      kind:
+                        description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                        type: string
+                      name:
+                        description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                        type: string
+                      namespace:
+                        description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                        type: string
+                      resourceVersion:
+                        description: 'Specific resourceVersion to which this reference
+                          is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                        type: string
+                      uid:
+                        description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                        type: string
+                    type: object
+                  sql:
+                    default: ""
+                    description: The SQL statement which will be executed to query
+                      data from the table specified by Table
+                    type: string
+                  table:
+                    default: ""
+                    description: The name of a table inside a database, if applicable
+                    type: string
+                  topic:
+                    default: ""
+                    description: The name of the streaming topic (currently unsupported)
+                    type: string
+                  type:
+                    default: object
+                    description: The type of location where the data resides, which
+                      can either be an object inside an object storage system (i.e.
+                      Minio), a SQL location like a table or a view, a data stream
+                      (i.e. Kafka, currently unsupported), or a web location (currently
+                      unsupported)
+                    enum:
+                    - object
+                    - table
+                    - view
+                    - stream
+                    - web
+                    - public-dataset
+                    - dataset
+                    type: string
+                  url:
+                    default: ""
+                    description: In the case of the location type being WebApi, URL
+                      specifies the external location (HTTP or Git) that will be queried
+                      and then stored as flat-file by the resource which specifies
+                      the DataLocation
+                    type: string
+                type: object
+              trainingDataHash:
+                description: Sha 256 of the data sig TrainingDataHash specifies the
+                  hashes for datasets used by the Study
+                properties:
+                  testingHash:
+                    default: ""
+                    type: string
+                  trainingHash:
+                    default: ""
+                    type: string
+                  validationHash:
+                    default: ""
+                    type: string
+                type: object
+              trainingRows:
+                description: The number of rows in the training dataset
+                format: int32
+                type: integer
+              triggeredBy:
+                description: The type of trigger which started the Study
+                enum:
+                - on-demand
+                - on-schedule
+                - on-new-data
+                - on-github-event
+                - on-concept-drift
+                - on-pref-degradation
+                type: string
+              validationDataset:
+                description: ValidationDataset specifies the location of the validation
+                  dataset
+                properties:
+                  bucketName:
+                    default: ""
+                    description: In the case of the location type being an object
+                      storage system, BucketName is the name of the VirtualBucket
+                      resource that exists in the same tenant as the resource specifying
+                      the DataLocation. Modela will connect to the external object
+                      storage system, and will access the file from the path specified
+                      by the Path field
+                    type: string
+                  connectionName:
+                    default: ""
+                    description: In the case of the type of location being a database,
+                      ConnectionName specifies the name of the Connection resource
+                      that exists in the same tenant as the resource specifying the
+                      DataLocation. Modela will attempt to connect to the database
+                      using the credentials specified in the Connection, and will
+                      execute the query specified by the SQL field
+                    type: string
+                  database:
+                    default: ""
+                    description: The name of a database inside the database system
+                      specified by the ConnectionName field
+                    type: string
+                  path:
+                    default: ""
+                    description: The path to a flat-file inside an object storage
+                      system. When using the Modela API to upload files (through the
+                      FileService API), Modela will upload the data to a predetermined
+                      path based on the Tenant, DataProduct, DataProductVersion, and
+                      resource type of the resource in relation to the file being
+                      uploaded. The path does not need to adhere to this format; you
+                      can give the path to a file inside a bucket not managed by Modela
+                    type: string
+                  resourceRef:
+                    description: In the case of the location type being Dataset or
+                      PublicDataset, ResourceRef references another resource that
+                      containing data that will be used as a data source
+                    properties:
+                      apiVersion:
+                        description: API version of the referent.
+                        type: string
+                      fieldPath:
+                        description: 'If referring to a piece of an object instead
+                          of an entire object, this string should contain a valid
+                          JSON/Go field access statement, such as desiredState.manifest.containers[2].
+                          For example, if the object reference is to a container within
+                          a pod, this would take on a value like: "spec.containers{name}"
+                          (where "name" refers to the name of the container that triggered
+                          the event) or if no container name is specified "spec.containers[2]"
+                          (container with index 2 in this pod). This syntax is chosen
+                          only to have some well-defined way of referencing a part
+                          of an object. TODO: this design is not final and this field
+                          is subject to change in the future.'
+                        type: string
+                      kind:
+                        description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                        type: string
+                      name:
+                        description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                        type: string
+                      namespace:
+                        description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                        type: string
+                      resourceVersion:
+                        description: 'Specific resourceVersion to which this reference
+                          is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                        type: string
+                      uid:
+                        description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                        type: string
+                    type: object
+                  sql:
+                    default: ""
+                    description: The SQL statement which will be executed to query
+                      data from the table specified by Table
+                    type: string
+                  table:
+                    default: ""
+                    description: The name of a table inside a database, if applicable
+                    type: string
+                  topic:
+                    default: ""
+                    description: The name of the streaming topic (currently unsupported)
+                    type: string
+                  type:
+                    default: object
+                    description: The type of location where the data resides, which
+                      can either be an object inside an object storage system (i.e.
+                      Minio), a SQL location like a table or a view, a data stream
+                      (i.e. Kafka, currently unsupported), or a web location (currently
+                      unsupported)
+                    enum:
+                    - object
+                    - table
+                    - view
+                    - stream
+                    - web
+                    - public-dataset
+                    - dataset
+                    type: string
+                  url:
+                    default: ""
+                    description: In the case of the location type being WebApi, URL
+                      specifies the external location (HTTP or Git) that will be queried
+                      and then stored as flat-file by the resource which specifies
+                      the DataLocation
+                    type: string
+                type: object
+              validationRows:
+                description: The number of rows in the validation dataset
+                format: int32
                 type: integer
             type: object
         type: object
