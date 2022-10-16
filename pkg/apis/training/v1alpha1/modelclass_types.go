@@ -574,7 +574,7 @@ type GarbageCollectionSpec struct {
 	// Indicates if all models of the ModelClass, excluding the highest-performing model, will be archived
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:=true
-	CollectAtModelClassEnd *bool `json:"collectAtModelClassEnd,omitempty" protobuf:"varint,1,opt,name=collectAtModelClassEnd"`
+	CollectAtStudyEnd *bool `json:"collectAtModelClassEnd,omitempty" protobuf:"varint,1,opt,name=collectAtModelClassEnd"`
 	// Indicates if multiple models with the same algorithm are produced by the ModelClass, the
 	// model with the lowest score will be garbage-collected
 	// +kubebuilder:validation:Optional
