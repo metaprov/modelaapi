@@ -60,6 +60,7 @@ const (
 
 	// Training kind
 	ModelKind            KindName = "models"
+	ModelClassKind       KindName = "modelclasses"
 	NotebookKind         KindName = "notebooks"
 	NotebookRunKind      KindName = "notebookruns"
 	ModelPipelineKind    KindName = "modelpipelines"
