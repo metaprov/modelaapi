@@ -8,14 +8,6 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-// ModelClassPhase is the current phase of a ModelClass
-type ModelClassPhase string
-
-const (
-	ModelClassPhaseModelPending ModelClassPhase = "Pending"
-	ModelClassPhaseSplitting    ModelClassPhase = "Ready"
-)
-
 // +kubebuilder:validation:Enum="random";"grid";"bayesian";"tpe";"manual";"auto";
 type SamplerName string
 
@@ -47,9 +39,7 @@ type ModelClassConditionType string
 /// ModelClass Condition
 const (
 	// ModelClassInitialized states that the resources needed for training are allocated and ready
-	ModelClassInitialized ModelClassConditionType = "Initialized"
-	// ModelClassSplit states that the training dataset has been split and is ready for use
-	ModelClassSplit ModelClassConditionType = "ModelClassSplit"
+	ModelClassReady ModelClassConditionType = "Ready"
 	// ModelClassSaved states that the ModelClass has been archived in a database
 	ModelClassSaved ModelClassConditionType = "Saved"
 )

@@ -15,6 +15,7 @@ import (
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/schema"
 	"k8s.io/apimachinery/pkg/util/validation/field"
+	"k8s.io/klog/v2"
 	"sigs.k8s.io/controller-runtime/pkg/webhook"
 )
 
@@ -240,7 +241,7 @@ func (ms *SearchSpec) Default(task *catalog.MLTask) {
 		}
 	case PercentilePruner:
 		if pspec.Percentile == nil {
-			klog.InfoS("set default pruner", "update percentile pruner")
+
 			pspec.Percentile = &PercentilePrunerOptions{
 				Percentile:    util.Int32Ptr(25),
 				StartupTrials: util.Int32Ptr(5),
@@ -250,7 +251,7 @@ func (ms *SearchSpec) Default(task *catalog.MLTask) {
 			}
 		}
 	case SuccessiveHalvingPruner:
-		klog.InfoS("v", "update sh pruner")
+
 		if pspec.Successive == nil {
 			pspec.Successive = &SuccessiveHalvingOptions{
 				MinResources:         util.Int32Ptr(1),
