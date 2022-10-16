@@ -47,16 +47,6 @@ func (entity *Entity) Age() string {
 // Factory method
 //==============================================================================
 
-// Parse an data
-func ParseEntity(content string) (*Entity, error) {
-	this := &Entity{}
-	err := yaml.Unmarshal([]byte(content), this)
-	if err != nil {
-		return nil, err
-	}
-	return this, nil
-}
-
 //==============================================================================
 // Assign commit and id
 //==============================================================================
