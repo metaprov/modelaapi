@@ -46,7 +46,7 @@ type FeaturesetClassCondition struct {
 // +kubebuilder:printcolumn:name="Schedule",type="string",JSONPath=".spec.schedule",description=""
 // +kubebuilder:printcolumn:name="Last Run",type="date",JSONPath=".status.lastRun.at",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=featurepipelines,singular=featurepipeline,shortName="fp",categories={data,modela}
+// +kubebuilder:resource:path=featuresetclasses,singular=featuresetclass,shortName="fsc",categories={data,modela}
 // +kubebuilder:subresource:status
 type FeaturesetClass struct {
 	metav1.TypeMeta   `json:",inline"`
