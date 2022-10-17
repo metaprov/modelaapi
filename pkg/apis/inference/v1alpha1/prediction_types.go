@@ -87,75 +87,79 @@ type PredictionSpec struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
+
+	// The model class for this pipeline
+	// +kubebuilder:validation:Optional
+	ModelClassName *string `json:"modelClassName,omitempty" protobuf:"bytes,2,opt,name=modelClassName"`
 	// PredictorRef is the name of the Predictor resource that will be used to evaluate predictions for the
 	// unlabeled input dataset. The Predictor must exist in the same DataProduct namespace as the resource
 	// +kubebuilder:validation:Required
 	// +required
-	PredictorRef *v1.ObjectReference `json:"predictorRef,omitempty" protobuf:"bytes,2,opt,name=predictorRef"`
+	PredictorRef *v1.ObjectReference `json:"predictorRef,omitempty" protobuf:"bytes,3,opt,name=predictorRef"`
 	// If true, measurements for the metrics specified by the `Tests` field will be computed for each prediction and
 	// stored in the Prediction's status with the average result of all predictions
 	// +kubebuilder:default:=false
 	// Used usually for unit testing
-	Labeled *bool `json:"labeled,omitempty" protobuf:"varint,3,opt,name=labeled"`
+	Labeled *bool `json:"labeled,omitempty" protobuf:"varint,4,opt,name=labeled"`
 	// Indicates if the prediction is a forecast
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Forecast *bool `json:"forecast,omitempty" protobuf:"varint,4,opt,name=forecast"`
+	Forecast *bool `json:"forecast,omitempty" protobuf:"varint,5,opt,name=forecast"`
 	// A reference to the input data source ref
 	// +kubebuilder:validation:Optional
-	DataSourceRef v1.ObjectReference `json:"dataSourceRef,omitempty" protobuf:"bytes,5,opt,name=dataSourceRef"`
+	DataSourceRef v1.ObjectReference `json:"dataSourceRef,omitempty" protobuf:"bytes,6,opt,name=dataSourceRef"`
 	// Output specifies the location where the predicted dataset will be stored
 	// +kubebuilder:validation:Optional
-	Input data.DataInputSpec `json:"input,omitempty" protobuf:"bytes,6,opt,name=input"`
+	Input data.DataInputSpec `json:"input,omitempty" protobuf:"bytes,7,opt,name=input"`
 	// Output specifies the location where the predicted dataset will be stored
 	// +kubebuilder:validation:Optional
-	Output data.DataOutputSpec `json:"output,omitempty" protobuf:"bytes,7,opt,name=output"`
+	Output data.DataOutputSpec `json:"output,omitempty" protobuf:"bytes,8,opt,name=output"`
 	// If true create output dataset
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	CreateDataset *bool `json:"createDataset,omitempty" protobuf:"bytes,8,opt,name=createDataset"`
+	CreateDataset *bool `json:"createDataset,omitempty" protobuf:"bytes,9,opt,name=createDataset"`
 	// Tests specifies a collection of metrics that will be computed for each prediction
 	// if the Labeled field of the Prediction is enabled
 	// +kubebuilder:validation:Optional
-	UnitTests training.ModelTestSuite `json:"unitTests,omitempty" protobuf:"bytes,9,opt,name=unitTests"`
+	UnitTests training.ModelTestSuite `json:"unitTests,omitempty" protobuf:"bytes,10,opt,name=unitTests"`
 	// The name of the Account which created the object, which exists in the same tenant as the object
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
-	Owner *string `json:"owner,omitempty" protobuf:"bytes,10,opt,name=owner"`
+	Owner *string `json:"owner,omitempty" protobuf:"bytes,11,opt,name=owner"`
 	// Resources specifies the resource requirements that will be allocated to the batch prediction Job
 	// +kubebuilder:validation:Optional
-	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,11,opt,name=resources"`
+	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,12,opt,name=resources"`
 	// The deadline for the batch prediction Job to be completed in seconds
 	// +kubebuilder:default:=600
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
-	ActiveDeadlineSeconds *int64 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,12,opt,name=activeDeadlineSeconds"`
+	ActiveDeadlineSeconds *int64 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,13,opt,name=activeDeadlineSeconds"`
 	// The priority of the Kubernetes Job created by the Prediction (medium, by default)
 	// +kubebuilder:default:=medium
 	// +kubebuilder:validation:Optional
-	Priority *catalog.PriorityLevel `json:"priority,omitempty" protobuf:"bytes,13,opt,name=priority"`
+	Priority *catalog.PriorityLevel `json:"priority,omitempty" protobuf:"bytes,14,opt,name=priority"`
 	// Indicates if the Prediction was aborted and should stop execution
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Aborted *bool `json:"aborted,omitempty" protobuf:"varint,14,opt,name=aborted"`
+	Aborted *bool `json:"aborted,omitempty" protobuf:"varint,15,opt,name=aborted"`
 	// The time-to-live of the Prediction, after which the Prediction will be archived
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
-	TTL *int32 `json:"ttl,omitempty" protobuf:"varint,15,opt,name=ttl"`
+	TTL *int32 `json:"ttl,omitempty" protobuf:"varint,16,opt,name=ttl"`
 	// The forecasting specification in the case that the predicted model is a hierarchical forecast
 	// +kubebuilder:validation:Optional
-	ForecastSpec ForecastPredictionSpec `json:"forecastSpec,omitempty" protobuf:"bytes,16,opt,name=forecastSpec"`
+	ForecastSpec ForecastPredictionSpec `json:"forecastSpec,omitempty" protobuf:"bytes,17,opt,name=forecastSpec"`
 	// CronPredictionName specifies the name of the CronPrediction that created the Prediction, if applicable
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	CronPredictionName *string `json:"cronPredictorName,omitempty" protobuf:"bytes,17,opt,name=cronPredictorName"`
+	CronPredictionName *string `json:"cronPredictorName,omitempty" protobuf:"bytes,18,opt,name=cronPredictorName"`
 	// The reference to the ServingSite resource that hosts the Prediction
 	// +kubebuilder:validation:Optional
-	ServingSiteRef v1.ObjectReference `json:"servingsiteRef" protobuf:"bytes,18,opt,name=servingsiteRef"`
+	ServingSiteRef v1.ObjectReference `json:"servingsiteRef" protobuf:"bytes,19,opt,name=servingsiteRef"`
 	// Locations for group forecasts
 	// +kubebuilder:validation:Optional
-	GroupLocation GroupPredictionLocationsSpec `json:"groupLocation" protobuf:"bytes,19,opt,name=groupLocation"`
+	GroupLocation GroupPredictionLocationsSpec `json:"groupLocation" protobuf:"bytes,20,opt,name=groupLocation"`
 }
 
 // PredictionStatus is the observed state of a Prediction

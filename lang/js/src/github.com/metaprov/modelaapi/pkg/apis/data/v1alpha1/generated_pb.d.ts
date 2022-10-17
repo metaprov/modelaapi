@@ -1197,6 +1197,9 @@ export class DataPipelineSpec extends jspb.Message {
   getVersionname(): string;
   setVersionname(value: string): DataPipelineSpec;
 
+  getModelclassname(): string;
+  setModelclassname(value: string): DataPipelineSpec;
+
   getDescription(): string;
   setDescription(value: string): DataPipelineSpec;
 
@@ -1251,6 +1254,7 @@ export class DataPipelineSpec extends jspb.Message {
 export namespace DataPipelineSpec {
   export type AsObject = {
     versionname: string,
+    modelclassname: string,
     description: string,
     datasetselectorMap: Array<[string, string]>,
     recipesList: Array<RecipePartSpec.AsObject>,
@@ -2169,6 +2173,9 @@ export class DatasetSpec extends jspb.Message {
   getDatasourcename(): string;
   setDatasourcename(value: string): DatasetSpec;
 
+  getModelclassname(): string;
+  setModelclassname(value: string): DatasetSpec;
+
   getDescription(): string;
   setDescription(value: string): DatasetSpec;
 
@@ -2291,6 +2298,7 @@ export namespace DatasetSpec {
     owner: string,
     versionname: string,
     datasourcename: string,
+    modelclassname: string,
     description: string,
     displayname: string,
     role: string,

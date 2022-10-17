@@ -172,6 +172,9 @@ type ModelSpec struct {
 	// +kubebuilder:validation:MaxLength=63
 	// +required
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,2,opt,name=versionName"`
+	// The model class for this model
+	// +kubebuilder:validation:Optional
+	ModelClassName *string `json:"modelClassName,omitempty" protobuf:"bytes,3,opt,name=modelClassName"`
 	// The user-assigned version of the Model, derived from the parent Study
 	// +kubebuilder:default:=""
 	ModelVersion *string `json:"modelVersion,omitempty" protobuf:"bytes,4,opt,name=modelVersion"`

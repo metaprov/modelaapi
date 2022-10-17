@@ -76,16 +76,19 @@ type DataAppSpec struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,2,opt,name=versionName"`
+	// The model class for this pipeline
+	// +kubebuilder:validation:Optional
+	ModelClassName *string `json:"modelClassName,omitempty" protobuf:"bytes,3,opt,name=modelClassName"`
 	// The user-provided description of the DataApp
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:=""
-	Description *string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
+	Description *string `json:"description,omitempty" protobuf:"bytes,4,opt,name=description"`
 	// The name of the predictive app model. The model will be used
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	ModelName *string `json:"modelName,omitempty" protobuf:"bytes,4,opt,name=modelName"`
+	ModelName *string `json:"modelName,omitempty" protobuf:"bytes,5,opt,name=modelName"`
 	// Define how to access the app.
-	Access AccessSpec `json:"access,omitempty" protobuf:"bytes,6,opt,name=access"`
+	Access catalog.AccessSpec `json:"access,omitempty" protobuf:"bytes,6,opt,name=access"`
 	// The number of replicas for the Kubernetes Deployment associated with the DataApp, which will instantiate multiple
 	// copies of the service in the case that automatic scaling is disabled
 	// +kubebuilder:default:=1

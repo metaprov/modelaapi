@@ -1745,6 +1745,9 @@ spec:
                 - ensemble
                 - test
                 type: string
+              modelClassName:
+                description: The model class for this model
+                type: string
               modelVersion:
                 default: ""
                 description: The user-assigned version of the Model, derived from

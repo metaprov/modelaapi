@@ -65,45 +65,48 @@ type DataPipelineSpec struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
+	// The model class for this pipeline
+	// +kubebuilder:validation:Optional
+	ModelClassName *string `json:"modelClassName,omitempty" protobuf:"bytes,2,opt,name=modelClassName"`
 	// Description of the data pipeline
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
+	Description *string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
 	// DatasetSelector is used to select datasets for processing in the pipeline
 	// +kubebuilder:validation:Optional
-	DatasetSelector map[string]string `json:"datasetSelector,omitempty" protobuf:"bytes,3,opt,name=datasetSelector"`
+	DatasetSelector map[string]string `json:"datasetSelector,omitempty" protobuf:"bytes,4,opt,name=datasetSelector"`
 	// RecipeOrder defines the list of recipes and the order they need to run
 	// +kubebuilder:validation:Optional
-	Recipes []RecipePartSpec `json:"recipes,omitempty" protobuf:"bytes,4,rep,name=recipes"`
+	Recipes []RecipePartSpec `json:"recipes,omitempty" protobuf:"bytes,5,rep,name=recipes"`
 	// The output definition
 	// +kubebuilder:validation:Optional
-	Output DataOutputSpec `json:"output,omitempty" protobuf:"bytes,5,opt,name=output"`
+	Output DataOutputSpec `json:"output,omitempty" protobuf:"bytes,6,opt,name=output"`
 	// Schedule for running the pipeline
 	// +kubebuilder:validation:Optional
-	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,6,opt,name=schedule"`
+	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,7,opt,name=schedule"`
 	// Specification for notification
 	// +kubebuilder:validation:Optional
-	Notification catalog.NotificationSpec `json:"notification,omitempty" protobuf:"bytes,7,opt,name=notification"`
+	Notification catalog.NotificationSpec `json:"notification,omitempty" protobuf:"bytes,8,opt,name=notification"`
 	// Owner of this data pipeline
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +kubebuilder:validation:Optional
-	Owner *string `json:"owner,omitempty" protobuf:"bytes,8,opt,name=owner"`
+	Owner *string `json:"owner,omitempty" protobuf:"bytes,9,opt,name=owner"`
 	// Resources are hardware resource req.
 	// +kubebuilder:validation:Optional
-	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,9,opt,name=resources"`
+	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,10,opt,name=resources"`
 	// The priority of this data pipeline. The default is medium.
 	// +kubebuilder:default:="medium"
 	// +kubebuilder:validation:Optional
-	Priority *catalog.PriorityLevel `json:"priority,omitempty" protobuf:"bytes,10,opt,name=priority"`
+	Priority *catalog.PriorityLevel `json:"priority,omitempty" protobuf:"bytes,11,opt,name=priority"`
 	// Set to true to pause the cron prediction
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Paused *bool `json:"paused,omitempty" protobuf:"varint,11,opt,name=paused"`
+	Paused *bool `json:"paused,omitempty" protobuf:"varint,12,opt,name=paused"`
 	// TTL for the data product run. Set to 0 if no garbage collected is needed.
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
-	TTL *int32 `json:"ttl,omitempty" protobuf:"varint,12,opt,name=ttl"`
+	TTL *int32 `json:"ttl,omitempty" protobuf:"varint,13,opt,name=ttl"`
 }
 
 // DataPipelineStatus is the observed state of the DataPipeline object.

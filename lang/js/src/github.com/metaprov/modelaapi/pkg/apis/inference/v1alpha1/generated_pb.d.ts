@@ -9,50 +9,6 @@ import * as k8s_io_apimachinery_pkg_runtime_generated_pb from '../../../../../..
 import * as k8s_io_apimachinery_pkg_runtime_schema_generated_pb from '../../../../../../../k8s.io/apimachinery/pkg/runtime/schema/generated_pb';
 
 
-export class AccessSpec extends jspb.Message {
-  getPort(): number;
-  setPort(value: number): AccessSpec;
-
-  getNodeport(): number;
-  setNodeport(value: number): AccessSpec;
-
-  getPath(): string;
-  setPath(value: string): AccessSpec;
-
-  getAccesstype(): string;
-  setAccesstype(value: string): AccessSpec;
-
-  getRest(): boolean;
-  setRest(value: boolean): AccessSpec;
-
-  getAuthmethod(): string;
-  setAuthmethod(value: string): AccessSpec;
-
-  getApikeysecretref(): k8s_io_api_core_v1_generated_pb.SecretReference | undefined;
-  setApikeysecretref(value?: k8s_io_api_core_v1_generated_pb.SecretReference): AccessSpec;
-  hasApikeysecretref(): boolean;
-  clearApikeysecretref(): AccessSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): AccessSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: AccessSpec): AccessSpec.AsObject;
-  static serializeBinaryToWriter(message: AccessSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): AccessSpec;
-  static deserializeBinaryFromReader(message: AccessSpec, reader: jspb.BinaryReader): AccessSpec;
-}
-
-export namespace AccessSpec {
-  export type AsObject = {
-    port: number,
-    nodeport: number,
-    path: string,
-    accesstype: string,
-    rest: boolean,
-    authmethod: string,
-    apikeysecretref?: k8s_io_api_core_v1_generated_pb.SecretReference.AsObject,
-  }
-}
-
 export class AutoScalingSpec extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): AutoScalingSpec;
@@ -638,14 +594,17 @@ export class DataAppSpec extends jspb.Message {
   getVersionname(): string;
   setVersionname(value: string): DataAppSpec;
 
+  getModelclassname(): string;
+  setModelclassname(value: string): DataAppSpec;
+
   getDescription(): string;
   setDescription(value: string): DataAppSpec;
 
   getModelname(): string;
   setModelname(value: string): DataAppSpec;
 
-  getAccess(): AccessSpec | undefined;
-  setAccess(value?: AccessSpec): DataAppSpec;
+  getAccess(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec | undefined;
+  setAccess(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec): DataAppSpec;
   hasAccess(): boolean;
   clearAccess(): DataAppSpec;
 
@@ -684,9 +643,10 @@ export namespace DataAppSpec {
   export type AsObject = {
     owner: string,
     versionname: string,
+    modelclassname: string,
     description: string,
     modelname: string,
-    access?: AccessSpec.AsObject,
+    access?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec.AsObject,
     replicas: number,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     productref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
@@ -1533,6 +1493,9 @@ export class PredictionSpec extends jspb.Message {
   getVersionname(): string;
   setVersionname(value: string): PredictionSpec;
 
+  getModelclassname(): string;
+  setModelclassname(value: string): PredictionSpec;
+
   getPredictorref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setPredictorref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): PredictionSpec;
   hasPredictorref(): boolean;
@@ -1616,6 +1579,7 @@ export class PredictionSpec extends jspb.Message {
 export namespace PredictionSpec {
   export type AsObject = {
     versionname: string,
+    modelclassname: string,
     predictorref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     labeled: boolean,
     forecast: boolean,
@@ -1851,6 +1815,9 @@ export class PredictorSpec extends jspb.Message {
   getVersionname(): string;
   setVersionname(value: string): PredictorSpec;
 
+  getModelclassname(): string;
+  setModelclassname(value: string): PredictorSpec;
+
   getDescription(): string;
   setDescription(value: string): PredictorSpec;
 
@@ -1879,8 +1846,8 @@ export class PredictorSpec extends jspb.Message {
   hasArtifactsfolder(): boolean;
   clearArtifactsfolder(): PredictorSpec;
 
-  getAccess(): AccessSpec | undefined;
-  setAccess(value?: AccessSpec): PredictorSpec;
+  getAccess(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec | undefined;
+  setAccess(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec): PredictorSpec;
   hasAccess(): boolean;
   clearAccess(): PredictorSpec;
 
@@ -1967,13 +1934,14 @@ export class PredictorSpec extends jspb.Message {
 export namespace PredictorSpec {
   export type AsObject = {
     versionname: string,
+    modelclassname: string,
     description: string,
     productref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     servingsiteref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     modelsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec.AsObject>,
     progressive?: ProgressiveSpec.AsObject,
     artifactsfolder?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
-    access?: AccessSpec.AsObject,
+    access?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec.AsObject,
     replicas: number,
     autoscaling?: AutoScalingSpec.AsObject,
     owner: string,

@@ -8,24 +8,6 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-// +kubebuilder:validation:Enum="online";"batch";"streaming"
-type PredictorType string
-
-const (
-	// Use cluster port if the predictor is an internal micro service
-	Online    PredictorType = "online"
-	Batch     PredictorType = "batch"
-	Streaming PredictorType = "streaming"
-)
-
-type AuthMethod string
-
-const (
-	ApiToken AuthMethod = "api-token"
-	JwtToken AuthMethod = "jwt-token"
-	None     AuthMethod = "none"
-)
-
 //==============================================================================
 // Monitoring spec
 //==============================================================================
@@ -87,7 +69,7 @@ type ModelServingSpec struct {
 	// The type of predictor (online, batch, or streaming). Online is the only supported type as of the current release
 	// +kubebuilder:default:="online"
 	// +kubebuilder:validation:Optional
-	Type *PredictorType `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
+	Type *catalog.PredictorType `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
 	// If Serverless is true, the Kubernetes Deployment which serves the model will not be created
 	// until it starts to receive prediction traffic, and will be destroyed once the model becomes dormant
 	Serverless *bool `json:"serverless,omitempty" protobuf:"varint,2,opt,name=serverless"`
@@ -213,47 +195,6 @@ type OnlineFeatureStoreSpec struct {
 }
 
 // AccessSpec specifies the configuration to expose a Predictor service externally
-type AccessSpec struct {
-	// The port number that will be exposed on the Predictor's Pods to serve prediction traffic through the GRPCInferenceService API.
-	// The Kubernetes Service created by the Predictor will expose the port and forward GRPC traffic to the backend pods
-	// +kubebuilder:validation:Optional
-	// +kubebuilder:validation:Minimum=1024
-	// +kubebuilder:validation:Maximum=65535
-	// +kubebuilder:validation:Optional
-	// +kubebuilder:default:=8080
-	Port *int32 `json:"port,omitempty" protobuf:"varint,1,opt,name=port"`
-	// The port number that will be exposed on the external address of every node on the cluster, in the case of the
-	// Predictor's access type being NodePort. Traffic from the port will be forwarded to the Predictor's backend service
-	// +kubebuilder:validation:Minimum=0
-	// +kubebuilder:validation:Maximum=65535
-	// +kubebuilder:validation:Optional
-	NodePort *int32 `json:"nodePort,omitempty" protobuf:"varint,2,opt,name=nodePort"`
-	// The auto-generated DNS path where the Predictor service can be accessed. If the access type is ClusterIP, it will
-	// be a cluster-internal DNS name (i.e. predictor.default-serving-site.svc.cluster.local). In the case of the Ingress
-	// access type, it will be determined by the FQDN of the host ServingSite (i.e. predictor.default-serving-site.your-domain.ai).
-	// +kubebuilder:validation:MaxLength=256
-	// +kubebuilder:validation:Optional
-	// +kubebuilder:default:=""
-	Path *string `json:"path,omitempty" protobuf:"bytes,3,opt,name=path"`
-	// The Kubernetes-native access method which specifies how the Kubernetes Service created by the Predictor will be exposed.
-	// See https://modela.ai/docs/docs/serving/production/#access-method for a detailed description of each access type
-	// (defaults to cluster-ip)
-	// +kubebuilder:default:="cluster-ip"
-	// +kubebuilder:validation:Optional
-	AccessType *catalog.AccessType `json:"accessType,omitempty" protobuf:"bytes,4,opt,name=accessType"`
-	// Indicates if the prediction service should expose an additional port to serve the GRPCInferenceService API through REST.
-	// The port one digit above the number specified by the Port field will be exposed to accept HTTP/1.1 traffic
-	// +kubebuilder:default:=false
-	// +kubebuilder:validation:Optional
-	REST *bool `json:"rest,omitempty" protobuf:"varint,5,opt,name=rest"`
-	// Indicates
-	// +kubebuilder:default:=none
-	// +kubebuilder:validation:Optional
-	AuthMethod *AuthMethod `json:"authMethod,omitempty" protobuf:"bytes,6,opt,name=authMethod"`
-	// ApiKeySecretRef references a Kubernetes Secret containing an API key that must be passed in prediction requests to the Predictor
-	// +kubebuilder:validation:Optional
-	ApiKeySecretRef *v1.SecretReference `json:"apikeySecretRef,omitempty" protobuf:"bytes,7,opt,name=apikeySecretRef"`
-}
 
 type ForwardCurtainSpec struct {
 	// +kubebuilder:default:=false
@@ -345,12 +286,15 @@ type PredictorSpec struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
+	// The model class for this pipeline
+	// +kubebuilder:validation:Optional
+	ModelClassName *string `json:"modelClassName,omitempty" protobuf:"bytes,2,opt,name=modelClassName"`
 	// If specified, the user-provided description of the Predictor
 	// +kubebuilder:validation:MaxLength=256
 	// +kubebuilder:default:=""
-	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
+	Description *string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
 	// The reference to the DataProduct that the resource exists under
-	ProductRef *v1.ObjectReference `json:"productRef" protobuf:"bytes,3,opt,name=productRef"`
+	ProductRef *v1.ObjectReference `json:"productRef" protobuf:"bytes,4,opt,name=productRef"`
 	// If specified, the reference to the ServingSite resource that hosts the Predictor
 	// If not specified, the predictor will be hosted on the default serving site.
 	// +kubebuilder:validation:Optional
@@ -368,7 +312,7 @@ type PredictorSpec struct {
 	ArtifactsFolder data.DataLocation `json:"artifactsFolder,omitempty" protobuf:"bytes,9,opt,name=artifactsFolder"`
 	// Access specifies the configuration for the Predictor service to be exposed externally
 	// +kubebuilder:validation:Optional
-	Access AccessSpec `json:"access,omitempty" protobuf:"bytes,10,opt,name=access"`
+	Access catalog.AccessSpec `json:"access,omitempty" protobuf:"bytes,10,opt,name=access"`
 	// The number of replicas for the Kubernetes Deployment associated with the Predictor, which will instantiate multiple
 	// copies of the service in the case that automatic scaling is disabled
 	// +kubebuilder:validation:Optional

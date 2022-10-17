@@ -7,6 +7,50 @@ import * as k8s_io_apimachinery_pkg_runtime_generated_pb from '../../../../../..
 import * as k8s_io_apimachinery_pkg_runtime_schema_generated_pb from '../../../../../../../k8s.io/apimachinery/pkg/runtime/schema/generated_pb';
 
 
+export class AccessSpec extends jspb.Message {
+  getPort(): number;
+  setPort(value: number): AccessSpec;
+
+  getNodeport(): number;
+  setNodeport(value: number): AccessSpec;
+
+  getPath(): string;
+  setPath(value: string): AccessSpec;
+
+  getAccesstype(): string;
+  setAccesstype(value: string): AccessSpec;
+
+  getRest(): boolean;
+  setRest(value: boolean): AccessSpec;
+
+  getAuthmethod(): string;
+  setAuthmethod(value: string): AccessSpec;
+
+  getApikeysecretref(): k8s_io_api_core_v1_generated_pb.SecretReference | undefined;
+  setApikeysecretref(value?: k8s_io_api_core_v1_generated_pb.SecretReference): AccessSpec;
+  hasApikeysecretref(): boolean;
+  clearApikeysecretref(): AccessSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AccessSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: AccessSpec): AccessSpec.AsObject;
+  static serializeBinaryToWriter(message: AccessSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AccessSpec;
+  static deserializeBinaryFromReader(message: AccessSpec, reader: jspb.BinaryReader): AccessSpec;
+}
+
+export namespace AccessSpec {
+  export type AsObject = {
+    port: number,
+    nodeport: number,
+    path: string,
+    accesstype: string,
+    rest: boolean,
+    authmethod: string,
+    apikeysecretref?: k8s_io_api_core_v1_generated_pb.SecretReference.AsObject,
+  }
+}
+
 export class Algorithm extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): Algorithm;

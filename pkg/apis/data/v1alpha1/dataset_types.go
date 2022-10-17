@@ -112,37 +112,40 @@ type DatasetSpec struct {
 	// +kubebuilder:default:=""
 	// +required
 	DataSourceName *string `json:"datasourceName,omitempty" protobuf:"bytes,3,opt,name=datasourceName"`
+	// The model class for this pipeline
+	// +kubebuilder:validation:Optional
+	ModelClassName *string `json:"modelClassName,omitempty" protobuf:"bytes,4,opt,name=modelClassName"`
 	// User-provided description of the object
 	// +kubebuilder:validation:MaxLength=512
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	Description *string `json:"description,omitempty" protobuf:"bytes,4,opt,name=description"`
+	Description *string `json:"description,omitempty" protobuf:"bytes,5,opt,name=description"`
 	// User-provided display name of the object
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	DisplayName *string `json:"displayName,omitempty" protobuf:"bytes,5,opt,name=displayName"`
+	DisplayName *string `json:"displayName,omitempty" protobuf:"bytes,6,opt,name=displayName"`
 	// The dataset role
 	// +kubebuilder:default:="training"
 	// +kubebuilder:validation:Optional
-	Role *DatasetRole `json:"role,omitempty" protobuf:"bytes,6,opt,name=role"`
+	Role *DatasetRole `json:"role,omitempty" protobuf:"bytes,7,opt,name=role"`
 	// Indicates if a PDF report containing the Dataset's profile should be generated
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	Reported *bool `json:"reported,omitempty" protobuf:"varint,7,opt,name=reported"`
+	Reported *bool `json:"reported,omitempty" protobuf:"varint,8,opt,name=reported"`
 	// Indicates if the resource controller has created a snapshot of the data in the case that it is being read
 	// directly from a database, and must be converted to a flat-file type such as a CSV as a result
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Snapshotted *bool `json:"snapshotted,omitempty" protobuf:"varint,8,opt,name=snapshotted"`
+	Snapshotted *bool `json:"snapshotted,omitempty" protobuf:"varint,9,opt,name=snapshotted"`
 	// Indicates if the Dataset should be checked against the validation rules of its Data Source
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	UnitTested *bool `json:"unitTested,omitempty" protobuf:"varint,9,opt,name=unitTested"`
+	UnitTested *bool `json:"unitTested,omitempty" protobuf:"varint,10,opt,name=unitTested"`
 	// Origin is the location of the data file or database query which holds the raw data of the Dataset. When the Dataset is
 	// created, the resource controller will retrieve the data from the location, validate it against its Data Source
 	// if applicable, and store it inside the `live` section of the Virtual Bucket resource specified by the location
 	// +kubebuilder:validation:Optional
-	Origin DataLocation `json:"origin,omitempty" protobuf:"bytes,13,opt,name=origin"`
+	Origin DataLocation `json:"origin,omitempty" protobuf:"bytes,11,opt,name=origin"`
 	// Location is the final location of the data which was copied from the `Origin` location during the ingestion phase.
 	// This field is set by the Dataset resource controller and should not be changed by any end-users
 	// +kubebuilder:validation:Required

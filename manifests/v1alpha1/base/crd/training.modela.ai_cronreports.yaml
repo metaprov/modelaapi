@@ -541,6 +541,9 @@ spec:
                               resource which specifies the DataLocation
                             type: string
                         type: object
+                      modelClassName:
+                        description: The model class for this pipeline
+                        type: string
                       notifierName:
                         description: The name of the Notifier resource which Alerts
                           created by the Report will be forwarded to

@@ -934,55 +934,59 @@ message DataPipelineSpec {
   // +kubebuilder:validation:Optional
   optional string versionName = 1;
 
+  // The model class for this pipeline
+  // +kubebuilder:validation:Optional
+  optional string modelClassName = 2;
+
   // Description of the data pipeline
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string description = 2;
+  optional string description = 3;
 
   // DatasetSelector is used to select datasets for processing in the pipeline
   // +kubebuilder:validation:Optional
-  map<string, string> datasetSelector = 3;
+  map<string, string> datasetSelector = 4;
 
   // RecipeOrder defines the list of recipes and the order they need to run
   // +kubebuilder:validation:Optional
-  repeated RecipePartSpec recipes = 4;
+  repeated RecipePartSpec recipes = 5;
 
   // The output definition
   // +kubebuilder:validation:Optional
-  optional DataOutputSpec output = 5;
+  optional DataOutputSpec output = 6;
 
   // Schedule for running the pipeline
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 6;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 7;
 
   // Specification for notification
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 7;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 8;
 
   // Owner of this data pipeline
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
   // +kubebuilder:validation:Optional
-  optional string owner = 8;
+  optional string owner = 9;
 
   // Resources are hardware resource req.
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 9;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 10;
 
   // The priority of this data pipeline. The default is medium.
   // +kubebuilder:default:="medium"
   // +kubebuilder:validation:Optional
-  optional string priority = 10;
+  optional string priority = 11;
 
   // Set to true to pause the cron prediction
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool paused = 11;
+  optional bool paused = 12;
 
   // TTL for the data product run. Set to 0 if no garbage collected is needed.
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
-  optional int32 ttl = 12;
+  optional int32 ttl = 13;
 }
 
 // DataPipelineStatus is the observed state of the DataPipeline object.
@@ -1608,43 +1612,47 @@ message DatasetSpec {
   // +required
   optional string datasourceName = 3;
 
+  // The model class for this pipeline
+  // +kubebuilder:validation:Optional
+  optional string modelClassName = 4;
+
   // User-provided description of the object
   // +kubebuilder:validation:MaxLength=512
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string description = 4;
+  optional string description = 5;
 
   // User-provided display name of the object
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string displayName = 5;
+  optional string displayName = 6;
 
   // The dataset role
   // +kubebuilder:default:="training"
   // +kubebuilder:validation:Optional
-  optional string role = 6;
+  optional string role = 7;
 
   // Indicates if a PDF report containing the Dataset's profile should be generated
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
-  optional bool reported = 7;
+  optional bool reported = 8;
 
   // Indicates if the resource controller has created a snapshot of the data in the case that it is being read
   // directly from a database, and must be converted to a flat-file type such as a CSV as a result
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool snapshotted = 8;
+  optional bool snapshotted = 9;
 
   // Indicates if the Dataset should be checked against the validation rules of its Data Source
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
-  optional bool unitTested = 9;
+  optional bool unitTested = 10;
 
   // Origin is the location of the data file or database query which holds the raw data of the Dataset. When the Dataset is
   // created, the resource controller will retrieve the data from the location, validate it against its Data Source
   // if applicable, and store it inside the `live` section of the Virtual Bucket resource specified by the location
   // +kubebuilder:validation:Optional
-  optional DataLocation origin = 13;
+  optional DataLocation origin = 11;
 
   // Location is the final location of the data which was copied from the `Origin` location during the ingestion phase.
   // This field is set by the Dataset resource controller and should not be changed by any end-users

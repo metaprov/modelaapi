@@ -972,6 +972,9 @@ spec:
               description:
                 description: User provided description
                 type: string
+              modelClassName:
+                description: The model class for this pipeline
+                type: string
               notification:
                 description: Notification specification.
                 properties:

@@ -67,6 +67,9 @@ spec:
                 default: ""
                 description: Description of the data pipeline
                 type: string
+              modelClassName:
+                description: The model class for this pipeline
+                type: string
               notification:
                 description: Specification for notification
                 properties:

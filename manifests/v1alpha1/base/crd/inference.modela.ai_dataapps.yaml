@@ -98,6 +98,10 @@ spec:
                   authMethod:
                     default: none
                     description: Indicates
+                    enum:
+                    - api-token
+                    - jwt-token
+                    - none
                     type: string
                   nodePort:
                     description: The port number that will be exposed on the external
@@ -317,6 +321,9 @@ spec:
               description:
                 default: ""
                 description: The user-provided description of the DataApp
+                type: string
+              modelClassName:
+                description: The model class for this pipeline
                 type: string
               modelName:
                 default: ""

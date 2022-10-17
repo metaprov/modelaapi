@@ -325,6 +325,9 @@ spec:
                   the Prediction's status with the average result of all predictions
                   Used usually for unit testing
                 type: boolean
+              modelClassName:
+                description: The model class for this pipeline
+                type: string
               output:
                 description: Output specifies the location where the predicted dataset
                   will be stored

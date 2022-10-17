@@ -57,25 +57,30 @@ type ModelPipelineSpec struct {
 	// +kubebuilder:default ="latest"
 	// +kubebuilder:validation:Optional
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
+
+	// The model class for this pipeline
+	// +kubebuilder:validation:Optional
+	ModelClassName *string `json:"modelClassName,omitempty" protobuf:"bytes,2,opt,name=modelClassName"`
+
 	// User provided description
 	// +kubebuilder:default =""
 	// +kubebuilder:validation:Optional
-	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
+	Description *string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
 	// DatasetSelector is used to select dataset for training
 	// +kubebuilder:validation:Optional
-	DatasetSelector map[string]string `json:"datasetSelector,omitempty" protobuf:"bytes,3,opt,name=datasetSelector"`
+	DatasetSelector map[string]string `json:"datasetSelector,omitempty" protobuf:"bytes,4,opt,name=datasetSelector"`
 	// Datastage build new dataset from the data sources.
 	// +kubebuilder:validation:Optional
-	Data *DataStageSpec `json:"data,omitempty" protobuf:"bytes,4,opt,name=data"`
+	Data *DataStageSpec `json:"data,omitempty" protobuf:"bytes,5,opt,name=data"`
 	// TrainingSpec stage
 	// +kubebuilder:validation:Optional
-	Training TrainingStageSpec `json:"training,omitempty" protobuf:"bytes,5,opt,name=training"`
+	Training TrainingStageSpec `json:"training,omitempty" protobuf:"bytes,6,opt,name=training"`
 	// Acceptance stage is used for further testing
 	// +kubebuilder:validation:Optional
-	UAT *UATStageSpec `json:"uat,omitempty" protobuf:"bytes,6,opt,name=uat"`
+	UAT *UATStageSpec `json:"uat,omitempty" protobuf:"bytes,7,opt,name=uat"`
 	// Capacity stage for capacity
 	// +kubebuilder:validation:Optional
-	Capacity CapacityStageSpec `json:"capacity,omitempty" protobuf:"bytes,7,opt,name=capacity"`
+	Capacity CapacityStageSpec `json:"capacity,omitempty" protobuf:"bytes,8,opt,name=capacity"`
 	// Deployment stage define how to place the model into production.
 	// +kubebuilder:validation:Optional
 	Deployment DeploymentStageSpec `json:"deployment,omitempty" protobuf:"bytes,9,opt,name=deployment"`

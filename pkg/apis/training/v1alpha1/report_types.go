@@ -140,6 +140,9 @@ type ReportSpec struct {
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
 	// EntityRef specifies the entity which the Report references. The supported entities consist of Entity, Model, and Study resources
 	EntityRef v1.ObjectReference `json:"entityRef,omitempty" protobuf:"bytes,2,opt,name=entityRef"`
+	// The model class for this pipeline
+	// +kubebuilder:validation:Optional
+	ModelClassName *string `json:"modelClassName,omitempty" protobuf:"bytes,3,opt,name=modelClassName"`
 	// The location of the flat-file containing the PDF report
 	// +kubebuilder:validation:Optional
 	Location data.DataLocation `json:"location,omitempty" protobuf:"bytes,4,opt,name=location"`

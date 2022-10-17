@@ -103,6 +103,10 @@ spec:
                   authMethod:
                     default: none
                     description: Indicates
+                    enum:
+                    - api-token
+                    - jwt-token
+                    - none
                     type: string
                   nodePort:
                     description: The port number that will be exposed on the external
@@ -1134,6 +1138,9 @@ spec:
                     format: int32
                     type: integer
                 type: object
+              modelClassName:
+                description: The model class for this pipeline
+                type: string
               models:
                 description: If specified, the collection of shadow models. A shadow
                   model receives prediction request, but does not serve the reply.
